@@ -6,6 +6,11 @@ import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
 import { GlobalLoading } from "@/components/global-loading"
 import type { Metadata } from "next"
+import { validateEnv } from "@/lib/env"
+
+if (typeof window === "undefined") {
+  validateEnv()
+}
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -60,7 +65,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({
