@@ -1,0 +1,53 @@
+import { LoremIpsumGenerator } from "@/components/lorem-ipsum-generator"
+import { Breadcrumbs } from "@/components/breadcrumbs"
+import { AdSpace } from "@/components/ad-space"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Free Lorem Ipsum Generator | Placeholder Text Generator Online",
+  description:
+    "Generate Lorem Ipsum placeholder text for your designs, mockups, and prototypes. Perfect for web designers, developers, and content creators.",
+  keywords: "lorem ipsum generator, placeholder text, dummy text, filler text, design mockup text",
+  openGraph: {
+    title: "Free Lorem Ipsum Generator - Create Placeholder Text",
+    description: "Generate Lorem Ipsum text for your design projects instantly",
+    type: "website",
+  },
+}
+
+export default function LoremIpsumGeneratorPage() {
+  return (
+    <div className="flex flex-col">
+      <div className="container mx-auto px-4 py-8">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "SEO Tools", href: "/seo-tools" },
+            { label: "Lorem Ipsum Generator", href: "/seo-tools/lorem-ipsum" },
+          ]}
+        />
+
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8 animate-fade-in-up">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Lorem Ipsum Generator</h1>
+            <p className="text-base text-muted-foreground text-pretty max-w-2xl mx-auto">
+              Generate placeholder text for your designs, mockups, and prototypes instantly.
+            </p>
+          </div>
+
+          <AdSpace slot="content" className="mb-8 h-24" />
+
+          <LoremIpsumGenerator />
+
+          <div className="mt-12 prose prose-sm max-w-none">
+            <h2 className="text-2xl font-bold mb-4 text-foreground">What is Lorem Ipsum?</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Lorem Ipsum is placeholder text commonly used in the graphic, print, and publishing industries for
+              previewing layouts and visual mockups. It has been the industry standard dummy text since the 1500s.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

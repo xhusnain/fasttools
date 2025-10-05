@@ -1,0 +1,36 @@
+import { generateText } from "ai"
+
+export async function POST(req: Request) {
+  try {
+    const { topic, style } = await req.json()
+
+    const prompt = `Generate a funny meme text for the topic: "${topic}"${style ? ` in a ${style} style` : ""}.
+    
+Return ONLY a JSON object with this exact format:
+{
+  "top": "top text for the meme",
+  "bottom": "bottom text for the meme"
+}
+
+Make it funny, relatable, and suitable for a classic meme format.`
+
+    const config: any = {
+      model: "openai/gpt-4o-mini",
+      prompt,
+    }
+
+    // If user has provided their own OpenAI API key, use it
+    if (process.env.OPENAI_API_KEY) {
+      config.apiKey = process.env.OPENAI_API_KEY
+    }
+
+    const { text } = await generateText(config)
+
+    const memeText = JSON.parse(text)
+
+    return Response.json({ memeText })
+  } catch (error) {
+    console.error("Error:", error)
+    return Response.json({ error: "Failed to generate meme" }, { status: 500 })
+  }
+}
