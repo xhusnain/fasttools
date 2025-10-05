@@ -7,6 +7,7 @@ import { CookieConsent } from "@/components/cookie-consent"
 import { GlobalLoading } from "@/components/global-loading"
 import type { Metadata } from "next"
 import { validateEnv } from "@/lib/env"
+import { Analytics } from "@vercel/analytics/next"
 
 if (typeof window === "undefined") {
   validateEnv()
@@ -81,6 +82,7 @@ export default function RootLayout({
         <main className="min-h-[calc(100vh-4rem)]">{children}</main>
         <Footer />
         <CookieConsent />
+      <Analytics/>
       </body>
     </html>
   )
