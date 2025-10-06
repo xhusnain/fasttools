@@ -1,0 +1,28 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Developer: SmartToolBoxes Team
+    Contact: hello [at] smarttoolboxes.com
+    From: United States
+
+# THANKS
+
+    Thanks to all the open source contributors who made this possible.
+
+# TECHNOLOGY COLOPHON
+
+    Frontend: Next.js, React, TypeScript
+    Styling: Tailwind CSS
+    Icons: Lucide React
+    Analytics: Vercel Analytics
+    Hosting: Vercel
+    Domain: smarttoolboxes.com
+
+# SITE
+
+    Last update: 2024/12/19
+    Language: English
+    Doctype: HTML5
+    IDE: VS Code, Cursor

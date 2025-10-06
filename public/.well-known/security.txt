@@ -1,0 +1,24 @@
+Contact: mailto:security@toolifyhub.com
+Contact: https://toolifyhub.com/contact
+Expires: 2025-12-31T23:59:59.000Z
+Encryption: https://toolifyhub.com/.well-known/pgp-key.txt
+Acknowledgments: https://toolifyhub.com/security-acknowledgments
+Preferred-Languages: en
+Canonical: https://toolifyhub.com/.well-known/security.txt
+Policy: https://toolifyhub.com/security-policy
+
+# Security Policy
+# We take security seriously. If you discover a security vulnerability, please report it to us.
+# 
+# Please do not:
+# - Test vulnerabilities on our production systems
+# - Access or modify data that doesn't belong to you
+# - Disrupt our services
+# - Publicly disclose vulnerabilities before we've had a chance to fix them
+#
+# We will:
+# - Respond to security reports within 48 hours
+# - Work with you to understand and resolve the issue
+# - Credit you for responsible disclosure (if desired)
+# - Keep you updated on our progress
+

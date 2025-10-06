@@ -18,98 +18,234 @@ import {
   DollarSign,
   Percent,
   Wallet,
+  Music,
+  Heart,
+  Hash,
+  Crop,
+  Image,
+  FileText,
+  Globe,
+  Palette,
+  Code,
+  Search,
+  Settings,
 } from "lucide-react"
 import { AdSpace } from "@/components/ad-space"
 import { FAQSection } from "@/components/faq-section"
 
 export default function HomePage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "SmartToolBoxes - Free Online Tools for Everyone",
+    description: "SmartToolBoxes offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
+    url: "https://smarttoolboxes.com",
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Free Online Tools",
+      description: "Collection of free online tools and utilities",
+      numberOfItems: 40,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Text Case Converter",
+          description: "Convert text between different cases (uppercase, lowercase, title case)",
+          url: "https://smarttoolboxes.com/converters/text-case"
+        },
+        {
+          "@type": "ListItem", 
+          position: 2,
+          name: "Image to Text (OCR)",
+          description: "Extract text from images using optical character recognition",
+          url: "https://smarttoolboxes.com/image-tools/image-to-text"
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "QR Code Generator", 
+          description: "Generate QR codes for URLs, text, and contact information",
+          url: "https://smarttoolboxes.com/ai-tools/qr-generator"
+        }
+      ]
+    },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://smarttoolboxes.com"
+        }
+      ]
+    }
+  }
+
   const tools = [
     {
-      title: "Age Calculator",
-      description:
-        "Calculate your exact age in years, months, and days. Perfect for birthdays, anniversaries, age verification, and official documents.",
+      title: "Text Case Converter",
+      description: "Convert text between uppercase, lowercase, title case, and more. Perfect for formatting documents and social media posts.",
       icon: Calculator,
-      href: "/tools/age-calculator",
+      href: "/converters/text-case",
       popular: true,
     },
     {
-      title: "Date Difference Calculator",
-      description:
-        "Calculate the exact difference between two dates in years, months, days, weeks, and hours. Perfect for project planning.",
-      icon: Calendar,
-      href: "/tools/date-difference",
-      popular: false,
-    },
-    {
-      title: "BMI Calculator",
-      description:
-        "Calculate your Body Mass Index (BMI) to assess your weight category. Supports both metric and imperial units.",
+      title: "Image to Text (OCR)",
+      description: "Extract text from images using advanced optical character recognition. Works with photos, screenshots, and scanned documents.",
       icon: Activity,
-      href: "/tools/bmi-calculator",
+      href: "/image-tools/image-to-text",
       popular: true,
     },
     {
-      title: "Loan EMI Calculator",
-      description:
-        "Calculate your monthly loan payment (EMI) for home loans, car loans, or personal loans with total interest breakdown.",
-      icon: DollarSign,
-      href: "/tools/loan-calculator",
+      title: "QR Code Generator",
+      description: "Generate QR codes for URLs, text, contact information, and more. Customize colors, size, and error correction level.",
+      icon: Target,
+      href: "/ai-tools/qr-generator",
       popular: true,
     },
     {
-      title: "Percentage Calculator",
-      description:
-        "Calculate percentages quickly and easily. Perfect for discounts, tips, grades, statistics, and everyday math.",
-      icon: Percent,
-      href: "/tools/percentage-calculator",
-      popular: false,
-    },
-    {
-      title: "Time Duration Calculator",
-      description:
-        "Calculate the time duration between two times. Perfect for tracking work hours, meeting durations, and time management.",
+      title: "File Size Converter",
+      description: "Convert between different file size units (KB, MB, GB, TB). Perfect for understanding storage requirements and data transfer.",
       icon: Clock,
-      href: "/tools/time-duration",
+      href: "/converters/file-size",
       popular: false,
     },
     {
-      title: "Income Tax Calculator",
-      description:
-        "Calculate your estimated income tax based on your annual salary. Get your net salary and monthly take-home pay.",
-      icon: Wallet,
-      href: "/tools/tax-calculator",
+      title: "Currency Converter",
+      description: "Convert between different currencies with real-time exchange rates. Supports 160+ currencies worldwide.",
+      icon: DollarSign,
+      href: "/converters/currency",
+      popular: true,
+    },
+    {
+      title: "Temperature Converter",
+      description: "Convert between Celsius, Fahrenheit, and Kelvin. Perfect for cooking, weather, and scientific calculations.",
+      icon: Percent,
+      href: "/converters/temperature",
       popular: false,
     },
     {
-      title: "Compound Interest Calculator",
-      description:
-        "Calculate compound interest and see how your investment or savings grow over time with multiple compounding frequencies.",
+      title: "Length Converter",
+      description: "Convert between different length units (meters, feet, inches, yards, miles). Supports metric and imperial systems.",
       icon: TrendingUp,
-      href: "/tools/compound-interest",
+      href: "/converters/length",
+      popular: false,
+    },
+    {
+      title: "Timezone Converter",
+      description: "Convert time between different timezones. Perfect for scheduling meetings and coordinating with global teams.",
+      icon: Calendar,
+      href: "/converters/timezone",
+      popular: false,
+    },
+    {
+      title: "Meta Tag Generator",
+      description: "Generate SEO meta tags for your website. Includes title, description, keywords, and Open Graph tags.",
+      icon: Shield,
+      href: "/seo-tools/meta-tags",
+      popular: true,
+    },
+    {
+      title: "Lorem Ipsum Generator",
+      description: "Generate placeholder text for your designs and prototypes. Customize length, paragraphs, and formatting.",
+      icon: Users,
+      href: "/seo-tools/lorem-ipsum",
+      popular: false,
+    },
+    {
+      title: "Hashtag Generator",
+      description: "Generate relevant hashtags for your social media posts. Improve reach and engagement across platforms.",
+      icon: Zap,
+      href: "/seo-tools/hashtags",
+      popular: true,
+    },
+    {
+      title: "Blog Title Generator",
+      description: "Generate catchy blog post titles and headlines. Perfect for content creators and marketers.",
+      icon: FileText,
+      href: "/seo-tools/blog-titles",
+      popular: false,
+    },
+    {
+      title: "Keyword Density Checker",
+      description: "Analyze keyword density in your content for SEO optimization. Get insights on keyword usage and distribution.",
+      icon: Search,
+      href: "/seo-tools/keyword-density",
+      popular: false,
+    },
+    {
+      title: "AI Meme Generator",
+      description: "Create funny memes with AI-powered text generation. Choose from popular templates and customize your message.",
+      icon: Image,
+      href: "/ai-tools/meme-generator",
+      popular: true,
+    },
+    {
+      title: "AI Caption Generator",
+      description: "Generate engaging captions for your social media posts. Perfect for Instagram, Facebook, and Twitter.",
+      icon: FileText,
+      href: "/ai-tools/caption-generator",
+      popular: true,
+    },
+    {
+      title: "AI Lyrics Generator",
+      description: "Generate song lyrics with AI assistance. Perfect for songwriters, musicians, and creative writers.",
+      icon: Music,
+      href: "/ai-tools/lyrics-generator",
+      popular: false,
+    },
+    {
+      title: "Pet Name Generator",
+      description: "Generate unique and creative names for your pets. Choose from different categories and styles.",
+      icon: Heart,
+      href: "/ai-tools/pet-names",
+      popular: false,
+    },
+    {
+      title: "Hashtag Suggester",
+      description: "Get AI-powered hashtag suggestions for your content. Improve social media reach and engagement.",
+      icon: Hash,
+      href: "/ai-tools/hashtag-suggester",
+      popular: false,
+    },
+    {
+      title: "Image Cropper",
+      description: "Crop and resize images online. Perfect for social media posts, profile pictures, and web graphics.",
+      icon: Crop,
+      href: "/image-tools/image-cropper",
+      popular: true,
+    },
+    {
+      title: "Background Blur",
+      description: "Add blur effects to image backgrounds. Perfect for creating professional-looking photos and graphics.",
+      icon: Image,
+      href: "/image-tools/background-blur",
       popular: false,
     },
   ]
 
   return (
-    <div className="flex flex-col">
-      <AdSpace slot="header" className="mb-0" />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="flex flex-col">
+        <AdSpace slot="header" className="mb-0" />
 
       <section className="container mx-auto px-4 lg:px-6 py-20 md:py-32">
         <AdSpace slot="header" className="mb-12 h-24" />
 
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF6500]/10 text-[#FF6500] text-sm font-medium mb-2 animate-fade-in border border-[#FF6500]/20 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2 animate-fade-in border border-primary/20 backdrop-blur-sm">
             <Sparkles className="h-4 w-4" />
             <span>Free Online Tools for Everyone</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance leading-[1.1] text-foreground animate-fade-in-up tracking-tight">
-            Smart Tools for Everyday Tasks
+            SmartToolBoxes - Your Digital Toolkit
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-100">
-            Access powerful, free online calculation tools designed to make your life easier. Fast, accurate, and always
-            available when you need them.
+            Access 40+ powerful, free online tools including text converters, image processors, AI generators, and productivity utilities — all in one place.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-in-up animation-delay-200">
@@ -129,7 +265,7 @@ export default function HomePage() {
               size="lg"
               className="w-full sm:w-auto h-12 px-8 text-base font-medium hover:bg-accent transition-all duration-200 bg-transparent border-2"
             >
-              <Link href="/tools/age-calculator">Try Age Calculator</Link>
+              <Link href="/converters/text-case">Try Text Converter</Link>
             </Button>
           </div>
         </div>
@@ -416,9 +552,9 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 animate-fade-in-up">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">All Calculation Tools</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Our 20 Main Tools</h2>
               <p className="text-base text-muted-foreground text-pretty">
-                Choose from our collection of free online calculators
+                Choose from our collection of free online tools and utilities
               </p>
             </div>
 
@@ -481,18 +617,18 @@ export default function HomePage() {
         <AdSpace slot="footer" className="max-w-6xl mx-auto" />
       </section>
 
-      <section className="bg-[#FF6500] py-16 md:py-20">
+      <section className="bg-primary py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">Ready to Get Started?</h2>
-            <p className="text-base text-white/90 text-pretty">
-              Try our free calculators now and discover how easy it is to get accurate results in seconds.
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground">Ready to Get Started?</h2>
+            <p className="text-base text-primary-foreground/90 text-pretty">
+              Try our free tools now and discover how easy it is to get results in seconds.
             </p>
             <Button
               asChild
               size="lg"
               variant="secondary"
-              className="h-11 text-sm font-medium shadow-lg hover:shadow-xl transition-all bg-white text-[#FF6500] hover:bg-white/90"
+              className="h-11 text-sm font-medium shadow-lg hover:shadow-xl transition-all bg-background text-primary hover:bg-background/90"
             >
               <Link href="/tools">
                 Browse All Tools
@@ -502,6 +638,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }

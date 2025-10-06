@@ -16,18 +16,111 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "All Tools - Free Online Calculators | Age, BMI, Loan, Tax & More",
+  title: "All Free Online Tools & Calculators | Age, BMI, Loan, Tax & More | ToolifyHub",
   description:
-    "Browse all available free online tools including age calculator, BMI calculator, loan EMI calculator, tax calculator, and more. Fast, accurate, and easy to use.",
-  keywords:
-    "online calculators, free tools, age calculator, BMI calculator, loan calculator, tax calculator, percentage calculator",
+    "Browse 50+ free online tools including age calculator, BMI calculator, loan EMI calculator, tax calculator, percentage calculator, and more. Fast, accurate, and easy to use. No registration required.",
+  keywords: [
+    "online calculators",
+    "free tools",
+    "age calculator",
+    "BMI calculator",
+    "loan calculator",
+    "tax calculator",
+    "percentage calculator",
+    "date calculator",
+    "time calculator",
+    "financial calculators",
+    "health calculators",
+    "conversion tools",
+    "utilities",
+    "web tools",
+    "productivity tools"
+  ],
   openGraph: {
-    title: "All Tools | Free Online Calculators",
-    description: "Browse all available free online calculation tools.",
+    title: "All Free Online Tools & Calculators | ToolifyHub",
+    description: "Browse 50+ free online tools including age calculator, BMI calculator, loan calculator, and more.",
+    type: "website",
+    url: "https://toolifyhub.com/tools",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "All Free Online Tools & Calculators",
+    description: "Browse 50+ free online tools including age calculator, BMI calculator, loan calculator, and more.",
+  },
+  alternates: {
+    canonical: "https://toolifyhub.com/tools",
   },
 }
 
 export default function ToolsPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "All Free Online Tools & Calculators",
+    description: "Browse 50+ free online tools including age calculator, BMI calculator, loan calculator, and more.",
+    url: "https://toolifyhub.com/tools",
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Free Online Tools",
+      description: "Collection of free online tools and calculators",
+      numberOfItems: 50,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Age Calculator",
+          description: "Calculate your exact age in years, months, and days",
+          url: "https://toolifyhub.com/tools/age-calculator"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "BMI Calculator",
+          description: "Calculate your Body Mass Index (BMI)",
+          url: "https://toolifyhub.com/tools/bmi-calculator"
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Loan EMI Calculator",
+          description: "Calculate your monthly loan payment (EMI)",
+          url: "https://toolifyhub.com/tools/loan-calculator"
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: "Tax Calculator",
+          description: "Calculate your estimated income tax",
+          url: "https://toolifyhub.com/tools/tax-calculator"
+        },
+        {
+          "@type": "ListItem",
+          position: 5,
+          name: "Percentage Calculator",
+          description: "Calculate percentages quickly and easily",
+          url: "https://toolifyhub.com/tools/percentage-calculator"
+        }
+      ]
+    },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://toolifyhub.com"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Tools",
+          item: "https://toolifyhub.com/tools"
+        }
+      ]
+    }
+  }
+
   const tools = [
     {
       title: "Age Calculator",
@@ -80,8 +173,10 @@ export default function ToolsPage() {
   ]
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <Breadcrumbs items={[{ label: "Tools", href: "/tools" }]} />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12">
+        <Breadcrumbs items={[{ label: "Tools", href: "/tools" }]} />
 
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
@@ -117,6 +212,7 @@ export default function ToolsPage() {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

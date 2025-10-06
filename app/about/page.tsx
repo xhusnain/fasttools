@@ -4,18 +4,78 @@ import { Target, Users, Zap } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description: "Learn about ToolifyHub and our mission to provide free, easy-to-use online tools for everyone.",
+  title: "About ToolifyHub - Free Online Tools & Calculators for Everyone",
+  description: "Learn about ToolifyHub and our mission to provide 50+ free, easy-to-use online tools including age calculator, BMI calculator, loan calculator, and more. No registration required.",
+  keywords: [
+    "about toolifyhub",
+    "free online tools",
+    "online calculators",
+    "age calculator",
+    "BMI calculator", 
+    "loan calculator",
+    "mission",
+    "values",
+    "company"
+  ],
   openGraph: {
-    title: "About Us | ToolifyHub",
+    title: "About ToolifyHub - Free Online Tools & Calculators",
+    description: "Learn about ToolifyHub and our mission to provide 50+ free, easy-to-use online tools for everyone.",
+    type: "website",
+    url: "https://toolifyhub.com/about",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About ToolifyHub - Free Online Tools",
     description: "Learn about ToolifyHub and our mission to provide free, easy-to-use online tools for everyone.",
+  },
+  alternates: {
+    canonical: "https://toolifyhub.com/about",
   },
 }
 
 export default function AboutPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About ToolifyHub",
+    description: "Learn about ToolifyHub and our mission to provide free, easy-to-use online tools for everyone.",
+    url: "https://toolifyhub.com/about",
+    mainEntity: {
+      "@type": "Organization",
+      name: "ToolifyHub",
+      description: "Free online tools and calculators for everyone. Access 50+ free tools including age calculator, BMI calculator, loan calculator, and more.",
+      url: "https://toolifyhub.com",
+      foundingDate: "2024",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        email: "hello@toolifyhub.com"
+      }
+    },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://toolifyhub.com"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "About",
+          item: "https://toolifyhub.com/about"
+        }
+      ]
+    }
+  }
+
   return (
-    <div className="container mx-auto px-4 py-12">
-      <Breadcrumbs items={[{ label: "About", href: "/about" }]} />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12">
+        <Breadcrumbs items={[{ label: "About", href: "/about" }]} />
 
       <div className="max-w-4xl mx-auto">
         <div className="mb-12">
@@ -82,6 +142,7 @@ export default function AboutPage() {
           </Card>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

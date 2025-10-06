@@ -2,11 +2,33 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "Read ToolifyHub's privacy policy to understand how we collect, use, and protect your information.",
+  title: "Privacy Policy - ToolifyHub | Free Online Tools Data Protection",
+  description: "Read ToolifyHub's comprehensive privacy policy to understand how we collect, use, and protect your information when using our free online tools and calculators.",
+  keywords: [
+    "privacy policy",
+    "data protection",
+    "privacy",
+    "GDPR",
+    "CCPA",
+    "personal information",
+    "data security",
+    "cookies",
+    "user privacy",
+    "online tools privacy"
+  ],
   openGraph: {
-    title: "Privacy Policy | ToolifyHub",
-    description: "Read ToolifyHub's privacy policy to understand how we collect, use, and protect your information.",
+    title: "Privacy Policy - ToolifyHub | Free Online Tools Data Protection",
+    description: "Read ToolifyHub's comprehensive privacy policy to understand how we collect, use, and protect your information.",
+    type: "website",
+    url: "https://toolifyhub.com/privacy-policy",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy - ToolifyHub",
+    description: "Read ToolifyHub's comprehensive privacy policy to understand how we collect, use, and protect your information.",
+  },
+  alternates: {
+    canonical: "https://toolifyhub.com/privacy-policy",
   },
   robots: {
     index: true,

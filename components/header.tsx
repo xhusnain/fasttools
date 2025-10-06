@@ -2,22 +2,23 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X, Calculator } from "lucide-react"
+import { Menu, X, Wrench, Search, User, Mail } from "lucide-react"
 import { SearchBar } from "@/components/search-bar"
 import { CategoryDropdown } from "@/components/category-dropdown"
 import { DarkModeToggle } from "@/components/dark-mode-toggle"
+import { Button } from "@/components/ui/button"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#FF8533] bg-[#FF6500] shadow-lg">
+    <header className="sticky top-0 z-50 w-full border-b border-border/20 bg-background/95 backdrop-blur-md shadow-sm">
       <nav className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-6 gap-4">
-        <Link href="/" className="flex items-center gap-2.5 font-bold text-lg hover:opacity-90 transition-opacity">
-          <div className="h-9 w-9 rounded-xl bg-white flex items-center justify-center shadow-lg">
-            <Calculator className="h-5 w-5 text-[#FF6500]" />
+        <Link href="/" className="flex items-center gap-3 font-bold text-xl hover:opacity-90 transition-opacity">
+          <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg">
+            <Wrench className="h-5 w-5 text-primary-foreground" />
           </div>
-          <span className="text-white hidden sm:inline tracking-tight">ToolifyHub</span>
+          <span className="text-foreground hidden sm:inline tracking-tight">SmartToolBoxes</span>
         </Link>
 
         <div className="hidden lg:flex items-center gap-3 flex-1 max-w-2xl">
@@ -27,29 +28,35 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-6">
           <Link
+            href="/"
+            className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
+          >
+            Home
+          </Link>
+          <Link
+            href="/tools"
+            className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
+          >
+            Tools
+          </Link>
+          <Link
             href="/about"
-            className="text-sm font-medium text-white/90 hover:text-white transition-colors duration-200"
+            className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
           >
             About
           </Link>
           <Link
             href="/contact"
-            className="text-sm font-medium text-white/90 hover:text-white transition-colors duration-200"
+            className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
           >
             Contact
           </Link>
-          <Link
-            href="/privacy-policy"
-            className="text-sm font-medium text-white/90 hover:text-white transition-colors duration-200"
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            href="/terms"
-            className="text-sm font-medium text-white/90 hover:text-white transition-colors duration-200"
-          >
-            Terms of Service
-          </Link>
+          <Button asChild size="sm" className="h-9 px-4">
+            <Link href="/tools">
+              <Wrench className="h-4 w-4 mr-2" />
+              Use Tool
+            </Link>
+          </Button>
           <div className="ml-2">
             <DarkModeToggle />
           </div>
@@ -57,7 +64,7 @@ export function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white hover:text-white/80 transition-colors"
+          className="md:hidden text-foreground hover:text-foreground/80 transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -66,81 +73,88 @@ export function Header() {
       </nav>
 
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-[#FF8533] bg-[#FF6500] animate-fade-in">
+        <div className="md:hidden border-t border-border/20 bg-background/95 backdrop-blur-md animate-fade-in">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
             <SearchBar />
-            <div className="border-t border-[#FF8533] pt-4">
-              <p className="text-xs font-semibold text-white/80 mb-2">CATEGORIES</p>
+            <div className="border-t border-border/20 pt-4">
+              <p className="text-xs font-semibold text-foreground/60 mb-2">CATEGORIES</p>
               <div className="flex flex-col gap-2">
                 <Link
                   href="/tools"
-                  className="text-sm font-medium text-white/90 hover:text-white transition-colors"
+                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Calculators
+                  All Tools
                 </Link>
                 <Link
                   href="/converters"
-                  className="text-sm font-medium text-white/90 hover:text-white transition-colors"
+                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Converters
                 </Link>
                 <Link
                   href="/seo-tools"
-                  className="text-sm font-medium text-white/90 hover:text-white transition-colors"
+                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   SEO Tools
                 </Link>
                 <Link
                   href="/fun-tools"
-                  className="text-sm font-medium text-white/90 hover:text-white transition-colors"
+                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Fun Tools
                 </Link>
                 <Link
                   href="/finance-tools"
-                  className="text-sm font-medium text-white/90 hover:text-white transition-colors"
+                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Finance Tools
                 </Link>
                 <Link
                   href="/ai-tools"
-                  className="text-sm font-medium text-white/90 hover:text-white transition-colors"
+                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   AI Tools
                 </Link>
               </div>
             </div>
-            <div className="border-t border-[#FF8533] pt-4 flex flex-col gap-2">
+            <div className="border-t border-border/20 pt-4 flex flex-col gap-2">
+              <Link
+                href="/"
+                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
               <Link
                 href="/about"
-                className="text-sm font-medium text-white/90 hover:text-white transition-colors"
+                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link
                 href="/contact"
-                className="text-sm font-medium text-white/90 hover:text-white transition-colors"
+                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact
               </Link>
               <Link
                 href="/privacy-policy"
-                className="text-sm font-medium text-white/90 hover:text-white transition-colors"
+                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-sm font-medium text-white/90 hover:text-white transition-colors"
+                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Terms of Service
@@ -148,7 +162,7 @@ export function Header() {
             </div>
             <div className="flex items-center gap-2">
               <DarkModeToggle />
-              <span className="text-sm text-white/90">Dark Mode</span>
+              <span className="text-sm text-foreground/80">Dark Mode</span>
             </div>
           </div>
         </div>

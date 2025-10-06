@@ -1,0 +1,113 @@
+# Robots.txt for SmartToolBoxes
+# https://smarttoolboxes.com
+# Last updated: 2024-12-19
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Slurp
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Baiduspider
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: YandexBot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: facebookexternalhit
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Twitterbot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: LinkedInBot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+# Default rule for all other bots
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /static/
+Disallow: /.*\.json$
+Disallow: /.*\.xml$
+
+# Allow all tool categories and pages
+Allow: /tools/
+Allow: /ai-tools/
+Allow: /converters/
+Allow: /date-time-tools/
+Allow: /dev-tools/
+Allow: /finance-tools/
+Allow: /fun-tools/
+Allow: /image-tools/
+Allow: /seo-tools/
+Allow: /social-media-tools/
+
+# Allow static pages
+Allow: /about
+Allow: /contact
+Allow: /privacy-policy
+Allow: /terms
+
+# Allow important files
+Allow: /favicon.ico
+Allow: /robots.txt
+Allow: /sitemap.xml
+Allow: /manifest.json
+Allow: /humans.txt
+Allow: /security.txt
+
+# Sitemap location
+Sitemap: https://smarttoolboxes.com/sitemap.xml
+
+# Crawl delay (be respectful to server resources)
+Crawl-delay: 1
+
+# Host directive
+Host: https://smarttoolboxes.com
