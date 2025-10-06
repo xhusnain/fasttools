@@ -9,6 +9,7 @@ import { GlobalLoading } from "@/components/global-loading"
 import type { Metadata } from "next"
 import { validateEnv } from "@/lib/env"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 if (typeof window === "undefined") {
   validateEnv()
@@ -124,7 +125,8 @@ export const metadata: Metadata = {
     ],
   },
   other: {
-    "mobile-web-app-capable": "yes",
+      "google-site-verification": "l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0",
+      "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
     "apple-mobile-web-app-title": "FastTools",
@@ -215,6 +217,7 @@ export default function RootLayout({
         <Footer />
         <CookieConsent />
         <Analytics/>
+      <SpeedInsights/>
       </body>
     </html>
   )
