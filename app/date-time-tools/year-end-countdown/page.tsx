@@ -4,7 +4,7 @@ import { YearEndCountdown } from "@/components/year-end-countdown"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Year End Countdown - Live Countdown to New Year | ToolifyHub",
+  title: "Year End Countdown - Live Countdown to New Year | FastTools",
   description:
     "Free live countdown to the end of the year. See exactly how many days, hours, minutes, and seconds are left until the new year begins.",
   keywords:

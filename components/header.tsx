@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Menu, X, Wrench, Search, User, Mail } from "lucide-react"
 import { SearchBar } from "@/components/search-bar"
 import { CategoryDropdown } from "@/components/category-dropdown"
-import { DarkModeToggle } from "@/components/dark-mode-toggle"
+// Dark mode toggle removed per requirements; dark theme is default in layout
 import { Button } from "@/components/ui/button"
 
 export function Header() {
@@ -18,7 +18,7 @@ export function Header() {
           <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg">
             <Wrench className="h-5 w-5 text-primary-foreground" />
           </div>
-          <span className="text-foreground hidden sm:inline tracking-tight">SmartToolBoxes</span>
+          <span className="text-foreground hidden sm:inline tracking-tight">FastTools</span>
         </Link>
 
         <div className="hidden lg:flex items-center gap-3 flex-1 max-w-2xl">
@@ -57,9 +57,7 @@ export function Header() {
               Use Tool
             </Link>
           </Button>
-          <div className="ml-2">
-            <DarkModeToggle />
-          </div>
+          {/* Theme toggle removed to keep dark mode default */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -160,10 +158,7 @@ export function Header() {
                 Terms of Service
               </Link>
             </div>
-            <div className="flex items-center gap-2">
-              <DarkModeToggle />
-              <span className="text-sm text-foreground/80">Dark Mode</span>
-            </div>
+            {/* Theme toggle removed in mobile menu */}
           </div>
         </div>
       )}

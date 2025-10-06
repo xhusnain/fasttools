@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { ScreenshotToText } from "@/components/screenshot-to-text"
 
 export const metadata: Metadata = {
-  title: "Screenshot to Text Extractor - Free OCR Tool | ToolifyHub",
+  title: "Screenshot to Text Extractor - Free OCR Tool | FastTools",
   description:
     "Extract text from screenshots instantly. Convert code snippets, error messages, and any text from screenshots to editable format. Free OCR tool.",
   keywords:

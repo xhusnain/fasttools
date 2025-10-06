@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Bill Splitter - Split Bills & Expenses Fairly | ToolifyHub",
+  title: "Bill Splitter - Split Bills & Expenses Fairly | FastTools",
   description:
     "Free bill splitter to divide expenses fairly among friends or groups. Perfect for restaurants, trips, and shared expenses. Calculate tips and split amounts easily.",
   keywords:

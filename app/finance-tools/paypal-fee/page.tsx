@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "PayPal Fee Calculator - Calculate PayPal Transaction Fees | ToolifyHub",
+  title: "PayPal Fee Calculator - Calculate PayPal Transaction Fees | FastTools",
   description:
     "Free PayPal fee calculator. Calculate PayPal transaction fees (2.9% + $0.30) and determine how much you'll receive or need to charge. Perfect for freelancers and online sellers.",
   keywords:

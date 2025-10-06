@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Future Age Predictor - Calculate Your Age in Any Year | ToolifyHub",
+  title: "Future Age Predictor - Calculate Your Age in Any Year | FastTools",
   description:
     "Predict how old you'll be in any future year with our free Future Age Predictor. Fun and easy way to visualize your age in the future. Try it now!",
   keywords:

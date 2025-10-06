@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "age verification tool",
   ],
   openGraph: {
-    title: "Free Age Calculator - Calculate Your Exact Age | ToolifyHub",
+    title: "Free Age Calculator - Calculate Your Exact Age | FastTools",
     description: "Calculate your exact age in years, months, and days with our free online age calculator tool.",
     type: "website",
   },

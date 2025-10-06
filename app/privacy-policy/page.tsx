@@ -2,8 +2,8 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - ToolifyHub | Free Online Tools Data Protection",
-  description: "Read ToolifyHub's comprehensive privacy policy to understand how we collect, use, and protect your information when using our free online tools and calculators.",
+  title: "Privacy Policy - FastTools | Free Online Tools Data Protection",
+  description: "Read fasttools.store's comprehensive privacy policy to understand how we collect, use, and protect your information when using our free online tools and calculators.",
   keywords: [
     "privacy policy",
     "data protection",
@@ -17,18 +17,18 @@ export const metadata: Metadata = {
     "online tools privacy"
   ],
   openGraph: {
-    title: "Privacy Policy - ToolifyHub | Free Online Tools Data Protection",
-    description: "Read ToolifyHub's comprehensive privacy policy to understand how we collect, use, and protect your information.",
+    title: "Privacy Policy - FastTools | Free Online Tools Data Protection",
+    description: "Read fasttools.store's comprehensive privacy policy to understand how we collect, use, and protect your information.",
     type: "website",
-    url: "https://toolifyhub.com/privacy-policy",
+    url: "https://fasttools.store/privacy-policy",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy - ToolifyHub",
-    description: "Read ToolifyHub's comprehensive privacy policy to understand how we collect, use, and protect your information.",
+    title: "Privacy Policy - FastTools",
+    description: "Read fasttools.store's comprehensive privacy policy to understand how we collect, use, and protect your information.",
   },
   alternates: {
-    canonical: "https://toolifyhub.com/privacy-policy",
+    canonical: "https://fasttools.store/privacy-policy",
   },
   robots: {
     index: true,
@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-2xl font-bold mb-4">Introduction</h2>
             <p className="text-muted-foreground leading-relaxed">
-              At ToolifyHub, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose,
+              At fasttools.store, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose,
               and safeguard your information when you visit our website.
             </p>
           </section>
@@ -142,8 +142,8 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
             <p className="text-muted-foreground leading-relaxed">
               If you have questions about this Privacy Policy, please contact us at{" "}
-              <a href="mailto:privacy@toolifyhub.com" className="text-primary hover:underline">
-                privacy@toolifyhub.com
+              <a href="mailto:privacy@fasttools.store" className="text-primary hover:underline">
+                privacy@fasttools.store
               </a>
             </p>
           </section>

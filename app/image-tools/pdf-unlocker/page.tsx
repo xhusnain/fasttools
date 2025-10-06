@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { PDFUnlocker } from "@/components/pdf-unlocker"
 
 export const metadata: Metadata = {
-  title: "PDF Unlocker - Remove PDF Password Protection Online | ToolifyHub",
+  title: "PDF Unlocker - Remove PDF Password Protection Online | FastTools",
   description:
     "Unlock password-protected PDF files online for free. Remove PDF restrictions and access your documents instantly. Secure and easy to use.",
   keywords: "PDF unlocker, remove PDF password, unlock PDF, PDF password remover, decrypt PDF, free PDF unlocker",

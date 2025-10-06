@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { PDFTools } from "@/components/pdf-tools"
 
 export const metadata: Metadata = {
-  title: "PDF Splitter & Merger - Free Online PDF Tools | ToolifyHub",
+  title: "PDF Splitter & Merger - Free Online PDF Tools | FastTools",
   description:
     "Split and merge PDF files online for free. Combine multiple PDFs or split large documents into separate pages. Fast, secure, and easy to use.",
   keywords: "PDF splitter, PDF merger, combine PDF, split PDF, merge PDF online, PDF tools, free PDF editor",

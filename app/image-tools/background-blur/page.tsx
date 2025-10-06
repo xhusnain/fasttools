@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { ImageBackgroundBlur } from "@/components/image-background-blur"
 
 export const metadata: Metadata = {
-  title: "Image Background Blur Tool - Free Online Photo Editor | ToolifyHub",
+  title: "Image Background Blur Tool - Free Online Photo Editor | FastTools",
   description:
     "Blur image backgrounds online for free. Adjust blur intensity and create professional-looking photos instantly. No software installation required.",
   keywords: "background blur, blur image, photo editor, blur background online, image blur tool, free photo blur",

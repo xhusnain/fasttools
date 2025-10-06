@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { HTMLToMarkdown } from "@/components/html-to-markdown"
 
 export const metadata: Metadata = {
-  title: "HTML to Markdown Converter - Convert HTML to Markdown | ToolifyHub",
+  title: "HTML to Markdown Converter - Convert HTML to Markdown | FastTools",
   description:
     "Free online HTML to Markdown converter. Convert HTML code to Markdown format instantly. Perfect for content writers and developers.",
   keywords: "HTML to markdown, convert HTML, markdown converter, HTML parser, content converter",

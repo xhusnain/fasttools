@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Love Calculator - Test Your Love Compatibility | ToolifyHub",
+  title: "Love Calculator - Test Your Love Compatibility | FastTools",
   description:
     "Calculate love compatibility between two people with our fun Love Calculator. See your love match percentage and share with friends. Free and entertaining!",
   keywords:

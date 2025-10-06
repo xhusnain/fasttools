@@ -1,17 +1,17 @@
-Contact: mailto:security@smarttoolboxes.com
-Contact: mailto:hello@smarttoolboxes.com
+Contact: mailto:security@fasttools.store
+Contact: mailto:hello@fasttools.store
 Expires: 2025-12-31T23:59:59.000Z
-Encryption: https://smarttoolboxes.com/pgp-key.txt
-Acknowledgments: https://smarttoolboxes.com/security-acknowledgments
+Encryption: https://fasttools.store/pgp-key.txt
+Acknowledgments: https://fasttools.store/security-acknowledgments
 Preferred-Languages: en
-Canonical: https://smarttoolboxes.com/.well-known/security.txt
-Policy: https://smarttoolboxes.com/security-policy
+Canonical: https://fasttools.store/.well-known/security.txt
+Policy: https://fasttools.store/security-policy
 
 # Security Policy
 # We take security seriously. If you discover a security vulnerability, please report it responsibly.
 
 # Reporting Process
-# 1. Email us at security@smarttoolboxes.com
+# 1. Email us at security@fasttools.store
 # 2. Include detailed information about the vulnerability
 # 3. Allow reasonable time for us to respond and fix the issue
 # 4. Do not disclose the vulnerability publicly until we've had a chance to address it

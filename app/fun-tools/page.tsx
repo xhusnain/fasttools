@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Fun Tools - Free Online Entertainment Tools | ToolifyHub",
+  title: "Fun Tools - Free Online Entertainment Tools | FastTools",
   description:
     "Discover fun and entertaining online tools including Love Calculator, Future Age Predictor, Birthday Countdown, Anniversary Calculator, and Instagram Hashtag Counter. Free and easy to use!",
   keywords:

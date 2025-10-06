@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
 export const metadata: Metadata = {
-  title: "Date & Time Tools - Free Online Date and Time Calculators | ToolifyHub",
+  title: "Date & Time Tools - Free Online Date and Time Calculators | FastTools",
   description:
     "Free online date and time tools including age in hours calculator, year end countdown, workday calculator, date to day finder, and zodiac sign finder. Fast, accurate, and easy to use.",
   keywords:

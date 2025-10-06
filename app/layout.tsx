@@ -2,6 +2,7 @@ import type React from "react"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
+import { AdSpace } from "@/components/ad-space"
 import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
 import { GlobalLoading } from "@/components/global-loading"
@@ -24,17 +25,17 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://smarttoolboxes.com"),
+  metadataBase: new URL("https://fasttools.store"),
   title: {
-    default: "SmartToolBoxes - Free Online Tools for Everyone",
-    template: "%s | SmartToolBoxes - Free Online Tools",
+    default: "FastTools - Free Online Tools for Everyone",
+    template: "%s | FastTools - Free Online Tools",
   },
   description:
-    "SmartToolBoxes offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
+    "FastTools offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
   keywords: [
     "online tools",
     "free tools", 
-    "smart tools",
+    "fast tools",
     "productivity tools",
     "text tools",
     "file converters",
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     "utilities",
     "web tools",
     "free online tools",
-    "smart toolboxes",
+    "fasttools store",
     "conversion tools",
     "SEO tools",
     "AI tools",
@@ -52,9 +53,9 @@ export const metadata: Metadata = {
     "date tools",
     "social media tools"
   ],
-  authors: [{ name: "SmartToolBoxes Team", url: "https://smarttoolboxes.com/about" }],
-  creator: "SmartToolBoxes",
-  publisher: "SmartToolBoxes",
+  authors: [{ name: "FastTools Team", url: "https://fasttools.store/about" }],
+  creator: "FastTools",
+  publisher: "FastTools",
   formatDetection: {
     email: false,
     address: false,
@@ -63,26 +64,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://smarttoolboxes.com",
-    siteName: "SmartToolBoxes",
-    title: "SmartToolBoxes - Free Online Tools for Everyone",
-    description: "SmartToolBoxes offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
+    url: "https://fasttools.store",
+    siteName: "FastTools",
+    title: "FastTools - Free Online Tools for Everyone",
+    description: "FastTools offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SmartToolBoxes - Free Online Tools and Utilities",
+        alt: "FastTools - Free Online Tools and Utilities",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@smarttoolboxes",
-    creator: "@smarttoolboxes",
-    title: "SmartToolBoxes - Free Online Tools",
-    description: "SmartToolBoxes offers 40+ free online tools including text, file, image, and productivity utilities — all in one place.",
+    site: "@fasttoolsstore",
+    creator: "@fasttoolsstore",
+    title: "FastTools - Free Online Tools",
+    description: "FastTools offers 40+ free online tools including text, file, image, and productivity utilities — all in one place.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -99,7 +100,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://smarttoolboxes.com",
+    canonical: "https://fasttools.store",
   },
   verification: {
     google: "your-google-verification-code",
@@ -110,7 +111,7 @@ export const metadata: Metadata = {
   classification: "Free Online Tools and Utilities",
   referrer: "origin-when-cross-origin",
   generator: "Next.js",
-  applicationName: "SmartToolBoxes",
+  applicationName: "FastTools",
   manifest: "/manifest.json",
   icons: {
     icon: [
@@ -126,7 +127,7 @@ export const metadata: Metadata = {
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
-    "apple-mobile-web-app-title": "SmartToolBoxes",
+    "apple-mobile-web-app-title": "FastTools",
     "msapplication-TileColor": "#2563eb",
     "theme-color": "#2563eb",
   },
@@ -140,20 +141,20 @@ export default function RootLayout({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "SmartToolBoxes",
-    url: "https://smarttoolboxes.com",
-    logo: "https://smarttoolboxes.com/logo.png",
-    description: "SmartToolBoxes offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
+    name: "FastTools",
+    url: "https://fasttools.store",
+    logo: "https://fasttools.store/logo.png",
+    description: "FastTools offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
     foundingDate: "2024",
     sameAs: [
-      "https://twitter.com/smarttoolboxes",
-      "https://facebook.com/smarttoolboxes",
-      "https://linkedin.com/company/smarttoolboxes"
+      "https://twitter.com/fasttoolsstore",
+      "https://facebook.com/fasttoolsstore",
+      "https://linkedin.com/company/fasttoolsstore"
     ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      email: "hello@smarttoolboxes.com",
+      email: "hello@fasttools.store",
       availableLanguage: "English"
     },
     address: {
@@ -165,16 +166,16 @@ export default function RootLayout({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "SmartToolBoxes",
-    url: "https://smarttoolboxes.com",
+    name: "FastTools",
+    url: "https://fasttools.store",
     description: "Free online tools and utilities for everyone",
     publisher: {
       "@type": "Organization",
-      name: "SmartToolBoxes"
+      name: "FastTools"
     },
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://smarttoolboxes.com/search?q={search_term_string}",
+      target: "https://fasttools.store/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   }
@@ -183,7 +184,7 @@ export default function RootLayout({
     <html lang="en" className={`dark ${geistSans.variable} ${geistMono.variable} antialiased`}>
       <head>
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-        <link rel="canonical" href="https://smarttoolboxes.com" />
+        <link rel="canonical" href="https://fasttools.store" />
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -202,9 +203,15 @@ export default function RootLayout({
         </a>
         <GlobalLoading />
         <Header />
+        <div className="container mx-auto px-4 py-4">
+          <AdSpace slot="header" className="h-20" />
+        </div>
         <main id="main-content" className="min-h-[calc(100vh-4rem)]" role="main">
           {children}
         </main>
+        <div className="container mx-auto px-4 py-6">
+          <AdSpace slot="footer" className="h-24 max-w-6xl mx-auto" />
+        </div>
         <Footer />
         <CookieConsent />
         <Analytics/>

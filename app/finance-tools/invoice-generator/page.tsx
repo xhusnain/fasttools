@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free Invoice Generator - Create Professional Invoices Online | ToolifyHub",
+  title: "Free Invoice Generator - Create Professional Invoices Online | FastTools",
   description:
     "Generate professional invoices for free. Perfect for freelancers and small businesses. Add items, calculate totals with tax, and create invoices instantly. No registration required.",
   keywords:

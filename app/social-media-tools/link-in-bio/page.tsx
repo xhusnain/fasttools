@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { LinkInBioGenerator } from "@/components/link-in-bio-generator"
 
 export const metadata: Metadata = {
-  title: "Link in Bio Generator - Create Your Bio Link Page | ToolifyHub",
+  title: "Link in Bio Generator - Create Your Bio Link Page | FastTools",
   description:
     "Create a beautiful link in bio page for your social media profiles. Free link in bio generator with customizable design.",
   keywords:

@@ -612,11 +612,11 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-sm text-foreground tracking-wide">Contact Us</h3>
             <div className="space-y-3">
               <a
-                href="mailto:hello@smarttoolboxes.com"
+                href="mailto:hello@fasttools.store"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
               >
                 <Mail className="h-4 w-4" />
-                hello@smarttoolboxes.com
+                hello@fasttools.store
               </a>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 Have questions or suggestions? We'd love to hear from you. Send us an email and we'll get back to you as
@@ -632,12 +632,12 @@ export function Footer() {
               <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-primary/90 flex items-center justify-center shadow-md">
                 <Wrench className="h-4 w-4 text-primary-foreground" />
               </div>
-              <span className="font-semibold text-foreground">SmartToolBoxes</span>
+              <span className="font-semibold text-foreground">FastTools</span>
             </div>
 
             <div className="flex items-center gap-4">
               <a
-                href="https://facebook.com/smarttoolboxes"
+                href="https://facebook.com/fasttoolsstore"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-9 w-9 rounded-lg border border-border/60 bg-background/50 hover:bg-primary hover:border-primary transition-all duration-200 flex items-center justify-center group"
@@ -646,7 +646,7 @@ export function Footer() {
                 <Facebook className="h-4 w-4 text-muted-foreground group-hover:text-primary-foreground transition-colors" />
               </a>
               <a
-                href="https://twitter.com/smarttoolboxes"
+                href="https://twitter.com/fasttoolsstore"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-9 w-9 rounded-lg border border-border/60 bg-background/50 hover:bg-primary hover:border-primary transition-all duration-200 flex items-center justify-center group"
@@ -655,7 +655,7 @@ export function Footer() {
                 <Twitter className="h-4 w-4 text-muted-foreground group-hover:text-primary-foreground transition-colors" />
               </a>
               <a
-                href="https://instagram.com/smarttoolboxes"
+                href="https://instagram.com/fasttoolsstore"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-9 w-9 rounded-lg border border-border/60 bg-background/50 hover:bg-primary hover:border-primary transition-all duration-200 flex items-center justify-center group"
@@ -664,7 +664,7 @@ export function Footer() {
                 <Instagram className="h-4 w-4 text-muted-foreground group-hover:text-primary-foreground transition-colors" />
               </a>
               <a
-                href="https://linkedin.com/company/smarttoolboxes"
+                href="https://linkedin.com/company/fasttoolsstore"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-9 w-9 rounded-lg border border-border/60 bg-background/50 hover:bg-primary hover:border-primary transition-all duration-200 flex items-center justify-center group"
@@ -676,7 +676,7 @@ export function Footer() {
           </div>
 
           <p className="text-center text-sm text-muted-foreground mt-8">
-            © 2025 SmartToolBoxes. All rights reserved.
+            © 2025 FastTools. All rights reserved.
           </p>
         </div>
       </div>

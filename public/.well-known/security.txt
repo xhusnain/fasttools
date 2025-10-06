@@ -1,11 +1,11 @@
-Contact: mailto:security@toolifyhub.com
-Contact: https://toolifyhub.com/contact
+Contact: mailto:security@fasttools.store
+Contact: https://fasttools.store/contact
 Expires: 2025-12-31T23:59:59.000Z
-Encryption: https://toolifyhub.com/.well-known/pgp-key.txt
-Acknowledgments: https://toolifyhub.com/security-acknowledgments
+Encryption: https://fasttools.store/.well-known/pgp-key.txt
+Acknowledgments: https://fasttools.store/security-acknowledgments
 Preferred-Languages: en
-Canonical: https://toolifyhub.com/.well-known/security.txt
-Policy: https://toolifyhub.com/security-policy
+Canonical: https://fasttools.store/.well-known/security.txt
+Policy: https://fasttools.store/security-policy
 
 # Security Policy
 # We take security seriously. If you discover a security vulnerability, please report it to us.

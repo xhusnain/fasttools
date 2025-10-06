@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Tip Calculator - Calculate Restaurant Tips & Split Bills | ToolifyHub",
+  title: "Tip Calculator - Calculate Restaurant Tips & Split Bills | FastTools",
   description:
     "Free tip calculator for restaurants and services. Calculate tips with customizable percentages and split bills among multiple people. Perfect for dining out.",
   keywords:

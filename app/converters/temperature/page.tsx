@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Temperature Converter - Celsius to Fahrenheit | ToolifyHub",
+  title: "Temperature Converter - Celsius to Fahrenheit | FastTools",
   description:
     "Free online temperature converter. Convert between Celsius and Fahrenheit instantly. Perfect for weather, cooking, and science.",
   keywords:

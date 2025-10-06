@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { ColorPaletteGenerator } from "@/components/color-palette-generator"
 
 export const metadata: Metadata = {
-  title: "Color Palette Generator - Generate Beautiful Color Schemes | ToolifyHub",
+  title: "Color Palette Generator - Generate Beautiful Color Schemes | FastTools",
   description:
     "Free online color palette generator. Generate beautiful, random color schemes for your design projects. Perfect for designers and developers.",
   keywords: "color palette generator, color scheme generator, random colors, design colors, color picker",

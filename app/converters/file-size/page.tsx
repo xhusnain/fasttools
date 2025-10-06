@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "File Size Converter - KB, MB, GB, TB | ToolifyHub",
+  title: "File Size Converter - KB, MB, GB, TB | FastTools",
   description:
     "Free online file size converter. Convert between bytes, KB, MB, GB, and TB instantly. Perfect for understanding storage sizes.",
   keywords: "file size converter, KB to MB, MB to GB, storage converter, byte converter, data size converter",

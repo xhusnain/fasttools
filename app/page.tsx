@@ -31,15 +31,14 @@ import {
   Settings,
 } from "lucide-react"
 import { AdSpace } from "@/components/ad-space"
-import { FAQSection } from "@/components/faq-section"
 
 export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "SmartToolBoxes - Free Online Tools for Everyone",
-    description: "SmartToolBoxes offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
-    url: "https://smarttoolboxes.com",
+    name: "FastTools - Free Online Tools for Everyone",
+    description: "fasttools.store offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
+    url: "https://fasttools.store",
     mainEntity: {
       "@type": "ItemList",
       name: "Free Online Tools",
@@ -51,21 +50,21 @@ export default function HomePage() {
           position: 1,
           name: "Text Case Converter",
           description: "Convert text between different cases (uppercase, lowercase, title case)",
-          url: "https://smarttoolboxes.com/converters/text-case"
+          url: "https://fasttools.store/converters/text-case"
         },
         {
           "@type": "ListItem", 
           position: 2,
           name: "Image to Text (OCR)",
           description: "Extract text from images using optical character recognition",
-          url: "https://smarttoolboxes.com/image-tools/image-to-text"
+          url: "https://fasttools.store/image-tools/image-to-text"
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "QR Code Generator", 
           description: "Generate QR codes for URLs, text, and contact information",
-          url: "https://smarttoolboxes.com/ai-tools/qr-generator"
+          url: "https://fasttools.store/ai-tools/qr-generator"
         }
       ]
     },
@@ -76,7 +75,7 @@ export default function HomePage() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://smarttoolboxes.com"
+          item: "https://fasttools.store"
         }
       ]
     }
@@ -241,7 +240,7 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance leading-[1.1] text-foreground animate-fade-in-up tracking-tight">
-            SmartToolBoxes - Your Digital Toolkit
+          FastTools - Your Digital Toolkit
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-100">
@@ -511,39 +510,8 @@ export default function HomePage() {
             </Card>
           </div>
 
-          <div className="bg-gradient-to-br from-[#FF6500]/5 via-[#2A5A8A]/5 to-accent/10 rounded-2xl p-8 md:p-12 border border-[#FF6500]/10 animate-scale-in animation-delay-200">
-            <div className="max-w-3xl mx-auto text-center space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm text-sm font-medium border border-border">
-                <Sparkles className="h-4 w-4 text-[#FF6500]" />
-                <span className="text-foreground">Trusted by Thousands Daily</span>
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground">Join Our Growing Community</h3>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                Thousands of people use our public tools every day for personal finance, health tracking, project
-                planning, and more. Be part of a community that values accessibility, accuracy, and simplicity.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-                <Button
-                  asChild
-                  size="lg"
-                  className="w-full sm:w-auto h-11 text-sm font-medium shadow-md hover:shadow-lg transition-all"
-                >
-                  <Link href="/tools">
-                    Explore All Tools
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto h-11 text-sm font-medium hover:bg-accent transition-all bg-background/80 backdrop-blur-sm"
-                >
-                  <Link href="/tools/age-calculator">Start Calculating</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
+          {/* Replaced CTA with ad space */}
+          <AdSpace slot="content" className="max-w-3xl mx-auto h-40 rounded-2xl border border-border animate-scale-in animation-delay-200" />
         </div>
       </section>
 
@@ -600,44 +568,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="container mx-auto px-4 py-16 md:py-20">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12 animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Frequently Asked Questions</h2>
-            <p className="text-base text-muted-foreground text-pretty">
-              Find answers to common questions about our free online calculation tools
-            </p>
-          </div>
-          <FAQSection />
-        </div>
-      </section>
+      {/* FAQ moved to dedicated /faq page for SEO and clarity */}
 
       <section className="container mx-auto px-4 py-8">
         <AdSpace slot="footer" className="max-w-6xl mx-auto" />
       </section>
 
-      <section className="bg-primary py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground">Ready to Get Started?</h2>
-            <p className="text-base text-primary-foreground/90 text-pretty">
-              Try our free tools now and discover how easy it is to get results in seconds.
-            </p>
-            <Button
-              asChild
-              size="lg"
-              variant="secondary"
-              className="h-11 text-sm font-medium shadow-lg hover:shadow-xl transition-all bg-background text-primary hover:bg-background/90"
-            >
-              <Link href="/tools">
-                Browse All Tools
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* CTA removed for cleaner UX; reserved space for ads handled globally in layout */}
       </div>
     </>
   )

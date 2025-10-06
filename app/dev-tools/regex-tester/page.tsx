@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { RegexTester } from "@/components/regex-tester"
 
 export const metadata: Metadata = {
-  title: "Regex Tester - Test Regular Expressions Online | ToolifyHub",
+  title: "Regex Tester - Test Regular Expressions Online | FastTools",
   description:
     "Free online regex tester and debugger. Test your regular expressions with live matching and detailed results. Perfect for developers.",
   keywords: "regex tester, regular expression tester, regex debugger, regex builder, pattern matcher",

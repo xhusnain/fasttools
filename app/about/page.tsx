@@ -4,8 +4,8 @@ import { Target, Users, Zap } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "About ToolifyHub - Free Online Tools & Calculators for Everyone",
-  description: "Learn about ToolifyHub and our mission to provide 50+ free, easy-to-use online tools including age calculator, BMI calculator, loan calculator, and more. No registration required.",
+  title: "About FastTools - Free Online Tools & Calculators for Everyone",
+  description: "Learn about FastTools and our mission to provide 50+ free, easy-to-use online tools including age calculator, BMI calculator, loan calculator, and more. No registration required.",
   keywords: [
     "about toolifyhub",
     "free online tools",
@@ -18,18 +18,18 @@ export const metadata: Metadata = {
     "company"
   ],
   openGraph: {
-    title: "About ToolifyHub - Free Online Tools & Calculators",
-    description: "Learn about ToolifyHub and our mission to provide 50+ free, easy-to-use online tools for everyone.",
+    title: "About FastTools - Free Online Tools & Calculators",
+    description: "Learn about FastTools and our mission to provide 50+ free, easy-to-use online tools for everyone.",
     type: "website",
-    url: "https://toolifyhub.com/about",
+    url: "https://fasttools.store/about",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About ToolifyHub - Free Online Tools",
-    description: "Learn about ToolifyHub and our mission to provide free, easy-to-use online tools for everyone.",
+    title: "About FastTools - Free Online Tools",
+    description: "Learn about FastTools and our mission to provide free, easy-to-use online tools for everyone.",
   },
   alternates: {
-    canonical: "https://toolifyhub.com/about",
+    canonical: "https://fasttools.store/about",
   },
 }
 
@@ -37,19 +37,19 @@ export default function AboutPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    name: "About ToolifyHub",
-    description: "Learn about ToolifyHub and our mission to provide free, easy-to-use online tools for everyone.",
-    url: "https://toolifyhub.com/about",
+    name: "About FastTools",
+    description: "Learn about FastTools and our mission to provide free, easy-to-use online tools for everyone.",
+    url: "https://fasttools.store/about",
     mainEntity: {
       "@type": "Organization",
-      name: "ToolifyHub",
+      name: "fasttools.store",
       description: "Free online tools and calculators for everyone. Access 50+ free tools including age calculator, BMI calculator, loan calculator, and more.",
-      url: "https://toolifyhub.com",
+      url: "https://fasttools.store",
       foundingDate: "2024",
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer service",
-        email: "hello@toolifyhub.com"
+        email: "hello@fasttools.store"
       }
     },
     breadcrumb: {
@@ -59,13 +59,13 @@ export default function AboutPage() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://toolifyhub.com"
+          item: "https://fasttools.store"
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "About",
-          item: "https://toolifyhub.com/about"
+          item: "https://fasttools.store/about"
         }
       ]
     }
@@ -79,7 +79,7 @@ export default function AboutPage() {
 
       <div className="max-w-4xl mx-auto">
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">About ToolifyHub</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">About fasttools.store</h1>
           <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
             We're on a mission to make everyday tasks easier with free, powerful online tools.
           </p>
@@ -87,7 +87,7 @@ export default function AboutPage() {
 
         <div className="prose prose-slate max-w-none mb-12">
           <p className="text-lg leading-relaxed">
-            ToolifyHub was created with a simple goal: to provide everyone with access to high-quality, free online
+            fasttools.store was created with a simple goal: to provide everyone with access to high-quality, free online
             tools that make life easier. We believe that useful tools shouldn't be locked behind paywalls or complicated
             interfaces.
           </p>

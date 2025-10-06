@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { HTMLBeautifier } from "@/components/html-beautifier"
 
 export const metadata: Metadata = {
-  title: "HTML Beautifier & Minifier - Format or Minify HTML | ToolifyHub",
+  title: "HTML Beautifier & Minifier - Format or Minify HTML | FastTools",
   description:
     "Free online HTML beautifier and minifier. Format or compress HTML code instantly. Perfect for web developers.",
   keywords: "HTML beautifier, HTML minifier, format HTML, minify HTML, HTML formatter, HTML compressor",

@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { JWTDecoder } from "@/components/jwt-decoder"
 
 export const metadata: Metadata = {
-  title: "JWT Decoder - Decode JWT Tokens Online | ToolifyHub",
+  title: "JWT Decoder - Decode JWT Tokens Online | FastTools",
   description:
     "Free online JWT decoder tool. Decode and inspect JWT tokens to view header, payload, and signature. Perfect for developers debugging authentication.",
   keywords: "JWT decoder, JSON web token decoder, JWT parser, decode JWT, JWT debugger, token decoder",

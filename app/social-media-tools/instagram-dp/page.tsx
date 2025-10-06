@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { InstagramDpViewer } from "@/components/instagram-dp-viewer"
 
 export const metadata: Metadata = {
-  title: "Instagram DP Viewer - View & Download Profile Pictures in HD | ToolifyHub",
+  title: "Instagram DP Viewer - View & Download Profile Pictures in HD | FastTools",
   description:
     "View and download Instagram profile pictures in HD quality. Free Instagram DP viewer tool for public accounts.",
   keywords:

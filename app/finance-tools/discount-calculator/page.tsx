@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Discount Calculator - Calculate Sale Prices & Savings | ToolifyHub",
+  title: "Discount Calculator - Calculate Sale Prices & Savings | FastTools",
   description:
     "Free discount calculator to find sale prices and savings. Perfect for shopping seasons. Calculate percentage discounts and see how much you save instantly.",
   keywords:

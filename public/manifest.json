@@ -1,7 +1,7 @@
 {
-  "name": "SmartToolBoxes - Free Online Tools",
-  "short_name": "SmartToolBoxes",
-  "description": "SmartToolBoxes offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
+  "name": "FastTools - Free Online Tools",
+  "short_name": "FastTools",
+  "description": "FastTools offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
@@ -17,14 +17,14 @@
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "SmartToolBoxes Desktop View"
+      "label": "FastTools Desktop View"
     },
     {
       "src": "/screenshot-mobile.png", 
       "sizes": "390x844",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "SmartToolBoxes Mobile View"
+      "label": "FastTools Mobile View"
     }
   ],
   "icons": [

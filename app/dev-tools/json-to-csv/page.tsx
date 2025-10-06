@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { JSONToCSV } from "@/components/json-to-csv"
 
 export const metadata: Metadata = {
-  title: "JSON to CSV Converter - Convert JSON to CSV Online | ToolifyHub",
+  title: "JSON to CSV Converter - Convert JSON to CSV Online | FastTools",
   description:
     "Free online JSON to CSV converter. Convert JSON data to CSV format instantly. Download or copy the results. Perfect for data analysis.",
   keywords: "JSON to CSV, convert JSON, CSV converter, JSON parser, data converter",

@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Text Case Converter - Uppercase, Lowercase, Title Case | ToolifyHub",
+  title: "Text Case Converter - Uppercase, Lowercase, Title Case | FastTools",
   description:
     "Free online text case converter. Convert text to uppercase, lowercase, title case, sentence case, camelCase, and snake_case instantly.",
   keywords:

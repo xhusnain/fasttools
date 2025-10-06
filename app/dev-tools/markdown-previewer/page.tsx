@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { MarkdownPreviewer } from "@/components/markdown-previewer"
 
 export const metadata: Metadata = {
-  title: "Markdown Previewer - Live Markdown Preview | ToolifyHub",
+  title: "Markdown Previewer - Live Markdown Preview | FastTools",
   description:
     "Free online Markdown previewer with live preview. Write Markdown and see the rendered output in real-time. Perfect for content creators and developers.",
   keywords: "markdown previewer, markdown editor, live markdown preview, markdown renderer",
