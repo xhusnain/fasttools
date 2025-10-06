@@ -8,18 +8,76 @@ import { Mail, MessageSquare } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Get in touch with ToolifyHub. We'd love to hear from you about feedback, suggestions, or questions.",
+  title: "Contact ToolifyHub - Get in Touch | Free Online Tools Support",
+  description: "Contact ToolifyHub for support, feedback, or questions about our free online tools including age calculator, BMI calculator, loan calculator, and more. We'd love to hear from you.",
+  keywords: [
+    "contact toolifyhub",
+    "support",
+    "feedback",
+    "questions",
+    "help",
+    "customer service",
+    "online tools support",
+    "calculator support"
+  ],
   openGraph: {
-    title: "Contact Us | ToolifyHub",
-    description: "Get in touch with ToolifyHub. We'd love to hear from you.",
+    title: "Contact ToolifyHub - Get in Touch",
+    description: "Contact ToolifyHub for support, feedback, or questions about our free online tools.",
+    type: "website",
+    url: "https://toolifyhub.com/contact",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact ToolifyHub - Get in Touch",
+    description: "Contact ToolifyHub for support, feedback, or questions about our free online tools.",
+  },
+  alternates: {
+    canonical: "https://toolifyhub.com/contact",
   },
 }
 
 export default function ContactPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contact ToolifyHub",
+    description: "Contact ToolifyHub for support, feedback, or questions about our free online tools.",
+    url: "https://toolifyhub.com/contact",
+    mainEntity: {
+      "@type": "Organization",
+      name: "ToolifyHub",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        email: "hello@toolifyhub.com",
+        availableLanguage: "English",
+        areaServed: "Worldwide"
+      }
+    },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://toolifyhub.com"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Contact",
+          item: "https://toolifyhub.com/contact"
+        }
+      ]
+    }
+  }
+
   return (
-    <div className="container mx-auto px-4 py-12">
-      <Breadcrumbs items={[{ label: "Contact", href: "/contact" }]} />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12">
+        <Breadcrumbs items={[{ label: "Contact", href: "/contact" }]} />
 
       <div className="max-w-4xl mx-auto">
         <div className="mb-12">
@@ -103,6 +161,7 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

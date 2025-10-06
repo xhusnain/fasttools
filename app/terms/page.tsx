@@ -2,11 +2,36 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: "Read ToolifyHub's terms of service to understand the rules and regulations for using our website.",
+  title: "Terms of Service - ToolifyHub | Free Online Tools Usage Terms",
+  description: "Read ToolifyHub's comprehensive terms of service to understand the rules and regulations for using our free online tools and calculators.",
+  keywords: [
+    "terms of service",
+    "terms and conditions",
+    "user agreement",
+    "website terms",
+    "legal terms",
+    "usage terms",
+    "online tools terms",
+    "free tools terms",
+    "calculator terms"
+  ],
   openGraph: {
-    title: "Terms of Service | ToolifyHub",
-    description: "Read ToolifyHub's terms of service.",
+    title: "Terms of Service - ToolifyHub | Free Online Tools Usage Terms",
+    description: "Read ToolifyHub's comprehensive terms of service to understand the rules and regulations for using our free online tools.",
+    type: "website",
+    url: "https://toolifyhub.com/terms",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service - ToolifyHub",
+    description: "Read ToolifyHub's comprehensive terms of service to understand the rules and regulations for using our free online tools.",
+  },
+  alternates: {
+    canonical: "https://toolifyhub.com/terms",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 
