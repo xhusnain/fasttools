@@ -16,7 +16,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "All Free Online Tools & Calculators | Age, BMI, Loan, Tax & More | ToolifyHub",
+  title: "All Free Online Tools & Calculators | Age, BMI, Loan, Tax & More | FastTools",
   description:
     "Browse 50+ free online tools including age calculator, BMI calculator, loan EMI calculator, tax calculator, percentage calculator, and more. Fast, accurate, and easy to use. No registration required.",
   keywords: [
@@ -37,10 +37,10 @@ export const metadata: Metadata = {
     "productivity tools"
   ],
   openGraph: {
-    title: "All Free Online Tools & Calculators | ToolifyHub",
+    title: "All Free Online Tools & Calculators | FastTools",
     description: "Browse 50+ free online tools including age calculator, BMI calculator, loan calculator, and more.",
     type: "website",
-    url: "https://toolifyhub.com/tools",
+    url: "https://fasttools.store/tools",
   },
   twitter: {
     card: "summary_large_image",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: "Browse 50+ free online tools including age calculator, BMI calculator, loan calculator, and more.",
   },
   alternates: {
-    canonical: "https://toolifyhub.com/tools",
+    canonical: "https://fasttools.store/tools",
   },
 }
 
@@ -58,7 +58,7 @@ export default function ToolsPage() {
     "@type": "CollectionPage",
     name: "All Free Online Tools & Calculators",
     description: "Browse 50+ free online tools including age calculator, BMI calculator, loan calculator, and more.",
-    url: "https://toolifyhub.com/tools",
+    url: "https://fasttools.store/tools",
     mainEntity: {
       "@type": "ItemList",
       name: "Free Online Tools",
@@ -70,35 +70,35 @@ export default function ToolsPage() {
           position: 1,
           name: "Age Calculator",
           description: "Calculate your exact age in years, months, and days",
-          url: "https://toolifyhub.com/tools/age-calculator"
+          url: "https://fasttools.store/tools/age-calculator"
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "BMI Calculator",
           description: "Calculate your Body Mass Index (BMI)",
-          url: "https://toolifyhub.com/tools/bmi-calculator"
+          url: "https://fasttools.store/tools/bmi-calculator"
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "Loan EMI Calculator",
           description: "Calculate your monthly loan payment (EMI)",
-          url: "https://toolifyhub.com/tools/loan-calculator"
+          url: "https://fasttools.store/tools/loan-calculator"
         },
         {
           "@type": "ListItem",
           position: 4,
           name: "Tax Calculator",
           description: "Calculate your estimated income tax",
-          url: "https://toolifyhub.com/tools/tax-calculator"
+          url: "https://fasttools.store/tools/tax-calculator"
         },
         {
           "@type": "ListItem",
           position: 5,
           name: "Percentage Calculator",
           description: "Calculate percentages quickly and easily",
-          url: "https://toolifyhub.com/tools/percentage-calculator"
+          url: "https://fasttools.store/tools/percentage-calculator"
         }
       ]
     },
@@ -109,13 +109,13 @@ export default function ToolsPage() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://toolifyhub.com"
+          item: "https://fasttools.store"
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Tools",
-          item: "https://toolifyhub.com/tools"
+          item: "https://fasttools.store/tools"
         }
       ]
     }

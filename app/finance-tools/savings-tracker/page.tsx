@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Savings Goal Tracker - Track Your Savings Progress | ToolifyHub",
+  title: "Savings Goal Tracker - Track Your Savings Progress | FastTools",
   description:
     "Free savings goal tracker to monitor your progress and calculate when you'll reach your financial goals. Perfect for planning vacations, purchases, or emergency funds.",
   keywords:

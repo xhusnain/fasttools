@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Birthday Countdown - Real-Time Birthday Timer | ToolifyHub",
+  title: "Birthday Countdown - Real-Time Birthday Timer | FastTools",
   description:
     "Free Birthday Countdown timer showing days, hours, minutes, and seconds until your next birthday. Real-time countdown with sharing options. Try it now!",
   keywords:

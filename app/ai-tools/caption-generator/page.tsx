@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AiCaptionGenerator } from "@/components/ai-caption-generator"
 
 export const metadata: Metadata = {
-  title: "AI Image Caption Generator - Social Media Captions | ToolifyHub",
+  title: "AI Image Caption Generator - Social Media Captions | FastTools",
   description:
     "Generate engaging social media captions for your images with AI. Perfect for Instagram, Facebook, Twitter, and LinkedIn.",
   keywords: "caption generator, Instagram captions, social media captions, AI captions, content creation",

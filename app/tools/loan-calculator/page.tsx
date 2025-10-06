@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free Loan EMI Calculator - Calculate Monthly Payments | Finance Tool | ToolifyHub",
+  title: "Free Loan EMI Calculator - Calculate Monthly Payments | Finance Tool | FastTools",
   description:
     "Calculate your loan EMI (monthly payment) instantly with our free loan calculator. Works for home loans, car loans, personal loans. Get accurate EMI, interest, and total payment breakdown. Fast, accurate, and easy to use.",
   keywords: [
@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     "monthly payment calculator"
   ],
   openGraph: {
-    title: "Free Loan EMI Calculator - Calculate Monthly Payments | ToolifyHub",
+    title: "Free Loan EMI Calculator - Calculate Monthly Payments | FastTools",
     description: "Calculate your monthly loan payments (EMI) with our free online calculator. Works for all types of loans.",
     type: "website",
-    url: "https://toolifyhub.com/tools/loan-calculator",
+    url: "https://fasttools.store/tools/loan-calculator",
   },
   twitter: {
     card: "summary_large_image",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     description: "Calculate your monthly loan payments (EMI) with our free online calculator.",
   },
   alternates: {
-    canonical: "https://toolifyhub.com/tools/loan-calculator",
+    canonical: "https://fasttools.store/tools/loan-calculator",
   },
 }
 
@@ -62,19 +62,19 @@ export default function LoanCalculatorPage() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://toolifyhub.com"
+          item: "https://fasttools.store"
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Tools",
-          item: "https://toolifyhub.com/tools"
+          item: "https://fasttools.store/tools"
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "Loan Calculator",
-          item: "https://toolifyhub.com/tools/loan-calculator"
+          item: "https://fasttools.store/tools/loan-calculator"
         }
       ]
     }

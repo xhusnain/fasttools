@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free BMI Calculator - Calculate Body Mass Index | Health Tool | ToolifyHub",
+  title: "Free BMI Calculator - Calculate Body Mass Index | Health Tool | FastTools",
   description:
     "Calculate your BMI (Body Mass Index) instantly with our free BMI calculator. Supports metric and imperial units. Check if you're underweight, normal, overweight, or obese. Fast, accurate, and easy to use.",
   keywords: [
@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     "weight category"
   ],
   openGraph: {
-    title: "Free BMI Calculator - Calculate Body Mass Index | ToolifyHub",
+    title: "Free BMI Calculator - Calculate Body Mass Index | FastTools",
     description: "Calculate your Body Mass Index (BMI) with our free online calculator. Supports metric and imperial units.",
     type: "website",
-    url: "https://toolifyhub.com/tools/bmi-calculator",
+    url: "https://fasttools.store/tools/bmi-calculator",
   },
   twitter: {
     card: "summary_large_image",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     description: "Calculate your Body Mass Index (BMI) with our free online calculator.",
   },
   alternates: {
-    canonical: "https://toolifyhub.com/tools/bmi-calculator",
+    canonical: "https://fasttools.store/tools/bmi-calculator",
   },
 }
 
@@ -62,19 +62,19 @@ export default function BMICalculatorPage() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://toolifyhub.com"
+          item: "https://fasttools.store"
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Tools",
-          item: "https://toolifyhub.com/tools"
+          item: "https://fasttools.store/tools"
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "BMI Calculator",
-          item: "https://toolifyhub.com/tools/bmi-calculator"
+          item: "https://fasttools.store/tools/bmi-calculator"
         }
       ]
     }

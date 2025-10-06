@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AiPetNameGenerator } from "@/components/ai-pet-name-generator"
 
 export const metadata: Metadata = {
-  title: "AI Pet Name Generator - Find Perfect Pet Names | ToolifyHub",
+  title: "AI Pet Name Generator - Find Perfect Pet Names | FastTools",
   description:
     "Generate creative and unique pet names with AI. Find the perfect name for your dog, cat, or any pet based on personality.",
   keywords: "pet names, dog names, cat names, pet name generator, AI pet names, unique pet names",

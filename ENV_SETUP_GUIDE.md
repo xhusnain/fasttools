@@ -1,6 +1,6 @@
 # Environment Variables Setup Guide
 
-This guide will help you set up all the necessary API keys and configurations for ToolifyHub.
+This guide will help you set up all the necessary API keys and configurations for fasttools.store.
 
 ## Quick Start
 
@@ -83,7 +83,7 @@ This guide will help you set up all the necessary API keys and configurations fo
 
 ### Site Configuration
 - `NEXT_PUBLIC_SITE_URL`: Your website URL (use `http://localhost:3000` for development)
-- `NEXT_PUBLIC_SITE_NAME`: Your site name (ToolifyHub)
+- `NEXT_PUBLIC_SITE_NAME`: Your site name (fasttools.store)
 
 ### AI Configuration
 - `OPENAI_API_KEY`: OpenAI API key for AI-powered tools
@@ -152,4 +152,4 @@ When deploying to Vercel:
 If you need help setting up environment variables:
 1. Check the [Next.js Environment Variables docs](https://nextjs.org/docs/basic-features/environment-variables)
 2. Review API provider documentation
-3. Contact support at your-email@toolifyhub.com
+3. Contact support at your-email@fasttools.store

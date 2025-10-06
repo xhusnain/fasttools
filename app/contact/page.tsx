@@ -8,8 +8,8 @@ import { Mail, MessageSquare } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Contact ToolifyHub - Get in Touch | Free Online Tools Support",
-  description: "Contact ToolifyHub for support, feedback, or questions about our free online tools including age calculator, BMI calculator, loan calculator, and more. We'd love to hear from you.",
+  title: "Contact FastTools - Get in Touch | Free Online Tools Support",
+  description: "Contact fasttools.store for support, feedback, or questions about our free online tools including age calculator, BMI calculator, loan calculator, and more. We'd love to hear from you.",
   keywords: [
     "contact toolifyhub",
     "support",
@@ -21,18 +21,18 @@ export const metadata: Metadata = {
     "calculator support"
   ],
   openGraph: {
-    title: "Contact ToolifyHub - Get in Touch",
-    description: "Contact ToolifyHub for support, feedback, or questions about our free online tools.",
+    title: "Contact FastTools - Get in Touch",
+    description: "Contact fasttools.store for support, feedback, or questions about our free online tools.",
     type: "website",
-    url: "https://toolifyhub.com/contact",
+    url: "https://fasttools.store/contact",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact ToolifyHub - Get in Touch",
-    description: "Contact ToolifyHub for support, feedback, or questions about our free online tools.",
+    title: "Contact FastTools - Get in Touch",
+    description: "Contact fasttools.store for support, feedback, or questions about our free online tools.",
   },
   alternates: {
-    canonical: "https://toolifyhub.com/contact",
+    canonical: "https://fasttools.store/contact",
   },
 }
 
@@ -40,16 +40,16 @@ export default function ContactPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: "Contact ToolifyHub",
-    description: "Contact ToolifyHub for support, feedback, or questions about our free online tools.",
-    url: "https://toolifyhub.com/contact",
+    name: "Contact fasttools.store",
+    description: "Contact fasttools.store for support, feedback, or questions about our free online tools.",
+    url: "https://fasttools.store/contact",
     mainEntity: {
       "@type": "Organization",
-      name: "ToolifyHub",
+      name: "fasttools.store",
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer service",
-        email: "hello@toolifyhub.com",
+        email: "hello@fasttools.store",
         availableLanguage: "English",
         areaServed: "Worldwide"
       }
@@ -61,13 +61,13 @@ export default function ContactPage() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://toolifyhub.com"
+          item: "https://fasttools.store"
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Contact",
-          item: "https://toolifyhub.com/contact"
+          item: "https://fasttools.store/contact"
         }
       ]
     }
@@ -142,8 +142,8 @@ export default function ContactPage() {
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Prefer email? Send us a message directly at:
                 </p>
-                <a href="mailto:hello@toolifyhub.com" className="text-primary hover:underline font-medium">
-                  hello@toolifyhub.com
+                <a href="mailto:hello@fasttools.store" className="text-primary hover:underline font-medium">
+                  hello@fasttools.store
                 </a>
               </CardContent>
             </Card>

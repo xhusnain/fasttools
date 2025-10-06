@@ -29,17 +29,17 @@ import {
   Code,
   Search,
   Settings,
+  Download,
 } from "lucide-react"
 import { AdSpace } from "@/components/ad-space"
-import { FAQSection } from "@/components/faq-section"
 
 export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "SmartToolBoxes - Free Online Tools for Everyone",
-    description: "SmartToolBoxes offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
-    url: "https://smarttoolboxes.com",
+    name: "FastTools - Free Online Tools for Everyone",
+    description: "fasttools.store offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
+    url: "https://fasttools.store",
     mainEntity: {
       "@type": "ItemList",
       name: "Free Online Tools",
@@ -51,21 +51,21 @@ export default function HomePage() {
           position: 1,
           name: "Text Case Converter",
           description: "Convert text between different cases (uppercase, lowercase, title case)",
-          url: "https://smarttoolboxes.com/converters/text-case"
+          url: "https://fasttools.store/converters/text-case"
         },
         {
           "@type": "ListItem", 
           position: 2,
           name: "Image to Text (OCR)",
           description: "Extract text from images using optical character recognition",
-          url: "https://smarttoolboxes.com/image-tools/image-to-text"
+          url: "https://fasttools.store/image-tools/image-to-text"
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "QR Code Generator", 
           description: "Generate QR codes for URLs, text, and contact information",
-          url: "https://smarttoolboxes.com/ai-tools/qr-generator"
+          url: "https://fasttools.store/ai-tools/qr-generator"
         }
       ]
     },
@@ -76,7 +76,7 @@ export default function HomePage() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://smarttoolboxes.com"
+          item: "https://fasttools.store"
         }
       ]
     }
@@ -223,7 +223,340 @@ export default function HomePage() {
       href: "/image-tools/background-blur",
       popular: false,
     },
+    // Tools (General calculators)
+    {
+      title: "Age Calculator",
+      description: "Calculate your exact age in years, months, days.",
+      icon: Calendar,
+      href: "/tools/age-calculator",
+      popular: false,
+    },
+    {
+      title: "BMI Calculator",
+      description: "Compute Body Mass Index from height and weight.",
+      icon: Activity,
+      href: "/tools/bmi-calculator",
+      popular: false,
+    },
+    {
+      title: "Loan Calculator",
+      description: "Estimate monthly loan payments and total interest.",
+      icon: DollarSign,
+      href: "/tools/loan-calculator",
+      popular: false,
+    },
+    {
+      title: "Tax Calculator",
+      description: "Calculate taxes and after-tax amounts.",
+      icon: Percent,
+      href: "/tools/tax-calculator",
+      popular: false,
+    },
+    {
+      title: "Percentage Calculator",
+      description: "Find percentage increase, decrease, and parts.",
+      icon: Percent,
+      href: "/tools/percentage-calculator",
+      popular: false,
+    },
+    {
+      title: "Date Difference",
+      description: "Compute days between two dates.",
+      icon: Calendar,
+      href: "/tools/date-difference",
+      popular: false,
+    },
+    {
+      title: "Time Duration",
+      description: "Calculate duration between times.",
+      icon: Clock,
+      href: "/tools/time-duration",
+      popular: false,
+    },
+    {
+      title: "Compound Interest",
+      description: "Project investment growth with compounding.",
+      icon: TrendingUp,
+      href: "/tools/compound-interest",
+      popular: false,
+    },
+    // Date & Time tools (category pages already exist but show here too)
+    {
+      title: "Age in Hours",
+      description: "Convert your age to total hours lived.",
+      icon: Clock,
+      href: "/date-time-tools/age-in-hours",
+      popular: false,
+    },
+    {
+      title: "Date to Day Finder",
+      description: "Find the weekday for any given date.",
+      icon: Calendar,
+      href: "/date-time-tools/date-to-day",
+      popular: false,
+    },
+    {
+      title: "Workday Calculator",
+      description: "Calculate business days between dates.",
+      icon: Calendar,
+      href: "/date-time-tools/workday-calculator",
+      popular: false,
+    },
+    {
+      title: "Year End Countdown",
+      description: "Countdown to the end of the year.",
+      icon: Calendar,
+      href: "/date-time-tools/year-end-countdown",
+      popular: false,
+    },
+    {
+      title: "Zodiac Sign Finder",
+      description: "Find your zodiac sign by date of birth.",
+      icon: Star,
+      href: "/date-time-tools/zodiac-sign",
+      popular: false,
+    },
+    // Dev tools
+    {
+      title: "Color Palette Generator",
+      description: "Generate harmonious color palettes.",
+      icon: Palette,
+      href: "/dev-tools/color-palette",
+      popular: false,
+    },
+    {
+      title: "Hex to RGB",
+      description: "Convert HEX colors to RGB values.",
+      icon: Code,
+      href: "/dev-tools/hex-to-rgb",
+      popular: false,
+    },
+    {
+      title: "HTML Beautifier",
+      description: "Format and prettify HTML code.",
+      icon: Code,
+      href: "/dev-tools/html-beautifier",
+      popular: false,
+    },
+    {
+      title: "HTML to Markdown",
+      description: "Convert HTML content into Markdown.",
+      icon: FileText,
+      href: "/dev-tools/html-to-markdown",
+      popular: false,
+    },
+    {
+      title: "JSON to CSV",
+      description: "Transform JSON data into CSV format.",
+      icon: FileText,
+      href: "/dev-tools/json-to-csv",
+      popular: false,
+    },
+    {
+      title: "JWT Decoder",
+      description: "Decode and inspect JWT tokens.",
+      icon: Shield,
+      href: "/dev-tools/jwt-decoder",
+      popular: false,
+    },
+    {
+      title: "Markdown Previewer",
+      description: "Write and preview Markdown instantly.",
+      icon: FileText,
+      href: "/dev-tools/markdown-previewer",
+      popular: false,
+    },
+    {
+      title: "Regex Tester",
+      description: "Test and debug regular expressions.",
+      icon: Code,
+      href: "/dev-tools/regex-tester",
+      popular: false,
+    },
+    // Finance tools
+    {
+      title: "Invoice Generator",
+      description: "Create simple invoices online.",
+      icon: Wallet,
+      href: "/finance-tools/invoice-generator",
+      popular: false,
+    },
+    {
+      title: "PayPal Fee Calculator",
+      description: "Calculate PayPal fees and net received.",
+      icon: DollarSign,
+      href: "/finance-tools/paypal-fee",
+      popular: false,
+    },
+    {
+      title: "Discount Calculator",
+      description: "Compute discounts and final prices.",
+      icon: Percent,
+      href: "/finance-tools/discount-calculator",
+      popular: false,
+    },
+    {
+      title: "Tip Calculator",
+      description: "Split bills and calculate tips easily.",
+      icon: DollarSign,
+      href: "/finance-tools/tip-calculator",
+      popular: false,
+    },
+    {
+      title: "Savings Tracker",
+      description: "Plan and track savings goals.",
+      icon: Wallet,
+      href: "/finance-tools/savings-tracker",
+      popular: false,
+    },
+    {
+      title: "Retirement Planner",
+      description: "Estimate retirement savings needs.",
+      icon: TrendingUp,
+      href: "/finance-tools/retirement-planner",
+      popular: false,
+    },
+    {
+      title: "Bill Splitter",
+      description: "Split shared bills fairly.",
+      icon: Users,
+      href: "/finance-tools/bill-splitter",
+      popular: false,
+    },
+    {
+      title: "Credit Card Payoff",
+      description: "Plan credit card payoff timelines.",
+      icon: DollarSign,
+      href: "/finance-tools/credit-card-payoff",
+      popular: false,
+    },
+    // Fun tools
+    {
+      title: "Future Age",
+      description: "Find your age on a future date.",
+      icon: Calendar,
+      href: "/fun-tools/future-age",
+      popular: false,
+    },
+    {
+      title: "Love Calculator",
+      description: "Have fun with a playful love score.",
+      icon: Heart,
+      href: "/fun-tools/love-calculator",
+      popular: false,
+    },
+    {
+      title: "Hashtag Counter",
+      description: "Count hashtags in your text.",
+      icon: Hash,
+      href: "/fun-tools/hashtag-counter",
+      popular: false,
+    },
+    {
+      title: "Birthday Countdown",
+      description: "Countdown to your next birthday.",
+      icon: Calendar,
+      href: "/fun-tools/birthday-countdown",
+      popular: false,
+    },
+    {
+      title: "Anniversary Calculator",
+      description: "Track and celebrate anniversaries.",
+      icon: Heart,
+      href: "/fun-tools/anniversary",
+      popular: false,
+    },
+    // Image Tools extended
+    {
+      title: "PDF Tools",
+      description: "Basic PDF utilities online.",
+      icon: FileText,
+      href: "/image-tools/pdf-tools",
+      popular: false,
+    },
+    {
+      title: "PDF Unlocker",
+      description: "Remove passwords from PDFs you own.",
+      icon: FileText,
+      href: "/image-tools/pdf-unlocker",
+      popular: false,
+    },
+    {
+      title: "Screenshot to Text",
+      description: "Extract text from screenshots.",
+      icon: Image,
+      href: "/image-tools/screenshot-to-text",
+      popular: false,
+    },
+    // Social Media tools
+    {
+      title: "YouTube Thumbnail Downloader",
+      description: "Download thumbnails from YouTube videos.",
+      icon: Image,
+      href: "/social-media-tools/youtube-thumbnail",
+      popular: false,
+    },
+    {
+      title: "Instagram DP Viewer",
+      description: "View and download Instagram profile photos.",
+      icon: Image,
+      href: "/social-media-tools/instagram-dp",
+      popular: false,
+    },
+    {
+      title: "TikTok Downloader",
+      description: "Download TikTok videos without watermark.",
+      icon: Download,
+      href: "/social-media-tools/tiktok-downloader",
+      popular: false,
+    },
+    {
+      title: "YouTube Tag Extractor",
+      description: "Extract tags from YouTube videos.",
+      icon: Hash,
+      href: "/social-media-tools/youtube-tags",
+      popular: false,
+    },
+    {
+      title: "Link in Bio Generator",
+      description: "Build a simple bio link page.",
+      icon: Globe,
+      href: "/social-media-tools/link-in-bio",
+      popular: false,
+    },
+    {
+      title: "YouTube Channel Checker",
+      description: "Check basic info about YouTube channels.",
+      icon: Search,
+      href: "/social-media-tools/channel-checker",
+      popular: false,
+    },
   ]
+
+  // Colorful gradients for tool icons to improve visual variety
+  const iconGradients = [
+    "from-orange-500 to-amber-400",
+    "from-blue-500 to-cyan-400",
+    "from-emerald-500 to-teal-400",
+    "from-violet-500 to-fuchsia-400",
+    "from-rose-500 to-pink-400",
+    "from-indigo-500 to-sky-400",
+    "from-lime-500 to-green-400",
+    "from-slate-500 to-zinc-400",
+  ]
+
+  const categorizedTools: Record<string, typeof tools> = {
+    "Converters": tools.filter((t) => t.href.startsWith("/converters")),
+    "AI Tools": tools.filter((t) => t.href.startsWith("/ai-tools")),
+    "SEO Tools": tools.filter((t) => t.href.startsWith("/seo-tools")),
+    "Image Tools": tools.filter((t) => t.href.startsWith("/image-tools")),
+    "Dev Tools": tools.filter((t) => t.href.startsWith("/dev-tools")),
+    "Finance Tools": tools.filter((t) => t.href.startsWith("/finance-tools")),
+    "Fun Tools": tools.filter((t) => t.href.startsWith("/fun-tools")),
+    "Date & Time Tools": tools.filter((t) => t.href.startsWith("/date-time-tools") || t.href.startsWith("/tools/age") || t.href.startsWith("/tools/time")),
+    "General Calculators": tools.filter((t) => t.href.startsWith("/tools/") && !t.href.includes("age") && !t.href.includes("time")),
+    "Social Media Tools": tools.filter((t) => t.href.startsWith("/social-media-tools")),
+  }
 
   return (
     <>
@@ -241,7 +574,7 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance leading-[1.1] text-foreground animate-fade-in-up tracking-tight">
-            SmartToolBoxes - Your Digital Toolkit
+          FastTools - Your Digital Toolkit
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-100">
@@ -316,277 +649,99 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="bg-muted/30 py-16 md:py-20">
+      {/* Intro feature cards removed to streamline homepage */}
+
+      {/* "Why Choose" section removed per request */}
+
+      {/* Public Tools section removed per request */}
+
+      {/* All Tools Section with side ad spaces on large screens */}
+      <section className="bg-muted/30 py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <Card className="border border-border shadow-sm hover:shadow-md transition-all hover:-translate-y-1 animate-scale-in">
-              <CardHeader>
-                <div className="h-12 w-12 rounded-lg bg-primary flex items-center justify-center mb-4 shadow-sm">
-                  <Zap className="h-6 w-6 text-primary-foreground" />
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-8 animate-fade-in-up">
+              <h2 className="text-2xl md:text-3xl font-bold mb-2 text-foreground">All Tools</h2>
+              <p className="text-sm md:text-base text-muted-foreground text-pretty">Browse our full collection of free online tools and utilities</p>
+            </div>
+
+            <div className="hidden lg:grid grid-cols-12 gap-8 xl:gap-10">
+              <div className="col-span-2">
+                <AdSpace slot="sidebar" className="h-[600px] w-full border border-border rounded-lg" />
+              </div>
+              <div className="col-span-8">
+                <div className="space-y-10">
+                  {Object.entries(categorizedTools).map(([category, toolList], catIdx) => (
+                    <div key={category} className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-lg md:text-xl font-semibold text-foreground">{category}</h3>
+              </div>
+                      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 xl:gap-10">
+                        {toolList.map((tool, index) => (
+                          <Card
+                            key={tool.href}
+                            className="border border-border hover:shadow-md transition-all hover:-translate-y-0.5 animate-fade-in-up"
+                            style={{ animationDelay: `${index * 25}ms` }}
+                          >
+                            <CardHeader className="p-4">
+                              <div className="flex items-start justify-between gap-3">
+                                <div className={`h-10 w-10 rounded-md bg-gradient-to-br shadow-sm flex items-center justify-center text-white ${iconGradients[(catIdx + index) % iconGradients.length]}`}>
+                                  <tool.icon className="h-5 w-5" />
+            </div>
+                                {tool.popular && (
+                                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-secondary/10 text-secondary flex items-center gap-1 border border-secondary/20">
+                                    <Star className="h-3 w-3 fill-current" />
+                                    Popular
+                                  </span>
+                                )}
                 </div>
-                <CardTitle className="text-lg text-foreground">Lightning Fast</CardTitle>
-                <CardDescription className="leading-relaxed text-sm text-muted-foreground">
-                  Get instant results with our optimized calculation tools. No waiting, no delays, just accurate
-                  results.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="border border-border shadow-sm hover:shadow-md transition-all hover:-translate-y-1 animate-scale-in animation-delay-100">
-              <CardHeader>
-                <div className="h-12 w-12 rounded-lg bg-secondary flex items-center justify-center mb-4 shadow-sm">
-                  <Shield className="h-6 w-6 text-secondary-foreground" />
-                </div>
-                <CardTitle className="text-lg text-foreground">100% Free</CardTitle>
-                <CardDescription className="leading-relaxed text-sm text-muted-foreground">
-                  All calculation tools are completely free to use. No hidden fees, no subscriptions, no registration
-                  required.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="border border-border shadow-sm hover:shadow-md transition-all hover:-translate-y-1 animate-scale-in animation-delay-200">
-              <CardHeader>
-                <div className="h-12 w-12 rounded-lg bg-primary flex items-center justify-center mb-4 shadow-sm">
-                  <Clock className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <CardTitle className="text-lg text-foreground">Always Available</CardTitle>
-                <CardDescription className="leading-relaxed text-sm text-muted-foreground">
-                  Access our online tools anytime, anywhere, from any device. Mobile-friendly and responsive design.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="container mx-auto px-4 py-16 md:py-20">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12 animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Why Choose Our Tools?</h2>
-            <p className="text-base text-muted-foreground text-pretty max-w-2xl mx-auto">
-              We're committed to providing the best free online calculation tools with accuracy, speed, and ease of use.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex gap-4 animate-slide-in-left">
-              <div className="flex-shrink-0">
-                <div className="h-12 w-12 rounded-lg bg-accent flex items-center justify-center mb-4 shadow-sm">
-                  <Target className="h-6 w-6 text-primary" />
+                              <CardTitle className="text-base text-foreground line-clamp-1">{tool.title}</CardTitle>
+                              <CardDescription className="text-xs text-muted-foreground line-clamp-2">{tool.description}</CardDescription>
+                            </CardHeader>
+                            <CardContent className="pt-0 px-4 pb-4">
+                              <Button asChild className="w-full h-9 text-xs font-medium shadow-sm">
+                                <Link href={tool.href}>
+                                  Use Tool
+                                  <ArrowRight className="ml-2 h-4 w-4" />
+                                </Link>
+                              </Button>
+                            </CardContent>
+                          </Card>
+                        ))}
+              </div>
+            </div>
+                  ))}
                 </div>
               </div>
-              <div>
-                <h3 className="text-lg font-bold mb-2 text-foreground">Accurate Calculations</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Our calculators use precise algorithms to ensure 100% accurate results every time. Perfect for
-                  financial planning, health tracking, and official documents.
-                </p>
+              <div className="col-span-2">
+                <AdSpace slot="sidebar" className="h-[600px] w-full border border-border rounded-lg" />
               </div>
             </div>
 
-            <div className="flex gap-4 animate-slide-in-right">
-              <div className="flex-shrink-0">
-                <div className="h-12 w-12 rounded-lg bg-accent flex items-center justify-center mb-4 shadow-sm">
-                  <Users className="h-6 w-6 text-primary" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold mb-2 text-foreground">User-Friendly Interface</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Simple, intuitive design that anyone can use. No technical knowledge required. Just input your data
-                  and get instant results.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 animate-slide-in-left animation-delay-100">
-              <div className="flex-shrink-0">
-                <div className="h-12 w-12 rounded-lg bg-accent flex items-center justify-center mb-4 shadow-sm">
-                  <TrendingUp className="h-6 w-6 text-primary" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold mb-2 text-foreground">SEO Optimized</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  All our tools are built with SEO best practices, ensuring fast loading times, mobile responsiveness,
-                  and excellent search engine rankings.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 animate-slide-in-right animation-delay-100">
-              <div className="flex-shrink-0">
-                <div className="h-12 w-12 rounded-lg bg-accent flex items-center justify-center mb-4 shadow-sm">
-                  <CheckCircle2 className="h-6 w-6 text-primary" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold mb-2 text-foreground">No Registration Needed</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Start using our tools immediately without creating an account. Your privacy is important to us, and we
-                  don't collect unnecessary data.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Public Tools Section */}
-      <section className="container mx-auto px-4 py-16 md:py-20">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2A5A8A]/10 text-[#2A5A8A] text-sm font-medium mb-4 border border-[#2A5A8A]/20">
-              <Shield className="h-4 w-4" />
-              <span>100% Free & Public</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Public Tools for Everyone</h2>
-            <p className="text-base text-muted-foreground text-pretty max-w-2xl mx-auto">
-              Our commitment to providing free, accessible tools for everyone. No registration, no hidden costs, just
-              powerful calculators at your fingertips.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <Card className="border border-border shadow-sm hover:shadow-md transition-all animate-slide-in-left">
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20">
-                    <Users className="h-5 w-5 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl text-foreground">Open Access</CardTitle>
-                </div>
-                <CardDescription className="leading-relaxed text-sm text-muted-foreground">
-                  All our tools are publicly available without any barriers. No sign-up required, no email verification,
-                  no payment walls. Just visit and start calculating immediately.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="border border-border shadow-sm hover:shadow-md transition-all animate-slide-in-right">
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="h-10 w-10 rounded-lg bg-secondary/10 flex items-center justify-center border border-secondary/20">
-                    <Shield className="h-5 w-5 text-secondary" />
-                  </div>
-                  <CardTitle className="text-xl text-foreground">Privacy First</CardTitle>
-                </div>
-                <CardDescription className="leading-relaxed text-sm text-muted-foreground">
-                  Your data stays private. All calculations happen in your browser, and we don't store or track your
-                  personal information. Use our tools with complete peace of mind.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="border border-border shadow-sm hover:shadow-md transition-all animate-slide-in-left animation-delay-100">
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20">
-                    <Zap className="h-5 w-5 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl text-foreground">Always Free</CardTitle>
-                </div>
-                <CardDescription className="leading-relaxed text-sm text-muted-foreground">
-                  We believe essential tools should be free for everyone. No premium tiers, no feature limitations, no
-                  trial periods. Every feature is available to every user, forever.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="border border-border shadow-sm hover:shadow-md transition-all animate-slide-in-right animation-delay-100">
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="h-10 w-10 rounded-lg bg-secondary/10 flex items-center justify-center border border-secondary/20">
-                    <Target className="h-5 w-5 text-secondary" />
-                  </div>
-                  <CardTitle className="text-xl text-foreground">Community Driven</CardTitle>
-                </div>
-                <CardDescription className="leading-relaxed text-sm text-muted-foreground">
-                  Built for the community, by the community. We continuously add new tools based on user feedback and
-                  real-world needs. Your suggestions help us grow.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-
-          <div className="bg-gradient-to-br from-[#FF6500]/5 via-[#2A5A8A]/5 to-accent/10 rounded-2xl p-8 md:p-12 border border-[#FF6500]/10 animate-scale-in animation-delay-200">
-            <div className="max-w-3xl mx-auto text-center space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm text-sm font-medium border border-border">
-                <Sparkles className="h-4 w-4 text-[#FF6500]" />
-                <span className="text-foreground">Trusted by Thousands Daily</span>
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground">Join Our Growing Community</h3>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                Thousands of people use our public tools every day for personal finance, health tracking, project
-                planning, and more. Be part of a community that values accessibility, accuracy, and simplicity.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-                <Button
-                  asChild
-                  size="lg"
-                  className="w-full sm:w-auto h-11 text-sm font-medium shadow-md hover:shadow-lg transition-all"
-                >
-                  <Link href="/tools">
-                    Explore All Tools
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto h-11 text-sm font-medium hover:bg-accent transition-all bg-background/80 backdrop-blur-sm"
-                >
-                  <Link href="/tools/age-calculator">Start Calculating</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Tools Section */}
-      <section className="bg-muted/30 py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12 animate-fade-in-up">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Our 20 Main Tools</h2>
-              <p className="text-base text-muted-foreground text-pretty">
-                Choose from our collection of free online tools and utilities
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {tools.map((tool, index) => (
-                <Card
-                  key={tool.href}
-                  className="border border-border hover:shadow-lg transition-all hover:-translate-y-1 animate-fade-in-up"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div className="h-12 w-12 rounded-lg bg-primary/5 flex items-center justify-center border border-primary/10">
-                        <tool.icon className="h-6 w-6 text-primary" />
+            {/* Fallback layout for small screens */}
+            <div className="grid lg:hidden gap-8">
+              {Object.entries(categorizedTools).map(([category, toolList], catIdx) => (
+                <div key={category} className="space-y-3">
+                  <h3 className="text-base font-semibold text-foreground">{category}</h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
+                    {toolList.map((tool, index) => (
+                      <Card key={tool.href} className="border border-border hover:shadow-md transition-all" style={{ animationDelay: `${index * 25}ms` }}>
+                        <CardHeader className="p-4">
+                          <div className="flex items-start justify-between gap-3">
+                            <div className={`h-10 w-10 rounded-md bg-gradient-to-br shadow-sm flex items-center justify-center text-white ${iconGradients[(catIdx + index) % iconGradients.length]}`}>
+                              <tool.icon className="h-5 w-5" />
                       </div>
                       {tool.popular && (
-                        <span className="text-xs font-medium px-3 py-1 rounded-full bg-secondary/10 text-secondary flex items-center gap-1 border border-secondary/20">
+                              <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-secondary/10 text-secondary flex items-center gap-1 border border-secondary/20">
                           <Star className="h-3 w-3 fill-current" />
                           Popular
                         </span>
                       )}
                     </div>
-                    <CardTitle className="text-lg text-foreground">{tool.title}</CardTitle>
-                    <CardDescription className="leading-relaxed text-sm text-muted-foreground">
-                      {tool.description}
-                    </CardDescription>
+                          <CardTitle className="text-base text-foreground line-clamp-1">{tool.title}</CardTitle>
+                          <CardDescription className="text-xs text-muted-foreground line-clamp-2">{tool.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <Button
-                      asChild
-                      className="w-full h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all"
-                    >
+                        <CardContent className="pt-0 px-4 pb-4">
+                          <Button asChild className="w-full h-9 text-xs font-medium shadow-sm">
                       <Link href={tool.href}>
                         Use Tool
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -597,47 +752,19 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+              ))}
+        </div>
+          </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="container mx-auto px-4 py-16 md:py-20">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12 animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Frequently Asked Questions</h2>
-            <p className="text-base text-muted-foreground text-pretty">
-              Find answers to common questions about our free online calculation tools
-            </p>
-          </div>
-          <FAQSection />
-        </div>
-      </section>
+      {/* FAQ moved to dedicated /faq page for SEO and clarity */}
 
       <section className="container mx-auto px-4 py-8">
-        <AdSpace slot="footer" className="max-w-6xl mx-auto" />
+        <AdSpace slot="content" className="max-w-6xl mx-auto" />
       </section>
 
-      <section className="bg-primary py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground">Ready to Get Started?</h2>
-            <p className="text-base text-primary-foreground/90 text-pretty">
-              Try our free tools now and discover how easy it is to get results in seconds.
-            </p>
-            <Button
-              asChild
-              size="lg"
-              variant="secondary"
-              className="h-11 text-sm font-medium shadow-lg hover:shadow-xl transition-all bg-background text-primary hover:bg-background/90"
-            >
-              <Link href="/tools">
-                Browse All Tools
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* CTA removed for cleaner UX; reserved space for ads handled globally in layout */}
       </div>
     </>
   )

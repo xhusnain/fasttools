@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Credit Card Payoff Calculator - Calculate Debt Payoff Timeline | ToolifyHub",
+  title: "Credit Card Payoff Calculator - Calculate Debt Payoff Timeline | FastTools",
   description:
     "Free credit card payoff calculator. Calculate how long it will take to pay off your credit card debt and how much interest you'll pay. Plan your debt-free journey.",
   keywords:

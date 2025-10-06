@@ -6,7 +6,7 @@ import { FileText, Beer as Blur, Crop, FileStack, Unlock, Monitor, ArrowRight } 
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
 export const metadata: Metadata = {
-  title: "Image & File Tools - Free Online Image Editor & PDF Tools | ToolifyHub",
+  title: "Image & File Tools - Free Online Image Editor & PDF Tools | FastTools",
   description:
     "Free online image and file utility tools including OCR converter, background blur, image cropper, PDF splitter, PDF merger, and PDF unlocker. Fast, secure, and easy to use.",
   keywords:

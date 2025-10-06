@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Currency Converter - USD, EUR, GBP, INR & More | ToolifyHub",
+  title: "Currency Converter - USD, EUR, GBP, INR & More | FastTools",
   description:
     "Free online currency converter. Convert between major world currencies including USD, EUR, GBP, JPY, INR, and more.",
   keywords: "currency converter, exchange rate, USD to EUR, money converter, forex converter, currency exchange",

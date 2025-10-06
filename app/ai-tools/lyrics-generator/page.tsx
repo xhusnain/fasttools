@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AiLyricsGenerator } from "@/components/ai-lyrics-generator"
 
 export const metadata: Metadata = {
-  title: "AI Song Lyrics Generator - Create Original Lyrics | ToolifyHub",
+  title: "AI Song Lyrics Generator - Create Original Lyrics | FastTools",
   description:
     "Generate creative song lyrics with AI for any theme, genre, or mood. Perfect for songwriters and music creators.",
   keywords: "lyrics generator, AI lyrics, song writing, music lyrics, songwriting tool, creative writing",

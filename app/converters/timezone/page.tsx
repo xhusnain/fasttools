@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Time Zone Converter - Convert Time Between Time Zones | ToolifyHub",
+  title: "Time Zone Converter - Convert Time Between Time Zones | FastTools",
   description:
     "Free online time zone converter. Convert time between different time zones worldwide. Perfect for scheduling international meetings.",
   keywords: "timezone converter, time zone converter, world clock, time converter, international time, UTC converter",

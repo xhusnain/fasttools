@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Sparkles, QrCode, Music, ImageIcon, Heart, Hash } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "AI Tools - Free AI-Powered Generators | ToolifyHub",
+  title: "AI Tools - Free AI-Powered Generators | FastTools",
   description:
     "Discover free AI-powered tools including meme generator, QR art generator, song lyrics generator, image caption generator, pet name generator, and hashtag suggester.",
   keywords:

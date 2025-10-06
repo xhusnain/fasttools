@@ -2,8 +2,8 @@
 
 export const env = {
   // Site Configuration
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
-  siteName: process.env.NEXT_PUBLIC_SITE_NAME || "ToolifyHub",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://fasttools.store",
+  siteName: process.env.NEXT_PUBLIC_SITE_NAME || "fasttools.store",
 
   // AI Configuration
   openaiApiKey: process.env.OPENAI_API_KEY,

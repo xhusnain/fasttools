@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AiQrGenerator } from "@/components/ai-qr-generator"
 
 export const metadata: Metadata = {
-  title: "AI QR Art Generator - Create Custom QR Codes | ToolifyHub",
+  title: "AI QR Art Generator - Create Custom QR Codes | FastTools",
   description:
     "Generate beautiful, customizable QR codes with artistic styling. Perfect for marketing, business cards, and creative projects.",
   keywords: "QR code generator, QR art, custom QR codes, artistic QR, QR code design",

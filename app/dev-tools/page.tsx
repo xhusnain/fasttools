@@ -5,7 +5,7 @@ import { Code2, FileJson, Palette, Hash, FileCode, Braces } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
 export const metadata: Metadata = {
-  title: "Developer Tools - Free Online Dev Utilities | ToolifyHub",
+  title: "Developer Tools - Free Online Dev Utilities | FastTools",
   description:
     "Free developer tools including JWT decoder, regex tester, JSON to CSV converter, HTML beautifier, color palette generator, and more. Essential utilities for developers.",
   keywords:

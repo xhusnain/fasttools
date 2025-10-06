@@ -4,7 +4,7 @@ import { ZodiacSignFinder } from "@/components/zodiac-sign-finder"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Zodiac Sign Finder - Discover Your Zodiac Sign by Birth Date | ToolifyHub",
+  title: "Zodiac Sign Finder - Discover Your Zodiac Sign by Birth Date | FastTools",
   description:
     "Free online zodiac sign finder. Discover your zodiac sign based on your birth date with detailed traits, element, and characteristics.",
   keywords:

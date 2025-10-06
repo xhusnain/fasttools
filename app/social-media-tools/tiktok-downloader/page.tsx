@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { TiktokDownloader } from "@/components/tiktok-downloader"
 
 export const metadata: Metadata = {
-  title: "TikTok Video Downloader - Download Without Watermark | ToolifyHub",
+  title: "TikTok Video Downloader - Download Without Watermark | FastTools",
   description:
     "Download TikTok videos without watermark. Free TikTok downloader tool for educational purposes. Always respect content creator rights.",
   keywords: "tiktok downloader, download tiktok video, tiktok no watermark, tiktok video download, save tiktok video",

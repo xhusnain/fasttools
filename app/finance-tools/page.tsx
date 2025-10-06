@@ -16,7 +16,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Finance & Productivity Tools - Free Online Financial Calculators | ToolifyHub",
+  title: "Finance & Productivity Tools - Free Online Financial Calculators | FastTools",
   description:
     "Free finance and productivity tools including invoice generator, PayPal fee calculator, discount calculator, tip calculator, savings tracker, retirement planner, bill splitter, and credit card payoff calculator. Perfect for freelancers, businesses, and personal finance management.",
   keywords:

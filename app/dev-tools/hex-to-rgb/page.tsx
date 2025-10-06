@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { HexToRGB } from "@/components/hex-to-rgb"
 
 export const metadata: Metadata = {
-  title: "Hex to RGB Converter - Convert Hex Colors to RGB | ToolifyHub",
+  title: "Hex to RGB Converter - Convert Hex Colors to RGB | FastTools",
   description:
     "Free online hex to RGB color converter. Convert hexadecimal color codes to RGB format instantly. Perfect for web designers and developers.",
   keywords: "hex to RGB, color converter, hex color converter, RGB converter, color code converter",

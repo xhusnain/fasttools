@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { YoutubeThumbnailDownloader } from "@/components/youtube-thumbnail-downloader"
 
 export const metadata: Metadata = {
-  title: "YouTube Thumbnail Downloader - Download HD Thumbnails | ToolifyHub",
+  title: "YouTube Thumbnail Downloader - Download HD Thumbnails | FastTools",
   description:
     "Download YouTube video thumbnails in all available quality sizes. Get maximum quality (1280x720), high quality, medium, and standard thumbnails instantly.",
   keywords:

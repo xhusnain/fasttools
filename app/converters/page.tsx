@@ -6,13 +6,13 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free Online Converters - Text, Length, Currency & More | ToolifyHub",
+  title: "Free Online Converters - Text, Length, Currency & More | FastTools",
   description:
     "Free online converter tools for text case, length, file size, currency, time zones, and temperature. Fast, accurate, and easy to use conversion tools.",
   keywords:
     "converter tools, text case converter, length converter, file size converter, currency converter, timezone converter, temperature converter, unit converter, online tools",
   openGraph: {
-    title: "Free Online Converters - ToolifyHub",
+    title: "Free Online Converters - FastTools",
     description: "Convert text case, length, file size, currency, time zones, and temperature with our free tools.",
     type: "website",
   },

@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Retirement Goal Planner - Plan Your Retirement Savings | ToolifyHub",
+  title: "Retirement Goal Planner - Plan Your Retirement Savings | FastTools",
   description:
     "Free retirement planner with compound interest calculations. See how your retirement savings will grow over time and plan for a secure financial future.",
   keywords:

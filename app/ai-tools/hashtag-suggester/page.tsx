@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AiHashtagSuggester } from "@/components/ai-hashtag-suggester"
 
 export const metadata: Metadata = {
-  title: "AI Hashtag Suggester - Generate Relevant Hashtags | ToolifyHub",
+  title: "AI Hashtag Suggester - Generate Relevant Hashtags | FastTools",
   description:
     "Generate relevant hashtags for your social media posts with AI. Perfect for Instagram, TikTok, Twitter, and LinkedIn.",
   keywords: "hashtag generator, Instagram hashtags, TikTok hashtags, social media hashtags, AI hashtags",

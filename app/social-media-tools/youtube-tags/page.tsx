@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { YoutubeTagExtractor } from "@/components/youtube-tag-extractor"
 
 export const metadata: Metadata = {
-  title: "YouTube Tag Extractor - Extract Video Tags for SEO | ToolifyHub",
+  title: "YouTube Tag Extractor - Extract Video Tags for SEO | FastTools",
   description:
     "Extract tags from any YouTube video for SEO research and content ideas. Free YouTube tag extractor tool for content creators.",
   keywords: "youtube tag extractor, youtube tags, video tags, youtube seo, extract youtube tags, youtube tag generator",

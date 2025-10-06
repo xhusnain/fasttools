@@ -26,6 +26,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://toolifyhub.com/sitemap.xml",
+    sitemap: "https://fasttools.store/sitemap.xml",
   }
 }

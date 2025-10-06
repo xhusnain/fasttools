@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Instagram Hashtag Counter - Count & Extract Hashtags | ToolifyHub",
+  title: "Instagram Hashtag Counter - Count & Extract Hashtags | FastTools",
   description:
     "Free Instagram Hashtag Counter to count and extract hashtags from your posts. Perfect for social media management and Instagram optimization. Try it now!",
   keywords:

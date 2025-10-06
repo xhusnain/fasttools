@@ -4,7 +4,7 @@ import { WorkdayCalculator } from "@/components/workday-calculator"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Workday Calculator - Calculate Business Days Between Dates | ToolifyHub",
+  title: "Workday Calculator - Calculate Business Days Between Dates | FastTools",
   description:
     "Free online workday calculator. Calculate the number of business days between two dates, excluding weekends. Perfect for project planning and HR.",
   keywords:

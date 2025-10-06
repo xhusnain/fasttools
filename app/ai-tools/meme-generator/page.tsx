@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AiMemeGenerator } from "@/components/ai-meme-generator"
 
 export const metadata: Metadata = {
-  title: "AI Meme Generator - Create Funny Meme Text | ToolifyHub",
+  title: "AI Meme Generator - Create Funny Meme Text | FastTools",
   description:
     "Generate hilarious meme text with AI. Create top and bottom text for any meme template. Perfect for social media content creators.",
   keywords: "meme generator, AI meme, funny memes, meme text, meme creator, social media memes",

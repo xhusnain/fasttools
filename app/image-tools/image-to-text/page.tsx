@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { ImageToText } from "@/components/image-to-text"
 
 export const metadata: Metadata = {
-  title: "Image to Text Converter - Free OCR Tool Online | ToolifyHub",
+  title: "Image to Text Converter - Free OCR Tool Online | FastTools",
   description:
     "Convert images to text instantly with our free OCR tool. Extract text from photos, screenshots, and documents. Supports JPG, PNG, and JPEG formats.",
   keywords:

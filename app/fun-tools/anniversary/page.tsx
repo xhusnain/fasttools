@@ -4,7 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Anniversary Calculator - Calculate Relationship Duration | ToolifyHub",
+  title: "Anniversary Calculator - Calculate Relationship Duration | FastTools",
   description:
     "Free Anniversary Calculator to calculate how long you've been together and when your next anniversary is. Perfect for couples and relationships. Try it now!",
   keywords:

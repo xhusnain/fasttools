@@ -4,7 +4,7 @@ import { AgeInHoursCalculator } from "@/components/age-in-hours-calculator"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Age in Hours Calculator - Calculate Your Age in Hours, Minutes & Seconds | ToolifyHub",
+  title: "Age in Hours Calculator - Calculate Your Age in Hours, Minutes & Seconds | FastTools",
   description:
     "Free online age in hours calculator. Calculate your exact age in hours, minutes, and seconds. Fun and unique way to see how long you've been alive.",
   keywords:

@@ -1,5 +1,5 @@
-# Robots.txt for SmartToolBoxes
-# https://smarttoolboxes.com
+# Robots.txt for fasttools.store
+# https://fasttools.store
 # Last updated: 2024-12-19
 
 # Allow all major search engines
@@ -104,10 +104,10 @@ Allow: /humans.txt
 Allow: /security.txt
 
 # Sitemap location
-Sitemap: https://smarttoolboxes.com/sitemap.xml
+Sitemap: https://fasttools.store/sitemap.xml
 
 # Crawl delay (be respectful to server resources)
 Crawl-delay: 1
 
 # Host directive
-Host: https://smarttoolboxes.com
+Host: https://fasttools.store

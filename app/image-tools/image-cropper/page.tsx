@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { ImageCropper } from "@/components/image-cropper"
 
 export const metadata: Metadata = {
-  title: "Online Image Cropper - Circular & Square Crop Tool | ToolifyHub",
+  title: "Online Image Cropper - Circular & Square Crop Tool | FastTools",
   description:
     "Crop images online for free. Create circular profile pictures or square social media posts. Fast, easy, and no software needed.",
   keywords:

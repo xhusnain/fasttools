@@ -3,8 +3,8 @@
 
 # TEAM
 
-    Developer: SmartToolBoxes Team
-    Contact: hello [at] smarttoolboxes.com
+    Developer: fasttools.store Team
+    Contact: hello [at] fasttools.store
     From: United States
 
 # THANKS
@@ -18,7 +18,7 @@
     Icons: Lucide React
     Analytics: Vercel Analytics
     Hosting: Vercel
-    Domain: smarttoolboxes.com
+    Domain: fasttools.store
 
 # SITE
 

@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { YoutubeChannelChecker } from "@/components/youtube-channel-checker"
 
 export const metadata: Metadata = {
-  title: "YouTube Channel Name Checker - Check Name Availability | ToolifyHub",
+  title: "YouTube Channel Name Checker - Check Name Availability | FastTools",
   description:
     "Check if your desired YouTube channel name is available. Get alternative suggestions if your name is taken. Free YouTube channel name checker.",
   keywords:

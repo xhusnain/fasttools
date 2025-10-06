@@ -4,7 +4,7 @@ import { DateToDayFinder } from "@/components/date-to-day-finder"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Date to Day Finder - Find Day of Week for Any Date | ToolifyHub",
+  title: "Date to Day Finder - Find Day of Week for Any Date | FastTools",
   description:
     "Free online date to day finder. Discover what day of the week any date falls on. Perfect for planning events and exploring historical dates.",
   keywords:
