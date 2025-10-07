@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { ColorPaletteGenerator } from "@/components/color-palette-generator"
+import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
@@ -84,7 +85,17 @@ export default function ColorPalettePage() {
           </p>
         </div>
 
+        {/* Top Content Ad */}
+        <div className="mb-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
+
         <ColorPaletteGenerator />
+        
+        {/* Center Content Ad */}
+        <div className="my-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
 
         <div className="prose prose-sm max-w-none">
           <h2 className="text-2xl font-bold mt-8 mb-4">How to Use</h2>
@@ -98,6 +109,11 @@ export default function ColorPalettePage() {
             <li><Link href="/dev-tools/hex-to-rgb">Hex to RGB</Link></li>
             <li><Link href="/dev-tools/html-beautifier">HTML Beautifier</Link></li>
           </ul>
+        </div>
+
+        {/* Bottom Content Ad */}
+        <div className="mt-8">
+          <AdSpace slot="content" className="w-full h-24" />
         </div>
       </div>
     </div>

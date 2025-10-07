@@ -40,6 +40,11 @@ export default function HashtagGeneratorPage() {
 
           <HashtagGenerator />
 
+          {/* Center Content Ad */}
+          <div className="my-8">
+            <AdSpace slot="content" className="w-full h-24" />
+          </div>
+
           <div className="mt-12 prose prose-sm max-w-none">
             <h2 className="text-2xl font-bold mb-4 text-foreground">Why Use Hashtags?</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -53,6 +58,11 @@ export default function HashtagGeneratorPage() {
               <li>Rotate sets to avoid repetition and improve discoverability over time</li>
               <li>Keep to platform best practices (e.g., 3–5 focused hashtags on Instagram)</li>
             </ul>
+          </div>
+
+          {/* Bottom Content Ad */}
+          <div className="mt-8">
+            <AdSpace slot="content" className="w-full h-24" />
           </div>
         </div>
       </div>

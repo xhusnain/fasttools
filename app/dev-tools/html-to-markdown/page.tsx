@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { HTMLToMarkdown } from "@/components/html-to-markdown"
+import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
@@ -74,7 +75,17 @@ export default function HTMLToMarkdownPage() {
           <p className="text-lg text-muted-foreground text-balance">Convert HTML code to Markdown format instantly</p>
         </div>
 
+        {/* Top Content Ad */}
+        <div className="mb-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
+
         <HTMLToMarkdown />
+        
+        {/* Center Content Ad */}
+        <div className="my-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
 
         <div className="prose prose-sm max-w-none">
           <h2 className="text-2xl font-bold mt-8 mb-4">How to Convert</h2>
@@ -88,6 +99,11 @@ export default function HTMLToMarkdownPage() {
             <li><Link href="/dev-tools/markdown-previewer">Markdown Previewer</Link></li>
             <li><Link href="/dev-tools/html-beautifier">HTML Beautifier</Link></li>
           </ul>
+        </div>
+
+        {/* Bottom Content Ad */}
+        <div className="mt-8">
+          <AdSpace slot="content" className="w-full h-24" />
         </div>
       </div>
     </div>

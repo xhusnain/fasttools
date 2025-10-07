@@ -33,13 +33,28 @@ export default function TaxCalculatorPage() {
           </p>
         </div>
 
+        {/* Top Content Ad */}
+        <div className="mb-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
+
         <div className="grid md:grid-cols-[1fr_300px] gap-6">
           <div>
             <TaxCalculator />
+            
+            {/* Center Content Ad */}
+            <div className="my-8">
+              <AdSpace slot="content" className="w-full h-24" />
+            </div>
           </div>
           <div className="space-y-6">
             <AdSpace slot="sidebar" className="h-96 sticky top-4" />
           </div>
+        </div>
+
+        {/* Bottom Content Ad */}
+        <div className="mt-8">
+          <AdSpace slot="content" className="w-full h-24" />
         </div>
       </div>
     </div>

@@ -76,6 +76,11 @@ export default function AgeCalculatorPage() {
                 <AgeCalculator />
               </div>
 
+              {/* Center Content Ad */}
+              <div className="my-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+
               <div className="mt-12 prose prose-slate max-w-none animate-fade-in-up animation-delay-400">
                 <h2 className="text-2xl font-bold mb-4 text-primary">How to Use the Age Calculator</h2>
                 <p className="text-secondary leading-relaxed mb-4">
@@ -123,6 +128,11 @@ export default function AgeCalculatorPage() {
                   exact date differences. This ensures you get the most accurate age calculation possible, making it
                   reliable for official use and personal records.
                 </p>
+              </div>
+
+              {/* Bottom Content Ad */}
+              <div className="mt-8">
+                <AdSpace slot="content" className="w-full h-24" />
               </div>
             </div>
 

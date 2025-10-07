@@ -204,6 +204,11 @@ export default function MemeGeneratorPage() {
                 <AiMemeGenerator />
               </div>
 
+              {/* Center Content Ad */}
+              <div className="my-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+
               <div className="mt-12 prose prose-slate max-w-none animate-fade-in-up animation-delay-400">
                 <h2 className="text-2xl font-bold mb-4 text-primary">How to Use the AI Meme Generator</h2>
                 <p className="text-secondary leading-relaxed mb-4">
@@ -318,9 +323,14 @@ export default function MemeGeneratorPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-primary">Can I customize the generated meme text?</h3>
-                    <p className="text-secondary">Absolutely! The AI-generated text serves as inspiration. You can edit, modify, and personalize it to match your specific needs and brand voice.</p>
-                  </div>
-                </div>
+                    <p className="text-secondary">Absolutely! The AI-generated text serves as inspiration. You can edit, modify, and personalize it to match your specific needs and brand voice.                </p>
+              </div>
+
+              {/* Bottom Content Ad */}
+              <div className="mt-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+            </div>
 
                 <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Related Tools</h2>
                 <p className="text-secondary leading-relaxed mb-4">

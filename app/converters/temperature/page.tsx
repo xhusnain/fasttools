@@ -144,6 +144,11 @@ export default function TemperatureConverterPage() {
 
               <TemperatureConverter />
 
+              {/* Center Content Ad */}
+              <div className="my-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+
               <div className="mt-12 prose prose-sm max-w-none">
                 <h2 className="text-2xl font-bold mb-4 text-foreground">How to Convert Temperatures</h2>
                 <h3 className="text-xl font-semibold mb-2 text-foreground">1) Enter a Value in °C or °F</h3>
@@ -264,9 +269,14 @@ export default function TemperatureConverterPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-foreground">What's the difference between Celsius and Fahrenheit?</h3>
-                    <p className="text-muted-foreground">Celsius uses water's freezing and boiling points as reference (0°C and 100°C), while Fahrenheit uses different reference points (32°F and 212°F).</p>
-                  </div>
-                </div>
+                    <p className="text-muted-foreground">Celsius uses water's freezing and boiling points as reference (0°C and 100°C), while Fahrenheit uses different reference points (32°F and 212°F).                </p>
+              </div>
+
+              {/* Bottom Content Ad */}
+              <div className="mt-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+            </div>
 
                 <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Tools</h2>
                 <ul className="list-disc pl-5 text-muted-foreground">

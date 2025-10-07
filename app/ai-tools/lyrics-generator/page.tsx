@@ -209,6 +209,11 @@ export default function LyricsGeneratorPage() {
                 <AiLyricsGenerator />
               </div>
 
+              {/* Center Content Ad */}
+              <div className="my-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+
               <div className="mt-12 prose prose-slate max-w-none animate-fade-in-up animation-delay-400">
                 <h2 className="text-2xl font-bold mb-4 text-primary">How to Use the AI Lyrics Generator</h2>
                 <p className="text-secondary leading-relaxed mb-4">
@@ -307,9 +312,14 @@ export default function LyricsGeneratorPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-primary">How original are the AI-generated lyrics?</h3>
-                    <p className="text-secondary">Our AI creates completely original lyrics based on your input. Each generation produces unique content that hasn't been used before.</p>
-                  </div>
-                </div>
+                    <p className="text-secondary">Our AI creates completely original lyrics based on your input. Each generation produces unique content that hasn't been used before.                </p>
+              </div>
+
+              {/* Bottom Content Ad */}
+              <div className="mt-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+            </div>
 
                 <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Related Tools</h2>
                 <p className="text-secondary leading-relaxed mb-4">

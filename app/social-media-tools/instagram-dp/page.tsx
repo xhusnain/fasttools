@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { InstagramDpViewer } from "@/components/instagram-dp-viewer"
+import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
   title: "Instagram DP Viewer - View & Download Profile Pictures in HD | FastTools",
@@ -28,7 +29,18 @@ export default function InstagramDpPage() {
         </p>
       </div>
 
+      {/* Top Content Ad */}
+      <div className="mb-8">
+        <AdSpace slot="content" className="w-full h-24" />
+      </div>
+
       <InstagramDpViewer />
+      
+      {/* Center Content Ad */}
+      <div className="my-8">
+        <AdSpace slot="content" className="w-full h-24" />
+      </div>
+
       <div className="mt-10 prose prose-slate max-w-none dark:prose-invert">
         <h2 className="text-2xl font-semibold text-foreground">When and How to Use This Tool</h2>
         <p className="text-muted-foreground">Use this viewer for public profiles only, and respect user privacy.</p>
@@ -37,6 +49,11 @@ export default function InstagramDpPage() {
           <li>Ensure brand logos are crisp and legible at small sizes</li>
           <li>Avoid reusing content you don’t own without permission</li>
         </ul>
+      </div>
+
+      {/* Bottom Content Ad */}
+      <div className="mt-8">
+        <AdSpace slot="content" className="w-full h-24" />
       </div>
     </div>
   )

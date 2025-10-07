@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { LinkInBioGenerator } from "@/components/link-in-bio-generator"
+import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
   title: "Link in Bio Generator - Create Your Bio Link Page | FastTools",
@@ -29,7 +30,18 @@ export default function LinkInBioPage() {
         </p>
       </div>
 
+      {/* Top Content Ad */}
+      <div className="mb-8">
+        <AdSpace slot="content" className="w-full h-24" />
+      </div>
+
       <LinkInBioGenerator />
+      
+      {/* Center Content Ad */}
+      <div className="my-8">
+        <AdSpace slot="content" className="w-full h-24" />
+      </div>
+
       <div className="mt-10 prose prose-slate max-w-none dark:prose-invert">
         <h2 className="text-2xl font-semibold text-foreground">Tips for a High-Converting Bio Link Page</h2>
         <ul className="list-disc pl-6 text-muted-foreground">
@@ -38,6 +50,11 @@ export default function LinkInBioPage() {
           <li>Add recognizable social icons and consistent brand visuals</li>
           <li>Use UTM parameters to measure performance by source and campaign</li>
         </ul>
+      </div>
+
+      {/* Bottom Content Ad */}
+      <div className="mt-8">
+        <AdSpace slot="content" className="w-full h-24" />
       </div>
     </div>
   )

@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { TiktokDownloader } from "@/components/tiktok-downloader"
+import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
   title: "TikTok Video Downloader - Download Without Watermark | FastTools",
@@ -154,7 +155,18 @@ export default function TiktokDownloaderPage() {
         </p>
       </div>
 
+      {/* Top Content Ad */}
+      <div className="mb-8">
+        <AdSpace slot="content" className="w-full h-24" />
+      </div>
+
       <TiktokDownloader />
+      
+      {/* Center Content Ad */}
+      <div className="my-8">
+        <AdSpace slot="content" className="w-full h-24" />
+      </div>
+
       <div className="mt-12 prose prose-slate max-w-none dark:prose-invert">
         <h2 className="text-2xl font-semibold text-foreground">How to Use the TikTok Video Downloader</h2>
         <ol>
@@ -186,6 +198,11 @@ export default function TiktokDownloaderPage() {
           <a href="/social-media-tools/instagram-dp" className="ml-1">Instagram DP Viewer</a>, and
           <a href="/seo-tools/hashtags" className="ml-1">Hashtag Generator</a> to optimize your social media workflow.
         </p>
+      </div>
+
+      {/* Bottom Content Ad */}
+      <div className="mt-8">
+        <AdSpace slot="content" className="w-full h-24" />
       </div>
     </div>
   )

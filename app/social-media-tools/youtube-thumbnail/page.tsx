@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { YoutubeThumbnailDownloader } from "@/components/youtube-thumbnail-downloader"
+import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
   title: "YouTube Thumbnail Downloader - Download HD Thumbnails | FastTools",
@@ -31,7 +32,18 @@ export default function YoutubeThumbnailPage() {
         </p>
       </div>
 
+      {/* Top Content Ad */}
+      <div className="mb-8">
+        <AdSpace slot="content" className="w-full h-24" />
+      </div>
+
       <YoutubeThumbnailDownloader />
+      
+      {/* Center Content Ad */}
+      <div className="my-8">
+        <AdSpace slot="content" className="w-full h-24" />
+      </div>
+
       <div className="mt-10 prose prose-slate max-w-none dark:prose-invert">
         <h2 className="text-2xl font-semibold text-foreground">Thumbnail Best Practices</h2>
         <ul className="list-disc pl-6 text-muted-foreground">
@@ -40,6 +52,11 @@ export default function YoutubeThumbnailPage() {
           <li>Maintain consistent branding across your channel</li>
           <li>A/B test designs and track CTR in YouTube Analytics</li>
         </ul>
+      </div>
+
+      {/* Bottom Content Ad */}
+      <div className="mt-8">
+        <AdSpace slot="content" className="w-full h-24" />
       </div>
     </div>
   )

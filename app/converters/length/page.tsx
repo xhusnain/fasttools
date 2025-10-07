@@ -369,6 +369,11 @@ export default function LengthConverterPage() {
 
               <LengthConverter />
 
+              {/* Center Content Ad */}
+              <div className="my-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+
               <div className="mt-12 prose prose-sm max-w-none">
                 <h2 className="text-2xl font-bold mb-4 text-foreground">How to Use the Length Converter</h2>
                 <h3 className="text-xl font-semibold mb-2 text-foreground">1) Choose Units and Enter a Value</h3>
@@ -531,9 +536,14 @@ export default function LengthConverterPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-foreground">Can I use this converter for scientific calculations?</h3>
-                    <p className="text-muted-foreground">Yes, our converter provides precise conversions suitable for scientific, engineering, and medical applications.</p>
-                  </div>
-                </div>
+                    <p className="text-muted-foreground">Yes, our converter provides precise conversions suitable for scientific, engineering, and medical applications.                </p>
+              </div>
+
+              {/* Bottom Content Ad */}
+              <div className="mt-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+            </div>
 
                 <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Tools</h2>
                 <ul className="list-disc pl-5 text-muted-foreground">

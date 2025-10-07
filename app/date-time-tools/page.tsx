@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Clock, Calendar, Briefcase, Timer, Sparkles } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/breadcrumbs"
+import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
   title: "Date & Time Tools - Free Online Date and Time Calculators | FastTools",
@@ -71,6 +72,11 @@ export default function DateTimeToolsPage() {
             </p>
           </div>
 
+          {/* Top Content Ad */}
+          <div className="mb-8">
+            <AdSpace slot="content" className="w-full h-24" />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {tools.map((tool) => (
               <Link key={tool.href} href={tool.href} className="group">
@@ -89,6 +95,16 @@ export default function DateTimeToolsPage() {
                 </Card>
               </Link>
             ))}
+          </div>
+
+          {/* Center Content Ad */}
+          <div className="my-8">
+            <AdSpace slot="content" className="w-full h-24" />
+          </div>
+
+          {/* Bottom Content Ad */}
+          <div className="mt-8">
+            <AdSpace slot="content" className="w-full h-24" />
           </div>
         </div>
       </div>

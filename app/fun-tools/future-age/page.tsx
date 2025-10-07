@@ -89,6 +89,11 @@ export default function FutureAgePage() {
 
           <FutureAgePredictor />
 
+          {/* Center Content Ad */}
+          <div className="my-8">
+            <AdSpace slot="content" className="w-full h-24" />
+          </div>
+
           <div className="prose prose-sm max-w-none space-y-6 animate-fade-in-up animation-delay-200">
             <div className="p-6 rounded-lg bg-muted/30 border border-border">
               <h2 className="text-xl font-bold mb-4 text-foreground">About Future Age Predictor</h2>
@@ -111,6 +116,11 @@ export default function FutureAgePage() {
                 <li><Link href="/date-time-tools/date-to-day">Date to Day Finder</Link></li>
               </ul>
             </div>
+          </div>
+
+          {/* Bottom Content Ad */}
+          <div className="mt-8">
+            <AdSpace slot="content" className="w-full h-24" />
           </div>
         </div>
       </div>

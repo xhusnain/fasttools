@@ -99,7 +99,10 @@ export default function DiscountCalculatorPage() {
 
         <DiscountCalculator />
 
-        <AdSpace slot="content" className="mt-6 h-24" />
+        {/* Center Content Ad */}
+        <div className="my-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
 
         <div className="mt-10 prose prose-sm max-w-none">
           <h2 className="text-2xl font-bold mb-4 text-foreground">How to Calculate Discounts</h2>
@@ -127,9 +130,14 @@ export default function DiscountCalculatorPage() {
             <li><Link href="/finance-tools/bill-splitter">Bill Splitter</Link></li>
             <li><Link href="/finance-tools/invoice-generator">Invoice Generator</Link></li>
             <li><Link href="/finance-tools/paypal-fee">PayPal Fee Calculator</Link></li>
-          </ul>
+            </ul>
+          </div>
+
+          {/* Bottom Content Ad */}
+          <div className="mt-8">
+            <AdSpace slot="content" className="w-full h-24" />
+          </div>
         </div>
       </div>
-    </div>
   )
 }

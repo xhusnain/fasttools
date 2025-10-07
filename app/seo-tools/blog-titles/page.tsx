@@ -40,6 +40,11 @@ export default function BlogTitleGeneratorPage() {
 
           <BlogTitleGenerator />
 
+          {/* Center Content Ad */}
+          <div className="my-8">
+            <AdSpace slot="content" className="w-full h-24" />
+          </div>
+
           <div className="mt-12 prose prose-sm max-w-none">
             <h2 className="text-2xl font-bold mb-4 text-foreground">Tips for Great Blog Titles</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -53,6 +58,11 @@ export default function BlogTitleGeneratorPage() {
               <li>Test multiple variants with A/B testing when you can</li>
               <li>Avoid clickbait—deliver on the promise in your content</li>
             </ul>
+          </div>
+
+          {/* Bottom Content Ad */}
+          <div className="mt-8">
+            <AdSpace slot="content" className="w-full h-24" />
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import { Code2, FileJson, Palette, Hash, FileCode, Braces } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
+import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
   title: "Developer Tools - Free Online Dev Utilities | FastTools",
@@ -81,6 +82,11 @@ export default function DevToolsPage() {
           </p>
         </div>
 
+        {/* Top Content Ad */}
+        <div className="mb-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
+
         <div className="grid md:grid-cols-2 gap-6">
           {tools.map((tool) => (
             <Link key={tool.href} href={tool.href}>
@@ -97,6 +103,16 @@ export default function DevToolsPage() {
               </Card>
             </Link>
           ))}
+        </div>
+
+        {/* Center Content Ad */}
+        <div className="my-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
+
+        {/* Bottom Content Ad */}
+        <div className="mt-8">
+          <AdSpace slot="content" className="w-full h-24" />
         </div>
       </div>
     </div>

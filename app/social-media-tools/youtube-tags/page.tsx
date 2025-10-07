@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { YoutubeTagExtractor } from "@/components/youtube-tag-extractor"
+import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
   title: "YouTube Tag Extractor - Extract Video Tags for SEO | FastTools",
@@ -29,7 +30,18 @@ export default function YoutubeTagsPage() {
         </p>
       </div>
 
+      {/* Top Content Ad */}
+      <div className="mb-8">
+        <AdSpace slot="content" className="w-full h-24" />
+      </div>
+
       <YoutubeTagExtractor />
+      
+      {/* Center Content Ad */}
+      <div className="my-8">
+        <AdSpace slot="content" className="w-full h-24" />
+      </div>
+
       <div className="mt-10 prose prose-slate max-w-none dark:prose-invert">
         <h2 className="text-2xl font-semibold text-foreground">How to Use Tags Effectively</h2>
         <ul className="list-disc pl-6 text-muted-foreground">
@@ -38,6 +50,11 @@ export default function YoutubeTagsPage() {
           <li>Update tags when the video focus changes over time</li>
           <li>Avoid irrelevant tags that can hurt discoverability</li>
         </ul>
+      </div>
+
+      {/* Bottom Content Ad */}
+      <div className="mt-8">
+        <AdSpace slot="content" className="w-full h-24" />
       </div>
     </div>
   )

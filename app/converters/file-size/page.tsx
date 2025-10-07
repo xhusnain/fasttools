@@ -194,6 +194,11 @@ export default function FileSizeConverterPage() {
 
               <FileSizeConverter />
 
+              {/* Center Content Ad */}
+              <div className="my-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+
               <div className="mt-12 prose prose-sm max-w-none">
                 <h2 className="text-2xl font-bold mb-4 text-foreground">How to Use the File Size Converter</h2>
                 <h3 className="text-xl font-semibold mb-2 text-foreground">1) Enter a Value and Unit</h3>
@@ -310,9 +315,14 @@ export default function FileSizeConverterPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-foreground">How do I estimate storage needs?</h3>
-                    <p className="text-muted-foreground">Calculate based on file types, quantities, and growth rates. Consider compression ratios and backup requirements.</p>
-                  </div>
-                </div>
+                    <p className="text-muted-foreground">Calculate based on file types, quantities, and growth rates. Consider compression ratios and backup requirements.                </p>
+              </div>
+
+              {/* Bottom Content Ad */}
+              <div className="mt-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+            </div>
 
                 <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Tools</h2>
                 <ul className="list-disc pl-5 text-muted-foreground">

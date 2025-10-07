@@ -173,6 +173,11 @@ export default function CaptionGeneratorPage() {
                 <AiCaptionGenerator />
               </div>
 
+              {/* Center Content Ad */}
+              <div className="my-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+
               <div className="mt-12 prose prose-slate max-w-none animate-fade-in-up animation-delay-400">
                 <h2 className="text-2xl font-bold mb-4 text-primary">How to Use the AI Caption Generator</h2>
                 <p className="text-secondary leading-relaxed mb-4">
@@ -310,9 +315,14 @@ export default function CaptionGeneratorPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-primary">Can I customize the generated captions?</h3>
-                    <p className="text-secondary">Absolutely! The AI-generated captions serve as a starting point. You can edit, modify, and personalize them to match your specific needs and brand voice.</p>
-                  </div>
-                </div>
+                    <p className="text-secondary">Absolutely! The AI-generated captions serve as a starting point. You can edit, modify, and personalize them to match your specific needs and brand voice.                </p>
+              </div>
+
+              {/* Bottom Content Ad */}
+              <div className="mt-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+            </div>
 
                 <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Related Tools</h2>
                 <p className="text-secondary leading-relaxed mb-4">

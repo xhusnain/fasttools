@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { JSONToCSV } from "@/components/json-to-csv"
+import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
@@ -101,7 +102,17 @@ export default function JSONToCSVPage() {
           <p className="text-lg text-muted-foreground text-balance">Convert arrays/objects to CSV with delimiter options and download.</p>
         </div>
 
+        {/* Top Content Ad */}
+        <div className="mb-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
+
         <JSONToCSV />
+        
+        {/* Center Content Ad */}
+        <div className="my-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
 
         <div className="prose prose-sm max-w-none">
           <h2 className="text-2xl font-bold mt-8 mb-4">How to Convert JSON to CSV</h2>
@@ -124,6 +135,11 @@ export default function JSONToCSVPage() {
             <li><Link href="/dev-tools/regex-tester">Regex Tester</Link></li>
             <li><Link href="/dev-tools/markdown-previewer">Markdown Previewer</Link></li>
           </ul>
+        </div>
+
+        {/* Bottom Content Ad */}
+        <div className="mt-8">
+          <AdSpace slot="content" className="w-full h-24" />
         </div>
       </div>
     </div>

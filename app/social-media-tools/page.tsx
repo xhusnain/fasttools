@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import { Youtube, Instagram, Music, Tag, LinkIcon, Search } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
+import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
   title: "Social Media Tools - Free YouTube, Instagram & TikTok Tools | FastTools",
@@ -87,6 +88,11 @@ export default function SocialMediaToolsPage() {
         </p>
       </div>
 
+      {/* Top Content Ad */}
+      <div className="mb-8">
+        <AdSpace slot="content" className="w-full h-24" />
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {tools.map((tool, index) => (
           <Link
@@ -111,6 +117,12 @@ export default function SocialMediaToolsPage() {
           </Link>
         ))}
       </div>
+
+      {/* Center Content Ad */}
+      <div className="my-8">
+        <AdSpace slot="content" className="w-full h-24" />
+      </div>
+
       <section className="mt-12 prose prose-slate max-w-none dark:prose-invert">
         <h2 className="text-2xl font-semibold text-foreground">Free Social Media Tools for Creators</h2>
         <p className="text-muted-foreground">
@@ -131,6 +143,11 @@ export default function SocialMediaToolsPage() {
           hook and include clear calls to action. Use 3–5 highly relevant hashtags rather than long lists.
         </p>
       </section>
+
+      {/* Bottom Content Ad */}
+      <div className="mt-8">
+        <AdSpace slot="content" className="w-full h-24" />
+      </div>
     </div>
   )
 }

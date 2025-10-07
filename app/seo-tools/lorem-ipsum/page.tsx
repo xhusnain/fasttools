@@ -40,6 +40,11 @@ export default function LoremIpsumGeneratorPage() {
 
           <LoremIpsumGenerator />
 
+          {/* Center Content Ad */}
+          <div className="my-8">
+            <AdSpace slot="content" className="w-full h-24" />
+          </div>
+
           <div className="mt-12 prose prose-sm max-w-none">
             <h2 className="text-2xl font-bold mb-4 text-foreground">What is Lorem Ipsum?</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -53,6 +58,11 @@ export default function LoremIpsumGeneratorPage() {
               <li>Client previews to focus on structure rather than wording</li>
               <li>Avoid using in production content—replace with real copy before launch</li>
             </ul>
+          </div>
+
+          {/* Bottom Content Ad */}
+          <div className="mt-8">
+            <AdSpace slot="content" className="w-full h-24" />
           </div>
         </div>
       </div>

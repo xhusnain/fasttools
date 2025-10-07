@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { ImageCropper } from "@/components/image-cropper"
+import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
@@ -73,8 +74,19 @@ export default function ImageCropperPage() {
           </p>
         </div>
 
+        {/* Top Content Ad */}
+        <div className="mb-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
+
         <div className="max-w-3xl mx-auto animate-slide-up">
           <ImageCropper />
+          
+          {/* Center Content Ad */}
+          <div className="my-8">
+            <AdSpace slot="content" className="w-full h-24" />
+          </div>
+
           <div className="prose prose-sm max-w-none mt-10">
             <h2 className="text-2xl font-bold mb-4 text-foreground">How to Crop</h2>
             <ol className="list-decimal pl-5 text-muted-foreground">
@@ -87,6 +99,11 @@ export default function ImageCropperPage() {
               <li><Link href="/image-tools/background-blur">Background Blur</Link></li>
               <li><Link href="/image-tools/image-to-text">Image to Text (OCR)</Link></li>
             </ul>
+          </div>
+
+          {/* Bottom Content Ad */}
+          <div className="mt-8">
+            <AdSpace slot="content" className="w-full h-24" />
           </div>
         </div>
       </div>

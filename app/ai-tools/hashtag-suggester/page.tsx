@@ -177,6 +177,11 @@ export default function HashtagSuggesterPage() {
                 <AiHashtagSuggester />
               </div>
 
+              {/* Center Content Ad */}
+              <div className="my-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+
               <div className="mt-12 prose prose-slate max-w-none animate-fade-in-up animation-delay-400">
                 <h2 className="text-2xl font-bold mb-4 text-primary">How to Use the AI Hashtag Generator</h2>
                 <p className="text-secondary leading-relaxed mb-4">
@@ -332,9 +337,14 @@ export default function HashtagSuggesterPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-primary">Should I use trending hashtags?</h3>
-                    <p className="text-secondary">Yes, but only if they're relevant to your content. Using irrelevant trending hashtags can hurt your credibility and reach.</p>
-                  </div>
-                </div>
+                    <p className="text-secondary">Yes, but only if they're relevant to your content. Using irrelevant trending hashtags can hurt your credibility and reach.                </p>
+              </div>
+
+              {/* Bottom Content Ad */}
+              <div className="mt-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+            </div>
 
                 <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Related Tools</h2>
                 <p className="text-secondary leading-relaxed mb-4">

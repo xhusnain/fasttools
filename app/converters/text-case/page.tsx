@@ -166,6 +166,11 @@ export default function TextCaseConverterPage() {
 
               <TextCaseConverter />
 
+              {/* Center Content Ad */}
+              <div className="my-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+
               <div className="mt-12 prose prose-sm max-w-none">
                 <h2 className="text-2xl font-bold mb-4 text-foreground">How to Use</h2>
                 <h3 className="text-xl font-semibold mb-2 text-foreground">1) Paste or Type Your Text</h3>
@@ -300,9 +305,14 @@ export default function TextCaseConverterPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-foreground">Is the text case converter free to use?</h3>
-                    <p className="text-muted-foreground">Yes, our text case converter is completely free to use with no registration required. You can convert unlimited text.</p>
-                  </div>
-                </div>
+                    <p className="text-muted-foreground">Yes, our text case converter is completely free to use with no registration required. You can convert unlimited text.                </p>
+              </div>
+
+              {/* Bottom Content Ad */}
+              <div className="mt-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+            </div>
 
                 <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Tools</h2>
                 <ul className="list-disc pl-5 text-muted-foreground">

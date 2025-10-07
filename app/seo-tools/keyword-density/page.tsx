@@ -40,6 +40,11 @@ export default function KeywordDensityCheckerPage() {
 
           <KeywordDensityChecker />
 
+          {/* Center Content Ad */}
+          <div className="my-8">
+            <AdSpace slot="content" className="w-full h-24" />
+          </div>
+
           <div className="mt-12 prose prose-sm max-w-none">
             <h2 className="text-2xl font-bold mb-4 text-foreground">Understanding Keyword Density</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -53,6 +58,11 @@ export default function KeywordDensityCheckerPage() {
               <li>Place important terms in headings, early paragraphs, and image alt text</li>
               <li>Write for users first; adjust density only if it reads unnaturally</li>
             </ul>
+          </div>
+
+          {/* Bottom Content Ad */}
+          <div className="mt-8">
+            <AdSpace slot="content" className="w-full h-24" />
           </div>
         </div>
       </div>

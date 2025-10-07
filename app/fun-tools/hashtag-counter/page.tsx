@@ -79,6 +79,11 @@ export default function HashtagCounterPage() {
 
           <HashtagCounter />
 
+          {/* Center Content Ad */}
+          <div className="my-8">
+            <AdSpace slot="content" className="w-full h-24" />
+          </div>
+
           <div className="prose prose-sm max-w-none space-y-6 animate-fade-in-up animation-delay-200">
             <div className="p-6 rounded-lg bg-muted/30 border border-border">
               <h2 className="text-xl font-bold mb-4 text-foreground">About Instagram Hashtag Counter</h2>
@@ -101,6 +106,11 @@ export default function HashtagCounterPage() {
                 <li><Link href="/social-media-tools/youtube-thumbnail">YouTube Thumbnail</Link></li>
               </ul>
             </div>
+          </div>
+
+          {/* Bottom Content Ad */}
+          <div className="mt-8">
+            <AdSpace slot="content" className="w-full h-24" />
           </div>
         </div>
       </div>

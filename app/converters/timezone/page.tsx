@@ -322,6 +322,11 @@ export default function TimezoneConverterPage() {
 
               <TimezoneConverter />
 
+              {/* Center Content Ad */}
+              <div className="my-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+
               <div className="mt-12 prose prose-sm max-w-none">
                 <h2 className="text-2xl font-bold mb-4 text-foreground">How to Use the Time Zone Converter</h2>
                 <h3 className="text-xl font-semibold mb-2 text-foreground">1) Pick Locations and Date/Time</h3>
@@ -448,9 +453,14 @@ export default function TimezoneConverterPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-foreground">What if a country doesn't observe daylight saving time?</h3>
-                    <p className="text-muted-foreground">Our converter knows which countries observe DST and which don't, so it will show the correct time regardless of DST status.</p>
-                  </div>
-                </div>
+                    <p className="text-muted-foreground">Our converter knows which countries observe DST and which don't, so it will show the correct time regardless of DST status.                </p>
+              </div>
+
+              {/* Bottom Content Ad */}
+              <div className="mt-8">
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+            </div>
 
                 <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Tools</h2>
                 <ul className="list-disc pl-5 text-muted-foreground">

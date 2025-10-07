@@ -74,7 +74,10 @@ export default function YearEndCountdownPage() {
 
           <YearEndCountdown />
 
-          <AdSpace slot="content" className="h-24" />
+          {/* Center Content Ad */}
+          <div className="my-8">
+            <AdSpace slot="content" className="w-full h-24" />
+          </div>
 
           <div className="prose prose-sm max-w-none mt-10">
             <h2 className="text-2xl font-bold mb-4 text-foreground">How to Use</h2>
@@ -86,6 +89,11 @@ export default function YearEndCountdownPage() {
               <li><Link href="/date-time-tools/workday-calculator">Workday Calculator</Link></li>
               <li><Link href="/converters/timezone">Time Zone Converter</Link></li>
             </ul>
+          </div>
+
+          {/* Bottom Content Ad */}
+          <div className="mt-8">
+            <AdSpace slot="content" className="w-full h-24" />
           </div>
         </div>
       </div>

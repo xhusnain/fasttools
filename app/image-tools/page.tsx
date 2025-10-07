@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { FileText, Beer as Blur, Crop, FileStack, Unlock, Monitor, ArrowRight } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
+import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
   title: "Image & File Tools - Free Online Image Editor & PDF Tools | FastTools",
@@ -85,6 +86,11 @@ export default function ImageToolsPage() {
           </p>
         </div>
 
+        {/* Top Content Ad */}
+        <div className="mb-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-slide-up">
           {imageTools.map((tool, index) => (
             <Card
@@ -111,6 +117,11 @@ export default function ImageToolsPage() {
           ))}
         </div>
 
+        {/* Center Content Ad */}
+        <div className="my-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
+
         <Card className="mt-12 p-8 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20 animate-fade-in">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-2xl font-bold text-foreground mb-3">Why Use Our Image & File Tools?</h2>
@@ -134,6 +145,11 @@ export default function ImageToolsPage() {
             </div>
           </div>
         </Card>
+
+        {/* Bottom Content Ad */}
+        <div className="mt-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
       </div>
     </div>
   )

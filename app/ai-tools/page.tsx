@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/breadcrumbs"
+import { AdSpace } from "@/components/ad-space"
 import { Sparkles, QrCode, Music, ImageIcon, Heart, Hash } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -70,6 +71,11 @@ export default function AiToolsPage() {
           </p>
         </div>
 
+        {/* Top Content Ad */}
+        <div className="mb-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
+
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {aiTools.map((tool) => (
             <Link key={tool.href} href={tool.href} className="group">
@@ -86,6 +92,16 @@ export default function AiToolsPage() {
               </Card>
             </Link>
           ))}
+        </div>
+
+        {/* Center Content Ad */}
+        <div className="my-8">
+          <AdSpace slot="content" className="w-full h-24" />
+        </div>
+
+        {/* Bottom Content Ad */}
+        <div className="mt-8">
+          <AdSpace slot="content" className="w-full h-24" />
         </div>
       </div>
     </div>
