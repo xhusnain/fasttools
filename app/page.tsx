@@ -699,9 +699,12 @@ export default function HomePage() {
             {/* Desktop layout with side ads */}
             <div className="hidden lg:grid grid-cols-12 gap-6">
               <div className="col-span-2">
-                <div className="sticky top-8">
-                  <AdSpace slot="sidebar" className="h-[600px] w-full border border-border/60 rounded-xl shadow-sm mb-6" />
-                  <AdSpace slot="sidebar" className="h-[400px] w-full border border-border/60 rounded-xl shadow-sm" />
+                <div className="sticky top-4">
+                  <div className="space-y-4">
+                    <AdSpace slot="sidebar" className="h-[600px] w-full border border-border/60 rounded-xl shadow-sm" />
+                    <AdSpace slot="sidebar" className="h-[400px] w-full border border-border/60 rounded-xl shadow-sm" />
+                    <AdSpace slot="sidebar" className="h-[500px] w-full border border-border/60 rounded-xl shadow-sm" />
+                  </div>
                 </div>
               </div>
               
@@ -761,9 +764,12 @@ export default function HomePage() {
               </div>
               
               <div className="col-span-2">
-                <div className="sticky top-8">
-                  <AdSpace slot="sidebar" className="h-[600px] w-full border border-border/60 rounded-xl shadow-sm mb-6" />
-                  <AdSpace slot="sidebar" className="h-[400px] w-full border border-border/60 rounded-xl shadow-sm" />
+                <div className="sticky top-4">
+                  <div className="space-y-4">
+                    <AdSpace slot="sidebar" className="h-[600px] w-full border border-border/60 rounded-xl shadow-sm" />
+                    <AdSpace slot="sidebar" className="h-[400px] w-full border border-border/60 rounded-xl shadow-sm" />
+                    <AdSpace slot="sidebar" className="h-[500px] w-full border border-border/60 rounded-xl shadow-sm" />
+                  </div>
                 </div>
               </div>
             </div>
