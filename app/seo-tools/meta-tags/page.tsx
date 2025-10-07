@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "Free Meta Tag Generator | Create SEO-Friendly Meta Tags Online",
   description:
     "Generate SEO-optimized meta tags for your website including title, description, Open Graph, and Twitter cards. Improve your search engine rankings with proper meta tags.",
-  keywords: "meta tag generator, seo meta tags, open graph tags, twitter cards, meta description generator, seo tools",
+  keywords:
+    "meta tag generator, seo meta tags, open graph tags, twitter cards, meta description generator, seo tools, title tag generator, meta title, meta description, og:title, og:description, og:image, og:url, twitter:title, twitter:description, twitter:image, canonical url, robots meta tag, viewport meta tag, charset meta, favicon meta, apple touch icon, hreflang, language meta, theme-color meta, social share preview, serp snippet preview, improve click-through rate, structured data basics, json-ld basics, schema awareness, site verification meta, google site verification, bing site verification, yandex verification, pinterest verification, meta length checker, title length counter, description length counter, best meta practices, homepage meta, blog post meta, product page meta, category page meta, multilingual meta, seo checklist, on-page seo, technical seo, content optimization",
   openGraph: {
     title: "Free Meta Tag Generator - Create SEO Meta Tags",
     description: "Generate complete meta tags for better SEO and social media sharing",

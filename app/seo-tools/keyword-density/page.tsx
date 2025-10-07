@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "Free Keyword Density Checker | Analyze Content for SEO Online",
   description:
     "Check keyword density in your content for better SEO optimization. Analyze keyword frequency and distribution to improve search engine rankings.",
-  keywords: "keyword density checker, seo analysis, keyword frequency, content optimization, seo tools",
+  keywords:
+    "keyword density checker, keyword density analyzer, seo analysis, keyword frequency, keyword distribution, term frequency, tf analysis, keyword stuffing check, over-optimization checker, on-page seo, content optimization, readability and seo, keyword prominence, keyword proximity, keyword variations, related keywords, nlp terms, long-tail keyword density, semantic keywords, topical relevance, content audit, seo audit, content quality check, optimize content, improve rankings, serp optimization, blog seo, landing page seo, ecommerce product seo, paragraph analyzer, heading keyword check, h1 h2 keyword check, meta description keyword check, title keyword check, density percentage, ideal keyword density, natural language writing, avoid spammy content, white hat seo, content best practices, seo copywriting, editorial workflow, content checklist, content tools, free seo tools, online seo analyzer",
   openGraph: {
     title: "Free Keyword Density Checker - Analyze Content SEO",
     description: "Analyze keyword density to optimize your content for search engines",
@@ -45,6 +46,13 @@ export default function KeywordDensityCheckerPage() {
               Keyword density is the percentage of times a keyword appears in your content compared to the total word
               count. Optimal keyword density helps search engines understand your content without appearing spammy.
             </p>
+            <h3 className="text-xl font-semibold text-foreground">Best Practices</h3>
+            <ul className="list-disc pl-6 text-muted-foreground">
+              <li>Use primary keywords naturally; avoid exact-match repetition</li>
+              <li>Include synonyms and related terms to improve topical coverage</li>
+              <li>Place important terms in headings, early paragraphs, and image alt text</li>
+              <li>Write for users first; adjust density only if it reads unnaturally</li>
+            </ul>
           </div>
         </div>
       </div>

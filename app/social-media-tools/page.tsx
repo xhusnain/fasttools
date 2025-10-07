@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Free social media tools for content creators. Download YouTube thumbnails, view Instagram profile pictures, extract video tags, generate link in bio pages, and more.",
   keywords:
-    "social media tools, youtube tools, instagram tools, tiktok downloader, youtube thumbnail downloader, instagram dp viewer, youtube tag extractor, link in bio generator",
+    "social media tools, social media toolkit, content creator tools, youtube tools, instagram tools, tiktok tools, tiktok downloader, download tiktok without watermark, youtube thumbnail downloader, download youtube thumbnail hd, instagram dp viewer, view instagram profile picture, youtube tag extractor, youtube tags finder, link in bio generator, bio link page builder, social media bio tools, instagram bio link, content scheduling helper, hashtag generator, trending hashtags, caption generator, short video tools, reels tools, shorts tools, analytics tools for creators, social media seo, video seo, channel name checker, username availability checker, brand name checker, youtube channel tools, instagram tools online, tiktok utilities, twitter/x tools, facebook tools, pinterest tools, social sharing tools, open graph preview, social preview generator, image resizer for social, thumbnail tools, profile picture tools, free online tools for creators, creator productivity, growth tools, audience reach, engagement tools, content optimization, fast social media tools",
   openGraph: {
     title: "Social Media Tools - Free YouTube, Instagram & TikTok Tools",
     description:
@@ -111,6 +111,26 @@ export default function SocialMediaToolsPage() {
           </Link>
         ))}
       </div>
+      <section className="mt-12 prose prose-slate max-w-none dark:prose-invert">
+        <h2 className="text-2xl font-semibold text-foreground">Free Social Media Tools for Creators</h2>
+        <p className="text-muted-foreground">
+          Grow faster with practical utilities for YouTube, Instagram, and TikTok. Download thumbnails, extract tags,
+          generate a link-in-bio page, and check channel name availability to build your brand consistently across
+          platforms.
+        </p>
+        <h3 className="text-xl font-semibold text-foreground">Creator Workflows We Support</h3>
+        <ul className="list-disc pl-6 text-muted-foreground">
+          <li>Prep social previews and thumbnails before you publish videos or reels</li>
+          <li>Research video tags and keywords to improve discoverability and SEO</li>
+          <li>Create a lightweight bio page so every profile can link to your key destinations</li>
+          <li>Check brand and channel names to keep your identity consistent everywhere</li>
+        </ul>
+        <h3 className="text-xl font-semibold text-foreground">Tips for Better Engagement</h3>
+        <p className="text-muted-foreground">
+          Keep titles punchy, add 1–2 core keywords, and use high-contrast thumbnails. Write captions that lead with a
+          hook and include clear calls to action. Use 3–5 highly relevant hashtags rather than long lists.
+        </p>
+      </section>
     </div>
   )
 }

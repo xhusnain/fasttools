@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "Free Lorem Ipsum Generator | Placeholder Text Generator Online",
   description:
     "Generate Lorem Ipsum placeholder text for your designs, mockups, and prototypes. Perfect for web designers, developers, and content creators.",
-  keywords: "lorem ipsum generator, placeholder text, dummy text, filler text, design mockup text",
+  keywords:
+    "lorem ipsum generator, placeholder text, dummy text, filler text, design mockup text, mock content, sample text, greeked text, ux writing placeholder, ui design text, wireframe text, prototyping text, layout text, paragraph generator, sentence generator, random text, latin text generator, lorem ipsum paragraphs, lorem ipsum sentences, design system content, content placeholder, editorial layout, magazine mockup text, brochure mockup text, landing page mockup, web design tools, figma placeholder text, sketch placeholder, xd placeholder, frontend placeholder, developer tools, copy filler, content scaffolding, quick lorem ipsum, short lorem, long lorem, bulleted lorem, numbered lorem, markdown lorem, html lorem, text for testing, typography testing, spacing test content, responsive layout test, accessibility placeholder, alt text placeholder, metadata placeholder, content design tools",
   openGraph: {
     title: "Free Lorem Ipsum Generator - Create Placeholder Text",
     description: "Generate Lorem Ipsum text for your design projects instantly",
@@ -45,6 +46,13 @@ export default function LoremIpsumGeneratorPage() {
               Lorem Ipsum is placeholder text commonly used in the graphic, print, and publishing industries for
               previewing layouts and visual mockups. It has been the industry standard dummy text since the 1500s.
             </p>
+            <h3 className="text-xl font-semibold text-foreground">When to Use Placeholder Text</h3>
+            <ul className="list-disc pl-6 text-muted-foreground">
+              <li>Wireframes and prototypes before final copy is ready</li>
+              <li>Testing responsive typography, spacing, and layout behavior</li>
+              <li>Client previews to focus on structure rather than wording</li>
+              <li>Avoid using in production content—replace with real copy before launch</li>
+            </ul>
           </div>
         </div>
       </div>
