@@ -69,12 +69,12 @@ export const metadata: Metadata = {
     "case conversion online",
     "title capitalization rules"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/converters/text-case" },
+  alternates: { canonical: "https://www.fasttools.store/converters/text-case" },
   openGraph: {
     title: "Text Case Converter — Clean Formatting Fast",
     description:
       "Uppercase, lowercase, Title Case, Sentence case, camelCase, snake_case and more. Clean and copy instantly.",
-    url: "https://www.smarttoolboxes.com/converters/text-case",
+    url: "https://www.fasttools.store/converters/text-case",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Text Case Converter", description: "Instant text formatting and case transformations." },
@@ -85,14 +85,14 @@ export const metadata: Metadata = {
       name: "Text Case Converter",
       applicationCategory: "Utility",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/converters/text-case",
+      url: "https://www.fasttools.store/converters/text-case",
       description:
         "Convert text to common writing and programming cases quickly. Clean whitespace and copy results.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Many case styles", "Whitespace cleanup", "Copy results", "Mobile friendly"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

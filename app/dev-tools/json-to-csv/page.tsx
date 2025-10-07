@@ -57,11 +57,11 @@ export const metadata: Metadata = {
     "typescript json to csv",
     "javascript json to csv"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/dev-tools/json-to-csv" },
+  alternates: { canonical: "https://www.fasttools.store/dev-tools/json-to-csv" },
   openGraph: {
     title: "JSON to CSV Converter — Instant Download",
     description: "Convert JSON arrays/objects to CSV with delimiter options and download.",
-    url: "https://www.smarttoolboxes.com/dev-tools/json-to-csv",
+    url: "https://www.fasttools.store/dev-tools/json-to-csv",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "JSON to CSV Converter", description: "Fast online JSON → CSV with download." },
@@ -72,14 +72,14 @@ export const metadata: Metadata = {
       name: "JSON to CSV Converter",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/dev-tools/json-to-csv",
+      url: "https://www.fasttools.store/dev-tools/json-to-csv",
       description:
         "Convert JSON data to CSV with headers, delimiter options, and instant download.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Arrays/objects", "Delimiter options", "Download CSV", "Copy results"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

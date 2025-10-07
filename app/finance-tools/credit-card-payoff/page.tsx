@@ -62,11 +62,11 @@ export const metadata: Metadata = {
     "simulate extra payment",
     "simulate balance transfer"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/finance-tools/credit-card-payoff" },
+  alternates: { canonical: "https://www.fasttools.store/finance-tools/credit-card-payoff" },
   openGraph: {
     title: "Credit Card Payoff Calculator — Timeline & Interest",
     description: "Plan debt payoff with avalanche or snowball and see interest savings.",
-    url: "https://www.smarttoolboxes.com/finance-tools/credit-card-payoff",
+    url: "https://www.fasttools.store/finance-tools/credit-card-payoff",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Credit Card Payoff Calculator", description: "Estimate debt‑free date and interest paid." },
@@ -77,14 +77,14 @@ export const metadata: Metadata = {
       name: "Credit Card Payoff Calculator",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/finance-tools/credit-card-payoff",
+      url: "https://www.fasttools.store/finance-tools/credit-card-payoff",
       description:
         "Estimate payoff time, interest, and compare avalanche vs snowball with extra payments.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Avalanche vs snowball", "Extra payments", "Debt‑free date", "Interest savings"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

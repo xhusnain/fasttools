@@ -49,11 +49,11 @@ export const metadata: Metadata = {
     "free invoice generator",
     "online invoice maker"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/finance-tools/invoice-generator" },
+  alternates: { canonical: "https://www.fasttools.store/finance-tools/invoice-generator" },
   openGraph: {
     title: "Free Invoice Generator — Professional Online Invoices",
     description: "Add items, taxes, discounts, and branding. Download or print instantly.",
-    url: "https://www.smarttoolboxes.com/finance-tools/invoice-generator",
+    url: "https://www.fasttools.store/finance-tools/invoice-generator",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Free Invoice Generator", description: "Create professional invoices in minutes." },
@@ -64,14 +64,14 @@ export const metadata: Metadata = {
       name: "Invoice Generator",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/finance-tools/invoice-generator",
+      url: "https://www.fasttools.store/finance-tools/invoice-generator",
       description:
         "Create, preview, and download invoices with taxes, discounts, currency, and branding.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Items & taxes", "Discounts", "Currency", "Branding", "PDF download"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

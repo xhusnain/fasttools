@@ -26,12 +26,12 @@ export const metadata: Metadata = {
     "share anniversary result",
     "free anniversary calculator"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/fun-tools/anniversary" },
+  alternates: { canonical: "https://www.fasttools.store/fun-tools/anniversary" },
   openGraph: {
     title: "Anniversary Calculator — Relationship Duration",
     description: "See how long you’ve been together and your next anniversary.",
     type: "website",
-    url: "https://www.smarttoolboxes.com/fun-tools/anniversary",
+    url: "https://www.fasttools.store/fun-tools/anniversary",
   },
   twitter: { card: "summary_large_image", title: "Anniversary Calculator", description: "Calculate relationship duration and next anniversary." },
   other: {
@@ -41,14 +41,14 @@ export const metadata: Metadata = {
       name: "Anniversary Calculator",
       applicationCategory: "EntertainmentApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/fun-tools/anniversary",
+      url: "https://www.fasttools.store/fun-tools/anniversary",
       description:
         "Calculate relationship duration and next anniversary with days remaining.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Duration in years/months/days", "Next anniversary", "Days remaining"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     "count tags online",
     "free hashtag counter"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/fun-tools/hashtag-counter" },
+  alternates: { canonical: "https://www.fasttools.store/fun-tools/hashtag-counter" },
   openGraph: {
     title: "Hashtag Counter — Count & Extract",
     description: "Count and extract hashtags from your Instagram captions and comments.",
     type: "website",
-    url: "https://www.smarttoolboxes.com/fun-tools/hashtag-counter",
+    url: "https://www.fasttools.store/fun-tools/hashtag-counter",
   },
   twitter: { card: "summary_large_image", title: "Hashtag Counter", description: "Count and extract Instagram hashtags." },
   other: {
@@ -43,14 +43,14 @@ export const metadata: Metadata = {
       name: "Hashtag Counter",
       applicationCategory: "SocialMediaApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/fun-tools/hashtag-counter",
+      url: "https://www.fasttools.store/fun-tools/hashtag-counter",
       description:
         "Count and extract unique hashtags from captions with copy support.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Count unique hashtags", "Copy list", "Clean duplicates"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

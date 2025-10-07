@@ -35,11 +35,11 @@ export const metadata: Metadata = {
     "visual savings tracker",
     "free savings tracker online"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/finance-tools/savings-tracker" },
+  alternates: { canonical: "https://www.fasttools.store/finance-tools/savings-tracker" },
   openGraph: {
     title: "Savings Goal Tracker — Reach Your Target",
     description: "Set a savings goal and monthly contribution to see your timeline.",
-    url: "https://www.smarttoolboxes.com/finance-tools/savings-tracker",
+    url: "https://www.fasttools.store/finance-tools/savings-tracker",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Savings Goal Tracker", description: "Plan and track savings progress online." },
@@ -50,14 +50,14 @@ export const metadata: Metadata = {
       name: "Savings Goal Tracker",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/finance-tools/savings-tracker",
+      url: "https://www.fasttools.store/finance-tools/savings-tracker",
       description:
         "Track savings towards goals with monthly contributions and projected completion date.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Target amount", "Monthly contribution", "Timeline estimate", "Copy results"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

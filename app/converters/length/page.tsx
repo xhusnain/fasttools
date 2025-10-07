@@ -71,12 +71,12 @@ export const metadata: Metadata = {
     "what is 1 inch in mm",
     "what is 1 foot in cm"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/converters/length" },
+  alternates: { canonical: "https://www.fasttools.store/converters/length" },
   openGraph: {
     title: "Length Converter — Metric and Imperial Units",
     description:
       "Convert meters, feet, inches, centimeters, kilometers, yards and miles instantly with accurate results.",
-    url: "https://www.smarttoolboxes.com/converters/length",
+    url: "https://www.fasttools.store/converters/length",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Length Converter", description: "Fast metric ⇄ imperial conversions for daily use." },
@@ -88,14 +88,14 @@ export const metadata: Metadata = {
       alternateName: "Distance Converter",
       applicationCategory: "Utility",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/converters/length",
+      url: "https://www.fasttools.store/converters/length",
       description:
         "Convert length units across metric and imperial systems for construction, travel and education.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Metric and imperial units", "Feet+inches support", "Copy results", "Mobile friendly"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

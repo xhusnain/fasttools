@@ -62,11 +62,11 @@ export const metadata: Metadata = {
     "dst start end dates",
     "summer time vs standard time"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/converters/timezone" },
+  alternates: { canonical: "https://www.fasttools.store/converters/timezone" },
   openGraph: {
     title: "Time Zone Converter — Global Time Conversion",
     description: "Convert time between cities and time zones with DST awareness.",
-    url: "https://www.smarttoolboxes.com/converters/timezone",
+    url: "https://www.fasttools.store/converters/timezone",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Time Zone Converter", description: "Plan meetings across time zones easily." },
@@ -77,14 +77,14 @@ export const metadata: Metadata = {
       name: "Time Zone Converter",
       applicationCategory: "Utility",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/converters/timezone",
+      url: "https://www.fasttools.store/converters/timezone",
       description:
         "Convert time across global time zones with daylight saving awareness for meetings and travel.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["City/time zone list", "DST handling", "Copy results", "Mobile friendly"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

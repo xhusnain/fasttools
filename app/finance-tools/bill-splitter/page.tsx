@@ -51,11 +51,11 @@ export const metadata: Metadata = {
     "split expenses online",
     "split expenses with roommates"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/finance-tools/bill-splitter" },
+  alternates: { canonical: "https://www.fasttools.store/finance-tools/bill-splitter" },
   openGraph: {
     title: "Bill Splitter — Fair Shared Expenses",
     description: "Split itemized bills, tips and tax with per‑person totals.",
-    url: "https://www.smarttoolboxes.com/finance-tools/bill-splitter",
+    url: "https://www.fasttools.store/finance-tools/bill-splitter",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Bill Splitter", description: "Share expenses fairly in seconds." },
@@ -66,14 +66,14 @@ export const metadata: Metadata = {
       name: "Bill Splitter",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/finance-tools/bill-splitter",
+      url: "https://www.fasttools.store/finance-tools/bill-splitter",
       description:
         "Split shared expenses with even, itemized, or percentage shares, including tips and tax.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Even/itemized split", "Tip & tax", "Per‑person totals", "Share results"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

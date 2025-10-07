@@ -66,13 +66,13 @@ export const metadata: Metadata = {
     "cross-currency conversion"
   ],
   alternates: {
-    canonical: "https://www.smarttoolboxes.com/converters/currency",
+    canonical: "https://www.fasttools.store/converters/currency",
   },
   openGraph: {
     title: "Currency Converter — Real-Time Exchange Rates",
     description:
       "Free online currency converter with live exchange rates, fee awareness, and export options.",
-    url: "https://www.smarttoolboxes.com/converters/currency",
+    url: "https://www.fasttools.store/converters/currency",
     type: "website",
   },
   twitter: {
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
       alternateName: "Live Currency Converter & Exchange Rate Calculator",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/converters/currency",
+      url: "https://www.fasttools.store/converters/currency",
       description:
         "Convert currencies instantly with accurate, real-time exchange rates. Compare conversions, understand fees, and export results.",
       inLanguage: "en",
@@ -105,10 +105,10 @@ export const metadata: Metadata = {
       publisher: {
         "@type": "Organization",
         name: "SmartToolboxes",
-        url: "https://www.smarttoolboxes.com",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://www.smarttoolboxes.com/favicon.ico",
+          url: "https://www.fasttools.store/favicon.ico",
         },
       },
     }),

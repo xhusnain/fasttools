@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     "download cropped image",
     "free online crop tool"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/image-tools/image-cropper" },
+  alternates: { canonical: "https://www.fasttools.store/image-tools/image-cropper" },
   openGraph: {
     title: "Online Image Cropper — Circle & Square",
     description: "Crop images into circle or square with live preview.",
-    url: "https://www.smarttoolboxes.com/image-tools/image-cropper",
+    url: "https://www.fasttools.store/image-tools/image-cropper",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Online Image Cropper", description: "Create circular avatars and square posts." },
@@ -42,14 +42,14 @@ export const metadata: Metadata = {
       name: "Online Image Cropper",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/image-tools/image-cropper",
+      url: "https://www.fasttools.store/image-tools/image-cropper",
       description:
         "Crop images into circular or square shapes with live preview and download.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Circle crop", "Square crop", "Preview/Download"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

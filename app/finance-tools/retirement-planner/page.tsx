@@ -49,11 +49,11 @@ export const metadata: Metadata = {
     "personal finance planning",
     "free retirement calculator"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/finance-tools/retirement-planner" },
+  alternates: { canonical: "https://www.fasttools.store/finance-tools/retirement-planner" },
   openGraph: {
     title: "Retirement Planner — Savings Projection",
     description: "Project retirement savings with contributions, returns, and inflation.",
-    url: "https://www.smarttoolboxes.com/finance-tools/retirement-planner",
+    url: "https://www.fasttools.store/finance-tools/retirement-planner",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Retirement Planner", description: "Plan your retirement savings with confidence." },
@@ -64,14 +64,14 @@ export const metadata: Metadata = {
       name: "Retirement Planner",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/finance-tools/retirement-planner",
+      url: "https://www.fasttools.store/finance-tools/retirement-planner",
       description:
         "Plan retirement savings using contributions, expected return, and inflation to see future value.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Contribution schedule", "Inflation adjustment", "Projection chart", "Copy results"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

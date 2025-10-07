@@ -37,12 +37,12 @@ export const metadata: Metadata = {
     "free age predictor",
     "online age predictor"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/fun-tools/future-age" },
+  alternates: { canonical: "https://www.fasttools.store/fun-tools/future-age" },
   openGraph: {
     title: "Future Age Predictor — How Old Will I Be?",
     description: "Enter a year and instantly see your age with milestone ideas.",
     type: "website",
-    url: "https://www.smarttoolboxes.com/fun-tools/future-age",
+    url: "https://www.fasttools.store/fun-tools/future-age",
   },
   twitter: { card: "summary_large_image", title: "Future Age Predictor", description: "See your age in any future year." },
   other: {
@@ -52,14 +52,14 @@ export const metadata: Metadata = {
       name: "Future Age Predictor",
       applicationCategory: "EntertainmentApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/fun-tools/future-age",
+      url: "https://www.fasttools.store/fun-tools/future-age",
       description:
         "Calculate how old you will be in any future year and share fun milestones.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Enter target year", "See age instantly", "Share result"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

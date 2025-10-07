@@ -25,12 +25,12 @@ export const metadata: Metadata = {
     "free countdown timer",
     "web countdown clock"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/date-time-tools/year-end-countdown" },
+  alternates: { canonical: "https://www.fasttools.store/date-time-tools/year-end-countdown" },
   openGraph: {
     title: "Year End Countdown — Live New Year Timer",
     description: "See exactly how long until the New Year.",
     type: "website",
-    url: "https://www.smarttoolboxes.com/date-time-tools/year-end-countdown",
+    url: "https://www.fasttools.store/date-time-tools/year-end-countdown",
   },
   twitter: { card: "summary_large_image", title: "Year End Countdown", description: "Live countdown to New Year." },
   other: {
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
       name: "Year End Countdown",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/date-time-tools/year-end-countdown",
+      url: "https://www.fasttools.store/date-time-tools/year-end-countdown",
       description:
         "Live countdown to the end of the year showing days, hours, minutes and seconds left.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Live timer", "Auto updates", "Share"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

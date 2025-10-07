@@ -23,12 +23,12 @@ export const metadata: Metadata = {
     "celebration timer",
     "free birthday countdown"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/fun-tools/birthday-countdown" },
+  alternates: { canonical: "https://www.fasttools.store/fun-tools/birthday-countdown" },
   openGraph: {
     title: "Birthday Countdown — Live Timer",
     description: "See exactly how long until your next birthday.",
     type: "website",
-    url: "https://www.smarttoolboxes.com/fun-tools/birthday-countdown",
+    url: "https://www.fasttools.store/fun-tools/birthday-countdown",
   },
   twitter: { card: "summary_large_image", title: "Birthday Countdown", description: "Live birthday countdown timer." },
   other: {
@@ -38,14 +38,14 @@ export const metadata: Metadata = {
       name: "Birthday Countdown",
       applicationCategory: "EntertainmentApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/fun-tools/birthday-countdown",
+      url: "https://www.fasttools.store/fun-tools/birthday-countdown",
       description:
         "Live countdown to your next birthday with share options.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Live timer", "Share link", "Next birthday date"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

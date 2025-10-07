@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     "developer tools markdown",
     "free markdown previewer"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/dev-tools/markdown-previewer" },
+  alternates: { canonical: "https://www.fasttools.store/dev-tools/markdown-previewer" },
   openGraph: {
     title: "Markdown Previewer — Live Rendering",
     description: "Type Markdown and see live preview with code and tables.",
-    url: "https://www.smarttoolboxes.com/dev-tools/markdown-previewer",
+    url: "https://www.fasttools.store/dev-tools/markdown-previewer",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Markdown Previewer", description: "Live Markdown preview and export." },
@@ -47,14 +47,14 @@ export const metadata: Metadata = {
       name: "Markdown Previewer",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/dev-tools/markdown-previewer",
+      url: "https://www.fasttools.store/dev-tools/markdown-previewer",
       description:
         "Live Markdown preview with GitHub‑style features, code, and tables.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Live preview", "GFM features", "Export/Copy"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

@@ -64,11 +64,11 @@ export const metadata: Metadata = {
     "science temperature units",
     "unit converter temperature"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/converters/temperature" },
+  alternates: { canonical: "https://www.fasttools.store/converters/temperature" },
   openGraph: {
     title: "Temperature Converter — °C ⇄ °F",
     description: "Instant Celsius to Fahrenheit conversions for weather, cooking and science.",
-    url: "https://www.smarttoolboxes.com/converters/temperature",
+    url: "https://www.fasttools.store/converters/temperature",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Temperature Converter", description: "Convert °C and °F instantly." },
@@ -79,14 +79,14 @@ export const metadata: Metadata = {
       name: "Temperature Converter",
       applicationCategory: "Utility",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/converters/temperature",
+      url: "https://www.fasttools.store/converters/temperature",
       description:
         "Convert temperatures between Celsius and Fahrenheit for weather, cooking and science.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Celsius ⇄ Fahrenheit", "Copy results", "Mobile friendly"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

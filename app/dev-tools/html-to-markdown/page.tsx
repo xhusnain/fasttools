@@ -30,11 +30,11 @@ export const metadata: Metadata = {
     "developer markdown",
     "free html to markdown"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/dev-tools/html-to-markdown" },
+  alternates: { canonical: "https://www.fasttools.store/dev-tools/html-to-markdown" },
   openGraph: {
     title: "HTML to Markdown Converter — Clean Conversion",
     description: "Convert HTML to Markdown with headings, lists, images, code, and tables.",
-    url: "https://www.smarttoolboxes.com/dev-tools/html-to-markdown",
+    url: "https://www.fasttools.store/dev-tools/html-to-markdown",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "HTML to Markdown Converter", description: "Clean HTML → Markdown for publishing." },
@@ -45,14 +45,14 @@ export const metadata: Metadata = {
       name: "HTML to Markdown Converter",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/dev-tools/html-to-markdown",
+      url: "https://www.fasttools.store/dev-tools/html-to-markdown",
       description:
         "Convert HTML to Markdown preserving common elements for content workflows.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Headings/lists", "Links/images", "Code/tables"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

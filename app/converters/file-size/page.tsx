@@ -62,12 +62,12 @@ export const metadata: Metadata = {
     "drive storage space",
     "free file size converter"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/converters/file-size" },
+  alternates: { canonical: "https://www.fasttools.store/converters/file-size" },
   openGraph: {
     title: "File Size Converter — Bytes, KB, MB, GB, TB",
     description:
       "Free online file size converter for bytes, KB, MB, GB, TB and more. Understand binary vs decimal units and optimize files.",
-    url: "https://www.smarttoolboxes.com/converters/file-size",
+    url: "https://www.fasttools.store/converters/file-size",
     type: "website",
   },
   twitter: {
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
       alternateName: "Data Size Converter",
       applicationCategory: "Utility",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/converters/file-size",
+      url: "https://www.fasttools.store/converters/file-size",
       description:
         "Convert file sizes instantly across bytes, KB, MB, GB, TB and PB for uploads, storage and optimization.",
       inLanguage: "en",
@@ -99,8 +99,8 @@ export const metadata: Metadata = {
       publisher: {
         "@type": "Organization",
         name: "SmartToolboxes",
-        url: "https://www.smarttoolboxes.com",
-        logo: { "@type": "ImageObject", url: "https://www.smarttoolboxes.com/favicon.ico" },
+        url: "https://www.fasttools.store",
+        logo: { "@type": "ImageObject", url: "https://www.fasttools.store/favicon.ico" },
       },
     }),
   },

@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     "ocr online",
     "free screenshot ocr"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/image-tools/screenshot-to-text" },
+  alternates: { canonical: "https://www.fasttools.store/image-tools/screenshot-to-text" },
   openGraph: {
     title: "Screenshot to Text — OCR",
     description: "Extract text from screenshots (code, errors, UI) into editable text.",
-    url: "https://www.smarttoolboxes.com/image-tools/screenshot-to-text",
+    url: "https://www.fasttools.store/image-tools/screenshot-to-text",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Screenshot to Text", description: "Extract text from screenshots with OCR." },
@@ -35,14 +35,14 @@ export const metadata: Metadata = {
       name: "Screenshot to Text",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/image-tools/screenshot-to-text",
+      url: "https://www.fasttools.store/image-tools/screenshot-to-text",
       description:
         "OCR tool to extract text from screenshots of code, errors, and UI.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Upload screenshot", "Copy text", "In‑browser OCR"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

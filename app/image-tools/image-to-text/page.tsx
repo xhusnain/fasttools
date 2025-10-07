@@ -60,11 +60,11 @@ export const metadata: Metadata = {
     "best image to text",
     "smarttoolboxes ocr"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/image-tools/image-to-text" },
+  alternates: { canonical: "https://www.fasttools.store/image-tools/image-to-text" },
   openGraph: {
     title: "Image to Text (OCR) — Extract Text from Images",
     description: "Accurate online OCR for photos, scans, and screenshots.",
-    url: "https://www.smarttoolboxes.com/image-tools/image-to-text",
+    url: "https://www.fasttools.store/image-tools/image-to-text",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Image to Text (OCR)", description: "Extract text from images online." },
@@ -75,14 +75,14 @@ export const metadata: Metadata = {
       name: "Image to Text (OCR)",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/image-tools/image-to-text",
+      url: "https://www.fasttools.store/image-tools/image-to-text",
       description:
         "Convert images to editable text with accurate OCR for photos, scans, and screenshots.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Multi‑format input", "Copy text", "In‑browser OCR"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

@@ -23,11 +23,11 @@ export const metadata: Metadata = {
     "no upload unlock",
     "free pdf unlocker"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/image-tools/pdf-unlocker" },
+  alternates: { canonical: "https://www.fasttools.store/image-tools/pdf-unlocker" },
   openGraph: {
     title: "PDF Unlocker — Remove Passwords",
     description: "Unlock password‑protected PDFs securely in your browser.",
-    url: "https://www.smarttoolboxes.com/image-tools/pdf-unlocker",
+    url: "https://www.fasttools.store/image-tools/pdf-unlocker",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "PDF Unlocker", description: "Remove PDF passwords and restrictions online." },
@@ -38,14 +38,14 @@ export const metadata: Metadata = {
       name: "PDF Unlocker",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/image-tools/pdf-unlocker",
+      url: "https://www.fasttools.store/image-tools/pdf-unlocker",
       description:
         "Remove PDF passwords and restrictions securely in the browser.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Owner/user password", "In‑browser unlock", "Copy/save"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

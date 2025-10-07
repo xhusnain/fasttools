@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     "blur intensity",
     "free photo blur"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/image-tools/background-blur" },
+  alternates: { canonical: "https://www.fasttools.store/image-tools/background-blur" },
   openGraph: {
     title: "Image Background Blur — Online Tool",
     description: "Add professional blur effects to images for profiles and posts.",
-    url: "https://www.smarttoolboxes.com/image-tools/background-blur",
+    url: "https://www.fasttools.store/image-tools/background-blur",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Image Background Blur", description: "Blur image backgrounds online." },
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
       name: "Image Background Blur",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/image-tools/background-blur",
+      url: "https://www.fasttools.store/image-tools/background-blur",
       description:
         "Apply adjustable background blur to images for profile and product photos.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Adjustable blur", "Preview", "Copy/Save"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

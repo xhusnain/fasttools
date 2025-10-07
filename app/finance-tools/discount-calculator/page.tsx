@@ -51,11 +51,11 @@ export const metadata: Metadata = {
     "shopping savings calculator",
     "free discount calculator"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/finance-tools/discount-calculator" },
+  alternates: { canonical: "https://www.fasttools.store/finance-tools/discount-calculator" },
   openGraph: {
     title: "Discount Calculator — Find Sale Prices & Savings",
     description: "Stack percentage and fixed discounts, include tax, and compare deals.",
-    url: "https://www.smarttoolboxes.com/finance-tools/discount-calculator",
+    url: "https://www.fasttools.store/finance-tools/discount-calculator",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Discount Calculator", description: "Instant percentage and fixed discount savings." },
@@ -66,14 +66,14 @@ export const metadata: Metadata = {
       name: "Discount Calculator",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/finance-tools/discount-calculator",
+      url: "https://www.fasttools.store/finance-tools/discount-calculator",
       description:
         "Calculate sale prices with stacked discounts, tax options, and savings comparison.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["% and fixed discounts", "Stack multiple", "Tax include/exclude", "Compare deals"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

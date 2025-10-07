@@ -25,11 +25,11 @@ export const metadata: Metadata = {
     "web developer tools",
     "free html beautifier"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/dev-tools/html-beautifier" },
+  alternates: { canonical: "https://www.fasttools.store/dev-tools/html-beautifier" },
   openGraph: {
     title: "HTML Beautifier & Minifier — Format/Minify",
     description: "Clean or compress HTML for better readability or smaller size.",
-    url: "https://www.smarttoolboxes.com/dev-tools/html-beautifier",
+    url: "https://www.fasttools.store/dev-tools/html-beautifier",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "HTML Beautifier & Minifier", description: "Format or minify HTML in one click." },
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
       name: "HTML Beautifier & Minifier",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/dev-tools/html-beautifier",
+      url: "https://www.fasttools.store/dev-tools/html-beautifier",
       description:
         "Format or minify HTML code with clean indentation or compression.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Beautify", "Minify", "Copy results"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

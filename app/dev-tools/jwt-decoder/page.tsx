@@ -39,11 +39,11 @@ export const metadata: Metadata = {
     "jwt best practices",
     "free jwt decoder"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/dev-tools/jwt-decoder" },
+  alternates: { canonical: "https://www.fasttools.store/dev-tools/jwt-decoder" },
   openGraph: {
     title: "JWT Decoder — Decode JSON Web Tokens",
     description: "Inspect JWT header and payload safely in the browser.",
-    url: "https://www.smarttoolboxes.com/dev-tools/jwt-decoder",
+    url: "https://www.fasttools.store/dev-tools/jwt-decoder",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "JWT Decoder", description: "Decode and inspect JWTs online." },
@@ -54,14 +54,14 @@ export const metadata: Metadata = {
       name: "JWT Decoder",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/dev-tools/jwt-decoder",
+      url: "https://www.fasttools.store/dev-tools/jwt-decoder",
       description:
         "Developer tool to decode JWT header and payload in the browser for debugging.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Decode header/payload", "Base64URL", "Claims viewer"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

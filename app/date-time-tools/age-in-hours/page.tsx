@@ -61,12 +61,12 @@ export const metadata: Metadata = {
     "fun age tool",
     "birthday tool"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/date-time-tools/age-in-hours" },
+  alternates: { canonical: "https://www.fasttools.store/date-time-tools/age-in-hours" },
   openGraph: {
     title: "Age in Hours Calculator — Hours, Minutes, Seconds Old",
     description: "See exactly how many hours, minutes, and seconds you have lived.",
     type: "website",
-    url: "https://www.smarttoolboxes.com/date-time-tools/age-in-hours",
+    url: "https://www.fasttools.store/date-time-tools/age-in-hours",
   },
   twitter: { card: "summary_large_image", title: "Age in Hours Calculator", description: "Calculate your age in hours, minutes, and seconds." },
   other: {
@@ -76,14 +76,14 @@ export const metadata: Metadata = {
       name: "Age in Hours Calculator",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/date-time-tools/age-in-hours",
+      url: "https://www.fasttools.store/date-time-tools/age-in-hours",
       description:
         "Calculate exact age in hours, minutes, and seconds with shareable results and birthday countdown.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Age in hours/minutes/seconds", "Birthday countdown", "Copy/share results"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

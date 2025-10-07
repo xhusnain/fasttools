@@ -38,12 +38,12 @@ export const metadata: Metadata = {
     "western astrology zodiac",
     "free zodiac finder"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/date-time-tools/zodiac-sign" },
+  alternates: { canonical: "https://www.fasttools.store/date-time-tools/zodiac-sign" },
   openGraph: {
     title: "Zodiac Sign Finder — Find Your Sign",
     description: "Find your zodiac by birth date and learn sign basics.",
     type: "website",
-    url: "https://www.smarttoolboxes.com/date-time-tools/zodiac-sign",
+    url: "https://www.fasttools.store/date-time-tools/zodiac-sign",
   },
   twitter: { card: "summary_large_image", title: "Zodiac Sign Finder", description: "Discover your zodiac sign by birth date." },
   other: {
@@ -53,14 +53,14 @@ export const metadata: Metadata = {
       name: "Zodiac Sign Finder",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/date-time-tools/zodiac-sign",
+      url: "https://www.fasttools.store/date-time-tools/zodiac-sign",
       description:
         "Find your zodiac (sun) sign from your birth date and learn key sign traits.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Find sign by date", "Sign dates list", "Copy/Share"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

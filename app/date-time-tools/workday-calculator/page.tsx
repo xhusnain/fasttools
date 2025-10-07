@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     "workdays in a year",
     "free workday calculator"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/date-time-tools/workday-calculator" },
+  alternates: { canonical: "https://www.fasttools.store/date-time-tools/workday-calculator" },
   openGraph: {
     title: "Workday Calculator — Business Days",
     description: "Compute business days between two dates with optional holidays.",
     type: "website",
-    url: "https://www.smarttoolboxes.com/date-time-tools/workday-calculator",
+    url: "https://www.fasttools.store/date-time-tools/workday-calculator",
   },
   twitter: { card: "summary_large_image", title: "Workday Calculator", description: "Business days between dates with holiday options." },
   other: {
@@ -47,14 +47,14 @@ export const metadata: Metadata = {
       name: "Workday Calculator",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/date-time-tools/workday-calculator",
+      url: "https://www.fasttools.store/date-time-tools/workday-calculator",
       description:
         "Calculate business days between dates excluding weekends and optional holidays.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Exclude weekends", "Optional holidays", "Copy results"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

@@ -36,11 +36,11 @@ export const metadata: Metadata = {
     "regex online",
     "free regex tester"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/dev-tools/regex-tester" },
+  alternates: { canonical: "https://www.fasttools.store/dev-tools/regex-tester" },
   openGraph: {
     title: "Regex Tester — Live Matches & Flags",
     description: "Build and debug regex patterns with live results.",
-    url: "https://www.smarttoolboxes.com/dev-tools/regex-tester",
+    url: "https://www.fasttools.store/dev-tools/regex-tester",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Regex Tester", description: "Test and debug regex online." },
@@ -51,14 +51,14 @@ export const metadata: Metadata = {
       name: "Regex Tester",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/dev-tools/regex-tester",
+      url: "https://www.fasttools.store/dev-tools/regex-tester",
       description:
         "Test, build, and debug regular expressions with live matches and flags.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Live matching", "Flags", "Groups"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

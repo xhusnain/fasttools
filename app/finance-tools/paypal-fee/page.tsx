@@ -46,11 +46,11 @@ export const metadata: Metadata = {
     "PayPal invoice generator",
     "PayPal fee calculator free"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/finance-tools/paypal-fee" },
+  alternates: { canonical: "https://www.fasttools.store/finance-tools/paypal-fee" },
   openGraph: {
     title: "PayPal Fee Calculator — Net & Gross Calculator",
     description: "Find net received and how much to charge after PayPal fees.",
-    url: "https://www.smarttoolboxes.com/finance-tools/paypal-fee",
+    url: "https://www.fasttools.store/finance-tools/paypal-fee",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "PayPal Fee Calculator", description: "Calculate PayPal fees and net amount." },
@@ -61,14 +61,14 @@ export const metadata: Metadata = {
       name: "PayPal Fee Calculator",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/finance-tools/paypal-fee",
+      url: "https://www.fasttools.store/finance-tools/paypal-fee",
       description:
         "Calculate PayPal fees by country and currency; compute net and required gross amounts.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Country & currency fees", "% + fixed fee", "Net/gross modes", "Copy results"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

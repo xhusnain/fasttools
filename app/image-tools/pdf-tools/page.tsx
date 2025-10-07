@@ -29,11 +29,11 @@ export const metadata: Metadata = {
     "merge many pdfs",
     "pdf processing online"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/image-tools/pdf-tools" },
+  alternates: { canonical: "https://www.fasttools.store/image-tools/pdf-tools" },
   openGraph: {
     title: "PDF Splitter & Merger — Free Online PDF Tools",
     description: "Split and merge PDFs securely in your browser.",
-    url: "https://www.smarttoolboxes.com/image-tools/pdf-tools",
+    url: "https://www.fasttools.store/image-tools/pdf-tools",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "PDF Splitter & Merger", description: "Free online PDF tools for split/merge." },
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
       name: "PDF Splitter & Merger",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/image-tools/pdf-tools",
+      url: "https://www.fasttools.store/image-tools/pdf-tools",
       description:
         "Split and merge PDF files securely in the browser with page range support.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Split by pages", "Merge files", "Reorder/delete pages"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

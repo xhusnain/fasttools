@@ -29,11 +29,11 @@ export const metadata: Metadata = {
     "design color tools",
     "free hex to rgb"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/dev-tools/hex-to-rgb" },
+  alternates: { canonical: "https://www.fasttools.store/dev-tools/hex-to-rgb" },
   openGraph: {
     title: "Hex to RGB Converter — Web Color Tools",
     description: "Convert hex color codes to RGB and copy values.",
-    url: "https://www.smarttoolboxes.com/dev-tools/hex-to-rgb",
+    url: "https://www.fasttools.store/dev-tools/hex-to-rgb",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Hex to RGB Converter", description: "Instant hex → RGB conversion." },
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
       name: "Hex to RGB Converter",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/dev-tools/hex-to-rgb",
+      url: "https://www.fasttools.store/dev-tools/hex-to-rgb",
       description:
         "Convert hex color codes to RGB instantly with copy and validation.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Hex → RGB", "Copy values", "Validate input"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

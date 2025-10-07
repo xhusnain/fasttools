@@ -24,12 +24,12 @@ export const metadata: Metadata = {
     "online love meter",
     "romance compatibility"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/fun-tools/love-calculator" },
+  alternates: { canonical: "https://www.fasttools.store/fun-tools/love-calculator" },
   openGraph: {
     title: "Love Calculator — Compatibility & Match %",
     description: "Enter two names to see your love compatibility percentage.",
     type: "website",
-    url: "https://www.smarttoolboxes.com/fun-tools/love-calculator",
+    url: "https://www.fasttools.store/fun-tools/love-calculator",
   },
   twitter: { card: "summary_large_image", title: "Love Calculator", description: "See your love match percentage." },
   other: {
@@ -39,14 +39,14 @@ export const metadata: Metadata = {
       name: "Love Calculator",
       applicationCategory: "EntertainmentApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/fun-tools/love-calculator",
+      url: "https://www.fasttools.store/fun-tools/love-calculator",
       description:
         "Fun love compatibility calculator that shows a match percentage based on names.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Enter two names", "Match percentage", "Share result"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

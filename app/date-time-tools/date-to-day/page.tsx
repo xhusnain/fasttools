@@ -40,12 +40,12 @@ export const metadata: Metadata = {
     "meeting schedule day",
     "free weekday finder"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/date-time-tools/date-to-day" },
+  alternates: { canonical: "https://www.fasttools.store/date-time-tools/date-to-day" },
   openGraph: {
     title: "Date to Day Finder — Weekday for Any Date",
     description: "Instantly find the weekday for any past or future date.",
     type: "website",
-    url: "https://www.smarttoolboxes.com/date-time-tools/date-to-day",
+    url: "https://www.fasttools.store/date-time-tools/date-to-day",
   },
   twitter: { card: "summary_large_image", title: "Date to Day Finder", description: "Find the weekday for any date." },
   other: {
@@ -55,14 +55,14 @@ export const metadata: Metadata = {
       name: "Date to Day Finder",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/date-time-tools/date-to-day",
+      url: "https://www.fasttools.store/date-time-tools/date-to-day",
       description:
         "Find the day of the week for any date with holiday and schedule planning context.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Past/future dates", "Week number", "Copy/share results"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

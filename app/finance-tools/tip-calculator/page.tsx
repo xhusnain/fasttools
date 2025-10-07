@@ -62,12 +62,12 @@ export const metadata: Metadata = {
     "tip rounding rules",
     "tip calculator app alternative"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/finance-tools/tip-calculator" },
+  alternates: { canonical: "https://www.fasttools.store/finance-tools/tip-calculator" },
   openGraph: {
     title: "Tip Calculator — Restaurant Gratuity & Split Bills",
     description:
       "Instantly calculate tips and split restaurant bills with per‑person totals and rounding.",
-    url: "https://www.smarttoolboxes.com/finance-tools/tip-calculator",
+    url: "https://www.fasttools.store/finance-tools/tip-calculator",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Tip Calculator", description: "Fast tip and bill split calculator." },
@@ -78,14 +78,14 @@ export const metadata: Metadata = {
       name: "Tip Calculator",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/finance-tools/tip-calculator",
+      url: "https://www.fasttools.store/finance-tools/tip-calculator",
       description:
         "Calculate tips and split bills with customizable percentages, tax options, and rounding.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Custom tip %", "Split per person", "Tax include/exclude", "Rounding", "Share totals"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }

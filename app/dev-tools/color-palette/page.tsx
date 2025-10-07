@@ -38,11 +38,11 @@ export const metadata: Metadata = {
     "primary secondary accent",
     "free color palette generator"
   ],
-  alternates: { canonical: "https://www.smarttoolboxes.com/dev-tools/color-palette" },
+  alternates: { canonical: "https://www.fasttools.store/dev-tools/color-palette" },
   openGraph: {
     title: "Color Palette Generator — Design Color Schemes",
     description: "Create palettes, lock colors, and copy HEX/RGB for your design system.",
-    url: "https://www.smarttoolboxes.com/dev-tools/color-palette",
+    url: "https://www.fasttools.store/dev-tools/color-palette",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Color Palette Generator", description: "Make beautiful color schemes fast." },
@@ -53,14 +53,14 @@ export const metadata: Metadata = {
       name: "Color Palette Generator",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web",
-      url: "https://www.smarttoolboxes.com/dev-tools/color-palette",
+      url: "https://www.fasttools.store/dev-tools/color-palette",
       description:
         "Generate and copy color palettes with hex/rgb values for design and branding.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       featureList: ["Lock/shuffle", "Copy HEX/RGB", "Export palette"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }
