@@ -184,22 +184,23 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`dark ${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <head>
-        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-        <link rel="canonical" href="https://fasttools.store" />
-        <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <head>
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
+        <link rel="canonical" href="https://fasttools.store"/>
+        <meta name="robots" content="index, follow"/>
+        <meta name="googlebot" content="index, follow"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+        <meta name="google-adsense-account" content="ca-pub-6296569221534302"/>
         <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{__html: JSON.stringify(organizationSchema)}}
         />
         <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{__html: JSON.stringify(websiteSchema)}}
         />
-      </head>
-      <body className="min-h-screen bg-background font-sans text-foreground">
+    </head>
+    <body className="min-h-screen bg-background font-sans text-foreground">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
