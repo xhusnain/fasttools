@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react"
 
 interface AdSpaceProps {
-  slot: "header" | "sidebar" | "content"
+  slot: "header" | "sidebar" | "content" | "footer"
   className?: string
 }
 

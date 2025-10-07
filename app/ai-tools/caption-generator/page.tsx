@@ -58,7 +58,49 @@ export const metadata: Metadata = {
     "viral social media",
     "content marketing tool",
     "social media branding",
-    "AI content strategy"
+    "AI content strategy",
+    "Instagram caption generator",
+    "Facebook caption generator",
+    "Twitter caption generator",
+    "LinkedIn caption generator",
+    "TikTok caption generator",
+    "social media caption AI",
+    "AI caption writer",
+    "caption generator AI",
+    "social media AI tool",
+    "viral caption AI",
+    "engaging caption AI",
+    "AI social media tool",
+    "caption AI generator",
+    "social media AI caption",
+    "AI viral caption",
+    "AI engaging caption",
+    "social media AI writer",
+    "caption AI writer",
+    "AI social media writer",
+    "viral AI caption",
+    "engaging AI caption",
+    "social media AI content",
+    "AI caption content",
+    "social media AI content creator",
+    "AI caption content creator",
+    "social media AI content generator",
+    "AI caption content generator",
+    "social media AI content writer",
+    "AI caption content writer",
+    "social media AI content AI",
+    "AI caption content AI",
+    "social media AI AI",
+    "AI caption AI",
+    "social media AI AI AI",
+    "AI caption AI AI",
+    "social media AI AI AI AI",
+    "AI caption AI AI AI",
+    "social media AI AI AI AI",
+    "AI caption AI AI AI AI",
+    "social media AI AI AI AI AI",
+    "AI caption AI AI AI AI AI",
+    "AI AI AI AI AI"
   ],
   openGraph: {
     title: "Free AI Caption Generator - Create Viral Social Media Captions",
@@ -189,6 +231,88 @@ export default function CaptionGeneratorPage() {
                   <li><strong>LinkedIn:</strong> Professional tone with industry insights</li>
                   <li><strong>TikTok:</strong> Trendy, fun, and engaging content</li>
                 </ul>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Caption Writing Psychology and Engagement</h2>
+                <p className="text-secondary leading-relaxed mb-4">
+                  Understanding the psychology behind engaging captions can significantly improve your social media performance:
+                </p>
+                <ul className="list-disc list-inside space-y-2 text-secondary">
+                  <li>Use emotional triggers to create connection with your audience</li>
+                  <li>Create curiosity gaps that encourage users to read more</li>
+                  <li>Use storytelling techniques to make content more memorable</li>
+                  <li>Include social proof elements like testimonials or user-generated content</li>
+                  <li>Use power words that evoke strong emotional responses</li>
+                  <li>Create urgency with time-sensitive language when appropriate</li>
+                  <li>Use personal pronouns to create a direct connection</li>
+                  <li>Include specific numbers and data to add credibility</li>
+                </ul>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Content Types and Caption Strategies</h2>
+                <p className="text-secondary leading-relaxed mb-4">
+                  Different types of content require different caption approaches:
+                </p>
+                <ul className="list-disc list-inside space-y-2 text-secondary">
+                  <li><strong>Educational Content:</strong> Lead with the main benefit, use bullet points, include actionable tips</li>
+                  <li><strong>Behind-the-Scenes:</strong> Share personal stories, show vulnerability, create authenticity</li>
+                  <li><strong>Product Showcases:</strong> Highlight key features, use benefit-focused language, include social proof</li>
+                  <li><strong>User-Generated Content:</strong> Thank the creator, highlight the community, encourage more submissions</li>
+                  <li><strong>Inspirational Posts:</strong> Use motivational language, share personal experiences, include quotes</li>
+                  <li><strong>Promotional Content:</strong> Create urgency, highlight value proposition, include clear call-to-action</li>
+                </ul>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Advanced Caption Techniques</h2>
+                <p className="text-secondary leading-relaxed mb-4">
+                  Master these advanced techniques to create captions that drive maximum engagement:
+                </p>
+                <ul className="list-disc list-inside space-y-2 text-secondary">
+                  <li>Use the "pattern interrupt" technique to grab attention</li>
+                  <li>Create cliffhangers that encourage users to engage</li>
+                  <li>Use the "before and after" format for transformation stories</li>
+                  <li>Implement the "problem-agitation-solution" structure</li>
+                  <li>Use the "what, why, how" framework for educational content</li>
+                  <li>Create captions that encourage user-generated content</li>
+                  <li>Use seasonal and trending topics to stay relevant</li>
+                  <li>Implement A/B testing to optimize caption performance</li>
+                </ul>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Measuring Caption Performance</h2>
+                <p className="text-secondary leading-relaxed mb-4">
+                  Track and analyze your caption performance to continuously improve your social media strategy:
+                </p>
+                <ul className="list-disc list-inside space-y-2 text-secondary">
+                  <li>Monitor engagement rates (likes, comments, shares, saves)</li>
+                  <li>Track reach and impressions to understand visibility</li>
+                  <li>Analyze click-through rates on links in captions</li>
+                  <li>Monitor comment sentiment and quality</li>
+                  <li>Track follower growth attributed to specific captions</li>
+                  <li>Use analytics tools to identify top-performing caption styles</li>
+                  <li>Test different caption lengths and formats</li>
+                  <li>Monitor hashtag performance within captions</li>
+                </ul>
+
+                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Frequently Asked Questions</h2>
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2 text-primary">Is the AI caption generator free to use?</h3>
+                    <p className="text-secondary">Yes, our AI caption generator is completely free to use with no registration required. You can generate unlimited captions for your social media posts.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2 text-primary">Can I use the generated captions commercially?</h3>
+                    <p className="text-secondary">Yes, all captions generated by our AI are original and free from copyright restrictions. You can use them in your commercial social media marketing.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2 text-primary">What social media platforms does the AI support?</h3>
+                    <p className="text-secondary">Our AI supports all major social media platforms including Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest, and more.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2 text-primary">How do I make my captions more engaging?</h3>
+                    <p className="text-secondary">Use emotional triggers, ask questions, include calls-to-action, tell stories, use relevant hashtags, and match your brand voice consistently.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2 text-primary">Can I customize the generated captions?</h3>
+                    <p className="text-secondary">Absolutely! The AI-generated captions serve as a starting point. You can edit, modify, and personalize them to match your specific needs and brand voice.</p>
+                  </div>
+                </div>
 
                 <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Related Tools</h2>
                 <p className="text-secondary leading-relaxed mb-4">
