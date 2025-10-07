@@ -595,7 +595,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-100">
-            Access 40+ powerful, free online tools including text converters, image processors, AI generators, and productivity utilities — all in one place.
+            Access 1000+ powerful, free online tools including text converters, image processors, AI generators, and productivity utilities — all in one place.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-in-up animation-delay-200">
