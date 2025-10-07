@@ -40,8 +40,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.smarttoolboxes.com/fun-tools/future-age" },
   openGraph: {
     title: "Future Age Predictor — How Old Will I Be?",
-    description: "Enter a year and instantly see your age with milestone ideas.
-",
+    description: "Enter a year and instantly see your age with milestone ideas.",
     type: "website",
     url: "https://www.smarttoolboxes.com/fun-tools/future-age",
   },
