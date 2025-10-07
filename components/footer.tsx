@@ -373,6 +373,14 @@ export function Footer() {
                   Terms of Service
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/cookie-preferences"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  Cookie Preferences
+                </Link>
+              </li>
             </ul>
           </div>
 
