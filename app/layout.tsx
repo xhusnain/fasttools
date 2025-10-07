@@ -199,10 +199,13 @@ export default function RootLayout({
             type="application/ld+json"
             dangerouslySetInnerHTML={{__html: JSON.stringify(websiteSchema)}}
         />
+        <script async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
+                crossOrigin="anonymous"></script>
     </head>
     <body className="min-h-screen bg-background font-sans text-foreground">
-        <a href="#main-content" className="skip-link">
-          Skip to main content
+    <a href="#main-content" className="skip-link">
+        Skip to main content
         </a>
         <GlobalLoading />
         <Header />
