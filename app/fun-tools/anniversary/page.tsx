@@ -2,17 +2,54 @@ import { AnniversaryCalculator } from "@/components/anniversary-calculator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Anniversary Calculator - Calculate Relationship Duration | FastTools",
+  title: "Anniversary Calculator — Relationship Duration & Next Anniversary | SmartToolboxes",
   description:
-    "Free Anniversary Calculator to calculate how long you've been together and when your next anniversary is. Perfect for couples and relationships. Try it now!",
-  keywords:
-    "anniversary calculator, relationship calculator, how long together, anniversary date, relationship duration, couple calculator, free anniversary calculator",
+    "Calculate how long you've been together in years, months, and days. See next anniversary date and days remaining.",
+  keywords: [
+    "anniversary calculator",
+    "relationship calculator",
+    "how long together",
+    "anniversary date",
+    "relationship duration",
+    "couple calculator",
+    "days until anniversary",
+    "next anniversary calculator",
+    "milestone anniversaries",
+    "1 year anniversary",
+    "5 year anniversary",
+    "10 year anniversary",
+    "wedding anniversary calculator",
+    "dating anniversary calculator",
+    "share anniversary result",
+    "free anniversary calculator"
+  ],
+  alternates: { canonical: "https://www.smarttoolboxes.com/fun-tools/anniversary" },
   openGraph: {
-    title: "Anniversary Calculator - Calculate Relationship Duration",
-    description: "Calculate how long you've been together and when your next anniversary is with our free tool.",
+    title: "Anniversary Calculator — Relationship Duration",
+    description: "See how long you’ve been together and your next anniversary.",
     type: "website",
+    url: "https://www.smarttoolboxes.com/fun-tools/anniversary",
+  },
+  twitter: { card: "summary_large_image", title: "Anniversary Calculator", description: "Calculate relationship duration and next anniversary." },
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name: "Anniversary Calculator",
+      applicationCategory: "EntertainmentApplication",
+      operatingSystem: "Web",
+      url: "https://www.smarttoolboxes.com/fun-tools/anniversary",
+      description:
+        "Calculate relationship duration and next anniversary with days remaining.",
+      inLanguage: "en",
+      isAccessibleForFree: true,
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      featureList: ["Duration in years/months/days", "Next anniversary", "Days remaining"],
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+    }),
   },
 }
 
@@ -55,6 +92,11 @@ export default function AnniversaryPage() {
                 <li>Find out when your next anniversary is</li>
                 <li>Count down days until your next anniversary</li>
                 <li>Share your milestone with loved ones</li>
+              </ul>
+              <h3 className="text-lg font-bold mt-6 mb-3 text-foreground">Related Tools</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                <li><Link href="/fun-tools/birthday-countdown">Birthday Countdown</Link></li>
+                <li><Link href="/fun-tools/love-calculator">Love Calculator</Link></li>
               </ul>
             </div>
           </div>

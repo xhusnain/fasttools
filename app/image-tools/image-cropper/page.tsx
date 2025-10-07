@@ -1,13 +1,57 @@
 import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { ImageCropper } from "@/components/image-cropper"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Online Image Cropper - Circular & Square Crop Tool | FastTools",
+  title: "Online Image Cropper — Circle & Square Crop Tool | SmartToolboxes",
   description:
-    "Crop images online for free. Create circular profile pictures or square social media posts. Fast, easy, and no software needed.",
-  keywords:
-    "image cropper, crop image online, circular crop, square crop, profile picture cropper, avatar maker, online crop tool",
+    "Crop images online for free. Create circular profile pictures or square posts. Fast and easy—no software needed.",
+  keywords: [
+    "image cropper",
+    "crop image online",
+    "circular crop",
+    "square crop",
+    "profile picture cropper",
+    "avatar maker",
+    "social media crop",
+    "instagram crop",
+    "twitter profile crop",
+    "linkedin profile crop",
+    "youtube thumbnail crop",
+    "crop to aspect ratio",
+    "1:1 square",
+    "circle mask",
+    "round avatar",
+    "crop preview",
+    "download cropped image",
+    "free online crop tool"
+  ],
+  alternates: { canonical: "https://www.smarttoolboxes.com/image-tools/image-cropper" },
+  openGraph: {
+    title: "Online Image Cropper — Circle & Square",
+    description: "Crop images into circle or square with live preview.",
+    url: "https://www.smarttoolboxes.com/image-tools/image-cropper",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", title: "Online Image Cropper", description: "Create circular avatars and square posts." },
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name: "Online Image Cropper",
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "Web",
+      url: "https://www.smarttoolboxes.com/image-tools/image-cropper",
+      description:
+        "Crop images into circular or square shapes with live preview and download.",
+      inLanguage: "en",
+      isAccessibleForFree: true,
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      featureList: ["Circle crop", "Square crop", "Preview/Download"],
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+    }),
+  },
 }
 
 export default function ImageCropperPage() {
@@ -31,6 +75,19 @@ export default function ImageCropperPage() {
 
         <div className="max-w-3xl mx-auto animate-slide-up">
           <ImageCropper />
+          <div className="prose prose-sm max-w-none mt-10">
+            <h2 className="text-2xl font-bold mb-4 text-foreground">How to Crop</h2>
+            <ol className="list-decimal pl-5 text-muted-foreground">
+              <li>Upload an image and select circle or square crop.</li>
+              <li>Adjust the crop area and download your new image.</li>
+            </ol>
+
+            <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Tools</h2>
+            <ul className="list-disc pl-5 text-muted-foreground">
+              <li><Link href="/image-tools/background-blur">Background Blur</Link></li>
+              <li><Link href="/image-tools/image-to-text">Image to Text (OCR)</Link></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

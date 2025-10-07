@@ -2,17 +2,52 @@ import { LoveCalculator } from "@/components/love-calculator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Love Calculator - Test Your Love Compatibility | FastTools",
+  title: "Love Calculator — Love Compatibility & Match Percentage | SmartToolboxes",
   description:
-    "Calculate love compatibility between two people with our fun Love Calculator. See your love match percentage and share with friends. Free and entertaining!",
-  keywords:
-    "love calculator, love compatibility, love match, relationship calculator, love percentage, compatibility test, love meter, free love calculator",
+    "Fun love compatibility calculator. Enter two names to see your match percentage and share the result with friends.",
+  keywords: [
+    "love calculator",
+    "love compatibility",
+    "love match",
+    "relationship calculator",
+    "love percentage",
+    "compatibility test",
+    "love meter",
+    "name compatibility",
+    "crush calculator",
+    "couple compatibility",
+    "fun love test",
+    "free love calculator",
+    "online love meter",
+    "romance compatibility"
+  ],
+  alternates: { canonical: "https://www.smarttoolboxes.com/fun-tools/love-calculator" },
   openGraph: {
-    title: "Love Calculator - Test Your Love Compatibility",
-    description: "Calculate love compatibility between two people and see your love match percentage!",
+    title: "Love Calculator — Compatibility & Match %",
+    description: "Enter two names to see your love compatibility percentage.",
     type: "website",
+    url: "https://www.smarttoolboxes.com/fun-tools/love-calculator",
+  },
+  twitter: { card: "summary_large_image", title: "Love Calculator", description: "See your love match percentage." },
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name: "Love Calculator",
+      applicationCategory: "EntertainmentApplication",
+      operatingSystem: "Web",
+      url: "https://www.smarttoolboxes.com/fun-tools/love-calculator",
+      description:
+        "Fun love compatibility calculator that shows a match percentage based on names.",
+      inLanguage: "en",
+      isAccessibleForFree: true,
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      featureList: ["Enter two names", "Match percentage", "Share result"],
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+    }),
   },
 }
 
@@ -58,6 +93,11 @@ export default function LoveCalculatorPage() {
               <p className="text-xs text-muted-foreground mt-4 italic">
                 Note: This is purely for entertainment purposes and should not be taken seriously!
               </p>
+              <h3 className="text-lg font-bold mt-6 mb-3 text-foreground">Related Tools</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                <li><Link href="/fun-tools/anniversary">Anniversary Calculator</Link></li>
+                <li><Link href="/fun-tools/birthday-countdown">Birthday Countdown</Link></li>
+              </ul>
             </div>
           </div>
         </div>

@@ -1,12 +1,66 @@
 import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { RegexTester } from "@/components/regex-tester"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Regex Tester - Test Regular Expressions Online | FastTools",
+  title: "Regex Tester — Test, Debug, and Build Regular Expressions | SmartToolboxes",
   description:
-    "Free online regex tester and debugger. Test your regular expressions with live matching and detailed results. Perfect for developers.",
-  keywords: "regex tester, regular expression tester, regex debugger, regex builder, pattern matcher",
+    "Test regex patterns with live matches, flags, and group results. Build and debug regular expressions for JavaScript and other languages.",
+  keywords: [
+    "regex tester",
+    "regular expression tester",
+    "regex debugger",
+    "regex builder",
+    "pattern matcher",
+    "javascript regex",
+    "typescript regex",
+    "regex flags",
+    "global multiline case insensitive",
+    "capture groups",
+    "named groups",
+    "lookahead lookbehind",
+    "regex cheat sheet",
+    "regex examples",
+    "email regex",
+    "url regex",
+    "phone regex",
+    "date regex",
+    "whitespace regex",
+    "character classes",
+    "quantifiers",
+    "anchors",
+    "alternation",
+    "backreferences",
+    "greedy vs lazy",
+    "regex online",
+    "free regex tester"
+  ],
+  alternates: { canonical: "https://www.smarttoolboxes.com/dev-tools/regex-tester" },
+  openGraph: {
+    title: "Regex Tester — Live Matches & Flags",
+    description: "Build and debug regex patterns with live results.",
+    url: "https://www.smarttoolboxes.com/dev-tools/regex-tester",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", title: "Regex Tester", description: "Test and debug regex online." },
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name: "Regex Tester",
+      applicationCategory: "DeveloperApplication",
+      operatingSystem: "Web",
+      url: "https://www.smarttoolboxes.com/dev-tools/regex-tester",
+      description:
+        "Test, build, and debug regular expressions with live matches and flags.",
+      inLanguage: "en",
+      isAccessibleForFree: true,
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      featureList: ["Live matching", "Flags", "Groups"],
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+    }),
+  },
 }
 
 export default function RegexTesterPage() {
@@ -29,6 +83,20 @@ export default function RegexTesterPage() {
         </div>
 
         <RegexTester />
+
+        <div className="prose prose-sm max-w-none">
+          <h2 className="text-2xl font-bold mt-8 mb-4">How to Use</h2>
+          <ol className="list-decimal pl-5 text-muted-foreground">
+            <li>Enter a pattern and test text; toggle flags (g, i, m, s, u, y).</li>
+            <li>Inspect matches, groups, and indices; iterate with the global flag.</li>
+          </ol>
+
+          <h2 className="text-2xl font-bold mt-8 mb-4">Related Tools</h2>
+          <ul className="list-disc pl-5 text-muted-foreground">
+            <li><Link href="/dev-tools/json-to-csv">JSON to CSV</Link></li>
+            <li><Link href="/dev-tools/markdown-previewer">Markdown Previewer</Link></li>
+          </ul>
+        </div>
       </div>
     </div>
   )

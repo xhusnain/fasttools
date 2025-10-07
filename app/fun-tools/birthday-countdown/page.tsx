@@ -2,17 +2,51 @@ import { BirthdayCountdown } from "@/components/birthday-countdown"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Birthday Countdown - Real-Time Birthday Timer | FastTools",
+  title: "Birthday Countdown — Real‑Time Birthday Timer | SmartToolboxes",
   description:
-    "Free Birthday Countdown timer showing days, hours, minutes, and seconds until your next birthday. Real-time countdown with sharing options. Try it now!",
-  keywords:
-    "birthday countdown, birthday timer, days until birthday, birthday calculator, countdown to birthday, birthday counter, free birthday countdown",
+    "Live birthday countdown showing days, hours, minutes, and seconds until your next birthday. Share the timer with friends.",
+  keywords: [
+    "birthday countdown",
+    "birthday timer",
+    "days until birthday",
+    "countdown to birthday",
+    "birthday counter",
+    "happy birthday timer",
+    "share birthday countdown",
+    "birthday reminder",
+    "next birthday date",
+    "live countdown",
+    "party countdown",
+    "celebration timer",
+    "free birthday countdown"
+  ],
+  alternates: { canonical: "https://www.smarttoolboxes.com/fun-tools/birthday-countdown" },
   openGraph: {
-    title: "Birthday Countdown - Real-Time Birthday Timer",
-    description: "Count down to your next birthday in real-time with days, hours, minutes, and seconds!",
+    title: "Birthday Countdown — Live Timer",
+    description: "See exactly how long until your next birthday.",
     type: "website",
+    url: "https://www.smarttoolboxes.com/fun-tools/birthday-countdown",
+  },
+  twitter: { card: "summary_large_image", title: "Birthday Countdown", description: "Live birthday countdown timer." },
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name: "Birthday Countdown",
+      applicationCategory: "EntertainmentApplication",
+      operatingSystem: "Web",
+      url: "https://www.smarttoolboxes.com/fun-tools/birthday-countdown",
+      description:
+        "Live countdown to your next birthday with share options.",
+      inLanguage: "en",
+      isAccessibleForFree: true,
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      featureList: ["Live timer", "Share link", "Next birthday date"],
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+    }),
   },
 }
 
@@ -54,6 +88,11 @@ export default function BirthdayCountdownPage() {
                 <li>Shows days, hours, minutes, and seconds</li>
                 <li>Displays your next birthday date</li>
                 <li>Easy sharing options for social media</li>
+              </ul>
+              <h3 className="text-lg font-bold mt-6 mb-3 text-foreground">Related Tools</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                <li><Link href="/fun-tools/future-age">Future Age Predictor</Link></li>
+                <li><Link href="/fun-tools/anniversary">Anniversary Calculator</Link></li>
               </ul>
             </div>
           </div>

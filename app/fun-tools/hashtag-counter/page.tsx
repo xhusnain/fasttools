@@ -2,17 +2,56 @@ import { HashtagCounter } from "@/components/hashtag-counter"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Instagram Hashtag Counter - Count & Extract Hashtags | FastTools",
+  title: "Hashtag Counter — Count & Extract Hashtags for Instagram | SmartToolboxes",
   description:
-    "Free Instagram Hashtag Counter to count and extract hashtags from your posts. Perfect for social media management and Instagram optimization. Try it now!",
-  keywords:
-    "hashtag counter, instagram hashtags, count hashtags, extract hashtags, social media tools, instagram tools, hashtag analyzer, free hashtag counter",
+    "Count and extract hashtags from captions or comments. Unique count, copy list, and analyze usage for Instagram posts.",
+  keywords: [
+    "hashtag counter",
+    "instagram hashtags",
+    "count hashtags",
+    "extract hashtags",
+    "hashtag analyzer",
+    "hashtag frequency",
+    "unique hashtags",
+    "copy hashtags",
+    "hashtag list",
+    "hashtag limit 30",
+    "instagram caption hashtags",
+    "instagram comments hashtags",
+    "social media tools",
+    "instagram tools",
+    "hashtag cleaner",
+    "remove duplicate hashtags",
+    "count tags online",
+    "free hashtag counter"
+  ],
+  alternates: { canonical: "https://www.smarttoolboxes.com/fun-tools/hashtag-counter" },
   openGraph: {
-    title: "Instagram Hashtag Counter - Count & Extract Hashtags",
-    description: "Count and extract hashtags from your Instagram posts with our free Hashtag Counter tool.",
+    title: "Hashtag Counter — Count & Extract",
+    description: "Count and extract hashtags from your Instagram captions and comments.",
     type: "website",
+    url: "https://www.smarttoolboxes.com/fun-tools/hashtag-counter",
+  },
+  twitter: { card: "summary_large_image", title: "Hashtag Counter", description: "Count and extract Instagram hashtags." },
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name: "Hashtag Counter",
+      applicationCategory: "SocialMediaApplication",
+      operatingSystem: "Web",
+      url: "https://www.smarttoolboxes.com/fun-tools/hashtag-counter",
+      description:
+        "Count and extract unique hashtags from captions with copy support.",
+      inLanguage: "en",
+      isAccessibleForFree: true,
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      featureList: ["Count unique hashtags", "Copy list", "Clean duplicates"],
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+    }),
   },
 }
 
@@ -54,6 +93,12 @@ export default function HashtagCounterPage() {
                 <li>Extract and display all hashtags separately</li>
                 <li>Copy all hashtags with one click</li>
                 <li>Perfect for Instagram's 30 hashtag limit</li>
+              </ul>
+              <h3 className="text-lg font-bold mt-6 mb-3 text-foreground">Related Tools</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                <li><Link href="/seo-tools/hashtags">Hashtag Generator</Link></li>
+                <li><Link href="/social-media-tools/youtube-tags">YouTube Tags</Link></li>
+                <li><Link href="/social-media-tools/youtube-thumbnail">YouTube Thumbnail</Link></li>
               </ul>
             </div>
           </div>

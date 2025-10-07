@@ -1,12 +1,53 @@
 import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { PDFUnlocker } from "@/components/pdf-unlocker"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "PDF Unlocker - Remove PDF Password Protection Online | FastTools",
+  title: "PDF Unlocker — Remove PDF Password Protection Online | SmartToolboxes",
   description:
-    "Unlock password-protected PDF files online for free. Remove PDF restrictions and access your documents instantly. Secure and easy to use.",
-  keywords: "PDF unlocker, remove PDF password, unlock PDF, PDF password remover, decrypt PDF, free PDF unlocker",
+    "Unlock password‑protected PDFs in your browser. Remove restrictions and access your files quickly and securely.",
+  keywords: [
+    "pdf unlocker",
+    "remove pdf password",
+    "unlock pdf",
+    "pdf password remover",
+    "decrypt pdf",
+    "unlock pdf online",
+    "open locked pdf",
+    "remove pdf restrictions",
+    "pdf owner password",
+    "pdf user password",
+    "secure pdf unlock",
+    "in browser pdf unlock",
+    "no upload unlock",
+    "free pdf unlocker"
+  ],
+  alternates: { canonical: "https://www.smarttoolboxes.com/image-tools/pdf-unlocker" },
+  openGraph: {
+    title: "PDF Unlocker — Remove Passwords",
+    description: "Unlock password‑protected PDFs securely in your browser.",
+    url: "https://www.smarttoolboxes.com/image-tools/pdf-unlocker",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", title: "PDF Unlocker", description: "Remove PDF passwords and restrictions online." },
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name: "PDF Unlocker",
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "Web",
+      url: "https://www.smarttoolboxes.com/image-tools/pdf-unlocker",
+      description:
+        "Remove PDF passwords and restrictions securely in the browser.",
+      inLanguage: "en",
+      isAccessibleForFree: true,
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      featureList: ["Owner/user password", "In‑browser unlock", "Copy/save"],
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+    }),
+  },
 }
 
 export default function PDFUnlockerPage() {
@@ -30,6 +71,19 @@ export default function PDFUnlockerPage() {
 
         <div className="max-w-3xl mx-auto animate-slide-up">
           <PDFUnlocker />
+          <div className="prose prose-sm max-w-none mt-10">
+            <h2 className="text-2xl font-bold mb-4 text-foreground">How to Unlock a PDF</h2>
+            <ol className="list-decimal pl-5 text-muted-foreground">
+              <li>Upload the PDF; enter the password if you know it.</li>
+              <li>Remove restrictions and download the unlocked file.</li>
+            </ol>
+
+            <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Tools</h2>
+            <ul className="list-disc pl-5 text-muted-foreground">
+              <li><Link href="/image-tools/pdf-tools">PDF Splitter & Merger</Link></li>
+              <li><Link href="/image-tools/image-to-text">Image to Text (OCR)</Link></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

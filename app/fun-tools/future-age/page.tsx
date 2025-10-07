@@ -2,17 +2,66 @@ import { FutureAgePredictor } from "@/components/future-age-predictor"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Future Age Predictor - Calculate Your Age in Any Year | FastTools",
+  title: "Future Age Predictor — How Old Will I Be in a Year? | SmartToolboxes",
   description:
-    "Predict how old you'll be in any future year with our free Future Age Predictor. Fun and easy way to visualize your age in the future. Try it now!",
-  keywords:
-    "future age predictor, age calculator, future age, how old will i be, age prediction, calculate future age, free age predictor",
+    "See how old you'll be in any future year. Fun age prediction with milestones, planning ideas, and shareable results.",
+  keywords: [
+    "future age predictor",
+    "how old will I be",
+    "age calculator",
+    "future age",
+    "calculate future age",
+    "age in 2030",
+    "age in 2040",
+    "how old will I be in 10 years",
+    "age milestones",
+    "30th birthday",
+    "40th birthday",
+    "50th birthday",
+    "retirement planning age",
+    "college class of age",
+    "kids age in year",
+    "timeline age",
+    "age chart future",
+    "birthday year age",
+    "date difference age",
+    "target year age",
+    "event planning age",
+    "wedding year age",
+    "anniversary age",
+    "fun age tool",
+    "share age result",
+    "free age predictor",
+    "online age predictor"
+  ],
+  alternates: { canonical: "https://www.smarttoolboxes.com/fun-tools/future-age" },
   openGraph: {
-    title: "Future Age Predictor - Calculate Your Age in Any Year",
-    description: "Predict how old you'll be in any future year with our free Future Age Predictor tool.",
+    title: "Future Age Predictor — How Old Will I Be?",
+    description: "Enter a year and instantly see your age with milestone ideas.
+",
     type: "website",
+    url: "https://www.smarttoolboxes.com/fun-tools/future-age",
+  },
+  twitter: { card: "summary_large_image", title: "Future Age Predictor", description: "See your age in any future year." },
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name: "Future Age Predictor",
+      applicationCategory: "EntertainmentApplication",
+      operatingSystem: "Web",
+      url: "https://www.smarttoolboxes.com/fun-tools/future-age",
+      description:
+        "Calculate how old you will be in any future year and share fun milestones.",
+      inLanguage: "en",
+      isAccessibleForFree: true,
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      featureList: ["Enter target year", "See age instantly", "Share result"],
+      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.smarttoolboxes.com" },
+    }),
   },
 }
 
@@ -56,6 +105,12 @@ export default function FutureAgePage() {
                 <li>Click "Predict My Future Age" to see the result</li>
                 <li>Share your result with friends and family!</li>
               </ol>
+              <h3 className="text-lg font-bold mt-6 mb-3 text-foreground">Related Tools</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                <li><Link href="/fun-tools/birthday-countdown">Birthday Countdown</Link></li>
+                <li><Link href="/date-time-tools/age-in-hours">Age in Hours</Link></li>
+                <li><Link href="/date-time-tools/date-to-day">Date to Day Finder</Link></li>
+              </ul>
             </div>
           </div>
         </div>
