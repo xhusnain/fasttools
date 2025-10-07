@@ -66,6 +66,20 @@ export default function HomePage() {
           name: "QR Code Generator", 
           description: "Generate QR codes for URLs, text, and contact information",
           url: "https://fasttools.store/ai-tools/qr-generator"
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: "Currency Converter",
+          description: "Convert between different currencies with real-time exchange rates",
+          url: "https://fasttools.store/converters/currency"
+        },
+        {
+          "@type": "ListItem",
+          position: 5,
+          name: "AI Meme Generator",
+          description: "Create funny memes with AI-powered text generation",
+          url: "https://fasttools.store/ai-tools/meme-generator"
         }
       ]
     },
@@ -466,7 +480,6 @@ export default function HomePage() {
       href: "/fun-tools/anniversary",
       popular: false,
     },
-    // Image Tools extended
     {
       title: "PDF Tools",
       description: "Basic PDF utilities online.",
@@ -533,16 +546,20 @@ export default function HomePage() {
     },
   ]
 
-  // Colorful gradients for tool icons to improve visual variety
+  // Premium gradients for tool icons with more variety
   const iconGradients = [
-    "from-orange-500 to-amber-400",
-    "from-blue-500 to-cyan-400",
-    "from-emerald-500 to-teal-400",
-    "from-violet-500 to-fuchsia-400",
-    "from-rose-500 to-pink-400",
-    "from-indigo-500 to-sky-400",
-    "from-lime-500 to-green-400",
-    "from-slate-500 to-zinc-400",
+    "from-orange-500 via-amber-400 to-yellow-500",
+    "from-blue-500 via-cyan-400 to-teal-500",
+    "from-emerald-500 via-green-400 to-lime-500",
+    "from-violet-500 via-purple-400 to-fuchsia-500",
+    "from-rose-500 via-pink-400 to-red-500",
+    "from-indigo-500 via-blue-400 to-sky-500",
+    "from-lime-500 via-green-400 to-emerald-500",
+    "from-slate-500 via-gray-400 to-zinc-500",
+    "from-red-500 via-orange-400 to-yellow-500",
+    "from-purple-500 via-violet-400 to-pink-500",
+    "from-teal-500 via-cyan-400 to-blue-500",
+    "from-green-500 via-emerald-400 to-teal-500",
   ]
 
   const categorizedTools: Record<string, typeof tools> = {
@@ -604,49 +621,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-muted/30 py-20 md:py-24">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="border border-border/60 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-scale-in bg-card/80 backdrop-blur-sm">
-              <CardHeader className="space-y-4">
-                <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg shadow-primary/20">
-                  <Zap className="h-7 w-7 text-primary-foreground" />
-                </div>
-                <CardTitle className="text-xl text-foreground">Lightning Fast</CardTitle>
-                <CardDescription className="leading-relaxed text-base text-muted-foreground">
-                  Get instant results with our optimized calculation tools. No waiting, no delays, just accurate
-                  results.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="border border-border shadow-sm hover:shadow-md transition-all hover:-translate-y-1 animate-scale-in bg-card/80 backdrop-blur-sm">
-              <CardHeader className="space-y-4">
-                <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-secondary to-secondary/80 flex items-center justify-center shadow-lg shadow-secondary/20">
-                  <Shield className="h-7 w-7 text-secondary-foreground" />
-                </div>
-                <CardTitle className="text-xl text-foreground">100% Free</CardTitle>
-                <CardDescription className="leading-relaxed text-base text-muted-foreground">
-                  All calculation tools are completely free to use. No hidden fees, no subscriptions, no registration
-                  required.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="border border-border shadow-sm hover:shadow-md transition-all hover:-translate-y-1 animate-scale-in bg-card/80 backdrop-blur-sm">
-              <CardHeader className="space-y-4">
-                <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg shadow-primary/20">
-                  <Clock className="h-7 w-7 text-primary-foreground" />
-                </div>
-                <CardTitle className="text-xl text-foreground">Always Available</CardTitle>
-                <CardDescription className="leading-relaxed text-base text-muted-foreground">
-                  Access our online tools anytime, anywhere, from any device. Mobile-friendly and responsive design.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Features Section */}
       {/* Intro feature cards removed to streamline homepage */}
@@ -655,96 +629,47 @@ export default function HomePage() {
 
       {/* Public Tools section removed per request */}
 
-      {/* All Tools Section with side ad spaces on large screens */}
-      <section className="bg-muted/30 py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-8 animate-fade-in-up">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2 text-foreground">All Tools</h2>
-              <p className="text-sm md:text-base text-muted-foreground text-pretty">Browse our full collection of free online tools and utilities</p>
+      {/* Ad Space - Top Content */}
+      <section className="py-4">
+        <div className="w-full">
+          <AdSpace slot="content" className="w-full max-w-6xl mx-auto" />
+        </div>
+      </section>
+
+      {/* Popular Tools Section */}
+      <section className="bg-gradient-to-br from-background via-muted/20 to-background py-16 md:py-20">
+        <div className="w-full px-4">
+          <div className="w-full">
+            <div className="text-center mb-12 animate-fade-in-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Popular Tools</h2>
+              <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">Discover our most-used tools that help thousands of users daily</p>
             </div>
 
-            <div className="hidden lg:grid grid-cols-12 gap-8 xl:gap-10">
-              <div className="col-span-2">
-                <AdSpace slot="sidebar" className="h-[600px] w-full border border-border rounded-lg" />
-              </div>
-              <div className="col-span-8">
-                <div className="space-y-10">
-                  {Object.entries(categorizedTools).map(([category, toolList], catIdx) => (
-                    <div key={category} className="space-y-4">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-lg md:text-xl font-semibold text-foreground">{category}</h3>
-              </div>
-                      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 xl:gap-10">
-                        {toolList.map((tool, index) => (
-                          <Card
-                            key={tool.href}
-                            className="border border-border hover:shadow-md transition-all hover:-translate-y-0.5 animate-fade-in-up"
-                            style={{ animationDelay: `${index * 25}ms` }}
-                          >
-                            <CardHeader className="p-4">
-                              <div className="flex items-start justify-between gap-3">
-                                <div className={`h-10 w-10 rounded-md bg-gradient-to-br shadow-sm flex items-center justify-center text-white ${iconGradients[(catIdx + index) % iconGradients.length]}`}>
-                                  <tool.icon className="h-5 w-5" />
-            </div>
-                                {tool.popular && (
-                                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-secondary/10 text-secondary flex items-center gap-1 border border-secondary/20">
-                                    <Star className="h-3 w-3 fill-current" />
-                                    Popular
-                                  </span>
-                                )}
-                </div>
-                              <CardTitle className="text-base text-foreground line-clamp-1">{tool.title}</CardTitle>
-                              <CardDescription className="text-xs text-muted-foreground line-clamp-2">{tool.description}</CardDescription>
-                            </CardHeader>
-                            <CardContent className="pt-0 px-4 pb-4">
-                              <Button asChild className="w-full h-9 text-xs font-medium shadow-sm">
-                                <Link href={tool.href}>
-                                  Use Tool
-                                  <ArrowRight className="ml-2 h-4 w-4" />
-                                </Link>
-                              </Button>
-                            </CardContent>
-                          </Card>
-                        ))}
-              </div>
-            </div>
-                  ))}
-                </div>
-              </div>
-              <div className="col-span-2">
-                <AdSpace slot="sidebar" className="h-[600px] w-full border border-border rounded-lg" />
-              </div>
-            </div>
-
-            {/* Fallback layout for small screens */}
-            <div className="grid lg:hidden gap-8">
-              {Object.entries(categorizedTools).map(([category, toolList], catIdx) => (
-                <div key={category} className="space-y-3">
-                  <h3 className="text-base font-semibold text-foreground">{category}</h3>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
-                    {toolList.map((tool, index) => (
-                      <Card key={tool.href} className="border border-border hover:shadow-md transition-all" style={{ animationDelay: `${index * 25}ms` }}>
-                        <CardHeader className="p-4">
-                          <div className="flex items-start justify-between gap-3">
-                            <div className={`h-10 w-10 rounded-md bg-gradient-to-br shadow-sm flex items-center justify-center text-white ${iconGradients[(catIdx + index) % iconGradients.length]}`}>
-                              <tool.icon className="h-5 w-5" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8 mb-12">
+              {tools.filter(tool => tool.popular).map((tool, index) => (
+                <Card
+                  key={tool.href}
+                  className="group relative w-full border border-border/60 hover:border-primary/30 bg-card/80 backdrop-blur-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 animate-fade-in-up flex flex-col"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <CardHeader className="p-6 pb-4 flex-shrink-0">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className={`h-16 w-16 rounded-xl bg-gradient-to-br shadow-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 ${iconGradients[index % iconGradients.length]}`}>
+                        <tool.icon className="h-8 w-8" />
                       </div>
-                      {tool.popular && (
-                              <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-secondary/10 text-secondary flex items-center gap-1 border border-secondary/20">
-                          <Star className="h-3 w-3 fill-current" />
-                          Popular
-                        </span>
-                      )}
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-700 dark:text-amber-300 text-xs font-semibold border border-amber-200/50 dark:border-amber-800/50 backdrop-blur-sm">
+                        <Star className="h-3 w-3 fill-current" />
+                        Popular
+                      </span>
                     </div>
-                          <CardTitle className="text-base text-foreground line-clamp-1">{tool.title}</CardTitle>
-                          <CardDescription className="text-xs text-muted-foreground line-clamp-2">{tool.description}</CardDescription>
+                    <CardTitle className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{tool.title}</CardTitle>
+                    <CardDescription className="text-sm text-muted-foreground leading-relaxed flex-grow">{tool.description}</CardDescription>
                   </CardHeader>
-                        <CardContent className="pt-0 px-4 pb-4">
-                          <Button asChild className="w-full h-9 text-xs font-medium shadow-sm">
-                      <Link href={tool.href}>
+                  <CardContent className="p-6 pt-0 mt-auto">
+                    <Button asChild className="w-full h-12 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group-hover:bg-primary group-hover:text-primary-foreground">
+                      <Link href={tool.href} className="flex items-center justify-center gap-2">
                         Use Tool
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                        <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                       </Link>
                     </Button>
                   </CardContent>
@@ -752,19 +677,161 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-              ))}
         </div>
+      </section>
+
+      {/* Ad Space - Between Sections */}
+      <section className="py-4">
+        <div className="w-full">
+          <AdSpace slot="content" className="w-full max-w-6xl mx-auto" />
+        </div>
+      </section>
+
+      {/* All Tools Section with full width layout */}
+      <section className="bg-muted/20 py-16 md:py-20">
+        <div className="w-full px-4">
+          <div className="w-full">
+            <div className="text-center mb-12 animate-fade-in-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">All Tools</h2>
+              <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">Browse our complete collection of free online tools and utilities</p>
+            </div>
+
+            {/* Desktop layout with side ads */}
+            <div className="hidden lg:grid grid-cols-12 gap-6">
+              <div className="col-span-2">
+                <div className="sticky top-8">
+                  <AdSpace slot="sidebar" className="h-[600px] w-full border border-border/60 rounded-xl shadow-sm mb-6" />
+                  <AdSpace slot="sidebar" className="h-[400px] w-full border border-border/60 rounded-xl shadow-sm" />
+                </div>
+              </div>
+              
+              <div className="col-span-8">
+                <div className="space-y-16">
+                  {Object.entries(categorizedTools).map(([category, toolList], catIdx) => (
+                    <div key={category} className="space-y-6">
+                      <div className="flex items-center gap-3">
+                        <div className="h-1 w-12 bg-gradient-to-r from-primary to-primary/60 rounded-full"></div>
+                        <h3 className="text-2xl font-bold text-foreground">{category}</h3>
+                        <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent"></div>
+                      </div>
+                      
+                      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+                        {toolList.map((tool, index) => (
+                          <Card
+                            key={tool.href}
+                            className="group relative w-full border border-border/60 hover:border-primary/30 bg-card/80 backdrop-blur-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 animate-fade-in-up flex flex-col"
+                            style={{ animationDelay: `${(catIdx * 50) + (index * 25)}ms` }}
+                          >
+                            <CardHeader className="p-6 pb-4 flex-shrink-0">
+                              <div className="flex items-start justify-between mb-4">
+                                <div className={`h-14 w-14 rounded-xl bg-gradient-to-br shadow-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 ${iconGradients[(catIdx + index) % iconGradients.length]}`}>
+                                  <tool.icon className="h-7 w-7" />
+                                </div>
+                                {tool.popular && (
+                                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-700 dark:text-amber-300 text-xs font-semibold border border-amber-200/50 dark:border-amber-800/50 backdrop-blur-sm">
+                                    <Star className="h-3 w-3 fill-current" />
+                                    Popular
+                                  </span>
+                                )}
+                              </div>
+                              <CardTitle className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{tool.title}</CardTitle>
+                              <CardDescription className="text-sm text-muted-foreground leading-relaxed flex-grow">{tool.description}</CardDescription>
+                            </CardHeader>
+                            <CardContent className="p-6 pt-0 mt-auto">
+                              <Button asChild className="w-full h-11 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group-hover:bg-primary group-hover:text-primary-foreground">
+                                <Link href={tool.href} className="flex items-center justify-center gap-2">
+                                  Use Tool
+                                  <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+                                </Link>
+                              </Button>
+                            </CardContent>
+                          </Card>
+                        ))}
+                      </div>
+                      
+                      {/* Ad space between categories */}
+                      {catIdx < Object.entries(categorizedTools).length - 1 && (
+                        <div className="py-4">
+                          <AdSpace slot="content" className="w-full max-w-4xl mx-auto" />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="col-span-2">
+                <div className="sticky top-8">
+                  <AdSpace slot="sidebar" className="h-[600px] w-full border border-border/60 rounded-xl shadow-sm mb-6" />
+                  <AdSpace slot="sidebar" className="h-[400px] w-full border border-border/60 rounded-xl shadow-sm" />
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile and tablet layout */}
+            <div className="grid lg:hidden gap-12">
+              {Object.entries(categorizedTools).map(([category, toolList], catIdx) => (
+                <div key={category} className="space-y-6">
+                  <div className="flex items-center gap-3">
+                    <div className="h-1 w-8 bg-gradient-to-r from-primary to-primary/60 rounded-full"></div>
+                    <h3 className="text-xl font-bold text-foreground">{category}</h3>
+                    <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent"></div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {toolList.map((tool, index) => (
+                      <Card 
+                        key={tool.href} 
+                        className="group relative w-full border border-border/60 hover:border-primary/30 bg-card/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 animate-fade-in-up flex flex-col"
+                        style={{ animationDelay: `${(catIdx * 30) + (index * 20)}ms` }}
+                      >
+                        <CardHeader className="p-5 pb-3 flex-shrink-0">
+                          <div className="flex items-start justify-between mb-3">
+                            <div className={`h-12 w-12 rounded-lg bg-gradient-to-br shadow-md flex items-center justify-center text-white group-hover:scale-105 transition-transform duration-300 ${iconGradients[(catIdx + index) % iconGradients.length]}`}>
+                              <tool.icon className="h-6 w-6" />
+                            </div>
+                            {tool.popular && (
+                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-700 dark:text-amber-300 text-xs font-semibold border border-amber-200/50 dark:border-amber-800/50">
+                                <Star className="h-3 w-3 fill-current" />
+                                Popular
+                              </span>
+                            )}
+                          </div>
+                          <CardTitle className="text-base font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{tool.title}</CardTitle>
+                          <CardDescription className="text-sm text-muted-foreground leading-relaxed flex-grow">{tool.description}</CardDescription>
+                        </CardHeader>
+                        <CardContent className="p-5 pt-0 mt-auto">
+                          <Button asChild className="w-full h-10 text-sm font-semibold shadow-lg hover:shadow-md transition-all duration-200 group-hover:bg-primary group-hover:text-primary-foreground">
+                            <Link href={tool.href} className="flex items-center justify-center gap-2">
+                              Use Tool
+                              <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+                            </Link>
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                  
+                  {/* Ad space between categories on mobile */}
+                  {catIdx < Object.entries(categorizedTools).length - 1 && (
+                    <div className="py-4">
+                      <AdSpace slot="content" className="w-full" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ moved to dedicated /faq page for SEO and clarity */}
-
-      <section className="container mx-auto px-4 py-8">
-        <AdSpace slot="content" className="max-w-6xl mx-auto" />
+      {/* Ad Space - Bottom Content */}
+      <section className="py-8">
+        <div className="w-full px-4">
+          <AdSpace slot="content" className="w-full max-w-6xl mx-auto mb-6" />
+          <AdSpace slot="content" className="w-full max-w-6xl mx-auto" />
+        </div>
       </section>
-
-      {/* CTA removed for cleaner UX; reserved space for ads handled globally in layout */}
       </div>
     </>
   )
