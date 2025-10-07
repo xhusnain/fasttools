@@ -93,11 +93,11 @@ export default function InvoiceGeneratorPage() {
           <p className="text-sm md:text-base text-muted-foreground text-pretty">Add items, taxes, and discounts; set currency; then download or print instantly.</p>
         </div>
 
-        <AdSpace slot="content-top" className="mb-6 h-24" />
+        <AdSpace slot="content" className="mb-6 h-24" />
 
         <InvoiceGenerator />
 
-        <AdSpace slot="content-bottom" className="mt-6 h-24" />
+        <AdSpace slot="content" className="mt-6 h-24" />
 
         <div className="mt-10 prose prose-sm max-w-none">
           <h2 className="text-2xl font-bold mb-4 text-foreground">How to Create an Invoice</h2>

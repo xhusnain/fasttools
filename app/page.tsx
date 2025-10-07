@@ -580,7 +580,7 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="flex flex-col">
-        <AdSpace slot="header" className="mb-0" />
+        <AdSpace slot="header" className="mb-0 h-20" />
 
       <section className="container mx-auto px-4 lg:px-6 py-20 md:py-32">
         <AdSpace slot="header" className="mb-12 h-24" />
@@ -644,7 +644,7 @@ export default function HomePage() {
       {/* Ad Space - Top Content */}
       <section className="py-4">
         <div className="w-full">
-          <AdSpace slot="content" className="w-full max-w-6xl mx-auto" />
+          <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24" />
         </div>
       </section>
 
@@ -695,7 +695,7 @@ export default function HomePage() {
       {/* Ad Space - Between Sections */}
       <section className="py-4">
         <div className="w-full">
-          <AdSpace slot="content" className="w-full max-w-6xl mx-auto" />
+          <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24" />
         </div>
       </section>
 
@@ -767,7 +767,7 @@ export default function HomePage() {
                       {/* Ad space between categories */}
                       {catIdx < Object.entries(categorizedTools).length - 1 && (
                         <div className="py-4">
-                          <AdSpace slot="content" className="w-full max-w-4xl mx-auto" />
+                          <AdSpace slot="content" className="w-full max-w-4xl mx-auto h-24" />
                         </div>
                       )}
                     </div>
@@ -833,7 +833,7 @@ export default function HomePage() {
                   {/* Ad space between categories on mobile */}
                   {catIdx < Object.entries(categorizedTools).length - 1 && (
                     <div className="py-4">
-                      <AdSpace slot="content" className="w-full" />
+                      <AdSpace slot="content" className="w-full h-24" />
                     </div>
                   )}
                 </div>
@@ -846,8 +846,8 @@ export default function HomePage() {
       {/* Ad Space - Bottom Content */}
       <section className="py-8">
         <div className="w-full px-4">
-          <AdSpace slot="content" className="w-full max-w-6xl mx-auto mb-6" />
-          <AdSpace slot="content" className="w-full max-w-6xl mx-auto" />
+          <AdSpace slot="content" className="w-full max-w-6xl mx-auto mb-6 h-24" />
+          <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24" />
         </div>
       </section>
       </div>

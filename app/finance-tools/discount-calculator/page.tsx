@@ -95,11 +95,11 @@ export default function DiscountCalculatorPage() {
           <p className="text-sm md:text-base text-muted-foreground text-pretty">Stack percentage and fixed discounts, include tax, and compare deals.</p>
         </div>
 
-        <AdSpace slot="content-top" className="mb-6 h-24" />
+        <AdSpace slot="content" className="mb-6 h-24" />
 
         <DiscountCalculator />
 
-        <AdSpace slot="content-bottom" className="mt-6 h-24" />
+        <AdSpace slot="content" className="mt-6 h-24" />
 
         <div className="mt-10 prose prose-sm max-w-none">
           <h2 className="text-2xl font-bold mb-4 text-foreground">How to Calculate Discounts</h2>

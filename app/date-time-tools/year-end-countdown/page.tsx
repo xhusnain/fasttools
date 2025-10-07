@@ -55,7 +55,7 @@ export const metadata: Metadata = {
 export default function YearEndCountdownPage() {
   return (
     <div className="min-h-screen bg-background">
-      <AdSpace position="header" />
+      <AdSpace slot="header" className="h-20" />
 
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <Breadcrumbs
@@ -74,7 +74,7 @@ export default function YearEndCountdownPage() {
 
           <YearEndCountdown />
 
-          <AdSpace position="content" />
+          <AdSpace slot="content" className="h-24" />
 
           <div className="prose prose-sm max-w-none mt-10">
             <h2 className="text-2xl font-bold mb-4 text-foreground">How to Use</h2>
