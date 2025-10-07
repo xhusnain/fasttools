@@ -32,6 +32,7 @@ import {
   Download,
 } from "lucide-react"
 import { AdSpace } from "@/components/ad-space"
+import { TiktokDownloader } from "@/components/tiktok-downloader"
 
 export default function HomePage() {
   const jsonLd = {
@@ -584,7 +585,7 @@ export default function HomePage() {
       <section className="container mx-auto px-4 lg:px-6 py-20 md:py-32">
         <AdSpace slot="header" className="mb-12 h-24" />
 
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+        <div className="max-w-5xl mx-auto text-center space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2 animate-fade-in border border-primary/20 backdrop-blur-sm">
             <Sparkles className="h-4 w-4" />
             <span>Free Online Tools for Everyone</span>
@@ -598,25 +599,36 @@ export default function HomePage() {
             Access 1000+ powerful, free online tools including text converters, image processors, AI generators, and productivity utilities — all in one place.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-in-up animation-delay-200">
-            <Button
-              asChild
-              size="lg"
-              className="w-full sm:w-auto h-12 px-8 text-base font-medium shadow-lg hover:shadow-xl transition-all duration-200"
-            >
-              <Link href="/tools">
-                Browse All Tools
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="w-full sm:w-auto h-12 px-8 text-base font-medium hover:bg-accent transition-all duration-200 bg-transparent border-2"
-            >
-              <Link href="/converters/text-case">Try Text Converter</Link>
-            </Button>
+          <div className="flex flex-col-reverse lg:flex-row items-start lg:items-stretch justify-center gap-8 pt-8 animate-fade-in-up animation-delay-200">
+            <div className="w-full lg:w-[52%]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full h-12 px-6 text-base font-medium shadow-lg hover:shadow-xl transition-all duration-200"
+                >
+                  <Link href="/tools">
+                    Browse All Tools
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="w-full h-12 px-6 text-base font-medium hover:bg-accent transition-all duration-200 bg-transparent border-2"
+                >
+                  <Link href="/social-media-tools/tiktok-downloader">Open Full TikTok Downloader</Link>
+                </Button>
+              </div>
+            </div>
+            <div className="w-full lg:w-[48%] text-left">
+              <h2 className="text-xl font-semibold mb-3 text-foreground">Quick TikTok Downloader</h2>
+              <TiktokDownloader compact />
+              <div className="mt-4">
+                <AdSpace slot="content" className="w-full h-24 lg:h-36 border border-border/60 rounded-md" />
+              </div>
+            </div>
           </div>
         </div>
       </section>

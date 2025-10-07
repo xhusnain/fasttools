@@ -8,7 +8,11 @@ import { Card } from "@/components/ui/card"
 import { Download, AlertTriangle } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
 
-export function TiktokDownloader() {
+type TiktokDownloaderProps = {
+  compact?: boolean
+}
+
+export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
   const [videoUrl, setVideoUrl] = useState("")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -72,11 +76,29 @@ export function TiktokDownloader() {
         throw new Error("No downloadable video found for this URL.")
       }
 
+      let coverUrl = data.cover
+
+      // Fallback: Try TikTok oEmbed for thumbnail if cover missing
+      if (!coverUrl) {
+        try {
+          const oembedRes = await fetch(
+            `https://www.tiktok.com/oembed?url=${encodeURIComponent(videoUrl.trim())}`,
+            { method: "GET", mode: "cors", headers: { Accept: "application/json" } },
+          )
+          if (oembedRes.ok) {
+            const oembed = await oembedRes.json()
+            if (oembed && oembed.thumbnail_url) {
+              coverUrl = oembed.thumbnail_url as string
+            }
+          }
+        } catch {}
+      }
+
       setResult({
         noWatermarkUrl: data.play || "",
         watermarkUrl: data.wmplay,
         musicUrl: data.music,
-        coverUrl: data.cover,
+        coverUrl,
         title: data.title,
       })
     } catch (e: any) {
@@ -88,21 +110,23 @@ export function TiktokDownloader() {
 
   return (
     <div className="space-y-6">
-      <Card className="p-6 bg-red-50 border-red-200">
-        <div className="flex gap-3">
-          <AlertTriangle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
-          <div className="space-y-2">
-            <p className="text-sm font-medium text-red-900">Legal Disclaimer</p>
-            <p className="text-sm text-red-800 leading-relaxed">
-              Downloading TikTok videos may violate copyright laws and TikTok's terms of service. This tool is for
-              educational purposes only. Always respect content creators' rights and only download videos you have
-              permission to use. Use downloaded content responsibly and give proper credit to original creators.
-            </p>
+      {!compact && (
+        <Card className="p-6 bg-red-50 border-red-200">
+          <div className="flex gap-3">
+            <AlertTriangle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+            <div className="space-y-2">
+              <p className="text-sm font-medium text-red-900">Legal Disclaimer</p>
+              <p className="text-sm text-red-800 leading-relaxed">
+                Downloading TikTok videos may violate copyright laws and TikTok's terms of service. This tool is for
+                educational purposes only. Always respect content creators' rights and only download videos you have
+                permission to use. Use downloaded content responsibly and give proper credit to original creators.
+              </p>
+            </div>
           </div>
-        </div>
-      </Card>
+        </Card>
+      )}
 
-      <Card className="p-6 bg-card border-border shadow-sm">
+      <Card className={`p-6 bg-card border-border shadow-sm ${compact ? "" : ""}`}>
         <div className="space-y-4">
           <div>
             <Label htmlFor="video-url" className="text-sm font-medium text-foreground">
@@ -148,7 +172,7 @@ export function TiktokDownloader() {
                 <img
                   src={result.coverUrl}
                   alt={result.title || "TikTok cover"}
-                  className="w-full rounded-md border"
+                  className={`${compact ? "w-full h-40 object-cover rounded-md border" : "w-full rounded-md border"}`}
                 />
               )}
               <div className="space-y-2">
@@ -188,15 +212,17 @@ export function TiktokDownloader() {
         </div>
       </Card>
 
-      <Card className="p-6 bg-muted/30 border-border">
-        <h3 className="text-base font-semibold text-foreground mb-3">Important Information</h3>
-        <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
-          <li>• How to use: paste TikTok link → Get Download Links → choose option.</li>
-          <li>• Works best with public videos; private or age-restricted content may not load.</li>
-          <li>• Use downloads responsibly; you are responsible for permissions and compliance.</li>
-          <li>• Only download your own content or content you are authorized to use.</li>
-        </ul>
-      </Card>
+      {!compact && (
+        <Card className="p-6 bg-muted/30 border-border">
+          <h3 className="text-base font-semibold text-foreground mb-3">Important Information</h3>
+          <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
+            <li>• How to use: paste TikTok link → Get Download Links → choose option.</li>
+            <li>• Works best with public videos; private or age-restricted content may not load.</li>
+            <li>• Use downloads responsibly; you are responsible for permissions and compliance.</li>
+            <li>• Only download your own content or content you are authorized to use.</li>
+          </ul>
+        </Card>
+      )}
     </div>
   )
 }
