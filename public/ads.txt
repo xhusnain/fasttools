@@ -1,0 +1,14 @@
+# ads.txt file for fasttools.store
+# This file is used to authorize digital sellers to sell inventory
+# For Google AdSense, you'll need to add your publisher ID here
+# Format: google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# Placeholder for future AdSense publisher ID
+# Replace with your actual AdSense publisher ID when approved
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# Additional authorized sellers can be added here
+# Example format: domain.com, publisher-id, DIRECT, certification-authority-id
+
+
+google.com, pub-6296569221534302, DIRECT, f08c47fec0942fa0
