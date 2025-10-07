@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     "ocr french",
     "free online ocr",
     "best image to text",
-    "smarttoolboxes ocr"
+    "fasttools ocr"
   ],
   alternates: { canonical: "https://www.fasttools.store/image-tools/image-to-text" },
   openGraph: {
