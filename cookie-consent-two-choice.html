@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Consent - Two Choice Version</title>
+    <style>
+        /* Cookie Consent Banner Styles */
+        .cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-top: 3px solid #2563eb;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 10000;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            padding: 20px;
+            max-width: 100%;
+        }
+
+        .cookie-consent-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-consent-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .cookie-consent-header {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cookie-consent-message {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #4b5563;
+            margin-bottom: 0;
+        }
+
+        .cookie-consent-actions {
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .cookie-consent-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .cookie-consent-btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .cookie-consent-btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .cookie-consent-btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+
+        .cookie-consent-btn-secondary:hover {
+            background: #e5e7eb;
+            transform: translateY(-1px);
+        }
+
+        .cookie-consent-footer {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .cookie-consent-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cookie-consent-actions {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .cookie-consent-btn {
+                flex: 1;
+                min-width: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cookie-consent-banner {
+                padding: 16px;
+            }
+
+            .cookie-consent-actions {
+                flex-direction: column;
+            }
+
+            .cookie-consent-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cookie Consent Banner - Two Choice Version -->
+    <div class="cookie-consent-banner" id="cookieConsentBanner">
+        <div class="cookie-consent-container">
+            <div class="cookie-consent-content">
+                <div class="cookie-consent-header">
+                    🍪 Cookie Preferences
+                </div>
+                <p class="cookie-consent-message">
+                    We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
+                    By clicking "Consent", you agree to our use of cookies for personalization, advertising, and analytics purposes. 
+                    You can manage your preferences at any time.
+                </p>
+                <div class="cookie-consent-footer">
+                    You can update your cookie preferences at any time by clicking "Manage" below.
+                </div>
+            </div>
+            <div class="cookie-consent-actions">
+                <button class="cookie-consent-btn cookie-consent-btn-primary" onclick="acceptCookies()">
+                    Consent
+                </button>
+                <button class="cookie-consent-btn cookie-consent-btn-secondary" onclick="manageCookies()">
+                    Manage
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie consent functionality
+        function acceptCookies() {
+            // Set consent cookies with proper expiration
+            const expirationDate = new Date();
+            expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+            
+            document.cookie = `cookieConsent=accepted; expires=${expirationDate.toUTCString()}; path=/; SameSite=Lax`;
+            document.cookie = `analyticsConsent=true; expires=${expirationDate.toUTCString()}; path=/; SameSite=Lax`;
+            document.cookie = `advertisingConsent=true; expires=${expirationDate.toUTCString()}; path=/; SameSite=Lax`;
+            document.cookie = `personalizationConsent=true; expires=${expirationDate.toUTCString()}; path=/; SameSite=Lax`;
+            
+            // Hide the banner
+            document.getElementById('cookieConsentBanner').style.display = 'none';
+            
+            // Initialize analytics and other services
+            initializeServices();
+        }
+
+        function manageCookies() {
+            // Open cookie management modal or redirect to preferences page
+            // Option 1: Open in new tab
+            window.open('/cookie-preferences', '_blank');
+            
+            // Option 2: Open modal (uncomment if you have a modal)
+            // openCookiePreferencesModal();
+        }
+
+        function initializeServices() {
+            // Initialize Google Analytics, Facebook Pixel, etc.
+            console.log('Initializing analytics and advertising services...');
+            
+            // Example: Initialize Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted',
+                    'ad_storage': 'granted',
+                    'personalization_storage': 'granted'
+                });
+            }
+        }
+
+        // Check if consent already given
+        function checkCookieConsent() {
+            const consent = document.cookie.split('; ').find(row => row.startsWith('cookieConsent='));
+            if (consent && consent.split('=')[1] === 'accepted') {
+                document.getElementById('cookieConsentBanner').style.display = 'none';
+                initializeServices();
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', checkCookieConsent);
+    </script>
+</body>
+</html>
