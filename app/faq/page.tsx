@@ -1,177 +1,664 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "SEO FAQ - Search Engine Optimization Questions & Answers | FastTools",
-  description:
-    "Comprehensive SEO FAQ: answers to 100+ search engine optimization questions covering keywords, on-page SEO, technical SEO, backlinks, content strategy, Core Web Vitals, schema, crawling & indexing.",
-  alternates: { canonical: "https://fasttools.store/faq" },
-  robots: { index: true, follow: true },
-  openGraph: {
-    title: "SEO FAQ - Search Engine Optimization Q&A",
+    title: "SEO FAQ - 100+ Expert SEO Questions & Comprehensive Answers | FastTools",
     description:
-      "100+ SEO questions with concise, practical answers: keyword research, link building, on-page SEO, technical SEO, Core Web Vitals, Site speed, schema",
-    url: "https://fasttools.store/faq",
-    type: "article",
-  },
+        "Comprehensive SEO FAQ: 100+ detailed questions and answers covering keyword research, on-page SEO, technical SEO, backlinks, Core Web Vitals, schema, crawling, indexing, content strategy, audits, and SEO tools. Practical tips, examples and FastTools integrations.",
+    keywords:
+        "SEO FAQ, search engine optimization, keyword research, on-page SEO, technical SEO, backlinks, Core Web Vitals, schema markup, SEO tools, site speed, content strategy, SEO audit, internal linking, mobile SEO, structured data, indexing, crawling, E-E-A-T, organic traffic, SERP, featured snippets",
+    alternates: { canonical: "https://fasttools.store/faq" },
+    robots: { index: true, follow: true },
+    openGraph: {
+        title: "SEO FAQ - 100+ Expert Questions & Answers | FastTools",
+        description:
+            "100+ comprehensive SEO questions answered: technical SEO, on-page, off-page, Core Web Vitals, schema, site speed, keyword strategy and more — practical, example-driven guidance.",
+        url: "https://fasttools.store/faq",
+        type: "article",
+        images: [
+            {
+                url: "/og-image.png",
+                width: 1200,
+                height: 630,
+                alt: "SEO FAQ - FastTools",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "SEO FAQ - 100+ Questions Answered | FastTools",
+        description:
+            "Detailed answers to over 100 SEO questions covering keyword research, technical SEO, backlinks, Core Web Vitals, schema and optimization strategies.",
+        images: ["/og-image.png"],
+    },
 }
 
 type QA = { question: string; answer: string }
 
 const faqs: QA[] = [
-  { question: "What is SEO (Search Engine Optimization)?", answer: "SEO is the practice of optimizing a website to improve rankings on search engine results pages (SERPs), increase organic traffic, and enhance discoverability." },
-  { question: "Why is SEO important for websites?", answer: "SEO drives sustainable, high-intent organic traffic, reduces dependency on paid ads, and improves user experience through technical and content best practices." },
-  { question: "What are keywords in SEO?", answer: "Keywords are search terms users type into search engines. Mapping relevant keywords to pages helps search engines understand content intent and rank appropriately." },
-  { question: "What is keyword research?", answer: "Keyword research identifies relevant queries with search volume and intent. Use tools to find head terms and long-tail keywords that match user needs." },
-  { question: "What are long-tail keywords?", answer: "Long-tail keywords are longer, specific queries with lower competition and higher conversion intent, ideal for targeted pages and blog posts." },
-  { question: "What is search intent?", answer: "Search intent describes the user goal behind a query: informational, navigational, transactional, or commercial investigation. Align content to the dominant intent." },
-  { question: "What is on-page SEO?", answer: "On-page SEO includes optimizing titles, meta descriptions, headings, internal links, content depth, schema, images, and Core Web Vitals elements on each page." },
-  { question: "How to write SEO-friendly titles?", answer: "Place primary keywords near the start, keep 50–60 characters, reflect search intent, and use compelling value without clickbait." },
-  { question: "What is a meta description?", answer: "A meta description summarizes a page in ~150–160 characters to improve CTR. Use action verbs, benefits, and relevant keywords naturally." },
-  { question: "How important are H1 and headings for SEO?", answer: "Use one H1 reflecting the primary topic, followed by hierarchical H2–H3 headings. Clear structure helps crawlers and users scan content." },
-  { question: "What is technical SEO?", answer: "Technical SEO ensures pages are crawlable, indexable, fast, secure, and structured using best practices such as XML sitemaps, robots rules, and schema markup." },
-  { question: "How does site speed affect SEO?", answer: "Faster pages improve user experience and Core Web Vitals, which can positively impact rankings and conversions." },
-  { question: "What are Core Web Vitals?", answer: "Core Web Vitals measure loading (LCP), interactivity (INP), and visual stability (CLS). Optimize images, scripts, and layout shifts to pass thresholds." },
-  { question: "What is mobile-first indexing?", answer: "Google primarily uses the mobile version of content for indexing and ranking. Ensure responsive design and parity between mobile and desktop content." },
-  { question: "What is crawling in SEO?", answer: "Crawling is when search engine bots discover pages by following links and sitemaps. Proper internal linking and server responses aid discovery." },
-  { question: "What is indexing?", answer: "Indexing is the process of storing and organizing crawled pages. Pages can be excluded due to noindex, canonicalization, or quality issues." },
-  { question: "How to submit a sitemap?", answer: "Host an XML sitemap at /sitemap.xml and reference it in robots.txt. Submit the sitemap in Google Search Console and Bing Webmaster Tools." },
-  { question: "What is robots.txt?", answer: "robots.txt provides crawl directives. Allow important directories, disallow private paths, and include the sitemap URL." },
-  { question: "What are canonical tags?", answer: "Canonical tags indicate the preferred URL for duplicate or similar content, consolidating signals and preventing duplicate indexing." },
-  { question: "What is duplicate content?", answer: "Duplicate content is substantially similar content across URLs. Use canonicalization, redirects, or content differentiation to resolve." },
-  { question: "What is schema markup?", answer: "Schema markup (structured data) helps search engines understand content types like FAQPage, Product, Article, and can enable rich results." },
-  { question: "What is FAQ schema?", answer: "FAQ schema uses Question and Answer entities to represent Q&A content, improving eligibility for rich results where applicable." },
-  { question: "Do FAQs help SEO?", answer: "FAQs can improve topical relevance, internal linking opportunities, and capture long-tail queries; ensure content is helpful and accurate." },
-  { question: "What is E-E-A-T?", answer: "Experience, Expertise, Authoritativeness, Trustworthiness. Demonstrate real-world expertise, cite sources, and provide transparent authorship and policies." },
-  { question: "How do backlinks affect SEO?", answer: "Backlinks pass authority and trust. Focus on relevant, high-quality links from authoritative sites rather than volume." },
-  { question: "What is link building?", answer: "Ethical link building includes digital PR, resource pages, unlinked mentions, partnerships, and high-value content that earns references." },
-  { question: "What is anchor text?", answer: "Anchor text provides context for linked pages. Keep it descriptive and natural; avoid over-optimized exact-match patterns." },
-  { question: "What is internal linking?", answer: "Internal links distribute PageRank, help crawling, and connect related topics. Use descriptive anchors and ensure important pages are reachable." },
-  { question: "What is a 301 redirect?", answer: "A 301 is a permanent redirect that consolidates signals to a new URL. Use for migrations, canonicalization, and content moves." },
-  { question: "What is a 404 page?", answer: "A 404 indicates a page not found. Provide helpful navigation and consider redirecting to the most relevant resource when appropriate." },
-  { question: "How to handle 410 vs 404?", answer: "410 means Gone (intentional removal); 404 means Not Found (unknown). Use 410 for permanently removed content you won’t replace." },
-  { question: "What is sitemap index vs sitemap?", answer: "A sitemap index references multiple sitemaps for large sites. Standard sitemaps list URLs with metadata like lastmod and priority." },
-  { question: "What is page experience?", answer: "Page experience covers mobile friendliness, HTTPS, safe browsing, intrusive interstitials, and Core Web Vitals." },
-  { question: "How does HTTPS impact SEO?", answer: "HTTPS is a lightweight ranking signal and critical for user trust and data integrity." },
-  { question: "What is crawl budget?", answer: "Crawl budget is how many URLs bots will crawl within a timeframe. Improve internal linking, fix errors, and avoid infinite spaces to optimize." },
-  { question: "What is robots meta tag?", answer: "The robots meta tag controls indexing and snippet behavior (index, follow, noindex, nosnippet, max-snippet, etc.)." },
-  { question: "What is an XML sitemap?", answer: "An XML sitemap lists important URLs for discovery. Keep it updated and exclude blocked or noindexed URLs." },
-  { question: "How to optimize images for SEO?", answer: "Compress images, use modern formats (WebP/AVIF), set width/height, lazy-load, descriptive filenames, and alt text." },
-  { question: "What is alt text?", answer: "Alt text describes images for accessibility and search. Be concise, descriptive, and avoid keyword stuffing." },
-  { question: "What is structured data validation?", answer: "Use Rich Results Test and Schema.org validators to confirm syntax, coverage, and eligibility for enhancements." },
-  { question: "What is JavaScript SEO?", answer: "JavaScript SEO ensures rendered content is indexable. Use server-side rendering or hydration-friendly frameworks and avoid blocking resources." },
-  { question: "How to improve indexing for JS-heavy sites?", answer: "Pre-render or SSR critical content, avoid client-only routes for primary content, and ensure links are semantic anchors." },
-  { question: "What is thin content?", answer: "Thin content provides little value. Expand with helpful details, visuals, examples, and clear answers to user questions." },
-  { question: "What is doorway pages?", answer: "Doorway pages are low-value pages created solely to rank for variations; they harm UX and can be penalized." },
-  { question: "How to avoid keyword stuffing?", answer: "Write naturally, focus on topics and entities, and use synonyms. Optimize for intent, not density percentages." },
-  { question: "What are LSI keywords?", answer: "Commonly used term referring to related concepts and entities. Use semantically related phrases to improve topical coverage." },
-  { question: "What is topical authority?", answer: "Topical authority is the perceived expertise on a subject area. Build clusters of comprehensive, interlinked content covering the topic." },
-  { question: "What is a content cluster?", answer: "A hub-and-spoke structure with a pillar page and related subpages that interlink to build topical depth and rankings." },
-  { question: "How often should I update content?", answer: "Update when information changes or performance declines. Refresh data, improve examples, and add FAQs to match evolving intent." },
-  { question: "What is a canonical vs duplicate?", answer: "Canonical is the preferred page among duplicates. Set rel=canonical to the chosen URL; consolidate content when possible." },
-  { question: "What is the difference between index and follow?", answer: "Index controls inclusion in SERPs; follow controls whether links on the page pass signals. Most public pages should be index, follow." },
-  { question: "What is hreflang?", answer: "hreflang tags indicate language/region targeting for international SEO, helping serve the correct version to users." },
-  { question: "How to do local SEO?", answer: "Optimize Google Business Profile, NAP consistency, local citations, localized content, reviews, and location pages." },
-  { question: "What is page speed optimization?", answer: "Minify resources, defer non-critical JS, preload key assets, use CDN, compress images, and optimize fonts." },
-  { question: "What is sitemap priority?", answer: "Priority hints relative importance but is advisory. Focus on internal linking and navigation to signal importance." },
-  { question: "What is a canonical homepage URL?", answer: "Choose a single version (with or without www, trailing slash convention) and ensure consistent linking and redirects." },
-  { question: "How to handle pagination for SEO?", answer: "Use clear internal links, consistent titles, and avoid thin paginated pages. Consider canonicalizing to view-all when appropriate." },
-  { question: "What is faceted navigation SEO?", answer: "Facets can create infinite URLs. Use noindex, canonical, parameter handling, and server rules to prevent crawl traps." },
-  { question: "What is duplicate URL parameters?", answer: "Parameters can generate duplicates. Normalize URLs, set canonical tags, and configure parameter handling in Search Console." },
-  { question: "What is site architecture?", answer: "A logical, shallow structure improves crawl efficiency and user navigation. Group related content into clear categories." },
-  { question: "How to measure SEO performance?", answer: "Track clicks, impressions, CTR (Search Console), sessions and conversions (Analytics), and rankings with reliable tools." },
-  { question: "What is a title tag?", answer: "An HTML element that defines the page title shown in SERPs and browser tabs. Keep concise and relevant to intent." },
-  { question: "How to optimize meta tags?", answer: "Use descriptive titles and meta descriptions aligned to keywords and intent; avoid duplication across URLs." },
-  { question: "What is content pruning?", answer: "Remove or consolidate low-performing content to improve overall quality, crawl efficiency, and topical authority." },
-  { question: "What is a sitemap for images and videos?", answer: "Specialized sitemaps provide additional metadata for images and videos, aiding discovery and rich features." },
-  { question: "What is server response code 200 vs 304?", answer: "200 serves content; 304 indicates Not Modified enabling client caching and bandwidth savings." },
-  { question: "Does domain age matter for SEO?", answer: "Not directly. Quality content, links, UX, and technical health outweigh domain age." },
-  { question: "What is a disavow file?", answer: "A last-resort tool to signal ignoring manipulative links. Use sparingly and only when necessary." },
-  { question: "What is keyword cannibalization?", answer: "Multiple pages targeting the same query compete. Consolidate or differentiate content and internal anchors." },
-  { question: "What is a featured snippet?", answer: "A highlighted SERP answer box. Structure concise answers, use lists/tables, and target question-style queries." },
-  { question: "How to get sitelinks?", answer: "Clear site architecture, branded queries, and structured navigation help. Google generates sitelinks automatically." },
-  { question: "What is an orphan page?", answer: "A page without internal links. Add links from relevant pages and sitemaps to ensure discovery." },
-  { question: "What is a sitemap lastmod?", answer: "lastmod indicates last update time. Keep accurate to help search engines prioritize recrawling." },
-  { question: "What is rendering for SEO?", answer: "Ensure primary content is present in HTML or renderable by bots. Avoid requiring user interactions to reveal content." },
-  { question: "What is CLS (Cumulative Layout Shift)?", answer: "CLS measures visual stability. Reserve space for images/ads, avoid injecting content above the fold after load." },
-  { question: "What is LCP (Largest Contentful Paint)?", answer: "LCP measures load speed of the largest visible element. Optimize server response, images, and critical CSS." },
-  { question: "What is INP (Interaction to Next Paint)?", answer: "INP measures responsiveness to user input. Reduce long tasks, optimize JS, and prioritize main-thread work." },
-  { question: "Do social signals impact SEO?", answer: "Indirectly. Social exposure can drive visits and links, which can improve visibility." },
-  { question: "What is duplicate title tags?", answer: "Duplicate titles confuse relevance. Make titles unique and intent-aligned for each URL." },
-  { question: "How to use breadcrumbs for SEO?", answer: "Use breadcrumb schema and UI to clarify hierarchy, improve internal linking, and enhance snippets." },
-  { question: "What is a sitemap for large sites?", answer: "Use a sitemap index and split sitemaps by sections to keep files under limits and updated." },
-  { question: "What is canonicalization after migration?", answer: "After changing URLs, set 301s and confirm canonical tags point to the new destination until signals consolidate." },
-  { question: "How to reduce bounce rate?", answer: "Match intent, improve above-the-fold clarity, speed up load, and provide next-step CTAs and internal links." },
-  { question: "What is the ideal URL structure for SEO?", answer: "Short, readable, hyphen-separated slugs reflecting content topics; avoid unnecessary parameters and IDs." },
-  { question: "What is image sitemap vs alt text?", answer: "Alt text supports accessibility and relevance; image sitemaps enhance discovery. Use both when possible." },
-  { question: "How to audit technical SEO?", answer: "Crawl the site, check status codes, CWV, sitemaps, robots, canonicals, duplicates, structured data, and internal linking." },
-  { question: "What is semantic SEO?", answer: "Semantic SEO focuses on entities, relationships, and context rather than only exact-match keywords." },
-  { question: "What is passage indexing?", answer: "Google can surface relevant passages from long pages. Clear headings and focused sections improve visibility." },
-  { question: "What is a redirect chain?", answer: "Multiple sequential redirects. Collapse chains to a single 301 to reduce latency and signal loss." },
-  { question: "How to handle 302 vs 301 for SEO?", answer: "Use 301 for permanent moves; 302 for temporary changes. Persistent 302s may be treated as 301s, but use correctly." },
-  { question: "What is a canonical to self?", answer: "Self-referencing canonicals help confirm the preferred URL and reduce duplication risks." },
-  { question: "What is content freshness?", answer: "Freshness matters for time-sensitive topics. Update timestamps, data, and examples when intent requires recency." },
-  { question: "How to optimize for voice search?", answer: "Use conversational questions, concise answers, schema, and fast mobile performance." },
-  { question: "What is a sitemap location?", answer: "Typically /sitemap.xml. Reference it in robots.txt and submit in Search Console." },
-  { question: "What is an XML vs HTML sitemap?", answer: "XML for bots; HTML for users. Both can coexist to aid discoverability and navigation." },
-  { question: "How to fix crawling anomalies?", answer: "Check server logs, verify robots rules, stabilize responses, and reduce duplicate URL parameters." },
-  { question: "What is soft 404?", answer: "A page returns 200 but looks like missing content. Serve 404/410 for genuine missing pages or add value." },
-  { question: "How to handle international targeting?", answer: "Use hreflang, localized content, ccTLD/subfolders, and region-specific links and metadata." },
-  { question: "What is a canonical for parameters?", answer: "Point parameterized URLs to a canonical without parameters if they don’t change core content." },
-  { question: "What is a sitemap for news?", answer: "A news sitemap lists recent articles for Google News eligibility within the last 48 hours." },
-  { question: "How to evaluate backlinks?", answer: "Assess relevance, authority, topical alignment, anchor diversity, and natural acquisition patterns." },
-  { question: "What is indexing coverage report?", answer: "Search Console report showing indexed, excluded, and error pages to guide fixes." },
-  { question: "What is sitewide noindex?", answer: "A robots meta or HTTP header that blocks indexing for all pages; remove immediately if accidental." },
-  { question: "How to use nofollow links?", answer: "Nofollow signals not to pass PageRank. Use for untrusted, paid, or user-generated links along with sponsored/ugc attributes." },
-  { question: "What is structured data for products?", answer: "Product schema adds price, availability, and rating information, enabling rich results for e-commerce." },
-  { question: "What is sitemap changefreq?", answer: "Hint about update frequency. Not guaranteed to affect crawling cadence; accuracy still helps." },
-  { question: "What is a robots header?", answer: "HTTP X-Robots-Tag header controls indexing at the resource level; useful for non-HTML assets." },
-  { question: "What is a canonical for HTTP vs HTTPS?", answer: "Force HTTPS with redirects and use HTTPS in canonicals and sitemaps." },
-  { question: "What is duplicate content across languages?", answer: "Provide translated content and map with hreflang; avoid automatic machine translations without review." },
-  { question: "How to improve CTR from SERPs?", answer: "Write compelling titles/descriptions, use schema for enhancements, and match search intent tightly." },
-  { question: "What is a knowledge graph entity?", answer: "Entities represent real-world things. Use structured data and consistent naming to reinforce entity understanding." },
-  { question: "How to optimize headers for SEO?", answer: "Use descriptive H2/H3s with related entities and questions; avoid vague labels like 'Introduction'." },
-  { question: "What is crawl delay?", answer: "A legacy directive for some bots. Use server resources wisely and scale infrastructure if needed." },
-  { question: "What is a sitemap for static sites?", answer: "Generate at build time and update when URLs change. Keep URLs absolute with correct canonicalization." },
-  { question: "What is log file analysis in SEO?", answer: "Analyzing server logs reveals how bots crawl your site, highlighting errors, priorities, and waste." },
-  { question: "How to handle JavaScript redirects?", answer: "Prefer server-side 301s. JS redirects can be slower and less reliable for bots." },
-  { question: "What is a canonical for trailing slashes?", answer: "Pick a convention and keep internal links consistent; redirect the other to reduce duplicates." },
+    {
+        question: "What is SEO (Search Engine Optimization)?",
+        answer:
+            "SEO is the practice of optimizing websites and content so search engines can understand, index, and rank them for relevant queries. It combines technical improvements (like crawlability and site speed), content optimization (keywords, structure, and quality), and off-page factors (such as backlinks and brand signals) to increase organic visibility and traffic over time.",
+    },
+    {
+        question: "Why is SEO important for websites?",
+        answer:
+            "SEO drives sustainable organic traffic, reduces reliance on paid advertising, and improves discoverability for high-intent users. Well-executed SEO not only helps pages rank higher in SERPs but also improves user experience, conversions, and the long-term visibility of a brand or project.",
+    },
+    {
+        question: "What are keywords in SEO?",
+        answer:
+            "Keywords are the words and phrases users type into search engines to find information. Effective keyword strategy maps user intent (informational, navigational, transactional) to the right pages, using a mix of head terms and long-tail phrases to capture search demand and match content to user needs.",
+    },
+    {
+        question: "What is keyword research?",
+        answer:
+            "Keyword research identifies which queries your target audience uses, their search volume, competition, and intent. A proper research process produces prioritized keyword lists, content ideas, and long-tail opportunities that align with business goals. Tools like Google Search Console, keyword planners, and analytics can validate intent and performance.",
+    },
+    {
+        question: "What are long-tail keywords?",
+        answer:
+            "Long-tail keywords are longer, more specific phrases that typically have lower search volume but higher conversion intent and lower competition. They are excellent for targeting niche queries, answering precise user needs, and building authority over time through content clusters focused on related subtopics.",
+    },
+    {
+        question: "What is search intent?",
+        answer:
+            "Search intent refers to the underlying goal behind a user’s query—whether they want information, to navigate to a site, to purchase, or to compare options. Aligning content to intent (informational, navigational, transactional, commercial investigation) improves relevance and increases the likelihood of satisfying users and search engines.",
+    },
+    {
+        question: "What is on-page SEO?",
+        answer:
+            "On-page SEO includes all optimizations applied directly to individual pages: title tags, meta descriptions, headings, content structure, image alt text, internal linking, and schema markup. On-page work ensures the page is topically focused, readable, and clearly signals intent and relevance to search engines.",
+    },
+    {
+        question: "How do I write SEO-friendly titles?",
+        answer:
+            "An SEO-friendly title places primary keywords near the beginning, stays within 50–60 characters for display, and communicates a clear benefit or topic. Use natural, compelling language—avoid stuffing—and consider adding modifiers (e.g., '2025', 'Guide', 'Tutorial') to capture long-tail variations and improve CTR.",
+    },
+    {
+        question: "What is a meta description and why does it matter?",
+        answer:
+            "A meta description is a short summary (recommended ~120–160 characters) of a page’s content that appears in SERPs. While not a direct ranking factor, a well-crafted meta description improves click-through rate by clearly describing benefits and a call to action, which can indirectly impact performance through increased organic traffic.",
+    },
+    {
+        question: "How important are H1 and heading structure?",
+        answer:
+            "One H1 should reflect the primary topic and provide a clear signal to search engines about the page’s focus. Follow with hierarchical H2/H3 subheadings to break up content, improve readability, and allow both users and crawlers to scan and understand the content’s structure and key points efficiently.",
+    },
+    {
+        question: "What is technical SEO?",
+        answer:
+            "Technical SEO covers the foundation that makes a site indexable and crawlable: XML sitemaps, robots.txt, canonical tags, HTTPS, correct status codes, structured data, and site performance. Technical fixes ensure search engines can access and interpret a site correctly and that users have a fast, secure experience.",
+    },
+    {
+        question: "How does site speed affect SEO?",
+        answer:
+            "Site speed directly impacts user experience and Core Web Vitals metrics. Faster pages reduce bounce rates, improve engagement, and are associated with higher rankings. Optimizing images, leveraging CDNs, compressing resources, and deferring non-critical scripts are standard speed improvements.",
+    },
+    {
+        question: "What are Core Web Vitals?",
+        answer:
+            "Core Web Vitals are three user-centric metrics defined by Google: Largest Contentful Paint (LCP) for loading, Interaction to Next Paint (INP) for responsiveness (previously First Input Delay), and Cumulative Layout Shift (CLS) for visual stability. Meeting thresholds for these improves page experience and can positively affect rankings.",
+    },
+    {
+        question: "What is mobile-first indexing?",
+        answer:
+            "Mobile-first indexing means Google primarily crawls and indexes the mobile version of content. Sites must ensure parity between mobile and desktop content, provide responsive design, and optimize mobile performance to avoid indexing issues or ranking drops.",
+    },
+    {
+        question: "What is crawling in SEO?",
+        answer:
+            "Crawling is the process by which search engine bots discover pages by following links and sitemaps. Effective crawling depends on accessible links, correct server responses, and a clean site architecture that prioritizes important pages and minimizes crawl traps like infinite parameter combinations.",
+    },
+    {
+        question: "What is indexing?",
+        answer:
+            "Indexing is when search engines process and store crawled pages to make them retrievable for relevant queries. Pages may be excluded from the index for reasons like noindex tags, canonicalization pointing elsewhere, low content quality, or blocked access via robots.txt.",
+    },
+    {
+        question: "How do I submit a sitemap?",
+        answer:
+            "Host an XML sitemap (commonly at /sitemap.xml), reference it in robots.txt, and submit it in Google Search Console and Bing Webmaster Tools. Update sitemaps as content changes and split into sitemap indexes for large sites to stay within size limits and help crawlers prioritize content.",
+    },
+    {
+        question: "What is robots.txt?",
+        answer:
+            "Robots.txt is a file that instructs crawlers which parts of a site to crawl or avoid. Use it to protect private directories, allow important resources, and point to your sitemap. Avoid blocking essential scripts or pages that affect rendering and indexability.",
+    },
+    {
+        question: "What are canonical tags and how do they help?",
+        answer:
+            "A rel=canonical tag tells search engines which URL is the preferred version among duplicates or near-duplicates. Proper canonicalization consolidates ranking signals, prevents duplicate indexing, and ensures the correct page appears in search results.",
+    },
+    {
+        question: "What is duplicate content and how do I fix it?",
+        answer:
+            "Duplicate content occurs when similar or identical content appears across multiple URLs. Fix it by consolidating content, using 301 redirects where appropriate, implementing canonical tags, or differentiating pages with unique, value-adding content.",
+    },
+    {
+        question: "What is schema markup and why use it?",
+        answer:
+            "Schema (structured data) provides explicit context about page content using standardized vocabularies (Schema.org). It can enable rich results (FAQ, HowTo, Product, Review snippets), improve SERP CTRs, and help search engines understand content relationships more precisely.",
+    },
+    {
+        question: "What is FAQ schema and when should I use it?",
+        answer:
+            "FAQ schema encodes question/answer pairs on a page so search engines can display them as rich results. Use it when questions are genuine, helpful, and visible on the page. Avoid marking up hidden content or auto-generated Q&A that lacks user value.",
+    },
+    {
+        question: "What is E-E-A-T and how does it affect rankings?",
+        answer:
+            "E-E-A-T stands for Experience, Expertise, Authoritativeness, and Trustworthiness. It’s a framework Google uses to evaluate content quality, especially in YMYL topics. Demonstrate E-E-A-T by citing sources, showing author credentials, and linking to reputable references.",
+    },
+    {
+        question: "How do backlinks affect SEO?",
+        answer:
+            "Backlinks serve as endorsements from other sites and contribute to authority and trust signals. Quality, relevance, anchor diversity, and natural acquisition patterns are more valuable than sheer quantity. A focused outreach and content-driven link strategy builds sustainable authority.",
+    },
+    {
+        question: "What is ethical link building?",
+        answer:
+            "Ethical link building focuses on creating link-worthy content, digital PR, partnerships, resource pages, and reclaiming unlinked mentions. Avoid manipulative tactics (link farms, paid spam) and prioritize links from relevant, authoritative domains.",
+    },
+    {
+        question: "What is anchor text and how should I use it?",
+        answer:
+            "Anchor text is the clickable text in a hyperlink. Use descriptive, natural anchors that convey the linked page’s topic. Avoid repetitive exact-match anchors; a mix of branded, partial-match, and generic anchors looks more natural and reduces over-optimization risk.",
+    },
+    {
+        question: "What is internal linking and why is it important?",
+        answer:
+            "Internal links pass PageRank, guide crawlers, and connect related content for users. Strategic internal linking highlights priority pages, helps distribute authority across the site, and improves topical clusters that support topical authority.",
+    },
+    {
+        question: "What is a 301 redirect and when should I use it?",
+        answer:
+            "A 301 redirect is a permanent redirect that transfers signals to a new URL. Use 301s when moving or consolidating content to preserve link equity and to prevent users and search engines from hitting broken pages.",
+    },
+    {
+        question: "What is a 404 error and how should it be handled?",
+        answer:
+            "A 404 indicates a page doesn’t exist. Provide helpful navigation on 404 pages, consider redirects for close matches, and monitor 404s to catch broken internal links or missing important pages that require recovery.",
+    },
+    {
+        question: "When to use 410 vs 404?",
+        answer:
+            "Use 410 Gone when a resource is permanently removed and you don’t intend to replace it—this signals search engines to drop the URL faster. Use 404 for unknown or temporary missing pages where future reinstatement is possible.",
+    },
+    {
+        question: "What is a sitemap index vs a sitemap?",
+        answer:
+            "A sitemap index is an XML file that references multiple sitemaps—useful for very large sites. Individual sitemaps list URLs and metadata (lastmod, changefreq). Splitting helps keep files within size limits and improves manageability.",
+    },
+    {
+        question: "What is page experience and why does it matter?",
+        answer:
+            "Page experience considers how users perceive the experience of interacting with a web page, including mobile friendliness, HTTPS, safe browsing, intrusive interstitials, and Core Web Vitals. Improving page experience enhances engagement and can support better rankings.",
+    },
+    {
+        question: "How does HTTPS impact SEO?",
+        answer:
+            "HTTPS is a minimal ranking factor but essential for security and user trust. Serving content over HTTPS also enables newer features (like HTTP/2) that improve performance and is expected by modern browsers.",
+    },
+    {
+        question: "What is crawl budget and how can I optimize it?",
+        answer:
+            "Crawl budget is the number of URLs a search engine will crawl on your site within a timeframe. Optimize it by fixing server errors, removing low-value pages, improving internal linking, and minimizing duplicate or infinite parameter URL spaces.",
+    },
+    {
+        question: "What is the robots meta tag and how is it used?",
+        answer:
+            "The robots meta tag controls indexing and snippet behavior at the page level (index/noindex, follow/nofollow, nosnippet). Use it for pages you don’t want in search results or to refine how search engines present page snippets.",
+    },
+    {
+        question: "What is an XML sitemap and best practices?",
+        answer:
+            "An XML sitemap lists important URLs and metadata (lastmod, priority). Best practices include keeping it clean (only indexable pages), splitting large sitemaps, referencing the sitemap in robots.txt, and submitting it to Search Console.",
+    },
+    {
+        question: "How to optimize images for SEO?",
+        answer:
+            "Compress images, use responsive sizes and modern formats (WebP/AVIF), provide descriptive file names and alt attributes, specify width/height, and lazy-load offscreen images to reduce LCP and improve accessibility and discoverability.",
+    },
+    {
+        question: "What is alt text and how should it be written?",
+        answer:
+            "Alt text describes images for accessibility and search. Write concise, specific descriptions that explain function or content without keyword stuffing. Use alt text to help visually impaired users and provide semantic clues to search engines.",
+    },
+    {
+        question: "How to validate structured data?",
+        answer:
+            "Use Google’s Rich Results Test and Schema.org validators to check syntax and coverage. Ensure JSON-LD matches visible page content, avoid markup for hidden content, and monitor Search Console enhancements for errors and improvements.",
+    },
+    {
+        question: "What is JavaScript SEO?",
+        answer:
+            "JavaScript SEO ensures content rendered by JS is discoverable and indexable by search engines. Use server-side rendering (SSR), static rendering, or hybrid hydration to expose primary content in HTML and avoid relying on client-only rendering for critical pages.",
+    },
+    {
+        question: "How do I improve indexing for JS-heavy sites?",
+        answer:
+            "Pre-render or SSR critical content, use semantic anchor links, and ensure robots can access script resources. Test rendering in Search Console and use snapshot testing to verify bots see the same primary content as users.",
+    },
+    {
+        question: "What is thin content and why is it bad?",
+        answer:
+            "Thin content provides little value—short pages with minimal unique information. It harms rankings and user trust. Expand thin pages with detailed explanations, examples, visuals, and related resources to increase utility and topical depth.",
+    },
+    {
+        question: "What are doorway pages and why avoid them?",
+        answer:
+            "Doorway pages are low-value pages built to rank for narrow queries and funnel users elsewhere. They provide poor UX and can be penalized. Focus on unique, helpful pages that satisfy intent rather than creating redundant entry points.",
+    },
+    {
+        question: "How to avoid keyword stuffing?",
+        answer:
+            "Write naturally for users, use synonyms and related entities, and optimize for intent rather than hitting an arbitrary density. Modern search engines understand semantics—prioritize useful, well-structured content over repetition.",
+    },
+    {
+        question: "What are LSI keywords?",
+        answer:
+            "LSI (latent semantic indexing) is often used to describe semantically related terms and entities that help search engines understand topical context. Use naturally related phrases and topic clusters to improve coverage and relevance.",
+    },
+    {
+        question: "What is topical authority and how to build it?",
+        answer:
+            "Topical authority is recognition that your site is a reliable resource on a subject. Build it with comprehensive content clusters (pillar and supporting pages), internal linking, high-quality backlinks, and consistent updates showing depth and expertise.",
+    },
+    {
+        question: "What is a content cluster?",
+        answer:
+            "A content cluster (hub-and-spoke) organizes a central pillar page covering a broad topic with linked subpages addressing related subtopics. This structure improves topical comprehensiveness, internal linking, and search visibility for related queries.",
+    },
+    {
+        question: "How often should I update content for SEO?",
+        answer:
+            "Update content when details change, performance drops, or new data emerges. For competitive topics, quarterly reviews help maintain freshness; evergreen topics can be reviewed semi-annually. Use analytics to prioritize high-impact updates.",
+    },
+    {
+        question: "What is canonical vs duplicate content?",
+        answer:
+            "Canonical tags declare the preferred version among duplicates, preventing signal dilution. Duplicate content can be consolidated with 301 redirects, canonical tags, or content differentiation to ensure the correct URL receives ranking credit.",
+    },
+    {
+        question: "What is the difference between index and follow?",
+        answer:
+            "Index controls whether a page should appear in search results; follow controls whether links on the page should be crawled and pass link signals. Most public content should be 'index, follow' unless there’s a specific reason to restrict indexing.",
+    },
+    {
+        question: "What is hreflang and when to use it?",
+        answer:
+            "hreflang tags indicate language or regional versions of a page, helping search engines serve the correct localized version to users. Use hreflang for multi-language sites with equivalent content targeted at different locales.",
+    },
+    {
+        question: "How to do local SEO effectively?",
+        answer:
+            "Optimize your Google Business Profile, ensure NAP consistency, acquire local citations, build localized content, collect reviews, and create location-specific pages. Local schema and structured business data also improve visibility in local search and Maps.",
+    },
+    {
+        question: "What is page speed optimization best practice?",
+        answer:
+            "Minify and defer non-critical JS, compress/serve optimized images, use HTTP/2 or HTTP/3, enable caching, use a CDN, optimize fonts and critical CSS, and measure with Lighthouse & field metrics to prioritize improvements affecting LCP, INP and CLS.",
+    },
+    {
+        question: "What is sitemap priority and should I use it?",
+        answer:
+            "Sitemap priority is an advisory value suggesting relative importance of URLs. It’s less influential than internal linking and navigation; focus on internal signals and accurate lastmod dates instead of relying heavily on priority values.",
+    },
+    {
+        question: "How to choose a canonical homepage URL?",
+        answer:
+            "Pick a single canonical form (HTTPS + either www or non-www consistently) and redirect alternate forms to it. Ensure internal links, sitemaps, and canonicals all point to the chosen canonical to prevent split signals.",
+    },
+    {
+        question: "How to handle pagination for SEO?",
+        answer:
+            "Implement clear internal links between paginated content, use descriptive titles and meta data, consider view-all pages for user convenience, and avoid thin paginated pages. Use rel=prev/next where relevant and ensure each page has unique, useful content.",
+    },
+    {
+        question: "What is faceted navigation SEO and how to manage it?",
+        answer:
+            "Faceted navigation can create large URL permutations and crawl waste. Manage facets with canonicalization, parameter handling, robots or noindex for low-value combinations, and server-side filtering to reduce crawl overhead and duplication.",
+    },
+    {
+        question: "How to handle duplicate URL parameters?",
+        answer:
+            "Normalize and canonicalize parameterized URLs, use Search Console parameter handling if necessary, and prefer server-side solutions for consistent URLs. Avoid exposing multiple interchangeable parameter permutations to crawlers.",
+    },
+    {
+        question: "What is site architecture and why does it matter?",
+        answer:
+            "A well-organized site architecture groups related content into shallow, logical categories, improving crawl efficiency, user navigation, and the distribution of internal authority to key pages, which supports both indexing and ranking.",
+    },
+    {
+        question: "How to measure SEO performance?",
+        answer:
+            "Track Search Console metrics (clicks, impressions, CTR), Google Analytics sessions and conversions, rankings with a reliable tracking tool, Core Web Vitals in field data, and backlink quality to monitor organic performance and prioritize actions.",
+    },
+    {
+        question: "What is a title tag and how to optimize it?",
+        answer:
+            "The title tag defines the page title shown in search results and browser tabs. Optimize by placing primary keywords near the start, keeping it concise and compelling, and ensuring each page has a unique, intent-aligned title.",
+    },
+    {
+        question: "How to optimize meta tags across a site?",
+        answer:
+            "Create unique, descriptive titles and meta descriptions for each page that reflect search intent and highlight benefits. Use templates carefully for large sites and continuously A/B test meta copy to improve CTR in SERPs.",
+    },
+    {
+        question: "What is content pruning and when should I use it?",
+        answer:
+            "Content pruning removes or consolidates low-performing or redundant pages to improve overall site quality and crawl efficiency. Use analytics to identify thin pages with low traffic and high maintenance cost, then merge, rewrite, or redirect as appropriate.",
+    },
+    {
+        question: "What is an image/video sitemap and why use it?",
+        answer:
+            "Image and video sitemaps provide metadata to help search engines discover and index rich media. Include captions, thumbnails, and file information to improve the chance of appearing in image/video search features and enhance visibility.",
+    },
+    {
+        question: "What is the difference between server response 200 and 304?",
+        answer:
+            "200 OK delivers the page content; 304 Not Modified tells the browser to use a cached copy, saving bandwidth. Configure caching headers properly to enable efficient revalidation and faster repeat visits.",
+    },
+    {
+        question: "Does domain age matter for SEO?",
+        answer:
+            "Domain age is a minor factor compared to content quality, links, and user experience. New domains can rank well with excellent content, relevant backlinks, and proper technical setup—focus on fundamentals over age.",
+    },
+    {
+        question: "What is a disavow file and when to use it?",
+        answer:
+            "A disavow file tells Google to ignore specific backlinks. Use it sparingly, typically after manual spammy link cleanup, or if there is clear evidence of manipulative links that can’t be removed through outreach.",
+    },
+    {
+        question: "What is keyword cannibalization and how to fix it?",
+        answer:
+            "Keyword cannibalization occurs when multiple pages target the same query and compete with each other. Resolve by consolidating content, differentiating page intent, or using internal anchors and canonicals to signal the primary page.",
+    },
+    {
+        question: "What is a featured snippet and how to target it?",
+        answer:
+            "A featured snippet is a highlighted answer box at the top of SERPs. To target it, provide concise direct answers to common questions, use lists or tables where appropriate, and structure content with clear headings and short summary paragraphs.",
+    },
+    {
+        question: "How to get sitelinks for my site?",
+        answer:
+            "Sitelinks are generated algorithmically based on clear site architecture, brand-focused queries, and structured navigation. Maintain logical menus, a clear URL hierarchy, and strong branded signals to increase the chance of sitelinks appearing.",
+    },
+    {
+        question: "What is an orphan page and how to fix one?",
+        answer:
+            "An orphan page has no internal links pointing to it, making it hard for crawlers to find. Fix by adding contextual internal links from related pages, updating sitemaps, and incorporating the page into navigational structures.",
+    },
+    {
+        question: "What is lastmod in sitemap and how to use it?",
+        answer:
+            "lastmod signals the last modification date of a URL in a sitemap. Keep it accurate to help search engines prioritize recrawling, especially for frequently updated content like news or product pages.",
+    },
+    {
+        question: "What is rendering for SEO and why care?",
+        answer:
+            "Rendering is how search engines execute page code (HTML/CSS/JS) to view the final content. Ensure critical content is present in HTML or server-rendered so bots can index it reliably. Test rendering in Search Console to verify visibility.",
+    },
+    {
+        question: "What is CLS (Cumulative Layout Shift) and how to reduce it?",
+        answer:
+            "CLS measures unexpected layout shifts during page load. Reduce CLS by reserving space for images, ads, and fonts, avoiding inserting content above existing elements, and using proper size attributes to stabilize layout.",
+    },
+    {
+        question: "What is LCP (Largest Contentful Paint) and how to improve it?",
+        answer:
+            "LCP measures how long the largest visible element takes to load. Improve LCP by optimizing server response times, preloading critical assets, compressing images, and reducing render-blocking resources.",
+    },
+    {
+        question: "What is INP (Interaction to Next Paint) and how to improve it?",
+        answer:
+            "INP measures responsiveness to user input. Improve it by minimizing long tasks, optimizing JavaScript, breaking up heavy operations, and prioritizing interactive elements to respond quickly to user actions.",
+    },
+    {
+        question: "Do social signals affect SEO?",
+        answer:
+            "Social signals don’t directly influence rankings in a strong deterministic way, but social visibility can drive traffic, brand awareness, and backlinks that indirectly improve SEO. Use social platforms to amplify content and attract natural links.",
+    },
+    {
+        question: "What are duplicate title tags and how to fix them?",
+        answer:
+            "Duplicate titles confuse search engines about page relevance. Make titles unique and intent-aligned, and create templates for consistent title generation on large sites while ensuring uniqueness where it matters.",
+    },
+    {
+        question: "How to use breadcrumbs for SEO?",
+        answer:
+            "Breadcrumbs enhance navigation and provide hierarchical context. Implement breadcrumb schema and visible links to improve internal linking, user navigation, and potential enriched snippets in search results.",
+    },
+    {
+        question: "What is a sitemap strategy for large sites?",
+        answer:
+            "Use a sitemap index with multiple sitemaps split by sections (e.g., products, articles). Keep sitemaps updated, exclude noindexed pages, and ensure sitemap files remain within size limits for efficient processing.",
+    },
+    {
+        question: "How to handle canonicalization after a migration?",
+        answer:
+            "After migrating URLs, implement 301 redirects from old to new URLs, update internal links and sitemaps, and set canonical tags to the new addresses until signals consolidate. Monitor Search Console for coverage and errors.",
+    },
+    {
+        question: "How to reduce bounce rate with SEO?",
+        answer:
+            "Match content to intent, improve page load speed, create clear next-step CTAs, and add internal links to related resources. A better UX and relevant content keeps users engaged and reduces bounces, indirectly supporting SEO.",
+    },
+    {
+        question: "What is an ideal URL structure for SEO?",
+        answer:
+            "Use short, readable, hyphen-separated slugs that reflect content topics and avoid unnecessary parameters and IDs. Keep URLs consistent across internal links, sitemaps, and canonical tags to avoid confusion and duplication.",
+    },
+    {
+        question: "What is an image sitemap vs alt text?",
+        answer:
+            "Alt text improves image accessibility and provides context for search engines, while image sitemaps supply metadata to assist discovery. Use both—alt attributes for inline context and image sitemaps for enhanced indexing of rich media.",
+    },
+    {
+        question: "How to audit technical SEO effectively?",
+        answer:
+            "Run site crawls, check server response codes, evaluate Core Web Vitals, validate sitemaps and robots rules, inspect canonical tags, identify duplicate content, and test structured data. Combine automated tools with manual checks for a complete audit.",
+    },
+    {
+        question: "What is semantic SEO and how to apply it?",
+        answer:
+            "Semantic SEO focuses on entities, relationships, and context rather than exact-match keywords. Use topic modeling, related phrases, and structured data to help search engines understand page intent and surface content for related queries.",
+    },
+    {
+        question: "What is passage indexing and how to optimize for it?",
+        answer:
+            "Passage indexing enables search engines to surface relevant passages from within long pages for specific queries. Use clear headings, focused paragraphs, and well-structured content so individual sections can answer specific user questions.",
+    },
+    {
+        question: "What is a redirect chain and why avoid it?",
+        answer:
+            "A redirect chain involves multiple sequential redirects and causes latency and signal loss. Collapse chains into a single 301 redirect to preserve link equity and improve load times for users and bots.",
+    },
+    {
+        question: "When to use 302 vs 301 redirects?",
+        answer:
+            "Use 301 for permanent moves and 302 for temporary changes. Persistent 302s may be treated as permanent by search engines, so choose correctly based on whether the change is permanent or temporary.",
+    },
+    {
+        question: "What is a self-referencing canonical?",
+        answer:
+            "A self-referencing canonical explicitly points a page canonical to itself, helping search engines confirm the preferred URL and preventing unintentional duplication when parameters or alternate access methods exist.",
+    },
+    {
+        question: "How important is content freshness?",
+        answer:
+            "Content freshness matters for time-sensitive queries. Update statistics, examples, and relevant data to maintain relevance. For evergreen topics, focus on continual improvements and expanded depth rather than frequent superficial edits.",
+    },
+    {
+        question: "How to optimize for voice search?",
+        answer:
+            "Optimize for conversational queries and question-based phrases, use schema, provide concise answers, and ensure fast mobile performance. Voice queries tend to be longer and more natural—target long-tail, intent-focused content.",
+    },
+    {
+        question: "Where should my sitemap be located?",
+        answer:
+            "Place sitemaps at a standard location like /sitemap.xml and reference them in robots.txt. Ensure absolute URLs match the canonical form and submit sitemaps to Search Console for visibility and quicker indexing.",
+    },
+    {
+        question: "What is an XML vs HTML sitemap?",
+        answer:
+            "XML sitemaps are designed for search engines and list URLs with metadata. HTML sitemaps are user-facing and aid navigation; both can complement each other for discoverability and usability.",
+    },
+    {
+        question: "How to fix crawling anomalies?",
+        answer:
+            "Check server logs, verify robots rules, fix status code errors, and identify parameter-based duplicates. Prioritize high-traffic or high-value pages for fixes and use Search Console to monitor resolution and recrawl status.",
+    },
+    {
+        question: "What is a soft 404 and how to detect it?",
+        answer:
+            "A soft 404 returns a 200 status but displays a message indicating the page is missing or empty. Serve proper 404/410 codes for genuine missing content or improve the page with valuable information to avoid soft 404 classification.",
+    },
+    {
+        question: "How to handle international targeting and hreflang?",
+        answer:
+            "Use hreflang tags for localized versions, ensure unique translated content per locale, choose ccTLD/subfolder strategy, and maintain consistent metadata and sitemaps per language to serve the right content to regional users.",
+    },
+    {
+        question: "What is canonical for parameterized URLs?",
+        answer:
+            "If parameters don’t alter the primary content, canonicalize parameterized URLs to the clean base URL. For search or filter pages where parameters do change content, consider indexing only selected combinations or using parameter handling in Search Console.",
+    },
+    {
+        question: "What is a news sitemap and who needs it?",
+        answer:
+            "A news sitemap includes metadata for recently published articles and is required for Google News eligibility. It's used by news publishers to surface timely content; the content must meet news publisher guidelines and be within a narrow freshness window.",
+    },
+    {
+        question: "How to evaluate backlinks effectively?",
+        answer:
+            "Assess backlinks by relevance, domain authority, anchor text diversity, and natural acquisition. Use link analysis tools to spot toxic links, prioritize high-quality placements, and track referral traffic and ranking improvements from acquired links.",
+    },
+    {
+        question: "What is the Index Coverage report in Search Console?",
+        answer:
+            "The Index Coverage report shows which pages are indexed, excluded, or have errors. Use it to identify crawl issues, indexing exclusions, and remediation steps like fixing server errors, addressing soft 404s, or updating canonical tags.",
+    },
+    {
+        question: "What does sitewide noindex do and when is it a problem?",
+        answer:
+            "A sitewide noindex blocks indexing of all pages and is a critical misconfiguration if accidental. Use it only intentionally for staging sites; if found in production, remove immediately and resubmit sitemaps to recover visibility.",
+    },
+    {
+        question: "How should I use nofollow links?",
+        answer:
+            "Nofollow links signal not to pass PageRank. Use for paid links, untrusted user-generated content, or editorial cases where you don't want to vouch for the target. Use rel=sponsored and rel=ugc when appropriate for clarity.",
+    },
+    {
+        question: "What is structured data for products?",
+        answer:
+            "Product schema provides details like price, availability, and reviews to enable rich results in search. Implement accurate product markup to increase SERP real estate and improve CTR for e-commerce pages.",
+    },
+    {
+        question: "What is sitemap changefreq and is it useful?",
+        answer:
+            "changefreq is a hint about how often a page changes. Search engines may ignore it, but accurate lastmod dates and proper sitemaps help crawlers prioritize recrawling for frequently updated content.",
+    },
+    {
+        question: "What is a robots header and when to use X-Robots-Tag?",
+        answer:
+            "The X-Robots-Tag HTTP header controls indexing for non-HTML assets (PDFs, images) and can apply directives at the server level. Use it when you need granular control over indexing for resources beyond HTML pages.",
+    },
+    {
+        question: "How to canonicalize HTTP vs HTTPS?",
+        answer:
+            "Force HTTPS via redirects and use HTTPS in canonical tags and sitemaps. Ensure all internal links and external references use the secured form to avoid mixed signals and duplicate content.",
+    },
+    {
+        question: "How to handle duplicate content across languages?",
+        answer:
+            "Provide properly localized translations and map them using hreflang. Avoid automatic machine translations without review and ensure each language version offers unique value for regional users.",
+    },
+    {
+        question: "How to improve CTR from SERPs?",
+        answer:
+            "Improve CTR with compelling, intent-aligned titles and meta descriptions, use structured data to enable rich snippets, and ensure your snippet contains clear benefits or a strong call to action.",
+    },
+    {
+        question: "What is a knowledge graph entity and how to influence it?",
+        answer:
+            "Knowledge graph entities represent real-world things recognized by search engines. Use consistent naming, structured data, authoritative sources, and strong brand signals to reinforce entity associations and knowledge graph presence.",
+    },
+    {
+        question: "How to optimize headers and subheaders for SEO?",
+        answer:
+            "Use descriptive H2/H3 headers that include related entities and question-style phrases. Clear, topic-focused headings improve scannability, help search engines understand structure, and support passage-level relevance.",
+    },
+    {
+        question: "What is crawl delay and how to manage crawler load?",
+        answer:
+            "Crawl delay is a legacy directive for limiting bot request rates for some crawlers. Instead of relying on crawl delay, improve server resources, use sitemaps to influence discovery, and ensure high-value pages are prioritized with internal links.",
+    },
+    {
+        question: "How to generate sitemaps for static sites?",
+        answer:
+            "Generate sitemaps at build time, include absolute canonical URLs, exclude noindexed pages, and ensure they update when new content is published. Use automation in your build pipeline to keep sitemaps current.",
+    },
+    {
+        question: "What is log file analysis and why is it useful?",
+        answer:
+            "Server log analysis reveals how bots crawl your site, which URLs they prioritize, and where wasted crawl budget occurs. Use logs to detect anomalies, optimize crawl paths, and identify pages needing improved internal links or removal.",
+    },
+    {
+        question: "How to handle JavaScript redirects for SEO?",
+        answer:
+            "Prefer server-side 301 redirects for speed and reliability. JavaScript redirects can be slower for bots and may not always pass signals consistently. Use SSR redirects where possible and test redirects in Search Console.",
+    },
+    {
+        question: "What is trailing slash canonicalization and best practice?",
+        answer:
+            "Pick a convention (with or without trailing slash) and be consistent. Redirect the alternate form to the canonical one and ensure internal links, sitemaps, and canonical tags use the chosen format to avoid duplicate URLs.",
+    },
 ]
 
 export default function FAQPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((qa) => ({
-      "@type": "Question",
-      name: qa.question,
-      acceptedAnswer: { "@type": "Answer", text: qa.answer },
-    })),
-  }
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((qa) => ({
+            "@type": "Question",
+            name: qa.question,
+            acceptedAnswer: { "@type": "Answer", text: qa.answer },
+        })),
+    }
 
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <section className="container mx-auto px-4 py-16 md:py-20">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">SEO Frequently Asked Questions</h1>
-            <p className="text-muted-foreground">Actionable answers to common search engine optimization questions.</p>
-          </div>
+    return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            <section className="container mx-auto px-4 py-16 md:py-20">
+                <div className="max-w-4xl mx-auto">
+                    <div className="text-center mb-10">
+                        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">SEO Frequently Asked Questions</h1>
+                        <p className="text-muted-foreground text-lg leading-relaxed">
+                            Practical, expert answers to common and advanced SEO questions — covering keyword research, technical SEO,
+                            Core Web Vitals, schema, backlinks, content strategy, and tools to help you improve organic performance.
+                        </p>
+                    </div>
 
-          <div className="space-y-4">
-            {faqs.map((qa, i) => (
-              <details key={i} className="border border-border/60 rounded-lg overflow-hidden">
-                <summary className="cursor-pointer select-none px-4 py-3 font-semibold text-foreground hover:bg-muted/50">
-                  {qa.question}
-                </summary>
-                <div className="px-4 pb-4 text-muted-foreground leading-relaxed">{qa.answer}</div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
-  )
+                    <div className="space-y-8 prose prose-slate dark:prose-invert">
+                        {faqs.map((qa, i) => (
+                            <article key={i}>
+                                <h2 className="text-xl font-semibold">{qa.question}</h2>
+                                <p className="text-muted-foreground leading-relaxed">{qa.answer}</p>
+                            </article>
+                        ))}
+
+                        <h2>Closing Notes</h2>
+                        <p>
+                            SEO requires ongoing attention to technical health, content quality, and authority signals. Use tools like
+                            Google Search Console, Lighthouse, and FastTools utilities to audit performance, track Core Web Vitals,
+                            validate structured data, and monitor indexing. Prioritize user intent, optimize for speed and clarity, and
+                            build topical authority through comprehensive, well-linked content clusters.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </>
+    )
 }
-
-
