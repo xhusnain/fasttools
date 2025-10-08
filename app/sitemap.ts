@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://fasttools.store"
   const currentDate = new Date()
 
-  // Main pages
+  // Main pages with enhanced metadata
   const mainPages = [
     {
       url: baseUrl,

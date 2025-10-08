@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Main logo images -->
+  <url>
+    <loc>https://fasttools.store</loc>
+    <image:image>
+      <image:loc>https://fasttools.store/logo.svg</image:loc>
+      <image:title>FastTools Professional Logo</image:title>
+      <image:caption>FastTools professional logo with modern FT symbol and blue gradient design</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://fasttools.store/og-image.svg</image:loc>
+      <image:title>FastTools Social Media Image</image:title>
+      <image:caption>FastTools professional social media sharing image with tools showcase</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Favicon and icons -->
+  <url>
+    <loc>https://fasttools.store</loc>
+    <image:image>
+      <image:loc>https://fasttools.store/favicon.svg</image:loc>
+      <image:title>FastTools Favicon</image:title>
+      <image:caption>FastTools favicon for browser tabs and bookmarks</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://fasttools.store/icon-192.svg</image:loc>
+      <image:title>FastTools 192x192 Icon</image:title>
+      <image:caption>FastTools 192x192 icon for web app manifest</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://fasttools.store/icon-512.svg</image:loc>
+      <image:title>FastTools 512x512 Icon</image:title>
+      <image:caption>FastTools 512x512 high-resolution icon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://fasttools.store/apple-touch-icon.svg</image:loc>
+      <image:title>FastTools Apple Touch Icon</image:title>
+      <image:caption>FastTools Apple touch icon for iOS devices</image:caption>
+    </image:image>
+  </url>
+  
+</urlset>

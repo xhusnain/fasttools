@@ -71,11 +71,11 @@
         description: "FastTools offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
         images: [
           {
-            url: "/og-image.png",
+            url: "/og-image.svg",
             width: 1200,
             height: 630,
-            alt: "FastTools - Free Online Tools and Utilities",
-            type: "image/png",
+            alt: "FastTools - Professional Online Tools & Utilities",
+            type: "image/svg+xml",
           },
         ],
       },
@@ -85,7 +85,7 @@
         creator: "@fasttoolsstore",
         title: "FastTools - Free Online Tools",
         description: "FastTools offers 40+ free online tools including text, file, image, and productivity utilities — all in one place.",
-        images: ["/og-image.png"],
+        images: ["/og-image.svg"],
       },
       robots: {
         index: true,
@@ -145,7 +145,14 @@
         "@type": "Organization",
         name: "FastTools",
         url: "https://fasttools.store",
-        logo: "https://fasttools.store/logo.png",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://fasttools.store/logo.svg",
+          width: 320,
+          height: 80,
+          description: "FastTools professional logo with modern FT symbol and blue gradient"
+        },
+        image: "https://fasttools.store/og-image.svg",
         description: "FastTools offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
         foundingDate: "2024",
         sameAs: [
