@@ -11,7 +11,6 @@ import {
   Target,
   Users,
   TrendingUp,
-  CheckCircle2,
   Star,
   Calendar,
   Activity,
@@ -28,7 +27,6 @@ import {
   Palette,
   Code,
   Search,
-  Settings,
   Download,
 } from "lucide-react"
 import { AdSpace } from "@/components/ad-space"
@@ -578,14 +576,59 @@ export default function HomePage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script suppressHydrationWarning type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="flex flex-col">
-        <AdSpace slot="header" className="mb-0 h-20" />
+        {/* Swapped: show compact TikTok downloader at the very top */}
+        <div className="px-4 lg:px-6 py-4 border-b">
+          <div className="max-w-7xl mx-auto">
+            {/* Large horizontal ad above downloader */}
+            <div className="mb-4">
+              <AdSpace slot="header" className="w-full h-28 md:h-32 lg:h-36 border border-border/60 rounded-xl shadow-sm" />
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+              {/* Left ad beside downloader (desktop only) */}
+              <div className="hidden lg:block lg:col-span-3">
+                <AdSpace slot="sidebar" className="w-full md:h-64 lg:h-72 border border-border/60 rounded-xl shadow-sm" />
+              </div>
 
-      <section className="container mx-auto px-4 lg:px-6 py-20 md:py-32">
-        <AdSpace slot="header" className="mb-12 h-24" />
+              {/* Center: TikTok downloader */}
+              <div className="lg:col-span-6">
+                <div className="max-w-5xl mx-auto">
+                  <h2 className="text-xl md:text-2xl font-semibold mb-3 text-foreground">Quick TikTok Downloader</h2>
+                  <TiktokDownloader />
+                  <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <Button
+                      asChild
+                      size="lg"
+                      className="w-full h-11 px-6 text-base font-medium shadow-lg hover:shadow-xl transition-all duration-200"
+                    >
+                      <Link href="/social-media-tools/tiktok-downloader">
+                        Open Full TikTok Downloader
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </Link>
+                    </Button>
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="lg"
+                      className="w-full h-11 px-6 text-base font-medium hover:bg-accent transition-all duration-200 bg-transparent border-2"
+                    >
+                      <Link href="/social-media-tools">Explore Social Media Tools</Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
 
-        <div className="max-w-5xl mx-auto text-center space-y-8">
+              {/* Right ad beside downloader (desktop only) */}
+              <div className="hidden lg:block lg:col-span-3">
+                <AdSpace slot="sidebar" className="w-full md:h-64 lg:h-72 border border-border/60 rounded-xl shadow-sm" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <section className="container mx-auto px-4 lg:px-6 py-10 md:py-14">
+        <div className="max-w-7xl mx-auto text-center space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2 animate-fade-in border border-primary/20 backdrop-blur-sm">
             <Sparkles className="h-4 w-4" />
             <span>Free Online Tools for Everyone</span>
@@ -599,34 +642,31 @@ export default function HomePage() {
             Access 1000+ powerful, free online tools including text converters, image processors, AI generators, and productivity utilities — all in one place.
           </p>
 
-          <div className="flex flex-col-reverse lg:flex-row items-start lg:items-stretch justify-center gap-8 pt-8 animate-fade-in-up animation-delay-200">
-            <div className="w-full lg:w-[52%]">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Button
-                  asChild
-                  size="lg"
-                  className="w-full h-12 px-6 text-base font-medium shadow-lg hover:shadow-xl transition-all duration-200"
-                >
-                  <Link href="/tools">
-                    Browse All Tools
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="w-full h-12 px-6 text-base font-medium hover:bg-accent transition-all duration-200 bg-transparent border-2"
-                >
-                  <Link href="/social-media-tools/tiktok-downloader">Open Full TikTok Downloader</Link>
-                </Button>
+          {/* Hero: primary TikTok downloader with right ad rail */}
+          <div className="pt-6 animate-fade-in-up animation-delay-200">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+              {/* Left: TikTok downloader (full, taller) */}
+              <div className="lg:col-span-8 text-left">
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">Sponsored</h2>
+                <AdSpace slot="content" className="w-full h-48 md:h-64 lg:h-80 border border-border/60 rounded-xl shadow-sm" />
+                <AdSpace slot="content" className="w-full h-48 md:h-64 lg:h-80 border border-border/60 rounded-xl shadow-sm" />
+                {/* CTAs moved to the top TikTok section */}
+
+                {/* Below-tool horizontal ad to fill space on mobile/tablet */}
+                <div className="mt-6 lg:hidden">
+                  <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-md" />
+                </div>
+
               </div>
-            </div>
-            <div className="w-full lg:w-[48%] text-left">
-              <h2 className="text-xl font-semibold mb-3 text-foreground">Quick TikTok Downloader</h2>
-              <TiktokDownloader compact />
-              <div className="mt-4">
-                <AdSpace slot="content" className="w-full h-24 lg:h-36 border border-border/60 rounded-md" />
+
+              {/* Right: sticky ads rail - 2x2 small grid matching left height */}
+              <div className="lg:col-span-4 w-full">
+                <div className="lg:sticky lg:top-4 space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <AdSpace slot="sidebar" className="h-32 md:h-36 lg:h-40 w-full border border-border/60 rounded-xl shadow-sm" />
+                    <AdSpace slot="sidebar" className="h-32 md:h-36 lg:h-40 w-full border border-border/60 rounded-xl shadow-sm" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -642,22 +682,22 @@ export default function HomePage() {
       {/* Public Tools section removed per request */}
 
       {/* Ad Space - Top Content */}
-      <section className="py-4">
+      <section className="py-6">
         <div className="w-full">
           <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24" />
         </div>
       </section>
 
       {/* Popular Tools Section */}
-      <section className="bg-gradient-to-br from-background via-muted/20 to-background py-16 md:py-20">
+      <section className="bg-gradient-to-br from-background via-muted/20 to-background py-12 md:py-16">
         <div className="w-full px-4">
           <div className="w-full">
-            <div className="text-center mb-12 animate-fade-in-up">
+            <div className="text-center mb-10 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Popular Tools</h2>
               <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">Discover our most-used tools that help thousands of users daily</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 mb-10">
               {tools.filter(tool => tool.popular).map((tool, index) => (
                 <Card
                   key={tool.href}
@@ -688,6 +728,11 @@ export default function HomePage() {
                 </Card>
               ))}
             </div>
+
+            {/* Ad filler under popular tools */}
+            <div className="w-full">
+              <AdSpace slot="content" className="w-full max-w-5xl mx-auto h-24 md:h-28" />
+            </div>
           </div>
         </div>
       </section>
@@ -700,10 +745,10 @@ export default function HomePage() {
       </section>
 
       {/* All Tools Section with full width layout */}
-      <section className="bg-muted/20 py-16 md:py-20">
+      <section className="bg-muted/20 py-12 md:py-16">
         <div className="w-full px-4">
           <div className="w-full">
-            <div className="text-center mb-12 animate-fade-in-up">
+            <div className="text-center mb-10 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">All Tools</h2>
               <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">Browse our complete collection of free online tools and utilities</p>
             </div>
@@ -850,6 +895,276 @@ export default function HomePage() {
           <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24" />
         </div>
       </section>
+
+      {/* SEO Content (collapsible to keep UI clean) */}
+      <section className="py-12 border-t">
+        <div className="w-full px-4">
+          <div className="max-w-6xl mx-auto space-y-8">
+            <details className="group" open>
+              <summary className="cursor-pointer list-none">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">About FastTools — Your All‑in‑One Online Toolkit</h2>
+                  <span className="text-sm text-muted-foreground group-open:hidden">Expand</span>
+                  <span className="text-sm text-muted-foreground hidden group-open:inline">Collapse</span>
+                </div>
+              </summary>
+              <div className="prose prose-neutral dark:prose-invert max-w-none mt-6 space-y-4 text-muted-foreground">
+                <p>
+                  FastTools is built to remove everyday internet friction. Instead of opening a dozen different websites
+                  to convert text, check SEO, process images, generate content, or calculate numbers, you can do it all in one
+                  fast, privacy‑respecting place. Our tools are lightweight, mobile‑friendly, and designed for speed so you can
+                  get in, get results, and get on with your work.
+                </p>
+                <p>
+                  Whether you are a student polishing an assignment, a marketer optimizing a campaign, a developer formatting
+                  data, or a casual user trying to download a social video, FastTools brings the essential utilities to your
+                  browser with zero setup. No sign‑up walls, no heavy apps, and no confusing interfaces—just clean tools that
+                  work instantly.
+                </p>
+                <p>
+                  Our most popular feature is the TikTok Video Downloader. Paste a public video URL and we will fetch
+                  the direct links provided by the upstream service, giving you options with or without watermark and a quick
+                  way to extract the soundtrack as MP3. Creators love it for backing up their own content; educators use it to
+                  analyze trends; and social media managers capture clips for research, commentary, and inspiration. Always make
+                  sure you have the right to download before saving or sharing any media.
+                </p>
+                <p>
+                  Beyond social tools, you will find a deep catalog of calculators and converters—file size, currency,
+                  temperature, length, timezones, tax and percentage helpers, date differences, compound interest, and more.
+                  Our SEO utilities help you generate meta tags, preview titles and descriptions, check keyword density, and
+                  produce clean, optimized content. Developers can format HTML, convert JSON to CSV, test regular expressions,
+                  preview Markdown, and generate accessible color palettes that look great in light and dark themes.
+                </p>
+                <p>
+                  For creators, our AI section includes meme, caption, lyrics, and hashtag generators. For everyday tasks,
+                  you can crop images, blur backgrounds, extract text from screenshots, and produce QR codes ready for print
+                  or sharing. Each tool includes clear labels, sensible defaults, and friendly copy so that first‑time users
+                  feel confident and power users stay efficient.
+                </p>
+                <p>
+                  We obsess over user experience and performance. Pages are optimized with semantic headings, accessible forms,
+                  responsive layout, and fast rendering. We avoid unnecessary network calls, cache aggressively, and minimize
+                  bundle size. For search engines, we provide structured data, logical internal linking, and descriptive meta
+                  content so that people searching for a specific utility can land directly on the tool they need.
+                </p>
+                <p>
+                  Reliability is equally important. Our interface validates inputs, handles edge cases gracefully, and gives you
+                  helpful error messages when something goes wrong. The TikTok downloader includes additional thumbnail fallbacks
+                  via oEmbed when upstream coverage is limited, and our components are tested across modern browsers and screen
+                  sizes.
+                </p>
+                <p>
+                  FastTools is continuously expanding. We monitor demand across categories—converters, image processing, social
+                  media utilities, finance and productivity calculators—and ship improvements weekly. If you have a suggestion,
+                  reach out via our contact page and we will prioritize the features that help the most users.
+                </p>
+                <p>
+                  In short: bookmark this page. The next time you need to convert a value, generate a QR code, analyze a
+                  keyword list, grab a thumbnail, or quickly download your own TikTok, FastTools will be ready.
+                </p>
+              </div>
+            </details>
+
+            <details className="group">
+              <summary className="cursor-pointer list-none">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl md:text-2xl font-semibold text-foreground">Related Keywords and Search Phrases</h3>
+                  <span className="text-sm text-muted-foreground group-open:hidden">Show 100 keywords</span>
+                  <span className="text-sm text-muted-foreground hidden group-open:inline">Hide keywords</span>
+                </div>
+              </summary>
+              <div className="mt-4">
+                <ul className="flex flex-wrap gap-2 text-sm text-muted-foreground">
+                  {[
+                    "tiktok video downloader",
+                    "download tiktok without watermark",
+                    "save tiktok mp4",
+                    "tiktok to mp3",
+                    "tiktok audio download",
+                    "online tiktok downloader",
+                    "free tiktok saver",
+                    "tiktok mp4 no watermark",
+                    "tiktok download link",
+                    "tiktok clip downloader",
+                    "ocr image to text",
+                    "convert image to text online",
+                    "qr code generator",
+                    "free qr code maker",
+                    "currency converter online",
+                    "file size converter",
+                    "length converter cm to inch",
+                    "temperature converter c to f",
+                    "timezone converter",
+                    "date difference calculator",
+                    "time duration calculator",
+                    "percentage calculator",
+                    "discount calculator",
+                    "compound interest calculator",
+                    "tax calculator online",
+                    "invoice generator",
+                    "paypal fee calculator",
+                    "savings goal tracker",
+                    "retirement planner online",
+                    "bill splitter app",
+                    "hashtag generator",
+                    "hashtag suggester",
+                    "keyword density checker",
+                    "meta tag generator",
+                    "html beautifier",
+                    "html to markdown converter",
+                    "json to csv converter",
+                    "jwt decoder",
+                    "markdown previewer",
+                    "regex tester",
+                    "screenshot to text",
+                    "image cropper",
+                    "background blur tool",
+                    "pdf tools online",
+                    "pdf unlocker",
+                    "youtube thumbnail downloader",
+                    "youtube tag extractor",
+                    "instagram dp viewer",
+                    "link in bio generator",
+                    "color palette generator",
+                    "ai meme generator",
+                    "ai caption generator",
+                    "ai lyrics generator",
+                    "pet name generator",
+                    "birthday countdown",
+                    "anniversary calculator",
+                    "age in hours calculator",
+                    "zodiac sign finder",
+                    "workday calculator",
+                    "year end countdown",
+                    "text case converter",
+                    "uppercase to lowercase",
+                    "title case converter",
+                    "download tiktok sound",
+                    "tiktok downloader fast",
+                    "tiktok saver web",
+                    "no watermark tiktok saver",
+                    "tiktok download hd",
+                    "tiktok download online free",
+                    "tiktok downloader for pc",
+                    "tiktok downloader for mobile",
+                    "save tiktok audio mp3",
+                    "extract tiktok music",
+                    "generate qr for url",
+                    "qr for wifi",
+                    "qr for contact",
+                    "convert kb mb gb",
+                    "convert cm inch",
+                    "convert celsius fahrenheit",
+                    "convert time zones",
+                    "calculate date gap",
+                    "calculate time gap",
+                    "find percentage",
+                    "find discount price",
+                    "calculate interest",
+                    "estimate taxes",
+                    "create invoice online",
+                    "split bill calculator",
+                    "track savings",
+                    "plan retirement",
+                    "seo meta generator",
+                    "keyword density tool",
+                    "format html online",
+                    "convert html to md",
+                    "convert json csv",
+                    "decode jwt token",
+                    "preview markdown",
+                    "test regex online",
+                    "extract text from screenshot",
+                    "crop image online",
+                    "blur background image",
+                    "unlock pdf",
+                    "download youtube thumbnail",
+                    "extract youtube tags",
+                    "view instagram profile photo",
+                    "build link in bio",
+                    "generate color palette",
+                  ].map((k) => (
+                    <li key={k} className="px-3 py-1 rounded-full bg-muted text-foreground/80 border">
+                      {k}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </details>
+
+            <details className="group">
+              <summary className="cursor-pointer list-none">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl md:text-2xl font-semibold text-foreground">Frequently Asked Questions</h3>
+                  <span className="text-sm text-muted-foreground group-open:hidden">Expand</span>
+                  <span className="text-sm text-muted-foreground hidden group-open:inline">Collapse</span>
+                </div>
+              </summary>
+              <div className="mt-6 space-y-6 text-muted-foreground">
+                <div>
+                  <h4 className="text-base font-semibold text-foreground">Is the TikTok downloader free?</h4>
+                  <p>Yes. The downloader on FastTools is free to use for public TikTok links. Always download only content you own or have permission to use.</p>
+                </div>
+                <div>
+                  <h4 className="text-base font-semibold text-foreground">Do you remove the watermark?</h4>
+                  <p>When available from the upstream service, we show both a no‑watermark and a watermark link so you can choose the appropriate option.</p>
+                </div>
+                <div>
+                  <h4 className="text-base font-semibold text-foreground">Do I need to install anything?</h4>
+                  <p>No. Everything runs in the browser. Simply paste a valid TikTok URL and click Get Download Links.</p>
+                </div>
+                <div>
+                  <h4 className="text-base font-semibold text-foreground">Will this work on mobile?</h4>
+                  <p>Yes. The downloader and all tools are responsive and optimized for mobile and desktop.</p>
+                </div>
+                <div>
+                  <h4 className="text-base font-semibold text-foreground">What other tools are available?</h4>
+                  <p>Explore converters, calculators, SEO helpers, developer utilities, image tools, and AI generators—all accessible from the homepage categories.</p>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Structured Data */}
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Is the TikTok downloader free?",
+                acceptedAnswer: { "@type": "Answer", text: "Yes, it is free for public TikTok links. Download only content you own or are authorized to use." }
+              },
+              {
+                "@type": "Question",
+                name: "Do you remove the watermark?",
+                acceptedAnswer: { "@type": "Answer", text: "When available from the upstream service, we provide both no‑watermark and watermark options." }
+              },
+              {
+                "@type": "Question",
+                name: "Do I need to install anything?",
+                acceptedAnswer: { "@type": "Answer", text: "No installation required—everything runs in the browser. Paste a TikTok URL and click Get Download Links." }
+              },
+              {
+                "@type": "Question",
+                name: "Will this work on mobile?",
+                acceptedAnswer: { "@type": "Answer", text: "Yes, all tools are responsive and work on phones, tablets, and desktops." }
+              },
+              {
+                "@type": "Question",
+                name: "What other tools are available?",
+                acceptedAnswer: { "@type": "Answer", text: "Converters, calculators, SEO helpers, developer utilities, image tools, and AI generators are available from the homepage." }
+              }
+            ]
+          })
+        }}
+      />
       </div>
     </>
   )

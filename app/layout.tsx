@@ -199,16 +199,15 @@
             <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
             <meta name="google-adsense-account" content="ca-pub-6296569221534302"/>
             <script
+                suppressHydrationWarning
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{__html: JSON.stringify(organizationSchema)}}
             />
             <script
+                suppressHydrationWarning
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{__html: JSON.stringify(websiteSchema)}}
             />
-            <script async
-                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296569221534302"
-                    crossOrigin="anonymous"></script>
             
         </head>
         <body className="min-h-screen bg-background font-sans text-foreground">
