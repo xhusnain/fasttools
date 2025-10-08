@@ -130,11 +130,21 @@ export default function TermsPage() {
             <p className="text-muted-foreground leading-relaxed mb-4">
               By using our Services, you acknowledge that:
             </p>
-            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+            <ul className="list-disc list-inside space-y-2 text-muted-foreground mb-4">
               <li>Advertisements may be displayed on our website</li>
               <li>Third-party advertisers may use cookies and tracking technologies</li>
               <li>We may receive compensation from advertisers</li>
               <li>You can opt out of personalized advertising through your browser settings</li>
+            </ul>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              <strong>AdSense Policy Compliance:</strong> We comply with Google AdSense policies and guidelines. Users are prohibited from:
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+              <li>Clicking on ads for any reason other than genuine interest</li>
+              <li>Encouraging others to click on ads</li>
+              <li>Using automated systems to generate ad clicks or impressions</li>
+              <li>Manipulating ad placement or behavior</li>
+              <li>Interfering with ad functionality or performance</li>
             </ul>
           </section>
 

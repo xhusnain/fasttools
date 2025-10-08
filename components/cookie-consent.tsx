@@ -79,13 +79,24 @@ export function CookieConsent() {
 
   const initializeTracking = (consent: boolean) => {
     if (typeof window !== "undefined") {
-      // Google Analytics consent
-      if (window.gtag) {
-        window.gtag('consent', 'update', {
+      // Google Analytics and AdSense consent
+      // @ts-ignore
+        if (window.gtag) {
+            // @ts-ignore
+
+            window.gtag('consent', 'update', {
           'analytics_storage': consent ? 'granted' : 'denied',
           'ad_storage': consent ? 'granted' : 'denied',
+          'ad_user_data': consent ? 'granted' : 'denied',
+          'ad_personalization': consent ? 'granted' : 'denied',
           'personalization_storage': consent ? 'granted' : 'denied'
         })
+      }
+      
+      // Initialize Google AdSense with consent
+      if (consent && window.adsbygoogle) {
+        // Re-initialize ads with consent
+        window.adsbygoogle.push({})
       }
     }
   }

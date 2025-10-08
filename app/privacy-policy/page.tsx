@@ -139,7 +139,10 @@ export default function PrivacyPolicyPage() {
               We use Google AdSense to display advertisements on our website. Google may use cookies to serve ads based on your prior visits to our website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to our site and/or other sites on the Internet.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              You can opt out of personalized advertising by visiting{" "}
+              <strong>AdSense Compliance:</strong> We comply with Google AdSense policies including proper ad placement, content quality standards, and user experience guidelines. Our ads are clearly labeled and do not interfere with site navigation.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              <strong>Ad Personalization:</strong> You can opt out of personalized advertising by visiting{" "}
               <a href="https://www.google.com/settings/ads" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
                 Google's Ad Settings
               </a>{" "}
@@ -147,6 +150,9 @@ export default function PrivacyPolicyPage() {
               <a href="https://www.aboutads.info/choices/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
                 www.aboutads.info/choices/
               </a>.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              <strong>Third-Party Advertisers:</strong> Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to our website or other websites. You can opt out of third-party vendor use of cookies for personalized advertising by visiting the Digital Advertising Alliance opt-out page.
             </p>
 
             <h3 className="text-xl font-semibold mb-3">Google Analytics</h3>
@@ -217,6 +223,27 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-2xl font-bold mb-4">International Data Transfers</h2>
             <p className="text-muted-foreground leading-relaxed">
               Your information may be transferred to and processed in countries other than your country of residence. We ensure that such transfers comply with applicable data protection laws and implement appropriate safeguards to protect your information.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">AdSense Policy Compliance</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              We are committed to maintaining compliance with Google AdSense policies and guidelines:
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-muted-foreground mb-4">
+              <li><strong>Ad Placement:</strong> Ads are placed in appropriate locations that do not interfere with content or user experience</li>
+              <li><strong>Content Quality:</strong> We maintain high-quality, original content that provides value to users</li>
+              <li><strong>User Experience:</strong> Our site is easy to navigate with clear content structure</li>
+              <li><strong>Traffic Sources:</strong> We do not use prohibited traffic sources or click farms</li>
+              <li><strong>Ad Behavior:</strong> We do not encourage invalid clicks or artificially inflate ad performance</li>
+              <li><strong>Site Behavior:</strong> Our site does not contain malware, pop-ups, or deceptive navigation</li>
+            </ul>
+            <p className="text-muted-foreground leading-relaxed">
+              If you notice any policy violations or have concerns about our ad implementation, please contact us immediately at{" "}
+              <a href="mailto:adsense-compliance@fasttools.store" className="text-primary hover:underline">
+                adsense-compliance@fasttools.store
+              </a>.
             </p>
           </section>
 
