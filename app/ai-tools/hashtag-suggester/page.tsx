@@ -161,25 +161,29 @@ export default function HashtagSuggesterPage() {
         />
 
         <div className="max-w-6xl mx-auto">
-          <AdSpace slot="header" className="mb-8 h-24" />
+          {/* Hero Section with proper content-to-ad ratio */}
+          <div className="mb-8 animate-fade-in-up">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance text-primary">Free AI Hashtag Generator</h1>
+            <p className="text-lg text-secondary text-pretty leading-relaxed">
+              Generate trending hashtags with AI for Instagram, TikTok, Twitter, and LinkedIn. Boost your social media reach 
+              and engagement with our free AI-powered hashtag generator. Get viral hashtag suggestions instantly.
+            </p>
+          </div>
+
+          {/* First Ad Space - After Hero Content */}
+          <div className="mb-8">
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <div className="mb-8 animate-fade-in-up">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance text-primary">Free AI Hashtag Generator</h1>
-                <p className="text-lg text-secondary text-pretty leading-relaxed">
-                  Generate trending hashtags with AI for Instagram, TikTok, Twitter, and LinkedIn. Boost your social media reach 
-                  and engagement with our free AI-powered hashtag generator. Get viral hashtag suggestions instantly.
-                </p>
-              </div>
-
               <div className="animate-fade-in-up animation-delay-200">
                 <AiHashtagSuggester />
               </div>
 
-              {/* Center Content Ad */}
+              {/* Second Ad Space - After Tool */}
               <div className="my-8">
-                <AdSpace slot="content" className="w-full h-24" />
+                <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
               </div>
 
               <div className="mt-12 prose prose-slate max-w-none animate-fade-in-up animation-delay-400">
@@ -340,10 +344,6 @@ export default function HashtagSuggesterPage() {
                     <p className="text-secondary">Yes, but only if they're relevant to your content. Using irrelevant trending hashtags can hurt your credibility and reach.                </p>
               </div>
 
-              {/* Bottom Content Ad */}
-              <div className="mt-8">
-                <AdSpace slot="content" className="w-full h-24" />
-              </div>
             </div>
 
                 <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Related Tools</h2>
@@ -360,9 +360,8 @@ export default function HashtagSuggesterPage() {
             </div>
 
             <div className="lg:col-span-1">
-              <div className="sticky top-20 space-y-6">
-                <AdSpace slot="sidebar" className="h-96" />
-                <AdSpace slot="sidebar" className="h-64" />
+              <div className="sticky top-20">
+                <AdSpace slot="sidebar" className="h-96 border border-border/60 rounded-xl shadow-sm" />
               </div>
             </div>
           </div>

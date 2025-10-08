@@ -578,118 +578,60 @@ export default function HomePage() {
     <>
       <script suppressHydrationWarning type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="flex flex-col">
-        {/* Swapped: show compact TikTok downloader at the very top */}
-        <div className="px-4 lg:px-6 py-4 border-b">
-          <div className="max-w-7xl mx-auto">
-            {/* Large horizontal ad above downloader */}
-            <div className="mb-4">
-              <AdSpace slot="header" className="w-full h-28 md:h-32 lg:h-36 border border-border/60 rounded-xl shadow-sm" />
+        {/* Hero Section with proper content-to-ad ratio */}
+        <section className="container mx-auto px-4 lg:px-6 py-10 md:py-14">
+          <div className="max-w-7xl mx-auto text-center space-y-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2 animate-fade-in border border-primary/20 backdrop-blur-sm">
+              <Sparkles className="h-4 w-4" />
+              <span>Free Online Tools for Everyone</span>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
-              {/* Left ad beside downloader (desktop only) */}
-              <div className="hidden lg:block lg:col-span-3">
-                <AdSpace slot="sidebar" className="w-full md:h-64 lg:h-72 border border-border/60 rounded-xl shadow-sm" />
-              </div>
 
-              {/* Center: TikTok downloader */}
-              <div className="lg:col-span-6">
-                <div className="max-w-5xl mx-auto">
-                  <h2 className="text-xl md:text-2xl font-semibold mb-3 text-foreground">Quick TikTok Downloader</h2>
-                  <TiktokDownloader />
-                  <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <Button
-                      asChild
-                      size="lg"
-                      className="w-full h-11 px-6 text-base font-medium shadow-lg hover:shadow-xl transition-all duration-200"
-                    >
-                      <Link href="/social-media-tools/tiktok-downloader">
-                        Open Full TikTok Downloader
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </Link>
-                    </Button>
-                    <Button
-                      asChild
-                      variant="outline"
-                      size="lg"
-                      className="w-full h-11 px-6 text-base font-medium hover:bg-accent transition-all duration-200 bg-transparent border-2"
-                    >
-                      <Link href="/social-media-tools">Explore Social Media Tools</Link>
-                    </Button>
-                  </div>
-                </div>
-              </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance leading-[1.1] text-foreground animate-fade-in-up tracking-tight">
+              FastTools - Your Digital Toolkit
+            </h1>
 
-              {/* Right ad beside downloader (desktop only) */}
-              <div className="hidden lg:block lg:col-span-3">
-                <AdSpace slot="sidebar" className="w-full md:h-64 lg:h-72 border border-border/60 rounded-xl shadow-sm" />
+            <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-100">
+              Access 1000+ powerful, free online tools including text converters, image processors, AI generators, and productivity utilities — all in one place.
+            </p>
+
+            {/* Hero CTA Buttons */}
+            <div className="pt-6 animate-fade-in-up animation-delay-200">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full sm:w-auto h-12 px-8 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
+                >
+                  <Link href="#popular-tools" className="flex items-center justify-center gap-2">
+                    Explore Popular Tools
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="w-full sm:w-auto h-12 px-8 text-base font-semibold hover:bg-accent transition-all duration-200 bg-transparent border-2"
+                >
+                  <Link href="#all-tools" className="flex items-center justify-center gap-2">
+                    View All Tools
+                    <Target className="h-5 w-5" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-      <section className="container mx-auto px-4 lg:px-6 py-10 md:py-14">
-        <div className="max-w-7xl mx-auto text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2 animate-fade-in border border-primary/20 backdrop-blur-sm">
-            <Sparkles className="h-4 w-4" />
-            <span>Free Online Tools for Everyone</span>
+        {/* First Ad Space - After Hero Content */}
+        <section className="py-6">
+          <div className="w-full px-4">
+            <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24 border border-border/60 rounded-xl shadow-sm" />
           </div>
-
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance leading-[1.1] text-foreground animate-fade-in-up tracking-tight">
-          FastTools - Your Digital Toolkit
-          </h1>
-
-          <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-100">
-            Access 1000+ powerful, free online tools including text converters, image processors, AI generators, and productivity utilities — all in one place.
-          </p>
-
-          {/* Hero: primary TikTok downloader with right ad rail */}
-          <div className="pt-6 animate-fade-in-up animation-delay-200">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-              {/* Left: TikTok downloader (full, taller) */}
-              <div className="lg:col-span-8 text-left">
-                <h2 className="text-2xl font-semibold mb-4 text-foreground">Sponsored</h2>
-                <AdSpace slot="content" className="w-full h-48 md:h-64 lg:h-80 border border-border/60 rounded-xl shadow-sm" />
-                <AdSpace slot="content" className="w-full h-48 md:h-64 lg:h-80 border border-border/60 rounded-xl shadow-sm" />
-                {/* CTAs moved to the top TikTok section */}
-
-                {/* Below-tool horizontal ad to fill space on mobile/tablet */}
-                <div className="mt-6 lg:hidden">
-                  <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-md" />
-                </div>
-
-              </div>
-
-              {/* Right: sticky ads rail - 2x2 small grid matching left height */}
-              <div className="lg:col-span-4 w-full">
-                <div className="lg:sticky lg:top-4 space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <AdSpace slot="sidebar" className="h-32 md:h-36 lg:h-40 w-full border border-border/60 rounded-xl shadow-sm" />
-                    <AdSpace slot="sidebar" className="h-32 md:h-36 lg:h-40 w-full border border-border/60 rounded-xl shadow-sm" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* Features Section */}
-      {/* Intro feature cards removed to streamline homepage */}
-
-      {/* "Why Choose" section removed per request */}
-
-      {/* Public Tools section removed per request */}
-
-      {/* Ad Space - Top Content */}
-      <section className="py-6">
-        <div className="w-full">
-          <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24" />
-        </div>
-      </section>
+        </section>
 
       {/* Popular Tools Section */}
-      <section className="bg-gradient-to-br from-background via-muted/20 to-background py-12 md:py-16">
+      <section id="popular-tools" className="bg-gradient-to-br from-background via-muted/20 to-background py-12 md:py-16">
         <div className="w-full px-4">
           <div className="w-full">
             <div className="text-center mb-10 animate-fade-in-up">
@@ -728,24 +670,19 @@ export default function HomePage() {
                 </Card>
               ))}
             </div>
-
-            {/* Ad filler under popular tools */}
-            <div className="w-full">
-              <AdSpace slot="content" className="w-full max-w-5xl mx-auto h-24 md:h-28" />
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Ad Space - Between Sections */}
-      <section className="py-4">
-        <div className="w-full">
-          <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24" />
+      {/* Second Ad Space - Between Popular and All Tools */}
+      <section className="py-6">
+        <div className="w-full px-4">
+          <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
       </section>
 
-      {/* All Tools Section with full width layout */}
-      <section className="bg-muted/20 py-12 md:py-16">
+      {/* All Tools Section with AdSense compliant layout */}
+      <section id="all-tools" className="bg-muted/20 py-12 md:py-16">
         <div className="w-full px-4">
           <div className="w-full">
             <div className="text-center mb-10 animate-fade-in-up">
@@ -753,15 +690,11 @@ export default function HomePage() {
               <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">Browse our complete collection of free online tools and utilities</p>
             </div>
 
-            {/* Desktop layout with side ads */}
+            {/* Desktop layout with single sidebar ad (AdSense compliant) */}
             <div className="hidden lg:grid grid-cols-12 gap-6">
               <div className="col-span-2">
                 <div className="sticky top-4">
-                  <div className="space-y-4">
-                    <AdSpace slot="sidebar" className="h-[600px] w-full border border-border/60 rounded-xl shadow-sm" />
-                    <AdSpace slot="sidebar" className="h-[400px] w-full border border-border/60 rounded-xl shadow-sm" />
-                    <AdSpace slot="sidebar" className="h-[500px] w-full border border-border/60 rounded-xl shadow-sm" />
-                  </div>
+                  <AdSpace slot="sidebar" className="h-[600px] w-full border border-border/60 rounded-xl shadow-sm" />
                 </div>
               </div>
               
@@ -808,13 +741,6 @@ export default function HomePage() {
                           </Card>
                         ))}
                       </div>
-                      
-                      {/* Ad space between categories */}
-                      {catIdx < Object.entries(categorizedTools).length - 1 && (
-                        <div className="py-4">
-                          <AdSpace slot="content" className="w-full max-w-4xl mx-auto h-24" />
-                        </div>
-                      )}
                     </div>
                   ))}
                 </div>
@@ -822,11 +748,7 @@ export default function HomePage() {
               
               <div className="col-span-2">
                 <div className="sticky top-4">
-                  <div className="space-y-4">
-                    <AdSpace slot="sidebar" className="h-[600px] w-full border border-border/60 rounded-xl shadow-sm" />
-                    <AdSpace slot="sidebar" className="h-[400px] w-full border border-border/60 rounded-xl shadow-sm" />
-                    <AdSpace slot="sidebar" className="h-[500px] w-full border border-border/60 rounded-xl shadow-sm" />
-                  </div>
+                  <AdSpace slot="sidebar" className="h-[600px] w-full border border-border/60 rounded-xl shadow-sm" />
                 </div>
               </div>
             </div>
@@ -874,13 +796,6 @@ export default function HomePage() {
                       </Card>
                     ))}
                   </div>
-                  
-                  {/* Ad space between categories on mobile */}
-                  {catIdx < Object.entries(categorizedTools).length - 1 && (
-                    <div className="py-4">
-                      <AdSpace slot="content" className="w-full h-24" />
-                    </div>
-                  )}
                 </div>
               ))}
             </div>
@@ -888,11 +803,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Ad Space - Bottom Content */}
+      {/* Final Ad Space - Bottom Content */}
       <section className="py-8">
         <div className="w-full px-4">
-          <AdSpace slot="content" className="w-full max-w-6xl mx-auto mb-6 h-24" />
-          <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24" />
+          <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
       </section>
 

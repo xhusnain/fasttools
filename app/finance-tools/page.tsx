@@ -107,6 +107,7 @@ export default function FinanceToolsPage() {
       />
 
       <div className="max-w-6xl mx-auto">
+        {/* Hero Section with proper content-to-ad ratio */}
         <div className="text-center mb-12 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">Finance & Productivity Tools</h1>
           <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">
@@ -115,25 +116,25 @@ export default function FinanceToolsPage() {
           </p>
         </div>
 
-        {/* Top Content Ad */}
+        {/* First Ad Space - After Hero Content */}
         <div className="mb-8">
-          <AdSpace slot="content" className="w-full h-24" />
+          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {tools.map((tool, index) => (
             <Card
               key={tool.href}
-              className="border border-border hover:shadow-lg transition-all hover:-translate-y-1 animate-fade-in-up"
+              className="border border-border hover:shadow-lg transition-all hover:-translate-y-1 animate-fade-in-up bg-card/80 backdrop-blur-sm"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <CardHeader>
                 <div className="flex items-start justify-between">
-                  <div className="h-12 w-12 rounded-lg bg-primary/5 flex items-center justify-center border border-primary/10">
+                  <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center border border-primary/20">
                     <tool.icon className="h-6 w-6 text-primary" />
                   </div>
                   {tool.popular && (
-                    <span className="text-xs font-medium px-3 py-1 rounded-full bg-secondary/10 text-secondary border border-secondary/20">
+                    <span className="text-xs font-medium px-3 py-1 rounded-full bg-gradient-to-r from-secondary/10 to-secondary/5 text-secondary border border-secondary/20">
                       Popular
                     </span>
                   )}
@@ -144,7 +145,7 @@ export default function FinanceToolsPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button asChild className="w-full h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all">
+                <Button asChild className="w-full h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary">
                   <Link href={tool.href}>
                     Use Tool
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -155,14 +156,59 @@ export default function FinanceToolsPage() {
           ))}
         </div>
 
-        {/* Center Content Ad */}
+        {/* Second Ad Space - Between Tools and Content */}
         <div className="my-8">
-          <AdSpace slot="content" className="w-full h-24" />
+          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
 
-        {/* Bottom Content Ad */}
+        {/* SEO Content Section */}
+        <div className="prose prose-slate max-w-none space-y-8">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">Why Choose Our Finance Tools?</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Our finance tools are designed to help freelancers, small businesses, and individuals manage their 
+              financial tasks efficiently. From creating professional invoices to calculating fees and planning 
+              savings goals, our tools provide the accuracy and ease of use you need.
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+              <li>Free to use with no registration required</li>
+              <li>Professional-grade calculations and formatting</li>
+              <li>Mobile-friendly and responsive design</li>
+              <li>Download and export results easily</li>
+              <li>No data sent to servers for privacy</li>
+              <li>Always up-to-date with current rates and standards</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">Popular Finance Tools</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Discover our most popular finance tools that help thousands of users manage their financial tasks:
+            </p>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="p-4 border border-border/60 rounded-lg bg-card/50">
+                <h3 className="font-semibold text-foreground mb-2">Invoice Generator</h3>
+                <p className="text-sm text-muted-foreground">Create professional invoices with taxes, discounts, and branding.</p>
+              </div>
+              <div className="p-4 border border-border/60 rounded-lg bg-card/50">
+                <h3 className="font-semibold text-foreground mb-2">PayPal Fee Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate PayPal fees and determine net amounts or required charges.</p>
+              </div>
+              <div className="p-4 border border-border/60 rounded-lg bg-card/50">
+                <h3 className="font-semibold text-foreground mb-2">Tip Calculator</h3>
+                <p className="text-sm text-muted-foreground">Calculate tips and split bills among multiple people.</p>
+              </div>
+              <div className="p-4 border border-border/60 rounded-lg bg-card/50">
+                <h3 className="font-semibold text-foreground mb-2">Bill Splitter</h3>
+                <p className="text-sm text-muted-foreground">Split expenses fairly among friends or groups.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Final Ad Space - Bottom Content */}
         <div className="mt-8">
-          <AdSpace slot="content" className="w-full h-24" />
+          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
       </div>
     </div>

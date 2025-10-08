@@ -79,6 +79,7 @@ export default function JWTDecoderPage() {
       />
 
       <div className="max-w-4xl mx-auto space-y-8">
+        {/* Hero Section with proper content-to-ad ratio */}
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-bold text-balance">JWT Decoder</h1>
           <p className="text-lg text-muted-foreground text-balance">
@@ -86,16 +87,16 @@ export default function JWTDecoderPage() {
           </p>
         </div>
 
-        {/* Top Content Ad */}
+        {/* First Ad Space - After Hero Content */}
         <div className="mb-8">
-          <AdSpace slot="content" className="w-full h-24" />
+          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
 
         <JWTDecoder />
         
-        {/* Center Content Ad */}
+        {/* Second Ad Space - After Tool */}
         <div className="my-8">
-          <AdSpace slot="content" className="w-full h-24" />
+          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
 
         <div className="prose prose-sm max-w-none">
@@ -103,12 +104,12 @@ export default function JWTDecoderPage() {
           <ol className="list-decimal pl-5 text-muted-foreground">
             <li>Paste your JWT; we split header, payload, and signature.</li>
             <li>Header and payload are base64url‑decoded for easy reading.</li>
-            <li>We don’t verify signatures; use your server or JWKS for verification.</li>
+            <li>We don't verify signatures; use your server or JWKS for verification.</li>
           </ol>
 
           <h2 className="text-2xl font-bold mt-8 mb-4">Security Notes</h2>
           <ul className="list-disc pl-5 text-muted-foreground">
-            <li>Never paste secrets or production tokens you don’t control.</li>
+            <li>Never paste secrets or production tokens you don't control.</li>
             <li>Decoding is not verification—check signature and issuer on the backend.</li>
           </ul>
 
@@ -118,11 +119,6 @@ export default function JWTDecoderPage() {
             <li><Link href="/dev-tools/json-to-csv">JSON to CSV</Link></li>
             <li><Link href="/dev-tools/markdown-previewer">Markdown Previewer</Link></li>
           </ul>
-        </div>
-
-        {/* Bottom Content Ad */}
-        <div className="mt-8">
-          <AdSpace slot="content" className="w-full h-24" />
         </div>
       </div>
     </div>

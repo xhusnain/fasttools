@@ -132,21 +132,25 @@ export default function TemperatureConverterPage() {
           ]}
         />
 
-        <AdSpace slot="header" className="mb-8 h-24" />
-
         <div className="max-w-6xl mx-auto">
+          {/* Hero Section with proper content-to-ad ratio */}
+          <div className="text-center mb-8 animate-fade-in-up">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Free Temperature Converter — Celsius (°C) ⇄ Fahrenheit (°F)</h1>
+            <p className="text-base text-muted-foreground text-pretty max-w-2xl mx-auto">Instantly convert temperatures for weather, cooking and science.</p>
+          </div>
+
+          {/* First Ad Space - After Hero Content */}
+          <div className="mb-8">
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <div className="text-center mb-8 animate-fade-in-up">
-                <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Free Temperature Converter — Celsius (°C) ⇄ Fahrenheit (°F)</h1>
-                <p className="text-base text-muted-foreground text-pretty max-w-2xl mx-auto">Instantly convert temperatures for weather, cooking and science.</p>
-              </div>
-
               <TemperatureConverter />
 
-              {/* Center Content Ad */}
+              {/* Second Ad Space - After Tool */}
               <div className="my-8">
-                <AdSpace slot="content" className="w-full h-24" />
+                <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
               </div>
 
               <div className="mt-12 prose prose-sm max-w-none">
@@ -272,10 +276,6 @@ export default function TemperatureConverterPage() {
                     <p className="text-muted-foreground">Celsius uses water's freezing and boiling points as reference (0°C and 100°C), while Fahrenheit uses different reference points (32°F and 212°F).                </p>
               </div>
 
-              {/* Bottom Content Ad */}
-              <div className="mt-8">
-                <AdSpace slot="content" className="w-full h-24" />
-              </div>
             </div>
 
                 <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Tools</h2>
@@ -288,9 +288,8 @@ export default function TemperatureConverterPage() {
             </div>
 
             <div className="lg:col-span-1">
-              <div className="sticky top-20 space-y-6">
-                <AdSpace slot="sidebar" className="h-96" />
-                <AdSpace slot="sidebar" className="h-64" />
+              <div className="sticky top-20">
+                <AdSpace slot="sidebar" className="h-96 border border-border/60 rounded-xl shadow-sm" />
               </div>
             </div>
           </div>

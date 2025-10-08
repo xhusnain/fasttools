@@ -85,18 +85,22 @@ export default function PayPalFeeCalculatorPage() {
       />
 
       <div className="max-w-2xl mx-auto">
+        {/* Hero Section with proper content-to-ad ratio */}
         <div className="text-center mb-8 animate-fade-in-up">
           <h1 className="text-3xl md:text-4xl font-bold mb-3 text-foreground">PayPal Fee Calculator — Net Received & Required Gross</h1>
           <p className="text-sm md:text-base text-muted-foreground text-pretty">Know your net amount or what to charge after PayPal fees in your country.</p>
         </div>
 
-        <AdSpace slot="content" className="mb-6 h-24" />
+        {/* First Ad Space - After Hero Content */}
+        <div className="mb-8">
+          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+        </div>
 
         <PayPalFeeCalculator />
 
-        {/* Center Content Ad */}
+        {/* Second Ad Space - After Tool */}
         <div className="my-8">
-          <AdSpace slot="content" className="w-full h-24" />
+          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
 
         <div className="mt-10 prose prose-sm max-w-none">
@@ -127,10 +131,6 @@ export default function PayPalFeeCalculatorPage() {
             </ul>
           </div>
 
-          {/* Bottom Content Ad */}
-          <div className="mt-8">
-            <AdSpace slot="content" className="w-full h-24" />
-          </div>
         </div>
       </div>
   )

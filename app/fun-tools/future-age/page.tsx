@@ -85,13 +85,16 @@ export default function FutureAgePage() {
             </p>
           </div>
 
-          <AdSpace slot="content" className="h-24" />
+          {/* First Ad Space - After Hero Content */}
+          <div className="mb-8">
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+          </div>
 
           <FutureAgePredictor />
 
-          {/* Center Content Ad */}
+          {/* Second Ad Space - After Tool */}
           <div className="my-8">
-            <AdSpace slot="content" className="w-full h-24" />
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
           </div>
 
           <div className="prose prose-sm max-w-none space-y-6 animate-fade-in-up animation-delay-200">
@@ -118,10 +121,6 @@ export default function FutureAgePage() {
             </div>
           </div>
 
-          {/* Bottom Content Ad */}
-          <div className="mt-8">
-            <AdSpace slot="content" className="w-full h-24" />
-          </div>
         </div>
       </div>
     </div>

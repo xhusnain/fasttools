@@ -95,13 +95,16 @@ export default function BillSplitterPage() {
           <p className="text-sm md:text-base text-muted-foreground text-pretty">Split shared expenses with even, itemized, or percentage shares. Include tips and tax.</p>
         </div>
 
-        <AdSpace slot="content" className="mb-6 h-24" />
+        {/* First Ad Space - After Hero Content */}
+        <div className="mb-8">
+          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+        </div>
 
         <BillSplitter />
 
-        {/* Center Content Ad */}
+        {/* Second Ad Space - After Tool */}
         <div className="my-8">
-          <AdSpace slot="content" className="w-full h-24" />
+          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
 
         <div className="mt-10 prose prose-sm max-w-none">
@@ -133,10 +136,6 @@ export default function BillSplitterPage() {
             </ul>
           </div>
 
-          {/* Bottom Content Ad */}
-          <div className="mt-8">
-            <AdSpace slot="content" className="w-full h-24" />
-          </div>
         </div>
       </div>
   )

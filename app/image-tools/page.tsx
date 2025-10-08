@@ -76,6 +76,7 @@ export default function ImageToolsPage() {
           ]}
         />
 
+        {/* Hero Section with proper content-to-ad ratio */}
         <div className="mt-8 mb-12 text-center animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
             Image & File Utility Tools
@@ -91,26 +92,26 @@ export default function ImageToolsPage() {
           </p>
         </div>
 
-        {/* Top Content Ad */}
+        {/* First Ad Space - After Hero Content */}
         <div className="mb-8">
-          <AdSpace slot="content" className="w-full h-24" />
+          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-slide-up">
           {imageTools.map((tool, index) => (
             <Card
               key={tool.name}
-              className="p-6 border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in"
+              className="p-6 border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in bg-card/80 backdrop-blur-sm"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-lg bg-muted/50">
+                <div className="p-3 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/20">
                   <tool.icon className={`h-6 w-6 ${tool.color}`} />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-lg text-foreground mb-2">{tool.name}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">{tool.description}</p>
-                  <Button asChild variant="outline" size="sm" className="h-9 text-sm font-medium group bg-transparent">
+                  <Button asChild variant="outline" size="sm" className="h-9 text-sm font-medium group bg-gradient-to-r from-primary/10 to-primary/5 hover:from-primary/20 hover:to-primary/10 border-primary/20">
                     <Link href={tool.href}>
                       Use Tool
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -122,9 +123,9 @@ export default function ImageToolsPage() {
           ))}
         </div>
 
-        {/* Center Content Ad */}
+        {/* Second Ad Space - Between Tools and Content */}
         <div className="my-8">
-          <AdSpace slot="content" className="w-full h-24" />
+          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
 
         <Card className="mt-12 p-8 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20 animate-fade-in">
@@ -321,9 +322,9 @@ export default function ImageToolsPage() {
           </p>
         </section>
 
-        {/* Bottom Content Ad */}
+        {/* Final Ad Space - Bottom Content */}
         <div className="mt-8">
-          <AdSpace slot="content" className="w-full h-24" />
+          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
       </div>
     </div>

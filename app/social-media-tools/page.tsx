@@ -80,6 +80,7 @@ export default function SocialMediaToolsPage() {
         ]}
       />
 
+      {/* Hero Section with proper content-to-ad ratio */}
       <div className="mb-8 animate-fade-in">
         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">Social Media Tools</h1>
         <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl text-pretty">
@@ -91,9 +92,9 @@ export default function SocialMediaToolsPage() {
         </p>
       </div>
 
-      {/* Top Content Ad */}
+      {/* First Ad Space - After Hero Content */}
       <div className="mb-8">
-        <AdSpace slot="content" className="w-full h-24" />
+        <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -104,9 +105,9 @@ export default function SocialMediaToolsPage() {
             className="group animate-fade-in"
             style={{ animationDelay: `${index * 100}ms` }}
           >
-            <Card className="p-6 h-full bg-card border-border shadow-sm hover:shadow-md transition-all hover:border-primary/50">
+            <Card className="p-6 h-full bg-card/80 backdrop-blur-sm border-border shadow-sm hover:shadow-md transition-all hover:border-primary/50">
               <div className="flex items-start gap-4">
-                <div className={`p-3 rounded-lg ${tool.bgColor}`}>
+                <div className={`p-3 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/20`}>
                   <tool.icon className={`h-6 w-6 ${tool.color}`} />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -121,9 +122,9 @@ export default function SocialMediaToolsPage() {
         ))}
       </div>
 
-      {/* Center Content Ad */}
+      {/* Second Ad Space - Between Tools and Content */}
       <div className="my-8">
-        <AdSpace slot="content" className="w-full h-24" />
+        <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
       </div>
 
       <section className="mt-12 prose prose-slate max-w-none dark:prose-invert">
@@ -336,9 +337,9 @@ export default function SocialMediaToolsPage() {
         </p>
       </section>
 
-      {/* Bottom Content Ad */}
+      {/* Final Ad Space - Bottom Content */}
       <div className="mt-8">
-        <AdSpace slot="content" className="w-full h-24" />
+        <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
       </div>
     </div>
   )

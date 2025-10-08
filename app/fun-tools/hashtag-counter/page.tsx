@@ -68,6 +68,7 @@ export default function HashtagCounterPage() {
         />
 
         <div className="max-w-2xl mx-auto mt-8 space-y-8">
+          {/* Hero Section with proper content-to-ad ratio */}
           <div className="text-center space-y-4 animate-fade-in-up">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground text-balance">Instagram Hashtag Counter</h1>
             <p className="text-base text-muted-foreground text-pretty">
@@ -75,13 +76,16 @@ export default function HashtagCounterPage() {
             </p>
           </div>
 
-          <AdSpace slot="content" className="h-24" />
+          {/* First Ad Space - After Hero Content */}
+          <div className="mb-8">
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+          </div>
 
           <HashtagCounter />
 
-          {/* Center Content Ad */}
+          {/* Second Ad Space - After Tool */}
           <div className="my-8">
-            <AdSpace slot="content" className="w-full h-24" />
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
           </div>
 
           <div className="prose prose-sm max-w-none space-y-6 animate-fade-in-up animation-delay-200">
@@ -108,10 +112,6 @@ export default function HashtagCounterPage() {
             </div>
           </div>
 
-          {/* Bottom Content Ad */}
-          <div className="mt-8">
-            <AdSpace slot="content" className="w-full h-24" />
-          </div>
         </div>
       </div>
     </div>

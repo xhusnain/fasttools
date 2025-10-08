@@ -30,16 +30,16 @@ export default function LinkInBioPage() {
         </p>
       </div>
 
-      {/* Top Content Ad */}
+      {/* First Ad Space - After Hero Content */}
       <div className="mb-8">
-        <AdSpace slot="content" className="w-full h-24" />
+        <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
       </div>
 
       <LinkInBioGenerator />
       
-      {/* Center Content Ad */}
+      {/* Second Ad Space - After Tool */}
       <div className="my-8">
-        <AdSpace slot="content" className="w-full h-24" />
+        <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
       </div>
 
       <div className="mt-10 prose prose-slate max-w-none dark:prose-invert">
@@ -52,10 +52,6 @@ export default function LinkInBioPage() {
         </ul>
       </div>
 
-      {/* Bottom Content Ad */}
-      <div className="mt-8">
-        <AdSpace slot="content" className="w-full h-24" />
-      </div>
     </div>
   )
 }

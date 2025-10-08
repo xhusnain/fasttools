@@ -74,17 +74,17 @@ export default function ImageCropperPage() {
           </p>
         </div>
 
-        {/* Top Content Ad */}
+        {/* First Ad Space - After Hero Content */}
         <div className="mb-8">
-          <AdSpace slot="content" className="w-full h-24" />
+          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
 
         <div className="max-w-3xl mx-auto animate-slide-up">
           <ImageCropper />
           
-          {/* Center Content Ad */}
+          {/* Second Ad Space - After Tool */}
           <div className="my-8">
-            <AdSpace slot="content" className="w-full h-24" />
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
           </div>
 
           <div className="prose prose-sm max-w-none mt-10">
@@ -101,10 +101,6 @@ export default function ImageCropperPage() {
             </ul>
           </div>
 
-          {/* Bottom Content Ad */}
-          <div className="mt-8">
-            <AdSpace slot="content" className="w-full h-24" />
-          </div>
         </div>
       </div>
     </div>

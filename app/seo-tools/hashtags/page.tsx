@@ -36,13 +36,16 @@ export default function HashtagGeneratorPage() {
             </p>
           </div>
 
-          <AdSpace slot="content" className="mb-8 h-24" />
+          {/* First Ad Space - After Hero Content */}
+          <div className="mb-8">
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+          </div>
 
           <HashtagGenerator />
 
-          {/* Center Content Ad */}
+          {/* Second Ad Space - After Tool */}
           <div className="my-8">
-            <AdSpace slot="content" className="w-full h-24" />
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
           </div>
 
           <div className="mt-12 prose prose-sm max-w-none">
@@ -60,10 +63,6 @@ export default function HashtagGeneratorPage() {
             </ul>
           </div>
 
-          {/* Bottom Content Ad */}
-          <div className="mt-8">
-            <AdSpace slot="content" className="w-full h-24" />
-          </div>
         </div>
       </div>
     </div>

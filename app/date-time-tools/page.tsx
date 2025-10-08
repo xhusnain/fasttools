@@ -64,6 +64,7 @@ export default function DateTimeToolsPage() {
         />
 
         <div className="mt-8 space-y-6">
+          {/* Hero Section with proper content-to-ad ratio */}
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground text-balance">Date & Time Tools</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
@@ -72,17 +73,17 @@ export default function DateTimeToolsPage() {
             </p>
           </div>
 
-          {/* Top Content Ad */}
+          {/* First Ad Space - After Hero Content */}
           <div className="mb-8">
-            <AdSpace slot="content" className="w-full h-24" />
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {tools.map((tool) => (
               <Link key={tool.href} href={tool.href} className="group">
-                <Card className="p-6 h-full hover:shadow-lg transition-all duration-300 hover:border-primary/50 border-border">
+                <Card className="p-6 h-full hover:shadow-lg transition-all duration-300 hover:border-primary/50 border-border bg-card/80 backdrop-blur-sm">
                   <div className="space-y-4">
-                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors border border-primary/20">
                       <tool.icon className="h-6 w-6 text-primary" />
                     </div>
                     <div className="space-y-2">
@@ -97,14 +98,59 @@ export default function DateTimeToolsPage() {
             ))}
           </div>
 
-          {/* Center Content Ad */}
+          {/* Second Ad Space - Between Tools and Content */}
           <div className="my-8">
-            <AdSpace slot="content" className="w-full h-24" />
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
           </div>
 
-          {/* Bottom Content Ad */}
+          {/* SEO Content Section */}
+          <div className="prose prose-slate max-w-none space-y-8">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">Why Choose Our Date & Time Tools?</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Our date and time tools are designed to help you calculate, convert, and understand time-related 
+                information quickly and accurately. Whether you're planning projects, celebrating milestones, or 
+                exploring astrology, our tools provide the precision and ease of use you need.
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                <li>Free to use with no registration required</li>
+                <li>Accurate calculations with real-time updates</li>
+                <li>Mobile-friendly and responsive design</li>
+                <li>Fast, instant results</li>
+                <li>Share and copy results easily</li>
+                <li>Educational and fun for all ages</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">Popular Date & Time Tools</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Discover our most popular date and time tools that help thousands of users every day:
+              </p>
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="p-4 border border-border/60 rounded-lg bg-card/50">
+                  <h3 className="font-semibold text-foreground mb-2">Age in Hours Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate your exact age in hours, minutes, and seconds with live updates.</p>
+                </div>
+                <div className="p-4 border border-border/60 rounded-lg bg-card/50">
+                  <h3 className="font-semibold text-foreground mb-2">Workday Calculator</h3>
+                  <p className="text-sm text-muted-foreground">Calculate business days between dates, excluding weekends and holidays.</p>
+                </div>
+                <div className="p-4 border border-border/60 rounded-lg bg-card/50">
+                  <h3 className="font-semibold text-foreground mb-2">Zodiac Sign Finder</h3>
+                  <p className="text-sm text-muted-foreground">Discover your zodiac sign based on your birth date with detailed traits.</p>
+                </div>
+                <div className="p-4 border border-border/60 rounded-lg bg-card/50">
+                  <h3 className="font-semibold text-foreground mb-2">Year End Countdown</h3>
+                  <p className="text-sm text-muted-foreground">Live countdown to the end of the year with precise time remaining.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Final Ad Space - Bottom Content */}
           <div className="mt-8">
-            <AdSpace slot="content" className="w-full h-24" />
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
           </div>
         </div>
       </div>

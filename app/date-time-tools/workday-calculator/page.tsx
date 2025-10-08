@@ -62,8 +62,6 @@ export const metadata: Metadata = {
 export default function WorkdayCalculatorPage() {
   return (
     <div className="min-h-screen bg-background">
-      <AdSpace slot="header" className="h-20" />
-
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <Breadcrumbs
           items={[
@@ -74,16 +72,22 @@ export default function WorkdayCalculatorPage() {
         />
 
         <div className="mt-8 space-y-8">
+          {/* Hero Section with proper content-to-ad ratio */}
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground text-balance">Workday Calculator — Business Days Between Dates</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">Compute business days between two dates with optional holidays excluded.</p>
           </div>
 
+          {/* First Ad Space - After Hero Content */}
+          <div className="mb-8">
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+          </div>
+
           <WorkdayCalculator />
 
-          {/* Center Content Ad */}
+          {/* Second Ad Space - After Tool */}
           <div className="my-8">
-            <AdSpace slot="content" className="w-full h-24" />
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
           </div>
 
           <div className="prose prose-sm max-w-none mt-10">
@@ -105,11 +109,6 @@ export default function WorkdayCalculatorPage() {
               <li><Link href="/date-time-tools/year-end-countdown">Year End Countdown</Link></li>
               <li><Link href="/converters/timezone">Time Zone Converter</Link></li>
             </ul>
-          </div>
-
-          {/* Bottom Content Ad */}
-          <div className="mt-8">
-            <AdSpace slot="content" className="w-full h-24" />
           </div>
         </div>
       </div>

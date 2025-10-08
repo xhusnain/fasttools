@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, Code, FileText, Hash, Lightbulb, Search } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
+import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -68,6 +69,7 @@ export default function SEOToolsPage() {
         />
 
         <div className="max-w-6xl mx-auto">
+          {/* Hero Section with proper content-to-ad ratio */}
           <div className="text-center mb-12 animate-fade-in-up">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">SEO Tools & Content Helpers</h1>
             <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">
@@ -79,15 +81,20 @@ export default function SEOToolsPage() {
             </p>
           </div>
 
+          {/* First Ad Space - After Hero Content */}
+          <div className="mb-8">
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tools.map((tool, index) => (
               <Card
                 key={tool.href}
-                className="border border-border hover:shadow-lg transition-all hover:-translate-y-1 animate-fade-in-up"
+                className="border border-border hover:shadow-lg transition-all hover:-translate-y-1 animate-fade-in-up bg-card/80 backdrop-blur-sm"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <CardHeader>
-                  <div className="h-12 w-12 rounded-lg bg-primary/5 flex items-center justify-center mb-4 border border-primary/10">
+                  <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4 border border-primary/20">
                     <tool.icon className="h-6 w-6 text-primary" />
                   </div>
                   <CardTitle className="text-lg text-foreground">{tool.title}</CardTitle>
@@ -96,7 +103,7 @@ export default function SEOToolsPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button asChild className="w-full h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all">
+                  <Button asChild className="w-full h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary">
                     <Link href={tool.href}>
                       Use Tool
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -105,6 +112,11 @@ export default function SEOToolsPage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Second Ad Space - Between Tools and Content */}
+          <div className="my-8">
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
           </div>
           <section className="mt-12 prose prose-slate max-w-none dark:prose-invert">
             <h2 className="text-2xl font-semibold text-foreground">About Our Free SEO Tools</h2>
@@ -318,6 +330,11 @@ export default function SEOToolsPage() {
               and improve your SEO performance over time.
             </p>
           </section>
+
+          {/* Final Ad Space - Bottom Content */}
+          <div className="mt-8">
+            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+          </div>
         </div>
       </div>
     </div>
