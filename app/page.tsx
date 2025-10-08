@@ -31,6 +31,7 @@ import {
 } from "lucide-react"
 import { AdSpace } from "@/components/ad-space"
 import { TiktokDownloader } from "@/components/tiktok-downloader"
+import { AnnouncementBanner } from "@/components/announcement-banner"
 
 export default function HomePage() {
   const jsonLd = {
@@ -581,9 +582,9 @@ export default function HomePage() {
         {/* Hero Section with proper content-to-ad ratio */}
         <section className="container mx-auto px-4 lg:px-6 py-10 md:py-14">
           <div className="max-w-7xl mx-auto text-center space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2 animate-fade-in border border-primary/20 backdrop-blur-sm">
-              <Sparkles className="h-4 w-4" />
-              <span>Free Online Tools for Everyone</span>
+            {/* Dynamic Announcement Banner */}
+            <div className="mb-6 animate-fade-in">
+              <AnnouncementBanner />
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance leading-[1.1] text-foreground animate-fade-in-up tracking-tight">
