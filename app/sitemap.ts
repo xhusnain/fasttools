@@ -4,13 +4,50 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://fasttools.store"
   const currentDate = new Date()
 
-  // Main pages with enhanced metadata
+  // Image data for enhanced SEO
+  const getImageData = (path: string) => ({
+    url: `${baseUrl}${path}`,
+    lastModified: currentDate,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+    images: [
+      {
+        url: `${baseUrl}/logo.svg`,
+        title: "FastTools Professional Logo",
+        caption: "FastTools professional logo with modern FT symbol and blue gradient design"
+      },
+      {
+        url: `${baseUrl}/og-image.svg`,
+        title: "FastTools Social Media Image", 
+        caption: "FastTools professional social media sharing image with tools showcase"
+      }
+    ]
+  })
+
+  // Main pages with enhanced metadata and images
   const mainPages = [
     {
       url: baseUrl,
       lastModified: currentDate,
       changeFrequency: "daily" as const,
       priority: 1,
+      images: [
+        {
+          url: `${baseUrl}/logo.svg`,
+          title: "FastTools Professional Logo",
+          caption: "FastTools professional logo with modern FT symbol and blue gradient design"
+        },
+        {
+          url: `${baseUrl}/og-image.svg`,
+          title: "FastTools Social Media Image",
+          caption: "FastTools professional social media sharing image with tools showcase"
+        },
+        {
+          url: `${baseUrl}/favicon.svg`,
+          title: "FastTools Favicon",
+          caption: "FastTools favicon for browser tabs and bookmarks"
+        }
+      ]
     },
     {
       url: `${baseUrl}/about`,
@@ -116,6 +153,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.9,
+      images: [
+        {
+          url: `${baseUrl}/og-image.svg`,
+          title: "Age Calculator Tool",
+          caption: "FastTools Age Calculator - Calculate your exact age in years, months, days, hours, and minutes"
+        }
+      ]
     },
     {
       url: `${baseUrl}/tools/bmi-calculator`,
