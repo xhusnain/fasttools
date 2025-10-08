@@ -100,7 +100,7 @@ export function SearchBar() {
         <div className="absolute top-full mt-2 w-full bg-card border border-border rounded-lg shadow-lg overflow-hidden z-50 animate-fade-in">
           {filteredSuggestions.map((tool, index) => (
             <Link
-              key={index}
+              key={`${tool.name}-${tool.path}`}
               href={tool.path}
               onClick={handleSuggestionClick}
               className="flex items-center justify-between px-4 py-3 hover:bg-accent transition-colors group"

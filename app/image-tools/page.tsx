@@ -7,16 +7,167 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Image & File Tools - Free Online Image Editor & PDF Tools | FastTools",
+  title: "Free Image & File Tools | OCR Converter, Background Blur, PDF Tools | FastTools",
   description:
     "Free online image and file utility tools including OCR converter, background blur, image cropper, PDF splitter, PDF merger, and PDF unlocker. Fast, secure, and easy to use.",
-  keywords:
-    "image to text, OCR converter, background blur, image cropper, PDF splitter, PDF merger, PDF unlocker, screenshot to text, online image editor, free PDF tools",
+  keywords: [
+    // Primary Keywords (20)
+    "image tools",
+    "free image tools",
+    "image to text",
+    "OCR converter",
+    "background blur",
+    "image cropper",
+    "PDF splitter",
+    "PDF merger",
+    "PDF unlocker",
+    "screenshot to text",
+    "online image editor",
+    "free PDF tools",
+    "image processing tools",
+    "file conversion tools",
+    "document tools",
+    "image editing tools",
+    "PDF tools",
+    "OCR tools",
+    "image manipulation tools",
+    "file utility tools",
+    
+    // Secondary Keywords (20)
+    "image to text online",
+    "OCR converter online",
+    "background blur online",
+    "image cropper online",
+    "PDF splitter online",
+    "PDF merger online",
+    "PDF unlocker online",
+    "screenshot to text online",
+    "online image editor online",
+    "free PDF tools online",
+    "image processing tools online",
+    "file conversion tools online",
+    "document tools online",
+    "image editing tools online",
+    "PDF tools online",
+    "OCR tools online",
+    "image manipulation tools online",
+    "file utility tools online",
+    "free image tools online",
+    "online image tools",
+    
+    // Long-tail Keywords (20)
+    "free online image tools",
+    "best image tools online",
+    "image tools with live preview",
+    "free image tools tool online",
+    "online image tools free",
+    "image tools online free",
+    "image to text free online",
+    "OCR converter free online",
+    "background blur free online",
+    "image cropper free online",
+    "PDF splitter free online",
+    "PDF merger free online",
+    "PDF unlocker free online",
+    "screenshot to text free online",
+    "online image editor free online",
+    "free PDF tools free online",
+    "image processing tools free online",
+    "file conversion tools free online",
+    "document tools free online",
+    "image editing tools free online",
+    
+    // Additional SEO Keywords
+    "PDF tools",
+    "OCR tools",
+    "image manipulation tools",
+    "file utility tools",
+    "image to text online",
+    "OCR converter online",
+    "background blur online",
+    "image cropper online",
+    "PDF splitter online",
+    "PDF merger online",
+    "PDF unlocker online",
+    "screenshot to text online",
+    "online image editor online",
+    "free PDF tools online",
+    "image processing tools online",
+    "file conversion tools online",
+    "document tools online",
+    "image editing tools online",
+    "PDF tools online",
+    "OCR tools online",
+    "image manipulation tools online",
+    "file utility tools online",
+    "free image tools online",
+    "online image tools",
+    "image tools free",
+    "image to text free",
+    "OCR converter free",
+    "background blur free",
+    "image cropper free",
+    "PDF splitter free",
+    "PDF merger free",
+    "PDF unlocker free",
+    "screenshot to text free",
+    "online image editor free",
+    "free PDF tools free",
+    "image processing tools free",
+    "file conversion tools free",
+    "document tools free",
+    "image editing tools free",
+    "PDF tools free",
+    "OCR tools free",
+    "image manipulation tools free",
+    "file utility tools free",
+    "free image tools free",
+    "image tools tool",
+    "image to text tool",
+    "OCR converter tool",
+    "background blur tool",
+    "image cropper tool",
+    "PDF splitter tool",
+    "PDF merger tool",
+    "PDF unlocker tool",
+    "screenshot to text tool",
+    "online image editor tool",
+    "free PDF tools tool",
+    "image processing tools tool",
+    "file conversion tools tool",
+    "document tools tool",
+    "image editing tools tool",
+    "PDF tools tool",
+    "OCR tools tool",
+    "image manipulation tools tool",
+    "file utility tools tool",
+    "free image tools tool"
+  ],
   openGraph: {
-    title: "Image & File Tools - Free Online Image Editor & PDF Tools",
+    title: "Free Image & File Tools | OCR Converter, Background Blur, PDF Tools | FastTools",
     description:
-      "Free online image and file utility tools. Convert images to text, blur backgrounds, crop images, split/merge PDFs, and more.",
+      "Free online image and file utility tools including OCR converter, background blur, image cropper, PDF splitter, PDF merger, and PDF unlocker. Fast, secure, and easy to use.",
+    url: "https://fasttools.store/image-tools",
     type: "website",
+    siteName: "FastTools",
+    images: [
+      {
+        url: "https://fasttools.store/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "FastTools Free Image & File Tools - OCR Converter, Background Blur, PDF Tools",
+        type: "image/svg+xml",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Image & File Tools | OCR Converter, Background Blur, PDF Tools | FastTools",
+    description: "Free online image and file utility tools including OCR converter, background blur, image cropper, PDF splitter, PDF merger, and PDF unlocker. Fast, secure, and easy to use.",
+    images: ["https://fasttools.store/og-image.svg"],
+  },
+  alternates: {
+    canonical: "https://fasttools.store/image-tools",
   },
 }
 
@@ -65,9 +216,50 @@ const imageTools = [
   },
 ]
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Free Image & File Tools | OCR Converter, Background Blur, PDF Tools | FastTools",
+  description: "Free online image and file utility tools including OCR converter, background blur, image cropper, PDF splitter, PDF merger, and PDF unlocker. Fast, secure, and easy to use.",
+  url: "https://fasttools.store/image-tools",
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Image & File Tools Collection",
+    description: "Comprehensive collection of free online image and file utility tools for image processing, OCR, PDF manipulation, and document management",
+    numberOfItems: 6,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Image to Text (OCR)", description: "Extract text from images using OCR technology", url: "https://fasttools.store/image-tools/image-to-text" },
+      { "@type": "ListItem", position: 2, name: "Background Blur", description: "Blur image backgrounds with adjustable intensity", url: "https://fasttools.store/image-tools/background-blur" },
+      { "@type": "ListItem", position: 3, name: "Image Cropper", description: "Crop images into circular or square shapes", url: "https://fasttools.store/image-tools/image-cropper" },
+      { "@type": "ListItem", position: 4, name: "PDF Splitter & Merger", description: "Split large PDFs or merge multiple PDFs into one", url: "https://fasttools.store/image-tools/pdf-tools" },
+      { "@type": "ListItem", position: 5, name: "PDF Unlocker", description: "Remove password protection from PDFs", url: "https://fasttools.store/image-tools/pdf-unlocker" },
+      { "@type": "ListItem", position: 6, name: "Screenshot to Text", description: "Extract text from screenshots", url: "https://fasttools.store/image-tools/screenshot-to-text" }
+    ]
+  },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://fasttools.store" },
+      { "@type": "ListItem", position: 2, name: "Image Tools", item: "https://fasttools.store/image-tools" }
+    ]
+  },
+  about: {
+    "@type": "Thing",
+    name: "Image Processing and File Management",
+    description: "Free online tools for image processing, OCR text extraction, PDF manipulation, and file conversion"
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "FastTools",
+    url: "https://fasttools.store"
+  }
+}
+
 export default function ImageToolsPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
         <Breadcrumbs
           items={[
@@ -100,7 +292,7 @@ export default function ImageToolsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-slide-up">
           {imageTools.map((tool, index) => (
             <Card
-              key={tool.name}
+              key={`image-tools-${tool.href}`}
               className="p-6 border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in bg-card/80 backdrop-blur-sm"
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -327,6 +519,7 @@ export default function ImageToolsPage() {
           <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

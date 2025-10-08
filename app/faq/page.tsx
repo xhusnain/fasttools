@@ -5,7 +5,7 @@ export const metadata: Metadata = {
     description:
         "Comprehensive SEO FAQ: 100+ detailed questions and answers covering keyword research, on-page SEO, technical SEO, backlinks, Core Web Vitals, schema, crawling, indexing, content strategy, audits, and SEO tools. Practical tips, examples and FastTools integrations.",
     keywords:
-        "SEO FAQ, search engine optimization, keyword research, on-page SEO, technical SEO, backlinks, Core Web Vitals, schema markup, SEO tools, site speed, content strategy, SEO audit, internal linking, mobile SEO, structured data, indexing, crawling, E-E-A-T, organic traffic, SERP, featured snippets",
+        "SEO FAQ, search engine optimization, keyword research, on-page SEO, technical SEO, backlinks, Core Web Vitals, schema markup, SEO tools, site speed, content strategy, SEO audit, internal linking, mobile SEO, structured data, indexing, crawling, E-E-A-T, organic traffic, SERP, featured snippets, free SEO tools, online SEO help, SEO best practices, Google SEO, search engine ranking, website optimization, meta tags, title tags, meta descriptions, robots.txt, sitemap, canonical URLs, duplicate content, page speed optimization, mobile-first indexing, Core Web Vitals, LCP, FID, CLS, structured data markup, JSON-LD, schema.org, rich snippets, featured snippets, voice search optimization, local SEO, Google My Business, backlink building, link building strategies, content marketing, keyword density, keyword stuffing, semantic SEO, topical authority, content clusters, pillar pages, internal linking strategy, external linking, anchor text optimization, 301 redirects, 404 errors, crawl budget, indexing issues, search console, Google Analytics, SEO monitoring, ranking factors, algorithm updates, Google penalties, manual actions, disavow file, link disavowal, competitive analysis, keyword research tools, SEO audit tools, technical SEO checklist, on-page SEO checklist, off-page SEO, link equity, PageRank, domain authority, trust flow, citation flow, local citations, NAP consistency, Google Business Profile, local search optimization, international SEO, hreflang, multilingual SEO, e-commerce SEO, product schema, review schema, FAQ schema, how-to schema, breadcrumb schema, organization schema, website schema, software application schema, service schema, person schema, article schema, blog post schema, news article schema, event schema, place schema, local business schema, restaurant schema, hotel schema, product schema markup, review schema markup, rating schema, aggregate rating, individual rating, price schema, availability schema, brand schema, logo schema, social media schema, sameAs, contact point schema, address schema, geo coordinates, latitude longitude, opening hours, special hours, service area, area served, hasOfferCatalog, makesOffer, offers, price, priceCurrency, priceValidUntil, availability, itemCondition, shippingDetails, returnPolicy, warranty, seller, vendor, manufacturer, brand, model, sku, gtin, mpn, isbn, ean, upc, color, size, weight, height, width, depth, material, pattern, style, gender, age group, target audience, audience, mainEntity, about, mentions, significantLink, significantLinks, sameAs, url, identifier, additionalType, alternateName, description, disambiguatingDescription, image, name, potentialAction, publisher, mainEntityOfPage, isPartOf, hasPart, isRelatedTo, isSimilarTo, isVariantOf, isBasedOn, isBasedOnUrl, license, copyrightHolder, copyrightYear, inLanguage, isAccessibleForFree, accessibilityFeature, accessibilityHazard, accessibilityAPI, accessibilityControl, accessibilitySummary, accessibilityFeature, accessibilityHazard, accessibilityAPI, accessibilityControl, accessibilitySummary, accessibilityFeature, accessibilityHazard, accessibilityAPI, accessibilityControl, accessibilitySummary",
     alternates: { canonical: "https://fasttools.store/faq" },
     robots: { index: true, follow: true },
     openGraph: {
@@ -16,10 +16,11 @@ export const metadata: Metadata = {
         type: "article",
         images: [
             {
-                url: "/og-image.png",
+                url: "/og-image.svg",
                 width: 1200,
                 height: 630,
                 alt: "SEO FAQ - FastTools",
+                type: "image/svg+xml",
             },
         ],
     },
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
         title: "SEO FAQ - 100+ Questions Answered | FastTools",
         description:
             "Detailed answers to over 100 SEO questions covering keyword research, technical SEO, backlinks, Core Web Vitals, schema and optimization strategies.",
-        images: ["/og-image.png"],
+        images: ["/og-image.svg"],
     },
 }
 
@@ -621,11 +622,43 @@ export default function FAQPage() {
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        name: "SEO FAQ - 100+ Expert SEO Questions & Comprehensive Answers",
+        description: "Comprehensive SEO FAQ: 100+ detailed questions and answers covering keyword research, on-page SEO, technical SEO, backlinks, Core Web Vitals, schema, crawling, indexing, content strategy, audits, and SEO tools.",
+        url: "https://fasttools.store/faq",
+        publisher: {
+            "@type": "Organization",
+            name: "FastTools",
+            url: "https://fasttools.store"
+        },
         mainEntity: faqs.map((qa) => ({
             "@type": "Question",
             name: qa.question,
-            acceptedAnswer: { "@type": "Answer", text: qa.answer },
+            acceptedAnswer: { 
+                "@type": "Answer", 
+                text: qa.answer,
+                author: {
+                    "@type": "Organization",
+                    name: "FastTools"
+                }
+            },
         })),
+        breadcrumb: {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://fasttools.store"
+                },
+                {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "SEO FAQ",
+                    item: "https://fasttools.store/faq"
+                }
+            ]
+        }
     }
 
     return (

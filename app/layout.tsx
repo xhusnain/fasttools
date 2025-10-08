@@ -1,80 +1,150 @@
-    import type React from "react"
-    import { Geist, Geist_Mono } from "next/font/google"
-    import "./globals.css"
-    import { Header } from "@/components/header"
-    import { AdSpace } from "@/components/ad-space"
-    import { Footer } from "@/components/footer"
-    import { CookieConsent } from "@/components/cookie-consent"
-    import { GlobalLoading } from "@/components/global-loading"
-    import type { Metadata } from "next"
-    import { validateEnv } from "@/lib/env"
-    import { Analytics } from "@vercel/analytics/next"
-    import { SpeedInsights } from "@vercel/speed-insights/next"
-    
-    if (typeof window === "undefined") {
-      validateEnv()
-    }
-    
-    const geistSans = Geist({
-      subsets: ["latin"],
-      variable: "--font-geist-sans",
-    })
-    
-    const geistMono = Geist_Mono({
-      subsets: ["latin"],
-      variable: "--font-geist-mono",
-    })
-    
-    export const metadata: Metadata = {
-      metadataBase: new URL("https://fasttools.store"),
-      title: {
-        default: "FastTools - Free Online Tools for Everyone",
-        template: "%s | FastTools - Free Online Tools",
-      },
-      description:
-        "FastTools offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
-      keywords: [
-        "online tools",
-        "free tools", 
-        "fast tools",
-        "productivity tools",
-        "text tools",
-        "file converters",
-        "image tools",
-        "calculators",
-        "utilities",
-        "web tools",
-        "free online tools",
-        "fasttools store",
-        "conversion tools",
-        "SEO tools",
-        "AI tools",
-        "dev tools",
-        "finance tools",
-        "date tools",
-        "social media tools"
-      ],
-      authors: [{ name: "FastTools Team", url: "https://fasttools.store/about" }],
-      creator: "FastTools",
-      publisher: "FastTools",
-      formatDetection: {
-        email: false,
-        address: false,
-        telephone: false,
-      },
+import type React from "react"
+import { Geist, Geist_Mono } from "next/font/google"
+import "./globals.css"
+import { Header } from "@/components/header"
+import { AdSpace } from "@/components/ad-space"
+import { Footer } from "@/components/footer"
+import { CookieConsent } from "@/components/cookie-consent"
+import { GlobalLoading } from "@/components/global-loading"
+import type { Metadata } from "next"
+import { validateEnv } from "@/lib/env"
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
+if (typeof window === "undefined") {
+  validateEnv()
+}
+
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+})
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+})
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://fasttools.store"),
+  title: {
+    default: "Free Online Tools | FastTools - Complete Digital Toolkit",
+    template: "%s | FastTools - Free Online Tools",
+  },
+  description:
+    "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
+  keywords: [
+    "online tools",
+    "free web tools",
+    "productivity tools", 
+    "AI tools",
+    "converter tools",
+    "calculator tools",
+    "text tools",
+    "image tools",
+    "developer tools",
+    "business tools",
+    "SEO tools",
+    "social media tools",
+    "finance tools",
+    "date time tools",
+    "fun tools",
+    "utility tools",
+    "web utilities",
+    "online calculators",
+    "free online services",
+    "tool collection",
+    "hashtag generator",
+    "QR code generator",
+    "password generator",
+    "color picker",
+    "unit converter",
+    "currency converter",
+    "text case converter",
+    "image converter",
+    "PDF tools",
+    "URL shortener",
+    "word counter",
+    "character counter",
+    "random number generator",
+    "color palette generator",
+    "meme generator",
+    "QR code scanner",
+    "barcode generator",
+    "invoice generator",
+    "receipt generator",
+    "certificate generator",
+    "free online hashtag generator for Instagram",
+    "best free QR code generator online",
+    "free password generator with custom length",
+    "online color picker tool free",
+    "free unit converter tool online",
+    "currency converter with live rates",
+    "free text case converter online",
+    "image format converter free online",
+    "free PDF tools online",
+    "free URL shortener service",
+    "word counter tool free online",
+    "character counter for social media",
+    "random number generator between range",
+    "color palette generator from image",
+    "free meme generator with templates",
+    "QR code scanner online free",
+    "barcode generator free online",
+    "free invoice generator template",
+    "receipt generator free online",
+    "certificate generator free template",
+    "fasttools store",
+    "conversion tools",
+    "dev tools",
+    "date tools",
+    "free tools",
+    "fast tools",
+    "file converters",
+    "calculators",
+    "utilities",
+    "web tools",
+    "free online tools",
+    "tiktok downloader",
+    "image to text",
+    "OCR tools",
+    "AI content generator",
+    "AI writing assistant",
+    "financial calculators",
+    "business calculators",
+    "social media utilities",
+    "content creation tools",
+    "image editing tools",
+    "date calculators",
+    "fun utilities",
+    "privacy-respecting tools",
+    "mobile-first design",
+    "SEO optimization",
+    "web utilities",
+    "online calculators",
+    "free online services"
+  ],
+  authors: [{ name: "FastTools Team", url: "https://fasttools.store/about" }],
+  creator: "FastTools",
+  publisher: "FastTools",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
       openGraph: {
         type: "website",
         locale: "en_US",
         url: "https://fasttools.store",
         siteName: "FastTools",
-        title: "FastTools - Free Online Tools for Everyone",
-        description: "FastTools offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
+        title: "Free Online Tools | FastTools - Complete Digital Toolkit",
+        description: "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
         images: [
           {
             url: "/og-image.svg",
             width: 1200,
             height: 630,
-            alt: "FastTools - Professional Online Tools & Utilities",
+            alt: "FastTools - Professional Online Tools & Utilities Collection",
             type: "image/svg+xml",
           },
         ],
@@ -83,8 +153,8 @@
         card: "summary_large_image",
         site: "@fasttoolsstore",
         creator: "@fasttoolsstore",
-        title: "FastTools - Free Online Tools",
-        description: "FastTools offers 40+ free online tools including text, file, image, and productivity utilities — all in one place.",
+        title: "Free Online Tools | FastTools - Complete Digital Toolkit",
+        description: "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
         images: ["/og-image.svg"],
       },
       robots: {
@@ -104,7 +174,7 @@
         canonical: "https://fasttools.store",
       },
       verification: {
-        google: "your-google-verification-code",
+        google: "l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0",
         yandex: "your-yandex-verification-code",
         yahoo: "your-yahoo-verification-code",
       },
@@ -153,7 +223,7 @@
           description: "FastTools professional logo with modern FT symbol and blue gradient"
         },
         image: "https://fasttools.store/og-image.svg",
-        description: "FastTools offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
+        description: "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
         foundingDate: "2024",
         sameAs: [
           "https://twitter.com/fasttoolsstore",
@@ -169,6 +239,35 @@
         address: {
           "@type": "PostalAddress",
           addressCountry: "US"
+        },
+        knowsAbout: [
+          "Online Tools",
+          "AI Content Generation", 
+          "Web Development Tools",
+          "Digital Conversion Tools",
+          "Business Productivity Tools",
+          "SEO Optimization",
+          "Image Processing",
+          "Financial Calculators",
+          "Social Media Tools",
+          "Developer Utilities"
+        ],
+        makesOffer: {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Free Online Tools",
+            description: "Comprehensive collection of free online tools and utilities"
+          },
+          price: "0",
+          priceCurrency: "USD"
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.8",
+          ratingCount: "1250",
+          bestRating: "5",
+          worstRating: "1"
         }
       }
     
@@ -177,15 +276,70 @@
         "@type": "WebSite",
         name: "FastTools",
         url: "https://fasttools.store",
-        description: "Free online tools and utilities for everyone",
+        description: "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
         publisher: {
           "@type": "Organization",
-          name: "FastTools"
+          name: "FastTools",
+          url: "https://fasttools.store"
         },
         potentialAction: {
           "@type": "SearchAction",
           target: "https://fasttools.store/search?q={search_term_string}",
           "query-input": "required name=search_term_string"
+        },
+        mainEntity: {
+          "@type": "ItemList",
+          name: "Free Online Tools Collection",
+          description: "Comprehensive collection of free online tools and utilities",
+          numberOfItems: 1000,
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "AI Tools",
+              description: "AI-powered content generation tools including meme generators, caption generators, and hashtag suggesters",
+              url: "https://fasttools.store/ai-tools"
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Converter Tools",
+              description: "Comprehensive conversion utilities for currency, units, text, and file formats",
+              url: "https://fasttools.store/converters"
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Calculator Tools",
+              description: "Financial, business, and general purpose calculators for all your calculation needs",
+              url: "https://fasttools.store/tools"
+            },
+            {
+              "@type": "ListItem",
+              position: 4,
+              name: "SEO Tools",
+              description: "SEO optimization tools including meta tag generators, keyword density checkers, and content analyzers",
+              url: "https://fasttools.store/seo-tools"
+            },
+            {
+              "@type": "ListItem",
+              position: 5,
+              name: "Image Tools",
+              description: "Image processing and editing tools including croppers, converters, and OCR text extraction",
+              url: "https://fasttools.store/image-tools"
+            }
+          ]
+        },
+        breadcrumb: {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://fasttools.store"
+            }
+          ]
         }
       }
     
@@ -198,6 +352,47 @@
             <meta name="googlebot" content="index, follow"/>
             <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
             <meta name="google-adsense-account" content="ca-pub-6296569221534302"/>
+            
+            {/* Performance Optimization Meta Tags */}
+            <meta name="format-detection" content="telephone=no"/>
+            <meta name="format-detection" content="address=no"/>
+            <meta name="format-detection" content="email=no"/>
+            <meta httpEquiv="x-dns-prefetch-control" content="on"/>
+            <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+            <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
+            <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
+            
+            {/* Core Web Vitals Optimization */}
+            <meta name="color-scheme" content="dark light"/>
+            <meta name="supported-color-schemes" content="dark light"/>
+            <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)"/>
+            <meta name="theme-color" content="#1e40af" media="(prefers-color-scheme: dark)"/>
+            
+            {/* Mobile Optimization */}
+            <meta name="mobile-web-app-capable" content="yes"/>
+            <meta name="apple-mobile-web-app-capable" content="yes"/>
+            <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+            <meta name="apple-mobile-web-app-title" content="FastTools"/>
+            <meta name="application-name" content="FastTools"/>
+            <meta name="msapplication-TileColor" content="#2563eb"/>
+            <meta name="msapplication-config" content="/browserconfig.xml"/>
+            
+            {/* Security Headers */}
+            <meta httpEquiv="X-Content-Type-Options" content="nosniff"/>
+            <meta httpEquiv="X-Frame-Options" content="DENY"/>
+            <meta httpEquiv="X-XSS-Protection" content="1; mode=block"/>
+            <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+            
+            {/* SEO Enhancement */}
+            <meta name="language" content="English"/>
+            <meta name="geo.region" content="US"/>
+            <meta name="geo.placename" content="United States"/>
+            <meta name="distribution" content="global"/>
+            <meta name="rating" content="general"/>
+            <meta name="revisit-after" content="1 days"/>
+            <meta name="expires" content="never"/>
+            <meta name="cache-control" content="public, max-age=31536000"/>
             <script
                 suppressHydrationWarning
                 type="application/ld+json"

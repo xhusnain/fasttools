@@ -1,4 +1,5 @@
 import { generateText } from "ai"
+import { NextResponse } from "next/server"
 
 export async function POST(req: Request) {
   try {
@@ -28,9 +29,9 @@ Make it funny, relatable, and suitable for a classic meme format.`
 
     const memeText = JSON.parse(text)
 
-    return Response.json({ memeText })
+    return NextResponse.json({ memeText })
   } catch (error) {
     console.error("Error:", error)
-    return Response.json({ error: "Failed to generate meme" }, { status: 500 })
+    return NextResponse.json({ error: "Failed to generate meme" }, { status: 500 })
   }
 }

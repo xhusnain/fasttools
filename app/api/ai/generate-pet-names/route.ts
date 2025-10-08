@@ -1,4 +1,5 @@
 import { generateText } from "ai"
+import { NextResponse } from "next/server"
 
 export async function POST(req: Request) {
   try {
@@ -21,9 +22,9 @@ Make the names creative, memorable, and suitable for the pet type.`
 
     const names = JSON.parse(text)
 
-    return Response.json({ names })
+    return NextResponse.json({ names })
   } catch (error) {
     console.error("Error:", error)
-    return Response.json({ error: "Failed to generate names" }, { status: 500 })
+    return NextResponse.json({ error: "Failed to generate names" }, { status: 500 })
   }
 }

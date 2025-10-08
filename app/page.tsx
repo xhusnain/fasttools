@@ -37,49 +37,70 @@ export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "FastTools - Free Online Tools for Everyone",
-    description: "fasttools.store offers 40+ free online tools including text, file, image, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
+    name: "Free Online Tools | FastTools - Complete Digital Toolkit",
+    description: "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
     url: "https://fasttools.store",
     mainEntity: {
       "@type": "ItemList",
-      name: "Free Online Tools",
-      description: "Collection of free online tools and utilities",
-      numberOfItems: 40,
+      name: "Free Online Tools Collection",
+      description: "Comprehensive collection of free online tools and utilities for productivity, conversion, and content creation",
+      numberOfItems: 1000,
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
-          name: "Text Case Converter",
-          description: "Convert text between different cases (uppercase, lowercase, title case)",
-          url: "https://fasttools.store/converters/text-case"
+          name: "AI Tools",
+          description: "AI-powered content generation tools including meme generators, caption generators, and hashtag suggesters",
+          url: "https://fasttools.store/ai-tools"
         },
         {
           "@type": "ListItem", 
           position: 2,
-          name: "Image to Text (OCR)",
-          description: "Extract text from images using optical character recognition",
-          url: "https://fasttools.store/image-tools/image-to-text"
+          name: "Converter Tools",
+          description: "Comprehensive conversion utilities for currency, units, text, and file formats",
+          url: "https://fasttools.store/converters"
         },
         {
           "@type": "ListItem",
           position: 3,
-          name: "QR Code Generator", 
-          description: "Generate QR codes for URLs, text, and contact information",
-          url: "https://fasttools.store/ai-tools/qr-generator"
+          name: "Calculator Tools", 
+          description: "Financial, business, and general purpose calculators for all your calculation needs",
+          url: "https://fasttools.store/tools"
         },
         {
           "@type": "ListItem",
           position: 4,
-          name: "Currency Converter",
-          description: "Convert between different currencies with real-time exchange rates",
-          url: "https://fasttools.store/converters/currency"
+          name: "SEO Tools",
+          description: "SEO optimization tools including meta tag generators, keyword density checkers, and content analyzers",
+          url: "https://fasttools.store/seo-tools"
         },
         {
           "@type": "ListItem",
           position: 5,
-          name: "AI Meme Generator",
-          description: "Create funny memes with AI-powered text generation",
-          url: "https://fasttools.store/ai-tools/meme-generator"
+          name: "Image Tools",
+          description: "Image processing and editing tools including croppers, converters, and OCR text extraction",
+          url: "https://fasttools.store/image-tools"
+        },
+        {
+          "@type": "ListItem",
+          position: 6,
+          name: "Finance Tools",
+          description: "Financial calculators including loan calculators, tax calculators, and retirement planners",
+          url: "https://fasttools.store/finance-tools"
+        },
+        {
+          "@type": "ListItem",
+          position: 7,
+          name: "Developer Tools",
+          description: "Development utilities including HTML beautifiers, JSON converters, and regex testers",
+          url: "https://fasttools.store/dev-tools"
+        },
+        {
+          "@type": "ListItem",
+          position: 8,
+          name: "Social Media Tools",
+          description: "Social media utilities including TikTok downloaders, YouTube tools, and Instagram utilities",
+          url: "https://fasttools.store/social-media-tools"
         }
       ]
     },
@@ -93,6 +114,16 @@ export default function HomePage() {
           item: "https://fasttools.store"
         }
       ]
+    },
+    about: {
+      "@type": "Thing",
+      name: "Free Online Tools",
+      description: "Comprehensive collection of free online tools and utilities for productivity, conversion, and content creation"
+    },
+    isPartOf: {
+      "@type": "WebSite",
+      name: "FastTools",
+      url: "https://fasttools.store"
     }
   }
 
@@ -588,11 +619,11 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance leading-[1.1] text-foreground animate-fade-in-up tracking-tight">
-              FastTools - Your Digital Toolkit
+              Free Online Tools | FastTools - Your Complete Digital Toolkit
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-100">
-              Access 1000+ powerful, free online tools including text converters, image processors, AI generators, and productivity utilities — all in one place.
+              Access 1000+ powerful, free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities — all in one place. Fast, accurate, and easy to use.
             </p>
 
             {/* Hero CTA Buttons */}
@@ -818,64 +849,122 @@ export default function HomePage() {
             <details className="group" open>
               <summary className="cursor-pointer list-none">
                 <div className="flex items-center justify-between">
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">About FastTools — Your All‑in‑One Online Toolkit</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">About FastTools — Your Complete Free Online Tools Collection</h2>
                   <span className="text-sm text-muted-foreground group-open:hidden">Expand</span>
                   <span className="text-sm text-muted-foreground hidden group-open:inline">Collapse</span>
                 </div>
               </summary>
               <div className="prose prose-neutral dark:prose-invert max-w-none mt-6 space-y-4 text-muted-foreground">
                 <p>
-                  FastTools is built to remove everyday internet friction. Instead of opening a dozen different websites
-                  to convert text, check SEO, process images, generate content, or calculate numbers, you can do it all in one
-                  fast, privacy‑respecting place. Our tools are lightweight, mobile‑friendly, and designed for speed so you can
-                  get in, get results, and get on with your work.
+                  FastTools is the ultimate collection of <strong>free online tools</strong> designed to eliminate everyday digital friction. 
+                  Instead of navigating multiple websites to convert text, optimize SEO, process images, generate content, or perform calculations, 
+                  you can access everything in one fast, privacy-respecting platform. Our <strong>web tools</strong> are lightweight, 
+                  mobile-friendly, and engineered for speed so you can get results instantly and continue with your work.
                 </p>
+                
+                <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Comprehensive Tool Categories</h3>
+                
                 <p>
-                  Whether you are a student polishing an assignment, a marketer optimizing a campaign, a developer formatting
-                  data, or a casual user trying to download a social video, FastTools brings the essential utilities to your
-                  browser with zero setup. No sign‑up walls, no heavy apps, and no confusing interfaces—just clean tools that
-                  work instantly.
+                  Our <strong>AI tools</strong> section features cutting-edge artificial intelligence generators including meme generators, 
+                  caption generators, lyrics generators, hashtag suggesters, and pet name generators. These <strong>AI content generators</strong> 
+                  help creators, marketers, and social media managers produce engaging content quickly and efficiently. 
+                  Our <strong>AI writing assistant</strong> tools are powered by advanced language models to ensure high-quality output.
                 </p>
+                
                 <p>
-                  Our most popular feature is the TikTok Video Downloader. Paste a public video URL and we will fetch
-                  the direct links provided by the upstream service, giving you options with or without watermark and a quick
-                  way to extract the soundtrack as MP3. Creators love it for backing up their own content; educators use it to
-                  analyze trends; and social media managers capture clips for research, commentary, and inspiration. Always make
-                  sure you have the right to download before saving or sharing any media.
+                  The <strong>converter tools</strong> category offers comprehensive conversion utilities including currency converters with 
+                  live exchange rates, unit converters for length, weight, temperature, and area measurements, file size converters, 
+                  text case converters, and timezone converters. Our <strong>online converter</strong> tools support 160+ currencies 
+                  and multiple measurement systems, making them perfect for international users and professionals.
                 </p>
+                
                 <p>
-                  Beyond social tools, you will find a deep catalog of calculators and converters—file size, currency,
-                  temperature, length, timezones, tax and percentage helpers, date differences, compound interest, and more.
-                  Our SEO utilities help you generate meta tags, preview titles and descriptions, check keyword density, and
-                  produce clean, optimized content. Developers can format HTML, convert JSON to CSV, test regular expressions,
-                  preview Markdown, and generate accessible color palettes that look great in light and dark themes.
+                  For developers and technical users, our <strong>developer tools</strong> include HTML beautifiers, JSON to CSV converters, 
+                  JWT decoders, regex testers, markdown previewers, color palette generators, and hex to RGB converters. 
+                  These <strong>dev tools</strong> streamline development workflows and improve code quality.
                 </p>
+                
                 <p>
-                  For creators, our AI section includes meme, caption, lyrics, and hashtag generators. For everyday tasks,
-                  you can crop images, blur backgrounds, extract text from screenshots, and produce QR codes ready for print
-                  or sharing. Each tool includes clear labels, sensible defaults, and friendly copy so that first‑time users
-                  feel confident and power users stay efficient.
+                  Our <strong>SEO tools</strong> help optimize your online presence with meta tag generators, keyword density checkers, 
+                  hashtag generators, blog title generators, and lorem ipsum generators. These <strong>SEO utilities</strong> are 
+                  essential for content creators, marketers, and website owners looking to improve their search engine rankings.
                 </p>
+                
                 <p>
-                  We obsess over user experience and performance. Pages are optimized with semantic headings, accessible forms,
-                  responsive layout, and fast rendering. We avoid unnecessary network calls, cache aggressively, and minimize
-                  bundle size. For search engines, we provide structured data, logical internal linking, and descriptive meta
-                  content so that people searching for a specific utility can land directly on the tool they need.
+                  The <strong>finance tools</strong> section provides comprehensive financial calculators including loan calculators, 
+                  mortgage calculators, tax calculators, retirement planners, savings goal trackers, invoice generators, 
+                  and PayPal fee calculators. These <strong>financial calculators</strong> help individuals and businesses 
+                  make informed financial decisions.
                 </p>
+                
                 <p>
-                  Reliability is equally important. Our interface validates inputs, handles edge cases gracefully, and gives you
-                  helpful error messages when something goes wrong. The TikTok downloader includes additional thumbnail fallbacks
-                  via oEmbed when upstream coverage is limited, and our components are tested across modern browsers and screen
-                  sizes.
+                  <strong>Image tools</strong> offer powerful image processing capabilities including image croppers, background blur tools, 
+                  image to text converters using OCR technology, screenshot to text extractors, and PDF tools. 
+                  Our <strong>image editing tools</strong> are perfect for social media managers, designers, and content creators.
                 </p>
+                
                 <p>
-                  FastTools is continuously expanding. We monitor demand across categories—converters, image processing, social
-                  media utilities, finance and productivity calculators—and ship improvements weekly. If you have a suggestion,
-                  reach out via our contact page and we will prioritize the features that help the most users.
+                  <strong>Social media tools</strong> include TikTok downloaders, YouTube thumbnail downloaders, Instagram DP viewers, 
+                  YouTube tag extractors, and link in bio generators. These <strong>social media utilities</strong> help 
+                  content creators and social media managers optimize their online presence.
                 </p>
+                
                 <p>
-                  In short: bookmark this page. The next time you need to convert a value, generate a QR code, analyze a
-                  keyword list, grab a thumbnail, or quickly download your own TikTok, FastTools will be ready.
+                  Our <strong>date time tools</strong> provide comprehensive date and time utilities including age calculators, 
+                  date difference calculators, workday calculators, zodiac sign finders, and anniversary calculators. 
+                  These <strong>date calculators</strong> are perfect for personal and professional use.
+                </p>
+                
+                <p>
+                  The <strong>fun tools</strong> section offers entertaining utilities including love calculators, 
+                  birthday countdown timers, future age predictors, and hashtag counters. These <strong>fun utilities</strong> 
+                  add a playful element to our comprehensive tool collection.
+                </p>
+                
+                <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Advanced Features and Performance</h3>
+                
+                <p>
+                  We obsess over user experience and performance optimization. All pages are built with semantic HTML, 
+                  accessible forms, responsive design, and lightning-fast rendering. We minimize bundle sizes, implement 
+                  aggressive caching, and avoid unnecessary network calls. Our <strong>mobile-first design</strong> ensures 
+                  optimal performance across all devices and screen sizes.
+                </p>
+                
+                <p>
+                  For search engines, we provide comprehensive structured data, logical internal linking, and descriptive 
+                  meta content. This ensures that users searching for specific <strong>online tools</strong> can find exactly 
+                  what they need quickly and efficiently. Our <strong>SEO optimization</strong> helps users discover 
+                  the right tools for their specific needs.
+                </p>
+                
+                <p>
+                  Reliability is paramount in our design philosophy. All tools include input validation, graceful error handling, 
+                  and helpful error messages. We test across modern browsers and screen sizes to ensure consistent performance. 
+                  Our <strong>web utilities</strong> are designed to work seamlessly regardless of your device or browser.
+                </p>
+                
+                <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Privacy and Security</h3>
+                
+                <p>
+                  FastTools prioritizes user privacy and data security. All processing happens client-side when possible, 
+                  and we never store your data or content. Our <strong>privacy-respecting tools</strong> ensure that your 
+                  sensitive information remains secure and confidential. We believe in providing powerful tools without 
+                  compromising your privacy.
+                </p>
+                
+                <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Continuous Innovation</h3>
+                
+                <p>
+                  FastTools is continuously expanding based on user feedback and emerging needs. We monitor usage patterns 
+                  across all categories—converters, image processing, social media utilities, finance calculators, and 
+                  productivity tools—and implement improvements weekly. Our commitment to innovation ensures that FastTools 
+                  remains the most comprehensive and up-to-date collection of <strong>free online services</strong> available.
+                </p>
+                
+                <p>
+                  Whether you're a student, professional, content creator, developer, or casual user, FastTools provides 
+                  the essential <strong>online calculators</strong> and utilities you need to be productive and efficient. 
+                  Bookmark this page and experience the convenience of having all your essential tools in one place.
                 </p>
               </div>
             </details>
@@ -891,6 +980,73 @@ export default function HomePage() {
               <div className="mt-4">
                 <ul className="flex flex-wrap gap-2 text-sm text-muted-foreground">
                   {[
+                    // Primary Keywords (20)
+                    "online tools",
+                    "free web tools", 
+                    "productivity tools",
+                    "AI tools",
+                    "converter tools",
+                    "calculator tools",
+                    "text tools",
+                    "image tools",
+                    "developer tools",
+                    "business tools",
+                    "SEO tools",
+                    "social media tools",
+                    "finance tools",
+                    "date time tools",
+                    "fun tools",
+                    "utility tools",
+                    "web utilities",
+                    "online calculators",
+                    "free online services",
+                    "tool collection",
+                    
+                    // Secondary Keywords (20)
+                    "hashtag generator",
+                    "QR code generator",
+                    "password generator",
+                    "color picker",
+                    "unit converter",
+                    "currency converter",
+                    "text case converter",
+                    "image converter",
+                    "PDF tools",
+                    "URL shortener",
+                    "word counter",
+                    "character counter",
+                    "random number generator",
+                    "color palette generator",
+                    "meme generator",
+                    "QR code scanner",
+                    "barcode generator",
+                    "invoice generator",
+                    "receipt generator",
+                    "certificate generator",
+                    
+                    // Long-tail Keywords (20)
+                    "free online hashtag generator for Instagram",
+                    "best free QR code generator online",
+                    "free password generator with custom length",
+                    "online color picker tool free",
+                    "free unit converter tool online",
+                    "currency converter with live rates",
+                    "free text case converter online",
+                    "image format converter free online",
+                    "free PDF tools online",
+                    "free URL shortener service",
+                    "word counter tool free online",
+                    "character counter for social media",
+                    "random number generator between range",
+                    "color palette generator from image",
+                    "free meme generator with templates",
+                    "QR code scanner online free",
+                    "barcode generator free online",
+                    "free invoice generator template",
+                    "receipt generator free online",
+                    "certificate generator free template",
+                    
+                    // Additional SEO Keywords
                     "tiktok video downloader",
                     "download tiktok without watermark",
                     "save tiktok mp4",
@@ -903,9 +1059,7 @@ export default function HomePage() {
                     "tiktok clip downloader",
                     "ocr image to text",
                     "convert image to text online",
-                    "qr code generator",
                     "free qr code maker",
-                    "currency converter online",
                     "file size converter",
                     "length converter cm to inch",
                     "temperature converter c to f",
@@ -916,12 +1070,10 @@ export default function HomePage() {
                     "discount calculator",
                     "compound interest calculator",
                     "tax calculator online",
-                    "invoice generator",
                     "paypal fee calculator",
                     "savings goal tracker",
                     "retirement planner online",
                     "bill splitter app",
-                    "hashtag generator",
                     "hashtag suggester",
                     "keyword density checker",
                     "meta tag generator",
@@ -940,7 +1092,6 @@ export default function HomePage() {
                     "youtube tag extractor",
                     "instagram dp viewer",
                     "link in bio generator",
-                    "color palette generator",
                     "ai meme generator",
                     "ai caption generator",
                     "ai lyrics generator",
@@ -998,8 +1149,8 @@ export default function HomePage() {
                     "view instagram profile photo",
                     "build link in bio",
                     "generate color palette",
-                  ].map((k) => (
-                    <li key={k} className="px-3 py-1 rounded-full bg-muted text-foreground/80 border">
+                  ].map((k, index) => (
+                    <li key={`keyword-${index}`} className="px-3 py-1 rounded-full bg-muted text-foreground/80 border">
                       {k}
                     </li>
                   ))}

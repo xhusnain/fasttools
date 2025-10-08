@@ -5,11 +5,13 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Age in Hours Calculator — Hours, Minutes, Seconds Old | SmartToolboxes",
+  title: "Free Age in Hours Calculator | Hours, Minutes, Seconds Old | FastTools",
   description:
     "Calculate your exact age in hours, minutes, and seconds. Fun and precise age converter with birthday countdown and shareable results.",
   keywords: [
+    // Primary Keywords (20)
     "age in hours",
+    "free age in hours calculator",
     "age in minutes",
     "age in seconds",
     "how old am I in hours",
@@ -24,6 +26,56 @@ export const metadata: Metadata = {
     "calculate minutes lived",
     "how many seconds old",
     "hours between dates",
+    "minutes between dates",
+    "seconds between dates",
+    "born on date hours old",
+    "exact age calculator",
+    
+    // Secondary Keywords (20)
+    "precise age calculator",
+    "age by time units",
+    "fun age facts",
+    "time elapsed calculator",
+    "life in hours",
+    "life in minutes",
+    "life in seconds",
+    "age milestones",
+    "10000 hours age",
+    "one million minutes age",
+    "seconds to years converter",
+    "weeks to hours",
+    "months to hours",
+    "age math",
+    "date and time calculator",
+    "birthday to now",
+    "how old am I right now",
+    "real time age",
+    "live age counter",
+    "share age result",
+    
+    // Long-tail Keywords (20)
+    "free online age in hours calculator",
+    "best age in hours calculator online",
+    "age in hours calculator with live preview",
+    "free age in hours calculator tool online",
+    "online age in hours calculator free",
+    "age in hours calculator online free",
+    "age in minutes calculator free",
+    "age in seconds calculator free",
+    "how old am I in hours free",
+    "age calculator free online",
+    "time since birth calculator free",
+    "time duration since date calculator free",
+    "date difference in hours calculator free",
+    "age converter free online",
+    "birthday countdown calculator free",
+    "age tracker free online",
+    "calculate hours lived free",
+    "calculate minutes lived free",
+    "how many seconds old free",
+    "hours between dates calculator free",
+    
+    // Additional SEO Keywords
     "minutes between dates",
     "seconds between dates",
     "born on date hours old",
@@ -63,27 +115,91 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/date-time-tools/age-in-hours" },
   openGraph: {
-    title: "Age in Hours Calculator — Hours, Minutes, Seconds Old",
-    description: "See exactly how many hours, minutes, and seconds you have lived.",
+    title: "Free Age in Hours Calculator | Hours, Minutes, Seconds Old | FastTools",
+    description: "Calculate your exact age in hours, minutes, and seconds. Fun and precise age converter with birthday countdown and shareable results.",
     type: "website",
-    url: "https://www.fasttools.store/date-time-tools/age-in-hours",
+    url: "https://fasttools.store/date-time-tools/age-in-hours",
+    siteName: "FastTools",
+    images: [
+      {
+        url: "https://fasttools.store/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "FastTools Free Age in Hours Calculator - Hours, Minutes, Seconds Old",
+        type: "image/svg+xml",
+      },
+    ],
   },
-  twitter: { card: "summary_large_image", title: "Age in Hours Calculator", description: "Calculate your age in hours, minutes, and seconds." },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Age in Hours Calculator | Hours, Minutes, Seconds Old | FastTools",
+    description: "Calculate your exact age in hours, minutes, and seconds. Fun and precise age converter with birthday countdown and shareable results.",
+    images: ["https://fasttools.store/og-image.svg"],
+  },
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "WebApplication",
+      "@type": "SoftwareApplication",
       name: "Age in Hours Calculator",
+      alternateName: "Age Calculator in Hours, Minutes, Seconds",
       applicationCategory: "UtilitiesApplication",
-      operatingSystem: "Web",
-      url: "https://www.fasttools.store/date-time-tools/age-in-hours",
+      operatingSystem: "Web Browser",
+      url: "https://fasttools.store/date-time-tools/age-in-hours",
       description:
         "Calculate exact age in hours, minutes, and seconds with shareable results and birthday countdown.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-      featureList: ["Age in hours/minutes/seconds", "Birthday countdown", "Copy/share results"],
-      publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
+      offers: { 
+        "@type": "Offer", 
+        price: "0", 
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock"
+      },
+      featureList: [
+        "Age in hours/minutes/seconds", 
+        "Birthday countdown", 
+        "Copy/share results",
+        "Live age calculation",
+        "Milestone tracking",
+        "Fun age facts",
+        "Social sharing",
+        "Mobile friendly",
+        "Real-time updates",
+        "Educational content"
+      ],
+      author: {
+        "@type": "Organization",
+        name: "FastTools",
+        url: "https://fasttools.store"
+      },
+      publisher: { 
+        "@type": "Organization", 
+        name: "FastTools", 
+        url: "https://fasttools.store",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://fasttools.store/logo.svg",
+          width: 320,
+          height: 80
+        }
+      },
+      datePublished: "2024-01-01",
+      dateModified: new Date().toISOString().split('T')[0],
+      version: "2.0",
+      softwareVersion: "2.0",
+      downloadUrl: "https://fasttools.store/date-time-tools/age-in-hours",
+      screenshot: "https://fasttools.store/og-image.svg",
+      keywords: "age in hours, free age in hours calculator, age in minutes, age in seconds, age calculator, time since birth, birthday countdown",
+      about: {
+        "@type": "Thing",
+        name: "Age Calculation",
+        description: "Free online tools for calculating age in various time units including hours, minutes, and seconds"
+      },
+      isPartOf: {
+        "@type": "WebSite",
+        name: "FastTools",
+        url: "https://fasttools.store"
+      }
     }),
   },
 }

@@ -24,6 +24,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ]
   })
 
+  // Enhanced image sitemap data
+  const getEnhancedImageData = (path: string, toolName: string) => ({
+    url: `${baseUrl}${path}`,
+    lastModified: currentDate,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+    images: [
+      {
+        url: `${baseUrl}/logo.svg`,
+        title: `FastTools ${toolName} Tool`,
+        caption: `FastTools professional logo for ${toolName} tool`
+      },
+      {
+        url: `${baseUrl}/og-image.svg`,
+        title: `FastTools ${toolName} Tool Preview`,
+        caption: `FastTools ${toolName} tool interface and functionality preview`
+      }
+    ]
+  })
+
   // Main pages with enhanced metadata and images
   const mainPages = [
     {
@@ -34,18 +54,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       images: [
         {
           url: `${baseUrl}/logo.svg`,
-          title: "FastTools Professional Logo",
-          caption: "FastTools professional logo with modern FT symbol and blue gradient design"
+          title: "FastTools Professional Logo - Free Online Tools",
+          caption: "FastTools professional logo with modern FT symbol and blue gradient design for free online tools collection"
         },
         {
           url: `${baseUrl}/og-image.svg`,
-          title: "FastTools Social Media Image",
-          caption: "FastTools professional social media sharing image with tools showcase"
+          title: "FastTools Social Media Image - Complete Digital Toolkit",
+          caption: "FastTools professional social media sharing image showcasing comprehensive free online tools collection"
         },
         {
           url: `${baseUrl}/favicon.svg`,
-          title: "FastTools Favicon",
-          caption: "FastTools favicon for browser tabs and bookmarks"
+          title: "FastTools Favicon - Online Tools",
+          caption: "FastTools favicon for browser tabs and bookmarks representing free online tools"
         }
       ]
     },

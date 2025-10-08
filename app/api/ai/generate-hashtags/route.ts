@@ -1,4 +1,5 @@
 import { generateText } from "ai"
+import { NextResponse } from "next/server"
 
 export async function POST(req: Request) {
   try {
@@ -21,9 +22,9 @@ Return ONLY a JSON array of hashtag strings (with # symbol), like: ["#hashtag1",
 
     const hashtags = JSON.parse(text)
 
-    return Response.json({ hashtags })
+    return NextResponse.json({ hashtags })
   } catch (error) {
     console.error("Error:", error)
-    return Response.json({ error: "Failed to generate hashtags" }, { status: 500 })
+    return NextResponse.json({ error: "Failed to generate hashtags" }, { status: 500 })
   }
 }

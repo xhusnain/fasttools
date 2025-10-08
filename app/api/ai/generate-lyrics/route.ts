@@ -1,4 +1,5 @@
 import { generateText } from "ai"
+import { NextResponse } from "next/server"
 
 export async function POST(req: Request) {
   try {
@@ -15,9 +16,9 @@ Create a complete song with verses, chorus, and bridge. Make it emotional and en
       prompt,
     })
 
-    return Response.json({ lyrics: text })
+    return NextResponse.json({ lyrics: text })
   } catch (error) {
     console.error("Error:", error)
-    return Response.json({ error: "Failed to generate lyrics" }, { status: 500 })
+    return NextResponse.json({ error: "Failed to generate lyrics" }, { status: 500 })
   }
 }

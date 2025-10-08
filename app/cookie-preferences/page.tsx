@@ -85,8 +85,8 @@ export default function CookiePreferencesPage() {
   const initializeTracking = (consent: boolean) => {
     if (typeof window !== "undefined") {
       // Google Analytics consent
-      if (window.gtag) {
-        window.gtag('consent', 'update', {
+      if ((window as any).gtag) {
+        (window as any).gtag('consent', 'update', {
           'analytics_storage': consent ? 'granted' : 'denied',
           'ad_storage': consent ? 'granted' : 'denied',
           'personalization_storage': consent ? 'granted' : 'denied'

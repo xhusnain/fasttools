@@ -1,4 +1,5 @@
 import { generateText } from "ai"
+import { NextResponse } from "next/server"
 
 export async function POST(req: Request) {
   try {
@@ -16,9 +17,9 @@ Return ONLY a JSON array of strings, like: ["caption 1", "caption 2", "caption 3
 
     const captions = JSON.parse(text)
 
-    return Response.json({ captions })
+    return NextResponse.json({ captions })
   } catch (error) {
     console.error("Error:", error)
-    return Response.json({ error: "Failed to generate captions" }, { status: 500 })
+    return NextResponse.json({ error: "Failed to generate captions" }, { status: 500 })
   }
 }
