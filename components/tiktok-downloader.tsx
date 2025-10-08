@@ -108,6 +108,32 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
     }
   }
 
+  const triggerDownload = async (url: string, filename: string) => {
+    try {
+      // Prefer blob downloads to avoid opening new tabs and to honor the filename
+      const response = await fetch(url, { mode: "cors" })
+      if (!response.ok) throw new Error("download fetch failed")
+      const blob = await response.blob()
+      const objectUrl = URL.createObjectURL(blob)
+      const anchor = document.createElement("a")
+      anchor.href = objectUrl
+      anchor.download = filename
+      document.body.appendChild(anchor)
+      anchor.click()
+      anchor.remove()
+      URL.revokeObjectURL(objectUrl)
+    } catch (e) {
+      // Fallback: attempt same‑tab navigation with download attribute
+      const fallback = document.createElement("a")
+      fallback.href = url
+      fallback.download = filename
+      fallback.target = "_self"
+      document.body.appendChild(fallback)
+      fallback.click()
+      fallback.remove()
+    }
+  }
+
   return (
     <div className="space-y-6">
       {!compact && (
@@ -138,14 +164,14 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
               placeholder="https://www.tiktok.com/@username/video/..."
               value={videoUrl}
               onChange={(e) => setVideoUrl(e.target.value)}
-              className="mt-2 h-11 text-base"
+              className={`mt-2 ${compact ? "h-11" : "h-14"} text-base`}
             />
           </div>
 
           <Button
             onClick={handleFetch}
             disabled={!videoUrl || loading}
-            className="w-full h-11 text-base font-medium shadow-sm hover:shadow-md transition-all"
+            className={`w-full ${compact ? "h-11" : "h-14"} text-base font-medium shadow-sm hover:shadow-md transition-all`}
           >
             {loading ? (
               <>
@@ -177,34 +203,31 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
               )}
               <div className="space-y-2">
                 {result.noWatermarkUrl && (
-                  <a
-                    href={result.noWatermarkUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => triggerDownload(result.noWatermarkUrl!, (result.title || "tiktok-video") + "-nowm.mp4")}
                     className="inline-flex items-center justify-center w-full h-11 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
                   >
                     Download Video (No Watermark)
-                  </a>
+                  </button>
                 )}
                 {result.watermarkUrl && (
-                  <a
-                    href={result.watermarkUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => triggerDownload(result.watermarkUrl!, (result.title || "tiktok-video") + "-wm.mp4")}
                     className="inline-flex items-center justify-center w-full h-11 rounded-md border font-medium hover:bg-muted/50 transition-colors"
                   >
                     Download Video (Watermark)
-                  </a>
+                  </button>
                 )}
                 {result.musicUrl && (
-                  <a
-                    href={result.musicUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => triggerDownload(result.musicUrl!, (result.title || "tiktok-audio") + ".mp3")}
                     className="inline-flex items-center justify-center w-full h-11 rounded-md border font-medium hover:bg-muted/50 transition-colors"
                   >
                     Download Audio (MP3)
-                  </a>
+                  </button>
                 )}
               </div>
             </div>

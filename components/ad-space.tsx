@@ -28,6 +28,7 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
   const adRef = useRef<HTMLDivElement>(null)
   const [adShape, setAdShape] = useState<"horizontal" | "vertical" | "square">("horizontal")
   const [scriptLoaded, setScriptLoaded] = useState(false)
+  const initializedRef = useRef(false)
 
   // Determine ad shape based on className or auto-detection
   useEffect(() => {
@@ -52,25 +53,52 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
     }
   }, [shape, className, slot])
 
-  // Load Google AdSense script
+  // Load Google AdSense script (once per app)
   useEffect(() => {
-    const loadAdSenseScript = () => {
-      if (typeof window !== "undefined" && !scriptLoaded) {
-        const script = document.createElement("script")
-        script.async = true
-        script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${AD_CLIENT}`
-        script.crossOrigin = "anonymous"
-        script.onload = () => setScriptLoaded(true)
-        document.head.appendChild(script)
-      }
+    if (typeof window === "undefined") return
+    // Skip initializing ads in development to avoid TagError noise
+    if (process.env.NODE_ENV !== "production") return
+
+    // If script already exists, mark loaded
+    const existing = document.querySelector(
+      `script[src^="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]`
+    ) as HTMLScriptElement | null
+
+    if (existing) {
+      setScriptLoaded(true)
+      return
     }
 
-    loadAdSenseScript()
-  }, [scriptLoaded])
+    if (!(window as any).__adsenseScriptAppended) {
+      const script = document.createElement("script")
+      script.async = true
+      script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${AD_CLIENT}`
+      script.crossOrigin = "anonymous"
+      script.onload = () => setScriptLoaded(true)
+      document.head.appendChild(script)
+      ;(window as any).__adsenseScriptAppended = true
+    }
+  }, [])
 
-  // Initialize ad when script is loaded
+  // Initialize ad when script is loaded (avoid duplicate init)
   useEffect(() => {
-    if (scriptLoaded && adRef.current && typeof window !== "undefined") {
+    if (
+      process.env.NODE_ENV !== "production" ||
+      !scriptLoaded ||
+      !adRef.current ||
+      typeof window === "undefined" ||
+      initializedRef.current
+    ) {
+      return
+    }
+
+    try {
+      // If an ad element already exists inside, skip
+      if (adRef.current.querySelector("ins.adsbygoogle")) {
+        initializedRef.current = true
+        return
+      }
+
       try {
         // Clear any existing ads
         adRef.current.innerHTML = ""
@@ -90,10 +118,13 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
         if (window.adsbygoogle) {
           window.adsbygoogle.push({})
         }
+        initializedRef.current = true
       } catch (error) {
-        console.error("Error initializing ad:", error)
+        // Silently ignore TagError in case of policy/placement restrictions
+        // to avoid breaking the UI
+        console.warn("Ad init warning:", error)
       }
-    }
+    } catch {}
   }, [scriptLoaded, adShape])
 
   return (
