@@ -1007,15 +1007,9 @@ export default function HomePage() {
               </div>
             </details>
 
-            <details className="group">
-              <summary className="cursor-pointer list-none">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-xl md:text-2xl font-semibold text-foreground">Frequently Asked Questions</h3>
-                  <span className="text-sm text-muted-foreground group-open:hidden">Expand</span>
-                  <span className="text-sm text-muted-foreground hidden group-open:inline">Collapse</span>
-                </div>
-              </summary>
-              <div className="mt-6 space-y-6 text-muted-foreground">
+            <div>
+              <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Frequently Asked Questions</h3>
+              <div className="space-y-6 text-muted-foreground">
                 <div>
                   <h4 className="text-base font-semibold text-foreground">Is the TikTok downloader free?</h4>
                   <p>Yes. The downloader on FastTools is free to use for public TikTok links. Always download only content you own or have permission to use.</p>
@@ -1037,7 +1031,7 @@ export default function HomePage() {
                   <p>Explore converters, calculators, SEO helpers, developer utilities, image tools, and AI generators—all accessible from the homepage categories.</p>
                 </div>
               </div>
-            </details>
+            </div>
           </div>
         </div>
       </section>
