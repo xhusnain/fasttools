@@ -7,57 +7,81 @@ export default function imageSitemap(): MetadataRoute.Sitemap {
   // Main images for the site
   const mainImages = [
     {
-      url: `${baseUrl}/logo.svg`,
+      url: "https://fasttools.store/logo.svg",
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 1,
       images: [
-        `${baseUrl}/logo.svg`
+        {
+          url: "https://fasttools.store/logo.svg",
+          title: "FastTools Professional Logo",
+          caption: "FastTools professional logo with modern FT symbol and blue gradient design"
+        }
       ]
     },
     {
-      url: `${baseUrl}/og-image.svg`,
+      url: "https://fasttools.store/og-image.svg",
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.9,
       images: [
-        `${baseUrl}/og-image.svg`
+        {
+          url: "https://fasttools.store/og-image.svg",
+          title: "FastTools Social Media Image",
+          caption: "FastTools professional social media sharing image with tools showcase"
+        }
       ]
     },
     {
-      url: `${baseUrl}/favicon.svg`,
+      url: "https://fasttools.store/favicon.svg",
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.8,
       images: [
-        `${baseUrl}/favicon.svg`
+        {
+          url: "https://fasttools.store/favicon.svg",
+          title: "FastTools Favicon",
+          caption: "FastTools favicon for browser tabs and bookmarks"
+        }
       ]
     },
     {
-      url: `${baseUrl}/apple-touch-icon.svg`,
+      url: "https://fasttools.store/apple-touch-icon.svg",
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.8,
       images: [
-        `${baseUrl}/apple-touch-icon.svg`
+        {
+          url: "https://fasttools.store/apple-touch-icon.svg",
+          title: "FastTools Apple Touch Icon",
+          caption: "FastTools icon for Apple devices and iOS home screen"
+        }
       ]
     },
     {
-      url: `${baseUrl}/icon-192.svg`,
+      url: "https://fasttools.store/icon-192.svg",
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.7,
       images: [
-        `${baseUrl}/icon-192.svg`
+        {
+          url: "https://fasttools.store/icon-192.svg",
+          title: "FastTools Icon 192x192",
+          caption: "FastTools 192x192 icon for web app manifest"
+        }
       ]
     },
     {
-      url: `${baseUrl}/icon-512.svg`,
+      url: "https://fasttools.store/icon-512.svg",
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.7,
       images: [
-        `${baseUrl}/icon-512.svg`
+        {
+          url: "https://fasttools.store/icon-512.svg",
+          title: "FastTools Icon 512x512",
+          caption: "FastTools 512x512 icon for web app manifest"
+        }
       ]
     }
   ]
