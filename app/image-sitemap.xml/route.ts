@@ -1,6 +1,7 @@
+import { NextResponse } from 'next/server'
 import type { MetadataRoute } from "next"
 
-export default function imageSitemap(): MetadataRoute.Sitemap {
+export async function GET() {
   const baseUrl = "https://fasttools.store"
   const currentDate = new Date()
 
@@ -86,5 +87,27 @@ export default function imageSitemap(): MetadataRoute.Sitemap {
     }
   ]
 
-  return mainImages
+  // Generate XML sitemap
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${mainImages.map(item => `
+  <url>
+    <loc>${item.url}</loc>
+    <lastmod>${item.lastModified.toISOString()}</lastmod>
+    <changefreq>${item.changeFrequency}</changefreq>
+    <priority>${item.priority}</priority>
+    ${item.images.map(image => `
+    <image:image>
+      <image:loc>${image.url}</image:loc>
+      <image:title>${image.title}</image:title>
+      <image:caption>${image.caption}</image:caption>
+    </image:image>`).join('')}
+  </url>`).join('')}
+</urlset>`
+
+  return new NextResponse(sitemap, {
+    headers: {
+      'Content-Type': 'application/xml',
+    },
+  })
 }
