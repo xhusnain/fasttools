@@ -4,46 +4,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://fasttools.store"
   const currentDate = new Date()
 
-  // Image data for enhanced SEO
-  const getImageData = (path: string) => ({
-    url: `${baseUrl}${path}`,
-    lastModified: currentDate,
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-    images: [
-      {
-        url: "https://fasttools.store/logo.svg",
-        title: "FastTools Professional Logo",
-        caption: "FastTools professional logo with modern FT symbol and blue gradient design"
-      },
-      {
-        url: "https://fasttools.store/og-image.svg",
-        title: "FastTools Social Media Image", 
-        caption: "FastTools professional social media sharing image with tools showcase"
-      }
-    ]
-  })
-
-  // Enhanced image sitemap data
-  const getEnhancedImageData = (path: string, toolName: string) => ({
-    url: `${baseUrl}${path}`,
-    lastModified: currentDate,
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-    images: [
-      {
-        url: "https://fasttools.store/logo.svg",
-        title: `FastTools ${toolName} Tool`,
-        caption: `FastTools professional logo for ${toolName} tool`
-      },
-      {
-        url: "https://fasttools.store/og-image.svg",
-        title: `FastTools ${toolName} Tool Preview`,
-        caption: `FastTools ${toolName} tool interface and functionality preview`
-      }
-    ]
-  })
-
   // Main pages with enhanced metadata and images
   const mainPages = [
     {
@@ -70,31 +30,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ]
     },
     {
-      url: `${baseUrl}/about`,
+      url: "https://fasttools.store/about",
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: "https://fasttools.store/contact",
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/faq`,
+      url: "https://fasttools.store/faq",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/privacy-policy`,
+      url: "https://fasttools.store/privacy-policy",
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.4,
     },
     {
-      url: `${baseUrl}/terms`,
+      url: "https://fasttools.store/terms",
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.4,
@@ -104,61 +64,61 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Tool category pages
   const categoryPages = [
     {
-      url: `${baseUrl}/tools`,
+      url: "https://fasttools.store/tools",
       lastModified: currentDate,
       changeFrequency: "daily" as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/ai-tools`,
+      url: "https://fasttools.store/ai-tools",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/converters`,
+      url: "https://fasttools.store/converters",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/date-time-tools`,
+      url: "https://fasttools.store/date-time-tools",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/dev-tools`,
+      url: "https://fasttools.store/dev-tools",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/finance-tools`,
+      url: "https://fasttools.store/finance-tools",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/fun-tools`,
+      url: "https://fasttools.store/fun-tools",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/image-tools`,
+      url: "https://fasttools.store/image-tools",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/seo-tools`,
+      url: "https://fasttools.store/seo-tools",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/social-media-tools`,
+      url: "https://fasttools.store/social-media-tools",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
@@ -169,7 +129,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const toolPages = [
     // Main Calculator Tools
     {
-      url: `${baseUrl}/tools/age-calculator`,
+      url: "https://fasttools.store/tools/age-calculator",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.9,
@@ -182,43 +142,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ]
     },
     {
-      url: `${baseUrl}/tools/bmi-calculator`,
+      url: "https://fasttools.store/tools/bmi-calculator",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/tools/loan-calculator`,
+      url: "https://fasttools.store/tools/loan-calculator",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/tools/tax-calculator`,
+      url: "https://fasttools.store/tools/tax-calculator",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/tools/percentage-calculator`,
+      url: "https://fasttools.store/tools/percentage-calculator",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/tools/date-difference`,
+      url: "https://fasttools.store/tools/date-difference",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/tools/time-duration`,
+      url: "https://fasttools.store/tools/time-duration",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/tools/compound-interest`,
+      url: "https://fasttools.store/tools/compound-interest",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
@@ -226,37 +186,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // AI Tools
     {
-      url: `${baseUrl}/ai-tools/caption-generator`,
+      url: "https://fasttools.store/ai-tools/caption-generator",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/ai-tools/hashtag-suggester`,
+      url: "https://fasttools.store/ai-tools/hashtag-suggester",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/ai-tools/lyrics-generator`,
+      url: "https://fasttools.store/ai-tools/lyrics-generator",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/ai-tools/meme-generator`,
+      url: "https://fasttools.store/ai-tools/meme-generator",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/ai-tools/pet-names`,
+      url: "https://fasttools.store/ai-tools/pet-names",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/ai-tools/qr-generator`,
+      url: "https://fasttools.store/ai-tools/qr-generator",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
@@ -264,37 +224,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Converters
     {
-      url: `${baseUrl}/converters/currency`,
+      url: "https://fasttools.store/converters/currency",
       lastModified: currentDate,
       changeFrequency: "daily" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/converters/file-size`,
+      url: "https://fasttools.store/converters/file-size",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/converters/length`,
+      url: "https://fasttools.store/converters/length",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/converters/temperature`,
+      url: "https://fasttools.store/converters/temperature",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/converters/text-case`,
+      url: "https://fasttools.store/converters/text-case",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/converters/timezone`,
+      url: "https://fasttools.store/converters/timezone",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
@@ -302,31 +262,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Date & Time Tools
     {
-      url: `${baseUrl}/date-time-tools/age-in-hours`,
+      url: "https://fasttools.store/date-time-tools/age-in-hours",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/date-time-tools/date-to-day`,
+      url: "https://fasttools.store/date-time-tools/date-to-day",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/date-time-tools/workday-calculator`,
+      url: "https://fasttools.store/date-time-tools/workday-calculator",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/date-time-tools/year-end-countdown`,
+      url: "https://fasttools.store/date-time-tools/year-end-countdown",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/date-time-tools/zodiac-sign`,
+      url: "https://fasttools.store/date-time-tools/zodiac-sign",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
@@ -334,49 +294,49 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Dev Tools
     {
-      url: `${baseUrl}/dev-tools/color-palette`,
+      url: "https://fasttools.store/dev-tools/color-palette",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/dev-tools/hex-to-rgb`,
+      url: "https://fasttools.store/dev-tools/hex-to-rgb",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/dev-tools/html-beautifier`,
+      url: "https://fasttools.store/dev-tools/html-beautifier",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/dev-tools/html-to-markdown`,
+      url: "https://fasttools.store/dev-tools/html-to-markdown",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/dev-tools/json-to-csv`,
+      url: "https://fasttools.store/dev-tools/json-to-csv",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/dev-tools/jwt-decoder`,
+      url: "https://fasttools.store/dev-tools/jwt-decoder",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/dev-tools/markdown-previewer`,
+      url: "https://fasttools.store/dev-tools/markdown-previewer",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/dev-tools/regex-tester`,
+      url: "https://fasttools.store/dev-tools/regex-tester",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
@@ -384,49 +344,49 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Finance Tools
     {
-      url: `${baseUrl}/finance-tools/invoice-generator`,
+      url: "https://fasttools.store/finance-tools/invoice-generator",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/finance-tools/paypal-fee`,
+      url: "https://fasttools.store/finance-tools/paypal-fee",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/finance-tools/discount-calculator`,
+      url: "https://fasttools.store/finance-tools/discount-calculator",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/finance-tools/tip-calculator`,
+      url: "https://fasttools.store/finance-tools/tip-calculator",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/finance-tools/savings-tracker`,
+      url: "https://fasttools.store/finance-tools/savings-tracker",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/finance-tools/retirement-planner`,
+      url: "https://fasttools.store/finance-tools/retirement-planner",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/finance-tools/bill-splitter`,
+      url: "https://fasttools.store/finance-tools/bill-splitter",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/finance-tools/credit-card-payoff`,
+      url: "https://fasttools.store/finance-tools/credit-card-payoff",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
@@ -434,31 +394,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Fun Tools
     {
-      url: `${baseUrl}/fun-tools/future-age`,
+      url: "https://fasttools.store/fun-tools/future-age",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/fun-tools/love-calculator`,
+      url: "https://fasttools.store/fun-tools/love-calculator",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/fun-tools/hashtag-counter`,
+      url: "https://fasttools.store/fun-tools/hashtag-counter",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/fun-tools/birthday-countdown`,
+      url: "https://fasttools.store/fun-tools/birthday-countdown",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/fun-tools/anniversary`,
+      url: "https://fasttools.store/fun-tools/anniversary",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
@@ -466,37 +426,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Image Tools
     {
-      url: `${baseUrl}/image-tools/image-to-text`,
+      url: "https://fasttools.store/image-tools/image-to-text",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/image-tools/background-blur`,
+      url: "https://fasttools.store/image-tools/background-blur",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/image-tools/image-cropper`,
+      url: "https://fasttools.store/image-tools/image-cropper",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/image-tools/pdf-tools`,
+      url: "https://fasttools.store/image-tools/pdf-tools",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/image-tools/pdf-unlocker`,
+      url: "https://fasttools.store/image-tools/pdf-unlocker",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/image-tools/screenshot-to-text`,
+      url: "https://fasttools.store/image-tools/screenshot-to-text",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
@@ -504,31 +464,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // SEO Tools
     {
-      url: `${baseUrl}/seo-tools/meta-tags`,
+      url: "https://fasttools.store/seo-tools/meta-tags",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/seo-tools/lorem-ipsum`,
+      url: "https://fasttools.store/seo-tools/lorem-ipsum",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/seo-tools/hashtags`,
+      url: "https://fasttools.store/seo-tools/hashtags",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/seo-tools/blog-titles`,
+      url: "https://fasttools.store/seo-tools/blog-titles",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/seo-tools/keyword-density`,
+      url: "https://fasttools.store/seo-tools/keyword-density",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
@@ -536,37 +496,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Social Media Tools
     {
-      url: `${baseUrl}/social-media-tools/youtube-thumbnail`,
+      url: "https://fasttools.store/social-media-tools/youtube-thumbnail",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/social-media-tools/instagram-dp`,
+      url: "https://fasttools.store/social-media-tools/instagram-dp",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/social-media-tools/tiktok-downloader`,
+      url: "https://fasttools.store/social-media-tools/tiktok-downloader",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/social-media-tools/youtube-tags`,
+      url: "https://fasttools.store/social-media-tools/youtube-tags",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/social-media-tools/link-in-bio`,
+      url: "https://fasttools.store/social-media-tools/link-in-bio",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/social-media-tools/channel-checker`,
+      url: "https://fasttools.store/social-media-tools/channel-checker",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.7,
