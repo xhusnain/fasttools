@@ -37,8 +37,8 @@ export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Free Online Tools | FastTools - Complete Digital Toolkit",
-    description: "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
+    name: "Free Online Tools | fasttools - Complete Digital Toolkit",
+    description: "fasttools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
     url: "https://fasttools.store",
     mainEntity: {
       "@type": "ItemList",
@@ -122,7 +122,7 @@ export default function HomePage() {
     },
     isPartOf: {
       "@type": "WebSite",
-      name: "FastTools",
+      name: "fasttools",
       url: "https://fasttools.store"
     }
   }
@@ -619,7 +619,7 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance leading-[1.1] text-foreground animate-fade-in-up tracking-tight">
-              Free Online Tools | FastTools - Your Complete Digital Toolkit
+              Free Online Tools | fasttools - Your Complete Digital Toolkit
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-100">
@@ -849,14 +849,14 @@ export default function HomePage() {
             <details className="group" open>
               <summary className="cursor-pointer list-none">
                 <div className="flex items-center justify-between">
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">About FastTools — Your Complete Free Online Tools Collection</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">About fasttools — Your Complete Free Online Tools Collection</h2>
                   <span className="text-sm text-muted-foreground group-open:hidden">Expand</span>
                   <span className="text-sm text-muted-foreground hidden group-open:inline">Collapse</span>
                 </div>
               </summary>
               <div className="prose prose-neutral dark:prose-invert max-w-none mt-6 space-y-4 text-muted-foreground">
                 <p>
-                  FastTools is the ultimate collection of <strong>free online tools</strong> designed to eliminate everyday digital friction. 
+                  fasttools is the ultimate collection of <strong>free online tools</strong> designed to eliminate everyday digital friction. 
                   Instead of navigating multiple websites to convert text, optimize SEO, process images, generate content, or perform calculations, 
                   you can access everything in one fast, privacy-respecting platform. Our <strong>web tools</strong> are lightweight, 
                   mobile-friendly, and engineered for speed so you can get results instantly and continue with your work.
@@ -955,14 +955,14 @@ export default function HomePage() {
                 <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Continuous Innovation</h3>
                 
                 <p>
-                  FastTools is continuously expanding based on user feedback and emerging needs. We monitor usage patterns 
+                  fasttools is continuously expanding based on user feedback and emerging needs. We monitor usage patterns 
                   across all categories—converters, image processing, social media utilities, finance calculators, and 
                   productivity tools—and implement improvements weekly. Our commitment to innovation ensures that FastTools 
                   remains the most comprehensive and up-to-date collection of <strong>free online services</strong> available.
                 </p>
                 
                 <p>
-                  Whether you're a student, professional, content creator, developer, or casual user, FastTools provides 
+                  Whether you're a student, professional, content creator, developer, or casual user, fasttools provides 
                   the essential <strong>online calculators</strong> and utilities you need to be productive and efficient. 
                   Bookmark this page and experience the convenience of having all your essential tools in one place.
                 </p>

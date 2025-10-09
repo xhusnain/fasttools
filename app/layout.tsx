@@ -28,11 +28,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://fasttools.store"),
   title: {
-    default: "Free Online Tools | FastTools - Complete Digital Toolkit",
-    template: "%s | FastTools - Free Online Tools",
+    default: "Free Online Tools | fasttools - Complete Digital Toolkit",
+    template: "%s | fasttools - Free Online Tools",
   },
   description:
-    "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
+    "fasttools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
   keywords: [
     "online tools",
     "free web tools",
@@ -94,6 +94,7 @@ export const metadata: Metadata = {
     "free invoice generator template",
     "receipt generator free online",
     "certificate generator free template",
+    "fasttools",
     "fasttools store",
     "conversion tools",
     "dev tools",
@@ -124,9 +125,9 @@ export const metadata: Metadata = {
     "online calculators",
     "free online services"
   ],
-  authors: [{ name: "FastTools Team", url: "https://fasttools.store/about" }],
-  creator: "FastTools",
-  publisher: "FastTools",
+  authors: [{ name: "fasttools Team", url: "https://fasttools.store/about" }],
+  creator: "fasttools",
+  publisher: "fasttools",
   formatDetection: {
     email: false,
     address: false,
@@ -136,15 +137,15 @@ export const metadata: Metadata = {
         type: "website",
         locale: "en_US",
         url: "https://fasttools.store",
-        siteName: "FastTools",
-        title: "Free Online Tools | FastTools - Complete Digital Toolkit",
-        description: "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
+        siteName: "fasttools",
+        title: "Free Online Tools | fasttools - Complete Digital Toolkit",
+        description: "fasttools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
         images: [
           {
             url: "/og-image.svg",
             width: 1200,
             height: 630,
-            alt: "FastTools - Professional Online Tools & Utilities Collection",
+            alt: "fasttools - Professional Online Tools & Utilities Collection",
             type: "image/svg+xml",
           },
         ],
@@ -153,8 +154,8 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         site: "@fasttoolsstore",
         creator: "@fasttoolsstore",
-        title: "Free Online Tools | FastTools - Complete Digital Toolkit",
-        description: "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
+        title: "Free Online Tools | fasttools - Complete Digital Toolkit",
+        description: "fasttools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
         images: ["/og-image.svg"],
       },
       robots: {
@@ -182,7 +183,7 @@ export const metadata: Metadata = {
       classification: "Free Online Tools and Utilities",
       referrer: "origin-when-cross-origin",
       generator: "Next.js",
-      applicationName: "FastTools",
+      applicationName: "fasttools",
       manifest: "/manifest.json",
       icons: {
         icon: [
@@ -199,7 +200,7 @@ export const metadata: Metadata = {
           "mobile-web-app-capable": "yes",
         "apple-mobile-web-app-capable": "yes",
         "apple-mobile-web-app-status-bar-style": "default",
-        "apple-mobile-web-app-title": "FastTools",
+        "apple-mobile-web-app-title": "fasttools",
         "msapplication-TileColor": "#2563eb",
         "theme-color": "#2563eb",
       },
@@ -213,17 +214,17 @@ export const metadata: Metadata = {
       const organizationSchema = {
         "@context": "https://schema.org",
         "@type": "Organization",
-        name: "FastTools",
+        name: "fasttools",
         url: "https://fasttools.store",
         logo: {
           "@type": "ImageObject",
           url: "https://fasttools.store/logo.svg",
           width: 320,
           height: 80,
-          description: "FastTools professional logo with modern FT symbol and blue gradient"
+          description: "fasttools professional logo with modern FT symbol and blue gradient"
         },
         image: "https://fasttools.store/og-image.svg",
-        description: "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
+        description: "fasttools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
         foundingDate: "2024",
         sameAs: [
           "https://twitter.com/fasttoolsstore",
@@ -274,12 +275,12 @@ export const metadata: Metadata = {
       const websiteSchema = {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        name: "FastTools",
+        name: "fasttools",
         url: "https://fasttools.store",
-        description: "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
+        description: "fasttools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
         publisher: {
           "@type": "Organization",
-          name: "FastTools",
+          name: "fasttools",
           url: "https://fasttools.store"
         },
         potentialAction: {

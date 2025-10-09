@@ -21,18 +21,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       images: [
         {
           url: "https://fasttools.store/logo.svg",
-          title: "FastTools Professional Logo - Free Online Tools",
-          caption: "FastTools professional logo with modern FT symbol and blue gradient design for free online tools collection"
+          title: "fasttools Professional Logo - Free Online Tools",
+          caption: "fasttools professional logo with modern FT symbol and blue gradient design for free online tools collection"
         },
         {
           url: "https://fasttools.store/og-image.svg",
-          title: "FastTools Social Media Image - Complete Digital Toolkit",
-          caption: "FastTools professional social media sharing image showcasing comprehensive free online tools collection"
+          title: "fasttools Social Media Image - Complete Digital Toolkit",
+          caption: "fasttools professional social media sharing image showcasing comprehensive free online tools collection"
         },
         {
           url: "https://fasttools.store/favicon.svg",
-          title: "FastTools Favicon - Online Tools",
-          caption: "FastTools favicon for browser tabs and bookmarks representing free online tools"
+          title: "fasttools Favicon - Online Tools",
+          caption: "fasttools favicon for browser tabs and bookmarks representing free online tools"
         }
       ]
     },

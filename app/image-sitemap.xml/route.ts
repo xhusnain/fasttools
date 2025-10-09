@@ -307,18 +307,18 @@ export async function GET() {
       images: [
         {
           url: "https://fasttools.store/logo.svg",
-          title: "FastTools Professional Logo - Free Online Tools Collection",
-          caption: "FastTools professional logo with modern FT symbol and blue gradient design for comprehensive free online tools collection"
+          title: "fasttools Professional Logo - Free Online Tools Collection",
+          caption: "fasttools professional logo with modern FT symbol and blue gradient design for comprehensive free online tools collection"
         },
         {
           url: "https://fasttools.store/og-image.svg",
-          title: "FastTools Social Media Image - Complete Digital Toolkit",
-          caption: "FastTools professional social media sharing image showcasing comprehensive free online tools collection for productivity and business"
+          title: "fasttools Social Media Image - Complete Digital Toolkit",
+          caption: "fasttools professional social media sharing image showcasing comprehensive free online tools collection for productivity and business"
         },
         {
           url: "https://fasttools.store/favicon.svg",
-          title: "FastTools Favicon - Online Tools",
-          caption: "FastTools favicon for browser tabs and bookmarks representing free online tools and utilities"
+          title: "fasttools Favicon - Online Tools",
+          caption: "fasttools favicon for browser tabs and bookmarks representing free online tools and utilities"
         }
       ]
     },
@@ -330,8 +330,8 @@ export async function GET() {
       images: [
         {
           url: "https://fasttools.store/logo.svg",
-          title: "FastTools Professional Logo",
-          caption: "FastTools professional logo with modern FT symbol and blue gradient design"
+          title: "fasttools Professional Logo",
+          caption: "fasttools professional logo with modern FT symbol and blue gradient design"
         }
       ]
     },
@@ -343,8 +343,8 @@ export async function GET() {
       images: [
         {
           url: "https://fasttools.store/og-image.svg",
-          title: "FastTools Social Media Image",
-          caption: "FastTools professional social media sharing image with tools showcase"
+          title: "fasttools Social Media Image",
+          caption: "fasttools professional social media sharing image with tools showcase"
         }
       ]
     },
@@ -356,8 +356,8 @@ export async function GET() {
       images: [
         {
           url: "https://fasttools.store/favicon.svg",
-          title: "FastTools Favicon",
-          caption: "FastTools favicon for browser tabs and bookmarks"
+          title: "fasttools Favicon",
+          caption: "fasttools favicon for browser tabs and bookmarks"
         }
       ]
     },
@@ -369,8 +369,8 @@ export async function GET() {
       images: [
         {
           url: "https://fasttools.store/apple-touch-icon.svg",
-          title: "FastTools Apple Touch Icon",
-          caption: "FastTools icon for Apple devices and iOS home screen"
+          title: "fasttools Apple Touch Icon",
+          caption: "fasttools icon for Apple devices and iOS home screen"
         }
       ]
     },
@@ -382,8 +382,8 @@ export async function GET() {
       images: [
         {
           url: "https://fasttools.store/icon-192.svg",
-          title: "FastTools Icon 192x192",
-          caption: "FastTools 192x192 icon for web app manifest"
+          title: "fasttools Icon 192x192",
+          caption: "fasttools 192x192 icon for web app manifest"
         }
       ]
     },
@@ -395,8 +395,8 @@ export async function GET() {
       images: [
         {
           url: "https://fasttools.store/icon-512.svg",
-          title: "FastTools Icon 512x512",
-          caption: "FastTools 512x512 icon for web app manifest"
+          title: "fasttools Icon 512x512",
+          caption: "fasttools 512x512 icon for web app manifest"
         }
       ]
     }
