@@ -57,7 +57,7 @@ export default function TiktokDownloaderPage() {
 
         {/* First Ad Space - After Hero Content */}
         <div className="mb-6">
-          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+          <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
 
         {/* Main downloader + demo GIFs */}
@@ -94,7 +94,7 @@ export default function TiktokDownloaderPage() {
 
         {/* Second Ad Space - After Tool */}
         <div className="my-8">
-          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+          <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
 
         {/* SEO Optimized Section */}
@@ -207,7 +207,7 @@ export default function TiktokDownloaderPage() {
 
         {/* Final Ad Space - Bottom Content */}
         <div className="mt-8">
-          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+          <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
       </div>
   )
