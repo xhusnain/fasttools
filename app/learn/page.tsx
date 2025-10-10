@@ -28,6 +28,7 @@ const WorkdayCalculatorGuide = dynamic(() => import("@/app/guides/workday-calcul
         const DateToDayGuide = dynamic(() => import("@/app/guides/date-to-day-finder-guide/page"), { ssr: false })
         const ZodiacSignGuide = dynamic(() => import("@/app/guides/zodiac-sign-finder-guide/page"), { ssr: false })
         const DateDifferenceGuide = dynamic(() => import("@/app/guides/date-difference-calculator-guide/page"), { ssr: false })
+const BMICalculatorGuide = dynamic(() => import("@/app/guides/bmi-calculator-guide/page"), { ssr: false })
 
 export default function LearnPage() {
   const [selectedGuide, setSelectedGuide] = useState("age-calculator")
@@ -138,6 +139,11 @@ export default function LearnPage() {
               id: "date-difference",
               title: "Date Difference Calculator Guide",
               href: "/guides/date-difference-calculator-guide"
+            },
+            {
+              id: "bmi-calculator",
+              title: "BMI Calculator Guide",
+              href: "/guides/bmi-calculator-guide"
             }
   ]
 
@@ -185,6 +191,8 @@ export default function LearnPage() {
                 return <ZodiacSignGuide />
               case "date-difference":
                 return <DateDifferenceGuide />
+              case "bmi-calculator":
+                return <BMICalculatorGuide />
               default:
                 return <AgeCalculatorGuide />
     }
