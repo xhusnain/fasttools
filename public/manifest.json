@@ -1,63 +1,49 @@
 {
   "name": "FastTools - Free Online Tools",
   "short_name": "FastTools",
-  "description": "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities — all in one place. Fast, accurate, and easy to use.",
+  "description": "1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
   "start_url": "/",
   "display": "standalone",
-  "orientation": "portrait-primary",
   "background_color": "#ffffff",
   "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en",
   "dir": "ltr",
-  "categories": ["productivity", "utilities", "business"],
-  "screenshots": [
-    {
-      "src": "/screenshot-desktop.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "FastTools Desktop View"
-    },
-    {
-      "src": "/screenshot-mobile.png", 
-      "sizes": "390x844",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "FastTools Mobile View"
-    }
-  ],
+  "categories": ["productivity", "utilities", "business", "education"],
   "icons": [
     {
-      "src": "/favicon.svg",
-      "sizes": "32x32",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "/icon-192.svg",
+      "src": "/icon-192.png",
       "sizes": "192x192",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon-512.svg",
+      "src": "/icon-512.png",
       "sizes": "512x512",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/apple-touch-icon.svg",
+      "src": "/apple-touch-icon.png",
       "sizes": "180x180",
-      "type": "image/svg+xml"
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.svg",
+      "sizes": "1200x630",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
     }
   ],
   "shortcuts": [
     {
-      "name": "Age Calculator",
-      "short_name": "Age Calc",
-      "description": "Calculate your exact age in years, months, and days",
-      "url": "/tools/age-calculator",
+      "name": "AI Tools",
+      "short_name": "AI Tools",
+      "description": "AI-powered content generation tools",
+      "url": "/ai-tools",
       "icons": [
         {
           "src": "/icon-192.png",
@@ -66,10 +52,10 @@
       ]
     },
     {
-      "name": "BMI Calculator", 
-      "short_name": "BMI Calc",
-      "description": "Calculate your Body Mass Index (BMI)",
-      "url": "/tools/bmi-calculator",
+      "name": "Converters",
+      "short_name": "Converters",
+      "description": "Unit and format conversion tools",
+      "url": "/converters",
       "icons": [
         {
           "src": "/icon-192.png",
@@ -78,9 +64,9 @@
       ]
     },
     {
-      "name": "All Tools",
-      "short_name": "Tools",
-      "description": "Browse all available tools",
+      "name": "Calculators",
+      "short_name": "Calculators",
+      "description": "Financial and business calculators",
       "url": "/tools",
       "icons": [
         {

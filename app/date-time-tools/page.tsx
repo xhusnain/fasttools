@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Clock, Calendar, Briefcase, Timer, Sparkles } from "lucide-react"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 
@@ -419,7 +419,118 @@ export default function DateTimeToolsPage() {
             <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
           </div>
         </div>
-      </div>
+        </div>
+
+        {/* Comprehensive Date & Time Guides Section */}
+        <div className="mt-12">
+          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Date & Time Guides</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Timer className="h-5 w-5 text-blue-500" />
+                  Age in Hours Calculator Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to calculating age in hours, minutes, and seconds with precision.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master age calculation with our comprehensive guide covering time units, conversion methods, 
+                  practical examples, and applications. Perfect for personal interest and scientific research.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/age-in-hours-calculator-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Sparkles className="h-5 w-5 text-purple-500" />
+                  Year End Countdown Guide
+                </CardTitle>
+                <CardDescription>
+                  Master year end countdown with comprehensive guide to New Year celebrations and countdown timers.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Learn about countdown timers, New Year traditions, time zones, celebration ideas, and technical 
+                  aspects. Perfect for event planning and entertainment.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/year-end-countdown-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Briefcase className="h-5 w-5 text-green-500" />
+                  Workday Calculator Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to workday calculation for business operations and legal compliance.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master workday calculation with our comprehensive guide covering business days, holidays, 
+                  legal considerations, and practical applications for professionals.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/workday-calculator-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Sparkles className="h-5 w-5 text-pink-500" />
+                  Zodiac Sign Finder Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to zodiac signs, astrology, and personality traits based on birth dates.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master zodiac sign calculation with our comprehensive guide covering all 12 signs, elements, 
+                  compatibility, personality traits, and modern astrology applications.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/zodiac-sign-finder-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Calendar className="h-5 w-5 text-orange-500" />
+                  Date to Day Finder Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to finding what day of the week any date falls on with historical examples.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master date to day calculation with our comprehensive guide covering algorithms, calendar systems, 
+                  historical dates, and practical applications for research and planning.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/date-to-day-finder-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </div>
     </>
   )

@@ -359,6 +359,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/faq"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/privacy-policy"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                 >

@@ -419,6 +419,54 @@ export default function ToolsPage() {
             all financial formulas are kept current with the latest industry standards and regulations.
           </p>
         </section>
+
+        {/* Comprehensive Tools Guides Section */}
+        <div className="mt-12">
+          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Tools Guides</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Calculator className="h-5 w-5 text-blue-500" />
+                  Age Calculator Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to age calculation, date arithmetic, and leap year handling.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master age calculation with our comprehensive guide covering calculation methods, 
+                  date arithmetic, leap years, and practical applications for accurate age determination.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/age-calculator-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Activity className="h-5 w-5 text-green-500" />
+                  BMI Calculator Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to BMI calculation, health implications, and weight management.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master BMI calculation with our comprehensive guide covering formulas, categories, 
+                  health implications, and best practices for accurate health assessment.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/bmi-calculator-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </div>
       </div>
     </>

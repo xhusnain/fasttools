@@ -30,8 +30,8 @@ import {
   Download,
 } from "lucide-react"
 import { AdSpace } from "@/components/ad-space"
-import { TiktokDownloader } from "@/components/tiktok-downloader"
 import { AnnouncementBanner } from "@/components/announcement-banner"
+import { TiktokDownloader } from "@/components/tiktok-downloader"
 
 export default function HomePage() {
   const jsonLd = {
@@ -626,6 +626,28 @@ export default function HomePage() {
               Access 1000+ powerful, free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities — all in one place. Fast, accurate, and easy to use.
             </p>
 
+            {/* Enhanced SEO Content */}
+            <div className="mt-8 text-center">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-muted-foreground">
+                <div className="flex items-center justify-center gap-2">
+                  <Users className="h-4 w-4" />
+                  <span>2M+ Users</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <Zap className="h-4 w-4" />
+                  <span>1000+ Tools</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <Shield className="h-4 w-4" />
+                  <span>100% Free</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <Target className="h-4 w-4" />
+                  <span>No Signup</span>
+                </div>
+              </div>
+            </div>
+
             {/* Hero CTA Buttons */}
             <div className="pt-6 animate-fade-in-up animation-delay-200">
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -1181,6 +1203,96 @@ export default function HomePage() {
                   <h4 className="text-base font-semibold text-foreground">What other tools are available?</h4>
                   <p>Explore converters, calculators, SEO helpers, developer utilities, image tools, and AI generators—all accessible from the homepage categories.</p>
                 </div>
+              </div>
+            </div>
+
+            {/* Comprehensive Guides Section */}
+            <div className="mt-12">
+              <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Tool Guides</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Target className="h-5 w-5 text-blue-500" />
+                      QR Code Generator Guide
+                    </CardTitle>
+                    <CardDescription>
+                      Complete guide to QR code generation, customization, and best practices for maximum impact.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Learn everything about QR codes including types, customization options, use cases, and future trends. 
+                      Perfect for businesses, marketers, and developers.
+                    </p>
+                    <Button asChild variant="outline" size="sm">
+                      <Link href="/guides/qr-code-generator-guide">Read Complete Guide</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <DollarSign className="h-5 w-5 text-green-500" />
+                      Currency Converter Guide
+                    </CardTitle>
+                    <CardDescription>
+                      Master currency conversion with our comprehensive guide to exchange rates and international trading.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Understand exchange rates, major currency pairs, conversion tips, and future trends in currency conversion. 
+                      Essential for travelers and businesses.
+                    </p>
+                    <Button asChild variant="outline" size="sm">
+                      <Link href="/guides/currency-converter-guide">Read Complete Guide</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Search className="h-5 w-5 text-purple-500" />
+                      SEO Tools Guide
+                    </CardTitle>
+                    <CardDescription>
+                      Complete guide to SEO optimization with free tools for better search engine rankings.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Master SEO with keyword research, on-page optimization, technical SEO, and content optimization strategies. 
+                      Perfect for marketers and website owners.
+                    </p>
+                    <Button asChild variant="outline" size="sm">
+                      <Link href="/guides/seo-tools-guide">Read Complete Guide</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Code className="h-5 w-5 text-orange-500" />
+                      Developer Tools Guide
+                    </CardTitle>
+                    <CardDescription>
+                      Essential developer tools and utilities for web development, coding, and technical projects.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Discover essential developer tools including code formatters, validators, converters, and utilities. 
+                      Boost your development workflow and productivity.
+                    </p>
+                    <Button asChild variant="outline" size="sm">
+                      <Link href="/guides/developer-tools-guide">Read Complete Guide</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>

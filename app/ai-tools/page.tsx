@@ -103,6 +103,138 @@ export default function AiToolsPage() {
           <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
 
+        {/* Comprehensive AI Guides Section */}
+        <div className="mt-12">
+          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive AI Guides</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Sparkles className="h-5 w-5 text-purple-500" />
+                  AI Meme Generator Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to creating viral memes with AI-powered text generation and design.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master meme creation with our comprehensive guide covering templates, humor techniques, 
+                  viral strategies, and AI-powered generation. Perfect for content creators and marketers.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/ai-meme-generator-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <QrCode className="h-5 w-5 text-blue-500" />
+                  AI QR Art Generator Guide
+                </CardTitle>
+                <CardDescription>
+                  Master AI QR art generation with design principles and customization techniques.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Learn how to create beautiful, functional QR codes with AI. Covers design principles, 
+                  customization options, and marketing applications for maximum impact.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/ai-qr-art-generator-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Music className="h-5 w-5 text-green-500" />
+                  AI Song Lyrics Generator Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to AI-powered songwriting and lyrics creation techniques.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master AI songwriting with our comprehensive guide covering song structure, genre-specific 
+                  techniques, creative strategies, and collaboration workflows for musicians.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/ai-song-lyrics-generator-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <ImageIcon className="h-5 w-5 text-orange-500" />
+                  AI Caption Generator Guide
+                </CardTitle>
+                <CardDescription>
+                  Master AI caption generation for maximum social media engagement and reach.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Learn how to create engaging social media captions with AI. Covers platform-specific 
+                  strategies, hashtag optimization, and engagement techniques for content creators.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/ai-caption-generator-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Heart className="h-5 w-5 text-pink-500" />
+                  AI Pet Name Generator Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to choosing perfect pet names with AI-powered suggestions and strategies.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master pet naming with our comprehensive guide covering psychology, species-specific tips, 
+                  naming strategies, and AI generation techniques for pet owners.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/ai-pet-name-generator-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Hash className="h-5 w-5 text-cyan-500" />
+                  AI Hashtag Suggester Guide
+                </CardTitle>
+                <CardDescription>
+                  Master AI hashtag suggestion for maximum social media reach and engagement.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Learn how to create effective hashtag strategies with AI. Covers research methods, 
+                  platform-specific strategies, and analytics optimization for social media success.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/ai-hashtag-suggester-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
         {/* SEO Content Section */}
         <div className="prose prose-slate max-w-none space-y-8">
           <div>

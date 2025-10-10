@@ -331,6 +331,54 @@ export default function SEOToolsPage() {
             </p>
           </section>
 
+          {/* Comprehensive SEO Guides Section */}
+          <div className="mt-12">
+            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive SEO Guides</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Code className="h-5 w-5 text-blue-500" />
+                    Meta Tags Guide
+                  </CardTitle>
+                  <CardDescription>
+                    Complete guide to meta tags, title tags, Open Graph, and Twitter cards for SEO.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Master meta tags with our comprehensive guide covering title tags, meta descriptions, 
+                    Open Graph tags, Twitter cards, and schema markup for better SEO performance.
+                  </p>
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="/guides/meta-tags-guide">Read Complete Guide</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <FileText className="h-5 w-5 text-green-500" />
+                    Lorem Ipsum Guide
+                  </CardTitle>
+                  <CardDescription>
+                    Complete guide to Lorem Ipsum, placeholder text, and design mockups.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Master Lorem Ipsum with our comprehensive guide covering placeholder text, 
+                    design applications, content generation, and professional best practices.
+                  </p>
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="/guides/lorem-ipsum-guide">Read Complete Guide</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
           {/* Final Ad Space - Bottom Content */}
           <div className="mt-8">
             <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />

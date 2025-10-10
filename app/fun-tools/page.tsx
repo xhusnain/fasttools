@@ -445,6 +445,54 @@ export default function FunToolsPage() {
             </div>
           </div>
 
+          {/* Comprehensive Fun Guides Section */}
+          <div className="mt-12">
+            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Fun Guides</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Heart className="h-5 w-5 text-red-500" />
+                    Love Calculator Guide
+                  </CardTitle>
+                  <CardDescription>
+                    Complete guide to love compatibility calculations and relationship fun.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Master love calculations with our comprehensive guide covering compatibility factors, 
+                    algorithms, relationship psychology, and social sharing strategies.
+                  </p>
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="/guides/love-calculator-guide">Read Complete Guide</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Calendar className="h-5 w-5 text-blue-500" />
+                    Future Age Predictor Guide
+                  </CardTitle>
+                  <CardDescription>
+                    Complete guide to age prediction, time calculations, and birthday planning.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Master future age calculations with our comprehensive guide covering time concepts, 
+                    life milestones, birthday planning, and practical applications.
+                  </p>
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="/guides/future-age-predictor-guide">Read Complete Guide</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
           {/* Final Ad Space - Bottom Content */}
           <div className="mt-8">
             <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />

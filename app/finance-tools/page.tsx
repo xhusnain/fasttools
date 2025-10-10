@@ -492,6 +492,96 @@ export default function FinanceToolsPage() {
           </div>
         </div>
 
+        {/* Comprehensive Finance Guides Section */}
+        <div className="mt-12">
+          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Finance Guides</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <FileText className="h-5 w-5 text-blue-500" />
+                  Invoice Generator Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to creating professional invoices with best practices and templates.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master invoice generation with our comprehensive guide covering legal requirements, 
+                  templates, payment terms, and professional standards for freelancers and businesses.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/invoice-generator-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <DollarSign className="h-5 w-5 text-green-500" />
+                  PayPal Fee Calculator Guide
+                </CardTitle>
+                <CardDescription>
+                  Master PayPal fee calculations with comprehensive guide to transaction fees and international payments.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Learn PayPal fee structure, international fees, currency conversion, and strategies to 
+                  minimize costs for your business transactions.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/paypal-fee-calculator-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Percent className="h-5 w-5 text-purple-500" />
+                  Discount Calculator Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to discount strategies, pricing psychology, and sale calculations.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master discount calculations with our comprehensive guide covering strategies, 
+                  pricing psychology, and business applications for retail and e-commerce.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/discount-calculator-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Calculator className="h-5 w-5 text-orange-500" />
+                  Tip Calculator Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to tipping etiquette, calculations, and bill splitting strategies.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master tip calculations with our comprehensive guide covering etiquette, 
+                  percentages, international customs, and digital tipping methods.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/tip-calculator-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
         {/* Final Ad Space - Bottom Content */}
         <div className="mt-8">
           <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />

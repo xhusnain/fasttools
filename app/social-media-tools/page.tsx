@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Youtube, Instagram, Music, Tag, LinkIcon, Search } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
@@ -336,6 +336,54 @@ export default function SocialMediaToolsPage() {
           and adjust your strategy based on the insights gained from our tools.
         </p>
       </section>
+
+      {/* Comprehensive Social Media Guides Section */}
+      <div className="mt-12">
+        <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Social Media Guides</h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Youtube className="h-5 w-5 text-red-500" />
+                YouTube Thumbnail Downloader Guide
+              </CardTitle>
+              <CardDescription>
+                Complete guide to YouTube thumbnail downloading, optimization, and competitor analysis.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground mb-4">
+                Master YouTube thumbnail downloading with our comprehensive guide covering optimization, 
+                competitor analysis, design principles, and technical aspects for better video performance.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <Link href="/guides/youtube-thumbnail-downloader-guide">Read Complete Guide</Link>
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Instagram className="h-5 w-5 text-pink-500" />
+                Instagram DP Viewer Guide
+              </CardTitle>
+              <CardDescription>
+                Complete guide to Instagram profile picture viewing, analysis, and brand research.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground mb-4">
+                Master Instagram profile picture analysis with our comprehensive guide covering DP research, 
+                competitor analysis, design principles, and brand consistency strategies.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <Link href="/guides/instagram-dp-viewer-guide">Read Complete Guide</Link>
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
 
       {/* Final Ad Space - Bottom Content */}
       <div className="mt-8">

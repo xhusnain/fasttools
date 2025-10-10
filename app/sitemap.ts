@@ -50,9 +50,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://fasttools.store/faq",
-      lastModified: currentDate,
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
     },
     {
       url: "https://fasttools.store/privacy-policy",
@@ -65,6 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.4,
+    },
+    {
+      url: "https://fasttools.store/resources",
+      lastModified: getFreshnessDate(1), // Updated daily for freshness
+      changeFrequency: "daily" as const,
+      priority: 0.9, // High priority for resource directory
     },
   ]
 
@@ -561,6 +567,257 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     },
+
+      // ===== COMPREHENSIVE GUIDES (High Priority for Link Building) =====
+      // These comprehensive guides are designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/qr-code-generator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for freshness
+        changeFrequency: "daily" as const,
+        priority: 0.95, // Highest priority for comprehensive guides
+      },
+      {
+        url: "https://fasttools.store/guides/currency-converter-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/seo-tools-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/developer-tools-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      // ===== AI TOOL GUIDES (High Priority for Link Building) =====
+      // AI tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/ai-meme-generator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/ai-qr-art-generator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/ai-song-lyrics-generator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/ai-caption-generator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/ai-pet-name-generator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/ai-hashtag-suggester-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== DATE & TIME TOOL GUIDES (High Priority for Link Building) =====
+      // Date & time tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/age-in-hours-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/year-end-countdown-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/workday-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/zodiac-sign-finder-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/date-to-day-finder-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== DEV TOOL GUIDES (High Priority for Link Building) =====
+      // Dev tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/jwt-decoder-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/regex-tester-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/json-to-csv-converter-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/html-beautifier-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/color-palette-generator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/hex-to-rgb-converter-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/markdown-previewer-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/html-to-markdown-converter-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== FINANCE TOOL GUIDES (High Priority for Link Building) =====
+      // Finance tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/invoice-generator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/paypal-fee-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/discount-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/tip-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== FUN TOOL GUIDES (High Priority for Link Building) =====
+      // Fun tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/love-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/future-age-predictor-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== IMAGE TOOL GUIDES (High Priority for Link Building) =====
+      // Image tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/image-to-text-ocr-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/background-blur-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== SEO TOOL GUIDES (High Priority for Link Building) =====
+      // SEO tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/meta-tags-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/lorem-ipsum-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== SOCIAL MEDIA TOOL GUIDES (High Priority for Link Building) =====
+      // Social media tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/youtube-thumbnail-downloader-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/instagram-dp-viewer-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== TOOLS GUIDES (High Priority for Link Building) =====
+      // Tools guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/age-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/bmi-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
 
   ]
 
