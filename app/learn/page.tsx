@@ -30,6 +30,7 @@ const WorkdayCalculatorGuide = dynamic(() => import("@/app/guides/workday-calcul
         const DateDifferenceGuide = dynamic(() => import("@/app/guides/date-difference-calculator-guide/page"), { ssr: false })
         const BMICalculatorGuide = dynamic(() => import("@/app/guides/bmi-calculator-guide/page"), { ssr: false })
         const EMICalculatorGuide = dynamic(() => import("@/app/guides/emi-calculator-guide/page"), { ssr: false })
+        const PercentageCalculatorGuide = dynamic(() => import("@/app/guides/percentage-calculator-guide/page"), { ssr: false })
 
 export default function LearnPage() {
   const [selectedGuide, setSelectedGuide] = useState("age-calculator")
@@ -150,6 +151,11 @@ export default function LearnPage() {
               id: "emi-calculator",
               title: "EMI Calculator Guide",
               href: "/guides/emi-calculator-guide"
+            },
+            {
+              id: "percentage-calculator",
+              title: "Percentage Calculator Guide",
+              href: "/guides/percentage-calculator-guide"
             }
   ]
 
@@ -201,6 +207,8 @@ export default function LearnPage() {
                 return <BMICalculatorGuide />
               case "emi-calculator":
                 return <EMICalculatorGuide />
+              case "percentage-calculator":
+                return <PercentageCalculatorGuide />
               default:
                 return <AgeCalculatorGuide />
     }
