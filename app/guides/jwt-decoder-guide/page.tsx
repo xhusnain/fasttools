@@ -1,20 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Code2, Target, AlertCircle, Heart, Sparkles, Lock, Key } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete JWT Decoder Guide | Free JWT Token Decoder | FastTools",
-  description: "Master JWT decoding with our comprehensive guide. Learn about JWT tokens, decoding methods, security best practices, and use our free JWT decoder tool.",
-  keywords: "JWT decoder, JWT token decoder, JWT decode, JSON Web Token, JWT security, JWT authentication, JWT guide",
-  openGraph: {
-    title: "Complete JWT Decoder Guide | Free JWT Token Decoder",
-    description: "Master JWT decoding with our comprehensive guide. Learn about JWT tokens, decoding methods, security best practices, and use our free JWT decoder tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/jwt-decoder-guide",
-  },
-}
 
 export default function JWTDecoderGuide() {
   const jsonLd = {

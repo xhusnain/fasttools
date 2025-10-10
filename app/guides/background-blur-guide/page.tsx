@@ -1,20 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Image, Target, AlertCircle, Sparkles, Eye, TrendingUp, Globe, Settings, BarChart3, Lightbulb, BookOpen, ExternalLink, Camera } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete Background Blur Guide | Image Blur Effects | FastTools",
-  description: "Master background blur effects with our comprehensive guide. Learn about blur techniques, image processing, photography tips, and use our free background blur tool.",
-  keywords: "background blur, image blur, blur effects, photo editing, image processing, photography, blur guide, image enhancement",
-  openGraph: {
-    title: "Complete Background Blur Guide | Image Blur Effects",
-    description: "Master background blur effects with our comprehensive guide. Learn about blur techniques, image processing, photography tips, and use our free background blur tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/background-blur-guide",
-  },
-}
 
 export default function BackgroundBlurGuide() {
   const jsonLd = {

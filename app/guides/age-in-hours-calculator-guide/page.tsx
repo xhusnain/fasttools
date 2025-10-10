@@ -1,20 +1,7 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Calendar, Timer, Target, AlertCircle, Heart, Sparkles } from "lucide-react"
-
-export const metadata: Metadata = {
-  title: "Complete Age in Hours Calculator Guide | Free Age Calculator | FastTools",
-  description: "Master age calculation with our comprehensive guide. Learn how to calculate age in hours, minutes, seconds, and use our free age in hours calculator tool.",
-  keywords: "age in hours calculator, age calculator, birthday calculator, age in minutes, age in seconds, age calculation, time calculator",
-  openGraph: {
-    title: "Complete Age in Hours Calculator Guide | Free Age Calculator",
-    description: "Master age calculation with our comprehensive guide. Learn how to calculate age in hours, minutes, seconds, and use our free age in hours calculator tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/age-in-hours-calculator-guide",
-  },
-}
 
 export default function AgeInHoursCalculatorGuide() {
   const jsonLd = {

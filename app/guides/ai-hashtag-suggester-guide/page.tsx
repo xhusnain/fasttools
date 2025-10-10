@@ -1,20 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Hash, TrendingUp, Target, Share, Heart, Eye } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete AI Hashtag Suggester Guide | Free Hashtag Generation | FastTools",
-  description: "Master AI hashtag suggestion with our comprehensive guide. Learn how to create effective hashtag strategies, boost engagement, and use our free AI hashtag suggester tool.",
-  keywords: "AI hashtag suggester, hashtag generator, social media hashtags, Instagram hashtags, Twitter hashtags, hashtag strategy, social media marketing",
-  openGraph: {
-    title: "Complete AI Hashtag Suggester Guide | Free Hashtag Generation",
-    description: "Master AI hashtag suggestion with our comprehensive guide. Learn how to create effective hashtag strategies, boost engagement, and use our free AI hashtag suggester tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/ai-hashtag-suggester-guide",
-  },
-}
 
 export default function AIHashtagSuggesterGuide() {
   const jsonLd = {

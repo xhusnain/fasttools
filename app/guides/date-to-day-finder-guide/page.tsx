@@ -1,20 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Calendar, Target, AlertCircle, Heart, Sparkles, Calculator } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete Date to Day Finder Guide | Free Day Calculator | FastTools",
-  description: "Master date to day calculation with our comprehensive guide. Learn about day finding algorithms, calendar systems, and use our free date to day finder tool.",
-  keywords: "date to day finder, day calculator, what day was, day of week calculator, calendar calculator, day finder",
-  openGraph: {
-    title: "Complete Date to Day Finder Guide | Free Day Calculator",
-    description: "Master date to day calculation with our comprehensive guide. Learn about day finding algorithms, calendar systems, and use our free date to day finder tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/date-to-day-finder-guide",
-  },
-}
 
 export default function DateToDayFinderGuide() {
   const jsonLd = {

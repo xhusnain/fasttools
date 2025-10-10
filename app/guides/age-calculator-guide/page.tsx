@@ -1,21 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { AdSpace } from "@/components/ad-space"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Calculator, Target, AlertCircle, Sparkles, TrendingUp, Globe, Settings, BarChart3, Lightbulb, BookOpen, ExternalLink, Calendar } from "lucide-react"
-
-export const metadata: Metadata = {
-  title: "Complete Age Calculator Guide | Free Age Calculation Tools | FastTools",
-  description: "Master age calculation with our comprehensive guide. Learn about age calculation methods, date arithmetic, leap years, and use our free age calculator tool.",
-  keywords: "age calculator, age calculation, date calculator, birthday calculator, age in days, age in years, date arithmetic, leap year calculation",
-  openGraph: {
-    title: "Complete Age Calculator Guide | Free Age Calculation Tools",
-    description: "Master age calculation with our comprehensive guide. Learn about age calculation methods, date arithmetic, leap years, and use our free age calculator tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/age-calculator-guide",
-  },
-}
 
 export default function AgeCalculatorGuide() {
   const jsonLd = {
@@ -137,7 +124,7 @@ export default function AgeCalculatorGuide() {
                       <p className="text-muted-foreground">
                         The fundamental mathematical formula for calculating age is:
                       </p>
-                      <div className="bg-gray-100 p-4 rounded-lg font-mono text-lg">
+                      <div className="bg-slate-800 dark:bg-slate-700 p-4 rounded-lg font-mono text-lg text-white border border-slate-600">
                         <strong>Age = Current Date - Birth Date</strong>
                       </div>
                       <p className="text-muted-foreground">
@@ -154,39 +141,39 @@ export default function AgeCalculatorGuide() {
                   <CardContent>
                     <div className="space-y-4">
                       <h4 className="text-lg font-semibold">Step 1: Date Component Extraction</h4>
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="text-sm text-muted-foreground mb-2">Extract individual components:</p>
-                        <ul className="text-sm space-y-1">
-                          <li>• <strong>Birth Date:</strong> Year₁, Month₁, Day₁</li>
-                          <li>• <strong>Current Date:</strong> Year₂, Month₂, Day₂</li>
+                      <div className="bg-slate-800 dark:bg-slate-700 p-4 rounded-lg border border-slate-600">
+                        <p className="text-sm text-slate-300 mb-2">Extract individual components:</p>
+                        <ul className="text-sm space-y-1 text-slate-200">
+                          <li>• <strong className="text-white">Birth Date:</strong> Year₁, Month₁, Day₁</li>
+                          <li>• <strong className="text-white">Current Date:</strong> Year₂, Month₂, Day₂</li>
                         </ul>
                       </div>
 
                       <h4 className="text-lg font-semibold">Step 2: Year Calculation</h4>
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="text-sm text-muted-foreground mb-2">Calculate years difference:</p>
-                        <div className="font-mono text-sm">
+                      <div className="bg-slate-800 dark:bg-slate-700 p-4 rounded-lg border border-slate-600">
+                        <p className="text-sm text-slate-300 mb-2">Calculate years difference:</p>
+                        <div className="font-mono text-sm text-white">
                           <strong>Years = Year₂ - Year₁</strong>
                         </div>
-                        <p className="text-xs text-muted-foreground mt-2">Adjust if current month/day hasn't reached birth month/day</p>
+                        <p className="text-xs text-slate-400 mt-2">Adjust if current month/day hasn't reached birth month/day</p>
                       </div>
 
                       <h4 className="text-lg font-semibold">Step 3: Month Calculation</h4>
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="text-sm text-muted-foreground mb-2">Calculate months difference:</p>
-                        <div className="font-mono text-sm">
+                      <div className="bg-slate-800 dark:bg-slate-700 p-4 rounded-lg border border-slate-600">
+                        <p className="text-sm text-slate-300 mb-2">Calculate months difference:</p>
+                        <div className="font-mono text-sm text-white">
                           <strong>Months = Month₂ - Month₁</strong>
                         </div>
-                        <p className="text-xs text-muted-foreground mt-2">Adjust if current day hasn't reached birth day</p>
+                        <p className="text-xs text-slate-400 mt-2">Adjust if current day hasn't reached birth day</p>
                       </div>
 
                       <h4 className="text-lg font-semibold">Step 4: Day Calculation</h4>
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="text-sm text-muted-foreground mb-2">Calculate days difference:</p>
-                        <div className="font-mono text-sm">
+                      <div className="bg-slate-800 dark:bg-slate-700 p-4 rounded-lg border border-slate-600">
+                        <p className="text-sm text-slate-300 mb-2">Calculate days difference:</p>
+                        <div className="font-mono text-sm text-white">
                           <strong>Days = Day₂ - Day₁</strong>
                         </div>
-                        <p className="text-xs text-muted-foreground mt-2">Handle negative results by borrowing from months</p>
+                        <p className="text-xs text-slate-400 mt-2">Handle negative results by borrowing from months</p>
                       </div>
                     </div>
                   </CardContent>
@@ -201,11 +188,11 @@ export default function AgeCalculatorGuide() {
                       <p className="text-muted-foreground">
                         Leap years affect age calculation accuracy. Here are the mathematical rules:
                       </p>
-                      <div className="bg-blue-50 p-4 rounded-lg">
-                        <h4 className="font-semibold mb-2">Leap Year Formula:</h4>
+                      <div className="bg-slate-800 dark:bg-slate-700 p-4 rounded-lg border border-slate-600">
+                        <h4 className="font-semibold mb-2 text-white">Leap Year Formula:</h4>
                         <div className="font-mono text-sm space-y-1">
-                          <div><strong>if (year % 4 == 0 AND year % 100 != 0) OR (year % 400 == 0)</strong></div>
-                          <div className="text-muted-foreground">then year is a leap year</div>
+                          <div className="text-white"><strong>if (year % 4 == 0 AND year % 100 != 0) OR (year % 400 == 0)</strong></div>
+                          <div className="text-slate-400">then year is a leap year</div>
                         </div>
                       </div>
                       <ul className="text-sm space-y-1">
@@ -225,34 +212,34 @@ export default function AgeCalculatorGuide() {
                   <CardContent>
                     <div className="space-y-4">
                       <h4 className="text-lg font-semibold">Age in Days Calculation</h4>
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="text-sm text-muted-foreground mb-2">Formula for total days:</p>
-                        <div className="font-mono text-sm">
+                      <div className="bg-slate-800 dark:bg-slate-700 p-4 rounded-lg border border-slate-600">
+                        <p className="text-sm text-slate-300 mb-2">Formula for total days:</p>
+                        <div className="font-mono text-sm text-white">
                           <strong>Total Days = (Current Date - Birth Date) in days</strong>
                         </div>
-                        <p className="text-xs text-muted-foreground mt-2">Account for leap years: 365.25 days per year average</p>
+                        <p className="text-xs text-slate-400 mt-2">Account for leap years: 365.25 days per year average</p>
                       </div>
 
                       <h4 className="text-lg font-semibold">Age in Hours Calculation</h4>
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="text-sm text-muted-foreground mb-2">Formula for total hours:</p>
-                        <div className="font-mono text-sm">
+                      <div className="bg-slate-800 dark:bg-slate-700 p-4 rounded-lg border border-slate-600">
+                        <p className="text-sm text-slate-300 mb-2">Formula for total hours:</p>
+                        <div className="font-mono text-sm text-white">
                           <strong>Total Hours = Total Days × 24</strong>
                         </div>
                       </div>
 
                       <h4 className="text-lg font-semibold">Age in Minutes Calculation</h4>
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="text-sm text-muted-foreground mb-2">Formula for total minutes:</p>
-                        <div className="font-mono text-sm">
+                      <div className="bg-slate-800 dark:bg-slate-700 p-4 rounded-lg border border-slate-600">
+                        <p className="text-sm text-slate-300 mb-2">Formula for total minutes:</p>
+                        <div className="font-mono text-sm text-white">
                           <strong>Total Minutes = Total Hours × 60</strong>
                         </div>
                       </div>
 
                       <h4 className="text-lg font-semibold">Age in Seconds Calculation</h4>
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="text-sm text-muted-foreground mb-2">Formula for total seconds:</p>
-                        <div className="font-mono text-sm">
+                      <div className="bg-slate-800 dark:bg-slate-700 p-4 rounded-lg border border-slate-600">
+                        <p className="text-sm text-slate-300 mb-2">Formula for total seconds:</p>
+                        <div className="font-mono text-sm text-white">
                           <strong>Total Seconds = Total Minutes × 60</strong>
                         </div>
                       </div>
@@ -267,30 +254,30 @@ export default function AgeCalculatorGuide() {
                   <CardContent>
                     <div className="space-y-4">
                       <h4 className="text-lg font-semibold">Example 1: Basic Age Calculation</h4>
-                      <div className="bg-green-50 p-4 rounded-lg">
-                        <p className="text-sm text-muted-foreground mb-2">Given:</p>
-                        <ul className="text-sm space-y-1">
+                      <div className="bg-slate-800 dark:bg-slate-700 p-4 rounded-lg border border-slate-600">
+                        <p className="text-sm text-slate-300 mb-2">Given:</p>
+                        <ul className="text-sm space-y-1 text-slate-200">
                           <li>• Birth Date: January 15, 1990</li>
                           <li>• Current Date: December 19, 2024</li>
                         </ul>
-                        <p className="text-sm text-muted-foreground mt-2">Calculation:</p>
-                        <ul className="text-sm space-y-1">
+                        <p className="text-sm text-slate-300 mt-2">Calculation:</p>
+                        <ul className="text-sm space-y-1 text-slate-200">
                           <li>• Years: 2024 - 1990 = 34 years</li>
                           <li>• Months: 12 - 1 = 11 months</li>
                           <li>• Days: 19 - 15 = 4 days</li>
                         </ul>
-                        <p className="text-sm font-semibold mt-2">Result: 34 years, 11 months, 4 days</p>
+                        <p className="text-sm font-semibold mt-2 text-white">Result: 34 years, 11 months, 4 days</p>
                       </div>
 
                       <h4 className="text-lg font-semibold">Example 2: Leap Year Calculation</h4>
-                      <div className="bg-blue-50 p-4 rounded-lg">
-                        <p className="text-sm text-muted-foreground mb-2">Given:</p>
-                        <ul className="text-sm space-y-1">
+                      <div className="bg-slate-800 dark:bg-slate-700 p-4 rounded-lg border border-slate-600">
+                        <p className="text-sm text-slate-300 mb-2">Given:</p>
+                        <ul className="text-sm space-y-1 text-slate-200">
                           <li>• Birth Date: February 29, 2000 (leap year)</li>
                           <li>• Current Date: December 19, 2024</li>
                         </ul>
-                        <p className="text-sm text-muted-foreground mt-2">Special handling for leap year birthdays:</p>
-                        <ul className="text-sm space-y-1">
+                        <p className="text-sm text-slate-300 mt-2">Special handling for leap year birthdays:</p>
+                        <ul className="text-sm space-y-1 text-slate-200">
                           <li>• Use February 28 for non-leap years</li>
                           <li>• Use February 29 for leap years</li>
                           <li>• 2000, 2004, 2008, 2012, 2016, 2020, 2024 are leap years</li>

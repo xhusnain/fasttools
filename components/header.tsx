@@ -40,6 +40,12 @@ export function Header() {
             Tools
           </Link>
           <Link
+            href="/learn"
+            className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
+          >
+            Learn
+          </Link>
+          <Link
             href="/about"
             className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
           >
@@ -128,6 +134,13 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
+              </Link>
+              <Link
+                href="/learn"
+                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Learn
               </Link>
               <Link
                 href="/about"

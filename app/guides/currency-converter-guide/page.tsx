@@ -1,4 +1,3 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -22,17 +21,6 @@ import {
   CircleDollarSign
 } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete Currency Converter Guide | Free Exchange Rate Tools | FastTools",
-  description: "Master currency conversion with our comprehensive guide. Learn about exchange rates, major currency pairs, conversion tips, and use our free currency converter tool.",
-  keywords: "currency converter, exchange rates, currency conversion, forex, international trading, money converter, exchange rate calculator, currency guide",
-  openGraph: {
-    title: "Complete Currency Converter Guide | Free Exchange Rate Tools",
-    description: "Master currency conversion with our comprehensive guide. Learn about exchange rates, major currency pairs, conversion tips, and use our free currency converter tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/currency-converter-guide",
-  },
-}
 
 export default function CurrencyConverterGuide() {
   const jsonLd = {

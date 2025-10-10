@@ -1,20 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Calendar, Briefcase, Target, AlertCircle, Heart, Sparkles, Calculator } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete Workday Calculator Guide | Free Business Days Calculator | FastTools",
-  description: "Master workday calculation with our comprehensive guide. Learn about business days, workday calculations, and use our free workday calculator tool.",
-  keywords: "workday calculator, business days calculator, workday calculation, business days, workdays, weekdays calculator, business calendar",
-  openGraph: {
-    title: "Complete Workday Calculator Guide | Free Business Days Calculator",
-    description: "Master workday calculation with our comprehensive guide. Learn about business days, workday calculations, and use our free workday calculator tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/workday-calculator-guide",
-  },
-}
 
 export default function WorkdayCalculatorGuide() {
   const jsonLd = {

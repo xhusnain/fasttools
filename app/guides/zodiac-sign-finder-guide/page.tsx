@@ -1,20 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Calendar, Sparkles, Target, AlertCircle, Heart, Moon, Sun } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete Zodiac Sign Finder Guide | Free Zodiac Calculator | FastTools",
-  description: "Master zodiac sign calculation with our comprehensive guide. Learn about zodiac signs, astrology, and use our free zodiac sign finder tool.",
-  keywords: "zodiac sign finder, zodiac calculator, astrology, zodiac signs, horoscope, birth chart, zodiac compatibility",
-  openGraph: {
-    title: "Complete Zodiac Sign Finder Guide | Free Zodiac Calculator",
-    description: "Master zodiac sign calculation with our comprehensive guide. Learn about zodiac signs, astrology, and use our free zodiac sign finder tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/zodiac-sign-finder-guide",
-  },
-}
 
 export default function ZodiacSignFinderGuide() {
   const jsonLd = {

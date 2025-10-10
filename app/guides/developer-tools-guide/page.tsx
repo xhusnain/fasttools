@@ -1,20 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Code, Palette, FileText } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete Developer Tools Guide | Free Dev Tools & Utilities | FastTools",
-  description: "Master web development with our comprehensive guide to free developer tools. Learn about code formatting, validation, conversion, and use our free dev tools for better productivity.",
-  keywords: "developer tools, dev tools, code formatter, HTML beautifier, JSON converter, developer utilities, web development tools",
-  openGraph: {
-    title: "Complete Developer Tools Guide | Free Dev Tools & Utilities",
-    description: "Master web development with our comprehensive guide to free developer tools. Learn about code formatting, validation, conversion, and use our free dev tools for better productivity.",
-    type: "article",
-    url: "https://fasttools.store/guides/developer-tools-guide",
-  },
-}
 
 export default function DeveloperToolsGuide() {
   const jsonLd = {

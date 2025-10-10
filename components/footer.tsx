@@ -339,6 +339,60 @@ export function Footer() {
           </div>
 
           <div>
+            <h3 className="font-semibold mb-4 text-sm text-foreground tracking-wide">Learn</h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link
+                  href="/learn"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  All Guides
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/guides/age-calculator-guide"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  Age Calculator Guide
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/guides/currency-converter-guide"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  Currency Converter Guide
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/guides/seo-tools-guide"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  SEO Tools Guide
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/guides/developer-tools-guide"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  Developer Tools Guide
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/guides/ai-caption-generator-guide"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  AI Tools Guide
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
             <h3 className="font-semibold mb-4 text-sm text-foreground tracking-wide">Company</h3>
             <ul className="space-y-2.5">
               <li>

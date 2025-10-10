@@ -1,20 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Ruler, Target, Globe, Calculator, AlertCircle } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete Length Converter Guide | Free Length Conversion | FastTools",
-  description: "Master length conversion with our comprehensive guide. Learn about metric and imperial units, conversion formulas, and use our free length converter tool.",
-  keywords: "length converter, unit converter, metric conversion, imperial conversion, feet to meters, inches to cm, length conversion guide",
-  openGraph: {
-    title: "Complete Length Converter Guide | Free Length Conversion",
-    description: "Master length conversion with our comprehensive guide. Learn about metric and imperial units, conversion formulas, and use our free length converter tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/length-converter-guide",
-  },
-}
 
 export default function LengthConverterGuide() {
   const jsonLd = {

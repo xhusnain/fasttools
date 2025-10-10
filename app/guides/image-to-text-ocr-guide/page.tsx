@@ -1,20 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, FileText, Target, AlertCircle, Sparkles, Eye, TrendingUp, Globe, Settings, BarChart3, Lightbulb, BookOpen, ExternalLink, Image } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete Image to Text (OCR) Guide | Text Extraction Guide | FastTools",
-  description: "Master OCR text extraction with our comprehensive guide. Learn about OCR technology, text recognition, image processing, and use our free image to text converter tool.",
-  keywords: "image to text, OCR converter, text extraction, OCR technology, image processing, document digitization, text recognition, OCR guide",
-  openGraph: {
-    title: "Complete Image to Text (OCR) Guide | Text Extraction Guide",
-    description: "Master OCR text extraction with our comprehensive guide. Learn about OCR technology, text recognition, image processing, and use our free image to text converter tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/image-to-text-ocr-guide",
-  },
-}
 
 export default function ImageToTextOCRGuide() {
   const jsonLd = {

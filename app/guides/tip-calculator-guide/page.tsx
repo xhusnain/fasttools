@@ -1,20 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Calculator, Target, AlertCircle, Heart, Sparkles, DollarSign, TrendingUp, Globe, Settings, BarChart3, Lightbulb, BookOpen, ExternalLink, Utensils } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete Tip Calculator Guide | Restaurant Tip Calculator | FastTools",
-  description: "Master tip calculations with our comprehensive guide. Learn tipping etiquette, tip percentages, bill splitting, and use our free tip calculator tool.",
-  keywords: "tip calculator, restaurant tips, tipping etiquette, bill splitter, tip percentage, gratuity calculator, service tips",
-  openGraph: {
-    title: "Complete Tip Calculator Guide | Restaurant Tip Calculator",
-    description: "Master tip calculations with our comprehensive guide. Learn tipping etiquette, tip percentages, bill splitting, and use our free tip calculator tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/tip-calculator-guide",
-  },
-}
 
 export default function TipCalculatorGuide() {
   const jsonLd = {

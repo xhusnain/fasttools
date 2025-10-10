@@ -1,20 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Thermometer, Sun, Snowflake, Droplets, Target, AlertCircle } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete Temperature Converter Guide | Free Temperature Conversion | FastTools",
-  description: "Master temperature conversion with our comprehensive guide. Learn about Celsius, Fahrenheit, Kelvin scales, conversion formulas, and use our free temperature converter tool.",
-  keywords: "temperature converter, celsius to fahrenheit, fahrenheit to celsius, kelvin converter, temperature conversion, temperature scales, weather conversion",
-  openGraph: {
-    title: "Complete Temperature Converter Guide | Free Temperature Conversion",
-    description: "Master temperature conversion with our comprehensive guide. Learn about Celsius, Fahrenheit, Kelvin scales, conversion formulas, and use our free temperature converter tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/temperature-converter-guide",
-  },
-}
 
 export default function TemperatureConverterGuide() {
   const jsonLd = {

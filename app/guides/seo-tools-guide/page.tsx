@@ -1,20 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Search, TrendingUp } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete SEO Tools Guide | Free SEO Tools & Optimization | FastTools",
-  description: "Master SEO with our comprehensive guide to free SEO tools. Learn about keyword research, meta tags, content optimization, and use our free SEO tools for better rankings.",
-  keywords: "SEO tools, free SEO tools, SEO optimization, keyword research, meta tags, SEO guide, search engine optimization",
-  openGraph: {
-    title: "Complete SEO Tools Guide | Free SEO Tools & Optimization",
-    description: "Master SEO with our comprehensive guide to free SEO tools. Learn about keyword research, meta tags, content optimization, and use our free SEO tools for better rankings.",
-    type: "article",
-    url: "https://fasttools.store/guides/seo-tools-guide",
-  },
-}
 
 export default function SEOToolsGuide() {
   const jsonLd = {

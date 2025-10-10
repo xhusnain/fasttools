@@ -1,20 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Percent, Target, AlertCircle, Heart, Sparkles, Calculator, Banknote, TrendingUp, Globe, Settings, BarChart3, Lightbulb, BookOpen, ExternalLink, Brain } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete Discount Calculator Guide | Sale Price Calculator | FastTools",
-  description: "Master discount calculations with our comprehensive guide. Learn discount strategies, sale pricing, percentage calculations, and use our free discount calculator tool.",
-  keywords: "discount calculator, sale price calculator, percentage discount, discount strategies, retail pricing, sale pricing, discount guide",
-  openGraph: {
-    title: "Complete Discount Calculator Guide | Sale Price Calculator",
-    description: "Master discount calculations with our comprehensive guide. Learn discount strategies, sale pricing, percentage calculations, and use our free discount calculator tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/discount-calculator-guide",
-  },
-}
 
 export default function DiscountCalculatorGuide() {
   const jsonLd = {

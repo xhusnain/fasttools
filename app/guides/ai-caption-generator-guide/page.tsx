@@ -1,20 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Image, Hash, Heart, Share, TrendingUp, Target, Smartphone } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete AI Caption Generator Guide | Free Social Media Captions | FastTools",
-  description: "Master AI caption generation with our comprehensive guide. Learn how to create engaging social media captions, boost engagement, and use our free AI caption generator tool.",
-  keywords: "AI caption generator, social media captions, Instagram captions, Facebook captions, Twitter captions, engagement, social media marketing",
-  openGraph: {
-    title: "Complete AI Caption Generator Guide | Free Social Media Captions",
-    description: "Master AI caption generation with our comprehensive guide. Learn how to create engaging social media captions, boost engagement, and use our free AI caption generator tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/ai-caption-generator-guide",
-  },
-}
 
 export default function AICaptionGeneratorGuide() {
   const jsonLd = {

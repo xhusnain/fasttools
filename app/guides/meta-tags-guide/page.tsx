@@ -1,20 +1,8 @@
-import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Code, Target, AlertCircle, Sparkles, Search, TrendingUp, Globe, Settings, BarChart3, Lightbulb, BookOpen, ExternalLink, Tag } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Complete Meta Tags Guide | SEO Meta Tags Generator | FastTools",
-  description: "Master meta tags for SEO with our comprehensive guide. Learn about title tags, meta descriptions, Open Graph, Twitter cards, and use our free meta tag generator tool.",
-  keywords: "meta tags, SEO meta tags, title tags, meta descriptions, Open Graph, Twitter cards, schema markup, meta tag generator, SEO optimization",
-  openGraph: {
-    title: "Complete Meta Tags Guide | SEO Meta Tags Generator",
-    description: "Master meta tags for SEO with our comprehensive guide. Learn about title tags, meta descriptions, Open Graph, Twitter cards, and use our free meta tag generator tool.",
-    type: "article",
-    url: "https://fasttools.store/guides/meta-tags-guide",
-  },
-}
 
 export default function MetaTagsGuide() {
   const jsonLd = {
