@@ -4,9 +4,9 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free EMI Calculator for Home Loan, Car Loan & Personal Loan in India | FastTools",
+  title: "Advanced EMI Calculator | Home Loan, Car Loan & Personal Loan Calculator | FastTools",
   description:
-    "Calculate EMI for home loans, car loans, personal loans, and education loans in India. Get detailed amortization schedule, yearly payment breakdown, and total interest calculation. Free online EMI calculator with charts and tables.",
+    "Calculate EMI for home loans, car loans, personal loans, and education loans worldwide. Get detailed amortization schedule, yearly payment breakdown, visual charts, and comprehensive loan analysis. Free online EMI calculator with advanced features.",
   keywords: [
     "EMI calculator",
     "loan calculator",
@@ -17,25 +17,26 @@ export const metadata: Metadata = {
     "loan amortization schedule",
     "EMI calculation formula",
     "loan payment calculator",
-    "mortgage calculator India",
     "free EMI calculator",
     "online loan calculator",
     "EMI calculator with prepayment",
     "loan interest calculator",
-    "EMI calculator India",
-    "home loan calculator India",
-    "car loan calculator India",
-    "personal loan calculator India"
+    "home loan calculator",
+    "car loan calculator", 
+    "personal loan calculator",
+    "education loan calculator",
+    "loan amortization calculator",
+    "mortgage calculator"
   ],
   openGraph: {
-    title: "Free Loan EMI Calculator - Calculate Monthly Payments | FastTools",
+    title: "Advanced EMI Calculator - Calculate Monthly Payments | FastTools",
     description: "Calculate your monthly loan payments (EMI) with our free online calculator. Works for all types of loans.",
     type: "website",
     url: "https://fasttools.store/tools/loan-calculator",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Loan EMI Calculator - Calculate Monthly Payments",
+    title: "Advanced EMI Calculator - Calculate Monthly Payments",
     description: "Calculate your monthly loan payments (EMI) with our free online calculator.",
   },
   alternates: {
@@ -99,10 +100,10 @@ export default function LoanCalculatorPage() {
 
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">EMI Calculator for Home Loan, Car Loan & Personal Loan in India</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Advanced EMI Calculator | Home Loan, Car Loan & Personal Loan Calculator</h1>
           <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-            Calculate your Equated Monthly Installment (EMI) for home loans, car loans, personal loans, and education loans in India. 
-            Get detailed amortization schedule, yearly payment breakdown, and comprehensive loan analysis with our free online EMI calculator.
+            Calculate your Equated Monthly Installment (EMI) for home loans, car loans, personal loans, and education loans worldwide. 
+            Get detailed amortization schedule, yearly payment breakdown, visual charts, and comprehensive loan analysis with our free online EMI calculator.
           </p>
         </div>
 

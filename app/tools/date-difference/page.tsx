@@ -183,7 +183,7 @@ export default function DateDifferencePage() {
           ]}
         />
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="mb-8">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Date Difference Calculator</h1>
             <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
@@ -197,7 +197,7 @@ export default function DateDifferencePage() {
           <AdSpace slot="content" className="w-full h-24" />
         </div>
 
-        <div className="grid md:grid-cols-[1fr_300px] gap-6">
+        <div className="grid lg:grid-cols-[1fr_350px] gap-8">
           <div>
             <DateDifferenceCalculator />
             
@@ -207,7 +207,88 @@ export default function DateDifferencePage() {
             </div>
           </div>
           <div className="space-y-6">
-            <AdSpace slot="sidebar" className="h-96 sticky top-4" />
+            {/* Sticky Sidebar Container */}
+            <div className="sticky top-4 space-y-6">
+              {/* Top Sidebar Ad */}
+              <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-4 shadow-xl">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-6 h-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                    <svg className="h-3 w-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">Sponsored</span>
+                </div>
+                <AdSpace slot="sidebar" className="h-80 rounded-xl overflow-hidden" />
+              </div>
+
+              {/* Date Calculation Tips */}
+              <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-4 shadow-xl">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-6 h-6 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center">
+                    <Calendar className="h-3 w-3 text-white" />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">Date Tips</span>
+                </div>
+                <div className="space-y-3">
+                  <div className="p-3 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-blue-900/30 rounded-lg border border-blue-200 dark:border-blue-800">
+                    <div className="text-sm font-semibold text-blue-800 dark:text-blue-200 mb-1">Business Days</div>
+                    <div className="text-xs text-blue-700 dark:text-blue-300">Excludes weekends for project planning</div>
+                  </div>
+                  <div className="p-3 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
+                    <div className="text-sm font-semibold text-green-800 dark:text-green-200 mb-1">Leap Years</div>
+                    <div className="text-xs text-green-700 dark:text-green-300">Automatically calculated for accuracy</div>
+                  </div>
+                  <div className="p-3 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30 rounded-lg border border-purple-200 dark:border-purple-800">
+                    <div className="text-sm font-semibold text-purple-800 dark:text-purple-200 mb-1">Multiple Formats</div>
+                    <div className="text-xs text-purple-700 dark:text-purple-300">US, EU, and ISO date formats supported</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Date Formats Guide */}
+              <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-4 shadow-xl">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-6 h-6 bg-gradient-to-r from-orange-600 to-red-600 rounded-lg flex items-center justify-center">
+                    <Clock className="h-3 w-3 text-white" />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">Date Formats</span>
+                </div>
+                <div className="space-y-3">
+                  <div className="p-3 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 rounded-lg border border-blue-200 dark:border-blue-800">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-sm font-semibold text-blue-800 dark:text-blue-200">US Format</span>
+                    </div>
+                    <div className="text-xs text-blue-700 dark:text-blue-300">MM/DD/YYYY (12/25/2024)</div>
+                  </div>
+                  <div className="p-3 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-950/30 dark:to-green-900/30 rounded-lg border border-green-200 dark:border-green-800">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-sm font-semibold text-green-800 dark:text-green-200">EU Format</span>
+                    </div>
+                    <div className="text-xs text-green-700 dark:text-green-300">DD/MM/YYYY (25/12/2024)</div>
+                  </div>
+                  <div className="p-3 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-950/30 dark:to-purple-900/30 rounded-lg border border-purple-200 dark:border-purple-800">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-sm font-semibold text-purple-800 dark:text-purple-200">ISO Format</span>
+                    </div>
+                    <div className="text-xs text-purple-700 dark:text-purple-300">YYYY-MM-DD (2024-12-25)</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Additional Sidebar Ad */}
+              <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-4 shadow-xl">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-6 h-6 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center">
+                    <svg className="h-3 w-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">Sponsored</span>
+                </div>
+                <AdSpace slot="sidebar" className="h-80 rounded-xl overflow-hidden" />
+              </div>
+            </div>
           </div>
         </div>
 

@@ -8,8 +8,8 @@ export default function EMICalculatorGuide() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Complete EMI Calculator Guide | Free EMI Calculation Tools | FastTools",
-    description: "Master EMI calculation with our comprehensive guide. Learn EMI formulas, amortization schedules, loan types, and use our free EMI calculator tool for home loans, car loans, and personal loans.",
+    headline: "Complete EMI Calculator Guide 2024 | Advanced Loan Calculator with Amortization Schedule | FastTools",
+    description: "Master EMI calculation with our comprehensive 2024 guide. Learn advanced EMI formulas, amortization schedules, loan types, and use our free EMI calculator tool with visual charts for home loans, car loans, personal loans, and education loans.",
     author: {
       "@type": "Organization",
       name: "FastTools"
@@ -34,12 +34,14 @@ export default function EMICalculatorGuide() {
         priceCurrency: "USD"
       },
       featureList: [
-        "Detailed amortization schedule",
-        "Yearly and monthly payment breakdown",
-        "Multiple loan type support",
-        "EMI in arrears and advance calculation",
-        "Visual payment analysis",
-        "Export and share functionality"
+        "Advanced amortization schedule with yearly and monthly views",
+        "Visual payment analysis charts and graphs",
+        "Multiple loan type support (Home, Car, Personal, Education)",
+        "EMI in arrears and advance calculation options",
+        "Real-time payment breakdown visualization",
+        "Export and share functionality",
+        "Mobile-responsive design",
+        "Banking-grade calculation accuracy"
       ]
     }
   }
@@ -63,11 +65,11 @@ export default function EMICalculatorGuide() {
                   <span>Complete EMI Guide</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-100 dark:to-purple-100 bg-clip-text text-transparent">
-                  EMI Calculator Guide
+                  Complete EMI Calculator Guide 2024 | Advanced Loan Calculator with Visual Charts
                 </h1>
                 <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-                  Master Equated Monthly Installment calculation with our comprehensive guide. Learn EMI formulas, 
-                  amortization schedules, loan types, and advanced calculation methods.
+                  Master Equated Monthly Installment calculation with our comprehensive 2024 guide. Learn advanced EMI formulas, 
+                  amortization schedules, loan types, visual payment analysis, and banking-grade calculation methods for all loan types.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4 text-sm">
                   <div className="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700">
@@ -84,6 +86,64 @@ export default function EMICalculatorGuide() {
                   </div>
                 </div>
               </div>
+
+              {/* Advanced Features Section */}
+              <section className="mb-12">
+                <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+                  <div className="p-2 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 rounded-lg">
+                    <TrendingUp className="h-6 w-6 text-blue-600" />
+                  </div>
+                  Advanced EMI Calculator Features 2024
+                </h2>
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-2xl p-8 border-2 border-blue-200 dark:border-blue-800">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-xl font-semibold text-blue-800 dark:text-blue-200 mb-4 flex items-center gap-2">
+                          <BarChart3 className="h-5 w-5" />
+                          Visual Payment Analysis
+                        </h3>
+                        <ul className="space-y-3">
+                          <li className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-slate-700 dark:text-slate-300">Interactive yearly and monthly payment charts with real-time visualization</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-slate-700 dark:text-slate-300">Visual breakdown of principal vs interest payments with color-coded charts</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-slate-700 dark:text-slate-300">Progress tracking with loan completion percentage and balance visualization</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-xl font-semibold text-blue-800 dark:text-blue-200 mb-4 flex items-center gap-2">
+                          <Calculator className="h-5 w-5" />
+                          Comprehensive Loan Support
+                        </h3>
+                        <ul className="space-y-3">
+                          <li className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-slate-700 dark:text-slate-300">Home loans with EMI in arrears calculation and detailed amortization</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-slate-700 dark:text-slate-300">Car loans with EMI in advance option for better financial planning</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-slate-700 dark:text-slate-300">Personal and education loan calculations with flexible tenure options</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
               {/* Mathematical Calculation Section */}
               <section className="mb-12">
@@ -381,26 +441,26 @@ export default function EMICalculatorGuide() {
                 <div className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950/20 dark:to-purple-950/20 rounded-2xl p-8 border-2 border-indigo-200 dark:border-indigo-800">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <h3 className="text-xl font-bold text-indigo-800 dark:text-indigo-200 mb-4">EMI Calculator Directories</h3>
+                      <h3 className="text-xl font-bold text-indigo-800 dark:text-indigo-200 mb-4">Top EMI Calculator Directories</h3>
                       <div className="space-y-3">
                         <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
                           <a href="https://emicalculator.net" className="text-blue-600 hover:underline text-sm">
-                            EMI Calculator.net - Comprehensive EMI tools
+                            EMI Calculator.net - Comprehensive EMI tools with amortization
                           </a>
                         </div>
                         <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
                           <a href="https://calculator.net" className="text-blue-600 hover:underline text-sm">
-                            Calculator.net - Multi-purpose calculators
+                            Calculator.net - Multi-purpose financial calculators
                           </a>
                         </div>
                         <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
                           <a href="https://calculatorsoup.com" className="text-blue-600 hover:underline text-sm">
-                            CalculatorSoup - Financial calculators
+                            CalculatorSoup - Advanced financial calculators
                           </a>
                         </div>
                         <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
                           <a href="https://bankbazaar.com" className="text-blue-600 hover:underline text-sm">
-                            BankBazaar - Loan comparison platform
+                            BankBazaar - Loan comparison and EMI calculator
                           </a>
                         </div>
                         <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
@@ -413,30 +473,130 @@ export default function EMICalculatorGuide() {
                             PolicyBazaar - Insurance and loan platform
                           </a>
                         </div>
+                        <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
+                          <a href="https://hdfc.com" className="text-blue-600 hover:underline text-sm">
+                            HDFC Bank - Home loan EMI calculator
+                          </a>
+                        </div>
+                        <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
+                          <a href="https://sbi.co.in" className="text-blue-600 hover:underline text-sm">
+                            SBI - Personal loan EMI calculator
+                          </a>
+                        </div>
+                        <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
+                          <a href="https://icicibank.com" className="text-blue-600 hover:underline text-sm">
+                            ICICI Bank - Car loan EMI calculator
+                          </a>
+                        </div>
                       </div>
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-bold text-indigo-800 dark:text-indigo-200 mb-4">Mobile EMI Calculator Apps</h3>
+                      <h3 className="text-xl font-bold text-indigo-800 dark:text-indigo-200 mb-4">Financial Resources & Tools</h3>
                       <div className="space-y-3">
                         <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
-                          <div className="text-sm text-indigo-700 dark:text-indigo-300">
-                            <strong>EMI Calculator by BankBazaar</strong><br/>
-                            Free Android & iOS app with loan comparison
-                          </div>
+                          <a href="https://rbi.org.in" className="text-blue-600 hover:underline text-sm">
+                            RBI - Reserve Bank of India official rates
+                          </a>
                         </div>
                         <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
-                          <div className="text-sm text-indigo-700 dark:text-indigo-300">
-                            <strong>Loan EMI Calculator</strong><br/>
-                            Simple and user-friendly interface
-                          </div>
+                          <a href="https://cibil.com" className="text-blue-600 hover:underline text-sm">
+                            CIBIL - Credit score and loan eligibility
+                          </a>
                         </div>
                         <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
-                          <div className="text-sm text-indigo-700 dark:text-indigo-300">
-                            <strong>Financial Calculator Pro</strong><br/>
-                            Advanced financial calculations
-                          </div>
+                          <a href="https://moneycontrol.com" className="text-blue-600 hover:underline text-sm">
+                            MoneyControl - Financial news and tools
+                          </a>
                         </div>
+                        <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
+                          <a href="https://economictimes.com" className="text-blue-600 hover:underline text-sm">
+                            Economic Times - Business and finance news
+                          </a>
+                        </div>
+                        <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
+                          <a href="https://livemint.com" className="text-blue-600 hover:underline text-sm">
+                            LiveMint - Financial planning and advice
+                          </a>
+                        </div>
+                        <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
+                          <a href="https://business-standard.com" className="text-blue-600 hover:underline text-sm">
+                            Business Standard - Loan and banking news
+                          </a>
+                        </div>
+                        <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
+                          <a href="https://financialexpress.com" className="text-blue-600 hover:underline text-sm">
+                            Financial Express - Personal finance tools
+                          </a>
+                        </div>
+                        <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
+                          <a href="https://zeebiz.com" className="text-blue-600 hover:underline text-sm">
+                            Zee Business - Investment and loan advice
+                          </a>
+                        </div>
+                        <div className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-indigo-200 dark:border-indigo-700">
+                          <a href="https://cnbctv18.com" className="text-blue-600 hover:underline text-sm">
+                            CNBC TV18 - Financial market updates
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Visual Charts and Analysis Section */}
+              <section className="mb-12">
+                <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+                  <div className="p-2 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 rounded-lg">
+                    <BarChart3 className="h-6 w-6 text-purple-600" />
+                  </div>
+                  Visual Payment Analysis & Charts
+                </h2>
+                <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 rounded-2xl p-8 border-2 border-purple-200 dark:border-purple-800">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-xl font-semibold text-purple-800 dark:text-purple-200 mb-4 flex items-center gap-2">
+                          <PieChart className="h-5 w-5" />
+                          Payment Breakdown Charts
+                        </h3>
+                        <ul className="space-y-3">
+                          <li className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-slate-700 dark:text-slate-300">Interactive pie charts showing principal vs interest distribution</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-slate-700 dark:text-slate-300">Yearly payment breakdown with visual progress bars</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-slate-700 dark:text-slate-300">Monthly payment analysis with color-coded charts</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-xl font-semibold text-purple-800 dark:text-purple-200 mb-4 flex items-center gap-2">
+                          <TrendingUp className="h-5 w-5" />
+                          Advanced Analytics
+                        </h3>
+                        <ul className="space-y-3">
+                          <li className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-slate-700 dark:text-slate-300">Loan completion percentage tracking with visual indicators</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-slate-700 dark:text-slate-300">Balance reduction visualization over loan tenure</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-slate-700 dark:text-slate-300">Interest savings analysis with prepayment scenarios</span>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                   </div>

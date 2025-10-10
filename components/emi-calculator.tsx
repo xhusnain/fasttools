@@ -333,8 +333,7 @@ export function EMICalculator() {
       </Card>
 
       {/* Results Section */}
-      {result && loanAmount && interestRate && loanTenure && (
-        <div className="space-y-6">
+      <div className="space-y-6">
           {/* Main Results */}
           <Card className="shadow-lg border-primary/20 animate-fade-in-up bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20">
             <CardHeader>
@@ -349,7 +348,7 @@ export function EMICalculator() {
               {/* Main EMI Display */}
               <div className="text-center p-6 sm:p-8 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-primary/20">
                 <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-                  {formatCurrency(result.emi)}
+                  {result ? formatCurrency(result.emi) : "₹0"}
                 </div>
                 <div className="text-lg sm:text-xl text-muted-foreground">Monthly EMI</div>
               </div>
@@ -358,19 +357,19 @@ export function EMICalculator() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div className="p-4 sm:p-6 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 border-2 border-blue-200 dark:border-blue-800">
                   <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-1">
-                    {formatCurrency(result.totalPayment)}
+                    {result ? formatCurrency(result.totalPayment) : "₹0"}
                   </div>
                   <div className="text-sm sm:text-base text-blue-800 dark:text-blue-200">Total Payment</div>
                 </div>
                 <div className="p-4 sm:p-6 rounded-xl bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950/30 dark:to-orange-900/30 border-2 border-orange-200 dark:border-orange-800">
                   <div className="text-2xl sm:text-3xl font-bold text-orange-600 mb-1">
-                    {formatCurrency(result.totalInterest)}
+                    {result ? formatCurrency(result.totalInterest) : "₹0"}
                   </div>
                   <div className="text-sm sm:text-base text-orange-800 dark:text-orange-200">Total Interest</div>
                 </div>
                 <div className="p-4 sm:p-6 rounded-xl bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/30 dark:to-purple-900/30 border-2 border-purple-200 dark:border-purple-800">
                   <div className="text-2xl sm:text-3xl font-bold text-purple-600 mb-1">
-                    {formatCurrency(result.principalAmount)}
+                    {result ? formatCurrency(result.principalAmount) : "₹0"}
                   </div>
                   <div className="text-sm sm:text-base text-purple-800 dark:text-purple-200">Principal Amount</div>
                 </div>
@@ -386,13 +385,13 @@ export function EMICalculator() {
                   <div className="flex items-center gap-2">
                     <div className="w-4 h-4 bg-primary rounded"></div>
                     <span className="text-sm font-medium">
-                      {((result.principalAmount / result.totalPayment) * 100).toFixed(1)}% Principal
+                      {result ? ((result.principalAmount / result.totalPayment) * 100).toFixed(1) : "0"}% Principal
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-4 h-4 bg-orange-500 rounded"></div>
                     <span className="text-sm font-medium">
-                      {((result.totalInterest / result.totalPayment) * 100).toFixed(1)}% Interest
+                      {result ? ((result.totalInterest / result.totalPayment) * 100).toFixed(1) : "0"}% Interest
                     </span>
                   </div>
                 </div>
@@ -465,7 +464,7 @@ export function EMICalculator() {
                     <div className="space-y-4">
                       <div className="text-sm text-muted-foreground">Yearly Payment Breakdown</div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {result.yearlySchedule.slice(0, 6).map((entry, index) => (
+                        {result && result.yearlySchedule ? result.yearlySchedule.slice(0, 6).map((entry, index) => (
                           <div key={index} className="bg-white dark:bg-slate-700 rounded-lg p-3 border">
                             <div className="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-2">
                               Year {entry.year}
@@ -494,14 +493,21 @@ export function EMICalculator() {
                               </div>
                             </div>
                           </div>
-                        ))}
+                        )) : (
+                          <div className="col-span-full text-center py-8 text-muted-foreground">
+                            <div className="w-12 h-12 bg-slate-200 dark:bg-slate-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                              <BarChart3 className="h-6 w-6" />
+                            </div>
+                            <p>Enter loan details to see yearly breakdown</p>
+                          </div>
+                        )}
                       </div>
                     </div>
                   ) : (
                     <div className="space-y-4">
                       <div className="text-sm text-muted-foreground">Monthly Payment Breakdown (First 12 Months)</div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-                        {result.amortizationSchedule.slice(0, 12).map((entry, index) => (
+                        {result && result.amortizationSchedule ? result.amortizationSchedule.slice(0, 12).map((entry, index) => (
                           <div key={index} className="bg-white dark:bg-slate-700 rounded-lg p-3 border">
                             <div className="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-2">
                               Month {entry.month}
@@ -530,7 +536,14 @@ export function EMICalculator() {
                               </div>
                             </div>
                           </div>
-                        ))}
+                        )) : (
+                          <div className="col-span-full text-center py-8 text-muted-foreground">
+                            <div className="w-12 h-12 bg-slate-200 dark:bg-slate-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                              <BarChart3 className="h-6 w-6" />
+                            </div>
+                            <p>Enter loan details to see monthly breakdown</p>
+                          </div>
+                        )}
                       </div>
                     </div>
                   )}
@@ -551,7 +564,7 @@ export function EMICalculator() {
                       </tr>
                     </thead>
                     <tbody>
-                      {result.yearlySchedule.map((entry, index) => (
+                      {result && result.yearlySchedule ? result.yearlySchedule.map((entry, index) => (
                         <tr key={index} className="border-b border-slate-100 dark:border-slate-800">
                           <td className="py-3 px-2 font-medium">{entry.year}</td>
                           <td className="py-3 px-2 text-right text-green-600 font-medium">
@@ -570,7 +583,18 @@ export function EMICalculator() {
                             {entry.loanPaidToDate.toFixed(2)}%
                           </td>
                         </tr>
-                      ))}
+                      )) : (
+                        <tr>
+                          <td colSpan={6} className="py-8 text-center text-muted-foreground">
+                            <div className="flex flex-col items-center gap-2">
+                              <div className="w-8 h-8 bg-slate-200 dark:bg-slate-600 rounded-full flex items-center justify-center">
+                                <Calendar className="h-4 w-4" />
+                              </div>
+                              <span>Enter loan details to see yearly schedule</span>
+                            </div>
+                          </td>
+                        </tr>
+                      )}
                     </tbody>
                   </table>
                 </div>
@@ -587,7 +611,7 @@ export function EMICalculator() {
                       </tr>
                     </thead>
                     <tbody>
-                      {result.amortizationSchedule.slice(0, 24).map((entry, index) => (
+                      {result && result.amortizationSchedule ? result.amortizationSchedule.slice(0, 24).map((entry, index) => (
                         <tr key={index} className="border-b border-slate-100 dark:border-slate-800">
                           <td className="py-2 px-1 font-medium">{entry.month}</td>
                           <td className="py-2 px-1 text-right text-green-600">
@@ -603,8 +627,19 @@ export function EMICalculator() {
                             {formatCurrency(entry.balance)}
                           </td>
                         </tr>
-                      ))}
-                      {result.amortizationSchedule.length > 24 && (
+                      )) : (
+                        <tr>
+                          <td colSpan={5} className="py-8 text-center text-muted-foreground">
+                            <div className="flex flex-col items-center gap-2">
+                              <div className="w-8 h-8 bg-slate-200 dark:bg-slate-600 rounded-full flex items-center justify-center">
+                                <Calendar className="h-4 w-4" />
+                              </div>
+                              <span>Enter loan details to see monthly schedule</span>
+                            </div>
+                          </td>
+                        </tr>
+                      )}
+                      {result && result.amortizationSchedule && result.amortizationSchedule.length > 24 && (
                         <tr>
                           <td colSpan={5} className="py-2 text-center text-muted-foreground">
                             ... and {result.amortizationSchedule.length - 24} more months
@@ -618,7 +653,6 @@ export function EMICalculator() {
             </CardContent>
           </Card>
         </div>
-      )}
     </div>
   )
 }
