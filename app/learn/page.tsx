@@ -25,8 +25,9 @@ const ImageOCRGuide = dynamic(() => import("@/app/guides/image-to-text-ocr-guide
 const DiscountCalculatorGuide = dynamic(() => import("@/app/guides/discount-calculator-guide/page"), { ssr: false })
 const TipCalculatorGuide = dynamic(() => import("@/app/guides/tip-calculator-guide/page"), { ssr: false })
 const WorkdayCalculatorGuide = dynamic(() => import("@/app/guides/workday-calculator-guide/page"), { ssr: false })
-const DateToDayGuide = dynamic(() => import("@/app/guides/date-to-day-finder-guide/page"), { ssr: false })
-const ZodiacSignGuide = dynamic(() => import("@/app/guides/zodiac-sign-finder-guide/page"), { ssr: false })
+        const DateToDayGuide = dynamic(() => import("@/app/guides/date-to-day-finder-guide/page"), { ssr: false })
+        const ZodiacSignGuide = dynamic(() => import("@/app/guides/zodiac-sign-finder-guide/page"), { ssr: false })
+        const DateDifferenceGuide = dynamic(() => import("@/app/guides/date-difference-calculator-guide/page"), { ssr: false })
 
 export default function LearnPage() {
   const [selectedGuide, setSelectedGuide] = useState("age-calculator")
@@ -128,11 +129,16 @@ export default function LearnPage() {
       title: "Date to Day Finder Guide",
       href: "/guides/date-to-day-finder-guide"
     },
-    {
-      id: "zodiac-sign",
-      title: "Zodiac Sign Finder Guide",
-      href: "/guides/zodiac-sign-finder-guide"
-    }
+            {
+              id: "zodiac-sign",
+              title: "Zodiac Sign Finder Guide",
+              href: "/guides/zodiac-sign-finder-guide"
+            },
+            {
+              id: "date-difference",
+              title: "Date Difference Calculator Guide",
+              href: "/guides/date-difference-calculator-guide"
+            }
   ]
 
   const handleGuideClick = (guideId: string) => {
@@ -175,10 +181,12 @@ export default function LearnPage() {
         return <WorkdayCalculatorGuide />
       case "date-to-day":
         return <DateToDayGuide />
-      case "zodiac-sign":
-        return <ZodiacSignGuide />
-      default:
-        return <AgeCalculatorGuide />
+              case "zodiac-sign":
+                return <ZodiacSignGuide />
+              case "date-difference":
+                return <DateDifferenceGuide />
+              default:
+                return <AgeCalculatorGuide />
     }
   }
 
