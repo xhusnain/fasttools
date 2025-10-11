@@ -233,6 +233,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
+    {
+      url: "https://fasttools.store/converters/conversion-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.9, // High priority for comprehensive conversion tool
+    },
 
     // ===== CLUSTER 3: BUSINESS & FINANCE TOOLS (High Priority) =====
     // Business Tools Cluster - Monetization focus
@@ -905,6 +911,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
       {
         url: "https://fasttools.store/guides/ip-subnet-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.95, // High priority for comprehensive guide
+      },
+      {
+        url: "https://fasttools.store/guides/conversion-calculator-guide",
         lastModified: getFreshnessDate(1), // Updated daily for new guide
         changeFrequency: "daily" as const,
         priority: 0.95, // High priority for comprehensive guide
