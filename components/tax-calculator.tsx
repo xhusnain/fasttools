@@ -378,7 +378,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
               <Checkbox 
                 id="custom-rate" 
                 checked={useCustomRate} 
-                onCheckedChange={setUseCustomRate}
+                onCheckedChange={(checked) => setUseCustomRate(checked === true)}
               />
               <Label htmlFor="custom-rate" className="text-sm font-medium flex items-center gap-2">
                 <div className="p-1 bg-purple-100 dark:bg-purple-900/30 rounded">

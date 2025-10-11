@@ -432,6 +432,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.8, // Medium-high priority for investment tool
     },
+    {
+      url: "https://fasttools.store/tools/gpa-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.85, // High priority for educational tool
+    },
+    {
+      url: "https://fasttools.store/tools/date-difference",
+      lastModified: getFreshnessDate(7),
+      changeFrequency: "weekly" as const,
+      priority: 0.75, // Medium priority for date tool
+    },
+    {
+      url: "https://fasttools.store/tools/time-duration",
+      lastModified: getFreshnessDate(7),
+      changeFrequency: "weekly" as const,
+      priority: 0.75, // Medium priority for time tool
+    },
 
     // ===== SUPPORTING CATEGORIES (Lower Priority but Important for Coverage) =====
     // Date & Time Tools - Supporting tools for comprehensive coverage
@@ -814,6 +832,48 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
       {
         url: "https://fasttools.store/guides/bmi-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/gpa-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/compound-interest-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/date-difference-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/time-duration-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/percentage-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/tax-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/emi-calculator-guide",
         lastModified: getFreshnessDate(1),
         changeFrequency: "daily" as const,
         priority: 0.95,

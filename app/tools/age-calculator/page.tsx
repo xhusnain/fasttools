@@ -188,7 +188,16 @@ export default function AgeCalculatorPage() {
         />
 
         <div className="max-w-6xl mx-auto">
-          <AdSpace slot="header" className="mb-8 h-24" />
+          <div className="mb-8">
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 p-4 rounded-xl border border-blue-200 dark:border-blue-800">
+              <div className="flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-sm font-medium text-blue-800 dark:text-blue-200 mb-2">Sponsored</div>
+                  <AdSpace slot="header" className="h-24" />
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
@@ -206,7 +215,14 @@ export default function AgeCalculatorPage() {
 
               {/* Center Content Ad */}
               <div className="my-8">
-                <AdSpace slot="content" className="w-full h-24" />
+                <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 p-4 rounded-xl border border-green-200 dark:border-green-800">
+                  <div className="flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="text-sm font-medium text-green-800 dark:text-green-200 mb-2">Recommended</div>
+                      <AdSpace slot="content" className="w-full h-24" />
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="mt-12 prose prose-slate max-w-none animate-fade-in-up animation-delay-400">
@@ -356,14 +372,31 @@ export default function AgeCalculatorPage() {
 
               {/* Bottom Content Ad */}
               <div className="mt-8">
-                <AdSpace slot="content" className="w-full h-24" />
+                <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 p-4 rounded-xl border border-purple-200 dark:border-purple-800">
+                  <div className="flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="text-sm font-medium text-purple-800 dark:text-purple-200 mb-2">Recommended</div>
+                      <AdSpace slot="content" className="w-full h-24" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div className="lg:col-span-1">
               <div className="sticky top-20 space-y-6">
-                <AdSpace slot="sidebar" className="h-96" />
-                <AdSpace slot="sidebar" className="h-64" />
+                <div className="bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-lg border-2 border-dashed border-blue-300 dark:border-blue-700 p-4">
+                  <div className="text-center">
+                    <div className="text-sm font-medium text-blue-800 dark:text-blue-200 mb-2">Sponsored</div>
+                    <AdSpace slot="sidebar" className="h-96" />
+                  </div>
+                </div>
+                <div className="bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 rounded-lg border-2 border-dashed border-green-300 dark:border-green-700 p-4">
+                  <div className="text-center">
+                    <div className="text-sm font-medium text-green-800 dark:text-green-200 mb-2">Featured</div>
+                    <AdSpace slot="sidebar" className="h-64" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -62,7 +62,14 @@ export default function TaxCalculatorPage() {
 
         {/* Top Content Ad */}
         <div className="mb-8">
-          <AdSpace slot="content" className="w-full h-24" />
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 p-4 rounded-xl border border-blue-200 dark:border-blue-800">
+            <div className="flex items-center justify-center">
+              <div className="text-center">
+                <div className="text-sm font-medium text-blue-800 dark:text-blue-200 mb-2">Sponsored</div>
+                <AdSpace slot="content" className="w-full h-24" />
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-[1fr_350px] gap-8">
@@ -237,7 +244,14 @@ export default function TaxCalculatorPage() {
 
             {/* Center Content Ad */}
             <div className="my-8">
-              <AdSpace slot="content" className="w-full h-24" />
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 p-4 rounded-xl border border-green-200 dark:border-green-800">
+                <div className="flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-sm font-medium text-green-800 dark:text-green-200 mb-2">Recommended</div>
+                    <AdSpace slot="content" className="w-full h-24" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
