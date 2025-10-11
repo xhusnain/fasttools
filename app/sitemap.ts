@@ -439,6 +439,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85, // High priority for educational tool
     },
     {
+      url: "https://fasttools.store/tools/concrete-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.85, // High priority for construction tool
+    },
+    {
       url: "https://fasttools.store/tools/date-difference",
       lastModified: getFreshnessDate(7),
       changeFrequency: "weekly" as const,
@@ -838,6 +844,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
       {
         url: "https://fasttools.store/guides/gpa-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/concrete-calculator-guide",
         lastModified: getFreshnessDate(1),
         changeFrequency: "daily" as const,
         priority: 0.95,

@@ -12,6 +12,7 @@ import {
   Wallet,
   TrendingUp,
   GraduationCap,
+  Building,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
@@ -106,7 +107,7 @@ export default function ToolsPage() {
       "@type": "ItemList",
       name: "Free Online Tools",
       description: "Collection of free online tools and calculators",
-      numberOfItems: 51,
+      numberOfItems: 52,
       itemListElement: [
         {
           "@type": "ListItem",
@@ -149,6 +150,13 @@ export default function ToolsPage() {
           name: "GPA Calculator",
           description: "Calculate your Grade Point Average with comprehensive analysis",
           url: "https://fasttools.store/tools/gpa-calculator"
+        },
+        {
+          "@type": "ListItem",
+          position: 7,
+          name: "Concrete Calculator",
+          description: "Calculate concrete volume, weight, materials, and cost for construction projects",
+          url: "https://fasttools.store/tools/concrete-calculator"
         }
       ]
     },
@@ -226,6 +234,12 @@ export default function ToolsPage() {
       icon: GraduationCap,
       href: "/tools/gpa-calculator",
     },
+    {
+      title: "Concrete Calculator",
+      description: "Calculate concrete volume, weight, materials, and cost for construction projects.",
+      icon: Building,
+      href: "/tools/concrete-calculator",
+    },
   ]
 
   return (
@@ -240,9 +254,9 @@ export default function ToolsPage() {
           <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
             Discover our comprehensive collection of free online calculation tools designed for professionals, students, 
             and everyday users. Our advanced calculator suite includes age calculators, BMI calculators, loan EMI calculators, 
-            tax calculators, percentage calculators, time duration calculators, compound interest calculators, and GPA calculators. All tools 
+            tax calculators, percentage calculators, time duration calculators, compound interest calculators, GPA calculators, and concrete calculators. All tools 
             are 100% free, highly accurate, and optimized for both desktop and mobile use. Whether you're calculating 
-            personal finances, health metrics, academic grades, or business expenses, our tools provide instant, 
+            personal finances, health metrics, academic grades, construction projects, or business expenses, our tools provide instant, 
             reliable results without any registration requirements.
           </p>
         </div>
