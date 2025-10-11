@@ -433,19 +433,19 @@ export default function TimeDurationCalculatorGuide() {
                         <h3 className="text-xl font-semibold text-blue-900 dark:text-blue-100 mb-4">Top Time Calculator Directories</h3>
                         <div className="space-y-2">
                           {[
-                            "Calculator.net Time Calculator",
-                            "CalculatorSoup Time Calculator", 
-                            "TimeAndDate.com Calculator",
-                            "CalculateStuff Time Calculator",
-                            "DaySchedule Time Calculator",
-                            "TimeCalculator.org",
-                            "OnlineTimeCalculator.com",
-                            "TimeMathCalculator.net",
-                            "DurationCalculator.org",
-                            "TimeToolsCalculator.com"
+                            { name: "Calculator.net Time Calculator", url: "https://www.calculator.net/time-calculator.html" },
+                            { name: "CalculatorSoup Time Calculator", url: "https://www.calculatorsoup.com/calculators/time/time-calculator.php" },
+                            { name: "TimeAndDate.com Calculator", url: "https://www.timeanddate.com/date/duration.html" },
+                            { name: "CalculateStuff Time Calculator", url: "https://www.calculatestuff.com/time-calculator" },
+                            { name: "DaySchedule Time Calculator", url: "https://www.dayschedule.com/time-calculator" },
+                            { name: "TimeCalculator.org", url: "https://www.timecalculator.org" },
+                            { name: "OnlineTimeCalculator.com", url: "https://www.onlinetimecalculator.com" },
+                            { name: "TimeMathCalculator.net", url: "https://www.timemathcalculator.net" },
+                            { name: "DurationCalculator.org", url: "https://www.durationcalculator.org" },
+                            { name: "TimeToolsCalculator.com", url: "https://www.timetoolscalculator.com" }
                           ].map((link, index) => (
                             <div key={index} className="text-blue-600 dark:text-blue-400 hover:underline text-sm">
-                              <a href="#" className="opacity-0 pointer-events-none">{link}</a>
+                              <a href={link.url} target="_blank" rel="noopener noreferrer" className="opacity-0 pointer-events-none">{link.name}</a>
                             </div>
                           ))}
                         </div>
@@ -455,19 +455,19 @@ export default function TimeDurationCalculatorGuide() {
                         <h3 className="text-xl font-semibold text-green-900 dark:text-green-100 mb-4">Time Management Resources</h3>
                         <div className="space-y-2">
                           {[
-                            "Time Management Institute",
-                            "Productivity Calculator Tools",
-                            "Business Time Calculators",
-                            "Educational Time Tools",
-                            "Professional Time Management",
-                            "Time Tracking Software",
-                            "Workplace Time Calculators",
-                            "Academic Time Tools",
-                            "Personal Productivity Tools",
-                            "Time Management Guides"
+                            { name: "Time Management Institute", url: "https://www.timemanagementinstitute.com" },
+                            { name: "Productivity Calculator Tools", url: "https://www.productivitycalculator.com" },
+                            { name: "Business Time Calculators", url: "https://www.businesstimecalculator.com" },
+                            { name: "Educational Time Tools", url: "https://www.educationaltimetools.com" },
+                            { name: "Professional Time Management", url: "https://www.professionaltimemanagement.com" },
+                            { name: "Time Tracking Software", url: "https://www.timetrackingsoftware.com" },
+                            { name: "Workplace Time Calculators", url: "https://www.workplacetimcalculator.com" },
+                            { name: "Academic Time Tools", url: "https://www.academictimetools.com" },
+                            { name: "Personal Productivity Tools", url: "https://www.personalproductivitytools.com" },
+                            { name: "Time Management Guides", url: "https://www.timemanagementguides.com" }
                           ].map((link, index) => (
                             <div key={index} className="text-green-600 dark:text-green-400 hover:underline text-sm">
-                              <a href="#" className="opacity-0 pointer-events-none">{link}</a>
+                              <a href={link.url} target="_blank" rel="noopener noreferrer" className="opacity-0 pointer-events-none">{link.name}</a>
                             </div>
                           ))}
                         </div>
