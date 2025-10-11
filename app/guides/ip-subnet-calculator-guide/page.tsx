@@ -65,80 +65,81 @@ export default function IPSubnetCalculatorGuide() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-        <div className="container mx-auto px-6 py-12 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-7xl">
+          <div className="flex flex-col xl:flex-row gap-6 xl:gap-8">
             {/* Main Content */}
-            <article className="lg:col-span-3 space-y-8">
+            <article className="flex-1 xl:max-w-none space-y-6 sm:space-y-8">
               {/* Header */}
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-                  <Network className="h-4 w-4" />
-                  <span>Complete IP Subnetting Guide</span>
+              <div className="text-center mb-8 sm:mb-12">
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+                  <Network className="h-3 w-3 sm:h-4 sm:w-4" />
+                  <span className="hidden sm:inline">Complete IP Subnetting Guide</span>
+                  <span className="sm:hidden">IP Subnetting Guide</span>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-100 dark:to-purple-100 bg-clip-text text-transparent">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-100 dark:to-purple-100 bg-clip-text text-transparent leading-tight">
                   IP Subnet Calculator Guide: Master Network Subnetting from Basics to Advanced
                 </h1>
-                <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
                   Master IP subnetting with our comprehensive guide. Learn subnet calculation, CIDR notation, VLSM, supernetting, 
                   and network design. Includes manual calculation methods and expert resources for students and professionals.
                 </p>
-                <div className="flex flex-wrap justify-center gap-4 text-sm">
-                  <div className="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700">
-                    <Calculator className="h-4 w-4 text-blue-600" />
+                <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
+                  <div className="flex items-center gap-1 sm:gap-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm px-2 sm:px-4 py-1.5 sm:py-2 rounded-full border border-slate-200 dark:border-slate-700">
+                    <Calculator className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600" />
                     <span className="text-slate-700 dark:text-slate-300 font-medium">Free Calculator</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700">
-                    <Network className="h-4 w-4 text-green-600" />
+                  <div className="flex items-center gap-1 sm:gap-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm px-2 sm:px-4 py-1.5 sm:py-2 rounded-full border border-slate-200 dark:border-slate-700">
+                    <Network className="h-3 w-3 sm:h-4 sm:w-4 text-green-600" />
                     <span className="text-slate-700 dark:text-slate-300 font-medium">Network Focused</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700">
-                    <Target className="h-4 w-4 text-purple-600" />
+                  <div className="flex items-center gap-1 sm:gap-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm px-2 sm:px-4 py-1.5 sm:py-2 rounded-full border border-slate-200 dark:border-slate-700">
+                    <Target className="h-3 w-3 sm:h-4 sm:w-4 text-purple-600" />
                     <span className="text-slate-700 dark:text-slate-300 font-medium">Accurate Results</span>
                   </div>
                 </div>
               </div>
 
               {/* Table of Contents */}
-              <Card className="mb-12">
+              <Card className="mb-8 sm:mb-12">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <BookOpen className="h-5 w-5 text-blue-600" />
+                  <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+                    <BookOpen className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
                     Table of Contents
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <nav className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    <Link href="#what-is-subnetting" className="block text-primary hover:underline">
+                  <nav className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
+                    <Link href="#what-is-subnetting" className="block text-primary hover:underline text-sm sm:text-base py-1">
                       1. What is IP Subnetting?
                     </Link>
-                    <Link href="#subnetting-basics" className="block text-primary hover:underline">
+                    <Link href="#subnetting-basics" className="block text-primary hover:underline text-sm sm:text-base py-1">
                       2. Subnetting Basics
                     </Link>
-                    <Link href="#manual-calculation" className="block text-primary hover:underline">
+                    <Link href="#manual-calculation" className="block text-primary hover:underline text-sm sm:text-base py-1">
                       3. Manual Subnet Calculation
                     </Link>
-                    <Link href="#cidr-notation" className="block text-primary hover:underline">
+                    <Link href="#cidr-notation" className="block text-primary hover:underline text-sm sm:text-base py-1">
                       4. CIDR Notation
                     </Link>
-                    <Link href="#vlsm-supernetting" className="block text-primary hover:underline">
+                    <Link href="#vlsm-supernetting" className="block text-primary hover:underline text-sm sm:text-base py-1">
                       5. VLSM & Supernetting
                     </Link>
-                    <Link href="#ipv4-ipv6" className="block text-primary hover:underline">
+                    <Link href="#ipv4-ipv6" className="block text-primary hover:underline text-sm sm:text-base py-1">
                       6. IPv4 vs IPv6
                     </Link>
-                    <Link href="#network-design" className="block text-primary hover:underline">
+                    <Link href="#network-design" className="block text-primary hover:underline text-sm sm:text-base py-1">
                       7. Network Design
                     </Link>
-                    <Link href="#security-considerations" className="block text-primary hover:underline">
+                    <Link href="#security-considerations" className="block text-primary hover:underline text-sm sm:text-base py-1">
                       8. Security Considerations
                     </Link>
-                    <Link href="#best-practices" className="block text-primary hover:underline">
+                    <Link href="#best-practices" className="block text-primary hover:underline text-sm sm:text-base py-1">
                       9. Best Practices
                     </Link>
-                    <Link href="#troubleshooting" className="block text-primary hover:underline">
+                    <Link href="#troubleshooting" className="block text-primary hover:underline text-sm sm:text-base py-1">
                       10. Troubleshooting
                     </Link>
-                    <Link href="#expert-resources" className="block text-primary hover:underline">
+                    <Link href="#expert-resources" className="block text-primary hover:underline text-sm sm:text-base py-1">
                       11. Expert Resources
                     </Link>
                   </nav>
@@ -151,53 +152,53 @@ export default function IPSubnetCalculatorGuide() {
               </div>
 
               {/* What is IP Subnetting */}
-              <section id="what-is-subnetting" className="mb-12">
-                <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                  <Network className="h-8 w-8 text-blue-600" />
-                  What is IP Subnetting?
+              <section id="what-is-subnetting" className="mb-8 sm:mb-12">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                  <Network className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600 flex-shrink-0" />
+                  <span>What is IP Subnetting?</span>
                 </h2>
                 <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-2xl p-8 border border-blue-200 dark:border-blue-800">
-                  <p className="text-lg text-slate-700 dark:text-slate-300 mb-6">
+                  <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 mb-4 sm:mb-6">
                     IP subnetting is the process of dividing a larger network into smaller, more manageable sub-networks (subnets). 
                     This technique allows network administrators to optimize IP address allocation, improve network performance, 
                     and enhance security by creating logical network segments.
                   </p>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                    <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-blue-200 dark:border-blue-700">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                          <Target className="h-5 w-5 text-blue-600" />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+                    <div className="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-xl border border-blue-200 dark:border-blue-700">
+                      <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                        <div className="p-1.5 sm:p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                          <Target className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
                         </div>
-                        <h3 className="font-semibold text-blue-900 dark:text-blue-100">Efficient IP Usage</h3>
+                        <h3 className="font-semibold text-blue-900 dark:text-blue-100 text-sm sm:text-base">Efficient IP Usage</h3>
                       </div>
-                      <p className="text-slate-600 dark:text-slate-400 text-sm">
+                      <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm">
                         Optimize IP address allocation by creating subnets that match your actual host requirements, 
                         reducing IP address waste and improving network efficiency.
                       </p>
                     </div>
                     
-                    <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-green-200 dark:border-green-700">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                          <Shield className="h-5 w-5 text-green-600" />
+                    <div className="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-xl border border-green-200 dark:border-green-700">
+                      <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                        <div className="p-1.5 sm:p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                          <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-green-600" />
                         </div>
-                        <h3 className="font-semibold text-green-900 dark:text-green-100">Enhanced Security</h3>
+                        <h3 className="font-semibold text-green-900 dark:text-green-100 text-sm sm:text-base">Enhanced Security</h3>
                       </div>
-                      <p className="text-slate-600 dark:text-slate-400 text-sm">
+                      <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm">
                         Isolate network segments to contain security breaches, implement access controls, 
                         and create secure zones for sensitive data and applications.
                       </p>
                     </div>
                     
-                    <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-purple-200 dark:border-purple-700">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                          <Zap className="h-5 w-5 text-purple-600" />
+                    <div className="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-xl border border-purple-200 dark:border-purple-700">
+                      <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                        <div className="p-1.5 sm:p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
+                          <Zap className="h-4 w-4 sm:h-5 sm:w-5 text-purple-600" />
                         </div>
-                        <h3 className="font-semibold text-purple-900 dark:text-purple-100">Improved Performance</h3>
+                        <h3 className="font-semibold text-purple-900 dark:text-purple-100 text-sm sm:text-base">Improved Performance</h3>
                       </div>
-                      <p className="text-slate-600 dark:text-slate-400 text-sm">
+                      <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm">
                         Reduce network congestion by limiting broadcast domains, improving routing efficiency, 
                         and enabling better traffic management across network segments.
                       </p>
@@ -1137,8 +1138,8 @@ export default function IPSubnetCalculatorGuide() {
             </article>
 
             {/* Sidebar */}
-            <aside className="lg:col-span-1 space-y-6">
-              <div className="sticky top-4 space-y-6">
+            <aside className="w-full xl:w-80 flex-shrink-0">
+              <div className="sticky top-4 space-y-4 sm:space-y-6">
                 {/* Quick Access */}
                 <Card>
                   <CardHeader>

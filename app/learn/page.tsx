@@ -31,6 +31,7 @@ const BMICalculatorGuide = dynamic(() => import("@/app/guides/bmi-calculator-gui
 const EMICalculatorGuide = dynamic(() => import("@/app/guides/emi-calculator-guide/page"), { ssr: false })
 const PercentageCalculatorGuide = dynamic(() => import("@/app/guides/percentage-calculator-guide/page"), { ssr: false })
 const TimeDurationCalculatorGuide = dynamic(() => import("@/app/guides/time-duration-calculator-guide/page"), { ssr: false })
+const IPSubnetCalculatorGuide = dynamic(() => import("@/app/guides/ip-subnet-calculator-guide/page"), { ssr: false })
 
 export default function LearnPage() {
   const [selectedGuide, setSelectedGuide] = useState("age-calculator")
@@ -161,6 +162,11 @@ export default function LearnPage() {
               id: "time-duration-calculator",
               title: "Time Duration Calculator Guide",
               href: "/guides/time-duration-calculator-guide"
+            },
+            {
+              id: "ip-subnet-calculator",
+              title: "IP Subnet Calculator Guide",
+              href: "/guides/ip-subnet-calculator-guide"
             }
   ]
 
@@ -216,6 +222,8 @@ export default function LearnPage() {
                 return <PercentageCalculatorGuide />
               case "time-duration-calculator":
                 return <TimeDurationCalculatorGuide />
+              case "ip-subnet-calculator":
+                return <IPSubnetCalculatorGuide />
               default:
                 return <AgeCalculatorGuide />
     }
@@ -231,7 +239,7 @@ export default function LearnPage() {
       "@type": "ItemList",
       name: "Learning Guides",
       description: "Comprehensive guides for all FastTools",
-      numberOfItems: 34,
+      numberOfItems: 35,
       itemListElement: [
         {
           "@type": "ListItem",
@@ -250,6 +258,12 @@ export default function LearnPage() {
           position: 3,
           name: "SEO Tools Guide", 
           url: "https://fasttools.store/guides/seo-tools-guide"
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: "IP Subnet Calculator Guide",
+          url: "https://fasttools.store/guides/ip-subnet-calculator-guide"
         }
       ]
     }
@@ -281,7 +295,7 @@ export default function LearnPage() {
             <div className="flex flex-wrap justify-center gap-6 text-sm">
               <div className="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700">
                 <BookOpen className="h-4 w-4 text-blue-600" />
-                <span className="text-slate-700 dark:text-slate-300 font-medium">34+ Guides</span>
+                <span className="text-slate-700 dark:text-slate-300 font-medium">35+ Guides</span>
               </div>
               <div className="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700">
                 <Users className="h-4 w-4 text-green-600" />
@@ -295,10 +309,10 @@ export default function LearnPage() {
           </div>
 
         {/* Main Content - Premium Layout */}
-        <div className="flex gap-8">
+        <div className="flex flex-col xl:flex-row gap-4 xl:gap-8">
           {/* Left Sidebar Navigation - Premium Design */}
-          <aside className="w-72 flex-shrink-0">
-            <div className="sticky top-24 h-[calc(100vh-6rem)] overflow-hidden hover:overflow-y-auto scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-600 scrollbar-track-transparent">
+          <aside className="w-full xl:w-72 flex-shrink-0 order-2 xl:order-1">
+            <div className="sticky top-4 xl:top-24 max-h-[calc(100vh-2rem)] xl:max-h-[calc(100vh-6rem)] overflow-hidden hover:overflow-y-auto scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-600 scrollbar-track-transparent">
               <nav className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-4 h-full shadow-xl">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
@@ -317,8 +331,8 @@ export default function LearnPage() {
                             : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-blue-600 dark:hover:text-blue-400'
                         }`}
                       >
-                        {guide.title}
-                        <ArrowRight className="h-3 w-3" />
+                        <span className="truncate">{guide.title}</span>
+                        <ArrowRight className="h-3 w-3 flex-shrink-0 ml-2" />
                       </button>
                     </li>
                   ))}
@@ -328,14 +342,14 @@ export default function LearnPage() {
           </aside>
 
           {/* Main Content Area - Premium Design */}
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 order-1 xl:order-2">
             <div className="bg-white/95 dark:bg-slate-800/95 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl">
               {renderGuide()}
             </div>
           </div>
 
-          {/* Right Sidebar with AdSense - Premium Design */}
-          <aside className="w-72 flex-shrink-0">
+          {/* Right Sidebar with AdSense - Premium Design - Hidden on mobile/tablet */}
+          <aside className="hidden xl:block w-72 flex-shrink-0 order-3">
             <div className="sticky top-24 space-y-6">
               {/* AdSense Components - Premium Container */}
               <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-6 shadow-xl">
