@@ -11,6 +11,14 @@ export function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <Link
+                  href="/converters/conversion-calculator"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  Conversion Calculator
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/tools/age-calculator"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                 >

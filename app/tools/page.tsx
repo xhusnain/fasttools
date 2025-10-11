@@ -14,6 +14,7 @@ import {
   GraduationCap,
   Building,
   Network,
+  Ruler,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
@@ -113,55 +114,62 @@ export default function ToolsPage() {
         {
           "@type": "ListItem",
           position: 1,
+          name: "Conversion Calculator",
+          description: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions",
+          url: "https://fasttools.store/converters/conversion-calculator"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
           name: "Age Calculator",
           description: "Calculate your exact age in years, months, and days",
           url: "https://fasttools.store/tools/age-calculator"
         },
         {
           "@type": "ListItem",
-          position: 2,
+          position: 3,
           name: "BMI Calculator",
           description: "Calculate your Body Mass Index (BMI)",
           url: "https://fasttools.store/tools/bmi-calculator"
         },
         {
           "@type": "ListItem",
-          position: 3,
+          position: 4,
           name: "Loan EMI Calculator",
           description: "Calculate your monthly loan payment (EMI)",
           url: "https://fasttools.store/tools/loan-calculator"
         },
         {
           "@type": "ListItem",
-          position: 4,
+          position: 5,
           name: "Tax Calculator",
           description: "Calculate your estimated income tax",
           url: "https://fasttools.store/tools/tax-calculator"
         },
         {
           "@type": "ListItem",
-          position: 5,
+          position: 6,
           name: "Percentage Calculator",
           description: "Calculate percentages quickly and easily",
           url: "https://fasttools.store/tools/percentage-calculator"
         },
         {
           "@type": "ListItem",
-          position: 6,
+          position: 7,
           name: "GPA Calculator",
           description: "Calculate your Grade Point Average with comprehensive analysis",
           url: "https://fasttools.store/tools/gpa-calculator"
         },
         {
           "@type": "ListItem",
-          position: 7,
+          position: 8,
           name: "Concrete Calculator",
           description: "Calculate concrete volume, weight, materials, and cost for construction projects",
           url: "https://fasttools.store/tools/concrete-calculator"
         },
         {
           "@type": "ListItem",
-          position: 8,
+          position: 9,
           name: "IP Subnet Calculator",
           description: "Calculate IPv4 and IPv6 subnets with CIDR notation, VLSM, and network analysis",
           url: "https://fasttools.store/tools/ip-subnet-calculator"
@@ -188,6 +196,12 @@ export default function ToolsPage() {
   }
 
   const tools = [
+    {
+      title: "Conversion Calculator",
+      description: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions.",
+      icon: Ruler,
+      href: "/converters/conversion-calculator",
+    },
     {
       title: "Age Calculator",
       description: "Calculate your exact age in years, months, and days from your birth date.",

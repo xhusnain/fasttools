@@ -32,6 +32,7 @@ const EMICalculatorGuide = dynamic(() => import("@/app/guides/emi-calculator-gui
 const PercentageCalculatorGuide = dynamic(() => import("@/app/guides/percentage-calculator-guide/page"), { ssr: false })
 const TimeDurationCalculatorGuide = dynamic(() => import("@/app/guides/time-duration-calculator-guide/page"), { ssr: false })
 const IPSubnetCalculatorGuide = dynamic(() => import("@/app/guides/ip-subnet-calculator-guide/page"), { ssr: false })
+const ConversionCalculatorGuide = dynamic(() => import("@/app/guides/conversion-calculator-guide/page"), { ssr: false })
 
 export default function LearnPage() {
   const [selectedGuide, setSelectedGuide] = useState("age-calculator")
@@ -167,6 +168,11 @@ export default function LearnPage() {
               id: "ip-subnet-calculator",
               title: "IP Subnet Calculator Guide",
               href: "/guides/ip-subnet-calculator-guide"
+            },
+            {
+              id: "conversion-calculator",
+              title: "Conversion Calculator Guide",
+              href: "/guides/conversion-calculator-guide"
             }
   ]
 
@@ -224,6 +230,8 @@ export default function LearnPage() {
                 return <TimeDurationCalculatorGuide />
               case "ip-subnet-calculator":
                 return <IPSubnetCalculatorGuide />
+              case "conversion-calculator":
+                return <ConversionCalculatorGuide />
               default:
                 return <AgeCalculatorGuide />
     }
