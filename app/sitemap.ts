@@ -374,6 +374,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.75,
     },
+    {
+      url: "https://fasttools.store/tools/ip-subnet-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.85, // High priority for network tool
+      images: [
+        {
+          url: "https://fasttools.store/og-image.svg",
+          title: "IP Subnet Calculator Tool",
+          caption: "FastTools IP Subnet Calculator - Calculate IPv4/IPv6 subnets, CIDR notation, VLSM, and supernetting with comprehensive network analysis"
+        }
+      ]
+    },
 
     // ===== SUPPORTING TOOLS (Lower Priority but Important for Coverage) =====
     // Main Calculator Tools - Supporting tools for comprehensive coverage
@@ -889,6 +902,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: getFreshnessDate(1),
         changeFrequency: "daily" as const,
         priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/ip-subnet-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.95, // High priority for comprehensive guide
       },
 
   ]

@@ -73,6 +73,14 @@ export function Footer() {
                   Compound Interest
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/tools/ip-subnet-calculator"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  IP Subnet Calculator
+                </Link>
+              </li>
             </ul>
           </div>
 

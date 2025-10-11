@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
 import { AdSpace } from "@/components/ad-space"
 import { BookOpen, Calculator, Clock, Palette, Code, Zap, TrendingUp, Globe, Wrench, Sparkles, ArrowRight, Users, Star, Target } from "lucide-react"
 
-// Dynamic imports for guide components
 const AgeCalculatorGuide = dynamic(() => import("@/app/guides/age-calculator-guide/page"), { ssr: false })
 const CurrencyConverterGuide = dynamic(() => import("@/app/guides/currency-converter-guide/page"), { ssr: false })
 const SEOToolsGuide = dynamic(() => import("@/app/guides/seo-tools-guide/page"), { ssr: false })
@@ -25,13 +24,13 @@ const ImageOCRGuide = dynamic(() => import("@/app/guides/image-to-text-ocr-guide
 const DiscountCalculatorGuide = dynamic(() => import("@/app/guides/discount-calculator-guide/page"), { ssr: false })
 const TipCalculatorGuide = dynamic(() => import("@/app/guides/tip-calculator-guide/page"), { ssr: false })
 const WorkdayCalculatorGuide = dynamic(() => import("@/app/guides/workday-calculator-guide/page"), { ssr: false })
-        const DateToDayGuide = dynamic(() => import("@/app/guides/date-to-day-finder-guide/page"), { ssr: false })
-        const ZodiacSignGuide = dynamic(() => import("@/app/guides/zodiac-sign-finder-guide/page"), { ssr: false })
-        const DateDifferenceGuide = dynamic(() => import("@/app/guides/date-difference-calculator-guide/page"), { ssr: false })
-        const BMICalculatorGuide = dynamic(() => import("@/app/guides/bmi-calculator-guide/page"), { ssr: false })
-        const EMICalculatorGuide = dynamic(() => import("@/app/guides/emi-calculator-guide/page"), { ssr: false })
-        const PercentageCalculatorGuide = dynamic(() => import("@/app/guides/percentage-calculator-guide/page"), { ssr: false })
-        const TimeDurationCalculatorGuide = dynamic(() => import("@/app/guides/time-duration-calculator-guide/page"), { ssr: false })
+const DateToDayGuide = dynamic(() => import("@/app/guides/date-to-day-finder-guide/page"), { ssr: false })
+const ZodiacSignGuide = dynamic(() => import("@/app/guides/zodiac-sign-finder-guide/page"), { ssr: false })
+const DateDifferenceGuide = dynamic(() => import("@/app/guides/date-difference-calculator-guide/page"), { ssr: false })
+const BMICalculatorGuide = dynamic(() => import("@/app/guides/bmi-calculator-guide/page"), { ssr: false })
+const EMICalculatorGuide = dynamic(() => import("@/app/guides/emi-calculator-guide/page"), { ssr: false })
+const PercentageCalculatorGuide = dynamic(() => import("@/app/guides/percentage-calculator-guide/page"), { ssr: false })
+const TimeDurationCalculatorGuide = dynamic(() => import("@/app/guides/time-duration-calculator-guide/page"), { ssr: false })
 
 export default function LearnPage() {
   const [selectedGuide, setSelectedGuide] = useState("age-calculator")

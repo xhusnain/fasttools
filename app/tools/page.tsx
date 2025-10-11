@@ -13,6 +13,7 @@ import {
   TrendingUp,
   GraduationCap,
   Building,
+  Network,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
@@ -157,6 +158,13 @@ export default function ToolsPage() {
           name: "Concrete Calculator",
           description: "Calculate concrete volume, weight, materials, and cost for construction projects",
           url: "https://fasttools.store/tools/concrete-calculator"
+        },
+        {
+          "@type": "ListItem",
+          position: 8,
+          name: "IP Subnet Calculator",
+          description: "Calculate IPv4 and IPv6 subnets with CIDR notation, VLSM, and network analysis",
+          url: "https://fasttools.store/tools/ip-subnet-calculator"
         }
       ]
     },
@@ -239,6 +247,12 @@ export default function ToolsPage() {
       description: "Calculate concrete volume, weight, materials, and cost for construction projects.",
       icon: Building,
       href: "/tools/concrete-calculator",
+    },
+    {
+      title: "IP Subnet Calculator",
+      description: "Calculate IPv4 and IPv6 subnets with CIDR notation, VLSM, and network analysis.",
+      icon: Network,
+      href: "/tools/ip-subnet-calculator",
     },
   ]
 
