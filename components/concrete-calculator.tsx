@@ -176,7 +176,8 @@ export function ConcreteCalculator() {
           volume = (outerVolume - innerVolume) * qty
           formula = `V = π × ((d1/2)² - (d2/2)²) × h × qty = π × ((${od}/2)² - (${id}/2)²) × ${ht} × ${qty} = ${volume.toFixed(2)} ${unit === "metric" ? "m³" : "ft³"}`
           explanation = "Volume = π × ((Outer Diameter/2)² - (Inner Diameter/2)²) × Height × Quantity"
-          dimensions = { length: od, width: od, height: ht, diameter: od, innerDiameter: id }
+            // @ts-ignore
+            dimensions = { length: od, width: od, height: ht, diameter: od, innerDiameter: id }
           break
 
         case "stairs":
