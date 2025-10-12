@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, QrCode, Palette, Download, Share, Smartphone, Camera, Target, TrendingUp } from "lucide-react"
+import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, QrCode, Palette, Download, Share, Smartphone, Camera, Target, TrendingUp, BookOpen } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Complete AI QR Art Generator Guide | Free QR Code Creation | FastTools",

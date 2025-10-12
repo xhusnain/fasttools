@@ -35,6 +35,7 @@ const TimeDurationCalculatorGuide = dynamic(() => import("@/app/guides/time-dura
 const IPSubnetCalculatorGuide = dynamic(() => import("@/app/guides/ip-subnet-calculator-guide/page"), { ssr: false })
 const ConversionCalculatorGuide = dynamic(() => import("@/app/guides/conversion-calculator-guide/page"), { ssr: false })
 const ScientificCalculatorGuide = dynamic(() => import("@/app/guides/scientific-calculator-guide/page"), { ssr: false })
+const TriangleCalculatorGuide = dynamic(() => import("@/app/guides/triangle-calculator-guide/page"), { ssr: false })
 
 export default function LearnPage() {
   const [selectedGuide, setSelectedGuide] = useState("age-calculator")
@@ -180,6 +181,11 @@ export default function LearnPage() {
               id: "scientific-calculator",
               title: "Scientific Calculator Guide",
               href: "/guides/scientific-calculator-guide"
+            },
+            {
+              id: "triangle-calculator",
+              title: "Triangle Calculator Guide",
+              href: "/guides/triangle-calculator-guide"
             }
   ]
 
@@ -241,6 +247,8 @@ export default function LearnPage() {
                 return <ConversionCalculatorGuide />
               case "scientific-calculator":
                 return <ScientificCalculatorGuide />
+              case "triangle-calculator":
+                return <TriangleCalculatorGuide />
               default:
                 return <AgeCalculatorGuide />
     }

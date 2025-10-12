@@ -15,6 +15,7 @@ import {
   Building,
   Network,
   Ruler,
+  Triangle,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
@@ -273,6 +274,12 @@ export default function ToolsPage() {
       description: "Advanced scientific calculator with trigonometric, logarithmic, power, root, and statistical functions.",
       icon: Calculator,
       href: "/tools/scientific-calculator",
+    },
+    {
+      title: "Triangle Calculator",
+      description: "Calculate triangle area, perimeter, angles, heights, medians, inradius, and circumradius with SSS, SAS, ASA, AAS, SSA methods.",
+      icon: Triangle,
+      href: "/tools/triangle-calculator",
     },
   ]
 

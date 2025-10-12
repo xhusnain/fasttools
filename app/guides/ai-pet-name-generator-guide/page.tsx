@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Heart, PawPrint, Dog, Cat, Fish, Bird, Sparkles } from "lucide-react"
+import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Heart, PawPrint, Dog, Cat, Fish, Bird, Sparkles, BookOpen } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Complete AI Pet Name Generator Guide | Free Pet Naming | FastTools",

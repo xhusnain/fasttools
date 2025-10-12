@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Music, Mic, Headphones, Piano, Guitar, TrendingUp, Heart } from "lucide-react"
+import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Music, Mic, Headphones, Piano, Guitar, TrendingUp, Heart, BookOpen } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Complete AI Song Lyrics Generator Guide | Free Lyrics Creation | FastTools",

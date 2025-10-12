@@ -470,6 +470,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9, // High priority for scientific calculator
     },
     {
+      url: "https://fasttools.store/tools/triangle-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.9, // High priority for triangle calculator
+    },
+    {
       url: "https://fasttools.store/tools/date-difference",
       lastModified: getFreshnessDate(7),
       changeFrequency: "weekly" as const,
@@ -929,6 +935,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
       {
         url: "https://fasttools.store/guides/scientific-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.95, // High priority for comprehensive guide
+      },
+      {
+        url: "https://fasttools.store/guides/triangle-calculator-guide",
         lastModified: getFreshnessDate(1), // Updated daily for new guide
         changeFrequency: "daily" as const,
         priority: 0.95, // High priority for comprehensive guide
