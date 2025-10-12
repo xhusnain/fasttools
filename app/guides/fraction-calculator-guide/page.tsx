@@ -109,7 +109,7 @@ export default function FractionCalculatorGuide() {
           <p className="text-xl text-muted-foreground mb-8">
             Master fractions with our comprehensive guide covering basics, operations, conversions, and practical applications. Perfect for students, teachers, and professionals.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground mb-8">
             <div className="flex items-center gap-2">
               <Clock className="h-4 w-4" />
               <span>45 min read</span>
@@ -122,6 +122,16 @@ export default function FractionCalculatorGuide() {
               <Star className="h-4 w-4" />
               <span>4.9/5 rating</span>
             </div>
+          </div>
+          
+          {/* See in Action Button - Start */}
+          <div className="mb-8">
+            <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
+              <Link href="/tools/fraction-calculator">
+                <Calculator className="mr-2 h-5 w-5" />
+                See Fraction Calculator in Action
+              </Link>
+            </Button>
           </div>
         </div>
 
@@ -807,10 +817,10 @@ export default function FractionCalculatorGuide() {
                 Use our free fraction calculator to solve any fraction problem instantly. Perfect for students, teachers, and professionals learning fractions!
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+                <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3">
                   <Link href="/tools/fraction-calculator">
-                    Try Our Fraction Calculator
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <Calculator className="mr-2 h-5 w-5" />
+                    See Fraction Calculator in Action
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">

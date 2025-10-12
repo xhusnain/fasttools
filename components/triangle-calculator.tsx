@@ -77,7 +77,6 @@ export default function TriangleCalculator() {
   
   const calculatorRef = useRef<HTMLDivElement>(null)
 
-  // Auto-focus on component mount
   useEffect(() => {
     if (calculatorRef.current) {
       calculatorRef.current.focus()
