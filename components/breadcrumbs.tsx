@@ -7,10 +7,10 @@ interface BreadcrumbItem {
 }
 
 interface BreadcrumbsProps {
-  items: BreadcrumbItem[]
+  items?: BreadcrumbItem[]
 }
 
-export function Breadcrumbs({ items }: BreadcrumbsProps) {
+export function Breadcrumbs({ items = [] }: BreadcrumbsProps) {
   return (
     <nav aria-label="Breadcrumb" className="mb-6">
       <ol className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -19,7 +19,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
             Home
           </Link>
         </li>
-        {items.map((item, index) => (
+        {items && items.length > 0 && items.map((item, index) => (
           <li key={item.href} className="flex items-center gap-2">
             <ChevronRight className="h-4 w-4" />
             {index === items.length - 1 ? (

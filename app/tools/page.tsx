@@ -268,6 +268,12 @@ export default function ToolsPage() {
       icon: Network,
       href: "/tools/ip-subnet-calculator",
     },
+    {
+      title: "Scientific Calculator",
+      description: "Advanced scientific calculator with trigonometric, logarithmic, power, root, and statistical functions.",
+      icon: Calculator,
+      href: "/tools/scientific-calculator",
+    },
   ]
 
   return (

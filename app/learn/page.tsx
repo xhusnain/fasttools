@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import dynamic from "next/dynamic"
+import Head from "next/head"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { AdSpace } from "@/components/ad-space"
@@ -33,6 +34,7 @@ const PercentageCalculatorGuide = dynamic(() => import("@/app/guides/percentage-
 const TimeDurationCalculatorGuide = dynamic(() => import("@/app/guides/time-duration-calculator-guide/page"), { ssr: false })
 const IPSubnetCalculatorGuide = dynamic(() => import("@/app/guides/ip-subnet-calculator-guide/page"), { ssr: false })
 const ConversionCalculatorGuide = dynamic(() => import("@/app/guides/conversion-calculator-guide/page"), { ssr: false })
+const ScientificCalculatorGuide = dynamic(() => import("@/app/guides/scientific-calculator-guide/page"), { ssr: false })
 
 export default function LearnPage() {
   const [selectedGuide, setSelectedGuide] = useState("age-calculator")
@@ -173,6 +175,11 @@ export default function LearnPage() {
               id: "conversion-calculator",
               title: "Conversion Calculator Guide",
               href: "/guides/conversion-calculator-guide"
+            },
+            {
+              id: "scientific-calculator",
+              title: "Scientific Calculator Guide",
+              href: "/guides/scientific-calculator-guide"
             }
   ]
 
@@ -232,6 +239,8 @@ export default function LearnPage() {
                 return <IPSubnetCalculatorGuide />
               case "conversion-calculator":
                 return <ConversionCalculatorGuide />
+              case "scientific-calculator":
+                return <ScientificCalculatorGuide />
               default:
                 return <AgeCalculatorGuide />
     }
@@ -280,6 +289,25 @@ export default function LearnPage() {
 
   return (
     <>
+      <Head>
+        <title>Learn | Comprehensive Guides & Tutorials | FastTools</title>
+        <meta name="description" content="Master online tools with our comprehensive guides and tutorials. Learn how to use calculators, converters, SEO tools, and more with step-by-step instructions." />
+        <meta name="keywords" content="learn, tutorials, guides, calculators, converters, SEO tools, developer tools, AI tools, math tools, online tools, how to use, step by step" />
+        <meta name="author" content="FastTools" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Learn | Comprehensive Guides & Tutorials | FastTools" />
+        <meta property="og:description" content="Master online tools with our comprehensive guides and tutorials. Learn how to use calculators, converters, SEO tools, and more with step-by-step instructions." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://fasttools.store/learn" />
+        <meta property="og:site_name" content="FastTools" />
+        <meta property="og:image" content="https://fasttools.store/og-image.svg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Learn | Comprehensive Guides & Tutorials | FastTools" />
+        <meta name="twitter:description" content="Master online tools with our comprehensive guides and tutorials. Learn how to use calculators, converters, SEO tools, and more with step-by-step instructions." />
+        <meta name="twitter:image" content="https://fasttools.store/og-image.svg" />
+        <link rel="canonical" href="https://fasttools.store/learn" />
+      </Head>
       <script
         type="application/ld+json"
         suppressHydrationWarning
