@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Search, TrendingUp } from "lucide-react"
+import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Search, TrendingUp, BookOpen } from "lucide-react"
 
 
 export default function SEOToolsGuide() {
@@ -102,7 +102,88 @@ export default function SEOToolsGuide() {
           </CardContent>
         </Card>
 
-        {/* Main Content */}
+        
+        {/* Official Documentation References */}
+        <div className="mb-8">
+          <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 border-green-200 dark:border-green-800">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-green-800 dark:text-green-200">
+                <BookOpen className="h-5 w-5" />
+                Official Documentation References
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-green-700 dark:text-green-300 mb-4">
+                These official sources provide authoritative information about seo tools:
+              </p>
+              <div className="space-y-3">
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://developers.google.com/search/docs" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      Google Search Central Documentation
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Google - Official SEO guidelines and search engine optimization standards
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.w3.org/WAI/standards-guidelines/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      W3C Web Accessibility Guidelines
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      World Wide Web Consortium - Official web accessibility standards and guidelines
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://schema.org/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      Schema.org Structured Data
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Schema.org - Official structured data markup standards for SEO
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.ietf.org/rfc/rfc3986.txt" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      RFC 3986 - URI Generic Syntax
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Internet Engineering Task Force - Official URL and URI standards
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.w3.org/TR/html5/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      HTML5 Specification
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      World Wide Web Consortium - Official HTML5 standards and semantic markup guidelines
+                    </p>
+                  </div>
+                </div>
+                
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+{/* Main Content */}
         <article className="prose prose-lg max-w-none">
           
           {/* Section 1: What is SEO */}

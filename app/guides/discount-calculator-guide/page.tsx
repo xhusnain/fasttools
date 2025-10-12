@@ -102,7 +102,88 @@ export default function DiscountCalculatorGuide() {
           </CardContent>
         </Card>
 
-        {/* Main Content */}
+        
+        {/* Official Documentation References */}
+        <div className="mb-8">
+          <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 border-green-200 dark:border-green-800">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-green-800 dark:text-green-200">
+                <BookOpen className="h-5 w-5" />
+                Official Documentation References
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-green-700 dark:text-green-300 mb-4">
+                These official sources provide authoritative information about discount calculator:
+              </p>
+              <div className="space-y-3">
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.nist.gov/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      NIST - National Institute of Standards and Technology
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      National Institute of Standards and Technology - Official measurement and technology standards
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.iso.org/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      ISO - International Organization for Standardization
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      International Organization for Standardization - Official international standards
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.ieee.org/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      IEEE - Institute of Electrical and Electronics Engineers
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Institute of Electrical and Electronics Engineers - Official technical standards
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.w3.org/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      W3C - World Wide Web Consortium
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      World Wide Web Consortium - Official web standards and guidelines
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.ietf.org/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      IETF - Internet Engineering Task Force
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Internet Engineering Task Force - Official internet protocol standards
+                    </p>
+                  </div>
+                </div>
+                
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+{/* Main Content */}
         <article className="prose prose-lg max-w-none">
           
           {/* Section 1: What are Discounts */}

@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Calendar, Timer, Target, AlertCircle, Heart, Sparkles } from "lucide-react"
+import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Calendar, Timer, Target, AlertCircle, Heart, Sparkles, BookOpen } from "lucide-react"
 
 export default function AgeInHoursCalculatorGuide() {
   const jsonLd = {
@@ -101,7 +101,88 @@ export default function AgeInHoursCalculatorGuide() {
           </CardContent>
         </Card>
 
-        {/* Main Content */}
+        
+        {/* Official Documentation References */}
+        <div className="mb-8">
+          <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 border-green-200 dark:border-green-800">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-green-800 dark:text-green-200">
+                <BookOpen className="h-5 w-5" />
+                Official Documentation References
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-green-700 dark:text-green-300 mb-4">
+                These official sources provide authoritative information about age in hours calculator:
+              </p>
+              <div className="space-y-3">
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.iso.org/standard/70907.html" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      ISO 8601 - Date and Time Standards
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      International Organization for Standardization - Official date and time format standards
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.nist.gov/pml/time-and-frequency-division" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      NIST Time and Frequency Division
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      National Institute of Standards and Technology - Official time measurement standards
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.timeanddate.com/date/leapyear.html" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      Time and Date - Leap Year Rules
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Time and Date AS - Official leap year calculation methods and calendar rules
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.unicode.org/reports/tr35/tr35-dates.html" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      Unicode Technical Standard #35 - Date and Time
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Unicode Consortium - International date and time formatting standards
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.ietf.org/rfc/rfc3339.txt" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      RFC 3339 - Date and Time on the Internet
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Internet Engineering Task Force - Official internet date and time format standards
+                    </p>
+                  </div>
+                </div>
+                
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+{/* Main Content */}
         <article className="prose prose-lg max-w-none">
           
           {/* Section 1: What is Age Calculation */}

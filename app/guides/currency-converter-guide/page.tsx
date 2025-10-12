@@ -1,8 +1,7 @@
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import {
-  ArrowRight,
+import { ArrowRight,
   CheckCircle,
   Star,
   Users,
@@ -19,7 +18,7 @@ import {
   AlertCircle,
   Euro,
   CircleDollarSign
-} from "lucide-react"
+, BookOpen } from "lucide-react"
 
 
 export default function CurrencyConverterGuide() {
@@ -119,6 +118,84 @@ export default function CurrencyConverterGuide() {
             </nav>
           </CardContent>
         </Card>
+
+        {/* Official Documentation References */}
+        <div className="mb-8">
+          <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 border-green-200 dark:border-green-800">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-green-800 dark:text-green-200">
+                <Globe className="h-5 w-5" />
+                Official Documentation References
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-green-700 dark:text-green-300 mb-4">
+                These official sources provide authoritative information about currency exchange rates, international finance, and monetary policies:
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.imf.org/en/Data" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      IMF - International Monetary Fund Data
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      International Monetary Fund - Official global economic data and exchange rate information
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.federalreserve.gov/data/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      Federal Reserve Economic Data (FRED)
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Federal Reserve Bank - Official US economic data and currency exchange rates
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      ECB - European Central Bank Exchange Rates
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      European Central Bank - Official Euro exchange rates and monetary policy data
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.bankofengland.co.uk/statistics/interest-rates" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      Bank of England - Interest Rates and Exchange Rates
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Bank of England - Official UK monetary policy and exchange rate information
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.boj.or.jp/en/statistics/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      Bank of Japan - Statistical Data
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Bank of Japan - Official Japanese monetary policy and exchange rate data
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
         {/* Main Content */}
         <article className="prose prose-lg max-w-none">

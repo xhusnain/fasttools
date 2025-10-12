@@ -160,6 +160,84 @@ export default function CompoundInterestGuidePage() {
             </CardContent>
           </Card>
 
+          {/* Official Documentation References */}
+          <div className="mb-8">
+            <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 border-green-200 dark:border-green-800">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-green-800 dark:text-green-200">
+                  <BookOpen className="h-5 w-5" />
+                  Official Documentation References
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-green-700 dark:text-green-300 mb-4">
+                  These official sources provide authoritative information about compound interest, financial regulations, and investment standards:
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <a href="https://www.sec.gov/investor/pubs/compound.htm" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                        SEC - Compound Interest and Investment Growth
+                      </a>
+                      <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                        Securities and Exchange Commission - Official investment education and compound interest guidelines
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <a href="https://www.federalreserve.gov/consumerinfo/default.htm" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                        Federal Reserve - Consumer Information on Interest Rates
+                      </a>
+                      <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                        Federal Reserve Bank - Official interest rate policies and financial education resources
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <a href="https://www.fdic.gov/consumers/consumer/information/fdiciorn.html" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                        FDIC - Interest Rate Information and Banking Regulations
+                      </a>
+                      <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                        Federal Deposit Insurance Corporation - Official banking regulations and interest rate standards
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <a href="https://www.ftc.gov/tips-advice/business-center/guidance/truth-lending-act" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                        FTC - Truth in Lending Act Guidelines
+                      </a>
+                      <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                        Federal Trade Commission - Official lending regulations and interest rate disclosure requirements
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <a href="https://www.cfp.net/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                        CFP Board - Certified Financial Planner Standards
+                      </a>
+                      <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                        Certified Financial Planner Board - Official financial planning standards and investment guidelines
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
           {/* Main Content */}
           <div className="prose prose-slate max-w-none space-y-8">
             

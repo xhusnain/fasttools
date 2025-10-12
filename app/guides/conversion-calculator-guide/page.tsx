@@ -209,6 +209,84 @@ export default function ConversionCalculatorGuide() {
           </CardContent>
         </Card>
 
+        {/* Official Documentation References */}
+        <div className="mb-8">
+          <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 border-green-200 dark:border-green-800">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-green-800 dark:text-green-200">
+                <BookOpen className="h-5 w-5" />
+                Official Documentation References
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-green-700 dark:text-green-300 mb-4">
+                These official sources provide authoritative information about unit conversions, measurement standards, and international units:
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.nist.gov/pml/special-publication-811" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      NIST Special Publication 811 - Guide for the Use of the International System of Units
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      National Institute of Standards and Technology - Official SI unit definitions and conversion factors
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.bipm.org/en/publications/si-brochure/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      BIPM - International System of Units (SI) Brochure
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Bureau International des Poids et Mesures - Official international unit standards and definitions
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.astm.org/Standards/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      ASTM International Standards
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      ASTM International - Official measurement and testing standards for various industries
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.iso.org/committee/46202.html" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      ISO/TC 12 - Quantities and Units
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      International Organization for Standardization - Official international standards for quantities and units
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.npl.co.uk/si-units" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      NPL - National Physical Laboratory SI Units
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      National Physical Laboratory - Official UK measurement standards and unit conversion guidelines
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
         {/* Conversion Basics */}
         <section id="conversion-basics" className="mb-12">
           <Card>

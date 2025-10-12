@@ -102,6 +102,84 @@ export default function AgeCalculatorGuide() {
           </CardContent>
         </Card>
 
+        {/* Official Documentation References */}
+        <div className="mb-8">
+          <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 border-green-200 dark:border-green-800">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-green-800 dark:text-green-200">
+                <BookOpen className="h-5 w-5" />
+                Official Documentation References
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-green-700 dark:text-green-300 mb-4">
+                These official sources provide authoritative information about age calculation, date arithmetic, and time standards:
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <Link href="https://www.iso.org/standard/70907.html" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      ISO 8601 - Date and Time Standards
+                    </Link>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      International Organization for Standardization - Official date and time format standards
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <Link href="https://www.timeanddate.com/date/leapyear.html" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      Time and Date - Leap Year Rules and Calculations
+                    </Link>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Time and Date AS - Official leap year calculation methods and calendar rules
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <Link href="https://www.nist.gov/pml/time-and-frequency-division" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      NIST Time and Frequency Division
+                    </Link>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      National Institute of Standards and Technology - Official time measurement standards
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <Link href="https://www.unicode.org/reports/tr35/tr35-dates.html" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      Unicode Technical Standard #35 - Date and Time
+                    </Link>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Unicode Consortium - International date and time formatting standards
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <Link href="https://www.ietf.org/rfc/rfc3339.txt" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      RFC 3339 - Date and Time on the Internet
+                    </Link>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Internet Engineering Task Force - Official internet date and time format standards
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Main Content */}

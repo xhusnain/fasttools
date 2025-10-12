@@ -85,6 +85,84 @@ export default function BMICalculatorGuide() {
                 </div>
               </div>
 
+              {/* Official Documentation References */}
+              <div className="mb-8">
+                <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 border-green-200 dark:border-green-800">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-green-800 dark:text-green-200">
+                      <BookOpen className="h-5 w-5" />
+                      Official Documentation References
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-green-700 dark:text-green-300 mb-4">
+                      These official sources provide authoritative information about BMI calculation, health standards, and medical guidelines:
+                    </p>
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                          <a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                            WHO - Obesity and Overweight Fact Sheet
+                          </a>
+                          <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                            World Health Organization - Official BMI classification standards and health guidelines
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                          <a href="https://www.cdc.gov/healthyweight/assessing/bmi/index.html" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                            CDC - BMI Calculator and Information
+                          </a>
+                          <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                            Centers for Disease Control and Prevention - Official BMI calculation methods and health recommendations
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                          <a href="https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmicalc.htm" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                            NHLBI - BMI Calculator and Guidelines
+                          </a>
+                          <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                            National Heart, Lung, and Blood Institute - Official BMI standards and cardiovascular health guidelines
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                          <a href="https://www.ada.org/en/science-research/ada-seal-of-acceptance/ada-seal-products" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                            ADA - American Diabetes Association Guidelines
+                          </a>
+                          <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                            American Diabetes Association - Official diabetes prevention and BMI correlation guidelines
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                          <a href="https://www.heart.org/en/healthy-living/healthy-eating/lose-weight/bmi-calculator" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                            AHA - American Heart Association BMI Guidelines
+                          </a>
+                          <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                            American Heart Association - Official cardiovascular health and BMI correlation standards
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
               {/* Personalized Health Guidance Section */}
               <section className="mb-12">
                 <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">

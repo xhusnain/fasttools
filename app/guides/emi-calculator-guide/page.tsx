@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { AdSpace } from "@/components/ad-space"
-import { Calculator, Home, Car, CreditCard, GraduationCap, DollarSign, Percent, Clock, Target, TrendingUp, PieChart, BarChart3, Calendar, Users, Star, Globe, Shield, Lightbulb, AlertCircle, Info, CheckCircle, ExternalLink } from "lucide-react"
+import { Calculator, Home, Car, CreditCard, GraduationCap, DollarSign, Percent, Clock, Target, TrendingUp, PieChart, BarChart3, Calendar, Users, Star, Globe, Shield, Lightbulb, AlertCircle, Info, CheckCircle, ExternalLink , BookOpen } from "lucide-react"
 
 export default function EMICalculatorGuide() {
   const jsonLd = {

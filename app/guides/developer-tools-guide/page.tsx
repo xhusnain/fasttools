@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Code, Palette, FileText } from "lucide-react"
+import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Code, Palette, FileText, BookOpen } from "lucide-react"
 
 
 export default function DeveloperToolsGuide() {
@@ -102,7 +102,88 @@ export default function DeveloperToolsGuide() {
           </CardContent>
         </Card>
 
-        {/* Main Content */}
+        
+        {/* Official Documentation References */}
+        <div className="mb-8">
+          <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 border-green-200 dark:border-green-800">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-green-800 dark:text-green-200">
+                <BookOpen className="h-5 w-5" />
+                Official Documentation References
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-green-700 dark:text-green-300 mb-4">
+                These official sources provide authoritative information about developer tools:
+              </p>
+              <div className="space-y-3">
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.w3.org/standards/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      W3C Web Standards
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      World Wide Web Consortium - Official web development standards and guidelines
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://developer.mozilla.org/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      MDN Web Docs
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Mozilla Developer Network - Official web development documentation and standards
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.ecma-international.org/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      ECMA International Standards
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      ECMA International - Official JavaScript and programming language standards
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.iso.org/standard/74528.html" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      ISO/IEC 25010 - Software Quality Standards
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      International Organization for Standardization - Official software quality standards
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-green-200 dark:border-green-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <a href="https://www.ieee.org/standards/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                      IEEE Software Engineering Standards
+                    </a>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      Institute of Electrical and Electronics Engineers - Official software engineering standards
+                    </p>
+                  </div>
+                </div>
+                
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+{/* Main Content */}
         <article className="prose prose-lg max-w-none">
           
           {/* Section 1: Essential Developer Tools */}
