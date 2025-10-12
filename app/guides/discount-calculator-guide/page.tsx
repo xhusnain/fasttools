@@ -65,6 +65,16 @@ export default function DiscountCalculatorGuide() {
               <span>4.7/5 rating</span>
             </div>
           </div>
+          
+          {/* Try Discount Calculator Button */}
+          <div className="mt-8">
+            <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
+              <Link href="/finance-tools/discount-calculator">
+                <Percent className="mr-2 h-5 w-5" />
+                Try Discount Calculator
+              </Link>
+            </Button>
+          </div>
         </div>
 
         {/* Table of Contents */}

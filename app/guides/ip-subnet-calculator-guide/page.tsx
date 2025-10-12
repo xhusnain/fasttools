@@ -97,6 +97,16 @@ export default function IPSubnetCalculatorGuide() {
                     <span className="text-slate-700 dark:text-slate-300 font-medium">Accurate Results</span>
                   </div>
                 </div>
+                
+                {/* Try IP Subnet Calculator Button */}
+                <div className="mt-6 sm:mt-8">
+                  <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 text-base sm:text-lg">
+                    <Link href="/tools/ip-subnet-calculator">
+                      <Network className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                      Try IP Subnet Calculator
+                    </Link>
+                  </Button>
+                </div>
               </div>
 
               {/* Table of Contents */}

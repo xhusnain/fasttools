@@ -103,6 +103,16 @@ export default function CompoundInterestGuidePage() {
               Master compound interest calculations with our comprehensive guide. Learn formulas, strategies, 
               country-specific rates, and advanced investment planning techniques for financial success.
             </p>
+            
+            {/* Try Compound Interest Calculator Button */}
+            <div className="mt-8">
+              <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
+                <Link href="/tools/compound-interest">
+                  <Calculator className="mr-2 h-5 w-5" />
+                  Try Compound Interest Calculator
+                </Link>
+              </Button>
+            </div>
           </div>
 
           {/* Top Content Ad */}

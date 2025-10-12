@@ -97,6 +97,13 @@ export default function TimeDurationCalculatorGuide() {
       
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
         <div className="container mx-auto px-4 py-8">
+          {/* Try Time Duration Calculator Button */}
+          <div className="text-center mb-8">
+            <a href="/tools/time-duration" className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+              <Clock className="h-5 w-5" />
+              Try Time Duration Calculator
+            </a>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             {/* Main Content */}
             <div className="lg:col-span-3">

@@ -148,6 +148,16 @@ export default function ConversionCalculatorGuide() {
               <span>Free to use</span>
             </div>
           </div>
+          
+          {/* Try Conversion Calculator Button */}
+          <div className="mt-8">
+            <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
+              <Link href="/converters/conversion-calculator">
+                <Calculator className="mr-2 h-5 w-5" />
+                Try Conversion Calculator
+              </Link>
+            </Button>
+          </div>
         </div>
 
         {/* Sponsored Content */}

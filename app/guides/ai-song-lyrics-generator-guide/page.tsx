@@ -77,6 +77,16 @@ export default function AISongLyricsGeneratorGuide() {
               <span>4.9/5 rating</span>
             </div>
           </div>
+          
+          {/* Try AI Song Lyrics Generator Button */}
+          <div className="mt-8">
+            <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
+              <Link href="/ai-tools/lyrics-generator">
+                <Music className="mr-2 h-5 w-5" />
+                Try AI Song Lyrics Generator
+              </Link>
+            </Button>
+          </div>
         </div>
 
         {/* Table of Contents */}

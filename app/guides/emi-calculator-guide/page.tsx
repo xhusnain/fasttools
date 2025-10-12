@@ -1,6 +1,8 @@
 "use client"
 
+import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { AdSpace } from "@/components/ad-space"
 import { Calculator, Home, Car, CreditCard, GraduationCap, DollarSign, Percent, Clock, Target, TrendingUp, PieChart, BarChart3, Calendar, Users, Star, Globe, Shield, Lightbulb, AlertCircle, Info, CheckCircle, ExternalLink , BookOpen } from "lucide-react"
 
@@ -84,6 +86,16 @@ export default function EMICalculatorGuide() {
                     <BarChart3 className="h-4 w-4 text-purple-600" />
                     <span className="text-slate-700 dark:text-slate-300 font-medium">Detailed Schedule</span>
                   </div>
+                </div>
+                
+                {/* Try EMI Calculator Button */}
+                <div className="mt-8">
+                  <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
+                    <Link href="/tools/loan-calculator">
+                      <Calculator className="mr-2 h-5 w-5" />
+                      Try EMI Calculator
+                    </Link>
+                  </Button>
                 </div>
               </div>
 

@@ -100,6 +100,16 @@ export default function GPACalculatorGuidePage() {
               Master Grade Point Average calculations with our comprehensive guide. Learn formulas, grading systems, 
               academic planning strategies, and improvement techniques for academic success.
             </p>
+            
+            {/* Try GPA Calculator Button */}
+            <div className="mt-8">
+              <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
+                <Link href="/tools/gpa-calculator">
+                  <Calculator className="mr-2 h-5 w-5" />
+                  Try GPA Calculator
+                </Link>
+              </Button>
+            </div>
           </div>
 
           {/* Top Content Ad */}

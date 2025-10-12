@@ -63,6 +63,14 @@ export default function TaxCalculatorGuide() {
                 Master income tax calculation across multiple countries with comprehensive formulas, 
                 real examples, and advanced calculation methods used by professionals.
               </p>
+              
+              {/* Try Tax Calculator Button */}
+              <div className="mt-6">
+                <a href="/tools/tax-calculator" className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+                  <Calculator className="h-5 w-5" />
+                  Try Tax Calculator
+                </a>
+              </div>
             </div>
 
             {/* Top Ad */}

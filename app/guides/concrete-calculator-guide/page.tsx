@@ -91,6 +91,16 @@ export default function ConcreteCalculatorGuidePage() {
             Master the art and science of concrete calculations. Learn formulas, mix ratios, material breakdowns, 
             curing processes, and professional construction tips for successful concrete projects.
           </p>
+          
+          {/* Try Concrete Calculator Button */}
+          <div className="mt-8 text-center">
+            <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
+              <Link href="/tools/concrete-calculator">
+                <Calculator className="mr-2 h-5 w-5" />
+                Try Concrete Calculator
+              </Link>
+            </Button>
+          </div>
         </div>
 
         {/* Top Content Ad */}

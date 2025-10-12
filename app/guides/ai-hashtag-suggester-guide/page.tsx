@@ -65,6 +65,16 @@ export default function AIHashtagSuggesterGuide() {
               <span>4.8/5 rating</span>
             </div>
           </div>
+          
+          {/* Try AI Hashtag Suggester Button */}
+          <div className="mt-8">
+            <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
+              <Link href="/ai-tools/hashtag-suggester">
+                <Hash className="mr-2 h-5 w-5" />
+                Try AI Hashtag Suggester
+              </Link>
+            </Button>
+          </div>
         </div>
 
         {/* Table of Contents */}

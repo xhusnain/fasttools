@@ -77,6 +77,16 @@ export default function QRCodeGeneratorGuide() {
               <span>4.9/5 rating</span>
             </div>
           </div>
+          
+          {/* Try QR Code Generator Button */}
+          <div className="mt-8">
+            <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
+              <Link href="/ai-tools/qr-generator">
+                <BookOpen className="mr-2 h-5 w-5" />
+                Try QR Code Generator
+              </Link>
+            </Button>
+          </div>
         </div>
 
         {/* Table of Contents */}

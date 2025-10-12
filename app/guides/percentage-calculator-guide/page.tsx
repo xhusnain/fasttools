@@ -86,6 +86,14 @@ export default function PercentageCalculatorGuide() {
                   <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
                     Master percentage calculations with our comprehensive guide. Learn basic percentage, increase/decrease, markup/margin, compound interest, and percentage difference formulas with step-by-step examples and real-world applications.
                   </p>
+                  
+                  {/* Try Percentage Calculator Button */}
+                  <div className="mt-6">
+                    <a href="/tools/percentage-calculator" className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+                      <Calculator className="h-5 w-5" />
+                      Try Percentage Calculator
+                    </a>
+                  </div>
                 </div>
 
                 <div className="p-8 space-y-8">

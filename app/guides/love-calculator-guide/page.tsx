@@ -77,6 +77,16 @@ export default function LoveCalculatorGuide() {
               <span>4.9/5 rating</span>
             </div>
           </div>
+          
+          {/* Try Love Calculator Button */}
+          <div className="mt-8">
+            <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
+              <Link href="/fun-tools/love-calculator">
+                <Heart className="mr-2 h-5 w-5" />
+                Try Love Calculator
+              </Link>
+            </Button>
+          </div>
         </div>
 
         {/* Table of Contents */}

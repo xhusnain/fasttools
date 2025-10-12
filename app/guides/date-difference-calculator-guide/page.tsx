@@ -65,6 +65,16 @@ export default function DateDifferenceCalculatorGuide() {
               <span>4.9/5 rating</span>
             </div>
           </div>
+          
+          {/* Try Date Difference Calculator Button */}
+          <div className="mt-8">
+            <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
+              <Link href="/tools/date-difference">
+                <Calendar className="mr-2 h-5 w-5" />
+                Try Date Difference Calculator
+              </Link>
+            </Button>
+          </div>
         </div>
 
         {/* Mathematical Calculation Section for Students */}

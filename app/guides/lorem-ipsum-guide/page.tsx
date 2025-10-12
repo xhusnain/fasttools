@@ -77,6 +77,16 @@ export default function LoremIpsumGuide() {
               <span>4.6/5 rating</span>
             </div>
           </div>
+          
+          {/* Try Lorem Ipsum Generator Button */}
+          <div className="mt-8">
+            <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
+              <Link href="/seo-tools/lorem-ipsum">
+                <Type className="mr-2 h-5 w-5" />
+                Try Lorem Ipsum Generator
+              </Link>
+            </Button>
+          </div>
         </div>
 
         {/* Table of Contents */}

@@ -1,8 +1,10 @@
 "use client"
 
+import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { AdSpace } from "@/components/ad-space"
-import { Activity, Calculator, Heart, Target, Scale, TrendingUp, AlertTriangle, CheckCircle, Info, Zap, Sparkles, BookOpen, ExternalLink, Calendar, Users, Star, Globe, Shield, Lightbulb, BarChart3 } from "lucide-react"
+import { Activity, Calculator, Heart, Target, Scale, TrendingUp, AlertTriangle, CheckCircle, Info, Zap, Sparkles, BookOpen, ExternalLink, Calendar, Users, Star, Globe, Shield, Lightbulb, BarChart3, ArrowRight } from "lucide-react"
 
 export default function BMICalculatorGuide() {
   const jsonLd = {
@@ -82,6 +84,16 @@ export default function BMICalculatorGuide() {
                     <Target className="h-4 w-4 text-purple-600" />
                     <span className="text-slate-700 dark:text-slate-300 font-medium">Accurate Results</span>
                   </div>
+                </div>
+                
+                {/* Try BMI Calculator Button */}
+                <div className="mt-8">
+                  <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
+                    <Link href="/tools/bmi-calculator">
+                      <Calculator className="mr-2 h-5 w-5" />
+                      Try BMI Calculator
+                    </Link>
+                  </Button>
                 </div>
               </div>
 
