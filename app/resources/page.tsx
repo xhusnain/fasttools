@@ -114,7 +114,8 @@ export default function ResourcesPage() {
         "Loan Calculator",
         "Tax Calculator",
         "Percentage Calculator",
-        "Compound Interest Calculator"
+        "Compound Interest Calculator",
+        "Fraction Calculator"
       ]
     },
     {

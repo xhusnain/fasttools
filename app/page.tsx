@@ -325,6 +325,13 @@ export default function HomePage() {
       href: "/tools/compound-interest",
       popular: false,
     },
+    {
+      title: "Fraction Calculator",
+      description: "Add, subtract, multiply, and divide fractions with automatic simplification.",
+      icon: Calculator,
+      href: "/tools/fraction-calculator",
+      popular: false,
+    },
     // Date & Time tools (category pages already exist but show here too)
     {
       title: "Age in Hours",

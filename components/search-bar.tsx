@@ -16,6 +16,7 @@ const toolSuggestions = [
   { name: "Time Duration", path: "/tools/time-duration", category: "Calculator" },
   { name: "Tax Calculator", path: "/tools/tax-calculator", category: "Calculator" },
   { name: "Compound Interest", path: "/tools/compound-interest", category: "Calculator" },
+  { name: "Fraction Calculator", path: "/tools/fraction-calculator", category: "Calculator" },
   { name: "Text Case Converter", path: "/converters/text-case", category: "Converter" },
   { name: "Length Converter", path: "/converters/length", category: "Converter" },
   { name: "File Size Converter", path: "/converters/file-size", category: "Converter" },

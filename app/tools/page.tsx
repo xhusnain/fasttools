@@ -281,6 +281,12 @@ export default function ToolsPage() {
       icon: Triangle,
       href: "/tools/triangle-calculator",
     },
+    {
+      title: "Fraction Calculator",
+      description: "Add, subtract, multiply, and divide fractions with automatic simplification, decimal conversion, and mixed number support.",
+      icon: Calculator,
+      href: "/tools/fraction-calculator",
+    },
   ]
 
   return (
