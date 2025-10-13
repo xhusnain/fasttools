@@ -89,6 +89,14 @@ export function Footer() {
                   IP Subnet Calculator
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/tools/standard-deviation-calculator"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  Standard Deviation Calculator
+                </Link>
+              </li>
             </ul>
           </div>
 

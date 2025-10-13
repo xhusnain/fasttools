@@ -37,6 +37,7 @@ const ConversionCalculatorGuide = dynamic(() => import("@/app/guides/conversion-
 const ScientificCalculatorGuide = dynamic(() => import("@/app/guides/scientific-calculator-guide/page"), { ssr: false })
 const TriangleCalculatorGuide = dynamic(() => import("@/app/guides/triangle-calculator-guide/page"), { ssr: false })
 const FractionCalculatorGuide = dynamic(() => import("@/app/guides/fraction-calculator-guide/page"), { ssr: false })
+const StandardDeviationGuide = dynamic(() => import("@/app/guides/standard-deviation-guide/page"), { ssr: false })
 
 export default function LearnPage() {
   const [selectedGuide, setSelectedGuide] = useState("age-calculator")
@@ -192,6 +193,11 @@ export default function LearnPage() {
               id: "fraction-calculator",
               title: "Fraction Calculator Guide",
               href: "/guides/fraction-calculator-guide"
+            },
+            {
+              id: "standard-deviation",
+              title: "Standard Deviation Guide",
+              href: "/guides/standard-deviation-guide"
             }
   ]
 
@@ -257,6 +263,8 @@ export default function LearnPage() {
                 return <TriangleCalculatorGuide />
               case "fraction-calculator":
                 return <FractionCalculatorGuide />
+              case "standard-deviation":
+                return <StandardDeviationGuide />
               default:
                 return <AgeCalculatorGuide />
     }

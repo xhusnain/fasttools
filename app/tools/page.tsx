@@ -16,6 +16,7 @@ import {
   Network,
   Ruler,
   Triangle,
+  BarChart3,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
@@ -286,6 +287,12 @@ export default function ToolsPage() {
       description: "Add, subtract, multiply, and divide fractions with automatic simplification, decimal conversion, and mixed number support.",
       icon: Calculator,
       href: "/tools/fraction-calculator",
+    },
+    {
+      title: "Standard Deviation Calculator",
+      description: "Calculate standard deviation, variance, mean, confidence intervals, quartiles, outliers detection, and comprehensive statistical analysis.",
+      icon: BarChart3,
+      href: "/tools/standard-deviation-calculator",
     },
   ]
 
