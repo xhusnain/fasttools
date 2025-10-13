@@ -341,6 +341,12 @@ export default function ToolsPage() {
       icon: Receipt,
       href: "/tools/sales-tax-calculator",
     },
+    {
+      title: "Interest Rate Calculator",
+      description: "Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation, amortization analysis, and loan optimization recommendations.",
+      icon: Percent,
+      href: "/tools/interest-rate-calculator",
+    },
   ]
 
   return (
