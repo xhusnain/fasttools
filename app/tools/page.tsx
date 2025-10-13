@@ -20,6 +20,7 @@ import {
   Heart,
   Timer,
   Flame,
+  Scale,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
@@ -320,6 +321,12 @@ export default function ToolsPage() {
       description: "Calculate your Basal Metabolic Rate (BMR) with multiple equations. Get TDEE analysis, weight management goals, and personalized nutrition recommendations for optimal health.",
       icon: Flame,
       href: "/tools/bmr-calculator",
+    },
+    {
+      title: "Body Fat Calculator",
+      description: "Calculate your body fat percentage using U.S. Navy method and BMI method. Get fat mass, lean mass, ideal body fat, and personalized health recommendations for optimal body composition.",
+      icon: Scale,
+      href: "/tools/body-fat-calculator",
     },
   ]
 

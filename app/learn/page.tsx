@@ -42,6 +42,7 @@ const PregnancyConceptionCalculatorGuide = dynamic(() => import("@/app/guides/pr
 const PregnancyCalculatorGuide = dynamic(() => import("@/app/guides/pregnancy-calculator-guide/page"), { ssr: false })
 const PaceCalculatorGuide = dynamic(() => import("@/app/guides/pace-calculator-guide/page"), { ssr: false })
 const BMRCalculatorGuide = dynamic(() => import("@/app/guides/bmr-calculator-guide/page"), { ssr: false })
+const BodyFatCalculatorGuide = dynamic(() => import("@/app/guides/body-fat-calculator-guide/page"), { ssr: false })
 
 export default function LearnPage() {
   const [selectedGuide, setSelectedGuide] = useState("age-calculator")
@@ -222,6 +223,11 @@ export default function LearnPage() {
               id: "bmr-calculator",
               title: "BMR Calculator Guide",
               href: "/guides/bmr-calculator-guide"
+            },
+            {
+              id: "body-fat-calculator",
+              title: "Body Fat Calculator Guide",
+              href: "/guides/body-fat-calculator-guide"
             }
   ]
 
@@ -297,6 +303,8 @@ export default function LearnPage() {
                 return <PaceCalculatorGuide />
               case "bmr-calculator":
                 return <BMRCalculatorGuide />
+              case "body-fat-calculator":
+                return <BodyFatCalculatorGuide />
               default:
                 return <AgeCalculatorGuide />
     }
