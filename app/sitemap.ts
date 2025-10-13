@@ -542,6 +542,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95, // Highest priority for salary calculator
     },
     {
+      url: "https://fasttools.store/tools/finance-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for finance calculator
+    },
+    {
       url: "https://fasttools.store/tools/date-difference",
       lastModified: getFreshnessDate(7),
       changeFrequency: "weekly" as const,
@@ -1070,6 +1076,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: getFreshnessDate(1), // Updated daily for new guide
         changeFrequency: "daily" as const,
         priority: 0.98, // Highest priority for salary calculator guide
+      },
+      {
+        url: "https://fasttools.store/guides/finance-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for finance calculator guide
       },
       {
         url: "https://fasttools.store/guides/standard-deviation-guide",

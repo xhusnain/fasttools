@@ -353,6 +353,12 @@ export default function ToolsPage() {
       icon: DollarSign,
       href: "/tools/salary-calculator",
     },
+    {
+      title: "Finance Calculator",
+      description: "Professional finance calculator for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules, investment analysis, and financial planning tools.",
+      icon: Calculator,
+      href: "/tools/finance-calculator",
+    },
   ]
 
   return (

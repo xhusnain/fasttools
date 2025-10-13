@@ -47,6 +47,7 @@ const CalorieCalculatorGuide = dynamic(() => import("@/app/guides/calorie-calcul
 const SalesTaxCalculatorGuide = dynamic(() => import("@/app/guides/sales-tax-calculator-guide/page"), { ssr: false })
 const InterestRateCalculatorGuide = dynamic(() => import("@/app/guides/interest-rate-calculator-guide/page"), { ssr: false })
 const SalaryCalculatorGuide = dynamic(() => import("@/app/guides/salary-calculator-guide/page"), { ssr: false })
+const FinanceCalculatorGuide = dynamic(() => import("@/app/guides/finance-calculator-guide/page"), { ssr: false })
 
 export default function LearnPage() {
   const [selectedGuide, setSelectedGuide] = useState("age-calculator")
@@ -252,6 +253,11 @@ export default function LearnPage() {
               id: "salary-calculator",
               title: "Salary Calculator Guide",
               href: "/guides/salary-calculator-guide"
+            },
+            {
+              id: "finance-calculator",
+              title: "Finance Calculator Guide",
+              href: "/guides/finance-calculator-guide"
             }
   ]
 
@@ -337,6 +343,8 @@ export default function LearnPage() {
                 return <InterestRateCalculatorGuide />
               case "salary-calculator":
                 return <SalaryCalculatorGuide />
+              case "finance-calculator":
+                return <FinanceCalculatorGuide />
               default:
                 return <AgeCalculatorGuide />
     }
