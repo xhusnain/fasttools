@@ -524,6 +524,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95, // Highest priority for calorie calculator
     },
     {
+      url: "https://fasttools.store/tools/sales-tax-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for sales tax calculator
+    },
+    {
       url: "https://fasttools.store/tools/date-difference",
       lastModified: getFreshnessDate(7),
       changeFrequency: "weekly" as const,
@@ -1034,6 +1040,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: getFreshnessDate(1), // Updated daily for new guide
         changeFrequency: "daily" as const,
         priority: 0.98, // Highest priority for calorie calculator guide
+      },
+      {
+        url: "https://fasttools.store/guides/sales-tax-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for sales tax calculator guide
       },
       {
         url: "https://fasttools.store/guides/standard-deviation-guide",

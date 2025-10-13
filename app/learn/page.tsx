@@ -44,6 +44,7 @@ const PaceCalculatorGuide = dynamic(() => import("@/app/guides/pace-calculator-g
 const BMRCalculatorGuide = dynamic(() => import("@/app/guides/bmr-calculator-guide/page"), { ssr: false })
 const BodyFatCalculatorGuide = dynamic(() => import("@/app/guides/body-fat-calculator-guide/page"), { ssr: false })
 const CalorieCalculatorGuide = dynamic(() => import("@/app/guides/calorie-calculator-guide/page"), { ssr: false })
+const SalesTaxCalculatorGuide = dynamic(() => import("@/app/guides/sales-tax-calculator-guide/page"), { ssr: false })
 
 export default function LearnPage() {
   const [selectedGuide, setSelectedGuide] = useState("age-calculator")
@@ -234,6 +235,11 @@ export default function LearnPage() {
               id: "calorie-calculator",
               title: "Calorie Calculator Guide",
               href: "/guides/calorie-calculator-guide"
+            },
+            {
+              id: "sales-tax-calculator",
+              title: "Sales Tax Calculator Guide",
+              href: "/guides/sales-tax-calculator-guide"
             }
   ]
 
@@ -313,6 +319,8 @@ export default function LearnPage() {
                 return <BodyFatCalculatorGuide />
               case "calorie-calculator":
                 return <CalorieCalculatorGuide />
+              case "sales-tax-calculator":
+                return <SalesTaxCalculatorGuide />
               default:
                 return <AgeCalculatorGuide />
     }

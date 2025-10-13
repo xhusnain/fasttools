@@ -21,6 +21,7 @@ import {
   Timer,
   Flame,
   Scale,
+  Receipt,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
@@ -333,6 +334,12 @@ export default function ToolsPage() {
       description: "Calculate your daily calorie needs with advanced BMR and TDEE analysis. Get weight management goals, zigzag calorie cycling, and personalized nutrition recommendations for optimal health.",
       icon: Flame,
       href: "/tools/calorie-calculator",
+    },
+    {
+      title: "Sales Tax Calculator",
+      description: "Calculate sales tax for all 50 US states with our advanced calculator. Get accurate tax calculations, state comparisons, business tips, and compliance guidance for optimal tax planning.",
+      icon: Receipt,
+      href: "/tools/sales-tax-calculator",
     },
   ]
 
