@@ -347,6 +347,12 @@ export default function ToolsPage() {
       icon: Percent,
       href: "/tools/interest-rate-calculator",
     },
+    {
+      title: "Salary Calculator",
+      description: "Convert salary amounts across all pay frequencies with holiday and vacation adjustments. Professional salary analysis, industry comparisons, and negotiation support for career advancement.",
+      icon: DollarSign,
+      href: "/tools/salary-calculator",
+    },
   ]
 
   return (
