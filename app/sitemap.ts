@@ -506,6 +506,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95, // Highest priority for pace calculator
     },
     {
+      url: "https://fasttools.store/tools/bmr-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for BMR calculator
+    },
+    {
       url: "https://fasttools.store/tools/date-difference",
       lastModified: getFreshnessDate(7),
       changeFrequency: "weekly" as const,
@@ -998,6 +1004,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: getFreshnessDate(1), // Updated daily for new guide
         changeFrequency: "daily" as const,
         priority: 0.98, // Highest priority for pace calculator guide
+      },
+      {
+        url: "https://fasttools.store/guides/bmr-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for BMR calculator guide
       },
       {
         url: "https://fasttools.store/guides/standard-deviation-guide",

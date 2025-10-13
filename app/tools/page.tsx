@@ -19,6 +19,7 @@ import {
   BarChart3,
   Heart,
   Timer,
+  Flame,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
@@ -313,6 +314,12 @@ export default function ToolsPage() {
       description: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max with our advanced pace calculator. Perfect for runners, coaches, and athletes.",
       icon: Timer,
       href: "/tools/pace-calculator",
+    },
+    {
+      title: "BMR Calculator",
+      description: "Calculate your Basal Metabolic Rate (BMR) with multiple equations. Get TDEE analysis, weight management goals, and personalized nutrition recommendations for optimal health.",
+      icon: Flame,
+      href: "/tools/bmr-calculator",
     },
   ]
 
