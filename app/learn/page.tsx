@@ -38,6 +38,7 @@ const ScientificCalculatorGuide = dynamic(() => import("@/app/guides/scientific-
 const TriangleCalculatorGuide = dynamic(() => import("@/app/guides/triangle-calculator-guide/page"), { ssr: false })
 const FractionCalculatorGuide = dynamic(() => import("@/app/guides/fraction-calculator-guide/page"), { ssr: false })
 const StandardDeviationGuide = dynamic(() => import("@/app/guides/standard-deviation-guide/page"), { ssr: false })
+const PregnancyConceptionCalculatorGuide = dynamic(() => import("@/app/guides/pregnancy-conception-calculator-guide/page"), { ssr: false })
 
 export default function LearnPage() {
   const [selectedGuide, setSelectedGuide] = useState("age-calculator")
@@ -198,6 +199,11 @@ export default function LearnPage() {
               id: "standard-deviation",
               title: "Standard Deviation Guide",
               href: "/guides/standard-deviation-guide"
+            },
+            {
+              id: "pregnancy-conception-calculator",
+              title: "Pregnancy Conception Calculator Guide",
+              href: "/guides/pregnancy-conception-calculator-guide"
             }
   ]
 
@@ -265,6 +271,8 @@ export default function LearnPage() {
                 return <FractionCalculatorGuide />
               case "standard-deviation":
                 return <StandardDeviationGuide />
+              case "pregnancy-conception-calculator":
+                return <PregnancyConceptionCalculatorGuide />
               default:
                 return <AgeCalculatorGuide />
     }

@@ -17,6 +17,7 @@ import {
   Ruler,
   Triangle,
   BarChart3,
+  Heart,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
@@ -293,6 +294,12 @@ export default function ToolsPage() {
       description: "Calculate standard deviation, variance, mean, confidence intervals, quartiles, outliers detection, and comprehensive statistical analysis.",
       icon: BarChart3,
       href: "/tools/standard-deviation-calculator",
+    },
+    {
+      title: "Pregnancy Conception Calculator",
+      description: "Calculate your conception date with personalized trimester guidance, nutrition tips, exercise recommendations, and comprehensive pregnancy insights.",
+      icon: Heart,
+      href: "/tools/pregnancy-conception-calculator",
     },
   ]
 
