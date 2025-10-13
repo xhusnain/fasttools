@@ -328,6 +328,12 @@ export default function ToolsPage() {
       icon: Scale,
       href: "/tools/body-fat-calculator",
     },
+    {
+      title: "Calorie Calculator",
+      description: "Calculate your daily calorie needs with advanced BMR and TDEE analysis. Get weight management goals, zigzag calorie cycling, and personalized nutrition recommendations for optimal health.",
+      icon: Flame,
+      href: "/tools/calorie-calculator",
+    },
   ]
 
   return (
