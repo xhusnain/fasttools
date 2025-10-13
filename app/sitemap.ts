@@ -500,6 +500,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95, // Highest priority for pregnancy calculator
     },
     {
+      url: "https://fasttools.store/tools/pace-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for pace calculator
+    },
+    {
       url: "https://fasttools.store/tools/date-difference",
       lastModified: getFreshnessDate(7),
       changeFrequency: "weekly" as const,
@@ -986,6 +992,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: getFreshnessDate(1), // Updated daily for new guide
         changeFrequency: "daily" as const,
         priority: 0.98, // Highest priority for pregnancy guide
+      },
+      {
+        url: "https://fasttools.store/guides/pace-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for pace calculator guide
       },
       {
         url: "https://fasttools.store/guides/standard-deviation-guide",

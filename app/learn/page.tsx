@@ -40,6 +40,7 @@ const FractionCalculatorGuide = dynamic(() => import("@/app/guides/fraction-calc
 const StandardDeviationGuide = dynamic(() => import("@/app/guides/standard-deviation-guide/page"), { ssr: false })
 const PregnancyConceptionCalculatorGuide = dynamic(() => import("@/app/guides/pregnancy-conception-calculator-guide/page"), { ssr: false })
 const PregnancyCalculatorGuide = dynamic(() => import("@/app/guides/pregnancy-calculator-guide/page"), { ssr: false })
+const PaceCalculatorGuide = dynamic(() => import("@/app/guides/pace-calculator-guide/page"), { ssr: false })
 
 export default function LearnPage() {
   const [selectedGuide, setSelectedGuide] = useState("age-calculator")
@@ -210,6 +211,11 @@ export default function LearnPage() {
               id: "pregnancy-calculator",
               title: "Pregnancy Calculator Guide",
               href: "/guides/pregnancy-calculator-guide"
+            },
+            {
+              id: "pace-calculator",
+              title: "Pace Calculator Guide",
+              href: "/guides/pace-calculator-guide"
             }
   ]
 
@@ -281,6 +287,8 @@ export default function LearnPage() {
                 return <PregnancyConceptionCalculatorGuide />
               case "pregnancy-calculator":
                 return <PregnancyCalculatorGuide />
+              case "pace-calculator":
+                return <PaceCalculatorGuide />
               default:
                 return <AgeCalculatorGuide />
     }

@@ -18,6 +18,7 @@ import {
   Triangle,
   BarChart3,
   Heart,
+  Timer,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
@@ -306,6 +307,12 @@ export default function ToolsPage() {
       description: "Track your pregnancy with comprehensive calculator. Get due date estimates, gestational age, weight gain recommendations, and personalized pregnancy insights.",
       icon: Heart,
       href: "/tools/pregnancy-calculator",
+    },
+    {
+      title: "Pace Calculator",
+      description: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max with our advanced pace calculator. Perfect for runners, coaches, and athletes.",
+      icon: Timer,
+      href: "/tools/pace-calculator",
     },
   ]
 
