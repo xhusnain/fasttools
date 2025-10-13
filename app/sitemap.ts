@@ -494,6 +494,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95, // Highest priority for pregnancy calculator
     },
     {
+      url: "https://fasttools.store/tools/pregnancy-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for pregnancy calculator
+    },
+    {
       url: "https://fasttools.store/tools/date-difference",
       lastModified: getFreshnessDate(7),
       changeFrequency: "weekly" as const,
@@ -971,6 +977,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
       {
         url: "https://fasttools.store/guides/pregnancy-conception-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for pregnancy guide
+      },
+      {
+        url: "https://fasttools.store/guides/pregnancy-calculator-guide",
         lastModified: getFreshnessDate(1), // Updated daily for new guide
         changeFrequency: "daily" as const,
         priority: 0.98, // Highest priority for pregnancy guide

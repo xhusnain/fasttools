@@ -301,6 +301,12 @@ export default function ToolsPage() {
       icon: Heart,
       href: "/tools/pregnancy-conception-calculator",
     },
+    {
+      title: "Pregnancy Calculator",
+      description: "Track your pregnancy with comprehensive calculator. Get due date estimates, gestational age, weight gain recommendations, and personalized pregnancy insights.",
+      icon: Heart,
+      href: "/tools/pregnancy-calculator",
+    },
   ]
 
   return (
