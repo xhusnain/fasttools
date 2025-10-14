@@ -7,6 +7,7 @@ export const env = {
 
   // AI Configuration
   openaiApiKey: process.env.OPENAI_API_KEY,
+  geminiApiKey: process.env.GEMINI_API_KEY,
 
   // Currency Converter
   exchangeRateApiKey: process.env.NEXT_PUBLIC_EXCHANGE_RATE_API_KEY,
@@ -29,7 +30,11 @@ export function validateEnv() {
   const warnings: string[] = []
 
   if (!env.openaiApiKey) {
-    warnings.push("OPENAI_API_KEY is not set - AI tools will not work")
+    warnings.push("OPENAI_API_KEY is not set - OpenAI AI tools will not work")
+  }
+
+  if (!env.geminiApiKey) {
+    warnings.push("GEMINI_API_KEY is not set - Gemini AI tools will not work")
   }
 
   if (!env.exchangeRateApiKey) {
@@ -46,10 +51,12 @@ export function validateEnv() {
 }
 
 // Helper to check if a feature is available
-export function isFeatureAvailable(feature: "ai" | "currency" | "analytics" | "youtube"): boolean {
+export function isFeatureAvailable(feature: "ai" | "gemini" | "currency" | "analytics" | "youtube"): boolean {
   switch (feature) {
     case "ai":
       return !!env.openaiApiKey
+    case "gemini":
+      return !!env.geminiApiKey
     case "currency":
       return !!env.exchangeRateApiKey
     case "analytics":
