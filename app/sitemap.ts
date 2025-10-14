@@ -18,23 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: getFreshnessDate(1), // Updated daily for freshness signals
       changeFrequency: "daily" as const,
       priority: 1,
-      images: [
-        {
-          url: "https://fasttools.store/logo.svg",
-          title: "fasttools Professional Logo - Free Online Tools",
-          caption: "fasttools professional logo with modern FT symbol and blue gradient design for free online tools collection"
-        },
-        {
-          url: "https://fasttools.store/og-image.svg",
-          title: "fasttools Social Media Image - Complete Digital Toolkit",
-          caption: "fasttools professional social media sharing image showcasing comprehensive free online tools collection"
-        },
-        {
-          url: "https://fasttools.store/favicon.svg",
-          title: "fasttools Favicon - Online Tools",
-          caption: "fasttools favicon for browser tabs and bookmarks representing free online tools"
-        }
-      ]
     },
     {
       url: "https://fasttools.store/about",
@@ -65,6 +48,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.4,
+    },
+    {
+      url: "https://fasttools.store/cookie-preferences",
+      lastModified: currentDate,
+      changeFrequency: "monthly" as const,
+      priority: 0.3,
+    },
+    {
+      url: "https://fasttools.store/admin/announcements",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.2,
     },
     {
       url: "https://fasttools.store/resources",
@@ -149,6 +144,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: getFreshnessDate(14), // Updated every 2 weeks
       changeFrequency: "monthly" as const,
       priority: 0.6, // Lower priority for fun tools
+    },
+    {
+      url: "https://fasttools.store/learn",
+      lastModified: getFreshnessDate(1), // Updated daily for new content
+      changeFrequency: "daily" as const,
+      priority: 0.8, // High priority for learning section
     },
   ]
 
@@ -329,6 +330,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
+    {
+      url: "https://fasttools.store/social-media-tools/youtube-downloader",
+      lastModified: getFreshnessDate(5),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
 
     // ===== CLUSTER 5: DEVELOPER & TECHNICAL TOOLS (Medium Priority) =====
     // Developer Tools Cluster - Technical audience
@@ -385,13 +392,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: getFreshnessDate(1), // Updated daily for new tool
       changeFrequency: "daily" as const,
       priority: 0.85, // High priority for network tool
-      images: [
-        {
-          url: "https://fasttools.store/og-image.svg",
-          title: "IP Subnet Calculator Tool",
-          caption: "FastTools IP Subnet Calculator - Calculate IPv4/IPv6 subnets, CIDR notation, VLSM, and supernetting with comprehensive network analysis"
-        }
-      ]
     },
 
     // ===== SUPPORTING TOOLS (Lower Priority but Important for Coverage) =====
@@ -401,13 +401,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: getFreshnessDate(7),
       changeFrequency: "weekly" as const,
       priority: 0.8, // Medium-high priority for popular calculator
-      images: [
-        {
-          url: "https://fasttools.store/og-image.svg",
-          title: "Age Calculator Tool",
-          caption: "FastTools Age Calculator - Calculate your exact age in years, months, days, hours, and minutes"
-        }
-      ]
     },
     {
       url: "https://fasttools.store/tools/bmi-calculator",
@@ -582,18 +575,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: getFreshnessDate(1), // Updated daily for new tool
       changeFrequency: "daily" as const,
       priority: 0.95, // Highest priority for mortgage calculator
-    },
-    {
-      url: "https://fasttools.store/tools/date-difference",
-      lastModified: getFreshnessDate(7),
-      changeFrequency: "weekly" as const,
-      priority: 0.75, // Medium priority for date tool
-    },
-    {
-      url: "https://fasttools.store/tools/time-duration",
-      lastModified: getFreshnessDate(7),
-      changeFrequency: "weekly" as const,
-      priority: 0.75, // Medium priority for time tool
     },
 
     // ===== SUPPORTING CATEGORIES (Lower Priority but Important for Coverage) =====
@@ -1149,12 +1130,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.98, // Highest priority for payment calculator guide
     },
-    {
-      url: "https://fasttools.store/guides/mortgage-calculator-guide",
-      lastModified: getFreshnessDate(1), // Updated daily for new guide
-      changeFrequency: "daily" as const,
-      priority: 0.98, // Highest priority for mortgage calculator guide
-    },
+      {
+        url: "https://fasttools.store/guides/mortgage-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for mortgage calculator guide
+      },
+      {
+        url: "https://fasttools.store/guides/length-converter-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/temperature-converter-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
       {
         url: "https://fasttools.store/guides/standard-deviation-guide",
         lastModified: getFreshnessDate(1), // Updated daily for new guide
