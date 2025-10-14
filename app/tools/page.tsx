@@ -377,6 +377,12 @@ export default function ToolsPage() {
           icon: Calculator,
           href: "/tools/amortization-calculator",
         },
+        {
+          title: "Retirement Calculator",
+          description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments and scenario analysis.",
+          icon: DollarSign,
+          href: "/tools/retirement-calculator",
+        },
   ]
 
   return (
