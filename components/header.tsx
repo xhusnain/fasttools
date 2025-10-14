@@ -21,8 +21,10 @@ export function Header() {
           <span className="text-foreground hidden sm:inline tracking-tight">FastTools</span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-3 flex-1 max-w-2xl">
-          <SearchBar />
+        <div className="hidden lg:flex items-center gap-4 flex-1 max-w-3xl">
+          <div className="flex-1 max-w-2xl">
+            <SearchBar />
+          </div>
           <CategoryDropdown />
         </div>
 
