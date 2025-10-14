@@ -371,6 +371,12 @@ export default function ToolsPage() {
           icon: TrendingUp,
           href: "/tools/investment-calculator",
         },
+        {
+          title: "Amortization Calculator",
+          description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings for mortgages, auto loans, and personal loans.",
+          icon: Calculator,
+          href: "/tools/amortization-calculator",
+        },
   ]
 
   return (
