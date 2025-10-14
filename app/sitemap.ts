@@ -55,12 +55,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.3,
     },
-    {
-      url: "https://fasttools.store/resources",
-      lastModified: getFreshnessDate(1), // Updated daily for freshness
-      changeFrequency: "daily" as const,
-      priority: 0.9, // High priority for resource directory
-    },
   ]
 
   // TOPICAL AUTHORITY CLUSTERS - Enhanced SEO Strategy Implementation

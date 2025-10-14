@@ -787,7 +787,7 @@ export default function FAQPage() {
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <CheckCircle className="h-4 w-4 text-green-500" />
-                                            <Link href="/resources" className="text-sm hover:text-primary">All Resources & Tools</Link>
+                                            <Link href="/" className="text-sm hover:text-primary">All Tools</Link>
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <CheckCircle className="h-4 w-4 text-green-500" />
@@ -795,7 +795,7 @@ export default function FAQPage() {
                                         </div>
                                     </div>
                                     <Button asChild className="mt-4" size="sm">
-                                        <Link href="/resources">View All Resources</Link>
+                                        <Link href="/">View All Tools</Link>
                                     </Button>
                                 </CardContent>
                             </Card>
