@@ -359,6 +359,12 @@ export default function ToolsPage() {
       icon: Calculator,
       href: "/tools/finance-calculator",
     },
+    {
+      title: "Inflation Calculator",
+      description: "Professional inflation calculator with historical CPI data from 1913-2025. Calculate purchasing power, inflation rates, and investment strategies with comprehensive economic analysis.",
+      icon: TrendingUp,
+      href: "/tools/inflation-calculator",
+    },
   ]
 
   return (
