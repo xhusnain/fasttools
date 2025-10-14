@@ -50,9 +50,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://fasttools.store/faq",
-      lastModified: currentDate,
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
     },
     {
       url: "https://fasttools.store/privacy-policy",
@@ -65,6 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.4,
+    },
+    {
+      url: "https://fasttools.store/resources",
+      lastModified: getFreshnessDate(1), // Updated daily for freshness
+      changeFrequency: "daily" as const,
+      priority: 0.9, // High priority for resource directory
     },
   ]
 
@@ -227,6 +233,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
+    {
+      url: "https://fasttools.store/converters/conversion-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.9, // High priority for comprehensive conversion tool
+    },
 
     // ===== CLUSTER 3: BUSINESS & FINANCE TOOLS (High Priority) =====
     // Business Tools Cluster - Monetization focus
@@ -368,6 +380,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.75,
     },
+    {
+      url: "https://fasttools.store/tools/ip-subnet-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.85, // High priority for network tool
+      images: [
+        {
+          url: "https://fasttools.store/og-image.svg",
+          title: "IP Subnet Calculator Tool",
+          caption: "FastTools IP Subnet Calculator - Calculate IPv4/IPv6 subnets, CIDR notation, VLSM, and supernetting with comprehensive network analysis"
+        }
+      ]
+    },
 
     // ===== SUPPORTING TOOLS (Lower Priority but Important for Coverage) =====
     // Main Calculator Tools - Supporting tools for comprehensive coverage
@@ -425,6 +450,150 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: getFreshnessDate(6),
       changeFrequency: "weekly" as const,
       priority: 0.8, // Medium-high priority for investment tool
+    },
+    {
+      url: "https://fasttools.store/tools/gpa-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.85, // High priority for educational tool
+    },
+    {
+      url: "https://fasttools.store/tools/concrete-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.85, // High priority for construction tool
+    },
+    {
+      url: "https://fasttools.store/tools/scientific-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.9, // High priority for scientific calculator
+    },
+    {
+      url: "https://fasttools.store/tools/triangle-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.9, // High priority for triangle calculator
+    },
+    {
+      url: "https://fasttools.store/tools/fraction-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.9, // High priority for fraction calculator
+    },
+    {
+      url: "https://fasttools.store/tools/standard-deviation-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.9, // High priority for statistics calculator
+    },
+    {
+      url: "https://fasttools.store/tools/pregnancy-conception-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for pregnancy calculator
+    },
+    {
+      url: "https://fasttools.store/tools/pregnancy-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for pregnancy calculator
+    },
+    {
+      url: "https://fasttools.store/tools/pace-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for pace calculator
+    },
+    {
+      url: "https://fasttools.store/tools/bmr-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for BMR calculator
+    },
+    {
+      url: "https://fasttools.store/tools/body-fat-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for body fat calculator
+    },
+    {
+      url: "https://fasttools.store/tools/calorie-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for calorie calculator
+    },
+    {
+      url: "https://fasttools.store/tools/sales-tax-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for sales tax calculator
+    },
+    {
+      url: "https://fasttools.store/tools/interest-rate-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for interest rate calculator
+    },
+    {
+      url: "https://fasttools.store/tools/salary-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for salary calculator
+    },
+    {
+      url: "https://fasttools.store/tools/finance-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for finance calculator
+    },
+    {
+      url: "https://fasttools.store/tools/inflation-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for inflation calculator
+    },
+    {
+      url: "https://fasttools.store/tools/investment-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for investment calculator
+    },
+    {
+      url: "https://fasttools.store/tools/amortization-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for amortization calculator
+    },
+    {
+      url: "https://fasttools.store/tools/retirement-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for retirement calculator
+    },
+    {
+      url: "https://fasttools.store/tools/payment-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for payment calculator
+    },
+    {
+      url: "https://fasttools.store/tools/mortgage-calculator",
+      lastModified: getFreshnessDate(1), // Updated daily for new tool
+      changeFrequency: "daily" as const,
+      priority: 0.95, // Highest priority for mortgage calculator
+    },
+    {
+      url: "https://fasttools.store/tools/date-difference",
+      lastModified: getFreshnessDate(7),
+      changeFrequency: "weekly" as const,
+      priority: 0.75, // Medium priority for date tool
+    },
+    {
+      url: "https://fasttools.store/tools/time-duration",
+      lastModified: getFreshnessDate(7),
+      changeFrequency: "weekly" as const,
+      priority: 0.75, // Medium priority for time tool
     },
 
     // ===== SUPPORTING CATEGORIES (Lower Priority but Important for Coverage) =====
@@ -561,6 +730,437 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     },
+
+      // ===== COMPREHENSIVE GUIDES (High Priority for Link Building) =====
+      // These comprehensive guides are designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/qr-code-generator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for freshness
+        changeFrequency: "daily" as const,
+        priority: 0.95, // Highest priority for comprehensive guides
+      },
+      {
+        url: "https://fasttools.store/guides/currency-converter-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/seo-tools-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/developer-tools-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      // ===== AI TOOL GUIDES (High Priority for Link Building) =====
+      // AI tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/ai-meme-generator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/ai-qr-art-generator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/ai-song-lyrics-generator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/ai-caption-generator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/ai-pet-name-generator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/ai-hashtag-suggester-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== DATE & TIME TOOL GUIDES (High Priority for Link Building) =====
+      // Date & time tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/age-in-hours-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/year-end-countdown-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/workday-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/zodiac-sign-finder-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/date-to-day-finder-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== DEV TOOL GUIDES (High Priority for Link Building) =====
+      // Dev tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/jwt-decoder-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/regex-tester-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/json-to-csv-converter-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/html-beautifier-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/color-palette-generator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/hex-to-rgb-converter-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/markdown-previewer-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/html-to-markdown-converter-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== FINANCE TOOL GUIDES (High Priority for Link Building) =====
+      // Finance tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/invoice-generator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/paypal-fee-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/discount-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/tip-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== FUN TOOL GUIDES (High Priority for Link Building) =====
+      // Fun tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/love-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/future-age-predictor-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== IMAGE TOOL GUIDES (High Priority for Link Building) =====
+      // Image tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/image-to-text-ocr-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/background-blur-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== SEO TOOL GUIDES (High Priority for Link Building) =====
+      // SEO tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/meta-tags-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/lorem-ipsum-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== SOCIAL MEDIA TOOL GUIDES (High Priority for Link Building) =====
+      // Social media tool guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/youtube-thumbnail-downloader-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/instagram-dp-viewer-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+
+      // ===== TOOLS GUIDES (High Priority for Link Building) =====
+      // Tools guides designed to attract natural backlinks
+      {
+        url: "https://fasttools.store/guides/age-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/bmi-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/gpa-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/concrete-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/compound-interest-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/date-difference-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/time-duration-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/percentage-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/tax-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/emi-calculator-guide",
+        lastModified: getFreshnessDate(1),
+        changeFrequency: "daily" as const,
+        priority: 0.95,
+      },
+      {
+        url: "https://fasttools.store/guides/ip-subnet-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.95, // High priority for comprehensive guide
+      },
+      {
+        url: "https://fasttools.store/guides/conversion-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.95, // High priority for comprehensive guide
+      },
+      {
+        url: "https://fasttools.store/guides/scientific-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.95, // High priority for comprehensive guide
+      },
+      {
+        url: "https://fasttools.store/guides/triangle-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.95, // High priority for comprehensive guide
+      },
+      {
+        url: "https://fasttools.store/guides/fraction-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.95, // High priority for comprehensive guide
+      },
+      {
+        url: "https://fasttools.store/guides/pregnancy-conception-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for pregnancy guide
+      },
+      {
+        url: "https://fasttools.store/guides/pregnancy-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for pregnancy guide
+      },
+      {
+        url: "https://fasttools.store/guides/pace-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for pace calculator guide
+      },
+      {
+        url: "https://fasttools.store/guides/bmr-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for BMR calculator guide
+      },
+      {
+        url: "https://fasttools.store/guides/body-fat-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for body fat calculator guide
+      },
+      {
+        url: "https://fasttools.store/guides/calorie-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for calorie calculator guide
+      },
+      {
+        url: "https://fasttools.store/guides/sales-tax-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for sales tax calculator guide
+      },
+      {
+        url: "https://fasttools.store/guides/interest-rate-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for interest rate calculator guide
+      },
+      {
+        url: "https://fasttools.store/guides/salary-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for salary calculator guide
+      },
+      {
+        url: "https://fasttools.store/guides/finance-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for finance calculator guide
+      },
+      {
+        url: "https://fasttools.store/guides/inflation-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for inflation calculator guide
+      },
+      {
+        url: "https://fasttools.store/guides/investment-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for investment calculator guide
+      },
+      {
+        url: "https://fasttools.store/guides/amortization-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for amortization calculator guide
+      },
+      {
+        url: "https://fasttools.store/guides/retirement-calculator-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.98, // Highest priority for retirement calculator guide
+      },
+    {
+      url: "https://fasttools.store/guides/payment-calculator-guide",
+      lastModified: getFreshnessDate(1), // Updated daily for new guide
+      changeFrequency: "daily" as const,
+      priority: 0.98, // Highest priority for payment calculator guide
+    },
+    {
+      url: "https://fasttools.store/guides/mortgage-calculator-guide",
+      lastModified: getFreshnessDate(1), // Updated daily for new guide
+      changeFrequency: "daily" as const,
+      priority: 0.98, // Highest priority for mortgage calculator guide
+    },
+      {
+        url: "https://fasttools.store/guides/standard-deviation-guide",
+        lastModified: getFreshnessDate(1), // Updated daily for new guide
+        changeFrequency: "daily" as const,
+        priority: 0.95, // High priority for comprehensive guide
+      },
 
   ]
 

@@ -1,4 +1,8 @@
 import type { Metadata } from "next"
+import Link from "next/link"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Target, AlertCircle, Heart, Sparkles, Code2, FileText, Search, TrendingUp, Globe, Settings, BarChart3, Lightbulb, BookOpen, ExternalLink } from "lucide-react"
 
 export const metadata: Metadata = {
     title: "SEO FAQ - 100+ Expert SEO Questions & Comprehensive Answers | FastTools",
@@ -666,12 +670,136 @@ export default function FAQPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <section className="container mx-auto px-4 py-16 md:py-20">
                 <div className="max-w-4xl mx-auto">
-                    <div className="text-center mb-10">
-                        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">SEO Frequently Asked Questions</h1>
-                        <p className="text-muted-foreground text-lg leading-relaxed">
+                    <div className="text-center mb-12">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">SEO Frequently Asked Questions</h1>
+                        <p className="text-muted-foreground text-xl leading-relaxed mb-8">
                             Practical, expert answers to common and advanced SEO questions — covering keyword research, technical SEO,
                             Core Web Vitals, schema, backlinks, content strategy, and tools to help you improve organic performance.
                         </p>
+                        <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+                            <div className="flex items-center gap-2">
+                                <Clock className="h-4 w-4" />
+                                <span>100+ Questions</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Users className="h-4 w-4" />
+                                <span>Expert Answers</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Star className="h-4 w-4" />
+                                <span>Comprehensive Coverage</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Quick Navigation */}
+                    <div className="mb-12">
+                        <h2 className="text-2xl font-bold mb-6 text-foreground">Quick Navigation</h2>
+                        <div className="grid md:grid-cols-3 gap-4">
+                            <Card>
+                                <CardContent className="p-4">
+                                    <h3 className="font-semibold mb-2 text-foreground">Technical SEO</h3>
+                                    <p className="text-sm text-muted-foreground mb-3">Core Web Vitals, site speed, crawling, indexing, and technical optimization.</p>
+                                    <Button asChild variant="outline" size="sm">
+                                        <Link href="/faq#technical-seo">Jump to Section</Link>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                            <Card>
+                                <CardContent className="p-4">
+                                    <h3 className="font-semibold mb-2 text-foreground">Content & Keywords</h3>
+                                    <p className="text-sm text-muted-foreground mb-3">Keyword research, content strategy, on-page optimization, and topical authority.</p>
+                                    <Button asChild variant="outline" size="sm">
+                                        <Link href="/faq#content-keywords">Jump to Section</Link>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                            <Card>
+                                <CardContent className="p-4">
+                                    <h3 className="font-semibold mb-2 text-foreground">Link Building</h3>
+                                    <p className="text-sm text-muted-foreground mb-3">Backlinks, internal linking, anchor text, and authority building strategies.</p>
+                                    <Button asChild variant="outline" size="sm">
+                                        <Link href="/faq#link-building">Jump to Section</Link>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                        </div>
+                    </div>
+
+                    {/* SEO Tools Section */}
+                    <div className="mb-12">
+                        <h2 className="text-2xl font-bold mb-6 text-foreground">Essential SEO Tools & Resources</h2>
+                        <div className="grid md:grid-cols-2 gap-6">
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle className="flex items-center gap-2">
+                                        <Search className="h-5 w-5 text-blue-500" />
+                                        Free SEO Tools
+                                    </CardTitle>
+                                    <CardDescription>
+                                        Professional SEO tools to analyze, optimize, and improve your website's search performance.
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500" />
+                                            <Link href="/seo-tools" className="text-sm hover:text-primary">Complete SEO Tools Suite</Link>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500" />
+                                            <Link href="/seo-tools/meta-tags-generator" className="text-sm hover:text-primary">Meta Tags Generator</Link>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500" />
+                                            <Link href="/seo-tools/sitemap-generator" className="text-sm hover:text-primary">Sitemap Generator</Link>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500" />
+                                            <Link href="/seo-tools/robots-txt-generator" className="text-sm hover:text-primary">Robots.txt Generator</Link>
+                                        </div>
+                                    </div>
+                                    <Button asChild className="mt-4" size="sm">
+                                        <Link href="/seo-tools">Explore All SEO Tools</Link>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle className="flex items-center gap-2">
+                                        <BookOpen className="h-5 w-5 text-green-500" />
+                                        SEO Guides & Resources
+                                    </CardTitle>
+                                    <CardDescription>
+                                        Comprehensive guides and resources to master SEO and improve your website's visibility.
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500" />
+                                            <Link href="/guides/seo-tools-guide" className="text-sm hover:text-primary">Complete SEO Tools Guide</Link>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500" />
+                                            <Link href="/guides/developer-tools-guide" className="text-sm hover:text-primary">Developer Tools Guide</Link>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500" />
+                                            <Link href="/resources" className="text-sm hover:text-primary">All Resources & Tools</Link>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500" />
+                                            <Link href="/" className="text-sm hover:text-primary">FastTools Homepage</Link>
+                                        </div>
+                                    </div>
+                                    <Button asChild className="mt-4" size="sm">
+                                        <Link href="/resources">View All Resources</Link>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                        </div>
                     </div>
 
                     <div className="space-y-8 prose prose-slate dark:prose-invert">
@@ -689,6 +817,296 @@ export default function FAQPage() {
                             validate structured data, and monitor indexing. Prioritize user intent, optimize for speed and clarity, and
                             build topical authority through comprehensive, well-linked content clusters.
                         </p>
+                    </div>
+
+                    {/* Comprehensive SEO Strategy Section */}
+                    <div className="mt-16 mb-12">
+                        <h2 className="text-3xl font-bold mb-8 text-foreground">Complete SEO Strategy Framework</h2>
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle className="flex items-center gap-2">
+                                        <Target className="h-5 w-5 text-blue-500" />
+                                        Technical SEO Foundation
+                                    </CardTitle>
+                                    <CardDescription>
+                                        Essential technical elements that form the foundation of successful SEO.
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <ul className="space-y-2 text-sm">
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>Site Speed Optimization:</strong> Core Web Vitals, page load times, and performance metrics</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>Mobile-First Design:</strong> Responsive layouts and mobile optimization</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>Structured Data:</strong> Schema markup for rich snippets and enhanced visibility</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>Crawlability:</strong> XML sitemaps, robots.txt, and internal linking</span>
+                                        </li>
+                                    </ul>
+                                </CardContent>
+                            </Card>
+
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle className="flex items-center gap-2">
+                                        <FileText className="h-5 w-5 text-green-500" />
+                                        Content & Keyword Strategy
+                                    </CardTitle>
+                                    <CardDescription>
+                                        Strategic approach to content creation and keyword optimization.
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <ul className="space-y-2 text-sm">
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>Keyword Research:</strong> Target audience analysis and search intent mapping</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>Content Clusters:</strong> Pillar pages and supporting content structure</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>On-Page Optimization:</strong> Title tags, meta descriptions, and heading structure</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>E-E-A-T Signals:</strong> Expertise, experience, authoritativeness, and trustworthiness</span>
+                                        </li>
+                                    </ul>
+                                </CardContent>
+                            </Card>
+
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle className="flex items-center gap-2">
+                                        <TrendingUp className="h-5 w-5 text-purple-500" />
+                                        Link Building & Authority
+                                    </CardTitle>
+                                    <CardDescription>
+                                        Building domain authority through strategic link acquisition and internal linking.
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <ul className="space-y-2 text-sm">
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>Quality Backlinks:</strong> Relevant, authoritative link acquisition strategies</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>Internal Linking:</strong> Strategic internal link distribution and anchor text optimization</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>Digital PR:</strong> Content marketing and brand mention strategies</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>Local SEO:</strong> Google Business Profile and local citation optimization</span>
+                                        </li>
+                                    </ul>
+                                </CardContent>
+                            </Card>
+
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle className="flex items-center gap-2">
+                                        <BarChart3 className="h-5 w-5 text-orange-500" />
+                                        Monitoring & Analytics
+                                    </CardTitle>
+                                    <CardDescription>
+                                        Tracking performance and measuring SEO success with data-driven insights.
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <ul className="space-y-2 text-sm">
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>Search Console:</strong> Search performance monitoring and indexing status</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>Analytics Integration:</strong> Traffic analysis and conversion tracking</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>Ranking Tracking:</strong> Keyword position monitoring and SERP analysis</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                            <span><strong>Core Web Vitals:</strong> User experience metrics and performance optimization</span>
+                                        </li>
+                                    </ul>
+                                </CardContent>
+                            </Card>
+                        </div>
+                    </div>
+
+                    {/* SEO Tools Integration Section */}
+                    <div className="mb-12">
+                        <h2 className="text-3xl font-bold mb-8 text-foreground">Professional SEO Tools & Resources</h2>
+                        <div className="grid md:grid-cols-3 gap-6">
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle className="flex items-center gap-2">
+                                        <Settings className="h-5 w-5 text-blue-500" />
+                                        Technical SEO Tools
+                                    </CardTitle>
+                                    <CardDescription>
+                                        Essential tools for technical SEO optimization and website analysis.
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center gap-2">
+                                            <ArrowRight className="h-4 w-4 text-primary" />
+                                            <Link href="/seo-tools/sitemap-generator" className="text-sm hover:text-primary">XML Sitemap Generator</Link>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <ArrowRight className="h-4 w-4 text-primary" />
+                                            <Link href="/seo-tools/robots-txt-generator" className="text-sm hover:text-primary">Robots.txt Generator</Link>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <ArrowRight className="h-4 w-4 text-primary" />
+                                            <Link href="/seo-tools/meta-tags-generator" className="text-sm hover:text-primary">Meta Tags Generator</Link>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <ArrowRight className="h-4 w-4 text-primary" />
+                                            <Link href="/seo-tools/schema-generator" className="text-sm hover:text-primary">Schema Markup Generator</Link>
+                                        </div>
+                                    </div>
+                                </CardContent>
+                            </Card>
+
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle className="flex items-center gap-2">
+                                        <Search className="h-5 w-5 text-green-500" />
+                                        Analysis & Monitoring
+                                    </CardTitle>
+                                    <CardDescription>
+                                        Tools for analyzing website performance and monitoring SEO metrics.
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center gap-2">
+                                            <ArrowRight className="h-4 w-4 text-primary" />
+                                            <Link href="/seo-tools/keyword-density-checker" className="text-sm hover:text-primary">Keyword Density Checker</Link>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <ArrowRight className="h-4 w-4 text-primary" />
+                                            <Link href="/seo-tools/backlink-checker" className="text-sm hover:text-primary">Backlink Checker</Link>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <ArrowRight className="h-4 w-4 text-primary" />
+                                            <Link href="/seo-tools/website-analyzer" className="text-sm hover:text-primary">Website Analyzer</Link>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <ArrowRight className="h-4 w-4 text-primary" />
+                                            <Link href="/seo-tools/competitor-analysis" className="text-sm hover:text-primary">Competitor Analysis</Link>
+                                        </div>
+                                    </div>
+                                </CardContent>
+                            </Card>
+
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle className="flex items-center gap-2">
+                                        <Lightbulb className="h-5 w-5 text-purple-500" />
+                                        Content & Optimization
+                                    </CardTitle>
+                                    <CardDescription>
+                                        Tools for content optimization and on-page SEO improvements.
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center gap-2">
+                                            <ArrowRight className="h-4 w-4 text-primary" />
+                                            <Link href="/seo-tools/title-optimizer" className="text-sm hover:text-primary">Title Tag Optimizer</Link>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <ArrowRight className="h-4 w-4 text-primary" />
+                                            <Link href="/seo-tools/heading-analyzer" className="text-sm hover:text-primary">Heading Structure Analyzer</Link>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <ArrowRight className="h-4 w-4 text-primary" />
+                                            <Link href="/seo-tools/content-optimizer" className="text-sm hover:text-primary">Content Optimizer</Link>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <ArrowRight className="h-4 w-4 text-primary" />
+                                            <Link href="/seo-tools/internal-link-suggester" className="text-sm hover:text-primary">Internal Link Suggester</Link>
+                                        </div>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </div>
+                    </div>
+
+                    {/* Call to Action Section */}
+                    <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg text-center mb-12">
+                        <h3 className="text-2xl font-bold mb-4 text-foreground">Ready to Improve Your SEO?</h3>
+                        <p className="text-lg text-muted-foreground mb-6">
+                            Use our comprehensive SEO tools and resources to optimize your website, 
+                            improve search rankings, and drive more organic traffic to your business.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Button asChild size="lg" className="text-lg px-8 py-4">
+                                <Link href="/seo-tools" className="flex items-center gap-2">
+                                    Start SEO Optimization
+                                    <ArrowRight className="h-5 w-5" />
+                                </Link>
+                            </Button>
+                            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-4">
+                                <Link href="/guides/seo-tools-guide" className="flex items-center gap-2">
+                                    Read Complete Guide
+                                    <BookOpen className="h-5 w-5" />
+                                </Link>
+                            </Button>
+                        </div>
+                    </div>
+
+                    {/* Related Resources */}
+                    <div className="mb-12">
+                        <h2 className="text-2xl font-bold mb-6 text-foreground">Related SEO Resources</h2>
+                        <div className="grid md:grid-cols-2 gap-6">
+                            <Card>
+                                <CardContent className="p-6">
+                                    <h3 className="font-semibold mb-2 text-foreground">Complete SEO Tools Guide</h3>
+                                    <p className="text-sm text-muted-foreground mb-4">
+                                        Master SEO with our comprehensive guide covering all aspects of search engine optimization, 
+                                        from technical SEO to content strategy and link building.
+                                    </p>
+                                    <Button asChild variant="outline" size="sm">
+                                        <Link href="/guides/seo-tools-guide">Read Complete Guide</Link>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                            <Card>
+                                <CardContent className="p-6">
+                                    <h3 className="font-semibold mb-2 text-foreground">Developer Tools Guide</h3>
+                                    <p className="text-sm text-muted-foreground mb-4">
+                                        Essential developer tools for web development, including JWT decoders, regex testers, 
+                                        and data conversion utilities for technical SEO optimization.
+                                    </p>
+                                    <Button asChild variant="outline" size="sm">
+                                        <Link href="/guides/developer-tools-guide">Read Developer Guide</Link>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                        </div>
                     </div>
                 </div>
             </section>

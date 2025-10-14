@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, ArrowRight } from "lucide-react"
+import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, Calculator, ArrowRight } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
@@ -124,46 +124,53 @@ export default function ConvertersPage() {
       "@type": "ItemList",
       name: "Free Online Converter Tools",
       description: "Comprehensive collection of free online converter tools for text, measurements, currency, and more",
-      numberOfItems: 6,
+      numberOfItems: 7,
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
+          name: "Conversion Calculator",
+          description: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions",
+          url: "https://fasttools.store/converters/conversion-calculator"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
           name: "Text Case Converter",
           description: "Convert text between uppercase, lowercase, title case, camelCase, and snake_case",
           url: "https://fasttools.store/converters/text-case"
         },
         {
           "@type": "ListItem",
-          position: 2,
+          position: 3,
           name: "Length Converter",
           description: "Convert between meters, feet, inches, centimeters, kilometers, miles, and more length units",
           url: "https://fasttools.store/converters/length"
         },
         {
           "@type": "ListItem",
-          position: 3,
+          position: 4,
           name: "Currency Converter",
           description: "Convert between major world currencies with real-time exchange rates",
           url: "https://fasttools.store/converters/currency"
         },
         {
           "@type": "ListItem",
-          position: 4,
+          position: 5,
           name: "Temperature Converter",
           description: "Convert between Celsius, Fahrenheit, and Kelvin temperature scales",
           url: "https://fasttools.store/converters/temperature"
         },
         {
           "@type": "ListItem",
-          position: 5,
+          position: 6,
           name: "File Size Converter",
           description: "Convert between bytes, KB, MB, GB, and TB for file and storage calculations",
           url: "https://fasttools.store/converters/file-size"
         },
         {
           "@type": "ListItem",
-          position: 6,
+          position: 7,
           name: "Timezone Converter",
           description: "Convert time between different time zones worldwide for international scheduling",
           url: "https://fasttools.store/converters/timezone"
@@ -200,6 +207,12 @@ export default function ConvertersPage() {
   }
 
   const converters = [
+    {
+      title: "Conversion Calculator",
+      description: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions.",
+      icon: Calculator,
+      href: "/converters/conversion-calculator",
+    },
     {
       title: "Text Case Converter",
       description: "Convert text between uppercase, lowercase, title case, sentence case, camelCase, and snake_case.",

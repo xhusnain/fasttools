@@ -11,6 +11,14 @@ export function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <Link
+                  href="/converters/conversion-calculator"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  Conversion Calculator
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/tools/age-calculator"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                 >
@@ -71,6 +79,22 @@ export function Footer() {
                   className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                 >
                   Compound Interest
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/ip-subnet-calculator"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  IP Subnet Calculator
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/standard-deviation-calculator"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  Standard Deviation Calculator
                 </Link>
               </li>
             </ul>
@@ -339,6 +363,60 @@ export function Footer() {
           </div>
 
           <div>
+            <h3 className="font-semibold mb-4 text-sm text-foreground tracking-wide">Learn</h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link
+                  href="/learn"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  All Guides
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/guides/age-calculator-guide"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  Age Calculator Guide
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/guides/currency-converter-guide"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  Currency Converter Guide
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/guides/seo-tools-guide"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  SEO Tools Guide
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/guides/developer-tools-guide"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  Developer Tools Guide
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/guides/ai-caption-generator-guide"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  AI Tools Guide
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
             <h3 className="font-semibold mb-4 text-sm text-foreground tracking-wide">Company</h3>
             <ul className="space-y-2.5">
               <li>
@@ -355,6 +433,14 @@ export function Footer() {
                   className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                 >
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  FAQ
                 </Link>
               </li>
               <li>

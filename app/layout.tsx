@@ -18,11 +18,15 @@ if (typeof window === "undefined") {
 const geistSans = Geist({
   subsets: ["latin"],
   variable: "--font-geist-sans",
+  display: 'swap',
+  preload: true,
 })
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
+  display: 'swap',
+  preload: true,
 })
 
 export const metadata: Metadata = {

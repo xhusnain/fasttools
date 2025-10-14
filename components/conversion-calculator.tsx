@@ -1,0 +1,500 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Badge } from "@/components/ui/badge"
+import { Copy, Download, History, RefreshCw, Calculator, Ruler, Thermometer, DollarSign, Clock, Weight, Volume, Square, Gauge, Zap, Globe, Target, TrendingUp, BookOpen, Star, ArrowRight } from "lucide-react"
+import { toast } from "sonner"
+
+// Conversion categories and units
+const conversionCategories = {
+  length: {
+    name: "Length",
+    icon: Ruler,
+    units: {
+      meter: { name: "Meter (m)", factor: 1, symbol: "m" },
+      kilometer: { name: "Kilometer (km)", factor: 1000, symbol: "km" },
+      centimeter: { name: "Centimeter (cm)", factor: 0.01, symbol: "cm" },
+      millimeter: { name: "Millimeter (mm)", factor: 0.001, symbol: "mm" },
+      foot: { name: "Foot (ft)", factor: 0.3048, symbol: "ft" },
+      inch: { name: "Inch (in)", factor: 0.0254, symbol: "in" },
+      yard: { name: "Yard (yd)", factor: 0.9144, symbol: "yd" },
+      mile: { name: "Mile (mi)", factor: 1609.344, symbol: "mi" },
+      nautical_mile: { name: "Nautical Mile", factor: 1852, symbol: "nmi" },
+      light_year: { name: "Light Year", factor: 9.461e15, symbol: "ly" }
+    }
+  },
+  weight: {
+    name: "Weight",
+    icon: Weight,
+    units: {
+      kilogram: { name: "Kilogram (kg)", factor: 1, symbol: "kg" },
+      gram: { name: "Gram (g)", factor: 0.001, symbol: "g" },
+      pound: { name: "Pound (lb)", factor: 0.453592, symbol: "lb" },
+      ounce: { name: "Ounce (oz)", factor: 0.0283495, symbol: "oz" },
+      ton: { name: "Metric Ton (t)", factor: 1000, symbol: "t" },
+      stone: { name: "Stone", factor: 6.35029, symbol: "st" },
+      carat: { name: "Carat", factor: 0.0002, symbol: "ct" },
+      grain: { name: "Grain", factor: 0.0000647989, symbol: "gr" }
+    }
+  },
+  temperature: {
+    name: "Temperature",
+    icon: Thermometer,
+    units: {
+      celsius: { name: "Celsius (°C)", factor: 1, symbol: "°C", isTemperature: true },
+      fahrenheit: { name: "Fahrenheit (°F)", factor: 1, symbol: "°F", isTemperature: true },
+      kelvin: { name: "Kelvin (K)", factor: 1, symbol: "K", isTemperature: true },
+      rankine: { name: "Rankine (°R)", factor: 1, symbol: "°R", isTemperature: true }
+    }
+  },
+  currency: {
+    name: "Currency",
+    icon: DollarSign,
+    units: {
+      usd: { name: "US Dollar (USD)", factor: 1, symbol: "$" },
+      eur: { name: "Euro (EUR)", factor: 0.85, symbol: "€" },
+      gbp: { name: "British Pound (GBP)", factor: 0.79, symbol: "£" },
+      jpy: { name: "Japanese Yen (JPY)", factor: 110, symbol: "¥" },
+      inr: { name: "Indian Rupee (INR)", factor: 75, symbol: "₹" },
+      cad: { name: "Canadian Dollar (CAD)", factor: 1.25, symbol: "C$" },
+      aud: { name: "Australian Dollar (AUD)", factor: 1.35, symbol: "A$" },
+      chf: { name: "Swiss Franc (CHF)", factor: 0.92, symbol: "CHF" },
+      cny: { name: "Chinese Yuan (CNY)", factor: 6.45, symbol: "¥" },
+      krw: { name: "South Korean Won (KRW)", factor: 1180, symbol: "₩" }
+    }
+  },
+  time: {
+    name: "Time",
+    icon: Clock,
+    units: {
+      second: { name: "Second (s)", factor: 1, symbol: "s" },
+      minute: { name: "Minute (min)", factor: 60, symbol: "min" },
+      hour: { name: "Hour (h)", factor: 3600, symbol: "h" },
+      day: { name: "Day (d)", factor: 86400, symbol: "d" },
+      week: { name: "Week", factor: 604800, symbol: "wk" },
+      month: { name: "Month", factor: 2629746, symbol: "mo" },
+      year: { name: "Year (y)", factor: 31556952, symbol: "y" },
+      decade: { name: "Decade", factor: 315569520, symbol: "dec" },
+      century: { name: "Century", factor: 3155695200, symbol: "cent" }
+    }
+  },
+  area: {
+    name: "Area",
+    icon: Square,
+    units: {
+      square_meter: { name: "Square Meter (m²)", factor: 1, symbol: "m²" },
+      square_kilometer: { name: "Square Kilometer (km²)", factor: 1000000, symbol: "km²" },
+      square_centimeter: { name: "Square Centimeter (cm²)", factor: 0.0001, symbol: "cm²" },
+      square_foot: { name: "Square Foot (ft²)", factor: 0.092903, symbol: "ft²" },
+      square_inch: { name: "Square Inch (in²)", factor: 0.00064516, symbol: "in²" },
+      acre: { name: "Acre", factor: 4046.86, symbol: "ac" },
+      hectare: { name: "Hectare (ha)", factor: 10000, symbol: "ha" },
+      square_mile: { name: "Square Mile (mi²)", factor: 2589988, symbol: "mi²" }
+    }
+  },
+  volume: {
+    name: "Volume",
+    icon: Volume,
+    units: {
+      liter: { name: "Liter (L)", factor: 1, symbol: "L" },
+      milliliter: { name: "Milliliter (mL)", factor: 0.001, symbol: "mL" },
+      gallon: { name: "US Gallon (gal)", factor: 3.78541, symbol: "gal" },
+      quart: { name: "US Quart (qt)", factor: 0.946353, symbol: "qt" },
+      pint: { name: "US Pint (pt)", factor: 0.473176, symbol: "pt" },
+      cup: { name: "US Cup", factor: 0.236588, symbol: "cup" },
+      fluid_ounce: { name: "US Fluid Ounce (fl oz)", factor: 0.0295735, symbol: "fl oz" },
+      cubic_meter: { name: "Cubic Meter (m³)", factor: 1000, symbol: "m³" },
+      cubic_foot: { name: "Cubic Foot (ft³)", factor: 28.3168, symbol: "ft³" },
+      cubic_inch: { name: "Cubic Inch (in³)", factor: 0.0163871, symbol: "in³" }
+    }
+  },
+  speed: {
+    name: "Speed",
+    icon: Gauge,
+    units: {
+      meter_per_second: { name: "Meter per Second (m/s)", factor: 1, symbol: "m/s" },
+      kilometer_per_hour: { name: "Kilometer per Hour (km/h)", factor: 0.277778, symbol: "km/h" },
+      mile_per_hour: { name: "Mile per Hour (mph)", factor: 0.44704, symbol: "mph" },
+      foot_per_second: { name: "Foot per Second (ft/s)", factor: 0.3048, symbol: "ft/s" },
+      knot: { name: "Knot (kn)", factor: 0.514444, symbol: "kn" },
+      mach: { name: "Mach", factor: 343, symbol: "Ma" }
+    }
+  },
+  power: {
+    name: "Power",
+    icon: Zap,
+    units: {
+      watt: { name: "Watt (W)", factor: 1, symbol: "W" },
+      kilowatt: { name: "Kilowatt (kW)", factor: 1000, symbol: "kW" },
+      megawatt: { name: "Megawatt (MW)", factor: 1000000, symbol: "MW" },
+      horsepower: { name: "Horsepower (hp)", factor: 745.7, symbol: "hp" },
+      btu_per_hour: { name: "BTU per Hour", factor: 0.293071, symbol: "BTU/h" },
+      foot_pound_per_second: { name: "Foot-pound per Second", factor: 1.35582, symbol: "ft·lb/s" }
+    }
+  },
+  energy: {
+    name: "Energy",
+    icon: Globe,
+    units: {
+      joule: { name: "Joule (J)", factor: 1, symbol: "J" },
+      kilojoule: { name: "Kilojoule (kJ)", factor: 1000, symbol: "kJ" },
+      calorie: { name: "Calorie (cal)", factor: 4.184, symbol: "cal" },
+      kilocalorie: { name: "Kilocalorie (kcal)", factor: 4184, symbol: "kcal" },
+      btu: { name: "British Thermal Unit (BTU)", factor: 1055.06, symbol: "BTU" },
+      kilowatt_hour: { name: "Kilowatt Hour (kWh)", factor: 3600000, symbol: "kWh" },
+      electron_volt: { name: "Electron Volt (eV)", factor: 1.602e-19, symbol: "eV" }
+    }
+  },
+  pressure: {
+    name: "Pressure",
+    icon: Target,
+    units: {
+      pascal: { name: "Pascal (Pa)", factor: 1, symbol: "Pa" },
+      kilopascal: { name: "Kilopascal (kPa)", factor: 1000, symbol: "kPa" },
+      bar: { name: "Bar", factor: 100000, symbol: "bar" },
+      atmosphere: { name: "Atmosphere (atm)", factor: 101325, symbol: "atm" },
+      psi: { name: "Pound per Square Inch (psi)", factor: 6894.76, symbol: "psi" },
+      torr: { name: "Torr", factor: 133.322, symbol: "Torr" },
+      millimeter_mercury: { name: "Millimeter of Mercury (mmHg)", factor: 133.322, symbol: "mmHg" }
+    }
+  },
+  data: {
+    name: "Data Storage",
+    icon: Calculator,
+    units: {
+      bit: { name: "Bit (b)", factor: 1, symbol: "b" },
+      byte: { name: "Byte (B)", factor: 8, symbol: "B" },
+      kilobyte: { name: "Kilobyte (KB)", factor: 8192, symbol: "KB" },
+      megabyte: { name: "Megabyte (MB)", factor: 8388608, symbol: "MB" },
+      gigabyte: { name: "Gigabyte (GB)", factor: 8589934592, symbol: "GB" },
+      terabyte: { name: "Terabyte (TB)", factor: 8796093022208, symbol: "TB" },
+      petabyte: { name: "Petabyte (PB)", factor: 9007199254740992, symbol: "PB" }
+    }
+  }
+}
+
+// Temperature conversion functions
+const convertTemperature = (value: number, from: string, to: string): number => {
+  const conversions: { [key: string]: { [key: string]: (val: number) => number } } = {
+    celsius: {
+      fahrenheit: (val) => (val * 9/5) + 32,
+      kelvin: (val) => val + 273.15,
+      rankine: (val) => (val * 9/5) + 491.67
+    },
+    fahrenheit: {
+      celsius: (val) => (val - 32) * 5/9,
+      kelvin: (val) => ((val - 32) * 5/9) + 273.15,
+      rankine: (val) => val + 459.67
+    },
+    kelvin: {
+      celsius: (val) => val - 273.15,
+      fahrenheit: (val) => ((val - 273.15) * 9/5) + 32,
+      rankine: (val) => val * 9/5
+    },
+    rankine: {
+      celsius: (val) => (val - 491.67) * 5/9,
+      fahrenheit: (val) => val - 459.67,
+      kelvin: (val) => val * 5/9
+    }
+  }
+  
+  if (from === to) return value
+  return conversions[from]?.[to]?.(value) ?? value
+}
+
+interface ConversionHistory {
+  id: string
+  category: string
+  fromUnit: string
+  toUnit: string
+  value: number
+  result: number
+  timestamp: Date
+}
+
+export function ConversionCalculator() {
+  const [selectedCategory, setSelectedCategory] = useState<keyof typeof conversionCategories>("length")
+  const [fromUnit, setFromUnit] = useState("meter")
+  const [toUnit, setToUnit] = useState("foot")
+  const [inputValue, setInputValue] = useState("")
+  const [result, setResult] = useState<number | null>(null)
+  const [history, setHistory] = useState<ConversionHistory[]>([])
+  const [showHistory, setShowHistory] = useState(false)
+
+  const currentCategory = conversionCategories[selectedCategory]
+  const currentUnits = currentCategory.units
+
+  // Calculate conversion
+  const calculateConversion = () => {
+    if (!inputValue || isNaN(Number(inputValue))) {
+      setResult(null)
+      return
+    }
+
+    const value = Number(inputValue)
+    const fromUnitData = currentUnits[fromUnit as keyof typeof currentUnits]
+    const toUnitData = currentUnits[toUnit as keyof typeof currentUnits]
+
+    if (!fromUnitData || !toUnitData) {
+      setResult(null)
+      return
+    }
+
+    let convertedValue: number
+
+    // Handle temperature conversion
+    if (fromUnitData.isTemperature && toUnitData.isTemperature) {
+      convertedValue = convertTemperature(value, fromUnit, toUnit)
+    } else {
+      // Standard conversion
+      const baseValue = value * fromUnitData.factor
+      convertedValue = baseValue / toUnitData.factor
+    }
+
+    setResult(convertedValue)
+
+    // Add to history
+    const historyItem: ConversionHistory = {
+      id: Date.now().toString(),
+      category: currentCategory.name,
+      fromUnit: fromUnitData.name,
+      toUnit: toUnitData.name,
+      value,
+      result: convertedValue,
+      timestamp: new Date()
+    }
+
+    setHistory(prev => [historyItem, ...prev.slice(0, 49)]) // Keep last 50 items
+  }
+
+  // Auto-calculate when inputs change
+  useEffect(() => {
+    calculateConversion()
+  }, [selectedCategory, fromUnit, toUnit, inputValue])
+
+  // Copy result to clipboard
+  const copyResult = () => {
+    if (result !== null) {
+      navigator.clipboard.writeText(result.toString())
+      toast.success("Result copied to clipboard!")
+    }
+  }
+
+  // Clear all inputs
+  const clearAll = () => {
+    setInputValue("")
+    setResult(null)
+  }
+
+  // Swap units
+  const swapUnits = () => {
+    setFromUnit(toUnit)
+    setToUnit(fromUnit)
+  }
+
+  // Load from history
+  const loadFromHistory = (item: ConversionHistory) => {
+    setInputValue(item.value.toString())
+    setResult(item.result)
+  }
+
+  // Get unit options for current category
+  const getUnitOptions = () => {
+    return Object.entries(currentUnits).map(([key, unit]) => (
+      <SelectItem key={key} value={key}>
+        {unit.name}
+      </SelectItem>
+    ))
+  }
+
+  return (
+    <div className="space-y-6">
+      {/* Main Calculator */}
+      <Card className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 shadow-xl">
+        <CardHeader className="pb-4">
+          <CardTitle className="flex items-center gap-2 text-xl">
+            <div className="p-2 bg-primary/10 rounded-lg">
+              <Calculator className="h-5 w-5 text-primary" />
+            </div>
+            Universal Conversion Calculator
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          {/* Category Selection */}
+          <div className="space-y-2">
+            <Label className="text-sm font-medium">Conversion Category</Label>
+            <Tabs value={selectedCategory} onValueChange={(value) => setSelectedCategory(value as keyof typeof conversionCategories)}>
+              <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-1 sm:gap-2">
+                {Object.entries(conversionCategories).map(([key, category]) => (
+                  <TabsTrigger key={key} value={key} className="flex flex-col items-center gap-1 text-xs px-2 py-2 sm:flex-row sm:gap-2 sm:px-3 sm:py-2 min-h-[60px] sm:min-h-[40px]">
+                    <category.icon className="h-4 w-4 flex-shrink-0" />
+                    <span className="text-xs font-medium text-center sm:text-left">{category.name}</span>
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </Tabs>
+          </div>
+
+          {/* Conversion Inputs */}
+          <div className="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="from-unit" className="text-sm font-medium">From</Label>
+              <Select value={fromUnit} onValueChange={setFromUnit}>
+                <SelectTrigger className="w-full h-12">
+                  <SelectValue placeholder="Select unit" />
+                </SelectTrigger>
+                <SelectContent className="max-h-60 overflow-y-auto">
+                  {getUnitOptions()}
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="to-unit" className="text-sm font-medium">To</Label>
+              <Select value={toUnit} onValueChange={setToUnit}>
+                <SelectTrigger className="w-full h-12">
+                  <SelectValue placeholder="Select unit" />
+                </SelectTrigger>
+                <SelectContent className="max-h-60 overflow-y-auto">
+                  {getUnitOptions()}
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+
+          {/* Value Input */}
+          <div className="space-y-2">
+            <Label htmlFor="input-value" className="text-sm font-medium">Value to Convert</Label>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Input
+                id="input-value"
+                type="number"
+                placeholder="Enter value"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                className="flex-1 w-full h-12 text-base"
+              />
+              <Button
+                variant="outline"
+                onClick={swapUnits}
+                title="Swap units"
+                className="w-full sm:w-auto h-12 px-4"
+              >
+                <ArrowRight className="h-4 w-4 mr-2" />
+                <span className="sm:hidden">Swap Units</span>
+              </Button>
+            </div>
+          </div>
+
+          {/* Result Display */}
+          {result !== null && (
+            <div className="p-4 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-green-900/30 rounded-lg border border-green-200 dark:border-green-800">
+              <div className="space-y-3">
+                <div className="flex-1">
+                  <div className="text-sm text-green-700 dark:text-green-300 mb-1">Converted Result</div>
+                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-green-800 dark:text-green-200 break-all">
+                    {result.toFixed(6).replace(/\.?0+$/, '')} {currentUnits[toUnit as keyof typeof currentUnits]?.symbol}
+                  </div>
+                </div>
+                <div className="flex gap-2">
+                  <Button
+                    variant="outline"
+                    onClick={copyResult}
+                    className="text-green-700 hover:text-green-800 w-full h-10"
+                  >
+                    <Copy className="h-4 w-4 mr-2" />
+                    Copy Result
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Button onClick={clearAll} variant="outline" className="flex-1 w-full h-12">
+              Clear All
+            </Button>
+            <Button onClick={() => setShowHistory(!showHistory)} variant="outline" className="flex-1 w-full h-12">
+              <History className="h-4 w-4 mr-2" />
+              {showHistory ? 'Hide' : 'Show'} History
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Conversion History */}
+      {showHistory && history.length > 0 && (
+        <Card className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 shadow-xl">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-lg">
+              <History className="h-5 w-5" />
+              Conversion History
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3 max-h-60 overflow-y-auto">
+              {history.map((item) => (
+                <div
+                  key={item.id}
+                  className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-slate-200 dark:border-slate-600 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                  onClick={() => loadFromHistory(item)}
+                >
+                  <div className="space-y-2">
+                    <div className="flex-1">
+                      <div className="font-medium text-sm break-all">
+                        {item.value} → {item.result.toFixed(4)}
+                      </div>
+                      <div className="text-xs text-muted-foreground break-all">
+                        {item.category}: {item.fromUnit} to {item.toUnit}
+                      </div>
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {item.timestamp.toLocaleTimeString()}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Quick Conversions */}
+      <Card className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 shadow-xl">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-lg">
+            <Star className="h-5 w-5" />
+            Popular Conversions
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { from: "1 meter", to: "3.281 feet", category: "Length" },
+              { from: "1 kilogram", to: "2.205 pounds", category: "Weight" },
+              { from: "0°C", to: "32°F", category: "Temperature" },
+              { from: "1 liter", to: "0.264 gallons", category: "Volume" },
+              { from: "1 kilometer", to: "0.621 miles", category: "Length" },
+              { from: "1 square meter", to: "10.764 square feet", category: "Area" }
+            ].map((conversion, index) => (
+              <div key={index} className="p-4 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-700 dark:to-slate-800 rounded-lg border border-slate-200 dark:border-slate-600 min-h-[80px]">
+                <div className="text-sm font-medium text-slate-800 dark:text-slate-200 mb-2">
+                  {conversion.category}
+                </div>
+                <div className="text-xs text-slate-600 dark:text-slate-400 break-all leading-relaxed">
+                  {conversion.from} = {conversion.to}
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}

@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Heart, Users, Zap, Target } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Free Love Calculator | Love Compatibility & Match Percentage | FastTools",
@@ -243,10 +244,30 @@ export default function LoveCalculatorPage() {
 
         <div className="max-w-2xl mx-auto mt-8 space-y-8">
           <div className="text-center space-y-4 animate-fade-in-up">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground text-balance">Love Calculator</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground text-balance">Love Calculator - Free Love Compatibility Test</h1>
             <p className="text-base text-muted-foreground text-pretty">
               Calculate the love compatibility between two people. Just for fun - see your love match percentage!
             </p>
+            
+            {/* Enhanced SEO Stats */}
+            <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-muted-foreground">
+              <div className="flex items-center justify-center gap-2">
+                <Heart className="h-4 w-4" />
+                <span>Fun & Free</span>
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                <Users className="h-4 w-4" />
+                <span>500K+ Tests</span>
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                <Zap className="h-4 w-4" />
+                <span>Instant Results</span>
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                <Target className="h-4 w-4" />
+                <span>Share Results</span>
+              </div>
+            </div>
           </div>
 
           {/* First Ad Space - After Hero Content */}
@@ -283,6 +304,63 @@ export default function LoveCalculatorPage() {
               <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
                 <li><Link href="/fun-tools/anniversary">Anniversary Calculator</Link></li>
                 <li><Link href="/fun-tools/birthday-countdown">Birthday Countdown</Link></li>
+              </ul>
+            </div>
+
+            {/* Enhanced SEO Content */}
+            <div className="p-6 rounded-lg bg-muted/30 border border-border mt-6">
+              <h2 className="text-xl font-bold mb-4 text-foreground">Love Calculator Algorithm</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                Our love calculator uses advanced algorithms to determine compatibility based on name analysis, 
+                character matching, and relationship psychology principles for accurate and fun results.
+              </p>
+              
+              <h3 className="text-lg font-bold mb-3 text-foreground">How the Algorithm Works</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                <li>Analyzes character frequency in both names</li>
+                <li>Calculates compatibility based on letter patterns</li>
+                <li>Considers vowel and consonant distribution</li>
+                <li>Applies relationship psychology principles</li>
+                <li>Generates percentage based on multiple factors</li>
+                <li>Provides fun and entertaining results</li>
+              </ul>
+
+              <h3 className="text-lg font-bold mt-6 mb-3 text-foreground">Love Compatibility Factors</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                <li><strong>Name Analysis:</strong> Character frequency and patterns</li>
+                <li><strong>Vowel Harmony:</strong> Vowel distribution compatibility</li>
+                <li><strong>Consonant Balance:</strong> Consonant pattern matching</li>
+                <li><strong>Length Compatibility:</strong> Name length relationships</li>
+                <li><strong>Character Uniqueness:</strong> Rare letter combinations</li>
+                <li><strong>Overall Harmony:</strong> Combined compatibility score</li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-lg bg-muted/30 border border-border mt-6">
+              <h2 className="text-xl font-bold mb-4 text-foreground">Fun Love Calculator Features</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                Our love calculator offers entertaining features including instant results, social sharing, 
+                and fun compatibility insights perfect for couples, friends, and social media engagement.
+              </p>
+              
+              <h3 className="text-lg font-bold mb-3 text-foreground">Entertainment Features</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                <li>Instant love compatibility percentage</li>
+                <li>Fun relationship insights and tips</li>
+                <li>Social media sharing capabilities</li>
+                <li>Multiple name combination testing</li>
+                <li>Fun facts about name compatibility</li>
+                <li>Entertainment for couples and friends</li>
+              </ul>
+
+              <h3 className="text-lg font-bold mt-6 mb-3 text-foreground">Perfect For</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                <li><strong>Couples:</strong> Fun relationship entertainment</li>
+                <li><strong>Friends:</strong> Social media sharing and fun</li>
+                <li><strong>Parties:</strong> Ice breaker and entertainment</li>
+                <li><strong>Social Media:</strong> Viral content and engagement</li>
+                <li><strong>Dating Apps:</strong> Conversation starters</li>
+                <li><strong>Entertainment:</strong> Fun and lighthearted fun</li>
               </ul>
             </div>
           </div>

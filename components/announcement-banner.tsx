@@ -16,6 +16,14 @@ interface Announcement {
 
 const announcements: Announcement[] = [
   {
+    id: "ai-tools",
+    title: "AI Tools Collection",
+    description: "Generate captions, hashtags, lyrics, and memes with AI",
+    href: "/ai-tools",
+    icon: Sparkles,
+    badge: "Popular"
+  },
+  {
     id: "tiktok-downloader",
     title: "TikTok Downloader is Live!",
     description: "Download TikTok videos without watermark - HD quality, fast & secure",
@@ -24,14 +32,6 @@ const announcements: Announcement[] = [
     badge: "New",
     isNew: true,
     isLive: true
-  },
-  {
-    id: "ai-tools",
-    title: "AI Tools Collection",
-    description: "Generate captions, hashtags, lyrics, and memes with AI",
-    href: "/ai-tools",
-    icon: Sparkles,
-    badge: "Popular"
   }
 ]
 

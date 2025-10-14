@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { FileText, Beer as Blur, Crop, FileStack, Unlock, Monitor, ArrowRight } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
@@ -513,6 +513,54 @@ export default function ImageToolsPage() {
             best with portraits and objects that have distinct edges and contrast with the background.
           </p>
         </section>
+
+        {/* Comprehensive Image Guides Section */}
+        <div className="mt-12">
+          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Image Guides</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <FileText className="h-5 w-5 text-blue-500" />
+                  Image to Text (OCR) Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to OCR text extraction and image processing techniques.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master OCR technology with our comprehensive guide covering text recognition, 
+                  image optimization, accuracy factors, and practical applications.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/image-to-text-ocr-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Blur className="h-5 w-5 text-purple-500" />
+                  Background Blur Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to background blur effects and image processing techniques.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master background blur with our comprehensive guide covering blur techniques, 
+                  photography tips, creative applications, and professional image processing.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/background-blur-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
 
         {/* Final Ad Space - Bottom Content */}
         <div className="mt-8">

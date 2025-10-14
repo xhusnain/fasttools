@@ -11,6 +11,18 @@ import {
   Clock,
   Wallet,
   TrendingUp,
+  GraduationCap,
+  Building,
+  Network,
+  Ruler,
+  Triangle,
+  BarChart3,
+  Heart,
+  Timer,
+  Flame,
+  Scale,
+  Receipt,
+  Home,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
@@ -105,42 +117,70 @@ export default function ToolsPage() {
       "@type": "ItemList",
       name: "Free Online Tools",
       description: "Collection of free online tools and calculators",
-      numberOfItems: 50,
+      numberOfItems: 52,
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
+          name: "Conversion Calculator",
+          description: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions",
+          url: "https://fasttools.store/converters/conversion-calculator"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
           name: "Age Calculator",
           description: "Calculate your exact age in years, months, and days",
           url: "https://fasttools.store/tools/age-calculator"
         },
         {
           "@type": "ListItem",
-          position: 2,
+          position: 3,
           name: "BMI Calculator",
           description: "Calculate your Body Mass Index (BMI)",
           url: "https://fasttools.store/tools/bmi-calculator"
         },
         {
           "@type": "ListItem",
-          position: 3,
+          position: 4,
           name: "Loan EMI Calculator",
           description: "Calculate your monthly loan payment (EMI)",
           url: "https://fasttools.store/tools/loan-calculator"
         },
         {
           "@type": "ListItem",
-          position: 4,
+          position: 5,
           name: "Tax Calculator",
           description: "Calculate your estimated income tax",
           url: "https://fasttools.store/tools/tax-calculator"
         },
         {
           "@type": "ListItem",
-          position: 5,
+          position: 6,
           name: "Percentage Calculator",
           description: "Calculate percentages quickly and easily",
           url: "https://fasttools.store/tools/percentage-calculator"
+        },
+        {
+          "@type": "ListItem",
+          position: 7,
+          name: "GPA Calculator",
+          description: "Calculate your Grade Point Average with comprehensive analysis",
+          url: "https://fasttools.store/tools/gpa-calculator"
+        },
+        {
+          "@type": "ListItem",
+          position: 8,
+          name: "Concrete Calculator",
+          description: "Calculate concrete volume, weight, materials, and cost for construction projects",
+          url: "https://fasttools.store/tools/concrete-calculator"
+        },
+        {
+          "@type": "ListItem",
+          position: 9,
+          name: "IP Subnet Calculator",
+          description: "Calculate IPv4 and IPv6 subnets with CIDR notation, VLSM, and network analysis",
+          url: "https://fasttools.store/tools/ip-subnet-calculator"
         }
       ]
     },
@@ -164,6 +204,12 @@ export default function ToolsPage() {
   }
 
   const tools = [
+    {
+      title: "Conversion Calculator",
+      description: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions.",
+      icon: Ruler,
+      href: "/converters/conversion-calculator",
+    },
     {
       title: "Age Calculator",
       description: "Calculate your exact age in years, months, and days from your birth date.",
@@ -212,6 +258,144 @@ export default function ToolsPage() {
       icon: TrendingUp,
       href: "/tools/compound-interest",
     },
+    {
+      title: "GPA Calculator",
+      description: "Calculate your Grade Point Average with comprehensive analysis and planning tools.",
+      icon: GraduationCap,
+      href: "/tools/gpa-calculator",
+    },
+    {
+      title: "Concrete Calculator",
+      description: "Calculate concrete volume, weight, materials, and cost for construction projects.",
+      icon: Building,
+      href: "/tools/concrete-calculator",
+    },
+    {
+      title: "IP Subnet Calculator",
+      description: "Calculate IPv4 and IPv6 subnets with CIDR notation, VLSM, and network analysis.",
+      icon: Network,
+      href: "/tools/ip-subnet-calculator",
+    },
+    {
+      title: "Scientific Calculator",
+      description: "Advanced scientific calculator with trigonometric, logarithmic, power, root, and statistical functions.",
+      icon: Calculator,
+      href: "/tools/scientific-calculator",
+    },
+    {
+      title: "Triangle Calculator",
+      description: "Calculate triangle area, perimeter, angles, heights, medians, inradius, and circumradius with SSS, SAS, ASA, AAS, SSA methods.",
+      icon: Triangle,
+      href: "/tools/triangle-calculator",
+    },
+    {
+      title: "Fraction Calculator",
+      description: "Add, subtract, multiply, and divide fractions with automatic simplification, decimal conversion, and mixed number support.",
+      icon: Calculator,
+      href: "/tools/fraction-calculator",
+    },
+    {
+      title: "Standard Deviation Calculator",
+      description: "Calculate standard deviation, variance, mean, confidence intervals, quartiles, outliers detection, and comprehensive statistical analysis.",
+      icon: BarChart3,
+      href: "/tools/standard-deviation-calculator",
+    },
+    {
+      title: "Pregnancy Conception Calculator",
+      description: "Calculate your conception date with personalized trimester guidance, nutrition tips, exercise recommendations, and comprehensive pregnancy insights.",
+      icon: Heart,
+      href: "/tools/pregnancy-conception-calculator",
+    },
+    {
+      title: "Pregnancy Calculator",
+      description: "Track your pregnancy with comprehensive calculator. Get due date estimates, gestational age, weight gain recommendations, and personalized pregnancy insights.",
+      icon: Heart,
+      href: "/tools/pregnancy-calculator",
+    },
+    {
+      title: "Pace Calculator",
+      description: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max with our advanced pace calculator. Perfect for runners, coaches, and athletes.",
+      icon: Timer,
+      href: "/tools/pace-calculator",
+    },
+    {
+      title: "BMR Calculator",
+      description: "Calculate your Basal Metabolic Rate (BMR) with multiple equations. Get TDEE analysis, weight management goals, and personalized nutrition recommendations for optimal health.",
+      icon: Flame,
+      href: "/tools/bmr-calculator",
+    },
+    {
+      title: "Body Fat Calculator",
+      description: "Calculate your body fat percentage using U.S. Navy method and BMI method. Get fat mass, lean mass, ideal body fat, and personalized health recommendations for optimal body composition.",
+      icon: Scale,
+      href: "/tools/body-fat-calculator",
+    },
+    {
+      title: "Calorie Calculator",
+      description: "Calculate your daily calorie needs with advanced BMR and TDEE analysis. Get weight management goals, zigzag calorie cycling, and personalized nutrition recommendations for optimal health.",
+      icon: Flame,
+      href: "/tools/calorie-calculator",
+    },
+    {
+      title: "Sales Tax Calculator",
+      description: "Calculate sales tax for all 50 US states with our advanced calculator. Get accurate tax calculations, state comparisons, business tips, and compliance guidance for optimal tax planning.",
+      icon: Receipt,
+      href: "/tools/sales-tax-calculator",
+    },
+    {
+      title: "Interest Rate Calculator",
+      description: "Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation, amortization analysis, and loan optimization recommendations.",
+      icon: Percent,
+      href: "/tools/interest-rate-calculator",
+    },
+    {
+      title: "Salary Calculator",
+      description: "Convert salary amounts across all pay frequencies with holiday and vacation adjustments. Professional salary analysis, industry comparisons, and negotiation support for career advancement.",
+      icon: DollarSign,
+      href: "/tools/salary-calculator",
+    },
+    {
+      title: "Finance Calculator",
+      description: "Professional finance calculator for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules, investment analysis, and financial planning tools.",
+      icon: Calculator,
+      href: "/tools/finance-calculator",
+    },
+        {
+          title: "Inflation Calculator",
+          description: "Professional inflation calculator with historical CPI data from 1913-2025. Calculate purchasing power, inflation rates, and investment strategies with comprehensive economic analysis.",
+          icon: TrendingUp,
+          href: "/tools/inflation-calculator",
+        },
+        {
+          title: "Investment Calculator",
+          description: "Professional investment calculator for comprehensive portfolio analysis. Calculate end amount, return rate, starting amount, additional contributions, and investment length with detailed accumulation schedules.",
+          icon: TrendingUp,
+          href: "/tools/investment-calculator",
+        },
+        {
+          title: "Amortization Calculator",
+          description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings for mortgages, auto loans, and personal loans.",
+          icon: Calculator,
+          href: "/tools/amortization-calculator",
+        },
+        {
+          title: "Retirement Calculator",
+          description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments and scenario analysis.",
+          icon: DollarSign,
+          href: "/tools/retirement-calculator",
+        },
+        {
+          title: "Payment Calculator",
+          description: "Professional payment calculator for loan analysis. Calculate monthly payments, loan terms, amortization schedules, and total interest with comprehensive payment optimization strategies.",
+          icon: Calculator,
+          href: "/tools/payment-calculator",
+        },
+        {
+          title: "Mortgage Calculator",
+          description: "Professional mortgage calculator for home loan analysis. Calculate monthly payments, amortization schedules, total interest, and mortgage costs with comprehensive payment optimization strategies.",
+          icon: Home,
+          href: "/tools/mortgage-calculator",
+        },
   ]
 
   return (
@@ -226,9 +410,9 @@ export default function ToolsPage() {
           <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
             Discover our comprehensive collection of free online calculation tools designed for professionals, students, 
             and everyday users. Our advanced calculator suite includes age calculators, BMI calculators, loan EMI calculators, 
-            tax calculators, percentage calculators, time duration calculators, and compound interest calculators. All tools 
+            tax calculators, percentage calculators, time duration calculators, compound interest calculators, GPA calculators, and concrete calculators. All tools 
             are 100% free, highly accurate, and optimized for both desktop and mobile use. Whether you're calculating 
-            personal finances, health metrics, academic grades, or business expenses, our tools provide instant, 
+            personal finances, health metrics, academic grades, construction projects, or business expenses, our tools provide instant, 
             reliable results without any registration requirements.
           </p>
         </div>
@@ -419,6 +603,54 @@ export default function ToolsPage() {
             all financial formulas are kept current with the latest industry standards and regulations.
           </p>
         </section>
+
+        {/* Comprehensive Tools Guides Section */}
+        <div className="mt-12">
+          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Tools Guides</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Calculator className="h-5 w-5 text-blue-500" />
+                  Age Calculator Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to age calculation, date arithmetic, and leap year handling.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master age calculation with our comprehensive guide covering calculation methods, 
+                  date arithmetic, leap years, and practical applications for accurate age determination.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/age-calculator-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Activity className="h-5 w-5 text-green-500" />
+                  BMI Calculator Guide
+                </CardTitle>
+                <CardDescription>
+                  Complete guide to BMI calculation, health implications, and weight management.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master BMI calculation with our comprehensive guide covering formulas, categories, 
+                  health implications, and best practices for accurate health assessment.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/guides/bmi-calculator-guide">Read Complete Guide</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </div>
       </div>
     </>

@@ -21,8 +21,10 @@ export function Header() {
           <span className="text-foreground hidden sm:inline tracking-tight">FastTools</span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-3 flex-1 max-w-2xl">
-          <SearchBar />
+        <div className="hidden lg:flex items-center gap-4 flex-1 max-w-3xl">
+          <div className="flex-1 max-w-2xl">
+            <SearchBar />
+          </div>
           <CategoryDropdown />
         </div>
 
@@ -38,6 +40,12 @@ export function Header() {
             className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
           >
             Tools
+          </Link>
+          <Link
+            href="/learn"
+            className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
+          >
+            Learn
           </Link>
           <Link
             href="/about"
@@ -128,6 +136,13 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
+              </Link>
+              <Link
+                href="/learn"
+                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Learn
               </Link>
               <Link
                 href="/about"

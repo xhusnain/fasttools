@@ -28,10 +28,10 @@ import {
   Code,
   Search,
   Download,
+  Mail,
+  X,
+  Wrench,
 } from "lucide-react"
-import { AdSpace } from "@/components/ad-space"
-import { TiktokDownloader } from "@/components/tiktok-downloader"
-import { AnnouncementBanner } from "@/components/announcement-banner"
 
 export default function HomePage() {
   const jsonLd = {
@@ -325,6 +325,13 @@ export default function HomePage() {
       href: "/tools/compound-interest",
       popular: false,
     },
+    {
+      title: "Fraction Calculator",
+      description: "Add, subtract, multiply, and divide fractions with automatic simplification.",
+      icon: Calculator,
+      href: "/tools/fraction-calculator",
+      popular: false,
+    },
     // Date & Time tools (category pages already exist but show here too)
     {
       title: "Age in Hours",
@@ -552,7 +559,7 @@ export default function HomePage() {
       description: "Download TikTok videos without watermark.",
       icon: Download,
       href: "/social-media-tools/tiktok-downloader",
-      popular: false,
+      popular: true,
     },
     {
       title: "YouTube Tag Extractor",
@@ -610,224 +617,288 @@ export default function HomePage() {
     <>
       <script suppressHydrationWarning type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="flex flex-col">
-        {/* Hero Section with proper content-to-ad ratio */}
+        {/* AI Writing Assistant Hero Section */}
         <section className="container mx-auto px-4 lg:px-6 py-10 md:py-14">
-          <div className="max-w-7xl mx-auto text-center space-y-8">
-            {/* Dynamic Announcement Banner */}
-            <div className="mb-6 animate-fade-in">
-              <AnnouncementBanner />
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance leading-[1.1] text-foreground animate-fade-in-up tracking-tight">
-              Free Online Tools | fasttools - Your Complete Digital Toolkit
-            </h1>
-
-            <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-100">
-              Access 1000+ powerful, free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities — all in one place. Fast, accurate, and easy to use.
-            </p>
-
-            {/* Hero CTA Buttons */}
-            <div className="pt-6 animate-fade-in-up animation-delay-200">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button
-                  asChild
-                  size="lg"
-                  className="w-full sm:w-auto h-12 px-8 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
-                >
-                  <Link href="#popular-tools" className="flex items-center justify-center gap-2">
-                    Explore Popular Tools
-                    <ArrowRight className="h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto h-12 px-8 text-base font-semibold hover:bg-accent transition-all duration-200 bg-transparent border-2"
-                >
-                  <Link href="#all-tools" className="flex items-center justify-center gap-2">
-                    View All Tools
-                    <Target className="h-5 w-5" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* First Ad Space - After Hero Content */}
-        <section className="py-6">
-          <div className="w-full px-4">
-            <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24 border border-border/60 rounded-xl shadow-sm" />
-          </div>
-        </section>
-
-      {/* Popular Tools Section */}
-      <section id="popular-tools" className="bg-gradient-to-br from-background via-muted/20 to-background py-12 md:py-16">
-        <div className="w-full px-4">
-          <div className="w-full">
-            <div className="text-center mb-10 animate-fade-in-up">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Popular Tools</h2>
-              <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">Discover our most-used tools that help thousands of users daily</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 mb-10">
-              {tools.filter(tool => tool.popular).map((tool, index) => (
-                <Card
-                  key={tool.href}
-                  className="group relative w-full border border-border/60 hover:border-primary/30 bg-card/80 backdrop-blur-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 animate-fade-in-up flex flex-col"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <CardHeader className="p-6 pb-4 flex-shrink-0">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className={`h-16 w-16 rounded-xl bg-gradient-to-br shadow-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 ${iconGradients[index % iconGradients.length]}`}>
-                        <tool.icon className="h-8 w-8" />
-                      </div>
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-700 dark:text-amber-300 text-xs font-semibold border border-amber-200/50 dark:border-amber-800/50 backdrop-blur-sm">
-                        <Star className="h-3 w-3 fill-current" />
-                        Popular
-                      </span>
+          <div className="max-w-7xl mx-auto">
+            {/* Compelling Value Proposition Banner */}
+            <div className="mb-8 animate-fade-in">
+              <div className="relative max-w-5xl mx-auto">
+                <div className="bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-pink-600/10 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-xl">
+                  <div className="text-center space-y-4">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 text-blue-100 text-sm font-semibold mb-4">
+                      <Sparkles className="h-4 w-4 animate-pulse" />
+                      <span>1000+ Free Tools • No Registration Required</span>
                     </div>
-                    <CardTitle className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{tool.title}</CardTitle>
-                    <CardDescription className="text-sm text-muted-foreground leading-relaxed flex-grow">{tool.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="p-6 pt-0 mt-auto">
-                    <Button asChild className="w-full h-12 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group-hover:bg-primary group-hover:text-primary-foreground">
-                      <Link href={tool.href} className="flex items-center justify-center gap-2">
-                        Use Tool
-                        <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Second Ad Space - Between Popular and All Tools */}
-      <section className="py-6">
-        <div className="w-full px-4">
-          <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24 border border-border/60 rounded-xl shadow-sm" />
-        </div>
-      </section>
-
-      {/* All Tools Section with AdSense compliant layout */}
-      <section id="all-tools" className="bg-muted/20 py-12 md:py-16">
-        <div className="w-full px-4">
-          <div className="w-full">
-            <div className="text-center mb-10 animate-fade-in-up">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">All Tools</h2>
-              <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">Browse our complete collection of free online tools and utilities</p>
-            </div>
-
-            {/* Desktop layout with single sidebar ad (AdSense compliant) */}
-            <div className="hidden lg:grid grid-cols-12 gap-6">
-              <div className="col-span-2">
-                <div className="sticky top-4">
-                  <AdSpace slot="sidebar" className="h-[600px] w-full border border-border/60 rounded-xl shadow-sm" />
-                </div>
-              </div>
-              
-              <div className="col-span-8">
-                <div className="space-y-16">
-                  {Object.entries(categorizedTools).map(([category, toolList], catIdx) => (
-                    <div key={category} className="space-y-6">
-                      <div className="flex items-center gap-3">
-                        <div className="h-1 w-12 bg-gradient-to-r from-primary to-primary/60 rounded-full"></div>
-                        <h3 className="text-2xl font-bold text-foreground">{category}</h3>
-                        <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent"></div>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 leading-tight">
+                      Everything You Need, Nothing You Don't
+                    </h2>
+                    <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                      From AI-powered content creation to precision calculators, we've eliminated the need to visit multiple websites. 
+                      <span className="font-semibold text-white"> One platform, infinite possibilities.</span>
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-white/70">
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span>100% Free Forever</span>
                       </div>
-                      
-                      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
-                        {toolList.map((tool, index) => (
-                          <Card
-                            key={tool.href}
-                            className="group relative w-full border border-border/60 hover:border-primary/30 bg-card/80 backdrop-blur-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 animate-fade-in-up flex flex-col"
-                            style={{ animationDelay: `${(catIdx * 50) + (index * 25)}ms` }}
-                          >
-                            <CardHeader className="p-6 pb-4 flex-shrink-0">
-                              <div className="flex items-start justify-between mb-4">
-                                <div className={`h-14 w-14 rounded-xl bg-gradient-to-br shadow-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 ${iconGradients[(catIdx + index) % iconGradients.length]}`}>
-                                  <tool.icon className="h-7 w-7" />
-                                </div>
-                                {tool.popular && (
-                                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-700 dark:text-amber-300 text-xs font-semibold border border-amber-200/50 dark:border-amber-800/50 backdrop-blur-sm">
-                                    <Star className="h-3 w-3 fill-current" />
-                                    Popular
-                                  </span>
-                                )}
-                              </div>
-                              <CardTitle className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{tool.title}</CardTitle>
-                              <CardDescription className="text-sm text-muted-foreground leading-relaxed flex-grow">{tool.description}</CardDescription>
-                            </CardHeader>
-                            <CardContent className="p-6 pt-0 mt-auto">
-                              <Button asChild className="w-full h-11 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group-hover:bg-primary group-hover:text-primary-foreground">
-                                <Link href={tool.href} className="flex items-center justify-center gap-2">
-                                  Use Tool
-                                  <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-                                </Link>
-                              </Button>
-                            </CardContent>
-                          </Card>
-                        ))}
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 bg-blue-400 rounded-full animate-pulse"></div>
+                        <span>No Watermarks</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 bg-purple-400 rounded-full animate-pulse"></div>
+                        <span>Privacy First</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 bg-pink-400 rounded-full animate-pulse"></div>
+                        <span>Mobile Optimized</span>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="col-span-2">
-                <div className="sticky top-4">
-                  <AdSpace slot="sidebar" className="h-[600px] w-full border border-border/60 rounded-xl shadow-sm" />
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile and tablet layout */}
-            <div className="grid lg:hidden gap-12">
-              {Object.entries(categorizedTools).map(([category, toolList], catIdx) => (
-                <div key={category} className="space-y-6">
-                  <div className="flex items-center gap-3">
-                    <div className="h-1 w-8 bg-gradient-to-r from-primary to-primary/60 rounded-full"></div>
-                    <h3 className="text-xl font-bold text-foreground">{category}</h3>
-                    <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent"></div>
                   </div>
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {toolList.map((tool, index) => (
-                      <Card 
-                        key={tool.href} 
-                        className="group relative w-full border border-border/60 hover:border-primary/30 bg-card/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 animate-fade-in-up flex flex-col"
-                        style={{ animationDelay: `${(catIdx * 30) + (index * 20)}ms` }}
-                      >
-                        <CardHeader className="p-5 pb-3 flex-shrink-0">
-                          <div className="flex items-start justify-between mb-3">
-                            <div className={`h-12 w-12 rounded-lg bg-gradient-to-br shadow-md flex items-center justify-center text-white group-hover:scale-105 transition-transform duration-300 ${iconGradients[(catIdx + index) % iconGradients.length]}`}>
-                              <tool.icon className="h-6 w-6" />
-                            </div>
-                            {tool.popular && (
-                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-700 dark:text-amber-300 text-xs font-semibold border border-amber-200/50 dark:border-amber-800/50">
-                                <Star className="h-3 w-3 fill-current" />
-                                Popular
-                              </span>
-                            )}
+                </div>
+              </div>
+            </div>
+
+            {/* Ultra-Colorful & Engaging Hero Block */}
+            <div className="relative overflow-hidden min-h-[60vh] flex items-center">
+              {/* Vibrant Animated Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/40 via-purple-500/40 via-blue-500/40 to-cyan-500/40 animate-pulse"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/30 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-red-400/20 via-transparent to-transparent"></div>
+              
+              {/* Colorful Floating Particles */}
+              <div className="absolute top-10 left-10 h-4 w-4 bg-pink-500 rounded-full animate-bounce animation-delay-100 shadow-lg shadow-pink-500/50"></div>
+              <div className="absolute top-20 right-20 h-5 w-5 bg-blue-500 rounded-full animate-bounce animation-delay-500 shadow-lg shadow-blue-500/50"></div>
+              <div className="absolute bottom-20 left-20 h-4 w-4 bg-yellow-500 rounded-full animate-bounce animation-delay-1000 shadow-lg shadow-yellow-500/50"></div>
+              <div className="absolute bottom-10 right-10 h-3 w-3 bg-green-500 rounded-full animate-bounce animation-delay-1500 shadow-lg shadow-green-500/50"></div>
+              <div className="absolute top-1/2 left-1/4 h-3 w-3 bg-purple-500 rounded-full animate-bounce animation-delay-2000 shadow-lg shadow-purple-500/50"></div>
+              <div className="absolute top-1/3 right-1/3 h-4 w-4 bg-orange-500 rounded-full animate-bounce animation-delay-2500 shadow-lg shadow-orange-500/50"></div>
+              
+              {/* Massive Colorful Gradient Orbs */}
+              <div className="absolute -top-32 -left-32 h-48 w-48 bg-gradient-to-br from-pink-500/50 to-purple-500/50 rounded-full blur-3xl animate-spin animation-delay-2000"></div>
+              <div className="absolute -bottom-32 -right-32 h-36 w-36 bg-gradient-to-br from-blue-500/50 to-cyan-500/50 rounded-full blur-3xl animate-spin animation-delay-3000"></div>
+              <div className="absolute top-1/2 -right-16 h-24 w-24 bg-gradient-to-br from-yellow-500/40 to-orange-500/40 rounded-full blur-2xl animate-spin animation-delay-1000"></div>
+              <div className="absolute top-1/4 -left-16 h-20 w-20 bg-gradient-to-br from-green-500/40 to-emerald-500/40 rounded-full blur-2xl animate-spin animation-delay-4000"></div>
+              
+              <div className="relative w-full bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-white/30 shadow-2xl hover:shadow-purple-500/25 transition-all duration-500">
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                  {/* Left Column - Ultra-Colorful Content */}
+                  <div className="space-y-4 sm:space-y-6">
+                    <div className="space-y-3 sm:space-y-4">
+                      {/* Rainbow Animated Badge */}
+                      <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-pink-500/40 via-purple-500/40 via-blue-500/40 to-cyan-500/40 border-2 border-pink-400/60 text-white text-xs sm:text-sm font-bold animate-bounce hover:animate-pulse transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-pink-500/50">
+                        <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 animate-spin text-yellow-300" />
+                        <span className="animate-pulse">AI-Powered</span>
+                        <span className="text-yellow-300">•</span>
+                        <span className="animate-pulse">100% Free</span>
+                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
+                      </div>
+
+                      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 via-blue-400 via-cyan-400 to-yellow-400 leading-[0.9] tracking-tight animate-pulse hover:animate-none transition-all duration-500">
+                        Write 10x Faster
+                      </h1>
+
+                      <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl font-bold text-white/95 leading-tight animate-fade-in-up animation-delay-200">
+                        Choose Best As You
+                      </h2>
+
+                      <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/85 leading-relaxed max-w-xl animate-fade-in-up animation-delay-300">
+                        Your ultimate toolkit for productivity, creativity, and success. From AI-powered content generation to precision calculators, we've got everything you need to work smarter, not harder.
+                      </p>
+                    </div>
+
+                    {/* Ultra-Colorful CTA Section */}
+                    <div className="space-y-3 sm:space-y-4">
+                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                        <Button
+                          asChild
+                          size="lg"
+                          className="group h-12 sm:h-14 px-4 sm:px-6 text-base sm:text-lg font-black bg-gradient-to-r from-pink-500 via-purple-500 via-blue-500 to-cyan-500 hover:from-pink-600 hover:via-purple-600 hover:via-blue-600 hover:to-cyan-600 text-white border-0 shadow-2xl hover:shadow-pink-500/50 transition-all duration-500 transform hover:scale-110 hover:rotate-1 animate-pulse hover:animate-none"
+                        >
+                          <Link href="/ai-tools/caption-generator" className="flex items-center justify-center gap-2 sm:gap-3">
+                            <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 group-hover:animate-spin text-yellow-300" />
+                            <span className="group-hover:animate-pulse">Start Creating Now</span>
+                            <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-2 transition-transform duration-300" />
+                          </Link>
+                        </Button>
+                        
+                        <Button
+                          asChild
+                          variant="outline"
+                          size="lg"
+                          className="group h-12 sm:h-14 px-4 sm:px-6 text-base sm:text-lg font-black border-3 border-white/40 text-white hover:bg-white/20 hover:border-white/70 transition-all duration-500 transform hover:scale-105 hover:rotate-1"
+                        >
+                          <Link href="#popular-tools" className="flex items-center justify-center gap-2 sm:gap-3">
+                            <Target className="h-4 w-4 sm:h-5 sm:w-5 group-hover:animate-bounce" />
+                            <span className="group-hover:animate-pulse">Discover All Tools</span>
+                          </Link>
+                        </Button>
+                      </div>
+
+                      {/* Rainbow Live Stats */}
+                      <div className="flex flex-wrap gap-3 sm:gap-4 lg:gap-6 text-white/80">
+                        <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-green-500/30 to-emerald-500/30 border border-green-400/50 hover:scale-105 transition-all duration-300">
+                          <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-green-400 rounded-full animate-ping"></div>
+                          <span className="text-xs sm:text-sm font-bold text-green-300">5,000+ users creating now</span>
+                        </div>
+                        <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-yellow-500/30 to-orange-500/30 border border-yellow-400/50 hover:scale-105 transition-all duration-300">
+                          <Zap className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400 animate-pulse" />
+                          <span className="text-xs sm:text-sm font-bold text-yellow-300">10x faster</span>
+                        </div>
+                        <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-blue-500/30 to-cyan-500/30 border border-blue-400/50 hover:scale-105 transition-all duration-300">
+                          <Shield className="h-3 w-3 sm:h-4 sm:w-4 text-blue-400 animate-bounce" />
+                          <span className="text-xs sm:text-sm font-bold text-blue-300">1000+ free tools</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column - Ultra-Colorful Visual */}
+                  <div className="relative hidden lg:block mt-4">
+                    {/* Rainbow Floating Elements */}
+                    <div className="absolute top-2 -right-4 h-16 sm:h-20 w-16 sm:w-20 bg-gradient-to-br from-pink-500/50 to-purple-500/50 rounded-full blur-2xl animate-spin animation-delay-1000"></div>
+                    <div className="absolute -bottom-4 -left-4 h-20 sm:h-24 w-20 sm:w-24 bg-gradient-to-br from-blue-500/50 to-cyan-500/50 rounded-full blur-2xl animate-spin animation-delay-2000"></div>
+                    <div className="absolute top-1/2 -left-2 h-10 sm:h-12 w-10 sm:w-12 bg-gradient-to-br from-yellow-500/40 to-orange-500/40 rounded-full blur-xl animate-bounce animation-delay-500"></div>
+                    <div className="absolute top-1/4 -right-1 h-8 sm:h-10 w-8 sm:w-10 bg-gradient-to-br from-green-500/40 to-emerald-500/40 rounded-full blur-xl animate-bounce animation-delay-1500"></div>
+                    <div className="absolute top-3/4 left-1 h-8 sm:h-10 w-8 sm:w-10 bg-gradient-to-br from-red-500/40 to-pink-500/40 rounded-full blur-xl animate-bounce animation-delay-2500"></div>
+                    
+                    {/* Colorful Animated Particles */}
+                    <div className="absolute top-2 left-2 h-1.5 w-1.5 bg-pink-400 rounded-full animate-ping animation-delay-500 shadow-lg shadow-pink-400/50"></div>
+                    <div className="absolute top-4 right-4 h-2 w-2 bg-blue-400 rounded-full animate-ping animation-delay-1000 shadow-lg shadow-blue-400/50"></div>
+                    <div className="absolute bottom-4 left-4 h-1.5 w-1.5 bg-yellow-400 rounded-full animate-ping animation-delay-1500 shadow-lg shadow-yellow-400/50"></div>
+                    <div className="absolute bottom-2 right-2 h-2 w-2 bg-green-400 rounded-full animate-ping animation-delay-2000 shadow-lg shadow-green-400/50"></div>
+                    <div className="absolute top-1/2 right-2 h-1.5 w-1.5 bg-purple-400 rounded-full animate-ping animation-delay-2500 shadow-lg shadow-purple-400/50"></div>
+                    
+                    <div className="relative bg-gradient-to-br from-white/20 to-white/15 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border-2 border-white/40 shadow-2xl hover:shadow-pink-500/25 transition-all duration-500 hover:scale-105">
+                      {/* AI Interface Mockup */}
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 animate-pulse">
+                            <Sparkles className="h-6 w-6 text-white animate-spin" />
                           </div>
-                          <CardTitle className="text-base font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{tool.title}</CardTitle>
-                          <CardDescription className="text-sm text-muted-foreground leading-relaxed flex-grow">{tool.description}</CardDescription>
-                        </CardHeader>
-                        <CardContent className="p-5 pt-0 mt-auto">
-                          <Button asChild className="w-full h-10 text-sm font-semibold shadow-lg hover:shadow-md transition-all duration-200 group-hover:bg-primary group-hover:text-primary-foreground">
-                            <Link href={tool.href} className="flex items-center justify-center gap-2">
-                              Use Tool
-                              <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-                            </Link>
-                          </Button>
-                        </CardContent>
-                      </Card>
-                    ))}
+                          <div>
+                            <h3 className="text-lg font-black text-white animate-pulse">AI Writing Assistant</h3>
+                            <p className="text-white/80 text-sm font-semibold">Powered by GPT-4 & Claude</p>
+                          </div>
+                          <div className="ml-auto flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-green-500/30 to-emerald-500/30 border-2 border-green-400/50 hover:scale-110 transition-all duration-300">
+                            <div className="h-2 w-2 bg-green-400 rounded-full animate-ping"></div>
+                            <span className="text-green-300 text-sm font-bold animate-pulse">LIVE</span>
+                          </div>
+                        </div>
+                        
+                        {/* Generated Content Examples */}
+                        <div className="space-y-2">
+                          <div className="bg-white/10 rounded-lg p-3 border border-white/20">
+                            <p className="text-white/60 text-xs mb-1">✨ Generated Caption:</p>
+                            <p className="text-white font-medium leading-relaxed text-xs">
+                              "Transform your morning routine with these 5 productivity hacks that successful entrepreneurs swear by! 💪✨ #ProductivityTips #MorningRoutine #Success"
+                            </p>
+                          </div>
+                          
+                          <div className="bg-white/10 rounded-lg p-3 border border-white/20">
+                            <p className="text-white/60 text-xs mb-1">📝 Blog Post:</p>
+                            <p className="text-white font-medium leading-relaxed text-xs">
+                              "The Ultimate Guide to Morning Productivity: How Top CEOs Start Their Day for Maximum Success..."
+                            </p>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center justify-between text-white/60 text-xs">
+                          <div className="flex items-center gap-1.5">
+                            <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-pulse"></div>
+                            <span>AI Generated • 2.3 seconds</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Star className="h-3 w-3 text-yellow-400 fill-current" />
+                            <Star className="h-3 w-3 text-yellow-400 fill-current" />
+                            <Star className="h-3 w-3 text-yellow-400 fill-current" />
+                            <Star className="h-3 w-3 text-yellow-400 fill-current" />
+                            <Star className="h-3 w-3 text-yellow-400 fill-current" />
+                            <span className="ml-1 text-xs">4.9/5</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      {/* Ultra-Colorful Popular Tools Section */}
+      <section id="popular-tools" className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
+        {/* Rainbow Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 via-blue-500/10 to-cyan-500/10"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/15 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-red-400/10 via-transparent to-transparent"></div>
+        
+        <div className="relative w-full px-4">
+          <div className="w-full">
+            <div className="text-center mb-8 sm:mb-12 animate-fade-in-up">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pink-500/30 via-purple-500/30 via-blue-500/30 to-cyan-500/30 border border-pink-400/50 text-white text-sm font-bold mb-4 sm:mb-6">
+                <Star className="h-4 w-4 fill-current text-yellow-300" />
+                Most Popular Tools
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 via-blue-500 via-cyan-500 to-yellow-500 mb-4 sm:mb-6">
+                Tools That Users Love
+              </h2>
+              <p className="text-lg sm:text-xl text-muted-foreground text-pretty max-w-3xl mx-auto leading-relaxed">
+                Discover the most-used tools that help thousands of users daily. These are the tools that make a real difference.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
+              {tools.filter(tool => tool.popular).map((tool, index) => (
+                <div
+                  key={tool.href}
+                  className="group relative animate-fade-in-up"
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  <Link href={tool.href} className="block">
+                    <div className="relative bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl p-6 border-2 border-white/40 hover:border-white/70 transition-all duration-500 hover:shadow-2xl hover:shadow-pink-500/25 group-hover:bg-gradient-to-br group-hover:from-white/30 group-hover:to-white/20">
+                      {/* Rainbow Floating Background Elements */}
+                      <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 h-12 w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20 bg-gradient-to-br from-pink-500/40 to-purple-500/40 rounded-full blur-xl group-hover:scale-150 group-hover:animate-spin transition-all duration-500"></div>
+                      <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 bg-gradient-to-br from-blue-500/40 to-cyan-500/40 rounded-full blur-xl group-hover:scale-150 group-hover:animate-spin transition-all duration-500 animation-delay-1000"></div>
+                      <div className="absolute top-1/2 -left-1 sm:-left-2 h-8 w-8 sm:h-12 sm:w-12 lg:h-16 lg:w-16 bg-gradient-to-br from-yellow-500/30 to-orange-500/30 rounded-full blur-lg group-hover:scale-125 group-hover:animate-bounce transition-all duration-300"></div>
+                      <div className="absolute top-1/4 -right-1 sm:-right-2 h-6 w-6 sm:h-10 sm:w-10 lg:h-12 lg:w-12 bg-gradient-to-br from-green-500/30 to-emerald-500/30 rounded-full blur-lg group-hover:scale-125 group-hover:animate-bounce transition-all duration-300 animation-delay-500"></div>
+                      
+                      {/* Colorful Animated Particles */}
+                      <div className="absolute top-1 left-1 sm:top-2 sm:left-2 h-1 w-1 bg-pink-400 rounded-full animate-ping animation-delay-500 shadow-lg shadow-pink-400/50"></div>
+                      <div className="absolute top-2 right-2 sm:top-4 sm:right-4 h-1 w-1 sm:h-2 sm:w-2 bg-blue-400 rounded-full animate-ping animation-delay-1000 shadow-lg shadow-blue-400/50"></div>
+                      <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 h-1 w-1 bg-yellow-400 rounded-full animate-ping animation-delay-1500 shadow-lg shadow-yellow-400/50"></div>
+                      <div className="absolute bottom-1 right-1 sm:bottom-2 sm:right-2 h-1 w-1 sm:h-2 sm:w-2 bg-green-400 rounded-full animate-ping animation-delay-2000 shadow-lg shadow-green-400/50"></div>
+                      
+                      <div className="relative z-10">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className={`h-12 w-12 rounded-xl bg-gradient-to-br shadow-lg flex items-center justify-center text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 ${iconGradients[index % iconGradients.length]}`}>
+                            <tool.icon className="h-6 w-6 text-white group-hover:animate-spin" />
+                      </div>
+                          <div className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 rounded-full bg-gradient-to-r from-amber-500/40 to-orange-500/40 border border-amber-400/60 hover:scale-110 transition-all duration-300">
+                            <Star className="h-3 w-3 sm:h-4 sm:w-4 fill-current text-amber-300 animate-pulse" />
+                            <span className="text-amber-200 text-xs sm:text-sm font-black">4.9</span>
+                    </div>
+                        </div>
+                        
+                        <h3 className="text-xl font-bold text-white mb-1">
+                          {tool.title}
+                        </h3>
+                        
+                        <p className="text-white/90 mb-4 leading-relaxed text-sm">
+                          {tool.description}
+                        </p>
+                        
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2 text-xs text-white/70">
+                            <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
+                            <span>Live & Ready</span>
+                          </div>
+                          <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-pink-300 group-hover:translate-x-1 transition-all" />
+                        </div>
+                      </div>
+                    </div>
+                      </Link>
                 </div>
               ))}
             </div>
@@ -835,26 +906,315 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Final Ad Space - Bottom Content */}
-      <section className="py-8">
-        <div className="w-full px-4">
-          <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24 border border-border/60 rounded-xl shadow-sm" />
+
+      {/* Main Categories Section */}
+      <section id="categories" className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
+        {/* Dark Background to match other sections */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+        
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/30 to-purple-500/30 border border-blue-400/50 text-blue-200 text-sm font-semibold mb-6">
+                <Wrench className="h-4 w-4" />
+                Main Categories
+        </div>
+              <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
+                Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Tool Category</span>
+              </h2>
+              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                Explore our main tool categories. Each category contains dozens of specialized tools for your specific needs.
+              </p>
+            </div>
+
+            {/* Main Category Cards with Clean Design */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {/* AI Tools Category */}
+              <Link href="/ai-tools" className="group">
+                <div className="relative bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl p-6 shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105">
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-12 w-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
+                        <Sparkles className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-1">AI Tools</h3>
+                        <p className="text-white/80 text-xs">25+ AI-powered tools</p>
+                      </div>
+                    </div>
+                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
+                      Generate content, captions, hashtags, and more with our advanced AI tools powered by GPT-4 and Claude.
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-xs text-white/70">
+                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
+                        <span>AI Caption Generator, Meme Generator</span>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-purple-300 group-hover:translate-x-1 transition-all" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Calculator Tools Category */}
+              <Link href="/tools" className="group">
+                <div className="relative bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl p-6 shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105">
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-12 w-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
+                        <Calculator className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-1">Calculators</h3>
+                        <p className="text-white/80 text-xs">50+ calculator tools</p>
+                      </div>
+                    </div>
+                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
+                      Financial, business, and general calculators for all your calculation needs. From loan calculators to tip calculators.
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-xs text-white/70">
+                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
+                        <span>Loan Calculator, Tip Calculator</span>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-blue-300 group-hover:translate-x-1 transition-all" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Converter Tools Category */}
+              <Link href="/converters" className="group">
+                <div className="relative bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl p-6 shadow-lg hover:shadow-green-500/30 transition-all duration-300 hover:scale-105">
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-12 w-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
+                        <Activity className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-1">Converters</h3>
+                        <p className="text-white/80 text-xs">30+ conversion tools</p>
+                      </div>
+                    </div>
+                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
+                      Convert currencies, units, text cases, and file formats instantly. Live exchange rates and comprehensive unit conversions.
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-xs text-white/70">
+                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
+                        <span>Currency Converter, Unit Converter</span>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-green-300 group-hover:translate-x-1 transition-all" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+
+              {/* SEO Tools Category */}
+              <Link href="/seo-tools" className="group">
+                <div className="relative bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl p-6 shadow-lg hover:shadow-orange-500/30 transition-all duration-300 hover:scale-105">
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-12 w-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
+                        <Target className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-1">SEO Tools</h3>
+                        <p className="text-white/80 text-xs">20+ SEO utilities</p>
+                      </div>
+                    </div>
+                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
+                      Optimize your website with our comprehensive SEO tools. Meta tag generators, keyword analyzers, and more.
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-xs text-white/70">
+                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
+                        <span>Meta Tag Generator, Keyword Checker</span>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-orange-300 group-hover:translate-x-1 transition-all" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Image Tools Category */}
+              <Link href="/image-tools" className="group">
+                <div className="relative bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl p-6 shadow-lg hover:shadow-pink-500/30 transition-all duration-300 hover:scale-105">
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-12 w-12 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
+                        <Image className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-1">Image Tools</h3>
+                        <p className="text-white/80 text-xs">15+ image utilities</p>
+                      </div>
+                    </div>
+                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
+                      Process and edit images with our powerful tools. Crop, resize, convert formats, and extract text from images.
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-xs text-white/70">
+                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
+                        <span>Image Cropper, Image Converter</span>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-pink-300 group-hover:translate-x-1 transition-all" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Developer Tools Category */}
+              <Link href="/dev-tools" className="group">
+                <div className="relative bg-gradient-to-br from-slate-500 to-gray-500 rounded-2xl p-6 shadow-lg hover:shadow-slate-500/30 transition-all duration-300 hover:scale-105">
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-12 w-12 bg-gradient-to-br from-slate-500 to-gray-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
+                        <Code className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-1">Developer Tools</h3>
+                        <p className="text-white/80 text-xs">25+ dev utilities</p>
+                      </div>
+                    </div>
+                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
+                      Essential tools for developers. HTML beautifiers, JSON converters, regex testers, and more coding utilities.
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-xs text-white/70">
+                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
+                        <span>HTML Beautifier, JSON Converter</span>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-slate-300 group-hover:translate-x-1 transition-all" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Finance Tools Category */}
+              <Link href="/finance-tools" className="group">
+                <div className="relative bg-gradient-to-br from-yellow-500 to-amber-500 rounded-2xl p-6 shadow-lg hover:shadow-yellow-500/30 transition-all duration-300 hover:scale-105">
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-12 w-12 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
+                        <DollarSign className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-1">Finance Tools</h3>
+                        <p className="text-white/80 text-xs">20+ financial calculators</p>
+                      </div>
+                    </div>
+                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
+                      Manage your finances with our comprehensive financial tools. Loan calculators, tax calculators, and investment tools.
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-xs text-white/70">
+                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
+                        <span>Loan Calculator, Tax Calculator</span>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-yellow-300 group-hover:translate-x-1 transition-all" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Social Media Tools Category */}
+              <Link href="/social-media-tools" className="group">
+                <div className="relative bg-gradient-to-br from-violet-500 to-purple-500 rounded-2xl p-6 shadow-lg hover:shadow-violet-500/30 transition-all duration-300 hover:scale-105">
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-12 w-12 bg-gradient-to-br from-violet-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
+                        <Users className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-1">Social Media</h3>
+                        <p className="text-white/80 text-xs">15+ social tools</p>
+                      </div>
+                    </div>
+                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
+                      Create engaging social media content with our specialized tools. TikTok downloaders, hashtag generators, and more.
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-xs text-white/70">
+                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
+                        <span>TikTok Downloader, Hashtag Generator</span>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-violet-300 group-hover:translate-x-1 transition-all" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+                  </div>
+
+            {/* Additional Engaging Content */}
+            <div className="mt-16 text-center">
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500/30 via-purple-500/30 via-blue-500/30 to-cyan-500/30 border border-pink-400/50 text-white text-lg font-bold mb-8">
+                <Sparkles className="h-5 w-5 animate-spin text-yellow-300" />
+                <span>1000+ Free Tools Available</span>
+                <div className="h-2 w-2 bg-green-400 rounded-full animate-ping"></div>
+                </div>
+              
+              <h3 className="text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 via-blue-400 via-cyan-400 to-yellow-400 mb-6">
+                Why Choose FastTools?
+              </h3>
+              
+              <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div className="text-center p-6 bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl border border-white/30">
+                  <div className="h-16 w-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Shield className="h-8 w-8 text-white" />
+            </div>
+                  <h4 className="text-xl font-bold text-white mb-3">100% Free Forever</h4>
+                  <p className="text-white/80">No hidden costs, no premium tiers, no credit card required.</p>
+          </div>
+                
+                <div className="text-center p-6 bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl border border-white/30">
+                  <div className="h-16 w-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Zap className="h-8 w-8 text-white" />
+        </div>
+                  <h4 className="text-xl font-bold text-white mb-3">Lightning Fast</h4>
+                  <p className="text-white/80">Optimized for speed. No loading delays, no unnecessary features.</p>
+                </div>
+                
+                <div className="text-center p-6 bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl border border-white/30">
+                  <div className="h-16 w-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Target className="h-8 w-8 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-white mb-3">Always Updated</h4>
+                  <p className="text-white/80">Latest features, newest tools, and regular improvements.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* SEO Content (collapsible to keep UI clean) */}
-      <section className="py-12 border-t">
-        <div className="w-full px-4">
+
+      {/* Ultra-Colorful About Section */}
+      <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
+        {/* Rainbow Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 via-blue-500/10 to-cyan-500/10"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/15 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-red-400/10 via-transparent to-transparent"></div>
+        
+        <div className="relative w-full px-4">
           <div className="max-w-6xl mx-auto space-y-8">
-            <details className="group" open>
+            <details className="group bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border-2 border-white/30 shadow-2xl hover:shadow-pink-500/25 transition-all duration-500" open>
               <summary className="cursor-pointer list-none">
                 <div className="flex items-center justify-between">
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">About fasttools — Your Complete Free Online Tools Collection</h2>
-                  <span className="text-sm text-muted-foreground group-open:hidden">Expand</span>
-                  <span className="text-sm text-muted-foreground hidden group-open:inline">Collapse</span>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 via-blue-500 via-cyan-500 to-yellow-500">About fasttools — Your Complete Free Online Tools Collection</h2>
+                  <span className="text-sm text-white/70 group-open:hidden">Expand</span>
+                  <span className="text-sm text-white/70 hidden group-open:inline">Collapse</span>
                 </div>
               </summary>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mt-6 space-y-4 text-muted-foreground">
+              <div className="prose prose-neutral dark:prose-invert max-w-none mt-6 space-y-4 text-white/90">
                 <p>
                   fasttools is the ultimate collection of <strong>free online tools</strong> designed to eliminate everyday digital friction. 
                   Instead of navigating multiple websites to convert text, optimize SEO, process images, generate content, or perform calculations, 
@@ -1181,6 +1541,96 @@ export default function HomePage() {
                   <h4 className="text-base font-semibold text-foreground">What other tools are available?</h4>
                   <p>Explore converters, calculators, SEO helpers, developer utilities, image tools, and AI generators—all accessible from the homepage categories.</p>
                 </div>
+              </div>
+            </div>
+
+            {/* Comprehensive Guides Section */}
+            <div className="mt-12">
+              <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Tool Guides</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Target className="h-5 w-5 text-blue-500" />
+                      QR Code Generator Guide
+                    </CardTitle>
+                    <CardDescription>
+                      Complete guide to QR code generation, customization, and best practices for maximum impact.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Learn everything about QR codes including types, customization options, use cases, and future trends. 
+                      Perfect for businesses, marketers, and developers.
+                    </p>
+                    <Button asChild variant="outline" size="sm">
+                      <Link href="/guides/qr-code-generator-guide">Read Complete Guide</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <DollarSign className="h-5 w-5 text-green-500" />
+                      Currency Converter Guide
+                    </CardTitle>
+                    <CardDescription>
+                      Master currency conversion with our comprehensive guide to exchange rates and international trading.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Understand exchange rates, major currency pairs, conversion tips, and future trends in currency conversion. 
+                      Essential for travelers and businesses.
+                    </p>
+                    <Button asChild variant="outline" size="sm">
+                      <Link href="/guides/currency-converter-guide">Read Complete Guide</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Search className="h-5 w-5 text-purple-500" />
+                      SEO Tools Guide
+                    </CardTitle>
+                    <CardDescription>
+                      Complete guide to SEO optimization with free tools for better search engine rankings.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Master SEO with keyword research, on-page optimization, technical SEO, and content optimization strategies. 
+                      Perfect for marketers and website owners.
+                    </p>
+                    <Button asChild variant="outline" size="sm">
+                      <Link href="/guides/seo-tools-guide">Read Complete Guide</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Code className="h-5 w-5 text-orange-500" />
+                      Developer Tools Guide
+                    </CardTitle>
+                    <CardDescription>
+                      Essential developer tools and utilities for web development, coding, and technical projects.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Discover essential developer tools including code formatters, validators, converters, and utilities. 
+                      Boost your development workflow and productivity.
+                    </p>
+                    <Button asChild variant="outline" size="sm">
+                      <Link href="/guides/developer-tools-guide">Read Complete Guide</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>

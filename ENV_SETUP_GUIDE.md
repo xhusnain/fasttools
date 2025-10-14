@@ -19,21 +19,27 @@ This guide will help you set up all the necessary API keys and configurations fo
 
 **Used by:** AI Meme Generator, Lyrics Generator, Caption Generator, Pet Name Generator, Hashtag Suggester
 
-**How to get:**
-1. Go to [OpenAI Platform](https://platform.openai.com/)
-2. Sign up or log in
-3. Navigate to [API Keys](https://platform.openai.com/api-keys)
-4. Click "Create new secret key"
-5. Copy the key and add to `.env.local`:
-   \`\`\`
-   OPENAI_API_KEY=sk-proj-xxxxxxxxxxxxx
-   \`\`\`
+---
 
-**Pricing:** Pay-as-you-go, ~$0.002 per request for GPT-4o-mini
+### 2. Google Gemini API Key (For Enhanced AI Tools)
+
+**Used by:** Enhanced AI Caption Generator, Advanced AI Tools
+
+**How to get:**
+1. Go to [Google AI Studio](https://aistudio.google.com/)
+2. Sign up or log in with Google account
+3. Navigate to "Get API Key"
+4. Create a new API key
+5. Copy the key and add to `.env.local`:
+   ```
+   GEMINI_API_KEY=***REMOVED***
+   ```
+
+**Pricing:** Free tier includes 15 requests per minute, 1 million tokens per day
 
 ---
 
-### 2. Exchange Rate API Key (For Currency Converter)
+### 3. Exchange Rate API Key (For Currency Converter)
 
 **Used by:** Currency Converter
 
@@ -87,6 +93,7 @@ This guide will help you set up all the necessary API keys and configurations fo
 
 ### AI Configuration
 - `OPENAI_API_KEY`: OpenAI API key for AI-powered tools
+- `GEMINI_API_KEY`: Google Gemini API key for enhanced AI features
 - `XAI_API_KEY`: (Optional) xAI Grok API key
 - `ANTHROPIC_API_KEY`: (Optional) Anthropic Claude API key
 
