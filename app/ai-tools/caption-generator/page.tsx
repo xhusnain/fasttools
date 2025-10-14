@@ -5,7 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import { Sparkles } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Free AI Caption Generator 2024 | Create Viral Social Media Captions | FastTools",
+  title: "Free AI Caption Generator | Create Viral Social Media Captions | FastTools",
   description:
     "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator with 7 platforms support. Boost engagement with our advanced AI-powered caption maker.",
   keywords: [
@@ -142,7 +142,7 @@ export const metadata: Metadata = {
     "travel social media caption maker"
   ],
   openGraph: {
-    title: "Free AI Caption Generator 2024 | Create Viral Social Media Captions | FastTools",
+    title: "Free AI Caption Generator | Create Viral Social Media Captions | FastTools",
     description: "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator with 7 platforms support.",
     type: "website",
     url: "https://fasttools.store/ai-tools/caption-generator",
@@ -153,14 +153,14 @@ export const metadata: Metadata = {
         url: "https://fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "FastTools AI Caption Generator 2024 - Create Viral Social Media Captions for Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube",
+        alt: "FastTools AI Caption Generator - Create Viral Social Media Captions for Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube",
         type: "image/svg+xml",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free AI Caption Generator 2024 | Create Viral Social Media Captions | FastTools",
+    title: "Free AI Caption Generator | Create Viral Social Media Captions | FastTools",
     description: "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator.",
     images: ["https://fasttools.store/og-image.svg"],
     creator: "@fasttools",
@@ -199,7 +199,7 @@ export default function CaptionGeneratorPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Free AI Caption Generator 2024",
+    name: "Free AI Caption Generator",
     description: "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator with 7 platforms support.",
     applicationCategory: "SocialMediaApplication",
     operatingSystem: "Web Browser",
@@ -209,7 +209,7 @@ export default function CaptionGeneratorPage() {
       price: "0",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
-      validFrom: "2024-01-01"
+      validFrom: new Date().toISOString().split('T')[0]
     },
     aggregateRating: {
       "@type": "AggregateRating",
@@ -254,7 +254,7 @@ export default function CaptionGeneratorPage() {
       url: "https://fasttools.store",
       logo: "https://fasttools.store/logo.svg"
     },
-    datePublished: "2024-01-01",
+    datePublished: new Date().toISOString().split('T')[0],
     dateModified: new Date().toISOString().split('T')[0],
     version: "2.1",
     softwareVersion: "2.1",
@@ -278,7 +278,7 @@ export default function CaptionGeneratorPage() {
     },
     mainEntity: {
       "@type": "WebPage",
-      name: "Free AI Caption Generator 2024",
+      name: "Free AI Caption Generator",
       description: "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly.",
       url: "https://fasttools.store/ai-tools/caption-generator",
       breadcrumb: {
@@ -373,7 +373,7 @@ export default function CaptionGeneratorPage() {
         <div className="mb-8 animate-fade-in-up">
           <div className="relative overflow-hidden min-h-[40vh] flex items-center">
             {/* SEO-optimized heading structure */}
-            <h1 className="sr-only">Free AI Caption Generator 2024 - Create Viral Social Media Captions for Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube</h1>
+            <h1 className="sr-only">Free AI Caption Generator - Create Viral Social Media Captions for Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube</h1>
               {/* Vibrant Animated Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-pink-500/40 via-purple-500/40 via-blue-500/40 to-cyan-500/40 animate-pulse"></div>
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/30 via-transparent to-transparent"></div>
