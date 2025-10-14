@@ -416,15 +416,9 @@ export const metadata: Metadata = {
             </a>
             <GlobalLoading />
             <Header />
-            <div className="container mx-auto px-4 py-4">
-              <AdSpace slot="header" className="h-20" />
-            </div>
             <main id="main-content" className="min-h-[calc(100vh-4rem)]" role="main">
               {children}
             </main>
-            <div className="container mx-auto px-4 py-6">
-              <AdSpace slot="footer" className="h-24 max-w-6xl mx-auto" />
-            </div>
             <Footer />
             <CookieConsent />
             <Analytics/>
