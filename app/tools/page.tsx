@@ -22,6 +22,7 @@ import {
   Flame,
   Scale,
   Receipt,
+  Home,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import type { Metadata } from "next"
@@ -388,6 +389,12 @@ export default function ToolsPage() {
           description: "Professional payment calculator for loan analysis. Calculate monthly payments, loan terms, amortization schedules, and total interest with comprehensive payment optimization strategies.",
           icon: Calculator,
           href: "/tools/payment-calculator",
+        },
+        {
+          title: "Mortgage Calculator",
+          description: "Professional mortgage calculator for home loan analysis. Calculate monthly payments, amortization schedules, total interest, and mortgage costs with comprehensive payment optimization strategies.",
+          icon: Home,
+          href: "/tools/mortgage-calculator",
         },
   ]
 

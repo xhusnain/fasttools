@@ -53,6 +53,7 @@ const InvestmentCalculatorGuide = dynamic(() => import("@/app/guides/investment-
 const AmortizationCalculatorGuide = dynamic(() => import("@/app/guides/amortization-calculator-guide/page"), { ssr: false })
 const RetirementCalculatorGuide = dynamic(() => import("@/app/guides/retirement-calculator-guide/page"), { ssr: false })
 const PaymentCalculatorGuide = dynamic(() => import("@/app/guides/payment-calculator-guide/page"), { ssr: false })
+const MortgageCalculatorGuide = dynamic(() => import("@/app/guides/mortgage-calculator-guide/page"), { ssr: false })
 
 export default function LearnPage() {
   const [selectedGuide, setSelectedGuide] = useState("age-calculator")
@@ -288,6 +289,11 @@ export default function LearnPage() {
               id: "payment-calculator",
               title: "Payment Calculator Guide",
               href: "/guides/payment-calculator-guide"
+            },
+            {
+              id: "mortgage-calculator",
+              title: "Mortgage Calculator Guide",
+              href: "/guides/mortgage-calculator-guide"
             }
   ]
 
@@ -385,6 +391,8 @@ export default function LearnPage() {
                 return <RetirementCalculatorGuide />
               case "payment-calculator":
                 return <PaymentCalculatorGuide />
+              case "mortgage-calculator":
+                return <MortgageCalculatorGuide />
               default:
                 return <AgeCalculatorGuide />
     }
