@@ -28,6 +28,7 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
   const adRef = useRef<HTMLDivElement>(null)
   const [adShape, setAdShape] = useState<"horizontal" | "vertical" | "square">("horizontal")
   const [scriptLoaded, setScriptLoaded] = useState(false)
+  const [adFailed, setAdFailed] = useState(false)
   const initializedRef = useRef(false)
 
   // Determine ad shape based on className or auto-detection
@@ -119,19 +120,33 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
           window.adsbygoogle.push({})
         }
         initializedRef.current = true
+        
+        // Set a timeout to detect if ad fails to load
+        setTimeout(() => {
+          if (adRef.current && !adRef.current.querySelector("iframe")) {
+            setAdFailed(true)
+          }
+        }, 3000)
       } catch (error) {
         // Silently ignore TagError in case of policy/placement restrictions
         // to avoid breaking the UI
         console.warn("Ad init warning:", error)
+        setAdFailed(true)
       }
     } catch {}
   }, [scriptLoaded, adShape])
 
+  // Hide the ad space if ad failed to load or in development
+  if (adFailed || process.env.NODE_ENV !== "production") {
+    return null
+  }
+
   return (
     <div
       ref={adRef}
-      className={`${className}`}
+      className={`${className} min-h-0`}
       aria-label="Advertisement"
+      style={{ minHeight: '0px' }}
     />
   )
 }
