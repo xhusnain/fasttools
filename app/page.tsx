@@ -660,7 +660,7 @@ export default function HomePage() {
             </div>
 
             {/* Ultra-Colorful & Engaging Hero Block */}
-            <div className="relative overflow-hidden min-h-[60vh] flex items-center">
+            <div className="relative overflow-hidden min-h-[50vh] sm:min-h-[60vh] lg:min-h-[70vh] flex items-center">
               {/* Vibrant Animated Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-pink-500/40 via-purple-500/40 via-blue-500/40 to-cyan-500/40 animate-pulse"></div>
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/30 via-transparent to-transparent"></div>
@@ -681,7 +681,7 @@ export default function HomePage() {
               <div className="absolute top-1/4 -left-16 h-20 w-20 bg-gradient-to-br from-green-500/40 to-emerald-500/40 rounded-full blur-2xl animate-spin animation-delay-4000"></div>
               
               <div className="relative w-full bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-white/30 shadow-2xl hover:shadow-purple-500/25 transition-all duration-500">
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center">
                   {/* Left Column - Ultra-Colorful Content */}
                   <div className="space-y-4 sm:space-y-6">
                     <div className="space-y-3 sm:space-y-4">
@@ -694,31 +694,31 @@ export default function HomePage() {
                         <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
                       </div>
 
-                      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 via-blue-400 via-cyan-400 to-yellow-400 leading-[0.9] tracking-tight animate-pulse hover:animate-none transition-all duration-500">
+                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 via-blue-400 via-cyan-400 to-yellow-400 leading-[0.9] tracking-tight animate-pulse hover:animate-none transition-all duration-500">
                         Write 10x Faster
                       </h1>
 
-                      <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl font-bold text-white/95 leading-tight animate-fade-in-up animation-delay-200">
+                      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl font-bold text-white/95 leading-tight animate-fade-in-up animation-delay-200">
                         Choose Best As You
                       </h2>
 
-                      <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/85 leading-relaxed max-w-xl animate-fade-in-up animation-delay-300">
+                      <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/85 leading-relaxed max-w-xl animate-fade-in-up animation-delay-300">
                         Your ultimate toolkit for productivity, creativity, and success. From AI-powered content generation to precision calculators, we've got everything you need to work smarter, not harder.
                       </p>
                     </div>
 
                     {/* Ultra-Colorful CTA Section */}
                     <div className="space-y-3 sm:space-y-4">
-                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                         <Button
                           asChild
                           size="lg"
-                          className="group h-12 sm:h-14 px-4 sm:px-6 text-base sm:text-lg font-black bg-gradient-to-r from-pink-500 via-purple-500 via-blue-500 to-cyan-500 hover:from-pink-600 hover:via-purple-600 hover:via-blue-600 hover:to-cyan-600 text-white border-0 shadow-2xl hover:shadow-pink-500/50 transition-all duration-500 transform hover:scale-110 hover:rotate-1 animate-pulse hover:animate-none"
+                          className="group h-14 sm:h-16 px-6 sm:px-8 text-lg sm:text-xl font-black bg-gradient-to-r from-pink-500 via-purple-500 via-blue-500 to-cyan-500 hover:from-pink-600 hover:via-purple-600 hover:via-blue-600 hover:to-cyan-600 text-white border-0 shadow-2xl hover:shadow-pink-500/50 transition-all duration-500 transform hover:scale-110 hover:rotate-1 animate-pulse hover:animate-none"
                         >
-                          <Link href="/ai-tools/caption-generator" className="flex items-center justify-center gap-2 sm:gap-3">
-                            <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 group-hover:animate-spin text-yellow-300" />
+                          <Link href="/ai-tools/caption-generator" className="flex items-center justify-center gap-3 sm:gap-4">
+                            <Sparkles className="h-5 w-5 sm:h-6 sm:w-6 group-hover:animate-spin text-yellow-300" />
                             <span className="group-hover:animate-pulse">Start Creating Now</span>
-                            <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-2 transition-transform duration-300" />
+                            <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-2 transition-transform duration-300" />
                           </Link>
                         </Button>
                         
@@ -726,10 +726,10 @@ export default function HomePage() {
                           asChild
                           variant="outline"
                           size="lg"
-                          className="group h-12 sm:h-14 px-4 sm:px-6 text-base sm:text-lg font-black border-3 border-white/40 text-white hover:bg-white/20 hover:border-white/70 transition-all duration-500 transform hover:scale-105 hover:rotate-1"
+                          className="group h-14 sm:h-16 px-6 sm:px-8 text-lg sm:text-xl font-black border-3 border-white/40 text-white hover:bg-white/20 hover:border-white/70 transition-all duration-500 transform hover:scale-105 hover:rotate-1"
                         >
-                          <Link href="#popular-tools" className="flex items-center justify-center gap-2 sm:gap-3">
-                            <Target className="h-4 w-4 sm:h-5 sm:w-5 group-hover:animate-bounce" />
+                          <Link href="#popular-tools" className="flex items-center justify-center gap-3 sm:gap-4">
+                            <Target className="h-5 w-5 sm:h-6 sm:w-6 group-hover:animate-bounce" />
                             <span className="group-hover:animate-pulse">Discover All Tools</span>
                           </Link>
                         </Button>
@@ -828,14 +828,14 @@ export default function HomePage() {
 
 
       {/* Ultra-Colorful Popular Tools Section */}
-      <section id="popular-tools" className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
+      <section id="popular-tools" className="relative py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
         {/* Rainbow Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 via-blue-500/10 to-cyan-500/10"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/15 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-red-400/10 via-transparent to-transparent"></div>
         
-        <div className="relative w-full px-4">
-          <div className="w-full">
+        <div className="relative w-full px-4 sm:px-6 lg:px-8">
+          <div className="w-full max-w-7xl mx-auto">
             <div className="text-center mb-8 sm:mb-12 animate-fade-in-up">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pink-500/30 via-purple-500/30 via-blue-500/30 to-cyan-500/30 border border-pink-400/50 text-white text-sm font-bold mb-4 sm:mb-6">
                 <Star className="h-4 w-4 fill-current text-yellow-300" />
@@ -849,7 +849,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
               {tools.filter(tool => tool.popular).map((tool, index) => (
                 <div
                   key={tool.href}
@@ -908,7 +908,7 @@ export default function HomePage() {
 
 
       {/* Main Categories Section */}
-      <section id="categories" className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
+      <section id="categories" className="relative py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
         {/* Dark Background to match other sections */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
         
@@ -917,18 +917,37 @@ export default function HomePage() {
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/30 to-purple-500/30 border border-blue-400/50 text-blue-200 text-sm font-semibold mb-6">
                 <Wrench className="h-4 w-4" />
-                Main Categories
-        </div>
-              <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-                Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Tool Category</span>
+                Professional Tool Categories
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6">
+                Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Professional Toolkit</span>
               </h2>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto">
-                Explore our main tool categories. Each category contains dozens of specialized tools for your specific needs.
+              <p className="text-lg sm:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
+                Discover specialized tool categories designed for professionals, creators, and businesses. 
+                Each category contains dozens of industry-specific tools to streamline your workflow and boost productivity.
               </p>
+              <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-white/70">
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span>Industry-Specific Tools</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 bg-blue-400 rounded-full animate-pulse"></div>
+                  <span>Professional Grade</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 bg-purple-400 rounded-full animate-pulse"></div>
+                  <span>Expert-Approved</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 bg-pink-400 rounded-full animate-pulse"></div>
+                  <span>Always Updated</span>
+                </div>
+              </div>
             </div>
 
             {/* Main Category Cards with Clean Design */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
               {/* AI Tools Category */}
               <Link href="/ai-tools" className="group">
                 <div className="relative bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl p-6 shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105">
@@ -944,7 +963,8 @@ export default function HomePage() {
                       </div>
                     </div>
                     <p className="text-white/90 mb-4 leading-relaxed text-sm">
-                      Generate content, captions, hashtags, and more with our advanced AI tools powered by GPT-4 and Claude.
+                      Generate content, captions, hashtags, and more with our advanced AI tools powered by GPT-4 and Claude. 
+                      Perfect for content creators, marketers, and professionals.
                     </p>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2 text-xs text-white/70">
@@ -972,7 +992,8 @@ export default function HomePage() {
                       </div>
                     </div>
                     <p className="text-white/90 mb-4 leading-relaxed text-sm">
-                      Financial, business, and general calculators for all your calculation needs. From loan calculators to tip calculators.
+                      Financial, business, and general calculators for all your calculation needs. From loan calculators to tip calculators. 
+                      Essential for accountants, financial advisors, and business professionals.
                     </p>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2 text-xs text-white/70">
@@ -1000,7 +1021,8 @@ export default function HomePage() {
                       </div>
                     </div>
                     <p className="text-white/90 mb-4 leading-relaxed text-sm">
-                      Convert currencies, units, text cases, and file formats instantly. Live exchange rates and comprehensive unit conversions.
+                      Convert currencies, units, text cases, and file formats instantly. Live exchange rates and comprehensive unit conversions. 
+                      Perfect for international businesses, developers, and data analysts.
                     </p>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2 text-xs text-white/70">
@@ -1198,14 +1220,14 @@ export default function HomePage() {
 
 
       {/* Ultra-Colorful About Section */}
-      <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
+      <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
         {/* Rainbow Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 via-blue-500/10 to-cyan-500/10"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/15 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-red-400/10 via-transparent to-transparent"></div>
         
-        <div className="relative w-full px-4">
-          <div className="max-w-6xl mx-auto space-y-8">
+        <div className="relative w-full px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto space-y-6 sm:space-y-8">
             <details className="group bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border-2 border-white/30 shadow-2xl hover:shadow-pink-500/25 transition-all duration-500" open>
               <summary className="cursor-pointer list-none">
                 <div className="flex items-center justify-between">
