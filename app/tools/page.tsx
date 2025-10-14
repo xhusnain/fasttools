@@ -383,6 +383,12 @@ export default function ToolsPage() {
           icon: DollarSign,
           href: "/tools/retirement-calculator",
         },
+        {
+          title: "Payment Calculator",
+          description: "Professional payment calculator for loan analysis. Calculate monthly payments, loan terms, amortization schedules, and total interest with comprehensive payment optimization strategies.",
+          icon: Calculator,
+          href: "/tools/payment-calculator",
+        },
   ]
 
   return (
