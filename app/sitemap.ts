@@ -56,12 +56,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
     {
-      url: "https://fasttools.store/admin/announcements",
-      lastModified: getFreshnessDate(1),
-      changeFrequency: "daily" as const,
-      priority: 0.2,
-    },
-    {
       url: "https://fasttools.store/resources",
       lastModified: getFreshnessDate(1), // Updated daily for freshness
       changeFrequency: "daily" as const,
