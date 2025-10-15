@@ -212,24 +212,28 @@ export default function ConvertersPage() {
       description: "Convert text between uppercase, lowercase, title case, sentence case, camelCase, and snake_case.",
       icon: Type,
       href: "/converters/text-case",
+      color: "blue"
     },
     {
       title: "Length Converter",
       description: "Convert between meters, feet, inches, centimeters, kilometers, miles, and more length units.",
       icon: Ruler,
       href: "/converters/length",
+      color: "green"
     },
     {
       title: "File Size Converter",
       description: "Convert between bytes, KB, MB, GB, and TB. Perfect for understanding file and storage sizes.",
       icon: HardDrive,
       href: "/converters/file-size",
+      color: "purple"
     },
     {
       title: "Currency Converter",
       description: "Convert between major world currencies including USD, EUR, GBP, JPY, INR, and more.",
       icon: DollarSign,
       href: "/converters/currency",
+      color: "yellow"
     },
     {
       title: "Time Zone Converter",
@@ -237,12 +241,14 @@ export default function ConvertersPage() {
         "Convert time between different time zones worldwide. Perfect for scheduling international meetings.",
       icon: Globe,
       href: "/converters/timezone",
+      color: "cyan"
     },
     {
       title: "Temperature Converter",
       description: "Convert between Celsius and Fahrenheit temperature scales quickly and accurately.",
       icon: Thermometer,
       href: "/converters/temperature",
+      color: "red"
     },
   ]
 
@@ -330,8 +336,8 @@ export default function ConvertersPage() {
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     <CardHeader className="p-4">
-                      <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center mb-3 border border-green-400/30 shadow-lg">
-                        <converter.icon className="h-5 w-5 text-green-400" />
+                      <div className={`h-10 w-10 rounded-lg bg-gradient-to-br from-${converter.color}-500/20 to-${converter.color}-600/20 flex items-center justify-center mb-3 border border-${converter.color}-400/30 shadow-lg`}>
+                        <converter.icon className={`h-5 w-5 text-${converter.color}-400`} />
                       </div>
                       <CardTitle className="text-base font-bold text-white mb-2">{converter.title}</CardTitle>
                       <CardDescription className="leading-relaxed text-xs text-white/80">

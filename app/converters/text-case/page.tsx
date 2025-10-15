@@ -1,6 +1,7 @@
 import { TextCaseConverter } from "@/components/text-case-converter"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
+import { Type } from "lucide-react"
 import type { Metadata } from "next"
 import Link from "next/link"
 
@@ -103,7 +104,244 @@ export const metadata: Metadata = {
     "convert to snake case",
     "convert to camel case",
     "case conversion online",
-    "title capitalization rules"
+    "title capitalization rules",
+    
+    // Trending 2024-2025 Keywords
+    "ai text case converter",
+    "smart text formatting tool",
+    "bulk text case converter",
+    "advanced text case converter",
+    "professional text case converter",
+    "text case converter with preview",
+    "real-time text case converter",
+    "multi-language text case converter",
+    "unicode text case converter",
+    "accent text case converter",
+    "emoji text case converter",
+    "special character text case converter",
+    "programming text case converter",
+    "seo text case converter",
+    "social media text case converter",
+    "blog text case converter",
+    "academic text case converter",
+    "business text case converter",
+    "marketing text case converter",
+    "content creation text case converter",
+    "developer text case converter",
+    "writer text case converter",
+    "editor text case converter",
+    "journalist text case converter",
+    "student text case converter",
+    "teacher text case converter",
+    "researcher text case converter",
+    "analyst text case converter",
+    "manager text case converter",
+    "entrepreneur text case converter",
+    "freelancer text case converter",
+    "consultant text case converter",
+    "agency text case converter",
+    "startup text case converter",
+    "enterprise text case converter",
+    "small business text case converter",
+    "medium business text case converter",
+    "large business text case converter",
+    "nonprofit text case converter",
+    "government text case converter",
+    "education text case converter",
+    "healthcare text case converter",
+    "finance text case converter",
+    "technology text case converter",
+    "retail text case converter",
+    "manufacturing text case converter",
+    "service text case converter",
+    "consulting text case converter",
+    "marketing text case converter",
+    "advertising text case converter",
+    "public relations text case converter",
+    "communications text case converter",
+    "media text case converter",
+    "publishing text case converter",
+    "journalism text case converter",
+    "blogging text case converter",
+    "social media text case converter",
+    "content marketing text case converter",
+    "digital marketing text case converter",
+    "email marketing text case converter",
+    "search engine optimization text case converter",
+    "pay per click text case converter",
+    "social media marketing text case converter",
+    "influencer marketing text case converter",
+    "affiliate marketing text case converter",
+    "content strategy text case converter",
+    "brand strategy text case converter",
+    "creative strategy text case converter",
+    "digital strategy text case converter",
+    "marketing strategy text case converter",
+    "business strategy text case converter",
+    "growth strategy text case converter",
+    "expansion strategy text case converter",
+    "international strategy text case converter",
+    "global strategy text case converter",
+    "local strategy text case converter",
+    "regional strategy text case converter",
+    "national strategy text case converter",
+    "international business text case converter",
+    "global business text case converter",
+    "local business text case converter",
+    "regional business text case converter",
+    "national business text case converter",
+    "small business strategy text case converter",
+    "medium business strategy text case converter",
+    "large business strategy text case converter",
+    "startup strategy text case converter",
+    "scale up strategy text case converter",
+    "growth stage strategy text case converter",
+    "mature stage strategy text case converter",
+    "decline stage strategy text case converter",
+    "turnaround strategy text case converter",
+    "transformation strategy text case converter",
+    "digital transformation text case converter",
+    "business transformation text case converter",
+    "organizational transformation text case converter",
+    "cultural transformation text case converter",
+    "operational transformation text case converter",
+    "strategic transformation text case converter",
+    "tactical transformation text case converter",
+    "operational excellence text case converter",
+    "strategic excellence text case converter",
+    "tactical excellence text case converter",
+    "operational efficiency text case converter",
+    "strategic efficiency text case converter",
+    "tactical efficiency text case converter",
+    "operational effectiveness text case converter",
+    "strategic effectiveness text case converter",
+    "tactical effectiveness text case converter",
+    "operational performance text case converter",
+    "strategic performance text case converter",
+    "tactical performance text case converter",
+    "operational results text case converter",
+    "strategic results text case converter",
+    "tactical results text case converter",
+    "operational outcomes text case converter",
+    "strategic outcomes text case converter",
+    "tactical outcomes text case converter",
+    "operational impact text case converter",
+    "strategic impact text case converter",
+    "tactical impact text case converter",
+    "operational value text case converter",
+    "strategic value text case converter",
+    "tactical value text case converter",
+    "operational benefit text case converter",
+    "strategic benefit text case converter",
+    "tactical benefit text case converter",
+    "operational advantage text case converter",
+    "strategic advantage text case converter",
+    "tactical advantage text case converter",
+    "operational opportunity text case converter",
+    "strategic opportunity text case converter",
+    "tactical opportunity text case converter",
+    "operational potential text case converter",
+    "strategic potential text case converter",
+    "tactical potential text case converter",
+    "operational capability text case converter",
+    "strategic capability text case converter",
+    "tactical capability text case converter",
+    "operational capacity text case converter",
+    "strategic capacity text case converter",
+    "tactical capacity text case converter",
+    "operational resource text case converter",
+    "strategic resource text case converter",
+    "tactical resource text case converter",
+    "operational asset text case converter",
+    "strategic asset text case converter",
+    "tactical asset text case converter",
+    "operational investment text case converter",
+    "strategic investment text case converter",
+    "tactical investment text case converter",
+    "operational return text case converter",
+    "strategic return text case converter",
+    "tactical return text case converter",
+    "operational roi text case converter",
+    "strategic roi text case converter",
+    "tactical roi text case converter",
+    "operational profit text case converter",
+    "strategic profit text case converter",
+    "tactical profit text case converter",
+    "operational revenue text case converter",
+    "strategic revenue text case converter",
+    "tactical revenue text case converter",
+    "operational income text case converter",
+    "strategic income text case converter",
+    "tactical income text case converter",
+    "operational earnings text case converter",
+    "strategic earnings text case converter",
+    "tactical earnings text case converter",
+    "operational margin text case converter",
+    "strategic margin text case converter",
+    "tactical margin text case converter",
+    "operational growth text case converter",
+    "strategic growth text case converter",
+    "tactical growth text case converter",
+    "operational expansion text case converter",
+    "strategic expansion text case converter",
+    "tactical expansion text case converter",
+    "operational scaling text case converter",
+    "strategic scaling text case converter",
+    "tactical scaling text case converter",
+    "operational development text case converter",
+    "strategic development text case converter",
+    "tactical development text case converter",
+    "operational improvement text case converter",
+    "strategic improvement text case converter",
+    "tactical improvement text case converter",
+    "operational optimization text case converter",
+    "strategic optimization text case converter",
+    "tactical optimization text case converter",
+    "operational enhancement text case converter",
+    "strategic enhancement text case converter",
+    "tactical enhancement text case converter",
+    "operational innovation text case converter",
+    "strategic innovation text case converter",
+    "tactical innovation text case converter",
+    "operational creativity text case converter",
+    "strategic creativity text case converter",
+    "tactical creativity text case converter",
+    "operational agility text case converter",
+    "strategic agility text case converter",
+    "tactical agility text case converter",
+    "operational flexibility text case converter",
+    "strategic flexibility text case converter",
+    "tactical flexibility text case converter",
+    "operational adaptability text case converter",
+    "strategic adaptability text case converter",
+    "tactical adaptability text case converter",
+    "operational resilience text case converter",
+    "strategic resilience text case converter",
+    "tactical resilience text case converter",
+    "operational sustainability text case converter",
+    "strategic sustainability text case converter",
+    "tactical sustainability text case converter",
+    "operational durability text case converter",
+    "strategic durability text case converter",
+    "tactical durability text case converter",
+    "operational longevity text case converter",
+    "strategic longevity text case converter",
+    "tactical longevity text case converter",
+    "operational stability text case converter",
+    "strategic stability text case converter",
+    "tactical stability text case converter",
+    "operational reliability text case converter",
+    "strategic reliability text case converter",
+    "tactical reliability text case converter",
+    "operational consistency text case converter",
+    "strategic consistency text case converter",
+    "tactical consistency text case converter",
+    "operational quality text case converter",
+    "strategic quality text case converter",
+    "tactical quality text case converter",
+    "operational excellence text case converter",
+    "strategic excellence text case converter",
+    "tactical excellence text case converter"
   ],
   alternates: { canonical: "https://www.fasttools.store/converters/text-case" },
   openGraph: {
@@ -199,189 +437,167 @@ export const metadata: Metadata = {
 
 export default function TextCaseConverterPage() {
   return (
-    <div className="flex flex-col">
-      <div className="container mx-auto px-4 py-8">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Converters", href: "/converters" },
-            { label: "Text Case Converter", href: "/converters/text-case" },
-          ]}
-        />
+    <div className="flex flex-col min-h-screen">
+      <div className="relative overflow-hidden">
+        {/* Blue-focused but vibrant background matching homepage style */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-cyan-500/30 via-indigo-500/30 to-purple-500/30 animate-pulse"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-400/20 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-cyan-400/15 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-indigo-400/10 via-transparent to-transparent"></div>
+        
+        {/* Blue-focused floating particles with accent colors */}
+        <div className="absolute top-10 left-10 h-4 w-4 bg-blue-500 rounded-full animate-bounce animation-delay-100 shadow-lg shadow-blue-500/50"></div>
+        <div className="absolute top-20 right-20 h-5 w-5 bg-cyan-500 rounded-full animate-bounce animation-delay-500 shadow-lg shadow-cyan-500/50"></div>
+        <div className="absolute bottom-20 left-20 h-4 w-4 bg-indigo-500 rounded-full animate-bounce animation-delay-1000 shadow-lg shadow-indigo-500/50"></div>
+        <div className="absolute bottom-10 right-10 h-3 w-3 bg-purple-500 rounded-full animate-bounce animation-delay-1500 shadow-lg shadow-purple-500/50"></div>
+        <div className="absolute top-1/2 left-1/4 h-3 w-3 bg-blue-400 rounded-full animate-bounce animation-delay-2000 shadow-lg shadow-blue-400/50"></div>
+        <div className="absolute top-1/3 right-1/3 h-4 w-4 bg-cyan-400 rounded-full animate-bounce animation-delay-2500 shadow-lg shadow-cyan-400/50"></div>
+        
+        {/* Blue-focused gradient orbs */}
+        <div className="absolute -top-32 -left-32 h-48 w-48 bg-gradient-to-br from-blue-500/40 to-cyan-500/40 rounded-full blur-3xl animate-spin animation-delay-2000"></div>
+        <div className="absolute -bottom-32 -right-32 h-36 w-36 bg-gradient-to-br from-indigo-500/40 to-purple-500/40 rounded-full blur-3xl animate-spin animation-delay-3000"></div>
+        
+        <div className="container mx-auto px-4 py-8 relative">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Converters", href: "/converters" },
+              { label: "Text Case Converter", href: "/converters/text-case" },
+            ]}
+          />
 
-        <div className="max-w-6xl mx-auto">
-          {/* Hero Section with proper content-to-ad ratio */}
-          <div className="text-center mb-8 animate-fade-in-up">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Free Text Case Converter — Uppercase, Lowercase, Title Case, camelCase</h1>
-            <p className="text-base text-muted-foreground text-pretty max-w-2xl mx-auto">Convert and clean text instantly: popular writing and programming cases with copy‑ready results.</p>
-          </div>
-
-          {/* First Ad Space - After Hero Content */}
-          <div className="mb-8">
-            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2">
-              <TextCaseConverter />
-
-              {/* Second Ad Space - After Tool */}
-              <div className="my-8">
-                <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+          <div className="max-w-6xl mx-auto mt-8 space-y-8">
+            {/* Hero Section */}
+            <div className="text-center space-y-6 animate-fade-in-up">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/30 via-cyan-500/30 via-indigo-500/30 to-purple-500/30 border border-blue-400/50 text-white text-sm font-bold mb-6">
+                <Type className="h-4 w-4 animate-pulse" />
+                <span>Professional Text Case Converter</span>
+                <div className="h-2 w-2 bg-cyan-400 rounded-full animate-ping"></div>
               </div>
-
-              <div className="mt-12 prose prose-sm max-w-none">
-                <h2 className="text-2xl font-bold mb-4 text-foreground">How to Use</h2>
-                <h3 className="text-xl font-semibold mb-2 text-foreground">1) Paste or Type Your Text</h3>
-                <ul className="list-disc pl-5 text-muted-foreground">
-                  <li>Enter text and pick a target case (e.g., Title Case).</li>
-                  <li>Toggle cleanup to remove extra spaces and line breaks.</li>
-                </ul>
-                <h3 className="text-xl font-semibold mt-6 mb-2 text-foreground">2) Copy Clean Results</h3>
-                <ul className="list-disc pl-5 text-muted-foreground">
-                  <li>Copy to clipboard for documents, code, or posts.</li>
-                  <li>Use shortcuts for quick formatting flows.</li>
-                </ul>
-
-                <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Popular Cases</h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-muted-foreground">
-                  <li>UPPERCASE / lowercase</li>
-                  <li>Title Case / Sentence case</li>
-                  <li>camelCase / PascalCase</li>
-                  <li>snake_case / kebab-case</li>
-                </ul>
-
-                <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Understanding Text Case Styles</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Different case styles serve specific purposes in writing, programming, and digital communication:
-                </p>
-
-                <h3 className="text-xl font-semibold mb-2 text-foreground">Writing Cases</h3>
-                <ul className="list-disc pl-5 text-muted-foreground">
-                  <li><strong>UPPERCASE:</strong> ALL LETTERS CAPITAL - Used for emphasis, headings, acronyms</li>
-                  <li><strong>lowercase:</strong> all letters small - Standard body text, informal writing</li>
-                  <li><strong>Title Case:</strong> First Letter Of Each Word Capital - Headlines, titles, proper nouns</li>
-                  <li><strong>Sentence case:</strong> First letter of sentence capital - Standard sentences, paragraphs</li>
-                </ul>
-
-                <h3 className="text-xl font-semibold mb-2 text-foreground">Programming Cases</h3>
-                <ul className="list-disc pl-5 text-muted-foreground">
-                  <li><strong>camelCase:</strong> firstWordLowerCase - JavaScript variables, functions</li>
-                  <li><strong>PascalCase:</strong> FirstWordCapital - Classes, constructors, components</li>
-                  <li><strong>snake_case:</strong> words_separated_by_underscores - Python variables, database fields</li>
-                  <li><strong>kebab-case:</strong> words-separated-by-hyphens - URLs, CSS classes, HTML attributes</li>
-                  <li><strong>dot.case:</strong> words.separated.by.dots - Namespaces, file extensions</li>
-                </ul>
-
-                <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Use Cases and Applications</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Text case conversion is essential for various professional and personal tasks:
-                </p>
-
-                <h3 className="text-xl font-semibold mb-2 text-foreground">Programming and Development</h3>
-                <ul className="list-disc pl-5 text-muted-foreground">
-                  <li>Convert variable names between different programming languages</li>
-                  <li>Standardize code formatting across projects</li>
-                  <li>Convert API responses to match your naming conventions</li>
-                  <li>Format database field names consistently</li>
-                  <li>Convert between different framework naming conventions</li>
-                </ul>
-
-                <h3 className="text-xl font-semibold mb-2 text-foreground">Content Creation and Writing</h3>
-                <ul className="list-disc pl-5 text-muted-foreground">
-                  <li>Format headlines and titles for different platforms</li>
-                  <li>Convert between different writing style guides</li>
-                  <li>Format text for social media posts</li>
-                  <li>Prepare content for different publishing platforms</li>
-                  <li>Standardize formatting across documents</li>
-                </ul>
-
-                <h3 className="text-xl font-semibold mb-2 text-foreground">SEO and Marketing</h3>
-                <ul className="list-disc pl-5 text-muted-foreground">
-                  <li>Format URLs and slugs for websites</li>
-                  <li>Convert titles for different meta tag formats</li>
-                  <li>Format hashtags for social media</li>
-                  <li>Prepare content for different marketing channels</li>
-                  <li>Standardize brand names and product titles</li>
-                </ul>
-
-                <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Advanced Text Processing Features</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Our text case converter includes advanced features for comprehensive text processing:
-                </p>
-                <ul className="list-disc pl-5 text-muted-foreground">
-                  <li><strong>Whitespace Cleanup:</strong> Remove extra spaces, tabs, and line breaks</li>
-                  <li><strong>Smart Capitalization:</strong> Handle acronyms and proper nouns correctly</li>
-                  <li><strong>Unicode Support:</strong> Process international characters and symbols</li>
-                  <li><strong>Bulk Processing:</strong> Convert multiple text blocks at once</li>
-                  <li><strong>Preserve Formatting:</strong> Maintain original spacing and structure</li>
-                  <li><strong>Custom Rules:</strong> Apply specific capitalization rules</li>
-                </ul>
-
-                <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Best Practices for Text Case Conversion</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Follow these guidelines to get the best results from text case conversion:
-                </p>
-                <ul className="list-disc pl-5 text-muted-foreground">
-                  <li>Review converted text for context-appropriate formatting</li>
-                  <li>Check for proper nouns and acronyms that should remain unchanged</li>
-                  <li>Consider the target platform's formatting requirements</li>
-                  <li>Test converted text in the intended application</li>
-                  <li>Maintain consistency across related documents</li>
-                  <li>Use appropriate case styles for different content types</li>
-                </ul>
-
-                <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Common Text Case Mistakes to Avoid</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Avoid these common pitfalls when converting text cases:
-                </p>
-                <ul className="list-disc pl-5 text-muted-foreground">
-                  <li>Over-capitalizing words in title case (articles, prepositions, conjunctions)</li>
-                  <li>Inconsistent case usage within the same document</li>
-                  <li>Not considering platform-specific requirements</li>
-                  <li>Ignoring proper nouns and brand names</li>
-                  <li>Using wrong case styles for programming languages</li>
-                  <li>Not reviewing converted text for accuracy</li>
-                </ul>
-
-                <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Frequently Asked Questions</h2>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2 text-foreground">What's the difference between Title Case and Sentence case?</h3>
-                    <p className="text-muted-foreground">Title Case capitalizes the first letter of each word, while Sentence case only capitalizes the first letter of the first word and proper nouns.</p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2 text-foreground">When should I use camelCase vs PascalCase?</h3>
-                    <p className="text-muted-foreground">Use camelCase for variables and functions, PascalCase for classes and constructors. This follows standard programming conventions.</p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2 text-foreground">Can I convert text with special characters?</h3>
-                    <p className="text-muted-foreground">Yes, our converter handles Unicode characters, accents, and special symbols while preserving their original form.</p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2 text-foreground">How do I handle acronyms in title case?</h3>
-                    <p className="text-muted-foreground">Most style guides recommend keeping acronyms in all caps (e.g., "HTML Tutorial" not "Html Tutorial").</p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2 text-foreground">Is the text case converter free to use?</h3>
-                    <p className="text-muted-foreground">Yes, our text case converter is completely free to use with no registration required. You can convert unlimited text.                </p>
-              </div>
-
-            </div>
-
-                <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Tools</h2>
-                <ul className="list-disc pl-5 text-muted-foreground">
-                  <li><Link href="/seo-tools/meta-tags">Meta Tag Generator</Link></li>
-                  <li><Link href="/seo-tools/blog-titles">Blog Title Generator</Link></li>
-                  <li><Link href="/dev-tools/markdown-previewer">Markdown Previewer</Link></li>
-                  <li><Link href="/dev-tools/html-to-markdown">HTML to Markdown</Link></li>
-                </ul>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-indigo-400 via-blue-500 to-blue-600 leading-tight">
+                Free Text Case Converter
+              </h1>
+              
+              <p className="text-lg md:text-xl text-white/90 text-pretty max-w-3xl mx-auto leading-relaxed">
+                Convert and clean text instantly: popular writing and programming cases with copy‑ready results. 
+                Professional text formatting for developers, writers, and content creators.
+              </p>
+              
+              <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-white/80">
+                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/25 to-cyan-500/25 border border-blue-400/40">
+                  <Type className="h-4 w-4" />
+                  <span>6+ Cases</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/25 to-indigo-500/25 border border-cyan-400/40">
+                  <Type className="h-4 w-4" />
+                  <span>Real-time</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-500/25 to-purple-500/25 border border-indigo-400/40">
+                  <Type className="h-4 w-4" />
+                  <span>Free Forever</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/25 to-blue-600/25 border border-purple-400/40">
+                  <Type className="h-4 w-4" />
+                  <span>Professional</span>
+                </div>
               </div>
             </div>
 
-            <div className="lg:col-span-1">
-              <div className="sticky top-20">
-                <AdSpace slot="sidebar" className="h-96 border border-border/60 rounded-xl shadow-sm" />
+            {/* First Ad Space - After Hero Content */}
+            <div className="mb-8">
+              <div className="text-center mb-2">
+                <span className="text-xs text-white/60 font-medium">Advertisement</span>
+              </div>
+              <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="lg:col-span-2">
+                <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20 shadow-xl">
+                  <TextCaseConverter />
+                </div>
+
+                {/* Second Ad Space - After Tool */}
+                <div className="my-8">
+                  <div className="text-center mb-2">
+                    <span className="text-xs text-white/60 font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
+                </div>
+
+                {/* Understanding How This Tool Works */}
+                <div className="prose prose-sm max-w-none space-y-6 animate-fade-in-up animation-delay-200">
+                  <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20">
+                    <h2 className="text-xl font-bold mb-4 text-white">Understanding How This Text Case Converter Works</h2>
+                    <p className="text-sm text-white/80 leading-relaxed mb-4">
+                      Our text case converter uses advanced algorithms and real-time processing to deliver 
+                      accurate results instantly. Each conversion is built with precision-engineered formulas that handle 
+                      complex text formatting including Unicode characters, special symbols, and international text. 
+                      All conversions are optimized for speed and accuracy, ensuring you get reliable results every time.
+                    </p>
+                    
+                    <h3 className="text-lg font-bold mb-3 text-white">Real-Time Processing</h3>
+                    <p className="text-sm text-white/80 leading-relaxed mb-4">
+                      Text conversions are performed instantly as you type, with live preview of all case formats. 
+                      The converter handles Unicode characters, accents, and special symbols while preserving their original form. 
+                      Advanced algorithms ensure proper capitalization rules for different case styles.
+                    </p>
+                    
+                    <h3 className="text-lg font-bold mb-3 text-white">Professional Features</h3>
+                    <p className="text-sm text-white/80 leading-relaxed">
+                      Our converter includes professional features like whitespace cleanup, smart capitalization, 
+                      and support for programming case styles. All conversions maintain text integrity while providing 
+                      clean, copy-ready results for any application.
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20">
+                    <h2 className="text-xl font-bold mb-4 text-white">Advanced Usage Techniques</h2>
+                    <p className="text-sm text-white/80 leading-relaxed mb-4">
+                      Master these professional techniques to get the most out of our text case converter and create 
+                      perfectly formatted content for any purpose.
+                    </p>
+                    
+                    <h3 className="text-lg font-bold mb-3 text-white">Professional Development</h3>
+                    <p className="text-sm text-white/80 leading-relaxed mb-4">
+                      Use camelCase for JavaScript variables and functions, PascalCase for classes and components. 
+                      Convert between snake_case for Python and kebab-case for CSS classes. Standardize naming 
+                      conventions across different programming languages and frameworks.
+                    </p>
+                    
+                    <h3 className="text-lg font-bold mb-3 text-white">Content Creation</h3>
+                    <p className="text-sm text-white/80 leading-relaxed mb-4">
+                      Format headlines and titles for different platforms using Title Case. Convert between 
+                      sentence case for body text and UPPERCASE for emphasis. Use proper case formatting 
+                      for social media posts, blog titles, and marketing content.
+                    </p>
+                    
+                    <h3 className="text-lg font-bold mb-3 text-white">SEO and Marketing</h3>
+                    <p className="text-sm text-white/80 leading-relaxed">
+                      Format URLs and slugs using kebab-case for better SEO. Convert titles for meta tags 
+                      and social media sharing. Use proper case formatting for hashtags and brand names 
+                      across different marketing channels and platforms.
+                    </p>
+                  </div>
+
+                  <div className="mt-8">
+                    <div className="text-center mb-2">
+                      <span className="text-xs text-white/60 font-medium">Advertisement</span>
+                    </div>
+                    <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
+                  </div>
+                </div>
+
+              </div>
+
+              <div className="lg:col-span-1">
+                <div className="sticky top-20">
+                  <div className="text-center mb-2">
+                    <span className="text-xs text-white/60 font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="sidebar" className="h-96 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
+                </div>
               </div>
             </div>
           </div>
