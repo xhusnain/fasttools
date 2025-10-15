@@ -249,191 +249,179 @@ export default function ConvertersPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="flex flex-col">
-      <div className="container mx-auto px-4 py-8">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Converters", href: "/converters" },
-          ]}
-        />
+      <div className="flex flex-col min-h-screen">
+        <div className="relative overflow-hidden">
+          {/* Green-focused but vibrant background matching homepage style */}
+          <div className="absolute inset-0 bg-gradient-to-br from-green-500/30 via-emerald-500/30 via-teal-500/30 to-cyan-500/30 animate-pulse"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-400/20 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-400/15 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-teal-400/10 via-transparent to-transparent"></div>
+          
+          {/* Green-focused floating particles with accent colors */}
+          <div className="absolute top-10 left-10 h-4 w-4 bg-green-500 rounded-full animate-bounce animation-delay-100 shadow-lg shadow-green-500/50"></div>
+          <div className="absolute top-20 right-20 h-5 w-5 bg-emerald-500 rounded-full animate-bounce animation-delay-500 shadow-lg shadow-emerald-500/50"></div>
+          <div className="absolute bottom-20 left-20 h-4 w-4 bg-teal-500 rounded-full animate-bounce animation-delay-1000 shadow-lg shadow-teal-500/50"></div>
+          <div className="absolute bottom-10 right-10 h-3 w-3 bg-cyan-500 rounded-full animate-bounce animation-delay-1500 shadow-lg shadow-cyan-500/50"></div>
+          <div className="absolute top-1/2 left-1/4 h-3 w-3 bg-green-400 rounded-full animate-bounce animation-delay-2000 shadow-lg shadow-green-400/50"></div>
+          <div className="absolute top-1/3 right-1/3 h-4 w-4 bg-emerald-400 rounded-full animate-bounce animation-delay-2500 shadow-lg shadow-emerald-400/50"></div>
+          
+          {/* Green-focused gradient orbs */}
+          <div className="absolute -top-32 -left-32 h-48 w-48 bg-gradient-to-br from-green-500/40 to-emerald-500/40 rounded-full blur-3xl animate-spin animation-delay-2000"></div>
+          <div className="absolute -bottom-32 -right-32 h-36 w-36 bg-gradient-to-br from-teal-500/40 to-cyan-500/40 rounded-full blur-3xl animate-spin animation-delay-3000"></div>
+          
+          <div className="container mx-auto px-4 py-8 relative">
+            <Breadcrumbs
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Converters", href: "/converters" },
+              ]}
+            />
 
-        <div className="max-w-6xl mx-auto">
-          {/* Hero Section with proper content-to-ad ratio */}
-          <div className="text-center mb-12 animate-fade-in-up">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Free Online Converters</h1>
-            <p className="text-base text-muted-foreground text-pretty max-w-2xl mx-auto">
-              Convert text, measurements, currencies, and more with our free online converter tools. Fast, accurate, and
-              easy to use.
-            </p>
-          </div>
-
-          {/* First Ad Space - After Hero Content */}
-          <div className="mb-8">
-            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {converters.map((converter, index) => (
-              <Card
-                key={`converters-${converter.href}`}
-                className="border border-border hover:shadow-lg transition-all hover:-translate-y-1 animate-fade-in-up bg-card/80 backdrop-blur-sm"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                <CardHeader className="p-6">
-                  <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4 border border-primary/20">
-                    <converter.icon className="h-6 w-6 text-primary" />
+            <div className="max-w-6xl mx-auto mt-8 space-y-8">
+              {/* Hero Section */}
+              <div className="text-center space-y-6 animate-fade-in-up">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/30 via-emerald-500/30 via-teal-500/30 to-cyan-500/30 border border-green-400/50 text-white text-sm font-bold mb-6">
+                  <Type className="h-4 w-4 animate-pulse" />
+                  <span>Professional Converter Tools</span>
+                  <div className="h-2 w-2 bg-emerald-400 rounded-full animate-ping"></div>
+                </div>
+                
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-emerald-400 via-teal-400 via-green-500 to-green-600 leading-tight">
+                  All Conversion Tools
+                </h1>
+                
+                <p className="text-lg md:text-xl text-white/90 text-pretty max-w-3xl mx-auto leading-relaxed">
+                  Discover our comprehensive collection of free online conversion tools designed for professionals, students, 
+                  and everyday users. All tools are 100% free, highly accurate, and optimized for both desktop and mobile use.
+                </p>
+                
+                <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-white/80">
+                  <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/25 to-emerald-500/25 border border-green-400/40">
+                    <Type className="h-4 w-4" />
+                    <span>7+ Tools</span>
                   </div>
-                  <CardTitle className="text-lg text-foreground mb-3">{converter.title}</CardTitle>
-                  <CardDescription className="leading-relaxed text-sm text-muted-foreground">
-                    {converter.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="p-6 pt-0">
-                  <Button asChild className="w-full h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all">
-                    <Link href={converter.href}>
-                      Use Converter
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Second Ad Space - Between Tools and Content */}
-          <div className="my-8">
-            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
-          </div>
-
-          {/* SEO Content Section */}
-          <div className="prose prose-slate max-w-none space-y-8">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">Why Choose Our Free Online Converter Tools?</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Our comprehensive collection of <strong>converter tools</strong> is designed to help you quickly and accurately convert between different units, 
-                formats, and measurements. Whether you're working on a project, traveling internationally, or studying, our <strong>free conversion tools</strong> provide 
-                the precision and ease of use you need for any conversion task.
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li><strong>Free to use</strong> with no registration required</li>
-                <li><strong>Accurate conversions</strong> with up-to-date data and real-time rates</li>
-                <li><strong>Mobile-friendly</strong> and responsive design for all devices</li>
-                <li><strong>Fast, instant results</strong> with no waiting time</li>
-                <li><strong>Support for multiple unit systems</strong> including metric, imperial, and international standards</li>
-                <li><strong>Copy and export results</strong> easily for your projects</li>
-                <li><strong>No download required</strong> - all tools work in your browser</li>
-                <li><strong>Regular updates</strong> to ensure accuracy and reliability</li>
-              </ul>
-            </div>
-
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">Comprehensive Converter Tool Categories</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Our <strong>online converter</strong> platform offers specialized tools for every conversion need:
-              </p>
-              
-              <h3 className="text-xl font-semibold mb-3 text-foreground">Text & Format Converters</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Our <strong>text case converter</strong> supports multiple text transformations including uppercase, lowercase, title case, 
-                sentence case, camelCase, snake_case, and more. Perfect for developers, writers, and content creators who need 
-                consistent text formatting across different platforms and applications.
-              </p>
-
-              <h3 className="text-xl font-semibold mb-3 text-foreground">Measurement & Unit Converters</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Convert between different measurement systems with our <strong>length converter</strong>, <strong>temperature converter</strong>, 
-                and <strong>file size converter</strong>. Whether you need to convert meters to feet, Celsius to Fahrenheit, or bytes to gigabytes, 
-                our tools provide accurate conversions with support for international standards.
-              </p>
-
-              <h3 className="text-xl font-semibold mb-3 text-foreground">Financial & Currency Converters</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Our <strong>currency converter</strong> provides real-time exchange rates for major world currencies including USD, EUR, GBP, JPY, INR, 
-                and more. Perfect for travelers, international businesses, and anyone dealing with multiple currencies.
-              </p>
-
-              <h3 className="text-xl font-semibold mb-3 text-foreground">Time & Date Converters</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Convert time between different time zones worldwide with our <strong>timezone converter</strong>. Perfect for scheduling 
-                international meetings, coordinating with global teams, and managing time across different regions.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">Popular Converter Tools</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Discover our most popular <strong>converter tools</strong> that help thousands of users every day:
-              </p>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="p-4 border border-border/60 rounded-lg bg-card/50">
-                  <h3 className="font-semibold text-foreground mb-2">Text Case Converter</h3>
-                  <p className="text-sm text-muted-foreground">Convert text between uppercase, lowercase, title case, camelCase, snake_case, and more formatting options.</p>
+                  <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/25 to-teal-500/25 border border-emerald-400/40">
+                    <Globe className="h-4 w-4" />
+                    <span>Global Use</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-teal-500/25 to-cyan-500/25 border border-teal-400/40">
+                    <Calculator className="h-4 w-4" />
+                    <span>Free Forever</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/25 to-green-600/25 border border-cyan-400/40">
+                    <ArrowRight className="h-4 w-4" />
+                    <span>Professional</span>
+                  </div>
                 </div>
-                <div className="p-4 border border-border/60 rounded-lg bg-card/50">
-                  <h3 className="font-semibold text-foreground mb-2">Currency Converter</h3>
-                  <p className="text-sm text-muted-foreground">Convert between major world currencies with real-time exchange rates and live market data.</p>
+              </div>
+
+              <div className="mb-8">
+                <div className="text-center mb-2">
+                  <span className="text-xs text-white/60 font-medium">Advertisement</span>
                 </div>
-                <div className="p-4 border border-border/60 rounded-lg bg-card/50">
-                  <h3 className="font-semibold text-foreground mb-2">Length Converter</h3>
-                  <p className="text-sm text-muted-foreground">Convert between meters, feet, inches, centimeters, kilometers, miles, and other length units.</p>
+                <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {converters.map((converter, index) => (
+                  <Card
+                    key={`converters-${converter.href}`}
+                    className="border-2 border-white/20 shadow-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:border-green-400/50 animate-fade-in-up"
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
+                    <CardHeader className="p-4">
+                      <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center mb-3 border border-green-400/30 shadow-lg">
+                        <converter.icon className="h-5 w-5 text-green-400" />
+                      </div>
+                      <CardTitle className="text-base font-bold text-white mb-2">{converter.title}</CardTitle>
+                      <CardDescription className="leading-relaxed text-xs text-white/80">
+                        {converter.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="p-4 pt-0">
+                      <Button asChild className="w-full h-9 text-xs font-bold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white">
+                        <Link href={converter.href}>
+                          Use Converter
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              <div className="my-8">
+                <div className="text-center mb-2">
+                  <span className="text-xs text-white/60 font-medium">Advertisement</span>
                 </div>
-                <div className="p-4 border border-border/60 rounded-lg bg-card/50">
-                  <h3 className="font-semibold text-foreground mb-2">Temperature Converter</h3>
-                  <p className="text-sm text-muted-foreground">Convert between Celsius, Fahrenheit, and Kelvin temperature scales with precise calculations.</p>
+                <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
+              </div>
+
+              {/* Understanding How These Tools Work */}
+              <div className="prose prose-sm max-w-none space-y-6 animate-fade-in-up animation-delay-200">
+                <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20">
+                  <h2 className="text-xl font-bold mb-4 text-white">Understanding How These Conversion Tools Work</h2>
+                  <p className="text-sm text-white/80 leading-relaxed mb-4">
+                    Our conversion tools use advanced algorithms and real-time data processing to deliver 
+                    accurate results instantly. Each converter is built with precision-engineered formulas that handle 
+                    complex conversions including currency exchange rates, unit measurements, text formatting, and time zone calculations. 
+                    All tools are optimized for speed and accuracy, ensuring you get reliable results every time.
+                  </p>
+                  
+                  <h3 className="text-lg font-bold mb-3 text-white">Real-Time Data Processing</h3>
+                  <p className="text-sm text-white/80 leading-relaxed mb-4">
+                    Currency converters are updated with live exchange rates from major financial markets, while 
+                    measurement converters use standardized international units. Text converters handle multiple 
+                    formatting styles with precision, and time zone converters account for daylight saving time changes.
+                  </p>
+                  
+                  <h3 className="text-lg font-bold mb-3 text-white">Precision and Accuracy</h3>
+                  <p className="text-sm text-white/80 leading-relaxed">
+                    All conversions are performed with high precision using industry-standard formulas and algorithms. 
+                    Temperature conversions use exact mathematical relationships, length conversions support both metric 
+                    and imperial systems, and file size conversions handle binary and decimal calculations accurately.
+                  </p>
                 </div>
-                <div className="p-4 border border-border/60 rounded-lg bg-card/50">
-                  <h3 className="font-semibold text-foreground mb-2">File Size Converter</h3>
-                  <p className="text-sm text-muted-foreground">Convert between bytes, KB, MB, GB, TB, and other file size units for storage calculations.</p>
+
+                <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20">
+                  <h2 className="text-xl font-bold mb-4 text-white">Advanced Usage Techniques</h2>
+                  <p className="text-sm text-white/80 leading-relaxed mb-4">
+                    Master these professional techniques to get the most out of our conversion tools and make 
+                    informed decisions based on accurate data.
+                  </p>
+                  
+                  <h3 className="text-lg font-bold mb-3 text-white">Professional Development</h3>
+                  <p className="text-sm text-white/80 leading-relaxed mb-4">
+                    Use text case converters for consistent code formatting and variable naming conventions. 
+                    Combine currency converters with time zone tools for international business planning. 
+                    Use measurement converters for technical documentation and engineering projects.
+                  </p>
+                  
+                  <h3 className="text-lg font-bold mb-3 text-white">International Business</h3>
+                  <p className="text-sm text-white/80 leading-relaxed mb-4">
+                    Currency converters help with international transactions and expense tracking. Time zone 
+                    converters are essential for scheduling global meetings and coordinating with international teams. 
+                    Temperature converters assist with weather data analysis and scientific calculations.
+                  </p>
+                  
+                  <h3 className="text-lg font-bold mb-3 text-white">Educational and Personal Use</h3>
+                  <p className="text-sm text-white/80 leading-relaxed">
+                    Students can use these tools for science projects, math homework, and geography studies. 
+                    Travelers benefit from currency and time zone converters for trip planning. Content creators 
+                    use text converters for consistent formatting across platforms and social media.
+                  </p>
                 </div>
-                <div className="p-4 border border-border/60 rounded-lg bg-card/50">
-                  <h3 className="font-semibold text-foreground mb-2">Timezone Converter</h3>
-                  <p className="text-sm text-muted-foreground">Convert time between different time zones worldwide for international scheduling and coordination.</p>
+
+                <div className="mt-8">
+                  <div className="text-center mb-2">
+                    <span className="text-xs text-white/60 font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
                 </div>
               </div>
             </div>
-
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">Advanced Conversion Features</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Our <strong>conversion tools</strong> offer advanced features that make complex conversions simple and accurate:
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li><strong>Real-time data updates</strong> for currency and exchange rates</li>
-                <li><strong>Multiple unit support</strong> for comprehensive conversion options</li>
-                <li><strong>Precision calculations</strong> with decimal support for accurate results</li>
-                <li><strong>Historical data</strong> for currency conversion analysis</li>
-                <li><strong>Bulk conversion</strong> capabilities for multiple values</li>
-                <li><strong>Export functionality</strong> for saving conversion results</li>
-                <li><strong>Mobile optimization</strong> for on-the-go conversions</li>
-                <li><strong>Offline capability</strong> for basic conversions without internet</li>
-              </ul>
-            </div>
-
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">Use Cases for Our Converter Tools</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Our <strong>free online converter tools</strong> serve a wide range of professional and personal needs:
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li><strong>Developers:</strong> Text case conversion for code formatting and variable naming</li>
-                <li><strong>Travelers:</strong> Currency conversion for international trips and expenses</li>
-                <li><strong>Students:</strong> Unit conversion for science, math, and engineering projects</li>
-                <li><strong>Businesses:</strong> Time zone conversion for global team coordination</li>
-                <li><strong>Content Creators:</strong> Text formatting for social media and blog posts</li>
-                <li><strong>Engineers:</strong> Measurement conversion for technical projects</li>
-                <li><strong>Researchers:</strong> Data format conversion for analysis and reporting</li>
-                <li><strong>Designers:</strong> File size conversion for optimizing digital assets</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Final Ad Space - Bottom Content */}
-          <div className="mt-8">
-            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
           </div>
         </div>
-      </div>
       </div>
     </>
   )
