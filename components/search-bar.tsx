@@ -47,8 +47,13 @@ export function SearchBar() {
   const [query, setQuery] = useState("")
   const [filteredSuggestions, setFilteredSuggestions] = useState<typeof toolSuggestions>([])
   const [showSuggestions, setShowSuggestions] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
   const router = useRouter()
   const searchRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   useEffect(() => {
     if (query.trim().length > 0) {
@@ -82,6 +87,22 @@ export function SearchBar() {
   const handleSuggestionClick = () => {
     setShowSuggestions(false)
     setQuery("")
+  }
+
+  if (!isMounted) {
+    return (
+      <div className="relative w-full max-w-md">
+        <div className="relative">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+          <input
+            type="text"
+            placeholder="Search tools..."
+            className="w-full h-12 pl-12 pr-4 text-base rounded-lg border-2 border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all shadow-sm"
+            disabled
+          />
+        </div>
+      </div>
+    )
   }
 
   return (
