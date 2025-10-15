@@ -208,12 +208,6 @@ export default function ConvertersPage() {
 
   const converters = [
     {
-      title: "Conversion Calculator",
-      description: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions.",
-      icon: Calculator,
-      href: "/tools/conversion-calculator",
-    },
-    {
       title: "Text Case Converter",
       description: "Convert text between uppercase, lowercase, title case, sentence case, camelCase, and snake_case.",
       icon: Type,
