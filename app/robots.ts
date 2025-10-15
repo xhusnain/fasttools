@@ -17,8 +17,8 @@ export default function robots(): MetadataRoute.Robots {
             },
         ],
         sitemap: [
-            "https://fasttools.store/sitemap.xml",
-            "https://fasttools.store/image-sitemap.xml",
+            "https://www.fasttools.store/sitemap.xml",
+            "https://www.fasttools.store/image-sitemap.xml",
         ],
     }
 }
