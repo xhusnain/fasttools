@@ -131,7 +131,7 @@ export default function ConvertersPage() {
           position: 1,
           name: "Conversion Calculator",
           description: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions",
-          url: "https://fasttools.store/converters/conversion-calculator"
+          url: "https://fasttools.store/tools/conversion-calculator"
         },
         {
           "@type": "ListItem",
@@ -211,7 +211,7 @@ export default function ConvertersPage() {
       title: "Conversion Calculator",
       description: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions.",
       icon: Calculator,
-      href: "/converters/conversion-calculator",
+      href: "/tools/conversion-calculator",
     },
     {
       title: "Text Case Converter",

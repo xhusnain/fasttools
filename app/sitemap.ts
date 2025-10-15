@@ -223,7 +223,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: "https://fasttools.store/converters/conversion-calculator",
+      url: "https://fasttools.store/tools/conversion-calculator",
       lastModified: getFreshnessDate(1), // Updated daily for new tool
       changeFrequency: "daily" as const,
       priority: 0.9, // High priority for comprehensive conversion tool

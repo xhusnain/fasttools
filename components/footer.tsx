@@ -11,7 +11,7 @@ export function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <Link
-                  href="/converters/conversion-calculator"
+                  href="/tools/conversion-calculator"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                 >
                   Conversion Calculator
