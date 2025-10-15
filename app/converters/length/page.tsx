@@ -512,22 +512,22 @@ export default function LengthConverterPage() {
     <div className="flex flex-col min-h-screen">
       <div className="relative overflow-hidden">
         {/* Green-focused but vibrant background matching homepage style */}
-        <div className="absolute inset-0 bg-gradient-to-br from-green-500/30 via-emerald-500/30 via-teal-500/30 to-cyan-500/30 animate-pulse"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/30 via-emerald-500/30 via-teal-500/30 to-cyan-500/30"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-400/20 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-400/15 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-teal-400/10 via-transparent to-transparent"></div>
         
         {/* Green-focused floating particles with accent colors */}
-        <div className="absolute top-10 left-10 h-4 w-4 bg-green-500 rounded-full animate-bounce animation-delay-100 shadow-lg shadow-green-500/50"></div>
-        <div className="absolute top-20 right-20 h-5 w-5 bg-emerald-500 rounded-full animate-bounce animation-delay-500 shadow-lg shadow-emerald-500/50"></div>
-        <div className="absolute bottom-20 left-20 h-4 w-4 bg-teal-500 rounded-full animate-bounce animation-delay-1000 shadow-lg shadow-teal-500/50"></div>
-        <div className="absolute bottom-10 right-10 h-3 w-3 bg-cyan-500 rounded-full animate-bounce animation-delay-1500 shadow-lg shadow-cyan-500/50"></div>
-        <div className="absolute top-1/2 left-1/4 h-3 w-3 bg-green-400 rounded-full animate-bounce animation-delay-2000 shadow-lg shadow-green-400/50"></div>
-        <div className="absolute top-1/3 right-1/3 h-4 w-4 bg-emerald-400 rounded-full animate-bounce animation-delay-2500 shadow-lg shadow-emerald-400/50"></div>
+        <div className="absolute top-10 left-10 h-4 w-4 bg-green-500 rounded-full shadow-lg shadow-green-500/50"></div>
+        <div className="absolute top-20 right-20 h-5 w-5 bg-emerald-500 rounded-full shadow-lg shadow-emerald-500/50"></div>
+        <div className="absolute bottom-20 left-20 h-4 w-4 bg-teal-500 rounded-full shadow-lg shadow-teal-500/50"></div>
+        <div className="absolute bottom-10 right-10 h-3 w-3 bg-cyan-500 rounded-full shadow-lg shadow-cyan-500/50"></div>
+        <div className="absolute top-1/2 left-1/4 h-3 w-3 bg-green-400 rounded-full shadow-lg shadow-green-400/50"></div>
+        <div className="absolute top-1/3 right-1/3 h-4 w-4 bg-emerald-400 rounded-full shadow-lg shadow-emerald-400/50"></div>
         
         {/* Green-focused gradient orbs */}
-        <div className="absolute -top-32 -left-32 h-48 w-48 bg-gradient-to-br from-green-500/40 to-emerald-500/40 rounded-full blur-3xl animate-spin animation-delay-2000"></div>
-        <div className="absolute -bottom-32 -right-32 h-36 w-36 bg-gradient-to-br from-teal-500/40 to-cyan-500/40 rounded-full blur-3xl animate-spin animation-delay-3000"></div>
+        <div className="absolute -top-32 -left-32 h-48 w-48 bg-gradient-to-br from-green-500/40 to-emerald-500/40 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-32 -right-32 h-36 w-36 bg-gradient-to-br from-teal-500/40 to-cyan-500/40 rounded-full blur-3xl"></div>
         
         <div className="container mx-auto px-4 py-8 relative">
         <Breadcrumbs
@@ -542,9 +542,9 @@ export default function LengthConverterPage() {
             {/* Hero Section */}
             <div className="text-center space-y-6 animate-fade-in-up">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/30 via-emerald-500/30 via-teal-500/30 to-cyan-500/30 border border-green-400/50 text-white text-sm font-bold mb-6">
-                <Ruler className="h-4 w-4 animate-pulse" />
+                <Ruler className="h-4 w-4" />
                 <span>Professional Length Converter</span>
-                <div className="h-2 w-2 bg-emerald-400 rounded-full animate-ping"></div>
+                <div className="h-2 w-2 bg-emerald-400 rounded-full"></div>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-emerald-400 via-teal-400 via-green-500 to-green-600 leading-tight">
