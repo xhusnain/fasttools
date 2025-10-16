@@ -24,7 +24,7 @@ export function CategoryDropdown() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 h-10 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted/50 bg-primary/10 border border-primary/20"
+        className="flex items-center gap-2 px-4 h-10 text-sm font-medium text-white hover:text-white transition-colors rounded-lg hover:bg-primary/90 bg-primary border border-primary shadow-md hover:shadow-lg"
       >
         Tools
         <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
