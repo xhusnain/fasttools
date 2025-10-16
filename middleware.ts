@@ -5,10 +5,15 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone()
   const hostname = request.headers.get('host') || ''
 
-  // Force www subdomain for fasttools.store
+  // ✅ Skip middleware when running locally
+  if (hostname.includes('localhost') || hostname.includes('127.0.0.1')) {
+    return NextResponse.next()
+  }
+
+  // Force www subdomain for fasttools domains
   if (hostname === 'fasttools.store' || hostname === 'fasttools.com' || hostname === 'fasttools.tech') {
     url.hostname = 'www.fasttools.store'
-    return NextResponse.redirect(url, 308) // Permanent redirect
+    return NextResponse.redirect(url, 308)
   }
 
   // Force HTTPS
@@ -22,13 +27,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     */
     '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 }
