@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Complete Love Calculator Guide | Love Compatibility Calculator",
     description: "Master love calculations with our comprehensive guide. Learn about love compatibility, relationship algorithms, fun love tests, and use our free love calculator tool.",
     type: "article",
-    url: "https://fasttools.store/guides/love-calculator-guide",
+    url: "https://www.fasttools.store/guides/love-calculator-guide",
   },
 }
 
@@ -25,22 +25,22 @@ export default function LoveCalculatorGuide() {
     author: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
     },
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
     },
     datePublished: "2025-01-15",
     dateModified: "2025-01-15",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://fasttools.store/guides/love-calculator-guide"
+      "@id": "https://www.fasttools.store/guides/love-calculator-guide"
     },
     image: {
       "@type": "ImageObject",
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630
     }

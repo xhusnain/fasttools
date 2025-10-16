@@ -14,30 +14,30 @@ export default function ConversionCalculatorGuide() {
     author: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store",
+      url: "https://www.fasttools.store",
       logo: {
         "@type": "ImageObject",
-        url: "https://fasttools.store/logo.svg"
+        url: "https://www.fasttools.store/logo.svg"
       }
     },
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store",
+      url: "https://www.fasttools.store",
       logo: {
         "@type": "ImageObject",
-        url: "https://fasttools.store/logo.svg"
+        url: "https://www.fasttools.store/logo.svg"
       }
     },
     datePublished: "2025-01-15",
     dateModified: "2025-01-15",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://fasttools.store/guides/conversion-calculator-guide"
+      "@id": "https://www.fasttools.store/guides/conversion-calculator-guide"
     },
     image: {
       "@type": "ImageObject",
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Unit Conversion Calculator Guide"
@@ -99,17 +99,17 @@ export default function ConversionCalculatorGuide() {
         <meta property="og:title" content="Complete Unit Conversion Calculator Guide | Free Online Conversion Tool" />
         <meta property="og:description" content="Master unit conversions with our comprehensive guide. Learn conversion formulas, practical examples, and use our free conversion calculator tool." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://fasttools.store/guides/conversion-calculator-guide" />
+        <meta property="og:url" content="https://www.fasttools.store/guides/conversion-calculator-guide" />
         <meta property="og:site_name" content="FastTools" />
-        <meta property="og:image" content="https://fasttools.store/og-image.svg" />
+        <meta property="og:image" content="https://www.fasttools.store/og-image.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Unit Conversion Calculator Guide - FastTools" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Complete Unit Conversion Calculator Guide | Free Online Conversion Tool" />
         <meta name="twitter:description" content="Master unit conversions with our comprehensive guide. Learn conversion formulas, practical examples, and use our free conversion calculator tool." />
-        <meta name="twitter:image" content="https://fasttools.store/og-image.svg" />
-        <link rel="canonical" href="https://fasttools.store/guides/conversion-calculator-guide" />
+        <meta name="twitter:image" content="https://www.fasttools.store/og-image.svg" />
+        <link rel="canonical" href="https://www.fasttools.store/guides/conversion-calculator-guide" />
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
         <meta name="category" content="Education" />

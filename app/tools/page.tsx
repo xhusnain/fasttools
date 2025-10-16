@@ -388,7 +388,7 @@ export const metadata: Metadata = {
     title: "All Free Online Tools & Calculators | FastTools",
     description: "Browse 50+ free online tools including age calculator, BMI calculator, loan calculator, and more.",
     type: "website",
-    url: "https://fasttools.store/tools",
+    url: "https://www.fasttools.store/tools",
   },
   twitter: {
     card: "summary_large_image",
@@ -396,7 +396,7 @@ export const metadata: Metadata = {
     description: "Browse 50+ free online tools including age calculator, BMI calculator, loan calculator, and more.",
   },
   alternates: {
-    canonical: "https://fasttools.store/tools",
+    canonical: "https://www.fasttools.store/tools",
   },
 }
 
@@ -406,7 +406,7 @@ export default function ToolsPage() {
     "@type": "CollectionPage",
     name: "All Free Online Tools & Calculators",
     description: "Browse 50+ free online tools including age calculator, BMI calculator, loan calculator, and more.",
-    url: "https://fasttools.store/tools",
+    url: "https://www.fasttools.store/tools",
     mainEntity: {
       "@type": "ItemList",
       name: "Free Online Tools",
@@ -418,63 +418,63 @@ export default function ToolsPage() {
           position: 1,
           name: "Conversion Calculator",
           description: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions",
-          url: "https://fasttools.store/tools/conversion-calculator"
+          url: "https://www.fasttools.store/tools/conversion-calculator"
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Age Calculator",
           description: "Calculate your exact age in years, months, and days",
-          url: "https://fasttools.store/tools/age-calculator"
+          url: "https://www.fasttools.store/tools/age-calculator"
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "BMI Calculator",
           description: "Calculate your Body Mass Index (BMI)",
-          url: "https://fasttools.store/tools/bmi-calculator"
+          url: "https://www.fasttools.store/tools/bmi-calculator"
         },
         {
           "@type": "ListItem",
           position: 4,
           name: "Loan EMI Calculator",
           description: "Calculate your monthly loan payment (EMI)",
-          url: "https://fasttools.store/tools/loan-calculator"
+          url: "https://www.fasttools.store/tools/loan-calculator"
         },
         {
           "@type": "ListItem",
           position: 5,
           name: "Tax Calculator",
           description: "Calculate your estimated income tax",
-          url: "https://fasttools.store/tools/tax-calculator"
+          url: "https://www.fasttools.store/tools/tax-calculator"
         },
         {
           "@type": "ListItem",
           position: 6,
           name: "Percentage Calculator",
           description: "Calculate percentages quickly and easily",
-          url: "https://fasttools.store/tools/percentage-calculator"
+          url: "https://www.fasttools.store/tools/percentage-calculator"
         },
         {
           "@type": "ListItem",
           position: 7,
           name: "GPA Calculator",
           description: "Calculate your Grade Point Average with comprehensive analysis",
-          url: "https://fasttools.store/tools/gpa-calculator"
+          url: "https://www.fasttools.store/tools/gpa-calculator"
         },
         {
           "@type": "ListItem",
           position: 8,
           name: "Concrete Calculator",
           description: "Calculate concrete volume, weight, materials, and cost for construction projects",
-          url: "https://fasttools.store/tools/concrete-calculator"
+          url: "https://www.fasttools.store/tools/concrete-calculator"
         },
         {
           "@type": "ListItem",
           position: 9,
           name: "IP Subnet Calculator",
           description: "Calculate IPv4 and IPv6 subnets with CIDR notation, VLSM, and network analysis",
-          url: "https://fasttools.store/tools/ip-subnet-calculator"
+          url: "https://www.fasttools.store/tools/ip-subnet-calculator"
         }
       ]
     },
@@ -485,13 +485,13 @@ export default function ToolsPage() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://fasttools.store"
+          item: "https://www.fasttools.store"
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Tools",
-          item: "https://fasttools.store/tools"
+          item: "https://www.fasttools.store/tools"
         }
       ]
     }

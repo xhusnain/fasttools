@@ -305,7 +305,7 @@ export const metadata: Metadata = {
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free File Size Converter - Bytes, KB, MB, GB, TB & PB",
@@ -317,7 +317,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free File Size Converter | Convert KB to MB, GB to TB, PB to EB | Cloud Storage Calculator | FastTools",
     description: "Convert file sizes instantly: KB to MB, GB to TB, PB to EB with decimal (SI) and binary (IEC) units. Free online data size calculator for cloud storage, AI datasets, backups, and hosting limits. AWS S3, Google Cloud, Azure storage calculator.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -327,7 +327,7 @@ export const metadata: Metadata = {
       alternateName: "Data Size Converter",
       applicationCategory: "Utility",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/converters/file-size",
+      url: "https://www.fasttools.store/converters/file-size",
       description:
         "Convert file sizes instantly across bytes, KB, MB, GB, TB, PB, EB, ZB, YB for cloud storage, AI datasets, uploads, and optimization. Support for AWS S3, Google Cloud, Azure storage calculations.",
       inLanguage: "en",
@@ -363,15 +363,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: { 
           "@type": "ImageObject", 
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         },
@@ -380,8 +380,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/converters/file-size",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/converters/file-size",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "file size converter, free file size converter, convert KB to MB, GB to TB, PB to EB, cloud storage calculator, AWS S3 storage costs, Google Cloud storage pricing, Azure blob storage costs, AI data storage requirements, machine learning dataset size, blockchain storage costs, NFT file size limits, edge computing storage, 5G data storage requirements, IoT data storage calculator, big data storage costs, data lake storage calculator, data warehouse storage costs, backup storage calculator, disaster recovery storage, multi-cloud storage costs, hybrid cloud storage, container storage costs, microservices storage requirements",
       about: {
         "@type": "Thing",
@@ -391,7 +391,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

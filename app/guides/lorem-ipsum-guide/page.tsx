@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Complete Lorem Ipsum Guide | Placeholder Text Generator",
     description: "Master Lorem Ipsum with our comprehensive guide. Learn about placeholder text, design mockups, content generation, and use our free Lorem Ipsum generator tool.",
     type: "article",
-    url: "https://fasttools.store/guides/lorem-ipsum-guide",
+    url: "https://www.fasttools.store/guides/lorem-ipsum-guide",
   },
 }
 
@@ -25,22 +25,22 @@ export default function LoremIpsumGuide() {
     author: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
     },
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
     },
     datePublished: "2025-01-15",
     dateModified: "2025-01-15",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://fasttools.store/guides/lorem-ipsum-guide"
+      "@id": "https://www.fasttools.store/guides/lorem-ipsum-guide"
     },
     image: {
       "@type": "ImageObject",
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630
     }

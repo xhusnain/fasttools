@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Complete PayPal Fee Calculator Guide | Transaction Fee Calculator",
     description: "Master PayPal fee calculations with our comprehensive guide. Learn PayPal fee structure, international fees, currency conversion, and use our free PayPal fee calculator tool.",
     type: "article",
-    url: "https://fasttools.store/guides/paypal-fee-calculator-guide",
+    url: "https://www.fasttools.store/guides/paypal-fee-calculator-guide",
   },
 }
 
@@ -25,22 +25,22 @@ export default function PayPalFeeCalculatorGuide() {
     author: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
     },
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
     },
     datePublished: "2025-01-15",
     dateModified: "2025-01-15",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://fasttools.store/guides/paypal-fee-calculator-guide"
+      "@id": "https://www.fasttools.store/guides/paypal-fee-calculator-guide"
     },
     image: {
       "@type": "ImageObject",
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630
     }

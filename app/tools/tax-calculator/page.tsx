@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     title: "Advanced Tax Calculator | Multi-Country Income Tax Calculator | FastTools",
     description: "Calculate income tax for 9+ countries with real tax brackets. Advanced tax calculator with social security, additional taxes, and comprehensive breakdown.",
     type: "website",
-    url: "https://fasttools.com/tools/tax-calculator",
+    url: "https://www.fasttools.store/tools/tax-calculator",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.com/og-tax-calculator.jpg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Advanced Tax Calculator - Multi-Country Income Tax Calculator"
@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Advanced Tax Calculator | Multi-Country Income Tax Calculator",
     description: "Calculate income tax for 9+ countries with real tax brackets. Advanced tax calculator with social security, additional taxes, and comprehensive breakdown.",
-    images: ["https://fasttools.com/og-tax-calculator.jpg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.com/tools/tax-calculator"
+    canonical: "https://www.fasttools.store/tools/tax-calculator"
   },
   robots: {
     index: true,

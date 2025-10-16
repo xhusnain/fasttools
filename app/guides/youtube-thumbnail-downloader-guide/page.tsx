@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Complete YouTube Thumbnail Downloader Guide | Free Thumbnail Tools",
     description: "Master YouTube thumbnail downloading with our comprehensive guide. Learn about thumbnail optimization, competitor analysis, design principles, and use our free YouTube thumbnail downloader tool.",
     type: "article",
-    url: "https://fasttools.store/guides/youtube-thumbnail-downloader-guide",
+    url: "https://www.fasttools.store/guides/youtube-thumbnail-downloader-guide",
   },
 }
 
@@ -25,22 +25,22 @@ export default function YouTubeThumbnailDownloaderGuide() {
     author: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
     },
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
     },
     datePublished: "2025-01-15",
     dateModified: "2025-01-15",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://fasttools.store/guides/youtube-thumbnail-downloader-guide"
+      "@id": "https://www.fasttools.store/guides/youtube-thumbnail-downloader-guide"
     },
     image: {
       "@type": "ImageObject",
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630
     }

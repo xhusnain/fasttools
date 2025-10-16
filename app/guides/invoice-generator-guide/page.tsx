@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Complete Invoice Generator Guide | Professional Invoice Creation",
     description: "Master invoice generation with our comprehensive guide. Learn invoice best practices, templates, legal requirements, and use our free invoice generator tool.",
     type: "article",
-    url: "https://fasttools.store/guides/invoice-generator-guide",
+    url: "https://www.fasttools.store/guides/invoice-generator-guide",
   },
 }
 
@@ -25,22 +25,22 @@ export default function InvoiceGeneratorGuide() {
     author: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
     },
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
     },
     datePublished: "2025-01-15",
     dateModified: "2025-01-15",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://fasttools.store/guides/invoice-generator-guide"
+      "@id": "https://www.fasttools.store/guides/invoice-generator-guide"
     },
     image: {
       "@type": "ImageObject",
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630
     }

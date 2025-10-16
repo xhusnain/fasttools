@@ -22,11 +22,11 @@ export const metadata: Metadata = {
     title: "Advanced GPA Calculator | Grade Point Average Calculator with Planning Tools | FastTools",
     description: "Calculate your GPA with our advanced calculator. Features GPA planning, grade distribution analysis, academic standing, and improvement suggestions.",
     type: "website",
-    url: "https://fasttools.com/tools/gpa-calculator",
+    url: "https://www.fasttools.store/tools/gpa-calculator",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.com/og-gpa-calculator.jpg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Advanced GPA Calculator - Grade Point Average Calculator with Planning Tools"
@@ -37,10 +37,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Advanced GPA Calculator | Grade Point Average Calculator with Planning Tools",
     description: "Calculate your GPA with our advanced calculator. Features GPA planning, grade distribution analysis, academic standing, and improvement suggestions.",
-    images: ["https://fasttools.com/og-gpa-calculator.jpg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.com/tools/gpa-calculator"
+    canonical: "https://www.fasttools.store/tools/gpa-calculator"
   },
   robots: {
     index: true,

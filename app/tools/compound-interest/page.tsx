@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     title: "Advanced Compound Interest Calculator | Multi-Country Investment Calculator | FastTools",
     description: "Calculate compound interest for 9+ countries with real interest rates. Advanced compound interest calculator with country-specific rates, comprehensive analysis, and educational content.",
     type: "website",
-    url: "https://fasttools.com/tools/compound-interest",
+    url: "https://www.fasttools.store/tools/compound-interest",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.com/og-compound-interest.jpg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Advanced Compound Interest Calculator - Multi-Country Investment Calculator"
@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Advanced Compound Interest Calculator | Multi-Country Investment Calculator",
     description: "Calculate compound interest for 9+ countries with real interest rates. Advanced compound interest calculator with country-specific rates, comprehensive analysis, and educational content.",
-    images: ["https://fasttools.com/og-compound-interest.jpg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.com/tools/compound-interest"
+    canonical: "https://www.fasttools.store/tools/compound-interest"
   },
   robots: {
     index: true,

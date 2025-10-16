@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     title: "Complete Tax Calculator Guide | How Income Tax Works | FastTools",
     description: "Comprehensive guide to income tax calculation across 8+ countries. Learn tax brackets, formulas, deductions, and advanced calculation methods.",
     type: "website",
-    url: "https://fasttools.com/guides/tax-calculator-guide",
+    url: "https://www.fasttools.store/guides/tax-calculator-guide",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.com/og-tax-guide.jpg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Complete Tax Calculator Guide - Income Tax Education"
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Complete Tax Calculator Guide | How Income Tax Works",
     description: "Comprehensive guide to income tax calculation across 8+ countries. Learn tax brackets, formulas, deductions, and advanced calculation methods.",
-    images: ["https://fasttools.com/og-tax-guide.jpg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.com/guides/tax-calculator-guide"
+    canonical: "https://www.fasttools.store/guides/tax-calculator-guide"
   },
   robots: {
     index: true,

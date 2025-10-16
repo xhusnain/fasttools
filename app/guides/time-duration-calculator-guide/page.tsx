@@ -22,23 +22,23 @@ export default function TimeDurationCalculatorGuide() {
     "author": {
       "@type": "Organization",
       "name": "FastTools",
-      "url": "https://fasttools.tech"
+      "url": "https://www.fasttools.store"
     },
     "publisher": {
       "@type": "Organization",
       "name": "FastTools",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://fasttools.tech/logo.png"
+        "url": "https://www.fasttools.store/logo.svg"
       }
     },
     "datePublished": "2024-01-15",
     "dateModified": "2024-01-15",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://fasttools.tech/guides/time-duration-calculator-guide"
+      "@id": "https://www.fasttools.store/guides/time-duration-calculator-guide"
     },
-    "image": "https://fasttools.tech/time-duration-calculator-guide.jpg",
+    "image": "https://www.fasttools.store/og-image.svg",
     "articleSection": "Time Management",
     "keywords": "time duration calculator, time calculation, business hours calculator, overtime calculator, timezone conversion, work days calculator, time addition, time subtraction, time management, productivity tools",
     "inLanguage": "en-US",
@@ -48,7 +48,7 @@ export default function TimeDurationCalculatorGuide() {
       "name": "Advanced Time Duration Calculator",
       "applicationCategory": "Time Management Tool",
       "operatingSystem": "Web Browser",
-      "url": "https://fasttools.tech/tools/time-duration-calculator",
+      "url": "https://www.fasttools.store/tools/time-duration",
       "description": "Advanced time duration calculator with 7 calculation types including duration, addition, subtraction, business hours, timezone conversion, work days, and overtime calculations.",
       "featureList": [
         "Time Duration Calculation",
@@ -62,7 +62,7 @@ export default function TimeDurationCalculatorGuide() {
         "Mobile-Responsive Design",
         "Professional Time Management"
       ],
-      "screenshot": "https://fasttools.tech/time-duration-calculator-screenshot.jpg",
+      "screenshot": "https://www.fasttools.store/og-image.svg",
       "softwareHelp": {
         "@type": "HowTo",
         "name": "How to Use Time Duration Calculator",

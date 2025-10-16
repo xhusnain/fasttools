@@ -147,12 +147,12 @@ export const metadata: Metadata = {
     title: "Free Fun Tools | Love Calculator, Birthday Countdown & More | FastTools",
     description:
       "Discover fun and entertaining online tools including Love Calculator, Future Age Predictor, Birthday Countdown, Anniversary Calculator, and Instagram Hashtag Counter. Free and easy to use!",
-    url: "https://fasttools.store/fun-tools",
+    url: "https://www.fasttools.store/fun-tools",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Fun Tools - Love Calculator, Birthday Countdown & More",
@@ -164,10 +164,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Fun Tools | Love Calculator, Birthday Countdown & More | FastTools",
     description: "Discover fun and entertaining online tools including Love Calculator, Future Age Predictor, Birthday Countdown, Anniversary Calculator, and Instagram Hashtag Counter. Free and easy to use!",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   alternates: {
-    canonical: "https://fasttools.store/fun-tools",
+    canonical: "https://www.fasttools.store/fun-tools",
   },
 }
 
@@ -176,25 +176,25 @@ const jsonLd = {
   "@type": "WebPage",
   name: "Free Fun Tools | Love Calculator, Birthday Countdown & More | FastTools",
   description: "Discover fun and entertaining online tools including Love Calculator, Future Age Predictor, Birthday Countdown, Anniversary Calculator, and Instagram Hashtag Counter. Free and easy to use!",
-  url: "https://fasttools.store/fun-tools",
+  url: "https://www.fasttools.store/fun-tools",
   mainEntity: {
     "@type": "ItemList",
     name: "Fun Tools Collection",
     description: "Comprehensive collection of free online fun tools and entertainment utilities for social media, relationships, and celebrations",
     numberOfItems: 5,
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Future Age Predictor", description: "Discover how old you'll be in any future year", url: "https://fasttools.store/fun-tools/future-age" },
-      { "@type": "ListItem", position: 2, name: "Love Calculator", description: "Calculate love compatibility between two people for fun", url: "https://fasttools.store/fun-tools/love-calculator" },
-      { "@type": "ListItem", position: 3, name: "Instagram Hashtag Counter", description: "Count and extract hashtags from your Instagram posts", url: "https://fasttools.store/fun-tools/hashtag-counter" },
-      { "@type": "ListItem", position: 4, name: "Birthday Countdown", description: "Real-time countdown to your next birthday celebration", url: "https://fasttools.store/fun-tools/birthday-countdown" },
-      { "@type": "ListItem", position: 5, name: "Anniversary Calculator", description: "Calculate how long you've been together and when your next anniversary is", url: "https://fasttools.store/fun-tools/anniversary" }
+      { "@type": "ListItem", position: 1, name: "Future Age Predictor", description: "Discover how old you'll be in any future year", url: "https://www.fasttools.store/fun-tools/future-age" },
+      { "@type": "ListItem", position: 2, name: "Love Calculator", description: "Calculate love compatibility between two people for fun", url: "https://www.fasttools.store/fun-tools/love-calculator" },
+      { "@type": "ListItem", position: 3, name: "Instagram Hashtag Counter", description: "Count and extract hashtags from your Instagram posts", url: "https://www.fasttools.store/fun-tools/hashtag-counter" },
+      { "@type": "ListItem", position: 4, name: "Birthday Countdown", description: "Real-time countdown to your next birthday celebration", url: "https://www.fasttools.store/fun-tools/birthday-countdown" },
+      { "@type": "ListItem", position: 5, name: "Anniversary Calculator", description: "Calculate how long you've been together and when your next anniversary is", url: "https://www.fasttools.store/fun-tools/anniversary" }
     ]
   },
   breadcrumb: {
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://fasttools.store" },
-      { "@type": "ListItem", position: 2, name: "Fun Tools", item: "https://fasttools.store/fun-tools" }
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.fasttools.store" },
+      { "@type": "ListItem", position: 2, name: "Fun Tools", item: "https://www.fasttools.store/fun-tools" }
     ]
   },
   about: {
@@ -205,7 +205,7 @@ const jsonLd = {
   isPartOf: {
     "@type": "WebSite",
     name: "FastTools",
-    url: "https://fasttools.store"
+    url: "https://www.fasttools.store"
   }
 }
 

@@ -24,11 +24,11 @@ export const metadata: Metadata = {
     title: "Complete GPA Calculator Guide | Grade Point Average Education & Academic Planning | FastTools",
     description: "Master GPA calculations with our comprehensive guide. Learn formulas, grading systems, academic planning, and improvement strategies.",
     type: "website",
-    url: "https://fasttools.com/guides/gpa-calculator-guide",
+    url: "https://www.fasttools.store/guides/gpa-calculator-guide",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.com/og-gpa-calculator-guide.jpg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Complete GPA Calculator Guide - Grade Point Average Education & Academic Planning"
@@ -39,10 +39,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Complete GPA Calculator Guide | Grade Point Average Education & Academic Planning",
     description: "Master GPA calculations with our comprehensive guide. Learn formulas, grading systems, academic planning, and improvement strategies.",
-    images: ["https://fasttools.com/og-gpa-calculator-guide.jpg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.com/guides/gpa-calculator-guide"
+    canonical: "https://www.fasttools.store/guides/gpa-calculator-guide"
   },
   robots: {
     index: true,
@@ -62,7 +62,7 @@ const jsonLd = {
   "@type": "EducationalResource",
   name: "Complete GPA Calculator Guide",
   description: "Master GPA calculations with our comprehensive guide. Learn formulas, grading systems, academic planning, and improvement strategies.",
-  url: "https://fasttools.com/guides/gpa-calculator-guide",
+  url: "https://www.fasttools.store/guides/gpa-calculator-guide",
   educationalLevel: "High School to Graduate",
   learningResourceType: "Guide",
   teaches: [
@@ -81,7 +81,7 @@ const jsonLd = {
   isPartOf: {
     "@type": "WebSite",
     name: "FastTools",
-    url: "https://fasttools.com"
+    url: "https://www.fasttools.store"
   }
 }
 

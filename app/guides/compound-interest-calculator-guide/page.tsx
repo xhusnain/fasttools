@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     title: "Complete Compound Interest Calculator Guide | Investment Education & Financial Planning | FastTools",
     description: "Master compound interest calculations with our comprehensive guide. Learn formulas, strategies, country-specific rates, and advanced investment planning techniques.",
     type: "website",
-    url: "https://fasttools.com/guides/compound-interest-calculator-guide",
+    url: "https://www.fasttools.store/guides/compound-interest-calculator-guide",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.com/og-compound-interest-guide.jpg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Complete Compound Interest Calculator Guide - Investment Education & Financial Planning"
@@ -42,10 +42,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Complete Compound Interest Calculator Guide | Investment Education & Financial Planning",
     description: "Master compound interest calculations with our comprehensive guide. Learn formulas, strategies, country-specific rates, and advanced investment planning techniques.",
-    images: ["https://fasttools.com/og-compound-interest-guide.jpg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.com/guides/compound-interest-calculator-guide"
+    canonical: "https://www.fasttools.store/guides/compound-interest-calculator-guide"
   },
   robots: {
     index: true,
@@ -65,7 +65,7 @@ const jsonLd = {
   "@type": "EducationalResource",
   name: "Complete Compound Interest Calculator Guide",
   description: "Master compound interest calculations with our comprehensive guide. Learn formulas, strategies, country-specific rates, and advanced investment planning techniques.",
-  url: "https://fasttools.com/guides/compound-interest-calculator-guide",
+  url: "https://www.fasttools.store/guides/compound-interest-calculator-guide",
   educationalLevel: "Beginner to Advanced",
   learningResourceType: "Guide",
   teaches: [
@@ -84,7 +84,7 @@ const jsonLd = {
   isPartOf: {
     "@type": "WebSite",
     name: "FastTools",
-    url: "https://fasttools.com"
+    url: "https://www.fasttools.store"
   }
 }
 

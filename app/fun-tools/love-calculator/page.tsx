@@ -222,7 +222,7 @@ export const metadata: Metadata = {
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Love Calculator - Free Love Compatibility Test & Match Percentage",
@@ -234,7 +234,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Love Calculator | Free Love Compatibility Test & Match Percentage | FastTools",
     description: "Free love calculator to test compatibility between two people. Calculate love percentage, relationship compatibility, and love meter. Share your love match results with friends!",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -244,7 +244,7 @@ export const metadata: Metadata = {
       alternateName: "Love Compatibility Calculator, Love Percentage Calculator, Love Meter Calculator",
       applicationCategory: "EntertainmentApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/fun-tools/love-calculator",
+      url: "https://www.fasttools.store/fun-tools/love-calculator",
       description:
         "Free love calculator to test compatibility between two people. Calculate love percentage, relationship compatibility, and love meter. Share your love match results with friends!",
       inLanguage: "en",
@@ -280,15 +280,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -297,8 +297,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/fun-tools/love-calculator",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/fun-tools/love-calculator",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "love calculator, love percenta, love test, true love cal, love compati, love tester, love meter c, friendship ca, compatibility, love calculat, free love calculator, love compatibility, love match, relationship calculator, love percentage, compatibility test, love meter, name compatibility, crush calculator, couple compatibility, fun love test, online love meter, romance compatibility, love test, relationship test, couple test, love match test, compatibility calculator, love calculator online, love compatibility online, love match online, relationship calculator online, love percentage online, compatibility test online, love meter online, name compatibility online, crush calculator online, couple compatibility online, fun love test online, free love calculator online, love meter calculator, love percentage calculator, love compatibility calculator, love match calculator, relationship compatibility calculator, couple compatibility calculator, name compatibility calculator, crush compatibility calculator, love test calculator, romance compatibility calculator, love calculator app, love calculator website, love calculator tool, love calculator free online, love calculator instant, love calculator accurate, love calculator fun, love calculator romantic, love calculator share, love calculator social, love calculator viral, love calculator trending, love calculator popular, love calculator best, love calculator top, love calculator recommended, love calculator trusted, love calculator reliable, love calculator fast, love calculator easy, love calculator simple, love calculator quick, love calculator instant results, love calculator real time, love calculator live, love calculator interactive, love calculator engaging, love calculator entertaining, love calculator fun, love calculator romantic",
       about: {
         "@type": "Thing",
@@ -308,7 +308,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

@@ -43,11 +43,11 @@ export const metadata: Metadata = {
     title: "Complete Concrete Calculator Guide | Formulas, Mix Ratios & Construction Tips | FastTools",
     description: "Master concrete calculations with our comprehensive guide. Learn formulas, mix ratios, material breakdowns, curing processes, and professional construction tips.",
     type: "website",
-    url: "https://fasttools.com/guides/concrete-calculator-guide",
+    url: "https://www.fasttools.store/guides/concrete-calculator-guide",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.com/og-concrete-calculator-guide.jpg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Complete Concrete Calculator Guide - Formulas, Mix Ratios & Construction Tips"
@@ -58,10 +58,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Complete Concrete Calculator Guide | Formulas, Mix Ratios & Construction Tips",
     description: "Master concrete calculations with our comprehensive guide. Learn formulas, mix ratios, material breakdowns, curing processes, and professional construction tips.",
-    images: ["https://fasttools.com/og-concrete-calculator-guide.jpg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.com/guides/concrete-calculator-guide"
+    canonical: "https://www.fasttools.store/guides/concrete-calculator-guide"
   },
   robots: {
     index: true,

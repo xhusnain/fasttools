@@ -368,11 +368,11 @@ export const metadata: Metadata = {
     title: "Advanced Conversion Calculator | Free Online Unit Converter",
     description: "Convert between 1000+ units instantly with our comprehensive conversion calculator. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions.",
     type: "website",
-    url: "https://fasttools.store/tools/conversion-calculator",
+    url: "https://www.fasttools.store/tools/conversion-calculator",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Advanced Conversion Calculator - FastTools"
@@ -383,10 +383,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Advanced Conversion Calculator | Free Online Unit Converter",
     description: "Convert between 1000+ units instantly with our comprehensive conversion calculator. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/tools/conversion-calculator"
+    canonical: "https://www.fasttools.store/tools/conversion-calculator"
   },
   robots: {
     index: true,

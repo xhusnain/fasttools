@@ -425,7 +425,7 @@ export const metadata: Metadata = {
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Length Converter - Convert Meters, Feet, Inches, CM, KM & Miles",
@@ -437,7 +437,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Length Converter | Convert Meters, Feet, Inches, CM, KM & Miles | FastTools",
     description: "Convert length units instantly: meters, feet, inches, centimeters, millimeters, kilometers, yards, and miles. Accurate metric and imperial conversion tool for construction, travel, and education.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -447,7 +447,7 @@ export const metadata: Metadata = {
       alternateName: "Distance Converter",
       applicationCategory: "Utility",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/converters/length",
+      url: "https://www.fasttools.store/converters/length",
       description:
         "Convert length units across metric and imperial systems for construction, travel and education.",
       inLanguage: "en",
@@ -473,15 +473,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -490,8 +490,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/converters/length",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/converters/length",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "length converter, free length converter, meter to feet, feet to meter, cm to inches, inches to cm, km to miles, miles to km, height converter, distance converter",
       about: {
         "@type": "Thing",
@@ -501,7 +501,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

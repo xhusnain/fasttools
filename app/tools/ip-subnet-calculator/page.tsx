@@ -139,11 +139,11 @@ export const metadata: Metadata = {
     title: "Free IP Subnet Calculator | IPv4 IPv6 CIDR Network Calculator | FastTools",
     description: "Calculate IP subnets instantly with our free online calculator. Support for IPv4/IPv6, CIDR notation, VLSM, supernetting, and comprehensive network analysis.",
     type: "website",
-    url: "https://fasttools.com/tools/ip-subnet-calculator",
+    url: "https://www.fasttools.store/tools/ip-subnet-calculator",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.com/og-ip-subnet-calculator.jpg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Free IP Subnet Calculator - IPv4 IPv6 CIDR Network Calculator"
@@ -154,10 +154,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free IP Subnet Calculator | IPv4 IPv6 CIDR Network Calculator",
     description: "Calculate IP subnets instantly with our free online calculator. Support for IPv4/IPv6, CIDR notation, VLSM, supernetting, and comprehensive network analysis.",
-    images: ["https://fasttools.com/og-ip-subnet-calculator.jpg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.com/tools/ip-subnet-calculator"
+    canonical: "https://www.fasttools.store/tools/ip-subnet-calculator"
   },
   robots: {
     index: true,

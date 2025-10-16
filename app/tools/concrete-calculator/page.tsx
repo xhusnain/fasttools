@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     title: "Advanced Concrete Calculator | Volume, Weight, Materials & Cost Calculator | FastTools",
     description: "Calculate concrete volume, weight, materials, and cost for slabs, columns, stairs, curbs, and more. Advanced concrete calculator with multiple mix types, material breakdown, and professional recommendations.",
     type: "website",
-    url: "https://fasttools.com/tools/concrete-calculator",
+    url: "https://www.fasttools.store/tools/concrete-calculator",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.com/og-concrete-calculator.jpg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Advanced Concrete Calculator - Volume, Weight, Materials & Cost Calculator"
@@ -43,10 +43,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Advanced Concrete Calculator | Volume, Weight, Materials & Cost Calculator",
     description: "Calculate concrete volume, weight, materials, and cost for slabs, columns, stairs, curbs, and more. Advanced concrete calculator with multiple mix types, material breakdown, and professional recommendations.",
-    images: ["https://fasttools.com/og-concrete-calculator.jpg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.com/tools/concrete-calculator"
+    canonical: "https://www.fasttools.store/tools/concrete-calculator"
   },
   robots: {
     index: true,

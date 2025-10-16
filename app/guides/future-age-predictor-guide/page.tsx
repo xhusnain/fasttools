@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Complete Future Age Predictor Guide | Age Calculator",
     description: "Master future age calculations with our comprehensive guide. Learn about age prediction, time calculations, birthday planning, and use our free future age predictor tool.",
     type: "article",
-    url: "https://fasttools.store/guides/future-age-predictor-guide",
+    url: "https://www.fasttools.store/guides/future-age-predictor-guide",
   },
 }
 
@@ -25,22 +25,22 @@ export default function FutureAgePredictorGuide() {
     author: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
     },
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
     },
     datePublished: "2025-01-15",
     dateModified: "2025-01-15",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://fasttools.store/guides/future-age-predictor-guide"
+      "@id": "https://www.fasttools.store/guides/future-age-predictor-guide"
     },
     image: {
       "@type": "ImageObject",
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630
     }
