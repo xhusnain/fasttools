@@ -417,12 +417,6 @@ export default function FractionCalculatorPage() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="lg">
-                  <a href="/learn">
-                    Learn More About Fractions
-                    <BookOpen className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
               </div>
             </CardContent>
           </Card>

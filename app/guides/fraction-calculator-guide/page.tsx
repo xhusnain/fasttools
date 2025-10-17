@@ -823,12 +823,6 @@ export default function FractionCalculatorGuide() {
                     See Fraction Calculator in Action
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link href="/learn">
-                    Explore More Math Guides
-                    <BookOpen className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
               </div>
             </CardContent>
           </Card>

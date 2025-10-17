@@ -46,13 +46,6 @@ export function Header() {
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
           </Link>
           <Link
-            href="/learn"
-            className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 relative group"
-          >
-            Learn
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
-          </Link>
-          <Link
             href="/about"
             className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 relative group"
           >
@@ -143,13 +136,6 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
-              </Link>
-              <Link
-                href="/learn"
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Learn
               </Link>
               <Link
                 href="/about"
