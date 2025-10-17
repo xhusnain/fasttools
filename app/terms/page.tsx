@@ -1,30 +1,43 @@
 import { Breadcrumbs } from "@/components/breadcrumbs"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Shield, FileText, Users, AlertTriangle, CheckCircle, ExternalLink, Mail, Globe, Scale, Gavel, BookOpen } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Terms of Service - FastTools | Free Online Tools Usage Terms",
-  description: "Read fasttools.store's comprehensive terms of service to understand the rules and regulations for using our free online tools and calculators.",
+  title: "Terms of Service - FastTools | Google AdSense Compliant Legal Terms",
+  description: "Comprehensive terms of service for FastTools covering Google AdSense compliance, user agreements, intellectual property, and legal obligations. Free online tools usage terms.",
   keywords: [
     "terms of service",
     "terms and conditions",
     "user agreement",
+    "Google AdSense terms",
+    "legal compliance",
     "website terms",
-    "legal terms",
     "usage terms",
     "online tools terms",
     "free tools terms",
-    "calculator terms"
+    "calculator terms",
+    "Google policy compliance",
+    "advertising terms",
+    "user obligations",
+    "intellectual property rights",
+    "liability limitations"
   ],
   openGraph: {
-    title: "Terms of Service - FastTools | Free Online Tools Usage Terms",
-    description: "Read fasttools.store's comprehensive terms of service to understand the rules and regulations for using our free online tools.",
+    title: "Terms of Service - FastTools | Google AdSense Compliant",
+    description: "Comprehensive terms of service covering Google AdSense compliance, user agreements, intellectual property, and legal obligations for free online tools.",
     type: "website",
     url: "https://fasttools.store/terms",
+    siteName: "FastTools",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms of Service - FastTools",
-    description: "Read fasttools.store's comprehensive terms of service to understand the rules and regulations for using our free online tools.",
+    title: "Terms of Service - FastTools | Google AdSense Compliant",
+    description: "Comprehensive terms of service covering Google AdSense compliance, user agreements, and legal obligations for free online tools.",
+    creator: "@fasttools",
+    site: "@fasttools",
   },
   alternates: {
     canonical: "https://fasttools.store/terms",
@@ -32,208 +45,357 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    }
   },
+  authors: [{ name: "FastTools Legal Team" }],
+  creator: "FastTools",
+  publisher: "FastTools",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://fasttools.store'),
 }
 
 export default function TermsPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Terms of Service - FastTools",
+    description: "Comprehensive terms of service covering Google AdSense compliance, user agreements, intellectual property, and legal obligations for free online tools.",
+    url: "https://fasttools.store/terms",
+    publisher: {
+      "@type": "Organization",
+      name: "FastTools",
+      url: "https://fasttools.store",
+      logo: "https://fasttools.store/logo.svg"
+    },
+    datePublished: "2024-12-19",
+    dateModified: "2024-12-19",
+    inLanguage: "en-US",
+    isAccessibleForFree: true,
+    about: {
+      "@type": "Thing",
+      name: "Terms of Service",
+      description: "Legal terms and conditions for using FastTools online tools and services"
+    }
+  }
+
   return (
-    <div className="container mx-auto px-4 py-12">
-      <Breadcrumbs items={[{ label: "Terms of Service", href: "/terms" }]} />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 py-16 md:py-20">
+          <Breadcrumbs items={[{ label: "Terms of Service", href: "/terms" }]} />
 
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Terms of Service</h1>
-          <p className="text-muted-foreground">Last updated: December 19, 2024</p>
-        </div>
-
-        <div className="prose prose-slate max-w-none space-y-8">
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Agreement to Terms</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              These Terms of Service ("Terms") govern your use of FastTools ("we," "our," or "us") website located at fasttools.store (the "Site") and our free online tools and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mt-4">
-              If you do not agree to these Terms, please do not use our Services. We reserve the right to modify these Terms at any time, and your continued use of our Services after such modifications constitutes acceptance of the updated Terms.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Description of Services</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              FastTools provides free online tools and utilities including but not limited to:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-              <li>Text processing and conversion tools</li>
-              <li>File format converters</li>
-              <li>Image processing and editing tools</li>
-              <li>Calculators and financial tools</li>
-              <li>AI-powered content generators</li>
-              <li>SEO and marketing tools</li>
-              <li>Date and time utilities</li>
-              <li>Social media tools</li>
-            </ul>
-            <p className="text-muted-foreground leading-relaxed mt-4">
-              All tools are provided free of charge for personal and commercial use, subject to the restrictions outlined in these Terms.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Acceptable Use</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              You agree to use our Services only for lawful purposes and in accordance with these Terms. You may not:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-              <li>Use our Services for any illegal or unauthorized purpose</li>
-              <li>Attempt to gain unauthorized access to our systems or networks</li>
-              <li>Interfere with or disrupt our Services or servers</li>
-              <li>Use automated systems to access our Services without permission</li>
-              <li>Upload or transmit viruses, malware, or other harmful code</li>
-              <li>Violate any applicable laws or regulations</li>
-              <li>Infringe on the rights of others</li>
-              <li>Use our Services to create or distribute spam or unsolicited communications</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">User Content and Data</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              When you use our Services, you may upload, input, or provide content and data ("User Content"). You retain ownership of your User Content, but by using our Services, you grant us a limited, non-exclusive, royalty-free license to:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-              <li>Process your User Content to provide our Services</li>
-              <li>Store your User Content temporarily for processing</li>
-              <li>Improve our Services based on usage patterns</li>
-            </ul>
-            <p className="text-muted-foreground leading-relaxed mt-4">
-              We do not claim ownership of your User Content and will not use it for purposes other than providing our Services. We implement appropriate security measures to protect your data, but you are responsible for backing up any important information.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Intellectual Property</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              The Services, including all content, features, and functionality, are owned by FastTools and are protected by copyright, trademark, and other intellectual property laws. You may not:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-              <li>Copy, modify, or distribute our Services without permission</li>
-              <li>Reverse engineer, decompile, or disassemble our Services</li>
-              <li>Remove or alter any copyright, trademark, or other proprietary notices</li>
-              <li>Use our trademarks or logos without written permission</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Advertising and Third-Party Services</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Our Services may display advertisements from third parties, including Google AdSense. These advertisements are provided by third parties and are not under our control. We are not responsible for the content, accuracy, or availability of third-party advertisements.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              By using our Services, you acknowledge that:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-muted-foreground mb-4">
-              <li>Advertisements may be displayed on our website</li>
-              <li>Third-party advertisers may use cookies and tracking technologies</li>
-              <li>We may receive compensation from advertisers</li>
-              <li>You can opt out of personalized advertising through your browser settings</li>
-            </ul>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              <strong>AdSense Policy Compliance:</strong> We comply with Google AdSense policies and guidelines. Users are prohibited from:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-              <li>Clicking on ads for any reason other than genuine interest</li>
-              <li>Encouraging others to click on ads</li>
-              <li>Using automated systems to generate ad clicks or impressions</li>
-              <li>Manipulating ad placement or behavior</li>
-              <li>Interfering with ad functionality or performance</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Privacy and Data Protection</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Your privacy is important to us. Our collection and use of your information is governed by our Privacy Policy, which is incorporated into these Terms by reference. By using our Services, you consent to the collection and use of your information as described in our Privacy Policy.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Disclaimers and Limitations</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              <strong>DISCLAIMER:</strong> Our Services are provided "as is" and "as available" without warranties of any kind, either express or implied. We disclaim all warranties, including but not limited to:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-muted-foreground mb-4">
-              <li>Warranties of merchantability and fitness for a particular purpose</li>
-              <li>Warranties of non-infringement</li>
-              <li>Warranties regarding accuracy, reliability, or completeness</li>
-              <li>Warranties regarding uninterrupted or error-free operation</li>
-            </ul>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              <strong>LIMITATION OF LIABILITY:</strong> To the maximum extent permitted by law, FastTools shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-              <li>Loss of profits, data, or business opportunities</li>
-              <li>Damages resulting from use or inability to use our Services</li>
-              <li>Damages resulting from unauthorized access to your data</li>
-              <li>Damages resulting from third-party conduct or content</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Indemnification</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              You agree to indemnify, defend, and hold harmless FastTools and its officers, directors, employees, and agents from and against any claims, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or relating to your use of our Services, violation of these Terms, or infringement of any rights of another party.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Termination</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              We may terminate or suspend your access to our Services immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms. Upon termination, your right to use our Services will cease immediately.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Governing Law and Dispute Resolution</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to conflict of law principles. Any disputes arising out of or relating to these Terms or our Services shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Severability</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force and effect.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Changes to Terms</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              We reserve the right to modify these Terms at any time. We will notify users of any material changes by posting the updated Terms on our website and updating the "Last updated" date. Your continued use of our Services after such modifications constitutes acceptance of the updated Terms.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              If you have any questions about these Terms of Service, please contact us at:
-            </p>
-            <div className="mt-4 p-4 bg-muted rounded-lg">
-              <p className="text-muted-foreground">
-                <strong>Email:</strong>{" "}
-                <a href="mailto:legal@fasttools.store" className="text-primary hover:underline">
-                  legal@fasttools.store
-                </a>
+          <div className="max-w-5xl mx-auto">
+            {/* Hero Section */}
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center mb-6">
+                <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Scale className="h-8 w-8 text-primary" />
+                </div>
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-yellow-400">Terms of Service</h1>
+              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+                Legal terms and conditions for using FastTools. Learn about your rights, obligations, and our commitment to Google AdSense compliance.
               </p>
-              <p className="text-muted-foreground mt-2">
-                <strong>Website:</strong>{" "}
-                <a href="https://fasttools.store" className="text-primary hover:underline">
-                  https://fasttools.store
-                </a>
-              </p>
+              <div className="flex flex-wrap justify-center gap-4 mb-8">
+                <Badge variant="secondary" className="h-8 px-4 text-sm">
+                  <CheckCircle className="h-4 w-4 mr-2" />
+                  Google AdSense Compliant
+                </Badge>
+                <Badge variant="secondary" className="h-8 px-4 text-sm">
+                  <CheckCircle className="h-4 w-4 mr-2" />
+                  Legal Compliance
+                </Badge>
+                <Badge variant="secondary" className="h-8 px-4 text-sm">
+                  <CheckCircle className="h-4 w-4 mr-2" />
+                  User Protection
+                </Badge>
+              </div>
+              <p className="text-sm text-muted-foreground">Last updated: December 19, 2024</p>
             </div>
-          </section>
+
+            {/* Quick Navigation */}
+            <div className="mb-16">
+              <h2 className="text-2xl font-bold mb-6 text-yellow-400">Quick Navigation</h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                <Card className="hover:shadow-md transition-shadow">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <FileText className="h-5 w-5 text-primary" />
+                      Service Agreement
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">Terms and conditions for using our tools</p>
+                  </CardContent>
+                </Card>
+                <Card className="hover:shadow-md transition-shadow">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Shield className="h-5 w-5 text-primary" />
+                      Google AdSense
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">Advertising compliance and user obligations</p>
+                  </CardContent>
+                </Card>
+                <Card className="hover:shadow-md transition-shadow">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Gavel className="h-5 w-5 text-primary" />
+                      Legal Rights
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">User rights and legal protections</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            {/* Main Content */}
+            <div className="space-y-12">
+              <Card className="bg-card border border-border">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold text-yellow-400 flex items-center gap-3">
+                    <FileText className="h-6 w-6 text-primary" />
+                    Agreement to Terms
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    These Terms of Service ("Terms") govern your use of FastTools ("we," "our," or "us") website located at fasttools.store (the "Site") and our free online tools and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    If you do not agree to these Terms, please do not use our Services. We reserve the right to modify these Terms at any time, and your continued use of our Services after such modifications constitutes acceptance of the updated Terms.
+                  </p>
+                  <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
+                    <div className="flex items-start gap-3">
+                      <AlertTriangle className="h-5 w-5 text-accent mt-0.5" />
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-2">Important Notice</h4>
+                        <p className="text-sm text-muted-foreground">
+                          These terms comply with Google AdSense policies, Google Search Console requirements, and applicable laws. By using our services, you agree to comply with all Google policies and guidelines.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card border border-border">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold text-yellow-400 flex items-center gap-3">
+                    <BookOpen className="h-6 w-6 text-primary" />
+                    Description of Services
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    FastTools provides free online tools and utilities including but not limited to:
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-primary"></div>
+                        <span className="text-muted-foreground">Text processing and conversion tools</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-primary"></div>
+                        <span className="text-muted-foreground">File format converters</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-primary"></div>
+                        <span className="text-muted-foreground">Image processing and editing tools</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-primary"></div>
+                        <span className="text-muted-foreground">Calculators and financial tools</span>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-primary"></div>
+                        <span className="text-muted-foreground">AI-powered content generators</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-primary"></div>
+                        <span className="text-muted-foreground">SEO and marketing tools</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-primary"></div>
+                        <span className="text-muted-foreground">Date and time utilities</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-primary"></div>
+                        <span className="text-muted-foreground">Social media tools</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">
+                    All tools are provided free of charge for personal and commercial use, subject to the restrictions outlined in these Terms.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Google AdSense Compliance Section */}
+              <Card className="bg-card border border-border">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold text-yellow-400 flex items-center gap-3">
+                    <Shield className="h-6 w-6 text-primary" />
+                    Google AdSense & Advertising Compliance
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="bg-accent/10 border border-accent/20 rounded-lg p-6">
+                    <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-accent" />
+                      Google AdSense Policy Compliance
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      Our Services display advertisements from third parties, including Google AdSense. These advertisements are provided by third parties and are not under our control. We are not responsible for the content, accuracy, or availability of third-party advertisements.
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-2">User Obligations:</h4>
+                        <ul className="space-y-1 text-sm text-muted-foreground">
+                          <li>• Do not click on ads for any reason other than genuine interest</li>
+                          <li>• Do not encourage others to click on ads</li>
+                          <li>• Do not use automated systems to generate ad clicks</li>
+                          <li>• Do not manipulate ad placement or behavior</li>
+                          <li>• Do not interfere with ad functionality</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-2">Our Compliance:</h4>
+                        <ul className="space-y-1 text-sm text-muted-foreground">
+                          <li>• Proper ad placement that doesn't interfere with content</li>
+                          <li>• High-quality, original content standards</li>
+                          <li>• Clear navigation and user experience</li>
+                          <li>• No prohibited traffic sources</li>
+                          <li>• No invalid click encouragement</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-secondary/50 rounded-lg p-4">
+                      <h3 className="text-lg font-semibold mb-3 text-yellow-400">Advertising Terms</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        By using our Services, you acknowledge that advertisements may be displayed, third-party advertisers may use cookies and tracking technologies, and we may receive compensation from advertisers.
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        You can opt out of personalized advertising through your browser settings or by visiting Google's Ad Settings.
+                      </p>
+                    </div>
+
+                    <div className="bg-secondary/50 rounded-lg p-4">
+                      <h3 className="text-lg font-semibold mb-3 text-yellow-400">Google Search Console</h3>
+                      <p className="text-sm text-muted-foreground">
+                        We comply with Google Search Console requirements including proper sitemap submission, robots.txt configuration, and technical SEO standards to ensure optimal search engine visibility and compliance.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* User Rights and Legal Protections */}
+              <Card className="bg-card border border-border">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold text-yellow-400 flex items-center gap-3">
+                    <Users className="h-6 w-6 text-primary" />
+                    User Rights & Legal Protections
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-secondary-accent/10 border border-secondary-accent/20 rounded-lg p-4">
+                      <h3 className="text-lg font-semibold mb-3 text-foreground flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-secondary-accent" />
+                        Your Rights
+                      </h3>
+                      <ul className="space-y-1 text-sm text-muted-foreground">
+                        <li>• Access to free tools and services</li>
+                        <li>• Privacy protection as outlined in our Privacy Policy</li>
+                        <li>• Data portability and deletion rights</li>
+                        <li>• Fair and transparent service provision</li>
+                        <li>• Protection from unauthorized data collection</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
+                      <h3 className="text-lg font-semibold mb-3 text-foreground flex items-center gap-2">
+                        <Shield className="h-4 w-4 text-accent" />
+                        Our Obligations
+                      </h3>
+                      <ul className="space-y-1 text-sm text-muted-foreground">
+                        <li>• Provide reliable and secure services</li>
+                        <li>• Protect user data and privacy</li>
+                        <li>• Comply with Google AdSense policies</li>
+                        <li>• Maintain service availability and performance</li>
+                        <li>• Transparent data practices</li>
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Contact Section */}
+              <Card className="bg-card border border-border">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold text-yellow-400 flex items-center gap-3">
+                    <Mail className="h-6 w-6 text-primary" />
+                    Contact Information
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    If you have any questions about these Terms of Service, please contact us:
+                  </p>
+                  <div className="bg-secondary/50 rounded-lg p-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-2">Legal Inquiries</h4>
+                        <a href="mailto:legal@fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
+                          <Mail className="h-4 w-4" />
+                          legal@fasttools.store
+                        </a>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-2">General Support</h4>
+                        <a href="mailto:support@fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
+                          <Mail className="h-4 w-4" />
+                          support@fasttools.store
+                        </a>
+                      </div>
+                    </div>
+                    <div className="mt-4 pt-4 border-t border-border">
+                      <h4 className="font-semibold text-foreground mb-2">Website</h4>
+                      <a href="https://fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
+                        <Globe className="h-4 w-4" />
+                        https://fasttools.store
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
+
