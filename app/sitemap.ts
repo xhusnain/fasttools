@@ -1005,12 +1005,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.95, // High priority for comprehensive guide
       },
       {
-        url: "https://www.fasttools.store/guides/conversion-calculator-guide",
-        lastModified: getFreshnessDate(1), // Updated daily for new guide
-        changeFrequency: "daily" as const,
-        priority: 0.95, // High priority for comprehensive guide
-      },
-      {
         url: "https://www.fasttools.store/guides/scientific-calculator-guide",
         lastModified: getFreshnessDate(1), // Updated daily for new guide
         changeFrequency: "daily" as const,
