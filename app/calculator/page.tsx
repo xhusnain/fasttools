@@ -1080,7 +1080,7 @@ export default function ToolsPage() {
       title: "Conversion Calculator",
       description: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions.",
       icon: Ruler,
-      href: "/calculator/calculator/conversion-calculator",
+      href: "/calculator/conversion-calculator",
       color: "blue"
     },
     {
