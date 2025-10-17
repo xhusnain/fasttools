@@ -450,7 +450,7 @@ export const metadata: Metadata = {
               position: 3,
               name: "Calculator Tools",
               description: "Financial, business, and general purpose calculators for all your calculation needs",
-              url: "https://www.fasttools.store/tools"
+              url: "https://www.fasttools.store/calculator"
             },
             {
               "@type": "ListItem",

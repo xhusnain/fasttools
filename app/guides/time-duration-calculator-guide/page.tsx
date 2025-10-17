@@ -48,7 +48,7 @@ export default function TimeDurationCalculatorGuide() {
       "name": "Advanced Time Duration Calculator",
       "applicationCategory": "Time Management Tool",
       "operatingSystem": "Web Browser",
-      "url": "https://www.fasttools.store/tools/time-duration",
+      "url": "https://www.fasttools.store/calculator/time-duration",
       "description": "Advanced time duration calculator with 7 calculation types including duration, addition, subtraction, business hours, timezone conversion, work days, and overtime calculations.",
       "featureList": [
         "Time Duration Calculation",
@@ -99,7 +99,7 @@ export default function TimeDurationCalculatorGuide() {
         <div className="container mx-auto px-4 py-8">
           {/* Try Time Duration Calculator Button */}
           <div className="text-center mb-8">
-            <a href="/tools/time-duration" className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+            <a href="/calculator/time-duration" className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
               <Clock className="h-5 w-5" />
               Try Time Duration Calculator
             </a>

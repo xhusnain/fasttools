@@ -98,7 +98,7 @@ export default function TriangleCalculatorGuide() {
           {/* Try Triangle Calculator Button */}
           <div className="mt-8">
             <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
-              <Link href="/tools/triangle-calculator">
+              <Link href="/calculator/triangle-calculator">
                 <Triangle className="mr-2 h-5 w-5" />
                 Try Triangle Calculator
               </Link>
@@ -872,7 +872,7 @@ export default function TriangleCalculatorGuide() {
                       Use our advanced triangle calculator to solve complex geometric problems instantly...
                   </p>
                   <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
-                      <Link href="/tools/triangle-calculator">
+                      <Link href="/calculator/triangle-calculator">
                           Try Our Triangle Calculator
                           <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>

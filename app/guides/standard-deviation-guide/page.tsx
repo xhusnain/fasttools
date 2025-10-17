@@ -2270,7 +2270,7 @@ export default function StandardDeviationGuide() {
                 Use our free standard deviation calculator to analyze your data instantly with advanced statistical features.
               </p>
               <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
-                <Link href="/tools/standard-deviation-calculator">
+                <Link href="/calculator/standard-deviation-calculator">
                   Try Our Standard Deviation Calculator
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>

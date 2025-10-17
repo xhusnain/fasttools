@@ -69,7 +69,7 @@ export default function DateDifferenceCalculatorGuide() {
           {/* Try Date Difference Calculator Button */}
           <div className="mt-8">
             <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
-              <Link href="/tools/date-difference">
+              <Link href="/calculator/date-difference">
                 <Calendar className="mr-2 h-5 w-5" />
                 Try Date Difference Calculator
               </Link>
@@ -418,7 +418,7 @@ export default function DateDifferenceCalculatorGuide() {
               </CardHeader>
               <CardContent>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <Link href="/tools/age-calculator" className="block">
+                  <Link href="/calculator/age-calculator" className="block">
                     <Card className="hover:shadow-lg transition-shadow">
                       <CardContent className="p-6">
                         <h4 className="font-semibold mb-2 text-foreground">Age Calculator</h4>
@@ -433,7 +433,7 @@ export default function DateDifferenceCalculatorGuide() {
                     </Card>
                   </Link>
 
-                  <Link href="/tools/workday-calculator" className="block">
+                  <Link href="/calculator/workday-calculator" className="block">
                     <Card className="hover:shadow-lg transition-shadow">
                       <CardContent className="p-6">
                         <h4 className="font-semibold mb-2 text-foreground">Workday Calculator</h4>
@@ -448,7 +448,7 @@ export default function DateDifferenceCalculatorGuide() {
                     </Card>
                   </Link>
 
-                  <Link href="/tools/time-duration-calculator" className="block">
+                  <Link href="/calculator/time-duration-calculator" className="block">
                     <Card className="hover:shadow-lg transition-shadow">
                       <CardContent className="p-6">
                         <h4 className="font-semibold mb-2 text-foreground">Time Duration Calculator</h4>
@@ -463,7 +463,7 @@ export default function DateDifferenceCalculatorGuide() {
                     </Card>
                   </Link>
 
-                  <Link href="/tools/date-to-day-finder" className="block">
+                  <Link href="/calculator/date-to-day-finder" className="block">
                     <Card className="hover:shadow-lg transition-shadow">
                       <CardContent className="p-6">
                         <h4 className="font-semibold mb-2 text-foreground">Date to Day Finder</h4>
@@ -502,13 +502,13 @@ export default function DateDifferenceCalculatorGuide() {
             hours, minutes, and seconds with precision and accuracy!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/tools/date-difference">
+            <Link href="/calculator/date-difference">
               <Button size="lg" className="w-full sm:w-auto">
                 <Calculator className="mr-2 h-5 w-5" />
                 Try Date Difference Calculator
               </Button>
             </Link>
-            <Link href="/tools">
+            <Link href="/calculator">
               <Button variant="outline" size="lg" className="w-full sm:w-auto">
                 <Globe className="mr-2 h-5 w-5" />
                 Explore All Tools

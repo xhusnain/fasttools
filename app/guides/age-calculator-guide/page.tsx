@@ -969,7 +969,7 @@ export default function AgeCalculatorGuide() {
               hours, minutes, and seconds with precision and accuracy!
             </p>
             <Button asChild size="lg" className="text-lg px-8 py-4">
-              <Link href="/tools/age-calculator" className="flex items-center gap-2">
+              <Link href="/calculator/age-calculator" className="flex items-center gap-2">
                 Calculate Age Now
                 <ArrowRight className="h-5 w-5" />
               </Link>
@@ -1009,7 +1009,7 @@ export default function AgeCalculatorGuide() {
               <div>
                 <h4>DaySchedule Age Calculator</h4>
                 <p>Years, months, days - 96% accuracy - 4.4/5 rating - Free</p>
-                <a href="https://dayschedule.com/tools/age-calculator" target="_blank" rel="noopener noreferrer">DaySchedule Age Calculator</a>
+                <a href="https://dayschedule.com/calculator/age-calculator" target="_blank" rel="noopener noreferrer">DaySchedule Age Calculator</a>
               </div>
               
               <div>
@@ -1087,7 +1087,7 @@ export default function AgeCalculatorGuide() {
                     Calculate the exact difference between two dates in years, months, and days.
                   </p>
                   <Button asChild variant="outline" size="sm">
-                    <Link href="/tools/date-difference">Try Date Calculator</Link>
+                    <Link href="/calculator/date-difference">Try Date Calculator</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -1098,7 +1098,7 @@ export default function AgeCalculatorGuide() {
                     Calculate the time duration between two times in hours and minutes.
                   </p>
                   <Button asChild variant="outline" size="sm">
-                    <Link href="/tools/time-duration">Try Time Calculator</Link>
+                    <Link href="/calculator/time-duration">Try Time Calculator</Link>
                   </Button>
                 </CardContent>
               </Card>

@@ -49,7 +49,7 @@ export default function ScientificCalculatorGuide() {
         {/* Try Scientific Calculator Button */}
         <div className="mt-8">
           <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
-            <Link href="/tools/scientific-calculator">
+            <Link href="/calculator/scientific-calculator">
               <Calculator className="mr-2 h-5 w-5" />
               Try Scientific Calculator
             </Link>
@@ -939,7 +939,7 @@ export default function ScientificCalculatorGuide() {
                 Practice with our free scientific calculator and master advanced mathematical functions. Perfect for students, engineers, and professionals.
               </p>
               <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
-                <Link href="/tools/scientific-calculator">
+                <Link href="/calculator/scientific-calculator">
                   Try Our Scientific Calculator Now
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>

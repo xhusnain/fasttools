@@ -27,7 +27,7 @@ export default function EMICalculatorGuide() {
       "@type": "WebApplication",
       name: "EMI Calculator with Amortization Schedule",
       description: "Advanced EMI calculator providing detailed amortization schedules, yearly payment breakdown, and comprehensive loan analysis for all types of loans",
-      url: "https://fasttools.store/tools/loan-calculator",
+      url: "https://fasttools.store/calculator/loan-calculator",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web Browser",
       offers: {
@@ -91,7 +91,7 @@ export default function EMICalculatorGuide() {
                 {/* Try EMI Calculator Button */}
                 <div className="mt-8">
                   <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
-                    <Link href="/tools/loan-calculator">
+                    <Link href="/calculator/loan-calculator">
                       <Calculator className="mr-2 h-5 w-5" />
                       Try EMI Calculator
                     </Link>

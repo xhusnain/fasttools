@@ -276,7 +276,7 @@ export default function HomePage() {
           position: 3,
           name: "Calculator Tools", 
           description: "Financial, business, and general purpose calculators for all your calculation needs",
-          url: "https://www.fasttools.store/tools"
+          url: "https://www.fasttools.store/calculator"
         },
         {
           "@type": "ListItem",
@@ -1251,7 +1251,7 @@ export default function HomePage() {
                 </Link>
 
                 {/* Calculator Tools Category */}
-                <Link href="/tools" className="group">
+                <Link href="/calculator" className="group">
                   <Card className="h-full hover:shadow-lg transition-all duration-200 hover:border-[#F35B04]/20">
                     <CardHeader>
                       <div className="flex items-center gap-3 mb-4">

@@ -8,7 +8,7 @@ export function CategoryDropdown() {
   const [isOpen, setIsOpen] = useState(false)
 
   const categories = [
-    { name: "Calculators", href: "/tools" },
+    { name: "Calculators", href: "/calculator" },
     { name: "Converters", href: "/converters" },
     { name: "SEO Tools", href: "/seo-tools" },
     { name: "Fun Tools", href: "/fun-tools" },

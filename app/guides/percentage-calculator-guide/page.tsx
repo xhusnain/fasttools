@@ -89,7 +89,7 @@ export default function PercentageCalculatorGuide() {
                   
                   {/* Try Percentage Calculator Button */}
                   <div className="mt-6">
-                    <a href="/tools/percentage-calculator" className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+                    <a href="/calculator/percentage-calculator" className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
                       <Calculator className="h-5 w-5" />
                       Try Percentage Calculator
                     </a>
@@ -484,12 +484,12 @@ export default function PercentageCalculatorGuide() {
                     
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {[
-                        { name: "BMI Calculator", desc: "Calculate Body Mass Index", href: "/tools/bmi-calculator" },
-                        { name: "EMI Calculator", desc: "Calculate loan payments", href: "/tools/loan-calculator" },
-                        { name: "Age Calculator", desc: "Calculate age in years, months, days", href: "/tools/age-calculator" },
-                        { name: "Date Difference Calculator", desc: "Calculate days between dates", href: "/tools/date-difference" },
-                        { name: "Tip Calculator", desc: "Calculate tips and gratuity", href: "/tools/tip-calculator" },
-                        { name: "Discount Calculator", desc: "Calculate discounts and savings", href: "/tools/discount-calculator" }
+                        { name: "BMI Calculator", desc: "Calculate Body Mass Index", href: "/calculator/bmi-calculator" },
+                        { name: "EMI Calculator", desc: "Calculate loan payments", href: "/calculator/loan-calculator" },
+                        { name: "Age Calculator", desc: "Calculate age in years, months, days", href: "/calculator/age-calculator" },
+                        { name: "Date Difference Calculator", desc: "Calculate days between dates", href: "/calculator/date-difference" },
+                        { name: "Tip Calculator", desc: "Calculate tips and gratuity", href: "/calculator/tip-calculator" },
+                        { name: "Discount Calculator", desc: "Calculate discounts and savings", href: "/calculator/discount-calculator" }
                       ].map((tool, index) => (
                         <a
                           key={index}

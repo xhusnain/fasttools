@@ -11,7 +11,7 @@ export function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <Link
-                  href="/tools/conversion-calculator"
+                  href="/calculator/conversion-calculator"
                   className="text-sm text-gray-700 hover:text-[#F35B04] transition-colors duration-200"
                 >
                   Conversion Calculator
@@ -19,7 +19,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tools/age-calculator"
+                  href="/calculator/age-calculator"
                   className="text-sm text-gray-700 hover:text-[#F35B04] transition-colors duration-200"
                 >
                   Age Calculator
@@ -27,7 +27,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tools/date-difference"
+                  href="/calculator/date-difference"
                   className="text-sm text-gray-700 hover:text-[#F35B04] transition-colors duration-200"
                 >
                   Date Difference
@@ -35,7 +35,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tools/bmi-calculator"
+                  href="/calculator/bmi-calculator"
                   className="text-sm text-gray-700 hover:text-[#F35B04] transition-colors duration-200"
                 >
                   BMI Calculator
@@ -43,7 +43,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tools/loan-calculator"
+                  href="/calculator/loan-calculator"
                   className="text-sm text-gray-700 hover:text-[#F35B04] transition-colors duration-200"
                 >
                   Loan EMI Calculator
@@ -51,7 +51,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tools/percentage-calculator"
+                  href="/calculator/percentage-calculator"
                   className="text-sm text-gray-700 hover:text-[#F35B04] transition-colors duration-200"
                 >
                   Percentage Calculator
@@ -59,7 +59,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tools/time-duration"
+                  href="/calculator/time-duration"
                   className="text-sm text-gray-700 hover:text-[#F35B04] transition-colors duration-200"
                 >
                   Time Duration
@@ -67,7 +67,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tools/tax-calculator"
+                  href="/calculator/tax-calculator"
                   className="text-sm text-gray-700 hover:text-[#F35B04] transition-colors duration-200"
                 >
                   Tax Calculator
@@ -75,7 +75,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tools/compound-interest"
+                  href="/calculator/compound-interest"
                   className="text-sm text-gray-700 hover:text-[#F35B04] transition-colors duration-200"
                 >
                   Compound Interest
@@ -83,7 +83,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tools/ip-subnet-calculator"
+                  href="/calculator/ip-subnet-calculator"
                   className="text-sm text-gray-700 hover:text-[#F35B04] transition-colors duration-200"
                 >
                   IP Subnet Calculator
@@ -91,7 +91,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tools/standard-deviation-calculator"
+                  href="/calculator/standard-deviation-calculator"
                   className="text-sm text-gray-700 hover:text-[#F35B04] transition-colors duration-200"
                 >
                   Standard Deviation Calculator

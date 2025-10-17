@@ -127,7 +127,7 @@ export default function FractionCalculatorGuide() {
           {/* See in Action Button - Start */}
           <div className="mb-8">
             <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
-              <Link href="/tools/fraction-calculator">
+              <Link href="/calculator/fraction-calculator">
                 <Calculator className="mr-2 h-5 w-5" />
                 See Fraction Calculator in Action
               </Link>
@@ -818,7 +818,7 @@ export default function FractionCalculatorGuide() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3">
-                  <Link href="/tools/fraction-calculator">
+                  <Link href="/calculator/fraction-calculator">
                     <Calculator className="mr-2 h-5 w-5" />
                     See Fraction Calculator in Action
                   </Link>

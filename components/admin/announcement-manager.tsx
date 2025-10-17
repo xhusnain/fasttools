@@ -166,7 +166,7 @@ export function AnnouncementManager() {
                 id="href"
                 value={newAnnouncement.href || ""}
                 onChange={(e) => setNewAnnouncement(prev => ({ ...prev, href: e.target.value }))}
-                placeholder="/tools/new-tool"
+                placeholder="/calculator/new-tool"
               />
             </div>
           </div>

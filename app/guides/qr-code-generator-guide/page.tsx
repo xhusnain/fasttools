@@ -765,7 +765,7 @@ export default function QRCodeGeneratorGuide() {
                     Create short, memorable URLs for your QR codes to improve tracking and analytics.
                   </p>
                   <Button asChild variant="outline" size="sm">
-                    <Link href="/tools/url-shortener">Try URL Shortener</Link>
+                    <Link href="/calculator/url-shortener">Try URL Shortener</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -776,7 +776,7 @@ export default function QRCodeGeneratorGuide() {
                     Generate traditional barcodes for product identification and inventory management.
                   </p>
                   <Button asChild variant="outline" size="sm">
-                    <Link href="/tools/barcode-generator">Try Barcode Generator</Link>
+                    <Link href="/calculator/barcode-generator">Try Barcode Generator</Link>
                   </Button>
                 </CardContent>
               </Card>

@@ -39,7 +39,7 @@ export function Header() {
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
           </Link>
           <Link
-            href="/tools"
+            href="/calculator"
             className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 relative group"
           >
             Tools
@@ -59,12 +59,6 @@ export function Header() {
             Contact
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
           </Link>
-          <Button asChild size="sm" className="h-9 px-4 bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg">
-            <Link href="/tools" className="flex items-center gap-2">
-              <Wrench className="h-4 w-4" />
-              Use Tool
-            </Link>
-          </Button>
           {/* Theme toggle removed to keep dark mode default */}
         </div>
 
@@ -86,7 +80,7 @@ export function Header() {
               <p className="text-xs font-semibold text-foreground/60 mb-2">CATEGORIES</p>
               <div className="flex flex-col gap-2">
                 <Link
-                  href="/tools"
+                  href="/calculator"
                   className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >

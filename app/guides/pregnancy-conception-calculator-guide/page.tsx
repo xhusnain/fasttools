@@ -1179,7 +1179,7 @@ export default function PregnancyConceptionCalculatorGuide() {
                 Calculate your conception date and get personalized trimester guidance, nutrition tips, exercise recommendations, and comprehensive pregnancy insights.
               </p>
               <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
-                <Link href="/tools/pregnancy-conception-calculator">
+                <Link href="/calculator/pregnancy-conception-calculator">
                   Try Our Pregnancy Calculator
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>

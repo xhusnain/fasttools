@@ -330,7 +330,7 @@ export default function PregnancyCalculatorGuide() {
               Track your pregnancy with our comprehensive calculator. Get due date estimates, gestational age, weight gain recommendations, and personalized pregnancy insights.
             </p>
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
-              <Link href="/tools/pregnancy-calculator">
+              <Link href="/calculator/pregnancy-calculator">
                 Try Our Pregnancy Calculator
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

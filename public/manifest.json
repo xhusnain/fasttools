@@ -68,7 +68,7 @@
       "name": "Calculators",
       "short_name": "Calculators",
       "description": "Financial and business calculators",
-      "url": "/tools",
+      "url": "/calculator",
       "icons": [
         {
           "src": "/logo.svg",

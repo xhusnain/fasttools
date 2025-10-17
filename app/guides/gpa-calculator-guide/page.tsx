@@ -104,7 +104,7 @@ export default function GPACalculatorGuidePage() {
             {/* Try GPA Calculator Button */}
             <div className="mt-8">
               <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
-                <Link href="/tools/gpa-calculator">
+                <Link href="/calculator/gpa-calculator">
                   <Calculator className="mr-2 h-5 w-5" />
                   Try GPA Calculator
                 </Link>

@@ -38,7 +38,7 @@ export default function IPSubnetCalculatorGuide() {
       "@type": "WebApplication",
       name: "IP Subnet Calculator",
       description: "Advanced IP subnet calculator supporting IPv4/IPv6, CIDR notation, VLSM, supernetting, and comprehensive network analysis",
-      url: "https://fasttools.store/tools/ip-subnet-calculator",
+      url: "https://fasttools.store/calculator/ip-subnet-calculator",
       applicationCategory: "NetworkApplication",
       operatingSystem: "Web Browser",
       offers: {
@@ -101,7 +101,7 @@ export default function IPSubnetCalculatorGuide() {
                 {/* Try IP Subnet Calculator Button */}
                 <div className="mt-6 sm:mt-8">
                   <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 text-base sm:text-lg">
-                    <Link href="/tools/ip-subnet-calculator">
+                    <Link href="/calculator/ip-subnet-calculator">
                       <Network className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                       Try IP Subnet Calculator
                     </Link>
@@ -1109,7 +1109,7 @@ export default function IPSubnetCalculatorGuide() {
                           <a href="https://www.manageengine.com/products/oputils/subnet-calculator.html" className="block text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm">
                             ManageEngine - Subnet Calculator
                           </a>
-                          <a href="https://www.paessler.com/tools/subnet-calculator" className="block text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm">
+                          <a href="https://www.paessler.com/calculator/subnet-calculator" className="block text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm">
                             Paessler - Subnet Calculator
                           </a>
                           <a href="https://www.dnsstuff.com/subnet-calculator" className="block text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm">
@@ -1130,13 +1130,13 @@ export default function IPSubnetCalculatorGuide() {
                     Use our free IP subnet calculator to practice subnetting and verify your calculations.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link href="/tools/ip-subnet-calculator">
+                    <Link href="/calculator/ip-subnet-calculator">
                       <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
                         <Calculator className="mr-2 h-5 w-5" />
                         Try IP Subnet Calculator
                       </Button>
                     </Link>
-                    <Link href="/tools">
+                    <Link href="/calculator">
                       <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
                         <ArrowRight className="mr-2 h-5 w-5" />
                         Explore More Tools
@@ -1156,7 +1156,7 @@ export default function IPSubnetCalculatorGuide() {
                     <CardTitle className="text-lg">Quick Access</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
-                    <Link href="/tools/ip-subnet-calculator" className="block">
+                    <Link href="/calculator/ip-subnet-calculator" className="block">
                       <Button className="w-full justify-start" variant="outline">
                         <Calculator className="mr-2 h-4 w-4" />
                         IP Subnet Calculator
@@ -1168,7 +1168,7 @@ export default function IPSubnetCalculatorGuide() {
                         Developer Tools
                       </Button>
                     </Link>
-                    <Link href="/tools" className="block">
+                    <Link href="/calculator" className="block">
                       <Button className="w-full justify-start" variant="outline">
                         <Target className="mr-2 h-4 w-4" />
                         All Tools

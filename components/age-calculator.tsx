@@ -81,7 +81,7 @@ export function AgeCalculator() {
       const ageOnToday = `${years} years, ${months} months, ${days} days`
 
       // Shareable link
-      const shareableLink = `${window.location.origin}/tools/age-calculator?dob=${birthDate}${targetDate ? `&target=${targetDate}` : ''}`
+      const shareableLink = `${window.location.origin}/calculator/age-calculator?dob=${birthDate}${targetDate ? `&target=${targetDate}` : ''}`
 
       setResult({
         years,

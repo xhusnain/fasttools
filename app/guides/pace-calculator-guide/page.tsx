@@ -1059,7 +1059,7 @@ export default function PaceCalculatorGuide() {
               Calculate running pace, training zones, heart rate analysis, race predictions, and VO2 Max with our professional-grade pace calculator. Perfect for serious athletes and coaches.
             </p>
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
-              <Link href="/tools/pace-calculator">
+              <Link href="/calculator/pace-calculator">
                 Try Our Pace Calculator
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

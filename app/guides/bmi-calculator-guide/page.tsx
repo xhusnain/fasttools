@@ -27,7 +27,7 @@ export default function BMICalculatorGuide() {
       "@type": "WebApplication",
       name: "BMI Calculator with Personalized Health Guidance",
       description: "Advanced BMI calculator providing personalized nutrition plans, workout recommendations, and health guidance based on BMI categories",
-      url: "https://fasttools.store/tools/bmi-calculator",
+      url: "https://fasttools.store/calculator/bmi-calculator",
       applicationCategory: "HealthApplication",
       operatingSystem: "Web Browser",
       offers: {
@@ -89,7 +89,7 @@ export default function BMICalculatorGuide() {
                 {/* Try BMI Calculator Button */}
                 <div className="mt-8">
                   <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
-                    <Link href="/tools/bmi-calculator">
+                    <Link href="/calculator/bmi-calculator">
                       <Calculator className="mr-2 h-5 w-5" />
                       Try BMI Calculator
                     </Link>
