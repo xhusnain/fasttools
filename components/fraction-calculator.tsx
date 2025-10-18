@@ -40,8 +40,8 @@ interface FractionResult {
 
 export default function FractionCalculator() {
   const [operation, setOperation] = useState("add")
-  const [fraction1, setFraction1] = useState<Fraction>({ numerator: 1, denominator: 2 })
-  const [fraction2, setFraction2] = useState<Fraction>({ numerator: 1, denominator: 3 })
+  const [fraction1, setFraction1] = useState<Fraction>({ numerator: 0, denominator: 0 })
+  const [fraction2, setFraction2] = useState<Fraction>({ numerator: 0, denominator: 0 })
   const [result, setResult] = useState<FractionResult | null>(null)
   const [history, setHistory] = useState<FractionResult[]>([])
   const [showAdvanced, setShowAdvanced] = useState(false)
@@ -94,6 +94,12 @@ export default function FractionCalculator() {
     try {
       const { numerator: n1, denominator: d1 } = fraction1
       const { numerator: n2, denominator: d2 } = fraction2
+
+      // Check if inputs are empty or invalid - don't calculate if all fields are 0
+      if (n1 === 0 && d1 === 0 && n2 === 0 && d2 === 0) {
+        setResult(null)
+        return
+      }
 
       // Validation
       if (d1 === 0 || d2 === 0) {
@@ -183,8 +189,8 @@ export default function FractionCalculator() {
   }, [calculateFraction])
 
   const resetCalculator = () => {
-    setFraction1({ numerator: 1, denominator: 2 })
-    setFraction2({ numerator: 1, denominator: 3 })
+    setFraction1({ numerator: 0, denominator: 0 })
+    setFraction2({ numerator: 0, denominator: 0 })
     setResult(null)
     setHistory([])
   }
@@ -283,7 +289,7 @@ Mixed Number: ${result.mixedNumber}`
           </div>
 
           {/* Fraction Inputs */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
             {/* First Fraction */}
             <div className="space-y-4">
               <Label className="text-base font-semibold">First Fraction</Label>
@@ -293,10 +299,10 @@ Mixed Number: ${result.mixedNumber}`
                   <Input
                     id="numerator1"
                     type="number"
-                    value={fraction1.numerator}
+                    value={fraction1.numerator === 0 ? "" : fraction1.numerator}
                     onChange={(e) => handleFractionChange("fraction1", "numerator", e.target.value)}
-                    className="h-12 text-center text-lg font-semibold"
-                    placeholder="1"
+                    className="h-10 md:h-12 text-center text-base md:text-lg font-semibold"
+                    placeholder="Enter numerator"
                   />
                 </div>
                 <div className="flex items-center justify-center">
@@ -307,10 +313,10 @@ Mixed Number: ${result.mixedNumber}`
                   <Input
                     id="denominator1"
                     type="number"
-                    value={fraction1.denominator}
+                    value={fraction1.denominator === 0 ? "" : fraction1.denominator}
                     onChange={(e) => handleFractionChange("fraction1", "denominator", e.target.value)}
-                    className="h-12 text-center text-lg font-semibold"
-                    placeholder="2"
+                    className="h-10 md:h-12 text-center text-base md:text-lg font-semibold"
+                    placeholder="Enter denominator"
                   />
                 </div>
               </div>
@@ -325,10 +331,10 @@ Mixed Number: ${result.mixedNumber}`
                   <Input
                     id="numerator2"
                     type="number"
-                    value={fraction2.numerator}
+                    value={fraction2.numerator === 0 ? "" : fraction2.numerator}
                     onChange={(e) => handleFractionChange("fraction2", "numerator", e.target.value)}
-                    className="h-12 text-center text-lg font-semibold"
-                    placeholder="1"
+                    className="h-10 md:h-12 text-center text-base md:text-lg font-semibold"
+                    placeholder="Enter numerator"
                   />
                 </div>
                 <div className="flex items-center justify-center">
@@ -339,10 +345,10 @@ Mixed Number: ${result.mixedNumber}`
                   <Input
                     id="denominator2"
                     type="number"
-                    value={fraction2.denominator}
+                    value={fraction2.denominator === 0 ? "" : fraction2.denominator}
                     onChange={(e) => handleFractionChange("fraction2", "denominator", e.target.value)}
-                    className="h-12 text-center text-lg font-semibold"
-                    placeholder="3"
+                    className="h-10 md:h-12 text-center text-base md:text-lg font-semibold"
+                    placeholder="Enter denominator"
                   />
                 </div>
               </div>
@@ -350,21 +356,21 @@ Mixed Number: ${result.mixedNumber}`
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <Button 
               onClick={calculateFraction} 
-              className="flex-1 min-w-[200px] h-12 text-base font-semibold"
+              className="flex-1 h-10 md:h-12 text-sm md:text-base font-semibold"
               size="lg"
             >
               <Calculator className="h-4 w-4 mr-2" />
               Calculate
             </Button>
-            <Button variant="outline" onClick={resetCalculator} className="h-12">
+            <Button variant="outline" onClick={resetCalculator} className="h-10 md:h-12 text-sm md:text-base">
               <RotateCcw className="h-4 w-4 mr-2" />
               Reset
             </Button>
             {result && (
-              <Button variant="outline" onClick={copyResult} className="h-12">
+              <Button variant="outline" onClick={copyResult} className="h-10 md:h-12 text-sm md:text-base">
                 <Copy className="h-4 w-4 mr-2" />
                 Copy
               </Button>
@@ -403,35 +409,35 @@ Mixed Number: ${result.mixedNumber}`
                 </div>
 
                 {/* Results Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
                   {/* Simplified Result */}
-                  <div className="bg-white/50 dark:bg-slate-800/50 rounded-lg p-4 border border-green-200 dark:border-green-700">
-                    <div className="text-sm font-medium text-green-700 dark:text-green-300 mb-2">Simplified Result</div>
-                    <div className="text-2xl font-bold text-green-800 dark:text-green-200 text-center">
+                  <div className="bg-white/50 dark:bg-slate-800/50 rounded-lg p-3 md:p-4 border border-green-200 dark:border-green-700">
+                    <div className="text-xs md:text-sm font-medium text-green-700 dark:text-green-300 mb-2">Simplified Result</div>
+                    <div className="text-lg md:text-2xl font-bold text-green-800 dark:text-green-200 text-center">
                       {result.result.numerator}/{result.result.denominator}
                     </div>
                   </div>
 
                   {/* Decimal Result */}
-                  <div className="bg-white/50 dark:bg-slate-800/50 rounded-lg p-4 border border-green-200 dark:border-green-700">
-                    <div className="text-sm font-medium text-green-700 dark:text-green-300 mb-2">Decimal</div>
-                    <div className="text-2xl font-bold text-green-800 dark:text-green-200 text-center">
+                  <div className="bg-white/50 dark:bg-slate-800/50 rounded-lg p-3 md:p-4 border border-green-200 dark:border-green-700">
+                    <div className="text-xs md:text-sm font-medium text-green-700 dark:text-green-300 mb-2">Decimal</div>
+                    <div className="text-lg md:text-2xl font-bold text-green-800 dark:text-green-200 text-center">
                       {formatNumber(result.decimal)}
                     </div>
                   </div>
 
                   {/* Percentage Result */}
-                  <div className="bg-white/50 dark:bg-slate-800/50 rounded-lg p-4 border border-green-200 dark:border-green-700">
-                    <div className="text-sm font-medium text-green-700 dark:text-green-300 mb-2">Percentage</div>
-                    <div className="text-2xl font-bold text-green-800 dark:text-green-200 text-center">
+                  <div className="bg-white/50 dark:bg-slate-800/50 rounded-lg p-3 md:p-4 border border-green-200 dark:border-green-700">
+                    <div className="text-xs md:text-sm font-medium text-green-700 dark:text-green-300 mb-2">Percentage</div>
+                    <div className="text-lg md:text-2xl font-bold text-green-800 dark:text-green-200 text-center">
                       {formatNumber(result.percentage)}%
                     </div>
                   </div>
 
                   {/* Mixed Number */}
-                  <div className="bg-white/50 dark:bg-slate-800/50 rounded-lg p-4 border border-green-200 dark:border-green-700">
-                    <div className="text-sm font-medium text-green-700 dark:text-green-300 mb-2">Mixed Number</div>
-                    <div className="text-2xl font-bold text-green-800 dark:text-green-200 text-center">
+                  <div className="bg-white/50 dark:bg-slate-800/50 rounded-lg p-3 md:p-4 border border-green-200 dark:border-green-700">
+                    <div className="text-xs md:text-sm font-medium text-green-700 dark:text-green-300 mb-2">Mixed Number</div>
+                    <div className="text-lg md:text-2xl font-bold text-green-800 dark:text-green-200 text-center">
                       {result.mixedNumber}
                     </div>
                   </div>
