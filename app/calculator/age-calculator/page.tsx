@@ -264,7 +264,7 @@ export default function AgeCalculatorPage() {
 
         <div className="max-w-5xl mx-auto">
           <div className="text-center space-y-4 mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500 text-white text-xs font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-orange-500 to-orange-500 text-white text-xs font-medium mb-4">
               <Calculator className="h-3 w-3" />
               <span>Professional Age Calculator</span>
             </div>
@@ -289,7 +289,7 @@ export default function AgeCalculatorPage() {
               <div className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-card border border-border">
                 <Zap className="h-3 w-3 text-yellow-500" />
                 <span className="text-yellow-500 font-medium">Free Forever</span>
-              </div>
+                </div>
               <div className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-card border border-border">
                 <Target className="h-3 w-3 text-purple-500" />
                 <span className="text-purple-500 font-medium">Accurate</span>
@@ -541,7 +541,7 @@ export default function AgeCalculatorPage() {
                       <li>• Divisible by 4: Leap year</li>
                       <li>• Divisible by 100: Not leap year (unless divisible by 400)</li>
                       <li>• Divisible by 400: Leap year</li>
-                    </ul>
+                </ul>
                   </div>
                   <div className="bg-green-50 dark:bg-green-950/20 p-4 rounded-lg border border-green-200 dark:border-green-800">
                     <h4 className="font-semibold text-green-800 dark:text-green-200 mb-2">Examples</h4>
@@ -594,9 +594,9 @@ export default function AgeCalculatorPage() {
                     <li>• <strong>Age-Appropriate Content:</strong> Educational content matching</li>
                     <li>• <strong>Parent Communication:</strong> Age information for parents</li>
                   </ul>
-                </div>
-              </div>
-            </div>
+                  </div>
+                  </div>
+                  </div>
 
             {/* Age Calculation Accuracy Section */}
             <div className="bg-card border border-border rounded-lg p-6">
@@ -882,7 +882,7 @@ export default function AgeCalculatorPage() {
                     <li>• <strong>Medical History:</strong> Age-related medical history tracking</li>
                     <li>• <strong>Treatment Planning:</strong> Age considerations in medical treatment</li>
                     <li>• <strong>Health Screening:</strong> Age-based health screening schedules</li>
-                  </ul>
+                </ul>
                 </div>
               </div>
             </div>
@@ -1157,13 +1157,13 @@ export default function AgeCalculatorPage() {
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Year End Countdown</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Live countdown to the end of the year with exact time remaining.</p>
                   <a href="/date-time-tools/year-end-countdown" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Year End Countdown →</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </>
   )
 }
