@@ -464,12 +464,12 @@ export default function CompoundInterestPage() {
                         </div>
                         <p className="text-xs text-muted-foreground mb-1">{desc}</p>
                         <p className="text-xs text-primary font-mono bg-primary/10 px-1.5 py-0.5 rounded">{example}</p>
-                      </div>
-                    ))}
                   </div>
-                </div>
+                ))}
+              </div>
+            </div>
 
-                {/* Advanced Features */}
+            {/* Advanced Features */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                     <div className="p-1.5 bg-primary/10 rounded-lg">

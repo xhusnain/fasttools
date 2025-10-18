@@ -399,7 +399,7 @@ export default function TaxCalculatorPage() {
                     <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                   </div>
                   <AdSpace slot="content" className="w-full h-20 sm:h-24 md:h-28 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
+                    </div>
                 
                 {/* How to Use Section */}
                 <div className="mt-6 md:mt-8 space-y-4 md:space-y-6">
@@ -495,10 +495,10 @@ export default function TaxCalculatorPage() {
                           </div>
                           <p className="text-xs text-muted-foreground mb-1">{desc}</p>
                           <p className="text-xs text-primary font-mono bg-primary/10 px-1.5 py-0.5 rounded">{example}</p>
-                        </div>
-                      ))}
-                    </div>
                   </div>
+                ))}
+              </div>
+            </div>
 
             {/* Advanced Features */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">

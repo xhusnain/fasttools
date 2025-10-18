@@ -427,10 +427,10 @@ export default function ConcreteCalculatorPage() {
                         <div className="flex items-center gap-1.5 mb-1">
                           <Icon className="h-3 w-3 text-primary" />
                           <h3 className="font-semibold text-foreground text-xs md:text-sm">{type}</h3>
-                        </div>
+                  </div>
                         <p className="text-xs text-muted-foreground mb-1">{desc}</p>
                         <p className="text-xs text-primary font-mono bg-primary/10 px-1.5 py-0.5 rounded">{example}</p>
-                      </div>
+                </div>
                     ))}
               </div>
             </div>
@@ -528,10 +528,10 @@ export default function ConcreteCalculatorPage() {
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Info className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    </div>
+              </div>
                     Frequently Asked Questions
                   </h2>
-                  <div className="space-y-3">
+              <div className="space-y-3">
                     {[
                       {
                         question: "How accurate is the concrete calculator?",
@@ -617,9 +617,9 @@ export default function ConcreteCalculatorPage() {
                       <div key={index} className="border border-border rounded-lg p-3 md:p-4">
                         <h3 className="font-semibold text-foreground text-sm md:text-base mb-2">{faq.question}</h3>
                         <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
-                      </div>
+                </div>
                     ))}
-                  </div>
+                </div>
                 </div>
 
                 {/* Related Tools */}
