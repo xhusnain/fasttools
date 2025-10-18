@@ -50,6 +50,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
   const [result, setResult] = useState<CalculationResult | null>(null)
   const [history, setHistory] = useState<CalculationResult[]>([])
   const [isCalculating, setIsCalculating] = useState(false)
+  const [activeTab, setActiveTab] = useState("basic")
 
   // Parse input data
   useEffect(() => {
@@ -306,7 +307,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
             <Button 
               onClick={handleCalculate} 
               disabled={dataPoints.length < 2 || isCalculating}
-              className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg"
+              className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg"
             >
               {isCalculating ? (
                 <>
@@ -392,12 +393,32 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
           </Card>
 
           {/* Detailed Results */}
-          <Tabs defaultValue="basic" className="w-full">
-            <TabsList className="grid w-full grid-cols-4">
-              <TabsTrigger value="basic">Basic Stats</TabsTrigger>
-              <TabsTrigger value="advanced">Advanced</TabsTrigger>
-              <TabsTrigger value="distribution">Distribution</TabsTrigger>
-              <TabsTrigger value="confidence">Confidence</TabsTrigger>
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+            <TabsList className="grid w-full grid-cols-4 bg-orange-100 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800">
+              <TabsTrigger 
+                value="basic" 
+                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white text-orange-700 dark:text-orange-300 hover:bg-orange-200 dark:hover:bg-orange-800/50"
+              >
+                Basic Stats
+              </TabsTrigger>
+              <TabsTrigger 
+                value="advanced" 
+                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white text-orange-700 dark:text-orange-300 hover:bg-orange-200 dark:hover:bg-orange-800/50"
+              >
+                Advanced
+              </TabsTrigger>
+              <TabsTrigger 
+                value="distribution" 
+                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white text-orange-700 dark:text-orange-300 hover:bg-orange-200 dark:hover:bg-orange-800/50"
+              >
+                Distribution
+              </TabsTrigger>
+              <TabsTrigger 
+                value="confidence" 
+                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white text-orange-700 dark:text-orange-300 hover:bg-orange-200 dark:hover:bg-orange-800/50"
+              >
+                Confidence
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="basic" className="space-y-4">
