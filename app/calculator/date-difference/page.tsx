@@ -323,7 +323,7 @@ export default function DateDifferencePage() {
             {/* Sticky Sidebar Container */}
             <div className="sticky top-4 space-y-6">
               {/* Top Sidebar Ad */}
-              <div className="bg-card border border-border rounded-lg p-4">
+              <div className="hidden lg:block bg-card border border-border rounded-lg p-4">
                   <div className="text-center">
                   <div className="text-sm font-medium text-muted-foreground mb-2">Advertisement</div>
                   <AdSpace slot="sidebar" className="h-80 rounded-lg overflow-hidden" />
@@ -332,7 +332,7 @@ export default function DateDifferencePage() {
 
 
               {/* Additional Sidebar Ad */}
-              <div className="bg-card border border-border rounded-lg p-4">
+              <div className="hidden lg:block bg-card border border-border rounded-lg p-4">
                   <div className="text-center">
                   <div className="text-sm font-medium text-muted-foreground mb-2">Advertisement</div>
                   <AdSpace slot="sidebar" className="h-80 rounded-lg overflow-hidden" />
