@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   keywords: [
     "percentage calculator",
     "percentage increase calculator",
-    "percentage decrease calculator", 
+    "percentage decrease calculator",
     "find percentage of a number",
     "what percent of calculator",
     "percentage difference calculator",
@@ -111,8 +111,8 @@ export default function PercentageCalculatorPage() {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-yellow-400">Free Online Percentage Calculator</h1>
             <p className="text-base md:text-lg text-muted-foreground text-pretty leading-relaxed">
               <strong>Free percentage calculator</strong> for all your math needs. Calculate <strong>percentage increase</strong>, <strong>percentage decrease</strong>, <strong>percentage difference</strong>, <strong>discounts</strong>, <strong>tips</strong>, <strong>grades</strong>, <strong>profit margins</strong>, and more. <strong>Accurate</strong> and <strong>quick</strong> online tool with step-by-step formulas.
-            </p>
-          </div>
+          </p>
+        </div>
 
           <div className="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px] gap-3 md:gap-4 lg:gap-6">
           <div>
@@ -140,7 +140,7 @@ export default function PercentageCalculatorPage() {
                       <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">1. Select Calculation Type</h3>
                         <p className="text-xs md:text-sm text-muted-foreground">Choose from 7 different percentage calculation types</p>
-                      </div>
+                    </div>
                       <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">2. Enter Values</h3>
                         <p className="text-xs md:text-sm text-muted-foreground">Input your numbers in the appropriate fields</p>
@@ -179,9 +179,9 @@ export default function PercentageCalculatorPage() {
                       <div className="flex items-center gap-2 mb-2">
                         <Icon className="h-4 w-4 text-primary" />
                           <h3 className="font-semibold text-foreground text-sm md:text-base">{type}</h3>
-                        </div>
+                      </div>
                         <p className="text-xs md:text-sm text-muted-foreground mb-2">{desc}</p>
-                        <p className="text-xs text-primary font-mono bg-primary/10 px-2 py-1 rounded">{example}</p>
+                      <p className="text-xs text-primary font-mono bg-primary/10 px-2 py-1 rounded">{example}</p>
                     </div>
                   ))}
                 </div>
@@ -257,9 +257,9 @@ export default function PercentageCalculatorPage() {
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-yellow-400">
                     <div className="p-2 bg-primary/10 rounded-lg">
                       <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-primary" />
-                    </div>
+                  </div>
                     How-To Guides: Find Percentage of a Number
-                  </h2>
+                </h2>
                   <div className="space-y-4 md:space-y-6">
                     <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
                       <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">How to Find Percentage of a Number</h3>
@@ -715,12 +715,12 @@ export default function PercentageCalculatorPage() {
                       <div key={index} className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">{q}</h3>
                         <p className="text-xs md:text-sm text-muted-foreground">{a}</p>
-                      </div>
+                  </div>
                     ))}
                   </div>
                 </div>
               </div>
-              
+
               {/* Mobile/Tablet Bottom AdSpace */}
               <div className="my-8 lg:hidden">
                 <div className="text-center mb-2">

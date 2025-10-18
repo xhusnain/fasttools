@@ -261,12 +261,12 @@ export default function LoanCalculatorPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-3 py-8 md:py-12">
-          <Breadcrumbs
-            items={[
-              { label: "Calculator", href: "/calculator" },
-              { label: "Loan Calculator", href: "/calculator/loan-calculator" },
-            ]}
-          />
+        <Breadcrumbs
+          items={[
+            { label: "Calculator", href: "/calculator" },
+            { label: "Loan Calculator", href: "/calculator/loan-calculator" },
+          ]}
+        />
 
           <div className="max-w-6xl mx-auto">
             {/* Hero Section */}
@@ -278,7 +278,7 @@ export default function LoanCalculatorPage() {
               </div>
               <h1 className="text-3xl md:text-5xl font-bold mb-4 text-yellow-400">Advanced EMI Calculator</h1>
               <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
-                Calculate your Equated Monthly Installment (EMI) for home loans, car loans, personal loans, and education loans worldwide. 
+            Calculate your Equated Monthly Installment (EMI) for home loans, car loans, personal loans, and education loans worldwide. 
                 Get detailed amortization schedule, yearly payment breakdown, visual charts, and comprehensive loan analysis.
               </p>
               <div className="flex flex-wrap justify-center gap-3 mb-6">
@@ -294,39 +294,39 @@ export default function LoanCalculatorPage() {
                   <CheckCircle className="h-3 w-3 mr-1" />
                   Instant Results
                 </Badge>
-              </div>
-            </div>
+          </div>
+        </div>
 
             {/* Main Content Layout - Zoomed Out */}
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-3 md:gap-4 lg:gap-6">
               <div className="space-y-3 md:space-y-4 lg:space-y-5">
-                <EMICalculator />
-            
-                {/* What is EMI Section */}
+            <EMICalculator />
+
+            {/* What is EMI Section */}
                 <Card className="bg-card border border-border">
                   <CardHeader className="pb-3">
                     <CardTitle className="text-lg md:text-xl font-bold text-yellow-400 flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-primary" />
-                      What is EMI?
+                What is EMI?
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-2 md:space-y-3">
                     <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                      <strong>Equated Monthly Installment (EMI)</strong> is the amount payable every month to the bank or any other financial institution 
-                      until the loan amount is fully paid off. It consists of the interest on loan as well as part of the principal amount to be repaid.
-                    </p>
+                  <strong>Equated Monthly Installment (EMI)</strong> is the amount payable every month to the bank or any other financial institution 
+                  until the loan amount is fully paid off. It consists of the interest on loan as well as part of the principal amount to be repaid.
+                </p>
                     <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                      The sum of principal amount and interest is divided by the tenure, i.e., number of months, in which the loan has to be repaid. 
-                      This amount has to be paid monthly. The interest component of the EMI would be larger during the initial months and gradually 
-                      reduce with each payment.
-                    </p>
+                  The sum of principal amount and interest is divided by the tenure, i.e., number of months, in which the loan has to be repaid. 
+                  This amount has to be paid monthly. The interest component of the EMI would be larger during the initial months and gradually 
+                  reduce with each payment.
+                </p>
                     <div className="bg-accent/10 border border-accent/20 rounded-lg p-2 md:p-3">
                       <h3 className="text-sm font-semibold text-foreground mb-1">EMI Formula</h3>
                       <div className="text-xs text-foreground font-mono bg-card p-2 rounded border overflow-x-auto">
-                        EMI = P × r × (1 + r)^n / ((1 + r)^n - 1)
-                      </div>
+                    EMI = P × r × (1 + r)^n / ((1 + r)^n - 1)
+                  </div>
                       <div className="text-xs text-muted-foreground mt-1">
-                        Where: P = Principal Loan Amount, r = Monthly Interest Rate, n = Loan Tenure in Months
+                    Where: P = Principal Loan Amount, r = Monthly Interest Rate, n = Loan Tenure in Months
                       </div>
                     </div>
                   </CardContent>
@@ -356,7 +356,7 @@ export default function LoanCalculatorPage() {
                         <div className="flex items-center gap-2 mb-2">
                           <Home className="h-4 w-4 text-blue-600" />
                           <h3 className="text-sm font-semibold text-blue-800 dark:text-blue-200">Home Loan EMI</h3>
-                        </div>
+              </div>
                         <ul className="text-xs text-blue-700 dark:text-blue-300 space-y-1">
                           <li>• Tenure: 5-30 years</li>
                           <li>• Interest Rate: 6.5% - 12%</li>
@@ -369,7 +369,7 @@ export default function LoanCalculatorPage() {
                         <div className="flex items-center gap-2 mb-2">
                           <Car className="h-4 w-4 text-green-600" />
                           <h3 className="text-sm font-semibold text-green-800 dark:text-green-200">Car Loan EMI</h3>
-                        </div>
+                    </div>
                         <ul className="text-xs text-green-700 dark:text-green-300 space-y-1">
                           <li>• Tenure: 1-7 years</li>
                           <li>• Interest Rate: 7% - 15%</li>
@@ -382,7 +382,7 @@ export default function LoanCalculatorPage() {
                         <div className="flex items-center gap-2 mb-2">
                           <CreditCard className="h-4 w-4 text-purple-600" />
                           <h3 className="text-sm font-semibold text-purple-800 dark:text-purple-200">Personal Loan EMI</h3>
-                        </div>
+                    </div>
                         <ul className="text-xs text-purple-700 dark:text-purple-300 space-y-1">
                           <li>• Tenure: 1-5 years</li>
                           <li>• Interest Rate: 10% - 24%</li>
@@ -395,7 +395,7 @@ export default function LoanCalculatorPage() {
                         <div className="flex items-center gap-2 mb-2">
                           <GraduationCap className="h-4 w-4 text-orange-600" />
                           <h3 className="text-sm font-semibold text-orange-800 dark:text-orange-200">Education Loan EMI</h3>
-                        </div>
+                    </div>
                         <ul className="text-xs text-orange-700 dark:text-orange-300 space-y-1">
                           <li>• Tenure: 5-15 years</li>
                           <li>• Interest Rate: 6% - 14%</li>
@@ -451,7 +451,7 @@ export default function LoanCalculatorPage() {
                           </tr>
                         </tbody>
                       </table>
-                    </div>
+                  </div>
                   </CardContent>
                 </Card>
 
@@ -473,8 +473,8 @@ export default function LoanCalculatorPage() {
                           <li>• Progress tracking with loan completion percentage</li>
                           <li>• Color-coded payment analysis charts</li>
                         </ul>
-                      </div>
-                      <div className="space-y-2">
+                </div>
+                  <div className="space-y-2">
                         <h3 className="text-sm font-semibold text-foreground">Comprehensive Loan Support</h3>
                         <ul className="space-y-1 text-xs text-muted-foreground">
                           <li>• Home loans with EMI in arrears calculation</li>
@@ -500,28 +500,28 @@ export default function LoanCalculatorPage() {
                       <div className="space-y-2 md:space-y-3">
                         <h3 className="text-sm md:text-base font-semibold text-foreground">Step-by-Step Guide</h3>
                         <div className="space-y-1 md:space-y-2">
-                          <div className="flex items-start gap-2">
+                    <div className="flex items-start gap-2">
                             <div className="w-4 h-4 md:w-5 md:h-5 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">1</div>
                             <div>
                               <h4 className="text-xs md:text-sm font-medium text-foreground">Select Loan Type</h4>
                               <p className="text-xs text-muted-foreground">Choose between Home Loan, Car Loan, Personal Loan, or Education Loan</p>
                             </div>
-                          </div>
-                          <div className="flex items-start gap-2">
+                    </div>
+                    <div className="flex items-start gap-2">
                             <div className="w-4 h-4 md:w-5 md:h-5 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</div>
                             <div>
                               <h4 className="text-xs md:text-sm font-medium text-foreground">Enter Loan Amount</h4>
                               <p className="text-xs text-muted-foreground">Input the principal loan amount you wish to borrow</p>
                             </div>
-                          </div>
-                          <div className="flex items-start gap-2">
+                    </div>
+                    <div className="flex items-start gap-2">
                             <div className="w-4 h-4 md:w-5 md:h-5 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">3</div>
                             <div>
                               <h4 className="text-xs md:text-sm font-medium text-foreground">Set Interest Rate</h4>
                               <p className="text-xs text-muted-foreground">Enter the annual interest rate offered by your lender</p>
                             </div>
-                          </div>
-                          <div className="flex items-start gap-2">
+                    </div>
+                    <div className="flex items-start gap-2">
                             <div className="w-4 h-4 md:w-5 md:h-5 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">4</div>
                             <div>
                               <h4 className="text-xs md:text-sm font-medium text-foreground">Choose Loan Tenure</h4>
@@ -548,10 +548,10 @@ export default function LoanCalculatorPage() {
                           <div className="flex items-center gap-2">
                             <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-secondary-accent flex-shrink-0" />
                             <span className="text-xs text-muted-foreground">Prepayment calculations</span>
-                          </div>
-                        </div>
-                      </div>
                     </div>
+                  </div>
+                </div>
+              </div>
                   </CardContent>
                 </Card>
 
@@ -707,7 +707,7 @@ export default function LoanCalculatorPage() {
                           for better terms, and <strong>Consolidate Multiple Loans</strong> into one lower EMI. However, longer tenure 
                           means more total interest paid over time.
                         </p>
-                      </div>
+                  </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">14. What is the maximum EMI I can afford?</h3>
@@ -718,7 +718,7 @@ export default function LoanCalculatorPage() {
                           like credit cards and existing loans, and <strong>Emergency Fund</strong> should cover 6-12 months of EMIs. 
                           Use our <strong>EMI Calculator</strong> to determine your affordable loan amount.
                         </p>
-                      </div>
+                </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">15. How does EMI work for joint loans?</h3>
@@ -729,7 +729,7 @@ export default function LoanCalculatorPage() {
                           <strong>Default by One</strong> affects both credit scores, and <strong>EMI Payment</strong> can be made by either 
                           borrower. <strong>Joint Liability</strong> means both are liable for the entire loan amount.
                         </p>
-                      </div>
+                  </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">16. What happens to EMI during interest rate changes?</h3>
@@ -740,7 +740,7 @@ export default function LoanCalculatorPage() {
                           <strong>EMI Reset</strong> happens at predetermined intervals, and <strong>Borrower Choice</strong> 
                           allows selecting EMI change or tenure adjustment. <strong>Rate Change Notifications</strong> are mandatory.
                         </p>
-                      </div>
+                </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">17. How to calculate EMI for different loan types?</h3>
@@ -751,7 +751,7 @@ export default function LoanCalculatorPage() {
                           <strong>Business Loans</strong> consider business income and cash flow, and <strong>Gold Loans</strong> 
                           have shorter tenures with lower interest rates. Each loan type has specific <strong>EMI Calculation Methods</strong>.
                         </p>
-                      </div>
+                  </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">18. What is EMI moratorium and how does it work?</h3>
@@ -762,7 +762,7 @@ export default function LoanCalculatorPage() {
                           <strong>Eligibility Criteria</strong> must be met for moratorium approval, and <strong>Documentation</strong> 
                           is required to prove financial hardship. <strong>Moratorium Impact</strong> on credit score varies by lender.
                         </p>
-                      </div>
+                </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">19. How does EMI affect my monthly budget?</h3>
@@ -773,7 +773,7 @@ export default function LoanCalculatorPage() {
                           <strong>Savings Goals</strong> may need adjustment, and <strong>Lifestyle Changes</strong> might be required. 
                           <strong>Budget Planning</strong> should always include EMI as non-negotiable expense.
                         </p>
-                      </div>
+                  </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">20. What is the impact of EMI on loan approval?</h3>
@@ -784,7 +784,7 @@ export default function LoanCalculatorPage() {
                           is crucial for EMI payments, and <strong>Loan-to-Value Ratio</strong> impacts EMI calculations. 
                           <strong>Multiple EMIs</strong> can significantly reduce loan approval chances.
                         </p>
-                      </div>
+                </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">21. How to manage EMI payments during financial crisis?</h3>
@@ -795,7 +795,7 @@ export default function LoanCalculatorPage() {
                           by extending tenure, <strong>Seek Financial Counseling</strong> for debt management, and <strong>Avoid Multiple Defaults</strong> 
                           to protect credit score. <strong>Proactive Communication</strong> with lender is crucial.
                         </p>
-                      </div>
+              </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">22. What is the difference between EMI and other payment methods?</h3>
@@ -816,8 +816,8 @@ export default function LoanCalculatorPage() {
                           may have flexible EMI options, <strong>Business Assets</strong> can be used as collateral, <strong>Tax Benefits</strong> 
                           are available on business loan EMIs, and <strong>Business Credit Score</strong> affects EMI terms. 
                           <strong>Working Capital</strong> and <strong>Business Growth</strong> are considered in EMI calculations.
-                        </p>
-                      </div>
+                    </p>
+                  </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">24. What is the impact of EMI on investment decisions?</h3>
@@ -827,8 +827,8 @@ export default function LoanCalculatorPage() {
                           becomes more important, <strong>Investment Timeline</strong> may need adjustment, <strong>Leverage Strategy</strong> 
                           can be used for investments, and <strong>Tax Benefits</strong> from EMI can increase investment capacity. 
                           <strong>Balanced Approach</strong> between EMI payments and investments is crucial.
-                        </p>
-                      </div>
+                    </p>
+                  </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">25. How to choose between EMI and other payment options?</h3>
@@ -839,7 +839,7 @@ export default function LoanCalculatorPage() {
                           determine payment structure, and <strong>Risk Tolerance</strong> affects payment choice. <strong>Financial Planning</strong> 
                           should consider long-term implications of each option.
                         </p>
-                      </div>
+                </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">26. What is the role of EMI in loan refinancing?</h3>
@@ -850,7 +850,7 @@ export default function LoanCalculatorPage() {
                           enables better EMI terms, and <strong>Refinancing Costs</strong> must be considered against EMI savings. 
                           <strong>Break-even Analysis</strong> helps determine refinancing benefits.
                         </p>
-                      </div>
+              </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">27. How does EMI affect retirement planning?</h3>
@@ -860,8 +860,8 @@ export default function LoanCalculatorPage() {
                           must account for EMI payments, <strong>Early Retirement</strong> becomes difficult with EMI, <strong>Asset Allocation</strong> 
                           may need adjustment, and <strong>Emergency Fund</strong> becomes more critical. <strong>Pre-retirement EMI</strong> 
                           planning is essential for comfortable retirement.
-                        </p>
-                      </div>
+                  </p>
+                </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">28. What is the impact of EMI on credit card usage?</h3>
@@ -871,8 +871,8 @@ export default function LoanCalculatorPage() {
                           from multiple EMIs, <strong>Payment Priority</strong> should favor EMI over credit cards, <strong>Balance Transfer</strong> 
                           options may help manage EMI, and <strong>Credit Card EMI</strong> can be used for large purchases. 
                           <strong>Debt Management</strong> becomes crucial with multiple EMIs.
-                        </p>
-                      </div>
+                  </p>
+                </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">29. How to calculate EMI for different currencies?</h3>
@@ -882,8 +882,8 @@ export default function LoanCalculatorPage() {
                           between currencies impact EMI, <strong>Hedging Strategies</strong> can protect against currency risk, 
                           <strong>Tax Implications</strong> vary by currency, and <strong>Regulatory Compliance</strong> 
                           differs across countries. <strong>Professional Advice</strong> is recommended for multi-currency loans.
-                        </p>
-                      </div>
+                  </p>
+                </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">30. What is the future of EMI in digital banking?</h3>
@@ -893,8 +893,8 @@ export default function LoanCalculatorPage() {
                           <strong>Mobile Apps</strong> for EMI management, <strong>AI-powered Insights</strong> for EMI optimization, 
                           <strong>Blockchain Technology</strong> for secure EMI transactions, and <strong>Open Banking</strong> 
                           enables better EMI management. <strong>Fintech Innovation</strong> is revolutionizing EMI experience.
-                        </p>
-                      </div>
+                  </p>
+                </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">31. How does EMI work for education loans?</h3>
@@ -905,7 +905,7 @@ export default function LoanCalculatorPage() {
                           <strong>Career-based EMI</strong> adjustments, and <strong>Scholarship Impact</strong> on EMI calculations. 
                           <strong>Student-friendly</strong> EMI terms are designed for education loans.
                         </p>
-                      </div>
+              </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">32. What is the impact of EMI on insurance planning?</h3>
@@ -916,7 +916,7 @@ export default function LoanCalculatorPage() {
                           <strong>Critical Illness</strong> coverage helps during EMI payments, and <strong>Income Protection</strong> 
                           ensures EMI continuity. <strong>Insurance Adequacy</strong> must consider EMI obligations.
                         </p>
-                      </div>
+          </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">33. How to manage EMI during job loss?</h3>
@@ -927,7 +927,7 @@ export default function LoanCalculatorPage() {
                           for EMI relief, <strong>Negotiate EMI Reduction</strong> with lender, and <strong>Seek Financial Counseling</strong> 
                           for debt management. <strong>Proactive Communication</strong> is key during job loss.
                         </p>
-                      </div>
+                  </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">34. What is the role of EMI in wealth building?</h3>
@@ -938,7 +938,7 @@ export default function LoanCalculatorPage() {
                           benefits from EMI payments, and <strong>Wealth Transfer</strong> through EMI-managed assets. 
                           <strong>Strategic EMI</strong> can accelerate wealth building.
                         </p>
-                      </div>
+                </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">35. How does EMI affect marriage and family planning?</h3>
@@ -949,7 +949,7 @@ export default function LoanCalculatorPage() {
                           <strong>Joint Family Income</strong> can help manage EMI, and <strong>Family Insurance</strong> 
                           must cover EMI obligations. <strong>Family Financial Planning</strong> should include EMI considerations.
                         </p>
-                      </div>
+                  </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">36. What is the impact of EMI on business expansion?</h3>
@@ -960,7 +960,7 @@ export default function LoanCalculatorPage() {
                           must consider EMI obligations, and <strong>Business Planning</strong> should include EMI management. 
                           <strong>Strategic EMI</strong> planning is crucial for business expansion.
                         </p>
-                      </div>
+                </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">37. How to calculate EMI for different income levels?</h3>
@@ -971,7 +971,7 @@ export default function LoanCalculatorPage() {
                           requires special EMI arrangements, and <strong>Multiple Income Sources</strong> can support higher EMI. 
                           <strong>Income Stability</strong> is crucial for EMI planning.
                         </p>
-                      </div>
+              </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">38. What is the impact of EMI on mental health?</h3>
@@ -982,7 +982,7 @@ export default function LoanCalculatorPage() {
                           and <strong>Work Performance</strong> affected by EMI anxiety. <strong>Mental Health Support</strong> 
                           is important for EMI management.
                         </p>
-                      </div>
+                  </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">39. How does EMI work for senior citizens?</h3>
@@ -993,7 +993,7 @@ export default function LoanCalculatorPage() {
                           on senior citizen loans, and <strong>Health Considerations</strong> in EMI planning. <strong>Senior-friendly</strong> 
                           EMI terms are designed for elderly borrowers.
                         </p>
-                      </div>
+                </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">40. What is the future of EMI in sustainable finance?</h3>
@@ -1004,7 +1004,7 @@ export default function LoanCalculatorPage() {
                           EMI options, and <strong>Social Impact</strong> of EMI investments. <strong>Green EMI</strong> 
                           products are emerging in sustainable finance.
                         </p>
-                      </div>
+                  </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">41. How does EMI work for women borrowers?</h3>
@@ -1015,7 +1015,7 @@ export default function LoanCalculatorPage() {
                           for EMI relief, and <strong>Financial Independence</strong> through EMI management. <strong>Women Empowerment</strong> 
                           through EMI education is crucial.
                         </p>
-                      </div>
+                  </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">42. What is the impact of EMI on social media and lifestyle?</h3>
@@ -1026,7 +1026,7 @@ export default function LoanCalculatorPage() {
                           impacting EMI choices, and <strong>Digital Spending</strong> with EMI obligations. <strong>Mindful Spending</strong> 
                           is crucial with EMI commitments.
                         </p>
-                      </div>
+                  </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">43. How to manage EMI during economic recession?</h3>
@@ -1037,7 +1037,7 @@ export default function LoanCalculatorPage() {
                           to maintain EMI payments, and <strong>Financial Counseling</strong> for EMI management. <strong>Recession Planning</strong> 
                           should include EMI strategies.
                         </p>
-                      </div>
+                </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">44. What is the role of EMI in financial literacy?</h3>
@@ -1048,7 +1048,7 @@ export default function LoanCalculatorPage() {
                           considering EMI impact, and <strong>Financial Goal Setting</strong> with EMI considerations. <strong>EMI Education</strong> 
                           is fundamental to financial literacy.
                         </p>
-                      </div>
+              </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">45. How does EMI work for different professions?</h3>
@@ -1059,7 +1059,7 @@ export default function LoanCalculatorPage() {
                           <strong>Government Employees</strong> have job security for EMI, and <strong>Healthcare Workers</strong> 
                           may have special EMI terms. <strong>Professional-specific</strong> EMI products are available.
                         </p>
-                      </div>
+                  </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">46. What is the impact of EMI on entrepreneurship?</h3>
@@ -1070,7 +1070,7 @@ export default function LoanCalculatorPage() {
                           <strong>Cash Flow Management</strong> with EMI obligations, and <strong>Growth Capital</strong> 
                           limited by EMI payments. <strong>Entrepreneurial EMI</strong> planning is crucial for success.
                         </p>
-                      </div>
+                </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">47. How to manage EMI during medical emergencies?</h3>
@@ -1081,7 +1081,7 @@ export default function LoanCalculatorPage() {
                           for EMI payments, and <strong>Medical Loan</strong> options for treatment. <strong>Health Planning</strong> 
                           should include EMI considerations.
                         </p>
-                      </div>
+                    </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">48. What is the impact of EMI on children's education?</h3>
@@ -1092,7 +1092,7 @@ export default function LoanCalculatorPage() {
                           to reduce education costs, and <strong>Education Planning</strong> considering EMI impact. <strong>Child Education</strong> 
                           planning must account for EMI obligations.
                         </p>
-                      </div>
+                  </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">49. How does EMI work for different age groups?</h3>
@@ -1103,7 +1103,7 @@ export default function LoanCalculatorPage() {
                           have limited EMI options, <strong>Age Restrictions</strong> on EMI tenure, and <strong>Life Stage Planning</strong> 
                           with EMI considerations. <strong>Age-appropriate</strong> EMI planning is essential.
                         </p>
-                      </div>
+                    </div>
 
                       <div className="border-l-4 border-primary pl-4">
                         <h3 className="text-sm md:text-base font-semibold text-foreground mb-2">50. What is the future of EMI in artificial intelligence?</h3>
@@ -1114,7 +1114,7 @@ export default function LoanCalculatorPage() {
                           products based on AI analysis, and <strong>Smart EMI</strong> management through AI. <strong>AI-powered EMI</strong> 
                           solutions are transforming the lending industry.
                         </p>
-                      </div>
+                  </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -1134,11 +1134,11 @@ export default function LoanCalculatorPage() {
                     <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                   </div>
                   <AdSpace slot="sidebar" className="w-full h-64 lg:h-72 xl:h-80 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   )

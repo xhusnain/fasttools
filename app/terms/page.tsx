@@ -93,7 +93,7 @@ export default function TermsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
-          <Breadcrumbs items={[{ label: "Terms of Service", href: "/terms" }]} />
+      <Breadcrumbs items={[{ label: "Terms of Service", href: "/terms" }]} />
 
           <div className="max-w-5xl mx-auto">
             {/* Hero Section */}
@@ -162,7 +162,7 @@ export default function TermsPage() {
                   </CardContent>
                 </Card>
               </div>
-            </div>
+        </div>
 
             {/* Main Content */}
             <div className="space-y-8 sm:space-y-12">
@@ -175,11 +175,11 @@ export default function TermsPage() {
                 </CardHeader>
                 <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    These Terms of Service ("Terms") govern your use of FastTools ("we," "our," or "us") website located at fasttools.store (the "Site") and our free online tools and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.
-                  </p>
+              These Terms of Service ("Terms") govern your use of FastTools ("we," "our," or "us") website located at fasttools.store (the "Site") and our free online tools and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.
+            </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    If you do not agree to these Terms, please do not use our Services. We reserve the right to modify these Terms at any time, and your continued use of our Services after such modifications constitutes acceptance of the updated Terms.
-                  </p>
+              If you do not agree to these Terms, please do not use our Services. We reserve the right to modify these Terms at any time, and your continued use of our Services after such modifications constitutes acceptance of the updated Terms.
+            </p>
                   <div className="bg-accent/10 border border-accent/20 rounded-lg p-3 sm:p-4">
                     <div className="flex items-start gap-2 sm:gap-3">
                       <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-accent mt-0.5 flex-shrink-0" />
@@ -203,8 +203,8 @@ export default function TermsPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-muted-foreground leading-relaxed">
-                    FastTools provides free online tools and utilities including but not limited to:
-                  </p>
+              FastTools provides free online tools and utilities including but not limited to:
+            </p>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
@@ -244,8 +244,8 @@ export default function TermsPage() {
                     </div>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">
-                    All tools are provided free of charge for personal and commercial use, subject to the restrictions outlined in these Terms.
-                  </p>
+              All tools are provided free of charge for personal and commercial use, subject to the restrictions outlined in these Terms.
+            </p>
                 </CardContent>
               </Card>
 
@@ -263,7 +263,7 @@ export default function TermsPage() {
                       <CheckCircle className="h-5 w-5 text-accent" />
                       Google AdSense Policy Compliance
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
+            <p className="text-muted-foreground leading-relaxed mb-4">
                       Our Services display advertisements from third parties, including Google AdSense. These advertisements are provided by third parties and are not under our control. We are not responsible for the content, accuracy, or availability of third-party advertisements.
                     </p>
                     <div className="grid md:grid-cols-2 gap-4">
@@ -275,7 +275,7 @@ export default function TermsPage() {
                           <li>• Do not use automated systems to generate ad clicks</li>
                           <li>• Do not manipulate ad placement or behavior</li>
                           <li>• Do not interfere with ad functionality</li>
-                        </ul>
+            </ul>
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">Our Compliance:</h4>
@@ -285,7 +285,7 @@ export default function TermsPage() {
                           <li>• Clear navigation and user experience</li>
                           <li>• No prohibited traffic sources</li>
                           <li>• No invalid click encouragement</li>
-                        </ul>
+            </ul>
                       </div>
                     </div>
                   </div>
@@ -332,7 +332,7 @@ export default function TermsPage() {
                         <li>• Data portability and deletion rights</li>
                         <li>• Fair and transparent service provision</li>
                         <li>• Protection from unauthorized data collection</li>
-                      </ul>
+            </ul>
                     </div>
                     
                     <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
@@ -346,7 +346,7 @@ export default function TermsPage() {
                         <li>• Comply with Google AdSense policies</li>
                         <li>• Maintain service availability and performance</li>
                         <li>• Transparent data practices</li>
-                      </ul>
+            </ul>
                     </div>
                   </div>
                 </CardContent>
@@ -361,7 +361,7 @@ export default function TermsPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed">
                     If you have any questions about these Terms of Service, please contact us:
                   </p>
                   <div className="bg-secondary/50 rounded-lg p-6">
@@ -370,8 +370,8 @@ export default function TermsPage() {
                         <h4 className="font-semibold text-foreground mb-2">Legal Inquiries</h4>
                         <a href="mailto:legal@fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
                           <Mail className="h-4 w-4" />
-                          legal@fasttools.store
-                        </a>
+                  legal@fasttools.store
+                </a>
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">General Support</h4>
@@ -385,8 +385,8 @@ export default function TermsPage() {
                       <h4 className="font-semibold text-foreground mb-2">Website</h4>
                       <a href="https://fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
                         <Globe className="h-4 w-4" />
-                        https://fasttools.store
-                      </a>
+                  https://fasttools.store
+                </a>
                     </div>
                   </div>
                 </CardContent>

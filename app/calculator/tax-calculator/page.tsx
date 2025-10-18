@@ -386,13 +386,13 @@ export default function TaxCalculatorPage() {
               <p className="text-sm md:text-base text-muted-foreground text-pretty leading-relaxed">
                 Use our <strong>free Tax Calculator</strong> to instantly calculate <strong>income tax</strong>, <strong>GST</strong>, <strong>VAT</strong>, or <strong>sales tax</strong>. 
                 Enter your <strong>amount and tax rate</strong> to get <strong>total payable tax</strong> and <strong>net amount</strong>. <strong>Fast</strong>, <strong>accurate</strong>, and <strong>completely online</strong>.
-              </p>
-            </div>
+          </p>
+        </div>
 
             <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
               <div>
-                <TaxCalculator />
-
+            <TaxCalculator />
+            
                 {/* Mobile/Tablet AdSpace */}
                 <div className="my-4 lg:hidden">
                   <div className="text-center mb-1">
@@ -407,7 +407,7 @@ export default function TaxCalculatorPage() {
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                       <div className="p-1.5 bg-primary/10 rounded-lg">
                         <BookOpen className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                      </div>
+                    </div>
                       How to Use Our Tax Calculator
                     </h2>
                     <div className="space-y-3">
@@ -415,58 +415,58 @@ export default function TaxCalculatorPage() {
                         <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                           <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">1. Select Your Country</h3>
                           <p className="text-xs text-muted-foreground">Choose from 9+ countries with real tax brackets</p>
-                        </div>
+                    </div>
                         <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                           <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">2. Enter Your Salary</h3>
                           <p className="text-xs text-muted-foreground">Input your annual gross salary in local currency</p>
-                        </div>
+                  </div>
                         <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                           <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">3. Custom Rate (Optional)</h3>
                           <p className="text-xs text-muted-foreground">Override with your own tax rate if needed</p>
-                        </div>
+                    </div>
                         <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                           <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">4. Get Results</h3>
                           <p className="text-xs text-muted-foreground">View comprehensive tax breakdown and net salary</p>
-                        </div>
-                      </div>
-                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
 
-                  {/* Supported Countries */}
+            {/* Supported Countries */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                       <div className="p-1.5 bg-primary/10 rounded-lg">
                         <Globe className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                      </div>
-                      Supported Countries & Tax Systems
-                    </h2>
+                </div>
+                Supported Countries & Tax Systems
+              </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
-                      {[
-                        { country: "United States", currency: "USD", features: ["Federal Tax", "Social Security", "Medicare"] },
-                        { country: "United Kingdom", currency: "GBP", features: ["Income Tax", "National Insurance"] },
-                        { country: "Canada", currency: "CAD", features: ["Federal Tax", "CPP", "EI"] },
-                        { country: "Australia", currency: "AUD", features: ["Income Tax", "Medicare Levy"] },
-                        { country: "Germany", currency: "EUR", features: ["Income Tax", "Social Security", "Solidarity"] },
-                        { country: "France", currency: "EUR", features: ["Income Tax", "Social Security", "CSG"] },
-                        { country: "Japan", currency: "JPY", features: ["Income Tax", "Social Security", "Resident Tax"] },
-                        { country: "India", currency: "INR", features: ["Income Tax", "Social Security", "Cess"] },
-                        { country: "Pakistan", currency: "PKR", features: ["Income Tax", "Social Security", "Zakat"] }
-                      ].map((country, index) => (
+                {[
+                  { country: "United States", currency: "USD", features: ["Federal Tax", "Social Security", "Medicare"] },
+                  { country: "United Kingdom", currency: "GBP", features: ["Income Tax", "National Insurance"] },
+                  { country: "Canada", currency: "CAD", features: ["Federal Tax", "CPP", "EI"] },
+                  { country: "Australia", currency: "AUD", features: ["Income Tax", "Medicare Levy"] },
+                  { country: "Germany", currency: "EUR", features: ["Income Tax", "Social Security", "Solidarity"] },
+                  { country: "France", currency: "EUR", features: ["Income Tax", "Social Security", "CSG"] },
+                  { country: "Japan", currency: "JPY", features: ["Income Tax", "Social Security", "Resident Tax"] },
+                  { country: "India", currency: "INR", features: ["Income Tax", "Social Security", "Cess"] },
+                  { country: "Pakistan", currency: "PKR", features: ["Income Tax", "Social Security", "Zakat"] }
+                ].map((country, index) => (
                         <div key={index} className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                           <h3 className="font-semibold text-foreground text-xs md:text-sm">{country.country}</h3>
                           <p className="text-xs text-muted-foreground mb-1">{country.currency}</p>
                           <ul className="text-xs text-muted-foreground space-y-0.5">
-                            {country.features.map((feature, idx) => (
-                              <li key={idx} className="flex items-center gap-1">
+                      {country.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center gap-1">
                                 <CheckCircle className="h-2 w-2 text-primary" />
-                                {feature}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                          {feature}
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
+                ))}
+              </div>
+            </div>
 
                   {/* Tax Calculation Types */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
@@ -500,84 +500,84 @@ export default function TaxCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Advanced Features */}
+            {/* Advanced Features */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                       <div className="p-1.5 bg-primary/10 rounded-lg">
                         <Zap className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                      </div>
-                      Advanced Calculation Features
-                    </h2>
+                </div>
+                Advanced Calculation Features
+              </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                       <div className="space-y-2">
                         <div className="flex items-start gap-2">
                           <div className="p-1 bg-primary/10 rounded-lg">
                             <BarChart3 className="h-3 w-3 text-primary" />
-                          </div>
-                          <div>
+                    </div>
+                    <div>
                             <h3 className="font-semibold text-foreground text-xs md:text-sm">Progressive Tax Brackets</h3>
                             <p className="text-xs text-muted-foreground">Real tax brackets for each country with accurate calculations</p>
-                          </div>
-                        </div>
+                    </div>
+                  </div>
                         <div className="flex items-start gap-2">
                           <div className="p-1 bg-primary/10 rounded-lg">
                             <Building className="h-3 w-3 text-primary" />
-                          </div>
-                          <div>
+                    </div>
+                    <div>
                             <h3 className="font-semibold text-foreground text-xs md:text-sm">Social Security</h3>
                             <p className="text-xs text-muted-foreground">Country-specific social security contributions</p>
-                          </div>
-                        </div>
-                      </div>
+                    </div>
+                  </div>
+                </div>
                       <div className="space-y-2">
                         <div className="flex items-start gap-2">
                           <div className="p-1 bg-primary/10 rounded-lg">
                             <PieChart className="h-3 w-3 text-primary" />
-                          </div>
-                          <div>
+                    </div>
+                    <div>
                             <h3 className="font-semibold text-foreground text-xs md:text-sm">Tax Breakdown</h3>
                             <p className="text-xs text-muted-foreground">Detailed breakdown by tax bracket and rate</p>
-                          </div>
-                        </div>
+                    </div>
+                  </div>
                         <div className="flex items-start gap-2">
                           <div className="p-1 bg-primary/10 rounded-lg">
                             <Target className="h-3 w-3 text-primary" />
-                          </div>
-                          <div>
+                    </div>
+                    <div>
                             <h3 className="font-semibold text-foreground text-xs md:text-sm">Custom Rates</h3>
                             <p className="text-xs text-muted-foreground">Override with your own tax rate for special cases</p>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
 
                   {/* Tax Formulas Section */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                       <div className="p-1.5 bg-primary/10 rounded-lg">
                         <Calculator className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                      </div>
+                </div>
                       Tax Calculation Formulas
-                    </h2>
+              </h2>
                     <div className="space-y-3">
                       <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">Progressive Tax Formula</h3>
                         <p className="text-xs text-muted-foreground mb-2">Tax = Σ(Bracket Income × Bracket Rate)</p>
                         <p className="text-xs text-muted-foreground">Each tax bracket is calculated separately, then summed for total tax. This ensures fair taxation across income levels.</p>
-                      </div>
+                </div>
                       <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">Effective Tax Rate Formula</h3>
                         <p className="text-xs text-muted-foreground mb-2">Effective Rate = (Total Tax ÷ Gross Income) × 100</p>
                         <p className="text-xs text-muted-foreground">The average tax rate across all income levels, showing your overall tax burden as a percentage.</p>
-                      </div>
+                </div>
                       <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">Marginal Tax Rate Formula</h3>
                         <p className="text-xs text-muted-foreground mb-2">Marginal Rate = Tax Rate of Highest Bracket</p>
                         <p className="text-xs text-muted-foreground">The tax rate on the next dollar earned, important for financial planning and investment decisions.</p>
-                      </div>
-                    </div>
-                  </div>
+                </div>
+              </div>
+            </div>
 
                   {/* FAQ Section */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
@@ -667,53 +667,53 @@ export default function TaxCalculatorPage() {
                       <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">What are the penalties for filing taxes late?</h3>
                         <p className="text-xs text-muted-foreground">Late filing penalty is 5% of unpaid tax per month (up to 25% maximum). Late payment penalty is 0.5% of unpaid tax per month. Interest accrues on unpaid amounts. If you file more than 60 days late, the minimum penalty is $435 or 100% of the tax owed, whichever is smaller. File and pay as soon as possible to minimize penalties.</p>
-                      </div>
+                  </div>
                       <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">Can I deduct medical expenses on my taxes?</h3>
                         <p className="text-xs text-muted-foreground">You can deduct unreimbursed medical expenses that exceed 7.5% of your adjusted gross income (AGI) if you itemize deductions. This includes doctor visits, prescriptions, medical equipment, and health insurance premiums. Keep all receipts and documentation. For example, if your AGI is $50,000, you can only deduct medical expenses over $3,750.</p>
-                      </div>
+                </div>
                       <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">How do I amend a tax return?</h3>
                         <p className="text-xs text-muted-foreground">File Form 1040-X to amend your return within 3 years of the original filing date or 2 years from when you paid the tax, whichever is later. Include a detailed explanation of changes and any supporting documentation. You can file electronically for tax years 2019 and later. Processing takes 8-12 weeks for paper returns.</p>
-                      </div>
+              </div>
                       <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">What is the Earned Income Tax Credit (EITC)?</h3>
                         <p className="text-xs text-muted-foreground">The EITC is a refundable credit for low- to moderate-income working individuals and families. For 2024, maximum credits range from $632 (no children) to $7,430 (3+ children). Income limits apply based on filing status and number of children. You must have earned income and meet other requirements. Use the EITC Assistant on irs.gov to check eligibility.</p>
-                      </div>
+            </div>
                       <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">How do I set up a payment plan with the IRS?</h3>
                         <p className="text-xs text-muted-foreground">Apply for an installment agreement online at irs.gov, by phone, or by submitting Form 9465. Short-term plans (120 days or less) have no setup fee. Long-term plans have fees ranging from $31-$225 depending on payment method. You can also request a payment plan if you owe $50,000 or less in combined tax, penalties, and interest.</p>
-                      </div>
+          </div>
                       <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">Are unemployment benefits taxable?</h3>
                         <p className="text-xs text-muted-foreground">Yes, unemployment compensation is taxable income at the federal level and in most states. You'll receive Form 1099-G showing the amount received. You can choose to have federal taxes withheld (10%) or pay estimated taxes. Some states don't tax unemployment benefits, so check your state's rules. Report on line 1a of Form 1040.</p>
-                      </div>
+                </div>
                       <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">How do I report cryptocurrency transactions on my taxes?</h3>
                         <p className="text-xs text-muted-foreground">Cryptocurrency transactions are treated as property for tax purposes. Report capital gains/losses on Schedule D (Form 1040). Each transaction must be tracked with cost basis, fair market value, and date. Use Form 8949 for detailed reporting. Mining income is reported as ordinary income. Consider using crypto tax software for complex transactions.</p>
-                      </div>
+              </div>
                       <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">What education expenses are tax-deductible?</h3>
                         <p className="text-xs text-muted-foreground">Qualified education expenses may qualify for the American Opportunity Credit (up to $2,500 per student), Lifetime Learning Credit (up to $2,000 per return), or tuition and fees deduction. Eligible expenses include tuition, fees, books, and supplies. Income limits apply. You cannot claim multiple credits for the same expenses. Use Form 8863 to claim education credits.</p>
-                      </div>
+            </div>
                       <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">How do I claim a home office deduction?</h3>
                         <p className="text-xs text-muted-foreground">Only self-employed individuals can claim the home office deduction. The space must be used exclusively and regularly for business. You can use the simplified method ($5 per square foot, up to 300 sq ft = $1,500 max) or the regular method (actual expenses). Employees cannot claim this deduction due to the Tax Cuts and Jobs Act changes.</p>
-                      </div>
+                </div>
                       <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">What is the Alternative Minimum Tax (AMT)?</h3>
                         <p className="text-xs text-muted-foreground">The AMT is a parallel tax system ensuring high-income individuals pay a minimum tax. It eliminates many deductions and uses different rates (26% or 28%). You must calculate tax under both systems and pay the higher amount. AMT exemption amounts are $85,700 (single) and $133,300 (married filing jointly) for 2024. Use Form 6251 to calculate AMT.</p>
-                      </div>
+                </div>
                       <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">How do I report rental income and expenses?</h3>
                         <p className="text-xs text-muted-foreground">Report rental income and expenses on Schedule E (Form 1040). Include rent received, security deposits (if kept), and any advance rent. Deductible expenses include mortgage interest, property taxes, insurance, repairs, maintenance, utilities, and depreciation. Keep detailed records of all transactions. Rental losses may be limited by passive activity rules.</p>
-                      </div>
+                </div>
                       <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">Can I deduct state and local taxes on my federal return?</h3>
                         <p className="text-xs text-muted-foreground">Yes, you can deduct state and local income, sales, and property taxes, but the total is limited to $10,000 ($5,000 if married filing separately) due to the Tax Cuts and Jobs Act. This includes state income tax, local income tax, and property taxes. You cannot deduct state and local sales taxes if you deduct state and local income taxes.</p>
-                      </div>
-                    </div>
-                  </div>
+                </div>
+              </div>
+            </div>
 
                   {/* Related Tools Section */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
@@ -746,20 +746,20 @@ export default function TaxCalculatorPage() {
                           <div className="flex items-center gap-2 mb-1">
                             <Icon className="h-3 w-3 text-primary group-hover:text-primary/80" />
                             <h3 className="font-semibold text-foreground text-xs md:text-sm group-hover:text-primary">{name}</h3>
-                          </div>
+                </div>
                           <p className="text-xs text-muted-foreground">{desc}</p>
                         </a>
                       ))}
-                    </div>
-                  </div>
+                </div>
+                </div>
 
                   {/* Mobile/Tablet Bottom AdSpace */}
                   <div className="my-6 lg:hidden">
                     <div className="text-center mb-1">
                       <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                    </div>
+                </div>
                     <AdSpace slot="content" className="w-full h-20 sm:h-24 md:h-28 border border-border rounded-xl shadow-sm bg-card" />
-                  </div>
+                </div>
                 </div>
               </div>
 
@@ -771,7 +771,7 @@ export default function TaxCalculatorPage() {
                       <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                     </div>
                     <AdSpace slot="sidebar" className="w-full h-60 lg:h-64 xl:h-72 border border-border rounded-xl shadow-sm bg-card" />
-                  </div>
+            </div>
 
                   <div>
                     <div className="text-center mb-1">

@@ -1011,11 +1011,11 @@ export default function FAQPage() {
                         <div className="bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8 shadow-sm">
                             <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4">Closing Notes</h2>
                             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                                SEO requires ongoing attention to technical health, content quality, and authority signals. Use tools like
-                                Google Search Console, Lighthouse, and FastTools utilities to audit performance, track Core Web Vitals,
-                                validate structured data, and monitor indexing. Prioritize user intent, optimize for speed and clarity, and
-                                build topical authority through comprehensive, well-linked content clusters.
-                            </p>
+                            SEO requires ongoing attention to technical health, content quality, and authority signals. Use tools like
+                            Google Search Console, Lighthouse, and FastTools utilities to audit performance, track Core Web Vitals,
+                            validate structured data, and monitor indexing. Prioritize user intent, optimize for speed and clarity, and
+                            build topical authority through comprehensive, well-linked content clusters.
+                        </p>
                         </div>
                     </div>
 

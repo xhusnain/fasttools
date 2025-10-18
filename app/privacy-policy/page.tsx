@@ -93,7 +93,7 @@ export default function PrivacyPolicyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
-          <Breadcrumbs items={[{ label: "Privacy Policy", href: "/privacy-policy" }]} />
+      <Breadcrumbs items={[{ label: "Privacy Policy", href: "/privacy-policy" }]} />
 
           <div className="max-w-5xl mx-auto">
             {/* Hero Section */}
@@ -162,7 +162,7 @@ export default function PrivacyPolicyPage() {
                   </CardContent>
                 </Card>
               </div>
-            </div>
+        </div>
 
             {/* Main Content */}
             <div className="space-y-8 sm:space-y-12">
@@ -175,11 +175,11 @@ export default function PrivacyPolicyPage() {
                 </CardHeader>
                 <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    At FastTools ("we," "our," or "us"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website fasttools.store (the "Site") and use our free online tools and services.
-                  </p>
+              At FastTools ("we," "our," or "us"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website fasttools.store (the "Site") and use our free online tools and services.
+            </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    By using our Site, you consent to the data practices described in this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not use our Site.
-                  </p>
+              By using our Site, you consent to the data practices described in this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not use our Site.
+            </p>
                   <div className="bg-accent/10 border border-accent/20 rounded-lg p-3 sm:p-4">
                     <div className="flex items-start gap-2 sm:gap-3">
                       <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-accent mt-0.5 flex-shrink-0" />
@@ -203,9 +203,9 @@ export default function PrivacyPolicyPage() {
                 </CardHeader>
                 <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6 pt-0">
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    We collect information about you in several ways when you use our Site:
-                  </p>
-                  
+              We collect information about you in several ways when you use our Site:
+            </p>
+            
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                     <div className="bg-secondary/50 rounded-lg p-3 sm:p-4">
                         <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-yellow-400 flex items-center gap-2">
@@ -216,7 +216,7 @@ export default function PrivacyPolicyPage() {
                         <li>• Contact information (email address) when you contact us</li>
                         <li>• Information you voluntarily provide when using our tools</li>
                         <li>• Communications with us, including support requests</li>
-                      </ul>
+            </ul>
                     </div>
 
                     <div className="bg-secondary/50 rounded-lg p-3 sm:p-4">
@@ -231,7 +231,7 @@ export default function PrivacyPolicyPage() {
                         <li>• Pages visited and time spent on our Site</li>
                         <li>• Referring website information</li>
                         <li>• Search terms used to find our Site</li>
-                      </ul>
+            </ul>
                     </div>
 
                     <div className="bg-secondary/50 rounded-lg p-3 sm:p-4">
@@ -244,7 +244,7 @@ export default function PrivacyPolicyPage() {
                         <li>• Analytics cookies to understand user behavior</li>
                         <li>• Advertising cookies for personalized ads (with your consent)</li>
                         <li>• Local storage for user preferences</li>
-                      </ul>
+            </ul>
                     </div>
                   </div>
                 </CardContent>
@@ -259,8 +259,8 @@ export default function PrivacyPolicyPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-muted-foreground leading-relaxed">
-                    We use the information we collect for the following purposes:
-                  </p>
+              We use the information we collect for the following purposes:
+            </p>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-3">
                       <div className="flex items-start gap-3">
@@ -333,9 +333,9 @@ export default function PrivacyPolicyPage() {
                       <CheckCircle className="h-5 w-5 text-accent" />
                       Google AdSense Compliance
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
-                      We use Google AdSense to display advertisements on our website. Google may use cookies to serve ads based on your prior visits to our website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to our site and/or other sites on the Internet.
-                    </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              We use Google AdSense to display advertisements on our website. Google may use cookies to serve ads based on your prior visits to our website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to our site and/or other sites on the Internet.
+            </p>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">AdSense Policies We Follow:</h4>
@@ -382,8 +382,8 @@ export default function PrivacyPolicyPage() {
                     <div className="bg-secondary/50 rounded-lg p-4">
                         <h3 className="text-lg font-semibold mb-3 text-yellow-400">Vercel Analytics</h3>
                       <p className="text-sm text-muted-foreground">
-                        We use Vercel Analytics to monitor website performance and user experience. This service collects anonymous usage data to help us improve our services.
-                      </p>
+              We use Vercel Analytics to monitor website performance and user experience. This service collects anonymous usage data to help us improve our services.
+            </p>
                     </div>
                   </div>
                 </CardContent>
@@ -399,8 +399,8 @@ export default function PrivacyPolicyPage() {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <p className="text-muted-foreground leading-relaxed">
-                    Depending on your location, you may have certain rights regarding your personal information:
-                  </p>
+              Depending on your location, you may have certain rights regarding your personal information:
+            </p>
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-4">
@@ -416,7 +416,7 @@ export default function PrivacyPolicyPage() {
                           <li>• Right to data portability</li>
                           <li>• Right to restrict processing</li>
                           <li>• Right to object to processing</li>
-                        </ul>
+            </ul>
                       </div>
                     </div>
                     
@@ -432,7 +432,7 @@ export default function PrivacyPolicyPage() {
                           <li>• Right to say no to the sale of personal information</li>
                           <li>• Right to access personal information</li>
                           <li>• Right to equal service and price</li>
-                        </ul>
+            </ul>
                       </div>
                     </div>
                   </div>
@@ -464,7 +464,7 @@ export default function PrivacyPolicyPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed">
                     If you have any questions about this Privacy Policy or our data practices, please contact us:
                   </p>
                   <div className="bg-secondary/50 rounded-lg p-6">
@@ -473,8 +473,8 @@ export default function PrivacyPolicyPage() {
                         <h4 className="font-semibold text-foreground mb-2">Privacy Inquiries</h4>
                         <a href="mailto:privacy@fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
                           <Mail className="h-4 w-4" />
-                          privacy@fasttools.store
-                        </a>
+                  privacy@fasttools.store
+                </a>
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">AdSense Compliance</h4>
@@ -488,8 +488,8 @@ export default function PrivacyPolicyPage() {
                       <h4 className="font-semibold text-foreground mb-2">Website</h4>
                       <a href="https://fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
                         <Globe className="h-4 w-4" />
-                        https://fasttools.store
-                      </a>
+                  https://fasttools.store
+                </a>
                     </div>
                   </div>
                 </CardContent>

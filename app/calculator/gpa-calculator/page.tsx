@@ -251,12 +251,12 @@ export default function GPACalculatorPage() {
       
       <div className="bg-background">
         <div className="container mx-auto px-3 py-6 md:py-8">
-          <Breadcrumbs
-            items={[
-              { label: "Calculator", href: "/calculator" },
-              { label: "GPA Calculator", href: "/calculator/gpa-calculator" },
-            ]}
-          />
+      <Breadcrumbs
+        items={[
+          { label: "Calculator", href: "/calculator" },
+          { label: "GPA Calculator", href: "/calculator/gpa-calculator" },
+        ]}
+      />
 
           <div className="max-w-5xl mx-auto">
             <div className="mb-4 md:mb-6">
@@ -264,88 +264,88 @@ export default function GPACalculatorPage() {
               <p className="text-sm md:text-base text-muted-foreground text-pretty leading-relaxed">
                 Use our <strong>free GPA Calculator</strong> to calculate your <strong>Grade Point Average</strong> instantly. 
                 Supports <strong>4.0, 4.3, 5.0 scales</strong> and <strong>percentage grades</strong>. Perfect for <strong>students</strong>, <strong>academic planning</strong>, and <strong>grade tracking</strong>.
-              </p>
-            </div>
+          </p>
+        </div>
 
             <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
               <div>
-                <GPACalculator />
-
+            <GPACalculator />
+            
                 {/* Mobile/Tablet AdSpace */}
                 <div className="my-6 lg:hidden">
                   <div className="text-center mb-2">
                     <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                   </div>
                   <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
+            </div>
 
                 {/* How to Use */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Calculator className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    </div>
+                </div>
                     How to Use Our GPA Calculator
-                  </h2>
+              </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-primary/10 rounded-lg">
                           <span className="text-primary font-bold text-xs">1</span>
-                        </div>
-                        <div>
+                  </div>
+                  <div>
                           <h3 className="font-semibold text-foreground text-xs md:text-sm">Add Your Courses</h3>
                           <p className="text-xs text-muted-foreground">Enter course names, credits, and grades</p>
-                        </div>
-                      </div>
+                  </div>
+                </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-primary/10 rounded-lg">
                           <span className="text-primary font-bold text-xs">2</span>
-                        </div>
-                        <div>
+                  </div>
+                  <div>
                           <h3 className="font-semibold text-foreground text-xs md:text-sm">Select Grading System</h3>
                           <p className="text-xs text-muted-foreground">Choose from 4.0, 4.3, 5.0, or percentage scales</p>
                         </div>
-                      </div>
-                    </div>
+                  </div>
+                </div>
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-primary/10 rounded-lg">
                           <span className="text-primary font-bold text-xs">3</span>
-                        </div>
-                        <div>
+                  </div>
+                  <div>
                           <h3 className="font-semibold text-foreground text-xs md:text-sm">Get Comprehensive Analysis</h3>
                           <p className="text-xs text-muted-foreground">View GPA, academic standing, and improvement suggestions</p>
-                        </div>
-                      </div>
+                  </div>
+                </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-primary/10 rounded-lg">
                           <span className="text-primary font-bold text-xs">4</span>
-                        </div>
-                        <div>
+                  </div>
+                  <div>
                           <h3 className="font-semibold text-foreground text-xs md:text-sm">Plan Your Future</h3>
                           <p className="text-xs text-muted-foreground">Use GPA planning tools to reach your academic goals</p>
                         </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
                 {/* Supported Grading Systems */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Globe className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    </div>
-                    Supported Grading Systems
-                  </h2>
+                </div>
+                Supported Grading Systems
+              </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3">
-                    {[
-                      { system: "4.0 Scale", description: "US Standard", features: ["A = 4.0", "B = 3.0", "C = 2.0", "D = 1.0", "F = 0.0"] },
-                      { system: "4.3 Scale", description: "A+ = 4.3", features: ["A+ = 4.3", "A = 4.0", "A- = 3.7", "B+ = 3.3", "B = 3.0"] },
-                      { system: "5.0 Scale", description: "Weighted", features: ["Honors/AP", "Advanced Courses", "Weighted Grades", "Higher Scale"] },
-                      { system: "Percentage", description: "100% Scale", features: ["90-100% = A", "80-89% = B", "70-79% = C", "60-69% = D", "<60% = F"] }
-                    ].map((system, index) => (
+                {[
+                  { system: "4.0 Scale", description: "US Standard", features: ["A = 4.0", "B = 3.0", "C = 2.0", "D = 1.0", "F = 0.0"] },
+                  { system: "4.3 Scale", description: "A+ = 4.3", features: ["A+ = 4.3", "A = 4.0", "A- = 3.7", "B+ = 3.3", "B = 3.0"] },
+                  { system: "5.0 Scale", description: "Weighted", features: ["Honors/AP", "Advanced Courses", "Weighted Grades", "Higher Scale"] },
+                  { system: "Percentage", description: "100% Scale", features: ["90-100% = A", "80-89% = B", "70-79% = C", "60-69% = D", "<60% = F"] }
+                ].map((system, index) => (
                       <div key={index} className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <div className="flex items-center gap-1.5 mb-1">
                           <CheckCircle className="h-3 w-3 text-primary" />
@@ -353,33 +353,33 @@ export default function GPACalculatorPage() {
                         </div>
                         <p className="text-xs text-muted-foreground mb-1">{system.description}</p>
                         <ul className="text-xs text-primary space-y-0.5">
-                          {system.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-center gap-1">
+                      {system.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center gap-1">
                               <div className="w-1 h-1 bg-primary rounded-full"></div>
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
+                ))}
+              </div>
+            </div>
 
-                {/* Advanced Features */}
+            {/* Advanced Features */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <TrendingUp className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    </div>
+                </div>
                     Advanced GPA Features
-                  </h2>
+              </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-primary/10 rounded-lg">
                           <BarChart3 className="h-3 w-3 text-primary" />
                         </div>
-                        <div>
+                <div>
                           <h3 className="font-semibold text-foreground text-xs md:text-sm">GPA Analysis</h3>
                           <p className="text-xs text-muted-foreground">Academic standing assessment and honors eligibility</p>
                         </div>
@@ -387,13 +387,13 @@ export default function GPACalculatorPage() {
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-primary/10 rounded-lg">
                           <PieChart className="h-3 w-3 text-primary" />
-                        </div>
-                        <div>
+                </div>
+                <div>
                           <h3 className="font-semibold text-foreground text-xs md:text-sm">Grade Distribution</h3>
                           <p className="text-xs text-muted-foreground">Visual breakdown of your grade performance</p>
-                        </div>
-                      </div>
-                    </div>
+                </div>
+              </div>
+            </div>
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-primary/10 rounded-lg">
@@ -403,26 +403,26 @@ export default function GPACalculatorPage() {
                           <h3 className="font-semibold text-foreground text-xs md:text-sm">Planning Tools</h3>
                           <p className="text-xs text-muted-foreground">GPA planning and target GPA analysis</p>
                         </div>
-                      </div>
+                </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-primary/10 rounded-lg">
                           <Building className="h-3 w-3 text-primary" />
-                        </div>
+                </div>
                         <div>
                           <h3 className="font-semibold text-foreground text-xs md:text-sm">Improvement Tips</h3>
                           <p className="text-xs text-muted-foreground">Personalized suggestions for academic success</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
                 {/* FAQ Section */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Info className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    </div>
+                  </div>
                     Frequently Asked Questions
                   </h2>
                   <div className="space-y-3">
@@ -491,17 +491,17 @@ export default function GPACalculatorPage() {
                       <div key={index} className="border border-border rounded-lg p-3 md:p-4">
                         <h3 className="font-semibold text-foreground text-sm md:text-base mb-2">{faq.question}</h3>
                         <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
-                      </div>
-                    ))}
-                  </div>
                 </div>
+                    ))}
+                </div>
+              </div>
 
                 {/* Related Tools */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Calculator className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    </div>
+                  </div>
                     Related Educational & Math Calculators
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
@@ -527,12 +527,12 @@ export default function GPACalculatorPage() {
                         <div className="flex items-center gap-2 mb-1">
                           <Icon className="h-3 w-3 text-primary group-hover:text-primary/80" />
                           <h3 className="font-semibold text-foreground text-xs md:text-sm group-hover:text-primary">{name}</h3>
-                        </div>
+                  </div>
                         <p className="text-xs text-muted-foreground">{desc}</p>
                       </a>
                     ))}
-                  </div>
                 </div>
+              </div>
 
                 {/* Mobile/Tablet Bottom AdSpace */}
                 <div className="my-8 lg:hidden">
@@ -556,7 +556,7 @@ export default function GPACalculatorPage() {
                   <div>
                     <div className="text-center mb-2">
                       <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                    </div>
+                </div>
                     <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
                   </div>
                 </div>

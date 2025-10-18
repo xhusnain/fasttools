@@ -436,8 +436,8 @@ export default function AboutPage() {
                     Contact Us
                   </a>
                 </Button>
-              </div>
-              
+        </div>
+
               {/* SEO-Optimized Stats with Keywords */}
               <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 text-xs sm:text-sm text-muted-foreground px-4">
                 <div className="flex items-center gap-2">
@@ -474,8 +474,8 @@ export default function AboutPage() {
                   expensive, limited, or cluttered with ads. We built the world's most comprehensive free digital toolkit 
                   that combines professional-grade functionality with zero-cost accessibility. Today, millions of users 
                   across 190+ countries rely on our platform for their daily productivity needs.
-                </p>
-              </div>
+          </p>
+        </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-16 sm:mb-20">
                 {/* Innovation Story Card */}
@@ -575,7 +575,7 @@ export default function AboutPage() {
                         <a href="/converters/currency">Convert Currency</a>
                       </Button>
                     </div>
-                  </Card>
+          </Card>
 
                   <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-200 group">
                     <div className="text-center">
@@ -621,7 +621,7 @@ export default function AboutPage() {
                         while maintaining the highest standards of functionality and security.
                       </p>
                     </div>
-                  </Card>
+          </Card>
 
                   <Card className="p-6 sm:p-8">
                     <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Technical Excellence</h3>
@@ -702,9 +702,9 @@ export default function AboutPage() {
                         <p className="text-xs sm:text-sm font-semibold text-foreground">- Jennifer Park, Marketing Director</p>
                       </div>
                     </div>
-                  </Card>
-                </div>
-              </div>
+          </Card>
+        </div>
+      </div>
             </div>
           </div>
         </section>

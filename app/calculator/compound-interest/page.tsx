@@ -115,42 +115,42 @@ export const metadata: Metadata = {
         "compound interest table calculator",
         "savings compound interest projection"
     ],
-    openGraph: {
+  openGraph: {
         title: "Free Online Compound Interest Calculator | Investment Growth Calculator | FastTools",
         description:
             "Use our free Compound Interest Calculator to calculate how your money grows over time. Enter your principal, interest rate, time period, and compounding frequency to see total interest and final balance instantly.",
-        type: "website",
-        url: "https://www.fasttools.store/calculator/compound-interest",
-        siteName: "FastTools",
-        images: [
-            {
+    type: "website",
+    url: "https://www.fasttools.store/calculator/compound-interest",
+    siteName: "FastTools",
+    images: [
+      {
                 url: "https://www.fasttools.store/og-compound-interest-calculator.jpg",
-                width: 1200,
-                height: 630,
+        width: 1200,
+        height: 630,
                 alt: "Free Online Compound Interest Calculator - FastTools",
             },
         ],
-    },
-    twitter: {
-        card: "summary_large_image",
+  },
+  twitter: {
+    card: "summary_large_image",
         title: "Free Online Compound Interest Calculator | Investment Growth Calculator | FastTools",
         description:
             "Use our free Compound Interest Calculator to calculate how your money grows over time. Enter your principal, interest rate, time period, and compounding frequency to see total interest and final balance instantly.",
         images: ["https://www.fasttools.store/og-compound-interest-calculator.jpg"],
-    },
-    alternates: {
+  },
+  alternates: {
         canonical: "https://www.fasttools.store/calculator/compound-interest",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            "max-video-preview": -1,
-            "max-image-preview": "large",
-            "max-snippet": -1,
-        },
     },
     authors: [{ name: "FastTools Investment Team" }],
     creator: "FastTools",
@@ -323,12 +323,12 @@ export default function CompoundInterestPage() {
 
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-3 py-6 md:py-8">
-          <Breadcrumbs
-            items={[
-              { label: "Calculator", href: "/calculator" },
-              { label: "Compound Interest Calculator", href: "/calculator/compound-interest" },
-            ]}
-          />
+      <Breadcrumbs
+        items={[
+          { label: "Calculator", href: "/calculator" },
+          { label: "Compound Interest Calculator", href: "/calculator/compound-interest" },
+        ]}
+      />
 
           <div className="max-w-5xl mx-auto">
             <div className="mb-4 md:mb-6">
@@ -336,106 +336,106 @@ export default function CompoundInterestPage() {
               <p className="text-sm md:text-base text-muted-foreground text-pretty leading-relaxed">
                 Use our <strong>free Compound Interest Calculator</strong> to calculate <strong>how your money grows over time</strong>. 
                 Enter your <strong>principal</strong>, <strong>interest rate</strong>, <strong>time period</strong>, and <strong>compounding frequency</strong> to see <strong>total interest</strong> and <strong>final balance</strong> instantly.
-              </p>
-            </div>
+          </p>
+        </div>
 
             <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
               <div>
-                <CompoundInterestCalculator />
-
+            <CompoundInterestCalculator />
+            
                 {/* Mobile/Tablet AdSpace */}
                 <div className="my-6 lg:hidden">
                   <div className="text-center mb-2">
                     <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                   </div>
                   <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
+            </div>
 
                 {/* How to Use */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Calculator className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    </div>
+                </div>
                     How to Use Our Compound Interest Calculator
-                  </h2>
+              </h2>
                   <div className="space-y-2 md:space-y-3">
                     <div className="flex items-start gap-2">
                       <div className="p-1 bg-primary/10 rounded-lg">
                         <span className="text-primary font-bold text-xs">1</span>
-                      </div>
-                      <div>
+                  </div>
+                  <div>
                         <h3 className="font-semibold text-foreground text-xs md:text-sm">Select Your Country</h3>
                         <p className="text-xs text-muted-foreground">Choose from 9+ countries with real interest rates</p>
-                      </div>
-                    </div>
+                  </div>
+                </div>
                     <div className="flex items-start gap-2">
                       <div className="p-1 bg-primary/10 rounded-lg">
                         <span className="text-primary font-bold text-xs">2</span>
-                      </div>
-                      <div>
+                  </div>
+                  <div>
                         <h3 className="font-semibold text-foreground text-xs md:text-sm">Enter Principal Amount</h3>
                         <p className="text-xs text-muted-foreground">Input your initial investment amount</p>
-                      </div>
-                    </div>
+                  </div>
+                </div>
                     <div className="flex items-start gap-2">
                       <div className="p-1 bg-primary/10 rounded-lg">
                         <span className="text-primary font-bold text-xs">3</span>
-                      </div>
-                      <div>
+                  </div>
+                  <div>
                         <h3 className="font-semibold text-foreground text-xs md:text-sm">Set Time Period</h3>
                         <p className="text-xs text-muted-foreground">Specify how long you plan to invest</p>
-                      </div>
-                    </div>
+                  </div>
+                </div>
                     <div className="flex items-start gap-2">
                       <div className="p-1 bg-primary/10 rounded-lg">
                         <span className="text-primary font-bold text-xs">4</span>
-                      </div>
-                      <div>
+                  </div>
+                  <div>
                         <h3 className="font-semibold text-foreground text-xs md:text-sm">Choose Compounding Frequency</h3>
                         <p className="text-xs text-muted-foreground">Select how often interest compounds</p>
-                      </div>
-                    </div>
+                  </div>
+                </div>
                     <div className="flex items-start gap-2">
                       <div className="p-1 bg-primary/10 rounded-lg">
                         <span className="text-primary font-bold text-xs">5</span>
-                      </div>
-                      <div>
+                  </div>
+                  <div>
                         <h3 className="font-semibold text-foreground text-xs md:text-sm">Get Comprehensive Results</h3>
                         <p className="text-xs text-muted-foreground">View detailed breakdown and yearly analysis</p>
-                      </div>
-                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                {/* Supported Countries */}
+            {/* Supported Countries */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Globe className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    </div>
-                    Supported Countries & Interest Rates
-                  </h2>
+                </div>
+                Supported Countries & Interest Rates
+              </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
-                    {[
-                      { country: "United States", currency: "USD", rate: "7.0%", description: "Federal Reserve rates" },
-                      { country: "United Kingdom", currency: "GBP", rate: "6.5%", description: "Bank of England rates" },
-                      { country: "Canada", currency: "CAD", rate: "6.8%", description: "Bank of Canada rates" },
-                      { country: "Australia", currency: "AUD", rate: "7.2%", description: "Reserve Bank rates" },
-                      { country: "Germany", currency: "EUR", rate: "5.8%", description: "ECB rates" },
-                      { country: "France", currency: "EUR", rate: "5.5%", description: "ECB rates" },
-                      { country: "Japan", currency: "JPY", rate: "3.5%", description: "Bank of Japan rates" },
-                      { country: "India", currency: "INR", rate: "8.5%", description: "RBI rates" },
-                      { country: "Pakistan", currency: "PKR", rate: "15.0%", description: "SBP rates" }
-                    ].map((country, index) => (
+                {[
+                  { country: "United States", currency: "USD", rate: "7.0%", description: "Federal Reserve rates" },
+                  { country: "United Kingdom", currency: "GBP", rate: "6.5%", description: "Bank of England rates" },
+                  { country: "Canada", currency: "CAD", rate: "6.8%", description: "Bank of Canada rates" },
+                  { country: "Australia", currency: "AUD", rate: "7.2%", description: "Reserve Bank rates" },
+                  { country: "Germany", currency: "EUR", rate: "5.8%", description: "ECB rates" },
+                  { country: "France", currency: "EUR", rate: "5.5%", description: "ECB rates" },
+                  { country: "Japan", currency: "JPY", rate: "3.5%", description: "Bank of Japan rates" },
+                  { country: "India", currency: "INR", rate: "8.5%", description: "RBI rates" },
+                  { country: "Pakistan", currency: "PKR", rate: "15.0%", description: "SBP rates" }
+                ].map((country, index) => (
                       <div key={index} className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
                         <h3 className="font-semibold text-foreground text-xs md:text-sm">{country.country}</h3>
                         <p className="text-xs text-muted-foreground mb-1">{country.currency} • {country.rate}</p>
                         <p className="text-xs text-primary">{country.description}</p>
-                      </div>
-                    ))}
                   </div>
-                </div>
+                ))}
+              </div>
+            </div>
 
                 {/* Compound Interest Types */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
@@ -474,16 +474,16 @@ export default function CompoundInterestPage() {
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <TrendingUp className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    </div>
-                    Advanced Calculation Features
-                  </h2>
+                </div>
+                Advanced Calculation Features
+              </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-primary/10 rounded-lg">
                           <BarChart3 className="h-3 w-3 text-primary" />
                         </div>
-                        <div>
+                <div>
                           <h3 className="font-semibold text-foreground text-xs md:text-sm">Yearly Breakdown</h3>
                           <p className="text-xs text-muted-foreground">Detailed year-by-year growth analysis</p>
                         </div>
@@ -491,13 +491,13 @@ export default function CompoundInterestPage() {
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-primary/10 rounded-lg">
                           <PieChart className="h-3 w-3 text-primary" />
-                        </div>
-                        <div>
+                </div>
+                <div>
                           <h3 className="font-semibold text-foreground text-xs md:text-sm">Effective Rate</h3>
                           <p className="text-xs text-muted-foreground">Calculate effective annual interest rate</p>
-                        </div>
-                      </div>
-                    </div>
+                </div>
+              </div>
+            </div>
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-primary/10 rounded-lg">
@@ -507,26 +507,26 @@ export default function CompoundInterestPage() {
                           <h3 className="font-semibold text-foreground text-xs md:text-sm">Custom Rates</h3>
                           <p className="text-xs text-muted-foreground">Override with your own interest rates</p>
                         </div>
-                      </div>
+                </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-primary/10 rounded-lg">
                           <Building className="h-3 w-3 text-primary" />
-                        </div>
+                </div>
                         <div>
                           <h3 className="font-semibold text-foreground text-xs md:text-sm">Educational Content</h3>
                           <p className="text-xs text-muted-foreground">Learn about compound interest concepts</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
                 {/* FAQ Section */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Info className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    </div>
+                  </div>
                     Frequently Asked Questions
                   </h2>
                   <div className="space-y-3">
@@ -575,17 +575,17 @@ export default function CompoundInterestPage() {
                       <div key={index} className="border border-border rounded-lg p-3 md:p-4">
                         <h3 className="font-semibold text-foreground text-sm md:text-base mb-2">{faq.question}</h3>
                         <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
-                      </div>
-                    ))}
-                  </div>
                 </div>
+                    ))}
+                </div>
+              </div>
 
                 {/* Related Tools Section */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Calculator className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    </div>
+                  </div>
                     Related Financial & Investment Tools
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
@@ -611,12 +611,12 @@ export default function CompoundInterestPage() {
                         <div className="flex items-center gap-2 mb-1">
                           <Icon className="h-3 w-3 text-primary group-hover:text-primary/80" />
                           <h3 className="font-semibold text-foreground text-xs md:text-sm group-hover:text-primary">{name}</h3>
-                        </div>
+                  </div>
                         <p className="text-xs text-muted-foreground">{desc}</p>
                       </a>
                     ))}
-                  </div>
                 </div>
+              </div>
 
                 {/* Mobile/Tablet Bottom AdSpace */}
                 <div className="my-8 lg:hidden">
@@ -640,7 +640,7 @@ export default function CompoundInterestPage() {
                   <div>
                     <div className="text-center mb-2">
                       <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                    </div>
+                </div>
                     <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
                   </div>
                 </div>
