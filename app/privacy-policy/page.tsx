@@ -92,100 +92,100 @@ export default function PrivacyPolicyPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
-        <div className="container mx-auto px-4 py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <Breadcrumbs items={[{ label: "Privacy Policy", href: "/privacy-policy" }]} />
 
           <div className="max-w-5xl mx-auto">
             {/* Hero Section */}
-            <div className="text-center mb-16">
-              <div className="flex items-center justify-center mb-6">
-                <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Shield className="h-8 w-8 text-primary" />
+            <div className="text-center mb-12 sm:mb-16">
+              <div className="flex items-center justify-center mb-4 sm:mb-6">
+                <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-yellow-400">Privacy Policy</h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 text-yellow-400 px-4">Privacy Policy</h1>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
                 Transparent data protection practices for FastTools. Learn how we collect, use, and protect your information while using our free online tools.
               </p>
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
-                <Badge variant="secondary" className="h-8 px-4 text-sm">
-                  <CheckCircle className="h-4 w-4 mr-2" />
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 sm:mb-8 px-4">
+                <Badge variant="secondary" className="h-7 sm:h-8 px-3 sm:px-4 text-xs sm:text-sm">
+                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
                   GDPR Compliant
                 </Badge>
-                <Badge variant="secondary" className="h-8 px-4 text-sm">
-                  <CheckCircle className="h-4 w-4 mr-2" />
+                <Badge variant="secondary" className="h-7 sm:h-8 px-3 sm:px-4 text-xs sm:text-sm">
+                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
                   CCPA Compliant
                 </Badge>
-                <Badge variant="secondary" className="h-8 px-4 text-sm">
-                  <CheckCircle className="h-4 w-4 mr-2" />
+                <Badge variant="secondary" className="h-7 sm:h-8 px-3 sm:px-4 text-xs sm:text-sm">
+                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
                   Google AdSense Policy
                 </Badge>
               </div>
-              <p className="text-sm text-muted-foreground">Last updated: December 19, 2024</p>
+              <p className="text-xs sm:text-sm text-muted-foreground">Last updated: December 19, 2024</p>
             </div>
 
             {/* Quick Navigation */}
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold mb-6 text-yellow-400">Quick Navigation</h2>
-              <div className="grid md:grid-cols-3 gap-4">
+            <div className="mb-12 sm:mb-16">
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-yellow-400 px-4">Quick Navigation</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
                 <Card className="hover:shadow-md transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Eye className="h-5 w-5 text-primary" />
+                  <CardHeader className="pb-2 sm:pb-3 p-3 sm:p-6">
+                    <CardTitle className="text-base sm:text-lg flex items-center gap-2">
+                      <Eye className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                       Data Collection
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">What information we collect and why</p>
+                  <CardContent className="p-3 sm:p-6 pt-0">
+                    <p className="text-xs sm:text-sm text-muted-foreground">What information we collect and why</p>
                   </CardContent>
                 </Card>
                 <Card className="hover:shadow-md transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Cookie className="h-5 w-5 text-primary" />
+                  <CardHeader className="pb-2 sm:pb-3 p-3 sm:p-6">
+                    <CardTitle className="text-base sm:text-lg flex items-center gap-2">
+                      <Cookie className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                       Cookies & Tracking
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">How we use cookies and tracking technologies</p>
+                  <CardContent className="p-3 sm:p-6 pt-0">
+                    <p className="text-xs sm:text-sm text-muted-foreground">How we use cookies and tracking technologies</p>
                   </CardContent>
                 </Card>
                 <Card className="hover:shadow-md transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Users className="h-5 w-5 text-primary" />
+                  <CardHeader className="pb-2 sm:pb-3 p-3 sm:p-6">
+                    <CardTitle className="text-base sm:text-lg flex items-center gap-2">
+                      <Users className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                       Your Rights
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">GDPR, CCPA, and privacy rights</p>
+                  <CardContent className="p-3 sm:p-6 pt-0">
+                    <p className="text-xs sm:text-sm text-muted-foreground">GDPR, CCPA, and privacy rights</p>
                   </CardContent>
                 </Card>
               </div>
             </div>
 
             {/* Main Content */}
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-12">
               <Card className="bg-card border border-border">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-yellow-400 flex items-center gap-3">
-                    <FileText className="h-6 w-6 text-primary" />
+                <CardHeader className="p-4 sm:p-6">
+                  <CardTitle className="text-xl sm:text-2xl font-bold text-yellow-400 flex items-center gap-2 sm:gap-3">
+                    <FileText className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                     Introduction
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
+                <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     At FastTools ("we," "our," or "us"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website fasttools.store (the "Site") and use our free online tools and services.
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     By using our Site, you consent to the data practices described in this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not use our Site.
                   </p>
-                  <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
-                    <div className="flex items-start gap-3">
-                      <AlertTriangle className="h-5 w-5 text-accent mt-0.5" />
+                  <div className="bg-accent/10 border border-accent/20 rounded-lg p-3 sm:p-4">
+                    <div className="flex items-start gap-2 sm:gap-3">
+                      <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-accent mt-0.5 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Important Notice</h4>
-                        <p className="text-sm text-muted-foreground">
+                        <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Important Notice</h4>
+                        <p className="text-xs sm:text-sm text-muted-foreground">
                           This policy complies with GDPR, CCPA, and Google AdSense requirements. We prioritize transparency and user control over personal data.
                         </p>
                       </div>
@@ -195,36 +195,36 @@ export default function PrivacyPolicyPage() {
               </Card>
 
               <Card className="bg-card border border-border">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-yellow-400 flex items-center gap-3">
-                    <Eye className="h-6 w-6 text-primary" />
+                <CardHeader className="p-4 sm:p-6">
+                  <CardTitle className="text-xl sm:text-2xl font-bold text-yellow-400 flex items-center gap-2 sm:gap-3">
+                    <Eye className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                     Information We Collect
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-muted-foreground leading-relaxed">
+                <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6 pt-0">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     We collect information about you in several ways when you use our Site:
                   </p>
                   
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div className="bg-secondary/50 rounded-lg p-4">
-                        <h3 className="text-lg font-semibold mb-3 text-yellow-400 flex items-center gap-2">
-                          <Users className="h-5 w-5 text-primary" />
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                    <div className="bg-secondary/50 rounded-lg p-3 sm:p-4">
+                        <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-yellow-400 flex items-center gap-2">
+                          <Users className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                           Personal Information
                         </h3>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
+                      <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-muted-foreground">
                         <li>• Contact information (email address) when you contact us</li>
                         <li>• Information you voluntarily provide when using our tools</li>
                         <li>• Communications with us, including support requests</li>
                       </ul>
                     </div>
 
-                    <div className="bg-secondary/50 rounded-lg p-4">
-                        <h3 className="text-lg font-semibold mb-3 text-yellow-400 flex items-center gap-2">
-                          <Globe className="h-5 w-5 text-primary" />
+                    <div className="bg-secondary/50 rounded-lg p-3 sm:p-4">
+                        <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-yellow-400 flex items-center gap-2">
+                          <Globe className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                           Automatic Collection
                         </h3>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
+                      <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-muted-foreground">
                         <li>• IP address and location data</li>
                         <li>• Browser type and version</li>
                         <li>• Device information (type, operating system)</li>
@@ -234,12 +234,12 @@ export default function PrivacyPolicyPage() {
                       </ul>
                     </div>
 
-                    <div className="bg-secondary/50 rounded-lg p-4">
-                        <h3 className="text-lg font-semibold mb-3 text-yellow-400 flex items-center gap-2">
-                          <Cookie className="h-5 w-5 text-primary" />
+                    <div className="bg-secondary/50 rounded-lg p-3 sm:p-4">
+                        <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-yellow-400 flex items-center gap-2">
+                          <Cookie className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                           Cookies & Tracking
                         </h3>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
+                      <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-muted-foreground">
                         <li>• Essential cookies for website functionality</li>
                         <li>• Analytics cookies to understand user behavior</li>
                         <li>• Advertising cookies for personalized ads (with your consent)</li>

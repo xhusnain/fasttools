@@ -390,37 +390,38 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="flex flex-col">
         {/* Hero Section - Matching Home Page Style */}
-        <section className="py-24 md:py-40">
-          <div className="container mx-auto px-6 lg:px-8">
+        <section className="py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto text-center">
               {/* SEO Badge with Keywords */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent border border-accent text-white text-sm font-medium mb-8">
-                <Sparkles className="h-4 w-4" />
-                <span>About FastTools • 1000+ Free Tools • Trusted by Millions</span>
-        </div>
+              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-accent border border-accent text-white text-xs sm:text-sm font-medium mb-6 sm:mb-8">
+                <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
+                <span className="hidden sm:inline">About FastTools • 1000+ Free Tools • Trusted by Millions</span>
+                <span className="sm:hidden">About FastTools</span>
+              </div>
 
               {/* SEO-Optimized Headlines with Primary Keywords */}
-              <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
                 About <span className="text-primary">FastTools</span> - Your Digital Productivity Partner
               </h1>
               
-              <p className="text-xl text-muted-foreground mb-16 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl text-muted-foreground mb-12 sm:mb-16 max-w-3xl mx-auto leading-relaxed px-4">
                 Discover the world's most comprehensive free online tools platform. Access 1000+ professional 
                 digital tools including AI generators, converters, calculators, SEO tools, and productivity utilities. 
                 Trusted by millions of users worldwide.
               </p>
 
               {/* Clean CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-16 sm:mb-20 px-4">
                 <Button
                   asChild
                   size="lg"
-                  className="h-12 px-8 text-base font-semibold"
+                  className="h-11 sm:h-12 px-6 sm:px-8 text-sm sm:text-base font-semibold w-full sm:w-auto"
                 >
-                  <a href="/" className="flex items-center gap-2">
-                    <Sparkles className="h-5 w-5" />
+                  <a href="/" className="flex items-center justify-center gap-2">
+                    <Sparkles className="h-4 w-4 sm:h-5 sm:w-5" />
                     Explore All Tools
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
                   </a>
                 </Button>
                 
@@ -428,31 +429,31 @@ export default function AboutPage() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="h-12 px-8 text-base font-semibold"
+                  className="h-11 sm:h-12 px-6 sm:px-8 text-sm sm:text-base font-semibold w-full sm:w-auto"
                 >
-                  <a href="/contact" className="flex items-center gap-2">
-                    <Target className="h-5 w-5" />
+                  <a href="/contact" className="flex items-center justify-center gap-2">
+                    <Target className="h-4 w-4 sm:h-5 sm:w-5" />
                     Contact Us
                   </a>
                 </Button>
               </div>
               
               {/* SEO-Optimized Stats with Keywords */}
-              <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground">
+              <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 text-xs sm:text-sm text-muted-foreground px-4">
                 <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 bg-accent rounded-full"></div>
+                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-accent rounded-full"></div>
                   <span>2.5M+ Active Users</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 bg-primary rounded-full"></div>
+                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-primary rounded-full"></div>
                   <span>1000+ Free Tools</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 bg-accent rounded-full"></div>
+                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-accent rounded-full"></div>
                   <span>190+ Countries</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 bg-primary rounded-full"></div>
+                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-primary rounded-full"></div>
                   <span>4.9/5 Rating</span>
                 </div>
               </div>
@@ -461,34 +462,34 @@ export default function AboutPage() {
         </section>
 
         {/* Comprehensive SEO Content Section */}
-        <section className="py-20 md:py-32 bg-gradient-to-br from-muted/20 to-muted/10">
-          <div className="container mx-auto px-6 lg:px-8">
+        <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-br from-muted/20 to-muted/10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-20">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+              <div className="text-center mb-16 sm:mb-20">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 sm:mb-8 px-4">
                   Why FastTools Became the <span className="text-primary">#1 Free Online Tools Platform</span> Worldwide
                 </h2>
-                <p className="text-lg text-muted-foreground max-w-5xl mx-auto leading-relaxed">
+                <p className="text-base sm:text-lg text-muted-foreground max-w-5xl mx-auto leading-relaxed px-4">
                   Founded in 2024, FastTools emerged from a simple observation: existing online tool platforms were either 
                   expensive, limited, or cluttered with ads. We built the world's most comprehensive free digital toolkit 
                   that combines professional-grade functionality with zero-cost accessibility. Today, millions of users 
                   across 190+ countries rely on our platform for their daily productivity needs.
-          </p>
-        </div>
+                </p>
+              </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-16 sm:mb-20">
                 {/* Innovation Story Card */}
-                <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-200">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center">
-                      <Target className="h-6 w-6 text-white" />
+                    <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center flex-shrink-0">
+                      <Target className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground">Innovation Story</h3>
-                      <p className="text-sm text-muted-foreground">How we revolutionized online tools</p>
+                    <div className="min-w-0">
+                      <h3 className="text-lg sm:text-xl font-bold text-foreground">Innovation Story</h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground">How we revolutionized online tools</p>
                     </div>
                   </div>
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-sm sm:text-base text-muted-foreground">
                     Unlike traditional software companies that charge premium fees, we pioneered the 
                     "freemium-free" model where every tool is completely free forever. Our breakthrough 
                     came from understanding that productivity shouldn't have a price tag.
@@ -496,17 +497,17 @@ export default function AboutPage() {
                 </Card>
 
                 {/* Technology Leadership Card */}
-                <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-200">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center">
-                      <Lightbulb className="h-6 w-6 text-white" />
+                    <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center flex-shrink-0">
+                      <Lightbulb className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground">Technology Leadership</h3>
-                      <p className="text-sm text-muted-foreground">Cutting-edge web technologies</p>
+                    <div className="min-w-0">
+                      <h3 className="text-lg sm:text-xl font-bold text-foreground">Technology Leadership</h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground">Cutting-edge web technologies</p>
                     </div>
                   </div>
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-sm sm:text-base text-muted-foreground">
                     Built on Next.js 15 with React 19, our platform leverages the latest web technologies 
                     for lightning-fast performance. Every tool processes data locally in your browser, 
                     ensuring complete privacy and security.
@@ -514,17 +515,17 @@ export default function AboutPage() {
                 </Card>
 
                 {/* Global Impact Card */}
-                <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-200">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-secondary-accent to-secondary-accent/80 flex items-center justify-center">
-                      <Shield className="h-6 w-6 text-white" />
+                    <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-gradient-to-br from-secondary-accent to-secondary-accent/80 flex items-center justify-center flex-shrink-0">
+                      <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground">Global Impact</h3>
-                      <p className="text-sm text-muted-foreground">Worldwide user base</p>
+                    <div className="min-w-0">
+                      <h3 className="text-lg sm:text-xl font-bold text-foreground">Global Impact</h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground">Worldwide user base</p>
                     </div>
                   </div>
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-sm sm:text-base text-muted-foreground">
                     From small businesses in rural areas to Fortune 500 companies, our tools serve 
                     diverse needs across 190+ countries. We've processed over 50 million tasks, 
                     saving users countless hours and millions in software costs.
@@ -533,60 +534,60 @@ export default function AboutPage() {
               </div>
 
               {/* Featured Tools Section with Links */}
-              <div className="text-center mb-20">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+              <div className="text-center mb-16 sm:mb-20">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 sm:mb-8 px-4">
                   Discover Our <span className="text-primary">Most Popular Free Tools</span> Used by Millions
                 </h2>
-                <p className="text-lg text-muted-foreground max-w-5xl mx-auto leading-relaxed mb-16">
+                <p className="text-base sm:text-lg text-muted-foreground max-w-5xl mx-auto leading-relaxed mb-12 sm:mb-16 px-4">
                   These are the tools that have transformed how people work, create, and calculate. 
                   Each one is completely free, requires no registration, and delivers professional results instantly.
                 </p>
                 
                 {/* Featured Tools with Links */}
-                <div className="grid md:grid-cols-3 gap-10 mb-20">
-                  <Card className="p-6 hover:shadow-lg transition-all duration-200 group">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-16 sm:mb-20">
+                  <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-200 group">
                     <div className="text-center">
-                      <div className="h-16 w-16 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <Calculator className="h-8 w-8 text-white" />
+                      <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                        <Calculator className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                       </div>
-                      <h3 className="text-xl font-bold text-foreground mb-3">Free Loan Calculator</h3>
-                      <p className="text-muted-foreground mb-4">
+                      <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">Free Loan Calculator</h3>
+                      <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">
                         Calculate loan payments, interest rates, and amortization schedules with our 
                         professional-grade financial calculator. Used by 500K+ users monthly.
                       </p>
-                      <Button asChild className="w-full">
+                      <Button asChild className="w-full h-10 sm:h-11 text-sm">
                         <a href="/calculator/loan-calculator">Try Loan Calculator</a>
                       </Button>
                     </div>
                   </Card>
 
-                  <Card className="p-6 hover:shadow-lg transition-all duration-200 group">
+                  <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-200 group">
                     <div className="text-center">
-                      <div className="h-16 w-16 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <RefreshCw className="h-8 w-8 text-white" />
+                      <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                        <RefreshCw className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                       </div>
-                      <h3 className="text-xl font-bold text-foreground mb-3">Currency Converter</h3>
-                      <p className="text-muted-foreground mb-4">
+                      <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">Currency Converter</h3>
+                      <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">
                         Convert between 160+ currencies with real-time exchange rates. 
                         Trusted by travelers, businesses, and investors worldwide.
                       </p>
-                      <Button asChild className="w-full">
+                      <Button asChild className="w-full h-10 sm:h-11 text-sm">
                         <a href="/converters/currency">Convert Currency</a>
                       </Button>
                     </div>
-          </Card>
+                  </Card>
 
-                  <Card className="p-6 hover:shadow-lg transition-all duration-200 group">
+                  <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-200 group">
                     <div className="text-center">
-                      <div className="h-16 w-16 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <Sparkles className="h-8 w-8 text-white" />
+                      <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                        <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                       </div>
-                      <h3 className="text-xl font-bold text-foreground mb-3">AI Caption Generator</h3>
-                      <p className="text-muted-foreground mb-4">
+                      <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">AI Caption Generator</h3>
+                      <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">
                         Generate engaging social media captions with AI. Perfect for Instagram, 
                         Facebook, and Twitter posts. Used by 300K+ content creators.
                       </p>
-                      <Button asChild className="w-full">
+                      <Button asChild className="w-full h-10 sm:h-11 text-sm">
                         <a href="/ai-tools/caption-generator">Generate Captions</a>
                       </Button>
                     </div>
@@ -595,47 +596,47 @@ export default function AboutPage() {
               </div>
 
               {/* Unique Content Section - Company Story */}
-              <div className="mb-20">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+              <div className="mb-16 sm:mb-20">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-8 sm:mb-12 text-center px-4">
                   The FastTools Story: <span className="text-primary">From Idea to Global Impact</span>
                 </h2>
                 
-                <div className="grid md:grid-cols-2 gap-16">
-                  <Card className="p-8">
-                    <h3 className="text-2xl font-bold text-foreground mb-6">Our Founding Philosophy</h3>
-                    <div className="space-y-4">
-                      <p className="text-muted-foreground leading-relaxed">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
+                  <Card className="p-6 sm:p-8">
+                    <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Our Founding Philosophy</h3>
+                    <div className="space-y-3 sm:space-y-4">
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                         FastTools was born from a simple frustration: why should essential productivity tools 
                         cost hundreds of dollars when they could be free? Our founders, experienced developers 
                         and entrepreneurs, witnessed firsthand how expensive software licenses were limiting 
                         small businesses and individuals.
                       </p>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                         We set out to prove that professional-grade digital tools could be completely free 
                         without compromising quality. By leveraging modern web technologies and efficient 
                         development practices, we created a platform that rivals premium software suites.
                       </p>
-              <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                         Today, our "freemium-free" model has saved users over $50 million in software costs 
                         while maintaining the highest standards of functionality and security.
-              </p>
+                      </p>
                     </div>
-          </Card>
+                  </Card>
 
-                  <Card className="p-8">
-                    <h3 className="text-2xl font-bold text-foreground mb-6">Technical Excellence</h3>
-                    <div className="space-y-4">
-                      <p className="text-muted-foreground leading-relaxed">
+                  <Card className="p-6 sm:p-8">
+                    <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Technical Excellence</h3>
+                    <div className="space-y-3 sm:space-y-4">
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                         Every tool on FastTools is built with enterprise-grade architecture. We use 
                         Next.js 15, React 19, and TypeScript for bulletproof performance. Our serverless 
                         infrastructure ensures 99.9% uptime while keeping costs minimal.
                       </p>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                         Privacy is our cornerstone. Unlike competitors who collect user data, every 
                         calculation, conversion, and generation happens locally in your browser. 
                         Your data never touches our servers, ensuring complete confidentiality.
                       </p>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                         Our tools are optimized for Core Web Vitals, loading in under 1.5 seconds 
                         on any device. This technical excellence is why major corporations trust 
                         FastTools for their daily operations.
@@ -646,64 +647,64 @@ export default function AboutPage() {
               </div>
 
               {/* Unique Value Proposition Section */}
-              <div className="mb-20">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+              <div className="mb-16 sm:mb-20">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-8 sm:mb-12 text-center px-4">
                   What Makes FastTools <span className="text-primary">Different from Competitors</span>
                 </h2>
                 
-                <div className="grid md:grid-cols-2 gap-12">
-                  <Card className="p-8">
-                    <h3 className="text-2xl font-bold text-foreground mb-6">Our Competitive Advantages</h3>
-                    <div className="space-y-6">
-                      <div className="flex items-start gap-4">
-                        <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                          <div className="h-3 w-3 bg-primary rounded-full"></div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+                  <Card className="p-6 sm:p-8">
+                    <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Our Competitive Advantages</h3>
+                    <div className="space-y-4 sm:space-y-6">
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                          <div className="h-2 w-2 sm:h-3 sm:w-3 bg-primary rounded-full"></div>
                         </div>
                         <div>
-                          <h4 className="font-bold text-foreground mb-2">Zero-Cost Business Model</h4>
-                          <p className="text-muted-foreground">While competitors charge $29-99/month for basic tools, we provide enterprise-grade functionality completely free. Our sustainable model relies on efficient infrastructure, not user payments.</p>
+                          <h4 className="font-bold text-foreground mb-2 text-sm sm:text-base">Zero-Cost Business Model</h4>
+                          <p className="text-xs sm:text-sm text-muted-foreground">While competitors charge $29-99/month for basic tools, we provide enterprise-grade functionality completely free. Our sustainable model relies on efficient infrastructure, not user payments.</p>
                         </div>
                       </div>
-                      <div className="flex items-start gap-4">
-                        <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                          <div className="h-3 w-3 bg-primary rounded-full"></div>
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                          <div className="h-2 w-2 sm:h-3 sm:w-3 bg-primary rounded-full"></div>
                         </div>
                         <div>
-                          <h4 className="font-bold text-foreground mb-2">Privacy-First Architecture</h4>
-                          <p className="text-muted-foreground">Unlike Google Tools or Microsoft Office that collect data, our tools process everything locally in your browser. Your documents, calculations, and personal information never leave your device.</p>
+                          <h4 className="font-bold text-foreground mb-2 text-sm sm:text-base">Privacy-First Architecture</h4>
+                          <p className="text-xs sm:text-sm text-muted-foreground">Unlike Google Tools or Microsoft Office that collect data, our tools process everything locally in your browser. Your documents, calculations, and personal information never leave your device.</p>
                         </div>
                       </div>
-                      <div className="flex items-start gap-4">
-                        <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                          <div className="h-3 w-3 bg-primary rounded-full"></div>
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                          <div className="h-2 w-2 sm:h-3 sm:w-3 bg-primary rounded-full"></div>
                         </div>
                         <div>
-                          <h4 className="font-bold text-foreground mb-2">No Registration Required</h4>
-                          <p className="text-muted-foreground">Start using any tool instantly without creating accounts, providing emails, or sharing personal information. True plug-and-play productivity.</p>
+                          <h4 className="font-bold text-foreground mb-2 text-sm sm:text-base">No Registration Required</h4>
+                          <p className="text-xs sm:text-sm text-muted-foreground">Start using any tool instantly without creating accounts, providing emails, or sharing personal information. True plug-and-play productivity.</p>
                         </div>
                       </div>
                     </div>
                   </Card>
 
-                  <Card className="p-8">
-                    <h3 className="text-2xl font-bold text-foreground mb-6">User Success Stories</h3>
-                    <div className="space-y-6">
-                      <div className="border-l-4 border-primary pl-4">
-                        <p className="text-muted-foreground italic mb-2">"FastTools saved our startup $2,400/year in software licenses. The loan calculator alone helped us secure better financing terms."</p>
-                        <p className="text-sm font-semibold text-foreground">- Sarah Chen, CEO of TechStart Inc.</p>
+                  <Card className="p-6 sm:p-8">
+                    <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">User Success Stories</h3>
+                    <div className="space-y-4 sm:space-y-6">
+                      <div className="border-l-4 border-primary pl-3 sm:pl-4">
+                        <p className="text-xs sm:text-sm text-muted-foreground italic mb-2">"FastTools saved our startup $2,400/year in software licenses. The loan calculator alone helped us secure better financing terms."</p>
+                        <p className="text-xs sm:text-sm font-semibold text-foreground">- Sarah Chen, CEO of TechStart Inc.</p>
                       </div>
-                      <div className="border-l-4 border-accent pl-4">
-                        <p className="text-muted-foreground italic mb-2">"As a freelance designer, I use the image tools daily. The quality rivals Adobe Creative Suite, but it's completely free."</p>
-                        <p className="text-sm font-semibold text-foreground">- Marcus Rodriguez, Freelance Designer</p>
+                      <div className="border-l-4 border-accent pl-3 sm:pl-4">
+                        <p className="text-xs sm:text-sm text-muted-foreground italic mb-2">"As a freelance designer, I use the image tools daily. The quality rivals Adobe Creative Suite, but it's completely free."</p>
+                        <p className="text-xs sm:text-sm font-semibold text-foreground">- Marcus Rodriguez, Freelance Designer</p>
                       </div>
-                      <div className="border-l-4 border-secondary-accent pl-4">
-                        <p className="text-muted-foreground italic mb-2">"The AI caption generator increased our social media engagement by 340%. Best part? No monthly subscription fees."</p>
-                        <p className="text-sm font-semibold text-foreground">- Jennifer Park, Marketing Director</p>
+                      <div className="border-l-4 border-secondary-accent pl-3 sm:pl-4">
+                        <p className="text-xs sm:text-sm text-muted-foreground italic mb-2">"The AI caption generator increased our social media engagement by 340%. Best part? No monthly subscription fees."</p>
+                        <p className="text-xs sm:text-sm font-semibold text-foreground">- Jennifer Park, Marketing Director</p>
                       </div>
                     </div>
-          </Card>
-        </div>
-      </div>
+                  </Card>
+                </div>
+              </div>
             </div>
           </div>
         </section>

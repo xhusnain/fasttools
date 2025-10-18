@@ -838,44 +838,44 @@ export default function FAQPage() {
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <section className="container mx-auto px-4 py-16 md:py-20">
+            <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
                 <div className="max-w-4xl mx-auto">
-                    <div className="text-center mb-12">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">SEO FAQ - Expert Questions & Answers</h1>
-                        <p className="text-muted-foreground text-xl leading-relaxed mb-8 max-w-4xl mx-auto">
+                    <div className="text-center mb-8 sm:mb-12">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 text-foreground px-4">SEO FAQ - Expert Questions & Answers</h1>
+                        <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed mb-6 sm:mb-8 max-w-4xl mx-auto px-4">
                             Get answers to 200+ SEO questions covering keyword research, technical SEO, Core Web Vitals, 
                             schema markup, backlinks, and ranking factors. Expert insights, practical tips, and free SEO tools 
                             to improve your search rankings and website performance.
                         </p>
-                        <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground mb-8">
-                            <div className="flex items-center gap-2">
-                                <Clock className="h-4 w-4" />
+                        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-6 text-xs sm:text-sm text-muted-foreground mb-6 sm:mb-8 px-4">
+                            <div className="flex items-center gap-1.5 sm:gap-2">
+                                <Clock className="h-3 w-3 sm:h-4 sm:w-4" />
                                 <span>200+ Expert Questions</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <Users className="h-4 w-4" />
+                            <div className="flex items-center gap-1.5 sm:gap-2">
+                                <Users className="h-3 w-3 sm:h-4 sm:w-4" />
                                 <span>Comprehensive Answers</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <Star className="h-4 w-4" />
+                            <div className="flex items-center gap-1.5 sm:gap-2">
+                                <Star className="h-3 w-3 sm:h-4 sm:w-4" />
                                 <span>10,000+ Words</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <Target className="h-4 w-4" />
+                            <div className="flex items-center gap-1.5 sm:gap-2">
+                                <Target className="h-3 w-3 sm:h-4 sm:w-4" />
                                 <span>SEO Optimized</span>
                             </div>
                         </div>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Button asChild size="lg" className="h-12 px-8 text-base font-semibold">
-                                <Link href="/seo-tools" className="flex items-center gap-2">
-                                    <Search className="h-5 w-5" />
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+                            <Button asChild size="lg" className="h-10 sm:h-12 px-6 sm:px-8 text-sm sm:text-base font-semibold w-full sm:w-auto">
+                                <Link href="/seo-tools" className="flex items-center justify-center gap-2">
+                                    <Search className="h-4 w-4 sm:h-5 sm:w-5" />
                                     Try SEO Tools
-                                    <ArrowRight className="h-4 w-4" />
+                                    <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
                                 </Link>
                             </Button>
-                            <Button asChild variant="outline" size="lg" className="h-12 px-8 text-base font-semibold">
-                                <Link href="/guides/seo-tools-guide" className="flex items-center gap-2">
-                                    <BookOpen className="h-5 w-5" />
+                            <Button asChild variant="outline" size="lg" className="h-10 sm:h-12 px-6 sm:px-8 text-sm sm:text-base font-semibold w-full sm:w-auto">
+                                <Link href="/guides/seo-tools-guide" className="flex items-center justify-center gap-2">
+                                    <BookOpen className="h-4 w-4 sm:h-5 sm:w-5" />
                                     Read Complete Guide
                                 </Link>
                             </Button>
@@ -883,32 +883,32 @@ export default function FAQPage() {
                     </div>
 
                     {/* Quick Navigation */}
-                    <div className="mb-12">
-                        <h2 className="text-2xl font-bold mb-6 text-foreground">Quick Navigation</h2>
-                        <div className="grid md:grid-cols-3 gap-4">
+                    <div className="mb-8 sm:mb-12">
+                        <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground px-4">Quick Navigation</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
                             <Card>
-                                <CardContent className="p-4">
-                                    <h3 className="font-semibold mb-2 text-foreground">Technical SEO</h3>
-                                    <p className="text-sm text-muted-foreground mb-3">Core Web Vitals, site speed, crawling, indexing, and technical optimization.</p>
-                                    <Button asChild variant="outline" size="sm">
+                                <CardContent className="p-3 sm:p-4">
+                                    <h3 className="font-semibold mb-2 text-foreground text-sm sm:text-base">Technical SEO</h3>
+                                    <p className="text-xs sm:text-sm text-muted-foreground mb-3">Core Web Vitals, site speed, crawling, indexing, and technical optimization.</p>
+                                    <Button asChild variant="outline" size="sm" className="h-8 sm:h-9 text-xs sm:text-sm">
                                         <Link href="/faq#technical-seo">Jump to Section</Link>
                                     </Button>
                                 </CardContent>
                             </Card>
                             <Card>
-                                <CardContent className="p-4">
-                                    <h3 className="font-semibold mb-2 text-foreground">Content & Keywords</h3>
-                                    <p className="text-sm text-muted-foreground mb-3">Keyword research, content strategy, on-page optimization, and topical authority.</p>
-                                    <Button asChild variant="outline" size="sm">
+                                <CardContent className="p-3 sm:p-4">
+                                    <h3 className="font-semibold mb-2 text-foreground text-sm sm:text-base">Content & Keywords</h3>
+                                    <p className="text-xs sm:text-sm text-muted-foreground mb-3">Keyword research, content strategy, on-page optimization, and topical authority.</p>
+                                    <Button asChild variant="outline" size="sm" className="h-8 sm:h-9 text-xs sm:text-sm">
                                         <Link href="/faq#content-keywords">Jump to Section</Link>
                                     </Button>
                                 </CardContent>
                             </Card>
                             <Card>
-                                <CardContent className="p-4">
-                                    <h3 className="font-semibold mb-2 text-foreground">Link Building</h3>
-                                    <p className="text-sm text-muted-foreground mb-3">Backlinks, internal linking, anchor text, and authority building strategies.</p>
-                                    <Button asChild variant="outline" size="sm">
+                                <CardContent className="p-3 sm:p-4">
+                                    <h3 className="font-semibold mb-2 text-foreground text-sm sm:text-base">Link Building</h3>
+                                    <p className="text-xs sm:text-sm text-muted-foreground mb-3">Backlinks, internal linking, anchor text, and authority building strategies.</p>
+                                    <Button asChild variant="outline" size="sm" className="h-8 sm:h-9 text-xs sm:text-sm">
                                         <Link href="/faq#link-building">Jump to Section</Link>
                                     </Button>
                                 </CardContent>
@@ -994,33 +994,35 @@ export default function FAQPage() {
 
                     <div className="space-y-12">
                         {faqs.map((qa, i) => (
-                            <article key={i} className="bg-card border border-border rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
-                                <h2 className="text-2xl font-bold text-foreground mb-4 flex items-start gap-3">
-                                    <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                                        <span className="text-primary font-bold text-sm">{i + 1}</span>
+                            <article key={i} className="bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
+                                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground mb-3 sm:mb-4 flex items-start gap-2 sm:gap-3">
+                                    <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1">
+                                        <span className="text-primary font-bold text-xs sm:text-sm">{i + 1}</span>
                                     </div>
-                                    {qa.question}
+                                    <span className="min-w-0">{qa.question}</span>
                                 </h2>
                                 <div 
-                                    className="text-muted-foreground leading-relaxed text-lg prose prose-slate dark:prose-invert max-w-none"
+                                    className="text-muted-foreground leading-relaxed text-sm sm:text-base lg:text-lg prose prose-slate dark:prose-invert max-w-none prose-sm sm:prose-base lg:prose-lg"
                                     dangerouslySetInnerHTML={{ __html: qa.answer }}
                                 />
                             </article>
                         ))}
 
-                        <h2>Closing Notes</h2>
-                        <p>
-                            SEO requires ongoing attention to technical health, content quality, and authority signals. Use tools like
-                            Google Search Console, Lighthouse, and FastTools utilities to audit performance, track Core Web Vitals,
-                            validate structured data, and monitor indexing. Prioritize user intent, optimize for speed and clarity, and
-                            build topical authority through comprehensive, well-linked content clusters.
-                        </p>
+                        <div className="bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8 shadow-sm">
+                            <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4">Closing Notes</h2>
+                            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                                SEO requires ongoing attention to technical health, content quality, and authority signals. Use tools like
+                                Google Search Console, Lighthouse, and FastTools utilities to audit performance, track Core Web Vitals,
+                                validate structured data, and monitor indexing. Prioritize user intent, optimize for speed and clarity, and
+                                build topical authority through comprehensive, well-linked content clusters.
+                            </p>
+                        </div>
                     </div>
 
                     {/* Comprehensive SEO Strategy Section */}
-                    <div className="mt-16 mb-12">
-                        <h2 className="text-3xl font-bold mb-8 text-foreground">Complete SEO Strategy Framework</h2>
-                        <div className="grid md:grid-cols-2 gap-8">
+                    <div className="mt-12 sm:mt-16 mb-8 sm:mb-12">
+                        <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-foreground px-4">Complete SEO Strategy Framework</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                             <Card>
                                 <CardHeader>
                                     <CardTitle className="flex items-center gap-2">

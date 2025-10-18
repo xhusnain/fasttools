@@ -124,7 +124,7 @@ export default function CookiePreferencesPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
-        <div className="container mx-auto px-4 py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <Breadcrumbs items={[
             { label: "Home", href: "/" },
             { label: "Cookie Preferences", href: "/cookie-preferences" }
@@ -132,97 +132,97 @@ export default function CookiePreferencesPage() {
 
           <div className="max-w-5xl mx-auto">
             {/* Hero Section */}
-            <div className="text-center mb-16">
-              <div className="flex items-center justify-center mb-6">
-                <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Cookie className="h-8 w-8 text-primary" />
+            <div className="text-center mb-12 sm:mb-16">
+              <div className="flex items-center justify-center mb-4 sm:mb-6">
+                <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Cookie className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-yellow-400">Cookie Policy</h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 text-yellow-400 px-4">Cookie Policy</h1>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
                 Manage your cookie preferences and learn about how we use cookies in compliance with Google AdSense, Google Analytics, and privacy regulations.
               </p>
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
-                <Badge variant="secondary" className="h-8 px-4 text-sm">
-                  <CheckCircle className="h-4 w-4 mr-2" />
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 sm:mb-8 px-4">
+                <Badge variant="secondary" className="h-7 sm:h-8 px-3 sm:px-4 text-xs sm:text-sm">
+                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
                   Google AdSense Compliant
                 </Badge>
-                <Badge variant="secondary" className="h-8 px-4 text-sm">
-                  <CheckCircle className="h-4 w-4 mr-2" />
+                <Badge variant="secondary" className="h-7 sm:h-8 px-3 sm:px-4 text-xs sm:text-sm">
+                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
                   GDPR Compliant
                 </Badge>
-                <Badge variant="secondary" className="h-8 px-4 text-sm">
-                  <CheckCircle className="h-4 w-4 mr-2" />
+                <Badge variant="secondary" className="h-7 sm:h-8 px-3 sm:px-4 text-xs sm:text-sm">
+                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
                   CCPA Compliant
                 </Badge>
               </div>
             </div>
 
             {/* Quick Navigation */}
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold mb-6 text-yellow-400">Quick Navigation</h2>
-              <div className="grid md:grid-cols-3 gap-4">
+            <div className="mb-12 sm:mb-16">
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-yellow-400 px-4">Quick Navigation</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
                 <Card className="hover:shadow-md transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Cookie className="h-5 w-5 text-primary" />
+                  <CardHeader className="pb-2 sm:pb-3 p-3 sm:p-6">
+                    <CardTitle className="text-base sm:text-lg flex items-center gap-2">
+                      <Cookie className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                       Cookie Types
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">Essential, analytics, advertising, and functional cookies</p>
+                  <CardContent className="p-3 sm:p-6 pt-0">
+                    <p className="text-xs sm:text-sm text-muted-foreground">Essential, analytics, advertising, and functional cookies</p>
                   </CardContent>
                 </Card>
                 <Card className="hover:shadow-md transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Shield className="h-5 w-5 text-primary" />
+                  <CardHeader className="pb-2 sm:pb-3 p-3 sm:p-6">
+                    <CardTitle className="text-base sm:text-lg flex items-center gap-2">
+                      <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                       Google AdSense
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">Advertising cookies and Google Analytics compliance</p>
+                  <CardContent className="p-3 sm:p-6 pt-0">
+                    <p className="text-xs sm:text-sm text-muted-foreground">Advertising cookies and Google Analytics compliance</p>
                   </CardContent>
                 </Card>
                 <Card className="hover:shadow-md transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Settings className="h-5 w-5 text-primary" />
+                  <CardHeader className="pb-2 sm:pb-3 p-3 sm:p-6">
+                    <CardTitle className="text-base sm:text-lg flex items-center gap-2">
+                      <Settings className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                       Manage Preferences
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">Control your cookie settings and consent</p>
+                  <CardContent className="p-3 sm:p-6 pt-0">
+                    <p className="text-xs sm:text-sm text-muted-foreground">Control your cookie settings and consent</p>
                   </CardContent>
                 </Card>
               </div>
             </div>
 
             {/* Main Content */}
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-12">
               <Card className="bg-card border border-border">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-yellow-400 flex items-center gap-3">
-                    <Eye className="h-6 w-6 text-primary" />
+                <CardHeader className="p-4 sm:p-6">
+                  <CardTitle className="text-xl sm:text-2xl font-bold text-yellow-400 flex items-center gap-2 sm:gap-3">
+                    <Eye className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                     What Are Cookies?
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
+                <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     Cookies are small text files that are stored on your device when you visit our website. They help us provide you with a better experience by remembering your preferences and understanding how you use our site.
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     You can learn more about our use of cookies in our{" "}
                     <Link href="/privacy-policy" className="text-primary hover:underline">
                       Privacy Policy
                     </Link>.
                   </p>
-                  <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
-                    <div className="flex items-start gap-3">
-                      <AlertTriangle className="h-5 w-5 text-accent mt-0.5" />
+                  <div className="bg-accent/10 border border-accent/20 rounded-lg p-3 sm:p-4">
+                    <div className="flex items-start gap-2 sm:gap-3">
+                      <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-accent mt-0.5 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Important Notice</h4>
-                        <p className="text-sm text-muted-foreground">
+                        <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Important Notice</h4>
+                        <p className="text-xs sm:text-sm text-muted-foreground">
                           Our cookie usage complies with Google AdSense policies, Google Analytics requirements, GDPR, and CCPA regulations. You have full control over your cookie preferences.
                         </p>
                       </div>
@@ -399,14 +399,14 @@ export default function CookiePreferencesPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button onClick={acceptAll} className="flex-1 h-12">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <Button onClick={acceptAll} className="flex-1 h-10 sm:h-12 text-sm sm:text-base">
                       Accept All Cookies
                     </Button>
-                    <Button variant="outline" onClick={rejectAll} className="flex-1 h-12">
+                    <Button variant="outline" onClick={rejectAll} className="flex-1 h-10 sm:h-12 text-sm sm:text-base">
                       Reject All Non-Essential
                     </Button>
-                    <Button onClick={savePreferences} className="flex-1 h-12">
+                    <Button onClick={savePreferences} className="flex-1 h-10 sm:h-12 text-sm sm:text-base">
                       Save Current Preferences
                     </Button>
                   </div>

@@ -92,100 +92,100 @@ export default function TermsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
-        <div className="container mx-auto px-4 py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <Breadcrumbs items={[{ label: "Terms of Service", href: "/terms" }]} />
 
           <div className="max-w-5xl mx-auto">
             {/* Hero Section */}
-            <div className="text-center mb-16">
-              <div className="flex items-center justify-center mb-6">
-                <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Scale className="h-8 w-8 text-primary" />
+            <div className="text-center mb-12 sm:mb-16">
+              <div className="flex items-center justify-center mb-4 sm:mb-6">
+                <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Scale className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-yellow-400">Terms of Service</h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 text-yellow-400 px-4">Terms of Service</h1>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
                 Legal terms and conditions for using FastTools. Learn about your rights, obligations, and our commitment to Google AdSense compliance.
               </p>
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
-                <Badge variant="secondary" className="h-8 px-4 text-sm">
-                  <CheckCircle className="h-4 w-4 mr-2" />
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 sm:mb-8 px-4">
+                <Badge variant="secondary" className="h-7 sm:h-8 px-3 sm:px-4 text-xs sm:text-sm">
+                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
                   Google AdSense Compliant
                 </Badge>
-                <Badge variant="secondary" className="h-8 px-4 text-sm">
-                  <CheckCircle className="h-4 w-4 mr-2" />
+                <Badge variant="secondary" className="h-7 sm:h-8 px-3 sm:px-4 text-xs sm:text-sm">
+                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
                   Legal Compliance
                 </Badge>
-                <Badge variant="secondary" className="h-8 px-4 text-sm">
-                  <CheckCircle className="h-4 w-4 mr-2" />
+                <Badge variant="secondary" className="h-7 sm:h-8 px-3 sm:px-4 text-xs sm:text-sm">
+                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
                   User Protection
                 </Badge>
               </div>
-              <p className="text-sm text-muted-foreground">Last updated: December 19, 2024</p>
+              <p className="text-xs sm:text-sm text-muted-foreground">Last updated: December 19, 2024</p>
             </div>
 
             {/* Quick Navigation */}
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold mb-6 text-yellow-400">Quick Navigation</h2>
-              <div className="grid md:grid-cols-3 gap-4">
+            <div className="mb-12 sm:mb-16">
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-yellow-400 px-4">Quick Navigation</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
                 <Card className="hover:shadow-md transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <FileText className="h-5 w-5 text-primary" />
+                  <CardHeader className="pb-2 sm:pb-3 p-3 sm:p-6">
+                    <CardTitle className="text-base sm:text-lg flex items-center gap-2">
+                      <FileText className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                       Service Agreement
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">Terms and conditions for using our tools</p>
+                  <CardContent className="p-3 sm:p-6 pt-0">
+                    <p className="text-xs sm:text-sm text-muted-foreground">Terms and conditions for using our tools</p>
                   </CardContent>
                 </Card>
                 <Card className="hover:shadow-md transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Shield className="h-5 w-5 text-primary" />
+                  <CardHeader className="pb-2 sm:pb-3 p-3 sm:p-6">
+                    <CardTitle className="text-base sm:text-lg flex items-center gap-2">
+                      <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                       Google AdSense
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">Advertising compliance and user obligations</p>
+                  <CardContent className="p-3 sm:p-6 pt-0">
+                    <p className="text-xs sm:text-sm text-muted-foreground">Advertising compliance and user obligations</p>
                   </CardContent>
                 </Card>
                 <Card className="hover:shadow-md transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Gavel className="h-5 w-5 text-primary" />
+                  <CardHeader className="pb-2 sm:pb-3 p-3 sm:p-6">
+                    <CardTitle className="text-base sm:text-lg flex items-center gap-2">
+                      <Gavel className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                       Legal Rights
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">User rights and legal protections</p>
+                  <CardContent className="p-3 sm:p-6 pt-0">
+                    <p className="text-xs sm:text-sm text-muted-foreground">User rights and legal protections</p>
                   </CardContent>
                 </Card>
               </div>
             </div>
 
             {/* Main Content */}
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-12">
               <Card className="bg-card border border-border">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-yellow-400 flex items-center gap-3">
-                    <FileText className="h-6 w-6 text-primary" />
+                <CardHeader className="p-4 sm:p-6">
+                  <CardTitle className="text-xl sm:text-2xl font-bold text-yellow-400 flex items-center gap-2 sm:gap-3">
+                    <FileText className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                     Agreement to Terms
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
+                <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     These Terms of Service ("Terms") govern your use of FastTools ("we," "our," or "us") website located at fasttools.store (the "Site") and our free online tools and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     If you do not agree to these Terms, please do not use our Services. We reserve the right to modify these Terms at any time, and your continued use of our Services after such modifications constitutes acceptance of the updated Terms.
                   </p>
-                  <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
-                    <div className="flex items-start gap-3">
-                      <AlertTriangle className="h-5 w-5 text-accent mt-0.5" />
+                  <div className="bg-accent/10 border border-accent/20 rounded-lg p-3 sm:p-4">
+                    <div className="flex items-start gap-2 sm:gap-3">
+                      <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-accent mt-0.5 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Important Notice</h4>
-                        <p className="text-sm text-muted-foreground">
+                        <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Important Notice</h4>
+                        <p className="text-xs sm:text-sm text-muted-foreground">
                           These terms comply with Google AdSense policies, Google Search Console requirements, and applicable laws. By using our services, you agree to comply with all Google policies and guidelines.
                         </p>
                       </div>
