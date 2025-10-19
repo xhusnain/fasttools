@@ -506,6 +506,7 @@ export const metadata: Metadata = {
             <meta name="duckduckbot" content="index, follow"/>
             <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"/>
             <meta name="google-adsense-account" content="ca-pub-6296569221534302"/>
+            <meta name="yandex-verification" content="242a8cf232328714" />
             
             {/* Enhanced SEO Meta Tags */}
             <meta name="author" content="fasttools Team"/>
