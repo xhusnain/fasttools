@@ -253,11 +253,11 @@ export const metadata: Metadata = {
         description: "fasttools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
         images: [
           {
-            url: "/og-image.svg",
+            url: "/banner.png",
             width: 1200,
             height: 630,
             alt: "fasttools - Professional Online Tools & Utilities Collection",
-            type: "image/svg+xml",
+            type: "image/png",
           },
         ],
       },
@@ -267,7 +267,7 @@ export const metadata: Metadata = {
         creator: "@ZamanIsmail7",
         title: "Free Online Tools | fasttools - Complete Digital Toolkit",
         description: "fasttools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
-        images: ["/og-image.svg"],
+        images: ["/banner.png"],
       },
       robots: {
         index: true,
@@ -329,12 +329,12 @@ export const metadata: Metadata = {
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://www.fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.png",
           width: 320,
           height: 80,
           description: "fasttools professional logo with modern FT symbol and blue gradient"
         },
-        image: "https://www.fasttools.store/og-image.svg",
+        image: "https://www.fasttools.store/banner.png",
         description: "fasttools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
         foundingDate: "2024",
         sameAs: [

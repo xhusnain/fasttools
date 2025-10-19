@@ -255,7 +255,7 @@ export const metadata: Metadata = {
     creator: "@ZamanIsmail7",
     title: "About FastTools - Leading Free Online Tools Platform",
     description: "Discover FastTools, the world's most comprehensive free online tools platform. Access 1000+ professional tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
-    images: ["https://www.fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/banner.png"],
   },
   alternates: {
     canonical: "https://www.fasttools.store/about",

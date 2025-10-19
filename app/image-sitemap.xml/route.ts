@@ -24,12 +24,12 @@ export async function GET() {
       priority: 0.95, // Highest priority for trending AI niche
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "AI Caption Generator Tool - Free Online AI Content Creation",
           caption: "FastTools AI Caption Generator - Create engaging social media captions with artificial intelligence"
         },
         {
-          url: "https://www.fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.png",
           title: "FastTools AI Tools Logo",
           caption: "FastTools professional logo for AI automation tools and content generation"
         }
@@ -42,7 +42,7 @@ export async function GET() {
       priority: 0.9,
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "AI Hashtag Suggester - Smart Social Media Hashtag Generator",
           caption: "FastTools AI Hashtag Suggester - Generate trending hashtags with artificial intelligence"
         }
@@ -55,7 +55,7 @@ export async function GET() {
       priority: 0.9,
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "AI Lyrics Generator - Free Online Song Writing Tool",
           caption: "FastTools AI Lyrics Generator - Create original song lyrics with artificial intelligence"
         }
@@ -68,7 +68,7 @@ export async function GET() {
       priority: 0.9,
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "AI Meme Generator - Free Online Meme Creation Tool",
           caption: "FastTools AI Meme Generator - Create viral memes with artificial intelligence"
         }
@@ -81,7 +81,7 @@ export async function GET() {
       priority: 0.85,
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "AI Pet Name Generator - Smart Pet Naming Tool",
           caption: "FastTools AI Pet Name Generator - Generate unique pet names with artificial intelligence"
         }
@@ -94,7 +94,7 @@ export async function GET() {
       priority: 0.85,
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "AI QR Code Generator - Smart QR Code Creation Tool",
           caption: "FastTools AI QR Code Generator - Create custom QR codes with artificial intelligence"
         }
@@ -111,7 +111,7 @@ export async function GET() {
       priority: 0.9, // High priority for currency converter
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "Currency Converter - Live Exchange Rate Calculator",
           caption: "FastTools Currency Converter - Convert currencies with real-time exchange rates"
         },
@@ -129,7 +129,7 @@ export async function GET() {
       priority: 0.8,
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "File Size Converter - Free Online File Size Calculator",
           caption: "FastTools File Size Converter - Convert between different file size units"
         }
@@ -142,7 +142,7 @@ export async function GET() {
       priority: 0.8,
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "Length Converter - Free Online Length Calculator",
           caption: "FastTools Length Converter - Convert between different length units"
         }
@@ -155,7 +155,7 @@ export async function GET() {
       priority: 0.8,
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "Temperature Converter - Free Online Temperature Calculator",
           caption: "FastTools Temperature Converter - Convert between Celsius, Fahrenheit, and Kelvin"
         }
@@ -168,7 +168,7 @@ export async function GET() {
       priority: 0.8,
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "Text Case Converter - Free Online Text Case Tool",
           caption: "FastTools Text Case Converter - Convert text between different cases"
         }
@@ -181,7 +181,7 @@ export async function GET() {
       priority: 0.8,
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "Timezone Converter - Free Online Time Zone Calculator",
           caption: "FastTools Timezone Converter - Convert time between different time zones"
         }
@@ -198,7 +198,7 @@ export async function GET() {
       priority: 0.85, // High priority for business tools
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "Invoice Generator - Free Online Invoice Creation Tool",
           caption: "FastTools Invoice Generator - Create professional invoices for your business"
         },
@@ -216,7 +216,7 @@ export async function GET() {
       priority: 0.85,
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "Loan Calculator - Free Online Loan Payment Calculator",
           caption: "FastTools Loan Calculator - Calculate loan payments and interest rates"
         }
@@ -229,7 +229,7 @@ export async function GET() {
       priority: 0.85,
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "Tax Calculator - Free Online Tax Calculation Tool",
           caption: "FastTools Tax Calculator - Calculate taxes and deductions accurately"
         }
@@ -246,7 +246,7 @@ export async function GET() {
       priority: 0.8, // Medium-high priority for content creation
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "YouTube Thumbnail Downloader - Free Online Thumbnail Tool",
           caption: "FastTools YouTube Thumbnail Downloader - Download high-quality YouTube thumbnails"
         }
@@ -259,7 +259,7 @@ export async function GET() {
       priority: 0.8,
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "Instagram DP Viewer - Free Online Profile Picture Tool",
           caption: "FastTools Instagram DP Viewer - View Instagram profile pictures anonymously"
         }
@@ -276,7 +276,7 @@ export async function GET() {
       priority: 0.75, // Medium priority for developer tools
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "Color Palette Generator - Free Online Color Tool",
           caption: "FastTools Color Palette Generator - Create beautiful color palettes for your projects"
         }
@@ -289,7 +289,7 @@ export async function GET() {
       priority: 0.75,
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "Hex to RGB Converter - Free Online Color Converter",
           caption: "FastTools Hex to RGB Converter - Convert hex colors to RGB values"
         }
@@ -311,7 +311,7 @@ export async function GET() {
           caption: "fasttools professional logo with modern FT symbol and blue gradient design for comprehensive free online tools collection"
         },
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "fasttools Social Media Image - Complete Digital Toolkit",
           caption: "fasttools professional social media sharing image showcasing comprehensive free online tools collection for productivity and business"
         },
@@ -342,7 +342,7 @@ export async function GET() {
       priority: 0.9, // High priority for social sharing
       images: [
         {
-          url: "https://www.fasttools.store/og-image.svg",
+          url: "https://www.fasttools.store/banner.png",
           title: "fasttools Social Media Image",
           caption: "fasttools professional social media sharing image with tools showcase"
         }
