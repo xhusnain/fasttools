@@ -251,8 +251,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@fasttoolsstore",
-    creator: "@fasttoolsstore",
+    site: "@ZamanIsmail7",
+    creator: "@ZamanIsmail7",
     title: "About FastTools - Leading Free Online Tools Platform",
     description: "Discover FastTools, the world's most comprehensive free online tools platform. Access 1000+ professional tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
     images: ["https://www.fasttools.store/og-image.svg"],
@@ -306,9 +306,9 @@ export default function AboutPage() {
         addressCountry: "US"
       },
       sameAs: [
-        "https://twitter.com/fasttoolsstore",
-        "https://facebook.com/fasttoolsstore",
-        "https://linkedin.com/company/fasttoolsstore"
+        "https://x.com/ZamanIsmail7",
+        "https://www.facebook.com/profile.php?id=61582711433268",
+        "https://www.youtube.com/channel/UCLnJoKw00cNkTjT5C0axoiQ"
       ],
       makesOffer: {
         "@type": "Offer",

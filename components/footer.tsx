@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Wrench, Facebook, Twitter, Instagram, Linkedin, Mail, Github } from "lucide-react"
+import { Wrench, Facebook, Twitter, Instagram, Youtube, Mail, Github } from "lucide-react"
 
 export function Footer() {
   return (
@@ -678,7 +678,7 @@ export function Footer() {
 
             <div className="flex items-center gap-4">
               <a
-                href="https://facebook.com/fasttoolsstore"
+                href="https://www.facebook.com/profile.php?id=61582711433268"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-9 w-9 rounded-lg border border-[#7678ED] bg-white hover:bg-[#F35B04] hover:border-[#F35B04] transition-all duration-200 flex items-center justify-center group shadow-sm hover:shadow-md"
@@ -687,31 +687,22 @@ export function Footer() {
                 <Facebook className="h-4 w-4 text-gray-600 group-hover:text-white transition-colors" />
               </a>
               <a
-                href="https://twitter.com/fasttoolsstore"
+                href="https://x.com/ZamanIsmail7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-9 w-9 rounded-lg border border-[#7678ED] bg-white hover:bg-[#F35B04] hover:border-[#F35B04] transition-all duration-200 flex items-center justify-center group shadow-sm hover:shadow-md"
-                aria-label="Twitter"
+                aria-label="X (Twitter)"
               >
                 <Twitter className="h-4 w-4 text-gray-600 group-hover:text-white transition-colors" />
               </a>
               <a
-                href="https://instagram.com/fasttoolsstore"
+                href="https://www.youtube.com/channel/UCLnJoKw00cNkTjT5C0axoiQ"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-9 w-9 rounded-lg border border-[#7678ED] bg-white hover:bg-[#F35B04] hover:border-[#F35B04] transition-all duration-200 flex items-center justify-center group shadow-sm hover:shadow-md"
-                aria-label="Instagram"
+                aria-label="YouTube"
               >
-                <Instagram className="h-4 w-4 text-gray-600 group-hover:text-white transition-colors" />
-              </a>
-              <a
-                href="https://linkedin.com/company/fasttoolsstore"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-9 w-9 rounded-lg border border-[#7678ED] bg-white hover:bg-[#F35B04] hover:border-[#F35B04] transition-all duration-200 flex items-center justify-center group shadow-sm hover:shadow-md"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-4 w-4 text-gray-600 group-hover:text-white transition-colors" />
+                <Youtube className="h-4 w-4 text-gray-600 group-hover:text-white transition-colors" />
               </a>
             </div>
           </div>

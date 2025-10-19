@@ -764,9 +764,9 @@ export default function FAQPage() {
             },
             description: "Free online tools for productivity, SEO, development, and business optimization",
             sameAs: [
-                "https://twitter.com/fasttools",
-                "https://linkedin.com/company/fasttools",
-                "https://facebook.com/fasttools"
+                "https://x.com/ZamanIsmail7",
+                "https://www.youtube.com/channel/UCLnJoKw00cNkTjT5C0axoiQ",
+                "https://www.facebook.com/profile.php?id=61582711433268"
             ]
         },
         author: {

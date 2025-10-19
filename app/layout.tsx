@@ -263,8 +263,8 @@ export const metadata: Metadata = {
       },
       twitter: {
         card: "summary_large_image",
-        site: "@fasttoolsstore",
-        creator: "@fasttoolsstore",
+        site: "@ZamanIsmail7",
+        creator: "@ZamanIsmail7",
         title: "Free Online Tools | fasttools - Complete Digital Toolkit",
         description: "fasttools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
         images: ["/og-image.svg"],
@@ -338,9 +338,9 @@ export const metadata: Metadata = {
         description: "fasttools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
         foundingDate: "2024",
         sameAs: [
-          "https://twitter.com/fasttoolsstore",
-          "https://facebook.com/fasttoolsstore",
-          "https://linkedin.com/company/fasttoolsstore"
+          "https://x.com/ZamanIsmail7",
+          "https://www.facebook.com/profile.php?id=61582711433268",
+          "https://www.youtube.com/channel/UCLnJoKw00cNkTjT5C0axoiQ"
         ],
         contactPoint: {
           "@type": "ContactPoint",
