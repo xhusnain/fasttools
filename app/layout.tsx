@@ -456,7 +456,7 @@ export const metadata: Metadata = {
             <meta httpEquiv="X-XSS-Protection" content="1; mode=block"/>
             <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
             <meta httpEquiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()"/>
-            <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://vercel.live https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://vercel.live https://www.clarity.ms https://scripts.clarity.ms;"/>
+            <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://vercel.live https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://vercel.live https://*.clarity.ms;"/>
             
             {/* Cache and Performance */}
             <meta name="revisit-after" content="1 days"/>
