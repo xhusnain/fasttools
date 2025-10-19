@@ -2,168 +2,57 @@ import { Metadata } from "next"
 import SalaryCalculator from "@/components/salary-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
+import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Salary Calculator | Free Online Salary Calculator | Pay Frequency Converter | FastTools",
+  title: "Salary Calculator | Advanced Pay Frequency Calculator | Free Online Tool | FastTools",
   description: "Convert salary amounts across all pay frequencies with holiday and vacation adjustments. Professional salary analysis, industry comparisons, and negotiation support for career advancement.",
-  keywords: [
-    "salary calculator",
-    "pay calculator",
-    "salary converter",
-    "pay frequency calculator",
-    "hourly to salary calculator",
-    "annual salary calculator",
-    "salary converter",
-    "pay frequency converter",
-    "salary analysis",
-    "pay analysis",
-    "salary comparison",
-    "pay comparison",
-    "salary optimization",
-    "pay optimization",
-    "salary negotiation",
-    "pay negotiation",
-    "salary planning",
-    "pay planning",
-    "salary management",
-    "pay management",
-    "salary tracking",
-    "pay tracking",
-    "salary monitoring",
-    "pay monitoring",
-    "salary evaluation",
-    "pay evaluation",
-    "salary assessment",
-    "pay assessment",
-    "salary review",
-    "pay review",
-    "salary audit",
-    "pay audit",
-    "salary check",
-    "pay check",
-    "salary verification",
-    "pay verification",
-    "salary validation",
-    "pay validation",
-    "salary confirmation",
-    "pay confirmation",
-    "salary calculation",
-    "pay calculation",
-    "salary computation",
-    "pay computation",
-    "salary estimation",
-    "pay estimation",
-    "salary projection",
-    "pay projection",
-    "salary forecast",
-    "pay forecast",
-    "salary prediction",
-    "pay prediction",
-    "salary analysis tool",
-    "pay analysis tool",
-    "salary calculator tool",
-    "pay calculator tool",
-    "salary converter tool",
-    "pay converter tool",
-    "salary calculator app",
-    "pay calculator app",
-    "salary converter app",
-    "pay converter app",
-    "salary calculator website",
-    "pay calculator website",
-    "salary converter website",
-    "pay converter website",
-    "salary calculator online",
-    "pay calculator online",
-    "salary converter online",
-    "pay converter online",
-    "salary calculator free",
-    "pay calculator free",
-    "salary converter free",
-    "pay converter free",
-    "salary calculator accurate",
-    "pay calculator accurate",
-    "salary converter accurate",
-    "pay converter accurate",
-    "salary calculator professional",
-    "pay calculator professional",
-    "salary converter professional",
-    "pay converter professional",
-    "salary calculator advanced",
-    "pay calculator advanced",
-    "salary converter advanced",
-    "pay converter advanced",
-    "salary calculator comprehensive",
-    "pay calculator comprehensive",
-    "salary converter comprehensive",
-    "pay converter comprehensive",
-    "salary calculator detailed",
-    "pay calculator detailed",
-    "salary converter detailed",
-    "pay converter detailed",
-    "salary calculator complete",
-    "pay calculator complete",
-    "salary converter complete",
-    "pay converter complete",
-    "salary calculator full",
-    "pay calculator full",
-    "salary converter full",
-    "pay converter full",
-    "salary calculator total",
-    "pay calculator total",
-    "salary converter total",
-    "pay converter total",
-    "salary calculator entire",
-    "pay calculator entire",
-    "salary converter entire",
-    "pay converter entire",
-    "salary calculator whole",
-    "pay calculator whole",
-    "salary converter whole",
-    "pay converter whole",
-    "salary calculator complete",
-    "pay calculator complete",
-    "salary converter complete",
-    "pay converter complete",
-    "salary calculator comprehensive",
-    "pay calculator comprehensive",
-    "salary converter comprehensive",
-    "pay converter comprehensive",
-    "salary calculator detailed",
-    "pay calculator detailed",
-    "salary converter detailed",
-    "pay converter detailed",
-    "salary calculator thorough",
-    "pay calculator thorough",
-    "salary converter thorough",
-    "pay converter thorough",
-    "salary calculator extensive",
-    "pay calculator extensive",
-    "salary converter extensive",
-    "pay converter extensive",
-    "salary calculator complete",
-    "pay calculator complete",
-    "salary converter complete",
-    "pay converter complete",
-    "salary calculator comprehensive",
-    "pay calculator comprehensive",
-    "salary converter comprehensive",
-    "pay converter comprehensive",
-    "salary calculator detailed",
-    "pay calculator detailed",
-    "salary converter detailed",
-    "pay converter detailed",
-    "salary calculator thorough",
-    "pay calculator thorough",
-    "salary converter thorough",
-    "pay converter thorough",
-    "salary calculator extensive",
-    "pay calculator extensive",
-    "salary converter extensive",
-    "pay converter extensive"
-  ],
+    keywords: [
+        "salary calculator",
+        "monthly salary calculator",
+        "annual salary calculator",
+        "hourly to salary calculator",
+        "salary to hourly calculator",
+        "take home salary calculator",
+        "net salary calculator",
+        "gross salary calculator",
+        "salary after tax calculator",
+        "income tax calculator",
+        "paycheck calculator",
+        "pay calculator",
+        "CTC to in hand salary calculator",
+        "salary slip calculator",
+        "employee salary calculator",
+        "salary comparison calculator",
+        "salary increment calculator",
+        "salary tax calculator",
+        "salary estimator",
+        "salary converter",
+        "salary breakdown calculator",
+        "salary calculator Pakistan",
+        "salary calculator India",
+        "salary calculator UK",
+        "salary calculator USA",
+        "hourly wage calculator",
+        "annual income calculator",
+        "monthly income calculator",
+        "take home pay calculator",
+        "gross to net calculator",
+        "net income calculator",
+        "salary deduction calculator",
+        "salary structure calculator",
+        "salary appraisal calculator",
+        "salary forecast calculator",
+        "salary raise calculator",
+        "job salary calculator",
+        "salary comparison by city",
+        "salary vs hourly wage calculator",
+        "after tax salary calculator",
+        "taxable income calculator",
+        "payroll calculator"
+    ],
   openGraph: {
-    title: "Salary Calculator | Free Online Salary Calculator | Pay Frequency Converter | FastTools",
+    title: "Salary Calculator | Advanced Pay Frequency Calculator | Free Online Tool | FastTools",
     description: "Convert salary amounts across all pay frequencies with holiday and vacation adjustments. Professional salary analysis, industry comparisons, and negotiation support for career advancement.",
     type: "website",
     url: "https://fasttools.store/calculator/salary-calculator",
@@ -177,7 +66,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Salary Calculator | Free Online Salary Calculator | Pay Frequency Converter | FastTools",
+    title: "Salary Calculator | Advanced Pay Frequency Calculator | Free Online Tool | FastTools",
     description: "Convert salary amounts across all pay frequencies with holiday and vacation adjustments. Professional salary analysis, industry comparisons, and negotiation support for career advancement.",
     images: ["https://fasttools.store/og-image.svg"]
   },
@@ -204,8 +93,8 @@ export default function SalaryCalculatorPage() {
         __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebApplication",
-          name: "Salary Calculator",
-          description: "Advanced salary calculator for converting pay amounts across all frequencies with holiday and vacation adjustments. Includes industry comparisons, negotiation support, and career advancement tools.",
+          name: "Salary Calculator | Advanced Pay Frequency Calculator - Professional Salary Analysis Tool",
+          description: "Convert salary amounts across all pay frequencies with holiday and vacation adjustments. Professional salary analysis, industry comparisons, and negotiation support for career advancement. Free, professional-grade salary analysis for optimal career planning.",
           url: "https://fasttools.store/calculator/salary-calculator",
           applicationCategory: "FinanceApplication",
           operatingSystem: "Any",
@@ -215,279 +104,322 @@ export default function SalaryCalculatorPage() {
             priceCurrency: "USD"
           },
           featureList: [
-            "Pay frequency conversion",
-            "Holiday and vacation adjustments",
-            "Industry salary comparisons",
-            "Negotiation support tools",
-            "Career advancement guidance",
-            "Salary optimization tips",
-            "Working days calculation",
-            "Professional salary analysis",
-            "Multi-frequency conversion",
-            "Career planning support"
-          ]
+            "Pay Frequency Conversion",
+            "Holiday and Vacation Adjustments",
+            "Industry Salary Comparisons",
+            "Negotiation Support Tools",
+            "Career Advancement Guidance",
+            "Salary Optimization Tips",
+            "Working Days Calculation",
+            "Professional Salary Analysis",
+            "Multi-Frequency Conversion",
+            "Career Planning Support",
+            "Salary vs Wage Analysis",
+            "FLSA Compliance Information",
+            "Federal Holiday Calculations",
+            "Average Salary Comparisons",
+            "Education Level Analysis",
+            "Gender Pay Gap Insights",
+            "Location-Based Adjustments",
+            "Contractor Rate Calculations",
+            "Benefits Value Analysis",
+            "Negotiation Strategy Tools"
+          ],
+          creator: {
+            "@type": "Organization",
+            name: "FastTools",
+            url: "https://fasttools.store"
+          }
         })
       }} />
       
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
-        {/* Breadcrumbs */}
-        <Breadcrumbs />
-        
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Advanced Salary Calculator - Professional Pay Analysis
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            Convert salary amounts across all pay frequencies with holiday and vacation adjustments. Professional salary analysis, industry comparisons, and negotiation support for career advancement.
-          </p>
-        </div>
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-2 xs:px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-2 xs:py-3 sm:py-4 md:py-6 lg:py-8 xl:py-10 2xl:py-12">
+          <Breadcrumbs
+            items={[
+              { label: "Calculator", href: "/calculator" },
+              { label: "Salary Calculator", href: "/calculator/salary-calculator" },
+            ]}
+          />
 
-        {/* Top Ad */}
-        <div className="mb-8">
-          <AdSpace slot="content" className="w-full h-24" />
-        </div>
-
-        {/* Main Tool */}
-        <div className="grid lg:grid-cols-[1fr_350px] gap-6 lg:gap-8">
-          <div className="space-y-6">
-            <SalaryCalculator />
-            
-            {/* Educational Content Sections */}
-            <div className="space-y-8">
-              {/* How to Use Section */}
-              <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-6 shadow-xl">
-                <h2 className="text-2xl font-bold mb-4">How to Use the Salary Calculator</h2>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Step 1: Enter Salary Information</h3>
-                    <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                      <li><strong>Salary Amount:</strong> Enter your current salary or desired salary</li>
-                      <li><strong>Pay Frequency:</strong> Select how often you're paid (hourly, weekly, monthly, etc.)</li>
-                      <li><strong>Work Schedule:</strong> Set your hours per week and days per week</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Step 2: Set Time Off Parameters</h3>
-                    <p className="text-muted-foreground">Enter your holidays and vacation days per year to get accurate adjusted calculations.</p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Step 3: Analyze Results</h3>
-                    <p className="text-muted-foreground">Review all pay frequency conversions, industry comparisons, and personalized recommendations.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Salary vs Wage Section */}
-              <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-6 shadow-xl">
-                <h2 className="text-2xl font-bold mb-4">Salary vs Wage</h2>
-                <div className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                      <h3 className="text-xl font-semibold text-blue-800 dark:text-blue-200 mb-3">Salary</h3>
-                      <ul className="text-sm text-blue-700 dark:text-blue-300 space-y-2">
-                        <li>• Fixed annual amount</li>
-                        <li>• Paid on regular basis</li>
-                        <li>• Exempt from overtime</li>
-                        <li>• Higher perceived status</li>
-                        <li>• Professional positions</li>
-                      </ul>
-                    </div>
-                    <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                      <h3 className="text-xl font-semibold text-green-800 dark:text-green-200 mb-3">Wage</h3>
-                      <ul className="text-sm text-green-700 dark:text-green-300 space-y-2">
-                        <li>• Hourly rate × hours worked</li>
-                        <li>• Can vary based on hours</li>
-                        <li>• Eligible for overtime</li>
-                        <li>• Non-exempt employees</li>
-                        <li>• Service and hourly positions</li>
-                      </ul>
-                    </div>
-                  </div>
-                  
-                  <div className="p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                    <h3 className="text-xl font-semibold text-purple-800 dark:text-purple-200 mb-3">Key Differences</h3>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <h4 className="font-semibold mb-2">Salary Benefits</h4>
-                        <ul className="text-sm space-y-1">
-                          <li>• Predictable income</li>
-                          <li>• Professional benefits</li>
-                          <li>• Career advancement</li>
-                          <li>• Job security</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">Wage Benefits</h4>
-                        <ul className="text-sm space-y-1">
-                          <li>• Overtime pay</li>
-                          <li>• Flexible hours</li>
-                          <li>• Direct compensation</li>
-                          <li>• Hourly transparency</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Pay Frequencies Section */}
-              <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-6 shadow-xl">
-                <h2 className="text-2xl font-bold mb-4">Pay Frequencies Explained</h2>
-                <div className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200 dark:border-orange-800">
-                      <h3 className="font-semibold text-orange-800 dark:text-orange-200 mb-2">Daily</h3>
-                      <p className="text-sm text-orange-700 dark:text-orange-300">Pays every day, usually at the end of the day. Common for short-term contractors.</p>
-                    </div>
-                    <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                      <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Weekly</h3>
-                      <p className="text-sm text-blue-700 dark:text-blue-300">Pays once each week, usually on Fridays. Higher payroll processing costs.</p>
-                    </div>
-                    <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                      <h3 className="font-semibold text-green-800 dark:text-green-200 mb-2">Bi-weekly</h3>
-                      <p className="text-sm text-green-700 dark:text-green-300">Pays every two weeks, 26 times per year. Most common pay frequency.</p>
-                    </div>
-                    <div className="p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                      <h3 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">Semi-monthly</h3>
-                      <p className="text-sm text-purple-700 dark:text-purple-300">Pays twice per month, usually on 15th and last day. Inconsistent pay dates.</p>
-                    </div>
-                    <div className="p-4 bg-red-50 dark:bg-red-950/20 rounded-lg border border-red-200 dark:border-red-800">
-                      <h3 className="font-semibold text-red-800 dark:text-red-200 mb-2">Monthly</h3>
-                      <p className="text-sm text-red-700 dark:text-red-300">Pays once per month. Most cost-friendly for employers, less common in US.</p>
-                    </div>
-                    <div className="p-4 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
-                      <h3 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Quarterly</h3>
-                      <p className="text-sm text-yellow-700 dark:text-yellow-300">Pays once per quarter. Rare for employees, more common for contractors.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* US Salary Information Section */}
-              <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-6 shadow-xl">
-                <h2 className="text-2xl font-bold mb-4">US Salary Information</h2>
-                <div className="space-y-6">
-                  <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                    <h3 className="text-xl font-semibold text-blue-800 dark:text-blue-200 mb-3">Fair Labor Standards Act (FLSA)</h3>
-                    <p className="text-blue-700 dark:text-blue-300 mb-4">
-                      Salaried employees are often exempt employees, meaning they're exempt from minimum wage and overtime regulations. To be exempt, employees must make at least $684 per week ($35,568 annually) and perform defined job responsibilities.
-                    </p>
-                    <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border">
-                      <div className="text-sm">
-                        <div className="mb-2"><strong>Federal Minimum Wage:</strong> $7.25/hour</div>
-                        <div className="mb-2"><strong>Highest State Rate:</strong> $17.50/hour (Washington DC)</div>
-                        <div><strong>Exempt Salary Threshold:</strong> $35,568/year</div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                    <h3 className="text-xl font-semibold text-green-800 dark:text-green-200 mb-3">Average US Salary (2024)</h3>
-                    <p className="text-green-700 dark:text-green-300 mb-4">
-                      The average salary of a full-time employee in the US is $1,165 per week ($60,580 per year). This varies significantly by age, education, experience, race, ethnicity, gender, industry, and location.
-                    </p>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <h4 className="font-semibold mb-2">By Education</h4>
-                        <ul className="text-sm space-y-1">
-                          <li>• No high school: $38,168</li>
-                          <li>• High school graduate: $49,192</li>
-                          <li>• Bachelor's degree: $88,244</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">By Gender</h4>
-                        <ul className="text-sm space-y-1">
-                          <li>• Men: $65,728 average</li>
-                          <li>• Women: $54,808 average</li>
-                          <li>• Gender pay gap exists</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                    <h3 className="text-xl font-semibold text-purple-800 dark:text-purple-200 mb-3">Federal Holidays</h3>
-                    <p className="text-purple-700 dark:text-purple-300 mb-4">
-                      The US has 11 federal holidays per year. Most companies offer 6-11 holidays, with federal employees getting all 11. Private employers set their own holiday policies.
-                    </p>
-                    <div className="grid md:grid-cols-3 gap-4 text-sm">
-                      <div>
-                        <h4 className="font-semibold mb-2">January</h4>
-                        <ul className="space-y-1">
-                          <li>• New Year's Day</li>
-                          <li>• MLK Jr. Day</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">Summer</h4>
-                        <ul className="space-y-1">
-                          <li>• Memorial Day</li>
-                          <li>• Juneteenth</li>
-                          <li>• Independence Day</li>
-                          <li>• Labor Day</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">Fall/Winter</h4>
-                        <ul className="space-y-1">
-                          <li>• Columbus Day</li>
-                          <li>• Veterans Day</li>
-                          <li>• Thanksgiving</li>
-                          <li>• Christmas Day</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* FAQ Section */}
-              <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-6 shadow-xl">
-                <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">How accurate are the salary calculations?</h3>
-                    <p className="text-muted-foreground">
-                      Our calculator uses industry-standard formulas for pay frequency conversions and working day calculations. The results are highly accurate for standard employment scenarios.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">What's the difference between unadjusted and adjusted salaries?</h3>
-                    <p className="text-muted-foreground">
-                      Unadjusted salaries ignore holidays and vacation days, while adjusted salaries account for paid time off. Adjusted salaries provide a more realistic view of actual working compensation.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">How do I use this for salary negotiations?</h3>
-                    <p className="text-muted-foreground">
-                      Use the calculator to convert your current salary to different pay frequencies, compare against industry averages, and prepare talking points for negotiations based on market data.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">What if I'm self-employed or a contractor?</h3>
-                    <p className="text-muted-foreground">
-                      Contractors should generally charge higher rates than equivalent salaried positions since they don't receive benefits like health insurance, paid time off, or retirement contributions.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">How do I increase my salary?</h3>
-                    <p className="text-muted-foreground">
-                      Focus on education, experience, networking, performance reviews, negotiation, and job changes. The calculator provides personalized recommendations based on your current situation.
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-2 xs:mb-3 sm:mb-4 md:mb-6 lg:mb-8 xl:mb-10">
+              <h1 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-1 xs:mb-2 sm:mb-3 md:mb-4 lg:mb-5 text-yellow-400 leading-tight">Salary Calculator - Advanced Pay Analysis</h1>
+              <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground text-pretty leading-relaxed">
+                <strong>Convert salary amounts across all pay frequencies</strong> with our <strong>advanced salary calculator</strong>. Get <strong>precise pay calculations</strong>, <strong>industry comparisons</strong>, <strong>negotiation support</strong>, and <strong>career advancement guidance</strong> for optimal financial planning.
+              </p>
             </div>
-          </div>
-          
-          {/* Sidebar */}
-          <div className="space-y-6">
-            <div className="sticky top-4 space-y-4 lg:space-y-6 hidden lg:block">
-              {/* Sidebar Ad */}
-              <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-4 shadow-xl">
-                <AdSpace slot="sidebar" className="h-80 rounded-xl overflow-hidden" />
+
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] xl:grid-cols-[1fr_320px] 2xl:grid-cols-[1fr_380px] gap-2 xs:gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10">
+              <div>
+                <SalaryCalculator />
+                
+                {/* Mobile/Tablet AdSpace */}
+                <div className="my-2 xs:my-3 sm:my-4 md:my-6 lg:hidden">
+                  <div className="text-center mb-1">
+                    <span className="text-xs xs:text-sm text-muted-foreground font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="content" className="w-full h-10 xs:h-12 sm:h-16 md:h-20 lg:h-24 border border-border rounded-xl shadow-sm bg-card" />
+                </div>
+            
+                {/* Educational Content Sections */}
+                <div className="mt-1 xs:mt-2 sm:mt-3 md:mt-4 lg:mt-6 xl:mt-8 space-y-2 xs:space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8">
+                  {/* How to Use Section */}
+                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-yellow-400">
+                      <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
+                        <Calculator className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
+                      </div>
+                      How to Use Salary Calculator
+                    </h2>
+                    <div className="space-y-2 xs:space-y-3 sm:space-y-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
+                        <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border">
+                          <h3 className="font-semibold text-foreground mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">1. Enter Salary Information</h3>
+                          <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">Input your salary amount, pay frequency, and work schedule details</p>
+                        </div>
+                        <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border">
+                          <h3 className="font-semibold text-foreground mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">2. Set Time Off Parameters</h3>
+                          <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">Enter holidays and vacation days for accurate adjusted calculations</p>
+                        </div>
+                        <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border">
+                          <h3 className="font-semibold text-foreground mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">3. Analyze Results</h3>
+                          <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">Review all pay frequency conversions and industry comparisons</p>
+                        </div>
+                        <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border">
+                          <h3 className="font-semibold text-foreground mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">4. Get Professional Insights</h3>
+                          <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">Receive personalized recommendations for salary optimization</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Features Section */}
+                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-yellow-400">
+                      <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
+                        <Target className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
+                      </div>
+                      Key Features
+                    </h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
+                      <div className="space-y-2 xs:space-y-3">
+                        <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-green-100 dark:bg-green-900/20 rounded-lg flex-shrink-0">
+                            <Calculator className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-green-600 dark:text-green-400" />
+                          </div>
+                          <div className="min-w-0">
+                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Pay Frequency Conversion</h3>
+                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Convert between hourly, daily, weekly, bi-weekly, monthly, and annual pay</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex-shrink-0">
+                            <BarChart3 className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-blue-600 dark:text-blue-400" />
+                          </div>
+                          <div className="min-w-0">
+                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Industry Comparisons</h3>
+                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Compare your salary against industry averages and market data</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex-shrink-0">
+                            <TrendingUp className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-purple-600 dark:text-purple-400" />
+                          </div>
+                          <div className="min-w-0">
+                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Negotiation Support</h3>
+                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Get personalized tips and strategies for salary negotiations</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="space-y-2 xs:space-y-3">
+                        <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-orange-100 dark:bg-orange-900/20 rounded-lg flex-shrink-0">
+                            <BookOpen className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-orange-600 dark:text-orange-400" />
+                          </div>
+                          <div className="min-w-0">
+                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Holiday Adjustments</h3>
+                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Account for federal holidays and vacation days in calculations</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-red-100 dark:bg-red-900/20 rounded-lg flex-shrink-0">
+                            <Users className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-red-600 dark:text-red-400" />
+                          </div>
+                          <div className="min-w-0">
+                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Career Planning</h3>
+                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Plan your career advancement with salary progression insights</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-teal-100 dark:bg-teal-900/20 rounded-lg flex-shrink-0">
+                            <Clock className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-teal-600 dark:text-teal-400" />
+                          </div>
+                          <div className="min-w-0">
+                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Working Days</h3>
+                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Calculate actual working days excluding holidays and weekends</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Use Cases Section */}
+                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-yellow-400">
+                      <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
+                        <Home className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
+                      </div>
+                      Use Cases
+                    </h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
+                      <div className="space-y-2 xs:space-y-3">
+                        <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">For Job Seekers & Employees</h3>
+                        <ul className="space-y-1 xs:space-y-1.5 text-xs xs:text-sm sm:text-base text-muted-foreground">
+                          <li>• Compare job offers across different pay frequencies</li>
+                          <li>• Understand true compensation value</li>
+                          <li>• Prepare for salary negotiations</li>
+                          <li>• Plan career advancement strategies</li>
+                          <li>• Analyze benefits vs salary trade-offs</li>
+                        </ul>
+                      </div>
+                      <div className="space-y-2 xs:space-y-3">
+                        <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">For Employers & HR</h3>
+                        <ul className="space-y-1 xs:space-y-1.5 text-xs xs:text-sm sm:text-base text-muted-foreground">
+                          <li>• Set competitive salary ranges</li>
+                          <li>• Convert between pay frequencies</li>
+                          <li>• Calculate total compensation costs</li>
+                          <li>• Plan payroll budgets</li>
+                          <li>• Ensure FLSA compliance</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Salary vs Wage Section */}
+                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-yellow-400">
+                      <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
+                        <BookOpen className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
+                      </div>
+                      Salary vs Wage
+                    </h2>
+                    <div className="space-y-2 xs:space-y-3 sm:space-y-4">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                        <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-blue-800 dark:text-blue-200 mb-1 xs:mb-2 sm:mb-3">Salary</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-blue-700 dark:text-blue-300 mb-2 xs:mb-3 leading-relaxed">
+                          Fixed annual amount paid on regular basis. Exempt from overtime, higher perceived status, typically for professional positions.
+                        </p>
+                        <div className="bg-white dark:bg-slate-800 p-2 xs:p-3 sm:p-4 rounded-lg border">
+                          <div className="text-xs xs:text-sm">
+                            <div className="mb-1"><strong>Benefits:</strong> Predictable income, professional benefits, career advancement</div>
+                            <div><strong>Drawbacks:</strong> No overtime pay, less flexibility</div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="p-2 xs:p-3 sm:p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
+                        <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-800 dark:text-green-200 mb-1 xs:mb-2 sm:mb-3">Wage</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-green-700 dark:text-green-300 mb-2 xs:mb-3 leading-relaxed">
+                          Hourly rate multiplied by hours worked. Can vary based on hours, eligible for overtime, typically for service and hourly positions.
+                        </p>
+                        <div className="bg-white dark:bg-slate-800 p-2 xs:p-3 sm:p-4 rounded-lg border">
+                          <div className="text-xs xs:text-sm">
+                            <div className="mb-1"><strong>Benefits:</strong> Overtime pay, flexible hours, direct compensation</div>
+                            <div><strong>Drawbacks:</strong> Variable income, less job security</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* FAQ Section */}
+                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-yellow-400">
+                      <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
+                        <BookOpen className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
+                      </div>
+                      Frequently Asked Questions
+                    </h2>
+                    <div className="space-y-2 xs:space-y-3 sm:space-y-4">
+                      <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How accurate are the salary calculations?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                          Our calculator uses industry-standard formulas for pay frequency conversions and working day calculations. The results are highly accurate for standard employment scenarios and account for federal holidays and typical work schedules.
+                        </p>
+                      </div>
+                      <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">What's the difference between unadjusted and adjusted salaries?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                          Unadjusted salaries ignore holidays and vacation days, while adjusted salaries account for paid time off. Adjusted salaries provide a more realistic view of actual working compensation and help you understand your true hourly rate.
+                        </p>
+                      </div>
+                      <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How do I use this for salary negotiations?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                          Use the calculator to convert your current salary to different pay frequencies, compare against industry averages, and prepare talking points for negotiations based on market data. The industry comparisons help you justify your salary requests.
+                        </p>
+                      </div>
+                      <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">What if I'm self-employed or a contractor?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                          Contractors should generally charge higher rates than equivalent salaried positions since they don't receive benefits like health insurance, paid time off, or retirement contributions. Use the calculator to determine appropriate contractor rates.
+                        </p>
+                      </div>
+                      <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How do I increase my salary?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                          Focus on education, experience, networking, performance reviews, negotiation, and job changes. The calculator provides personalized recommendations based on your current situation and helps you set realistic salary goals for career advancement.
+                        </p>
+                      </div>
+                      <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How can I determine if my current salary aligns with industry standards?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                          Use our salary calculator to input your job title, location, experience level, and education to receive tailored salary reports. Compare your current salary against industry averages, considering factors like company size, industry type, and regional cost of living. Regularly reviewing this data ensures you remain informed about market trends and can advocate effectively during salary negotiations or performance reviews.
+                        </p>
+                      </div>
+                      <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">What factors influence salary variations across different regions?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                          Salaries vary significantly based on geographic location due to cost of living, demand for specific skills, and regional economic conditions. Urban areas with higher living expenses typically offer higher salaries to compensate, while rural regions may have lower salary ranges but also lower living costs. Our calculator accounts for these regional differences, helping you evaluate job offers or consider relocation by factoring in housing, transportation, taxes, and other living expenses to ensure compensation aligns with your financial needs.
+                        </p>
+                      </div>
+                      <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How do experience and education levels impact salary expectations?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                          Experience and education are pivotal in determining salary levels. Individuals with extensive experience or advanced degrees command higher salaries due to their enhanced skill sets and proven track records. For example, a software engineer with a decade of experience and a master's degree typically earns significantly more than an entry-level engineer with a bachelor's degree. Our calculator adjusts estimates based on these factors, highlighting the importance of continuous professional development and the ROI of additional education and certifications.
+                        </p>
+                      </div>
+                      <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">Can specialized skills or certifications lead to higher salaries?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                          Absolutely! Specialized skills or industry-recognized certifications can significantly boost your earning potential. These qualifications demonstrate commitment to professional development and mastery of specific competencies, making you more valuable to employers. For instance, a project manager with PMP certification or an IT professional with cybersecurity credentials may negotiate higher salaries due to high demand for these specialized skills. Our calculator helps you understand how these qualifications impact your market value and earning potential.
+                        </p>
+                      </div>
+                      <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How do I account for benefits and bonuses when comparing salaries?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                          When evaluating compensation, consider the entire package including base salary, bonuses, health insurance, retirement plans, stock options, and other perks. Our calculator allows you to input and adjust for these variables, providing a comprehensive view of your total compensation. Always factor in benefits when comparing job offers, as a lower base salary with excellent benefits may be more valuable than a higher salary with minimal benefits. This holistic approach ensures you make informed decisions about your career trajectory and financial well-being.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Sidebar */}
+              <div className="space-y-2 xs:space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8">
+                <div className="sticky top-2 xs:top-4 sm:top-6 space-y-2 xs:space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8">
+                  {/* Sidebar Ad 1 */}
+                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 shadow-sm">
+                    <AdSpace slot="sidebar" className="h-32 xs:h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 2xl:h-80 rounded-lg overflow-hidden" />
+                  </div>
+                  
+                  {/* Sidebar Ad 2 */}
+                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 shadow-sm">
+                    <AdSpace slot="sidebar" className="h-32 xs:h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 2xl:h-80 rounded-lg overflow-hidden" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
