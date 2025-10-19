@@ -100,7 +100,7 @@ export default function ContactPage() {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer service",
-        email: "hello@fasttools.store",
+        email: "fasttools.store@outlook.com",
         availableLanguage: "English",
         areaServed: "Worldwide"
       }
@@ -281,10 +281,10 @@ export default function ContactPage() {
                       <h3 className="font-semibold text-foreground mb-1 text-sm sm:text-base">Email</h3>
                       <p className="text-xs sm:text-sm text-muted-foreground mb-2">Send us an email anytime</p>
                       <a 
-                        href="mailto:hello@fasttools.store" 
+                        href="mailto:fasttools.store@outlook.com" 
                         className="text-primary hover:text-primary/80 font-medium text-xs sm:text-sm break-all"
                       >
-                        hello@fasttools.store
+                        fasttools.store@outlook.com
                       </a>
                     </div>
                   </div>

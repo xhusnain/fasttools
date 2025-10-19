@@ -159,4 +159,4 @@ When deploying to Vercel:
 If you need help setting up environment variables:
 1. Check the [Next.js Environment Variables docs](https://nextjs.org/docs/basic-features/environment-variables)
 2. Review API provider documentation
-3. Contact support at your-email@fasttools.store
+3. Contact support at fasttools.store@outlook.com

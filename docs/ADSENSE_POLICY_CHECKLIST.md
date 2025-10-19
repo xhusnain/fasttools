@@ -153,10 +153,10 @@
 ## Contact Information
 
 ### Internal Contacts
-- **AdSense Compliance**: adsense-compliance@fasttools.store
-- **Technical Issues**: tech@fasttools.store
-- **Content Issues**: content@fasttools.store
-- **Legal Issues**: legal@fasttools.store
+- **AdSense Compliance**: fasttools.store@outlook.com
+- **Technical Issues**: fasttools.store@outlook.com
+- **Content Issues**: fasttools.store@outlook.com
+- **Legal Issues**: fasttools.store@outlook.com
 
 ### External Resources
 - **AdSense Support**: https://support.google.com/adsense

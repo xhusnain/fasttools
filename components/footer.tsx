@@ -653,11 +653,11 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-sm text-black tracking-wide">Contact Us</h3>
             <div className="space-y-3">
               <a
-                href="mailto:hello@fasttools.store"
+                href="mailto:fasttools.store@outlook.com"
                 className="flex items-center gap-2 text-sm text-gray-700 hover:text-[#F35B04] transition-colors duration-200"
               >
                 <Mail className="h-4 w-4" />
-                hello@fasttools.store
+                fasttools.store@outlook.com
               </a>
               <p className="text-xs text-gray-600 leading-relaxed">
                 Have questions or suggestions? We'd love to hear from you. Send us an email and we'll get back to you as

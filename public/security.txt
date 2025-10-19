@@ -1,5 +1,5 @@
-Contact: mailto:security@fasttools.store
-Contact: mailto:hello@fasttools.store
+Contact: mailto:fasttools.store@outlook.com
+Contact: mailto:fasttools.store@outlook.com
 Expires: 2025-12-31T23:59:59.000Z
 Encryption: https://fasttools.store/pgp-key.txt
 Acknowledgments: https://fasttools.store/security-acknowledgments
@@ -11,7 +11,7 @@ Policy: https://fasttools.store/security-policy
 # We take security seriously. If you discover a security vulnerability, please report it responsibly.
 
 # Reporting Process
-# 1. Email us at security@fasttools.store
+# 1. Email us at fasttools.store@outlook.com
 # 2. Include detailed information about the vulnerability
 # 3. Allow reasonable time for us to respond and fix the issue
 # 4. Do not disclose the vulnerability publicly until we've had a chance to address it

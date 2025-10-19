@@ -485,16 +485,16 @@ export default function CookiePreferencesPage() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">Cookie Inquiries</h4>
-                        <a href="mailto:privacy@fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
+                        <a href="mailto:fasttools.store@outlook.com" className="flex items-center gap-2 text-primary hover:underline">
                           <Mail className="h-4 w-4" />
-                          privacy@fasttools.store
+                          fasttools.store@outlook.com
                         </a>
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">General Support</h4>
-                        <a href="mailto:support@fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
+                        <a href="mailto:fasttools.store@outlook.com" className="flex items-center gap-2 text-primary hover:underline">
                           <Mail className="h-4 w-4" />
-                          support@fasttools.store
+                          fasttools.store@outlook.com
                         </a>
                       </div>
                     </div>

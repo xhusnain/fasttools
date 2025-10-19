@@ -445,8 +445,8 @@ export default function PrivacyPolicyPage() {
                     <p className="text-sm text-muted-foreground mb-3">
                       To exercise these rights, please contact us at:
                     </p>
-                    <a href="mailto:privacy@fasttools.store" className="text-primary hover:underline font-medium">
-                      privacy@fasttools.store
+                    <a href="mailto:fasttools.store@outlook.com" className="text-primary hover:underline font-medium">
+                      fasttools.store@outlook.com
                     </a>
                     <p className="text-xs text-muted-foreground mt-2">
                       We will respond to your request within 30 days.
@@ -471,16 +471,16 @@ export default function PrivacyPolicyPage() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">Privacy Inquiries</h4>
-                        <a href="mailto:privacy@fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
+                        <a href="mailto:fasttools.store@outlook.com" className="flex items-center gap-2 text-primary hover:underline">
                           <Mail className="h-4 w-4" />
-                  privacy@fasttools.store
+                  fasttools.store@outlook.com
                 </a>
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">AdSense Compliance</h4>
-                        <a href="mailto:adsense-compliance@fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
+                        <a href="mailto:fasttools.store@outlook.com" className="flex items-center gap-2 text-primary hover:underline">
                           <Mail className="h-4 w-4" />
-                          adsense-compliance@fasttools.store
+                          fasttools.store@outlook.com
                         </a>
                       </div>
                     </div>

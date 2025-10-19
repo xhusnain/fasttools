@@ -149,14 +149,14 @@ This document outlines our compliance with Google AdSense policies and provides 
 ## Contact Information
 
 ### AdSense Support
-- Email: adsense-compliance@fasttools.store
+- Email: fasttools.store@outlook.com
 - AdSense Help Center: https://support.google.com/adsense
 - Policy Center: https://support.google.com/adsense/answer/23921
 
 ### Internal Contacts
-- Technical Lead: tech@fasttools.store
-- Content Manager: content@fasttools.store
-- Legal: legal@fasttools.store
+- Technical Lead: fasttools.store@outlook.com
+- Content Manager: fasttools.store@outlook.com
+- Legal: fasttools.store@outlook.com
 
 ## Resources
 

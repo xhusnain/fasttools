@@ -298,7 +298,7 @@ export default function AboutPage() {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer service",
-        email: "hello@fasttools.store",
+        email: "fasttools.store@outlook.com",
         availableLanguage: "English"
       },
       address: {
