@@ -12,13 +12,15 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/20 bg-background/95 backdrop-blur-md shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-background shadow-lg">
       <nav className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-6 gap-4">
-        <Link href="/" className="flex items-center gap-3 font-bold text-xl hover:opacity-90 transition-opacity">
-          <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg">
-            <Wrench className="h-5 w-5 text-primary-foreground" />
+        <Link href="/" className="flex items-center gap-3 font-bold text-xl">
+          <div className="h-10 w-10 rounded-xl bg-primary flex items-center justify-center shadow-md hover:bg-primary/90 transition-colors duration-200 p-1.5">
+            <img src="/logo.svg" alt="FastTools Logo" className="h-7 w-7 object-contain" />
           </div>
-          <span className="text-foreground hidden sm:inline tracking-tight">FastTools</span>
+          <span className="text-foreground hidden sm:inline tracking-tight bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+            FastTools
+          </span>
         </Link>
 
         <div className="hidden lg:flex items-center gap-4 flex-1 max-w-3xl">
@@ -31,46 +33,38 @@ export function Header() {
         <div className="hidden md:flex items-center gap-6">
           <Link
             href="/"
-            className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
+            className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 relative group"
           >
             Home
-          </Link>
-          <Link
-            href="/tools"
-            className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
-          >
-            Tools
-          </Link>
-          <Link
-            href="/learn"
-            className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
-          >
-            Learn
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
           </Link>
           <Link
             href="/about"
-            className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
+            className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 relative group"
           >
             About
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
           </Link>
           <Link
             href="/contact"
-            className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
+            className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 relative group"
           >
             Contact
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
           </Link>
-          <Button asChild size="sm" className="h-9 px-4">
-            <Link href="/tools">
-              <Wrench className="h-4 w-4 mr-2" />
-              Use Tool
-            </Link>
-          </Button>
+          <Link
+            href="/social-media-tools/tiktok-downloader"
+            className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 relative group"
+          >
+            TikTok Downloader
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+          </Link>
           {/* Theme toggle removed to keep dark mode default */}
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-foreground hover:text-foreground/80 transition-colors"
+          className="md:hidden text-foreground hover:text-primary transition-all duration-200 hover:scale-110 p-2 rounded-lg hover:bg-primary/10"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -86,7 +80,7 @@ export function Header() {
               <p className="text-xs font-semibold text-foreground/60 mb-2">CATEGORIES</p>
               <div className="flex flex-col gap-2">
                 <Link
-                  href="/tools"
+                  href="/calculator"
                   className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -127,6 +121,13 @@ export function Header() {
                 >
                   AI Tools
                 </Link>
+                <Link
+                  href="/social-media-tools/tiktok-downloader"
+                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  TikTok Downloader
+                </Link>
               </div>
             </div>
             <div className="border-t border-border/20 pt-4 flex flex-col gap-2">
@@ -136,13 +137,6 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
-              </Link>
-              <Link
-                href="/learn"
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Learn
               </Link>
               <Link
                 href="/about"

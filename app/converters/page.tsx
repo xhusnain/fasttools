@@ -131,7 +131,7 @@ export default function ConvertersPage() {
           position: 1,
           name: "Conversion Calculator",
           description: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions",
-          url: "https://fasttools.store/tools/conversion-calculator"
+          url: "https://fasttools.store/calculator/conversion-calculator"
         },
         {
           "@type": "ListItem",

@@ -29,7 +29,7 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
   const [adShape, setAdShape] = useState<"horizontal" | "vertical" | "square">("horizontal")
   const [scriptLoaded, setScriptLoaded] = useState(false)
   const [adFailed, setAdFailed] = useState(false)
-  const initializedRef = useRef(false)
+  const [adInitialized, setAdInitialized] = useState(false)
 
   // Determine ad shape based on className or auto-detection
   useEffect(() => {
@@ -38,15 +38,16 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
       const isHorizontal = className.includes("h-24") || className.includes("h-20") || className.includes("h-36")
       const isVertical = className.includes("h-96") || className.includes("h-64") || className.includes("h-[600px]") || className.includes("h-[400px]") || className.includes("h-[500px]")
       const isSquare = className.includes("h-[600px]") && className.includes("w-full")
+      const isMobileContent = className.includes("h-32") || className.includes("h-24")
       
-      if (isHorizontal) {
+      if (isHorizontal || isMobileContent) {
         setAdShape("horizontal")
       } else if (isVertical) {
         setAdShape("vertical")
       } else if (isSquare) {
         setAdShape("square")
       } else {
-        // Default to horizontal for header/footer, vertical for sidebar
+        // Default to horizontal for header/footer/content, vertical for sidebar
         setAdShape(slot === "sidebar" ? "vertical" : "horizontal")
       }
     } else {
@@ -57,8 +58,6 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
   // Load Google AdSense script (once per app)
   useEffect(() => {
     if (typeof window === "undefined") return
-    // Skip initializing ads in development to avoid TagError noise
-    if (process.env.NODE_ENV !== "production") return
 
     // If script already exists, mark loaded
     const existing = document.querySelector(
@@ -84,11 +83,10 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
   // Initialize ad when script is loaded (avoid duplicate init)
   useEffect(() => {
     if (
-      process.env.NODE_ENV !== "production" ||
       !scriptLoaded ||
       !adRef.current ||
       typeof window === "undefined" ||
-      initializedRef.current
+      adInitialized
     ) {
       return
     }
@@ -96,7 +94,7 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
     try {
       // If an ad element already exists inside, skip
       if (adRef.current.querySelector("ins.adsbygoogle")) {
-        initializedRef.current = true
+        setAdInitialized(true)
         return
       }
 
@@ -119,7 +117,7 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
         if (window.adsbygoogle) {
           window.adsbygoogle.push({})
         }
-        initializedRef.current = true
+        setAdInitialized(true)
         
         // Set a timeout to detect if ad fails to load
         setTimeout(() => {
@@ -134,10 +132,27 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
         setAdFailed(true)
       }
     } catch {}
-  }, [scriptLoaded, adShape])
+  }, [scriptLoaded, adShape, adInitialized])
 
-  // Hide the ad space if ad failed to load or in development
-  if (adFailed || process.env.NODE_ENV !== "production") {
+  // In development, always show the ad space for layout testing
+  if (process.env.NODE_ENV !== "production") {
+    return (
+      <div
+        ref={adRef}
+        className={`${className} min-h-0 bg-card border border-border flex items-center justify-center`}
+        aria-label="Advertisement (Development Mode)"
+        style={{ minHeight: slot === 'header' ? '96px' : slot === 'content' ? '128px' : '320px' }}
+      >
+        <div className="text-muted-foreground text-sm font-medium text-center px-2">
+          <div>Ad Space - {slot}</div>
+          <div className="text-xs opacity-75 mt-1">Mobile: {className.includes('h-32') ? '32' : className.includes('h-24') ? '24' : 'Auto'}</div>
+        </div>
+      </div>
+    )
+  }
+
+  // Hide the ad space if ad failed to load
+  if (adFailed) {
     return null
   }
 

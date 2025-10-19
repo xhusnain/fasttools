@@ -344,9 +344,9 @@ Risk Level: ${result.riskLevel}`
                   <span className="text-sm font-medium text-blue-700 dark:text-blue-300">BMI Prime</span>
                   <span className="font-bold text-sm text-blue-900 dark:text-blue-100">{result.bmiPrime}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-950/30 dark:to-purple-900/30 rounded-lg border border-purple-200 dark:border-purple-800">
-                  <span className="text-sm font-medium text-purple-700 dark:text-purple-300">Ponderal Index</span>
-                  <span className="font-bold text-sm text-purple-900 dark:text-purple-100">{result.ponderalIndex}</span>
+                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-950/30 dark:to-orange-900/30 rounded-lg border border-orange-200 dark:border-orange-800">
+                  <span className="text-sm font-medium text-orange-700 dark:text-orange-300">Ponderal Index</span>
+                  <span className="font-bold text-sm text-orange-900 dark:text-orange-100">{result.ponderalIndex}</span>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-950/30 dark:to-green-900/30 rounded-lg border border-green-200 dark:border-green-800">
                   <span className="text-sm font-medium text-green-700 dark:text-green-300">Healthy Range</span>

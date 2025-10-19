@@ -316,9 +316,9 @@ export async function GET() {
           caption: "fasttools professional social media sharing image showcasing comprehensive free online tools collection for productivity and business"
         },
         {
-          url: "https://www.fasttools.store/favicon.svg",
-          title: "fasttools Favicon - Online Tools",
-          caption: "fasttools favicon for browser tabs and bookmarks representing free online tools and utilities"
+          url: "https://www.fasttools.store/logo.svg",
+          title: "fasttools Logo - Online Tools",
+          caption: "fasttools professional logo for browser tabs and bookmarks representing free online tools and utilities"
         }
       ]
     },
@@ -349,54 +349,15 @@ export async function GET() {
       ]
     },
     {
-      url: "https://www.fasttools.store/favicon.svg",
-      lastModified: getFreshnessDate(14), // Updated bi-weekly
+      url: "https://www.fasttools.store/logo.svg",
+      lastModified: getFreshnessDate(7), // Updated weekly
       changeFrequency: "monthly" as const,
-      priority: 0.8, // High priority for brand recognition
+      priority: 0.9, // High priority for brand recognition
       images: [
         {
-          url: "https://www.fasttools.store/favicon.svg",
-          title: "fasttools Favicon",
-          caption: "fasttools favicon for browser tabs and bookmarks"
-        }
-      ]
-    },
-    {
-      url: "https://www.fasttools.store/apple-touch-icon.svg",
-      lastModified: getFreshnessDate(14), // Updated bi-weekly
-      changeFrequency: "monthly" as const,
-      priority: 0.8, // High priority for mobile users
-      images: [
-        {
-          url: "https://www.fasttools.store/apple-touch-icon.svg",
-          title: "fasttools Apple Touch Icon",
-          caption: "fasttools icon for Apple devices and iOS home screen"
-        }
-      ]
-    },
-    {
-      url: "https://www.fasttools.store/icon-192.svg",
-      lastModified: getFreshnessDate(21), // Updated every 3 weeks
-      changeFrequency: "monthly" as const,
-      priority: 0.7, // Medium priority for PWA
-      images: [
-        {
-          url: "https://www.fasttools.store/icon-192.svg",
-          title: "fasttools Icon 192x192",
-          caption: "fasttools 192x192 icon for web app manifest"
-        }
-      ]
-    },
-    {
-      url: "https://www.fasttools.store/icon-512.svg",
-      lastModified: getFreshnessDate(21), // Updated every 3 weeks
-      changeFrequency: "monthly" as const,
-      priority: 0.7, // Medium priority for PWA
-      images: [
-        {
-          url: "https://www.fasttools.store/icon-512.svg",
-          title: "fasttools Icon 512x512",
-          caption: "fasttools 512x512 icon for web app manifest"
+          url: "https://www.fasttools.store/logo.svg",
+          title: "fasttools Professional Logo",
+          caption: "fasttools professional logo with modern FT symbol and blue gradient design"
         }
       ]
     }

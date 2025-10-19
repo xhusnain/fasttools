@@ -17,8 +17,8 @@ import {
 
 const breadcrumbItems = [
   { label: "Home", href: "/" },
-  { label: "Tools", href: "/tools" },
-  { label: "IP Subnet Calculator", href: "/tools/ip-subnet-calculator" }
+  { label: "Calculator", href: "/calculator" },
+  { label: "IP Subnet Calculator", href: "/calculator/ip-subnet-calculator" }
 ]
 
 export function IPSubnetCalculatorPageContent() {
@@ -152,7 +152,7 @@ export function IPSubnetCalculatorPageContent() {
         description: "Free online IP subnet calculator for IPv4 and IPv6 networks. Calculate subnets, CIDR notation, VLSM, supernetting, and comprehensive network analysis.",
         applicationCategory: "NetworkApplication",
         operatingSystem: "Any",
-        url: "https://www.fasttools.store/tools/ip-subnet-calculator",
+        url: "https://www.fasttools.store/calculator/ip-subnet-calculator",
         author: {
           "@type": "Organization",
           name: "FastTools",
@@ -218,14 +218,14 @@ export function IPSubnetCalculatorPageContent() {
             {
               "@type": "ListItem",
               position: 2,
-              name: "Tools",
-              item: "https://www.fasttools.store/tools"
+              name: "Calculator",
+              item: "https://www.fasttools.store/calculator"
             },
             {
               "@type": "ListItem",
               position: 3,
               name: "IP Subnet Calculator",
-              item: "https://www.fasttools.store/tools/ip-subnet-calculator"
+              item: "https://www.fasttools.store/calculator/ip-subnet-calculator"
             }
           ]
         }
@@ -422,9 +422,9 @@ export function IPSubnetCalculatorPageContent() {
                 Explore our collection of related network and developer tools to enhance your networking capabilities:
               </p>
               <ul className="list-disc list-inside space-y-2 text-secondary">
-                <li><a href="/tools/binary-calculator" className="text-blue-600 hover:text-blue-800 underline">Binary Calculator</a> - Convert between binary, decimal, and hexadecimal</li>
-                <li><a href="/tools/hex-calculator" className="text-blue-600 hover:text-blue-800 underline">Hexadecimal Calculator</a> - Perform hex calculations and conversions</li>
-                <li><a href="/tools/ascii-converter" className="text-blue-600 hover:text-blue-800 underline">ASCII Converter</a> - Convert between ASCII and other character encodings</li>
+                <li><a href="/calculator/binary-calculator" className="text-blue-600 hover:text-blue-800 underline">Binary Calculator</a> - Convert between binary, decimal, and hexadecimal</li>
+                <li><a href="/calculator/hex-calculator" className="text-blue-600 hover:text-blue-800 underline">Hexadecimal Calculator</a> - Perform hex calculations and conversions</li>
+                <li><a href="/calculator/ascii-converter" className="text-blue-600 hover:text-blue-800 underline">ASCII Converter</a> - Convert between ASCII and other character encodings</li>
                 <li><a href="/dev-tools/regex-tester" className="text-blue-600 hover:text-blue-800 underline">Regex Tester</a> - Test and validate regular expressions</li>
                 <li><a href="/dev-tools/jwt-decoder" className="text-blue-600 hover:text-blue-800 underline">JWT Decoder</a> - Decode and analyze JSON Web Tokens</li>
               </ul>
@@ -557,13 +557,13 @@ export function IPSubnetCalculatorPageContent() {
                   Related Tools
                 </h3>
                 <div className="space-y-2">
-                  <a href="/tools/binary-calculator" className="block text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                  <a href="/calculator/binary-calculator" className="block text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
                     Binary Calculator
                   </a>
-                  <a href="/tools/hex-calculator" className="block text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                  <a href="/calculator/hex-calculator" className="block text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
                     Hexadecimal Calculator
                   </a>
-                  <a href="/tools/ascii-converter" className="block text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                  <a href="/calculator/ascii-converter" className="block text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
                     ASCII Converter
                   </a>
                   <a href="/dev-tools/regex-tester" className="block text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">

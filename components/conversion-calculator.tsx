@@ -249,12 +249,12 @@ export function ConversionCalculator() {
     let convertedValue: number
 
     // Handle temperature conversion
-    if (fromUnitData.isTemperature && toUnitData.isTemperature) {
+    if ((fromUnitData as any).isTemperature && (toUnitData as any).isTemperature) {
       convertedValue = convertTemperature(value, fromUnit, toUnit)
     } else {
       // Standard conversion
-      const baseValue = value * fromUnitData.factor
-      convertedValue = baseValue / toUnitData.factor
+      const baseValue = value * (fromUnitData as any).factor
+      convertedValue = baseValue / (toUnitData as any).factor
     }
 
     setResult(convertedValue)
@@ -263,8 +263,8 @@ export function ConversionCalculator() {
     const historyItem: ConversionHistory = {
       id: Date.now().toString(),
       category: currentCategory.name,
-      fromUnit: fromUnitData.name,
-      toUnit: toUnitData.name,
+      fromUnit: (fromUnitData as any).name,
+      toUnit: (toUnitData as any).name,
       value,
       result: convertedValue,
       timestamp: new Date()
@@ -316,13 +316,15 @@ export function ConversionCalculator() {
   return (
     <div className="space-y-6">
       {/* Main Calculator */}
-      <Card className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 shadow-xl">
+      <Card className="bg-card border border-border shadow-lg rounded-xl">
         <CardHeader className="pb-4">
-          <CardTitle className="flex items-center gap-2 text-xl">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <Calculator className="h-5 w-5 text-primary" />
+          <CardTitle className="flex items-center gap-3 text-xl font-bold">
+            <div className="p-3 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl shadow-md">
+              <Calculator className="h-6 w-6 text-white" />
             </div>
-            Universal Conversion Calculator
+            <span className="text-yellow-500 dark:text-yellow-400">
+              Universal Conversion Calculator
+            </span>
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -330,9 +332,13 @@ export function ConversionCalculator() {
           <div className="space-y-2">
             <Label className="text-sm font-medium">Conversion Category</Label>
             <Tabs value={selectedCategory} onValueChange={(value) => setSelectedCategory(value as keyof typeof conversionCategories)}>
-              <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-1 sm:gap-2">
+              <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 p-1 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-950/20 dark:to-orange-950/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
                 {Object.entries(conversionCategories).map(([key, category]) => (
-                  <TabsTrigger key={key} value={key} className="flex flex-col items-center gap-1 text-xs px-2 py-2 sm:flex-row sm:gap-2 sm:px-3 sm:py-2 min-h-[60px] sm:min-h-[40px]">
+                  <TabsTrigger 
+                    key={key} 
+                    value={key} 
+                    className="flex flex-col items-center gap-1 text-xs px-2 py-2 sm:flex-row sm:gap-2 sm:px-3 sm:py-2 min-h-[60px] sm:min-h-[40px] data-[state=active]:!bg-yellow-500 data-[state=active]:!text-white data-[state=active]:!border-yellow-500 hover:bg-yellow-100 dark:hover:bg-yellow-900/20"
+                  >
                     <category.icon className="h-4 w-4 flex-shrink-0" />
                     <span className="text-xs font-medium text-center sm:text-left">{category.name}</span>
                   </TabsTrigger>
@@ -344,23 +350,29 @@ export function ConversionCalculator() {
           {/* Conversion Inputs */}
           <div className="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
             <div className="space-y-2">
-              <Label htmlFor="from-unit" className="text-sm font-medium">From</Label>
+              <Label htmlFor="from-unit" className="text-sm font-semibold text-foreground flex items-center gap-2">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                From
+              </Label>
               <Select value={fromUnit} onValueChange={setFromUnit}>
-                <SelectTrigger className="w-full h-12">
+                <SelectTrigger className="w-full h-12 border-2 border-yellow-300 dark:border-yellow-700 rounded-lg [&>svg]:text-yellow-500 [&>svg]:hover:text-yellow-600 data-[state=open]:border-yellow-500 data-[state=open]:ring-yellow-500 focus:border-yellow-500">
                   <SelectValue placeholder="Select unit" />
                 </SelectTrigger>
-                <SelectContent className="max-h-60 overflow-y-auto">
+                <SelectContent className="max-h-60 overflow-y-auto [&>div]:data-[highlighted]:bg-yellow-500 [&>div]:data-[highlighted]:text-white">
                   {getUnitOptions()}
                 </SelectContent>
               </Select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="to-unit" className="text-sm font-medium">To</Label>
+              <Label htmlFor="to-unit" className="text-sm font-semibold text-foreground flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                To
+              </Label>
               <Select value={toUnit} onValueChange={setToUnit}>
-                <SelectTrigger className="w-full h-12">
+                <SelectTrigger className="w-full h-12 border-2 border-yellow-300 dark:border-yellow-700 rounded-lg [&>svg]:text-yellow-500 [&>svg]:hover:text-yellow-600 data-[state=open]:border-yellow-500 data-[state=open]:ring-yellow-500 focus:border-yellow-500">
                   <SelectValue placeholder="Select unit" />
                 </SelectTrigger>
-                <SelectContent className="max-h-60 overflow-y-auto">
+                <SelectContent className="max-h-60 overflow-y-auto [&>div]:data-[highlighted]:bg-yellow-500 [&>div]:data-[highlighted]:text-white">
                   {getUnitOptions()}
                 </SelectContent>
               </Select>
@@ -369,7 +381,10 @@ export function ConversionCalculator() {
 
           {/* Value Input */}
           <div className="space-y-2">
-            <Label htmlFor="input-value" className="text-sm font-medium">Value to Convert</Label>
+            <Label htmlFor="input-value" className="text-sm font-medium text-foreground flex items-center gap-2">
+              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+              Value to Convert
+            </Label>
             <div className="flex flex-col sm:flex-row gap-3">
               <Input
                 id="input-value"
@@ -377,7 +392,7 @@ export function ConversionCalculator() {
                 placeholder="Enter value"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                className="flex-1 w-full h-12 text-base"
+                className="flex-1 w-full h-12 text-base rounded-lg"
               />
               <Button
                 variant="outline"
@@ -393,12 +408,12 @@ export function ConversionCalculator() {
 
           {/* Result Display */}
           {result !== null && (
-            <div className="p-4 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-green-900/30 rounded-lg border border-green-200 dark:border-green-800">
+            <div className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-green-900/30 rounded-xl border-2 border-green-200 dark:border-green-800 shadow-md">
               <div className="space-y-3">
                 <div className="flex-1">
                   <div className="text-sm text-green-700 dark:text-green-300 mb-1">Converted Result</div>
                   <div className="text-lg sm:text-xl lg:text-2xl font-bold text-green-800 dark:text-green-200 break-all">
-                    {result.toFixed(6).replace(/\.?0+$/, '')} {currentUnits[toUnit as keyof typeof currentUnits]?.symbol}
+                    {result.toFixed(6).replace(/\.?0+$/, '')} {(currentUnits[toUnit as keyof typeof currentUnits] as any)?.symbol}
                   </div>
                 </div>
                 <div className="flex gap-2">
@@ -417,10 +432,10 @@ export function ConversionCalculator() {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3">
-            <Button onClick={clearAll} variant="outline" className="flex-1 w-full h-12">
+            <Button onClick={clearAll} variant="outline" className="flex-1 w-full h-12 rounded-lg font-medium">
               Clear All
             </Button>
-            <Button onClick={() => setShowHistory(!showHistory)} variant="outline" className="flex-1 w-full h-12">
+            <Button onClick={() => setShowHistory(!showHistory)} variant="outline" className="flex-1 w-full h-12 rounded-lg font-medium">
               <History className="h-4 w-4 mr-2" />
               {showHistory ? 'Hide' : 'Show'} History
             </Button>
@@ -430,10 +445,12 @@ export function ConversionCalculator() {
 
       {/* Conversion History */}
       {showHistory && history.length > 0 && (
-        <Card className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 shadow-xl">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <History className="h-5 w-5" />
+        <Card className="bg-card border border-border shadow-lg rounded-xl">
+          <CardHeader className="pb-4">
+            <CardTitle className="flex items-center gap-3 text-xl font-bold">
+              <div className="p-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg">
+                <History className="h-5 w-5 text-white" />
+              </div>
               Conversion History
             </CardTitle>
           </CardHeader>
@@ -466,10 +483,12 @@ export function ConversionCalculator() {
       )}
 
       {/* Quick Conversions */}
-      <Card className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-2 border-slate-200/50 dark:border-slate-700/50 shadow-xl">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-lg">
-            <Star className="h-5 w-5" />
+      <Card className="bg-card border border-border shadow-lg rounded-xl">
+        <CardHeader className="pb-4">
+          <CardTitle className="flex items-center gap-3 text-xl font-bold">
+            <div className="p-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg">
+              <Star className="h-5 w-5 text-white" />
+            </div>
             Popular Conversions
           </CardTitle>
         </CardHeader>
@@ -483,9 +502,12 @@ export function ConversionCalculator() {
               { from: "1 kilometer", to: "0.621 miles", category: "Length" },
               { from: "1 square meter", to: "10.764 square feet", category: "Area" }
             ].map((conversion, index) => (
-              <div key={index} className="p-4 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-700 dark:to-slate-800 rounded-lg border border-slate-200 dark:border-slate-600 min-h-[80px]">
-                <div className="text-sm font-medium text-slate-800 dark:text-slate-200 mb-2">
-                  {conversion.category}
+              <div key={index} className="p-4 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-700 dark:to-slate-800 rounded-xl border-2 border-yellow-200 dark:border-yellow-800 min-h-[80px] shadow-sm hover:shadow-md transition-shadow hover:border-yellow-400 dark:hover:border-yellow-600">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                  <div className="text-sm font-medium text-slate-800 dark:text-slate-200">
+                    {conversion.category}
+                  </div>
                 </div>
                 <div className="text-xs text-slate-600 dark:text-slate-400 break-all leading-relaxed">
                   {conversion.from} = {conversion.to}

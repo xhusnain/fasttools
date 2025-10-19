@@ -67,6 +67,56 @@ export default function PaceCalculator() {
   const [age, setAge] = useState("")
   const [history, setHistory] = useState<PaceResult[]>([])
 
+  // Function to format time input as user types
+  const formatTimeInput = (value: string) => {
+    // Remove all non-numeric characters
+    const numbers = value.replace(/\D/g, '')
+    
+    // If empty, return empty string
+    if (!numbers) return ''
+    
+    // Limit to 6 digits (hhmmss)
+    const limitedNumbers = numbers.slice(0, 6)
+    
+    // Format based on length
+    if (limitedNumbers.length <= 2) {
+      return limitedNumbers
+    } else if (limitedNumbers.length <= 4) {
+      return `${limitedNumbers.slice(0, 2)}:${limitedNumbers.slice(2)}`
+    } else {
+      return `${limitedNumbers.slice(0, 2)}:${limitedNumbers.slice(2, 4)}:${limitedNumbers.slice(4)}`
+    }
+  }
+
+  const handleTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatTimeInput(e.target.value)
+    setTime(formatted)
+  }
+
+  // Function to format mm:ss time input as user types
+  const formatMinutesSecondsInput = (value: string) => {
+    // Remove all non-numeric characters
+    const numbers = value.replace(/\D/g, '')
+    
+    // If empty, return empty string
+    if (!numbers) return ''
+    
+    // Limit to 4 digits (mmss)
+    const limitedNumbers = numbers.slice(0, 4)
+    
+    // Format based on length
+    if (limitedNumbers.length <= 2) {
+      return limitedNumbers
+    } else {
+      return `${limitedNumbers.slice(0, 2)}:${limitedNumbers.slice(2)}`
+    }
+  }
+
+  const handleMinutesSecondsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatMinutesSecondsInput(e.target.value)
+    setElapsedTime(formatted)
+  }
+
   const calculatePace = () => {
     if (!time || !distance) return
 
@@ -303,7 +353,7 @@ VO2 Max: ${result.vo2Max}`
                     id="time"
                     placeholder="0:50:25"
                     value={time}
-                    onChange={(e) => setTime(e.target.value)}
+                    onChange={handleTimeChange}
                   />
                 </div>
                 <div>
@@ -388,7 +438,7 @@ VO2 Max: ${result.vo2Max}`
                       <Label>Time (mm:ss)</Label>
                       <Input
                         value={segment.time}
-                        onChange={(e) => updateMultipointSegment(index, 'time', e.target.value)}
+                        onChange={(e) => updateMultipointSegment(index, 'time', formatMinutesSecondsInput(e.target.value))}
                       />
                     </div>
                     <div>
@@ -474,7 +524,7 @@ VO2 Max: ${result.vo2Max}`
                     id="elapsedTime"
                     placeholder="6:15"
                     value={elapsedTime}
-                    onChange={(e) => setElapsedTime(e.target.value)}
+                    onChange={handleMinutesSecondsChange}
                   />
                 </div>
                 <div>

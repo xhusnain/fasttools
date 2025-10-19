@@ -8,7 +8,7 @@ export function CategoryDropdown() {
   const [isOpen, setIsOpen] = useState(false)
 
   const categories = [
-    { name: "Calculators", href: "/tools" },
+    { name: "Calculators", href: "/calculator" },
     { name: "Converters", href: "/converters" },
     { name: "SEO Tools", href: "/seo-tools" },
     { name: "Fun Tools", href: "/fun-tools" },
@@ -24,28 +24,28 @@ export function CategoryDropdown() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 h-10 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted/50 bg-primary/10 border border-primary/20"
+        className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary hover:text-primary/80 transition-all duration-200 hover:scale-105 relative group"
       >
-        Tools
-        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+        <span>Tools</span>
+        <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
       </button>
 
       {isOpen && (
-        <>
-          <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
-          <div className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-lg shadow-lg z-50 py-2 animate-fade-in">
-            {categories.map((category) => (
+        <div className="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-lg shadow-lg z-50 animate-fade-in">
+          <div className="p-2">
+            {categories.map((category, index) => (
               <Link
-                key={category.href}
+                key={index}
                 href={category.href}
+                className="block px-3 py-2 text-sm text-foreground/80 hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200"
                 onClick={() => setIsOpen(false)}
-                className="block px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 {category.name}
               </Link>
             ))}
           </div>
-        </>
+        </div>
       )}
     </div>
   )

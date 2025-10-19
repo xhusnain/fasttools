@@ -437,10 +437,10 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
           <div>
             <Label className="text-lg font-semibold mb-4 block">Calculation Type</Label>
             <Tabs value={calculationType} onValueChange={setCalculationType}>
-              <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="howMuchToSave">How Much to Save</TabsTrigger>
-                <TabsTrigger value="howMuchCanWithdraw">How Much Can Withdraw</TabsTrigger>
-                <TabsTrigger value="howLongWillLast">How Long Will Last</TabsTrigger>
+              <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-0">
+                <TabsTrigger value="howMuchToSave" className="text-xs sm:text-sm">How Much to Save</TabsTrigger>
+                <TabsTrigger value="howMuchCanWithdraw" className="text-xs sm:text-sm">How Much Can Withdraw</TabsTrigger>
+                <TabsTrigger value="howLongWillLast" className="text-xs sm:text-sm">How Long Will Last</TabsTrigger>
               </TabsList>
             </Tabs>
           </div>

@@ -39,7 +39,218 @@ export default function HomePage() {
     "@type": "WebPage",
     name: "Free Online Tools | fasttools - Complete Digital Toolkit",
     description: "fasttools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
-    url: "https://fasttools.store",
+    url: "https://www.fasttools.store",
+    keywords: [
+      "free online tools",
+      "web tools",
+      "productivity tools", 
+      "AI tools",
+      "converter tools",
+      "calculator tools",
+      "text tools",
+      "image tools",
+      "developer tools",
+      "business tools",
+      "SEO tools",
+      "social media tools",
+      "finance tools",
+      "date time tools",
+      "fun tools",
+      "utility tools",
+      "web utilities",
+      "online calculators",
+      "free online services",
+      "tool collection",
+      "hashtag generator",
+      "QR code generator",
+      "password generator",
+      "color picker",
+      "unit converter",
+      "currency converter",
+      "text case converter",
+      "image converter",
+      "PDF tools",
+      "URL shortener",
+      "word counter",
+      "character counter",
+      "random number generator",
+      "color palette generator",
+      "meme generator",
+      "QR code scanner",
+      "barcode generator",
+      "invoice generator",
+      "receipt generator",
+      "certificate generator",
+      "free online hashtag generator for Instagram",
+      "best free QR code generator online",
+      "free password generator with custom length",
+      "online color picker tool free",
+      "free unit converter tool online",
+      "currency converter with live rates",
+      "free text case converter online",
+      "image format converter free online",
+      "free PDF tools online",
+      "free URL shortener service",
+      "word counter tool free online",
+      "character counter for social media",
+      "random number generator between range",
+      "color palette generator from image",
+      "free meme generator with templates",
+      "QR code scanner online free",
+      "barcode generator free online",
+      "free invoice generator template",
+      "receipt generator free online",
+      "certificate generator free template",
+      "online tools free",
+      "web based tools",
+      "browser tools",
+      "instant tools",
+      "no download tools",
+      "cloud tools",
+      "digital tools",
+      "internet tools",
+      "web applications",
+      "online utilities",
+      "free web apps",
+      "browser utilities",
+      "online software",
+      "web services",
+      "digital utilities",
+      "online generators",
+      "web calculators",
+      "online converters",
+      "free generators",
+      "web formatters",
+      "online validators",
+      "web analyzers",
+      "digital converters",
+      "online processors",
+      "web editors",
+      "online formatters",
+      "digital calculators",
+      "web validators",
+      "online analyzers",
+      "free web tools",
+      "instant web tools",
+      "no registration tools",
+      "privacy focused tools",
+      "secure online tools",
+      "fast web tools",
+      "reliable online tools",
+      "professional web tools",
+      "business web tools",
+      "marketing tools online",
+      "content creation tools",
+      "productivity web tools",
+      "efficiency tools",
+      "workflow tools",
+      "automation tools",
+      "digital productivity",
+      "online efficiency",
+      "web productivity",
+      "digital workflow",
+      "online automation",
+      "web efficiency",
+      "digital solutions",
+      "online solutions",
+      "web solutions",
+      "digital services",
+      "online services",
+      "web services free",
+      "digital platform",
+      "online platform",
+      "web platform",
+      "tool platform",
+      "utility platform",
+      "conversion platform",
+      "calculation platform",
+      "generation platform",
+      "processing platform",
+      "analysis platform",
+      "optimization platform",
+      "automation platform",
+      "productivity platform",
+      "efficiency platform",
+      "workflow platform",
+      "digital toolkit",
+      "online toolkit",
+      "web toolkit",
+      "professional toolkit",
+      "business toolkit",
+      "marketing toolkit",
+      "content toolkit",
+      "development toolkit",
+      "design toolkit",
+      "finance toolkit",
+      "social media toolkit",
+      "SEO toolkit",
+      "analytics toolkit",
+      "conversion toolkit",
+      "automation toolkit",
+      "productivity toolkit",
+      "efficiency toolkit",
+      "workflow toolkit",
+      "digital resources",
+      "online resources",
+      "web resources",
+      "free resources",
+      "digital assets",
+      "online assets",
+      "web assets",
+      "tool assets",
+      "utility assets",
+      "conversion assets",
+      "calculation assets",
+      "generation assets",
+      "processing assets",
+      "analysis assets",
+      "optimization assets",
+      "automation assets",
+      "productivity assets",
+      "efficiency assets",
+      "workflow assets"
+    ],
+    author: {
+      "@type": "Organization",
+      name: "FastTools",
+      url: "https://www.fasttools.store",
+      logo: "https://www.fasttools.store/logo.svg",
+      description: "Leading provider of free online tools and utilities for productivity, conversion, and content creation"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "FastTools",
+      url: "https://www.fasttools.store",
+      logo: "https://www.fasttools.store/logo.svg"
+    },
+    datePublished: "2024-01-01",
+    dateModified: "2025-01-15",
+    inLanguage: "en-US",
+    isAccessibleForFree: true,
+    audience: {
+      "@type": "Audience",
+      audienceType: "General Public"
+    },
+    mainContentOfPage: {
+      "@type": "WebPageElement",
+      cssSelector: "main"
+    },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://www.fasttools.store"
+        }
+      ]
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://www.fasttools.store/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
     mainEntity: {
       "@type": "ItemList",
       name: "Free Online Tools Collection",
@@ -51,56 +262,35 @@ export default function HomePage() {
           position: 1,
           name: "AI Tools",
           description: "AI-powered content generation tools including meme generators, caption generators, and hashtag suggesters",
-          url: "https://fasttools.store/ai-tools"
+          url: "https://www.fasttools.store/ai-tools"
         },
         {
           "@type": "ListItem", 
           position: 2,
           name: "Converter Tools",
           description: "Comprehensive conversion utilities for currency, units, text, and file formats",
-          url: "https://fasttools.store/converters"
+          url: "https://www.fasttools.store/converters"
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "Calculator Tools", 
           description: "Financial, business, and general purpose calculators for all your calculation needs",
-          url: "https://fasttools.store/tools"
+          url: "https://www.fasttools.store/calculator"
         },
         {
           "@type": "ListItem",
           position: 4,
           name: "SEO Tools",
           description: "SEO optimization tools including meta tag generators, keyword density checkers, and content analyzers",
-          url: "https://fasttools.store/seo-tools"
+          url: "https://www.fasttools.store/seo-tools"
         },
         {
           "@type": "ListItem",
           position: 5,
           name: "Image Tools",
           description: "Image processing and editing tools including croppers, converters, and OCR text extraction",
-          url: "https://fasttools.store/image-tools"
-        },
-        {
-          "@type": "ListItem",
-          position: 6,
-          name: "Finance Tools",
-          description: "Financial calculators including loan calculators, tax calculators, and retirement planners",
-          url: "https://fasttools.store/finance-tools"
-        },
-        {
-          "@type": "ListItem",
-          position: 7,
-          name: "Developer Tools",
-          description: "Development utilities including HTML beautifiers, JSON converters, and regex testers",
-          url: "https://fasttools.store/dev-tools"
-        },
-        {
-          "@type": "ListItem",
-          position: 8,
-          name: "Social Media Tools",
-          description: "Social media utilities including TikTok downloaders, YouTube tools, and Instagram utilities",
-          url: "https://fasttools.store/social-media-tools"
+          url: "https://www.fasttools.store/image-tools"
         }
       ]
     },
@@ -111,7 +301,7 @@ export default function HomePage() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://fasttools.store"
+          item: "https://www.fasttools.store"
         }
       ]
     },
@@ -123,7 +313,92 @@ export default function HomePage() {
     isPartOf: {
       "@type": "WebSite",
       name: "fasttools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
+    },
+    mainEntity: {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What AI tools are available for free content generation?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Our free AI tools include AI caption generator for social media posts, AI meme generator for viral content, AI hashtag suggester for better reach, AI song lyrics generator for creative writing, and AI pet name generator for naming pets. All tools use advanced AI technology to generate high-quality, relevant content instantly without any cost."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "How accurate are the currency exchange rates in your converter?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Our currency converter provides real-time exchange rates updated every minute from reliable financial data sources. We support 160+ currencies including USD, EUR, GBP, JPY, and more. The rates are accurate for travel, business, and investment purposes, with historical data and trend analysis available for informed decision-making."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "What financial calculators can help with loan and investment planning?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "We offer comprehensive financial calculators including loan calculator for mortgage planning, EMI calculator for monthly payments, investment calculator for returns analysis, retirement calculator for long-term planning, compound interest calculator for savings growth, and tax calculator for income tax estimation. All calculators use professional-grade formulas compatible with BA II Plus and HP 12CP financial calculators."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "How can SEO tools improve my website's search engine rankings?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Our SEO tools help optimize your website with meta tag generator for better search snippets, keyword density checker for content optimization, hashtag generator for social media reach, and blog title generator for click-worthy headlines. These tools analyze your content, suggest improvements, and help you rank higher in Google search results for better organic traffic."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "What image processing tools are available for free?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Our image tools include image cropper for resizing and cropping photos, image converter for format conversion, image to text OCR for extracting text from images, background blur for photo editing, and QR code generator for creating QR codes. All tools work in your browser without uploading files, ensuring complete privacy and security."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "What developer tools can help with coding and web development?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Our developer tools include HTML beautifier for code formatting, JSON formatter for data validation, regex tester for pattern matching, JWT decoder for token analysis, base64 encoder/decoder for data encoding, and color palette generator for design. These tools help developers write better code, debug more effectively, and streamline their development workflow."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Is my data safe when using these online tools?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, your data is completely safe. All our tools process data locally in your browser without uploading files to our servers. We use privacy-first architecture where sensitive information like documents, images, and personal data never leaves your device. No registration required, no data collection, and no tracking - just pure, secure tool functionality."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "What categories of tools are available on FastTools?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "We offer 10+ categories including AI Tools for content generation, Calculators for financial planning, Converters for data transformation, SEO Tools for website optimization, Image Tools for photo editing, Developer Tools for coding, Finance Tools for business calculations, Date & Time Tools for scheduling, Social Media Tools for marketing, and Fun Tools for entertainment. Each category contains 15-50+ specialized tools for different use cases."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Can businesses use these tools for professional purposes?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Absolutely! Our tools are designed for professional use with business-grade accuracy and reliability. Many businesses use our financial calculators for loan analysis, currency converter for international trade, SEO tools for digital marketing, AI tools for content creation, and developer tools for web development. All tools are free for commercial use with no restrictions or watermarks."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Do these tools work on mobile devices and tablets?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, all our tools are mobile-optimized and work perfectly on smartphones, tablets, and desktop computers. Our responsive design ensures optimal performance across all devices with touch-friendly interfaces, fast loading times, and offline functionality for many tools. Access your favorite tools anywhere, anytime without any app downloads or installations."
+          }
+        }
+      ]
     }
   }
 
@@ -150,74 +425,11 @@ export default function HomePage() {
       popular: true,
     },
     {
-      title: "File Size Converter",
-      description: "Convert between different file size units (KB, MB, GB, TB). Perfect for understanding storage requirements and data transfer.",
-      icon: Clock,
-      href: "/converters/file-size",
-      popular: false,
-    },
-    {
       title: "Currency Converter",
       description: "Convert between different currencies with real-time exchange rates. Supports 160+ currencies worldwide.",
       icon: DollarSign,
       href: "/converters/currency",
       popular: true,
-    },
-    {
-      title: "Temperature Converter",
-      description: "Convert between Celsius, Fahrenheit, and Kelvin. Perfect for cooking, weather, and scientific calculations.",
-      icon: Percent,
-      href: "/converters/temperature",
-      popular: false,
-    },
-    {
-      title: "Length Converter",
-      description: "Convert between different length units (meters, feet, inches, yards, miles). Supports metric and imperial systems.",
-      icon: TrendingUp,
-      href: "/converters/length",
-      popular: false,
-    },
-    {
-      title: "Timezone Converter",
-      description: "Convert time between different timezones. Perfect for scheduling meetings and coordinating with global teams.",
-      icon: Calendar,
-      href: "/converters/timezone",
-      popular: false,
-    },
-    {
-      title: "Meta Tag Generator",
-      description: "Generate SEO meta tags for your website. Includes title, description, keywords, and Open Graph tags.",
-      icon: Shield,
-      href: "/seo-tools/meta-tags",
-      popular: true,
-    },
-    {
-      title: "Lorem Ipsum Generator",
-      description: "Generate placeholder text for your designs and prototypes. Customize length, paragraphs, and formatting.",
-      icon: Users,
-      href: "/seo-tools/lorem-ipsum",
-      popular: false,
-    },
-    {
-      title: "Hashtag Generator",
-      description: "Generate relevant hashtags for your social media posts. Improve reach and engagement across platforms.",
-      icon: Zap,
-      href: "/seo-tools/hashtags",
-      popular: true,
-    },
-    {
-      title: "Blog Title Generator",
-      description: "Generate catchy blog post titles and headlines. Perfect for content creators and marketers.",
-      icon: FileText,
-      href: "/seo-tools/blog-titles",
-      popular: false,
-    },
-    {
-      title: "Keyword Density Checker",
-      description: "Analyze keyword density in your content for SEO optimization. Get insights on keyword usage and distribution.",
-      icon: Search,
-      href: "/seo-tools/keyword-density",
-      popular: false,
     },
     {
       title: "AI Meme Generator",
@@ -234,25 +446,11 @@ export default function HomePage() {
       popular: true,
     },
     {
-      title: "AI Lyrics Generator",
-      description: "Generate song lyrics with AI assistance. Perfect for songwriters, musicians, and creative writers.",
-      icon: Music,
-      href: "/ai-tools/lyrics-generator",
-      popular: false,
-    },
-    {
-      title: "Pet Name Generator",
-      description: "Generate unique and creative names for your pets. Choose from different categories and styles.",
-      icon: Heart,
-      href: "/ai-tools/pet-names",
-      popular: false,
-    },
-    {
-      title: "Hashtag Suggester",
-      description: "Get AI-powered hashtag suggestions for your content. Improve social media reach and engagement.",
-      icon: Hash,
-      href: "/ai-tools/hashtag-suggester",
-      popular: false,
+      title: "Hashtag Generator",
+      description: "Generate relevant hashtags for your social media posts. Improve reach and engagement across platforms.",
+      icon: Zap,
+      href: "/seo-tools/hashtags",
+      popular: true,
     },
     {
       title: "Image Cropper",
@@ -261,1442 +459,1759 @@ export default function HomePage() {
       href: "/image-tools/image-cropper",
       popular: true,
     },
-    {
-      title: "Background Blur",
-      description: "Add blur effects to image backgrounds. Perfect for creating professional-looking photos and graphics.",
-      icon: Image,
-      href: "/image-tools/background-blur",
-      popular: false,
-    },
-    // Tools (General calculators)
-    {
-      title: "Age Calculator",
-      description: "Calculate your exact age in years, months, days.",
-      icon: Calendar,
-      href: "/tools/age-calculator",
-      popular: false,
-    },
-    {
-      title: "BMI Calculator",
-      description: "Compute Body Mass Index from height and weight.",
-      icon: Activity,
-      href: "/tools/bmi-calculator",
-      popular: false,
-    },
-    {
-      title: "Loan Calculator",
-      description: "Estimate monthly loan payments and total interest.",
-      icon: DollarSign,
-      href: "/tools/loan-calculator",
-      popular: false,
-    },
-    {
-      title: "Tax Calculator",
-      description: "Calculate taxes and after-tax amounts.",
-      icon: Percent,
-      href: "/tools/tax-calculator",
-      popular: false,
-    },
-    {
-      title: "Percentage Calculator",
-      description: "Find percentage increase, decrease, and parts.",
-      icon: Percent,
-      href: "/tools/percentage-calculator",
-      popular: false,
-    },
-    {
-      title: "Date Difference",
-      description: "Compute days between two dates.",
-      icon: Calendar,
-      href: "/tools/date-difference",
-      popular: false,
-    },
-    {
-      title: "Time Duration",
-      description: "Calculate duration between times.",
-      icon: Clock,
-      href: "/tools/time-duration",
-      popular: false,
-    },
-    {
-      title: "Compound Interest",
-      description: "Project investment growth with compounding.",
-      icon: TrendingUp,
-      href: "/tools/compound-interest",
-      popular: false,
-    },
-    {
-      title: "Fraction Calculator",
-      description: "Add, subtract, multiply, and divide fractions with automatic simplification.",
-      icon: Calculator,
-      href: "/tools/fraction-calculator",
-      popular: false,
-    },
-    // Date & Time tools (category pages already exist but show here too)
-    {
-      title: "Age in Hours",
-      description: "Convert your age to total hours lived.",
-      icon: Clock,
-      href: "/date-time-tools/age-in-hours",
-      popular: false,
-    },
-    {
-      title: "Date to Day Finder",
-      description: "Find the weekday for any given date.",
-      icon: Calendar,
-      href: "/date-time-tools/date-to-day",
-      popular: false,
-    },
-    {
-      title: "Workday Calculator",
-      description: "Calculate business days between dates.",
-      icon: Calendar,
-      href: "/date-time-tools/workday-calculator",
-      popular: false,
-    },
-    {
-      title: "Year End Countdown",
-      description: "Countdown to the end of the year.",
-      icon: Calendar,
-      href: "/date-time-tools/year-end-countdown",
-      popular: false,
-    },
-    {
-      title: "Zodiac Sign Finder",
-      description: "Find your zodiac sign by date of birth.",
-      icon: Star,
-      href: "/date-time-tools/zodiac-sign",
-      popular: false,
-    },
-    // Dev tools
-    {
-      title: "Color Palette Generator",
-      description: "Generate harmonious color palettes.",
-      icon: Palette,
-      href: "/dev-tools/color-palette",
-      popular: false,
-    },
-    {
-      title: "Hex to RGB",
-      description: "Convert HEX colors to RGB values.",
-      icon: Code,
-      href: "/dev-tools/hex-to-rgb",
-      popular: false,
-    },
-    {
-      title: "HTML Beautifier",
-      description: "Format and prettify HTML code.",
-      icon: Code,
-      href: "/dev-tools/html-beautifier",
-      popular: false,
-    },
-    {
-      title: "HTML to Markdown",
-      description: "Convert HTML content into Markdown.",
-      icon: FileText,
-      href: "/dev-tools/html-to-markdown",
-      popular: false,
-    },
-    {
-      title: "JSON to CSV",
-      description: "Transform JSON data into CSV format.",
-      icon: FileText,
-      href: "/dev-tools/json-to-csv",
-      popular: false,
-    },
-    {
-      title: "JWT Decoder",
-      description: "Decode and inspect JWT tokens.",
-      icon: Shield,
-      href: "/dev-tools/jwt-decoder",
-      popular: false,
-    },
-    {
-      title: "Markdown Previewer",
-      description: "Write and preview Markdown instantly.",
-      icon: FileText,
-      href: "/dev-tools/markdown-previewer",
-      popular: false,
-    },
-    {
-      title: "Regex Tester",
-      description: "Test and debug regular expressions.",
-      icon: Code,
-      href: "/dev-tools/regex-tester",
-      popular: false,
-    },
-    // Finance tools
-    {
-      title: "Invoice Generator",
-      description: "Create simple invoices online.",
-      icon: Wallet,
-      href: "/finance-tools/invoice-generator",
-      popular: false,
-    },
-    {
-      title: "PayPal Fee Calculator",
-      description: "Calculate PayPal fees and net received.",
-      icon: DollarSign,
-      href: "/finance-tools/paypal-fee",
-      popular: false,
-    },
-    {
-      title: "Discount Calculator",
-      description: "Compute discounts and final prices.",
-      icon: Percent,
-      href: "/finance-tools/discount-calculator",
-      popular: false,
-    },
-    {
-      title: "Tip Calculator",
-      description: "Split bills and calculate tips easily.",
-      icon: DollarSign,
-      href: "/finance-tools/tip-calculator",
-      popular: false,
-    },
-    {
-      title: "Savings Tracker",
-      description: "Plan and track savings goals.",
-      icon: Wallet,
-      href: "/finance-tools/savings-tracker",
-      popular: false,
-    },
-    {
-      title: "Retirement Planner",
-      description: "Estimate retirement savings needs.",
-      icon: TrendingUp,
-      href: "/finance-tools/retirement-planner",
-      popular: false,
-    },
-    {
-      title: "Bill Splitter",
-      description: "Split shared bills fairly.",
-      icon: Users,
-      href: "/finance-tools/bill-splitter",
-      popular: false,
-    },
-    {
-      title: "Credit Card Payoff",
-      description: "Plan credit card payoff timelines.",
-      icon: DollarSign,
-      href: "/finance-tools/credit-card-payoff",
-      popular: false,
-    },
-    // Fun tools
-    {
-      title: "Future Age",
-      description: "Find your age on a future date.",
-      icon: Calendar,
-      href: "/fun-tools/future-age",
-      popular: false,
-    },
-    {
-      title: "Love Calculator",
-      description: "Have fun with a playful love score.",
-      icon: Heart,
-      href: "/fun-tools/love-calculator",
-      popular: false,
-    },
-    {
-      title: "Hashtag Counter",
-      description: "Count hashtags in your text.",
-      icon: Hash,
-      href: "/fun-tools/hashtag-counter",
-      popular: false,
-    },
-    {
-      title: "Birthday Countdown",
-      description: "Countdown to your next birthday.",
-      icon: Calendar,
-      href: "/fun-tools/birthday-countdown",
-      popular: false,
-    },
-    {
-      title: "Anniversary Calculator",
-      description: "Track and celebrate anniversaries.",
-      icon: Heart,
-      href: "/fun-tools/anniversary",
-      popular: false,
-    },
-    {
-      title: "PDF Tools",
-      description: "Basic PDF utilities online.",
-      icon: FileText,
-      href: "/image-tools/pdf-tools",
-      popular: false,
-    },
-    {
-      title: "PDF Unlocker",
-      description: "Remove passwords from PDFs you own.",
-      icon: FileText,
-      href: "/image-tools/pdf-unlocker",
-      popular: false,
-    },
-    {
-      title: "Screenshot to Text",
-      description: "Extract text from screenshots.",
-      icon: Image,
-      href: "/image-tools/screenshot-to-text",
-      popular: false,
-    },
-    // Social Media tools
-    {
-      title: "YouTube Thumbnail Downloader",
-      description: "Download thumbnails from YouTube videos.",
-      icon: Image,
-      href: "/social-media-tools/youtube-thumbnail",
-      popular: false,
-    },
-    {
-      title: "Instagram DP Viewer",
-      description: "View and download Instagram profile photos.",
-      icon: Image,
-      href: "/social-media-tools/instagram-dp",
-      popular: false,
-    },
-    {
-      title: "TikTok Downloader",
-      description: "Download TikTok videos without watermark.",
-      icon: Download,
-      href: "/social-media-tools/tiktok-downloader",
-      popular: true,
-    },
-    {
-      title: "YouTube Tag Extractor",
-      description: "Extract tags from YouTube videos.",
-      icon: Hash,
-      href: "/social-media-tools/youtube-tags",
-      popular: false,
-    },
-    {
-      title: "Link in Bio Generator",
-      description: "Build a simple bio link page.",
-      icon: Globe,
-      href: "/social-media-tools/link-in-bio",
-      popular: false,
-    },
-    {
-      title: "YouTube Channel Checker",
-      description: "Check basic info about YouTube channels.",
-      icon: Search,
-      href: "/social-media-tools/channel-checker",
-      popular: false,
-    },
-  ]
-
-  // Premium gradients for tool icons with more variety
-  const iconGradients = [
-    "from-orange-500 via-amber-400 to-yellow-500",
-    "from-blue-500 via-cyan-400 to-teal-500",
-    "from-emerald-500 via-green-400 to-lime-500",
-    "from-violet-500 via-purple-400 to-fuchsia-500",
-    "from-rose-500 via-pink-400 to-red-500",
-    "from-indigo-500 via-blue-400 to-sky-500",
-    "from-lime-500 via-green-400 to-emerald-500",
-    "from-slate-500 via-gray-400 to-zinc-500",
-    "from-red-500 via-orange-400 to-yellow-500",
-    "from-purple-500 via-violet-400 to-pink-500",
-    "from-teal-500 via-cyan-400 to-blue-500",
-    "from-green-500 via-emerald-400 to-teal-500",
   ]
 
   const categorizedTools: Record<string, typeof tools> = {
-    "Converters": tools.filter((t) => t.href.startsWith("/converters")),
     "AI Tools": tools.filter((t) => t.href.startsWith("/ai-tools")),
+    "Converters": tools.filter((t) => t.href.startsWith("/converters")),
     "SEO Tools": tools.filter((t) => t.href.startsWith("/seo-tools")),
     "Image Tools": tools.filter((t) => t.href.startsWith("/image-tools")),
-    "Dev Tools": tools.filter((t) => t.href.startsWith("/dev-tools")),
-    "Finance Tools": tools.filter((t) => t.href.startsWith("/finance-tools")),
-    "Fun Tools": tools.filter((t) => t.href.startsWith("/fun-tools")),
-    "Date & Time Tools": tools.filter((t) => t.href.startsWith("/date-time-tools") || t.href.startsWith("/tools/age") || t.href.startsWith("/tools/time")),
-    "General Calculators": tools.filter((t) => t.href.startsWith("/tools/") && !t.href.includes("age") && !t.href.includes("time")),
-    "Social Media Tools": tools.filter((t) => t.href.startsWith("/social-media-tools")),
   }
 
   return (
     <>
       <script suppressHydrationWarning type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="flex flex-col">
-        {/* AI Writing Assistant Hero Section */}
-        <section className="container mx-auto px-4 lg:px-6 py-10 md:py-14">
-          <div className="max-w-7xl mx-auto">
-            {/* Compelling Value Proposition Banner */}
-            <div className="mb-8 animate-fade-in">
-              <div className="relative max-w-5xl mx-auto">
-                <div className="bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-pink-600/10 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-xl">
-                  <div className="text-center space-y-4">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 text-blue-100 text-sm font-semibold mb-4">
-                      <Sparkles className="h-4 w-4 animate-pulse" />
-                      <span>1000+ Free Tools • No Registration Required</span>
-                    </div>
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 leading-tight">
-                      Everything You Need, Nothing You Don't
-                    </h2>
-                    <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-                      From AI-powered content creation to precision calculators, we've eliminated the need to visit multiple websites. 
-                      <span className="font-semibold text-white"> One platform, infinite possibilities.</span>
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-white/70">
-                      <div className="flex items-center gap-2">
-                        <div className="h-2 w-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span>100% Free Forever</span>
+                {/* SEO-Optimized Hero Section */}
+                <section className="py-20 md:py-32">
+                  <div className="container mx-auto px-4 lg:px-6">
+                    <div className="max-w-4xl mx-auto text-center">
+                      {/* SEO Badge with Keywords */}
+                      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent border border-accent text-white text-sm font-medium mb-8">
+                        <Sparkles className="h-4 w-4" />
+                        <span>1000+ Free Online Tools • No Registration Required • Instant Access</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <div className="h-2 w-2 bg-blue-400 rounded-full animate-pulse"></div>
-                        <span>No Watermarks</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="h-2 w-2 bg-purple-400 rounded-full animate-pulse"></div>
-                        <span>Privacy First</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="h-2 w-2 bg-pink-400 rounded-full animate-pulse"></div>
-                        <span>Mobile Optimized</span>
+                      
+                      {/* SEO-Optimized Headlines with Primary Keywords */}
+                      <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+                        Free Online Tools for <br />
+                        <span className="text-primary">Productivity, Conversion & AI</span>
+                      </h1>
+                      
+                      <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+                        Access 1000+ free web tools including AI generators, currency converters, calculators, SEO tools, 
+                        image processors, and developer utilities. No downloads, no registration, instant results.
+                      </p>
+              
+              {/* Clean CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                <Button
+                  asChild
+                  size="lg"
+                  className="h-12 px-8 text-base font-semibold"
+                >
+                  <Link href="/ai-tools/caption-generator" className="flex items-center gap-2">
+                    <Sparkles className="h-5 w-5" />
+                    Start Creating Now
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+                
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="h-12 px-8 text-base font-semibold"
+                >
+                  <Link href="#popular-tools" className="flex items-center gap-2">
+                    <Target className="h-5 w-5" />
+                    Discover All Tools
+                  </Link>
+                </Button>
+              </div>
+              
+                      {/* SEO-Optimized Stats with Keywords */}
+                      <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground">
+                        <div className="flex items-center gap-2">
+                          <div className="h-2 w-2 bg-accent rounded-full"></div>
+                          <span>100% Free Online Tools</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="h-2 w-2 bg-primary rounded-full"></div>
+                          <span>No Watermarks or Limits</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="h-2 w-2 bg-accent rounded-full"></div>
+                          <span>Privacy-First Web Tools</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="h-2 w-2 bg-primary rounded-full"></div>
+                          <span>Mobile-Optimized Tools</span>
+                        </div>
                       </div>
                     </div>
                   </div>
+                </section>
+
+                {/* Comprehensive SEO Content Section */}
+                <section className="py-16 md:py-24 bg-gradient-to-br from-muted/20 to-muted/10">
+                  <div className="container mx-auto px-4 lg:px-6">
+                    <div className="max-w-6xl mx-auto">
+                      <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                          Complete Collection of <span className="text-primary">Free Online Tools</span> for Every Need
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                          Discover the most comprehensive collection of free web tools, calculators, converters, and utilities. 
+                          From AI-powered content generators to precision financial calculators, our free online tools cover every 
+                          aspect of digital productivity, content creation, and business operations.
+                        </p>
+                      </div>
+
+                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                        {/* AI Tools Section */}
+                        <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+                              <Sparkles className="h-6 w-6 text-white" />
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-bold text-foreground">AI Tools & Generators</h3>
+                              <p className="text-sm text-muted-foreground">25+ AI-powered tools</p>
+                            </div>
+                          </div>
+                          <p className="text-muted-foreground mb-4">
+                            Free AI caption generator, hashtag suggester, meme generator, lyrics generator, and pet name generator. 
+                            All powered by advanced AI technology for instant content creation.
+                          </p>
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-purple-500 rounded-full"></div>
+                              <span>AI Caption Generator for Instagram</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-purple-500 rounded-full"></div>
+                              <span>Free AI Meme Generator with Templates</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-purple-500 rounded-full"></div>
+                              <span>AI Hashtag Generator for Social Media</span>
+                            </div>
+                          </div>
+                        </Card>
+
+                        {/* Converter Tools Section */}
+                        <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                              <Activity className="h-6 w-6 text-white" />
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-bold text-foreground">Converter Tools</h3>
+                              <p className="text-sm text-muted-foreground">30+ conversion utilities</p>
+                            </div>
+                          </div>
+                          <p className="text-muted-foreground mb-4">
+                            Currency converter with live rates, unit converter for all measurements, text case converter, 
+                            image format converter, and file conversion tools.
+                          </p>
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-green-500 rounded-full"></div>
+                              <span>Live Currency Converter with Real-time Rates</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-green-500 rounded-full"></div>
+                              <span>Free Unit Converter for All Measurements</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-green-500 rounded-full"></div>
+                              <span>Text Case Converter Online Free</span>
+                            </div>
+                          </div>
+                        </Card>
+
+                        {/* Calculator Tools Section */}
+                        <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                              <Calculator className="h-6 w-6 text-white" />
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-bold text-foreground">Calculator Tools</h3>
+                              <p className="text-sm text-muted-foreground">50+ calculator utilities</p>
+                            </div>
+                          </div>
+                          <p className="text-muted-foreground mb-4">
+                            Financial calculators, business tools, loan calculators, mortgage calculators, 
+                            retirement planners, and investment calculators for all your financial needs.
+                          </p>
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-blue-500 rounded-full"></div>
+                              <span>Free Loan Calculator with Amortization</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-blue-500 rounded-full"></div>
+                              <span>Mortgage Calculator for Home Buying</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-blue-500 rounded-full"></div>
+                              <span>Retirement Calculator for Financial Planning</span>
+                            </div>
+                          </div>
+                        </Card>
+
+                        {/* SEO Tools Section */}
+                        <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                              <Target className="h-6 w-6 text-white" />
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-bold text-foreground">SEO Tools</h3>
+                              <p className="text-sm text-muted-foreground">20+ SEO utilities</p>
+                            </div>
+                          </div>
+                          <p className="text-muted-foreground mb-4">
+                            Meta tag generator, keyword density checker, hashtag generator, blog title generator, 
+                            and content optimization tools for better search rankings.
+                          </p>
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-orange-500 rounded-full"></div>
+                              <span>Free Meta Tag Generator for SEO</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-orange-500 rounded-full"></div>
+                              <span>Keyword Density Checker Tool</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-orange-500 rounded-full"></div>
+                              <span>Blog Title Generator for Click-worthy Headlines</span>
+                            </div>
+                          </div>
+                        </Card>
+
+                        {/* Image Tools Section */}
+                        <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+                              <Image className="h-6 w-6 text-white" />
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-bold text-foreground">Image Tools</h3>
+                              <p className="text-sm text-muted-foreground">15+ image utilities</p>
+                            </div>
+                          </div>
+                          <p className="text-muted-foreground mb-4">
+                            Image cropper, image converter, image to text OCR, background blur, QR code generator, 
+                            and image processing tools for all your visual needs.
+                          </p>
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
+                              <span>Free Image Cropper and Resizer</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
+                              <span>Image to Text OCR Online Free</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
+                              <span>QR Code Generator with Customization</span>
+                            </div>
+                          </div>
+                        </Card>
+
+                        {/* Developer Tools Section */}
+                        <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-secondary-accent to-secondary-accent/80 flex items-center justify-center">
+                              <Code className="h-6 w-6 text-white" />
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-bold text-foreground">Developer Tools</h3>
+                              <p className="text-sm text-muted-foreground">20+ developer utilities</p>
+                            </div>
+                          </div>
+                          <p className="text-muted-foreground mb-4">
+                            HTML beautifier, JSON formatter, regex tester, JWT decoder, base64 encoder/decoder, 
+                            and code formatting tools for developers.
+                          </p>
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-secondary-accent rounded-full"></div>
+                              <span>Free HTML Beautifier and Formatter</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-secondary-accent rounded-full"></div>
+                              <span>JSON Formatter and Validator</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-secondary-accent rounded-full"></div>
+                              <span>Regex Tester and Pattern Matcher</span>
+                            </div>
+                          </div>
+                        </Card>
+                      </div>
+
+                      {/* SEO-Optimized Content Blocks */}
+                      <div className="grid md:grid-cols-2 gap-8 mb-16">
+                        <Card className="p-6">
+                          <h3 className="text-2xl font-bold text-foreground mb-4">Why Choose Our Free Online Tools?</h3>
+                          <div className="space-y-4">
+                            <div className="flex items-start gap-3">
+                              <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                <div className="h-2 w-2 bg-primary rounded-full"></div>
+                              </div>
+                              <div>
+                                <h4 className="font-semibold text-foreground mb-1">100% Free Web Tools Forever</h4>
+                                <p className="text-sm text-muted-foreground">No hidden costs, no premium tiers, no watermarks. All our digital tools and online utilities are completely free to use.</p>
+                              </div>
+                            </div>
+                            <div className="flex items-start gap-3">
+                              <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                <div className="h-2 w-2 bg-primary rounded-full"></div>
+                              </div>
+                              <div>
+                                <h4 className="font-semibold text-foreground mb-1">Instant Browser-Based Access</h4>
+                                <p className="text-sm text-muted-foreground">No downloads or installations required. All web applications and browser tools work instantly in your web browser.</p>
+                              </div>
+                            </div>
+                            <div className="flex items-start gap-3">
+                              <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                <div className="h-2 w-2 bg-primary rounded-full"></div>
+                              </div>
+                              <div>
+                                <h4 className="font-semibold text-foreground mb-1">Privacy-First Digital Solutions</h4>
+                                <p className="text-sm text-muted-foreground">Your data never leaves your device. All processing happens locally in your browser with secure online tools.</p>
+                              </div>
+                            </div>
+                            <div className="flex items-start gap-3">
+                              <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                <div className="h-2 w-2 bg-primary rounded-full"></div>
+                              </div>
+                              <div>
+                                <h4 className="font-semibold text-foreground mb-1">Mobile-Optimized Web Platform</h4>
+                                <p className="text-sm text-muted-foreground">All digital utilities work perfectly on smartphones, tablets, and desktop computers with responsive design.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </Card>
+
+                        <Card className="p-6">
+                          <h3 className="text-2xl font-bold text-foreground mb-4">Popular Digital Tool Categories</h3>
+                          <div className="space-y-3">
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">AI Content Generators</span>
+                              <span className="text-sm text-muted-foreground">25+ tools</span>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">Currency & Unit Converters</span>
+                              <span className="text-sm text-muted-foreground">30+ tools</span>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">Financial Calculators</span>
+                              <span className="text-sm text-muted-foreground">50+ tools</span>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">SEO & Marketing Tools</span>
+                              <span className="text-sm text-muted-foreground">20+ tools</span>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">Image Processing Tools</span>
+                              <span className="text-sm text-muted-foreground">15+ tools</span>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">Developer Utilities</span>
+                              <span className="text-sm text-muted-foreground">20+ tools</span>
+                            </div>
+                          </div>
+                        </Card>
+                      </div>
+
+                      {/* Additional SEO Content Section */}
+                      <div className="grid md:grid-cols-3 gap-8 mb-16">
+                        <Card className="p-6">
+                          <h3 className="text-xl font-bold text-foreground mb-4">Digital Productivity Tools</h3>
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-primary rounded-full"></div>
+                              <span>Workflow Automation Tools</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-primary rounded-full"></div>
+                              <span>Efficiency Optimization Tools</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-primary rounded-full"></div>
+                              <span>Business Process Tools</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-primary rounded-full"></div>
+                              <span>Digital Workflow Solutions</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-primary rounded-full"></div>
+                              <span>Online Efficiency Tools</span>
+                            </div>
+                          </div>
+                        </Card>
+
+                        <Card className="p-6">
+                          <h3 className="text-xl font-bold text-foreground mb-4">Content Creation Platform</h3>
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-accent rounded-full"></div>
+                              <span>AI Content Generation</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-accent rounded-full"></div>
+                              <span>Social Media Tools</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-accent rounded-full"></div>
+                              <span>Marketing Content Tools</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-accent rounded-full"></div>
+                              <span>Digital Content Solutions</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-accent rounded-full"></div>
+                              <span>Online Content Creation</span>
+                            </div>
+                          </div>
+                        </Card>
+
+                        <Card className="p-6">
+                          <h3 className="text-xl font-bold text-foreground mb-4">Professional Web Services</h3>
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-secondary-accent rounded-full"></div>
+                              <span>Business Web Tools</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-secondary-accent rounded-full"></div>
+                              <span>Professional Utilities</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-secondary-accent rounded-full"></div>
+                              <span>Enterprise Solutions</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-secondary-accent rounded-full"></div>
+                              <span>Corporate Web Services</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-secondary-accent rounded-full"></div>
+                              <span>Professional Platform</span>
+                            </div>
+                          </div>
+                        </Card>
+                      </div>
+
+                      {/* SEO-Optimized Feature Grid */}
+                      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                        <Card className="p-4 text-center">
+                          <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <Zap className="h-6 w-6 text-primary" />
+                          </div>
+                          <h4 className="font-semibold text-foreground mb-2">Instant Web Tools</h4>
+                          <p className="text-sm text-muted-foreground">Fast, reliable online tools that work instantly in your browser</p>
+                        </Card>
+
+                        <Card className="p-4 text-center">
+                          <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <Shield className="h-6 w-6 text-accent" />
+                          </div>
+                          <h4 className="font-semibold text-foreground mb-2">Secure Digital Tools</h4>
+                          <p className="text-sm text-muted-foreground">Privacy-first design with secure processing and data protection</p>
+                        </Card>
+
+                        <Card className="p-4 text-center">
+                          <div className="h-12 w-12 bg-secondary-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <Target className="h-6 w-6 text-secondary-accent" />
+                          </div>
+                          <h4 className="font-semibold text-foreground mb-2">Professional Results</h4>
+                          <p className="text-sm text-muted-foreground">High-quality output from our professional-grade web utilities</p>
+                        </Card>
+
+                        <Card className="p-4 text-center">
+                          <div className="h-12 w-12 bg-tertiary-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <Globe className="h-6 w-6 text-tertiary-accent" />
+                          </div>
+                          <h4 className="font-semibold text-foreground mb-2">Global Accessibility</h4>
+                          <p className="text-sm text-muted-foreground">Access our digital platform from anywhere in the world</p>
+                        </Card>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+
+
+                {/* Comprehensive SEO Content Section */}
+                <section className="py-16 md:py-24 bg-gradient-to-br from-background via-background/95 to-background/90">
+                  <div className="container mx-auto px-4 lg:px-6">
+                    <div className="max-w-6xl mx-auto">
+                      <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                          Complete <span className="text-primary">Digital Toolkit</span> for Modern Professionals
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                          Our comprehensive collection of free web tools, online utilities, and digital solutions covers every aspect 
+                          of modern digital work. From AI-powered content generation to precision financial calculations, our 
+                          browser-based tools provide instant access to professional-grade utilities without any downloads or registration.
+                        </p>
+                      </div>
+
+                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                        <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                          <h3 className="text-xl font-bold text-foreground mb-4">AI-Powered Content Generation</h3>
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-purple-500 rounded-full"></div>
+                              <span>Free AI Caption Generator for Social Media</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-purple-500 rounded-full"></div>
+                              <span>AI Hashtag Generator for Instagram</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-purple-500 rounded-full"></div>
+                              <span>AI Meme Generator with Templates</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-purple-500 rounded-full"></div>
+                              <span>AI Lyrics Generator for Music</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-purple-500 rounded-full"></div>
+                              <span>AI Pet Name Generator</span>
+                            </div>
+                          </div>
+                        </Card>
+
+                        <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                          <h3 className="text-xl font-bold text-foreground mb-4">Advanced Conversion Tools</h3>
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-green-500 rounded-full"></div>
+                              <span>Live Currency Converter with Real-time Rates</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-green-500 rounded-full"></div>
+                              <span>Universal Unit Converter for All Measurements</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-green-500 rounded-full"></div>
+                              <span>Text Case Converter Online Free</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-green-500 rounded-full"></div>
+                              <span>Image Format Converter Free Online</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-green-500 rounded-full"></div>
+                              <span>File Size Converter Tool</span>
+                            </div>
+                          </div>
+                        </Card>
+
+                        <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                          <h3 className="text-xl font-bold text-foreground mb-4">Professional Financial Tools</h3>
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-blue-500 rounded-full"></div>
+                              <span>Free Loan Calculator with Amortization</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-blue-500 rounded-full"></div>
+                              <span>Mortgage Calculator for Home Buying</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-blue-500 rounded-full"></div>
+                              <span>Retirement Calculator for Financial Planning</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-blue-500 rounded-full"></div>
+                              <span>Investment Calculator for Returns</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-blue-500 rounded-full"></div>
+                              <span>Tax Calculator for Income Planning</span>
+                            </div>
+                          </div>
+                        </Card>
+
+                        <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                          <h3 className="text-xl font-bold text-foreground mb-4">SEO & Marketing Solutions</h3>
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-orange-500 rounded-full"></div>
+                              <span>Free Meta Tag Generator for SEO</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-orange-500 rounded-full"></div>
+                              <span>Keyword Density Checker Tool</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-orange-500 rounded-full"></div>
+                              <span>Blog Title Generator for Headlines</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-orange-500 rounded-full"></div>
+                              <span>Hashtag Generator for Social Media</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-orange-500 rounded-full"></div>
+                              <span>Content Optimization Tools</span>
+                            </div>
+                          </div>
+                        </Card>
+
+                        <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                          <h3 className="text-xl font-bold text-foreground mb-4">Image Processing & Design</h3>
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
+                              <span>Free Image Cropper and Resizer</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
+                              <span>Image to Text OCR Online Free</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
+                              <span>QR Code Generator with Customization</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
+                              <span>Background Blur Tool</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
+                              <span>Color Palette Generator from Image</span>
+                            </div>
+                          </div>
+                        </Card>
+
+                        <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                          <h3 className="text-xl font-bold text-foreground mb-4">Developer & Technical Tools</h3>
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-secondary-accent rounded-full"></div>
+                              <span>Free HTML Beautifier and Formatter</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-secondary-accent rounded-full"></div>
+                              <span>JSON Formatter and Validator</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-secondary-accent rounded-full"></div>
+                              <span>Regex Tester and Pattern Matcher</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-secondary-accent rounded-full"></div>
+                              <span>JWT Decoder for Token Analysis</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-secondary-accent rounded-full"></div>
+                              <span>Base64 Encoder/Decoder Tool</span>
+                            </div>
+                          </div>
+                        </Card>
+                      </div>
+
+                      {/* SEO-Optimized Benefits Section */}
+                      <div className="grid md:grid-cols-2 gap-8 mb-16">
+                        <Card className="p-6">
+                          <h3 className="text-2xl font-bold text-foreground mb-6">Why Our Digital Platform Stands Out</h3>
+                          <div className="space-y-4">
+                            <div className="flex items-start gap-3">
+                              <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                <div className="h-2 w-2 bg-primary rounded-full"></div>
+                              </div>
+                              <div>
+                                <h4 className="font-semibold text-foreground mb-1">100% Free Web Tools Forever</h4>
+                                <p className="text-sm text-muted-foreground">No hidden costs, no premium tiers, no watermarks. All our digital tools and online utilities are completely free to use with unlimited access.</p>
+                              </div>
+                            </div>
+                            <div className="flex items-start gap-3">
+                              <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                <div className="h-2 w-2 bg-primary rounded-full"></div>
+                              </div>
+                              <div>
+                                <h4 className="font-semibold text-foreground mb-1">Instant Browser-Based Access</h4>
+                                <p className="text-sm text-muted-foreground">No downloads or installations required. All web applications and browser tools work instantly in your web browser with cloud-based processing.</p>
+                              </div>
+                            </div>
+                            <div className="flex items-start gap-3">
+                              <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                <div className="h-2 w-2 bg-primary rounded-full"></div>
+                              </div>
+                              <div>
+                                <h4 className="font-semibold text-foreground mb-1">Privacy-First Digital Solutions</h4>
+                                <p className="text-sm text-muted-foreground">Your data never leaves your device. All processing happens locally in your browser with secure online tools and encrypted data handling.</p>
+                              </div>
+                            </div>
+                            <div className="flex items-start gap-3">
+                              <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                <div className="h-2 w-2 bg-primary rounded-full"></div>
+                              </div>
+                              <div>
+                                <h4 className="font-semibold text-foreground mb-1">Mobile-Optimized Web Platform</h4>
+                                <p className="text-sm text-muted-foreground">All digital utilities work perfectly on smartphones, tablets, and desktop computers with responsive design and touch-friendly interfaces.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </Card>
+
+                        <Card className="p-6">
+                          <h3 className="text-2xl font-bold text-foreground mb-6">Professional Tool Categories</h3>
+                          <div className="space-y-3">
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">AI Content Generators</span>
+                              <span className="text-sm text-muted-foreground">25+ tools</span>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">Currency & Unit Converters</span>
+                              <span className="text-sm text-muted-foreground">30+ tools</span>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">Financial Calculators</span>
+                              <span className="text-sm text-muted-foreground">50+ tools</span>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">SEO & Marketing Tools</span>
+                              <span className="text-sm text-muted-foreground">20+ tools</span>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">Image Processing Tools</span>
+                              <span className="text-sm text-muted-foreground">15+ tools</span>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">Developer Utilities</span>
+                              <span className="text-sm text-muted-foreground">20+ tools</span>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">Business Tools</span>
+                              <span className="text-sm text-muted-foreground">25+ tools</span>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">Social Media Tools</span>
+                              <span className="text-sm text-muted-foreground">15+ tools</span>
+                            </div>
+                          </div>
+                        </Card>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                {/* Clean Categories Section */}
+                <section className="py-16 md:py-24">
+          <div className="container mx-auto px-4 lg:px-6">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent border border-accent text-white text-sm font-medium mb-6">
+                  <Wrench className="h-4 w-4" />
+                  Professional Tool Categories
                 </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Choose Your <span className="text-primary">Professional Toolkit</span>
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                  Discover specialized tool categories designed for professionals, creators, and businesses. 
+                  Each category contains dozens of industry-specific tools to streamline your workflow and boost productivity.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {/* AI Tools Category */}
+                <Link href="/ai-tools" className="group">
+                  <Card className="h-full hover:shadow-lg transition-all duration-200 hover:border-[#F35B04]/20">
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+                          <Sparkles className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl">AI Tools</CardTitle>
+                          <p className="text-sm text-muted-foreground">25+ AI-powered tools</p>
+                        </div>
+                      </div>
+                      <CardDescription>
+                        Generate content, captions, hashtags, and more with our advanced AI tools powered by GPT-4 and Claude. 
+                        Perfect for content creators, marketers, and professionals.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <div className="h-1.5 w-1.5 bg-[#F7B801] rounded-full"></div>
+                          <span>AI Caption Generator, Meme Generator</span>
+                        </div>
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#F35B04] group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+
+                {/* Calculator Tools Category */}
+                <Link href="/calculator" className="group">
+                  <Card className="h-full hover:shadow-lg transition-all duration-200 hover:border-[#F35B04]/20">
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                          <Calculator className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl">Calculators</CardTitle>
+                          <p className="text-sm text-muted-foreground">50+ calculator tools</p>
+                        </div>
+                      </div>
+                      <CardDescription>
+                        Financial calculators, business tools, and productivity utilities for entrepreneurs, accountants, and financial planning professionals.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <div className="h-1.5 w-1.5 bg-[#F7B801] rounded-full"></div>
+                          <span>Loan Calculator, BMI Calculator</span>
+                        </div>
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#F35B04] group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+
+                {/* Converter Tools Category */}
+                <Link href="/converters" className="group">
+                  <Card className="h-full hover:shadow-lg transition-all duration-200 hover:border-[#F35B04]/20">
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                          <Activity className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl">Converters</CardTitle>
+                          <p className="text-sm text-muted-foreground">30+ conversion tools</p>
+                        </div>
+                      </div>
+                      <CardDescription>
+                        Convert currencies, units, text cases, and file formats instantly. Live exchange rates and comprehensive unit conversions. 
+                        Perfect for international businesses, developers, and data analysts.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <div className="h-1.5 w-1.5 bg-[#F7B801] rounded-full"></div>
+                          <span>Currency Converter, Unit Converter</span>
+                        </div>
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#F35B04] group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+
+                {/* SEO Tools Category */}
+                <Link href="/seo-tools" className="group">
+                  <Card className="h-full hover:shadow-lg transition-all duration-200 hover:border-[#F35B04]/20">
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                          <Target className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl">SEO Tools</CardTitle>
+                          <p className="text-sm text-muted-foreground">20+ SEO utilities</p>
+                        </div>
+                      </div>
+                      <CardDescription>
+                        Optimize your website with our comprehensive SEO tools. Meta tag generators, keyword analyzers, and more.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <div className="h-1.5 w-1.5 bg-[#F7B801] rounded-full"></div>
+                          <span>Meta Tag Generator, Keyword Checker</span>
+                        </div>
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#F35B04] group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+
+                {/* Fun Tools Category */}
+                <Link href="/fun-tools" className="group">
+                  <Card className="h-full hover:shadow-lg transition-all duration-200 hover:border-[#F35B04]/20">
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center">
+                          <Heart className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl">Fun Tools</CardTitle>
+                          <p className="text-sm text-muted-foreground">15+ fun utilities</p>
+                        </div>
+                      </div>
+                      <CardDescription>
+                        Entertainment and fun tools including love calculators, birthday countdowns, and interactive games for personal use.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <div className="h-1.5 w-1.5 bg-[#F7B801] rounded-full"></div>
+                          <span>Love Calculator, Birthday Countdown</span>
+                        </div>
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#F35B04] group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+
+                {/* Finance Tools Category */}
+                <Link href="/finance-tools" className="group">
+                  <Card className="h-full hover:shadow-lg transition-all duration-200 hover:border-[#F35B04]/20">
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center">
+                          <DollarSign className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl">Finance Tools</CardTitle>
+                          <p className="text-sm text-muted-foreground">20+ financial tools</p>
+                        </div>
+                      </div>
+                      <CardDescription>
+                        Financial planning, investment calculators, loan calculators, and business finance tools for professionals and individuals.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <div className="h-1.5 w-1.5 bg-[#F7B801] rounded-full"></div>
+                          <span>Bill Splitter, Tip Calculator</span>
+                        </div>
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#F35B04] group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+
+                {/* Date & Time Tools Category */}
+                <Link href="/date-time-tools" className="group">
+                  <Card className="h-full hover:shadow-lg transition-all duration-200 hover:border-[#F35B04]/20">
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center">
+                          <Calendar className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl">Date & Time</CardTitle>
+                          <p className="text-sm text-muted-foreground">10+ time utilities</p>
+                        </div>
+                      </div>
+                      <CardDescription>
+                        Date calculators, time zone converters, age calculators, and workday calculators for scheduling and planning.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <div className="h-1.5 w-1.5 bg-[#F7B801] rounded-full"></div>
+                          <span>Age Calculator, Workday Calculator</span>
+                        </div>
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#F35B04] group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+
+                {/* Social Media Tools Category */}
+                <Link href="/social-media-tools" className="group">
+                  <Card className="h-full hover:shadow-lg transition-all duration-200 hover:border-[#F35B04]/20">
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center">
+                          <Users className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl">Social Media</CardTitle>
+                          <p className="text-sm text-muted-foreground">15+ social tools</p>
+                        </div>
+                      </div>
+                      <CardDescription>
+                        Social media management tools including hashtag generators, profile picture downloaders, and engagement analyzers.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <div className="h-1.5 w-1.5 bg-[#F7B801] rounded-full"></div>
+                          <span>Hashtag Generator, Profile Downloader</span>
+                        </div>
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#F35B04] group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+
+                {/* Image Tools Category */}
+                <Link href="/image-tools" className="group">
+                  <Card className="h-full hover:shadow-lg transition-all duration-200 hover:border-[#F35B04]/20">
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+                          <Image className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl">Image Tools</CardTitle>
+                          <p className="text-sm text-muted-foreground">15+ image utilities</p>
+                        </div>
+                      </div>
+                      <CardDescription>
+                        Process and edit images with our powerful tools. Crop, resize, convert formats, and extract text from images.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <div className="h-1.5 w-1.5 bg-[#F7B801] rounded-full"></div>
+                          <span>Image Cropper, Image Converter</span>
+                        </div>
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#F35B04] group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+
+                {/* Dev Tools Category */}
+                <Link href="/dev-tools" className="group">
+                  <Card className="h-full hover:shadow-lg transition-all duration-200 hover:border-[#F35B04]/20">
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-secondary-accent to-secondary-accent/80 flex items-center justify-center">
+                          <Code className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl">Dev Tools</CardTitle>
+                          <p className="text-sm text-muted-foreground">20+ developer utilities</p>
+                        </div>
+                      </div>
+                      <CardDescription>
+                        Developer tools including code formatters, JSON validators, regex testers, and debugging utilities for programmers.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <div className="h-1.5 w-1.5 bg-[#F7B801] rounded-full"></div>
+                          <span>JSON Formatter, Regex Tester</span>
+                        </div>
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#F35B04] group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
               </div>
             </div>
+          </div>
+        </section>
 
-            {/* Ultra-Colorful & Engaging Hero Block */}
-            <div className="relative overflow-hidden min-h-[50vh] sm:min-h-[60vh] lg:min-h-[70vh] flex items-center">
-              {/* Vibrant Animated Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/40 via-purple-500/40 via-blue-500/40 to-cyan-500/40 animate-pulse"></div>
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/30 via-transparent to-transparent"></div>
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-red-400/20 via-transparent to-transparent"></div>
-              
-              {/* Colorful Floating Particles */}
-              <div className="absolute top-10 left-10 h-4 w-4 bg-pink-500 rounded-full animate-bounce animation-delay-100 shadow-lg shadow-pink-500/50"></div>
-              <div className="absolute top-20 right-20 h-5 w-5 bg-blue-500 rounded-full animate-bounce animation-delay-500 shadow-lg shadow-blue-500/50"></div>
-              <div className="absolute bottom-20 left-20 h-4 w-4 bg-yellow-500 rounded-full animate-bounce animation-delay-1000 shadow-lg shadow-yellow-500/50"></div>
-              <div className="absolute bottom-10 right-10 h-3 w-3 bg-green-500 rounded-full animate-bounce animation-delay-1500 shadow-lg shadow-green-500/50"></div>
-              <div className="absolute top-1/2 left-1/4 h-3 w-3 bg-purple-500 rounded-full animate-bounce animation-delay-2000 shadow-lg shadow-purple-500/50"></div>
-              <div className="absolute top-1/3 right-1/3 h-4 w-4 bg-orange-500 rounded-full animate-bounce animation-delay-2500 shadow-lg shadow-orange-500/50"></div>
-              
-              {/* Massive Colorful Gradient Orbs */}
-              <div className="absolute -top-32 -left-32 h-48 w-48 bg-gradient-to-br from-pink-500/50 to-purple-500/50 rounded-full blur-3xl animate-spin animation-delay-2000"></div>
-              <div className="absolute -bottom-32 -right-32 h-36 w-36 bg-gradient-to-br from-blue-500/50 to-cyan-500/50 rounded-full blur-3xl animate-spin animation-delay-3000"></div>
-              <div className="absolute top-1/2 -right-16 h-24 w-24 bg-gradient-to-br from-yellow-500/40 to-orange-500/40 rounded-full blur-2xl animate-spin animation-delay-1000"></div>
-              <div className="absolute top-1/4 -left-16 h-20 w-20 bg-gradient-to-br from-green-500/40 to-emerald-500/40 rounded-full blur-2xl animate-spin animation-delay-4000"></div>
-              
-              <div className="relative w-full bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-white/30 shadow-2xl hover:shadow-purple-500/25 transition-all duration-500">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center">
-                  {/* Left Column - Ultra-Colorful Content */}
-                  <div className="space-y-4 sm:space-y-6">
-                    <div className="space-y-3 sm:space-y-4">
-                      {/* Rainbow Animated Badge */}
-                      <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-pink-500/40 via-purple-500/40 via-blue-500/40 to-cyan-500/40 border-2 border-pink-400/60 text-white text-xs sm:text-sm font-bold animate-bounce hover:animate-pulse transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-pink-500/50">
-                        <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 animate-spin text-yellow-300" />
-                        <span className="animate-pulse">AI-Powered</span>
-                        <span className="text-yellow-300">•</span>
-                        <span className="animate-pulse">100% Free</span>
-                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
+        {/* Testimonials Section */}
+        <section className="py-16 md:py-24 bg-card/50">
+          <div className="container mx-auto px-4 lg:px-6">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent border border-accent text-white text-sm font-medium mb-6">
+                  <Star className="h-4 w-4" />
+                  User Testimonials
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  What Our <span className="text-primary">Users Say</span>
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                  Discover how our free online tools are helping professionals, students, and businesses worldwide 
+                  with their daily tasks and productivity needs.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Testimonial 1 - Unit Converter */}
+                <Card className="group relative overflow-hidden border-0 shadow-sm hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-card to-card/95">
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-secondary-accent/10 to-secondary-accent/20 rounded-full -translate-y-8 translate-x-8"></div>
+                  <div className="relative p-5">
+                    <div className="flex items-start gap-3 mb-4">
+                      <div className="relative">
+                        <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-secondary-accent to-secondary-accent/80 flex items-center justify-center shadow-md">
+                          <span className="text-white font-bold text-lg">S</span>
+                        </div>
+                        <div className="absolute -top-1 -right-1 h-5 w-5 bg-secondary-accent rounded-full flex items-center justify-center">
+                          <Star className="h-2.5 w-2.5 fill-white text-white" />
+                        </div>
                       </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-base text-foreground mb-1">Sarah Johnson</h4>
+                        <p className="text-xs text-muted-foreground font-medium">Engineering Student</p>
+                        <div className="flex items-center gap-1 mt-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="h-3 w-3 fill-tertiary-accent text-tertiary-accent" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <blockquote className="text-muted-foreground leading-relaxed text-sm italic relative">
+                      <div className="absolute -top-1 -left-1 text-2xl text-secondary-accent/20 font-serif">"</div>
+                      I need to convert between different data types and units constantly for my engineering projects. 
+                      The unit converter calculator helps me with just one data type and gives me all conversion options instantly. 
+                      This free online tool saves me hours of manual calculations!
+                    </blockquote>
+                  </div>
+                </Card>
 
-                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 via-blue-400 via-cyan-400 to-yellow-400 leading-[0.9] tracking-tight animate-pulse hover:animate-none transition-all duration-500">
-                        Write 10x Faster
-                      </h1>
+                {/* Testimonial 2 - AI Tools */}
+                <Card className="group relative overflow-hidden border-0 shadow-sm hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-card to-card/95">
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/10 to-primary/20 rounded-full -translate-y-8 translate-x-8"></div>
+                  <div className="relative p-5">
+                    <div className="flex items-start gap-3 mb-4">
+                      <div className="relative">
+                        <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-md">
+                          <span className="text-white font-bold text-lg">M</span>
+                        </div>
+                        <div className="absolute -top-1 -right-1 h-5 w-5 bg-primary rounded-full flex items-center justify-center">
+                          <Star className="h-2.5 w-2.5 fill-white text-white" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-base text-foreground mb-1">Mike Chen</h4>
+                        <p className="text-xs text-muted-foreground font-medium">Digital Marketer</p>
+                        <div className="flex items-center gap-1 mt-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="h-3 w-3 fill-tertiary-accent text-tertiary-accent" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <blockquote className="text-muted-foreground leading-relaxed text-sm italic relative">
+                      <div className="absolute -top-1 -left-1 text-2xl text-primary/20 font-serif">"</div>
+                      The AI caption generator and hashtag suggester are game-changers for my social media content creation. 
+                      I can generate engaging captions and relevant hashtags in seconds. This AI-powered content generation tool 
+                      has increased my social media engagement by 300%!
+                    </blockquote>
+                  </div>
+                </Card>
 
-                      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl font-bold text-white/95 leading-tight animate-fade-in-up animation-delay-200">
-                        Choose Best As You
-                      </h2>
+                {/* Testimonial 3 - Financial Calculator */}
+                <Card className="group relative overflow-hidden border-0 shadow-sm hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-card to-card/95">
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-accent/10 to-accent/20 rounded-full -translate-y-8 translate-x-8"></div>
+                  <div className="relative p-5">
+                    <div className="flex items-start gap-3 mb-4">
+                      <div className="relative">
+                        <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center shadow-md">
+                          <span className="text-white font-bold text-lg">A</span>
+                        </div>
+                        <div className="absolute -top-1 -right-1 h-5 w-5 bg-accent rounded-full flex items-center justify-center">
+                          <Star className="h-2.5 w-2.5 fill-white text-white" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-base text-foreground mb-1">Alex Rodriguez</h4>
+                        <p className="text-xs text-muted-foreground font-medium">Financial Advisor</p>
+                        <div className="flex items-center gap-1 mt-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="h-3 w-3 fill-tertiary-accent text-tertiary-accent" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <blockquote className="text-muted-foreground leading-relaxed text-sm italic relative">
+                      <div className="absolute -top-1 -left-1 text-2xl text-accent/20 font-serif">"</div>
+                      The loan calculator and retirement planner tools are incredibly accurate and user-friendly. 
+                      I use these financial calculators daily with my clients to show them different scenarios. 
+                      The business productivity tools help me provide better financial planning services.
+                    </blockquote>
+                  </div>
+                </Card>
 
-                      <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/85 leading-relaxed max-w-xl animate-fade-in-up animation-delay-300">
-                        Your ultimate toolkit for productivity, creativity, and success. From AI-powered content generation to precision calculators, we've got everything you need to work smarter, not harder.
-                      </p>
+                {/* Testimonial 4 - SEO Tools */}
+                <Card className="group relative overflow-hidden border-0 shadow-sm hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-card to-card/95">
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/10 to-primary/20 rounded-full -translate-y-8 translate-x-8"></div>
+                  <div className="relative p-5">
+                    <div className="flex items-start gap-3 mb-4">
+                      <div className="relative">
+                        <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-md">
+                          <span className="text-white font-bold text-lg">E</span>
+                        </div>
+                        <div className="absolute -top-1 -right-1 h-5 w-5 bg-primary rounded-full flex items-center justify-center">
+                          <Star className="h-2.5 w-2.5 fill-white text-white" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-base text-foreground mb-1">Emma Thompson</h4>
+                        <p className="text-xs text-muted-foreground font-medium">SEO Specialist</p>
+                        <div className="flex items-center gap-1 mt-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="h-3 w-3 fill-tertiary-accent text-tertiary-accent" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <blockquote className="text-muted-foreground leading-relaxed text-sm italic relative">
+                      <div className="absolute -top-1 -left-1 text-2xl text-primary/20 font-serif">"</div>
+                      The meta tag generator and keyword density checker are essential for my SEO optimization work. 
+                      These SEO tools help me analyze website performance and generate proper meta tags quickly. 
+                      The keyword analyzer has improved my client's search engine rankings significantly.
+                    </blockquote>
+                  </div>
+                </Card>
+
+                {/* Testimonial 5 - Image Tools */}
+                <Card className="group relative overflow-hidden border-0 shadow-sm hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-card to-card/95">
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-accent/10 to-accent/20 rounded-full -translate-y-8 translate-x-8"></div>
+                  <div className="relative p-5">
+                    <div className="flex items-start gap-3 mb-4">
+                      <div className="relative">
+                        <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center shadow-md">
+                          <span className="text-white font-bold text-lg">D</span>
+                        </div>
+                        <div className="absolute -top-1 -right-1 h-5 w-5 bg-accent rounded-full flex items-center justify-center">
+                          <Star className="h-2.5 w-2.5 fill-white text-white" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-base text-foreground mb-1">David Park</h4>
+                        <p className="text-xs text-muted-foreground font-medium">Graphic Designer</p>
+                        <div className="flex items-center gap-1 mt-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="h-3 w-3 fill-tertiary-accent text-tertiary-accent" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <blockquote className="text-muted-foreground leading-relaxed text-sm italic relative">
+                      <div className="absolute -top-1 -left-1 text-2xl text-accent/20 font-serif">"</div>
+                      The image cropper and image converter tools are perfect for my design workflow. I can crop images 
+                      to exact dimensions and convert between different formats instantly. The image processing tools 
+                      save me so much time compared to using expensive software.
+                    </blockquote>
+                  </div>
+                </Card>
+
+                {/* Testimonial 6 - Developer Tools */}
+                <Card className="group relative overflow-hidden border-0 shadow-sm hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-card to-card/95">
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-secondary-accent/10 to-secondary-accent/20 rounded-full -translate-y-8 translate-x-8"></div>
+                  <div className="relative p-5">
+                    <div className="flex items-start gap-3 mb-4">
+                      <div className="relative">
+                        <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-secondary-accent to-secondary-accent/80 flex items-center justify-center shadow-md">
+                          <span className="text-white font-bold text-lg">J</span>
+                        </div>
+                        <div className="absolute -top-1 -right-1 h-5 w-5 bg-secondary-accent rounded-full flex items-center justify-center">
+                          <Star className="h-2.5 w-2.5 fill-white text-white" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-base text-foreground mb-1">Jessica Lee</h4>
+                        <p className="text-xs text-muted-foreground font-medium">Web Developer</p>
+                        <div className="flex items-center gap-1 mt-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="h-3 w-3 fill-tertiary-accent text-tertiary-accent" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <blockquote className="text-muted-foreground leading-relaxed text-sm italic relative">
+                      <div className="absolute -top-1 -left-1 text-2xl text-secondary-accent/20 font-serif">"</div>
+                      The JSON formatter and regex tester are invaluable for my development work. These developer tools 
+                      help me debug code and format data structures quickly. The HTML beautifier and code formatter 
+                      make my code more readable and maintainable.
+                    </blockquote>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About / Mission Section */}
+        <section className="py-16 md:py-24 bg-gradient-to-br from-background via-background/95 to-background/90">
+          <div className="container mx-auto px-4 lg:px-6">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Content */}
+                <div className="space-y-8">
+                  <div>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent border border-accent text-white text-sm font-medium mb-6">
+                      <Target className="h-4 w-4" />
+                      Our Mission
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 leading-tight">
+                      Empowering <span className="text-primary">Digital Productivity</span> with Free Online Tools
+                    </h2>
+                    <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                      At FastTools, we believe that powerful digital tools should be accessible to everyone. 
+                      Our mission is to provide <strong>1000+ free online tools</strong> that eliminate the need 
+                      for expensive software subscriptions and complex installations.
+                    </p>
+                  </div>
+
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Zap className="h-6 w-6 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-foreground mb-2">Instant Access, Zero Barriers</h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          No registration, no downloads, no credit cards required. Our <strong>free web tools</strong> 
+                          work instantly in your browser, making professional-grade utilities accessible to students, 
+                          entrepreneurs, and businesses worldwide.
+                        </p>
+                      </div>
                     </div>
 
-                    {/* Ultra-Colorful CTA Section */}
-                    <div className="space-y-3 sm:space-y-4">
-                      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                        <Button
-                          asChild
-                          size="lg"
-                          className="group h-14 sm:h-16 px-6 sm:px-8 text-lg sm:text-xl font-black bg-gradient-to-r from-pink-500 via-purple-500 via-blue-500 to-cyan-500 hover:from-pink-600 hover:via-purple-600 hover:via-blue-600 hover:to-cyan-600 text-white border-0 shadow-2xl hover:shadow-pink-500/50 transition-all duration-500 transform hover:scale-110 hover:rotate-1 animate-pulse hover:animate-none"
-                        >
-                          <Link href="/ai-tools/caption-generator" className="flex items-center justify-center gap-3 sm:gap-4">
-                            <Sparkles className="h-5 w-5 sm:h-6 sm:w-6 group-hover:animate-spin text-yellow-300" />
-                            <span className="group-hover:animate-pulse">Start Creating Now</span>
-                            <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-2 transition-transform duration-300" />
-                          </Link>
-                        </Button>
-                        
-                        <Button
-                          asChild
-                          variant="outline"
-                          size="lg"
-                          className="group h-14 sm:h-16 px-6 sm:px-8 text-lg sm:text-xl font-black border-3 border-white/40 text-white hover:bg-white/20 hover:border-white/70 transition-all duration-500 transform hover:scale-105 hover:rotate-1"
-                        >
-                          <Link href="#popular-tools" className="flex items-center justify-center gap-3 sm:gap-4">
-                            <Target className="h-5 w-5 sm:h-6 sm:w-6 group-hover:animate-bounce" />
-                            <span className="group-hover:animate-pulse">Discover All Tools</span>
-                          </Link>
-                        </Button>
+                    <div className="flex items-start gap-4">
+                      <div className="h-12 w-12 rounded-xl bg-secondary-accent/10 flex items-center justify-center flex-shrink-0">
+                        <Shield className="h-6 w-6 text-secondary-accent" />
                       </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-foreground mb-2">Privacy-First Approach</h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          Your data stays on your device. Our <strong>online converters</strong>, 
+                          <strong>calculators</strong>, and <strong>AI tools</strong> process everything locally, 
+                          ensuring your sensitive information never leaves your browser.
+                        </p>
+                      </div>
+                    </div>
 
-                      {/* Rainbow Live Stats */}
-                      <div className="flex flex-wrap gap-3 sm:gap-4 lg:gap-6 text-white/80">
-                        <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-green-500/30 to-emerald-500/30 border border-green-400/50 hover:scale-105 transition-all duration-300">
-                          <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-green-400 rounded-full animate-ping"></div>
-                          <span className="text-xs sm:text-sm font-bold text-green-300">5,000+ users creating now</span>
-                        </div>
-                        <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-yellow-500/30 to-orange-500/30 border border-yellow-400/50 hover:scale-105 transition-all duration-300">
-                          <Zap className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400 animate-pulse" />
-                          <span className="text-xs sm:text-sm font-bold text-yellow-300">10x faster</span>
-                        </div>
-                        <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-blue-500/30 to-cyan-500/30 border border-blue-400/50 hover:scale-105 transition-all duration-300">
-                          <Shield className="h-3 w-3 sm:h-4 sm:w-4 text-blue-400 animate-bounce" />
-                          <span className="text-xs sm:text-sm font-bold text-blue-300">1000+ free tools</span>
-                        </div>
+                    <div className="flex items-start gap-4">
+                      <div className="h-12 w-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <Users className="h-6 w-6 text-accent" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-foreground mb-2">Built for Everyone</h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          From <strong>AI content generators</strong> for marketers to <strong>unit converters</strong> 
+                          for engineers, our comprehensive toolkit serves professionals across industries. 
+                          Whether you're a developer, designer, or business owner, we have the tools you need.
+                        </p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Right Column - Ultra-Colorful Visual */}
-                  <div className="relative hidden lg:block mt-4">
-                    {/* Rainbow Floating Elements */}
-                    <div className="absolute top-2 -right-4 h-16 sm:h-20 w-16 sm:w-20 bg-gradient-to-br from-pink-500/50 to-purple-500/50 rounded-full blur-2xl animate-spin animation-delay-1000"></div>
-                    <div className="absolute -bottom-4 -left-4 h-20 sm:h-24 w-20 sm:w-24 bg-gradient-to-br from-blue-500/50 to-cyan-500/50 rounded-full blur-2xl animate-spin animation-delay-2000"></div>
-                    <div className="absolute top-1/2 -left-2 h-10 sm:h-12 w-10 sm:w-12 bg-gradient-to-br from-yellow-500/40 to-orange-500/40 rounded-full blur-xl animate-bounce animation-delay-500"></div>
-                    <div className="absolute top-1/4 -right-1 h-8 sm:h-10 w-8 sm:w-10 bg-gradient-to-br from-green-500/40 to-emerald-500/40 rounded-full blur-xl animate-bounce animation-delay-1500"></div>
-                    <div className="absolute top-3/4 left-1 h-8 sm:h-10 w-8 sm:w-10 bg-gradient-to-br from-red-500/40 to-pink-500/40 rounded-full blur-xl animate-bounce animation-delay-2500"></div>
-                    
-                    {/* Colorful Animated Particles */}
-                    <div className="absolute top-2 left-2 h-1.5 w-1.5 bg-pink-400 rounded-full animate-ping animation-delay-500 shadow-lg shadow-pink-400/50"></div>
-                    <div className="absolute top-4 right-4 h-2 w-2 bg-blue-400 rounded-full animate-ping animation-delay-1000 shadow-lg shadow-blue-400/50"></div>
-                    <div className="absolute bottom-4 left-4 h-1.5 w-1.5 bg-yellow-400 rounded-full animate-ping animation-delay-1500 shadow-lg shadow-yellow-400/50"></div>
-                    <div className="absolute bottom-2 right-2 h-2 w-2 bg-green-400 rounded-full animate-ping animation-delay-2000 shadow-lg shadow-green-400/50"></div>
-                    <div className="absolute top-1/2 right-2 h-1.5 w-1.5 bg-purple-400 rounded-full animate-ping animation-delay-2500 shadow-lg shadow-purple-400/50"></div>
-                    
-                    <div className="relative bg-gradient-to-br from-white/20 to-white/15 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border-2 border-white/40 shadow-2xl hover:shadow-pink-500/25 transition-all duration-500 hover:scale-105">
-                      {/* AI Interface Mockup */}
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 animate-pulse">
-                            <Sparkles className="h-6 w-6 text-white animate-spin" />
+                </div>
+
+                {/* Visual Elements */}
+                <div className="relative">
+                  <div className="relative bg-gradient-to-br from-card to-card/95 rounded-2xl p-6 shadow-lg border border-border/20">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl"></div>
+                    <div className="relative">
+                      <h3 className="text-xl font-bold text-foreground mb-5 text-center">
+                        Why Choose <span className="text-primary">FastTools</span>?
+                      </h3>
+                      
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="text-center">
+                          <div className="h-12 w-12 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
+                            <Calculator className="h-6 w-6 text-white" />
                           </div>
-                          <div>
-                            <h3 className="text-lg font-black text-white animate-pulse">AI Writing Assistant</h3>
-                            <p className="text-white/80 text-sm font-semibold">Powered by GPT-4 & Claude</p>
-                          </div>
-                          <div className="ml-auto flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-green-500/30 to-emerald-500/30 border-2 border-green-400/50 hover:scale-110 transition-all duration-300">
-                            <div className="h-2 w-2 bg-green-400 rounded-full animate-ping"></div>
-                            <span className="text-green-300 text-sm font-bold animate-pulse">LIVE</span>
-                          </div>
+                          <h4 className="font-bold text-sm text-foreground mb-1">1000+ Tools</h4>
+                          <p className="text-xs text-muted-foreground">Comprehensive toolkit</p>
                         </div>
                         
-                        {/* Generated Content Examples */}
-                        <div className="space-y-2">
-                          <div className="bg-white/10 rounded-lg p-3 border border-white/20">
-                            <p className="text-white/60 text-xs mb-1">✨ Generated Caption:</p>
-                            <p className="text-white font-medium leading-relaxed text-xs">
-                              "Transform your morning routine with these 5 productivity hacks that successful entrepreneurs swear by! 💪✨ #ProductivityTips #MorningRoutine #Success"
-                            </p>
+                        <div className="text-center">
+                          <div className="h-12 w-12 bg-gradient-to-br from-secondary-accent to-secondary-accent/80 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
+                            <Zap className="h-6 w-6 text-white" />
                           </div>
-                          
-                          <div className="bg-white/10 rounded-lg p-3 border border-white/20">
-                            <p className="text-white/60 text-xs mb-1">📝 Blog Post:</p>
-                            <p className="text-white font-medium leading-relaxed text-xs">
-                              "The Ultimate Guide to Morning Productivity: How Top CEOs Start Their Day for Maximum Success..."
-                            </p>
-                          </div>
+                          <h4 className="font-bold text-sm text-foreground mb-1">Lightning Fast</h4>
+                          <p className="text-xs text-muted-foreground">Instant results</p>
                         </div>
                         
-                        <div className="flex items-center justify-between text-white/60 text-xs">
-                          <div className="flex items-center gap-1.5">
-                            <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-pulse"></div>
-                            <span>AI Generated • 2.3 seconds</span>
+                        <div className="text-center">
+                          <div className="h-12 w-12 bg-gradient-to-br from-accent to-accent/80 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
+                            <Shield className="h-6 w-6 text-white" />
                           </div>
-                          <div className="flex items-center gap-1">
-                            <Star className="h-3 w-3 text-yellow-400 fill-current" />
-                            <Star className="h-3 w-3 text-yellow-400 fill-current" />
-                            <Star className="h-3 w-3 text-yellow-400 fill-current" />
-                            <Star className="h-3 w-3 text-yellow-400 fill-current" />
-                            <Star className="h-3 w-3 text-yellow-400 fill-current" />
-                            <span className="ml-1 text-xs">4.9/5</span>
+                          <h4 className="font-bold text-sm text-foreground mb-1">100% Free</h4>
+                          <p className="text-xs text-muted-foreground">No hidden costs</p>
+                        </div>
+                        
+                        <div className="text-center">
+                          <div className="h-12 w-12 bg-gradient-to-br from-tertiary-accent to-tertiary-accent/80 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
+                            <Target className="h-6 w-6 text-white" />
                           </div>
+                          <h4 className="font-bold text-sm text-foreground mb-1">Always Updated</h4>
+                          <p className="text-xs text-muted-foreground">Latest features</p>
                         </div>
                       </div>
                     </div>
                   </div>
+                  
+                  {/* Floating Elements */}
+                  <div className="absolute -top-4 -right-4 h-8 w-8 bg-primary/20 rounded-full animate-pulse"></div>
+                  <div className="absolute -bottom-4 -left-4 h-6 w-6 bg-accent/20 rounded-full animate-pulse delay-1000"></div>
+                  <div className="absolute top-1/2 -left-6 h-4 w-4 bg-secondary-accent/20 rounded-full animate-pulse delay-500"></div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-
-      {/* Ultra-Colorful Popular Tools Section */}
-      <section id="popular-tools" className="relative py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
-        {/* Rainbow Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 via-blue-500/10 to-cyan-500/10"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/15 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-red-400/10 via-transparent to-transparent"></div>
-        
-        <div className="relative w-full px-4 sm:px-6 lg:px-8">
-          <div className="w-full max-w-7xl mx-auto">
-            <div className="text-center mb-8 sm:mb-12 animate-fade-in-up">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pink-500/30 via-purple-500/30 via-blue-500/30 to-cyan-500/30 border border-pink-400/50 text-white text-sm font-bold mb-4 sm:mb-6">
-                <Star className="h-4 w-4 fill-current text-yellow-300" />
-                Most Popular Tools
+        {/* Problem-Solution Section */}
+        <section className="py-16 md:py-24 bg-gradient-to-br from-muted/30 to-muted/10">
+          <div className="container mx-auto px-4 lg:px-6">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary border border-primary text-white text-sm font-medium mb-6">
+                  <Activity className="h-4 w-4" />
+                  Problem Solved
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 leading-tight">
+                  Stop Wasting Time on <span className="text-primary">Expensive Software</span> and Complex Tools
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                  We understand the daily struggles of professionals, students, and businesses. 
+                  That's why we've created the ultimate solution for all your digital tool needs.
+                </p>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 via-blue-500 via-cyan-500 to-yellow-500 mb-4 sm:mb-6">
-                Tools That Users Love
-              </h2>
-              <p className="text-lg sm:text-xl text-muted-foreground text-pretty max-w-3xl mx-auto leading-relaxed">
-                Discover the most-used tools that help thousands of users daily. These are the tools that make a real difference.
-              </p>
-            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
-              {tools.filter(tool => tool.popular).map((tool, index) => (
-                <div
-                  key={tool.href}
-                  className="group relative animate-fade-in-up"
-                  style={{ animationDelay: `${index * 150}ms` }}
-                >
-                  <Link href={tool.href} className="block">
-                    <div className="relative bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl p-6 border-2 border-white/40 hover:border-white/70 transition-all duration-500 hover:shadow-2xl hover:shadow-pink-500/25 group-hover:bg-gradient-to-br group-hover:from-white/30 group-hover:to-white/20">
-                      {/* Rainbow Floating Background Elements */}
-                      <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 h-12 w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20 bg-gradient-to-br from-pink-500/40 to-purple-500/40 rounded-full blur-xl group-hover:scale-150 group-hover:animate-spin transition-all duration-500"></div>
-                      <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 bg-gradient-to-br from-blue-500/40 to-cyan-500/40 rounded-full blur-xl group-hover:scale-150 group-hover:animate-spin transition-all duration-500 animation-delay-1000"></div>
-                      <div className="absolute top-1/2 -left-1 sm:-left-2 h-8 w-8 sm:h-12 sm:w-12 lg:h-16 lg:w-16 bg-gradient-to-br from-yellow-500/30 to-orange-500/30 rounded-full blur-lg group-hover:scale-125 group-hover:animate-bounce transition-all duration-300"></div>
-                      <div className="absolute top-1/4 -right-1 sm:-right-2 h-6 w-6 sm:h-10 sm:w-10 lg:h-12 lg:w-12 bg-gradient-to-br from-green-500/30 to-emerald-500/30 rounded-full blur-lg group-hover:scale-125 group-hover:animate-bounce transition-all duration-300 animation-delay-500"></div>
-                      
-                      {/* Colorful Animated Particles */}
-                      <div className="absolute top-1 left-1 sm:top-2 sm:left-2 h-1 w-1 bg-pink-400 rounded-full animate-ping animation-delay-500 shadow-lg shadow-pink-400/50"></div>
-                      <div className="absolute top-2 right-2 sm:top-4 sm:right-4 h-1 w-1 sm:h-2 sm:w-2 bg-blue-400 rounded-full animate-ping animation-delay-1000 shadow-lg shadow-blue-400/50"></div>
-                      <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 h-1 w-1 bg-yellow-400 rounded-full animate-ping animation-delay-1500 shadow-lg shadow-yellow-400/50"></div>
-                      <div className="absolute bottom-1 right-1 sm:bottom-2 sm:right-2 h-1 w-1 sm:h-2 sm:w-2 bg-green-400 rounded-full animate-ping animation-delay-2000 shadow-lg shadow-green-400/50"></div>
-                      
-                      <div className="relative z-10">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className={`h-12 w-12 rounded-xl bg-gradient-to-br shadow-lg flex items-center justify-center text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 ${iconGradients[index % iconGradients.length]}`}>
-                            <tool.icon className="h-6 w-6 text-white group-hover:animate-spin" />
+              <div className="grid lg:grid-cols-2 gap-12 items-start">
+                {/* Problems */}
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+                      <div className="h-8 w-8 rounded-lg bg-destructive/10 flex items-center justify-center">
+                        <span className="text-destructive font-bold text-lg">!</span>
                       </div>
-                          <div className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 rounded-full bg-gradient-to-r from-amber-500/40 to-orange-500/40 border border-amber-400/60 hover:scale-110 transition-all duration-300">
-                            <Star className="h-3 w-3 sm:h-4 sm:w-4 fill-current text-amber-300 animate-pulse" />
-                            <span className="text-amber-200 text-xs sm:text-sm font-black">4.9</span>
-                    </div>
-                        </div>
-                        
-                        <h3 className="text-xl font-bold text-white mb-1">
-                          {tool.title}
-                        </h3>
-                        
-                        <p className="text-white/90 mb-4 leading-relaxed text-sm">
-                          {tool.description}
+                      Common Problems You Face
+                    </h3>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-4 p-5 bg-destructive/8 rounded-lg">
+                      <div className="h-10 w-10 rounded-lg bg-destructive flex items-center justify-center flex-shrink-0">
+                        <DollarSign className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-foreground mb-2">Expensive Software Subscriptions</h4>
+                        <p className="text-muted-foreground leading-relaxed text-sm">
+                          Paying $50-200+ monthly for Adobe Creative Suite, Microsoft Office, or specialized tools 
+                          that you only use occasionally. <strong>Free online alternatives</strong> can save you thousands annually.
                         </p>
-                        
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2 text-xs text-white/70">
-                            <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
-                            <span>Live & Ready</span>
-                          </div>
-                          <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-pink-300 group-hover:translate-x-1 transition-all" />
-                        </div>
                       </div>
                     </div>
-                      </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
-
-      {/* Main Categories Section */}
-      <section id="categories" className="relative py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
-        {/* Dark Background to match other sections */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-        
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/30 to-purple-500/30 border border-blue-400/50 text-blue-200 text-sm font-semibold mb-6">
-                <Wrench className="h-4 w-4" />
-                Professional Tool Categories
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6">
-                Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Professional Toolkit</span>
-              </h2>
-              <p className="text-lg sm:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-                Discover specialized tool categories designed for professionals, creators, and businesses. 
-                Each category contains dozens of industry-specific tools to streamline your workflow and boost productivity.
-              </p>
-              <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-white/70">
-                <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span>Industry-Specific Tools</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 bg-blue-400 rounded-full animate-pulse"></div>
-                  <span>Professional Grade</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 bg-purple-400 rounded-full animate-pulse"></div>
-                  <span>Expert-Approved</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 bg-pink-400 rounded-full animate-pulse"></div>
-                  <span>Always Updated</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Main Category Cards with Clean Design */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-              {/* AI Tools Category */}
-              <Link href="/ai-tools" className="group">
-                <div className="relative bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl p-6 shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105">
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
-                        <Sparkles className="h-6 w-6 text-white" />
+                    <div className="flex items-start gap-4 p-5 bg-destructive/8 rounded-lg">
+                      <div className="h-10 w-10 rounded-lg bg-destructive flex items-center justify-center flex-shrink-0">
+                        <Clock className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white mb-1">AI Tools</h3>
-                        <p className="text-white/80 text-xs">25+ AI-powered tools</p>
+                        <h4 className="text-lg font-bold text-foreground mb-2">Time-Consuming Downloads & Installations</h4>
+                        <p className="text-muted-foreground leading-relaxed text-sm">
+                          Waiting hours for software downloads, dealing with compatibility issues, and managing 
+                          updates. <strong>Browser-based tools</strong> work instantly without any installation.
+                        </p>
                       </div>
                     </div>
-                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
-                      Generate content, captions, hashtags, and more with our advanced AI tools powered by GPT-4 and Claude. 
-                      Perfect for content creators, marketers, and professionals.
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-xs text-white/70">
-                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
-                        <span>AI Caption Generator, Meme Generator</span>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-purple-300 group-hover:translate-x-1 transition-all" />
-                    </div>
-                  </div>
-                </div>
-              </Link>
 
-              {/* Calculator Tools Category */}
-              <Link href="/tools" className="group">
-                <div className="relative bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl p-6 shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105">
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
-                        <Calculator className="h-6 w-6 text-white" />
+                    <div className="flex items-start gap-4 p-5 bg-destructive/8 rounded-lg">
+                      <div className="h-10 w-10 rounded-lg bg-destructive flex items-center justify-center flex-shrink-0">
+                        <Search className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white mb-1">Calculators</h3>
-                        <p className="text-white/80 text-xs">50+ calculator tools</p>
+                        <h4 className="text-lg font-bold text-foreground mb-2">Scattered Tools Across Multiple Websites</h4>
+                        <p className="text-muted-foreground leading-relaxed text-sm">
+                          Bookmarking dozens of different websites for <strong>unit converters</strong>, 
+                          <strong>image editors</strong>, <strong>calculators</strong>, and <strong>AI tools</strong>. 
+                          One platform with all tools saves hours of searching.
+                        </p>
                       </div>
                     </div>
-                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
-                      Financial, business, and general calculators for all your calculation needs. From loan calculators to tip calculators. 
-                      Essential for accountants, financial advisors, and business professionals.
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-xs text-white/70">
-                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
-                        <span>Loan Calculator, Tip Calculator</span>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-blue-300 group-hover:translate-x-1 transition-all" />
-                    </div>
-                  </div>
-                </div>
-              </Link>
 
-              {/* Converter Tools Category */}
-              <Link href="/converters" className="group">
-                <div className="relative bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl p-6 shadow-lg hover:shadow-green-500/30 transition-all duration-300 hover:scale-105">
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
-                        <Activity className="h-6 w-6 text-white" />
+                    <div className="flex items-start gap-4 p-5 bg-destructive/8 rounded-lg">
+                      <div className="h-10 w-10 rounded-lg bg-destructive flex items-center justify-center flex-shrink-0">
+                        <Shield className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white mb-1">Converters</h3>
-                        <p className="text-white/80 text-xs">30+ conversion tools</p>
+                        <h4 className="text-lg font-bold text-foreground mb-2">Privacy Concerns with Online Tools</h4>
+                        <p className="text-muted-foreground leading-relaxed text-sm">
+                          Worrying about your sensitive data being stored or shared when using 
+                          <strong>online calculators</strong>, <strong>document converters</strong>, or 
+                          <strong>AI content generators</strong>. Our tools process everything locally.
+                        </p>
                       </div>
-                    </div>
-                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
-                      Convert currencies, units, text cases, and file formats instantly. Live exchange rates and comprehensive unit conversions. 
-                      Perfect for international businesses, developers, and data analysts.
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-xs text-white/70">
-                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
-                        <span>Currency Converter, Unit Converter</span>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-green-300 group-hover:translate-x-1 transition-all" />
                     </div>
                   </div>
                 </div>
-              </Link>
 
-              {/* SEO Tools Category */}
-              <Link href="/seo-tools" className="group">
-                <div className="relative bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl p-6 shadow-lg hover:shadow-orange-500/30 transition-all duration-300 hover:scale-105">
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
-                        <Target className="h-6 w-6 text-white" />
+                {/* Solutions */}
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+                      <div className="h-8 w-8 rounded-lg bg-secondary-accent/10 flex items-center justify-center">
+                        <span className="text-secondary-accent font-bold text-lg">✓</span>
+                      </div>
+                      How FastTools Solves Everything
+                    </h3>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-4 p-5 bg-secondary-accent/8 rounded-lg">
+                      <div className="h-10 w-10 rounded-lg bg-secondary-accent flex items-center justify-center flex-shrink-0">
+                        <DollarSign className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white mb-1">SEO Tools</h3>
-                        <p className="text-white/80 text-xs">20+ SEO utilities</p>
+                        <h4 className="text-lg font-bold text-foreground mb-2">100% Free Forever</h4>
+                        <p className="text-muted-foreground leading-relaxed text-sm">
+                          Access <strong>1000+ professional tools</strong> without paying a single penny. 
+                          No subscriptions, no hidden costs, no premium tiers. Save thousands annually 
+                          with our <strong>free online alternatives</strong> to expensive software.
+                        </p>
                       </div>
                     </div>
-                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
-                      Optimize your website with our comprehensive SEO tools. Meta tag generators, keyword analyzers, and more.
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-xs text-white/70">
-                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
-                        <span>Meta Tag Generator, Keyword Checker</span>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-orange-300 group-hover:translate-x-1 transition-all" />
-                    </div>
-                  </div>
-                </div>
-              </Link>
 
-              {/* Image Tools Category */}
-              <Link href="/image-tools" className="group">
-                <div className="relative bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl p-6 shadow-lg hover:shadow-pink-500/30 transition-all duration-300 hover:scale-105">
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
-                        <Image className="h-6 w-6 text-white" />
+                    <div className="flex items-start gap-4 p-5 bg-secondary-accent/8 rounded-lg">
+                      <div className="h-10 w-10 rounded-lg bg-secondary-accent flex items-center justify-center flex-shrink-0">
+                        <Zap className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white mb-1">Image Tools</h3>
-                        <p className="text-white/80 text-xs">15+ image utilities</p>
+                        <h4 className="text-lg font-bold text-foreground mb-2">Instant Browser Access</h4>
+                        <p className="text-muted-foreground leading-relaxed text-sm">
+                          No downloads, no installations, no waiting. Our <strong>web-based tools</strong> 
+                          work instantly in any browser. From <strong>image converters</strong> to 
+                          <strong>AI generators</strong>, everything loads in seconds.
+                        </p>
                       </div>
                     </div>
-                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
-                      Process and edit images with our powerful tools. Crop, resize, convert formats, and extract text from images.
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-xs text-white/70">
-                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
-                        <span>Image Cropper, Image Converter</span>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-pink-300 group-hover:translate-x-1 transition-all" />
-                    </div>
-                  </div>
-                </div>
-              </Link>
 
-              {/* Developer Tools Category */}
-              <Link href="/dev-tools" className="group">
-                <div className="relative bg-gradient-to-br from-slate-500 to-gray-500 rounded-2xl p-6 shadow-lg hover:shadow-slate-500/30 transition-all duration-300 hover:scale-105">
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 bg-gradient-to-br from-slate-500 to-gray-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
-                        <Code className="h-6 w-6 text-white" />
+                    <div className="flex items-start gap-4 p-5 bg-secondary-accent/8 rounded-lg">
+                      <div className="h-10 w-10 rounded-lg bg-secondary-accent flex items-center justify-center flex-shrink-0">
+                        <Target className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white mb-1">Developer Tools</h3>
-                        <p className="text-white/80 text-xs">25+ dev utilities</p>
+                        <h4 className="text-lg font-bold text-foreground mb-2">All Tools in One Place</h4>
+                        <p className="text-muted-foreground leading-relaxed text-sm">
+                          <strong>Unit converters</strong>, <strong>calculators</strong>, <strong>AI tools</strong>, 
+                          <strong>image editors</strong>, <strong>text processors</strong> - everything you need 
+                          in one platform. No more bookmarking dozens of websites.
+                        </p>
                       </div>
                     </div>
-                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
-                      Essential tools for developers. HTML beautifiers, JSON converters, regex testers, and more coding utilities.
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-xs text-white/70">
-                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
-                        <span>HTML Beautifier, JSON Converter</span>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-slate-300 group-hover:translate-x-1 transition-all" />
-                    </div>
-                  </div>
-                </div>
-              </Link>
 
-              {/* Finance Tools Category */}
-              <Link href="/finance-tools" className="group">
-                <div className="relative bg-gradient-to-br from-yellow-500 to-amber-500 rounded-2xl p-6 shadow-lg hover:shadow-yellow-500/30 transition-all duration-300 hover:scale-105">
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
-                        <DollarSign className="h-6 w-6 text-white" />
+                    <div className="flex items-start gap-4 p-5 bg-secondary-accent/8 rounded-lg">
+                      <div className="h-10 w-10 rounded-lg bg-secondary-accent flex items-center justify-center flex-shrink-0">
+                        <Shield className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white mb-1">Finance Tools</h3>
-                        <p className="text-white/80 text-xs">20+ financial calculators</p>
+                        <h4 className="text-lg font-bold text-foreground mb-2">Complete Privacy Protection</h4>
+                        <p className="text-muted-foreground leading-relaxed text-sm">
+                          Your data never leaves your device. Our <strong>privacy-first tools</strong> 
+                          process everything locally. No data collection, no tracking, no storage 
+                          of your sensitive information.
+                        </p>
                       </div>
                     </div>
-                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
-                      Manage your finances with our comprehensive financial tools. Loan calculators, tax calculators, and investment tools.
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-xs text-white/70">
-                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
-                        <span>Loan Calculator, Tax Calculator</span>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-yellow-300 group-hover:translate-x-1 transition-all" />
-                    </div>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Social Media Tools Category */}
-              <Link href="/social-media-tools" className="group">
-                <div className="relative bg-gradient-to-br from-violet-500 to-purple-500 rounded-2xl p-6 shadow-lg hover:shadow-violet-500/30 transition-all duration-300 hover:scale-105">
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 bg-gradient-to-br from-violet-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
-                        <Users className="h-6 w-6 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-white mb-1">Social Media</h3>
-                        <p className="text-white/80 text-xs">15+ social tools</p>
-                      </div>
-                    </div>
-                    <p className="text-white/90 mb-4 leading-relaxed text-sm">
-                      Create engaging social media content with our specialized tools. TikTok downloaders, hashtag generators, and more.
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-xs text-white/70">
-                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full animate-ping"></div>
-                        <span>TikTok Downloader, Hashtag Generator</span>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-white/70 group-hover:text-violet-300 group-hover:translate-x-1 transition-all" />
-                    </div>
-                  </div>
-                </div>
-              </Link>
                   </div>
 
-            {/* Additional Engaging Content */}
-            <div className="mt-16 text-center">
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500/30 via-purple-500/30 via-blue-500/30 to-cyan-500/30 border border-pink-400/50 text-white text-lg font-bold mb-8">
-                <Sparkles className="h-5 w-5 animate-spin text-yellow-300" />
-                <span>1000+ Free Tools Available</span>
-                <div className="h-2 w-2 bg-green-400 rounded-full animate-ping"></div>
-                </div>
-              
-              <h3 className="text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 via-blue-400 via-cyan-400 to-yellow-400 mb-6">
-                Why Choose FastTools?
-              </h3>
-              
-              <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <div className="text-center p-6 bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl border border-white/30">
-                  <div className="h-16 w-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="h-8 w-8 text-white" />
-            </div>
-                  <h4 className="text-xl font-bold text-white mb-3">100% Free Forever</h4>
-                  <p className="text-white/80">No hidden costs, no premium tiers, no credit card required.</p>
-          </div>
-                
-                <div className="text-center p-6 bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl border border-white/30">
-                  <div className="h-16 w-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Zap className="h-8 w-8 text-white" />
-        </div>
-                  <h4 className="text-xl font-bold text-white mb-3">Lightning Fast</h4>
-                  <p className="text-white/80">Optimized for speed. No loading delays, no unnecessary features.</p>
-                </div>
-                
-                <div className="text-center p-6 bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl border border-white/30">
-                  <div className="h-16 w-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Target className="h-8 w-8 text-white" />
-                  </div>
-                  <h4 className="text-xl font-bold text-white mb-3">Always Updated</h4>
-                  <p className="text-white/80">Latest features, newest tools, and regular improvements.</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-
-      {/* Ultra-Colorful About Section */}
-      <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
-        {/* Rainbow Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 via-blue-500/10 to-cyan-500/10"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/15 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-red-400/10 via-transparent to-transparent"></div>
-        
-        <div className="relative w-full px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto space-y-6 sm:space-y-8">
-            <details className="group bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border-2 border-white/30 shadow-2xl hover:shadow-pink-500/25 transition-all duration-500" open>
-              <summary className="cursor-pointer list-none">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 via-blue-500 via-cyan-500 to-yellow-500">About fasttools — Your Complete Free Online Tools Collection</h2>
-                  <span className="text-sm text-white/70 group-open:hidden">Expand</span>
-                  <span className="text-sm text-white/70 hidden group-open:inline">Collapse</span>
+        {/* FAQ Section */}
+        <section className="py-16 md:py-24 bg-gradient-to-br from-background via-background/95 to-background/90">
+          <div className="container mx-auto px-4 lg:px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-16">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent border border-accent text-white text-sm font-medium mb-6">
+                  <Search className="h-4 w-4" />
+                  Frequently Asked Questions
                 </div>
-              </summary>
-              <div className="prose prose-neutral dark:prose-invert max-w-none mt-6 space-y-4 text-white/90">
-                <p>
-                  fasttools is the ultimate collection of <strong>free online tools</strong> designed to eliminate everyday digital friction. 
-                  Instead of navigating multiple websites to convert text, optimize SEO, process images, generate content, or perform calculations, 
-                  you can access everything in one fast, privacy-respecting platform. Our <strong>web tools</strong> are lightweight, 
-                  mobile-friendly, and engineered for speed so you can get results instantly and continue with your work.
-                </p>
-                
-                <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Comprehensive Tool Categories</h3>
-                
-                <p>
-                  Our <strong>AI tools</strong> section features cutting-edge artificial intelligence generators including meme generators, 
-                  caption generators, lyrics generators, hashtag suggesters, and pet name generators. These <strong>AI content generators</strong> 
-                  help creators, marketers, and social media managers produce engaging content quickly and efficiently. 
-                  Our <strong>AI writing assistant</strong> tools are powered by advanced language models to ensure high-quality output.
-                </p>
-                
-                <p>
-                  The <strong>converter tools</strong> category offers comprehensive conversion utilities including currency converters with 
-                  live exchange rates, unit converters for length, weight, temperature, and area measurements, file size converters, 
-                  text case converters, and timezone converters. Our <strong>online converter</strong> tools support 160+ currencies 
-                  and multiple measurement systems, making them perfect for international users and professionals.
-                </p>
-                
-                <p>
-                  For developers and technical users, our <strong>developer tools</strong> include HTML beautifiers, JSON to CSV converters, 
-                  JWT decoders, regex testers, markdown previewers, color palette generators, and hex to RGB converters. 
-                  These <strong>dev tools</strong> streamline development workflows and improve code quality.
-                </p>
-                
-                <p>
-                  Our <strong>SEO tools</strong> help optimize your online presence with meta tag generators, keyword density checkers, 
-                  hashtag generators, blog title generators, and lorem ipsum generators. These <strong>SEO utilities</strong> are 
-                  essential for content creators, marketers, and website owners looking to improve their search engine rankings.
-                </p>
-                
-                <p>
-                  The <strong>finance tools</strong> section provides comprehensive financial calculators including loan calculators, 
-                  mortgage calculators, tax calculators, retirement planners, savings goal trackers, invoice generators, 
-                  and PayPal fee calculators. These <strong>financial calculators</strong> help individuals and businesses 
-                  make informed financial decisions.
-                </p>
-                
-                <p>
-                  <strong>Image tools</strong> offer powerful image processing capabilities including image croppers, background blur tools, 
-                  image to text converters using OCR technology, screenshot to text extractors, and PDF tools. 
-                  Our <strong>image editing tools</strong> are perfect for social media managers, designers, and content creators.
-                </p>
-                
-                <p>
-                  <strong>Social media tools</strong> include TikTok downloaders, YouTube thumbnail downloaders, Instagram DP viewers, 
-                  YouTube tag extractors, and link in bio generators. These <strong>social media utilities</strong> help 
-                  content creators and social media managers optimize their online presence.
-                </p>
-                
-                <p>
-                  Our <strong>date time tools</strong> provide comprehensive date and time utilities including age calculators, 
-                  date difference calculators, workday calculators, zodiac sign finders, and anniversary calculators. 
-                  These <strong>date calculators</strong> are perfect for personal and professional use.
-                </p>
-                
-                <p>
-                  The <strong>fun tools</strong> section offers entertaining utilities including love calculators, 
-                  birthday countdown timers, future age predictors, and hashtag counters. These <strong>fun utilities</strong> 
-                  add a playful element to our comprehensive tool collection.
-                </p>
-                
-                <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Advanced Features and Performance</h3>
-                
-                <p>
-                  We obsess over user experience and performance optimization. All pages are built with semantic HTML, 
-                  accessible forms, responsive design, and lightning-fast rendering. We minimize bundle sizes, implement 
-                  aggressive caching, and avoid unnecessary network calls. Our <strong>mobile-first design</strong> ensures 
-                  optimal performance across all devices and screen sizes.
-                </p>
-                
-                <p>
-                  For search engines, we provide comprehensive structured data, logical internal linking, and descriptive 
-                  meta content. This ensures that users searching for specific <strong>online tools</strong> can find exactly 
-                  what they need quickly and efficiently. Our <strong>SEO optimization</strong> helps users discover 
-                  the right tools for their specific needs.
-                </p>
-                
-                <p>
-                  Reliability is paramount in our design philosophy. All tools include input validation, graceful error handling, 
-                  and helpful error messages. We test across modern browsers and screen sizes to ensure consistent performance. 
-                  Our <strong>web utilities</strong> are designed to work seamlessly regardless of your device or browser.
-                </p>
-                
-                <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Privacy and Security</h3>
-                
-                <p>
-                  FastTools prioritizes user privacy and data security. All processing happens client-side when possible, 
-                  and we never store your data or content. Our <strong>privacy-respecting tools</strong> ensure that your 
-                  sensitive information remains secure and confidential. We believe in providing powerful tools without 
-                  compromising your privacy.
-                </p>
-                
-                <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Continuous Innovation</h3>
-                
-                <p>
-                  fasttools is continuously expanding based on user feedback and emerging needs. We monitor usage patterns 
-                  across all categories—converters, image processing, social media utilities, finance calculators, and 
-                  productivity tools—and implement improvements weekly. Our commitment to innovation ensures that FastTools 
-                  remains the most comprehensive and up-to-date collection of <strong>free online services</strong> available.
-                </p>
-                
-                <p>
-                  Whether you're a student, professional, content creator, developer, or casual user, fasttools provides 
-                  the essential <strong>online calculators</strong> and utilities you need to be productive and efficient. 
-                  Bookmark this page and experience the convenience of having all your essential tools in one place.
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 leading-tight">
+                  Everything You Need to Know About <span className="text-primary">Free Online Tools</span>
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                  Get answers to the most common questions about our free online tools, 
+                  calculators, converters, and AI-powered utilities.
                 </p>
               </div>
-            </details>
 
-            <details className="group">
-              <summary className="cursor-pointer list-none">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-xl md:text-2xl font-semibold text-foreground">Related Keywords and Search Phrases</h3>
-                  <span className="text-sm text-muted-foreground group-open:hidden">Show 100 keywords</span>
-                  <span className="text-sm text-muted-foreground hidden group-open:inline">Hide keywords</span>
-                </div>
-              </summary>
-              <div className="mt-4">
-                <ul className="flex flex-wrap gap-2 text-sm text-muted-foreground">
-                  {[
-                    // Primary Keywords (20)
-                    "online tools",
-                    "free web tools", 
-                    "productivity tools",
-                    "AI tools",
-                    "converter tools",
-                    "calculator tools",
-                    "text tools",
-                    "image tools",
-                    "developer tools",
-                    "business tools",
-                    "SEO tools",
-                    "social media tools",
-                    "finance tools",
-                    "date time tools",
-                    "fun tools",
-                    "utility tools",
-                    "web utilities",
-                    "online calculators",
-                    "free online services",
-                    "tool collection",
-                    
-                    // Secondary Keywords (20)
-                    "hashtag generator",
-                    "QR code generator",
-                    "password generator",
-                    "color picker",
-                    "unit converter",
-                    "currency converter",
-                    "text case converter",
-                    "image converter",
-                    "PDF tools",
-                    "URL shortener",
-                    "word counter",
-                    "character counter",
-                    "random number generator",
-                    "color palette generator",
-                    "meme generator",
-                    "QR code scanner",
-                    "barcode generator",
-                    "invoice generator",
-                    "receipt generator",
-                    "certificate generator",
-                    
-                    // Long-tail Keywords (20)
-                    "free online hashtag generator for Instagram",
-                    "best free QR code generator online",
-                    "free password generator with custom length",
-                    "online color picker tool free",
-                    "free unit converter tool online",
-                    "currency converter with live rates",
-                    "free text case converter online",
-                    "image format converter free online",
-                    "free PDF tools online",
-                    "free URL shortener service",
-                    "word counter tool free online",
-                    "character counter for social media",
-                    "random number generator between range",
-                    "color palette generator from image",
-                    "free meme generator with templates",
-                    "QR code scanner online free",
-                    "barcode generator free online",
-                    "free invoice generator template",
-                    "receipt generator free online",
-                    "certificate generator free template",
-                    
-                    // Additional SEO Keywords
-                    "tiktok video downloader",
-                    "download tiktok without watermark",
-                    "save tiktok mp4",
-                    "tiktok to mp3",
-                    "tiktok audio download",
-                    "online tiktok downloader",
-                    "free tiktok saver",
-                    "tiktok mp4 no watermark",
-                    "tiktok download link",
-                    "tiktok clip downloader",
-                    "ocr image to text",
-                    "convert image to text online",
-                    "free qr code maker",
-                    "file size converter",
-                    "length converter cm to inch",
-                    "temperature converter c to f",
-                    "timezone converter",
-                    "date difference calculator",
-                    "time duration calculator",
-                    "percentage calculator",
-                    "discount calculator",
-                    "compound interest calculator",
-                    "tax calculator online",
-                    "paypal fee calculator",
-                    "savings goal tracker",
-                    "retirement planner online",
-                    "bill splitter app",
-                    "hashtag suggester",
-                    "keyword density checker",
-                    "meta tag generator",
-                    "html beautifier",
-                    "html to markdown converter",
-                    "json to csv converter",
-                    "jwt decoder",
-                    "markdown previewer",
-                    "regex tester",
-                    "screenshot to text",
-                    "image cropper",
-                    "background blur tool",
-                    "pdf tools online",
-                    "pdf unlocker",
-                    "youtube thumbnail downloader",
-                    "youtube tag extractor",
-                    "instagram dp viewer",
-                    "link in bio generator",
-                    "ai meme generator",
-                    "ai caption generator",
-                    "ai lyrics generator",
-                    "pet name generator",
-                    "birthday countdown",
-                    "anniversary calculator",
-                    "age in hours calculator",
-                    "zodiac sign finder",
-                    "workday calculator",
-                    "year end countdown",
-                    "text case converter",
-                    "uppercase to lowercase",
-                    "title case converter",
-                    "download tiktok sound",
-                    "tiktok downloader fast",
-                    "tiktok saver web",
-                    "no watermark tiktok saver",
-                    "tiktok download hd",
-                    "tiktok download online free",
-                    "tiktok downloader for pc",
-                    "tiktok downloader for mobile",
-                    "save tiktok audio mp3",
-                    "extract tiktok music",
-                    "generate qr for url",
-                    "qr for wifi",
-                    "qr for contact",
-                    "convert kb mb gb",
-                    "convert cm inch",
-                    "convert celsius fahrenheit",
-                    "convert time zones",
-                    "calculate date gap",
-                    "calculate time gap",
-                    "find percentage",
-                    "find discount price",
-                    "calculate interest",
-                    "estimate taxes",
-                    "create invoice online",
-                    "split bill calculator",
-                    "track savings",
-                    "plan retirement",
-                    "seo meta generator",
-                    "keyword density tool",
-                    "format html online",
-                    "convert html to md",
-                    "convert json csv",
-                    "decode jwt token",
-                    "preview markdown",
-                    "test regex online",
-                    "extract text from screenshot",
-                    "crop image online",
-                    "blur background image",
-                    "unlock pdf",
-                    "download youtube thumbnail",
-                    "extract youtube tags",
-                    "view instagram profile photo",
-                    "build link in bio",
-                    "generate color palette",
-                  ].map((k, index) => (
-                    <li key={`keyword-${index}`} className="px-3 py-1 rounded-full bg-muted text-foreground/80 border">
-                      {k}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </details>
-
-            <div>
-              <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Frequently Asked Questions</h3>
-              <div className="space-y-6 text-muted-foreground">
-                <div>
-                  <h4 className="text-base font-semibold text-foreground">Is the TikTok downloader free?</h4>
-                  <p>Yes. The downloader on FastTools is free to use for public TikTok links. Always download only content you own or have permission to use.</p>
-                </div>
-                <div>
-                  <h4 className="text-base font-semibold text-foreground">Do you remove the watermark?</h4>
-                  <p>When available from the upstream service, we show both a no‑watermark and a watermark link so you can choose the appropriate option.</p>
-                </div>
-                <div>
-                  <h4 className="text-base font-semibold text-foreground">Do I need to install anything?</h4>
-                  <p>No. Everything runs in the browser. Simply paste a valid TikTok URL and click Get Download Links.</p>
-                </div>
-                <div>
-                  <h4 className="text-base font-semibold text-foreground">Will this work on mobile?</h4>
-                  <p>Yes. The downloader and all tools are responsive and optimized for mobile and desktop.</p>
-                </div>
-                <div>
-                  <h4 className="text-base font-semibold text-foreground">What other tools are available?</h4>
-                  <p>Explore converters, calculators, SEO helpers, developer utilities, image tools, and AI generators—all accessible from the homepage categories.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Comprehensive Guides Section */}
-            <div className="mt-12">
-              <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Tool Guides</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <Card>
+              <div className="space-y-6">
+                {/* FAQ 1 - AI Tools */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Target className="h-5 w-5 text-blue-500" />
-                      QR Code Generator Guide
-                    </CardTitle>
-                    <CardDescription>
-                      Complete guide to QR code generation, customization, and best practices for maximum impact.
-                    </CardDescription>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      What AI tools are available for free content generation?
+                    </h3>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Learn everything about QR codes including types, customization options, use cases, and future trends. 
-                      Perfect for businesses, marketers, and developers.
+                    <p className="text-muted-foreground leading-relaxed">
+                      Our free AI tools include <strong>AI caption generator</strong> for social media posts, 
+                      <strong>AI meme generator</strong> for viral content, <strong>AI hashtag suggester</strong> for better reach, 
+                      <strong>AI song lyrics generator</strong> for creative writing, and <strong>AI pet name generator</strong> for naming pets. 
+                      All tools use advanced AI technology to generate high-quality, relevant content instantly without any cost.
                     </p>
-                    <Button asChild variant="outline" size="sm">
-                      <Link href="/guides/qr-code-generator-guide">Read Complete Guide</Link>
-                    </Button>
                   </CardContent>
                 </Card>
 
-                <Card>
+                {/* FAQ 2 - Currency Converter */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <DollarSign className="h-5 w-5 text-green-500" />
-                      Currency Converter Guide
-                    </CardTitle>
-                    <CardDescription>
-                      Master currency conversion with our comprehensive guide to exchange rates and international trading.
-                    </CardDescription>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      How accurate are the currency exchange rates in your converter?
+                    </h3>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Understand exchange rates, major currency pairs, conversion tips, and future trends in currency conversion. 
-                      Essential for travelers and businesses.
+                    <p className="text-muted-foreground leading-relaxed">
+                      Our <strong>currency converter</strong> provides real-time exchange rates updated every minute from 
+                      reliable financial data sources. We support 160+ currencies including USD, EUR, GBP, JPY, and more. 
+                      The rates are accurate for travel, business, and investment purposes, with historical data 
+                      and trend analysis available for informed decision-making.
                     </p>
-                    <Button asChild variant="outline" size="sm">
-                      <Link href="/guides/currency-converter-guide">Read Complete Guide</Link>
-                    </Button>
                   </CardContent>
                 </Card>
 
-                <Card>
+                {/* FAQ 3 - Calculator Tools */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Search className="h-5 w-5 text-purple-500" />
-                      SEO Tools Guide
-                    </CardTitle>
-                    <CardDescription>
-                      Complete guide to SEO optimization with free tools for better search engine rankings.
-                    </CardDescription>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      What financial calculators can help with loan and investment planning?
+                    </h3>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Master SEO with keyword research, on-page optimization, technical SEO, and content optimization strategies. 
-                      Perfect for marketers and website owners.
+                    <p className="text-muted-foreground leading-relaxed">
+                      We offer comprehensive <strong>financial calculators</strong> including <strong>loan calculator</strong> for mortgage planning, 
+                      <strong>EMI calculator</strong> for monthly payments, <strong>investment calculator</strong> for returns analysis, 
+                      <strong>retirement calculator</strong> for long-term planning, <strong>compound interest calculator</strong> for savings growth, 
+                      and <strong>tax calculator</strong> for income tax estimation. All calculators use professional-grade formulas 
+                      compatible with BA II Plus and HP 12CP financial calculators.
                     </p>
-                    <Button asChild variant="outline" size="sm">
-                      <Link href="/guides/seo-tools-guide">Read Complete Guide</Link>
-                    </Button>
                   </CardContent>
                 </Card>
 
-                <Card>
+                {/* FAQ 4 - SEO Tools */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Code className="h-5 w-5 text-orange-500" />
-                      Developer Tools Guide
-                    </CardTitle>
-                    <CardDescription>
-                      Essential developer tools and utilities for web development, coding, and technical projects.
-                    </CardDescription>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      How can SEO tools improve my website's search engine rankings?
+                    </h3>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Discover essential developer tools including code formatters, validators, converters, and utilities. 
-                      Boost your development workflow and productivity.
+                    <p className="text-muted-foreground leading-relaxed">
+                      Our <strong>SEO tools</strong> help optimize your website with <strong>meta tag generator</strong> for better search snippets, 
+                      <strong>keyword density checker</strong> for content optimization, <strong>hashtag generator</strong> for social media reach, 
+                      and <strong>blog title generator</strong> for click-worthy headlines. These tools analyze your content, 
+                      suggest improvements, and help you rank higher in Google search results for better organic traffic.
                     </p>
-                    <Button asChild variant="outline" size="sm">
-                      <Link href="/guides/developer-tools-guide">Read Complete Guide</Link>
-                    </Button>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 5 - Image Tools */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      What image processing tools are available for free?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Our <strong>image tools</strong> include <strong>image cropper</strong> for resizing and cropping photos, 
+                      <strong>image converter</strong> for format conversion, <strong>image to text OCR</strong> for extracting text from images, 
+                      <strong>background blur</strong> for photo editing, and <strong>QR code generator</strong> for creating QR codes. 
+                      All tools work in your browser without uploading files, ensuring complete privacy and security.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 6 - Developer Tools */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      What developer tools can help with coding and web development?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Our <strong>developer tools</strong> include <strong>HTML beautifier</strong> for code formatting, 
+                      <strong>JSON formatter</strong> for data validation, <strong>regex tester</strong> for pattern matching, 
+                      <strong>JWT decoder</strong> for token analysis, <strong>base64 encoder/decoder</strong> for data encoding, 
+                      and <strong>color palette generator</strong> for design. These tools help developers write better code, 
+                      debug more effectively, and streamline their development workflow.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 7 - Privacy & Security */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      Is my data safe when using these online tools?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Yes, your data is completely safe. All our tools process data locally in your browser without 
+                      uploading files to our servers. We use <strong>privacy-first architecture</strong> where sensitive information 
+                      like documents, images, and personal data never leaves your device. No registration required, 
+                      no data collection, and no tracking - just pure, secure tool functionality.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 8 - Tool Categories */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      What categories of tools are available on FastTools?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      We offer 10+ categories including <strong>AI Tools</strong> for content generation, <strong>Calculators</strong> for financial planning, 
+                      <strong>Converters</strong> for data transformation, <strong>SEO Tools</strong> for website optimization, 
+                      <strong>Image Tools</strong> for photo editing, <strong>Developer Tools</strong> for coding, 
+                      <strong>Finance Tools</strong> for business calculations, <strong>Date & Time Tools</strong> for scheduling, 
+                      <strong>Social Media Tools</strong> for marketing, and <strong>Fun Tools</strong> for entertainment. 
+                      Each category contains 15-50+ specialized tools for different use cases.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 9 - Business Use */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      Can businesses use these tools for professional purposes?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Absolutely! Our tools are designed for professional use with <strong>business-grade accuracy</strong> and reliability. 
+                      Many businesses use our <strong>financial calculators</strong> for loan analysis, <strong>currency converter</strong> for international trade, 
+                      <strong>SEO tools</strong> for digital marketing, <strong>AI tools</strong> for content creation, and <strong>developer tools</strong> for web development. 
+                      All tools are free for commercial use with no restrictions or watermarks.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 10 - Mobile Access */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      Do these tools work on mobile devices and tablets?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Yes, all our tools are <strong>mobile-optimized</strong> and work perfectly on smartphones, tablets, and desktop computers. 
+                      Our responsive design ensures optimal performance across all devices with touch-friendly interfaces, 
+                      fast loading times, and offline functionality for many tools. Access your favorite tools anywhere, 
+                      anytime without any app downloads or installations.
+                    </p>
                   </CardContent>
                 </Card>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ Structured Data */}
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "Is the TikTok downloader free?",
-                acceptedAnswer: { "@type": "Answer", text: "Yes, it is free for public TikTok links. Download only content you own or are authorized to use." }
-              },
-              {
-                "@type": "Question",
-                name: "Do you remove the watermark?",
-                acceptedAnswer: { "@type": "Answer", text: "When available from the upstream service, we provide both no‑watermark and watermark options." }
-              },
-              {
-                "@type": "Question",
-                name: "Do I need to install anything?",
-                acceptedAnswer: { "@type": "Answer", text: "No installation required—everything runs in the browser. Paste a TikTok URL and click Get Download Links." }
-              },
-              {
-                "@type": "Question",
-                name: "Will this work on mobile?",
-                acceptedAnswer: { "@type": "Answer", text: "Yes, all tools are responsive and work on phones, tablets, and desktops." }
-              },
-              {
-                "@type": "Question",
-                name: "What other tools are available?",
-                acceptedAnswer: { "@type": "Answer", text: "Converters, calculators, SEO helpers, developer utilities, image tools, and AI generators are available from the homepage." }
-              }
-            ]
-          })
-        }}
-      />
+        </section>
       </div>
     </>
   )

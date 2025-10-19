@@ -2,38 +2,66 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Target, AlertCircle, Heart, Sparkles, Code2, FileText, Search, TrendingUp, Globe, Settings, BarChart3, Lightbulb, BookOpen, ExternalLink } from "lucide-react"
+import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Target, AlertCircle, Heart, Sparkles, Code2, FileText, Search, TrendingUp, Globe, Settings, BarChart3, Lightbulb, BookOpen, ExternalLink, Calculator, Image, DollarSign, Mail, Smartphone, Wrench, RefreshCw, Briefcase, Award, Globe2, Settings2, BarChart, Brain, Cpu, Database, Eye, Filter, Gauge, Hash, Info, Key, Layers, Maximize, Navigation, Palette, QrCode, RefreshCcw, Save, Tag, Upload, Volume2, Wifi, X, Youtube } from "lucide-react"
 
 export const metadata: Metadata = {
-    title: "SEO FAQ - 100+ Expert SEO Questions & Comprehensive Answers | FastTools",
+    title: "SEO FAQ - 200+ Questions & Answers | Free SEO Tools & Guides | FastTools",
     description:
-        "Comprehensive SEO FAQ: 100+ detailed questions and answers covering keyword research, on-page SEO, technical SEO, backlinks, Core Web Vitals, schema, crawling, indexing, content strategy, audits, and SEO tools. Practical tips, examples and FastTools integrations.",
+        "Complete SEO FAQ with 200+ expert answers covering keyword research, technical SEO, Core Web Vitals, schema markup, backlinks, local SEO, mobile SEO, and ranking factors. Free SEO tools, guides, and actionable tips to improve search rankings.",
     keywords:
-        "SEO FAQ, search engine optimization, keyword research, on-page SEO, technical SEO, backlinks, Core Web Vitals, schema markup, SEO tools, site speed, content strategy, SEO audit, internal linking, mobile SEO, structured data, indexing, crawling, E-E-A-T, organic traffic, SERP, featured snippets, free SEO tools, online SEO help, SEO best practices, Google SEO, search engine ranking, website optimization, meta tags, title tags, meta descriptions, robots.txt, sitemap, canonical URLs, duplicate content, page speed optimization, mobile-first indexing, Core Web Vitals, LCP, FID, CLS, structured data markup, JSON-LD, schema.org, rich snippets, featured snippets, voice search optimization, local SEO, Google My Business, backlink building, link building strategies, content marketing, keyword density, keyword stuffing, semantic SEO, topical authority, content clusters, pillar pages, internal linking strategy, external linking, anchor text optimization, 301 redirects, 404 errors, crawl budget, indexing issues, search console, Google Analytics, SEO monitoring, ranking factors, algorithm updates, Google penalties, manual actions, disavow file, link disavowal, competitive analysis, keyword research tools, SEO audit tools, technical SEO checklist, on-page SEO checklist, off-page SEO, link equity, PageRank, domain authority, trust flow, citation flow, local citations, NAP consistency, Google Business Profile, local search optimization, international SEO, hreflang, multilingual SEO, e-commerce SEO, product schema, review schema, FAQ schema, how-to schema, breadcrumb schema, organization schema, website schema, software application schema, service schema, person schema, article schema, blog post schema, news article schema, event schema, place schema, local business schema, restaurant schema, hotel schema, product schema markup, review schema markup, rating schema, aggregate rating, individual rating, price schema, availability schema, brand schema, logo schema, social media schema, sameAs, contact point schema, address schema, geo coordinates, latitude longitude, opening hours, special hours, service area, area served, hasOfferCatalog, makesOffer, offers, price, priceCurrency, priceValidUntil, availability, itemCondition, shippingDetails, returnPolicy, warranty, seller, vendor, manufacturer, brand, model, sku, gtin, mpn, isbn, ean, upc, color, size, weight, height, width, depth, material, pattern, style, gender, age group, target audience, audience, mainEntity, about, mentions, significantLink, significantLinks, sameAs, url, identifier, additionalType, alternateName, description, disambiguatingDescription, image, name, potentialAction, publisher, mainEntityOfPage, isPartOf, hasPart, isRelatedTo, isSimilarTo, isVariantOf, isBasedOn, isBasedOnUrl, license, copyrightHolder, copyrightYear, inLanguage, isAccessibleForFree, accessibilityFeature, accessibilityHazard, accessibilityAPI, accessibilityControl, accessibilitySummary, accessibilityFeature, accessibilityHazard, accessibilityAPI, accessibilityControl, accessibilitySummary, accessibilityFeature, accessibilityHazard, accessibilityAPI, accessibilityControl, accessibilitySummary",
+        "SEO FAQ, SEO questions and answers, search engine optimization FAQ, SEO help, keyword research guide, technical SEO guide, on-page SEO, Core Web Vitals optimization, schema markup guide, backlink building guide, content SEO strategy, mobile SEO optimization, local SEO guide, SEO tools, free SEO tools, SEO best practices, Google SEO guidelines, search ranking factors, website optimization, meta tags optimization, title tag optimization, meta description writing, robots.txt configuration, XML sitemap creation, canonical URL implementation, duplicate content solutions, page speed optimization, mobile-first indexing, LCP optimization, FID improvement, CLS reduction, structured data implementation, JSON-LD schema, rich snippets optimization, featured snippets targeting, voice search optimization, local search optimization, Google My Business optimization, backlink acquisition, link building techniques, content marketing SEO, keyword density optimization, semantic SEO implementation, topical authority building, content cluster strategy, pillar page creation, internal linking optimization, external linking best practices, anchor text optimization, 301 redirect implementation, 404 error handling, crawl budget optimization, indexing issues resolution, Google Search Console setup, Google Analytics integration, SEO monitoring tools, ranking factor analysis, algorithm update impact, Google penalty recovery, manual action removal, disavow file creation, competitive SEO analysis, keyword research tools comparison, SEO audit checklist, technical SEO checklist, on-page SEO checklist, off-page SEO strategies, link equity distribution, PageRank optimization, domain authority building, trust flow improvement, citation flow enhancement, local citation building, NAP consistency maintenance, Google Business Profile optimization, local search ranking, international SEO implementation, hreflang configuration, multilingual SEO strategy, e-commerce SEO optimization, product schema markup, review schema implementation, FAQ schema markup, how-to schema creation, breadcrumb schema markup, organization schema setup, website schema implementation, software application schema, service schema markup, person schema creation, article schema markup, blog post schema, news article schema, event schema markup, place schema implementation, local business schema, restaurant schema markup, hotel schema implementation, product schema optimization, review schema enhancement, rating schema markup, aggregate rating schema, individual rating schema, price schema implementation, availability schema markup, brand schema creation, logo schema markup, social media schema, sameAs property, contact point schema, address schema markup, geo coordinates schema, latitude longitude markup, opening hours schema, special hours markup, service area schema, area served markup, hasOfferCatalog schema, makesOffer property, offers schema markup, price schema optimization, priceCurrency property, priceValidUntil markup, availability schema, itemCondition property, shippingDetails schema, returnPolicy markup, warranty schema, seller information, vendor details, manufacturer markup, brand information, model details, SKU markup, GTIN property, MPN schema, ISBN markup, EAN property, UPC schema, color information, size details, weight markup, height property, width schema, depth information, material details, pattern markup, style property, gender information, age group schema, target audience markup, audience property, mainEntity schema, about property, mentions markup, significantLink property, significantLinks schema, sameAs implementation, URL optimization, identifier property, additionalType schema, alternateName property, description optimization, disambiguatingDescription markup, image optimization, name property, potentialAction schema, publisher information, mainEntityOfPage property, isPartOf schema, hasPart property, isRelatedTo markup, isSimilarTo property, isVariantOf schema, isBasedOn property, isBasedOnUrl markup, license information, copyrightHolder property, copyrightYear markup, inLanguage property, isAccessibleForFree schema, accessibilityFeature property, accessibilityHazard markup, accessibilityAPI schema, accessibilityControl property, accessibilitySummary markup, SEO tools comparison, free SEO tools, online SEO help, SEO tutorials, SEO guides, SEO training, SEO certification, SEO courses, SEO books, SEO blogs, SEO podcasts, SEO webinars, SEO conferences, SEO communities, SEO forums, SEO experts, SEO consultants, SEO agencies, SEO services, SEO pricing, SEO ROI, SEO metrics, SEO KPIs, SEO reporting, SEO dashboards, SEO automation, SEO AI tools, SEO machine learning, SEO data analysis, SEO insights, SEO recommendations, SEO improvements, SEO optimization, SEO enhancement, SEO performance, SEO results, SEO success, SEO growth, SEO traffic, SEO conversions, SEO revenue, SEO profit, SEO business impact, SEO competitive advantage, SEO market share, SEO brand visibility, SEO online presence, SEO digital marketing, SEO content marketing, SEO social media, SEO email marketing, SEO PPC integration, SEO paid search, SEO organic search, SEO search marketing, SEO search advertising, SEO search optimization, SEO search ranking, SEO search visibility, SEO search traffic, SEO search results, SEO search engine marketing, SEO search engine advertising, SEO search engine optimization, SEO search engine ranking, SEO search engine visibility, SEO search engine traffic, SEO search engine results, SEO search engine performance, SEO search engine metrics, SEO search engine analytics, SEO search engine reporting, SEO search engine monitoring, SEO search engine tracking, SEO search engine measurement, SEO search engine evaluation, SEO search engine assessment, SEO search engine audit, SEO search engine review, SEO search engine analysis, SEO search engine research, SEO search engine study, SEO search engine investigation, SEO search engine examination, SEO search engine inspection, SEO search engine scrutiny, SEO search engine observation",
     alternates: { canonical: "https://www.fasttools.store/faq" },
-    robots: { index: true, follow: true },
+    robots: { 
+        index: true, 
+        follow: true, 
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        }
+    },
+    authors: [{ name: "FastTools SEO Team" }],
+    creator: "FastTools",
+    publisher: "FastTools",
+    formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+    },
+    metadataBase: new URL('https://fasttools.store'),
+    verification: {
+        google: 'your-google-verification-code',
+        yandex: 'your-yandex-verification-code',
+        yahoo: 'your-yahoo-verification-code',
+    },
     openGraph: {
-        title: "SEO FAQ - 100+ Expert Questions & Answers | FastTools",
+        title: "SEO FAQ - 200+ Questions & Answers | Free SEO Tools & Guides",
         description:
-            "100+ comprehensive SEO questions answered: technical SEO, on-page, off-page, Core Web Vitals, schema, site speed, keyword strategy and more — practical, example-driven guidance.",
+            "Complete SEO FAQ with 200+ expert answers covering keyword research, technical SEO, Core Web Vitals, schema markup, backlinks, local SEO, mobile SEO, and ranking factors. Free SEO tools and actionable tips.",
         url: "https://fasttools.store/faq",
         type: "article",
+        siteName: "FastTools",
+        locale: "en_US",
         images: [
             {
                 url: "/og-image.svg",
                 width: 1200,
                 height: 630,
-                alt: "SEO FAQ - FastTools",
+                alt: "SEO FAQ - Free SEO Tools & Guides | FastTools",
                 type: "image/svg+xml",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "SEO FAQ - 100+ Questions Answered | FastTools",
+        title: "SEO FAQ - 200+ Questions & Answers | Free SEO Tools",
         description:
-            "Detailed answers to over 100 SEO questions covering keyword research, technical SEO, backlinks, Core Web Vitals, schema and optimization strategies.",
+            "Complete SEO FAQ with 200+ expert answers covering keyword research, technical SEO, Core Web Vitals, schema markup, backlinks, and ranking factors. Free SEO tools included.",
         images: ["/og-image.svg"],
+        creator: "@fasttools",
+        site: "@fasttools",
     },
 }
 
@@ -41,29 +69,124 @@ type QA = { question: string; answer: string }
 
 const faqs: QA[] = [
     {
-        question: "What is SEO (Search Engine Optimization)?",
+        question: "What is SEO and why is it important for websites?",
         answer:
-            "SEO is the practice of optimizing websites and content so search engines can understand, index, and rank them for relevant queries. It combines technical improvements (like crawlability and site speed), content optimization (keywords, structure, and quality), and off-page factors (such as backlinks and brand signals) to increase organic visibility and traffic over time.",
+            "SEO (Search Engine Optimization) is the comprehensive practice of optimizing websites and content to improve their visibility and ranking in search engine results pages (SERPs). It encompasses technical improvements like crawlability and site speed, content optimization including keyword research and structure, and off-page factors such as backlinks and brand authority signals. Effective SEO increases organic visibility, drives targeted traffic, and builds long-term digital authority. For businesses, SEO is essential because it provides sustainable, cost-effective traffic growth compared to paid advertising. Our <a href='/seo-tools' className='text-primary hover:underline'>comprehensive SEO tools suite</a> helps you implement these strategies effectively, from <a href='/seo-tools/meta-tags-generator' className='text-primary hover:underline'>meta tag generation</a> to <a href='/seo-tools/sitemap-generator' className='text-primary hover:underline'>XML sitemap creation</a>. SEO success requires understanding search engine algorithms, user intent, and technical implementation across all aspects of your digital presence.",
     },
     {
-        question: "Why is SEO important for websites?",
+        question: "How does SEO help improve website rankings?",
         answer:
-            "SEO drives sustainable organic traffic, reduces reliance on paid advertising, and improves discoverability for high-intent users. Well-executed SEO not only helps pages rank higher in SERPs but also improves user experience, conversions, and the long-term visibility of a brand or project.",
+            "SEO is fundamental for digital success because it drives sustainable organic traffic, reduces dependence on paid advertising, and improves discoverability for high-intent users actively searching for solutions. Well-executed SEO not only helps pages rank higher in SERPs but also enhances user experience, increases conversions, and builds long-term brand authority. Unlike paid advertising, SEO provides compounding returns over time. Our <a href='/calculator' className='text-primary hover:underline'>business calculators</a> can help you measure SEO ROI, while our <a href='/seo-tools/website-analyzer' className='text-primary hover:underline'>website analyzer</a> identifies optimization opportunities. SEO is particularly crucial for competitive industries where organic visibility determines market share. It also improves user experience through faster loading times, mobile optimization, and better content structure, leading to higher engagement and conversion rates.",
     },
     {
-        question: "What are keywords in SEO?",
+        question: "How to do keyword research for SEO?",
         answer:
-            "Keywords are the words and phrases users type into search engines to find information. Effective keyword strategy maps user intent (informational, navigational, transactional) to the right pages, using a mix of head terms and long-tail phrases to capture search demand and match content to user needs.",
+            "Effective keyword research is the foundation of successful SEO strategy. Start by brainstorming seed keywords related to your business, products, or services. Use tools like Google Keyword Planner, our <a href='/seo-tools/keyword-density-checker' className='text-primary hover:underline'>keyword density checker</a>, and competitor analysis to identify high-value opportunities. Focus on search intent (informational, navigational, transactional, commercial investigation) and target a mix of head terms and long-tail keywords. Analyze search volume, competition level, and commercial value. Consider semantic keywords and related terms that search engines associate with your primary keywords. Our <a href='/seo-tools' className='text-primary hover:underline'>SEO tools collection</a> includes comprehensive keyword research utilities to streamline this process. Prioritize keywords with good search volume and manageable competition, and always align keyword strategy with business goals and user needs.",
     },
     {
-        question: "What is keyword research?",
+        question: "What is technical SEO and what factors are important?",
         answer:
-            "Keyword research identifies which queries your target audience uses, their search volume, competition, and intent. A proper research process produces prioritized keyword lists, content ideas, and long-tail opportunities that align with business goals. Tools like Google Search Console, keyword planners, and analytics can validate intent and performance.",
+            "Technical SEO forms the foundation that enables search engines to crawl, index, and understand your website effectively. Critical factors include site speed optimization (Core Web Vitals), mobile-first responsive design, proper URL structure, XML sitemap implementation, robots.txt configuration, and HTTPS security. Our <a href='/seo-tools/sitemap-generator' className='text-primary hover:underline'>XML sitemap generator</a> and <a href='/seo-tools/robots-txt-generator' className='text-primary hover:underline'>robots.txt generator</a> help automate these technical requirements. Other essential elements include proper heading structure (H1-H6), internal linking strategy, canonical URL implementation, and structured data markup. Monitor Core Web Vitals metrics (LCP, FID, CLS) using our <a href='/seo-tools/website-analyzer' className='text-primary hover:underline'>website analyzer</a> to ensure optimal performance. Technical SEO also involves fixing crawl errors, optimizing images, implementing proper redirects, and ensuring your site architecture supports both user experience and search engine understanding.",
     },
     {
-        question: "What are long-tail keywords?",
+        question: "How to optimize Core Web Vitals for better rankings?",
         answer:
-            "Long-tail keywords are longer, more specific phrases that typically have lower search volume but higher conversion intent and lower competition. They are excellent for targeting niche queries, answering precise user needs, and building authority over time through content clusters focused on related subtopics.",
+            "Core Web Vitals are Google's user experience metrics that directly impact search rankings. Optimize Largest Contentful Paint (LCP) by compressing images, using efficient image formats like WebP, implementing lazy loading, and optimizing server response times. Improve First Input Delay (FID) by minimizing JavaScript execution time, using code splitting, and deferring non-critical scripts. Reduce Cumulative Layout Shift (CLS) by reserving space for images and ads, using proper font loading strategies, and avoiding dynamic content injection above existing content. Our <a href='/seo-tools/website-analyzer' className='text-primary hover:underline'>website analyzer</a> provides detailed Core Web Vitals reports and optimization recommendations. Use our <a href='/dev-tools/html-beautifier' className='text-primary hover:underline'>HTML beautifier</a> to optimize code structure and our <a href='/dev-tools/json-to-csv' className='text-primary hover:underline'>data conversion tools</a> for efficient content delivery. Regular monitoring and optimization of these metrics can significantly improve your search rankings and user experience.",
+    },
+    {
+        question: "What is on-page SEO and how to optimize it?",
+        answer:
+            "On-page SEO optimization focuses on improving individual page elements to enhance search engine visibility and user experience. Start with title tag optimization (50-60 characters, primary keyword placement, compelling copy) using our <a href='/seo-tools/meta-tags-generator' className='text-primary hover:underline'>meta tags generator</a>. Create compelling meta descriptions (150-160 characters) that encourage clicks while accurately describing page content. Implement proper heading structure (H1-H6) with keyword optimization and logical hierarchy. Optimize content for target keywords naturally, avoiding keyword stuffing while maintaining readability. Use our <a href='/seo-tools/keyword-density-checker' className='text-primary hover:underline'>keyword density checker</a> to ensure optimal keyword distribution. Include internal links to related content, optimize images with descriptive alt text and proper sizing, and implement schema markup for rich snippets. Our <a href='/seo-tools/schema-generator' className='text-primary hover:underline'>schema markup generator</a> helps implement structured data effectively. Focus on creating comprehensive, valuable content that answers user questions and provides unique insights.",
+    },
+    {
+        question: "How to build backlinks for SEO?",
+        answer:
+            "Building high-quality backlinks requires a strategic approach focused on creating linkable content and building genuine relationships. Start by creating comprehensive, valuable content that naturally attracts links, such as original research, detailed guides, or unique tools. Our <a href='/ai-tools/caption-generator' className='text-primary hover:underline'>AI caption generator</a> and <a href='/ai-tools/hashtag-suggester' className='text-primary hover:underline'>hashtag suggester</a> are examples of linkable tools that provide real value. Implement digital PR strategies, guest posting on relevant industry sites, and create resource pages that others want to link to. Use our <a href='/seo-tools/backlink-checker' className='text-primary hover:underline'>backlink checker</a> to monitor your link profile and identify opportunities. Focus on earning links from authoritative, relevant domains rather than pursuing quantity. Avoid manipulative link building tactics like link exchanges or paid links, as these can result in penalties. Instead, focus on creating content so valuable that others naturally want to link to it.",
+    },
+    {
+        question: "What is schema markup and how does it help SEO?",
+        answer:
+            "Schema markup is structured data that helps search engines understand your content better, enabling rich snippets and enhanced search results. Implement various schema types including Organization, WebSite, Article, FAQ, HowTo, Product, and LocalBusiness markup. Our <a href='/seo-tools/schema-generator' className='text-primary hover:underline'>schema markup generator</a> helps you create proper JSON-LD structured data for different content types. Schema markup can improve click-through rates by 20-30% through rich snippets, featured snippets, and knowledge graph inclusion. It also helps search engines understand your content context, leading to better categorization and potential ranking improvements. Use our <a href='/seo-tools/rich-results-test' className='text-primary hover:underline'>rich results tester</a> to validate your schema implementation and ensure it's working correctly. Focus on implementing schema that matches your content type and provides clear value to search engines and users.",
+    },
+    {
+        question: "How to optimize for mobile SEO?",
+        answer:
+            "Mobile-first indexing means Google primarily uses the mobile version of your content for indexing and ranking. Ensure your website is fully responsive with touch-friendly navigation, readable text without zooming, and fast loading on mobile networks. Use our <a href='/seo-tools/mobile-friendly-test' className='text-primary hover:underline'>mobile-friendly test</a> to check your site's mobile optimization. Implement proper viewport meta tags, optimize images for mobile devices, and ensure all interactive elements are easily accessible on touch screens. Test your site across different mobile devices and screen sizes. Our <a href='/seo-tools/website-analyzer' className='text-primary hover:underline'>website analyzer</a> provides detailed mobile performance reports. Focus on Core Web Vitals optimization, as mobile users are particularly sensitive to page speed and user experience. Ensure your mobile and desktop content is equivalent, as Google will primarily index the mobile version.",
+    },
+    {
+        question: "What is local SEO and how to optimize it?",
+        answer:
+            "Local SEO optimization helps businesses rank in local search results and Google Maps. Start by claiming and optimizing your Google My Business profile with accurate business information, high-quality photos, and regular posts. Ensure NAP (Name, Address, Phone) consistency across all online directories and citations. Our <a href='/seo-tools/local-seo-checker' className='text-primary hover:underline'>local SEO checker</a> helps identify optimization opportunities. Create location-specific content and landing pages, optimize for local keywords, and build local citations from relevant directories. Encourage customer reviews and respond to them professionally. Use our <a href='/seo-tools/schema-generator' className='text-primary hover:underline'>schema generator</a> to implement LocalBusiness markup. Focus on building local authority through community involvement, local partnerships, and location-specific content that serves your target geographic area.",
+    },
+    {
+        question: "How to create content strategy for SEO?",
+        answer:
+            "An effective content strategy starts with understanding your audience's search intent and creating content that addresses their needs comprehensively. Develop a content calendar focusing on topics your audience searches for, using our <a href='/seo-tools/keyword-research' className='text-primary hover:underline'>keyword research tools</a> to identify opportunities. Create pillar content (comprehensive guides) supported by cluster content (related articles) to build topical authority. Use our <a href='/ai-tools/caption-generator' className='text-primary hover:underline'>AI content tools</a> to enhance your content creation process. Focus on E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) by demonstrating deep knowledge and providing original insights. Regularly update and refresh content to maintain freshness signals. Use our <a href='/seo-tools/content-optimizer' className='text-primary hover:underline'>content optimizer</a> to ensure your content meets SEO best practices. Measure content performance and adjust strategy based on data and user feedback.",
+    },
+    {
+        question: "What are common SEO mistakes to avoid?",
+        answer:
+            "Common SEO mistakes that can significantly hurt rankings include keyword stuffing, duplicate content without proper canonicalization, slow page loading speeds, poor mobile optimization, and thin or low-quality content. Avoid hiding text or links, using manipulative link building tactics, and creating doorway pages. Our <a href='/seo-tools/website-analyzer' className='text-primary hover:underline'>website analyzer</a> helps identify technical issues that may be hurting your rankings. Other critical mistakes include ignoring Core Web Vitals, having broken internal links, using duplicate title tags or meta descriptions, and not implementing proper redirects for moved content. Use our <a href='/seo-tools/seo-audit' className='text-primary hover:underline'>comprehensive SEO audit tool</a> to identify and fix these issues. Focus on creating user-focused content rather than search engine-focused content, and always prioritize user experience over keyword optimization.",
+    },
+    {
+        question: "How to measure SEO performance?",
+        answer:
+            "Effective SEO measurement requires tracking multiple metrics across different tools and platforms. Use Google Search Console to monitor search performance, click-through rates, and indexing status. Google Analytics 4 provides insights into organic traffic, user behavior, and conversion tracking. Our <a href='/seo-tools/ranking-tracker' className='text-primary hover:underline'>ranking tracker</a> helps monitor keyword positions over time. Track Core Web Vitals using our <a href='/seo-tools/website-analyzer' className='text-primary hover:underline'>website analyzer</a> to ensure optimal user experience. Monitor backlink growth with our <a href='/seo-tools/backlink-checker' className='text-primary hover:underline'>backlink checker</a> and track content performance through engagement metrics. Set up custom dashboards to visualize SEO progress and identify trends. Focus on metrics that directly impact business goals, such as organic traffic growth, conversion rates, and revenue attribution. Regular reporting and analysis help optimize strategies and demonstrate SEO ROI to stakeholders.",
+    },
+    {
+        question: "How does user experience affect SEO rankings?",
+        answer:
+            "User experience is a critical ranking factor that directly impacts SEO performance through Core Web Vitals, user engagement metrics, and behavioral signals. Google uses user experience signals like bounce rate, time on site, and pages per session to evaluate content quality and relevance. Our <a href='/seo-tools/website-analyzer' className='text-primary hover:underline'>website analyzer</a> provides detailed UX metrics and optimization recommendations. Focus on creating intuitive navigation, fast loading times, mobile-friendly design, and valuable content that keeps users engaged. Use our <a href='/dev-tools/html-beautifier' className='text-primary hover:underline'>HTML beautifier</a> to optimize code structure and improve performance. Implement clear calls-to-action, logical content hierarchy, and responsive design that works across all devices. Monitor user behavior through heatmaps and session recordings to identify UX issues. Positive user experience signals help improve rankings, while poor UX can lead to ranking drops and reduced organic visibility.",
+    },
+    {
+        question: "How to optimize for voice search and featured snippets?",
+        answer:
+            "Voice search optimization requires targeting conversational, long-tail keywords and creating content that directly answers questions. Structure content with clear headings and bullet points that match how people speak. Our <a href='/seo-tools/featured-snippets-optimizer' className='text-primary hover:underline'>featured snippets optimizer</a> helps identify opportunities for position zero rankings. Create comprehensive FAQ sections using our <a href='/seo-tools/faq-generator' className='text-primary hover:underline'>FAQ generator</a> to target question-based queries. Optimize for local voice search by including location-specific keywords and creating content that answers 'near me' queries. Use our <a href='/seo-tools/schema-generator' className='text-primary hover:underline'>schema markup generator</a> to implement FAQ and HowTo structured data. Focus on creating content that provides direct, concise answers to common questions in your industry. Voice search optimization also involves improving page speed and mobile experience, as most voice searches happen on mobile devices.",
+    },
+    {
+        question: "What is e-commerce SEO and how to optimize it?",
+        answer:
+            "E-commerce SEO requires optimizing product pages, category pages, and the overall site structure for search engines and users. Start with proper product schema markup using our <a href='/seo-tools/schema-generator' className='text-primary hover:underline'>schema generator</a> to enable rich snippets and product information in search results. Optimize product titles, descriptions, and images with relevant keywords and alt text. Use our <a href='/seo-tools/meta-tags-generator' className='text-primary hover:underline'>meta tags generator</a> to create compelling product page titles and descriptions. Implement proper URL structure with descriptive, keyword-rich URLs for products and categories. Focus on user-generated content like reviews and ratings, which provide valuable signals to search engines. Use our <a href='/seo-tools/duplicate-content-checker' className='text-primary hover:underline'>duplicate content checker</a> to identify and resolve product page duplication issues. Optimize for long-tail keywords that match user search intent, such as specific product features, colors, or use cases. Implement proper internal linking between related products and categories to distribute link equity effectively.",
+    },
+    {
+        question: "How to recover from Google penalties?",
+        answer:
+            "Recovering from Google penalties requires identifying the specific issue, implementing fixes, and submitting a reconsideration request. Use Google Search Console to check for manual actions and understand the specific violations. Our <a href='/seo-tools/penalty-checker' className='text-primary hover:underline'>penalty checker</a> helps identify potential issues that may have triggered penalties. Common penalty causes include unnatural link building, thin content, keyword stuffing, and cloaking. Remove or disavow toxic backlinks using our <a href='/seo-tools/disavow-generator' className='text-primary hover:underline'>disavow file generator</a>. Improve content quality by removing thin or duplicate content and creating valuable, original content. Fix technical issues like slow loading times, mobile usability problems, and crawl errors. Use our <a href='/seo-tools/website-analyzer' className='text-primary hover:underline'>comprehensive website analyzer</a> to identify and fix technical SEO issues. Document all changes made and submit a detailed reconsideration request to Google. Recovery can take several months, so focus on long-term improvements rather than quick fixes.",
+    },
+    {
+        question: "Why is internal linking important for SEO?",
+        answer:
+            "Internal linking is crucial for SEO as it helps distribute page authority, improves crawlability, and enhances user experience by connecting related content. Use our <a href='/seo-tools/internal-link-suggester' className='text-primary hover:underline'>internal link suggester</a> to identify linking opportunities throughout your site. Create a logical site architecture with clear navigation and contextual links between related pages. Use descriptive anchor text that provides context about the linked page content. Our <a href='/seo-tools/anchor-text-optimizer' className='text-primary hover:underline'>anchor text optimizer</a> helps ensure proper anchor text distribution. Focus on linking to high-value pages that you want to rank well, such as product pages, service pages, or important blog posts. Implement breadcrumb navigation and related content suggestions to improve user experience and internal link structure. Use our <a href='/seo-tools/link-audit' className='text-primary hover:underline'>link audit tool</a> to analyze your internal linking strategy and identify areas for improvement. Effective internal linking helps search engines understand your site structure and the relationship between different pages.",
+    },
+    {
+        question: "How to optimize for international SEO?",
+        answer:
+            "International SEO requires careful planning for multiple languages, regions, and cultural considerations. Use hreflang tags to indicate language and regional versions of your content. Our <a href='/seo-tools/hreflang-generator' className='text-primary hover:underline'>hreflang generator</a> helps create proper international targeting markup. Implement proper URL structure with language codes or subdirectories for different markets. Use our <a href='/seo-tools/schema-generator' className='text-primary hover:underline'>schema markup generator</a> to implement multilingual structured data. Focus on local keyword research for each target market, considering cultural differences and search behavior. Create region-specific content that addresses local needs and preferences. Use our <a href='/seo-tools/international-seo-checker' className='text-primary hover:underline'>international SEO checker</a> to identify optimization opportunities across different markets. Implement proper geo-targeting in Google Search Console and ensure your hosting and CDN are optimized for global performance. Consider local payment methods, currencies, and cultural preferences in your international SEO strategy.",
+    },
+    {
+        question: "How does AI affect SEO?",
+        answer:
+            "AI and machine learning are increasingly important in SEO as search engines use these technologies to understand content, user intent, and ranking factors. Google's algorithms use machine learning to evaluate content quality, relevance, and user satisfaction. Our <a href='/ai-tools/caption-generator' className='text-primary hover:underline'>AI content tools</a> help create optimized content that aligns with search engine understanding. Focus on creating content that demonstrates expertise, authoritativeness, and trustworthiness (E-E-A-T) as AI systems evaluate these factors. Use our <a href='/ai-tools/hashtag-suggester' className='text-primary hover:underline'>AI hashtag suggester</a> and <a href='/ai-tools/lyrics-generator' className='text-primary hover:underline'>AI lyrics generator</a> to create engaging content that performs well in search results. Implement structured data and schema markup to help AI systems understand your content better. Focus on user experience signals that AI systems use to evaluate content quality, such as engagement metrics, click-through rates, and user satisfaction. Stay updated with AI developments in search and adapt your SEO strategy accordingly.",
+    },
+    {
+        question: "How to create SEO audit system?",
+        answer:
+            "An effective SEO audit system requires regular monitoring of technical, content, and performance metrics. Use our <a href='/seo-tools/seo-audit' className='text-primary hover:underline'>comprehensive SEO audit tool</a> to identify technical issues and optimization opportunities. Set up automated monitoring for Core Web Vitals, crawl errors, and indexing issues using our <a href='/seo-tools/website-analyzer' className='text-primary hover:underline'>website analyzer</a>. Monitor keyword rankings with our <a href='/seo-tools/ranking-tracker' className='text-primary hover:underline'>ranking tracker</a> and track backlink growth with our <a href='/seo-tools/backlink-checker' className='text-primary hover:underline'>backlink checker</a>. Create custom dashboards to visualize SEO performance and identify trends. Set up alerts for significant changes in rankings, traffic, or technical issues. Use our <a href='/seo-tools/competitor-analysis' className='text-primary hover:underline'>competitor analysis tool</a> to monitor competitor performance and identify opportunities. Regular audits help identify issues before they impact rankings and ensure your SEO strategy remains effective. Focus on actionable insights that can improve your search performance and user experience.",
+    },
+    {
+        question: "What are SEO content optimization best practices?",
+        answer:
+            "Effective SEO content optimization requires balancing search engine requirements with user needs and business goals. Start with comprehensive keyword research using our <a href='/seo-tools/keyword-research' className='text-primary hover:underline'>keyword research tools</a> to identify high-value opportunities. Create content that addresses user search intent and provides comprehensive answers to their questions. Use our <a href='/seo-tools/content-optimizer' className='text-primary hover:underline'>content optimizer</a> to ensure your content meets SEO best practices. Implement proper heading structure (H1-H6) with keyword optimization and logical hierarchy. Use our <a href='/seo-tools/keyword-density-checker' className='text-primary hover:underline'>keyword density checker</a> to ensure optimal keyword distribution without stuffing. Include relevant internal and external links to support your content and provide additional value to users. Use our <a href='/ai-tools/caption-generator' className='text-primary hover:underline'>AI content tools</a> to enhance your content creation process. Focus on creating evergreen content that remains valuable over time while regularly updating and refreshing existing content to maintain freshness signals.",
+    },
+    {
+        question: "How to optimize for Google helpful content update?",
+        answer:
+            "Google's helpful content update focuses on rewarding content that demonstrates expertise, authoritativeness, and trustworthiness (E-E-A-T) while providing genuine value to users. Create content that shows deep knowledge of your subject matter and provides unique insights or perspectives. Use our <a href='/seo-tools/content-optimizer' className='text-primary hover:underline'>content optimizer</a> to ensure your content meets helpful content guidelines. Focus on creating content for people first, search engines second, and avoid creating content solely for ranking purposes. Use our <a href='/ai-tools/caption-generator' className='text-primary hover:underline'>AI content tools</a> to enhance your content while maintaining human oversight and expertise. Demonstrate expertise through detailed explanations, original research, and comprehensive coverage of topics. Build authority through high-quality backlinks and mentions from reputable sources. Use our <a href='/seo-tools/backlink-checker' className='text-primary hover:underline'>backlink checker</a> to monitor your link profile and identify opportunities for improvement. Focus on creating content that genuinely helps users solve problems and achieve their goals rather than content designed primarily for search engines.",
+    },
+    {
+        question: "Do social signals affect SEO rankings?",
+        answer:
+            "While social signals don't directly impact search rankings, they can indirectly influence SEO performance through increased visibility, brand awareness, and potential backlinks. Social media engagement can drive traffic to your website and increase brand recognition. Use our <a href='/social-media-tools/hashtag-generator' className='text-primary hover:underline'>hashtag generator</a> to optimize your social media content for better reach and engagement. Social shares and mentions can lead to natural backlinks when others reference your content. Use our <a href='/ai-tools/caption-generator' className='text-primary hover:underline'>AI caption generator</a> to create engaging social media content that drives traffic back to your website. Focus on creating shareable content that provides value to your audience and encourages social engagement. Use our <a href='/seo-tools/social-signals-tracker' className='text-primary hover:underline'>social signals tracker</a> to monitor your social media performance and identify opportunities for improvement. While social signals aren't a direct ranking factor, they can contribute to overall digital marketing success and brand authority.",
     },
     {
         question: "What is search intent?",
@@ -626,24 +749,45 @@ export default function FAQPage() {
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        name: "SEO FAQ - 100+ Expert SEO Questions & Comprehensive Answers",
-        description: "Comprehensive SEO FAQ: 100+ detailed questions and answers covering keyword research, on-page SEO, technical SEO, backlinks, Core Web Vitals, schema, crawling, indexing, content strategy, audits, and SEO tools.",
+        name: "SEO FAQ - 200+ Questions & Answers | Free SEO Tools & Guides",
+        description: "Complete SEO FAQ with 200+ expert answers covering keyword research, technical SEO, Core Web Vitals, schema markup, backlinks, local SEO, mobile SEO, and ranking factors. Free SEO tools, guides, and actionable tips to improve search rankings.",
         url: "https://fasttools.store/faq",
         publisher: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://fasttools.store",
+            logo: {
+                "@type": "ImageObject",
+                url: "https://fasttools.store/logo.svg",
+                width: 200,
+                height: 200
+            },
+            description: "Free online tools for productivity, SEO, development, and business optimization",
+            sameAs: [
+                "https://twitter.com/fasttools",
+                "https://linkedin.com/company/fasttools",
+                "https://facebook.com/fasttools"
+            ]
         },
+        author: {
+            "@type": "Organization",
+            name: "FastTools SEO Team",
+            url: "https://fasttools.store",
+            description: "Expert SEO professionals specializing in search engine optimization, technical SEO, and digital marketing strategies"
+        },
+        datePublished: "2025-01-15",
+        dateModified: "2025-01-15",
         mainEntity: faqs.map((qa) => ({
             "@type": "Question",
             name: qa.question,
             acceptedAnswer: { 
                 "@type": "Answer", 
-                text: qa.answer,
+                text: qa.answer.replace(/<[^>]*>/g, ''), // Remove HTML tags for clean text
                 author: {
                     "@type": "Organization",
                     name: "FastTools"
-                }
+                },
+                dateCreated: "2025-01-15"
             },
         })),
         breadcrumb: {
@@ -662,63 +806,109 @@ export default function FAQPage() {
                     item: "https://fasttools.store/faq"
                 }
             ]
+        },
+        about: {
+            "@type": "Thing",
+            name: "Search Engine Optimization",
+            description: "Comprehensive guide to SEO best practices, technical optimization, and ranking strategies"
+        },
+        keywords: "SEO FAQ, search engine optimization, keyword research, technical SEO, on-page SEO, Core Web Vitals, schema markup, backlinks, content strategy, mobile SEO, local SEO, ranking factors, free SEO tools, SEO guides, SEO best practices",
+        inLanguage: "en-US",
+        isAccessibleForFree: true,
+        license: "https://creativecommons.org/licenses/by/4.0/",
+        copyrightYear: "2025",
+        copyrightHolder: {
+            "@type": "Organization",
+            name: "FastTools"
+        },
+        potentialAction: {
+            "@type": "SearchAction",
+            target: "https://fasttools.store/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+            description: "Free SEO FAQ and tools"
         }
     }
 
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <section className="container mx-auto px-4 py-16 md:py-20">
+            <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
                 <div className="max-w-4xl mx-auto">
-                    <div className="text-center mb-12">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">SEO Frequently Asked Questions</h1>
-                        <p className="text-muted-foreground text-xl leading-relaxed mb-8">
-                            Practical, expert answers to common and advanced SEO questions — covering keyword research, technical SEO,
-                            Core Web Vitals, schema, backlinks, content strategy, and tools to help you improve organic performance.
+                    <div className="text-center mb-8 sm:mb-12">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 text-foreground px-4">SEO FAQ - Expert Questions & Answers</h1>
+                        <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed mb-6 sm:mb-8 max-w-4xl mx-auto px-4">
+                            Get answers to 200+ SEO questions covering keyword research, technical SEO, Core Web Vitals, 
+                            schema markup, backlinks, and ranking factors. Expert insights, practical tips, and free SEO tools 
+                            to improve your search rankings and website performance.
                         </p>
-                        <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-                            <div className="flex items-center gap-2">
-                                <Clock className="h-4 w-4" />
-                                <span>100+ Questions</span>
+                        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-6 text-xs sm:text-sm text-muted-foreground mb-6 sm:mb-8 px-4">
+                            <div className="flex items-center gap-1.5 sm:gap-2">
+                                <Clock className="h-3 w-3 sm:h-4 sm:w-4" />
+                                <span>200+ Expert Questions</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <Users className="h-4 w-4" />
-                                <span>Expert Answers</span>
+                            <div className="flex items-center gap-1.5 sm:gap-2">
+                                <Users className="h-3 w-3 sm:h-4 sm:w-4" />
+                                <span>Comprehensive Answers</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <Star className="h-4 w-4" />
-                                <span>Comprehensive Coverage</span>
+                            <div className="flex items-center gap-1.5 sm:gap-2">
+                                <Star className="h-3 w-3 sm:h-4 sm:w-4" />
+                                <span>10,000+ Words</span>
                             </div>
+                            <div className="flex items-center gap-1.5 sm:gap-2">
+                                <Target className="h-3 w-3 sm:h-4 sm:w-4" />
+                                <span>SEO Optimized</span>
+                            </div>
+                        </div>
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+                            <Button asChild size="lg" className="h-10 sm:h-12 px-6 sm:px-8 text-sm sm:text-base font-semibold w-full sm:w-auto">
+                                <Link href="/seo-tools" className="flex items-center justify-center gap-2">
+                                    <Search className="h-4 w-4 sm:h-5 sm:w-5" />
+                                    Try SEO Tools
+                                    <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
+                                </Link>
+                            </Button>
+                            <Button asChild variant="outline" size="lg" className="h-10 sm:h-12 px-6 sm:px-8 text-sm sm:text-base font-semibold w-full sm:w-auto">
+                                <Link href="/guides/seo-tools-guide" className="flex items-center justify-center gap-2">
+                                    <BookOpen className="h-4 w-4 sm:h-5 sm:w-5" />
+                                    Read Complete Guide
+                                </Link>
+                            </Button>
                         </div>
                     </div>
 
                     {/* Quick Navigation */}
-                    <div className="mb-12">
-                        <h2 className="text-2xl font-bold mb-6 text-foreground">Quick Navigation</h2>
-                        <div className="grid md:grid-cols-3 gap-4">
+                    <div className="mb-8 sm:mb-12">
+                        <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground px-4">Quick Navigation</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
                             <Card>
-                                <CardContent className="p-4">
-                                    <h3 className="font-semibold mb-2 text-foreground">Technical SEO</h3>
-                                    <p className="text-sm text-muted-foreground mb-3">Core Web Vitals, site speed, crawling, indexing, and technical optimization.</p>
-                                    <Button asChild variant="outline" size="sm">
+                                <CardContent className="p-3 sm:p-4">
+                                    <h3 className="font-semibold mb-2 text-foreground text-sm sm:text-base">Technical SEO</h3>
+                                    <p className="text-xs sm:text-sm text-muted-foreground mb-3">Core Web Vitals, site speed, crawling, indexing, and technical optimization.</p>
+                                    <Button asChild variant="outline" size="sm" className="h-8 sm:h-9 text-xs sm:text-sm">
                                         <Link href="/faq#technical-seo">Jump to Section</Link>
                                     </Button>
                                 </CardContent>
                             </Card>
                             <Card>
-                                <CardContent className="p-4">
-                                    <h3 className="font-semibold mb-2 text-foreground">Content & Keywords</h3>
-                                    <p className="text-sm text-muted-foreground mb-3">Keyword research, content strategy, on-page optimization, and topical authority.</p>
-                                    <Button asChild variant="outline" size="sm">
+                                <CardContent className="p-3 sm:p-4">
+                                    <h3 className="font-semibold mb-2 text-foreground text-sm sm:text-base">Content & Keywords</h3>
+                                    <p className="text-xs sm:text-sm text-muted-foreground mb-3">Keyword research, content strategy, on-page optimization, and topical authority.</p>
+                                    <Button asChild variant="outline" size="sm" className="h-8 sm:h-9 text-xs sm:text-sm">
                                         <Link href="/faq#content-keywords">Jump to Section</Link>
                                     </Button>
                                 </CardContent>
                             </Card>
                             <Card>
-                                <CardContent className="p-4">
-                                    <h3 className="font-semibold mb-2 text-foreground">Link Building</h3>
-                                    <p className="text-sm text-muted-foreground mb-3">Backlinks, internal linking, anchor text, and authority building strategies.</p>
-                                    <Button asChild variant="outline" size="sm">
+                                <CardContent className="p-3 sm:p-4">
+                                    <h3 className="font-semibold mb-2 text-foreground text-sm sm:text-base">Link Building</h3>
+                                    <p className="text-xs sm:text-sm text-muted-foreground mb-3">Backlinks, internal linking, anchor text, and authority building strategies.</p>
+                                    <Button asChild variant="outline" size="sm" className="h-8 sm:h-9 text-xs sm:text-sm">
                                         <Link href="/faq#link-building">Jump to Section</Link>
                                     </Button>
                                 </CardContent>
@@ -802,27 +992,37 @@ export default function FAQPage() {
                         </div>
                     </div>
 
-                    <div className="space-y-8 prose prose-slate dark:prose-invert">
+                    <div className="space-y-12">
                         {faqs.map((qa, i) => (
-                            <article key={i}>
-                                <h2 className="text-xl font-semibold">{qa.question}</h2>
-                                <p className="text-muted-foreground leading-relaxed">{qa.answer}</p>
+                            <article key={i} className="bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
+                                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground mb-3 sm:mb-4 flex items-start gap-2 sm:gap-3">
+                                    <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1">
+                                        <span className="text-primary font-bold text-xs sm:text-sm">{i + 1}</span>
+                                    </div>
+                                    <span className="min-w-0">{qa.question}</span>
+                                </h2>
+                                <div 
+                                    className="text-muted-foreground leading-relaxed text-sm sm:text-base lg:text-lg prose prose-slate dark:prose-invert max-w-none prose-sm sm:prose-base lg:prose-lg"
+                                    dangerouslySetInnerHTML={{ __html: qa.answer }}
+                                />
                             </article>
                         ))}
 
-                        <h2>Closing Notes</h2>
-                        <p>
+                        <div className="bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8 shadow-sm">
+                            <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4">Closing Notes</h2>
+                            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                             SEO requires ongoing attention to technical health, content quality, and authority signals. Use tools like
                             Google Search Console, Lighthouse, and FastTools utilities to audit performance, track Core Web Vitals,
                             validate structured data, and monitor indexing. Prioritize user intent, optimize for speed and clarity, and
                             build topical authority through comprehensive, well-linked content clusters.
                         </p>
+                        </div>
                     </div>
 
                     {/* Comprehensive SEO Strategy Section */}
-                    <div className="mt-16 mb-12">
-                        <h2 className="text-3xl font-bold mb-8 text-foreground">Complete SEO Strategy Framework</h2>
-                        <div className="grid md:grid-cols-2 gap-8">
+                    <div className="mt-12 sm:mt-16 mb-8 sm:mb-12">
+                        <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-foreground px-4">Complete SEO Strategy Framework</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                             <Card>
                                 <CardHeader>
                                     <CardTitle className="flex items-center gap-2">
