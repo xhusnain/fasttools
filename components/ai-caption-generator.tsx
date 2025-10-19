@@ -73,10 +73,10 @@ export function AiCaptionGenerator() {
   const selectedPlatform = PLATFORMS.find(p => p.value === platform)
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Input Section */}
-      <div className="grid gap-6">
-        <div className="space-y-3">
+      <div className="grid gap-8">
+        <div className="space-y-4">
           <Label htmlFor="description" className="text-base font-semibold">
             Describe Your Content
           </Label>
@@ -85,7 +85,7 @@ export function AiCaptionGenerator() {
             placeholder="Describe your image or content... e.g., 'sunset at the beach with friends', 'coffee and laptop workspace', 'workout at the gym', 'delicious homemade pasta'"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="min-h-[120px] text-base"
+            className="min-h-[120px] text-base border-2 border-primary/30 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
             disabled={loading}
           />
           <p className="text-sm text-muted-foreground">
@@ -93,7 +93,7 @@ export function AiCaptionGenerator() {
           </p>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-4">
           <Label htmlFor="platform" className="text-base font-semibold">
             Choose Platform
           </Label>

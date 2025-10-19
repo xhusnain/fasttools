@@ -52,6 +52,13 @@ export function Header() {
             Contact
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
           </Link>
+          <Link
+            href="/social-media-tools/tiktok-downloader"
+            className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 relative group"
+          >
+            TikTok Downloader
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+          </Link>
           {/* Theme toggle removed to keep dark mode default */}
         </div>
 
@@ -113,6 +120,13 @@ export function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   AI Tools
+                </Link>
+                <Link
+                  href="/social-media-tools/tiktok-downloader"
+                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  TikTok Downloader
                 </Link>
               </div>
             </div>

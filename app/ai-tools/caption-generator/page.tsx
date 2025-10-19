@@ -2,146 +2,119 @@ import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AiCaptionGenerator } from "@/components/ai-caption-generator"
 import { AdSpace } from "@/components/ad-space"
-import { Sparkles } from "lucide-react"
+import { 
+  Sparkles, 
+  Calculator, 
+  BarChart3, 
+  TrendingUp, 
+  BookOpen, 
+  Users, 
+  Clock, 
+  Target, 
+  AlertCircle, 
+  Home, 
+  DollarSign, 
+  FileText, 
+  Award, 
+  Globe, 
+  PieChart,
+  Hash,
+  Smile,
+  Music,
+  Heart
+} from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Free AI Caption Generator | Create Viral Social Media Captions | FastTools",
   description:
     "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator with 7 platforms support. Boost engagement with our advanced AI-powered caption maker.",
-  keywords: [
-    // Primary Keywords (20)
-    "AI caption generator",
-    "free AI caption generator",
-    "AI content generator",
-    "AI writing assistant",
-    "AI social media tools",
-    "AI content creator",
-    "AI text generator",
-    "AI productivity tools",
-    "AI writing tool",
-    "AI content creation",
-    "AI copywriting",
-    "AI marketing tools",
-    "AI social media automation",
-    "AI content strategy",
-    "AI digital marketing",
-    "AI content planning",
-    "AI social media management",
-    "AI content optimization",
-    "AI content strategy",
-    "AI content marketing",
-    
-    // Secondary Keywords (20)
-    "social media captions",
-    "Instagram captions",
-    "Facebook captions",
-    "Twitter captions",
-    "LinkedIn captions",
-    "TikTok captions",
-    "viral captions",
-    "engaging captions",
-    "caption ideas",
-    "post captions",
-    "social media copy",
-    "content generator",
-    "free caption generator",
-    "automated captions",
-    "caption templates",
-    "viral post generator",
-    "social media engagement",
-    "content marketing",
-    "digital marketing",
-    "social media strategy",
-    
-    // Long-tail Keywords (20)
-    "free AI caption generator for Instagram",
-    "best AI caption generator online",
-    "AI caption generator with templates",
-    "free AI social media caption generator",
-    "AI caption generator for Facebook",
-    "AI caption generator for Twitter",
-    "AI caption generator for LinkedIn",
-    "AI caption generator for TikTok",
-    "viral AI caption generator",
-    "engaging AI caption generator",
-    "AI caption generator for business",
-    "AI caption generator for influencers",
-    "AI caption generator for content creators",
-    "AI caption generator for marketers",
-    "AI caption generator for social media managers",
-    "AI caption generator for brands",
-    "AI caption generator for agencies",
-    "AI caption generator for entrepreneurs",
-    "AI caption generator for small business",
-    "AI caption generator for startups",
-    
-    // Additional SEO Keywords
-    "caption writing",
-    "content creation tool",
-    "social media content",
-    "caption optimization",
-    "social media copywriting",
-    "viral content generator",
-    "social media trends",
-    "content planning",
-    "social media management",
-    "content strategy",
-    "social media growth",
-    "viral marketing",
-    "social media tips",
-    "content calendar",
-    "social media planning",
-    "digital content creation",
-    "social media optimization",
-    "viral social media",
-    "content marketing tool",
-    "social media branding",
-    
-    // Trending 2024 Keywords
-    "AI content creation 2024",
-    "social media automation",
-    "caption generator free",
-    "Instagram caption ideas",
-    "TikTok caption generator",
-    "LinkedIn post generator",
-    "Facebook caption maker",
-    "Twitter caption creator",
-    "YouTube description generator",
-    "Pinterest caption maker",
-    "social media AI tools",
-    "content generator online",
-    "free caption maker",
-    "AI writing assistant",
-    "social media copy generator",
-    "viral caption maker",
-    "engagement caption generator",
-    "social media post ideas",
-    "content creation AI",
-    "automated caption generator",
-    
-    // Long-tail Trending Keywords
-    "best free AI caption generator 2024",
-    "Instagram caption generator with hashtags",
-    "TikTok viral caption generator",
-    "LinkedIn professional caption generator",
-    "Facebook engaging caption maker",
-    "Twitter trending caption generator",
-    "YouTube video description AI",
-    "Pinterest SEO caption generator",
-    "social media content AI assistant",
-    "free viral caption generator online",
-    "AI-powered social media tools",
-    "automated social media content",
-    "caption generator for influencers",
-    "social media manager AI tools",
-    "content creator caption generator",
-    "brand social media caption AI",
-    "e-commerce social media captions",
-    "fitness influencer caption generator",
-    "food blogger caption AI",
-    "travel social media caption maker"
-  ],
-  openGraph: {
+    keywords: [
+        // --- Primary Focus Keywords ---
+        "AI caption generator",
+        "free AI caption generator",
+        "AI social media caption generator",
+        "AI content generator",
+        "AI writing assistant",
+        "AI content creator",
+        "AI writing tool",
+        "AI copywriting tool",
+        "AI marketing tools",
+        "AI social media tools",
+        "AI content creation tool",
+        "AI post caption generator",
+        "AI productivity tools",
+        "AI content marketing",
+        "AI content planner",
+        "AI text generator",
+        "AI content strategy",
+        "AI digital marketing tool",
+        "AI automation tools",
+        "AI social media manager",
+
+        // --- Social Media Specific ---
+        "Instagram caption generator",
+        "Facebook caption generator",
+        "LinkedIn caption generator",
+        "TikTok caption generator",
+        "YouTube caption generator",
+        "Pinterest caption generator",
+        "Twitter caption generator",
+        "social media caption maker",
+        "viral caption generator",
+        "engaging caption generator",
+        "creative caption generator",
+        "caption ideas generator",
+        "AI hashtag generator",
+        "post caption maker",
+        "social media copy generator",
+        "AI content writing generator",
+
+        // --- Long-tail & Niche Keywords ---
+        "free AI caption generator for Instagram",
+        "AI caption generator for businesses",
+        "AI caption generator for influencers",
+        "AI caption generator for content creators",
+        "AI caption generator for marketers",
+        "AI caption generator for agencies",
+        "AI caption generator for small business",
+        "AI caption generator for startups",
+        "AI caption generator for brands",
+        "AI caption generator for social media managers",
+        "AI caption generator for e-commerce",
+        "AI caption generator for fitness influencers",
+        "AI caption generator for travel bloggers",
+        "AI caption generator for food bloggers",
+        "AI caption generator with templates",
+        "viral post caption generator",
+        "AI caption generator with hashtags",
+        "best AI caption generator 2025",
+        "free social media caption generator online",
+        "AI-powered social media caption tool",
+
+        // --- Related SEO & Engagement Keywords ---
+        "caption writing tool",
+        "social media content generator",
+        "social media post ideas",
+        "caption optimization tool",
+        "social media copywriting",
+        "content marketing AI",
+        "social media automation",
+        "digital content creation",
+        "social media planning",
+        "content strategy planner",
+        "content calendar generator",
+        "social media engagement tool",
+        "viral content generator",
+        "social media branding",
+        "AI social media optimization",
+        "automated caption generator",
+        "social media AI tools",
+        "AI content generation software",
+        "caption creator online",
+        "free caption maker"
+    ],
+
+    openGraph: {
     title: "Free AI Caption Generator | Create Viral Social Media Captions | FastTools",
     description: "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator with 7 platforms support.",
     type: "website",
@@ -198,12 +171,12 @@ export const metadata: Metadata = {
 export default function CaptionGeneratorPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "Free AI Caption Generator",
-    description: "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator with 7 platforms support.",
+    "@type": "WebApplication",
+    name: "AI Caption Generator | Advanced Social Media Caption Generator - Professional Content Creation Tool",
+    description: "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator with 7 platforms support. Boost engagement with our advanced AI-powered caption maker.",
     applicationCategory: "SocialMediaApplication",
     operatingSystem: "Web Browser",
-    url: "https://fasttools.store/ai-tools/caption-generator",
+    url: "https://www.fasttools.store/ai-tools/caption-generator",
     offers: {
       "@type": "Offer",
       price: "0",
@@ -236,30 +209,28 @@ export default function CaptionGeneratorPage() {
       "Multiple caption styles",
       "Instant results",
       "Mobile optimized",
-      "Real-time generation"
+      "Real-time generation",
+      "Trending hashtag integration",
+      "Brand voice customization"
     ],
-    author: {
+    creator: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store",
-      logo: "https://fasttools.store/logo.svg",
-      sameAs: [
-        "https://twitter.com/fasttools",
-        "https://facebook.com/fasttools"
-      ]
+      url: "https://www.fasttools.store",
+      logo: "https://www.fasttools.store/logo.svg"
     },
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store",
-      logo: "https://fasttools.store/logo.svg"
+      url: "https://www.fasttools.store",
+      logo: "https://www.fasttools.store/logo.svg"
     },
     datePublished: new Date().toISOString().split('T')[0],
     dateModified: new Date().toISOString().split('T')[0],
     version: "2.1",
     softwareVersion: "2.1",
-    downloadUrl: "https://fasttools.store/ai-tools/caption-generator",
-    screenshot: "https://fasttools.store/og-image.svg",
+    downloadUrl: "https://www.fasttools.store/ai-tools/caption-generator",
+    screenshot: "https://www.fasttools.store/og-image.svg",
     keywords: "AI caption generator, free AI caption generator, social media captions, Instagram captions, Facebook captions, Twitter captions, LinkedIn captions, TikTok captions, Pinterest captions, YouTube captions, viral captions, engaging captions, AI content creation, social media marketing, caption maker, post generator",
     about: {
       "@type": "Thing",
@@ -269,18 +240,18 @@ export default function CaptionGeneratorPage() {
     isPartOf: {
       "@type": "WebSite",
       name: "FastTools",
-      url: "https://fasttools.store",
+      url: "https://www.fasttools.store",
       potentialAction: {
         "@type": "SearchAction",
-        target: "https://fasttools.store/search?q={search_term_string}",
+        target: "https://www.fasttools.store/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     },
     mainEntity: {
       "@type": "WebPage",
-      name: "Free AI Caption Generator",
+      name: "AI Caption Generator | Advanced Social Media Caption Generator",
       description: "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly.",
-      url: "https://fasttools.store/ai-tools/caption-generator",
+      url: "https://www.fasttools.store/ai-tools/caption-generator",
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -288,19 +259,19 @@ export default function CaptionGeneratorPage() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://fasttools.store"
+            item: "https://www.fasttools.store"
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "AI Tools",
-            item: "https://fasttools.store/ai-tools"
+            item: "https://www.fasttools.store/ai-tools"
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Caption Generator",
-            item: "https://fasttools.store/ai-tools/caption-generator"
+            item: "https://www.fasttools.store/ai-tools/caption-generator"
           }
         ]
       }
@@ -359,403 +330,353 @@ export default function CaptionGeneratorPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       
-      <div className="container mx-auto px-4 py-12">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "AI Tools", href: "/ai-tools" },
-            { label: "Caption Generator", href: "/ai-tools/caption-generator" },
-          ]}
-        />
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-2 xs:px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-2 xs:py-3 sm:py-4 md:py-6 lg:py-8 xl:py-10 2xl:py-12">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "AI Tools", href: "/ai-tools" },
+              { label: "Caption Generator", href: "/ai-tools/caption-generator" },
+            ]}
+          />
 
-        <div className="max-w-6xl mx-auto">
-        {/* Hero Section with proper content-to-ad ratio */}
-        <div className="mb-8 animate-fade-in-up">
-          <div className="relative overflow-hidden min-h-[40vh] flex items-center">
-            {/* SEO-optimized heading structure */}
-            <h1 className="sr-only">Free AI Caption Generator - Create Viral Social Media Captions for Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube</h1>
-              {/* Vibrant Animated Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/40 via-purple-500/40 via-blue-500/40 to-cyan-500/40 animate-pulse"></div>
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/30 via-transparent to-transparent"></div>
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-red-400/20 via-transparent to-transparent"></div>
-              
-              {/* Colorful Floating Particles */}
-              <div className="absolute top-10 left-10 h-4 w-4 bg-pink-500 rounded-full animate-bounce animation-delay-100 shadow-lg shadow-pink-500/50"></div>
-              <div className="absolute top-20 right-20 h-5 w-5 bg-blue-500 rounded-full animate-bounce animation-delay-500 shadow-lg shadow-blue-500/50"></div>
-              <div className="absolute bottom-20 left-20 h-4 w-4 bg-yellow-500 rounded-full animate-bounce animation-delay-1000 shadow-lg shadow-yellow-500/50"></div>
-              <div className="absolute bottom-10 right-10 h-3 w-3 bg-green-500 rounded-full animate-bounce animation-delay-1500 shadow-lg shadow-green-500/50"></div>
-              
-              <div className="relative w-full bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 lg:p-10 border-2 border-white/30 shadow-2xl hover:shadow-purple-500/25 transition-all duration-500">
-                <div className="text-center space-y-4">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-400/30 text-pink-100 text-sm font-semibold mb-4">
-                    <Sparkles className="h-4 w-4 animate-pulse" />
-                    <span>AI-Powered • 100% Free • No Registration</span>
-                  </div>
-                  
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 via-blue-400 via-cyan-400 to-yellow-400 leading-tight">
-                    Free AI Caption Generator
-                  </h1>
-                  
-                  <p className="text-lg sm:text-xl text-white/85 max-w-3xl mx-auto leading-relaxed">
-                    Generate viral social media captions with AI. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, and YouTube captions instantly. 
-                    <span className="font-semibold text-white"> Boost your social media engagement with our free AI-powered caption generator.</span>
-                  </p>
-                  
-                  <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-white/70">
-                    <div className="flex items-center gap-2">
-                      <div className="h-2 w-2 bg-green-400 rounded-full animate-pulse"></div>
-                      <span>7 Social Platforms</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="h-2 w-2 bg-blue-400 rounded-full animate-pulse"></div>
-                      <span>5 Captions Per Request</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="h-2 w-2 bg-purple-400 rounded-full animate-pulse"></div>
-                      <span>Instant Results</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="h-2 w-2 bg-pink-400 rounded-full animate-pulse"></div>
-                      <span>Mobile Optimized</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="mb-6 xs:mb-8 sm:mb-10 md:mb-12">
+            <h1 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-2 xs:mb-3 sm:mb-4 text-yellow-400">
+              AI Caption Generator
+            </h1>
+            <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
+              Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 
+              <span className="font-semibold text-foreground"> Boost your social media engagement with our free AI-powered caption generator.</span>
+            </p>
           </div>
 
-          {/* First Ad Space - After Hero Content */}
-          <div className="mb-8">
-            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] xl:grid-cols-[1fr_320px] 2xl:grid-cols-[1fr_380px] gap-2 xs:gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10">
+            <div className="space-y-4 xs:space-y-6 sm:space-y-8">
+              <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                <AiCaptionGenerator />
+              </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2">
-              <div className="animate-fade-in-up animation-delay-200">
-                <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border-2 border-white/30 shadow-2xl hover:shadow-purple-500/25 transition-all duration-500">
-                  <AiCaptionGenerator />
+              {/* Mobile AdSpace */}
+              <div className="lg:hidden">
+                <AdSpace slot="content" className="w-full h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
+              </div>
+
+              {/* How to Use Section */}
+              <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-yellow-400 flex items-center gap-1 xs:gap-2">
+                  <div className="p-1 xs:p-1.5 sm:p-2 bg-yellow-500/20 rounded-lg flex-shrink-0">
+                    <BookOpen className="h-3 xs:h-4 sm:h-5 w-3 xs:w-4 sm:w-5" />
+                  </div>
+                  How to Use
+                </h2>
+                <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 xs:gap-3">
+                  <div className="p-2 xs:p-3 bg-blue-500/20 rounded-lg border border-blue-400/30">
+                    <h3 className="font-semibold text-blue-200 text-xs xs:text-sm sm:text-base mb-2">Step 1: Describe Content</h3>
+                    <p className="text-xs xs:text-sm text-blue-100">Enter a detailed description of your image, video, or content idea. Be specific about the mood, theme, or message.</p>
+                  </div>
+                  <div className="p-2 xs:p-3 bg-green-500/20 rounded-lg border border-green-400/30">
+                    <h3 className="font-semibold text-green-200 text-xs xs:text-sm sm:text-base mb-2">Step 2: Choose Platform</h3>
+                    <p className="text-xs xs:text-sm text-green-100">Select from Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest, or YouTube for optimized captions.</p>
+                  </div>
+                  <div className="p-2 xs:p-3 bg-purple-500/20 rounded-lg border border-purple-400/30">
+                    <h3 className="font-semibold text-purple-200 text-xs xs:text-sm sm:text-base mb-2">Step 3: Select Style</h3>
+                    <p className="text-xs xs:text-sm text-purple-100">Choose your caption style: professional, casual, funny, inspirational, or promotional.</p>
+                  </div>
+                  <div className="p-2 xs:p-3 bg-orange-500/20 rounded-lg border border-orange-400/30">
+                    <h3 className="font-semibold text-orange-200 text-xs xs:text-sm sm:text-base mb-2">Step 4: Generate & Use</h3>
+                    <p className="text-xs xs:text-sm text-orange-100">Get 5 unique captions instantly. Copy, customize, or regenerate until you find the perfect match.</p>
+                  </div>
                 </div>
               </div>
 
-              {/* Second Ad Space - After Tool */}
-              <div className="my-8">
-                <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+              {/* Key Features Section */}
+              <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-yellow-400 flex items-center gap-1 xs:gap-2">
+                  <div className="p-1 xs:p-1.5 sm:p-2 bg-yellow-500/20 rounded-lg flex-shrink-0">
+                    <Target className="h-3 xs:h-4 sm:h-5 w-3 xs:w-4 sm:w-5" />
+                  </div>
+                  Key Features
+                </h2>
+                <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 xs:gap-3">
+                  <div className="p-2 xs:p-3 bg-blue-500/20 rounded-lg border border-blue-400/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Sparkles className="h-4 w-4 text-blue-400" />
+                      <h3 className="font-semibold text-blue-200 text-xs xs:text-sm sm:text-base">AI-Powered Generation</h3>
+                    </div>
+                    <p className="text-xs xs:text-sm text-blue-100">Advanced AI creates engaging, platform-specific captions using emotional triggers and trending topics.</p>
+                  </div>
+                  <div className="p-2 xs:p-3 bg-green-500/20 rounded-lg border border-green-400/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Globe className="h-4 w-4 text-green-400" />
+                      <h3 className="font-semibold text-green-200 text-xs xs:text-sm sm:text-base">7 Platforms Support</h3>
+                    </div>
+                    <p className="text-xs xs:text-sm text-green-100">Optimized for Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest, and YouTube.</p>
+                  </div>
+                  <div className="p-2 xs:p-3 bg-purple-500/20 rounded-lg border border-purple-400/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      <TrendingUp className="h-4 w-4 text-purple-400" />
+                      <h3 className="font-semibold text-purple-200 text-xs xs:text-sm sm:text-base">Viral Templates</h3>
+                    </div>
+                    <p className="text-xs xs:text-sm text-purple-100">Access trending caption formats and viral content templates for maximum engagement.</p>
+                  </div>
+                  <div className="p-2 xs:p-3 bg-orange-500/20 rounded-lg border border-orange-400/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Clock className="h-4 w-4 text-orange-400" />
+                      <h3 className="font-semibold text-orange-200 text-xs xs:text-sm sm:text-base">Instant Results</h3>
+                    </div>
+                    <p className="text-xs xs:text-sm text-orange-100">Generate 5 unique captions in seconds with no waiting time or processing delays.</p>
+                  </div>
+                  <div className="p-2 xs:p-3 bg-red-500/20 rounded-lg border border-red-400/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Users className="h-4 w-4 text-red-400" />
+                      <h3 className="font-semibold text-red-200 text-xs xs:text-sm sm:text-base">Brand Voice</h3>
+                    </div>
+                    <p className="text-xs xs:text-sm text-red-100">Customize captions to match your brand voice and maintain consistency across platforms.</p>
+                  </div>
+                  <div className="p-2 xs:p-3 bg-cyan-500/20 rounded-lg border border-cyan-400/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Award className="h-4 w-4 text-cyan-400" />
+                      <h3 className="font-semibold text-cyan-200 text-xs xs:text-sm sm:text-base">Free Forever</h3>
+                    </div>
+                    <p className="text-xs xs:text-sm text-cyan-100">Completely free with no registration required, usage limits, or hidden costs.</p>
+                  </div>
+                </div>
               </div>
 
-              <div className="mt-12 prose prose-slate max-w-none animate-fade-in-up animation-delay-400">
-                <h2 className="text-2xl font-bold mb-4 text-primary">How to Use the AI Caption Generator</h2>
-                <p className="text-secondary leading-relaxed mb-4">
-                  Our AI caption generator is designed to help you create engaging social media content that drives engagement. 
-                  Simply follow these steps to generate viral captions:
-                </p>
-                <ol className="list-decimal list-inside space-y-2 text-secondary">
-                  <li>Upload your image or describe your content</li>
-                  <li>Select your target social media platform</li>
-                  <li>Choose your caption style (professional, casual, funny, etc.)</li>
-                  <li>Click "Generate Captions" to get multiple options</li>
-                  <li>Copy and use your favorite caption</li>
-                </ol>
-
-                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Why Use Our AI Caption Generator?</h2>
-                <p className="text-secondary leading-relaxed mb-4">
-                  Creating engaging social media captions can be time-consuming and challenging. Our AI caption generator 
-                  helps you create viral content that increases engagement, drives traffic, and builds your social media presence. 
-                  Perfect for influencers, businesses, content creators, and social media managers.
-                </p>
-
-                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Key Features</h2>
-                <ul className="list-disc list-inside space-y-2 text-secondary">
-                  <li>AI-powered caption generation for all social media platforms</li>
-                  <li>Multiple caption styles and tones</li>
-                  <li>Platform-specific optimization (Instagram, Facebook, Twitter, LinkedIn, TikTok)</li>
-                  <li>Viral caption templates and trending formats</li>
-                  <li>Engagement-focused content suggestions</li>
-                  <li>Free to use with no registration required</li>
-                  <li>Instant results with multiple options</li>
-                  <li>SEO-optimized for better discoverability</li>
-                </ul>
-
-                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Best Practices for Social Media Captions</h2>
-                <p className="text-secondary leading-relaxed mb-4">
-                  To maximize engagement with your social media captions, consider these proven strategies:
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-secondary">
-                  <li>Start with a hook to grab attention in the first few words</li>
-                  <li>Use relevant hashtags (but don't overdo it)</li>
-                  <li>Ask questions to encourage comments</li>
-                  <li>Include a call-to-action</li>
-                  <li>Match your brand voice and tone</li>
-                  <li>Use emojis strategically to add personality</li>
-                  <li>Keep captions concise but engaging</li>
-                </ul>
-
-                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Platform-Specific Caption Strategies</h2>
-                <p className="text-secondary leading-relaxed mb-4">
-                  Different social media platforms have different best practices for captions:
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-secondary">
-                  <li><strong>Instagram:</strong> Focus on storytelling and visual appeal</li>
-                  <li><strong>Facebook:</strong> Encourage discussion and community engagement</li>
-                  <li><strong>Twitter:</strong> Keep it concise and use trending hashtags</li>
-                  <li><strong>LinkedIn:</strong> Professional tone with industry insights</li>
-                  <li><strong>TikTok:</strong> Trendy, fun, and engaging content</li>
-                </ul>
-
-                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Caption Writing Psychology and Engagement</h2>
-                <p className="text-secondary leading-relaxed mb-4">
-                  Understanding the psychology behind engaging captions can significantly improve your social media performance:
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-secondary">
-                  <li>Use emotional triggers to create connection with your audience</li>
-                  <li>Create curiosity gaps that encourage users to read more</li>
-                  <li>Use storytelling techniques to make content more memorable</li>
-                  <li>Include social proof elements like testimonials or user-generated content</li>
-                  <li>Use power words that evoke strong emotional responses</li>
-                  <li>Create urgency with time-sensitive language when appropriate</li>
-                  <li>Use personal pronouns to create a direct connection</li>
-                  <li>Include specific numbers and data to add credibility</li>
-                </ul>
-
-                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Content Types and Caption Strategies</h2>
-                <p className="text-secondary leading-relaxed mb-4">
-                  Different types of content require different caption approaches:
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-secondary">
-                  <li><strong>Educational Content:</strong> Lead with the main benefit, use bullet points, include actionable tips</li>
-                  <li><strong>Behind-the-Scenes:</strong> Share personal stories, show vulnerability, create authenticity</li>
-                  <li><strong>Product Showcases:</strong> Highlight key features, use benefit-focused language, include social proof</li>
-                  <li><strong>User-Generated Content:</strong> Thank the creator, highlight the community, encourage more submissions</li>
-                  <li><strong>Inspirational Posts:</strong> Use motivational language, share personal experiences, include quotes</li>
-                  <li><strong>Promotional Content:</strong> Create urgency, highlight value proposition, include clear call-to-action</li>
-                </ul>
-
-                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Advanced Caption Techniques</h2>
-                <p className="text-secondary leading-relaxed mb-4">
-                  Master these advanced techniques to create captions that drive maximum engagement:
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-secondary">
-                  <li>Use the "pattern interrupt" technique to grab attention</li>
-                  <li>Create cliffhangers that encourage users to engage</li>
-                  <li>Use the "before and after" format for transformation stories</li>
-                  <li>Implement the "problem-agitation-solution" structure</li>
-                  <li>Use the "what, why, how" framework for educational content</li>
-                  <li>Create captions that encourage user-generated content</li>
-                  <li>Use seasonal and trending topics to stay relevant</li>
-                  <li>Implement A/B testing to optimize caption performance</li>
-                </ul>
-
-                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Measuring Caption Performance</h2>
-                <p className="text-secondary leading-relaxed mb-4">
-                  Track and analyze your caption performance to continuously improve your social media strategy:
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-secondary">
-                  <li>Monitor engagement rates (likes, comments, shares, saves)</li>
-                  <li>Track reach and impressions to understand visibility</li>
-                  <li>Analyze click-through rates on links in captions</li>
-                  <li>Monitor comment sentiment and quality</li>
-                  <li>Track follower growth attributed to specific captions</li>
-                  <li>Use analytics tools to identify top-performing caption styles</li>
-                  <li>Test different caption lengths and formats</li>
-                  <li>Monitor hashtag performance within captions</li>
-                </ul>
-
-                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Frequently Asked Questions</h2>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2 text-primary">Is the AI caption generator free to use?</h3>
-                    <p className="text-secondary">Yes, our AI caption generator is completely free to use with no registration required. You can generate unlimited captions for your social media posts.</p>
+              {/* Use Cases Section */}
+              <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-yellow-400 flex items-center gap-1 xs:gap-2">
+                  <div className="p-1 xs:p-1.5 sm:p-2 bg-yellow-500/20 rounded-lg flex-shrink-0">
+                    <BarChart3 className="h-3 xs:h-4 sm:h-5 w-3 xs:w-4 sm:w-5" />
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2 text-primary">Can I use the generated captions commercially?</h3>
-                    <p className="text-secondary">Yes, all captions generated by our AI are original and free from copyright restrictions. You can use them in your commercial social media marketing.</p>
+                  Use Cases
+                </h2>
+                <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 xs:gap-3">
+                  <div className="p-2 xs:p-3 bg-blue-500/20 rounded-lg border border-blue-400/30">
+                    <h3 className="font-semibold text-blue-200 text-xs xs:text-sm sm:text-base mb-2">Content Creators</h3>
+                    <p className="text-xs xs:text-sm text-blue-100">Generate engaging captions for YouTube, Instagram, TikTok, and other social media platforms to boost engagement.</p>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2 text-primary">What social media platforms does the AI support?</h3>
-                    <p className="text-secondary">Our AI supports all major social media platforms including Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest, and more.</p>
+                  <div className="p-2 xs:p-3 bg-green-500/20 rounded-lg border border-green-400/30">
+                    <h3 className="font-semibold text-green-200 text-xs xs:text-sm sm:text-base mb-2">Businesses</h3>
+                    <p className="text-xs xs:text-sm text-green-100">Create professional captions for product launches, announcements, and marketing campaigns.</p>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2 text-primary">How do I make my captions more engaging?</h3>
-                    <p className="text-secondary">Use emotional triggers, ask questions, include calls-to-action, tell stories, use relevant hashtags, and match your brand voice consistently.</p>
+                  <div className="p-2 xs:p-3 bg-purple-500/20 rounded-lg border border-purple-400/30">
+                    <h3 className="font-semibold text-purple-200 text-xs xs:text-sm sm:text-base mb-2">Influencers</h3>
+                    <p className="text-xs xs:text-sm text-purple-100">Maintain consistent brand voice across all platforms with AI-generated captions that match your style.</p>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2 text-primary">Can I customize the generated captions?</h3>
-                    <p className="text-secondary">Absolutely! The AI-generated captions serve as a starting point. You can edit, modify, and personalize them to match your specific needs and brand voice.                </p>
+                  <div className="p-2 xs:p-3 bg-orange-500/20 rounded-lg border border-orange-400/30">
+                    <h3 className="font-semibold text-orange-200 text-xs xs:text-sm sm:text-base mb-2">Social Media Managers</h3>
+                    <p className="text-xs xs:text-sm text-orange-100">Save time and increase productivity by generating multiple caption options for client accounts.</p>
+                  </div>
+                </div>
               </div>
 
-            </div>
-
-                {/* SEO Content Section */}
-                <div className="mt-16 mb-12">
-                  <div className="prose prose-lg max-w-none">
-                    <h2 className="text-3xl font-bold mb-6 text-center">Why Choose Our AI Caption Generator?</h2>
-                    <div className="grid md:grid-cols-2 gap-8 mb-12">
-                      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl">
-                        <h3 className="text-xl font-semibold mb-4 text-blue-900">🚀 Advanced AI Technology</h3>
-                        <p className="text-gray-700 mb-4">Our AI caption generator uses cutting-edge Gemini 2.0 Flash Lite model to create engaging, platform-specific captions that drive real engagement and boost your social media presence.</p>
-                        <ul className="list-disc list-inside text-gray-700 space-y-2">
-                          <li>Powered by Google's latest Gemini AI</li>
-                          <li>Optimized for 7 major social platforms</li>
-                          <li>Context-aware content generation</li>
-                          <li>Trending hashtag integration</li>
-                        </ul>
-                      </div>
-                      <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl">
-                        <h3 className="text-xl font-semibold mb-4 text-green-900">💡 Smart Platform Optimization</h3>
-                        <p className="text-gray-700 mb-4">Each caption is tailored to your chosen platform's audience, character limits, and engagement patterns for maximum impact and reach.</p>
-                        <ul className="list-disc list-inside text-gray-700 space-y-2">
-                          <li>Instagram: Visual storytelling with hashtags</li>
-                          <li>Facebook: Community-focused content</li>
-                          <li>Twitter: Concise and engaging posts</li>
-                          <li>LinkedIn: Professional insights</li>
-                        </ul>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-xl mb-12">
-                      <h3 className="text-2xl font-bold mb-6 text-center text-purple-900">How to Use Our AI Caption Generator</h3>
-                      <div className="grid md:grid-cols-3 gap-6">
-                        <div className="text-center">
-                          <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span className="text-2xl">1️⃣</span>
-                          </div>
-                          <h4 className="font-semibold mb-2">Describe Your Content</h4>
-                          <p className="text-gray-600 text-sm">Enter a detailed description of your image, video, or content idea. Be specific about the mood, theme, or message you want to convey.</p>
-                        </div>
-                        <div className="text-center">
-                          <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span className="text-2xl">2️⃣</span>
-                          </div>
-                          <h4 className="font-semibold mb-2">Choose Your Platform</h4>
-                          <p className="text-gray-600 text-sm">Select from Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest, or YouTube. Each platform gets optimized captions.</p>
-                        </div>
-                        <div className="text-center">
-                          <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span className="text-2xl">3️⃣</span>
-                          </div>
-                          <h4 className="font-semibold mb-2">Get 5 Unique Captions</h4>
-                          <p className="text-gray-600 text-sm">Receive 5 creative, engaging captions instantly. Copy, customize, or regenerate until you find the perfect match.</p>
-                        </div>
-                      </div>
-                    </div>
+              {/* FAQ Section */}
+              <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-yellow-400 flex items-center gap-1 xs:gap-2">
+                  <div className="p-1 xs:p-1.5 sm:p-2 bg-yellow-500/20 rounded-lg flex-shrink-0">
+                    <AlertCircle className="h-3 xs:h-4 sm:h-5 w-3 xs:w-4 sm:w-5" />
+                  </div>
+                  Frequently Asked Questions
+                </h2>
+                <div className="space-y-2 xs:space-y-3 sm:space-y-4">
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">Is the AI caption generator free to use?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      Yes, our AI caption generator is completely free to use with no registration required. You can generate unlimited captions for your social media posts across all 7 supported platforms.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">What social media platforms does the AI caption generator support?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      Our AI caption generator supports 7 major social media platforms: Instagram, Facebook, Twitter/X, LinkedIn, TikTok, Pinterest, and YouTube. Each platform gets optimized captions tailored to their specific audience and character limits.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">Can I use the generated captions commercially?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      Yes, all captions generated by our AI are original and free from copyright restrictions. You can use them in your commercial social media marketing, business posts, and content creation without any limitations.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">How do I make my captions more engaging?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      Our AI automatically creates engaging captions using emotional triggers, relevant hashtags, calls-to-action, storytelling elements, and platform-specific best practices. You can also customize the generated captions to match your brand voice.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">How many captions can I generate at once?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      You can generate 5 unique, creative captions per request. Each caption is optimized for your chosen platform and includes different styles and approaches to give you variety in your content.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">Do AI-generated captions sound robotic or can they be human-like?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      Modern AI caption generators are designed to produce human-like text that sounds natural and engaging. They utilize advanced language models to generate captions that are casual, witty, inspirational, or professional depending on your needs. However, we recommend reviewing and editing the AI-generated captions to ensure they align perfectly with your unique voice and brand personality.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">Can AI caption generators add hashtags and emojis automatically?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      Yes! Our AI caption generator can automatically suggest relevant hashtags and emojis based on your content and context. This feature helps enhance engagement by making your posts more discoverable and relatable. The AI analyzes your content to recommend trending hashtags and appropriate emojis that match your post's tone and message.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">How accurate and relevant are AI-generated captions?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      The accuracy and relevance of AI-generated captions depend on the quality of the AI model and the specificity of your input. Our advanced AI system produces high-quality, contextually relevant captions, but we always recommend reviewing and customizing them to ensure they meet your standards and resonate perfectly with your target audience.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">Can AI caption generators understand context and tailor captions for different content types?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      Absolutely! Our advanced AI caption generator can analyze the context of your content and tailor captions accordingly. It can adjust the tone, style, and content to suit different types of posts - whether it's a promotional post, personal update, educational content, behind-the-scenes content, or inspirational piece. The AI considers your content type to generate the most appropriate captions.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">How do AI caption generators compare to human writers?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      AI caption generators offer speed, scalability, and consistency, enabling you to produce large volumes of captions quickly while maintaining a uniform tone. Human writers bring creativity, emotional intelligence, and deep brand understanding. The most effective approach combines both: use AI for initial drafts and efficiency, then add human creativity and brand-specific touches for the best results.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">Can AI caption generators align with my brand's voice or specific style?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      Yes! Our AI caption generator allows you to customize the tone and style of generated captions to align with your brand's voice. You can specify your desired tone (professional, casual, funny, inspirational), provide context about your audience and goals, and the AI will generate captions that match your brand personality. You can also edit and personalize the results to ensure perfect brand alignment.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">What are the common pitfalls to avoid when using AI caption generators?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      Common pitfalls include: over-relying on AI without adding personal touches (which can result in robotic-sounding captions), ignoring your audience's language and preferences, neglecting proper formatting for readability, using weak calls-to-action, and not reviewing captions for brand alignment. Always add your unique perspective and ensure captions resonate with your specific audience.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">Can AI caption generators handle multiple languages?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      Yes, many AI caption generators support multiple languages, allowing you to create captions in various languages to cater to diverse audiences. This feature is particularly beneficial for global brands and creators aiming to reach broader audiences. However, the accuracy and fluency can vary depending on the language, so it's advisable to review and edit captions to ensure they meet your standards.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">How do AI caption generators stay updated with current trends?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      AI caption generators are trained on vast, continuously updated datasets that reflect current language usage, trends, and cultural nuances. Our system uses advanced machine learning algorithms that learn from user interactions and feedback, allowing it to adapt to evolving content strategies, trending topics, and audience preferences in real-time.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">Are AI caption generators suitable for all types of content?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      AI caption generators are highly versatile and effective for most content types including social media posts, marketing materials, e-commerce listings, blog content, and general promotional materials. However, for highly specialized, sensitive, or controversial content, human oversight is recommended to ensure accuracy, appropriateness, and proper handling of complex topics.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">How do AI caption generators handle humor and sarcasm?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      Humor and sarcasm can be challenging for AI due to their nuanced and context-dependent nature. While AI caption generators can attempt to incorporate humor, the results may not always align perfectly with human expectations or cultural context. We recommend reviewing and adjusting such captions to ensure they resonate appropriately with your audience and maintain the intended tone.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">Can AI caption generators improve over time with my usage?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      Yes! Our AI caption generator utilizes advanced machine learning algorithms that learn from user feedback, interactions, and preferences. Over time, it can improve its suggestions to better align with your specific brand voice, audience preferences, and content style. The more you use it and provide feedback, the more personalized and effective the captions become.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">How do AI caption generators handle sensitive or controversial topics?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      AI caption generators may not fully grasp the complexities and sensitivities of controversial topics. It's crucial to exercise caution and human judgment when creating captions on such subjects. We recommend reviewing all AI-generated content carefully to ensure it's handled appropriately, respectfully, and aligns with your brand values and audience expectations.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">Are there any ethical concerns with using AI caption generators?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      Ethical considerations include potential biases in AI models, maintaining authenticity of content, and the impact on human writers. It's important to use AI tools responsibly, ensure content is fair and accurate, maintain transparency about AI usage when appropriate, and always add human oversight to ensure ethical standards are met. We're committed to responsible AI usage and continuous improvement.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">How can I measure the effectiveness of AI-generated captions?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      Measure effectiveness through engagement metrics (likes, comments, shares, saves), conversion rates (website visits, purchases), audience feedback, and A/B testing comparing AI-generated vs. human-written captions. Track reach, impressions, click-through rates, and monitor which caption styles perform best with your audience to continuously improve your content strategy.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">Can AI caption generators integrate with social media management tools?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      Yes! Many AI caption generators offer integrations with popular social media management platforms, allowing you to create, schedule, and publish posts seamlessly. This integration streamlines your workflow, enhances efficiency in content management, and enables you to maintain consistent posting schedules while leveraging AI-powered caption generation.
+                    </p>
+                  </div>
+                  <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base md:text-lg">What's the future of AI caption generators?</h3>
+                    <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
+                      The future looks incredibly promising with advancements in AI and machine learning leading to more sophisticated, context-aware tools. We can expect improved language understanding, better integration with multimedia content, more personalized caption suggestions, enhanced cultural sensitivity, better handling of humor and emotion, and more seamless integration with various content platforms and workflows.
+                    </p>
                   </div>
                 </div>
+              </div>
 
-                {/* FAQ Section for SEO */}
-                <div className="mt-16 mb-12">
-                  <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-                  <div className="space-y-6">
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                      <h3 className="text-lg font-semibold mb-3 text-primary">Is the AI caption generator really free?</h3>
-                      <p className="text-secondary">Yes, our AI caption generator is completely free to use with no hidden costs, registration requirements, or usage limits. You can generate unlimited captions for all your social media posts.</p>
-                    </div>
-                    
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                      <h3 className="text-lg font-semibold mb-3 text-primary">Which social media platforms are supported?</h3>
-                      <p className="text-secondary">Our AI caption generator supports 7 major social media platforms: Instagram, Facebook, Twitter/X, LinkedIn, TikTok, Pinterest, and YouTube. Each platform gets optimized captions tailored to their specific audience and character limits.</p>
-                    </div>
-                    
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                      <h3 className="text-lg font-semibold mb-3 text-primary">Can I use the generated captions for commercial purposes?</h3>
-                      <p className="text-secondary">Absolutely! All captions generated by our AI are original and free from copyright restrictions. You can use them in your commercial social media marketing, business posts, and content creation without any limitations.</p>
-                    </div>
-                    
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                      <h3 className="text-lg font-semibold mb-3 text-primary">How many captions can I generate at once?</h3>
-                      <p className="text-secondary">You can generate 5 unique, creative captions per request. Each caption is optimized for your chosen platform and includes different styles and approaches to give you variety in your content.</p>
-                    </div>
-                    
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                      <h3 className="text-lg font-semibold mb-3 text-primary">What makes these captions engaging?</h3>
-                      <p className="text-secondary">Our AI automatically creates engaging captions using emotional triggers, relevant hashtags, calls-to-action, storytelling elements, and platform-specific best practices. The AI considers trending topics and engagement patterns for maximum impact.</p>
-                    </div>
-                    
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                      <h3 className="text-lg font-semibold mb-3 text-primary">Can I customize the generated captions?</h3>
-                      <p className="text-secondary">Yes! The AI-generated captions serve as a starting point. You can edit, modify, and personalize them to match your specific needs, brand voice, and style preferences.</p>
-                    </div>
+              {/* Related Tools Section */}
+              <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-yellow-400 flex items-center gap-1 xs:gap-2">
+                  <div className="p-1 xs:p-1.5 sm:p-2 bg-yellow-500/20 rounded-lg flex-shrink-0">
+                    <Calculator className="h-3 xs:h-4 sm:h-5 w-3 xs:w-4 sm:w-5" />
                   </div>
-                </div>
-
-                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Related AI Tools & Resources</h2>
-                <p className="text-secondary leading-relaxed mb-4">
-                  Enhance your social media strategy with our comprehensive collection of AI-powered tools and resources:
-                </p>
-                
-                <div className="grid md:grid-cols-2 gap-6 mb-8">
-                  <div className="space-y-3">
-                    <h3 className="text-lg font-semibold text-primary">AI Content Generation</h3>
-                    <ul className="list-disc list-inside space-y-2 text-secondary">
-                      <li><a href="/ai-tools/hashtag-suggester" className="text-primary hover:underline">AI Hashtag Suggester</a> - Generate relevant hashtags for your posts</li>
-                      <li><a href="/ai-tools/meme-generator" className="text-primary hover:underline">AI Meme Generator</a> - Create viral memes with AI</li>
-                      <li><a href="/ai-tools/lyrics-generator" className="text-primary hover:underline">AI Lyrics Generator</a> - Generate song lyrics with AI</li>
-                      <li><a href="/ai-tools/pet-names" className="text-primary hover:underline">Pet Name Generator</a> - Creative names for your pets</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <h3 className="text-lg font-semibold text-primary">SEO & Marketing Tools</h3>
-                    <ul className="list-disc list-inside space-y-2 text-secondary">
-                      <li><a href="/seo-tools/hashtags" className="text-primary hover:underline">Hashtag Generator</a> - Create trending hashtag combinations</li>
-                      <li><a href="/seo-tools/blog-titles" className="text-primary hover:underline">Blog Title Generator</a> - Create compelling headlines</li>
-                      <li><a href="/seo-tools/meta-tags" className="text-primary hover:underline">Meta Tag Generator</a> - SEO meta tags for websites</li>
-                      <li><a href="/seo-tools/keyword-density" className="text-primary hover:underline">Keyword Density Checker</a> - Analyze keyword usage</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <h3 className="text-lg font-semibold text-primary">Social Media Tools</h3>
-                  <ul className="list-disc list-inside space-y-2 text-secondary">
-                    <li><a href="/social-media-tools/link-in-bio" className="text-primary hover:underline">Link in Bio Generator</a> - Create professional bio pages</li>
-                    <li><a href="/social-media-tools/tiktok-downloader" className="text-primary hover:underline">TikTok Downloader</a> - Download TikTok videos without watermark</li>
-                    <li><a href="/social-media-tools/youtube-thumbnail" className="text-primary hover:underline">YouTube Thumbnail Downloader</a> - Download YouTube thumbnails</li>
-                    <li><a href="/social-media-tools/instagram-dp" className="text-primary hover:underline">Instagram DP Viewer</a> - View Instagram profile pictures</li>
-                    <li><a href="/social-media-tools/youtube-tags" className="text-primary hover:underline">YouTube Tag Extractor</a> - Extract tags from YouTube videos</li>
-                  </ul>
-                </div>
-
-                <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">External Resources & Learning</h2>
-                <p className="text-secondary leading-relaxed mb-4">
-                  Expand your knowledge with these valuable external resources for social media marketing and content creation:
-                </p>
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-3">
-                    <h3 className="text-lg font-semibold text-primary">Social Media Marketing Guides</h3>
-                    <ul className="list-disc list-inside space-y-2 text-secondary">
-                      <li><a href="https://blog.hootsuite.com/social-media-marketing/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Hootsuite Social Media Marketing Guide</a> - Comprehensive marketing strategies</li>
-                      <li><a href="https://sproutsocial.com/insights/social-media-strategy/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Sprout Social Strategy Guide</a> - Advanced social media strategies</li>
-                      <li><a href="https://blog.bufferapp.com/social-media-marketing" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Buffer Social Media Blog</a> - Latest trends and tips</li>
-                      <li><a href="https://blog.later.com/social-media-marketing/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Later Social Media Resources</a> - Visual content strategies</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <h3 className="text-lg font-semibold text-primary">Content Creation Resources</h3>
-                    <ul className="list-disc list-inside space-y-2 text-secondary">
-                      <li><a href="https://www.canva.com/designschool/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Canva Design School</a> - Visual design tutorials</li>
-                      <li><a href="https://blog.adobe.com/en/topics/creative-cloud" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Adobe Creative Cloud Blog</a> - Professional design insights</li>
-                      <li><a href="https://blog.pinterest.com/business/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Pinterest Business Blog</a> - Pinterest marketing strategies</li>
-                      <li><a href="https://business.instagram.com/blog" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Instagram Business Blog</a> - Instagram marketing tips</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="space-y-3 mt-6">
-                  <h3 className="text-lg font-semibold text-primary">AI & Technology Resources</h3>
-                  <ul className="list-disc list-inside space-y-2 text-secondary">
-                    <li><a href="https://openai.com/blog" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">OpenAI Blog</a> - Latest AI developments and applications</li>
-                    <li><a href="https://ai.googleblog.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Google AI Blog</a> - Google's AI research and tools</li>
-                    <li><a href="https://blog.anthropic.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Anthropic Blog</a> - AI safety and research insights</li>
-                    <li><a href="https://huggingface.co/blog" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Hugging Face Blog</a> - Open source AI models and tools</li>
-                  </ul>
+                  Related AI & Content Tools
+                </h2>
+                <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-2 xs:gap-3">
+                  <a href="/ai-tools/hashtag-suggester" className="p-2 xs:p-3 bg-blue-500/20 rounded-lg border border-blue-400/30 hover:bg-blue-500/30 transition-colors">
+                    <div className="flex items-center gap-2 mb-1">
+                      <Hash className="h-3 w-3 text-blue-400" />
+                      <h3 className="font-semibold text-blue-200 text-xs xs:text-sm">Hashtag Suggester</h3>
+                    </div>
+                    <p className="text-xs text-blue-100">Generate relevant hashtags for your posts</p>
+                  </a>
+                  <a href="/ai-tools/meme-generator" className="p-2 xs:p-3 bg-green-500/20 rounded-lg border border-green-400/30 hover:bg-green-500/30 transition-colors">
+                    <div className="flex items-center gap-2 mb-1">
+                      <Smile className="h-3 w-3 text-green-400" />
+                      <h3 className="font-semibold text-green-200 text-xs xs:text-sm">Meme Generator</h3>
+                    </div>
+                    <p className="text-xs text-green-100">Create viral memes with AI</p>
+                  </a>
+                  <a href="/ai-tools/lyrics-generator" className="p-2 xs:p-3 bg-purple-500/20 rounded-lg border border-purple-400/30 hover:bg-purple-500/30 transition-colors">
+                    <div className="flex items-center gap-2 mb-1">
+                      <Music className="h-3 w-3 text-purple-400" />
+                      <h3 className="font-semibold text-purple-200 text-xs xs:text-sm">Lyrics Generator</h3>
+                    </div>
+                    <p className="text-xs text-purple-100">Generate song lyrics with AI</p>
+                  </a>
+                  <a href="/ai-tools/pet-names" className="p-2 xs:p-3 bg-orange-500/20 rounded-lg border border-orange-400/30 hover:bg-orange-500/30 transition-colors">
+                    <div className="flex items-center gap-2 mb-1">
+                      <Heart className="h-3 w-3 text-orange-400" />
+                      <h3 className="font-semibold text-orange-200 text-xs xs:text-sm">Pet Name Generator</h3>
+                    </div>
+                    <p className="text-xs text-orange-100">Creative names for your pets</p>
+                  </a>
+                  <a href="/seo-tools/hashtags" className="p-2 xs:p-3 bg-red-500/20 rounded-lg border border-red-400/30 hover:bg-red-500/30 transition-colors">
+                    <div className="flex items-center gap-2 mb-1">
+                      <TrendingUp className="h-3 w-3 text-red-400" />
+                      <h3 className="font-semibold text-red-200 text-xs xs:text-sm">Hashtag Generator</h3>
+                    </div>
+                    <p className="text-xs text-red-100">Create trending hashtag combinations</p>
+                  </a>
+                  <a href="/seo-tools/blog-titles" className="p-2 xs:p-3 bg-cyan-500/20 rounded-lg border border-cyan-400/30 hover:bg-cyan-500/30 transition-colors">
+                    <div className="flex items-center gap-2 mb-1">
+                      <FileText className="h-3 w-3 text-cyan-400" />
+                      <h3 className="font-semibold text-cyan-200 text-xs xs:text-sm">Blog Title Generator</h3>
+                    </div>
+                    <p className="text-xs text-cyan-100">Create compelling headlines</p>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-1">
-              <div className="sticky top-20">
-                <AdSpace slot="sidebar" className="h-96 border border-border/60 rounded-xl shadow-sm" />
+            {/* Sidebar */}
+            <div className="space-y-4 xs:space-y-6">
+              <div className="bg-card border border-border rounded-xl p-2 xs:p-3 shadow-sm">
+                <AdSpace slot="sidebar" className="h-40 xs:h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 2xl:h-88" />
+              </div>
+              <div className="bg-card border border-border rounded-xl p-2 xs:p-3 shadow-sm">
+                <AdSpace slot="sidebar" className="h-40 xs:h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 2xl:h-88" />
               </div>
             </div>
           </div>

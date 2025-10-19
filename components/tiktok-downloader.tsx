@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
-import { Download, AlertTriangle } from "lucide-react"
+import { Download, AlertTriangle, Music } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
 
 type TiktokDownloaderProps = {
@@ -24,6 +24,8 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
         musicUrl?: string
         coverUrl?: string
         title?: string
+        downloading?: boolean
+        downloadStarted?: boolean
       }
   >(null)
 
@@ -43,42 +45,34 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
 
     setLoading(true)
     try {
-      // TikWM public endpoint. Returns JSON with urls and metadata.
-      // Docs (community-known): GET https://www.tikwm.com/api/?url=<tiktok_url>
-      const endpoint = `https://www.tikwm.com/api/?url=${encodeURIComponent(videoUrl.trim())}`
-      const res = await fetch(endpoint, {
-        method: "GET",
-        mode: "cors",
+      // Use our own API endpoint to avoid CORS issues
+      const response = await fetch('/api/tiktok-download', {
+        method: 'POST',
         headers: {
-          "Accept": "application/json",
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify({
+          url: videoUrl.trim()
+        })
       })
 
-      if (!res.ok) {
-        throw new Error(`Request failed with status ${res.status}`)
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        throw new Error(errorData.message || `Server error: ${response.status}`)
       }
 
-      const json = await res.json()
-      // Expected shape: { code: 0, data: { play, wmplay, music, cover, title } }
-      if (!json || json.code !== 0 || !json.data) {
-        throw new Error("Unexpected response from upstream API.")
+      const data = await response.json()
+
+      if (!data.success) {
+        throw new Error(data.message || "Failed to fetch download links")
       }
 
-      const data = json.data as {
-        play?: string
-        wmplay?: string
-        music?: string
-        cover?: string
-        title?: string
+      if (!data.videoUrl && !data.watermarkUrl) {
+        throw new Error("No downloadable video found for this URL")
       }
 
-      if (!data.play && !data.wmplay) {
-        throw new Error("No downloadable video found for this URL.")
-      }
-
-      let coverUrl = data.cover
-
-      // Fallback: Try TikTok oEmbed for thumbnail if cover missing
+      // Get thumbnail from TikTok oEmbed
+      let coverUrl = data.coverUrl
       if (!coverUrl) {
         try {
           const oembedRes = await fetch(
@@ -95,12 +89,13 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
       }
 
       setResult({
-        noWatermarkUrl: data.play || "",
-        watermarkUrl: data.wmplay,
-        musicUrl: data.music,
+        noWatermarkUrl: data.videoUrl || "",
+        watermarkUrl: data.watermarkUrl,
+        musicUrl: data.musicUrl,
         coverUrl,
         title: data.title,
       })
+
     } catch (e: any) {
       setError(e?.message || "Failed to fetch download links. Please try again.")
     } finally {
@@ -110,27 +105,83 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
 
   const triggerDownload = async (url: string, filename: string) => {
     try {
-      // Prefer blob downloads to avoid opening new tabs and to honor the filename
-      const response = await fetch(url, { mode: "cors" })
-      if (!response.ok) throw new Error("download fetch failed")
+      // Show downloading message
+      setError(null)
+      setResult(prev => prev ? { ...prev, downloading: true } : null)
+      
+      // Use our API to proxy the download to avoid CORS and browser video playing
+      const response = await fetch('/api/tiktok-download-file', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          url: url,
+          filename: filename
+        })
+      })
+      
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        throw new Error(errorData.error || `Download failed with status ${response.status}`)
+      }
+      
       const blob = await response.blob()
+      
+      // Check if blob is valid
+      if (blob.size === 0) {
+        throw new Error('Empty file received. The video may be private or restricted.')
+      }
+      
       const objectUrl = URL.createObjectURL(blob)
-      const anchor = document.createElement("a")
-      anchor.href = objectUrl
-      anchor.download = filename
-      document.body.appendChild(anchor)
-      anchor.click()
-      anchor.remove()
-      URL.revokeObjectURL(objectUrl)
+      
+      // Create download link
+      const link = document.createElement("a")
+      link.href = objectUrl
+      link.download = filename
+      link.style.display = 'none'
+      
+      // Add to DOM, click, and remove
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      
+      // Clean up object URL
+      setTimeout(() => {
+        URL.revokeObjectURL(objectUrl)
+      }, 1000)
+      
+      // Show success message
+      setTimeout(() => {
+        setResult(prev => prev ? { ...prev, downloading: false, downloadStarted: true } : null)
+      }, 500)
+      
     } catch (e) {
-      // Fallback: attempt same‑tab navigation with download attribute
-      const fallback = document.createElement("a")
-      fallback.href = url
-      fallback.download = filename
-      fallback.target = "_self"
-      document.body.appendChild(fallback)
-      fallback.click()
-      fallback.remove()
+      // Fallback: Try direct download
+      try {
+        console.log('Proxy download failed, trying direct download:', e)
+        
+        const link = document.createElement("a")
+        link.href = url
+        link.download = filename
+        link.target = "_blank"
+        link.rel = "noopener noreferrer"
+        link.style.display = 'none'
+        
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        
+        // Show success message
+        setTimeout(() => {
+          setResult(prev => prev ? { ...prev, downloading: false, downloadStarted: true } : null)
+        }, 500)
+        
+      } catch (fallbackError) {
+        const errorMessage = e instanceof Error ? e.message : "Download failed. Please try again."
+        setError(errorMessage)
+        setResult(prev => prev ? { ...prev, downloading: false } : null)
+      }
     }
   }
 
@@ -176,7 +227,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
             {loading ? (
               <>
                 <LoadingSpinner className="mr-2" />
-                Fetching links...
+                Processing video...
               </>
             ) : (
               <>
@@ -188,45 +239,102 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
 
           {error && (
             <div className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-md p-3">
-              {error}
+              <div className="flex items-start gap-2">
+                <AlertTriangle className="h-4 w-4 text-red-600 flex-shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <p className="font-medium">Download Failed</p>
+                  <p className="mt-1">{error}</p>
+                  <div className="mt-2 text-xs text-red-700">
+                    <p><strong>Troubleshooting tips:</strong></p>
+                    <ul className="list-disc list-inside mt-1 space-y-1">
+                      <li>Make sure the TikTok video is public and accessible</li>
+                      <li>Try refreshing the page and attempting again</li>
+                      <li>Check your internet connection</li>
+                      <li>Try a different TikTok video URL</li>
+                      <li>Disable any ad blockers or browser extensions</li>
+                      <li>Some videos may be region-restricted or age-restricted</li>
+                      <li>Try copying the URL directly from TikTok app</li>
+                    </ul>
+                  </div>
+                  <Button
+                    onClick={handleFetch}
+                    disabled={loading}
+                    variant="outline"
+                    size="sm"
+                    className="mt-3 text-red-600 border-red-300 hover:bg-red-100"
+                  >
+                    {loading ? (
+                      <>
+                        <LoadingSpinner className="mr-2 h-3 w-3" />
+                        Retrying...
+                      </>
+                    ) : (
+                      <>
+                        <Download className="mr-2 h-3 w-3" />
+                        Try Again
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </div>
             </div>
           )}
 
           {result && (
-            <div className="space-y-4">
+            <div className="space-y-3">
               {result.coverUrl && (
-                <img
-                  src={result.coverUrl}
-                  alt={result.title || "TikTok cover"}
-                  className={`${compact ? "w-full h-40 object-cover rounded-md border" : "w-full rounded-md border"}`}
-                />
+                <div className="flex justify-center">
+                  <img
+                    src={result.coverUrl}
+                    alt={result.title || "TikTok cover"}
+                    className={`${compact ? "w-full max-w-xs h-32 object-cover rounded-md border" : "w-full max-w-sm h-40 xs:h-44 sm:h-48 object-cover rounded-md border"}`}
+                  />
+                </div>
               )}
               <div className="space-y-2">
-                {result.noWatermarkUrl && (
-                  <button
-                    type="button"
-                    onClick={() => triggerDownload(result.noWatermarkUrl!, (result.title || "tiktok-video") + "-nowm.mp4")}
-                    className="inline-flex items-center justify-center w-full h-11 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
-                  >
-                    Download Video (No Watermark)
-                  </button>
+                {result.downloadStarted && (
+                  <div className="text-center p-3 bg-green-50 border border-green-200 rounded-md">
+                    <p className="text-sm text-green-800 font-medium">✅ Download started! Check your downloads folder.</p>
+                  </div>
                 )}
-                {result.watermarkUrl && (
+                {(result.noWatermarkUrl || result.watermarkUrl) && (
                   <button
                     type="button"
-                    onClick={() => triggerDownload(result.watermarkUrl!, (result.title || "tiktok-video") + "-wm.mp4")}
-                    className="inline-flex items-center justify-center w-full h-11 rounded-md border font-medium hover:bg-muted/50 transition-colors"
+                    onClick={() => triggerDownload(result.noWatermarkUrl || result.watermarkUrl!, (result.title || "tiktok-video") + ".mp4")}
+                    disabled={result.downloading}
+                    className="inline-flex items-center justify-center w-full h-10 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Download Video (Watermark)
+                    {result.downloading ? (
+                      <>
+                        <LoadingSpinner className="mr-2 h-4 w-4" />
+                        Starting Download...
+                      </>
+                    ) : (
+                      <>
+                        <Download className="mr-2 h-4 w-4" />
+                        Download Video
+                      </>
+                    )}
                   </button>
                 )}
                 {result.musicUrl && (
                   <button
                     type="button"
                     onClick={() => triggerDownload(result.musicUrl!, (result.title || "tiktok-audio") + ".mp3")}
-                    className="inline-flex items-center justify-center w-full h-11 rounded-md border font-medium hover:bg-muted/50 transition-colors"
+                    disabled={result.downloading}
+                    className="inline-flex items-center justify-center w-full h-10 rounded-md border font-medium hover:bg-muted/50 transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Download Audio (MP3)
+                    {result.downloading ? (
+                      <>
+                        <LoadingSpinner className="mr-2 h-4 w-4" />
+                        Starting Download...
+                      </>
+                    ) : (
+                      <>
+                        <Music className="mr-2 h-4 w-4" />
+                        Download MP3
+                      </>
+                    )}
                   </button>
                 )}
               </div>
@@ -239,7 +347,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
         <Card className="p-6 bg-muted/30 border-border">
           <h3 className="text-base font-semibold text-foreground mb-3">Important Information</h3>
           <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
-            <li>• How to use: paste TikTok link → Get Download Links → choose option.</li>
+            <li>• How to use: paste TikTok link → Get Download Links → choose Download Video or Download MP3.</li>
             <li>• Works best with public videos; private or age-restricted content may not load.</li>
             <li>• Use downloads responsibly; you are responsible for permissions and compliance.</li>
             <li>• Only download your own content or content you are authorized to use.</li>
