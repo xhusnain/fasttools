@@ -484,6 +484,18 @@ export const metadata: Metadata = {
       return (
         <html lang="en" className={`dark ${geistSans.variable} ${geistMono.variable} antialiased`}>
         <head>
+            {/* Google Analytics */}
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-4G804HZ22C"></script>
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-4G804HZ22C');
+                    `,
+                }}
+            />
             {/* Essential Meta Tags */}
             <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
             <link rel="canonical" href="https://www.fasttools.store"/>
