@@ -10,16 +10,11 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // Force www subdomain for fasttools domains
-  if (hostname === 'fasttools.store' || hostname === 'fasttools.com' || hostname === 'fasttools.tech') {
-    url.hostname = 'www.fasttools.store'
-    return NextResponse.redirect(url, 308)
-  }
-
-  // Force HTTPS
-  if (url.protocol === 'http:') {
+  // ✅ Combine HTTPS + WWW redirect in one step
+  if (!hostname.startsWith('www.') || url.protocol === 'http:') {
     url.protocol = 'https:'
-    return NextResponse.redirect(url, 308)
+    url.hostname = 'www.fasttools.store'
+    return NextResponse.redirect(url, 301) // 301 is reliable for bots & SEO
   }
 
   return NextResponse.next()
@@ -30,4 +25,3 @@ export const config = {
     '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 }
-
