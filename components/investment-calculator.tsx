@@ -526,7 +526,25 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           {/* Calculation Type Selection */}
           <div>
             <Label className="text-base font-semibold mb-3 block">Calculate</Label>
-            <Tabs value={calculationType} onValueChange={setCalculationType} className="w-full">
+            
+            {/* Mobile Dropdown */}
+            <div className="block md:hidden mb-4">
+              <Select value={calculationType} onValueChange={setCalculationType}>
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="endAmount">End Amount</SelectItem>
+                  <SelectItem value="returnRate">Return Rate</SelectItem>
+                  <SelectItem value="startingAmount">Starting Amount</SelectItem>
+                  <SelectItem value="additionalContribution">Additional Contribution</SelectItem>
+                  <SelectItem value="investmentLength">Investment Length</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Desktop Tabs */}
+            <Tabs value={calculationType} onValueChange={setCalculationType} className="w-full hidden md:block">
               <TabsList className="grid w-full grid-cols-5">
                 <TabsTrigger value="endAmount">End Amount</TabsTrigger>
                 <TabsTrigger value="returnRate">Return Rate</TabsTrigger>
@@ -534,242 +552,235 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                 <TabsTrigger value="additionalContribution">Additional Contribution</TabsTrigger>
                 <TabsTrigger value="investmentLength">Investment Length</TabsTrigger>
               </TabsList>
-              
-              <TabsContent value="endAmount" className="space-y-4 mt-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="startingAmount">Starting Amount</Label>
-                    <Input
-                      id="startingAmount"
-                      type="number"
-                      placeholder="20000"
-                      value={startingAmount}
-                      onChange={(e) => setStartingAmount(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="returnRate">Return Rate (%)</Label>
-                    <Input
-                      id="returnRate"
-                      type="number"
-                      placeholder="6"
-                      value={returnRate}
-                      onChange={(e) => setReturnRate(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="investmentLength">Investment Length (years)</Label>
-                    <Input
-                      id="investmentLength"
-                      type="number"
-                      placeholder="10"
-                      value={investmentLength}
-                      onChange={(e) => setInvestmentLength(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="additionalContribution">Additional Contribution</Label>
-                    <Input
-                      id="additionalContribution"
-                      type="number"
-                      placeholder="1000"
-                      value={additionalContribution}
-                      onChange={(e) => setAdditionalContribution(e.target.value)}
-                    />
-                  </div>
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="returnRate" className="space-y-4 mt-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="endAmount">End Amount</Label>
-                    <Input
-                      id="endAmount"
-                      type="number"
-                      placeholder="100000"
-                      value={endAmount}
-                      onChange={(e) => setEndAmount(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="startingAmount">Starting Amount</Label>
-                    <Input
-                      id="startingAmount"
-                      type="number"
-                      placeholder="20000"
-                      value={startingAmount}
-                      onChange={(e) => setStartingAmount(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="investmentLength">Investment Length (years)</Label>
-                    <Input
-                      id="investmentLength"
-                      type="number"
-                      placeholder="10"
-                      value={investmentLength}
-                      onChange={(e) => setInvestmentLength(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="additionalContribution">Additional Contribution</Label>
-                    <Input
-                      id="additionalContribution"
-                      type="number"
-                      placeholder="1000"
-                      value={additionalContribution}
-                      onChange={(e) => setAdditionalContribution(e.target.value)}
-                    />
-                  </div>
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="startingAmount" className="space-y-4 mt-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="endAmount">End Amount</Label>
-                    <Input
-                      id="endAmount"
-                      type="number"
-                      placeholder="100000"
-                      value={endAmount}
-                      onChange={(e) => setEndAmount(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="returnRate">Return Rate (%)</Label>
-                    <Input
-                      id="returnRate"
-                      type="number"
-                      placeholder="6"
-                      value={returnRate}
-                      onChange={(e) => setReturnRate(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="investmentLength">Investment Length (years)</Label>
-                    <Input
-                      id="investmentLength"
-                      type="number"
-                      placeholder="10"
-                      value={investmentLength}
-                      onChange={(e) => setInvestmentLength(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="additionalContribution">Additional Contribution</Label>
-                    <Input
-                      id="additionalContribution"
-                      type="number"
-                      placeholder="1000"
-                      value={additionalContribution}
-                      onChange={(e) => setAdditionalContribution(e.target.value)}
-                    />
-                  </div>
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="additionalContribution" className="space-y-4 mt-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="endAmount">End Amount</Label>
-                    <Input
-                      id="endAmount"
-                      type="number"
-                      placeholder="100000"
-                      value={endAmount}
-                      onChange={(e) => setEndAmount(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="startingAmount">Starting Amount</Label>
-                    <Input
-                      id="startingAmount"
-                      type="number"
-                      placeholder="20000"
-                      value={startingAmount}
-                      onChange={(e) => setStartingAmount(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="returnRate">Return Rate (%)</Label>
-                    <Input
-                      id="returnRate"
-                      type="number"
-                      placeholder="6"
-                      value={returnRate}
-                      onChange={(e) => setReturnRate(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="investmentLength">Investment Length (years)</Label>
-                    <Input
-                      id="investmentLength"
-                      type="number"
-                      placeholder="10"
-                      value={investmentLength}
-                      onChange={(e) => setInvestmentLength(e.target.value)}
-                    />
-                  </div>
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="investmentLength" className="space-y-4 mt-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="endAmount">End Amount</Label>
-                    <Input
-                      id="endAmount"
-                      type="number"
-                      placeholder="100000"
-                      value={endAmount}
-                      onChange={(e) => setEndAmount(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="startingAmount">Starting Amount</Label>
-                    <Input
-                      id="startingAmount"
-                      type="number"
-                      placeholder="20000"
-                      value={startingAmount}
-                      onChange={(e) => setStartingAmount(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="returnRate">Return Rate (%)</Label>
-                    <Input
-                      id="returnRate"
-                      type="number"
-                      placeholder="6"
-                      value={returnRate}
-                      onChange={(e) => setReturnRate(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="additionalContribution">Additional Contribution</Label>
-                    <Input
-                      id="additionalContribution"
-                      type="number"
-                      placeholder="1000"
-                      value={additionalContribution}
-                      onChange={(e) => setAdditionalContribution(e.target.value)}
-                    />
-                  </div>
-                </div>
-              </TabsContent>
             </Tabs>
+
+            {/* Mobile/Desktop Input Fields */}
+            <div className="space-y-4 mt-4">
+              {calculationType === "endAmount" && (
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="startingAmount">Starting Amount</Label>
+                    <Input
+                      id="startingAmount"
+                      type="number"
+                      placeholder="20000"
+                      value={startingAmount}
+                      onChange={(e) => setStartingAmount(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="returnRate">Return Rate (%)</Label>
+                    <Input
+                      id="returnRate"
+                      type="number"
+                      placeholder="6"
+                      value={returnRate}
+                      onChange={(e) => setReturnRate(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="investmentLength">Investment Length (years)</Label>
+                    <Input
+                      id="investmentLength"
+                      type="number"
+                      placeholder="10"
+                      value={investmentLength}
+                      onChange={(e) => setInvestmentLength(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="additionalContribution">Additional Contribution</Label>
+                    <Input
+                      id="additionalContribution"
+                      type="number"
+                      placeholder="1000"
+                      value={additionalContribution}
+                      onChange={(e) => setAdditionalContribution(e.target.value)}
+                    />
+                  </div>
+                </div>
+              )}
+
+              {calculationType === "returnRate" && (
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="endAmount">End Amount</Label>
+                    <Input
+                      id="endAmount"
+                      type="number"
+                      placeholder="100000"
+                      value={endAmount}
+                      onChange={(e) => setEndAmount(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="startingAmount">Starting Amount</Label>
+                    <Input
+                      id="startingAmount"
+                      type="number"
+                      placeholder="20000"
+                      value={startingAmount}
+                      onChange={(e) => setStartingAmount(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="investmentLength">Investment Length (years)</Label>
+                    <Input
+                      id="investmentLength"
+                      type="number"
+                      placeholder="10"
+                      value={investmentLength}
+                      onChange={(e) => setInvestmentLength(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="additionalContribution">Additional Contribution</Label>
+                    <Input
+                      id="additionalContribution"
+                      type="number"
+                      placeholder="1000"
+                      value={additionalContribution}
+                      onChange={(e) => setAdditionalContribution(e.target.value)}
+                    />
+                  </div>
+                </div>
+              )}
+
+              {calculationType === "startingAmount" && (
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="endAmount">End Amount</Label>
+                    <Input
+                      id="endAmount"
+                      type="number"
+                      placeholder="100000"
+                      value={endAmount}
+                      onChange={(e) => setEndAmount(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="returnRate">Return Rate (%)</Label>
+                    <Input
+                      id="returnRate"
+                      type="number"
+                      placeholder="6"
+                      value={returnRate}
+                      onChange={(e) => setReturnRate(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="investmentLength">Investment Length (years)</Label>
+                    <Input
+                      id="investmentLength"
+                      type="number"
+                      placeholder="10"
+                      value={investmentLength}
+                      onChange={(e) => setInvestmentLength(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="additionalContribution">Additional Contribution</Label>
+                    <Input
+                      id="additionalContribution"
+                      type="number"
+                      placeholder="1000"
+                      value={additionalContribution}
+                      onChange={(e) => setAdditionalContribution(e.target.value)}
+                    />
+                  </div>
+                </div>
+              )}
+
+              {calculationType === "additionalContribution" && (
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="endAmount">End Amount</Label>
+                    <Input
+                      id="endAmount"
+                      type="number"
+                      placeholder="100000"
+                      value={endAmount}
+                      onChange={(e) => setEndAmount(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="startingAmount">Starting Amount</Label>
+                    <Input
+                      id="startingAmount"
+                      type="number"
+                      placeholder="20000"
+                      value={startingAmount}
+                      onChange={(e) => setStartingAmount(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="returnRate">Return Rate (%)</Label>
+                    <Input
+                      id="returnRate"
+                      type="number"
+                      placeholder="6"
+                      value={returnRate}
+                      onChange={(e) => setReturnRate(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="investmentLength">Investment Length (years)</Label>
+                    <Input
+                      id="investmentLength"
+                      type="number"
+                      placeholder="10"
+                      value={investmentLength}
+                      onChange={(e) => setInvestmentLength(e.target.value)}
+                    />
+                  </div>
+                </div>
+              )}
+
+              {calculationType === "investmentLength" && (
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="endAmount">End Amount</Label>
+                    <Input
+                      id="endAmount"
+                      type="number"
+                      placeholder="100000"
+                      value={endAmount}
+                      onChange={(e) => setEndAmount(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="startingAmount">Starting Amount</Label>
+                    <Input
+                      id="startingAmount"
+                      type="number"
+                      placeholder="20000"
+                      value={startingAmount}
+                      onChange={(e) => setStartingAmount(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="returnRate">Return Rate (%)</Label>
+                    <Input
+                      id="returnRate"
+                      type="number"
+                      placeholder="6"
+                      value={returnRate}
+                      onChange={(e) => setReturnRate(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="additionalContribution">Additional Contribution</Label>
+                    <Input
+                      id="additionalContribution"
+                      type="number"
+                      placeholder="1000"
+                      value={additionalContribution}
+                      onChange={(e) => setAdditionalContribution(e.target.value)}
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Additional Settings */}
