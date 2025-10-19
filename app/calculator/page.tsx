@@ -989,7 +989,7 @@ export default function ToolsPage() {
       "@type": "ItemList",
       name: "Free Online Tools",
       description: "Collection of free online tools and calculators",
-      numberOfItems: 52,
+      numberOfItems: 53,
       itemListElement: [
         {
           "@type": "ListItem",
@@ -1053,6 +1053,13 @@ export default function ToolsPage() {
           name: "IP Subnet Calculator",
           description: "Calculate IPv4 and IPv6 subnets with CIDR notation, VLSM, and network analysis",
             url: "https://www.fasttools.store/calculator/ip-subnet-calculator"
+        },
+        {
+          "@type": "ListItem",
+          position: 10,
+          name: "Love Calculator",
+          description: "Calculate love compatibility between two people. Fun romantic tool to test relationship compatibility and love match percentage for entertainment",
+            url: "https://www.fasttools.store/calculator/love-calculator"
         }
       ]
     },
@@ -1299,6 +1306,13 @@ export default function ToolsPage() {
       icon: Home,
       href: "/calculator/mortgage-calculator",
       color: "lime"
+    },
+    {
+      title: "Love Calculator",
+      description: "Calculate love compatibility between two people. Fun romantic tool to test relationship compatibility and love match percentage for entertainment.",
+      icon: Heart,
+      href: "/calculator/love-calculator",
+      color: "pink"
     }
   ];
 

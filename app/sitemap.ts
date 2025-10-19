@@ -532,6 +532,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.95,
     },
+    {
+      url: "https://www.fasttools.store/calculator/love-calculator",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
 
     {
       url: "https://www.fasttools.store/date-time-tools/age-in-hours",
@@ -634,12 +640,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     {
       url: "https://www.fasttools.store/fun-tools/future-age",
-      lastModified: getFreshnessDate(14),
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
-    {
-      url: "https://www.fasttools.store/fun-tools/love-calculator",
       lastModified: getFreshnessDate(14),
       changeFrequency: "monthly" as const,
       priority: 0.6,

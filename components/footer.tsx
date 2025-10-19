@@ -97,6 +97,14 @@ export function Footer() {
                   Standard Deviation Calculator
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/calculator/love-calculator"
+                  className="text-sm text-gray-700 hover:text-[#F35B04] transition-colors duration-200"
+                >
+                  Love Calculator
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -209,14 +217,6 @@ export function Footer() {
                   className="text-sm text-gray-700 hover:text-[#F35B04] transition-colors duration-200"
                 >
                   Future Age Predictor
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/fun-tools/love-calculator"
-                  className="text-sm text-gray-700 hover:text-[#F35B04] transition-colors duration-200"
-                >
-                  Love Calculator
                 </Link>
               </li>
               <li>
