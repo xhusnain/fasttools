@@ -351,6 +351,19 @@ export const metadata: Metadata = {
                     `,
                 }}
             />
+            
+            {/* Microsoft Clarity */}
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `
+                        (function(c,l,a,r,i,t,y){
+                            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+                            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                        })(window, document, "clarity", "script", "tspya2xfyk");
+                    `,
+                }}
+            />
             {/* Essential Meta Tags */}
             <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
             <link rel="canonical" href="https://www.fasttools.store"/>
@@ -443,7 +456,7 @@ export const metadata: Metadata = {
             <meta httpEquiv="X-XSS-Protection" content="1; mode=block"/>
             <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
             <meta httpEquiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()"/>
-            <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://vercel.live;"/>
+            <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://vercel.live https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://vercel.live https://www.clarity.ms;"/>
             
             {/* Cache and Performance */}
             <meta name="revisit-after" content="1 days"/>
