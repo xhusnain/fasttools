@@ -116,7 +116,7 @@ export async function GET() {
           caption: "FastTools Currency Converter - Convert currencies with real-time exchange rates"
         },
         {
-          url: "https://www.fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.png",
           title: "FastTools Currency Converter Logo",
           caption: "FastTools professional logo for currency conversion and financial tools"
         }
@@ -203,7 +203,7 @@ export async function GET() {
           caption: "FastTools Invoice Generator - Create professional invoices for your business"
         },
         {
-          url: "https://www.fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.png",
           title: "FastTools Business Tools Logo",
           caption: "FastTools professional logo for business and financial tools"
         }
@@ -306,7 +306,7 @@ export async function GET() {
       priority: 1.0, // Highest priority for homepage
       images: [
         {
-          url: "https://www.fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.png",
           title: "fasttools Professional Logo - Free Online Tools Collection",
           caption: "fasttools professional logo with modern FT symbol and blue gradient design for comprehensive free online tools collection"
         },
@@ -316,27 +316,27 @@ export async function GET() {
           caption: "fasttools professional social media sharing image showcasing comprehensive free online tools collection for productivity and business"
         },
         {
-          url: "https://www.fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.png",
           title: "fasttools Logo - Online Tools",
           caption: "fasttools professional logo for browser tabs and bookmarks representing free online tools and utilities"
         }
       ]
     },
     {
-      url: "https://www.fasttools.store/logo.svg",
+      url: "https://www.fasttools.store/logo.png",
       lastModified: getFreshnessDate(7), // Updated weekly
       changeFrequency: "monthly" as const,
       priority: 0.95, // Very high priority for main logo
       images: [
         {
-          url: "https://www.fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.png",
           title: "fasttools Professional Logo",
           caption: "fasttools professional logo with modern FT symbol and blue gradient design"
         }
       ]
     },
     {
-      url: "https://www.fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/banner.png",
       lastModified: getFreshnessDate(7), // Updated weekly
       changeFrequency: "monthly" as const,
       priority: 0.9, // High priority for social sharing
@@ -349,13 +349,13 @@ export async function GET() {
       ]
     },
     {
-      url: "https://www.fasttools.store/logo.svg",
+      url: "https://www.fasttools.store/logo.png",
       lastModified: getFreshnessDate(7), // Updated weekly
       changeFrequency: "monthly" as const,
       priority: 0.9, // High priority for brand recognition
       images: [
         {
-          url: "https://www.fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.png",
           title: "fasttools Professional Logo",
           caption: "fasttools professional logo with modern FT symbol and blue gradient design"
         }
