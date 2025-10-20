@@ -26,7 +26,7 @@ import {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "AI Caption Generator | Create Viral Social Media Captions | FastTools",
+  title: "AI Caption Generator | FastTools",
   description:
     "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator with 7 platforms support. Boost engagement with our advanced AI-powered caption maker.",
     keywords: [

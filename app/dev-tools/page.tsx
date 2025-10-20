@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Free Developer Tools | JWT Decoder, Regex Tester, JSON to CSV & More | FastTools",
+  title: "Developer Tools: JWT, Regex, JSON→CSV | FastTools",
   description:
     "Free developer tools including JWT decoder, regex tester, JSON to CSV converter, HTML beautifier, color palette generator, and more. Essential utilities for developers.",
   keywords: [

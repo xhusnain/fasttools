@@ -17,7 +17,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free Finance Tools | Invoice Generator, PayPal Fee Calculator & More | FastTools",
+  title: "Finance Tools: Invoice, PayPal Fee, Tip | FastTools",
   description:
     "Free finance and productivity tools including invoice generator, PayPal fee calculator, discount calculator, tip calculator, savings tracker, retirement planner, bill splitter, and credit card payoff calculator. Perfect for freelancers, businesses, and personal finance management.",
   keywords: [

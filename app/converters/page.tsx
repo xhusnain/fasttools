@@ -7,7 +7,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free Online Converters | Text, Length, Currency & More | FastTools",
+  title: "Online Converters: Text, Length, Currency | FastTools",
   description:
     "Free online converter tools for text case, length, file size, currency, time zones, and temperature. Fast, accurate, and easy to use conversion tools with real-time data.",
   keywords: [

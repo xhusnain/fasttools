@@ -7,7 +7,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Social Media Tools - Free YouTube, Instagram & TikTok Tools | FastTools",
+  title: "Social Media Tools: YouTube, Instagram, TikTok | FastTools",
   description:
     "Free social media tools for content creators. Download YouTube thumbnails, view Instagram profile pictures, extract video tags, generate link in bio pages, and more.",
   keywords:
