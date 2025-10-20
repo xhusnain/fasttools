@@ -19,7 +19,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Finance Tools: Invoice, PayPal Fee, Tip | FastTools",
   description:
-    "Free finance and productivity tools including invoice generator, PayPal fee calculator, discount calculator, tip calculator, savings tracker, retirement planner, bill splitter, and credit card payoff calculator. Perfect for freelancers, businesses, and personal finance management.",
+    "Free finance tools: invoice generator, PayPal fee, discount, tip, savings, retirement, bill split, and payoff calculators.",
   keywords: [
     // Primary Keywords (20)
     "finance tools",

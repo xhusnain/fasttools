@@ -29,7 +29,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "About FastTools | Free Online Tools Platform | FastTools",
-  description: "Discover FastTools, the world's most comprehensive free online tools platform. Access 1000+ professional tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
+  description: "Discover FastTools, a comprehensive free online tools platform with 1000+ AI, converter, calculator, SEO and productivity utilities.",
     keywords: [
         "fasttools",
         "free online tools",
