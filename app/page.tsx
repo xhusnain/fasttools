@@ -1686,7 +1686,7 @@ export default function HomePage() {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-bold text-base text-foreground mb-1">David Park</h4>
+                        <h3 className="font-bold text-base text-foreground mb-1">David Park</h3>
                         <p className="text-xs text-muted-foreground font-medium">Graphic Designer</p>
                         <div className="flex items-center gap-1 mt-1">
                           {[...Array(5)].map((_, i) => (
@@ -1718,7 +1718,7 @@ export default function HomePage() {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-bold text-base text-foreground mb-1">Jessica Lee</h4>
+                        <h3 className="font-bold text-base text-foreground mb-1">Jessica Lee</h3>
                         <p className="text-xs text-muted-foreground font-medium">Web Developer</p>
                         <div className="flex items-center gap-1 mt-1">
                           {[...Array(5)].map((_, i) => (
