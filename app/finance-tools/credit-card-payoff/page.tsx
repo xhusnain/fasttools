@@ -5,6 +5,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Credit Card Payoff Calculator | Debt Payoff Timeline & Interest | FastTools",
   description:
     "Estimate months to debt‑free, total interest, and payoff date. Compare avalanche vs snowball methods and extra payments.",

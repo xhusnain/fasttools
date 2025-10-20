@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free JWT Decoder | Decode JSON Web Tokens (JWT) Online | FastTools",
   description:
     "Decode JWT header and payload safely in your browser. Inspect claims, alg, exp/iat, and base64url content. Great for debugging auth.",

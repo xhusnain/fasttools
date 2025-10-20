@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Hex to RGB Converter | Convert Hex Colors to RGB | FastTools",
   description:
     "Convert hex color codes to RGB instantly. Copy values, validate inputs, and understand color formats for web design.",

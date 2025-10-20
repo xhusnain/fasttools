@@ -5,6 +5,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Discount Calculator | Sale Price & Savings Calculator | FastTools",
   description:
     "Calculate sale prices and savings with percentage or fixed discounts. Stack discounts, include tax, and compare before vs after prices.",

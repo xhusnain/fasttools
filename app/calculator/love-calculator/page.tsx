@@ -50,6 +50,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Love Calculator | Free Love Compatibility Test & Match Percentage | FastTools",
   description:
     "Free love calculator to test compatibility between two people. Calculate love percentage, relationship compatibility, and love meter. Share your love match results with friends!",

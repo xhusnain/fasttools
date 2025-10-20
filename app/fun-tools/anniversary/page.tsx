@@ -5,6 +5,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Anniversary Calculator | Relationship Duration & Next Anniversary | FastTools",
   description:
     "Calculate how long you've been together in years, months, and days. See next anniversary date and days remaining.",

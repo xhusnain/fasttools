@@ -5,6 +5,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Currency Converter | Real-Time Exchange Rates | FastTools",
   description:
     "Convert currencies instantly with our free Currency Converter. Get live exchange rates, convert multiple currencies, compare rates, and export results. Fast, accurate, and mobile-friendly.",

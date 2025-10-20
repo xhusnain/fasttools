@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Regex Tester | Test, Debug, and Build Regular Expressions | FastTools",
   description:
     "Test regex patterns with live matches, flags, and group results. Build and debug regular expressions for JavaScript and other languages.",

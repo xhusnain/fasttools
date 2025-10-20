@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free HTML Beautifier & Minifier | Format or Minify HTML Code | FastTools",
   description:
     "Format or minify HTML code instantly. Clean indentation, remove whitespace, and copy results. Great for web developers and content editors.",

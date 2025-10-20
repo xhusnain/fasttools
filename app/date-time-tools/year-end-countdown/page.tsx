@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Year End Countdown | Live New Year Countdown Timer | FastTools",
   description:
     "Live countdown to the end of the year. See days, hours, minutes, and seconds left until New Year with automatic updates.",

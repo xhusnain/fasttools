@@ -5,6 +5,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Bill Splitter | Split Bills & Shared Expenses Fairly | FastTools",
   description:
     "Split bills and shared expenses fairly. Add items, assign people, include tips and tax, and see per‑person totals. Perfect for restaurants and trips.",

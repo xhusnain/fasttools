@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Markdown Previewer | Live Markdown Rendering | FastTools",
   description:
     "Write Markdown and see live preview instantly. Supports headings, lists, code blocks, tables, and GitHub‑style flavor.",

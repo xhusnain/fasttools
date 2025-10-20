@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Date to Day Finder | What Day of the Week Is This Date? | FastTools",
   description:
     "Find the weekday for any date. Check past and future dates, holidays, and schedule planning with accurate weekday results.",

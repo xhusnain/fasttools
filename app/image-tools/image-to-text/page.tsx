@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Image to Text (OCR) | Extract Text from Images Online | FastTools",
   description:
     "Convert images to text instantly with accurate OCR. Extract text from photos, scans, screenshots, and PDFs. Supports JPG, PNG, JPEG.",

@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Image Background Blur | Online Photo Blur Tool | FastTools",
   description:
     "Blur image backgrounds online. Adjust intensity for profile photos, product shots, and social media posts.",

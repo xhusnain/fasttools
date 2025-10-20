@@ -5,6 +5,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Invoice Generator | Create Professional Invoices Online | FastTools",
   description:
     "Create professional invoices in minutes. Add items, taxes, discounts, currency, and notes. Download or print. No login required.",

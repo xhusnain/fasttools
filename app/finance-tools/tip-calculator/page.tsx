@@ -5,6 +5,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Tip Calculator | Restaurant Gratuity & Bill Split | FastTools",
   description:
     "Calculate tips and split bills instantly. Customize tip percentages, include tax, round totals, and share with friends. Fast, accurate, mobile friendly.",

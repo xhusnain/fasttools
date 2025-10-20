@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Online Image Cropper | Circle & Square Crop Tool | FastTools",
   description:
     "Crop images online for free. Create circular profile pictures or square posts. Fast and easy—no software needed.",
