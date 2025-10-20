@@ -10,412 +10,79 @@ export const metadata: Metadata = {
   title: "Length Converter | Meters, Feet, Inches, CM | FastTools",
   description:
     "Convert length units instantly: meters, feet, inches, centimeters, millimeters, kilometers, yards, and miles. Accurate metric and imperial conversion tool for construction, travel, and education.",
-  keywords: [
-    // Primary Keywords (30)
+  keywords:[
     "length converter",
-    "unit conversion tool",
+    "convert length",
+    "length conversion",
     "convert meters to feet",
-    "inches to centimeters converter",
-    "kilometers to miles conversion",
-    "yard to meter converter",
-    "length measurement converter",
-    "online length converter",
-    "convert feet to meters",
-    "centimeters to inches calculator",
-    "miles to kilometers converter",
-    "convert yards to meters",
-    "length conversion calculator",
-    "convert inches to millimeters",
-    "feet to inches converter",
-    "convert meters to yards",
-    "millimeters to inches conversion",
-    "convert kilometers to miles",
-    "length unit converter",
-    "convert centimeters to feet",
-    "inches to feet converter",
-    "convert miles to kilometers",
-    "meters to feet calculator",
-    "convert millimeters to inches",
-    "feet to meters conversion",
-    "convert yards to feet",
-    "centimeters to meters converter",
-    "convert inches to centimeters",
-    "meters to yards conversion",
-    "convert feet to centimeters",
-    
-    // Secondary Keywords (30)
-    "kilometers to meters converter",
-    "convert meters to kilometers",
-    "yards to feet converter",
-    "convert centimeters to inches",
-    "millimeters to centimeters converter",
-    "convert meters to millimeters",
-    "feet to yards conversion",
-    "convert inches to feet",
-    "centimeters to millimeters converter",
-    "convert kilometers to centimeters",
-    "meters to centimeters conversion",
-    "convert millimeters to meters",
-    "yards to meters calculator",
-    "convert feet to inches",
-    "centimeters to feet conversion",
+    "meters to feet converter",
+    "feet to meters converter",
+    "cm to inches",
+    "centimeters to inches",
+    "inches to cm converter",
+    "km to miles",
+    "kilometers to miles converter",
+    "miles to kilometers",
+    "convert mm to inches",
+    "millimeters to inches converter",
+    "convert inches to mm",
+    "feet and inches converter",
+    "convert ft in to cm",
+    "yards to meters",
+    "meters to yards converter",
     "convert miles to meters",
-    "meters to millimeters converter",
-    "convert inches to yards",
-    "feet to centimeters calculator",
-    "convert kilometers to millimeters",
-    "yards to inches converter",
-    "convert meters to miles",
-    "centimeters to yards conversion",
-    "convert millimeters to kilometers",
-    "meters to inches converter",
-    "convert feet to yards",
-    "centimeters to kilometers converter",
-    "convert inches to meters",
-    "millimeters to yards conversion",
-    "convert meters to centimeters",
-    
-    // Long-tail Keywords (20)
-    "free online length converter",
-    "best length converter online",
-    "length converter with live preview",
-    "free length converter tool online",
-    "online length converter free",
-    "length converter online free",
-    "meter to feet free",
-    "feet to meter free",
-    "cm to inches free",
-    "inches to cm free",
-    "mm to inches free",
-    "inches to mm free",
-    "km to miles free",
-    "miles to km free",
-    "yards to meters free",
-    "meters to yards free",
-    "height converter free",
-    "distance converter free",
-    "measurement converter free",
-    "metric to imperial free",
-    
-    // Additional SEO Keywords
-    "unit conversion table",
-    "SI units",
-    "feet and inches calculator",
-    "inches fraction to decimal",
-    "ruler inches cm",
-    "convert 5 ft 11 in to cm",
-    "convert 180 cm to feet",
-    "convert 10 inches to cm",
-    "convert 100 cm to inches",
-    "convert 1 mile to km",
-    "convert 1 km to miles",
-    "yard to foot",
-    "foot to inch",
-    "meter to centimeter",
-    "centimeter to millimeter",
-    "engineering unit converter",
-    "car tire size inches",
-    "photo print inches cm",
-    "floor plan scale",
-    "pipe diameter inches mm",
-    "wire gauge inches mm",
-    "drill bit inches mm",
-    "convert nautical miles km",
-    "walking distance miles km",
-    "running track meters",
-    "height in cm to feet and inches",
-    "convert 6 feet to cm",
-    "convert 170 cm to feet",
-    "metric conversion chart",
-    "imperial conversion chart",
-    "convert yards to feet",
-    "convert meters to inches",
-    "convert inches to meters",
-    "distance unit list",
-    "what is 1 yard in meters",
-    "what is 1 inch in mm",
-    "what is 1 foot in cm",
-    
-    // Trending 2024-2025 Keywords
-    "ai length converter",
-    "smart length converter",
-    "bulk length converter",
-    "advanced length converter",
-    "professional length converter",
-    "length converter with preview",
-    "real-time length converter",
-    "multi-language length converter",
-    "unicode length converter",
-    "accent length converter",
-    "emoji length converter",
-    "special character length converter",
-    "programming length converter",
-    "seo length converter",
-    "social media length converter",
-    "blog length converter",
-    "academic length converter",
-    "business length converter",
-    "marketing length converter",
-    "content creation length converter",
-    "developer length converter",
-    "writer length converter",
-    "editor length converter",
-    "journalist length converter",
-    "student length converter",
-    "teacher length converter",
-    "researcher length converter",
-    "analyst length converter",
-    "manager length converter",
-    "entrepreneur length converter",
-    "freelancer length converter",
-    "consultant length converter",
-    "agency length converter",
-    "startup length converter",
-    "enterprise length converter",
-    "small business length converter",
-    "medium business length converter",
-    "large business length converter",
-    "nonprofit length converter",
-    "government length converter",
-    "education length converter",
-    "healthcare length converter",
-    "finance length converter",
-    "technology length converter",
-    "retail length converter",
-    "manufacturing length converter",
-    "service length converter",
-    "consulting length converter",
-    "marketing length converter",
-    "advertising length converter",
-    "public relations length converter",
-    "communications length converter",
-    "media length converter",
-    "publishing length converter",
-    "journalism length converter",
-    "blogging length converter",
-    "social media length converter",
-    "content marketing length converter",
-    "digital marketing length converter",
-    "email marketing length converter",
-    "search engine optimization length converter",
-    "pay per click length converter",
-    "social media marketing length converter",
-    "influencer marketing length converter",
-    "affiliate marketing length converter",
-    "content strategy length converter",
-    "brand strategy length converter",
-    "creative strategy length converter",
-    "digital strategy length converter",
-    "marketing strategy length converter",
-    "business strategy length converter",
-    "growth strategy length converter",
-    "expansion strategy length converter",
-    "international strategy length converter",
-    "global strategy length converter",
-    "local strategy length converter",
-    "regional strategy length converter",
-    "national strategy length converter",
-    "international business length converter",
-    "global business length converter",
-    "local business length converter",
-    "regional business length converter",
-    "national business length converter",
-    "small business strategy length converter",
-    "medium business strategy length converter",
-    "large business strategy length converter",
-    "startup strategy length converter",
-    "scale up strategy length converter",
-    "growth stage strategy length converter",
-    "mature stage strategy length converter",
-    "decline stage strategy length converter",
-    "turnaround strategy length converter",
-    "transformation strategy length converter",
-    "digital transformation length converter",
-    "business transformation length converter",
-    "organizational transformation length converter",
-    "cultural transformation length converter",
-    "operational transformation length converter",
-    "strategic transformation length converter",
-    "tactical transformation length converter",
-    "operational excellence length converter",
-    "strategic excellence length converter",
-    "tactical excellence length converter",
-    "operational efficiency length converter",
-    "strategic efficiency length converter",
-    "tactical efficiency length converter",
-    "operational effectiveness length converter",
-    "strategic effectiveness length converter",
-    "tactical effectiveness length converter",
-    "operational performance length converter",
-    "strategic performance length converter",
-    "tactical performance length converter",
-    "operational results length converter",
-    "strategic results length converter",
-    "tactical results length converter",
-    "operational outcomes length converter",
-    "strategic outcomes length converter",
-    "tactical outcomes length converter",
-    "operational impact length converter",
-    "strategic impact length converter",
-    "tactical impact length converter",
-    "operational value length converter",
-    "strategic value length converter",
-    "tactical value length converter",
-    "operational benefit length converter",
-    "strategic benefit length converter",
-    "tactical benefit length converter",
-    "operational advantage length converter",
-    "strategic advantage length converter",
-    "tactical advantage length converter",
-    "operational opportunity length converter",
-    "strategic opportunity length converter",
-    "tactical opportunity length converter",
-    "operational potential length converter",
-    "strategic potential length converter",
-    "tactical potential length converter",
-    "operational capability length converter",
-    "strategic capability length converter",
-    "tactical capability length converter",
-    "operational capacity length converter",
-    "strategic capacity length converter",
-    "tactical capacity length converter",
-    "operational resource length converter",
-    "strategic resource length converter",
-    "tactical resource length converter",
-    "operational asset length converter",
-    "strategic asset length converter",
-    "tactical asset length converter",
-    "operational investment length converter",
-    "strategic investment length converter",
-    "tactical investment length converter",
-    "operational return length converter",
-    "strategic return length converter",
-    "tactical return length converter",
-    "operational roi length converter",
-    "strategic roi length converter",
-    "tactical roi length converter",
-    "operational profit length converter",
-    "strategic profit length converter",
-    "tactical profit length converter",
-    "operational revenue length converter",
-    "strategic revenue length converter",
-    "tactical revenue length converter",
-    "operational income length converter",
-    "strategic income length converter",
-    "tactical income length converter",
-    "operational earnings length converter",
-    "strategic earnings length converter",
-    "tactical earnings length converter",
-    "operational margin length converter",
-    "strategic margin length converter",
-    "tactical margin length converter",
-    "operational growth length converter",
-    "strategic growth length converter",
-    "tactical growth length converter",
-    "operational expansion length converter",
-    "strategic expansion length converter",
-    "tactical expansion length converter",
-    "operational scaling length converter",
-    "strategic scaling length converter",
-    "tactical scaling length converter",
-    "operational development length converter",
-    "strategic development length converter",
-    "tactical development length converter",
-    "operational improvement length converter",
-    "strategic improvement length converter",
-    "tactical improvement length converter",
-    "operational optimization length converter",
-    "strategic optimization length converter",
-    "tactical optimization length converter",
-    "operational enhancement length converter",
-    "strategic enhancement length converter",
-    "tactical enhancement length converter",
-    "operational innovation length converter",
-    "strategic innovation length converter",
-    "tactical innovation length converter",
-    "operational creativity length converter",
-    "strategic creativity length converter",
-    "tactical creativity length converter",
-    "operational agility length converter",
-    "strategic agility length converter",
-    "tactical agility length converter",
-    "operational flexibility length converter",
-    "strategic flexibility length converter",
-    "tactical flexibility length converter",
-    "operational adaptability length converter",
-    "strategic adaptability length converter",
-    "tactical adaptability length converter",
-    "operational resilience length converter",
-    "strategic resilience length converter",
-    "tactical resilience length converter",
-    "operational sustainability length converter",
-    "strategic sustainability length converter",
-    "tactical sustainability length converter",
-    "operational durability length converter",
-    "strategic durability length converter",
-    "tactical durability length converter",
-    "operational longevity length converter",
-    "strategic longevity length converter",
-    "tactical longevity length converter",
-    "operational stability length converter",
-    "strategic stability length converter",
-    "tactical stability length converter",
-    "operational reliability length converter",
-    "strategic reliability length converter",
-    "tactical reliability length converter",
-    "operational consistency length converter",
-    "strategic consistency length converter",
-    "tactical consistency length converter",
-    "operational quality length converter",
-    "strategic quality length converter",
-    "tactical quality length converter",
-    "operational excellence length converter",
-    "strategic excellence length converter",
-    "tactical excellence length converter",
-    
-    // Trending 2024-2025 Keywords (40)
-    "length converter app",
-    "length converter online",
-    "length conversion chart",
+    "nautical miles to kilometers",
+    "convert kilometers to nautical miles",
+    "convert micrometers to meters",
+    "convert nanometers to meters",
+    "light year to kilometers",
+    "convert lightyears to meters",
+    "height converter cm to ft",
+    "convert height cm to feet and inches",
+    "convert cm to ft and in",
+    "convert inches to feet",
+    "imperial to metric converter",
+    "metric to imperial converter",
     "length conversion table",
-    "length measurement calculator",
-    "length conversion app",
-    "length converter calculator",
-    "convert meters to feet and inches",
-    "convert feet to centimeters and inches",
-    "convert meters to yards and feet",
-    "convert centimeters to feet and inches",
-    "convert kilometers to meters and centimeters",
-    "convert feet to meters and centimeters",
-    "convert millimeters to meters and centimeters",
-    "convert meters to kilometers and miles",
-    "feet to inches calculator",
-    "centimeters to inches calculator",
-    "millimeters to meters calculator",
-    "meters to millimeters calculator",
-    "yards to feet calculator",
-    "inches to centimeters calculator",
-    "kilometers to miles calculator",
-    "meters to feet calculator",
-    "feet to meters calculator",
-    "inches to millimeters calculator",
-    "yards to meters calculator",
-    "centimeters to meters calculator",
-    "millimeters to centimeters calculator",
-    "kilometers to meters calculator",
-    "miles to kilometers calculator",
-    "feet to centimeters calculator",
-    "inches to feet calculator",
-    "yards to inches calculator",
-    "meters to inches calculator",
-    "feet to yards calculator",
-    "centimeters to feet calculator",
-    "inches to yards calculator",
-    "meters to yards calculator",
-    "feet to miles calculator",
-    "yards to miles calculator",
-    "kilometers to yards calculator"
+    "length converter chart",
+    "online length converter",
+    "free length converter online",
+    "distance converter",
+    "distance conversion calculator",
+    "convert miles to feet",
+    "convert feet to yards",
+    "convert meters to centimeters",
+    "convert cm to meters",
+    "convert meters to millimeters",
+    "convert kilometers to meters",
+    "convert meters to kilometers",
+    "scale converter length",
+    "convert scale length to real length",
+    "convert furlongs to miles",
+    "convert rods to feet",
+    "convert chains to meters",
+    "engineering length converter",
+    "construction length converter",
+    "convert survey units",
+    "convert between metric and imperial length",
+    "convert imperial length units online",
+    "convert inches and fractions to decimal",
+    "decimal to fraction length converter",
+    "convert feet inches fraction to decimal",
+    "convert px to cm",
+    "convert pixels to inches at dpi",
+    "convert pixels to inches",
+    "convert pt to inches",
+    "convert pica to inches",
+    "convert mm to pt",
+    "convert cm to pt",
+    "interactive length converter",
+    "length conversion calculator with formula",
+    "how many inches in a meter",
+    "how many cm in a mile",
+    "convert height meters to feet"
   ],
+
   alternates: { canonical: "https://www.fasttools.store/converters/length" },
   openGraph: {
     title: "Free Length Converter | Convert Meters, Feet, Inches, CM, KM & Miles | FastTools",
@@ -510,27 +177,8 @@ export const metadata: Metadata = {
 
 export default function LengthConverterPage() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="relative overflow-hidden">
-        {/* Green-focused but vibrant background matching homepage style */}
-        <div className="absolute inset-0 bg-gradient-to-br from-green-500/30 via-emerald-500/30 via-teal-500/30 to-cyan-500/30"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-400/20 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-400/15 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-teal-400/10 via-transparent to-transparent"></div>
-        
-        {/* Green-focused floating particles with accent colors */}
-        <div className="absolute top-10 left-10 h-4 w-4 bg-green-500 rounded-full shadow-lg shadow-green-500/50"></div>
-        <div className="absolute top-20 right-20 h-5 w-5 bg-emerald-500 rounded-full shadow-lg shadow-emerald-500/50"></div>
-        <div className="absolute bottom-20 left-20 h-4 w-4 bg-teal-500 rounded-full shadow-lg shadow-teal-500/50"></div>
-        <div className="absolute bottom-10 right-10 h-3 w-3 bg-cyan-500 rounded-full shadow-lg shadow-cyan-500/50"></div>
-        <div className="absolute top-1/2 left-1/4 h-3 w-3 bg-green-400 rounded-full shadow-lg shadow-green-400/50"></div>
-        <div className="absolute top-1/3 right-1/3 h-4 w-4 bg-emerald-400 rounded-full shadow-lg shadow-emerald-400/50"></div>
-        
-        {/* Green-focused gradient orbs */}
-        <div className="absolute -top-32 -left-32 h-48 w-48 bg-gradient-to-br from-green-500/40 to-emerald-500/40 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-32 -right-32 h-36 w-36 bg-gradient-to-br from-teal-500/40 to-cyan-500/40 rounded-full blur-3xl"></div>
-        
-        <div className="container mx-auto px-4 py-8 relative">
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-6 sm:py-8">
         <Breadcrumbs
           items={[
             { label: "Home", href: "/" },
@@ -539,143 +187,175 @@ export default function LengthConverterPage() {
           ]}
         />
 
-          <div className="max-w-6xl mx-auto mt-8 space-y-8">
-            {/* Hero Section */}
-            <div className="text-center space-y-6 animate-fade-in-up">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/30 via-emerald-500/30 via-teal-500/30 to-cyan-500/30 border border-green-400/50 text-white text-sm font-bold mb-6">
-                <Ruler className="h-4 w-4" />
-                <span>Professional Length Converter</span>
-                <div className="h-2 w-2 bg-emerald-400 rounded-full"></div>
-              </div>
-              
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-emerald-400 via-teal-400 via-green-500 to-green-600 leading-tight">
-                Free Length Converter
-              </h1>
-              
-              <p className="text-lg md:text-xl text-white/90 text-pretty max-w-3xl mx-auto leading-relaxed">
-                Convert length units instantly: meters, feet, inches, centimeters, millimeters, kilometers, yards, and miles. 
-                Professional length conversion for construction, travel, and education.
-              </p>
-              
-              <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-white/80">
-                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/25 to-emerald-500/25 border border-green-400/40">
-                  <Ruler className="h-4 w-4" />
-                  <span>8+ Units</span>
-                </div>
-                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/25 to-teal-500/25 border border-emerald-400/40">
-                  <Calculator className="h-4 w-4" />
-                  <span>Real-time</span>
-                </div>
-                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-teal-500/25 to-cyan-500/25 border border-teal-400/40">
-                  <Target className="h-4 w-4" />
-                  <span>Free Forever</span>
-                </div>
-                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/25 to-green-600/25 border border-cyan-400/40">
-                  <Users className="h-4 w-4" />
-                  <span>Professional</span>
-                </div>
-              </div>
-          </div>
-
-          {/* First Ad Space - After Hero Content */}
-          <div className="mb-8">
-              <div className="text-center mb-2">
-                <span className="text-xs text-white/60 font-medium">Advertisement</span>
-              </div>
-              <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2">
-                <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20 shadow-xl">
-              <LengthConverter />
-                </div>
-
-              {/* Second Ad Space - After Tool */}
-              <div className="my-8">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-white/60 font-medium">Advertisement</span>
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+              <div className="flex-1 lg:flex-[2] space-y-5 sm:space-y-6">
+                {/* Hero Section */}
+                <div className="text-center space-y-5 animate-fade-in-up">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-4 shadow-md">
+                    <Ruler className="h-4 w-4" />
+                    <span>Professional Length Converter</span>
+                    <div className="h-2 w-2 bg-secondary-accent rounded-full"></div>
                   </div>
-                  <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
-              </div>
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">Free Length Converter</h1>
+                  <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
+                    Convert meters ⇄ feet, inches ⇄ cm, km ⇄ miles and more with precise, fast results.
+                  </p>
+                  <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
+                      <Ruler className="h-4 w-4 text-primary" />
+                      <span className="text-primary font-medium text-sm">8+ Units</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
+                      <Calculator className="h-4 w-4 text-green-600" />
+                      <span className="text-green-600 font-medium text-sm">Real-time</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-accent shadow">
+                      <Target className="h-4 w-4 text-accent" />
+                      <span className="text-accent font-medium text-sm">Free Forever</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-secondary-accent shadow">
+                      <Users className="h-4 w-4 text-secondary-accent" />
+                      <span className="text-secondary-accent font-medium text-sm">Professional</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobile/Tablet Ad - Top */}
+                <div className="block xl:hidden mb-6">
+                  <div className="text-center mb-2">
+                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
+                </div>
+
+                {/* Tool Card */}
+                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                  <LengthConverter />
+                </div>
+
+                {/* Mobile/Tablet Ad - After Tool */}
+                <div className="block xl:hidden my-8">
+                  <div className="text-center mb-2">
+                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
+                </div>
 
                 {/* Understanding How This Tool Works */}
-                <div className="prose prose-sm max-w-none space-y-6 animate-fade-in-up animation-delay-200">
-                  <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20">
-                    <h2 className="text-xl font-bold mb-4 text-white">Understanding How This Length Converter Works</h2>
-                    <p className="text-sm text-white/80 leading-relaxed mb-4">
-                      Our length converter uses advanced algorithms and real-time processing to deliver 
-                      accurate results instantly. Each conversion is built with precision-engineered formulas that handle 
-                      complex length measurements including metric and imperial systems. 
-                      All conversions are optimized for speed and accuracy, ensuring you get reliable results every time.
+                <div className="space-y-5 animate-fade-in-up animation-delay-200">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-base md:text-xl font-bold mb-3 text-card-foreground">Understanding How This Length Converter Works</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                      Conversions are computed with standardized factors for metric and imperial units. Input validation and
+                      sensible rounding keep values readable while preserving accuracy.
                     </p>
-                    
-                    <h3 className="text-lg font-bold mb-3 text-white">Real-Time Processing</h3>
-                    <p className="text-sm text-white/80 leading-relaxed mb-4">
-                      Length conversions are performed instantly as you type, with live preview of all unit formats. 
-                      The converter handles both metric and imperial systems while preserving measurement accuracy. 
-                      Advanced algorithms ensure proper conversion factors for different length units.
+                    <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">Real-Time Processing</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                      Results update as you type. Mixed formats (like feet+inches) are handled cleanly and converted to any target unit.
                     </p>
-                    
-                    <h3 className="text-lg font-bold mb-3 text-white">Professional Features</h3>
-                    <p className="text-sm text-white/80 leading-relaxed">
-                      Our converter includes professional features like precision rounding, unit validation, 
-                      and support for construction and engineering measurements. All conversions maintain accuracy 
-                      while providing clean, copy-ready results for any application.
+                    <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">Professional Features</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Precision controls, unit hints, and copy‑ready output help in construction, engineering, education, and travel planning.
                     </p>
                   </div>
 
-                  <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20">
-                    <h2 className="text-xl font-bold mb-4 text-white">Advanced Usage Techniques</h2>
-                    <p className="text-sm text-white/80 leading-relaxed mb-4">
-                      Master these professional techniques to get the most out of our length converter and create 
-                      perfectly accurate measurements for any purpose.
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-base md:text-xl font-bold mb-3 text-card-foreground">Advanced Usage Techniques</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                      Practical guidance for real‑world tasks across construction, travel, and science.
                     </p>
-                    
-                    <h3 className="text-lg font-bold mb-3 text-white">Construction and Engineering</h3>
-                    <p className="text-sm text-white/80 leading-relaxed mb-4">
-                      Use metric units for international projects and imperial for US construction. 
-                      Convert between different precision levels for blueprints, materials, and equipment. 
-                      Standardize measurements across different trades and disciplines.
+                    <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">Construction and Engineering</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                      Convert between blueprint scales, material specs, and measurement systems without manual tables.
                     </p>
-                    
-                    <h3 className="text-lg font-bold mb-3 text-white">Travel and Navigation</h3>
-                    <p className="text-sm text-white/80 leading-relaxed mb-4">
-                      Convert distances between countries using different measurement systems. 
-                      Calculate walking and driving distances in preferred units. Use proper length formatting 
-                      for maps, GPS, and travel planning across different regions.
+                    <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">Travel and Navigation</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                      Switch quickly between miles and kilometers when comparing maps, routes, or fitness trackers.
                     </p>
-                    
-                    <h3 className="text-lg font-bold mb-3 text-white">Education and Science</h3>
-                    <p className="text-sm text-white/80 leading-relaxed">
-                      Convert between metric and imperial systems for scientific calculations. 
-                      Use proper precision for laboratory measurements and research. 
-                      Standardize length units for academic projects and scientific publications.
+                    <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">Education and Science</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Use consistent units across lab notes and reports; rely on exact factors, not approximations.
                     </p>
                   </div>
 
-                  <div className="mt-8">
+                  {/* Mobile Bottom Ad */}
+                  <div className="block xl:hidden mt-8">
                     <div className="text-center mb-2">
-                      <span className="text-xs text-white/60 font-medium">Advertisement</span>
+                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                    </div>
+                    <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
                   </div>
-                    <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
+
+                {/* Length Converter FAQ */}
+                <div className="p-6 rounded-lg bg-card border border-border shadow mt-6">
+                  <h2 className="text-2xl font-bold mb-4 text-card-foreground">Length Converter FAQ</h2>
+                  <div className="space-y-4 text-sm text-muted-foreground">
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">How do I convert between feet+inches and centimeters accurately?</h3>
+                      <p>Enter feet and inches in the mixed format (for example, 5 ft 11 in). The tool normalizes it and converts directly to centimeters using exact definitions (1 in = 2.54 cm). For reverse, convert cm to decimal feet and optionally split back into ft+in.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">What precision should I use for construction measurements?</h3>
+                      <p>Match the smallest practical unit on site. For wood framing, 1/16 in (≈1.6 mm) is common; for metalwork, tighter tolerances may be needed. Keep internal precision high but round displays for readability, then note the rounding rule on drawings.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">Meters to feet: why doesn’t my calculator match my colleague’s number?</h3>
+                      <p>Differences usually come from rounding at different steps. Convert once with full precision, then round at the end to an agreed decimal or fractional inch. If values must match exactly, share the factor and rounding policy with your team.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">Can I paste values with units (like “3.2 m” or “12 in”)?</h3>
+                      <p>Yes—unit‑aware parsing accepts common suffixes. If the input is ambiguous, specify the unit explicitly or use the unit selector. The converter validates and rejects impossible combinations to prevent silent errors.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">What’s the difference between decimal feet and feet+inches, and when should I use each?</h3>
+                      <p>Decimal feet (e.g., 5.92 ft) is compact and ideal for calculations and spreadsheets. Feet+inches (5 ft 11 in) is human‑friendly on site. Convert to decimal for math, then present as feet+inches for field work.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">How do I convert map scales or drawings accurately?</h3>
+                      <p>First convert the drawing measurement to true units using the scale (e.g., 1 cm on paper = 2 m in reality), then change units as needed (m ⇄ ft). Document the scale and unit system on the drawing to avoid misreads.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">Miles vs kilometers: any quick mental checks?</h3>
+                      <p>Use 5 miles ≈ 8 km and 1 mile ≈ 1.6 km for estimates. For exact work, rely on the converter and keep one extra decimal place internally before rounding your final number.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">Why do some specs list millimeters instead of centimeters?</h3>
+                      <p>Millimeters remove decimal points and reduce rounding ambiguity in fabrication. If a spec is in mm, keep it in mm until the end, then convert for presentation only.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">Can I use the converter offline at a jobsite?</h3>
+                      <p>Yes. Length and unit calculations run in your browser. You’ll only need a connection to load the page the first time; after that, basic conversions continue to work offline.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">What are the most common unit mistakes to avoid?</h3>
+                      <p>Avoid mixing systems within the same figure (e.g., meters and feet together) and avoid early rounding. Convert once, round at the end, and always annotate the unit and precision you used.</p>
+                    </div>
                   </div>
+                </div>
+                </div>
               </div>
 
-            </div>
-
-            <div className="lg:col-span-1">
-              <div className="sticky top-20">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-white/60 font-medium">Advertisement</span>
+              {/* Desktop Sidebar with AdSense */}
+              <div className="hidden lg:block w-64 xl:w-72">
+                <div className="sticky top-32 space-y-6">
+                  <div>
+                    <div className="text-center mb-2">
+                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                    </div>
+                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
                   </div>
-                  <AdSpace slot="sidebar" className="h-96 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
+                  <div>
+                    <div className="text-center mb-2">
+                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                    </div>
+                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   )
 }
