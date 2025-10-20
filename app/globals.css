@@ -88,7 +88,7 @@
   --secondary: #F3F4F6; /* Light gray for subtle elements */
   --secondary-foreground: #111827;
   --muted: #F3F4F6;
-  --muted-foreground: #E5E7EB; /* Light gray for better contrast on dark background */
+  --muted-foreground: #F8FAFC; /* Much lighter gray for better contrast on dark background */
   --accent: #F18701; /* Orange accent for highlights */
   --accent-foreground: #ffffff;
   --secondary-accent: #10B981; /* Green for success states */
@@ -97,7 +97,7 @@
   --tertiary-accent-foreground: #000000;
   --destructive: #EF4444; /* Red 500 for errors */
   --destructive-foreground: #ffffff;
-  --border: #7678ED; /* Periwinkle border */
+  --border: #A5B4FC; /* Lighter periwinkle for better contrast on dark background */
   --input: #FFFFFF;
   --ring: #F35B04;
   --chart-1: #2563EB;
@@ -112,7 +112,7 @@
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #F3F4F6;
   --sidebar-accent-foreground: #111827;
-  --sidebar-border: #7678ED;
+  --sidebar-border: #A5B4FC;
   --sidebar-ring: #F35B04;
 }
 
@@ -138,11 +138,11 @@
 
   /* Secondary - Dark gray */
   --secondary: #334155;
-  --secondary-foreground: #E2E8F0;
+  --secondary-foreground: #F8FAFC; /* Much lighter for better contrast on dark background */
 
   /* Muted elements */
   --muted: #334155;
-  --muted-foreground: #CBD5E1; /* Lighter gray for better contrast on dark background */
+  --muted-foreground: #F1F5F9; /* Much lighter gray for better contrast on dark background */
 
   /* Accent - Orange */
   --accent: #F18701;
@@ -156,8 +156,8 @@
   --destructive: #EF4444;
   --destructive-foreground: #ffffff;
 
-  /* Borders - Periwinkle borders */
-  --border: #7678ED;
+  /* Borders - Lighter periwinkle borders for better contrast */
+  --border: #A5B4FC;
   --input: #1E293B;
   --ring: #F35B04;
 
@@ -174,8 +174,8 @@
   --sidebar-primary: #F35B04;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #334155;
-  --sidebar-accent-foreground: #E2E8F0;
-  --sidebar-border: #7678ED;
+  --sidebar-accent-foreground: #F8FAFC; /* Much lighter for better contrast on dark background */
+  --sidebar-border: #A5B4FC;
   --sidebar-ring: #F35B04;
 }
 
