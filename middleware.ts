@@ -2,19 +2,21 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  const url = request.nextUrl
   const hostname = request.headers.get('host') || ''
   const protocol = request.headers.get('x-forwarded-proto') || 'http'
 
-  if (hostname.includes('localhost') || hostname.includes('127.0.0.1')) {
+  if (
+      hostname.includes('localhost') ||
+      hostname.includes('127.0.0.1') ||
+      hostname.endsWith('.vercel.app')
+  ) {
     return NextResponse.next()
   }
 
-  if (protocol === 'http' || !hostname.startsWith('www.')) {
-    const redirectURL = new URL(url)
-    redirectURL.protocol = 'https:'
-    redirectURL.hostname = 'www.fasttools.store'
-    return NextResponse.redirect(redirectURL, 301)
+  if (protocol !== 'https') {
+    const url = request.nextUrl
+    url.protocol = 'https:'
+    return NextResponse.redirect(url, 301)
   }
 
   return NextResponse.next()
