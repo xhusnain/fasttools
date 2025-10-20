@@ -137,9 +137,6 @@ export const metadata: Metadata = {
           "max-snippet": -1,
         },
       },
-      alternates: {
-        canonical: "https://www.fasttools.store",
-      },
       verification: {
         google: "l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0",
         yandex: "your-yandex-verification-code",
@@ -366,7 +363,6 @@ export const metadata: Metadata = {
             />
             {/* Essential Meta Tags */}
             <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
-            <link rel="canonical" href="https://www.fasttools.store"/>
             <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
             <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
             <meta name="bingbot" content="index, follow"/>

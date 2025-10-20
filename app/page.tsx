@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import type { Metadata } from "next"
 import {
   Calculator,
   Clock,
@@ -32,6 +33,12 @@ import {
   X,
   Wrench,
 } from "lucide-react"
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://www.fasttools.store",
+  },
+}
 
 export default function HomePage() {
   const jsonLd = {
