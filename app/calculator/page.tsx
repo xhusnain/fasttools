@@ -885,6 +885,7 @@ export const metadata: Metadata = {
     languages: {
       "en-US": "https://www.fasttools.store/calculator",
       "en": "https://www.fasttools.store/calculator",
+      "x-default": "https://www.fasttools.store/calculator",
     },
   },
 }
