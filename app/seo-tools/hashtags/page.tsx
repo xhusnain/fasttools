@@ -4,6 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Hashtag Generator | Create Social Media Hashtags Online",
   description:
     "Generate relevant hashtags for Instagram, Twitter, Facebook, and LinkedIn. Increase your social media reach and engagement with trending hashtags.",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Hashtag Generator - Create Social Media Hashtags",
     description: "Generate trending hashtags for your social media posts",
+    url: "https://www.fasttools.store/seo-tools/hashtags",
     type: "website",
   },
 }

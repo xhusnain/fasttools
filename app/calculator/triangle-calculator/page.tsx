@@ -23,7 +23,7 @@ import {
 
 export const metadata: Metadata = {
     title: "Triangle Calculator | Area, Perimeter & Angles | FastTools",
-    description: "Advanced triangle calculator with area, perimeter, angles, heights, medians, inradius, circumradius calculations. Supports SSS, SAS, ASA, AAS, SSA triangle solving methods. Free online geometry tool for students and professionals.",
+    description: "Advanced triangle calculator with area, perimeter, angles, heights, medians, inradius, circumradius calculations. Supports SSS, SAS, ASA, AAS, SSA triangle solving methods. Free online geometry tool.",
     keywords: [
         "triangle calculator",
         "triangle area calculator",

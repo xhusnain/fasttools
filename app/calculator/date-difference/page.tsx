@@ -7,7 +7,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Date Difference Calculator | Days, Months & Years | FastTools",
   description:
-    "Use the free Date Difference Calculator by FastTools to find the exact number of days, months, and years between any two dates. Quick, accurate, and easy to use for planning, scheduling, or tracking durations.",
+    "Use the free Date Difference Calculator by FastTools to find the exact number of days, months, and years between any two dates. Quick, accurate, and easy to use for planning and scheduling.",
   abstract: "Professional date difference calculator supporting multiple date formats, business days calculation, and leap year handling. Calculate precise time differences between any two dates.",
   category: "Technology",
   classification: "Date Calculation Tool",

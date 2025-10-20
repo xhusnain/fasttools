@@ -34,7 +34,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "IP Subnet Calculator | IPv4 IPv6 CIDR | FastTools",
-  description: "Use our free IP Subnet Calculator to calculate IPv4/IPv6 subnets, CIDR notation, VLSM, supernetting, and network analysis. Perfect for network engineers, IT professionals, and students. Fast, accurate, and easy to use online.",
+  description: "Calculate IPv4/IPv6 subnets, CIDR notation, VLSM, and supernetting. Perfect for network engineers, IT professionals, and students. Fast, accurate, and easy to use online.",
   keywords: [
     "ip subnet calculator",
     "subnet calculator",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Free Online IP Subnet Calculator | IPv4 IPv6 CIDR Network Calculator | FastTools",
-    description: "Use our free IP Subnet Calculator to calculate IPv4/IPv6 subnets, CIDR notation, VLSM, supernetting, and network analysis. Perfect for network engineers, IT professionals, and students. Fast, accurate, and easy to use online.",
+    description: "Calculate IPv4/IPv6 subnets, CIDR notation, VLSM, and supernetting. Perfect for network engineers, IT professionals, and students. Fast, accurate, and easy to use online.",
     type: "website",
     url: "https://www.fasttools.store/calculator/ip-subnet-calculator",
     siteName: "FastTools",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Free Online IP Subnet Calculator | IPv4 IPv6 CIDR Network Calculator | FastTools",
-    description: "Use our free IP Subnet Calculator to calculate IPv4/IPv6 subnets, CIDR notation, VLSM, supernetting, and network analysis. Perfect for network engineers, IT professionals, and students. Fast, accurate, and easy to use online.",
+    description: "Calculate IPv4/IPv6 subnets, CIDR notation, VLSM, and supernetting. Perfect for network engineers, IT professionals, and students. Fast, accurate, and easy to use online.",
     images: ["https://www.fasttools.store/og-ip-subnet-calculator.jpg"]
   },
   alternates: {

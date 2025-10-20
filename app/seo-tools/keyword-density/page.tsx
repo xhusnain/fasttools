@@ -4,6 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Keyword Density Checker | Analyze Content for SEO Online",
   description:
     "Check keyword density in your content for better SEO optimization. Analyze keyword frequency and distribution to improve search engine rankings.",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Keyword Density Checker - Analyze Content SEO",
     description: "Analyze keyword density to optimize your content for search engines",
+    url: "https://www.fasttools.store/seo-tools/keyword-density",
     type: "website",
   },
 }

@@ -35,7 +35,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Free Online Calculators | 50+ Professional Tools | FastTools",
   description:
-    "Access 50+ free professional calculators and tools in 2025. BMI calculator, loan calculator, tax calculator, age calculator, mortgage calculator, retirement calculator, and more. No registration required, instant results.",
+    "Access 50+ free professional calculators and tools in 2025. BMI calculator, loan calculator, tax calculator, age calculator, mortgage calculator, retirement calculator, and more. No registration required.",
   authors: [{ name: "FastTools Team", url: "https://www.fasttools.store" }],
   creator: "FastTools",
   publisher: "FastTools",

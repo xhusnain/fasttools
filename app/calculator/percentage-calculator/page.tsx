@@ -7,7 +7,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Percentage Calculator | Accurate Math Tool | FastTools",
   description:
-    "Free percentage calculator for all your math needs. Calculate percentage increase, decrease, difference, discounts, tips, grades, profit margins, and more. Accurate, quick, and easy-to-use online tool with step-by-step formulas.",
+    "Free percentage calculator for all your math needs. Calculate percentage increase, decrease, difference, discounts, tips, grades, profit margins, and more. Accurate, quick, and easy-to-use online tool.",
   keywords: [
     "percentage calculator",
     "percentage increase calculator",

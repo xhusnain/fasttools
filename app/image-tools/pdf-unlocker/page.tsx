@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "PDF Unlocker — Remove PDF Password Protection Online | SmartToolboxes",
   description:
     "Unlock password‑protected PDFs in your browser. Remove restrictions and access your files quickly and securely.",

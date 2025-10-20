@@ -4,6 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Blog Title Generator | Create Catchy Headlines Online",
   description:
     "Generate SEO-friendly blog titles and headlines that attract readers. Create engaging titles for your blog posts, articles, and content marketing.",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Blog Title Generator - Create Catchy Headlines",
     description: "Generate engaging blog titles that improve click-through rates",
+    url: "https://www.fasttools.store/seo-tools/blog-titles",
     type: "website",
   },
 }

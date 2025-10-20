@@ -4,6 +4,7 @@ import { AiHashtagSuggester } from "@/components/ai-hashtag-suggester"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free AI Hashtag Generator - Generate Viral Hashtags for Social Media | SmartToolboxes",
   description:
     "Generate trending hashtags with AI for Instagram, TikTok, Twitter, and LinkedIn. Boost your social media reach and engagement with our free AI hashtag generator. Get viral hashtag suggestions instantly.",
@@ -109,6 +110,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free AI Hashtag Generator - Generate Viral Hashtags for Social Media",
     description: "Generate trending hashtags with AI for Instagram, TikTok, Twitter, and LinkedIn. Boost your social media reach instantly.",
+    url: "https://www.fasttools.store/ai-tools/hashtag-suggester",
     type: "website",
   },
   twitter: {

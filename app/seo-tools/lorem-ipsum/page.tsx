@@ -4,6 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Lorem Ipsum Generator | Placeholder Text Generator Online",
   description:
     "Generate Lorem Ipsum placeholder text for your designs, mockups, and prototypes. Perfect for web designers, developers, and content creators.",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Lorem Ipsum Generator - Create Placeholder Text",
     description: "Generate Lorem Ipsum text for your design projects instantly",
+    url: "https://www.fasttools.store/seo-tools/lorem-ipsum",
     type: "website",
   },
 }

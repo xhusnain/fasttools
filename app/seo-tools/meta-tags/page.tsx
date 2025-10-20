@@ -4,6 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Meta Tag Generator | Create SEO-Friendly Meta Tags Online",
   description:
     "Generate SEO-optimized meta tags for your website including title, description, Open Graph, and Twitter cards. Improve your search engine rankings with proper meta tags.",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Meta Tag Generator - Create SEO Meta Tags",
     description: "Generate complete meta tags for better SEO and social media sharing",
+    url: "https://www.fasttools.store/seo-tools/meta-tags",
     type: "website",
   },
 }

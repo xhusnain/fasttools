@@ -10,8 +10,8 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
     title: "Compound Interest Calculator | Investment Growth | FastTools",
-    description:
-        "Use our free Compound Interest Calculator to calculate how your money grows over time. Enter your principal, interest rate, time period, and compounding frequency to see total interest and final balance instantly.",
+  description:
+    "Use our free Compound Interest Calculator to calculate how your money grows over time. Enter your principal, interest rate, time period, and compounding frequency to see total interest and final balance.",
     keywords: [
         "compound interest calculator",
         "calculate compound interest",
@@ -117,8 +117,8 @@ export const metadata: Metadata = {
     ],
   openGraph: {
         title: "Free Online Compound Interest Calculator | Investment Growth Calculator | FastTools",
-        description:
-            "Use our free Compound Interest Calculator to calculate how your money grows over time. Enter your principal, interest rate, time period, and compounding frequency to see total interest and final balance instantly.",
+  description:
+    "Use our free Compound Interest Calculator to calculate how your money grows over time. Enter your principal, interest rate, time period, and compounding frequency to see total interest and final balance.",
     type: "website",
     url: "https://www.fasttools.store/calculator/compound-interest",
     siteName: "FastTools",
@@ -134,8 +134,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
         title: "Free Online Compound Interest Calculator | Investment Growth Calculator | FastTools",
-        description:
-            "Use our free Compound Interest Calculator to calculate how your money grows over time. Enter your principal, interest rate, time period, and compounding frequency to see total interest and final balance instantly.",
+  description:
+    "Use our free Compound Interest Calculator to calculate how your money grows over time. Enter your principal, interest rate, time period, and compounding frequency to see total interest and final balance.",
         images: ["https://www.fasttools.store/og-compound-interest-calculator.jpg"],
   },
   alternates: {

@@ -29,7 +29,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "About FastTools | Free Online Tools Platform | FastTools",
-  description: "Discover FastTools, the world's most comprehensive free online tools platform. Access 1000+ professional tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Trusted by millions worldwide.",
+  description: "Discover FastTools, the world's most comprehensive free online tools platform. Access 1000+ professional tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
     keywords: [
         "fasttools",
         "free online tools",
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "About FastTools - Leading Free Online Tools Platform | 1000+ Digital Tools",
-    description: "Discover FastTools, the world's most comprehensive free online tools platform. Access 1000+ professional tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Trusted by millions worldwide.",
+    description: "Discover FastTools, the world's most comprehensive free online tools platform. Access 1000+ professional tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
     type: "website",
     url: "https://www.fasttools.store/about",
     siteName: "FastTools",
@@ -140,7 +140,7 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     name: "About FastTools - Leading Free Online Tools Platform",
-    description: "Discover FastTools, the world's most comprehensive free online tools platform. Access 1000+ professional tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Trusted by millions worldwide.",
+    description: "Discover FastTools, the world's most comprehensive free online tools platform. Access 1000+ professional tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
     url: "https://www.fasttools.store/about",
     mainEntity: {
       "@type": "Organization",

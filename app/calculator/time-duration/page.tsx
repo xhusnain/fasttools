@@ -6,7 +6,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Free Online Time Duration Calculator | Accurate & Quick Time Tool | FastTools",
-  description: "Use our free Time Duration Calculator to find the exact time between two points — in hours, minutes, and seconds. Perfect for tracking work hours, study time, events, or any time interval. Fast, accurate, and easy to use online.",
+  description: "Use our free Time Duration Calculator to find the exact time between two points — in hours, minutes, and seconds. Perfect for tracking work hours, study time, events, or any time interval.",
   keywords: [
     "time duration calculator",
     "time difference calculator",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Free Online Time Duration Calculator | Accurate & Quick Time Tool | FastTools",
-    description: "Use our free Time Duration Calculator to find the exact time between two points — in hours, minutes, and seconds. Perfect for tracking work hours, study time, events, or any time interval. Fast, accurate, and easy to use online.",
+    description: "Use our free Time Duration Calculator to find the exact time between two points — in hours, minutes, and seconds. Perfect for tracking work hours, study time, events, or any time interval.",
     type: "website",
     url: "https://www.fasttools.store/calculator/time-duration",
     siteName: "FastTools",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Free Online Time Duration Calculator | Accurate & Quick Time Tool | FastTools",
-    description: "Use our free Time Duration Calculator to find the exact time between two points — in hours, minutes, and seconds. Perfect for tracking work hours, study time, events, or any time interval. Fast, accurate, and easy to use online.",
+    description: "Use our free Time Duration Calculator to find the exact time between two points — in hours, minutes, and seconds. Perfect for tracking work hours, study time, events, or any time interval.",
     images: ["https://www.fasttools.store/og-time-duration-calculator.jpg"]
   },
   alternates: {
