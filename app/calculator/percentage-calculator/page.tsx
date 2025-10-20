@@ -428,7 +428,7 @@ export default function PercentageCalculatorPage() {
                       { 
                         name: "Tip Calculator", 
                         desc: "Calculate tips and gratuity", 
-                        href: "/calculator/tip-calculator",
+                        href: "/finance-tools/tip-calculator",
                         icon: "🍽️"
                       },
                       { 

@@ -223,7 +223,7 @@ export async function GET() {
       ]
     },
     {
-      url: "https://www.fasttools.store/finance-tools/tax-calculator",
+      url: "https://www.fasttools.store/calculator/tax-calculator",
       lastModified: getFreshnessDate(5),
       changeFrequency: "weekly" as const,
       priority: 0.85,

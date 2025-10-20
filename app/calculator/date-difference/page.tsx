@@ -975,7 +975,7 @@ export default function DateDifferencePage() {
                 <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
                   Calculate business days between two dates, excluding weekends.
                 </p>
-                <a href="/calculator/workday-calculator" className="text-primary hover:underline text-sm">
+                <a href="/date-time-tools/workday-calculator" className="text-primary hover:underline text-sm">
                   Try Workday Calculator →
                 </a>
               </div>

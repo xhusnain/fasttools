@@ -1077,7 +1077,7 @@ export default function TimeDurationPage() {
                         {
                           name: "Workday Calculator",
                           desc: "Calculate business days between dates",
-                          href: "/calculator/workday-calculator",
+                          href: "/date-time-tools/workday-calculator",
                           icon: "💼"
                         },
                         {

@@ -657,7 +657,7 @@ export default function SalesTaxCalculatorPage() {
                         { name: "Loan Calculator", desc: "Calculate loan payments", href: "/calculator/loan-calculator", icon: FileText },
                         { name: "Currency Converter", desc: "Convert between currencies", href: "/converters/currency", icon: Globe },
                         { name: "Percentage Calculator", desc: "Calculate percentages", href: "/calculator/percentage-calculator", icon: Percent },
-                        { name: "Tip Calculator", desc: "Calculate tips and gratuity", href: "/calculator/tip-calculator", icon: Award },
+                        { name: "Tip Calculator", desc: "Calculate tips and gratuity", href: "/finance-tools/tip-calculator", icon: Award },
                         { name: "Discount Calculator", desc: "Calculate discounts and savings", href: "/finance-tools/discount-calculator", icon: PieChart },
                         { name: "Salary Calculator", desc: "Calculate salary and wages", href: "/calculator/salary-calculator", icon: BarChart3 },
                         { name: "Amortization Calculator", desc: "Calculate loan amortization", href: "/calculator/amortization-calculator", icon: Clock },
