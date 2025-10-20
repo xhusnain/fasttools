@@ -336,6 +336,10 @@ export const metadata: Metadata = {
       return (
         <html lang="en" className={`dark ${geistSans.variable} ${geistMono.variable} antialiased`}>
         <head>
+            {/* Preload external scripts for better performance */}
+            <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-4G804HZ22C" as="script" crossOrigin="anonymous"/>
+            <link rel="preload" href="https://www.clarity.ms/tag/tspya2xfyk" as="script" crossOrigin="anonymous"/>
+            
             {/* Google Analytics */}
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-4G804HZ22C"></script>
             <script
@@ -417,10 +421,14 @@ export const metadata: Metadata = {
             <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
             <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
             <link rel="dns-prefetch" href="//www.google-analytics.com"/>
+            <link rel="dns-prefetch" href="//www.googletagmanager.com"/>
+            <link rel="dns-prefetch" href="//www.clarity.ms"/>
             <link rel="dns-prefetch" href="//vercel.live"/>
             <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous"/>
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
             <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous"/>
+            <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous"/>
+            <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous"/>
             <link rel="preconnect" href="https://vercel.live" crossOrigin="anonymous"/>
             <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
             

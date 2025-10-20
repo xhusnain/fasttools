@@ -17,7 +17,32 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301) // 301 is reliable for bots & SEO
   }
 
-  return NextResponse.next()
+  // ✅ Add cache headers for better performance
+  const response = NextResponse.next()
+  
+  // Cache headers for static assets
+  if (url.pathname.startsWith('/_next/static/')) {
+    response.headers.set('Cache-Control', 'public, max-age=31536000, immutable')
+  } else if (url.pathname.match(/\.(ico|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot)$/)) {
+    response.headers.set('Cache-Control', 'public, max-age=31536000, immutable')
+  } else if (url.pathname.match(/\.(css|js)$/)) {
+    response.headers.set('Cache-Control', 'public, max-age=31536000, immutable')
+  } else if (url.pathname === '/manifest.json' || url.pathname === '/robots.txt' || url.pathname === '/sitemap.xml') {
+    response.headers.set('Cache-Control', 'public, max-age=86400, stale-while-revalidate=604800')
+  } else if (url.pathname.startsWith('/api/')) {
+    response.headers.set('Cache-Control', 'public, max-age=300, stale-while-revalidate=60')
+  } else {
+    // Default cache for HTML pages
+    response.headers.set('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400')
+  }
+
+  // Security headers
+  response.headers.set('X-Content-Type-Options', 'nosniff')
+  response.headers.set('X-Frame-Options', 'DENY')
+  response.headers.set('X-XSS-Protection', '1; mode=block')
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
+  
+  return response
 }
 
 export const config = {
