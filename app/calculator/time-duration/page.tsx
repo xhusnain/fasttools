@@ -1083,7 +1083,7 @@ export default function TimeDurationPage() {
                         {
                           name: "Date to Day Calculator",
                           desc: "Find what day of the week a date falls on",
-                          href: "/calculator/date-to-day",
+                          href: "/date-time-tools/date-to-day",
                           icon: "🗓️"
                         },
                         {

@@ -789,10 +789,10 @@ export default function LoveCalculatorPage() {
                   { name: "Pace Calculator", href: "/calculator/pace-calculator", icon: Clock, desc: "Calculate running pace" },
                   { name: "Calorie Calculator", href: "/calculator/calorie-calculator", icon: Target, desc: "Calculate daily calories" },
                   { name: "Pregnancy Calculator", href: "/calculator/pregnancy-calculator", icon: Gift, desc: "Calculate pregnancy due date" },
-                  { name: "Anniversary Calculator", href: "/calculator/anniversary-calculator", icon: Star, desc: "Calculate anniversaries" },
-                  { name: "Birthday Countdown", href: "/calculator/birthday-countdown", icon: Sparkles, desc: "Countdown to birthday" },
-                  { name: "Future Age Calculator", href: "/calculator/future-age", icon: Flower2, desc: "Calculate future age" },
-                  { name: "Hashtag Counter", href: "/calculator/hashtag-counter", icon: Hash, desc: "Count hashtags" },
+                  { name: "Anniversary Calculator", href: "/fun-tools/anniversary", icon: Star, desc: "Calculate anniversaries" },
+                  { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown", icon: Sparkles, desc: "Countdown to birthday" },
+                  { name: "Age Calculator", href: "/calculator/age-calculator", icon: Flower2, desc: "Calculate age in years, months, days" },
+                  { name: "Hashtag Counter", href: "/fun-tools/hashtag-counter", icon: Hash, desc: "Count hashtags" },
                   { name: "Love Calculator", href: "/calculator/love-calculator", icon: Heart, desc: "Calculate love compatibility" },
                   { name: "Fun Tools", href: "/fun-tools", icon: Gift, desc: "More fun calculators" }
                 ].map((tool, index) => (

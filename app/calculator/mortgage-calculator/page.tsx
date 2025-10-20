@@ -637,17 +637,17 @@ export default function MortgageCalculatorPage() {
                 <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-2 xs:gap-3">
                   {[
                     { name: "Payment Calculator", href: "/calculator/payment-calculator", icon: CreditCard, desc: "Calculate loan payments" },
-                    { name: "Auto Loan Calculator", href: "/calculator/auto-loan-calculator", icon: Car, desc: "Calculate auto loan payments" },
-                    { name: "Personal Loan Calculator", href: "/calculator/personal-loan-calculator", icon: Wallet, desc: "Calculate personal loan payments" },
-                    { name: "Interest Rate Calculator", href: "/calculator/interest-rate-calculator", icon: Percent, desc: "Calculate interest rates" },
-                    { name: "Amortization Calculator", href: "/calculator/amortization-calculator", icon: BarChart3, desc: "Calculate amortization schedules" },
-                    { name: "Refinance Calculator", href: "/calculator/refinance-calculator", icon: TrendingUp, desc: "Calculate refinancing options" },
-                    { name: "Debt Consolidation Calculator", href: "/calculator/debt-consolidation-calculator", icon: PieChart, desc: "Calculate debt consolidation" },
-                    { name: "Budget Calculator", href: "/calculator/budget-calculator", icon: FileText, desc: "Calculate budget planning" },
-                    { name: "Investment Calculator", href: "/calculator/investment-calculator", icon: Target, desc: "Calculate investment returns" },
-                    { name: "Retirement Calculator", href: "/calculator/retirement-calculator", icon: Trophy, desc: "Calculate retirement planning" },
-                    { name: "Tax Calculator", href: "/calculator/tax-calculator", icon: Award, desc: "Calculate tax obligations" },
-                    { name: "Salary Calculator", href: "/calculator/salary-calculator", icon: DollarSign, desc: "Calculate salary conversions" }
+                    { name: "Loan Calculator", href: "/calculator/loan-calculator", icon: Car, desc: "Calculate loan payments" },
+                    { name: "Interest Rate Calculator", href: "/calculator/interest-rate-calculator", icon: Wallet, desc: "Calculate interest rates" },
+                    { name: "Amortization Calculator", href: "/calculator/amortization-calculator", icon: Percent, desc: "Calculate amortization schedules" },
+                    { name: "Tax Calculator", href: "/calculator/tax-calculator", icon: BarChart3, desc: "Calculate tax amounts" },
+                    { name: "Percentage Calculator", href: "/calculator/percentage-calculator", icon: TrendingUp, desc: "Calculate percentages" },
+                    { name: "Compound Interest", href: "/calculator/compound-interest", icon: PieChart, desc: "Calculate compound interest" },
+                    { name: "Investment Calculator", href: "/calculator/investment-calculator", icon: FileText, desc: "Calculate investment returns" },
+                    { name: "Retirement Calculator", href: "/calculator/retirement-calculator", icon: Target, desc: "Calculate retirement planning" },
+                    { name: "Salary Calculator", href: "/calculator/salary-calculator", icon: Trophy, desc: "Calculate salary and wages" },
+                    { name: "Sales Tax Calculator", href: "/calculator/sales-tax-calculator", icon: Award, desc: "Calculate sales tax" },
+                    { name: "Tip Calculator", href: "/finance-tools/tip-calculator", icon: DollarSign, desc: "Calculate tips and gratuity" }
                   ].map((tool, index) => (
                     <a
                       key={index}

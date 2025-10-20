@@ -434,7 +434,7 @@ export default function PercentageCalculatorPage() {
                       { 
                         name: "Discount Calculator", 
                         desc: "Calculate discounts and savings", 
-                        href: "/calculator/discount-calculator",
+                        href: "/finance-tools/discount-calculator",
                         icon: "🏷️"
                       },
                       { 
@@ -446,7 +446,7 @@ export default function PercentageCalculatorPage() {
                       { 
                         name: "Markup Calculator", 
                         desc: "Calculate markup and profit margins", 
-                        href: "/calculator/markup-calculator",
+                        href: "/calculator/sales-tax-calculator",
                         icon: "💼"
                       },
                       { 

@@ -567,50 +567,50 @@ export default function TiktokDownloaderPage() {
                   </div>
                   <p className="text-xs xs:text-sm text-white/80 leading-relaxed">Generate engaging captions for your social media posts using AI.</p>
                 </a>
-                <a href="/social-media-tools/instagram-downloader" className="group bg-gradient-to-br from-green-500/10 to-cyan-500/10 border border-green-500/20 rounded-lg p-2 xs:p-3 sm:p-4 hover:border-green-500/40 transition-all duration-200">
+                <a href="/social-media-tools/instagram-dp" className="group bg-gradient-to-br from-green-500/10 to-cyan-500/10 border border-green-500/20 rounded-lg p-2 xs:p-3 sm:p-4 hover:border-green-500/40 transition-all duration-200">
                   <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                     <div className="p-1 xs:p-1.5 bg-green-500/20 rounded-lg">
                       <Download className="h-3 xs:h-4 w-3 xs:w-4 text-green-400" />
                     </div>
-                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base group-hover:text-green-300 transition-colors">Instagram Downloader</h3>
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base group-hover:text-green-300 transition-colors">Instagram DP</h3>
                   </div>
-                  <p className="text-xs xs:text-sm text-white/80 leading-relaxed">Download Instagram photos, videos, and stories in HD quality.</p>
+                  <p className="text-xs xs:text-sm text-white/80 leading-relaxed">Download Instagram profile pictures and display photos.</p>
                 </a>
-                <a href="/social-media-tools/youtube-downloader" className="group bg-gradient-to-br from-red-500/10 to-orange-500/10 border border-red-500/20 rounded-lg p-2 xs:p-3 sm:p-4 hover:border-red-500/40 transition-all duration-200">
+                <a href="/social-media-tools/youtube-thumbnail" className="group bg-gradient-to-br from-red-500/10 to-orange-500/10 border border-red-500/20 rounded-lg p-2 xs:p-3 sm:p-4 hover:border-red-500/40 transition-all duration-200">
                   <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                     <div className="p-1 xs:p-1.5 bg-red-500/20 rounded-lg">
                       <Download className="h-3 xs:h-4 w-3 xs:w-4 text-red-400" />
                     </div>
-                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base group-hover:text-red-300 transition-colors">YouTube Downloader</h3>
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base group-hover:text-red-300 transition-colors">YouTube Thumbnail</h3>
                   </div>
-                  <p className="text-xs xs:text-sm text-white/80 leading-relaxed">Download YouTube videos and audio in various formats and qualities.</p>
+                  <p className="text-xs xs:text-sm text-white/80 leading-relaxed">Generate and download YouTube thumbnails for your videos.</p>
                 </a>
-                <a href="/social-media-tools/facebook-downloader" className="group bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-lg p-2 xs:p-3 sm:p-4 hover:border-blue-500/40 transition-all duration-200">
+                <a href="/social-media-tools/channel-checker" className="group bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-lg p-2 xs:p-3 sm:p-4 hover:border-blue-500/40 transition-all duration-200">
                   <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                     <div className="p-1 xs:p-1.5 bg-blue-500/20 rounded-lg">
                       <Download className="h-3 xs:h-4 w-3 xs:w-4 text-blue-400" />
                     </div>
-                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base group-hover:text-blue-300 transition-colors">Facebook Downloader</h3>
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base group-hover:text-blue-300 transition-colors">Channel Checker</h3>
                   </div>
-                  <p className="text-xs xs:text-sm text-white/80 leading-relaxed">Download Facebook videos, photos, and posts easily.</p>
+                  <p className="text-xs xs:text-sm text-white/80 leading-relaxed">Check YouTube channel statistics and information.</p>
                 </a>
-                <a href="/social-media-tools/twitter-downloader" className="group bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-lg p-2 xs:p-3 sm:p-4 hover:border-cyan-500/40 transition-all duration-200">
+                <a href="/social-media-tools/youtube-tags" className="group bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-lg p-2 xs:p-3 sm:p-4 hover:border-cyan-500/40 transition-all duration-200">
                   <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                     <div className="p-1 xs:p-1.5 bg-cyan-500/20 rounded-lg">
                       <Download className="h-3 xs:h-4 w-3 xs:w-4 text-cyan-400" />
                     </div>
-                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base group-hover:text-cyan-300 transition-colors">Twitter Downloader</h3>
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base group-hover:text-cyan-300 transition-colors">YouTube Tags</h3>
                   </div>
-                  <p className="text-xs xs:text-sm text-white/80 leading-relaxed">Download Twitter videos and GIFs in high quality.</p>
+                  <p className="text-xs xs:text-sm text-white/80 leading-relaxed">Generate YouTube tags for better video discoverability.</p>
                 </a>
-                <a href="/social-media-tools/linkedin-downloader" className="group bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-lg p-2 xs:p-3 sm:p-4 hover:border-blue-500/40 transition-all duration-200">
+                <a href="/social-media-tools/link-in-bio" className="group bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-lg p-2 xs:p-3 sm:p-4 hover:border-blue-500/40 transition-all duration-200">
                   <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                     <div className="p-1 xs:p-1.5 bg-blue-500/20 rounded-lg">
                       <Download className="h-3 xs:h-4 w-3 xs:w-4 text-blue-400" />
                     </div>
-                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base group-hover:text-blue-300 transition-colors">LinkedIn Downloader</h3>
+                    <h3 className="font-semibold text-white text-xs xs:text-sm sm:text-base group-hover:text-blue-300 transition-colors">Link in Bio</h3>
                   </div>
-                  <p className="text-xs xs:text-sm text-white/80 leading-relaxed">Download LinkedIn videos and content for professional use.</p>
+                  <p className="text-xs xs:text-sm text-white/80 leading-relaxed">Create professional link-in-bio pages for social media.</p>
                 </a>
               </div>
             </div>

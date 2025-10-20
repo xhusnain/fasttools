@@ -984,7 +984,7 @@ export default function DateDifferencePage() {
                 <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
                   Calculate time duration between two times in hours and minutes.
                 </p>
-                <a href="/calculator/time-duration-calculator" className="text-primary hover:underline text-sm">
+                <a href="/calculator/time-duration" className="text-primary hover:underline text-sm">
                   Try Time Duration Calculator →
                 </a>
               </div>
@@ -993,7 +993,7 @@ export default function DateDifferencePage() {
                 <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
                   Find out what day of the week any date falls on.
                 </p>
-                <a href="/calculator/date-to-day-finder" className="text-primary hover:underline text-sm">
+                <a href="/date-time-tools/date-to-day" className="text-primary hover:underline text-sm">
                   Try Date to Day Finder →
                 </a>
               </div>

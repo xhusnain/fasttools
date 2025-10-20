@@ -460,7 +460,7 @@ export default function FractionCalculatorPage() {
                         { name: "Tax Calculator", desc: "Calculate taxes and deductions", href: "/calculator/tax-calculator", icon: "🧾" },
                         { name: "Compound Interest", desc: "Calculate compound interest growth", href: "/calculator/compound-interest", icon: "📈" },
                         { name: "GPA Calculator", desc: "Calculate grade point average", href: "/calculator/gpa-calculator", icon: "🎓" },
-                        { name: "Area Calculator", desc: "Calculate area of various shapes", href: "/calculator/area-calculator", icon: "📏" }
+                        { name: "BMI Calculator", desc: "Calculate Body Mass Index", href: "/calculator/bmi-calculator", icon: "📏" }
                       ].map(({ name, desc, icon, href }) => (
                         <a
                           key={name}

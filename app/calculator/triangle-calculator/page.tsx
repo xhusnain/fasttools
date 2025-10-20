@@ -414,18 +414,14 @@ export default function TriangleCalculatorPage() {
                                         </h2>
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                                             {[
-                                                { name: "Area Calculator", desc: "Calculate area of various shapes", href: "/calculator/area-calculator", icon: "📐" },
-                                                { name: "Perimeter Calculator", desc: "Calculate perimeter of shapes", href: "/calculator/perimeter-calculator", icon: "📏" },
-                                                { name: "Circle Calculator", desc: "Calculate circle properties", href: "/calculator/circle-calculator", icon: "⭕" },
-                                                { name: "Rectangle Calculator", desc: "Calculate rectangle properties", href: "/calculator/rectangle-calculator", icon: "⬜" },
-                                                { name: "Square Calculator", desc: "Calculate square properties", href: "/calculator/square-calculator", icon: "⬛" },
-                                                { name: "Polygon Calculator", desc: "Calculate polygon properties", href: "/calculator/polygon-calculator", icon: "🔷" },
+                                                { name: "BMI Calculator", desc: "Calculate Body Mass Index", href: "/calculator/bmi-calculator", icon: "📐" },
+                                                { name: "Age Calculator", desc: "Calculate age in years, months, days", href: "/calculator/age-calculator", icon: "📏" },
+                                                { name: "Percentage Calculator", desc: "Calculate percentages and changes", href: "/calculator/percentage-calculator", icon: "⭕" },
+                                                { name: "Mortgage Calculator", desc: "Calculate home loan payments", href: "/calculator/mortgage-calculator", icon: "⬜" },
+                                                { name: "Loan Calculator", desc: "Calculate loan payments", href: "/calculator/loan-calculator", icon: "⬛" },
+                                                { name: "Tax Calculator", desc: "Calculate tax amounts", href: "/calculator/tax-calculator", icon: "🔷" },
                                                 { name: "Scientific Calculator", desc: "Advanced mathematical calculations", href: "/calculator/scientific-calculator", icon: "🧮" },
-                                                { name: "Percentage Calculator", desc: "Calculate percentages and changes", href: "/calculator/percentage-calculator", icon: "📊" },
-                                                { name: "BMI Calculator", desc: "Calculate Body Mass Index", href: "/calculator/bmi-calculator", icon: "⚖️" },
-                                                { name: "Age Calculator", desc: "Calculate age in years, months, days", href: "/calculator/age-calculator", icon: "🎂" },
-                                                { name: "Time Duration", desc: "Calculate time between dates", href: "/calculator/time-duration", icon: "⏰" },
-                                                { name: "Mortgage Calculator", desc: "Calculate home loan payments", href: "/calculator/mortgage-calculator", icon: "🏠" }
+                                                { name: "Time Duration", desc: "Calculate time between dates", href: "/calculator/time-duration", icon: "⏰" }
                                             ].map(({ name, desc, icon, href }) => (
                                                 <a
                                                     key={name}
