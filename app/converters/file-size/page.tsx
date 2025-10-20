@@ -3,7 +3,6 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { HardDrive, Calculator, Target, Users } from "lucide-react"
 import type { Metadata } from "next"
-import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
@@ -11,7 +10,6 @@ export const metadata: Metadata = {
   description:
     "Convert file sizes instantly: KB to MB, GB to TB, PB to EB with decimal (SI) and binary (IEC) units. Free online data size calculator for cloud storage, AI datasets, backups, and hosting limits.",
   keywords: [
-    // Primary Keywords (30)
     "file size converter",
     "free file size converter",
     "bytes to kb converter",
@@ -42,13 +40,7 @@ export const metadata: Metadata = {
     "mib to gib converter",
     "gib to tib converter",
     "tib to pib converter",
-    
-    // Secondary Keywords (30)
     "binary vs decimal units",
-    "kib to mib",
-    "mib to gib",
-    "gib to tib",
-    "tib to pib",
     "pib to eib",
     "eib to zib",
     "zib to yib",
@@ -74,8 +66,6 @@ export const metadata: Metadata = {
     "hosting bandwidth calculator",
     "website asset optimization",
     "compress file size tips",
-    
-    // Long-tail Keywords (30)
     "free online file size converter",
     "best file size converter online",
     "file size converter with live preview",
@@ -106,8 +96,6 @@ export const metadata: Metadata = {
     "storage calculator free online",
     "bytes calculator free online",
     "kb calculator free online",
-    
-    // Technical Keywords (20)
     "decimal (SI) vs binary (IEC)",
     "1 mb is how many kb",
     "1 gb is how many mb",
@@ -127,175 +115,9 @@ export const metadata: Metadata = {
     "reduce file size techniques",
     "optimize images for web",
     "mp4 file size estimate",
-    "pdf compression size",
-    
-    // Platform-specific Keywords (20)
-    "png vs jpg size",
-    "webp image size",
-    "git lfs file size",
-    "s3 object size",
-    "drive storage space",
-    "dropbox file size",
-    "google drive file size",
-    "onedrive file size",
-    "icloud file size",
-    "aws s3 file size",
-    "azure blob file size",
-    "gcp storage file size",
-    "docker image size",
-    "kubernetes pod size",
-    "vmware disk size",
-    "hyper-v disk size",
-    "virtualbox disk size",
-    "parallels disk size",
-    "vmware workstation disk size",
-    "virtual machine disk size",
-    
-    // Educational Keywords (20)
-    "file size units explained",
-    "data storage units explained",
-    "binary prefixes explained",
-    "decimal prefixes explained",
-    "si units explained",
-    "iec units explained",
-    "file size conversion formula",
-    "data size conversion formula",
-    "storage size conversion formula",
-    "byte conversion formula",
-    "kilobyte conversion formula",
-    "megabyte conversion formula",
-    "gigabyte conversion formula",
-    "terabyte conversion formula",
-    "petabyte conversion formula",
-    "exabyte conversion formula",
-    "zettabyte conversion formula",
-    "yottabyte conversion formula",
-    "file size measurement standards",
-    "data storage measurement standards",
-    
-    // Trending Keywords 2024-2025 (100)
-    "convert KB to MB",
-    "MB to GB converter",
-    "GB to TB conversion",
-    "data storage units",
-    "digital storage calculator",
-    "byte conversion tool",
-    "online file size calculator",
-    "convert bytes to kilobytes",
-    "megabyte to gigabyte converter",
-    "terabyte to petabyte conversion",
-    "data unit converter",
-    "storage capacity calculator",
-    "digital storage units explained",
-    "file size measurement",
-    "convert MB to KB",
-    "GB to MB converter",
-    "TB to GB conversion",
-    "data size converter",
-    "online storage converter",
-    "convert kilobytes to megabytes",
-    "gigabyte to terabyte converter",
-    "petabyte to exabyte conversion",
-    "digital data units",
-    "storage unit conversion chart",
-    "file size units explained",
-    "convert bytes to MB",
-    "MB to GB calculator",
-    "GB to TB calculator",
-    "data storage conversion tool",
-    "online data size calculator",
-    "convert KB to bytes",
-    "megabyte to kilobyte converter",
-    "terabyte to gigabyte conversion",
-    "data measurement units",
-    "storage size converter",
-    "file size conversion chart",
-    "convert MB to bytes",
-    "GB to MB calculator",
-    "TB to GB calculator",
-    "digital storage conversion tool",
-    "online file size converter",
-    "convert kilobytes to bytes",
-    "megabyte to byte converter",
-    "terabyte to megabyte conversion",
-    "data storage units chart",
-    "storage capacity converter",
-    "file size measurement units",
-    "convert bytes to GB",
-    "MB to KB calculator",
-    "GB to TB calculator",
-    "data size conversion tool",
-    "online storage size calculator",
-    "convert KB to MB online",
-    "megabyte to gigabyte calculator",
-    "terabyte to petabyte converter",
-    "digital data measurement units",
-    "storage unit conversion tool",
-    "file size units chart",
-    "convert MB to GB online",
-    "GB to MB calculator online",
-    "TB to GB calculator online",
-    "data storage conversion calculator",
-    "online data size converter",
-    "convert kilobytes to megabytes online",
-    "gigabyte to terabyte calculator",
-    "petabyte to exabyte converter online",
-    "digital storage units conversion",
-    "storage capacity conversion tool",
-    "file size measurement chart",
-    "convert bytes to kilobytes online",
-    "MB to GB converter online",
-    "GB to TB converter online",
-    "data size conversion calculator",
-    "online storage converter tool",
-    "convert KB to bytes online",
-    "megabyte to kilobyte calculator",
-    "terabyte to gigabyte converter online",
-    "data measurement units chart",
-    "storage size conversion tool",
-    "file size conversion calculator",
-    "convert MB to bytes online",
-    "GB to MB converter online",
-    "TB to GB converter online",
-    "digital storage conversion calculator",
-    "online file size conversion tool",
-    "convert kilobytes to bytes online",
-    "megabyte to byte calculator",
-    "terabyte to megabyte converter online",
-    "data storage units conversion chart",
-    "storage capacity conversion calculator",
-    "file size measurement units chart",
-    "convert bytes to GB online",
-    "MB to KB converter online",
-    "GB to TB converter online",
-    "data size conversion chart",
-    "online storage size conversion tool",
-    "convert KB to MB calculator",
-    "megabyte to gigabyte converter online",
-    "terabyte to petabyte calculator",
-    
-    // Cloud & AI Storage Trending Keywords (20)
-    "cloud storage pricing calculator",
-    "AWS S3 storage costs",
-    "Google Cloud storage pricing",
-    "Azure blob storage costs",
-    "AI data storage requirements",
-    "machine learning dataset size",
-    "blockchain storage costs",
-    "NFT file size limits",
-    "edge computing storage",
-    "5G data storage requirements",
-    "IoT data storage calculator",
-    "big data storage costs",
-    "data lake storage calculator",
-    "data warehouse storage costs",
-    "backup storage calculator",
-    "disaster recovery storage",
-    "multi-cloud storage costs",
-    "hybrid cloud storage",
-    "container storage costs",
-    "microservices storage requirements"
+    "pdf compression size"
   ],
+
   alternates: { canonical: "https://www.fasttools.store/converters/file-size" },
   openGraph: {
     title: "Free File Size Converter | Convert KB to MB, GB to TB, PB to EB | Cloud Storage Calculator | FastTools",
@@ -400,27 +222,8 @@ export const metadata: Metadata = {
 
 export default function FileSizeConverterPage() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="relative overflow-hidden">
-        {/* Green-focused but vibrant background matching homepage style */}
-        <div className="absolute inset-0 bg-gradient-to-br from-green-500/30 via-emerald-500/30 via-teal-500/30 to-cyan-500/30"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-400/20 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-400/15 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-teal-400/10 via-transparent to-transparent"></div>
-        
-        {/* Green-focused floating particles with accent colors */}
-        <div className="absolute top-10 left-10 h-4 w-4 bg-green-500 rounded-full shadow-lg shadow-green-500/50"></div>
-        <div className="absolute top-20 right-20 h-5 w-5 bg-emerald-500 rounded-full shadow-lg shadow-emerald-500/50"></div>
-        <div className="absolute bottom-20 left-20 h-4 w-4 bg-teal-500 rounded-full shadow-lg shadow-teal-500/50"></div>
-        <div className="absolute bottom-10 right-10 h-3 w-3 bg-cyan-500 rounded-full shadow-lg shadow-cyan-500/50"></div>
-        <div className="absolute top-1/2 left-1/4 h-3 w-3 bg-green-400 rounded-full shadow-lg shadow-green-400/50"></div>
-        <div className="absolute top-1/3 right-1/3 h-4 w-4 bg-emerald-400 rounded-full shadow-lg shadow-emerald-400/50"></div>
-        
-        {/* Green-focused gradient orbs */}
-        <div className="absolute -top-32 -left-32 h-48 w-48 bg-gradient-to-br from-green-500/40 to-emerald-500/40 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-32 -right-32 h-36 w-36 bg-gradient-to-br from-teal-500/40 to-cyan-500/40 rounded-full blur-3xl"></div>
-        
-        <div className="container mx-auto px-4 py-8 relative">
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-6 sm:py-8">
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
@@ -429,143 +232,170 @@ export default function FileSizeConverterPage() {
             ]}
           />
 
-          <div className="max-w-6xl mx-auto mt-8 space-y-8">
-            {/* Hero Section */}
-            <div className="text-center space-y-6 animate-fade-in-up">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/30 via-emerald-500/30 via-teal-500/30 to-cyan-500/30 border border-green-400/50 text-white text-sm font-bold mb-6">
-                <HardDrive className="h-4 w-4" />
-                <span>Professional File Size Converter</span>
-                <div className="h-2 w-2 bg-emerald-400 rounded-full"></div>
-              </div>
-              
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-emerald-400 via-teal-400 via-green-500 to-green-600 leading-tight">
-                Free File Size Converter
-              </h1>
-              
-              <p className="text-lg md:text-xl text-white/90 text-pretty max-w-3xl mx-auto leading-relaxed">
-                Convert file sizes instantly: KB to MB, GB to TB, PB to EB with decimal (SI) and binary (IEC) units. 
-                Cloud storage calculator for AWS S3, Google Cloud, Azure, AI datasets, machine learning, and blockchain storage.
-              </p>
-              
-              <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-white/80">
-                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/25 to-emerald-500/25 border border-green-400/40">
-                  <HardDrive className="h-4 w-4" />
-                  <span>Cloud Storage</span>
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+              <div className="flex-1 lg:flex-[2] space-y-5 sm:space-y-6">
+                {/* Hero Section */}
+                <div className="text-center space-y-5 animate-fade-in-up">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-4 shadow-md">
+                    <HardDrive className="h-4 w-4" />
+                    <span>Professional File Size Converter</span>
+                    <div className="h-2 w-2 bg-secondary-accent rounded-full"></div>
+                  </div>
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">Free File Size Converter</h1>
+                  <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
+                    Convert KB ⇄ MB ⇄ GB ⇄ TB with decimal (SI) and binary (IEC) units. Plan cloud storage and uploads with confidence.
+                  </p>
+                  <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
+                      <HardDrive className="h-4 w-4 text-primary" />
+                      <span className="text-primary font-medium text-sm">Cloud</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
+                      <Calculator className="h-4 w-4 text-green-600" />
+                      <span className="text-green-600 font-medium text-sm">AI</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-accent shadow">
+                      <Target className="h-4 w-4 text-accent" />
+                      <span className="text-accent font-medium text-sm">Dev</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-secondary-accent shadow">
+                      <Users className="h-4 w-4 text-secondary-accent" />
+                      <span className="text-secondary-accent font-medium text-sm">Ops</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/25 to-teal-500/25 border border-emerald-400/40">
-                  <Calculator className="h-4 w-4" />
-                  <span>AI Datasets</span>
-                </div>
-                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-teal-500/25 to-cyan-500/25 border border-teal-400/40">
-                  <Target className="h-4 w-4" />
-                  <span>Blockchain</span>
-                </div>
-                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/25 to-green-600/25 border border-cyan-400/40">
-                  <Users className="h-4 w-4" />
-                  <span>Edge Computing</span>
-                </div>
-              </div>
-            </div>
 
-            {/* First Ad Space - After Hero Content */}
-            <div className="mb-8">
-              <div className="text-center mb-2">
-                <span className="text-xs text-white/60 font-medium">Advertisement</span>
-              </div>
-              <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
-            </div>
+                {/* Mobile/Tablet Ad - Top */}
+                <div className="block xl:hidden mb-6">
+                  <div className="text-center mb-2">
+                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
+                </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <div className="lg:col-span-2">
-                <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20 shadow-xl">
+                {/* Tool Card */}
+                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                   <FileSizeConverter />
                 </div>
 
-                {/* Second Ad Space - After Tool */}
-                <div className="my-8">
+                {/* Mobile/Tablet Ad - After Tool */}
+                <div className="block xl:hidden my-8">
                   <div className="text-center mb-2">
-                    <span className="text-xs text-white/60 font-medium">Advertisement</span>
+                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                   </div>
-                  <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
+                  <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
                 </div>
 
-                {/* Understanding How This Tool Works */}
-                <div className="prose prose-sm max-w-none space-y-6 animate-fade-in-up animation-delay-200">
-                  <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20">
-                    <h2 className="text-xl font-bold mb-4 text-white">Understanding How This File Size Converter Works</h2>
-                    <p className="text-sm text-white/80 leading-relaxed mb-4">
-                      Our file size converter uses advanced algorithms and real-time processing to deliver 
-                      accurate results instantly. Each conversion is built with precision-engineered formulas that handle 
-                      complex file size measurements including both decimal and binary systems. 
-                      All conversions are optimized for speed and accuracy, ensuring you get reliable results every time.
-                    </p>
-                    
-                    <h3 className="text-lg font-bold mb-3 text-white">Real-Time Processing</h3>
-                    <p className="text-sm text-white/80 leading-relaxed mb-4">
-                      File size conversions are performed instantly as you type, with live preview of all unit formats. 
-                      The converter handles both decimal (SI) and binary (IEC) systems while preserving measurement accuracy. 
-                      Advanced algorithms ensure proper conversion factors for different file size units.
-                    </p>
-                    
-                    <h3 className="text-lg font-bold mb-3 text-white">Professional Features</h3>
-                    <p className="text-sm text-white/80 leading-relaxed">
-                      Our converter includes professional features like precision rounding, unit validation, 
-                      and support for storage and hosting measurements. All conversions maintain accuracy 
-                      while providing clean, copy-ready results for any application.
-                    </p>
-                  </div>
-
-                  <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20">
-                    <h2 className="text-xl font-bold mb-4 text-white">Advanced Usage Techniques</h2>
-                    <p className="text-sm text-white/80 leading-relaxed mb-4">
-                      Master these professional techniques to get the most out of our file size converter and create 
-                      perfectly accurate measurements for any purpose.
-                    </p>
-                    
-                    <h3 className="text-lg font-bold mb-3 text-white">Cloud Storage and AI Datasets</h3>
-                    <p className="text-sm text-white/80 leading-relaxed mb-4">
-                      Calculate AWS S3, Google Cloud, and Azure storage costs with precision. 
-                      Convert AI dataset sizes for machine learning projects, blockchain storage, and NFT file limits. 
-                      Plan edge computing and 5G data storage requirements with accurate conversions.
-                    </p>
-                    
-                    <h3 className="text-lg font-bold mb-3 text-white">Big Data and IoT Storage</h3>
-                    <p className="text-sm text-white/80 leading-relaxed mb-4">
-                      Convert file sizes for data lakes, data warehouses, and backup storage calculations. 
-                      Calculate multi-cloud and hybrid cloud storage costs for disaster recovery. 
-                      Estimate container storage and microservices storage requirements.
-                    </p>
-                    
-                    <h3 className="text-lg font-bold mb-3 text-white">Modern Technology Applications</h3>
-                    <p className="text-sm text-white/80 leading-relaxed">
-                      Convert file sizes for blockchain applications, NFT storage, and cryptocurrency data. 
-                      Calculate storage requirements for AI models, machine learning datasets, and edge computing. 
-                      Plan storage for 5G networks, IoT devices, and modern cloud architectures.
-                    </p>
-                  </div>
-
-                  <div className="mt-8">
-                    <div className="text-center mb-2">
-                      <span className="text-xs text-white/60 font-medium">Advertisement</span>
+                {/* File Size Converter FAQ (10 original Q&As) */}
+                <div className="p-6 rounded-lg bg-card border border-border shadow mt-6">
+                  <h2 className="text-2xl font-bold mb-4 text-card-foreground">File Size Converter FAQ</h2>
+                  <div className="space-y-4 text-sm text-muted-foreground">
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">1) Why do OS disk sizes look smaller than vendor labels?</h3>
+                      <p>Vendors use decimal GB (1,000,000,000 bytes), while OS displays binary GiB (1,073,741,824 bytes). A 1 TB drive appears as about 931 GiB. Two systems, same bytes—our converter shows both so plans reflect reality.</p>
                     </div>
-                    <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">2) KB/MB/GB vs KiB/MiB/GiB—when to use each?</h3>
+                      <p>Use decimal for marketing/network specs, binary for OS/file system/memory. Label the unit system in reports and stick to one per dashboard to prevent mismatched totals.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">3) How do I estimate upload/download time?</h3>
+                      <p>Convert size and speed to compatible units, then time = size ÷ throughput. Remember 1 byte = 8 bits. Example: 1 GB over 100 Mbps → 8,000 Mb ÷ 100 = 80 s (plus overhead).</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">4) Why doesn’t compression reduce size much?</h3>
+                      <p>Already‑compressed formats (JPEG/WebP/MP4) have little redundancy. Text and CSV compress well. Containers add overhead. Choose efficient codecs and verify before/after in the converter.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">5) How can I budget cloud storage precisely?</h3>
+                      <p>Normalize everything to GB or GiB, then apply provider pricing. Include replication, versions, and growth. Note decimal vs binary and the date of your rate sheet.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">6) Do thumbnails and metadata matter at scale?</h3>
+                      <p>Yes—per‑object overhead multiplies. Add a 10–30% buffer for previews, indices, and metadata. Measure with a pilot before committing budgets.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">7) What rounding should I use for reports?</h3>
+                      <p>Keep high precision internally; round only at presentation. Dashboards: 1–2 decimals. Contracts: exact bytes in an appendix. Converting once and rounding last prevents drift.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">8) What drives image/video file size the most?</h3>
+                      <p>Images: resolution, format, and quality. Video: duration × bitrate plus codec efficiency (H.264/HEVC/AV1). Test multiple bitrates and compare results; use our converter to summarize.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">9) Why do backups occupy more space than raw data?</h3>
+                      <p>Indexes, checksums, dedup tables, and container overhead add up. Retention rules and incrementals also grow totals. Apply a factor (often 1.1–1.5×) unless deduplication offsets it.</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-card-foreground">10) What’s the simplest decimal vs binary rule?</h3>
+                      <p>If the source is hardware/network marketing, it’s decimal. If it’s from your OS or memory metrics, it’s binary. Convert once, label clearly (GB or GiB), and keep factors in docs.</p>
+                    </div>
                   </div>
                 </div>
 
+                {/* Understanding & Advanced Sections */}
+                <div className="space-y-5 animate-fade-in-up animation-delay-200">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-base md:text-xl font-bold mb-3 text-card-foreground">How This File Size Converter Works</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                      We support both decimal and binary systems with deterministic formulas and sensible rounding. Results are
+                      copy‑ready and consistent across refreshes.
+                    </p>
+                    <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">Real‑Time Processing</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                      Values update as you type. Switch units freely—internally we convert through bytes for accurate results.
+                    </p>
+                    <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">Professional Features</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Clear unit labels (KB vs KiB), precise factors, and compact UI help with cloud planning, uploads, and audits.
+                    </p>
+                  </div>
+
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-base md:text-xl font-bold mb-3 text-card-foreground">Advanced Usage</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                      Practical patterns for storage sizing, network estimates, and data workflows.
+                    </p>
+                    <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">Cloud & AI</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">Translate quotas (GB) to binary file sizes (GiB) to match OS usage; note provider pricing units.</p>
+                    <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">Backups & Transfers</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">Estimate transfer time: size ÷ throughput, remembering 1 byte = 8 bits.</p>
+                    <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">Dev & Ops</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Align logging/metrics to a single unit system to avoid mismatched totals across dashboards.</p>
+                  </div>
+
+                  {/* Mobile Bottom Ad */}
+                  <div className="block xl:hidden mt-8">
+                    <div className="text-center mb-2">
+                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                    </div>
+                    <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
+                  </div>
+                </div>
               </div>
 
-              <div className="lg:col-span-1">
-                <div className="sticky top-20">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-white/60 font-medium">Advertisement</span>
+              {/* Desktop Sidebar with AdSense */}
+              <div className="hidden lg:block w-64 xl:w-72">
+                <div className="sticky top-32 space-y-6">
+                  <div>
+                    <div className="text-center mb-2">
+                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                    </div>
+                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
                   </div>
-                  <AdSpace slot="sidebar" className="h-96 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
+                  <div>
+                    <div className="text-center mb-2">
+                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                    </div>
+                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    
   )
 }

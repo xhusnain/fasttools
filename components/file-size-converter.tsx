@@ -95,24 +95,24 @@ export function FileSizeConverter() {
   return (
     <div className="space-y-6">
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-5">
-          <TabsTrigger value="converter" className="flex items-center gap-2">
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+          <TabsTrigger value="converter" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
             <Calculator className="h-4 w-4" />
             Converter
           </TabsTrigger>
-          <TabsTrigger value="examples" className="flex items-center gap-2">
+          <TabsTrigger value="examples" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
             <FileText className="h-4 w-4" />
             Examples
           </TabsTrigger>
-          <TabsTrigger value="education" className="flex items-center gap-2">
+          <TabsTrigger value="education" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
             <Database className="h-4 w-4" />
             Education
           </TabsTrigger>
-          <TabsTrigger value="faq" className="flex items-center gap-2">
+          <TabsTrigger value="faq" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
             <Code className="h-4 w-4" />
             FAQ
           </TabsTrigger>
-          <TabsTrigger value="docs" className="flex items-center gap-2">
+          <TabsTrigger value="docs" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
             <Archive className="h-4 w-4" />
             Official Docs
           </TabsTrigger>
@@ -137,13 +137,13 @@ export function FileSizeConverter() {
                     placeholder="Enter file size"
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
-                    className="h-11 text-sm"
+                    className="h-11 text-sm w-full border-2 border-orange-500 focus-visible:ring-0 focus:border-orange-500 placeholder:text-muted-foreground"
                   />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="unit">From Unit</Label>
                   <Select value={fromUnit} onValueChange={setFromUnit}>
-                    <SelectTrigger className="h-11 text-sm">
+                    <SelectTrigger className="h-11 text-sm w-full border-2 border-orange-500 focus:border-orange-500">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -173,7 +173,7 @@ export function FileSizeConverter() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3">
                 {Object.keys(allUnits).map((unit, index) => (
                   <div key={unit} className="flex flex-col p-3 bg-muted rounded-md group hover:bg-muted/80 transition-colors">
                     <div className="flex items-center justify-between mb-2">
