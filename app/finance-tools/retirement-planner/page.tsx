@@ -5,6 +5,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Retirement Planner | Savings & Goal Calculator | FastTools",
   description:
     "Plan retirement savings with compound growth. Set target age, contributions, expected return, inflation, and get a clear projection chart.",

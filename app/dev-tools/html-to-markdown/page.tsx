@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "HTML to Markdown Converter | Clean Conversion | FastTools",
   description:
     "Convert HTML to Markdown instantly. Preserve headings, lists, links, images, code blocks, and tables for clean publishing.",

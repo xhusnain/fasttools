@@ -5,6 +5,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Time Zone Converter | Convert Time Zones | FastTools",
   description:
     "Convert time between time zones worldwide. Ideal for scheduling international meetings and remote teamwork.",

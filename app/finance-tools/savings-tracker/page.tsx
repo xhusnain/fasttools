@@ -5,6 +5,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Savings Goal Tracker | Savings Timeline & Progress | FastTools",
   description:
     "Track savings progress toward goals. Set target amount, monthly contributions, and timeline to see when you'll reach your goal.",

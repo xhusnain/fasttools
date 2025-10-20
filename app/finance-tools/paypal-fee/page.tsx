@@ -5,6 +5,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "PayPal Fee Calculator | Net Amount & Charges | FastTools",
   description:
     "Calculate PayPal fees and net amounts. Enter country, currency, and rate (e.g., 2.9% + $0.30). See what to charge to receive a target amount.",

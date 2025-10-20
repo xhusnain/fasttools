@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Age in Hours Calculator | Hours, Minutes, Seconds | FastTools",
   description:
     "Calculate your exact age in hours, minutes, and seconds. Fun and precise age converter with birthday countdown and shareable results.",

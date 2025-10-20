@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "JSON to CSV Converter | Convert & Download | FastTools",
   description:
     "Convert JSON to CSV instantly. Supports arrays/objects, pretty print, delimiter options, and download. Great for data analysis and spreadsheets.",

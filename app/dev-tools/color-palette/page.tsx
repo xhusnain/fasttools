@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Color Palette Generator | Create Beautiful Color Schemes | FastTools",
   description:
     "Generate color palettes for design and branding. Copy HEX/RGB, lock colors, shuffle, and export. Great for designers and developers.",

@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Zodiac Sign Finder | Find Your Zodiac by Birth Date | FastTools",
   description:
     "Find your zodiac sign from your birth date. Learn dates, elements, modalities, and typical traits for each sun sign.",

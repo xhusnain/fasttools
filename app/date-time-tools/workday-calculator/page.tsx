@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fasttools.store"),
   title: "Free Workday Calculator | Business Days Between Dates | FastTools",
   description:
     "Calculate business days between dates, excluding weekends and optional holidays. Ideal for project planning, HR, and delivery timelines.",
