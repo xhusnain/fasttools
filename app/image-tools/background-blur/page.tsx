@@ -146,12 +146,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Image Background Blur | Online Photo Blur Tool | FastTools",
     description: "Blur image backgrounds online. Adjust intensity for profile photos, product shots, and social media posts.",
-    url: "https://fasttools.store/image-tools/background-blur",
+    url: "https://www.fasttools.store/image-tools/background-blur",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Image Background Blur - Online Photo Blur Tool",
@@ -163,7 +163,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Image Background Blur | Online Photo Blur Tool | FastTools",
     description: "Blur image backgrounds online. Adjust intensity for profile photos, product shots, and social media posts.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -173,7 +173,7 @@ export const metadata: Metadata = {
       alternateName: "Background Blur Tool",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/image-tools/background-blur",
+      url: "https://www.fasttools.store/image-tools/background-blur",
       description:
         "Apply adjustable background blur to images for profile and product photos.",
       inLanguage: "en",
@@ -199,15 +199,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -216,8 +216,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/image-tools/background-blur",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/image-tools/background-blur",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "background blur, free background blur, blur image, photo editor, blur background online, image blur tool, photo blur effect",
       about: {
         "@type": "Thing",
@@ -227,7 +227,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

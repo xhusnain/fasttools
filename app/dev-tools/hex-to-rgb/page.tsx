@@ -145,12 +145,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Hex to RGB Converter | Convert Hex Colors to RGB | FastTools",
     description: "Convert hex color codes to RGB instantly. Copy values, validate inputs, and understand color formats for web design.",
-    url: "https://fasttools.store/dev-tools/hex-to-rgb",
+    url: "https://www.fasttools.store/dev-tools/hex-to-rgb",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Hex to RGB Converter - Convert Hex Colors to RGB",
@@ -162,7 +162,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Hex to RGB Converter | Convert Hex Colors to RGB | FastTools",
     description: "Convert hex color codes to RGB instantly. Copy values, validate inputs, and understand color formats for web design.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -172,7 +172,7 @@ export const metadata: Metadata = {
       alternateName: "Color Code Converter",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/dev-tools/hex-to-rgb",
+      url: "https://www.fasttools.store/dev-tools/hex-to-rgb",
       description:
         "Convert hex color codes to RGB instantly with copy and validation.",
       inLanguage: "en",
@@ -198,15 +198,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -215,8 +215,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/dev-tools/hex-to-rgb",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/dev-tools/hex-to-rgb",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "hex to rgb, free hex to rgb, color converter, hex color converter, rgb converter, color code converter, hex color codes",
       about: {
         "@type": "Thing",
@@ -226,7 +226,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

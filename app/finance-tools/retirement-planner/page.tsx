@@ -223,12 +223,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Retirement Planner | Retirement Savings & Goal Calculator | FastTools",
     description: "Plan retirement savings with compound growth. Set target age, contributions, expected return, inflation, and get a clear projection chart.",
-    url: "https://fasttools.store/finance-tools/retirement-planner",
+    url: "https://www.fasttools.store/finance-tools/retirement-planner",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Retirement Planner - Retirement Savings & Goal Calculator",
@@ -240,7 +240,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Retirement Planner | Retirement Savings & Goal Calculator | FastTools",
     description: "Plan retirement savings with compound growth. Set target age, contributions, expected return, inflation, and get a clear projection chart.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -250,7 +250,7 @@ export const metadata: Metadata = {
       alternateName: "Retirement Savings Calculator",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/finance-tools/retirement-planner",
+      url: "https://www.fasttools.store/finance-tools/retirement-planner",
       description:
         "Plan retirement savings using contributions, expected return, and inflation to see future value.",
       inLanguage: "en",
@@ -276,15 +276,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -293,8 +293,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/finance-tools/retirement-planner",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/finance-tools/retirement-planner",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "retirement planner, free retirement planner, retirement calculator, retirement savings calculator, compound interest calculator, 401k calculator",
       about: {
         "@type": "Thing",
@@ -304,7 +304,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

@@ -121,11 +121,11 @@ export const metadata: Metadata = {
     title: "Free Workday Calculator | Business Days Between Dates | FastTools",
     description: "Calculate business days between dates, excluding weekends and optional holidays. Ideal for project planning, HR, and delivery timelines.",
     type: "website",
-    url: "https://fasttools.store/date-time-tools/workday-calculator",
+    url: "https://www.fasttools.store/date-time-tools/workday-calculator",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Workday Calculator - Business Days Between Dates",
@@ -137,7 +137,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Workday Calculator | Business Days Between Dates | FastTools",
     description: "Calculate business days between dates, excluding weekends and optional holidays. Ideal for project planning, HR, and delivery timelines.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -147,7 +147,7 @@ export const metadata: Metadata = {
       alternateName: "Business Days Calculator",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/date-time-tools/workday-calculator",
+      url: "https://www.fasttools.store/date-time-tools/workday-calculator",
       description:
         "Calculate business days between dates excluding weekends and optional holidays.",
       inLanguage: "en",
@@ -173,15 +173,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -190,8 +190,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/date-time-tools/workday-calculator",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/date-time-tools/workday-calculator",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "workday calculator, free workday calculator, business days calculator, working days between dates, weekday calculator, business day counter",
       about: {
         "@type": "Thing",
@@ -201,7 +201,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

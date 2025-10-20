@@ -231,12 +231,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Discount Calculator | Sale Price & Savings Calculator | FastTools",
     description: "Calculate sale prices and savings with percentage or fixed discounts. Stack discounts, include tax, and compare before vs after prices.",
-    url: "https://fasttools.store/finance-tools/discount-calculator",
+    url: "https://www.fasttools.store/finance-tools/discount-calculator",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Discount Calculator - Sale Price & Savings Calculator",
@@ -248,7 +248,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Discount Calculator | Sale Price & Savings Calculator | FastTools",
     description: "Calculate sale prices and savings with percentage or fixed discounts. Stack discounts, include tax, and compare before vs after prices.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -258,7 +258,7 @@ export const metadata: Metadata = {
       alternateName: "Sale Price Calculator",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/finance-tools/discount-calculator",
+      url: "https://www.fasttools.store/finance-tools/discount-calculator",
       description:
         "Calculate sale prices with stacked discounts, tax options, and savings comparison.",
       inLanguage: "en",
@@ -284,15 +284,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -301,8 +301,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/finance-tools/discount-calculator",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/finance-tools/discount-calculator",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "discount calculator, free discount calculator, sale price calculator, percentage discount, fixed discount, stacked discounts, shopping savings",
       about: {
         "@type": "Thing",
@@ -312,7 +312,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

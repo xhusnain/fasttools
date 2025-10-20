@@ -348,7 +348,7 @@ export const metadata: Metadata = {
     title: "Free Text Case Converter | Uppercase, Lowercase, Title Case, camelCase | FastTools",
     description:
       "Convert text to uppercase, lowercase, Title Case, Sentence case, camelCase, snake_case instantly. Clean formatting for writing and code.",
-    url: "https://fasttools.store/converters/text-case",
+    url: "https://www.fasttools.store/converters/text-case",
     type: "website",
     siteName: "FastTools",
     images: [

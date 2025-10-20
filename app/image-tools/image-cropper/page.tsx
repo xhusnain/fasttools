@@ -146,12 +146,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Online Image Cropper | Circle & Square Crop Tool | FastTools",
     description: "Crop images online for free. Create circular profile pictures or square posts. Fast and easy—no software needed.",
-    url: "https://fasttools.store/image-tools/image-cropper",
+    url: "https://www.fasttools.store/image-tools/image-cropper",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Online Image Cropper - Circle & Square Crop Tool",
@@ -163,7 +163,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Online Image Cropper | Circle & Square Crop Tool | FastTools",
     description: "Crop images online for free. Create circular profile pictures or square posts. Fast and easy—no software needed.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -173,7 +173,7 @@ export const metadata: Metadata = {
       alternateName: "Image Crop Tool",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/image-tools/image-cropper",
+      url: "https://www.fasttools.store/image-tools/image-cropper",
       description:
         "Crop images into circular or square shapes with live preview and download.",
       inLanguage: "en",
@@ -199,15 +199,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -216,8 +216,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/image-tools/image-cropper",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/image-tools/image-cropper",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "image cropper, free image cropper, crop image online, circular crop, square crop, profile picture cropper, avatar maker, social media crop",
       about: {
         "@type": "Thing",
@@ -227,7 +227,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

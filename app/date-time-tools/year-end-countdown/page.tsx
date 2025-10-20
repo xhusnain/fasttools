@@ -129,11 +129,11 @@ export const metadata: Metadata = {
     title: "Free Year End Countdown | Live New Year Countdown Timer | FastTools",
     description: "Live countdown to the end of the year. See days, hours, minutes, and seconds left until New Year with automatic updates.",
     type: "website",
-    url: "https://fasttools.store/date-time-tools/year-end-countdown",
+    url: "https://www.fasttools.store/date-time-tools/year-end-countdown",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Year End Countdown - Live New Year Countdown Timer",
@@ -145,7 +145,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Year End Countdown | Live New Year Countdown Timer | FastTools",
     description: "Live countdown to the end of the year. See days, hours, minutes, and seconds left until New Year with automatic updates.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -155,7 +155,7 @@ export const metadata: Metadata = {
       alternateName: "New Year Countdown Timer",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/date-time-tools/year-end-countdown",
+      url: "https://www.fasttools.store/date-time-tools/year-end-countdown",
       description:
         "Live countdown to the end of the year showing days, hours, minutes and seconds left.",
       inLanguage: "en",
@@ -181,15 +181,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -198,8 +198,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/date-time-tools/year-end-countdown",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/date-time-tools/year-end-countdown",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "year end countdown, free year end countdown, new year countdown, countdown timer, days until new year, time until new year",
       about: {
         "@type": "Thing",
@@ -209,7 +209,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

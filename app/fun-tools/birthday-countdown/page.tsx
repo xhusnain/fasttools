@@ -146,12 +146,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Birthday Countdown | Real‑Time Birthday Timer | FastTools",
     description: "Live birthday countdown showing days, hours, minutes, and seconds until your next birthday. Share the timer with friends.",
-    url: "https://fasttools.store/fun-tools/birthday-countdown",
+    url: "https://www.fasttools.store/fun-tools/birthday-countdown",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Birthday Countdown - Real‑Time Birthday Timer",
@@ -163,7 +163,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Birthday Countdown | Real‑Time Birthday Timer | FastTools",
     description: "Live birthday countdown showing days, hours, minutes, and seconds until your next birthday. Share the timer with friends.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -173,7 +173,7 @@ export const metadata: Metadata = {
       alternateName: "Birthday Timer",
       applicationCategory: "EntertainmentApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/fun-tools/birthday-countdown",
+      url: "https://www.fasttools.store/fun-tools/birthday-countdown",
       description:
         "Live countdown to your next birthday with share options.",
       inLanguage: "en",
@@ -199,15 +199,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -216,8 +216,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/fun-tools/birthday-countdown",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/fun-tools/birthday-countdown",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "birthday countdown, free birthday countdown, birthday timer, days until birthday, countdown to birthday, birthday counter, happy birthday timer",
       about: {
         "@type": "Thing",
@@ -227,7 +227,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

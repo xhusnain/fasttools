@@ -210,12 +210,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free JSON to CSV Converter | Convert and Download CSV Online | FastTools",
     description: "Convert JSON to CSV instantly. Supports arrays/objects, pretty print, delimiter options, and download. Great for data analysis and spreadsheets.",
-    url: "https://fasttools.store/dev-tools/json-to-csv",
+    url: "https://www.fasttools.store/dev-tools/json-to-csv",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free JSON to CSV Converter - Convert and Download CSV Online",
@@ -227,7 +227,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free JSON to CSV Converter | Convert and Download CSV Online | FastTools",
     description: "Convert JSON to CSV instantly. Supports arrays/objects, pretty print, delimiter options, and download. Great for data analysis and spreadsheets.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -237,7 +237,7 @@ export const metadata: Metadata = {
       alternateName: "JSON CSV Converter",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/dev-tools/json-to-csv",
+      url: "https://www.fasttools.store/dev-tools/json-to-csv",
       description:
         "Convert JSON data to CSV with headers, delimiter options, and instant download.",
       inLanguage: "en",
@@ -263,15 +263,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -280,8 +280,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/dev-tools/json-to-csv",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/dev-tools/json-to-csv",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "json to csv, free json to csv, convert json to csv, csv converter, json parser, download csv, export to csv",
       about: {
         "@type": "Thing",
@@ -291,7 +291,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

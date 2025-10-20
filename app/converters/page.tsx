@@ -93,11 +93,11 @@ export const metadata: Metadata = {
     title: "Free Online Converters | Text, Length, Currency & More | FastTools",
     description: "Convert text case, length, file size, currency, time zones, and temperature with our free tools. Fast, accurate, and easy to use conversion tools.",
     type: "website",
-    url: "https://fasttools.store/converters",
+    url: "https://www.fasttools.store/converters",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Online Converters - Text, Length, Currency & More",
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Online Converters | Text, Length, Currency & More | FastTools",
     description: "Convert text case, length, file size, currency, time zones, and temperature with our free tools. Fast, accurate, and easy to use.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
 }
 
@@ -119,7 +119,7 @@ export default function ConvertersPage() {
     "@type": "WebPage",
     name: "Free Online Converters | Text, Length, Currency & More | FastTools",
     description: "Free online converter tools for text case, length, file size, currency, time zones, and temperature. Fast, accurate, and easy to use conversion tools with real-time data.",
-    url: "https://fasttools.store/converters",
+    url: "https://www.fasttools.store/converters",
     mainEntity: {
       "@type": "ItemList",
       name: "Free Online Converter Tools",
@@ -131,49 +131,49 @@ export default function ConvertersPage() {
           position: 1,
           name: "Conversion Calculator",
           description: "Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions",
-          url: "https://fasttools.store/calculator/conversion-calculator"
+          url: "https://www.fasttools.store/calculator/conversion-calculator"
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Text Case Converter",
           description: "Convert text between uppercase, lowercase, title case, camelCase, and snake_case",
-          url: "https://fasttools.store/converters/text-case"
+          url: "https://www.fasttools.store/converters/text-case"
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "Length Converter",
           description: "Convert between meters, feet, inches, centimeters, kilometers, miles, and more length units",
-          url: "https://fasttools.store/converters/length"
+          url: "https://www.fasttools.store/converters/length"
         },
         {
           "@type": "ListItem",
           position: 4,
           name: "Currency Converter",
           description: "Convert between major world currencies with real-time exchange rates",
-          url: "https://fasttools.store/converters/currency"
+          url: "https://www.fasttools.store/converters/currency"
         },
         {
           "@type": "ListItem",
           position: 5,
           name: "Temperature Converter",
           description: "Convert between Celsius, Fahrenheit, and Kelvin temperature scales",
-          url: "https://fasttools.store/converters/temperature"
+          url: "https://www.fasttools.store/converters/temperature"
         },
         {
           "@type": "ListItem",
           position: 6,
           name: "File Size Converter",
           description: "Convert between bytes, KB, MB, GB, and TB for file and storage calculations",
-          url: "https://fasttools.store/converters/file-size"
+          url: "https://www.fasttools.store/converters/file-size"
         },
         {
           "@type": "ListItem",
           position: 7,
           name: "Timezone Converter",
           description: "Convert time between different time zones worldwide for international scheduling",
-          url: "https://fasttools.store/converters/timezone"
+          url: "https://www.fasttools.store/converters/timezone"
         }
       ]
     },
@@ -184,13 +184,13 @@ export default function ConvertersPage() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://fasttools.store"
+          item: "https://www.fasttools.store"
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Converters",
-          item: "https://fasttools.store/converters"
+          item: "https://www.fasttools.store/converters"
         }
       ]
     },
@@ -202,7 +202,7 @@ export default function ConvertersPage() {
     isPartOf: {
       "@type": "WebSite",
       name: "FastTools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
     }
   }
 

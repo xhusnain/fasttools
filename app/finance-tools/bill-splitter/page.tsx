@@ -231,12 +231,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Bill Splitter | Split Bills & Shared Expenses Fairly | FastTools",
     description: "Split bills and shared expenses fairly. Add items, assign people, include tips and tax, and see per‑person totals. Perfect for restaurants and trips.",
-    url: "https://fasttools.store/finance-tools/bill-splitter",
+    url: "https://www.fasttools.store/finance-tools/bill-splitter",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Bill Splitter - Split Bills & Shared Expenses Fairly",
@@ -248,7 +248,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Bill Splitter | Split Bills & Shared Expenses Fairly | FastTools",
     description: "Split bills and shared expenses fairly. Add items, assign people, include tips and tax, and see per‑person totals. Perfect for restaurants and trips.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -258,7 +258,7 @@ export const metadata: Metadata = {
       alternateName: "Expense Splitter",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/finance-tools/bill-splitter",
+      url: "https://www.fasttools.store/finance-tools/bill-splitter",
       description:
         "Split shared expenses with even, itemized, or percentage shares, including tips and tax.",
       inLanguage: "en",
@@ -284,15 +284,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -301,8 +301,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/finance-tools/bill-splitter",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/finance-tools/bill-splitter",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "bill splitter, free bill splitter, split bill calculator, expense splitter, group expense calculator, split check, dutch pay calculator",
       about: {
         "@type": "Thing",
@@ -312,7 +312,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

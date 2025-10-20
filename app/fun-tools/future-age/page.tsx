@@ -175,12 +175,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Future Age Predictor | How Old Will I Be in a Year? | FastTools",
     description: "See how old you'll be in any future year. Fun age prediction with milestones, planning ideas, and shareable results.",
-    url: "https://fasttools.store/fun-tools/future-age",
+    url: "https://www.fasttools.store/fun-tools/future-age",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Future Age Predictor - How Old Will I Be in a Year?",
@@ -192,7 +192,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Future Age Predictor | How Old Will I Be in a Year? | FastTools",
     description: "See how old you'll be in any future year. Fun age prediction with milestones, planning ideas, and shareable results.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -202,7 +202,7 @@ export const metadata: Metadata = {
       alternateName: "Age Calculator",
       applicationCategory: "EntertainmentApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/fun-tools/future-age",
+      url: "https://www.fasttools.store/fun-tools/future-age",
       description:
         "Calculate how old you will be in any future year and share fun milestones.",
       inLanguage: "en",
@@ -228,15 +228,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -245,8 +245,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/fun-tools/future-age",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/fun-tools/future-age",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "future age predictor, free future age predictor, how old will I be, age calculator, future age, calculate future age, age milestones",
       about: {
         "@type": "Thing",
@@ -256,7 +256,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

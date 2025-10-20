@@ -274,12 +274,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Tip Calculator | Restaurant Gratuity & Bill Split | FastTools",
     description: "Calculate tips and split bills instantly. Customize tip percentages, include tax, round totals, and share with friends. Fast, accurate, mobile friendly.",
-    url: "https://fasttools.store/finance-tools/tip-calculator",
+    url: "https://www.fasttools.store/finance-tools/tip-calculator",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Tip Calculator - Restaurant Gratuity & Bill Split",
@@ -291,7 +291,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Tip Calculator | Restaurant Gratuity & Bill Split | FastTools",
     description: "Calculate tips and split bills instantly. Customize tip percentages, include tax, round totals, and share with friends. Fast, accurate, mobile friendly.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -301,7 +301,7 @@ export const metadata: Metadata = {
       alternateName: "Restaurant Tip Calculator",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/finance-tools/tip-calculator",
+      url: "https://www.fasttools.store/finance-tools/tip-calculator",
       description:
         "Calculate tips and split bills with customizable percentages, tax options, and rounding.",
       inLanguage: "en",
@@ -327,15 +327,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -344,8 +344,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/finance-tools/tip-calculator",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/finance-tools/tip-calculator",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "tip calculator, free tip calculator, restaurant tip calculator, gratuity calculator, tip percentage calculator, how much to tip",
       about: {
         "@type": "Thing",
@@ -355,7 +355,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

@@ -130,11 +130,11 @@ export const metadata: Metadata = {
     title: "Free Date to Day Finder | What Day of the Week Is This Date? | FastTools",
     description: "Find the weekday for any date. Check past and future dates, holidays, and schedule planning with accurate weekday results.",
     type: "website",
-    url: "https://fasttools.store/date-time-tools/date-to-day",
+    url: "https://www.fasttools.store/date-time-tools/date-to-day",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Date to Day Finder - What Day of the Week Is This Date?",
@@ -146,7 +146,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Date to Day Finder | What Day of the Week Is This Date? | FastTools",
     description: "Find the weekday for any date. Check past and future dates, holidays, and schedule planning with accurate weekday results.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -156,7 +156,7 @@ export const metadata: Metadata = {
       alternateName: "Weekday Finder",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/date-time-tools/date-to-day",
+      url: "https://www.fasttools.store/date-time-tools/date-to-day",
       description:
         "Find the day of the week for any date with holiday and schedule planning context.",
       inLanguage: "en",
@@ -182,15 +182,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -199,8 +199,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/date-time-tools/date-to-day",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/date-time-tools/date-to-day",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "date to day finder, free date to day finder, day of week calculator, weekday calculator, day finder, date calculator",
       about: {
         "@type": "Thing",
@@ -210,7 +210,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

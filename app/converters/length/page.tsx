@@ -420,7 +420,7 @@ export const metadata: Metadata = {
     title: "Free Length Converter | Convert Meters, Feet, Inches, CM, KM & Miles | FastTools",
     description:
       "Convert length units instantly: meters, feet, inches, centimeters, millimeters, kilometers, yards, and miles. Accurate metric and imperial conversion tool for construction, travel, and education.",
-    url: "https://fasttools.store/converters/length",
+    url: "https://www.fasttools.store/converters/length",
     type: "website",
     siteName: "FastTools",
     images: [

@@ -77,10 +77,10 @@ export const metadata: Metadata = {
     title: "[Tool Name] | Free Online [Category] Tool",
     description: "Description...",
     type: "website",
-    url: "https://fasttools.store/[category]/[tool-name]",
+    url: "https://www.fasttools.store/[category]/[tool-name]",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "[Tool Name] - FastTools"
@@ -90,10 +90,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "[Tool Name] | Free Online [Category] Tool",
     description: "Description...",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/[category]/[tool-name]"
+    canonical: "https://www.fasttools.store/[category]/[tool-name]"
   },
   robots: {
     index: true,
@@ -117,7 +117,7 @@ export default function [ToolName]Page() {
           "@type": "WebApplication",
           name: "[Tool Name]",
           description: "Description...",
-          url: "https://fasttools.store/[category]/[tool-name]",
+          url: "https://www.fasttools.store/[category]/[tool-name]",
           applicationCategory: "UtilityApplication",
           operatingSystem: "Any",
           offers: {
@@ -223,22 +223,22 @@ export default function [ToolName]Guide() {
     author: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
     },
     publisher: {
       "@type": "Organization", 
       name: "FastTools",
-      url: "https://fasttools.store"
+      url: "https://www.fasttools.store"
     },
     datePublished: "2025-01-15",
     dateModified: "2025-01-15",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://fasttools.store/guides/[tool-name]-guide"
+      "@id": "https://www.fasttools.store/guides/[tool-name]-guide"
     },
     image: {
       "@type": "ImageObject",
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "[Tool Name] Guide"
@@ -628,7 +628,7 @@ case "tool-name":
 // File: app/sitemap.ts
 // Add to appropriate category section:
 {
-  url: "https://fasttools.store/[category]/[tool-name]",
+  url: "https://www.fasttools.store/[category]/[tool-name]",
   lastModified: getFreshnessDate(1),
   changeFrequency: "daily" as const,
   priority: 0.9, // High priority for new tool
@@ -640,7 +640,7 @@ case "tool-name":
 // File: app/sitemap.ts
 // Add to guides section:
 {
-  url: "https://fasttools.store/guides/[tool-name]-guide",
+  url: "https://www.fasttools.store/guides/[tool-name]-guide",
   lastModified: getFreshnessDate(1),
   changeFrequency: "daily" as const,
   priority: 0.95, // Highest priority for comprehensive guide

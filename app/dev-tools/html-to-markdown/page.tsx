@@ -150,12 +150,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free HTML to Markdown Converter | Clean Content Conversion | FastTools",
     description: "Convert HTML to Markdown instantly. Preserve headings, lists, links, images, code blocks, and tables for clean publishing.",
-    url: "https://fasttools.store/dev-tools/html-to-markdown",
+    url: "https://www.fasttools.store/dev-tools/html-to-markdown",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free HTML to Markdown Converter - Clean Content Conversion",
@@ -167,7 +167,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free HTML to Markdown Converter | Clean Content Conversion | FastTools",
     description: "Convert HTML to Markdown instantly. Preserve headings, lists, links, images, code blocks, and tables for clean publishing.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -177,7 +177,7 @@ export const metadata: Metadata = {
       alternateName: "HTML Markdown Converter",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/dev-tools/html-to-markdown",
+      url: "https://www.fasttools.store/dev-tools/html-to-markdown",
       description:
         "Convert HTML to Markdown preserving common elements for content workflows.",
       inLanguage: "en",
@@ -203,15 +203,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -220,8 +220,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/dev-tools/html-to-markdown",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/dev-tools/html-to-markdown",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "html to markdown, free html to markdown, convert html, markdown converter, html parser, content converter",
       about: {
         "@type": "Thing",
@@ -231,7 +231,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

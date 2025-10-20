@@ -270,12 +270,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Image to Text (OCR) | Extract Text from Images Online | FastTools",
     description: "Convert images to text instantly with accurate OCR. Extract text from photos, scans, screenshots, and PDFs. Supports JPG, PNG, JPEG.",
-    url: "https://fasttools.store/image-tools/image-to-text",
+    url: "https://www.fasttools.store/image-tools/image-to-text",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Image to Text (OCR) - Extract Text from Images Online",
@@ -287,7 +287,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Image to Text (OCR) | Extract Text from Images Online | FastTools",
     description: "Convert images to text instantly with accurate OCR. Extract text from photos, scans, screenshots, and PDFs. Supports JPG, PNG, JPEG.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -297,7 +297,7 @@ export const metadata: Metadata = {
       alternateName: "OCR Converter",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/image-tools/image-to-text",
+      url: "https://www.fasttools.store/image-tools/image-to-text",
       description:
         "Convert images to editable text with accurate OCR for photos, scans, and screenshots.",
       inLanguage: "en",
@@ -323,15 +323,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -340,8 +340,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/image-tools/image-to-text",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/image-tools/image-to-text",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "image to text, free image to text, OCR converter, photo to text, extract text from image, online OCR, free OCR tool",
       about: {
         "@type": "Thing",
@@ -351,7 +351,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

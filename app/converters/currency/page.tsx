@@ -121,12 +121,12 @@ export const metadata: Metadata = {
     title: "Free Currency Converter | Real-Time Exchange Rates | FastTools",
     description:
       "Convert currencies instantly with our free Currency Converter. Get live exchange rates, convert multiple currencies, compare rates, and export results. Fast, accurate, and mobile-friendly.",
-    url: "https://fasttools.store/converters/currency",
+    url: "https://www.fasttools.store/converters/currency",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Currency Converter - Real-Time Exchange Rates",
@@ -139,7 +139,7 @@ export const metadata: Metadata = {
     title: "Free Currency Converter | Real-Time Exchange Rates | FastTools",
     description:
       "Convert currencies instantly with our free Currency Converter. Get live exchange rates, convert multiple currencies, compare rates, and export results.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -149,7 +149,7 @@ export const metadata: Metadata = {
       alternateName: "Live Currency Converter & Exchange Rate Calculator",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/converters/currency",
+      url: "https://www.fasttools.store/converters/currency",
       description:
         "Convert currencies instantly with accurate, real-time exchange rates. Compare conversions, understand fees, and export results.",
       inLanguage: "en",
@@ -175,15 +175,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         },
@@ -192,8 +192,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/converters/currency",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/converters/currency",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "currency converter, free currency converter, live currency converter, real-time exchange rates, online currency calculator, forex converter, exchange rate calculator, money converter",
       about: {
         "@type": "Thing",
@@ -203,7 +203,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

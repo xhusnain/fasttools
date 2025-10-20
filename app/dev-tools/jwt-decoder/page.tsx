@@ -153,12 +153,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free JWT Decoder | Decode JSON Web Tokens (JWT) Online | FastTools",
     description: "Decode JWT header and payload safely in your browser. Inspect claims, alg, exp/iat, and base64url content. Great for debugging auth.",
-    url: "https://fasttools.store/dev-tools/jwt-decoder",
+    url: "https://www.fasttools.store/dev-tools/jwt-decoder",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free JWT Decoder - Decode JSON Web Tokens (JWT) Online",
@@ -170,7 +170,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free JWT Decoder | Decode JSON Web Tokens (JWT) Online | FastTools",
     description: "Decode JWT header and payload safely in your browser. Inspect claims, alg, exp/iat, and base64url content. Great for debugging auth.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -180,7 +180,7 @@ export const metadata: Metadata = {
       alternateName: "JSON Web Token Decoder",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/dev-tools/jwt-decoder",
+      url: "https://www.fasttools.store/dev-tools/jwt-decoder",
       description:
         "Developer tool to decode JWT header and payload in the browser for debugging.",
       inLanguage: "en",
@@ -206,15 +206,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -223,8 +223,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/dev-tools/jwt-decoder",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/dev-tools/jwt-decoder",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "jwt decoder, free jwt decoder, decode jwt, jwt parser, json web token decoder, jwt header payload, base64url decode",
       about: {
         "@type": "Thing",
@@ -234,7 +234,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

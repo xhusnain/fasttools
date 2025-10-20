@@ -154,7 +154,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Instagram Hashtag Counter | Free Hashtag Extractor & Counter Tool | FastTools",
     description: "Free Instagram hashtag counter and extractor tool. Count hashtags from Instagram posts, extract hashtags, and generate AI hashtags for better reach.",
-    url: "https://fasttools.store/fun-tools/hashtag-counter",
+    url: "https://www.fasttools.store/fun-tools/hashtag-counter",
     type: "website",
     siteName: "FastTools",
     images: [

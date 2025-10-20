@@ -143,12 +143,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free HTML Beautifier & Minifier | Format or Minify HTML Code | FastTools",
     description: "Format or minify HTML code instantly. Clean indentation, remove whitespace, and copy results. Great for web developers and content editors.",
-    url: "https://fasttools.store/dev-tools/html-beautifier",
+    url: "https://www.fasttools.store/dev-tools/html-beautifier",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free HTML Beautifier & Minifier - Format or Minify HTML Code",
@@ -160,7 +160,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free HTML Beautifier & Minifier | Format or Minify HTML Code | FastTools",
     description: "Format or minify HTML code instantly. Clean indentation, remove whitespace, and copy results. Great for web developers and content editors.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -170,7 +170,7 @@ export const metadata: Metadata = {
       alternateName: "HTML Formatter & Compressor",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/dev-tools/html-beautifier",
+      url: "https://www.fasttools.store/dev-tools/html-beautifier",
       description:
         "Format or minify HTML code with clean indentation or compression.",
       inLanguage: "en",
@@ -196,15 +196,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -213,8 +213,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/dev-tools/html-beautifier",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/dev-tools/html-beautifier",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "html beautifier, free html beautifier, html minifier, format html, minify html, html formatter, html compressor, prettify html",
       about: {
         "@type": "Thing",
@@ -224,7 +224,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

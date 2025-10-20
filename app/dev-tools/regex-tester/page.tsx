@@ -145,12 +145,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Regex Tester | Test, Debug, and Build Regular Expressions | FastTools",
     description: "Test regex patterns with live matches, flags, and group results. Build and debug regular expressions for JavaScript and other languages.",
-    url: "https://fasttools.store/dev-tools/regex-tester",
+    url: "https://www.fasttools.store/dev-tools/regex-tester",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Regex Tester - Test, Debug, and Build Regular Expressions",
@@ -162,7 +162,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Regex Tester | Test, Debug, and Build Regular Expressions | FastTools",
     description: "Test regex patterns with live matches, flags, and group results. Build and debug regular expressions for JavaScript and other languages.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -172,7 +172,7 @@ export const metadata: Metadata = {
       alternateName: "Regular Expression Tester",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/dev-tools/regex-tester",
+      url: "https://www.fasttools.store/dev-tools/regex-tester",
       description:
         "Test, build, and debug regular expressions with live matches and flags.",
       inLanguage: "en",
@@ -198,15 +198,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -215,8 +215,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/dev-tools/regex-tester",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/dev-tools/regex-tester",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "regex tester, free regex tester, regular expression tester, regex debugger, regex builder, pattern matcher, javascript regex",
       about: {
         "@type": "Thing",
@@ -226,7 +226,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

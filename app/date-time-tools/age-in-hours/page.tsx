@@ -118,11 +118,11 @@ export const metadata: Metadata = {
     title: "Free Age in Hours Calculator | Hours, Minutes, Seconds Old | FastTools",
     description: "Calculate your exact age in hours, minutes, and seconds. Fun and precise age converter with birthday countdown and shareable results.",
     type: "website",
-    url: "https://fasttools.store/date-time-tools/age-in-hours",
+    url: "https://www.fasttools.store/date-time-tools/age-in-hours",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Age in Hours Calculator - Hours, Minutes, Seconds Old",
@@ -134,7 +134,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Age in Hours Calculator | Hours, Minutes, Seconds Old | FastTools",
     description: "Calculate your exact age in hours, minutes, and seconds. Fun and precise age converter with birthday countdown and shareable results.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -144,7 +144,7 @@ export const metadata: Metadata = {
       alternateName: "Age Calculator in Hours, Minutes, Seconds",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/date-time-tools/age-in-hours",
+      url: "https://www.fasttools.store/date-time-tools/age-in-hours",
       description:
         "Calculate exact age in hours, minutes, and seconds with shareable results and birthday countdown.",
       inLanguage: "en",
@@ -170,15 +170,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -187,8 +187,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/date-time-tools/age-in-hours",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/date-time-tools/age-in-hours",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "age in hours, free age in hours calculator, age in minutes, age in seconds, age calculator, time since birth, birthday countdown",
       about: {
         "@type": "Thing",
@@ -198,7 +198,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

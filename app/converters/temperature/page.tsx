@@ -109,12 +109,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Temperature Converter | Celsius (°C) ⇄ Fahrenheit (°F) | FastTools",
     description: "Convert temperatures instantly between Celsius and Fahrenheit. Ideal for weather, cooking, science projects, and travel.",
-    url: "https://fasttools.store/converters/temperature",
+    url: "https://www.fasttools.store/converters/temperature",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Temperature Converter - Celsius (°C) ⇄ Fahrenheit (°F)",
@@ -126,7 +126,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Temperature Converter | Celsius (°C) ⇄ Fahrenheit (°F) | FastTools",
     description: "Convert temperatures instantly between Celsius and Fahrenheit. Ideal for weather, cooking, science projects, and travel.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -136,7 +136,7 @@ export const metadata: Metadata = {
       alternateName: "Celsius Fahrenheit Converter",
       applicationCategory: "Utility",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/converters/temperature",
+      url: "https://www.fasttools.store/converters/temperature",
       description:
         "Convert temperatures between Celsius and Fahrenheit for weather, cooking and science.",
       inLanguage: "en",
@@ -162,15 +162,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -179,8 +179,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/converters/temperature",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/converters/temperature",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "temperature converter, free temperature converter, celsius to fahrenheit, fahrenheit to celsius, temperature conversion, cooking temperature, weather temperature",
       about: {
         "@type": "Thing",
@@ -190,7 +190,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

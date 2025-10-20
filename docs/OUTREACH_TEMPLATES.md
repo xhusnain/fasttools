@@ -49,7 +49,7 @@ Would you consider adding us to your resource list? I'd be happy to provide any 
 Best regards,
 [Your Name]
 Toolify Hub
-Website: https://fasttools.store
+Website: https://www.fasttools.store
 Email: [your-email]
 ```
 

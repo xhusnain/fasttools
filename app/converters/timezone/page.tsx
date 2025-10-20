@@ -145,12 +145,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Time Zone Converter | Convert Time Across Time Zones | FastTools",
     description: "Convert time between time zones worldwide. Ideal for scheduling international meetings and remote teamwork.",
-    url: "https://fasttools.store/converters/timezone",
+    url: "https://www.fasttools.store/converters/timezone",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Time Zone Converter - Convert Time Across Time Zones",
@@ -162,7 +162,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Time Zone Converter | Convert Time Across Time Zones | FastTools",
     description: "Convert time between time zones worldwide. Ideal for scheduling international meetings and remote teamwork.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -172,7 +172,7 @@ export const metadata: Metadata = {
       alternateName: "World Clock & Time Zone Converter",
       applicationCategory: "Utility",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/converters/timezone",
+      url: "https://www.fasttools.store/converters/timezone",
       description:
         "Convert time across global time zones with daylight saving awareness for meetings and travel.",
       inLanguage: "en",
@@ -198,15 +198,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -215,8 +215,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/converters/timezone",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/converters/timezone",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "timezone converter, free timezone converter, time zone converter, world clock, time converter, international time, utc converter, meeting time converter",
       about: {
         "@type": "Thing",
@@ -226,7 +226,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

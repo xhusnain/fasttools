@@ -275,12 +275,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Credit Card Payoff Calculator | Debt Payoff Timeline & Interest | FastTools",
     description: "Estimate months to debt‑free, total interest, and payoff date. Compare avalanche vs snowball methods and extra payments.",
-    url: "https://fasttools.store/finance-tools/credit-card-payoff",
+    url: "https://www.fasttools.store/finance-tools/credit-card-payoff",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Credit Card Payoff Calculator - Debt Payoff Timeline & Interest",
@@ -292,7 +292,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Credit Card Payoff Calculator | Debt Payoff Timeline & Interest | FastTools",
     description: "Estimate months to debt‑free, total interest, and payoff date. Compare avalanche vs snowball methods and extra payments.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -302,7 +302,7 @@ export const metadata: Metadata = {
       alternateName: "Debt Payoff Calculator",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/finance-tools/credit-card-payoff",
+      url: "https://www.fasttools.store/finance-tools/credit-card-payoff",
       description:
         "Estimate payoff time, interest, and compare avalanche vs snowball with extra payments.",
       inLanguage: "en",
@@ -328,15 +328,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -345,8 +345,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/finance-tools/credit-card-payoff",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/finance-tools/credit-card-payoff",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "credit card payoff calculator, free credit card payoff calculator, credit card debt calculator, debt payoff calculator, payoff timeline, interest savings",
       about: {
         "@type": "Thing",
@@ -356,7 +356,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

@@ -167,12 +167,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Savings Goal Tracker | Savings Timeline & Progress | FastTools",
     description: "Track savings progress toward goals. Set target amount, monthly contributions, and timeline to see when you'll reach your goal.",
-    url: "https://fasttools.store/finance-tools/savings-tracker",
+    url: "https://www.fasttools.store/finance-tools/savings-tracker",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Savings Goal Tracker - Savings Timeline & Progress",
@@ -184,7 +184,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Savings Goal Tracker | Savings Timeline & Progress | FastTools",
     description: "Track savings progress toward goals. Set target amount, monthly contributions, and timeline to see when you'll reach your goal.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -194,7 +194,7 @@ export const metadata: Metadata = {
       alternateName: "Financial Goal Planner",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/finance-tools/savings-tracker",
+      url: "https://www.fasttools.store/finance-tools/savings-tracker",
       description:
         "Track savings towards goals with monthly contributions and projected completion date.",
       inLanguage: "en",
@@ -220,15 +220,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -237,8 +237,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/finance-tools/savings-tracker",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/finance-tools/savings-tracker",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "savings goal tracker, free savings goal tracker, savings calculator, financial goal planner, money saving calculator, emergency fund calculator",
       about: {
         "@type": "Thing",
@@ -248,7 +248,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

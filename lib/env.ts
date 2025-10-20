@@ -2,7 +2,7 @@
 
 export const env = {
   // Site Configuration
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://fasttools.store",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://www.fasttools.store",
   siteName: process.env.NEXT_PUBLIC_SITE_NAME || "fasttools.store",
 
   // AI Configuration

@@ -223,12 +223,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Invoice Generator | Create Professional Invoices Online | FastTools",
     description: "Create professional invoices in minutes. Add items, taxes, discounts, currency, and notes. Download or print. No login required.",
-    url: "https://fasttools.store/finance-tools/invoice-generator",
+    url: "https://www.fasttools.store/finance-tools/invoice-generator",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Invoice Generator - Create Professional Invoices Online",
@@ -240,7 +240,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Invoice Generator | Create Professional Invoices Online | FastTools",
     description: "Create professional invoices in minutes. Add items, taxes, discounts, currency, and notes. Download or print. No login required.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -250,7 +250,7 @@ export const metadata: Metadata = {
       alternateName: "Free Invoice Maker",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/finance-tools/invoice-generator",
+      url: "https://www.fasttools.store/finance-tools/invoice-generator",
       description:
         "Create, preview, and download invoices with taxes, discounts, currency, and branding.",
       inLanguage: "en",
@@ -276,15 +276,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -293,8 +293,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/finance-tools/invoice-generator",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/finance-tools/invoice-generator",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "invoice generator, free invoice generator, free invoice maker, invoice template, professional invoice, freelance invoice, business invoice",
       about: {
         "@type": "Thing",
@@ -304,7 +304,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },
