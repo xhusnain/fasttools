@@ -27,6 +27,16 @@ export const metadata: Metadata = {
     description: "Extract text from screenshots (code, errors, UI) into editable text.",
     url: "https://www.fasttools.store/image-tools/screenshot-to-text",
     type: "website",
+    siteName: "FastTools",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Screenshot to Text - OCR Tool",
+        type: "image/svg+xml",
+      },
+    ],
   },
   twitter: { card: "summary_large_image", title: "Screenshot to Text", description: "Extract text from screenshots with OCR." },
   other: {

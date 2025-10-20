@@ -31,6 +31,16 @@ export const metadata: Metadata = {
     description: "Unlock password‑protected PDFs securely in your browser.",
     url: "https://www.fasttools.store/image-tools/pdf-unlocker",
     type: "website",
+    siteName: "FastTools",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "PDF Unlocker Tool",
+        type: "image/svg+xml",
+      },
+    ],
   },
   twitter: { card: "summary_large_image", title: "PDF Unlocker", description: "Remove PDF passwords and restrictions online." },
   other: {

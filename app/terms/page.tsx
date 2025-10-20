@@ -31,6 +31,15 @@ export const metadata: Metadata = {
     url: "https://www.fasttools.store/terms",
     siteName: "FastTools",
     locale: "en_US",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "FastTools Terms of Service",
+        type: "image/svg+xml",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

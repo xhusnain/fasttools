@@ -52,6 +52,16 @@ export const metadata: Metadata = {
     description: "Use our free BMI Calculator to quickly determine your Body Mass Index. Instantly find out if you're underweight, normal, overweight, or obese based on WHO standards. Accurate, fast, and perfect for fitness and health tracking.",
     type: "website",
     url: "https://www.fasttools.store/calculator/bmi-calculator",
+    siteName: "FastTools",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "BMI Calculator - Body Mass Index Tool",
+        type: "image/svg+xml",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

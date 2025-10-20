@@ -37,6 +37,16 @@ export const metadata: Metadata = {
     description: "Split and merge PDFs securely in your browser.",
     url: "https://www.fasttools.store/image-tools/pdf-tools",
     type: "website",
+    siteName: "FastTools",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "PDF Splitter & Merger Tool",
+        type: "image/svg+xml",
+      },
+    ],
   },
   twitter: { card: "summary_large_image", title: "PDF Splitter & Merger", description: "Free online PDF tools for split/merge." },
   other: {

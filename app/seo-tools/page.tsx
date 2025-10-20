@@ -16,6 +16,17 @@ export const metadata: Metadata = {
     title: "Free SEO Tools & Content Helpers",
     description: "Generate meta tags, lorem ipsum, hashtags, and more with our free SEO tools",
     type: "website",
+    url: "https://www.fasttools.store/seo-tools",
+    siteName: "FastTools",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "FastTools SEO Tools",
+        type: "image/svg+xml",
+      },
+    ],
   },
   alternates: {
     canonical: "https://www.fasttools.store/seo-tools",

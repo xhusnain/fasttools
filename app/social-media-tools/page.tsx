@@ -17,6 +17,17 @@ export const metadata: Metadata = {
     description:
       "Free social media tools for content creators. Download YouTube thumbnails, view Instagram profile pictures, extract video tags, and more.",
     type: "website",
+    url: "https://www.fasttools.store/social-media-tools",
+    siteName: "FastTools",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "FastTools Social Media Tools",
+        type: "image/svg+xml",
+      },
+    ],
   },
   alternates: {
     canonical: "https://www.fasttools.store/social-media-tools",
