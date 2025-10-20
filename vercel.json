@@ -70,39 +70,5 @@
       ]
     }
   ],
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "fasttools.store"
-        }
-      ],
-      "destination": "https://www.fasttools.store/$1",
-      "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "fasttools.com"
-        }
-      ],
-      "destination": "https://www.fasttools.store/$1",
-      "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "fasttools.tech"
-        }
-      ],
-      "destination": "https://www.fasttools.store/$1",
-      "permanent": true
-    }
-  ]
+  "redirects": []
 }

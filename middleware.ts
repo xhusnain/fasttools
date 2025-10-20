@@ -10,11 +10,24 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
+  // ✅ Skip middleware for special files to avoid 502s and caching issues
+  const pathname = url.pathname
+  if (
+    pathname === '/robots.txt' ||
+    pathname === '/sitemap.xml' ||
+    pathname === '/manifest.json' ||
+    pathname === '/ads.txt' ||
+    pathname === '/security.txt' ||
+    pathname === '/humans.txt'
+  ) {
+    return NextResponse.next()
+  }
+
   // ✅ Combine HTTPS + WWW redirect in one step
   if (!hostname.startsWith('www.') || url.protocol === 'http:') {
     url.protocol = 'https:'
     url.hostname = 'www.fasttools.store'
-    return NextResponse.redirect(url, 301) // 301 is reliable for bots & SEO
+    return NextResponse.redirect(url, 308)
   }
 
   // ✅ Add cache headers for better performance
@@ -51,7 +64,7 @@ export function middleware(request: NextRequest) {
     "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://vercel.live https://*.clarity.ms",
     "frame-ancestors 'none'",
     "object-src 'none'",
-    'base-uri \"self\"'
+    "base-uri 'self'"
   ].join('; '))
   
   return response
@@ -59,6 +72,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|manifest.json|ads.txt|security.txt|humans.txt).*)',
   ],
 }
