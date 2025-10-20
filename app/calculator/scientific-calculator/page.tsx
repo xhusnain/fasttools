@@ -3,7 +3,6 @@
 import { ScientificCalculator } from "@/components/scientific-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calculator, Brain, Clock, Pi } from "lucide-react"
 import { useState } from "react"
 import Head from "next/head"
@@ -61,7 +60,7 @@ export default function ScientificCalculatorPage() {
   return (
     <>
       <Head>
-        <title>Scientific Calculator Online Free | Advanced Math Calculator with 70+ Functions</title>
+        <title>Scientific Calculator | Advanced Math Calculator | FastTools</title>
         <meta name="description" content="Free online scientific calculator with 70+ mathematical functions. Advanced trigonometry, logarithms, statistics, and engineering calculations. Professional-grade calculator for students, engineers, and scientists." />
         <meta name="keywords" content={seoKeywords.join(", ")} />
         <meta name="author" content="FastTools" />

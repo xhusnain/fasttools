@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Shield, Cookie, Eye, Settings, CheckCircle, AlertTriangle, ExternalLink, Mail, Globe, Lock, BarChart, Target } from "lucide-react"
 import Link from "next/link"
+import Head from "next/head"
 
 interface CookiePreferences {
   essential: boolean
@@ -122,6 +123,13 @@ export default function CookiePreferencesPage() {
 
   return (
     <>
+      <Head>
+        <title>Cookie Preferences | Manage Your Privacy Settings | FastTools</title>
+        <meta name="description" content="Manage your cookie preferences on FastTools. Control analytics, advertising, and essential cookies. Customize your privacy settings for our free online tools." />
+        <meta name="keywords" content="cookie preferences, privacy settings, cookie management, data protection, GDPR compliance" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.fasttools.store/cookie-preferences" />
+      </Head>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">

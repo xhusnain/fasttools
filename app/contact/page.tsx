@@ -1,13 +1,12 @@
 "use client"
 
-import { Breadcrumbs } from "@/components/breadcrumbs"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MessageSquare, Clock, Users, HelpCircle, Send, CheckCircle } from "lucide-react"
 import { useState } from "react"
+import Head from "next/head"
 
 interface FormData {
   name: string
@@ -126,6 +125,13 @@ export default function ContactPage() {
 
   return (
     <>
+      <Head>
+        <title>Contact Us | Get Help & Support | FastTools</title>
+        <meta name="description" content="Contact FastTools for support, feedback, or questions about our free online tools. Get help with calculators, converters, AI tools, and more." />
+        <meta name="keywords" content="contact fasttools, support, help, feedback, customer service, online tools support" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.fasttools.store/contact" />
+      </Head>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
         {/* Clean Hero Section */}
