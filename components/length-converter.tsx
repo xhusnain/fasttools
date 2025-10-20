@@ -72,24 +72,24 @@ export function LengthConverter() {
 
   return (
     <div className="space-y-6">
-      <Card className="border-2 border-white/20 shadow-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl">
+      <Card className="border border-border shadow bg-card">
         <CardHeader className="p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
             <div className="flex items-center gap-2 sm:gap-3">
-              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center border border-green-400/30 shadow-lg">
-                <Ruler className="h-5 w-5 sm:h-6 sm:w-6 text-green-400" />
+              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20 shadow">
+                <Ruler className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
               </div>
               <div className="flex-1 min-w-0">
-                <CardTitle className="text-lg sm:text-xl font-bold text-white truncate">Length Converter</CardTitle>
-                <CardDescription className="text-white/80 text-sm sm:text-base hidden sm:block">Convert between different length units with precision</CardDescription>
+                <CardTitle className="text-lg sm:text-xl font-bold text-card-foreground truncate">Length Converter</CardTitle>
+                <CardDescription className="text-muted-foreground text-sm sm:text-base hidden sm:block">Convert between different length units with precision</CardDescription>
               </div>
             </div>
             <div className="flex gap-1 sm:gap-2">
-              <Button onClick={() => setShowSettings(!showSettings)} variant="outline" size="sm" className="h-7 sm:h-8 px-2 sm:px-3 text-xs bg-white/10 border-white/20 text-white hover:bg-white/20 flex-1 sm:flex-none">
+              <Button onClick={() => setShowSettings(!showSettings)} variant="outline" size="sm" className="h-7 sm:h-8 px-2 sm:px-3 text-xs border-border text-foreground hover:bg-accent/10 flex-1 sm:flex-none">
                 <Settings className="h-3 w-3 sm:mr-1" />
                 <span className="hidden sm:inline">Settings</span>
               </Button>
-              <Button onClick={resetConverter} variant="outline" size="sm" className="h-7 sm:h-8 px-2 sm:px-3 text-xs bg-white/10 border-white/20 text-white hover:bg-white/20 flex-1 sm:flex-none">
+              <Button onClick={resetConverter} variant="outline" size="sm" className="h-7 sm:h-8 px-2 sm:px-3 text-xs border-border text-foreground hover:bg-accent/10 flex-1 sm:flex-none">
                 <RotateCcw className="h-3 w-3 sm:mr-1" />
                 <span className="hidden sm:inline">Reset</span>
               </Button>
@@ -98,12 +98,12 @@ export function LengthConverter() {
         </CardHeader>
         <CardContent className="p-6 space-y-6">
           {showSettings && (
-            <div className="p-4 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-lg border border-green-400/20">
-              <h3 className="text-sm font-semibold text-white mb-3">Precision Settings</h3>
+            <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
+              <h3 className="text-sm font-semibold text-card-foreground mb-3">Precision Settings</h3>
               <div className="flex items-center gap-4">
-                <Label htmlFor="precision" className="text-white/80 text-sm">Decimal Places:</Label>
+                <Label htmlFor="precision" className="text-muted-foreground text-sm">Decimal Places:</Label>
                 <Select value={precision.toString()} onValueChange={(value) => setPrecision(Number(value))}>
-                  <SelectTrigger className="w-20 h-8 text-xs bg-white/10 border-white/20 text-white">
+                  <SelectTrigger className="w-24 h-8 text-xs bg-card border-border text-foreground">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -122,17 +122,17 @@ export function LengthConverter() {
           <div className="block sm:hidden space-y-3">
             {/* From Section */}
             <div className="space-y-1">
-              <Label htmlFor="from-value" className="text-white font-medium text-xs">From</Label>
+              <Label htmlFor="from-value" className="text-card-foreground font-medium text-xs">From</Label>
               <Input
                 id="from-value"
                 type="number"
                 placeholder="Enter value"
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
-                className="h-9 text-sm bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-green-400"
+                className="h-9 text-sm bg-background border-border text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
               <Select value={fromUnit} onValueChange={setFromUnit}>
-                <SelectTrigger className="h-9 text-xs bg-white/10 border-white/20 text-white">
+                <SelectTrigger className="h-9 text-xs bg-card border-border text-foreground">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -150,19 +150,19 @@ export function LengthConverter() {
 
             {/* Swap Button - Mobile */}
             <div className="flex items-center justify-center py-0">
-              <Button onClick={swapUnits} variant="outline" size="icon" className="h-7 w-7 bg-white/10 border-white/20 text-white hover:bg-white/20">
+              <Button onClick={swapUnits} variant="outline" size="icon" className="h-7 w-7 border-border text-foreground hover:bg-accent/10">
                 <ArrowLeftRight className="h-3 w-3" />
               </Button>
             </div>
 
             {/* To Section */}
             <div className="space-y-1">
-              <Label htmlFor="to-value" className="text-white font-medium text-xs">To</Label>
-              <div className="h-9 px-3 py-2 bg-white/10 border border-white/20 rounded-md flex items-center text-sm font-medium text-white">
+              <Label htmlFor="to-value" className="text-card-foreground font-medium text-xs">To</Label>
+              <div className="h-9 px-3 py-2 bg-card border border-border rounded-md flex items-center text-sm font-medium text-card-foreground">
                 {convert() || "0"}
               </div>
               <Select value={toUnit} onValueChange={setToUnit}>
-                <SelectTrigger className="h-9 text-xs bg-white/10 border-white/20 text-white">
+                <SelectTrigger className="h-9 text-xs bg-card border-border text-foreground">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -184,17 +184,17 @@ export function LengthConverter() {
             <div className="grid grid-cols-2 gap-4">
               {/* From Section */}
               <div className="space-y-3">
-                <Label htmlFor="from-value-tablet" className="text-white font-medium text-sm">From</Label>
+              <Label htmlFor="from-value-tablet" className="text-card-foreground font-medium text-sm">From</Label>
                 <Input
                   id="from-value-tablet"
                   type="number"
                   placeholder="Enter value"
                   value={value}
                   onChange={(e) => setValue(e.target.value)}
-                  className="h-11 text-sm bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-green-400"
+                  className="h-11 text-sm bg-background border-border text-foreground placeholder:text-muted-foreground focus:border-primary"
                 />
                 <Select value={fromUnit} onValueChange={setFromUnit}>
-                  <SelectTrigger className="h-11 text-sm bg-white/10 border-white/20 text-white">
+                  <SelectTrigger className="h-11 text-sm bg-card border-border text-foreground">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -212,12 +212,12 @@ export function LengthConverter() {
 
               {/* To Section */}
               <div className="space-y-3">
-                <Label htmlFor="to-value-tablet" className="text-white font-medium text-sm">To</Label>
-                <div className="h-11 px-3 py-2 bg-white/10 border border-white/20 rounded-md flex items-center text-sm font-medium text-white">
+              <Label htmlFor="to-value-tablet" className="text-card-foreground font-medium text-sm">To</Label>
+              <div className="h-11 px-3 py-2 bg-card border border-border rounded-md flex items-center text-sm font-medium text-card-foreground">
                   {convert() || "0"}
                 </div>
                 <Select value={toUnit} onValueChange={setToUnit}>
-                  <SelectTrigger className="h-11 text-sm bg-white/10 border-white/20 text-white">
+                  <SelectTrigger className="h-11 text-sm bg-card border-border text-foreground">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -236,7 +236,7 @@ export function LengthConverter() {
 
             {/* Swap Button - Tablet */}
             <div className="flex items-center justify-center mt-4">
-              <Button onClick={swapUnits} variant="outline" size="icon" className="h-10 w-10 bg-white/10 border-white/20 text-white hover:bg-white/20">
+              <Button onClick={swapUnits} variant="outline" size="icon" className="h-10 w-10 border-border text-foreground hover:bg-accent/10">
                 <ArrowLeftRight className="h-4 w-4" />
               </Button>
             </div>
@@ -246,17 +246,17 @@ export function LengthConverter() {
           <div className="hidden lg:grid grid-cols-3 gap-6">
             {/* From Section */}
             <div className="space-y-3">
-              <Label htmlFor="from-value-desktop" className="text-white font-medium">From</Label>
+              <Label htmlFor="from-value-desktop" className="text-card-foreground font-medium">From</Label>
               <Input
                 id="from-value-desktop"
                 type="number"
                 placeholder="Enter value"
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
-                className="h-12 text-sm bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-green-400"
+                className="h-12 text-sm bg-background border-border text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
               <Select value={fromUnit} onValueChange={setFromUnit}>
-                <SelectTrigger className="h-12 text-sm bg-white/10 border-white/20 text-white">
+                <SelectTrigger className="h-12 text-sm bg-card border-border text-foreground">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -274,19 +274,19 @@ export function LengthConverter() {
 
             {/* Swap Button - Desktop */}
             <div className="flex items-center justify-center pt-8">
-              <Button onClick={swapUnits} variant="outline" size="icon" className="h-12 w-12 bg-white/10 border-white/20 text-white hover:bg-white/20">
+              <Button onClick={swapUnits} variant="outline" size="icon" className="h-12 w-12 border-border text-foreground hover:bg-accent/10">
                 <ArrowLeftRight className="h-5 w-5" />
               </Button>
             </div>
 
             {/* To Section */}
             <div className="space-y-3">
-              <Label htmlFor="to-value-desktop" className="text-white font-medium">To</Label>
-              <div className="h-12 px-3 py-2 bg-white/10 border border-white/20 rounded-md flex items-center text-sm font-medium text-white">
+              <Label htmlFor="to-value-desktop" className="text-card-foreground font-medium">To</Label>
+              <div className="h-12 px-3 py-2 bg-card border border-border rounded-md flex items-center text-sm font-medium text-card-foreground">
                 {convert() || "0"}
               </div>
               <Select value={toUnit} onValueChange={setToUnit}>
-                <SelectTrigger className="h-12 text-sm bg-white/10 border-white/20 text-white">
+                <SelectTrigger className="h-12 text-sm bg-card border-border text-foreground">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -304,11 +304,11 @@ export function LengthConverter() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2 sm:pt-4">
-            <Button onClick={copyResult} className="flex-1 h-8 sm:h-10 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-medium text-xs sm:text-sm">
+            <Button onClick={copyResult} className="flex-1 h-8 sm:h-10 bg-primary hover:bg-primary/90 text-white font-medium text-xs sm:text-sm shadow hover:shadow-md">
               <Copy className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
               {copied ? "Copied!" : "Copy Result"}
             </Button>
-            <Button onClick={downloadResults} variant="outline" className="h-8 sm:h-10 px-2 sm:px-4 bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs sm:text-sm">
+            <Button onClick={downloadResults} variant="outline" className="h-8 sm:h-10 px-2 sm:px-4 border-border text-foreground hover:bg-accent/10 text-xs sm:text-sm">
               <Download className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
               <span className="hidden sm:inline">Download</span>
               <span className="sm:hidden">Download</span>
@@ -317,30 +317,30 @@ export function LengthConverter() {
         </CardContent>
       </Card>
 
-      <Card className="border-2 border-white/20 shadow-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl">
+      <Card className="border border-border shadow bg-card">
         <CardHeader className="p-2 sm:p-4">
-          <CardTitle className="text-sm sm:text-lg font-bold text-white flex items-center gap-1 sm:gap-2">
-            <Calculator className="h-3 w-3 sm:h-5 sm:w-5 text-green-400" />
+          <CardTitle className="text-sm sm:text-lg font-bold text-card-foreground flex items-center gap-1 sm:gap-2">
+            <Calculator className="h-3 w-3 sm:h-5 sm:w-5 text-primary" />
             Quick Reference
           </CardTitle>
         </CardHeader>
         <CardContent className="p-2 sm:p-4">
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-1 sm:gap-3 md:gap-4 text-xs">
-            <div className="p-1 sm:p-3 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded border border-green-400/30">
-              <p className="font-semibold text-white text-xs">1 meter =</p>
-              <p className="text-green-200 text-xs">100 cm</p>
+            <div className="p-1 sm:p-3 bg-primary/5 rounded border border-primary/20">
+              <p className="font-semibold text-card-foreground text-xs">1 meter =</p>
+              <p className="text-muted-foreground text-xs">100 cm</p>
             </div>
-            <div className="p-1 sm:p-3 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded border border-emerald-400/30">
-              <p className="font-semibold text-white text-xs">1 foot =</p>
-              <p className="text-emerald-200 text-xs">12 inches</p>
+            <div className="p-1 sm:p-3 bg-primary/5 rounded border border-primary/20">
+              <p className="font-semibold text-card-foreground text-xs">1 foot =</p>
+              <p className="text-muted-foreground text-xs">12 inches</p>
             </div>
-            <div className="p-1 sm:p-3 bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded border border-teal-400/30">
-              <p className="font-semibold text-white text-xs">1 km =</p>
-              <p className="text-teal-200 text-xs">1000 m</p>
+            <div className="p-1 sm:p-3 bg-primary/5 rounded border border-primary/20">
+              <p className="font-semibold text-card-foreground text-xs">1 km =</p>
+              <p className="text-muted-foreground text-xs">1000 m</p>
             </div>
-            <div className="p-1 sm:p-3 bg-gradient-to-br from-cyan-500/20 to-green-600/20 rounded border border-cyan-400/30">
-              <p className="font-semibold text-white text-xs">1 mile =</p>
-              <p className="text-cyan-200 text-xs">5280 ft</p>
+            <div className="p-1 sm:p-3 bg-primary/5 rounded border border-primary/20">
+              <p className="font-semibold text-card-foreground text-xs">1 mile =</p>
+              <p className="text-muted-foreground text-xs">5280 ft</p>
             </div>
           </div>
         </CardContent>
