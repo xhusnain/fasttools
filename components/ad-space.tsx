@@ -139,7 +139,7 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
     return (
       <div
         ref={adRef}
-        className={`${className} min-h-0 bg-card border border-border flex items-center justify-center`}
+        className={`${className} min-h-0 bg-card border border-border rounded-lg overflow-hidden flex items-center justify-center`}
         aria-label="Advertisement (Development Mode)"
         style={{ minHeight: slot === 'header' ? '96px' : slot === 'content' ? '128px' : '320px' }}
       >
@@ -159,7 +159,7 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
   return (
     <div
       ref={adRef}
-      className={`${className} min-h-0`}
+      className={`${className} min-h-0 rounded-lg overflow-hidden`}
       aria-label="Advertisement"
       style={{ minHeight: '0px' }}
     />

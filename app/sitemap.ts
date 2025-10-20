@@ -341,6 +341,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
 
+    // API Documentation Pages
+    {
+      url: "https://www.fasttools.store/api/currency",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+
     // Converter Tools
     {
       url: "https://www.fasttools.store/converters/currency",

@@ -2,11 +2,22 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { DollarSign, ArrowLeftRight, RefreshCw } from "lucide-react"
+
+interface Currency {
+  code: string
+  name: string
+  symbol: string
+}
+
+interface ConversionResult {
+  from: string
+  to: string
+  amount: number
+  convertedAmount: number
+  rate: number
+  date: string
+}
 
 export function CurrencyConverter() {
   const [amount, setAmount] = useState("")
@@ -14,53 +25,99 @@ export function CurrencyConverter() {
   const [toCurrency, setToCurrency] = useState("EUR")
   const [result, setResult] = useState("")
   const [loading, setLoading] = useState(false)
-  const [exchangeRates, setExchangeRates] = useState<Record<string, number>>({})
+  const [currencies, setCurrencies] = useState<Currency[]>([])
   const [lastUpdated, setLastUpdated] = useState<string>("")
+  const [error, setError] = useState<string>("")
 
+  // Fetch available currencies on component mount
   useEffect(() => {
-    const fetchRates = async () => {
+    const fetchCurrencies = async () => {
       try {
-        const apiKey = process.env.NEXT_PUBLIC_EXCHANGE_RATE_API_KEY
-        const apiUrl = apiKey
-          ? `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`
-          : "https://api.exchangerate-api.com/v4/latest/USD"
-
-        const response = await fetch(apiUrl)
+        const response = await fetch('/api/currency_converter/currencies')
         const data = await response.json()
-        setExchangeRates(data.rates)
-        setLastUpdated(new Date().toLocaleString())
+        
+        if (data.success) {
+          setCurrencies(data.data)
+        } else {
+          console.error('Failed to fetch currencies:', data.message)
+          // Fallback to basic currencies if API fails
+          setCurrencies([
+            { code: "USD", name: "US Dollar", symbol: "$" },
+            { code: "EUR", name: "Euro", symbol: "€" },
+            { code: "GBP", name: "British Pound", symbol: "£" },
+            { code: "JPY", name: "Japanese Yen", symbol: "¥" },
+            { code: "INR", name: "Indian Rupee", symbol: "₹" },
+            { code: "AUD", name: "Australian Dollar", symbol: "A$" },
+            { code: "CAD", name: "Canadian Dollar", symbol: "C$" },
+            { code: "CHF", name: "Swiss Franc", symbol: "CHF" },
+            { code: "CNY", name: "Chinese Yuan", symbol: "¥" },
+          ])
+        }
       } catch (error) {
-        console.error("Error fetching exchange rates:", error)
-        // Fallback to mock rates if API fails
-        setExchangeRates({
-          USD: 1,
-          EUR: 0.92,
-          GBP: 0.79,
-          JPY: 149.5,
-          INR: 83.12,
-          AUD: 1.52,
-          CAD: 1.36,
-          CHF: 0.88,
-          CNY: 7.24,
-        })
+        console.error('Error fetching currencies:', error)
+        // Fallback to basic currencies
+        setCurrencies([
+          { code: "USD", name: "US Dollar", symbol: "$" },
+          { code: "EUR", name: "Euro", symbol: "€" },
+          { code: "GBP", name: "British Pound", symbol: "£" },
+          { code: "JPY", name: "Japanese Yen", symbol: "¥" },
+          { code: "INR", name: "Indian Rupee", symbol: "₹" },
+          { code: "AUD", name: "Australian Dollar", symbol: "A$" },
+          { code: "CAD", name: "Canadian Dollar", symbol: "C$" },
+          { code: "CHF", name: "Swiss Franc", symbol: "CHF" },
+          { code: "CNY", name: "Chinese Yuan", symbol: "¥" },
+        ])
       }
     }
-    fetchRates()
+    
+    fetchCurrencies()
   }, [])
 
-  const convert = () => {
-    if (!amount || isNaN(Number(amount)) || Object.keys(exchangeRates).length === 0) {
+  const convertCurrency = async () => {
+    if (!amount || isNaN(Number(amount)) || Number(amount) <= 0) {
       setResult("")
+      setError("Please enter a valid amount")
+      return
+    }
+
+    if (fromCurrency === toCurrency) {
+      setResult(amount)
+      setError("")
       return
     }
 
     setLoading(true)
-    setTimeout(() => {
-      const amountInUSD = Number(amount) / exchangeRates[fromCurrency]
-      const convertedAmount = amountInUSD * exchangeRates[toCurrency]
-      setResult(convertedAmount.toFixed(2))
+    setError("")
+
+    try {
+      const response = await fetch('/api/currency_converter/convert', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: fromCurrency,
+          to: toCurrency,
+          amount: Number(amount)
+        })
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setResult(data.data.convertedAmount.toString())
+        setLastUpdated(new Date().toLocaleString())
+      } else {
+        setError(data.message || 'Conversion failed')
+        setResult("")
+      }
+    } catch (error) {
+      console.error('Error converting currency:', error)
+      setError('Failed to convert currency. Please try again.')
+      setResult("")
+    } finally {
       setLoading(false)
-    }, 300)
+    }
   }
 
   const swapCurrencies = () => {
@@ -69,112 +126,134 @@ export function CurrencyConverter() {
     setToCurrency(temp)
   }
 
+  // Convert when amount or currencies change
   useEffect(() => {
-    if (amount && Object.keys(exchangeRates).length > 0) {
-      convert()
+    if (amount && fromCurrency && toCurrency) {
+      const timeoutId = setTimeout(() => {
+        convertCurrency()
+      }, 500) // Debounce for 500ms
+
+      return () => clearTimeout(timeoutId)
     }
-  }, [amount, fromCurrency, toCurrency, exchangeRates])
+  }, [amount, fromCurrency, toCurrency])
 
   return (
-    <div className="space-y-6">
-      <Card className="border border-border shadow-sm">
-        <CardHeader>
-          <CardTitle className="text-lg flex items-center gap-2">
-            <DollarSign className="h-5 w-5 text-primary" />
-            Currency Converter
-          </CardTitle>
-          <CardDescription>
-            Convert between different currencies with real-time rates
-            {lastUpdated && <span className="block text-xs mt-1">Last updated: {lastUpdated}</span>}
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <Label htmlFor="from-amount">From</Label>
-              <Input
-                id="from-amount"
-                type="number"
-                placeholder="Enter amount"
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
-                className="h-11 text-sm"
-              />
-              <Select value={fromCurrency} onValueChange={setFromCurrency}>
-                <SelectTrigger className="h-11 text-sm">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="USD">USD - US Dollar</SelectItem>
-                  <SelectItem value="EUR">EUR - Euro</SelectItem>
-                  <SelectItem value="GBP">GBP - British Pound</SelectItem>
-                  <SelectItem value="JPY">JPY - Japanese Yen</SelectItem>
-                  <SelectItem value="INR">INR - Indian Rupee</SelectItem>
-                  <SelectItem value="AUD">AUD - Australian Dollar</SelectItem>
-                  <SelectItem value="CAD">CAD - Canadian Dollar</SelectItem>
-                  <SelectItem value="CHF">CHF - Swiss Franc</SelectItem>
-                  <SelectItem value="CNY">CNY - Chinese Yuan</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="flex items-center justify-center md:pt-8">
-              <Button onClick={swapCurrencies} variant="outline" size="icon" className="h-10 w-10 bg-transparent">
-                <ArrowLeftRight className="h-4 w-4" />
-              </Button>
-            </div>
-
-            <div className="space-y-2 md:col-start-2">
-              <Label htmlFor="to-amount">To</Label>
-              <div className="h-11 px-3 py-2 bg-muted rounded-md flex items-center text-sm font-medium">
-                {loading ? <RefreshCw className="h-4 w-4 animate-spin text-muted-foreground" /> : result || "0.00"}
-              </div>
-              <Select value={toCurrency} onValueChange={setToCurrency}>
-                <SelectTrigger className="h-11 text-sm">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="USD">USD - US Dollar</SelectItem>
-                  <SelectItem value="EUR">EUR - Euro</SelectItem>
-                  <SelectItem value="GBP">GBP - British Pound</SelectItem>
-                  <SelectItem value="JPY">JPY - Japanese Yen</SelectItem>
-                  <SelectItem value="INR">INR - Indian Rupee</SelectItem>
-                  <SelectItem value="AUD">AUD - Australian Dollar</SelectItem>
-                  <SelectItem value="CAD">CAD - Canadian Dollar</SelectItem>
-                  <SelectItem value="CHF">CHF - Swiss Franc</SelectItem>
-                  <SelectItem value="CNY">CNY - Chinese Yuan</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+    <div className="space-y-5">
+      {/* Main Converter */}
+      <div className="bg-card border border-border rounded-lg p-5 shadow-sm">
+        <div className="flex items-center gap-2 mb-4">
+          <DollarSign className="h-4 w-4 text-orange-500" />
+          <h3 className="text-lg font-semibold text-card-foreground">Currency Converter</h3>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+          {/* Amount Input */}
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-card-foreground">Amount</label>
+            <input
+              type="number"
+              placeholder="Enter amount"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              className="w-full px-3 py-2 border-2 border-orange-500 rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500"
+            />
           </div>
 
-          {result && (
-            <div className="p-4 bg-accent rounded-md border border-primary/10">
-              <p className="text-sm text-center">
-                <span className="font-bold text-foreground">
-                  {amount} {fromCurrency}
-                </span>{" "}
-                <span className="text-muted-foreground">=</span>{" "}
-                <span className="font-bold text-primary">
-                  {result} {toCurrency}
-                </span>
-              </p>
-            </div>
-          )}
-        </CardContent>
-      </Card>
+          {/* Swap Button */}
+          <div className="flex justify-center">
+            <Button 
+              onClick={swapCurrencies} 
+              variant="outline" 
+              size="sm" 
+              className="h-8 w-8 p-0 border-orange-500 hover:bg-orange-500 hover:text-white"
+            >
+              <ArrowLeftRight className="h-4 w-4" />
+            </Button>
+          </div>
 
-      <Card className="border border-border shadow-sm bg-muted/30">
-        <CardHeader>
-          <CardTitle className="text-base">Note</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-xs text-muted-foreground">
-            Exchange rates are fetched from a live API and updated regularly. Rates may vary slightly from actual bank
-            rates.
+          {/* Result Display */}
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-card-foreground">Result</label>
+            <div className="w-full px-3 py-2 border-2 border-orange-500 rounded-md bg-background text-foreground flex items-center justify-center font-medium">
+              {loading ? <RefreshCw className="h-4 w-4 animate-spin text-orange-500" /> : result || "0.00"}
+            </div>
+          </div>
+        </div>
+
+        {/* Currency Selectors */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-card-foreground">From Currency</label>
+            <select
+              value={fromCurrency}
+              onChange={(e) => setFromCurrency(e.target.value)}
+              className="w-full px-3 py-2 border-2 border-orange-500 rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500"
+            >
+              {currencies.map((currency) => (
+                <option key={currency.code} value={currency.code}>
+                  {currency.code} - {currency.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-card-foreground">To Currency</label>
+            <select
+              value={toCurrency}
+              onChange={(e) => setToCurrency(e.target.value)}
+              className="w-full px-3 py-2 border-2 border-orange-500 rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500"
+            >
+              {currencies.map((currency) => (
+                <option key={currency.code} value={currency.code}>
+                  {currency.code} - {currency.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        {/* Error Display */}
+        {error && (
+          <div className="mt-4 p-3 bg-red-50 dark:bg-red-950/20 rounded-md border border-red-200 dark:border-red-800">
+            <p className="text-sm text-red-600 dark:text-red-400 text-center">
+              {error}
+            </p>
+          </div>
+        )}
+
+        {/* Result Display */}
+        {result && !error && (
+          <div className="mt-4 p-3 bg-orange-50 dark:bg-orange-950/20 rounded-md border border-orange-200 dark:border-orange-800">
+            <p className="text-sm text-center">
+              <span className="font-bold text-foreground">
+                {amount} {fromCurrency}
+              </span>{" "}
+              <span className="text-muted-foreground">=</span>{" "}
+              <span className="font-bold text-orange-600 dark:text-orange-400">
+                {result} {toCurrency}
+              </span>
+            </p>
+          </div>
+        )}
+
+        {/* Last Updated */}
+        {lastUpdated && (
+          <p className="text-xs text-muted-foreground mt-2 text-center">
+            Last updated: {lastUpdated}
           </p>
-        </CardContent>
-      </Card>
+        )}
+      </div>
+
+      {/* Note */}
+      <div className="bg-card border border-border rounded-lg p-5 shadow-sm">
+        <h4 className="text-sm font-semibold text-card-foreground mb-2">About FastTools Currency Converter</h4>
+        <p className="text-xs text-muted-foreground">
+          FastTools.store provides real-time currency conversion with accurate exchange rates updated regularly. 
+          Our free currency converter supports 100+ currencies and is perfect for travel, business, and personal use. 
+          Always verify rates with your bank or exchange service before making transactions.
+        </p>
+      </div>
     </div>
   )
 }
