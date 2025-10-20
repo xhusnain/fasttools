@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     description: "Generate meta tags, lorem ipsum, hashtags, and more with our free SEO tools",
     type: "website",
   },
+  alternates: {
+    canonical: "https://www.fasttools.store/seo-tools",
+  },
 }
 
 export default function SEOToolsPage() {

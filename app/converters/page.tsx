@@ -111,6 +111,9 @@ export const metadata: Metadata = {
     description: "Convert text case, length, file size, currency, time zones, and temperature with our free tools. Fast, accurate, and easy to use.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },
+  alternates: {
+    canonical: "https://www.fasttools.store/converters",
+  },
 }
 
 export default function ConvertersPage() {

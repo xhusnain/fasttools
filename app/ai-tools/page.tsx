@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     "Discover free AI-powered tools including meme generator, QR art generator, song lyrics generator, image caption generator, pet name generator, and hashtag suggester.",
   keywords:
     "AI tools, meme generator, QR code generator, lyrics generator, caption generator, pet names, hashtag generator, AI content creation",
+  alternates: {
+    canonical: "https://www.fasttools.store/ai-tools",
+  },
 }
 
 const aiTools = [
