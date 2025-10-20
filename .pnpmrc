@@ -1,5 +1,4 @@
-# Allow build scripts for Vercel packages
 enable-pre-post-scripts=true
 scripts-prepend-node-path=true
-ignore-scripts=false
 allowed-scripts=@vercel/speed-insights,@vercel/analytics
+auto-install-peers=true
