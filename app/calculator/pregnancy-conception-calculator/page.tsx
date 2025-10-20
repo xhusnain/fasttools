@@ -73,10 +73,10 @@ export const metadata: Metadata = {
     title: "Pregnancy Conception Calculator | Free Online Pregnancy Tool",
     description: "Calculate your conception date with our advanced pregnancy conception calculator. Get personalized trimester guidance, nutrition tips, exercise recommendations, and week-by-week pregnancy insights.",
     type: "website",
-    url: "https://fasttools.store/calculator/pregnancy-conception-calculator",
+    url: "https://www.fasttools.store/calculator/pregnancy-conception-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Pregnancy Conception Calculator - FastTools"
@@ -86,10 +86,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pregnancy Conception Calculator | Free Online Pregnancy Tool",
     description: "Calculate your conception date with our advanced pregnancy conception calculator. Get personalized trimester guidance, nutrition tips, exercise recommendations, and week-by-week pregnancy insights.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/pregnancy-conception-calculator"
+    canonical: "https://www.fasttools.store/calculator/pregnancy-conception-calculator"
   },
   robots: {
     index: true,
@@ -113,7 +113,7 @@ export default function PregnancyConceptionCalculatorPage() {
           "@type": "WebApplication",
           name: "Pregnancy Conception Calculator | Free Online Pregnancy Tool - Advanced Pregnancy Calculator with Trimester Guidance",
           description: "Calculate your conception date with our advanced pregnancy conception calculator. Get personalized trimester guidance, nutrition tips, exercise recommendations, and week-by-week pregnancy insights. Free, accurate, and comprehensive pregnancy tracking tool.",
-          url: "https://fasttools.store/calculator/pregnancy-conception-calculator",
+          url: "https://www.fasttools.store/calculator/pregnancy-conception-calculator",
           applicationCategory: "HealthApplication",
           operatingSystem: "Any",
           offers: {
@@ -178,7 +178,7 @@ export default function PregnancyConceptionCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

@@ -76,10 +76,10 @@ export const metadata: Metadata = {
     title: "Pace Calculator | Advanced Running Pace Calculator | Free Online Tool | FastTools",
     description: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max with our advanced pace calculator. Perfect for runners, coaches, and athletes.",
     type: "website",
-    url: "https://fasttools.store/calculator/pace-calculator",
+    url: "https://www.fasttools.store/calculator/pace-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Pace Calculator - FastTools"
@@ -89,10 +89,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pace Calculator | Advanced Running Pace Calculator | Free Online Tool | FastTools",
     description: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max with our advanced pace calculator. Perfect for runners, coaches, and athletes.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/pace-calculator"
+    canonical: "https://www.fasttools.store/calculator/pace-calculator"
   },
   robots: {
     index: true,
@@ -116,7 +116,7 @@ export default function PaceCalculatorPage() {
           "@type": "WebApplication",
           name: "Pace Calculator | Advanced Running Pace Calculator - Professional Running Tool with Training Zones",
           description: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max with our advanced pace calculator. Perfect for runners, coaches, and athletes. Free, accurate, and comprehensive running analysis tool.",
-          url: "https://fasttools.store/calculator/pace-calculator",
+          url: "https://www.fasttools.store/calculator/pace-calculator",
           applicationCategory: "SportsApplication",
           operatingSystem: "Any",
           offers: {
@@ -149,7 +149,7 @@ export default function PaceCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

@@ -110,10 +110,10 @@ export const metadata: Metadata = {
     title: "Amortization Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
     description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings for loans of any amount and interest rate.",
     type: "website",
-    url: "https://fasttools.store/calculator/amortization-calculator",
+    url: "https://www.fasttools.store/calculator/amortization-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Amortization Calculator - FastTools"
@@ -123,10 +123,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Amortization Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
     description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings for loans of any amount and interest rate.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/amortization-calculator"
+    canonical: "https://www.fasttools.store/calculator/amortization-calculator"
   },
   robots: {
     index: true,
@@ -150,7 +150,7 @@ export default function AmortizationCalculatorPage() {
           "@type": "WebApplication",
           name: "Amortization Calculator | Advanced Loan Payment Calculator - Professional Loan Analysis Tool",
           description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings for loans of any amount and interest rate. Free, professional-grade loan analysis for optimal financial planning.",
-          url: "https://fasttools.store/calculator/amortization-calculator",
+          url: "https://www.fasttools.store/calculator/amortization-calculator",
           applicationCategory: "FinanceApplication",
           operatingSystem: "Any",
           offers: {
@@ -183,7 +183,7 @@ export default function AmortizationCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

@@ -59,10 +59,10 @@ export const metadata: Metadata = {
     title: "Pregnancy Calculator | Free Online Pregnancy Tracking Tool | FastTools",
     description: "Track your pregnancy with our comprehensive pregnancy calculator. Get due date estimates, gestational age, weight gain recommendations, trimester guidance, and personalized pregnancy insights.",
     type: "website",
-    url: "https://fasttools.store/calculator/pregnancy-calculator",
+    url: "https://www.fasttools.store/calculator/pregnancy-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Pregnancy Calculator - FastTools"
@@ -72,10 +72,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pregnancy Calculator | Free Online Pregnancy Tracking Tool | FastTools",
     description: "Track your pregnancy with our comprehensive pregnancy calculator. Get due date estimates, gestational age, weight gain recommendations, trimester guidance, and personalized pregnancy insights.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/pregnancy-calculator"
+    canonical: "https://www.fasttools.store/calculator/pregnancy-calculator"
   },
   robots: {
     index: true,
@@ -99,7 +99,7 @@ export default function PregnancyCalculatorPage() {
           "@type": "WebApplication",
           name: "Pregnancy Calculator | Free Online Pregnancy Tracking Tool - Advanced Pregnancy Calculator with Comprehensive Tracking",
           description: "Track your pregnancy with our comprehensive pregnancy calculator. Get due date estimates, gestational age, weight gain recommendations, trimester guidance, and personalized pregnancy insights. Free, accurate, and comprehensive pregnancy tracking tool.",
-          url: "https://fasttools.store/calculator/pregnancy-calculator",
+          url: "https://www.fasttools.store/calculator/pregnancy-calculator",
           applicationCategory: "HealthApplication",
           operatingSystem: "Any",
           offers: {
@@ -164,7 +164,7 @@ export default function PregnancyCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

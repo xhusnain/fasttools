@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy - FastTools | GDPR & CCPA Compliant",
     description: "Comprehensive privacy policy covering GDPR, CCPA compliance, Google AdSense policies, and transparent data protection practices.",
     type: "website",
-    url: "https://fasttools.store/privacy-policy",
+    url: "https://www.fasttools.store/privacy-policy",
     siteName: "FastTools",
     locale: "en_US",
   },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     site: "@fasttools",
   },
   alternates: {
-    canonical: "https://fasttools.store/privacy-policy",
+    canonical: "https://www.fasttools.store/privacy-policy",
   },
   robots: {
     index: true,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://fasttools.store'),
+    metadataBase: new URL('https://www.fasttools.store'),
 }
 
 export default function PrivacyPolicyPage() {
@@ -70,12 +70,12 @@ export default function PrivacyPolicyPage() {
     "@type": "WebPage",
     name: "Privacy Policy - FastTools",
     description: "Comprehensive privacy policy covering GDPR, CCPA compliance, Google AdSense policies, and transparent data protection practices.",
-    url: "https://fasttools.store/privacy-policy",
+    url: "https://www.fasttools.store/privacy-policy",
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store",
-      logo: "https://fasttools.store/logo.svg"
+      url: "https://www.fasttools.store",
+      logo: "https://www.fasttools.store/logo.svg"
     },
     datePublished: "2024-12-19",
     dateModified: "2024-12-19",
@@ -486,9 +486,9 @@ export default function PrivacyPolicyPage() {
                     </div>
                     <div className="mt-4 pt-4 border-t border-border">
                       <h4 className="font-semibold text-foreground mb-2">Website</h4>
-                      <a href="https://fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
+                      <a href="https://www.fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
                         <Globe className="h-4 w-4" />
-                  https://fasttools.store
+                  https://www.fasttools.store
                 </a>
                     </div>
                   </div>

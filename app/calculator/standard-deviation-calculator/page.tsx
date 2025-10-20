@@ -38,10 +38,10 @@ export const metadata: Metadata = {
     title: "Standard Deviation Calculator | Free Online Statistics Tool - Population & Sample Standard Deviation Calculator with Steps",
     description: "Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes, quartiles, outliers detection, and comprehensive analysis. Online standard deviation calculator for data sets, grouped data, ungrouped data, frequency distribution, normal distribution, binomial distribution, confidence interval, margin of error, z-score, t-score, ANOVA, regression, correlation, coefficient of variation, skewness, kurtosis, percentiles, quartiles, hypothesis testing, p-value, effect size, power analysis, sample variance, population variance, standard error, variance analysis, statistics calculator, probability calculator, data analysis tool.",
     type: "website",
-    url: "https://fasttools.store/calculator/standard-deviation-calculator",
+    url: "https://www.fasttools.store/calculator/standard-deviation-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Standard Deviation Calculator - FastTools - Population & Sample Standard Deviation Calculator with Steps"
@@ -51,10 +51,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Standard Deviation Calculator | Free Online Statistics Tool - Population & Sample Standard Deviation Calculator with Steps",
     description: "Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes, quartiles, outliers detection, and comprehensive analysis. Online standard deviation calculator for data sets, grouped data, ungrouped data, frequency distribution, normal distribution, binomial distribution, confidence interval, margin of error, z-score, t-score, ANOVA, regression, correlation, coefficient of variation, skewness, kurtosis, percentiles, quartiles, hypothesis testing, p-value, effect size, power analysis, sample variance, population variance, standard error, variance analysis, statistics calculator, probability calculator, data analysis tool.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/standard-deviation-calculator"
+    canonical: "https://www.fasttools.store/calculator/standard-deviation-calculator"
   },
   robots: {
     index: true,
@@ -78,7 +78,7 @@ export default function StandardDeviationCalculatorPage() {
           "@type": "WebApplication",
           name: "Standard Deviation Calculator | Free Online Statistics Tool - Population & Sample Standard Deviation Calculator with Steps",
           description: "Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes, quartiles, outliers detection, and comprehensive analysis. Online standard deviation calculator for data sets, grouped data, ungrouped data, frequency distribution, normal distribution, binomial distribution, confidence interval, margin of error, z-score, t-score, ANOVA, regression, correlation, coefficient of variation, skewness, kurtosis, percentiles, quartiles, hypothesis testing, p-value, effect size, power analysis, sample variance, population variance, standard error, variance analysis, statistics calculator, probability calculator, data analysis tool.",
-          url: "https://fasttools.store/calculator/standard-deviation-calculator",
+          url: "https://www.fasttools.store/calculator/standard-deviation-calculator",
           applicationCategory: "UtilityApplication",
           operatingSystem: "Any",
           offers: {
@@ -193,7 +193,7 @@ export default function StandardDeviationCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

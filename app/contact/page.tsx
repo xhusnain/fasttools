@@ -93,7 +93,7 @@ export default function ContactPage() {
     "@type": "ContactPage",
     name: "Contact fasttools.store",
     description: "Contact fasttools.store for support, feedback, or questions about our free online tools.",
-    url: "https://fasttools.store/contact",
+    url: "https://www.fasttools.store/contact",
     mainEntity: {
       "@type": "Organization",
       name: "fasttools.store",
@@ -112,13 +112,13 @@ export default function ContactPage() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://fasttools.store"
+          item: "https://www.fasttools.store"
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Contact",
-          item: "https://fasttools.store/contact"
+          item: "https://www.fasttools.store/contact"
         }
       ]
     }

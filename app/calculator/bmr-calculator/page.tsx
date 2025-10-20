@@ -74,10 +74,10 @@ export const metadata: Metadata = {
     title: "BMR Calculator | Basal Metabolic Rate Calculator | Free Online Tool | FastTools",
     description: "Calculate your BMR (Basal Metabolic Rate) with our advanced BMR calculator. Get accurate calorie needs, TDEE, weight management goals, and personalized nutrition recommendations.",
     type: "website",
-    url: "https://fasttools.store/calculator/bmr-calculator",
+    url: "https://www.fasttools.store/calculator/bmr-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "BMR Calculator - FastTools"
@@ -87,10 +87,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BMR Calculator | Basal Metabolic Rate Calculator | Free Online Tool | FastTools",
     description: "Calculate your BMR (Basal Metabolic Rate) with our advanced BMR calculator. Get accurate calorie needs, TDEE, weight management goals, and personalized nutrition recommendations.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/bmr-calculator"
+    canonical: "https://www.fasttools.store/calculator/bmr-calculator"
   },
   robots: {
     index: true,
@@ -114,7 +114,7 @@ export default function BMRCalculatorPage() {
           "@type": "WebApplication",
           name: "BMR Calculator | Basal Metabolic Rate Calculator - Professional Metabolic Analysis Tool",
           description: "Calculate your BMR (Basal Metabolic Rate) with our advanced BMR calculator. Get accurate calorie needs, TDEE, weight management goals, and personalized nutrition recommendations. Free, professional-grade metabolic analysis for optimal health and fitness.",
-          url: "https://fasttools.store/calculator/bmr-calculator",
+          url: "https://www.fasttools.store/calculator/bmr-calculator",
           applicationCategory: "HealthApplication",
           operatingSystem: "Any",
           offers: {
@@ -147,7 +147,7 @@ export default function BMRCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

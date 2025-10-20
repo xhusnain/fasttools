@@ -90,10 +90,10 @@ export const metadata: Metadata = {
     title: "Retirement Calculator | Advanced Retirement Planning Calculator | Free Online Tool | FastTools",
     description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments and scenario analysis.",
     type: "website",
-    url: "https://fasttools.store/calculator/retirement-calculator",
+    url: "https://www.fasttools.store/calculator/retirement-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Retirement Calculator - FastTools"
@@ -103,10 +103,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Retirement Calculator | Advanced Retirement Planning Calculator | Free Online Tool | FastTools",
     description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments and scenario analysis.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/retirement-calculator"
+    canonical: "https://www.fasttools.store/calculator/retirement-calculator"
   },
   robots: {
     index: true,
@@ -130,7 +130,7 @@ export default function RetirementCalculatorPage() {
           "@type": "WebApplication",
           name: "Retirement Calculator | Advanced Retirement Planning Calculator - Professional Retirement Analysis Tool",
           description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments and scenario analysis. Free, professional-grade retirement analysis for optimal financial planning.",
-          url: "https://fasttools.store/calculator/retirement-calculator",
+          url: "https://www.fasttools.store/calculator/retirement-calculator",
           applicationCategory: "FinanceApplication",
           operatingSystem: "Any",
           offers: {
@@ -163,7 +163,7 @@ export default function RetirementCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

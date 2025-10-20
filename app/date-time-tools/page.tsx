@@ -124,12 +124,12 @@ export const metadata: Metadata = {
     title: "Free Date & Time Tools | Age Calculator, Workday Calculator & More | FastTools",
     description:
       "Free online date and time tools including age in hours calculator, year end countdown, workday calculator, date to day finder, and zodiac sign finder. Fast, accurate, and easy to use.",
-    url: "https://fasttools.store/date-time-tools",
+    url: "https://www.fasttools.store/date-time-tools",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Date & Time Tools - Age Calculator, Workday Calculator & More",
@@ -141,10 +141,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Date & Time Tools | Age Calculator, Workday Calculator & More | FastTools",
     description: "Free online date and time tools including age in hours calculator, year end countdown, workday calculator, date to day finder, and zodiac sign finder.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   alternates: {
-    canonical: "https://fasttools.store/date-time-tools",
+    canonical: "https://www.fasttools.store/date-time-tools",
   },
 }
 
@@ -186,25 +186,25 @@ const jsonLd = {
   "@type": "WebPage",
   name: "Free Date & Time Tools | Age Calculator, Workday Calculator & More | FastTools",
   description: "Free online date and time tools including age in hours calculator, year end countdown, workday calculator, date to day finder, and zodiac sign finder. Fast, accurate, and easy to use.",
-  url: "https://fasttools.store/date-time-tools",
+  url: "https://www.fasttools.store/date-time-tools",
   mainEntity: {
     "@type": "ItemList",
     name: "Date & Time Tools Collection",
     description: "Comprehensive collection of free online date and time tools for calculations, conversions, and time-related operations",
     numberOfItems: 5,
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Age in Hours Calculator", description: "Calculate your age in hours, minutes, and seconds with live updates", url: "https://fasttools.store/date-time-tools/age-in-hours" },
-      { "@type": "ListItem", position: 2, name: "Year End Countdown", description: "Live countdown to the end of the year with precise time remaining", url: "https://fasttools.store/date-time-tools/year-end-countdown" },
-      { "@type": "ListItem", position: 3, name: "Workday Calculator", description: "Calculate business days between dates, excluding weekends and holidays", url: "https://fasttools.store/date-time-tools/workday-calculator" },
-      { "@type": "ListItem", position: 4, name: "Date to Day Finder", description: "Find out what day of the week any date falls on for planning and scheduling", url: "https://fasttools.store/date-time-tools/date-to-day" },
-      { "@type": "ListItem", position: 5, name: "Zodiac Sign Finder", description: "Discover your zodiac sign based on your birth date with detailed traits", url: "https://fasttools.store/date-time-tools/zodiac-sign" }
+      { "@type": "ListItem", position: 1, name: "Age in Hours Calculator", description: "Calculate your age in hours, minutes, and seconds with live updates", url: "https://www.fasttools.store/date-time-tools/age-in-hours" },
+      { "@type": "ListItem", position: 2, name: "Year End Countdown", description: "Live countdown to the end of the year with precise time remaining", url: "https://www.fasttools.store/date-time-tools/year-end-countdown" },
+      { "@type": "ListItem", position: 3, name: "Workday Calculator", description: "Calculate business days between dates, excluding weekends and holidays", url: "https://www.fasttools.store/date-time-tools/workday-calculator" },
+      { "@type": "ListItem", position: 4, name: "Date to Day Finder", description: "Find out what day of the week any date falls on for planning and scheduling", url: "https://www.fasttools.store/date-time-tools/date-to-day" },
+      { "@type": "ListItem", position: 5, name: "Zodiac Sign Finder", description: "Discover your zodiac sign based on your birth date with detailed traits", url: "https://www.fasttools.store/date-time-tools/zodiac-sign" }
     ]
   },
   breadcrumb: {
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://fasttools.store" },
-      { "@type": "ListItem", position: 2, name: "Date & Time Tools", item: "https://fasttools.store/date-time-tools" }
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.fasttools.store" },
+      { "@type": "ListItem", position: 2, name: "Date & Time Tools", item: "https://www.fasttools.store/date-time-tools" }
     ]
   },
   about: {
@@ -215,7 +215,7 @@ const jsonLd = {
   isPartOf: {
     "@type": "WebSite",
     name: "FastTools",
-    url: "https://fasttools.store"
+    url: "https://www.fasttools.store"
   }
 }
 

@@ -125,7 +125,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Love Calculator | Free Love Compatibility Test & Match Percentage | FastTools",
     description: "Free love calculator to test compatibility between two people. Calculate love percentage, relationship compatibility, and love meter. Share your love match results with friends!",
-    url: "https://fasttools.store/calculator/love-calculator",
+    url: "https://www.fasttools.store/calculator/love-calculator",
     type: "website",
     siteName: "FastTools",
     images: [

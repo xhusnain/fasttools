@@ -142,12 +142,12 @@ export const metadata: Metadata = {
     title: "Free Developer Tools | JWT Decoder, Regex Tester, JSON to CSV & More | FastTools",
     description:
       "Free developer tools including JWT decoder, regex tester, JSON to CSV converter, HTML beautifier, color palette generator, and more. Essential utilities for developers.",
-    url: "https://fasttools.store/dev-tools",
+    url: "https://www.fasttools.store/dev-tools",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Developer Tools - JWT Decoder, Regex Tester, JSON to CSV & More",
@@ -159,10 +159,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Developer Tools | JWT Decoder, Regex Tester, JSON to CSV & More | FastTools",
     description: "Free developer tools including JWT decoder, regex tester, JSON to CSV converter, HTML beautifier, color palette generator, and more.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   alternates: {
-    canonical: "https://fasttools.store/dev-tools",
+    canonical: "https://www.fasttools.store/dev-tools",
   },
 }
 
@@ -222,28 +222,28 @@ const jsonLd = {
   "@type": "WebPage",
   name: "Free Developer Tools | JWT Decoder, Regex Tester, JSON to CSV & More | FastTools",
   description: "Free developer tools including JWT decoder, regex tester, JSON to CSV converter, HTML beautifier, color palette generator, and more. Essential utilities for developers.",
-  url: "https://fasttools.store/dev-tools",
+  url: "https://www.fasttools.store/dev-tools",
   mainEntity: {
     "@type": "ItemList",
     name: "Developer Tools Collection",
     description: "Comprehensive collection of free online developer tools and utilities for programming, debugging, and development",
     numberOfItems: 8,
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "JWT Decoder", description: "Decode and inspect JWT tokens safely in your browser", url: "https://fasttools.store/dev-tools/jwt-decoder" },
-      { "@type": "ListItem", position: 2, name: "Regex Tester", description: "Test and debug regular expressions with live matching", url: "https://fasttools.store/dev-tools/regex-tester" },
-      { "@type": "ListItem", position: 3, name: "JSON to CSV Converter", description: "Convert JSON data to CSV format quickly and easily", url: "https://fasttools.store/dev-tools/json-to-csv" },
-      { "@type": "ListItem", position: 4, name: "HTML Beautifier", description: "Format and beautify HTML code for better readability", url: "https://fasttools.store/dev-tools/html-beautifier" },
-      { "@type": "ListItem", position: 5, name: "Color Palette Generator", description: "Generate beautiful color schemes for your projects", url: "https://fasttools.store/dev-tools/color-palette" },
-      { "@type": "ListItem", position: 6, name: "Hex to RGB Converter", description: "Convert hex colors to RGB values instantly", url: "https://fasttools.store/dev-tools/hex-to-rgb" },
-      { "@type": "ListItem", position: 7, name: "Markdown Previewer", description: "Live preview your Markdown content", url: "https://fasttools.store/dev-tools/markdown-previewer" },
-      { "@type": "ListItem", position: 8, name: "HTML to Markdown", description: "Convert HTML to Markdown format", url: "https://fasttools.store/dev-tools/html-to-markdown" }
+      { "@type": "ListItem", position: 1, name: "JWT Decoder", description: "Decode and inspect JWT tokens safely in your browser", url: "https://www.fasttools.store/dev-tools/jwt-decoder" },
+      { "@type": "ListItem", position: 2, name: "Regex Tester", description: "Test and debug regular expressions with live matching", url: "https://www.fasttools.store/dev-tools/regex-tester" },
+      { "@type": "ListItem", position: 3, name: "JSON to CSV Converter", description: "Convert JSON data to CSV format quickly and easily", url: "https://www.fasttools.store/dev-tools/json-to-csv" },
+      { "@type": "ListItem", position: 4, name: "HTML Beautifier", description: "Format and beautify HTML code for better readability", url: "https://www.fasttools.store/dev-tools/html-beautifier" },
+      { "@type": "ListItem", position: 5, name: "Color Palette Generator", description: "Generate beautiful color schemes for your projects", url: "https://www.fasttools.store/dev-tools/color-palette" },
+      { "@type": "ListItem", position: 6, name: "Hex to RGB Converter", description: "Convert hex colors to RGB values instantly", url: "https://www.fasttools.store/dev-tools/hex-to-rgb" },
+      { "@type": "ListItem", position: 7, name: "Markdown Previewer", description: "Live preview your Markdown content", url: "https://www.fasttools.store/dev-tools/markdown-previewer" },
+      { "@type": "ListItem", position: 8, name: "HTML to Markdown", description: "Convert HTML to Markdown format", url: "https://www.fasttools.store/dev-tools/html-to-markdown" }
     ]
   },
   breadcrumb: {
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://fasttools.store" },
-      { "@type": "ListItem", position: 2, name: "Developer Tools", item: "https://fasttools.store/dev-tools" }
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.fasttools.store" },
+      { "@type": "ListItem", position: 2, name: "Developer Tools", item: "https://www.fasttools.store/dev-tools" }
     ]
   },
   about: {
@@ -254,7 +254,7 @@ const jsonLd = {
   isPartOf: {
     "@type": "WebSite",
     name: "FastTools",
-    url: "https://fasttools.store"
+    url: "https://www.fasttools.store"
   }
 }
 

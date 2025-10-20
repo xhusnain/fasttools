@@ -87,10 +87,10 @@ export const metadata: Metadata = {
     title: "Payment Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
     description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations for mortgages, auto loans, and personal loans.",
     type: "website",
-    url: "https://fasttools.store/calculator/payment-calculator",
+    url: "https://www.fasttools.store/calculator/payment-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Payment Calculator - FastTools"
@@ -100,10 +100,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Payment Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
     description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations for mortgages, auto loans, and personal loans.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/payment-calculator"
+    canonical: "https://www.fasttools.store/calculator/payment-calculator"
   },
   robots: {
     index: true,
@@ -127,7 +127,7 @@ export default function PaymentCalculatorPage() {
           "@type": "WebApplication",
           name: "Payment Calculator | Advanced Loan Payment Calculator - Professional Loan Analysis Tool",
           description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations for mortgages, auto loans, and personal loans. Free, professional-grade loan analysis for optimal financial planning.",
-          url: "https://fasttools.store/calculator/payment-calculator",
+          url: "https://www.fasttools.store/calculator/payment-calculator",
           applicationCategory: "FinanceApplication",
           operatingSystem: "Any",
           offers: {
@@ -160,7 +160,7 @@ export default function PaymentCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

@@ -63,10 +63,10 @@ export const metadata: Metadata = {
     title: "Inflation Calculator | Advanced CPI Calculator | Free Online Tool | FastTools",
     description: "Professional inflation calculator with historical CPI data from 1913-2025. Calculate purchasing power, inflation rates, and investment strategies with comprehensive economic analysis.",
     type: "website",
-    url: "https://fasttools.store/calculator/inflation-calculator",
+    url: "https://www.fasttools.store/calculator/inflation-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Inflation Calculator - FastTools"
@@ -76,10 +76,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Inflation Calculator | Advanced CPI Calculator | Free Online Tool | FastTools",
     description: "Professional inflation calculator with historical CPI data from 1913-2025. Calculate purchasing power, inflation rates, and investment strategies with comprehensive economic analysis.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/inflation-calculator"
+    canonical: "https://www.fasttools.store/calculator/inflation-calculator"
   },
   robots: {
     index: true,
@@ -103,7 +103,7 @@ export default function InflationCalculatorPage() {
           "@type": "WebApplication",
           name: "Inflation Calculator | Advanced CPI Calculator - Professional Economic Analysis Tool",
           description: "Professional inflation calculator with historical CPI data from 1913-2025. Calculate purchasing power, inflation rates, and investment strategies with comprehensive economic analysis. Free, professional-grade economic analysis for optimal financial planning.",
-          url: "https://fasttools.store/calculator/inflation-calculator",
+          url: "https://www.fasttools.store/calculator/inflation-calculator",
           applicationCategory: "FinanceApplication",
           operatingSystem: "Any",
           offers: {
@@ -136,7 +136,7 @@ export default function InflationCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

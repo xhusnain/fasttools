@@ -69,10 +69,10 @@ export const metadata: Metadata = {
     title: "Investment Calculator | Advanced Portfolio Calculator | Free Online Tool | FastTools",
     description: "Professional investment calculator for comprehensive portfolio analysis. Calculate end amount, return rate, starting amount, additional contributions, and investment length with detailed accumulation schedules.",
     type: "website",
-    url: "https://fasttools.store/calculator/investment-calculator",
+    url: "https://www.fasttools.store/calculator/investment-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Investment Calculator - FastTools"
@@ -82,10 +82,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Investment Calculator | Advanced Portfolio Calculator | Free Online Tool | FastTools",
     description: "Professional investment calculator for comprehensive portfolio analysis. Calculate end amount, return rate, starting amount, additional contributions, and investment length with detailed accumulation schedules.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/investment-calculator"
+    canonical: "https://www.fasttools.store/calculator/investment-calculator"
   },
   robots: {
     index: true,
@@ -109,7 +109,7 @@ export default function InvestmentCalculatorPage() {
           "@type": "WebApplication",
           name: "Investment Calculator | Advanced Portfolio Calculator - Professional Investment Analysis Tool",
           description: "Professional investment calculator for comprehensive portfolio analysis. Calculate end amount, return rate, starting amount, additional contributions, and investment length with detailed accumulation schedules. Free, professional-grade investment analysis for optimal portfolio planning.",
-          url: "https://fasttools.store/calculator/investment-calculator",
+          url: "https://www.fasttools.store/calculator/investment-calculator",
           applicationCategory: "FinanceApplication",
           operatingSystem: "Any",
           offers: {
@@ -142,7 +142,7 @@ export default function InvestmentCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

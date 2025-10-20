@@ -110,10 +110,10 @@ export const metadata: Metadata = {
     title: "Mortgage Calculator | Advanced Home Loan Calculator | Free Online Tool | FastTools",
     description: "Calculate mortgage payments with our advanced mortgage calculator. Get accurate monthly payments, amortization schedules, total interest, and home loan costs for all mortgage types.",
     type: "website",
-    url: "https://fasttools.store/calculator/mortgage-calculator",
+    url: "https://www.fasttools.store/calculator/mortgage-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Mortgage Calculator - FastTools"
@@ -123,10 +123,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mortgage Calculator | Advanced Home Loan Calculator | Free Online Tool | FastTools",
     description: "Calculate mortgage payments with our advanced mortgage calculator. Get accurate monthly payments, amortization schedules, total interest, and home loan costs for all mortgage types.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/mortgage-calculator"
+    canonical: "https://www.fasttools.store/calculator/mortgage-calculator"
   },
   robots: {
     index: true,
@@ -150,7 +150,7 @@ export default function MortgageCalculatorPage() {
           "@type": "WebApplication",
           name: "Mortgage Calculator | Advanced Home Loan Calculator - Professional Mortgage Analysis Tool",
           description: "Calculate mortgage payments with our advanced mortgage calculator. Get accurate monthly payments, amortization schedules, total interest, and home loan costs for all mortgage types. Free, professional-grade mortgage analysis for optimal home buying decisions.",
-          url: "https://fasttools.store/calculator/mortgage-calculator",
+          url: "https://www.fasttools.store/calculator/mortgage-calculator",
           applicationCategory: "FinanceApplication",
           operatingSystem: "Any",
           offers: {
@@ -183,7 +183,7 @@ export default function MortgageCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

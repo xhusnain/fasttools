@@ -67,10 +67,10 @@ export const metadata: Metadata = {
     title: "Finance Calculator | Advanced TVM Calculator | Free Online Tool | FastTools",
     description: "Professional finance calculator for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules, investment analysis, and financial planning tools.",
     type: "website",
-    url: "https://fasttools.store/calculator/finance-calculator",
+    url: "https://www.fasttools.store/calculator/finance-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Finance Calculator - FastTools"
@@ -80,10 +80,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Finance Calculator | Advanced TVM Calculator | Free Online Tool | FastTools",
     description: "Professional finance calculator for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules, investment analysis, and financial planning tools.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/finance-calculator"
+    canonical: "https://www.fasttools.store/calculator/finance-calculator"
   },
   robots: {
     index: true,
@@ -107,7 +107,7 @@ export default function FinanceCalculatorPage() {
           "@type": "WebApplication",
           name: "Finance Calculator | Advanced TVM Calculator - Professional Financial Analysis Tool",
           description: "Professional finance calculator for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules, investment analysis, and financial planning tools. Free, professional-grade financial analysis for optimal investment planning.",
-          url: "https://fasttools.store/calculator/finance-calculator",
+          url: "https://www.fasttools.store/calculator/finance-calculator",
           applicationCategory: "FinanceApplication",
           operatingSystem: "Any",
           offers: {
@@ -140,7 +140,7 @@ export default function FinanceCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

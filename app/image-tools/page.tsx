@@ -147,12 +147,12 @@ export const metadata: Metadata = {
     title: "Free Image & File Tools | OCR Converter, Background Blur, PDF Tools | FastTools",
     description:
       "Free online image and file utility tools including OCR converter, background blur, image cropper, PDF splitter, PDF merger, and PDF unlocker. Fast, secure, and easy to use.",
-    url: "https://fasttools.store/image-tools",
+    url: "https://www.fasttools.store/image-tools",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Image & File Tools - OCR Converter, Background Blur, PDF Tools",
@@ -164,10 +164,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Image & File Tools | OCR Converter, Background Blur, PDF Tools | FastTools",
     description: "Free online image and file utility tools including OCR converter, background blur, image cropper, PDF splitter, PDF merger, and PDF unlocker. Fast, secure, and easy to use.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   alternates: {
-    canonical: "https://fasttools.store/image-tools",
+    canonical: "https://www.fasttools.store/image-tools",
   },
 }
 
@@ -221,26 +221,26 @@ const jsonLd = {
   "@type": "WebPage",
   name: "Free Image & File Tools | OCR Converter, Background Blur, PDF Tools | FastTools",
   description: "Free online image and file utility tools including OCR converter, background blur, image cropper, PDF splitter, PDF merger, and PDF unlocker. Fast, secure, and easy to use.",
-  url: "https://fasttools.store/image-tools",
+  url: "https://www.fasttools.store/image-tools",
   mainEntity: {
     "@type": "ItemList",
     name: "Image & File Tools Collection",
     description: "Comprehensive collection of free online image and file utility tools for image processing, OCR, PDF manipulation, and document management",
     numberOfItems: 6,
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Image to Text (OCR)", description: "Extract text from images using OCR technology", url: "https://fasttools.store/image-tools/image-to-text" },
-      { "@type": "ListItem", position: 2, name: "Background Blur", description: "Blur image backgrounds with adjustable intensity", url: "https://fasttools.store/image-tools/background-blur" },
-      { "@type": "ListItem", position: 3, name: "Image Cropper", description: "Crop images into circular or square shapes", url: "https://fasttools.store/image-tools/image-cropper" },
-      { "@type": "ListItem", position: 4, name: "PDF Splitter & Merger", description: "Split large PDFs or merge multiple PDFs into one", url: "https://fasttools.store/image-tools/pdf-tools" },
-      { "@type": "ListItem", position: 5, name: "PDF Unlocker", description: "Remove password protection from PDFs", url: "https://fasttools.store/image-tools/pdf-unlocker" },
-      { "@type": "ListItem", position: 6, name: "Screenshot to Text", description: "Extract text from screenshots", url: "https://fasttools.store/image-tools/screenshot-to-text" }
+      { "@type": "ListItem", position: 1, name: "Image to Text (OCR)", description: "Extract text from images using OCR technology", url: "https://www.fasttools.store/image-tools/image-to-text" },
+      { "@type": "ListItem", position: 2, name: "Background Blur", description: "Blur image backgrounds with adjustable intensity", url: "https://www.fasttools.store/image-tools/background-blur" },
+      { "@type": "ListItem", position: 3, name: "Image Cropper", description: "Crop images into circular or square shapes", url: "https://www.fasttools.store/image-tools/image-cropper" },
+      { "@type": "ListItem", position: 4, name: "PDF Splitter & Merger", description: "Split large PDFs or merge multiple PDFs into one", url: "https://www.fasttools.store/image-tools/pdf-tools" },
+      { "@type": "ListItem", position: 5, name: "PDF Unlocker", description: "Remove password protection from PDFs", url: "https://www.fasttools.store/image-tools/pdf-unlocker" },
+      { "@type": "ListItem", position: 6, name: "Screenshot to Text", description: "Extract text from screenshots", url: "https://www.fasttools.store/image-tools/screenshot-to-text" }
     ]
   },
   breadcrumb: {
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://fasttools.store" },
-      { "@type": "ListItem", position: 2, name: "Image Tools", item: "https://fasttools.store/image-tools" }
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.fasttools.store" },
+      { "@type": "ListItem", position: 2, name: "Image Tools", item: "https://www.fasttools.store/image-tools" }
     ]
   },
   about: {
@@ -251,7 +251,7 @@ const jsonLd = {
   isPartOf: {
     "@type": "WebSite",
     name: "FastTools",
-    url: "https://fasttools.store"
+    url: "https://www.fasttools.store"
   }
 }
 

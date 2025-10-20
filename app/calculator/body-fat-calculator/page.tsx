@@ -77,10 +77,10 @@ export const metadata: Metadata = {
     title: "Body Fat Calculator | Advanced Body Fat Percentage Calculator | Free Online Tool | FastTools",
     description: "Calculate your body fat percentage with our advanced body fat calculator. Uses U.S. Navy method and BMI method for accurate results. Get fat mass, lean mass, ideal body fat, and personalized health recommendations. Free, professional-grade body composition analysis.",
     type: "website",
-    url: "https://fasttools.store/calculator/body-fat-calculator",
+    url: "https://www.fasttools.store/calculator/body-fat-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Body Fat Calculator - FastTools"
@@ -90,10 +90,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Body Fat Calculator | Advanced Body Fat Percentage Calculator | Free Online Tool | FastTools",
     description: "Calculate your body fat percentage with our advanced body fat calculator. Uses U.S. Navy method and BMI method for accurate results. Get fat mass, lean mass, ideal body fat, and personalized health recommendations. Free, professional-grade body composition analysis.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/body-fat-calculator"
+    canonical: "https://www.fasttools.store/calculator/body-fat-calculator"
   },
   robots: {
     index: true,
@@ -117,7 +117,7 @@ export default function BodyFatCalculatorPage() {
           "@type": "WebApplication",
           name: "Body Fat Calculator | Advanced Body Fat Percentage Calculator - Professional Body Composition Analysis Tool",
           description: "Calculate your body fat percentage with our advanced body fat calculator. Uses U.S. Navy method and BMI method for accurate results. Get fat mass, lean mass, ideal body fat, and personalized health recommendations. Free, professional-grade body composition analysis for optimal health and fitness.",
-          url: "https://fasttools.store/calculator/body-fat-calculator",
+          url: "https://www.fasttools.store/calculator/body-fat-calculator",
           applicationCategory: "HealthApplication",
           operatingSystem: "Any",
           offers: {
@@ -150,7 +150,7 @@ export default function BodyFatCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

@@ -130,12 +130,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Anniversary Calculator | Relationship Duration & Next Anniversary | FastTools",
     description: "Calculate how long you've been together in years, months, and days. See next anniversary date and days remaining.",
-    url: "https://fasttools.store/fun-tools/anniversary",
+    url: "https://www.fasttools.store/fun-tools/anniversary",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Anniversary Calculator - Relationship Duration & Next Anniversary",
@@ -147,7 +147,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Anniversary Calculator | Relationship Duration & Next Anniversary | FastTools",
     description: "Calculate how long you've been together in years, months, and days. See next anniversary date and days remaining.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
@@ -157,7 +157,7 @@ export const metadata: Metadata = {
       alternateName: "Relationship Calculator",
       applicationCategory: "EntertainmentApplication",
       operatingSystem: "Web Browser",
-      url: "https://fasttools.store/fun-tools/anniversary",
+      url: "https://www.fasttools.store/fun-tools/anniversary",
       description:
         "Calculate relationship duration and next anniversary with days remaining.",
       inLanguage: "en",
@@ -183,15 +183,15 @@ export const metadata: Metadata = {
       author: {
         "@type": "Organization",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       },
       publisher: { 
         "@type": "Organization", 
         name: "FastTools", 
-        url: "https://fasttools.store",
+        url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
-          url: "https://fasttools.store/logo.svg",
+          url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
         }
@@ -200,8 +200,8 @@ export const metadata: Metadata = {
       dateModified: new Date().toISOString().split('T')[0],
       version: "2.0",
       softwareVersion: "2.0",
-      downloadUrl: "https://fasttools.store/fun-tools/anniversary",
-      screenshot: "https://fasttools.store/og-image.svg",
+      downloadUrl: "https://www.fasttools.store/fun-tools/anniversary",
+      screenshot: "https://www.fasttools.store/og-image.svg",
       keywords: "anniversary calculator, free anniversary calculator, relationship calculator, how long together, anniversary date, relationship duration, couple calculator",
       about: {
         "@type": "Thing",
@@ -211,7 +211,7 @@ export const metadata: Metadata = {
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
-        url: "https://fasttools.store"
+        url: "https://www.fasttools.store"
       }
     }),
   },

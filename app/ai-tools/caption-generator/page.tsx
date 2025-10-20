@@ -118,12 +118,12 @@ export const metadata: Metadata = {
     title: "Free AI Caption Generator | Create Viral Social Media Captions | FastTools",
     description: "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator with 7 platforms support.",
     type: "website",
-    url: "https://fasttools.store/ai-tools/caption-generator",
+    url: "https://www.fasttools.store/ai-tools/caption-generator",
     siteName: "FastTools",
     locale: "en_US",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools AI Caption Generator - Create Viral Social Media Captions for Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube",
@@ -135,7 +135,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free AI Caption Generator | Create Viral Social Media Captions | FastTools",
     description: "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
     creator: "@fasttools",
     site: "@fasttools",
   },
@@ -151,7 +151,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://fasttools.store/ai-tools/caption-generator",
+    canonical: "https://www.fasttools.store/ai-tools/caption-generator",
   },
   other: {
     "google-site-verification": "your-google-verification-code",

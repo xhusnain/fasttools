@@ -37,12 +37,12 @@ export default function CookiePreferencesPage() {
     "@type": "WebPage",
     name: "Cookie Policy - FastTools",
     description: "Comprehensive cookie policy covering Google AdSense cookies, Google Analytics, user consent management, and GDPR/CCPA compliance.",
-    url: "https://fasttools.store/cookie-preferences",
+    url: "https://www.fasttools.store/cookie-preferences",
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store",
-      logo: "https://fasttools.store/logo.svg"
+      url: "https://www.fasttools.store",
+      logo: "https://www.fasttools.store/logo.svg"
     },
     datePublished: "2024-12-19",
     dateModified: "2024-12-19",
@@ -500,9 +500,9 @@ export default function CookiePreferencesPage() {
                     </div>
                     <div className="mt-4 pt-4 border-t border-border">
                       <h4 className="font-semibold text-foreground mb-2">Website</h4>
-                      <a href="https://fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
+                      <a href="https://www.fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
                         <Globe className="h-4 w-4" />
-                        https://fasttools.store
+                        https://www.fasttools.store
                       </a>
                     </div>
                   </div>

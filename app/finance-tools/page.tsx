@@ -157,12 +157,12 @@ export const metadata: Metadata = {
     title: "Free Finance Tools | Invoice Generator, PayPal Fee Calculator & More | FastTools",
     description:
       "Free finance and productivity tools including invoice generator, PayPal fee calculator, discount calculator, tip calculator, savings tracker, retirement planner, bill splitter, and credit card payoff calculator.",
-    url: "https://fasttools.store/finance-tools",
+    url: "https://www.fasttools.store/finance-tools",
     type: "website",
     siteName: "FastTools",
     images: [
       {
-        url: "https://fasttools.store/og-image.svg",
+        url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
         alt: "FastTools Free Finance Tools - Invoice Generator, PayPal Fee Calculator & More",
@@ -174,10 +174,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Finance Tools | Invoice Generator, PayPal Fee Calculator & More | FastTools",
     description: "Free finance and productivity tools including invoice generator, PayPal fee calculator, discount calculator, tip calculator, savings tracker, retirement planner, bill splitter, and credit card payoff calculator.",
-    images: ["https://fasttools.store/og-image.svg"],
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   alternates: {
-    canonical: "https://fasttools.store/finance-tools",
+    canonical: "https://www.fasttools.store/finance-tools",
   },
 }
 
@@ -186,28 +186,28 @@ const jsonLd = {
   "@type": "WebPage",
   name: "Free Finance Tools | Invoice Generator, PayPal Fee Calculator & More | FastTools",
   description: "Free finance and productivity tools including invoice generator, PayPal fee calculator, discount calculator, tip calculator, savings tracker, retirement planner, bill splitter, and credit card payoff calculator. Perfect for freelancers, businesses, and personal finance management.",
-  url: "https://fasttools.store/finance-tools",
+  url: "https://www.fasttools.store/finance-tools",
   mainEntity: {
     "@type": "ItemList",
     name: "Finance Tools Collection",
     description: "Comprehensive collection of free online finance tools and calculators for business, personal finance, and financial planning",
     numberOfItems: 8,
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Invoice Generator", description: "Create professional invoices with taxes, discounts, and branding", url: "https://fasttools.store/finance-tools/invoice-generator" },
-      { "@type": "ListItem", position: 2, name: "PayPal Fee Calculator", description: "Calculate PayPal fees and determine net amounts or required charges", url: "https://fasttools.store/finance-tools/paypal-fee" },
-      { "@type": "ListItem", position: 3, name: "Discount Calculator", description: "Calculate sale prices and savings for shopping and discounts", url: "https://fasttools.store/finance-tools/discount-calculator" },
-      { "@type": "ListItem", position: 4, name: "Tip Calculator", description: "Calculate tips and split bills among multiple people", url: "https://fasttools.store/finance-tools/tip-calculator" },
-      { "@type": "ListItem", position: 5, name: "Savings Goal Tracker", description: "Track your savings goals and see when you'll reach them", url: "https://fasttools.store/finance-tools/savings-tracker" },
-      { "@type": "ListItem", position: 6, name: "Retirement Planner", description: "Plan your retirement with compound interest calculations", url: "https://fasttools.store/finance-tools/retirement-planner" },
-      { "@type": "ListItem", position: 7, name: "Bill Splitter", description: "Split expenses fairly among friends or groups", url: "https://fasttools.store/finance-tools/bill-splitter" },
-      { "@type": "ListItem", position: 8, name: "Credit Card Payoff Calculator", description: "Calculate how long it will take to pay off your credit card debt", url: "https://fasttools.store/finance-tools/credit-card-payoff" }
+      { "@type": "ListItem", position: 1, name: "Invoice Generator", description: "Create professional invoices with taxes, discounts, and branding", url: "https://www.fasttools.store/finance-tools/invoice-generator" },
+      { "@type": "ListItem", position: 2, name: "PayPal Fee Calculator", description: "Calculate PayPal fees and determine net amounts or required charges", url: "https://www.fasttools.store/finance-tools/paypal-fee" },
+      { "@type": "ListItem", position: 3, name: "Discount Calculator", description: "Calculate sale prices and savings for shopping and discounts", url: "https://www.fasttools.store/finance-tools/discount-calculator" },
+      { "@type": "ListItem", position: 4, name: "Tip Calculator", description: "Calculate tips and split bills among multiple people", url: "https://www.fasttools.store/finance-tools/tip-calculator" },
+      { "@type": "ListItem", position: 5, name: "Savings Goal Tracker", description: "Track your savings goals and see when you'll reach them", url: "https://www.fasttools.store/finance-tools/savings-tracker" },
+      { "@type": "ListItem", position: 6, name: "Retirement Planner", description: "Plan your retirement with compound interest calculations", url: "https://www.fasttools.store/finance-tools/retirement-planner" },
+      { "@type": "ListItem", position: 7, name: "Bill Splitter", description: "Split expenses fairly among friends or groups", url: "https://www.fasttools.store/finance-tools/bill-splitter" },
+      { "@type": "ListItem", position: 8, name: "Credit Card Payoff Calculator", description: "Calculate how long it will take to pay off your credit card debt", url: "https://www.fasttools.store/finance-tools/credit-card-payoff" }
     ]
   },
   breadcrumb: {
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://fasttools.store" },
-      { "@type": "ListItem", position: 2, name: "Finance Tools", item: "https://fasttools.store/finance-tools" }
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.fasttools.store" },
+      { "@type": "ListItem", position: 2, name: "Finance Tools", item: "https://www.fasttools.store/finance-tools" }
     ]
   },
   about: {
@@ -218,7 +218,7 @@ const jsonLd = {
   isPartOf: {
     "@type": "WebSite",
     name: "FastTools",
-    url: "https://fasttools.store"
+    url: "https://www.fasttools.store"
   }
 }
 

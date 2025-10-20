@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Terms of Service - FastTools | Google AdSense Compliant",
     description: "Comprehensive terms of service covering Google AdSense compliance, user agreements, intellectual property, and legal obligations for free online tools.",
     type: "website",
-    url: "https://fasttools.store/terms",
+    url: "https://www.fasttools.store/terms",
     siteName: "FastTools",
     locale: "en_US",
   },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     site: "@fasttools",
   },
   alternates: {
-    canonical: "https://fasttools.store/terms",
+    canonical: "https://www.fasttools.store/terms",
   },
   robots: {
     index: true,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://fasttools.store'),
+    metadataBase: new URL('https://www.fasttools.store'),
 }
 
 export default function TermsPage() {
@@ -70,12 +70,12 @@ export default function TermsPage() {
     "@type": "WebPage",
     name: "Terms of Service - FastTools",
     description: "Comprehensive terms of service covering Google AdSense compliance, user agreements, intellectual property, and legal obligations for free online tools.",
-    url: "https://fasttools.store/terms",
+    url: "https://www.fasttools.store/terms",
     publisher: {
       "@type": "Organization",
       name: "FastTools",
-      url: "https://fasttools.store",
-      logo: "https://fasttools.store/logo.svg"
+      url: "https://www.fasttools.store",
+      logo: "https://www.fasttools.store/logo.svg"
     },
     datePublished: "2024-12-19",
     dateModified: "2024-12-19",
@@ -383,9 +383,9 @@ export default function TermsPage() {
                     </div>
                     <div className="mt-4 pt-4 border-t border-border">
                       <h4 className="font-semibold text-foreground mb-2">Website</h4>
-                      <a href="https://fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
+                      <a href="https://www.fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
                         <Globe className="h-4 w-4" />
-                  https://fasttools.store
+                  https://www.fasttools.store
                 </a>
                     </div>
                   </div>

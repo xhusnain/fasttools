@@ -45,10 +45,10 @@ export const metadata: Metadata = {
     title: "Calorie Calculator | Advanced Daily Calorie Needs Calculator | Free Online Tool | FastTools",
     description: "Calculate your daily calorie needs with our advanced calorie calculator. Get BMR, TDEE, weight management goals, zigzag calorie cycling, and personalized nutrition recommendations. Free, professional-grade calorie analysis.",
     type: "website",
-    url: "https://fasttools.store/calculator/calorie-calculator",
+    url: "https://www.fasttools.store/calculator/calorie-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Calorie Calculator - FastTools"
@@ -58,10 +58,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Calorie Calculator | Advanced Daily Calorie Needs Calculator | Free Online Tool | FastTools",
     description: "Calculate your daily calorie needs with our advanced calorie calculator. Get BMR, TDEE, weight management goals, zigzag calorie cycling, and personalized nutrition recommendations. Free, professional-grade calorie analysis.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/calorie-calculator"
+    canonical: "https://www.fasttools.store/calculator/calorie-calculator"
   },
   robots: {
     index: true,
@@ -85,7 +85,7 @@ export default function CalorieCalculatorPage() {
           "@type": "WebApplication",
           name: "Calorie Calculator | Advanced Daily Calorie Needs Calculator - Professional Calorie Analysis Tool",
           description: "Calculate your daily calorie needs with our advanced calorie calculator. Get BMR, TDEE, weight management goals, zigzag calorie cycling, and personalized nutrition recommendations. Free, professional-grade calorie analysis for optimal health and fitness.",
-          url: "https://fasttools.store/calculator/calorie-calculator",
+          url: "https://www.fasttools.store/calculator/calorie-calculator",
           applicationCategory: "HealthApplication",
           operatingSystem: "Any",
           offers: {
@@ -118,7 +118,7 @@ export default function CalorieCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

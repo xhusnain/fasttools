@@ -62,10 +62,10 @@ export const metadata: Metadata = {
     title: "Interest Rate Calculator | Advanced Loan Rate Calculator | Free Online Tool | FastTools",
     description: "Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation, amortization analysis, and loan optimization recommendations. Free, professional-grade loan analysis.",
     type: "website",
-    url: "https://fasttools.store/calculator/interest-rate-calculator",
+    url: "https://www.fasttools.store/calculator/interest-rate-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Interest Rate Calculator - FastTools"
@@ -75,10 +75,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Interest Rate Calculator | Advanced Loan Rate Calculator | Free Online Tool | FastTools",
     description: "Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation, amortization analysis, and loan optimization recommendations. Free, professional-grade loan analysis.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/interest-rate-calculator"
+    canonical: "https://www.fasttools.store/calculator/interest-rate-calculator"
   },
   robots: {
     index: true,
@@ -102,7 +102,7 @@ export default function InterestRateCalculatorPage() {
           "@type": "WebApplication",
           name: "Interest Rate Calculator | Advanced Loan Rate Calculator - Professional Loan Analysis Tool",
           description: "Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation, amortization analysis, and loan optimization recommendations. Free, professional-grade loan analysis for optimal financial planning.",
-          url: "https://fasttools.store/calculator/interest-rate-calculator",
+          url: "https://www.fasttools.store/calculator/interest-rate-calculator",
           applicationCategory: "FinanceApplication",
           operatingSystem: "Any",
           offers: {
@@ -135,7 +135,7 @@ export default function InterestRateCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

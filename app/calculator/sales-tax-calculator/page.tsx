@@ -64,10 +64,10 @@ export const metadata: Metadata = {
     title: "Sales Tax Calculator | Advanced State Tax Calculator | Free Online Tool | FastTools",
     description: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, business tips, and compliance guidance. Free, professional-grade tax analysis.",
     type: "website",
-    url: "https://fasttools.store/calculator/sales-tax-calculator",
+    url: "https://www.fasttools.store/calculator/sales-tax-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Sales Tax Calculator - FastTools"
@@ -77,10 +77,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sales Tax Calculator | Advanced State Tax Calculator | Free Online Tool | FastTools",
     description: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, business tips, and compliance guidance. Free, professional-grade tax analysis.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/sales-tax-calculator"
+    canonical: "https://www.fasttools.store/calculator/sales-tax-calculator"
   },
   robots: {
     index: true,
@@ -104,7 +104,7 @@ export default function SalesTaxCalculatorPage() {
           "@type": "WebApplication",
           name: "Sales Tax Calculator | Advanced State Tax Calculator - Professional Tax Analysis Tool",
           description: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, business tips, and compliance guidance. Free, professional-grade tax analysis for optimal tax planning.",
-          url: "https://fasttools.store/calculator/sales-tax-calculator",
+          url: "https://www.fasttools.store/calculator/sales-tax-calculator",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Any",
           offers: {
@@ -137,7 +137,7 @@ export default function SalesTaxCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />

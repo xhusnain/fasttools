@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         address: false,
         telephone: false,
     },
-    metadataBase: new URL('https://fasttools.store'),
+    metadataBase: new URL('https://www.fasttools.store'),
     verification: {
         google: 'your-google-verification-code',
         yandex: 'your-yandex-verification-code',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         title: "SEO FAQ - 200+ Questions & Answers | Free SEO Tools & Guides",
         description:
             "Complete SEO FAQ with 200+ expert answers covering keyword research, technical SEO, Core Web Vitals, schema markup, backlinks, local SEO, mobile SEO, and ranking factors. Free SEO tools and actionable tips.",
-        url: "https://fasttools.store/faq",
+        url: "https://www.fasttools.store/faq",
         type: "article",
         siteName: "FastTools",
         locale: "en_US",
@@ -751,14 +751,14 @@ export default function FAQPage() {
         "@type": "FAQPage",
         name: "SEO FAQ - 200+ Questions & Answers | Free SEO Tools & Guides",
         description: "Complete SEO FAQ with 200+ expert answers covering keyword research, technical SEO, Core Web Vitals, schema markup, backlinks, local SEO, mobile SEO, and ranking factors. Free SEO tools, guides, and actionable tips to improve search rankings.",
-        url: "https://fasttools.store/faq",
+        url: "https://www.fasttools.store/faq",
         publisher: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store",
+            url: "https://www.fasttools.store",
             logo: {
                 "@type": "ImageObject",
-                url: "https://fasttools.store/logo.svg",
+                url: "https://www.fasttools.store/logo.svg",
                 width: 200,
                 height: 200
             },
@@ -772,7 +772,7 @@ export default function FAQPage() {
         author: {
             "@type": "Organization",
             name: "FastTools SEO Team",
-            url: "https://fasttools.store",
+            url: "https://www.fasttools.store",
             description: "Expert SEO professionals specializing in search engine optimization, technical SEO, and digital marketing strategies"
         },
         datePublished: "2025-01-15",
@@ -797,13 +797,13 @@ export default function FAQPage() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://fasttools.store"
+                    item: "https://www.fasttools.store"
                 },
                 {
                     "@type": "ListItem",
                     position: 2,
                     name: "SEO FAQ",
-                    item: "https://fasttools.store/faq"
+                    item: "https://www.fasttools.store/faq"
                 }
             ]
         },
@@ -823,7 +823,7 @@ export default function FAQPage() {
         },
         potentialAction: {
             "@type": "SearchAction",
-            target: "https://fasttools.store/search?q={search_term_string}",
+            target: "https://www.fasttools.store/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
         },
         offers: {

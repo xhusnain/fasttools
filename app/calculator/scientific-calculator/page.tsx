@@ -72,18 +72,18 @@ export default function ScientificCalculatorPage() {
         <meta property="og:title" content="Scientific Calculator Online Free | Advanced Math Calculator" />
         <meta property="og:description" content="Professional scientific calculator with 70+ functions. Free online calculator for trigonometry, logarithms, statistics, and engineering calculations." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://fasttools.store/calculator/scientific-calculator" />
-        <meta property="og:image" content="https://fasttools.store/og-scientific-calculator.png" />
+        <meta property="og:url" content="https://www.fasttools.store/calculator/scientific-calculator" />
+        <meta property="og:image" content="https://www.fasttools.store/og-scientific-calculator.png" />
         <meta property="og:site_name" content="FastTools" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Scientific Calculator Online Free | Advanced Math Calculator" />
         <meta name="twitter:description" content="Professional scientific calculator with 70+ functions. Free online calculator for trigonometry, logarithms, statistics, and engineering calculations." />
-        <meta name="twitter:image" content="https://fasttools.store/og-scientific-calculator.png" />
+        <meta name="twitter:image" content="https://www.fasttools.store/og-scientific-calculator.png" />
         
         {/* Canonical URL */}
-        <link rel="canonical" href="https://fasttools.store/calculator/scientific-calculator" />
+        <link rel="canonical" href="https://www.fasttools.store/calculator/scientific-calculator" />
         
         {/* Additional SEO */}
         <meta name="theme-color" content="#3b82f6" />
@@ -98,7 +98,7 @@ export default function ScientificCalculatorPage() {
           "@type": "WebApplication",
           name: "Scientific Calculator Online Free",
           description: "Professional-grade scientific calculator with 70+ mathematical functions including trigonometry, logarithms, statistics, engineering calculations, and advanced mathematics. Free online calculator for students, engineers, and scientists.",
-          url: "https://fasttools.store/calculator/scientific-calculator",
+          url: "https://www.fasttools.store/calculator/scientific-calculator",
           applicationCategory: "UtilityApplication",
           operatingSystem: "Any",
           browserRequirements: "Requires JavaScript. Works in all modern browsers.",
@@ -111,7 +111,7 @@ export default function ScientificCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           },
           featureList: [
             "Trigonometric Functions (sin, cos, tan, asin, acos, atan)",

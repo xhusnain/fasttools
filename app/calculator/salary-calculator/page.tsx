@@ -55,10 +55,10 @@ export const metadata: Metadata = {
     title: "Salary Calculator | Advanced Pay Frequency Calculator | Free Online Tool | FastTools",
     description: "Convert salary amounts across all pay frequencies with holiday and vacation adjustments. Professional salary analysis, industry comparisons, and negotiation support for career advancement.",
     type: "website",
-    url: "https://fasttools.store/calculator/salary-calculator",
+    url: "https://www.fasttools.store/calculator/salary-calculator",
     siteName: "FastTools",
     images: [{
-      url: "https://fasttools.store/og-image.svg",
+      url: "https://www.fasttools.store/og-image.svg",
       width: 1200,
       height: 630,
       alt: "Salary Calculator - FastTools"
@@ -68,10 +68,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Salary Calculator | Advanced Pay Frequency Calculator | Free Online Tool | FastTools",
     description: "Convert salary amounts across all pay frequencies with holiday and vacation adjustments. Professional salary analysis, industry comparisons, and negotiation support for career advancement.",
-    images: ["https://fasttools.store/og-image.svg"]
+    images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
-    canonical: "https://fasttools.store/calculator/salary-calculator"
+    canonical: "https://www.fasttools.store/calculator/salary-calculator"
   },
   robots: {
     index: true,
@@ -95,7 +95,7 @@ export default function SalaryCalculatorPage() {
           "@type": "WebApplication",
           name: "Salary Calculator | Advanced Pay Frequency Calculator - Professional Salary Analysis Tool",
           description: "Convert salary amounts across all pay frequencies with holiday and vacation adjustments. Professional salary analysis, industry comparisons, and negotiation support for career advancement. Free, professional-grade salary analysis for optimal career planning.",
-          url: "https://fasttools.store/calculator/salary-calculator",
+          url: "https://www.fasttools.store/calculator/salary-calculator",
           applicationCategory: "FinanceApplication",
           operatingSystem: "Any",
           offers: {
@@ -128,7 +128,7 @@ export default function SalaryCalculatorPage() {
           creator: {
             "@type": "Organization",
             name: "FastTools",
-            url: "https://fasttools.store"
+            url: "https://www.fasttools.store"
           }
         })
       }} />
