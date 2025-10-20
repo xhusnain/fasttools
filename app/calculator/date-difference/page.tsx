@@ -5,7 +5,7 @@ import { CheckCircle, Calendar, Briefcase, Target, BookOpen, Clock, TrendingUp, 
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Date Difference Calculator – Calculate Days, Months & Years Between Dates | FastTools",
+  title: "Date Difference Calculator | Days, Months & Years | FastTools",
   description:
     "Use the free Date Difference Calculator by FastTools to find the exact number of days, months, and years between any two dates. Quick, accurate, and easy to use for planning, scheduling, or tracking durations.",
   abstract: "Professional date difference calculator supporting multiple date formats, business days calculation, and leap year handling. Calculate precise time differences between any two dates.",

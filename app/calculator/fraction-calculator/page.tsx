@@ -17,7 +17,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Fraction Calculator | Free Online Math Tool - Add, Subtract, Multiply & Divide Fractions",
+  title: "Fraction Calculator | Add, Subtract, Multiply & Divide | FastTools",
   description: "Advanced fraction calculator with addition, subtraction, multiplication, division, simplification, and conversion between fractions and decimals. Free online math tool for students and professionals.",
   keywords: [
       "fraction calculator",

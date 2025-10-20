@@ -6,7 +6,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Free Length Converter | Convert Meters, Feet, Inches, CM, KM & Miles | FastTools",
+  title: "Length Converter | Meters, Feet, Inches, CM | FastTools",
   description:
     "Convert length units instantly: meters, feet, inches, centimeters, millimeters, kilometers, yards, and miles. Accurate metric and imperial conversion tool for construction, travel, and education.",
   keywords: [

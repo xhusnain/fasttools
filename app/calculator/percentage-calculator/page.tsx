@@ -5,7 +5,7 @@ import { Percent, Calculator, TrendingUp, TrendingDown, Target, DollarSign, BarC
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free Online Percentage Calculator | Accurate & Quick Math Tool | FastTools",
+  title: "Percentage Calculator | Accurate Math Tool | FastTools",
   description:
     "Free percentage calculator for all your math needs. Calculate percentage increase, decrease, difference, discounts, tips, grades, profit margins, and more. Accurate, quick, and easy-to-use online tool with step-by-step formulas.",
   keywords: [
@@ -444,8 +444,8 @@ export default function PercentageCalculatorPage() {
                         icon: "📈"
                       },
                       { 
-                        name: "Markup Calculator", 
-                        desc: "Calculate markup and profit margins", 
+                        name: "Sales Tax Calculator", 
+                        desc: "Calculate sales tax and total amounts", 
                         href: "/calculator/sales-tax-calculator",
                         icon: "💼"
                       },

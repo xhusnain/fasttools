@@ -31,7 +31,7 @@ import {
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free Online Concrete Calculator | Volume, Weight, Materials & Cost Calculator | FastTools",
+  title: "Concrete Calculator | Volume, Weight & Cost | FastTools",
   description: "Use our free Concrete Calculator to calculate volume, weight, materials, and cost for slabs, columns, stairs, curbs, and more. Supports multiple mix types with detailed breakdowns. Perfect for construction projects.",
   keywords: [
     "concrete calculator",

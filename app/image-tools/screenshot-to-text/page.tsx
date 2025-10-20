@@ -5,7 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Screenshot to Text — Extract Text from Screenshots (OCR) | SmartToolboxes",
+  title: "Screenshot to Text | Extract Text from Images | FastTools",
   description:
     "Extract text from screenshots instantly using OCR. Convert code snippets, error messages, and UI text to editable format.",
   keywords: [

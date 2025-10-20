@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Star, Users, Clock, Shield, Zap, Target, AlertCircle, Heart, Sparkles, Code2, FileText, Search, TrendingUp, Globe, Settings, BarChart3, Lightbulb, BookOpen, ExternalLink, Calculator, Image, DollarSign, Mail, Smartphone, Wrench, RefreshCw, Briefcase, Award, Globe2, Settings2, BarChart, Brain, Cpu, Database, Eye, Filter, Gauge, Hash, Info, Key, Layers, Maximize, Navigation, Palette, QrCode, RefreshCcw, Save, Tag, Upload, Volume2, Wifi, X, Youtube } from "lucide-react"
 
 export const metadata: Metadata = {
-    title: "SEO FAQ - 200+ Questions & Answers | Free SEO Tools | FastTools",
+    title: "SEO FAQ | 200+ Questions & Answers | FastTools",
     description:
         "Complete SEO FAQ with 200+ expert answers covering keyword research, technical SEO, Core Web Vitals, schema markup, backlinks, local SEO, mobile SEO, and ranking factors. Free SEO tools and actionable tips to improve search rankings.",
     keywords:

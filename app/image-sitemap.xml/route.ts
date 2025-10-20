@@ -210,7 +210,7 @@ export async function GET() {
       ]
     },
     {
-      url: "https://www.fasttools.store/finance-tools/loan-calculator",
+      url: "https://www.fasttools.store/calculator/loan-calculator",
       lastModified: getFreshnessDate(5),
       changeFrequency: "weekly" as const,
       priority: 0.85,

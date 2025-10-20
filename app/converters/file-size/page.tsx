@@ -6,7 +6,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Free File Size Converter | Convert KB to MB, GB to TB, PB to EB | Cloud Storage Calculator | FastTools",
+  title: "File Size Converter | KB to MB, GB to TB | FastTools",
   description:
     "Convert file sizes instantly: KB to MB, GB to TB, PB to EB with decimal (SI) and binary (IEC) units. Free online data size calculator for cloud storage, AI datasets, backups, and hosting limits. AWS S3, Google Cloud, Azure storage calculator.",
   keywords: [

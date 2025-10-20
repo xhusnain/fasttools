@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Download, Shield, Zap, Target, AlertCircle, Home, DollarSign, FileText, Award, Globe, PieChart, Hash, Smile, Music, Heart, Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Free TikTok Video Downloader - Download HD Videos Without Watermark | FastTools",
+  title: "TikTok Video Downloader | HD Videos No Watermark | FastTools",
   description: "Download TikTok videos in HD quality without watermark for free. Fast, secure, and works on all devices. No signup required. Perfect for creators, marketers, and researchers.",
     keywords: [
         "tiktok downloader",

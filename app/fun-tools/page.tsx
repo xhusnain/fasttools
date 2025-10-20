@@ -7,7 +7,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free Fun Tools | Love Calculator, Birthday Countdown & More | FastTools",
+  title: "Fun Tools | Love Calculator, Birthday Countdown | FastTools",
   description:
     "Discover fun and entertaining online tools including Love Calculator, Future Age Predictor, Birthday Countdown, Anniversary Calculator, and Instagram Hashtag Counter. Free and easy to use!",
   keywords: [

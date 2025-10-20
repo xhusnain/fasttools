@@ -6,7 +6,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Age Calculator – Calculate Exact Age in Years, Months & Days | Free Online Tool by FastTools",
+  title: "Age Calculator | Years, Months & Days | FastTools",
   description:
     "Use the free Age Calculator by FastTools to instantly calculate your exact age in years, months, and days. Accurate, mobile-friendly, and perfect for birthdays, documents, and age verification.",
   keywords: [

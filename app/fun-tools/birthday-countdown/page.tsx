@@ -5,7 +5,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Free Birthday Countdown | Real‑Time Birthday Timer | FastTools",
+  title: "Birthday Countdown | Real-Time Timer | FastTools",
   description:
     "Live birthday countdown showing days, hours, minutes, and seconds until your next birthday. Share the timer with friends.",
   keywords: [
