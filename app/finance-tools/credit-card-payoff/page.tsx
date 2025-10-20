@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Credit Card Payoff Calculator | Debt Payoff Timeline & Interest | FastTools",
+  title: "Credit Card Payoff Calculator | Debt Payoff Timeline | FastTools",
   description:
     "Estimate months to debt‑free, total interest, and payoff date. Compare avalanche vs snowball methods and extra payments.",
   keywords: [
@@ -274,7 +274,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/finance-tools/credit-card-payoff" },
   openGraph: {
-    title: "Free Credit Card Payoff Calculator | Debt Payoff Timeline & Interest | FastTools",
+    title: "Credit Card Payoff Calculator | Debt Payoff Timeline | FastTools",
     description: "Estimate months to debt‑free, total interest, and payoff date. Compare avalanche vs snowball methods and extra payments.",
     url: "https://www.fasttools.store/finance-tools/credit-card-payoff",
     type: "website",
@@ -291,7 +291,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Credit Card Payoff Calculator | Debt Payoff Timeline & Interest | FastTools",
+    title: "Credit Card Payoff Calculator | Debt Payoff Timeline | FastTools",
     description: "Estimate months to debt‑free, total interest, and payoff date. Compare avalanche vs snowball methods and extra payments.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

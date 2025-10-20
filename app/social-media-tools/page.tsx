@@ -382,7 +382,7 @@ export default function SocialMediaToolsPage() {
                 competitor analysis, design principles, and brand consistency strategies.
               </p>
               <Button asChild variant="outline" size="sm">
-                <Link href="/social-media-tools/instagram-dp-viewer">Try Instagram DP Viewer</Link>
+                <Link href="/social-media-tools/instagram-dp">Try Instagram DP Viewer</Link>
               </Button>
             </CardContent>
           </Card>

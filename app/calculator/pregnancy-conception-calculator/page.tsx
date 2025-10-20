@@ -6,7 +6,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Aler
 
 export const metadata: Metadata = {
   title: "Pregnancy Conception Calculator | Free Online Pregnancy Tool | FastTools",
-  description: "Calculate your conception date with our advanced pregnancy conception calculator. Get personalized trimester guidance, nutrition tips, exercise recommendations, and week-by-week pregnancy insights. Free, accurate, and comprehensive pregnancy tracking tool.",
+  description: "Calculate your conception date with our advanced pregnancy conception calculator. Get personalized trimester guidance, nutrition tips, and week-by-week pregnancy insights.",
   keywords: [
     "pregnancy conception calculator",
     "conception date calculator",
@@ -112,7 +112,7 @@ export default function PregnancyConceptionCalculatorPage() {
           "@context": "https://schema.org",
           "@type": "WebApplication",
           name: "Pregnancy Conception Calculator | Free Online Pregnancy Tool - Advanced Pregnancy Calculator with Trimester Guidance",
-          description: "Calculate your conception date with our advanced pregnancy conception calculator. Get personalized trimester guidance, nutrition tips, exercise recommendations, and week-by-week pregnancy insights. Free, accurate, and comprehensive pregnancy tracking tool.",
+          description: "Calculate your conception date with our advanced pregnancy conception calculator. Get personalized trimester guidance, nutrition tips, and week-by-week pregnancy insights.",
           url: "https://www.fasttools.store/calculator/pregnancy-conception-calculator",
           applicationCategory: "HealthApplication",
           operatingSystem: "Any",

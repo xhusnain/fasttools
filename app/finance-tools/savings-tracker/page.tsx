@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Savings Goal Tracker | Savings Timeline & Progress | FastTools",
+  title: "Savings Goal Tracker | Timeline & Progress | FastTools",
   description:
     "Track savings progress toward goals. Set target amount, monthly contributions, and timeline to see when you'll reach your goal.",
   keywords: [
@@ -166,7 +166,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/finance-tools/savings-tracker" },
   openGraph: {
-    title: "Free Savings Goal Tracker | Savings Timeline & Progress | FastTools",
+    title: "Savings Goal Tracker | Timeline & Progress | FastTools",
     description: "Track savings progress toward goals. Set target amount, monthly contributions, and timeline to see when you'll reach your goal.",
     url: "https://www.fasttools.store/finance-tools/savings-tracker",
     type: "website",
@@ -183,7 +183,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Savings Goal Tracker | Savings Timeline & Progress | FastTools",
+    title: "Savings Goal Tracker | Timeline & Progress | FastTools",
     description: "Track savings progress toward goals. Set target amount, monthly contributions, and timeline to see when you'll reach your goal.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

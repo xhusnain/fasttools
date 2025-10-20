@@ -6,7 +6,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home
 
 export const metadata: Metadata = {
   title: "Interest Rate Calculator | Advanced Loan Rate Calculator | Free Online Tool | FastTools",
-  description: "Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation, amortization analysis, and loan optimization recommendations. Free, professional-grade loan analysis.",
+  description: "Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation and loan optimization recommendations.",
     keywords: [
         "interest rate calculator",
         "loan interest rate calculator",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
 
     openGraph: {
     title: "Interest Rate Calculator | Advanced Loan Rate Calculator | Free Online Tool | FastTools",
-    description: "Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation, amortization analysis, and loan optimization recommendations. Free, professional-grade loan analysis.",
+    description: "Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation and loan optimization recommendations.",
     type: "website",
     url: "https://www.fasttools.store/calculator/interest-rate-calculator",
     siteName: "FastTools",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Interest Rate Calculator | Advanced Loan Rate Calculator | Free Online Tool | FastTools",
-    description: "Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation, amortization analysis, and loan optimization recommendations. Free, professional-grade loan analysis.",
+    description: "Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation and loan optimization recommendations.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {

@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Text Case Converter | Uppercase, Lowercase, Title Case, camelCase | FastTools",
+  title: "Text Case Converter | Uppercase, Lowercase, Title Case | FastTools",
   description:
     "Convert text to uppercase, lowercase, Title Case, Sentence case, camelCase, snake_case instantly. Clean formatting for writing and code.",
   keywords: [
@@ -346,7 +346,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/converters/text-case" },
   openGraph: {
-    title: "Free Text Case Converter | Uppercase, Lowercase, Title Case, camelCase | FastTools",
+    title: "Text Case Converter | Uppercase, Lowercase, Title Case | FastTools",
     description:
       "Convert text to uppercase, lowercase, Title Case, Sentence case, camelCase, snake_case instantly. Clean formatting for writing and code.",
     url: "https://www.fasttools.store/converters/text-case",
@@ -364,7 +364,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Text Case Converter | Uppercase, Lowercase, Title Case, camelCase | FastTools",
+    title: "Text Case Converter | Uppercase, Lowercase, Title Case | FastTools",
     description: "Convert text to uppercase, lowercase, Title Case, Sentence case, camelCase, snake_case instantly. Clean formatting for writing and code.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

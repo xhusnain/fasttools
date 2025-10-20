@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Discount Calculator | Sale Price & Savings Calculator | FastTools",
+  title: "Discount Calculator | Sale Price & Savings | FastTools",
   description:
     "Calculate sale prices and savings with percentage or fixed discounts. Stack discounts, include tax, and compare before vs after prices.",
   keywords: [
@@ -230,7 +230,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/finance-tools/discount-calculator" },
   openGraph: {
-    title: "Free Discount Calculator | Sale Price & Savings Calculator | FastTools",
+    title: "Discount Calculator | Sale Price & Savings | FastTools",
     description: "Calculate sale prices and savings with percentage or fixed discounts. Stack discounts, include tax, and compare before vs after prices.",
     url: "https://www.fasttools.store/finance-tools/discount-calculator",
     type: "website",
@@ -247,7 +247,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Discount Calculator | Sale Price & Savings Calculator | FastTools",
+    title: "Discount Calculator | Sale Price & Savings | FastTools",
     description: "Calculate sale prices and savings with percentage or fixed discounts. Stack discounts, include tax, and compare before vs after prices.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

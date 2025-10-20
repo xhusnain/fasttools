@@ -6,7 +6,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home
 
 export const metadata: Metadata = {
   title: "Amortization Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
-  description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings for loans of any amount and interest rate.",
+  description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings.",
     keywords: [
         "amortization calculator",
         "loan amortization calculator",
@@ -108,7 +108,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Amortization Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
-    description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings for loans of any amount and interest rate.",
+    description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings.",
     type: "website",
     url: "https://www.fasttools.store/calculator/amortization-calculator",
     siteName: "FastTools",
@@ -122,7 +122,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Amortization Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
-    description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings for loans of any amount and interest rate.",
+    description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {

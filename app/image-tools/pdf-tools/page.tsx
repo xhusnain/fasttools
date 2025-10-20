@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "PDF Splitter & Merger — Free Online PDF Tools | SmartToolboxes",
+  title: "PDF Splitter & Merger | Free Online PDF Tools | FastTools",
   description:
     "Split and merge PDFs in your browser. Combine multiple files or split by pages. Fast, secure, and free PDF tools.",
   keywords: [

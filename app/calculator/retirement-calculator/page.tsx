@@ -6,7 +6,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home
 
 export const metadata: Metadata = {
   title: "Retirement Calculator | Advanced Retirement Planning Calculator | Free Online Tool | FastTools",
-  description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments and scenario analysis.",
+  description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments.",
     keywords: [
         "retirement calculator",
         "retirement planning calculator",
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Retirement Calculator | Advanced Retirement Planning Calculator | Free Online Tool | FastTools",
-    description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments and scenario analysis.",
+    description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments.",
     type: "website",
     url: "https://www.fasttools.store/calculator/retirement-calculator",
     siteName: "FastTools",
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Retirement Calculator | Advanced Retirement Planning Calculator | Free Online Tool | FastTools",
-    description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments and scenario analysis.",
+    description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {

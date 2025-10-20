@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free HTML Beautifier & Minifier | Format or Minify HTML Code | FastTools",
+  title: "HTML Beautifier & Minifier | Format HTML Code | FastTools",
   description:
     "Format or minify HTML code instantly. Clean indentation, remove whitespace, and copy results. Great for web developers and content editors.",
   keywords: [
@@ -142,7 +142,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/dev-tools/html-beautifier" },
   openGraph: {
-    title: "Free HTML Beautifier & Minifier | Format or Minify HTML Code | FastTools",
+    title: "HTML Beautifier & Minifier | Format HTML Code | FastTools",
     description: "Format or minify HTML code instantly. Clean indentation, remove whitespace, and copy results. Great for web developers and content editors.",
     url: "https://www.fasttools.store/dev-tools/html-beautifier",
     type: "website",
@@ -159,7 +159,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free HTML Beautifier & Minifier | Format or Minify HTML Code | FastTools",
+    title: "HTML Beautifier & Minifier | Format HTML Code | FastTools",
     description: "Format or minify HTML code instantly. Clean indentation, remove whitespace, and copy results. Great for web developers and content editors.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

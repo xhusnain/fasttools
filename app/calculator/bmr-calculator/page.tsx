@@ -6,7 +6,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Aler
 
 export const metadata: Metadata = {
   title: "BMR Calculator | Basal Metabolic Rate Calculator | Free Online Tool | FastTools",
-  description: "Calculate your BMR (Basal Metabolic Rate) with our advanced BMR calculator. Get accurate calorie needs, TDEE, weight management goals, and personalized nutrition recommendations. Free, professional-grade metabolic analysis.",
+  description: "Calculate your BMR (Basal Metabolic Rate) with our advanced BMR calculator. Get accurate calorie needs, TDEE, weight management goals, and personalized nutrition recommendations.",
   keywords: [
     "bmr calculator",
     "basal metabolic rate calculator",

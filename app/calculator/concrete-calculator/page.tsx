@@ -32,7 +32,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Concrete Calculator | Volume, Weight & Cost | FastTools",
-  description: "Use our free Concrete Calculator to calculate volume, weight, materials, and cost for slabs, columns, stairs, curbs, and more. Supports multiple mix types with detailed breakdowns. Perfect for construction projects.",
+  description: "Use our free Concrete Calculator to calculate volume, weight, materials, and cost for slabs, columns, stairs, curbs, and more. Supports multiple mix types with detailed breakdowns.",
   keywords: [
     "concrete calculator",
     "concrete volume calculator",
@@ -197,7 +197,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Free Online Concrete Calculator | Volume, Weight, Materials & Cost Calculator | FastTools",
-    description: "Use our free Concrete Calculator to calculate volume, weight, materials, and cost for slabs, columns, stairs, curbs, and more. Supports multiple mix types with detailed breakdowns. Perfect for construction projects.",
+    description: "Use our free Concrete Calculator to calculate volume, weight, materials, and cost for slabs, columns, stairs, curbs, and more. Supports multiple mix types with detailed breakdowns.",
     type: "website",
     url: "https://www.fasttools.store/calculator/concrete-calculator",
     siteName: "FastTools",
@@ -213,7 +213,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Free Online Concrete Calculator | Volume, Weight, Materials & Cost Calculator | FastTools",
-    description: "Use our free Concrete Calculator to calculate volume, weight, materials, and cost for slabs, columns, stairs, curbs, and more. Supports multiple mix types with detailed breakdowns. Perfect for construction projects.",
+    description: "Use our free Concrete Calculator to calculate volume, weight, materials, and cost for slabs, columns, stairs, curbs, and more. Supports multiple mix types with detailed breakdowns.",
     images: ["https://www.fasttools.store/og-concrete-calculator.jpg"]
   },
   alternates: {

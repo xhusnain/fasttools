@@ -26,7 +26,7 @@ import {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free AI Caption Generator | Create Viral Social Media Captions | FastTools",
+  title: "AI Caption Generator | Create Viral Social Media Captions | FastTools",
   description:
     "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator with 7 platforms support. Boost engagement with our advanced AI-powered caption maker.",
     keywords: [
@@ -116,7 +116,7 @@ export const metadata: Metadata = {
     ],
 
     openGraph: {
-    title: "Free AI Caption Generator | Create Viral Social Media Captions | FastTools",
+    title: "AI Caption Generator | Create Viral Social Media Captions | FastTools",
     description: "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator with 7 platforms support.",
     type: "website",
     url: "https://www.fasttools.store/ai-tools/caption-generator",
@@ -134,7 +134,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free AI Caption Generator | Create Viral Social Media Captions | FastTools",
+    title: "AI Caption Generator | Create Viral Social Media Captions | FastTools",
     description: "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator.",
     images: ["https://www.fasttools.store/og-image.svg"],
     creator: "@fasttools",
@@ -174,7 +174,7 @@ export default function CaptionGeneratorPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "AI Caption Generator | Advanced Social Media Caption Generator - Professional Content Creation Tool",
-    description: "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator with 7 platforms support. Boost engagement with our advanced AI-powered caption maker.",
+    description: "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly.",
     applicationCategory: "SocialMediaApplication",
     operatingSystem: "Web Browser",
     url: "https://www.fasttools.store/ai-tools/caption-generator",

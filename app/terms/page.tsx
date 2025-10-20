@@ -5,7 +5,7 @@ import { Shield, FileText, Users, AlertTriangle, CheckCircle, ExternalLink, Mail
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Terms of Service - FastTools | Google AdSense Compliant Legal Terms",
+  title: "Terms of Service | Google AdSense Compliant | FastTools",
   description: "Comprehensive terms of service for FastTools covering Google AdSense compliance, user agreements, intellectual property, and legal obligations. Free online tools usage terms.",
   keywords: [
     "terms of service",

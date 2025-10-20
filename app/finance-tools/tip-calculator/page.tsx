@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Tip Calculator | Restaurant Gratuity & Bill Split | FastTools",
+  title: "Tip Calculator | Restaurant Gratuity & Bill Split | FastTools",
   description:
     "Calculate tips and split bills instantly. Customize tip percentages, include tax, round totals, and share with friends. Fast, accurate, mobile friendly.",
   keywords: [
@@ -273,7 +273,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/finance-tools/tip-calculator" },
   openGraph: {
-    title: "Free Tip Calculator | Restaurant Gratuity & Bill Split | FastTools",
+    title: "Tip Calculator | Restaurant Gratuity & Bill Split | FastTools",
     description: "Calculate tips and split bills instantly. Customize tip percentages, include tax, round totals, and share with friends. Fast, accurate, mobile friendly.",
     url: "https://www.fasttools.store/finance-tools/tip-calculator",
     type: "website",
@@ -290,7 +290,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Tip Calculator | Restaurant Gratuity & Bill Split | FastTools",
+    title: "Tip Calculator | Restaurant Gratuity & Bill Split | FastTools",
     description: "Calculate tips and split bills instantly. Customize tip percentages, include tax, round totals, and share with friends. Fast, accurate, mobile friendly.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

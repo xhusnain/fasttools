@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free JWT Decoder | Decode JSON Web Tokens (JWT) Online | FastTools",
+  title: "JWT Decoder | Decode JSON Web Tokens | FastTools",
   description:
     "Decode JWT header and payload safely in your browser. Inspect claims, alg, exp/iat, and base64url content. Great for debugging auth.",
   keywords: [
@@ -152,7 +152,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/dev-tools/jwt-decoder" },
   openGraph: {
-    title: "Free JWT Decoder | Decode JSON Web Tokens (JWT) Online | FastTools",
+    title: "JWT Decoder | Decode JSON Web Tokens | FastTools",
     description: "Decode JWT header and payload safely in your browser. Inspect claims, alg, exp/iat, and base64url content. Great for debugging auth.",
     url: "https://www.fasttools.store/dev-tools/jwt-decoder",
     type: "website",
@@ -169,7 +169,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free JWT Decoder | Decode JSON Web Tokens (JWT) Online | FastTools",
+    title: "JWT Decoder | Decode JSON Web Tokens | FastTools",
     description: "Decode JWT header and payload safely in your browser. Inspect claims, alg, exp/iat, and base64url content. Great for debugging auth.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

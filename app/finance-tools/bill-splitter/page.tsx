@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Bill Splitter | Split Bills & Shared Expenses Fairly | FastTools",
+  title: "Bill Splitter | Split Bills & Shared Expenses | FastTools",
   description:
     "Split bills and shared expenses fairly. Add items, assign people, include tips and tax, and see per‑person totals. Perfect for restaurants and trips.",
   keywords: [
@@ -230,7 +230,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/finance-tools/bill-splitter" },
   openGraph: {
-    title: "Free Bill Splitter | Split Bills & Shared Expenses Fairly | FastTools",
+    title: "Bill Splitter | Split Bills & Shared Expenses | FastTools",
     description: "Split bills and shared expenses fairly. Add items, assign people, include tips and tax, and see per‑person totals. Perfect for restaurants and trips.",
     url: "https://www.fasttools.store/finance-tools/bill-splitter",
     type: "website",
@@ -247,7 +247,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Bill Splitter | Split Bills & Shared Expenses Fairly | FastTools",
+    title: "Bill Splitter | Split Bills & Shared Expenses | FastTools",
     description: "Split bills and shared expenses fairly. Add items, assign people, include tips and tax, and see per‑person totals. Perfect for restaurants and trips.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

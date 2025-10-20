@@ -51,7 +51,7 @@ import {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Love Calculator | Free Love Compatibility Test & Match Percentage | FastTools",
+  title: "Love Calculator | Free Love Compatibility Test | FastTools",
   description:
     "Free love calculator to test compatibility between two people. Calculate love percentage, relationship compatibility, and love meter. Share your love match results with friends!",
     keywords: [
@@ -124,7 +124,7 @@ export const metadata: Metadata = {
 
     alternates: { canonical: "https://www.fasttools.store/calculator/love-calculator" },
   openGraph: {
-    title: "Love Calculator | Free Love Compatibility Test & Match Percentage | FastTools",
+    title: "Love Calculator | Free Love Compatibility Test | FastTools",
     description: "Free love calculator to test compatibility between two people. Calculate love percentage, relationship compatibility, and love meter. Share your love match results with friends!",
     url: "https://www.fasttools.store/calculator/love-calculator",
     type: "website",
@@ -141,7 +141,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Love Calculator | Free Love Compatibility Test & Match Percentage | FastTools",
+    title: "Love Calculator | Free Love Compatibility Test | FastTools",
     description: "Free love calculator to test compatibility between two people. Calculate love percentage, relationship compatibility, and love meter. Share your love match results with friends!",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

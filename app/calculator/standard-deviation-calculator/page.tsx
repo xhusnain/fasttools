@@ -5,8 +5,8 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Standard Deviation Calculator | Free Online Statistics Tool - Population & Sample Standard Deviation Calculator with Steps",
-  description: "Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes, quartiles, outliers detection, and comprehensive analysis. Online standard deviation calculator for data sets, grouped data, ungrouped data, frequency distribution, normal distribution, binomial distribution, confidence interval, margin of error, z-score, t-score, ANOVA, regression, correlation, coefficient of variation, skewness, kurtosis, percentiles, quartiles, hypothesis testing, p-value, effect size, power analysis, sample variance, population variance, standard error, variance analysis, statistics calculator, probability calculator, data analysis tool.",
+  title: "Standard Deviation Calculator | Statistics Tool | FastTools",
+  description: "Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes for data analysis.",
     keywords: [
         "standard deviation calculator",
         "online standard deviation calculator",
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
         "mathematical statistics"
     ],
   openGraph: {
-    title: "Standard Deviation Calculator | Free Online Statistics Tool - Population & Sample Standard Deviation Calculator with Steps",
-    description: "Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes, quartiles, outliers detection, and comprehensive analysis. Online standard deviation calculator for data sets, grouped data, ungrouped data, frequency distribution, normal distribution, binomial distribution, confidence interval, margin of error, z-score, t-score, ANOVA, regression, correlation, coefficient of variation, skewness, kurtosis, percentiles, quartiles, hypothesis testing, p-value, effect size, power analysis, sample variance, population variance, standard error, variance analysis, statistics calculator, probability calculator, data analysis tool.",
+    title: "Standard Deviation Calculator | Statistics Tool | FastTools",
+    description: "Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes for data analysis.",
     type: "website",
     url: "https://www.fasttools.store/calculator/standard-deviation-calculator",
     siteName: "FastTools",
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Standard Deviation Calculator | Free Online Statistics Tool - Population & Sample Standard Deviation Calculator with Steps",
-    description: "Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes, quartiles, outliers detection, and comprehensive analysis. Online standard deviation calculator for data sets, grouped data, ungrouped data, frequency distribution, normal distribution, binomial distribution, confidence interval, margin of error, z-score, t-score, ANOVA, regression, correlation, coefficient of variation, skewness, kurtosis, percentiles, quartiles, hypothesis testing, p-value, effect size, power analysis, sample variance, population variance, standard error, variance analysis, statistics calculator, probability calculator, data analysis tool.",
+    title: "Standard Deviation Calculator | Statistics Tool | FastTools",
+    description: "Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes for data analysis.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
@@ -77,7 +77,7 @@ export default function StandardDeviationCalculatorPage() {
           "@context": "https://schema.org",
           "@type": "WebApplication",
           name: "Standard Deviation Calculator | Free Online Statistics Tool - Population & Sample Standard Deviation Calculator with Steps",
-          description: "Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes, quartiles, outliers detection, and comprehensive analysis. Online standard deviation calculator for data sets, grouped data, ungrouped data, frequency distribution, normal distribution, binomial distribution, confidence interval, margin of error, z-score, t-score, ANOVA, regression, correlation, coefficient of variation, skewness, kurtosis, percentiles, quartiles, hypothesis testing, p-value, effect size, power analysis, sample variance, population variance, standard error, variance analysis, statistics calculator, probability calculator, data analysis tool.",
+          description: "Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes for data analysis.",
           url: "https://www.fasttools.store/calculator/standard-deviation-calculator",
           applicationCategory: "UtilityApplication",
           operatingSystem: "Any",

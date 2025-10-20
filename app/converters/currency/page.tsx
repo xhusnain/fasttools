@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Currency Converter | Real-Time Exchange Rates | FastTools",
+  title: "Currency Converter | Real-Time Exchange Rates | FastTools",
   description:
     "Convert currencies instantly with our free Currency Converter. Get live exchange rates, convert multiple currencies, compare rates, and export results. Fast, accurate, and mobile-friendly.",
   keywords: [
@@ -119,7 +119,7 @@ export const metadata: Metadata = {
     canonical: "https://www.fasttools.store/converters/currency",
   },
   openGraph: {
-    title: "Free Currency Converter | Real-Time Exchange Rates | FastTools",
+    title: "Currency Converter | Real-Time Exchange Rates | FastTools",
     description:
       "Convert currencies instantly with our free Currency Converter. Get live exchange rates, convert multiple currencies, compare rates, and export results. Fast, accurate, and mobile-friendly.",
     url: "https://www.fasttools.store/converters/currency",
@@ -137,7 +137,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Currency Converter | Real-Time Exchange Rates | FastTools",
+    title: "Currency Converter | Real-Time Exchange Rates | FastTools",
     description:
       "Convert currencies instantly with our free Currency Converter. Get live exchange rates, convert multiple currencies, compare rates, and export results.",
     images: ["https://www.fasttools.store/og-image.svg"],

@@ -6,7 +6,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home
 
 export const metadata: Metadata = {
   title: "Calorie Calculator | Advanced Daily Calorie Needs Calculator | Free Online Tool | FastTools",
-  description: "Calculate your daily calorie needs with our advanced calorie calculator. Get BMR, TDEE, weight management goals, zigzag calorie cycling, and personalized nutrition recommendations. Free, professional-grade calorie analysis.",
+  description: "Calculate your daily calorie needs with our advanced calorie calculator. Get BMR, TDEE, weight management goals, and personalized nutrition recommendations.",
     keywords: [
         "calorie calculator",
         "daily calorie calculator",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
     openGraph: {
     title: "Calorie Calculator | Advanced Daily Calorie Needs Calculator | Free Online Tool | FastTools",
-    description: "Calculate your daily calorie needs with our advanced calorie calculator. Get BMR, TDEE, weight management goals, zigzag calorie cycling, and personalized nutrition recommendations. Free, professional-grade calorie analysis.",
+    description: "Calculate your daily calorie needs with our advanced calorie calculator. Get BMR, TDEE, weight management goals, and personalized nutrition recommendations.",
     type: "website",
     url: "https://www.fasttools.store/calculator/calorie-calculator",
     siteName: "FastTools",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Calorie Calculator | Advanced Daily Calorie Needs Calculator | Free Online Tool | FastTools",
-    description: "Calculate your daily calorie needs with our advanced calorie calculator. Get BMR, TDEE, weight management goals, zigzag calorie cycling, and personalized nutrition recommendations. Free, professional-grade calorie analysis.",
+    description: "Calculate your daily calorie needs with our advanced calorie calculator. Get BMR, TDEE, weight management goals, and personalized nutrition recommendations.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {

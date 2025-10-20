@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Future Age Predictor | How Old Will I Be in a Year? | FastTools",
+  title: "Future Age Predictor | How Old Will I Be? | FastTools",
   description:
     "See how old you'll be in any future year. Fun age prediction with milestones, planning ideas, and shareable results.",
     keywords: [
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
 
   alternates: { canonical: "https://www.fasttools.store/fun-tools/future-age" },
   openGraph: {
-    title: "Free Future Age Predictor | How Old Will I Be in a Year? | FastTools",
+    title: "Future Age Predictor | How Old Will I Be? | FastTools",
     description: "See how old you'll be in any future year. Fun age prediction with milestones, planning ideas, and shareable results.",
     url: "https://www.fasttools.store/fun-tools/future-age",
     type: "website",
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Future Age Predictor | How Old Will I Be in a Year? | FastTools",
+    title: "Future Age Predictor | How Old Will I Be? | FastTools",
     description: "See how old you'll be in any future year. Fun age prediction with milestones, planning ideas, and shareable results.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

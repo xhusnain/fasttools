@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Online Image Cropper | Circle & Square Crop Tool | FastTools",
+  title: "Image Cropper | Circle & Square Crop Tool | FastTools",
   description:
     "Crop images online for free. Create circular profile pictures or square posts. Fast and easy—no software needed.",
   keywords: [
@@ -145,7 +145,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/image-tools/image-cropper" },
   openGraph: {
-    title: "Free Online Image Cropper | Circle & Square Crop Tool | FastTools",
+    title: "Image Cropper | Circle & Square Crop Tool | FastTools",
     description: "Crop images online for free. Create circular profile pictures or square posts. Fast and easy—no software needed.",
     url: "https://www.fasttools.store/image-tools/image-cropper",
     type: "website",
@@ -162,7 +162,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Online Image Cropper | Circle & Square Crop Tool | FastTools",
+    title: "Image Cropper | Circle & Square Crop Tool | FastTools",
     description: "Crop images online for free. Create circular profile pictures or square posts. Fast and easy—no software needed.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

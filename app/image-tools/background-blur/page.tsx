@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Image Background Blur | Online Photo Blur Tool | FastTools",
+  title: "Image Background Blur | Online Photo Blur Tool | FastTools",
   description:
     "Blur image backgrounds online. Adjust intensity for profile photos, product shots, and social media posts.",
   keywords: [
@@ -145,7 +145,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/image-tools/background-blur" },
   openGraph: {
-    title: "Free Image Background Blur | Online Photo Blur Tool | FastTools",
+    title: "Image Background Blur | Online Photo Blur Tool | FastTools",
     description: "Blur image backgrounds online. Adjust intensity for profile photos, product shots, and social media posts.",
     url: "https://www.fasttools.store/image-tools/background-blur",
     type: "website",
@@ -162,7 +162,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Image Background Blur | Online Photo Blur Tool | FastTools",
+    title: "Image Background Blur | Online Photo Blur Tool | FastTools",
     description: "Blur image backgrounds online. Adjust intensity for profile photos, product shots, and social media posts.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

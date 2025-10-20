@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Anniversary Calculator | Relationship Duration & Next Anniversary | FastTools",
+  title: "Anniversary Calculator | Relationship Duration | FastTools",
   description:
     "Calculate how long you've been together in years, months, and days. See next anniversary date and days remaining.",
   keywords: [
@@ -129,7 +129,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/fun-tools/anniversary" },
   openGraph: {
-    title: "Free Anniversary Calculator | Relationship Duration & Next Anniversary | FastTools",
+    title: "Anniversary Calculator | Relationship Duration | FastTools",
     description: "Calculate how long you've been together in years, months, and days. See next anniversary date and days remaining.",
     url: "https://www.fasttools.store/fun-tools/anniversary",
     type: "website",
@@ -146,7 +146,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Anniversary Calculator | Relationship Duration & Next Anniversary | FastTools",
+    title: "Anniversary Calculator | Relationship Duration | FastTools",
     description: "Calculate how long you've been together in years, months, and days. See next anniversary date and days remaining.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

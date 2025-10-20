@@ -6,7 +6,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home
 
 export const metadata: Metadata = {
   title: "Investment Calculator | Advanced Portfolio Calculator | Free Online Tool | FastTools",
-  description: "Professional investment calculator for comprehensive portfolio analysis. Calculate end amount, return rate, starting amount, additional contributions, and investment length with detailed accumulation schedules.",
+  description: "Professional investment calculator for comprehensive portfolio analysis. Calculate end amount, return rate, starting amount, additional contributions, and investment length.",
     keywords: [
         "investment calculator",
         "investment return calculator",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
 
     openGraph: {
     title: "Investment Calculator | Advanced Portfolio Calculator | Free Online Tool | FastTools",
-    description: "Professional investment calculator for comprehensive portfolio analysis. Calculate end amount, return rate, starting amount, additional contributions, and investment length with detailed accumulation schedules.",
+    description: "Professional investment calculator for comprehensive portfolio analysis. Calculate end amount, return rate, starting amount, additional contributions, and investment length.",
     type: "website",
     url: "https://www.fasttools.store/calculator/investment-calculator",
     siteName: "FastTools",
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Investment Calculator | Advanced Portfolio Calculator | Free Online Tool | FastTools",
-    description: "Professional investment calculator for comprehensive portfolio analysis. Calculate end amount, return rate, starting amount, additional contributions, and investment length with detailed accumulation schedules.",
+    description: "Professional investment calculator for comprehensive portfolio analysis. Calculate end amount, return rate, starting amount, additional contributions, and investment length.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {

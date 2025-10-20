@@ -6,7 +6,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Aler
 
 export const metadata: Metadata = {
   title: "Pregnancy Calculator | Free Online Pregnancy Tracking Tool | FastTools",
-  description: "Track your pregnancy with our comprehensive pregnancy calculator. Get due date estimates, gestational age, weight gain recommendations, trimester guidance, and personalized pregnancy insights. Free, accurate, and comprehensive pregnancy tracking tool.",
+  description: "Track your pregnancy with our comprehensive pregnancy calculator. Get due date estimates, gestational age, weight gain recommendations, and trimester guidance.",
     keywords: [
         "pregnancy conception calculator",
         "conception date calculator",
@@ -98,7 +98,7 @@ export default function PregnancyCalculatorPage() {
           "@context": "https://schema.org",
           "@type": "WebApplication",
           name: "Pregnancy Calculator | Free Online Pregnancy Tracking Tool - Advanced Pregnancy Calculator with Comprehensive Tracking",
-          description: "Track your pregnancy with our comprehensive pregnancy calculator. Get due date estimates, gestational age, weight gain recommendations, trimester guidance, and personalized pregnancy insights. Free, accurate, and comprehensive pregnancy tracking tool.",
+          description: "Track your pregnancy with our comprehensive pregnancy calculator. Get due date estimates, gestational age, weight gain recommendations, and trimester guidance.",
           url: "https://www.fasttools.store/calculator/pregnancy-calculator",
           applicationCategory: "HealthApplication",
           operatingSystem: "Any",

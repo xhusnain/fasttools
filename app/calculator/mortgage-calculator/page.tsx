@@ -44,7 +44,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Mortgage Calculator | Advanced Home Loan Calculator | Free Online Tool | FastTools",
-  description: "Calculate mortgage payments with our advanced mortgage calculator. Get accurate monthly payments, amortization schedules, total interest, and home loan costs for all mortgage types.",
+  description: "Calculate mortgage payments with our advanced mortgage calculator. Get accurate monthly payments, amortization schedules, total interest, and home loan costs.",
     keywords: [
         "mortgage calculator",
         "mortgage payment calculator",
@@ -108,7 +108,7 @@ export const metadata: Metadata = {
 
     openGraph: {
     title: "Mortgage Calculator | Advanced Home Loan Calculator | Free Online Tool | FastTools",
-    description: "Calculate mortgage payments with our advanced mortgage calculator. Get accurate monthly payments, amortization schedules, total interest, and home loan costs for all mortgage types.",
+    description: "Calculate mortgage payments with our advanced mortgage calculator. Get accurate monthly payments, amortization schedules, total interest, and home loan costs.",
     type: "website",
     url: "https://www.fasttools.store/calculator/mortgage-calculator",
     siteName: "FastTools",
@@ -122,7 +122,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Mortgage Calculator | Advanced Home Loan Calculator | Free Online Tool | FastTools",
-    description: "Calculate mortgage payments with our advanced mortgage calculator. Get accurate monthly payments, amortization schedules, total interest, and home loan costs for all mortgage types.",
+    description: "Calculate mortgage payments with our advanced mortgage calculator. Get accurate monthly payments, amortization schedules, total interest, and home loan costs.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {

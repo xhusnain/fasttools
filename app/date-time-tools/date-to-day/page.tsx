@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Date to Day Finder | What Day of the Week Is This Date? | FastTools",
+  title: "Date to Day Finder | What Day of the Week? | FastTools",
   description:
     "Find the weekday for any date. Check past and future dates, holidays, and schedule planning with accurate weekday results.",
   keywords: [
@@ -128,7 +128,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/date-time-tools/date-to-day" },
   openGraph: {
-    title: "Free Date to Day Finder | What Day of the Week Is This Date? | FastTools",
+    title: "Date to Day Finder | What Day of the Week? | FastTools",
     description: "Find the weekday for any date. Check past and future dates, holidays, and schedule planning with accurate weekday results.",
     type: "website",
     url: "https://www.fasttools.store/date-time-tools/date-to-day",
@@ -145,7 +145,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Date to Day Finder | What Day of the Week Is This Date? | FastTools",
+    title: "Date to Day Finder | What Day of the Week? | FastTools",
     description: "Find the weekday for any date. Check past and future dates, holidays, and schedule planning with accurate weekday results.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

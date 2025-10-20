@@ -6,7 +6,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Aler
 
 export const metadata: Metadata = {
   title: "Body Fat Calculator | Advanced Body Fat Percentage Calculator | Free Online Tool | FastTools",
-  description: "Calculate your body fat percentage with our advanced body fat calculator. Uses U.S. Navy method and BMI method for accurate results. Get fat mass, lean mass, ideal body fat, and personalized health recommendations. Free, professional-grade body composition analysis.",
+  description: "Calculate your body fat percentage with our advanced body fat calculator. Uses U.S. Navy method and BMI method for accurate results with personalized health recommendations.",
     keywords: [
         "body fat calculator",
         "body fat percentage calculator",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Body Fat Calculator | Advanced Body Fat Percentage Calculator | Free Online Tool | FastTools",
-    description: "Calculate your body fat percentage with our advanced body fat calculator. Uses U.S. Navy method and BMI method for accurate results. Get fat mass, lean mass, ideal body fat, and personalized health recommendations. Free, professional-grade body composition analysis.",
+    description: "Calculate your body fat percentage with our advanced body fat calculator. Uses U.S. Navy method and BMI method for accurate results with personalized health recommendations.",
     type: "website",
     url: "https://www.fasttools.store/calculator/body-fat-calculator",
     siteName: "FastTools",
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Body Fat Calculator | Advanced Body Fat Percentage Calculator | Free Online Tool | FastTools",
-    description: "Calculate your body fat percentage with our advanced body fat calculator. Uses U.S. Navy method and BMI method for accurate results. Get fat mass, lean mass, ideal body fat, and personalized health recommendations. Free, professional-grade body composition analysis.",
+    description: "Calculate your body fat percentage with our advanced body fat calculator. Uses U.S. Navy method and BMI method for accurate results with personalized health recommendations.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {

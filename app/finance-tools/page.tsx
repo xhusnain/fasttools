@@ -185,7 +185,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Free Finance Tools | Invoice Generator, PayPal Fee Calculator & More | FastTools",
-  description: "Free finance and productivity tools including invoice generator, PayPal fee calculator, discount calculator, tip calculator, savings tracker, retirement planner, bill splitter, and credit card payoff calculator. Perfect for freelancers, businesses, and personal finance management.",
+  description: "Free finance and productivity tools including invoice generator, PayPal fee calculator, discount calculator, tip calculator, savings tracker, retirement planner, bill splitter, and credit card payoff calculator.",
   url: "https://www.fasttools.store/finance-tools",
   mainEntity: {
     "@type": "ItemList",

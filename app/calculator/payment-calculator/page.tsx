@@ -39,7 +39,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Payment Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
-  description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations for mortgages, auto loans, and personal loans.",
+  description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations.",
     keywords: [
         "payment calculator",
         "loan payment calculator",
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
 
     openGraph: {
     title: "Payment Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
-    description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations for mortgages, auto loans, and personal loans.",
+    description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations.",
     type: "website",
     url: "https://www.fasttools.store/calculator/payment-calculator",
     siteName: "FastTools",
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Payment Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
-    description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations for mortgages, auto loans, and personal loans.",
+    description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {

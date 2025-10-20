@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Color Palette Generator | Create Beautiful Color Schemes | FastTools",
+  title: "Color Palette Generator | Create Color Schemes | FastTools",
   description:
     "Generate color palettes for design and branding. Copy HEX/RGB, lock colors, shuffle, and export. Great for designers and developers.",
   keywords: [
@@ -180,7 +180,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/dev-tools/color-palette" },
   openGraph: {
-    title: "Free Color Palette Generator | Create Beautiful Color Schemes | FastTools",
+    title: "Color Palette Generator | Create Color Schemes | FastTools",
     description: "Generate color palettes for design and branding. Copy HEX/RGB, lock colors, shuffle, and export. Great for designers and developers.",
     url: "https://www.fasttools.store/dev-tools/color-palette",
     type: "website",
@@ -197,7 +197,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Color Palette Generator | Create Beautiful Color Schemes | FastTools",
+    title: "Color Palette Generator | Create Color Schemes | FastTools",
     description: "Generate color palettes for design and branding. Copy HEX/RGB, lock colors, shuffle, and export. Great for designers and developers.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

@@ -5,7 +5,7 @@ import { Shield, Lock, Eye, Users, Cookie, AlertTriangle, CheckCircle, ExternalL
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - FastTools | GDPR & CCPA Compliant Data Protection",
+  title: "Privacy Policy | GDPR & CCPA Compliant | FastTools",
   description: "Comprehensive privacy policy for FastTools covering GDPR, CCPA compliance, Google AdSense policies, data collection, cookies, and user rights. Transparent data protection for free online tools.",
   keywords: [
     "privacy policy",

@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Year End Countdown | Live New Year Countdown Timer | FastTools",
+  title: "Year End Countdown | Live New Year Timer | FastTools",
   description:
     "Live countdown to the end of the year. See days, hours, minutes, and seconds left until New Year with automatic updates.",
   keywords: [
@@ -127,7 +127,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/date-time-tools/year-end-countdown" },
   openGraph: {
-    title: "Free Year End Countdown | Live New Year Countdown Timer | FastTools",
+    title: "Year End Countdown | Live New Year Timer | FastTools",
     description: "Live countdown to the end of the year. See days, hours, minutes, and seconds left until New Year with automatic updates.",
     type: "website",
     url: "https://www.fasttools.store/date-time-tools/year-end-countdown",
@@ -144,7 +144,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Year End Countdown | Live New Year Countdown Timer | FastTools",
+    title: "Year End Countdown | Live New Year Timer | FastTools",
     description: "Live countdown to the end of the year. See days, hours, minutes, and seconds left until New Year with automatic updates.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

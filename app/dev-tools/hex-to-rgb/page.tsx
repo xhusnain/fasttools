@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Hex to RGB Converter | Convert Hex Colors to RGB | FastTools",
+  title: "Hex to RGB Converter | Convert Hex Colors | FastTools",
   description:
     "Convert hex color codes to RGB instantly. Copy values, validate inputs, and understand color formats for web design.",
   keywords: [
@@ -144,7 +144,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/dev-tools/hex-to-rgb" },
   openGraph: {
-    title: "Free Hex to RGB Converter | Convert Hex Colors to RGB | FastTools",
+    title: "Hex to RGB Converter | Convert Hex Colors | FastTools",
     description: "Convert hex color codes to RGB instantly. Copy values, validate inputs, and understand color formats for web design.",
     url: "https://www.fasttools.store/dev-tools/hex-to-rgb",
     type: "website",
@@ -161,7 +161,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Hex to RGB Converter | Convert Hex Colors to RGB | FastTools",
+    title: "Hex to RGB Converter | Convert Hex Colors | FastTools",
     description: "Convert hex color codes to RGB instantly. Copy values, validate inputs, and understand color formats for web design.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

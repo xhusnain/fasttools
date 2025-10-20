@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Workday Calculator | Business Days Between Dates | FastTools",
+  title: "Workday Calculator | Business Days Between Dates | FastTools",
   description:
     "Calculate business days between dates, excluding weekends and optional holidays. Ideal for project planning, HR, and delivery timelines.",
   keywords: [
@@ -119,7 +119,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/date-time-tools/workday-calculator" },
   openGraph: {
-    title: "Free Workday Calculator | Business Days Between Dates | FastTools",
+    title: "Workday Calculator | Business Days Between Dates | FastTools",
     description: "Calculate business days between dates, excluding weekends and optional holidays. Ideal for project planning, HR, and delivery timelines.",
     type: "website",
     url: "https://www.fasttools.store/date-time-tools/workday-calculator",
@@ -136,7 +136,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Workday Calculator | Business Days Between Dates | FastTools",
+    title: "Workday Calculator | Business Days Between Dates | FastTools",
     description: "Calculate business days between dates, excluding weekends and optional holidays. Ideal for project planning, HR, and delivery timelines.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

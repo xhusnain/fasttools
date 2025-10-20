@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Regex Tester | Test, Debug, and Build Regular Expressions | FastTools",
+  title: "Regex Tester | Test & Build Regular Expressions | FastTools",
   description:
     "Test regex patterns with live matches, flags, and group results. Build and debug regular expressions for JavaScript and other languages.",
   keywords: [
@@ -144,7 +144,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/dev-tools/regex-tester" },
   openGraph: {
-    title: "Free Regex Tester | Test, Debug, and Build Regular Expressions | FastTools",
+    title: "Regex Tester | Test & Build Regular Expressions | FastTools",
     description: "Test regex patterns with live matches, flags, and group results. Build and debug regular expressions for JavaScript and other languages.",
     url: "https://www.fasttools.store/dev-tools/regex-tester",
     type: "website",
@@ -161,7 +161,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Regex Tester | Test, Debug, and Build Regular Expressions | FastTools",
+    title: "Regex Tester | Test & Build Regular Expressions | FastTools",
     description: "Test regex patterns with live matches, flags, and group results. Build and debug regular expressions for JavaScript and other languages.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Markdown Previewer | Live Markdown Rendering | FastTools",
+  title: "Markdown Previewer | Live Markdown Rendering | FastTools",
   description:
     "Write Markdown and see live preview instantly. Supports headings, lists, code blocks, tables, and GitHub‑style flavor.",
   keywords: [
@@ -156,7 +156,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/dev-tools/markdown-previewer" },
   openGraph: {
-    title: "Free Markdown Previewer | Live Markdown Rendering | FastTools",
+    title: "Markdown Previewer | Live Markdown Rendering | FastTools",
     description: "Write Markdown and see live preview instantly. Supports headings, lists, code blocks, tables, and GitHub‑style flavor.",
     url: "https://www.fasttools.store/dev-tools/markdown-previewer",
     type: "website",
@@ -173,7 +173,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Markdown Previewer | Live Markdown Rendering | FastTools",
+    title: "Markdown Previewer | Live Markdown Rendering | FastTools",
     description: "Write Markdown and see live preview instantly. Supports headings, lists, code blocks, tables, and GitHub‑style flavor.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

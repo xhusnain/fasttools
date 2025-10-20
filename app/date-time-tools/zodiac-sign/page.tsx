@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Zodiac Sign Finder | Find Your Zodiac by Birth Date | FastTools",
+  title: "Zodiac Sign Finder | Find Your Zodiac by Birth Date | FastTools",
   description:
     "Find your zodiac sign from your birth date. Learn dates, elements, modalities, and typical traits for each sun sign.",
   keywords: [
@@ -147,7 +147,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/date-time-tools/zodiac-sign" },
   openGraph: {
-    title: "Free Zodiac Sign Finder | Find Your Zodiac by Birth Date | FastTools",
+    title: "Zodiac Sign Finder | Find Your Zodiac by Birth Date | FastTools",
     description: "Find your zodiac sign from your birth date. Learn dates, elements, modalities, and typical traits for each sun sign.",
     type: "website",
     url: "https://www.fasttools.store/date-time-tools/zodiac-sign",
@@ -164,7 +164,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Zodiac Sign Finder | Find Your Zodiac by Birth Date | FastTools",
+    title: "Zodiac Sign Finder | Find Your Zodiac by Birth Date | FastTools",
     description: "Find your zodiac sign from your birth date. Learn dates, elements, modalities, and typical traits for each sun sign.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

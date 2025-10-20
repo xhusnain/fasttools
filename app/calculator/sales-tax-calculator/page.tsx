@@ -6,7 +6,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home
 
 export const metadata: Metadata = {
   title: "Sales Tax Calculator | Advanced State Tax Calculator | Free Online Tool | FastTools",
-  description: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, business tips, and compliance guidance. Free, professional-grade tax analysis.",
+  description: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, and compliance guidance.",
     keywords: [
         "sales tax calculator",
         "sales tax rate calculator",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Sales Tax Calculator | Advanced State Tax Calculator | Free Online Tool | FastTools",
-    description: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, business tips, and compliance guidance. Free, professional-grade tax analysis.",
+    description: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, and compliance guidance.",
     type: "website",
     url: "https://www.fasttools.store/calculator/sales-tax-calculator",
     siteName: "FastTools",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Sales Tax Calculator | Advanced State Tax Calculator | Free Online Tool | FastTools",
-    description: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, business tips, and compliance guidance. Free, professional-grade tax analysis.",
+    description: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, and compliance guidance.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {

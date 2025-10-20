@@ -148,7 +148,7 @@ export default function AiToolsPage() {
                   customization options, and marketing applications for maximum impact.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/ai-tools/qr-art-generator">Try AI QR Art Generator</Link>
+                  <Link href="/ai-tools/qr-generator">Try AI QR Generator</Link>
                 </Button>
               </CardContent>
             </Card>
