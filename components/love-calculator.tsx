@@ -153,7 +153,7 @@ export function LoveCalculator() {
     // Encode the data for URL using encodeURIComponent to handle Unicode characters
     const jsonString = JSON.stringify(shareData)
     const encodedData = encodeURIComponent(jsonString)
-    const shareUrl = `${window.location.origin}/fun-tools/love-calculator?result=${encodedData}`
+    const shareUrl = `${window.location.origin}/calculator/love-calculator?result=${encodedData}`
     
     const text = `Check out our love match! ${name1} + ${name2} = ${result.percentage}% Love Match! ${result.emoji}\n\nSee your own love match: ${shareUrl}`
     

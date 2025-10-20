@@ -339,7 +339,7 @@ export default function MemeGeneratorPage() {
                 <ul className="list-disc list-inside space-y-2 text-secondary">
                   <li><a href="/ai-tools/caption-generator" className="text-primary hover:underline">AI Caption Generator</a> - Create engaging social media captions</li>
                   <li><a href="/ai-tools/hashtag-suggester" className="text-primary hover:underline">AI Hashtag Suggester</a> - Generate hashtags for viral content</li>
-                  <li><a href="/fun-tools/love-calculator" className="text-primary hover:underline">Love Calculator</a> - Create relationship-themed memes</li>
+                  <li><a href="/calculator/love-calculator" className="text-primary hover:underline">Love Calculator</a> - Create relationship-themed memes</li>
                   <li><a href="/social-media-tools/link-in-bio" className="text-primary hover:underline">Link in Bio Generator</a> - Create professional bio pages</li>
                 </ul>
               </div>

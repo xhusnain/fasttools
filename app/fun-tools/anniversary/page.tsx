@@ -268,7 +268,7 @@ export default function AnniversaryPage() {
               <h3 className="text-lg font-bold mt-6 mb-3 text-foreground">Related Tools</h3>
               <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
                 <li><Link href="/fun-tools/birthday-countdown">Birthday Countdown</Link></li>
-                <li><Link href="/fun-tools/love-calculator">Love Calculator</Link></li>
+                <li><Link href="/calculator/love-calculator">Love Calculator</Link></li>
               </ul>
             </div>
           </div>

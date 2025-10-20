@@ -81,7 +81,7 @@ export default function LoveCalculatorGuide() {
           {/* Try Love Calculator Button */}
           <div className="mt-8">
             <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 text-lg">
-              <Link href="/fun-tools/love-calculator">
+              <Link href="/calculator/love-calculator">
                 <Heart className="mr-2 h-5 w-5" />
                 Try Love Calculator
               </Link>
@@ -778,7 +778,7 @@ export default function LoveCalculatorGuide() {
               Perfect for fun, entertainment, and social media sharing!
             </p>
             <Button asChild size="lg" className="text-lg px-8 py-4">
-              <Link href="/fun-tools/love-calculator" className="flex items-center gap-2">
+              <Link href="/calculator/love-calculator" className="flex items-center gap-2">
                 Calculate Love Now
                 <ArrowRight className="h-5 w-5" />
               </Link>
