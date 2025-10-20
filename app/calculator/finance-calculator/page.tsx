@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Finance Calculator | Advanced TVM Calculator | Free Online Tool | FastTools",
+  title: "Finance Calculator | Advanced TVM Calculator | FastTools",
   description: "Professional finance calculator for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules and investment analysis.",
     keywords: [
         "finance calculator",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     ],
 
     openGraph: {
-    title: "Finance Calculator | Advanced TVM Calculator | Free Online Tool | FastTools",
+    title: "Finance Calculator | Advanced TVM Calculator | FastTools",
     description: "Professional finance calculator for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules and investment analysis.",
     type: "website",
     url: "https://www.fasttools.store/calculator/finance-calculator",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Finance Calculator | Advanced TVM Calculator | Free Online Tool | FastTools",
+    title: "Finance Calculator | Advanced TVM Calculator | FastTools",
     description: "Professional finance calculator for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules and investment analysis.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },

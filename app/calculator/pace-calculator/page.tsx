@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Pace Calculator | Advanced Running Pace Calculator | Free Online Tool | FastTools",
+  title: "Pace Calculator | Advanced Running Pace Calculator | FastTools",
   description: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max with our advanced pace calculator. Perfect for runners, coaches, and athletes.",
     keywords: [
         "pace calculator",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     ],
 
   openGraph: {
-    title: "Pace Calculator | Advanced Running Pace Calculator | Free Online Tool | FastTools",
+    title: "Pace Calculator | Advanced Running Pace Calculator | FastTools",
     description: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max with our advanced pace calculator. Perfect for runners, coaches, and athletes.",
     type: "website",
     url: "https://www.fasttools.store/calculator/pace-calculator",
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pace Calculator | Advanced Running Pace Calculator | Free Online Tool | FastTools",
+    title: "Pace Calculator | Advanced Running Pace Calculator | FastTools",
     description: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max with our advanced pace calculator. Perfect for runners, coaches, and athletes.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },

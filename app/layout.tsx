@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: {
     default: "Free Online Tools | fasttools - Complete Digital Toolkit",
-    template: "%s | fasttools - Free Online Tools",
+    template: "%s | FastTools",
   },
   description:
     "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",

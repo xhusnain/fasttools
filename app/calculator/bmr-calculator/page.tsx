@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "BMR Calculator | Basal Metabolic Rate Calculator | Free Online Tool | FastTools",
+  title: "BMR Calculator | Basal Metabolic Rate Calculator | FastTools",
   description: "Calculate your BMR (Basal Metabolic Rate) with our advanced BMR calculator. Get accurate calorie needs, TDEE, weight management goals, and personalized nutrition recommendations.",
   keywords: [
     "bmr calculator",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     "diet tool"
   ],
   openGraph: {
-    title: "BMR Calculator | Basal Metabolic Rate Calculator | Free Online Tool | FastTools",
+    title: "BMR Calculator | Basal Metabolic Rate Calculator | FastTools",
     description: "Calculate your BMR (Basal Metabolic Rate) with our advanced BMR calculator. Get accurate calorie needs, TDEE, weight management goals, and personalized nutrition recommendations.",
     type: "website",
     url: "https://www.fasttools.store/calculator/bmr-calculator",
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BMR Calculator | Basal Metabolic Rate Calculator | Free Online Tool | FastTools",
+    title: "BMR Calculator | Basal Metabolic Rate Calculator | FastTools",
     description: "Calculate your BMR (Basal Metabolic Rate) with our advanced BMR calculator. Get accurate calorie needs, TDEE, weight management goals, and personalized nutrition recommendations.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },

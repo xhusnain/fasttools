@@ -38,7 +38,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Payment Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
+  title: "Payment Calculator | Advanced Loan Payment Calculator | FastTools",
   description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations.",
     keywords: [
         "payment calculator",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     ],
 
     openGraph: {
-    title: "Payment Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
+    title: "Payment Calculator | Advanced Loan Payment Calculator | FastTools",
     description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations.",
     type: "website",
     url: "https://www.fasttools.store/calculator/payment-calculator",
@@ -98,7 +98,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Payment Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
+    title: "Payment Calculator | Advanced Loan Payment Calculator | FastTools",
     description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },

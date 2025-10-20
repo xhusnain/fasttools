@@ -4,7 +4,7 @@ import { AiPetNameGenerator } from "@/components/ai-pet-name-generator"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Free AI Pet Name Generator - Find Perfect Names for Dogs, Cats & More | SmartToolboxes",
+  title: "AI Pet Name Generator | Perfect Names for Dogs & Cats | FastTools",
   description:
     "Generate creative and unique pet names with AI for dogs, cats, birds, and any pet. Find the perfect name based on personality, breed, and characteristics. Free AI pet name generator with meanings.",
   keywords: [

@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Interest Rate Calculator | Advanced Loan Rate Calculator | Free Online Tool | FastTools",
+  title: "Interest Rate Calculator | Advanced Loan Rate Calculator | FastTools",
   description: "Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation and loan optimization recommendations.",
     keywords: [
         "interest rate calculator",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     ],
 
     openGraph: {
-    title: "Interest Rate Calculator | Advanced Loan Rate Calculator | Free Online Tool | FastTools",
+    title: "Interest Rate Calculator | Advanced Loan Rate Calculator | FastTools",
     description: "Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation and loan optimization recommendations.",
     type: "website",
     url: "https://www.fasttools.store/calculator/interest-rate-calculator",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Interest Rate Calculator | Advanced Loan Rate Calculator | Free Online Tool | FastTools",
+    title: "Interest Rate Calculator | Advanced Loan Rate Calculator | FastTools",
     description: "Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation and loan optimization recommendations.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },

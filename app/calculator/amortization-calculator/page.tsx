@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent, Trophy } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Amortization Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
+  title: "Amortization Calculator | Advanced Loan Payment Calculator | FastTools",
   description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings.",
     keywords: [
         "amortization calculator",
@@ -107,7 +107,7 @@ export const metadata: Metadata = {
     ],
 
   openGraph: {
-    title: "Amortization Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
+    title: "Amortization Calculator | Advanced Loan Payment Calculator | FastTools",
     description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings.",
     type: "website",
     url: "https://www.fasttools.store/calculator/amortization-calculator",
@@ -121,7 +121,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amortization Calculator | Advanced Loan Payment Calculator | Free Online Tool | FastTools",
+    title: "Amortization Calculator | Advanced Loan Payment Calculator | FastTools",
     description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },

@@ -5,7 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free AI Hashtag Generator - Generate Viral Hashtags for Social Media | SmartToolboxes",
+  title: "AI Hashtag Generator | Generate Viral Hashtags | FastTools",
   description:
     "Generate trending hashtags with AI for Instagram, TikTok, Twitter, and LinkedIn. Boost your social media reach and engagement with our free AI hashtag generator. Get viral hashtag suggestions instantly.",
   keywords: [

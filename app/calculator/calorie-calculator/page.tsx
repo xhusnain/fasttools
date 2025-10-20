@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Calorie Calculator | Advanced Daily Calorie Needs Calculator | Free Online Tool | FastTools",
+  title: "Calorie Calculator | Advanced Daily Calorie Needs | FastTools",
   description: "Calculate your daily calorie needs with our advanced calorie calculator. Get BMR, TDEE, weight management goals, and personalized nutrition recommendations.",
     keywords: [
         "calorie calculator",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     ],
 
     openGraph: {
-    title: "Calorie Calculator | Advanced Daily Calorie Needs Calculator | Free Online Tool | FastTools",
+    title: "Calorie Calculator | Advanced Daily Calorie Needs | FastTools",
     description: "Calculate your daily calorie needs with our advanced calorie calculator. Get BMR, TDEE, weight management goals, and personalized nutrition recommendations.",
     type: "website",
     url: "https://www.fasttools.store/calculator/calorie-calculator",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Calorie Calculator | Advanced Daily Calorie Needs Calculator | Free Online Tool | FastTools",
+    title: "Calorie Calculator | Advanced Daily Calorie Needs | FastTools",
     description: "Calculate your daily calorie needs with our advanced calorie calculator. Get BMR, TDEE, weight management goals, and personalized nutrition recommendations.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },

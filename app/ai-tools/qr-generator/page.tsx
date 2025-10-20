@@ -5,7 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free AI QR Code Generator - Create Custom QR Codes Instantly | SmartToolboxes",
+  title: "AI QR Code Generator | Create Custom QR Codes | FastTools",
   description:
     "Generate beautiful, customizable QR codes with AI for any URL, text, or data. Create artistic QR codes for marketing, business cards, and creative projects. Free AI QR code generator with custom styling.",
   keywords: [

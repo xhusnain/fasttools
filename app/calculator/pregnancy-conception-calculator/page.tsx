@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Pregnancy Conception Calculator | Free Online Pregnancy Tool | FastTools",
+  title: "Pregnancy Conception Calculator | Free Online Tool | FastTools",
   description: "Calculate your conception date with our advanced pregnancy conception calculator. Get personalized trimester guidance, nutrition tips, and week-by-week pregnancy insights.",
   keywords: [
     "pregnancy conception calculator",

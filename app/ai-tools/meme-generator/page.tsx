@@ -4,7 +4,7 @@ import { AiMemeGenerator } from "@/components/ai-meme-generator"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Free AI Meme Generator - Create Viral Meme Text Instantly | SmartToolboxes",
+  title: "AI Meme Generator | Create Viral Meme Text | FastTools",
   description:
     "Generate hilarious meme text with AI for any template or situation. Create viral memes for social media with our free AI meme generator. Perfect for content creators and social media managers.",
   keywords: [

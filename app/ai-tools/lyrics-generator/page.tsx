@@ -4,7 +4,7 @@ import { AiLyricsGenerator } from "@/components/ai-lyrics-generator"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Free AI Song Lyrics Generator - Create Original Lyrics Instantly | SmartToolboxes",
+  title: "AI Song Lyrics Generator | Create Original Lyrics | FastTools",
   description:
     "Generate creative song lyrics with AI for any theme, genre, or mood. Perfect for songwriters, musicians, and music creators. Create original lyrics instantly with our free AI lyrics generator.",
   keywords: [

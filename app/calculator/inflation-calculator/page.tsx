@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Inflation Calculator | Advanced CPI Calculator | Free Online Tool | FastTools",
+  title: "Inflation Calculator | Advanced CPI Calculator | FastTools",
   description: "Professional inflation calculator with historical CPI data from 1913-2025. Calculate purchasing power, inflation rates, and investment strategies with comprehensive economic analysis.",
     keywords: [
         "inflation calculator",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     ],
 
   openGraph: {
-    title: "Inflation Calculator | Advanced CPI Calculator | Free Online Tool | FastTools",
+    title: "Inflation Calculator | Advanced CPI Calculator | FastTools",
     description: "Professional inflation calculator with historical CPI data from 1913-2025. Calculate purchasing power, inflation rates, and investment strategies with comprehensive economic analysis.",
     type: "website",
     url: "https://www.fasttools.store/calculator/inflation-calculator",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Inflation Calculator | Advanced CPI Calculator | Free Online Tool | FastTools",
+    title: "Inflation Calculator | Advanced CPI Calculator | FastTools",
     description: "Professional inflation calculator with historical CPI data from 1913-2025. Calculate purchasing power, inflation rates, and investment strategies with comprehensive economic analysis.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },

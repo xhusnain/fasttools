@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Pregnancy Calculator | Free Online Pregnancy Tracking Tool | FastTools",
+  title: "Pregnancy Calculator | Free Online Tracking Tool | FastTools",
   description: "Track your pregnancy with our comprehensive pregnancy calculator. Get due date estimates, gestational age, weight gain recommendations, and trimester guidance.",
     keywords: [
         "pregnancy conception calculator",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     ],
 
   openGraph: {
-    title: "Pregnancy Calculator | Free Online Pregnancy Tracking Tool | FastTools",
+    title: "Pregnancy Calculator | Free Online Tracking Tool | FastTools",
     description: "Track your pregnancy with our comprehensive pregnancy calculator. Get due date estimates, gestational age, weight gain recommendations, trimester guidance, and personalized pregnancy insights.",
     type: "website",
     url: "https://www.fasttools.store/calculator/pregnancy-calculator",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pregnancy Calculator | Free Online Pregnancy Tracking Tool | FastTools",
+    title: "Pregnancy Calculator | Free Online Tracking Tool | FastTools",
     description: "Track your pregnancy with our comprehensive pregnancy calculator. Get due date estimates, gestational age, weight gain recommendations, trimester guidance, and personalized pregnancy insights.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },

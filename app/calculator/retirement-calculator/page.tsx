@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent, Trophy } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Retirement Calculator | Advanced Retirement Planning Calculator | Free Online Tool | FastTools",
+  title: "Retirement Calculator | Advanced Planning Calculator | FastTools",
   description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments.",
     keywords: [
         "retirement calculator",
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     ],
 
   openGraph: {
-    title: "Retirement Calculator | Advanced Retirement Planning Calculator | Free Online Tool | FastTools",
+    title: "Retirement Calculator | Advanced Planning Calculator | FastTools",
     description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments.",
     type: "website",
     url: "https://www.fasttools.store/calculator/retirement-calculator",
@@ -101,7 +101,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Retirement Calculator | Advanced Retirement Planning Calculator | Free Online Tool | FastTools",
+    title: "Retirement Calculator | Advanced Planning Calculator | FastTools",
     description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },

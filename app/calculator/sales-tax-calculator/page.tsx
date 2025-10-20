@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Sales Tax Calculator | Advanced State Tax Calculator | Free Online Tool | FastTools",
+  title: "Sales Tax Calculator | Advanced State Tax Calculator | FastTools",
   description: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, and compliance guidance.",
     keywords: [
         "sales tax calculator",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     ],
 
   openGraph: {
-    title: "Sales Tax Calculator | Advanced State Tax Calculator | Free Online Tool | FastTools",
+    title: "Sales Tax Calculator | Advanced State Tax Calculator | FastTools",
     description: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, and compliance guidance.",
     type: "website",
     url: "https://www.fasttools.store/calculator/sales-tax-calculator",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sales Tax Calculator | Advanced State Tax Calculator | Free Online Tool | FastTools",
+    title: "Sales Tax Calculator | Advanced State Tax Calculator | FastTools",
     description: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, and compliance guidance.",
     images: ["https://www.fasttools.store/og-image.svg"]
   },
