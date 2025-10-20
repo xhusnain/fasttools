@@ -4,71 +4,53 @@
   "framework": "nextjs",
   "headers": [
     {
-      "source": "/(.*)",
+      "buildCommand": "pnpm run build",
+      "installCommand": "pnpm install --ignore-scripts=false",
+      "framework": "nextjs",
       "headers": [
         {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
+          "source": "/(.*)",
+          "headers": [
+            { "key": "X-Content-Type-Options", "value": "nosniff" },
+            { "key": "X-Frame-Options", "value": "DENY" },
+            { "key": "X-XSS-Protection", "value": "1; mode=block" },
+            { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+          ]
         },
         {
-          "key": "X-Frame-Options",
-          "value": "DENY"
+          "source": "/_next/static/:path*",
+          "headers": [
+            { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          ]
         },
         {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
+          "source": "/:path*\\.(ico|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot)",
+          "headers": [
+            { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          ]
         },
         {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        }
-      ]
-    },
-    {
-      "source": "/_next/static/(.*)",
-      "headers": [
+          "source": "/:path*\\.(css|js)",
+          "headers": [
+            { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          ]
+        },
         {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*\\.(ico|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot))",
-      "headers": [
+          "source": "/(manifest.json|robots.txt|sitemap.xml|ads.txt|security.txt|humans.txt)",
+          "headers": [
+            { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+          ]
+        },
         {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "source": "/api/:path*",
+          "headers": [
+            { "key": "Cache-Control", "value": "public, max-age=300, stale-while-revalidate=60" }
+          ]
         }
-      ]
-    },
-    {
-      "source": "/(.*\\.(css|js))",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(manifest\\.json|robots\\.txt|sitemap\\.xml|ads\\.txt|security\\.txt|humans\\.txt)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400, stale-while-revalidate=604800"
-        }
-      ]
-    },
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=300, stale-while-revalidate=60"
-        }
-      ]
+      ],
+      "redirects": []
     }
+
   ],
   "redirects": []
 }
