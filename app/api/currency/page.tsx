@@ -1295,21 +1295,17 @@ public class CurrencyAPI {
               </div>
             </div>
 
-            
-
-            {/* Desktop Sidebar */}
+              {/* Desktop Sidebar */}
             <div className="hidden lg:block w-56 xl:w-64 2xl:w-72">
               <div className="sticky top-24 sm:top-28 space-y-4 sm:space-y-5">
                 {/* Ad Space */}
                 <AdSpace
                     slot="sidebar"
-                  adFormat="square"
                   className="min-h-[250px]"
                 />
                 
                 <AdSpace
                     slot="sidebar"
-                  adFormat="square"
                   className="min-h-[250px]"
                 />
               </div>
