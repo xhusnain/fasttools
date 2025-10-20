@@ -82,7 +82,7 @@
   --popover: #FFFFFF;
   --popover-foreground: #111827;
   --primary: #F35B04; /* Orange button color */
-  --primary-foreground: #ffffff;
+  --primary-foreground: #111827; /* Dark text for better contrast on orange */
   --link: #60A5FA; /* Light blue for better contrast on dark background */
   --link-hover: #93C5FD; /* Lighter blue for hover state */
   --secondary: #F3F4F6; /* Light gray for subtle elements */
@@ -90,7 +90,7 @@
   --muted: #F3F4F6;
   --muted-foreground: #F8FAFC; /* Much lighter gray for better contrast on dark background */
   --accent: #F18701; /* Orange accent for highlights */
-  --accent-foreground: #ffffff;
+  --accent-foreground: #111827; /* Dark text for better contrast on accent */
   --secondary-accent: #10B981; /* Green for success states */
   --secondary-accent-foreground: #ffffff;
   --tertiary-accent: #F7B801; /* Gold for special highlights */
@@ -132,7 +132,7 @@
 
   /* Primary - Orange for main actions */
   --primary: #F35B04;
-  --primary-foreground: #ffffff;
+  --primary-foreground: #111827; /* Dark text for better contrast on orange */
   --link: #60A5FA; /* Light blue for better contrast on dark background */
   --link-hover: #93C5FD; /* Lighter blue for hover state */
 
@@ -146,7 +146,7 @@
 
   /* Accent - Orange */
   --accent: #F18701;
-  --accent-foreground: #ffffff;
+  --accent-foreground: #111827; /* Dark text for better contrast on accent */
   --secondary-accent: #10B981; /* Green for success states */
   --secondary-accent-foreground: #ffffff;
   --tertiary-accent: #F7B801; /* Gold for special highlights */
