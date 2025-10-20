@@ -1558,7 +1558,7 @@ export default function HomePage() {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-bold text-base text-foreground mb-1">Sarah Johnson</h4>
+                        <h3 className="font-bold text-base text-foreground mb-1">Sarah Johnson</h3>
                         <p className="text-xs text-muted-foreground font-medium">Engineering Student</p>
                         <div className="flex items-center gap-1 mt-1">
                           {[...Array(5)].map((_, i) => (
@@ -1590,7 +1590,7 @@ export default function HomePage() {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-bold text-base text-foreground mb-1">Mike Chen</h4>
+                        <h3 className="font-bold text-base text-foreground mb-1">Mike Chen</h3>
                         <p className="text-xs text-muted-foreground font-medium">Digital Marketer</p>
                         <div className="flex items-center gap-1 mt-1">
                           {[...Array(5)].map((_, i) => (
@@ -1622,7 +1622,7 @@ export default function HomePage() {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-bold text-base text-foreground mb-1">Alex Rodriguez</h4>
+                        <h3 className="font-bold text-base text-foreground mb-1">Alex Rodriguez</h3>
                         <p className="text-xs text-muted-foreground font-medium">Financial Advisor</p>
                         <div className="flex items-center gap-1 mt-1">
                           {[...Array(5)].map((_, i) => (
@@ -1654,7 +1654,7 @@ export default function HomePage() {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-bold text-base text-foreground mb-1">Emma Thompson</h4>
+                        <h3 className="font-bold text-base text-foreground mb-1">Emma Thompson</h3>
                         <p className="text-xs text-muted-foreground font-medium">SEO Specialist</p>
                         <div className="flex items-center gap-1 mt-1">
                           {[...Array(5)].map((_, i) => (

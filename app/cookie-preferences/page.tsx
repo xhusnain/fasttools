@@ -221,7 +221,7 @@ export default function CookiePreferencesPage() {
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     You can learn more about our use of cookies in our{" "}
-                    <Link href="/privacy-policy" className="text-primary hover:underline">
+                    <Link href="/privacy-policy" className="text-link hover:text-link-hover hover:underline font-medium">
                       Privacy Policy
                     </Link>.
                   </p>
@@ -446,7 +446,7 @@ export default function CookiePreferencesPage() {
                       <p className="text-sm text-muted-foreground mb-3">
                         Manage Google advertising cookies and personalized ads
                       </p>
-                      <a href="https://www.google.com/settings/ads" className="flex items-center gap-2 text-primary hover:underline text-sm" target="_blank" rel="noopener noreferrer">
+                      <a href="https://www.google.com/settings/ads" className="flex items-center gap-2 text-link hover:text-link-hover hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4" />
                         Visit Google Ad Settings
                       </a>
@@ -457,7 +457,7 @@ export default function CookiePreferencesPage() {
                       <p className="text-sm text-muted-foreground mb-3">
                         Opt out of Google Analytics tracking
                       </p>
-                      <a href="https://tools.google.com/dlpage/gaoptout" className="flex items-center gap-2 text-primary hover:underline text-sm" target="_blank" rel="noopener noreferrer">
+                      <a href="https://tools.google.com/dlpage/gaoptout" className="flex items-center gap-2 text-link hover:text-link-hover hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4" />
                         Opt out of Analytics
                       </a>
@@ -468,7 +468,7 @@ export default function CookiePreferencesPage() {
                       <p className="text-sm text-muted-foreground mb-3">
                         Manage advertising preferences across networks
                       </p>
-                      <a href="https://www.aboutads.info/choices/" className="flex items-center gap-2 text-primary hover:underline text-sm" target="_blank" rel="noopener noreferrer">
+                      <a href="https://www.aboutads.info/choices/" className="flex items-center gap-2 text-link hover:text-link-hover hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4" />
                         Visit DAA Opt-out
                       </a>
@@ -493,14 +493,14 @@ export default function CookiePreferencesPage() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">Cookie Inquiries</h4>
-                        <a href="mailto:fasttools.store@outlook.com" className="flex items-center gap-2 text-primary hover:underline">
+                        <a href="mailto:fasttools.store@outlook.com" className="flex items-center gap-2 text-link hover:text-link-hover hover:underline font-medium">
                           <Mail className="h-4 w-4" />
                           fasttools.store@outlook.com
                         </a>
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">General Support</h4>
-                        <a href="mailto:fasttools.store@outlook.com" className="flex items-center gap-2 text-primary hover:underline">
+                        <a href="mailto:fasttools.store@outlook.com" className="flex items-center gap-2 text-link hover:text-link-hover hover:underline font-medium">
                           <Mail className="h-4 w-4" />
                           fasttools.store@outlook.com
                         </a>
@@ -508,7 +508,7 @@ export default function CookiePreferencesPage() {
                     </div>
                     <div className="mt-4 pt-4 border-t border-border">
                       <h4 className="font-semibold text-foreground mb-2">Website</h4>
-                      <a href="https://www.fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
+                      <a href="https://www.fasttools.store" className="flex items-center gap-2 text-link hover:text-link-hover hover:underline font-medium">
                         <Globe className="h-4 w-4" />
                         https://www.fasttools.store
                       </a>

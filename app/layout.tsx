@@ -368,7 +368,7 @@ export const metadata: Metadata = {
             <meta name="bingbot" content="index, follow"/>
             <meta name="slurp" content="index, follow"/>
             <meta name="duckduckbot" content="index, follow"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5"/>
             <meta name="google-adsense-account" content="ca-pub-6296569221534302"/>
             <meta name="yandex-verification" content="242a8cf232328714" />
             <meta name="p:domain_verify" content="603c992f6d70753cf89c1a0141990c73"/>

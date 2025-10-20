@@ -311,10 +311,10 @@ export default function QrGeneratorPage() {
                   Enhance your digital marketing and business tools with our other AI-powered solutions:
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-secondary">
-                  <li><a href="/ai-tools/caption-generator" className="text-primary hover:underline">AI Caption Generator</a> - Create engaging social media captions</li>
-                  <li><a href="/ai-tools/hashtag-suggester" className="text-primary hover:underline">AI Hashtag Suggester</a> - Generate hashtags for social media</li>
-                  <li><a href="/social-media-tools/link-in-bio" className="text-primary hover:underline">Link in Bio Generator</a> - Create professional bio pages</li>
-                  <li><a href="/seo-tools/meta-tags" className="text-primary hover:underline">Meta Tag Generator</a> - Create SEO meta tags</li>
+                  <li><a href="/ai-tools/caption-generator" className="text-link hover:text-link-hover hover:underline font-medium">AI Caption Generator</a> - Create engaging social media captions</li>
+                  <li><a href="/ai-tools/hashtag-suggester" className="text-link hover:text-link-hover hover:underline font-medium">AI Hashtag Suggester</a> - Generate hashtags for social media</li>
+                  <li><a href="/social-media-tools/link-in-bio" className="text-link hover:text-link-hover hover:underline font-medium">Link in Bio Generator</a> - Create professional bio pages</li>
+                  <li><a href="/seo-tools/meta-tags" className="text-link hover:text-link-hover hover:underline font-medium">Meta Tag Generator</a> - Create SEO meta tags</li>
                 </ul>
               </div>
             </div>

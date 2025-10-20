@@ -30,7 +30,7 @@ export function MetaTagGenerator() {
 <meta name="description" content="${description || "Your page description"}" />
 ${keywords ? `<meta name="keywords" content="${keywords}" />` : ""}
 ${author ? `<meta name="author" content="${author}" />` : ""}
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
 
  Open Graph / Facebook 
 <meta property="og:type" content="website" />

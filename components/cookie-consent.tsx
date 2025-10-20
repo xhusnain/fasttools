@@ -125,11 +125,11 @@ export function CookieConsent() {
               <p className="text-sm text-foreground leading-relaxed">
                 We use cookies to enhance your browsing experience, analyze our traffic, and display relevant advertisements. 
                 By clicking "Accept All", you consent to our use of all cookies. You can also{" "}
-                <Link href="/cookie-preferences" className="text-primary hover:underline">
+                <Link href="/cookie-preferences" className="text-link hover:text-link-hover hover:underline font-medium">
                   customize your preferences
                 </Link>{" "}
                 or read our{" "}
-                <Link href="/privacy-policy" className="text-primary hover:underline">
+                <Link href="/privacy-policy" className="text-link hover:text-link-hover hover:underline font-medium">
                   Privacy Policy
                 </Link>{" "}
                 for more information.

@@ -363,11 +363,11 @@ export default function PrivacyPolicyPage() {
                           You can control personalized advertising by visiting:
                         </p>
                         <div className="space-y-2">
-                          <a href="https://www.google.com/settings/ads" className="flex items-center gap-2 text-primary hover:underline text-sm" target="_blank" rel="noopener noreferrer">
+                          <a href="https://www.google.com/settings/ads" className="flex items-center gap-2 text-link hover:text-link-hover hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="h-4 w-4" />
                             Google Ad Settings
                           </a>
-                          <a href="https://www.aboutads.info/choices/" className="flex items-center gap-2 text-primary hover:underline text-sm" target="_blank" rel="noopener noreferrer">
+                          <a href="https://www.aboutads.info/choices/" className="flex items-center gap-2 text-link hover:text-link-hover hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="h-4 w-4" />
                             Digital Advertising Alliance
                           </a>
@@ -382,7 +382,7 @@ export default function PrivacyPolicyPage() {
                       <p className="text-sm text-muted-foreground mb-3">
                         We use Google Analytics to analyze how users interact with our website. This service may collect information about your device, browsing behavior, and demographics.
                       </p>
-                      <a href="https://tools.google.com/dlpage/gaoptout" className="flex items-center gap-2 text-primary hover:underline text-sm" target="_blank" rel="noopener noreferrer">
+                      <a href="https://tools.google.com/dlpage/gaoptout" className="flex items-center gap-2 text-link hover:text-link-hover hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4" />
                         Opt out of Google Analytics
                       </a>
@@ -454,7 +454,7 @@ export default function PrivacyPolicyPage() {
                     <p className="text-sm text-muted-foreground mb-3">
                       To exercise these rights, please contact us at:
                     </p>
-                    <a href="mailto:fasttools.store@outlook.com" className="text-primary hover:underline font-medium">
+                    <a href="mailto:fasttools.store@outlook.com" className="text-link hover:text-link-hover hover:underline font-medium font-medium">
                       fasttools.store@outlook.com
                     </a>
                     <p className="text-xs text-muted-foreground mt-2">
@@ -480,14 +480,14 @@ export default function PrivacyPolicyPage() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">Privacy Inquiries</h4>
-                        <a href="mailto:fasttools.store@outlook.com" className="flex items-center gap-2 text-primary hover:underline">
+                        <a href="mailto:fasttools.store@outlook.com" className="flex items-center gap-2 text-link hover:text-link-hover hover:underline font-medium">
                           <Mail className="h-4 w-4" />
                   fasttools.store@outlook.com
                 </a>
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">AdSense Compliance</h4>
-                        <a href="mailto:fasttools.store@outlook.com" className="flex items-center gap-2 text-primary hover:underline">
+                        <a href="mailto:fasttools.store@outlook.com" className="flex items-center gap-2 text-link hover:text-link-hover hover:underline font-medium">
                           <Mail className="h-4 w-4" />
                           fasttools.store@outlook.com
                         </a>
@@ -495,7 +495,7 @@ export default function PrivacyPolicyPage() {
                     </div>
                     <div className="mt-4 pt-4 border-t border-border">
                       <h4 className="font-semibold text-foreground mb-2">Website</h4>
-                      <a href="https://www.fasttools.store" className="flex items-center gap-2 text-primary hover:underline">
+                      <a href="https://www.fasttools.store" className="flex items-center gap-2 text-link hover:text-link-hover hover:underline font-medium">
                         <Globe className="h-4 w-4" />
                   https://www.fasttools.store
                 </a>

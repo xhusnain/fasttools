@@ -65,7 +65,7 @@ export default function ScientificCalculatorPage() {
         <meta name="keywords" content={seoKeywords.join(", ")} />
         <meta name="author" content="FastTools" />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
         
         {/* Open Graph */}
         <meta property="og:title" content="Scientific Calculator Online Free | Advanced Math Calculator" />

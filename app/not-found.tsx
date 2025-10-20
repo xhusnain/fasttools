@@ -101,7 +101,7 @@ export default function NotFound() {
           <div className="text-sm text-muted-foreground">
             <p>
               If you believe this is an error, please{" "}
-              <Link href="/contact" className="text-primary hover:underline">
+              <Link href="/contact" className="text-link hover:text-link-hover hover:underline font-medium">
                 contact us
               </Link>{" "}
               and we'll help you find what you're looking for.

@@ -319,16 +319,16 @@ export default function [ToolName]Guide() {
           </CardHeader>
           <CardContent>
             <nav className="space-y-2">
-              <Link href="#basics" className="block text-primary hover:underline">
+              <Link href="#basics" className="block text-link hover:text-link-hover hover:underline font-medium">
                 1. [Tool Name] Basics
               </Link>
-              <Link href="#how-to-use" className="block text-primary hover:underline">
+              <Link href="#how-to-use" className="block text-link hover:text-link-hover hover:underline font-medium">
                 2. How to Use [Tool Name]
               </Link>
-              <Link href="#examples" className="block text-primary hover:underline">
+              <Link href="#examples" className="block text-link hover:text-link-hover hover:underline font-medium">
                 3. Practical Examples
               </Link>
-              <Link href="#tips" className="block text-primary hover:underline">
+              <Link href="#tips" className="block text-link hover:text-link-hover hover:underline font-medium">
                 4. Tips & Tricks
               </Link>
             </nav>
@@ -430,7 +430,7 @@ export default function [ToolName]Guide() {
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold">Educational Institutions</h3>
                   <div className="space-y-2">
-                    <Link href="https://web.mit.edu/[relevant-path]" className="block text-sm text-primary hover:underline">
+                    <Link href="https://web.mit.edu/[relevant-path]" className="block text-sm text-link hover:text-link-hover hover:underline font-medium">
                       MIT - [Relevant Resource]
                     </Link>
                     {/* Add 10+ educational institution links */}
@@ -439,7 +439,7 @@ export default function [ToolName]Guide() {
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold">Professional Organizations</h3>
                   <div className="space-y-2">
-                    <Link href="https://www.asme.org/[relevant-path]" className="block text-sm text-primary hover:underline">
+                    <Link href="https://www.asme.org/[relevant-path]" className="block text-sm text-link hover:text-link-hover hover:underline font-medium">
                       ASME - [Relevant Resource]
                     </Link>
                     {/* Add 10+ professional organization links */}
@@ -873,13 +873,13 @@ When adding external backlinks to guides, follow these guidelines:
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Educational Institutions</h3>
           <div className="space-y-2">
-            <Link href="https://web.mit.edu/[relevant-path]" className="block text-sm text-primary hover:underline">
+            <Link href="https://web.mit.edu/[relevant-path]" className="block text-sm text-link hover:text-link-hover hover:underline font-medium">
               MIT - [Relevant Resource]
             </Link>
-            <Link href="https://www.harvard.edu/[relevant-path]" className="block text-sm text-primary hover:underline">
+            <Link href="https://www.harvard.edu/[relevant-path]" className="block text-sm text-link hover:text-link-hover hover:underline font-medium">
               Harvard - [Relevant Resource]
             </Link>
-            <Link href="https://www.stanford.edu/[relevant-path]" className="block text-sm text-primary hover:underline">
+            <Link href="https://www.stanford.edu/[relevant-path]" className="block text-sm text-link hover:text-link-hover hover:underline font-medium">
               Stanford - [Relevant Resource]
             </Link>
             {/* Add 7+ more educational institution links */}
@@ -889,13 +889,13 @@ When adding external backlinks to guides, follow these guidelines:
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Professional Organizations</h3>
           <div className="space-y-2">
-            <Link href="https://www.asme.org/[relevant-path]" className="block text-sm text-primary hover:underline">
+            <Link href="https://www.asme.org/[relevant-path]" className="block text-sm text-link hover:text-link-hover hover:underline font-medium">
               ASME - [Relevant Resource]
             </Link>
-            <Link href="https://www.ieee.org/[relevant-path]" className="block text-sm text-primary hover:underline">
+            <Link href="https://www.ieee.org/[relevant-path]" className="block text-sm text-link hover:text-link-hover hover:underline font-medium">
               IEEE - [Relevant Resource]
             </Link>
-            <Link href="https://www.astm.org/[relevant-path]" className="block text-sm text-primary hover:underline">
+            <Link href="https://www.astm.org/[relevant-path]" className="block text-sm text-link hover:text-link-hover hover:underline font-medium">
               ASTM - [Relevant Resource]
             </Link>
             {/* Add 7+ more professional organization links */}
@@ -907,13 +907,13 @@ When adding external backlinks to guides, follow these guidelines:
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Government Resources</h3>
           <div className="space-y-2">
-            <Link href="https://www.nist.gov/[relevant-path]" className="block text-sm text-primary hover:underline">
+            <Link href="https://www.nist.gov/[relevant-path]" className="block text-sm text-link hover:text-link-hover hover:underline font-medium">
               NIST - [Relevant Resource]
             </Link>
-            <Link href="https://www.bipm.org/[relevant-path]" className="block text-sm text-primary hover:underline">
+            <Link href="https://www.bipm.org/[relevant-path]" className="block text-sm text-link hover:text-link-hover hover:underline font-medium">
               BIPM - [Relevant Resource]
             </Link>
-            <Link href="https://www.cdc.gov/[relevant-path]" className="block text-sm text-primary hover:underline">
+            <Link href="https://www.cdc.gov/[relevant-path]" className="block text-sm text-link hover:text-link-hover hover:underline font-medium">
               CDC - [Relevant Resource]
             </Link>
             {/* Add 7+ more government resource links */}
@@ -923,13 +923,13 @@ When adding external backlinks to guides, follow these guidelines:
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Industry Resources</h3>
           <div className="space-y-2">
-            <Link href="https://www.engineeringtoolbox.com/[relevant-path]" className="block text-sm text-primary hover:underline">
+            <Link href="https://www.engineeringtoolbox.com/[relevant-path]" className="block text-sm text-link hover:text-link-hover hover:underline font-medium">
               Engineering Toolbox - [Relevant Resource]
             </Link>
-            <Link href="https://www.khanacademy.org/[relevant-path]" className="block text-sm text-primary hover:underline">
+            <Link href="https://www.khanacademy.org/[relevant-path]" className="block text-sm text-link hover:text-link-hover hover:underline font-medium">
               Khan Academy - [Relevant Resource]
             </Link>
-            <Link href="https://www.calculatorsoup.com/[relevant-path]" className="block text-sm text-primary hover:underline">
+            <Link href="https://www.calculatorsoup.com/[relevant-path]" className="block text-sm text-link hover:text-link-hover hover:underline font-medium">
               Calculator Soup - [Relevant Resource]
             </Link>
             {/* Add 7+ more industry resource links */}
@@ -940,13 +940,13 @@ When adding external backlinks to guides, follow these guidelines:
       <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
         <h4 className="font-semibold mb-2 text-blue-800 dark:text-blue-200">Additional Resources</h4>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
-          <Link href="https://www.example1.com" className="block text-primary hover:underline">
+          <Link href="https://www.example1.com" className="block text-link hover:text-link-hover hover:underline font-medium">
             Resource 1
           </Link>
-          <Link href="https://www.example2.com" className="block text-primary hover:underline">
+          <Link href="https://www.example2.com" className="block text-link hover:text-link-hover hover:underline font-medium">
             Resource 2
           </Link>
-          <Link href="https://www.example3.com" className="block text-primary hover:underline">
+          <Link href="https://www.example3.com" className="block text-link hover:text-link-hover hover:underline font-medium">
             Resource 3
           </Link>
           {/* Add 7+ more additional resource links */}

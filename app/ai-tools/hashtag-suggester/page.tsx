@@ -353,10 +353,10 @@ export default function HashtagSuggesterPage() {
                   Enhance your social media strategy with our other AI-powered tools:
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-secondary">
-                  <li><a href="/ai-tools/caption-generator" className="text-primary hover:underline">AI Caption Generator</a> - Create engaging social media captions</li>
-                  <li><a href="/seo-tools/hashtags" className="text-primary hover:underline">Hashtag Generator</a> - Generate hashtag combinations</li>
-                  <li><a href="/seo-tools/keyword-density" className="text-primary hover:underline">Keyword Density Checker</a> - Analyze keyword usage</li>
-                  <li><a href="/social-media-tools/link-in-bio" className="text-primary hover:underline">Link in Bio Generator</a> - Create professional bio pages</li>
+                  <li><a href="/ai-tools/caption-generator" className="text-link hover:text-link-hover hover:underline font-medium">AI Caption Generator</a> - Create engaging social media captions</li>
+                  <li><a href="/seo-tools/hashtags" className="text-link hover:text-link-hover hover:underline font-medium">Hashtag Generator</a> - Generate hashtag combinations</li>
+                  <li><a href="/seo-tools/keyword-density" className="text-link hover:text-link-hover hover:underline font-medium">Keyword Density Checker</a> - Analyze keyword usage</li>
+                  <li><a href="/social-media-tools/link-in-bio" className="text-link hover:text-link-hover hover:underline font-medium">Link in Bio Generator</a> - Create professional bio pages</li>
                 </ul>
               </div>
             </div>

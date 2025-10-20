@@ -326,10 +326,10 @@ export default function LyricsGeneratorPage() {
                   Enhance your music creation workflow with our other AI-powered tools:
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-secondary">
-                  <li><a href="/ai-tools/caption-generator" className="text-primary hover:underline">AI Caption Generator</a> - Create engaging social media captions for your music</li>
-                  <li><a href="/ai-tools/hashtag-suggester" className="text-primary hover:underline">AI Hashtag Suggester</a> - Generate hashtags for music promotion</li>
-                  <li><a href="/calculator/love-calculator" className="text-primary hover:underline">Love Calculator</a> - Fun tool for relationship-themed songs</li>
-                  <li><a href="/calculator/age-calculator" className="text-primary hover:underline">Age Calculator</a> - Calculate ages for biographical songs</li>
+                  <li><a href="/ai-tools/caption-generator" className="text-link hover:text-link-hover hover:underline font-medium">AI Caption Generator</a> - Create engaging social media captions for your music</li>
+                  <li><a href="/ai-tools/hashtag-suggester" className="text-link hover:text-link-hover hover:underline font-medium">AI Hashtag Suggester</a> - Generate hashtags for music promotion</li>
+                  <li><a href="/calculator/love-calculator" className="text-link hover:text-link-hover hover:underline font-medium">Love Calculator</a> - Fun tool for relationship-themed songs</li>
+                  <li><a href="/calculator/age-calculator" className="text-link hover:text-link-hover hover:underline font-medium">Age Calculator</a> - Calculate ages for biographical songs</li>
                 </ul>
               </div>
             </div>

@@ -329,10 +329,10 @@ export default function PetNamesPage() {
                   Enhance your pet ownership experience with our other helpful tools:
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-secondary">
-                  <li><a href="/calculator/age-calculator" className="text-primary hover:underline">Age Calculator</a> - Calculate your pet's age in human years</li>
-                  <li><a href="/calculator/love-calculator" className="text-primary hover:underline">Love Calculator</a> - Calculate compatibility with your pet</li>
-                  <li><a href="/ai-tools/caption-generator" className="text-primary hover:underline">AI Caption Generator</a> - Create captions for pet photos</li>
-                  <li><a href="/social-media-tools/link-in-bio" className="text-primary hover:underline">Link in Bio Generator</a> - Create pet-focused social media profiles</li>
+                  <li><a href="/calculator/age-calculator" className="text-link hover:text-link-hover hover:underline font-medium">Age Calculator</a> - Calculate your pet's age in human years</li>
+                  <li><a href="/calculator/love-calculator" className="text-link hover:text-link-hover hover:underline font-medium">Love Calculator</a> - Calculate compatibility with your pet</li>
+                  <li><a href="/ai-tools/caption-generator" className="text-link hover:text-link-hover hover:underline font-medium">AI Caption Generator</a> - Create captions for pet photos</li>
+                  <li><a href="/social-media-tools/link-in-bio" className="text-link hover:text-link-hover hover:underline font-medium">Link in Bio Generator</a> - Create pet-focused social media profiles</li>
                 </ul>
               </div>
             </div>

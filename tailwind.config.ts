@@ -23,6 +23,10 @@ const config: Config = {
           DEFAULT: 'var(--primary)',
           foreground: 'var(--primary-foreground)',
         },
+        link: {
+          DEFAULT: 'var(--link)',
+          hover: 'var(--link-hover)',
+        },
         secondary: {
           DEFAULT: 'var(--secondary)',
           foreground: 'var(--secondary-foreground)',
