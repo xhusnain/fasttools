@@ -35,6 +35,8 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
+  title: "Free Online Tools | Complete Digital Toolkit | FastTools",
+  description: "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
   alternates: {
     canonical: "https://www.fasttools.store",
   },
