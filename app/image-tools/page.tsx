@@ -514,9 +514,9 @@ export default function ImageToolsPage() {
           </p>
         </section>
 
-        {/* Comprehensive Image Guides Section */}
+        {/* Comprehensive Image Tools Section */}
         <div className="mt-12">
-          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Image Guides</h3>
+          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Image Tools</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <Card>
               <CardHeader>
@@ -534,7 +534,7 @@ export default function ImageToolsPage() {
                   image optimization, accuracy factors, and practical applications.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/image-to-text-ocr-guide">Read Complete Guide</Link>
+                  <Link href="/image-tools/image-to-text">Try Image to Text OCR</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -555,7 +555,7 @@ export default function ImageToolsPage() {
                   photography tips, creative applications, and professional image processing.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/background-blur-guide">Read Complete Guide</Link>
+                  <Link href="/image-tools/background-blur">Try Background Blur</Link>
                 </Button>
               </CardContent>
             </Card>

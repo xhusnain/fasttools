@@ -492,9 +492,9 @@ export default function FinanceToolsPage() {
           </div>
         </div>
 
-        {/* Comprehensive Finance Guides Section */}
+        {/* Comprehensive Finance Tools Section */}
         <div className="mt-12">
-          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Finance Guides</h3>
+          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Finance Tools</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <Card>
               <CardHeader>
@@ -512,7 +512,7 @@ export default function FinanceToolsPage() {
                   templates, payment terms, and professional standards for freelancers and businesses.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/invoice-generator-guide">Read Complete Guide</Link>
+                  <Link href="/finance-tools/invoice-generator">Try Invoice Generator</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -533,7 +533,7 @@ export default function FinanceToolsPage() {
                   minimize costs for your business transactions.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/paypal-fee-calculator-guide">Read Complete Guide</Link>
+                  <Link href="/finance-tools/paypal-fee">Try PayPal Fee Calculator</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -554,7 +554,7 @@ export default function FinanceToolsPage() {
                   pricing psychology, and business applications for retail and e-commerce.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/discount-calculator-guide">Read Complete Guide</Link>
+                  <Link href="/finance-tools/discount-calculator">Try Discount Calculator</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -575,7 +575,7 @@ export default function FinanceToolsPage() {
                   percentages, international customs, and digital tipping methods.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/tip-calculator-guide">Read Complete Guide</Link>
+                  <Link href="/finance-tools/tip-calculator">Try Tip Calculator</Link>
                 </Button>
               </CardContent>
             </Card>

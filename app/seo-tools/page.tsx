@@ -331,9 +331,9 @@ export default function SEOToolsPage() {
             </p>
           </section>
 
-          {/* Comprehensive SEO Guides Section */}
+          {/* Comprehensive SEO Tools Section */}
           <div className="mt-12">
-            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive SEO Guides</h3>
+            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive SEO Tools</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <Card>
                 <CardHeader>
@@ -351,7 +351,7 @@ export default function SEOToolsPage() {
                     Open Graph tags, Twitter cards, and schema markup for better SEO performance.
                   </p>
                   <Button asChild variant="outline" size="sm">
-                    <Link href="/guides/meta-tags-guide">Read Complete Guide</Link>
+                    <Link href="/seo-tools/meta-tags">Try Meta Tags Generator</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -372,7 +372,7 @@ export default function SEOToolsPage() {
                     design applications, content generation, and professional best practices.
                   </p>
                   <Button asChild variant="outline" size="sm">
-                    <Link href="/guides/lorem-ipsum-guide">Read Complete Guide</Link>
+                    <Link href="/seo-tools/lorem-ipsum">Try Lorem Ipsum Generator</Link>
                   </Button>
                 </CardContent>
               </Card>

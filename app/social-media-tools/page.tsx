@@ -338,9 +338,9 @@ export default function SocialMediaToolsPage() {
         </p>
       </section>
 
-      {/* Comprehensive Social Media Guides Section */}
+      {/* Comprehensive Social Media Tools Section */}
       <div className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Social Media Guides</h3>
+        <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Social Media Tools</h3>
         <div className="grid md:grid-cols-2 gap-6">
           <Card>
             <CardHeader>
@@ -358,7 +358,7 @@ export default function SocialMediaToolsPage() {
                 competitor analysis, design principles, and technical aspects for better video performance.
               </p>
               <Button asChild variant="outline" size="sm">
-                <Link href="/guides/youtube-thumbnail-downloader-guide">Read Complete Guide</Link>
+                <Link href="/social-media-tools/youtube-thumbnail">Try YouTube Thumbnail Downloader</Link>
               </Button>
             </CardContent>
           </Card>
@@ -379,7 +379,7 @@ export default function SocialMediaToolsPage() {
                 competitor analysis, design principles, and brand consistency strategies.
               </p>
               <Button asChild variant="outline" size="sm">
-                <Link href="/guides/instagram-dp-viewer-guide">Read Complete Guide</Link>
+                <Link href="/social-media-tools/instagram-dp-viewer">Try Instagram DP Viewer</Link>
               </Button>
             </CardContent>
           </Card>

@@ -422,9 +422,9 @@ export default function DateTimeToolsPage() {
         </div>
         </div>
 
-        {/* Comprehensive Date & Time Guides Section */}
+        {/* Comprehensive Date & Time Tools Section */}
         <div className="mt-12">
-          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Date & Time Guides</h3>
+          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive Date & Time Tools</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <Card>
               <CardHeader>
@@ -442,7 +442,7 @@ export default function DateTimeToolsPage() {
                   practical examples, and applications. Perfect for personal interest and scientific research.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/age-in-hours-calculator-guide">Read Complete Guide</Link>
+                  <Link href="/date-time-tools/workday-calculator">Try Workday Calculator</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -463,7 +463,7 @@ export default function DateTimeToolsPage() {
                   aspects. Perfect for event planning and entertainment.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/year-end-countdown-guide">Read Complete Guide</Link>
+                  <Link href="/date-time-tools/year-end-countdown">Try Year End Countdown</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -484,7 +484,7 @@ export default function DateTimeToolsPage() {
                   legal considerations, and practical applications for professionals.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/workday-calculator-guide">Read Complete Guide</Link>
+                  <Link href="/date-time-tools/workday-calculator">Try Workday Calculator</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -505,7 +505,7 @@ export default function DateTimeToolsPage() {
                   compatibility, personality traits, and modern astrology applications.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/zodiac-sign-finder-guide">Read Complete Guide</Link>
+                  <Link href="/date-time-tools/zodiac-sign">Try Zodiac Sign Finder</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -526,7 +526,7 @@ export default function DateTimeToolsPage() {
                   historical dates, and practical applications for research and planning.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/date-to-day-finder-guide">Read Complete Guide</Link>
+                  <Link href="/date-time-tools/date-to-day">Try Date to Day Finder</Link>
                 </Button>
               </CardContent>
             </Card>

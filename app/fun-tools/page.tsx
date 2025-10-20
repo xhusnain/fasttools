@@ -499,9 +499,9 @@ export default function FunToolsPage() {
                 </div>
               </div>
 
-              {/* Comprehensive Fun Guides Section */}
+              {/* Comprehensive Fun Tools Section */}
               <div className="mt-12">
-                <h3 className="text-xl md:text-2xl font-semibold text-white mb-6">Comprehensive Fun Guides</h3>
+                <h3 className="text-xl md:text-2xl font-semibold text-white mb-6">Comprehensive Fun Tools</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <Card className="border-2 border-white/20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl">
                     <CardHeader>
@@ -519,7 +519,7 @@ export default function FunToolsPage() {
                         algorithms, relationship psychology, and social sharing strategies.
                       </p>
                       <Button asChild variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
-                        <Link href="/guides/love-calculator-guide">Read Complete Guide</Link>
+                        <Link href="/calculator/love-calculator">Try Love Calculator</Link>
                       </Button>
                     </CardContent>
                   </Card>
@@ -540,7 +540,7 @@ export default function FunToolsPage() {
                         life milestones, birthday planning, and practical applications.
                       </p>
                       <Button asChild variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
-                        <Link href="/guides/future-age-predictor-guide">Read Complete Guide</Link>
+                        <Link href="/fun-tools/future-age">Try Future Age Predictor</Link>
                       </Button>
                     </CardContent>
                   </Card>

@@ -104,9 +104,9 @@ export default function AiToolsPage() {
           <AdSpace slot="content" className="w-full max-w-6xl mx-auto h-24 border border-border/60 rounded-xl shadow-sm" />
         </div>
 
-        {/* Comprehensive AI Guides Section */}
+        {/* Comprehensive AI Tools Section */}
         <div className="mt-12">
-          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive AI Guides</h3>
+          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Comprehensive AI Tools</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <Card>
               <CardHeader>
@@ -124,7 +124,7 @@ export default function AiToolsPage() {
                   viral strategies, and AI-powered generation. Perfect for content creators and marketers.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/ai-meme-generator-guide">Read Complete Guide</Link>
+                  <Link href="/ai-tools/meme-generator">Try AI Meme Generator</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -145,7 +145,7 @@ export default function AiToolsPage() {
                   customization options, and marketing applications for maximum impact.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/ai-qr-art-generator-guide">Read Complete Guide</Link>
+                  <Link href="/ai-tools/qr-art-generator">Try AI QR Art Generator</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -166,7 +166,7 @@ export default function AiToolsPage() {
                   techniques, creative strategies, and collaboration workflows for musicians.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/ai-song-lyrics-generator-guide">Read Complete Guide</Link>
+                  <Link href="/ai-tools/lyrics-generator">Try AI Song Lyrics Generator</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -187,7 +187,7 @@ export default function AiToolsPage() {
                   strategies, hashtag optimization, and engagement techniques for content creators.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/ai-caption-generator-guide">Read Complete Guide</Link>
+                  <Link href="/ai-tools/caption-generator">Try AI Caption Generator</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -208,7 +208,7 @@ export default function AiToolsPage() {
                   naming strategies, and AI generation techniques for pet owners.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/ai-pet-name-generator-guide">Read Complete Guide</Link>
+                  <Link href="/ai-tools/pet-names">Try AI Pet Name Generator</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -229,7 +229,7 @@ export default function AiToolsPage() {
                   platform-specific strategies, and analytics optimization for social media success.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/guides/ai-hashtag-suggester-guide">Read Complete Guide</Link>
+                  <Link href="/ai-tools/hashtag-suggester">Try AI Hashtag Suggester</Link>
                 </Button>
               </CardContent>
             </Card>
