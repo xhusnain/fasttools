@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   title: "AI Caption Generator | FastTools",
   description:
     "Generate social media captions with AI in seconds. Free tool for Instagram, Twitter/X, LinkedIn, TikTok, Pinterest and YouTube.",
-    keywords: [
+  keywords: [
         // --- Primary Focus Keywords ---
         "AI caption generator",
         "free AI caption generator",
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
         "free caption maker"
     ],
 
-    openGraph: {
+  openGraph: {
     title: "AI Caption Generator | Create Viral Social Media Captions | FastTools",
     description: "Generate viral social media captions with AI in seconds. Create engaging Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest & YouTube captions instantly. 100% free AI caption generator with 7 platforms support.",
     type: "website",
@@ -155,9 +155,6 @@ export const metadata: Metadata = {
     canonical: "https://www.fasttools.store/ai-tools/caption-generator",
   },
   other: {
-    "google-site-verification": "your-google-verification-code",
-    "msvalidate.01": "your-bing-verification-code",
-    "yandex-verification": "your-yandex-verification-code",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
     "apple-mobile-web-app-title": "AI Caption Generator",

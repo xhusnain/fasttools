@@ -7,7 +7,7 @@ import { ApiKeyGenerator } from "@/components/api-key-generator"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "FastTools Currency API Documentation | Free Currency Exchange API",
+  title: "Currency API Documentation | Free Currency Exchange API | FastTools",
   description: "Free currency exchange API with real-time rates, historical data, and currency conversion. Get started with FastTools.store Currency API in minutes.",
   keywords: [
     "currency api",
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
       "multi-currency API free"
   ],
   openGraph: {
-    title: "FastTools Currency API Documentation | Free Currency Exchange API",
+    title: "Currency API Documentation | Free Currency Exchange API | FastTools",
     description: "Free currency exchange API with real-time rates, historical data, and currency conversion. Get started with FastTools.store Currency API in minutes.",
-    url: "https://www.fasttools.store/api/currency",
+    url: "https://www.fasttools.store/converters/currency-api",
     siteName: "FastTools.store",
     images: [
       {
@@ -77,12 +77,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FastTools Currency API Documentation | Free Currency Exchange API",
+    title: "Currency API Documentation | Free Currency Exchange API | FastTools",
     description: "Free currency exchange API with real-time rates, historical data, and currency conversion. Get started with FastTools.store Currency API in minutes.",
     images: ["/api-currency-og.jpg"],
   },
   alternates: {
-    canonical: "https://www.fasttools.store/api/currency",
+    canonical: "https://www.fasttools.store/converters/currency-api",
   },
 }
 
@@ -96,7 +96,7 @@ export default function CurrencyAPIDocsPage() {
             <div className="flex-1 lg:flex-[2] space-y-4 sm:space-y-6 md:space-y-8">
               {/* Hero */}
               <div className="text-center space-y-3 sm:space-y-4 animate-fade-in-up">
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight px-2">FastTools Currency API Documentation</h1>
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight px-2">Currency API Documentation</h1>
                 <p className="text-sm sm:text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed px-4">Free, real-time currency exchange rates and conversion API. Integrate currency conversion into your applications with our comprehensive REST API.</p>
                 <div className="flex flex-wrap justify-center gap-2 sm:gap-3 text-xs sm:text-sm px-4">
                   <div className="flex items-center gap-2 px-3 py-1 bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400 rounded-full">

@@ -257,7 +257,7 @@ export default function CurrencyConverterPage() {
                       <p className="text-xs text-muted-foreground">Integrate currency conversion into your app</p>
                     </div>
                     <Link 
-                      href="/api/currency"
+                      href="/converters/currency-api"
                       className="flex items-center gap-2 px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors text-sm font-medium"
                     >
                       <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -362,7 +362,7 @@ export default function CurrencyConverterPage() {
                     </div>
                     <div className="ml-4">
                       <Link 
-                        href="/api/currency"
+                        href="/converters/currency-api"
                         className="flex items-center gap-2 px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors text-sm font-medium"
                       >
                         <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

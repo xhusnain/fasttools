@@ -343,7 +343,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // API Documentation Pages
     {
-      url: "https://www.fasttools.store/api/currency",
+      url: "https://www.fasttools.store/converters/currency-api",
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,
       priority: 0.9,
