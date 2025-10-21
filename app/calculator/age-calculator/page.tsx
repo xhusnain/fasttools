@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: "Age Calculator | Years, Months & Days | FastTools",
   description:
-    "Use the free Age Calculator by FastTools to instantly calculate your exact age in years, months, and days. Accurate, mobile-friendly, and perfect for birthdays, documents, and age verification.",
+    "Use the free Age Calculator by FastTools to instantly calculate your exact age in years, months, and days. Accurate, mobile-friendly, and perfect for birthdays and documents.",
   keywords: [
     "age calculator",
     "calculate age",

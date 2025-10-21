@@ -6,7 +6,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Terms of Service | Google AdSense Compliant | FastTools",
-  description: "Comprehensive terms of service for FastTools covering Google AdSense compliance, user agreements, intellectual property, and legal obligations. Free online tools usage terms.",
+  description: "Comprehensive terms of service for FastTools covering Google AdSense compliance, user agreements, and legal obligations for free online tools.",
   keywords: [
     "terms of service",
     "terms and conditions",
