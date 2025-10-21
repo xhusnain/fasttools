@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description: "Analyze keyword density to optimize your content for search engines",
     url: "https://www.fasttools.store/seo-tools/keyword-density",
     type: "website",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-images/keyword-density-checker.png",
+        width: 1200,
+        height: 630,
+        alt: "Free Keyword Density Checker - Analyze Content SEO",
+      },
+    ],
   },
 }
 

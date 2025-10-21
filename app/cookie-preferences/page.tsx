@@ -125,7 +125,7 @@ export default function CookiePreferencesPage() {
     <>
       <Head>
         <title>Cookie Preferences | Manage Your Privacy Settings | FastTools</title>
-        <meta name="description" content="Manage your cookie preferences on FastTools. Control analytics, advertising, and essential cookies. Customize your privacy settings for our free online tools." />
+        <meta name="description" content="Manage your cookie preferences on FastTools. Control analytics, advertising, and essential cookies. Customize privacy settings for our free online tools." />
         <meta name="keywords" content="cookie preferences, privacy settings, cookie management, data protection, GDPR compliance" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.fasttools.store/cookie-preferences" />

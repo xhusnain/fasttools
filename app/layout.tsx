@@ -150,13 +150,12 @@ export const metadata: Metadata = {
       manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/logo.svg", sizes: "32x32", type: "image/svg+xml" },
-      { url: "/logo.svg", sizes: "16x16", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
     apple: [
-      { url: "/logo.svg", sizes: "180x180", type: "image/svg+xml" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/logo.svg",
+    shortcut: "/favicon.ico",
   },
       other: {
           "google-site-verification": "l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0",
@@ -367,6 +366,11 @@ export const metadata: Metadata = {
             />
             {/* Essential Meta Tags */}
             <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
+            
+            {/* Favicon Links - Critical for Google Search Results */}
+            <link rel="icon" href="/favicon.ico" sizes="any"/>
+            <link rel="shortcut icon" href="/favicon.ico"/>
+            <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180"/>
             <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
             <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
             <meta name="bingbot" content="index, follow"/>

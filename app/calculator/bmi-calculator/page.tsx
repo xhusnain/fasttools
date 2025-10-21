@@ -7,7 +7,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "BMI Calculator | Calculate Your Body Mass Index | FastTools",
   description:
-    "Use our free BMI Calculator to quickly determine your Body Mass Index. Instantly find out if you're underweight, normal, overweight, or obese based on WHO standards. Accurate, fast, and perfect for fitness tracking.",
+    "Use our free BMI Calculator to quickly determine your Body Mass Index. Instantly find out if you're underweight, normal, overweight, or obese based on WHO standards. Accurate and fast.",
   keywords: [
     "BMI calculator",
     "body mass index calculator",

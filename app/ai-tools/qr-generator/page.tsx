@@ -94,6 +94,14 @@ export const metadata: Metadata = {
     description: "Generate beautiful, customizable QR codes with AI for any URL, text, or data. Create artistic QR codes for marketing and business use.",
     url: "https://www.fasttools.store/ai-tools/qr-generator",
     type: "website",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-images/ai-qr-generator.png",
+        width: 1200,
+        height: 630,
+        alt: "Free AI QR Code Generator - Create Custom QR Codes Instantly",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

@@ -209,23 +209,7 @@ export default function AboutPage() {
         "Cloud Tools",
         "Digital Solutions",
         "Online Services",
-        "Web Services",
-        "Digital Platform",
-        "Online Platform",
-        "Web Platform",
-        "Digital Toolkit",
-        "Professional Tools",
-        "Business Tools",
-        "Marketing Tools",
-        "Content Creation Tools",
-        "Workflow Tools",
-        "Automation Tools",
-        "Digital Resources",
-        "Online Resources",
-        "Web Resources",
-        "Digital Assets",
-        "Online Assets",
-        "Web Assets"
+        "Web Services"
       ]
     },
     breadcrumb: {
@@ -268,9 +252,9 @@ export default function AboutPage() {
               </h1>
               
               <p className="text-lg sm:text-xl text-muted-foreground mb-12 sm:mb-16 max-w-3xl mx-auto leading-relaxed px-4">
-                Discover the world's most comprehensive free online tools platform. Access 1000+ professional 
+                The world's most comprehensive free online tools platform. Access 1000+ professional 
                 digital tools including AI generators, converters, calculators, SEO tools, and productivity utilities. 
-                Trusted by millions of users worldwide.
+                Trusted by millions worldwide.
               </p>
 
               {/* Clean CTA Buttons */}
@@ -336,7 +320,7 @@ export default function AboutPage() {
                   expensive, limited, or cluttered with ads. We built the world's most comprehensive free digital toolkit 
                   that combines professional-grade functionality with zero-cost accessibility. Today, millions of users 
                   across 190+ countries rely on our platform for their daily productivity needs.
-          </p>
+                </p>
         </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-16 sm:mb-20">
@@ -388,7 +372,7 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <p className="text-sm sm:text-base text-muted-foreground">
-                    From small businesses in rural areas to Fortune 500 companies, our tools serve 
+                    From small businesses to Fortune 500 companies, our tools serve 
                     diverse needs across 190+ countries. We've processed over 50 million tasks, 
                     saving users countless hours and millions in software costs.
                   </p>
@@ -457,56 +441,6 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Unique Content Section - Company Story */}
-              <div className="mb-16 sm:mb-20">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-8 sm:mb-12 text-center px-4">
-                  The FastTools Story: <span className="text-primary">From Idea to Global Impact</span>
-                </h2>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
-                  <Card className="p-6 sm:p-8">
-                    <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Our Founding Philosophy</h3>
-                    <div className="space-y-3 sm:space-y-4">
-                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        FastTools was born from a simple frustration: why should essential productivity tools 
-                        cost hundreds of dollars when they could be free? Our founders, experienced developers 
-                        and entrepreneurs, witnessed firsthand how expensive software licenses were limiting 
-                        small businesses and individuals.
-                      </p>
-                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        We set out to prove that professional-grade digital tools could be completely free 
-                        without compromising quality. By leveraging modern web technologies and efficient 
-                        development practices, we created a platform that rivals premium software suites.
-                      </p>
-                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        Today, our "freemium-free" model has saved users over $50 million in software costs 
-                        while maintaining the highest standards of functionality and security.
-                      </p>
-                    </div>
-          </Card>
-
-                  <Card className="p-6 sm:p-8">
-                    <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Technical Excellence</h3>
-                    <div className="space-y-3 sm:space-y-4">
-                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        Every tool on FastTools is built with enterprise-grade architecture. We use 
-                        Next.js 15, React 19, and TypeScript for bulletproof performance. Our serverless 
-                        infrastructure ensures 99.9% uptime while keeping costs minimal.
-                      </p>
-                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        Privacy is our cornerstone. Unlike competitors who collect user data, every 
-                        calculation, conversion, and generation happens locally in your browser. 
-                        Your data never touches our servers, ensuring complete confidentiality.
-                      </p>
-                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        Our tools are optimized for Core Web Vitals, loading in under 1.5 seconds 
-                        on any device. This technical excellence is why major corporations trust 
-                        FastTools for their daily operations.
-                      </p>
-                    </div>
-                  </Card>
-                </div>
-              </div>
 
               {/* Unique Value Proposition Section */}
               <div className="mb-16 sm:mb-20">
@@ -524,7 +458,7 @@ export default function AboutPage() {
                         </div>
                         <div>
                           <h4 className="font-bold text-foreground mb-2 text-sm sm:text-base">Zero-Cost Business Model</h4>
-                          <p className="text-xs sm:text-sm text-muted-foreground">While competitors charge $29-99/month for basic tools, we provide enterprise-grade functionality completely free. Our sustainable model relies on efficient infrastructure, not user payments.</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">While competitors charge $29-99/month for basic tools, we provide enterprise-grade functionality completely free.</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3 sm:gap-4">
@@ -533,7 +467,7 @@ export default function AboutPage() {
                         </div>
                         <div>
                           <h4 className="font-bold text-foreground mb-2 text-sm sm:text-base">Privacy-First Architecture</h4>
-                          <p className="text-xs sm:text-sm text-muted-foreground">Unlike Google Tools or Microsoft Office that collect data, our tools process everything locally in your browser. Your documents, calculations, and personal information never leave your device.</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">Unlike Google Tools or Microsoft Office that collect data, our tools process everything locally in your browser.</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3 sm:gap-4">
@@ -542,7 +476,7 @@ export default function AboutPage() {
                         </div>
                         <div>
                           <h4 className="font-bold text-foreground mb-2 text-sm sm:text-base">No Registration Required</h4>
-                          <p className="text-xs sm:text-sm text-muted-foreground">Start using any tool instantly without creating accounts, providing emails, or sharing personal information. True plug-and-play productivity.</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">Start using any tool instantly without creating accounts, providing emails, or sharing personal information.</p>
                         </div>
                       </div>
                     </div>
@@ -552,7 +486,7 @@ export default function AboutPage() {
                     <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">User Success Stories</h3>
                     <div className="space-y-4 sm:space-y-6">
                       <div className="border-l-4 border-primary pl-3 sm:pl-4">
-                        <p className="text-xs sm:text-sm text-muted-foreground italic mb-2">"FastTools saved our startup $2,400/year in software licenses. The loan calculator alone helped us secure better financing terms."</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground italic mb-2">"FastTools saved our startup $2,400/year in software licenses. The loan calculator helped us secure better financing terms."</p>
                         <p className="text-xs sm:text-sm font-semibold text-foreground">- Sarah Chen, CEO of TechStart Inc.</p>
                       </div>
                       <div className="border-l-4 border-accent pl-3 sm:pl-4">
@@ -560,7 +494,7 @@ export default function AboutPage() {
                         <p className="text-xs sm:text-sm font-semibold text-foreground">- Marcus Rodriguez, Freelance Designer</p>
                       </div>
                       <div className="border-l-4 border-secondary-accent pl-3 sm:pl-4">
-                        <p className="text-xs sm:text-sm text-muted-foreground italic mb-2">"The AI caption generator increased our social media engagement by 340%. Best part? No monthly subscription fees."</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground italic mb-2">"The AI caption generator increased our social media engagement by 340%. No monthly subscription fees."</p>
                         <p className="text-xs sm:text-sm font-semibold text-foreground">- Jennifer Park, Marketing Director</p>
                       </div>
                     </div>

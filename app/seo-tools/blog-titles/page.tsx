@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description: "Generate engaging blog titles that improve click-through rates",
     url: "https://www.fasttools.store/seo-tools/blog-titles",
     type: "website",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-images/blog-title-generator.png",
+        width: 1200,
+        height: 630,
+        alt: "Free Blog Title Generator - Create Catchy Headlines",
+      },
+    ],
   },
 }
 

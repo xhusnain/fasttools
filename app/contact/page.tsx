@@ -127,7 +127,7 @@ export default function ContactPage() {
     <>
       <Head>
         <title>Contact Us | Get Help & Support | FastTools</title>
-        <meta name="description" content="Contact FastTools for support, feedback, or questions about our free online tools. Get help with calculators, converters, AI tools, and more." />
+        <meta name="description" content="Contact FastTools for support, feedback, or questions about our free online tools. Get help with calculators, converters, and AI tools." />
         <meta name="keywords" content="contact fasttools, support, help, feedback, customer service, online tools support" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.fasttools.store/contact" />
