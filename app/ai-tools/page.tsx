@@ -15,6 +15,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.fasttools.store/ai-tools",
   },
+  openGraph: {
+    title: "AI Tools: Free AI Generators | FastTools",
+    description: "Discover our collection of free AI tools including meme generator, QR art creator, lyrics generator, caption maker, pet name generator, and hashtag suggester. Create amazing content with AI.",
+    url: "https://www.fasttools.store/ai-tools",
+    type: "website",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-images/ai-tools.png",
+        width: 1200,
+        height: 630,
+        alt: "AI Tools: Free AI Generators | FastTools",
+      },
+    ],
+  },
 }
 
 const aiTools = [
