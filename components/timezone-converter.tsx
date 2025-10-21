@@ -10,6 +10,7 @@ import { Globe } from "lucide-react"
 export function TimezoneConverter() {
   const [time, setTime] = useState("12:00")
   const [fromTimezone, setFromTimezone] = useState("UTC")
+  const [useAmPm, setUseAmPm] = useState(true)
 
   const timezones = [
     { value: "UTC", label: "UTC (GMT+0)", offset: 0 },
@@ -22,6 +23,13 @@ export function TimezoneConverter() {
     { value: "GMT", label: "GMT (GMT+0)", offset: 0 },
   ]
 
+  const formatTime = (h: number, m: number) => {
+    if (!useAmPm) return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`
+    const period = h >= 12 ? "PM" : "AM"
+    const hour12 = h % 12 === 0 ? 12 : h % 12
+    return `${String(hour12).padStart(2, "0")}:${String(m).padStart(2, "0")} ${period}`
+  }
+
   const convertTime = (toOffset: number) => {
     if (!time) return "00:00"
 
@@ -32,7 +40,21 @@ export function TimezoneConverter() {
     if (newHours < 0) newHours += 24
     if (newHours >= 24) newHours -= 24
 
-    return `${String(Math.floor(newHours)).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`
+    return formatTime(Math.floor(newHours), minutes)
+  }
+
+  const setCurrentLocalTime = () => {
+    try {
+      const now = new Date()
+      const hh = String(now.getHours()).padStart(2, "0")
+      const mm = String(now.getMinutes()).padStart(2, "0")
+      setTime(`${hh}:${mm}`)
+    } catch {}
+  }
+
+  const resetFields = () => {
+    setTime("12:00")
+    setFromTimezone("UTC")
   }
 
   return (
@@ -54,13 +76,24 @@ export function TimezoneConverter() {
                 type="time"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
-                className="h-11 text-sm"
+                className="h-11 text-sm border-2 border-orange-500 focus-visible:ring-0 focus:border-orange-500"
               />
+              <div className="flex items-center gap-2">
+                <button type="button" onClick={setCurrentLocalTime} className="h-8 px-3 rounded-md text-xs font-medium bg-primary text-white hover:bg-primary/90 w-max">
+                  Use My Current Time
+                </button>
+                <button type="button" onClick={resetFields} className="h-8 px-3 rounded-md text-xs font-medium border border-border text-foreground hover:bg-accent/10 w-max">
+                  Reset
+                </button>
+                <button type="button" onClick={() => setUseAmPm((v) => !v)} className="h-8 px-3 rounded-md text-xs font-medium border border-border text-foreground hover:bg-accent/10 w-max">
+                  {useAmPm ? "Use 24‑hour" : "Use AM/PM"}
+                </button>
+              </div>
             </div>
             <div className="space-y-2">
               <Label htmlFor="from-timezone">From Timezone</Label>
               <Select value={fromTimezone} onValueChange={setFromTimezone}>
-                <SelectTrigger className="h-11 text-sm">
+                <SelectTrigger className="h-11 text-sm border-2 border-orange-500 focus:border-orange-500">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>

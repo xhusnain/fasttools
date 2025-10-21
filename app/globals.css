@@ -241,6 +241,50 @@
   textarea:focus-visible {
     @apply outline-2 outline-offset-2 outline-ring;
   }
+
+  /* Change cursor to hand for interactive elements */
+  button,
+  a,
+  [role="button"],
+  [onclick],
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  /* Hand cursor for hover states */
+  button:hover,
+  a:hover,
+  [role="button"]:hover,
+  [onclick]:hover,
+  .cursor-pointer:hover {
+    cursor: pointer;
+  }
+
+  /* Specific cursor styles for interactive elements */
+  .copy-button,
+  .copy-button:hover,
+  button[data-copy],
+  button[data-copy]:hover {
+    cursor: pointer !important;
+  }
+
+  /* Links and buttons should always show hand cursor */
+  a,
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"] {
+    cursor: pointer;
+  }
+
+  /* Hover states for better UX */
+  a:hover,
+  button:hover,
+  input[type="button"]:hover,
+  input[type="submit"]:hover,
+  input[type="reset"]:hover {
+    cursor: pointer;
+  }
 }
 
 /* Clean minimal animations - subtle and peaceful */
@@ -297,6 +341,41 @@ html {
 
 .dark ::-webkit-scrollbar-thumb:hover {
   background: #4b5563;
+}
+
+/* Orange scrollbar for code examples */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #F35B04;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #E04A00;
+}
+
+.scrollbar-track-transparent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thumb-orange-500::-webkit-scrollbar-thumb {
+  background: #F35B04;
+}
+
+.hover\:scrollbar-thumb-orange-600:hover::-webkit-scrollbar-thumb {
+  background: #E04A00;
 }
 
 /* Clean solid design - NO GLASS EFFECTS */

@@ -97,23 +97,23 @@ export function TextCaseConverter() {
   return (
     <div className="space-y-6">
       {/* Input Section */}
-      <Card className="border-2 border-white/20 shadow-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl">
+      <Card className="border border-border shadow bg-card">
         <CardHeader>
-          <CardTitle className="text-lg flex items-center gap-2 text-white">
-            <Type className="h-5 w-5 text-blue-400" />
+          <CardTitle className="text-lg flex items-center gap-2 text-card-foreground">
+            <Type className="h-5 w-5 text-primary" />
             Input Text
           </CardTitle>
-          <CardDescription className="text-white/80">Enter or paste your text below</CardDescription>
+          <CardDescription className="text-muted-foreground">Enter or paste your text below</CardDescription>
         </CardHeader>
         <CardContent>
           <Textarea
             placeholder="Type or paste your text here..."
             value={text}
             onChange={(e) => setText(e.target.value)}
-            className="min-h-[150px] text-sm bg-white/10 border-white/20 text-white placeholder:text-white/60"
+            className="min-h-[150px] text-sm bg-background border-border text-foreground placeholder:text-muted-foreground"
           />
           <div className="flex items-center justify-between mt-2">
-            <p className="text-xs text-white/60">
+            <p className="text-xs text-muted-foreground">
               Characters: {text.length} | Words: {text.trim() ? text.trim().split(/\s+/).length : 0}
             </p>
             <div className="flex items-center gap-2">
@@ -121,7 +121,7 @@ export function TextCaseConverter() {
                 onClick={() => setText("")}
                 size="sm"
                 variant="outline"
-                className="h-8 text-xs border-white/20 text-white hover:bg-white/10"
+                className="h-8 text-xs border-border text-foreground hover:bg-accent/10"
               >
                 <RotateCcw className="h-3 w-3 mr-1" />
                 Clear
@@ -130,7 +130,7 @@ export function TextCaseConverter() {
                 onClick={downloadAll}
                 disabled={!text}
                 size="sm"
-                className="h-8 text-xs bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white"
+                className="h-8 text-xs bg-primary hover:bg-primary/90 text-white"
               >
                 <Download className="h-3 w-3 mr-1" />
                 Download All
@@ -141,30 +141,30 @@ export function TextCaseConverter() {
       </Card>
 
       {/* Advanced Options */}
-      <Card className="border-2 border-white/20 shadow-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl">
+      <Card className="border border-border shadow bg-card">
         <CardHeader>
-          <CardTitle className="text-lg flex items-center gap-2 text-white">
-            <Settings className="h-5 w-5 text-blue-400" />
+          <CardTitle className="text-lg flex items-center gap-2 text-card-foreground">
+            <Settings className="h-5 w-5 text-primary" />
             Advanced Options
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex items-center gap-4">
-            <label className="flex items-center gap-2 text-white/80 text-sm">
+            <label className="flex items-center gap-2 text-muted-foreground text-sm">
               <input
                 type="checkbox"
                 checked={cleanup}
                 onChange={(e) => setCleanup(e.target.checked)}
-                className="rounded border-white/20 bg-white/10"
+                className="rounded border-border bg-card"
               />
               Clean up extra spaces
             </label>
-            <label className="flex items-center gap-2 text-white/80 text-sm">
+            <label className="flex items-center gap-2 text-muted-foreground text-sm">
               <input
                 type="checkbox"
                 checked={preserveFormatting}
                 onChange={(e) => setPreserveFormatting(e.target.checked)}
-                className="rounded border-white/20 bg-white/10"
+                className="rounded border-border bg-card"
               />
               Preserve formatting
             </label>
@@ -173,7 +173,7 @@ export function TextCaseConverter() {
       </Card>
 
       {/* Conversion Results */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3 sm:gap-4">
         {[
           { type: "upper" as const, label: "UPPERCASE", desc: "ALL CAPS", color: "red" },
           { type: "lower" as const, label: "lowercase", desc: "all lowercase", color: "green" },
@@ -188,20 +188,20 @@ export function TextCaseConverter() {
         ].map((item) => {
           const converted = convertCase(item.type)
           return (
-            <Card key={item.type} className="border-2 border-white/20 shadow-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/50">
+            <Card key={item.type} className="border border-border shadow bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/50">
               <CardHeader>
-                <CardTitle className="text-base text-white">{item.label}</CardTitle>
-                <CardDescription className="text-xs text-white/80">{item.desc}</CardDescription>
+                <CardTitle className="text-base text-card-foreground">{item.label}</CardTitle>
+                <CardDescription className="text-xs text-muted-foreground">{item.desc}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="min-h-[80px] p-3 bg-white/10 rounded-md text-sm break-words text-white border border-white/20">
-                  {converted || <span className="text-white/60">Result will appear here</span>}
+                <div className="min-h-[80px] p-3 bg-card rounded-md text-sm break-words text-card-foreground border border-border">
+                  {converted || <span className="text-muted-foreground">Result will appear here</span>}
                 </div>
                 <Button
                   onClick={() => copyToClipboard(converted)}
                   disabled={!text}
                   size="sm"
-                  className="w-full h-9 text-xs font-bold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white"
+                  className="w-full h-8 text-xs font-semibold shadow hover:shadow-md transition-all duration-300 bg-primary hover:bg-primary/90 text-white"
                 >
                   {copied ? (
                     <>

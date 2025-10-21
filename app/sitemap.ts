@@ -341,10 +341,51 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
 
+    // API Documentation Pages
+    {
+      url: "https://www.fasttools.store/api/currency",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
 
-
-
-
+    // Converter Tools
+    {
+      url: "https://www.fasttools.store/converters/currency",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    {
+      url: "https://www.fasttools.store/converters/file-size",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    {
+      url: "https://www.fasttools.store/converters/length",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    {
+      url: "https://www.fasttools.store/converters/temperature",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    {
+      url: "https://www.fasttools.store/converters/text-case",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    {
+      url: "https://www.fasttools.store/converters/timezone",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
 
   ]
 

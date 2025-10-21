@@ -7,9 +7,9 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Free Date & Time Tools | Age Calculator, Workday Calculator & More | FastTools",
+  title: "Date & Time Tools: Age, Workdays & More | FastTools",
   description:
-    "Free online date and time tools including age in hours calculator, year end countdown, workday calculator, date to day finder, and zodiac sign finder. Fast, accurate, and easy to use.",
+    "Free date & time tools: age in hours, year‑end countdown, workdays, date‑to‑day finder, and zodiac sign.",
   keywords: [
     // Primary Keywords (20)
     "date tools",

@@ -7,9 +7,9 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Free Image & File Tools | OCR Converter, Background Blur, PDF Tools | FastTools",
+  title: "Image & File Tools: OCR, Blur, PDF | FastTools",
   description:
-    "Free online image and file utility tools including OCR converter, background blur, image cropper, PDF splitter, PDF merger, and PDF unlocker. Fast, secure, and easy to use.",
+    "Free image and file tools: OCR, background blur, cropper, PDF split/merge/unlock, and screenshot-to-text.",
   keywords: [
     // Primary Keywords (20)
     "image tools",

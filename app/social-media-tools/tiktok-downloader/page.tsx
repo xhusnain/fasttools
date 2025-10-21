@@ -9,7 +9,7 @@ import { Download, Shield, Zap, Target, AlertCircle, Home, DollarSign, FileText,
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: "TikTok Video Downloader | HD Videos No Watermark | FastTools",
-  description: "Download TikTok videos in HD quality without watermark for free. Fast, secure, and works on all devices. No signup required. Perfect for creators, marketers, and researchers.",
+  description: "Download TikTok videos in HD without watermark. Free, fast, secure, no signup. Works on all devices.",
     keywords: [
         "tiktok downloader",
         "download tiktok video",

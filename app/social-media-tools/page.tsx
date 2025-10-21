@@ -7,9 +7,9 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Social Media Tools - Free YouTube, Instagram & TikTok Tools | FastTools",
+  title: "Social Media Tools: YouTube, Instagram, TikTok | FastTools",
   description:
-    "Free social media tools for content creators. Download YouTube thumbnails, view Instagram profile pictures, extract video tags, generate link in bio pages, and more.",
+    "Free creator tools: YouTube thumbnail downloader, Instagram DP viewer, TikTok saver, YouTube tags, and link‑in‑bio.",
   keywords:
     "social media tools, social media toolkit, content creator tools, youtube tools, instagram tools, tiktok tools, tiktok downloader, download tiktok without watermark, youtube thumbnail downloader, download youtube thumbnail hd, instagram dp viewer, view instagram profile picture, youtube tag extractor, youtube tags finder, link in bio generator, bio link page builder, social media bio tools, instagram bio link, content scheduling helper, hashtag generator, trending hashtags, caption generator, short video tools, reels tools, shorts tools, analytics tools for creators, social media seo, video seo, channel name checker, username availability checker, brand name checker, youtube channel tools, instagram tools online, tiktok utilities, twitter/x tools, facebook tools, pinterest tools, social sharing tools, open graph preview, social preview generator, image resizer for social, thumbnail tools, profile picture tools, free online tools for creators, creator productivity, growth tools, audience reach, engagement tools, content optimization, fast social media tools",
   openGraph: {

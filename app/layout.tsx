@@ -31,8 +31,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: {
-    default: "Free Online Tools | fasttools - Complete Digital Toolkit",
-    template: "%s | FastTools",
+    default: "Free Online Tools by FastTools",
+    template: "%s",
   },
   description:
     "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",

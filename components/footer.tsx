@@ -61,6 +61,12 @@ export function Footer() {
               <Link href="/privacy-policy" className="block text-sm text-accent-foreground/80 hover:text-accent-foreground transition-colors">
                 Privacy Policy
               </Link>
+              <Link href="/terms" className="block text-sm text-accent-foreground/80 hover:text-accent-foreground transition-colors">
+                Terms of Service
+              </Link>
+              <Link href="/cookie-preferences" className="block text-sm text-accent-foreground/80 hover:text-accent-foreground transition-colors">
+                Cookie Preferences
+              </Link>
             </div>
           </div>
 

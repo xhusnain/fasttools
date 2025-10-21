@@ -7,9 +7,9 @@ import { AdSpace } from "@/components/ad-space"
 import { Sparkles, QrCode, Music, ImageIcon, Heart, Hash } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "AI Tools - Free AI-Powered Generators | FastTools",
+  title: "AI Tools: Free AI Generators | FastTools",
   description:
-    "Discover free AI-powered tools including meme generator, QR art generator, song lyrics generator, image caption generator, pet name generator, and hashtag suggester.",
+    "Free AI tools: meme generator, QR art, lyrics, caption maker, pet names, and hashtag suggester.",
   keywords:
     "AI tools, meme generator, QR code generator, lyrics generator, caption generator, pet names, hashtag generator, AI content creation",
   alternates: {

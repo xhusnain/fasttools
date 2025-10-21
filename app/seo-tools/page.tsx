@@ -7,7 +7,7 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free SEO Tools & Content Helpers | Meta Tags, Lorem Ipsum, Hashtags",
+  title: "SEO Tools & Content Helpers | FastTools",
   description:
     "Free online SEO tools and content helpers. Generate meta tags, lorem ipsum text, hashtags, blog titles, and check keyword density for better SEO optimization.",
   keywords:
