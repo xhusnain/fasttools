@@ -12,13 +12,6 @@ export function middleware(request: NextRequest) {
   ) {
     return NextResponse.next()
   }
-
-  if (protocol !== 'https') {
-    const url = request.nextUrl
-    url.protocol = 'https:'
-    return NextResponse.redirect(url, 301)
-  }
-
   return NextResponse.next()
 }
 
