@@ -112,6 +112,14 @@ export const metadata: Metadata = {
     description: "Generate trending hashtags with AI for Instagram, TikTok, Twitter, and LinkedIn. Boost your social media reach instantly.",
     url: "https://www.fasttools.store/ai-tools/hashtag-suggester",
     type: "website",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-images/ai-hashtag-generator.png",
+        width: 1200,
+        height: 630,
+        alt: "Free AI Hashtag Generator - Generate Viral Hashtags for Social Media",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

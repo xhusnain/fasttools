@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description: "Generate complete meta tags for better SEO and social media sharing",
     url: "https://www.fasttools.store/seo-tools/meta-tags",
     type: "website",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-images/meta-tag-generator.png",
+        width: 1200,
+        height: 630,
+        alt: "Free Meta Tag Generator - Create SEO Meta Tags",
+      },
+    ],
   },
 }
 

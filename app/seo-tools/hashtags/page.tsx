@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description: "Generate trending hashtags for your social media posts",
     url: "https://www.fasttools.store/seo-tools/hashtags",
     type: "website",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-images/hashtag-generator.png",
+        width: 1200,
+        height: 630,
+        alt: "Free Hashtag Generator - Create Social Media Hashtags",
+      },
+    ],
   },
 }
 

@@ -127,7 +127,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free AI Pet Name Generator - Find Perfect Names for Dogs, Cats & More",
     description: "Generate creative and unique pet names with AI for dogs, cats, birds, and any pet. Find the perfect name based on personality and characteristics.",
+    url: "https://www.fasttools.store/ai-tools/pet-names",
     type: "website",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-images/ai-pet-name-generator.png",
+        width: 1200,
+        height: 630,
+        alt: "Free AI Pet Name Generator - Find Perfect Names for Dogs, Cats & More",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

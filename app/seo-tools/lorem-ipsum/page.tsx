@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description: "Generate Lorem Ipsum text for your design projects instantly",
     url: "https://www.fasttools.store/seo-tools/lorem-ipsum",
     type: "website",
+    images: [
+      {
+        url: "https://www.fasttools.store/og-images/lorem-ipsum-generator.png",
+        width: 1200,
+        height: 630,
+        alt: "Free Lorem Ipsum Generator - Create Placeholder Text",
+      },
+    ],
   },
 }
 
