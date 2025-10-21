@@ -41,12 +41,80 @@ export const metadata: Metadata = {
         "youtube thumbnail download site",
         "best youtube thumbnail downloader online"
     ],
-
+    openGraph: {
+      title: "YouTube Thumbnail Downloader - Download HD Thumbnails",
+      description: "Download YouTube video thumbnails in all available quality sizes. Get maximum quality (1280x720), high quality, medium, and standard thumbnails instantly.",
+      url: "https://www.fasttools.store/social-media-tools/youtube-thumbnail",
+      siteName: "FastTools",
+      images: [
+        {
+          url: "https://www.fasttools.store/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: "YouTube Thumbnail Downloader - Download HD Thumbnails",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "YouTube Thumbnail Downloader - Download HD Thumbnails",
+      description: "Download YouTube video thumbnails in all available quality sizes. Get maximum quality (1280x720), high quality, medium, and standard thumbnails instantly.",
+      images: ["https://www.fasttools.store/og-image.png"],
+      creator: "@fasttools",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    alternates: {
+      canonical: "https://www.fasttools.store/social-media-tools/youtube-thumbnail",
+    },
 }
 
 export default function YoutubeThumbnailPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "YouTube Thumbnail Downloader",
+    "description": "Download YouTube video thumbnails in all available quality sizes. Get maximum quality (1280x720), high quality, medium, and standard thumbnails instantly.",
+    "url": "https://www.fasttools.store/social-media-tools/youtube-thumbnail",
+    "applicationCategory": "SocialMediaTool",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "FastTools",
+      "url": "https://www.fasttools.store"
+    },
+    "featureList": [
+      "Download YouTube thumbnails",
+      "Multiple quality sizes",
+      "HD quality images",
+      "No login required",
+      "Free to use",
+      "Works on all devices"
+    ]
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="container mx-auto px-4 py-8">
         <Breadcrumbs
           items={[
