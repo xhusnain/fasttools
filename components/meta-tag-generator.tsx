@@ -80,7 +80,7 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
               placeholder="Enter your page title (50-60 characters)"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="h-10 text-sm"
+              className="h-10 text-sm border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20"
               maxLength={60}
             />
             <p className="text-xs text-muted-foreground">{title.length}/60 characters</p>
@@ -95,7 +95,7 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
               placeholder="Enter your meta description (150-160 characters)"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="min-h-20 text-sm resize-none"
+              className="min-h-20 text-sm resize-none border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20"
               maxLength={160}
             />
             <p className="text-xs text-muted-foreground">{description.length}/160 characters</p>
@@ -110,7 +110,7 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
               placeholder="keyword1, keyword2, keyword3"
               value={keywords}
               onChange={(e) => setKeywords(e.target.value)}
-              className="h-10 text-sm"
+              className="h-10 text-sm border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
           </div>
 
@@ -123,7 +123,7 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
               placeholder="Your name or company name"
               value={author}
               onChange={(e) => setAuthor(e.target.value)}
-              className="h-10 text-sm"
+              className="h-10 text-sm border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
           </div>
 
@@ -136,7 +136,7 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
               placeholder="https://example.com/image.jpg"
               value={ogImage}
               onChange={(e) => setOgImage(e.target.value)}
-              className="h-10 text-sm"
+              className="h-10 text-sm border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
           </div>
 
@@ -149,7 +149,7 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
               placeholder="@yourusername"
               value={twitterHandle}
               onChange={(e) => setTwitterHandle(e.target.value)}
-              className="h-10 text-sm"
+              className="h-10 text-sm border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
           </div>
 
