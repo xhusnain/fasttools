@@ -793,7 +793,7 @@ export default function LoveCalculatorPage() {
                   { name: "Anniversary Calculator", href: "/fun-tools/anniversary", icon: Star, desc: "Calculate anniversaries" },
                   { name: "Birthday Countdown", href: "/fun-tools/birthday-countdown", icon: Sparkles, desc: "Countdown to birthday" },
                   { name: "Age Calculator", href: "/calculator/age-calculator", icon: Flower2, desc: "Calculate age in years, months, days" },
-                  { name: "Hashtag Counter", href: "/fun-tools/hashtag-counter", icon: Hash, desc: "Count hashtags" },
+                  { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter", icon: Hash, desc: "Count hashtags" },
                   { name: "Love Calculator", href: "/calculator/love-calculator", icon: Heart, desc: "Calculate love compatibility" },
                   { name: "Fun Tools", href: "/fun-tools", icon: Gift, desc: "More fun calculators" }
                 ].map((tool, index) => (

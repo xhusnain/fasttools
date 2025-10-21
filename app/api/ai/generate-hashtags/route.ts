@@ -11,51 +11,64 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Using Hugging Face Inference API with a better model for hashtag generation
-    const model = "microsoft/DialoGPT-large" // Better model for hashtag generation
-    const apiUrl = `https://api-inference.huggingface.co/models/${model}`
+    // Using Gemini API for better hashtag generation
+    const geminiApiKey = process.env.GEMINI_API_KEY
+    if (!geminiApiKey) {
+      throw new Error("Gemini API key not found")
+    }
+
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${geminiApiKey}`
     
-    // Enhanced prompt for better hashtag generation
+    // Enhanced prompt for better hashtag generation with trending focus
     const platformContext = {
-      instagram: "Instagram post about",
-      twitter: "Twitter post about", 
-      facebook: "Facebook post about",
-      linkedin: "LinkedIn professional post about",
-      youtube: "YouTube video about",
-      tiktok: "TikTok video about"
+      instagram: "Instagram post",
+      twitter: "Twitter post", 
+      facebook: "Facebook post",
+      linkedin: "LinkedIn professional post",
+      youtube: "YouTube video",
+      tiktok: "TikTok video"
     }
     
-    const prompt = `You are a social media expert. Generate 15-20 relevant, trending hashtags for a ${platformContext[platform as keyof typeof platformContext] || "social media post about"}: "${text}". 
+    const prompt = `You are a social media expert specializing in viral hashtag strategies. Generate 15-20 highly relevant, trending hashtags for a ${platformContext[platform as keyof typeof platformContext] || "social media post"} with this content: "${text}"
 
-Requirements:
-- Generate hashtags that are relevant to the content
-- Include mix of popular and niche hashtags
+CRITICAL REQUIREMENTS:
+- Analyze the content deeply to understand the topic, mood, and target audience
+- Generate hashtags that are CURRENTLY TRENDING and relevant to the content
+- Mix popular hashtags (1M+ posts) with niche hashtags (10K-100K posts) for optimal reach
+- Include platform-specific trending hashtags for ${platform}
 - Use proper hashtag format with # symbol
 - Return ONLY hashtags separated by spaces
-- No explanations or additional text
-- Focus on ${platform}-specific trending hashtags
+- No explanations, descriptions, or additional text
+- Focus on hashtags that will maximize engagement and reach
 
-Example format: #hashtag1 #hashtag2 #hashtag3`
+For dog content specifically, include trending pet hashtags like #dogsofinstagram #puppylove #doglife #petsofinstagram #doglovers #cutedogs #dogstagram #puppies #dogphotography #petlife #furbaby #dogmom #dogdad #rescuedog #dogtraining #dogcare #pets #animals #love #happiness
+
+Example format: #hashtag1 #hashtag2 #hashtag3 #hashtag4`
     
-    const response = await fetch(apiUrl, {
+    const response = await fetch(geminiUrl, {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${process.env.HUGGINGFACE_API_TOKEN || "***REMOVED***"}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        inputs: prompt,
-        parameters: {
-          max_length: 100,
-          temperature: 0.7,
-          do_sample: true,
-        },
+        contents: [{
+          parts: [{
+            text: prompt
+          }]
+        }],
+        generationConfig: {
+          temperature: 0.8,
+          topK: 40,
+          topP: 0.95,
+          maxOutputTokens: 200,
+        }
       }),
     })
 
     if (!response.ok) {
-      // Fallback to a simple hashtag generation if API fails
-      const fallbackHashtags = generateFallbackHashtags(text, platform)
+      console.error("Gemini API error:", response.status, response.statusText)
+      // Fallback to enhanced hashtag generation
+      const fallbackHashtags = generateEnhancedFallbackHashtags(text, platform)
       return NextResponse.json({
         hashtags: fallbackHashtags,
         source: "fallback"
@@ -64,20 +77,18 @@ Example format: #hashtag1 #hashtag2 #hashtag3`
 
     const data = await response.json()
     
-    // Extract hashtags from the response
+    // Extract hashtags from the Gemini response
     let generatedText = ""
-    if (Array.isArray(data) && data.length > 0) {
-      generatedText = data[0].generated_text || ""
-    } else if (data.generated_text) {
-      generatedText = data.generated_text
+    if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) {
+      generatedText = data.candidates[0].content.parts[0].text || ""
     }
 
     // Parse hashtags from the generated text
     const hashtags = extractHashtags(generatedText)
     
-    // If no hashtags found, use fallback
+    // If no hashtags found, use enhanced fallback
     if (hashtags.length === 0) {
-      const fallbackHashtags = generateFallbackHashtags(text, platform)
+      const fallbackHashtags = generateEnhancedFallbackHashtags(text, platform)
       return NextResponse.json({
         hashtags: fallbackHashtags,
         source: "fallback"
@@ -86,15 +97,15 @@ Example format: #hashtag1 #hashtag2 #hashtag3`
 
     return NextResponse.json({
       hashtags: hashtags,
-      source: "huggingface"
+      source: "gemini"
     })
 
   } catch (error) {
     console.error("Error generating hashtags:", error)
     
-    // Fallback hashtag generation
+    // Enhanced fallback hashtag generation
     const { text, platform = "instagram" } = await request.json()
-    const fallbackHashtags = generateFallbackHashtags(text, platform)
+    const fallbackHashtags = generateEnhancedFallbackHashtags(text, platform)
     
     return NextResponse.json({
       hashtags: fallbackHashtags,
@@ -109,75 +120,100 @@ function extractHashtags(text: string): string[] {
   return [...new Set(matches)] // Remove duplicates
 }
 
-function generateFallbackHashtags(text: string, platform: string): string[] {
+function generateEnhancedFallbackHashtags(text: string, platform: string): string[] {
   const words = text.toLowerCase().split(/\s+/)
   const commonWords = new Set(['the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'can', 'this', 'that', 'these', 'those', 'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them'])
   
   // Extract relevant keywords from content
   const relevantWords = words
     .filter(word => word.length > 2 && !commonWords.has(word))
-    .slice(0, 8) // Limit to 8 hashtags from content
+    .slice(0, 6) // Limit to 6 hashtags from content
   
   const baseHashtags = relevantWords.map(word => `#${word}`)
   
-  // Enhanced platform-specific hashtags based on content analysis
+  // Enhanced content analysis for better hashtag suggestions
   const contentKeywords = text.toLowerCase()
-  const isBusiness = contentKeywords.includes('business') || contentKeywords.includes('work') || contentKeywords.includes('professional')
-  const isLifestyle = contentKeywords.includes('life') || contentKeywords.includes('lifestyle') || contentKeywords.includes('daily')
-  const isTech = contentKeywords.includes('tech') || contentKeywords.includes('technology') || contentKeywords.includes('digital')
-  const isFood = contentKeywords.includes('food') || contentKeywords.includes('cooking') || contentKeywords.includes('recipe')
-  const isTravel = contentKeywords.includes('travel') || contentKeywords.includes('vacation') || contentKeywords.includes('trip')
+  
+  // Dog/Pet specific detection
+  const isDogContent = contentKeywords.includes('dog') || contentKeywords.includes('dogs') || contentKeywords.includes('puppy') || contentKeywords.includes('puppies') || contentKeywords.includes('pet') || contentKeywords.includes('pets') || contentKeywords.includes('furbaby') || contentKeywords.includes('furbabies')
+  
+  // Other content types
+  const isBusiness = contentKeywords.includes('business') || contentKeywords.includes('work') || contentKeywords.includes('professional') || contentKeywords.includes('entrepreneur')
+  const isLifestyle = contentKeywords.includes('life') || contentKeywords.includes('lifestyle') || contentKeywords.includes('daily') || contentKeywords.includes('motivation')
+  const isTech = contentKeywords.includes('tech') || contentKeywords.includes('technology') || contentKeywords.includes('digital') || contentKeywords.includes('ai')
+  const isFood = contentKeywords.includes('food') || contentKeywords.includes('cooking') || contentKeywords.includes('recipe') || contentKeywords.includes('meal')
+  const isTravel = contentKeywords.includes('travel') || contentKeywords.includes('vacation') || contentKeywords.includes('trip') || contentKeywords.includes('adventure')
+  const isFashion = contentKeywords.includes('fashion') || contentKeywords.includes('style') || contentKeywords.includes('outfit') || contentKeywords.includes('clothes')
+  const isFitness = contentKeywords.includes('fitness') || contentKeywords.includes('workout') || contentKeywords.includes('gym') || contentKeywords.includes('exercise')
   
   let platformHashtags: string[] = []
   
   switch (platform) {
     case 'instagram':
-      platformHashtags = [
-        '#instagood', '#photooftheday', '#love', '#beautiful', '#happy',
-        ...(isBusiness ? ['#entrepreneur', '#business', '#success'] : []),
-        ...(isLifestyle ? ['#lifestyle', '#motivation', '#inspiration'] : []),
-        ...(isTech ? ['#technology', '#innovation', '#digital'] : []),
-        ...(isFood ? ['#food', '#foodie', '#delicious'] : []),
-        ...(isTravel ? ['#travel', '#wanderlust', '#adventure'] : [])
-      ]
+      if (isDogContent) {
+        platformHashtags = [
+          '#dogsofinstagram', '#puppylove', '#doglife', '#petsofinstagram', '#doglovers', 
+          '#cutedogs', '#dogstagram', '#puppies', '#dogphotography', '#petlife', 
+          '#furbaby', '#dogmom', '#dogdad', '#rescuedog', '#dogtraining', '#dogcare',
+          '#pets', '#animals', '#love', '#happiness', '#cute', '#adorable', '#instagood',
+          '#photooftheday', '#dogsofinsta', '#puppy', '#doggo', '#doggie', '#petlove'
+        ]
+      } else {
+        platformHashtags = [
+          '#instagood', '#photooftheday', '#love', '#beautiful', '#happy', '#life',
+          '#motivation', '#inspiration', '#lifestyle', '#fashion', '#style', '#ootd',
+          ...(isBusiness ? ['#entrepreneur', '#business', '#success', '#motivation', '#goals'] : []),
+          ...(isLifestyle ? ['#lifestyle', '#motivation', '#inspiration', '#daily', '#life'] : []),
+          ...(isTech ? ['#technology', '#innovation', '#digital', '#ai', '#tech'] : []),
+          ...(isFood ? ['#food', '#foodie', '#delicious', '#cooking', '#recipe'] : []),
+          ...(isTravel ? ['#travel', '#wanderlust', '#adventure', '#explore', '#vacation'] : []),
+          ...(isFashion ? ['#fashion', '#style', '#ootd', '#outfit', '#trendy'] : []),
+          ...(isFitness ? ['#fitness', '#workout', '#gym', '#exercise', '#health'] : [])
+        ]
+      }
       break
     case 'twitter':
       platformHashtags = [
         '#twitter', '#tweet', '#social', '#news', '#trending',
-        ...(isBusiness ? ['#business', '#entrepreneur', '#startup'] : []),
-        ...(isTech ? ['#tech', '#innovation', '#AI'] : []),
-        ...(isLifestyle ? ['#lifestyle', '#motivation', '#life'] : [])
+        ...(isDogContent ? ['#dogs', '#pets', '#animals', '#cute', '#love'] : []),
+        ...(isBusiness ? ['#business', '#entrepreneur', '#startup', '#leadership'] : []),
+        ...(isTech ? ['#tech', '#innovation', '#ai', '#digital'] : []),
+        ...(isLifestyle ? ['#lifestyle', '#motivation', '#life', '#inspiration'] : [])
       ]
       break
     case 'tiktok':
       platformHashtags = [
-        '#tiktok', '#fyp', '#viral', '#trending', '#foryou',
-        ...(isBusiness ? ['#entrepreneur', '#business', '#success'] : []),
-        ...(isLifestyle ? ['#lifestyle', '#motivation', '#inspiration'] : []),
-        ...(isTech ? ['#tech', '#innovation', '#digital'] : [])
+        '#tiktok', '#fyp', '#viral', '#trending', '#foryou', '#foryoupage',
+        ...(isDogContent ? ['#dogs', '#pets', '#cute', '#animals', '#dogsoftiktok'] : []),
+        ...(isBusiness ? ['#entrepreneur', '#business', '#success', '#motivation'] : []),
+        ...(isLifestyle ? ['#lifestyle', '#motivation', '#inspiration', '#life'] : []),
+        ...(isTech ? ['#tech', '#innovation', '#digital', '#ai'] : [])
       ]
       break
     case 'linkedin':
       platformHashtags = [
         '#linkedin', '#professional', '#career', '#business', '#networking',
-        ...(isBusiness ? ['#entrepreneur', '#leadership', '#success'] : []),
-        ...(isTech ? ['#technology', '#innovation', '#digital'] : []),
-        ...(isLifestyle ? ['#motivation', '#inspiration', '#growth'] : [])
+        ...(isDogContent ? ['#pets', '#animals', '#lifestyle', '#personal'] : []),
+        ...(isBusiness ? ['#entrepreneur', '#leadership', '#success', '#business'] : []),
+        ...(isTech ? ['#technology', '#innovation', '#digital', '#tech'] : []),
+        ...(isLifestyle ? ['#motivation', '#inspiration', '#growth', '#development'] : [])
       ]
       break
     case 'youtube':
       platformHashtags = [
         '#youtube', '#video', '#content', '#creator', '#subscribe',
-        ...(isBusiness ? ['#entrepreneur', '#business', '#success'] : []),
-        ...(isTech ? ['#technology', '#innovation', '#tutorial'] : []),
-        ...(isLifestyle ? ['#lifestyle', '#motivation', '#inspiration'] : [])
+        ...(isDogContent ? ['#dogs', '#pets', '#animals', '#cute', '#dogvideos'] : []),
+        ...(isBusiness ? ['#entrepreneur', '#business', '#success', '#motivation'] : []),
+        ...(isTech ? ['#technology', '#innovation', '#tutorial', '#tech'] : []),
+        ...(isLifestyle ? ['#lifestyle', '#motivation', '#inspiration', '#life'] : [])
       ]
       break
     case 'facebook':
       platformHashtags = [
         '#facebook', '#social', '#community', '#friends', '#life',
-        ...(isBusiness ? ['#business', '#entrepreneur', '#success'] : []),
-        ...(isLifestyle ? ['#lifestyle', '#motivation', '#inspiration'] : [])
+        ...(isDogContent ? ['#dogs', '#pets', '#animals', '#cute', '#love'] : []),
+        ...(isBusiness ? ['#business', '#entrepreneur', '#success', '#motivation'] : []),
+        ...(isLifestyle ? ['#lifestyle', '#motivation', '#inspiration', '#life'] : [])
       ]
       break
     default:

@@ -79,12 +79,11 @@ const jsonLd = {
     "@type": "ItemList",
     name: "Fun Tools Collection",
     description: "Comprehensive collection of free online fun tools and entertainment utilities for social media, relationships, and celebrations",
-    numberOfItems: 4,
+    numberOfItems: 3,
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Future Age Predictor", description: "Discover how old you'll be in any future year", url: "https://www.fasttools.store/fun-tools/future-age" },
-      { "@type": "ListItem", position: 2, name: "Instagram Hashtag Counter", description: "Count and extract hashtags from your Instagram posts", url: "https://www.fasttools.store/fun-tools/hashtag-counter" },
-      { "@type": "ListItem", position: 3, name: "Birthday Countdown", description: "Real-time countdown to your next birthday celebration", url: "https://www.fasttools.store/fun-tools/birthday-countdown" },
-      { "@type": "ListItem", position: 4, name: "Anniversary Calculator", description: "Calculate how long you've been together and when your next anniversary is", url: "https://www.fasttools.store/fun-tools/anniversary" }
+      { "@type": "ListItem", position: 2, name: "Birthday Countdown", description: "Real-time countdown to your next birthday celebration", url: "https://www.fasttools.store/fun-tools/birthday-countdown" },
+      { "@type": "ListItem", position: 3, name: "Anniversary Calculator", description: "Calculate how long you've been together and when your next anniversary is", url: "https://www.fasttools.store/fun-tools/anniversary" }
     ]
   },
   breadcrumb: {
@@ -114,13 +113,6 @@ export default function FunToolsPage() {
       icon: Calendar,
       href: "/fun-tools/future-age",
       popular: true,
-    },
-    {
-      title: "Instagram Hashtag Counter",
-      description: "Count and extract hashtags from your Instagram posts. Perfect for social media management.",
-      icon: Hash,
-      href: "/fun-tools/hashtag-counter",
-      popular: false,
     },
     {
       title: "Birthday Countdown",

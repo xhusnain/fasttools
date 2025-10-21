@@ -29,7 +29,7 @@ const toolSuggestions = [
   { name: "Blog Title Generator", path: "/seo-tools/blog-titles", category: "SEO" },
   { name: "Keyword Density Checker", path: "/seo-tools/keyword-density", category: "SEO" },
   { name: "Future Age Predictor", path: "/fun-tools/future-age", category: "Fun" },
-  { name: "Hashtag Counter", path: "/fun-tools/hashtag-counter", category: "Fun" },
+  { name: "Hashtag Counter", path: "/social-media-tools/hashtag-counter", category: "Social Media" },
   { name: "Birthday Countdown", path: "/fun-tools/birthday-countdown", category: "Fun" },
   { name: "Anniversary Calculator", path: "/fun-tools/anniversary", category: "Fun" },
   { name: "Invoice Generator", path: "/finance-tools/invoice-generator", category: "Finance" },
