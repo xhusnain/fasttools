@@ -9,7 +9,7 @@ import { Sparkles, QrCode, Music, ImageIcon, Heart, Hash } from "lucide-react"
 export const metadata: Metadata = {
   title: "AI Tools: Free AI Generators | FastTools",
   description:
-    "Free AI tools: meme generator, QR art, lyrics, caption maker, pet names, and hashtag suggester.",
+    "Discover our collection of free AI tools including meme generator, QR art creator, lyrics generator, caption maker, pet name generator, and hashtag suggester. Create amazing content with AI.",
   keywords:
     "AI tools, meme generator, QR code generator, lyrics generator, caption generator, pet names, hashtag generator, AI content creation",
   alternates: {
