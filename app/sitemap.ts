@@ -105,9 +105,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://www.fasttools.store/seo-tools",
-      lastModified: getFreshnessDate(8),
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
     },
     {
       url: "https://www.fasttools.store/date-time-tools",
@@ -382,6 +382,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://www.fasttools.store/converters/timezone",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+
+    // SEO Tools
+    {
+      url: "https://www.fasttools.store/seo-tools/meta-tags",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/seo-tools/lorem-ipsum",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    {
+      url: "https://www.fasttools.store/seo-tools/hashtags",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/seo-tools/blog-titles",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/seo-tools/keyword-density",
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,
       priority: 0.9,
