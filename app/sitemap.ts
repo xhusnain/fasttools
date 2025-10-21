@@ -117,9 +117,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://www.fasttools.store/fun-tools",
-      lastModified: getFreshnessDate(14),
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.8,
     },
   ]
 
@@ -417,6 +417,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,
       priority: 0.9,
+    },
+
+    // Fun Tools
+    {
+      url: "https://www.fasttools.store/fun-tools/anniversary",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.8,
+    },
+    {
+      url: "https://www.fasttools.store/fun-tools/birthday-countdown",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.8,
+    },
+    {
+      url: "https://www.fasttools.store/fun-tools/future-age",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.8,
     },
 
   ]
