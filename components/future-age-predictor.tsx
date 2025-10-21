@@ -18,9 +18,48 @@ export function FutureAgePredictor() {
   } | null>(null)
   const [isCalculating, setIsCalculating] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [errors, setErrors] = useState<{
+    birthDate: string
+    targetYear: string
+  }>({
+    birthDate: "",
+    targetYear: ""
+  })
+
+  const validateInputs = () => {
+    const newErrors = {
+      birthDate: "",
+      targetYear: ""
+    }
+
+    // Validate birth date
+    if (!birthDate) {
+      newErrors.birthDate = "Birth date is required"
+    } else {
+      const birth = new Date(birthDate)
+      const today = new Date()
+      if (birth > today) {
+        newErrors.birthDate = "Birth date cannot be in the future"
+      }
+    }
+
+    // Validate target year
+    if (!targetYear) {
+      newErrors.targetYear = "Target year is required"
+    } else {
+      const year = Number.parseInt(targetYear)
+      const currentYear = new Date().getFullYear()
+      if (year < currentYear) {
+        newErrors.targetYear = "Target year must be in the future"
+      }
+    }
+
+    setErrors(newErrors)
+    return !newErrors.birthDate && !newErrors.targetYear
+  }
 
   const calculateFutureAge = () => {
-    if (!birthDate || !targetYear) return
+    if (!validateInputs()) return
 
     setIsCalculating(true)
 
@@ -88,10 +127,18 @@ export function FutureAgePredictor() {
               id="birthDate"
               type="date"
               value={birthDate}
-              onChange={(e) => setBirthDate(e.target.value)}
-              className="h-11 text-sm"
+              onChange={(e) => {
+                setBirthDate(e.target.value)
+                if (errors.birthDate) {
+                  setErrors(prev => ({ ...prev, birthDate: "" }))
+                }
+              }}
+              className={`h-11 text-sm border-orange-500 focus:border-orange-500 focus:ring-orange-500 ${errors.birthDate ? 'border-orange-600' : ''}`}
               max={new Date().toISOString().split("T")[0]}
             />
+            {errors.birthDate && (
+              <p className="text-xs text-orange-600 mt-1">{errors.birthDate}</p>
+            )}
           </div>
 
           <div className="space-y-2">
@@ -103,11 +150,18 @@ export function FutureAgePredictor() {
               type="number"
               placeholder="e.g., 2050"
               value={targetYear}
-              onChange={(e) => setTargetYear(e.target.value)}
-              className="h-11 text-sm"
+              onChange={(e) => {
+                setTargetYear(e.target.value)
+                if (errors.targetYear) {
+                  setErrors(prev => ({ ...prev, targetYear: "" }))
+                }
+              }}
+              className={`h-11 text-sm border-orange-500 focus:border-orange-500 focus:ring-orange-500 ${errors.targetYear ? 'border-orange-600' : ''}`}
               min={new Date().getFullYear()}
-              max={2100}
             />
+            {errors.targetYear && (
+              <p className="text-xs text-orange-600 mt-1">{errors.targetYear}</p>
+            )}
           </div>
 
           <Button
@@ -130,22 +184,22 @@ export function FutureAgePredictor() {
         </div>
 
         {result && (
-          <div className="p-6 rounded-lg bg-accent border border-primary/10 space-y-4 animate-fade-in">
+          <div className="p-6 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 border border-orange-400 space-y-4 animate-fade-in shadow-lg">
             <div className="text-center space-y-2">
-              <p className="text-sm text-muted-foreground">In the year {result.year}, you will be</p>
-              <p className="text-5xl font-bold text-primary">{result.age}</p>
-              <p className="text-sm text-muted-foreground">years old</p>
+              <p className="text-sm text-white/90">In the year {result.year}, you will be</p>
+              <p className="text-5xl font-bold text-white drop-shadow-lg">{result.age}</p>
+              <p className="text-sm text-white/90">years old</p>
             </div>
 
-            <div className="p-4 rounded-lg bg-card border border-border">
-              <p className="text-sm text-center text-foreground font-medium">{result.message}</p>
+            <div className="p-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20">
+              <p className="text-sm text-center text-white font-medium">{result.message}</p>
             </div>
 
             <div className="flex gap-2">
               <Button
                 onClick={copyResult}
                 variant="outline"
-                className="flex-1 h-10 text-sm font-medium hover:bg-accent transition-all bg-transparent"
+                className="flex-1 h-10 text-sm font-medium hover:bg-white/20 transition-all bg-white/10 border-white/30 text-white hover:text-white"
               >
                 {copied ? (
                   <>
@@ -161,7 +215,7 @@ export function FutureAgePredictor() {
               </Button>
               <Button
                 onClick={shareResult}
-                className="flex-1 h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all"
+                className="flex-1 h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all bg-white text-orange-600 hover:bg-white/90"
               >
                 Share Result
               </Button>
