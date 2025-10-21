@@ -5,7 +5,7 @@ import { Clock, Calculator, Target, TrendingUp, Globe, Calendar, Plus, Minus, Ti
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free Online Time Duration Calculator | Accurate & Quick Time Tool | FastTools",
+  title: "Time Duration Calculator | Free Online Time Tool | FastTools",
   description: "Use our free Time Duration Calculator to find the exact time between two points — in hours, minutes, and seconds. Perfect for tracking work hours, study time, events, or any time interval.",
   keywords: [
     "time duration calculator",

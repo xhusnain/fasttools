@@ -7,7 +7,7 @@ import { Hash, Users, Zap, Target } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Instagram Hashtag Counter | Free Hashtag Extractor & Counter Tool | FastTools",
+  title: "Instagram Hashtag Counter | Free Hashtag Extractor Tool | FastTools",
   description:
     "Free Instagram hashtag counter and extractor tool. Count hashtags from Instagram posts, extract hashtags, and generate AI hashtags for better reach.",
   keywords: [

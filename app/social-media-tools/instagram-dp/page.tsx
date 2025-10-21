@@ -4,7 +4,7 @@ import { InstagramDpViewer } from "@/components/instagram-dp-viewer"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Instagram DP Viewer - View & Download Profile Pictures in HD | FastTools",
+  title: "Instagram DP Viewer | View & Download Profile Pictures | FastTools",
   description:
     "View and download Instagram profile pictures in HD quality. Free Instagram DP viewer tool for public accounts.",
   keywords:
