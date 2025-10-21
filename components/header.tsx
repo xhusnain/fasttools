@@ -59,6 +59,15 @@ export function Header() {
             TikTok Downloader
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
           </Link>
+          <Link
+            href="/converters/currency-api"
+            className="flex items-center gap-1 px-3 py-1.5 bg-orange-500 text-white text-sm font-medium rounded-md hover:bg-orange-600 transition-all duration-200 hover:scale-105"
+          >
+            <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+            Get Currency API
+          </Link>
           {/* Theme toggle removed to keep dark mode default */}
         </div>
 
@@ -127,6 +136,16 @@ export function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   TikTok Downloader
+                </Link>
+                <Link
+                  href="/converters/currency-api"
+                  className="flex items-center gap-2 px-3 py-2 bg-orange-500 text-white text-sm font-medium rounded-md hover:bg-orange-600 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
+                  Get Currency API
                 </Link>
               </div>
             </div>
