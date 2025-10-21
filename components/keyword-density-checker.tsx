@@ -71,7 +71,7 @@ export function KeywordDensityChecker() {
               placeholder="Paste your article or content here..."
               value={text}
               onChange={(e) => setText(e.target.value)}
-              className="min-h-48 text-sm resize-none"
+              className="min-h-48 text-sm resize-none border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
             <p className="text-xs text-muted-foreground">{text.split(/\s+/).filter(Boolean).length} words</p>
           </div>
