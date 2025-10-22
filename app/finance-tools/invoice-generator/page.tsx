@@ -1,6 +1,7 @@
 import { InvoiceGenerator } from "@/components/invoice-generator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
+import { Code, Globe, Calculator, ArrowRight, FileText, DollarSign, Percent, Users } from "lucide-react"
 import type { Metadata } from "next"
 import Link from "next/link"
 
@@ -313,63 +314,214 @@ export const metadata: Metadata = {
 
 export default function InvoiceGeneratorPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Finance Tools", href: "/finance-tools" },
-          { label: "Invoice Generator", href: "/finance-tools/invoice-generator" },
-        ]}
-      />
+    <>
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 py-8">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Finance Tools", href: "/finance-tools" },
+              { label: "Invoice Generator", href: "/finance-tools/invoice-generator" },
+            ]}
+          />
 
-      <div className="max-w-4xl mx-auto">
-        {/* Hero Section with proper content-to-ad ratio */}
-        <div className="text-center mb-8 animate-fade-in-up">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3 text-foreground">Free Invoice Generator — Professional Online Invoices</h1>
-          <p className="text-sm md:text-base text-muted-foreground text-pretty">Add items, taxes, and discounts; set currency; then download or print instantly.</p>
-        </div>
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-8">
+              <div className="flex-1 lg:flex-[2] space-y-6">
+                {/* Hero Section */}
+                <div className="text-center space-y-5 animate-fade-in-up">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-4 shadow-md">
+                    <Code className="h-4 w-4 animate-pulse" />
+                    <span>Free Invoice Generator</span>
+                    <div className="h-2 w-2 bg-secondary-accent rounded-full animate-ping"></div>
+                  </div>
 
-        {/* First Ad Space - After Hero Content */}
-        <div className="mb-8">
-          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
-        </div>
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">
+                    Professional Invoice Generator
+                  </h1>
 
-        <InvoiceGenerator />
+                  <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
+                    Create professional invoices with automatic tax calculations, discounts, and branding. Download PDF instantly - no registration required.
+                  </p>
 
-        {/* Second Ad Space - After Tool */}
-        <div className="my-8">
-          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
-        </div>
+                  <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
+                      <FileText className="h-4 w-4 text-primary" />
+                      <span className="text-primary font-medium text-sm">PDF Export</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
+                      <Globe className="h-4 w-4 text-green-600" />
+                      <span className="text-green-600 font-medium text-sm">No Login</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-accent shadow">
+                      <Calculator className="h-4 w-4 text-accent" />
+                      <span className="text-accent font-medium text-sm">Auto Tax</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-secondary-accent shadow">
+                      <ArrowRight className="h-4 w-4 text-secondary-accent" />
+                      <span className="text-secondary-accent font-medium text-sm">Instant</span>
+                    </div>
+                  </div>
+                </div>
 
-        <div className="mt-10 prose prose-sm max-w-none">
-          <h2 className="text-2xl font-bold mb-4 text-foreground">How to Create an Invoice</h2>
-          <h3 className="text-xl font-semibold mb-2 text-foreground">1) Add Business and Client Details</h3>
-          <ul className="list-disc pl-5 text-muted-foreground">
-            <li>Enter your company details, logo, and contact info; add client billing details.</li>
-            <li>Set invoice number and issue/due dates.</li>
-          </ul>
-          <h3 className="text-xl font-semibold mt-6 mb-2 text-foreground">2) Add Line Items, Tax, and Discounts</h3>
-          <ul className="list-disc pl-5 text-muted-foreground">
-            <li>Add description, quantity, rate; choose tax and optional discount.</li>
-            <li>Pick currency and review subtotal, tax, and total.</li>
-          </ul>
+                {/* Mobile/Tablet Ad - Top of Page */}
+                <div className="block xl:hidden mb-6">
+                  <div className="text-center mb-2">
+                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
+                </div>
 
-          <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Professional Invoicing Tips</h2>
-          <ul className="list-disc pl-5 text-muted-foreground">
-            <li>Use clear descriptions and consistent invoice numbering.</li>
-            <li>Define payment terms and late fee policies.</li>
-            <li>Include bank or payment links for faster settlement.</li>
-          </ul>
+                {/* Invoice Generator Tool */}
+                <div className="animate-fade-in-up">
+                  <InvoiceGenerator />
+                </div>
 
-          <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Finance Tools</h2>
-          <ul className="list-disc pl-5 text-muted-foreground">
-            <li><Link href="/finance-tools/paypal-fee">PayPal Fee Calculator</Link></li>
-            <li><Link href="/finance-tools/discount-calculator">Discount Calculator</Link></li>
-            <li><Link href="/finance-tools/tip-calculator">Tip Calculator</Link></li>
-            </ul>
+                {/* Mobile/Tablet Ad - After Tool */}
+                <div className="block xl:hidden my-8">
+                  <div className="text-center mb-2">
+                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
+                </div>
+
+                {/* Content Sections */}
+                <div className="space-y-5 animate-fade-in-up animation-delay-200">
+                  <div className="p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-card-foreground">Professional Invoice Generator Features</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Our free invoice generator creates business-ready invoices with automatic calculations, professional formatting, and instant PDF export capabilities.
+                    </p>
+
+                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Automatic Calculations</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Automatic tax calculations, discount applications, and currency conversion ensure accurate totals every time. No manual math required.
+                    </p>
+
+                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Professional Templates</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Clean, professional invoice templates suitable for freelancers, small businesses, and agencies. Includes branding options and customizable fields.
+                    </p>
+                  </div>
+
+                  <div className="p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-card-foreground">How to Create Professional Invoices</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Follow these steps to create invoices that get paid faster and maintain professional standards.
+                    </p>
+
+                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Step 1: Business & Client Information</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Enter your company details, logo, and contact information. Add client billing details, invoice number, and set issue/due dates for proper tracking.
+                    </p>
+
+                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Step 2: Line Items & Pricing</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Add detailed service descriptions, quantities, rates, and choose appropriate tax rates. Apply discounts if needed and select your preferred currency.
+                    </p>
+                  </div>
+
+                  {/* FAQ Section */}
+                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                      <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
+                        <Code className="h-4 w-4 text-accent" />
+                      </div>
+                      Free Invoice Generator: Complete Guide
+                    </h2>
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">What makes a professional invoice and how do I create one?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">A professional invoice includes clear business information, detailed line items, accurate tax calculations, payment terms, and professional formatting. Our free invoice generator creates business-ready invoices with automatic calculations, customizable templates, and PDF export capabilities. Key elements include: company logo and branding, client information, invoice number and dates, itemized services with descriptions, tax calculations, payment terms, and contact information. Professional invoices get paid 15% faster than generic invoices and help establish credibility with clients. The generator handles complex calculations automatically while providing customizable templates suitable for various business types.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How do I calculate taxes and discounts on invoices accurately?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Our invoice generator automatically calculates taxes and discounts based on your specifications. For tax calculations, enter the appropriate tax rate (e.g., 8.25% for sales tax) and the system applies it to the subtotal. Discounts can be applied as percentages or fixed amounts, and the generator calculates the final total after all adjustments. The system handles complex scenarios like multiple tax rates, tiered discounts, and currency conversions. All calculations are performed locally in your browser, ensuring accuracy and privacy. The generator also provides detailed breakdowns showing subtotal, tax amount, discount amount, and final total for transparency and record-keeping purposes.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">What are the best practices for invoice numbering and payment terms?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Effective invoice numbering uses consistent formats like INV-2024-001 or 2024001 for easy tracking and reference. Our generator automatically suggests sequential numbers and allows customization. Payment terms should be clear and specific: "Net 30" (payment due in 30 days), "Due on receipt" (immediate payment), or "2/10 Net 30" (2% discount if paid within 10 days, otherwise due in 30 days). Include late payment policies and accepted payment methods. Professional invoices with clear terms reduce payment delays and disputes. The generator includes templates for common payment terms and allows customization for specific business needs.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How can I customize invoices for different clients and business types?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Our invoice generator offers extensive customization options for different business needs. Freelancers can use simple templates with hourly rates and project descriptions. Small businesses can add logos, detailed service breakdowns, and multiple payment options. Agencies can include client-specific branding, detailed project phases, and milestone-based billing. The generator supports multiple currencies, various tax structures, and customizable fields for different industries. Templates can be saved and reused for consistent branding across all client communications. The system adapts to different business models while maintaining professional standards and legal compliance.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Is the invoice generator secure and does it protect my business data?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Our invoice generator prioritizes security and privacy by operating entirely within your browser. All invoice creation, calculations, and data processing happen locally on your device, meaning no sensitive business or client information is transmitted to external servers. This approach eliminates risks of data breaches, unauthorized access, or information leaks. The generator doesn't require account creation, email addresses, or any personal information beyond what you choose to input. All calculations and invoice generation are performed client-side, ensuring maximum privacy and security for your business operations. You maintain complete control over your data throughout the entire process.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">What file formats are available and how do I share invoices with clients?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Our invoice generator creates professional PDF invoices that are universally compatible and print-ready. PDF format ensures consistent appearance across all devices and platforms, maintains formatting integrity, and provides professional presentation. The generated invoices can be downloaded instantly, saved locally, or printed directly from the browser. For client sharing, PDFs can be attached to emails, uploaded to cloud storage, or sent through business communication platforms. The generator also provides print-optimized layouts that maintain professional appearance on paper. All invoices include proper formatting, clear typography, and business-appropriate layouts suitable for official business communications.</p>
+                      </div>
+                    </div>
+                    <div className="mt-6 block xl:hidden">
+                      <div className="text-center mb-2">
+                        <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                      </div>
+                      <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
+                    </div>
+                  </div>
+
+                  {/* Related Tools Section */}
+                  <div className="p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-card-foreground">Related Finance Tools</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Complete your business finance toolkit with these complementary tools.
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <Link href="/finance-tools/paypal-fee" className="p-4 rounded-lg border border-border hover:border-primary/50 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <DollarSign className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <h3 className="font-semibold text-card-foreground">PayPal Fee Calculator</h3>
+                            <p className="text-xs text-muted-foreground">Calculate accurate PayPal fees for pricing</p>
+                          </div>
+                        </div>
+                      </Link>
+                      <Link href="/finance-tools/discount-calculator" className="p-4 rounded-lg border border-border hover:border-primary/50 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <Percent className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <h3 className="font-semibold text-card-foreground">Discount Calculator</h3>
+                            <p className="text-xs text-muted-foreground">Calculate sale prices and savings</p>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
+              <div className="hidden lg:block w-72">
+                <div className="sticky top-32 space-y-6">
+                  <div>
+                    <div className="text-center mb-2">
+                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                    </div>
+                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
+                  </div>
+                  <div>
+                    <div className="text-center mb-2">
+                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                    </div>
+                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
         </div>
       </div>
+    </>
   )
 }

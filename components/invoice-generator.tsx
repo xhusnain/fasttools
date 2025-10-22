@@ -1,12 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Copy, Download, Plus, Trash2 } from "lucide-react"
+import { Copy, Download, Plus, Trash2, Printer, FileText, Palette, Save, Upload, Calendar } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
+import { currencies, languages, getCurrencySymbol } from "./countries-list"
 
 interface InvoiceItem {
   id: string
@@ -17,17 +18,466 @@ interface InvoiceItem {
 
 export function InvoiceGenerator() {
   const [loading, setLoading] = useState(false)
-  const [businessName, setBusinessName] = useState("")
+  const [mounted, setMounted] = useState(false)
+  const [businessName, setBusinessName] = useState("Your Company")
   const [businessEmail, setBusinessEmail] = useState("")
-  const [clientName, setClientName] = useState("")
+  const [businessAddress, setBusinessAddress] = useState("Company's Address")
+  const [businessCity, setBusinessCity] = useState("City, State Zip")
+  const [businessCountry, setBusinessCountry] = useState("U.S.A.")
+  const [clientName, setClientName] = useState("Your Client's Company")
   const [clientEmail, setClientEmail] = useState("")
-  const [invoiceNumber, setInvoiceNumber] = useState("")
+  const [clientAddress, setClientAddress] = useState("Client's Address")
+  const [clientCity, setClientCity] = useState("City, State Zip")
+  const [clientCountry, setClientCountry] = useState("U.S.A.")
+  const [invoiceNumber, setInvoiceNumber] = useState("INV-12")
   const [invoiceDate, setInvoiceDate] = useState("")
   const [dueDate, setDueDate] = useState("")
-  const [items, setItems] = useState<InvoiceItem[]>([{ id: "1", description: "", quantity: 1, rate: 0 }])
+  const [companyName, setCompanyName] = useState("")
+  const [items, setItems] = useState<InvoiceItem[]>([
+    { id: "1", description: "Brochure Design", quantity: 2, rate: 100 },
+    { id: "2", description: "Enter item name/description", quantity: 1, rate: 0 },
+    { id: "3", description: "Enter item name/description", quantity: 1, rate: 0 }
+  ])
+  const [selectedTheme, setSelectedTheme] = useState("red")
+  const [selectedTemplate, setSelectedTemplate] = useState("standard")
+  const [logoUrl, setLogoUrl] = useState("")
+  const [notes, setNotes] = useState("Thank you for your business! We appreciate your trust in our services.")
+  const [terms, setTerms] = useState("Payment is due within 30 days of invoice date. Late payments may incur additional fees.")
+  const [currency, setCurrency] = useState("USD")
+  const [language, setLanguage] = useState("en")
+
+  // Simple translation system with top 15 languages
+  const translations: Record<string, Record<string, string>> = {
+    en: {
+      'invoice.companyName': 'Enter Company Name',
+      'invoice.invoiceNumber': '#',
+      'invoice.date': 'Date',
+      'invoice.dueDate': 'Due Date',
+      'invoice.items.description': 'Description',
+      'invoice.items.quantity': 'Qty',
+      'invoice.items.rate': 'Rate',
+      'invoice.items.amount': 'Amount',
+      'invoice.items.action': 'Action',
+      'invoice.items.addItem': 'Add Line Item',
+      'invoice.totals.subtotal': 'Subtotal',
+      'invoice.totals.tax': 'Tax',
+      'invoice.totals.total': 'Total',
+      'invoice.notes': 'Notes',
+      'invoice.terms': 'Terms & Conditions',
+      'invoice.controls.theme': 'Theme',
+      'invoice.controls.currency': 'Currency',
+      'invoice.controls.language': 'Language',
+      'invoice.controls.download': 'Download PDF',
+      'invoice.controls.print': 'Print Invoice',
+      'invoice.placeholders.itemDescription': 'Enter item name/description',
+      'invoice.sections.yourCompany': 'Your Company',
+      'invoice.sections.billTo': 'Bill To:',
+      'invoice.pdf.from': 'From:',
+      'invoice.pdf.notes': 'Notes:',
+      'invoice.pdf.terms': 'Terms & Conditions:'
+    },
+    fr: {
+      'invoice.companyName': 'Nom de l\'entreprise',
+      'invoice.invoiceNumber': '#',
+      'invoice.date': 'Date',
+      'invoice.dueDate': 'Date d\'échéance',
+      'invoice.items.description': 'Description',
+      'invoice.items.quantity': 'Qté',
+      'invoice.items.rate': 'Taux',
+      'invoice.items.amount': 'Montant',
+      'invoice.items.action': 'Action',
+      'invoice.items.addItem': 'Ajouter un article',
+      'invoice.totals.subtotal': 'Sous-total',
+      'invoice.totals.tax': 'Taxe',
+      'invoice.totals.total': 'Total',
+      'invoice.notes': 'Notes',
+      'invoice.terms': 'Termes et conditions',
+      'invoice.controls.theme': 'Thème',
+      'invoice.controls.currency': 'Devise',
+      'invoice.controls.language': 'Langue',
+      'invoice.controls.download': 'Télécharger PDF',
+      'invoice.controls.print': 'Imprimer facture',
+      'invoice.placeholders.itemDescription': 'Entrez le nom/description de l\'article',
+      'invoice.sections.yourCompany': 'Votre entreprise',
+      'invoice.sections.billTo': 'Facturer à:',
+      'invoice.pdf.from': 'De:',
+      'invoice.pdf.notes': 'Notes:',
+      'invoice.pdf.terms': 'Termes et conditions:'
+    },
+    es: {
+      'invoice.companyName': 'Nombre de la empresa',
+      'invoice.invoiceNumber': '#',
+      'invoice.date': 'Fecha',
+      'invoice.dueDate': 'Fecha de vencimiento',
+      'invoice.items.description': 'Descripción',
+      'invoice.items.quantity': 'Cant',
+      'invoice.items.rate': 'Tarifa',
+      'invoice.items.amount': 'Importe',
+      'invoice.items.action': 'Acción',
+      'invoice.items.addItem': 'Agregar artículo',
+      'invoice.totals.subtotal': 'Subtotal',
+      'invoice.totals.tax': 'Impuesto',
+      'invoice.totals.total': 'Total',
+      'invoice.notes': 'Notas',
+      'invoice.terms': 'Términos y condiciones',
+      'invoice.controls.theme': 'Tema',
+      'invoice.controls.currency': 'Moneda',
+      'invoice.controls.language': 'Idioma',
+      'invoice.controls.download': 'Descargar PDF',
+      'invoice.controls.print': 'Imprimir factura',
+      'invoice.placeholders.itemDescription': 'Ingrese nombre/descripción del artículo',
+      'invoice.sections.yourCompany': 'Su empresa',
+      'invoice.sections.billTo': 'Facturar a:',
+      'invoice.pdf.from': 'De:',
+      'invoice.pdf.notes': 'Notas:',
+      'invoice.pdf.terms': 'Términos y condiciones:'
+    },
+    de: {
+      'invoice.companyName': 'Firmenname',
+      'invoice.invoiceNumber': '#',
+      'invoice.date': 'Datum',
+      'invoice.dueDate': 'Fälligkeitsdatum',
+      'invoice.items.description': 'Beschreibung',
+      'invoice.items.quantity': 'Menge',
+      'invoice.items.rate': 'Rate',
+      'invoice.items.amount': 'Betrag',
+      'invoice.items.action': 'Aktion',
+      'invoice.items.addItem': 'Artikel hinzufügen',
+      'invoice.totals.subtotal': 'Zwischensumme',
+      'invoice.totals.tax': 'Steuer',
+      'invoice.totals.total': 'Gesamt',
+      'invoice.notes': 'Notizen',
+      'invoice.terms': 'Geschäftsbedingungen',
+      'invoice.controls.theme': 'Thema',
+      'invoice.controls.currency': 'Währung',
+      'invoice.controls.language': 'Sprache',
+      'invoice.controls.download': 'PDF herunterladen',
+      'invoice.controls.print': 'Rechnung drucken',
+      'invoice.placeholders.itemDescription': 'Artikelname/Beschreibung eingeben',
+      'invoice.sections.yourCompany': 'Ihr Unternehmen',
+      'invoice.sections.billTo': 'Rechnung an:',
+      'invoice.pdf.from': 'Von:',
+      'invoice.pdf.notes': 'Notizen:',
+      'invoice.pdf.terms': 'Geschäftsbedingungen:'
+    },
+    zh: {
+      'invoice.companyName': '公司名称',
+      'invoice.invoiceNumber': '#',
+      'invoice.date': '日期',
+      'invoice.dueDate': '到期日期',
+      'invoice.items.description': '描述',
+      'invoice.items.quantity': '数量',
+      'invoice.items.rate': '费率',
+      'invoice.items.amount': '金额',
+      'invoice.items.action': '操作',
+      'invoice.items.addItem': '添加项目',
+      'invoice.totals.subtotal': '小计',
+      'invoice.totals.tax': '税费',
+      'invoice.totals.total': '总计',
+      'invoice.notes': '备注',
+      'invoice.terms': '条款和条件',
+      'invoice.controls.theme': '主题',
+      'invoice.controls.currency': '货币',
+      'invoice.controls.language': '语言',
+      'invoice.controls.download': '下载PDF',
+      'invoice.controls.print': '打印发票',
+      'invoice.placeholders.itemDescription': '输入项目名称/描述',
+      'invoice.sections.yourCompany': '您的公司',
+      'invoice.sections.billTo': '账单发送至:',
+      'invoice.pdf.from': '来自:',
+      'invoice.pdf.notes': '备注:',
+      'invoice.pdf.terms': '条款和条件:'
+    },
+    ar: {
+      'invoice.companyName': 'اسم الشركة',
+      'invoice.invoiceNumber': '#',
+      'invoice.date': 'التاريخ',
+      'invoice.dueDate': 'تاريخ الاستحقاق',
+      'invoice.items.description': 'الوصف',
+      'invoice.items.quantity': 'الكمية',
+      'invoice.items.rate': 'المعدل',
+      'invoice.items.amount': 'المبلغ',
+      'invoice.items.action': 'الإجراء',
+      'invoice.items.addItem': 'إضافة عنصر',
+      'invoice.totals.subtotal': 'المجموع الفرعي',
+      'invoice.totals.tax': 'الضريبة',
+      'invoice.totals.total': 'المجموع',
+      'invoice.notes': 'ملاحظات',
+      'invoice.terms': 'الشروط والأحكام',
+      'invoice.controls.theme': 'السمة',
+      'invoice.controls.currency': 'العملة',
+      'invoice.controls.language': 'اللغة',
+      'invoice.controls.download': 'تحميل PDF',
+      'invoice.controls.print': 'طباعة الفاتورة',
+      'invoice.placeholders.itemDescription': 'أدخل اسم/وصف العنصر',
+      'invoice.sections.yourCompany': 'شركتك',
+      'invoice.sections.billTo': 'الفاتورة إلى:',
+      'invoice.pdf.from': 'من:',
+      'invoice.pdf.notes': 'ملاحظات:',
+      'invoice.pdf.terms': 'الشروط والأحكام:'
+    },
+    pt: {
+      'invoice.companyName': 'Nome da empresa',
+      'invoice.invoiceNumber': '#',
+      'invoice.date': 'Data',
+      'invoice.dueDate': 'Data de vencimento',
+      'invoice.items.description': 'Descrição',
+      'invoice.items.quantity': 'Qtd',
+      'invoice.items.rate': 'Taxa',
+      'invoice.items.amount': 'Valor',
+      'invoice.items.action': 'Ação',
+      'invoice.items.addItem': 'Adicionar item',
+      'invoice.totals.subtotal': 'Subtotal',
+      'invoice.totals.tax': 'Imposto',
+      'invoice.totals.total': 'Total',
+      'invoice.notes': 'Notas',
+      'invoice.terms': 'Termos e condições',
+      'invoice.controls.theme': 'Tema',
+      'invoice.controls.currency': 'Moeda',
+      'invoice.controls.language': 'Idioma',
+      'invoice.controls.download': 'Baixar PDF',
+      'invoice.controls.print': 'Imprimir fatura',
+      'invoice.placeholders.itemDescription': 'Digite nome/descrição do item',
+      'invoice.sections.yourCompany': 'Sua empresa',
+      'invoice.sections.billTo': 'Faturar para:',
+      'invoice.pdf.from': 'De:',
+      'invoice.pdf.notes': 'Notas:',
+      'invoice.pdf.terms': 'Termos e condições:'
+    },
+    ru: {
+      'invoice.companyName': 'Название компании',
+      'invoice.invoiceNumber': '#',
+      'invoice.date': 'Дата',
+      'invoice.dueDate': 'Срок оплаты',
+      'invoice.items.description': 'Описание',
+      'invoice.items.quantity': 'Кол-во',
+      'invoice.items.rate': 'Ставка',
+      'invoice.items.amount': 'Сумма',
+      'invoice.items.action': 'Действие',
+      'invoice.items.addItem': 'Добавить позицию',
+      'invoice.totals.subtotal': 'Подытог',
+      'invoice.totals.tax': 'Налог',
+      'invoice.totals.total': 'Итого',
+      'invoice.notes': 'Примечания',
+      'invoice.terms': 'Условия и положения',
+      'invoice.controls.theme': 'Тема',
+      'invoice.controls.currency': 'Валюта',
+      'invoice.controls.language': 'Язык',
+      'invoice.controls.download': 'Скачать PDF',
+      'invoice.controls.print': 'Печать счета',
+      'invoice.placeholders.itemDescription': 'Введите название/описание товара',
+      'invoice.sections.yourCompany': 'Ваша компания',
+      'invoice.sections.billTo': 'Счет для:',
+      'invoice.pdf.from': 'От:',
+      'invoice.pdf.notes': 'Примечания:',
+      'invoice.pdf.terms': 'Условия и положения:'
+    },
+    ja: {
+      'invoice.companyName': '会社名',
+      'invoice.invoiceNumber': '#',
+      'invoice.date': '日付',
+      'invoice.dueDate': '支払期日',
+      'invoice.items.description': '説明',
+      'invoice.items.quantity': '数量',
+      'invoice.items.rate': '単価',
+      'invoice.items.amount': '金額',
+      'invoice.items.action': '操作',
+      'invoice.items.addItem': '項目を追加',
+      'invoice.totals.subtotal': '小計',
+      'invoice.totals.tax': '税金',
+      'invoice.totals.total': '合計',
+      'invoice.notes': '備考',
+      'invoice.terms': '利用規約',
+      'invoice.controls.theme': 'テーマ',
+      'invoice.controls.currency': '通貨',
+      'invoice.controls.language': '言語',
+      'invoice.controls.download': 'PDFダウンロード',
+      'invoice.controls.print': '請求書印刷',
+      'invoice.placeholders.itemDescription': '項目名/説明を入力',
+      'invoice.sections.yourCompany': 'あなたの会社',
+      'invoice.sections.billTo': '請求先:',
+      'invoice.pdf.from': '差出人:',
+      'invoice.pdf.notes': '備考:',
+      'invoice.pdf.terms': '利用規約:'
+    },
+    ko: {
+      'invoice.companyName': '회사명',
+      'invoice.invoiceNumber': '#',
+      'invoice.date': '날짜',
+      'invoice.dueDate': '만료일',
+      'invoice.items.description': '설명',
+      'invoice.items.quantity': '수량',
+      'invoice.items.rate': '요율',
+      'invoice.items.amount': '금액',
+      'invoice.items.action': '작업',
+      'invoice.items.addItem': '항목 추가',
+      'invoice.totals.subtotal': '소계',
+      'invoice.totals.tax': '세금',
+      'invoice.totals.total': '총계',
+      'invoice.notes': '참고사항',
+      'invoice.terms': '약관 및 조건',
+      'invoice.controls.theme': '테마',
+      'invoice.controls.currency': '통화',
+      'invoice.controls.language': '언어',
+      'invoice.controls.download': 'PDF 다운로드',
+      'invoice.controls.print': '청구서 인쇄',
+      'invoice.placeholders.itemDescription': '항목 이름/설명 입력',
+      'invoice.sections.yourCompany': '귀하의 회사',
+      'invoice.sections.billTo': '청구 대상:',
+      'invoice.pdf.from': '발신자:',
+      'invoice.pdf.notes': '참고사항:',
+      'invoice.pdf.terms': '약관 및 조건:'
+    },
+    hi: {
+      'invoice.companyName': 'कंपनी का नाम',
+      'invoice.invoiceNumber': '#',
+      'invoice.date': 'तारीख',
+      'invoice.dueDate': 'देय तिथि',
+      'invoice.items.description': 'विवरण',
+      'invoice.items.quantity': 'मात्रा',
+      'invoice.items.rate': 'दर',
+      'invoice.items.amount': 'राशि',
+      'invoice.items.action': 'कार्य',
+      'invoice.items.addItem': 'आइटम जोड़ें',
+      'invoice.totals.subtotal': 'उप-योग',
+      'invoice.totals.tax': 'कर',
+      'invoice.totals.total': 'कुल',
+      'invoice.notes': 'नोट्स',
+      'invoice.terms': 'नियम और शर्तें',
+      'invoice.controls.theme': 'थीम',
+      'invoice.controls.currency': 'मुद्रा',
+      'invoice.controls.language': 'भाषा',
+      'invoice.controls.download': 'PDF डाउनलोड',
+      'invoice.controls.print': 'चालान प्रिंट करें',
+      'invoice.placeholders.itemDescription': 'आइटम नाम/विवरण दर्ज करें',
+      'invoice.sections.yourCompany': 'आपकी कंपनी',
+      'invoice.sections.billTo': 'बिल टू:',
+      'invoice.pdf.from': 'से:',
+      'invoice.pdf.notes': 'नोट्स:',
+      'invoice.pdf.terms': 'नियम और शर्तें:'
+    },
+    it: {
+      'invoice.companyName': 'Nome azienda',
+      'invoice.invoiceNumber': '#',
+      'invoice.date': 'Data',
+      'invoice.dueDate': 'Data scadenza',
+      'invoice.items.description': 'Descrizione',
+      'invoice.items.quantity': 'Qtà',
+      'invoice.items.rate': 'Tariffa',
+      'invoice.items.amount': 'Importo',
+      'invoice.items.action': 'Azione',
+      'invoice.items.addItem': 'Aggiungi articolo',
+      'invoice.totals.subtotal': 'Subtotale',
+      'invoice.totals.tax': 'Tassa',
+      'invoice.totals.total': 'Totale',
+      'invoice.notes': 'Note',
+      'invoice.terms': 'Termini e condizioni',
+      'invoice.controls.theme': 'Tema',
+      'invoice.controls.currency': 'Valuta',
+      'invoice.controls.language': 'Lingua',
+      'invoice.controls.download': 'Scarica PDF',
+      'invoice.controls.print': 'Stampa fattura',
+      'invoice.placeholders.itemDescription': 'Inserisci nome/descrizione articolo',
+      'invoice.sections.yourCompany': 'La tua azienda',
+      'invoice.sections.billTo': 'Fattura a:',
+      'invoice.pdf.from': 'Da:',
+      'invoice.pdf.notes': 'Note:',
+      'invoice.pdf.terms': 'Termini e condizioni:'
+    },
+    tr: {
+      'invoice.companyName': 'Şirket adı',
+      'invoice.invoiceNumber': '#',
+      'invoice.date': 'Tarih',
+      'invoice.dueDate': 'Vade tarihi',
+      'invoice.items.description': 'Açıklama',
+      'invoice.items.quantity': 'Miktar',
+      'invoice.items.rate': 'Oran',
+      'invoice.items.amount': 'Tutar',
+      'invoice.items.action': 'İşlem',
+      'invoice.items.addItem': 'Öğe ekle',
+      'invoice.totals.subtotal': 'Ara toplam',
+      'invoice.totals.tax': 'Vergi',
+      'invoice.totals.total': 'Toplam',
+      'invoice.notes': 'Notlar',
+      'invoice.terms': 'Şartlar ve koşullar',
+      'invoice.controls.theme': 'Tema',
+      'invoice.controls.currency': 'Para birimi',
+      'invoice.controls.language': 'Dil',
+      'invoice.controls.download': 'PDF İndir',
+      'invoice.controls.print': 'Fatura Yazdır',
+      'invoice.placeholders.itemDescription': 'Öğe adı/açıklaması girin',
+      'invoice.sections.yourCompany': 'Şirketiniz',
+      'invoice.sections.billTo': 'Fatura Edilecek:',
+      'invoice.pdf.from': 'Gönderen:',
+      'invoice.pdf.notes': 'Notlar:',
+      'invoice.pdf.terms': 'Şartlar ve koşullar:'
+    },
+    pl: {
+      'invoice.companyName': 'Nazwa firmy',
+      'invoice.invoiceNumber': '#',
+      'invoice.date': 'Data',
+      'invoice.dueDate': 'Termin płatności',
+      'invoice.items.description': 'Opis',
+      'invoice.items.quantity': 'Ilość',
+      'invoice.items.rate': 'Stawka',
+      'invoice.items.amount': 'Kwota',
+      'invoice.items.action': 'Akcja',
+      'invoice.items.addItem': 'Dodaj pozycję',
+      'invoice.totals.subtotal': 'Suma częściowa',
+      'invoice.totals.tax': 'Podatek',
+      'invoice.totals.total': 'Razem',
+      'invoice.notes': 'Uwagi',
+      'invoice.terms': 'Warunki i zasady',
+      'invoice.controls.theme': 'Motyw',
+      'invoice.controls.currency': 'Waluta',
+      'invoice.controls.language': 'Język',
+      'invoice.controls.download': 'Pobierz PDF',
+      'invoice.controls.print': 'Drukuj fakturę',
+      'invoice.placeholders.itemDescription': 'Wprowadź nazwę/opis pozycji',
+      'invoice.sections.yourCompany': 'Twoja firma',
+      'invoice.sections.billTo': 'Faktura dla:',
+      'invoice.pdf.from': 'Od:',
+      'invoice.pdf.notes': 'Uwagi:',
+      'invoice.pdf.terms': 'Warunki i zasady:'
+    },
+    nl: {
+      'invoice.companyName': 'Bedrijfsnaam',
+      'invoice.invoiceNumber': '#',
+      'invoice.date': 'Datum',
+      'invoice.dueDate': 'Vervaldatum',
+      'invoice.items.description': 'Beschrijving',
+      'invoice.items.quantity': 'Aantal',
+      'invoice.items.rate': 'Tarief',
+      'invoice.items.amount': 'Bedrag',
+      'invoice.items.action': 'Actie',
+      'invoice.items.addItem': 'Item toevoegen',
+      'invoice.totals.subtotal': 'Subtotaal',
+      'invoice.totals.tax': 'Belasting',
+      'invoice.totals.total': 'Totaal',
+      'invoice.notes': 'Opmerkingen',
+      'invoice.terms': 'Voorwaarden',
+      'invoice.controls.theme': 'Thema',
+      'invoice.controls.currency': 'Valuta',
+      'invoice.controls.language': 'Taal',
+      'invoice.controls.download': 'PDF Downloaden',
+      'invoice.controls.print': 'Factuur Afdrukken',
+      'invoice.placeholders.itemDescription': 'Voer itemnaam/beschrijving in',
+      'invoice.sections.yourCompany': 'Uw bedrijf',
+      'invoice.sections.billTo': 'Factuur naar:',
+      'invoice.pdf.from': 'Van:',
+      'invoice.pdf.notes': 'Opmerkingen:',
+      'invoice.pdf.terms': 'Voorwaarden:'
+    }
+  }
+
+  // Simple translation function
+  const t = (key: string) => {
+    const langTranslations = translations[language] || translations.en
+    return langTranslations[key] || translations.en[key] || key
+  }
 
   const addItem = () => {
-    setItems([...items, { id: Date.now().toString(), description: "", quantity: 1, rate: 0 }])
+    setItems([...items, { id: Date.now().toString(), description: t('invoice.placeholders.itemDescription'), quantity: 1, rate: 0 }])
   }
 
   const removeItem = (id: string) => {
@@ -38,6 +488,17 @@ export function InvoiceGenerator() {
 
   const updateItem = (id: string, field: keyof InvoiceItem, value: string | number) => {
     setItems(items.map((item) => (item.id === id ? { ...item, [field]: value } : item)))
+  }
+
+  const handleLogoUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        setLogoUrl(e.target?.result as string)
+      }
+      reader.readAsDataURL(file)
+    }
   }
 
   const calculateSubtotal = () => {
@@ -64,20 +525,162 @@ export function InvoiceGenerator() {
   const copyInvoice = () => {
     const invoiceText = `
 Invoice #${invoiceNumber}
-From: ${businessName} (${businessEmail})
-To: ${clientName} (${clientEmail})
+From: ${businessName}
+${businessAddress}, ${businessCity}, ${businessCountry}
+To: ${clientName}
+${clientAddress}, ${clientCity}, ${clientCountry}
 Date: ${invoiceDate}
 Due Date: ${dueDate}
 
 Items:
-${items.map((item) => `${item.description} - Qty: ${item.quantity} x $${item.rate} = $${(item.quantity * item.rate).toFixed(2)}`).join("\n")}
+${items.map((item) => `${item.description} - Qty: ${item.quantity} x ${getCurrencySymbol(currency)}${item.rate} = ${getCurrencySymbol(currency)}${(item.quantity * item.rate).toFixed(2)}`).join("\n")}
 
-Subtotal: $${calculateSubtotal().toFixed(2)}
-Tax (10%): $${calculateTax(calculateSubtotal()).toFixed(2)}
-Total: $${calculateTotal().toFixed(2)}
+Subtotal: ${getCurrencySymbol(currency)}${calculateSubtotal().toFixed(2)}
+Tax (10%): ${getCurrencySymbol(currency)}${calculateTax(calculateSubtotal()).toFixed(2)}
+Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
     `.trim()
 
     navigator.clipboard.writeText(invoiceText)
+  }
+
+  const downloadPDF = () => {
+    setLoading(true)
+    
+    // Create a new window for printing/downloading
+    const printWindow = window.open('', '_blank')
+    if (printWindow) {
+      const invoiceHTML = generateInvoiceHTML()
+      printWindow.document.write(invoiceHTML)
+      printWindow.document.close()
+      
+      // Wait for content to load then trigger print dialog
+      setTimeout(() => {
+        printWindow.print()
+        setLoading(false)
+      }, 500)
+    } else {
+      setLoading(false)
+    }
+  }
+
+  const printInvoice = () => {
+    const printWindow = window.open('', '_blank')
+    if (printWindow) {
+      const invoiceHTML = generateInvoiceHTML()
+      printWindow.document.write(invoiceHTML)
+      printWindow.document.close()
+      
+      setTimeout(() => {
+        printWindow.print()
+      }, 500)
+    }
+  }
+
+  const generateInvoiceHTML = () => {
+    const subtotal = calculateSubtotal()
+    const tax = calculateTax(subtotal)
+    const total = calculateTotal()
+    const currencySymbol = getCurrencySymbol(currency)
+    
+    return `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Invoice ${invoiceNumber}</title>
+      <style>
+        body { font-family: Arial, sans-serif; margin: 20px; color: #333; }
+        .invoice-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 30px; }
+        .invoice-logo { width: 80px; height: 80px; margin-right: 20px; }
+        .invoice-title { font-size: 28px; font-weight: bold; color: ${selectedTheme === 'red' ? '#dc2626' : selectedTheme === 'green' ? '#16a34a' : selectedTheme === 'orange' ? '#ea580c' : '#2563eb'}; }
+        .company-info { margin-bottom: 20px; }
+        .client-info { margin-bottom: 20px; }
+        .invoice-details { display: flex; gap: 20px; margin-bottom: 30px; }
+        .invoice-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .invoice-table th { background-color: ${selectedTheme === 'red' ? '#dc2626' : selectedTheme === 'green' ? '#16a34a' : selectedTheme === 'orange' ? '#ea580c' : '#2563eb'}; color: white; padding: 12px; text-align: left; }
+        .invoice-table td { padding: 12px; border-bottom: 1px solid #ddd; }
+        .invoice-total { text-align: right; margin-top: 20px; }
+        .total-box { background-color: #f8f9fa; padding: 15px; border-radius: 8px; display: inline-block; }
+        .notes { margin-top: 30px; }
+        @media print { body { margin: 0; } }
+      </style>
+    </head>
+    <body>
+      <div class="invoice-header">
+        <div style="display: flex; align-items: flex-start;">
+          ${logoUrl ? `<img src="${logoUrl}" alt="Company Logo" class="invoice-logo" style="object-fit: contain;" />` : ''}
+          <div>
+            <h1 class="invoice-title">${companyName || 'INVOICE'}</h1>
+          </div>
+        </div>
+        <div class="invoice-details">
+          <div><strong>Invoice #:</strong> ${invoiceNumber}</div>
+          <div><strong>Date:</strong> ${invoiceDate}</div>
+          <div><strong>Due Date:</strong> ${dueDate}</div>
+        </div>
+      </div>
+      
+      <div class="company-info">
+        <p><strong>${businessName}</strong><br>
+        ${businessAddress}<br>
+        ${businessCity}<br>
+        ${businessCountry}</p>
+      </div>
+      
+      <div class="client-info">
+        <h3>${t('invoice.sections.billTo')}</h3>
+        <p><strong>${clientName}</strong><br>
+        ${clientAddress}<br>
+        ${clientCity}<br>
+        ${clientCountry}</p>
+      </div>
+      
+      <table class="invoice-table">
+        <thead>
+          <tr>
+            <th>${t('invoice.items.description')}</th>
+            <th>${t('invoice.items.quantity')}</th>
+            <th>${t('invoice.items.rate')}</th>
+            <th>${t('invoice.items.amount')}</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${items.map(item => `
+            <tr>
+              <td>${item.description}</td>
+              <td>${item.quantity}</td>
+              <td>${currencySymbol}${item.rate.toFixed(2)}</td>
+              <td>${currencySymbol}${(item.quantity * item.rate).toFixed(2)}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+      
+      <div class="invoice-total">
+        <div class="total-box">
+          <div>Subtotal: ${currencySymbol}${subtotal.toFixed(2)}</div>
+          <div>Tax (10%): ${currencySymbol}${tax.toFixed(2)}</div>
+          <div style="font-size: 18px; font-weight: bold; margin-top: 10px;">Total: ${currencySymbol}${total.toFixed(2)}</div>
+        </div>
+      </div>
+      
+      <div class="notes">
+        <h4>${t('invoice.pdf.notes')}</h4>
+        <p>${notes}</p>
+        <h4>${t('invoice.pdf.terms')}</h4>
+        <p>${terms}</p>
+      </div>
+    </body>
+    </html>
+    `
+  }
+
+  const saveToCloud = () => {
+    // Simulate cloud saving functionality
+    setLoading(true)
+    setTimeout(() => {
+      alert('Invoice saved to cloud successfully!')
+      setLoading(false)
+    }, 1000)
   }
 
   const subtotal = calculateSubtotal()
@@ -85,241 +688,359 @@ Total: $${calculateTotal().toFixed(2)}
   const total = calculateTotal()
 
   return (
-    <div className="space-y-6">
-      <Card className="border border-border shadow-sm">
-        <CardHeader>
-          <CardTitle className="text-xl text-foreground">Invoice Details</CardTitle>
-          <CardDescription className="text-sm text-muted-foreground">
-            Enter your business and client information
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="businessName" className="text-sm font-medium text-foreground">
-                Your Business Name
-              </Label>
-              <Input
-                id="businessName"
-                type="text"
-                placeholder="Acme Inc."
-                value={businessName}
-                onChange={(e) => setBusinessName(e.target.value)}
-                className="h-10 text-sm"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="businessEmail" className="text-sm font-medium text-foreground">
-                Your Email
-              </Label>
-              <Input
-                id="businessEmail"
-                type="email"
-                placeholder="hello@acme.com"
-                value={businessEmail}
-                onChange={(e) => setBusinessEmail(e.target.value)}
-                className="h-10 text-sm"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="clientName" className="text-sm font-medium text-foreground">
-                Client Name
-              </Label>
-              <Input
-                id="clientName"
-                type="text"
-                placeholder="John Doe"
-                value={clientName}
-                onChange={(e) => setClientName(e.target.value)}
-                className="h-10 text-sm"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="clientEmail" className="text-sm font-medium text-foreground">
-                Client Email
-              </Label>
-              <Input
-                id="clientEmail"
-                type="email"
-                placeholder="john@example.com"
-                value={clientEmail}
-                onChange={(e) => setClientEmail(e.target.value)}
-                className="h-10 text-sm"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="invoiceNumber" className="text-sm font-medium text-foreground">
-                Invoice Number
-              </Label>
-              <Input
-                id="invoiceNumber"
-                type="text"
-                placeholder="INV-001"
-                value={invoiceNumber}
-                onChange={(e) => setInvoiceNumber(e.target.value)}
-                className="h-10 text-sm"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="invoiceDate" className="text-sm font-medium text-foreground">
-                Invoice Date
-              </Label>
-              <Input
-                id="invoiceDate"
-                type="date"
-                value={invoiceDate}
-                onChange={(e) => setInvoiceDate(e.target.value)}
-                className="h-10 text-sm"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="dueDate" className="text-sm font-medium text-foreground">
-                Due Date
-              </Label>
-              <Input
-                id="dueDate"
-                type="date"
-                value={dueDate}
-                onChange={(e) => setDueDate(e.target.value)}
-                className="h-10 text-sm"
-              />
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card className="border border-border shadow-sm">
-        <CardHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <CardTitle className="text-xl text-foreground">Invoice Items</CardTitle>
-              <CardDescription className="text-sm text-muted-foreground">
-                Add items or services to your invoice
-              </CardDescription>
-            </div>
-            <Button onClick={addItem} size="sm" className="h-9 text-sm font-medium">
-              <Plus className="h-4 w-4 mr-2" />
-              Add Item
-            </Button>
-          </div>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {items.map((item, index) => (
-            <div key={item.id} className="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
-              <div className="md:col-span-5 space-y-2">
-                <Label htmlFor={`description-${item.id}`} className="text-sm font-medium text-foreground">
-                  Description
-                </Label>
-                <Input
-                  id={`description-${item.id}`}
-                  type="text"
-                  placeholder="Service or product description"
-                  value={item.description}
-                  onChange={(e) => updateItem(item.id, "description", e.target.value)}
-                  className="h-10 text-sm"
-                />
-              </div>
-
-              <div className="md:col-span-2 space-y-2">
-                <Label htmlFor={`quantity-${item.id}`} className="text-sm font-medium text-foreground">
-                  Quantity
-                </Label>
-                <Input
-                  id={`quantity-${item.id}`}
-                  type="number"
-                  min="1"
-                  value={item.quantity}
-                  onChange={(e) => updateItem(item.id, "quantity", Number.parseInt(e.target.value) || 1)}
-                  className="h-10 text-sm"
-                />
-              </div>
-
-              <div className="md:col-span-2 space-y-2">
-                <Label htmlFor={`rate-${item.id}`} className="text-sm font-medium text-foreground">
-                  Rate ($)
-                </Label>
-                <Input
-                  id={`rate-${item.id}`}
-                  type="number"
-                  min="0"
-                  step="0.01"
-                  value={item.rate}
-                  onChange={(e) => updateItem(item.id, "rate", Number.parseFloat(e.target.value) || 0)}
-                  className="h-10 text-sm"
-                />
-              </div>
-
-              <div className="md:col-span-2 space-y-2">
-                <Label className="text-sm font-medium text-foreground">Amount</Label>
-                <div className="h-10 flex items-center text-sm font-medium text-foreground">
-                  ${(item.quantity * item.rate).toFixed(2)}
+    <div className="max-w-7xl mx-auto px-4">
+      {/* Main Invoice Preview */}
+      <div className="max-w-5xl mx-auto">
+        {/* Invoice Preview */}
+        <div className="bg-slate-800 border border-slate-600 rounded-lg p-6 shadow-sm text-white">
+              {/* Header */}
+              <div className="flex justify-between items-start mb-6">
+                <div className="flex items-start gap-4">
+                  {/* Logo Display */}
+                  <div className="w-24 h-24 bg-slate-700 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-500">
+                    {logoUrl ? (
+                      <img src={logoUrl} alt="Logo" className="w-full h-full object-contain rounded-lg" />
+                    ) : (
+                      <div className="text-center">
+                        <Upload className="h-8 w-8 text-slate-400 mx-auto mb-2" />
+                        <span className="text-sm text-slate-400">Upload Logo</span>
+                      </div>
+                    )}
+                  </div>
+                  <div>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleLogoUpload}
+                      className="hidden"
+                      id="logo-upload"
+                    />
+                    <label htmlFor="logo-upload" className="cursor-pointer">
+                      <Button 
+                        size="sm" 
+                        className="bg-purple-600 hover:bg-purple-700 text-white text-sm px-4 py-2 rounded-lg"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          document.getElementById('logo-upload')?.click()
+                        }}
+                      >
+                        Upload
+                      </Button>
+                    </label>
+                    <p className="text-xs text-slate-400 mt-2">240 x 240 pixels @ 72 DPI<br />Maximum size of 1MB</p>
+                  </div>
+                </div>
+                
+                {/* Language Selection */}
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-slate-300">{t('invoice.controls.language')}:</span>
+                  <select
+                    value={language}
+                    onChange={(e) => setLanguage(e.target.value)}
+                    className="border border-orange-300 bg-slate-700 text-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  >
+                    {languages.map((lang) => (
+                      <option key={lang.code} value={lang.code} className="bg-slate-700">
+                        {lang.native} - {lang.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                
+                <div className="text-center max-w-sm">
+                  <Input
+                    value={companyName}
+                    onChange={(e) => setCompanyName(e.target.value)}
+                    placeholder={t('invoice.companyName')}
+                    className="border border-orange-300 p-2 text-3xl font-bold text-white bg-transparent text-center placeholder-slate-300 rounded-lg"
+                  />
                 </div>
               </div>
 
-              <div className="md:col-span-1">
-                <Button
-                  onClick={() => removeItem(item.id)}
-                  variant="ghost"
-                  size="sm"
-                  className="h-10 w-full md:w-10 text-destructive hover:text-destructive hover:bg-destructive/10"
-                  disabled={items.length === 1}
-                >
-                  <Trash2 className="h-4 w-4" />
-                </Button>
-              </div>
+              {/* Company and Client Info */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+                <div>
+                  <h3 className="text-sm font-semibold text-slate-300 mb-3">{t('invoice.sections.yourCompany')}</h3>
+              <Input
+                value={businessName}
+                onChange={(e) => setBusinessName(e.target.value)}
+                    className="border border-orange-300 p-2 text-sm font-medium text-white bg-transparent mb-2 rounded-lg"
+                    placeholder="Your Company"
+                  />
+                  <Input
+                    value={businessAddress}
+                    onChange={(e) => setBusinessAddress(e.target.value)}
+                    className="border border-orange-300 p-2 text-sm text-slate-300 bg-transparent mb-2 rounded-lg"
+                    placeholder="Company's Address"
+                  />
+                  <Input
+                    value={businessCity}
+                    onChange={(e) => setBusinessCity(e.target.value)}
+                    className="border border-orange-300 p-2 text-sm text-slate-300 bg-transparent mb-2 rounded-lg"
+                    placeholder="City, State Zip"
+                  />
+              <Input
+                    value={businessCountry}
+                    onChange={(e) => setBusinessCountry(e.target.value)}
+                    className="border border-orange-300 p-2 text-sm text-slate-300 bg-transparent rounded-lg"
+                    placeholder="U.S.A."
+              />
             </div>
-          ))}
+                <div>
+                  <h3 className="text-sm font-semibold text-slate-300 mb-3">{t('invoice.sections.billTo')}</h3>
+              <Input
+                value={clientName}
+                onChange={(e) => setClientName(e.target.value)}
+                    className="border border-orange-300 p-2 text-sm font-medium text-white bg-transparent mb-2 rounded-lg"
+                    placeholder="Your Client's Company"
+                  />
+                  <Input
+                    value={clientAddress}
+                    onChange={(e) => setClientAddress(e.target.value)}
+                    className="border border-orange-300 p-2 text-sm text-slate-300 bg-transparent mb-2 rounded-lg"
+                    placeholder="Client's Address"
+                  />
+                  <Input
+                    value={clientCity}
+                    onChange={(e) => setClientCity(e.target.value)}
+                    className="border border-orange-300 p-2 text-sm text-slate-300 bg-transparent mb-2 rounded-lg"
+                    placeholder="City, State Zip"
+                  />
+              <Input
+                    value={clientCountry}
+                    onChange={(e) => setClientCountry(e.target.value)}
+                    className="border border-orange-300 p-2 text-sm text-slate-300 bg-transparent rounded-lg"
+                    placeholder="U.S.A."
+                  />
+                </div>
+            </div>
 
-          <div className="border-t border-border pt-4 space-y-2">
-            <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">Subtotal:</span>
-              <span className="font-medium text-foreground">${subtotal.toFixed(2)}</span>
+              {/* Invoice Details */}
+              <div className="flex justify-end mb-6">
+                <div className="flex gap-8">
+                  <div>
+                    <label className="text-sm font-semibold text-slate-300">{t('invoice.invoiceNumber')}</label>
+              <Input
+                value={invoiceNumber}
+                onChange={(e) => setInvoiceNumber(e.target.value)}
+                      className="border border-orange-300 p-2 text-sm font-medium text-white bg-transparent rounded-lg"
+                      placeholder="INV-12"
+              />
             </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">Tax (10%):</span>
-              <span className="font-medium text-foreground">${tax.toFixed(2)}</span>
+                  <div>
+                    <label className="text-sm font-semibold text-slate-300">{t('invoice.date')}</label>
+                    <div className="flex items-center gap-2">
+              <Input
+                type="date"
+                value={invoiceDate}
+                onChange={(e) => setInvoiceDate(e.target.value)}
+                        className="border border-orange-300 p-2 text-sm text-slate-300 bg-transparent rounded-lg"
+              />
+                      <Calendar className="h-4 w-4 text-slate-400" />
+                    </div>
             </div>
-            <div className="flex justify-between text-base font-bold border-t border-border pt-2">
-              <span className="text-foreground">Total:</span>
-              <span className="text-primary">${total.toFixed(2)}</span>
+                  <div>
+                    <label className="text-sm font-semibold text-slate-300">{t('invoice.dueDate')}</label>
+                    <div className="flex items-center gap-2">
+              <Input
+                type="date"
+                value={dueDate}
+                onChange={(e) => setDueDate(e.target.value)}
+                        className="border border-orange-300 p-2 text-sm text-slate-300 bg-transparent rounded-lg"
+              />
+                      <Calendar className="h-4 w-4 text-slate-400" />
             </div>
           </div>
-        </CardContent>
-      </Card>
+            </div>
+          </div>
 
-      <div className="flex flex-col sm:flex-row gap-3">
+              {/* Items Table */}
+              <div className="mb-8">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr 
+                      className="text-white"
+                      style={{ 
+                        backgroundColor: selectedTheme === 'red' ? '#dc2626' : 
+                                       selectedTheme === 'blue' ? '#2563eb' : 
+                                       selectedTheme === 'green' ? '#16a34a' : 
+                                       selectedTheme === 'orange' ? '#ea580c' : 
+                                       selectedTheme === 'purple' ? '#9333ea' : '#dc2626'
+                      }}
+                    >
+                      <th className="text-left p-2 font-semibold">{t('invoice.items.description')}</th>
+                      <th className="text-center p-2 font-semibold">{t('invoice.items.quantity')}</th>
+                      <th className="text-center p-2 font-semibold">{t('invoice.items.rate')}</th>
+                      <th className="text-center p-2 font-semibold">{t('invoice.totals.tax')}</th>
+                      <th className="text-right p-2 font-semibold">{t('invoice.items.amount')}</th>
+                      <th className="text-center p-2 font-semibold">{t('invoice.items.action')}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+          {items.map((item, index) => (
+                      <tr key={item.id} className="border-b border-slate-600">
+                        <td className="p-2">
+                <Input
+                  value={item.description}
+                  onChange={(e) => updateItem(item.id, "description", e.target.value)}
+                            className="border border-orange-300 p-1 text-sm text-white bg-transparent w-full rounded-lg"
+                            placeholder="Enter item name/description"
+                          />
+                        </td>
+                        <td className="p-4 text-center">
+                <Input
+                  type="number"
+                            value={item.quantity}
+                            onChange={(e) => updateItem(item.id, "quantity", Number(e.target.value) || 1)}
+                            className="border border-orange-300 p-1 text-sm text-white bg-transparent text-center w-20 rounded-lg"
+                  min="1"
+                          />
+                        </td>
+                        <td className="p-4 text-center">
+                <Input
+                  type="number"
+                            value={item.rate}
+                            onChange={(e) => updateItem(item.id, "rate", Number(e.target.value) || 0)}
+                            className="border border-orange-300 p-1 text-sm text-white bg-transparent text-center w-24 rounded-lg"
+                  step="0.01"
+                          />
+                        </td>
+                        <td className="p-4 text-center">
+                          <span className="text-sm text-slate-300">12</span>
+                          <br />
+                          <span className="text-sm text-slate-300">{(item.quantity * item.rate * 0.12).toFixed(2)}</span>
+                        </td>
+                        <td className="p-4 text-right">
+                          <span className="text-sm font-medium text-white">
+                            {getCurrencySymbol(currency)}{(item.quantity * item.rate).toFixed(2)}
+                          </span>
+                        </td>
+                        <td className="p-4 text-center">
+                          {items.length > 1 && (
+                            <Button
+                              onClick={() => removeItem(item.id)}
+                              variant="outline"
+                              size="sm"
+                              className="text-red-400 border-red-400 hover:bg-red-400 hover:text-white bg-transparent"
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </Button>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                
+                <Button
+                  onClick={addItem}
+                  variant="outline"
+                  size="sm"
+                  className="mt-6 text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white bg-transparent"
+                >
+                  <Plus className="h-4 w-4 mr-2" />
+                  {t('invoice.items.addItem')}
+                </Button>
+              </div>
+
+              {/* Totals */}
+              <div className="flex justify-end mb-6">
+                <div className="w-64">
+                  <div className="flex justify-between text-sm mb-3">
+                    <span className="text-slate-300">{t('invoice.totals.subtotal')}</span>
+                    <span className="font-medium text-white">{getCurrencySymbol(currency)}{subtotal.toFixed(2)}</span>
+                  </div>
+                  <div className="flex justify-between text-sm mb-3">
+                    <span className="text-slate-300">{t('invoice.totals.tax')} (12%)</span>
+                    <span className="font-medium text-white">{getCurrencySymbol(currency)}{tax.toFixed(2)}</span>
+                  </div>
+                  <div className="flex justify-between text-xl font-bold border-t border-slate-600 pt-3">
+                    <span className="text-white">{t('invoice.totals.total')}</span>
+                    <span className="text-blue-400">{getCurrencySymbol(currency)} {total.toFixed(2)}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Notes and Terms */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-sm font-semibold text-slate-300 mb-3">{t('invoice.notes')}</h4>
+                  <textarea
+                    value={notes}
+                    onChange={(e) => setNotes(e.target.value)}
+                    className="border border-orange-300 p-3 text-sm text-slate-300 bg-transparent rounded-lg w-full h-24 resize-none"
+                    placeholder="Enter your notes here..."
+                  />
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-slate-300 mb-3">{t('invoice.terms')}</h4>
+                  <textarea
+                    value={terms}
+                    onChange={(e) => setTerms(e.target.value)}
+                    className="border border-orange-300 p-3 text-sm text-slate-300 bg-transparent rounded-lg w-full h-24 resize-none"
+                    placeholder="Enter terms and conditions here..."
+                  />
+              </div>
+            </div>
+
+              {/* Controls Section */}
+              <div className="mt-6 pt-4 border-t border-slate-600">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+                  <div className="flex flex-col sm:flex-row items-center gap-4">
+                    {/* Theme Selection */}
+                    <div className="flex items-center gap-4">
+                      <span className="text-sm font-medium text-slate-300">{t('invoice.controls.theme')}:</span>
+                      <div className="flex gap-2">
+                        {[
+                          { name: 'red', color: '#dc2626' },
+                          { name: 'blue', color: '#2563eb' },
+                          { name: 'green', color: '#16a34a' },
+                          { name: 'orange', color: '#ea580c' },
+                          { name: 'purple', color: '#9333ea' }
+                        ].map((theme) => (
+                          <button
+                            key={theme.name}
+                            onClick={() => setSelectedTheme(theme.name)}
+                            className={`w-8 h-8 rounded-full border-2 transition-all ${
+                              selectedTheme === theme.name 
+                                ? 'border-white scale-110' 
+                                : 'border-slate-500 hover:border-slate-300'
+                            }`}
+                            style={{ backgroundColor: theme.color }}
+                          />
+                        ))}
+            </div>
+            </div>
+
+                    {/* Currency Selection */}
+                    <div className="flex items-center gap-4">
+                      <span className="text-sm font-medium text-slate-300">{t('invoice.controls.currency')}:</span>
+                      <select
+                        value={currency}
+                        onChange={(e) => setCurrency(e.target.value)}
+                        className="border border-orange-300 bg-slate-700 text-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      >
+                        {currencies.map((curr) => (
+                          <option key={curr.code} value={curr.code} className="bg-slate-700">
+                            {curr.code} - {curr.name}
+                          </option>
+                        ))}
+                      </select>
+            </div>
+          </div>
+
+                  {/* Download Button */}
         <Button
-          onClick={generateInvoice}
-          disabled={loading || !businessName || !clientName || !invoiceNumber}
-          className="flex-1 h-11 text-sm font-medium shadow-sm hover:shadow-md transition-all"
-        >
-          {loading ? (
-            <>
-              <LoadingSpinner className="mr-2" />
-              Generating...
-            </>
-          ) : (
-            <>
+                    onClick={downloadPDF}
+                    disabled={loading}
+                    className="h-11 px-6 text-sm font-medium shadow-sm hover:shadow-md transition-all bg-white hover:bg-gray-100 text-gray-900 border border-gray-300"
+                  >
               <Download className="mr-2 h-4 w-4" />
-              Generate Invoice
-            </>
-          )}
+                    {t('invoice.controls.download')}
         </Button>
-        <Button
-          onClick={copyInvoice}
-          variant="outline"
-          disabled={!businessName || !clientName || !invoiceNumber}
-          className="h-11 text-sm font-medium hover:bg-accent transition-all bg-transparent"
-        >
-          <Copy className="mr-2 h-4 w-4" />
-          Copy Details
-        </Button>
+                </div>
+              </div>
+        </div>
       </div>
     </div>
   )
