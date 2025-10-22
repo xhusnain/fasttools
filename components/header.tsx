@@ -21,7 +21,11 @@ export function Header() {
       <nav className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-6 gap-4">
         <Link href="/" className="flex items-center gap-3 font-bold text-xl">
           <div className="h-10 w-10 rounded-xl bg-primary flex items-center justify-center shadow-md hover:bg-primary/90 transition-colors duration-200 p-1.5">
-            <img src="/logo.svg" alt="FastTools Logo" className="h-7 w-7 object-contain" />
+            {isHydrated ? (
+              <img src="/logo.svg" alt="FastTools Logo" className="h-7 w-7 object-contain" />
+            ) : (
+              <Wrench className="h-5 w-5 text-primary-foreground" />
+            )}
           </div>
           <span className="text-foreground hidden sm:inline tracking-tight bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
             FastTools
