@@ -188,12 +188,12 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
   return (
     <div className="space-y-6">
       {!compact && (
-        <Card className="p-6 bg-red-50 border-red-200">
+        <Card className="p-6 bg-card border border-border shadow-sm">
           <div className="flex gap-3">
-            <AlertTriangle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+            <AlertTriangle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
             <div className="space-y-2">
-              <p className="text-sm font-medium text-red-900">Legal Disclaimer</p>
-              <p className="text-sm text-red-800 leading-relaxed">
+              <p className="text-sm font-medium text-foreground">Legal Disclaimer</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 Downloading TikTok videos may violate copyright laws and TikTok's terms of service. This tool is for
                 educational purposes only. Always respect content creators' rights and only download videos you have
                 permission to use. Use downloaded content responsibly and give proper credit to original creators.
@@ -215,7 +215,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
               placeholder="https://www.tiktok.com/@username/video/..."
               value={videoUrl}
               onChange={(e) => setVideoUrl(e.target.value)}
-              className={`mt-2 ${compact ? "h-11" : "h-14"} text-base`}
+              className={`mt-2 ${compact ? "h-11" : "h-14"} text-base border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20`}
             />
           </div>
 
@@ -238,13 +238,13 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
           </Button>
 
           {error && (
-            <div className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-md p-3">
+            <div className="text-sm text-muted-foreground bg-muted/50 border border-border rounded-md p-3">
               <div className="flex items-start gap-2">
-                <AlertTriangle className="h-4 w-4 text-red-600 flex-shrink-0 mt-0.5" />
+                <AlertTriangle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                 <div className="flex-1">
-                  <p className="font-medium">Download Failed</p>
+                  <p className="font-medium text-foreground">Download Failed</p>
                   <p className="mt-1">{error}</p>
-                  <div className="mt-2 text-xs text-red-700">
+                  <div className="mt-2 text-xs text-muted-foreground">
                     <p><strong>Troubleshooting tips:</strong></p>
                     <ul className="list-disc list-inside mt-1 space-y-1">
                       <li>Make sure the TikTok video is public and accessible</li>
@@ -261,7 +261,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                     disabled={loading}
                     variant="outline"
                     size="sm"
-                    className="mt-3 text-red-600 border-red-300 hover:bg-red-100"
+                    className="mt-3"
                   >
                     {loading ? (
                       <>
@@ -293,8 +293,8 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
               )}
               <div className="space-y-2">
                 {result.downloadStarted && (
-                  <div className="text-center p-3 bg-green-50 border border-green-200 rounded-md">
-                    <p className="text-sm text-green-800 font-medium">✅ Download started! Check your downloads folder.</p>
+                  <div className="text-center p-3 bg-muted/50 border border-border rounded-md">
+                    <p className="text-sm text-foreground font-medium">✅ Download started! Check your downloads folder.</p>
                   </div>
                 )}
                 {(result.noWatermarkUrl || result.watermarkUrl) && (
@@ -344,7 +344,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
       </Card>
 
       {!compact && (
-        <Card className="p-6 bg-muted/30 border-border">
+        <Card className="p-6 bg-card border border-border shadow-sm">
           <h3 className="text-base font-semibold text-foreground mb-3">Important Information</h3>
           <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
             <li>• How to use: paste TikTok link → Get Download Links → choose Download Video or Download MP3.</li>
