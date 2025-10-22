@@ -334,8 +334,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.95,
     },
+    // Social Media Tools
     {
       url: "https://www.fasttools.store/social-media-tools/tiktok-downloader",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/social-media-tools/youtube-tags",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/social-media-tools/youtube-thumbnail",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/social-media-tools/channel-checker",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/social-media-tools/hashtag-counter",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/social-media-tools/instagram-dp",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/social-media-tools/link-in-bio",
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,
       priority: 0.95,
