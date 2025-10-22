@@ -2,7 +2,17 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(request: NextRequest) {
   try {
-    const { url, filename } = await request.json()
+    let requestBody
+    try {
+      requestBody = await request.json()
+    } catch (jsonError) {
+      return NextResponse.json(
+        { error: 'Invalid JSON in request body' },
+        { status: 400 }
+      )
+    }
+
+    const { url, filename } = requestBody
 
     if (!url || !filename) {
       return NextResponse.json(
@@ -11,13 +21,39 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    console.log('Attempting to download:', url)
+    // Sanitize filename to remove Unicode characters and special characters
+    const sanitizedFilename = filename
+      .replace(/[^\x00-\x7F]/g, '') // Remove non-ASCII characters
+      .replace(/[<>:"/\\|?*]/g, '') // Remove invalid filename characters
+      .replace(/\s+/g, '_') // Replace spaces with underscores
+      .replace(/_+/g, '_') // Replace multiple underscores with single
+      .replace(/^_|_$/g, '') // Remove leading/trailing underscores
+      .substring(0, 100) // Limit length
+      || 'tiktok_download' // Fallback if empty
+
+    // Validate URL
+    try {
+      const urlObj = new URL(url)
+      
+      // Check if this looks like a TikTok page URL instead of a direct media URL
+      if (urlObj.hostname.includes('tiktok.com') && !urlObj.pathname.includes('.')) {
+        return NextResponse.json(
+          { error: 'This appears to be a TikTok page URL, not a direct media URL. Please use the TikTok downloader to get the direct media URL first.' },
+          { status: 400 }
+        )
+      }
+    } catch (urlError) {
+      return NextResponse.json(
+        { error: 'Invalid URL provided' },
+        { status: 400 }
+      )
+    }
 
     // Try multiple approaches to fetch the file
     let response;
     
     try {
-      // First attempt: Direct fetch with proper headers
+      // First attempt: Direct fetch with TikTok-specific headers
       response = await fetch(url, {
         method: 'GET',
         headers: {
@@ -31,13 +67,12 @@ export async function POST(request: NextRequest) {
           'Sec-Fetch-Mode': 'cors',
           'Sec-Fetch-Site': 'cross-site',
           'Cache-Control': 'no-cache',
-          'Pragma': 'no-cache'
+          'Pragma': 'no-cache',
+          'Range': 'bytes=0-'
         },
         redirect: 'follow'
       })
     } catch (fetchError) {
-      console.error('Direct fetch failed:', fetchError)
-      
       // Second attempt: Try with different headers
       try {
         response = await fetch(url, {
@@ -49,16 +84,25 @@ export async function POST(request: NextRequest) {
           }
         })
       } catch (secondError) {
-        console.error('Second fetch attempt failed:', secondError)
-        return NextResponse.json(
-          { error: 'Unable to fetch video file. The video may be private or restricted.' },
-          { status: 403 }
-        )
+        // Third attempt: Minimal headers
+        try {
+          response = await fetch(url, {
+            method: 'GET',
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (compatible; TikTokDownloader/1.0)',
+              'Accept': '*/*'
+            }
+          })
+        } catch (thirdError) {
+          return NextResponse.json(
+            { error: 'Unable to fetch file. The content may be private, restricted, or the URL may be invalid.' },
+            { status: 403 }
+          )
+        }
       }
     }
 
     if (!response.ok) {
-      console.error('Response not ok:', response.status, response.statusText)
       return NextResponse.json(
         { error: `Failed to fetch file: ${response.status} ${response.statusText}` },
         { status: response.status }
@@ -67,10 +111,9 @@ export async function POST(request: NextRequest) {
 
     // Check if we got a valid response
     const contentType = response.headers.get('content-type') || ''
-    if (!contentType.includes('video') && !contentType.includes('audio') && !contentType.includes('application/octet-stream')) {
-      console.error('Invalid content type:', contentType)
+    if (!contentType.includes('video') && !contentType.includes('audio') && !contentType.includes('image') && !contentType.includes('application/octet-stream')) {
       return NextResponse.json(
-        { error: 'Invalid file type received. The URL may not be a direct video/audio file.' },
+        { error: 'Invalid file type received. The URL may not be a direct video/audio/image file.' },
         { status: 400 }
       )
     }
@@ -88,13 +131,12 @@ export async function POST(request: NextRequest) {
     // Set appropriate headers for download
     const headers = new Headers()
     headers.set('Content-Type', contentType || 'application/octet-stream')
-    headers.set('Content-Disposition', `attachment; filename="${filename}"`)
+    headers.set('Content-Disposition', `attachment; filename="${sanitizedFilename}"`)
     headers.set('Content-Length', buffer.byteLength.toString())
     headers.set('Cache-Control', 'no-cache, no-store, must-revalidate')
     headers.set('Pragma', 'no-cache')
     headers.set('Expires', '0')
 
-    console.log('Successfully downloaded file:', filename, 'Size:', buffer.byteLength)
 
     return new NextResponse(buffer, {
       status: 200,
@@ -102,10 +144,19 @@ export async function POST(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('TikTok download file API error:', error)
-    return NextResponse.json(
-      { error: 'Internal server error. Please try again later.' },
-      { status: 500 }
-    )
+    const errorMessage = error instanceof Error ? error.message : 'Internal server error. Please try again later.'
+    
+    try {
+      return NextResponse.json(
+        { 
+          error: errorMessage, 
+          details: error instanceof Error ? error.stack : String(error),
+          timestamp: new Date().toISOString()
+        },
+        { status: 500 }
+      )
+    } catch (jsonError) {
+      return new Response('Internal server error', { status: 500 })
+    }
   }
 }

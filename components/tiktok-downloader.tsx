@@ -112,12 +112,24 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
   }
 
   const triggerDownload = async (url: string, filename: string) => {
+    if (!url) return
+
+    // Sanitize filename on frontend as well
+    const sanitizedFilename = filename
+      .replace(/[^\x00-\x7F]/g, '') // Remove non-ASCII characters
+      .replace(/[<>:"/\\|?*]/g, '') // Remove invalid filename characters
+      .replace(/\s+/g, '_') // Replace spaces with underscores
+      .replace(/_+/g, '_') // Replace multiple underscores with single
+      .replace(/^_|_$/g, '') // Remove leading/trailing underscores
+      .substring(0, 100) // Limit length
+      || 'tiktok_download' // Fallback if empty
+
+    
+    setError(null)
+    setResult(prev => prev ? { ...prev, downloading: true } : null)
+
     try {
-      // Show downloading message
-      setError(null)
-      setResult(prev => prev ? { ...prev, downloading: true } : null)
-      
-      // Use our API to proxy the download to avoid CORS and browser video playing
+      // Use proxy download (most reliable method)
       const response = await fetch('/api/tiktok-download-file', {
         method: 'POST',
         headers: {
@@ -125,20 +137,27 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
         },
         body: JSON.stringify({
           url: url,
-          filename: filename
+          filename: sanitizedFilename
         })
       })
       
+      
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}))
-        throw new Error(errorData.error || `Download failed with status ${response.status}`)
+        let errorData = {}
+        try {
+          errorData = await response.json()
+        } catch (jsonError) {
+          // Failed to parse error response
+        }
+        
+        const errorMessage = `Download failed`
+        throw new Error(errorMessage)
       }
       
       const blob = await response.blob()
       
-      // Check if blob is valid
       if (blob.size === 0) {
-        throw new Error('Empty file received. The video may be private or restricted.')
+        throw new Error('Empty file received. The content may be private or restricted.')
       }
       
       const objectUrl = URL.createObjectURL(blob)
@@ -146,7 +165,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
       // Create download link
       const link = document.createElement("a")
       link.href = objectUrl
-      link.download = filename
+      link.download = sanitizedFilename
       link.style.display = 'none'
       
       // Add to DOM, click, and remove
@@ -165,31 +184,10 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
       }, 500)
       
     } catch (e) {
-      // Fallback: Try direct download
-      try {
-        console.log('Proxy download failed, trying direct download:', e)
-        
-        const link = document.createElement("a")
-        link.href = url
-        link.download = filename
-        link.target = "_blank"
-        link.rel = "noopener noreferrer"
-        link.style.display = 'none'
-        
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
-        
-        // Show success message
-        setTimeout(() => {
-          setResult(prev => prev ? { ...prev, downloading: false, downloadStarted: true } : null)
-        }, 500)
-        
-      } catch (fallbackError) {
-        const errorMessage = e instanceof Error ? e.message : "Download failed. Please try again."
-        setError(errorMessage)
-        setResult(prev => prev ? { ...prev, downloading: false } : null)
-      }
+      // Show error instead of opening new tab
+      const errorMessage = e instanceof Error ? e.message : "Download failed. Please try again."
+      setError(errorMessage)
+      setResult(prev => prev ? { ...prev, downloading: false } : null)
     }
   }
 
