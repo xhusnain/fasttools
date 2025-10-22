@@ -748,22 +748,22 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
   const total = calculateTotal()
 
   return (
-    <div className="max-w-7xl mx-auto px-4">
+    <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
       {/* Main Invoice Preview */}
-      <div className="max-w-5xl mx-auto">
+      <div className="w-full max-w-6xl mx-auto">
         {/* Invoice Preview */}
-        <div className="bg-slate-800 border border-slate-600 rounded-lg p-6 shadow-sm text-white">
+        <div className="bg-slate-800 border border-slate-600 rounded-lg p-3 sm:p-4 lg:p-6 shadow-sm text-white">
               {/* Header */}
-              <div className="flex justify-between items-start mb-6">
-                <div className="flex items-start gap-4">
+              <div className="flex flex-col lg:flex-row justify-between items-start gap-4 mb-4 sm:mb-6">
+                <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 w-full lg:w-auto">
                   {/* Logo Display */}
-                  <div className="w-24 h-24 bg-slate-700 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-500">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-slate-700 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-500 flex-shrink-0">
                     {logoUrl ? (
                       <img src={logoUrl} alt="Logo" className="w-full h-full object-contain rounded-lg" />
                     ) : (
                       <div className="text-center">
-                        <Upload className="h-8 w-8 text-slate-400 mx-auto mb-2" />
-                        <span className="text-sm text-slate-400">Upload Logo</span>
+                        <Upload className="h-4 w-4 sm:h-6 sm:w-6 lg:h-8 lg:w-8 text-slate-400 mx-auto mb-1 sm:mb-2" />
+                        <span className="text-xs sm:text-sm text-slate-400">Upload Logo</span>
                       </div>
                     )}
                   </div>
@@ -778,7 +778,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                     <label htmlFor="logo-upload" className="cursor-pointer">
                       <Button 
                         size="sm" 
-                        className="bg-purple-600 hover:bg-purple-700 text-white text-sm px-4 py-2 rounded-lg"
+                        className="bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 rounded-lg"
                         onClick={(e) => {
                           e.preventDefault()
                           document.getElementById('logo-upload')?.click()
@@ -787,17 +787,18 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                         Upload
                       </Button>
                     </label>
-                    <p className="text-xs text-slate-400 mt-2">240 x 240 pixels @ 72 DPI<br />Maximum size of 1MB</p>
+                    <p className="text-xs text-slate-400 mt-1 sm:mt-2 hidden sm:block">240 x 240 pixels @ 72 DPI<br />Maximum size of 1MB</p>
+                    <p className="text-xs text-slate-400 mt-1 sm:hidden">Max 1MB</p>
                   </div>
                 </div>
                 
                 {/* Language Selection */}
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium text-slate-300">{t('invoice.controls.language')}:</span>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full lg:w-auto">
+                  <span className="text-xs sm:text-sm font-medium text-slate-300">{t('invoice.controls.language')}:</span>
                   <select
                     value={language}
                     onChange={(e) => setLanguage(e.target.value)}
-                    className="border border-orange-300 bg-slate-700 text-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="border border-orange-300 bg-slate-700 text-white rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 w-full sm:w-auto min-w-0"
                   >
                     {languages.map((lang) => (
                       <option key={lang.code} value={lang.code} className="bg-slate-700">
@@ -807,18 +808,18 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                   </select>
                 </div>
                 
-                <div className="text-center max-w-sm">
+                <div className="text-center w-full max-w-xs sm:max-w-sm">
                   <Input
                     value={companyName}
                     onChange={(e) => setCompanyName(e.target.value)}
                     placeholder={t('invoice.companyName')}
-                    className="border border-orange-300 p-2 text-3xl font-bold text-white bg-transparent text-center placeholder-slate-300 rounded-lg"
+                    className="border border-orange-300 p-2 sm:p-3 text-xl sm:text-2xl lg:text-3xl font-bold text-white bg-transparent text-center placeholder-slate-300 rounded-lg w-full"
                   />
                 </div>
               </div>
 
               {/* Company and Client Info */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-4 sm:mb-6">
                 <div>
                   <h3 className="text-sm font-semibold text-slate-300 mb-3">{t('invoice.sections.yourCompany')}</h3>
               <Input
@@ -876,47 +877,47 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
             </div>
 
               {/* Invoice Details */}
-              <div className="flex justify-end mb-6">
-                <div className="flex gap-8">
-                  <div>
-                    <label className="text-sm font-semibold text-slate-300">{t('invoice.invoiceNumber')}</label>
+              <div className="flex justify-end mb-4 sm:mb-6">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 w-full sm:w-auto">
+                  <div className="w-full sm:w-auto">
+                    <label className="text-xs sm:text-sm font-semibold text-slate-300">{t('invoice.invoiceNumber')}</label>
               <Input
                 value={invoiceNumber}
                 onChange={(e) => setInvoiceNumber(e.target.value)}
-                      className="border border-orange-300 p-2 text-sm font-medium text-white bg-transparent rounded-lg"
+                      className="border border-orange-300 p-1 sm:p-2 text-xs sm:text-sm font-medium text-white bg-transparent rounded-lg w-full"
                       placeholder="INV-12"
               />
             </div>
-                  <div>
-                    <label className="text-sm font-semibold text-slate-300">{t('invoice.date')}</label>
-                    <div className="flex items-center gap-2">
+                  <div className="w-full sm:w-auto">
+                    <label className="text-xs sm:text-sm font-semibold text-slate-300">{t('invoice.date')}</label>
+                    <div className="flex items-center gap-1 sm:gap-2">
               <Input
                 type="date"
                 value={invoiceDate}
                 onChange={(e) => setInvoiceDate(e.target.value)}
-                        className="border border-orange-300 p-2 text-sm text-slate-300 bg-transparent rounded-lg"
+                        className="border border-orange-300 p-1 sm:p-2 text-xs sm:text-sm text-slate-300 bg-transparent rounded-lg w-full"
               />
-                      <Calendar className="h-4 w-4 text-slate-400" />
+                      <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-slate-400" />
                     </div>
             </div>
-                  <div>
-                    <label className="text-sm font-semibold text-slate-300">{t('invoice.dueDate')}</label>
-                    <div className="flex items-center gap-2">
+                  <div className="w-full sm:w-auto">
+                    <label className="text-xs sm:text-sm font-semibold text-slate-300">{t('invoice.dueDate')}</label>
+                    <div className="flex items-center gap-1 sm:gap-2">
               <Input
                 type="date"
                 value={dueDate}
                 onChange={(e) => setDueDate(e.target.value)}
-                        className="border border-orange-300 p-2 text-sm text-slate-300 bg-transparent rounded-lg"
+                        className="border border-orange-300 p-1 sm:p-2 text-xs sm:text-sm text-slate-300 bg-transparent rounded-lg w-full"
               />
-                      <Calendar className="h-4 w-4 text-slate-400" />
+                      <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-slate-400" />
+                    </div>
             </div>
-          </div>
             </div>
           </div>
 
               {/* Items Table */}
-              <div className="mb-8">
-                <table className="w-full border-collapse">
+              <div className="mb-6 sm:mb-8 overflow-x-auto">
+                <table className="w-full border-collapse min-w-[600px]">
                   <thead>
                     <tr 
                       className="text-white"
@@ -928,71 +929,71 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                                        selectedTheme === 'purple' ? '#9333ea' : '#dc2626'
                       }}
                     >
-                      <th className="text-left p-2 font-semibold">{t('invoice.items.description')}</th>
-                      <th className="text-center p-2 font-semibold">{t('invoice.items.quantity')}</th>
-                      <th className="text-center p-2 font-semibold">{t('invoice.items.rate')}</th>
-                      <th className="text-center p-2 font-semibold">{t('invoice.totals.tax')}</th>
-                      <th className="text-right p-2 font-semibold">{t('invoice.items.amount')}</th>
-                      <th className="text-center p-2 font-semibold">{t('invoice.items.action')}</th>
+                      <th className="text-left p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.items.description')}</th>
+                      <th className="text-center p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.items.quantity')}</th>
+                      <th className="text-center p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.items.rate')}</th>
+                      <th className="text-center p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.totals.tax')}</th>
+                      <th className="text-right p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.items.amount')}</th>
+                      <th className="text-center p-1 sm:p-2 font-semibold text-xs sm:text-sm">{t('invoice.items.action')}</th>
                     </tr>
                   </thead>
                   <tbody>
           {items.map((item, index) => (
                       <tr key={item.id} className="border-b border-slate-600">
-                        <td className="p-2">
+                        <td className="p-1 sm:p-2">
                 <Input
                   value={item.description}
                   onChange={(e) => updateItem(item.id, "description", e.target.value)}
-                            className="border border-orange-300 p-1 text-sm text-white bg-transparent w-full rounded-lg"
+                            className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent w-full rounded-lg"
                             placeholder="Enter item name/description"
                           />
                         </td>
-                        <td className="p-4 text-center">
+                        <td className="p-1 sm:p-2 text-center">
                 <Input
                   type="number"
                             value={item.quantity}
                             onChange={(e) => updateItem(item.id, "quantity", Number(e.target.value) || 1)}
-                            className="border border-orange-300 p-1 text-sm text-white bg-transparent text-center w-20 rounded-lg"
+                            className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent text-center w-16 sm:w-20 rounded-lg"
                   min="1"
                           />
                         </td>
-                        <td className="p-4 text-center">
+                        <td className="p-1 sm:p-2 text-center">
                 <Input
                   type="number"
                             value={item.rate}
                             onChange={(e) => updateItem(item.id, "rate", Number(e.target.value) || 0)}
-                            className="border border-orange-300 p-1 text-sm text-white bg-transparent text-center w-24 rounded-lg"
+                            className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent text-center w-20 sm:w-24 rounded-lg"
                   step="0.01"
                           />
                         </td>
-                        <td className="p-4 text-center">
+                        <td className="p-1 sm:p-2 text-center">
                           <div className="space-y-2">
                             <Input
                               type="number"
                               value={item.taxRate}
                               onChange={(e) => updateItem(item.id, "taxRate", Number(e.target.value) || 0)}
-                              className="border border-orange-300 p-1 text-sm text-white bg-transparent text-center w-16 rounded-lg"
+                              className="border border-orange-300 p-1 text-xs sm:text-sm text-white bg-transparent text-center w-12 sm:w-16 rounded-lg"
                               min="0"
                               max="100"
                               step="0.01"
                             />
                             <span className="text-xs text-slate-400">{getCurrencySymbol(currency)}{calculateItemTax(item).toFixed(2)}</span>
-                          </div>
+              </div>
                         </td>
-                        <td className="p-4 text-right">
-                          <span className="text-sm font-medium text-white">
+                        <td className="p-1 sm:p-2 text-right">
+                          <span className="text-xs sm:text-sm font-medium text-white">
                             {getCurrencySymbol(currency)}{(item.quantity * item.rate).toFixed(2)}
                           </span>
                         </td>
-                        <td className="p-4 text-center">
+                        <td className="p-1 sm:p-2 text-center">
                           {items.length > 1 && (
                             <Button
                               onClick={() => removeItem(item.id)}
                               variant="outline"
                               size="sm"
-                              className="text-red-400 border-red-400 hover:bg-red-400 hover:text-white bg-transparent"
+                              className="h-6 w-6 sm:h-8 sm:w-8 p-0 text-red-400 border-red-400 hover:bg-red-400 hover:text-white bg-transparent"
                             >
-                              <Trash2 className="h-4 w-4" />
+                              <Trash2 className="h-3 w-3 sm:h-4 sm:w-4" />
                             </Button>
                           )}
                         </td>
@@ -1005,18 +1006,18 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                   onClick={addItem}
                   variant="outline"
                   size="sm"
-                  className="mt-6 text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white bg-transparent"
+                  className="mt-4 sm:mt-6 text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white bg-transparent text-xs sm:text-sm px-3 sm:px-4 py-2"
                 >
-                  <Plus className="h-4 w-4 mr-2" />
+                  <Plus className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                   {t('invoice.items.addItem')}
                 </Button>
               </div>
 
               {/* Discount Controls */}
-              <div className="flex justify-end mb-6">
-                <div className="w-64">
-                  <div className="flex justify-between items-center">
-                    <label className="text-sm text-slate-300">{t('invoice.totals.discountRate')}</label>
+              <div className="flex justify-end mb-4 sm:mb-6">
+                <div className="w-full sm:w-64">
+                  <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
+                    <label className="text-xs sm:text-sm text-slate-300">{t('invoice.totals.discountRate')}</label>
                     <Input
                       type="number"
                       min="0"
@@ -1024,28 +1025,28 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                       step="0.01"
                       value={discount}
                       onChange={(e) => setDiscount(parseFloat(e.target.value) || 0)}
-                      className="w-20 h-8 text-sm text-center border border-orange-300 p-1 rounded-lg bg-slate-800 text-white"
+                      className="w-16 sm:w-20 h-6 sm:h-8 text-xs sm:text-sm text-center border border-orange-300 p-1 rounded-lg bg-slate-800 text-white"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Totals */}
-              <div className="flex justify-end mb-6">
-                <div className="w-64">
-                  <div className="flex justify-between text-sm mb-3">
+              <div className="flex justify-end mb-4 sm:mb-6">
+                <div className="w-full sm:w-64">
+                  <div className="flex justify-between text-xs sm:text-sm mb-2 sm:mb-3">
                     <span className="text-slate-300">{t('invoice.totals.subtotal')}</span>
                     <span className="font-medium text-white">{getCurrencySymbol(currency)}{subtotal.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between text-sm mb-3">
+                  <div className="flex justify-between text-xs sm:text-sm mb-2 sm:mb-3">
                     <span className="text-slate-300">{t('invoice.totals.discount')} ({discount}%)</span>
                     <span className="font-medium text-white">{getCurrencySymbol(currency)}{(subtotal * (discount / 100)).toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between text-sm mb-3">
+                  <div className="flex justify-between text-xs sm:text-sm mb-2 sm:mb-3">
                     <span className="text-slate-300">{t('invoice.totals.tax')} (Items)</span>
                     <span className="font-medium text-white">{getCurrencySymbol(currency)}{calculateTotalItemTax().toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between text-xl font-bold border-t border-slate-600 pt-3">
+                  <div className="flex justify-between text-sm sm:text-xl font-bold border-t border-slate-600 pt-2 sm:pt-3">
                     <span className="text-white">{t('invoice.totals.total')}</span>
                     <span className="text-blue-400">{getCurrencySymbol(currency)} {total.toFixed(2)}</span>
                   </div>
@@ -1053,35 +1054,35 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
               </div>
 
               {/* Notes and Terms */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-4 sm:mb-6">
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-300 mb-3">{t('invoice.notes')}</h4>
+                  <h4 className="text-xs sm:text-sm font-semibold text-slate-300 mb-2 sm:mb-3">{t('invoice.notes')}</h4>
                   <textarea
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
-                    className="border border-orange-300 p-3 text-sm text-slate-300 bg-transparent rounded-lg w-full h-24 resize-none"
+                    className="border border-orange-300 p-2 sm:p-3 text-xs sm:text-sm text-slate-300 bg-transparent rounded-lg w-full h-20 sm:h-24 resize-none"
                     placeholder="Enter your notes here..."
                   />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-300 mb-3">{t('invoice.terms')}</h4>
+                  <h4 className="text-xs sm:text-sm font-semibold text-slate-300 mb-2 sm:mb-3">{t('invoice.terms')}</h4>
                   <textarea
                     value={terms}
                     onChange={(e) => setTerms(e.target.value)}
-                    className="border border-orange-300 p-3 text-sm text-slate-300 bg-transparent rounded-lg w-full h-24 resize-none"
+                    className="border border-orange-300 p-2 sm:p-3 text-xs sm:text-sm text-slate-300 bg-transparent rounded-lg w-full h-20 sm:h-24 resize-none"
                     placeholder="Enter terms and conditions here..."
                   />
               </div>
             </div>
 
               {/* Controls Section */}
-              <div className="mt-6 pt-4 border-t border-slate-600">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
-                  <div className="flex flex-col sm:flex-row items-center gap-4">
+              <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-600">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-3 sm:gap-4">
+                  <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full lg:w-auto">
                     {/* Theme Selection */}
-                    <div className="flex items-center gap-4">
-                      <span className="text-sm font-medium text-slate-300">{t('invoice.controls.theme')}:</span>
-                      <div className="flex gap-2">
+                    <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+                      <span className="text-xs sm:text-sm font-medium text-slate-300">{t('invoice.controls.theme')}:</span>
+                      <div className="flex gap-1 sm:gap-2">
                         {[
                           { name: 'red', color: '#dc2626' },
                           { name: 'blue', color: '#2563eb' },
@@ -1092,7 +1093,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                           <button
                             key={theme.name}
                             onClick={() => setSelectedTheme(theme.name)}
-                            className={`w-8 h-8 rounded-full border-2 transition-all ${
+                            className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 transition-all ${
                               selectedTheme === theme.name 
                                 ? 'border-white scale-110' 
                                 : 'border-slate-500 hover:border-slate-300'
@@ -1104,12 +1105,12 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
             </div>
 
                     {/* Currency Selection */}
-                    <div className="flex items-center gap-4">
-                      <span className="text-sm font-medium text-slate-300">{t('invoice.controls.currency')}:</span>
+                    <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+                      <span className="text-xs sm:text-sm font-medium text-slate-300">{t('invoice.controls.currency')}:</span>
                       <select
                         value={currency}
                         onChange={(e) => setCurrency(e.target.value)}
-                        className="border border-orange-300 bg-slate-700 text-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        className="border border-orange-300 bg-slate-700 text-white rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 w-full sm:w-auto min-w-0"
                       >
                         {currencies.map((curr) => (
                           <option key={curr.code} value={curr.code} className="bg-slate-700">
@@ -1124,9 +1125,9 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
         <Button
                     onClick={downloadPDF}
                     disabled={loading}
-                    className="h-11 px-6 text-sm font-medium shadow-sm hover:shadow-md transition-all bg-white hover:bg-gray-100 text-gray-900 border border-gray-300"
+                    className="h-8 sm:h-11 px-3 sm:px-6 text-xs sm:text-sm font-medium shadow-sm hover:shadow-md transition-all bg-white hover:bg-gray-100 text-gray-900 border border-gray-300 w-full sm:w-auto"
                   >
-              <Download className="mr-2 h-4 w-4" />
+              <Download className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                     {t('invoice.controls.download')}
         </Button>
                 </div>
