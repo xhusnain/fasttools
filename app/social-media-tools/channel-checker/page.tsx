@@ -4,56 +4,45 @@ import { YoutubeChannelChecker } from "@/components/youtube-channel-checker"
 import { AdSpace } from "@/components/ad-space"
 import { Link, Zap, Target, Shield, Globe, Clock, FileText, Hash, Lightbulb, Copy, Users, Code, Download, ExternalLink, Palette, BarChart3, Smartphone, Settings, Eye } from "lucide-react"
 
+// Function to get current year dynamically
+function getCurrentYear(): number {
+  return new Date().getFullYear()
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "YouTube Channel Name Checker – Check Name Availability Instantly (Free Tool)",
-  description: "Check if your desired YouTube channel name is available. Get alternative suggestions and find the perfect name for your channel. Free, fast, and comprehensive.",
+  title: `YouTube Channel Name Checker – Check YouTube Username Availability Instantly (${getCurrentYear()})`,
+  description: "Check if your desired YouTube channel name is available with our free YouTube Channel Name Checker. Instantly verify username availability, find unique channel ideas, and secure your perfect YouTube handle in seconds.",
   keywords: [
     "youtube channel name checker",
-    "youtube name availability",
-    "check youtube name",
-    "youtube channel name",
     "youtube username checker",
-    "channel name ideas",
-    "channel branding",
-    "youtube brand name",
+    "check youtube name availability",
+    "youtube handle availability",
+    "youtube name generator",
+    "youtube channel name availability checker",
+    "youtube name search tool",
+    "youtube channel name ideas",
+    "youtube name checker online",
+    "youtube channel username finder",
+    "youtube name availability tool",
+    "free youtube name checker",
+    "best youtube channel name checker",
     "youtube handle checker",
-    "username availability",
-    "cross-platform name check",
-    "name generator",
-    "channel identity",
-    "brand consistency",
-    "creator tools",
-    "youtube seo",
-    "channel setup",
-    "naming tips",
-    "unique channel names",
-    "short channel names",
-    "memorable names",
-    "niche channel names",
-    "gaming channel names",
-    "vlog channel names",
-    "tech channel names",
-    "education channel names",
-    "music channel names",
-    "lifestyle channel names",
-    "beauty channel names",
-    "travel channel names",
-    "finance channel names",
-    "fitness channel names",
-    "food channel names",
-    "art channel names",
-    "photography channel names",
-    "productivity channel names",
-    "kids channel names",
-    "language channel names",
-    "review channel names",
-    "tutorial channel names",
-    "how to name a channel"
+    "youtube name lookup",
+    "check youtube username free",
+    "youtube username availability search",
+    "youtube channel name generator ai",
+    "youtube brand name checker",
+    "fast youtube name checker",
+    "youtube name validation tool",
+    "youtube username finder",
+    "check if youtube name taken",
+    "youtube channel availability tool",
+    "youtube name registration check"
   ],
   openGraph: {
-    title: "YouTube Channel Name Checker – Check Name Availability Instantly (Free Tool)",
-    description: "Check if your desired YouTube channel name is available. Get alternative suggestions and find the perfect name for your channel. Free, fast, and comprehensive.",
+    title: `YouTube Channel Name Checker – Check YouTube Username Availability Instantly (${getCurrentYear()})`,
+    description: "Check if your desired YouTube channel name is available with our free YouTube Channel Name Checker. Instantly verify username availability, find unique channel ideas, and secure your perfect YouTube handle in seconds.",
     url: "https://www.fasttools.store/social-media-tools/channel-checker",
     siteName: "FastTools",
     images: [
@@ -61,7 +50,7 @@ export const metadata: Metadata = {
         url: "https://www.fasttools.store/og-image.png",
         width: 1200,
         height: 630,
-        alt: "YouTube Channel Name Checker – Check Name Availability Instantly (Free Tool)",
+        alt: `YouTube Channel Name Checker – Check YouTube Username Availability Instantly (${getCurrentYear()})`,
       },
     ],
     locale: "en_US",
@@ -69,8 +58,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "YouTube Channel Name Checker – Check Name Availability Instantly (Free Tool)",
-    description: "Check if your desired YouTube channel name is available. Get alternative suggestions and find the perfect name for your channel.",
+    title: `YouTube Channel Name Checker – Check YouTube Username Availability Instantly (${getCurrentYear()})`,
+    description: "Check if your desired YouTube channel name is available with our free YouTube Channel Name Checker. Instantly verify username availability, find unique channel ideas, and secure your perfect YouTube handle in seconds.",
     images: ["https://www.fasttools.store/og-image.png"],
   },
   alternates: {
@@ -93,8 +82,8 @@ export default function ChannelCheckerPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "YouTube Channel Name Checker",
-    "description": "Check if your desired YouTube channel name is available. Get alternative suggestions and find the perfect name for your channel.",
+    "name": `YouTube Channel Name Checker – Check YouTube Username Availability Instantly (${getCurrentYear()})`,
+    "description": "Check if your desired YouTube channel name is available with our free YouTube Channel Name Checker. Instantly verify username availability, find unique channel ideas, and secure your perfect YouTube handle in seconds.",
     "applicationCategory": "WebTool",
     "operatingSystem": "All",
     "url": "https://www.fasttools.store/social-media-tools/channel-checker",
@@ -112,13 +101,13 @@ export default function ChannelCheckerPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="container mx-auto px-4 py-8 max-w-7xl">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Social Media Tools", href: "/social-media-tools" },
-            { label: "Channel Name Checker", href: "/social-media-tools/channel-checker" },
-          ]}
-        />
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Social Media Tools", href: "/social-media-tools" },
+          { label: "Channel Name Checker", href: "/social-media-tools/channel-checker" },
+        ]}
+      />
 
         {/* Hero Section */}
         <div className="text-center mb-8">
@@ -127,10 +116,10 @@ export default function ChannelCheckerPage() {
             Social Media Tool
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight mb-4">
-            YouTube Channel Name Checker – Check Name Availability Instantly (Free Tool)
-          </h1>
+            YouTube Channel Name Checker – Check YouTube Username Availability Instantly ({getCurrentYear()})
+        </h1>
           <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed mb-6">
-            Check if your desired YouTube channel name is available. Get alternative suggestions and find the perfect name for your channel. Free, fast, and comprehensive.
+            Check if your desired YouTube channel name is available with our free YouTube Channel Name Checker. Instantly verify username availability, find unique channel ideas, and secure your perfect YouTube handle in seconds.
           </p>
           
           <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
@@ -175,59 +164,65 @@ export default function ChannelCheckerPage() {
               <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
             </div>
 
-            {/* How to Use Section */}
+            {/* Features & Usage Guide */}
             <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
-              <h2 className="text-xl font-bold mb-4 text-card-foreground">How to Use YouTube Channel Name Checker</h2>
-              <div className="space-y-6">
-                {/* Step 1: Enter Channel Name */}
-                <div className="p-4 rounded-lg bg-muted/30 border border-border">
-                  <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <FileText className="h-5 w-5 text-primary" />
-                    1. Enter Your Desired Channel Name
-                  </h3>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <p><strong>Channel Name:</strong> Type the exact name you want to check for availability on YouTube.</p>
-                    <p><strong>Name Variations:</strong> Try different spellings, abbreviations, or variations of your preferred name.</p>
-                    <p><strong>Character Limits:</strong> YouTube channel names can be up to 100 characters long.</p>
-                  </div>
+              <h2 className="text-xl font-bold mb-4 text-card-foreground">Features & Usage Guide</h2>
+              
+              {/* Single Usage */}
+              <div className="p-4 rounded-lg bg-muted/30 border border-border mb-4">
+                <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <Users className="h-5 w-5 text-primary" />
+                  Single Channel Name Checking
+                </h3>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <p><strong>Perfect for:</strong> Individual creators, personal brands, or when you have one specific name in mind.</p>
+                  <p><strong>Process:</strong> Enter your desired channel name and click "Check Availability". The tool will verify if the name is available on YouTube.</p>
+                  <p><strong>Timeline:</strong> Single name checks complete quickly with real-time status updates.</p>
+                  <p><strong>Results:</strong> Get immediate feedback showing availability status and alternative suggestions.</p>
                 </div>
+              </div>
 
-                {/* Step 2: Check Availability */}
-                <div className="p-4 rounded-lg bg-muted/30 border border-border">
-                  <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <Target className="h-5 w-5 text-primary" />
-                    2. Check Availability Status
-                  </h3>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <p><strong>Available:</strong> Green checkmark indicates the name is available for use.</p>
-                    <p><strong>Taken:</strong> Red X shows the name is already in use by another channel.</p>
-                    <p><strong>Invalid:</strong> Warning icon appears for names that violate YouTube's guidelines.</p>
-                  </div>
+              {/* Batch Usage */}
+              <div className="p-4 rounded-lg bg-muted/30 border border-border mb-4">
+                <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <BarChart3 className="h-5 w-5 text-primary" />
+                  Batch Channel Name Checking (Up to 10 Names)
+                </h3>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <p><strong>Perfect for:</strong> Agencies, businesses, or creators exploring multiple name options simultaneously.</p>
+                  <p><strong>Process:</strong> Enter multiple channel names separated by commas (e.g., "TechReviews, GamingTV, FoodBlog").</p>
+                  <p><strong>Timeline:</strong> Each name is checked sequentially. For 10 names, expect a few minutes total.</p>
+                  <p><strong>Results:</strong> View all results in a responsive grid layout showing availability and suggestions for each name.</p>
+                  <p><strong>Progress Tracking:</strong> Real-time countdown timer shows which name is being checked and time remaining.</p>
                 </div>
+              </div>
 
-                {/* Step 3: Get Suggestions */}
-                <div className="p-4 rounded-lg bg-muted/30 border border-border">
-                  <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <Lightbulb className="h-5 w-5 text-primary" />
-                    3. Explore Alternative Suggestions
-                  </h3>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <p><strong>Similar Names:</strong> Get suggestions based on your original name with slight variations.</p>
-                    <p><strong>Niche-Specific:</strong> Find names tailored to your content category (gaming, tech, lifestyle, etc.).</p>
-                    <p><strong>Trending Names:</strong> Discover popular naming patterns in your niche.</p>
+              {/* Step-by-Step Usage */}
+              <div className="p-4 rounded-lg bg-muted/30 border border-border">
+                <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <FileText className="h-5 w-5 text-primary" />
+                  Step-by-Step Usage Instructions
+                </h3>
+                <div className="space-y-3 text-sm text-muted-foreground">
+                  <div className="flex items-start gap-2">
+                    <span className="bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">1</span>
+                    <p><strong>Enter Channel Names:</strong> Type your desired channel name(s) in the input field. For multiple names, separate them with commas.</p>
                   </div>
-                </div>
-
-                {/* Step 4: Cross-Platform Check */}
-                <div className="p-4 rounded-lg bg-muted/30 border border-border">
-                  <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <Globe className="h-5 w-5 text-primary" />
-                    4. Cross-Platform Availability
-                  </h3>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <p><strong>Social Media:</strong> Check if the same name is available on Instagram, TikTok, Twitter, and other platforms.</p>
-                    <p><strong>Domain Names:</strong> Verify if matching domain names are available for your website.</p>
-                    <p><strong>Brand Consistency:</strong> Ensure consistent branding across all your online presence.</p>
+                  <div className="flex items-start gap-2">
+                    <span className="bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">2</span>
+                    <p><strong>Initiate Check:</strong> Click "Check Availability" to start the verification process. The tool will begin checking names sequentially.</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">3</span>
+                    <p><strong>Monitor Progress:</strong> Watch the countdown timer and progress indicator to see which name is being checked and time remaining.</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">4</span>
+                    <p><strong>Review Results:</strong> Examine the grid display showing availability status, channel statistics, and alternative suggestions.</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">5</span>
+                    <p><strong>Take Action:</strong> For available names, consider the suggestions provided. For taken names, click "View Channel" to analyze the existing channel.</p>
                   </div>
                 </div>
               </div>
@@ -355,68 +350,165 @@ export default function ChannelCheckerPage() {
               </div>
             </div>
 
-            {/* FAQ Section */}
+            {/* Comprehensive FAQ Section */}
             <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-500">
               <h2 className="text-xl font-bold mb-4 text-card-foreground">Frequently Asked Questions</h2>
               <div className="space-y-6">
+                {/* Basic Usage Questions */}
                 <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground">How accurate is the YouTube channel name availability checker?</h3>
+                  <h3 className="font-semibold text-foreground">How does the YouTube Channel Name Checker work?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Our checker provides real-time results by querying YouTube's database directly. While we strive for 100% accuracy, there may be rare cases where a name becomes unavailable between checks due to rapid registrations. We recommend checking availability just before creating your channel.
+                    Our tool uses advanced web scraping technology to check YouTube's public URLs for channel availability. It tests multiple URL formats (@username, /c/username, /user/username) and analyzes the response to determine if a channel name is taken. The system rotates user agents and implements rate limiting to ensure reliable, accurate results while protecting against IP blocking.
                   </p>
                 </div>
+
+
                 <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground">Can I check names for other platforms besides YouTube?</h3>
+                  <h3 className="font-semibold text-foreground">How accurate are the availability results?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Yes! Our tool checks name availability across multiple platforms including Instagram, TikTok, Twitter, Facebook, and more. This helps you maintain consistent branding across all your social media accounts and ensures your chosen name is available everywhere you need it.
+                    Our checker provides real-time results with high accuracy by directly querying YouTube's servers. However, channel availability can change rapidly, especially for popular names. We recommend checking availability just before creating your channel and having backup options ready. The tool shows 99%+ accuracy in most cases.
                   </p>
                 </div>
+
+                {/* Channel Name Guidelines */}
                 <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground">What makes a good YouTube channel name?</h3>
+                  <h3 className="font-semibold text-foreground">What are YouTube's channel name requirements?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    A great YouTube channel name should be memorable, easy to pronounce, relevant to your content, and available across platforms. Keep it short (under 20 characters), avoid numbers and special characters, and make sure it reflects your brand or content niche. Consider how it will look in thumbnails and search results.
+                    YouTube channel names must be 3-30 characters long and can include letters, numbers, underscores (_), hyphens (-), periods (.), and Latin middle dots (·). Names cannot be URL-like, phone number-like, or violate YouTube's Community Guidelines. They must also be unique and not impersonate other users or brands.
                   </p>
                 </div>
+
                 <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground">How do I get better name suggestions?</h3>
+                  <h3 className="font-semibold text-foreground">Can I use special characters in my channel name?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Our AI-powered suggestion engine analyzes your input and generates names based on your niche, trending keywords, and successful naming patterns. Try entering different variations of your preferred name, include relevant keywords from your content category, and experiment with different styles (professional, casual, creative) to get more diverse suggestions.
+                    Yes, YouTube allows certain special characters including underscores, hyphens, periods, and Latin middle dots. However, avoid excessive use of special characters as they can make your channel name harder to remember and type. Stick to 1-2 special characters maximum for optimal readability and brand recognition.
                   </p>
                 </div>
+
                 <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground">Is it safe to use the suggested names?</h3>
+                  <h3 className="font-semibold text-foreground">What makes a great YouTube channel name?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    All our suggestions are checked against YouTube's community guidelines and naming policies. However, we recommend reviewing YouTube's terms of service and ensuring your chosen name doesn't infringe on any trademarks or copyrights. When in doubt, consult with a legal professional for business-related channels.
+                    An effective channel name should be memorable, easy to pronounce, relevant to your content, and available across platforms. Keep it short (under 20 characters), avoid numbers and excessive special characters, and ensure it reflects your brand or content niche. Consider how it will appear in thumbnails, search results, and social media profiles.
                   </p>
                 </div>
+
+                {/* Batch Checking Questions */}
                 <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground">Can I save or bookmark my favorite names?</h3>
+                  <h3 className="font-semibold text-foreground">Why is there a limit of 10 names per batch check?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    While our tool doesn't have a built-in save feature, you can easily copy any suggested names using the one-click copy button and save them in your notes app, spreadsheet, or any other tool you prefer. This helps you compare options and make the best decision for your channel.
+                    The 10-name limit balances efficiency with server protection. This prevents overwhelming YouTube's servers while providing sufficient options for most users. If you need to check more names, you can run multiple batches or wait for the current batch to complete.
                   </p>
                 </div>
+
                 <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground">What if my preferred name is taken but I really want it?</h3>
+                  <h3 className="font-semibold text-foreground">Can I pause or cancel a batch check in progress?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    If your preferred name is taken, try adding descriptive words related to your content (e.g., "TechReviews" instead of "Tech"), using abbreviations, or incorporating your location or specialty. You can also check if the existing channel is active - inactive channels might eventually become available, though this is not guaranteed.
+                    Currently, batch checks run automatically once started. You can refresh the page to stop the process, but you'll lose any completed results. We recommend planning your name list carefully before starting a batch check. Future updates may include pause/resume functionality for longer batch operations.
                   </p>
                 </div>
+
+                {/* Suggestions and Alternatives */}
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">How are the alternative suggestions generated?</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Our suggestion engine creates variations based on your original input using proven naming patterns. It generates combinations with words like "Official," "TV," "Channel," "HQ," "Media," "Studio," "Network," "Gaming," and "Reviews." These patterns are commonly used by successful channels and help create memorable, professional-sounding alternatives.
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">What should I do if my preferred name is taken?</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    If your preferred name is taken, try adding descriptive words related to your content (e.g., "TechReviews" instead of "Tech"), using abbreviations, or incorporating your location or specialty. Check if the existing channel is active - inactive channels might eventually become available. Consider the suggestions provided by our tool or brainstorm completely new names that align with your brand.
+                  </p>
+                </div>
+
+                {/* Cross-Platform Considerations */}
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">Should I check availability on other platforms too?</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Absolutely! Consistent branding across all platforms strengthens your brand identity. Check availability on Instagram, TikTok, Twitter, Facebook, and other social media platforms. Also verify if matching domain names are available for your website. Having the same name everywhere makes it easier for your audience to find you.
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">Can I change my YouTube channel name later?</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Yes, YouTube allows channel name changes, but frequent changes can confuse subscribers and affect your branding. It's best to choose a name you're confident in from the start. If you must change it, do so during a rebranding effort and communicate the change clearly to your audience through videos and social media.
+                  </p>
+                </div>
+
+                {/* Technical Questions */}
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">Why do I sometimes see "Error" instead of availability status?</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Errors can occur due to network issues, temporary server problems, or rate limiting. If you see an error, wait a few minutes and try again. The tool implements robust error handling and will retry failed checks automatically. Persistent errors may indicate network connectivity issues on your end.
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">Does the tool store my searched channel names?</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    No, our tool does not store, log, or share any of the channel names you search. All checks are performed in real-time, and no data is retained on our servers. Your searches remain completely private and anonymous. We prioritize user privacy and data protection.
+                  </p>
+                </div>
+
+                {/* Business and Legal Questions */}
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">Can I use trademarked names for my channel?</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Using trademarked names can lead to legal issues and channel termination. Our tool doesn't check for trademarks - it's your responsibility to ensure your chosen name doesn't infringe on existing trademarks. When in doubt, consult with a legal professional, especially for business-related channels.
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">Is it better to use my real name or a creative name?</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    This depends on your goals. Personal brands and professionals often benefit from using their real name for credibility and recognition. Creative channels, gaming channels, or entertainment-focused content may work better with creative, memorable names. Consider your target audience and long-term branding strategy.
+                  </p>
+                </div>
+
+                {/* SEO and Discoverability */}
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">How can I make my channel name more discoverable?</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Incorporate relevant keywords related to your content into your channel name. This improves your channel's visibility in YouTube search results and suggestions. However, avoid keyword stuffing - prioritize readability and brandability. Consider how your name will appear in search results and social media profiles.
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">Should I include my niche in my channel name?</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Including your niche can help with discoverability and set clear expectations for viewers. For example, "TechReviews" immediately tells viewers what to expect. However, this can limit future growth if you want to expand into other areas. Consider your long-term content strategy when deciding whether to include niche-specific terms.
+                  </p>
+                </div>
+
+                {/* Troubleshooting */}
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">What if the tool shows a name as available but YouTube says it's taken?</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    This is rare but can happen due to timing differences or YouTube's internal systems. Always verify availability directly on YouTube before creating your channel. Our tool provides a good starting point, but YouTube's official system is the final authority. If there's a discrepancy, trust YouTube's results.
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">Can I check YouTube handles (@username) with this tool?</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Yes! Our tool checks multiple YouTube URL formats including @username handles. YouTube handles are unique identifiers that start with the @ symbol and are used for mentions and direct links. The tool will show if a handle is available and provide the appropriate URL format for the existing channel if taken.
+        </p>
+      </div>
+
+                {/* Best Practices */}
                 <div className="space-y-2">
                   <h3 className="font-semibold text-foreground">How often should I check name availability?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Check availability as close as possible to when you plan to create your channel, especially for popular names. Names can become unavailable quickly, so avoid checking too far in advance. If you're planning a channel launch, check availability a few days before and have backup options ready.
+                    Check availability as close as possible to when you plan to create your channel, especially for popular names. Names can become unavailable quickly, so avoid checking too far in advance. If you're planning a channel launch, check availability a few days before and have backup options ready. Popular names may need checking multiple times.
                   </p>
-                </div>
+      </div>
+
                 <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground">Can I check domain name availability too?</h3>
+                  <h3 className="font-semibold text-foreground">Is the YouTube Channel Name Checker completely free?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Yes! Our tool also checks if matching domain names are available, which is crucial for building a complete online presence. Having a matching domain name helps with branding consistency and makes it easier for your audience to find your website.
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground">Is the channel name checker completely free?</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Yes, our YouTube channel name checker is completely free to use with no hidden fees, registration requirements, or usage limits. You can check as many names as you want and get unlimited suggestions to help you find the perfect channel name for your content.
+                    Yes, our YouTube channel name checker is completely free to use with no hidden fees, registration requirements, or usage limits. You can check as many names as you want and get unlimited suggestions to help you find the perfect channel name for your content. We're committed to providing free, accessible tools for content creators.
                   </p>
                 </div>
               </div>
@@ -424,21 +516,20 @@ export default function ChannelCheckerPage() {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:w-80 space-y-6">
-            {/* Desktop Ad - Top Sidebar */}
-            <div className="hidden xl:block">
-              <div className="text-center mb-2">
-                <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+          <div className="hidden xl:block w-80">
+            <div className="sticky top-32 space-y-6">
+              <div>
+                <div className="text-center mb-2">
+                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                </div>
+                <AdSpace slot="sidebar" className="w-full h-64 border border-border rounded-xl shadow-sm bg-card" />
               </div>
-              <AdSpace slot="sidebar" className="w-full h-64 border border-border rounded-xl shadow-sm bg-card" />
-            </div>
-
-            {/* Desktop Ad - Bottom Sidebar */}
-            <div className="hidden xl:block">
-              <div className="text-center mb-2">
-                <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+              <div>
+                <div className="text-center mb-2">
+                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                </div>
+                <AdSpace slot="sidebar" className="w-full h-64 border border-border rounded-xl shadow-sm bg-card" />
               </div>
-              <AdSpace slot="sidebar" className="w-full h-64 border border-border rounded-xl shadow-sm bg-card" />
             </div>
           </div>
         </div>

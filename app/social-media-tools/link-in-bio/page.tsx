@@ -511,21 +511,20 @@ export default function LinkInBioPage() {
           </div>
 
                   {/* Sidebar */}
-                  <div className="lg:w-80 space-y-6">
-                    {/* Desktop Ad - Top Sidebar */}
-                    <div className="hidden xl:block">
-                      <div className="text-center mb-2">
-                        <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                  <div className="hidden xl:block w-80">
+                    <div className="sticky top-32 space-y-6">
+                      <div>
+                        <div className="text-center mb-2">
+                          <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                        </div>
+                        <AdSpace slot="sidebar" className="w-full h-64 border border-border rounded-xl shadow-sm bg-card" />
                       </div>
-                      <AdSpace slot="sidebar" className="w-full h-64 border border-border rounded-xl shadow-sm bg-card" />
-      </div>
-
-                    {/* Desktop Ad - Bottom Sidebar */}
-                    <div className="hidden xl:block">
-                      <div className="text-center mb-2">
-                        <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                      <div>
+                        <div className="text-center mb-2">
+                          <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                        </div>
+                        <AdSpace slot="sidebar" className="w-full h-64 border border-border rounded-xl shadow-sm bg-card" />
                       </div>
-                      <AdSpace slot="sidebar" className="w-full h-64 border border-border rounded-xl shadow-sm bg-card" />
                     </div>
                   </div>
         </div>

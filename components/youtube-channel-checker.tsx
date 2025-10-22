@@ -23,6 +23,13 @@ export function YoutubeChannelChecker() {
   const [results, setResults] = useState<ChannelCheckResult[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [currentCheckingIndex, setCurrentCheckingIndex] = useState<number | null>(null)
+  const [timeRemaining, setTimeRemaining] = useState(0)
+  const [checkingProgress, setCheckingProgress] = useState<{
+    current: number
+    total: number
+    currentName: string
+  } | null>(null)
 
   const generateSuggestions = (name: string): string[] => {
     const suggestions = [
@@ -46,6 +53,9 @@ export function YoutubeChannelChecker() {
     setLoading(true)
     setError(null)
     setResults([])
+    setCurrentCheckingIndex(null)
+    setTimeRemaining(0)
+    setCheckingProgress(null)
 
     try {
       // Parse comma-separated channel names
@@ -66,21 +76,86 @@ export function YoutubeChannelChecker() {
         return
       }
 
-      const response = await fetch('/api/youtube/channel-check', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ channelNames: namesArray }),
-      })
+      // Initialize results array
+      const initialResults: ChannelCheckResult[] = namesArray.map(name => ({
+        channelName: name,
+        available: false,
+        error: 'Pending...'
+      }))
+      setResults(initialResults)
 
-      if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.error || 'Failed to check channel names')
+      // Check each channel name with 15-second delay
+      for (let i = 0; i < namesArray.length; i++) {
+        const currentName = namesArray[i]
+        
+        // Update progress
+        setCheckingProgress({
+          current: i + 1,
+          total: namesArray.length,
+          currentName: currentName
+        })
+        setCurrentCheckingIndex(i)
+
+        // Start countdown timer
+        let countdown = 15
+        setTimeRemaining(countdown)
+        
+        const timer = setInterval(() => {
+          countdown--
+          setTimeRemaining(countdown)
+          
+          if (countdown <= 0) {
+            clearInterval(timer)
+          }
+        }, 1000)
+
+        // Wait for 15 seconds
+        await new Promise(resolve => setTimeout(resolve, 15000))
+        clearInterval(timer)
+        setTimeRemaining(0)
+
+        // Check the current channel name
+        try {
+          const response = await fetch('/api/youtube/channel-check', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ channelNames: [currentName] }),
+          })
+
+          if (!response.ok) {
+            const errorData = await response.json()
+            throw new Error(errorData.error || 'Failed to check channel name')
+          }
+
+          const data = await response.json()
+          const result = data.results[0]
+
+          // Update the specific result
+          setResults(prevResults => {
+            const newResults = [...prevResults]
+            newResults[i] = result
+            return newResults
+          })
+
+        } catch (err) {
+          // Update with error
+          setResults(prevResults => {
+            const newResults = [...prevResults]
+            newResults[i] = {
+              channelName: currentName,
+              available: false,
+              error: err instanceof Error ? err.message : 'An error occurred while checking channel name'
+            }
+            return newResults
+          })
+        }
       }
 
-      const data = await response.json()
-      setResults(data.results)
+      // Clear progress when done
+      setCheckingProgress(null)
+      setCurrentCheckingIndex(null)
 
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred while checking channel names')
@@ -135,7 +210,7 @@ export function YoutubeChannelChecker() {
             {loading ? (
               <>
                 <LoadingSpinner className="mr-2" />
-                Checking Availability...
+                {checkingProgress ? `Checking ${checkingProgress.current}/${checkingProgress.total}` : 'Checking Availability...'}
               </>
             ) : (
               <>
@@ -144,16 +219,49 @@ export function YoutubeChannelChecker() {
               </>
             )}
           </Button>
+
+          {/* Progress and Timer Display */}
+          {checkingProgress && (
+            <Card className="p-4 bg-card border-primary shadow-sm">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-sm font-semibold text-primary">
+                    Checking Channel {checkingProgress.current} of {checkingProgress.total}
+                  </h4>
+                  <span className="text-xs text-accent">
+                    {checkingProgress.currentName}
+                  </span>
+                </div>
+                
+                {timeRemaining > 0 && (
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-muted-foreground">Next check in:</span>
+                      <span className="font-mono font-bold text-primary">
+                        {timeRemaining}s
+                      </span>
+                    </div>
+                    <div className="w-full bg-muted rounded-full h-2">
+                      <div 
+                        className="bg-primary h-2 rounded-full transition-all duration-1000"
+                        style={{ width: `${((15 - timeRemaining) / 15) * 100}%` }}
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+            </Card>
+          )}
         </div>
       </Card>
 
       {error && (
-        <Card className="p-6 bg-red-50 border-red-200 shadow-sm animate-fade-in">
+        <Card className="p-6 bg-card border-red-500 shadow-sm animate-fade-in">
           <div className="flex items-center gap-3">
-            <AlertCircle className="h-6 w-6 text-red-600" />
+            <AlertCircle className="h-6 w-6 text-red-500" />
             <div>
-              <h3 className="text-base font-semibold text-red-800">Error</h3>
-              <p className="text-sm text-red-700">{error}</p>
+              <h3 className="text-base font-semibold text-foreground">Error</h3>
+              <p className="text-sm text-red-400">{error}</p>
             </div>
           </div>
         </Card>
@@ -162,97 +270,90 @@ export function YoutubeChannelChecker() {
       {results.length > 0 && (
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-foreground">Check Results</h3>
-          {results.map((result, index) => (
-            <Card key={index} className="p-6 bg-card border-border shadow-sm animate-fade-in">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    {result.error ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {results.map((result, index) => (
+            <Card key={index} className={`p-4 bg-card border-border shadow-sm animate-fade-in ${
+              currentCheckingIndex === index ? 'ring-2 ring-primary bg-muted/30' : ''
+            }`}>
+                <div className="space-y-3">
+                  {/* Status Icon and Channel Name */}
+                  <div className="flex items-center gap-2">
+                    {result.error === 'Pending...' ? (
                       <>
-                        <AlertCircle className="h-8 w-8 text-orange-600" />
-                        <div>
-                          <h4 className="text-lg font-semibold text-foreground">{result.channelName}</h4>
-                          <p className="text-sm text-orange-600">Error: {result.error}</p>
+                        <LoadingSpinner className="h-6 w-6 text-accent" />
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-sm font-semibold text-foreground truncate">{result.channelName}</h4>
+                          <p className="text-xs text-accent">Waiting...</p>
+                        </div>
+                      </>
+                    ) : result.error && result.error !== 'Pending...' ? (
+                      <>
+                        <AlertCircle className="h-6 w-6 text-orange-500" />
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-sm font-semibold text-foreground truncate">{result.channelName}</h4>
+                          <p className="text-xs text-orange-400">Error</p>
                         </div>
                       </>
                     ) : result.available ? (
                       <>
-                        <CheckCircle className="h-8 w-8 text-green-600" />
-                        <div>
-                          <h4 className="text-lg font-semibold text-foreground">{result.channelName}</h4>
-                          <p className="text-sm text-green-600">Available!</p>
+                        <CheckCircle className="h-6 w-6 text-green-500" />
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-sm font-semibold text-foreground truncate">{result.channelName}</h4>
+                          <p className="text-xs text-green-400">Available!</p>
                         </div>
                       </>
                     ) : (
                       <>
-                        <XCircle className="h-8 w-8 text-red-600" />
-                        <div>
-                          <h4 className="text-lg font-semibold text-foreground">{result.channelName}</h4>
-                          <p className="text-sm text-red-600">Not Available</p>
+                        <XCircle className="h-6 w-6 text-red-500" />
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-sm font-semibold text-foreground truncate">{result.channelName}</h4>
+                          <p className="text-xs text-red-400">Taken</p>
                         </div>
                       </>
                     )}
                   </div>
-                  
+
+
+                  {/* Action Button */}
                   {result.channelUrl && (
                     <Button
                       variant="outline"
                       size="sm"
                       onClick={() => window.open(result.channelUrl, '_blank')}
-                      className="flex items-center gap-2"
+                      className="w-full h-8 text-xs"
                     >
-                      <ExternalLink className="h-4 w-4" />
+                      <ExternalLink className="h-3 w-3 mr-1" />
                       View Channel
                     </Button>
                   )}
-                </div>
 
-                {!result.available && !result.error && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-border">
-                    {result.subscriberCount !== undefined && (
-                      <div className="flex items-center gap-2">
-                        <Users className="h-4 w-4 text-muted-foreground" />
-                        <span className="text-sm text-muted-foreground">
-                          <strong>{formatNumber(result.subscriberCount)}</strong> subscribers
-                        </span>
+                  {/* Suggestions for Available Channels */}
+                  {result.available && (
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-1">
+                        <Lightbulb className="h-3 w-3 text-accent" />
+                        <h5 className="text-xs font-semibold text-foreground">Suggestions</h5>
                       </div>
-                    )}
-                    {result.videoCount !== undefined && (
-                      <div className="flex items-center gap-2">
-                        <Video className="h-4 w-4 text-muted-foreground" />
-                        <span className="text-sm text-muted-foreground">
-                          <strong>{formatNumber(result.videoCount)}</strong> videos
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                {result.available && (
-                  <div className="pt-4 border-t border-border">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Lightbulb className="h-5 w-5 text-amber-600" />
-                      <h5 className="text-base font-semibold text-foreground">Suggestions</h5>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {generateSuggestions(result.channelName).map((suggestion, suggestionIndex) => (
-                        <div
-                          key={suggestionIndex}
-                          className="p-3 bg-muted/50 rounded-lg border border-border hover:border-primary transition-colors cursor-pointer group"
-                          onClick={() => copyToClipboard(suggestion)}
-                        >
-                          <div className="flex items-center justify-between">
-                            <p className="text-sm font-medium text-foreground">{suggestion}</p>
-                            <Copy className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="space-y-1">
+                        {generateSuggestions(result.channelName).slice(0, 3).map((suggestion, suggestionIndex) => (
+                          <div
+                            key={suggestionIndex}
+                            className="p-2 bg-muted/50 rounded border border-border hover:border-primary transition-colors cursor-pointer group"
+                            onClick={() => copyToClipboard(suggestion)}
+                          >
+                            <div className="flex items-center justify-between">
+                              <p className="text-xs font-medium text-foreground truncate">{suggestion}</p>
+                              <Copy className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            </Card>
-          ))}
+                  )}
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
       )}
 
@@ -260,9 +361,9 @@ export function YoutubeChannelChecker() {
         <h3 className="text-base font-semibold text-foreground mb-3">How to Use</h3>
         <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
           <li>• Enter multiple channel names separated by commas</li>
-          <li>• Click "Check Availability" to see which names are taken</li>
+          <li>• Click "Check Availability" to start the checking process</li>
+          <li>• Watch the countdown timer and progress indicator</li>
           <li>• Get alternative suggestions for available names</li>
-          <li>• View channel statistics for taken names</li>
           <li>• Copy suggested names with one click</li>
         </ul>
       </Card>
