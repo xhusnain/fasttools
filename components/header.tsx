@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X, Wrench, Search, User, Mail } from "lucide-react"
 import { SearchBar } from "@/components/search-bar"
 import { CategoryDropdown } from "@/components/category-dropdown"
@@ -10,6 +10,11 @@ import { Button } from "@/components/ui/button"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isHydrated, setIsHydrated] = useState(false)
+
+  useEffect(() => {
+    setIsHydrated(true)
+  }, [])
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background shadow-lg">
@@ -77,11 +82,11 @@ export function Header() {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isHydrated && mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </nav>
 
-      {mobileMenuOpen && (
+      {isHydrated && mobileMenuOpen && (
         <div className="md:hidden border-t border-border/20 bg-background/95 backdrop-blur-md animate-fade-in">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
             <SearchBar />

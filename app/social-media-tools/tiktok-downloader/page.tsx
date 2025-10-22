@@ -4,7 +4,7 @@ import { TiktokDownloader } from "@/components/tiktok-downloader"
 import { AdSpace } from "@/components/ad-space"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Download, Shield, Zap, Target, AlertCircle, Globe, Music, Users, Clock, ArrowRight, Code, FileText, Hash, Lightbulb, Search, Calculator, Type, Ruler, HardDrive, DollarSign, Thermometer, Copy, Check } from "lucide-react"
+import { Download, Shield, Zap, Target, AlertCircle, Globe, Music, Users, Clock, ArrowRight, Code, FileText, Hash, Lightbulb, Search, Calculator, Type, Ruler, HardDrive, DollarSign, Thermometer, Copy, Check, Image } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
@@ -184,7 +184,7 @@ export default function TiktokDownloaderPage() {
               TikTok Video Downloader – Download HD TikTok Videos Without Watermark Free
           </h1>
             <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed mb-6">
-              Download TikTok videos in HD without watermark for free. Fast, secure, and easy-to-use online TikTok downloader. Works on PC, Android, iPhone, and all devices. Perfect for creators, marketers, and social media enthusiasts.
+              Download TikTok videos and images in HD without watermark for free. Fast, secure, and easy-to-use online TikTok downloader. Works on PC, Android, iPhone, and all devices. Perfect for creators, marketers, and social media enthusiasts.
             </p>
             
             <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
@@ -323,13 +323,13 @@ export default function TiktokDownloaderPage() {
                   </div>
                   <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/50 border border-border">
                     <div className="p-2 bg-primary/20 rounded-lg">
-                      <Globe className="h-5 w-5 text-primary" />
+                      <Image className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-2">TikTok Image Downloader with Preview</h3>
+                      <p className="text-sm text-muted-foreground">Download TikTok images, wallpapers, and photo content with image previews. See all images in a beautiful grid layout before downloading. Perfect for saving TikTok posts that contain only images or wallpaper-type content.</p>
+                    </div>
                   </div>
-                  <div>
-                      <h3 className="font-semibold text-foreground mb-2">TikTok Downloader for PC, iPhone, Android</h3>
-                      <p className="text-sm text-muted-foreground">Works on iPhone, Android, desktop, and all major browsers. Our TikTok downloader app works across all platforms.</p>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -481,8 +481,14 @@ export default function TiktokDownloaderPage() {
                     <h3 className="font-semibold text-foreground">How do I stay updated with TikTok trends and create timely, relevant content?</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       Staying current with TikTok trends requires active monitoring of the platform's evolving landscape and quick adaptation to emerging opportunities. Regularly explore the "For You" page and "Discover" section to identify trending sounds, hashtags, and content formats. Follow popular creators in your niche and related categories to see what content is gaining traction. Use TikTok's trending hashtags and sounds features to discover new opportunities for content creation. Monitor trending challenges and consider how you can participate with your unique perspective or twist. Set up alerts or follow trend-tracking accounts to stay informed about viral content and emerging patterns. Analyze trending content to understand what makes it successful and adapt those elements to your content style. Be prepared to create content quickly when trends emerge, as timing is often crucial for trend participation. However, ensure that trend participation aligns with your brand and values rather than blindly following every trend. Create a balance between trend participation and original content to maintain your unique voice while staying relevant to current conversations and interests on the platform.
-                  </p>
-                </div>
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="font-semibold text-foreground">Can I download TikTok images and wallpapers using the TikTok image downloader?</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Yes! Our enhanced TikTok downloader now supports downloading TikTok images, wallpapers, and photo content with beautiful image previews. This is perfect for TikTok posts that contain only images or wallpaper-type content like the URL you mentioned (https://vt.tiktok.com/ZSUGRCjVP/). Simply paste any TikTok URL - whether it contains videos or images - and our downloader will automatically detect the content type and provide appropriate download options. For image-only posts, you'll see a preview of the image with a "Download Image" button below it. For posts with multiple images, you'll get a beautiful grid layout showing all images (up to 4 per row) with individual download buttons under each image. This feature works with all TikTok URL formats including shortened links (vt.tiktok.com, vm.tiktok.com) and regular TikTok URLs.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

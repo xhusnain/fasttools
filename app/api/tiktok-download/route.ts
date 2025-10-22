@@ -32,7 +32,11 @@ export async function POST(request: NextRequest) {
               watermarkUrl: data.data.wmplay,
               musicUrl: data.data.music,
               coverUrl: data.data.cover,
-              title: data.data.title
+              title: data.data.title,
+              images: data.data.images || [],
+              imageUrl: data.data.image || data.data.cover,
+              isImage: data.data.is_image || false,
+              type: data.data.type || 'video'
             }
           }
           return null
@@ -48,7 +52,11 @@ export async function POST(request: NextRequest) {
               watermarkUrl: data.data.video_watermark,
               musicUrl: data.data.music,
               coverUrl: data.data.cover,
-              title: data.data.title
+              title: data.data.title,
+              images: data.data.images || [],
+              imageUrl: data.data.image || data.data.cover,
+              isImage: data.data.is_image || false,
+              type: data.data.type || 'video'
             }
           }
           return null
@@ -64,7 +72,11 @@ export async function POST(request: NextRequest) {
               watermarkUrl: data.data.video_watermark,
               musicUrl: data.data.music,
               coverUrl: data.data.cover,
-              title: data.data.title
+              title: data.data.title,
+              images: data.data.images || [],
+              imageUrl: data.data.image || data.data.cover,
+              isImage: data.data.is_image || false,
+              type: data.data.type || 'video'
             }
           }
           return null
@@ -94,7 +106,7 @@ export async function POST(request: NextRequest) {
         const data = await response.json()
         const result = api.parser(data)
 
-        if (result && (result.videoUrl || result.watermarkUrl)) {
+        if (result && (result.videoUrl || result.watermarkUrl || result.imageUrl)) {
           return NextResponse.json({
             success: true,
             ...result

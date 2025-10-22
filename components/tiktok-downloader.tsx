@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
-import { Download, AlertTriangle, Music } from "lucide-react"
+import { Download, AlertTriangle, Music, Image } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
 
 type TiktokDownloaderProps = {
@@ -26,6 +26,10 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
         title?: string
         downloading?: boolean
         downloadStarted?: boolean
+        imageUrl?: string
+        images?: string[]
+        isImage?: boolean
+        type?: string
       }
   >(null)
 
@@ -67,8 +71,8 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
         throw new Error(data.message || "Failed to fetch download links")
       }
 
-      if (!data.videoUrl && !data.watermarkUrl) {
-        throw new Error("No downloadable video found for this URL")
+      if (!data.videoUrl && !data.watermarkUrl && !data.imageUrl) {
+        throw new Error("No downloadable content found for this URL")
       }
 
       // Get thumbnail from TikTok oEmbed
@@ -94,6 +98,10 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
         musicUrl: data.musicUrl,
         coverUrl,
         title: data.title,
+        imageUrl: data.imageUrl,
+        images: data.images,
+        isImage: data.isImage,
+        type: data.type,
       })
 
     } catch (e: any) {
@@ -207,12 +215,12 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
         <div className="space-y-4">
           <div>
             <Label htmlFor="video-url" className="text-sm font-medium text-foreground">
-              TikTok Video URL
+              TikTok Video/Image URL
             </Label>
             <Input
               id="video-url"
               type="text"
-              placeholder="https://www.tiktok.com/@username/video/..."
+              placeholder="https://www.tiktok.com/@username/video/... or https://vt.tiktok.com/..."
               value={videoUrl}
               onChange={(e) => setVideoUrl(e.target.value)}
               className={`mt-2 ${compact ? "h-11" : "h-14"} text-base border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20`}
@@ -227,7 +235,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
             {loading ? (
               <>
                 <LoadingSpinner className="mr-2" />
-                Processing video...
+                Processing content...
               </>
             ) : (
               <>
@@ -336,6 +344,83 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                       </>
                     )}
                   </button>
+                )}
+                {result.imageUrl && (
+                  <div className="space-y-3">
+                    <div className="relative group">
+                      <img
+                        src={result.imageUrl}
+                        alt={result.title || "TikTok Image"}
+                        className="w-full max-w-sm mx-auto h-48 object-cover rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-200"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div className="bg-white/90 text-black px-3 py-1 rounded text-sm font-medium">
+                          TikTok Image
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => triggerDownload(result.imageUrl!, (result.title || "tiktok-image") + ".jpg")}
+                      disabled={result.downloading}
+                      className="w-full max-w-sm mx-auto block inline-flex items-center justify-center h-10 rounded-md border font-medium hover:bg-muted/50 transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {result.downloading ? (
+                        <>
+                          <LoadingSpinner className="mr-2 h-4 w-4" />
+                          Starting Download...
+                        </>
+                      ) : (
+                        <>
+                          <Image className="mr-2 h-4 w-4" />
+                          Download Image
+                        </>
+                      )}
+                    </button>
+                  </div>
+                )}
+                {result.images && result.images.length > 0 && (
+                  <div className="space-y-4">
+                    <p className="text-sm font-medium text-foreground">Multiple Images ({result.images.length}):</p>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                      {result.images.map((imageUrl, index) => (
+                        <div key={index} className="space-y-2">
+                          <div className="relative group">
+                            <img
+                              src={imageUrl}
+                              alt={`TikTok Image ${index + 1}`}
+                              className="w-full h-32 object-cover rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-200"
+                              loading="lazy"
+                            />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100">
+                              <div className="bg-white/90 text-black px-2 py-1 rounded text-xs font-medium">
+                                Image {index + 1}
+                              </div>
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => triggerDownload(imageUrl, (result.title || "tiktok-image") + `-${index + 1}.jpg`)}
+                            disabled={result.downloading}
+                            className="w-full inline-flex items-center justify-center h-8 rounded-md border font-medium hover:bg-muted/50 transition-colors text-xs disabled:opacity-50 disabled:cursor-not-allowed"
+                          >
+                            {result.downloading ? (
+                              <>
+                                <LoadingSpinner className="mr-1 h-3 w-3" />
+                                Downloading...
+                              </>
+                            ) : (
+                              <>
+                                <Image className="mr-1 h-3 w-3" />
+                                Download
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 )}
               </div>
             </div>
