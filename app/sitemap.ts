@@ -117,9 +117,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://www.fasttools.store/fun-tools",
-      lastModified: getFreshnessDate(14),
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.8,
     },
   ]
 
@@ -334,8 +334,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.95,
     },
+    // Social Media Tools
     {
       url: "https://www.fasttools.store/social-media-tools/tiktok-downloader",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/social-media-tools/youtube-tags",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/social-media-tools/youtube-thumbnail",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/social-media-tools/channel-checker",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/social-media-tools/hashtag-counter",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/social-media-tools/instagram-dp",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/social-media-tools/link-in-bio",
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,
       priority: 0.95,
@@ -417,6 +454,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,
       priority: 0.9,
+    },
+
+    // Fun Tools
+    {
+      url: "https://www.fasttools.store/fun-tools/anniversary",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.8,
+    },
+    {
+      url: "https://www.fasttools.store/fun-tools/birthday-countdown",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.8,
+    },
+    {
+      url: "https://www.fasttools.store/fun-tools/future-age",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.8,
     },
 
   ]

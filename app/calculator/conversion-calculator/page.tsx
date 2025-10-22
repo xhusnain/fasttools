@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   },
   keywords: [
     "conversion calculator",
+    "converting calculator",
     "unit converter",
     "online converter",
     "free converter",

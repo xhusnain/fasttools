@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description: "Use our free Time Duration Calculator to find the exact time between two points — in hours, minutes, and seconds. Perfect for tracking work hours, study time, events, or any time interval.",
   keywords: [
     "time duration calculator",
+    "duration calculation",
     "time difference calculator",
     "hours and minutes calculator",
     "calculate time between two times",

@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Calendar, Heart, Hash, Cake, PartyPopper, Sparkles, Zap, Target, Users, TrendingUp, Star, Globe, Shield } from "lucide-react"
+import { ArrowRight, Calendar, Hash, Cake, PartyPopper, Code, Globe, Calculator } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
@@ -11,137 +11,35 @@ export const metadata: Metadata = {
   description:
     "Discover fun and entertaining online tools including Love Calculator, Future Age Predictor, Birthday Countdown, Anniversary Calculator, and Instagram Hashtag Counter. Free and easy to use!",
   keywords: [
-    // Primary Keywords (20)
-    "fun tools",
-    "free fun tools",
-    "love calculator",
-    "future age predictor",
-    "birthday countdown",
-    "anniversary calculator",
-    "hashtag counter",
-    "entertainment tools",
-    "free online tools",
-    "social media tools",
-    "relationship tools",
-    "celebration tools",
-    "party tools",
-    "fun calculators",
-    "entertainment calculators",
-    "social tools",
-    "trending tools",
-    "viral tools",
-    "fun apps",
-    "entertainment apps",
-    
-    // Secondary Keywords (20)
-    "love calculator online",
-    "future age predictor online",
-    "birthday countdown online",
-    "anniversary calculator online",
-    "hashtag counter online",
-    "entertainment tools online",
-    "free online tools online",
-    "social media tools online",
-    "relationship tools online",
-    "celebration tools online",
-    "party tools online",
-    "fun calculators online",
-    "entertainment calculators online",
-    "social tools online",
-    "trending tools online",
-    "viral tools online",
-    "fun apps online",
-    "entertainment apps online",
-    "free fun tools online",
-    "online fun tools",
-    
-    // Long-tail Keywords (20)
-    "free online fun tools",
-    "best fun tools online",
-    "fun tools with live preview",
-    "free fun tools tool online",
-    "online fun tools free",
-    "fun tools online free",
-    "love calculator free online",
-    "future age predictor free online",
-    "birthday countdown free online",
-    "anniversary calculator free online",
-    "hashtag counter free online",
-    "entertainment tools free online",
-    "free online tools free online",
-    "social media tools free online",
-    "relationship tools free online",
-    "celebration tools free online",
-    "party tools free online",
-    "fun calculators free online",
-    "entertainment calculators free online",
-    "social tools free online",
-    
-    // Additional SEO Keywords
-    "trending tools",
-    "viral tools",
-    "fun apps",
-    "entertainment apps",
-    "love calculator online",
-    "future age predictor online",
-    "birthday countdown online",
-    "anniversary calculator online",
-    "hashtag counter online",
-    "entertainment tools online",
-    "free online tools online",
-    "social media tools online",
-    "relationship tools online",
-    "celebration tools online",
-    "party tools online",
-    "fun calculators online",
-    "entertainment calculators online",
-    "social tools online",
-    "trending tools online",
-    "viral tools online",
-    "fun apps online",
-    "entertainment apps online",
-    "free fun tools online",
-    "online fun tools",
-    "fun tools free",
-    "love calculator free",
-    "future age predictor free",
-    "birthday countdown free",
-    "anniversary calculator free",
-    "hashtag counter free",
-    "entertainment tools free",
-    "free online tools free",
-    "social media tools free",
-    "relationship tools free",
-    "celebration tools free",
-    "party tools free",
-    "fun calculators free",
-    "entertainment calculators free",
-    "social tools free",
-    "trending tools free",
-    "viral tools free",
-    "fun apps free",
-    "entertainment apps free",
-    "free fun tools free",
-    "fun tools tool",
-    "love calculator tool",
-    "future age predictor tool",
-    "birthday countdown tool",
-    "anniversary calculator tool",
-    "hashtag counter tool",
-    "entertainment tools tool",
-    "free online tools tool",
-    "social media tools tool",
-    "relationship tools tool",
-    "celebration tools tool",
-    "party tools tool",
-    "fun calculators tool",
-    "entertainment calculators tool",
-    "social tools tool",
-    "trending tools tool",
-    "viral tools tool",
-    "fun apps tool",
-    "entertainment apps tool",
-    "free fun tools tool"
+      "fun tools",
+      "free online tools",
+      "love calculator",
+      "future age predictor",
+      "birthday countdown",
+      "anniversary calculator",
+      "hashtag counter",
+      "entertainment tools",
+      "social media tools",
+      "relationship tools",
+      "celebration tools",
+      "party tools",
+      "fun calculators",
+      "entertainment calculators",
+      "social tools",
+      "trending tools",
+      "viral tools",
+      "fun apps",
+      "entertainment apps",
+      "online fun tools",
+      "free fun tools online",
+      "online entertainment tools",
+      "online social media tools",
+      "online party tools",
+      "free online calculators",
+      "online celebration tools",
+      "free online fun apps",
+      "online viral tools",
+      "online trending tools"
   ],
   openGraph: {
     title: "Free Fun Tools | Love Calculator, Birthday Countdown & More | FastTools",
@@ -181,12 +79,11 @@ const jsonLd = {
     "@type": "ItemList",
     name: "Fun Tools Collection",
     description: "Comprehensive collection of free online fun tools and entertainment utilities for social media, relationships, and celebrations",
-    numberOfItems: 4,
+    numberOfItems: 3,
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Future Age Predictor", description: "Discover how old you'll be in any future year", url: "https://www.fasttools.store/fun-tools/future-age" },
-      { "@type": "ListItem", position: 2, name: "Instagram Hashtag Counter", description: "Count and extract hashtags from your Instagram posts", url: "https://www.fasttools.store/fun-tools/hashtag-counter" },
-      { "@type": "ListItem", position: 3, name: "Birthday Countdown", description: "Real-time countdown to your next birthday celebration", url: "https://www.fasttools.store/fun-tools/birthday-countdown" },
-      { "@type": "ListItem", position: 4, name: "Anniversary Calculator", description: "Calculate how long you've been together and when your next anniversary is", url: "https://www.fasttools.store/fun-tools/anniversary" }
+      { "@type": "ListItem", position: 2, name: "Birthday Countdown", description: "Real-time countdown to your next birthday celebration", url: "https://www.fasttools.store/fun-tools/birthday-countdown" },
+      { "@type": "ListItem", position: 3, name: "Anniversary Calculator", description: "Calculate how long you've been together and when your next anniversary is", url: "https://www.fasttools.store/fun-tools/anniversary" }
     ]
   },
   breadcrumb: {
@@ -218,13 +115,6 @@ export default function FunToolsPage() {
       popular: true,
     },
     {
-      title: "Instagram Hashtag Counter",
-      description: "Count and extract hashtags from your Instagram posts. Perfect for social media management.",
-      icon: Hash,
-      href: "/fun-tools/hashtag-counter",
-      popular: false,
-    },
-    {
       title: "Birthday Countdown",
       description: "Real-time countdown to your next birthday in days, hours, minutes, and seconds!",
       icon: Cake,
@@ -243,316 +133,231 @@ export default function FunToolsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="flex flex-col min-h-screen">
-        {/* Hero Section with Rainbow Background */}
-        <div className="relative overflow-hidden">
-          {/* Rainbow Animated Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 via-purple-500/20 via-blue-500/20 to-cyan-500/20"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/15 via-transparent to-transparent"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-red-400/10 via-transparent to-transparent"></div>
-          
-          {/* Floating Particles */}
-          <div className="absolute top-10 left-10 h-4 w-4 bg-pink-500 rounded-full animate-bounce animation-delay-100 shadow-lg shadow-pink-500/50"></div>
-          <div className="absolute top-20 right-20 h-5 w-5 bg-blue-500 rounded-full animate-bounce animation-delay-500 shadow-lg shadow-blue-500/50"></div>
-          <div className="absolute bottom-20 left-20 h-4 w-4 bg-yellow-500 rounded-full animate-bounce animation-delay-1000 shadow-lg shadow-yellow-500/50"></div>
-          <div className="absolute bottom-10 right-10 h-3 w-3 bg-green-500 rounded-full animate-bounce animation-delay-1500 shadow-lg shadow-green-500/50"></div>
-          
-          <div className="container mx-auto px-4 py-8 relative">
-            <Breadcrumbs
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Fun Tools", href: "/fun-tools" },
-              ]}
-            />
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 py-8">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Fun Tools", href: "/fun-tools" },
+            ]}
+          />
 
-            <div className="max-w-6xl mx-auto mt-8 space-y-8">
-              {/* Desktop Sidebar Ad */}
-              <div className="hidden lg:block fixed right-4 top-1/2 transform -translate-y-1/2 z-10">
-                <div className="text-center mb-2">
-                  <span className="text-xs text-white/60 font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="sidebar" className="w-32 h-96 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" shape="vertical" />
-              </div>
-              {/* Hero Section */}
-              <div className="text-center space-y-6 animate-fade-in-up">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pink-500/30 via-purple-500/30 via-blue-500/30 to-cyan-500/30 border border-pink-400/50 text-white text-sm font-bold mb-6">
-                  <Sparkles className="h-4 w-4 animate-pulse" />
-                  <span>Fun & Trending Tools</span>
-                  <div className="h-2 w-2 bg-green-400 rounded-full animate-ping"></div>
-                </div>
-                
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 via-blue-400 via-cyan-400 to-yellow-400 leading-tight">
-                  Fun & Trending Tools
-                </h1>
-                
-                <p className="text-lg md:text-xl text-white/90 text-pretty max-w-3xl mx-auto leading-relaxed">
-                  Discover entertaining and fun online tools for social media, relationships, and celebrations. All tools are free and easy to use!
-                </p>
-                
-                {/* Enhanced SEO Stats */}
-                <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-white/80">
-                  <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-blue-600/20 border border-blue-400/30">
-                    <Heart className="h-4 w-4" />
-                    <span>Love Calculator</span>
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-8">
+              <div className="flex-1 lg:flex-[2] space-y-6">
+                {/* Hero Section */}
+                <div className="text-center space-y-5 animate-fade-in-up">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-4 shadow-md">
+                    <Code className="h-4 w-4 animate-pulse" />
+                    <span>Fun & Entertainment Tools</span>
+                    <div className="h-2 w-2 bg-secondary-accent rounded-full animate-ping"></div>
                   </div>
-                  <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-purple-600/20 border border-purple-400/30">
-                    <Users className="h-4 w-4" />
-                    <span>100K+ Users</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-400/30">
-                    <Zap className="h-4 w-4" />
-                    <span>Free Forever</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pink-500/20 to-pink-600/20 border border-pink-400/30">
-                    <Target className="h-4 w-4" />
-                    <span>Viral Tools</span>
-                  </div>
-                </div>
-              </div>
 
-              {/* First Ad Space - After Hero Content */}
-              <div className="mb-8">
-                <div className="text-center mb-2">
-                  <span className="text-xs text-white/60 font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
-              </div>
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">
+                    Fun Tools & Social Helpers
+                  </h1>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {tools.map((tool, index) => (
-                  <Card
-                    key={tool.href}
-                    className="border-2 border-white/20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl hover:shadow-2xl transition-all hover:-translate-y-2 animate-fade-in-up hover:border-white/30"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <CardHeader className="p-6">
-                      <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center mb-4 border border-pink-400/30 shadow-lg">
-                        <tool.icon className="h-7 w-7 text-pink-400" />
-                      </div>
-                      <CardTitle className="text-xl font-bold text-white">{tool.title}</CardTitle>
-                      <CardDescription className="leading-relaxed text-sm text-white/80">
-                        {tool.description}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-6 pt-0">
-                      <Button asChild className="w-full h-12 text-sm font-semibold shadow-lg hover:shadow-xl transition-all bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white">
-                        <Link href={tool.href}>
-                          Use Tool
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-
-              {/* Second Ad Space - Between Tools and Content */}
-              <div className="my-8">
-                <div className="text-center mb-2">
-                  <span className="text-xs text-white/60 font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
-              </div>
-
-              {/* SEO Content Section */}
-              <div className="prose prose-slate max-w-none space-y-8">
-                <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Why Choose Our Fun Tools?</h2>
-                  <p className="text-white/80 leading-relaxed mb-4">
-                    Our comprehensive collection of <strong>fun tools</strong> is designed to bring joy and entertainment to your daily life. From calculating love 
-                    compatibility to tracking birthdays and anniversaries, our <strong>free fun tools</strong> provide endless fun and social sharing 
-                    opportunities for everyone.
+                  <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
+                    Enjoy playful, privacy-friendly tools for celebrations, relationships, and social content. All free, fast, and easy to use.
                   </p>
-                  <ul className="list-disc list-inside space-y-2 text-white/80">
-                    <li><strong>Free to use</strong> with no registration required</li>
-                    <li><strong>Mobile-friendly</strong> and responsive design for all devices</li>
-                    <li><strong>Easy sharing</strong> on social media platforms</li>
-                    <li><strong>No data sent to servers</strong> for maximum privacy</li>
-                    <li><strong>Always entertaining</strong> and fun for all ages</li>
-                    <li><strong>Perfect for social gatherings</strong> and parties</li>
-                    <li><strong>Viral and trending</strong> tools for social media</li>
-                    <li><strong>Instant results</strong> with real-time calculations</li>
-                  </ul>
+
+                  <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
+                      <Code className="h-4 w-4 text-primary" />
+                      <span className="text-primary font-medium text-sm">4+ Tools</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
+                      <Globe className="h-4 w-4 text-green-600" />
+                      <span className="text-green-600 font-medium text-sm">Global Use</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-accent shadow">
+                      <Calculator className="h-4 w-4 text-accent" />
+                      <span className="text-accent font-medium text-sm">Free Forever</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-secondary-accent shadow">
+                      <ArrowRight className="h-4 w-4 text-secondary-accent" />
+                      <span className="text-secondary-accent font-medium text-sm">Just for Fun</span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Middle Content Ad */}
-                <div className="my-8">
+                {/* Mobile/Tablet Ad - Top of Page */}
+                <div className="block xl:hidden mb-6">
                   <div className="text-center mb-2">
-                    <span className="text-xs text-white/60 font-medium">Advertisement</span>
+                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                   </div>
-                  <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
+                  <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
                 </div>
 
-                <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Comprehensive Fun Tool Categories</h2>
-                  <p className="text-white/80 leading-relaxed mb-4">
-                    Our <strong>fun tools</strong> are organized into specialized categories to meet all your entertainment needs:
-                  </p>
-                  
-                  <h3 className="text-xl font-semibold mb-3 text-white">Relationship & Love Tools</h3>
-                  <p className="text-white/80 leading-relaxed mb-4">
-                    Love calculator for compatibility testing, anniversary calculator for relationship milestones, 
-                    and relationship tools. Perfect for couples, friends, and family fun.
-                  </p>
-                  
-                  <h3 className="text-xl font-semibold mb-3 text-white">Celebration & Birthday Tools</h3>
-                  <p className="text-white/80 leading-relaxed mb-4">
-                    Birthday countdown for upcoming celebrations, future age predictor for fun age calculations, 
-                    and celebration tools. Great for parties, events, and special occasions.
-                  </p>
-                  
-                  <h3 className="text-xl font-semibold mb-3 text-white">Social Media & Hashtag Tools</h3>
-                  <p className="text-white/80 leading-relaxed mb-4">
-                    Instagram hashtag counter for social media management, hashtag tools for content creators, 
-                    and social media utilities. Essential for influencers and content creators.
-                  </p>
-                  
-                  <h3 className="text-xl font-semibold mb-3 text-white">Entertainment & Party Tools</h3>
-                  <p className="text-white/80 leading-relaxed mb-4">
-                    Fun calculators for parties, entertainment tools for social gatherings, 
-                    and viral tools for social media. Perfect for events and entertainment.
-                  </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                  {tools.map((tool, index) => (
+                    <Card
+                      key={`fun-tools-${tool.href}`}
+                      className="border border-border shadow-lg bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 animate-fade-in-up group"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      <CardHeader className="p-3 pb-1">
+                        <div className="flex items-start gap-3">
+                          <div className="h-9 w-9 rounded-lg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300 flex-shrink-0 bg-primary/10 border border-primary/20">
+                            <tool.icon className="h-4 w-4 text-primary" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <CardTitle className="text-sm md:text-base font-semibold text-card-foreground mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-2">{tool.title}</CardTitle>
+                            <CardDescription className="leading-relaxed text-[11px] md:text-xs text-muted-foreground line-clamp-2">
+                              {tool.description}
+                            </CardDescription>
+                          </div>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="p-3 pt-0">
+                        <Button asChild className="w-full h-8 text-xs font-semibold shadow hover:shadow-md transition-all duration-300 bg-primary hover:bg-primary/90 text-white group-hover:bg-accent group-hover:text-white">
+                          <Link href={tool.href} className="flex items-center justify-center gap-1">
+                            Use Tool
+                            <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform duration-300" />
+                          </Link>
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  ))}
                 </div>
 
-                <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Popular Fun Tools</h2>
-                  <p className="text-white/80 leading-relaxed mb-4">
-                    Discover our most popular <strong>fun tools</strong> that bring joy to thousands of users every day:
-                  </p>
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div className="p-4 border border-white/20 rounded-lg bg-white/5 backdrop-blur-sm">
-                      <h3 className="font-semibold text-white mb-2">Love Calculator</h3>
-                      <p className="text-sm text-white/80">Calculate love compatibility between two people for fun. Perfect for couples and friends.</p>
+                {/* Mobile/Tablet Ad - After cards */}
+                <div className="block xl:hidden my-8">
+                  <div className="text-center mb-2">
+                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
+                </div>
+
+                {/* Content Sections */}
+                <div className="space-y-5 animate-fade-in-up animation-delay-200">
+                  <div className="p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-card-foreground">Our Fun Tool Technology</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Our playful tools pair intuitive UIs with reliable, client-side logic. Inputs are validated and
+                      calculations are performed locally for speed and privacy, delivering consistent results every time.
+                    </p>
+
+                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Smart, Lightweight Engine</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Countdowns tick in real time, date math stays precise, and text utilities process instantly — all
+                      tuned for responsiveness across devices.
+                    </p>
+
+                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Delightful by Design</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Clear layouts, accessible controls, and friendly micro-interactions keep experiences fast and fun
+                      while remaining dependable.
+                    </p>
+                  </div>
+
+                  <div className="p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-card-foreground">Ideas and Use Cases</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Try these ways to make the most of the collection.
+                    </p>
+
+                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Celebrations</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Run a birthday countdown for events, preview future ages for milestones, and share fun moments
+                      with friends.
+                    </p>
+
+                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Social Content</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Manage hashtags cleanly, generate timely posts, and keep audiences engaged with lighthearted tools.
+                    </p>
+                  </div>
+
+                  {/* FAQ Section (matches calculator theme) */}
+                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                      <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
+                        <Code className="h-4 w-4 text-accent" />
+                      </div>
+                      Complete Guide to Fun Tools: Everything You Need to Know
+                    </h2>
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">What exactly are fun tools and why should I use them?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Fun tools are interactive applications designed to entertain, engage, and sometimes educate users through playful experiences. Unlike traditional productivity software, these tools prioritize enjoyment while still providing practical value. They're perfect for breaking up monotonous routines, sparking creativity, and adding moments of joy to your day. Whether you're planning a birthday celebration, tracking relationship milestones, or managing social media content, fun tools transform ordinary tasks into engaging experiences. They're particularly valuable for content creators, event planners, and anyone looking to inject more personality into their digital interactions.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How do love calculators actually work and are they accurate?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Love calculators use various algorithms based on name compatibility, numerology, or random number generation to create entertaining results. While they're not scientifically accurate predictors of relationship success, they serve as delightful conversation starters and fun activities for couples and friends. The calculations typically involve analyzing letter patterns in names, applying mathematical formulas, or using predetermined algorithms that generate percentages. These tools are designed purely for entertainment purposes and should never be taken as serious relationship advice. They work best as icebreakers, party games, or lighthearted ways to celebrate relationships. The real value lies in the shared laughter and bonding experience they create rather than any predictive accuracy.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">What's the best way to use birthday countdown tools for events?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Birthday countdown tools excel at building anticipation and excitement for upcoming celebrations. They're perfect for creating social media posts, planning surprise parties, or simply adding excitement to the days leading up to special occasions. Use them to coordinate with friends and family by sharing countdown screenshots, create themed content for social media platforms, or build excitement for milestone birthdays. Many people find these tools helpful for planning purposes, as they provide clear timelines for organizing parties, purchasing gifts, or arranging special activities. The visual countdown format makes time feel more tangible and exciting, especially for children or anyone who enjoys the anticipation of special events.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How can anniversary calculators help strengthen relationships?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Anniversary calculators serve multiple purposes beyond simple date tracking. They help couples celebrate milestones, plan special occasions, and maintain awareness of their relationship timeline. By calculating exact durations in various formats (days, weeks, months, years), these tools provide concrete data that can be meaningful for relationship milestones. They're particularly useful for planning anniversary celebrations, creating personalized gifts based on relationship duration, or simply appreciating how much time has been invested in the relationship. Many couples use these calculations for social media posts, creating memory books, or planning future celebrations. The tools can also help identify upcoming milestone anniversaries that deserve special recognition.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Why are hashtag counters essential for social media success?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Hashtag counters are crucial tools for social media optimization and content strategy. They help users understand hashtag usage patterns, avoid over-tagging, and optimize posts for maximum reach. By analyzing hashtag frequency and distribution, these tools enable content creators to make informed decisions about their social media strategy. They're particularly valuable for Instagram users, where hashtag limits and effectiveness vary significantly. The counters help identify trending hashtags, avoid banned or shadowbanned tags, and maintain optimal hashtag density. For businesses and influencers, these tools provide data-driven insights that can improve engagement rates and follower growth. They also help maintain brand consistency by tracking hashtag performance across campaigns.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Are these tools safe to use and do they protect my privacy?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Our fun tools prioritize user privacy and security by operating entirely within your browser. All calculations, countdowns, and analyses happen locally on your device, meaning no personal data is transmitted to external servers. This client-side processing ensures that your names, dates, and other inputs remain completely private. The tools don't require account creation, email addresses, or any personal information beyond what you choose to input. This approach eliminates concerns about data breaches, unauthorized access, or unwanted marketing communications. Users can confidently use these tools for personal, professional, or social purposes without worrying about privacy implications. The local processing also ensures faster performance and eliminates dependency on internet connectivity for core functionality.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How can I integrate these tools into my daily routine effectively?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Integrating fun tools into your daily routine can enhance productivity while adding enjoyment to mundane tasks. Use birthday countdowns to plan ahead for celebrations and gift purchases, employ anniversary calculators to maintain relationship awareness and plan special moments, and utilize hashtag counters during content creation sessions. These tools work best when used intentionally rather than randomly. Set specific times for checking countdowns, use calculators during planning sessions, and incorporate hashtag analysis into your social media workflow. The key is to view these tools as enhancements to existing activities rather than distractions. They can serve as motivation boosters, relationship maintenance aids, and content optimization helpers when used strategically.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">What makes these tools different from other online calculators?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Our fun tools distinguish themselves through their focus on entertainment value, user experience, and practical application. Unlike traditional calculators that prioritize only functionality, these tools combine accuracy with engaging interfaces and meaningful results. They're designed with social sharing in mind, featuring results that are both informative and shareable. The tools prioritize speed and simplicity, delivering instant results without complex setup or learning curves. They're optimized for mobile use, ensuring consistent performance across all devices. The combination of privacy-focused design, entertainment value, and practical utility creates a unique user experience that serves both personal enjoyment and professional needs. Each tool is crafted to provide maximum value with minimal effort, making them accessible to users of all technical skill levels.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Can these tools help with content creation and social media strategy?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Absolutely! These tools are invaluable for content creators, social media managers, and digital marketers. Birthday countdowns provide engaging content opportunities, anniversary calculators offer relationship-focused content ideas, and hashtag counters optimize social media performance. Content creators can use countdown tools to build anticipation for product launches, events, or personal milestones. Anniversary calculators help create relationship-focused content that resonates with audiences. Hashtag counters provide data-driven insights for improving reach and engagement. The tools generate shareable results that can become content themselves, from countdown screenshots to compatibility results. They also provide timing insights that help optimize posting schedules and content planning.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How do I choose the right fun tool for my specific needs?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Selecting the appropriate fun tool depends on your goals, audience, and use case. For personal entertainment and relationship activities, love calculators and anniversary tools work perfectly. Event planners and party organizers benefit most from birthday countdown tools for building excitement and coordinating timing. Social media professionals and content creators should prioritize hashtag counters for optimization and strategy development. Consider your primary use case: are you planning celebrations, managing social media, strengthening relationships, or creating content? Each tool excels in specific scenarios. Love calculators work best for couples, friends, and social gatherings. Countdown tools are ideal for event planning and anticipation building. Anniversary calculators serve relationship maintenance and milestone celebration needs. Hashtag counters are essential for social media optimization and content strategy.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">What are the most creative ways to use these tools beyond their basic functions?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">These tools offer numerous creative applications beyond their primary purposes. Use love calculators as icebreakers in team-building exercises, party games, or classroom activities. Birthday countdowns can track project deadlines, product launches, or personal goals with a fun twist. Anniversary calculators work for tracking business partnerships, pet adoptions, or friendship milestones. Hashtag counters can analyze competitor strategies, track campaign performance, or identify trending topics beyond social media. Content creators can use countdown tools to build anticipation for blog posts, videos, or product releases. Teachers can incorporate these tools into lessons about time, relationships, or social media literacy. The key is to think beyond traditional uses and explore how these tools can enhance various aspects of personal and professional life.</p>
+                      </div>
                     </div>
-                    <div className="p-4 border border-white/20 rounded-lg bg-white/5 backdrop-blur-sm">
-                      <h3 className="font-semibold text-white mb-2">Birthday Countdown</h3>
-                      <p className="text-sm text-white/80">Real-time countdown to your next birthday celebration. Great for parties and events.</p>
-                    </div>
-                    <div className="p-4 border border-white/20 rounded-lg bg-white/5 backdrop-blur-sm">
-                      <h3 className="font-semibold text-white mb-2">Future Age Predictor</h3>
-                      <p className="text-sm text-white/80">See how old you'll be in any future year. Fun way to visualize your future age.</p>
-                    </div>
-                    <div className="p-4 border border-white/20 rounded-lg bg-white/5 backdrop-blur-sm">
-                      <h3 className="font-semibold text-white mb-2">Instagram Hashtag Counter</h3>
-                      <p className="text-sm text-white/80">Count and extract hashtags from your Instagram posts. Perfect for social media management.</p>
-                    </div>
-                    <div className="p-4 border border-white/20 rounded-lg bg-white/5 backdrop-blur-sm">
-                      <h3 className="font-semibold text-white mb-2">Anniversary Calculator</h3>
-                      <p className="text-sm text-white/80">Calculate how long you've been together and when your next anniversary is.</p>
-                    </div>
-                    <div className="p-4 border border-white/20 rounded-lg bg-white/5 backdrop-blur-sm">
-                      <h3 className="font-semibold text-white mb-2">Entertainment Tools</h3>
-                      <p className="text-sm text-white/80">Fun and entertaining tools for parties, social gatherings, and viral content.</p>
+                    <div className="mt-6 block xl:hidden">
+                      <div className="text-center mb-2">
+                        <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                      </div>
+                      <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
                     </div>
                   </div>
-                </div>
-
-                <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Advanced Fun Features</h2>
-                  <p className="text-white/80 leading-relaxed mb-4">
-                    Our <strong>fun tools</strong> include advanced features for maximum entertainment:
-                  </p>
-                  <ul className="list-disc list-inside space-y-2 text-white/80">
-                    <li><strong>Real-time Updates:</strong> Live countdowns and instant calculations</li>
-                    <li><strong>Social Sharing:</strong> Easy sharing on all social media platforms</li>
-                    <li><strong>Mobile Optimization:</strong> Perfect experience on all devices</li>
-                    <li><strong>No Registration:</strong> Use immediately without creating accounts</li>
-                    <li><strong>Privacy Focused:</strong> All calculations run locally in your browser</li>
-                    <li><strong>Viral Content:</strong> Tools designed for social media sharing</li>
-                    <li><strong>Entertainment Value:</strong> Fun and engaging for all ages</li>
-                    <li><strong>Trending Features:</strong> Tools that go viral on social media</li>
-                  </ul>
-                </div>
-
-                <div className="p-6 rounded-lg bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Use Cases for Our Fun Tools</h2>
-                  <p className="text-white/80 leading-relaxed mb-4">
-                    Our <strong>free fun tools</strong> are perfect for various entertainment scenarios:
-                  </p>
-                  
-                  <h3 className="text-xl font-semibold mb-3 text-white">Social Media & Content Creation</h3>
-                  <ul className="list-disc list-inside space-y-2 text-white/80">
-                    <li>Instagram hashtag management and counting</li>
-                    <li>Viral content creation for social media</li>
-                    <li>Trending tools for engagement</li>
-                    <li>Social media entertainment content</li>
-                    <li>Content creator utilities</li>
-                  </ul>
-                  
-                  <h3 className="text-xl font-semibold mb-3 text-white">Parties & Celebrations</h3>
-                  <ul className="list-disc list-inside space-y-2 text-white/80">
-                    <li>Birthday countdowns and celebrations</li>
-                    <li>Anniversary tracking and planning</li>
-                    <li>Party entertainment and games</li>
-                    <li>Social gathering activities</li>
-                    <li>Event planning and fun</li>
-                  </ul>
-                  
-                  <h3 className="text-xl font-semibold mb-3 text-white">Relationships & Fun</h3>
-                  <ul className="list-disc list-inside space-y-2 text-white/80">
-                    <li>Love compatibility testing for fun</li>
-                    <li>Relationship milestone tracking</li>
-                    <li>Couple entertainment and games</li>
-                    <li>Friendship and social bonding</li>
-                    <li>Family fun and activities</li>
-                  </ul>
                 </div>
               </div>
-
-              {/* Comprehensive Fun Tools Section */}
-              <div className="mt-12">
-                <h3 className="text-xl md:text-2xl font-semibold text-white mb-6">Comprehensive Fun Tools</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <Card className="border-2 border-white/20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl">
-                    <CardHeader>
-                      <CardTitle className="flex items-center gap-2 text-white">
-                        <Heart className="h-5 w-5 text-red-400" />
-                        Love Calculator Guide
-                      </CardTitle>
-                      <CardDescription className="text-white/80">
-                        Complete guide to love compatibility calculations and relationship fun.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-white/80 mb-4">
-                        Master love calculations with our comprehensive guide covering compatibility factors, 
-                        algorithms, relationship psychology, and social sharing strategies.
-                      </p>
-                      <Button asChild variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
-                        <Link href="/calculator/love-calculator">Try Love Calculator</Link>
-                      </Button>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-2 border-white/20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl">
-                    <CardHeader>
-                      <CardTitle className="flex items-center gap-2 text-white">
-                        <Calendar className="h-5 w-5 text-blue-400" />
-                        Future Age Predictor Guide
-                      </CardTitle>
-                      <CardDescription className="text-white/80">
-                        Complete guide to age prediction, time calculations, and birthday planning.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-white/80 mb-4">
-                        Master future age calculations with our comprehensive guide covering time concepts, 
-                        life milestones, birthday planning, and practical applications.
-                      </p>
-                      <Button asChild variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
-                        <Link href="/fun-tools/future-age">Try Future Age Predictor</Link>
-                      </Button>
-                    </CardContent>
-                  </Card>
+              {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
+              <div className="hidden lg:block w-72">
+                <div className="sticky top-32 space-y-6">
+                  <div>
+                    <div className="text-center mb-2">
+                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                    </div>
+                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
+                  </div>
+                  <div>
+                    <div className="text-center mb-2">
+                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                    </div>
+                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
+                  </div>
                 </div>
-              </div>
-
-              {/* Final Ad Space - Bottom Content */}
-              <div className="mt-8">
-                <div className="text-center mb-2">
-                  <span className="text-xs text-white/60 font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="content" className="w-full h-24 border border-white/20 rounded-xl shadow-sm bg-white/5 backdrop-blur-xl" />
               </div>
             </div>
           </div>
