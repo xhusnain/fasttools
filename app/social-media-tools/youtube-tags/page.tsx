@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   description: "Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve your video ranking on YouTube. Works on all devices.",
   keywords: [
     "youtube tag extractor",
+    "youtube tag generator",
     "extract youtube tags",
     "youtube tags",
     "video tags",
     "youtube seo",
-    "youtube tag generator",
     "tags finder",
     "keyword research",
     "video keyword ideas",

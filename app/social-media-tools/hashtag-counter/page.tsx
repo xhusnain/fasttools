@@ -72,17 +72,7 @@ export const metadata: Metadata = {
       "calculating conversions",
       "instagram tag extractor",
       "hashtag extractor for instagram",
-      "instagram tags extractor",
-      "youtube tag generator",
-      "duration calculation",
-      "concrete formula",
-      "age in hours",
-      "ipv4 subnet creator",
-      "converter measurement",
-      "file size in kb",
-      "measures converter",
-      "conversion of lengths",
-      "converting calculator"
+      "instagram tags extractor"
   ],
   alternates: { canonical: "https://www.fasttools.store/social-media-tools/hashtag-counter" },
   openGraph: {
@@ -170,7 +160,7 @@ export const metadata: Metadata = {
       softwareVersion: "2.0",
       downloadUrl: "https://www.fasttools.store/social-media-tools/hashtag-counter",
       screenshot: "https://www.fasttools.store/og-image.svg",
-      keywords: "instagram hashtag counter, instagram hashtag generator, hashtag counter, hashtag generator, instagram hashtag extractor, instagram tag extractor, instagram tags extractor, hashtag extractor for instagram, instagram hashtag for posts count, hashtags, free hashtag counter, free hashtag generator, count hashtags, extract hashtags, generate hashtags, ai hashtag generator, hashtag analyzer, hashtag optimization, hashtag research tool, social media tools, calculating conversions, youtube tag generator, duration calculation, concrete formula, age in hours, ipv4 subnet creator, converter measurement, file size in kb, measures converter, conversion of lengths, converting calculator",
+      keywords: "instagram hashtag counter, instagram hashtag generator, hashtag counter, hashtag generator, instagram hashtag extractor, instagram tag extractor, instagram tags extractor, hashtag extractor for instagram, instagram hashtag for posts count, hashtags, free hashtag counter, free hashtag generator, count hashtags, extract hashtags, generate hashtags, ai hashtag generator, hashtag analyzer, hashtag optimization, hashtag research tool, social media tools, calculating conversions",
       about: {
         "@type": "Thing",
         name: "Social Media and Hashtag Tools",
