@@ -14,6 +14,7 @@ interface InvoiceItem {
   description: string
   quantity: number
   rate: number
+  taxRate: number // Tax rate for this specific item (0-100)
 }
 
 export function InvoiceGenerator() {
@@ -34,9 +35,9 @@ export function InvoiceGenerator() {
   const [dueDate, setDueDate] = useState("")
   const [companyName, setCompanyName] = useState("")
   const [items, setItems] = useState<InvoiceItem[]>([
-    { id: "1", description: "Brochure Design", quantity: 2, rate: 100 },
-    { id: "2", description: "Enter item name/description", quantity: 1, rate: 0 },
-    { id: "3", description: "Enter item name/description", quantity: 1, rate: 0 }
+    { id: "1", description: "Brochure Design", quantity: 2, rate: 100, taxRate: 0 },
+    { id: "2", description: "Enter item name/description", quantity: 1, rate: 0, taxRate: 0 },
+    { id: "3", description: "Enter item name/description", quantity: 1, rate: 0, taxRate: 0 }
   ])
   const [selectedTheme, setSelectedTheme] = useState("red")
   const [selectedTemplate, setSelectedTemplate] = useState("standard")
@@ -45,6 +46,8 @@ export function InvoiceGenerator() {
   const [terms, setTerms] = useState("Payment is due within 30 days of invoice date. Late payments may incur additional fees.")
   const [currency, setCurrency] = useState("USD")
   const [language, setLanguage] = useState("en")
+  const [taxRate, setTaxRate] = useState(0) // Tax rate as percentage (0-100)
+  const [discount, setDiscount] = useState(0) // Discount as percentage (0-100)
 
   // Simple translation system with top 15 languages
   const translations: Record<string, Record<string, string>> = {
@@ -62,6 +65,9 @@ export function InvoiceGenerator() {
       'invoice.totals.subtotal': 'Subtotal',
       'invoice.totals.tax': 'Tax',
       'invoice.totals.total': 'Total',
+      'invoice.totals.discount': 'Discount',
+      'invoice.totals.taxRate': 'Tax Rate (%)',
+      'invoice.totals.discountRate': 'Discount (%)',
       'invoice.notes': 'Notes',
       'invoice.terms': 'Terms & Conditions',
       'invoice.controls.theme': 'Theme',
@@ -90,6 +96,9 @@ export function InvoiceGenerator() {
       'invoice.totals.subtotal': 'Sous-total',
       'invoice.totals.tax': 'Taxe',
       'invoice.totals.total': 'Total',
+      'invoice.totals.discount': 'Remise',
+      'invoice.totals.taxRate': 'Taux de taxe (%)',
+      'invoice.totals.discountRate': 'Remise (%)',
       'invoice.notes': 'Notes',
       'invoice.terms': 'Termes et conditions',
       'invoice.controls.theme': 'Thème',
@@ -118,6 +127,9 @@ export function InvoiceGenerator() {
       'invoice.totals.subtotal': 'Subtotal',
       'invoice.totals.tax': 'Impuesto',
       'invoice.totals.total': 'Total',
+      'invoice.totals.discount': 'Descuento',
+      'invoice.totals.taxRate': 'Tasa de impuesto (%)',
+      'invoice.totals.discountRate': 'Descuento (%)',
       'invoice.notes': 'Notas',
       'invoice.terms': 'Términos y condiciones',
       'invoice.controls.theme': 'Tema',
@@ -146,6 +158,9 @@ export function InvoiceGenerator() {
       'invoice.totals.subtotal': 'Zwischensumme',
       'invoice.totals.tax': 'Steuer',
       'invoice.totals.total': 'Gesamt',
+      'invoice.totals.discount': 'Rabatt',
+      'invoice.totals.taxRate': 'Steuersatz (%)',
+      'invoice.totals.discountRate': 'Rabatt (%)',
       'invoice.notes': 'Notizen',
       'invoice.terms': 'Geschäftsbedingungen',
       'invoice.controls.theme': 'Thema',
@@ -174,6 +189,9 @@ export function InvoiceGenerator() {
       'invoice.totals.subtotal': '小计',
       'invoice.totals.tax': '税费',
       'invoice.totals.total': '总计',
+      'invoice.totals.discount': '折扣',
+      'invoice.totals.taxRate': '税率 (%)',
+      'invoice.totals.discountRate': '折扣 (%)',
       'invoice.notes': '备注',
       'invoice.terms': '条款和条件',
       'invoice.controls.theme': '主题',
@@ -202,6 +220,9 @@ export function InvoiceGenerator() {
       'invoice.totals.subtotal': 'المجموع الفرعي',
       'invoice.totals.tax': 'الضريبة',
       'invoice.totals.total': 'المجموع',
+      'invoice.totals.discount': 'الخصم',
+      'invoice.totals.taxRate': 'معدل الضريبة (%)',
+      'invoice.totals.discountRate': 'الخصم (%)',
       'invoice.notes': 'ملاحظات',
       'invoice.terms': 'الشروط والأحكام',
       'invoice.controls.theme': 'السمة',
@@ -230,6 +251,9 @@ export function InvoiceGenerator() {
       'invoice.totals.subtotal': 'Subtotal',
       'invoice.totals.tax': 'Imposto',
       'invoice.totals.total': 'Total',
+      'invoice.totals.discount': 'Desconto',
+      'invoice.totals.taxRate': 'Taxa de imposto (%)',
+      'invoice.totals.discountRate': 'Desconto (%)',
       'invoice.notes': 'Notas',
       'invoice.terms': 'Termos e condições',
       'invoice.controls.theme': 'Tema',
@@ -258,6 +282,9 @@ export function InvoiceGenerator() {
       'invoice.totals.subtotal': 'Подытог',
       'invoice.totals.tax': 'Налог',
       'invoice.totals.total': 'Итого',
+      'invoice.totals.discount': 'Скидка',
+      'invoice.totals.taxRate': 'Налоговая ставка (%)',
+      'invoice.totals.discountRate': 'Скидка (%)',
       'invoice.notes': 'Примечания',
       'invoice.terms': 'Условия и положения',
       'invoice.controls.theme': 'Тема',
@@ -286,6 +313,9 @@ export function InvoiceGenerator() {
       'invoice.totals.subtotal': '小計',
       'invoice.totals.tax': '税金',
       'invoice.totals.total': '合計',
+      'invoice.totals.discount': '割引',
+      'invoice.totals.taxRate': '税率 (%)',
+      'invoice.totals.discountRate': '割引 (%)',
       'invoice.notes': '備考',
       'invoice.terms': '利用規約',
       'invoice.controls.theme': 'テーマ',
@@ -314,6 +344,9 @@ export function InvoiceGenerator() {
       'invoice.totals.subtotal': '소계',
       'invoice.totals.tax': '세금',
       'invoice.totals.total': '총계',
+      'invoice.totals.discount': '할인',
+      'invoice.totals.taxRate': '세율 (%)',
+      'invoice.totals.discountRate': '할인율 (%)',
       'invoice.notes': '참고사항',
       'invoice.terms': '약관 및 조건',
       'invoice.controls.theme': '테마',
@@ -342,6 +375,9 @@ export function InvoiceGenerator() {
       'invoice.totals.subtotal': 'उप-योग',
       'invoice.totals.tax': 'कर',
       'invoice.totals.total': 'कुल',
+      'invoice.totals.discount': 'छूट',
+      'invoice.totals.taxRate': 'कर दर (%)',
+      'invoice.totals.discountRate': 'छूट (%)',
       'invoice.notes': 'नोट्स',
       'invoice.terms': 'नियम और शर्तें',
       'invoice.controls.theme': 'थीम',
@@ -370,6 +406,9 @@ export function InvoiceGenerator() {
       'invoice.totals.subtotal': 'Subtotale',
       'invoice.totals.tax': 'Tassa',
       'invoice.totals.total': 'Totale',
+      'invoice.totals.discount': 'Sconto',
+      'invoice.totals.taxRate': 'Aliquota fiscale (%)',
+      'invoice.totals.discountRate': 'Sconto (%)',
       'invoice.notes': 'Note',
       'invoice.terms': 'Termini e condizioni',
       'invoice.controls.theme': 'Tema',
@@ -398,6 +437,9 @@ export function InvoiceGenerator() {
       'invoice.totals.subtotal': 'Ara toplam',
       'invoice.totals.tax': 'Vergi',
       'invoice.totals.total': 'Toplam',
+      'invoice.totals.discount': 'İndirim',
+      'invoice.totals.taxRate': 'Vergi oranı (%)',
+      'invoice.totals.discountRate': 'İndirim (%)',
       'invoice.notes': 'Notlar',
       'invoice.terms': 'Şartlar ve koşullar',
       'invoice.controls.theme': 'Tema',
@@ -426,6 +468,9 @@ export function InvoiceGenerator() {
       'invoice.totals.subtotal': 'Suma częściowa',
       'invoice.totals.tax': 'Podatek',
       'invoice.totals.total': 'Razem',
+      'invoice.totals.discount': 'Rabat',
+      'invoice.totals.taxRate': 'Stawka podatkowa (%)',
+      'invoice.totals.discountRate': 'Rabat (%)',
       'invoice.notes': 'Uwagi',
       'invoice.terms': 'Warunki i zasady',
       'invoice.controls.theme': 'Motyw',
@@ -454,6 +499,9 @@ export function InvoiceGenerator() {
       'invoice.totals.subtotal': 'Subtotaal',
       'invoice.totals.tax': 'Belasting',
       'invoice.totals.total': 'Totaal',
+      'invoice.totals.discount': 'Korting',
+      'invoice.totals.taxRate': 'Belastingtarief (%)',
+      'invoice.totals.discountRate': 'Korting (%)',
       'invoice.notes': 'Opmerkingen',
       'invoice.terms': 'Voorwaarden',
       'invoice.controls.theme': 'Thema',
@@ -477,7 +525,7 @@ export function InvoiceGenerator() {
   }
 
   const addItem = () => {
-    setItems([...items, { id: Date.now().toString(), description: t('invoice.placeholders.itemDescription'), quantity: 1, rate: 0 }])
+    setItems([...items, { id: Date.now().toString(), description: t('invoice.placeholders.itemDescription'), quantity: 1, rate: 0, taxRate: 0 }])
   }
 
   const removeItem = (id: string) => {
@@ -505,14 +553,24 @@ export function InvoiceGenerator() {
     return items.reduce((sum, item) => sum + item.quantity * item.rate, 0)
   }
 
+  const calculateItemTax = (item: InvoiceItem) => {
+    return item.quantity * item.rate * (item.taxRate / 100)
+  }
+
+  const calculateTotalItemTax = () => {
+    return items.reduce((sum, item) => sum + calculateItemTax(item), 0)
+  }
+
   const calculateTax = (subtotal: number) => {
-    return subtotal * 0.1 // 10% tax
+    return subtotal * (taxRate / 100) // Use custom tax rate
   }
 
   const calculateTotal = () => {
     const subtotal = calculateSubtotal()
-    const tax = calculateTax(subtotal)
-    return subtotal + tax
+    const discountAmount = subtotal * (discount / 100)
+    const subtotalAfterDiscount = subtotal - discountAmount
+    const itemTaxes = calculateTotalItemTax()
+    return subtotalAfterDiscount + itemTaxes
   }
 
   const generateInvoice = () => {
@@ -536,7 +594,8 @@ Items:
 ${items.map((item) => `${item.description} - Qty: ${item.quantity} x ${getCurrencySymbol(currency)}${item.rate} = ${getCurrencySymbol(currency)}${(item.quantity * item.rate).toFixed(2)}`).join("\n")}
 
 Subtotal: ${getCurrencySymbol(currency)}${calculateSubtotal().toFixed(2)}
-Tax (10%): ${getCurrencySymbol(currency)}${calculateTax(calculateSubtotal()).toFixed(2)}
+Discount (${discount}%): ${getCurrencySymbol(currency)}${(calculateSubtotal() * (discount / 100)).toFixed(2)}
+Tax (Items): ${getCurrencySymbol(currency)}${calculateTotalItemTax().toFixed(2)}
 Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
     `.trim()
 
@@ -578,7 +637,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
 
   const generateInvoiceHTML = () => {
     const subtotal = calculateSubtotal()
-    const tax = calculateTax(subtotal)
+    const itemTaxes = calculateTotalItemTax()
     const total = calculateTotal()
     const currencySymbol = getCurrencySymbol(currency)
     
@@ -658,7 +717,8 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
       <div class="invoice-total">
         <div class="total-box">
           <div>Subtotal: ${currencySymbol}${subtotal.toFixed(2)}</div>
-          <div>Tax (10%): ${currencySymbol}${tax.toFixed(2)}</div>
+          <div>Discount (${discount}%): ${currencySymbol}${(subtotal * (discount / 100)).toFixed(2)}</div>
+          <div>Tax (Items): ${currencySymbol}${itemTaxes.toFixed(2)}</div>
           <div style="font-size: 18px; font-weight: bold; margin-top: 10px;">Total: ${currencySymbol}${total.toFixed(2)}</div>
         </div>
       </div>
@@ -906,9 +966,18 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                           />
                         </td>
                         <td className="p-4 text-center">
-                          <span className="text-sm text-slate-300">12</span>
-                          <br />
-                          <span className="text-sm text-slate-300">{(item.quantity * item.rate * 0.12).toFixed(2)}</span>
+                          <div className="space-y-2">
+                            <Input
+                              type="number"
+                              value={item.taxRate}
+                              onChange={(e) => updateItem(item.id, "taxRate", Number(e.target.value) || 0)}
+                              className="border border-orange-300 p-1 text-sm text-white bg-transparent text-center w-16 rounded-lg"
+                              min="0"
+                              max="100"
+                              step="0.01"
+                            />
+                            <span className="text-xs text-slate-400">{getCurrencySymbol(currency)}{calculateItemTax(item).toFixed(2)}</span>
+                          </div>
                         </td>
                         <td className="p-4 text-right">
                           <span className="text-sm font-medium text-white">
@@ -943,6 +1012,24 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                 </Button>
               </div>
 
+              {/* Discount Controls */}
+              <div className="flex justify-end mb-6">
+                <div className="w-64">
+                  <div className="flex justify-between items-center">
+                    <label className="text-sm text-slate-300">{t('invoice.totals.discountRate')}</label>
+                    <Input
+                      type="number"
+                      min="0"
+                      max="100"
+                      step="0.01"
+                      value={discount}
+                      onChange={(e) => setDiscount(parseFloat(e.target.value) || 0)}
+                      className="w-20 h-8 text-sm text-center border border-orange-300 p-1 rounded-lg bg-slate-800 text-white"
+                    />
+                  </div>
+                </div>
+              </div>
+
               {/* Totals */}
               <div className="flex justify-end mb-6">
                 <div className="w-64">
@@ -951,8 +1038,12 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                     <span className="font-medium text-white">{getCurrencySymbol(currency)}{subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-sm mb-3">
-                    <span className="text-slate-300">{t('invoice.totals.tax')} (12%)</span>
-                    <span className="font-medium text-white">{getCurrencySymbol(currency)}{tax.toFixed(2)}</span>
+                    <span className="text-slate-300">{t('invoice.totals.discount')} ({discount}%)</span>
+                    <span className="font-medium text-white">{getCurrencySymbol(currency)}{(subtotal * (discount / 100)).toFixed(2)}</span>
+                  </div>
+                  <div className="flex justify-between text-sm mb-3">
+                    <span className="text-slate-300">{t('invoice.totals.tax')} (Items)</span>
+                    <span className="font-medium text-white">{getCurrencySymbol(currency)}{calculateTotalItemTax().toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-xl font-bold border-t border-slate-600 pt-3">
                     <span className="text-white">{t('invoice.totals.total')}</span>
