@@ -32,6 +32,12 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
         type?: string
       }
   >(null)
+  const [downloadingStates, setDownloadingStates] = useState<{
+    video?: boolean
+    audio?: boolean
+    image?: boolean
+    [key: string]: boolean | undefined
+  }>({})
 
   const isLikelyTiktokUrl = (url: string) => {
     // Accept typical TikTok URL patterns including vm.tiktok, vt.tiktok shorteners
@@ -75,21 +81,26 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
         throw new Error("No downloadable content found for this URL")
       }
 
-      // Get thumbnail from TikTok oEmbed
+      // Get thumbnail from TikTok oEmbed (non-blocking)
       let coverUrl = data.coverUrl
       if (!coverUrl) {
-        try {
-          const oembedRes = await fetch(
-            `https://www.tiktok.com/oembed?url=${encodeURIComponent(videoUrl.trim())}`,
-            { method: "GET", mode: "cors", headers: { Accept: "application/json" } },
-          )
+        // Don't wait for oEmbed - fetch it in background and update when ready
+        fetch(
+          `https://www.tiktok.com/oembed?url=${encodeURIComponent(videoUrl.trim())}`,
+          { method: "GET", mode: "cors", headers: { Accept: "application/json" } },
+        )
+        .then(oembedRes => {
           if (oembedRes.ok) {
-            const oembed = await oembedRes.json()
-            if (oembed && oembed.thumbnail_url) {
-              coverUrl = oembed.thumbnail_url as string
-            }
+            return oembedRes.json()
           }
-        } catch {}
+          return null
+        })
+        .then(oembed => {
+          if (oembed && oembed.thumbnail_url) {
+            setResult(prev => prev ? { ...prev, coverUrl: oembed.thumbnail_url } : null)
+          }
+        })
+        .catch(() => {}) // Silently fail - thumbnail is not critical
       }
 
       setResult({
@@ -102,6 +113,8 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
         images: data.images,
         isImage: data.isImage,
         type: data.type,
+        downloading: false,
+        downloadStarted: false
       })
 
     } catch (e: any) {
@@ -111,7 +124,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
     }
   }
 
-  const triggerDownload = async (url: string, filename: string) => {
+  const triggerDownload = async (url: string, filename: string, downloadType: string) => {
     if (!url) return
 
     // Sanitize filename on frontend as well
@@ -126,10 +139,59 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
 
     
     setError(null)
-    setResult(prev => prev ? { ...prev, downloading: true } : null)
+    setDownloadingStates(prev => ({ ...prev, [downloadType]: true }))
+    console.log('Setting download state for:', downloadType, 'to true')
 
     try {
-      // Use proxy download (most reliable method)
+      // Try direct download first (faster)
+      try {
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': '*/*',
+            'Referer': 'https://www.tiktok.com/'
+          }
+        })
+
+        if (response.ok) {
+          const blob = await response.blob()
+          
+          if (blob.size > 0) {
+            const objectUrl = URL.createObjectURL(blob)
+            
+            // Create download link
+            const link = document.createElement("a")
+            link.href = objectUrl
+            link.download = sanitizedFilename
+            link.style.display = 'none'
+            
+            // Add to DOM, click, and remove
+            document.body.appendChild(link)
+            link.click()
+            document.body.removeChild(link)
+            
+            // Clean up object URL
+            setTimeout(() => {
+              URL.revokeObjectURL(objectUrl)
+            }, 1000)
+            
+            // Show success message
+            setTimeout(() => {
+              setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
+              setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
+              console.log('Setting download state for:', downloadType, 'to false')
+            }, 500)
+            
+            return // Success - exit early
+          }
+        }
+      } catch (directError) {
+        // Direct download failed, fall back to proxy
+        console.log('Direct download failed, trying proxy:', directError)
+      }
+
+      // Fallback to proxy download if direct download fails
       const response = await fetch('/api/tiktok-download-file', {
         method: 'POST',
         headers: {
@@ -180,14 +242,16 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
       
       // Show success message
       setTimeout(() => {
-        setResult(prev => prev ? { ...prev, downloading: false, downloadStarted: true } : null)
+        setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
+        setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
       }, 500)
       
     } catch (e) {
       // Show error instead of opening new tab
       const errorMessage = e instanceof Error ? e.message : "Download failed. Please try again."
       setError(errorMessage)
-      setResult(prev => prev ? { ...prev, downloading: false } : null)
+      setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
+      console.log('Setting download state for:', downloadType, 'to false (error)')
     }
   }
 
@@ -233,7 +297,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
             {loading ? (
               <>
                 <LoadingSpinner className="mr-2" />
-                Processing content...
+                Processing content... (Usually takes 1-3 seconds)
               </>
             ) : (
               <>
@@ -306,19 +370,22 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                 {(result.noWatermarkUrl || result.watermarkUrl) && (
                   <button
                     type="button"
-                    onClick={() => triggerDownload(result.noWatermarkUrl || result.watermarkUrl!, (result.title || "tiktok-video") + ".mp4")}
-                    disabled={result.downloading}
+                    onClick={() => {
+                      console.log('Video button clicked, current state:', downloadingStates.video)
+                      triggerDownload(result.noWatermarkUrl || result.watermarkUrl!, (result.title || "tiktok-video") + ".mp4", "video")
+                    }}
+                    disabled={downloadingStates.video}
                     className="inline-flex items-center justify-center w-full h-10 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {result.downloading ? (
+                    {downloadingStates.video ? (
                       <>
                         <LoadingSpinner className="mr-2 h-4 w-4" />
-                        Starting Download...
+                        Downloading Video...
                       </>
                     ) : (
                       <>
                         <Download className="mr-2 h-4 w-4" />
-                        Download Video
+                        Download Video (HD)
                       </>
                     )}
                   </button>
@@ -326,14 +393,14 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                 {result.musicUrl && (
                   <button
                     type="button"
-                    onClick={() => triggerDownload(result.musicUrl!, (result.title || "tiktok-audio") + ".mp3")}
-                    disabled={result.downloading}
+                    onClick={() => triggerDownload(result.musicUrl!, (result.title || "tiktok-audio") + ".mp3", "audio")}
+                    disabled={downloadingStates.audio}
                     className="inline-flex items-center justify-center w-full h-10 rounded-md border font-medium hover:bg-muted/50 transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {result.downloading ? (
+                    {downloadingStates.audio ? (
                       <>
                         <LoadingSpinner className="mr-2 h-4 w-4" />
-                        Starting Download...
+                        Downloading Audio...
                       </>
                     ) : (
                       <>
@@ -360,14 +427,14 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                     </div>
                     <button
                       type="button"
-                      onClick={() => triggerDownload(result.imageUrl!, (result.title || "tiktok-image") + ".jpg")}
-                      disabled={result.downloading}
+                      onClick={() => triggerDownload(result.imageUrl!, (result.title || "tiktok-image") + ".jpg", "image")}
+                      disabled={downloadingStates.image}
                       className="w-full max-w-sm mx-auto block inline-flex items-center justify-center h-10 rounded-md border font-medium hover:bg-muted/50 transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {result.downloading ? (
+                      {downloadingStates.image ? (
                         <>
                           <LoadingSpinner className="mr-2 h-4 w-4" />
-                          Starting Download...
+                          Downloading Image...
                         </>
                       ) : (
                         <>
@@ -399,11 +466,11 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                           </div>
                           <button
                             type="button"
-                            onClick={() => triggerDownload(imageUrl, (result.title || "tiktok-image") + `-${index + 1}.jpg`)}
-                            disabled={result.downloading}
+                            onClick={() => triggerDownload(imageUrl, (result.title || "tiktok-image") + `-${index + 1}.jpg`, `image-${index}`)}
+                            disabled={downloadingStates[`image-${index}`]}
                             className="w-full inline-flex items-center justify-center h-8 rounded-md border font-medium hover:bg-muted/50 transition-colors text-xs disabled:opacity-50 disabled:cursor-not-allowed"
                           >
-                            {result.downloading ? (
+                            {downloadingStates[`image-${index}`] ? (
                               <>
                                 <LoadingSpinner className="mr-1 h-3 w-3" />
                                 Downloading...

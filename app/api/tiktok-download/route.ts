@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Try multiple APIs for better reliability
+    // Try multiple APIs in parallel for better performance
     const apis = [
       {
         name: 'tikwm',
@@ -84,10 +84,12 @@ export async function POST(request: NextRequest) {
       }
     ]
 
-    let lastError = ''
-
-    for (const api of apis) {
+    // Create promises for all APIs to run in parallel
+    const apiPromises = apis.map(async (api) => {
       try {
+        const controller = new AbortController()
+        const timeoutId = setTimeout(() => controller.abort(), 8000) // 8 second timeout per API
+
         const response = await fetch(api.url, {
           method: 'GET',
           headers: {
@@ -96,27 +98,50 @@ export async function POST(request: NextRequest) {
             'Referer': 'https://www.tiktok.com/',
             'Origin': 'https://www.tiktok.com'
           },
+          signal: controller.signal
         })
 
+        clearTimeout(timeoutId)
+
         if (!response.ok) {
-          lastError = `API ${api.name} failed with status ${response.status}`
-          continue
+          throw new Error(`API ${api.name} failed with status ${response.status}`)
         }
 
         const data = await response.json()
         const result = api.parser(data)
 
         if (result && (result.videoUrl || result.watermarkUrl || result.imageUrl)) {
-          return NextResponse.json({
-            success: true,
-            ...result
-          })
+          return { success: true, result, api: api.name }
         }
+        
+        throw new Error(`API ${api.name} returned no valid data`)
       } catch (error) {
-        lastError = `API ${api.name} error: ${error instanceof Error ? error.message : 'Unknown error'}`
-        continue
+        return { 
+          success: false, 
+          error: `API ${api.name} error: ${error instanceof Error ? error.message : 'Unknown error'}`,
+          api: api.name 
+        }
+      }
+    })
+
+    // Wait for the first successful result or all to fail
+    const results = await Promise.allSettled(apiPromises)
+    
+    // Find the first successful result
+    for (const result of results) {
+      if (result.status === 'fulfilled' && result.value.success) {
+        return NextResponse.json({
+          success: true,
+          ...result.value.result
+        })
       }
     }
+
+    // If all APIs failed, collect error messages
+    const errors = results
+      .filter(r => r.status === 'fulfilled' && !r.value.success)
+      .map(r => r.status === 'fulfilled' ? r.value.error : 'Unknown error')
+      .join('; ')
 
     // If all APIs failed, try a simple fetch approach
     try {
@@ -142,13 +167,13 @@ export async function POST(request: NextRequest) {
         }
       }
     } catch (error) {
-      lastError = `Direct fetch error: ${error instanceof Error ? error.message : 'Unknown error'}`
+        `Direct fetch error: ${error instanceof Error ? error.message : 'Unknown error'}`
     }
 
     return NextResponse.json(
       { 
         success: false, 
-        message: `All download services are currently unavailable. Last error: ${lastError}. Please try again later or check if the TikTok video is public and accessible.` 
+        message: `All download services are currently unavailable. Errors: ${errors}. Please try again later or check if the TikTok video is public and accessible.` 
       },
       { status: 503 }
     )
