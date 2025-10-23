@@ -1108,7 +1108,7 @@ export default function AgeCalculatorPage() {
 
             {/* Related Tools Section */}
             <div className="bg-card border border-border rounded-lg p-6">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">Related Date and Time Tools</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Related Calculator Tools</h2>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
@@ -1138,25 +1138,25 @@ export default function AgeCalculatorPage() {
                 <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Age in Hours Calculator</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Calculate your exact age in hours, minutes, and seconds.</p>
-                  <a href="/date-time-tools/age-in-hours" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Age in Hours →</a>
+                  <a href="/calculator/time-duration" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Time Duration Calculator →</a>
                 </div>
 
                 <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Date to Day Finder</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Find out what day of the week any date falls on.</p>
-                  <a href="/date-time-tools/date-to-day" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Date to Day →</a>
+                  <a href="/calculator/date-difference" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Date Difference Calculator →</a>
                 </div>
 
                 <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Workday Calculator</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Calculate business days between two dates, excluding weekends.</p>
-                  <a href="/date-time-tools/workday-calculator" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Workday Calculator →</a>
+                  <a href="/calculator/date-difference" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Date Difference Calculator →</a>
                 </div>
 
                 <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Year End Countdown</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Live countdown to the end of the year with exact time remaining.</p>
-                  <a href="/date-time-tools/year-end-countdown" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Year End Countdown →</a>
+                  <a href="/fun-tools/birthday-countdown" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Birthday Countdown →</a>
                   </div>
                 </div>
               </div>

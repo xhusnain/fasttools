@@ -975,8 +975,8 @@ export default function DateDifferencePage() {
                 <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
                   Calculate business days between two dates, excluding weekends.
                 </p>
-                <a href="/date-time-tools/workday-calculator" className="text-link hover:text-link-hover hover:underline font-medium text-sm">
-                  Try Workday Calculator →
+                <a href="/calculator/time-duration" className="text-link hover:text-link-hover hover:underline font-medium text-sm">
+                  Try Time Duration Calculator →
                 </a>
               </div>
               <div className="p-4 bg-card border border-border rounded-lg hover:shadow-md transition-shadow">
@@ -993,8 +993,8 @@ export default function DateDifferencePage() {
                 <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
                   Find out what day of the week any date falls on.
                 </p>
-                <a href="/date-time-tools/date-to-day" className="text-link hover:text-link-hover hover:underline font-medium text-sm">
-                  Try Date to Day Finder →
+                <a href="/calculator/age-calculator" className="text-link hover:text-link-hover hover:underline font-medium text-sm">
+                  Try Age Calculator →
                 </a>
               </div>
             </div>

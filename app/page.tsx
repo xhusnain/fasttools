@@ -335,7 +335,7 @@ export default function HomePage() {
           name: "What categories of tools are available on FastTools?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "We offer 10+ categories including AI Tools for content generation, Calculators for financial planning, Converters for data transformation, SEO Tools for website optimization, Image Tools for photo editing, Developer Tools for coding, Finance Tools for business calculations, Date & Time Tools for scheduling, Social Media Tools for marketing, and Fun Tools for entertainment. Each category contains 15-50+ specialized tools for different use cases."
+            text: "We offer 10+ categories including AI Tools for content generation, Calculators for financial planning, Converters for data transformation, SEO Tools for website optimization, Image Tools for photo editing, Developer Tools for coding, Finance Tools for business calculations, Social Media Tools for marketing, and Fun Tools for entertainment. Each category contains 15-50+ specialized tools for different use cases."
           }
         },
         {
@@ -1433,34 +1433,6 @@ export default function HomePage() {
                   </Card>
                 </Link>
 
-                {/* Date & Time Tools Category */}
-                <Link href="/date-time-tools" className="group">
-                  <Card className="h-full hover:shadow-lg transition-all duration-200 hover:border-[#F35B04]/20">
-                    <CardHeader>
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center">
-                          <Calendar className="h-6 w-6 text-white" />
-                        </div>
-                        <div>
-                          <CardTitle className="text-xl">Date & Time</CardTitle>
-                          <p className="text-sm text-muted-foreground">10+ time utilities</p>
-                        </div>
-                      </div>
-                      <CardDescription>
-                        Date calculators, time zone converters, age calculators, and workday calculators for scheduling and planning.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                          <div className="h-1.5 w-1.5 bg-[#F7B801] rounded-full"></div>
-                          <span>Age Calculator, Workday Calculator</span>
-                        </div>
-                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#F35B04] group-hover:translate-x-1 transition-all" />
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
 
                 {/* Social Media Tools Category */}
                 <Link href="/social-media-tools" className="group">
@@ -2355,7 +2327,7 @@ export default function HomePage() {
                       We offer 10+ categories including <strong>AI Tools</strong> for content generation, <strong>Calculators</strong> for financial planning, 
                       <strong>Converters</strong> for data transformation, <strong>SEO Tools</strong> for website optimization, 
                       <strong>Image Tools</strong> for photo editing, <strong>Developer Tools</strong> for coding, 
-                      <strong>Finance Tools</strong> for business calculations, <strong>Date & Time Tools</strong> for scheduling, 
+                      <strong>Finance Tools</strong> for business calculations, 
                       <strong>Social Media Tools</strong> for marketing, and <strong>Fun Tools</strong> for entertainment. 
                       Each category contains 15-50+ specialized tools for different use cases.
                     </p>

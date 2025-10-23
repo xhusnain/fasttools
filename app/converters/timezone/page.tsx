@@ -289,8 +289,8 @@ export default function TimezoneConverterPage() {
                   <h2 className="text-base md:text-xl font-bold mb-3 text-card-foreground">Related Tools</h2>
                   <ul className="list-disc pl-5 text-muted-foreground text-sm">
                   <li><Link href="/converters/currency">Currency Converter</Link></li>
-                  <li><Link href="/date-time-tools/workday-calculator">Workday Calculator</Link></li>
-                  <li><Link href="/date-time-tools/age-in-hours">Age in Hours Calculator</Link></li>
+                  <li><Link href="/calculator/date-difference">Date Difference Calculator</Link></li>
+                  <li><Link href="/calculator/age-calculator">Age Calculator</Link></li>
                 </ul>
                 </div>
               </div>

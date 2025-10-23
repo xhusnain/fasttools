@@ -1078,31 +1078,31 @@ export default function TimeDurationPage() {
                         {
                           name: "Workday Calculator",
                           desc: "Calculate business days between dates",
-                          href: "/date-time-tools/workday-calculator",
+                          href: "/calculator/date-difference",
                           icon: "💼"
                         },
                         {
                           name: "Date to Day Calculator",
                           desc: "Find what day of the week a date falls on",
-                          href: "/date-time-tools/date-to-day",
+                          href: "/calculator/date-difference",
                           icon: "🗓️"
                         },
                         {
                           name: "Year End Countdown",
                           desc: "Count down to the end of the year",
-                          href: "/date-time-tools/year-end-countdown",
+                          href: "/fun-tools/birthday-countdown",
                           icon: "⏰"
                         },
                         {
                           name: "Zodiac Sign Calculator",
                           desc: "Find your zodiac sign by birth date",
-                          href: "/date-time-tools/zodiac-sign",
+                          href: "/fun-tools/love-calculator",
                           icon: "♈"
                         },
                         {
                           name: "Age in Hours Calculator",
                           desc: "Calculate age in hours and minutes",
-                          href: "/date-time-tools/age-in-hours",
+                          href: "/calculator/age-calculator",
                           icon: "⏱️"
                         },
                         {

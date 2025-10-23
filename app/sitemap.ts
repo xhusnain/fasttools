@@ -110,12 +110,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
-      url: "https://www.fasttools.store/date-time-tools",
-      lastModified: getFreshnessDate(10),
-      changeFrequency: "weekly" as const,
-      priority: 0.65,
-    },
-    {
       url: "https://www.fasttools.store/fun-tools",
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,

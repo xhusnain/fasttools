@@ -14,7 +14,6 @@ export function CategoryDropdown() {
     { name: "SEO Tools", href: "/seo-tools" },
     { name: "Fun Tools", href: "/fun-tools" },
     { name: "Finance Tools", href: "/finance-tools" },
-    { name: "Date & Time", href: "/date-time-tools" },
     { name: "Social Media", href: "/social-media-tools" },
     { name: "Image Tools", href: "/image-tools" },
     { name: "Dev Tools", href: "/dev-tools" },
