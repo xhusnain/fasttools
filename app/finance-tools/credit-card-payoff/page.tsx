@@ -1,16 +1,55 @@
 import { CreditCardPayoff } from "@/components/credit-card-payoff"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Calculator,
+  Percent,
+  DollarSign,
+  Target,
+  TrendingUp,
+  PiggyBank,
+  BarChart3,
+  ExternalLink,
+  CreditCard,
+  Receipt,
+  HelpCircle,
+  FileText,
+  Zap,
+  Award,
+  Users
+} from "lucide-react"
 import type { Metadata } from "next"
 import Link from "next/link"
+import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Credit Card Payoff Calculator | Debt Payoff Timeline | FastTools",
-  description:
-    "Estimate months to debt‑free, total interest, and payoff date. Compare avalanche vs snowball methods and extra payments.",
+  title: `Free Credit Card Payoff Calculator – Debt Payoff Timeline & Interest Savings (${getCurrentYear()})`,
+  description: "Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. Calculate how long to pay off credit card debt and save thousands in interest. Perfect for debt management and financial planning.",
   keywords: [
-    // Primary Keywords (20)
+    // Golden Keywords - High Value, Low Competition
+    "how to pay off credit card debt fast",
+    "credit card debt payoff strategy",
+    "debt free calculator",
+    "pay off credit card calculator",
+    "credit card payoff timeline",
+    "debt payoff plan",
+    "credit card interest calculator",
+    "debt snowball calculator",
+    "debt avalanche calculator",
+    "extra payment calculator credit card",
+    "minimum payment vs extra payment",
+    "credit card payoff date calculator",
+    "debt consolidation payoff calculator",
+    "balance transfer payoff calculator",
+    "credit card debt free date",
+    "pay off debt faster calculator",
+    "debt payoff strategy calculator",
+    "credit card payoff planner",
+    "debt elimination calculator",
+    "credit card payoff schedule",
+    // Primary Keywords
     "credit card payoff calculator",
     "free credit card payoff calculator",
     "credit card debt calculator",
@@ -274,8 +313,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/finance-tools/credit-card-payoff" },
   openGraph: {
-    title: "Credit Card Payoff Calculator | Debt Payoff Timeline | FastTools",
-    description: "Estimate months to debt‑free, total interest, and payoff date. Compare avalanche vs snowball methods and extra payments.",
+    title: `Free Credit Card Payoff Calculator – Debt Payoff Timeline & Interest Savings (${getCurrentYear()})`,
+    description: "Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. Calculate how long to pay off credit card debt and save thousands in interest. Perfect for debt management and financial planning.",
     url: "https://www.fasttools.store/finance-tools/credit-card-payoff",
     type: "website",
     siteName: "FastTools",
@@ -284,28 +323,28 @@ export const metadata: Metadata = {
         url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "FastTools Free Credit Card Payoff Calculator - Debt Payoff Timeline & Interest",
+        alt: "FastTools Free Credit Card Payoff Calculator - Debt Payoff Timeline & Interest Savings",
         type: "image/svg+xml",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Credit Card Payoff Calculator | Debt Payoff Timeline | FastTools",
-    description: "Estimate months to debt‑free, total interest, and payoff date. Compare avalanche vs snowball methods and extra payments.",
+    title: `Free Credit Card Payoff Calculator – Debt Payoff Timeline & Interest Savings (${getCurrentYear()})`,
+    description: "Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. Calculate how long to pay off credit card debt and save thousands in interest.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      name: "Credit Card Payoff Calculator",
-      alternateName: "Debt Payoff Calculator",
+      name: "Free Credit Card Payoff Calculator",
+      alternateName: "Debt Payoff Timeline & Interest Savings Calculator",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web Browser",
       url: "https://www.fasttools.store/finance-tools/credit-card-payoff",
       description:
-        "Estimate payoff time, interest, and compare avalanche vs snowball with extra payments.",
+        "Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. Calculate how long to pay off credit card debt and save thousands in interest.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { 
@@ -365,63 +404,338 @@ export const metadata: Metadata = {
 
 export default function CreditCardPayoffPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Finance Tools", href: "/finance-tools" },
-          { label: "Credit Card Payoff", href: "/finance-tools/credit-card-payoff" },
-        ]}
-      />
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-8">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Finance Tools", href: "/finance-tools" },
+            { label: "Credit Card Payoff", href: "/finance-tools/credit-card-payoff" },
+          ]}
+        />
 
-      <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-8 animate-fade-in-up">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3 text-foreground">Credit Card Payoff Calculator — Debt‑Free Timeline</h1>
-          <p className="text-sm md:text-base text-muted-foreground text-pretty">See your payoff date, total interest, and savings from extra payments.</p>
-        </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 xl:grid-cols-4 gap-8">
+            {/* Main Content */}
+            <div className="xl:col-span-3 space-y-8">
+              {/* Hero Section */}
+              <div className="text-center mb-8 animate-fade-in-up">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
+                  Free Credit Card Payoff Calculator – Debt Payoff Timeline & Interest Savings ({getCurrentYear()})
+                </h1>
+                <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                  Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. 
+                  Calculate how long to pay off credit card debt and save thousands in interest. Perfect for debt management and financial planning.
+                </p>
+              </div>
 
-        {/* First Ad Space - After Hero Content */}
-        <div className="mb-8">
-          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
-        </div>
+              {/* Tool Card */}
+              <Card className="border border-border shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardHeader className="text-center pb-4">
+                  <CardTitle className="text-2xl font-bold text-foreground flex items-center justify-center gap-2">
+                    <CreditCard className="h-6 w-6 text-primary" />
+                    Advanced Credit Card Payoff Calculator
+                  </CardTitle>
+                  <CardDescription className="text-base text-muted-foreground">
+                    Calculate your debt payoff timeline, interest savings, and compare avalanche vs snowball methods. 
+                    Features extra payment calculations, payoff date projections, and comprehensive debt management strategies.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <CreditCardPayoff />
+                </CardContent>
+              </Card>
 
-        <CreditCardPayoff />
+              {/* Features & Usage Guide */}
+              <div className="space-y-6">
+                <Card className="border border-border shadow-sm">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold text-foreground flex items-center gap-2">
+                      <Target className="h-5 w-5 text-primary" />
+                      Advanced Credit Card Payoff Features
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                          <DollarSign className="h-4 w-4 text-primary" />
+                          Debt Payoff Timeline
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Our advanced calculator provides precise payoff timelines based on your current balance, 
+                          APR, and monthly payments. Features detailed month-by-month breakdowns, interest calculations, 
+                          and payoff date projections for complete debt management planning.
+                        </p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                          <Percent className="h-4 w-4 text-primary" />
+                          Interest Savings Calculator
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Calculate potential interest savings from extra payments, balance transfers, and debt consolidation. 
+                          Features side-by-side comparisons, savings projections, and optimization recommendations to 
+                          minimize total interest paid and accelerate debt freedom.
+                        </p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                          <BarChart3 className="h-4 w-4 text-primary" />
+                          Avalanche vs Snowball Methods
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Compare debt payoff strategies with our intelligent method analyzer. Avalanche method targets 
+                          highest APR first for maximum interest savings, while snowball method focuses on smallest 
+                          balances for psychological motivation and quick wins.
+                        </p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                          <TrendingUp className="h-4 w-4 text-primary" />
+                          Extra Payment Optimization
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Optimize your extra payments for maximum impact. Features payment allocation strategies, 
+                          timing recommendations, and impact analysis. Calculate how small increases in monthly 
+                          payments can dramatically reduce payoff time and total interest.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
 
-        {/* Second Ad Space - After Tool */}
-        <div className="my-8">
-          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
-        </div>
+                <Card className="border border-border shadow-sm">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold text-foreground flex items-center gap-2">
+                      <Zap className="h-5 w-5 text-primary" />
+                      Golden Keywords & High-Value Features
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                          <CreditCard className="h-4 w-4 text-primary" />
+                          How to Pay Off Credit Card Debt Fast
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Our comprehensive guide shows you exactly how to pay off credit card debt fast using proven strategies. 
+                          Features step-by-step debt elimination plans, payment optimization techniques, and realistic timelines 
+                          for becoming debt-free. Perfect for anyone serious about financial freedom.
+                        </p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                          <Target className="h-4 w-4 text-primary" />
+                          Credit Card Debt Payoff Strategy
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Develop a winning credit card debt payoff strategy with our intelligent planning tools. Features 
+                          personalized recommendations, strategy comparisons, and progress tracking. Whether you prefer 
+                          avalanche or snowball methods, we'll help you choose the best approach for your situation.
+                        </p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                          <PiggyBank className="h-4 w-4 text-primary" />
+                          Debt Free Calculator
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Calculate your exact debt-free date with our comprehensive debt free calculator. Features 
+                          multiple scenario modeling, payment optimization, and milestone tracking. See exactly when 
+                          you'll be debt-free and how much you'll save in interest with different payment strategies.
+                        </p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                          <Calculator className="h-4 w-4 text-primary" />
+                          Pay Off Credit Card Calculator
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Our advanced pay off credit card calculator handles complex scenarios including multiple cards, 
+                          different APRs, and varying payment amounts. Features detailed amortization schedules, 
+                          interest breakdowns, and payment allocation recommendations for optimal debt elimination.
+                        </p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                          <BarChart3 className="h-4 w-4 text-primary" />
+                          Credit Card Payoff Timeline
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Visualize your complete credit card payoff timeline with our interactive timeline calculator. 
+                          Features month-by-month progress tracking, payment schedules, and milestone celebrations. 
+                          See exactly how your payments reduce principal and interest over time.
+                        </p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                          <Award className="h-4 w-4 text-primary" />
+                          Debt Payoff Plan
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Create a comprehensive debt payoff plan tailored to your financial situation. Features 
+                          budget integration, payment scheduling, and progress monitoring. Our plan adapts to your 
+                          changing circumstances and provides actionable steps for achieving debt freedom.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
 
-        <div className="mt-10 prose prose-sm max-w-none">
-          <h2 className="text-2xl font-bold mb-4 text-foreground">How to Plan Your Debt Payoff</h2>
-          <h3 className="text-xl font-semibold mb-2 text-foreground">1) Enter Balances, APRs, and Payments</h3>
-          <ul className="list-disc pl-5 text-muted-foreground">
-            <li>Add each card balance, interest rate (APR), and current payment.</li>
-            <li>Choose a strategy: avalanche (highest APR first) or snowball (lowest balance first).</li>
-          </ul>
-          <h3 className="text-xl font-semibold mt-6 mb-2 text-foreground">2) Add Extra Payments and Compare</h3>
-          <ul className="list-disc pl-5 text-muted-foreground">
-            <li>Simulate extra monthly or one‑time payments to reduce interest.</li>
-            <li>Review new payoff date and total interest savings.</li>
-          </ul>
+                <Card className="border border-border shadow-sm">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold text-foreground flex items-center gap-2">
+                      <HelpCircle className="h-5 w-5 text-primary" />
+                      Comprehensive FAQ Section
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-4">
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">How do I use the Credit Card Payoff Calculator effectively?</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Using our credit card payoff calculator is simple: enter your current balance, APR, and monthly payment amount. 
+                          The calculator will instantly show your payoff timeline, total interest paid, and payoff date. You can also 
+                          experiment with extra payments to see how they accelerate your debt freedom and save money on interest.
+                        </p>
+                      </div>
 
-          <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Tips for Faster Payoff</h2>
-          <ul className="list-disc pl-5 text-muted-foreground">
-            <li>Focus on highest APR first (avalanche) for maximum interest savings.</li>
-            <li>Automate payments and avoid new charges during payoff.</li>
-            <li>Consider balance transfers cautiously—account for fees and promo periods.</li>
-          </ul>
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">What's the difference between avalanche and snowball debt payoff methods?</h3>
+                        <p className="text-sm text-muted-foreground">
+                          The avalanche method targets debts with the highest interest rates first, minimizing total interest paid and 
+                          saving money long-term. The snowball method pays off smallest balances first, providing psychological wins 
+                          and motivation. Our calculator shows you the impact of both strategies so you can choose what works best for you.
+                        </p>
+                      </div>
 
-          <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Finance Tools</h2>
-          <ul className="list-disc pl-5 text-muted-foreground">
-            <li><Link href="/finance-tools/retirement-planner">Retirement Planner</Link></li>
-            <li><Link href="/finance-tools/savings-tracker">Savings Goal Tracker</Link></li>
-            <li><Link href="/finance-tools/paypal-fee">PayPal Fee Calculator</Link></li>
-            <li><Link href="/finance-tools/discount-calculator">Discount Calculator</Link></li>
-            </ul>
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">How much can I save by making extra payments on my credit card?</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Extra payments can save you thousands in interest and years of payments. Even small increases like $25-50 
+                          per month can make a significant difference. Our calculator shows you exactly how much you'll save and 
+                          how much faster you'll become debt-free with different extra payment amounts.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">Is it better to pay off credit cards or invest extra money?</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Generally, it's better to pay off high-interest credit card debt first, as the guaranteed return (saved interest) 
+                          typically exceeds average investment returns. However, this depends on your specific APR, investment opportunities, 
+                          and risk tolerance. Our calculator helps you see the true cost of carrying debt.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">Should I consider a balance transfer to pay off credit card debt faster?</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Balance transfers can be effective if you can get a lower APR and pay off the balance during the promotional period. 
+                          However, consider transfer fees, your ability to pay off the balance, and what happens after the promotional rate ends. 
+                          Our calculator can help you compare the costs and benefits.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">How does credit card interest work and how is it calculated?</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Credit card interest is typically calculated daily using your average daily balance and APR. Interest compounds, 
+                          meaning you pay interest on interest. Our calculator uses precise formulas to show you exactly how interest 
+                          accumulates and how payments are applied to principal vs. interest.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">What's the minimum payment vs. extra payment impact on payoff time?</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Minimum payments are designed to keep you in debt longer, often taking decades to pay off. Extra payments 
+                          dramatically reduce payoff time and total interest. Our calculator shows you the stark difference between 
+                          minimum payments and even modest extra payments, helping you understand the true cost of minimum payments.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">Can I use this calculator for multiple credit cards at once?</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Our calculator is designed for single credit card analysis, but you can use it multiple times for different cards. 
+                          For multiple cards, we recommend using the avalanche method (highest APR first) or snowball method (lowest balance first) 
+                          to prioritize which card to pay off first.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">How accurate is the payoff date calculation?</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Our calculator uses precise mathematical formulas to ensure accurate payoff date calculations. We account for 
+                          daily interest compounding, payment timing, and principal reduction. The calculations are accurate to the month, 
+                          giving you a reliable timeline for debt freedom planning.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">What if my credit card APR changes during the payoff period?</h3>
+                        <p className="text-sm text-muted-foreground">
+                          If your APR changes, you can recalculate using the new rate to see how it affects your payoff timeline and total interest. 
+                          Our calculator allows you to experiment with different APRs to see the impact of rate changes on your debt payoff strategy.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border border-border shadow-sm">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold text-foreground flex items-center gap-2">
+                      <ExternalLink className="h-5 w-5 text-primary" />
+                      Related Finance Tools
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                      <Link href="/finance-tools/savings-tracker" className="p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-colors text-center">
+                        <PiggyBank className="h-6 w-6 text-primary mx-auto mb-2" />
+                        <span className="text-sm font-medium text-foreground">Savings Tracker</span>
+                      </Link>
+                      <Link href="/finance-tools/retirement-planner" className="p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-colors text-center">
+                        <Target className="h-6 w-6 text-primary mx-auto mb-2" />
+                        <span className="text-sm font-medium text-foreground">Retirement Planner</span>
+                      </Link>
+                      <Link href="/finance-tools/bill-splitter" className="p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-colors text-center">
+                        <Receipt className="h-6 w-6 text-primary mx-auto mb-2" />
+                        <span className="text-sm font-medium text-foreground">Bill Splitter</span>
+                      </Link>
+                      <Link href="/finance-tools/paypal-fee" className="p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-colors text-center">
+                        <CreditCard className="h-6 w-6 text-primary mx-auto mb-2" />
+                        <span className="text-sm font-medium text-foreground">PayPal Fee Calculator</span>
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            <div className="hidden xl:block w-80">
+              <div className="sticky top-32 space-y-6">
+                <div>
+                  <div className="text-center mb-2">
+                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="sidebar" className="w-full h-64 border border-border rounded-xl shadow-sm bg-card" />
+                </div>
+                <div>
+                  <div className="text-center mb-2">
+                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="sidebar" className="w-full h-64 border border-border rounded-xl shadow-sm bg-card" />
+                </div>
+              </div>
+            </div>
           </div>
-
         </div>
       </div>
+    </div>
   )
 }

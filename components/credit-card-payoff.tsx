@@ -90,73 +90,68 @@ Payoff Date: ${result.payoffDate}`
   }
 
   return (
-    <div className="space-y-6">
-      <Card className="border border-border shadow-sm">
-        <CardHeader>
-          <CardTitle className="text-xl text-foreground">Credit Card Payoff Calculator</CardTitle>
-          <CardDescription className="text-sm text-muted-foreground">
-            Calculate how long it will take to pay off your credit card debt
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="balance" className="text-sm font-medium text-foreground">
-              Current Balance ($)
-            </Label>
-            <Input
-              id="balance"
-              type="number"
-              placeholder="5000"
-              value={balance}
-              onChange={(e) => setBalance(e.target.value)}
-              min="0"
-              step="100"
-              className="h-11 text-sm"
-            />
-          </div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {/* Left Column - Inputs */}
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="balance" className="text-xs font-medium text-foreground">
+            Current Balance ($)
+          </Label>
+          <Input
+            id="balance"
+            type="number"
+            placeholder="5000"
+            value={balance}
+            onChange={(e) => setBalance(e.target.value)}
+            min="0"
+            step="100"
+            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+          />
+        </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="apr" className="text-sm font-medium text-foreground">
-              Annual Percentage Rate (APR %)
-            </Label>
-            <Input
-              id="apr"
-              type="number"
-              placeholder="18.99"
-              value={apr}
-              onChange={(e) => setApr(e.target.value)}
-              min="0"
-              max="100"
-              step="0.01"
-              className="h-11 text-sm"
-            />
-          </div>
+        <div className="space-y-2">
+          <Label htmlFor="apr" className="text-xs font-medium text-foreground">
+            Annual Percentage Rate (APR %)
+          </Label>
+          <Input
+            id="apr"
+            type="number"
+            placeholder="18.99"
+            value={apr}
+            onChange={(e) => setApr(e.target.value)}
+            min="0"
+            max="100"
+            step="0.01"
+            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+          />
+        </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="monthlyPayment" className="text-sm font-medium text-foreground">
-              Monthly Payment ($)
-            </Label>
-            <Input
-              id="monthlyPayment"
-              type="number"
-              placeholder="200"
-              value={monthlyPayment}
-              onChange={(e) => setMonthlyPayment(e.target.value)}
-              min="0"
-              step="10"
-              className="h-11 text-sm"
-            />
-            <p className="text-xs text-muted-foreground">Minimum payment is usually 2-3% of balance</p>
-          </div>
+        <div className="space-y-2">
+          <Label htmlFor="monthlyPayment" className="text-xs font-medium text-foreground">
+            Monthly Payment ($)
+          </Label>
+          <Input
+            id="monthlyPayment"
+            type="number"
+            placeholder="200"
+            value={monthlyPayment}
+            onChange={(e) => setMonthlyPayment(e.target.value)}
+            min="0"
+            step="10"
+            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+          />
+          <p className="text-xs text-muted-foreground">Minimum payment is usually 2-3% of balance</p>
+        </div>
 
+        <div className="flex gap-2">
           <Button
             onClick={calculatePayoff}
             disabled={loading || !balance || !apr || !monthlyPayment}
-            className="w-full h-11 text-sm font-medium shadow-sm hover:shadow-md transition-all"
+            className="flex-1 h-9 text-sm font-medium shadow-sm hover:shadow-md transition-all"
           >
             {loading ? (
               <>
-                <LoadingSpinner className="mr-2" />
+                <LoadingSpinner className="mr-2 h-3 w-3" />
                 Calculating...
               </>
             ) : (
@@ -166,60 +161,73 @@ Payoff Date: ${result.payoffDate}`
               </>
             )}
           </Button>
-        </CardContent>
-      </Card>
+          <Button
+            onClick={() => {
+              setBalance("")
+              setApr("")
+              setMonthlyPayment("")
+              setResult(null)
+            }}
+            variant="outline"
+            className="h-9 text-sm font-medium"
+          >
+            Reset
+          </Button>
+        </div>
+      </div>
 
-      {result && (
-        <Card className="border border-primary/20 shadow-md animate-fade-in-up bg-accent/5">
-          <CardHeader>
-            <CardTitle className="text-xl text-foreground">Your Payoff Plan</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-3">
-              <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
-                <span className="text-sm text-muted-foreground">Current Balance:</span>
-                <span className="text-base font-bold text-foreground">${balance}</span>
-              </div>
+      {/* Right Column - Results */}
+      <div className="space-y-4">
+        {result ? (
+          <div className="space-y-3">
+            <div className="flex justify-between items-center">
+              <span className="text-xs text-muted-foreground">Current Balance:</span>
+              <span className="text-sm font-bold text-foreground">${balance}</span>
+            </div>
 
-              <div className="flex justify-between items-center p-4 bg-primary/5 rounded-lg border-2 border-primary/20">
-                <span className="text-sm font-medium text-foreground">Months to Payoff:</span>
-                <span className="text-2xl font-bold text-primary">{result.monthsToPayoff}</span>
-              </div>
+            <div className="flex justify-between items-center p-3 bg-green-500/10 rounded-lg border border-green-500/20">
+              <span className="text-xs font-medium text-foreground">Months to Payoff:</span>
+              <span className="text-xl font-bold text-green-600">{result.monthsToPayoff}</span>
+            </div>
 
-              <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
-                <span className="text-sm text-muted-foreground">Payoff Date:</span>
-                <span className="text-base font-bold text-foreground">{result.payoffDate}</span>
-              </div>
+            <div className="flex justify-between items-center">
+              <span className="text-xs text-muted-foreground">Payoff Date:</span>
+              <span className="text-sm font-bold text-foreground">{result.payoffDate}</span>
+            </div>
 
-              <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
-                <span className="text-sm text-muted-foreground">Total Interest Paid:</span>
-                <span className="text-base font-bold text-destructive">${result.totalInterest}</span>
-              </div>
+            <div className="flex justify-between items-center">
+              <span className="text-xs text-muted-foreground">Total Interest Paid:</span>
+              <span className="text-sm font-bold text-red-500">${result.totalInterest}</span>
+            </div>
 
-              <div className="flex justify-between items-center p-3 bg-secondary/5 rounded-lg border border-secondary/20">
-                <span className="text-sm font-medium text-foreground">Total Amount Paid:</span>
-                <span className="text-lg font-bold text-secondary">${result.totalPaid}</span>
-              </div>
+            <div className="flex justify-between items-center p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
+              <span className="text-xs font-medium text-foreground">Total Amount Paid:</span>
+              <span className="text-lg font-bold text-blue-600">${result.totalPaid}</span>
+            </div>
 
-              <div className="p-3 bg-accent/10 rounded-lg border border-border">
-                <p className="text-xs text-muted-foreground mb-1">Monthly Breakdown:</p>
-                <p className="text-sm font-medium text-foreground">
-                  Paying ${monthlyPayment}/month at {apr}% APR
-                </p>
-              </div>
+            <div className="p-3 bg-orange-500/10 rounded-lg border border-orange-500/20">
+              <p className="text-xs text-muted-foreground mb-1">Monthly Breakdown:</p>
+              <p className="text-xs font-medium text-foreground">
+                Paying ${monthlyPayment}/month at {apr}% APR
+              </p>
             </div>
 
             <Button
               onClick={copyResult}
               variant="outline"
-              className="w-full h-10 text-sm font-medium hover:bg-accent transition-all bg-transparent"
+              className="w-full h-8 text-xs font-medium hover:bg-accent transition-all bg-transparent"
             >
-              <Copy className="mr-2 h-4 w-4" />
-              Copy Payoff Plan
+              <Copy className="mr-2 h-3 w-3" />
+              Copy Results
             </Button>
-          </CardContent>
-        </Card>
-      )}
+          </div>
+        ) : (
+          <div className="text-center py-8 text-muted-foreground">
+            <CreditCard className="h-12 w-12 mx-auto mb-4 opacity-50" />
+            <p className="text-sm">Enter your credit card details to see payoff plan</p>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
