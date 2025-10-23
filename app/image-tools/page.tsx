@@ -11,6 +11,35 @@ export const metadata: Metadata = {
   description:
     "Free image and file tools: OCR converter, background blur, image cropper, PDF splitter/merger, and PDF unlocker. Professional results, 100% secure.",
   keywords: [
+    // High-Volume OCR Keywords
+    "image to text converter",
+    "OCR tool online", 
+    "extract text from image",
+    "photo to text converter",
+    "free OCR software",
+    
+    // Image Editing Keywords
+    "background blur tool",
+    "image cropper online",
+    "photo background remover",
+    "image resizer online",
+    "photo editor online",
+    
+    // PDF Tools Keywords
+    "PDF splitter online",
+    "PDF merger free",
+    "PDF unlocker tool",
+    "PDF to image converter",
+    "PDF compressor online",
+    
+    // File Conversion Keywords
+    "image format converter",
+    "JPG to PNG converter",
+    "image compression tool",
+    "batch image converter",
+    "image watermark remover",
+    
+    // Existing Keywords
     "image tools",
     "free image tools", 
     "image to text",
@@ -62,35 +91,35 @@ export const metadata: Metadata = {
 const imageTools = [
   {
     title: "Image to Text (OCR)",
-    description: "Extract text from images using OCR technology. Perfect for digitizing documents and screenshots.",
+    description: "Extract text from images using OCR technology. Perfect for digitizing documents and converting images to editable text.",
     icon: FileText,
     href: "/image-tools/image-to-text",
     popular: true,
   },
   {
     title: "Background Blur",
-    description: "Blur image backgrounds with adjustable intensity. Create professional-looking photos instantly.",
+    description: "Blur image backgrounds with adjustable intensity. Create professional-looking photos with background blur tool.",
     icon: Blur,
     href: "/image-tools/background-blur",
     popular: true,
   },
   {
     title: "Image Cropper",
-    description: "Crop images into circular or square shapes. Perfect for profile pictures and social media.",
+    description: "Crop images into circular or square shapes using image cropper online. Perfect for profile pictures and social media.",
     icon: Crop,
     href: "/image-tools/image-cropper",
     popular: false,
   },
   {
     title: "PDF Splitter & Merger",
-    description: "Split large PDFs or merge multiple PDFs into one. Fast and secure processing.",
+    description: "Split large PDFs with PDF splitter online or merge multiple PDFs with PDF merger free. Fast and secure processing.",
     icon: FileStack,
     href: "/image-tools/pdf-tools",
     popular: true,
   },
   {
     title: "PDF Unlocker",
-    description: "Remove password protection from PDFs. Unlock your documents quickly and easily.",
+    description: "Remove password protection from PDFs with PDF unlocker tool. Unlock your documents quickly and easily.",
     icon: Unlock,
     href: "/image-tools/pdf-unlocker",
     popular: false,
@@ -160,11 +189,11 @@ export default function ImageToolsPage() {
         </div>
 
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">
-                    Image & File Tools
+                    Free Image & File Tools – Edit, Crop, OCR, Merge & More Online
                   </h1>
 
                   <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
-                    Professional-grade image editing and file management tools for OCR text extraction, background blur, image cropping, and PDF manipulation. All free, fast, and secure.
+                    Edit photos, extract text (OCR), blur backgrounds, crop images, and merge or split PDFs — all free, fast, and online. No signup or software needed.
                   </p>
 
                   <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
@@ -245,12 +274,12 @@ export default function ImageToolsPage() {
 
                     <h3 className="text-lg font-bold mb-3 text-card-foreground">Advanced OCR Text Extraction</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                      High-accuracy OCR technology extracts text from images, screenshots, and scanned documents with support for multiple languages and font types.
+                      High-accuracy OCR technology extracts text from images and scanned documents with support for multiple languages and font types. Perfect for image to text converter, photo to text converter, and extract text from image needs. Our free OCR software provides professional-grade text recognition capabilities.
                     </p>
 
                     <h3 className="text-lg font-bold mb-3 text-card-foreground">Intelligent Image Processing</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Smart background blur with edge detection, precision image cropping with aspect ratio optimization, and professional-quality results for all image editing needs.
+                      Smart background blur tool with edge detection, precision image cropper online with aspect ratio optimization, photo background remover capabilities, image resizer online functionality, and comprehensive photo editor online features for professional-quality results.
                     </p>
                   </div>
 
@@ -262,12 +291,24 @@ export default function ImageToolsPage() {
 
                     <h3 className="text-lg font-bold mb-3 text-card-foreground">Content Creation & Social Media</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                      Create professional profile pictures with background blur, crop images for different social platforms, and extract text from competitor screenshots for content inspiration.
+                      Create professional profile pictures with background blur tool, crop images for different social platforms using image cropper online, and extract text from competitor content for inspiration.
                     </p>
 
                     <h3 className="text-lg font-bold mb-3 text-card-foreground">Business Document Management</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Digitize paper documents with OCR, organize PDF files with split/merge tools, unlock password-protected documents, and streamline document workflows.
+                      Digitize paper documents with OCR tool online, organize PDF files with PDF splitter online and PDF merger free tools, unlock password-protected documents with PDF unlocker tool, convert documents with PDF to image converter, compress files with PDF compressor online, and streamline document workflows.
+                    </p>
+                  </div>
+
+                  <div className="p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-card-foreground">Advanced File Conversion & Processing</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Comprehensive file conversion capabilities including image format converter, JPG to PNG converter, image compression tool, batch image converter, and image watermark remover for professional file management.
+                    </p>
+
+                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Format Conversion & Optimization</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Convert between image formats with our image format converter, optimize file sizes with image compression tool, process multiple files with batch image converter, and remove unwanted elements with image watermark remover for efficient file management.
                     </p>
                   </div>
 
@@ -282,7 +323,7 @@ export default function ImageToolsPage() {
                     <div className="space-y-6">
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">What are the best free OCR tools for text extraction?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Our OCR tool uses advanced optical character recognition technology to extract text from images and scanned documents with high accuracy. It supports multiple languages, various fonts, and different text orientations. The tool is perfect for digitizing paper documents and converting images to editable text. It works entirely in your browser, ensuring complete privacy and security for sensitive documents. The OCR engine handles complex layouts, handwritten text, and low-quality images while maintaining professional accuracy standards.</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Our OCR tool online uses advanced optical character recognition technology to extract text from images and scanned documents with high accuracy. It supports multiple languages, various fonts, and different text orientations. The tool is perfect for digitizing paper documents and converting images to editable text. It works entirely in your browser, ensuring complete privacy and security for sensitive documents. The OCR engine handles complex layouts, handwritten text, and low-quality images while maintaining professional accuracy standards.</p>
           </div>
 
           <div>
