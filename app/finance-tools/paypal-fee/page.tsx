@@ -5,50 +5,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { 
   Calculator, 
   DollarSign, 
-  CreditCard, 
-  Globe, 
-  Shield, 
-  Zap, 
-  Target, 
+  Target,
   TrendingUp, 
   BarChart3, 
-  PieChart, 
-  Users, 
-  Award, 
-  Clock, 
-  FileText, 
-  Percent,
-  AlertCircle,
-  CheckCircle,
-  Info,
-  ExternalLink,
   Copy,
-  Download,
-  Share2,
-  Settings,
   HelpCircle,
-  BookOpen,
   Lightbulb,
-  Star,
-  Heart,
-  Gift,
-  ShoppingCart,
-  Banknote,
-  Coins,
-  Receipt,
-  Wallet,
-  PiggyBank,
-  TrendingDown,
-  ArrowUp,
-  ArrowDown,
-  Minus,
-  Plus,
-  Equal,
-  Hash,
-  HashIcon
+  Star
 } from "lucide-react"
 import type { Metadata } from "next"
-import Link from "next/link"
 import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
@@ -64,9 +29,8 @@ export const metadata: Metadata = {
     "free paypal fee calculator",
     "paypal fee tool",
     "paypal fee estimator",
-    "paypal fee finder",
-    "paypal fee checker",
-    "paypal fee analyzer",
+    
+    // Transaction Type Keywords
     "paypal personal fee calculator",
     "paypal business fee calculator",
     "paypal merchant fee calculator",
@@ -84,8 +48,6 @@ export const metadata: Metadata = {
     "paypal international fee calculator",
     "paypal domestic fee calculator",
     "paypal cross border fee calculator",
-    "paypal global fee calculator",
-    "paypal worldwide fee calculator",
     "paypal multi currency fee calculator",
     "paypal foreign exchange fee calculator",
     "paypal currency conversion fee calculator",
@@ -94,7 +56,6 @@ export const metadata: Metadata = {
     "paypal fee calculator usa to uk",
     "paypal fee calculator usa to australia",
     "paypal fee calculator usa to germany",
-    "paypal fee calculator usa to france",
     "paypal fee calculator usa to japan",
     "paypal fee calculator usa to india",
     "paypal fee calculator usa to brazil",
@@ -214,19 +175,12 @@ export const metadata: Metadata = {
     "paypal seller fee calculator",
     "paypal ecommerce fee calculator",
     "paypal online store fee calculator",
-    "paypal shopify fee calculator",
-    "paypal woocommerce fee calculator",
-    "paypal magento fee calculator",
-    "paypal bigcommerce fee calculator",
-    "paypal square fee calculator",
     "paypal stripe vs paypal fees",
     "paypal vs stripe fee calculator",
     "paypal vs square fee calculator",
     "paypal vs venmo fee calculator",
     "paypal percentage fee calculator",
     "paypal fixed fee calculator",
-    "paypal minimum fee calculator",
-    "paypal maximum fee calculator",
     "paypal net amount calculator",
     "paypal gross amount calculator",
     "paypal reverse fee calculator",
@@ -234,61 +188,73 @@ export const metadata: Metadata = {
     "paypal charge calculator",
     "paypal profit calculator",
     "paypal net received calculator",
-    "paypal total cost calculator",
-    "paypal final amount calculator",
-    "paypal after fee calculator",
-    "paypal before fee calculator",
+    
+    // Special Features
     "paypal micropayment fee calculator",
     "paypal nonprofit fee calculator",
     "paypal charity fee calculator",
     "paypal donation fee calculator",
     "paypal refund fee calculator",
-    "paypal chargeback fee calculator",
-    "paypal dispute fee calculator",
     "paypal instant transfer fee calculator",
-    "paypal standard transfer fee calculator",
     "paypal withdrawal fee calculator",
-    "paypal bank transfer fee calculator",
-    "paypal check fee calculator",
+    
+    // Industry-Specific
     "paypal freelancer fee calculator",
     "paypal contractor fee calculator",
     "paypal consultant fee calculator",
-    "paypal service provider fee calculator",
-    "paypal digital product fee calculator",
     "paypal subscription fee calculator",
     "paypal recurring payment fee calculator",
-    "paypal membership fee calculator",
-    "paypal course fee calculator",
-    "paypal coaching fee calculator",
-    "paypal consulting fee calculator",
-    "paypal api fee calculator",
-    "paypal webhook fee calculator",
-    "paypal integration fee calculator",
-    "paypal sdk fee calculator",
-    "paypal rest api fee calculator",
-    "paypal graphql fee calculator",
-    "paypal webhook fee calculator",
-    "paypal notification fee calculator",
+    
+    // Long-tail Keywords
     "how to calculate paypal fees",
     "how much does paypal charge",
     "paypal fee structure calculator",
     "paypal fee breakdown calculator",
-    "paypal fee explanation calculator",
     "paypal fee guide calculator",
-    "paypal fee tutorial calculator",
-    "paypal fee help calculator",
-    "paypal fee support calculator",
-    "paypal fee assistance calculator",
+    
+    // Action Keywords
     "calculate paypal fees instantly",
     "calculate paypal fees online",
     "calculate paypal fees free",
     "calculate paypal fees now",
-    "calculate paypal fees today",
     "calculate paypal fees quickly",
-    "calculate paypal fees easily",
     "calculate paypal fees accurately",
-    "calculate paypal fees precisely",
-    "calculate paypal fees correctly"
+    
+    // High-Value Keywords from Analytics
+    "paypal fee transfer",
+    "paypal fee send money",
+    "paypal fees as seller",
+    "paypal g&s fee",
+    "paypal fee for international transfer",
+    "paypal fees for receiving money",
+    "paypal fee uk calculator",
+    "paypal fee for friends and family",
+    "paypal fee business account",
+    "paypal fee international",
+    "paypal fee international calculator",
+    "paypal fee ebay calculator",
+    "paypal fee merchant",
+    "paypal processing fee",
+    "paypal fee nonprofit",
+    "paypal fee uk",
+    "paypal fee payment",
+    "paypal fee debit card",
+    "paypal fee percentage",
+    "paypal fee india",
+    "paypal fees australia",
+    "paypal fee per transaction",
+    "paypal fee calculator germany",
+    "paypal fee donation",
+    "paypal me fee",
+    "paypal partner fee",
+    "paypal vs xoom",
+    "paypal fee bank account",
+    "paypal late fee",
+    "paypal fee to send money to friend",
+    "paypal fee gst",
+    "paypal nsf fee",
+    "paypal fee deduction",
+    "paypal inst xfer fee"
   ],
   alternates: { canonical: "https://www.fasttools.store/finance-tools/paypal-fee" },
   openGraph: {
@@ -365,7 +331,7 @@ export const metadata: Metadata = {
       softwareVersion: "2.0",
       downloadUrl: "https://www.fasttools.store/finance-tools/paypal-fee",
       screenshot: "https://www.fasttools.store/og-image.svg",
-      keywords: `paypal fee calculator, paypal fees ${getCurrentYear()}, calculate paypal fee, paypal international fee calculator, paypal business fee calculator, paypal merchant fee calculator, paypal sending fee calculator, paypal receiving fee calculator, paypal transaction fee calculator, paypal usd eur gbp inr fees, paypal percentage calculator, paypal invoice fee calculator, paypal net amount calculator, paypal reverse fee calculator, paypal deduction calculator, paypal goods and services fee, paypal personal payment fee, paypal refund fee calculator, paypal currency conversion fee calculator, paypal charge calculator, paypal profit calculator, paypal net received calculator, free paypal calculator, paypal fee tool online, paypal cost calculator, calculate paypal fees instantly, paypal fee calculator usa to canada, paypal fee calculator usa to uk, paypal fee calculator usa to australia, paypal fee calculator usa to germany, paypal fee calculator usa to japan, paypal fee calculator usa to india, paypal usd to eur fee calculator, paypal eur to usd fee calculator, paypal credit card fee calculator, paypal debit card fee calculator, paypal bank account fee calculator, paypal balance fee calculator, paypal business account fee calculator, paypal merchant account fee calculator, paypal ecommerce fee calculator, paypal stripe vs paypal fees, paypal vs stripe fee calculator, paypal freelancer fee calculator, paypal contractor fee calculator, paypal consultant fee calculator, paypal subscription fee calculator, paypal recurring payment fee calculator, paypal micropayment fee calculator, paypal nonprofit fee calculator, paypal charity fee calculator, paypal donation fee calculator, paypal instant transfer fee calculator, paypal withdrawal fee calculator, how to calculate paypal fees, how much does paypal charge, paypal fee structure calculator, paypal fee breakdown calculator, paypal fee guide calculator, calculate paypal fees online, calculate paypal fees free, calculate paypal fees now, calculate paypal fees quickly, calculate paypal fees accurately`,
+      keywords: `paypal fee calculator, paypal fees ${getCurrentYear()}, calculate paypal fee, paypal international fee calculator, paypal business fee calculator, paypal merchant fee calculator, paypal sending fee calculator, paypal receiving fee calculator, paypal transaction fee calculator, paypal usd eur gbp inr fees, paypal percentage calculator, paypal invoice fee calculator, paypal net amount calculator, paypal reverse fee calculator, paypal deduction calculator, paypal goods and services fee, paypal personal payment fee, paypal refund fee calculator, paypal currency conversion fee calculator, paypal charge calculator, paypal profit calculator, paypal net received calculator, free paypal calculator, paypal fee tool online, paypal cost calculator, calculate paypal fees instantly, paypal fee calculator usa to canada, paypal fee calculator usa to uk, paypal fee calculator usa to australia, paypal fee calculator usa to germany, paypal fee calculator usa to japan, paypal fee calculator usa to india, paypal usd to eur fee calculator, paypal eur to usd fee calculator, paypal credit card fee calculator, paypal debit card fee calculator, paypal bank account fee calculator, paypal balance fee calculator, paypal business account fee calculator, paypal merchant account fee calculator, paypal ecommerce fee calculator, paypal stripe vs paypal fees, paypal vs stripe fee calculator, paypal freelancer fee calculator, paypal contractor fee calculator, paypal consultant fee calculator, paypal subscription fee calculator, paypal recurring payment fee calculator, paypal micropayment fee calculator, paypal nonprofit fee calculator, paypal charity fee calculator, paypal donation fee calculator, paypal instant transfer fee calculator, paypal withdrawal fee calculator, how to calculate paypal fees, how much does paypal charge, paypal fee structure calculator, paypal fee breakdown calculator, paypal fee guide calculator, calculate paypal fees online, calculate paypal fees free, calculate paypal fees now, calculate paypal fees quickly, calculate paypal fees accurately, paypal fee transfer, paypal fee send money, paypal fees as seller, paypal g&s fee, paypal fee for international transfer, paypal fees for receiving money, paypal fee uk calculator, paypal fee for friends and family, paypal fee business account, paypal fee international, paypal fee international calculator, paypal fee ebay calculator, paypal fee merchant, paypal processing fee, paypal fee nonprofit, paypal fee uk, paypal fee payment, paypal fee debit card, paypal fee percentage, paypal fee india, paypal fees australia, paypal fee per transaction, paypal fee calculator germany, paypal fee donation, paypal me fee, paypal partner fee, paypal vs xoom, paypal fee bank account, paypal late fee, paypal fee to send money to friend, paypal fee gst, paypal nsf fee, paypal fee deduction, paypal inst xfer fee`,
       about: {
         "@type": "Thing",
         name: "Payment Processing Fees",
@@ -403,7 +369,9 @@ export default function PayPalFeeCalculatorPage() {
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                   Calculate PayPal transaction fees, net amounts, and required charges instantly. 
-                  Perfect for sellers, freelancers, and businesses to understand payment processing costs.
+                  Perfect for sellers, freelancers, and businesses to understand payment processing costs. 
+                  Our PayPal fee calculator online supports PayPal fee transfer, PayPal fee send money, 
+                  PayPal fees as seller, and PayPal G&S fee calculations for all transaction types.
                 </p>
         </div>
 
@@ -415,7 +383,9 @@ export default function PayPalFeeCalculatorPage() {
                     PayPal Fee Calculator
                   </CardTitle>
                   <CardDescription className="text-base text-muted-foreground">
-                    Enter transaction amount to calculate PayPal fees, net received, and required charges
+                    Enter transaction amount to calculate PayPal fees, net received, and required charges. 
+                    Supports PayPal fee international calculator, PayPal fee UK calculator, PayPal fees Australia, 
+                    PayPal fee calculator Germany, and PayPal fee India calculations.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -440,7 +410,7 @@ export default function PayPalFeeCalculatorPage() {
                           PayPal Transaction Fee Calculation
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Calculate exact PayPal fees for personal, business, commercial, and donation transactions. Our PayPal fee calculator supports domestic and international fee calculations for USA to Canada, USA to UK, USA to Australia, USA to Germany, USA to Japan, USA to India, and all major country combinations.
+                          Calculate exact PayPal fees for personal, business, commercial, and donation transactions. Our PayPal fee calculator online supports domestic and international fee calculations including PayPal fee transfer, PayPal fee send money, and PayPal fees for receiving money. Perfect for PayPal fee UK calculator, PayPal fees Australia, and PayPal fee calculator Germany users.
                         </p>
                       </div>
                       <div className="p-4 rounded-lg bg-card border border-border">
@@ -449,7 +419,7 @@ export default function PayPalFeeCalculatorPage() {
                           PayPal Net Amount Calculator
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Determine exactly how much you'll receive after PayPal deducts their percentage fees and fixed fees. Perfect for freelancers, contractors, consultants, and service providers who need accurate net amount calculations.
+                          Determine exactly how much you'll receive after PayPal deducts their percentage fees and fixed fees. Perfect for freelancers, contractors, consultants, and service providers who need accurate net amount calculations. Calculate PayPal fees as seller and understand PayPal fee percentage breakdown for better pricing decisions.
                         </p>
                       </div>
                       <div className="p-4 rounded-lg bg-card border border-border">
@@ -458,7 +428,7 @@ export default function PayPalFeeCalculatorPage() {
                           PayPal Gross Amount Calculator
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Calculate how much to charge customers to receive your desired net amount after PayPal fees. Essential for ecommerce stores, online businesses, and subscription services using PayPal as payment processor.
+                          Calculate how much to charge customers to receive your desired net amount after PayPal fees. Essential for ecommerce stores, online businesses, and subscription services using PayPal as payment processor. Understand PayPal processing fee and PayPal fee per transaction to optimize your pricing strategy.
                         </p>
                       </div>
                       <div className="p-4 rounded-lg bg-card border border-border">
@@ -467,7 +437,7 @@ export default function PayPalFeeCalculatorPage() {
                           Multi-Currency Support
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Support for USD, EUR, GBP, AUD, CAD, JPY, INR, BRL, MXN, SGD, HKD, and 20+ currencies. Calculate PayPal fees for currency conversions like USD to EUR, EUR to USD, GBP to USD, and all major currency pairs.
+                          Support for USD, EUR, GBP, AUD, CAD, JPY, INR, BRL, MXN, SGD, HKD, and 20+ currencies. Calculate PayPal fees for currency conversions like USD to EUR, EUR to USD, GBP to USD, and all major currency pairs. Perfect for PayPal fee international calculator and PayPal fee for international transfer calculations.
                         </p>
                       </div>
         </div>
@@ -492,6 +462,8 @@ export default function PayPalFeeCalculatorPage() {
                           <li>• PayPal personal fee: 0% (PayPal Balance)</li>
                           <li>• PayPal credit card fee: 2.9% + $0.30</li>
                           <li>• PayPal debit card fee: 2.9% + $0.30</li>
+                          <li>• PayPal fee bank account: Free for domestic</li>
+                          <li>• PayPal fee payment via balance: Free</li>
                         </ul>
                       </div>
                       <div className="p-4 rounded-lg bg-accent/5 border border-accent/20">
@@ -502,6 +474,8 @@ export default function PayPalFeeCalculatorPage() {
                           <li>• PayPal currency conversion fee: 3-4%</li>
                           <li>• PayPal exchange rate fee included</li>
                           <li>• Country-specific fixed fees apply</li>
+                          <li>• PayPal fee international calculator available</li>
+                          <li>• PayPal fee for international transfer rates</li>
           </ul>
                       </div>
                       <div className="p-4 rounded-lg bg-accent/5 border border-accent/20">
@@ -512,7 +486,56 @@ export default function PayPalFeeCalculatorPage() {
                           <li>• PayPal nonprofit fee: 1.99% + $0.49</li>
                           <li>• PayPal charity fee: 1.99% + $0.49</li>
                           <li>• PayPal donation fee: 2.89% + $0.49</li>
+                          <li>• PayPal fee nonprofit organizations</li>
+                          <li>• PayPal fee donation transactions</li>
           </ul>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* PayPal Fee Types & Methods */}
+                <Card className="border border-border shadow-sm">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold text-foreground flex items-center gap-2">
+                      <Star className="h-5 w-5 text-primary" />
+                      PayPal Fee Types & Payment Methods
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">PayPal G&S Fee vs Friends & Family</h3>
+                        <p className="text-sm text-muted-foreground">
+                          PayPal G&S fee (Goods and Services) provides seller protection but charges higher fees than PayPal fee for friends and family. 
+                          PayPal fee to send money to friend via Friends & Family is often free but offers no protection. 
+                          Choose based on your transaction needs and risk tolerance.
+                        </p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">PayPal Fee Merchant & Business Accounts</h3>
+                        <p className="text-sm text-muted-foreground">
+                          PayPal fee merchant rates vary by transaction volume and account type. PayPal fee business account 
+                          offers advanced features but higher fees than personal accounts. PayPal fee ebay calculator 
+                          helps eBay sellers understand their specific fee structure.
+                        </p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">PayPal vs Xoom Fee Comparison</h3>
+                        <p className="text-sm text-muted-foreground">
+                          PayPal vs Xoom fees differ significantly: Xoom specializes in international transfers with 
+                          competitive rates, while PayPal offers broader payment services. PayPal partner fee 
+                          structures vary by integration type. PayPal me fee for personal payments differs from 
+                          business transaction fees.
+                        </p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">PayPal Fee India & International Rates</h3>
+                        <p className="text-sm text-muted-foreground">
+                          PayPal fee India transactions follow local regulations and may include GST considerations. 
+                          PayPal fees Australia, PayPal fee UK, and PayPal fee calculator Germany each have 
+                          specific regional fee structures. Use our international calculators for accurate rates.
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -535,6 +558,10 @@ export default function PayPalFeeCalculatorPage() {
                           <li>• Consider PayPal vs Stripe fees comparison for your business</li>
                           <li>• Implement PayPal subscription fee calculator for recurring payments</li>
                           <li>• Use PayPal business account fee calculator for volume discounts</li>
+                          <li>• Calculate PayPal fees as seller accurately for pricing decisions</li>
+                          <li>• Understand PayPal G&S fee vs Friends & Family fee differences</li>
+                          <li>• Monitor PayPal fee percentage and PayPal fee per transaction</li>
+                          <li>• Optimize PayPal processing fee with proper account setup</li>
           </ul>
                       </div>
                       <div className="space-y-3">
@@ -544,6 +571,10 @@ export default function PayPalFeeCalculatorPage() {
                           <li>• Factor PayPal contractor fees into project quotes</li>
                           <li>• Consider PayPal consultant fee calculator for service pricing</li>
                           <li>• Track PayPal service provider fees for tax deductions</li>
+                          <li>• Understand PayPal fee for friends and family limitations</li>
+                          <li>• Calculate PayPal fees for receiving money accurately</li>
+                          <li>• Use PayPal fee transfer for client payments</li>
+                          <li>• Monitor PayPal fee deduction from payments</li>
             </ul>
                       </div>
                     </div>
@@ -629,21 +660,102 @@ export default function PayPalFeeCalculatorPage() {
                       </div>
 
                       <div className="p-4 rounded-lg bg-card border border-border">
-                        <h3 className="font-semibold text-foreground mb-2">PayPal cryptocurrency fee calculator for crypto transactions</h3>
+                        <h3 className="font-semibold text-foreground mb-2">PayPal fee transfer and PayPal fee send money calculations</h3>
                         <p className="text-sm text-muted-foreground">
-                          PayPal crypto fees vary by transaction amount: $1-$74.99 (2.20%), $75-$200 (2.00%), 
-                          $200.01-$1000 (1.80%), $1000.01+ (1.50%). Our PayPal cryptocurrency fee calculator and 
-                          PayPal crypto fee calculator support Bitcoin, Ethereum, and PYUSD transactions. Calculate 
-                          PayPal Bitcoin fees and PayPal Ethereum fees accurately.
+                          PayPal fee transfer rates depend on the payment method: PayPal Balance transfers are free, 
+                          while PayPal fee send money via credit card costs 2.9% + $0.30. For international transfers, 
+                          PayPal fee for international transfer adds 1.5% plus currency conversion fees. Use our 
+                          PayPal fee transfer calculator to determine exact costs before sending money.
                         </p>
                       </div>
 
                       <div className="p-4 rounded-lg bg-card border border-border">
-                        <h3 className="font-semibold text-foreground mb-2">Are there fees for PayPal refunds?</h3>
+                        <h3 className="font-semibold text-foreground mb-2">PayPal fees as seller and PayPal G&S fee structure</h3>
                         <p className="text-sm text-muted-foreground">
-                          PayPal refunds the original transaction fee when you issue a full refund within 60 days. 
-                          Partial refunds receive a proportional fee refund. Refunds issued after 60 days may not 
-                          receive fee refunds, and you may incur additional processing fees.
+                          PayPal fees as seller typically range from 2.9% + $0.49 for business accounts. PayPal G&S fee 
+                          (Goods and Services) provides seller protection but charges higher fees than Friends & Family. 
+                          PayPal fee merchant rates vary by transaction volume and account type. Calculate PayPal fees 
+                          for receiving money accurately with our seller fee calculator.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">PayPal fee UK calculator and PayPal fees Australia</h3>
+                        <p className="text-sm text-muted-foreground">
+                          PayPal fee UK calculator shows different rates for UK-based transactions. PayPal fees Australia 
+                          follow similar international fee structures. PayPal fee calculator Germany supports European 
+                          transactions with EUR currency conversions. Our international calculators handle PayPal fee 
+                          international calculations for all major countries.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">PayPal fee for friends and family vs business payments</h3>
+                        <p className="text-sm text-muted-foreground">
+                          PayPal fee for friends and family is typically free when using PayPal Balance or bank account, 
+                          but charges 2.9% + $0.30 for credit card payments. PayPal fee to send money to friend via 
+                          Friends & Family provides no seller protection. PayPal fee business account transactions 
+                          offer protection but charge higher fees.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">PayPal processing fee and PayPal fee percentage breakdown</h3>
+                        <p className="text-sm text-muted-foreground">
+                          PayPal processing fee includes percentage fees (2.9% for most transactions) plus fixed fees 
+                          ($0.30-$0.49). PayPal fee percentage varies by transaction type: personal (0-2.9%), business 
+                          (2.9%), international (+1.5%). PayPal fee per transaction depends on amount and payment method. 
+                          Our calculator shows PayPal fee deduction amounts clearly.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">PayPal fee nonprofit and PayPal fee donation rates</h3>
+                        <p className="text-sm text-muted-foreground">
+                          PayPal fee nonprofit organizations receive discounted rates (1.99% + $0.49) for qualified 
+                          charities. PayPal fee donation transactions use special nonprofit pricing. PayPal fee 
+                          merchant rates for nonprofits are significantly lower than standard business rates. 
+                          Verify nonprofit status with PayPal to access reduced fees.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">PayPal fee debit card and PayPal fee bank account differences</h3>
+                        <p className="text-sm text-muted-foreground">
+                          PayPal fee debit card transactions typically charge 2.9% + $0.30. PayPal fee bank account 
+                          transfers are often free for domestic transactions. PayPal fee payment via bank account 
+                          avoids credit card processing fees. PayPal fee bank account international transfers may 
+                          incur additional charges.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">PayPal vs Xoom fee comparison and PayPal partner fees</h3>
+                        <p className="text-sm text-muted-foreground">
+                          PayPal vs Xoom fees differ significantly: Xoom specializes in international transfers with 
+                          competitive rates, while PayPal offers broader payment services. PayPal partner fee 
+                          structures vary by integration type. PayPal me fee for personal payments differs from 
+                          business transaction fees. Compare PayPal vs Xoom for international money transfers.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">PayPal instant transfer fee and PayPal late fee policies</h3>
+                        <p className="text-sm text-muted-foreground">
+                          PayPal instant transfer fee charges 1.75% for immediate bank transfers (minimum $0.25, 
+                          maximum $25). PayPal late fee may apply for failed payments or insufficient funds. 
+                          PayPal inst xfer fee provides immediate access to funds but costs more than standard 
+                          transfers. PayPal NSF fee applies when bank accounts have insufficient funds.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">PayPal fee GST and PayPal fee India considerations</h3>
+                        <p className="text-sm text-muted-foreground">
+                          PayPal fee GST (Goods and Services Tax) may apply in certain jurisdictions. PayPal fee 
+                          India transactions follow local tax regulations. PayPal fee deduction for taxes varies 
+                          by country and transaction type. Consult local tax advisors for PayPal fee GST 
+                          implications in your region.
                         </p>
                       </div>
 
