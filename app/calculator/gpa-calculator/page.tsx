@@ -27,7 +27,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "GPA Calculator | Grade Point Average | FastTools",
-  description: "Use our free GPA Calculator to calculate your Grade Point Average instantly. Supports 4.0, 4.3, 5.0 scales and percentage grades. Perfect for students, academic planning, and grade tracking.",
+  description: "Free GPA Calculator to calculate your Grade Point Average instantly. Supports 4.0, 4.3, 5.0 scales and percentage grades. Perfect for students and academic planning.",
   keywords: [
     "GPA calculator",
     "grade point average calculator",

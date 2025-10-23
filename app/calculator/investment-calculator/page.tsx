@@ -6,7 +6,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home
 
 export const metadata: Metadata = {
   title: "Investment Calculator | Advanced Portfolio Calculator | FastTools",
-  description: "Professional investment calculator for comprehensive portfolio analysis. Calculate end amount, return rate, starting amount, additional contributions, and investment length.",
+  description: "Professional investment calculator for portfolio analysis. Calculate end amount, return rate, starting amount, additional contributions, and investment length.",
     keywords: [
         "investment calculator",
         "investment return calculator",

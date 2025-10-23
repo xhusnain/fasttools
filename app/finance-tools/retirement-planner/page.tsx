@@ -27,7 +27,7 @@ import { getCurrentYear } from "@/lib/utils"
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: `Retirement Planner – 401k, IRA Calculator | FastTools`,
-  description: "Free retirement planner calculator with 401k, IRA, pension, and Social Security planning. Calculate how long $500k lasts, monthly retirement income, and replacement ratios. Perfect for couples, government employees, and private sector workers. No cost, professional results.",
+  description: "Free retirement planner with 401k, IRA, pension, and Social Security planning. Calculate monthly retirement income, replacement ratios. Perfect for couples and workers.",
   keywords: [
     "retirement planner",
     "free retirement planner",

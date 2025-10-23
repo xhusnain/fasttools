@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: "AI Hashtag Generator | Generate Viral Hashtags | FastTools",
   description:
-    "Generate trending hashtags with AI for Instagram, TikTok, Twitter, and LinkedIn. Boost your social media reach and engagement with our free AI hashtag generator. Get viral hashtag suggestions instantly.",
+    "Generate trending hashtags with AI for Instagram, TikTok, Twitter, and LinkedIn. Boost your social media reach and engagement with our free AI hashtag generator.",
   keywords: [
     "AI hashtag generator",
     "hashtag generator",

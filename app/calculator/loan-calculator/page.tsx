@@ -9,7 +9,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "EMI Calculator | Home, Car & Personal Loans | FastTools",
   description:
-    "The EMI Calculator helps you determine your monthly installment amount based on your loan amount, interest rate, and tenure. Perfect for planning home loans, car loans, education loans, or personal loans.",
+    "EMI Calculator to determine monthly installment amount based on loan amount, interest rate, and tenure. Perfect for home, car, education, and personal loans.",
   keywords: [
     "loan EMI calculator",
     "EMI calculator online",

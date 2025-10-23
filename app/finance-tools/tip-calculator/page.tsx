@@ -10,7 +10,7 @@ import { getCurrentYear } from "@/lib/utils"
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: `Tip Calculator – Calculate Tips & Split Bills | FastTools`,
-  description: "Free online Tip Calculator to quickly calculate tip amounts, split bills, and find total payments. Choose your tip percentage and number of people. Works worldwide with tax and currency support.",
+  description: "Free Tip Calculator to calculate tip amounts, split bills, and find total payments. Choose tip percentage and number of people. Works worldwide.",
   keywords: [
     // Primary Keywords (20)
     "tip calculator",

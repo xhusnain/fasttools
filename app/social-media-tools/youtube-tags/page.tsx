@@ -7,7 +7,7 @@ import { Search, Zap, Target, Shield, Globe, Clock, FileText, Hash, Lightbulb, C
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: "YouTube Tag Extractor – Extract Video Tags | FastTools",
-  description: "Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve your video ranking on YouTube. Works on all devices.",
+  description: "Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve video ranking.",
   keywords: [
     "youtube tag extractor",
     "youtube tag generator",

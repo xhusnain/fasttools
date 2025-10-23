@@ -11,7 +11,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
     title: "Compound Interest Calculator | Investment Growth | FastTools",
   description:
-    "Use our free Compound Interest Calculator to calculate how your money grows over time. Enter your principal, interest rate, time period, and compounding frequency to see total interest and final balance.",
+    "Free Compound Interest Calculator to calculate how your money grows over time. Enter principal, interest rate, time period, and compounding frequency.",
     keywords: [
         "compound interest calculator",
         "calculate compound interest",

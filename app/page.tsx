@@ -36,7 +36,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Online Tools | AI Generator, Calculator, SEO | FastTools",
-  description: "1000+ free online tools: AI meme generator, currency converter, BMI calculator, meta tag generator, TikTok downloader, JWT decoder. Fast, accurate, no registration required.",
+  description: "1000+ free online tools: AI generators, calculators, converters, SEO tools. Fast, accurate, no registration required.",
   alternates: {
     canonical: "https://www.fasttools.store",
   },

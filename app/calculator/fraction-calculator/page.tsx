@@ -18,7 +18,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Fraction Calculator | Add, Subtract, Multiply & Divide | FastTools",
-  description: "Advanced fraction calculator with addition, subtraction, multiplication, division, simplification, and conversion between fractions and decimals. Free online math tool for students and professionals.",
+  description: "Advanced fraction calculator with addition, subtraction, multiplication, division, simplification, and conversion between fractions and decimals. Free online math tool.",
   keywords: [
       "fraction calculator",
       "fractions calculator",

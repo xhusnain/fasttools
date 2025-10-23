@@ -12,7 +12,7 @@ function getCurrentYear(): number {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: `YouTube Channel Name Checker | FastTools`,
-  description: "Check if your desired YouTube channel name is available with our free YouTube Channel Name Checker. Instantly verify username availability, find unique channel ideas, and secure your perfect YouTube handle in seconds.",
+  description: "Check if your desired YouTube channel name is available with our free YouTube Channel Name Checker. Instantly verify username availability and find unique channel ideas.",
   keywords: [
     "youtube channel name checker",
     "youtube username checker",

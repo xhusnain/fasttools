@@ -39,7 +39,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Payment Calculator | Advanced Loan Payment Calculator | FastTools",
-  description: "Calculate loan payments with our advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations.",
+  description: "Calculate loan payments with advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations.",
     keywords: [
         "payment calculator",
         "loan payment calculator",

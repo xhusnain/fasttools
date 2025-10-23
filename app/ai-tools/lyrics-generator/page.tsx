@@ -6,7 +6,7 @@ import { AdSpace } from "@/components/ad-space"
 export const metadata: Metadata = {
   title: "AI Song Lyrics Generator | Create Original Lyrics | FastTools",
   description:
-    "Generate creative song lyrics with AI for any theme, genre, or mood. Perfect for songwriters, musicians, and music creators. Create original lyrics instantly with our free AI lyrics generator.",
+    "Generate creative song lyrics with AI for any theme, genre, or mood. Perfect for songwriters, musicians, and music creators. Create original lyrics instantly.",
   keywords: [
     "AI lyrics generator",
     "song lyrics generator",

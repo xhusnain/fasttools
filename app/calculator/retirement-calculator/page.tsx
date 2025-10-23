@@ -6,7 +6,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home
 
 export const metadata: Metadata = {
   title: "Retirement Calculator | Advanced Planning Calculator | FastTools",
-  description: "Professional retirement calculator for comprehensive retirement planning. Calculate how much to save, withdrawal amounts, and retirement income needs with inflation adjustments.",
+  description: "Professional retirement calculator for comprehensive planning. Calculate savings, withdrawal amounts, and retirement income needs with inflation adjustments.",
     keywords: [
         "retirement calculator",
         "retirement planning calculator",

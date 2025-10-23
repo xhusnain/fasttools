@@ -6,7 +6,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Aler
 
 export const metadata: Metadata = {
   title: "Body Fat Calculator | Advanced Body Fat Percentage | FastTools",
-  description: "Calculate your body fat percentage with our advanced body fat calculator. Uses U.S. Navy method and BMI method for accurate results with personalized health recommendations.",
+  description: "Calculate your body fat percentage with advanced calculator. Uses U.S. Navy method and BMI method for accurate results with health recommendations.",
     keywords: [
         "body fat calculator",
         "body fat percentage calculator",

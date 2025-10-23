@@ -9,7 +9,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Online Converters: Text, Length, Currency | FastTools",
   description:
-    "Free converters for text case, length, file size, currency, time zones, and temperature. Fast, accurate, real-time data.",
+    "Free converters for text case, length, file size, currency, time zones, temperature. Fast, accurate, real-time data.",
   keywords: [
     "converter tools",
     "online converter",

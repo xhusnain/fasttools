@@ -6,7 +6,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Aler
 
 export const metadata: Metadata = {
   title: "Pace Calculator | Advanced Running Pace Calculator | FastTools",
-  description: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max with our advanced pace calculator. Perfect for runners, coaches, and athletes.",
+  description: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max. Perfect for runners, coaches, and athletes.",
     keywords: [
         "pace calculator",
         "running pace calculator",

@@ -9,7 +9,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Free Online Finance Tools – Budget, Investment & Expense Calculators",
   description:
-    "Explore free online finance tools to manage your money smarter. Calculate budgets, savings, loans, and investments instantly. Perfect for individuals, students, and business owners who want to make smarter financial decisions.",
+    "Free finance tools: budget calculators, savings trackers, loan calculators, investment planners. Perfect for financial planning.",
   keywords:[
       "finance tools",
       "financial management tools",

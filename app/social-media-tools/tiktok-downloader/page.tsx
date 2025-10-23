@@ -10,7 +10,7 @@ import { getCurrentYear } from "@/lib/utils"
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: "TikTok Downloader – HD Videos Without Watermark | FastTools",
-  description: "Download TikTok videos and wallpapers in HD without watermark for free. Fast, secure, and easy-to-use online TikTok downloader for videos and images. Works on PC, Android, iPhone, and all devices. Perfect for creators, marketers, and social media enthusiasts.",
+  description: "Download TikTok videos and wallpapers in HD without watermark for free. Fast, secure, works on all devices. Perfect for creators and marketers.",
     keywords: [
               "tiktok video downloader",
         "download tiktok video",

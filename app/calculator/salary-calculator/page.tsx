@@ -6,7 +6,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home
 
 export const metadata: Metadata = {
   title: "Salary Calculator | Advanced Pay Frequency Calculator | FastTools",
-  description: "Convert salary amounts across all pay frequencies with holiday and vacation adjustments. Professional salary analysis, industry comparisons, and negotiation support for career advancement.",
+  description: "Convert salary amounts across all pay frequencies with holiday adjustments. Professional salary analysis, industry comparisons, and negotiation support.",
     keywords: [
         "salary calculator",
         "monthly salary calculator",
