@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import sitemap from '../../sitemap'
+import { whatsappNotification } from '@/lib/whatsapp-notification'
 
 const INDEXNOW_CONFIG = {
   host: 'www.fasttools.store',
   key: '718738721511411284005e8672266791',
-  keyLocation: 'https://www.fasttools.store/ed367a5131f540dbaca5fa67403da7ec.txt',
+  keyLocation: 'https://www.fasttools.store/718738721511411284005e8672266791.txt',
   apiUrl: 'https://api.indexnow.org/indexnow'
 }
 
@@ -43,11 +44,30 @@ export async function POST(request: NextRequest) {
 
     if (response.ok) {
       console.log('Successfully submitted URLs to Microsoft IndexNow')
+      
+      // Send WhatsApp notification on success
+      const successData = {
+        submittedUrls: urlList.length,
+        timestamp: new Date().toISOString(),
+        triggeredBy: 'manual'
+      }
+      
+      // Send WhatsApp notification (don't await to avoid blocking response)
+      whatsappNotification.sendNotification({
+        phoneNumber: process.env.WHATSAPP_PHONE_NUMBER || '',
+        message: whatsappNotification.formatIndexNowSuccessMessage(successData)
+      }).then(result => {
+        console.log('WhatsApp notification result:', result)
+      }).catch(error => {
+        console.error('WhatsApp notification error:', error)
+      })
+      
       return NextResponse.json({
         success: true,
         message: `Successfully submitted ${urlList.length} URLs to Microsoft IndexNow`,
         submittedUrls: urlList.length,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        whatsappNotification: 'sent'
       })
     } else {
       const errorText = await response.text()
@@ -106,12 +126,31 @@ export async function GET(request: NextRequest) {
 
       if (response.ok) {
         console.log('Cron job: Successfully submitted URLs to Microsoft IndexNow')
+        
+        // Send WhatsApp notification on cron success
+        const successData = {
+          submittedUrls: urlList.length,
+          timestamp: new Date().toISOString(),
+          triggeredBy: 'vercel-cron'
+        }
+        
+        // Send WhatsApp notification (don't await to avoid blocking response)
+        whatsappNotification.sendNotification({
+          phoneNumber: process.env.WHATSAPP_PHONE_NUMBER || '',
+          message: whatsappNotification.formatIndexNowSuccessMessage(successData)
+        }).then(result => {
+          console.log('Cron job WhatsApp notification result:', result)
+        }).catch(error => {
+          console.error('Cron job WhatsApp notification error:', error)
+        })
+        
         return NextResponse.json({
           success: true,
           message: `Cron job: Successfully submitted ${urlList.length} URLs to Microsoft IndexNow`,
           submittedUrls: urlList.length,
           timestamp: new Date().toISOString(),
-          triggeredBy: 'vercel-cron'
+          triggeredBy: 'vercel-cron',
+          whatsappNotification: 'sent'
         })
       } else {
         const errorText = await response.text()
