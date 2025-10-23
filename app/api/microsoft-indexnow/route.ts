@@ -52,7 +52,6 @@ export async function POST(request: NextRequest) {
         triggeredBy: 'manual'
       }
       
-      // Send WhatsApp notification (don't await to avoid blocking response)
       whatsappNotification.sendNotification({
         phoneNumber: process.env.WHATSAPP_PHONE_NUMBER || '',
         message: whatsappNotification.formatIndexNowSuccessMessage(successData)
