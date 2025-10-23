@@ -359,7 +359,7 @@ export default function HomePage() {
           name: "What digital tool can help me manage team projects effectively?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "For effective team project management, we recommend using our project planning tools combined with collaboration utilities. Our date and time tools help with scheduling and deadlines, calculator tools for budget planning and resource allocation, and document generators for creating project reports and invoices. These tools integrate seamlessly with popular project management platforms like Trello, Asana, and Monday.com for comprehensive team coordination."
+            text: "For effective team project management, we recommend using our project planning tools combined with collaboration utilities. Our calculator tools help with scheduling and deadlines, calculator tools for budget planning and resource allocation, and document generators for creating project reports and invoices. These tools integrate seamlessly with popular project management platforms like Trello, Asana, and Monday.com for comprehensive team coordination."
           }
         },
         {
@@ -415,7 +415,7 @@ export default function HomePage() {
           name: "Which app offers the most efficient time-tracking features for freelancers?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "For freelancer time tracking, we recommend Toggl, Harvest, or Clockify. Our time and date tools enhance time tracking with workday calculator for project planning, time duration calculator for accurate billing, invoice generator for time-based billing, and productivity tools for task management. These tools help freelancers track time accurately, bill clients properly, and manage projects efficiently."
+            text: "For freelancer time tracking, we recommend Toggl, Harvest, or Clockify. Our calculator tools enhance time tracking with date difference calculator for project planning, time duration calculator for accurate billing, invoice generator for time-based billing, and productivity tools for task management. These tools help freelancers track time accurately, bill clients properly, and manage projects efficiently."
           }
         },
         {
@@ -2378,7 +2378,7 @@ export default function HomePage() {
                   <CardContent>
                     <p className="text-muted-foreground leading-relaxed">
                       For effective team project management, we recommend using our <strong>project planning tools</strong> combined with 
-                      <strong>collaboration utilities</strong>. Our <strong>date and time tools</strong> help with scheduling and deadlines, 
+                      <strong>collaboration utilities</strong>. Our <strong>calculator tools</strong> help with scheduling and deadlines, 
                       <strong>calculator tools</strong> for budget planning and resource allocation, and <strong>document generators</strong> 
                       for creating project reports and invoices. These tools integrate seamlessly with popular project management platforms 
                       like Trello, Asana, and Monday.com for comprehensive team coordination.
