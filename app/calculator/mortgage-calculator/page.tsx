@@ -103,7 +103,9 @@ export const metadata: Metadata = {
         "mortgage savings calculator",
         "mortgage repayment estimator",
         "mortgage planning tool",
-        "mortgage affordability estimator"
+        "mortgage affordability estimator",
+      "mortgage calculator",
+        "calculator"
     ],
 
     openGraph: {

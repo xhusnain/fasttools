@@ -743,6 +743,38 @@ const faqs: QA[] = [
         answer:
             "Pick a convention (with or without trailing slash) and be consistent. Redirect the alternate form to the canonical one and ensure internal links, sitemaps, and canonical tags use the chosen format to avoid duplicate URLs.",
     },
+    
+    // Calculator-related FAQs
+    {
+        question: "What is a BMI calculator and how does it work?",
+        answer:
+            "A BMI calculator is a tool that calculates your Body Mass Index, which is a measure of body fat based on height and weight. Our <a href='/calculator/bmi-calculator' className='text-link hover:text-link-hover hover:underline font-medium'>BMI calculator</a> uses the standard formula: BMI = weight (kg) / height (m)². It helps determine if you're underweight, normal weight, overweight, or obese according to WHO standards. BMI calculators are essential for health monitoring, fitness planning, and medical assessments.",
+    },
+    {
+        question: "How accurate are mortgage calculators?",
+        answer:
+            "Our <a href='/calculator/mortgage-calculator' className='text-link hover:text-link-hover hover:underline font-medium'>mortgage calculator</a> provides highly accurate estimates using industry-standard formulas. It calculates monthly payments, total interest, and amortization schedules based on loan amount, interest rate, and term. While the calculator gives precise estimates, actual mortgage terms may vary based on credit score, down payment, property taxes, and insurance. Use our calculator for planning and comparison purposes.",
+    },
+    {
+        question: "What is a salary calculator used for?",
+        answer:
+            "A <a href='/calculator/salary-calculator' className='text-link hover:text-link-hover hover:underline font-medium'>salary calculator</a> helps convert salary amounts between different pay frequencies (annual, monthly, weekly, hourly). It's useful for job negotiations, budgeting, comparing job offers, and understanding take-home pay after taxes. Our calculator provides accurate conversions and helps you understand your true earning potential across different payment structures.",
+    },
+    {
+        question: "How do I convert euros to Indian rupees?",
+        answer:
+            "To convert euros to Indian rupees (EUR to INR), you can use our <a href='/converters/currency' className='text-link hover:text-link-hover hover:underline font-medium'>currency converter</a>. Simply enter the amount in euros and select INR as the target currency. The converter uses real-time exchange rates to provide accurate conversion results. This is useful for travel planning, international business, and financial planning.",
+    },
+    {
+        question: "What is a math solver calculator?",
+        answer:
+            "A math solver calculator is an advanced tool that can solve complex mathematical problems including algebra, trigonometry, calculus, and statistics. Our <a href='/calculator/scientific-calculator' className='text-link hover:text-link-hover hover:underline font-medium'>scientific calculator</a> functions as a comprehensive math solver with trigonometric functions (sin, cos, tan), logarithmic calculations, and statistical analysis. It's perfect for students, engineers, and professionals who need precise mathematical computations.",
+    },
+    {
+        question: "How do I calculate exchange rates?",
+        answer:
+            "Exchange rates fluctuate constantly based on market conditions. Our <a href='/converters/currency' className='text-link hover:text-link-hover hover:underline font-medium'>currency converter</a> provides real-time exchange rates for accurate conversions. For manual calculations, multiply the amount by the current exchange rate. For example, to convert USD to EUR, multiply USD amount by the USD/EUR rate. Always use current rates for accurate results.",
+    }
 ]
 
 export default function FAQPage() {

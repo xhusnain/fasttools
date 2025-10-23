@@ -45,7 +45,11 @@ export const metadata: Metadata = {
     "body fat calculator",
     "healthy lifestyle",
     "ideal weight",
-    "instant results"
+    "instant results",
+    "bmi calculator",
+    "math solver",
+    "calculator",
+    "weight watchers"
   ],
   openGraph: {
     title: "BMI Calculator | Calculate Your Body Mass Index | FastTools",
