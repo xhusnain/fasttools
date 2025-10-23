@@ -35,8 +35,8 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Free Online Tools | Complete Digital Toolkit | FastTools",
-  description: "1000+ free online tools for AI content, converters, calculators, SEO and productivity. Fast, accurate, and easy to use.",
+  title: "Free Online Tools | AI Generator, Calculator, Converter, SEO Tools | FastTools",
+  description: "1000+ free online tools: AI meme generator, currency converter, BMI calculator, meta tag generator, TikTok downloader, JWT decoder. Fast, accurate, no registration required.",
   alternates: {
     canonical: "https://www.fasttools.store",
   },
@@ -46,78 +46,76 @@ export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Free Online Tools | fasttools - Complete Digital Toolkit",
-    description: "fasttools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, and easy to use.",
+    name: "Free Online Tools | AI Generator, Calculator, Converter, SEO Tools | FastTools",
+    description: "1000+ free online tools: AI meme generator, currency converter, BMI calculator, meta tag generator, TikTok downloader, JWT decoder. Fast, accurate, no registration required.",
     url: "https://www.fasttools.store",
     keywords: [
       "free online tools",
       "web tools",
-      "productivity tools", 
+      "productivity tools",
       "AI tools",
-      "converter tools",
-      "calculator tools",
-      "text tools",
-      "image tools",
-      "developer tools",
-      "business tools",
-      "SEO tools",
-      "social media tools",
-      "finance tools",
-      "date time tools",
-      "fun tools",
-      "utility tools",
-      "web utilities",
-      "online calculators",
-      "free online services",
-      "tool collection",
-      "hashtag generator",
-      "QR code generator",
-      "password generator",
-      "color picker",
-      "unit converter",
+      "meme generator",
+      "caption generator",
       "currency converter",
       "text case converter",
-      "image converter",
+      "unit converter",
+      "online calculator",
+      "free calculator",
+      "calculator tools",
+      "free seo tools",
+      "meta tag generator",
+      "keyword density checker",
+      "image tools",
+      "image to text",
+      "image cropper",
+      "finance tools",
+      "budget calculator",
+      "loan calculator",
+      "social media tools",
+      "tiktok downloader",
+      "youtube tools",
+      "developer tools",
+      "JWT decoder",
+      "regex tester",
+      "date tools",
+      "time tools",
+      "age calculator",
+      "fun tools",
+      "love calculator",
+      "birthday countdown",
+      "age calculator",
+      "BMI calculator", 
+      "loan EMI calculator",
+      "mortgage calculator",
+      "compound interest calculator",
+      "tax calculator",
+      "retirement calculator",
+      "investment calculator",
+      "calorie calculator",
+      "percentage calculator",
+      "AI meme generator",
+      "AI caption generator",
+      "AI lyrics generator",
+      "AI hashtag generator",
+      "AI pet name generator",
+      "meta tag generator",
+      "keyword density checker",
+      "blog title generator",
+      "lorem ipsum generator",
+      "QR code generator",
       "PDF tools",
-      "URL shortener",
+      "color picker",
       "word counter",
       "character counter",
       "random number generator",
       "color palette generator",
-      "meme generator",
-      "QR code scanner",
-      "barcode generator",
       "invoice generator",
-      "receipt generator",
-      "certificate generator",
-      "free online hashtag generator for Instagram",
-      "best free QR code generator online",
-      "free password generator with custom length",
-      "online color picker tool free",
-      "free unit converter tool online",
-      "currency converter with live rates",
-      "free text case converter online",
-      "image format converter free online",
-      "free PDF tools online",
-      "free URL shortener service",
-      "word counter tool free online",
-      "character counter for social media",
-      "random number generator between range",
-      "color palette generator from image",
-      "free meme generator with templates",
-      "QR code scanner online free",
-      "barcode generator free online",
-      "free invoice generator template",
-      "receipt generator free online",
-      "certificate generator free template",
       "online tools free",
       "web based tools",
       "browser tools",
       "instant tools",
       "no download tools",
-      "cloud tools",
       "digital tools",
-      "internet tools",
       "web applications",
       "online utilities",
       "free web apps",
@@ -204,20 +202,6 @@ export default function HomePage() {
       "web resources",
       "free resources",
       "digital assets",
-      "online assets",
-      "web assets",
-      "tool assets",
-      "utility assets",
-      "conversion assets",
-      "calculation assets",
-      "generation assets",
-      "processing assets",
-      "analysis assets",
-      "optimization assets",
-      "automation assets",
-      "productivity assets",
-      "efficiency assets",
-      "workflow assets"
     ],
     author: {
       "@type": "Organization",
@@ -531,13 +515,14 @@ export default function HomePage() {
                       
                       {/* SEO-Optimized Headlines with Primary Keywords */}
                       <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-                        Free Online Tools for <br />
-                        <span className="text-primary">Productivity, Conversion & AI</span>
+                        Free Online Tools: <br />
+                        <span className="text-primary">AI Generator, Calculator, Converter, SEO Tools</span>
                       </h1>
                       
                       <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-                        Access 1000+ free web tools including AI generators, currency converters, calculators, SEO tools, 
-                        image processors, and developer utilities. No downloads, no registration, instant results.
+                        Access 1000+ free web tools including <strong>AI meme generator</strong>, <strong>currency converter</strong>, 
+                        <strong>BMI calculator</strong>, <strong>meta tag generator</strong>, <strong>TikTok downloader</strong>, 
+                        <strong>JWT decoder</strong>, and more. No downloads, no registration, instant results.
                       </p>
               
               {/* Clean CTA Buttons */}
@@ -2057,6 +2042,156 @@ export default function HomePage() {
                     </div>
                   </div>
 
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Comprehensive SEO Content Section */}
+        <section className="py-16 md:py-24 bg-gradient-to-br from-background via-background/95 to-background/90">
+          <div className="container mx-auto px-4 lg:px-6">
+            <div className="max-w-6xl mx-auto">
+              
+              {/* Main SEO Content */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                
+                {/* Left Column - Primary Keywords */}
+                <div className="space-y-8">
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                      Complete <span className="text-primary">Free Online Tools</span> Collection
+                    </h2>
+                    <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                      Discover the most comprehensive collection of <strong>free online tools</strong> designed for 
+                      productivity, creativity, and efficiency. Our <strong>AI generator tools</strong> help you create 
+                      engaging content, while our <strong>calculator tools</strong> handle complex financial and 
+                      mathematical calculations instantly.
+                    </p>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      From <strong>currency converter</strong> for international transactions to <strong>BMI calculator</strong> 
+                      for health tracking, <strong>meta tag generator</strong> for SEO optimization, and <strong>TikTok downloader</strong> 
+                      for content creators - we've got every tool you need.
+                    </p>
+                  </div>
+
+                  <div className="bg-card/50 rounded-xl p-6 border border-border/20">
+                    <h3 className="text-xl font-bold text-foreground mb-4">Popular Tool Categories</h3>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="flex items-center gap-2">
+                        <Calculator className="h-4 w-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">Age Calculator</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Calculator className="h-4 w-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">BMI Calculator</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Calculator className="h-4 w-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">Loan EMI Calculator</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Calculator className="h-4 w-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">Mortgage Calculator</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Calculator className="h-4 w-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">Tax Calculator</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Calculator className="h-4 w-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">Retirement Calculator</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column - Secondary Keywords */}
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground mb-6">
+                      AI-Powered <span className="text-primary">Content Generation</span>
+                    </h3>
+                    <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                      Our <strong>AI meme generator</strong> creates viral content for social media, while the 
+                      <strong>AI caption generator</strong> helps you write engaging posts. The <strong>AI lyrics generator</strong> 
+                      assists songwriters, and our <strong>AI hashtag generator</strong> boosts your social media reach.
+                    </p>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      Perfect for content creators, marketers, and social media managers who need 
+                      <strong>AI pet name generator</strong> for naming pets or <strong>AI content creation</strong> 
+                      tools for professional projects.
+                    </p>
+                  </div>
+
+                  <div className="bg-card/50 rounded-xl p-6 border border-border/20">
+                    <h3 className="text-xl font-bold text-foreground mb-4">SEO & Development Tools</h3>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <Search className="h-4 w-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">Meta Tag Generator</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Search className="h-4 w-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">Keyword Density Checker</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Search className="h-4 w-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">Blog Title Generator</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Code className="h-4 w-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">JWT Decoder</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Code className="h-4 w-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">Regex Tester</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Code className="h-4 w-4 text-primary" />
+                        <span className="text-sm text-muted-foreground">Developer Tools</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Additional SEO Content */}
+              <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-8 border border-primary/10">
+                <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
+                  Why Our <span className="text-primary">Free Online Tools</span> Rank #1
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="text-center">
+                    <div className="h-16 w-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Zap className="h-8 w-8 text-primary" />
+                    </div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">Instant Access</h4>
+                    <p className="text-muted-foreground text-sm">
+                      No registration required. Use our <strong>currency converter</strong>, 
+                      <strong>BMI calculator</strong>, or <strong>AI meme generator</strong> instantly.
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <div className="h-16 w-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Shield className="h-8 w-8 text-accent" />
+                    </div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">Privacy First</h4>
+                    <p className="text-muted-foreground text-sm">
+                      All processing happens in your browser. Your data never leaves your device when using 
+                      our <strong>meta tag generator</strong> or <strong>image tools</strong>.
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <div className="h-16 w-16 bg-secondary-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Target className="h-8 w-8 text-secondary-accent" />
+                    </div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">Professional Grade</h4>
+                    <p className="text-muted-foreground text-sm">
+                      Used by developers, marketers, and businesses worldwide. Our <strong>JWT decoder</strong>, 
+                      <strong>regex tester</strong>, and <strong>SEO tools</strong> are industry-standard.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
