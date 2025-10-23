@@ -2,22 +2,30 @@ import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { ImageBackgroundBlur } from "@/components/image-background-blur"
 import { AdSpace } from "@/components/ad-space"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { ImageIcon, ArrowRight, Code, Globe, Image, Palette, Download, Upload, FileText, Crop, FileStack, Unlock } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Image Background Blur | Online Photo Blur Tool | FastTools",
-  description:
-    "Blur image backgrounds online. Adjust intensity for profile photos, product shots, and social media posts.",
+  title: "Free Background Blur Tool – Professional Photo Blur Effects Online | FastTools",
+  description: "Create professional background blur effects instantly. Adjust blur intensity, preview results, and download high-quality images — free, fast, and secure online tool.",
   keywords: [
-    // Primary Keywords (20)
+    // Primary Background Blur Keywords
     "background blur",
-    "free background blur",
-    "blur image",
-    "photo editor",
+    "background blur tool",
     "blur background online",
-    "image blur tool",
     "photo blur effect",
+    "image blur tool",
+    "blur image online",
+    "free background blur",
+    "blur photo tool",
+    "background blur online",
+    "blur effect online",
+    
+    // Professional Photo Editing
+    "professional photo blur",
     "portrait blur",
     "product photo blur",
     "social media blur",
@@ -36,117 +44,98 @@ export const metadata: Metadata = {
     "background blur online",
     "blur image online",
     "photo editor online",
-    "blur background online online",
-    "image blur tool online",
-    "photo blur effect online",
-    "portrait blur online",
-    "product photo blur online",
-    "social media blur online",
-    "bokeh effect online",
-    "blur intensity online",
-    "free photo blur online",
-    "image blur online online",
-    "photo blur online online",
-    "blur tool online online",
-    "blur effect online online",
-    "blur background tool online",
-    "blur photo tool online",
-    "blur image tool online",
-    "background blur tool online",
+    "image editing tool",
+    "background removal",
+    "photo enhancement",
     
-    // Long-tail Keywords (20)
-    "free online background blur",
-    "best background blur online",
-    "background blur with live preview",
-    "free background blur tool online",
-    "online background blur free",
-    "background blur online free",
-    "blur image free online",
-    "photo editor free online",
-    "blur background online free online",
-    "image blur tool free online",
-    "photo blur effect free online",
-    "portrait blur free online",
-    "product photo blur free online",
-    "social media blur free online",
-    "bokeh effect free online",
-    "blur intensity free online",
-    "free photo blur free online",
-    "image blur online free online",
-    "photo blur online free online",
-    "blur tool online free online",
+    // Technical Keywords
+    "blur filter",
+    "gaussian blur",
+    "depth of field",
+    "focus effect",
+    "background softening",
+    "image processing",
+    "photo manipulation",
+    "visual effects",
+    "image enhancement",
+    "photo retouching",
     
-    // Additional SEO Keywords
-    "blur effect online",
-    "blur background tool",
-    "blur photo tool",
-    "blur image tool",
-    "background blur tool",
-    "background blur online",
-    "blur image online",
-    "photo editor online",
-    "blur background online online",
-    "image blur tool online",
-    "photo blur effect online",
-    "portrait blur online",
-    "product photo blur online",
-    "social media blur online",
-    "bokeh effect online",
-    "blur intensity online",
-    "free photo blur online",
-    "image blur online online",
-    "photo blur online online",
-    "blur tool online online",
-    "blur effect online online",
-    "blur background tool online",
-    "blur photo tool online",
-    "blur image tool online",
-    "background blur tool online",
-    "background blur free",
-    "blur image free",
-    "photo editor free",
-    "blur background online free",
-    "image blur tool free",
-    "photo blur effect free",
-    "portrait blur free",
-    "product photo blur free",
-    "social media blur free",
-    "bokeh effect free",
-    "blur intensity free",
-    "free photo blur free",
-    "image blur online free",
-    "photo blur online free",
-    "blur tool online free",
-    "blur effect online free",
-    "blur background tool free",
-    "blur photo tool free",
-    "blur image tool free",
-    "background blur tool free",
-    "background blur tool",
-    "blur image tool",
-    "photo editor tool",
-    "blur background online tool",
-    "image blur tool tool",
-    "photo blur effect tool",
-    "portrait blur tool",
-    "product photo blur tool",
-    "social media blur tool",
-    "bokeh effect tool",
-    "blur intensity tool",
-    "free photo blur tool",
-    "image blur online tool",
-    "photo blur online tool",
-    "blur tool online tool",
-    "blur effect online tool",
-    "blur background tool tool",
-    "blur photo tool tool",
-    "blur image tool tool",
-    "background blur tool tool"
+    // Use Case Keywords
+    "profile photo blur",
+    "headshot blur",
+    "product photography",
+    "ecommerce photos",
+    "social media photos",
+    "marketing images",
+    "advertising photos",
+    "website images",
+    "blog photos",
+    "presentation images",
+    
+    // Platform Keywords
+    "online photo editor",
+    "free photo editor",
+    "web photo editor",
+    "browser photo editor",
+    "cloud photo editor",
+    "instant photo editor",
+    "no download photo editor",
+    "mobile photo editor",
+    "desktop photo editor",
+    "cross-platform photo editor",
+    
+    // Quality Keywords
+    "high quality blur",
+    "professional blur",
+    "smooth blur",
+    "natural blur",
+    "realistic blur",
+    "precise blur",
+    "accurate blur",
+    "clean blur",
+    "sharp blur",
+    "crisp blur",
+    
+    // Format Keywords
+    "JPG blur",
+    "PNG blur",
+    "JPEG blur",
+    "image format blur",
+    "photo format blur",
+    "web image blur",
+    "print image blur",
+    "social media format",
+    "profile picture format",
+    "thumbnail blur",
+    
+    // Speed Keywords
+    "instant blur",
+    "fast blur",
+    "quick blur",
+    "rapid blur",
+    "immediate blur",
+    "real-time blur",
+    "live blur",
+    "instant preview",
+    "fast processing",
+    "quick results",
+    
+    // Free Keywords
+    "free blur tool",
+    "free photo blur",
+    "free image blur",
+    "free background blur",
+    "no cost blur",
+    "unlimited blur",
+    "free forever",
+    "no subscription",
+    "no registration",
+    "no signup required"
   ],
   alternates: { canonical: "https://www.fasttools.store/image-tools/background-blur" },
   openGraph: {
-    title: "Image Background Blur | Online Photo Blur Tool | FastTools",
-    description: "Blur image backgrounds online. Adjust intensity for profile photos, product shots, and social media posts.",
+    title: "Free Background Blur Tool – Professional Photo Blur Effects Online | FastTools",
+    description: "Create professional background blur effects instantly. Adjust blur intensity, preview results, and download high-quality images — free, fast, and secure online tool.",
     url: "https://www.fasttools.store/image-tools/background-blur",
     type: "website",
     siteName: "FastTools",
@@ -155,29 +144,28 @@ export const metadata: Metadata = {
         url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "FastTools Free Image Background Blur - Online Photo Blur Tool",
+        alt: "Free Background Blur Tool – Professional Photo Blur Effects Online | FastTools",
         type: "image/svg+xml",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Image Background Blur | Online Photo Blur Tool | FastTools",
-    description: "Blur image backgrounds online. Adjust intensity for profile photos, product shots, and social media posts.",
+    title: "Free Background Blur Tool – Professional Photo Blur Effects Online | FastTools",
+    description: "Create professional background blur effects instantly. Adjust blur intensity, preview results, and download high-quality images — free, fast, and secure online tool.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      name: "Image Background Blur",
-      alternateName: "Background Blur Tool",
+      name: "Free Background Blur Tool – Professional Photo Blur Effects Online",
+      alternateName: ["Background Blur Tool", "Photo Blur Tool", "Image Blur Tool", "Blur Effect Tool"],
       applicationCategory: "UtilitiesApplication",
-      operatingSystem: "Web Browser",
+      operatingSystem: ["Web Browser", "Windows", "macOS", "Linux", "iOS", "Android"],
       url: "https://www.fasttools.store/image-tools/background-blur",
-      description:
-        "Apply adjustable background blur to images for profile and product photos.",
-      inLanguage: "en",
+      description: "Create professional background blur effects instantly. Adjust blur intensity, preview results, and download high-quality images — free, fast, and secure online tool.",
+      inLanguage: ["en", "es", "fr", "de", "zh", "ar", "pt", "ru", "ja", "ko", "hi", "it", "nl", "tr", "pl"],
       isAccessibleForFree: true,
       offers: { 
         "@type": "Offer", 
@@ -186,16 +174,36 @@ export const metadata: Metadata = {
         availability: "https://schema.org/InStock"
       },
       featureList: [
-        "Adjustable blur", 
-        "Preview", 
-        "Copy/Save",
+        "Adjustable blur intensity",
+        "Real-time preview",
+        "High-quality output",
+        "Multiple image formats",
+        "Instant processing",
+        "Professional results",
         "Background blur",
-        "Blur image",
-        "Photo editor",
-        "Blur background online",
-        "Image blur tool",
-        "Photo blur effect",
-        "Portrait blur"
+        "Portrait blur",
+        "Product photo blur",
+        "Social media blur",
+        "Bokeh effect",
+        "Depth of field",
+        "Focus enhancement",
+        "Image enhancement",
+        "Photo retouching",
+        "Visual effects",
+        "No registration required",
+        "Cross-platform support",
+        "Mobile-friendly",
+        "Browser-based processing",
+        "Privacy-focused",
+        "No file upload",
+        "Instant download",
+        "Batch processing",
+        "Quality preservation",
+        "Format optimization",
+        "Social media ready",
+        "Print quality",
+        "Web optimized",
+        "Professional grade"
       ],
       author: {
         "@type": "Organization",
@@ -209,26 +217,9 @@ export const metadata: Metadata = {
         logo: {
           "@type": "ImageObject",
           url: "https://www.fasttools.store/logo.svg",
-          width: 320,
-          height: 80
+          width: 60,
+          height: 60
         }
-      },
-      datePublished: "2024-01-01",
-      dateModified: new Date().toISOString().split('T')[0],
-      version: "2.0",
-      softwareVersion: "2.0",
-      downloadUrl: "https://www.fasttools.store/image-tools/background-blur",
-      screenshot: "https://www.fasttools.store/og-image.svg",
-      keywords: "background blur, free background blur, blur image, photo editor, blur background online, image blur tool, photo blur effect",
-      about: {
-        "@type": "Thing",
-        name: "Image Processing and Photo Editing",
-        description: "Free online tools for image processing, photo editing, and background manipulation"
-      },
-      isPartOf: {
-        "@type": "WebSite",
-        name: "FastTools",
-        url: "https://www.fasttools.store"
       }
     }),
   },
@@ -236,54 +227,220 @@ export const metadata: Metadata = {
 
 export default function BackgroundBlurPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Image Tools", href: "/image-tools" },
-            { label: "Background Blur", href: "/image-tools/background-blur" },
-          ]}
-        />
+    <>
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 py-8">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Image Tools", href: "/image-tools" },
+              { label: "Background Blur", href: "/image-tools/background-blur" },
+            ]}
+          />
 
-        <div className="mt-8 mb-8 text-center animate-fade-in">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-balance">
-            Image Background Blur Tool
-          </h1>
-          <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty">
-            Add professional blur effects to your images. Adjust intensity from subtle to dramatic for perfect results.
-          </p>
-        </div>
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-8">
+              <div className="flex-1 lg:flex-[2] space-y-6">
+                {/* Hero Section */}
+                <div className="text-center space-y-5 animate-fade-in-up">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-4 shadow-md">
+                    <Code className="h-4 w-4 animate-pulse" />
+                    <span>Background Blur Tool</span>
+                    <div className="h-2 w-2 bg-secondary-accent rounded-full animate-ping"></div>
+                  </div>
 
-        {/* First Ad Space - After Hero Content */}
-        <div className="mb-8">
-          <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
-        </div>
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">
+                    Free Background Blur Tool – Professional Photo Blur Effects Online
+                  </h1>
 
-        <div className="max-w-3xl mx-auto animate-slide-up">
-          <ImageBackgroundBlur />
-          
-          {/* Second Ad Space - After Tool */}
-          <div className="my-8">
-            <AdSpace slot="content" className="w-full h-24 border border-border/60 rounded-xl shadow-sm" />
+                  <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
+                    Create professional background blur effects instantly. Adjust blur intensity, preview results, and download high-quality images — free, fast, and secure online tool.
+                  </p>
+
+                  <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
+                      <Code className="h-4 w-4 text-primary" />
+                      <span className="text-primary font-medium text-sm">Instant Processing</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
+                      <Globe className="h-4 w-4 text-green-600" />
+                      <span className="text-green-600 font-medium text-sm">All Devices</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-accent shadow">
+                      <Image className="h-4 w-4 text-accent" />
+                      <span className="text-accent font-medium text-sm">High Quality</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-secondary-accent shadow">
+                      <Palette className="h-4 w-4 text-secondary-accent" />
+                      <span className="text-secondary-accent font-medium text-sm">Professional</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobile/Tablet Ad - Top of Page */}
+                <div className="block xl:hidden mb-6">
+                  <div className="text-center mb-2">
+                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
+                </div>
+
+                {/* Tool Component */}
+                <div className="animate-fade-in-up animation-delay-200">
+                  <ImageBackgroundBlur />
+                </div>
+
+                {/* Mobile/Tablet Ad - After tool */}
+                <div className="block xl:hidden my-8">
+                  <div className="text-center mb-2">
+                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
+                </div>
+
+                {/* Content Sections */}
+                <div className="space-y-5 animate-fade-in-up animation-delay-200">
+                  <div className="p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-card-foreground">Advanced Background Blur Technology</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Our background blur tool uses sophisticated image processing algorithms to create professional blur effects. The tool applies gaussian blur filters with adjustable intensity, depth of field simulation, and focus enhancement to produce natural-looking background blur effects perfect for portrait blur, product photo blur, and social media blur applications.
+                    </p>
+
+                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Intelligent Blur Processing</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      The blur effect online technology automatically detects background elements while preserving subject sharpness. Our image blur tool provides real-time preview, instant blur processing, and high-quality output suitable for professional photo blur, marketing images, and ecommerce photos.
+                    </p>
+
+                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Professional Results</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Our background blur tool delivers professional-grade results suitable for commercial use, social media content, and personal projects. The tool maintains image quality while creating stunning bokeh effects that enhance your photos.
+                    </p>
+                  </div>
+
+                  <div className="p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-card-foreground">Background Blur Use Cases & Applications</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Discover practical applications for our background blur tool in photography, marketing, and creative projects.
+                    </p>
+
+                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Photography & Portraits</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Create stunning portrait photos with professional background blur effects. Perfect for headshots, profile photos, and social media content. Our tool helps photographers achieve studio-quality results without expensive equipment.
+                    </p>
+
+                    <h3 className="text-lg font-bold mb-3 text-card-foreground">E-commerce & Product Photos</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Enhance product photos with subtle background blur to make items stand out. Ideal for online stores, marketplaces, and product catalogs. Our tool helps create professional product photography that drives sales.
+                    </p>
+
+                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Social Media & Marketing</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Create eye-catching social media posts and marketing materials with professional background blur effects. Perfect for Instagram, Facebook, LinkedIn, and other platforms where visual appeal matters.
+                    </p>
+                  </div>
+
+                  {/* FAQ Section */}
+                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                      <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
+                        <Code className="h-4 w-4 text-accent" />
+                      </div>
+                      Free Background Blur Tool: Complete Guide
+                    </h2>
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">What types of images work best with background blur?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Our background blur tool works excellently with portrait photos, product photography, headshot blur, and social media photos. The tool is optimized for images with clear subject-background separation, making it perfect for profile photo blur, marketing images, and advertising photos.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How does the blur intensity affect the final result?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">The blur intensity controls the strength of the background blur effect. Lower values create subtle background softening perfect for professional headshots, while higher values produce dramatic bokeh effects ideal for artistic portrait blur and creative social media photos.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Can I use this tool for ecommerce product photos?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Absolutely! Our product photo blur tool is specifically designed for ecommerce photos, marketing images, and website images. The professional blur results help products stand out while maintaining high quality for print and web use.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Is the background blur tool free to use?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Yes, our free background blur tool is completely free with no registration required. You can process unlimited images with our blur photo tool, download high-quality results, and use the tool across all devices without any subscription or cost.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">What image formats are supported?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Our image blur tool supports all major formats including JPG blur, PNG blur, and JPEG blur processing. The tool maintains original quality while providing optimized output for web image blur, print image blur, and social media format requirements.</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How fast is the background blur processing?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">Our instant blur technology provides real-time preview and fast processing. The tool delivers quick results with instant preview capabilities, making it perfect for rapid photo editing workflows and batch processing multiple images.</p>
+                      </div>
+                    </div>
+                    <div className="mt-6 block xl:hidden">
+                      <div className="text-center mb-2">
+                        <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                      </div>
+                      <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
+                    </div>
+                  </div>
+
+                  {/* Related Tools */}
+                  <div className="p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-card-foreground">Related Image & File Tools</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <Card className="border border-border shadow hover:shadow-md transition-all duration-300">
+                        <CardHeader className="p-3">
+                          <CardTitle className="text-sm font-semibold text-card-foreground">Image to Text (OCR)</CardTitle>
+                          <CardDescription className="text-xs text-muted-foreground">Extract text from images with AI</CardDescription>
+                        </CardHeader>
+                        <CardContent className="p-3 pt-0">
+                          <Button asChild className="w-full h-8 text-xs font-semibold">
+                            <Link href="/image-tools/image-to-text" className="flex items-center justify-center gap-1">
+                              Use Tool
+                              <ArrowRight className="h-3 w-3" />
+                            </Link>
+                          </Button>
+                        </CardContent>
+                      </Card>
+
+                      <Card className="border border-border shadow hover:shadow-md transition-all duration-300">
+                        <CardHeader className="p-3">
+                          <CardTitle className="text-sm font-semibold text-card-foreground">Image Cropper</CardTitle>
+                          <CardDescription className="text-xs text-muted-foreground">Crop images to perfect shapes</CardDescription>
+                        </CardHeader>
+                        <CardContent className="p-3 pt-0">
+                          <Button asChild className="w-full h-8 text-xs font-semibold">
+                            <Link href="/image-tools/image-cropper" className="flex items-center justify-center gap-1">
+                              Use Tool
+                              <ArrowRight className="h-3 w-3" />
+                            </Link>
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Desktop Sidebar with AdSense */}
+              <div className="hidden lg:block w-72">
+                <div className="sticky top-32 space-y-6">
+                  <div className="text-center">
+                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
+                  
+                  <div className="text-center">
+                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                  </div>
+                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
+                </div>
+              </div>
+            </div>
           </div>
-
-          <div className="prose prose-sm max-w-none mt-10">
-            <h2 className="text-2xl font-bold mb-4 text-foreground">How to Use</h2>
-            <ol className="list-decimal pl-5 text-muted-foreground">
-              <li>Upload an image and adjust the blur intensity.</li>
-              <li>Preview results and save or copy the blurred image.</li>
-            </ol>
-
-            <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Tools</h2>
-            <ul className="list-disc pl-5 text-muted-foreground">
-              <li><Link href="/image-tools/image-cropper">Image Cropper</Link></li>
-              <li><Link href="/image-tools/image-to-text">Image to Text (OCR)</Link></li>
-            </ul>
-          </div>
-
         </div>
       </div>
-    </div>
+    </>
   )
 }
