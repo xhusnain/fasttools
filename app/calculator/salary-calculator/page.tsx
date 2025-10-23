@@ -49,7 +49,9 @@ export const metadata: Metadata = {
         "salary vs hourly wage calculator",
         "after tax salary calculator",
         "taxable income calculator",
-        "payroll calculator"
+        "payroll calculator",
+      "salary calculator",
+        "calculator"
     ],
   openGraph: {
     title: "Salary Calculator | Advanced Pay Frequency Calculator | FastTools",

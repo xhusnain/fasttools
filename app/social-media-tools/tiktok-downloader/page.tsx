@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Download, Shield, Zap, Target, AlertCircle, Globe, Music, Users, Clock, ArrowRight, Code, FileText, Hash, Lightbulb, Search, Calculator, Type, Ruler, HardDrive, DollarSign, Thermometer, Copy, Check, Image } from "lucide-react"
+import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
               "tiktok video saver",
               "save tiktok video",
         "tiktok video extractor",
-              "tiktok downloader 2025",
+              `tiktok downloader ${getCurrentYear()}`,
         "video downloader tiktok",
               "tiktok video save tool",
               "tiktok backup tool",
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
               "download viral tiktok videos",
               "tiktok download online free",
               "fasttools tiktok downloader",
-              "tiktok video downloader 2025",
+              `tiktok video downloader ${getCurrentYear()}`,
               "free tiktok video downloader",
               "tiktok downloader no watermark free",
               "tiktok video downloader hd",

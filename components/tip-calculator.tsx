@@ -56,145 +56,175 @@ Split ${numPeople} ways: $${result.perPerson} per person`
   const quickTipButtons = ["10", "15", "18", "20", "25"]
 
   return (
-    <div className="space-y-6">
-      <Card className="border border-border shadow-sm">
-        <CardHeader>
-          <CardTitle className="text-xl text-foreground">Calculate Tip</CardTitle>
-          <CardDescription className="text-sm text-muted-foreground">
-            Enter your bill amount and tip percentage to calculate the total
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="billAmount" className="text-sm font-medium text-foreground">
-              Bill Amount ($)
-            </Label>
-            <Input
-              id="billAmount"
-              type="number"
-              placeholder="50.00"
-              value={billAmount}
-              onChange={(e) => setBillAmount(e.target.value)}
-              min="0"
-              step="0.01"
-              className="h-11 text-sm"
-            />
-          </div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {/* Left Column - Inputs */}
+      <div className="space-y-6">
+        {/* Bill Amount Input */}
+        <div className="space-y-2">
+          <Label htmlFor="billAmount" className="text-xs font-medium text-foreground">
+            Bill Amount ($)
+          </Label>
+          <Input
+            id="billAmount"
+            type="number"
+            placeholder="50.00"
+            value={billAmount}
+            onChange={(e) => setBillAmount(e.target.value)}
+            min="0"
+            step="0.01"
+            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+          />
+        </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="tipPercent" className="text-sm font-medium text-foreground">
-              Tip Percentage (%)
-            </Label>
-            <Input
-              id="tipPercent"
-              type="number"
-              placeholder="15"
-              value={tipPercent}
-              onChange={(e) => setTipPercent(e.target.value)}
-              min="0"
-              max="100"
-              step="1"
-              className="h-11 text-sm"
-            />
-            <div className="flex gap-2 flex-wrap">
-              {quickTipButtons.map((percent) => (
-                <Button
-                  key={percent}
-                  onClick={() => setTipPercent(percent)}
-                  variant={tipPercent === percent ? "default" : "outline"}
-                  size="sm"
-                  className="h-8 text-xs font-medium"
-                >
-                  {percent}%
-                </Button>
-              ))}
-            </div>
+        {/* Tip Percentage Input */}
+        <div className="space-y-2">
+          <Label htmlFor="tipPercent" className="text-xs font-medium text-foreground">
+            Tip Percentage (%)
+          </Label>
+          <Input
+            id="tipPercent"
+            type="number"
+            placeholder="15"
+            value={tipPercent}
+            onChange={(e) => setTipPercent(e.target.value)}
+            min="0"
+            max="100"
+            step="1"
+            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+          />
+          <div className="flex gap-2 flex-wrap">
+            {quickTipButtons.map((percent) => (
+              <Button
+                key={percent}
+                onClick={() => setTipPercent(percent)}
+                variant={tipPercent === percent ? "default" : "outline"}
+                size="sm"
+                className="h-7 text-xs font-medium"
+              >
+                {percent}%
+              </Button>
+            ))}
           </div>
+        </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="numPeople" className="text-sm font-medium text-foreground">
-              Number of People
-            </Label>
-            <Input
-              id="numPeople"
-              type="number"
-              placeholder="1"
-              value={numPeople}
-              onChange={(e) => setNumPeople(e.target.value)}
-              min="1"
-              step="1"
-              className="h-11 text-sm"
-            />
-          </div>
+        {/* Number of People Input */}
+        <div className="space-y-2">
+          <Label htmlFor="numPeople" className="text-xs font-medium text-foreground">
+            Number of People
+          </Label>
+          <Input
+            id="numPeople"
+            type="number"
+            placeholder="1"
+            value={numPeople}
+            onChange={(e) => setNumPeople(e.target.value)}
+            min="1"
+            step="1"
+            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+          />
+        </div>
 
+        {/* Action Buttons */}
+        <div className="flex gap-2">
           <Button
             onClick={calculateTip}
             disabled={loading || !billAmount || Number.parseFloat(billAmount) <= 0}
-            className="w-full h-11 text-sm font-medium shadow-sm hover:shadow-md transition-all"
+            className="flex-1 h-9 text-xs font-medium shadow-sm hover:shadow-md transition-all"
           >
             {loading ? (
               <>
-                <LoadingSpinner className="mr-2" />
+                <LoadingSpinner className="mr-1 h-3 w-3" />
                 Calculating...
               </>
             ) : (
               <>
-                <DollarSign className="mr-2 h-4 w-4" />
+                <DollarSign className="mr-1 h-3 w-3" />
                 Calculate Tip
               </>
             )}
           </Button>
-        </CardContent>
-      </Card>
+          <Button
+            onClick={() => {
+              setBillAmount("")
+              setTipPercent("15")
+              setNumPeople("1")
+              setResult(null)
+            }}
+            variant="outline"
+            className="h-9 text-xs font-medium"
+          >
+            Reset
+          </Button>
+        </div>
+      </div>
 
-      {result && (
-        <Card className="border border-primary/20 shadow-md animate-fade-in-up bg-accent/5">
-          <CardHeader>
-            <CardTitle className="text-xl text-foreground">Tip Breakdown</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
+      {/* Right Column - Results */}
+      <div className="space-y-4">
+        {result ? (
+          <>
+            {/* Results Header */}
+            <div className="text-center mb-4">
+              <h3 className="text-lg font-bold text-foreground">Tip Breakdown</h3>
+              <p className="text-xs text-muted-foreground">Calculation Results</p>
+            </div>
+
+            {/* Results Grid */}
             <div className="space-y-3">
               <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
-                <span className="text-sm text-muted-foreground">Bill Amount:</span>
-                <span className="text-base font-bold text-foreground">${billAmount}</span>
+                <span className="text-xs text-muted-foreground">Bill Amount:</span>
+                <span className="text-sm font-bold text-foreground">${billAmount}</span>
               </div>
 
               <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
-                <span className="text-sm text-muted-foreground">Tip ({tipPercent}%):</span>
-                <span className="text-base font-bold text-secondary">+${result.tipAmount}</span>
+                <span className="text-xs text-muted-foreground">Tip ({tipPercent}%):</span>
+                <span className="text-sm font-bold text-green-500">+${result.tipAmount}</span>
               </div>
 
-              <div className="flex justify-between items-center p-4 bg-primary/5 rounded-lg border-2 border-primary/20">
-                <span className="text-sm font-medium text-foreground">Total Amount:</span>
-                <span className="text-2xl font-bold text-primary">${result.totalAmount}</span>
+              <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
+                <span className="text-xs text-muted-foreground">Total Amount:</span>
+                <span className="text-sm font-bold text-foreground">${result.totalAmount}</span>
               </div>
 
               {Number.parseInt(numPeople) > 1 && (
-                <div className="border-t border-border pt-3 space-y-2">
-                  <p className="text-sm text-muted-foreground">Split between {numPeople} people:</p>
-                  <div className="flex justify-between items-center p-3 bg-secondary/5 rounded-lg border border-secondary/20">
-                    <span className="text-sm font-medium text-foreground">Per Person:</span>
-                    <span className="text-lg font-bold text-secondary">${result.perPerson}</span>
+                <>
+                  <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
+                    <span className="text-xs text-muted-foreground">Per Person:</span>
+                    <span className="text-sm font-bold text-blue-500">${result.perPerson}</span>
                   </div>
-                  <div className="flex justify-between items-center p-2 bg-card rounded-lg border border-border text-xs">
-                    <span className="text-muted-foreground">Tip per person:</span>
-                    <span className="font-medium text-foreground">${result.tipPerPerson}</span>
+                  <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
+                    <span className="text-xs text-muted-foreground">Tip per person:</span>
+                    <span className="text-sm font-bold text-orange-500">${result.tipPerPerson}</span>
                   </div>
-                </div>
+                </>
               )}
             </div>
 
+            {/* Final Total */}
+            <div className="flex justify-between items-center p-4 bg-primary/5 rounded-lg border-2 border-primary/20">
+              <span className="text-sm font-medium text-foreground">Final Total:</span>
+              <span className="text-xl font-bold text-primary">${result.totalAmount}</span>
+            </div>
+
+            {/* Copy Button */}
             <Button
               onClick={copyResult}
               variant="outline"
-              className="w-full h-10 text-sm font-medium hover:bg-accent transition-all bg-transparent"
+              className="w-full h-8 text-xs font-medium hover:bg-accent transition-all bg-transparent"
             >
-              <Copy className="mr-2 h-4 w-4" />
+              <Copy className="mr-1 h-3 w-3" />
               Copy Results
             </Button>
-          </CardContent>
-        </Card>
-      )}
+          </>
+        ) : (
+          <div className="flex items-center justify-center h-64">
+            <div className="text-center">
+              <DollarSign className="h-12 w-12 text-muted-foreground mx-auto mb-3" />
+              <p className="text-sm text-muted-foreground">Enter values and click Calculate</p>
+              <p className="text-xs text-muted-foreground mt-1">to see tip breakdown</p>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   )
 }

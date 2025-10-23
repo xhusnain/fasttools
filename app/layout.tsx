@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
 import { GlobalLoading } from "@/components/global-loading"
 import type { Metadata } from "next"
-import { validateEnv } from "@/lib/env"
+import { validateEnv, env } from "@/lib/env"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -335,35 +335,30 @@ export const metadata: Metadata = {
       return (
         <html lang="en" className={`dark ${geistSans.variable} ${geistMono.variable} antialiased`}>
         <head>
-            {/* Preload external scripts for better performance */}
-            <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-4G804HZ22C" as="script" crossOrigin="anonymous"/>
-            <link rel="preload" href="https://www.clarity.ms/tag/tspya2xfyk" as="script" crossOrigin="anonymous"/>
+            {/* Preload external scripts for better performance - Only in production */}
+            {env.isProduction && (
+              <>
+                <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-4G804HZ22C" as="script" crossOrigin="anonymous"/>
+              </>
+            )}
             
-            {/* Google Analytics */}
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-4G804HZ22C"></script>
-            <script
-                dangerouslySetInnerHTML={{
-                    __html: `
-                        window.dataLayer = window.dataLayer || [];
-                        function gtag(){dataLayer.push(arguments);}
-                        gtag('js', new Date());
-                        gtag('config', 'G-4G804HZ22C');
-                    `,
-                }}
-            />
+            {/* Google Analytics - Only in production */}
+            {env.isProduction && (
+              <>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-4G804HZ22C"></script>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', 'G-4G804HZ22C');
+                        `,
+                    }}
+                />
+              </>
+            )}
             
-            {/* Microsoft Clarity */}
-            <script
-                dangerouslySetInnerHTML={{
-                    __html: `
-                        (function(c,l,a,r,i,t,y){
-                            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-                            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-                        })(window, document, "clarity", "script", "tspya2xfyk");
-                    `,
-                }}
-            />
             {/* Essential Meta Tags */}
             <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
             
@@ -424,15 +419,21 @@ export const metadata: Metadata = {
             <meta httpEquiv="cleartype" content="on"/>
             <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
             <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
-            <link rel="dns-prefetch" href="//www.google-analytics.com"/>
-            <link rel="dns-prefetch" href="//www.googletagmanager.com"/>
-            <link rel="dns-prefetch" href="//www.clarity.ms"/>
+            {env.isProduction && (
+              <>
+                <link rel="dns-prefetch" href="//www.google-analytics.com"/>
+                <link rel="dns-prefetch" href="//www.googletagmanager.com"/>
+              </>
+            )}
             <link rel="dns-prefetch" href="//vercel.live"/>
             <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous"/>
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
-            <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous"/>
-            <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous"/>
-            <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous"/>
+            {env.isProduction && (
+              <>
+                <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous"/>
+                <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous"/>
+              </>
+            )}
             <link rel="preconnect" href="https://vercel.live" crossOrigin="anonymous"/>
             <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
             
@@ -522,8 +523,8 @@ export const metadata: Metadata = {
             </main>
             <Footer />
             <CookieConsent />
-            <Analytics/>
-          <SpeedInsights/>
+            {env.isProduction && <Analytics/>}
+            {env.isProduction && <SpeedInsights/>}
           </body>
         </html>
       )

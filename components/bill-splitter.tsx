@@ -56,85 +56,80 @@ Split ${numPeople} ways: $${result.perPerson} per person`
   const quickTipButtons = ["10", "15", "18", "20"]
 
   return (
-    <div className="space-y-6">
-      <Card className="border border-border shadow-sm">
-        <CardHeader>
-          <CardTitle className="text-xl text-foreground">Split the Bill</CardTitle>
-          <CardDescription className="text-sm text-muted-foreground">
-            Divide expenses fairly among friends or groups
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="totalBill" className="text-sm font-medium text-foreground">
-              Total Bill Amount ($)
-            </Label>
-            <Input
-              id="totalBill"
-              type="number"
-              placeholder="100.00"
-              value={totalBill}
-              onChange={(e) => setTotalBill(e.target.value)}
-              min="0"
-              step="0.01"
-              className="h-11 text-sm"
-            />
-          </div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {/* Left Column - Inputs */}
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="totalBill" className="text-xs font-medium text-foreground">
+            Total Bill Amount ($)
+          </Label>
+          <Input
+            id="totalBill"
+            type="number"
+            placeholder="100.00"
+            value={totalBill}
+            onChange={(e) => setTotalBill(e.target.value)}
+            min="0"
+            step="0.01"
+            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+          />
+        </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="numPeople" className="text-sm font-medium text-foreground">
-              Number of People
-            </Label>
-            <Input
-              id="numPeople"
-              type="number"
-              placeholder="4"
-              value={numPeople}
-              onChange={(e) => setNumPeople(e.target.value)}
-              min="1"
-              step="1"
-              className="h-11 text-sm"
-            />
-          </div>
+        <div className="space-y-2">
+          <Label htmlFor="numPeople" className="text-xs font-medium text-foreground">
+            Number of People
+          </Label>
+          <Input
+            id="numPeople"
+            type="number"
+            placeholder="4"
+            value={numPeople}
+            onChange={(e) => setNumPeople(e.target.value)}
+            min="1"
+            step="1"
+            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+          />
+        </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="tipPercent" className="text-sm font-medium text-foreground">
-              Tip Percentage (%)
-            </Label>
-            <Input
-              id="tipPercent"
-              type="number"
-              placeholder="15"
-              value={tipPercent}
-              onChange={(e) => setTipPercent(e.target.value)}
-              min="0"
-              max="100"
-              step="1"
-              className="h-11 text-sm"
-            />
-            <div className="flex gap-2 flex-wrap">
-              {quickTipButtons.map((percent) => (
-                <Button
-                  key={percent}
-                  onClick={() => setTipPercent(percent)}
-                  variant={tipPercent === percent ? "default" : "outline"}
-                  size="sm"
-                  className="h-8 text-xs font-medium"
-                >
-                  {percent}%
-                </Button>
-              ))}
-            </div>
+        <div className="space-y-2">
+          <Label htmlFor="tipPercent" className="text-xs font-medium text-foreground">
+            Tip Percentage (%)
+          </Label>
+          <Input
+            id="tipPercent"
+            type="number"
+            placeholder="15"
+            value={tipPercent}
+            onChange={(e) => setTipPercent(e.target.value)}
+            min="0"
+            max="100"
+            step="1"
+            className="h-9 text-sm border-2 border-orange-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 bg-background text-foreground placeholder:text-muted-foreground"
+          />
+          <div className="flex gap-2 flex-wrap">
+            {quickTipButtons.map((percent) => (
+              <Button
+                key={percent}
+                onClick={() => setTipPercent(percent)}
+                variant={tipPercent === percent ? "default" : "outline"}
+                size="sm"
+                className="h-7 text-xs font-medium"
+              >
+                {percent}%
+              </Button>
+            ))}
           </div>
+        </div>
 
+        <div className="flex gap-2">
           <Button
             onClick={splitBill}
             disabled={loading || !totalBill || !numPeople || Number.parseInt(numPeople) < 1}
-            className="w-full h-11 text-sm font-medium shadow-sm hover:shadow-md transition-all"
+            className="flex-1 h-9 text-sm font-medium shadow-sm hover:shadow-md transition-all"
           >
             {loading ? (
               <>
-                <LoadingSpinner className="mr-2" />
+                <LoadingSpinner className="mr-2 h-3 w-3" />
                 Calculating...
               </>
             ) : (
@@ -144,56 +139,68 @@ Split ${numPeople} ways: $${result.perPerson} per person`
               </>
             )}
           </Button>
-        </CardContent>
-      </Card>
+          <Button
+            onClick={() => {
+              setTotalBill("")
+              setNumPeople("")
+              setTipPercent("15")
+              setResult(null)
+            }}
+            variant="outline"
+            className="h-9 text-sm font-medium"
+          >
+            Reset
+          </Button>
+        </div>
+      </div>
 
-      {result && (
-        <Card className="border border-primary/20 shadow-md animate-fade-in-up bg-accent/5">
-          <CardHeader>
-            <CardTitle className="text-xl text-foreground">Split Breakdown</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-3">
-              <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
-                <span className="text-sm text-muted-foreground">Original Bill:</span>
-                <span className="text-base font-bold text-foreground">${totalBill}</span>
-              </div>
+      {/* Right Column - Results */}
+      <div className="space-y-4">
+        {result ? (
+          <div className="space-y-3">
+            <div className="flex justify-between items-center">
+              <span className="text-xs text-muted-foreground">Original Bill:</span>
+              <span className="text-sm font-bold text-foreground">${totalBill}</span>
+            </div>
 
-              <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
-                <span className="text-sm text-muted-foreground">Tip ({tipPercent}%):</span>
-                <span className="text-base font-bold text-secondary">+${result.tipAmount}</span>
-              </div>
+            <div className="flex justify-between items-center">
+              <span className="text-xs text-muted-foreground">Tip ({tipPercent}%):</span>
+              <span className="text-sm font-bold text-orange-500">+${result.tipAmount}</span>
+            </div>
 
-              <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
-                <span className="text-sm text-muted-foreground">Total with Tip:</span>
-                <span className="text-base font-bold text-foreground">${result.totalWithTip}</span>
-              </div>
+            <div className="flex justify-between items-center">
+              <span className="text-xs text-muted-foreground">Total with Tip:</span>
+              <span className="text-sm font-bold text-foreground">${result.totalWithTip}</span>
+            </div>
 
-              <div className="flex justify-between items-center p-4 bg-primary/5 rounded-lg border-2 border-primary/20">
-                <span className="text-sm font-medium text-foreground">Each Person Pays:</span>
-                <span className="text-2xl font-bold text-primary">${result.perPerson}</span>
-              </div>
+            <div className="flex justify-between items-center p-3 bg-green-500/10 rounded-lg border border-green-500/20">
+              <span className="text-xs font-medium text-foreground">Each Person Pays:</span>
+              <span className="text-xl font-bold text-green-600">${result.perPerson}</span>
+            </div>
 
-              <div className="p-3 bg-secondary/5 rounded-lg border border-secondary/20">
-                <p className="text-xs text-muted-foreground mb-1">Breakdown per person:</p>
-                <p className="text-sm font-medium text-foreground">
-                  Bill: ${(Number.parseFloat(totalBill) / Number.parseInt(numPeople)).toFixed(2)} + Tip: $
-                  {result.tipPerPerson}
-                </p>
-              </div>
+            <div className="p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
+              <p className="text-xs text-muted-foreground mb-1">Breakdown per person:</p>
+              <p className="text-xs font-medium text-foreground">
+                Bill: ${(Number.parseFloat(totalBill) / Number.parseInt(numPeople)).toFixed(2)} + Tip: ${result.tipPerPerson}
+              </p>
             </div>
 
             <Button
               onClick={copyResult}
               variant="outline"
-              className="w-full h-10 text-sm font-medium hover:bg-accent transition-all bg-transparent"
+              className="w-full h-8 text-xs font-medium hover:bg-accent transition-all bg-transparent"
             >
-              <Copy className="mr-2 h-4 w-4" />
-              Copy Split Details
+              <Copy className="mr-2 h-3 w-3" />
+              Copy Results
             </Button>
-          </CardContent>
-        </Card>
-      )}
+          </div>
+        ) : (
+          <div className="text-center py-8 text-muted-foreground">
+            <Users className="h-12 w-12 mx-auto mb-4 opacity-50" />
+            <p className="text-sm">Enter bill details to see split breakdown</p>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
