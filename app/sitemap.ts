@@ -334,6 +334,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.95,
     },
+    {
+      url: "https://www.fasttools.store/ai-tools/hashtag-suggester",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/ai-tools/lyrics-generator",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    {
+      url: "https://www.fasttools.store/ai-tools/meme-generator",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    {
+      url: "https://www.fasttools.store/ai-tools/pet-names",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.85,
+    },
+    {
+      url: "https://www.fasttools.store/ai-tools/qr-generator",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
     // Social Media Tools
     {
       url: "https://www.fasttools.store/social-media-tools/tiktok-downloader",
@@ -474,6 +504,56 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,
       priority: 0.8,
+    },
+
+    // Finance Tools
+    {
+      url: "https://www.fasttools.store/finance-tools/bill-splitter",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/finance-tools/credit-card-payoff",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/finance-tools/discount-calculator",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/finance-tools/invoice-generator",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    {
+      url: "https://www.fasttools.store/finance-tools/paypal-fee",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/finance-tools/retirement-planner",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/finance-tools/savings-tracker",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/finance-tools/tip-calculator",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
     },
 
   ]
