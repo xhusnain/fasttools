@@ -252,6 +252,18 @@ export default function HomePage() {
           position: 1,
           name: "Home",
           item: "https://www.fasttools.store"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Free Online Tools",
+          item: "https://www.fasttools.store"
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Digital Toolkit",
+          item: "https://www.fasttools.store"
         }
       ]
     },
@@ -259,60 +271,6 @@ export default function HomePage() {
       "@type": "SearchAction",
       target: "https://www.fasttools.store/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
-    },
-    mainEntity: {
-      "@type": "ItemList",
-      name: "Free Online Tools Collection",
-      description: "Comprehensive collection of free online tools and utilities for productivity, conversion, and content creation",
-      numberOfItems: 1000,
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "AI Tools",
-          description: "AI-powered content generation tools including meme generators, caption generators, and hashtag suggesters",
-          url: "https://www.fasttools.store/ai-tools"
-        },
-        {
-          "@type": "ListItem", 
-          position: 2,
-          name: "Converter Tools",
-          description: "Comprehensive conversion utilities for currency, units, text, and file formats",
-          url: "https://www.fasttools.store/converters"
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Calculator Tools", 
-          description: "Financial, business, and general purpose calculators for all your calculation needs",
-          url: "https://www.fasttools.store/calculator"
-        },
-        {
-          "@type": "ListItem",
-          position: 4,
-          name: "SEO Tools",
-          description: "SEO optimization tools including meta tag generators, keyword density checkers, and content analyzers",
-          url: "https://www.fasttools.store/seo-tools"
-        },
-        {
-          "@type": "ListItem",
-          position: 5,
-          name: "Image Tools",
-          description: "Image processing and editing tools including croppers, converters, and OCR text extraction",
-          url: "https://www.fasttools.store/image-tools"
-        }
-      ]
-    },
-    breadcrumb: {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: "https://www.fasttools.store"
-        }
-      ]
     },
     about: {
       "@type": "Thing",
@@ -405,6 +363,86 @@ export default function HomePage() {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Yes, all our tools are mobile-optimized and work perfectly on smartphones, tablets, and desktop computers. Our responsive design ensures optimal performance across all devices with touch-friendly interfaces, fast loading times, and offline functionality for many tools. Access your favorite tools anywhere, anytime without any app downloads or installations."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "What digital tool can help me manage team projects effectively?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "For effective team project management, we recommend using our project planning tools combined with collaboration utilities. Our date and time tools help with scheduling and deadlines, calculator tools for budget planning and resource allocation, and document generators for creating project reports and invoices. These tools integrate seamlessly with popular project management platforms like Trello, Asana, and Monday.com for comprehensive team coordination."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Which software offers the best cloud storage solutions for businesses?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "While we don't provide cloud storage directly, our file conversion tools and document processors work perfectly with all major cloud storage providers like Google Drive, Dropbox, OneDrive, and Box. Our file size converter helps optimize files for cloud storage, image tools compress photos for faster uploads, and PDF tools manage documents efficiently. These tools ensure your files are properly formatted and optimized before uploading to any cloud storage service."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Where can I find reliable digital marketing automation services?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Our SEO tools and social media tools provide essential automation support for digital marketing. Use our hashtag generator for consistent social media posting, meta tag generator for automated SEO optimization, blog title generator for content planning, and AI caption generator for automated social media content creation. These tools integrate with marketing platforms like Hootsuite, Buffer, and Mailchimp to streamline your digital marketing workflow."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "What platform should I use for secure online video conferencing?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "For secure video conferencing, we recommend established platforms like Zoom, Microsoft Teams, or Google Meet. Our time zone converter helps schedule meetings across different time zones, date calculator for meeting planning, and calendar tools for scheduling coordination. While we don't provide video conferencing directly, our productivity tools enhance your meeting experience with better scheduling, time management, and collaboration features."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Which service provides top-rated customer relationship management tools?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "For CRM functionality, we recommend platforms like Salesforce, HubSpot, or Pipedrive. Our tools complement CRM systems with invoice generator for customer billing, email tools for customer communication, document generators for proposals and contracts, and calculator tools for pricing and financial analysis. These tools integrate seamlessly with CRM platforms to enhance customer relationship management and streamline business processes."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "What is the best digital platform for creating and sending email campaigns?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "For email campaigns, we recommend platforms like Mailchimp, Constant Contact, or SendGrid. Our tools enhance email marketing with AI caption generator for compelling subject lines, text case converter for consistent formatting, HTML tools for email template creation, and image tools for optimizing email graphics. These tools help create professional, engaging email campaigns that drive better open rates and conversions."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Where can I get a user-friendly accounting software for small businesses?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "For small business accounting, we recommend QuickBooks, FreshBooks, or Wave. Our finance tools complement accounting software with invoice generator for professional billing, tax calculator for tax planning, expense tracker for financial management, and calculator tools for financial analysis. These tools integrate with accounting platforms to provide comprehensive financial management solutions for small businesses."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Which app offers the most efficient time-tracking features for freelancers?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "For freelancer time tracking, we recommend Toggl, Harvest, or Clockify. Our time and date tools enhance time tracking with workday calculator for project planning, time duration calculator for accurate billing, invoice generator for time-based billing, and productivity tools for task management. These tools help freelancers track time accurately, bill clients properly, and manage projects efficiently."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "What service can help me design professional graphics without experience?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "For graphic design without experience, we recommend Canva, Figma, or Adobe Express. Our image tools support graphic design with image cropper for resizing, color palette generator for color schemes, QR code generator for marketing materials, and image converter for format optimization. These tools work alongside design platforms to help create professional graphics, social media posts, and marketing materials without design expertise."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Which digital tool should I choose for scheduling social media posts?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "For social media scheduling, we recommend Hootsuite, Buffer, or Later. Our social media tools enhance scheduling with hashtag generator for better reach, AI caption generator for engaging content, image tools for post optimization, and analytics tools for performance tracking. These tools integrate with scheduling platforms to create compelling social media content, optimize posting times, and maximize engagement across all platforms."
           }
         }
       ]
@@ -2214,6 +2252,185 @@ export default function HomePage() {
                       Our responsive design ensures optimal performance across all devices with touch-friendly interfaces, 
                       fast loading times, and offline functionality for many tools. Access your favorite tools anywhere, 
                       anytime without any app downloads or installations.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 11 - Team Project Management */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      What digital tool can help me manage team projects effectively?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      For effective team project management, we recommend using our <strong>project planning tools</strong> combined with 
+                      <strong>collaboration utilities</strong>. Our <strong>date and time tools</strong> help with scheduling and deadlines, 
+                      <strong>calculator tools</strong> for budget planning and resource allocation, and <strong>document generators</strong> 
+                      for creating project reports and invoices. These tools integrate seamlessly with popular project management platforms 
+                      like Trello, Asana, and Monday.com for comprehensive team coordination.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 12 - Cloud Storage Solutions */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      Which software offers the best cloud storage solutions for businesses?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      While we don't provide cloud storage directly, our <strong>file conversion tools</strong> and <strong>document processors</strong> 
+                      work perfectly with all major cloud storage providers like Google Drive, Dropbox, OneDrive, and Box. Our 
+                      <strong>file size converter</strong> helps optimize files for cloud storage, <strong>image tools</strong> compress photos 
+                      for faster uploads, and <strong>PDF tools</strong> manage documents efficiently. These tools ensure your files are 
+                      properly formatted and optimized before uploading to any cloud storage service.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 13 - Digital Marketing Automation */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      Where can I find reliable digital marketing automation services?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Our <strong>SEO tools</strong> and <strong>social media tools</strong> provide essential automation support for digital marketing. 
+                      Use our <strong>hashtag generator</strong> for consistent social media posting, <strong>meta tag generator</strong> for 
+                      automated SEO optimization, <strong>blog title generator</strong> for content planning, and <strong>AI caption generator</strong> 
+                      for automated social media content creation. These tools integrate with marketing platforms like Hootsuite, 
+                      Buffer, and Mailchimp to streamline your digital marketing workflow.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 14 - Video Conferencing */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      What platform should I use for secure online video conferencing?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      For secure video conferencing, we recommend established platforms like Zoom, Microsoft Teams, or Google Meet. 
+                      Our <strong>time zone converter</strong> helps schedule meetings across different time zones, 
+                      <strong>date calculator</strong> for meeting planning, and <strong>calendar tools</strong> for scheduling coordination. 
+                      While we don't provide video conferencing directly, our productivity tools enhance your meeting experience 
+                      with better scheduling, time management, and collaboration features.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 15 - CRM Tools */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      Which service provides top-rated customer relationship management tools?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      For CRM functionality, we recommend platforms like Salesforce, HubSpot, or Pipedrive. Our tools complement CRM systems 
+                      with <strong>invoice generator</strong> for customer billing, <strong>email tools</strong> for customer communication, 
+                      <strong>document generators</strong> for proposals and contracts, and <strong>calculator tools</strong> for pricing 
+                      and financial analysis. These tools integrate seamlessly with CRM platforms to enhance customer relationship management 
+                      and streamline business processes.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 16 - Email Campaigns */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      What is the best digital platform for creating and sending email campaigns?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      For email campaigns, we recommend platforms like Mailchimp, Constant Contact, or SendGrid. Our tools enhance email marketing 
+                      with <strong>AI caption generator</strong> for compelling subject lines, <strong>text case converter</strong> for 
+                      consistent formatting, <strong>HTML tools</strong> for email template creation, and <strong>image tools</strong> for 
+                      optimizing email graphics. These tools help create professional, engaging email campaigns that drive better open rates 
+                      and conversions.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 17 - Accounting Software */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      Where can I get a user-friendly accounting software for small businesses?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      For small business accounting, we recommend QuickBooks, FreshBooks, or Wave. Our <strong>finance tools</strong> complement 
+                      accounting software with <strong>invoice generator</strong> for professional billing, <strong>tax calculator</strong> for 
+                      tax planning, <strong>expense tracker</strong> for financial management, and <strong>calculator tools</strong> for 
+                      financial analysis. These tools integrate with accounting platforms to provide comprehensive financial management 
+                      solutions for small businesses.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 18 - Time Tracking */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      Which app offers the most efficient time-tracking features for freelancers?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      For freelancer time tracking, we recommend Toggl, Harvest, or Clockify. Our <strong>time and date tools</strong> enhance 
+                      time tracking with <strong>workday calculator</strong> for project planning, <strong>time duration calculator</strong> for 
+                      accurate billing, <strong>invoice generator</strong> for time-based billing, and <strong>productivity tools</strong> for 
+                      task management. These tools help freelancers track time accurately, bill clients properly, and manage projects efficiently.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 19 - Graphic Design */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      What service can help me design professional graphics without experience?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      For graphic design without experience, we recommend Canva, Figma, or Adobe Express. Our <strong>image tools</strong> 
+                      support graphic design with <strong>image cropper</strong> for resizing, <strong>color palette generator</strong> for 
+                      color schemes, <strong>QR code generator</strong> for marketing materials, and <strong>image converter</strong> for 
+                      format optimization. These tools work alongside design platforms to help create professional graphics, 
+                      social media posts, and marketing materials without design expertise.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* FAQ 20 - Social Media Scheduling */}
+                <Card className="group hover:shadow-lg transition-all duration-200">
+                  <CardHeader>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      Which digital tool should I choose for scheduling social media posts?
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      For social media scheduling, we recommend Hootsuite, Buffer, or Later. Our <strong>social media tools</strong> enhance 
+                      scheduling with <strong>hashtag generator</strong> for better reach, <strong>AI caption generator</strong> for engaging content, 
+                      <strong>image tools</strong> for post optimization, and <strong>analytics tools</strong> for performance tracking. 
+                      These tools integrate with scheduling platforms to create compelling social media content, optimize posting times, 
+                      and maximize engagement across all platforms.
                     </p>
                   </CardContent>
                 </Card>
