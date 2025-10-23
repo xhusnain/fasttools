@@ -9,7 +9,7 @@ import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: `Discount Calculator – Calculate Percentage Discount, Savings & Final Price (${getCurrentYear()})`,
+  title: `Discount Calculator – Sale Price & Savings | FastTools`,
   description: "Use our free Discount Calculator to quickly find the final price after discount. Calculate savings, sale price, or original price easily. Works with any currency and supports tax or VAT calculations.",
   keywords: [
     // Core Discount Calculator Keywords
@@ -249,7 +249,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/finance-tools/discount-calculator" },
   openGraph: {
-    title: `Discount Calculator – Calculate Percentage Discount, Savings & Final Price (${getCurrentYear()})`,
+    title: `Discount Calculator – Sale Price & Savings | FastTools`,
     description: "Use our free Discount Calculator to quickly find the final price after discount. Calculate savings, sale price, or original price easily. Works with any currency and supports tax or VAT calculations.",
     url: "https://www.fasttools.store/finance-tools/discount-calculator",
     type: "website",
@@ -266,7 +266,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Discount Calculator – Calculate Percentage Discount, Savings & Final Price (${getCurrentYear()})`,
+    title: `Discount Calculator – Sale Price & Savings | FastTools`,
     description: "Use our free Discount Calculator to quickly find the final price after discount. Calculate savings, sale price, or original price easily. Works with any currency and supports tax or VAT calculations.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

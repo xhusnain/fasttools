@@ -7,13 +7,13 @@ import { AdSpace } from "@/components/ad-space"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free SEO Tools & Website Optimization | Meta Tags, Keyword Analysis | FastTools",
+  title: "SEO Tools & Website Optimization | FastTools",
   description:
     "Professional SEO tools for website optimization. Free meta tag generator, keyword density checker, hashtag generator, blog title creator, and lorem ipsum generator. Improve search rankings and organic traffic.",
   keywords:
     "free seo tools, online seo tools, seo analyzer, website optimization, meta tag generator, keyword density checker, hashtag generator, blog title generator, lorem ipsum generator, seo checker, website seo analyzer, free keyword analyzer, meta tags generator, title tag generator, meta description generator, open graph generator, twitter card generator, schema markup generator, keyword frequency analyzer, on-page seo tools, technical seo tools, content optimization tools, seo audit tool, website speed test, mobile seo checker, local seo tools, backlink checker, seo score checker, website ranking tool, search engine optimization tools, seo analysis tool, website performance analyzer, seo testing tools, free website seo audit, seo optimization tools, digital marketing tools, content marketing tools, seo for bloggers, seo for developers, organic traffic tools, search ranking tools, seo monitoring tools, website traffic analyzer, seo reporting tools, seo dashboard, seo management tools, automated seo tools, seo workflow tools, seo productivity tools, seo collaboration tools",
   openGraph: {
-    title: "Free SEO Tools & Website Optimization | Meta Tags, Keyword Analysis | FastTools",
+    title: "SEO Tools & Website Optimization | FastTools",
     description: "Professional SEO tools for website optimization. Free meta tag generator, keyword density checker, hashtag generator, blog title creator, and lorem ipsum generator. Improve search rankings and organic traffic.",
     type: "website",
     url: "https://www.fasttools.store/seo-tools",

@@ -13,7 +13,7 @@ function getCurrentYear(): number {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: `Instagram AI Hashtag Generator & Counter – Free Hashtag Extractor Tool (${getCurrentYear()})`,
+  title: `Instagram Hashtag Generator & Counter | FastTools`,
   description:
     "Free Instagram hashtag counter, generator, and extractor tool. Count hashtags from Instagram posts, extract hashtags, and generate AI-powered hashtags for better reach and engagement. Perfect hashtag counter tool for calculating conversions and optimizing social media performance.",
   keywords: [
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/social-media-tools/hashtag-counter" },
   openGraph: {
-    title: `Instagram AI Hashtag Generator & Counter – Free Hashtag Extractor Tool (${getCurrentYear()})`,
+    title: `Instagram Hashtag Generator & Counter | FastTools`,
     description: "Free Instagram hashtag counter, generator, and extractor tool. Count hashtags from Instagram posts, extract hashtags, and generate AI-powered hashtags for better reach and engagement. Perfect hashtag counter tool for calculating conversions and optimizing social media performance.",
     url: "https://www.fasttools.store/social-media-tools/hashtag-counter",
     type: "website",
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Instagram AI Hashtag Generator & Counter – Free Hashtag Extractor Tool (${getCurrentYear()})`,
+    title: `Instagram Hashtag Generator & Counter | FastTools`,
     description: "Free Instagram hashtag counter, generator, and extractor tool. Count hashtags from Instagram posts, extract hashtags, and generate AI-powered hashtags for better reach and engagement. Perfect hashtag counter tool for calculating conversions and optimizing social media performance.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

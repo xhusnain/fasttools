@@ -25,7 +25,7 @@ import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: `Free Credit Card Payoff Calculator – Debt Payoff Timeline & Interest Savings (${getCurrentYear()})`,
+  title: `Credit Card Payoff Calculator | FastTools`,
   description: "Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. Calculate how long to pay off credit card debt and save thousands in interest. Perfect for debt management and financial planning.",
   keywords: [
     // Golden Keywords - High Value, Low Competition
@@ -313,7 +313,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/finance-tools/credit-card-payoff" },
   openGraph: {
-    title: `Free Credit Card Payoff Calculator – Debt Payoff Timeline & Interest Savings (${getCurrentYear()})`,
+    title: `Credit Card Payoff Calculator | FastTools`,
     description: "Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. Calculate how long to pay off credit card debt and save thousands in interest. Perfect for debt management and financial planning.",
     url: "https://www.fasttools.store/finance-tools/credit-card-payoff",
     type: "website",
@@ -330,7 +330,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Free Credit Card Payoff Calculator – Debt Payoff Timeline & Interest Savings (${getCurrentYear()})`,
+    title: `Credit Card Payoff Calculator | FastTools`,
     description: "Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. Calculate how long to pay off credit card debt and save thousands in interest.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

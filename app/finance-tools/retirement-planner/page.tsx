@@ -26,7 +26,7 @@ import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: `Free Retirement Planner Calculator – 401k, IRA & Pension Planning Tool (${getCurrentYear()})`,
+  title: `Retirement Planner – 401k, IRA Calculator | FastTools`,
   description: "Free retirement planner calculator with 401k, IRA, pension, and Social Security planning. Calculate how long $500k lasts, monthly retirement income, and replacement ratios. Perfect for couples, government employees, and private sector workers. No cost, professional results.",
   keywords: [
     "retirement planner",
@@ -532,7 +532,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/finance-tools/retirement-planner" },
   openGraph: {
-    title: `Free Retirement Planner Calculator – 401k, IRA & Pension Planning Tool (${getCurrentYear()})`,
+    title: `Retirement Planner – 401k, IRA Calculator | FastTools`,
     description: "Free retirement planner calculator with 401k, IRA, pension, and Social Security planning. Calculate how long $500k lasts, monthly retirement income, and replacement ratios. Perfect for couples, government employees, and private sector workers. No cost, professional results.",
     url: "https://www.fasttools.store/finance-tools/retirement-planner",
     type: "website",
@@ -549,7 +549,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Free Retirement Planner Calculator – 401k, IRA & Pension Planning Tool (${getCurrentYear()})`,
+    title: `Retirement Planner – 401k, IRA Calculator | FastTools`,
     description: "Free retirement planner calculator with 401k, IRA, pension, and Social Security planning. Calculate how long $500k lasts, monthly retirement income, and replacement ratios. Perfect for couples, government employees, and private sector workers. No cost, professional results.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

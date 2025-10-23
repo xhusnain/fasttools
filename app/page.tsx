@@ -35,7 +35,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Free Online Tools | AI Generator, Calculator, Converter, SEO Tools | FastTools",
+  title: "Online Tools | AI Generator, Calculator, SEO | FastTools",
   description: "1000+ free online tools: AI meme generator, currency converter, BMI calculator, meta tag generator, TikTok downloader, JWT decoder. Fast, accurate, no registration required.",
   alternates: {
     canonical: "https://www.fasttools.store",
@@ -46,7 +46,7 @@ export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Free Online Tools | AI Generator, Calculator, Converter, SEO Tools | FastTools",
+    name: "Online Tools | AI Generator, Calculator, SEO | FastTools",
     description: "1000+ free online tools: AI meme generator, currency converter, BMI calculator, meta tag generator, TikTok downloader, JWT decoder. Fast, accurate, no registration required.",
     url: "https://www.fasttools.store",
     keywords: [

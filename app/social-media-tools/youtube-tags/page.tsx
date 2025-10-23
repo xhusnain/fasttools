@@ -6,7 +6,7 @@ import { Search, Zap, Target, Shield, Globe, Clock, FileText, Hash, Lightbulb, C
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "YouTube Tag Extractor – Extract & Copy YouTube Video Tags Instantly (Free Tool)",
+  title: "YouTube Tag Extractor – Extract Video Tags | FastTools",
   description: "Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve your video ranking on YouTube. Works on all devices.",
   keywords: [
     "youtube tag extractor",
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     "youtube tag extractor iphone"
   ],
   openGraph: {
-    title: "YouTube Tag Extractor – Extract & Copy YouTube Video Tags Instantly (Free Tool)",
+    title: "YouTube Tag Extractor – Extract Video Tags | FastTools",
     description: "Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve your video ranking on YouTube. Works on all devices.",
     url: "https://www.fasttools.store/social-media-tools/youtube-tags",
     siteName: "FastTools",
@@ -103,7 +103,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "YouTube Tag Extractor – Extract & Copy YouTube Video Tags Instantly (Free Tool)",
+    title: "YouTube Tag Extractor – Extract Video Tags | FastTools",
     description: "Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve your video ranking on YouTube.",
     images: ["https://www.fasttools.store/og-image.png"],
   },
@@ -142,7 +142,7 @@ export default function YoutubeTagsPage() {
             Social Media Tool
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight mb-4">
-            YouTube Tag Extractor – Extract & Copy YouTube Video Tags Instantly (Free Tool)
+            YouTube Tag Extractor – Extract Video Tags | FastTools
           </h1>
           <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed mb-6">
             Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve your video ranking on YouTube. Works on all devices.

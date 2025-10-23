@@ -9,7 +9,7 @@ import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: `Tip Calculator – Calculate Tips, Split Bills & Total Amount Online (${getCurrentYear()})`,
+  title: `Tip Calculator – Calculate Tips & Split Bills | FastTools`,
   description: "Free online Tip Calculator to quickly calculate tip amounts, split bills, and find total payments. Choose your tip percentage and number of people. Works worldwide with tax and currency support.",
   keywords: [
     // Primary Keywords (20)
@@ -303,7 +303,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/finance-tools/tip-calculator" },
   openGraph: {
-    title: `Tip Calculator – Calculate Tips, Split Bills & Total Amount Online (${getCurrentYear()})`,
+    title: `Tip Calculator – Calculate Tips & Split Bills | FastTools`,
     description: "Free online Tip Calculator to quickly calculate tip amounts, split bills, and find total payments. Choose your tip percentage and number of people. Works worldwide with tax and currency support.",
     url: "https://www.fasttools.store/finance-tools/tip-calculator",
     type: "website",
@@ -320,7 +320,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Tip Calculator – Calculate Tips, Split Bills & Total Amount Online (${getCurrentYear()})`,
+    title: `Tip Calculator – Calculate Tips & Split Bills | FastTools`,
     description: "Free online Tip Calculator to quickly calculate tip amounts, split bills, and find total payments. Choose your tip percentage and number of people. Works worldwide with tax and currency support.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

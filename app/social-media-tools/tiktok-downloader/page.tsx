@@ -9,7 +9,7 @@ import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "TikTok Video & Wallpaper Downloader – Download HD TikTok Videos & Images Without Watermark Free",
+  title: "TikTok Downloader – HD Videos Without Watermark | FastTools",
   description: "Download TikTok videos and wallpapers in HD without watermark for free. Fast, secure, and easy-to-use online TikTok downloader for videos and images. Works on PC, Android, iPhone, and all devices. Perfect for creators, marketers, and social media enthusiasts.",
     keywords: [
               "tiktok video downloader",
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
 
 
   openGraph: {
-    title: "TikTok Video & Wallpaper Downloader – Download HD TikTok Videos & Images Without Watermark Free",
+    title: "TikTok Downloader – HD Videos Without Watermark | FastTools",
     description: "Download TikTok videos and wallpapers in HD without watermark for free. Fast, secure, and easy-to-use online TikTok downloader for videos and images. Works on PC, Android, iPhone, and all devices. Perfect for creators, marketers, and social media enthusiasts.",
     url: "https://www.fasttools.store/social-media-tools/tiktok-downloader",
     siteName: "FastTools",
@@ -108,7 +108,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TikTok Video & Wallpaper Downloader – Download HD TikTok Videos & Images Without Watermark Free",
+    title: "TikTok Downloader – HD Videos Without Watermark | FastTools",
     description: "Download TikTok videos and wallpapers in HD without watermark for free. Fast, secure, and easy-to-use online TikTok downloader for videos and images. Works on PC, Android, iPhone, and all devices.",
     images: ["https://www.fasttools.store/og-image.png"],
   },
@@ -190,7 +190,7 @@ export default function TiktokDownloaderPage() {
               Social Media Tool
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight mb-4">
-              TikTok Video & Wallpaper Downloader – Download HD TikTok Videos & Images Without Watermark Free
+              TikTok Downloader – HD Videos & Images Without Watermark
           </h1>
             <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed mb-6">
               Download TikTok videos and wallpapers in HD without watermark for free. Fast, secure, and easy-to-use online TikTok downloader for videos and images. Works on PC, Android, iPhone, and all devices. Perfect for creators, marketers, and social media enthusiasts.

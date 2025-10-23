@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Invoice Generator – Create Global Invoices in Any Language & Currency",
+  title: "Invoice Generator – Create Global Invoices | FastTools",
   description:
     "Create professional invoices in 15+ languages and 200+ currencies. Auto tax, logo upload, instant PDF download — free, secure, and no sign-up needed.",
   keywords: [
@@ -148,7 +148,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/finance-tools/invoice-generator" },
   openGraph: {
-    title: "Free Invoice Generator – Create Global Invoices in Any Language & Currency",
+    title: "Invoice Generator – Create Global Invoices | FastTools",
     description: "Create professional invoices in 15+ languages and 200+ currencies. Auto tax, logo upload, instant PDF download — free, secure, and no sign-up needed.",
     url: "https://www.fasttools.store/finance-tools/invoice-generator",
     type: "website",
@@ -158,14 +158,14 @@ export const metadata: Metadata = {
         url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "Free Invoice Generator – Create Global Invoices in Any Language & Currency",
+        alt: "Invoice Generator – Create Global Invoices | FastTools",
         type: "image/svg+xml",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Invoice Generator – Create Global Invoices in Any Language & Currency",
+    title: "Invoice Generator – Create Global Invoices | FastTools",
     description: "Create professional invoices in 15+ languages and 200+ currencies. Auto tax, logo upload, instant PDF download — free, secure, and no sign-up needed.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },
@@ -173,7 +173,7 @@ export const metadata: Metadata = {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      name: "Free Invoice Generator – Create Global Invoices in Any Language & Currency",
+      name: "Invoice Generator – Create Global Invoices | FastTools",
       alternateName: "Free Invoice Maker",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web Browser",

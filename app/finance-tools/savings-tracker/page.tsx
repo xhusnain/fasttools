@@ -56,7 +56,7 @@ import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: `Advanced Financial Goal Planner – Complete Expense & Savings Calculator (${getCurrentYear()})`,
+  title: `Savings Tracker – Financial Goal Planner | FastTools`,
   description: "Comprehensive financial planning tool with expense tracking, tax calculations, inflation adjustments, and multiple goal management. Perfect for budgeting, savings planning, and achieving financial objectives. Features advanced expense categories, tax deductions, priority-based goal setting, and intelligent recommendations.",
   keywords: [
     // Primary Keywords (20)
@@ -346,7 +346,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/finance-tools/savings-tracker" },
   openGraph: {
-    title: `Advanced Financial Goal Planner – Complete Expense & Savings Calculator (${getCurrentYear()})`,
+    title: `Savings Tracker – Financial Goal Planner | FastTools`,
     description: "Comprehensive financial planning tool with expense tracking, tax calculations, inflation adjustments, and multiple goal management. Perfect for budgeting, savings planning, and achieving financial objectives. Features advanced expense categories, tax deductions, priority-based goal setting, and intelligent recommendations.",
     url: "https://www.fasttools.store/finance-tools/savings-tracker",
     type: "website",
@@ -363,7 +363,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Advanced Financial Goal Planner – Complete Expense & Savings Calculator (${getCurrentYear()})`,
+    title: `Savings Tracker – Financial Goal Planner | FastTools`,
     description: "Comprehensive financial planning tool with expense tracking, tax calculations, inflation adjustments, and multiple goal management. Perfect for budgeting, savings planning, and achieving financial objectives. Features advanced expense categories, tax deductions, priority-based goal setting, and intelligent recommendations.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },

@@ -25,7 +25,7 @@ import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: `Free Bill Splitter Calculator – Split Bills, Tips & Shared Expenses (${getCurrentYear()})`,
+  title: `Bill Splitter Calculator – Split Bills | FastTools`,
   description: "Free bill splitter calculator for restaurants, groups, and shared expenses. Split bills evenly or by items, calculate tips and tax, track who owes what. Perfect for friends, roommates, and travel groups. No cost, instant results.",
   keywords: [
     "split bills with friends",
@@ -453,7 +453,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.fasttools.store/finance-tools/bill-splitter" },
   openGraph: {
-    title: `Free Bill Splitter Calculator – Split Bills, Tips & Shared Expenses (${getCurrentYear()})`,
+    title: `Bill Splitter Calculator – Split Bills | FastTools`,
     description: "Free bill splitter calculator for restaurants, groups, and shared expenses. Split bills evenly or by items, calculate tips and tax, track who owes what. Perfect for friends, roommates, and travel groups. No cost, instant results.",
     url: "https://www.fasttools.store/finance-tools/bill-splitter",
     type: "website",
@@ -470,7 +470,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Free Bill Splitter Calculator – Split Bills, Tips & Shared Expenses (${getCurrentYear()})`,
+    title: `Bill Splitter Calculator – Split Bills | FastTools`,
     description: "Free bill splitter calculator for restaurants, groups, and shared expenses. Split bills evenly or by items, calculate tips and tax, track who owes what. Perfect for friends, roommates, and travel groups. No cost, instant results.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },
