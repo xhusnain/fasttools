@@ -5,7 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Upload, Copy, Check, FileText } from "lucide-react"
+import { Upload, Copy, Check, FileText, RotateCcw } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
 import Tesseract from "tesseract.js"
 
@@ -54,28 +54,52 @@ export function ImageToText() {
     setTimeout(() => setCopied(false), 2000)
   }
 
+  const resetAll = () => {
+    setImage(null)
+    setExtractedText("")
+    setLoading(false)
+    setProgress(0)
+    setCopied(false)
+    // Reset the file input
+    const fileInput = document.getElementById("image-upload") as HTMLInputElement
+    if (fileInput) {
+      fileInput.value = ""
+    }
+  }
+
   return (
     <div className="space-y-6">
       <Card className="p-6 border-border shadow-sm hover:shadow-md transition-shadow">
         <div className="space-y-4">
-          <div className="flex items-center justify-center w-full">
-            <label
-              htmlFor="image-upload"
-              className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-border rounded-lg cursor-pointer bg-muted/30 hover:bg-muted/50 transition-colors"
-            >
-              {image ? (
-                <img src={image || "/placeholder.svg"} alt="Uploaded" className="max-h-60 rounded-lg" />
-              ) : (
-                <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                  <Upload className="w-10 h-10 mb-3 text-muted-foreground" />
-                  <p className="mb-2 text-sm text-muted-foreground">
-                    <span className="font-semibold">Click to upload</span> or drag and drop
-                  </p>
-                  <p className="text-xs text-muted-foreground">PNG, JPG, JPEG (MAX. 10MB)</p>
-                </div>
-              )}
-              <input id="image-upload" type="file" className="hidden" accept="image/*" onChange={handleImageUpload} />
-            </label>
+          <div className="space-y-3">
+            <div className="flex items-center justify-center w-full">
+              <label
+                htmlFor="image-upload"
+                className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-border rounded-lg cursor-pointer bg-muted/30 hover:bg-muted/50 transition-colors"
+              >
+                {image ? (
+                  <img src={image || "/placeholder.svg"} alt="Uploaded" className="max-h-60 rounded-lg" />
+                ) : (
+                  <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                    <Upload className="w-10 h-10 mb-3 text-muted-foreground" />
+                    <p className="mb-2 text-sm text-muted-foreground">
+                      <span className="font-semibold">Click to upload</span> or drag and drop
+                    </p>
+                    <p className="text-xs text-muted-foreground">PNG, JPG, JPEG (MAX. 10MB)</p>
+                  </div>
+                )}
+                <input id="image-upload" type="file" className="hidden" accept="image/*" onChange={handleImageUpload} />
+              </label>
+            </div>
+            
+            {image && (
+              <div className="flex justify-center">
+                <Button size="sm" variant="outline" onClick={resetAll} className="h-8 text-xs bg-transparent">
+                  <RotateCcw className="h-3 w-3 mr-1" />
+                  Reset & Upload New Image
+                </Button>
+              </div>
+            )}
           </div>
 
           {loading && (
@@ -100,19 +124,25 @@ export function ImageToText() {
                   <FileText className="h-4 w-4" />
                   Extracted Text
                 </h3>
-                <Button size="sm" variant="outline" onClick={copyToClipboard} className="h-8 text-xs bg-transparent">
-                  {copied ? (
-                    <>
-                      <Check className="h-3 w-3 mr-1" />
-                      Copied
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="h-3 w-3 mr-1" />
-                      Copy
-                    </>
-                  )}
-                </Button>
+                <div className="flex items-center gap-2">
+                  <Button size="sm" variant="outline" onClick={copyToClipboard} className="h-8 text-xs bg-transparent">
+                    {copied ? (
+                      <>
+                        <Check className="h-3 w-3 mr-1" />
+                        Copied
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="h-3 w-3 mr-1" />
+                        Copy
+                      </>
+                    )}
+                  </Button>
+                  <Button size="sm" variant="outline" onClick={resetAll} className="h-8 text-xs bg-transparent">
+                    <RotateCcw className="h-3 w-3 mr-1" />
+                    Reset
+                  </Button>
+                </div>
               </div>
               <div className="p-4 bg-muted/30 rounded-lg border border-border max-h-96 overflow-y-auto">
                 <p className="text-sm text-foreground leading-relaxed whitespace-pre-wrap">{extractedText}</p>
