@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: `Instagram Hashtag Generator & Counter | FastTools`,
   description:
-    "Free Instagram hashtag counter, generator, and extractor tool. Count hashtags from Instagram posts, extract hashtags, and generate AI-powered hashtags for better reach and engagement. Perfect hashtag counter tool for calculating conversions and optimizing social media performance.",
+    "Free Instagram hashtag counter, generator, and extractor tool. Count hashtags from Instagram posts, extract hashtags, and generate AI-powered hashtags for better reach and engagement.",
   keywords: [
       "instagram hashtag counter",
       "instagram hashtag generator",

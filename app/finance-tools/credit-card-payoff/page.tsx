@@ -26,7 +26,7 @@ import { getCurrentYear } from "@/lib/utils"
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: `Credit Card Payoff Calculator | FastTools`,
-  description: "Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. Calculate how long to pay off credit card debt and save thousands in interest. Perfect for debt management and financial planning.",
+  description: "Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. Calculate how long to pay off credit card debt and save thousands in interest.",
   keywords: [
     // Golden Keywords - High Value, Low Competition
     "how to pay off credit card debt fast",
