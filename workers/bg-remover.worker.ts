@@ -181,8 +181,7 @@ self.addEventListener("message", async (event) => {
     console.error("Background remover worker error:", error);
     self.postMessage({
       type: "error",
-      payload:
-        error instanceof Error ? error.message : "Unknown error occurred",
+      payload: "Failed to process image. Please try again.",
     });
   }
 });

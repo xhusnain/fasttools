@@ -31,13 +31,7 @@ export function ImageBackgroundRemover() {
     // Validate file type
     const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp']
     if (!allowedTypes.includes(file.type)) {
-      alert('Please upload a valid image file (JPEG, PNG, or WebP).')
-      return
-    }
-
-    // Validate file size (10MB limit)
-    if (file.size > 10 * 1024 * 1024) {
-      alert('File size must be less than 10MB.')
+      alert('⚠️ Oops! Please upload a valid image file.\n\nSupported formats: JPEG, PNG, or WebP')
       return
     }
 
@@ -54,7 +48,7 @@ export function ImageBackgroundRemover() {
         setImageLoaded(true)
       }
       img.onerror = () => {
-        alert("Failed to load image")
+        alert("⚠️ Failed to load image.\n\nPlease try uploading a different image.")
       }
       img.src = imageUrl
     }
@@ -267,15 +261,24 @@ export function ImageBackgroundRemover() {
 
           {/* Error State */}
           {status.stage === "error" && (
-            <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl">
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 p-1">
-                  <svg className="h-5 w-5 text-red-600 dark:text-red-400" fill="currentColor" viewBox="0 0 20 20">
+            <div className="mt-6 p-6 bg-red-50 dark:bg-red-900/20 border-2 border-red-200 dark:border-red-800 rounded-xl">
+              <div className="flex flex-col items-center text-center gap-4">
+                <div className="p-3 bg-red-100 dark:bg-red-900/40 rounded-full">
+                  <svg className="h-8 w-8 text-red-600 dark:text-red-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <div className="flex-1">
-                  <p className="text-sm font-medium text-red-800 dark:text-red-200">{status.message}</p>
+                <div>
+                  <h3 className="text-lg font-bold text-red-900 dark:text-red-200 mb-2">Oops! Something went wrong</h3>
+                  <p className="text-sm text-red-800 dark:text-red-300 mb-4 max-w-md">{status.message}</p>
+                  <Button 
+                    onClick={resetAll} 
+                    variant="outline"
+                    className="gap-2 border-red-300 text-red-700 hover:bg-red-100 dark:border-red-700 dark:text-red-300 dark:hover:bg-red-900/30"
+                  >
+                    <RotateCcw className="h-4 w-4" />
+                    Try Again
+                  </Button>
                 </div>
               </div>
             </div>

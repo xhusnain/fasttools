@@ -225,12 +225,13 @@ export const useBgRemoverStore = create<EditorStore>()(
         get().setResult(result);
 
       } catch (error) {
+        console.error('Background removal error:', error);
         set({
           isProcessing: false,
           status: {
             stage: "error",
             progress: 0,
-            message: `Processing failed: ${error instanceof Error ? error.message : "Unknown error"}`,
+            message: "Something went wrong while removing the background. Please try again with a different image or try again later.",
           },
         });
       }
