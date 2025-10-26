@@ -72,14 +72,6 @@ export default function PDFToolsPage() {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Image Tools", href: "/image-tools" },
-            { label: "PDF Tools", href: "/image-tools/pdf-tools" },
-          ]}
-        />
-
         <div className="mt-8 mb-8 text-center animate-fade-in">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-balance">PDF Splitter & Merger</h1>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty">
