@@ -61,12 +61,6 @@ export function MainSidebar({ onSidebarToggle, activeSidebar }: MainSidebarProps
       label: 'Background',
       icon: ImageIcon,
       description: 'Background tools'
-    },
-    {
-      id: 'magic',
-      label: 'Magic',
-      icon: Wand2,
-      description: 'AI tools'
     }
   ]
 

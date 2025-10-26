@@ -10,10 +10,9 @@ import { TextPanel } from './panels/TextPanel'
 import { UploadsPanel } from './panels/UploadsPanel'
 import { DrawPanel } from './panels/DrawPanel'
 import { FiltersPanel } from './panels/FiltersPanel'
-import { 
-  AdjustPanel, 
-  BackgroundPanel, 
-  MagicPanel 
+import {
+  AdjustPanel,
+  BackgroundPanel
 } from './panels/RemainingPanels'
 
 interface ExpandableSidebarProps {
@@ -30,8 +29,7 @@ export function ExpandableSidebar({ sidebarType, canvas, onClose }: ExpandableSi
     draw: 'Draw',
     filters: 'Filters',
     adjust: 'Adjust',
-    background: 'Background',
-    magic: 'Magic'
+    background: 'Background'
   }
 
   const renderPanel = () => {
@@ -50,8 +48,6 @@ export function ExpandableSidebar({ sidebarType, canvas, onClose }: ExpandableSi
         return <AdjustPanel canvas={canvas} />
       case 'background':
         return <BackgroundPanel canvas={canvas} />
-      case 'magic':
-        return <MagicPanel canvas={canvas} />
       default:
         return <div>Panel not found</div>
     }

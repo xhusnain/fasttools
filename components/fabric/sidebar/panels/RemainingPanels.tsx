@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import { getFabric } from '@/lib/fabric'
 import { Pen, Pencil, Brush, Sparkles } from 'lucide-react'
-import { processFabricImageBackground } from '@/components/fabric/utils/bgRemover'
 
 interface DrawPanelProps {
   canvas: any
@@ -364,7 +363,7 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
 
   const resetAdjustments = () => {
     if (!canvas) return
-    
+
     try {
       const activeObject = canvas.getActiveObject()
       if (!activeObject) {
@@ -380,13 +379,13 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
         })
         activeObject.applyFilters()
       }
-      
+
       canvas.renderAll()
       setBrightness(0)
       setContrast(0)
       setSaturation(0)
       setHue(0)
-      
+
       console.log('✅ Reset all adjustments')
     } catch (error) {
       console.error('Failed to reset adjustments:', error)
@@ -642,290 +641,3 @@ export function BackgroundPanel({ canvas }: BackgroundPanelProps) {
   )
 }
 
-interface MagicPanelProps {
-  canvas: any
-}
-
-export function MagicPanel({ canvas }: MagicPanelProps) {
-  const [isProcessing, setIsProcessing] = useState(false)
-  const [blurIntensity, setBlurIntensity] = useState(0)
-  const [showBlurSlider, setShowBlurSlider] = useState(false)
-  const [processingTool, setProcessingTool] = useState<string | null>(null)
-
-  const handleBlurChange = async (value: number) => {
-    if (!canvas) return
-
-    try {
-      const activeObject = canvas.getActiveObject()
-      
-      if (!activeObject || activeObject.type !== 'image') {
-        alert('Please select an image first')
-        return
-      }
-
-      const fabric = await getFabric()
-      if (!fabric || !fabric.filters) {
-        console.error('Fabric filters not available')
-        return
-      }
-
-      // Initialize filters array if not exists
-      if (!activeObject.filters) {
-        activeObject.filters = []
-      }
-
-      // Remove existing blur filter
-      activeObject.filters = activeObject.filters.filter((filter: any) => {
-        const filterType = filter.type || filter.constructor.name
-        return filterType !== 'Blur'
-      })
-
-      // Add new blur filter if value > 0
-      if (value > 0) {
-        activeObject.filters.push(new fabric.filters.Blur({
-          blur: value / 100 // Convert 0-100 to 0-1
-        }))
-      }
-
-      activeObject.applyFilters()
-      canvas.renderAll()
-      
-      setBlurIntensity(value)
-      console.log(`✅ Applied blur: ${value}%`)
-    } catch (error) {
-      console.error('Failed to apply blur:', error)
-    }
-  }
-
-  const handleBackgroundBlurClick = () => {
-    const activeObject = canvas?.getActiveObject()
-    
-    if (!activeObject || activeObject.type !== 'image') {
-      alert('Please select an image first')
-      return
-    }
-
-    setShowBlurSlider(!showBlurSlider)
-  }
-
-  const handleBackgroundRemove = async () => {
-    if (!canvas) return
-
-    try {
-      setIsProcessing(true)
-      setProcessingTool('bg-remove')
-      
-      const activeObject = canvas.getActiveObject()
-      
-      if (!activeObject || activeObject.type !== 'image') {
-        alert('Please select an image first')
-        setIsProcessing(false)
-        setProcessingTool(null)
-        return
-      }
-
-      const fabric = await getFabric()
-      if (!fabric) {
-        console.error('Fabric.js not available')
-        setIsProcessing(false)
-        setProcessingTool(null)
-        return
-      }
-
-      // Get the image element
-      const imgElement = activeObject.getElement()
-      
-      // Use aggressive RGB-based background removal
-      const { url: resultUrl } = await processFabricImageBackground(imgElement, {
-        tolerance: 150, // Very high tolerance for natural backgrounds with variations
-        edgeSmoothing: true, // Smooth edges
-        feather: 3, // Edge feathering
-        aggressiveness: 9 // Maximum aggressiveness
-      })
-
-      // Create new image element
-      const newImgElement = new Image()
-      newImgElement.crossOrigin = 'anonymous'
-
-      newImgElement.onload = () => {
-        // Create new fabric image with transparent background
-        const newFabricImg = new fabric.Image(newImgElement, {
-          left: activeObject.left,
-          top: activeObject.top,
-          scaleX: activeObject.scaleX,
-          scaleY: activeObject.scaleY,
-          angle: activeObject.angle,
-          originX: activeObject.originX,
-          originY: activeObject.originY,
-          selectable: true,
-          hasControls: true,
-          hasBorders: true
-        })
-
-        // Remove old image and add new one
-        canvas.remove(activeObject)
-        canvas.add(newFabricImg)
-        canvas.setActiveObject(newFabricImg)
-        canvas.renderAll()
-
-        setIsProcessing(false)
-        setProcessingTool(null)
-        console.log('✅ Background removed successfully')
-      }
-
-      newImgElement.onerror = () => {
-        console.error('Failed to load processed image')
-        setIsProcessing(false)
-        setProcessingTool(null)
-      }
-
-      newImgElement.src = resultUrl
-
-    } catch (error) {
-      console.error('Failed to remove background:', error)
-      alert(`Failed to remove background: ${error}`)
-      setIsProcessing(false)
-      setProcessingTool(null)
-    }
-  }
-
-  const magicTools = [
-    { 
-      id: 'bg-blur', 
-      name: 'Background Blur', 
-      icon: '🌫️', 
-      color: 'from-indigo-600 to-purple-600', 
-      desc: 'Adjust blur intensity with slider',
-      enabled: true,
-      action: handleBackgroundBlurClick
-    },
-    { 
-      id: 'bg-remove', 
-      name: 'BG Remover', 
-      icon: '🎭', 
-      color: 'from-blue-600 to-cyan-600', 
-      desc: 'Remove background instantly', 
-      enabled: true,
-      action: handleBackgroundRemove
-    },
-    { id: 'eraser', name: 'Magic Eraser', icon: '✨', color: 'from-purple-600 to-violet-600', desc: 'Remove unwanted objects', enabled: false },
-    { id: 'enhance', name: 'AI Enhance', icon: '⚡', color: 'from-green-600 to-emerald-600', desc: 'Enhance image quality', enabled: false },
-    { id: 'style', name: 'Style Transfer', icon: '🎨', color: 'from-pink-600 to-rose-600', desc: 'Apply artistic styles', enabled: false }
-  ]
-
-  return (
-    <div className="h-full flex flex-col">
-      <div className="flex-1 overflow-y-auto p-4 space-y-6">
-        <div>
-          <h3 className="font-semibold text-slate-800 mb-1 text-base">AI Magic Tools</h3>
-          <p className="text-xs text-slate-500 mb-4">Select an image to apply effects</p>
-          
-          <div className="space-y-3">
-            {magicTools.map((tool) => (
-              <div key={tool.id}>
-                <button
-                  className={`w-full p-4 bg-white rounded-xl transition-all duration-200 border-2 text-left ${
-                    tool.enabled 
-                      ? 'border-slate-200 hover:border-purple-300 hover:shadow-md cursor-pointer' 
-                      : 'border-slate-100 opacity-60 cursor-not-allowed'
-                  } ${showBlurSlider && tool.id === 'bg-blur' ? 'border-purple-400' : ''} ${
-                    isProcessing && processingTool === tool.id ? 'border-blue-400 bg-blue-50' : ''
-                  }`}
-                  onClick={tool.enabled ? tool.action : undefined}
-                  disabled={!tool.enabled || isProcessing}
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center text-white text-2xl flex-shrink-0 shadow-md ${
-                      isProcessing && processingTool === tool.id ? 'animate-pulse' : ''
-                    }`}>
-                      {isProcessing && processingTool === tool.id ? '⏳' : tool.icon}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2">
-                        <div className="text-sm font-semibold text-slate-800">{tool.name}</div>
-                        {tool.enabled && (
-                          <span className="px-2 py-0.5 text-xs font-medium text-white bg-green-500 rounded-full">
-                            Active
-                          </span>
-                        )}
-                        {!tool.enabled && (
-                          <span className="px-2 py-0.5 text-xs font-medium text-slate-500 bg-slate-100 rounded-full">
-                            Soon
-                          </span>
-                        )}
-                      </div>
-                      <div className="text-xs text-slate-500 mt-0.5">{tool.desc}</div>
-                    </div>
-                  </div>
-                </button>
-
-                {/* Blur Slider - Show when Background Blur is clicked */}
-                {tool.id === 'bg-blur' && showBlurSlider && (
-                  <div className="mt-3 p-4 bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200 rounded-xl">
-                    <div className="flex justify-between items-center mb-3">
-                      <label className="text-sm text-slate-700 font-semibold">Blur Intensity</label>
-                      <span className="text-sm text-purple-600 font-bold min-w-[3rem] text-right">{blurIntensity}%</span>
-                    </div>
-                    <input 
-                      type="range" 
-                      min="0" 
-                      max="100" 
-                      value={blurIntensity}
-                      onChange={(e) => handleBlurChange(parseInt(e.target.value))}
-                      className="w-full h-2 bg-purple-200 rounded-full appearance-none cursor-pointer slider-blur"
-                    />
-                    <div className="flex justify-between text-xs text-slate-500 mt-2">
-                      <span>No Blur</span>
-                      <span>Maximum</span>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <style jsx>{`
-        /* Custom slider styles for blur */
-        .slider-blur {
-          -webkit-appearance: none;
-          appearance: none;
-          outline: none;
-        }
-
-        .slider-blur::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          appearance: none;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          cursor: pointer;
-          border: 3px solid white;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-          transition: transform 0.15s ease;
-        }
-
-        .slider-blur::-webkit-slider-thumb:hover {
-          transform: scale(1.2);
-        }
-
-        .slider-blur::-moz-range-thumb {
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          cursor: pointer;
-          border: 3px solid white;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-          transition: transform 0.15s ease;
-        }
-
-        .slider-blur::-moz-range-thumb:hover {
-          transform: scale(1.2);
-        }
-      `}</style>
-    </div>
-  )
-}

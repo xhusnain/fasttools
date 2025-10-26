@@ -243,28 +243,6 @@ export function UploadsPanel({ canvas }: UploadsPanelProps) {
         )}
       </div>
 
-      {/* Stock Photos */}
-      <div>
-        <h3 className="font-semibold text-slate-800 mb-4 text-sm">Stock Photos</h3>
-        <div className="space-y-2">
-          <button className="w-full p-3 text-left text-slate-700 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-200 border border-slate-200 hover:border-slate-300 shadow-sm">
-            <span className="text-lg mr-3">📷</span>
-            <span className="text-sm font-medium">Photography</span>
-          </button>
-          <button className="w-full p-3 text-left text-slate-700 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-200 border border-slate-200 hover:border-slate-300 shadow-sm">
-            <span className="text-lg mr-3">🎨</span>
-            <span className="text-sm font-medium">Illustrations</span>
-          </button>
-          <button className="w-full p-3 text-left text-slate-700 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-200 border border-slate-200 hover:border-slate-300 shadow-sm">
-            <span className="text-lg mr-3">🖼️</span>
-            <span className="text-sm font-medium">Icons</span>
-          </button>
-          <button className="w-full p-3 text-left text-slate-700 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors duration-200 border border-slate-200 hover:border-slate-300 shadow-sm">
-            <span className="text-lg mr-3">🎭</span>
-            <span className="text-sm font-medium">Stickers</span>
-          </button>
-        </div>
-      </div>
     </div>
   )
 }
