@@ -20,7 +20,6 @@ export const metadata: Metadata = {
     
     // Image Editing Keywords
     "background blur tool",
-    "image cropper online",
     "photo background remover",
     "image resizer online",
     "photo editor online",
@@ -45,7 +44,6 @@ export const metadata: Metadata = {
     "image to text",
     "OCR converter",
     "background blur",
-    "image cropper",
     "PDF splitter",
     "PDF merger",
     "PDF unlocker",
@@ -104,13 +102,6 @@ const imageTools = [
     popular: true,
   },
   {
-    title: "Image Cropper",
-    description: "Crop images into circular or square shapes using image cropper online. Perfect for profile pictures and social media.",
-    icon: Crop,
-    href: "/image-tools/image-cropper",
-    popular: false,
-  },
-  {
     title: "PDF Splitter & Merger",
     description: "Split large PDFs with PDF splitter online or merge multiple PDFs with PDF merger free. Fast and secure processing.",
     icon: FileStack,
@@ -136,13 +127,12 @@ const jsonLd = {
     "@type": "ItemList",
     name: "Image & File Tools Collection",
     description: "Comprehensive collection of free online image and file utility tools for image processing, OCR, PDF manipulation, and document management",
-    numberOfItems: 5,
+    numberOfItems: 4,
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Image to Text (OCR)", description: "Extract text from images using OCR technology", url: "https://www.fasttools.store/image-tools/image-to-text" },
       { "@type": "ListItem", position: 2, name: "Photo Editor", description: "Edit photos with professional tools and filters", url: "https://www.fasttools.store/image-tools/photo-editor" },
-      { "@type": "ListItem", position: 3, name: "Image Cropper", description: "Crop images into circular or square shapes", url: "https://www.fasttools.store/image-tools/image-cropper" },
-      { "@type": "ListItem", position: 4, name: "PDF Splitter & Merger", description: "Split large PDFs or merge multiple PDFs into one", url: "https://www.fasttools.store/image-tools/pdf-tools" },
-      { "@type": "ListItem", position: 5, name: "PDF Unlocker", description: "Remove password protection from PDFs", url: "https://www.fasttools.store/image-tools/pdf-unlocker" }
+      { "@type": "ListItem", position: 3, name: "PDF Splitter & Merger", description: "Split large PDFs or merge multiple PDFs into one", url: "https://www.fasttools.store/image-tools/pdf-tools" },
+      { "@type": "ListItem", position: 4, name: "PDF Unlocker", description: "Remove password protection from PDFs", url: "https://www.fasttools.store/image-tools/pdf-unlocker" }
     ]
   },
   breadcrumb: {
@@ -279,7 +269,6 @@ export default function ImageToolsPage() {
 
                     <h3 className="text-lg font-bold mb-3 text-card-foreground">Intelligent Image Processing</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Smart background blur tool with edge detection, precision image cropper online with aspect ratio optimization, photo background remover capabilities, image resizer online functionality, and comprehensive photo editor online features for professional-quality results.
                     </p>
                   </div>
 
@@ -291,7 +280,6 @@ export default function ImageToolsPage() {
 
                     <h3 className="text-lg font-bold mb-3 text-card-foreground">Content Creation & Social Media</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                      Create professional profile pictures with background blur tool, crop images for different social platforms using image cropper online, and extract text from competitor content for inspiration.
                     </p>
 
                     <h3 className="text-lg font-bold mb-3 text-card-foreground">Business Document Management</h3>
@@ -337,8 +325,6 @@ export default function ImageToolsPage() {
               </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How can image cropping tools improve my social media presence?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Image cropping tools are essential for creating consistent, professional-looking content across different social media platforms. Our cropper supports various aspect ratios and shapes including circular crops for profile pictures, square crops for Instagram posts, and rectangular crops for Facebook covers. The tool includes smart cropping suggestions that automatically identify the best composition for your image. This ensures your content looks professional and maintains visual consistency across all platforms. Regular use of cropping tools helps establish a cohesive brand identity and improves engagement rates on social media platforms.</p>
               </div>
 
                       <div>
