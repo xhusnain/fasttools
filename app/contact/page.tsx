@@ -40,7 +40,7 @@ export default function ContactPage() {
       [name]: value
     }))
     // Clear error when user starts typing
-    if (errors[name]) {
+    if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({
         ...prev,
         [name]: ''
@@ -49,10 +49,10 @@ export default function ContactPage() {
   }
 
   const validateForm = () => {
-    const newErrors = {}
+    const newErrors: FormErrors = {}
     
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required' as any
+      newErrors.name = 'Name is required'
     }
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required'
@@ -70,7 +70,7 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     
     if (!validateForm()) {
