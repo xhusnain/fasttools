@@ -13,7 +13,7 @@ export function NavbarFooterHider() {
   // Function to hide navbar for specific tools
   const hideNavbar = (path: string): boolean => {
     switch (path) {
-      case '/image-tools/background-blur':
+      case '/image-tools/photo-editor':
         return true
       // Add more tool URLs here as needed
       // Examples:
@@ -31,7 +31,7 @@ export function NavbarFooterHider() {
   // Function to hide footer for specific tools
   const hideFooter = (path: string): boolean => {
     switch (path) {
-      case '/image-tools/background-blur':
+      case '/image-tools/photo-editor':
         return true
       // Add more tool URLs here as needed
       // Examples:
@@ -142,7 +142,7 @@ export function useNavbarFooterHider() {
 
   const hideNavbar = (path: string): boolean => {
     switch (path) {
-      case '/image-tools/background-blur':
+      case '/image-tools/photo-editor':
         return true
       // Add more tool URLs here as needed
       // Examples:
@@ -159,7 +159,7 @@ export function useNavbarFooterHider() {
 
   const hideFooter = (path: string): boolean => {
     switch (path) {
-      case '/image-tools/background-blur':
+      case '/image-tools/photo-editor':
         return true
       // Add more tool URLs here as needed
       // Examples:

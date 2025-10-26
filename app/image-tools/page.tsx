@@ -97,10 +97,10 @@ const imageTools = [
     popular: true,
   },
   {
-    title: "Background Blur",
-    description: "Blur image backgrounds with adjustable intensity. Create professional-looking photos with background blur tool.",
+    title: "Free AI Photo Editor – Edit, Enhance & Remove Backgrounds Online",
+    description: "Edit photos instantly with our free AI photo editor. Remove backgrounds, enhance images, add filters & effects – all online, no download needed.",
     icon: Blur,
-    href: "/image-tools/background-blur",
+    href: "/image-tools/photo-editor",
     popular: true,
   },
   {
@@ -139,7 +139,7 @@ const jsonLd = {
     numberOfItems: 5,
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Image to Text (OCR)", description: "Extract text from images using OCR technology", url: "https://www.fasttools.store/image-tools/image-to-text" },
-      { "@type": "ListItem", position: 2, name: "Background Blur", description: "Blur image backgrounds with adjustable intensity", url: "https://www.fasttools.store/image-tools/background-blur" },
+      { "@type": "ListItem", position: 2, name: "Photo Editor", description: "Edit photos with professional tools and filters", url: "https://www.fasttools.store/image-tools/photo-editor" },
       { "@type": "ListItem", position: 3, name: "Image Cropper", description: "Crop images into circular or square shapes", url: "https://www.fasttools.store/image-tools/image-cropper" },
       { "@type": "ListItem", position: 4, name: "PDF Splitter & Merger", description: "Split large PDFs or merge multiple PDFs into one", url: "https://www.fasttools.store/image-tools/pdf-tools" },
       { "@type": "ListItem", position: 5, name: "PDF Unlocker", description: "Remove password protection from PDFs", url: "https://www.fasttools.store/image-tools/pdf-unlocker" }

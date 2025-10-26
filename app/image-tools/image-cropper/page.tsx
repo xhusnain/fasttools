@@ -275,7 +275,7 @@ export default function ImageCropperPage() {
 
             <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Tools</h2>
             <ul className="list-disc pl-5 text-muted-foreground">
-              <li><Link href="/image-tools/background-blur">Background Blur</Link></li>
+              <li><Link href="/image-tools/photo-editor">Photo Editor</Link></li>
               <li><Link href="/image-tools/image-to-text">Image to Text (OCR)</Link></li>
             </ul>
           </div>
