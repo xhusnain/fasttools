@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { FileText, Beer as Blur, Crop, FileStack, Unlock, ArrowRight, Code, Globe } from "lucide-react"
+import { FileText, Beer as Blur, Crop, FileStack, Unlock, ArrowRight, Code, Globe, Focus } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 
@@ -89,6 +89,13 @@ const imageTools = [
     popular: true,
   },
   {
+    title: "Image Background Blur",
+    description: "Blur image backgrounds with AI portrait mode. Create professional bokeh effects with adjustable blur intensity for stunning photos.",
+    icon: Focus,
+    href: "/image-tools/image-blur",
+    popular: true,
+  },
+  {
     title: "Free AI Photo Editor – Edit, Enhance & Remove Backgrounds Online",
     description: "Edit photos instantly with our free AI photo editor. Remove backgrounds, enhance images, add filters & effects – all online, no download needed.",
     icon: Blur,
@@ -107,11 +114,12 @@ const jsonLd = {
   "@type": "ItemList",
   name: "Image Tools Collection",
   description: "Comprehensive collection of free online image processing and editing tools for OCR, photo editing, and visual content creation",
-  numberOfItems: 3,
+  numberOfItems: 4,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Image to Text (OCR)", description: "Extract text from images using OCR technology", url: "https://www.fasttools.store/image-tools/image-to-text" },
     { "@type": "ListItem", position: 2, name: "Image Background Remover", description: "Remove image backgrounds with AI technology", url: "https://www.fasttools.store/image-tools/image-background-remover" },
-    { "@type": "ListItem", position: 3, name: "Photo Editor", description: "Edit photos with professional tools and filters", url: "https://www.fasttools.store/image-tools/photo-editor" }
+    { "@type": "ListItem", position: 3, name: "Image Background Blur", description: "Blur image backgrounds with AI portrait mode for professional photos", url: "https://www.fasttools.store/image-tools/image-blur" },
+    { "@type": "ListItem", position: 4, name: "Photo Editor", description: "Edit photos with professional tools and filters", url: "https://www.fasttools.store/image-tools/photo-editor" }
   ]
 },
   breadcrumb: {
@@ -168,7 +176,7 @@ export default function ImageToolsPage() {
                   <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
                     <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
                       <Code className="h-4 w-4 text-primary" />
-                      <span className="text-primary font-medium text-sm">3+ Tools</span>
+                      <span className="text-primary font-medium text-sm">4+ Tools</span>
                     </div>
                     <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
                       <Globe className="h-4 w-4 text-green-600" />
