@@ -5,6 +5,16 @@ export async function GET() {
   const baseUrl = "https://www.fasttools.store"
   const currentDate = new Date()
 
+  // XML escape function to properly encode special characters
+  const escapeXml = (str: string): string => {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&apos;')
+  }
+
   // Content freshness strategy for images - different update frequencies
   const getFreshnessDate = (daysAgo: number) => {
     const date = new Date()
@@ -294,19 +304,17 @@ export async function GET() {
   // Generate enhanced XML sitemap with cluster organization
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-${allImageEntries.map(item => `
-  <url>
-    <loc>${item.url}</loc>
+${allImageEntries.map(item => `  <url>
+    <loc>${escapeXml(item.url)}</loc>
     <lastmod>${item.lastModified.toISOString()}</lastmod>
     <changefreq>${item.changeFrequency}</changefreq>
-    <priority>${item.priority}</priority>
-    ${item.images.map(image => `
+    <priority>${item.priority}</priority>${item.images.map(image => `
     <image:image>
-      <image:loc>${image.url}</image:loc>
-      <image:title>${image.title}</image:title>
-      <image:caption>${image.caption}</image:caption>
+      <image:loc>${escapeXml(image.url)}</image:loc>
+      <image:title>${escapeXml(image.title)}</image:title>
+      <image:caption>${escapeXml(image.caption)}</image:caption>
     </image:image>`).join('')}
-  </url>`).join('')}
+  </url>`).join('\n')}
 </urlset>`
 
   return new NextResponse(sitemap, {
