@@ -52,11 +52,17 @@ export function ImageBackgroundRemover() {
         const formData = new FormData()
         formData.append('image', file)
 
+        // Create abort controller for 5 minute timeout
+        const controller = new AbortController()
+        const timeoutId = setTimeout(() => controller.abort(), 300000) // 5 minutes
+
         const response = await fetch('/api/bg-remove', {
           method: 'POST',
           body: formData,
+          signal: controller.signal,
         })
 
+        clearTimeout(timeoutId)
         const data = await response.json()
 
         if (data.success) {
@@ -64,9 +70,15 @@ export function ImageBackgroundRemover() {
         } else {
           setError(data.message || 'Failed to remove background. Please try again.')
         }
-      } catch (err) {
+      } catch (err: any) {
         console.error('Background removal error:', err)
-        setError('An error occurred while processing the image. Please try again.')
+        
+        // Handle timeout error
+        if (err.name === 'AbortError') {
+          setError('Request timeout: Background removal is taking longer than expected. Please try with a smaller image or try again later.')
+        } else {
+          setError('An error occurred while processing the image. Please try again.')
+        }
       } finally {
         setLoading(false)
       }

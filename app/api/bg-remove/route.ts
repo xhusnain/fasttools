@@ -48,14 +48,21 @@ export async function POST(request: NextRequest) {
     const externalFormData = new FormData();
     externalFormData.append('image', image);
 
-    // Call external API
-    const response = await fetch(API_URL, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${API_KEY}`,
-      },
-      body: externalFormData,
-    });
+    // Call external API with 5 minute timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 300000); // 5 minutes = 300000ms
+
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${API_KEY}`,
+        },
+        body: externalFormData,
+        signal: controller.signal,
+      });
+      
+      clearTimeout(timeoutId);
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
@@ -114,10 +121,28 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const data = await response.json();
+      const data = await response.json();
 
-    // Return successful response according to documentation
-    return NextResponse.json(data);
+      // Return successful response according to documentation
+      return NextResponse.json(data);
+
+    } catch (fetchError: any) {
+      clearTimeout(timeoutId);
+      
+      // Handle timeout error
+      if (fetchError.name === 'AbortError') {
+        return NextResponse.json(
+          { 
+            success: false, 
+            error: 'Request timeout', 
+            message: 'Background removal is taking longer than expected. Please try with a smaller image or try again later.', 
+            code: 'TIMEOUT' 
+          },
+          { status: 504 }
+        );
+      }
+      throw fetchError;
+    }
 
   } catch (error) {
     console.error('Background removal API error:', error);

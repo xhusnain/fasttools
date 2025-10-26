@@ -1188,18 +1188,18 @@ export default function ImageBackgroundRemoverPage() {
                             {/* Desktop Sticky Sidebar Container */}
                             <div className="hidden xl:block sticky top-4 space-y-6">
                                 {/* Top Sidebar Ad */}
-                                <div className="bg-card border border-border rounded-lg p-4">
+                                <div className="bg-card border border-border rounded-lg p-4 min-h-[360px]">
                                     <div className="text-center">
                                         <div className="text-sm font-medium text-muted-foreground mb-2">Advertisement</div>
-                                        <AdSpace slot="sidebar" className="h-80 rounded-lg overflow-hidden" />
+                                        <AdSpace slot="sidebar" className="w-full h-80 min-h-[320px] rounded-lg overflow-hidden" />
                                     </div>
                                 </div>
 
                                 {/* Additional Sidebar Ad */}
-                                <div className="bg-card border border-border rounded-lg p-4">
+                                <div className="bg-card border border-border rounded-lg p-4 min-h-[360px]">
                                     <div className="text-center">
                                         <div className="text-sm font-medium text-muted-foreground mb-2">Advertisement</div>
-                                        <AdSpace slot="sidebar" className="h-80 rounded-lg overflow-hidden" />
+                                        <AdSpace slot="sidebar" className="w-full h-80 min-h-[320px] rounded-lg overflow-hidden" />
                                     </div>
                                 </div>
                             </div>
