@@ -108,6 +108,138 @@ export async function GET() {
     }
   ]
 
+  // ===== IMAGE TOOLS (High Priority) =====
+  const imageToolsPages = [
+    {
+      url: "https://www.fasttools.store/image-tools",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "weekly" as const,
+      priority: 0.95,
+      images: [
+        {
+          url: "https://www.fasttools.store/banner.png",
+          title: "Image Tools Collection - Professional Photo Editing and Processing",
+          caption: "FastTools comprehensive image tools collection for background removal, photo editing, and image processing"
+        },
+        {
+          url: "https://www.fasttools.store/logo.png",
+          title: "FastTools Image Tools Logo",
+          caption: "Professional logo for FastTools image editing and processing toolkit"
+        }
+      ]
+    },
+    {
+      url: "https://www.fasttools.store/image-tools/image-background-remover",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+      images: [
+        {
+          url: "https://www.fasttools.store/before_human.jpg",
+          title: "Human Photo Before Background Removal - Professional Portrait Photography",
+          caption: "Professional portrait photo before AI-powered background removal showing original image with background"
+        },
+        {
+          url: "https://www.fasttools.store/after_Human.png",
+          title: "Human Photo After Background Removal - Transparent PNG Portrait",
+          caption: "Professional portrait with perfectly removed background showcasing AI precision and transparent PNG output"
+        },
+        {
+          url: "https://www.fasttools.store/before_dog.jpg",
+          title: "Pet Dog Photo Before Background Removal - Animal Photography",
+          caption: "Pet dog photo before background removal showing original image with natural background for pet photography"
+        },
+        {
+          url: "https://www.fasttools.store/after_dog.png",
+          title: "Pet Dog Photo After Background Removal - Transparent Pet Image",
+          caption: "Pet dog photo with perfectly removed background showcasing advanced edge detection for fur and complex details"
+        },
+        {
+          url: "https://www.fasttools.store/object_before.jpg",
+          title: "Product Object Photo Before Background Removal - E-commerce Photography",
+          caption: "Product object photo before background removal showing original image for e-commerce and commercial photography"
+        },
+        {
+          url: "https://www.fasttools.store/object_after.png",
+          title: "Product Object Photo After Background Removal - Clean Product Image",
+          caption: "Product object with clean removed background perfect for e-commerce listings and marketing materials"
+        }
+      ]
+    },
+    {
+      url: "https://www.fasttools.store/image-tools/photo-editor",
+      lastModified: getFreshnessDate(2),
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+      images: [
+        {
+          url: "https://www.fasttools.store/banner.png",
+          title: "Photo Editor - Free Online Image Editing Tool",
+          caption: "Professional photo editor with filters, adjustments, text, and drawing tools for comprehensive image editing"
+        },
+        {
+          url: "https://www.fasttools.store/logo.png",
+          title: "FastTools Photo Editor Logo",
+          caption: "Professional logo for FastTools advanced photo editing application"
+        }
+      ]
+    },
+    {
+      url: "https://www.fasttools.store/image-tools/image-to-text",
+      lastModified: getFreshnessDate(2),
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+      images: [
+        {
+          url: "https://www.fasttools.store/banner.png",
+          title: "Image to Text - OCR Text Extraction Tool",
+          caption: "AI-powered OCR tool to extract text from images, scanned documents, and photos instantly"
+        },
+        {
+          url: "https://www.fasttools.store/logo.png",
+          title: "FastTools Image to Text Converter Logo",
+          caption: "Professional logo for FastTools OCR and text extraction tool"
+        }
+      ]
+    },
+    {
+      url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
+      lastModified: getFreshnessDate(3),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+      images: [
+        {
+          url: "https://www.fasttools.store/banner.png",
+          title: "PDF Splitter & Merger - Free PDF Editing and Processing",
+          caption: "Comprehensive PDF splitter and merger tool for splitting large PDFs or merging multiple PDF documents"
+        },
+        {
+          url: "https://www.fasttools.store/logo.png",
+          title: "FastTools PDF Splitter & Merger Logo",
+          caption: "Professional logo for FastTools PDF splitting and merging toolkit"
+        }
+      ]
+    },
+    {
+      url: "https://www.fasttools.store/pdf-tools/pdf-unlocker",
+      lastModified: getFreshnessDate(3),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+      images: [
+        {
+          url: "https://www.fasttools.store/banner.png",
+          title: "PDF Unlocker - Remove PDF Password Protection",
+          caption: "Free online PDF unlocker to remove password protection and unlock secured PDF files instantly"
+        },
+        {
+          url: "https://www.fasttools.store/logo.png",
+          title: "FastTools PDF Unlocker Logo",
+          caption: "Professional logo for FastTools PDF password removal tool"
+        }
+      ]
+    }
+  ]
+
   // ===== BRAND ASSETS (High Priority) =====
   const brandImages = [
     {
@@ -155,6 +287,7 @@ export async function GET() {
   const allImageEntries = [
     ...mainImages,
     ...toolCategoryImages,
+    ...imageToolsPages,
     ...brandImages
   ]
 

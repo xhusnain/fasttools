@@ -16,6 +16,7 @@ export function CategoryDropdown() {
     { name: "Finance Tools", href: "/finance-tools" },
     { name: "Social Media", href: "/social-media-tools" },
     { name: "Image Tools", href: "/image-tools" },
+    { name: "PDF Tools", href: "/pdf-tools" },
     { name: "Dev Tools", href: "/dev-tools" },
     { name: "AI Tools", href: "/ai-tools" },
   ]

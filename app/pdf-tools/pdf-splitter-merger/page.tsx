@@ -1,35 +1,41 @@
 import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
-import { PDFUnlocker } from "@/components/pdf-unlocker"
+import { PDFTools } from "@/components/pdf-tools"
 import { AdSpace } from "@/components/ad-space"
 import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "PDF Unlocker | Remove PDF Password Protection | FastTools",
+  title: "PDF Splitter & Merger | Free Online PDF Tools | FastTools",
   description:
-    "Unlock password‑protected PDFs in your browser. Remove restrictions and access your files quickly and securely.",
+    "Split and merge PDFs in your browser. Combine multiple files or split by pages. Fast, secure, and free PDF tools.",
   keywords: [
-    "pdf unlocker",
-    "remove pdf password",
-    "unlock pdf",
-    "pdf password remover",
-    "decrypt pdf",
-    "unlock pdf online",
-    "open locked pdf",
-    "remove pdf restrictions",
-    "pdf owner password",
-    "pdf user password",
-    "secure pdf unlock",
-    "in browser pdf unlock",
-    "no upload unlock",
-    "free pdf unlocker"
+    "pdf splitter",
+    "pdf merger",
+    "combine pdf",
+    "split pdf",
+    "merge pdf online",
+    "pdf tools",
+    "free pdf editor",
+    "pdf pages to files",
+    "reorder pdf pages",
+    "delete pdf pages",
+    "extract pdf pages",
+    "pdf privacy",
+    "in browser pdf",
+    "no upload pdf",
+    "secure pdf tools",
+    "pdf toolkit",
+    "pdf utilities",
+    "pdf split by range",
+    "merge many pdfs",
+    "pdf processing online"
   ],
-  alternates: { canonical: "https://www.fasttools.store/image-tools/pdf-unlocker" },
+  alternates: { canonical: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger" },
   openGraph: {
-    title: "PDF Unlocker — Remove Passwords",
-    description: "Unlock password‑protected PDFs securely in your browser.",
-    url: "https://www.fasttools.store/image-tools/pdf-unlocker",
+    title: "PDF Splitter & Merger — Free Online PDF Tools",
+    description: "Split and merge PDFs securely in your browser.",
+    url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
     type: "website",
     siteName: "FastTools",
     images: [
@@ -37,47 +43,40 @@ export const metadata: Metadata = {
         url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "PDF Unlocker Tool",
+        alt: "PDF Splitter & Merger Tool",
         type: "image/svg+xml",
       },
     ],
   },
-  twitter: { card: "summary_large_image", title: "PDF Unlocker", description: "Remove PDF passwords and restrictions online." },
+  twitter: { card: "summary_large_image", title: "PDF Splitter & Merger", description: "Free online PDF tools for split/merge." },
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      name: "PDF Unlocker",
+      name: "PDF Splitter & Merger",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
-      url: "https://www.fasttools.store/image-tools/pdf-unlocker",
+      url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
       description:
-        "Remove PDF passwords and restrictions securely in the browser.",
+        "Split and merge PDF files securely in the browser with page range support.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-      featureList: ["Owner/user password", "In‑browser unlock", "Copy/save"],
+      featureList: ["Split by pages", "Merge files", "Reorder/delete pages"],
       publisher: { "@type": "Organization", name: "SmartToolboxes", url: "https://www.fasttools.store" },
     }),
   },
 }
 
-export default function PDFUnlockerPage() {
+export default function PDFToolsPage() {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Image Tools", href: "/image-tools" },
-            { label: "PDF Unlocker", href: "/image-tools/pdf-unlocker" },
-          ]}
-        />
-
         <div className="mt-8 mb-8 text-center animate-fade-in">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-balance">PDF Unlocker Tool</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-balance">PDF Splitter & Merger</h1>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty">
-            Remove password protection from PDF files. Unlock your documents quickly and securely in your browser.
+            Split large PDFs into separate pages or merge multiple PDFs into one document. All processing happens
+            securely in your browser.
           </p>
         </div>
 
@@ -87,7 +86,7 @@ export default function PDFUnlockerPage() {
         </div>
 
         <div className="max-w-3xl mx-auto animate-slide-up">
-          <PDFUnlocker />
+          <PDFTools />
           
           {/* Second Ad Space - After Tool */}
           <div className="my-8">
@@ -95,15 +94,15 @@ export default function PDFUnlockerPage() {
           </div>
 
           <div className="prose prose-sm max-w-none mt-10">
-            <h2 className="text-2xl font-bold mb-4 text-foreground">How to Unlock a PDF</h2>
+            <h2 className="text-2xl font-bold mb-4 text-foreground">How to Use</h2>
             <ol className="list-decimal pl-5 text-muted-foreground">
-              <li>Upload the PDF; enter the password if you know it.</li>
-              <li>Remove restrictions and download the unlocked file.</li>
+              <li>Upload PDF files and choose Split or Merge mode.</li>
+              <li>For Split, select page ranges; for Merge, reorder files, then export.</li>
             </ol>
 
             <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Tools</h2>
             <ul className="list-disc pl-5 text-muted-foreground">
-              <li><Link href="/image-tools/pdf-tools">PDF Splitter & Merger</Link></li>
+              <li><Link href="/pdf-tools/pdf-unlocker">PDF Unlocker</Link></li>
               <li><Link href="/image-tools/image-to-text">Image to Text (OCR)</Link></li>
             </ul>
           </div>

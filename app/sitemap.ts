@@ -550,6 +550,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
 
+    // Image Tools
+    {
+      url: "https://www.fasttools.store/image-tools/image-background-remover",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "weekly" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/image-tools/photo-editor",
+      lastModified: getFreshnessDate(2),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: "https://www.fasttools.store/image-tools/image-to-text",
+      lastModified: getFreshnessDate(2),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+
   ]
 
   return [...mainPages, ...categoryPages, ...toolPages]

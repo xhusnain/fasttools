@@ -67,7 +67,6 @@ export default function HomePage() {
       "keyword density checker",
       "image tools",
       "image to text",
-      "image cropper",
       "finance tools",
       "budget calculator",
       "loan calculator",
@@ -488,13 +487,6 @@ export default function HomePage() {
       href: "/seo-tools/hashtags",
       popular: true,
     },
-    {
-      title: "Image Cropper",
-      description: "Crop and resize images online. Perfect for social media posts, profile pictures, and web graphics.",
-      icon: Crop,
-      href: "/image-tools/image-cropper",
-      popular: true,
-    },
   ]
 
   const categorizedTools: Record<string, typeof tools> = {
@@ -732,21 +724,40 @@ export default function HomePage() {
                             </div>
                           </div>
                           <p className="text-muted-foreground mb-4">
-                            Image cropper, image converter, image to text OCR, background blur, QR code generator, 
+                            Image cropper, image converter, image to text OCR, background blur, QR code generator,
                             and image processing tools for all your visual needs.
                           </p>
                           <div className="space-y-2">
+                          </div>
+                        </Card>
+
+                        {/* PDF Tools Section */}
+                        <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                              <FileText className="h-6 w-6 text-white" />
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-bold text-foreground">PDF Tools</h3>
+                              <p className="text-sm text-muted-foreground">4+ PDF utilities</p>
+                            </div>
+                          </div>
+                          <p className="text-muted-foreground mb-4">
+                            PDF splitter, PDF merger, PDF unlocker, PDF compressor, PDF to image converter,
+                            and document processing tools for all your PDF needs.
+                          </p>
+                          <div className="space-y-2">
                             <div className="flex items-center gap-2 text-sm">
-                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
-                              <span>Free Image Cropper and Resizer</span>
+                              <div className="h-1.5 w-1.5 bg-blue-500 rounded-full"></div>
+                              <span>PDF Splitter & Merger</span>
                             </div>
                             <div className="flex items-center gap-2 text-sm">
-                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
-                              <span>Image to Text OCR Online Free</span>
+                              <div className="h-1.5 w-1.5 bg-blue-500 rounded-full"></div>
+                              <span>PDF Unlocker Tool</span>
                             </div>
                             <div className="flex items-center gap-2 text-sm">
-                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
-                              <span>QR Code Generator with Customization</span>
+                              <div className="h-1.5 w-1.5 bg-blue-500 rounded-full"></div>
+                              <span>PDF Compressor Online</span>
                             </div>
                           </div>
                         </Card>
@@ -1102,26 +1113,6 @@ export default function HomePage() {
                         <Card className="p-6 hover:shadow-lg transition-all duration-200">
                           <h3 className="text-xl font-bold text-foreground mb-4">Image Processing & Design</h3>
                           <div className="space-y-3">
-                            <div className="flex items-center gap-2 text-sm">
-                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
-                              <span>Free Image Cropper and Resizer</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-sm">
-                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
-                              <span>Image to Text OCR Online Free</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-sm">
-                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
-                              <span>QR Code Generator with Customization</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-sm">
-                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
-                              <span>Background Blur Tool</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-sm">
-                              <div className="h-1.5 w-1.5 bg-red-500 rounded-full"></div>
-                              <span>Color Palette Generator from Image</span>
-                            </div>
                           </div>
                         </Card>
 
@@ -1218,6 +1209,10 @@ export default function HomePage() {
                             <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
                               <span className="font-medium text-foreground">Image Processing Tools</span>
                               <span className="text-sm text-muted-foreground">15+ tools</span>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">PDF Document Tools</span>
+                              <span className="text-sm text-muted-foreground">4+ tools</span>
                             </div>
                             <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
                               <span className="font-medium text-foreground">Developer Utilities</span>
@@ -1484,7 +1479,35 @@ export default function HomePage() {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2 text-xs text-muted-foreground">
                           <div className="h-1.5 w-1.5 bg-[#F7B801] rounded-full"></div>
-                          <span>Image Cropper, Image Converter</span>
+                        </div>
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#F35B04] group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+
+                {/* PDF Tools Category */}
+                <Link href="/pdf-tools" className="group">
+                  <Card className="h-full hover:shadow-lg transition-all duration-200 hover:border-[#F35B04]/20">
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                          <FileText className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl">PDF Tools</CardTitle>
+                          <p className="text-sm text-muted-foreground">4+ PDF utilities</p>
+                        </div>
+                      </div>
+                      <CardDescription>
+                        Split, merge, unlock, and compress PDFs with our professional document processing tools. Convert PDFs to images and more.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <div className="h-1.5 w-1.5 bg-[#F7B801] rounded-full"></div>
+                          <span>PDF Splitter, Merger</span>
                         </div>
                         <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#F35B04] group-hover:translate-x-1 transition-all" />
                       </div>
@@ -1697,9 +1720,6 @@ export default function HomePage() {
                     </div>
                     <blockquote className="text-muted-foreground leading-relaxed text-sm italic relative">
                       <div className="absolute -top-1 -left-1 text-2xl text-accent/20 font-serif">"</div>
-                      The image cropper and image converter tools are perfect for my design workflow. I can crop images 
-                      to exact dimensions and convert between different formats instantly. The image processing tools 
-                      save me so much time compared to using expensive software.
                     </blockquote>
                   </div>
                 </Card>
@@ -2272,10 +2292,6 @@ export default function HomePage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground leading-relaxed">
-                      Our <strong>image tools</strong> include <strong>image cropper</strong> for resizing and cropping photos, 
-                      <strong>image converter</strong> for format conversion, <strong>image to text OCR</strong> for extracting text from images, 
-                      <strong>background blur</strong> for photo editing, and <strong>QR code generator</strong> for creating QR codes. 
-                      All tools work in your browser without uploading files, ensuring complete privacy and security.
                     </p>
                   </CardContent>
                 </Card>
@@ -2520,11 +2536,6 @@ export default function HomePage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground leading-relaxed">
-                      For graphic design without experience, we recommend Canva, Figma, or Adobe Express. Our <strong>image tools</strong> 
-                      support graphic design with <strong>image cropper</strong> for resizing, <strong>color palette generator</strong> for 
-                      color schemes, <strong>QR code generator</strong> for marketing materials, and <strong>image converter</strong> for 
-                      format optimization. These tools work alongside design platforms to help create professional graphics, 
-                      social media posts, and marketing materials without design expertise.
                     </p>
                   </CardContent>
                 </Card>
@@ -2538,11 +2549,6 @@ export default function HomePage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground leading-relaxed">
-                      For social media scheduling, we recommend Hootsuite, Buffer, or Later. Our <strong>social media tools</strong> enhance 
-                      scheduling with <strong>hashtag generator</strong> for better reach, <strong>AI caption generator</strong> for engaging content, 
-                      <strong>image tools</strong> for post optimization, and <strong>analytics tools</strong> for performance tracking. 
-                      These tools integrate with scheduling platforms to create compelling social media content, optimize posting times, 
-                      and maximize engagement across all platforms.
                     </p>
                   </CardContent>
                 </Card>
