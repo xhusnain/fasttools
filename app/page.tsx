@@ -724,10 +724,41 @@ export default function HomePage() {
                             </div>
                           </div>
                           <p className="text-muted-foreground mb-4">
-                            Image cropper, image converter, image to text OCR, background blur, QR code generator, 
+                            Image cropper, image converter, image to text OCR, background blur, QR code generator,
                             and image processing tools for all your visual needs.
                           </p>
                           <div className="space-y-2">
+                          </div>
+                        </Card>
+
+                        {/* PDF Tools Section */}
+                        <Card className="p-6 hover:shadow-lg transition-all duration-200">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                              <FileText className="h-6 w-6 text-white" />
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-bold text-foreground">PDF Tools</h3>
+                              <p className="text-sm text-muted-foreground">4+ PDF utilities</p>
+                            </div>
+                          </div>
+                          <p className="text-muted-foreground mb-4">
+                            PDF splitter, PDF merger, PDF unlocker, PDF compressor, PDF to image converter,
+                            and document processing tools for all your PDF needs.
+                          </p>
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-blue-500 rounded-full"></div>
+                              <span>PDF Splitter & Merger</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-blue-500 rounded-full"></div>
+                              <span>PDF Unlocker Tool</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <div className="h-1.5 w-1.5 bg-blue-500 rounded-full"></div>
+                              <span>PDF Compressor Online</span>
+                            </div>
                           </div>
                         </Card>
 
@@ -1180,6 +1211,10 @@ export default function HomePage() {
                               <span className="text-sm text-muted-foreground">15+ tools</span>
                             </div>
                             <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                              <span className="font-medium text-foreground">PDF Document Tools</span>
+                              <span className="text-sm text-muted-foreground">4+ tools</span>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
                               <span className="font-medium text-foreground">Developer Utilities</span>
                               <span className="text-sm text-muted-foreground">20+ tools</span>
                             </div>
@@ -1444,6 +1479,35 @@ export default function HomePage() {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2 text-xs text-muted-foreground">
                           <div className="h-1.5 w-1.5 bg-[#F7B801] rounded-full"></div>
+                        </div>
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#F35B04] group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+
+                {/* PDF Tools Category */}
+                <Link href="/pdf-tools" className="group">
+                  <Card className="h-full hover:shadow-lg transition-all duration-200 hover:border-[#F35B04]/20">
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                          <FileText className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl">PDF Tools</CardTitle>
+                          <p className="text-sm text-muted-foreground">4+ PDF utilities</p>
+                        </div>
+                      </div>
+                      <CardDescription>
+                        Split, merge, unlock, and compress PDFs with our professional document processing tools. Convert PDFs to images and more.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <div className="h-1.5 w-1.5 bg-[#F7B801] rounded-full"></div>
+                          <span>PDF Splitter, Merger</span>
                         </div>
                         <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#F35B04] group-hover:translate-x-1 transition-all" />
                       </div>

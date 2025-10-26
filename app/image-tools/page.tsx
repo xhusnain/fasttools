@@ -7,61 +7,48 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 
 export const metadata: Metadata = {
-  title: "Free Image & File Tools – OCR, Background Blur, PDF Tools | FastTools",
+  title: "Free Image Tools – OCR, Photo Editor, Background Blur | FastTools",
   description:
-    "Free image and file tools: OCR converter, background blur, image cropper, PDF splitter/merger, and PDF unlocker. Professional results, 100% secure.",
+    "Free image tools: OCR converter, photo editor, background blur, image processing. Professional results, 100% secure.",
   keywords: [
     // High-Volume OCR Keywords
     "image to text converter",
-    "OCR tool online", 
+    "OCR tool online",
     "extract text from image",
     "photo to text converter",
     "free OCR software",
-    
+
     // Image Editing Keywords
     "background blur tool",
     "photo background remover",
     "image resizer online",
     "photo editor online",
-    
-    // PDF Tools Keywords
-    "PDF splitter online",
-    "PDF merger free",
-    "PDF unlocker tool",
-    "PDF to image converter",
-    "PDF compressor online",
-    
+
     // File Conversion Keywords
     "image format converter",
     "JPG to PNG converter",
     "image compression tool",
     "batch image converter",
     "image watermark remover",
-    
+
     // Existing Keywords
     "image tools",
-    "free image tools", 
+    "free image tools",
     "image to text",
     "OCR converter",
     "background blur",
-    "PDF splitter",
-    "PDF merger",
-    "PDF unlocker",
     "online image editor",
-    "free PDF tools",
     "image processing tools",
     "file conversion tools",
-    "document tools",
     "image editing tools",
-    "PDF tools",
     "OCR tools",
     "image manipulation tools",
     "file utility tools"
   ],
   openGraph: {
-    title: "Free Image & File Tools – OCR, Background Blur, PDF Tools | FastTools",
+    title: "Free Image Tools – OCR, Photo Editor, Background Blur | FastTools",
     description:
-      "Free image and file tools: OCR converter, background blur, image cropper, PDF splitter/merger, and PDF unlocker. Professional results, 100% secure.",
+      "Free image tools: OCR converter, photo editor, background blur, image processing. Professional results, 100% secure.",
     url: "https://www.fasttools.store/image-tools",
     type: "website",
     siteName: "FastTools",
@@ -70,15 +57,15 @@ export const metadata: Metadata = {
         url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "FastTools Free Image & File Tools – OCR, Background Blur, PDF Tools",
+        alt: "FastTools Free Image Tools – OCR, Photo Editor, Background Blur",
         type: "image/svg+xml",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Image & File Tools – OCR, Background Blur, PDF Tools | FastTools",
-    description: "Free image and file tools: OCR converter, background blur, image cropper, PDF splitter/merger, and PDF unlocker. Professional results, 100% secure.",
+    title: "Free Image Tools – OCR, Photo Editor, Background Blur | FastTools",
+    description: "Free image tools: OCR converter, photo editor, background blur, image processing. Professional results, 100% secure.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },
   alternates: {
@@ -101,40 +88,24 @@ const imageTools = [
     href: "/image-tools/photo-editor",
     popular: true,
   },
-  {
-    title: "PDF Splitter & Merger",
-    description: "Split large PDFs with PDF splitter online or merge multiple PDFs with PDF merger free. Fast and secure processing.",
-    icon: FileStack,
-    href: "/image-tools/pdf-tools",
-    popular: true,
-  },
-  {
-    title: "PDF Unlocker",
-    description: "Remove password protection from PDFs with PDF unlocker tool. Unlock your documents quickly and easily.",
-    icon: Unlock,
-    href: "/image-tools/pdf-unlocker",
-    popular: false,
-  },
 ]
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Free Image & File Tools – OCR, Background Blur, PDF Tools | FastTools",
-  description: "Free image and file tools: OCR converter, background blur, image cropper, PDF splitter/merger, and PDF unlocker. Professional results, 100% secure.",
+  name: "Free Image Tools – OCR, Photo Editor, Background Blur | FastTools",
+  description: "Free image tools: OCR converter, photo editor, background blur, image processing. Professional results, 100% secure.",
   url: "https://www.fasttools.store/image-tools",
   mainEntity: {
-    "@type": "ItemList",
-    name: "Image & File Tools Collection",
-    description: "Comprehensive collection of free online image and file utility tools for image processing, OCR, PDF manipulation, and document management",
-    numberOfItems: 4,
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Image to Text (OCR)", description: "Extract text from images using OCR technology", url: "https://www.fasttools.store/image-tools/image-to-text" },
-      { "@type": "ListItem", position: 2, name: "Photo Editor", description: "Edit photos with professional tools and filters", url: "https://www.fasttools.store/image-tools/photo-editor" },
-      { "@type": "ListItem", position: 3, name: "PDF Splitter & Merger", description: "Split large PDFs or merge multiple PDFs into one", url: "https://www.fasttools.store/image-tools/pdf-tools" },
-      { "@type": "ListItem", position: 4, name: "PDF Unlocker", description: "Remove password protection from PDFs", url: "https://www.fasttools.store/image-tools/pdf-unlocker" }
-    ]
-  },
+  "@type": "ItemList",
+  name: "Image Tools Collection",
+  description: "Comprehensive collection of free online image processing and editing tools for OCR, photo editing, and visual content creation",
+  numberOfItems: 2,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Image to Text (OCR)", description: "Extract text from images using OCR technology", url: "https://www.fasttools.store/image-tools/image-to-text" },
+    { "@type": "ListItem", position: 2, name: "Photo Editor", description: "Edit photos with professional tools and filters", url: "https://www.fasttools.store/image-tools/photo-editor" }
+  ]
+},
   breadcrumb: {
     "@type": "BreadcrumbList",
     itemListElement: [
@@ -174,22 +145,22 @@ export default function ImageToolsPage() {
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-4 shadow-md">
                     <Code className="h-4 w-4 animate-pulse" />
-                    <span>Image & File Processing Tools</span>
+                    <span>Image Processing Tools</span>
                     <div className="h-2 w-2 bg-secondary-accent rounded-full animate-ping"></div>
         </div>
 
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">
-                    Free Image & File Tools – Edit, Crop, OCR, Merge & More Online
+                    Free Image Tools – OCR, Photo Editor, Background Blur Online
                   </h1>
 
                   <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
-                    Edit photos, extract text (OCR), blur backgrounds, crop images, and merge or split PDFs — all free, fast, and online. No signup or software needed.
+                    Edit photos, extract text (OCR), blur backgrounds, and process images — all free, fast, and online. No signup or software needed.
                   </p>
 
                   <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
                     <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
                       <Code className="h-4 w-4 text-primary" />
-                      <span className="text-primary font-medium text-sm">5+ Tools</span>
+                      <span className="text-primary font-medium text-sm">2+ Tools</span>
                     </div>
                     <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
                       <Globe className="h-4 w-4 text-green-600" />
