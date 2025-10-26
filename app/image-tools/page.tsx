@@ -185,14 +185,6 @@ export default function ImageToolsPage() {
                   </div>
         </div>
 
-                {/* Mobile/Tablet Ad - Top of Page */}
-                <div className="block xl:hidden mb-6">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
-
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                   {imageTools.map((tool, index) => (
                     <Card
@@ -224,14 +216,6 @@ export default function ImageToolsPage() {
             </Card>
           ))}
         </div>
-
-                {/* Mobile/Tablet Ad - After cards */}
-                <div className="block xl:hidden my-8">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-        </div>
-                  <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
-          </div>
 
                 {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-200">
@@ -350,12 +334,6 @@ export default function ImageToolsPage() {
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">How can I use these tools to improve my document management and productivity?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">Our image and file tools provide comprehensive support for document management and productivity optimization. OCR tools help digitize paper documents, extract data from invoices and receipts, and convert printed materials into searchable digital text. PDF tools streamline document organization by splitting large files into manageable sections, merging related documents for easier distribution, and removing password protection from locked files. Image cropping ensures consistent document formatting and professional presentation. These tools work together to create a complete document management ecosystem: digitize paper documents with OCR, organize digital files with PDF tools, and enhance visual presentation with image editing. The privacy-focused design means all processing stays local, protecting sensitive business documents while providing accurate, professional results for better document management and productivity.</p>
                       </div>
-                    </div>
-                    <div className="mt-6 block xl:hidden">
-                      <div className="text-center mb-2">
-                        <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                      </div>
-                      <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
                     </div>
                   </div>
                 </div>
