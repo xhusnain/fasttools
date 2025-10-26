@@ -17,8 +17,17 @@ export const metadata: Metadata = {
         
         // Medium Volume Keywords (1k-10k searches)
         "photo bg remover",
+        "photo bg remover for free",
+        "photo bg remover ai",
+        "photo bg remover ai free",
+        "photo bg remover free",
+        "photo bg remover free online",
+        "photo bg remover white",
         
         // Keywords (100-1000 searches)
+        "photo bg remover hd free",
+        "photo enhancer bg remover",
+        "photo editor bg remover free",
         "photo background object remover",
         "photo remove bg change",
         "photo background remover free app",
