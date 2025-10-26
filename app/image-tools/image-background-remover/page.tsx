@@ -7,9 +7,9 @@ import { FileText, ArrowRight, Code, Globe, Zap, Shield } from "lucide-react"
 // Cleaned up and trimmed metadata (excessive keyword stuffing removed for clarity and modern SEO practice)
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.fasttools.store"),
-    title: "Free AI Image Background Remover – Remove Backgrounds Online | FastTools",
+    title: "Free Photo Background Remover - Remove BG from Images Online | AI Photo BG Remover Tool",
     description:
-        "Remove image backgrounds instantly with our free AI-powered tool. Create transparent backgrounds for photos, product images, and graphics — fast, accurate, and secure on any device.",
+        "Remove photo bg instantly with our free AI background remover. Professional photo background remover for portraits, products & pets. Remove backgrounds online - no photoshop needed. Free, fast & secure.",
     keywords: [
         // High Volume Keywords (10k+ searches)
         "removing bg in photoshop",
@@ -326,8 +326,8 @@ export const metadata: Metadata = {
     ],
     alternates: { canonical: "https://www.fasttools.store/image-tools/image-background-remover" },
     openGraph: {
-        title: "Free AI Image Background Remover – Remove Backgrounds Online | FastTools",
-        description: "Remove image backgrounds instantly with our free AI-powered tool. Create transparent backgrounds for photos, product images, and graphics — fast, accurate, and secure on any device.",
+        title: "Free Photo Background Remover - Remove BG from Images Online | AI Photo BG Remover",
+        description: "Remove photo bg instantly with our free AI background remover. Professional photo background remover for portraits, products & pets. No photoshop needed. Free, fast & secure.",
         url: "https://www.fasttools.store/image-tools/image-background-remover",
         type: "website",
         siteName: "FastTools",
@@ -336,7 +336,7 @@ export const metadata: Metadata = {
                 url: "https://www.fasttools.store/og-image.svg",
                 width: 1200,
                 height: 630,
-                alt: "Free AI Image Background Remover – Remove Backgrounds Online | FastTools",
+                alt: "Free Photo Background Remover - Remove BG from Images Online | AI Photo BG Remover Tool",
                 type: "image/svg+xml",
             },
             {
@@ -364,8 +364,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Free AI Image Background Remover – Remove Backgrounds Online | FastTools",
-        description: "Remove image backgrounds instantly with our free AI-powered tool. Create transparent backgrounds for photos, product images, and graphics — fast, accurate, and secure on any device.",
+        title: "Free Photo Background Remover - Remove BG from Images Online",
+        description: "Remove photo bg instantly with our free AI background remover. Professional photo background remover for portraits, products & pets. No photoshop needed.",
         images: [
             "https://www.fasttools.store/og-image.svg",
             "https://www.fasttools.store/after_Human.png",
@@ -377,13 +377,13 @@ export const metadata: Metadata = {
         "application/ld+json": JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            name: "Free AI Image Background Remover – Remove Backgrounds Online",
-            alternateName: ["Background Remover", "Image Background Remover", "Remove Background Tool"],
+            name: "Free Photo Background Remover - Remove BG from Images Online",
+            alternateName: ["Photo BG Remover", "Photo Background Remover", "AI Photo BG Remover", "Remove Photo BG", "Image Background Remover", "Background Remover Online"],
             applicationCategory: "UtilitiesApplication",
             operatingSystem: ["Web Browser", "Windows", "macOS", "Linux", "iOS", "Android"],
             url: "https://www.fasttools.store/image-tools/image-background-remover",
             description:
-                "Remove image backgrounds instantly with our free AI-powered tool. Create transparent backgrounds for photos, product images, and graphics — fast, accurate, and secure on any device.",
+                "Remove photo bg instantly with our free AI background remover. Professional photo background remover for portraits, products & pets. Remove backgrounds online - no photoshop needed. Free, fast & secure.",
             inLanguage: ["en", "es", "fr", "de", "zh", "ar", "pt", "ru", "ja", "ko", "hi", "it", "nl", "tr", "pl"],
             isAccessibleForFree: true,
             offers: {
@@ -444,7 +444,7 @@ export const metadata: Metadata = {
                     description: "Object photo after background removal perfect for product listings"
                 }
             ],
-            keywords: "remove background, free background remover, AI background remover, transparent background, background removal online",
+            keywords: "photo background remover, remove photo bg, photo bg remover, ai photo bg remover, remove background online, free background remover, removing bg in photoshop, photoroom bg remover, photo background remover free, transparent background",
             about: {
                 "@type": "Thing",
                 name: "Background Removal and Image Editing",
@@ -477,17 +477,17 @@ export default function ImageBackgroundRemoverPage() {
 
                     <div className="max-w-7xl mx-auto">
                     <div className="text-center space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white text-xs font-medium mb-4">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-500 text-white text-xs font-medium mb-4">
                             <Zap className="h-3 w-3" />
                             <span>AI-Powered Background Remover</span>
                                     </div>
 
                         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
-                                        Free AI Image Background Remover – Remove Backgrounds Online
+                                        Free Photo Background Remover - Remove BG from Images Online
                                     </h1>
 
                         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mt-3 sm:mt-4">
-                            Remove image backgrounds instantly with our free AI-powered tool. Create transparent backgrounds for photos, product images, and graphics — fast, accurate, and secure on any device.
+                            Remove photo bg instantly with our free AI photo background remover. Professional background removal for portraits, products, and pets. No photoshop needed—just upload, process & download. 100% free, fast, and secure on any device.
                         </p>
                     </div>
 
@@ -588,7 +588,7 @@ export default function ImageBackgroundRemoverPage() {
                                                         />
                                                     </div>
                                                     <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">After</p>
-                                                </div>
+                                        </div>
                                         </div>
                                         </div>
                                     </div>
@@ -637,8 +637,8 @@ export default function ImageBackgroundRemoverPage() {
                                                     </div>
                                                     <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">After</p>
                                                 </div>
-                                            </div>
-                                        </div>
+                                    </div>
+                                </div>
                                                 </div>
                                             </div>
 
