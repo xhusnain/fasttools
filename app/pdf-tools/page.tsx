@@ -75,14 +75,14 @@ const pdfTools = [
     title: "PDF Splitter & Merger",
     description: "Split large PDFs with PDF splitter online or merge multiple PDFs with PDF merger free. Fast and secure processing.",
     icon: FileStack,
-    href: "/image-tools/pdf-tools",
+    href: "/pdf-tools/pdf-splitter-merger",
     popular: true,
   },
   {
     title: "PDF Unlocker",
     description: "Remove password protection from PDFs with PDF unlocker tool. Unlock your documents quickly and easily.",
     icon: Unlock,
-    href: "/image-tools/pdf-unlocker",
+    href: "/pdf-tools/pdf-unlocker",
     popular: true,
   },
   {
@@ -113,8 +113,8 @@ const jsonLd = {
     description: "Comprehensive collection of free online PDF utility tools for document manipulation, compression, and conversion",
     numberOfItems: 4,
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "PDF Splitter & Merger", description: "Split large PDFs or merge multiple PDFs into one", url: "https://www.fasttools.store/image-tools/pdf-tools" },
-      { "@type": "ListItem", position: 2, name: "PDF Unlocker", description: "Remove password protection from PDFs", url: "https://www.fasttools.store/image-tools/pdf-unlocker" },
+      { "@type": "ListItem", position: 1, name: "PDF Splitter & Merger", description: "Split large PDFs or merge multiple PDFs into one", url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger" },
+      { "@type": "ListItem", position: 2, name: "PDF Unlocker", description: "Remove password protection from PDFs", url: "https://www.fasttools.store/pdf-tools/pdf-unlocker" },
       { "@type": "ListItem", position: 3, name: "PDF Compressor", description: "Reduce PDF file size while maintaining quality", url: "https://www.fasttools.store/pdf-tools/pdf-compressor" },
       { "@type": "ListItem", position: 4, name: "PDF to Image Converter", description: "Convert PDF pages to images", url: "https://www.fasttools.store/pdf-tools/pdf-to-image" }
     ]

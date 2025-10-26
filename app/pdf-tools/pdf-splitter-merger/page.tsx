@@ -31,11 +31,11 @@ export const metadata: Metadata = {
     "merge many pdfs",
     "pdf processing online"
   ],
-  alternates: { canonical: "https://www.fasttools.store/image-tools/pdf-tools" },
+  alternates: { canonical: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger" },
   openGraph: {
     title: "PDF Splitter & Merger — Free Online PDF Tools",
     description: "Split and merge PDFs securely in your browser.",
-    url: "https://www.fasttools.store/image-tools/pdf-tools",
+    url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
     type: "website",
     siteName: "FastTools",
     images: [
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
       name: "PDF Splitter & Merger",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
-      url: "https://www.fasttools.store/image-tools/pdf-tools",
+      url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
       description:
         "Split and merge PDF files securely in the browser with page range support.",
       inLanguage: "en",
@@ -102,7 +102,7 @@ export default function PDFToolsPage() {
 
             <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Tools</h2>
             <ul className="list-disc pl-5 text-muted-foreground">
-              <li><Link href="/image-tools/pdf-unlocker">PDF Unlocker</Link></li>
+              <li><Link href="/pdf-tools/pdf-unlocker">PDF Unlocker</Link></li>
               <li><Link href="/image-tools/image-to-text">Image to Text (OCR)</Link></li>
             </ul>
           </div>

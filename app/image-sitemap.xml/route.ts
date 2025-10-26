@@ -203,25 +203,25 @@ export async function GET() {
       ]
     },
     {
-      url: "https://www.fasttools.store/image-tools/pdf-tools",
+      url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
       lastModified: getFreshnessDate(3),
       changeFrequency: "weekly" as const,
       priority: 0.8,
       images: [
         {
           url: "https://www.fasttools.store/banner.png",
-          title: "PDF Tools - Free PDF Editing and Processing",
-          caption: "Comprehensive PDF tools collection for merging, splitting, compressing, and converting PDF documents"
+          title: "PDF Splitter & Merger - Free PDF Editing and Processing",
+          caption: "Comprehensive PDF splitter and merger tool for splitting large PDFs or merging multiple PDF documents"
         },
         {
           url: "https://www.fasttools.store/logo.png",
-          title: "FastTools PDF Tools Logo",
-          caption: "Professional logo for FastTools PDF processing toolkit"
+          title: "FastTools PDF Splitter & Merger Logo",
+          caption: "Professional logo for FastTools PDF splitting and merging toolkit"
         }
       ]
     },
     {
-      url: "https://www.fasttools.store/image-tools/pdf-unlocker",
+      url: "https://www.fasttools.store/pdf-tools/pdf-unlocker",
       lastModified: getFreshnessDate(3),
       changeFrequency: "weekly" as const,
       priority: 0.8,

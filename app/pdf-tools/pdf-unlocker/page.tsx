@@ -25,11 +25,11 @@ export const metadata: Metadata = {
     "no upload unlock",
     "free pdf unlocker"
   ],
-  alternates: { canonical: "https://www.fasttools.store/image-tools/pdf-unlocker" },
+  alternates: { canonical: "https://www.fasttools.store/pdf-tools/pdf-unlocker" },
   openGraph: {
     title: "PDF Unlocker — Remove Passwords",
     description: "Unlock password‑protected PDFs securely in your browser.",
-    url: "https://www.fasttools.store/image-tools/pdf-unlocker",
+    url: "https://www.fasttools.store/pdf-tools/pdf-unlocker",
     type: "website",
     siteName: "FastTools",
     images: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
       name: "PDF Unlocker",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
-      url: "https://www.fasttools.store/image-tools/pdf-unlocker",
+      url: "https://www.fasttools.store/pdf-tools/pdf-unlocker",
       description:
         "Remove PDF passwords and restrictions securely in the browser.",
       inLanguage: "en",
@@ -95,7 +95,7 @@ export default function PDFUnlockerPage() {
 
             <h2 className="text-2xl font-bold mt-10 mb-4 text-foreground">Related Tools</h2>
             <ul className="list-disc pl-5 text-muted-foreground">
-              <li><Link href="/image-tools/pdf-tools">PDF Splitter & Merger</Link></li>
+              <li><Link href="/pdf-tools/pdf-splitter-merger">PDF Splitter & Merger</Link></li>
               <li><Link href="/image-tools/image-to-text">Image to Text (OCR)</Link></li>
             </ul>
           </div>
