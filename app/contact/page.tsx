@@ -52,7 +52,7 @@ export default function ContactPage() {
     const newErrors = {}
     
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required'
+      newErrors.name = 'Name is required' as any
     }
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required'
