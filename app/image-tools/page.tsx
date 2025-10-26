@@ -82,6 +82,13 @@ const imageTools = [
     popular: true,
   },
   {
+    title: "Image Background Remover",
+    description: "Remove image backgrounds instantly with AI technology. Create transparent backgrounds for photos, products, and graphics.",
+    icon: Crop,
+    href: "/image-tools/image-background-remover",
+    popular: true,
+  },
+  {
     title: "Free AI Photo Editor – Edit, Enhance & Remove Backgrounds Online",
     description: "Edit photos instantly with our free AI photo editor. Remove backgrounds, enhance images, add filters & effects – all online, no download needed.",
     icon: Blur,
@@ -100,10 +107,11 @@ const jsonLd = {
   "@type": "ItemList",
   name: "Image Tools Collection",
   description: "Comprehensive collection of free online image processing and editing tools for OCR, photo editing, and visual content creation",
-  numberOfItems: 2,
+  numberOfItems: 3,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Image to Text (OCR)", description: "Extract text from images using OCR technology", url: "https://www.fasttools.store/image-tools/image-to-text" },
-    { "@type": "ListItem", position: 2, name: "Photo Editor", description: "Edit photos with professional tools and filters", url: "https://www.fasttools.store/image-tools/photo-editor" }
+    { "@type": "ListItem", position: 2, name: "Image Background Remover", description: "Remove image backgrounds with AI technology", url: "https://www.fasttools.store/image-tools/image-background-remover" },
+    { "@type": "ListItem", position: 3, name: "Photo Editor", description: "Edit photos with professional tools and filters", url: "https://www.fasttools.store/image-tools/photo-editor" }
   ]
 },
   breadcrumb: {
@@ -160,7 +168,7 @@ export default function ImageToolsPage() {
                   <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
                     <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
                       <Code className="h-4 w-4 text-primary" />
-                      <span className="text-primary font-medium text-sm">2+ Tools</span>
+                      <span className="text-primary font-medium text-sm">3+ Tools</span>
                     </div>
                     <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
                       <Globe className="h-4 w-4 text-green-600" />
