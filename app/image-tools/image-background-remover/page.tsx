@@ -4,7 +4,6 @@ import { ImageBackgroundRemover } from "@/components/image-background-remover"
 import { AdSpace } from "@/components/ad-space"
 import { FileText, ArrowRight, Code, Globe, Zap, Shield } from "lucide-react"
 
-// Cleaned up and trimmed metadata (excessive keyword stuffing removed for clarity and modern SEO practice)
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.fasttools.store"),
     title: "Free Photo Background Remover - Remove BG from Images Online | AI Photo BG Remover Tool",
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
         // High Volume Keywords (10k+ searches)
         "removing bg in photoshop",
         "photoroom bg remover",
-        
+
         // Medium Volume Keywords (1k-10k searches)
         "photo bg remover",
         "photo bg remover for free",
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
         "photo bg remover free",
         "photo bg remover free online",
         "photo bg remover white",
-        
+
         // Keywords (100-1000 searches)
         "photo bg remover hd free",
         "photo enhancer bg remover",
@@ -38,7 +37,7 @@ export const metadata: Metadata = {
         "photo editor bg remover",
         "ai photo editor bg remover",
         "photo remove bg upload",
-        
+
         // Keywords (50-100 searches)
         "png remove background photoshop",
         "photo background remover cutout pro",
@@ -54,7 +53,7 @@ export const metadata: Metadata = {
         "remove bg video background remover",
         "photo background remover software for pc",
         "photo remove bg photoshop",
-        
+
         // Additional Relevant Keywords
         "photo background remover adobe",
         "photo background remover change",
@@ -64,7 +63,7 @@ export const metadata: Metadata = {
         "photo background remover high quality",
         "photo background remover high quality free",
         "photo background shadow remover",
-        
+
         // Core Keywords
         "remove background",
         "background remover",
@@ -78,7 +77,7 @@ export const metadata: Metadata = {
         "remove bg",
         "background eraser",
         "background remover online free",
-        
+
         // Additional Feature-Specific Keywords
         "photo background remover to white",
         "ai photo editor bg remover mod apk",
@@ -115,7 +114,7 @@ export const metadata: Metadata = {
         "photo background remover for passport",
         "photo background remover download for pc",
         "photo background remover google",
-        
+
         // Platform & Device-Specific Keywords
         "photo background remover passport size",
         "photo background remover for windows 10",
@@ -182,14 +181,14 @@ export const metadata: Metadata = {
         "photo background crowd remover",
         "photo background remover in online",
         "ai photo editor bg remover mod",
-        
+
         // Software-Specific & Crack Keywords (informational)
         "leawo photo bg remover crack",
         "softorbits photo background remover license key",
         "photo background remover crack",
         "photo background remove in photoshop",
         "passport photo background remover reddit",
-        
+
         // Advanced Features & Quality Keywords
         "bg remove 3d",
         "photo background remover free offline",
@@ -226,7 +225,7 @@ export const metadata: Metadata = {
         "photo background blue remover",
         "ai photo editor & bg remover دانلود",
         "photo background remover eraser",
-        
+
         // Technical & Professional Keywords
         "photo background remover tool free",
         "image bg remove in css",
@@ -263,7 +262,7 @@ export const metadata: Metadata = {
         "photo editor bg remover free",
         "photo bg remove 4k",
         "photo background remover blur",
-        
+
         // Additional High-Value Keywords
         "photo background remover hd online",
         "photo background remover for cv",
@@ -276,7 +275,7 @@ export const metadata: Metadata = {
         "leawo photo bg remover",
         "ai photo bg remover video",
         "bulk photo bg remover",
-        
+
         // Top High-Volume Keywords
         "photo background remover",
         "photo background remover online",
@@ -306,7 +305,7 @@ export const metadata: Metadata = {
         "photoshop pic background remove",
         "photo to bg remover",
         "photo to background remover png",
-        
+
         // Combination Features Keywords (Remover + Other Features)
         "photo background remover and changer",
         "photo background remover and editor",
@@ -459,10 +458,6 @@ export const metadata: Metadata = {
     },
 }
 
-// -----------------------------------------------------------------------------
-// REDESIGNED MAIN COMPONENT
-// -----------------------------------------------------------------------------
-
 export default function ImageBackgroundRemoverPage() {
     return (
         <>
@@ -475,7 +470,7 @@ export default function ImageBackgroundRemoverPage() {
                         ]}
                     />
 
-                    <div className="max-w-7xl mx-auto">
+                    <div className="max-w-[1600px] mx-auto">
                     <div className="text-center space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-500 text-white text-xs font-medium mb-4">
                             <Zap className="h-3 w-3" />
@@ -576,7 +571,7 @@ export default function ImageBackgroundRemoverPage() {
                                                     <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">Before</p>
                                                 </div>
                                                 <div className="text-center">
-                                                    <div className="mb-3 rounded-lg overflow-hidden" 
+                                                    <div className="mb-3 rounded-lg overflow-hidden"
                                                         style={{
                                                             backgroundImage: 'repeating-conic-gradient(#e5e7eb 0% 25%, #ffffff 0% 50%) 50% / 20px 20px',
                                                         }}
@@ -624,7 +619,7 @@ export default function ImageBackgroundRemoverPage() {
                                                     <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">Before</p>
                                                 </div>
                                                 <div className="text-center">
-                                                    <div className="mb-3 rounded-lg overflow-hidden" 
+                                                    <div className="mb-3 rounded-lg overflow-hidden"
                                                         style={{
                                                             backgroundImage: 'repeating-conic-gradient(#e5e7eb 0% 25%, #ffffff 0% 50%) 50% / 20px 20px',
                                                         }}
@@ -672,7 +667,7 @@ export default function ImageBackgroundRemoverPage() {
                                                     <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">Before</p>
                                                 </div>
                                                 <div className="text-center">
-                                                    <div className="mb-3 rounded-lg overflow-hidden" 
+                                                    <div className="mb-3 rounded-lg overflow-hidden"
                                                         style={{
                                                             backgroundImage: 'repeating-conic-gradient(#e5e7eb 0% 25%, #ffffff 0% 50%) 50% / 20px 20px',
                                                         }}
@@ -700,7 +695,7 @@ export default function ImageBackgroundRemoverPage() {
                                     <span className="hidden sm:inline">Background Removal Use Cases & Applications</span>
                                     <span className="sm:hidden">Use Cases</span>
                                 </h2>
-                                
+
                                 <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                                     Discover practical applications for our image background remover in business, e-commerce, and personal use.
                                 </p>
@@ -708,7 +703,7 @@ export default function ImageBackgroundRemoverPage() {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                                     <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
                                         <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-2">
-                                            <ArrowRight className="h-4 w-4 text-purple-600" /> 
+                                            <ArrowRight className="h-4 w-4 text-purple-600" />
                                             E-commerce & Product Images
                                         </h3>
                                         <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -717,7 +712,7 @@ export default function ImageBackgroundRemoverPage() {
                                     </div>
                                     <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
                                         <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-2">
-                                            <ArrowRight className="h-4 w-4 text-purple-600" /> 
+                                            <ArrowRight className="h-4 w-4 text-purple-600" />
                                             Photo Editing & Graphic Design
                                         </h3>
                                         <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -726,7 +721,7 @@ export default function ImageBackgroundRemoverPage() {
                                     </div>
                                     <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
                                         <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-2">
-                                            <ArrowRight className="h-4 w-4 text-purple-600" /> 
+                                            <ArrowRight className="h-4 w-4 text-purple-600" />
                                             Profile Pictures & Branding
                                         </h3>
                                         <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -735,7 +730,7 @@ export default function ImageBackgroundRemoverPage() {
                                     </div>
                                     <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
                                         <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-2">
-                                            <ArrowRight className="h-4 w-4 text-purple-600" /> 
+                                            <ArrowRight className="h-4 w-4 text-purple-600" />
                                             Platform Solutions
                                         </h3>
                                         <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -868,7 +863,7 @@ export default function ImageBackgroundRemoverPage() {
                                     </div>
                                     <span>Platform & Device Compatibility</span>
                                 </h2>
-                                
+
                                 <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                                     Our photo background remover works seamlessly across all platforms and devices. Whether you need a photo background remover for Windows, photo background remover for iPhone, or photo background remover for cv preparation, we've got you covered with our online photo bg remover.
                                 </p>
@@ -911,7 +906,7 @@ export default function ImageBackgroundRemoverPage() {
                                     </div>
                                     <span>High-Quality Output Formats</span>
                                 </h2>
-                                
+
                                 <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                                     Our bg remove picture tool supports multiple quality levels and formats. From photo background remover 4k to photo background remover hd, we maintain exceptional quality throughout the process.
                                 </p>
@@ -955,7 +950,7 @@ export default function ImageBackgroundRemoverPage() {
                                     </div>
                                     <span>Advanced Editing Features</span>
                                 </h2>
-                                
+
                                 <div className="space-y-4">
                                     <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
                                         <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-3">AI-Powered Tools & Editors</h3>
@@ -1005,7 +1000,7 @@ export default function ImageBackgroundRemoverPage() {
                                     </div>
                                     <span>Specialized Removal Capabilities</span>
                                 </h2>
-                                
+
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
                                         <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2">Object & Element Removal</h3>
@@ -1045,7 +1040,7 @@ export default function ImageBackgroundRemoverPage() {
                                             </div>
                                     <span>Developer & Integration Tools</span>
                                         </h2>
-                                
+
                                 <div className="space-y-4">
                                     <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
                                         <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-3">Web Development Integration</h3>
@@ -1078,7 +1073,7 @@ export default function ImageBackgroundRemoverPage() {
                                     </div>
                                     <span>Tool Comparisons & Alternatives</span>
                                 </h2>
-                                
+
                                 <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                                     Compare our tool with popular alternatives and discover why users prefer our solution.
                                 </p>
@@ -1125,7 +1120,7 @@ export default function ImageBackgroundRemoverPage() {
                                     </div>
                                     <span>Free Access & Download Options</span>
                                 </h2>
-                                
+
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
                                         <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2">100% Free Online Access</h3>
@@ -1165,7 +1160,7 @@ export default function ImageBackgroundRemoverPage() {
                                     </div>
                                     <span>Professional & Commercial Applications</span>
                                 </h2>
-                                
+
                                 <div className="space-y-4">
                                     <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
                                         <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-3">Business & Commercial Use</h3>

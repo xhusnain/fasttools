@@ -1,4 +1,6 @@
-/** @type {import('next').NextConfig */
+import CopyPlugin from 'copy-webpack-plugin'
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
@@ -9,7 +11,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  webpack: (config, { isServer }) => {
+  webpack: (config, { isServer, dev }) => {
     // Handle Fabric.js properly
     if (!isServer) {
       config.resolve.fallback = {
@@ -17,7 +19,21 @@ const nextConfig = {
         fs: false,
         path: false,
         os: false,
+        crypto: false,
       }
+
+      // Copy ONNX model files to static directory for deployment
+      config.plugins.push(
+        new CopyPlugin({
+          patterns: [
+            {
+              from: 'public/models',
+              to: '../../static/models',
+              noErrorOnMissing: true,
+            },
+          ],
+        })
+      )
     }
 
     // Handle canvas module and other externals
@@ -28,7 +44,66 @@ const nextConfig = {
       bufferutil: 'commonjs bufferutil',
     })
 
+    // Optimize bundle splitting for production
+    if (!dev && !isServer) {
+      config.optimization.splitChunks = {
+        chunks: "all",
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: "vendors",
+            chunks: "all",
+            maxSize: 244000,
+          },
+          onnx: {
+            test: /[\\/]node_modules[\\/]onnxruntime-web[\\/]/,
+            name: "onnx",
+            chunks: "all",
+            priority: 10,
+          },
+          workers: {
+            test: /[\\/]workers[\\/]/,
+            name: "workers",
+            chunks: "all",
+            priority: 5,
+          },
+        },
+      }
+    }
+
     return config
+  },
+
+  // Enterprise caching headers for model files
+  async headers() {
+    return [
+      {
+        source: "/models/:path*",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "application/octet-stream",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable, s-maxage=31536000",
+          },
+          {
+            key: "CDN-Cache-Control",
+            value: "max-age=31536000",
+          },
+        ],
+      },
+      {
+        source: "/_next/static/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ]
   },
 }
 

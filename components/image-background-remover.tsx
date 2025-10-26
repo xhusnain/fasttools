@@ -2,18 +2,27 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Upload, Download, RotateCcw, FileText } from "lucide-react"
+import { Upload, Download, RotateCcw, FileText, Zap } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
+import { useBgRemoverStore } from "@/lib/store-bg-remover"
 
 export function ImageBackgroundRemover() {
-  const [image, setImage] = useState<string | null>(null)
-  const [processedImage, setProcessedImage] = useState<string | null>(null)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-  const [imageDimensions, setImageDimensions] = useState<{ width: number; height: number } | null>(null)
+  const {
+    originalImage,
+    imageUrl,
+    status,
+    result,
+    isProcessing,
+    setImage,
+    startProcessing,
+    reset,
+  } = useBgRemoverStore();
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageDimensions, setImageDimensions] = useState<{ width: number; height: number } | null>(null);
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -22,13 +31,13 @@ export function ImageBackgroundRemover() {
     // Validate file type
     const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp']
     if (!allowedTypes.includes(file.type)) {
-      setError('Please upload a valid image file (JPEG, PNG, or WebP).')
+      alert('Please upload a valid image file (JPEG, PNG, or WebP).')
       return
     }
 
     // Validate file size (10MB limit)
     if (file.size > 10 * 1024 * 1024) {
-      setError('File size must be less than 10MB.')
+      alert('File size must be less than 10MB.')
       return
     }
 
@@ -36,61 +45,27 @@ export function ImageBackgroundRemover() {
     reader.onload = async (event) => {
       const imageUrl = event.target?.result as string
       
-      // Get image dimensions
+      // Create HTMLImageElement
       const img = new Image()
+      img.crossOrigin = "anonymous"
       img.onload = () => {
-        setImageDimensions({ width: img.width, height: img.height })
+        setImage(img, imageUrl)
+        setImageDimensions({ width: img.naturalWidth, height: img.naturalHeight })
+        setImageLoaded(true)
+      }
+      img.onerror = () => {
+        alert("Failed to load image")
       }
       img.src = imageUrl
-      
-      setImage(imageUrl)
-      setProcessedImage(null)
-      setError(null)
-      setLoading(true)
-
-      try {
-        const formData = new FormData()
-        formData.append('image', file)
-
-        // Create abort controller for 5 minute timeout
-        const controller = new AbortController()
-        const timeoutId = setTimeout(() => controller.abort(), 300000) // 5 minutes
-
-        const response = await fetch('/api/bg-remove', {
-          method: 'POST',
-          body: formData,
-          signal: controller.signal,
-        })
-
-        clearTimeout(timeoutId)
-        const data = await response.json()
-
-        if (data.success) {
-          setProcessedImage(data.imageUrl || data.image)
-        } else {
-          setError(data.message || 'Failed to remove background. Please try again.')
-        }
-      } catch (err: any) {
-        console.error('Background removal error:', err)
-        
-        // Handle timeout error
-        if (err.name === 'AbortError') {
-          setError('Request timeout: Background removal is taking longer than expected. Please try with a smaller image or try again later.')
-        } else {
-          setError('An error occurred while processing the image. Please try again.')
-        }
-      } finally {
-        setLoading(false)
-      }
     }
     reader.readAsDataURL(file)
   }
 
   const downloadImage = () => {
-    if (!processedImage) return
+    if (!result?.resultUrl) return
 
     const link = document.createElement('a')
-    link.href = processedImage
+    link.href = result.resultUrl
     link.download = 'background-removed.png'
     document.body.appendChild(link)
     link.click()
@@ -98,11 +73,10 @@ export function ImageBackgroundRemover() {
   }
 
   const resetAll = () => {
-    setImage(null)
-    setProcessedImage(null)
-    setLoading(false)
-    setError(null)
+    reset()
+    setImageLoaded(false)
     setImageDimensions(null)
+    
     // Reset the file input
     const fileInput = document.getElementById("image-upload-bg") as HTMLInputElement
     if (fileInput) {
@@ -113,9 +87,9 @@ export function ImageBackgroundRemover() {
   return (
     <div className="w-full">
       <Card className="shadow-lg w-full max-w-none border-slate-200 dark:border-slate-700">
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           {/* Side-by-Side Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
             {/* Left Side - Original Image */}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
@@ -130,35 +104,38 @@ export function ImageBackgroundRemover() {
               <div className="relative">
                 <label
                   htmlFor="image-upload-bg"
-                  className="block w-full min-h-[450px] lg:min-h-[550px] xl:min-h-[600px] border-2 border-slate-200 dark:border-slate-700 rounded-xl cursor-pointer bg-white dark:bg-slate-900 hover:border-purple-400 dark:hover:border-purple-500 transition-all duration-300 overflow-hidden"
+                  className="block w-full h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl cursor-pointer bg-white hover:border-purple-400 dark:hover:border-purple-500 transition-all duration-300 overflow-hidden"
                 >
-                  {image ? (
-                    <div className="w-full h-full flex items-center justify-center p-4">
+                  {imageUrl ? (
+                    <div className="w-full h-full flex items-center justify-center p-4 bg-white">
                       <img 
-                        src={image || "/placeholder.svg"} 
+                        src={imageUrl || "/placeholder.svg"} 
                         alt="Original" 
-                        className="max-w-full max-h-[530px] lg:max-h-[630px] xl:max-h-[680px] object-contain rounded-lg" 
+                        className="max-w-full max-h-full object-contain" 
                       />
                     </div>
                   ) : (
-                    <div className="flex flex-col items-center justify-center h-full min-h-[450px] lg:min-h-[550px] xl:min-h-[600px] px-6">
-                      <div className="p-6 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mb-6">
-                        <Upload className="w-12 h-12 text-white" />
+                    <div className="flex flex-col items-center justify-center h-full px-6">
+                      <div className="relative mb-6">
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full blur-xl opacity-30"></div>
+                        <div className="relative p-8 bg-gradient-to-br from-purple-500 via-purple-600 to-blue-600 rounded-full shadow-2xl">
+                          <Upload className="w-16 h-16 text-white" />
+                        </div>
                       </div>
-                      <p className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2">
+                      <p className="text-xl font-bold text-slate-900 mb-2">
                         Click to upload or drag and drop
                       </p>
-                      <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+                      <p className="text-sm font-medium text-slate-700 mb-4">
                         PNG, JPG, JPEG, WebP (MAX. 10MB)
                       </p>
                       <div className="flex gap-2 flex-wrap justify-center">
-                        <span className="px-4 py-1.5 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs text-slate-600 dark:text-slate-400">
+                        <span className="px-4 py-1.5 bg-slate-800 text-white rounded-full text-xs font-medium shadow-sm">
                           Product Photos
                         </span>
-                        <span className="px-4 py-1.5 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs text-slate-600 dark:text-slate-400">
+                        <span className="px-4 py-1.5 bg-slate-800 text-white rounded-full text-xs font-medium shadow-sm">
                           Portraits
                         </span>
-                        <span className="px-4 py-1.5 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs text-slate-600 dark:text-slate-400">
+                        <span className="px-4 py-1.5 bg-slate-800 text-white rounded-full text-xs font-medium shadow-sm">
                           Logos
                         </span>
                       </div>
@@ -168,7 +145,7 @@ export function ImageBackgroundRemover() {
                 </label>
               </div>
 
-              {image && !loading && !processedImage && (
+              {imageUrl && !isProcessing && !result && (
                 <div className="flex justify-center">
                   <Button size="sm" variant="outline" onClick={resetAll} className="gap-2">
                     <RotateCcw className="h-4 w-4" />
@@ -182,7 +159,7 @@ export function ImageBackgroundRemover() {
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <h2 className="text-lg font-bold text-slate-800 dark:text-slate-200">Result</h2>
-                {processedImage && !loading && (
+                {result && !isProcessing && (
                   <div className="flex items-center gap-2 bg-green-50 dark:bg-green-900/20 px-3 py-1.5 rounded-full">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                     <span className="text-xs font-semibold text-green-700 dark:text-green-400">Complete</span>
@@ -190,47 +167,60 @@ export function ImageBackgroundRemover() {
                 )}
               </div>
 
-              <div className="relative w-full min-h-[450px] lg:min-h-[550px] xl:min-h-[600px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden bg-white dark:bg-slate-900">
-                {!image && !loading && (
-                  <div className="flex items-center justify-center h-full min-h-[450px] lg:min-h-[550px] xl:min-h-[600px]">
-                    <div className="text-center px-6">
-                      <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-                        <FileText className="w-12 h-12 text-slate-400" />
+              <div 
+                className="relative w-full h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"
+                style={{
+                  background: '#ffffff',
+                  backgroundImage: 'repeating-conic-gradient(#d1d5db 0% 25%, #ffffff 0% 50%)',
+                  backgroundSize: '20px 20px',
+                  backgroundPosition: '0 0, 10px 10px',
+                }}
+              >
+                {!imageUrl && !isProcessing && (
+                  <div className="flex items-center justify-center h-full">
+                    <div className="text-center px-6 bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-lg">
+                      <div className="relative mb-4">
+                        <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full blur-lg opacity-20"></div>
+                        <div className="relative w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-xl">
+                          <FileText className="w-12 h-12 text-white" />
+                        </div>
                       </div>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">
+                      <p className="text-sm font-semibold text-slate-900">
                         Upload an image to see the result
+                      </p>
+                      <p className="text-xs text-slate-600 mt-2">
+                        Checkered pattern shows transparency
                       </p>
                     </div>
                   </div>
                 )}
 
-                {loading && (
-                  <div className="flex flex-col items-center justify-center h-full min-h-[450px] lg:min-h-[550px] xl:min-h-[600px] space-y-4">
-                    <LoadingSpinner />
-                    <div className="text-center space-y-2">
-                      <p className="text-base font-semibold text-slate-700 dark:text-slate-300">Removing background...</p>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">This usually takes a few seconds</p>
+                {isProcessing && (
+                  <div className="flex flex-col items-center justify-center h-full">
+                    <div className="bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-lg">
+                      <div className="flex flex-col items-center space-y-4">
+                        <LoadingSpinner />
+                        <div className="text-center space-y-2">
+                          <p className="text-base font-semibold text-slate-900">{status.message}</p>
+                          <p className="text-sm font-medium text-slate-700">This usually takes a few seconds</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
 
-                {processedImage && !loading && (
-                  <div 
-                    className="w-full h-full min-h-[450px] lg:min-h-[550px] xl:min-h-[600px] flex items-center justify-center p-4"
-                    style={{
-                      backgroundImage: 'repeating-conic-gradient(#e5e7eb 0% 25%, #ffffff 0% 50%) 50% / 20px 20px',
-                    }}
-                  >
+                {result && !isProcessing && (
+                  <div className="w-full h-full flex items-center justify-center p-4">
                     <img 
-                      src={processedImage} 
+                      src={result.resultUrl} 
                       alt="Background removed" 
-                      className="max-w-full max-h-[530px] lg:max-h-[630px] xl:max-h-[680px] object-contain"
+                      className="max-w-full max-h-full object-contain drop-shadow-2xl"
                     />
                   </div>
                 )}
               </div>
 
-              {processedImage && !loading && (
+              {result && !isProcessing && (
                 <div className="space-y-3">
                   <Button 
                     onClick={downloadImage} 
@@ -245,7 +235,7 @@ export function ImageBackgroundRemover() {
                       <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                       <span className="font-medium">AI-Powered Background Removal</span>
                     </div>
-                    <span>Processing time: 10875ms</span>
+                    <span>Processing time: {result.processingTime.toFixed(0)}ms</span>
                   </div>
 
                   <Button 
@@ -262,8 +252,21 @@ export function ImageBackgroundRemover() {
             </div>
           </div>
 
+          {/* Processing Button */}
+          {imageUrl && !isProcessing && !result && (
+            <div className="mt-6 text-center">
+              <Button 
+                onClick={startProcessing} 
+                className="gap-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold px-8 py-6 text-base"
+              >
+                <Zap className="h-5 w-5" />
+                Remove Background
+              </Button>
+            </div>
+          )}
+
           {/* Error State */}
-          {error && (
+          {status.stage === "error" && (
             <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl">
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 p-1">
@@ -272,7 +275,7 @@ export function ImageBackgroundRemover() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-red-800 dark:text-red-200">{error}</p>
+                  <p className="text-sm font-medium text-red-800 dark:text-red-200">{status.message}</p>
                 </div>
               </div>
             </div>
@@ -282,3 +285,4 @@ export function ImageBackgroundRemover() {
     </div>
   )
 }
+
