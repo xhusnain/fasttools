@@ -431,6 +431,29 @@ export const metadata: Metadata = {
                 name: "Image Processing and Photo Editing",
                 description: "Free online tools for image blur effects, background processing, and photo editing"
             },
+            breadcrumb: {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                    {
+                        "@type": "ListItem",
+                        position: 1,
+                        name: "Home",
+                        item: "https://www.fasttools.store"
+                    },
+                    {
+                        "@type": "ListItem",
+                        position: 2,
+                        name: "Image Tools",
+                        item: "https://www.fasttools.store/image-tools"
+                    },
+                    {
+                        "@type": "ListItem",
+                        position: 3,
+                        name: "Image Background Blur",
+                        item: "https://www.fasttools.store/image-tools/image-blur"
+                    }
+                ]
+            },
             isPartOf: {
                 "@type": "WebSite",
                 name: "FastTools",

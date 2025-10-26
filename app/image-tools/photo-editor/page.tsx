@@ -178,6 +178,29 @@ export const metadata: Metadata = {
           width: 60,
           height: 60
         }
+      },
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.fasttools.store"
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Image Tools",
+            item: "https://www.fasttools.store/image-tools"
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Photo Editor",
+            item: "https://www.fasttools.store/image-tools/photo-editor"
+          }
+        ]
       }
     }),
   },

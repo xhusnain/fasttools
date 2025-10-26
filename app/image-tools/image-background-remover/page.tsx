@@ -449,6 +449,29 @@ export const metadata: Metadata = {
                 name: "Background Removal and Image Editing",
                 description: "Free online tools for background removal, image editing, and photo processing"
             },
+            breadcrumb: {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                    {
+                        "@type": "ListItem",
+                        position: 1,
+                        name: "Home",
+                        item: "https://www.fasttools.store"
+                    },
+                    {
+                        "@type": "ListItem",
+                        position: 2,
+                        name: "Image Tools",
+                        item: "https://www.fasttools.store/image-tools"
+                    },
+                    {
+                        "@type": "ListItem",
+                        position: 3,
+                        name: "Image Background Remover",
+                        item: "https://www.fasttools.store/image-tools/image-background-remover"
+                    }
+                ]
+            },
             isPartOf: {
                 "@type": "WebSite",
                 name: "FastTools",

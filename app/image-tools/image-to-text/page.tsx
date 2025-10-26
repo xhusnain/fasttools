@@ -633,6 +633,29 @@ export const metadata: Metadata = {
         name: "OCR and Text Extraction",
         description: "Free online tools for optical character recognition, text extraction from images, and document digitization"
       },
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.fasttools.store"
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Image Tools",
+            item: "https://www.fasttools.store/image-tools"
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Image to Text (OCR)",
+            item: "https://www.fasttools.store/image-tools/image-to-text"
+          }
+        ]
+      },
       isPartOf: {
         "@type": "WebSite",
         name: "FastTools",
