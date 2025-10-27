@@ -8,7 +8,8 @@
     "lint": "next lint",
     "start": "next start",
     "download-models": "node scripts/download-models.js",
-    "prebuild": "node scripts/download-models.js"
+    "prebuild": "node scripts/download-models.js",
+    "index-now": "node scripts/submit-to-indexnow.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
