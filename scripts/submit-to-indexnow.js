@@ -238,10 +238,14 @@ async function submitToIndexNow(urls) {
         return { success: false, error: 'Bad Request', count: 0 };
       
       case 403:
-        logError(`Forbidden: API key not valid`);
-        logError(`Make sure the key file exists at: ${CONFIG.keyLocation}`);
-        logError(`Response: ${response.body}`);
-        return { success: false, error: 'Forbidden', count: 0 };
+        logWarning(`Forbidden: API key not valid (yet)`);
+        logInfo(`This is normal on first deployment - the key file isn't live yet`);
+        logInfo(`Key file location: ${CONFIG.keyLocation}`);
+        logInfo(`The URLs will be submitted on the next deployment`);
+        if (response.body) {
+          log(`Response: ${response.body}`, colors.dim);
+        }
+        return { success: false, error: 'Forbidden (First deployment)', count: 0 };
       
       case 422:
         logError(`Unprocessable Entity: URLs don't belong to host or key mismatch`);
@@ -350,8 +354,13 @@ async function main() {
     log(`Finished at: ${new Date().toLocaleString()}`, colors.dim);
     log(`Total time: ${duration}s`, colors.dim);
     
-    // Exit with appropriate code
-    process.exit(failedSubmissions > 0 ? 1 : 0);
+    // Don't fail the build even if submission fails
+    // This allows first-time deployments to succeed
+    if (failedSubmissions > 0) {
+      logWarning('Some submissions failed, but build will continue');
+      logInfo('The URLs will be submitted on the next deployment');
+    }
+    process.exit(0);
     
   } catch (error) {
     logHeader('Error');
@@ -359,7 +368,10 @@ async function main() {
     if (error.stack) {
       log(error.stack, colors.dim);
     }
-    process.exit(1);
+    logWarning('Error occurred, but build will continue');
+    logInfo('IndexNow submission will be retried on next deployment');
+    // Don't fail the build
+    process.exit(0);
   }
 }
 
