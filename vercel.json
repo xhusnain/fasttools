@@ -1,5 +1,11 @@
 {
   "buildCommand": "pnpm run build",
   "installCommand": "pnpm install --ignore-scripts=false",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "crons": [
+    {
+      "path": "/api/indexnow",
+      "schedule": "1 0 * * *"
+    }
+  ]
 }
