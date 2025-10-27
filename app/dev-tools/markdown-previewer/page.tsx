@@ -208,7 +208,7 @@ export const metadata: Metadata = {
           ratingCount: "2186",
           bestRating: "5",
           worstRating: "1"
-        },
+      },
       featureList: [
           "Live markdown preview with split view",
           "GitHub Flavored Markdown (GFM) support",
@@ -702,7 +702,7 @@ export default function MarkdownPreviewerPage() {
                     <div>
                       <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">Can you use Markdown in ChatGPT?</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Yes! You can use markdown in ChatGPT both in your prompts and ChatGPT uses markdown in its responses. ChatGPT supports **bold**, *italic*, `inline code`, ```code blocks```, - lists, 1. numbered lists, > blockquotes, # headings, [links](url), tables, and horizontal rules. To format your questions or request markdown output, just use markdown syntax. ChatGPT will automatically render basic formatting, and you can copy its markdown responses into our previewer for full rendering with syntax highlighting.
+                        Yes! You can use markdown in ChatGPT both in your prompts and ChatGPT uses markdown in its responses. ChatGPT supports **bold**, *italic*, `inline code`, ```code blocks```, - lists, 1. numbered lists, {">"} blockquotes, # headings, [links](url), tables, and horizontal rules. To format your questions or request markdown output, just use markdown syntax. ChatGPT will automatically render basic formatting, and you can copy its markdown responses into our previewer for full rendering with syntax highlighting.
                       </p>
                     </div>
 

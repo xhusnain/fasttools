@@ -255,22 +255,22 @@ export const metadata: Metadata = {
         ]
       },
       {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
         name: "HTML Converter - Free Format Converter Online",
         alternateName: ["HTML to Markdown Converter", "Universal Format Converter", "Multi Format Converter Online", "HTML Formatter and Beautifier"],
-        applicationCategory: "DeveloperApplication",
-        operatingSystem: "Web Browser",
-        url: "https://www.fasttools.store/dev-tools/html-to-markdown",
+      applicationCategory: "DeveloperApplication",
+      operatingSystem: "Web Browser",
+      url: "https://www.fasttools.store/dev-tools/html-to-markdown",
         description: "Free HTML converter and format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML instantly. Professional HTML formatter, HTML beautifier, HTML validator, and HTML parser with auto-conversion, validation, and instant download. No signup required.",
-        inLanguage: "en",
-        isAccessibleForFree: true,
-        offers: { 
-          "@type": "Offer", 
-          price: "0", 
-          priceCurrency: "USD",
-          availability: "https://schema.org/InStock"
-        },
+      inLanguage: "en",
+      isAccessibleForFree: true,
+      offers: { 
+        "@type": "Offer", 
+        price: "0", 
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock"
+      },
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: "4.9",
@@ -278,7 +278,7 @@ export const metadata: Metadata = {
           bestRating: "5",
           worstRating: "1"
         },
-        featureList: [
+      featureList: [
           "HTML to Markdown converter",
           "Markdown to HTML converter", 
           "JSON to YAML converter",
@@ -294,40 +294,40 @@ export const metadata: Metadata = {
           "7 formats supported",
           "Real-time validation",
           "No signup required"
-        ],
-        author: {
-          "@type": "Organization",
-          name: "FastTools",
-          url: "https://www.fasttools.store"
-        },
-        publisher: { 
-          "@type": "Organization", 
-          name: "FastTools", 
-          url: "https://www.fasttools.store",
-          logo: {
-            "@type": "ImageObject",
-            url: "https://www.fasttools.store/logo.svg",
-            width: 320,
-            height: 80
-          }
-        },
-        datePublished: "2024-01-01",
-        dateModified: new Date().toISOString().split('T')[0],
-        version: "2.0",
-        softwareVersion: "2.0",
-        downloadUrl: "https://www.fasttools.store/dev-tools/html-to-markdown",
-        screenshot: "https://www.fasttools.store/og-image.svg",
+      ],
+      author: {
+        "@type": "Organization",
+        name: "FastTools",
+        url: "https://www.fasttools.store"
+      },
+      publisher: { 
+        "@type": "Organization", 
+        name: "FastTools", 
+        url: "https://www.fasttools.store",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://www.fasttools.store/logo.svg",
+          width: 320,
+          height: 80
+        }
+      },
+      datePublished: "2024-01-01",
+      dateModified: new Date().toISOString().split('T')[0],
+      version: "2.0",
+      softwareVersion: "2.0",
+      downloadUrl: "https://www.fasttools.store/dev-tools/html-to-markdown",
+      screenshot: "https://www.fasttools.store/og-image.svg",
         keywords: "html converter, format converter online, html to markdown, markdown to html, html formatter, html beautifier, html validator, html parser, json to yaml, yaml to json, xml to json, csv to json, toml converter, html to json, html to xml, html to csv, free format converter",
-        about: {
-          "@type": "Thing",
+      about: {
+        "@type": "Thing",
           name: "HTML Format Conversion and Processing",
           description: "Free online tools for converting between HTML, Markdown, JSON, YAML, XML, CSV, and TOML formats with formatting, beautification, and validation capabilities"
-        },
-        isPartOf: {
-          "@type": "WebSite",
-          name: "FastTools",
-          url: "https://www.fasttools.store"
-        }
+      },
+      isPartOf: {
+        "@type": "WebSite",
+        name: "FastTools",
+        url: "https://www.fasttools.store"
+      }
       },
       {
         "@context": "https://schema.org",

@@ -715,8 +715,8 @@ const devTools = [
     popular: true,
   },
   {
-    title: "Color Palette Generator",
-    description: "Generate beautiful color schemes for your projects. Perfect for UI/UX design and frontend development.",
+    title: "1000+ Free Color Palettes",
+    description: "Explore 1000+ free color palettes with HEX codes for websites, branding & UI/UX design. 43 categories including aesthetic, pastel, vintage & modern themes.",
     href: "/dev-tools/color-palette",
     icon: Palette,
   },
@@ -756,7 +756,7 @@ const jsonLd = {
       { "@type": "ListItem", position: 2, name: "Regex Tester", description: "Test and debug regular expressions with live matching", url: "https://www.fasttools.store/dev-tools/regex-tester" },
       { "@type": "ListItem", position: 3, name: "JSON to CSV Converter", description: "Convert JSON data to CSV format quickly and easily", url: "https://www.fasttools.store/dev-tools/json-to-csv" },
       { "@type": "ListItem", position: 4, name: "HTML Beautifier", description: "Format and beautify HTML code for better readability", url: "https://www.fasttools.store/dev-tools/html-beautifier" },
-      { "@type": "ListItem", position: 5, name: "Color Palette Generator", description: "Generate beautiful color schemes for your projects", url: "https://www.fasttools.store/dev-tools/color-palette" },
+      { "@type": "ListItem", position: 5, name: "1000+ Free Color Palettes", description: "Explore 1000+ free color palettes with HEX codes for websites, branding & UI/UX design. 43 categories including aesthetic, pastel, vintage & modern themes", url: "https://www.fasttools.store/dev-tools/color-palette" },
       { "@type": "ListItem", position: 6, name: "Hex to RGB Converter", description: "Convert hex colors to RGB values instantly", url: "https://www.fasttools.store/dev-tools/hex-to-rgb" },
       { "@type": "ListItem", position: 7, name: "Markdown Previewer", description: "Live preview your Markdown content", url: "https://www.fasttools.store/dev-tools/markdown-previewer" },
       { "@type": "ListItem", position: 8, name: "HTML to Markdown", description: "Convert HTML to Markdown format", url: "https://www.fasttools.store/dev-tools/html-to-markdown" }

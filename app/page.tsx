@@ -112,7 +112,8 @@ export default function HomePage() {
       "word counter",
       "character counter",
       "random number generator",
-      "color palette generator",
+      "free color palettes",
+      "color palette library",
       "invoice generator",
       "online tools free",
       "web based tools",
@@ -318,7 +319,7 @@ export default function HomePage() {
           name: "What developer tools can help with coding and web development?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Our developer tools include HTML beautifier for code formatting, JSON formatter for data validation, regex tester for pattern matching, JWT decoder for token analysis, base64 encoder/decoder for data encoding, and color palette generator for design. These tools help developers write better code, debug more effectively, and streamline their development workflow."
+            text: "Our developer tools include HTML beautifier for code formatting, JSON formatter for data validation, regex tester for pattern matching, JWT decoder for token analysis, base64 encoder/decoder for data encoding, and 1000+ free color palettes with HEX codes for design. These tools help developers write better code, debug more effectively, and streamline their development workflow."
           }
         },
         {
@@ -422,7 +423,7 @@ export default function HomePage() {
           name: "What service can help me design professional graphics without experience?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "For graphic design without experience, we recommend Canva, Figma, or Adobe Express. Our image tools support graphic design with image cropper for resizing, color palette generator for color schemes, QR code generator for marketing materials, and image converter for format optimization. These tools work alongside design platforms to help create professional graphics, social media posts, and marketing materials without design expertise."
+            text: "For graphic design without experience, we recommend Canva, Figma, or Adobe Express. Our image tools support graphic design with image cropper for resizing, 1000+ free color palettes with HEX codes for color schemes, QR code generator for marketing materials, and image converter for format optimization. These tools work alongside design platforms to help create professional graphics, social media posts, and marketing materials without design expertise."
           }
         },
         {
@@ -2308,7 +2309,7 @@ export default function HomePage() {
                       Our <strong>developer tools</strong> include <strong>HTML beautifier</strong> for code formatting, 
                       <strong>JSON formatter</strong> for data validation, <strong>regex tester</strong> for pattern matching, 
                       <strong>JWT decoder</strong> for token analysis, <strong>base64 encoder/decoder</strong> for data encoding, 
-                      and <strong>color palette generator</strong> for design. These tools help developers write better code, 
+                      and <strong>1000+ free color palettes</strong> with HEX codes for design. These tools help developers write better code, 
                       debug more effectively, and streamline their development workflow.
                     </p>
                   </CardContent>
