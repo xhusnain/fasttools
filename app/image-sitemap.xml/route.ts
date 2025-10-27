@@ -110,6 +110,11 @@ export async function GET() {
       priority: 0.8,
       images: [
         {
+          url: "https://www.fasttools.store/dev-image-2.jpg",
+          title: "Free Developer Tools Online - Chrome DevTools, Safari, React Developer Tools",
+          caption: "Professional developer tools collection featuring Chrome DevTools, Safari developer tools, React developer tools, JWT decoder, regex tester, and essential coding utilities for web development"
+        },
+        {
           url: "https://www.fasttools.store/banner.png",
           title: "Developer Tools - Programming and Web Development",
           caption: "FastTools Developer Tools collection for programmers and web developers"

@@ -550,6 +550,56 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
 
+    // Developer Tools
+    {
+      url: "https://www.fasttools.store/dev-tools/jwt-decoder",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/dev-tools/regex-tester",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/dev-tools/json-to-csv",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    {
+      url: "https://www.fasttools.store/dev-tools/html-beautifier",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/dev-tools/color-palette",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/dev-tools/hex-to-rgb",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    {
+      url: "https://www.fasttools.store/dev-tools/html-to-markdown",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    {
+      url: "https://www.fasttools.store/dev-tools/markdown-previewer",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+
     // Image Tools
     {
       url: "https://www.fasttools.store/image-tools/image-background-remover",

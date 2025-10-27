@@ -3,13 +3,54 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { Download, Copy, Check } from "lucide-react"
+import { Download, Copy, Check, Sparkles } from "lucide-react"
+
+const SAMPLE_JSON = `[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "age": 30,
+    "city": "New York",
+    "department": "Engineering"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "age": 28,
+    "city": "San Francisco",
+    "department": "Design"
+  },
+  {
+    "id": 3,
+    "name": "Bob Johnson",
+    "email": "bob@example.com",
+    "age": 35,
+    "city": "Chicago",
+    "department": "Marketing"
+  },
+  {
+    "id": 4,
+    "name": "Alice Brown",
+    "email": "alice@example.com",
+    "age": 32,
+    "city": "Boston",
+    "department": "Sales"
+  }
+]`
 
 export function JSONToCSV() {
   const [json, setJson] = useState("")
   const [csv, setCsv] = useState("")
   const [error, setError] = useState("")
   const [copied, setCopied] = useState(false)
+
+  const loadSampleData = () => {
+    setJson(SAMPLE_JSON)
+    setError("")
+    setCsv("")
+  }
 
   const convertToCSV = () => {
     setError("")
@@ -71,12 +112,23 @@ export function JSONToCSV() {
   return (
     <div className="space-y-6">
       <div className="space-y-2">
-        <label className="text-sm font-medium text-foreground">JSON Input</label>
+        <div className="flex items-center justify-between">
+          <label className="text-sm font-medium text-foreground">JSON Input</label>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={loadSampleData}
+            className="gap-1.5 text-xs"
+          >
+            <Sparkles className="h-3.5 w-3.5" />
+            Try Sample Data
+          </Button>
+        </div>
         <Textarea
           placeholder='[{"name": "John", "age": 30}, {"name": "Jane", "age": 25}]'
           value={json}
           onChange={(e) => setJson(e.target.value)}
-          className="min-h-48 font-mono text-sm"
+          className="min-h-48 font-mono text-sm border-2 border-orange-300 focus:border-orange-500"
         />
       </div>
 
@@ -114,7 +166,7 @@ export function JSONToCSV() {
               </Button>
             </div>
           </div>
-          <Textarea value={csv} readOnly className="min-h-48 font-mono text-sm" />
+          <Textarea value={csv} readOnly className="min-h-48 font-mono text-sm border-2 border-green-300 focus:border-green-500" />
         </div>
       )}
     </div>
