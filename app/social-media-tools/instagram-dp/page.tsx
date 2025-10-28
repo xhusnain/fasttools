@@ -6,10 +6,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ArrowRight, User, Eye, Download, Shield } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Instagram DP Viewer | View & Download Profile Pictures | FastTools",
+  title: "FastTools - Instagram DP Viewer | Free View & Download Profile Pictures",
   description:
-    "View and download Instagram profile pictures in HD quality. Free Instagram DP viewer tool for public accounts.",
+    "FastTools Instagram DP Viewer - View and download Instagram profile pictures in HD quality. Free Instagram DP viewer tool for public accounts.",
   keywords:[
+      "fasttools",
+      "fast tools",
       "instagram dp viewer",
       "instagram profile picture viewer",
       "instagram dp downloader",

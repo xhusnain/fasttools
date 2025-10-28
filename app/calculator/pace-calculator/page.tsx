@@ -5,9 +5,11 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Pace Calculator | Advanced Running Pace Calculator | FastTools",
-  description: "Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max. Perfect for runners, coaches, and athletes.",
+  title: "FastTools - Pace Calculator | Free Advanced Running Pace Calculator",
+  description: "FastTools Pace Calculator - Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max. Perfect for runners, coaches, and athletes.",
     keywords: [
+        "fasttools",
+        "fast tools",
         "pace calculator",
         "running pace calculator",
         "running pace",

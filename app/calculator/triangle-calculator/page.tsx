@@ -22,9 +22,11 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-    title: "Triangle Calculator | Area, Perimeter & Angles | FastTools",
-    description: "Advanced triangle calculator with area, perimeter, angles, heights, medians, inradius, circumradius calculations. Supports SSS, SAS, ASA, AAS, SSA triangle solving methods.",
+    title: "FastTools - Triangle Calculator | Free Area, Perimeter & Angles Calculator",
+    description: "FastTools Triangle Calculator - Advanced calculator with area, perimeter, angles, heights, medians, inradius, circumradius calculations. Supports SSS, SAS, ASA, AAS, SSA triangle solving methods.",
     keywords: [
+        "fasttools",
+        "fast tools",
         "triangle calculator",
         "triangle area calculator",
         "triangle perimeter calculator",

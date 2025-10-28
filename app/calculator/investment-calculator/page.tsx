@@ -5,9 +5,11 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Investment Calculator | Advanced Portfolio Calculator | FastTools",
-  description: "Professional investment calculator for portfolio analysis. Calculate end amount, return rate, starting amount, additional contributions, and investment length.",
+  title: "FastTools - Investment Calculator | Free Advanced Portfolio Calculator",
+  description: "FastTools Investment Calculator - Professional tool for portfolio analysis. Calculate end amount, return rate, starting amount, additional contributions, and investment length.",
     keywords: [
+        "fasttools",
+        "fast tools",
         "investment calculator",
         "investment return calculator",
         "investment growth calculator",

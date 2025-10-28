@@ -5,9 +5,11 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Finance Calculator | Advanced TVM Calculator | FastTools",
-  description: "Professional finance calculator for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules and investment analysis.",
+  title: "FastTools - Finance Calculator | Free Advanced TVM Calculator",
+  description: "FastTools Finance Calculator - Professional tool for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules and investment analysis.",
     keywords: [
+        "fasttools",
+        "fast tools",
         "finance calculator",
         "financial calculator",
         "loan calculator",

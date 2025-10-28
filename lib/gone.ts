@@ -85,6 +85,7 @@ export const goneUrls = new Set([
   // Other removed pages
   '/social-media-tools/youtube-downloader',
   '/resources',
+    "/announcements"
 ])
 
 /**

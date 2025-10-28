@@ -5,9 +5,11 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Inflation Calculator | Advanced CPI Calculator | FastTools",
-  description: "Professional inflation calculator with historical CPI data from 1913-2025. Calculate purchasing power, inflation rates, and investment strategies with comprehensive economic analysis.",
+  title: "FastTools - Inflation Calculator | Free Advanced CPI Calculator",
+  description: "FastTools Inflation Calculator - Professional tool with historical CPI data from 1913-2025. Calculate purchasing power, inflation rates, and investment strategies with comprehensive economic analysis.",
     keywords: [
+        "fasttools",
+        "fast tools",
         "inflation calculator",
         "CPI inflation calculator",
         "consumer price index calculator",

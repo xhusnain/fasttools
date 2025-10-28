@@ -5,7 +5,7 @@ import { Calculator, Ruler, Thermometer, DollarSign, Clock, Weight, Volume, Squa
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free Online Unit Converter 2025 | 1000+ Unit Conversions | FastTools",
+  title: "FastTools - Unit Converter 2025 | Free 1000+ Unit Conversions",
   description:
     "Convert between 1000+ units instantly with our comprehensive conversion calculator. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions.",
   abstract: "Professional unit conversion calculator supporting 1000+ units across 12+ categories. Convert length, weight, temperature, currency, time, area, volume, speed, power, energy, and pressure with mathematical precision.",

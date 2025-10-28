@@ -6,10 +6,12 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "File Size Converter | KB to MB, GB to TB | FastTools",
+  title: "FastTools - File Size Converter | Free KB to MB, GB to TB Converter",
   description:
-    "Convert file sizes instantly: KB to MB, GB to TB, PB to EB with decimal (SI) and binary (IEC) units. Free online data size calculator for cloud storage and backups.",
+    "FastTools File Size Converter - Convert file sizes instantly: KB to MB, GB to TB, PB to EB with decimal (SI) and binary (IEC) units. Free online data size calculator for cloud storage and backups.",
   keywords: [
+    "fasttools",
+    "fast tools",
     "file size converter",
     "free file size converter",
     "file size in kb",

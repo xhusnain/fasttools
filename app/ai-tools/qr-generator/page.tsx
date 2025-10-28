@@ -9,7 +9,7 @@ const currentYear = new Date().getFullYear()
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: `Free QR Code Generator ${currentYear} - No Sign Up, No Expiration | WiFi, vCard, Logo & Bulk Generation FREE`,
+  title: `FastTools - QR Code Generator ${currentYear} | Free WiFi, vCard, Logo & Bulk QR Codes`,
   description:
     `The best free QR code generator ${currentYear}! Create unlimited QR codes - WiFi, vCard, email, WhatsApp, location. Logo embedding, bulk generation, SVG export. No watermark, no sign up, no expiration. All premium features competitors charge $19-99/month - FREE forever. Make QR codes instantly online.`,
   applicationName: "FastTools - Free QR Code Generator",

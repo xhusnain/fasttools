@@ -5,10 +5,12 @@ import { Calculator } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "BMI Calculator | Calculate Your Body Mass Index | FastTools",
+  title: "FastTools - BMI Calculator | Free Body Mass Index Calculator",
   description:
-    "Free BMI Calculator to determine your Body Mass Index. Find out if you're underweight, normal, overweight, or obese based on WHO standards.",
+    "FastTools BMI Calculator - Free tool to determine your Body Mass Index. Find out if you're underweight, normal, overweight, or obese based on WHO standards.",
   keywords: [
+    "fasttools",
+    "fast tools",
     "BMI calculator",
     "body mass index calculator",
     "BMI calculator online",

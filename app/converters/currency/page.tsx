@@ -7,10 +7,12 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Currency Converter | Real-Time Exchange Rates | FastTools",
+  title: "FastTools - Currency Converter | Free Real-Time Exchange Rates",
   description:
-    "Convert currencies instantly with live exchange rates. Free currency converter with multiple currencies and export results. Fast, accurate, mobile-friendly.",
+    "FastTools Currency Converter - Convert currencies instantly with live exchange rates. Free currency converter with multiple currencies and export results. Fast, accurate, mobile-friendly.",
   keywords: [
+    "fasttools",
+    "fast tools",
       "currency converter API",
       "free currency converter API",
       "live currency converter API",

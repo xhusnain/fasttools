@@ -5,9 +5,11 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Calorie Calculator | Advanced Daily Calorie Needs | FastTools",
-  description: "Calculate your daily calorie needs with our advanced calorie calculator. Get BMR, TDEE, weight management goals, and personalized nutrition recommendations.",
+  title: "FastTools - Calorie Calculator | Free Daily Calorie Needs Calculator",
+  description: "FastTools Calorie Calculator - Calculate your daily calorie needs with our advanced calorie calculator. Get BMR, TDEE, weight management goals, and personalized nutrition recommendations.",
     keywords: [
+        "fasttools",
+        "fast tools",
         "calorie calculator",
         "daily calorie calculator",
         "calorie calculator to lose weight",

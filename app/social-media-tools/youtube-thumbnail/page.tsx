@@ -6,10 +6,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ArrowRight, ImageIcon, Download, Copy, Check } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "YouTube Thumbnail Downloader - Download HD Thumbnails | FastTools",
+  title: "FastTools - YouTube Thumbnail Downloader | Free Download HD Thumbnails",
   description:
-    "Download YouTube video thumbnails in all available quality sizes. Get maximum quality (1280x720), high quality, medium, and standard thumbnails instantly.",
+    "FastTools YouTube Thumbnail Downloader - Download YouTube video thumbnails in all available quality sizes. Get maximum quality (1280x720), high quality, medium, and standard thumbnails instantly.",
     keywords :[
+        "fasttools",
+        "fast tools",
         "youtube thumbnail downloader",
         "youtube video thumbnail downloader",
         "youtube thumbnail download",

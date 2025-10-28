@@ -24,7 +24,7 @@ import {
 const currentYear = new Date().getFullYear()
 
 export const metadata: Metadata = {
-  title: `AI Pet Name Generator ${currentYear} - 100 Free Names | Dogs, Cats, Puppies, Kittens & All Pets`,
+  title: `FastTools - AI Pet Name Generator ${currentYear} | Free 100 Names for Dogs, Cats & All Pets`,
   description: `Generate 100 unique pet names instantly with AI in ${currentYear}! Free pet name generator for dogs, cats, puppies, kittens & all animals. Get names by personality, breed, color & meaning. Popular, unique, cute & cool names. Works for male, female & all pets. No sign up required - Start now!`,
   keywords: [
     // Primary Focus Keywords

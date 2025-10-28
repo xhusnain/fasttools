@@ -6,10 +6,12 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Temperature Converter | Celsius ⇄ Fahrenheit | FastTools",
+  title: "FastTools - Temperature Converter | Free Celsius ⇄ Fahrenheit Converter",
   description:
-    "Convert temperatures instantly between Celsius and Fahrenheit. Ideal for weather, cooking, science projects, and travel.",
+    "FastTools Temperature Converter - Convert temperatures instantly between Celsius and Fahrenheit. Ideal for weather, cooking, science projects, and travel.",
   keywords: [
+    "fasttools",
+    "fast tools",
     "temperature converter",
     "free temperature converter",
     "celsius to fahrenheit",

@@ -5,9 +5,11 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Standard Deviation Calculator | Statistics Tool | FastTools",
-  description: "Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes for data analysis.",
+  title: "FastTools - Standard Deviation Calculator | Free Statistics Tool",
+  description: "FastTools Standard Deviation Calculator - Calculate standard deviation, variance, mean, and confidence intervals instantly. Advanced statistics calculator with population and sample modes for data analysis.",
     keywords: [
+        "fasttools",
+        "fast tools",
         "standard deviation calculator",
         "online standard deviation calculator",
         "sample standard deviation calculator",

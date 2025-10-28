@@ -5,9 +5,11 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "BMR Calculator | Basal Metabolic Rate Calculator | FastTools",
-  description: "Calculate your BMR (Basal Metabolic Rate) with advanced calculator. Get accurate calorie needs, TDEE, weight management goals, and personalized nutrition recommendations.",
+  title: "FastTools - BMR Calculator | Free Basal Metabolic Rate Calculator",
+  description: "FastTools BMR Calculator - Calculate your Basal Metabolic Rate with advanced calculator. Get accurate calorie needs, TDEE, weight management goals, and personalized nutrition recommendations.",
   keywords: [
+    "fasttools",
+    "fast tools",
     "bmr calculator",
     "basal metabolic rate calculator",
     "bmr calculation",

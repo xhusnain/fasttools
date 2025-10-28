@@ -33,9 +33,11 @@ import {
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "IP Subnet Calculator | IPv4 IPv6 CIDR | FastTools",
-  description: "Calculate IPv4/IPv6 subnets, CIDR notation, VLSM, and supernetting. Perfect for network engineers, IT professionals, and students. Fast, accurate, easy to use.",
+  title: "FastTools - IP Subnet Calculator | Free IPv4 IPv6 CIDR Calculator",
+  description: "FastTools IP Subnet Calculator - Calculate IPv4/IPv6 subnets, CIDR notation, VLSM, and supernetting. Perfect for network engineers, IT professionals, and students. Fast, accurate, easy to use.",
   keywords: [
+    "fasttools",
+    "fast tools",
     "ip subnet calculator",
     "ipv4 subnet creator",
     "subnet calculator",

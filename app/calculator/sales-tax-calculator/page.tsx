@@ -5,9 +5,11 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Sales Tax Calculator | Advanced State Tax Calculator | FastTools",
-  description: "Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, and compliance guidance.",
+  title: "FastTools - Sales Tax Calculator | Free Advanced State Tax Calculator",
+  description: "FastTools Sales Tax Calculator - Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, and compliance guidance.",
     keywords: [
+        "fasttools",
+        "fast tools",
         "sales tax calculator",
         "sales tax rate calculator",
         "reverse sales tax calculator",

@@ -7,9 +7,11 @@ import { ApiKeyGenerator } from "@/components/api-key-generator"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Currency API Documentation | Free Currency Exchange API | FastTools",
-  description: "Free currency exchange API with real-time rates, historical data, and currency conversion. Get started with FastTools.store Currency API in minutes.",
+  title: "FastTools - Currency API | Free Currency Exchange API Documentation",
+  description: "FastTools Currency API - Free currency exchange API with real-time rates, historical data, and currency conversion. Get started with FastTools.store Currency API in minutes.",
   keywords: [
+    "fasttools",
+    "fast tools",
     "currency api",
     "exchange rate api",
     "free currency api",

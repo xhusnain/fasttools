@@ -38,9 +38,11 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Payment Calculator | Advanced Loan Payment Calculator | FastTools",
-  description: "Calculate loan payments with advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations.",
+  title: "FastTools - Payment Calculator | Free Advanced Loan Payment Calculator",
+  description: "FastTools Payment Calculator - Calculate loan payments with advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations.",
     keywords: [
+        "fasttools",
+        "fast tools",
         "payment calculator",
         "loan payment calculator",
         "emi calculator",

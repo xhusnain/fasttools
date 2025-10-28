@@ -5,10 +5,12 @@ import { Percent, Calculator, TrendingUp, TrendingDown, Target, DollarSign, BarC
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Percentage Calculator | Accurate Math Tool | FastTools",
+  title: "FastTools - Percentage Calculator | Free Accurate Math Tool",
   description:
-    "Free percentage calculator for all math needs. Calculate percentage increase, decrease, difference, discounts, tips, grades, profit margins. Accurate and quick.",
+    "FastTools Percentage Calculator - Free tool for all math needs. Calculate percentage increase, decrease, difference, discounts, tips, grades, profit margins. Accurate and quick.",
   keywords: [
+    "fasttools",
+    "fast tools",
     "percentage calculator",
     "percentage increase calculator",
     "percentage decrease calculator",

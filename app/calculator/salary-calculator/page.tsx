@@ -5,9 +5,11 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Salary Calculator | Advanced Pay Frequency Calculator | FastTools",
-  description: "Convert salary amounts across all pay frequencies with holiday adjustments. Professional salary analysis, industry comparisons, and negotiation support.",
+  title: "FastTools - Salary Calculator | Free Advanced Pay Frequency Calculator",
+  description: "FastTools Salary Calculator - Convert salary amounts across all pay frequencies with holiday adjustments. Professional salary analysis, industry comparisons, and negotiation support.",
     keywords: [
+        "fasttools",
+        "fast tools",
         "salary calculator",
         "monthly salary calculator",
         "annual salary calculator",

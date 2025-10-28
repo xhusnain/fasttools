@@ -51,10 +51,12 @@ import {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Love Calculator | Free Love Compatibility Test | FastTools",
+  title: "FastTools - Love Calculator | Free Love Compatibility Test",
   description:
-    "Free love calculator to test compatibility between two people. Calculate love percentage, relationship compatibility, and love meter. Share your love match results with friends!",
+    "FastTools Love Calculator - Free tool to test compatibility between two people. Calculate love percentage, relationship compatibility, and love meter. Share your love match results with friends!",
     keywords: [
+        "fasttools",
+        "fast tools",
         "love calculator",
         "love meter",
         "love test",

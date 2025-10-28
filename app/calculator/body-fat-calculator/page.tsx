@@ -5,9 +5,11 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Body Fat Calculator | Advanced Body Fat Percentage | FastTools",
-  description: "Calculate your body fat percentage with advanced calculator. Uses U.S. Navy method and BMI method for accurate results with health recommendations.",
+  title: "FastTools - Body Fat Calculator | Free Body Fat Percentage Calculator",
+  description: "FastTools Body Fat Calculator - Calculate your body fat percentage with advanced calculator. Uses U.S. Navy method and BMI method for accurate results with health recommendations.",
     keywords: [
+        "fasttools",
+        "fast tools",
         "body fat calculator",
         "body fat percentage calculator",
         "body fat percentage",

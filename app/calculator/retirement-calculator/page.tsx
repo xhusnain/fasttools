@@ -5,9 +5,11 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent, Trophy } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Retirement Calculator | Advanced Planning Calculator | FastTools",
-  description: "Professional retirement calculator for comprehensive planning. Calculate savings, withdrawal amounts, and retirement income needs with inflation adjustments.",
+  title: "FastTools - Retirement Calculator | Free Advanced Planning Calculator",
+  description: "FastTools Retirement Calculator - Professional tool for comprehensive planning. Calculate savings, withdrawal amounts, and retirement income needs with inflation adjustments.",
     keywords: [
+        "fasttools",
+        "fast tools",
         "retirement calculator",
         "retirement planning calculator",
         "retirement savings calculator",

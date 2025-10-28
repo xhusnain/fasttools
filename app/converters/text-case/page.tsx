@@ -6,10 +6,12 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Text Case Converter | Uppercase, Lowercase, Title Case | FastTools",
+  title: "FastTools - Text Case Converter | Free Uppercase, Lowercase, Title Case Tool",
   description:
-    "Convert text to uppercase, lowercase, Title Case, Sentence case, camelCase, snake_case instantly. Clean formatting for writing and code.",
+    "FastTools Text Case Converter - Convert text to uppercase, lowercase, Title Case, Sentence case, camelCase, snake_case instantly. Clean formatting for writing and code.",
   keywords:[
+    "fasttools",
+    "fast tools",
     "text case converter",
     "case converter online",
     "uppercase to lowercase converter",

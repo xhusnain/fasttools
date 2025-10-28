@@ -5,9 +5,11 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent, Trophy } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Amortization Calculator | Advanced Loan Payment Calculator | FastTools",
-  description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings.",
+  title: "FastTools - Amortization Calculator | Free Loan Payment Calculator",
+  description: "FastTools Amortization Calculator - Professional tool for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings.",
     keywords: [
+        "fasttools",
+        "fast tools",
         "amortization calculator",
         "loan amortization calculator",
         "mortgage amortization calculator",

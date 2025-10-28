@@ -7,10 +7,12 @@ import { Calculator, Target, CheckCircle, Home, Car, CreditCard, GraduationCap, 
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "EMI Calculator | Home, Car & Personal Loans | FastTools",
+  title: "FastTools - EMI Calculator | Home, Car & Personal Loan Calculator Free",
   description:
-    "EMI Calculator to determine monthly installment amount based on loan amount, interest rate, and tenure. Perfect for home, car, education, and personal loans.",
+    "FastTools EMI Calculator - Calculate monthly installment amount based on loan amount, interest rate, and tenure. Perfect for home, car, education, and personal loans.",
   keywords: [
+    "fasttools",
+    "fast tools",
     "loan EMI calculator",
     "EMI calculator online",
     "home loan EMI calculator",

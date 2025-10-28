@@ -7,10 +7,12 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Length Converter | Meters, Feet, Inches, CM | FastTools",
+  title: "FastTools - Length Converter | Free Meters, Feet, Inches, CM Converter",
   description:
-    "Convert length units instantly: meters, feet, inches, centimeters, millimeters, kilometers, yards, miles. Accurate metric and imperial conversion tool.",
+    "FastTools Length Converter - Convert length units instantly: meters, feet, inches, centimeters, millimeters, kilometers, yards, miles. Accurate metric and imperial conversion tool.",
   keywords:[
+    "fasttools",
+    "fast tools",
     "length converter",
     "convert length",
     "length conversion",

@@ -5,9 +5,11 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Interest Rate Calculator | Advanced Loan Rate Calculator | FastTools",
-  description: "Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation and loan optimization.",
+  title: "FastTools - Interest Rate Calculator | Free Advanced Loan Rate Calculator",
+  description: "FastTools Interest Rate Calculator - Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation and loan optimization.",
     keywords: [
+        "fasttools",
+        "fast tools",
         "interest rate calculator",
         "loan interest rate calculator",
         "simple interest rate calculator",

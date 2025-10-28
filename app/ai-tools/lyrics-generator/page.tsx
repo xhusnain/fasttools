@@ -9,7 +9,7 @@ const currentYear = new Date().getFullYear()
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: `Best Free AI Lyrics Generator ${currentYear} | 40+ Languages | Create Original Song Lyrics Online`,
+  title: `FastTools - AI Lyrics Generator ${currentYear} | Free 40+ Languages Song Lyrics Creator`,
   description:
     `Generate song lyrics with AI in ${currentYear}! Free multilingual lyrics generator supporting 40+ languages (English, Spanish, Hindi, Urdu, Arabic, Chinese & more). All genres, moods & durations. No sign up. Professional songwriting tool for musicians.`,
   applicationName: "FastTools - AI Lyrics Generator",

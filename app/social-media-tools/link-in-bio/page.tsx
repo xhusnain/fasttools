@@ -6,9 +6,11 @@ import { Link, Zap, Target, Shield, Globe, Clock, FileText, Hash, Lightbulb, Cop
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Link in Bio Generator – Create All-in-One Bio Page",
-  description: "Create a free, customizable link in bio page for Instagram, TikTok, and more. Add unlimited links, social profiles, and buttons. Fast, secure, mobile-friendly.",
+  title: "FastTools - Link in Bio Generator | Free Create All-in-One Bio Page",
+  description: "FastTools Link in Bio Generator - Create a free, customizable link in bio page for Instagram, TikTok, and more. Add unlimited links, social profiles, and buttons. Fast, secure, mobile-friendly.",
   keywords: [
+    "fasttools",
+    "fast tools",
     "link in bio generator",
     "free link in bio tool",
     "Instagram bio link",

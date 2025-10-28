@@ -6,9 +6,13 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Meta Tag Generator | SEO Meta Tags | FastTools",
+  title: "FastTools - Meta Tag Generator | Free SEO Meta Tags Generator",
   description:
-    "Professional meta tag generator for SEO. Create title tags, meta descriptions, Open Graph tags, Twitter cards. Improve search rankings instantly.",
+    "FastTools Meta Tag Generator - Professional meta tag generator for SEO. Create title tags, meta descriptions, Open Graph tags, Twitter cards. Improve search rankings instantly.",
+  keywords: [
+    "fasttools",
+    "fast tools",
+  ],
   keywords:
     "meta tag generator, ai meta tag generator, free meta tag generator, seo meta tag generator, html meta tag generator, meta description generator, meta title generator, meta tag generator for website, meta tag generator for blogger, meta tag generator for facebook, meta tag generator for youtube, meta tag generator for shopify, meta tag generator for discord, free ai meta tag generator, best ai meta tag generator, ai meta title generator, ai meta description generator, automated meta tag generator, meta tag generator 2025, open graph meta tag generator, twitter card meta tag generator, html head meta tags generator, metadata generator for seo, meta tag checker, meta tag optimization tool, seo meta tags, open graph generator, twitter card generator, title tag generator, meta tags generator, seo title generator, meta description creator, og tags generator, twitter meta tags, facebook meta tags, linkedin meta tags, social media meta tags, seo meta tag tool, website meta tags, html meta tags, meta tag creator, meta tag builder",
   openGraph: {
