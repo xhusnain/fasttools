@@ -58,9 +58,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const categoryPages = [
     {
       url: "https://www.fasttools.store/ai-tools",
-      lastModified: getFreshnessDate(2),
+      lastModified: getFreshnessDate(0), // Updated today - all tools SEO optimized
       changeFrequency: "daily" as const,
-      priority: 0.95,
+      priority: 0.97, // High priority - 4 premium AI tools all FREE
     },
 
     {
@@ -322,29 +322,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.95,
     },
-    {
-      url: "https://www.fasttools.store/ai-tools/caption-generator",
-      lastModified: getFreshnessDate(1),
-      changeFrequency: "daily" as const,
-      priority: 0.95,
-    },
-    {
-      url: "https://www.fasttools.store/ai-tools/lyrics-generator",
-      lastModified: getFreshnessDate(1),
-      changeFrequency: "daily" as const,
-      priority: 0.9,
-    },
-    {
-      url: "https://www.fasttools.store/ai-tools/pet-names",
-      lastModified: getFreshnessDate(1),
-      changeFrequency: "daily" as const,
-      priority: 0.85,
-    },
+    // AI Tools - All Premium Features FREE
     {
       url: "https://www.fasttools.store/ai-tools/qr-generator",
       lastModified: getFreshnessDate(0), // Updated today with premium features
       changeFrequency: "daily" as const,
       priority: 0.98, // High priority - all premium features FREE
+    },
+    {
+      url: "https://www.fasttools.store/ai-tools/caption-generator",
+      lastModified: getFreshnessDate(0), // Recently SEO optimized
+      changeFrequency: "daily" as const,
+      priority: 0.96,
+    },
+    {
+      url: "https://www.fasttools.store/ai-tools/lyrics-generator",
+      lastModified: getFreshnessDate(0), // Recently SEO optimized with 40+ languages
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/ai-tools/pet-names",
+      lastModified: getFreshnessDate(0), // Updated today with 100 AI-generated names + SEO
+      changeFrequency: "daily" as const,
+      priority: 0.94, // High priority - 100 free categorized names
     },
     // Social Media Tools
     {
