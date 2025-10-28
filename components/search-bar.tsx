@@ -36,7 +36,6 @@ const toolSuggestions = [
   { name: "PayPal Fee Calculator", path: "/finance-tools/paypal-fee", category: "Finance" },
   { name: "Discount Calculator", path: "/finance-tools/discount-calculator", category: "Finance" },
   { name: "Tip Calculator", path: "/finance-tools/tip-calculator", category: "Finance" },
-  { name: "AI Meme Generator", path: "/ai-tools/meme-generator", category: "AI" },
   { name: "AI QR Generator", path: "/ai-tools/qr-generator", category: "AI" },
   { name: "Lyrics Generator", path: "/ai-tools/lyrics-generator", category: "AI" },
   { name: "Caption Generator", path: "/ai-tools/caption-generator", category: "AI" },

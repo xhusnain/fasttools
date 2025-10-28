@@ -68,6 +68,10 @@ export const goneUrls = new Set([
   '/tools/bmr-calculator',
   '/tools/interest-rate-calculator',
   '/tools/scientific-calculator',
+  
+  // AI Tools that were removed
+  '/ai-tools/meme-generator',
+  '/ai-tools/hashtag-suggester',
   '/tools/calorie-calculator',
   '/tools/gpa-calculator',
   '/tools/sales-tax-calculator',
