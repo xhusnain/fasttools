@@ -17,10 +17,10 @@ const http = require('http');
 
 // Configuration
 const CONFIG = {
-  host: 'fasttools.store',
+  host: 'www.fasttools.store',
   baseUrl: 'https://www.fasttools.store',
   apiKey: '8b4ac52646554f4fb3479eeebcadb3c2',
-  keyLocation: 'https://fasttools.store/8b4ac52646554f4fb3479eeebcadb3c2.txt',
+  keyLocation: 'https://www.fasttools.store/8b4ac52646554f4fb3479eeebcadb3c2.txt',
   indexNowEndpoint: 'https://api.indexnow.org/indexnow',
   sitemapUrl: 'https://www.fasttools.store/sitemap.xml',
   imageSitemapUrl: 'https://www.fasttools.store/image-sitemap.xml',
