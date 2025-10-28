@@ -35,10 +35,72 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Online Tools | AI Generator, Calculator, SEO | FastTools",
-  description: "1000+ free online tools: AI generators, calculators, converters, SEO tools. Fast, accurate, no registration required.",
+  title: "FastTools - Free Online Tools | AI Generator, Calculator, Converter & SEO Tools",
+  description: "FastTools offers 1000+ free online tools: AI generators, converters, calculators, SEO tools & more. Fast, accurate, no registration. Your complete digital toolkit.",
+  keywords: [
+    "fasttools",
+    "fast tools",
+    "free online tools",
+    "online tools platform",
+    "free fast tools",
+    "web tools",
+    "productivity tools",
+    "AI tools",
+    "converter tools",
+    "calculator tools",
+    "SEO tools",
+    "digital tools",
+    "browser tools",
+    "instant tools",
+    "quick online tools",
+    "fast online tools",
+    "fast web tools",
+    "fast calculators",
+    "fast converters",
+    "online utilities",
+    "web utilities",
+    "free utilities",
+    "tool collection",
+    "digital toolkit",
+    "productivity toolkit",
+  ],
   alternates: {
     canonical: "https://www.fasttools.store",
+  },
+  openGraph: {
+    title: "FastTools - Free Online Tools | 1000+ AI, Calculator, Converter & SEO Tools",
+    description: "FastTools offers 1000+ free online tools: AI generators, converters, calculators, SEO tools & more. Fast, accurate, no registration. Your complete digital toolkit.",
+    type: "website",
+    url: "https://www.fasttools.store",
+    siteName: "FastTools",
+    images: [
+      {
+        url: "https://www.fasttools.store/banner.png",
+        width: 1200,
+        height: 630,
+        alt: "FastTools - Free Online Tools Platform",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@ZamanIsmail7",
+    creator: "@ZamanIsmail7",
+    title: "FastTools - Free Online Tools | 1000+ AI, Calculator, Converter & SEO Tools",
+    description: "FastTools offers 1000+ free online tools: AI generators, converters, calculators, SEO tools & more. Fast, accurate, no registration required.",
+    images: ["https://www.fasttools.store/banner.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 }
 
@@ -46,11 +108,15 @@ export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Online Tools | AI Generator, Calculator, SEO | FastTools",
-    description: "1000+ free online tools: AI meme generator, currency converter, BMI calculator, meta tag generator, TikTok downloader, JWT decoder. Fast, accurate, no registration required.",
+    name: "FastTools - Free Online Tools | AI Generator, Calculator, Converter & SEO Tools",
+    description: "FastTools offers 1000+ free online tools: AI meme generator, currency converter, BMI calculator, meta tag generator, TikTok downloader, JWT decoder. Fast, accurate, no registration required.",
     url: "https://www.fasttools.store",
     keywords: [
+      "fasttools",
+      "fast tools",
       "free online tools",
+      "free fast tools",
+      "online tools platform",
       "web tools",
       "productivity tools",
       "AI tools",
@@ -506,14 +572,14 @@ export default function HomePage() {
                       
                       {/* SEO-Optimized Headlines with Primary Keywords */}
                       <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-                        Free Online Tools: <br />
-                        <span className="text-primary">AI Generator, Calculator, Converter, SEO Tools</span>
+                        <span className="text-primary">FastTools</span> - Free Online Tools <br />
+                        <span className="text-primary">AI Generator, Calculator, Converter & SEO Tools</span>
                       </h1>
                       
                       <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-                        Access 1000+ free web tools including <strong>AI meme generator</strong>, <strong>currency converter</strong>, 
+                        <strong>FastTools</strong> offers 1000+ free online tools including <strong>AI meme generator</strong>, <strong>currency converter</strong>, 
                         <strong>BMI calculator</strong>, <strong>meta tag generator</strong>, <strong>TikTok downloader</strong>, 
-                        <strong>JWT decoder</strong>, and more. No downloads, no registration, instant results.
+                        <strong>JWT decoder</strong>, and more. Fast, accurate results. No downloads, no registration.
                       </p>
               
               {/* Clean CTA Buttons */}
