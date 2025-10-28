@@ -7,9 +7,9 @@ import { FileCode, FileText, Copy, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "FastTools - HTML Converter | Free HTML to Markdown, JSON, YAML, XML",
+  title: "FastTools - HTML Converter | Free HTML to Markdown, JSON, YAML, XML, PDF",
   description:
-    "FastTools HTML Converter - Free HTML converter and format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML instantly. Best HTML formatter, beautifier & validator. No signup - 100% free.",
+    "FastTools HTML Converter - Free HTML converter and format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML, PDF instantly. Best HTML formatter, beautifier & validator. No signup - 100% free.",
   keywords: [
     "fasttools",
     "fast tools",
@@ -35,6 +35,23 @@ export const metadata: Metadata = {
     "yaml to xml",
     "xml to yaml",
     
+    // PDF Conversion Keywords (15)
+    "html to pdf",
+    "html to pdf converter",
+    "markdown to pdf",
+    "markdown to pdf converter",
+    "json to pdf",
+    "yaml to pdf",
+    "xml to pdf",
+    "csv to pdf",
+    "toml to pdf",
+    "convert html to pdf",
+    "convert markdown to pdf",
+    "html 2 pdf",
+    "html pdf converter",
+    "online html to pdf",
+    "free html to pdf converter",
+    
     // Core Format Conversion (15)
     "format converter",
     "universal format converter",
@@ -51,8 +68,11 @@ export const metadata: Metadata = {
     "html to json",
     "markdown to json",
     "toml converter",
-    
-    // Format-Specific (14)
+      "md to pdf",
+      "pdf to md",
+
+
+      // Format-Specific (14)
     "html converter",
     "markdown converter",
     "json converter",
@@ -206,8 +226,8 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "HTML Converter - Free Format Converter Online | HTML to Markdown, JSON, YAML, XML",
-    description: "Free HTML converter and format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML instantly. Best HTML formatter, beautifier & validator with auto-conversion.",
+    title: "HTML Converter - Free Format Converter Online | HTML to Markdown, JSON, YAML, XML, PDF",
+    description: "Free HTML converter and format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML, PDF instantly. Best HTML formatter, beautifier & validator with auto-conversion.",
     url: "https://www.fasttools.store/dev-tools/html-to-markdown",
     type: "website",
     siteName: "FastTools",
@@ -217,15 +237,15 @@ export const metadata: Metadata = {
         url: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "Free HTML Converter Online - HTML to Markdown, JSON, YAML, XML, CSV, TOML Format Converter",
+        alt: "Free HTML Converter Online - HTML to Markdown, JSON, YAML, XML, CSV, TOML, PDF Format Converter",
         type: "image/svg+xml",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "HTML Converter - Free Format Converter Online | HTML to Markdown, JSON, YAML",
-    description: "Free HTML converter and format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML. Best HTML formatter, beautifier & validator. No signup required.",
+    title: "HTML Converter - Free Format Converter Online | HTML to Markdown, JSON, YAML, PDF",
+    description: "Free HTML converter and format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML, PDF. Best HTML formatter, beautifier & validator. No signup required.",
     images: ["https://www.fasttools.store/og-image.svg"],
     site: "@FastToolsStore",
     creator: "@FastToolsStore",
@@ -260,11 +280,11 @@ export const metadata: Metadata = {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
         name: "HTML Converter - Free Format Converter Online",
-        alternateName: ["HTML to Markdown Converter", "Universal Format Converter", "Multi Format Converter Online", "HTML Formatter and Beautifier"],
+        alternateName: ["HTML to Markdown Converter", "HTML to PDF Converter", "Universal Format Converter", "Multi Format Converter Online", "HTML Formatter and Beautifier"],
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web Browser",
       url: "https://www.fasttools.store/dev-tools/html-to-markdown",
-        description: "Free HTML converter and format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML instantly. Professional HTML formatter, HTML beautifier, HTML validator, and HTML parser with auto-conversion, validation, and instant download. No signup required.",
+        description: "Free HTML converter and format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML, PDF instantly. Professional HTML formatter, HTML beautifier, HTML validator, and HTML parser with auto-conversion, validation, and instant download. No signup required.",
       inLanguage: "en",
       isAccessibleForFree: true,
       offers: { 
@@ -282,7 +302,10 @@ export const metadata: Metadata = {
         },
       featureList: [
           "HTML to Markdown converter",
-          "Markdown to HTML converter", 
+          "Markdown to HTML converter",
+          "HTML to PDF converter",
+          "Markdown to PDF converter",
+          "JSON to PDF converter",
           "JSON to YAML converter",
           "YAML to JSON converter",
           "XML to JSON converter",
@@ -293,7 +316,7 @@ export const metadata: Metadata = {
           "Auto-conversion on input",
           "Instant download",
           "Format swap button",
-          "7 formats supported",
+          "8 formats supported (including PDF)",
           "Real-time validation",
           "No signup required"
       ],
@@ -319,11 +342,11 @@ export const metadata: Metadata = {
       softwareVersion: "2.0",
       downloadUrl: "https://www.fasttools.store/dev-tools/html-to-markdown",
       screenshot: "https://www.fasttools.store/og-image.svg",
-        keywords: "html converter, format converter online, html to markdown, markdown to html, html formatter, html beautifier, html validator, html parser, json to yaml, yaml to json, xml to json, csv to json, toml converter, html to json, html to xml, html to csv, free format converter",
+        keywords: "html converter, format converter online, html to markdown, markdown to html, html to pdf, markdown to pdf, html pdf converter, html formatter, html beautifier, html validator, html parser, json to yaml, yaml to json, xml to json, csv to json, toml converter, html to json, html to xml, html to csv, pdf converter, free format converter",
       about: {
         "@type": "Thing",
           name: "HTML Format Conversion and Processing",
-          description: "Free online tools for converting between HTML, Markdown, JSON, YAML, XML, CSV, and TOML formats with formatting, beautification, and validation capabilities"
+          description: "Free online tools for converting between HTML, Markdown, JSON, YAML, XML, CSV, TOML, and PDF formats with formatting, beautification, and validation capabilities"
       },
       isPartOf: {
         "@type": "WebSite",
@@ -337,7 +360,7 @@ export const metadata: Metadata = {
         "@id": "https://www.fasttools.store/dev-tools/html-to-markdown#webpage",
         url: "https://www.fasttools.store/dev-tools/html-to-markdown",
         name: "HTML Converter - Free Format Converter Online",
-        description: "Free HTML converter and format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML instantly. Best HTML formatter, beautifier & validator.",
+        description: "Free HTML converter and format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML, PDF instantly. Best HTML formatter, beautifier & validator.",
         inLanguage: "en-US",
         isPartOf: {
           "@type": "WebSite",
@@ -449,13 +472,13 @@ export default function HTMLToMarkdownPage() {
                   </h1>
 
                   <p className="text-sm sm:text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
-                    Free HTML converter and universal format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML instantly. Professional HTML formatter, HTML beautifier, HTML validator & parser with auto-conversion, validation, and download. No signup required - 100% free for developers.
+                    Free HTML converter and universal format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML, PDF instantly. Professional HTML formatter, HTML beautifier, HTML validator & parser with auto-conversion, validation, and download. No signup required - 100% free for developers.
                   </p>
 
                   <div className="mt-4 sm:mt-6 grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 text-xs">
                     <div className="flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-2 rounded-lg bg-card border border-primary shadow">
                       <FileCode className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary flex-shrink-0" />
-                      <span className="text-card-foreground font-medium text-[10px] sm:text-xs">7 Formats</span>
+                      <span className="text-card-foreground font-medium text-[10px] sm:text-xs">8 Formats</span>
                     </div>
                     <div className="flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
                       <FileText className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-green-600 flex-shrink-0" />
@@ -482,10 +505,11 @@ export default function HTMLToMarkdownPage() {
                   <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">How to Use Universal Format Converter</h2>
                   <ol className="pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-muted-foreground leading-relaxed list-decimal">
                     <li>Select your source format (HTML, Markdown, JSON, YAML, XML, CSV, or TOML) from the "Convert From" dropdown</li>
-                    <li>Select your target format from the "Convert To" dropdown</li>
+                    <li>Select your target format (including PDF) from the "Convert To" dropdown</li>
                     <li>Paste your data into the input field or click "Try Sample" to test with sample data</li>
                     <li>The tool automatically converts and validates your input in real-time (no button needed!)</li>
-                    <li>Copy the output with one click or download it as a file with the correct extension</li>
+                    <li>For PDF conversions, click the download button to save your PDF file</li>
+                    <li>For other formats, copy the output with one click or download it as a file</li>
                     <li>Use "Clear All" button to reset and start a new conversion</li>
                   </ol>
         </div>
@@ -500,6 +524,7 @@ export default function HTMLToMarkdownPage() {
                     <li><strong>XML:</strong> Parse and generate well-formed XML with nested elements and attributes</li>
                     <li><strong>CSV:</strong> Convert tabular data to/from CSV with automatic delimiter handling</li>
                     <li><strong>TOML:</strong> Support for TOML configuration format with tables and array of tables</li>
+                    <li><strong>PDF:</strong> Convert any format to PDF documents with professional formatting and layout</li>
                     <li><strong>Auto-Validation:</strong> Real-time format validation with error messages</li>
                     <li><strong>Smart Conversion:</strong> Automatic format detection and intelligent data transformation</li>
                     <li><strong>Sample Data:</strong> Built-in sample data for each format to test conversions instantly</li>
@@ -514,11 +539,13 @@ export default function HTMLToMarkdownPage() {
                     <li><strong>Data Import/Export:</strong> Convert CSV data to JSON for databases or YAML for static site generators</li>
                     <li><strong>Documentation Conversion:</strong> Transform HTML/Markdown docs between formats for different platforms</li>
                     <li><strong>WordPress to Markdown:</strong> Migrate WordPress HTML content to Markdown for static site generators</li>
+                    <li><strong>PDF Document Generation:</strong> Convert HTML, Markdown, or any format to PDF for reports and sharing</li>
                     <li><strong>Config File Conversion:</strong> Convert Docker Compose YAML to Kubernetes JSON manifests</li>
                     <li><strong>Database Export:</strong> Transform CSV exports to JSON for processing or API consumption</li>
                     <li><strong>CMS Migration:</strong> Convert content between different CMS formats (HTML, Markdown, XML)</li>
                     <li><strong>DevOps Automation:</strong> Convert between configuration formats for CI/CD pipelines</li>
                     <li><strong>Data Analysis:</strong> Transform JSON/XML data to CSV for Excel/Google Sheets analysis</li>
+                    <li><strong>HTML to PDF Reports:</strong> Generate professional PDF documents from HTML web content</li>
           </ul>
         </div>
 

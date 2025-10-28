@@ -14,8 +14,10 @@ import {
   ArrowLeftRight
 } from "lucide-react"
 import { Card } from "@/components/ui/card"
+import jsPDF from "jspdf"
+import html2canvas from "html2canvas"
 
-type Format = "html" | "markdown" | "json" | "yaml" | "xml" | "csv" | "toml"
+type Format = "html" | "markdown" | "json" | "yaml" | "xml" | "csv" | "toml" | "pdf"
 
 interface FormatOption {
   value: Format
@@ -32,6 +34,7 @@ const formats: FormatOption[] = [
   { value: "xml", label: "XML", description: "eXtensible Markup Language", fileExtension: "xml" },
   { value: "csv", label: "CSV", description: "Comma-Separated Values", fileExtension: "csv" },
   { value: "toml", label: "TOML", description: "Tom's Obvious Minimal Language", fileExtension: "toml" },
+  { value: "pdf", label: "PDF", description: "Portable Document Format", fileExtension: "pdf" },
 ]
 
 export function FormatConverter() {
@@ -42,6 +45,9 @@ export function FormatConverter() {
   const [error, setError] = useState("")
   const [copied, setCopied] = useState(false)
   const [isValid, setIsValid] = useState<boolean | null>(null)
+  const [pdfBlob, setPdfBlob] = useState<Blob | null>(null)
+  const [isPdfGenerated, setIsPdfGenerated] = useState(false)
+  const [isGeneratingPdf, setIsGeneratingPdf] = useState(false)
 
   // Auto-convert on input change with debounce
   useEffect(() => {
@@ -49,6 +55,9 @@ export function FormatConverter() {
       setOutput("")
       setError("")
       setIsValid(null)
+      setPdfBlob(null)
+      setIsPdfGenerated(false)
+      setIsGeneratingPdf(false)
       return
     }
 
@@ -141,7 +150,15 @@ email = "john@example.com"
 [[users]]
 name = "Jane Smith"
 age = 25
-email = "jane@example.com"`
+email = "jane@example.com"`,
+      pdf: `<h1>Sample PDF Document</h1>
+<p>This is sample content that will be converted to PDF.</p>
+<p>You can include <strong>formatted text</strong>, <em>italics</em>, and more!</p>
+<ul>
+  <li>Feature 1</li>
+  <li>Feature 2</li>
+  <li>Feature 3</li>
+</ul>`
     }
     return samples[sourceFormat]
   }
@@ -315,7 +332,8 @@ email = "jane@example.com"`
           parent.obj.push(obj)
           stack.push({ obj, indent, currentKey: null })
           const [k, v] = value.split(":").map(s => s.trim())
-          obj[k] = parseValue(v)
+          // @ts-ignore
+            obj[k] = parseValue(v)
         } else {
           parent.obj.push(parseValue(value))
         }
@@ -592,10 +610,164 @@ email = "jane@example.com"`
     return value
   }
 
+  // PDF conversion function using iframe for complete isolation
+  const convertToPdf = async (content: string, sourceFormat: Format): Promise<Blob> => {
+    // Convert content to HTML first if needed
+    let htmlContent = content
+    
+    if (sourceFormat === "markdown") {
+      htmlContent = markdownToHtml(content)
+    } else if (sourceFormat === "json") {
+      htmlContent = `<pre style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-wrap: break-word; white-space: pre-wrap;">${content}</pre>`
+    } else if (sourceFormat === "yaml") {
+      htmlContent = `<pre style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-wrap: break-word; white-space: pre-wrap;">${content}</pre>`
+    } else if (sourceFormat === "xml") {
+      htmlContent = `<pre style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-wrap: break-word; white-space: pre-wrap;">${content}</pre>`
+    } else if (sourceFormat === "csv") {
+      const lines = content.split("\n").filter(line => line.trim())
+      if (lines.length > 0) {
+        const headers = lines[0].split(",")
+        const rows = lines.slice(1)
+        htmlContent = `<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+          <thead><tr style="background: #2563eb; color: white;">${headers.map(h => `<th style="border: 1px solid #ddd; padding: 12px; text-align: left;">${h.trim()}</th>`).join("")}</tr></thead>
+          <tbody>${rows.map((row, idx) => `<tr style="background: ${idx % 2 === 0 ? '#f9f9f9' : 'white'};">${row.split(",").map(cell => `<td style="border: 1px solid #ddd; padding: 10px;">${cell.trim()}</td>`).join("")}</tr>`).join("")}</tbody>
+        </table>`
+      }
+    } else if (sourceFormat === "toml") {
+      htmlContent = `<pre style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-wrap: break-word; white-space: pre-wrap;">${content}</pre>`
+    }
+    
+    // Create complete HTML document for iframe
+    const fullHtml = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="UTF-8">
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          body {
+            font-family: Arial, sans-serif;
+            color: #000000;
+            background-color: #ffffff;
+            padding: 20px;
+            line-height: 1.6;
+            width: 800px;
+          }
+          h1 { font-size: 32px; margin: 20px 0 15px 0; color: #1a1a1a; font-weight: bold; }
+          h2 { font-size: 28px; margin: 18px 0 12px 0; color: #2a2a2a; font-weight: bold; }
+          h3 { font-size: 24px; margin: 16px 0 10px 0; color: #3a3a3a; font-weight: bold; }
+          h4 { font-size: 20px; margin: 14px 0 8px 0; color: #4a4a4a; font-weight: bold; }
+          h5 { font-size: 18px; margin: 12px 0 6px 0; color: #5a5a5a; font-weight: bold; }
+          h6 { font-size: 16px; margin: 10px 0 5px 0; color: #6a6a6a; font-weight: bold; }
+          p { margin: 10px 0; color: #333333; }
+          ul, ol { margin: 10px 0; padding-left: 30px; }
+          li { margin: 5px 0; color: #333333; }
+          a { color: #2563eb; text-decoration: underline; }
+          strong, b { font-weight: bold; color: #000000; }
+          em, i { font-style: italic; }
+          code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-family: monospace; color: #c7254e; }
+          pre { background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-wrap: break-word; white-space: pre-wrap; font-family: monospace; margin: 10px 0; }
+          table { border-collapse: collapse; width: 100%; margin: 15px 0; }
+          th { background: #2563eb; color: #ffffff; padding: 12px; text-align: left; border: 1px solid #ddd; font-weight: bold; }
+          td { padding: 10px; border: 1px solid #ddd; color: #333333; }
+          tr:nth-child(even) { background: #f9f9f9; }
+          blockquote { border-left: 4px solid #2563eb; padding-left: 15px; margin: 15px 0; color: #666666; font-style: italic; }
+        </style>
+      </head>
+      <body>
+        ${htmlContent}
+      </body>
+      </html>
+    `
+    
+    // Create completely hidden iframe
+    const iframe = document.createElement("iframe")
+    iframe.style.cssText = `
+      position: absolute !important;
+      top: -10000px !important;
+      left: -10000px !important;
+      width: 800px !important;
+      height: 1000px !important;
+      border: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    `
+    
+    document.body.appendChild(iframe)
+    
+    // Wait for iframe to be ready
+    await new Promise<void>((resolve) => {
+      if (iframe.contentWindow) {
+        iframe.onload = () => resolve()
+        iframe.contentWindow.document.open()
+        iframe.contentWindow.document.write(fullHtml)
+        iframe.contentWindow.document.close()
+      }
+    })
+    
+    // Wait a bit for rendering
+    await new Promise(resolve => setTimeout(resolve, 200))
+    
+    try {
+      const iframeBody = iframe.contentWindow?.document.body
+      if (!iframeBody) {
+        throw new Error("Failed to access iframe content")
+      }
+      
+      // Use html2canvas on the iframe body
+      const canvas = await html2canvas(iframeBody, {
+        scale: 2,
+        backgroundColor: "#ffffff",
+        logging: false,
+        windowWidth: 800,
+        windowHeight: iframeBody.scrollHeight,
+      })
+      
+      // Create PDF with jsPDF
+      const pdf = new jsPDF({
+        orientation: "portrait",
+        unit: "mm",
+        format: "a4",
+      })
+      
+      const imgWidth = 210 // A4 width in mm
+      const pageHeight = 297 // A4 height in mm
+      const imgHeight = (canvas.height * imgWidth) / canvas.width
+      let heightLeft = imgHeight
+      let position = 0
+      
+      // Add first page
+      pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, position, imgWidth, imgHeight)
+      heightLeft -= pageHeight
+      
+      // Add additional pages if content is longer than one page
+      while (heightLeft > 0) {
+        position = heightLeft - imgHeight
+        pdf.addPage()
+        pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, position, imgWidth, imgHeight)
+        heightLeft -= pageHeight
+      }
+      
+      // Return the PDF as a Blob
+      return pdf.output("blob")
+    } finally {
+      // Clean up - remove the iframe
+      if (iframe.parentNode) {
+        document.body.removeChild(iframe)
+      }
+    }
+  }
+
   // Main conversion function
-  const handleConvert = () => {
+  const handleConvert = async () => {
     try {
       setError("")
+      setPdfBlob(null)
+      setIsPdfGenerated(false)
       
       if (!input.trim()) {
         setOutput("")
@@ -607,8 +779,30 @@ email = "jane@example.com"`
       const valid = validateInput(sourceFormat, input)
       setIsValid(valid)
       
-      if (!valid && sourceFormat !== "html" && sourceFormat !== "markdown") {
+      if (!valid && sourceFormat !== "html" && sourceFormat !== "markdown" && sourceFormat !== "pdf") {
         throw new Error(`Invalid ${sourceFormat.toUpperCase()} format`)
+      }
+
+      // Handle PDF conversion
+      if (targetFormat === "pdf") {
+        setIsGeneratingPdf(true)
+        setOutput("") // Clear output to show loading state
+        
+        // Wait for React to render the loading UI before manipulating DOM
+        await new Promise(resolve => setTimeout(resolve, 50))
+        
+        try {
+          const pdfBlobResult = await convertToPdf(input, sourceFormat)
+          setPdfBlob(pdfBlobResult)
+          setIsPdfGenerated(true)
+          setOutput("PDF generated successfully! Click the download button to save it.")
+        } catch (error) {
+          setError(error instanceof Error ? error.message : "Failed to generate PDF")
+          setOutput("")
+        } finally {
+          setIsGeneratingPdf(false)
+        }
+        return
       }
 
       let result = ""
@@ -727,6 +921,19 @@ email = "jane@example.com"`
 
   const downloadOutput = () => {
     const targetExt = formats.find(f => f.value === targetFormat)?.fileExtension || "txt"
+    
+    // Handle PDF download
+    if (targetFormat === "pdf" && pdfBlob) {
+      const url = URL.createObjectURL(pdfBlob)
+      const a = document.createElement("a")
+      a.href = url
+      a.download = `converted.pdf`
+      a.click()
+      URL.revokeObjectURL(url)
+      return
+    }
+    
+    // Handle other formats
     const blob = new Blob([output], { type: "text/plain" })
     const url = URL.createObjectURL(blob)
     const a = document.createElement("a")
@@ -741,22 +948,50 @@ email = "jane@example.com"`
     setOutput("")
     setError("")
     setIsValid(null)
+    setPdfBlob(null)
+    setIsPdfGenerated(false)
+    setIsGeneratingPdf(false)
   }
 
   const swapFormats = () => {
+    // Don't swap if either format is PDF (PDF is only a target format)
+    if (sourceFormat === "pdf" || targetFormat === "pdf") {
+      setError("PDF can only be used as a target format for conversion")
+      setTimeout(() => setError(""), 3000)
+      return
+    }
+    
     const tempFormat = sourceFormat
     setSourceFormat(targetFormat)
     setTargetFormat(tempFormat)
     
     // Optionally swap input/output as well
-    if (output) {
+    if (output && !isPdfGenerated) {
       setInput(output)
       setOutput(input)
     }
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 relative">
+      {/* PDF Generation Overlay - Prevents any visual glitches */}
+      {isGeneratingPdf && (
+        <div 
+          className="absolute inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center"
+          style={{ minHeight: '400px' }}
+        >
+          <div className="text-center space-y-4">
+            <div className="relative">
+              <div className="h-16 w-16 mx-auto border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+            </div>
+            <p className="text-lg font-semibold text-foreground">Generating PDF Document...</p>
+            <p className="text-sm text-muted-foreground">
+              Please wait while we create your PDF file
+            </p>
+          </div>
+        </div>
+      )}
+      
       {/* Format Selectors */}
       <Card className="p-4 sm:p-6 bg-gradient-to-r from-primary/5 to-secondary-accent/5 border-primary/20">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-end">
@@ -874,31 +1109,33 @@ email = "jane@example.com"`
       )}
 
       {/* Output Section */}
-      {output && (
+      {output && !isGeneratingPdf && (
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <Label className="text-base font-semibold">
               Output ({formats.find(f => f.value === targetFormat)?.label})
             </Label>
             <div className="flex gap-2">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={copyToClipboard}
-                className="gap-2"
-              >
-                {copied ? (
-                  <>
-                    <Check className="h-4 w-4" />
-                    Copied
-                  </>
-                ) : (
-                  <>
-                    <Copy className="h-4 w-4" />
-                    Copy
-                  </>
-                )}
-              </Button>
+              {!isPdfGenerated && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={copyToClipboard}
+                  className="gap-2"
+                >
+                  {copied ? (
+                    <>
+                      <Check className="h-4 w-4" />
+                      Copied
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="h-4 w-4" />
+                      Copy
+                    </>
+                  )}
+                </Button>
+              )}
               <Button
                 variant="outline"
                 size="sm"
@@ -910,11 +1147,23 @@ email = "jane@example.com"`
               </Button>
             </div>
           </div>
-          <Textarea
-            value={output}
-            readOnly
-            className="min-h-64 font-mono text-sm border-2 border-green-500/30 bg-green-50/5"
-          />
+          {isPdfGenerated ? (
+            <div className="min-h-64 flex items-center justify-center border-2 border-green-500/30 bg-green-50/5 rounded-md p-8">
+              <div className="text-center space-y-4">
+                <CheckCircle2 className="h-16 w-16 text-green-600 mx-auto" />
+                <p className="text-lg font-semibold text-green-700">{output}</p>
+                <p className="text-sm text-muted-foreground">
+                  Your PDF has been generated and is ready to download.
+                </p>
+              </div>
+            </div>
+          ) : (
+            <Textarea
+              value={output}
+              readOnly
+              className="min-h-64 font-mono text-sm border-2 border-green-500/30 bg-green-50/5"
+            />
+          )}
         </div>
       )}
 
