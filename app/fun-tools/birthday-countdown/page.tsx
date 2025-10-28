@@ -8,10 +8,12 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Birthday Countdown | Real-Time Timer | FastTools",
+  title: "FastTools - Birthday Countdown | Free Real-Time Timer",
   description:
-    "Live birthday countdown showing days, hours, minutes, and seconds until your next birthday. Share the timer with friends.",
+    "FastTools Birthday Countdown - Live birthday countdown showing days, hours, minutes, and seconds until your next birthday. Share the timer with friends.",
     keywords: [
+      "fasttools",
+      "fast tools",
         "birthday countdown",
         "free birthday countdown",
         "birthday timer",

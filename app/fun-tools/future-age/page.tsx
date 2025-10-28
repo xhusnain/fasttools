@@ -8,10 +8,12 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Future Age Predictor | How Old Will I Be? | FastTools",
+  title: "FastTools - Future Age Predictor | Free How Old Will I Be Calculator",
   description:
-    "See how old you'll be in any future year. Fun age prediction with milestones, planning ideas, and shareable results.",
+    "FastTools Future Age Predictor - See how old you'll be in any future year. Fun age prediction with milestones, planning ideas, and shareable results.",
     keywords: [
+      "fasttools",
+      "fast tools",
         "future age predictor",
         "free future age predictor",
         "how old will I be",

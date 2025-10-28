@@ -9,10 +9,12 @@ import { FileText, ArrowRight, Code, Globe, Zap, Shield } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free AI Image to Text Converter (OCR) – Copy & Edit Text from Any Image | FastTools",
+  title: "FastTools - AI Image to Text (OCR) | Free Copy & Edit Text from Images",
   description:
-    "Convert images to editable text in seconds with our free AI-powered OCR tool. Extract text from photos, screenshots, JPG, PNG, or PDF — fast, accurate, and secure on any device.",
+    "FastTools AI Image to Text Converter - Convert images to editable text in seconds with our free AI-powered OCR tool. Extract text from photos, screenshots, JPG, PNG, or PDF — fast, accurate, and secure on any device.",
   keywords: [
+    "fasttools",
+    "fast tools",
     // Primary Keywords (20)
     "image to text",
     "free image to text",

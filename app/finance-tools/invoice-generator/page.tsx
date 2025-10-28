@@ -7,10 +7,12 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Invoice Generator – Create Global Invoices | FastTools",
+  title: "FastTools - Invoice Generator | Free Create Global Invoices",
   description:
-    "Create professional invoices in 15+ languages and 200+ currencies. Auto tax, logo upload, instant PDF download — free, secure, and no sign-up needed.",
+    "FastTools Invoice Generator - Create professional invoices in 15+ languages and 200+ currencies. Auto tax, logo upload, instant PDF download — free, secure, and no sign-up needed.",
   keywords: [
+    "fasttools",
+    "fast tools",
     // Core Invoice Keywords
     "invoice generator", "free invoice generator", "free invoice maker", "invoice template", "professional invoice",
     "freelance invoice", "business invoice", "pdf invoice generator", "invoice with tax", "invoice with discount",

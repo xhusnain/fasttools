@@ -7,10 +7,12 @@ import { FileJson, FileSpreadsheet, Download, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free JSON to CSV Converter Online - Convert JSON to CSV Instantly",
+  title: "FastTools - JSON to CSV Converter | Free Convert JSON to CSV Online",
   description:
-    "Convert JSON to CSV online free with instant download. Transform JSON data to Excel-ready CSV format. Supports nested JSON, arrays, Python/JavaScript code examples. Best JSON to CSV converter for developers & data analysts.",
+    "FastTools JSON to CSV Converter - Convert JSON to CSV online free with instant download. Transform JSON data to Excel-ready CSV format. Supports nested JSON, arrays, Python/JavaScript code examples. Best JSON to CSV converter for developers & data analysts.",
   keywords: [
+    "fasttools",
+    "fast tools",
     // Core Conversion Keywords
     "json to csv",
     "json to csv converter",

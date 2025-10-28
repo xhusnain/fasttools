@@ -7,10 +7,12 @@ import { Code, Minimize2, Copy, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free HTML Beautifier Online - Beautify HTML & Minify HTML Code Instantly",
+  title: "FastTools - HTML Beautifier | Free Beautify & Minify HTML Code Online",
   description:
-    "Free online HTML beautifier and minifier tool. Beautify HTML code with proper formatting or minify HTML to compress file size. Best HTML formatter online with instant results, download, and validation. No signup required.",
+    "FastTools HTML Beautifier - Free online HTML beautifier and minifier tool. Beautify HTML code with proper formatting or minify HTML to compress file size. Best HTML formatter online with instant results, download, and validation. No signup required.",
   keywords: [
+    "fasttools",
+    "fast tools",
     // High-Volume Core Keywords
     "beautify html",
     "html minif",

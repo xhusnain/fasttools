@@ -7,10 +7,12 @@ import { FileCode, FileText, Copy, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "HTML Converter - Free Format Converter Online | HTML to Markdown, JSON, YAML, XML | FastTools",
+  title: "FastTools - HTML Converter | Free HTML to Markdown, JSON, YAML, XML",
   description:
-    "Free HTML converter and format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML instantly. Best HTML formatter, beautifier & validator. No signup - 100% free.",
+    "FastTools HTML Converter - Free HTML converter and format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML instantly. Best HTML formatter, beautifier & validator. No signup - 100% free.",
   keywords: [
+    "fasttools",
+    "fast tools",
     // Top 10 Feature-Related Conversions (20)
     "html to toml converter",
     "toml to html converter",

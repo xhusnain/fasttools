@@ -4,9 +4,11 @@ import { NavbarFooterHider } from "@/components/navbar-footer-hider"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Photo Editor – Professional Online Image Editing Tool | FastTools",
-  description: "Edit photos online with professional tools. Apply filters, adjust brightness, contrast, saturation, and more. Free, fast, and secure online photo editor.",
+  title: "FastTools - Photo Editor | Free Professional Online Image Editing Tool",
+  description: "FastTools Photo Editor - Edit photos online with professional tools. Apply filters, adjust brightness, contrast, saturation, and more. Free, fast, and secure online photo editor.",
   keywords: [
+    "fasttools",
+    "fast tools",
     // Primary Keywords (20)
     "photo editor",
     "online photo editor",

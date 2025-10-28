@@ -7,10 +7,14 @@ import { Code, Code2, Globe, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Online Regex Tester - Test Regular Expressions with Live Results | FastTools",
+  title: "FastTools - Regex Tester | Free Test Regular Expressions with Live Results",
   description:
-    "Test regex patterns online with instant visual matching, capture groups, and multi-language code generation. Debug and validate regular expressions for JavaScript, Python, Java, PHP, and more. Free regex testing tool with find & replace, pattern explanations, and live preview.",
+    "FastTools Regex Tester - Test regex patterns online with instant visual matching, capture groups, and multi-language code generation. Debug and validate regular expressions for JavaScript, Python, Java, PHP, and more. Free regex testing tool with find & replace, pattern explanations, and live preview.",
   applicationName: "FastTools Regex Tester",
+  keywords: [
+    "fasttools",
+    "fast tools",
+  ],
   authors: [{ name: "FastTools", url: "https://www.fasttools.store" }],
   generator: "Next.js",
   referrer: "origin-when-cross-origin",

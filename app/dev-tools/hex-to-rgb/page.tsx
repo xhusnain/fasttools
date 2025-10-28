@@ -7,10 +7,12 @@ import { Palette, Copy, ArrowRight, Hash } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Color Converter - Hex to RGB, RGB to Hex, HSL Online Free | FastTools",
+  title: "FastTools - Color Converter | Free Hex to RGB, RGB to Hex, HSL Tool",
   description:
-    "Free online color converter tool. Convert Hex to RGB, RGB to Hex, HSL, RGBA, HSLA instantly. Color picker, hex to decimal, alpha channel support. Best color code converter for web developers, designers. No signup required.",
+    "FastTools Color Converter - Free online color converter tool. Convert Hex to RGB, RGB to Hex, HSL, RGBA, HSLA instantly. Color picker, hex to decimal, alpha channel support. Best color code converter for web developers, designers. No signup required.",
   keywords: [
+    "fasttools",
+    "fast tools",
     // Core Conversion Keywords
     "color converter",
     "hex to rgb",

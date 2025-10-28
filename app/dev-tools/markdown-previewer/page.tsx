@@ -7,10 +7,12 @@ import { FileText, Eye, Code, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Markdown Previewer Online - Live Markdown Editor with Split View | FastTools",
+  title: "FastTools - Markdown Previewer | Free Live Markdown Editor with Split View",
   description:
-    "Free markdown previewer with live preview. Online markdown editor with split view, GitHub Flavored Markdown support, syntax highlighting, markdown to HTML converter. Best markdown editor online with real-time preview - no signup required.",
+    "FastTools Markdown Previewer - Free markdown previewer with live preview. Online markdown editor with split view, GitHub Flavored Markdown support, syntax highlighting, markdown to HTML converter. Best markdown editor online with real-time preview - no signup required.",
   keywords: [
+    "fasttools",
+    "fast tools",
     // Core Keywords
     "markdown previewer",
     "markdown editor",

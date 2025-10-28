@@ -7,10 +7,12 @@ import { Palette, Shuffle, Lock, Copy, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "1000+ Free Color Palettes & Schemes - HEX Codes for Web Design | FastTools",
+  title: "FastTools - Color Palettes | Free 1000+ HEX Codes for Web Design",
   description:
-    "Explore 1000+ free color palettes for websites, branding, UI/UX & graphic design. 43 categories including aesthetic, pastel, vintage, modern & seasonal. Copy HEX codes instantly. Filter by theme, season, or color. Perfect for designers, developers & creatives.",
+    "FastTools Color Palettes - Explore 1000+ free color palettes for websites, branding, UI/UX & graphic design. 43 categories including aesthetic, pastel, vintage, modern & seasonal. Copy HEX codes instantly. Filter by theme, season, or color. Perfect for designers, developers & creatives.",
   keywords: [
+    "fasttools",
+    "fast tools",
     // Primary Keywords (20)
     "color palettes",
     "color palette",

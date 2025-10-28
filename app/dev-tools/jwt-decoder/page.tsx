@@ -7,10 +7,12 @@ import { Code, Code2, Globe, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "JWT Decoder | Decode JSON Web Tokens | FastTools",
+  title: "FastTools - JWT Decoder | Free Decode JSON Web Tokens",
   description:
-    "Decode JWT header and payload safely in your browser. Inspect claims, alg, exp/iat, and base64url content. Great for debugging auth.",
+    "FastTools JWT Decoder - Decode JWT header and payload safely in your browser. Inspect claims, alg, exp/iat, and base64url content. Great for debugging auth.",
   keywords: [
+    "fasttools",
+    "fast tools",
     // Ultra High Volume Keywords (100k+)
     "jwt",
     "jwt json web token",

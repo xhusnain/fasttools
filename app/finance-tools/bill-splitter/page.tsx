@@ -25,9 +25,11 @@ import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: `Bill Splitter Calculator – Split Bills | FastTools`,
-  description: "Free bill splitter calculator for restaurants, groups, and shared expenses. Split bills evenly or by items, calculate tips and tax, track who owes what.",
+  title: `FastTools - Bill Splitter Calculator | Free Split Bills Tool`,
+  description: "FastTools Bill Splitter Calculator - Free bill splitter calculator for restaurants, groups, and shared expenses. Split bills evenly or by items, calculate tips and tax, track who owes what.",
   keywords: [
+    "fasttools",
+    "fast tools",
     "split bills with friends",
     "expense sharing app",
     "shared expense tracker",

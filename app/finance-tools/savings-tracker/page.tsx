@@ -56,9 +56,11 @@ import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: `Savings Tracker – Financial Goal Planner | FastTools`,
-  description: "Comprehensive financial planning tool with expense tracking, tax calculations, inflation adjustments, and multiple goal management. Perfect for budgeting and savings planning.",
+  title: `FastTools - Savings Tracker | Free Financial Goal Planner`,
+  description: "FastTools Savings Tracker - Comprehensive financial planning tool with expense tracking, tax calculations, inflation adjustments, and multiple goal management. Perfect for budgeting and savings planning.",
   keywords: [
+    "fasttools",
+    "fast tools",
     // Primary Keywords (20)
     "savings goal tracker",
     "free savings goal tracker",
