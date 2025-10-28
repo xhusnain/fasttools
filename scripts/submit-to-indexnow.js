@@ -17,10 +17,10 @@ const http = require('http');
 
 // Configuration
 const CONFIG = {
-  host: 'www.fasttools.store',
+  host: 'fasttools.store',
   baseUrl: 'https://www.fasttools.store',
   apiKey: '8b4ac52646554f4fb3479eeebcadb3c2',
-  keyLocation: 'https://www.fasttools.store/8b4ac52646554f4fb3479eeebcadb3c2.txt',
+  keyLocation: 'https://fasttools.store/8b4ac52646554f4fb3479eeebcadb3c2.txt',
   indexNowEndpoint: 'https://api.indexnow.org/indexnow',
   sitemapUrl: 'https://www.fasttools.store/sitemap.xml',
   imageSitemapUrl: 'https://www.fasttools.store/image-sitemap.xml',
@@ -213,7 +213,6 @@ async function submitToIndexNow(urls) {
   const payload = {
     host: CONFIG.host,
     key: CONFIG.apiKey,
-    keyLocation: CONFIG.keyLocation,
     urlList: urls,
   };
   
@@ -238,14 +237,13 @@ async function submitToIndexNow(urls) {
         return { success: false, error: 'Bad Request', count: 0 };
       
       case 403:
-        logWarning(`Forbidden: API key not valid (yet)`);
-        logInfo(`This is normal on first deployment - the key file isn't live yet`);
+        logWarning(`Forbidden: API key not valid or key file not accessible`);
         logInfo(`Key file location: ${CONFIG.keyLocation}`);
-        logInfo(`The URLs will be submitted on the next deployment`);
+        logInfo(`Verify the key file is accessible at the above URL`);
         if (response.body) {
           log(`Response: ${response.body}`, colors.dim);
         }
-        return { success: false, error: 'Forbidden (First deployment)', count: 0 };
+        return { success: false, error: 'Forbidden', count: 0 };
       
       case 422:
         logError(`Unprocessable Entity: URLs don't belong to host or key mismatch`);
