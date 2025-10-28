@@ -213,6 +213,7 @@ async function submitToIndexNow(urls) {
   const payload = {
     host: CONFIG.host,
     key: CONFIG.apiKey,
+    keyLocation: CONFIG.keyLocation,
     urlList: urls,
   };
   
