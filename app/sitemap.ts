@@ -342,9 +342,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://www.fasttools.store/ai-tools/qr-generator",
-      lastModified: getFreshnessDate(1),
+      lastModified: getFreshnessDate(0), // Updated today with premium features
       changeFrequency: "daily" as const,
-      priority: 0.9,
+      priority: 0.98, // High priority - all premium features FREE
     },
     // Social Media Tools
     {
