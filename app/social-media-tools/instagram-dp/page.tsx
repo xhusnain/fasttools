@@ -39,7 +39,15 @@ export const metadata: Metadata = {
       "anonymous instagram dp viewer",
       "instagram dp hd download",
       "instagram dp viewer extension",
-      "best instagram dp viewer online"
+      "best instagram dp viewer online",
+      "view instagram dp",
+      "dp viewer instagram",
+      "ig dp viewer",
+      "instagram profile dp viewer",
+      "dp viewer",
+      "instagram image viewer",
+      "insta dp.view",
+      "ig dp viewe"
   ],
   openGraph: {
     title: "Instagram DP Viewer | View & Download Profile Pictures",
@@ -200,20 +208,23 @@ export default function InstagramDpPage() {
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-card-foreground">How Our Instagram DP Viewer Works</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Our Instagram DP viewer allows you to view and download profile pictures from public Instagram accounts. 
-                    The tool respects user privacy and only works with publicly available profile pictures.
+                    Our Instagram DP viewer (also known as insta dp viewer or ig dp viewer) allows you to view instagram dp and download profile pictures from public Instagram accounts. 
+                    This free dp viewer tool respects user privacy and only works with publicly available profile pictures.
+                    Whether you search for "instagram image viewer" or "instagram profile dp viewer", our tool provides the best solution to view dp from any public Instagram account.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-card-foreground">Privacy-First Approach</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     We prioritize user privacy and only access profile pictures from public accounts. 
-                    Private accounts and restricted content are not accessible through our tool.
+                    Private accounts and restricted content are not accessible through our dp viewer instagram tool.
+                    Our insta dp.view service is designed to be safe, secure, and compliant with Instagram's terms of service.
                   </p>
 
-                  <h3 className="text-lg font-bold mb-3 text-card-foreground">HD Quality Downloads</h3>
+                  <h3 className="text-lg font-bold mb-3 text-card-foreground">HD Quality Downloads with IG DP Viewer</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Download profile pictures in their original high-definition quality. 
+                    Download profile pictures in their original high-definition quality using our instagram profile dp viewer. 
                     Perfect for content creators, designers, or anyone who needs high-quality profile images.
+                    Our ig dp viewer ensures you get the best quality images for your creative projects.
                   </p>
                 </div>
 

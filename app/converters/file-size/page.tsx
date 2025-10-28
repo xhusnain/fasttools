@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   keywords: [
     "file size converter",
     "free file size converter",
+    "file size in kb",
+    "file size kb",
+    "file size in mb",
+    "file size calculator kb",
     "bytes to kb converter",
     "kb to mb converter",
     "mb to gb converter",
@@ -244,7 +248,9 @@ export default function FileSizeConverterPage() {
                   </div>
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">Free File Size Converter</h1>
                   <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
-                    Convert KB ⇄ MB ⇄ GB ⇄ TB with decimal (SI) and binary (IEC) units. Plan cloud storage and uploads with confidence.
+                    Convert KB ⇄ MB ⇄ GB ⇄ TB with decimal (SI) and binary (IEC) units. Calculate file size in kb, 
+                    determine file size kb conversions, and plan cloud storage and uploads with confidence.
+                    Whether you need to check file size in mb or convert file size kb to larger units, our tool provides instant, accurate results.
                   </p>
                   <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
                     <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">

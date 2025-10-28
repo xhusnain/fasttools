@@ -185,7 +185,8 @@ export default function FutureAgePage() {
                 </h1>
 
                 <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
-                  Discover how old you'll be in any future year. Perfect for planning milestones, visualizing your future, and sharing fun age predictions with friends and family.
+                  Discover your age future and calculate how old you'll be in any future year. Perfect for planning milestones, visualizing your future age, 
+                  and sharing fun age predictions with friends and family. Our future age predictor helps you plan for retirement, education, or any age-related milestone.
                 </p>
                 
                 <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
@@ -245,8 +246,9 @@ export default function FutureAgePage() {
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-card-foreground">How Our Future Age Calculator Works</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Our calculator uses precise date mathematics to determine your exact age on any future date. 
-                    It accounts for leap years, varying month lengths, and provides accurate results instantly.
+                    Our future age calculator and age future predictor uses precise date mathematics to determine your exact age on any future date. 
+                    It accounts for leap years, varying month lengths, and provides accurate age future predictions instantly. 
+                    Whether you want to know your future age for retirement planning or just for fun, our tool gives you precise calculations.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-card-foreground">Simple Steps to Use</h3>

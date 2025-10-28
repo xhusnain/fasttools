@@ -202,6 +202,12 @@ export const metadata: Metadata = {
     "paypal recurring payment fee calculator",
     "how to calculate paypal fees",
     "how much does paypal charge",
+    "how much paypal fees",
+    "how much is paypal fee",
+    "paypal calculator",
+    "paypal rate calculator",
+    "paypal costs",
+    "paypal charges uk calculator",
     "paypal fee structure calculator",
     "paypal fee breakdown calculator",
     "paypal fee guide calculator",
@@ -880,7 +886,10 @@ export default function PayPalFeeCalculatorPage() {
                           PayPal Transaction Fee Calculation
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Calculate exact PayPal fees for personal, business, commercial, and donation transactions. Our PayPal fee calculator online supports domestic and international fee calculations including PayPal fee transfer, PayPal fee send money, and PayPal fees for receiving money. Perfect for PayPal fee UK calculator, PayPal fees Australia, and PayPal fee calculator Germany users.
+                          Calculate exact PayPal fees for personal, business, commercial, and donation transactions. Our free paypal calculator and paypal rate calculator helps you understand how much paypal fees 
+                          you'll pay for any transaction. Whether you're wondering "how much is paypal fee" or need to calculate paypal costs for your business, 
+                          this paypal calculator supports domestic and international fee calculations including PayPal fee transfer, PayPal fee send money, and PayPal fees for receiving money. 
+                          Perfect for paypal charges uk calculator, PayPal fees Australia, and PayPal fee calculator Germany users.
                         </p>
         </div>
                       <div className="p-4 rounded-lg bg-card border border-border">

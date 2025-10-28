@@ -83,7 +83,10 @@ export const metadata: Metadata = {
     "youtube tag extractor mac",
     "youtube tag extractor android",
     "youtube tag extractor ios",
-    "youtube tag extractor iphone"
+    "youtube tag extractor iphone",
+    "tag generator youtube url",
+    "youtube url tag generator",
+    "generate tags from youtube url"
   ],
   openGraph: {
     title: "YouTube Tag Extractor – Extract Video Tags | FastTools",
@@ -142,10 +145,11 @@ export default function YoutubeTagsPage() {
             Social Media Tool
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight mb-4">
-            YouTube Tag Extractor – Extract Video Tags | FastTools
+            YouTube Tag Extractor & Generator – Extract Video Tags | FastTools
           </h1>
           <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed mb-6">
-            Extract YouTube video tags, hashtags, and keywords instantly. Our free YouTube Tag Extractor helps you find competitor tags, boost SEO, and improve your video ranking on YouTube. Works on all devices.
+            Extract YouTube video tags, hashtags, and keywords instantly with our youtube tag generator. Our free YouTube Tag Extractor and tag generator youtube url tool 
+            helps you find competitor tags, boost SEO, and improve your video ranking on YouTube. Simply paste any YouTube URL to generate tags and extract video metadata. Works on all devices.
           </p>
           
           <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
@@ -192,7 +196,7 @@ export default function YoutubeTagsPage() {
 
             {/* How to Use Section */}
             <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
-              <h2 className="text-xl font-bold mb-4 text-card-foreground">How to Use YouTube Tag Extractor</h2>
+              <h2 className="text-xl font-bold mb-4 text-card-foreground">How to Use YouTube Tag Extractor & Generator</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/50 border border-border">
                   <div className="p-2 bg-primary/20 rounded-lg">
@@ -200,7 +204,7 @@ export default function YoutubeTagsPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">1. Paste YouTube URL</h3>
-                    <p className="text-sm text-muted-foreground">Copy and paste any YouTube video link into the input field above.</p>
+                    <p className="text-sm text-muted-foreground">Copy and paste any YouTube video link into our tag generator youtube url tool above. The youtube tag generator will automatically detect the video.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/50 border border-border">
@@ -208,8 +212,8 @@ export default function YoutubeTagsPage() {
                     <Zap className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-2">2. Extract Tags</h3>
-                    <p className="text-sm text-muted-foreground">Click the button to extract all tags from the video.</p>
+                    <h3 className="font-semibold text-foreground mb-2">2. Extract & Generate Tags</h3>
+                    <p className="text-sm text-muted-foreground">Click the button to extract all tags from the video. Our youtube tag generator will also suggest additional relevant tags for your content.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/50 border border-border">
@@ -218,7 +222,7 @@ export default function YoutubeTagsPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">3. Analyze Results</h3>
-                    <p className="text-sm text-muted-foreground">Review the extracted tags and use them for your content strategy.</p>
+                    <p className="text-sm text-muted-foreground">Review the extracted tags and generated suggestions. Use the tag generator youtube url insights for your content strategy.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/50 border border-border">
@@ -227,7 +231,7 @@ export default function YoutubeTagsPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">4. Copy & Use</h3>
-                    <p className="text-sm text-muted-foreground">Copy the tags and use them for your own videos or research.</p>
+                    <p className="text-sm text-muted-foreground">Copy the tags and use them for your own videos or research. Our youtube tag generator makes SEO optimization easy.</p>
                   </div>
                 </div>
               </div>

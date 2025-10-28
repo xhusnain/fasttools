@@ -97,7 +97,7 @@ export default function CurrencyAPIDocsPage() {
               {/* Hero */}
               <div className="text-center space-y-3 sm:space-y-4 animate-fade-in-up">
                 <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight px-2">Currency API Documentation</h1>
-                <p className="text-sm sm:text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed px-4">Free, real-time currency exchange rates and conversion API. Integrate currency conversion into your applications with our comprehensive REST API.</p>
+                <p className="text-sm sm:text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed px-4">Free currency converter API with real-time exchange rates and conversion. Our free currency conversion API and currency api make it easy to integrate currency conversion into your applications with our comprehensive REST API.</p>
                 <div className="flex flex-wrap justify-center gap-2 sm:gap-3 text-xs sm:text-sm px-4">
                   <div className="flex items-center gap-2 px-3 py-1 bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400 rounded-full">
                     <Zap className="h-4 w-4" />

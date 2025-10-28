@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     "Download YouTube video thumbnails in all available quality sizes. Get maximum quality (1280x720), high quality, medium, and standard thumbnails instantly.",
     keywords :[
         "youtube thumbnail downloader",
+        "youtube video thumbnail downloader",
         "youtube thumbnail download",
         "youtube thumbnail grabber",
         "free youtube thumbnail downloader",
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
         "youtube thumbnail downloader for shorts",
         "youtube thumbnail downloader for live videos",
         "download youtube video thumbnail",
+        "download youtube videos",
         "get youtube thumbnail online",
         "youtube thumbnail image downloader",
         "youtube thumbnail hd download",
@@ -39,7 +41,9 @@ export const metadata: Metadata = {
         "youtube thumbnail downloader chrome extension",
         "youtube thumbnail downloader api",
         "youtube thumbnail download site",
-        "best youtube thumbnail downloader online"
+        "best youtube thumbnail downloader online",
+        "youtube thumbnail size",
+        "youtube thumbnail dimensions"
     ],
     openGraph: {
       title: "YouTube Thumbnail Downloader - Download HD Thumbnails",
@@ -200,20 +204,23 @@ export default function YoutubeThumbnailPage() {
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-card-foreground">How Our YouTube Thumbnail Downloader Works</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Our YouTube thumbnail downloader extracts thumbnails directly from YouTube's CDN servers. 
+                    Our YouTube video thumbnail downloader extracts thumbnails directly from YouTube's CDN servers. 
                     It supports all available quality sizes including maximum quality (1280x720), high quality, medium, and standard resolutions.
+                    Whether you want to download YouTube videos or just save the thumbnail images, our tool provides instant access to high-quality images.
                   </p>
 
-                  <h3 className="text-lg font-bold mb-3 text-card-foreground">Multiple Quality Options</h3>
+                  <h3 className="text-lg font-bold mb-3 text-card-foreground">Multiple Quality Options & YouTube Thumbnail Size</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Get thumbnails in all available sizes: Maximum Quality (1280x720), High Quality (480x360), 
-                    Medium Quality (320x180), and Standard Quality (640x480) for different use cases.
+                    Get thumbnails in all available YouTube thumbnail sizes: Maximum Quality (1280x720 pixels), High Quality (480x360 pixels), 
+                    Medium Quality (320x180 pixels), and Standard Quality (640x480 pixels) for different use cases.
+                    Understanding YouTube thumbnail size requirements helps you choose the perfect resolution for your content creation needs.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-card-foreground">Instant Access</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     No registration required. Simply paste a YouTube URL or video ID and get instant access 
-                    to all available thumbnail sizes with download and copy options.
+                    to all available thumbnail sizes with download and copy options. Our YouTube video thumbnail downloader 
+                    makes it easy to save thumbnails in the exact size you need.
                   </p>
                 </div>
 
