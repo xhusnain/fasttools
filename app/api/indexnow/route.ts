@@ -50,7 +50,6 @@ async function submitToIndexNow(urls: string[]): Promise<{ success: boolean; sta
   const payload = {
     host: CONFIG.host,
     key: CONFIG.apiKey,
-    keyLocation: CONFIG.keyLocation,
     urlList: urls,
   };
   
