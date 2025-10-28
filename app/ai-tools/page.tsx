@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
-import { Sparkles, QrCode, Music, ImageIcon, Heart, Hash, Code, Globe, ArrowRight } from "lucide-react"
+import { QrCode, Music, ImageIcon, Heart, Code, Globe, ArrowRight } from "lucide-react"
 
 // Auto-update year
 const currentYear = new Date().getFullYear()
@@ -12,15 +12,15 @@ const currentYear = new Date().getFullYear()
 export const metadata: Metadata = {
   title: `Best Free AI Tools in ${currentYear} | Top Artificial Intelligence Apps for Work, Design & Business`,
   description:
-    `Discover the best free AI tools in ${currentYear} for content creation, social media marketing, and business. Free AI meme generator, QR code creator, lyrics generator, caption maker, pet name suggester, and hashtag tool. Create amazing content instantly with AI.`,
+    `Discover the best free AI tools in ${currentYear} for content creation, social media marketing, and business. Free AI QR code creator, lyrics generator, caption maker, and pet name suggester. Create amazing content instantly with AI.`,
   keywords:
-    `ai tools, best ai tools ${currentYear}, free ai tools, ai tools for business, ai productivity tools, ai content creation tools, ai tools for writing, ai tools for students, ai tools list, ai tools directory, top ai tools, ai tools for marketing, generative ai tools, ai image generator, ai video generator, ai tools online, ai tools free, ai tools app, best ai software, ai automation tools, best free AI tools ${currentYear}, AI content creation, AI meme generator, meme generator, funny meme generator, viral meme maker, meme creator online, meme text generator, create memes online, AI QR code generator, QR code generator, QR art generator, custom QR code, artistic QR codes, branded QR codes, QR code design, scannable QR codes, free QR code maker, AI lyrics generator, song lyrics generator, songwriting tool, music lyrics creator, rap lyrics generator, song writer AI, lyric maker, AI caption generator, social media caption generator, Instagram caption generator, caption ideas, photo caption generator, engaging captions, caption writer, AI pet name generator, pet name generator, dog name generator, cat name generator, unique pet names, creative pet names, pet naming ideas, AI hashtag generator, hashtag suggester, hashtag generator, trending hashtags, Instagram hashtags, TikTok hashtags, hashtag ideas, hashtag research tool, social media hashtags, AI for social media, AI marketing tools, AI content tools, free meme maker, free QR generator`,
+    `ai tools, best ai tools ${currentYear}, free ai tools, ai tools for business, ai productivity tools, ai content creation tools, ai tools for writing, ai tools for students, ai tools list, ai tools directory, top ai tools, ai tools for marketing, generative ai tools, ai image generator, ai video generator, ai tools online, ai tools free, ai tools app, best ai software, ai automation tools, AI QR code generator, QR code generator, QR art generator, custom QR code, artistic QR codes, branded QR codes, QR code design, scannable QR codes, free QR code maker, AI lyrics generator, song lyrics generator, songwriting tool, music lyrics creator, rap lyrics generator, song writer AI, lyric maker, AI caption generator, social media caption generator, Instagram caption generator, caption ideas, photo caption generator, engaging captions, caption writer, AI pet name generator, pet name generator, dog name generator, cat name generator, unique pet names, creative pet names, pet naming ideas, AI for social media, AI marketing tools, AI content tools, free QR generator`,
   alternates: {
     canonical: "https://www.fasttools.store/ai-tools",
   },
   openGraph: {
     title: `Best Free AI Tools in ${currentYear} | Top Artificial Intelligence Apps for Work, Design & Business`,
-    description: `Discover the best free AI tools in ${currentYear} for content creation, social media marketing, and business. Free AI meme generator, QR code creator, lyrics generator, caption maker, pet name suggester, and hashtag tool. Create amazing content instantly with AI.`,
+    description: `Discover the best free AI tools in ${currentYear} for content creation, social media marketing, and business. Free AI QR code creator, lyrics generator, caption maker, and pet name suggester. Create amazing content instantly with AI.`,
     url: "https://www.fasttools.store/ai-tools",
     type: "website",
     images: [
@@ -35,12 +35,6 @@ export const metadata: Metadata = {
 }
 
 const aiTools = [
-  {
-    title: "AI Meme Generator",
-    description: "Generate funny meme text with AI for any topic or style",
-    href: "/ai-tools/meme-generator",
-    icon: Sparkles,
-  },
   {
     title: "AI QR Art Generator",
     description: "Create beautiful, customizable QR codes with artistic styling",
@@ -65,19 +59,13 @@ const aiTools = [
     href: "/ai-tools/pet-names",
     icon: Heart,
   },
-  {
-    title: "AI Hashtag Suggester",
-    description: "Get relevant hashtag suggestions based on your caption or content",
-    href: "/ai-tools/hashtag-suggester",
-    icon: Hash,
-  },
 ]
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": `Best Free AI Tools in ${currentYear} | Top Artificial Intelligence Apps for Work, Design & Business`,
-  "description": `Discover the best free AI tools in ${currentYear} for content creation, social media marketing, and business. Free AI meme generator, QR code creator, lyrics generator, caption maker, pet name suggester, and hashtag tool. Create amazing content instantly with AI.`,
+  "description": `Discover the best free AI tools in ${currentYear} for content creation, social media marketing, and business. Free AI QR code creator, lyrics generator, caption maker, and pet name suggester. Create amazing content instantly with AI.`,
   "url": "https://www.fasttools.store/ai-tools",
   "hasPart": aiTools.map(tool => ({
     "@type": "SoftwareApplication",
@@ -112,23 +100,23 @@ export default function AiToolsPage() {
                 {/* Hero Section */}
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-4 shadow-md">
-                    <Sparkles className="h-4 w-4 animate-pulse" />
+                    <Code className="h-4 w-4 animate-pulse" />
                     <span>AI Tools Collection</span>
                     <div className="h-2 w-2 bg-secondary-accent rounded-full animate-ping"></div>
           </div>
 
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">
-                    Free AI Tools – Meme, QR, Lyrics, Caption & More
+                    Free AI Tools – QR Codes, Lyrics, Captions & Pet Names
                   </h1>
 
                   <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
-                    Essential AI-powered content creation tools. Generate memes, create QR codes, write lyrics, craft captions — all free, fast, and powered by AI. No signup required.
+                    Essential AI-powered content creation tools. Create QR codes, write lyrics, craft captions, and find perfect pet names — all free, fast, and powered by AI. No signup required.
                   </p>
 
                   <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
                     <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
-                      <Sparkles className="h-4 w-4 text-primary" />
-                      <span className="text-primary font-medium text-sm">6+ Tools</span>
+                      <Code className="h-4 w-4 text-primary" />
+                      <span className="text-primary font-medium text-sm">4+ Tools</span>
                     </div>
                     <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
                       <Globe className="h-4 w-4 text-green-600" />
@@ -377,23 +365,23 @@ export default function AiToolsPage() {
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Security and privacy remain critical for all ai tools and best ai tools ${currentYear}. Our ai tools directory prioritizes data protection through encryption, zero-storage policies, and transparent data handling. When you use our free ai tools including the viral meme maker, AI QR code generator, or Instagram caption generator, your inputs aren't stored or shared. The best ai software implements robust security measures, though users should review privacy policies of any ai tools for business before commercial deployment. With our AI meme generator and funny meme generator, generated content is yours without AI companies claiming rights. The free QR code maker creates scannable QR codes and custom QR code designs without tracking user behavior or link analytics. Our songwriting tool and AI lyrics generator don't retain your song lyrics or creative inputs. The social media caption generator and Instagram caption generator process your requests privately without building user profiles. These ai content creation tools and ai productivity tools operate with minimal data collection unlike many ai tools online requiring account creation and data sharing. The hashtag research tool analyzes public social media data without accessing private accounts. Our dog name generator and cat name generator provide creative pet names without storing personal information. As ai automation tools become more sophisticated, privacy concerns intensify, making transparent ai tools for marketing essential. Users should verify that ai tools for writing, ai tools for students, and generative ai tools comply with GDPR, CCPA, and relevant data protection regulations. Our commitment to providing top ai tools includes prioritizing security, ensuring our ai tools app and free ai tools maintain user trust through responsible data practices.
                         </p>
-                      </div>
+          </div>
 
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">How accurate and reliable are AI-generated outputs?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           The best ai tools ${currentYear} achieve impressive accuracy, though outputs should be reviewed and refined. Our viral meme maker and AI meme generator create contextually relevant funny meme generator content with 85-90% usability rates, meaning most generated memes need minimal editing. The AI QR code generator produces 100% functional scannable QR codes every time, with artistic QR codes and branded QR codes maintaining reliability across devices. The free QR code maker prioritizes functionality ensuring custom QR code designs work consistently. The AI lyrics generator and songwriting tool create coherent song lyrics with proper structure, rhyme, and meter, though emotional authenticity improves with human refinement. The lyric maker and song lyrics generator accuracy depends on genre - pop and hip-hop lyrics achieve higher initial quality than complex genres requiring deep emotional nuance. The Instagram caption generator and social media caption generator produce engaging captions usable as-is or with minor personalization. These ai content creation tools understand platform requirements and audience preferences. The hashtag research tool provides highly accurate trending hashtags and Instagram hashtags based on real-time data analysis. The dog name generator and cat name generator suggest appropriate creative pet names with high user satisfaction rates. While these ai productivity tools and ai automation tools deliver professional results, human oversight ensures outputs align with specific requirements. The ai tools for business should implement review processes before publication. Our free ai tools and ai tools online provide excellent starting points requiring less refinement than manual creation from scratch. The reliability makes these top ai tools and best ai software practical for ai tools for marketing and ai tools for writing workflows. As generative ai tools improve, accuracy continues increasing, making our ai tools directory increasingly valuable for professional use.
                         </p>
-                      </div>
+        </div>
 
-                      <div>
+          <div>
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">Can I use AI tools for commercial purposes and business?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes, our free ai tools including the viral meme maker, AI QR code generator, songwriting tool, Instagram caption generator, and all ai content creation tools are available for commercial use. Businesses use the AI meme generator and funny meme generator for ai tools for marketing campaigns, social media advertising, and brand awareness content. The custom QR code and branded QR codes from our free QR code maker appear on product packaging, business cards, marketing materials, and promotional items commercially. The AI lyrics generator and song lyrics generator create content for commercial releases, though we recommend reviewing copyright considerations for professional music distribution. The Instagram caption generator and social media caption generator power ai tools for business social media strategies, with engaging captions supporting e-commerce product sales, service promotions, and brand building. The hashtag research tool provides trending hashtags and social media hashtags for commercial marketing campaigns. Our ai productivity tools and ai automation tools save businesses thousands in content creation costs traditionally requiring agencies or specialized staff. The best ai tools ${currentYear} for commercial use include our ai tools online platform supporting unlimited business usage. The ai tools for writing generate marketing copy, product descriptions, and promotional content for commercial purposes. Unlike some ai tools directory platforms restricting commercial use, our free ai tools welcome business applications. The top ai tools and best ai software in our ai tools list support entrepreneurs, startups, SMBs, and enterprises equally. Commercial users should ensure AI-generated content aligns with brand guidelines, review outputs for accuracy, and customize as needed for specific audiences. These generative ai tools provide professional-grade results suitable for commercial deployment.
                         </p>
-                      </div>
+          </div>
 
-                      <div>
+          <div>
                         <h3 className="text-lg font-bold mb-2 text-card-foreground">What makes your AI tools different from competitors?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Our ai tools directory differentiates through completely free ai tools access, zero registration requirements, and unlimited usage without restrictions. Unlike competitor best ai tools ${currentYear} platforms charging $20-200 monthly, our viral meme maker, AI QR code generator, Instagram caption generator, and all ai content creation tools remain permanently free. We don't require account creation, credit cards, or personal information for ai tools online access. Competitors offer limited free trials then force upgrades; our free ai tools provide full functionality forever. The quality matches or exceeds paid ai tools for business platforms - our AI meme generator and funny meme generator rival expensive marketing tools, the free QR code maker creates custom QR code and artistic QR codes comparable to premium services, and the songwriting tool generates song lyrics equal to subscription-based AI lyrics generators. Our ai productivity tools include comprehensive features rather than restricted free versions. The Instagram caption generator and social media caption generator don't limit daily generations like competitors. The hashtag research tool provides unlimited trending hashtags and Instagram hashtags analysis without premium tiers. Our commitment to the best ai software accessibility means ai tools for students, creators, and businesses access identical capabilities. The ai automation tools operate without ads interrupting workflows. Our ai tools for marketing deliver professional results without upselling premium features. The generative ai tools and top ai tools functionality stays current with regular updates and AI model improvements. We prioritize user experience through clean interfaces, fast processing, and reliable performance. This combination of free access, unrestricted usage, professional quality, and user-focused design makes our ai tools app and ai tools list the best choice for anyone seeking practical, powerful, accessible AI tools in ${currentYear}.

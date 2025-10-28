@@ -329,19 +329,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
-      url: "https://www.fasttools.store/ai-tools/hashtag-suggester",
-      lastModified: getFreshnessDate(1),
-      changeFrequency: "daily" as const,
-      priority: 0.95,
-    },
-    {
       url: "https://www.fasttools.store/ai-tools/lyrics-generator",
-      lastModified: getFreshnessDate(1),
-      changeFrequency: "daily" as const,
-      priority: 0.9,
-    },
-    {
-      url: "https://www.fasttools.store/ai-tools/meme-generator",
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,
       priority: 0.9,

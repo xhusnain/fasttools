@@ -468,13 +468,6 @@ export default function HomePage() {
       popular: true,
     },
     {
-      title: "AI Meme Generator",
-      description: "Create funny memes with AI-powered text generation. Choose from popular templates and customize your message.",
-      icon: Image,
-      href: "/ai-tools/meme-generator",
-      popular: true,
-    },
-    {
       title: "AI Caption Generator",
       description: "Generate engaging captions for your social media posts. Perfect for Instagram, Facebook, and Twitter.",
       icon: FileText,
