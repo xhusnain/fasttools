@@ -556,27 +556,19 @@ export default function PDFUnlockerPage() {
                       <span className="text-secondary-accent font-medium text-sm">100% Secure</span>
                     </div>
                   </div>
-        </div>
-
-        {/* First Ad Space - After Hero Content */}
-                <div className="mt-6 block xl:hidden">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="content" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
-        </div>
+                </div>
 
                 {/* PDF Unlocker Tool */}
                 <div className="animate-fade-in-up animation-delay-100">
-          <PDFUnlocker />
-                </div>
-          
-          {/* Second Ad Space - After Tool */}
+                  <PDFUnlocker />
+        </div>
+
+                {/* Mobile Ad - After Tool */}
                 <div className="mt-6 block xl:hidden">
                   <div className="text-center mb-2">
                     <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                   </div>
-                  <AdSpace slot="content" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
+                  <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
                 </div>
 
                 {/* Content Sections */}
@@ -663,7 +655,7 @@ export default function PDFUnlockerPage() {
                       </p>
                     </div>
                   </div>
-                </div>
+        </div>
 
                 {/* Why Choose Our PDF Unlocker */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
@@ -918,11 +910,12 @@ export default function PDFUnlockerPage() {
                   <div className="text-center">
                     <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                   </div>
-                  <AdSpace slot="sidebar" className="w-full h-[600px] border border-border rounded-xl shadow bg-card" />
+                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
+                  
                   <div className="text-center">
                     <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                   </div>
-                  <AdSpace slot="sidebar" className="w-full h-[600px] border border-border rounded-xl shadow bg-card" />
+                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
                 </div>
               </div>
             </div>
