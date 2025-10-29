@@ -115,6 +115,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.8,
     },
+    {
+      url: "https://www.fasttools.store/pdf-tools",
+      lastModified: getFreshnessDate(0), // Updated today - all tools SEO optimized
+      changeFrequency: "daily" as const,
+      priority: 0.98, // High priority - comprehensive PDF tools suite
+    },
   ]
 
   const toolPages = [
@@ -613,6 +619,44 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: getFreshnessDate(2),
       changeFrequency: "weekly" as const,
       priority: 0.9,
+    },
+
+    // PDF Tools
+    {
+      url: "https://www.fasttools.store/pdf-tools/pdf-sign",
+      lastModified: getFreshnessDate(0), // Updated today - production ready
+      changeFrequency: "daily" as const,
+      priority: 0.98, // High priority - popular for HR, freelancers, legal
+    },
+    {
+      url: "https://www.fasttools.store/pdf-tools/pdf-word-converter",
+      lastModified: getFreshnessDate(0), // Updated today - production ready
+      changeFrequency: "daily" as const,
+      priority: 0.97, // High priority - bidirectional converter
+    },
+    {
+      url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
+      lastModified: getFreshnessDate(0), // Updated today - production ready
+      changeFrequency: "daily" as const,
+      priority: 0.97, // High priority - essential PDF tool
+    },
+    {
+      url: "https://www.fasttools.store/pdf-tools/pdf-unlocker",
+      lastModified: getFreshnessDate(0), // Updated today - production ready
+      changeFrequency: "daily" as const,
+      priority: 0.96, // High priority - password removal tool
+    },
+    {
+      url: "https://www.fasttools.store/pdf-tools/pdf-compressor",
+      lastModified: getFreshnessDate(0), // Updated today - production ready
+      changeFrequency: "daily" as const,
+      priority: 0.96, // High priority - file size optimization
+    },
+    {
+      url: "https://www.fasttools.store/pdf-tools/pdf-to-image",
+      lastModified: getFreshnessDate(0), // Updated today - production ready
+      changeFrequency: "daily" as const,
+      priority: 0.95, // High priority - format conversion
     },
 
   ]
