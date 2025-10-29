@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { FileText, FileStack, Unlock, ArrowRight, Code, Globe, File } from "lucide-react"
+import { FileText, FileStack, Unlock, ArrowRight, Code, Globe, File, Minimize2 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 
@@ -88,9 +88,9 @@ const pdfTools = [
   {
     title: "PDF Compressor",
     description: "Reduce PDF file size with PDF compressor online. Compress PDFs while maintaining quality.",
-    icon: File,
+    icon: Minimize2,
     href: "/pdf-tools/pdf-compressor",
-    popular: false,
+    popular: true,
   },
   {
     title: "PDF to Image Converter",
