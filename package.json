@@ -66,6 +66,7 @@
     "ogl": "^1.0.11",
     "onnxruntime-web": "^1.23.0",
     "pdf-lib": "latest",
+    "pdfjs-dist": "^4.10.38",
     "qrcode": "latest",
     "react": "^19",
     "react-day-picker": "9.8.0",
