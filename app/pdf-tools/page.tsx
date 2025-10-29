@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { FileText, FileStack, Unlock, ArrowRight, Code, Globe, File, Minimize2, Image } from "lucide-react"
+import { FileText, FileStack, Unlock, ArrowRight, Code, Globe, File, Minimize2, Image, RefreshCw } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 
@@ -71,6 +71,13 @@ export const metadata: Metadata = {
 }
 
 const pdfTools = [
+  {
+    title: "PDF to Word & Word to PDF",
+    description: "Convert PDF to Word for editing or Word to PDF for sharing. Free bidirectional converter with format preservation.",
+    icon: RefreshCw,
+    href: "/pdf-tools/pdf-word-converter",
+    popular: true,
+  },
   {
     title: "PDF Splitter & Merger",
     description: "Split large PDFs with PDF splitter online or merge multiple PDFs with PDF merger free. Fast and secure processing.",
