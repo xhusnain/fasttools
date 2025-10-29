@@ -366,6 +366,24 @@ export const metadata: Metadata = {
               </>
             )}
             
+            {/* Clickfortify Tracker - Only in production */}
+            {env.isProduction && (
+              <script
+                  dangerouslySetInnerHTML={{
+                      __html: `
+                          (function() {
+                            var s = document.createElement('script');
+                            s.type = 'text/javascript';
+                            s.async = true;
+                            s.src = "https://tracker.clickfortify.com/cdn/spcZrjg3d1d/wstIuxvN4do";
+                            var x = document.getElementsByTagName('script')[0];
+                            x.parentNode.insertBefore(s, x);
+                          })();
+                      `,
+                  }}
+              />
+            )}
+            
             {/* Essential Meta Tags */}
             <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
             
@@ -517,6 +535,7 @@ export const metadata: Metadata = {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{__html: JSON.stringify(websiteSchema)}}
             />
+            
             
         </head>
         <body className="min-h-screen bg-background font-sans text-foreground">
