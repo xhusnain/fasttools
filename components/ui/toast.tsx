@@ -10,7 +10,7 @@ interface ToastProps {
   onClose?: () => void
 }
 
-export function Toast({ type, message, duration = 5000, onClose }: ToastProps) {
+export function Toast({ type, message, duration = 3000, onClose }: ToastProps) {
   const [isVisible, setIsVisible] = useState(true)
 
   useEffect(() => {
@@ -75,21 +75,20 @@ export function Toast({ type, message, duration = 5000, onClose }: ToastProps) {
 
   return (
     <div className="fixed top-4 right-4 z-[9999] animate-in slide-in-from-top-2 duration-300">
-      <div className={`${theme.container} border-2 rounded-lg p-6 shadow-xl max-w-md relative`}>
+      <div className={`${theme.container} border rounded-lg px-4 py-2.5 shadow-lg max-w-sm relative`}>
         <button
           onClick={() => {
             setIsVisible(false)
             setTimeout(() => onClose?.(), 300)
           }}
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+          className="absolute top-2 right-2 text-white/80 hover:text-white transition-colors"
         >
-          <X className="h-5 w-5" />
+          <X className="h-3.5 w-3.5" />
         </button>
         
-        <div className="flex items-center gap-3 pr-8">
-          <div className={`w-4 h-4 ${theme.dot} rounded-full animate-pulse`}></div>
-          <p className={`text-base font-semibold ${theme.text}`}>
-            {theme.icon} {message}
+        <div className="flex items-center gap-2 pr-6">
+          <p className={`text-sm font-medium ${theme.text}`}>
+            {message}
           </p>
         </div>
       </div>
@@ -103,7 +102,8 @@ export function useToast() {
 
   const showToast = (type: "success" | "warning" | "error" | "info", message: string, duration?: number) => {
     const id = Date.now().toString()
-    setToasts(prev => [...prev, { id, type, message, duration }])
+    // Auto-dismiss previous toast and show new one
+    setToasts([{ id, type, message, duration }])
   }
 
   const removeToast = (id: string) => {
@@ -112,8 +112,8 @@ export function useToast() {
 
   const ToastContainer = () => (
     <div className="fixed top-4 right-4 z-[9999] space-y-2">
-      {toasts.map((toast, index) => (
-        <div key={toast.id} style={{ transform: `translateY(${index * 80}px)` }}>
+      {toasts.map((toast) => (
+        <div key={toast.id}>
           <Toast
             type={toast.type}
             message={toast.message}

@@ -1,3 +1,6 @@
+# ========================================
+# MAIN PAGES
+# ========================================
 https://www.fasttools.store
 https://www.fasttools.store/about
 https://www.fasttools.store/contact
@@ -5,6 +8,10 @@ https://www.fasttools.store/faq
 https://www.fasttools.store/privacy-policy
 https://www.fasttools.store/terms
 https://www.fasttools.store/cookie-preferences
+
+# ========================================
+# CATEGORY PAGES
+# ========================================
 https://www.fasttools.store/ai-tools
 https://www.fasttools.store/converters
 https://www.fasttools.store/finance-tools
@@ -14,6 +21,11 @@ https://www.fasttools.store/calculator
 https://www.fasttools.store/image-tools
 https://www.fasttools.store/seo-tools
 https://www.fasttools.store/fun-tools
+https://www.fasttools.store/pdf-tools
+
+# ========================================
+# CALCULATOR TOOLS
+# ========================================
 https://www.fasttools.store/calculator/conversion-calculator
 https://www.fasttools.store/calculator/ip-subnet-calculator
 https://www.fasttools.store/calculator/age-calculator
@@ -47,12 +59,20 @@ https://www.fasttools.store/calculator/retirement-calculator
 https://www.fasttools.store/calculator/payment-calculator
 https://www.fasttools.store/calculator/mortgage-calculator
 https://www.fasttools.store/calculator/love-calculator
+
+# ========================================
+# AI TOOLS
+# ========================================
 https://www.fasttools.store/ai-tools/caption-generator
 https://www.fasttools.store/ai-tools/hashtag-suggester
 https://www.fasttools.store/ai-tools/lyrics-generator
 https://www.fasttools.store/ai-tools/meme-generator
 https://www.fasttools.store/ai-tools/pet-names
 https://www.fasttools.store/ai-tools/qr-generator
+
+# ========================================
+# SOCIAL MEDIA TOOLS
+# ========================================
 https://www.fasttools.store/social-media-tools/tiktok-downloader
 https://www.fasttools.store/social-media-tools/youtube-tags
 https://www.fasttools.store/social-media-tools/youtube-thumbnail
@@ -60,6 +80,10 @@ https://www.fasttools.store/social-media-tools/channel-checker
 https://www.fasttools.store/social-media-tools/hashtag-counter
 https://www.fasttools.store/social-media-tools/instagram-dp
 https://www.fasttools.store/social-media-tools/link-in-bio
+
+# ========================================
+# CONVERTER TOOLS
+# ========================================
 https://www.fasttools.store/converters/currency-api
 https://www.fasttools.store/converters/currency
 https://www.fasttools.store/converters/file-size
@@ -67,14 +91,26 @@ https://www.fasttools.store/converters/length
 https://www.fasttools.store/converters/temperature
 https://www.fasttools.store/converters/text-case
 https://www.fasttools.store/converters/timezone
+
+# ========================================
+# SEO TOOLS
+# ========================================
 https://www.fasttools.store/seo-tools/meta-tags
 https://www.fasttools.store/seo-tools/lorem-ipsum
 https://www.fasttools.store/seo-tools/hashtags
 https://www.fasttools.store/seo-tools/blog-titles
 https://www.fasttools.store/seo-tools/keyword-density
+
+# ========================================
+# FUN TOOLS
+# ========================================
 https://www.fasttools.store/fun-tools/anniversary
 https://www.fasttools.store/fun-tools/birthday-countdown
 https://www.fasttools.store/fun-tools/future-age
+
+# ========================================
+# FINANCE TOOLS
+# ========================================
 https://www.fasttools.store/finance-tools/bill-splitter
 https://www.fasttools.store/finance-tools/credit-card-payoff
 https://www.fasttools.store/finance-tools/discount-calculator
@@ -83,6 +119,10 @@ https://www.fasttools.store/finance-tools/paypal-fee
 https://www.fasttools.store/finance-tools/retirement-planner
 https://www.fasttools.store/finance-tools/savings-tracker
 https://www.fasttools.store/finance-tools/tip-calculator
+
+# ========================================
+# DEVELOPER TOOLS
+# ========================================
 https://www.fasttools.store/dev-tools/jwt-decoder
 https://www.fasttools.store/dev-tools/regex-tester
 https://www.fasttools.store/dev-tools/json-to-csv
@@ -91,7 +131,21 @@ https://www.fasttools.store/dev-tools/color-palette
 https://www.fasttools.store/dev-tools/hex-to-rgb
 https://www.fasttools.store/dev-tools/html-to-markdown
 https://www.fasttools.store/dev-tools/markdown-previewer
+
+# ========================================
+# IMAGE TOOLS
+# ========================================
 https://www.fasttools.store/image-tools/image-background-remover
 https://www.fasttools.store/image-tools/image-blur
 https://www.fasttools.store/image-tools/photo-editor
 https://www.fasttools.store/image-tools/image-to-text
+
+# ========================================
+# PDF TOOLS - Added October 29, 2025
+# ========================================
+https://www.fasttools.store/pdf-tools/pdf-sign
+https://www.fasttools.store/pdf-tools/pdf-word-converter
+https://www.fasttools.store/pdf-tools/pdf-splitter-merger
+https://www.fasttools.store/pdf-tools/pdf-unlocker
+https://www.fasttools.store/pdf-tools/pdf-compressor
+https://www.fasttools.store/pdf-tools/pdf-to-image
