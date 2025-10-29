@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { FileText, FileStack, Unlock, ArrowRight, Code, Globe, File, Minimize2 } from "lucide-react"
+import { FileText, FileStack, Unlock, ArrowRight, Code, Globe, File, Minimize2, Image } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 
@@ -94,10 +94,10 @@ const pdfTools = [
   },
   {
     title: "PDF to Image Converter",
-    description: "Convert PDF pages to images with PDF to image converter. Extract images from PDF documents.",
-    icon: FileText,
+    description: "Convert PDF to JPG, PNG, WEBP online free. High quality image extraction with bulk download support.",
+    icon: Image,
     href: "/pdf-tools/pdf-to-image",
-    popular: false,
+    popular: true,
   },
 ]
 
