@@ -64,7 +64,20 @@ export const metadata: Metadata = {
         "investment goal planner",
         "investment rate of return calculator",
         "expected return calculator",
-        "personal investment calculator"
+        "personal investment calculator",
+        // Additional Investment Calculator Keywords
+        "Investment Calculator",
+        "calculator.net investment calculator",
+        "roi calculator",
+        "calculator.net roi calculator",
+        "return on investment calculator",
+        "investment calc",
+        "retorno de la inversión calculadora",
+        "simple investment calcuator",
+        "and here's that investment calculator so you can play around with numbers yourself",
+        "투자 계산기",
+        "حاسبة الربح التراكمي",
+        "an interest rate of 0.5%"
     ],
 
     openGraph: {

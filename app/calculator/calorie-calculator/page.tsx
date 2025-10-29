@@ -40,7 +40,29 @@ export const metadata: Metadata = {
         "best calorie calculator online",
         "calorie calculator with macros",
         "Indian food calorie calculator",
-        "free daily calorie calculator online"
+        "free daily calorie calculator online",
+        // Additional Calorie Keywords
+        "calorie calculator",
+        "calculator.net calorie calculator",
+        "online calorie calculator",
+        "calorie calculator for weight loss and weight gain",
+        "calorie calculator for losing weight",
+        "calories",
+        "calories calculator",
+        "calorie counter",
+        "calorie deficit calculator",
+        "tdee calculator",
+        "macro calculator",
+        "open macro calculator",
+        "macro calculations",
+        "protein calculator",
+        "calculator.net protein calculator",
+        "calories burned calculator",
+        "calculator.net calories burned calculator",
+        "calculate calories burned by daily activity and exercise",
+        "fat intake calculator",
+        "宏计算",
+        "recommended"
     ],
 
     openGraph: {

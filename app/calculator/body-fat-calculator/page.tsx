@@ -72,7 +72,19 @@ export const metadata: Metadata = {
         "body fat fitness calculator",
         "body fat nutrition calculator",
         "body fat health calculator",
-        "body fat loss percentage calculator"
+        "body fat loss percentage calculator",
+        // Additional Body Fat Keywords
+        "Body Fat Calculator",
+        "calculator.net body fat calculator",
+        "body fat",
+        "body fat percentage",
+        "калькулятор жира",
+        "body fat than recommended",
+        "army body fat calculator",
+        "체지방률 계산기",
+        "線上體脂率計算器",
+        "fat mass",
+        "lean body mass calculator"
     ],
 
   openGraph: {

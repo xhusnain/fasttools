@@ -54,7 +54,19 @@ export const metadata: Metadata = {
         "pregnancy calendar",
         "pregnancy countdown calculator",
         "pregnancy timeline calculator",
-        "pregnancy week estimator"
+        "pregnancy week estimator",
+        // Additional Pregnancy Calculator Keywords
+        "Pregnancy Calculator",
+        "pregnancy due date calculator",
+        "pregnancy conception calculator",
+        "pregnancy conception",
+        "due date calculator",
+        "conception calculator",
+        "lmp",
+        "edd calculation",
+        "ovulation calculator",
+        "calculation on fertile period",
+        "click here for assistance calculating the gestational age for your keepsake"
     ],
 
   openGraph: {

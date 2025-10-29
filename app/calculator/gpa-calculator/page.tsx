@@ -127,7 +127,15 @@ export const metadata: Metadata = {
     "GPA calculator and analyzer",
     "GPA calculation sheet",
     "GPA grading system calculator",
-    "GPA calculator for report cards"
+    "GPA calculator for report cards",
+    // Additional GPA Calculator Keywords
+    "GPA Calculator",
+    "calculator.net gpa calculator",
+    "gpa",
+    "gpa计算器",
+    "use this tool for calculating grade point average",
+    "grade calculator",
+    "calculator.net grade calculator"
   ],
   openGraph: {
     title: "Free Online GPA Calculator | Grade Point Average Calculator | FastTools",

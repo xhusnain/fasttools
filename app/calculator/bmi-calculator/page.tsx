@@ -51,7 +51,21 @@ export const metadata: Metadata = {
     "bmi calculator",
     "math solver",
     "calculator",
-    "weight watchers"
+    "weight watchers",
+    // Additional BMI Keywords
+    "BMI",
+    "BMI Calculator 🏋️",
+    "calculator.net bmi calculator",
+    "bmi calculater",
+    "bmi calculation",
+    "bmi index",
+    "body mass index",
+    "body mass index (bmi)",
+    "body mass index calculator",
+    "online bmi calculator",
+    "مؤشر كتلة الجسم",
+    "calculators to determine your body mass index",
+    "national institutes of health"
   ],
   openGraph: {
     title: "BMI Calculator | Calculate Your Body Mass Index | FastTools",

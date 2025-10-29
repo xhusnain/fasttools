@@ -107,7 +107,29 @@ export const metadata: Metadata = {
         "mortgage planning tool",
         "mortgage affordability estimator",
       "mortgage calculator",
-        "calculator"
+        "calculator",
+        // Additional Mortgage Calculator Keywords
+        "Mortgage Calculator",
+        "calculator.net mortgage calculator",
+        "mortgage payment calculator",
+        "mortgage payoff calculator",
+        "calculator.net mortgage payoff calculator",
+        "mortgage affordability calculator",
+        "house affordability calculator",
+        "calculator.net house affordability calculator",
+        "affordability calculator",
+        "home loan calculator",
+        "refinance calculator",
+        "rent vs buy calculator",
+        "calculator.net rent vs buy calculator",
+        "rent vs. buy calculator",
+        "rent calculator",
+        "rental property calculator",
+        "calculator.net rental property calculator",
+        "how much rent can i afford",
+        "down payment calculator",
+        "va mortgage calculator",
+        "would need to pay more than $37,000 each month"
     ],
 
     openGraph: {

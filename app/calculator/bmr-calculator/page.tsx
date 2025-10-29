@@ -70,7 +70,16 @@ export const metadata: Metadata = {
     "fitness tool",
     "health tool",
     "nutrition tool",
-    "diet tool"
+    "diet tool",
+    // Additional BMR Keywords
+    "BMR Calculator",
+    "BMR",
+    "calculator.net bmr calculator",
+    "basal metabolic rate (bmr) calculator",
+    "basal metabolic rate (bmr)",
+    "online bmr calculator",
+    "calculadora de tasa metabólica basal (tmb)",
+    "kalkulačka bmr mifflin-st. jeorov"
   ],
   openGraph: {
     title: "BMR Calculator | Basal Metabolic Rate Calculator | FastTools",

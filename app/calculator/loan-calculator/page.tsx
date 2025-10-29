@@ -56,7 +56,24 @@ export const metadata: Metadata = {
     "EMI questions",
     "EMI help",
     "loan EMI guide",
-    "EMI calculator tutorial"
+    "EMI calculator tutorial",
+    // Additional Loan Calculator Keywords
+    "Loan Calculator",
+    "calculator.net loan calculator",
+    "auto loan calculator",
+    "car loan calculator",
+    "car payment calculator",
+    "personal loan calculator",
+    "student loan calculator",
+    "business loan calculator",
+    "robust auto loan calculator",
+    "calculator.net auto loan calculator",
+    "fha loan calculator",
+    "va loan calculator",
+    "auto lease calculator",
+    "calculadora de préstamos",
+    "car loan calculator",
+    "48 months"
   ],
   openGraph: {
     title: "Advanced EMI Calculator | Home Loan, Car Loan & Personal Loan Calculator | FastTools",
