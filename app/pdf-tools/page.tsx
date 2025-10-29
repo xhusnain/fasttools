@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { FileText, FileStack, Unlock, ArrowRight, Code, Globe, File, Minimize2, Image, RefreshCw } from "lucide-react"
+import { FileText, FileStack, Unlock, ArrowRight, Code, Globe, File, Minimize2, Image, RefreshCw, FileSignature } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 
@@ -72,6 +72,13 @@ export const metadata: Metadata = {
 
 const pdfTools = [
   {
+    title: "Sign PDF",
+    description: "Sign PDF documents online free. Add electronic signature to PDF, eSign contracts & agreements. Very popular for HR, freelancers & legal documents.",
+    icon: FileSignature,
+    href: "/pdf-tools/pdf-sign",
+    popular: true,
+  },
+  {
     title: "PDF to Word & Word to PDF",
     description: "Convert PDF to Word for editing or Word to PDF for sharing. Free bidirectional converter with format preservation.",
     icon: RefreshCw,
@@ -118,12 +125,14 @@ const jsonLd = {
     "@type": "ItemList",
     name: "PDF Tools Collection",
     description: "Comprehensive collection of free online PDF utility tools for document manipulation, compression, and conversion",
-    numberOfItems: 4,
+    numberOfItems: 6,
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "PDF Splitter & Merger", description: "Split large PDFs or merge multiple PDFs into one", url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger" },
-      { "@type": "ListItem", position: 2, name: "PDF Unlocker", description: "Remove password protection from PDFs", url: "https://www.fasttools.store/pdf-tools/pdf-unlocker" },
-      { "@type": "ListItem", position: 3, name: "PDF Compressor", description: "Reduce PDF file size while maintaining quality", url: "https://www.fasttools.store/pdf-tools/pdf-compressor" },
-      { "@type": "ListItem", position: 4, name: "PDF to Image Converter", description: "Convert PDF pages to images", url: "https://www.fasttools.store/pdf-tools/pdf-to-image" }
+      { "@type": "ListItem", position: 1, name: "Sign PDF", description: "Sign PDF documents online free with electronic signature", url: "https://www.fasttools.store/pdf-tools/pdf-sign" },
+      { "@type": "ListItem", position: 2, name: "PDF to Word & Word to PDF", description: "Convert PDF to Word or Word to PDF online free", url: "https://www.fasttools.store/pdf-tools/pdf-word-converter" },
+      { "@type": "ListItem", position: 3, name: "PDF Splitter & Merger", description: "Split large PDFs or merge multiple PDFs into one", url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger" },
+      { "@type": "ListItem", position: 4, name: "PDF Unlocker", description: "Remove password protection from PDFs", url: "https://www.fasttools.store/pdf-tools/pdf-unlocker" },
+      { "@type": "ListItem", position: 5, name: "PDF Compressor", description: "Reduce PDF file size while maintaining quality", url: "https://www.fasttools.store/pdf-tools/pdf-compressor" },
+      { "@type": "ListItem", position: 6, name: "PDF to Image Converter", description: "Convert PDF pages to images", url: "https://www.fasttools.store/pdf-tools/pdf-to-image" }
     ]
   },
   breadcrumb: {
