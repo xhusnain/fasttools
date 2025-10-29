@@ -1352,20 +1352,6 @@ export default function ImageToTextPage() {
                         </CardContent>
                       </Card>
 
-                      <Card className="border border-border shadow hover:shadow-md transition-all duration-300">
-                        <CardHeader className="p-3">
-                          <CardTitle className="text-sm font-semibold text-card-foreground">PDF Splitter & Merger</CardTitle>
-                          <CardDescription className="text-xs text-muted-foreground">Split large PDFs or merge multiple PDFs</CardDescription>
-                        </CardHeader>
-                        <CardContent className="p-3 pt-0">
-                          <Button asChild className="w-full h-8 text-xs font-semibold">
-                            <Link href="/image-tools/pdf-tools" className="flex items-center justify-center gap-1">
-                              Use Tool
-                              <ArrowRight className="h-3 w-3" />
-                            </Link>
-                          </Button>
-                        </CardContent>
-                      </Card>
                     </div>
                   </div>
                 </div>

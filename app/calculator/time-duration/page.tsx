@@ -1096,12 +1096,6 @@ export default function TimeDurationPage() {
                           icon: "⏰"
                         },
                         {
-                          name: "Zodiac Sign Calculator",
-                          desc: "Find your zodiac sign by birth date",
-                          href: "/fun-tools/love-calculator",
-                          icon: "♈"
-                        },
-                        {
                           name: "Age in Hours Calculator",
                           desc: "Calculate age in hours and minutes",
                           href: "/calculator/age-calculator",
