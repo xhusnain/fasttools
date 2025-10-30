@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
 import { Card } from "@/components/ui/card"
-import { Upload, Download, RotateCcw, FileText, Zap } from "lucide-react"
+import { Upload, Download, RotateCcw, FileText, Zap, Image as ImageIcon, Palette } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
 import { useBgRemoverStore } from "@/lib/store-bg-remover"
 
@@ -26,6 +26,9 @@ export function ImageBackgroundRemover() {
 
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageDimensions, setImageDimensions] = useState<{ width: number; height: number } | null>(null);
+  const [bgMode, setBgMode] = useState<"transparent" | "color" | "image">("transparent")
+  const [bgColor, setBgColor] = useState<string>("#ffffff")
+  const [bgImageUrl, setBgImageUrl] = useState<string | null>(null)
   const [debounceId, setDebounceId] = useState<number | null>(null);
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,12 +62,71 @@ export function ImageBackgroundRemover() {
   const downloadImage = () => {
     if (!result?.resultUrl) return
 
-    const link = document.createElement('a')
-    link.href = result.resultUrl
-    link.download = 'background-removed.png'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    // If transparent, download as-is
+    if (bgMode === "transparent") {
+      const link = document.createElement('a')
+      link.href = result.resultUrl
+      link.download = 'background-removed.png'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      return
+    }
+
+    // Compose with color or custom image using canvas
+    const subjectImg = new Image()
+    subjectImg.crossOrigin = "anonymous"
+    subjectImg.onload = () => {
+      const w = subjectImg.naturalWidth
+      const h = subjectImg.naturalHeight
+      const canvas = document.createElement('canvas')
+      canvas.width = w
+      canvas.height = h
+      const ctx = canvas.getContext('2d')!
+
+      if (bgMode === "color") {
+        ctx.fillStyle = bgColor
+        ctx.fillRect(0, 0, w, h)
+        ctx.drawImage(subjectImg, 0, 0)
+        canvas.toBlob((blob) => {
+          if (!blob) return
+          const url = URL.createObjectURL(blob)
+          const link = document.createElement('a')
+          link.href = url
+          link.download = 'background-colored.png'
+          document.body.appendChild(link)
+          link.click()
+          document.body.removeChild(link)
+          setTimeout(() => URL.revokeObjectURL(url), 0)
+        }, 'image/png')
+      } else if (bgMode === "image" && bgImageUrl) {
+        const bg = new Image()
+        bg.crossOrigin = "anonymous"
+        bg.onload = () => {
+          // Cover strategy
+          const ratio = Math.max(w / bg.naturalWidth, h / bg.naturalHeight)
+          const bw = Math.ceil(bg.naturalWidth * ratio)
+          const bh = Math.ceil(bg.naturalHeight * ratio)
+          const bx = Math.floor((w - bw) / 2)
+          const by = Math.floor((h - bh) / 2)
+          ctx.drawImage(bg, bx, by, bw, bh)
+          ctx.drawImage(subjectImg, 0, 0)
+          canvas.toBlob((blob) => {
+            if (!blob) return
+            const url = URL.createObjectURL(blob)
+            const link = document.createElement('a')
+            link.href = url
+            link.download = 'background-custom.png'
+            document.body.appendChild(link)
+            link.click()
+            document.body.removeChild(link)
+            setTimeout(() => URL.revokeObjectURL(url), 0)
+          }, 'image/png')
+        }
+        bg.src = bgImageUrl
+      }
+    }
+    subjectImg.src = result.resultUrl
   }
 
   const resetAll = () => {
@@ -99,7 +161,7 @@ export function ImageBackgroundRemover() {
               <div className="relative">
                 <label
                   htmlFor="image-upload-bg"
-                  className="block w-full h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl cursor-pointer bg-white hover:border-purple-400 dark:hover:border-purple-500 transition-all duration-300 overflow-hidden"
+                  className="block w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl cursor-pointer bg-white hover:border-purple-400 dark:hover:border-purple-500 transition-all duration-300 overflow-hidden"
                 >
                   {imageUrl ? (
                     <div className="w-full h-full flex items-center justify-center p-4 bg-white">
@@ -163,8 +225,8 @@ export function ImageBackgroundRemover() {
               </div>
 
               <div 
-                className="relative w-full h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"
-                style={{
+                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"
+                style={bgMode === 'color' ? { backgroundColor: bgColor } : bgMode === 'image' && bgImageUrl ? { backgroundImage: `url(${bgImageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {
                   background: '#ffffff',
                   backgroundImage: 'repeating-conic-gradient(#d1d5db 0% 25%, #ffffff 0% 50%)',
                   backgroundSize: '20px 20px',
@@ -216,13 +278,55 @@ export function ImageBackgroundRemover() {
 
               {result && !isProcessing && (
                 <div className="space-y-3">
-                  <Button 
-                    onClick={downloadImage} 
-                    className="w-full gap-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-6 text-base"
-                  >
-                    <Download className="h-5 w-5" />
-                    Download PNG
-                  </Button>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <Button 
+                      onClick={downloadImage} 
+                      className="w-full gap-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-6 text-base"
+                    >
+                      <Download className="h-5 w-5" />
+                      Download PNG
+                    </Button>
+                    <div className="flex items-center justify-center gap-2 flex-wrap md:flex-nowrap">
+                      <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 w-full md:w-auto">
+                        <Palette className="h-4 w-4" />
+                        <select
+                          className="bg-transparent text-sm outline-none w-full md:w-auto"
+                          value={bgMode}
+                          onChange={(e) => setBgMode(e.target.value as any)}
+                        >
+                          <option value="transparent">Transparent</option>
+                          <option value="color">Color</option>
+                          <option value="image">Custom Image</option>
+                        </select>
+                      </div>
+                      {bgMode === 'color' && (
+                        <input
+                          type="color"
+                          value={bgColor}
+                          onChange={(e) => setBgColor(e.target.value)}
+                          className="h-10 w-10 rounded-md border border-slate-300"
+                          aria-label="Background color"
+                        />
+                      )}
+                      {bgMode === 'image' && (
+                        <label className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 cursor-pointer w-full md:w-auto justify-center">
+                          <ImageIcon className="h-4 w-4" />
+                          <span className="text-sm">Choose image</span>
+                          <input
+                            type="file"
+                            className="hidden"
+                            onChange={(e) => {
+                              const f = e.target.files?.[0]
+                              if (!f) return
+                              const reader = new FileReader()
+                              reader.onload = (ev) => setBgImageUrl(ev.target?.result as string)
+                              reader.readAsDataURL(f)
+                            }}
+                          />
+                        </label>
+                      )}
+                    </div>
+                  </div>
                   
                   <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                     <div className="flex items-center gap-2">
