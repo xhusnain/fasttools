@@ -17,7 +17,7 @@
 
 /* Focus styles for better accessibility */
 *:focus-visible {
-  outline: 2px solid oklch(0.646 0.222 41.116);
+  outline: 2px solid #FF7F00;
   outline-offset: 2px;
 }
 
@@ -74,79 +74,79 @@
 }
 
 :root {
-  /* Clean, Calm, Neutral Theme - Modern and Professional */
-  --background: #3D348B; /* Dark indigo background */
+  /* Pure Black Theme with Orange Accents */
+  --background: #000000; /* Pure black background */
   --foreground: #ffffff; /* White text for dark background */
-  --card: #FFFFFF; /* Crisp white for contrast */
-  --card-foreground: #111827;
-  --popover: #FFFFFF;
-  --popover-foreground: #111827;
-  --primary: #F35B04; /* Orange button color */
-  --primary-foreground: #111827; /* Dark text for better contrast on orange */
-  --link: #60A5FA; /* Light blue for better contrast on dark background */
-  --link-hover: #93C5FD; /* Lighter blue for hover state */
-  --secondary: #F3F4F6; /* Light gray for subtle elements */
-  --secondary-foreground: #111827;
-  --muted: #F3F4F6;
-  --muted-foreground: #F8FAFC; /* Much lighter gray for better contrast on dark background */
-  --accent: #F18701; /* Orange accent for highlights */
-  --accent-foreground: #111827; /* Dark text for better contrast on accent */
+  --card: #0A0A0A; /* Near black for cards */
+  --card-foreground: #ffffff;
+  --popover: #0A0A0A;
+  --popover-foreground: #ffffff;
+  --primary: #FF7F00; /* Orange button color */
+  --primary-foreground: #ffffff; /* White text for orange buttons */
+  --link: #FF7F00; /* Orange for links */
+  --link-hover: #FFA040; /* Lighter orange for hover */
+  --secondary: #1A1A1A; /* Dark gray for subtle elements */
+  --secondary-foreground: #ffffff;
+  --muted: #1A1A1A;
+  --muted-foreground: #999999; /* Light gray for muted text */
+  --accent: #FF7F00; /* Orange accent for highlights */
+  --accent-foreground: #ffffff; /* White text for orange accent */
   --secondary-accent: #10B981; /* Green for success states */
   --secondary-accent-foreground: #ffffff;
   --tertiary-accent: #F7B801; /* Gold for special highlights */
   --tertiary-accent-foreground: #000000;
   --destructive: #EF4444; /* Red 500 for errors */
   --destructive-foreground: #ffffff;
-  --border: #A5B4FC; /* Lighter periwinkle for better contrast on dark background */
-  --input: #FFFFFF;
-  --ring: #F35B04;
-  --chart-1: #2563EB;
-  --chart-2: #F18701;
-  --chart-3: #F59E0B;
-  --chart-4: #8B5CF6;
+  --border: #333333; /* Dark gray borders */
+  --input: #1A1A1A;
+  --ring: #FF7F00;
+  --chart-1: #FF7F00;
+  --chart-2: #FFA040;
+  --chart-3: #FFB866;
+  --chart-4: #FFCC99;
   --chart-5: #EF4444;
   --radius: 0.75rem; /* Rounded corners for modern look */
-  --sidebar: #FFFFFF;
-  --sidebar-foreground: #111827;
-  --sidebar-primary: #F35B04;
+  --sidebar: #0A0A0A;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #FF7F00;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #F3F4F6;
-  --sidebar-accent-foreground: #111827;
-  --sidebar-border: #A5B4FC;
-  --sidebar-ring: #F35B04;
+  --sidebar-accent: #1A1A1A;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #333333;
+  --sidebar-ring: #FF7F00;
 }
 
-/* Dark mode - Clean dark theme */
+/* Dark mode - Pure Black Theme */
 .dark {
-  /* Main backgrounds - Dark indigo */
-  --background: #3D348B;
-  --foreground: #E2E8F0;
+  /* Main backgrounds - Pure black */
+  --background: #000000;
+  --foreground: #ffffff;
 
-  /* Cards and elevated surfaces - Dark gray */
-  --card: #1E293B;
-  --card-foreground: #E2E8F0;
+  /* Cards and elevated surfaces - Near black */
+  --card: #0A0A0A;
+  --card-foreground: #ffffff;
 
   /* Popovers */
-  --popover: #1E293B;
-  --popover-foreground: #E2E8F0;
+  --popover: #0A0A0A;
+  --popover-foreground: #ffffff;
 
   /* Primary - Orange for main actions */
-  --primary: #F35B04;
-  --primary-foreground: #111827; /* Dark text for better contrast on orange */
-  --link: #60A5FA; /* Light blue for better contrast on dark background */
-  --link-hover: #93C5FD; /* Lighter blue for hover state */
+  --primary: #FF7F00;
+  --primary-foreground: #ffffff; /* White text for orange buttons */
+  --link: #FF7F00; /* Orange for links */
+  --link-hover: #FFA040; /* Lighter orange for hover */
 
   /* Secondary - Dark gray */
-  --secondary: #334155;
-  --secondary-foreground: #F8FAFC; /* Much lighter for better contrast on dark background */
+  --secondary: #1A1A1A;
+  --secondary-foreground: #ffffff;
 
   /* Muted elements */
-  --muted: #334155;
-  --muted-foreground: #F1F5F9; /* Much lighter gray for better contrast on dark background */
+  --muted: #1A1A1A;
+  --muted-foreground: #999999;
 
   /* Accent - Orange */
-  --accent: #F18701;
-  --accent-foreground: #111827; /* Dark text for better contrast on accent */
+  --accent: #FF7F00;
+  --accent-foreground: #ffffff;
   --secondary-accent: #10B981; /* Green for success states */
   --secondary-accent-foreground: #ffffff;
   --tertiary-accent: #F7B801; /* Gold for special highlights */
@@ -156,27 +156,27 @@
   --destructive: #EF4444;
   --destructive-foreground: #ffffff;
 
-  /* Borders - Lighter periwinkle borders for better contrast */
-  --border: #A5B4FC;
-  --input: #1E293B;
-  --ring: #F35B04;
+  /* Borders - Dark gray borders */
+  --border: #333333;
+  --input: #1A1A1A;
+  --ring: #FF7F00;
 
-  /* Charts - Color variations */
-  --chart-1: #3B82F6;
-  --chart-2: #F18701;
-  --chart-3: #F59E0B;
-  --chart-4: #8B5CF6;
+  /* Charts - Orange variations */
+  --chart-1: #FF7F00;
+  --chart-2: #FFA040;
+  --chart-3: #FFB866;
+  --chart-4: #FFCC99;
   --chart-5: #EF4444;
 
-  /* Sidebar - Dark */
-  --sidebar: #1E293B;
-  --sidebar-foreground: #E2E8F0;
-  --sidebar-primary: #F35B04;
+  /* Sidebar - Pure black */
+  --sidebar: #0A0A0A;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #FF7F00;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #334155;
-  --sidebar-accent-foreground: #F8FAFC; /* Much lighter for better contrast on dark background */
-  --sidebar-border: #A5B4FC;
-  --sidebar-ring: #F35B04;
+  --sidebar-accent: #1A1A1A;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #333333;
+  --sidebar-ring: #FF7F00;
 }
 
 @theme inline {
@@ -287,7 +287,7 @@
   }
 }
 
-/* Clean minimal animations - subtle and peaceful */
+/* Premium animations - smooth and elegant */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -305,6 +305,37 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
   }
 }
 
@@ -355,20 +386,20 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e5e7eb;
+  background: #333333;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d1d5db;
+  background: #FF7F00;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #374151;
+  background: #333333;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #4b5563;
+  background: #FF7F00;
 }
 
 /* Orange scrollbar for code examples */
@@ -386,12 +417,12 @@ html {
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: #F35B04;
+  background: #FF7F00;
   border-radius: 3px;
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background: #E04A00;
+  background: #FFA040;
 }
 
 .scrollbar-track-transparent::-webkit-scrollbar-track {
@@ -399,11 +430,11 @@ html {
 }
 
 .scrollbar-thumb-orange-500::-webkit-scrollbar-thumb {
-  background: #F35B04;
+  background: #FF7F00;
 }
 
 .hover\:scrollbar-thumb-orange-600:hover::-webkit-scrollbar-thumb {
-  background: #E04A00;
+  background: #FFA040;
 }
 
 /* Clean solid design - NO GLASS EFFECTS */
@@ -439,8 +470,8 @@ html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Remove all backdrop blur and glass effects */
-* {
+/* Remove backdrop blur for glass effects (but allow for navbar) */
+.glass-effect {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 }
@@ -457,6 +488,9 @@ html {
 
 .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
 .animate-spin { animation: spin 1s linear infinite; }
+.animate-slide-in-right { animation: slideInFromRight 0.3s ease-out forwards; }
+.animate-scale-in { animation: scaleIn 0.3s ease-out forwards; }
+.animate-pulse { animation: pulse 2s ease-in-out infinite; }
 
 /* Global Roboto Font */
 * {

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { NasaHeroImage } from "@/components/nasa-hero-image"
 import type { Metadata } from "next"
 import {
   Calculator,
@@ -1182,33 +1183,38 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      {/* Hero Section - Bold Orange Design */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
-                        </div>
+      {/* Hero Section - Black Background with Orange Text */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-black">
+        {/* NASA Background Image */}
+        <NasaHeroImage />
         
         <div className="container mx-auto max-w-6xl relative z-10 py-20">
           <div className="text-center space-y-10">
-            {/* Main Heading - Bold & Impactful */}
+            {/* Main Heading - Orange Text with Highlights */}
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-black leading-[1.1] tracking-tight">
-                <span className="block">Access 1000+ tools.</span>
-                <span className="block">Get work done faster.</span>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-orange-500 leading-[1.1] tracking-tight">
+                <span className="block">
+                  Access <span className="relative inline-block px-1">
+                    <span className="relative z-10">1000+</span>
+                    <span className="absolute bottom-0 left-0 right-0 h-full bg-pink-600/40 rounded -rotate-1"></span>
+                  </span> tools.
+                </span>
+                <span className="block">
+                  Get work done <span className="relative inline-block px-1">
+                    <span className="relative z-10">faster</span>
+                    <span className="absolute bottom-0 left-0 right-0 h-full bg-green-600/40 rounded rotate-1"></span>
+                  </span>.
+                </span>
               </h1>
               
-              <p className="text-lg md:text-xl lg:text-2xl text-black/90 font-medium max-w-4xl mx-auto leading-relaxed px-4">
+              <p className="text-lg md:text-xl lg:text-2xl text-orange-400/90 font-medium max-w-4xl mx-auto leading-relaxed px-4">
                 No registration needed. All tools are free forever and process everything locally in your browser for complete privacy and security.
                 </p>
               </div>
 
             {/* Interactive Stats Display */}
             <div className="pt-8 md:pt-12 pb-8">
-              <div className="inline-flex items-center gap-2 text-black/80 text-xs md:text-sm font-semibold mb-6">
+              <div className="inline-flex items-center gap-2 text-orange-400/80 text-xs md:text-sm font-semibold mb-6">
                 <Sparkles className="h-3 w-3 md:h-4 md:w-4" />
                 <span className="hidden sm:inline">Trusted by professionals worldwide</span>
                 <span className="sm:hidden">Trusted Worldwide</span>
@@ -1218,12 +1224,12 @@ export default function Home() {
                 {/* Stat 1 */}
                 <div className="group cursor-default">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-black/5 rounded-2xl blur-xl group-hover:bg-black/10 transition-all"></div>
+                    <div className="absolute inset-0 bg-orange-500/5 rounded-2xl blur-xl group-hover:bg-orange-500/10 transition-all"></div>
                     <div className="relative space-y-1 md:space-y-2">
-                      <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-black tracking-tight">5M+</div>
+                      <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-orange-500 tracking-tight">5M+</div>
                       <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-                        <Users className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-black/70" />
-                        <div className="text-[10px] sm:text-xs md:text-base font-bold text-black/70 uppercase tracking-wide text-center">Active Users</div>
+                        <Users className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-orange-400/70" />
+                        <div className="text-[10px] sm:text-xs md:text-base font-bold text-orange-400/70 uppercase tracking-wide text-center">Active Users</div>
                       </div>
                     </div>
                   </div>
@@ -1232,12 +1238,12 @@ export default function Home() {
                 {/* Stat 2 */}
                 <div className="group cursor-default">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-black/5 rounded-2xl blur-xl group-hover:bg-black/10 transition-all"></div>
+                    <div className="absolute inset-0 bg-orange-500/5 rounded-2xl blur-xl group-hover:bg-orange-500/10 transition-all"></div>
                     <div className="relative space-y-1 md:space-y-2">
-                      <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-black tracking-tight">1000+</div>
+                      <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-orange-500 tracking-tight">1000+</div>
                       <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-                        <Star className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-black/70" />
-                        <div className="text-[10px] sm:text-xs md:text-base font-bold text-black/70 uppercase tracking-wide text-center">Pro Tools</div>
+                        <Star className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-orange-400/70" />
+                        <div className="text-[10px] sm:text-xs md:text-base font-bold text-orange-400/70 uppercase tracking-wide text-center">Pro Tools</div>
                       </div>
                     </div>
                   </div>
@@ -1246,12 +1252,12 @@ export default function Home() {
                 {/* Stat 3 */}
                 <div className="group cursor-default">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-black/5 rounded-2xl blur-xl group-hover:bg-black/10 transition-all"></div>
+                    <div className="absolute inset-0 bg-orange-500/5 rounded-2xl blur-xl group-hover:bg-orange-500/10 transition-all"></div>
                     <div className="relative space-y-1 md:space-y-2">
-                      <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-black tracking-tight">100%</div>
+                      <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-orange-500 tracking-tight">100%</div>
                       <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-                        <Shield className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-black/70" />
-                        <div className="text-[10px] sm:text-xs md:text-base font-bold text-black/70 uppercase tracking-wide text-center">Free Forever</div>
+                        <Shield className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-orange-400/70" />
+                        <div className="text-[10px] sm:text-xs md:text-base font-bold text-orange-400/70 uppercase tracking-wide text-center">Free Forever</div>
                       </div>
                     </div>
                   </div>
@@ -1261,7 +1267,7 @@ export default function Home() {
 
             {/* Scroll Indicator */}
             <div className="pt-12">
-              <Link href="#tools" className="group inline-flex flex-col items-center gap-3 text-black/70 hover:text-black transition-colors">
+              <Link href="#tools" className="group inline-flex flex-col items-center gap-3 text-orange-400/70 hover:text-orange-500 transition-colors">
                 <div className="text-sm font-semibold uppercase tracking-wider">Explore Tools</div>
                 <div className="flex flex-col items-center animate-bounce">
                   <ArrowRight className="h-6 w-6 rotate-90" />
