@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { NasaHeroImage } from "@/components/nasa-hero-image"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import type { Metadata } from "next"
 import {
   Calculator,
@@ -1287,13 +1287,12 @@ export default function Home() {
               COMPLETE TOOLS DIRECTORY
                 </div>
             
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-orange-500 mb-4 sm:mb-6 leading-tight px-2">
-              Every Tool We Offer
-                </h2>
-            
-            <p className="text-base sm:text-lg md:text-xl text-orange-400/90 max-w-3xl mx-auto leading-relaxed font-medium px-2">
-              Discover professional-grade tools designed to supercharge your productivity and creativity
-            </p>
+            <GHeader 
+              title="Every Tool We Offer"
+              description="Discover professional-grade tools designed to supercharge your productivity and creativity"
+              titleSize="medium"
+              descriptionSize="small"
+            />
                     </div>
 
           {/* Display All Categories with All Tools */}
@@ -1358,13 +1357,14 @@ export default function Home() {
         {/* FAQ Section */}
       <section className="py-12 md:py-20 px-4 bg-black">
         <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-8 md:mb-12 px-2">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-green-500 mb-3 md:mb-4">
-              FAQ
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-green-400/80 max-w-3xl mx-auto leading-relaxed">
-              Find quick answers to common questions about FastTools. Get instant clarity on features, pricing, security, and how to make the most of our 1000+ free online tools. Everything you need to know in one place.
-            </p>
+          <div className="mb-8 md:mb-12">
+            <GHeader 
+              title="FAQ"
+              description="Find quick answers to common questions about FastTools. Get instant clarity on features, pricing, security, and how to make the most of our 1000+ free online tools. Everything you need to know in one place."
+              titleSize="large"
+              descriptionSize="medium"
+              color="green"
+            />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 px-2">

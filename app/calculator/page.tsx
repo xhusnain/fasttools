@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { AdSpace } from "@/components/ad-space"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import {
   Calculator,
   ArrowRight,
@@ -1822,13 +1823,6 @@ export default function ToolsPage() {
         <div className="container mx-auto px-4 py-8">
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Calculator", href: "/calculator" }]} />
 
-            {/* Mobile/Tablet Ad - Top of Page */}
-            <div className="block xl:hidden mb-6">
-              <div className="text-center mb-2">
-                <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-              </div>
-              <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
-            </div>
 
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
@@ -1840,40 +1834,47 @@ export default function ToolsPage() {
                   <div className="h-2 w-2 bg-secondary-accent rounded-full animate-ping"></div>
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground leading-tight">
-                  All Calculation Tools
-                </h1>
-
-                <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-3xl mx-auto leading-relaxed">
-            Discover our comprehensive collection of free online calculation tools designed for professionals, students,
-                  and everyday users. All tools are 100% free, highly accurate, and optimized for both desktop and mobile use.
-                </p>
+                <GHeader 
+                  title="All Calculation Tools"
+                  description="Discover our comprehensive collection of free online calculation tools designed for professionals, students, and everyday users. All tools are 100% free, highly accurate, and optimized for both desktop and mobile use."
+                  titleSize="medium"
+                  descriptionSize="small"
+                  color="orange"
+                />
 
                 <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                  <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-card border border-primary shadow-md hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-black border border-primary shadow-md hover:shadow-lg transition-all duration-300">
                     <Calculator className="h-4 w-4 text-primary" />
                     <span className="text-primary font-medium text-sm">50+ Tools</span>
                   </div>
-                  <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-card border border-green-500 shadow-md hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-black border border-green-500 shadow-md hover:shadow-lg transition-all duration-300">
                     <Users className="h-4 w-4 text-green-600" />
                     <span className="text-green-600 font-medium text-sm">1M+ Users</span>
                   </div>
-                  <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-card border border-accent shadow-md hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-black border border-accent shadow-md hover:shadow-lg transition-all duration-300">
                     <Zap className="h-4 w-4 text-accent" />
                     <span className="text-accent font-medium text-sm">Free Forever</span>
                   </div>
-                  <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-card border border-secondary-accent shadow-md hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-black border border-secondary-accent shadow-md hover:shadow-lg transition-all duration-300">
                     <Target className="h-4 w-4 text-secondary-accent" />
                     <span className="text-secondary-accent font-medium text-sm">Professional</span>
                   </div>
                 </div>
               </div>
 
+              {/* Mobile/Tablet Ad - After Stats */}
+              <div className="block lg:hidden my-6">
+                <div className="text-center mb-2">
+                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                </div>
+                <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-black" />
+              </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {tools.map((tool, index) => (
             <Card
               key={tool.href}
-                    className="border border-border shadow-lg bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 animate-fade-in-up group"
+                    className="border border-border shadow-lg bg-black hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 animate-fade-in-up group"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                       <CardHeader className="p-4 pb-2">
@@ -1899,16 +1900,10 @@ export default function ToolsPage() {
           ))}
         </div>
 
-                <div className="block xl:hidden mb-6">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
 
                 <div className="space-y-6 animate-fade-in-up animation-delay-200">
-                <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-primary/10 flex items-center justify-center">
                       <Calculator className="h-4 w-4 text-primary" />
                     </div>
@@ -1921,7 +1916,7 @@ export default function ToolsPage() {
                       our tools provide instant, accurate results without registration.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground flex items-center gap-2">
+                    <h3 className="text-xl font-bold mb-3 text-green-500 flex items-center gap-2">
                     <div className="h-1.5 w-1.5 bg-green-500 rounded-full"></div>
                       Financial Calculators: Complete Money Management Suite
                   </h3>
@@ -1931,7 +1926,7 @@ export default function ToolsPage() {
                       ROI, and more. Perfect for personal finance planning, business analysis, and investment decisions.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground flex items-center gap-2">
+                    <h3 className="text-xl font-bold mb-3 text-green-500 flex items-center gap-2">
                       <div className="h-1.5 w-1.5 bg-blue-500 rounded-full"></div>
                       Health & Fitness Calculators: Track Your Wellness Journey
                   </h3>
@@ -1941,7 +1936,7 @@ export default function ToolsPage() {
                       Essential tools for healthcare professionals, fitness enthusiasts, and anyone focused on wellness.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground flex items-center gap-2">
+                    <h3 className="text-xl font-bold mb-3 text-green-500 flex items-center gap-2">
                       <div className="h-1.5 w-1.5 bg-purple-500 rounded-full"></div>
                       Scientific & Math Calculators: Advanced Problem Solving with sin cos tan Functions
                     </h3>
@@ -1953,8 +1948,8 @@ export default function ToolsPage() {
           </p>
                 </div>
 
-                <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-green-100 flex items-center justify-center">
                       <Target className="h-4 w-4 text-green-600" />
                     </div>
@@ -2009,8 +2004,8 @@ export default function ToolsPage() {
                   </div>
 
                   {/* Research-Quality Content Section */}
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-blue-500/10 flex items-center justify-center">
                         <Calculator className="h-4 w-4 text-blue-500" />
                       </div>
@@ -2023,7 +2018,7 @@ export default function ToolsPage() {
                       across every sector of society.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground">The Evolution of Calculator Technology: From Abacus to AI</h3>
+                    <h3 className="text-xl font-bold mb-3 text-green-500">The Evolution of Calculator Technology: From Abacus to AI</h3>
                     <p className="text-base text-muted-foreground leading-relaxed mb-4">
                       The journey from ancient abacus to modern online calculators represents humanity's quest for computational accuracy. 
                       Today's calculator tools represent the culmination of centuries of mathematical innovation, combining traditional 
@@ -2032,7 +2027,7 @@ export default function ToolsPage() {
                       trigonometric functions, and specialized tools like pregnancy calculators for health monitoring.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground">Financial Calculator Revolution: Transforming Personal Finance</h3>
+                    <h3 className="text-xl font-bold mb-3 text-green-500">Financial Calculator Revolution: Transforming Personal Finance</h3>
                     <p className="text-base text-muted-foreground leading-relaxed mb-4">
                       The emergence of sophisticated financial calculators has democratized complex financial planning. Loan calculators 
                       now process millions of calculations daily, helping individuals understand mortgage payments, interest rates, 
@@ -2041,7 +2036,7 @@ export default function ToolsPage() {
                       complex financial decisions are accessible to everyone, not just professionals.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground">Health Calculator Impact: Revolutionizing Wellness Monitoring</h3>
+                    <h3 className="text-xl font-bold mb-3 text-green-500">Health Calculator Impact: Revolutionizing Wellness Monitoring</h3>
                     <p className="text-base text-muted-foreground leading-relaxed mb-4">
                       Health calculators have transformed preventive medicine and personal wellness. BMI calculators provide instant 
                       body composition analysis, while pregnancy calculators track gestational development with precision. BMR calculators 
@@ -2049,7 +2044,7 @@ export default function ToolsPage() {
                       from reactive to proactive healthcare, empowering individuals to monitor their health metrics continuously.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground">Scientific Calculator Applications: Advancing Research and Education</h3>
+                    <h3 className="text-xl font-bold mb-3 text-green-500">Scientific Calculator Applications: Advancing Research and Education</h3>
                     <p className="text-base text-muted-foreground leading-relaxed mb-4">
                       Scientific calculators with sin cos tan functions have become essential in education, engineering, and research. 
                       These tools handle complex trigonometric calculations, logarithmic functions, and statistical analysis that 
@@ -2057,7 +2052,7 @@ export default function ToolsPage() {
                       equations in engineering, scientific calculators accelerate problem-solving across disciplines.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground">Conversion Calculator Necessity: Bridging Global Measurement Systems</h3>
+                    <h3 className="text-xl font-bold mb-3 text-green-500">Conversion Calculator Necessity: Bridging Global Measurement Systems</h3>
                     <p className="text-base text-muted-foreground leading-relaxed mb-4">
                       In our interconnected world, conversion calculators serve as universal translators between measurement systems. 
                       Currency converters process real-time exchange rates, temperature converters bridge Celsius and Fahrenheit, 
@@ -2065,7 +2060,7 @@ export default function ToolsPage() {
                       could cost millions in international trade and scientific research.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground">The Psychology of Calculator Dependence: Why We Trust Digital Calculations</h3>
+                    <h3 className="text-xl font-bold mb-3 text-green-500">The Psychology of Calculator Dependence: Why We Trust Digital Calculations</h3>
                     <p className="text-base text-muted-foreground leading-relaxed mb-4">
                       Research in cognitive psychology reveals that calculator tools reduce cognitive load, allowing users to focus 
                       on decision-making rather than computation. This mental offloading has proven particularly valuable in high-stakes 
@@ -2073,7 +2068,7 @@ export default function ToolsPage() {
                       results has created a new standard of accuracy that manual calculations cannot consistently achieve.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground">Future of Calculator Technology: AI Integration and Predictive Analytics</h3>
+                    <h3 className="text-xl font-bold mb-3 text-green-500">Future of Calculator Technology: AI Integration and Predictive Analytics</h3>
                     <p className="text-base text-muted-foreground leading-relaxed">
                       The next generation of calculator tools will integrate artificial intelligence to provide predictive insights. 
                       Mortgage calculators will forecast market trends, health calculators will predict wellness outcomes, and 
@@ -2083,8 +2078,8 @@ export default function ToolsPage() {
                   </div>
 
                   {/* FAQ Section for SEO */}
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <Search className="h-4 w-4 text-accent" />
                       </div>
@@ -2093,7 +2088,7 @@ export default function ToolsPage() {
                     
                     <div className="space-y-4">
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Are these calculators really free to use?</h3>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">Are these calculators really free to use?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes, all our calculators are completely free to use. No registration, no hidden fees, no premium features locked behind paywalls. 
                           Simply access any calculator and start calculating immediately.
@@ -2101,7 +2096,7 @@ export default function ToolsPage() {
                 </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How accurate are the calculation results?</h3>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">How accurate are the calculation results?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Our calculators use industry-standard formulas and algorithms to ensure maximum accuracy. Financial calculators follow 
                           standard banking formulas, health calculators use WHO guidelines, and scientific calculators implement precise mathematical functions.
@@ -2109,7 +2104,7 @@ export default function ToolsPage() {
                       </div>
                       
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Can I use these calculators on mobile devices?</h3>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">Can I use these calculators on mobile devices?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Absolutely! All our calculators are fully responsive and optimized for mobile devices. Whether you're using a smartphone, 
                           tablet, or desktop computer, you'll get the same accurate results and smooth user experience.
@@ -2117,7 +2112,7 @@ export default function ToolsPage() {
                       </div>
                       
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Do I need to download any software?</h3>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">Do I need to download any software?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           No downloads required! All calculators work directly in your web browser. Simply visit the calculator page, 
                           enter your values, and get instant results. No installation, no updates, no storage space needed.
@@ -2125,7 +2120,7 @@ export default function ToolsPage() {
                       </div>
                       
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Are my calculations stored or tracked?</h3>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">Are my calculations stored or tracked?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           No, we don't store or track your calculations. All processing happens locally in your browser, ensuring your 
                           data remains private and secure. Your calculations never leave your device.
@@ -2135,15 +2130,15 @@ export default function ToolsPage() {
                   </div>
 
                   {/* Advanced Research Content Section */}
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-purple-500/10 flex items-center justify-center">
                         <BarChart3 className="h-4 w-4 text-purple-500" />
                       </div>
                       Calculator Impact Analysis: How Digital Tools Transform Decision-Making
                     </h2>
                     
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground">The Mathematics of Modern Life: Why Every Calculation Matters</h3>
+                    <h3 className="text-xl font-bold mb-3 text-green-500">The Mathematics of Modern Life: Why Every Calculation Matters</h3>
                     <p className="text-base text-muted-foreground leading-relaxed mb-4">
                       In an era where a single percentage point in interest rates can determine financial futures, and BMI calculations 
                       guide healthcare decisions, the precision of calculator tools becomes critical. Our research demonstrates that 
@@ -2152,7 +2147,7 @@ export default function ToolsPage() {
                       carries weight that extends far beyond the immediate result.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground">The Economics of Calculator Tools: Cost-Benefit Analysis</h3>
+                    <h3 className="text-xl font-bold mb-3 text-green-500">The Economics of Calculator Tools: Cost-Benefit Analysis</h3>
                     <p className="text-base text-muted-foreground leading-relaxed mb-4">
                       The economic impact of calculator tools extends beyond individual users to entire industries. Mortgage calculators 
                       have reduced loan processing time by 60%, while tax calculators have decreased filing errors by 40%. Scientific 
@@ -2161,7 +2156,7 @@ export default function ToolsPage() {
                       improved and decisions optimized.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground">The Sociology of Calculator Adoption: Cultural Impact</h3>
+                    <h3 className="text-xl font-bold mb-3 text-green-500">The Sociology of Calculator Adoption: Cultural Impact</h3>
                     <p className="text-base text-muted-foreground leading-relaxed mb-4">
                       Calculator tools have democratized access to complex calculations, breaking down barriers between professional 
                       and personal use. The calculator pregnancy of financial literacy has empowered individuals to make informed 
@@ -2170,7 +2165,7 @@ export default function ToolsPage() {
                       students worldwide.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground">The Technology Behind Calculator Precision: Algorithm Innovation</h3>
+                    <h3 className="text-xl font-bold mb-3 text-green-500">The Technology Behind Calculator Precision: Algorithm Innovation</h3>
                     <p className="text-base text-muted-foreground leading-relaxed mb-4">
                       Modern calculator tools employ sophisticated algorithms that ensure accuracy to multiple decimal places. 
                       Financial calculators use iterative methods for loan calculations, while scientific calculators implement 
@@ -2179,7 +2174,7 @@ export default function ToolsPage() {
                       refinement and real-time validation systems.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground">The Psychology of Calculator Trust: Building User Confidence</h3>
+                    <h3 className="text-xl font-bold mb-3 text-green-500">The Psychology of Calculator Trust: Building User Confidence</h3>
                     <p className="text-base text-muted-foreground leading-relaxed mb-4">
                       User trust in calculator tools is built through consistent accuracy and transparent methodology. When users 
                       rely on BMI calculators for health decisions or mortgage calculators for financial planning, they need 
@@ -2187,7 +2182,7 @@ export default function ToolsPage() {
                       explanations and error handling build stronger user trust than those with opaque processes.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-card-foreground">The Future of Calculator Integration: IoT and Smart Systems</h3>
+                    <h3 className="text-xl font-bold mb-3 text-green-500">The Future of Calculator Integration: IoT and Smart Systems</h3>
                     <p className="text-base text-muted-foreground leading-relaxed">
                       The next evolution of calculator tools will integrate with Internet of Things (IoT) devices and smart systems. 
                       Health calculators will connect with fitness trackers, financial calculators will integrate with banking 
@@ -2196,15 +2191,9 @@ export default function ToolsPage() {
                     </p>
                   </div>
 
-                  <div className="block xl:hidden mb-6">
-                    <div className="text-center mb-2">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                    </div>
-                    <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
-                  </div>
 
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-green-500/10 flex items-center justify-center">
                         <TrendingUp className="h-4 w-4 text-green-500" />
                       </div>
@@ -2250,15 +2239,9 @@ export default function ToolsPage() {
                     </div>
                   </div>
 
-                  <div className="block xl:hidden mb-6">
-                    <div className="text-center mb-2">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                    </div>
-                    <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
-                  </div>
 
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-orange-500/10 flex items-center justify-center">
                         <Calculator className="h-4 w-4 text-orange-500" />
                 </div>
@@ -2266,7 +2249,7 @@ export default function ToolsPage() {
                     </h2>
                     
                     <div className="prose prose-sm max-w-none text-muted-foreground">
-                      <h3 className="text-xl font-bold mb-3 text-card-foreground">The Algorithmic Precision Behind Calculator Accuracy</h3>
+                      <h3 className="text-xl font-bold mb-3 text-green-500">The Algorithmic Precision Behind Calculator Accuracy</h3>
                       <p className="mb-4 leading-relaxed">
                         Modern calculator tools employ sophisticated mathematical algorithms that ensure accuracy to 15+ decimal places. 
                         Financial calculators use iterative methods like Newton-Raphson for loan calculations, while scientific calculators 
@@ -2275,7 +2258,7 @@ export default function ToolsPage() {
                         mathematical precision in digital tools.
                       </p>
 
-                      <h3 className="text-xl font-bold mb-3 text-card-foreground">Statistical Analysis of Calculator Usage Patterns</h3>
+                      <h3 className="text-xl font-bold mb-3 text-green-500">Statistical Analysis of Calculator Usage Patterns</h3>
                       <p className="mb-4 leading-relaxed">
                         Our comprehensive analysis of calculator usage reveals distinct patterns across demographics and use cases. 
                         Mortgage calculators show 73% usage during business hours, while BMI calculators peak during evening hours. 
@@ -2284,7 +2267,7 @@ export default function ToolsPage() {
                         stages, with conception calculators being most popular in early pregnancy.
                       </p>
 
-                      <h3 className="text-xl font-bold mb-3 text-card-foreground">The Psychology of Calculator Dependence: Cognitive Load Theory</h3>
+                      <h3 className="text-xl font-bold mb-3 text-green-500">The Psychology of Calculator Dependence: Cognitive Load Theory</h3>
                       <p className="mb-4 leading-relaxed">
                         Research in cognitive psychology demonstrates that calculator tools reduce cognitive load by 60%, allowing users 
                         to focus on decision-making rather than computation. This mental offloading is particularly valuable in 
@@ -2292,7 +2275,7 @@ export default function ToolsPage() {
                         of calculator results has created a new standard of accuracy that manual calculations cannot consistently achieve.
                       </p>
 
-                      <h3 className="text-xl font-bold mb-3 text-card-foreground">Economic Impact Analysis: ROI of Calculator Tools</h3>
+                      <h3 className="text-xl font-bold mb-3 text-green-500">Economic Impact Analysis: ROI of Calculator Tools</h3>
                       <p className="mb-4 leading-relaxed">
                         The economic impact of calculator tools extends beyond individual users to entire industries. Mortgage calculators 
                         have reduced loan processing time by 60%, saving the financial industry over $2.3 billion annually. Tax calculators 
@@ -2303,8 +2286,8 @@ export default function ToolsPage() {
               </div>
             </div>
 
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-red-500/10 flex items-center justify-center">
                         <BarChart3 className="h-4 w-4 text-red-500" />
           </div>
@@ -2358,15 +2341,9 @@ export default function ToolsPage() {
                     </div>
                   </div>
 
-                  <div className="block xl:hidden mb-6">
-                    <div className="text-center mb-2">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                    </div>
-                    <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
-                  </div>
 
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-indigo-500/10 flex items-center justify-center">
                         <Calculator className="h-4 w-4 text-indigo-500" />
                       </div>
@@ -2429,8 +2406,8 @@ export default function ToolsPage() {
                     </div>
                   </div>
 
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-emerald-500/10 flex items-center justify-center">
                         <Search className="h-4 w-4 text-emerald-500" />
                       </div>
@@ -2439,7 +2416,7 @@ export default function ToolsPage() {
                     
                     <div className="space-y-6">
                       <div>
-                        <h3 className="text-xl font-bold mb-3 text-card-foreground">Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T)</h3>
+                        <h3 className="text-xl font-bold mb-3 text-green-500">Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T)</h3>
                         <p className="text-base text-muted-foreground leading-relaxed mb-4">
                           Our calculator tools demonstrate the highest standards of E-E-A-T compliance through rigorous mathematical validation, 
                           industry-standard algorithms, and transparent methodology. Each calculator undergoes extensive testing against 
@@ -2472,7 +2449,7 @@ export default function ToolsPage() {
                       </div>
                       
                       <div>
-                        <h3 className="text-xl font-bold mb-3 text-card-foreground">Content Quality and User Experience Optimization</h3>
+                        <h3 className="text-xl font-bold mb-3 text-green-500">Content Quality and User Experience Optimization</h3>
                         <p className="text-base text-muted-foreground leading-relaxed mb-4">
                           Our content strategy focuses on providing genuine value through comprehensive explanations, practical applications, 
                           and user-focused information. Each calculator tool includes detailed descriptions, usage examples, and 
@@ -2499,7 +2476,7 @@ export default function ToolsPage() {
                       </div>
                       
                       <div>
-                        <h3 className="text-xl font-bold mb-3 text-card-foreground">Technical SEO Implementation</h3>
+                        <h3 className="text-xl font-bold mb-3 text-green-500">Technical SEO Implementation</h3>
                         <p className="text-base text-muted-foreground leading-relaxed mb-4">
                           Our technical SEO implementation follows Google's latest guidelines for structured data, page speed optimization, 
                           and mobile-first indexing. We utilize comprehensive schema markup for calculator tools, implement proper heading 
@@ -2532,12 +2509,6 @@ export default function ToolsPage() {
                     </div>
                   </div>
 
-                  <div className="block xl:hidden mb-6">
-                    <div className="text-center mb-2">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                    </div>
-                    <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
-                  </div>
                 </div>
                 </div>
 
@@ -2547,25 +2518,12 @@ export default function ToolsPage() {
                     <div className="text-center mb-2">
                       <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                     </div>
-                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-                  </div>
-
-                  <div>
-                    <div className="text-center mb-2">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                    </div>
-                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
+                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-black" />
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="block xl:hidden mt-8">
-              <div className="text-center mb-2">
-                <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-              </div>
-              <AdSpace slot="footer" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
-            </div>
           </div>
         </div>
       </div>
