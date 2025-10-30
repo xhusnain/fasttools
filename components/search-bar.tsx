@@ -41,7 +41,16 @@ const toolSuggestions = [
   { name: "Caption Generator", path: "/ai-tools/caption-generator", category: "AI" },
 ]
 
-export function SearchBar() {
+type SearchBarProps = {
+  className?: string
+  inputClassName?: string
+  autoFocus?: boolean
+  placeholder?: string
+  onBlur?: () => void
+  variant?: "default" | "pill"
+}
+
+export function SearchBar({ className, inputClassName, autoFocus = false, placeholder = "Search tools...", onBlur, variant = "default" }: SearchBarProps) {
   const [query, setQuery] = useState("")
   const [filteredSuggestions, setFilteredSuggestions] = useState<typeof toolSuggestions>([])
   const [showSuggestions, setShowSuggestions] = useState(false)
@@ -89,13 +98,13 @@ export function SearchBar() {
 
   if (!isMounted) {
     return (
-      <div className="relative w-full max-w-md">
+      <div className={`relative w-full max-w-md${className ? ` ${className}` : ""}`}>
         <div className="relative">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <input
             type="text"
-            placeholder="Search tools..."
-            className="w-full h-12 pl-12 pr-4 text-base rounded-lg border-2 border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all shadow-sm"
+            placeholder={placeholder}
+            className={`${variant === "pill" ? "w-full h-9 pl-10 pr-4 text-sm rounded-full bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none" : "w-full h-12 pl-12 pr-4 text-base rounded-lg border-2 border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all shadow-sm"}${inputClassName ? ` ${inputClassName}` : ""}`}
             disabled
           />
         </div>
@@ -104,15 +113,17 @@ export function SearchBar() {
   }
 
   return (
-    <div ref={searchRef} className="relative w-full max-w-md">
+    <div ref={searchRef} className={`relative w-full max-w-md${className ? ` ${className}` : ""}`}>
       <form onSubmit={handleSearch} className="relative">
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+        <Search className={`absolute ${variant === "pill" ? "left-3" : "left-4"} top-1/2 -translate-y-1/2 ${variant === "pill" ? "h-4 w-4" : "h-5 w-5"} text-muted-foreground`} />
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search tools..."
-          className="w-full h-12 pl-12 pr-4 text-base rounded-lg border-2 border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all shadow-sm"
+          placeholder={placeholder}
+          autoFocus={autoFocus}
+          className={`${variant === "pill" ? "w-full h-9 pl-9 pr-3 text-sm rounded-full bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none" : "w-full h-12 pl-12 pr-4 text-base rounded-lg border-2 border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all shadow-sm"}${inputClassName ? ` ${inputClassName}` : ""}`}
+        onBlur={onBlur}
         />
       </form>
 
