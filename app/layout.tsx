@@ -1,5 +1,5 @@
 import type React from "react"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Montserrat, Roboto } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -14,16 +14,18 @@ if (typeof window === "undefined") {
   validateEnv()
 }
 
-const geistSans = Geist({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-montserrat",
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
   display: 'swap',
   preload: true,
 })
 
-const geistMono = Geist_Mono({
+const roboto = Roboto({
   subsets: ["latin"],
-  variable: "--font-geist-mono",
+  variable: "--font-roboto",
+  weight: ['300', '400', '500', '700'],
   display: 'swap',
   preload: true,
 })
@@ -340,7 +342,7 @@ export const metadata: Metadata = {
       }
     
       return (
-        <html lang="en" className={`dark ${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <html lang="en" className={`dark ${montserrat.variable} ${roboto.variable} antialiased`}>
         <head>
             {/* Preload external scripts for better performance - Only in production */}
             {env.isProduction && (

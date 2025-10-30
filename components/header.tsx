@@ -135,22 +135,6 @@ export function Header() {
         }`}
       >
         <div className="container mx-auto px-4 py-6 space-y-3">
-          {/* Mobile Logo */}
-          <Link 
-            href="/" 
-            className="flex items-center gap-2 sm:gap-3 pb-4 border-b border-border/20" 
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-primary flex items-center justify-center">
-              {isHydrated ? (
-                <img src="/logo.svg" alt="FastTools" className="h-5 w-5 sm:h-6 sm:w-6 object-contain" />
-              ) : (
-                <Wrench className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />
-              )}
-            </div>
-            <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground">FastTools</span>
-          </Link>
-          
           {/* Mobile Navigation Links */}
           {navLinks.map((link) => (
             <Link

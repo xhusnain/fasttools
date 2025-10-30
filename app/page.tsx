@@ -1315,7 +1315,7 @@ export default function Home() {
                     const ToolIcon = tool.icon
                     return (
                       <Link key={i} href={tool.href} className="group">
-                        <div className={`relative h-full rounded-xl border-2 ${category.borderColor} ${category.hoverBorder} bg-[#1E293B] p-4 sm:p-6 space-y-3 sm:space-y-4 transition-all duration-300 hover:shadow-xl ${category.glowColor}`}>
+                        <div className={`relative h-full rounded-xl border-2 ${category.borderColor} ${category.hoverBorder} bg-black p-4 sm:p-6 space-y-3 sm:space-y-4 transition-all duration-300 hover:shadow-xl ${category.glowColor}`}>
                           <div className="flex items-start justify-between">
                             <div className={`${tool.badgeColor} px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md text-white text-[10px] sm:text-xs font-semibold`}>
                               {tool.badge}
@@ -1359,11 +1359,11 @@ export default function Home() {
       <section className="py-12 md:py-20 px-4 bg-black">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-8 md:mb-12 px-2">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-orange-500 mb-3 md:mb-4">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-green-500 mb-3 md:mb-4">
               FAQ
             </h2>
-            <p className="text-sm md:text-base lg:text-lg text-orange-400/90 max-w-2xl mx-auto">
-              The purpose of a FAQ is generally to provide information on frequent questions or concerns; however, the format is a useful means of organizing information, and text
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-green-400/80 max-w-3xl mx-auto leading-relaxed">
+              Find quick answers to common questions about FastTools. Get instant clarity on features, pricing, security, and how to make the most of our 1000+ free online tools. Everything you need to know in one place.
             </p>
           </div>
 
@@ -1402,9 +1402,9 @@ export default function Home() {
             ].map((faq, i) => (
               <div 
                 key={i} 
-                className="bg-[#1E293B] backdrop-blur-sm rounded-2xl border-2 border-orange-500/20 hover:border-orange-500/40 transition-all overflow-hidden p-4 sm:p-5 md:p-8"
+                className="bg-black backdrop-blur-sm rounded-2xl border-2 border-green-500/20 hover:border-green-500/40 transition-all overflow-hidden p-4 sm:p-5 md:p-8"
               >
-                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-orange-500 leading-tight mb-2 sm:mb-3 md:mb-4">{faq.question}</h3>
+                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-green-400 leading-tight mb-2 sm:mb-3 md:mb-4">{faq.question}</h3>
                 <p className="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
