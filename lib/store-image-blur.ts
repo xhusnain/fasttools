@@ -124,7 +124,7 @@ export const useImageBlurStore = create<EditorStore>()(
           status: {
             stage: "processing",
             progress: 50,
-            message: "Processing on server...",
+            message: "Processing...",
           },
         });
 
@@ -163,7 +163,7 @@ export const useImageBlurStore = create<EditorStore>()(
           status: {
             stage: "error",
             progress: 0,
-            message: "Something went wrong while applying blur. Please try again later.",
+            message: "Something went wrong. Please try again.",
           },
         });
       }

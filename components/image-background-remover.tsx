@@ -197,7 +197,6 @@ export function ImageBackgroundRemover() {
                         <LoadingSpinner />
                         <div className="text-center space-y-2">
                           <p className="text-base font-semibold text-slate-900">{status.message}</p>
-                          <p className="text-sm font-medium text-slate-700">This usually takes a few seconds</p>
                         </div>
                       </div>
                     </div>

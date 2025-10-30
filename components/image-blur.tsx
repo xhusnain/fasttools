@@ -190,7 +190,6 @@ export function ImageBlur() {
                         <LoadingSpinner />
                         <div className="text-center space-y-2">
                           <p className="text-base font-semibold text-slate-900 dark:text-slate-100">{status.message}</p>
-                          <p className="text-sm font-medium text-slate-700 dark:text-slate-300">Applying AI-powered selective blur...</p>
                         </div>
                       </div>
                     </div>

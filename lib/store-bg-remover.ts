@@ -119,7 +119,7 @@ export const useBgRemoverStore = create<EditorStore>()(
           status: {
             stage: "processing",
             progress: 50,
-            message: "Processing on server...",
+            message: "Processing...",
           },
         });
 
@@ -160,8 +160,7 @@ export const useBgRemoverStore = create<EditorStore>()(
           status: {
             stage: "error",
             progress: 0,
-            message:
-              "Something went wrong while removing the background. Please try again with a different image or later.",
+            message: "Something went wrong. Please try again.",
           },
         });
       }
