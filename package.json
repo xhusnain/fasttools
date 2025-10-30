@@ -56,7 +56,6 @@
     "html2canvas": "^1.4.1",
     "i18next": "^25.6.0",
     "i18next-browser-languagedetector": "^8.2.0",
-    "idb-keyval": "^6.2.2",
     "input-otp": "1.4.1",
     "jspdf": "^3.0.3",
     "jszip": "^3.10.1",
@@ -65,7 +64,9 @@
     "next": "15.2.4",
     "next-themes": "latest",
     "ogl": "^1.0.11",
-    "onnxruntime-web": "^1.23.0",
+    
+    "onnxruntime-node": "^1.23.0",
+    "sharp": "^0.33.5",
     "pdf-lib": "latest",
     "pdfjs-dist": "^4.10.38",
     "qrcode": "latest",

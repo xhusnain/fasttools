@@ -3,13 +3,10 @@ import type {
   EditorState,
   ProcessingStatus,
   ProcessingResult,
-  WorkerMessage,
 } from "./types-bg-remover";
 
 interface EditorStore extends EditorState {
-  // Internal state
   _isInitialized: boolean;
-  _activeWorkers: Set<Worker>;
 }
 
 export const useBgRemoverStore = create<EditorStore>()(
@@ -25,7 +22,6 @@ export const useBgRemoverStore = create<EditorStore>()(
     result: null,
     isProcessing: false,
     _isInitialized: false,
-    _activeWorkers: new Set(),
 
     // Actions
     setImage: (image: HTMLImageElement, url: string) => {
@@ -71,7 +67,7 @@ export const useBgRemoverStore = create<EditorStore>()(
     },
 
     reset: () => {
-      const { imageUrl, result, _activeWorkers } = get();
+      const { imageUrl, result } = get();
 
       // Clean up URLs
       if (imageUrl) {
@@ -80,15 +76,6 @@ export const useBgRemoverStore = create<EditorStore>()(
       if (result?.resultUrl) {
         URL.revokeObjectURL(result.resultUrl);
       }
-
-      // Terminate active workers
-      _activeWorkers.forEach((worker) => {
-        try {
-          worker.terminate();
-        } catch (error) {
-          console.warn("Error terminating worker:", error);
-        }
-      });
 
       set({
         originalImage: null,
@@ -100,7 +87,7 @@ export const useBgRemoverStore = create<EditorStore>()(
         },
         result: null,
         isProcessing: false,
-        _activeWorkers: new Set(),
+        
       });
     },
 
@@ -109,113 +96,48 @@ export const useBgRemoverStore = create<EditorStore>()(
       if (!originalImage) return;
 
       try {
-        set({
-          isProcessing: true,
-          status: {
-            stage: "initializing",
-            progress: 10,
-            message: "Initializing AI models...",
-          },
-        });
+        set({ isProcessing: true });
 
         const startTime = performance.now();
 
-        const resultUrl = await new Promise<string>((resolve, reject) => {
-          const worker = new Worker(
-            new URL("../workers/bg-remover.worker.ts", import.meta.url),
-            { type: "module" }
-          );
+        // Convert current image element to Blob (PNG)
+        const canvas = document.createElement("canvas");
+        canvas.width = originalImage.naturalWidth || originalImage.width;
+        canvas.height = originalImage.naturalHeight || originalImage.height;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) throw new Error("Canvas context not available");
+        ctx.drawImage(originalImage, 0, 0);
+        const blob: Blob = await new Promise((resolve, reject) =>
+          canvas.toBlob((b) => (b ? resolve(b) : reject(new Error("Failed to get image blob"))), "image/png")
+        );
 
-          // Track active worker for cleanup
-          const { _activeWorkers } = get();
-          _activeWorkers.add(worker);
-
-          const timeout = setTimeout(() => {
-            _activeWorkers.delete(worker);
-            worker.terminate();
-            reject(new Error("Processing timeout"));
-          }, 120000);
-
-          worker.onmessage = (event: MessageEvent<WorkerMessage>) => {
-            const { type, payload } = event.data;
-
-            switch (type) {
-              case "progress":
-                set({ status: payload });
-                break;
-              case "result":
-                clearTimeout(timeout);
-                _activeWorkers.delete(worker);
-
-                // Convert ImageData to blob URL
-                const { imageData, width, height } = payload as {
-                  imageData: ImageData;
-                  width: number;
-                  height: number;
-                };
-
-                // Validate ImageData
-                if (!imageData || !imageData.data || imageData.data.length !== width * height * 4) {
-                  reject(new Error("Invalid ImageData received from worker"));
-                  return;
-                }
-
-                const canvas = document.createElement("canvas");
-                canvas.width = width;
-                canvas.height = height;
-                const ctx = canvas.getContext("2d")!;
-
-                if (!ctx) {
-                  reject(new Error("Failed to get canvas context"));
-                  return;
-                }
-
-                ctx.putImageData(imageData, 0, 0);
-
-                canvas.toBlob((blob) => {
-                  if (blob) {
-                    const url = URL.createObjectURL(blob);
-                    resolve(url);
-                  } else {
-                    reject(new Error("Failed to create blob from canvas"));
-                  }
-                }, "image/png");
-                break;
-              case "error":
-                clearTimeout(timeout);
-                _activeWorkers.delete(worker);
-                reject(new Error(payload as string));
-                break;
-              case "completed":
-                break;
-            }
-          };
-
-          worker.onerror = (error) => {
-            clearTimeout(timeout);
-            _activeWorkers.delete(worker);
-            reject(new Error(error.message || "Worker error"));
-          };
-
-          // Convert image to ImageBitmap for transfer
-          createImageBitmap(originalImage)
-            .then((bitmap) => {
-              worker.postMessage({ bitmap }, [bitmap]);
-            })
-            .catch((err) => {
-              reject(err);
-            });
+        set({
+          status: {
+            stage: "processing",
+            progress: 50,
+            message: "Processing on server...",
+          },
         });
 
-        const processingTime = performance.now() - startTime;
+        const form = new FormData();
+        form.append("image", blob, "input.png");
 
+        const resp = await fetch("/api/bg-remover", { method: "POST", body: form });
+        if (!resp.ok) {
+          const err = await resp.json().catch(() => ({}));
+          throw new Error(err.error || `Server error ${resp.status}`);
+        }
+        const resultBlob = await resp.blob();
+        const resultUrl = URL.createObjectURL(resultBlob);
+
+        const processingTime = performance.now() - startTime;
         const result: ProcessingResult = {
           resultUrl,
           processingTime,
           modelInfo: {
             u2net: {
               name: "U²-Net",
-              url:  "/models/u2net.onnx",
+              url: "/models/u2net.onnx",
               size: 0,
               loaded: true,
             },
@@ -223,15 +145,14 @@ export const useBgRemoverStore = create<EditorStore>()(
         };
 
         get().setResult(result);
-
       } catch (error) {
-        console.error('Background removal error:', error);
         set({
           isProcessing: false,
           status: {
             stage: "error",
             progress: 0,
-            message: "Something went wrong while removing the background. Please try again with a different image or try again later.",
+            message:
+              "Something went wrong while removing the background. Please try again with a different image or later.",
           },
         });
       }
