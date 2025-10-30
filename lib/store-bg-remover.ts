@@ -24,7 +24,7 @@ export const useBgRemoverStore = create<EditorStore>()(
     result: null,
     isProcessing: false,
     _isInitialized: false,
-    refineStrength: "strong",
+    refineStrength: "medium",
     setRefineStrength: (s) => set({ refineStrength: s }),
 
     // Actions

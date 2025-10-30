@@ -2,9 +2,8 @@
 
 import type React from "react"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { Slider } from "@/components/ui/slider"
 import { Card } from "@/components/ui/card"
 import { Upload, Download, RotateCcw, FileText, Zap, Image as ImageIcon, Palette } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
@@ -30,6 +29,24 @@ export function ImageBackgroundRemover() {
   const [bgColor, setBgColor] = useState<string>("#ffffff")
   const [bgImageUrl, setBgImageUrl] = useState<string | null>(null)
   const [debounceId, setDebounceId] = useState<number | null>(null);
+  const [isBgMenuOpen, setIsBgMenuOpen] = useState(false)
+  const [isColorMenuOpen, setIsColorMenuOpen] = useState(false)
+  const colorMenuRef = useRef<HTMLDivElement | null>(null)
+
+  // Close background mode menu on outside click
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (!target.closest?.('#bg-mode-select')) {
+        setIsBgMenuOpen(false)
+      }
+      if (!colorMenuRef.current?.contains(target)) {
+        setIsColorMenuOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [])
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -161,7 +178,7 @@ export function ImageBackgroundRemover() {
               <div className="relative">
                 <label
                   htmlFor="image-upload-bg"
-                  className="block w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl cursor-pointer bg-white hover:border-purple-400 dark:hover:border-purple-500 transition-all duration-300 overflow-hidden"
+                  className="block w-full h-[220px] sm:h-[340px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl cursor-pointer bg-white hover:border-purple-400 dark:hover:border-purple-500 transition-all duration-300 overflow-hidden"
                 >
                   {imageUrl ? (
                     <div className="w-full h-full flex items-center justify-center p-4 bg-white">
@@ -175,24 +192,24 @@ export function ImageBackgroundRemover() {
                     <div className="flex flex-col items-center justify-center h-full px-6">
                       <div className="relative mb-6">
                         <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full blur-xl opacity-30"></div>
-                        <div className="relative p-8 bg-gradient-to-br from-purple-500 via-purple-600 to-blue-600 rounded-full shadow-2xl">
-                          <Upload className="w-16 h-16 text-white" />
+                        <div className="relative p-6 sm:p-8 bg-gradient-to-br from-purple-500 via-purple-600 to-blue-600 rounded-full shadow-2xl">
+                          <Upload className="w-12 h-12 sm:w-16 sm:h-16 text-white" />
                         </div>
                       </div>
-                      <p className="text-xl font-bold text-slate-900 mb-2">
+                      <p className="text-lg sm:text-xl font-bold text-slate-900 mb-2 text-center">
                         Click to upload or drag and drop
                       </p>
-                      <p className="text-sm font-medium text-slate-700 mb-4">
+                      <p className="text-xs sm:text-sm font-medium text-slate-700 mb-4 text-center">
                         PNG, JPG, JPEG, WebP (MAX. 10MB)
                       </p>
                       <div className="flex gap-2 flex-wrap justify-center">
-                        <span className="px-4 py-1.5 bg-slate-800 text-white rounded-full text-xs font-medium shadow-sm">
+                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-slate-800 text-white rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
                           Product Photos
                         </span>
-                        <span className="px-4 py-1.5 bg-slate-800 text-white rounded-full text-xs font-medium shadow-sm">
+                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-slate-800 text-white rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
                           Portraits
                         </span>
-                        <span className="px-4 py-1.5 bg-slate-800 text-white rounded-full text-xs font-medium shadow-sm">
+                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-slate-800 text-white rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
                           Logos
                         </span>
                       </div>
@@ -225,7 +242,7 @@ export function ImageBackgroundRemover() {
               </div>
 
               <div 
-                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"
+                className="relative w-full h-[220px] sm:h-[340px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"
                 style={bgMode === 'color' ? { backgroundColor: bgColor } : bgMode === 'image' && bgImageUrl ? { backgroundImage: `url(${bgImageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {
                   background: '#ffffff',
                   backgroundImage: 'repeating-conic-gradient(#d1d5db 0% 25%, #ffffff 0% 50%)',
@@ -286,30 +303,78 @@ export function ImageBackgroundRemover() {
                       <Download className="h-5 w-5" />
                       Download PNG
                     </Button>
-                    <div className="flex items-center justify-center gap-2 flex-wrap md:flex-nowrap">
-                      <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 w-full md:w-auto">
-                        <Palette className="h-4 w-4" />
-                        <select
-                          className="bg-transparent text-sm outline-none w-full md:w-auto"
-                          value={bgMode}
-                          onChange={(e) => setBgMode(e.target.value as any)}
+                    <div className="flex items-center justify-center gap-3 flex-wrap md:flex-nowrap relative">
+                      <div id="bg-mode-select" className="relative inline-flex w-auto">
+                        <button
+                          type="button"
+                          onClick={() => setIsBgMenuOpen((o) => !o)}
+                          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setIsBgMenuOpen((o) => !o) } }}
+                          className="inline-flex items-center justify-center rounded-full border border-accent/60 bg-gradient-to-br from-primary/15 via-accent/15 to-transparent dark:from-primary/20 dark:via-accent/20 dark:to-transparent text-slate-800 dark:text-slate-100 shadow-sm hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-accent/40 h-12 w-12"
+                          aria-haspopup="listbox"
+                          aria-expanded={isBgMenuOpen}
                         >
-                          <option value="transparent">Transparent</option>
-                          <option value="color">Color</option>
-                          <option value="image">Custom Image</option>
-                        </select>
+                          <Palette className="h-5 w-5 text-primary dark:text-accent" />
+                          <span className="sr-only">
+                            {bgMode === 'transparent' ? 'Transparent' : bgMode === 'color' ? 'Color' : 'Custom Image'}
+                          </span>
+                          {/* Chevron hidden to keep circular shape */}
+                        </button>
+                        {isBgMenuOpen && (
+                          <ul
+                            role="listbox"
+                            className="absolute z-20 mt-2 left-1/2 -translate-x-1/2 md:left-auto md:right-0 w-60 max-w-[calc(100vw-3rem)] rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-xl overflow-hidden"
+                          >
+                            {[
+                              { v: 'transparent', l: 'Transparent' },
+                              { v: 'color', l: 'Color' },
+                              { v: 'image', l: 'Custom Image' },
+                            ].map((o) => (
+                              <li
+                                key={o.v}
+                                role="option"
+                                aria-selected={bgMode === (o.v as any)}
+                                className={`px-3 py-2 text-sm cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 ${bgMode === (o.v as any) ? 'bg-slate-50 dark:bg-slate-700/60' : ''}`}
+                                onClick={() => { setBgMode(o.v as any); setIsBgMenuOpen(false) }}
+                              >
+                                {o.l}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </div>
                       {bgMode === 'color' && (
-                        <input
-                          type="color"
-                          value={bgColor}
-                          onChange={(e) => setBgColor(e.target.value)}
-                          className="h-10 w-10 rounded-md border border-slate-300"
-                          aria-label="Background color"
-                        />
+                        <div ref={colorMenuRef} className="relative">
+                          <button
+                            type="button"
+                            aria-label="Background color"
+                            onClick={() => setIsColorMenuOpen((o) => !o)}
+                            className="h-12 w-12 rounded-full border-2 border-accent/60 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-accent/40"
+                            style={{ backgroundColor: bgColor }}
+                          />
+                          {isColorMenuOpen && (
+                            <div className="absolute z-30 mt-2 left-1/2 -translate-x-1/2 md:left-auto md:right-0 w-64 max-w-[calc(100vw-3rem)] rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 shadow-xl">
+                              <div className="grid grid-cols-8 gap-2 mb-3">
+                                {['#ffffff','#f3f4f6','#000000','#ef4444','#3b82f6','#10b981','#a855f7','#f59e0b','#14b8a6','#e11d48','#7c3aed','#475569'].map(c => (
+                                  <button key={c} title={c} onClick={() => { setBgColor(c); setIsColorMenuOpen(false) }} className="h-6 w-6 rounded-full border border-slate-300 dark:border-slate-600" style={{ backgroundColor: c }} />
+                                ))}
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <span className="text-xs text-slate-500">Hex</span>
+                                <input
+                                  type="text"
+                                  value={bgColor}
+                                  onChange={(e) => setBgColor(e.target.value)}
+                                  className="flex-1 text-xs rounded-md border border-slate-300 dark:border-slate-600 bg-transparent px-2 py-1 outline-none"
+                                  placeholder="#ffffff"
+                                />
+                                <button onClick={() => setIsColorMenuOpen(false)} className="text-xs px-2 py-1 rounded-md bg-accent text-white">OK</button>
+                              </div>
+                            </div>
+                          )}
+                        </div>
                       )}
                       {bgMode === 'image' && (
-                        <label className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 cursor-pointer w-full md:w-auto justify-center">
+                        <label className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 cursor-pointer w-full md:w-auto justify-center bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 shadow-sm hover:shadow-md transition-shadow">
                           <ImageIcon className="h-4 w-4" />
                           <span className="text-sm">Choose image</span>
                           <input
@@ -350,36 +415,7 @@ export function ImageBackgroundRemover() {
             </div>
           </div>
 
-          {/* Strength Slider - auto reprocess */}
-          {imageUrl && (
-            <div className="mt-6 space-y-2">
-              <div className="flex items-center justify-between">
-                <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                  Cutout strength: <span className="text-blue-600 dark:text-blue-400 font-semibold">{refineStrength}</span>
-                </label>
-                <span className="text-xs text-slate-500 dark:text-slate-400">Auto-applies</span>
-              </div>
-              <Slider
-                value={[refineStrength === "light" ? 0 : refineStrength === "medium" ? 1 : 2]}
-                onValueChange={(v) => {
-                  const s = v[0] === 0 ? "light" : v[0] === 1 ? "medium" : "strong";
-                  setRefineStrength?.(s);
-                  if (debounceId) window.clearTimeout(debounceId);
-                  const id = window.setTimeout(() => startProcessing(), 350);
-                  setDebounceId(id);
-                }}
-                min={0}
-                max={2}
-                step={1}
-                className="w-full"
-              />
-              <div className="flex justify-between text-xs text-slate-500 dark:text-slate-400">
-                <span>Light</span>
-                <span>Medium</span>
-                <span>Strong</span>
-              </div>
-            </div>
-          )}
+          {/* Strength Slider removed – defaulting to medium */}
 
           {/* Error State */}
           {status.stage === "error" && (

@@ -84,7 +84,7 @@ export function ImageBlur() {
     <div className="w-full">
       <Card className="shadow-lg w-full max-w-none border-slate-200 dark:border-slate-700">
         <div className="p-4 sm:p-6">
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Input Section */}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
@@ -103,7 +103,7 @@ export function ImageBlur() {
               </div>
 
               <div
-                className="relative w-full h-[500px] border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-xl overflow-hidden bg-white dark:bg-slate-800"
+                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-xl overflow-hidden bg-white dark:bg-slate-800"
               >
                 {!imageUrl && (
                   <label
@@ -162,7 +162,7 @@ export function ImageBlur() {
               </div>
 
               <div
-                className="relative w-full h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden bg-white dark:bg-slate-800"
+                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden bg-white dark:bg-slate-800"
               >
                 {!imageUrl && !isProcessing && (
                   <div className="flex items-center justify-center h-full">
