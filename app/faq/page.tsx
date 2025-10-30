@@ -1092,8 +1092,8 @@ export default function FAQPage() {
 
                     <div className="space-y-12">
                         {faqs.map((qa, i) => (
-                            <article key={i} className="bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
-                                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground mb-3 sm:mb-4 flex items-start gap-2 sm:gap-3">
+                            <article key={i} className="bg-black border border-border rounded-lg p-4 sm:p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
+                                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-green-500 mb-3 sm:mb-4 flex items-start gap-2 sm:gap-3">
                                     <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1">
                                         <span className="text-primary font-bold text-xs sm:text-sm">{i + 1}</span>
                                     </div>

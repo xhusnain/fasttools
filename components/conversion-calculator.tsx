@@ -502,7 +502,7 @@ export function ConversionCalculator() {
               { from: "1 kilometer", to: "0.621 miles", category: "Length" },
               { from: "1 square meter", to: "10.764 square feet", category: "Area" }
             ].map((conversion, index) => (
-              <div key={index} className="p-4 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-700 dark:to-slate-800 rounded-xl border-2 border-yellow-200 dark:border-yellow-800 min-h-[80px] shadow-sm hover:shadow-md transition-shadow hover:border-yellow-400 dark:hover:border-yellow-600">
+              <div key={index} className="p-4 bg-black rounded-xl border-2 border-yellow-200 dark:border-yellow-800 min-h-[80px] shadow-sm hover:shadow-md transition-shadow hover:border-yellow-400 dark:hover:border-yellow-600">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
                   <div className="text-sm font-medium text-slate-800 dark:text-slate-200">
