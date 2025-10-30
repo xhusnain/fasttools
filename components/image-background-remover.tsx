@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
+import { Slider } from "@/components/ui/slider"
 import { Card } from "@/components/ui/card"
 import { Upload, Download, RotateCcw, FileText, Zap } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
@@ -19,10 +20,13 @@ export function ImageBackgroundRemover() {
     setImage,
     startProcessing,
     reset,
+    refineStrength,
+    setRefineStrength,
   } = useBgRemoverStore();
 
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageDimensions, setImageDimensions] = useState<{ width: number; height: number } | null>(null);
+  const [debounceId, setDebounceId] = useState<number | null>(null);
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -41,6 +45,8 @@ export function ImageBackgroundRemover() {
         setImage(img, imageUrl)
         setImageDimensions({ width: img.naturalWidth, height: img.naturalHeight })
         setImageLoaded(true)
+        // Auto-process on first load
+        setTimeout(() => startProcessing(), 50)
       }
       img.onerror = () => {
         alert("⚠️ Failed to load image.\n\nPlease try uploading a different image.")
@@ -241,16 +247,34 @@ export function ImageBackgroundRemover() {
             </div>
           </div>
 
-          {/* Processing Button */}
-          {imageUrl && !isProcessing && !result && (
-            <div className="mt-6 text-center">
-              <Button 
-                onClick={startProcessing} 
-                className="gap-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold px-8 py-6 text-base"
-              >
-                <Zap className="h-5 w-5" />
-                Remove Background
-              </Button>
+          {/* Strength Slider - auto reprocess */}
+          {imageUrl && (
+            <div className="mt-6 space-y-2">
+              <div className="flex items-center justify-between">
+                <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                  Cutout strength: <span className="text-blue-600 dark:text-blue-400 font-semibold">{refineStrength}</span>
+                </label>
+                <span className="text-xs text-slate-500 dark:text-slate-400">Auto-applies</span>
+              </div>
+              <Slider
+                value={[refineStrength === "light" ? 0 : refineStrength === "medium" ? 1 : 2]}
+                onValueChange={(v) => {
+                  const s = v[0] === 0 ? "light" : v[0] === 1 ? "medium" : "strong";
+                  setRefineStrength?.(s);
+                  if (debounceId) window.clearTimeout(debounceId);
+                  const id = window.setTimeout(() => startProcessing(), 350);
+                  setDebounceId(id);
+                }}
+                min={0}
+                max={2}
+                step={1}
+                className="w-full"
+              />
+              <div className="flex justify-between text-xs text-slate-500 dark:text-slate-400">
+                <span>Light</span>
+                <span>Medium</span>
+                <span>Strong</span>
+              </div>
             </div>
           )}
 

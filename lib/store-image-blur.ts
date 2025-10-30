@@ -7,6 +7,8 @@ import type {
 
 interface EditorStore extends EditorState {
   _isInitialized: boolean;
+  refineStrength?: "light" | "medium" | "strong";
+  setRefineStrength?: (s: "light" | "medium" | "strong") => void;
 }
 
 export const useImageBlurStore = create<EditorStore>()(
@@ -22,6 +24,8 @@ export const useImageBlurStore = create<EditorStore>()(
     isProcessing: false,
     blurIntensity: 10,
     _isInitialized: false,
+    refineStrength: "strong",
+    setRefineStrength: (s) => set({ refineStrength: s }),
 
     setImage: (image: HTMLImageElement, url: string) => {
       const { imageUrl } = get();
@@ -93,7 +97,7 @@ export const useImageBlurStore = create<EditorStore>()(
     },
 
     startProcessing: async () => {
-      const { originalImage, blurIntensity, result } = get();
+      const { originalImage, blurIntensity, result, refineStrength } = get();
       if (!originalImage) return;
 
       // Clear previous result if re-processing
@@ -128,7 +132,8 @@ export const useImageBlurStore = create<EditorStore>()(
         form.append("image", blob, "input.png");
         form.append("intensity", String(blurIntensity));
 
-        const resp = await fetch(`/api/image-blur?refine=depth&strength=strong`, { method: "POST", body: form });
+        const strengthQ = refineStrength ?? "strong";
+        const resp = await fetch(`/api/image-blur?refine=depth&strength=${strengthQ}`, { method: "POST", body: form });
         if (!resp.ok) {
           const errText = await resp.text().catch(() => "");
           throw new Error(errText || `Server error ${resp.status}`);

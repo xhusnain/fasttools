@@ -7,6 +7,8 @@ import type {
 
 interface EditorStore extends EditorState {
   _isInitialized: boolean;
+  refineStrength?: "light" | "medium" | "strong";
+  setRefineStrength?: (s: "light" | "medium" | "strong") => void;
 }
 
 export const useBgRemoverStore = create<EditorStore>()(
@@ -22,6 +24,8 @@ export const useBgRemoverStore = create<EditorStore>()(
     result: null,
     isProcessing: false,
     _isInitialized: false,
+    refineStrength: "strong",
+    setRefineStrength: (s) => set({ refineStrength: s }),
 
     // Actions
     setImage: (image: HTMLImageElement, url: string) => {
@@ -92,7 +96,7 @@ export const useBgRemoverStore = create<EditorStore>()(
     },
 
     startProcessing: async () => {
-      const { originalImage } = get();
+      const { originalImage, refineStrength } = get();
       if (!originalImage) return;
 
       try {
@@ -122,7 +126,8 @@ export const useBgRemoverStore = create<EditorStore>()(
         const form = new FormData();
         form.append("image", blob, "input.png");
 
-        const resp = await fetch("/api/bg-remover?refine=depth&strength=strong", { method: "POST", body: form });
+        const strengthQ = refineStrength ?? "strong";
+        const resp = await fetch(`/api/bg-remover?refine=depth&strength=${strengthQ}`, { method: "POST", body: form });
         if (!resp.ok) {
           const errText = await resp.text().catch(() => "");
           // Temporary diagnostics
