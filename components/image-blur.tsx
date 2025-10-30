@@ -31,12 +31,7 @@ export function ImageBlur() {
     const file = e.target.files?.[0]
     if (!file) return
 
-    // Validate file type
-    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp']
-    if (!allowedTypes.includes(file.type)) {
-      alert('⚠️ Oops! Please upload a valid image file.\n\nSupported formats: JPEG, PNG, or WebP')
-      return
-    }
+    // Accept any file; will fail gracefully if not an image when loading
 
     const reader = new FileReader()
     reader.onload = async (event) => {
@@ -128,7 +123,7 @@ export function ImageBlur() {
                     <input
                       id="image-upload-blur"
                       type="file"
-                      accept="image/jpeg,image/jpg,image/png,image/webp"
+                      
                       onChange={handleImageUpload}
                       className="hidden"
                     />

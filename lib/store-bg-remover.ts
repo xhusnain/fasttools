@@ -122,10 +122,12 @@ export const useBgRemoverStore = create<EditorStore>()(
         const form = new FormData();
         form.append("image", blob, "input.png");
 
-        const resp = await fetch("/api/bg-remover", { method: "POST", body: form });
+        const resp = await fetch("/api/bg-remover?refine=depth&strength=strong", { method: "POST", body: form });
         if (!resp.ok) {
-          const err = await resp.json().catch(() => ({}));
-          throw new Error(err.error || `Server error ${resp.status}`);
+          const errText = await resp.text().catch(() => "");
+          // Temporary diagnostics
+          console.error("bg-remover response not ok:", resp.status, errText);
+          throw new Error(errText || `Server error ${resp.status}`);
         }
         const resultBlob = await resp.blob();
         const resultUrl = URL.createObjectURL(resultBlob);
@@ -146,6 +148,8 @@ export const useBgRemoverStore = create<EditorStore>()(
 
         get().setResult(result);
       } catch (error) {
+        // Temporary diagnostics
+        console.error("bg-remover client error:", error);
         set({
           isProcessing: false,
           status: {

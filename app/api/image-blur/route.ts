@@ -29,7 +29,10 @@ export async function POST(req: Request) {
     const arrayBuffer = await file.arrayBuffer();
     const inputBuffer = Buffer.from(arrayBuffer);
 
-    const output = await blurBackground(inputBuffer, sigma);
+    const url = new URL(req.url);
+    const refine = url.searchParams.get("refine");
+    const strength = url.searchParams.get("strength");
+    const output = await blurBackground(inputBuffer, sigma, { refineWithDepth: refine === "depth", strength: (strength as any) || undefined });
     return new NextResponse(output, {
       status: 200,
       headers: {

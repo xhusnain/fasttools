@@ -128,10 +128,10 @@ export const useImageBlurStore = create<EditorStore>()(
         form.append("image", blob, "input.png");
         form.append("intensity", String(blurIntensity));
 
-        const resp = await fetch("/api/image-blur", { method: "POST", body: form });
+        const resp = await fetch(`/api/image-blur?refine=depth&strength=strong`, { method: "POST", body: form });
         if (!resp.ok) {
-          const err = await resp.json().catch(() => ({}));
-          throw new Error(err.error || `Server error ${resp.status}`);
+          const errText = await resp.text().catch(() => "");
+          throw new Error(errText || `Server error ${resp.status}`);
         }
         const resultBlob = await resp.blob();
         const resultUrl = URL.createObjectURL(resultBlob);

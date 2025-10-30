@@ -6,8 +6,8 @@ export const dynamic = "force-dynamic";
 
 export async function POST(req: Request) {
   try {
-    // Ensure model session warms up
-    void loadU2NetSession();
+    // Ensure model session is ready before reading the image
+    await loadU2NetSession();
 
     const contentType = req.headers.get("content-type") || "";
     if (!contentType.includes("multipart/form-data")) {
@@ -23,7 +23,10 @@ export async function POST(req: Request) {
     const arrayBuffer = await file.arrayBuffer();
     const inputBuffer = Buffer.from(arrayBuffer);
 
-    const output = await removeBackground(inputBuffer);
+    const url = new URL(req.url);
+    const refine = url.searchParams.get("refine");
+    const strength = url.searchParams.get("strength");
+    const output = await removeBackground(inputBuffer, { refineWithDepth: refine === "depth", strength: (strength as any) || undefined });
     return new NextResponse(output, {
       status: 200,
       headers: {
@@ -33,7 +36,10 @@ export async function POST(req: Request) {
     });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";
-    return NextResponse.json({ error: message }, { status: 500 });
+    // Temporary diagnostics
+    console.error("/api/bg-remover error:", err);
+    // Return plaintext for easier client-side surfacing
+    return new NextResponse(message, { status: 500, headers: { "Content-Type": "text/plain" } });
   }
 }
 
