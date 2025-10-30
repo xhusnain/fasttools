@@ -538,13 +538,13 @@ export const metadata: Metadata = {
             
             
         </head>
-        <body className="min-h-screen bg-background font-sans text-foreground">
+        <body className="bg-background font-sans text-foreground">
         <a href="#main-content" className="skip-link">
             Skip to main content
             </a>
             <GlobalLoading />
             <Header />
-            <main id="main-content" className="min-h-[calc(100vh-4rem)]" role="main">
+            <main id="main-content" role="main">
               {children}
             </main>
             <Footer />

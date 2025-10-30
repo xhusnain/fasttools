@@ -28,28 +28,28 @@ export function Header() {
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600" />
       
       <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-border/10 transition-all duration-300">
-        <nav className="container mx-auto grid grid-cols-12 h-24 items-center px-4 lg:px-8">
+        <nav className="container mx-auto flex items-center justify-between h-16 sm:h-20 md:h-24 px-4 lg:px-8">
           
           {/* Left side - Logo */}
-          <div className="col-span-12 lg:col-span-3 flex justify-center lg:justify-start">
+          <div className="flex items-center">
             <Link 
               href="/" 
               aria-label="FastTools home" 
-              className="flex items-center gap-3 group transition-all duration-300"
+              className="flex items-center gap-2 sm:gap-3 group transition-all duration-300"
             >
-              <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
+              <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-primary flex items-center justify-center">
                 {isHydrated ? (
-                  <img src="/logo.svg" alt="FastTools" className="h-6 w-6 object-contain" />
+                  <img src="/logo.svg" alt="FastTools" className="h-5 w-5 sm:h-6 sm:w-6 object-contain" />
                 ) : (
-                  <Wrench className="h-6 w-6 text-primary-foreground" />
+                  <Wrench className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />
                 )}
               </div>
-              <span className="text-2xl font-bold text-foreground">FastTools</span>
+              <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground">FastTools</span>
             </Link>
           </div>
 
           {/* Center - Navigation Links (Desktop) */}
-          <div className="hidden lg:flex items-center gap-2 col-span-6 justify-center">
+          <div className="hidden lg:flex items-center gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -69,8 +69,8 @@ export function Header() {
             ))}
           </div>
 
-          {/* Right side - Search */}
-          <div className="hidden lg:flex items-center col-span-3 justify-end">
+          {/* Right side - Desktop Search */}
+          <div className="hidden lg:flex items-center">
             {!showSearch ? (
               <button
                 aria-label="Open search"
@@ -97,22 +97,22 @@ export function Header() {
             {!showSearch ? (
               <>
                 <button
-                  className="p-3 rounded-xl text-foreground/70 hover:text-primary hover:bg-primary/10"
+                  className="p-2 sm:p-3 rounded-xl text-foreground/70 hover:text-primary hover:bg-primary/10"
                   onClick={() => setShowSearch(true)}
                   aria-label="Open search"
                 >
-                  <Search className="h-6 w-6" />
+                  <Search className="h-5 w-5 sm:h-6 sm:w-6" />
                 </button>
                 <button
-                  className="p-3 rounded-xl text-foreground/70 hover:text-primary hover:bg-primary/10"
+                  className="p-2 sm:p-3 rounded-xl text-foreground/70 hover:text-primary hover:bg-primary/10"
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                   aria-label="Toggle menu"
                 >
-                  {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                  {mobileMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
                 </button>
               </>
             ) : (
-              <div className="w-40">
+              <div className="w-32 sm:w-40">
                 <SearchBar
                   autoFocus
                   placeholder="Search..."
@@ -128,7 +128,7 @@ export function Header() {
 
       {/* Mobile Menu Dropdown */}
       <div 
-        className={`lg:hidden fixed inset-x-0 top-24 z-40 bg-background/98 backdrop-blur-xl border-b border-border/10 transition-all duration-300 ease-out ${
+        className={`lg:hidden fixed inset-x-0 top-16 sm:top-20 md:top-24 z-40 bg-background/98 backdrop-blur-xl border-b border-border/10 transition-all duration-300 ease-out ${
           mobileMenuOpen 
             ? 'max-h-screen opacity-100 visible' 
             : 'max-h-0 opacity-0 invisible'
@@ -138,17 +138,17 @@ export function Header() {
           {/* Mobile Logo */}
           <Link 
             href="/" 
-            className="flex items-center gap-3 pb-4 border-b border-border/20" 
+            className="flex items-center gap-2 sm:gap-3 pb-4 border-b border-border/20" 
             onClick={() => setMobileMenuOpen(false)}
           >
-            <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
+            <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-primary flex items-center justify-center">
               {isHydrated ? (
-                <img src="/logo.svg" alt="FastTools" className="h-6 w-6 object-contain" />
+                <img src="/logo.svg" alt="FastTools" className="h-5 w-5 sm:h-6 sm:w-6 object-contain" />
               ) : (
-                <Wrench className="h-6 w-6 text-primary-foreground" />
+                <Wrench className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />
               )}
             </div>
-            <span className="text-2xl font-bold text-foreground">FastTools</span>
+            <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground">FastTools</span>
           </Link>
           
           {/* Mobile Navigation Links */}
@@ -157,7 +157,7 @@ export function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`block px-5 py-4 text-base font-semibold rounded-xl transition-all duration-300 ${
+              className={`block px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 ${
                 pathname === link.href
                   ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30"
                   : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"

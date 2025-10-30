@@ -61,14 +61,6 @@ export function NasaHeroImage() {
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
       </div>
-      
-      {/* Optional: Floating info badge */}
-      <div className="absolute top-4 right-4 bg-black/30 backdrop-blur-md rounded-lg px-3 py-2 border border-white/10 hidden lg:block">
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
-          <span className="text-xs text-orange-400/80 font-semibold">NASA Space Image</span>
-        </div>
-      </div>
     </>
   )
 }
