@@ -238,22 +238,22 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-black rounded-xl p-3 sm:p-4 md:p-6 w-full overflow-hidden">
       {/* Main Calculator */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Calculator className="h-5 w-5 text-blue-500" />
-            Advanced BMR Calculator
+      <Card className="bg-black border-slate-700 w-full overflow-hidden">
+        <CardHeader className="px-3 sm:px-4 md:px-6 pb-3">
+          <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+            <Calculator className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500 flex-shrink-0" />
+            <span className="break-words">Advanced BMR Calculator</span>
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-4 sm:space-y-6 px-3 sm:px-4 md:px-6">
           {/* Unit System Selection */}
-          <div className="flex gap-4">
-            <div className="flex-1">
-              <Label>Unit System</Label>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full overflow-hidden">
+            <div className="flex-1 space-y-2 min-w-0 w-full sm:w-auto">
+              <Label className="text-green-500 text-xs sm:text-sm">Unit System</Label>
               <Select value={unitSystem} onValueChange={(value: "metric" | "imperial") => setUnitSystem(value)}>
-                <SelectTrigger>
+                <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -262,10 +262,10 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                 </SelectContent>
               </Select>
             </div>
-            <div className="flex-1">
-              <Label>Calculation Method</Label>
+            <div className="flex-1 space-y-2 min-w-0 w-full sm:w-auto">
+              <Label className="text-green-500 text-xs sm:text-sm">Calculation Method</Label>
               <Select value={equation} onValueChange={(value: "mifflin" | "harris" | "katch") => setEquation(value)}>
-                <SelectTrigger>
+                <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -278,9 +278,9 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
           </div>
 
           {/* Input Fields */}
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="age">Age</Label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
+            <div className="space-y-2 w-full min-w-0">
+              <Label htmlFor="age" className="text-green-500 text-xs sm:text-sm">Age</Label>
               <Input
                 id="age"
                 type="number"
@@ -289,13 +289,14 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                 onChange={(e) => setAge(e.target.value)}
                 min="15"
                 max="80"
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
               />
-              <p className="text-xs text-muted-foreground mt-1">ages 15 - 80</p>
+              <p className="text-xs text-slate-400 mt-1">ages 15 - 80</p>
             </div>
-            <div>
-              <Label>Gender</Label>
+            <div className="space-y-2 w-full min-w-0">
+              <Label className="text-green-500 text-xs sm:text-sm">Gender</Label>
               <Select value={gender} onValueChange={(value: "male" | "female") => setGender(value)}>
-                <SelectTrigger>
+                <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -306,38 +307,40 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="height">Height</Label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
+            <div className="space-y-2 w-full min-w-0">
+              <Label htmlFor="height" className="text-green-500 text-xs sm:text-sm">Height</Label>
               <Input
                 id="height"
                 type="number"
                 placeholder={unitSystem === "metric" ? "180" : "5.9"}
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
               />
-              <p className="text-xs text-muted-foreground mt-1">
+              <p className="text-xs text-slate-400 mt-1 break-words">
                 {unitSystem === "metric" ? "cm" : "ft (e.g., 5.9 for 5'9\")"}
               </p>
             </div>
-            <div>
-              <Label htmlFor="weight">Weight</Label>
+            <div className="space-y-2 w-full min-w-0">
+              <Label htmlFor="weight" className="text-green-500 text-xs sm:text-sm">Weight</Label>
               <Input
                 id="weight"
                 type="number"
                 placeholder={unitSystem === "metric" ? "70" : "154"}
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
               />
-              <p className="text-xs text-muted-foreground mt-1">
+              <p className="text-xs text-slate-400 mt-1">
                 {unitSystem === "metric" ? "kg" : "lbs"}
               </p>
             </div>
           </div>
 
           {equation === "katch" && (
-            <div>
-              <Label htmlFor="bodyFat">Body Fat Percentage</Label>
+            <div className="space-y-2 w-full min-w-0">
+              <Label htmlFor="bodyFat" className="text-green-500 text-xs sm:text-sm">Body Fat Percentage</Label>
               <Input
                 id="bodyFat"
                 type="number"
@@ -346,17 +349,18 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
                 onChange={(e) => setBodyFat(e.target.value)}
                 min="3"
                 max="50"
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
               />
-              <p className="text-xs text-muted-foreground mt-1">Required for Katch-McArdle formula</p>
+              <p className="text-xs text-slate-400 mt-1">Required for Katch-McArdle formula</p>
             </div>
           )}
 
-          <div className="flex gap-2">
-            <Button onClick={calculateBMR} className="flex-1">
+          <div className="flex flex-col sm:flex-row gap-2 w-full">
+            <Button onClick={calculateBMR} className="flex-1 w-full sm:w-auto text-sm sm:text-base">
               <Calculator className="mr-2 h-4 w-4" />
               Calculate BMR
             </Button>
-            <Button variant="outline" onClick={clearAll}>
+            <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
               Clear All
             </Button>
           </div>
@@ -367,32 +371,32 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
       {result && (
         <div className="space-y-6">
           {/* Main Results */}
-          <Card>
+          <Card className="bg-black border-slate-700">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex items-center gap-2 text-orange-500">
                 <Flame className="h-5 w-5 text-orange-500" />
                 BMR Analysis Results
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label className="text-sm font-medium">Basal Metabolic Rate</Label>
-                  <div className="text-3xl font-bold text-orange-600">
+                  <div className="text-2xl sm:text-3xl font-bold text-orange-600">
                     {result.bmr.toLocaleString()} calories/day
                   </div>
                   <p className="text-sm text-muted-foreground">Energy needed at rest</p>
                 </div>
                 <div className="space-y-2">
                   <Label className="text-sm font-medium">Total Daily Energy Expenditure</Label>
-                  <div className="text-3xl font-bold text-blue-600">
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-600">
                     {result.tdee.toLocaleString()} calories/day
                   </div>
                   <p className="text-sm text-muted-foreground">With moderate activity</p>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-4 pt-4 border-t">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t">
                 <div className="text-center">
                   <div className="text-sm text-muted-foreground">Equation Used</div>
                   <div className="text-lg font-semibold text-green-600">{result.equation}</div>
@@ -417,17 +421,17 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
           </Card>
 
           {/* Activity Levels */}
-          <Card>
+          <Card className="bg-black border-slate-700">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Activity className="h-5 w-5 text-green-500" />
+              <CardTitle className="flex items-center gap-2 text-orange-500">
+                <Activity className="h-5 w-5 text-orange-500" />
                 Daily Calorie Needs by Activity Level
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
                 {activityLevels.map((level, index) => (
-                  <div key={index} className="flex justify-between items-center p-3 bg-muted rounded-lg">
+                  <div key={index} className="flex justify-between items-center p-3 bg-black border border-slate-700 rounded-lg">
                     <div>
                       <span className="font-medium">{level.name}</span>
                       <p className="text-sm text-muted-foreground">{level.description}</p>
@@ -442,65 +446,65 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
           </Card>
 
           {/* Weight Management */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <Card className="bg-black border-slate-700">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <TrendingUp className="h-5 w-5 text-red-500" />
+                <CardTitle className="flex items-center gap-2 text-orange-500">
+                  <TrendingUp className="h-5 w-5 text-orange-500" />
                   Weight Loss Goals
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="flex justify-between items-center p-3 bg-red-50 dark:bg-red-950/20 rounded-lg">
+                <div className="flex justify-between items-center p-3 bg-black border border-slate-700 rounded-lg">
                   <div>
-                    <span className="font-medium text-red-800 dark:text-red-200">Mild Deficit</span>
-                    <p className="text-sm text-red-600 dark:text-red-400">0.5 lb/week</p>
+                    <span className="font-medium text-red-400">Mild Deficit</span>
+                    <p className="text-sm text-slate-300">0.5 lb/week</p>
                   </div>
                   <Badge variant="destructive">{result.weightLoss.mild.toLocaleString()} cal/day</Badge>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-orange-50 dark:bg-orange-950/20 rounded-lg">
+                <div className="flex justify-between items-center p-3 bg-black border border-slate-700 rounded-lg">
                   <div>
-                    <span className="font-medium text-orange-800 dark:text-orange-200">Moderate Deficit</span>
-                    <p className="text-sm text-orange-600 dark:text-orange-400">1 lb/week</p>
+                    <span className="font-medium text-red-400">Moderate Deficit</span>
+                    <p className="text-sm text-slate-300">1 lb/week</p>
                   </div>
                   <Badge variant="destructive">{result.weightLoss.moderate.toLocaleString()} cal/day</Badge>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-red-50 dark:bg-red-950/20 rounded-lg">
+                <div className="flex justify-between items-center p-3 bg-black border border-slate-700 rounded-lg">
                   <div>
-                    <span className="font-medium text-red-800 dark:text-red-200">Aggressive Deficit</span>
-                    <p className="text-sm text-red-600 dark:text-red-400">1.5 lb/week</p>
+                    <span className="font-medium text-red-400">Aggressive Deficit</span>
+                    <p className="text-sm text-slate-300">1.5 lb/week</p>
                   </div>
                   <Badge variant="destructive">{result.weightLoss.aggressive.toLocaleString()} cal/day</Badge>
                 </div>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="bg-black border-slate-700">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Target className="h-5 w-5 text-green-500" />
+                <CardTitle className="flex items-center gap-2 text-orange-500">
+                  <Target className="h-5 w-5 text-orange-500" />
                   Weight Gain Goals
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="flex justify-between items-center p-3 bg-green-50 dark:bg-green-950/20 rounded-lg">
+                <div className="flex justify-between items-center p-3 bg-black border border-slate-700 rounded-lg">
                   <div>
-                    <span className="font-medium text-green-800 dark:text-green-200">Mild Surplus</span>
-                    <p className="text-sm text-green-600 dark:text-green-400">0.5 lb/week</p>
+                    <span className="font-medium text-green-400">Mild Surplus</span>
+                    <p className="text-sm text-slate-300">0.5 lb/week</p>
                   </div>
                   <Badge variant="default">{result.weightGain.mild.toLocaleString()} cal/day</Badge>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
+                <div className="flex justify-between items-center p-3 bg-black border border-slate-700 rounded-lg">
                   <div>
-                    <span className="font-medium text-blue-800 dark:text-blue-200">Moderate Surplus</span>
-                    <p className="text-sm text-blue-600 dark:text-blue-400">1 lb/week</p>
+                    <span className="font-medium text-green-400">Moderate Surplus</span>
+                    <p className="text-sm text-slate-300">1 lb/week</p>
                   </div>
                   <Badge variant="default">{result.weightGain.moderate.toLocaleString()} cal/day</Badge>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-purple-50 dark:bg-purple-950/20 rounded-lg">
+                <div className="flex justify-between items-center p-3 bg-black border border-slate-700 rounded-lg">
                   <div>
-                    <span className="font-medium text-purple-800 dark:text-purple-200">Aggressive Surplus</span>
-                    <p className="text-sm text-purple-600 dark:text-purple-400">1.5 lb/week</p>
+                    <span className="font-medium text-green-400">Aggressive Surplus</span>
+                    <p className="text-sm text-slate-300">1.5 lb/week</p>
                   </div>
                   <Badge variant="default">{result.weightGain.aggressive.toLocaleString()} cal/day</Badge>
                 </div>
@@ -509,15 +513,15 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
           </div>
 
           {/* Recommendations */}
-          <Card>
+          <Card className="bg-black border-slate-700">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Heart className="h-5 w-5 text-pink-500" />
+              <CardTitle className="flex items-center gap-2 text-orange-500">
+                <Heart className="h-5 w-5 text-orange-500" />
                 Personalized Recommendations
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-green-600">Nutrition</h4>
                   <ul className="space-y-2 text-sm">
@@ -559,17 +563,17 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card>
+        <Card className="bg-black border-slate-700">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Clock className="h-5 w-5 text-gray-500" />
+            <CardTitle className="flex items-center gap-2 text-orange-500">
+              <Clock className="h-5 w-5 text-orange-500" />
               Recent Calculations
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
               {history.map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                <div key={index} className="flex items-center justify-between p-3 bg-black border border-slate-700 rounded-lg">
                   <div className="space-y-1">
                     <div className="font-medium">
                       BMR: {item.bmr.toLocaleString()} cal/day
@@ -593,22 +597,22 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
       )}
 
       {/* Information Section */}
-      <Card>
+      <Card className="bg-black border-slate-700">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Info className="h-5 w-5 text-blue-500" />
+          <CardTitle className="flex items-center gap-2 text-orange-500">
+            <Info className="h-5 w-5 text-orange-500" />
             BMR Calculator Features
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+          <div className="p-4 bg-black border border-slate-700 rounded-lg">
             <div className="flex items-start gap-2">
-              <Info className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+              <Info className="h-4 w-4 text-orange-500 mt-0.5 flex-shrink-0" />
               <div className="text-sm">
-                <p className="font-medium text-blue-800 dark:text-blue-200 mb-1">
+                <p className="font-medium text-orange-500 mb-1">
                   Professional BMR Analysis
                 </p>
-                <p className="text-blue-700 dark:text-blue-300">
+                <p className="text-slate-300">
                   This calculator provides accurate BMR calculations using three different equations: Mifflin-St Jeor (most accurate), Harris-Benedict (classic), and Katch-McArdle (for lean individuals with known body fat percentage).
                 </p>
               </div>

@@ -54,11 +54,11 @@ export function GHeader({
   const maxWidthClass = centered ? 'max-w-3xl mx-auto' : 'max-w-4xl'
 
   return (
-    <div className={`${containerClass} space-y-4 sm:space-y-6`}>
-      <h1 className={`${titleClasses[titleSize]} ${titleColors[color]} leading-tight px-2`}>
+    <div className={`${containerClass} space-y-4 sm:space-y-6 w-full`}>
+      <h1 className={`${titleClasses[titleSize]} ${titleColors[color]} leading-tight px-2 break-words hyphens-auto`}>
         {title}
       </h1>
-      <p className={`${descClasses[descriptionSize]} ${descColors[color]} leading-relaxed ${maxWidthClass} px-4`}>
+      <p className={`${descClasses[descriptionSize]} ${descColors[color]} leading-relaxed ${maxWidthClass} px-4 break-words`}>
         {description}
       </p>
     </div>
