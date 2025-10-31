@@ -228,19 +228,19 @@ export default function PregnancyCalculatorPage() {
                       <div className="grid md:grid-cols-2 gap-3 md:gap-4">
                         <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
                           <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">Step 1: Pick Your Input Method</h3>
-                          <p className="text-xs md:text-sm text-slate-400">Choose from five options: expected delivery date, period start date, ultrasound scan date, known conception date, or IVF embryo transfer date</p>
+                          <p className="text-xs md:text-sm text-slate-400">You have five choices: baby's expected arrival date, when your last period began, ultrasound imaging date, exact fertilization moment, or fertility treatment transfer date</p>
                         </div>
                         <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
                           <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">Step 2: Add Your Details</h3>
-                          <p className="text-xs md:text-sm text-slate-400">Enter relevant dates along with your body measurements to receive custom-tailored advice</p>
+                          <p className="text-xs md:text-sm text-slate-400">Fill in the dates you know plus your height and weight details so the system can give you advice matched to your body</p>
                         </div>
                         <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
                           <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">Step 3: Review Your Results</h3>
-                          <p className="text-xs md:text-sm text-slate-400">See your complete timeline, ideal weight ranges, and customized suggestions for your current stage</p>
+                          <p className="text-xs md:text-sm text-slate-400">View your full schedule timeline, recommended body weight ranges, and personalized tips suited to where you are in your journey</p>
                         </div>
                         <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
                           <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">Step 4: Keep Monitoring</h3>
-                          <p className="text-xs md:text-sm text-slate-400">Check back regularly to see important moments, weekly development updates, and evolving insights</p>
+                          <p className="text-xs md:text-sm text-slate-400">Return often to view significant events, weekly growth information, and fresh perspectives that update as time passes</p>
                         </div>
                       </div>
                     </div>
@@ -402,19 +402,19 @@ export default function PregnancyCalculatorPage() {
                       <div className="space-y-2">
                         <h3 className="font-semibold text-green-500 text-base md:text-lg">What input options exist and how do their precision levels compare?</h3>
                         <p className="text-sm md:text-base text-slate-400">
-                          There are five ways to enter data: expected delivery date, period start date, ultrasound scan date, known conception moment, and IVF transfer date. Ultrasound leads in precision (within three to five days), followed by due date estimates (within one to two weeks), then period dates. Accuracy varies by method, so choose based on what you're most certain about.
+                          You can input information five different ways: predicted birth date, menstrual cycle start, imaging scan date, confirmed fertilization date, or fertility procedure transfer date. Imaging scans give the tightest window (about three to five days), next comes birth date predictions (around one to two weeks), then cycle dates. Precision differs for each approach, so go with whichever one you trust most.
                         </p>
                       </div>
                       <div className="space-y-2">
                         <h3 className="font-semibold text-green-500 text-base md:text-lg">How does this tool customize weight suggestions for me?</h3>
                         <p className="text-sm md:text-base text-slate-400">
-                          The system looks at your body mass index before pregnancy and applies respected medical guidelines to produce custom weight ranges. These suggestions fit your unique physique, current health picture, and which trimester you're in, all to support the best outcomes for both you and baby.
+                          The system examines your starting body mass index and uses established healthcare standards to create personalized weight ranges. These recommendations match your individual body type, present wellness situation, and current pregnancy phase, all designed to promote optimal health for both you and your growing baby.
                         </p>
                       </div>
                       <div className="space-y-2">
                         <h3 className="font-semibold text-green-500 text-base md:text-lg">What details should I input to maximize precision?</h3>
                         <p className="text-sm md:text-base text-slate-400">
-                          To get the best results, enter whatever date information you feel most confident about (ultrasound dates with pregnancy age info are top choice), put in truthful body measurements so BMI math works correctly, and keep updating as weeks pass so advice stays current.
+                          For optimum accuracy, input whichever date data you trust most (imaging scan dates showing how far along you are work best), enter honest physical measurements so body mass calculations function properly, and refresh regularly as time goes by to keep recommendations up-to-date.
                         </p>
                       </div>
                       <div className="space-y-2">
@@ -444,7 +444,7 @@ export default function PregnancyCalculatorPage() {
                       <div className="space-y-2">
                         <h3 className="font-semibold text-green-500 text-base md:text-lg">How does it help organize medical visits?</h3>
                         <p className="text-sm md:text-base text-slate-400">
-                          It keeps a record of necessary prenatal appointments and health checks, giving you a complete calendar of upcoming visits matched to your current phase. This makes it easier to prepare for important examinations, imaging scans, and meetings with your care team all through your journey.
+                          It maintains a log of required doctor visits and medical screenings, offering you a full schedule of future appointments aligned with where you are now. This simplifies planning for crucial medical tests, diagnostic imaging, and consultations with your healthcare providers throughout your entire experience.
                         </p>
                       </div>
                       <div className="space-y-2">
@@ -456,7 +456,7 @@ export default function PregnancyCalculatorPage() {
                       <div className="space-y-2">
                         <h3 className="font-semibold text-green-500 text-base md:text-lg">How precise are delivery date predictions?</h3>
                         <p className="text-sm md:text-base text-slate-400">
-                          These predictions use the typical 280-day (40-week) timeframe starting from when your last period began. Reality shows only roughly 5% of babies arrive exactly on the predicted date. The majority come within about two weeks of that estimate, which falls in the normal range.
+                          These predictions work with the standard nine-month timeline (approximately 38-40 weeks) counting from your period's first day. In practice, just about 5% of babies show up exactly on their predicted day. Most arrive somewhere between roughly two weeks before or after that date, which is perfectly normal.
                         </p>
                       </div>
                       <div className="space-y-2">
@@ -492,7 +492,7 @@ export default function PregnancyCalculatorPage() {
                       <div className="space-y-2">
                         <h3 className="font-semibold text-green-500 text-base md:text-lg">How can I watch baby grow each week?</h3>
                         <p className="text-sm md:text-base text-slate-400">
-                          It offers thorough weekly updates on baby's growth covering size dimensions, weight estimates, and major developmental achievements. You'll follow how organs are forming, movement behaviors, and sensations you might experience. Plus there are visual guides and growth comparisons available.
+                          You'll receive comprehensive weekly information about your baby's progress including length measurements, approximate weight, and key growth milestones. Track organ formation, activity patterns, and physical feelings you may notice. Visual references and developmental comparisons are also provided.
                         </p>
                       </div>
                       <div className="space-y-2">

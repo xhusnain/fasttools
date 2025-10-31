@@ -777,21 +777,21 @@ Next Milestone: ${result.nextMilestone}`
                   Medical Disclaimer
                 </p>
                 <p className="text-blue-700 dark:text-blue-300">
-                  This calculator provides estimates only. Always consult with your healthcare provider for accurate pregnancy dating and medical advice.
+                  The information shown here is approximate and intended for informational purposes. For precise timeline calculations and health guidance, please speak directly with your medical professional.
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="text-sm text-muted-foreground space-y-2">
+          <div className="text-xs text-slate-400 space-y-2">
             <p>
-              <strong>Due Date:</strong> The estimated date when your baby is expected to be born, typically 40 weeks after your last menstrual period.
+              <strong className="text-green-500">Baby's Anticipated Arrival:</strong> This shows the projected birth date, usually calculated as roughly 280 days (or about nine calendar months) from when your last period started.
             </p>
             <p>
-              <strong>Gestational Age:</strong> The age of the pregnancy calculated from the first day of the last menstrual period.
+              <strong className="text-green-500">How Far Along:</strong> Measured from day one of your last period start date, matching the standard method doctors use to track pregnancy advancement.
             </p>
             <p>
-              <strong>Weight Gain:</strong> Recommendations are based on pre-pregnancy BMI and Institute of Medicine guidelines.
+              <strong className="text-green-500">Healthy Weight Ranges:</strong> These suggestions factor in your body mass index from before conception and match guidelines from recognized health organizations.
             </p>
           </div>
         </CardContent>
