@@ -443,7 +443,7 @@ export default function ConcreteCalculatorPage() {
                       },
                       {
                         question: "How do I calculate concrete bags needed?",
-                        answer: "Our calculator shows both cubic yards and bag requirements. Standard 80-lb bags yield about 0.6 cubic feet of concrete. Always round up to the nearest whole bag."
+                        answer: "Our calculator displays cubic yard measurements and corresponding bag quantities. Typical 80-pound concrete bags provide approximately 0.6 cubic feet of material. Purchase whole bags only, ensuring you have sufficient coverage for your project dimensions."
                       },
                       {
                         question: "What's the difference between ready-mix and bagged concrete?",

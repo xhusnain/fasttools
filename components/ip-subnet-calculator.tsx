@@ -427,23 +427,23 @@ export function IPSubnetCalculator({
   return (
     <div className="space-y-6">
       {/* Main Calculator Card */}
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-xl">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <Network className="h-5 w-5 text-primary" />
+      <Card className="shadow-lg border-slate-700 hover:shadow-xl transition-all duration-300 bg-black">
+        <CardHeader className="pb-3 px-3 sm:px-6">
+          <CardTitle className="flex items-center gap-1.5 text-base">
+            <div className="p-1 bg-orange-500/10 rounded">
+              <Network className="h-3.5 w-3.5 text-orange-500" />
             </div>
-            Advanced IP Subnet Calculator
+            IP Subnet Calculator
           </CardTitle>
-          <CardDescription className="text-base">
-            Calculate IPv4 and IPv6 subnets with advanced network analysis and CIDR notation support.
+          <CardDescription className="text-xs text-slate-400">
+            Calculate IPv4 and IPv6 subnets with CIDR notation support.
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-6 px-3 sm:px-6">
           {/* IP Version Selection */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-            <div>
-              <Label className="text-sm font-medium">IP Version</Label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label className="text-[11px] font-medium text-green-500">IP Version</Label>
               <Select value={ipVersion} onValueChange={(value: IPVersion) => {
                 setIPVersion(value)
                 setHasUserInteracted(true)
@@ -457,7 +457,7 @@ export function IPSubnetCalculator({
                 setPrefixLength("")
                 setResult(null)
               }}>
-                <SelectTrigger>
+                <SelectTrigger className="h-8 text-xs border-slate-700 bg-black text-slate-200">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -466,8 +466,8 @@ export function IPSubnetCalculator({
                 </SelectContent>
               </Select>
             </div>
-            <div>
-              <Label className="text-sm font-medium">Calculation Type</Label>
+            <div className="space-y-2">
+              <Label className="text-[11px] font-medium text-green-500">Calculation Type</Label>
               <Select value={calculationType} onValueChange={(value: CalculationType) => {
                 setCalculationType(value)
                 setHasUserInteracted(true)
@@ -475,7 +475,7 @@ export function IPSubnetCalculator({
                 setResult(null)
                 setIsCalculating(false)
               }}>
-                <SelectTrigger>
+                <SelectTrigger className="h-8 text-xs border-slate-700 bg-black text-slate-200">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -491,13 +491,13 @@ export function IPSubnetCalculator({
           </div>
 
           {/* IP Address Input */}
-          <div>
-            <Label htmlFor="ip-address" className="text-sm font-medium">
+          <div className="space-y-2">
+            <Label htmlFor="ip-address" className="text-[11px] font-medium text-green-500">
               IP Address {ipVersion === "ipv4" ? "(e.g., 192.168.1.1)" : "(e.g., 2001:db8::1)"}
               {isDetectingIP && (
-                <span className="ml-2 text-xs text-blue-600 dark:text-blue-400 flex items-center gap-1">
-                  <div className="w-3 h-3 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-                  Detecting your IP...
+                <span className="ml-2 text-xs text-green-500 flex items-center gap-1">
+                  <div className="w-3 h-3 border-2 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+                  Detecting...
                 </span>
               )}
             </Label>
@@ -522,17 +522,17 @@ export function IPSubnetCalculator({
                 }
               }}
               placeholder={isDetectingIP ? "Detecting your IP address..." : (ipVersion === "ipv4" ? "192.168.1.1" : "2001:db8::1")}
-              className="mt-1"
+              className="h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
               disabled={isDetectingIP}
             />
             {defaultIP && !isDetectingIP && (
-              <p className="text-xs text-green-600 dark:text-green-400 mt-1 flex items-center gap-1">
+              <p className="text-xs text-green-400 mt-1 flex items-center gap-1">
                 <Check className="h-3 w-3" />
-                Your IP address has been auto-detected
+                IP address auto-detected
               </p>
             )}
             {validationError && (
-              <p className="text-xs text-red-600 dark:text-red-400 mt-1 flex items-center gap-1">
+              <p className="text-xs text-red-400 mt-1 flex items-center gap-1">
                 <AlertTriangle className="h-3 w-3" />
                 {validationError}
               </p>
@@ -540,13 +540,14 @@ export function IPSubnetCalculator({
           </div>
 
           {/* Subnet Configuration */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-            <div>
-              <Label htmlFor="subnet-mask" className="text-sm font-medium">Subnet Mask</Label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="subnet-mask" className="text-[11px] font-medium text-green-500">Subnet Mask</Label>
               <Input
                 id="subnet-mask"
                 type="text"
                 value={subnetMask}
+                className="h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                 onChange={(e) => {
                   const value = e.target.value
                   setSubnetMask(value)
@@ -558,17 +559,16 @@ export function IPSubnetCalculator({
                   setSubnetMaskError(errorMessage)
                 }}
                 placeholder="255.255.255.0"
-                className="mt-1"
               />
               {subnetMaskError && (
-                <p className="text-xs text-red-600 dark:text-red-400 mt-1 flex items-center gap-1">
+                <p className="text-xs text-red-400 mt-1 flex items-center gap-1">
                   <AlertTriangle className="h-3 w-3" />
                   {subnetMaskError}
                 </p>
               )}
             </div>
-            <div>
-              <Label htmlFor="prefix-length" className="text-sm font-medium">CIDR Prefix Length</Label>
+            <div className="space-y-2">
+              <Label htmlFor="prefix-length" className="text-[11px] font-medium text-green-500">CIDR Prefix Length</Label>
               <Input
                 id="prefix-length"
                 type="number"
@@ -586,10 +586,10 @@ export function IPSubnetCalculator({
                 placeholder="24"
                 min="0"
                 max={ipVersion === "ipv4" ? "32" : "128"}
-                className="mt-1"
+                className="h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
               />
               {cidrError && (
-                <p className="text-xs text-red-600 dark:text-red-400 mt-1 flex items-center gap-1">
+                <p className="text-xs text-red-400 mt-1 flex items-center gap-1">
                   <AlertTriangle className="h-3 w-3" />
                   {cidrError}
                 </p>
@@ -598,49 +598,50 @@ export function IPSubnetCalculator({
           </div>
 
           {/* Advanced Options */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <Label className="text-sm font-medium">Advanced Options</Label>
+              <Label className="text-xs font-medium text-green-500">Advanced Options</Label>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => setShowAdvanced(!showAdvanced)}
+                className="h-7 text-xs border-slate-700 bg-black text-slate-300 hover:bg-slate-800"
               >
-                {showAdvanced ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-                {showAdvanced ? "Hide" : "Show"} Advanced
+                {showAdvanced ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
+                {showAdvanced ? "Hide" : "Show"}
               </Button>
             </div>
             
             {showAdvanced && (
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {/* Debug Information */}
-                <div className="bg-slate-100 dark:bg-slate-700 p-4 rounded-lg">
-                  <h4 className="font-semibold mb-2">Current State Debug:</h4>
-                  <div className="grid grid-cols-2 gap-2 text-sm">
-                    <div><strong>IP Version:</strong> {ipVersion}</div>
-                    <div><strong>Calculation Type:</strong> {calculationType}</div>
-                    <div><strong>IP Address:</strong> {ipAddress || "Empty"}</div>
-                    <div><strong>Subnet Mask:</strong> {subnetMask || "Empty"}</div>
-                    <div><strong>CIDR:</strong> {prefixLength || "Empty"}</div>
-                    <div><strong>User Interacted:</strong> {hasUserInteracted ? "Yes" : "No"}</div>
-                    <div><strong>Has Result:</strong> {result ? "Yes" : "No"}</div>
-                    <div><strong>Is Calculating:</strong> {isCalculating ? "Yes" : "No"}</div>
-                    <div><strong>IP Error:</strong> {validationError || "None"}</div>
-                    <div><strong>Mask Error:</strong> {subnetMaskError || "None"}</div>
-                    <div><strong>CIDR Error:</strong> {cidrError || "None"}</div>
+                <div className="bg-slate-900 p-3 rounded-lg border border-slate-700">
+                  <h4 className="font-semibold mb-2 text-xs text-green-500">Current State Debug:</h4>
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div className="text-slate-400"><strong className="text-green-500">IP Version:</strong> {ipVersion}</div>
+                    <div className="text-slate-400"><strong className="text-green-500">Calculation Type:</strong> {calculationType}</div>
+                    <div className="text-slate-400"><strong className="text-green-500">IP Address:</strong> {ipAddress || "Empty"}</div>
+                    <div className="text-slate-400"><strong className="text-green-500">Subnet Mask:</strong> {subnetMask || "Empty"}</div>
+                    <div className="text-slate-400"><strong className="text-green-500">CIDR:</strong> {prefixLength || "Empty"}</div>
+                    <div className="text-slate-400"><strong className="text-green-500">User Interacted:</strong> {hasUserInteracted ? "Yes" : "No"}</div>
+                    <div className="text-slate-400"><strong className="text-green-500">Has Result:</strong> {result ? "Yes" : "No"}</div>
+                    <div className="text-slate-400"><strong className="text-green-500">Is Calculating:</strong> {isCalculating ? "Yes" : "No"}</div>
+                    <div className="text-slate-400"><strong className="text-green-500">IP Error:</strong> {validationError || "None"}</div>
+                    <div className="text-slate-400"><strong className="text-green-500">Mask Error:</strong> {subnetMaskError || "None"}</div>
+                    <div className="text-slate-400"><strong className="text-green-500">CIDR Error:</strong> {cidrError || "None"}</div>
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="flex items-center space-x-2">
                   <input
                     type="checkbox"
                     id="show-binary"
                     checked={showBinary}
                     onChange={(e) => setShowBinary(e.target.checked)}
-                    className="form-checkbox h-4 w-4 text-primary rounded"
+                    className="form-checkbox h-3.5 w-3.5 text-orange-500 rounded border-slate-700 bg-black"
                   />
-                  <Label htmlFor="show-binary" className="text-sm">Show Binary</Label>
+                  <Label htmlFor="show-binary" className="text-xs text-slate-400">Show Binary</Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <input
@@ -648,18 +649,18 @@ export function IPSubnetCalculator({
                     id="show-hex"
                     checked={showHex}
                     onChange={(e) => setShowHex(e.target.checked)}
-                    className="form-checkbox h-4 w-4 text-primary rounded"
+                    className="form-checkbox h-3.5 w-3.5 text-orange-500 rounded border-slate-700 bg-black"
                   />
-                  <Label htmlFor="show-hex" className="text-sm">Show Hexadecimal</Label>
+                  <Label htmlFor="show-hex" className="text-xs text-slate-400">Show Hexadecimal</Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <input
                     type="checkbox"
                     id="show-reverse-dns"
-                    className="form-checkbox h-4 w-4 text-primary rounded"
+                    className="form-checkbox h-3.5 w-3.5 text-orange-500 rounded border-slate-700 bg-black"
                     defaultChecked
                   />
-                  <Label htmlFor="show-reverse-dns" className="text-sm">Reverse DNS</Label>
+                  <Label htmlFor="show-reverse-dns" className="text-xs text-slate-400">Reverse DNS</Label>
                 </div>
                 </div>
               </div>
@@ -667,15 +668,15 @@ export function IPSubnetCalculator({
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <div className="flex flex-col sm:flex-row gap-3">
             <Button ref={calculateButtonRef} onClick={() => {
               setHasUserInteracted(true)
               calculateSubnet()
-            }} disabled={isCalculating || !!validationError || !!subnetMaskError || !!cidrError} className="flex-1">
-              {isCalculating ? <LoadingSpinner size="sm" className="mr-2" /> : <Calculator className="mr-2 h-4 w-4" />}
-              Calculate Subnet
+            }} disabled={isCalculating || !!validationError || !!subnetMaskError || !!cidrError} className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white">
+              {isCalculating ? <LoadingSpinner size="sm" className="mr-1 h-3 w-3" /> : <Calculator className="mr-1 h-3 w-3" />}
+              Calculate
             </Button>
-            <Button variant="outline" onClick={clearForm} className="w-full sm:w-auto">
+            <Button variant="outline" onClick={clearForm} className="w-full sm:w-auto h-9 text-xs border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
               Clear
             </Button>
             <Button 
@@ -694,9 +695,9 @@ export function IPSubnetCalculator({
                   result: !!result
                 })
               }} 
-              className="w-full sm:w-auto"
+              className="w-full sm:w-auto h-9 text-xs border-slate-700 bg-black text-slate-300 hover:bg-slate-800"
             >
-              Debug State
+              Debug
             </Button>
           </div>
         </CardContent>
@@ -704,111 +705,111 @@ export function IPSubnetCalculator({
 
       {/* Results Section */}
       {result && (
-        <Card className="shadow-lg border-primary/20 bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-950/20 dark:to-blue-950/20">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-xl text-primary-800 dark:text-primary-200">
-              <div className="p-2 bg-primary/10 rounded-lg">
-                <BarChart3 className="h-5 w-5 text-primary" />
+        <Card className="shadow-lg border-slate-700 bg-black">
+          <CardHeader className="pb-3 px-3 sm:px-6">
+            <CardTitle className="flex items-center gap-1.5 text-base sm:text-lg text-orange-500">
+              <div className="p-1 sm:p-1.5 bg-orange-500/10 rounded-lg">
+                <BarChart3 className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-orange-500" />
               </div>
-              Subnet Calculation Results
+              Results
             </CardTitle>
-            <CardDescription className="text-base text-primary-700 dark:text-primary-300">
+            <CardDescription className="text-xs sm:text-sm text-slate-400">
               Complete network analysis and subnet information.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-6 px-3 sm:px-6">
             {/* Main Results */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-primary-200 dark:border-primary-800">
-                <div className="flex items-center gap-2 mb-2">
-                  <Network className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                  <span className="text-sm font-medium text-blue-800 dark:text-blue-200">Network Address</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              <div className="bg-black p-3 rounded-lg border border-slate-700">
+                <div className="flex items-center gap-1.5 mb-1">
+                  <Network className="h-3 w-3 text-green-500" />
+                  <span className="text-xs font-medium text-green-500">Network Address</span>
                 </div>
-                <div className="text-lg font-bold text-blue-900 dark:text-blue-100 font-mono">
+                <div className="text-sm sm:text-base font-bold text-orange-400 font-mono">
                   {result.networkAddress}
                 </div>
               </div>
-              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-primary-200 dark:border-primary-800">
-                <div className="flex items-center gap-2 mb-2">
-                  <Globe className="h-4 w-4 text-green-600 dark:text-green-400" />
-                  <span className="text-sm font-medium text-green-800 dark:text-green-200">Broadcast Address</span>
+              <div className="bg-black p-3 rounded-lg border border-slate-700">
+                <div className="flex items-center gap-1.5 mb-1">
+                  <Globe className="h-3 w-3 text-green-500" />
+                  <span className="text-xs font-medium text-green-500">Broadcast Address</span>
                 </div>
-                <div className="text-lg font-bold text-green-900 dark:text-green-100 font-mono">
+                <div className="text-sm sm:text-base font-bold text-orange-400 font-mono">
                   {result.broadcastAddress}
                 </div>
               </div>
-              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-primary-200 dark:border-primary-800">
-                <div className="flex items-center gap-2 mb-2">
-                  <Server className="h-4 w-4 text-orange-600 dark:text-orange-400" />
-                  <span className="text-sm font-medium text-orange-800 dark:text-orange-200">Usable Hosts</span>
+              <div className="bg-black p-3 rounded-lg border border-slate-700">
+                <div className="flex items-center gap-1.5 mb-1">
+                  <Server className="h-3 w-3 text-green-500" />
+                  <span className="text-xs font-medium text-green-500">Usable Hosts</span>
                 </div>
-                <div className="text-lg font-bold text-orange-900 dark:text-orange-100">
+                <div className="text-sm sm:text-base font-bold text-orange-400">
                   {result.usableHosts.toLocaleString()}
                 </div>
               </div>
-              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-primary-200 dark:border-primary-800">
-                <div className="flex items-center gap-2 mb-2">
-                  <Shield className="h-4 w-4 text-purple-600 dark:text-purple-400" />
-                  <span className="text-sm font-medium text-purple-800 dark:text-purple-200">Network Class</span>
+              <div className="bg-black p-3 rounded-lg border border-slate-700">
+                <div className="flex items-center gap-1.5 mb-1">
+                  <Shield className="h-3 w-3 text-green-500" />
+                  <span className="text-xs font-medium text-green-500">Network Class</span>
                 </div>
-                <div className="text-lg font-bold text-purple-900 dark:text-purple-100">
+                <div className="text-sm sm:text-base font-bold text-orange-400">
                   {result.networkClass}
                 </div>
               </div>
             </div>
 
             {/* Detailed Information */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-700">
-                <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                  <Info className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="bg-black p-3 rounded-lg border border-slate-700">
+                <h3 className="font-semibold text-sm mb-2 text-green-500 flex items-center gap-1.5">
+                  <Info className="h-3.5 w-3.5" />
                   Network Details
                 </h3>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-400">First Host:</span>
-                    <span className="font-mono text-gray-900 dark:text-gray-100">{result.firstHost}</span>
+                <div className="space-y-1.5 text-xs">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                    <span className="text-slate-400">First Host:</span>
+                    <span className="font-mono text-orange-400">{result.firstHost}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-400">Last Host:</span>
-                    <span className="font-mono text-gray-900 dark:text-gray-100">{result.lastHost}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                    <span className="text-slate-400">Last Host:</span>
+                    <span className="font-mono text-orange-400">{result.lastHost}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-400">Subnet Mask:</span>
-                    <span className="font-mono text-gray-900 dark:text-gray-100">{result.subnetMask}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                    <span className="text-slate-400">Subnet Mask:</span>
+                    <span className="font-mono text-orange-400">{result.subnetMask}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-400">CIDR Notation:</span>
-                    <span className="font-mono text-gray-900 dark:text-gray-100">{result.cidrNotation}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                    <span className="text-slate-400">CIDR Notation:</span>
+                    <span className="font-mono text-orange-400">{result.cidrNotation}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-400">Wildcard Mask:</span>
-                    <span className="font-mono text-gray-900 dark:text-gray-100">{result.wildcardMask}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                    <span className="text-slate-400">Wildcard Mask:</span>
+                    <span className="font-mono text-orange-400">{result.wildcardMask}</span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-700">
-                <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                  <BarChart3 className="h-5 w-5 text-green-600 dark:text-green-400" />
+              <div className="bg-black p-3 rounded-lg border border-slate-700">
+                <h3 className="font-semibold text-sm mb-2 text-green-500 flex items-center gap-1.5">
+                  <BarChart3 className="h-3.5 w-3.5" />
                   Network Statistics
                 </h3>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-400">Total Hosts:</span>
-                    <span className="font-mono text-gray-900 dark:text-gray-100">{result.totalHosts.toLocaleString()}</span>
+                <div className="space-y-1.5 text-xs">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                    <span className="text-slate-400">Total Hosts:</span>
+                    <span className="font-mono text-orange-400">{result.totalHosts.toLocaleString()}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-400">Network Bits:</span>
-                    <span className="font-mono text-gray-900 dark:text-gray-100">{result.networkBits}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                    <span className="text-slate-400">Network Bits:</span>
+                    <span className="font-mono text-orange-400">{result.networkBits}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-400">Host Bits:</span>
-                    <span className="font-mono text-gray-900 dark:text-gray-100">{result.hostBits}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                    <span className="text-slate-400">Host Bits:</span>
+                    <span className="font-mono text-orange-400">{result.hostBits}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-400">Reverse DNS:</span>
-                    <span className="font-mono text-gray-900 dark:text-gray-100 text-xs">{result.reverseDNS}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                    <span className="text-slate-400">Reverse DNS:</span>
+                    <span className="font-mono text-orange-400 text-[10px]">{result.reverseDNS}</span>
                   </div>
                 </div>
               </div>
@@ -816,96 +817,96 @@ export function IPSubnetCalculator({
 
             {/* Advanced Information */}
             {showBinary && (
-              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-700">
-                <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                  <BinaryIcon className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+              <div className="bg-black p-3 rounded-lg border border-slate-700">
+                <h3 className="font-semibold text-sm mb-2 text-green-500 flex items-center gap-1.5">
+                  <BinaryIcon className="h-3.5 w-3.5" />
                   Binary Representation
                 </h3>
-                <div className="space-y-2 text-sm font-mono">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-400">Network Address:</span>
-                    <span className="text-gray-900 dark:text-gray-100">{result.binaryNetworkAddress}</span>
+                <div className="space-y-1.5 text-xs font-mono">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                    <span className="text-slate-400">Network Address:</span>
+                    <span className="text-orange-400 break-all">{result.binaryNetworkAddress}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-400">Broadcast Address:</span>
-                    <span className="text-gray-900 dark:text-gray-100">{result.binaryBroadcastAddress}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                    <span className="text-slate-400">Broadcast Address:</span>
+                    <span className="text-orange-400 break-all">{result.binaryBroadcastAddress}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-400">Subnet Mask:</span>
-                    <span className="text-gray-900 dark:text-gray-100">{result.binarySubnetMask}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                    <span className="text-slate-400">Subnet Mask:</span>
+                    <span className="text-orange-400 break-all">{result.binarySubnetMask}</span>
                   </div>
                 </div>
               </div>
             )}
 
             {showHex && (
-              <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-700">
-                <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                  <HexagonIcon className="h-5 w-5 text-orange-600 dark:text-orange-400" />
+              <div className="bg-black p-3 rounded-lg border border-slate-700">
+                <h3 className="font-semibold text-sm mb-2 text-green-500 flex items-center gap-1.5">
+                  <HexagonIcon className="h-3.5 w-3.5" />
                   Hexadecimal Representation
                 </h3>
-                <div className="space-y-2 text-sm font-mono">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-400">Network Address:</span>
-                    <span className="text-gray-900 dark:text-gray-100">{result.hexNetworkAddress}</span>
+                <div className="space-y-1.5 text-xs font-mono">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                    <span className="text-slate-400">Network Address:</span>
+                    <span className="text-orange-400">{result.hexNetworkAddress}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-400">Broadcast Address:</span>
-                    <span className="text-gray-900 dark:text-gray-100">{result.hexBroadcastAddress}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                    <span className="text-slate-400">Broadcast Address:</span>
+                    <span className="text-orange-400">{result.hexBroadcastAddress}</span>
                   </div>
                 </div>
               </div>
             )}
 
             {/* Advanced Network Analysis */}
-            <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-700">
-              <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                <TargetIcon className="h-5 w-5 text-red-600 dark:text-red-400" />
+            <div className="bg-black p-3 rounded-lg border border-slate-700">
+              <h3 className="font-semibold text-sm mb-2 text-green-500 flex items-center gap-1.5">
+                <TargetIcon className="h-3.5 w-3.5" />
                 Advanced Network Analysis
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <div className={`w-3 h-3 rounded-full ${result.advancedInfo.privateNetwork ? 'bg-green-500' : 'bg-red-500'}`}></div>
-                    <span className="text-sm">Private Network: {result.advancedInfo.privateNetwork ? 'Yes' : 'No'}</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="space-y-1.5">
+                  <div className="flex items-center gap-1.5">
+                    <div className={`w-2 h-2 rounded-full ${result.advancedInfo.privateNetwork ? 'bg-green-500' : 'bg-red-500'}`}></div>
+                    <span className="text-xs text-slate-400">Private Network: <span className="text-orange-400">{result.advancedInfo.privateNetwork ? 'Yes' : 'No'}</span></span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className={`w-3 h-3 rounded-full ${result.advancedInfo.vlsmCapable ? 'bg-green-500' : 'bg-yellow-500'}`}></div>
-                    <span className="text-sm">VLSM Capable: {result.advancedInfo.vlsmCapable ? 'Yes' : 'No'}</span>
+                  <div className="flex items-center gap-1.5">
+                    <div className={`w-2 h-2 rounded-full ${result.advancedInfo.vlsmCapable ? 'bg-green-500' : 'bg-yellow-500'}`}></div>
+                    <span className="text-xs text-slate-400">VLSM Capable: <span className="text-orange-400">{result.advancedInfo.vlsmCapable ? 'Yes' : 'No'}</span></span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className={`w-3 h-3 rounded-full ${result.advancedInfo.supernettingPossible ? 'bg-green-500' : 'bg-red-500'}`}></div>
-                    <span className="text-sm">Supernetting: {result.advancedInfo.supernettingPossible ? 'Yes' : 'No'}</span>
+                  <div className="flex items-center gap-1.5">
+                    <div className={`w-2 h-2 rounded-full ${result.advancedInfo.supernettingPossible ? 'bg-green-500' : 'bg-red-500'}`}></div>
+                    <span className="text-xs text-slate-400">Supernetting: <span className="text-orange-400">{result.advancedInfo.supernettingPossible ? 'Yes' : 'No'}</span></span>
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <div className={`w-3 h-3 rounded-full ${result.advancedInfo.multicastAddress ? 'bg-blue-500' : 'bg-gray-500'}`}></div>
-                    <span className="text-sm">Multicast: {result.advancedInfo.multicastAddress ? 'Yes' : 'No'}</span>
+                <div className="space-y-1.5">
+                  <div className="flex items-center gap-1.5">
+                    <div className={`w-2 h-2 rounded-full ${result.advancedInfo.multicastAddress ? 'bg-blue-500' : 'bg-slate-600'}`}></div>
+                    <span className="text-xs text-slate-400">Multicast: <span className="text-orange-400">{result.advancedInfo.multicastAddress ? 'Yes' : 'No'}</span></span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className={`w-3 h-3 rounded-full ${result.advancedInfo.loopback ? 'bg-purple-500' : 'bg-gray-500'}`}></div>
-                    <span className="text-sm">Loopback: {result.advancedInfo.loopback ? 'Yes' : 'No'}</span>
+                  <div className="flex items-center gap-1.5">
+                    <div className={`w-2 h-2 rounded-full ${result.advancedInfo.loopback ? 'bg-purple-500' : 'bg-slate-600'}`}></div>
+                    <span className="text-xs text-slate-400">Loopback: <span className="text-orange-400">{result.advancedInfo.loopback ? 'Yes' : 'No'}</span></span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className={`w-3 h-3 rounded-full ${result.advancedInfo.linkLocal ? 'bg-orange-500' : 'bg-gray-500'}`}></div>
-                    <span className="text-sm">Link Local: {result.advancedInfo.linkLocal ? 'Yes' : 'No'}</span>
+                  <div className="flex items-center gap-1.5">
+                    <div className={`w-2 h-2 rounded-full ${result.advancedInfo.linkLocal ? 'bg-orange-500' : 'bg-slate-600'}`}></div>
+                    <span className="text-xs text-slate-400">Link Local: <span className="text-orange-400">{result.advancedInfo.linkLocal ? 'Yes' : 'No'}</span></span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex gap-4">
-              <Button onClick={copyResult} className="flex-1">
+            <div className="flex gap-3">
+              <Button onClick={copyResult} className="flex-1 h-9 text-xs font-medium border border-green-700 hover:bg-slate-800 text-green-300 bg-black">
                 {copied ? (
                   <>
-                    <Check className="mr-2 h-4 w-4" />
+                    <Check className="mr-1.5 h-3.5 w-3.5" />
                     Copied!
                   </>
                 ) : (
                   <>
-                    <Copy className="mr-2 h-4 w-4" />
+                    <Copy className="mr-1.5 h-3.5 w-3.5" />
                     Copy Results
                   </>
                 )}
