@@ -547,12 +547,12 @@ export default function CompoundInterestPage() {
                         answer: "The Rule of 72 provides a quick way to estimate when your investment will double in value. Simply divide 72 by your annual interest rate percentage. For instance, at an 8% annual rate: 72 divided by 8 equals approximately 9 years for your money to double. With a 6% rate: 72 divided by 6 gives you about 12 years."
                       },
                       {
-                        question: "How does compounding frequency affect investment growth?",
-                        answer: "Increasing the frequency of compounding periods generally produces better investment returns. When comparing at a 5% annual rate: annual compounding results in 5.00% effective rate, monthly compounding achieves 5.12% effective rate, and daily compounding reaches 5.13% effective rate. The more times per year interest compounds, the greater your total return."
+                        question: "Why does more frequent compounding increase investment returns?",
+                        answer: "Higher compounding frequencies accelerate investment growth by applying interest calculations more frequently throughout each year. At identical annual rates, investments compound faster when interest is added monthly versus annually, and even faster with daily compounding. This frequency effect means your interest earns its own interest more often, creating accelerated wealth accumulation over time compared to less frequent compounding periods."
                       },
                       {
-                        question: "How do compound interest and simple interest differ?",
-                        answer: "With simple interest, earnings are computed solely on your initial principal amount for the entire duration of the investment. Compound interest, on the other hand, calculates returns on both your original principal and all previously accumulated interest earnings. This compounding effect creates substantially better returns over extended periods because you earn returns on your returns."
+                        question: "What distinguishes compound interest from simple interest calculations?",
+                        answer: "Compound interest generates earnings on both your original investment principal and all previously earned interest, creating exponential growth patterns. Simple interest calculations apply the interest rate only to the initial principal amount throughout the entire investment term, resulting in linear growth. Over extended timeframes, this fundamental difference becomes substantial, with compound interest producing significantly higher final balances due to interest-on-interest accumulation."
                       },
                       {
                         question: "Can compound interest work against you with loans?",
