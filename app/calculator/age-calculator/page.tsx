@@ -1,6 +1,7 @@
 import { AgeCalculator } from "@/components/age-calculator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import { Calculator, Users, Zap, Target, BookOpen, Award, CheckCircle } from "lucide-react"
 import type { Metadata } from "next"
 
@@ -290,44 +291,51 @@ export default function AgeCalculatorPage() {
       <div className="container mx-auto px-4 py-6 max-w-6xl">
         <Breadcrumbs
           items={[
-            { label: "Home", href: "/" },
             { label: "Calculator", href: "/calculator" },
             { label: "Age Calculator", href: "/calculator/age-calculator" },
           ]}
         />
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-6">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-orange-500 to-orange-500 text-white text-xs font-medium mb-4">
               <Calculator className="h-3 w-3" />
               <span>Professional Age Calculator</span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
-              Free Age Calculator
-            </h1>
-
-            <p className="text-base text-muted-foreground text-pretty max-w-2xl mx-auto">
-              Calculate your exact age in years, months, and days with our free online age calculator. Perfect for birthdays, anniversaries, age verification, and official documents.
-            </p>
+            <GHeader 
+              title="Free Age Calculator"
+              description="Calculate your exact age in years, months, and days with our free online age calculator. Perfect for birthdays, anniversaries, age verification, and official documents."
+              titleSize="medium"
+              descriptionSize="small"
+              color="orange"
+            />
 
             <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
-              <div className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-card border border-border">
+              <div className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-black border border-border">
                 <Calculator className="h-3 w-3 text-blue-500" />
                 <span className="text-blue-500 font-medium">Exact Age</span>
               </div>
-              <div className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-card border border-border">
+              <div className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-black border border-border">
                 <Users className="h-3 w-3 text-green-500" />
                 <span className="text-green-500 font-medium">1M+ Users</span>
               </div>
-              <div className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-card border border-border">
+              <div className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-black border border-border">
                 <Zap className="h-3 w-3 text-yellow-500" />
                 <span className="text-yellow-500 font-medium">Free Forever</span>
                 </div>
-              <div className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-card border border-border">
+              <div className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-black border border-border">
                 <Target className="h-3 w-3 text-purple-500" />
                 <span className="text-purple-500 font-medium">Accurate</span>
               </div>
+            </div>
+
+            {/* Mobile/Tablet AdSpace - shows on mobile/tablet, hidden on desktop */}
+            <div className="lg:hidden mt-6">
+              <div className="text-center mb-2">
+                <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+              </div>
+              <AdSpace slot="content" className="w-full h-64 border border-border rounded-xl shadow-sm bg-black" />
             </div>
           </div>
 
@@ -335,64 +343,64 @@ export default function AgeCalculatorPage() {
             <div className="space-y-4 lg:space-y-6">
               <AgeCalculator />
 
-              <div className="bg-card border border-border rounded-lg p-4">
-                <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
+              <div className="bg-black border border-border rounded-lg p-4">
+                <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
                   <div className="p-1.5 bg-blue-500 rounded-lg">
                     <BookOpen className="h-4 w-4 text-white" />
                   </div>
                   Why Use Our Age Calculator?
                 </h2>
                 <div className="grid md:grid-cols-2 gap-3">
-                  <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                    <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-1 text-sm">Exact Age Calculation</h3>
-                    <p className="text-xs text-blue-700 dark:text-blue-300">Calculate your precise age in years, months, and days with leap year accuracy.</p>
+                  <div className="p-3 bg-black rounded-lg border border-blue-800">
+                    <h3 className="font-semibold text-green-500 mb-1 text-sm">Exact Age Calculation</h3>
+                    <p className="text-xs text-blue-300">Calculate your precise age in years, months, and days with leap year accuracy.</p>
                   </div>
-                  <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                    <h3 className="font-semibold text-green-800 dark:text-green-200 mb-1 text-sm">Instant Results</h3>
-                    <p className="text-xs text-green-700 dark:text-green-300">Get your age calculation instantly with no waiting time or registration required.</p>
+                  <div className="p-3 bg-black rounded-lg border border-green-800">
+                    <h3 className="font-semibold text-green-500 mb-1 text-sm">Instant Results</h3>
+                    <p className="text-xs text-green-300">Get your age calculation instantly with no waiting time or registration required.</p>
                   </div>
-                  <div className="p-3 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                    <h3 className="font-semibold text-purple-800 dark:text-purple-200 mb-1 text-sm">Multiple Uses</h3>
-                    <p className="text-xs text-purple-700 dark:text-purple-300">Perfect for birthdays, anniversaries, age verification, and official documents.</p>
+                  <div className="p-3 bg-black rounded-lg border border-purple-800">
+                    <h3 className="font-semibold text-green-500 mb-1 text-sm">Multiple Uses</h3>
+                    <p className="text-xs text-purple-300">Perfect for birthdays, anniversaries, age verification, and official documents.</p>
                   </div>
-                  <div className="p-3 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200 dark:border-orange-800">
-                    <h3 className="font-semibold text-orange-800 dark:text-orange-200 mb-1 text-sm">Free Forever</h3>
-                    <p className="text-xs text-orange-700 dark:text-orange-300">Completely free to use with no hidden costs or registration requirements.</p>
+                  <div className="p-3 bg-black rounded-lg border border-orange-800">
+                    <h3 className="font-semibold text-green-500 mb-1 text-sm">Free Forever</h3>
+                    <p className="text-xs text-orange-300">Completely free to use with no hidden costs or registration requirements.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-card border border-border rounded-lg p-4">
-                <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
+              <div className="bg-black border border-border rounded-lg p-4">
+                <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
                   <div className="p-1.5 bg-green-500 rounded-lg">
                     <Calculator className="h-4 w-4 text-white" />
                   </div>
                   How to Use the Age Calculator
                 </h2>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                    <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-1 text-sm">Step 1: Enter Birth Date</h3>
-                    <p className="text-xs text-blue-700 dark:text-blue-300">Select your birth date using the date picker interface.</p>
+                  <div className="p-3 bg-black rounded-lg border border-blue-800">
+                    <h3 className="font-semibold text-green-500 mb-1 text-sm">Step 1: Enter Birth Date</h3>
+                    <p className="text-xs text-blue-300">Select your birth date using the date picker interface.</p>
                   </div>
-                  <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                    <h3 className="font-semibold text-green-800 dark:text-green-200 mb-1 text-sm">Step 2: Calculate Age</h3>
-                    <p className="text-xs text-green-700 dark:text-green-300">Click the calculate button to get your exact age instantly.</p>
+                  <div className="p-3 bg-black rounded-lg border border-green-800">
+                    <h3 className="font-semibold text-green-200 mb-1 text-sm">Step 2: Calculate Age</h3>
+                    <p className="text-xs text-green-300">Click the calculate button to get your exact age instantly.</p>
                   </div>
-                  <div className="p-3 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                    <h3 className="font-semibold text-purple-800 dark:text-purple-200 mb-1 text-sm">Step 3: View Results</h3>
-                    <p className="text-xs text-purple-700 dark:text-purple-300">See your age in years, months, and days with precise calculations.</p>
+                  <div className="p-3 bg-black rounded-lg border border-purple-800">
+                    <h3 className="font-semibold text-green-500 mb-1 text-sm">Step 3: View Results</h3>
+                    <p className="text-xs text-purple-300">See your age in years, months, and days with precise calculations.</p>
                   </div>
-                  <div className="p-3 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200 dark:border-orange-800">
-                    <h3 className="font-semibold text-orange-800 dark:text-orange-200 mb-1 text-sm">Step 4: Share Results</h3>
-                    <p className="text-xs text-orange-700 dark:text-orange-300">Copy or share your age calculation results as needed.</p>
+                  <div className="p-3 bg-black rounded-lg border border-orange-800">
+                    <h3 className="font-semibold text-green-500 mb-1 text-sm">Step 4: Share Results</h3>
+                    <p className="text-xs text-orange-300">Copy or share your age calculation results as needed.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-card border border-border rounded-lg p-6">
-                <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                  <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                    <Calculator className="h-5 w-5 text-green-600 dark:text-green-400" />
+              <div className="bg-black border border-border rounded-lg p-6">
+                <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-orange-500">
+                  <div className="p-2 bg-green-900/30 rounded-lg">
+                    <Calculator className="h-5 w-5 text-green-400" />
                   </div>
                   Age Calculator Features
                 </h2>
@@ -405,61 +413,61 @@ export default function AgeCalculatorPage() {
                     { feature: "Free to Use", icon: Award, desc: "Completely free with no registration", example: "No hidden costs or fees" },
                     { feature: "Privacy Focused", icon: BookOpen, desc: "No data collection or storage", example: "Your information stays private" }
                   ].map(({ feature, icon: Icon, desc, example }) => (
-                    <div key={feature} className="p-4 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-700 dark:to-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                    <div key={feature} className="p-4 bg-black rounded-lg border border-slate-600">
                       <div className="flex items-center gap-2 mb-2">
                         <Icon className="h-4 w-4 text-primary" />
-                        <h3 className="font-semibold text-slate-800 dark:text-slate-200">{feature}</h3>
+                        <h3 className="font-semibold text-green-500">{feature}</h3>
                       </div>
-                      <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">{desc}</p>
+                      <p className="text-sm text-slate-400 mb-2">{desc}</p>
                       <p className="text-xs text-primary font-mono bg-primary/10 px-2 py-1 rounded">{example}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="bg-card border border-border rounded-lg p-6">
-                <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                  <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                    <BookOpen className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+              <div className="bg-black border border-border rounded-lg p-6">
+                <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-orange-500">
+                  <div className="p-2 bg-blue-900/30 rounded-lg">
+                    <BookOpen className="h-5 w-5 text-blue-400" />
                   </div>
                   Common Uses for Age Calculator
                 </h2>
                 <div className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-4">
-                      <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200">Personal Use</h3>
+                      <h3 className="text-lg font-semibold text-green-500">Personal Use</h3>
                       <div className="space-y-3">
                         <div className="flex items-start gap-3">
                           <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                           <div>
-                            <h4 className="font-medium text-slate-800 dark:text-slate-200">Birthday Planning</h4>
-                            <p className="text-sm text-slate-600 dark:text-slate-400">Plan milestone birthdays and celebrations with precise age calculations.</p>
+                            <h4 className="font-medium text-slate-200">Birthday Planning</h4>
+                            <p className="text-sm text-slate-400">Plan milestone birthdays and celebrations with precise age calculations.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
                           <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                           <div>
-                            <h4 className="font-medium text-slate-800 dark:text-slate-200">Personal Records</h4>
-                            <p className="text-sm text-slate-600 dark:text-slate-400">Keep accurate personal records and milestone tracking.</p>
+                            <h4 className="font-medium text-slate-200">Personal Records</h4>
+                            <p className="text-sm text-slate-400">Keep accurate personal records and milestone tracking.</p>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div className="space-y-4">
-                      <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200">Official Use</h3>
+                      <h3 className="text-lg font-semibold text-green-500">Official Use</h3>
                       <div className="space-y-3">
                         <div className="flex items-start gap-3">
                           <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                           <div>
-                            <h4 className="font-medium text-slate-800 dark:text-slate-200">Age Verification</h4>
-                            <p className="text-sm text-slate-600 dark:text-slate-400">Verify age for legal documents and official requirements.</p>
+                            <h4 className="font-medium text-slate-200">Age Verification</h4>
+                            <p className="text-sm text-slate-400">Verify age for legal documents and official requirements.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
                           <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                           <div>
-                            <h4 className="font-medium text-slate-800 dark:text-slate-200">Legal Documents</h4>
-                            <p className="text-sm text-slate-600 dark:text-slate-400">Complete government forms and legal documentation accurately.</p>
+                            <h4 className="font-medium text-slate-200">Legal Documents</h4>
+                            <p className="text-sm text-slate-400">Complete government forms and legal documentation accurately.</p>
                           </div>
                         </div>
                       </div>
@@ -468,10 +476,10 @@ export default function AgeCalculatorPage() {
                 </div>
               </div>
 
-              <div className="bg-card border border-border rounded-lg p-6">
-                <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                  <div className="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
-                    <Award className="h-5 w-5 text-orange-600 dark:text-orange-400" />
+              <div className="bg-black border border-border rounded-lg p-6">
+                <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-orange-500">
+                  <div className="p-2 bg-orange-900/30 rounded-lg">
+                    <Award className="h-5 w-5 text-orange-400" />
                   </div>
                   Frequently Asked Questions
                 </h2>
@@ -499,12 +507,12 @@ export default function AgeCalculatorPage() {
                     },
                     {
                       q: "Is my personal information secure?",
-                      a: "Absolutely. We don't collect or store any personal information. All calculations are performed locally in your browser."
+                      a: "Your privacy is our priority. The calculator operates entirely on your device without transmitting any data to external servers."
                     }
                   ].map(({ q, a }, index) => (
-                    <div key={index} className="p-4 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-700 dark:to-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
-                      <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2 text-sm sm:text-base">{q}</h3>
-                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{a}</p>
+                    <div key={index} className="p-4 bg-black rounded-lg border border-slate-600">
+                      <h3 className="font-semibold text-green-500 mb-2 text-sm sm:text-base">{q}</h3>
+                      <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{a}</p>
                     </div>
                   ))}
                 </div>
@@ -517,25 +525,18 @@ export default function AgeCalculatorPage() {
                   <div className="text-center mb-2">
                     <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                   </div>
-                  <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
-
-                <div>
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
+                  <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-black" />
                 </div>
               </div>
             </div>
           </div>
 
           {/* Comprehensive SEO Content Section */}
-          <div className="max-w-5xl mx-auto mt-12 space-y-8">
+          <div className="max-w-7xl mx-auto mt-12 space-y-8">
             
             {/* Age Calculation Methods Section */}
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">Complete Guide to Age Calculation Methods</h2>
+            <div className="bg-black border border-border rounded-lg p-6">
+              <h2 className="text-2xl font-bold mb-6 text-orange-500">Complete Guide to Age Calculation Methods</h2>
               
               <div className="prose prose-slate max-w-none">
                 <p className="text-lg text-muted-foreground mb-6">
@@ -544,14 +545,14 @@ export default function AgeCalculatorPage() {
                   of age calculation from basic methods to advanced techniques.
                 </p>
 
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Basic Age Calculation Formula</h3>
+                <h3 className="text-xl font-semibold mb-4 text-green-500">Basic Age Calculation Formula</h3>
                 <p className="text-muted-foreground mb-4">
                   The fundamental formula for calculating age is simple: <strong>Age = Current Date - Birth Date</strong>. 
                   However, this basic subtraction requires careful consideration of several factors to ensure accuracy.
                 </p>
 
-                <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg mb-6">
-                  <h4 className="font-semibold mb-2 text-foreground">Step-by-Step Age Calculation Process:</h4>
+                <div className="bg-black p-4 rounded-lg mb-6">
+                  <h4 className="font-semibold mb-2 text-green-500">Step-by-Step Age Calculation Process:</h4>
                   <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
                     <li><strong>Extract Date Components:</strong> Separate year, month, and day from both birth date and current date</li>
                     <li><strong>Calculate Years:</strong> Subtract birth year from current year</li>
@@ -562,27 +563,27 @@ export default function AgeCalculatorPage() {
                   </ol>
                 </div>
 
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Leap Year Considerations in Age Calculation</h3>
+                <h3 className="text-xl font-semibold mb-4 text-green-500">Leap Year Considerations in Age Calculation</h3>
                 <p className="text-muted-foreground mb-4">
                   Leap years add complexity to age calculations, especially for individuals born on February 29th. 
                   Our age calculator handles these edge cases automatically, ensuring accurate results regardless of birth date.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
-                  <div className="bg-blue-50 dark:bg-blue-950/20 p-4 rounded-lg border border-blue-200 dark:border-blue-800">
-                    <h4 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Leap Year Rules</h4>
+                  <div className="bg-black p-4 rounded-lg border border-blue-800">
+                    <h4 className="font-semibold text-green-500 mb-2">Leap Year Rules</h4>
                     <ul className="text-sm text-blue-700 dark:text-blue-300 space-y-1">
-                      <li>• Divisible by 4: Leap year</li>
-                      <li>• Divisible by 100: Not leap year (unless divisible by 400)</li>
-                      <li>• Divisible by 400: Leap year</li>
+                      <li>• Years evenly divisible by 4 are typically leap years</li>
+                      <li>• Century years require special consideration</li>
+                      <li>• The calculator automatically handles all leap year scenarios</li>
                 </ul>
                   </div>
-                  <div className="bg-green-50 dark:bg-green-950/20 p-4 rounded-lg border border-green-200 dark:border-green-800">
-                    <h4 className="font-semibold text-green-800 dark:text-green-200 mb-2">Examples</h4>
+                  <div className="bg-black p-4 rounded-lg border border-green-800">
+                    <h4 className="font-semibold text-green-500 mb-2">Examples</h4>
                     <ul className="text-sm text-green-700 dark:text-green-300 space-y-1">
-                      <li>• 2000: Leap year (divisible by 400)</li>
-                      <li>• 2004: Leap year (divisible by 4)</li>
-                      <li>• 1900: Not leap year (divisible by 100, not 400)</li>
+                      <li>• Recent leap years include 2024 and 2028</li>
+                      <li>• Every four years adds an extra day to February</li>
+                      <li>• Our tool correctly processes all calendar variations</li>
                     </ul>
                   </div>
                 </div>
@@ -590,12 +591,12 @@ export default function AgeCalculatorPage() {
             </div>
 
             {/* Age Calculator Use Cases Section */}
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">Age Calculator Use Cases and Applications</h2>
+            <div className="bg-black border border-border rounded-lg p-6">
+              <h2 className="text-2xl font-bold mb-6 text-orange-500">Age Calculator Use Cases and Applications</h2>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-foreground">Legal and Official Documents</h3>
+                  <h3 className="text-lg font-semibold text-green-500">Legal and Official Documents</h3>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>• <strong>Age Verification:</strong> Verify age for legal documents and contracts</li>
                     <li>• <strong>Driving License Applications:</strong> Confirm minimum age requirements</li>
@@ -607,7 +608,7 @@ export default function AgeCalculatorPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-foreground">Medical and Healthcare</h3>
+                  <h3 className="text-lg font-semibold text-green-500">Medical and Healthcare</h3>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>• <strong>Patient Records:</strong> Accurate age tracking in medical files</li>
                     <li>• <strong>Vaccination Schedules:</strong> Age-appropriate vaccination timing</li>
@@ -619,7 +620,7 @@ export default function AgeCalculatorPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-foreground">Educational and Academic</h3>
+                  <h3 className="text-lg font-semibold text-green-500">Educational and Academic</h3>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>• <strong>School Enrollment:</strong> Age verification for grade placement</li>
                     <li>• <strong>Scholarship Eligibility:</strong> Age requirements for scholarships</li>
@@ -633,12 +634,12 @@ export default function AgeCalculatorPage() {
                   </div>
 
             {/* Age Calculation Accuracy Section */}
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">Ensuring Age Calculation Accuracy</h2>
+            <div className="bg-black border border-border rounded-lg p-6">
+              <h2 className="text-2xl font-bold mb-6 text-orange-500">Ensuring Age Calculation Accuracy</h2>
               
               <div className="space-y-6">
-                <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 p-6 rounded-lg border border-green-200 dark:border-green-800">
-                  <h3 className="text-lg font-semibold text-green-800 dark:text-green-200 mb-4">Why Accuracy Matters in Age Calculation</h3>
+                <div className="bg-black p-6 rounded-lg border border-green-800">
+                  <h3 className="text-lg font-semibold text-green-500 mb-4">Why Accuracy Matters in Age Calculation</h3>
                   <p className="text-green-700 dark:text-green-300 mb-4">
                     Accurate age calculation is crucial for legal, medical, and personal purposes. Even small errors can have significant 
                     consequences in official documents, medical treatments, and legal proceedings.
@@ -653,7 +654,7 @@ export default function AgeCalculatorPage() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-foreground">Common Age Calculation Errors</h3>
+                    <h3 className="text-lg font-semibold text-green-500">Common Age Calculation Errors</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li>• <strong>Ignoring Leap Years:</strong> Not accounting for leap year differences</li>
                       <li>• <strong>Month Length Variations:</strong> Assuming all months have 30 days</li>
@@ -665,7 +666,7 @@ export default function AgeCalculatorPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-foreground">Best Practices for Accurate Age Calculation</h3>
+                    <h3 className="text-lg font-semibold text-green-500">Best Practices for Accurate Age Calculation</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li>• <strong>Use Reliable Tools:</strong> Use tested and verified age calculators</li>
                       <li>• <strong>Verify Input Data:</strong> Double-check birth date and current date</li>
@@ -680,90 +681,90 @@ export default function AgeCalculatorPage() {
             </div>
 
             {/* Comprehensive FAQ Section */}
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">Frequently Asked Questions About Age Calculation</h2>
+            <div className="bg-black border border-border rounded-lg p-6">
+              <h2 className="text-2xl font-bold mb-6 text-orange-500">Frequently Asked Questions About Age Calculation</h2>
               
               <div className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
-                      <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">How do I calculate my age manually?</h3>
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
+                      <h3 className="font-semibold text-green-500 mb-2">How do I calculate my age manually?</h3>
                       <p className="text-sm text-slate-600 dark:text-slate-400">To calculate age manually, subtract your birth year from the current year, then adjust for months and days. If the current month/day hasn't reached your birth month/day, subtract 1 from the years.</p>
                     </div>
 
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
-                      <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">What's the difference between chronological age and biological age?</h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-400">Chronological age is the actual time elapsed since birth, while biological age refers to how old your body appears based on health markers and lifestyle factors.</p>
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
+                      <h3 className="font-semibold text-green-500 mb-2">What's the difference between chronological age and biological age?</h3>
+                      <p className="text-sm text-slate-400">Our calculator measures chronological age, which is the number of years since birth. Biological age, which reflects physical condition, is determined through medical assessments and differs from chronological age.</p>
                     </div>
 
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
                       <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Can I calculate age in different time units?</h3>
                       <p className="text-sm text-slate-600 dark:text-slate-400">Yes, age can be calculated in years, months, days, hours, minutes, and seconds. Our calculator provides age in years, months, and days for practical use.</p>
                     </div>
 
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
-                      <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">How do I calculate age for someone born on February 29th?</h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-400">For leap year birthdays, use February 28th in non-leap years and February 29th in leap years. Our calculator handles this automatically.</p>
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
+                      <h3 className="font-semibold text-green-500 mb-2">How do I calculate age for someone born on February 29th?</h3>
+                      <p className="text-sm text-slate-400">Our age calculator automatically recognizes leap year birthdays and accurately calculates age regardless of whether the current year is a leap year. Simply enter the birth date and the calculator does the rest.</p>
                     </div>
 
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
                       <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Is there a limit to how far back I can calculate age?</h3>
                       <p className="text-sm text-slate-600 dark:text-slate-400">Our calculator can handle dates from the 1800s to the present day, making it suitable for historical research and genealogy.</p>
                     </div>
 
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
-                      <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Can I calculate the age difference between two people?</h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-400">Yes, you can calculate age differences by finding the age of each person and subtracting, or by calculating the time difference between their birth dates.</p>
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
+                      <h3 className="font-semibold text-green-500 mb-2">Can I calculate the age difference between two people?</h3>
+                      <p className="text-sm text-slate-400">Yes, you can use our calculator to find each person's age separately, then compare the results. Enter one birth date, calculate the age, then repeat with the second birth date to see the difference.</p>
                     </div>
 
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
                       <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">How accurate are online age calculators?</h3>
                       <p className="text-sm text-slate-600 dark:text-slate-400">Reputable online age calculators are highly accurate when they properly account for leap years, month variations, and date arithmetic. Our calculator uses precise algorithms for maximum accuracy.</p>
                     </div>
 
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
                       <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">What's the most accurate way to calculate age?</h3>
                       <p className="text-sm text-slate-600 dark:text-slate-400">The most accurate method uses precise date arithmetic, accounting for leap years, varying month lengths, and exact day calculations. Our calculator implements these best practices.</p>
                     </div>
                   </div>
 
                   <div className="space-y-4">
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
                       <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Can I use age calculators for legal purposes?</h3>
                       <p className="text-sm text-slate-600 dark:text-slate-400">While our calculator provides accurate results, for legal purposes, always verify with official documents and consult legal professionals when necessary.</p>
                     </div>
 
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
                       <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">How do I calculate age in different calendar systems?</h3>
                       <p className="text-sm text-slate-600 dark:text-slate-400">Our calculator uses the Gregorian calendar. For other calendar systems, you may need specialized calculators that account for different year lengths and month structures.</p>
                     </div>
 
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
                       <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">What's the difference between age and date of birth?</h3>
                       <p className="text-sm text-slate-600 dark:text-slate-400">Date of birth is a fixed point in time, while age is the elapsed time since that date. Age changes continuously, while date of birth remains constant.</p>
                     </div>
 
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
                       <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Can I calculate age for future dates?</h3>
                       <p className="text-sm text-slate-600 dark:text-slate-400">Yes, you can calculate what someone's age will be on a future date by using that date as the "current date" in the calculation.</p>
                     </div>
 
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
                       <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">How do I calculate age in decimal years?</h3>
                       <p className="text-sm text-slate-600 dark:text-slate-400">To calculate age in decimal years, divide the total days since birth by 365.25 (accounting for leap years). For example, 10,000 days ÷ 365.25 = 27.38 years.</p>
                     </div>
 
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
                       <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">What's the average human lifespan for age calculations?</h3>
                       <p className="text-sm text-slate-600 dark:text-slate-400">The average human lifespan varies by region and era, but modern averages are around 70-80 years globally. This is useful for life expectancy calculations and retirement planning.</p>
                     </div>
 
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
                       <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">How do I calculate age for retirement planning?</h3>
                       <p className="text-sm text-slate-600 dark:text-slate-400">For retirement planning, calculate your current age and determine how many years until retirement age (typically 65). This helps with financial planning and savings calculations.</p>
                     </div>
 
-                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                    <div className="p-4 bg-black rounded-lg border border-slate-600">
                       <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Can age calculators handle historical dates?</h3>
                       <p className="text-sm text-slate-600 dark:text-slate-400">Yes, our calculator can handle dates from the 1800s to the present, making it useful for genealogy research and historical age calculations.</p>
                     </div>
@@ -773,8 +774,8 @@ export default function AgeCalculatorPage() {
             </div>
 
             {/* Age Calculation Tools Comparison */}
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">Age Calculator Tools Comparison</h2>
+            <div className="bg-black border border-border rounded-lg p-6">
+              <h2 className="text-2xl font-bold mb-6 text-orange-500">Age Calculator Tools Comparison</h2>
               
               <div className="space-y-6">
                 <p className="text-muted-foreground">
@@ -785,7 +786,7 @@ export default function AgeCalculatorPage() {
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse border border-slate-300 dark:border-slate-600">
                     <thead>
-                      <tr className="bg-slate-50 dark:bg-slate-800">
+                        <tr className="bg-black">
                         <th className="border border-slate-300 dark:border-slate-600 p-3 text-left font-semibold">Feature</th>
                         <th className="border border-slate-300 dark:border-slate-600 p-3 text-left font-semibold">FastTools</th>
                         <th className="border border-slate-300 dark:border-slate-600 p-3 text-left font-semibold">Calculator.net</th>
@@ -836,41 +837,41 @@ export default function AgeCalculatorPage() {
             </div>
 
             {/* Age Calculator Variants Section */}
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">Age Calculator Variants - Other Age Calculation Tools You Might Like</h2>
+            <div className="bg-black border border-border rounded-lg p-6">
+              <h2 className="text-2xl font-bold mb-6 text-orange-500">Age Calculator Variants - Other Age Calculation Tools You Might Like</h2>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
-                  <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Age in Months Calculator</h3>
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
+                  <h3 className="font-semibold text-green-500 mb-2">Age in Months Calculator</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Calculate your exact age in months for precise age tracking.</p>
                   <a href="/calculator/age-calculator" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Age in Months →</a>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Future Age Finder</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Calculate what your age will be on any future date.</p>
                   <a href="/calculator/age-calculator" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Future Age →</a>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Birthday Countdown Tool</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Countdown to your next birthday with exact time remaining.</p>
                   <a href="/calculator/age-calculator" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Birthday Countdown →</a>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
-                  <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Age Difference Calculator</h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Calculate the age difference between two people or dates.</p>
-                  <a href="/calculator/age-calculator" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Age Difference →</a>
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
+                  <h3 className="font-semibold text-green-500 mb-2">Age Difference Calculator</h3>
+                  <p className="text-sm text-slate-400 mb-3">Compare ages by calculating each person's age separately, then compare the results to find the gap between them.</p>
+                  <a href="/calculator/age-calculator" className="text-blue-400 text-sm font-medium hover:underline">Try Age Difference →</a>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Retirement Age Estimator</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Calculate years until retirement age for financial planning.</p>
                   <a href="/calculator/age-calculator" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Retirement Age →</a>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Half Birthday Calculator</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Find your half birthday and calculate age in half years.</p>
                   <a href="/calculator/age-calculator" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Half Birthday →</a>
@@ -879,12 +880,12 @@ export default function AgeCalculatorPage() {
             </div>
 
             {/* Age Calculation for Different Uses Section */}
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">Age Calculation for Different Uses</h2>
+            <div className="bg-black border border-border rounded-lg p-6">
+              <h2 className="text-2xl font-bold mb-6 text-orange-500">Age Calculation for Different Uses</h2>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-foreground">Sports Eligibility</h3>
+                  <h3 className="text-lg font-semibold text-green-500">Sports Eligibility</h3>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>• <strong>Athlete Age Groups:</strong> Calculate age groups for sports competitions</li>
                     <li>• <strong>Youth Sports:</strong> Determine eligibility for youth leagues</li>
@@ -896,7 +897,7 @@ export default function AgeCalculatorPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-foreground">Pet Age Calculator</h3>
+                  <h3 className="text-lg font-semibold text-green-500">Pet Age Calculator</h3>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>• <strong>Dog Age Calculator:</strong> Convert dog years to human years</li>
                     <li>• <strong>Cat Age Calculator:</strong> Calculate cat age in human years</li>
@@ -908,7 +909,7 @@ export default function AgeCalculatorPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-foreground">Healthcare Applications</h3>
+                  <h3 className="text-lg font-semibold text-green-500">Healthcare Applications</h3>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>• <strong>Pediatric Care:</strong> Age-specific pediatric assessments</li>
                     <li>• <strong>Geriatric Care:</strong> Age-based geriatric health planning</li>
@@ -922,35 +923,34 @@ export default function AgeCalculatorPage() {
             </div>
 
             {/* Advanced Age Math Section */}
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">Advanced Age Math - Technical Age Calculations</h2>
+            <div className="bg-black border border-border rounded-lg p-6">
+              <h2 className="text-2xl font-bold mb-6 text-orange-500">Advanced Age Math - Technical Age Calculations</h2>
               
               <div className="space-y-6">
-                <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 p-6 rounded-lg border border-blue-200 dark:border-blue-800">
-                  <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-4">Chronological Age vs Biological Age</h3>
-                  <p className="text-blue-700 dark:text-blue-300 mb-4">
-                    <strong>Chronological Age:</strong> The actual time elapsed since birth, calculated using our age calculator.
+                <div className="bg-black p-6 rounded-lg border border-blue-800">
+                  <h3 className="text-lg font-semibold text-green-500 mb-4">Understanding Age Types</h3>
+                  <p className="text-blue-300 mb-4">
+                    <strong>Chronological Age:</strong> This is what our calculator provides - the precise number of years, months, and days since your birth date. It's a fixed measurement based on calendar time.
                   </p>
-                  <p className="text-blue-700 dark:text-blue-300 mb-4">
-                    <strong>Biological Age:</strong> How old your body appears based on health markers, lifestyle factors, and physiological condition.
+                  <p className="text-blue-300 mb-4">
+                    <strong>Biological Age:</strong> A separate concept measured through medical tests and health evaluations that reflects physical condition and may differ from chronological age.
                   </p>
-                  <div className="bg-white/50 dark:bg-slate-800/50 p-4 rounded-lg border border-blue-200 dark:border-blue-700">
-                    <h4 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Example Calculation:</h4>
-                    <p className="text-sm text-blue-700 dark:text-blue-300">
-                      A 30-year-old person with excellent health markers might have a biological age of 25, 
-                      while someone with poor health habits might have a biological age of 35.
+                  <div className="bg-black p-4 rounded-lg border border-blue-700">
+                    <h4 className="font-semibold text-green-500 mb-2">Note:</h4>
+                    <p className="text-sm text-blue-300">
+                      Our age calculator focuses on chronological age calculations. For biological age assessments, consult with healthcare professionals who can evaluate health markers and lifestyle factors.
                     </p>
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-foreground">Decimal Year Age Calculator</h3>
+                    <h3 className="text-lg font-semibold text-green-500">Decimal Year Age Calculator</h3>
                     <p className="text-muted-foreground text-sm">
                       Calculate age in decimal years for precise scientific calculations:
                     </p>
-                    <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-600">
-                      <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Formula:</h4>
+                    <div className="bg-black p-4 rounded-lg border border-slate-600">
+                      <h4 className="font-semibold text-green-500 mb-2">Formula:</h4>
                       <p className="text-sm text-slate-600 dark:text-slate-400">
                         <strong>Decimal Age = (Current Date - Birth Date) / 365.25</strong>
                       </p>
@@ -961,12 +961,12 @@ export default function AgeCalculatorPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-foreground">Age Difference Between Two Dates</h3>
+                    <h3 className="text-lg font-semibold text-green-500">Age Difference Between Two Dates</h3>
                     <p className="text-muted-foreground text-sm">
                       Calculate the exact age difference between any two dates:
                     </p>
-                    <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-600">
-                      <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Method:</h4>
+                    <div className="bg-black p-4 rounded-lg border border-slate-600">
+                      <h4 className="font-semibold text-green-500 mb-2">Method:</h4>
                       <p className="text-sm text-slate-600 dark:text-slate-400">
                         1. Calculate age for each date<br/>
                         2. Find the difference between ages<br/>
@@ -979,12 +979,12 @@ export default function AgeCalculatorPage() {
             </div>
 
             {/* Why People Search for Age Calculators Section */}
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">Why People Search for Age Calculators</h2>
+            <div className="bg-black border border-border rounded-lg p-6">
+              <h2 className="text-2xl font-bold mb-6 text-orange-500">Why People Search for Age Calculators</h2>
               
               <div className="space-y-6">
-                <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 p-6 rounded-lg border border-green-200 dark:border-green-800">
-                  <h3 className="text-lg font-semibold text-green-800 dark:text-green-200 mb-4">Common Search Behaviors</h3>
+                <div className="bg-black p-6 rounded-lg border border-green-800">
+                  <h3 className="text-lg font-semibold text-green-500 mb-4">Common Search Behaviors</h3>
                   <p className="text-green-700 dark:text-green-300 mb-4">
                     People often search for age calculators when they need to:
                   </p>
@@ -1002,7 +1002,7 @@ export default function AgeCalculatorPage() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-foreground">Search Intent Analysis</h3>
+                    <h3 className="text-lg font-semibold text-green-500">Search Intent Analysis</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li>• <strong>Informational:</strong> "How to calculate age manually"</li>
                       <li>• <strong>Navigational:</strong> "Best age calculator online"</li>
@@ -1014,7 +1014,7 @@ export default function AgeCalculatorPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-foreground">User Pain Points</h3>
+                    <h3 className="text-lg font-semibold text-green-500">User Pain Points</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li>• <strong>Accuracy concerns:</strong> Need for precise age calculations</li>
                       <li>• <strong>Leap year handling:</strong> Proper handling of February 29th birthdays</li>
@@ -1029,31 +1029,31 @@ export default function AgeCalculatorPage() {
             </div>
 
             {/* People Also Ask Section */}
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">Related Questions</h2>
+            <div className="bg-black border border-border rounded-lg p-6">
+              <h2 className="text-2xl font-bold mb-6 text-orange-500">Related Questions</h2>
               
               <div className="space-y-4">
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
-                  <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">How many months old am I?</h3>
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
+                  <h3 className="font-semibold text-green-500 mb-2">How many months old am I?</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400">Use our age calculator to find your exact age in months. Simply enter your birth date and get instant results showing your age in years, months, and days.</p>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">What was my age in 2010?</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400">Calculate your age on any specific date using our advanced age calculator. Enter your birth date and the target date to find your exact age at that time.</p>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Can I calculate age from two dates?</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400">Yes! Our age calculator can determine the age difference between any two dates. Perfect for calculating age gaps between people or finding age at specific events.</p>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">How do I find age by date of birth automatically?</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400">Our age calculator automatically calculates your age when you enter your birth date. No manual calculations needed - just input your date of birth and get instant, accurate results.</p>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Is there a real-time age counter online?</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400">Yes! Our age calculator provides real-time age calculations with leap year accuracy. Unlike other online age tools, FastTools provides instant, real-time age updates with leap year accuracy and no data collection.</p>
                 </div>
@@ -1061,23 +1061,23 @@ export default function AgeCalculatorPage() {
             </div>
 
             {/* Quick Facts & Trivia Section */}
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">Quick Facts & Trivia About Age Calculation</h2>
+            <div className="bg-black border border-border rounded-lg p-6">
+              <h2 className="text-2xl font-bold mb-6 text-orange-500">Quick Facts & Trivia About Age Calculation</h2>
               
               <div className="space-y-6">
-                <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 p-6 rounded-lg border border-purple-200 dark:border-purple-800">
-                  <h3 className="text-lg font-semibold text-purple-800 dark:text-purple-200 mb-4">Fascinating Age Facts</h3>
+                <div className="bg-black p-6 rounded-lg border border-purple-800">
+                  <h3 className="text-lg font-semibold text-green-500 mb-4">Fascinating Age Facts</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-4">
-                      <div className="bg-white/50 dark:bg-slate-800/50 p-4 rounded-lg border border-purple-200 dark:border-purple-700">
-                        <h4 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">Leap Year Birthdays</h4>
+                      <div className="bg-black p-4 rounded-lg border border-purple-700">
+                        <h4 className="font-semibold text-green-500 mb-2">Leap Year Birthdays</h4>
                         <p className="text-sm text-purple-700 dark:text-purple-300">
                           <strong>Did you know?</strong> Only 1 in 1,461 people are born on February 29th! 
                           That's approximately 0.068% of the population.
                         </p>
                       </div>
                       
-                      <div className="bg-white/50 dark:bg-slate-800/50 p-4 rounded-lg border border-purple-200 dark:border-purple-700">
+                      <div className="bg-black p-4 rounded-lg border border-purple-700">
                         <h4 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">Oldest Verified Human</h4>
                         <p className="text-sm text-purple-700 dark:text-purple-300">
                           <strong>Jeanne Calment</strong> lived to be 122 years and 164 days old, 
@@ -1087,7 +1087,7 @@ export default function AgeCalculatorPage() {
                     </div>
                     
                     <div className="space-y-4">
-                      <div className="bg-white/50 dark:bg-slate-800/50 p-4 rounded-lg border border-purple-200 dark:border-purple-700">
+                      <div className="bg-black p-4 rounded-lg border border-purple-700">
                         <h4 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">Global Life Expectancy</h4>
                         <p className="text-sm text-purple-700 dark:text-purple-300">
                           The global average life expectancy is approximately <strong>73 years</strong>, 
@@ -1095,7 +1095,7 @@ export default function AgeCalculatorPage() {
                         </p>
                       </div>
                       
-                      <div className="bg-white/50 dark:bg-slate-800/50 p-4 rounded-lg border border-purple-200 dark:border-purple-700">
+                      <div className="bg-black p-4 rounded-lg border border-purple-700">
                         <h4 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">Age Calculation History</h4>
                         <p className="text-sm text-purple-700 dark:text-purple-300">
                           The concept of calculating age dates back to ancient civilizations, 
@@ -1107,8 +1107,8 @@ export default function AgeCalculatorPage() {
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-4">
-                  <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
-                    <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Age Milestones</h4>
+                  <div className="p-4 bg-black rounded-lg border border-slate-600">
+                    <h4 className="font-semibold text-green-500 mb-2">Age Milestones</h4>
                     <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-1">
                       <li>• 18: Legal adulthood</li>
                       <li>• 21: Drinking age (US)</li>
@@ -1117,7 +1117,7 @@ export default function AgeCalculatorPage() {
                     </ul>
                   </div>
 
-                  <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                  <div className="p-4 bg-black rounded-lg border border-slate-600">
                     <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Age Statistics</h4>
                     <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-1">
                       <li>• Average age at marriage: 28-30</li>
@@ -1127,7 +1127,7 @@ export default function AgeCalculatorPage() {
                     </ul>
                   </div>
 
-                  <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                  <div className="p-4 bg-black rounded-lg border border-slate-600">
                     <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Age Calculations</h4>
                     <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-1">
                       <li>• 1 year = 365.25 days</li>
@@ -1141,53 +1141,53 @@ export default function AgeCalculatorPage() {
             </div>
 
             {/* Related Tools Section */}
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">Related Calculator Tools</h2>
+            <div className="bg-black border border-border rounded-lg p-6">
+              <h2 className="text-2xl font-bold mb-6 text-orange-500">Related Calculator Tools</h2>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
-                  <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Date Difference Calculator</h3>
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
+                  <h3 className="font-semibold text-green-500 mb-2">Date Difference Calculator</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Calculate the exact difference between two dates in years, months, and days.</p>
                   <a href="/calculator/date-difference" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Date Calculator →</a>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Future Age Calculator</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Calculate what your age will be on any future date for planning purposes.</p>
                   <a href="/calculator/age-calculator" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Future Age Calculator →</a>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Retirement Age Calculator</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Calculate years until retirement age for financial planning and savings goals.</p>
                   <a href="/calculator/retirement-calculator" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Retirement Calculator →</a>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Time Duration Calculator</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Calculate the time duration between two times in hours and minutes.</p>
                   <a href="/calculator/time-duration" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Time Calculator →</a>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Age in Hours Calculator</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Calculate your exact age in hours, minutes, and seconds.</p>
                   <a href="/calculator/time-duration" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Time Duration Calculator →</a>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Date to Day Finder</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Find out what day of the week any date falls on.</p>
                   <a href="/calculator/date-difference" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Date Difference Calculator →</a>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Workday Calculator</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Calculate business days between two dates, excluding weekends.</p>
                   <a href="/calculator/date-difference" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Date Difference Calculator →</a>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-600">
+                <div className="p-4 bg-black rounded-lg border border-slate-600">
                   <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Year End Countdown</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Live countdown to the end of the year with exact time remaining.</p>
                   <a href="/fun-tools/birthday-countdown" className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">Try Birthday Countdown →</a>

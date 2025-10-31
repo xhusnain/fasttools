@@ -363,7 +363,6 @@ export default function ConversionCalculatorPage() {
       <div className="container mx-auto px-4 py-6 max-w-6xl">
       <Breadcrumbs
         items={[
-          { label: "Home", href: "/" },
           { label: "Calculator", href: "/calculator" },
           { label: "Conversion Calculator", href: "/calculator/conversion-calculator" },
         ]}

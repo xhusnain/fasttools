@@ -1821,7 +1821,7 @@ export default function ToolsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-8">
-            <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Calculator", href: "/calculator" }]} />
+            <Breadcrumbs items={[{ label: "Calculator", href: "/calculator" }]} />
 
 
           <div className="max-w-7xl mx-auto">
