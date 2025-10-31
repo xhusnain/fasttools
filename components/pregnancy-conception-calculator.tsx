@@ -248,21 +248,21 @@ Next Milestone: ${result.nextMilestone}`
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Input Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Calculator className="h-5 w-5 text-blue-500" />
+      <Card className="bg-black border-slate-700">
+        <CardHeader className="pb-2 px-3 sm:px-6">
+          <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg">
+            <Calculator className="h-4 w-4 text-orange-500" />
             Pregnancy Conception Calculator
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="space-y-4">
-            <div>
-              <Label htmlFor="method">Calculation Method</Label>
+        <CardContent className="space-y-4 px-3 sm:px-6">
+          <div className="space-y-3">
+            <div className="space-y-1">
+              <Label htmlFor="method" className="text-[11px] font-medium text-green-500">Calculation Method</Label>
               <Select value={calculationMethod} onValueChange={(value: "dueDate" | "lmp" | "ultrasound") => setCalculationMethod(value)}>
-                <SelectTrigger>
+                <SelectTrigger className="h-8 text-xs border-slate-700 bg-black text-slate-200">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -274,60 +274,64 @@ Next Milestone: ${result.nextMilestone}`
             </div>
 
             {calculationMethod === "dueDate" && (
-              <div>
-                <Label htmlFor="dueDate">Your Due Date</Label>
+              <div className="space-y-1">
+                <Label htmlFor="dueDate" className="text-[11px] font-medium text-green-500">Your Due Date</Label>
                 <Input
                   id="dueDate"
                   type="date"
                   value={dueDate}
                   onChange={(e) => setDueDate(e.target.value)}
+                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                 />
               </div>
             )}
 
             {calculationMethod === "lmp" && (
-              <div>
-                <Label htmlFor="lmpDate">First Day of Last Menstrual Period</Label>
+              <div className="space-y-1">
+                <Label htmlFor="lmpDate" className="text-[11px] font-medium text-green-500">First Day of Last Menstrual Period</Label>
                 <Input
                   id="lmpDate"
                   type="date"
                   value={lmpDate}
                   onChange={(e) => setLmpDate(e.target.value)}
+                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                 />
               </div>
             )}
 
             {calculationMethod === "ultrasound" && (
-              <div className="space-y-4">
-                <div>
-                  <Label htmlFor="ultrasoundDate">Ultrasound Date</Label>
+              <div className="space-y-3">
+                <div className="space-y-1">
+                  <Label htmlFor="ultrasoundDate" className="text-[11px] font-medium text-green-500">Ultrasound Date</Label>
                   <Input
                     id="ultrasoundDate"
                     type="date"
                     value={ultrasoundDate}
                     onChange={(e) => setUltrasoundDate(e.target.value)}
+                    className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                   />
                 </div>
-                <div>
-                  <Label htmlFor="gestationalAge">Gestational Age at Ultrasound (weeks)</Label>
+                <div className="space-y-1">
+                  <Label htmlFor="gestationalAge" className="text-[11px] font-medium text-green-500">Gestational Age at Ultrasound (weeks)</Label>
                   <Input
                     id="gestationalAge"
                     type="number"
                     placeholder="e.g., 12"
                     value={gestationalAge}
                     onChange={(e) => setGestationalAge(e.target.value)}
+                    className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                   />
                 </div>
               </div>
             )}
 
             <div className="flex gap-2">
-              <Button onClick={calculateConception} className="flex-1">
-                <Calculator className="mr-2 h-4 w-4" />
-                Calculate Conception Date
+              <Button onClick={calculateConception} className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white">
+                <Calculator className="mr-1 h-3 w-3" />
+                Calculate
               </Button>
-              <Button variant="outline" onClick={clearAll}>
-                Clear All
+              <Button variant="outline" onClick={clearAll} className="h-9 text-xs border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+                Clear
               </Button>
             </div>
           </div>
@@ -336,53 +340,53 @@ Next Milestone: ${result.nextMilestone}`
 
       {/* Results Section */}
       {result && (
-        <div className="space-y-6">
+        <div className="space-y-4">
           {/* Main Results */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Heart className="h-5 w-5 text-pink-500" />
+          <Card className="bg-black border-slate-700">
+            <CardHeader className="pb-2 px-3 sm:px-6">
+              <CardTitle className="flex items-center gap-2 text-orange-500 text-base">
+                <Heart className="h-4 w-4 text-orange-500" />
                 Conception Results
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label className="text-sm font-medium">Estimated Conception Date</Label>
-                  <div className="text-lg font-semibold text-blue-600">
+            <CardContent className="space-y-3 px-3 sm:px-6">
+              <div className="grid md:grid-cols-2 gap-3">
+                <div className="space-y-1 p-2 bg-black rounded-lg border border-slate-700">
+                  <Label className="text-xs font-medium text-green-500">Estimated Conception Date</Label>
+                  <div className="text-sm sm:text-base font-semibold text-orange-400">
                     {formatDate(result.conceptionDate)}
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-sm font-medium">Conception Range</Label>
-                  <div className="text-sm text-muted-foreground">
+                <div className="space-y-1 p-2 bg-black rounded-lg border border-slate-700">
+                  <Label className="text-xs font-medium text-green-500">Conception Range</Label>
+                  <div className="text-xs text-slate-400">
                     {formatDate(result.conceptionRange.start)} - {formatDate(result.conceptionRange.end)}
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-sm font-medium">Current Gestational Age</Label>
-                  <div className="text-lg font-semibold text-green-600">
+                <div className="space-y-1 p-2 bg-black rounded-lg border border-slate-700">
+                  <Label className="text-xs font-medium text-green-500">Current Gestational Age</Label>
+                  <div className="text-sm sm:text-base font-semibold text-orange-400">
                     {result.weeksPregnant} weeks, {result.daysPregnant} days
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-sm font-medium">Trimester</Label>
-                  <Badge variant="secondary" className="text-sm">
+                <div className="space-y-1 p-2 bg-black rounded-lg border border-slate-700">
+                  <Label className="text-xs font-medium text-green-500">Trimester</Label>
+                  <Badge variant="secondary" className="text-xs bg-orange-500/10 text-orange-400 border-orange-500/20">
                     {result.trimester}
                   </Badge>
                 </div>
               </div>
 
-              <div className="pt-4 border-t">
-                <div className="flex items-center gap-2 mb-2">
-                  <Clock className="h-4 w-4 text-orange-500" />
-                  <span className="font-medium">Next Milestone</span>
+              <div className="pt-3 border-t border-slate-700">
+                <div className="flex items-center gap-2 mb-1">
+                  <Clock className="h-3.5 w-3.5 text-green-500" />
+                  <span className="font-medium text-xs text-green-500">Next Milestone</span>
                 </div>
-                <p className="text-sm text-muted-foreground">{result.nextMilestone}</p>
+                <p className="text-xs text-slate-400">{result.nextMilestone}</p>
               </div>
 
-              <div className="flex gap-2 pt-4">
-                <Button onClick={copyResult} variant="outline" size="sm">
+              <div className="flex gap-2 pt-3">
+                <Button onClick={copyResult} variant="outline" size="sm" className="h-8 text-xs border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                   Copy Results
                 </Button>
               </div>
@@ -390,18 +394,18 @@ Next Milestone: ${result.nextMilestone}`
           </Card>
 
           {/* Current Symptoms */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Stethoscope className="h-5 w-5 text-purple-500" />
+          <Card className="bg-black border-slate-700">
+            <CardHeader className="pb-2 px-3 sm:px-6">
+              <CardTitle className="flex items-center gap-2 text-orange-500 text-base">
+                <Stethoscope className="h-4 w-4 text-orange-500" />
                 Common Symptoms This Week
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="px-3 sm:px-6">
               <div className="grid md:grid-cols-2 gap-2">
                 {result.symptoms.map((symptom, index) => (
-                  <div key={index} className="flex items-center gap-2 text-sm">
-                    <AlertCircle className="h-4 w-4 text-orange-500" />
+                  <div key={index} className="flex items-center gap-2 text-xs text-slate-400">
+                    <AlertCircle className="h-3 w-3 text-green-500" />
                     <span>{symptom}</span>
                   </div>
                 ))}
@@ -410,19 +414,19 @@ Next Milestone: ${result.nextMilestone}`
           </Card>
 
           {/* Recommendations */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Baby className="h-5 w-5 text-green-500" />
+          <div className="grid md:grid-cols-2 gap-4">
+            <Card className="bg-black border-slate-700">
+              <CardHeader className="pb-2 px-3 sm:px-6">
+                <CardTitle className="flex items-center gap-2 text-orange-500 text-base">
+                  <Baby className="h-4 w-4 text-orange-500" />
                   Nutrition Recommendations
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
+              <CardContent className="px-3 sm:px-6">
+                <ul className="space-y-1.5">
                   {result.recommendations.nutrition.map((rec, index) => (
-                    <li key={index} className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <li key={index} className="flex items-start gap-2 text-xs text-slate-400">
+                      <CheckCircle className="h-3 w-3 text-green-500 mt-0.5 flex-shrink-0" />
                       <span>{rec}</span>
                     </li>
                   ))}
@@ -430,18 +434,18 @@ Next Milestone: ${result.nextMilestone}`
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Heart className="h-5 w-5 text-blue-500" />
+            <Card className="bg-black border-slate-700">
+              <CardHeader className="pb-2 px-3 sm:px-6">
+                <CardTitle className="flex items-center gap-2 text-orange-500 text-base">
+                  <Heart className="h-4 w-4 text-orange-500" />
                   Exercise Recommendations
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
+              <CardContent className="px-3 sm:px-6">
+                <ul className="space-y-1.5">
                   {result.recommendations.exercise.map((rec, index) => (
-                    <li key={index} className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                    <li key={index} className="flex items-start gap-2 text-xs text-slate-400">
+                      <CheckCircle className="h-3 w-3 text-green-500 mt-0.5 flex-shrink-0" />
                       <span>{rec}</span>
                     </li>
                   ))}
@@ -449,18 +453,18 @@ Next Milestone: ${result.nextMilestone}`
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Stethoscope className="h-5 w-5 text-purple-500" />
+            <Card className="bg-black border-slate-700">
+              <CardHeader className="pb-2 px-3 sm:px-6">
+                <CardTitle className="flex items-center gap-2 text-orange-500 text-base">
+                  <Stethoscope className="h-4 w-4 text-orange-500" />
                   Health Recommendations
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
+              <CardContent className="px-3 sm:px-6">
+                <ul className="space-y-1.5">
                   {result.recommendations.health.map((rec, index) => (
-                    <li key={index} className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-purple-500 mt-0.5 flex-shrink-0" />
+                    <li key={index} className="flex items-start gap-2 text-xs text-slate-400">
+                      <CheckCircle className="h-3 w-3 text-green-500 mt-0.5 flex-shrink-0" />
                       <span>{rec}</span>
                     </li>
                   ))}
@@ -468,18 +472,18 @@ Next Milestone: ${result.nextMilestone}`
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5 text-orange-500" />
+            <Card className="bg-black border-slate-700">
+              <CardHeader className="pb-2 px-3 sm:px-6">
+                <CardTitle className="flex items-center gap-2 text-orange-500 text-base">
+                  <Calendar className="h-4 w-4 text-orange-500" />
                   Lifestyle Recommendations
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
+              <CardContent className="px-3 sm:px-6">
+                <ul className="space-y-1.5">
                   {result.recommendations.lifestyle.map((rec, index) => (
-                    <li key={index} className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-orange-500 mt-0.5 flex-shrink-0" />
+                    <li key={index} className="flex items-start gap-2 text-xs text-slate-400">
+                      <CheckCircle className="h-3 w-3 text-green-500 mt-0.5 flex-shrink-0" />
                       <span>{rec}</span>
                     </li>
                   ))}
@@ -492,22 +496,22 @@ Next Milestone: ${result.nextMilestone}`
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Clock className="h-5 w-5 text-gray-500" />
+        <Card className="bg-black border-slate-700">
+          <CardHeader className="pb-2 px-3 sm:px-6">
+            <CardTitle className="flex items-center gap-2 text-orange-500 text-base">
+              <Clock className="h-4 w-4 text-orange-500" />
               Recent Calculations
             </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="px-3 sm:px-6">
             <div className="space-y-2">
               {history.map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                <div key={index} className="flex items-center justify-between p-2 bg-black rounded-lg border border-slate-700">
                   <div className="space-y-1">
-                    <div className="font-medium">
+                    <div className="font-medium text-xs text-slate-300">
                       {formatDate(item.conceptionDate)} - {item.trimester}
                     </div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-[10px] text-slate-400">
                       {item.weeksPregnant} weeks, {item.daysPregnant} days
                     </div>
                   </div>
@@ -515,8 +519,9 @@ Next Milestone: ${result.nextMilestone}`
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
+                    className="h-7 text-xs text-slate-400 hover:text-green-500 hover:bg-slate-800"
                   >
-                    View Details
+                    View
                   </Button>
                 </div>
               ))}
@@ -526,37 +531,37 @@ Next Milestone: ${result.nextMilestone}`
       )}
 
       {/* Information Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Info className="h-5 w-5 text-blue-500" />
+      <Card className="bg-black border-slate-700">
+        <CardHeader className="pb-2 px-3 sm:px-6">
+          <CardTitle className="flex items-center gap-2 text-orange-500 text-base">
+            <Info className="h-4 w-4 text-orange-500" />
             Important Information
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+        <CardContent className="space-y-3 px-3 sm:px-6">
+          <div className="p-3 bg-black rounded-lg border border-slate-700">
             <div className="flex items-start gap-2">
-              <Info className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
-              <div className="text-sm">
-                <p className="font-medium text-blue-800 dark:text-blue-200 mb-1">
+              <Info className="h-3.5 w-3.5 text-green-500 mt-0.5 flex-shrink-0" />
+              <div className="text-xs">
+                <p className="font-medium text-green-500 mb-1">
                   Medical Disclaimer
                 </p>
-                <p className="text-blue-700 dark:text-blue-300">
+                <p className="text-slate-400">
                   This calculator provides estimates only. Always consult with your healthcare provider for accurate pregnancy dating and medical advice.
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="text-sm text-muted-foreground space-y-2">
+          <div className="text-xs text-slate-400 space-y-2">
             <p>
-              <strong>Conception Date:</strong> The estimated date when fertilization occurred, typically 11-21 days after the first day of your last menstrual period.
+              <strong className="text-green-500">Conception Date:</strong> The estimated date when fertilization occurred, typically 11-21 days after the first day of your last menstrual period.
             </p>
             <p>
-              <strong>Conception Range:</strong> A 4-day window during which sexual intercourse likely led to conception, accounting for sperm viability (3-5 days).
+              <strong className="text-green-500">Conception Range:</strong> A four-day timeframe during which fertilization most probably occurred, taking into consideration that sperm can remain viable in the reproductive tract for 3-5 days.
             </p>
             <p>
-              <strong>Gestational Age:</strong> The age of the pregnancy calculated from the first day of the last menstrual period, not the actual conception date.
+              <strong className="text-green-500">Gestational Age:</strong> The age of the pregnancy calculated from the first day of the last menstrual period, not the actual conception date.
             </p>
           </div>
         </CardContent>
