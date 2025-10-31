@@ -417,27 +417,27 @@ export default function ConversionCalculatorPage() {
 
               <div className="bg-black border border-border rounded-lg p-4">
                 <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
-                  <div className="p-1.5 bg-blue-500 rounded-lg">
+                  <div className="p-1.5 bg-orange-500 rounded-lg">
                     <BookOpen className="h-4 w-4 text-white" />
                   </div>
                   Why Use Our Conversion Calculator?
                 </h2>
                 <div className="grid md:grid-cols-2 gap-3">
-                  <div className="p-3 bg-black rounded-lg border border-blue-200 dark:border-blue-800">
+                  <div className="p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                     <h3 className="font-semibold text-green-500 mb-1 text-sm">Professional Accuracy</h3>
-                    <p className="text-xs text-blue-700 dark:text-blue-300">Precise mathematical formulas with 6 decimal place accuracy for professional applications.</p>
+                    <p className="text-xs text-white">Precise mathematical formulas with 6 decimal place accuracy for professional applications.</p>
                   </div>
-                  <div className="p-3 bg-black rounded-lg border border-green-200 dark:border-green-800">
+                  <div className="p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                     <h3 className="font-semibold text-green-500 mb-1 text-sm">Real-Time Currency</h3>
-                    <p className="text-xs text-green-700 dark:text-green-300">Live exchange rates updated every few minutes for current conversion values.</p>
+                    <p className="text-xs text-white">Live exchange rates updated every few minutes for current conversion values.</p>
                   </div>
-                  <div className="p-3 bg-black rounded-lg border border-purple-200 dark:border-purple-800">
+                  <div className="p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                     <h3 className="font-semibold text-green-500 mb-1 text-sm">Comprehensive Coverage</h3>
-                    <p className="text-xs text-purple-700 dark:text-purple-300">1000+ units across 12+ categories with metric, imperial, and international systems.</p>
+                    <p className="text-xs text-white">1000+ units across 12+ categories with metric, imperial, and international systems.</p>
                   </div>
                   <div className="p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                     <h3 className="font-semibold text-green-500 mb-1 text-sm">No Limits</h3>
-                    <p className="text-xs text-orange-700 dark:text-orange-300">Unlimited conversions for free without any restrictions or hidden costs.</p>
+                    <p className="text-xs text-white">Unlimited conversions for free without any restrictions or hidden costs.</p>
                   </div>
                 </div>
               </div>
@@ -445,46 +445,46 @@ export default function ConversionCalculatorPage() {
 
               <div className="bg-black border border-border rounded-lg p-4">
                 <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
-                  <div className="p-1.5 bg-green-500 rounded-lg">
+                  <div className="p-1.5 bg-orange-500 rounded-lg">
                     <Calculator className="h-4 w-4 text-white" />
                   </div>
                   The Science Behind Unit Conversion
                 </h2>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div className="p-3 bg-black rounded-lg border border-blue-200 dark:border-blue-800">
+                  <div className="p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                     <h3 className="font-semibold text-green-500 mb-1 text-sm">Mathematical Precision</h3>
-                    <p className="text-xs text-blue-700 dark:text-blue-300">Uses precise conversion factors from international standards with 6 decimal place accuracy.</p>
+                    <p className="text-xs text-white">Uses precise conversion factors from international standards with 6 decimal place accuracy.</p>
                   </div>
-                  <div className="p-3 bg-black rounded-lg border border-green-200 dark:border-green-800">
+                  <div className="p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                     <h3 className="font-semibold text-green-500 mb-1 text-sm">International Standards</h3>
-                    <p className="text-xs text-green-700 dark:text-green-300">Adheres to SI, imperial, and US customary units for global compatibility.</p>
+                    <p className="text-xs text-white">Adheres to SI, imperial, and US customary units for global compatibility.</p>
                 </div>
               </div>
             </div>
 
               <div className="bg-black border border-border rounded-lg p-4">
                 <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
-                  <div className="p-1.5 bg-purple-500 rounded-lg">
+                  <div className="p-1.5 bg-orange-500 rounded-lg">
                     <Users className="h-4 w-4 text-white" />
                   </div>
                   Professional Applications
                 </h2>
                 <div className="grid md:grid-cols-2 gap-3">
-                  <div className="p-3 bg-black rounded-lg border border-blue-200 dark:border-blue-800">
+                  <div className="p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                     <h3 className="font-semibold text-green-500 mb-1 text-sm">Engineering & Construction</h3>
-                    <p className="text-xs text-blue-700 dark:text-blue-300">Structural calculations, material conversions, international specifications</p>
+                    <p className="text-xs text-white">Structural calculations, material conversions, international specifications</p>
                   </div>
-                  <div className="p-3 bg-black rounded-lg border border-green-200 dark:border-green-800">
+                  <div className="p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                     <h3 className="font-semibold text-green-500 mb-1 text-sm">Scientific Research</h3>
-                    <p className="text-xs text-green-700 dark:text-green-300">Laboratory measurements, data analysis, research collaboration</p>
+                    <p className="text-xs text-white">Laboratory measurements, data analysis, research collaboration</p>
                   </div>
-                  <div className="p-3 bg-black rounded-lg border border-purple-200 dark:border-purple-800">
+                  <div className="p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                     <h3 className="font-semibold text-green-500 mb-1 text-sm">Business & Finance</h3>
-                    <p className="text-xs text-purple-700 dark:text-purple-300">Currency conversion, supply chain, international trade</p>
+                    <p className="text-xs text-white">Currency conversion, supply chain, international trade</p>
                   </div>
                   <div className="p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                     <h3 className="font-semibold text-green-500 mb-1 text-sm">Education & Learning</h3>
-                    <p className="text-xs text-orange-700 dark:text-orange-300">Student assignments, STEM support, research projects</p>
+                    <p className="text-xs text-white">Student assignments, STEM support, research projects</p>
                   </div>
                 </div>
               </div>
@@ -493,27 +493,27 @@ export default function ConversionCalculatorPage() {
             <div className="mt-8 space-y-4">
               <div className="bg-black border border-border rounded-lg p-4">
                 <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
-                  <div className="p-1.5 bg-blue-500 rounded-lg">
+                  <div className="p-1.5 bg-orange-500 rounded-lg">
                     <BookOpen className="h-4 w-4 text-white" />
                     </div>
                   How to Use Our Calculator
                 </h2>
                 <div className="grid md:grid-cols-2 gap-3">
-                  <div className="p-3 bg-black rounded-lg border border-blue-200 dark:border-blue-800">
+                  <div className="p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                     <h3 className="font-semibold text-green-500 mb-1 text-sm">1. Select Category</h3>
-                    <p className="text-xs text-blue-700 dark:text-blue-300">Choose from 12+ conversion categories</p>
+                    <p className="text-xs text-white">Choose from 12+ conversion categories</p>
                     </div>
-                  <div className="p-3 bg-black rounded-lg border border-green-200 dark:border-green-800">
+                  <div className="p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                     <h3 className="font-semibold text-green-500 mb-1 text-sm">2. Choose Units</h3>
-                    <p className="text-xs text-green-700 dark:text-green-300">Select from and to units</p>
+                    <p className="text-xs text-white">Select from and to units</p>
                     </div>
-                  <div className="p-3 bg-black rounded-lg border border-purple-200 dark:border-purple-800">
+                  <div className="p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                     <h3 className="font-semibold text-green-500 mb-1 text-sm">3. Enter Value</h3>
-                    <p className="text-xs text-purple-700 dark:text-purple-300">Input the value to convert</p>
+                    <p className="text-xs text-white">Input the value to convert</p>
                     </div>
                   <div className="p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                     <h3 className="font-semibold text-green-500 mb-1 text-sm">4. Get Results</h3>
-                    <p className="text-xs text-orange-700 dark:text-orange-300">View instant conversion results</p>
+                    <p className="text-xs text-white">View instant conversion results</p>
                   </div>
                 </div>
               </div>
@@ -555,7 +555,7 @@ export default function ConversionCalculatorPage() {
               <div className="bg-black border border-border rounded-lg p-6">
                 <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-orange-500">
                   <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                    <BookOpen className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                    <BookOpen className="h-5 w-5 text-white" />
                   </div>
                   Why Use Our Advanced Conversion Calculator?
                 </h2>
@@ -628,55 +628,55 @@ export default function ConversionCalculatorPage() {
                   <div className="grid md:grid-cols-3 gap-6">
                     <div className="space-y-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                        <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
                         <h3 className="text-lg font-semibold text-green-500">Select Category</h3>
                       </div>
                       <p className="text-sm text-slate-600 dark:text-slate-400">Choose from 12+ conversion categories including length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure, and data storage.</p>
                     </div>
                     <div className="space-y-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                        <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
                         <h3 className="text-lg font-semibold text-green-500">Choose Units</h3>
                       </div>
                       <p className="text-sm text-slate-600 dark:text-slate-400">Select your source unit (From) and target unit (To) from the comprehensive dropdown menus with 1000+ unit options.</p>
                     </div>
                     <div className="space-y-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                        <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
                         <h3 className="text-lg font-semibold text-green-500">Enter Value</h3>
                       </div>
                       <p className="text-sm text-slate-600 dark:text-slate-400">Input the value you want to convert and get instant, accurate results with 6 decimal place precision.</p>
                     </div>
                   </div>
-                  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 p-6 rounded-lg border border-blue-200 dark:border-blue-800">
-                    <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-3">Pro Tips for Best Results</h3>
+                  <div className="bg-black p-6 rounded-lg border border-orange-200 dark:border-orange-800">
+                    <h3 className="text-lg font-semibold text-orange-500 mb-3">Pro Tips for Best Results</h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <div className="flex items-start gap-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-blue-700 dark:text-blue-300">Use decimal notation for precise calculations</span>
+                          <span className="text-sm text-white">Use decimal notation for precise calculations</span>
                         </div>
                         <div className="flex items-start gap-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-blue-700 dark:text-blue-300">Check conversion history for repeated calculations</span>
+                          <span className="text-sm text-white">Check conversion history for repeated calculations</span>
                         </div>
                         <div className="flex items-start gap-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-blue-700 dark:text-blue-300">Use swap function to quickly reverse conversions</span>
+                          <span className="text-sm text-white">Use swap function to quickly reverse conversions</span>
                         </div>
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-start gap-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-blue-700 dark:text-blue-300">Copy results for easy sharing and documentation</span>
+                          <span className="text-sm text-white">Copy results for easy sharing and documentation</span>
                         </div>
                         <div className="flex items-start gap-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-blue-700 dark:text-blue-300">Bookmark for quick access to your favorite conversions</span>
+                          <span className="text-sm text-white">Bookmark for quick access to your favorite conversions</span>
                         </div>
                         <div className="flex items-start gap-2">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-blue-700 dark:text-blue-300">Verify results with multiple conversion sources for critical calculations</span>
+                          <span className="text-sm text-white">Verify results with multiple conversion sources for critical calculations</span>
                         </div>
                       </div>
                     </div>
@@ -687,7 +687,7 @@ export default function ConversionCalculatorPage() {
               <div className="bg-black border border-border rounded-lg p-6">
                 <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-orange-500">
                   <div className="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                    <Users className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+                    <Users className="h-5 w-5 text-white" />
                   </div>
                   Common Use Cases for Conversion Calculator
                 </h2>
@@ -751,7 +751,7 @@ export default function ConversionCalculatorPage() {
                       <div className="space-y-3">
                         <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                           <h4 className="font-semibold text-orange-800 dark:text-orange-200 mb-2">Problem: Recipe calls for cups, but you only have grams</h4>
-                          <p className="text-sm text-orange-700 dark:text-orange-300 mb-2">Solution: Use our weight converter to convert cups to grams accurately.</p>
+                          <p className="text-sm text-white mb-2">Solution: Use our weight converter to convert cups to grams accurately.</p>
                           <div className="text-xs text-orange-600 dark:text-orange-400">
                             <strong>Example:</strong> 1 cup flour = 120g, 1 cup sugar = 200g, 1 cup butter = 227g
                           </div>
@@ -768,16 +768,16 @@ export default function ConversionCalculatorPage() {
                     <div className="space-y-4">
                       <h3 className="text-lg font-semibold text-green-500">Travel & International Conversions</h3>
                       <div className="space-y-3">
-                        <div className="p-4 bg-black rounded-lg border border-blue-200 dark:border-blue-800">
-                          <h4 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Problem: Speed limits in different units</h4>
-                          <p className="text-sm text-blue-700 dark:text-blue-300 mb-2">Solution: Convert between km/h and mph for safe driving.</p>
-                          <div className="text-xs text-blue-600 dark:text-blue-400">
+                        <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <h4 className="font-semibold text-orange-500 mb-2">Problem: Speed limits in different units</h4>
+                          <p className="text-sm text-white mb-2">Solution: Convert between km/h and mph for safe driving.</p>
+                          <div className="text-xs text-white">
                             <strong>Example:</strong> 100 km/h = 62 mph, 70 mph = 113 km/h
                           </div>
                         </div>
-                        <div className="p-4 bg-black rounded-lg border border-green-200 dark:border-green-800">
-                          <h4 className="font-semibold text-green-800 dark:text-green-200 mb-2">Problem: Currency exchange confusion</h4>
-                          <p className="text-sm text-green-700 dark:text-green-300 mb-2">Solution: Real-time currency conversion with current exchange rates.</p>
+                        <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <h4 className="font-semibold text-orange-500 mb-2">Problem: Currency exchange confusion</h4>
+                          <p className="text-sm text-white mb-2">Solution: Real-time currency conversion with current exchange rates.</p>
                           <div className="text-xs text-green-600 dark:text-green-400">
                             <strong>Example:</strong> $100 USD = €85 EUR, £100 GBP = $127 USD
                           </div>
@@ -789,17 +789,17 @@ export default function ConversionCalculatorPage() {
                     <div className="space-y-4">
                       <h3 className="text-lg font-semibold text-green-500">Engineering & Construction</h3>
                       <div className="space-y-3">
-                        <div className="p-4 bg-black rounded-lg border border-purple-200 dark:border-purple-800">
-                          <h4 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">Problem: Metric vs Imperial measurements</h4>
-                          <p className="text-sm text-purple-700 dark:text-purple-300 mb-2">Solution: Convert between metric and imperial systems for international projects.</p>
-                          <div className="text-xs text-purple-600 dark:text-purple-400">
+                        <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <h4 className="font-semibold text-orange-500 mb-2">Problem: Metric vs Imperial measurements</h4>
+                          <p className="text-sm text-white mb-2">Solution: Convert between metric and imperial systems for international projects.</p>
+                          <div className="text-xs text-white">
                             <strong>Example:</strong> 1 meter = 3.281 feet, 1 inch = 2.54 cm
                           </div>
                         </div>
-                        <div className="p-4 bg-black rounded-lg border border-indigo-200 dark:border-indigo-800">
-                          <h4 className="font-semibold text-indigo-800 dark:text-indigo-200 mb-2">Problem: Pressure unit confusion</h4>
-                          <p className="text-sm text-indigo-700 dark:text-indigo-300 mb-2">Solution: Convert between Pascal, bar, psi, and atmosphere units.</p>
-                          <div className="text-xs text-indigo-600 dark:text-indigo-400">
+                        <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <h4 className="font-semibold text-orange-500 mb-2">Problem: Pressure unit confusion</h4>
+                          <p className="text-sm text-green-500 mb-2">Solution: Convert between Pascal, bar, psi, and atmosphere units.</p>
+                          <div className="text-xs text-white">
                             <strong>Example:</strong> 1 bar = 14.504 psi, 1 atm = 101,325 Pa
                           </div>
                         </div>
@@ -808,7 +808,7 @@ export default function ConversionCalculatorPage() {
                     <div className="space-y-4">
                       <h3 className="text-lg font-semibold text-green-500">Scientific & Medical</h3>
                       <div className="space-y-3">
-                        <div className="p-4 bg-black rounded-lg border border-pink-200 dark:border-pink-800">
+                        <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                           <h4 className="font-semibold text-pink-800 dark:text-pink-200 mb-2">Problem: Temperature scale confusion</h4>
                           <p className="text-sm text-pink-700 dark:text-pink-300 mb-2">Solution: Convert between Celsius, Fahrenheit, and Kelvin scales.</p>
                           <div className="text-xs text-pink-600 dark:text-pink-400">
@@ -841,7 +841,7 @@ export default function ConversionCalculatorPage() {
                       <h3 className="text-lg font-semibold text-green-500">Case Study 1: International Recipe Conversion</h3>
                       <div className="p-4 bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20 rounded-lg border border-orange-200 dark:border-orange-800">
                         <h4 className="font-semibold text-orange-800 dark:text-orange-200 mb-2">Scenario: Converting European Recipe to US Measurements</h4>
-                        <p className="text-sm text-orange-700 dark:text-orange-300 mb-3">
+                        <p className="text-sm text-white mb-3">
                           Sarah found a French recipe calling for 250g flour, 200ml milk, and 180°C oven temperature. 
                           She needed to convert these to US measurements.
                         </p>
@@ -863,23 +863,23 @@ export default function ConversionCalculatorPage() {
                     </div>
                     <div className="space-y-4">
                       <h3 className="text-lg font-semibold text-green-500">Case Study 2: Construction Project</h3>
-                      <div className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                        <h4 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Scenario: Converting Building Plans from Metric to Imperial</h4>
-                        <p className="text-sm text-blue-700 dark:text-blue-300 mb-3">
+                      <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                        <h4 className="font-semibold text-orange-500 mb-2">Scenario: Converting Building Plans from Metric to Imperial</h4>
+                        <p className="text-sm text-white mb-3">
                           An architect needed to convert building dimensions from meters to feet for a US construction project.
                         </p>
                         <div className="space-y-2 text-sm">
                           <div className="flex justify-between">
-                            <span className="text-blue-600 dark:text-blue-400">3.5 meters height</span>
-                            <span className="font-mono text-blue-800 dark:text-blue-200">≈ 11.48 feet</span>
+                            <span className="text-white">3.5 meters height</span>
+                            <span className="font-mono text-orange-500">≈ 11.48 feet</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-blue-600 dark:text-blue-400">50 m² area</span>
-                            <span className="font-mono text-blue-800 dark:text-blue-200">≈ 538 ft²</span>
+                            <span className="text-white">50 m² area</span>
+                            <span className="font-mono text-orange-500">≈ 538 ft²</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-blue-600 dark:text-blue-400">2.5 tons concrete</span>
-                            <span className="font-mono text-blue-800 dark:text-blue-200">≈ 5,512 lbs</span>
+                            <span className="text-white">2.5 tons concrete</span>
+                            <span className="font-mono text-orange-500">≈ 5,512 lbs</span>
                           </div>
                         </div>
                       </div>
@@ -888,46 +888,46 @@ export default function ConversionCalculatorPage() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-4">
                       <h3 className="text-lg font-semibold text-green-500">Case Study 3: Travel Planning</h3>
-                      <div className="p-4 bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-950/20 dark:to-teal-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                        <h4 className="font-semibold text-green-800 dark:text-green-200 mb-2">Scenario: Planning a European Road Trip</h4>
-                        <p className="text-sm text-green-700 dark:text-green-300 mb-3">
+                      <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                        <h4 className="font-semibold text-orange-500 mb-2">Scenario: Planning a European Road Trip</h4>
+                        <p className="text-sm text-white mb-3">
                           Mark was planning a road trip through Europe and needed to understand speed limits, distances, and fuel consumption.
                         </p>
                         <div className="space-y-2 text-sm">
                           <div className="flex justify-between">
                             <span className="text-green-600 dark:text-green-400">130 km/h speed limit</span>
-                            <span className="font-mono text-green-800 dark:text-green-200">≈ 81 mph</span>
+                            <span className="font-mono text-orange-500">≈ 81 mph</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="text-green-600 dark:text-green-400">500 km distance</span>
-                            <span className="font-mono text-green-800 dark:text-green-200">≈ 311 miles</span>
+                            <span className="font-mono text-orange-500">≈ 311 miles</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="text-green-600 dark:text-green-400">€1.50 per liter</span>
-                            <span className="font-mono text-green-800 dark:text-green-200">≈ $6.50 per gallon</span>
+                            <span className="font-mono text-orange-500">≈ $6.50 per gallon</span>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div className="space-y-4">
                       <h3 className="text-lg font-semibold text-green-500">Case Study 4: Scientific Research</h3>
-                      <div className="p-4 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                        <h4 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">Scenario: Laboratory Temperature Conversion</h4>
-                        <p className="text-sm text-purple-700 dark:text-purple-300 mb-3">
+                      <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                        <h4 className="font-semibold text-orange-500 mb-2">Scenario: Laboratory Temperature Conversion</h4>
+                        <p className="text-sm text-white mb-3">
                           A researcher needed to convert experimental temperatures between different scales for international collaboration.
                         </p>
                         <div className="space-y-2 text-sm">
                           <div className="flex justify-between">
-                            <span className="text-purple-600 dark:text-purple-400">25°C room temp</span>
-                            <span className="font-mono text-purple-800 dark:text-purple-200">= 77°F, 298K</span>
+                            <span className="text-white">25°C room temp</span>
+                            <span className="font-mono text-orange-500">= 77°F, 298K</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-purple-600 dark:text-purple-400">100°C boiling</span>
-                            <span className="font-mono text-purple-800 dark:text-purple-200">= 212°F, 373K</span>
+                            <span className="text-white">100°C boiling</span>
+                            <span className="font-mono text-orange-500">= 212°F, 373K</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-purple-600 dark:text-purple-400">0°C freezing</span>
-                            <span className="font-mono text-purple-800 dark:text-purple-200">= 32°F, 273K</span>
+                            <span className="text-white">0°C freezing</span>
+                            <span className="font-mono text-orange-500">= 32°F, 273K</span>
                           </div>
                         </div>
                       </div>
@@ -948,17 +948,17 @@ export default function ConversionCalculatorPage() {
                     <div className="space-y-4">
                       <h3 className="text-lg font-semibold text-green-500">Quick Mental Math Tricks</h3>
                       <div className="space-y-3">
-                        <div className="p-4 bg-black rounded-lg border border-blue-200 dark:border-blue-800">
-                          <h4 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Temperature Conversion Shortcuts</h4>
-                          <div className="space-y-2 text-sm text-blue-700 dark:text-blue-300">
+                        <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <h4 className="font-semibold text-orange-500 mb-2">Temperature Conversion Shortcuts</h4>
+                          <div className="space-y-2 text-sm text-white">
                             <p><strong>Celsius to Fahrenheit:</strong> Double it, add 30 (rough estimate)</p>
                             <p><strong>Fahrenheit to Celsius:</strong> Subtract 30, divide by 2</p>
                             <p><strong>Example:</strong> 20°C ≈ 70°F (20×2+30=70)</p>
                           </div>
                         </div>
-                        <div className="p-4 bg-black rounded-lg border border-green-200 dark:border-green-800">
-                          <h4 className="font-semibold text-green-800 dark:text-green-200 mb-2">Length Conversion Tricks</h4>
-                          <div className="space-y-2 text-sm text-green-700 dark:text-green-300">
+                        <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <h4 className="font-semibold text-orange-500 mb-2">Length Conversion Tricks</h4>
+                          <div className="space-y-2 text-sm text-white">
                             <p><strong>Meters to Feet:</strong> Multiply by 3, add 10%</p>
                             <p><strong>Kilometers to Miles:</strong> Multiply by 0.6</p>
                             <p><strong>Example:</strong> 10m ≈ 33ft (10×3+3=33)</p>
@@ -969,9 +969,9 @@ export default function ConversionCalculatorPage() {
                     <div className="space-y-4">
                       <h3 className="text-lg font-semibold text-green-500">Professional Accuracy Tips</h3>
                       <div className="space-y-3">
-                        <div className="p-4 bg-black rounded-lg border border-purple-200 dark:border-purple-800">
-                          <h4 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">Always Double-Check Critical Conversions</h4>
-                          <div className="space-y-2 text-sm text-purple-700 dark:text-purple-300">
+                        <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <h4 className="font-semibold text-orange-500 mb-2">Always Double-Check Critical Conversions</h4>
+                          <div className="space-y-2 text-sm text-white">
                             <p>• Use multiple sources for important calculations</p>
                             <p>• Verify with reverse conversion</p>
                             <p>• Check against known reference points</p>
@@ -980,7 +980,7 @@ export default function ConversionCalculatorPage() {
                         </div>
                         <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                           <h4 className="font-semibold text-orange-800 dark:text-orange-200 mb-2">Common Conversion Mistakes to Avoid</h4>
-                          <div className="space-y-2 text-sm text-orange-700 dark:text-orange-300">
+                          <div className="space-y-2 text-sm text-white">
                             <p>• Mixing up multiplication and division</p>
                             <p>• Using outdated conversion factors</p>
                             <p>• Forgetting to include units in final answer</p>
@@ -990,12 +990,12 @@ export default function ConversionCalculatorPage() {
                       </div>
                     </div>
                   </div>
-                  <div className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/20 dark:to-purple-950/20 p-6 rounded-lg border border-indigo-200 dark:border-indigo-800">
-                    <h3 className="text-lg font-semibold text-indigo-800 dark:text-indigo-200 mb-4">Industry-Specific Conversion Tips</h3>
+                  <div className="bg-black p-6 rounded-lg border border-orange-200 dark:border-orange-800">
+                    <h3 className="text-lg font-semibold text-orange-500 mb-4">Industry-Specific Conversion Tips</h3>
                     <div className="grid md:grid-cols-3 gap-4">
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-indigo-700 dark:text-indigo-300">Cooking & Baking</h4>
-                        <ul className="text-sm text-indigo-600 dark:text-indigo-400 space-y-1">
+                        <h4 className="font-semibold text-green-500">Cooking & Baking</h4>
+                        <ul className="text-sm text-white space-y-1">
                           <li>• 1 cup = 240ml (liquid)</li>
                           <li>• 1 cup flour = 120g</li>
                           <li>• 1 cup sugar = 200g</li>
@@ -1003,8 +1003,8 @@ export default function ConversionCalculatorPage() {
                         </ul>
                       </div>
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-indigo-700 dark:text-indigo-300">Construction</h4>
-                        <ul className="text-sm text-indigo-600 dark:text-indigo-400 space-y-1">
+                        <h4 className="font-semibold text-green-500">Construction</h4>
+                        <ul className="text-sm text-white space-y-1">
                           <li>• 1 meter = 3.281 feet</li>
                           <li>• 1 inch = 2.54 cm</li>
                           <li>• 1 square meter = 10.764 sq ft</li>
@@ -1012,8 +1012,8 @@ export default function ConversionCalculatorPage() {
                         </ul>
                       </div>
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-indigo-700 dark:text-indigo-300">Travel</h4>
-                        <ul className="text-sm text-indigo-600 dark:text-indigo-400 space-y-1">
+                        <h4 className="font-semibold text-green-500">Travel</h4>
+                        <ul className="text-sm text-white space-y-1">
                           <li>• 1 km = 0.621 miles</li>
                           <li>• 1 liter = 0.264 gallons</li>
                           <li>• 1 kg = 2.205 pounds</li>
@@ -1056,16 +1056,16 @@ export default function ConversionCalculatorPage() {
                     <div className="space-y-4">
                       <h3 className="text-lg font-semibold text-green-500">Modern Standardization</h3>
                       <div className="space-y-3">
-                        <div className="p-4 bg-black rounded-lg border border-blue-200 dark:border-blue-800">
-                          <h4 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Metric System (1795)</h4>
-                          <p className="text-sm text-blue-700 dark:text-blue-300 mb-2">Introduced during the French Revolution, based on decimal system and natural constants.</p>
-                          <div className="text-xs text-blue-600 dark:text-blue-400">
+                        <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <h4 className="font-semibold text-orange-500 mb-2">Metric System (1795)</h4>
+                          <p className="text-sm text-white mb-2">Introduced during the French Revolution, based on decimal system and natural constants.</p>
+                          <div className="text-xs text-white">
                             <strong>Key innovation:</strong> 1 meter = 1/10,000,000 of Earth's meridian
                           </div>
                         </div>
-                        <div className="p-4 bg-black rounded-lg border border-green-200 dark:border-green-800">
-                          <h4 className="font-semibold text-green-800 dark:text-green-200 mb-2">International System (1960)</h4>
-                          <p className="text-sm text-green-700 dark:text-green-300 mb-2">SI units established for global scientific and commercial use.</p>
+                        <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <h4 className="font-semibold text-orange-500 mb-2">International System (1960)</h4>
+                          <p className="text-sm text-white mb-2">SI units established for global scientific and commercial use.</p>
                           <div className="text-xs text-green-600 dark:text-green-400">
                             <strong>Current standard:</strong> 7 base units define all measurements
                           </div>
@@ -1102,7 +1102,7 @@ export default function ConversionCalculatorPage() {
               <div className="bg-black border border-border rounded-lg p-6">
                 <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-orange-500">
                   <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                    <Calculator className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                    <Calculator className="h-5 w-5 text-white" />
                   </div>
                   Complete Conversion Formulas & Examples
                 </h2>
@@ -1113,27 +1113,27 @@ export default function ConversionCalculatorPage() {
                       <div className="space-y-4">
                         <h4 className="text-lg font-semibold text-slate-700 dark:text-slate-300">Metric to Imperial</h4>
                         <div className="space-y-3">
-                          <div className="p-4 bg-black rounded-lg border border-green-200 dark:border-green-800">
+                          <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                             <div className="text-sm font-mono text-green-600 dark:text-green-400 mb-2">
                               1 meter = 3.281 feet
                             </div>
-                            <div className="text-xs text-green-700 dark:text-green-300">
+                            <div className="text-xs text-white">
                               Example: 5 meters = 16.405 feet
                             </div>
                           </div>
-                          <div className="p-4 bg-black rounded-lg border border-green-200 dark:border-green-800">
+                          <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                             <div className="text-sm font-mono text-green-600 dark:text-green-400 mb-2">
                               1 kilometer = 0.621 miles
                             </div>
-                            <div className="text-xs text-green-700 dark:text-green-300">
+                            <div className="text-xs text-white">
                               Example: 10 km = 6.21 miles
                             </div>
                           </div>
-                          <div className="p-4 bg-black rounded-lg border border-green-200 dark:border-green-800">
+                          <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                             <div className="text-sm font-mono text-green-600 dark:text-green-400 mb-2">
                               1 centimeter = 0.394 inches
                             </div>
-                            <div className="text-xs text-green-700 dark:text-green-300">
+                            <div className="text-xs text-white">
                               Example: 25 cm = 9.84 inches
                             </div>
                           </div>
@@ -1142,27 +1142,27 @@ export default function ConversionCalculatorPage() {
                       <div className="space-y-4">
                         <h4 className="text-lg font-semibold text-slate-700 dark:text-slate-300">Imperial to Metric</h4>
                         <div className="space-y-3">
-                          <div className="p-4 bg-black rounded-lg border border-blue-200 dark:border-blue-800">
-                            <div className="text-sm font-mono text-blue-600 dark:text-blue-400 mb-2">
+                          <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                            <div className="text-sm font-mono text-white mb-2">
                               1 foot = 0.305 meters
                             </div>
-                            <div className="text-xs text-blue-700 dark:text-blue-300">
+                            <div className="text-xs text-white">
                               Example: 6 feet = 1.83 meters
                             </div>
                           </div>
-                          <div className="p-4 bg-black rounded-lg border border-blue-200 dark:border-blue-800">
-                            <div className="text-sm font-mono text-blue-600 dark:text-blue-400 mb-2">
+                          <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                            <div className="text-sm font-mono text-white mb-2">
                               1 mile = 1.609 kilometers
                             </div>
-                            <div className="text-xs text-blue-700 dark:text-blue-300">
+                            <div className="text-xs text-white">
                               Example: 5 miles = 8.05 km
                             </div>
                           </div>
-                          <div className="p-4 bg-black rounded-lg border border-blue-200 dark:border-blue-800">
-                            <div className="text-sm font-mono text-blue-600 dark:text-blue-400 mb-2">
+                          <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                            <div className="text-sm font-mono text-white mb-2">
                               1 inch = 2.54 centimeters
                             </div>
-                            <div className="text-xs text-blue-700 dark:text-blue-300">
+                            <div className="text-xs text-white">
                               Example: 12 inches = 30.48 cm
                             </div>
                           </div>
@@ -1177,27 +1177,27 @@ export default function ConversionCalculatorPage() {
                       <div className="space-y-4">
                         <h4 className="text-lg font-semibold text-slate-700 dark:text-slate-300">Common Weight Conversions</h4>
                         <div className="space-y-3">
-                          <div className="p-4 bg-black rounded-lg border border-purple-200 dark:border-purple-800">
-                            <div className="text-sm font-mono text-purple-600 dark:text-purple-400 mb-2">
+                          <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                            <div className="text-sm font-mono text-white mb-2">
                               1 kilogram = 2.205 pounds
                             </div>
-                            <div className="text-xs text-purple-700 dark:text-purple-300">
+                            <div className="text-xs text-white">
                               Example: 70 kg = 154.35 pounds
                             </div>
                           </div>
-                          <div className="p-4 bg-black rounded-lg border border-purple-200 dark:border-purple-800">
-                            <div className="text-sm font-mono text-purple-600 dark:text-purple-400 mb-2">
+                          <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                            <div className="text-sm font-mono text-white mb-2">
                               1 pound = 0.454 kilograms
                             </div>
-                            <div className="text-xs text-purple-700 dark:text-purple-300">
+                            <div className="text-xs text-white">
                               Example: 150 pounds = 68.04 kg
                             </div>
                           </div>
-                          <div className="p-4 bg-black rounded-lg border border-purple-200 dark:border-purple-800">
-                            <div className="text-sm font-mono text-purple-600 dark:text-purple-400 mb-2">
+                          <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                            <div className="text-sm font-mono text-white mb-2">
                               1 ounce = 28.35 grams
                             </div>
-                            <div className="text-xs text-purple-700 dark:text-purple-300">
+                            <div className="text-xs text-white">
                               Example: 8 ounces = 226.8 grams
                             </div>
                           </div>
@@ -1210,7 +1210,7 @@ export default function ConversionCalculatorPage() {
                             <div className="text-sm font-mono text-orange-600 dark:text-orange-400 mb-2">
                               1 cup flour = 120 grams
                             </div>
-                            <div className="text-xs text-orange-700 dark:text-orange-300">
+                            <div className="text-xs text-white">
                               Baking measurements
                             </div>
                           </div>
@@ -1218,7 +1218,7 @@ export default function ConversionCalculatorPage() {
                             <div className="text-sm font-mono text-orange-600 dark:text-orange-400 mb-2">
                               1 tablespoon = 15 milliliters
                             </div>
-                            <div className="text-xs text-orange-700 dark:text-orange-300">
+                            <div className="text-xs text-white">
                               Liquid measurements
                             </div>
                           </div>
@@ -1226,7 +1226,7 @@ export default function ConversionCalculatorPage() {
                             <div className="text-sm font-mono text-orange-600 dark:text-orange-400 mb-2">
                               1 teaspoon = 5 milliliters
                             </div>
-                            <div className="text-xs text-orange-700 dark:text-orange-300">
+                            <div className="text-xs text-white">
                               Small measurements
                             </div>
                           </div>
@@ -1240,7 +1240,7 @@ export default function ConversionCalculatorPage() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-4">
                         <h4 className="text-lg font-semibold text-slate-700 dark:text-slate-300">Celsius to Fahrenheit</h4>
-                        <div className="p-4 bg-black rounded-lg border border-red-200 dark:border-red-800">
+                        <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
                           <div className="text-sm font-mono text-red-600 dark:text-red-400 mb-2">
                             °F = (°C × 9/5) + 32
                           </div>
@@ -1265,11 +1265,11 @@ export default function ConversionCalculatorPage() {
                       </div>
                       <div className="space-y-4">
                         <h4 className="text-lg font-semibold text-slate-700 dark:text-slate-300">Fahrenheit to Celsius</h4>
-                        <div className="p-4 bg-black rounded-lg border border-blue-200 dark:border-blue-800">
-                          <div className="text-sm font-mono text-blue-600 dark:text-blue-400 mb-2">
+                        <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <div className="text-sm font-mono text-white mb-2">
                             °C = (°F - 32) × 5/9
                           </div>
-                          <div className="text-xs text-blue-700 dark:text-blue-300 mb-3">
+                          <div className="text-xs text-white mb-3">
                             Example: 86°F = (86 - 32) × 5/9 = 30°C
                           </div>
                           <div className="space-y-2 text-xs">
@@ -1297,19 +1297,19 @@ export default function ConversionCalculatorPage() {
                       <div className="space-y-4">
                         <h4 className="text-lg font-semibold text-slate-700 dark:text-slate-300">Area Conversions</h4>
                         <div className="space-y-3">
-                          <div className="p-4 bg-black rounded-lg border border-indigo-200 dark:border-indigo-800">
-                            <div className="text-sm font-mono text-indigo-600 dark:text-indigo-400 mb-2">
+                          <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                            <div className="text-sm font-mono text-white mb-2">
                               1 square meter = 10.764 square feet
                             </div>
-                            <div className="text-xs text-indigo-700 dark:text-indigo-300">
+                            <div className="text-xs text-green-500">
                               Example: 50 m² = 538.2 ft²
                             </div>
                           </div>
-                          <div className="p-4 bg-black rounded-lg border border-indigo-200 dark:border-indigo-800">
-                            <div className="text-sm font-mono text-indigo-600 dark:text-indigo-400 mb-2">
+                          <div className="p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                            <div className="text-sm font-mono text-white mb-2">
                               1 acre = 4,047 square meters
                             </div>
-                            <div className="text-xs text-indigo-700 dark:text-indigo-300">
+                            <div className="text-xs text-green-500">
                               Example: 2 acres = 8,094 m²
                             </div>
                           </div>
@@ -1344,7 +1344,7 @@ export default function ConversionCalculatorPage() {
               <div className="bg-black border border-border rounded-lg p-6">
                 <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-orange-500">
                   <div className="p-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg">
-                    <BookOpen className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+                    <BookOpen className="h-5 w-5 text-white" />
                   </div>
                   Related Resources & Educational Materials
                 </h2>
@@ -1353,21 +1353,21 @@ export default function ConversionCalculatorPage() {
                     <div className="space-y-4">
                       <h3 className="text-lg font-semibold text-green-500">Official Documentation</h3>
                       <div className="space-y-3">
-                        <div className="flex items-start gap-3 p-3 bg-black rounded-lg border border-blue-200 dark:border-blue-800">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="flex items-start gap-3 p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
                           <div>
-                            <a href="https://www.nist.gov/pml/special-publication-811" className="text-sm font-medium text-blue-800 dark:text-blue-200 hover:underline">
+                            <a href="https://www.nist.gov/pml/special-publication-811" className="text-sm font-medium text-orange-500 hover:underline">
                               NIST Guide for the Use of the International System of Units
                             </a>
-                            <p className="text-xs text-blue-600 dark:text-blue-400 mt-1">
+                            <p className="text-xs text-white mt-1">
                               National Institute of Standards and Technology - Official SI unit definitions and conversion factors
                             </p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-3 p-3 bg-black rounded-lg border border-green-200 dark:border-green-800">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="flex items-start gap-3 p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
                           <div>
-                            <a href="https://www.bipm.org/en/publications/si-brochure/" className="text-sm font-medium text-green-800 dark:text-green-200 hover:underline">
+                            <a href="https://www.bipm.org/en/publications/si-brochure/" className="text-sm font-medium text-orange-500 hover:underline">
                               BIPM - International System of Units (SI) Brochure
                             </a>
                             <p className="text-xs text-green-600 dark:text-green-400 mt-1">
@@ -1375,13 +1375,13 @@ export default function ConversionCalculatorPage() {
                             </p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-3 p-3 bg-black rounded-lg border border-purple-200 dark:border-purple-800">
-                          <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="flex items-start gap-3 p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
                           <div>
-                            <a href="https://www.astm.org/Standards/" className="text-sm font-medium text-purple-800 dark:text-purple-200 hover:underline">
+                            <a href="https://www.astm.org/Standards/" className="text-sm font-medium text-orange-500 hover:underline">
                               ASTM International Standards
                             </a>
-                            <p className="text-xs text-purple-600 dark:text-purple-400 mt-1">
+                            <p className="text-xs text-white mt-1">
                               ASTM International - Official measurement and testing standards for various industries
                             </p>
                           </div>
@@ -1403,7 +1403,7 @@ export default function ConversionCalculatorPage() {
                           </div>
                         </div>
                         <div className="flex items-start gap-3 p-3 bg-black rounded-lg border border-teal-200 dark:border-teal-800">
-                          <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
                           <div>
                             <a href="https://www.mathsisfun.com/measure/unit-conversion-method.html" className="text-sm font-medium text-teal-800 dark:text-teal-200 hover:underline">
                               Math is Fun - Unit Conversion Method
@@ -1413,8 +1413,8 @@ export default function ConversionCalculatorPage() {
                             </p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-3 p-3 bg-black rounded-lg border border-pink-200 dark:border-pink-800">
-                          <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="flex items-start gap-3 p-3 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
                           <div>
                             <a href="https://www.engineeringtoolbox.com/" className="text-sm font-medium text-pink-800 dark:text-pink-200 hover:underline">
                               Engineering Toolbox
