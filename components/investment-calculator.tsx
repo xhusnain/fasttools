@@ -127,12 +127,12 @@ export default function InvestmentCalculator() {
     const length = parseFloat(investmentLength) || 0
 
     // Input validation
-    if (rate < 0 || rate > 50) {
-      alert("Return rate must be between 0% and 50%")
+    if (rate < 0) {
+      alert("Return rate cannot be negative")
       return
     }
-    if (length < 0 || length > 100) {
-      alert("Investment length must be between 0 and 100 years")
+    if (length < 0) {
+      alert("Investment length cannot be negative")
       return
     }
     if (starting < 0 || starting > 10000000) {
@@ -513,24 +513,24 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-black rounded-xl p-2 sm:p-3 md:p-4 w-full overflow-hidden">
       {/* Main Calculator */}
-      <Card>
+      <Card className="bg-black border-slate-700 w-full overflow-hidden">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Calculator className="h-5 w-5 text-blue-500" />
+          <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+            <Calculator className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
             Advanced Investment Calculator
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-4 sm:space-y-6">
           {/* Calculation Type Selection */}
           <div>
-            <Label className="text-base font-semibold mb-3 block">Calculate</Label>
+            <Label className="text-green-500 text-xs sm:text-sm mb-2 block break-words">Calculate</Label>
             
             {/* Mobile Dropdown */}
             <div className="block md:hidden mb-4">
               <Select value={calculationType} onValueChange={setCalculationType}>
-                <SelectTrigger>
+                <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm h-9">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -545,237 +545,257 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
 
             {/* Desktop Tabs */}
             <Tabs value={calculationType} onValueChange={setCalculationType} className="w-full hidden md:block">
-              <TabsList className="grid w-full grid-cols-5">
-                <TabsTrigger value="endAmount">End Amount</TabsTrigger>
-                <TabsTrigger value="returnRate">Return Rate</TabsTrigger>
-                <TabsTrigger value="startingAmount">Starting Amount</TabsTrigger>
-                <TabsTrigger value="additionalContribution">Additional Contribution</TabsTrigger>
-                <TabsTrigger value="investmentLength">Investment Length</TabsTrigger>
+              <TabsList className="grid w-full grid-cols-5 bg-black border border-slate-700">
+                <TabsTrigger value="endAmount" className="text-xs sm:text-sm">End Amount</TabsTrigger>
+                <TabsTrigger value="returnRate" className="text-xs sm:text-sm">Return Rate</TabsTrigger>
+                <TabsTrigger value="startingAmount" className="text-xs sm:text-sm">Starting Amount</TabsTrigger>
+                <TabsTrigger value="additionalContribution" className="text-xs sm:text-sm">Additional Contribution</TabsTrigger>
+                <TabsTrigger value="investmentLength" className="text-xs sm:text-sm">Investment Length</TabsTrigger>
               </TabsList>
             </Tabs>
 
             {/* Mobile/Desktop Input Fields */}
-            <div className="space-y-4 mt-4">
+            <div className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
               {calculationType === "endAmount" && (
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="startingAmount">Starting Amount</Label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="startingAmount" className="text-green-500 text-xs sm:text-sm">Starting Amount</Label>
                     <Input
                       id="startingAmount"
                       type="number"
                       placeholder="20000"
                       value={startingAmount}
                       onChange={(e) => setStartingAmount(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="returnRate">Return Rate (%)</Label>
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="returnRate" className="text-green-500 text-xs sm:text-sm">Return Rate (%)</Label>
                     <Input
                       id="returnRate"
                       type="number"
                       placeholder="6"
                       value={returnRate}
                       onChange={(e) => setReturnRate(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="investmentLength">Investment Length (years)</Label>
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="investmentLength" className="text-green-500 text-xs sm:text-sm">Investment Length (years)</Label>
                     <Input
                       id="investmentLength"
                       type="number"
                       placeholder="10"
                       value={investmentLength}
                       onChange={(e) => setInvestmentLength(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="additionalContribution">Additional Contribution</Label>
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="additionalContribution" className="text-green-500 text-xs sm:text-sm">Additional Contribution</Label>
                     <Input
                       id="additionalContribution"
                       type="number"
                       placeholder="1000"
                       value={additionalContribution}
                       onChange={(e) => setAdditionalContribution(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
                 </div>
               )}
 
               {calculationType === "returnRate" && (
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="endAmount">End Amount</Label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="endAmount" className="text-green-500 text-xs sm:text-sm">End Amount</Label>
                     <Input
                       id="endAmount"
                       type="number"
                       placeholder="100000"
                       value={endAmount}
                       onChange={(e) => setEndAmount(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="startingAmount">Starting Amount</Label>
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="startingAmount" className="text-green-500 text-xs sm:text-sm">Starting Amount</Label>
                     <Input
                       id="startingAmount"
                       type="number"
                       placeholder="20000"
                       value={startingAmount}
                       onChange={(e) => setStartingAmount(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="investmentLength">Investment Length (years)</Label>
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="investmentLength" className="text-green-500 text-xs sm:text-sm">Investment Length (years)</Label>
                     <Input
                       id="investmentLength"
                       type="number"
                       placeholder="10"
                       value={investmentLength}
                       onChange={(e) => setInvestmentLength(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="additionalContribution">Additional Contribution</Label>
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="additionalContribution" className="text-green-500 text-xs sm:text-sm">Additional Contribution</Label>
                     <Input
                       id="additionalContribution"
                       type="number"
                       placeholder="1000"
                       value={additionalContribution}
                       onChange={(e) => setAdditionalContribution(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
                 </div>
               )}
 
               {calculationType === "startingAmount" && (
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="endAmount">End Amount</Label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="endAmount" className="text-green-500 text-xs sm:text-sm">End Amount</Label>
                     <Input
                       id="endAmount"
                       type="number"
                       placeholder="100000"
                       value={endAmount}
                       onChange={(e) => setEndAmount(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="returnRate">Return Rate (%)</Label>
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="returnRate" className="text-green-500 text-xs sm:text-sm">Return Rate (%)</Label>
                     <Input
                       id="returnRate"
                       type="number"
                       placeholder="6"
                       value={returnRate}
                       onChange={(e) => setReturnRate(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="investmentLength">Investment Length (years)</Label>
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="investmentLength" className="text-green-500 text-xs sm:text-sm">Investment Length (years)</Label>
                     <Input
                       id="investmentLength"
                       type="number"
                       placeholder="10"
                       value={investmentLength}
                       onChange={(e) => setInvestmentLength(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="additionalContribution">Additional Contribution</Label>
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="additionalContribution" className="text-green-500 text-xs sm:text-sm">Additional Contribution</Label>
                     <Input
                       id="additionalContribution"
                       type="number"
                       placeholder="1000"
                       value={additionalContribution}
                       onChange={(e) => setAdditionalContribution(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
                 </div>
               )}
 
               {calculationType === "additionalContribution" && (
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="endAmount">End Amount</Label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="endAmount" className="text-green-500 text-xs sm:text-sm">End Amount</Label>
                     <Input
                       id="endAmount"
                       type="number"
                       placeholder="100000"
                       value={endAmount}
                       onChange={(e) => setEndAmount(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="startingAmount">Starting Amount</Label>
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="startingAmount" className="text-green-500 text-xs sm:text-sm">Starting Amount</Label>
                     <Input
                       id="startingAmount"
                       type="number"
                       placeholder="20000"
                       value={startingAmount}
                       onChange={(e) => setStartingAmount(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="returnRate">Return Rate (%)</Label>
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="returnRate" className="text-green-500 text-xs sm:text-sm">Return Rate (%)</Label>
                     <Input
                       id="returnRate"
                       type="number"
                       placeholder="6"
                       value={returnRate}
                       onChange={(e) => setReturnRate(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="investmentLength">Investment Length (years)</Label>
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="investmentLength" className="text-green-500 text-xs sm:text-sm">Investment Length (years)</Label>
                     <Input
                       id="investmentLength"
                       type="number"
                       placeholder="10"
                       value={investmentLength}
                       onChange={(e) => setInvestmentLength(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
                 </div>
               )}
 
               {calculationType === "investmentLength" && (
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="endAmount">End Amount</Label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="endAmount" className="text-green-500 text-xs sm:text-sm">End Amount</Label>
                     <Input
                       id="endAmount"
                       type="number"
                       placeholder="100000"
                       value={endAmount}
                       onChange={(e) => setEndAmount(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="startingAmount">Starting Amount</Label>
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="startingAmount" className="text-green-500 text-xs sm:text-sm">Starting Amount</Label>
                     <Input
                       id="startingAmount"
                       type="number"
                       placeholder="20000"
                       value={startingAmount}
                       onChange={(e) => setStartingAmount(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="returnRate">Return Rate (%)</Label>
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="returnRate" className="text-green-500 text-xs sm:text-sm">Return Rate (%)</Label>
                     <Input
                       id="returnRate"
                       type="number"
                       placeholder="6"
                       value={returnRate}
                       onChange={(e) => setReturnRate(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="additionalContribution">Additional Contribution</Label>
+                  <div className="space-y-1.5 w-full min-w-0">
+                    <Label htmlFor="additionalContribution" className="text-green-500 text-xs sm:text-sm">Additional Contribution</Label>
                     <Input
                       id="additionalContribution"
                       type="number"
                       placeholder="1000"
                       value={additionalContribution}
                       onChange={(e) => setAdditionalContribution(e.target.value)}
+                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
                     />
                   </div>
                 </div>
@@ -784,11 +804,11 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           </div>
 
           {/* Additional Settings */}
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="compoundFrequency">Compound Frequency</Label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <div className="space-y-1.5 w-full min-w-0">
+              <Label htmlFor="compoundFrequency" className="text-green-500 text-xs sm:text-sm">Compound Frequency</Label>
               <Select value={compoundFrequency} onValueChange={setCompoundFrequency}>
-                <SelectTrigger>
+                <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm h-9">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -800,10 +820,10 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                 </SelectContent>
               </Select>
             </div>
-            <div>
-              <Label htmlFor="contributionTiming">Contribution Timing</Label>
+            <div className="space-y-1.5 w-full min-w-0">
+              <Label htmlFor="contributionTiming" className="text-green-500 text-xs sm:text-sm">Contribution Timing</Label>
               <Select value={contributionTiming} onValueChange={setContributionTiming}>
-                <SelectTrigger>
+                <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm h-9">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -814,12 +834,12 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
             </div>
           </div>
 
-          <div className="flex gap-2">
-            <Button onClick={calculateInvestment} className="flex-1">
+          <div className="flex flex-col sm:flex-row gap-2 w-full">
+            <Button onClick={calculateInvestment} className="w-full sm:w-auto text-sm sm:text-base">
               <Calculator className="mr-2 h-4 w-4" />
               Calculate
             </Button>
-            <Button variant="outline" onClick={clearAll}>
+            <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base border-slate-700 bg-black text-slate-200 hover:bg-slate-900">
               Clear All
             </Button>
           </div>
@@ -828,48 +848,48 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
 
       {/* Results Section */}
       {result && (
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {/* Main Results */}
-          <Card>
+          <Card className="bg-black border-slate-700 w-full overflow-hidden">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <DollarSign className="h-5 w-5 text-green-500" />
+              <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+                <DollarSign className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
                 Investment Calculation Results
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">End Amount</Label>
-                  <div className="text-3xl font-bold text-green-600">
+                  <Label className="text-green-500 text-xs sm:text-sm">End Amount</Label>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-green-500">
                     ${result.endAmount.toFixed(2)}
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Starting Amount</Label>
-                  <div className="text-3xl font-bold text-blue-600">
+                  <Label className="text-green-500 text-xs sm:text-sm">Starting Amount</Label>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200">
                     ${result.startingAmount.toFixed(2)}
                   </div>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-4 pt-4 border-t">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-700">
                 <div className="text-center">
-                  <div className="text-sm text-muted-foreground">Return Rate</div>
-                  <div className="text-lg font-semibold text-orange-600">{result.returnRate.toFixed(2)}%</div>
+                  <div className="text-xs sm:text-sm text-slate-300">Return Rate</div>
+                  <div className="text-lg sm:text-xl font-semibold text-orange-500">{result.returnRate.toFixed(2)}%</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-sm text-muted-foreground">Investment Length</div>
-                  <div className="text-lg font-semibold text-purple-600">{result.investmentLength.toFixed(1)} years</div>
+                  <div className="text-xs sm:text-sm text-slate-300">Investment Length</div>
+                  <div className="text-lg sm:text-xl font-semibold text-slate-200">{result.investmentLength.toFixed(1)} years</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-sm text-muted-foreground">Additional Contribution</div>
-                  <div className="text-lg font-semibold text-red-600">${result.additionalContribution.toFixed(2)}</div>
+                  <div className="text-xs sm:text-sm text-slate-300">Additional Contribution</div>
+                  <div className="text-lg sm:text-xl font-semibold text-slate-200">${result.additionalContribution.toFixed(2)}</div>
                 </div>
               </div>
 
-              <div className="flex gap-2 pt-4">
-                <Button onClick={copyResult} variant="outline" size="sm">
+              <div className="flex flex-col sm:flex-row gap-2 pt-4 w-full">
+                <Button onClick={copyResult} variant="outline" size="sm" className="w-full sm:w-auto text-sm sm:text-base border-slate-700 bg-black text-slate-200 hover:bg-slate-900">
                   <Copy className="mr-2 h-4 w-4" />
                   Copy Results
                 </Button>
@@ -878,57 +898,57 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           </Card>
 
           {/* Summary */}
-          <Card>
+          <Card className="bg-black border-slate-700 w-full overflow-hidden">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <BarChart3 className="h-5 w-5 text-purple-500" />
+              <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+                <BarChart3 className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
                 Investment Summary
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                  <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Total Contributions</h3>
-                  <div className="text-2xl font-bold text-blue-600">${result.calculations.totalContributions.toFixed(2)}</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="p-3 sm:p-4 bg-black rounded-lg border border-slate-700">
+                  <h3 className="font-semibold text-green-500 mb-2 text-xs sm:text-sm break-words">Total Contributions</h3>
+                  <div className="text-xl sm:text-2xl font-bold text-slate-200">${result.calculations.totalContributions.toFixed(2)}</div>
                 </div>
-                <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                  <h3 className="font-semibold text-green-800 dark:text-green-200 mb-2">Total Interest</h3>
-                  <div className="text-2xl font-bold text-green-600">${result.calculations.totalInterest.toFixed(2)}</div>
+                <div className="p-3 sm:p-4 bg-black rounded-lg border border-slate-700">
+                  <h3 className="font-semibold text-green-500 mb-2 text-xs sm:text-sm break-words">Total Interest</h3>
+                  <div className="text-xl sm:text-2xl font-bold text-green-500">${result.calculations.totalInterest.toFixed(2)}</div>
                 </div>
-                <div className="p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                  <h3 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">Interest Percentage</h3>
-                  <div className="text-2xl font-bold text-purple-600">{result.calculations.interestPercentage.toFixed(1)}%</div>
+                <div className="p-3 sm:p-4 bg-black rounded-lg border border-slate-700">
+                  <h3 className="font-semibold text-green-500 mb-2 text-xs sm:text-sm break-words">Interest Percentage</h3>
+                  <div className="text-xl sm:text-2xl font-bold text-slate-200">{result.calculations.interestPercentage.toFixed(1)}%</div>
                 </div>
               </div>
             </CardContent>
           </Card>
 
           {/* Accumulation Schedule */}
-          <Card>
+          <Card className="bg-black border-slate-700 w-full overflow-hidden">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Calendar className="h-5 w-5 text-orange-500" />
+              <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+                <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
                 Accumulation Schedule
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="overflow-x-auto">
-                <table className="w-full border-collapse border border-gray-300 dark:border-gray-600">
+                <table className="w-full border-collapse border border-slate-700">
                   <thead>
-                    <tr className="bg-gray-50 dark:bg-gray-800">
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-left">Year</th>
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-right">Deposit</th>
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-right">Interest</th>
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-right">Ending Balance</th>
+                    <tr className="bg-black border border-slate-700">
+                      <th className="border border-slate-700 p-2 sm:p-3 text-left text-green-500 text-xs sm:text-sm">Year</th>
+                      <th className="border border-slate-700 p-2 sm:p-3 text-right text-green-500 text-xs sm:text-sm">Deposit</th>
+                      <th className="border border-slate-700 p-2 sm:p-3 text-right text-green-500 text-xs sm:text-sm">Interest</th>
+                      <th className="border border-slate-700 p-2 sm:p-3 text-right text-green-500 text-xs sm:text-sm">Ending Balance</th>
                     </tr>
                   </thead>
                   <tbody>
                     {result.accumulationSchedule.map((row, index) => (
-                      <tr key={index}>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3">{row.year}</td>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3 text-right">${row.deposit.toFixed(2)}</td>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3 text-right">${row.interest.toFixed(2)}</td>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3 text-right">${row.endingBalance.toFixed(2)}</td>
+                      <tr key={index} className="border border-slate-700">
+                        <td className="border border-slate-700 p-2 sm:p-3 text-slate-200 text-xs sm:text-sm">{row.year}</td>
+                        <td className="border border-slate-700 p-2 sm:p-3 text-right text-slate-200 text-xs sm:text-sm">${row.deposit.toFixed(2)}</td>
+                        <td className="border border-slate-700 p-2 sm:p-3 text-right text-slate-200 text-xs sm:text-sm">${row.interest.toFixed(2)}</td>
+                        <td className="border border-slate-700 p-2 sm:p-3 text-right text-slate-200 text-xs sm:text-sm">${row.endingBalance.toFixed(2)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -938,22 +958,22 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           </Card>
 
           {/* Investment Scenarios */}
-          <Card>
+          <Card className="bg-black border-slate-700 w-full overflow-hidden">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-green-500" />
+              <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+                <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
                 Investment Scenarios
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
                 {result.comparison.scenarios.map((scenario, index) => (
-                  <div key={index} className="flex justify-between items-center p-3 bg-muted rounded-lg">
+                  <div key={index} className="flex justify-between items-center p-3 bg-black border border-slate-700 rounded-lg">
                     <div>
-                      <span className="font-medium">{scenario.scenario}</span>
-                      <p className="text-sm text-muted-foreground">${scenario.endAmount.toFixed(2)}</p>
+                      <span className="font-medium text-slate-200 text-xs sm:text-sm break-words">{scenario.scenario}</span>
+                      <p className="text-xs sm:text-sm text-slate-300 break-words">${scenario.endAmount.toFixed(2)}</p>
                     </div>
-                    <Badge variant={scenario.difference > 0 ? "default" : "destructive"}>
+                    <Badge variant={scenario.difference > 0 ? "default" : "destructive"} className={scenario.difference > 0 ? "bg-green-500/20 text-green-400 border-green-500" : "bg-red-500/20 text-red-400 border-red-500"}>
                       {scenario.difference > 0 ? "+" : ""}${scenario.difference.toFixed(2)}
                     </Badge>
                   </div>
@@ -963,29 +983,29 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           </Card>
 
           {/* Recommendations */}
-          <Card>
+          <Card className="bg-black border-slate-700 w-full overflow-hidden">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Target className="h-5 w-5 text-green-500" />
+              <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+                <Target className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
                 Personalized Recommendations
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-blue-600">Investment Tips</h4>
-                  <ul className="space-y-2 text-sm">
+                  <h4 className="font-semibold mb-3 text-green-500 text-sm sm:text-base break-words">Investment Tips</h4>
+                  <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
                     {result.recommendations.investmentTips.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
                         <span>{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-green-600">Risk Management</h4>
-                  <ul className="space-y-2 text-sm">
+                  <h4 className="font-semibold mb-3 text-green-500 text-sm sm:text-base break-words">Risk Management</h4>
+                  <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
                     {result.recommendations.riskManagement.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -995,11 +1015,11 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-purple-600">Portfolio Strategies</h4>
-                  <ul className="space-y-2 text-sm">
+                  <h4 className="font-semibold mb-3 text-green-500 text-sm sm:text-base break-words">Portfolio Strategies</h4>
+                  <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
                     {result.recommendations.portfolioStrategies.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-purple-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
                         <span>{rec}</span>
                       </li>
                     ))}
@@ -1013,22 +1033,22 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card>
+        <Card className="bg-black border-slate-700 w-full overflow-hidden">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <History className="h-5 w-5 text-gray-500" />
+            <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+              <History className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
               Recent Calculations
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
               {history.map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
-                  <div className="space-y-1">
-                    <div className="font-medium">
+                <div key={index} className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 p-3 bg-black border border-slate-700 rounded-lg">
+                  <div className="space-y-1 min-w-0 flex-1">
+                    <div className="font-medium text-slate-200 text-xs sm:text-sm break-words">
                       ${item.startingAmount.toFixed(0)} → ${item.endAmount.toFixed(0)}
                     </div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-xs sm:text-sm text-slate-300 break-words">
                       {item.returnRate.toFixed(1)}% over {item.investmentLength.toFixed(0)} years
                     </div>
                   </div>
@@ -1036,6 +1056,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
+                    className="text-slate-200 hover:bg-slate-900 hover:text-slate-200 border border-slate-700 w-full sm:w-auto text-xs sm:text-sm"
                   >
                     View Details
                   </Button>
@@ -1047,40 +1068,40 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
       )}
 
       {/* Information Section */}
-      <Card>
+      <Card className="bg-black border-slate-700 w-full overflow-hidden">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Info className="h-5 w-5 text-blue-500" />
+          <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+            <Info className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
             Investment Calculator Features
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+          <div className="p-3 sm:p-4 bg-black border border-slate-700 rounded-lg">
             <div className="flex items-start gap-2">
-              <Info className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
-              <div className="text-sm">
-                <p className="font-medium text-blue-800 dark:text-blue-200 mb-1">
+              <Info className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+              <div className="text-xs sm:text-sm min-w-0">
+                <p className="font-medium text-green-500 mb-1 break-words">
                   Professional Investment Analysis
                 </p>
-                <p className="text-blue-700 dark:text-blue-300">
+                <p className="text-slate-300 break-words">
                   This calculator provides comprehensive investment analysis with multiple calculation modes, compound interest calculations, and personalized investment recommendations for optimal financial planning.
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="text-sm text-muted-foreground space-y-2">
-            <p>
-              <strong>Multiple Calculation Modes:</strong> Calculate end amount, return rate, starting amount, additional contributions, or investment length.
+          <div className="text-xs sm:text-sm text-slate-300 space-y-2">
+            <p className="break-words">
+              <strong className="text-green-500">Multiple Calculation Modes:</strong> Calculate end amount, return rate, starting amount, additional contributions, or investment length.
             </p>
-            <p>
-              <strong>Compound Interest:</strong> Support for various compounding frequencies (annually, quarterly, monthly, daily).
+            <p className="break-words">
+              <strong className="text-green-500">Compound Interest:</strong> Support for various compounding frequencies (annually, quarterly, monthly, daily).
             </p>
-            <p>
-              <strong>Investment Analysis:</strong> Complete accumulation schedules and scenario comparisons.
+            <p className="break-words">
+              <strong className="text-green-500">Investment Analysis:</strong> Complete accumulation schedules and scenario comparisons.
             </p>
-            <p>
-              <strong>Professional Recommendations:</strong> Personalized investment tips and portfolio strategies.
+            <p className="break-words">
+              <strong className="text-green-500">Professional Recommendations:</strong> Personalized investment tips and portfolio strategies.
             </p>
           </div>
         </CardContent>
