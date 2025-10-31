@@ -306,12 +306,12 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Warning Alert */}
       {showWarning && (
-        <Alert className="border-amber-200 bg-amber-50 dark:bg-amber-950/20 dark:border-amber-800">
-          <AlertTriangle className="h-4 w-4 text-amber-600 dark:text-amber-400" />
-          <AlertDescription className="text-amber-800 dark:text-amber-200">
+        <Alert className="border-amber-700 bg-black">
+          <AlertTriangle className="h-3.5 w-3.5 text-amber-400" />
+          <AlertDescription className="text-amber-300 text-xs">
             <strong>Important:</strong> Tax rates and percentages may change or be updated according to your country's latest tax laws. 
             Please verify with your local tax authority for the most accurate and up-to-date information.
           </AlertDescription>
@@ -319,29 +319,29 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
       )}
 
       {/* Main Calculator Card */}
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-xl">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <Calculator className="h-5 w-5 text-primary" />
+      <Card className="shadow-lg border-slate-700 hover:shadow-xl transition-all duration-300 bg-black">
+        <CardHeader className="pb-3">
+          <CardTitle className="flex items-center gap-2 text-lg text-orange-500">
+            <div className="p-1.5 bg-orange-500/10 rounded-lg">
+              <Calculator className="h-4 w-4 text-orange-500" />
             </div>
             Advanced Tax Calculator
           </CardTitle>
-          <CardDescription className="text-base">
+          <CardDescription className="text-sm text-slate-400">
             Calculate income tax for multiple countries with real tax brackets and rates
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-4">
           {/* Country Selection */}
-          <div className="space-y-2">
-            <Label htmlFor="country" className="text-sm font-medium flex items-center gap-2">
-              <div className="p-1 bg-blue-100 dark:bg-blue-900/30 rounded">
-                <Globe className="h-3 w-3 text-blue-600 dark:text-blue-400" />
+          <div className="space-y-1.5">
+            <Label htmlFor="country" className="text-xs font-medium flex items-center gap-1.5 text-green-500">
+              <div className="p-0.5 bg-green-500/10 rounded">
+                <Globe className="h-3 w-3 text-green-500" />
               </div>
               Select Country
             </Label>
             <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-              <SelectTrigger className="h-10 sm:h-12 text-sm sm:text-base">
+              <SelectTrigger className="h-9 text-sm border-slate-700 bg-black text-slate-200">
                 <SelectValue placeholder="Choose your country" />
               </SelectTrigger>
               <SelectContent>
@@ -355,10 +355,10 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
           </div>
 
           {/* Salary Input */}
-          <div className="space-y-2">
-            <Label htmlFor="salary" className="text-sm font-medium flex items-center gap-2">
-              <div className="p-1 bg-green-100 dark:bg-green-900/30 rounded">
-                <DollarSign className="h-3 w-3 text-green-600 dark:text-green-400" />
+          <div className="space-y-1.5">
+            <Label htmlFor="salary" className="text-xs font-medium flex items-center gap-1.5 text-green-500">
+              <div className="p-0.5 bg-green-500/10 rounded">
+                <DollarSign className="h-3 w-3 text-green-500" />
               </div>
               Annual Gross Salary ({countryTaxData[selectedCountry]?.currency})
             </Label>
@@ -368,29 +368,29 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
               value={salary}
               onChange={(e) => setSalary(e.target.value)}
               placeholder="75000"
-              className="h-10 sm:h-12 text-sm sm:text-base px-3 sm:px-4 py-2 sm:py-3 rounded-lg border-2 focus-visible:ring-primary hover:border-primary/50"
+              className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 hover:border-orange-500/50 ring-offset-1"
             />
           </div>
 
           {/* Custom Tax Rate Option */}
-          <div className="space-y-4 p-4 bg-gradient-to-r from-purple-50 to-violet-50 dark:from-purple-950/20 dark:to-violet-950/20 rounded-xl border border-purple-200 dark:border-purple-800">
+          <div className="space-y-3 p-3 bg-black rounded-xl border border-slate-700">
             <div className="flex items-center space-x-2">
               <Checkbox 
                 id="custom-rate" 
                 checked={useCustomRate} 
                 onCheckedChange={(checked) => setUseCustomRate(checked === true)}
               />
-              <Label htmlFor="custom-rate" className="text-sm font-medium flex items-center gap-2">
-                <div className="p-1 bg-purple-100 dark:bg-purple-900/30 rounded">
-                  <Percent className="h-3 w-3 text-purple-600 dark:text-purple-400" />
+              <Label htmlFor="custom-rate" className="text-xs font-medium flex items-center gap-1.5 text-green-500">
+                <div className="p-0.5 bg-green-500/10 rounded">
+                  <Percent className="h-3 w-3 text-green-500" />
                 </div>
                 Use Custom Tax Rate (Override Country Default)
               </Label>
             </div>
             
             {useCustomRate && (
-              <div className="space-y-2">
-                <Label htmlFor="custom-tax-rate" className="text-sm font-medium">
+              <div className="space-y-1.5">
+                <Label htmlFor="custom-tax-rate" className="text-xs font-medium text-green-500">
                   Custom Tax Rate (%)
                 </Label>
                 <Input
@@ -399,9 +399,9 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
                   value={customTaxRate}
                   onChange={(e) => setCustomTaxRate(e.target.value)}
                   placeholder="25"
-                  className="h-10 sm:h-12 text-sm sm:text-base px-3 sm:px-4 py-2 sm:py-3 rounded-lg border-2 focus-visible:ring-primary hover:border-primary/50"
+                  className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 hover:border-orange-500/50 ring-offset-1"
                 />
-                <p className="text-xs text-purple-700 dark:text-purple-300">
+                <p className="text-xs text-orange-300">
                   Enter a flat tax rate percentage (e.g., 25 for 25%)
                 </p>
               </div>
@@ -411,20 +411,18 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
           {/* Calculate Button */}
           <Button
             onClick={calculateTax}
-            className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary"
+            className="w-full h-10 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
             disabled={!salary || isCalculating}
           >
             {isCalculating ? (
               <>
-                <LoadingSpinner size="sm" className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
-                <span className="hidden sm:inline">Calculating Tax...</span>
-                <span className="sm:hidden">Calculating...</span>
+                <LoadingSpinner size="sm" className="mr-1.5 h-3.5 w-3.5" />
+                <span>Calculating Tax...</span>
               </>
             ) : (
               <>
-                <Calculator className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
-                <span className="hidden sm:inline">Calculate Tax</span>
-                <span className="sm:hidden">Calculate</span>
+                <Calculator className="mr-1.5 h-3.5 w-3.5" />
+                <span>Calculate Tax</span>
               </>
             )}
           </Button>
@@ -433,95 +431,95 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
 
       {/* Results */}
       {result && !isCalculating && (
-        <Card className="shadow-lg border-primary/20 animate-fade-in-up bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20">
-          <CardHeader>
-            <CardTitle className="text-xl flex items-center gap-2">
-              <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                <TrendingUp className="h-5 w-5 text-green-600 dark:text-green-400" />
+        <Card className="shadow-lg border-slate-700 animate-fade-in-up bg-black">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-lg flex items-center gap-2 text-orange-500">
+              <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                <TrendingUp className="h-4 w-4 text-orange-500" />
               </div>
               Tax Calculation Results - {result.country}
             </CardTitle>
-            <CardDescription className="text-base">
+            <CardDescription className="text-sm text-slate-400">
               Comprehensive tax breakdown with all deductions
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-4">
             {/* Main Result Display */}
-            <div className="text-center p-6 sm:p-8 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-primary/20">
-              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
+            <div className="text-center p-4 rounded-xl bg-black border border-orange-500/20">
+              <div className="text-2xl font-bold text-orange-500 mb-1">
                 {result.currency} {result.netSalary.toLocaleString()}
               </div>
-              <div className="text-sm sm:text-base text-muted-foreground">
+              <div className="text-xs text-slate-400">
                 Annual Net Salary
               </div>
-              <div className="text-lg font-semibold text-green-600 dark:text-green-400 mt-2">
+              <div className="text-sm font-semibold text-green-400 mt-1">
                 {result.currency} {result.monthlyNet.toLocaleString()} / month
               </div>
             </div>
 
             {/* Tax Breakdown */}
-            <div className="space-y-3 p-4 sm:p-6 bg-slate-50 dark:bg-slate-700 rounded-lg">
-              <div className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-slate-800 dark:text-slate-200 flex items-center gap-2">
-                <BarChart3 className="h-4 w-4" />
+            <div className="space-y-2 p-3 bg-black rounded-lg border border-slate-700">
+              <div className="text-sm font-semibold mb-2 text-green-500 flex items-center gap-2">
+                <BarChart3 className="h-3.5 w-3.5" />
                 Tax Breakdown
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 rounded-lg border border-blue-200 dark:border-blue-800">
-                  <span className="text-sm text-blue-800 dark:text-blue-200">Gross Salary</span>
-                  <span className="font-semibold text-sm text-blue-900 dark:text-blue-100">{result.currency} {result.grossSalary.toLocaleString()}</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <div className="flex justify-between items-center p-2 bg-black rounded-lg border border-blue-700">
+                  <span className="text-xs text-blue-400">Gross Salary</span>
+                  <span className="font-semibold text-xs text-blue-300">{result.currency} {result.grossSalary.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-red-50 to-red-100 dark:from-red-950/30 dark:to-red-900/30 rounded-lg border border-red-200 dark:border-red-800">
-                  <span className="text-sm text-red-800 dark:text-red-200">Income Tax</span>
-                  <span className="font-semibold text-sm text-red-900 dark:text-red-100">-{result.currency} {result.taxAmount.toLocaleString()}</span>
+                <div className="flex justify-between items-center p-2 bg-black rounded-lg border border-red-700">
+                  <span className="text-xs text-red-400">Income Tax</span>
+                  <span className="font-semibold text-xs text-red-300">-{result.currency} {result.taxAmount.toLocaleString()}</span>
                 </div>
                 {result.socialSecurity && (
-                  <div className="flex justify-between items-center p-3 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-950/30 dark:to-orange-900/30 rounded-lg border border-orange-200 dark:border-orange-800">
-                    <span className="text-sm text-orange-800 dark:text-orange-200">Social Security</span>
-                    <span className="font-semibold text-sm text-orange-900 dark:text-orange-100">-{result.currency} {result.socialSecurity.toLocaleString()}</span>
+                  <div className="flex justify-between items-center p-2 bg-black rounded-lg border border-orange-700">
+                    <span className="text-xs text-orange-400">Social Security</span>
+                    <span className="font-semibold text-xs text-orange-300">-{result.currency} {result.socialSecurity.toLocaleString()}</span>
                   </div>
                 )}
                 {result.additionalTaxes && result.additionalTaxes.map((tax, index) => (
-                  <div key={index} className="flex justify-between items-center p-3 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-950/30 dark:to-purple-900/30 rounded-lg border border-purple-200 dark:border-purple-800">
-                    <span className="text-sm text-purple-800 dark:text-purple-200">{tax.name}</span>
-                    <span className="font-semibold text-sm text-purple-900 dark:text-purple-100">-{result.currency} {tax.amount.toLocaleString()}</span>
+                  <div key={index} className="flex justify-between items-center p-2 bg-black rounded-lg border border-purple-700">
+                    <span className="text-xs text-purple-400">{tax.name}</span>
+                    <span className="font-semibold text-xs text-purple-300">-{result.currency} {tax.amount.toLocaleString()}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Tax Rates */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 bg-gradient-to-r from-cyan-50 to-teal-50 dark:from-cyan-950/20 dark:to-teal-950/20 rounded-xl border-2 border-cyan-200 dark:border-cyan-800">
-                <div className="text-sm font-semibold text-cyan-700 dark:text-cyan-300 mb-2 flex items-center gap-2">
-                  <Target className="h-4 w-4" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="p-3 bg-black rounded-xl border border-cyan-700">
+                <div className="text-xs font-semibold text-green-500 mb-1 flex items-center gap-1.5">
+                  <Target className="h-3.5 w-3.5" />
                   Effective Tax Rate
                 </div>
-                <div className="text-2xl font-bold text-cyan-900 dark:text-cyan-100">
+                <div className="text-xl font-bold text-cyan-300">
                   {result.effectiveTaxRate}%
                 </div>
               </div>
-              <div className="p-4 bg-gradient-to-r from-pink-50 to-rose-50 dark:from-pink-950/20 dark:to-rose-950/20 rounded-xl border-2 border-pink-200 dark:border-pink-800">
-                <div className="text-sm font-semibold text-pink-700 dark:text-pink-300 mb-2 flex items-center gap-2">
-                  <TrendingUp className="h-4 w-4" />
+              <div className="p-3 bg-black rounded-xl border border-orange-700">
+                <div className="text-xs font-semibold text-green-500 mb-1 flex items-center gap-1.5">
+                  <TrendingUp className="h-3.5 w-3.5" />
                   Marginal Tax Rate
                 </div>
-                <div className="text-2xl font-bold text-pink-900 dark:text-pink-100">
+                <div className="text-xl font-bold text-orange-300">
                   {result.marginalTaxRate}%
                 </div>
               </div>
             </div>
 
             {/* Tax Bracket Breakdown */}
-            <div className="p-4 sm:p-6 bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-950/20 dark:to-blue-950/20 rounded-xl border-2 border-indigo-200 dark:border-indigo-800">
-              <div className="text-sm sm:text-base font-semibold text-indigo-700 dark:text-indigo-300 mb-3 flex items-center gap-2">
-                <PieChart className="h-4 w-4" />
+            <div className="p-3 bg-black rounded-xl border border-slate-700">
+              <div className="text-xs font-semibold text-green-500 mb-2 flex items-center gap-1.5">
+                <PieChart className="h-3.5 w-3.5" />
                 Tax Bracket Breakdown
               </div>
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 {result.taxBreakdown.map((bracket, index) => (
-                  <div key={index} className="flex justify-between items-center p-2 bg-white/50 dark:bg-slate-800/50 rounded border border-indigo-200 dark:border-indigo-700">
-                    <span className="text-xs sm:text-sm text-indigo-600 dark:text-indigo-400">{bracket.bracket}</span>
-                    <span className="text-xs sm:text-sm font-semibold text-indigo-800 dark:text-indigo-200">
+                  <div key={index} className="flex justify-between items-center p-2 bg-black rounded border border-slate-700">
+                    <span className="text-xs text-slate-400">{bracket.bracket}</span>
+                    <span className="text-xs font-semibold text-slate-300">
                       {result.currency} {bracket.amount.toLocaleString()} ({bracket.rate}%)
                     </span>
                   </div>
@@ -530,22 +528,20 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <div className="flex flex-col sm:flex-row gap-2">
               <Button
                 onClick={copyResult}
-                className="flex-1 h-10 sm:h-12 text-sm sm:text-base font-semibold transition-all duration-300 border-2 hover:bg-green-100 dark:hover:bg-green-900/30 border-green-200 dark:border-green-700 text-green-700 dark:text-green-300"
+                className="flex-1 h-9 text-xs font-medium transition-all duration-300 border border-green-700 hover:bg-slate-800 text-green-300 bg-black"
               >
                 {copied ? (
                   <>
-                    <Check className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
-                    <span className="hidden sm:inline">Copied!</span>
-                    <span className="sm:hidden">Copied!</span>
+                    <Check className="mr-1.5 h-3.5 w-3.5" />
+                    <span>Copied!</span>
                   </>
                 ) : (
                   <>
-                    <Copy className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
-                    <span className="hidden sm:inline">Copy Result</span>
-                    <span className="sm:hidden">Copy</span>
+                    <Copy className="mr-1.5 h-3.5 w-3.5" />
+                    <span>Copy Result</span>
                   </>
                 )}
               </Button>
