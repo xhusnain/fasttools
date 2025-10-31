@@ -223,50 +223,38 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Input Section */}
-      <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 border-blue-200 dark:border-blue-800">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-blue-800 dark:text-blue-200">
-            <Calculator className="h-5 w-5 text-blue-600" />
+      <Card className="bg-black border-slate-700">
+        <CardHeader className="pb-2 px-3 sm:px-6">
+          <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg">
+            <Calculator className="h-4 w-4 text-orange-500" />
             Standard Deviation Calculator
           </CardTitle>
-          <CardDescription className="text-blue-700 dark:text-blue-300">
-            Calculate standard deviation, variance, mean, and comprehensive statistical analysis. 
-            Online standard deviation calculator for data sets, sample and population standard deviation, 
-            standard deviation formula calculator with steps, standard deviation calculator for grouped data, 
-            ungrouped data, frequency distribution, normal distribution, binomial distribution, 
-            confidence interval, margin of error, z-score, t-score, ANOVA, regression, correlation, 
-            coefficient of variation, skewness, kurtosis, percentiles, quartiles, hypothesis testing, 
-            p-value, effect size, power analysis, sample variance, population variance, standard error, 
-            variance analysis, statistics calculator, probability calculator, data analysis tool.
+          <CardDescription className="text-slate-400 text-xs">
+            Calculate standard deviation, variance, mean, and comprehensive statistical analysis.
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="data-input">Data Points</Label>
+        <CardContent className="space-y-3 px-3 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-3">
+            <div className="space-y-1">
+              <Label htmlFor="data-input" className="text-[11px] font-medium text-green-500">Data Points</Label>
               <Input
                 id="data-input"
-                placeholder="Enter numbers separated by commas (e.g., 10, 12, 23, 16)"
+                placeholder="10, 12, 23, 16"
                 value={inputData}
                 onChange={(e) => setInputData(e.target.value)}
-                className="font-mono"
+                className="font-mono h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
               />
-              <p className="text-sm text-muted-foreground">
-                Separate numbers with commas, spaces, or new lines. Supports grouped data, 
-                ungrouped data, frequency distribution, test scores, stock prices, investment returns, 
-                scientific data, research data, survey data, experimental data, financial data, 
-                business data, medical data, engineering data, social science data, educational data, 
-                psychological data, environmental data, quality control data, process data, 
-                performance data, marketing data, sales data, customer data, analytics data.
+              <p className="text-[10px] text-slate-400">
+                Input values with commas, spaces, or line breaks.
               </p>
             </div>
             
-            <div className="space-y-2">
-              <Label htmlFor="calculation-mode">Calculation Mode</Label>
+            <div className="space-y-1">
+              <Label htmlFor="calculation-mode" className="text-[11px] font-medium text-green-500">Calculation Mode</Label>
               <Select value={calculationMode} onValueChange={(value: "population" | "sample") => setCalculationMode(value)}>
-                <SelectTrigger>
+                <SelectTrigger className="h-7 text-xs border-slate-700 bg-black text-slate-200">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -277,11 +265,11 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="confidence-level">Confidence Level</Label>
+          <div className="grid md:grid-cols-2 gap-3">
+            <div className="space-y-1">
+              <Label htmlFor="confidence-level" className="text-[11px] font-medium text-green-500">Confidence Level</Label>
               <Select value={confidenceLevel.toString()} onValueChange={(value) => setConfidenceLevel(parseInt(value))}>
-                <SelectTrigger>
+                <SelectTrigger className="h-7 text-xs border-slate-700 bg-black text-slate-200">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -293,11 +281,11 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
             </div>
 
             <div className="flex items-end gap-2">
-              <Button onClick={handleLoadExample} variant="outline" size="sm">
-                Load Example
+              <Button onClick={handleLoadExample} variant="outline" size="sm" className="h-7 text-xs border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+                Example
               </Button>
-              <Button onClick={handleClear} variant="outline" size="sm">
-                <RotateCcw className="h-4 w-4 mr-1" />
+              <Button onClick={handleClear} variant="outline" size="sm" className="h-7 text-xs border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+                <RotateCcw className="h-3 w-3 mr-1" />
                 Clear
               </Button>
             </div>
@@ -307,31 +295,31 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
             <Button 
               onClick={handleCalculate} 
               disabled={dataPoints.length < 2 || isCalculating}
-              className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg"
+              className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
             >
               {isCalculating ? (
                 <>
-                  <LoadingSpinner className="mr-2" />
+                  <LoadingSpinner className="mr-1 h-3 w-3" />
                   Calculating...
                 </>
               ) : (
                 <>
-                  <Calculator className="h-4 w-4 mr-2" />
-                  Calculate Statistics
+                  <Calculator className="h-3 w-3 mr-1" />
+                  Calculate
                 </>
               )}
             </Button>
           </div>
 
           {dataPoints.length > 0 && (
-            <div className="mt-4 p-4 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 rounded-lg border border-green-200 dark:border-green-700">
-              <div className="flex items-center gap-2 mb-2">
-                <Check className="h-4 w-4 text-green-600" />
-                <p className="text-sm font-medium text-green-800 dark:text-green-200">
+            <div className="mt-3 p-3 bg-black rounded-lg border border-slate-700">
+              <div className="flex items-center gap-2 mb-1">
+                <Check className="h-3.5 w-3.5 text-green-500" />
+                <p className="text-xs font-medium text-green-500">
                   Data Points: {dataPoints.length}
                 </p>
               </div>
-              <p className="text-xs text-green-600 dark:text-green-300">
+              <p className="text-[10px] text-slate-400">
                 {dataPoints.slice(0, 10).join(", ")}{dataPoints.length > 10 ? "..." : ""}
               </p>
             </div>
@@ -343,50 +331,50 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
       {result && (
         <div className="space-y-6">
           {/* Quick Stats */}
-          <Card className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 border-purple-200 dark:border-purple-800">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-purple-800 dark:text-purple-200">
-                <BarChart3 className="h-5 w-5 text-purple-600" />
+          <Card className="bg-black border-slate-700">
+            <CardHeader className="pb-2 px-3 sm:px-6">
+              <CardTitle className="flex items-center gap-2 text-orange-500 text-base">
+                <BarChart3 className="h-4 w-4 text-orange-500" />
                 Quick Statistics
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="text-center p-4 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 rounded-lg border border-green-200 dark:border-green-700">
+                <div className="text-center p-4 bg-black rounded-lg border border-slate-700">
                   <div className="flex justify-center mb-2">
                     <Target className="h-6 w-6 text-green-600" />
                   </div>
-                  <p className="text-2xl font-bold text-green-600 dark:text-green-400">
+                  <p className="text-lg sm:text-xl font-bold text-orange-400">
                     {result.mean.toFixed(2)}
                   </p>
-                  <p className="text-sm text-green-700 dark:text-green-300">Mean</p>
+                  <p className="text-xs text-green-500">Mean</p>
                 </div>
-                <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20 rounded-lg border border-blue-200 dark:border-blue-700">
+                <div className="text-center p-4 bg-black rounded-lg border border-slate-700">
                   <div className="flex justify-center mb-2">
                     <BarChart3 className="h-6 w-6 text-blue-600" />
                   </div>
-                  <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                  <p className="text-lg sm:text-xl font-bold text-orange-400">
                     {result.standardDeviation.toFixed(2)}
                   </p>
-                  <p className="text-sm text-blue-700 dark:text-blue-300">Std Dev</p>
+                  <p className="text-xs text-green-500">Std Dev</p>
                 </div>
-                <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 rounded-lg border border-purple-200 dark:border-purple-700">
+                <div className="text-center p-4 bg-black rounded-lg border border-slate-700">
                   <div className="flex justify-center mb-2">
                     <TrendingUp className="h-6 w-6 text-purple-600" />
                   </div>
-                  <p className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                  <p className="text-lg sm:text-xl font-bold text-orange-400">
                     {result.variance.toFixed(2)}
                   </p>
-                  <p className="text-sm text-purple-700 dark:text-purple-300">Variance</p>
+                  <p className="text-xs text-green-500">Variance</p>
                 </div>
-                <div className="text-center p-4 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20 rounded-lg border border-orange-200 dark:border-orange-700">
+                <div className="text-center p-4 bg-black rounded-lg border border-slate-700">
                   <div className="flex justify-center mb-2">
                     <Zap className="h-6 w-6 text-orange-600" />
                   </div>
-                  <p className="text-2xl font-bold text-orange-600 dark:text-orange-400">
+                  <p className="text-lg sm:text-xl font-bold text-orange-400">
                     {result.range.toFixed(2)}
                   </p>
-                  <p className="text-sm text-orange-700 dark:text-orange-300">Range</p>
+                  <p className="text-xs text-green-500">Range</p>
                 </div>
               </div>
             </CardContent>
@@ -422,9 +410,9 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
             </TabsList>
 
             <TabsContent value="basic" className="space-y-4">
-              <Card className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border-green-200 dark:border-green-800">
+              <Card className="bg-black border-slate-700">
                 <CardHeader>
-                  <CardTitle className="text-green-800 dark:text-green-200">Basic Statistics</CardTitle>
+                  <CardTitle className="text-orange-500 text-base">Basic Statistics</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="grid md:grid-cols-2 gap-4">
@@ -492,9 +480,9 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
             </TabsContent>
 
             <TabsContent value="advanced" className="space-y-4">
-              <Card className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20 border-orange-200 dark:border-orange-800">
+              <Card className="bg-black border-slate-700">
                 <CardHeader>
-                  <CardTitle className="text-orange-800 dark:text-orange-200">Advanced Statistics</CardTitle>
+                  <CardTitle className="text-orange-500 text-base">Advanced Statistics</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="grid md:grid-cols-2 gap-4">
@@ -544,9 +532,9 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
             </TabsContent>
 
             <TabsContent value="distribution" className="space-y-4">
-              <Card className="bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-950/20 dark:to-blue-950/20 border-indigo-200 dark:border-indigo-800">
+              <Card className="bg-black border-slate-700">
                 <CardHeader>
-                  <CardTitle className="text-indigo-800 dark:text-indigo-200">Distribution Analysis</CardTitle>
+                  <CardTitle className="text-orange-500 text-base">Distribution Analysis</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-4">
@@ -611,9 +599,9 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
             </TabsContent>
 
             <TabsContent value="confidence" className="space-y-4">
-              <Card className="bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-950/20 dark:to-cyan-950/20 border-teal-200 dark:border-teal-800">
+              <Card className="bg-black border-slate-700">
                 <CardHeader>
-                  <CardTitle className="text-teal-800 dark:text-teal-200">Confidence Interval</CardTitle>
+                  <CardTitle className="text-orange-500 text-base">Confidence Interval</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-3">
@@ -648,7 +636,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
           </Tabs>
 
           {/* Export and Actions */}
-          <Card className="bg-gradient-to-br from-gray-50 to-slate-50 dark:from-gray-950/20 dark:to-slate-950/20 border-gray-200 dark:border-gray-800">
+          <Card className="bg-black border-slate-700">
             <CardContent className="pt-6">
               <div className="flex flex-wrap gap-2">
                 <Button onClick={handleExportResults} variant="outline">
@@ -667,10 +655,10 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card className="bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-950/20 dark:to-purple-950/20 border-violet-200 dark:border-violet-800">
+        <Card className="bg-black border-slate-700">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-violet-800 dark:text-violet-200">
-              <Brain className="h-5 w-5 text-violet-600" />
+              <CardTitle className="flex items-center gap-2 text-orange-500 text-base">
+              <Brain className="h-4 w-4 text-orange-500" />
               Calculation History
             </CardTitle>
           </CardHeader>
