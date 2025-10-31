@@ -424,15 +424,15 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
         </CardHeader>
         <CardContent className="space-y-3 px-3 sm:px-6">
           {/* Main Display */}
-          <div className="bg-slate-900 border border-slate-700 rounded-lg p-3 text-right">
-            <div className="text-xl sm:text-2xl font-mono font-bold min-h-[2.5rem] break-all text-orange-400">
+          <div className="bg-slate-900 border border-slate-700 rounded-lg p-3 sm:p-3 text-right">
+            <div className="text-2xl sm:text-xl md:text-2xl font-mono font-bold min-h-[3rem] sm:min-h-[2.5rem] break-all text-orange-400">
               {formatDisplay(display)}
             </div>
-            <div className="text-xs text-slate-400 mt-1">
+            <div className="text-sm sm:text-xs text-slate-400 mt-1">
               {operation && previousValue !== null && `${previousValue} ${operation}`}
             </div>
-            <div className="text-[10px] text-green-500 mt-2 flex items-center justify-end gap-1">
-              <svg className="h-2.5 w-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="text-xs sm:text-[10px] text-green-500 mt-2 flex items-center justify-end gap-1">
+              <svg className="h-3 w-3 sm:h-2.5 sm:w-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
               </svg>
               Keyboard ready
@@ -440,19 +440,19 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
           </div>
 
           {/* Memory Controls */}
-          <div className="flex justify-between items-center">
-            <div className="text-xs font-medium text-slate-400">Memory: {memory}</div>
-            <div className="flex gap-1.5">
-              <Button size="sm" variant="outline" onClick={() => handleMemory("M+")} className="text-[10px] h-7 px-2 border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+          <div className="flex justify-between items-center flex-wrap gap-2">
+            <div className="text-sm sm:text-xs font-medium text-slate-400">Memory: {memory}</div>
+            <div className="flex gap-2 sm:gap-1.5">
+              <Button size="sm" variant="outline" onClick={() => handleMemory("M+")} className="text-xs sm:text-[10px] h-8 sm:h-7 px-3 sm:px-2 border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 M+
               </Button>
-              <Button size="sm" variant="outline" onClick={() => handleMemory("M-")} className="text-[10px] h-7 px-2 border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button size="sm" variant="outline" onClick={() => handleMemory("M-")} className="text-xs sm:text-[10px] h-8 sm:h-7 px-3 sm:px-2 border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 M-
               </Button>
-              <Button size="sm" variant="outline" onClick={() => handleMemory("MR")} className="text-[10px] h-7 px-2 border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button size="sm" variant="outline" onClick={() => handleMemory("MR")} className="text-xs sm:text-[10px] h-8 sm:h-7 px-3 sm:px-2 border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 MR
               </Button>
-              <Button size="sm" variant="outline" onClick={() => handleMemory("MC")} className="text-[10px] h-7 px-2 border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button size="sm" variant="outline" onClick={() => handleMemory("MC")} className="text-xs sm:text-[10px] h-8 sm:h-7 px-3 sm:px-2 border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 MC
               </Button>
             </div>
@@ -462,288 +462,288 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
 
       {/* Calculator Grid */}
       <Card className="bg-black border-slate-700">
-        <CardContent className="p-3 sm:p-4">
+        <CardContent className="p-4 sm:p-3 md:p-4">
           <div className="space-y-3">
             {/* Mode Indicators */}
-            <div className="flex justify-between items-center text-xs">
+            <div className="flex justify-between items-center flex-wrap gap-2 text-sm sm:text-xs">
               <div className="flex gap-2">
-                <Badge variant={angleMode === 'deg' ? 'default' : 'secondary'} className="text-[10px] h-5 bg-orange-500/10 text-orange-400 border-orange-500/20">
+                <Badge variant={angleMode === 'deg' ? 'default' : 'secondary'} className="text-xs sm:text-[10px] h-6 sm:h-5 bg-orange-500/10 text-orange-400 border-orange-500/20 px-2 sm:px-1.5">
                   {angleMode}
                 </Badge>
-                <Badge variant="outline" className="text-[10px] h-5 border-slate-700 bg-slate-900 text-slate-400">
+                <Badge variant="outline" className="text-xs sm:text-[10px] h-6 sm:h-5 border-slate-700 bg-slate-900 text-slate-400 px-2 sm:px-1.5">
                   Data: {dataSet.length}
                 </Badge>
               </div>
-              <div className="text-slate-400 text-xs">
+              <div className="text-slate-400 text-sm sm:text-xs">
                 Memory: {memory.toFixed(2)}
               </div>
             </div>
 
             {/* Scientific Functions Grid - Standard Calculator Layout */}
-            <div className="grid grid-cols-12 gap-2 text-xs">
+            <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-1.5 sm:gap-2 text-xs">
               {/* Row 1 - Scientific Functions Row 1 */}
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sin")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sin")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 sin
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cos")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cos")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 cos
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tan")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tan")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 tan
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("ln")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("ln")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 ln
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("log")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("log")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 log
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("eˣ")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("eˣ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 eˣ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("10ˣ")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("10ˣ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 10ˣ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x²")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x²")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 x²
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x³")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x³")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 x³
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("√")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("√")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 √x
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("∛")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("∛")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 ∛x
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("xy")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("xy")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 xʸ
               </Button>
 
               {/* Row 2 - Scientific Functions Row 2 */}
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sin⁻¹")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sin⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 sin⁻¹
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cos⁻¹")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cos⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 cos⁻¹
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tan⁻¹")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tan⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 tan⁻¹
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("log₂")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("log₂")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 log₂
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("log")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("log")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 logₓ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("y√x")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("y√x")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 ʸ√x
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("n!")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("n!")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 n!
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("nCr")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("nCr")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 nCr
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("nPr")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("nPr")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 nPr
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("Γ")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("Γ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 Γ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("erf")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("erf")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 erf
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("erfc")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("erfc")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 erfc
               </Button>
 
               {/* Row 3 - Scientific Functions Row 3 */}
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sinh")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sinh")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 sinh
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cosh")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cosh")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 cosh
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tanh")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tanh")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 tanh
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sinh⁻¹")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sinh⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 sinh⁻¹
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cosh⁻¹")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cosh⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 cosh⁻¹
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tanh⁻¹")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tanh⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 tanh⁻¹
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("DATA")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("DATA")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 DATA
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("mean")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("mean")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 mean
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("std")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("std")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 std
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("var")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("var")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 var
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("SHOW_DATA")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("SHOW_DATA")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 Show
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("CLR_DATA")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("CLR_DATA")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 Clear
               </Button>
 
               {/* Row 4 - Constants & Special Functions */}
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("π")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("π")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 π
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("e")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("e")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 e
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("φ")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("φ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 φ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("1/x")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("1/x")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 1/x
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("±")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("±")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 ±
               </Button>
-              <Button variant="outline" size="sm" onClick={() => setAngleMode(angleMode === 'deg' ? 'rad' : 'deg')} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => setAngleMode(angleMode === 'deg' ? 'rad' : 'deg')} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 Deg/Rad
               </Button>
-              <Button variant="outline" size="sm" onClick={() => setDisplay(display + "(")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => setDisplay(display + "(")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 (
               </Button>
-              <Button variant="outline" size="sm" onClick={() => setDisplay(display + ")")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => setDisplay(display + ")")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 )
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("Ans")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("Ans")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 Ans
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("RND")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("RND")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 RND
               </Button>
-              <Button variant="outline" size="sm" onClick={() => setDisplay(display + "e")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => setDisplay(display + "e")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 EXP
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("%")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("%")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 %
               </Button>
 
               {/* Row 5 - Number Pad: 7, 8, 9 + Operations */}
-              <Button variant="outline" size="sm" onClick={() => handleNumber("7")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("7")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 7
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleNumber("8")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("8")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 8
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleNumber("9")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("9")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 9
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("+")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("+")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 +
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("-")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("-")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 -
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("×")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("×")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 ×
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("÷")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("÷")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 ÷
               </Button>
-              <Button variant="outline" size="sm" onClick={handleBackspace} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={handleBackspace} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 ⌫
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sin")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sin")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 sin
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cos")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cos")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 cos
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tan")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tan")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 tan
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("ln")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("ln")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 ln
               </Button>
 
               {/* Row 6 - Number Pad: 4, 5, 6 + Functions */}
-              <Button variant="outline" size="sm" onClick={() => handleNumber("4")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("4")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 4
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleNumber("5")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("5")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 5
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleNumber("6")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("6")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 6
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("log")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("log")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 log
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("eˣ")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("eˣ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 eˣ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("10ˣ")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("10ˣ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 10ˣ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x²")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x²")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 x²
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x³")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x³")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 x³
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("√")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("√")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 √x
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("∛")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("∛")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 ∛x
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("xy")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("xy")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 xʸ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("y√x")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("y√x")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 ʸ√x
               </Button>
 
               {/* Row 7 - Number Pad: 1, 2, 3 + Bottom Row */}
-              <Button variant="outline" size="sm" onClick={() => handleNumber("1")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("1")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 1
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleNumber("2")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("2")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 2
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleNumber("3")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("3")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 3
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleNumber("0")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("0")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 0
               </Button>
-              <Button variant="outline" size="sm" onClick={handleDecimal} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={handleDecimal} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 .
               </Button>
-              <Button variant="destructive" size="sm" onClick={handleClear} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden bg-red-600 hover:bg-red-700 text-white border-red-700">
+              <Button variant="destructive" size="sm" onClick={handleClear} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap bg-red-600 hover:bg-red-700 text-white border-red-700">
                 AC
               </Button>
-              <Button variant="default" size="sm" onClick={handleEquals} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-orange-700">
+              <Button variant="default" size="sm" onClick={handleEquals} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-orange-700">
                 =
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("π")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("π")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 π
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("e")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("e")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 e
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("φ")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("φ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 φ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("1/x")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("1/x")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 1/x
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("±")} className="h-9 text-[11px] px-1.5 break-words whitespace-nowrap overflow-hidden border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("±")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
                 ±
               </Button>
             </div>
