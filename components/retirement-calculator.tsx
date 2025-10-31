@@ -426,7 +426,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
     <div className="space-y-6">
       {/* Main Calculator */}
       <Card>
-        <CardHeader>
+        <CardHeader className="pb-8">
           <CardTitle className="flex items-center gap-2">
             <Calculator className="h-5 w-5 text-blue-500" />
             Advanced Retirement Calculator
@@ -447,7 +447,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
 
           {/* Input Fields */}
           <div className="grid md:grid-cols-2 gap-4">
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="currentAge">Current Age</Label>
               <Input
                 id="currentAge"
@@ -457,7 +457,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                 onChange={(e) => setCurrentAge(e.target.value)}
               />
             </div>
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="retirementAge">Retirement Age</Label>
               <Input
                 id="retirementAge"
@@ -470,7 +470,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="lifeExpectancy">Life Expectancy</Label>
               <Input
                 id="lifeExpectancy"
@@ -480,7 +480,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                 onChange={(e) => setLifeExpectancy(e.target.value)}
               />
             </div>
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="currentIncome">Current Income</Label>
               <Input
                 id="currentIncome"
@@ -493,7 +493,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="incomeIncrease">Income Increase (%/year)</Label>
               <Input
                 id="incomeIncrease"
@@ -503,7 +503,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                 onChange={(e) => setIncomeIncrease(e.target.value)}
               />
             </div>
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="retirementIncomeNeeded">Income Needed After Retirement (%)</Label>
               <Input
                 id="retirementIncomeNeeded"
@@ -516,7 +516,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="investmentReturn">Investment Return (%/year)</Label>
               <Input
                 id="investmentReturn"
@@ -526,7 +526,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                 onChange={(e) => setInvestmentReturn(e.target.value)}
               />
             </div>
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="inflationRate">Inflation Rate (%/year)</Label>
               <Input
                 id="inflationRate"
@@ -539,7 +539,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="otherIncome">Other Income After Retirement</Label>
               <Input
                 id="otherIncome"
@@ -549,7 +549,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
                 onChange={(e) => setOtherIncome(e.target.value)}
               />
             </div>
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="currentSavings">Current Retirement Savings</Label>
               <Input
                 id="currentSavings"
@@ -563,7 +563,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
 
           {calculationType === "howMuchToSave" && (
             <div className="grid md:grid-cols-2 gap-4">
-              <div>
+              <div className="space-y-2">
                 <Label htmlFor="futureSavings">Future Savings (% of income)</Label>
                 <Input
                   id="futureSavings"
@@ -578,7 +578,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
 
           {calculationType === "howMuchCanWithdraw" && (
             <div className="grid md:grid-cols-2 gap-4">
-              <div>
+              <div className="space-y-2">
                 <Label htmlFor="monthlyContribution">Monthly Contribution</Label>
                 <Input
                   id="monthlyContribution"
@@ -593,7 +593,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
 
           {calculationType === "howLongWillLast" && (
             <div className="grid md:grid-cols-2 gap-4">
-              <div>
+              <div className="space-y-2">
                 <Label htmlFor="monthlyWithdrawal">Monthly Withdrawal</Label>
                 <Input
                   id="monthlyWithdrawal"
