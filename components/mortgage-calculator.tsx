@@ -406,7 +406,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
     <div className="space-y-6">
       {/* Main Calculator */}
       <Card>
-        <CardHeader>
+        <CardHeader className="pb-8">
           <CardTitle className="flex items-center gap-2">
             <Calculator className="h-5 w-5 text-blue-500" />
             Advanced Mortgage Calculator
@@ -417,7 +417,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           <div>
             <Label className="text-lg font-semibold mb-4 block">Basic Loan Information</Label>
             <div className="grid md:grid-cols-2 gap-4">
-              <div>
+              <div className="space-y-2">
                 <Label htmlFor="homePrice">Home Price</Label>
                 <Input
                   id="homePrice"
@@ -427,7 +427,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   onChange={(e) => setHomePrice(e.target.value)}
                 />
               </div>
-              <div>
+              <div className="space-y-2">
                 <Label htmlFor="downPayment">Down Payment (%)</Label>
                 <Input
                   id="downPayment"
@@ -444,7 +444,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           <div>
             <Label className="text-lg font-semibold mb-4 block">Loan Terms</Label>
             <div className="grid md:grid-cols-3 gap-4">
-              <div>
+              <div className="space-y-2">
                 <Label htmlFor="loanTerm">Loan Term (years)</Label>
                 <Input
                   id="loanTerm"
@@ -454,7 +454,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   onChange={(e) => setLoanTerm(e.target.value)}
                 />
               </div>
-              <div>
+              <div className="space-y-2">
                 <Label htmlFor="interestRate">Interest Rate (%)</Label>
                 <Input
                   id="interestRate"
@@ -464,7 +464,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   onChange={(e) => setInterestRate(e.target.value)}
                 />
               </div>
-              <div>
+              <div className="space-y-2">
                 <Label htmlFor="startDate">Start Date</Label>
                 <Input
                   id="startDate"
@@ -480,7 +480,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           <div>
             <Label className="text-lg font-semibold mb-4 block">Annual Tax & Costs</Label>
             <div className="grid md:grid-cols-2 gap-4">
-              <div>
+              <div className="space-y-2">
                 <Label htmlFor="propertyTax">Property Taxes (%)</Label>
                 <Input
                   id="propertyTax"
@@ -490,7 +490,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   onChange={(e) => setPropertyTax(e.target.value)}
                 />
               </div>
-              <div>
+              <div className="space-y-2">
                 <Label htmlFor="homeInsurance">Home Insurance ($)</Label>
                 <Input
                   id="homeInsurance"
@@ -500,7 +500,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   onChange={(e) => setHomeInsurance(e.target.value)}
                 />
               </div>
-              <div>
+              <div className="space-y-2">
                 <Label htmlFor="pmiInsurance">PMI Insurance ($)</Label>
                 <Input
                   id="pmiInsurance"
@@ -510,7 +510,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   onChange={(e) => setPmiInsurance(e.target.value)}
                 />
               </div>
-              <div>
+              <div className="space-y-2">
                 <Label htmlFor="hoaFee">HOA Fee ($)</Label>
                 <Input
                   id="hoaFee"
@@ -520,7 +520,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   onChange={(e) => setHoaFee(e.target.value)}
                 />
               </div>
-              <div>
+              <div className="space-y-2">
                 <Label htmlFor="otherCosts">Other Costs ($)</Label>
                 <Input
                   id="otherCosts"
