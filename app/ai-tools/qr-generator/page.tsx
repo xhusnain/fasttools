@@ -1004,7 +1004,6 @@ export default function QrGeneratorPage() {
         <div className="container mx-auto px-4 py-8">
           <Breadcrumbs
             items={[
-              { label: "Home", href: "/" },
               { label: "AI Tools", href: "/ai-tools" },
               { label: "Free QR Code Generator - No Sign Up", href: "/ai-tools/qr-generator" },
             ]}

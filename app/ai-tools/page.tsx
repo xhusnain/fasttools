@@ -90,7 +90,6 @@ export default function AiToolsPage() {
     <div className="container mx-auto px-4 py-8">
       <Breadcrumbs
         items={[
-          { label: "Home", href: "/" },
           { label: "AI Tools", href: "/ai-tools" },
         ]}
       />
