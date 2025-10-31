@@ -325,21 +325,21 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-black rounded-xl p-2 sm:p-3 md:p-4 w-full overflow-hidden">
       {/* Main Calculator */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Calculator className="h-5 w-5 text-blue-500" />
+      <Card className="bg-black border-slate-700 w-full overflow-hidden">
+        <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+          <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+            <Calculator className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
             Advanced Sales Tax Calculator
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-3 sm:space-y-4 md:space-y-6 px-2 sm:px-3 md:px-4">
           {/* Calculation Method Selection */}
-          <div>
-            <Label>Calculation Method</Label>
+          <div className="space-y-1.5 w-full min-w-0">
+            <Label className="text-green-500 text-xs sm:text-sm">Calculation Method</Label>
             <Select value={calculationMethod} onValueChange={(value: "forward" | "reverse" | "rate") => setCalculationMethod(value)}>
-              <SelectTrigger>
+              <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm h-9">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -351,10 +351,10 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
           </div>
 
           {/* State Selection */}
-          <div>
-            <Label>State (Optional)</Label>
+          <div className="space-y-1.5 w-full min-w-0">
+            <Label className="text-green-500 text-xs sm:text-sm">State (Optional)</Label>
             <Select value={selectedState} onValueChange={handleStateChange}>
-              <SelectTrigger>
+              <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm h-9">
                 <SelectValue placeholder="Select a state for automatic tax rate" />
               </SelectTrigger>
               <SelectContent>
@@ -368,9 +368,9 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
           </div>
 
           {/* Input Fields */}
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="beforeTaxPrice">Before Tax Price ($)</Label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+            <div className="space-y-1.5 w-full min-w-0">
+              <Label htmlFor="beforeTaxPrice" className="text-green-500 text-xs sm:text-sm">Before Tax Price ($)</Label>
               <Input
                 id="beforeTaxPrice"
                 type="number"
@@ -378,10 +378,11 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
                 value={beforeTaxPrice}
                 onChange={(e) => setBeforeTaxPrice(e.target.value)}
                 disabled={calculationMethod === "reverse"}
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
               />
             </div>
-            <div>
-              <Label htmlFor="taxRate">Sales Tax Rate (%)</Label>
+            <div className="space-y-1.5 w-full min-w-0">
+              <Label htmlFor="taxRate" className="text-green-500 text-xs sm:text-sm">Sales Tax Rate (%)</Label>
               <Input
                 id="taxRate"
                 type="number"
@@ -389,42 +390,45 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
                 value={taxRate}
                 onChange={(e) => setTaxRate(e.target.value)}
                 disabled={calculationMethod === "rate"}
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
               />
             </div>
           </div>
 
           {calculationMethod === "reverse" && (
-            <div>
-              <Label htmlFor="afterTaxPrice">After Tax Price ($)</Label>
+            <div className="space-y-1.5 w-full min-w-0">
+              <Label htmlFor="afterTaxPrice" className="text-green-500 text-xs sm:text-sm">After Tax Price ($)</Label>
               <Input
                 id="afterTaxPrice"
                 type="number"
                 placeholder="106.50"
                 value={afterTaxPrice}
                 onChange={(e) => setAfterTaxPrice(e.target.value)}
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
               />
             </div>
           )}
 
           {calculationMethod === "rate" && (
-            <div>
-              <Label htmlFor="afterTaxPrice">After Tax Price ($)</Label>
+            <div className="space-y-1.5 w-full min-w-0">
+              <Label htmlFor="afterTaxPrice" className="text-green-500 text-xs sm:text-sm">After Tax Price ($)</Label>
               <Input
                 id="afterTaxPrice"
                 type="number"
                 placeholder="106.50"
                 value={afterTaxPrice}
                 onChange={(e) => setAfterTaxPrice(e.target.value)}
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
               />
             </div>
           )}
 
-          <div className="flex gap-2">
-            <Button onClick={calculateSalesTax} className="flex-1">
-              <Calculator className="mr-2 h-4 w-4" />
+          <div className="flex flex-col sm:flex-row gap-2 w-full">
+            <Button onClick={calculateSalesTax} className="w-full sm:w-auto text-sm sm:text-base">
+              <Calculator className="mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
               Calculate Sales Tax
             </Button>
-            <Button variant="outline" onClick={clearAll}>
+            <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
               Clear All
             </Button>
           </div>
@@ -433,49 +437,49 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
 
       {/* Results Section */}
       {result && (
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {/* Main Results */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Receipt className="h-5 w-5 text-green-500" />
+          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+                <Receipt className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
                 Sales Tax Calculation Results
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label className="text-sm font-medium">Before Tax Price</Label>
-                  <div className="text-3xl font-bold text-blue-600">
+            <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="space-y-1">
+                  <Label className="text-xs sm:text-sm text-green-500">Before Tax Price</Label>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-400">
                     ${result.beforeTaxPrice.toFixed(2)}
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-sm font-medium">After Tax Price</Label>
-                  <div className="text-3xl font-bold text-green-600">
+                <div className="space-y-1">
+                  <Label className="text-xs sm:text-sm text-green-500">After Tax Price</Label>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-green-400">
                     ${result.afterTaxPrice.toFixed(2)}
                   </div>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-4 pt-4 border-t">
-                <div className="text-center">
-                  <div className="text-sm text-muted-foreground">Tax Rate</div>
-                  <div className="text-lg font-semibold text-orange-600">{result.taxRate.toFixed(2)}%</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-3 border-t border-slate-700">
+                <div className="text-center p-2 bg-black border border-slate-700 rounded-lg">
+                  <div className="text-xs text-slate-300">Tax Rate</div>
+                  <div className="text-base sm:text-lg font-semibold text-orange-500">{result.taxRate.toFixed(2)}%</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-sm text-muted-foreground">Tax Amount</div>
-                  <div className="text-lg font-semibold text-red-600">${result.taxAmount.toFixed(2)}</div>
+                <div className="text-center p-2 bg-black border border-slate-700 rounded-lg">
+                  <div className="text-xs text-slate-300">Tax Amount</div>
+                  <div className="text-base sm:text-lg font-semibold text-red-400">${result.taxAmount.toFixed(2)}</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-sm text-muted-foreground">State</div>
-                  <div className="text-lg font-semibold text-purple-600">{result.state}</div>
+                <div className="text-center p-2 bg-black border border-slate-700 rounded-lg">
+                  <div className="text-xs text-slate-300">State</div>
+                  <div className="text-base sm:text-lg font-semibold text-purple-400">{result.state}</div>
                 </div>
               </div>
 
-              <div className="flex gap-2 pt-4">
-                <Button onClick={copyResult} variant="outline" size="sm">
-                  <Copy className="mr-2 h-4 w-4" />
+              <div className="flex gap-2 pt-3">
+                <Button onClick={copyResult} variant="outline" size="sm" className="text-xs sm:text-sm">
+                  <Copy className="mr-2 h-3 w-3 sm:h-3.5 sm:w-3.5" />
                   Copy Results
                 </Button>
               </div>
@@ -483,51 +487,51 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
           </Card>
 
           {/* Tax Breakdown */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <BarChart3 className="h-5 w-5 text-purple-500" />
+          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+                <BarChart3 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
                 Tax Breakdown
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                  <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">State Tax</h3>
-                  <div className="text-2xl font-bold text-blue-600">${result.breakdown.stateTax.toFixed(2)}</div>
-                  <p className="text-sm text-blue-600 dark:text-blue-400">{result.taxRate.toFixed(2)}% rate</p>
+            <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
+                <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg">
+                  <h3 className="font-semibold text-green-500 mb-1.5 text-xs sm:text-sm">State Tax</h3>
+                  <div className="text-xl sm:text-2xl font-bold text-blue-400">${result.breakdown.stateTax.toFixed(2)}</div>
+                  <p className="text-xs text-slate-300">{result.taxRate.toFixed(2)}% rate</p>
                 </div>
-                <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                  <h3 className="font-semibold text-green-800 dark:text-green-200 mb-2">Local Tax</h3>
-                  <div className="text-2xl font-bold text-green-600">${result.breakdown.localTax.toFixed(2)}</div>
-                  <p className="text-sm text-green-600 dark:text-green-400">{result.localTax.toFixed(2)}% rate</p>
+                <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg">
+                  <h3 className="font-semibold text-green-500 mb-1.5 text-xs sm:text-sm">Local Tax</h3>
+                  <div className="text-xl sm:text-2xl font-bold text-green-400">${result.breakdown.localTax.toFixed(2)}</div>
+                  <p className="text-xs text-slate-300">{result.localTax.toFixed(2)}% rate</p>
                 </div>
-                <div className="p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                  <h3 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">Total Tax</h3>
-                  <div className="text-2xl font-bold text-purple-600">${result.breakdown.totalTax.toFixed(2)}</div>
-                  <p className="text-sm text-purple-600 dark:text-purple-400">{result.totalTaxRate.toFixed(2)}% total rate</p>
+                <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg">
+                  <h3 className="font-semibold text-green-500 mb-1.5 text-xs sm:text-sm">Total Tax</h3>
+                  <div className="text-xl sm:text-2xl font-bold text-purple-400">${result.breakdown.totalTax.toFixed(2)}</div>
+                  <p className="text-xs text-slate-300">{result.totalTaxRate.toFixed(2)}% total rate</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
           {/* State Comparison */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-orange-500" />
+          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+                <MapPin className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
                 State Tax Comparison
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
+            <CardContent className="px-2 sm:px-3 md:px-4">
+              <div className="space-y-1.5 sm:space-y-2">
                 {result.comparison.otherStates.map((state, index) => (
-                  <div key={index} className="flex justify-between items-center p-3 bg-muted rounded-lg">
+                  <div key={index} className="flex justify-between items-center p-2 sm:p-2.5 bg-black border border-slate-700 rounded-lg">
                     <div>
-                      <span className="font-medium">{state.state}</span>
-                      <p className="text-sm text-muted-foreground">{state.rate.toFixed(2)}% tax rate</p>
+                      <span className="font-medium text-slate-200 text-xs sm:text-sm">{state.state}</span>
+                      <p className="text-xs text-slate-300">{state.rate.toFixed(2)}% tax rate</p>
                     </div>
-                    <Badge variant={state.difference > 0 ? "destructive" : "default"}>
+                    <Badge className={state.difference > 0 ? "bg-red-500/20 text-red-400 border-red-500" : "bg-slate-700 text-slate-200"} variant="outline">
                       {state.difference > 0 ? "+" : ""}{state.difference.toFixed(2)}%
                     </Badge>
                   </div>
@@ -537,44 +541,44 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
           </Card>
 
           {/* Recommendations */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Target className="h-5 w-5 text-green-500" />
+          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+                <Target className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
                 Personalized Recommendations
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-3 gap-6">
+            <CardContent className="px-2 sm:px-3 md:px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 <div>
-                  <h4 className="font-semibold mb-3 text-blue-600">Tax Optimization</h4>
-                  <ul className="space-y-2 text-sm">
+                  <h4 className="font-semibold mb-2 text-green-500 text-xs sm:text-sm">Tax Optimization</h4>
+                  <ul className="space-y-1 text-xs">
                     {result.recommendations.taxOptimization.map((rec, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                        <span>{rec}</span>
+                      <li key={index} className="flex items-start gap-1.5 text-slate-300">
+                        <CheckCircle className="h-3 w-3 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="break-words">{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-green-600">Business Tips</h4>
-                  <ul className="space-y-2 text-sm">
+                  <h4 className="font-semibold mb-2 text-green-500 text-xs sm:text-sm">Business Tips</h4>
+                  <ul className="space-y-1 text-xs">
                     {result.recommendations.businessTips.map((rec, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span>{rec}</span>
+                      <li key={index} className="flex items-start gap-1.5 text-slate-300">
+                        <CheckCircle className="h-3 w-3 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="break-words">{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-purple-600">Compliance</h4>
-                  <ul className="space-y-2 text-sm">
+                  <h4 className="font-semibold mb-2 text-green-500 text-xs sm:text-sm">Compliance</h4>
+                  <ul className="space-y-1 text-xs">
                     {result.recommendations.compliance.map((rec, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-purple-500 mt-0.5 flex-shrink-0" />
-                        <span>{rec}</span>
+                      <li key={index} className="flex items-start gap-1.5 text-slate-300">
+                        <CheckCircle className="h-3 w-3 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="break-words">{rec}</span>
                       </li>
                     ))}
                   </ul>
@@ -587,22 +591,22 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <History className="h-5 w-5 text-gray-500" />
+        <Card className="bg-black border-slate-700 w-full overflow-hidden">
+          <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+            <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+              <History className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
               Recent Calculations
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="space-y-2">
+          <CardContent className="px-2 sm:px-3 md:px-4">
+            <div className="space-y-1.5 sm:space-y-2">
               {history.map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
-                  <div className="space-y-1">
-                    <div className="font-medium">
+                <div key={index} className="flex items-center justify-between p-2 sm:p-2.5 bg-black border border-slate-700 rounded-lg">
+                  <div className="space-y-0.5">
+                    <div className="font-medium text-slate-200 text-xs sm:text-sm">
                       ${item.beforeTaxPrice.toFixed(2)} → ${item.afterTaxPrice.toFixed(2)}
                     </div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-xs text-slate-300">
                       {item.taxRate.toFixed(2)}% tax - {item.state}
                     </div>
                   </div>
@@ -610,6 +614,7 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
+                    className="text-xs sm:text-sm"
                   >
                     View Details
                   </Button>
@@ -621,40 +626,40 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
       )}
 
       {/* Information Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Info className="h-5 w-5 text-blue-500" />
+      <Card className="bg-black border-slate-700 w-full overflow-hidden">
+        <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+          <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+            <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
             Sales Tax Calculator Features
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-            <div className="flex items-start gap-2">
-              <Info className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
-              <div className="text-sm">
-                <p className="font-medium text-blue-800 dark:text-blue-200 mb-1">
+        <CardContent className="space-y-2 sm:space-y-3 px-2 sm:px-3 md:px-4">
+          <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg">
+            <div className="flex items-start gap-1.5 sm:gap-2">
+              <Info className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-orange-500 mt-0.5 flex-shrink-0" />
+              <div className="text-xs sm:text-sm">
+                <p className="font-medium text-orange-500 mb-1 break-words">
                   Professional Sales Tax Analysis
                 </p>
-                <p className="text-blue-700 dark:text-blue-300">
+                <p className="text-slate-300 break-words">
                   This calculator provides accurate sales tax calculations for all 50 US states with local tax considerations. Perfect for businesses, consumers, and tax professionals.
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="text-sm text-muted-foreground space-y-2">
-            <p>
-              <strong>Forward Calculation:</strong> Calculate the final price after adding sales tax to the before-tax price.
+          <div className="text-xs sm:text-sm text-slate-300 space-y-1">
+            <p className="break-words">
+              <strong className="text-green-500">Forward Calculation:</strong> Calculate the final price after adding sales tax to the before-tax price.
             </p>
-            <p>
-              <strong>Reverse Calculation:</strong> Calculate the before-tax price when you know the final after-tax price.
+            <p className="break-words">
+              <strong className="text-green-500">Reverse Calculation:</strong> Calculate the before-tax price when you know the final after-tax price.
             </p>
-            <p>
-              <strong>Rate Calculation:</strong> Calculate the effective tax rate when you know both before and after-tax prices.
+            <p className="break-words">
+              <strong className="text-green-500">Rate Calculation:</strong> Calculate the effective tax rate when you know both before and after-tax prices.
             </p>
-            <p>
-              <strong>State Comparison:</strong> Compare tax rates across different states to optimize your purchases.
+            <p className="break-words">
+              <strong className="text-green-500">State Comparison:</strong> Compare tax rates across different states to optimize your purchases.
             </p>
           </div>
         </CardContent>
