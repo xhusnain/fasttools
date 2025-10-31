@@ -2,7 +2,8 @@ import { Metadata } from "next"
 import InterestRateCalculator from "@/components/interest-rate-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
-import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home } from "lucide-react"
+import { GHeader } from "@/components/globalcomponents/gheader"
+import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "FastTools - Interest Rate Calculator | Free Advanced Loan Rate Calculator",
@@ -143,7 +144,7 @@ export default function InterestRateCalculatorPage() {
       }} />
       
       <div className="min-h-screen bg-background">
-        <div className="container mx-auto px-2 xs:px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-2 xs:py-3 sm:py-4 md:py-6 lg:py-8 xl:py-10 2xl:py-12">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 py-6 sm:py-8 md:py-12">
           <Breadcrumbs
             items={[
               { label: "Calculator", href: "/calculator" },
@@ -151,122 +152,126 @@ export default function InterestRateCalculatorPage() {
             ]}
           />
 
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-2 xs:mb-3 sm:mb-4 md:mb-6 lg:mb-8 xl:mb-10">
-              <h1 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-1 xs:mb-2 sm:mb-3 md:mb-4 lg:mb-5 text-yellow-400 leading-tight">Interest Rate Calculator - Advanced Loan Analysis</h1>
-              <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground text-pretty leading-relaxed">
-                <strong>Calculate real interest rates on loans</strong> with our <strong>advanced interest rate calculator</strong>. Get <strong>precise rate calculations</strong>, <strong>amortization analysis</strong>, <strong>loan optimization</strong>, and <strong>professional recommendations</strong> for optimal financial planning.
-              </p>
+          <div className="max-w-7xl mx-auto w-full">
+            <div className="mb-4 sm:mb-6 md:mb-8 w-full">
+              <GHeader 
+                title="Interest Rate Calculator - Advanced Loan Analysis"
+                description="Calculate real interest rates on loans with our advanced interest rate calculator. Get precise rate calculations, amortization analysis, loan optimization, and professional recommendations for optimal financial planning."
+                titleSize="medium"
+                color="orange"
+              />
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] xl:grid-cols-[1fr_320px] 2xl:grid-cols-[1fr_380px] gap-2 xs:gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10">
-              <div>
-                <InterestRateCalculator />
-                
-                {/* Mobile/Tablet AdSpace */}
-                <div className="my-2 xs:my-3 sm:my-4 md:my-6 lg:hidden">
-                  <div className="text-center mb-1">
-                    <span className="text-xs xs:text-sm text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="content" className="w-full h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28 border border-border rounded-xl shadow-sm bg-card" />
+            {/* Mobile/Tablet AdSpace after GHeader */}
+            <div className="my-6 lg:hidden">
+              <div className="text-center mb-2">
+                <span className="text-xs text-slate-400 font-medium">Advertisement</span>
+              </div>
+              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] 2xl:grid-cols-[1fr_450px] gap-4 sm:gap-6 lg:gap-8 w-full">
+              <div className="space-y-4 sm:space-y-6 md:space-y-8 w-full min-w-0">
+                <div className="w-full">
+                  <InterestRateCalculator />
                 </div>
             
                 {/* Educational Content Sections */}
-                <div className="mt-2 xs:mt-3 sm:mt-4 md:mt-6 lg:mt-8 xl:mt-10 space-y-2 xs:space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8">
+                <div className="space-y-3 sm:space-y-4 md:space-y-5 bg-black rounded-lg p-2 sm:p-3 md:p-4 w-full">
                   {/* How to Use Section */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
-                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-2 text-yellow-400">
-                      <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg">
-                        <Calculator className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
+                  <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
+                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-orange-500 break-words">
+                      <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
+                        <Calculator className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-primary" />
                       </div>
                       How to Use Interest Rate Calculator
                     </h2>
-                    <div className="space-y-2 xs:space-y-3 sm:space-y-4">
-                      <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
-                        <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border">
-                          <h3 className="font-semibold text-foreground mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">1. Enter Loan Details</h3>
-                          <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Input loan amount, term (years/months), and monthly payment amount</p>
+                    <div className="space-y-2 sm:space-y-3 overflow-hidden">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                        <div className="p-2 sm:p-2.5 md:p-3 bg-black rounded-lg border border-slate-700 overflow-hidden">
+                          <h3 className="font-semibold text-green-500 mb-1 text-xs sm:text-sm break-words">1. Enter Loan Details</h3>
+                          <p className="text-xs text-slate-300 break-words">Input loan amount, term (years/months), and monthly payment amount</p>
                         </div>
-                        <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border">
-                          <h3 className="font-semibold text-foreground mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">2. Calculate Interest Rate</h3>
-                          <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Our calculator uses Newton-Raphson method for precise rate calculation</p>
+                        <div className="p-2 sm:p-2.5 md:p-3 bg-black rounded-lg border border-slate-700 overflow-hidden">
+                          <h3 className="font-semibold text-green-500 mb-1 text-xs sm:text-sm break-words">2. Calculate Interest Rate</h3>
+                          <p className="text-xs text-slate-300 break-words">Our calculator uses Newton-Raphson method for precise rate calculation</p>
                         </div>
-                        <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border">
-                          <h3 className="font-semibold text-foreground mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">3. Analyze Results</h3>
-                          <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Review calculated rate, total interest, and optimization recommendations</p>
+                        <div className="p-2 sm:p-2.5 md:p-3 bg-black rounded-lg border border-slate-700 overflow-hidden">
+                          <h3 className="font-semibold text-green-500 mb-1 text-xs sm:text-sm break-words">3. Analyze Results</h3>
+                          <p className="text-xs text-slate-300 break-words">Review calculated rate, total interest, and optimization recommendations</p>
                         </div>
-                        <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border">
-                          <h3 className="font-semibold text-foreground mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">4. Get Professional Insights</h3>
-                          <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Receive detailed amortization analysis and loan optimization tips</p>
+                        <div className="p-2 sm:p-2.5 md:p-3 bg-black rounded-lg border border-slate-700 overflow-hidden">
+                          <h3 className="font-semibold text-green-500 mb-1 text-xs sm:text-sm break-words">4. Get Professional Insights</h3>
+                          <p className="text-xs text-slate-300 break-words">Receive detailed amortization analysis and loan optimization tips</p>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Features Section */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
-                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-2 text-yellow-400">
-                      <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg">
-                        <Target className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
+                  <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
+                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-orange-500 break-words">
+                      <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
+                        <Target className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-primary" />
                       </div>
                       Key Features
                     </h2>
-                    <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
-                      <div className="space-y-2 xs:space-y-3">
-                        <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-green-100 dark:bg-green-900/20 rounded-lg flex-shrink-0">
-                            <Calculator className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-green-600 dark:text-green-400" />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                      <div className="space-y-2 sm:space-y-3">
+                        <div className="flex items-start gap-1.5 sm:gap-2">
+                          <div className="p-1 sm:p-1.5 bg-green-500/10 rounded flex-shrink-0">
+                            <Calculator className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Newton-Raphson Method</h3>
-                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Industry-standard algorithm for precise interest rate calculations</p>
+                            <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Newton-Raphson Method</h3>
+                            <p className="text-xs text-slate-300 break-words">Industry-standard algorithm for precise interest rate calculations</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex-shrink-0">
-                            <BarChart3 className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-blue-600 dark:text-blue-400" />
+                        <div className="flex items-start gap-1.5 sm:gap-2">
+                          <div className="p-1 sm:p-1.5 bg-green-500/10 rounded flex-shrink-0">
+                            <BarChart3 className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Amortization Analysis</h3>
-                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Detailed payment breakdown and interest vs principal analysis</p>
+                            <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Amortization Analysis</h3>
+                            <p className="text-xs text-slate-300 break-words">Detailed payment breakdown and interest vs principal analysis</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex-shrink-0">
-                            <TrendingUp className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-purple-600 dark:text-purple-400" />
+                        <div className="flex items-start gap-1.5 sm:gap-2">
+                          <div className="p-1 sm:p-1.5 bg-green-500/10 rounded flex-shrink-0">
+                            <TrendingUp className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Rate Optimization</h3>
-                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Professional recommendations for loan optimization and refinancing</p>
+                            <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Rate Optimization</h3>
+                            <p className="text-xs text-slate-300 break-words">Professional recommendations for loan optimization and refinancing</p>
                           </div>
                         </div>
                       </div>
-                      <div className="space-y-2 xs:space-y-3">
-                        <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-orange-100 dark:bg-orange-900/20 rounded-lg flex-shrink-0">
-                            <BookOpen className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-orange-600 dark:text-orange-400" />
+                      <div className="space-y-2 sm:space-y-3">
+                        <div className="flex items-start gap-1.5 sm:gap-2">
+                          <div className="p-1 sm:p-1.5 bg-green-500/10 rounded flex-shrink-0">
+                            <BookOpen className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Multiple Loan Types</h3>
-                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Works with mortgages, auto loans, personal loans, and business loans</p>
+                            <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Multiple Loan Types</h3>
+                            <p className="text-xs text-slate-300 break-words">Works with mortgages, auto loans, personal loans, and business loans</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-red-100 dark:bg-red-900/20 rounded-lg flex-shrink-0">
-                            <Users className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-red-600 dark:text-red-400" />
+                        <div className="flex items-start gap-1.5 sm:gap-2">
+                          <div className="p-1 sm:p-1.5 bg-green-500/10 rounded flex-shrink-0">
+                            <Users className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Rate Comparison</h3>
-                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Compare different loan options and find the best rates</p>
+                            <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Rate Comparison</h3>
+                            <p className="text-xs text-slate-300 break-words">Compare different loan options and find the best rates</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-teal-100 dark:bg-teal-900/20 rounded-lg flex-shrink-0">
-                            <Clock className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-teal-600 dark:text-teal-400" />
+                        <div className="flex items-start gap-1.5 sm:gap-2">
+                          <div className="p-1 sm:p-1.5 bg-green-500/10 rounded flex-shrink-0">
+                            <Clock className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Payment History</h3>
-                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Track payment schedules and interest accumulation over time</p>
+                            <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Payment History</h3>
+                            <p className="text-xs text-slate-300 break-words">Track payment schedules and interest accumulation over time</p>
                           </div>
                         </div>
                       </div>
@@ -274,17 +279,17 @@ export default function InterestRateCalculatorPage() {
                   </div>
 
                   {/* Use Cases Section */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
-                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-2 text-yellow-400">
-                      <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg">
-                        <Home className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
+                  <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
+                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-orange-500 break-words">
+                      <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
+                        <Home className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-primary" />
                       </div>
                       Use Cases
                     </h2>
-                    <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
-                      <div className="space-y-2 xs:space-y-3">
-                        <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">For Borrowers & Consumers</h3>
-                        <ul className="space-y-1 xs:space-y-1.5 text-xs xs:text-sm sm:text-base text-muted-foreground">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                      <div className="space-y-1.5 sm:space-y-2">
+                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">For Borrowers & Consumers</h3>
+                        <ul className="space-y-1 text-xs text-slate-300">
                           <li>• Calculate actual interest rates on existing loans</li>
                           <li>• Compare loan offers from different lenders</li>
                           <li>• Understand true cost of borrowing</li>
@@ -292,9 +297,9 @@ export default function InterestRateCalculatorPage() {
                           <li>• Analyze dealer financing offers</li>
                         </ul>
                       </div>
-                      <div className="space-y-2 xs:space-y-3">
-                        <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">For Financial Planning</h3>
-                        <ul className="space-y-1 xs:space-y-1.5 text-xs xs:text-sm sm:text-base text-muted-foreground">
+                      <div className="space-y-1.5 sm:space-y-2">
+                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">For Financial Planning</h3>
+                        <ul className="space-y-1 text-xs text-slate-300">
                           <li>• Optimize loan terms and payments</li>
                           <li>• Calculate refinancing benefits</li>
                           <li>• Plan debt consolidation strategies</li>
@@ -306,44 +311,44 @@ export default function InterestRateCalculatorPage() {
                   </div>
 
                   {/* Understanding Interest Rates Section */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
-                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-2 text-yellow-400">
-                      <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg">
-                        <BookOpen className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
+                  <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
+                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-orange-500 break-words">
+                      <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
+                        <BookOpen className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-primary" />
                       </div>
                       Understanding Interest Rates
                     </h2>
-                    <div className="space-y-2 xs:space-y-3 sm:space-y-4">
-                      <div className="p-2 xs:p-3 sm:p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                        <h3 className="text-xs xs:text-sm sm:text-base font-semibold text-blue-800 dark:text-blue-200 mb-1 xs:mb-2 sm:mb-3">What is Interest Rate?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-blue-700 dark:text-blue-300 mb-2 xs:mb-3">
-                          Interest rate is the amount charged by lenders to borrowers for the use of money, expressed as a percentage of the principal. It represents the cost to borrow money and directly affects the total interest paid on any loan.
+                    <div className="space-y-2 sm:space-y-3">
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg overflow-hidden">
+                        <h3 className="text-xs sm:text-sm md:text-base font-semibold text-green-500 mb-1.5 sm:mb-2 break-words">What is Interest Rate?</h3>
+                        <p className="text-xs text-slate-300 mb-2 break-words">
+                          An interest rate represents the fee that financial institutions charge customers when lending funds, calculated as a percentage of the loan's original principal amount. This percentage determines your borrowing expenses and significantly impacts the cumulative interest amount you'll pay throughout your loan's lifetime.
                         </p>
-                        <div className="bg-white dark:bg-slate-800 p-2 xs:p-3 sm:p-4 rounded-lg border">
-                          <div className="text-xs xs:text-sm">
-                            <div className="mb-1"><strong>Example:</strong> 8% interest rate on $100 = $8 interest per year</div>
-                            <div><strong>Total Cost:</strong> $100 principal + $8 interest = $108 at year-end</div>
+                        <div className="bg-black border border-slate-700 p-1.5 sm:p-2 rounded-lg">
+                          <div className="text-xs sm:text-sm text-slate-200">
+                            <div className="mb-1"><strong className="text-green-500">Example:</strong> 8% interest rate on $100 = $8 interest per year</div>
+                            <div><strong className="text-green-500">Total Cost:</strong> $100 principal + $8 interest = $108 at year-end</div>
                           </div>
                         </div>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                        <h3 className="text-xs xs:text-sm sm:text-base font-semibold text-green-800 dark:text-green-200 mb-1 xs:mb-2 sm:mb-3">Simple vs. Compound Interest</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-green-700 dark:text-green-300 mb-2 xs:mb-3">
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg overflow-hidden">
+                        <h3 className="text-xs sm:text-sm md:text-base font-semibold text-green-500 mb-1.5 sm:mb-2 break-words">Simple vs. Compound Interest</h3>
+                        <p className="text-xs text-slate-300 mb-2 break-words">
                           Simple interest is calculated on principal only, while compound interest is calculated on principal plus accrued interest. Most loans use compound interest, which means interest earns interest over time.
                         </p>
-                        <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 xs:gap-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                           <div>
-                            <h4 className="font-semibold mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">Simple Interest</h4>
-                            <ul className="text-xs xs:text-sm space-y-1">
+                            <h4 className="font-semibold mb-1 text-xs sm:text-sm text-green-500">Simple Interest</h4>
+                            <ul className="text-xs text-slate-300 space-y-0.5">
                               <li>• Calculated on principal only</li>
                               <li>• Interest = Principal × Rate × Time</li>
                               <li>• Used in some short-term loans</li>
                             </ul>
                           </div>
                           <div>
-                            <h4 className="font-semibold mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">Compound Interest</h4>
-                            <ul className="text-xs xs:text-sm space-y-1">
+                            <h4 className="font-semibold mb-1 text-xs sm:text-sm text-green-500">Compound Interest</h4>
+                            <ul className="text-xs text-slate-300 space-y-0.5">
                               <li>• Calculated on principal + interest</li>
                               <li>• Interest earns interest over time</li>
                               <li>• Used in most modern loans</li>
@@ -352,23 +357,23 @@ export default function InterestRateCalculatorPage() {
                         </div>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                        <h3 className="text-xs xs:text-sm sm:text-base font-semibold text-purple-800 dark:text-purple-200 mb-1 xs:mb-2 sm:mb-3">Fixed vs. Variable Rates</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-purple-700 dark:text-purple-300 mb-2 xs:mb-3">
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg overflow-hidden">
+                        <h3 className="text-xs sm:text-sm md:text-base font-semibold text-green-500 mb-1.5 sm:mb-2 break-words">Fixed vs. Variable Rates</h3>
+                        <p className="text-xs text-slate-300 mb-2 break-words">
                           Fixed rates remain constant throughout the loan term, while variable rates can fluctuate based on market conditions, inflation, or other economic factors.
                         </p>
-                        <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 xs:gap-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                           <div>
-                            <h4 className="font-semibold mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">Fixed Rates</h4>
-                            <ul className="text-xs xs:text-sm space-y-1">
+                            <h4 className="font-semibold mb-1 text-xs sm:text-sm text-green-500">Fixed Rates</h4>
+                            <ul className="text-xs text-slate-300 space-y-0.5">
                               <li>• Rate stays the same</li>
                               <li>• Predictable payments</li>
                               <li>• Higher initial rates</li>
                             </ul>
                           </div>
                           <div>
-                            <h4 className="font-semibold mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">Variable Rates</h4>
-                            <ul className="text-xs xs:text-sm space-y-1">
+                            <h4 className="font-semibold mb-1 text-xs sm:text-sm text-green-500">Variable Rates</h4>
+                            <ul className="text-xs text-slate-300 space-y-0.5">
                               <li>• Rate can change</li>
                               <li>• Payment amounts vary</li>
                               <li>• Lower initial rates</li>
@@ -380,71 +385,71 @@ export default function InterestRateCalculatorPage() {
                   </div>
 
                   {/* FAQ Section */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
-                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-2 text-yellow-400">
-                      <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg">
-                        <BookOpen className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
+                  <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
+                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-orange-500 break-words">
+                      <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
+                        <BookOpen className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-primary" />
                       </div>
                       Frequently Asked Questions
                     </h2>
-                    <div className="space-y-2 xs:space-y-3 sm:space-y-4">
-                      <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How accurate is the Newton-Raphson method?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    <div className="space-y-2 sm:space-y-2.5 md:space-y-3">
+                      <div className="space-y-1 sm:space-y-1.5">
+                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">How accurate is the Newton-Raphson method?</h3>
+                        <p className="text-xs text-slate-300 break-words">
                           The Newton-Raphson method is highly accurate for interest rate calculations, typically converging to within 0.001% of the true rate. It's the industry standard for complex financial calculations and provides precise results for loan analysis.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">Can I use this for any type of loan?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Can I use this for any type of loan?</h3>
+                        <p className="text-xs text-slate-300 break-words">
                           Yes, this calculator works for any fixed-rate loan including mortgages, auto loans, personal loans, and business loans. It's particularly useful when you know the payment amount but not the rate, which is common with dealer financing.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">What if my loan has variable rates?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">What if my loan has variable rates?</h3>
+                        <p className="text-xs text-slate-300 break-words">
                           This calculator is designed for fixed-rate loans. For variable-rate loans, you would need to know the current rate or use a different calculation method that accounts for rate changes over time.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How does this compare to online loan calculators?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">How does this compare to online loan calculators?</h3>
+                        <p className="text-xs text-slate-300 break-words">
                           Most online calculators require you to input the interest rate to calculate payments. This calculator does the reverse - it finds the rate when you know the payment amount, which is often the case with dealer financing and existing loans.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">What factors affect interest rates?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">What factors affect interest rates?</h3>
+                        <p className="text-xs text-slate-300 break-words">
                           Interest rates are affected by credit score, loan term, down payment, loan type, economic conditions, and lender policies. Higher credit scores and shorter terms typically result in lower rates, while economic factors can cause rate fluctuations.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How do interest rates affect my monthly mortgage payments?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">How do interest rates affect my monthly mortgage payments?</h3>
+                        <p className="text-xs text-slate-300 break-words">
                           Interest rates directly influence your monthly mortgage payments. A higher interest rate increases your monthly payment, while a lower rate decreases it. For example, on a $300,000 loan at 7.5% interest, your monthly payment would be approximately $2,100. If the rate drops to 6.5%, the payment decreases to about $1,900, saving you $200 per month. Even a 0.5% difference can save thousands over the life of your loan.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">What factors determine the interest rate I receive on my loan?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">What factors determine the interest rate I receive on my loan?</h3>
+                        <p className="text-xs text-slate-300 break-words">
                           Several key factors influence the interest rate offered to you: Credit Score (higher scores secure lower rates), Loan Amount and Term (larger loans or longer terms may carry different rates), Down Payment (larger down payments reduce lender risk and can lower rates), Market Conditions (Federal Reserve policies and economic factors affect prevailing rates), Loan Type (secured loans typically have lower rates than unsecured), and Employment History (stable income demonstrates repayment ability). Understanding these factors helps you position yourself for better rates.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">Is it beneficial to pay points to lower my interest rate?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Is it beneficial to pay points to lower my interest rate?</h3>
+                        <p className="text-xs text-slate-300 break-words">
                           Paying points (upfront fees to reduce your interest rate) can be advantageous if you plan to stay in your home for several years. Each point typically costs 1% of your loan amount and reduces your rate by 0.25%. For example, on a $400,000 loan, paying 2 points ($8,000) might reduce your rate from 7% to 6.5%, saving about $200 monthly. You'd break even in about 3.3 years. However, if you plan to sell or refinance soon, the upfront cost may not be recouped through monthly savings.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How often do interest rates change and what causes fluctuations?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">How often do interest rates change and what causes fluctuations?</h3>
+                        <p className="text-xs text-slate-300 break-words">
                           Interest rates can fluctuate daily based on market conditions, economic indicators, and Federal Reserve policies. Key factors include Federal Reserve decisions (Fed meetings every 6-8 weeks), Economic indicators (inflation rates, employment data, GDP growth), Market demand (high loan demand drives rates up, low demand lowers them), Global events (economic uncertainty can affect rates), and Bond market performance (10-year Treasury yields influence mortgage rates). Rates can change multiple times per day, which is why it's important to lock in rates when you find a favorable one.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">Can I negotiate my interest rate with lenders and how?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Can I negotiate my interest rate with lenders and how?</h3>
+                        <p className="text-xs text-slate-300 break-words">
                           Yes, interest rates can often be negotiated! To improve your negotiating position: Improve your credit score (scores above 750 qualify for the best rates), Shop around with multiple lenders (get quotes from at least 3-5 lenders), Consider paying points (upfront fees can lower your rate), Show strong financials (stable income, low debt-to-income ratio), Be prepared to walk away (lenders may offer better terms to keep your business), and Time your application (rates can vary by season and market conditions). Many borrowers successfully negotiate 0.125% to 0.5% lower rates, which can save thousands over the loan term.
                         </p>
                       </div>
@@ -454,16 +459,11 @@ export default function InterestRateCalculatorPage() {
               </div>
               
               {/* Sidebar */}
-              <div className="space-y-2 xs:space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8">
-                <div className="sticky top-2 xs:top-4 sm:top-6 space-y-2 xs:space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8">
-                  {/* Sidebar Ad 1 */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 shadow-sm">
-                    <AdSpace slot="sidebar" className="h-40 xs:h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 2xl:h-88 rounded-lg overflow-hidden" />
-                  </div>
-                  
-                  {/* Sidebar Ad 2 */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 shadow-sm">
-                    <AdSpace slot="sidebar" className="h-40 xs:h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 2xl:h-88 rounded-lg overflow-hidden" />
+              <div className="hidden lg:block space-y-6 lg:space-y-8">
+                <div className="sticky top-4">
+                  {/* Sidebar Ad */}
+                  <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
+                    <AdSpace slot="sidebar" className="h-64 md:h-80 rounded-lg overflow-hidden" />
                   </div>
                 </div>
               </div>
