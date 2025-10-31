@@ -4,7 +4,7 @@ const FRANKFURTER_API_BASE = 'https://api.frankfurter.dev/v1'
 
 // Top 10 most traded currencies globally
 const TOP_10_CURRENCIES = [
-  'USD', 'EUR', 'JPY', 'GBP', 'AUD', 'CAD', 'CHF', 'CNY', 'SEK', 'NZD'
+  'USD', 'EUR', 'JPY', 'GBP', 'AUD', 'CAD', 'CHF', 'CNY', 'HKD', 'NZD'
 ]
 
 export async function GET(request: NextRequest) {
@@ -47,47 +47,63 @@ export async function GET(request: NextRequest) {
     
     // Process the data to create currency statistics
     const currencyStats = TOP_10_CURRENCIES.map(currency => {
-      const rates = Object.values(timeSeriesData.rates).map((dayRates: any) => dayRates[currency]).filter(rate => rate !== undefined)
-      
-      if (rates.length === 0) {
+        // Handle base currency (USD when base is USD)
+        if (currency === base) {
+          return {
+            currency,
+            currentRate: 1.0000,
+            change: 0.0000,
+            changePercent: 0.00,
+            minRate: 1.0000,
+            maxRate: 1.0000,
+            avgRate: 1.0000,
+            trend: 'stable',
+            symbol: getCurrencySymbol(currency),
+            name: getCurrencyName(currency)
+          }
+        }
+        
+        const rates = Object.values(timeSeriesData.rates).map((dayRates: any) => dayRates[currency]).filter(rate => rate !== undefined)
+        
+        if (rates.length === 0) {
+          return {
+            currency,
+            currentRate: 0,
+            change: 0,
+            changePercent: 0,
+            minRate: 0,
+            maxRate: 0,
+            avgRate: 0,
+            trend: 'stable'
+          }
+        }
+        
+        const currentRate = latestData.rates[currency] || rates[rates.length - 1]
+        const previousRate = rates[rates.length - 2] || rates[0]
+        const change = currentRate - previousRate
+        const changePercent = (change / previousRate) * 100
+        const minRate = Math.min(...rates)
+        const maxRate = Math.max(...rates)
+        const avgRate = rates.reduce((sum, rate) => sum + rate, 0) / rates.length
+        
+        // Determine trend based on recent movement
+        let trend = 'stable'
+        if (changePercent > 0.5) trend = 'up'
+        else if (changePercent < -0.5) trend = 'down'
+        
         return {
           currency,
-          currentRate: 0,
-          change: 0,
-          changePercent: 0,
-          minRate: 0,
-          maxRate: 0,
-          avgRate: 0,
-          trend: 'stable'
+          currentRate: Number(currentRate.toFixed(4)),
+          change: Number(change.toFixed(4)),
+          changePercent: Number(changePercent.toFixed(2)),
+          minRate: Number(minRate.toFixed(4)),
+          maxRate: Number(maxRate.toFixed(4)),
+          avgRate: Number(avgRate.toFixed(4)),
+          trend,
+          symbol: getCurrencySymbol(currency),
+          name: getCurrencyName(currency)
         }
-      }
-      
-      const currentRate = latestData.rates[currency] || rates[rates.length - 1]
-      const previousRate = rates[rates.length - 2] || rates[0]
-      const change = currentRate - previousRate
-      const changePercent = (change / previousRate) * 100
-      const minRate = Math.min(...rates)
-      const maxRate = Math.max(...rates)
-      const avgRate = rates.reduce((sum, rate) => sum + rate, 0) / rates.length
-      
-      // Determine trend based on recent movement
-      let trend = 'stable'
-      if (changePercent > 0.5) trend = 'up'
-      else if (changePercent < -0.5) trend = 'down'
-      
-      return {
-        currency,
-        currentRate: Number(currentRate.toFixed(4)),
-        change: Number(change.toFixed(4)),
-        changePercent: Number(changePercent.toFixed(2)),
-        minRate: Number(minRate.toFixed(4)),
-        maxRate: Number(maxRate.toFixed(4)),
-        avgRate: Number(avgRate.toFixed(4)),
-        trend,
-        symbol: getCurrencySymbol(currency),
-        name: getCurrencyName(currency)
-      }
-    })
+      })
     
     // Sort by current rate (descending)
     currencyStats.sort((a, b) => b.currentRate - a.currentRate)

@@ -1,6 +1,7 @@
 import { TimezoneConverter } from "@/components/timezone-converter"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import type { Metadata } from "next"
 import Link from "next/link"
 
@@ -169,7 +170,6 @@ export default function TimezoneConverterPage() {
       <div className="container mx-auto px-4 py-6 sm:py-8">
         <Breadcrumbs
           items={[
-            { label: "Home", href: "/" },
             { label: "Converters", href: "/converters" },
             { label: "Time Zone Converter", href: "/converters/timezone" },
           ]}
@@ -180,50 +180,44 @@ export default function TimezoneConverterPage() {
             <div className="flex-1 lg:flex-[2] space-y-5 sm:space-y-6">
               {/* Hero */}
               <div className="text-center space-y-5 animate-fade-in-up">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">Time Zone Converter — Global Time & Meeting Planner</h1>
-                <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">Convert time zones with DST awareness. Plan international meetings in seconds.</p>
-          </div>
+                <GHeader
+                  title="Time Zone Converter - Global Time & Meeting Planner"
+                  description="Convert time zones with DST awareness. Plan international meetings in seconds."
+                  titleSize="medium"
+                  descriptionSize="small"
+                />
+              </div>
 
-              {/* Mobile/Tablet Ad - Top */}
-              <div className="block xl:hidden mb-6">
-                <div className="text-center mb-2">
-                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
-          </div>
+              {/* Mobile Ad Space */}
+              <div className="lg:hidden">
+                <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
+              </div>
 
               {/* Tool */}
-              <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+              <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
               <TimezoneConverter />
               </div>
 
-              {/* Mobile/Tablet Ad - Mid */}
-              <div className="block xl:hidden my-8">
-                <div className="text-center mb-2">
-                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
-              </div>
 
               {/* Content Sections */}
               <div className="space-y-5 animate-fade-in-up">
-                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-base md:text-xl font-bold mb-3 text-card-foreground">How to Use the Time Zone Converter</h2>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">1) Pick Locations and Date/Time</h3>
-                  <ul className="list-disc pl-5 text-muted-foreground text-sm">
+                <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-base md:text-xl font-bold mb-3 text-orange-500">How to Use the Time Zone Converter</h2>
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">1) Pick Locations and Date/Time</h3>
+                  <ul className="list-disc pl-5 text-gray-400 text-sm">
                   <li>Select source and destination cities or time zones.</li>
                     <li>Pick date/time to account for DST changes.</li>
                 </ul>
-                  <h3 className="text-base md:text-lg font-bold mt-4 mb-2.5 text-card-foreground">2) Compare and Share</h3>
-                  <ul className="list-disc pl-5 text-muted-foreground text-sm">
+                  <h3 className="text-base md:text-lg font-bold mt-4 mb-2.5 text-green-500">2) Compare and Share</h3>
+                  <ul className="list-disc pl-5 text-gray-400 text-sm">
                     <li>See business‑hours overlap for remote teams.</li>
                     <li>Copy converted time or add to your calendar.</li>
                 </ul>
                 </div>
 
-                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-base md:text-xl font-bold mb-3 text-card-foreground">Understanding Time Zones</h2>
-                  <ul className="list-disc pl-5 text-muted-foreground text-sm">
+                <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-base md:text-xl font-bold mb-3 text-orange-500">Understanding Time Zones</h2>
+                  <ul className="list-disc pl-5 text-gray-400 text-sm">
                     <li><strong>UTC:</strong> Global reference standard.</li>
                     <li><strong>GMT:</strong> Historical reference, often interchangeable with UTC.</li>
                     <li><strong>DST:</strong> Seasonal offset changes (±1 hour).</li>
@@ -232,64 +226,57 @@ export default function TimezoneConverterPage() {
                 </div>
 
                 {/* 10‑Item FAQ */}
-                <div className="p-6 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-2xl font-bold mb-4 text-card-foreground">Time Zone Converter FAQ</h2>
-                  <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="p-6 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-2xl font-bold mb-4 text-orange-500">Time Zone Converter FAQ</h2>
+                  <div className="space-y-4 text-sm text-gray-400">
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">1) UTC vs GMT—what should I use?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">1) UTC vs GMT—what should I use?</h3>
                       <p>UTC is the modern atomic‑time standard used by computers and APIs; GMT is a historical solar‑time label. For scheduling and code, prefer UTC; for human‑friendly labels GMT is acceptable if offsets are clear.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">2) Does the converter handle future DST changes?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">2) Does the converter handle future DST changes?</h3>
                       <p>Yes—rules are sourced from authoritative data and applied by date. For meetings far in the future, re‑check close to the event in case a region updates its DST law.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">3) How can I find overlapping work hours for two teams?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">3) How can I find overlapping work hours for two teams?</h3>
                       <p>Convert a candidate time to both zones and compare against local business hours. Try several candidates and pick the widest overlap; rotate meeting times periodically to share inconvenience.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">4) Why is my calendar showing a different time?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">4) Why is my calendar showing a different time?</h3>
                       <p>Calendars cache time zone settings per device and account. Ensure the event is saved in UTC or in the organizer’s zone and that all attendees’ devices use automatic time zone updates.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">5) What’s the safest way to write times in emails?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">5) What’s the safest way to write times in emails?</h3>
                       <p>Include the local time, zone abbreviation, and UTC: “10:00 AM PT (UTC‑7)”. Provide a clickable calendar link so recipients view it in their zone automatically.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">6) Do countries ever change time zones abruptly?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">6) Do countries ever change time zones abruptly?</h3>
                       <p>Yes—governments occasionally shift base offsets or DST policies. Reconfirm times near political changes and avoid hard‑coding offsets in code; use time zone databases instead.</p>
                     </div>
                   <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">7) How do I convert recurring meetings safely?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">7) How do I convert recurring meetings safely?</h3>
                       <p>Store the canonical event in UTC, then let each client render local time with its current zone rules. This prevents drift when DST transitions occur.</p>
                   </div>
                   <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">8) What if a city has multiple aliases (e.g., “Kiev” vs “Kyiv”)?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">8) What if a city has multiple aliases (e.g., “Kiev” vs “Kyiv”)?</h3>
                       <p>Time databases maintain canonical zone IDs even if city names change. Search by country/region when in doubt and prefer IANA IDs in integrations.</p>
                   </div>
                   <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">9) How should I note half‑hour and 45‑minute offsets?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">9) How should I note half‑hour and 45‑minute offsets?</h3>
                       <p>Some regions use offsets like UTC+5:30 or UTC+5:45. Always include the full offset (hours:minutes) in invites and documentation.</p>
                   </div>
                   <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">10) Tips for travel and on‑call schedules</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">10) Tips for travel and on‑call schedules</h3>
                       <p>Switch devices to automatic time zone, keep a UTC watch for reference, and specify coverage windows in UTC. Confirm local holidays when planning critical calls.</p>
                     </div>
                   </div>
               </div>
 
-                {/* Mobile Bottom Ad */}
-                <div className="block xl:hidden mt-8">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
-            </div>
 
                 {/* Related Tools */}
-                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-base md:text-xl font-bold mb-3 text-card-foreground">Related Tools</h2>
-                  <ul className="list-disc pl-5 text-muted-foreground text-sm">
+                <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-base md:text-xl font-bold mb-3 text-orange-500">Related Tools</h2>
+                  <ul className="list-disc pl-5 text-gray-400 text-sm">
                   <li><Link href="/converters/currency">Currency Converter</Link></li>
                   <li><Link href="/calculator/date-difference">Date Difference Calculator</Link></li>
                   <li><Link href="/calculator/age-calculator">Age Calculator</Link></li>
@@ -301,18 +288,7 @@ export default function TimezoneConverterPage() {
             {/* Desktop Sidebar with AdSense */}
             <div className="hidden lg:block w-64 xl:w-72">
               <div className="sticky top-32 space-y-6">
-                <div>
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
-                <div>
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
+                <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-black" />
               </div>
             </div>
           </div>
