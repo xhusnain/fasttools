@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Type, Ruler, HardDrive, DollarSign, Globe, Thermometer, Calculator, ArrowRight, Search } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -275,7 +276,6 @@ export default function ConvertersPage() {
         <div className="container mx-auto px-4 py-8">
             <Breadcrumbs
               items={[
-                { label: "Home", href: "/" },
                 { label: "Converters", href: "/converters" },
               ]}
             />
@@ -285,55 +285,24 @@ export default function ConvertersPage() {
               <div className="flex-1 lg:flex-[2] space-y-6">
                 {/* Hero Section */}
               <div className="text-center space-y-5 animate-fade-in-up">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-4 shadow-md">
-                  <Type className="h-4 w-4 animate-pulse" />
-                  <span>Professional Converter Tools</span>
-                  <div className="h-2 w-2 bg-secondary-accent rounded-full animate-ping"></div>
-                </div>
-
-                
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">
-                  All Conversion Tools
-                </h1>
-
-                <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
-                  Discover our comprehensive collection of free online conversion tools designed for professionals, students, 
-                  and everyday users. All tools are 100% free, highly accurate, and optimized for both desktop and mobile use.
-                </p>
-                
-                <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
-                  <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
-                    <Type className="h-4 w-4 text-primary" />
-                    <span className="text-primary font-medium text-sm">7+ Tools</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
-                    <Globe className="h-4 w-4 text-green-600" />
-                    <span className="text-green-600 font-medium text-sm">Global Use</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-accent shadow">
-                    <Calculator className="h-4 w-4 text-accent" />
-                    <span className="text-accent font-medium text-sm">Free Forever</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-secondary-accent shadow">
-                    <ArrowRight className="h-4 w-4 text-secondary-accent" />
-                    <span className="text-secondary-accent font-medium text-sm">Professional</span>
-                  </div>
-                </div>
+                <GHeader
+                  title="All Conversion Tools"
+                  description="Discover our comprehensive collection of free online conversion tools designed for professionals, students, and everyday users. All tools are 100% free, highly accurate, and optimized for both desktop and mobile use."
+                  titleSize="medium"
+                  descriptionSize="small"
+                />
               </div>
 
               {/* Mobile/Tablet Ad - Top of Page */}
-              <div className="block xl:hidden mb-6">
-                <div className="text-center mb-2">
-                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
+              <div className="lg:hidden">
+                <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {converters.map((converter, index) => (
                   <Card
                     key={`converters-${converter.href}`}
-                    className="border border-border shadow-lg bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 animate-fade-in-up group"
+                    className="border border-border shadow-lg bg-black hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 animate-fade-in-up group"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <CardHeader className="p-3 pb-1">
@@ -342,8 +311,8 @@ export default function ConvertersPage() {
                           <converter.icon className="h-4 w-4 text-primary" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <CardTitle className="text-sm md:text-base font-semibold text-card-foreground mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-2">{converter.title}</CardTitle>
-                          <CardDescription className="leading-relaxed text-[11px] md:text-xs text-muted-foreground line-clamp-2">
+                          <CardTitle className="text-sm md:text-base font-semibold text-orange-500 mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-2">{converter.title}</CardTitle>
+                          <CardDescription className="leading-relaxed text-[11px] md:text-xs text-gray-400 line-clamp-2">
                             {converter.description}
                           </CardDescription>
                         </div>
@@ -361,60 +330,53 @@ export default function ConvertersPage() {
                 ))}
               </div>
 
-              {/* Mobile/Tablet Ad - After cards */}
-              <div className="block xl:hidden my-8">
-                <div className="text-center mb-2">
-                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
-              </div>
 
               {/* Research and Use Cases */}
               <div className="space-y-5 animate-fade-in-up animation-delay-200">
-                <div className="p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-xl font-bold mb-4 text-card-foreground">How Our Converters Actually Work</h2>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                <div className="p-5 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-xl font-bold mb-4 text-orange-500">How Our Converters Actually Work</h2>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-4">
                     Each tool pairs clear UX with verified math. We pre-validate inputs, normalize units, and apply
                     domain‑specific formulas so the output is predictable and repeatable. Wherever live data is needed
                     (for example, currency rates), we reconcile values to consistent time windows to avoid jumpy results.
                   </p>
 
-                  <h3 className="text-lg font-bold mb-3 text-card-foreground">Fresh Data, Clean Pipelines</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  <h3 className="text-lg font-bold mb-3 text-green-500">Fresh Data, Clean Pipelines</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-4">
                     Exchange rates are refreshed frequently and cached to keep pages fast. Measurement conversions rely on
                     standardized SI and widely accepted imperial definitions. Text utilities preserve whitespace and casing rules
                     precisely, while time tools account for daylight saving and regional offsets by design.
                   </p>
 
-                  <h3 className="text-lg font-bold mb-3 text-card-foreground">Built for Accuracy</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <h3 className="text-lg font-bold mb-3 text-green-500">Built for Accuracy</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">
                     Calculations use deterministic formulas, sensible rounding, and unit‑aware precision. Temperature, length,
                     and storage conversions respect base definitions; currency values include clear rate sources and timestamps;
                     and every result can be reproduced with the same inputs.
                   </p>
                 </div>
 
-                <div className="p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-xl font-bold mb-4 text-card-foreground">Pro Tips and Real‑World Uses</h2>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                <div className="p-5 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-xl font-bold mb-4 text-orange-500">Pro Tips and Real‑World Uses</h2>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-4">
                     A few practical ways to get more from these tools—whether you’re writing, planning, or building.
                   </p>
 
-                  <h3 className="text-lg font-bold mb-3 text-card-foreground">Professional Workflow</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  <h3 className="text-lg font-bold mb-3 text-green-500">Professional Workflow</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-4">
                     Use text case tools to standardize titles and identifiers. Pair currency conversion with time‑zone checks when
                     coordinating invoices across regions. For specs and documentation, rely on unit conversions to keep metrics
                     consistent from draft to delivery.
                   </p>
 
-                  <h3 className="text-lg font-bold mb-3 text-card-foreground">Global Operations</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  <h3 className="text-lg font-bold mb-3 text-green-500">Global Operations</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-4">
                     Convert prices with transparent rates, then confirm call schedules in the target time zone. Temperature and
                     measurement tools help translate supplier data sheets and logistics requirements without guesswork.
                   </p>
 
-                  <h3 className="text-lg font-bold mb-3 text-card-foreground">Study and Everyday Tasks</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <h3 className="text-lg font-bold mb-3 text-green-500">Study and Everyday Tasks</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">
                     Students can cross‑check homework results and lab values quickly. Travelers can plan across currencies and
                     local times. Creators can keep copy consistent across platforms with reliable case and formatting tools.
                   </p>
@@ -422,8 +384,8 @@ export default function ConvertersPage() {
 
                 {/* No bottom ads on desktop; keep mobile/tablet only above */}
                 {/* FAQ Section (matches calculator theme) */}
-                <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                  <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                  <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                       <Search className="h-4 w-4 text-accent" />
                     </div>
@@ -431,35 +393,29 @@ export default function ConvertersPage() {
                   </h2>
                   <div className="space-y-4">
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">What is a universal converter online and when should I use it?</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">A universal converter online is a single place to run common online conversion tasks—unit converter, currency converter, file size converter, and more. Use it when you need quick answers without switching tools; it routes your input to the right calculator automatically.</p>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">What is a universal converter online and when should I use it?</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">A universal converter online is a single place to run common online conversion tasks—unit converter, currency converter, file size converter, and more. Use it when you need quick answers without switching tools; it routes your input to the right calculator automatically.</p>
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">How accurate is your currency converter?</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">Rates are refreshed frequently and normalized to a recent market snapshot. We show clean values for clarity; behind the scenes we compute at higher precision so totals remain consistent even when you recalc minutes later.</p>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">How accurate is your currency converter?</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">Rates are refreshed frequently and normalized to a recent market snapshot. We show clean values for clarity; behind the scenes we compute at higher precision so totals remain consistent even when you recalc minutes later.</p>
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">Temperature scale converter: °C, °F, and K explained</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">Our temperature scale converter uses exact formulas: °F = °C × 9/5 + 32 and K = °C + 273.15. Choose Celsius for science and daily weather, Fahrenheit for US contexts, and Kelvin for absolute temperature in scientific work.</p>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">Temperature scale converter: °C, °F, and K explained</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">Our temperature scale converter uses exact formulas: °F = °C × 9/5 + 32 and K = °C + 273.15. Choose Celsius for science and daily weather, Fahrenheit for US contexts, and Kelvin for absolute temperature in scientific work.</p>
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">Time zone converter: does it handle DST and future dates?</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">Yes. The time zone converter applies authoritative zone data, so historical and future daylight‑saving rules are accounted for. Planning a meeting months ahead will still map to the correct local time.</p>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">Time zone converter: does it handle DST and future dates?</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">Yes. The time zone converter applies authoritative zone data, so historical and future daylight‑saving rules are accounted for. Planning a meeting months ahead will still map to the correct local time.</p>
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">File size converter: MB vs MiB—what should I pick?</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">Use MB (decimal, 1 MB = 1,000,000 bytes) for storage vendor specs and marketing. Use MiB (binary, 1 MiB = 1,048,576 bytes) for developer tooling and operating systems. Our file size converter supports both and labels them clearly.</p>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">File size converter: MB vs MiB—what should I pick?</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">Use MB (decimal, 1 MB = 1,000,000 bytes) for storage vendor specs and marketing. Use MiB (binary, 1 MiB = 1,048,576 bytes) for developer tooling and operating systems. Our file size converter supports both and labels them clearly.</p>
                     </div>
-                  </div>
-                  <div className="mt-6 block xl:hidden">
-                    <div className="text-center mb-2">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                    </div>
-                    <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
                   </div>
                 </div>
               </div>
@@ -467,18 +423,7 @@ export default function ConvertersPage() {
             {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
             <div className="hidden lg:block w-72">
               <div className="sticky top-32 space-y-6">
-              <div>
-                <div className="text-center mb-2">
-                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-              </div>
-              <div>
-                <div className="text-center mb-2">
-                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-              </div>
+                <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-black" />
               </div>
             </div>
           </div>
