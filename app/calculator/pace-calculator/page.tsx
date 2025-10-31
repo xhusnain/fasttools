@@ -158,7 +158,7 @@ export default function PaceCalculatorPage() {
       }} />
       
       <div className="min-h-screen bg-background">
-        <div className="container mx-auto px-3 py-8 md:py-12">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 py-6 sm:py-8 md:py-12">
           <Breadcrumbs
             items={[
               { label: "Calculator", href: "/calculator" },
@@ -166,8 +166,8 @@ export default function PaceCalculatorPage() {
             ]}
           />
 
-          <div className="max-w-6xl mx-auto">
-            <div className="mb-6 md:mb-8">
+          <div className="max-w-6xl mx-auto w-full overflow-hidden">
+            <div className="mb-4 sm:mb-6 md:mb-8 w-full overflow-hidden">
               <GHeader 
                 title="Pace Calculator - Advanced Running Pace Calculator"
                 description="Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max with our advanced pace calculator. Perfect for runners, coaches, and serious athletes."
@@ -176,45 +176,55 @@ export default function PaceCalculatorPage() {
               />
             </div>
 
-            <div className="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px] gap-3 md:gap-4 lg:gap-6">
-              <div className="space-y-6 md:space-y-8">
-                <PaceCalculator />
+            {/* Mobile/Tablet AdSpace after GHeader */}
+            <div className="my-6 lg:hidden">
+              <div className="text-center mb-2">
+                <span className="text-xs text-slate-400 font-medium">Advertisement</span>
+              </div>
+              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px] gap-4 sm:gap-6 lg:gap-6 w-full overflow-hidden">
+              <div className="space-y-4 sm:space-y-6 md:space-y-8 w-full min-w-0 overflow-hidden">
+                <div className="w-full overflow-hidden">
+                  <PaceCalculator />
+                </div>
                 
                 {/* Educational Content Sections */}
-                <div className="space-y-6 md:space-y-8 bg-black rounded-xl p-4 md:p-6">
+                <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-black rounded-xl p-3 sm:p-4 md:p-5 lg:p-6 w-full overflow-hidden">
                   {/* How to Use Section */}
-                  <div className="border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                    <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
+                  <div className="border border-border rounded-xl p-3 sm:p-4 md:p-6 shadow-sm overflow-hidden">
+                    <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 flex items-center gap-2 text-orange-500 break-words">
                       <div className="p-2 bg-primary/10 rounded-lg">
                         <Calculator className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                       </div>
                       How to Use Pace Calculator
                     </h2>
-                    <div className="space-y-4">
-                      <div className="grid md:grid-cols-2 gap-3 md:gap-4">
-                        <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
-                          <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">1. Basic Pace Calculation</h3>
-                          <p className="text-xs md:text-sm text-slate-300">Enter time in hours:minutes:seconds format and distance to get instant pace, speed, and training recommendations</p>
+                    <div className="space-y-3 sm:space-y-4 overflow-hidden">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                        <div className="p-3 sm:p-4 bg-black rounded-lg border border-slate-700 overflow-hidden">
+                          <h3 className="font-semibold text-green-500 mb-2 text-sm sm:text-base break-words">1. Basic Pace Calculation</h3>
+                          <p className="text-xs sm:text-sm text-slate-300 break-words">Enter time in hours:minutes:seconds format and distance to get instant pace, speed, and training recommendations</p>
                         </div>
-                        <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
-                          <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">2. Multipoint Analysis</h3>
-                          <p className="text-xs md:text-sm text-slate-300">Track pace for different segments of your run to analyze performance variations and identify improvement areas</p>
+                        <div className="p-3 sm:p-4 bg-black rounded-lg border border-slate-700 overflow-hidden">
+                          <h3 className="font-semibold text-green-500 mb-2 text-sm sm:text-base break-words">2. Multipoint Analysis</h3>
+                          <p className="text-xs sm:text-sm text-slate-300 break-words">Track pace for different segments of your run to analyze performance variations and identify improvement areas</p>
                         </div>
-                        <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
-                          <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">3. Pace Conversion</h3>
-                          <p className="text-xs md:text-sm text-slate-300">Convert between pace per mile and pace per kilometer for international training and racing</p>
+                        <div className="p-3 sm:p-4 bg-black rounded-lg border border-slate-700 overflow-hidden">
+                          <h3 className="font-semibold text-green-500 mb-2 text-sm sm:text-base break-words">3. Pace Conversion</h3>
+                          <p className="text-xs sm:text-sm text-slate-300 break-words">Convert between pace per mile and pace per kilometer for international training and racing</p>
                         </div>
-                        <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
-                          <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">4. Advanced Metrics</h3>
-                          <p className="text-xs md:text-sm text-slate-300">Get heart rate zones, VO2 Max estimation, calories burned, and race time predictions</p>
+                        <div className="p-3 sm:p-4 bg-black rounded-lg border border-slate-700 overflow-hidden">
+                          <h3 className="font-semibold text-green-500 mb-2 text-sm sm:text-base break-words">4. Advanced Metrics</h3>
+                          <p className="text-xs sm:text-sm text-slate-300 break-words">Get heart rate zones, VO2 Max estimation, calories burned, and race time predictions</p>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Features Section */}
-                  <div className="border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                    <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
+                  <div className="border border-border rounded-xl p-3 sm:p-4 md:p-6 shadow-sm overflow-hidden">
+                    <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 flex items-center gap-2 text-orange-500 break-words">
                       <div className="p-2 bg-primary/10 rounded-lg">
                         <Target className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                       </div>
@@ -283,8 +293,8 @@ export default function PaceCalculatorPage() {
                   </div>
 
                   {/* Use Cases Section */}
-                  <div className="border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                    <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
+                  <div className="border border-border rounded-xl p-3 sm:p-4 md:p-6 shadow-sm overflow-hidden">
+                    <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 flex items-center gap-2 text-orange-500 break-words">
                       <div className="p-2 bg-primary/10 rounded-lg">
                         <Home className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                       </div>
@@ -315,8 +325,8 @@ export default function PaceCalculatorPage() {
                   </div>
 
                   {/* FAQ Section */}
-                  <div className="border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                    <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
+                  <div className="border border-border rounded-xl p-3 sm:p-4 md:p-6 shadow-sm overflow-hidden">
+                    <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 flex items-center gap-2 text-orange-500 break-words">
                       <div className="p-2 bg-primary/10 rounded-lg">
                         <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                       </div>
@@ -477,14 +487,14 @@ export default function PaceCalculatorPage() {
                   </div>
 
                   {/* Related Tools Section */}
-                  <div className="border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
-                    <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-green-500">
+                  <div className="border border-slate-700 rounded-xl p-3 sm:p-4 md:p-6 shadow-sm mb-4 md:mb-6 overflow-hidden">
+                    <h2 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 flex items-center gap-2 text-green-500 break-words">
                       <div className="p-1.5 bg-green-500/10 rounded-lg">
                         <Calculator className="h-3 w-3 md:h-4 md:w-4 text-green-500" />
                       </div>
                       Related Fitness & Health Calculators
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                       {[
                         { name: "BMI Calculator", desc: "Calculate Body Mass Index", href: "/calculator/bmi-calculator", icon: Users },
                         { name: "Calorie Calculator", desc: "Calculate daily calorie needs", href: "/calculator/calorie-calculator", icon: TrendingUp },
@@ -502,13 +512,13 @@ export default function PaceCalculatorPage() {
                         <a
                           key={name}
                           href={href}
-                          className="p-2 md:p-3 bg-black rounded-lg border border-slate-700 hover:bg-slate-900 hover:border-slate-600 transition-colors group"
+                          className="p-2 sm:p-3 md:p-4 bg-black rounded-lg border border-slate-700 hover:bg-slate-900 hover:border-slate-600 transition-colors group w-full overflow-hidden"
                         >
                           <div className="flex items-center gap-2 mb-1">
-                            <Icon className="h-3 w-3 text-green-500" />
-                            <h3 className="font-semibold text-green-500 text-xs md:text-sm">{name}</h3>
+                            <Icon className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 flex-shrink-0" />
+                            <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">{name}</h3>
                           </div>
-                          <p className="text-xs text-slate-300">{desc}</p>
+                          <p className="text-xs text-slate-300 break-words">{desc}</p>
                         </a>
                       ))}
                     </div>
@@ -517,7 +527,7 @@ export default function PaceCalculatorPage() {
               </div>
               
               {/* Sidebar */}
-              <div className="space-y-6 lg:space-y-8">
+              <div className="hidden lg:block space-y-6 lg:space-y-8">
                 <div className="sticky top-4">
                   {/* Sidebar Ad */}
                   <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
