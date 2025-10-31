@@ -291,9 +291,9 @@ Mixed Number: ${result.mixedNumber}`
           {/* Fraction Inputs */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* First Fraction */}
-            <div className="space-y-3">
+              <div className="space-y-3">
               <Label className="text-sm font-semibold text-green-500">First Fraction</Label>
-              <div className="space-y-2">
+                <div className="space-y-2">
                 <div className="space-y-1">
                   <Label htmlFor="numerator1" className="text-[10px] text-slate-400">Numerator</Label>
                   <Input
@@ -323,9 +323,9 @@ Mixed Number: ${result.mixedNumber}`
             </div>
 
             {/* Second Fraction */}
-            <div className="space-y-3">
+              <div className="space-y-3">
               <Label className="text-sm font-semibold text-green-500">Second Fraction</Label>
-              <div className="space-y-2">
+                <div className="space-y-2">
                 <div className="space-y-1">
                   <Label htmlFor="numerator2" className="text-[10px] text-slate-400">Numerator</Label>
                   <Input

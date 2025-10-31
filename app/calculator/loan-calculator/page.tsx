@@ -316,7 +316,7 @@ export default function LoanCalculatorPage() {
                   <CheckCircle className="h-3 w-3 mr-1" />
                   Instant Results
                 </Badge>
-              </div>
+          </div>
 
               {/* Mobile/Tablet AdSpace - shows on mobile/tablet, hidden on desktop */}
               <div className="lg:hidden mt-6">
@@ -325,7 +325,7 @@ export default function LoanCalculatorPage() {
                 </div>
                 <AdSpace slot="content" className="w-full h-64 border border-border rounded-xl shadow-sm bg-black" />
               </div>
-            </div>
+        </div>
 
             {/* Main Content Layout - Zoomed Out */}
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-3 md:gap-4 lg:gap-6">
@@ -1159,10 +1159,10 @@ export default function LoanCalculatorPage() {
                   </div>
                   <AdSpace slot="sidebar" className="w-full h-64 lg:h-72 xl:h-80 border border-border rounded-xl shadow-sm bg-black" />
                 </div>
-              </div>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   )

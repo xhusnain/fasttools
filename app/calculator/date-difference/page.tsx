@@ -300,8 +300,8 @@ export default function DateDifferencePage() {
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
               </div>
               <AdSpace slot="content" className="w-full h-64 border border-border rounded-xl shadow-sm bg-black" />
-            </div>
           </div>
+        </div>
 
         <div className="grid lg:grid-cols-[1fr_350px] gap-8">
           <div>
@@ -398,13 +398,13 @@ export default function DateDifferencePage() {
               { feature: "Free Forever", icon: BookOpen, desc: "Completely free with no registration required", example: "No hidden costs or fees" }
             ].map(({ feature, icon: Icon, desc, example }) => (
                     <div key={feature} className="p-4 bg-black rounded-lg border border-slate-600">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Icon className="h-4 w-4 text-primary" />
+                <div className="flex items-center gap-2 mb-2">
+                  <Icon className="h-4 w-4 text-primary" />
                         <h3 className="font-semibold text-green-500">{feature}</h3>
-                      </div>
+                </div>
                       <p className="text-sm text-slate-400 mb-2">{desc}</p>
-                      <p className="text-xs text-primary font-mono bg-primary/10 px-2 py-1 rounded">{example}</p>
-                    </div>
+                <p className="text-xs text-primary font-mono bg-primary/10 px-2 py-1 rounded">{example}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -1215,7 +1215,7 @@ export default function DateDifferencePage() {
             </div>
           </div>
 
-        </div>
+              </div>
         </div>
       </div>
     </>

@@ -154,7 +154,7 @@ export default function FractionCalculatorPage() {
                 description="Advanced fraction calculator with addition, subtraction, multiplication, division, simplification, and conversion between fractions and decimals. Perfect for students, teachers, and professionals."
                 titleSize="medium"
               />
-            </div>
+                </div>
 
             {/* Mobile/Tablet AdSpace after GHeader */}
             <div className="my-6 lg:hidden">

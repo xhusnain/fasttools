@@ -232,7 +232,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
             Standard Deviation Calculator
           </CardTitle>
           <CardDescription className="text-slate-400 text-xs">
-            Calculate standard deviation, variance, mean, and comprehensive statistical analysis.
+            Calculate standard deviation, variance, mean, and comprehensive statistical analysis. 
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-3 px-3 sm:px-6">

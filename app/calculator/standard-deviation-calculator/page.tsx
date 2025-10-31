@@ -219,12 +219,12 @@ export default function StandardDeviationCalculatorPage() {
             </div>
 
             {/* Mobile/Tablet AdSpace after GHeader */}
-            <div className="my-6 lg:hidden">
-              <div className="text-center mb-2">
+                <div className="my-6 lg:hidden">
+                  <div className="text-center mb-2">
                 <span className="text-xs text-slate-400 font-medium">Advertisement</span>
-              </div>
-              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
             </div>
+              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
+        </div>
 
             <div className="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px] gap-3 md:gap-4 lg:gap-6">
               <div>

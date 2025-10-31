@@ -629,7 +629,7 @@ export default function PregnancyConceptionCalculatorPage() {
                   <div>
                     <div className="text-center mb-2">
                       <span className="text-xs text-slate-400 font-medium">Advertisement</span>
-                    </div>
+                  </div>
                     <AdSpace slot="sidebar" className="w-full h-80 border border-slate-700 rounded-xl shadow-sm bg-black" />
                   </div>
                 </div>

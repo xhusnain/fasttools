@@ -398,7 +398,7 @@ export default function TaxCalculatorPage() {
                 <span className="text-xs text-slate-400 font-medium">Advertisement</span>
               </div>
               <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
-            </div>
+        </div>
 
             <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
               <div>
@@ -495,7 +495,7 @@ export default function TaxCalculatorPage() {
                           <div className="flex items-center gap-1.5 mb-1">
                             <Icon className="h-3 w-3 text-green-500" />
                             <h3 className="font-semibold text-green-500 text-xs md:text-sm">{type}</h3>
-                    </div>
+                          </div>
                           <p className="text-xs text-slate-400 mb-1">{desc}</p>
                           <p className="text-xs text-orange-400 font-mono bg-orange-500/10 px-1.5 py-0.5 rounded">{example}</p>
                   </div>
@@ -767,8 +767,8 @@ export default function TaxCalculatorPage() {
                       <span className="text-xs text-slate-400 font-medium">Advertisement</span>
                     </div>
                     <AdSpace slot="sidebar" className="w-full h-60 lg:h-64 xl:h-72 border border-slate-700 rounded-xl shadow-sm bg-black" />
-            </div>
                   </div>
+                </div>
               </div>
             </div>
           </div>

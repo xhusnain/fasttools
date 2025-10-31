@@ -123,7 +123,7 @@ export default function PercentageCalculatorPage() {
               <span className="text-xs text-slate-400 font-medium">Advertisement</span>
             </div>
             <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
-          </div>
+        </div>
 
           <div className="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px] gap-3 md:gap-4 lg:gap-6">
           <div>

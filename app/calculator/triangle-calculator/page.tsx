@@ -188,7 +188,7 @@ export default function TriangleCalculatorPage() {
                                 description="Advanced triangle calculator with comprehensive geometry calculations including area, perimeter, angles, heights, medians, inradius, and circumradius. Supports all triangle solving methods: SSS, SAS, ASA, AAS, and SSA."
                                 titleSize="medium"
                             />
-                        </div>
+                                </div>
 
                         {/* Mobile/Tablet AdSpace after GHeader */}
                         <div className="my-6 lg:hidden">

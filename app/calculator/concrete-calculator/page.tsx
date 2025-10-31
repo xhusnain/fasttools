@@ -221,7 +221,7 @@ export default function ConcreteCalculatorPage() {
                 <span className="text-xs text-slate-400 font-medium">Advertisement</span>
               </div>
               <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
-            </div>
+        </div>
 
             <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
               <div>
@@ -545,7 +545,7 @@ export default function ConcreteCalculatorPage() {
                       <span className="text-xs text-slate-400 font-medium">Advertisement</span>
                     </div>
                     <AdSpace slot="sidebar" className="w-full h-80 border border-slate-700 rounded-xl shadow-sm bg-black" />
-            </div>
+              </div>
                 </div>
               </div>
             </div>

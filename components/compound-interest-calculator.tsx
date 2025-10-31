@@ -225,29 +225,29 @@ Time Period: ${result.years} years`
               <Label htmlFor="principal" className="text-[11px] font-medium flex items-center gap-1 text-green-500">
                 <DollarSign className="h-2.5 w-2.5 text-green-500" />
                 Principal ({countryRateData[selectedCountry]?.currency})
-              </Label>
-              <Input
-                id="principal"
-                type="number"
-                value={principal}
-                onChange={(e) => setPrincipal(e.target.value)}
-                placeholder="10000"
+            </Label>
+            <Input
+              id="principal"
+              type="number"
+              value={principal}
+              onChange={(e) => setPrincipal(e.target.value)}
+              placeholder="10000"
                 className="h-8 text-xs px-2 py-1.5 rounded-lg border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 hover:border-orange-500/50 ring-offset-1"
-              />
-            </div>
+            />
+          </div>
             <div className="space-y-1">
               <Label htmlFor="time" className="text-[11px] font-medium flex items-center gap-1 text-green-500">
                 <Target className="h-2.5 w-2.5 text-green-500" />
                 Years
-              </Label>
-              <Input
-                id="time"
-                type="number"
-                value={time}
-                onChange={(e) => setTime(e.target.value)}
-                placeholder="10"
+            </Label>
+            <Input
+              id="time"
+              type="number"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+              placeholder="10"
                 className="h-8 text-xs px-2 py-1.5 rounded-lg border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 hover:border-orange-500/50 ring-offset-1"
-              />
+            />
             </div>
           </div>
 

@@ -258,12 +258,12 @@ export default function GPACalculatorPage() {
       
       <div className="bg-black">
         <div className="container mx-auto px-3 py-6 md:py-8">
-          <Breadcrumbs
-            items={[
-              { label: "Calculator", href: "/calculator" },
-              { label: "GPA Calculator", href: "/calculator/gpa-calculator" },
-            ]}
-          />
+      <Breadcrumbs
+        items={[
+          { label: "Calculator", href: "/calculator" },
+          { label: "GPA Calculator", href: "/calculator/gpa-calculator" },
+        ]}
+      />
 
           <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
@@ -280,7 +280,7 @@ export default function GPACalculatorPage() {
                 <span className="text-xs text-slate-400 font-medium">Advertisement</span>
               </div>
               <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
-            </div>
+        </div>
 
             <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
               <div>
@@ -539,10 +539,10 @@ export default function GPACalculatorPage() {
                       </a>
                     ))}
                 </div>
+                </div>
               </div>
-            </div>
 
-            {/* Desktop Sidebar with AdSense */}
+              {/* Desktop Sidebar with AdSense */}
               <div className="space-y-6 hidden lg:block">
                 <div className="sticky top-32 space-y-6">
                   <div>
