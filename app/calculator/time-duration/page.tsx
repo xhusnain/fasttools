@@ -1,6 +1,7 @@
 import { TimeDurationCalculator } from "@/components/time-duration-calculator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import { Clock, Calculator, Target, TrendingUp, Globe, Calendar, Plus, Minus, Timer, Zap, BarChart3, PieChart, ArrowUp, ArrowDown, CheckCircle, BookOpen, Users, Award } from "lucide-react"
 import type { Metadata } from "next"
 
@@ -203,7 +204,7 @@ export default function TimeDurationPage() {
         "name": "Is the time duration calculator free to use?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, our time duration calculator is completely free to use with no registration required. All 7 calculation types, real-time display, mathematical formulas, and mobile-responsive design are available at no cost."
+          "text": "Our time duration calculator is available without any cost or registration. You can access all 7 calculation types, real-time display, mathematical formulas, and mobile-responsive design features at no charge."
         }
       },
       {
@@ -228,7 +229,7 @@ export default function TimeDurationPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-black">
         <div className="container mx-auto px-3 py-6 md:py-8">
         <Breadcrumbs
           items={[
@@ -237,62 +238,63 @@ export default function TimeDurationPage() {
           ]}
         />
 
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3 text-yellow-400">Free Online Time Duration Calculator</h1>
-              <p className="text-sm md:text-base text-muted-foreground text-pretty leading-relaxed">
-                Use our <strong>free Time Duration Calculator</strong> to find the exact <strong>time between two points</strong> — in <strong>hours, minutes, and seconds</strong>. Perfect for tracking <strong>work hours</strong>, <strong>study time</strong>, <strong>events</strong>, or any <strong>time interval</strong>. <strong>Fast</strong>, <strong>accurate</strong>, and <strong>easy to use online</strong>.
-            </p>
-          </div>
+              <GHeader 
+                title="Free Online Time Duration Calculator"
+                description="Use our free Time Duration Calculator to find the exact time between two points — in hours, minutes, and seconds. Perfect for tracking work hours, study time, events, or any time interval. Fast, accurate, and easy to use online."
+                titleSize="medium"
+              />
+            </div>
+
+            {/* Mobile/Tablet AdSpace after GHeader */}
+            <div className="my-6 lg:hidden">
+              <div className="text-center mb-2">
+                <span className="text-xs text-slate-400 font-medium">Advertisement</span>
+              </div>
+              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
+            </div>
 
             <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
             <div>
               <TimeDurationCalculator />
               
-                {/* Mobile/Tablet AdSpace */}
-                <div className="my-4 lg:hidden">
-                  <div className="text-center mb-1">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                    </div>
-                  <AdSpace slot="content" className="w-full h-20 sm:h-24 md:h-28 border border-border rounded-xl shadow-sm bg-card" />
-              </div>
-              
               {/* How to Use Section */}
                 <div className="mt-6 md:mt-8 space-y-4 md:space-y-6">
-                  <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
-                    <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                      <div className="p-1.5 bg-primary/10 rounded-lg">
-                        <BookOpen className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                  <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm">
+                    <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                        <BookOpen className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                   </div>
                   How to Use Our Time Duration Calculator
                 </h2>
                     <div className="space-y-3">
                       <div className="grid md:grid-cols-2 gap-2 md:gap-3">
-                        <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
-                          <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">1. Select Calculation Type</h3>
-                          <p className="text-xs text-muted-foreground">Choose from 7 different time calculation types</p>
+                        <div className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
+                          <h3 className="font-semibold text-green-500 mb-1 text-xs md:text-sm">1. Select Calculation Type</h3>
+                          <p className="text-xs text-slate-400">Choose from 7 different time calculation types</p>
                   </div>
-                        <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
-                          <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">2. Enter Time Values</h3>
-                          <p className="text-xs text-muted-foreground">Input your time values in the appropriate fields</p>
+                        <div className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
+                          <h3 className="font-semibold text-green-500 mb-1 text-xs md:text-sm">2. Enter Time Values</h3>
+                          <p className="text-xs text-slate-400">Input your time values in the appropriate fields</p>
                   </div>
-                        <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
-                          <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">3. Get Results</h3>
-                          <p className="text-xs text-muted-foreground">View detailed calculation with formulas</p>
+                        <div className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
+                          <h3 className="font-semibold text-green-500 mb-1 text-xs md:text-sm">3. Get Results</h3>
+                          <p className="text-xs text-slate-400">View detailed calculation with formulas</p>
                   </div>
-                        <div className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
-                          <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">4. Copy & Share</h3>
-                          <p className="text-xs text-muted-foreground">Copy results or share calculations</p>
+                        <div className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
+                          <h3 className="font-semibold text-green-500 mb-1 text-xs md:text-sm">4. Copy & Share</h3>
+                          <p className="text-xs text-slate-400">Copy results or share calculations</p>
                   </div>
                 </div>
                     </div>
                   </div>
 
               {/* Calculation Types Section */}
-                  <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
-                    <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                      <div className="p-1.5 bg-primary/10 rounded-lg">
-                        <Calculator className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                  <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm">
+                    <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                        <Calculator className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                   </div>
                       Time Calculation Types
                 </h2>
@@ -306,64 +308,64 @@ export default function TimeDurationPage() {
                         { type: "Time Span Calculator", icon: Calendar, desc: "Calculate working days", example: "Jan 1 to Jan 15 = 10 work days" },
                         { type: "Time Tracker Calculator", icon: TrendingUp, desc: "Calculate regular and overtime", example: "45 hours (40 regular + 5 overtime)" }
                       ].map(({ type, icon: Icon, desc, example }) => (
-                        <div key={type} className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
+                        <div key={type} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
                           <div className="flex items-center gap-1.5 mb-1">
-                            <Icon className="h-3 w-3 text-primary" />
-                            <h3 className="font-semibold text-foreground text-xs md:text-sm">{type}</h3>
+                            <Icon className="h-3 w-3 text-green-500" />
+                            <h3 className="font-semibold text-green-500 text-xs md:text-sm">{type}</h3>
                     </div>
-                          <p className="text-xs text-muted-foreground mb-1">{desc}</p>
-                          <p className="text-xs text-primary font-mono bg-primary/10 px-1.5 py-0.5 rounded">{example}</p>
+                          <p className="text-xs text-slate-400 mb-1">{desc}</p>
+                          <p className="text-xs text-orange-400 font-mono bg-orange-500/10 px-1.5 py-0.5 rounded">{example}</p>
                   </div>
                       ))}
                     </div>
                   </div>
 
                   {/* Common Use Cases */}
-                  <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
-                    <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                      <div className="p-1.5 bg-primary/10 rounded-lg">
-                        <Users className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                  <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm">
+                    <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                        <Users className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                     </div>
                       Common Use Cases for Time Duration Calculator
                     </h2>
                     <div className="grid md:grid-cols-2 gap-3 md:gap-4">
                       <div className="space-y-2">
-                        <h3 className="text-sm md:text-base font-semibold text-foreground">Business & Finance</h3>
+                        <h3 className="text-sm md:text-base font-semibold text-green-500">Business & Finance</h3>
                         <div className="space-y-1">
-                          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                          <div className="flex items-center gap-1.5 text-xs text-slate-400">
                             <CheckCircle className="h-3 w-3 text-green-500" />
                             <span>Calculate total hours worked for payroll</span>
                   </div>
-                          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                          <div className="flex items-center gap-1.5 text-xs text-slate-400">
                             <CheckCircle className="h-3 w-3 text-green-500" />
                             <span>Time difference calculator for projects</span>
                     </div>
-                          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                          <div className="flex items-center gap-1.5 text-xs text-slate-400">
                             <CheckCircle className="h-3 w-3 text-green-500" />
                             <span>Work hours calculator for SLA tracking</span>
                   </div>
-                          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                          <div className="flex items-center gap-1.5 text-xs text-slate-400">
                             <CheckCircle className="h-3 w-3 text-green-500" />
                             <span>Duration calculator in hours and minutes</span>
                     </div>
                   </div>
                     </div>
                       <div className="space-y-2">
-                        <h3 className="text-sm md:text-base font-semibold text-foreground">Education & Productivity</h3>
+                        <h3 className="text-sm md:text-base font-semibold text-green-500">Education & Productivity</h3>
                         <div className="space-y-1">
-                          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                          <div className="flex items-center gap-1.5 text-xs text-slate-400">
                             <CheckCircle className="h-3 w-3 text-green-500" />
                             <span>Calculate time between two times for study</span>
                   </div>
-                          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                          <div className="flex items-center gap-1.5 text-xs text-slate-400">
                             <CheckCircle className="h-3 w-3 text-green-500" />
                             <span>Time gap calculator for exam prep</span>
                     </div>
-                          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                          <div className="flex items-center gap-1.5 text-xs text-slate-400">
                             <CheckCircle className="h-3 w-3 text-green-500" />
                             <span>Elapsed time calculator for productivity</span>
                   </div>
-                          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                          <div className="flex items-center gap-1.5 text-xs text-slate-400">
                             <CheckCircle className="h-3 w-3 text-green-500" />
                             <span>Time interval calculator for habits</span>
                 </div>
@@ -373,10 +375,10 @@ export default function TimeDurationPage() {
                 </div>
 
                   {/* Comprehensive FAQ Section */}
-                  <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
-                    <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                      <div className="p-1.5 bg-primary/10 rounded-lg">
-                        <Award className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                  <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm">
+                    <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                        <Award className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                   </div>
                       Frequently Asked Questions (FAQ) - 50 Questions
                 </h2>
@@ -436,7 +438,7 @@ export default function TimeDurationPage() {
                         },
                         {
                           q: "Is the time duration calculator free to use?",
-                          a: "Yes, our time duration calculator is completely free to use with no registration required. All 7 calculation types, real-time display, mathematical formulas, and mobile-responsive design are available at no cost."
+                          a: "Our time duration calculator is available without any cost or registration. You can access all 7 calculation types, real-time display, mathematical formulas, and mobile-responsive design features at no charge."
                         },
                         {
                           q: "Can I use this calculator on mobile devices?",
@@ -493,10 +495,6 @@ export default function TimeDurationPage() {
                         {
                           q: "How do I convert time between timezones?",
                           a: "Use our timezone conversion feature to convert time between different timezones. Crucial for global teams, international meetings, and travel planning. Example: 2:00 PM EST = 7:00 PM UTC."
-                        },
-                        {
-                          q: "What is the difference between work days and calendar days?",
-                          a: "Work days exclude weekends and holidays, while calendar days include all days. Work days calculator is perfect for project planning and deadline calculations. Example: Jan 1 to Jan 15 (excluding weekends) = 10 work days."
                         },
                         {
                           q: "How do I calculate meeting duration?",
@@ -635,24 +633,12 @@ export default function TimeDurationPage() {
                           a: "Yes, our Time Duration Calculator is perfect for tracking work hours, helping you monitor productivity, calculate overtime, and manage time effectively for payroll and billing purposes."
                         },
                         {
-                          q: "Does the calculator account for time zone differences?",
-                          a: "Yes, our advanced calculator includes timezone conversion features. You can input times in different timezones and get accurate duration calculations with automatic timezone adjustments."
-                        },
-                        {
                           q: "Can I calculate the duration between two dates and times?",
                           a: "Yes, our calculator allows you to input specific dates and times to determine the exact duration between them, handling calculations that span multiple days, weeks, or even years."
                         },
                         {
-                          q: "Is the Time Duration Calculator free to use?",
-                          a: "Yes, our Time Duration Calculator is completely free to use without any hidden charges, registration requirements, or usage limits."
-                        },
-                        {
                           q: "Do I need to download any software to use the calculator?",
                           a: "No, our calculator is web-based and does not require any downloads or installations. Simply access it through your web browser on any device."
-                        },
-                        {
-                          q: "Can I use the calculator on my mobile device?",
-                          a: "Yes, our calculator is fully mobile-friendly and can be accessed on any smartphone or tablet browser with responsive design for optimal mobile experience."
                         },
                         {
                           q: "How accurate is the Time Duration Calculator?",
@@ -699,10 +685,6 @@ export default function TimeDurationPage() {
                           a: "Yes, our calculator can display results in decimal format for easier integration with billing systems, payroll software, and financial calculations."
                         },
                         {
-                          q: "Can I calculate the duration between two times on the same day?",
-                          a: "Yes, our calculator can compute the time difference between two times on the same day, perfect for tracking daily work hours, meeting durations, or study sessions."
-                        },
-                        {
                           q: "Is the calculator useful for event planning?",
                           a: "Absolutely. Our calculator helps event planners determine the duration of events, manage complex schedules, and coordinate activities across different time zones."
                         },
@@ -745,10 +727,6 @@ export default function TimeDurationPage() {
                         {
                           q: "Does the calculator support multiple languages?",
                           a: "Currently, our calculator is available in English with plans to add additional language support in future updates for global accessibility."
-                        },
-                        {
-                          q: "Can I integrate the calculator into my website?",
-                          a: "Yes, you can integrate our calculator into your website using available widgets and embed codes, making it easy to add time calculation functionality to your platform."
                         },
                         {
                           q: "Is the calculator suitable for calculating time intervals in sports?",
@@ -867,24 +845,12 @@ export default function TimeDurationPage() {
                           a: "Yes, our Time Duration Calculator is perfect for tracking work hours, helping you monitor productivity, calculate overtime, and manage time effectively for payroll and billing purposes."
                         },
                         {
-                          q: "Does the calculator account for time zone differences?",
-                          a: "Yes, our advanced calculator includes timezone conversion features. You can input times in different timezones and get accurate duration calculations with automatic timezone adjustments."
-                        },
-                        {
                           q: "Can I calculate the duration between two dates and times?",
                           a: "Yes, our calculator allows you to input specific dates and times to determine the exact duration between them, handling calculations that span multiple days, weeks, or even years."
                         },
                         {
-                          q: "Is the Time Duration Calculator free to use?",
-                          a: "Yes, our Time Duration Calculator is completely free to use without any hidden charges, registration requirements, or usage limits."
-                        },
-                        {
                           q: "Do I need to download any software to use the calculator?",
                           a: "No, our calculator is web-based and does not require any downloads or installations. Simply access it through your web browser on any device."
-                        },
-                        {
-                          q: "Can I use the calculator on my mobile device?",
-                          a: "Yes, our calculator is fully mobile-friendly and can be accessed on any smartphone or tablet browser with responsive design for optimal mobile experience."
                         },
                         {
                           q: "How accurate is the Time Duration Calculator?",
@@ -931,10 +897,6 @@ export default function TimeDurationPage() {
                           a: "Yes, our calculator can display results in decimal format for easier integration with billing systems, payroll software, and financial calculations."
                         },
                         {
-                          q: "Can I calculate the duration between two times on the same day?",
-                          a: "Yes, our calculator can compute the time difference between two times on the same day, perfect for tracking daily work hours, meeting durations, or study sessions."
-                        },
-                        {
                           q: "Is the calculator useful for event planning?",
                           a: "Absolutely. Our calculator helps event planners determine the duration of events, manage complex schedules, and coordinate activities across different time zones."
                         },
@@ -977,10 +939,6 @@ export default function TimeDurationPage() {
                         {
                           q: "Does the calculator support multiple languages?",
                           a: "Currently, our calculator is available in English with plans to add additional language support in future updates for global accessibility."
-                        },
-                        {
-                          q: "Can I integrate the calculator into my website?",
-                          a: "Yes, you can integrate our calculator into your website using available widgets and embed codes, making it easy to add time calculation functionality to your platform."
                         },
                         {
                           q: "Is the calculator suitable for calculating time intervals in sports?",
@@ -1047,19 +1005,19 @@ export default function TimeDurationPage() {
                           a: "Yes, our calculator can assist in determining time durations relevant to legal matters, such as contract periods, deadlines, and compliance requirements."
                         }
                       ].map(({ q, a }, index) => (
-                        <div key={index} className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
-                          <h3 className="font-semibold text-foreground mb-1 text-xs md:text-sm">{q}</h3>
-                          <p className="text-xs text-muted-foreground">{a}</p>
+                        <div key={index} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
+                          <h3 className="font-semibold text-green-500 mb-1 text-xs md:text-sm">{q}</h3>
+                          <p className="text-xs text-slate-400">{a}</p>
                   </div>
                       ))}
                   </div>
                   </div>
 
                   {/* Related Tools Section */}
-                  <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
-                    <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                      <div className="p-1.5 bg-primary/10 rounded-lg">
-                        <Calculator className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                  <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm">
+                    <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                        <Calculator className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                   </div>
                       Related Time & Date Calculators
                     </h2>
@@ -1078,28 +1036,16 @@ export default function TimeDurationPage() {
                           icon: "📅"
                         },
                         {
+                          name: "Loan EMI Calculator",
+                          desc: "Calculate monthly loan payments and interest",
+                          href: "/calculator/loan-calculator",
+                          icon: "💰"
+                        },
+                        {
                           name: "Workday Calculator",
                           desc: "Calculate business days between dates",
                           href: "/calculator/date-difference",
                           icon: "💼"
-                        },
-                        {
-                          name: "Date to Day Calculator",
-                          desc: "Find what day of the week a date falls on",
-                          href: "/calculator/date-difference",
-                          icon: "🗓️"
-                        },
-                        {
-                          name: "Year End Countdown",
-                          desc: "Count down to the end of the year",
-                          href: "/fun-tools/birthday-countdown",
-                          icon: "⏰"
-                        },
-                        {
-                          name: "Age in Hours Calculator",
-                          desc: "Calculate age in hours and minutes",
-                          href: "/calculator/age-calculator",
-                          icon: "⏱️"
                         },
                         {
                           name: "Percentage Calculator",
@@ -1114,6 +1060,12 @@ export default function TimeDurationPage() {
                           icon: "⚖️"
                         },
                         {
+                          name: "Compound Interest Calculator",
+                          desc: "Calculate compound interest growth",
+                          href: "/calculator/compound-interest",
+                          icon: "📈"
+                        },
+                        {
                           name: "Tip Calculator",
                           desc: "Calculate tips and gratuity",
                           href: "/finance-tools/tip-calculator",
@@ -1126,37 +1078,35 @@ export default function TimeDurationPage() {
                           icon: "🏷️"
                         },
                         {
-                          name: "Compound Interest Calculator",
-                          desc: "Calculate compound interest growth",
-                          href: "/calculator/compound-interest",
-                          icon: "📈"
+                          name: "Tax Calculator",
+                          desc: "Calculate income tax and deductions",
+                          href: "/calculator/tax-calculator",
+                          icon: "🧾"
+                        },
+                        {
+                          name: "Conversion Calculator",
+                          desc: "Convert between units instantly",
+                          href: "/calculator/conversion-calculator",
+                          icon: "🔄"
                         }
                       ].map((tool, index) => (
                         <a
                           key={index}
                           href={tool.href}
-                          className="p-3 bg-secondary/50 rounded-lg border border-border hover:bg-primary/5 hover:border-primary/20 transition-colors group"
+                          className="p-3 bg-black rounded-lg border border-slate-700 hover:bg-slate-800 hover:border-orange-500/50 transition-colors group"
                         >
                           <div className="flex items-center gap-2 mb-1">
                             <span className="text-lg">{tool.icon}</span>
-                            <h3 className="font-semibold text-foreground group-hover:text-primary text-sm md:text-base">
+                            <h3 className="font-semibold text-green-500 group-hover:text-orange-500 text-sm md:text-base">
                               {tool.name}
                             </h3>
                           </div>
-                          <p className="text-xs text-muted-foreground group-hover:text-foreground/80">
+                          <p className="text-xs text-slate-400 group-hover:text-slate-300">
                             {tool.desc}
                           </p>
                         </a>
                       ))}
                   </div>
-                </div>
-                  
-                  {/* Mobile/Tablet Bottom AdSpace */}
-                  <div className="my-6 lg:hidden">
-                    <div className="text-center mb-1">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                    </div>
-                    <AdSpace slot="content" className="w-full h-20 sm:h-24 md:h-28 border border-border rounded-xl shadow-sm bg-card" />
                 </div>
               </div>
             </div>
@@ -1165,17 +1115,10 @@ export default function TimeDurationPage() {
                 <div className="sticky top-24 space-y-4">
                   <div>
                     <div className="text-center mb-1">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                      <span className="text-xs text-slate-400 font-medium">Advertisement</span>
                   </div>
-                    <AdSpace slot="sidebar" className="w-full h-60 lg:h-64 xl:h-72 border border-border rounded-xl shadow-sm bg-card" />
+                    <AdSpace slot="sidebar" className="w-full h-60 lg:h-64 xl:h-72 border border-slate-700 rounded-xl shadow-sm bg-black" />
               </div>
-
-                  <div>
-                    <div className="text-center mb-1">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                    <AdSpace slot="sidebar" className="w-full h-60 lg:h-64 xl:h-72 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
                   </div>
                   </div>
             </div>
