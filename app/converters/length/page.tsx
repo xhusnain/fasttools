@@ -1,7 +1,7 @@
 import { LengthConverter } from "@/components/length-converter"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
-import { Ruler, Calculator, Target, Users, Award, CheckCircle, ArrowRight } from "lucide-react"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import type { Metadata } from "next"
 import Link from "next/link"
 
@@ -183,181 +183,129 @@ export default function LengthConverterPage() {
       <div className="container mx-auto px-4 py-6 sm:py-8">
         <Breadcrumbs
           items={[
-            { label: "Home", href: "/" },
             { label: "Converters", href: "/converters" },
             { label: "Length Converter", href: "/converters/length" },
           ]}
         />
 
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
-              <div className="flex-1 lg:flex-[2] space-y-5 sm:space-y-6">
-                {/* Hero Section */}
-                <div className="text-center space-y-5 animate-fade-in-up">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-4 shadow-md">
-                    <Ruler className="h-4 w-4" />
-                    <span>Professional Length Converter</span>
-                    <div className="h-2 w-2 bg-secondary-accent rounded-full"></div>
-                  </div>
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">Free Length Converter</h1>
-                  <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
-                    Convert meters ⇄ feet, inches ⇄ cm, km ⇄ miles and more with precise, fast results.
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+            <div className="flex-1 lg:flex-[2] space-y-5 sm:space-y-6">
+              {/* Hero Section */}
+              <div className="text-center space-y-5 animate-fade-in-up">
+                <GHeader
+                  title="Free Length Converter"
+                  description="Convert meters ⇄ feet, inches ⇄ cm, km ⇄ miles and more with precise, fast results."
+                  titleSize="medium"
+                  descriptionSize="small"
+                />
+              </div>
+
+              {/* Mobile Ad Space */}
+              <div className="lg:hidden">
+                <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
+              </div>
+
+              {/* Tool Card */}
+              <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                <LengthConverter />
+              </div>
+
+              {/* Understanding How This Tool Works */}
+              <div className="space-y-5 animate-fade-in-up animation-delay-200">
+                <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-base md:text-xl font-bold mb-3 text-orange-500">Understanding How This Length Converter Works</h2>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    Conversions are computed with standardized factors for metric and imperial units. Input validation and
+                    sensible rounding keep values readable while preserving accuracy.
                   </p>
-                  <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
-                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
-                      <Ruler className="h-4 w-4 text-primary" />
-                      <span className="text-primary font-medium text-sm">8+ Units</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
-                      <Calculator className="h-4 w-4 text-green-600" />
-                      <span className="text-green-600 font-medium text-sm">Real-time</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-accent shadow">
-                      <Target className="h-4 w-4 text-accent" />
-                      <span className="text-accent font-medium text-sm">Free Forever</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-secondary-accent shadow">
-                      <Users className="h-4 w-4 text-secondary-accent" />
-                      <span className="text-secondary-accent font-medium text-sm">Professional</span>
-                    </div>
-                  </div>
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">Real-Time Processing</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    Results update as you type. Mixed formats (like feet+inches) are handled cleanly and converted to any target unit.
+                  </p>
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">Professional Features</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    Precision controls, unit hints, and copy‑ready output help in construction, engineering, education, and travel planning.
+                  </p>
                 </div>
 
-                {/* Mobile/Tablet Ad - Top */}
-                <div className="block xl:hidden mb-6">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
+                <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-base md:text-xl font-bold mb-3 text-orange-500">Advanced Usage Techniques</h2>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    Practical guidance for real‑world tasks across construction, travel, and science.
+                  </p>
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">Construction and Engineering</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    Convert between blueprint scales, material specs, and measurement systems without manual tables.
+                  </p>
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">Travel and Navigation</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    Switch quickly between miles and kilometers when comparing maps, routes, or fitness trackers.
+                  </p>
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">Education and Science</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    Use consistent units across lab notes and reports; rely on exact factors, not approximations.
+                  </p>
                 </div>
-
-                {/* Tool Card */}
-                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                  <LengthConverter />
-                </div>
-
-                {/* Mobile/Tablet Ad - After Tool */}
-                <div className="block xl:hidden my-8">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
-
-                {/* Understanding How This Tool Works */}
-                <div className="space-y-5 animate-fade-in-up animation-delay-200">
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-base md:text-xl font-bold mb-3 text-card-foreground">Understanding How This Length Converter Works</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                      Conversions are computed with standardized factors for metric and imperial units. Input validation and
-                      sensible rounding keep values readable while preserving accuracy.
-                    </p>
-                    <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">Real-Time Processing</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                      Results update as you type. Mixed formats (like feet+inches) are handled cleanly and converted to any target unit.
-                    </p>
-                    <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">Professional Features</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Precision controls, unit hints, and copy‑ready output help in construction, engineering, education, and travel planning.
-                    </p>
-                  </div>
-
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-base md:text-xl font-bold mb-3 text-card-foreground">Advanced Usage Techniques</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                      Practical guidance for real‑world tasks across construction, travel, and science.
-                    </p>
-                    <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">Construction and Engineering</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                      Convert between blueprint scales, material specs, and measurement systems without manual tables.
-                    </p>
-                    <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">Travel and Navigation</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                      Switch quickly between miles and kilometers when comparing maps, routes, or fitness trackers.
-                    </p>
-                    <h3 className="text-base md:text-lg font-bold mb-2.5 text-card-foreground">Education and Science</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Use consistent units across lab notes and reports; rely on exact factors, not approximations.
-                    </p>
-                  </div>
-
-                  {/* Mobile Bottom Ad */}
-                  <div className="block xl:hidden mt-8">
-                    <div className="text-center mb-2">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                    </div>
-                    <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
-                  </div>
 
                 {/* Length Converter FAQ */}
-                <div className="p-6 rounded-lg bg-card border border-border shadow mt-6">
-                  <h2 className="text-2xl font-bold mb-4 text-card-foreground">Length Converter FAQ</h2>
-                  <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="p-6 rounded-lg bg-black border border-border shadow mt-6">
+                  <h2 className="text-2xl font-bold mb-4 text-orange-500">Length Converter FAQ</h2>
+                  <div className="space-y-4 text-sm text-gray-400">
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">How do I convert between feet+inches and centimeters accurately?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">How do I convert between feet+inches and centimeters accurately?</h3>
                       <p>Enter feet and inches in the mixed format (for example, 5 ft 11 in). The tool normalizes it and converts directly to centimeters using exact definitions (1 in = 2.54 cm). For reverse, convert cm to decimal feet and optionally split back into ft+in.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">What precision should I use for construction measurements?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">What precision should I use for construction measurements?</h3>
                       <p>Match the smallest practical unit on site. For wood framing, 1/16 in (≈1.6 mm) is common; for metalwork, tighter tolerances may be needed. Keep internal precision high but round displays for readability, then note the rounding rule on drawings.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">Meters to feet: why doesn’t my calculator match my colleague’s number?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">Meters to feet: why doesn't my calculator match my colleague's number?</h3>
                       <p>Differences usually come from rounding at different steps. Convert once with full precision, then round at the end to an agreed decimal or fractional inch. If values must match exactly, share the factor and rounding policy with your team.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">Can I paste values with units (like “3.2 m” or “12 in”)?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">Can I paste values with units (like "3.2 m" or "12 in")?</h3>
                       <p>Yes—unit‑aware parsing accepts common suffixes. If the input is ambiguous, specify the unit explicitly or use the unit selector. The converter validates and rejects impossible combinations to prevent silent errors.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">What’s the difference between decimal feet and feet+inches, and when should I use each?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">What's the difference between decimal feet and feet+inches, and when should I use each?</h3>
                       <p>Decimal feet (e.g., 5.92 ft) is compact and ideal for calculations and spreadsheets. Feet+inches (5 ft 11 in) is human‑friendly on site. Convert to decimal for math, then present as feet+inches for field work.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">How do I convert map scales or drawings accurately?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">How do I convert map scales or drawings accurately?</h3>
                       <p>First convert the drawing measurement to true units using the scale (e.g., 1 cm on paper = 2 m in reality), then change units as needed (m ⇄ ft). Document the scale and unit system on the drawing to avoid misreads.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">Miles vs kilometers: any quick mental checks?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">Miles vs kilometers: any quick mental checks?</h3>
                       <p>Use 5 miles ≈ 8 km and 1 mile ≈ 1.6 km for estimates. For exact work, rely on the converter and keep one extra decimal place internally before rounding your final number.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">Why do some specs list millimeters instead of centimeters?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">Why do some specs list millimeters instead of centimeters?</h3>
                       <p>Millimeters remove decimal points and reduce rounding ambiguity in fabrication. If a spec is in mm, keep it in mm until the end, then convert for presentation only.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">Can I use the converter offline at a jobsite?</h3>
-                      <p>Yes. Length and unit calculations run in your browser. You’ll only need a connection to load the page the first time; after that, basic conversions continue to work offline.</p>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">Can I use the converter offline at a jobsite?</h3>
+                      <p>Yes. Length and unit calculations run in your browser. You'll only need a connection to load the page the first time; after that, basic conversions continue to work offline.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground">What are the most common unit mistakes to avoid?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-green-500">What are the most common unit mistakes to avoid?</h3>
                       <p>Avoid mixing systems within the same figure (e.g., meters and feet together) and avoid early rounding. Convert once, round at the end, and always annotate the unit and precision you used.</p>
                     </div>
                   </div>
                 </div>
-                </div>
               </div>
+            </div>
 
-              {/* Desktop Sidebar with AdSense */}
-              <div className="hidden lg:block w-64 xl:w-72">
-                <div className="sticky top-32 space-y-6">
-                  <div>
-                    <div className="text-center mb-2">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                    </div>
-                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-                  </div>
-                  <div>
-                    <div className="text-center mb-2">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                    </div>
-                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-                  </div>
-                </div>
+            {/* Desktop Sidebar with AdSense */}
+            <div className="hidden lg:block w-64 xl:w-72">
+              <div className="sticky top-32 space-y-6">
+                <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-black" />
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
   )
 }
