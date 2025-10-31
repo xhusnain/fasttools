@@ -278,7 +278,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
     <div className="space-y-6">
       {/* Main Calculator */}
       <Card>
-        <CardHeader>
+        <CardHeader className="pb-8">
           <CardTitle className="flex items-center gap-2">
             <Calculator className="h-5 w-5 text-blue-500" />
             Advanced Amortization Calculator
@@ -287,7 +287,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
         <CardContent className="space-y-6">
           {/* Input Fields */}
           <div className="grid md:grid-cols-2 gap-4">
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="loanAmount">Loan Amount</Label>
               <Input
                 id="loanAmount"
@@ -297,7 +297,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
                 onChange={(e) => setLoanAmount(e.target.value)}
               />
             </div>
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="loanTerm">Loan Term (years)</Label>
               <Input
                 id="loanTerm"
@@ -310,7 +310,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="interestRate">Interest Rate (%)</Label>
               <Input
                 id="interestRate"
@@ -320,7 +320,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
                 onChange={(e) => setInterestRate(e.target.value)}
               />
             </div>
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="extraPayment">Extra Payment (optional)</Label>
               <Input
                 id="extraPayment"
