@@ -55,7 +55,7 @@ export function Footer() {
 
           {/* Column 3 - Product */}
           <div>
-            <Link href="/about" className="block text-xs md:text-sm font-black text-black mb-2 md:mb-3 hover:underline uppercase">Product of FastTools →</Link>
+            <Link href="/products" className="block text-xs md:text-sm font-black text-black mb-2 md:mb-3 hover:underline uppercase">Products →</Link>
           </div>
 
           {/* Column 4 - Legal */}

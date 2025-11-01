@@ -17,6 +17,7 @@ export function Header() {
   }, [])
 
   const navLinks = [
+    { href: "/products", label: "Products" },
     { href: "/image-tools", label: "Image Tools" },
     { href: "/social-media-tools/tiktok-downloader", label: "TikTok Downloader" },
     { href: "/converters/currency-api", label: "Currency API" },

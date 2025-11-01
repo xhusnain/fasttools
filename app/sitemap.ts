@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://www.fasttools.store/products",
+      lastModified: currentDate,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
       url: "https://www.fasttools.store/about",
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
