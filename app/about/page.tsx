@@ -1,100 +1,40 @@
 import { Breadcrumbs } from "@/components/breadcrumbs"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import { 
-  Target, 
-  Users, 
-  Zap, 
-  Shield, 
-  Globe, 
-  Star, 
-  TrendingUp, 
-  Award, 
-  Calculator,
-  Image,
-  Code,
-  Search,
-  DollarSign,
-  Mail,
-  Sparkles,
-  Lightbulb,
-  Smartphone,
-  Wrench,
-  RefreshCw,
-  Briefcase,
-  ArrowRight
+  Search, 
+  CheckCircle, 
+  Zap,
+  Globe,
+  Eye,
+  Compass
 } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "About FastTools | Free Online Tools Platform | FastTools",
   description: "Discover FastTools, a comprehensive free online tools platform with 1000+ AI, converter, calculator, SEO and productivity utilities.",
-    keywords: [
-        "fasttools",
-        "free online tools",
-        "online tools platform",
-        "digital tools collection",
-        "productivity tools",
-        "AI tools",
-        "converter tools",
-        "calculator tools",
-        "SEO tools",
-        "business tools",
-        "developer tools",
-        "content creation tools",
-        "image tools",
-        "text tools",
-        "finance tools",
-        "date and time tools",
-        "fun tools",
-        "utility tools",
-        "web utilities",
-        "online calculators",
-        "hashtag generator",
-        "QR code generator",
-        "password generator",
-        "color picker",
-        "unit converter",
-        "currency converter",
-        "text case converter",
-        "image converter",
-        "PDF tools",
-        "URL shortener",
-        "word counter",
-        "character counter",
-        "random number generator",
-        "color palette generator",
-        "meme generator",
-        "QR code scanner",
-        "barcode generator",
-        "invoice generator",
-        "receipt generator",
-        "certificate generator",
-        "tiktok downloader",
-        "image to text",
-        "OCR tools",
-        "AI content generator",
-        "AI writing assistant",
-        "financial calculators",
-        "business calculators",
-        "social media utilities",
-        "image editing tools",
-        "date calculators",
-        "privacy-respecting tools",
-        "web applications",
-        "browser tools",
-        "online generators",
-        "online converters",
-        "digital calculators",
-        "web validators",
-        "automation tools",
-        "productivity toolkit",
-        "digital resources",
-        "online services",
-        "conversion tools"
-    ],
-
+  keywords: [
+    "fasttools",
+    "free online tools",
+    "online tools platform",
+    "digital tools collection",
+    "productivity tools",
+    "AI tools",
+    "converter tools",
+    "calculator tools",
+    "SEO tools",
+    "business tools",
+    "developer tools",
+    "content creation tools",
+    "image tools",
+    "text tools",
+    "finance tools",
+    "date and time tools",
+    "fun tools",
+    "utility tools",
+    "web utilities",
+    "online calculators"
+  ],
   openGraph: {
     title: "About FastTools - Leading Free Online Tools Platform | 1000+ Digital Tools",
     description: "Discover FastTools, the world's most comprehensive free online tools platform. Access 1000+ professional tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
@@ -171,45 +111,6 @@ export default function AboutPage() {
         "https://x.com/ZamanIsmail7",
         "https://www.facebook.com/profile.php?id=61582711433268",
         "https://www.youtube.com/channel/UCLnJoKw00cNkTjT5C0axoiQ"
-      ],
-      makesOffer: {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Free Online Tools",
-          description: "Comprehensive collection of 1000+ free online tools and utilities"
-        },
-        price: "0",
-        priceCurrency: "USD"
-      },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        ratingCount: "125000",
-        bestRating: "5",
-        worstRating: "1"
-      },
-      knowsAbout: [
-        "Online Tools",
-        "AI Content Generation", 
-        "Web Development Tools",
-        "Digital Conversion Tools",
-        "Business Productivity Tools", 
-        "SEO Optimization",
-        "Image Processing",
-        "Financial Calculators",
-        "Social Media Tools",
-        "Developer Utilities",
-        "Free Web Tools",
-        "Digital Productivity",
-        "Online Calculators",
-        "Web Utilities",
-        "Browser Tools",
-        "Instant Tools",
-        "Cloud Tools",
-        "Digital Solutions",
-        "Online Services",
-        "Web Services"
       ]
     },
     breadcrumb: {
@@ -234,276 +135,174 @@ export default function AboutPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="flex flex-col">
-        {/* Hero Section - Matching Home Page Style */}
-        <section className="py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto text-center">
-              {/* SEO Badge with Keywords */}
-              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-accent border border-accent text-white text-xs sm:text-sm font-medium mb-6 sm:mb-8">
-                <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
-                <span className="hidden sm:inline">About FastTools • 1000+ Free Tools • Trusted by Millions</span>
-                <span className="sm:hidden">About FastTools</span>
-              </div>
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+          <Breadcrumbs
+            items={[
+              { label: "About", href: "/about" },
+            ]}
+          />
 
-              {/* SEO-Optimized Headlines with Primary Keywords */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
-                About <span className="text-primary">FastTools</span> - Your Digital Productivity Partner
-              </h1>
+          <div className="max-w-5xl mx-auto mt-8 md:mt-12">
+            {/* Title Section */}
+            <div className="mb-12 md:mb-16">
+              <GHeader
+                title="Unveiling Our Identity, Vision and Values"
+                description="We're passionate about digital innovation. With years of experience in the industry, we've established ourselves as leaders in providing high-quality online productivity solutions."
+                titleSize="medium"
+                descriptionSize="small"
+                color="orange"
+              />
+            </div>
+
+            {/* Why FastTools Section */}
+            <div className="bg-black border border-orange-500/30 rounded-2xl p-8 md:p-12 mb-12 md:mb-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                {/* Hard to Find Tools */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center mb-4">
+                    <Search className="h-8 w-8 md:h-10 md:w-10 text-orange-500" />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-semibold text-green-500 mb-2">Hard to Find</h3>
+                  <p className="text-sm md:text-base text-gray-400 leading-relaxed">
+                    Searching for reliable online tools is frustrating. Most results are broken links, outdated tools, or hidden behind paywalls. We've done the hard work of finding and curating only the best tools.
+                  </p>
+                </div>
+
+                {/* Tools That Work */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center mb-4">
+                    <CheckCircle className="h-8 w-8 md:h-10 md:w-10 text-orange-500" />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-semibold text-green-500 mb-2">Tools That Actually Work</h3>
+                  <p className="text-sm md:text-base text-gray-400 leading-relaxed">
+                    Every tool on FastTools is tested and verified to work perfectly. No broken features, no error messages, no wasted time. Just reliable, professional-grade tools ready to use instantly.
+                  </p>
+                </div>
+
+                {/* All in One Place */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center mb-4">
+                    <Zap className="h-8 w-8 md:h-10 md:w-10 text-orange-500" />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-semibold text-green-500 mb-2">All in One Place</h3>
+                  <p className="text-sm md:text-base text-gray-400 leading-relaxed">
+                    Why waste hours searching across dozens of websites? We've consolidated 1000+ essential tools into one unified platform. Calculators, converters, generators, and more - all accessible instantly.
+                  </p>
+                </div>
+
+                {/* Trusted Worldwide */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center mb-4">
+                    <Globe className="h-8 w-8 md:h-10 md:w-10 text-orange-500" />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-semibold text-green-500 mb-2">Trusted Worldwide</h3>
+                  <p className="text-sm md:text-base text-gray-400 leading-relaxed">
+                    Used by millions across 190+ countries. From students and freelancers to Fortune 500 companies, FastTools delivers the same reliable, professional tools to everyone - completely free, forever.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Detailed Story Section */}
+            <div className="bg-black border border-orange-500/30 rounded-xl p-6 md:p-8 mb-12 md:mb-16">
+              <h2 className="text-2xl md:text-3xl font-bold text-orange-500 mb-6 md:mb-8 text-center">Our Story: Building the World's Most Comprehensive Free Tools Platform</h2>
               
-              <p className="text-lg sm:text-xl text-muted-foreground mb-12 sm:mb-16 max-w-3xl mx-auto leading-relaxed px-4">
-                The world's most comprehensive free online tools platform. Access 1000+ professional 
-                digital tools including AI generators, converters, calculators, SEO tools, and productivity utilities. 
-                Trusted by millions worldwide.
-              </p>
+              <div className="space-y-6 text-gray-400 text-base md:text-lg leading-relaxed">
+                <p>
+                  FastTools was born in 2024 from a simple but powerful observation: finding reliable, genuinely free online tools shouldn't be this hard. We noticed that millions of people worldwide struggle daily with broken links, fake free tools that require credit cards, outdated software, and cluttered interfaces filled with advertisements. Something had to change.
+                </p>
 
-              {/* Clean CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-16 sm:mb-20 px-4">
-                <Button
-                  asChild
-                  size="lg"
-                  className="h-11 sm:h-12 px-6 sm:px-8 text-sm sm:text-base font-semibold w-full sm:w-auto"
-                >
-                  <a href="/" className="flex items-center justify-center gap-2">
-                    <Sparkles className="h-4 w-4 sm:h-5 sm:w-5" />
-                    Explore All Tools
-                    <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
-                  </a>
-                </Button>
-                
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="h-11 sm:h-12 px-6 sm:px-8 text-sm sm:text-base font-semibold w-full sm:w-auto"
-                >
-                  <a href="/contact" className="flex items-center justify-center gap-2">
-                    <Target className="h-4 w-4 sm:h-5 sm:w-5" />
-                    Contact Us
-                  </a>
-                </Button>
-        </div>
+                <p>
+                  As digital professionals, we experienced these frustrations firsthand. Whether we needed a quick currency converter during international business calls, an image compression tool before uploading files, or a precise loan calculator for financial planning, the search process was consistently tedious. Most free tools either didn't work properly, required registration that led to spam, or were clearly inferior versions meant to upsell premium subscriptions.
+                </p>
 
-              {/* SEO-Optimized Stats with Keywords */}
-              <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 text-xs sm:text-sm text-muted-foreground px-4">
-                <div className="flex items-center gap-2">
-                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-accent rounded-full"></div>
-                  <span>2.5M+ Active Users</span>
+                <h3 className="text-xl md:text-2xl font-bold text-green-500 mt-8 mb-4">Why We Decided to Consolidate Everything in One Place</h3>
+
+                <p>
+                  The problem wasn't just about individual tools - it was about the entire ecosystem. Users were forced to bookmark dozens of different websites, remember which tool worked for which task, and constantly deal with broken or removed tools. This fragmentation killed productivity and created unnecessary frustration for everyone from students completing assignments to professionals managing complex projects.
+                </p>
+
+                <p>
+                  We realized that what the digital world truly needed was a unified platform where every tool genuinely worked, every tool was completely free forever, and every tool was accessible instantly without registration or hidden costs. FastTools represents our commitment to solving this problem once and for all.
+                </p>
+
+                <h3 className="text-xl md:text-2xl font-bold text-green-500 mt-8 mb-4">The Tools That Actually Work Philosophy</h3>
+
+                <p>
+                  Every single tool on FastTools goes through rigorous testing before being included in our platform. We don't aggregate broken links or outdated tools. Instead, we build, maintain, and continuously improve each tool to ensure it delivers professional-grade results every single time. When you need to convert currency during an important transaction, compress an image for a client presentation, or calculate loan payments for a major purchase, you shouldn't have to worry about whether the tool will work correctly.
+                </p>
+
+                <p>
+                  Our commitment to "tools that actually work" extends beyond just functionality. We also focus on user experience, ensuring that every interface is clean, intuitive, and fast-loading. No one should wait 30 seconds for a simple calculator to load or struggle to find the right button in a confusing interface.
+                </p>
+
+                <h3 className="text-xl md:text-2xl font-bold text-green-500 mt-8 mb-4">Free Forever, Without Compromise</h3>
+
+                <p>
+                  The "free" in many "free tools" comes with invisible costs: your data is collected, your inbox is filled with promotions, you're pressured to upgrade to premium versions, or worse - you enter your credit card for a "free trial" that automatically charges you later. FastTools rejects this model entirely.
+                </p>
+
+                <p>
+                  Our tools are completely free forever, with absolutely no hidden costs, no data collection, no mandatory registration, and no upsells. We believe that quality productivity tools should be accessible to everyone, regardless of budget. Whether you're a student struggling to pay for software licenses, a startup operating on a shoestring budget, or a Fortune 500 company looking to cut unnecessary expenses, FastTools serves you with the same high-quality, completely free tools.
+                </p>
+
+                <h3 className="text-xl md:text-2xl font-bold text-green-500 mt-8 mb-4">How FastTools Serves Millions Across 190+ Countries</h3>
+
+                <p>
+                  From its founding in 2024, FastTools has grown rapidly to serve millions of users across 190+ countries. This global reach reflects universal need for reliable, accessible productivity tools. A student in India calculating GPA needs the same accurate formula as a university applicant in the United States. A freelancer in Brazil converting currency needs the same real-time exchange rates as an international trader in Singapore. FastTools delivers this consistency.
+                </p>
+
+                <p>
+                  Our platform has processed over 50 million tasks to date, saving users countless hours of searching, testing, and troubleshooting. More importantly, we've saved users millions of dollars in software licensing costs, subscription fees, and premium tool purchases. Every calculation performed, every file converted, every task completed represents time and money saved for someone somewhere in the world.
+                </p>
+
+                <h3 className="text-xl md:text-2xl font-bold text-green-500 mt-8 mb-4">The Future: Continuous Innovation Without Cost</h3>
+
+                <p>
+                  Our work is far from complete. We continuously add new tools based on user feedback and emerging needs. From AI-powered content generators that help creators save hours of writing time, to advanced financial calculators that help families make better decisions, to developer utilities that streamline coding workflows - we're building the tools that today's digital world actually needs.
+                </p>
+
+                <p>
+                  Looking forward, FastTools remains committed to our founding principle: quality digital tools should be free, accessible, and reliable for everyone, everywhere. We'll never introduce mandatory registration, never collect unnecessary user data, never show intrusive advertisements, and never compromise on the quality of our tools. This isn't just our business model - it's our promise to every user who trusts FastTools for their productivity needs.
+                </p>
+
+                <p className="text-lg md:text-xl font-semibold text-white mt-8">
+                  Join millions of users worldwide who have made FastTools their trusted partner for digital productivity. Explore our tools, and experience the difference that genuine, reliable, completely free online tools can make in your daily work and life.
+                </p>
+              </div>
+            </div>
+
+            {/* Vision and Mission Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              {/* Vision */}
+              <div className="bg-black border border-orange-500/30 rounded-xl p-6 md:p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                    <Eye className="h-5 w-5 md:h-6 md:w-6 text-orange-500" />
+                  </div>
+                  <h2 className="text-xl md:text-2xl font-bold text-green-500">Vision</h2>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-primary rounded-full"></div>
-                  <span>1000+ Free Tools</span>
+                <p className="text-sm md:text-base text-gray-400 leading-relaxed">
+                  To lead the way in digital productivity by delivering innovative, sustainable, and accessible solutions that empower millions of users worldwide.
+                </p>
+              </div>
+
+              {/* Mission */}
+              <div className="bg-black border border-orange-500/30 rounded-xl p-6 md:p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                    <Compass className="h-5 w-5 md:h-6 md:w-6 text-orange-500" />
+                  </div>
+                  <h2 className="text-xl md:text-2xl font-bold text-green-500">Mission</h2>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-accent rounded-full"></div>
-                  <span>190+ Countries</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-primary rounded-full"></div>
-                  <span>4.9/5 Rating</span>
-                </div>
+                <p className="text-sm md:text-base text-gray-400 leading-relaxed">
+                  To leverage our expertise, resources, and technology to create online tools that exceed industry standards and provide exceptional value to users everywhere.
+                </p>
               </div>
             </div>
           </div>
-        </section>
-
-        {/* Comprehensive SEO Content Section */}
-        <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-br from-muted/20 to-muted/10">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-16 sm:mb-20">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 sm:mb-8 px-4">
-                  Why FastTools Became the <span className="text-primary">#1 Free Online Tools Platform</span> Worldwide
-                </h2>
-                <p className="text-base sm:text-lg text-muted-foreground max-w-5xl mx-auto leading-relaxed px-4">
-                  Founded in 2024, FastTools emerged from a simple observation: existing online tool platforms were either 
-                  expensive, limited, or cluttered with ads. We built the world's most comprehensive free digital toolkit 
-                  that combines professional-grade functionality with zero-cost accessibility. Today, millions of users 
-                  across 190+ countries rely on our platform for their daily productivity needs.
-                </p>
         </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-16 sm:mb-20">
-                {/* Innovation Story Card */}
-                <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-200">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center flex-shrink-0">
-                      <Target className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-                    </div>
-                    <div className="min-w-0">
-                      <h3 className="text-lg sm:text-xl font-bold text-foreground">Innovation Story</h3>
-                      <p className="text-xs sm:text-sm text-muted-foreground">How we revolutionized online tools</p>
-                    </div>
-                  </div>
-                  <p className="text-sm sm:text-base text-muted-foreground">
-                    Unlike traditional software companies that charge premium fees, we pioneered the 
-                    "freemium-free" model where every tool is completely free forever. Our breakthrough 
-                    came from understanding that productivity shouldn't have a price tag.
-                  </p>
-                </Card>
-
-                {/* Technology Leadership Card */}
-                <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-200">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center flex-shrink-0">
-                      <Lightbulb className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-                    </div>
-                    <div className="min-w-0">
-                      <h3 className="text-lg sm:text-xl font-bold text-foreground">Technology Leadership</h3>
-                      <p className="text-xs sm:text-sm text-muted-foreground">Cutting-edge web technologies</p>
-                    </div>
-                  </div>
-                  <p className="text-sm sm:text-base text-muted-foreground">
-                    Built on Next.js 15 with React 19, our platform leverages the latest web technologies 
-                    for lightning-fast performance. Every tool processes data locally in your browser, 
-                    ensuring complete privacy and security.
-                  </p>
-                </Card>
-
-                {/* Global Impact Card */}
-                <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-200">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-gradient-to-br from-secondary-accent to-secondary-accent/80 flex items-center justify-center flex-shrink-0">
-                      <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-                    </div>
-                    <div className="min-w-0">
-                      <h3 className="text-lg sm:text-xl font-bold text-foreground">Global Impact</h3>
-                      <p className="text-xs sm:text-sm text-muted-foreground">Worldwide user base</p>
-                    </div>
-                  </div>
-                  <p className="text-sm sm:text-base text-muted-foreground">
-                    From small businesses to Fortune 500 companies, our tools serve 
-                    diverse needs across 190+ countries. We've processed over 50 million tasks, 
-                    saving users countless hours and millions in software costs.
-                  </p>
-                </Card>
-              </div>
-
-              {/* Featured Tools Section with Links */}
-              <div className="text-center mb-16 sm:mb-20">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 sm:mb-8 px-4">
-                  Discover Our <span className="text-primary">Most Popular Free Tools</span> Used by Millions
-                </h2>
-                <p className="text-base sm:text-lg text-muted-foreground max-w-5xl mx-auto leading-relaxed mb-12 sm:mb-16 px-4">
-                  These are the tools that have transformed how people work, create, and calculate. 
-                  Each one is completely free, requires no registration, and delivers professional results instantly.
-                </p>
-                
-                {/* Featured Tools with Links */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-16 sm:mb-20">
-                  <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-200 group">
-                    <div className="text-center">
-                      <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                        <Calculator className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
-                      </div>
-                      <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">Free Loan Calculator</h3>
-                      <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">
-                        Calculate loan payments, interest rates, and amortization schedules with our 
-                        professional-grade financial calculator. Used by 500K+ users monthly.
-                      </p>
-                      <Button asChild className="w-full h-10 sm:h-11 text-sm">
-                        <a href="/calculator/loan-calculator">Try Loan Calculator</a>
-                      </Button>
-                    </div>
-                  </Card>
-
-                  <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-200 group">
-                    <div className="text-center">
-                      <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                        <RefreshCw className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
-                      </div>
-                      <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">Currency Converter</h3>
-                      <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">
-                        Convert between 160+ currencies with real-time exchange rates. 
-                        Trusted by travelers, businesses, and investors worldwide.
-                      </p>
-                      <Button asChild className="w-full h-10 sm:h-11 text-sm">
-                        <a href="/converters/currency">Convert Currency</a>
-                      </Button>
-                    </div>
-          </Card>
-
-                  <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-200 group">
-                    <div className="text-center">
-                      <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                        <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
-                      </div>
-                      <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">AI Caption Generator</h3>
-                      <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">
-                        Generate engaging social media captions with AI. Perfect for Instagram, 
-                        Facebook, and Twitter posts. Used by 300K+ content creators.
-                      </p>
-                      <Button asChild className="w-full h-10 sm:h-11 text-sm">
-                        <a href="/ai-tools/caption-generator">Generate Captions</a>
-                      </Button>
-                    </div>
-                  </Card>
-                </div>
-              </div>
-
-
-              {/* Unique Value Proposition Section */}
-              <div className="mb-16 sm:mb-20">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-8 sm:mb-12 text-center px-4">
-                  What Makes FastTools <span className="text-primary">Different from Competitors</span>
-                </h2>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
-                  <Card className="p-6 sm:p-8">
-                    <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Our Competitive Advantages</h3>
-                    <div className="space-y-4 sm:space-y-6">
-                      <div className="flex items-start gap-3 sm:gap-4">
-                        <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                          <div className="h-2 w-2 sm:h-3 sm:w-3 bg-primary rounded-full"></div>
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-foreground mb-2 text-sm sm:text-base">Zero-Cost Business Model</h4>
-                          <p className="text-xs sm:text-sm text-muted-foreground">While competitors charge $29-99/month for basic tools, we provide enterprise-grade functionality completely free.</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-3 sm:gap-4">
-                        <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                          <div className="h-2 w-2 sm:h-3 sm:w-3 bg-primary rounded-full"></div>
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-foreground mb-2 text-sm sm:text-base">Privacy-First Architecture</h4>
-                          <p className="text-xs sm:text-sm text-muted-foreground">Unlike Google Tools or Microsoft Office that collect data, our tools process everything locally in your browser.</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-3 sm:gap-4">
-                        <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                          <div className="h-2 w-2 sm:h-3 sm:w-3 bg-primary rounded-full"></div>
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-foreground mb-2 text-sm sm:text-base">No Registration Required</h4>
-                          <p className="text-xs sm:text-sm text-muted-foreground">Start using any tool instantly without creating accounts, providing emails, or sharing personal information.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-
-                  <Card className="p-6 sm:p-8">
-                    <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">User Success Stories</h3>
-                    <div className="space-y-4 sm:space-y-6">
-                      <div className="border-l-4 border-primary pl-3 sm:pl-4">
-                        <p className="text-xs sm:text-sm text-muted-foreground italic mb-2">"FastTools saved our startup $2,400/year in software licenses. The loan calculator helped us secure better financing terms."</p>
-                        <p className="text-xs sm:text-sm font-semibold text-foreground">- Sarah Chen, CEO of TechStart Inc.</p>
-                      </div>
-                      <div className="border-l-4 border-accent pl-3 sm:pl-4">
-                        <p className="text-xs sm:text-sm text-muted-foreground italic mb-2">"As a freelance designer, I use the image tools daily. The quality rivals Adobe Creative Suite, but it's completely free."</p>
-                        <p className="text-xs sm:text-sm font-semibold text-foreground">- Marcus Rodriguez, Freelance Designer</p>
-                      </div>
-                      <div className="border-l-4 border-secondary-accent pl-3 sm:pl-4">
-                        <p className="text-xs sm:text-sm text-muted-foreground italic mb-2">"The AI caption generator increased our social media engagement by 340%. No monthly subscription fees."</p>
-                        <p className="text-xs sm:text-sm font-semibold text-foreground">- Jennifer Park, Marketing Director</p>
-                      </div>
-                    </div>
-          </Card>
-        </div>
-      </div>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   )
