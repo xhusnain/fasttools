@@ -6,8 +6,10 @@ import {
   Zap,
   Globe,
   Eye,
-  Compass
+  Compass,
+  ArrowRight
 } from "lucide-react"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -300,6 +302,17 @@ export default function AboutPage() {
                   To leverage our expertise, resources, and technology to create online tools that exceed industry standards and provide exceptional value to users everywhere.
                 </p>
               </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="mt-12 md:mt-16 text-center">
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors text-lg"
+              >
+                View Our Products
+                <ArrowRight className="h-5 w-5" />
+              </Link>
             </div>
           </div>
         </div>
