@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { PDFWordConverter } from "@/components/pdf-word-converter"
 import { AdSpace } from "@/components/ad-space"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import Link from "next/link"
 import { FileText, RefreshCw, Shield, Zap, ArrowRight, Download, Info, CheckCircle2 } from "lucide-react"
 
@@ -1418,7 +1419,6 @@ export default function PDFWordConverterPage() {
         <div className="container mx-auto px-4 py-8">
           <Breadcrumbs
             items={[
-              { label: "Home - Free Online Tools", href: "https://www.fasttools.store" },
               { label: "PDF Tools - Free PDF Converter Online", href: "https://www.fasttools.store/pdf-tools" },
               { label: "PDF to Word Converter Free Online", href: "https://www.fasttools.store/pdf-tools/pdf-word-converter" },
             ]}
@@ -1429,56 +1429,27 @@ export default function PDFWordConverterPage() {
               <div className="flex-1 lg:flex-[2] space-y-6">
                 {/* Hero Section */}
                 <div className="text-center space-y-4">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium border border-accent/20">
-                    <RefreshCw className="h-4 w-4 animate-pulse" />
-                    <span>PDF ⇄ Word Converter</span>
-                    <div className="h-2 w-2 bg-secondary-accent rounded-full animate-ping"></div>
-                  </div>
+                  <GHeader
+                    title="PDF to Word Converter Free Online - Convert PDF to Word & Word to PDF"
+                    description="Free PDF to Word converter online. Convert PDF to Word, Word to PDF instantly. No upload to server, 100% secure browser-based processing. Edit PDF as DOCX, create PDF from Word document. Unlimited free conversions."
+                    titleSize="medium"
+                    descriptionSize="small"
+                  />
+                </div>
 
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">
-                    PDF to Word Converter Free Online – Convert PDF to Word & Word to PDF
-                  </h1>
-
-                  <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
-                    Free PDF to Word converter online. Convert PDF to Word, Word to PDF instantly. No upload to server, 100% secure browser-based processing. Edit PDF as DOCX, create PDF from Word document. Unlimited free conversions.
-                  </p>
-
-                  <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
-                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
-                      <FileText className="h-4 w-4 text-primary" />
-                      <span className="text-primary font-medium text-sm">PDF to Word</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
-                      <FileText className="h-4 w-4 text-green-600" />
-                      <span className="text-green-600 font-medium text-sm">Word to PDF</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-orange-500 shadow">
-                      <Download className="h-4 w-4 text-orange-600" />
-                      <span className="text-orange-600 font-medium text-sm">Free Forever</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-purple-500 shadow">
-                      <Shield className="h-4 w-4 text-purple-600" />
-                      <span className="text-purple-600 font-medium text-sm">100% Secure</span>
-                    </div>
-                  </div>
+                {/* Mobile Ad Space */}
+                <div className="lg:hidden mb-6">
+                  <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
                 {/* PDF Word Converter Tool */}
                 <PDFWordConverter />
 
-                {/* Mobile Ad - Below Tool */}
-                <div className="lg:hidden space-y-3">
-                  <div className="text-center">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
-
                 {/* Content Sections */}
                 <div className="space-y-6">
                   {/* How to Use Section */}
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <Info className="h-4 w-4 text-accent" />
                       </div>
@@ -1490,8 +1461,8 @@ export default function PDFWordConverterPage() {
                           1
                         </div>
                         <div>
-                          <h3 className="font-semibold text-card-foreground mb-1">Select Conversion Mode</h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed">
+                          <h3 className="font-semibold text-green-500 mb-1">Select Conversion Mode</h3>
+                          <p className="text-sm text-gray-400 leading-relaxed">
                             Choose "PDF to Word" to edit PDF files in Word, or "Word to PDF" to create PDF documents from Word files. Switch between modes anytime.
                           </p>
                         </div>
@@ -1501,8 +1472,8 @@ export default function PDFWordConverterPage() {
                           2
                         </div>
                         <div>
-                          <h3 className="font-semibold text-card-foreground mb-1">Upload Your File</h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed">
+                          <h3 className="font-semibold text-green-500 mb-1">Upload Your File</h3>
+                          <p className="text-sm text-gray-400 leading-relaxed">
                             Click or drag-and-drop your PDF or Word file. Files are processed locally in your browser for maximum privacy and security.
                           </p>
                         </div>
@@ -1512,8 +1483,8 @@ export default function PDFWordConverterPage() {
                           3
                         </div>
                         <div>
-                          <h3 className="font-semibold text-card-foreground mb-1">Convert & Download</h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed">
+                          <h3 className="font-semibold text-green-500 mb-1">Convert & Download</h3>
+                          <p className="text-sm text-gray-400 leading-relaxed">
                             Click "Convert" and wait for processing. Download your converted file instantly. All conversions are free and unlimited.
                           </p>
                         </div>
@@ -1522,8 +1493,8 @@ export default function PDFWordConverterPage() {
                   </div>
 
                   {/* Platform-Specific Guides */}
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <FileText className="h-4 w-4 text-accent" />
                       </div>
@@ -1531,38 +1502,38 @@ export default function PDFWordConverterPage() {
                     </h2>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-3">
-                        <h3 className="font-semibold text-card-foreground flex items-center gap-2">
+                        <h3 className="font-semibold text-green-500 flex items-center gap-2">
                           <CheckCircle2 className="h-5 w-5 text-primary" />
                           Convert PDF to Word on iPhone
                         </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Open Safari on your iPhone and visit FastTools.store. Upload your PDF file, select "PDF to Word" mode, and convert. Download the Word document directly to your iPhone Files app. No app installation required.
                         </p>
                       </div>
                       <div className="space-y-3">
-                        <h3 className="font-semibold text-card-foreground flex items-center gap-2">
+                        <h3 className="font-semibold text-green-500 flex items-center gap-2">
                           <CheckCircle2 className="h-5 w-5 text-primary" />
                           Convert Word to PDF on Mac
                         </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Mac users can convert Word to PDF using our online tool. Upload your DOCX file, click convert, and download the PDF. Works on Safari, Chrome, and Firefox. Alternative: In Microsoft Word for Mac, click File {"->"} Save As {"->"} PDF Format.
                         </p>
                       </div>
                       <div className="space-y-3">
-                        <h3 className="font-semibold text-card-foreground flex items-center gap-2">
+                        <h3 className="font-semibold text-green-500 flex items-center gap-2">
                           <CheckCircle2 className="h-5 w-5 text-primary" />
                           PDF to Word on Windows
                         </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Windows users can convert PDF to Word online without Microsoft Word. Our tool extracts text from PDF and creates editable DOCX files compatible with Word 2007, 2010, 2013, 2016, 2019, and Office 365. Works on Windows 7, 8, 10, and 11.
                         </p>
                       </div>
                       <div className="space-y-3">
-                        <h3 className="font-semibold text-card-foreground flex items-center gap-2">
+                        <h3 className="font-semibold text-green-500 flex items-center gap-2">
                           <CheckCircle2 className="h-5 w-5 text-primary" />
                           Convert PDF to Word Android
                         </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Android users can access our converter through Chrome or any mobile browser. Upload PDF files from Google Drive or device storage, convert to Word, and download DOCX files to edit on Google Docs or Microsoft Word mobile app.
                         </p>
                       </div>
@@ -1570,8 +1541,8 @@ export default function PDFWordConverterPage() {
                   </div>
 
                   {/* FastTools Features */}
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <RefreshCw className="h-4 w-4 text-accent" />
                       </div>
@@ -1584,8 +1555,8 @@ export default function PDFWordConverterPage() {
                             <span className="text-green-600 text-sm font-bold">✓</span>
                           </div>
                           <div>
-                            <h3 className="font-semibold text-card-foreground mb-1">100% Free Forever</h3>
-                            <p className="text-sm text-muted-foreground">Convert PDF to Word and Word to PDF unlimited times. No subscriptions, no hidden fees, completely free.</p>
+                            <h3 className="font-semibold text-green-500 mb-1">100% Free Forever</h3>
+                            <p className="text-sm text-gray-400">Convert PDF to Word and Word to PDF unlimited times. No subscriptions, no hidden fees, completely free.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -1593,8 +1564,8 @@ export default function PDFWordConverterPage() {
                             <span className="text-green-600 text-sm font-bold">✓</span>
                           </div>
                           <div>
-                            <h3 className="font-semibold text-card-foreground mb-1">100% Browser-Based</h3>
-                            <p className="text-sm text-muted-foreground">All conversions happen in your browser. Files never leave your device, ensuring complete privacy and security.</p>
+                            <h3 className="font-semibold text-green-500 mb-1">100% Browser-Based</h3>
+                            <p className="text-sm text-gray-400">All conversions happen in your browser. Files never leave your device, ensuring complete privacy and security.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -1602,8 +1573,8 @@ export default function PDFWordConverterPage() {
                             <span className="text-green-600 text-sm font-bold">✓</span>
                           </div>
                           <div>
-                            <h3 className="font-semibold text-card-foreground mb-1">No File Size Limits</h3>
-                            <p className="text-sm text-muted-foreground">Convert PDFs and Word documents of any size. No 15MB or 50MB restrictions like other tools.</p>
+                            <h3 className="font-semibold text-green-500 mb-1">No File Size Limits</h3>
+                            <p className="text-sm text-gray-400">Convert PDFs and Word documents of any size. No 15MB or 50MB restrictions like other tools.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -1611,8 +1582,8 @@ export default function PDFWordConverterPage() {
                             <span className="text-green-600 text-sm font-bold">✓</span>
                           </div>
                           <div>
-                            <h3 className="font-semibold text-card-foreground mb-1">Instant Conversion</h3>
-                            <p className="text-sm text-muted-foreground">No upload/download delays. Conversion starts immediately and completes in seconds.</p>
+                            <h3 className="font-semibold text-green-500 mb-1">Instant Conversion</h3>
+                            <p className="text-sm text-gray-400">No upload/download delays. Conversion starts immediately and completes in seconds.</p>
                           </div>
                         </div>
                       </div>
@@ -1622,8 +1593,8 @@ export default function PDFWordConverterPage() {
                             <span className="text-green-600 text-sm font-bold">✓</span>
                           </div>
                           <div>
-                            <h3 className="font-semibold text-card-foreground mb-1">No Signup Required</h3>
-                            <p className="text-sm text-muted-foreground">Start converting immediately. No email verification, no account creation, no login required.</p>
+                            <h3 className="font-semibold text-green-500 mb-1">No Signup Required</h3>
+                            <p className="text-sm text-gray-400">Start converting immediately. No email verification, no account creation, no login required.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -1631,8 +1602,8 @@ export default function PDFWordConverterPage() {
                             <span className="text-green-600 text-sm font-bold">✓</span>
                           </div>
                           <div>
-                            <h3 className="font-semibold text-card-foreground mb-1">Works on All Devices</h3>
-                            <p className="text-sm text-muted-foreground">Convert on Windows, Mac, iPhone, Android, iPad, Linux. Works in any modern browser.</p>
+                            <h3 className="font-semibold text-green-500 mb-1">Works on All Devices</h3>
+                            <p className="text-sm text-gray-400">Convert on Windows, Mac, iPhone, Android, iPad, Linux. Works in any modern browser.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -1640,8 +1611,8 @@ export default function PDFWordConverterPage() {
                             <span className="text-green-600 text-sm font-bold">✓</span>
                           </div>
                           <div>
-                            <h3 className="font-semibold text-card-foreground mb-1">Bidirectional Conversion</h3>
-                            <p className="text-sm text-muted-foreground">Switch between PDF to Word and Word to PDF modes instantly in the same tool.</p>
+                            <h3 className="font-semibold text-green-500 mb-1">Bidirectional Conversion</h3>
+                            <p className="text-sm text-gray-400">Switch between PDF to Word and Word to PDF modes instantly in the same tool.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -1649,22 +1620,22 @@ export default function PDFWordConverterPage() {
                             <span className="text-green-600 text-sm font-bold">✓</span>
                           </div>
                           <div>
-                            <h3 className="font-semibold text-card-foreground mb-1">Data Security</h3>
-                            <p className="text-sm text-muted-foreground">Perfect for sensitive documents. No server storage, no data collection, no privacy risks.</p>
+                            <h3 className="font-semibold text-green-500 mb-1">Data Security</h3>
+                            <p className="text-sm text-gray-400">Perfect for sensitive documents. No server storage, no data collection, no privacy risks.</p>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div className="mt-6 p-4 rounded-lg bg-accent/5 border border-accent/20">
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <p className="text-sm text-gray-400 leading-relaxed">
                         <span className="font-semibold text-accent">Why Choose FastTools?</span> Our PDF to Word converter offers superior privacy with 100% browser-based processing. Your files never leave your device, ensuring complete data security for sensitive documents. No file size limits, no signup, and completely free forever.
                       </p>
                     </div>
                   </div>
 
                   {/* Features & Use Cases */}
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <Zap className="h-4 w-4 text-accent" />
                       </div>
@@ -1672,8 +1643,8 @@ export default function PDFWordConverterPage() {
                     </h2>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-3">
-                        <h3 className="font-semibold text-card-foreground">For Students</h3>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
+                        <h3 className="font-semibold text-green-500">For Students</h3>
+                        <ul className="space-y-2 text-sm text-gray-400">
                           <li className="flex items-start gap-2">
                             <span className="text-primary mt-0.5">•</span>
                             <span>Convert PDF lecture notes to Word for editing and annotation</span>
@@ -1693,8 +1664,8 @@ export default function PDFWordConverterPage() {
                         </ul>
                       </div>
                       <div className="space-y-3">
-                        <h3 className="font-semibold text-card-foreground">For Professionals</h3>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
+                        <h3 className="font-semibold text-green-500">For Professionals</h3>
+                        <ul className="space-y-2 text-sm text-gray-400">
                           <li className="flex items-start gap-2">
                             <span className="text-primary mt-0.5">•</span>
                             <span>Convert PDF contracts to Word for editing and redlining</span>
@@ -1714,8 +1685,8 @@ export default function PDFWordConverterPage() {
                         </ul>
                       </div>
                       <div className="space-y-3">
-                        <h3 className="font-semibold text-card-foreground">For Businesses</h3>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
+                        <h3 className="font-semibold text-green-500">For Businesses</h3>
+                        <ul className="space-y-2 text-sm text-gray-400">
                           <li className="flex items-start gap-2">
                             <span className="text-primary mt-0.5">•</span>
                             <span>Batch convert Word documents to PDF for archiving</span>
@@ -1735,8 +1706,8 @@ export default function PDFWordConverterPage() {
                         </ul>
                       </div>
                       <div className="space-y-3">
-                        <h3 className="font-semibold text-card-foreground">For Freelancers</h3>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
+                        <h3 className="font-semibold text-green-500">For Freelancers</h3>
+                        <ul className="space-y-2 text-sm text-gray-400">
                           <li className="flex items-start gap-2">
                             <span className="text-primary mt-0.5">•</span>
                             <span>Convert PDF client briefs to editable Word documents</span>
@@ -1759,8 +1730,8 @@ export default function PDFWordConverterPage() {
                   </div>
 
                   {/* FAQ Section */}
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <Info className="h-4 w-4 text-accent" />
                       </div>
@@ -1768,266 +1739,266 @@ export default function PDFWordConverterPage() {
                     </h2>
                     <div className="space-y-4">
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to convert PDF to Word for free?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to Word for free?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Upload your PDF file to our converter, select "PDF to Word" mode, click convert, and download the editable DOCX file. No signup or payment required. The conversion is 100% free with no file size limits.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Can I convert Word to PDF without losing quality?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Can I convert Word to PDF without losing quality?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Yes, our Word to PDF converter maintains the original document quality. Text remains sharp, and layout is preserved. For best quality, use high-resolution images in your Word document before converting.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to convert PDF to Word without changing format?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to Word without changing format?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Our converter preserves text content and basic formatting. However, complex layouts with images, tables, or special fonts may require manual adjustment after conversion. For best results, use PDFs with primarily text content.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Is PDF to Word converter safe?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Is PDF to Word converter safe?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Yes, our converter is 100% safe. Files are processed locally in your browser and never uploaded to any server. Your documents remain completely private and secure on your device.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to change PDF to Word on iPhone?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to change PDF to Word on iPhone?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Open Safari on iPhone, visit fasttools.store/pdf-tools/pdf-word-converter, tap "Upload PDF File", select from Files app, tap "Convert to Word", and download the DOCX file. Works on all iOS devices.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Can I convert Word to PDF on Mac without Microsoft Word?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Can I convert Word to PDF on Mac without Microsoft Word?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Yes, our online converter works on Mac without Microsoft Word installed. Upload your DOCX file and convert to PDF directly in your browser. Alternatively, Mac users can use Preview or Pages to convert Word to PDF.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to convert PDF to Word with Adobe Acrobat?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to Word with Adobe Acrobat?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Adobe Acrobat Pro can convert PDF to Word: Open PDF, click Export PDF, select Microsoft Word, click Export. However, Adobe requires expensive subscription. Our free converter offers similar functionality without cost.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to convert PDF to editable Word document?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to editable Word document?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Upload PDF to our converter, click "Convert to Word", and download DOCX file. Open in Microsoft Word, Google Docs, or LibreOffice to edit text, formatting, and layout. All text becomes fully editable.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Can I convert multiple Word files to PDF at once?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Can I convert multiple Word files to PDF at once?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Currently, our converter processes one file at a time for optimal quality. For batch conversion, convert each file individually. The process is fast and requires no waiting for uploads.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to convert PDF to Word without losing images?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to Word without losing images?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Our converter extracts text content from PDFs. Images are not currently preserved in the conversion. For documents with images, consider using Adobe Acrobat Pro or manually copying images after conversion.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">What is the difference between I Love PDF and FastTools?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">What is the difference between I Love PDF and FastTools?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           I Love PDF uploads files to their servers for processing, while FastTools converts files locally in your browser. FastTools offers better privacy, no file size limits, and faster conversion without server uploads.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to convert PDF to Word with OCR?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to Word with OCR?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Our current converter works best with text-based PDFs. For scanned PDFs or images, OCR (Optical Character Recognition) is required. Consider using Adobe Acrobat Pro, Microsoft OneNote, or Google Drive for OCR conversion.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Can I convert Word to PDF and keep hyperlinks?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Can I convert Word to PDF and keep hyperlinks?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Basic hyperlinks in Word documents are preserved during conversion to PDF. However, for advanced link functionality or complex document structures, use Microsoft Word's "Save as PDF" feature for best results.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to convert PDF to Word in Hindi/Tamil/Arabic?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to Word in Hindi/Tamil/Arabic?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Our converter supports Unicode text, including Hindi, Tamil, Arabic, Urdu, Gujarati, and other languages. Upload your PDF and the text will be extracted with proper character encoding. Ensure you have appropriate fonts installed to view the converted document.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How much does PDF to Word converter cost?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How much does PDF to Word converter cost?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Our PDF to Word converter is completely free with no hidden costs, subscriptions, or file limits. Unlike Adobe Acrobat ($14.99/month) or other premium tools, FastTools offers unlimited conversions at no charge.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Can I convert PDF to Word on Android phone?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Can I convert PDF to Word on Android phone?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Yes, open Chrome or any browser on Android, visit our converter, upload PDF from device or Google Drive, convert, and download DOCX file. Edit on Google Docs, Microsoft Word mobile, or any compatible app.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to use Word to PDF converter?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to use Word to PDF converter?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           To use our Word to PDF converter: 1) Click the "Word to PDF" mode button, 2) Upload your Word document (.doc or .docx file), 3) Click "Convert to PDF" button, 4) Wait for processing to complete, 5) Download the converted PDF file. The process is instant and works entirely in your browser without uploading files to any server.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to use Microsoft Word to convert to PDF?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to use Microsoft Word to convert to PDF?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           In Microsoft Word, click File → Save As → select location, then choose "PDF" from the "Save as type" dropdown menu, and click Save. Alternatively, use File → Export → Create PDF/XPS Document. For online conversion without Microsoft Word installed, use our free converter which works on any device with a web browser.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to convert PDF to Word and Word to PDF?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to Word and Word to PDF?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Our bidirectional converter supports both conversions. For PDF to Word: select "PDF to Word" mode, upload PDF, and download DOCX. For Word to PDF: switch to "Word to PDF" mode, upload Word file, and download PDF. You can switch between modes using the toggle button above the upload area. Both conversions are free and unlimited.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to change PDF to Word?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to change PDF to Word?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Upload your PDF file to our converter, ensure "PDF to Word" mode is selected, click the convert button, and download the Word document. The converter extracts text from PDF and creates an editable DOCX file that you can open in Microsoft Word, Google Docs, LibreOffice Writer, or any compatible word processor.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Can you convert PDF to Word for free?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Can you convert PDF to Word for free?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Yes, our PDF to Word converter is completely free with no hidden costs, trials, or subscription requirements. There are no file size limits, daily conversion limits, or feature restrictions. Simply upload your PDF and download the converted Word document without creating an account or providing payment information.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Can you convert Word to PDF?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Can you convert Word to PDF?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Yes, converting Word to PDF is one of our main features. Upload any Word document (.doc or .docx), click convert, and download the PDF. The conversion preserves text and basic formatting. This is useful for creating non-editable documents, professional presentations, or files that can be viewed on any device without Word installed.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to add PDF to Word document?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to add PDF to Word document?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           To add PDF content to Word: First, convert the PDF to Word using our tool. Then, in Microsoft Word, open your existing document and use Insert → Object → Text from File, or simply copy-paste content from the converted Word file. Alternatively, in Word, click Insert → Object → Create from File → Browse to select PDF (this embeds PDF as an object, not editable text).
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to find or count words in PDF?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to find or count words in PDF?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           To count words in a PDF, first convert it to Word using our tool. Then open in Microsoft Word and check the status bar for word count, or use Review → Word Count. Alternatively, in Adobe Acrobat, use Edit → Find to search for specific words. Google Docs also shows word count when you open the converted Word file.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">What is PDF conversion?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">What is PDF conversion?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           PDF conversion is the process of changing a PDF file into another format (like Word, Excel, or images) or converting other file formats to PDF. This allows you to edit PDF content in word processors, extract data, or create universal documents. Our tool specializes in bidirectional PDF-Word conversion using browser-based technology for privacy and security.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Which is the best PDF to Word converter?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Which is the best PDF to Word converter?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           The best converter depends on your needs. FastTools offers browser-based conversion with complete privacy (no server uploads), no file size limits, and unlimited free conversions. Adobe Acrobat provides the most accurate conversion but costs $14.99/month. I Love PDF is popular but uploads files to their servers. For security-conscious users prioritizing privacy, FastTools is the best choice.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Can you edit PDF in Word?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Can you edit PDF in Word?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Yes, you can edit PDF in Word in two ways: 1) Microsoft Word 2013+ can open PDF files directly (File → Open → select PDF), but formatting may change. 2) Better method: Convert PDF to Word using our tool, which extracts text and creates an editable DOCX file. Then edit freely in Word and save or convert back to PDF when finished.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to convert PDF to Word on mobile?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to Word on mobile?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           On mobile (iPhone or Android), open your browser (Safari, Chrome, etc.), visit fasttools.store/pdf-tools/pdf-word-converter, tap the upload area, select PDF from your device or cloud storage, tap "Convert to Word", wait for processing, and tap download. The converted Word file saves to your device. Works without installing any apps.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to convert multiple Word files to PDF?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to convert multiple Word files to PDF?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Currently, our tool converts one file at a time for optimal quality. To convert multiple files: 1) Convert first Word file to PDF, download it, 2) Upload second Word file, convert and download, 3) Repeat for all files. The process is fast since files process locally. For batch conversion in Microsoft Word, you can create a macro or use File → Print → Save as PDF for each document.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to save Word file as PDF?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to save Word file as PDF?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           In Microsoft Word: Click File → Save As, choose save location, click the "Save as type" dropdown, select "PDF (*.pdf)", enter filename, and click Save. Alternative: File → Export → Create PDF/XPS → Publish. On Mac: File → Save As → Format → PDF. Using our online tool: Upload Word file, click "Convert to PDF", download the PDF. Both methods work effectively.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Why can't I convert PDF to Word?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Why can't I convert PDF to Word?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Common reasons: 1) PDF is password-protected (unlock it first), 2) PDF is scanned image (needs OCR conversion), 3) PDF is corrupted, 4) Browser issues (try refreshing or different browser), 5) File size too large for some converters (ours has no limit). If conversion fails, ensure PDF is text-based, not password-protected, and try a different browser or device.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">What is OCR PDF to Word?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">What is OCR PDF to Word?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           OCR (Optical Character Recognition) PDF to Word conversion extracts text from scanned PDFs or image-based PDFs. OCR software "reads" the text in images and converts it to editable text. Our current converter works with text-based PDFs. For scanned PDFs, use OCR-enabled tools like Adobe Acrobat Pro, Microsoft OneNote, Google Drive, or specialized OCR converters.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to convert PDF to Word in Urdu or other languages?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to Word in Urdu or other languages?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Our converter supports Unicode text, including Urdu, Arabic, Hindi, Tamil, Gujarati, Bengali, and all major languages. Upload your PDF and text will be extracted with proper character encoding. After conversion, ensure you have appropriate fonts installed (like Noto Nastaliq Urdu for Urdu) to view and edit the document correctly in Word.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Is Adobe PDF to Word converter free?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Is Adobe PDF to Word converter free?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Adobe offers limited free PDF to Word conversions (2 files per month), but full access requires Adobe Acrobat Pro subscription at $14.99/month or $179.88/year. In contrast, our FastTools converter is completely free with unlimited conversions, no account required, and no subscription costs. Both tools provide quality conversion, but FastTools is free forever.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Can I open PDF in Word?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Can I open PDF in Word?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Yes, Microsoft Word 2013 and later can open PDF files directly: File → Open → select PDF file → Open. Word will convert PDF to editable format, but complex layouts may change. For better results, use our converter which extracts text cleanly into proper Word format. After opening PDF in Word, you can edit text and save as DOCX or back to PDF.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Where to convert PDF to Word for free?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Where to convert PDF to Word for free?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Free online options include: FastTools (our converter - no upload to servers, unlimited use), I Love PDF, Smallpdf (limited free conversions), PDF2Go, and Sejda (daily limits). Desktop options: Microsoft Word can open PDFs, LibreOffice Draw, or Google Drive. FastTools offers the best privacy since files process locally in your browser without server uploads.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Why can't I convert Word to PDF?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Why can't I convert Word to PDF?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Common issues: 1) Corrupted Word file (try opening in Word first), 2) File too large (ours has no limit), 3) Browser compatibility (try Chrome/Firefox), 4) Unsupported Word version (save as .docx), 5) Active document protection. Solutions: Ensure file isn't corrupted, save as .docx format, disable document protection, clear browser cache, or try a different browser or device.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How long does it take to convert PDF to Word?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How long does it take to convert PDF to Word?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           With our converter, conversion is nearly instant - typically 2-10 seconds depending on file size and your device's processing power. Since files process locally in your browser, there's no upload/download time. Server-based converters (I Love PDF, Smallpdf) take longer due to upload time, queue wait, processing, and download - usually 30 seconds to several minutes.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Is Word to PDF conversion free?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Is Word to PDF conversion free?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Yes, Word to PDF conversion is completely free on our platform with unlimited conversions. Microsoft Word also has built-in "Save as PDF" feature. Other free options include LibreOffice, Google Docs, and online converters like I Love PDF. However, our tool offers superior privacy by processing files locally without uploading to external servers.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to convert Word to PDF on Mac?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to convert Word to PDF on Mac?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           On Mac: Method 1) In Microsoft Word for Mac: File → Save As → Format → PDF. Method 2) Use our online converter in Safari/Chrome. Method 3) In Pages (Mac's word processor): Open Word file → File → Export To → PDF. Method 4) Print → PDF → Save as PDF (works from most Mac apps). All methods maintain formatting and create professional PDFs.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">How to convert Word to PDF without internet?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">How to convert Word to PDF without internet?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Offline methods: 1) Microsoft Word: File → Save As → PDF (available in Word 2007+), 2) LibreOffice Writer: File → Export as PDF (free, works offline), 3) Mac Preview: Open Word file → Print → PDF, 4) Windows: Install "Microsoft Print to PDF" printer, then Print → Microsoft Print to PDF. All these methods work without internet connection.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Why convert Word document to PDF?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Why convert Word document to PDF?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Reasons to convert: 1) Universal compatibility - PDFs open on any device without Word, 2) Preserve formatting - layout stays exact across platforms, 3) File security - PDFs are harder to edit, 4) Professional appearance for resumes/presentations, 5) Smaller file sizes for sharing, 6) Print-ready documents, 7) Add password protection, 8) Prevent unauthorized editing.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">Can I save Word as PDF without Microsoft Word?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">Can I save Word as PDF without Microsoft Word?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Yes, you can save/convert Word to PDF without Microsoft Word using: 1) Our online converter (works in any browser), 2) Google Docs (upload Word file, File → Download → PDF), 3) LibreOffice Writer (free, open Word file, Export as PDF), 4) Mac Preview or Pages, 5) Online converters like I Love PDF or Smallpdf. All these options work without Word installed.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-card-foreground mb-2">What is the difference between PDF and Word?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 mb-2">What is the difference between PDF and Word?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           PDF (Portable Document Format) is designed for viewing and sharing - formatting is fixed, works on any device, harder to edit. Word (DOCX) is for creating and editing - text is editable, formatting can change between devices, requires compatible software. Use Word for drafting/editing documents. Convert to PDF for final distribution, printing, or when you want to preserve exact formatting.
                         </p>
                       </div>
@@ -2035,8 +2006,8 @@ export default function PDFWordConverterPage() {
                   </div>
 
                   {/* Related Tools */}
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <ArrowRight className="h-4 w-4 text-accent" />
                       </div>
@@ -2051,8 +2022,8 @@ export default function PDFWordConverterPage() {
                           <FileText className="h-5 w-5 text-primary" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-card-foreground text-sm">PDF to Image</h3>
-                          <p className="text-xs text-muted-foreground">Convert PDF to JPG, PNG</p>
+                          <h3 className="font-semibold text-green-500 text-sm">PDF to Image</h3>
+                          <p className="text-xs text-gray-400">Convert PDF to JPG, PNG</p>
                         </div>
                       </Link>
                       <Link 
@@ -2063,8 +2034,8 @@ export default function PDFWordConverterPage() {
                           <FileText className="h-5 w-5 text-primary" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-card-foreground text-sm">PDF Compressor</h3>
-                          <p className="text-xs text-muted-foreground">Reduce PDF file size</p>
+                          <h3 className="font-semibold text-green-500 text-sm">PDF Compressor</h3>
+                          <p className="text-xs text-gray-400">Reduce PDF file size</p>
                         </div>
                       </Link>
                     </div>
@@ -2075,15 +2046,7 @@ export default function PDFWordConverterPage() {
               {/* Desktop Sidebar Ads */}
               <div className="hidden lg:block lg:w-80 space-y-6 flex-shrink-0">
                 <div className="sticky top-8 space-y-6">
-                  <div className="text-center">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
-                  
-                  <div className="text-center">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
+                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-black" />
                 </div>
               </div>
             </div>

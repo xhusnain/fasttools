@@ -2,6 +2,7 @@ import { CurrencyConverter } from "@/components/currency-converter"
 import { Top10CurrenciesTable } from "@/components/top10-currencies-table"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import type { Metadata } from "next"
 import Link from "next/link"
 
@@ -224,7 +225,6 @@ export default function CurrencyConverterPage() {
       <div className="container mx-auto px-4 py-5 sm:py-7">
         <Breadcrumbs
           items={[
-            { label: "Home", href: "/" },
             { label: "Converters", href: "/converters" },
             { label: "Currency Converter", href: "/converters/currency" },
           ]}
@@ -235,28 +235,29 @@ export default function CurrencyConverterPage() {
             <div className="flex-1 lg:flex-[2] space-y-5 sm:space-y-6">
               {/* Hero */}
               <div className="text-center space-y-4 animate-fade-in-up">
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">FastTools Currency Converter — Real-Time Exchange Rates</h1>
-                <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">Convert any currency instantly with FastTools.store's accurate, real-time exchange rates. Perfect for travel planning, international shopping, business invoicing, and investment tracking. Free, fast, and reliable.</p>
-          </div>
+                <GHeader
+                  title="FastTools Currency Converter - Real-Time Exchange Rates"
+                  description="Convert any currency instantly with FastTools.store's accurate, real-time exchange rates. Perfect for travel planning, international shopping, business invoicing, and investment tracking. Free, fast, and reliable."
+                  titleSize="medium"
+                  descriptionSize="small"
+                />
+              </div>
 
-              {/* Mobile/Tablet Ad - Top */}
-              <div className="block xl:hidden mb-4">
-                <div className="text-center mb-1">
-                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="header" className="w-full h-20 border border-border rounded-xl shadow-sm bg-card" />
-          </div>
+              {/* Mobile Ad Space */}
+              <div className="lg:hidden">
+                <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
+              </div>
 
               {/* Tool */}
-              <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+              <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
                 <CurrencyConverter />
                 
                 {/* API Button */}
                 <div className="mt-4 pt-4 border-t border-border">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="text-sm font-semibold text-card-foreground mb-1">Need API Access?</h4>
-                      <p className="text-xs text-muted-foreground">Integrate currency conversion into your app</p>
+                      <h4 className="text-sm font-semibold text-orange-500 mb-1">Need API Access?</h4>
+                      <p className="text-xs text-gray-400">Integrate currency conversion into your app</p>
                     </div>
                     <Link 
                       href="/converters/currency-api"
@@ -274,41 +275,34 @@ export default function CurrencyConverterPage() {
               {/* Top 10 Currencies Table */}
               <Top10CurrenciesTable />
 
-              {/* Mobile/Tablet Ad - Mid */}
-              <div className="block xl:hidden my-6">
-                <div className="text-center mb-1">
-                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="content" className="w-full h-28 border border-border rounded-xl shadow-sm bg-card" />
-              </div>
 
               {/* Content Sections */}
               <div className="space-y-5 animate-fade-in-up">
-                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-sm md:text-lg font-bold mb-2 text-card-foreground">How to Use the Currency Converter</h2>
-                  <h3 className="text-sm md:text-base font-bold mb-2 text-card-foreground">1) Choose Currencies and Amount</h3>
-                  <ul className="list-disc pl-4 text-muted-foreground text-xs">
+                <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-sm md:text-lg font-bold mb-2 text-orange-500">How to Use the Currency Converter</h2>
+                  <h3 className="text-sm md:text-base font-bold mb-2 text-green-500">1) Choose Currencies and Amount</h3>
+                  <ul className="list-disc pl-4 text-gray-400 text-xs">
                   <li>Select your From currency (e.g., USD) and To currency (e.g., EUR).</li>
                   <li>Enter an amount (e.g., 150.00).</li>
                   <li>Optionally pick a date to reference historical rates if supported.</li>
                 </ul>
-                  <h3 className="text-sm md:text-base font-bold mt-3 mb-2 text-card-foreground">2) View Live Rates and Results</h3>
-                  <ul className="list-disc pl-4 text-muted-foreground text-xs">
+                  <h3 className="text-sm md:text-base font-bold mt-3 mb-2 text-green-500">2) View Live Rates and Results</h3>
+                  <ul className="list-disc pl-4 text-gray-400 text-xs">
                   <li>The tool fetches the latest market rate and calculates your converted amount.</li>
                   <li>See secondary conversions to popular currencies for context.</li>
                   <li>Copy, share, or export the result if available on your UI.</li>
                 </ul>
-                  <h3 className="text-sm md:text-base font-bold mt-3 mb-2 text-card-foreground">3) Compare and Fine‑Tune</h3>
-                  <ul className="list-disc pl-4 text-muted-foreground text-xs">
+                  <h3 className="text-sm md:text-base font-bold mt-3 mb-2 text-green-500">3) Compare and Fine‑Tune</h3>
+                  <ul className="list-disc pl-4 text-gray-400 text-xs">
                   <li>Toggle fee estimation to understand bank/processor spreads.</li>
                   <li>Review historical trends to choose a favorable conversion time.</li>
                   <li>Round results based on currency-specific minor units (e.g., 2 decimals for USD/EUR, 0 for JPY).</li>
                 </ul>
                 </div>
 
-                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-sm md:text-lg font-bold mb-2 text-card-foreground">Popular Currency Pairs</h2>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs text-muted-foreground">
+                <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-sm md:text-lg font-bold mb-2 text-orange-500">Popular Currency Pairs</h2>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs text-gray-400">
                     <div>USD ⇄ EUR</div>
                     <div>USD ⇄ GBP</div>
                     <div>USD ⇄ CAD</div>
@@ -322,11 +316,11 @@ export default function CurrencyConverterPage() {
                   </div>
                 </div>
 
-                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-sm md:text-lg font-bold mb-2 text-card-foreground">Why Choose FastTools.store?</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-muted-foreground">
+                <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-sm md:text-lg font-bold mb-2 text-orange-500">Why Choose FastTools.store?</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-400">
                     <div>
-                      <h4 className="font-semibold text-card-foreground mb-2">🚀 Fast & Reliable</h4>
+                      <h4 className="font-semibold text-green-500 mb-2">🚀 Fast & Reliable</h4>
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Real-time exchange rates</li>
                         <li>Instant currency conversion</li>
@@ -335,7 +329,7 @@ export default function CurrencyConverterPage() {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-card-foreground mb-2">💼 Professional Features</h4>
+                      <h4 className="font-semibold text-green-500 mb-2">💼 Professional Features</h4>
                       <ul className="list-disc pl-4 space-y-1">
                         <li>Historical rate tracking</li>
                         <li>Top 10 currencies table</li>
@@ -347,19 +341,19 @@ export default function CurrencyConverterPage() {
                 </div>
 
                 {/* API Promotion Section */}
-                <div className="p-4 sm:p-5 rounded-lg bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-950/20 dark:to-orange-900/20 border border-orange-200 dark:border-orange-800 shadow">
+                <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <h2 className="text-sm md:text-lg font-bold mb-2 text-card-foreground">🔌 FastTools Currency API</h2>
-                      <p className="text-xs text-muted-foreground mb-3">
+                      <h2 className="text-sm md:text-lg font-bold mb-2 text-orange-500">🔌 FastTools Currency API</h2>
+                      <p className="text-xs text-gray-400 mb-3">
                         Integrate real-time currency conversion into your applications with our free REST API. 
                         Perfect for developers, businesses, and financial applications.
                       </p>
                       <div className="flex flex-wrap gap-2 text-xs">
-                        <span className="px-2 py-1 bg-orange-200 dark:bg-orange-800 text-orange-800 dark:text-orange-200 rounded-full">Free Forever</span>
-                        <span className="px-2 py-1 bg-orange-200 dark:bg-orange-800 text-orange-800 dark:text-orange-200 rounded-full">1000 requests/day</span>
-                        <span className="px-2 py-1 bg-orange-200 dark:bg-orange-800 text-orange-800 dark:text-orange-200 rounded-full">100+ Currencies</span>
-                        <span className="px-2 py-1 bg-orange-200 dark:bg-orange-800 text-orange-800 dark:text-orange-200 rounded-full">Real-time Rates</span>
+                        <span className="px-2 py-1 bg-orange-500 text-white rounded-full">Free Forever</span>
+                        <span className="px-2 py-1 bg-orange-500 text-white rounded-full">1000 requests/day</span>
+                        <span className="px-2 py-1 bg-orange-500 text-white rounded-full">100+ Currencies</span>
+                        <span className="px-2 py-1 bg-orange-500 text-white rounded-full">Real-time Rates</span>
                       </div>
                     </div>
                     <div className="ml-4">
@@ -376,12 +370,12 @@ export default function CurrencyConverterPage() {
                   </div>
                 </div>
 
-                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-sm md:text-lg font-bold mb-2 text-card-foreground">Currency Symbols and Codes</h2>
-                  <p className="text-muted-foreground text-xs mb-2">
+                <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-sm md:text-lg font-bold mb-2 text-orange-500">Currency Symbols and Codes</h2>
+                  <p className="text-gray-400 text-xs mb-2">
                     Understanding currency symbols and ISO codes helps you identify different currencies:
                   </p>
-                  <ul className="list-disc pl-4 text-muted-foreground text-xs">
+                  <ul className="list-disc pl-4 text-gray-400 text-xs">
                     <li><strong>USD ($):</strong> US Dollar - Most traded currency globally</li>
                     <li><strong>EUR (€):</strong> Euro - European Union currency</li>
                     <li><strong>GBP (£):</strong> British Pound Sterling - UK currency</li>
@@ -394,12 +388,12 @@ export default function CurrencyConverterPage() {
                 </div>
 
                 {/* Comprehensive FAQ Section */}
-                <div className="p-6 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-2xl font-bold mb-6 text-card-foreground">Currency Converter FAQ - Everything You Need to Know</h2>
-                  <div className="space-y-6 text-sm text-muted-foreground">
+                <div className="p-6 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-2xl font-bold mb-6 text-orange-500">Currency Converter FAQ - Everything You Need to Know</h2>
+                  <div className="space-y-6 text-sm text-gray-400">
                     
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-card-foreground">1. How accurate are FastTools currency exchange rates?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-green-500">1. How accurate are FastTools currency exchange rates?</h3>
                       <p className="mb-3">FastTools.store provides highly accurate, real-time exchange rates that are updated throughout the day to reflect current market conditions. Our currency converter is trusted by thousands of users worldwide.</p>
                       <p className="mb-3">The rates shown represent mid-market rates (the average between buy and sell rates). When you actually exchange currency through banks or exchange services, you'll typically pay slightly different rates due to:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
@@ -411,7 +405,7 @@ export default function CurrencyConverterPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-card-foreground">2. How often does FastTools update exchange rates?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-green-500">2. How often does FastTools update exchange rates?</h3>
                       <p className="mb-3">FastTools.store updates exchange rates in real-time during market hours to ensure you always have the most current information:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Active trading hours:</strong> Rates update every few minutes for maximum accuracy</li>
@@ -424,7 +418,7 @@ export default function CurrencyConverterPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-card-foreground">3. What's the difference between buy and sell rates?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-green-500">3. What's the difference between buy and sell rates?</h3>
                       <p className="mb-3">Understanding buy and sell rates is crucial for accurate currency conversion:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Buy Rate:</strong> The rate at which you can buy foreign currency (higher rate)</li>
@@ -442,7 +436,7 @@ export default function CurrencyConverterPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-card-foreground">4. How do I get the best exchange rates?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-green-500">4. How do I get the best exchange rates?</h3>
                       <p className="mb-3">Getting the best exchange rates requires understanding different service providers and their fee structures:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Compare providers:</strong> Banks, credit unions, online services, and currency exchanges all have different rates</li>
@@ -461,7 +455,7 @@ export default function CurrencyConverterPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-card-foreground">5. What factors affect exchange rates?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-green-500">5. What factors affect exchange rates?</h3>
                       <p className="mb-3">Exchange rates are influenced by numerous economic and political factors:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Interest Rates:</strong> Higher interest rates typically strengthen a currency</li>
@@ -482,7 +476,7 @@ export default function CurrencyConverterPage() {
                     </div>
 
                   <div>
-                      <h3 className="text-lg font-bold mb-3 text-card-foreground">6. How do I use currency conversion for travel?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-green-500">6. How do I use currency conversion for travel?</h3>
                       <p className="mb-3">Currency conversion is essential for travel planning and budgeting:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Budget Planning:</strong> Convert your home currency to estimate daily expenses</li>
@@ -503,7 +497,7 @@ export default function CurrencyConverterPage() {
                   </div>
 
                   <div>
-                      <h3 className="text-lg font-bold mb-3 text-card-foreground">7. How do I handle currency conversion for business?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-green-500">7. How do I handle currency conversion for business?</h3>
                       <p className="mb-3">Business currency conversion requires careful planning and documentation:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Invoicing:</strong> Quote prices in client's preferred currency</li>
@@ -524,7 +518,7 @@ export default function CurrencyConverterPage() {
                   </div>
 
                   <div>
-                      <h3 className="text-lg font-bold mb-3 text-card-foreground">8. What are the best practices for currency conversion?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-green-500">8. What are the best practices for currency conversion?</h3>
                       <p className="mb-3">Follow these best practices to get the most value from currency conversions:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Research rates:</strong> Compare multiple providers before converting</li>
@@ -547,18 +541,11 @@ export default function CurrencyConverterPage() {
                   </div>
                 </div>
 
-                {/* Mobile Bottom Ad */}
-                <div className="block xl:hidden mt-6">
-                  <div className="text-center mb-1">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="content" className="w-full h-28 border border-border rounded-xl shadow-sm bg-card" />
-              </div>
 
                 {/* Related Tools */}
-                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-sm md:text-lg font-bold mb-2 text-card-foreground">Related Tools</h2>
-                  <ul className="list-disc pl-4 text-muted-foreground text-xs">
+                <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-sm md:text-lg font-bold mb-2 text-orange-500">Related Tools</h2>
+                  <ul className="list-disc pl-4 text-gray-400 text-xs">
                   <li><Link href="/converters/file-size">File Size Converter</Link></li>
                   <li><Link href="/converters/length">Length Converter</Link></li>
                   <li><Link href="/converters/temperature">Temperature Converter</Link></li>
@@ -575,18 +562,7 @@ export default function CurrencyConverterPage() {
             {/* Desktop Sidebar with AdSense */}
             <div className="hidden lg:block w-60 xl:w-72">
               <div className="sticky top-28 space-y-5">
-                <div>
-                  <div className="text-center mb-1">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="sidebar" className="w-full h-72 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
-                <div>
-                  <div className="text-center mb-1">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="sidebar" className="w-full h-72 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
+                <AdSpace slot="sidebar" className="w-full h-72 border border-border rounded-xl shadow-sm bg-black" />
               </div>
             </div>
           </div>

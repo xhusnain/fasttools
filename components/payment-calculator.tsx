@@ -418,7 +418,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
     <div className="space-y-6">
       {/* Main Calculator */}
       <Card>
-        <CardHeader>
+        <CardHeader className="pb-8">
           <CardTitle className="flex items-center gap-2">
             <Calculator className="h-5 w-5 text-blue-500" />
             Advanced Payment Calculator
@@ -438,7 +438,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
 
           {/* Input Fields */}
           <div className="grid md:grid-cols-2 gap-4">
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="loanAmount">Loan Amount</Label>
               <Input
                 id="loanAmount"
@@ -448,7 +448,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                 onChange={(e) => setLoanAmount(e.target.value)}
               />
             </div>
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="interestRate">Interest Rate (%)</Label>
               <Input
                 id="interestRate"
@@ -461,7 +461,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           </div>
 
           {calculationType === "fixedTerm" && (
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="loanTerm">Loan Term (years)</Label>
               <Input
                 id="loanTerm"
@@ -474,7 +474,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           )}
 
           {calculationType === "fixedPayment" && (
-            <div>
+            <div className="space-y-2">
               <Label htmlFor="monthlyPayment">Monthly Payment</Label>
               <Input
                 id="monthlyPayment"

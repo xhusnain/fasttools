@@ -326,47 +326,49 @@ VO2 Max: ${result.vo2Max}`
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-black rounded-xl p-3 sm:p-4 md:p-6 w-full overflow-hidden">
       {/* Mode Selection */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Calculator className="h-5 w-5 text-blue-500" />
-            Advanced Pace Calculator
+      <Card className="bg-black border-slate-700 w-full overflow-hidden">
+        <CardHeader className="px-3 sm:px-4 md:px-6 pb-3">
+          <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+            <Calculator className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500 flex-shrink-0" />
+            <span className="break-words">Advanced Pace Calculator</span>
           </CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="px-3 sm:px-4 md:px-6 space-y-4 sm:space-y-6">
           <Tabs value={calculationMode} onValueChange={(value: "basic" | "multipoint" | "converter" | "finish") => setCalculationMode(value)}>
-            <TabsList className="grid w-full grid-cols-4">
-              <TabsTrigger value="basic">Basic Pace</TabsTrigger>
-              <TabsTrigger value="multipoint">Multipoint</TabsTrigger>
-              <TabsTrigger value="converter">Converter</TabsTrigger>
-              <TabsTrigger value="finish">Finish Time</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 bg-black border border-slate-700">
+              <TabsTrigger value="basic" className="text-xs sm:text-sm">Basic Pace</TabsTrigger>
+              <TabsTrigger value="multipoint" className="text-xs sm:text-sm">Multipoint</TabsTrigger>
+              <TabsTrigger value="converter" className="text-xs sm:text-sm">Converter</TabsTrigger>
+              <TabsTrigger value="finish" className="text-xs sm:text-sm">Finish Time</TabsTrigger>
             </TabsList>
 
             {/* Basic Pace Calculator */}
-            <TabsContent value="basic" className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="time">Time (hh:mm:ss)</Label>
+            <TabsContent value="basic" className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="space-y-2 w-full min-w-0">
+                  <Label htmlFor="time" className="text-green-500 text-xs sm:text-sm">Time (hh:mm:ss)</Label>
                   <Input
                     id="time"
                     placeholder="0:50:25"
                     value={time}
                     onChange={handleTimeChange}
+                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
                   />
                 </div>
-                <div>
-                  <Label htmlFor="distance">Distance</Label>
+                <div className="space-y-2 w-full min-w-0">
+                  <Label htmlFor="distance" className="text-green-500 text-xs sm:text-sm">Distance</Label>
                   <div className="flex gap-2">
                     <Input
                       id="distance"
                       placeholder="5"
                       value={distance}
                       onChange={(e) => setDistance(e.target.value)}
+                      className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 flex-1 text-sm"
                     />
                     <Select value={distanceUnit} onValueChange={(value: "miles" | "km") => setDistanceUnit(value)}>
-                      <SelectTrigger className="w-24">
+                      <SelectTrigger className="w-20 sm:w-24 border-slate-700 bg-black text-slate-200 text-xs sm:text-sm">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -378,29 +380,31 @@ VO2 Max: ${result.vo2Max}`
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-4">
-                <div>
-                  <Label htmlFor="weight">Weight (kg)</Label>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                <div className="space-y-2 w-full min-w-0">
+                  <Label htmlFor="weight" className="text-green-500 text-xs sm:text-sm">Weight (kg)</Label>
                   <Input
                     id="weight"
                     placeholder="70"
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
+                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
                   />
                 </div>
-                <div>
-                  <Label htmlFor="age">Age</Label>
+                <div className="space-y-2 w-full min-w-0">
+                  <Label htmlFor="age" className="text-green-500 text-xs sm:text-sm">Age</Label>
                   <Input
                     id="age"
                     placeholder="30"
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
+                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
                   />
                 </div>
-                <div>
-                  <Label>Pace Unit</Label>
+                <div className="space-y-2 w-full min-w-0">
+                  <Label className="text-green-500 text-xs sm:text-sm">Pace Unit</Label>
                   <Select value={paceUnit} onValueChange={(value: "perMile" | "perKm") => setPaceUnit(value)}>
-                    <SelectTrigger>
+                    <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -411,54 +415,56 @@ VO2 Max: ${result.vo2Max}`
                 </div>
               </div>
 
-              <div className="flex gap-2">
-                <Button onClick={calculatePace} className="flex-1">
+              <div className="flex flex-col sm:flex-row gap-2 w-full">
+                <Button onClick={calculatePace} className="flex-1 w-full sm:w-auto text-sm sm:text-base">
                   <Calculator className="mr-2 h-4 w-4" />
                   Calculate Pace
                 </Button>
-                <Button variant="outline" onClick={clearAll}>
+                <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
                   Clear All
                 </Button>
               </div>
             </TabsContent>
 
             {/* Multipoint Calculator */}
-            <TabsContent value="multipoint" className="space-y-6">
-              <div className="space-y-4">
+            <TabsContent value="multipoint" className="space-y-4 sm:space-y-6">
+              <div className="space-y-3 sm:space-y-4">
                 {multipointSegments.map((segment, index) => (
-                  <div key={index} className="grid md:grid-cols-4 gap-4 p-4 border rounded-lg">
-                    <div>
-                      <Label>Distance (km)</Label>
+                  <div key={index} className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 p-3 sm:p-4 border border-slate-700 rounded-lg bg-black w-full overflow-hidden">
+                    <div className="space-y-2 w-full min-w-0">
+                      <Label className="text-green-500 text-xs sm:text-sm">Distance (km)</Label>
                       <Input
                         value={segment.distance}
                         onChange={(e) => updateMultipointSegment(index, 'distance', parseFloat(e.target.value) || 0)}
+                        className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
                       />
                     </div>
-                    <div>
-                      <Label>Time (mm:ss)</Label>
+                    <div className="space-y-2 w-full min-w-0">
+                      <Label className="text-green-500 text-xs sm:text-sm">Time (mm:ss)</Label>
                       <Input
                         value={segment.time}
                         onChange={(e) => updateMultipointSegment(index, 'time', formatMinutesSecondsInput(e.target.value))}
+                        className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
                       />
                     </div>
-                    <div>
-                      <Label>Pace</Label>
-                      <Input value={segment.pace} disabled />
+                    <div className="space-y-2 w-full min-w-0">
+                      <Label className="text-green-500 text-xs sm:text-sm">Pace</Label>
+                      <Input value={segment.pace} disabled className="border-slate-700 bg-black text-slate-200 w-full text-sm" />
                     </div>
-                    <div>
-                      <Label>Split</Label>
-                      <Input value={segment.split} disabled />
+                    <div className="space-y-2 w-full min-w-0">
+                      <Label className="text-green-500 text-xs sm:text-sm">Split</Label>
+                      <Input value={segment.split} disabled className="border-slate-700 bg-black text-slate-200 w-full text-sm" />
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="flex gap-2">
-                <Button onClick={addMultipointSegment}>
+              <div className="flex flex-col sm:flex-row gap-2 w-full">
+                <Button onClick={addMultipointSegment} className="w-full sm:w-auto text-sm sm:text-base">
                   <Route className="mr-2 h-4 w-4" />
                   Add Segment
                 </Button>
-                <Button onClick={calculateMultipoint}>
+                <Button onClick={calculateMultipoint} className="w-full sm:w-auto text-sm sm:text-base">
                   <Calculator className="mr-2 h-4 w-4" />
                   Calculate All
                 </Button>
@@ -466,21 +472,22 @@ VO2 Max: ${result.vo2Max}`
             </TabsContent>
 
             {/* Pace Converter */}
-            <TabsContent value="converter" className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="paceInput">Pace</Label>
+            <TabsContent value="converter" className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="space-y-2 w-full min-w-0">
+                  <Label htmlFor="paceInput" className="text-green-500 text-xs sm:text-sm">Pace</Label>
                   <Input
                     id="paceInput"
                     placeholder="5:30"
                     value={pace}
                     onChange={(e) => setPace(e.target.value)}
+                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
                   />
                 </div>
-                <div>
-                  <Label>From</Label>
+                <div className="space-y-2 w-full min-w-0">
+                  <Label className="text-green-500 text-xs sm:text-sm">From</Label>
                   <Select value={paceUnit} onValueChange={(value: "perMile" | "perKm") => setPaceUnit(value)}>
-                    <SelectTrigger>
+                    <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -491,7 +498,7 @@ VO2 Max: ${result.vo2Max}`
                 </div>
               </div>
 
-              <div className="text-center p-4 bg-muted rounded-lg">
+              <div className="text-center p-3 sm:p-4 bg-black border border-slate-700 rounded-lg w-full overflow-hidden">
                 <div className="text-2xl font-bold">
                   {pace && paceUnit === "perMile" 
                     ? formatPace(parseTimeToSeconds(pace) * 1.60934)
@@ -509,31 +516,34 @@ VO2 Max: ${result.vo2Max}`
             {/* Finish Time Calculator */}
             <TabsContent value="finish" className="space-y-6">
               <div className="grid md:grid-cols-3 gap-4">
-                <div>
-                  <Label htmlFor="currentDistance">Current Distance (km)</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="currentDistance" className="text-green-500">Current Distance (km)</Label>
                   <Input
                     id="currentDistance"
                     placeholder="1"
                     value={currentDistance}
                     onChange={(e) => setCurrentDistance(e.target.value)}
+                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                   />
                 </div>
-                <div>
-                  <Label htmlFor="elapsedTime">Elapsed Time (mm:ss)</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="elapsedTime" className="text-green-500">Elapsed Time (mm:ss)</Label>
                   <Input
                     id="elapsedTime"
                     placeholder="6:15"
                     value={elapsedTime}
                     onChange={handleMinutesSecondsChange}
+                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                   />
                 </div>
-                <div>
-                  <Label htmlFor="fullDistance">Full Distance (km)</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="fullDistance" className="text-green-500">Full Distance (km)</Label>
                   <Input
                     id="fullDistance"
                     placeholder="5"
                     value={fullDistance}
                     onChange={(e) => setFullDistance(e.target.value)}
+                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                   />
                 </div>
               </div>
@@ -551,10 +561,10 @@ VO2 Max: ${result.vo2Max}`
       {result && (
         <div className="space-y-6">
           {/* Main Results */}
-          <Card>
+          <Card className="bg-black border-slate-700">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Target className="h-5 w-5 text-green-500" />
+              <CardTitle className="flex items-center gap-2 text-orange-500">
+                <Target className="h-5 w-5 text-orange-500" />
                 Pace Analysis Results
               </CardTitle>
             </CardHeader>
@@ -611,17 +621,17 @@ VO2 Max: ${result.vo2Max}`
           </Card>
 
           {/* Race Predictions */}
-          <Card>
+          <Card className="bg-black border-slate-700">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Trophy className="h-5 w-5 text-yellow-500" />
+              <CardTitle className="flex items-center gap-2 text-orange-500">
+                <Trophy className="h-5 w-5 text-orange-500" />
                 Race Time Predictions
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-2 gap-4">
                 {Object.entries(result.racePrediction).map(([race, time]) => (
-                  <div key={race} className="flex justify-between items-center p-3 bg-muted rounded-lg">
+                  <div key={race} className="flex justify-between items-center p-3 bg-black border border-slate-700 rounded-lg">
                     <span className="font-medium">{race}</span>
                     <Badge variant="secondary">{time}</Badge>
                   </div>
@@ -631,10 +641,10 @@ VO2 Max: ${result.vo2Max}`
           </Card>
 
           {/* Training Zones */}
-          <Card>
+          <Card className="bg-black border-slate-700">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Heart className="h-5 w-5 text-red-500" />
+              <CardTitle className="flex items-center gap-2 text-orange-500">
+                <Heart className="h-5 w-5 text-orange-500" />
                 Training Zones & Heart Rate
               </CardTitle>
             </CardHeader>
@@ -666,17 +676,17 @@ VO2 Max: ${result.vo2Max}`
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card>
+        <Card className="bg-black border-slate-700">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Clock className="h-5 w-5 text-gray-500" />
+            <CardTitle className="flex items-center gap-2 text-orange-500">
+              <Clock className="h-5 w-5 text-orange-500" />
               Recent Calculations
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
               {history.map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                <div key={index} className="flex items-center justify-between p-3 bg-black border border-slate-700 rounded-lg">
                   <div className="space-y-1">
                     <div className="font-medium">
                       {item.pace} - {item.distance} {distanceUnit}
@@ -700,22 +710,22 @@ VO2 Max: ${result.vo2Max}`
       )}
 
       {/* Information Section */}
-      <Card>
+      <Card className="bg-black border-slate-700">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Info className="h-5 w-5 text-blue-500" />
+          <CardTitle className="flex items-center gap-2 text-orange-500">
+            <Info className="h-5 w-5 text-orange-500" />
             Advanced Pace Calculator Features
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+          <div className="p-4 bg-black border border-slate-700 rounded-lg">
             <div className="flex items-start gap-2">
-              <Info className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+              <Info className="h-4 w-4 text-orange-500 mt-0.5 flex-shrink-0" />
               <div className="text-sm">
-                <p className="font-medium text-blue-800 dark:text-blue-200 mb-1">
+                <p className="font-medium text-orange-500 mb-1">
                   Professional Training Features
                 </p>
-                <p className="text-blue-700 dark:text-blue-300">
+                <p className="text-slate-300">
                   This calculator provides advanced athletic-level analysis including heart rate zones, VO2 Max estimation, race predictions, and training zone recommendations for serious athletes and coaches.
                 </p>
               </div>

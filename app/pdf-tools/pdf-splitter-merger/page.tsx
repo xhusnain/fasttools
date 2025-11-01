@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { PDFToolsAdvanced } from "@/components/pdf-tools-advanced"
 import { AdSpace } from "@/components/ad-space"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import Link from "next/link"
 import { FileStack, Code, Globe, FileText, ArrowRight, Merge, Scissors } from "lucide-react"
 
@@ -1055,7 +1056,6 @@ export default function PDFSplitterMergerPage() {
       <div className="container mx-auto px-4 py-8">
           <Breadcrumbs
             items={[
-              { label: "Home", href: "/" },
               { label: "PDF Tools", href: "/pdf-tools" },
               { label: "PDF Splitter & Merger", href: "/pdf-tools/pdf-splitter-merger" },
             ]}
@@ -1066,159 +1066,122 @@ export default function PDFSplitterMergerPage() {
               <div className="flex-1 lg:flex-[2] space-y-6">
                 {/* Hero Section */}
                 <div className="text-center space-y-5 animate-fade-in-up">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-4 shadow-md">
-                    <Code className="h-4 w-4 animate-pulse" />
-                    <span>PDF Splitter & Merger Tool</span>
-                    <div className="h-2 w-2 bg-secondary-accent rounded-full animate-ping"></div>
-                  </div>
+                  <GHeader
+                    title="Free PDF Splitter & Merger Online - Split & Merge PDFs Fast"
+                    description="Split large PDFs into separate pages or merge multiple PDFs into one document. Fast, secure, and 100% free. All processing happens in your browser — no upload required."
+                    titleSize="medium"
+                    descriptionSize="small"
+                  />
+                </div>
 
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">
-                    Free PDF Splitter & Merger Online – Split & Merge PDFs Fast
-                  </h1>
-
-                  <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
-                    Split large PDFs into separate pages or merge multiple PDFs into one document. Fast, secure, and 100% free. All processing happens in your browser — no upload required.
-                  </p>
-
-                  <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
-                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
-                      <Merge className="h-4 w-4 text-primary" />
-                      <span className="text-primary font-medium text-sm">Merge PDFs</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
-                      <Scissors className="h-4 w-4 text-green-600" />
-                      <span className="text-green-600 font-medium text-sm">Split PDFs</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-accent shadow">
-                      <FileText className="h-4 w-4 text-accent" />
-                      <span className="text-accent font-medium text-sm">Free Forever</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-secondary-accent shadow">
-                      <Globe className="h-4 w-4 text-secondary-accent" />
-                      <span className="text-secondary-accent font-medium text-sm">100% Secure</span>
-                    </div>
-                  </div>
-        </div>
-
-                {/* Mobile/Tablet Ad - Top of Page */}
-                <div className="block xl:hidden mb-6">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
-        </div>
+                {/* Mobile Ad Space */}
+                <div className="lg:hidden mb-6">
+                  <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
+                </div>
 
                 {/* Main Tool */}
                 <div className="animate-fade-in-up animation-delay-100">
                   <PDFToolsAdvanced />
                 </div>
 
-                {/* Mobile/Tablet Ad - After Tool */}
-                <div className="block xl:hidden my-8">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
-          </div>
-
                 {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-200">
-                  <div className="p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-xl font-bold mb-4 text-card-foreground">Professional PDF Splitting & Merging</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  <div className="p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-orange-500">Professional PDF Splitting & Merging</h2>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
                       Our advanced PDF splitter online and PDF merger free tools combine cutting-edge document processing algorithms with intelligent file management capabilities. All operations run locally in your browser for maximum privacy and speed.
                     </p>
 
-                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Split PDF Online - Extract Pages Easily</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    <h3 className="text-lg font-bold mb-3 text-green-500">Split PDF Online - Extract Pages Easily</h3>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
                       High-performance PDF splitting technology lets you extract specific pages, split by range, or separate every page into individual files. Perfect for breaking down large documents, extracting chapters, or creating focused presentations. Our PDF splitter online tool maintains document quality while providing fast, reliable results.
                     </p>
 
-                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Merge PDF Free - Combine Documents Instantly</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <h3 className="text-lg font-bold mb-3 text-green-500">Merge PDF Free - Combine Documents Instantly</h3>
+                    <p className="text-sm text-gray-400 leading-relaxed">
                       Smart PDF merger free technology handles multiple files with ease, preserving formatting and document structure. Combine reports, presentations, and documents into comprehensive packages. Whether merging 2 files or 50, our PDF merger free tool delivers professional results in seconds.
                     </p>
                   </div>
 
-                  <div className="p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-xl font-bold mb-4 text-card-foreground">How to Use PDF Splitter & Merger</h2>
+                  <div className="p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-orange-500">How to Use PDF Splitter & Merger</h2>
                     
-                    <h3 className="text-lg font-bold mb-3 text-card-foreground">How to Split PDF Online</h3>
-                    <div className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    <h3 className="text-lg font-bold mb-3 text-green-500">How to Split PDF Online</h3>
+                    <div className="text-sm text-gray-400 leading-relaxed mb-4">
                       <p className="mb-2"><strong>Method 1: Split All Pages</strong> - Click "Split PDF" mode, upload your PDF file, select "All Pages" option, and click the split button. Each page will download as a separate PDF file. This is perfect when you need to split PDF pages into individual documents.</p>
                       <p className="mb-2"><strong>Method 2: Split by Page Range</strong> - Upload your PDF, choose "Page Range" option, enter start and end page numbers (e.g., pages 5-10), and extract that specific section. Ideal for extracting chapters or sections from large documents.</p>
                       <p className="mb-2"><strong>Method 3: Extract Specific Pages</strong> - Select "Extract Pages" mode, upload your file, enter comma-separated page numbers (e.g., 1, 3, 5, 7), and download only those pages as a single PDF. Great for creating custom document excerpts.</p>
                     </div>
 
-                    <h3 className="text-lg font-bold mb-3 text-card-foreground">How to Merge PDF Online Free</h3>
-                    <div className="text-sm text-muted-foreground leading-relaxed">
+                    <h3 className="text-lg font-bold mb-3 text-green-500">How to Merge PDF Online Free</h3>
+                    <div className="text-sm text-gray-400 leading-relaxed">
                       <p className="mb-2"><strong>Step 1: Upload Files</strong> - Click "Merge PDFs" mode and upload multiple PDF files. You can click to browse or drag and drop files directly into the upload area.</p>
                       <p className="mb-2"><strong>Step 2: Arrange Order</strong> - Drag files up or down to reorder them. The final merged PDF will follow this exact sequence, making it easy to organize chapters, sections, or documents.</p>
                       <p className="mb-2"><strong>Step 3: Merge & Download</strong> - Click "Merge PDFs" button and your combined document will download automatically. All formatting, images, and content remain perfectly intact.</p>
                     </div>
                   </div>
 
-                  <div className="p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-xl font-bold mb-4 text-card-foreground">PDF Splitter & Merger Use Cases</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  <div className="p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-orange-500">PDF Splitter & Merger Use Cases</h2>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
                       Discover practical applications for our PDF splitter online and PDF merger free tools in business operations, document management, and content organization.
                     </p>
 
-                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Business Document Management</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    <h3 className="text-lg font-bold mb-3 text-green-500">Business Document Management</h3>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
                       Split large contracts with PDF splitter online to distribute specific sections, merge invoices using PDF merger free for quarterly reports, combine presentation materials, organize project documentation, and streamline document workflows. Perfect for legal firms, accounting departments, and project managers who need to split PDF documents regularly or merge multiple PDF files into comprehensive reports.
                     </p>
 
-                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Education & Research</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    <h3 className="text-lg font-bold mb-3 text-green-500">Education & Research</h3>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
                       Students and researchers can use our free PDF splitter to extract specific chapters from textbooks, split PDF pages for focused study materials, or use the PDF merger online tool to combine research papers, notes, and references into a single document. Teachers can split large course materials into individual lessons or merge assignment submissions for easier grading.
                     </p>
 
-                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Content Creation & Distribution</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <h3 className="text-lg font-bold mb-3 text-green-500">Content Creation & Distribution</h3>
+                    <p className="text-sm text-gray-400 leading-relaxed">
                       Extract specific chapters from ebooks, create custom document packages for clients, combine research materials, prepare presentation decks, and distribute focused content using our comprehensive PDF splitter online and PDF merger free toolset. Authors can split PDF files to share sample chapters, while publishers use the online PDF merger to compile manuscripts and supplementary materials.
                     </p>
                   </div>
 
-                  <div className="p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-xl font-bold mb-4 text-card-foreground">Advanced PDF Processing Features</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  <div className="p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-orange-500">Advanced PDF Processing Features</h2>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
                       Our PDF splitter online and PDF merger free tools offer comprehensive document processing capabilities including page extraction, document combination, reordering, and professional file management.
                     </p>
 
-                    <h3 className="text-lg font-bold mb-3 text-card-foreground">PDF Splitter Software Features</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    <h3 className="text-lg font-bold mb-3 text-green-500">PDF Splitter Software Features</h3>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
                       Unlike traditional PDF splitter software that requires installation, our online tool works instantly in your browser. Split PDF pages by range (e.g., 1-10), extract individual pages, or separate every page into its own file. The PDF splitter tool supports large files, maintains original quality, and processes documents at high speed. Whether you need a simple PDF splitter or advanced page extraction, our tool handles it all without downloads or sign-ups.
                     </p>
 
-                    <h3 className="text-lg font-bold mb-3 text-card-foreground">PDF Merger Online Capabilities</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <h3 className="text-lg font-bold mb-3 text-green-500">PDF Merger Online Capabilities</h3>
+                    <p className="text-sm text-gray-400 leading-relaxed">
                       Our free PDF merger online lets you combine unlimited documents with drag-and-drop reordering. Unlike other PDF merger tools that limit file counts or add watermarks, we provide completely free, unlimited merging. Merge PDF files of any size, combine documents from different sources, and create professional packages. The online merge PDF feature preserves all formatting, bookmarks, and metadata, making it perfect for business reports, presentations, and document compilation.
                     </p>
                   </div>
 
-                  <div className="p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-xl font-bold mb-4 text-card-foreground">Why Choose Our PDF Splitter & Merger?</h2>
+                  <div className="p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-orange-500">Why Choose Our PDF Splitter & Merger?</h2>
                     
-                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Free PDF Splitter & Merger Online</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    <h3 className="text-lg font-bold mb-3 text-green-500">Free PDF Splitter & Merger Online</h3>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
                       Unlike paid software like Adobe PDF splitter or premium services, our tool is 100% free with no limitations. No watermarks, no file size restrictions, no page limits. Compare that to other free PDF splitter tools that often restrict features or require paid upgrades. We believe everyone should have access to professional PDF splitting and merging capabilities without cost barriers.
                     </p>
 
-                    <h3 className="text-lg font-bold mb-3 text-card-foreground">Privacy & Security First</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    <h3 className="text-lg font-bold mb-3 text-green-500">Privacy & Security First</h3>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
                       Many online PDF merger tools upload your files to their servers, creating privacy risks. Our PDF splitter and merger processes everything locally in your browser. Your files never leave your device, making it safe for confidential documents, legal contracts, financial reports, and sensitive business materials. This local processing also means faster speeds and no internet upload delays.
                     </p>
 
-                    <h3 className="text-lg font-bold mb-3 text-card-foreground">No Installation Required</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <h3 className="text-lg font-bold mb-3 text-green-500">No Installation Required</h3>
+                    <p className="text-sm text-gray-400 leading-relaxed">
                       Traditional PDF splitter software requires downloading, installing, and updating. Our web-based solution works instantly on any device - Windows, Mac, Linux, tablets, or phones. Access the PDF splitter online tool whenever you need it without consuming storage space or dealing with software updates. Perfect for quick tasks or regular document management workflows.
           </p>
         </div>
 
                   {/* FAQ Section */}
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <Code className="h-4 w-4 text-accent" />
                       </div>
@@ -1226,146 +1189,146 @@ export default function PDFSplitterMergerPage() {
                     </h2>
                     <div className="space-y-6">
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">What is a PDF splitter and how does it work?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">A PDF splitter online is a tool that breaks down large PDF documents into smaller, more manageable files. Our free PDF splitter works entirely in your browser using advanced PDF processing algorithms - no software download required. Unlike traditional PDF splitter software, you can split by individual pages, extract specific page ranges (e.g., pages 1-10), or separate every page into individual PDF files. Whether you need to split PDF documents for sharing, extract chapters from textbooks, or divide large reports into sections, our PDF splitter tool handles it all while maintaining 100% document quality and formatting.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">What is a PDF splitter and how does it work?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">A PDF splitter online is a tool that breaks down large PDF documents into smaller, more manageable files. Our free PDF splitter works entirely in your browser using advanced PDF processing algorithms - no software download required. Unlike traditional PDF splitter software, you can split by individual pages, extract specific page ranges (e.g., pages 1-10), or separate every page into individual PDF files. Whether you need to split PDF documents for sharing, extract chapters from textbooks, or divide large reports into sections, our PDF splitter tool handles it all while maintaining 100% document quality and formatting.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How do I merge multiple PDFs into one document?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Our PDF merger free tool makes combining documents simple and fast. To merge PDF online: (1) Click "Merge PDFs" mode, (2) Upload multiple PDF files by clicking or drag-and-drop, (3) Arrange them in your desired order by dragging, (4) Click merge button. The PDF merger online free processes all files locally in your browser and creates a single, professional document. Unlike other online PDF merger tools that limit file counts, you can merge unlimited PDFs - combine 2 files or 200 files with no restrictions. Perfect for merging reports, combining invoices, creating document packages, or compiling research materials.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">How do I merge multiple PDFs into one document?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Our PDF merger free tool makes combining documents simple and fast. To merge PDF online: (1) Click "Merge PDFs" mode, (2) Upload multiple PDF files by clicking or drag-and-drop, (3) Arrange them in your desired order by dragging, (4) Click merge button. The PDF merger online free processes all files locally in your browser and creates a single, professional document. Unlike other online PDF merger tools that limit file counts, you can merge unlimited PDFs - combine 2 files or 200 files with no restrictions. Perfect for merging reports, combining invoices, creating document packages, or compiling research materials.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Is it safe to use online PDF splitter and merger tools?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Yes, our PDF splitter online and PDF merger free tools prioritize user privacy and security by operating entirely within your browser. Your files never leave your device, ensuring complete privacy and security. We don't store, track, or transmit any of your data, making our tools safe for sensitive documents, confidential business materials, and legal files. This client-side processing eliminates concerns about data breaches, unauthorized access, or unwanted data collection.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">Is it safe to use online PDF splitter and merger tools?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Yes, our PDF splitter online and PDF merger free tools prioritize user privacy and security by operating entirely within your browser. Your files never leave your device, ensuring complete privacy and security. We don't store, track, or transmit any of your data, making our tools safe for sensitive documents, confidential business materials, and legal files. This client-side processing eliminates concerns about data breaches, unauthorized access, or unwanted data collection.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Can I split a PDF by specific page ranges?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Absolutely! Our PDF splitter online supports flexible page range selection - one of the most requested features. Select "Page Range" mode, upload your PDF, enter start and end pages (like pages 5-10), and extract that exact section. You can also split PDF pages into individual files (separates every page), or extract specific non-consecutive pages (e.g., pages 1, 5, 10, 15). This makes our free online PDF splitter perfect for extracting book chapters, separating contract sections, pulling specific slides from presentations, or creating custom document excerpts. All while maintaining original formatting and quality.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">Can I split a PDF by specific page ranges?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Absolutely! Our PDF splitter online supports flexible page range selection - one of the most requested features. Select "Page Range" mode, upload your PDF, enter start and end pages (like pages 5-10), and extract that exact section. You can also split PDF pages into individual files (separates every page), or extract specific non-consecutive pages (e.g., pages 1, 5, 10, 15). This makes our free online PDF splitter perfect for extracting book chapters, separating contract sections, pulling specific slides from presentations, or creating custom document excerpts. All while maintaining original formatting and quality.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">What's the maximum file size for PDF splitting and merging?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Our PDF splitter online and PDF merger free tools can handle large files, with limits depending on your browser's memory capacity. Most modern browsers support files up to several hundred megabytes. For very large documents (100MB+), processing may take longer but the tools remain fully functional. All processing happens locally in your browser, so there are no server-side file size restrictions or upload limits.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">What's the maximum file size for PDF splitting and merging?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Our PDF splitter online and PDF merger free tools can handle large files, with limits depending on your browser's memory capacity. Most modern browsers support files up to several hundred megabytes. For very large documents (100MB+), processing may take longer but the tools remain fully functional. All processing happens locally in your browser, so there are no server-side file size restrictions or upload limits.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How can PDF splitter and merger tools improve my workflow?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">PDF splitter online and PDF merger free tools significantly improve business workflows by automating document organization tasks. Split large contracts to share relevant sections with different teams, merge monthly reports into quarterly summaries, combine client deliverables into comprehensive packages, organize project documentation, and streamline file distribution. These tools save hours of manual work while ensuring professional, consistent results. They're essential for anyone who regularly handles PDF documents in business, education, or personal projects.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">How can PDF splitter and merger tools improve my workflow?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">PDF splitter online and PDF merger free tools significantly improve business workflows by automating document organization tasks. Split large contracts to share relevant sections with different teams, merge monthly reports into quarterly summaries, combine client deliverables into comprehensive packages, organize project documentation, and streamline file distribution. These tools save hours of manual work while ensuring professional, consistent results. They're essential for anyone who regularly handles PDF documents in business, education, or personal projects.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Can I reorder pages when merging PDFs?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Yes! Our PDF merger free tool includes an intuitive drag-and-drop interface that lets you reorder files before merging. Simply upload your PDFs to the online PDF merger, then drag them up or down to arrange in your preferred sequence. This is crucial when you need to merge PDF documents in a specific order - organizing book chapters sequentially, arranging invoices chronologically, combining reports in logical flow, or creating custom presentations. Unlike basic PDF merger tools, we show you the exact order before processing, so the final merged PDF matches your exact specifications. Perfect for professional document compilation.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">Can I reorder pages when merging PDFs?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Yes! Our PDF merger free tool includes an intuitive drag-and-drop interface that lets you reorder files before merging. Simply upload your PDFs to the online PDF merger, then drag them up or down to arrange in your preferred sequence. This is crucial when you need to merge PDF documents in a specific order - organizing book chapters sequentially, arranging invoices chronologically, combining reports in logical flow, or creating custom presentations. Unlike basic PDF merger tools, we show you the exact order before processing, so the final merged PDF matches your exact specifications. Perfect for professional document compilation.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Does splitting or merging PDFs reduce document quality?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">No! Our PDF splitter online and PDF merger free tools preserve 100% of your document's original quality. All text, images, formatting, fonts, and layouts remain identical to the source files. The tools use lossless processing techniques that maintain document integrity throughout the split or merge operation. Whether you're working with scanned documents, text-based PDFs, or files containing complex graphics, the output quality matches the input quality perfectly.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">Does splitting or merging PDFs reduce document quality?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">No! Our PDF splitter online and PDF merger free tools preserve 100% of your document's original quality. All text, images, formatting, fonts, and layouts remain identical to the source files. The tools use lossless processing techniques that maintain document integrity throughout the split or merge operation. Whether you're working with scanned documents, text-based PDFs, or files containing complex graphics, the output quality matches the input quality perfectly.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">What makes this PDF splitter and merger better than others?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Our PDF splitter online and PDF merger free tools stand out from competitors like Adobe PDF splitter, Smallpdf PDF splitter, or i love PDF splitter through several key advantages: (1) 100% free with no watermarks or limits, (2) Complete privacy - files never uploaded to servers, (3) No software installation required, (4) Works on all devices - Windows, Mac, Linux, tablets, phones, (5) Unlimited file sizes and page counts, (6) Advanced features like drag-drop reordering, page range selection, and batch processing. While paid PDF splitter software charges monthly fees and other free PDF splitter tools add limitations, we provide enterprise-level features completely free forever.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">What makes this PDF splitter and merger better than others?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Our PDF splitter online and PDF merger free tools stand out from competitors like Adobe PDF splitter, Smallpdf PDF splitter, or i love PDF splitter through several key advantages: (1) 100% free with no watermarks or limits, (2) Complete privacy - files never uploaded to servers, (3) No software installation required, (4) Works on all devices - Windows, Mac, Linux, tablets, phones, (5) Unlimited file sizes and page counts, (6) Advanced features like drag-drop reordering, page range selection, and batch processing. While paid PDF splitter software charges monthly fees and other free PDF splitter tools add limitations, we provide enterprise-level features completely free forever.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Can I use PDF splitter and merger tools for business documents?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Absolutely! Our PDF splitter online and PDF merger free tools are designed for professional use and handle business documents with complete security. Split contracts, merge invoices, combine reports, organize proposals, extract pages from presentations, and manage legal documents confidently. The browser-based processing ensures confidential business information never leaves your device, making these tools suitable for handling sensitive contracts, financial documents, and proprietary materials. Many businesses integrate these tools into their standard document management workflows.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">Can I use PDF splitter and merger tools for business documents?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Absolutely! Our PDF splitter online and PDF merger free tools are designed for professional use and handle business documents with complete security. Split contracts, merge invoices, combine reports, organize proposals, extract pages from presentations, and manage legal documents confidently. The browser-based processing ensures confidential business information never leaves your device, making these tools suitable for handling sensitive contracts, financial documents, and proprietary materials. Many businesses integrate these tools into their standard document management workflows.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How do I choose between splitting and merging PDFs?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Use our PDF splitter online when you need to break down large documents into smaller sections — ideal for extracting specific chapters, sharing relevant pages, or creating focused excerpts. Use our PDF merger free tool when you need to combine multiple documents into one file — perfect for creating comprehensive reports, combining monthly summaries, or packaging client deliverables. Both tools work together to provide complete document management capabilities. Many users employ both tools in their workflows: splitting source documents to extract relevant sections, then merging those sections with other materials to create custom packages.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">How do I choose between splitting and merging PDFs?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Use our PDF splitter online when you need to break down large documents into smaller sections — ideal for extracting specific chapters, sharing relevant pages, or creating focused excerpts. Use our PDF merger free tool when you need to combine multiple documents into one file — perfect for creating comprehensive reports, combining monthly summaries, or packaging client deliverables. Both tools work together to provide complete document management capabilities. Many users employ both tools in their workflows: splitting source documents to extract relevant sections, then merging those sections with other materials to create custom packages.</p>
         </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Are there any limitations on how many PDFs I can merge?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Our PDF merger free tool has no artificial limits on the number of files you can combine. You can merge 2 PDFs or 200 PDFs in a single operation, limited only by your browser's memory capacity. The tool efficiently handles large merging operations while maintaining processing speed and document quality. For best performance with very large merge operations (50+ files), ensure you have sufficient RAM and use a modern browser like Chrome, Firefox, or Edge.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">Are there any limitations on how many PDFs I can merge?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Our PDF merger free tool has no artificial limits on the number of files you can combine. You can merge 2 PDFs or 200 PDFs in a single operation, limited only by your browser's memory capacity. The tool efficiently handles large merging operations while maintaining processing speed and document quality. For best performance with very large merge operations (50+ files), ensure you have sufficient RAM and use a modern browser like Chrome, Firefox, or Edge.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">What file formats are supported besides PDF?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Our PDF splitter online and PDF merger free tools are optimized specifically for PDF files to ensure the best quality and compatibility. We focus exclusively on PDF processing to deliver professional results with reliable formatting preservation. If you have documents in other formats (Word, Excel, images), we recommend converting them to PDF first using dedicated conversion tools, then using our splitter or merger for document organization.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">What file formats are supported besides PDF?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Our PDF splitter online and PDF merger free tools are optimized specifically for PDF files to ensure the best quality and compatibility. We focus exclusively on PDF processing to deliver professional results with reliable formatting preservation. If you have documents in other formats (Word, Excel, images), we recommend converting them to PDF first using dedicated conversion tools, then using our splitter or merger for document organization.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How to split PDF file into multiple files?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">To split PDF file into multiple files: (1) Click "Split PDF" mode on our tool, (2) Upload your PDF file, (3) Choose "All Pages" to split every page into separate files, or select "Page Range" to extract specific sections. For example, if you have a 50-page document and want pages 1-10 in one file and 11-20 in another, use the page range feature twice. Our free PDF splitter processes your document and downloads each section as a separate file. This is perfect for dividing large reports into chapters, separating sections of contracts, or breaking down presentations into individual topics.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">How to split PDF file into multiple files?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">To split PDF file into multiple files: (1) Click "Split PDF" mode on our tool, (2) Upload your PDF file, (3) Choose "All Pages" to split every page into separate files, or select "Page Range" to extract specific sections. For example, if you have a 50-page document and want pages 1-10 in one file and 11-20 in another, use the page range feature twice. Our free PDF splitter processes your document and downloads each section as a separate file. This is perfect for dividing large reports into chapters, separating sections of contracts, or breaking down presentations into individual topics.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How to split a PDF into two parts?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">To split a PDF into two parts, use our "Page Range" feature: First, upload your PDF and note the total page count. Then, decide where to split (for example, at page 25 of a 50-page document). Extract pages 1-25 as the first part, then extract pages 26-50 as the second part. Each extraction creates a separate PDF file. This method is ideal when you need to divide PDF files for sharing - like splitting a large report into executive summary and detailed analysis sections, or separating a combined invoice into individual billing periods.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">How to split a PDF into two parts?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">To split a PDF into two parts, use our "Page Range" feature: First, upload your PDF and note the total page count. Then, decide where to split (for example, at page 25 of a 50-page document). Extract pages 1-25 as the first part, then extract pages 26-50 as the second part. Each extraction creates a separate PDF file. This method is ideal when you need to divide PDF files for sharing - like splitting a large report into executive summary and detailed analysis sections, or separating a combined invoice into individual billing periods.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How to separate a page from PDF file?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">To separate a single page from a PDF file, upload your document to our PDF splitter online tool, select "Extract Pages" mode, and enter the specific page number you want to extract (e.g., page 5). The tool will create a new PDF containing only that page. You can also extract multiple non-consecutive pages by entering comma-separated numbers (e.g., 2, 5, 8, 12). This is extremely useful when you need to pull out a single contract page, extract a specific invoice from a batch, or isolate an important chart or diagram from a lengthy report.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">How to separate a page from PDF file?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">To separate a single page from a PDF file, upload your document to our PDF splitter online tool, select "Extract Pages" mode, and enter the specific page number you want to extract (e.g., page 5). The tool will create a new PDF containing only that page. You can also extract multiple non-consecutive pages by entering comma-separated numbers (e.g., 2, 5, 8, 12). This is extremely useful when you need to pull out a single contract page, extract a specific invoice from a batch, or isolate an important chart or diagram from a lengthy report.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Can you split a PDF without any limitations?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Yes! Our free PDF splitter has no limitations on file count, page count, or number of splits per day. Unlike premium services that restrict free users to 2-3 files daily or paid software requiring subscriptions, you can split unlimited PDFs completely free. Split a 10-page document or a 1000-page document - there are no restrictions. You can also split the same file multiple times in different ways, extract as many pages as needed, and use the tool as frequently as required. Perfect for businesses processing dozens of documents daily or students working on multiple projects.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">Can you split a PDF without any limitations?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Yes! Our free PDF splitter has no limitations on file count, page count, or number of splits per day. Unlike premium services that restrict free users to 2-3 files daily or paid software requiring subscriptions, you can split unlimited PDFs completely free. Split a 10-page document or a 1000-page document - there are no restrictions. You can also split the same file multiple times in different ways, extract as many pages as needed, and use the tool as frequently as required. Perfect for businesses processing dozens of documents daily or students working on multiple projects.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How to split PDF files online for free?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">To split PDF files online free: Visit our tool, click "Split PDF" mode, upload your file (no account required), choose your split method (all pages, page range, or extract specific pages), and click split. The tool processes everything in your browser - no upload to external servers, no email registration, no credit card needed. Download your split files immediately. Unlike other "free" PDF splitters that require sign-up after the first file or add watermarks, our tool is genuinely free forever with all features unlocked. Perfect for quick one-time tasks or regular document management.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">How to split PDF files online for free?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">To split PDF files online free: Visit our tool, click "Split PDF" mode, upload your file (no account required), choose your split method (all pages, page range, or extract specific pages), and click split. The tool processes everything in your browser - no upload to external servers, no email registration, no credit card needed. Download your split files immediately. Unlike other "free" PDF splitters that require sign-up after the first file or add watermarks, our tool is genuinely free forever with all features unlocked. Perfect for quick one-time tasks or regular document management.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How to split PDF on Mac without additional software?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Mac users can split PDF files using our online tool without installing any software. Simply open Safari, Chrome, or any browser on your Mac, visit our PDF splitter online, and upload your file. The tool works natively in the browser, taking advantage of macOS's excellent PDF handling capabilities. No need to download PDF splitter software, no compatibility issues, no storage space wasted. Our tool is fully compatible with macOS and works on Mac, MacBook Air, MacBook Pro, and iMac. It even works on iPads with Safari, making it the most convenient PDF splitting solution for Apple users.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">How to split PDF on Mac without additional software?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Mac users can split PDF files using our online tool without installing any software. Simply open Safari, Chrome, or any browser on your Mac, visit our PDF splitter online, and upload your file. The tool works natively in the browser, taking advantage of macOS's excellent PDF handling capabilities. No need to download PDF splitter software, no compatibility issues, no storage space wasted. Our tool is fully compatible with macOS and works on Mac, MacBook Air, MacBook Pro, and iMac. It even works on iPads with Safari, making it the most convenient PDF splitting solution for Apple users.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How to split PDF in Adobe vs our free tool?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Adobe Acrobat offers PDF splitting but requires either purchasing the full Acrobat DC ($19.99/month) or using Adobe Acrobat Reader with limited features. Adobe's online service also requires account creation. Our free PDF splitter provides the same core functionality without cost or sign-up: split by pages, extract ranges, separate all pages. The main advantages of our tool: (1) Completely free forever, (2) No software installation, (3) Works in browser, (4) No account needed, (5) Privacy-focused - files stay local. While Adobe offers advanced features for professional publishers, our tool covers 95% of common splitting needs that home users and small businesses require daily.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">How to split PDF in Adobe vs our free tool?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Adobe Acrobat offers PDF splitting but requires either purchasing the full Acrobat DC ($19.99/month) or using Adobe Acrobat Reader with limited features. Adobe's online service also requires account creation. Our free PDF splitter provides the same core functionality without cost or sign-up: split by pages, extract ranges, separate all pages. The main advantages of our tool: (1) Completely free forever, (2) No software installation, (3) Works in browser, (4) No account needed, (5) Privacy-focused - files stay local. While Adobe offers advanced features for professional publishers, our tool covers 95% of common splitting needs that home users and small businesses require daily.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How to merge PDF files into one file?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">To merge PDF files into one: (1) Switch to "Merge PDFs" mode, (2) Upload your first PDF file, (3) Upload additional PDF files - you can add as many as needed, (4) Arrange them in order by dragging, (5) Click "Merge PDFs" button. The tool combines all files into a single PDF maintaining the order you specified. All pages, formatting, images, and bookmarks are preserved. This is perfect for combining monthly reports into a yearly summary, merging multiple invoices for accounting, compiling chapters into a complete manuscript, or creating comprehensive client proposals from separate documents.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">How to merge PDF files into one file?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">To merge PDF files into one: (1) Switch to "Merge PDFs" mode, (2) Upload your first PDF file, (3) Upload additional PDF files - you can add as many as needed, (4) Arrange them in order by dragging, (5) Click "Merge PDFs" button. The tool combines all files into a single PDF maintaining the order you specified. All pages, formatting, images, and bookmarks are preserved. This is perfect for combining monthly reports into a yearly summary, merging multiple invoices for accounting, compiling chapters into a complete manuscript, or creating comprehensive client proposals from separate documents.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Is PDF merger and splitter safe to use?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Yes, our PDF merger and splitter is completely safe. Unlike cloud-based tools that upload your files to remote servers (creating security risks), our tool processes everything locally in your browser using JavaScript and WebAssembly. Your PDF files never leave your computer - they're not uploaded, stored, or transmitted anywhere. This makes it 100% safe for confidential documents like legal contracts, financial statements, medical records, or proprietary business materials. The tool doesn't collect personal data, doesn't track usage, and doesn't require email registration. It's as safe as using native desktop software, but more convenient.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">Is PDF merger and splitter safe to use?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Yes, our PDF merger and splitter is completely safe. Unlike cloud-based tools that upload your files to remote servers (creating security risks), our tool processes everything locally in your browser using JavaScript and WebAssembly. Your PDF files never leave your computer - they're not uploaded, stored, or transmitted anywhere. This makes it 100% safe for confidential documents like legal contracts, financial statements, medical records, or proprietary business materials. The tool doesn't collect personal data, doesn't track usage, and doesn't require email registration. It's as safe as using native desktop software, but more convenient.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Can I split PDF into multiple files with different page ranges?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Yes! To split one PDF into multiple files with different page ranges, use our tool multiple times: First extraction - pages 1-10, second extraction - pages 11-25, third extraction - pages 26-50, etc. Upload your original PDF for each extraction and specify different page ranges. While this requires multiple operations, it gives you complete control over how the document is divided. This is ideal for complex documents like textbooks (split by chapters), legal documents (split by sections), or combined reports (split by departments). Each extraction creates a separate PDF file with exactly the pages you specified.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">Can I split PDF into multiple files with different page ranges?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Yes! To split one PDF into multiple files with different page ranges, use our tool multiple times: First extraction - pages 1-10, second extraction - pages 11-25, third extraction - pages 26-50, etc. Upload your original PDF for each extraction and specify different page ranges. While this requires multiple operations, it gives you complete control over how the document is divided. This is ideal for complex documents like textbooks (split by chapters), legal documents (split by sections), or combined reports (split by departments). Each extraction creates a separate PDF file with exactly the pages you specified.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How to break PDF file into separate pages?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">To break a PDF file into separate pages (one page per file): Upload your PDF, select "Split PDF" mode, choose "All Pages" option, and click split. The tool will process your document and create individual PDF files for each page (page-1.pdf, page-2.pdf, page-3.pdf, etc.). For a 20-page document, you'll get 20 separate files. This is particularly useful when you need to distribute individual pages to different people, extract specific pages for forms, create single-page graphics from multi-page documents, or when working with scanned documents where each page needs individual processing or editing.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">How to break PDF file into separate pages?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">To break a PDF file into separate pages (one page per file): Upload your PDF, select "Split PDF" mode, choose "All Pages" option, and click split. The tool will process your document and create individual PDF files for each page (page-1.pdf, page-2.pdf, page-3.pdf, etc.). For a 20-page document, you'll get 20 separate files. This is particularly useful when you need to distribute individual pages to different people, extract specific pages for forms, create single-page graphics from multi-page documents, or when working with scanned documents where each page needs individual processing or editing.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">How to divide PDF file into parts for easier sharing?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">To divide large PDF files into smaller parts for email or sharing: First, determine how many pages per part you need (many email systems limit attachments to 10-25MB). If you have a 100-page document, split it into 4 parts of 25 pages each: Extract pages 1-25, then 26-50, then 51-75, then 76-100. Each part will be a smaller file size suitable for emailing. This method is essential when sharing large reports, presentations, or documents with colleagues who have email size restrictions. You can also name each part descriptively (Part1-Introduction.pdf, Part2-Analysis.pdf) for better organization.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">How to divide PDF file into parts for easier sharing?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">To divide large PDF files into smaller parts for email or sharing: First, determine how many pages per part you need (many email systems limit attachments to 10-25MB). If you have a 100-page document, split it into 4 parts of 25 pages each: Extract pages 1-25, then 26-50, then 51-75, then 76-100. Each part will be a smaller file size suitable for emailing. This method is essential when sharing large reports, presentations, or documents with colleagues who have email size restrictions. You can also name each part descriptively (Part1-Introduction.pdf, Part2-Analysis.pdf) for better organization.</p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-card-foreground">Can PDF creator or Nitro PDF split files as well as our tool?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">Yes, PDF creator software and Nitro PDF can split files, but they have limitations compared to our free online tool. PDF Creator and Nitro PDF require software installation (consuming disk space), often need paid licenses for full features ($159+ for Nitro), and may have restrictions on batch processing. Our online PDF splitter offers comparable splitting capabilities completely free: split all pages, extract ranges, select specific pages, handle large files. The advantage: no installation, no cost, works on any device, completely private processing. While professional PDF software offers additional features like OCR or advanced editing, our tool excels at the core task - splitting PDFs quickly and efficiently.</p>
+                        <h3 className="text-lg font-bold mb-2 text-green-500">Can PDF creator or Nitro PDF split files as well as our tool?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">Yes, PDF creator software and Nitro PDF can split files, but they have limitations compared to our free online tool. PDF Creator and Nitro PDF require software installation (consuming disk space), often need paid licenses for full features ($159+ for Nitro), and may have restrictions on batch processing. Our online PDF splitter offers comparable splitting capabilities completely free: split all pages, extract ranges, select specific pages, handle large files. The advantage: no installation, no cost, works on any device, completely private processing. While professional PDF software offers additional features like OCR or advanced editing, our tool excels at the core task - splitting PDFs quickly and efficiently.</p>
                       </div>
                     </div>
                     <div className="mt-6 block xl:hidden">
                       <div className="text-center mb-2">
-                        <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                        <span className="text-xs text-gray-400 font-medium">Advertisement</span>
                       </div>
-                      <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
+                      <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-black" />
                     </div>
                   </div>
 
                   {/* Technical Documentation Section */}
-                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <Code className="h-4 w-4 text-accent" />
                       </div>
@@ -1374,21 +1337,21 @@ export default function PDFSplitterMergerPage() {
 
                     <div className="space-y-6">
                       <div>
-                        <h3 className="text-lg font-bold mb-3 text-card-foreground">The Technology Behind Our PDF Tools</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                        <h3 className="text-lg font-bold mb-3 text-green-500">The Technology Behind Our PDF Tools</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
                           Our PDF splitter and merger tools use <strong>pdf-lib</strong>, a powerful JavaScript library that enables complete PDF document manipulation directly in the browser. Unlike server-based solutions that upload your files, pdf-lib processes everything client-side using modern web technologies (WebAssembly and JavaScript), ensuring your documents never leave your device.
                         </p>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           The library works by parsing the PDF structure, extracting page objects, and reconstructing new PDF documents with the selected pages. This approach maintains 100% document fidelity including text, images, fonts, annotations, and metadata.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-3 text-card-foreground">How PDF Merging Works</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                        <h3 className="text-lg font-bold mb-3 text-green-500">How PDF Merging Works</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
                           When you merge PDF files online using our tool, here's the technical process:
                         </p>
-                        <ol className="list-decimal pl-5 text-sm text-muted-foreground space-y-2 mb-4">
+                        <ol className="list-decimal pl-5 text-sm text-gray-400 space-y-2 mb-4">
                           <li><strong>File Loading:</strong> Each uploaded PDF is converted to an ArrayBuffer (binary data) that can be processed in JavaScript</li>
                           <li><strong>PDF Parsing:</strong> The pdf-lib library parses each PDF's internal structure, identifying pages, fonts, images, and resources</li>
                           <li><strong>Page Extraction:</strong> All pages from each source PDF are extracted as page objects while maintaining their original properties</li>
@@ -1397,8 +1360,8 @@ export default function PDFSplitterMergerPage() {
                           <li><strong>Export:</strong> The final merged PDF is saved as a binary file and downloaded to your device</li>
             </ol>
 
-                        <div className="bg-card border border-border rounded-lg p-4 mt-4">
-                          <p className="text-xs font-semibold text-card-foreground mb-2">Code Example - Merge PDFs:</p>
+                        <div className="bg-black border border-border rounded-lg p-4 mt-4">
+                          <p className="text-xs font-semibold text-orange-500 mb-2">Code Example - Merge PDFs:</p>
                           <pre className="text-xs bg-muted/50 p-3 rounded overflow-x-auto">
 {`import { PDFDocument } from 'pdf-lib';
 
@@ -1443,11 +1406,11 @@ async function mergePDFs(files) {
           </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-3 text-card-foreground">How PDF Splitting Works</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                        <h3 className="text-lg font-bold mb-3 text-green-500">How PDF Splitting Works</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
                           The PDF splitting process is equally sophisticated but works in reverse:
                         </p>
-                        <ol className="list-decimal pl-5 text-sm text-muted-foreground space-y-2 mb-4">
+                        <ol className="list-decimal pl-5 text-sm text-gray-400 space-y-2 mb-4">
                           <li><strong>Source Loading:</strong> The original PDF is loaded and parsed to identify all pages</li>
                           <li><strong>Page Selection:</strong> Based on your choice (all pages, page range, or specific pages), the tool determines which pages to extract</li>
                           <li><strong>New Document Creation:</strong> For each output file, a new empty PDF document is created</li>
@@ -1455,8 +1418,8 @@ async function mergePDFs(files) {
                           <li><strong>Individual Export:</strong> Each new PDF is saved separately and downloaded</li>
             </ol>
 
-                        <div className="bg-card border border-border rounded-lg p-4 mt-4">
-                          <p className="text-xs font-semibold text-card-foreground mb-2">Code Example - Split PDF (All Pages):</p>
+                        <div className="bg-black border border-border rounded-lg p-4 mt-4">
+                          <p className="text-xs font-semibold text-orange-500 mb-2">Code Example - Split PDF (All Pages):</p>
                           <pre className="text-xs bg-muted/50 p-3 rounded overflow-x-auto">
 {`import { PDFDocument } from 'pdf-lib';
 
@@ -1501,8 +1464,8 @@ async function splitPDFAllPages(file) {
 }`}</pre>
                         </div>
 
-                        <div className="bg-card border border-border rounded-lg p-4 mt-4">
-                          <p className="text-xs font-semibold text-card-foreground mb-2">Code Example - Split PDF (Page Range):</p>
+                        <div className="bg-black border border-border rounded-lg p-4 mt-4">
+                          <p className="text-xs font-semibold text-orange-500 mb-2">Code Example - Split PDF (Page Range):</p>
                           <pre className="text-xs bg-muted/50 p-3 rounded overflow-x-auto">
 {`import { PDFDocument } from 'pdf-lib';
 
@@ -1549,11 +1512,11 @@ async function splitPDFByRange(file, startPage, endPage) {
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-3 text-card-foreground">Performance Optimization</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                        <h3 className="text-lg font-bold mb-3 text-green-500">Performance Optimization</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
                           Our implementation includes several optimizations to ensure fast processing even for large PDFs:
                         </p>
-                        <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-2">
+                        <ul className="list-disc pl-5 text-sm text-gray-400 space-y-2">
                           <li><strong>Async Processing:</strong> All PDF operations use async/await to prevent browser freezing during processing</li>
                           <li><strong>Memory Management:</strong> We use URL.revokeObjectURL() to clean up memory after downloads, preventing memory leaks</li>
                           <li><strong>Progress Tracking:</strong> For large operations, we update progress indicators to keep users informed</li>
@@ -1563,51 +1526,51 @@ async function splitPDFByRange(file, startPage, endPage) {
           </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-3 text-card-foreground">Browser Compatibility</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                        <h3 className="text-lg font-bold mb-3 text-green-500">Browser Compatibility</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
                           Our PDF splitter and merger work in all modern browsers that support:
                         </p>
-                        <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1 mb-3">
+                        <ul className="list-disc pl-5 text-sm text-gray-400 space-y-1 mb-3">
                           <li>JavaScript ES6+ (Promises, async/await, ArrayBuffer)</li>
                           <li>File API (FileReader, Blob)</li>
                           <li>WebAssembly (for pdf-lib's core operations)</li>
                         </ul>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           <strong>Supported browsers:</strong> Chrome 60+, Firefox 60+, Safari 12+, Edge 79+, Opera 47+. The tools work on desktop and mobile browsers, though large file processing performs better on desktop with more available RAM.
                         </p>
         </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-3 text-card-foreground">Why Client-Side Processing Matters</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                        <h3 className="text-lg font-bold mb-3 text-green-500">Why Client-Side Processing Matters</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
                           Unlike traditional online PDF tools that upload files to servers, our client-side approach offers significant advantages:
                         </p>
                         <div className="grid md:grid-cols-2 gap-3 text-sm">
                           <div className="bg-muted/30 border border-border rounded-lg p-3">
-                            <p className="font-semibold text-card-foreground mb-1">✓ Complete Privacy</p>
-                            <p className="text-muted-foreground text-xs">Files never leave your device - no server uploads, no data storage</p>
+                            <p className="font-semibold text-orange-500 mb-1">✓ Complete Privacy</p>
+                            <p className="text-gray-400 text-xs">Files never leave your device - no server uploads, no data storage</p>
       </div>
                           <div className="bg-muted/30 border border-border rounded-lg p-3">
-                            <p className="font-semibold text-card-foreground mb-1">✓ Faster Processing</p>
-                            <p className="text-muted-foreground text-xs">No upload/download delays - processing happens instantly locally</p>
+                            <p className="font-semibold text-orange-500 mb-1">✓ Faster Processing</p>
+                            <p className="text-gray-400 text-xs">No upload/download delays - processing happens instantly locally</p>
     </div>
                           <div className="bg-muted/30 border border-border rounded-lg p-3">
-                            <p className="font-semibold text-card-foreground mb-1">✓ Offline Capability</p>
-                            <p className="text-muted-foreground text-xs">Once loaded, works without internet connection</p>
+                            <p className="font-semibold text-orange-500 mb-1">✓ Offline Capability</p>
+                            <p className="text-gray-400 text-xs">Once loaded, works without internet connection</p>
                           </div>
                           <div className="bg-muted/30 border border-border rounded-lg p-3">
-                            <p className="font-semibold text-card-foreground mb-1">✓ No File Size Limits</p>
-                            <p className="text-muted-foreground text-xs">Limited only by browser memory, not arbitrary server restrictions</p>
+                            <p className="font-semibold text-orange-500 mb-1">✓ No File Size Limits</p>
+                            <p className="text-gray-400 text-xs">Limited only by browser memory, not arbitrary server restrictions</p>
                           </div>
                         </div>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-3 text-card-foreground">Implementation Best Practices</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                        <h3 className="text-lg font-bold mb-3 text-green-500">Implementation Best Practices</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
                           If you're building your own PDF tools, consider these best practices we follow:
                         </p>
-                        <ol className="list-decimal pl-5 text-sm text-muted-foreground space-y-2">
+                        <ol className="list-decimal pl-5 text-sm text-gray-400 space-y-2">
                           <li><strong>Error Handling:</strong> Wrap all PDF operations in try-catch blocks to gracefully handle corrupted files</li>
                           <li><strong>User Feedback:</strong> Show progress indicators for operations taking more than 1 second</li>
                           <li><strong>File Validation:</strong> Check file type and size before processing to prevent issues</li>
@@ -1618,12 +1581,12 @@ async function splitPDFByRange(file, startPage, endPage) {
                       </div>
 
                       <div className="bg-accent/5 border border-accent/20 rounded-lg p-4">
-                        <h3 className="text-sm font-bold mb-2 text-card-foreground">Resources for Developers</h3>
-                        <ul className="text-xs text-muted-foreground space-y-1">
-                          <li>• <strong className="text-card-foreground">pdf-lib Documentation:</strong> Complete API reference at pdf-lib.js.org</li>
-                          <li>• <strong className="text-card-foreground">GitHub Repository:</strong> Source code and examples available on GitHub</li>
-                          <li>• <strong className="text-card-foreground">NPM Package:</strong> Install with: <code className="bg-muted px-1.5 py-0.5 rounded text-xs">npm install pdf-lib</code></li>
-                          <li>• <strong className="text-card-foreground">Browser Support:</strong> Works in all modern browsers supporting ES6+ and WebAssembly</li>
+                        <h3 className="text-sm font-bold mb-2 text-orange-500">Resources for Developers</h3>
+                        <ul className="text-xs text-gray-400 space-y-1">
+                          <li>• <strong className="text-orange-500">pdf-lib Documentation:</strong> Complete API reference at pdf-lib.js.org</li>
+                          <li>• <strong className="text-orange-500">GitHub Repository:</strong> Source code and examples available on GitHub</li>
+                          <li>• <strong className="text-orange-500">NPM Package:</strong> Install with: <code className="bg-muted px-1.5 py-0.5 rounded text-xs">npm install pdf-lib</code></li>
+                          <li>• <strong className="text-orange-500">Browser Support:</strong> Works in all modern browsers supporting ES6+ and WebAssembly</li>
             </ul>
                       </div>
                     </div>
@@ -1634,15 +1597,7 @@ async function splitPDFByRange(file, startPage, endPage) {
               {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
               <div className="hidden lg:block w-72">
                 <div className="sticky top-32 space-y-6">
-                  <div className="text-center">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
-
-                  <div className="text-center">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
+                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-black" />
                 </div>
               </div>
             </div>

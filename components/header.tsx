@@ -2,203 +2,156 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import { Menu, X, Wrench, Search, User, Mail } from "lucide-react"
+import { Menu, X, Wrench, Search } from "lucide-react"
 import { SearchBar } from "@/components/search-bar"
-import { CategoryDropdown } from "@/components/category-dropdown"
-// Dark mode toggle removed per requirements; dark theme is default in layout
-import { Button } from "@/components/ui/button"
+import { usePathname } from "next/navigation"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isHydrated, setIsHydrated] = useState(false)
+  const [showSearch, setShowSearch] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     setIsHydrated(true)
   }, [])
 
+  const navLinks = [
+    { href: "/image-tools", label: "Image Tools" },
+    { href: "/social-media-tools/tiktok-downloader", label: "TikTok Downloader" },
+    { href: "/converters/currency-api", label: "Currency API" },
+  ]
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-background shadow-lg">
-      <nav className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-6 gap-4">
-        <Link href="/" className="flex items-center gap-3 font-bold text-xl">
-          <div className="h-10 w-10 rounded-xl bg-primary flex items-center justify-center shadow-md hover:bg-primary/90 transition-colors duration-200 p-1.5">
-            {isHydrated ? (
-              <img src="/logo.svg" alt="FastTools Logo" className="h-7 w-7 object-contain" />
+    <>
+      {/* Gradient accent bar at the very top */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600" />
+      
+      <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-border/10 transition-all duration-300">
+        <nav className="container mx-auto flex items-center justify-between h-16 sm:h-20 md:h-24 px-4 lg:px-8">
+          
+          {/* Left side - Logo */}
+          <div className="flex items-center">
+            <Link 
+              href="/" 
+              aria-label="FastTools home" 
+              className="flex items-center gap-2 sm:gap-3 group transition-all duration-300"
+            >
+              <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-primary flex items-center justify-center">
+                {isHydrated ? (
+                  <img src="/logo.svg" alt="FastTools" className="h-5 w-5 sm:h-6 sm:w-6 object-contain" />
+                ) : (
+                  <Wrench className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />
+                )}
+              </div>
+              <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground">FastTools</span>
+            </Link>
+          </div>
+
+          {/* Center - Navigation Links (Desktop) */}
+          <div className="hidden lg:flex items-center gap-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`relative px-5 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 group ${
+                  pathname === link.href
+                    ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30"
+                    : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"
+                }`}
+              >
+                {link.label}
+                {/* Active indicator dot */}
+                {pathname === link.href && (
+                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-white animate-pulse" />
+                )}
+              </Link>
+            ))}
+          </div>
+
+          {/* Right side - Desktop Search */}
+          <div className="hidden lg:flex items-center">
+            {!showSearch ? (
+              <button
+                aria-label="Open search"
+                onClick={() => setShowSearch(true)}
+                className="p-3 rounded-xl text-foreground/70 hover:text-foreground hover:bg-foreground/5"
+              >
+                <Search className="h-5 w-5" />
+              </button>
             ) : (
-              <Wrench className="h-5 w-5 text-primary-foreground" />
+              <div className="w-96">
+                <SearchBar
+                  autoFocus
+                  placeholder="Search 1000+ tools..."
+                  variant="default"
+                  className="w-full"
+                  onBlur={() => setShowSearch(false)}
+                />
+              </div>
             )}
           </div>
-          <span className="text-foreground hidden sm:inline tracking-tight bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-            FastTools
-          </span>
-        </Link>
 
-        <div className="hidden lg:flex items-center gap-4 flex-1 max-w-3xl">
-          <div className="flex-1 max-w-2xl">
-            <SearchBar />
-          </div>
-          <CategoryDropdown />
-        </div>
-
-        <div className="hidden md:flex items-center gap-6">
-          <Link
-            href="/"
-            className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 relative group"
-          >
-            Home
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
-          </Link>
-          <Link
-            href="/about"
-            className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 relative group"
-          >
-            About
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
-          </Link>
-          <Link
-            href="/contact"
-            className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 relative group"
-          >
-            Contact
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
-          </Link>
-          <Link
-            href="/social-media-tools/tiktok-downloader"
-            className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 relative group"
-          >
-            TikTok Downloader
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
-          </Link>
-          <Link
-            href="/converters/currency-api"
-            className="flex items-center gap-1 px-3 py-1.5 bg-orange-500 text-white text-sm font-medium rounded-md hover:bg-orange-600 transition-all duration-200 hover:scale-105"
-          >
-            <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
-            Get Currency API
-          </Link>
-          {/* Theme toggle removed to keep dark mode default */}
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-foreground hover:text-primary transition-all duration-200 hover:scale-110 p-2 rounded-lg hover:bg-primary/10"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isHydrated && mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </nav>
-
-      {isHydrated && mobileMenuOpen && (
-        <div className="md:hidden border-t border-border/20 bg-background/95 backdrop-blur-md animate-fade-in">
-          <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-            <SearchBar />
-            <div className="border-t border-border/20 pt-4">
-              <p className="text-xs font-semibold text-foreground/60 mb-2">CATEGORIES</p>
-              <div className="flex flex-col gap-2">
-                <Link
-                  href="/calculator"
-                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+          {/* Mobile Menu Button */}
+          <div className="flex items-center gap-2 lg:hidden">
+            {!showSearch ? (
+              <>
+                <button
+                  className="p-2 sm:p-3 rounded-xl text-foreground/70 hover:text-primary hover:bg-primary/10"
+                  onClick={() => setShowSearch(true)}
+                  aria-label="Open search"
                 >
-                  All Tools
-                </Link>
-                <Link
-                  href="/converters"
-                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+                  <Search className="h-5 w-5 sm:h-6 sm:w-6" />
+                </button>
+                <button
+                  className="p-2 sm:p-3 rounded-xl text-foreground/70 hover:text-primary hover:bg-primary/10"
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  aria-label="Toggle menu"
                 >
-                  Converters
-                </Link>
-                <Link
-                  href="/seo-tools"
-                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  SEO Tools
-                </Link>
-                <Link
-                  href="/fun-tools"
-                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Fun Tools
-                </Link>
-                <Link
-                  href="/finance-tools"
-                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Finance Tools
-                </Link>
-                <Link
-                  href="/ai-tools"
-                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  AI Tools
-                </Link>
-                <Link
-                  href="/social-media-tools/tiktok-downloader"
-                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  TikTok Downloader
-                </Link>
-                <Link
-                  href="/converters/currency-api"
-                  className="flex items-center gap-2 px-3 py-2 bg-orange-500 text-white text-sm font-medium rounded-md hover:bg-orange-600 transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                  </svg>
-                  Get Currency API
-                </Link>
+                  {mobileMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
+                </button>
+              </>
+            ) : (
+              <div className="w-32 sm:w-40">
+                <SearchBar
+                  autoFocus
+                  placeholder="Search..."
+                  variant="pill"
+                  className="w-full"
+                  onBlur={() => setShowSearch(false)}
+                />
               </div>
-            </div>
-            <div className="border-t border-border/20 pt-4 flex flex-col gap-2">
-              <Link
-                href="/"
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                href="/about"
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
-              <Link
-                href="/privacy-policy"
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Terms of Service
-              </Link>
-            </div>
-            {/* Theme toggle removed in mobile menu */}
+            )}
           </div>
+        </nav>
+      </header>
+
+      {/* Mobile Menu Dropdown */}
+      <div 
+        className={`lg:hidden fixed inset-x-0 top-16 sm:top-20 md:top-24 z-40 bg-background/98 backdrop-blur-xl border-b border-border/10 transition-all duration-300 ease-out ${
+          mobileMenuOpen 
+            ? 'max-h-screen opacity-100 visible' 
+            : 'max-h-0 opacity-0 invisible'
+        }`}
+      >
+        <div className="container mx-auto px-4 py-6 space-y-3">
+          {/* Mobile Navigation Links */}
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 ${
+                pathname === link.href
+                  ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30"
+                  : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
-      )}
-    </header>
+      </div>
+    </>
   )
 }

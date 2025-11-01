@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { StandardDeviationCalculator } from "@/components/standard-deviation-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
 
 export default function StandardDeviationCalculatorPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black">
       <script type="application/ld+json" dangerouslySetInnerHTML={{
         __html: JSON.stringify({
           "@context": "https://schema.org",
@@ -208,60 +209,60 @@ export default function StandardDeviationCalculatorPage() {
             ]}
           />
 
-          <div className="max-w-6xl mx-auto">
-            <div className="mb-6 md:mb-8">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-yellow-400">Standard Deviation Calculator - Free Online Statistics Tool</h1>
-              <p className="text-base md:text-lg text-muted-foreground text-pretty leading-relaxed">
-                <strong>Calculate standard deviation</strong>, <strong>variance</strong>, <strong>mean</strong>, <strong>confidence intervals</strong>, and <strong>comprehensive statistical analysis</strong> instantly. 
-                Advanced calculator with <strong>population and sample modes</strong>, <strong>quartiles</strong>, <strong>outliers detection</strong>, and <strong>detailed distribution analysis</strong>.
-              </p>
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-4 md:mb-6">
+              <GHeader 
+                title="Standard Deviation Calculator - Free Online Statistics Tool"
+                description="Calculate standard deviation, variance, mean, confidence intervals, and comprehensive statistical analysis instantly. Advanced calculator with population and sample modes, quartiles, outliers detection, and detailed distribution analysis."
+                titleSize="medium"
+              />
             </div>
+
+            {/* Mobile/Tablet AdSpace after GHeader */}
+                <div className="my-6 lg:hidden">
+                  <div className="text-center mb-2">
+                <span className="text-xs text-slate-400 font-medium">Advertisement</span>
+            </div>
+              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
+        </div>
 
             <div className="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px] gap-3 md:gap-4 lg:gap-6">
               <div>
                 <StandardDeviationCalculator />
-                
-                {/* Mobile/Tablet AdSpace */}
-                <div className="my-6 lg:hidden">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-            </div>
-                  <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
-        </div>
             
             {/* Educational Content Sections */}
-                <div className="mt-8 md:mt-12 space-y-6 md:space-y-8">
+                <div className="mt-6 md:mt-8 space-y-6 md:space-y-8">
               {/* How to Use Section */}
-                  <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                    <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-yellow-400">
-                      <div className="p-2 bg-primary/10 rounded-lg">
-                        <Calculator className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+                  <div className="bg-black border border-slate-700 rounded-xl p-4 md:p-6 shadow-sm">
+                    <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
+                      <div className="p-2 bg-orange-500/10 rounded-lg">
+                        <Calculator className="h-4 w-4 md:h-5 md:w-5 text-orange-500" />
                       </div>
                   How to Use Standard Deviation Calculator
                 </h2>
                 <div className="space-y-4">
                     <div className="grid md:grid-cols-2 gap-3 md:gap-4">
-                      <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">1. Enter Data Points</h3>
-                        <p className="text-xs md:text-sm text-muted-foreground">Enter your data points separated by commas, spaces, or new lines</p>
+                      <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                        <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">1. Enter Data Points</h3>
+                        <p className="text-xs md:text-sm text-slate-400">Input your numerical values using commas, spaces, or line breaks</p>
                       </div>
-                      <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">2. Choose Mode</h3>
-                        <p className="text-xs md:text-sm text-muted-foreground">Select between Population or Sample standard deviation</p>
+                      <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                        <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">2. Choose Mode</h3>
+                        <p className="text-xs md:text-sm text-slate-400">Select between Population or Sample standard deviation</p>
                       </div>
-                      <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">3. Set Confidence Level</h3>
-                        <p className="text-xs md:text-sm text-muted-foreground">Select your desired confidence level (90%, 95%, or 99%)</p>
+                      <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                        <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">3. Set Confidence Level</h3>
+                        <p className="text-xs md:text-sm text-slate-400">Select your desired confidence level (90%, 95%, or 99%)</p>
                       </div>
-                      <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">4. Calculate & Analyze</h3>
-                        <p className="text-xs md:text-sm text-muted-foreground">Get comprehensive results and explore detailed statistics</p>
+                      <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                        <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">4. Calculate & Analyze</h3>
+                        <p className="text-xs md:text-sm text-slate-400">Get comprehensive results and explore detailed statistics</p>
                       </div>
                     </div>
-                    <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                      <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">Example Input</h3>
-                      <p className="text-xs text-primary font-mono bg-primary/10 px-2 py-1 rounded">10, 12, 23, 23, 16, 23, 21, 16</p>
-                      <p className="text-xs md:text-sm text-muted-foreground mt-2">
+                    <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                      <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">Example Input</h3>
+                      <p className="text-xs text-orange-400 font-mono bg-slate-900 border border-slate-700 px-2 py-1 rounded">10, 12, 23, 23, 16, 23, 21, 16</p>
+                      <p className="text-xs md:text-sm text-slate-400 mt-2">
                           This will calculate standard deviation, variance, mean, and other statistics
                         </p>
                   </div>
@@ -269,10 +270,10 @@ export default function StandardDeviationCalculatorPage() {
               </div>
 
               {/* Features Section */}
-                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-yellow-400">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <BarChart3 className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-4 md:p-6 shadow-sm">
+                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-orange-500">
+                    <div className="p-2 bg-orange-500/10 rounded-lg">
+                      <BarChart3 className="h-4 w-4 md:h-5 md:w-5 text-orange-500" />
                     </div>
                     Advanced Statistical Features
                 </h2>
@@ -285,77 +286,77 @@ export default function StandardDeviationCalculatorPage() {
                       { type: "Outliers Detection", icon: AlertCircle, desc: "Identify and analyze outliers", example: "Statistical outlier analysis" },
                       { type: "Confidence Intervals", icon: Clock, desc: "90%, 95%, 99% confidence levels", example: "Population parameter estimates" }
                     ].map(({ type, icon: Icon, desc, example }) => (
-                      <div key={type} className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
+                      <div key={type} className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
                         <div className="flex items-center gap-2 mb-2">
-                          <Icon className="h-4 w-4 text-primary" />
-                          <h3 className="font-semibold text-foreground text-sm md:text-base">{type}</h3>
+                          <Icon className="h-4 w-4 text-green-500" />
+                          <h3 className="font-semibold text-green-500 text-sm md:text-base">{type}</h3>
                   </div>
-                        <p className="text-xs md:text-sm text-muted-foreground mb-2">{desc}</p>
-                        <p className="text-xs text-primary font-mono bg-primary/10 px-2 py-1 rounded">{example}</p>
+                        <p className="text-xs md:text-sm text-slate-400 mb-2">{desc}</p>
+                        <p className="text-xs text-orange-400 font-mono bg-slate-900 border border-slate-700 px-2 py-1 rounded">{example}</p>
                   </div>
                     ))}
                 </div>
               </div>
 
               {/* Use Cases Section */}
-                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-yellow-400">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Users className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-4 md:p-6 shadow-sm">
+                <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-orange-500">
+                  <div className="p-2 bg-orange-500/10 rounded-lg">
+                    <Users className="h-4 w-4 md:h-5 md:w-5 text-orange-500" />
                   </div>
                   Standard Deviation Calculator Use Cases
                 </h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                   <div className="space-y-3">
-                    <h3 className="text-base md:text-lg font-semibold text-foreground">📊 Academic & Research</h3>
+                    <h3 className="text-base md:text-lg font-semibold text-green-500">📊 Academic & Research</h3>
                     <div className="space-y-2">
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Statistical Analysis</h4>
-                        <p className="text-xs text-muted-foreground">Research papers, thesis work, and academic studies</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Statistical Analysis</h4>
+                        <p className="text-xs text-slate-400">Research papers, thesis work, and academic studies</p>
                       </div>
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Quality Control</h4>
-                        <p className="text-xs text-muted-foreground">Manufacturing processes and product quality assessment</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Quality Control</h4>
+                        <p className="text-xs text-slate-400">Manufacturing processes and product quality assessment</p>
                       </div>
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Market Research</h4>
-                        <p className="text-xs text-muted-foreground">Survey analysis and consumer behavior studies</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Market Research</h4>
+                        <p className="text-xs text-slate-400">Survey analysis and consumer behavior studies</p>
                       </div>
                     </div>
                   </div>
                   
                   <div className="space-y-3">
-                    <h3 className="text-base md:text-lg font-semibold text-foreground">💼 Business & Finance</h3>
+                    <h3 className="text-base md:text-lg font-semibold text-green-500">💼 Business & Finance</h3>
                     <div className="space-y-2">
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Risk Assessment</h4>
-                        <p className="text-xs text-muted-foreground">Financial risk analysis and portfolio management</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Risk Assessment</h4>
+                        <p className="text-xs text-slate-400">Financial risk analysis and portfolio management</p>
                       </div>
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Performance Measurement</h4>
-                        <p className="text-xs text-muted-foreground">Employee performance and KPI analysis</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Performance Measurement</h4>
+                        <p className="text-xs text-slate-400">Employee performance and KPI analysis</p>
                       </div>
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Investment Analysis</h4>
-                        <p className="text-xs text-muted-foreground">Portfolio volatility and return analysis</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Investment Analysis</h4>
+                        <p className="text-xs text-slate-400">Portfolio volatility and return analysis</p>
                       </div>
                     </div>
                   </div>
                   
                   <div className="space-y-3">
-                    <h3 className="text-base md:text-lg font-semibold text-foreground">🔬 Scientific & Medical</h3>
+                    <h3 className="text-base md:text-lg font-semibold text-green-500">🔬 Scientific & Medical</h3>
                     <div className="space-y-2">
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Clinical Trials</h4>
-                        <p className="text-xs text-muted-foreground">Medical research and drug efficacy studies</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Clinical Trials</h4>
+                        <p className="text-xs text-slate-400">Medical research and drug efficacy studies</p>
                       </div>
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Data Science</h4>
-                        <p className="text-xs text-muted-foreground">Machine learning and predictive analytics</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Data Science</h4>
+                        <p className="text-xs text-slate-400">Machine learning and predictive analytics</p>
                       </div>
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Experimental Design</h4>
-                        <p className="text-xs text-muted-foreground">Scientific experiments and hypothesis testing</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Experimental Design</h4>
+                        <p className="text-xs text-slate-400">Scientific experiments and hypothesis testing</p>
                       </div>
                     </div>
                   </div>
@@ -363,10 +364,10 @@ export default function StandardDeviationCalculatorPage() {
               </div>
 
               {/* FAQ Section */}
-              <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-yellow-400">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+              <div className="bg-black border border-slate-700 rounded-xl p-4 md:p-6 shadow-sm">
+                <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-orange-500">
+                  <div className="p-2 bg-orange-500/10 rounded-lg">
+                    <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-orange-500" />
                   </div>
                   Frequently Asked Questions
                 </h2>
@@ -598,7 +599,7 @@ export default function StandardDeviationCalculatorPage() {
                     },
                     {
                       q: "How to calculate standard deviation for percent error?",
-                      a: "Percent error = |(Observed - Expected) / Expected| × 100%. Standard deviation of percent errors measures variability in measurement accuracy. Use σ = √[Σ(PE - μ_PE)² / n] where PE is percent error and μ_PE is mean percent error."
+                      a: "Percentage error is computed as the absolute difference between observed and expected values divided by the expected value, multiplied by 100. The standard deviation of percentage errors quantifies the spread in measurement precision. Apply the formula σ = √[Σ(PE - μ_PE)² / n] where PE represents percentage error and μ_PE denotes the mean percentage error."
                     },
                     {
                       q: "How to calculate standard deviation for relative standard deviation?",
@@ -629,8 +630,8 @@ export default function StandardDeviationCalculatorPage() {
                       a: "Degrees of freedom affect standard deviation calculation: Sample SD uses n-1, Population SD uses n. DF = n - k where k is number of parameters estimated. Higher DF means more reliable standard deviation estimates."
                     },
                     {
-                      q: "What is the standard deviation of standard normal distribution?",
-                      a: "Standard normal distribution has μ = 0 and σ = 1. Any normal distribution can be standardized: Z = (X - μ) / σ. This transformation allows using standard normal tables for probability calculations and statistical inference."
+                      q: "How is standard deviation defined in the standard normal distribution?",
+                      a: "The standard normal distribution is characterized by a mean of zero and a standard deviation of one. Any normally distributed variable can be converted to this standardized form through the transformation Z = (X - μ) / σ. This conversion enables utilization of standard normal probability tables for computing probabilities and conducting statistical inference."
                     },
                     {
                       q: "How to calculate standard deviation for sampling distribution?",
@@ -766,11 +767,11 @@ export default function StandardDeviationCalculatorPage() {
                     },
                     {
                       q: "How to calculate standard deviation for sample variance and population variance?",
-                      a: "Sample variance s² = Σ(x-x̄)² / (n-1), Population variance σ² = Σ(x-μ)² / N. Standard deviation is square root of variance: s = √s² for sample, σ = √σ² for population. Sample variance uses n-1 for unbiased estimation of population parameter."
+                      a: "For sample data, variance is computed by summing squared deviations from the sample mean and dividing by n-1. For population data, variance uses the population mean and divides by N. Standard deviation is obtained by taking the square root of the variance. Sample calculations apply n-1 to provide an unbiased estimate of the population parameter."
                     },
                     {
-                      q: "What is the coefficient of variation and why is it useful?",
-                      a: "The coefficient of variation (CV) is the ratio of standard deviation to mean, expressed as a percentage. It's useful for comparing the relative variability of datasets with different units or scales."
+                      q: "Why is the coefficient of variation an important statistical measure?",
+                      a: "The coefficient of variation represents the relationship between standard deviation and mean, shown as a percentage value. This measure enables meaningful comparison of variability across datasets that have different measurement units or scales, making it particularly valuable in comparative statistical analysis."
                     },
                     {
                       q: "Can I export my calculation results?",
@@ -817,9 +818,9 @@ export default function StandardDeviationCalculatorPage() {
                       a: "For grouped data, use the formula: σ = √[Σf(x - x̄)² / Σf] where f is frequency, x is class midpoint, and x̄ is the weighted mean. This accounts for repeated values in frequency distributions and provides accurate standard deviation for grouped datasets."
                     }
                   ].map(({ q, a }, index) => (
-                    <div key={index} className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                      <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">{q}</h3>
-                      <p className="text-xs md:text-sm text-muted-foreground">{a}</p>
+                    <div key={index} className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                      <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">{q}</h3>
+                      <p className="text-xs md:text-sm text-slate-400">{a}</p>
                   </div>
                   ))}
                   </div>
@@ -827,10 +828,10 @@ export default function StandardDeviationCalculatorPage() {
                   </div>
 
             {/* Related Tools */}
-            <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
-              <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                <div className="p-1.5 bg-primary/10 rounded-lg">
-                  <Calculator className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+            <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+              <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                  <Calculator className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                 </div>
                 Related Statistics & Math Calculators
               </h2>
@@ -850,26 +851,18 @@ export default function StandardDeviationCalculatorPage() {
                   { name: "Temperature Converter", desc: "Convert temperature units", href: "/converters/temperature", icon: BarChart3 }
                 ].map(({ name, desc, icon: Icon, href }) => (
                   <a
-                    key={name}
+                    key={href}
                     href={href}
-                    className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors group"
+                    className="p-2 md:p-3 bg-black rounded-lg border border-slate-700 hover:bg-slate-800 hover:border-green-500/50 transition-colors group"
                   >
                     <div className="flex items-center gap-2 mb-1">
-                      <Icon className="h-3 w-3 text-primary group-hover:text-primary/80" />
-                      <h3 className="font-semibold text-foreground text-xs md:text-sm group-hover:text-primary">{name}</h3>
+                      <Icon className="h-3 w-3 text-green-500 group-hover:text-green-500" />
+                      <h3 className="font-semibold text-green-500 text-xs md:text-sm group-hover:text-green-500">{name}</h3>
                     </div>
-                    <p className="text-xs text-muted-foreground">{desc}</p>
+                    <p className="text-xs text-slate-400 group-hover:text-slate-300">{desc}</p>
                   </a>
                 ))}
               </div>
-            </div>
-
-            {/* Mobile/Tablet Bottom AdSpace */}
-            <div className="my-8 lg:hidden">
-              <div className="text-center mb-2">
-                <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-              </div>
-              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
             </div>
           </div>
           
@@ -878,17 +871,10 @@ export default function StandardDeviationCalculatorPage() {
             <div className="sticky top-32 space-y-6">
               <div>
                 <div className="text-center mb-2">
-                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                  <span className="text-xs text-slate-400 font-medium">Advertisement</span>
                 </div>
-                <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
+                <AdSpace slot="sidebar" className="w-full h-80 border border-slate-700 rounded-xl shadow-sm bg-black" />
               </div>
-
-              <div>
-                <div className="text-center mb-2">
-                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-                  </div>
             </div>
           </div>
         </div>

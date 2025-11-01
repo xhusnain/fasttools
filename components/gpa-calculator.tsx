@@ -244,31 +244,29 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Main GPA Calculator */}
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-xl">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <GraduationCap className="h-5 w-5 text-primary" />
+      <Card className="shadow-lg border-slate-700 hover:shadow-xl transition-all duration-300 bg-black">
+        <CardHeader className="pb-2 px-3 sm:px-6">
+          <CardTitle className="flex items-center gap-1.5 text-base text-orange-500">
+            <div className="p-1 bg-orange-500/10 rounded">
+              <GraduationCap className="h-3.5 w-3.5 text-orange-500" />
             </div>
-            Advanced GPA Calculator
+            GPA Calculator
           </CardTitle>
-          <CardDescription className="text-base">
-            Calculate your Grade Point Average with comprehensive analysis and planning tools
+          <CardDescription className="text-xs text-slate-400">
+            Calculate your Grade Point Average with comprehensive analysis
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-4 px-3 sm:px-6">
           {/* Grading System Selection */}
-          <div className="space-y-2">
-            <Label htmlFor="grading-system" className="text-sm font-medium flex items-center gap-2">
-              <div className="p-1 bg-blue-100 dark:bg-blue-900/30 rounded">
-                <Settings className="h-3 w-3 text-blue-600 dark:text-blue-400" />
-              </div>
+          <div className="space-y-1">
+            <Label htmlFor="grading-system" className="text-[11px] font-medium flex items-center gap-1 text-green-500">
+              <Settings className="h-2.5 w-2.5 text-green-500" />
               Grading System
             </Label>
             <Select value={gradingSystem} onValueChange={setGradingSystem}>
-              <SelectTrigger className="h-10 sm:h-12 text-sm sm:text-base">
+              <SelectTrigger className="h-8 text-xs border-slate-700 bg-black text-slate-200">
                 <SelectValue placeholder="Select grading system" />
               </SelectTrigger>
               <SelectContent>
@@ -281,47 +279,45 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
           </div>
 
           {/* Courses Section */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <Label className="text-sm font-medium flex items-center gap-2">
-                <div className="p-1 bg-green-100 dark:bg-green-900/30 rounded">
-                  <BookOpen className="h-3 w-3 text-green-600 dark:text-green-400" />
-                </div>
+              <Label className="text-[11px] font-medium flex items-center gap-1 text-green-500">
+                <BookOpen className="h-2.5 w-2.5 text-green-500" />
                 Courses
               </Label>
-              <Button onClick={addCourse} size="sm" className="h-8">
-                <Plus className="h-4 w-4 mr-1" />
-                Add Course
+              <Button onClick={addCourse} size="sm" className="h-7 text-xs px-2 bg-orange-500 hover:bg-orange-600 text-white">
+                <Plus className="h-3 w-3 mr-1" />
+                Add
               </Button>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2">
               {courses.map((course, index) => (
-                <div key={course.id} className="grid grid-cols-1 md:grid-cols-4 gap-3 p-4 bg-gradient-to-r from-slate-50 to-gray-50 dark:from-slate-800/50 dark:to-gray-800/50 rounded-lg border border-slate-200 dark:border-slate-700">
+                <div key={course.id} className="grid grid-cols-1 sm:grid-cols-4 gap-2 p-2 bg-black rounded-lg border border-slate-700">
                   <div className="space-y-1">
-                    <Label className="text-xs text-slate-600 dark:text-slate-400">Course Name</Label>
+                    <Label className="text-[10px] text-slate-400">Course Name</Label>
                     <Input
                       value={course.name}
                       onChange={(e) => updateCourse(course.id, 'name', e.target.value)}
-                      placeholder="e.g., Mathematics"
-                      className="h-9 text-sm"
+                      placeholder="Mathematics"
+                      className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                     />
                   </div>
                   <div className="space-y-1">
-                    <Label className="text-xs text-slate-600 dark:text-slate-400">Credits</Label>
+                    <Label className="text-[10px] text-slate-400">Credits</Label>
                     <Input
                       type="number"
                       value={course.credits}
                       onChange={(e) => updateCourse(course.id, 'credits', Number(e.target.value))}
-                      className="h-9 text-sm"
+                      className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                       min="0"
                       step="0.5"
                     />
                   </div>
                   <div className="space-y-1">
-                    <Label className="text-xs text-slate-600 dark:text-slate-400">Grade</Label>
+                    <Label className="text-[10px] text-slate-400">Grade</Label>
                     <Select value={course.grade} onValueChange={(value) => updateCourse(course.id, 'grade', value)}>
-                      <SelectTrigger className="h-9 text-sm">
+                      <SelectTrigger className="h-7 text-xs border-slate-700 bg-black text-slate-200">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -350,9 +346,9 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                       onClick={() => removeCourse(course.id)}
                       variant="outline"
                       size="sm"
-                      className="h-9 w-9 p-0 text-red-600 hover:text-red-700 hover:bg-red-50 dark:text-red-400 dark:hover:text-red-300"
+                      className="h-7 w-7 p-0 text-red-400 hover:text-red-300 hover:bg-slate-800 border-red-700 bg-black"
                     >
-                      <Trash2 className="h-4 w-4" />
+                      <Trash2 className="h-3 w-3" />
                     </Button>
                   </div>
                 </div>
@@ -363,20 +359,18 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
           {/* Calculate Button */}
           <Button
             onClick={calculateGPA}
-            className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary"
+            className="w-full h-9 text-xs font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
             disabled={courses.length === 0 || isCalculating}
           >
             {isCalculating ? (
               <>
-                <LoadingSpinner size="sm" className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
-                <span className="hidden sm:inline">Calculating GPA...</span>
-                <span className="sm:hidden">Calculating...</span>
+                <LoadingSpinner size="sm" className="mr-1 h-3 w-3" />
+                <span>Calculating...</span>
               </>
             ) : (
               <>
-                <Calculator className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
-                <span className="hidden sm:inline">Calculate GPA</span>
-                <span className="sm:hidden">Calculate</span>
+                <Calculator className="mr-1 h-3 w-3" />
+                <span>Calculate GPA</span>
               </>
             )}
           </Button>
@@ -384,22 +378,22 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
       </Card>
 
       {/* GPA Planning Calculator */}
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-xl">
-            <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-              <Target className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+      <Card className="shadow-lg border-slate-700 hover:shadow-xl transition-all duration-300 bg-black">
+        <CardHeader className="pb-2 px-3 sm:px-6">
+          <CardTitle className="flex items-center gap-1.5 text-base text-orange-500">
+            <div className="p-1 bg-orange-500/10 rounded">
+              <Target className="h-3.5 w-3.5 text-orange-500" />
             </div>
             GPA Planning Calculator
           </CardTitle>
-          <CardDescription className="text-base">
-            Determine the minimum GPA required in future courses to reach your target GPA
+          <CardDescription className="text-xs text-slate-400">
+            Determine minimum GPA required to reach your target
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="current-gpa" className="text-sm font-medium">Current GPA</Label>
+        <CardContent className="space-y-4 px-3 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div className="space-y-1">
+              <Label htmlFor="current-gpa" className="text-[11px] font-medium text-green-500">Current GPA</Label>
               <Input
                 id="current-gpa"
                 type="number"
@@ -407,11 +401,11 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 value={currentGPA}
                 onChange={(e) => setCurrentGPA(e.target.value)}
                 placeholder="2.8"
-                className="h-10"
+                className="h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
               />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="target-gpa" className="text-sm font-medium">Target GPA</Label>
+            <div className="space-y-1">
+              <Label htmlFor="target-gpa" className="text-[11px] font-medium text-green-500">Target GPA</Label>
               <Input
                 id="target-gpa"
                 type="number"
@@ -419,61 +413,61 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 value={targetGPA}
                 onChange={(e) => setTargetGPA(e.target.value)}
                 placeholder="3.0"
-                className="h-10"
+                className="h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
               />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="current-credits" className="text-sm font-medium">Current Credits</Label>
+            <div className="space-y-1">
+              <Label htmlFor="current-credits" className="text-[11px] font-medium text-green-500">Current Credits</Label>
               <Input
                 id="current-credits"
                 type="number"
                 value={currentCredits}
                 onChange={(e) => setCurrentCredits(e.target.value)}
                 placeholder="25"
-                className="h-10"
+                className="h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
               />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="additional-credits" className="text-sm font-medium">Additional Credits</Label>
+            <div className="space-y-1">
+              <Label htmlFor="additional-credits" className="text-[11px] font-medium text-green-500">Additional Credits</Label>
               <Input
                 id="additional-credits"
                 type="number"
                 value={additionalCredits}
                 onChange={(e) => setAdditionalCredits(e.target.value)}
                 placeholder="15"
-                className="h-10"
+                className="h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
               />
             </div>
           </div>
 
           <Button
             onClick={calculateGPAPlanning}
-            className="w-full h-10 text-sm font-medium"
+            className="w-full h-8 text-xs font-medium bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
             disabled={!currentGPA || !targetGPA || !currentCredits || !additionalCredits}
           >
-            <Target className="mr-2 h-4 w-4" />
+            <Target className="mr-1 h-3 w-3" />
             Calculate Required GPA
           </Button>
 
           {planningResult && (
-            <div className="p-4 bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-lg border border-blue-200 dark:border-blue-700">
-              <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Planning Results</h3>
-              <div className="space-y-2 text-sm">
+            <div className="p-3 bg-black rounded-lg border border-slate-700">
+              <h3 className="font-semibold text-green-500 mb-2 text-sm">Planning Results</h3>
+              <div className="space-y-1.5 text-xs">
                 <div className="flex justify-between">
-                  <span className="text-blue-700 dark:text-blue-300">Required GPA:</span>
-                  <span className="font-semibold text-blue-900 dark:text-blue-100">{planningResult.requiredGPA}</span>
+                  <span className="text-slate-400">Required GPA:</span>
+                  <span className="font-semibold text-orange-400">{planningResult.requiredGPA}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-blue-700 dark:text-blue-300">Achievable:</span>
-                  <span className={`font-semibold ${planningResult.achievable ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+                  <span className="text-slate-400">Achievable:</span>
+                  <span className={`font-semibold ${planningResult.achievable ? 'text-green-400' : 'text-red-400'}`}>
                     {planningResult.achievable ? 'Yes' : 'No'}
                   </span>
                 </div>
               </div>
               {planningResult.recommendations.length > 0 && (
-                <div className="mt-3">
-                  <h4 className="font-medium text-blue-800 dark:text-blue-200 mb-1">Recommendations:</h4>
-                  <ul className="text-xs text-blue-700 dark:text-blue-300 space-y-1">
+                <div className="mt-2">
+                  <h4 className="font-medium text-green-500 mb-1 text-xs">Recommendations:</h4>
+                  <ul className="text-[10px] text-slate-400 space-y-0.5">
                     {planningResult.recommendations.map((rec, index) => (
                       <li key={index}>• {rec}</li>
                     ))}
@@ -487,66 +481,66 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
 
       {/* Results Section */}
       {result && !isCalculating && (
-        <Card className="shadow-lg border-primary/20 animate-fade-in-up bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20">
-          <CardHeader>
-            <CardTitle className="text-xl flex items-center gap-2">
-              <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                <Award className="h-5 w-5 text-green-600 dark:text-green-400" />
+        <Card className="shadow-lg border-slate-700 animate-fade-in-up bg-black">
+          <CardHeader className="pb-3 px-3 sm:px-6">
+            <CardTitle className="text-base sm:text-lg flex items-center gap-2 text-orange-500">
+              <div className="p-1 sm:p-1.5 bg-orange-500/10 rounded-lg">
+                <Award className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-orange-500" />
               </div>
               GPA Results & Analysis
             </CardTitle>
-            <CardDescription className="text-base">
+            <CardDescription className="text-xs sm:text-sm text-slate-400">
               Comprehensive GPA analysis with academic standing and improvement suggestions
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-4 px-3 sm:px-6">
             {/* Main GPA Display */}
-            <div className="text-center p-6 sm:p-8 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-primary/20">
-              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
+            <div className="text-center p-4 rounded-xl bg-black border border-orange-500/20">
+              <div className="text-2xl sm:text-3xl font-bold text-orange-500 mb-1">
                 {result.gpa}
               </div>
-              <div className="text-sm sm:text-base text-muted-foreground">
+              <div className="text-xs sm:text-sm text-slate-400">
                 Grade Point Average
               </div>
-              <div className="text-lg font-semibold text-green-600 dark:text-green-400 mt-2">
+              <div className="text-sm font-semibold text-green-400 mt-1">
                 {result.academicStanding}
               </div>
             </div>
 
             {/* Detailed Breakdown */}
-            <div className="space-y-3 p-4 sm:p-6 bg-slate-50 dark:bg-slate-700 rounded-lg">
-              <div className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-slate-800 dark:text-slate-200 flex items-center gap-2">
-                <BarChart3 className="h-4 w-4" />
+            <div className="space-y-2 p-3 bg-black rounded-lg border border-slate-700">
+              <div className="text-sm font-semibold mb-2 text-green-500 flex items-center gap-2">
+                <BarChart3 className="h-3.5 w-3.5" />
                 Academic Breakdown
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 rounded-lg border border-blue-200 dark:border-blue-800">
-                  <span className="text-sm text-blue-800 dark:text-blue-200">Total Credits</span>
-                  <span className="font-semibold text-sm text-blue-900 dark:text-blue-100">{result.totalCredits}</span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-black rounded-lg border border-blue-700 gap-1">
+                  <span className="text-xs text-blue-300">Total Credits</span>
+                  <span className="font-semibold text-xs text-blue-400">{result.totalCredits}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-950/30 dark:to-green-900/30 rounded-lg border border-green-200 dark:border-green-800">
-                  <span className="text-sm text-green-800 dark:text-green-200">Total Points</span>
-                  <span className="font-semibold text-sm text-green-900 dark:text-green-100">{result.totalPoints}</span>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-black rounded-lg border border-green-700 gap-1">
+                  <span className="text-xs text-green-300">Total Points</span>
+                  <span className="font-semibold text-xs text-green-400">{result.totalPoints}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-950/30 dark:to-purple-900/30 rounded-lg border border-purple-200 dark:border-purple-800">
-                  <span className="text-sm text-purple-800 dark:text-purple-200">Honors Eligible</span>
-                  <span className="font-semibold text-sm text-purple-900 dark:text-purple-100">{result.honorsEligibility ? 'Yes' : 'No'}</span>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-black rounded-lg border border-purple-700 gap-1">
+                  <span className="text-xs text-purple-300">Honors Eligible</span>
+                  <span className="font-semibold text-xs text-purple-400">{result.honorsEligibility ? 'Yes' : 'No'}</span>
                 </div>
               </div>
             </div>
 
             {/* Grade Distribution */}
             {showGradeDistribution && (
-              <div className="p-4 sm:p-6 bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-950/20 dark:to-blue-950/20 rounded-xl border-2 border-indigo-200 dark:border-indigo-800">
-                <div className="text-sm sm:text-base font-semibold text-indigo-700 dark:text-indigo-300 mb-3 flex items-center gap-2">
-                  <PieChart className="h-4 w-4" />
+              <div className="p-3 bg-black rounded-xl border border-slate-700">
+                <div className="text-xs font-semibold text-green-500 mb-2 flex items-center gap-1.5">
+                  <PieChart className="h-3.5 w-3.5" />
                   Grade Distribution
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   {result.gradeDistribution.map((grade, index) => (
-                    <div key={index} className="flex justify-between items-center p-2 bg-white/50 dark:bg-slate-800/50 rounded border border-indigo-200 dark:border-indigo-700">
-                      <span className="text-xs sm:text-sm text-indigo-600 dark:text-indigo-400">{grade.grade}</span>
-                      <span className="text-xs sm:text-sm font-semibold text-indigo-800 dark:text-indigo-200">
+                    <div key={index} className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-black rounded border border-slate-700 gap-1">
+                      <span className="text-xs text-slate-400">{grade.grade}</span>
+                      <span className="text-xs font-semibold text-slate-300">
                         {grade.count} ({grade.percentage.toFixed(1)}%)
                       </span>
                     </div>
@@ -557,15 +551,15 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
 
             {/* Improvement Suggestions */}
             {result.improvementSuggestions.length > 0 && (
-              <div className="p-4 sm:p-6 bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20 rounded-xl border-2 border-orange-200 dark:border-orange-800">
-                <div className="text-sm sm:text-base font-semibold text-orange-700 dark:text-orange-300 mb-3 flex items-center gap-2">
-                  <Lightbulb className="h-4 w-4" />
+              <div className="p-3 bg-black rounded-xl border border-slate-700">
+                <div className="text-xs font-semibold text-green-500 mb-2 flex items-center gap-1.5">
+                  <Lightbulb className="h-3.5 w-3.5" />
                   Improvement Suggestions
                 </div>
-                <ul className="space-y-2 text-sm text-orange-600 dark:text-orange-400">
+                <ul className="space-y-1.5 text-xs text-slate-400">
                   {result.improvementSuggestions.map((suggestion, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <span className="text-orange-500 dark:text-orange-400 mt-1">•</span>
+                      <span className="text-orange-400 mt-0.5">•</span>
                       {suggestion}
                     </li>
                   ))}
@@ -574,22 +568,20 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
             )}
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <div className="flex flex-col sm:flex-row gap-2">
               <Button
                 onClick={copyResult}
-                className="flex-1 h-10 sm:h-12 text-sm sm:text-base font-semibold transition-all duration-300 border-2 hover:bg-green-100 dark:hover:bg-green-900/30 border-green-200 dark:border-green-700 text-green-700 dark:text-green-300"
+                className="flex-1 h-9 text-xs font-medium transition-all duration-300 border border-green-700 hover:bg-slate-800 text-green-300 bg-black"
               >
                 {copied ? (
                   <>
-                    <Check className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
-                    <span className="hidden sm:inline">Copied!</span>
-                    <span className="sm:hidden">Copied!</span>
+                    <Check className="mr-1.5 h-3.5 w-3.5" />
+                    <span>Copied!</span>
                   </>
                 ) : (
                   <>
-                    <Copy className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
-                    <span className="hidden sm:inline">Copy Results</span>
-                    <span className="sm:hidden">Copy</span>
+                    <Copy className="mr-1.5 h-3.5 w-3.5" />
+                    <span>Copy Results</span>
                   </>
                 )}
               </Button>

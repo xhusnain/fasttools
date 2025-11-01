@@ -165,15 +165,15 @@ Risk Level: ${result.riskLevel}`
 
   return (
     <div className="space-y-8">
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-black">
         <CardHeader className="pb-4">
-          <CardTitle className="flex items-center gap-3 text-2xl">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <Activity className="h-6 w-6 text-primary" />
+          <CardTitle className="flex items-center gap-3 text-2xl text-orange-500">
+            <div className="p-2 bg-orange-500/10 rounded-lg">
+              <Activity className="h-6 w-6 text-orange-500" />
             </div>
             BMI Calculator
           </CardTitle>
-          <CardDescription className="text-base">
+          <CardDescription className="text-base text-slate-400">
             Calculate your Body Mass Index with advanced metrics including BMI Prime and Ponderal Index
           </CardDescription>
         </CardHeader>
@@ -181,14 +181,14 @@ Risk Level: ${result.riskLevel}`
           {/* Unit Selection */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Scale className="h-4 w-4 text-primary" />
-              <Label className="text-base font-semibold">Measurement Units</Label>
+              <Scale className="h-4 w-4 text-green-500" />
+              <Label className="text-base font-semibold text-slate-200">Measurement Units</Label>
             </div>
-            <div className="flex gap-2 p-1 bg-muted rounded-lg">
+            <div className="flex gap-2 p-1 bg-black border border-slate-700 rounded-lg">
               <button
                 onClick={() => setUnit("metric")}
                 className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${
-                  unit === "metric" ? "bg-background shadow-sm" : "hover:bg-background/50"
+                  unit === "metric" ? "bg-orange-500 text-white shadow-sm" : "bg-black text-slate-400 hover:bg-slate-800 border border-slate-700"
                 }`}
               >
                 Metric (kg/cm)
@@ -196,7 +196,7 @@ Risk Level: ${result.riskLevel}`
               <button
                 onClick={() => setUnit("imperial")}
                 className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${
-                  unit === "imperial" ? "bg-background shadow-sm" : "hover:bg-background/50"
+                  unit === "imperial" ? "bg-orange-500 text-white shadow-sm" : "bg-black text-slate-400 hover:bg-slate-800 border border-slate-700"
                 }`}
               >
                 Imperial (lbs/in)
@@ -207,8 +207,8 @@ Risk Level: ${result.riskLevel}`
           {/* Input Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-3">
-              <Label htmlFor="weight" className="text-sm sm:text-base font-semibold flex items-center gap-2">
-                <Scale className="h-4 w-4 text-primary" />
+              <Label htmlFor="weight" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-green-500">
+                <Scale className="h-4 w-4 text-green-500" />
                 Weight {unit === "metric" ? "(kg)" : "(lbs)"}
               </Label>
               <Input
@@ -217,13 +217,13 @@ Risk Level: ${result.riskLevel}`
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
                 placeholder={unit === "metric" ? "70" : "154"}
-                className="h-10 sm:h-12 text-sm sm:text-base"
+                className="h-10 sm:h-12 text-sm sm:text-base bg-black border-slate-700 text-slate-200 focus:border-orange-500 focus:ring-orange-500"
               />
             </div>
 
             <div className="space-y-3">
-              <Label htmlFor="height" className="text-sm sm:text-base font-semibold flex items-center gap-2">
-                <Target className="h-4 w-4 text-primary" />
+              <Label htmlFor="height" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-green-500">
+                <Target className="h-4 w-4 text-green-500" />
                 Height {unit === "metric" ? "(cm)" : "(inches)"}
               </Label>
               <Input
@@ -232,7 +232,7 @@ Risk Level: ${result.riskLevel}`
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
                 placeholder={unit === "metric" ? "170" : "67"}
-                className="h-10 sm:h-12 text-sm sm:text-base"
+                className="h-10 sm:h-12 text-sm sm:text-base bg-black border-slate-700 text-slate-200 focus:border-orange-500 focus:ring-orange-500"
               />
             </div>
           </div>
@@ -240,8 +240,8 @@ Risk Level: ${result.riskLevel}`
           {/* Additional Information */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-3">
-              <Label htmlFor="age" className="text-sm sm:text-base font-semibold flex items-center gap-2">
-                <Heart className="h-4 w-4 text-primary" />
+              <Label htmlFor="age" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-green-500">
+                <Heart className="h-4 w-4 text-green-500" />
                 Age (Optional)
               </Label>
               <Input
@@ -252,20 +252,20 @@ Risk Level: ${result.riskLevel}`
                 placeholder="25"
                 min="2"
                 max="120"
-                className="h-10 sm:h-12 text-sm sm:text-base"
+                className="h-10 sm:h-12 text-sm sm:text-base bg-black border-slate-700 text-slate-200 focus:border-orange-500 focus:ring-orange-500"
               />
             </div>
 
             <div className="space-y-3">
-              <Label className="text-sm sm:text-base font-semibold flex items-center gap-2">
-                <Zap className="h-4 w-4 text-primary" />
+              <Label className="text-sm sm:text-base font-semibold flex items-center gap-2 text-green-500">
+                <Zap className="h-4 w-4 text-green-500" />
                 Gender (Optional)
               </Label>
               <div className="flex gap-2">
                 <button
                   onClick={() => setGender("male")}
                   className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${
-                    gender === "male" ? "bg-primary text-primary-foreground" : "bg-muted hover:bg-muted/80"
+                    gender === "male" ? "bg-orange-500 text-white shadow-sm" : "bg-black text-slate-400 hover:bg-slate-800 border border-slate-700"
                   }`}
                 >
                   Male
@@ -273,7 +273,7 @@ Risk Level: ${result.riskLevel}`
                 <button
                   onClick={() => setGender("female")}
                   className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${
-                    gender === "female" ? "bg-primary text-primary-foreground" : "bg-muted hover:bg-muted/80"
+                    gender === "female" ? "bg-orange-500 text-white shadow-sm" : "bg-black text-slate-400 hover:bg-slate-800 border border-slate-700"
                   }`}
                 >
                   Female
@@ -281,7 +281,7 @@ Risk Level: ${result.riskLevel}`
                 <button
                   onClick={() => setGender("other")}
                   className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${
-                    gender === "other" ? "bg-primary text-primary-foreground" : "bg-muted hover:bg-muted/80"
+                    gender === "other" ? "bg-orange-500 text-white shadow-sm" : "bg-black text-slate-400 hover:bg-slate-800 border border-slate-700"
                   }`}
                 >
                   Other
@@ -292,7 +292,7 @@ Risk Level: ${result.riskLevel}`
 
           <Button
             onClick={calculateBMI}
-            className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary"
+            className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
             disabled={!weight || !height || isCalculating}
           >
             {isCalculating ? (
@@ -313,85 +313,85 @@ Risk Level: ${result.riskLevel}`
       </Card>
 
       {result && !isCalculating && (
-        <Card className="shadow-lg border-primary/20 animate-fade-in-up bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20">
+        <Card className="shadow-lg border-slate-700 animate-fade-in-up bg-black">
           <CardHeader className="pb-4">
-            <CardTitle className="text-2xl flex items-center gap-3">
-              <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                <Activity className="h-6 w-6 text-green-600" />
+            <CardTitle className="text-2xl flex items-center gap-3 text-orange-500">
+              <div className="p-2 bg-orange-500/10 rounded-lg">
+                <Activity className="h-6 w-6 text-orange-500" />
               </div>
               Your BMI Result
             </CardTitle>
-            <CardDescription className="text-base">
+            <CardDescription className="text-base text-slate-400">
               Comprehensive Body Mass Index analysis with advanced metrics
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-8">
             {/* Main BMI Display */}
-            <div className="text-center p-6 sm:p-8 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-primary/20">
-              <div className="text-4xl sm:text-5xl font-bold text-primary mb-2">{result.bmi}</div>
+            <div className="text-center p-6 sm:p-8 rounded-xl bg-black border-2 border-orange-500/20">
+              <div className="text-4xl sm:text-5xl font-bold text-orange-500 mb-2">{result.bmi}</div>
               <div className={`text-lg sm:text-xl font-semibold ${result.color} mb-2`}>{result.category}</div>
-              <div className="text-sm text-muted-foreground">kg/m²</div>
+              <div className="text-sm text-slate-400">kg/m²</div>
             </div>
 
             {/* Advanced Metrics */}
-            <div className="space-y-4 p-4 sm:p-6 bg-white/50 dark:bg-slate-800/50 rounded-xl border-2 border-slate-200 dark:border-slate-700">
-              <h3 className="text-base sm:text-lg font-semibold text-center mb-3 sm:mb-4 flex items-center justify-center gap-2">
-                <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
+            <div className="space-y-4 p-4 sm:p-6 bg-black rounded-xl border-2 border-slate-700">
+              <h3 className="text-base sm:text-lg font-semibold text-center mb-3 sm:mb-4 flex items-center justify-center gap-2 text-green-500">
+                <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-green-500" />
                 Advanced Metrics
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 rounded-lg border border-blue-200 dark:border-blue-800">
-                  <span className="text-sm font-medium text-blue-700 dark:text-blue-300">BMI Prime</span>
-                  <span className="font-bold text-sm text-blue-900 dark:text-blue-100">{result.bmiPrime}</span>
+                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-blue-700">
+                  <span className="text-sm font-medium text-blue-400">BMI Prime</span>
+                  <span className="font-bold text-sm text-blue-300">{result.bmiPrime}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-950/30 dark:to-orange-900/30 rounded-lg border border-orange-200 dark:border-orange-800">
-                  <span className="text-sm font-medium text-orange-700 dark:text-orange-300">Ponderal Index</span>
-                  <span className="font-bold text-sm text-orange-900 dark:text-orange-100">{result.ponderalIndex}</span>
+                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-orange-700">
+                  <span className="text-sm font-medium text-orange-400">Ponderal Index</span>
+                  <span className="font-bold text-sm text-orange-300">{result.ponderalIndex}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-950/30 dark:to-green-900/30 rounded-lg border border-green-200 dark:border-green-800">
-                  <span className="text-sm font-medium text-green-700 dark:text-green-300">Healthy Range</span>
-                  <span className="font-bold text-sm text-green-900 dark:text-green-100">{result.healthyRange}</span>
+                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-green-700">
+                  <span className="text-sm font-medium text-green-400">Healthy Range</span>
+                  <span className="font-bold text-sm text-green-300">{result.healthyRange}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-950/30 dark:to-orange-900/30 rounded-lg border border-orange-200 dark:border-orange-800">
-                  <span className="text-sm font-medium text-orange-700 dark:text-orange-300">Risk Level</span>
-                  <span className="font-bold text-sm text-orange-900 dark:text-orange-100">{result.riskLevel}</span>
+                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-orange-700">
+                  <span className="text-sm font-medium text-orange-400">Risk Level</span>
+                  <span className="font-bold text-sm text-orange-300">{result.riskLevel}</span>
                 </div>
               </div>
             </div>
 
             {/* Healthy Weight Range */}
-            <div className="space-y-4 p-4 sm:p-6 bg-gradient-to-r from-cyan-50 to-teal-50 dark:from-cyan-950/20 dark:to-teal-950/20 rounded-xl border-2 border-cyan-200 dark:border-cyan-800">
-              <h3 className="text-base sm:text-lg font-semibold text-cyan-700 dark:text-cyan-300 flex items-center gap-2">
-                <Target className="h-4 w-4 sm:h-5 sm:w-5" />
+            <div className="space-y-4 p-4 sm:p-6 bg-black rounded-xl border-2 border-slate-700">
+              <h3 className="text-base sm:text-lg font-semibold text-green-500 flex items-center gap-2">
+                <Target className="h-4 w-4 sm:h-5 sm:w-5 text-green-500" />
                 Healthy Weight Range
               </h3>
-              <div className="text-center p-4 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-cyan-200 dark:border-cyan-700">
-                <div className="text-lg sm:text-xl font-bold text-cyan-900 dark:text-cyan-100">{result.healthyWeightRange}</div>
-                <div className="text-sm text-cyan-700 dark:text-cyan-300 mt-1">Recommended weight for your height</div>
+              <div className="text-center p-4 bg-black rounded-lg border border-green-700">
+                <div className="text-lg sm:text-xl font-bold text-green-300">{result.healthyWeightRange}</div>
+                <div className="text-sm text-slate-400 mt-1">Recommended weight for your height</div>
               </div>
             </div>
 
             {/* Recommendations */}
-            <div className="space-y-4 p-4 sm:p-6 bg-gradient-to-r from-pink-50 to-rose-50 dark:from-pink-950/20 dark:to-rose-950/20 rounded-xl border-2 border-pink-200 dark:border-pink-800">
-              <h3 className="text-base sm:text-lg font-semibold text-pink-700 dark:text-pink-300 flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5" />
+            <div className="space-y-4 p-4 sm:p-6 bg-black rounded-xl border-2 border-slate-700">
+              <h3 className="text-base sm:text-lg font-semibold text-green-500 flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-500" />
                 Health Recommendations
               </h3>
               <div className="space-y-2">
                 {result.recommendations.map((recommendation, index) => (
-                  <div key={index} className="flex items-start gap-2 p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-pink-200 dark:border-pink-700">
-                    <Sparkles className="h-4 w-4 text-pink-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-pink-800 dark:text-pink-200">{recommendation}</span>
+                  <div key={index} className="flex items-start gap-2 p-3 bg-black rounded-lg border border-slate-700">
+                    <Sparkles className="h-4 w-4 text-green-400 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-slate-300">{recommendation}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Disclaimer */}
-            <div className="p-4 bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-amber-950/20 dark:to-yellow-950/20 rounded-xl border-2 border-amber-200 dark:border-amber-800">
+            <div className="p-4 bg-black rounded-xl border-2 border-amber-700">
               <div className="flex items-start gap-2">
-                <Info className="h-4 w-4 text-amber-600 mt-0.5 flex-shrink-0" />
-                <div className="text-sm text-amber-800 dark:text-amber-200">
+                <Info className="h-4 w-4 text-amber-400 mt-0.5 flex-shrink-0" />
+                <div className="text-sm text-amber-300">
                   <strong>Disclaimer:</strong> BMI is a screening tool and should not be used as the sole indicator of health. 
                   Consult a healthcare provider for personalized health advice and comprehensive health assessment.
                 </div>
@@ -402,7 +402,7 @@ Risk Level: ${result.riskLevel}`
             <Button
               onClick={copyResult}
               variant="outline"
-              className="w-full h-10 sm:h-12 text-sm sm:text-base font-semibold hover:bg-accent transition-all duration-300 border-2"
+              className="w-full h-10 sm:h-12 text-sm sm:text-base font-semibold hover:bg-slate-800 transition-all duration-300 border-2 border-slate-700 text-slate-200 hover:text-white"
             >
               {copied ? (
                 <>

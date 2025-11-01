@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import RetirementCalculator from "@/components/retirement-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent, Trophy } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -181,10 +182,12 @@ export default function RetirementCalculatorPage() {
 
           <div className="max-w-7xl mx-auto">
             <div className="mb-1 xs:mb-2 sm:mb-3 md:mb-4 lg:mb-6 xl:mb-8">
-              <h1 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-1 xs:mb-2 sm:mb-3 md:mb-4 lg:mb-5 text-yellow-400 leading-tight">Retirement Calculator - Advanced Retirement Planning</h1>
-              <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground text-pretty leading-relaxed">
-                <strong>Professional retirement calculator for comprehensive retirement planning</strong> with <strong>inflation adjustments and scenario analysis</strong>. Calculate <strong>how much to save</strong>, <strong>withdrawal amounts</strong>, and <strong>retirement income needs</strong> with our <strong>advanced retirement calculator</strong>.
-              </p>
+              <GHeader
+                title="Retirement Calculator - Advanced Retirement Planning"
+                description="Professional retirement calculator for comprehensive retirement planning with inflation adjustments and scenario analysis. Calculate how much to save, withdrawal amounts, and retirement income needs with our advanced retirement calculator."
+                titleSize="medium"
+                descriptionSize="small"
+              />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_260px] xl:grid-cols-[1fr_300px] 2xl:grid-cols-[1fr_360px] gap-2 xs:gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10">
@@ -194,16 +197,16 @@ export default function RetirementCalculatorPage() {
                 {/* Mobile/Tablet AdSpace */}
                 <div className="my-2 xs:my-3 sm:my-4 md:my-6 lg:hidden">
                   <div className="text-center mb-1">
-                    <span className="text-xs xs:text-sm text-muted-foreground font-medium">Advertisement</span>
+                    <span className="text-xs xs:text-sm text-white font-medium">Advertisement</span>
                   </div>
-                  <AdSpace slot="content" className="w-full h-8 xs:h-10 sm:h-12 md:h-16 lg:h-20 border border-border rounded-xl shadow-sm bg-card" />
+                  <AdSpace slot="content" className="w-full h-8 xs:h-10 sm:h-12 md:h-16 lg:h-20 border border-border rounded-xl shadow-sm bg-black" />
                 </div>
             
                 {/* Educational Content Sections */}
                 <div className="mt-1 xs:mt-2 sm:mt-3 md:mt-4 lg:mt-6 xl:mt-8 space-y-1 xs:space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6">
                   {/* How to Use Section */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
-                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-yellow-400">
+                  <div className="bg-black border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-orange-500">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
                         <Calculator className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
                       </div>
@@ -212,28 +215,28 @@ export default function RetirementCalculatorPage() {
                     <div className="space-y-2 xs:space-y-3 sm:space-y-4">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
                         <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border">
-                          <h3 className="font-semibold text-foreground mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">1. Choose Calculation Type</h3>
-                          <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">Select how much to save, withdrawal amounts, or how long savings will last</p>
+                          <h3 className="font-semibold text-green-500 mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">1. Choose Calculation Type</h3>
+                          <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">Select how much to save, withdrawal amounts, or how long savings will last</p>
                         </div>
                         <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border">
-                          <h3 className="font-semibold text-foreground mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">2. Enter Your Information</h3>
-                          <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">Provide age, income, savings, and investment assumptions</p>
+                          <h3 className="font-semibold text-green-500 mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">2. Enter Your Information</h3>
+                          <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">Provide age, income, savings, and investment assumptions</p>
                         </div>
                         <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border">
-                          <h3 className="font-semibold text-foreground mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">3. Review Results</h3>
-                          <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">Analyze retirement projections, scenarios, and personalized recommendations</p>
+                          <h3 className="font-semibold text-green-500 mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">3. Review Results</h3>
+                          <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">Analyze retirement projections, scenarios, and personalized recommendations</p>
                         </div>
                         <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border">
-                          <h3 className="font-semibold text-foreground mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">4. Plan Strategy</h3>
-                          <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">Develop optimal retirement strategy based on your goals and timeline</p>
+                          <h3 className="font-semibold text-green-500 mb-1 xs:mb-2 text-xs xs:text-sm sm:text-base">4. Plan Strategy</h3>
+                          <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">Develop optimal retirement strategy based on your goals and timeline</p>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Features Section */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
-                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-yellow-400">
+                  <div className="bg-black border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-orange-500">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
                         <Target className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
                       </div>
@@ -242,59 +245,59 @@ export default function RetirementCalculatorPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
                       <div className="space-y-2 xs:space-y-3">
                         <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-green-100 dark:bg-green-900/20 rounded-lg flex-shrink-0">
-                            <BarChart3 className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-green-600 dark:text-green-400" />
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-orange-500 rounded-lg flex-shrink-0">
+                            <BarChart3 className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-white" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Retirement Projections</h3>
-                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Detailed analysis of retirement savings growth and income needs</p>
+                            <h3 className="font-semibold text-green-500 text-xs xs:text-sm sm:text-base">Retirement Projections</h3>
+                            <p className="text-xs xs:text-sm sm:text-base text-white">Detailed analysis of retirement savings growth and income needs</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex-shrink-0">
-                            <TrendingUp className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-blue-600 dark:text-blue-400" />
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-orange-500 rounded-lg flex-shrink-0">
+                            <TrendingUp className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-white" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Inflation Adjustments</h3>
-                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Account for inflation to provide realistic retirement projections</p>
+                            <h3 className="font-semibold text-green-500 text-xs xs:text-sm sm:text-base">Inflation Adjustments</h3>
+                            <p className="text-xs xs:text-sm sm:text-base text-white">Account for inflation to provide realistic retirement projections</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex-shrink-0">
-                            <DollarSign className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-purple-600 dark:text-purple-400" />
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-orange-500 rounded-lg flex-shrink-0">
+                            <DollarSign className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-white" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Multiple Income Sources</h3>
-                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Include Social Security, 401(k), IRA, and other retirement accounts</p>
+                            <h3 className="font-semibold text-green-500 text-xs xs:text-sm sm:text-base">Multiple Income Sources</h3>
+                            <p className="text-xs xs:text-sm sm:text-base text-white">Include Social Security, 401(k), IRA, and other retirement accounts</p>
                           </div>
                         </div>
                       </div>
                       <div className="space-y-2 xs:space-y-3">
                         <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-orange-100 dark:bg-orange-900/20 rounded-lg flex-shrink-0">
-                            <BookOpen className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-orange-600 dark:text-orange-400" />
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-orange-500 rounded-lg flex-shrink-0">
+                            <BookOpen className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-white" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Scenario Analysis</h3>
-                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Compare different retirement scenarios and strategies</p>
+                            <h3 className="font-semibold text-green-500 text-xs xs:text-sm sm:text-base">Scenario Analysis</h3>
+                            <p className="text-xs xs:text-sm sm:text-base text-white">Compare different retirement scenarios and strategies</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-red-100 dark:bg-red-900/20 rounded-lg flex-shrink-0">
-                            <Users className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-red-600 dark:text-red-400" />
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-orange-500 rounded-lg flex-shrink-0">
+                            <Users className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-white" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Withdrawal Strategies</h3>
-                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Optimize withdrawal amounts and timing for maximum longevity</p>
+                            <h3 className="font-semibold text-green-500 text-xs xs:text-sm sm:text-base">Withdrawal Strategies</h3>
+                            <p className="text-xs xs:text-sm sm:text-base text-white">Optimize withdrawal amounts and timing for maximum longevity</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-teal-100 dark:bg-teal-900/20 rounded-lg flex-shrink-0">
-                            <Clock className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-teal-600 dark:text-teal-400" />
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-orange-500 rounded-lg flex-shrink-0">
+                            <Clock className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-white" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">Real-time Calculations</h3>
-                            <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Instant updates as you adjust retirement parameters and goals</p>
+                            <h3 className="font-semibold text-green-500 text-xs xs:text-sm sm:text-base">Real-time Calculations</h3>
+                            <p className="text-xs xs:text-sm sm:text-base text-white">Instant updates as you adjust retirement parameters and goals</p>
                           </div>
                         </div>
                       </div>
@@ -302,8 +305,8 @@ export default function RetirementCalculatorPage() {
                   </div>
 
                   {/* Use Cases Section */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
-                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-yellow-400">
+                  <div className="bg-black border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-orange-500">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
                         <Home className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
                       </div>
@@ -311,8 +314,8 @@ export default function RetirementCalculatorPage() {
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
                       <div className="space-y-2 xs:space-y-3">
-                        <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">For Individuals</h3>
-                        <ul className="space-y-1 xs:space-y-1.5 text-xs xs:text-sm sm:text-base text-muted-foreground">
+                        <h3 className="font-semibold text-green-500 text-xs xs:text-sm sm:text-base">For Individuals</h3>
+                        <ul className="space-y-1 xs:space-y-1.5 text-xs xs:text-sm sm:text-base text-white">
                           <li>• Personal retirement planning and goal setting</li>
                           <li>• 401(k) and IRA contribution optimization</li>
                           <li>• Social Security timing decisions</li>
@@ -321,8 +324,8 @@ export default function RetirementCalculatorPage() {
                         </ul>
                       </div>
                       <div className="space-y-2 xs:space-y-3">
-                        <h3 className="font-semibold text-foreground text-xs xs:text-sm sm:text-base">For Financial Planners</h3>
-                        <ul className="space-y-1 xs:space-y-1.5 text-xs xs:text-sm sm:text-base text-muted-foreground">
+                        <h3 className="font-semibold text-green-500 text-xs xs:text-sm sm:text-base">For Financial Planners</h3>
+                        <ul className="space-y-1 xs:space-y-1.5 text-xs xs:text-sm sm:text-base text-white">
                           <li>• Client retirement planning and analysis</li>
                           <li>• Retirement readiness assessments</li>
                           <li>• Withdrawal strategy optimization</li>
@@ -334,8 +337,8 @@ export default function RetirementCalculatorPage() {
                   </div>
 
                   {/* Retirement Planning Strategies Section */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
-                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-yellow-400">
+                  <div className="bg-black border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-orange-500">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
                         <BookOpen className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
                       </div>
@@ -343,36 +346,36 @@ export default function RetirementCalculatorPage() {
                     </h2>
                     <div className="space-y-2 xs:space-y-3 sm:space-y-4">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
-                        <div className="p-2 xs:p-3 sm:p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                          <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-blue-800 dark:text-blue-200 mb-1 xs:mb-2 sm:mb-3">10% Rule</h3>
-                          <ul className="text-xs xs:text-sm text-blue-700 dark:text-blue-300 space-y-1">
+                        <div className="p-2 xs:p-3 sm:p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-500 mb-1 xs:mb-2 sm:mb-3">10% Rule</h3>
+                          <ul className="text-xs xs:text-sm text-white space-y-1">
                             <li>• Save 10-15% of pre-tax income annually</li>
                             <li>• Start early for maximum compound growth</li>
                             <li>• Aim for $1 million nest egg by retirement</li>
                             <li>• Adjust based on income and goals</li>
                           </ul>
                         </div>
-                        <div className="p-2 xs:p-3 sm:p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                          <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-800 dark:text-green-200 mb-1 xs:mb-2 sm:mb-3">80% Rule</h3>
-                          <ul className="text-xs xs:text-sm text-green-700 dark:text-green-300 space-y-1">
+                        <div className="p-2 xs:p-3 sm:p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-500 mb-1 xs:mb-2 sm:mb-3">80% Rule</h3>
+                          <ul className="text-xs xs:text-sm text-white space-y-1">
                             <li>• Plan for 70-80% of pre-retirement income</li>
                             <li>• Account for reduced expenses in retirement</li>
                             <li>• Consider lifestyle changes and goals</li>
                             <li>• Adjust based on retirement vision</li>
                           </ul>
                         </div>
-                        <div className="p-2 xs:p-3 sm:p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                          <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-purple-800 dark:text-purple-200 mb-1 xs:mb-2 sm:mb-3">4% Rule</h3>
-                          <ul className="text-xs xs:text-sm text-purple-700 dark:text-purple-300 space-y-1">
+                        <div className="p-2 xs:p-3 sm:p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-500 mb-1 xs:mb-2 sm:mb-3">4% Rule</h3>
+                          <ul className="text-xs xs:text-sm text-white space-y-1">
                             <li>• Withdraw 4% of savings annually in retirement</li>
                             <li>• Divide annual income needs by 4% for target amount</li>
                             <li>• Adjust for inflation and market conditions</li>
                             <li>• Consider sequence of returns risk</li>
                           </ul>
                         </div>
-                        <div className="p-2 xs:p-3 sm:p-4 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200 dark:border-orange-800">
-                          <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-orange-800 dark:text-orange-200 mb-1 xs:mb-2 sm:mb-3">Multiple of Income</h3>
-                          <ul className="text-xs xs:text-sm text-orange-700 dark:text-orange-300 space-y-1">
+                        <div className="p-2 xs:p-3 sm:p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                          <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-500 mb-1 xs:mb-2 sm:mb-3">Multiple of Income</h3>
+                          <ul className="text-xs xs:text-sm text-white space-y-1">
                             <li>• Save 15-25 times annual income</li>
                             <li>• Higher multiples for earlier retirement</li>
                             <li>• Consider Social Security and pensions</li>
@@ -384,8 +387,8 @@ export default function RetirementCalculatorPage() {
                   </div>
 
                   {/* Retirement Income Sources Section */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
-                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-yellow-400">
+                  <div className="bg-black border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-orange-500">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
                         <TrendingUp className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
                       </div>
@@ -394,18 +397,18 @@ export default function RetirementCalculatorPage() {
                     <div className="space-y-2 xs:space-y-3 sm:space-y-4">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
                         <div className="space-y-2 xs:space-y-3">
-                          <div className="p-2 xs:p-3 sm:p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                            <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-blue-800 dark:text-blue-200 mb-1 xs:mb-2">Social Security</h3>
-                            <ul className="text-xs xs:text-sm text-blue-700 dark:text-blue-300 space-y-1">
+                          <div className="p-2 xs:p-3 sm:p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                            <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-500 mb-1 xs:mb-2">Social Security</h3>
+                            <ul className="text-xs xs:text-sm text-white space-y-1">
                               <li>• Government retirement benefits</li>
                               <li>• Replaces ~40% of pre-retirement income</li>
                               <li>• Based on lifetime earnings</li>
                               <li>• Full benefits at age 67</li>
                             </ul>
                           </div>
-                          <div className="p-2 xs:p-3 sm:p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                            <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-800 dark:text-green-200 mb-1 xs:mb-2">401(k) Plans</h3>
-                            <ul className="text-xs xs:text-sm text-green-700 dark:text-green-300 space-y-1">
+                          <div className="p-2 xs:p-3 sm:p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                            <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-500 mb-1 xs:mb-2">401(k) Plans</h3>
+                            <ul className="text-xs xs:text-sm text-white space-y-1">
                               <li>• Employer-sponsored retirement plans</li>
                               <li>• Pre-tax contributions and growth</li>
                               <li>• Employer matching contributions</li>
@@ -414,18 +417,18 @@ export default function RetirementCalculatorPage() {
                           </div>
                         </div>
                         <div className="space-y-2 xs:space-y-3">
-                          <div className="p-2 xs:p-3 sm:p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                            <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-purple-800 dark:text-purple-200 mb-1 xs:mb-2">IRAs</h3>
-                            <ul className="text-xs xs:text-sm text-purple-700 dark:text-purple-300 space-y-1">
+                          <div className="p-2 xs:p-3 sm:p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                            <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-500 mb-1 xs:mb-2">IRAs</h3>
+                            <ul className="text-xs xs:text-sm text-white space-y-1">
                               <li>• Individual Retirement Accounts</li>
                               <li>• Traditional and Roth options</li>
                               <li>• Tax-advantaged growth</li>
                               <li>• Annual contribution limits</li>
                             </ul>
                           </div>
-                          <div className="p-2 xs:p-3 sm:p-4 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200 dark:border-orange-800">
-                            <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-orange-800 dark:text-orange-200 mb-1 xs:mb-2">Personal Savings</h3>
-                            <ul className="text-xs xs:text-sm text-orange-700 dark:text-orange-300 space-y-1">
+                          <div className="p-2 xs:p-3 sm:p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                            <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-500 mb-1 xs:mb-2">Personal Savings</h3>
+                            <ul className="text-xs xs:text-sm text-white space-y-1">
                               <li>• Investment accounts and CDs</li>
                               <li>• Real estate and rental income</li>
                               <li>• Annuities and insurance</li>
@@ -438,78 +441,78 @@ export default function RetirementCalculatorPage() {
                   </div>
 
                   {/* Professional Insights Section */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
-                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-yellow-400">
+                  <div className="bg-black border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-orange-500">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
                         <Award className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
                       </div>
                       Professional Insights
                     </h2>
                     <div className="space-y-2 xs:space-y-3 sm:space-y-4">
-                      <div className="p-2 xs:p-3 sm:p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                        <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-blue-800 dark:text-blue-200 mb-1 xs:mb-2">Sarah Johnson, CFP - Financial Planner</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-blue-700 dark:text-blue-300 mb-2">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                        <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-500 mb-1 xs:mb-2">Sarah Johnson, CFP - Financial Planner</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white mb-2">
                           "Retirement planning is about more than just saving money. It's about creating a comprehensive strategy that accounts for inflation, healthcare costs, and lifestyle changes. This calculator helps clients visualize their retirement needs and develop realistic savings goals."
                         </p>
-                        <p className="text-xs text-blue-600 dark:text-blue-400">- Sarah Johnson, CFP, Senior Financial Planner, Charles Schwab</p>
+                        <p className="text-xs text-white">- Sarah Johnson, CFP, Senior Financial Planner, Charles Schwab</p>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                        <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-800 dark:text-green-200 mb-1 xs:mb-2">Michael Chen, Retirement Specialist</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-green-700 dark:text-green-300 mb-2">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                        <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-500 mb-1 xs:mb-2">Michael Chen, Retirement Specialist</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white mb-2">
                           "The key to successful retirement planning is starting early and being consistent. This calculator demonstrates the power of compound interest and helps clients understand how small changes in savings rate can significantly impact their retirement outcomes."
                         </p>
-                        <p className="text-xs text-green-600 dark:text-green-400">- Michael Chen, Retirement Specialist, Fidelity Investments</p>
+                        <p className="text-xs text-white">- Michael Chen, Retirement Specialist, Fidelity Investments</p>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                        <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-purple-800 dark:text-purple-200 mb-1 xs:mb-2">Dr. Lisa Rodriguez, PhD - Financial Education</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-purple-700 dark:text-purple-300 mb-2">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                        <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-500 mb-1 xs:mb-2">Dr. Lisa Rodriguez, PhD - Financial Education</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white mb-2">
                           "Retirement planning requires understanding multiple variables including inflation, investment returns, and longevity risk. This calculator provides sophisticated analysis tools that help individuals make informed decisions about their retirement savings strategy."
                         </p>
-                        <p className="text-xs text-purple-600 dark:text-purple-400">- Dr. Lisa Rodriguez, PhD, Director of Financial Education, University of Chicago</p>
+                        <p className="text-xs text-white">- Dr. Lisa Rodriguez, PhD, Director of Financial Education, University of Chicago</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Success Stories Section */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
-                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-yellow-400">
+                  <div className="bg-black border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-orange-500">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
                         <Trophy className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
                       </div>
                       Real Success Stories
                     </h2>
                     <div className="space-y-2 xs:space-y-3 sm:space-y-4">
-                      <div className="p-2 xs:p-3 sm:p-4 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
-                        <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-yellow-800 dark:text-yellow-200 mb-1 xs:mb-2">Early Retirement Success</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-yellow-700 dark:text-yellow-300 mb-2">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                        <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-500 mb-1 xs:mb-2">Early Retirement Success</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white mb-2">
                           "I used this calculator to plan my early retirement at 55. By saving 20% of my income and investing consistently, I was able to retire with $2.5 million and maintain my desired lifestyle. The calculator helped me understand the impact of starting early and compound growth."
                         </p>
-                        <p className="text-xs text-yellow-600 dark:text-yellow-400">- Jennifer M., Early Retiree</p>
+                        <p className="text-xs text-white">- Jennifer M., Early Retiree</p>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                        <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-800 dark:text-green-200 mb-1 xs:mb-2">Catch-Up Savings Success</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-green-700 dark:text-green-300 mb-2">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                        <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-500 mb-1 xs:mb-2">Catch-Up Savings Success</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white mb-2">
                           "I started saving for retirement late at age 40, but this calculator showed me how to catch up. By maximizing my 401(k) contributions and opening an IRA, I was able to build a solid retirement fund and retire comfortably at 67."
                         </p>
-                        <p className="text-xs text-green-600 dark:text-green-400">- Robert K., Late Starter</p>
+                        <p className="text-xs text-white">- Robert K., Late Starter</p>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                        <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-blue-800 dark:text-blue-200 mb-1 xs:mb-2">Retirement Income Optimization</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-blue-700 dark:text-blue-300 mb-2">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-black rounded-lg border border-orange-200 dark:border-orange-800">
+                        <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-green-500 mb-1 xs:mb-2">Retirement Income Optimization</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white mb-2">
                           "This calculator helped me optimize my retirement income strategy. By understanding withdrawal rates and tax implications, I was able to maximize my retirement income while minimizing taxes and ensuring my money lasts throughout retirement."
                         </p>
-                        <p className="text-xs text-blue-600 dark:text-blue-400">- Maria S., Retirement Optimizer</p>
+                        <p className="text-xs text-white">- Maria S., Retirement Optimizer</p>
                       </div>
                     </div>
                   </div>
 
                   {/* FAQ Section */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
-                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-yellow-400">
+                  <div className="bg-black border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-orange-500">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
                         <BookOpen className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
                       </div>
@@ -517,80 +520,80 @@ export default function RetirementCalculatorPage() {
                     </h2>
                     <div className="space-y-2 xs:space-y-3 sm:space-y-4">
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How much should I save for retirement?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-sm xs:text-base sm:text-lg">How much should I save for retirement?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">
                           Most experts recommend saving 10-15% of your income annually, or 15-25 times your annual income by retirement age. The exact amount depends on your retirement goals, lifestyle, and other income sources like Social Security.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">What's the 4% rule for retirement withdrawals?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-sm xs:text-base sm:text-lg">What's the 4% rule for retirement withdrawals?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">
                           The 4% rule suggests withdrawing 4% of your retirement savings in the first year, then adjusting for inflation each year. This strategy aims to make your money last 30 years, though market conditions and individual circumstances can affect outcomes.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How does inflation affect retirement planning?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-sm xs:text-base sm:text-lg">How does inflation affect retirement planning?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">
                           Inflation reduces purchasing power over time, so you'll need more money in the future to maintain the same lifestyle. Our calculator accounts for inflation to give you realistic retirement projections and help you plan for rising costs.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">When should I start saving for retirement?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-sm xs:text-base sm:text-lg">When should I start saving for retirement?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">
                           The earlier you start, the better due to compound interest. Even small amounts saved in your 20s can grow significantly more than larger amounts saved later in life. Start as soon as you have income, even if it's just a small percentage.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How do I choose the right investment return rate?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-sm xs:text-base sm:text-lg">How do I choose the right investment return rate?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">
                           Use conservative estimates (4-6%) for planning to account for market volatility. Historical stock market returns average 7-10%, but past performance doesn't guarantee future results. Consider your risk tolerance and time horizon.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">What's the difference between traditional and Roth IRAs?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-sm xs:text-base sm:text-lg">What's the difference between traditional and Roth IRAs?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">
                           Traditional IRAs offer tax deductions on contributions but tax withdrawals in retirement. Roth IRAs use after-tax contributions but offer tax-free withdrawals in retirement. Choose based on your current tax bracket and expected retirement tax situation.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How much will Social Security provide?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-sm xs:text-base sm:text-lg">How much will Social Security provide?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">
                           Social Security typically replaces about 40% of pre-retirement income for average earners. The exact amount depends on your lifetime earnings and when you claim benefits. Check your Social Security statement for personalized estimates.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">Should I prioritize 401(k) or IRA contributions?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-sm xs:text-base sm:text-lg">Should I prioritize 401(k) or IRA contributions?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">
                           Start with your 401(k) to get employer matching, then consider IRAs for additional tax-advantaged savings. The order depends on your employer's matching policy, contribution limits, and investment options available in each account.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How much money will I need to retire comfortably and how do I calculate it?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-sm xs:text-base sm:text-lg">How much money will I need to retire comfortably and how do I calculate it?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">
                           Most experts recommend replacing 70-80% of your pre-retirement income annually. For a more personalized calculation, assess your current expenses, project future costs including healthcare and inflation, evaluate all income sources (Social Security, pensions, investments), and use retirement calculators to model different scenarios. A common rule of thumb is saving 15-25 times your annual income, but this varies based on your desired lifestyle, expected lifespan, and other income sources. Our calculator helps you determine the exact amount needed by accounting for inflation, investment returns, and your specific retirement goals.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">Will Social Security be available when I retire and how much will it provide?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-sm xs:text-base sm:text-lg">Will Social Security be available when I retire and how much will it provide?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">
                           While Social Security faces funding challenges, benefits are unlikely to disappear entirely. Even if trust funds are depleted, ongoing payroll taxes are projected to cover approximately 81% of scheduled benefits. Social Security typically replaces about 40% of pre-retirement income for average earners, but the exact amount depends on your lifetime earnings and when you claim benefits. To prepare for potential changes, diversify your retirement income sources, stay informed about legislative updates, and consider delaying benefits to receive higher monthly payments. Check your Social Security statement for personalized estimates and plan for multiple scenarios.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How can I protect my retirement savings from inflation and rising costs?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-sm xs:text-base sm:text-lg">How can I protect my retirement savings from inflation and rising costs?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">
                           Inflation can significantly erode your purchasing power over time, so it's crucial to protect your savings. Consider investing in Treasury Inflation-Protected Securities (TIPS) that adjust with inflation, diversify your portfolio with assets like stocks and real estate that historically outpace inflation, delay Social Security benefits to receive higher inflation-adjusted payments, and regularly review your withdrawal rate to ensure it aligns with inflationary trends. Our calculator accounts for inflation in all projections, helping you understand how rising costs will affect your retirement income needs and ensuring your savings maintain their value throughout retirement.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">What are the tax implications of my retirement income and how can I minimize them?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-sm xs:text-base sm:text-lg">What are the tax implications of my retirement income and how can I minimize them?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">
                           Understanding tax implications is crucial for effective retirement planning. Traditional IRA and 401(k) withdrawals are taxed as ordinary income, while qualified Roth withdrawals are tax-free. Up to 85% of Social Security benefits may be taxable depending on your income level, and investment income like dividends and capital gains have varying tax rates. To minimize taxes, strategize your withdrawal sequence (taxable accounts first, then tax-deferred), consider Roth conversions during low-income years, plan the timing of Social Security claims, and stay updated on tax law changes. Our calculator helps you understand the tax impact of different withdrawal strategies and optimize your retirement income for tax efficiency.
                         </p>
                       </div>
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-foreground text-sm xs:text-base sm:text-lg">How do I plan for healthcare costs in retirement and what should I budget?</h3>
-                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-green-500 text-sm xs:text-base sm:text-lg">How do I plan for healthcare costs in retirement and what should I budget?</h3>
+                        <p className="text-xs xs:text-sm sm:text-base text-white leading-relaxed">
                           Healthcare costs can be a significant and unpredictable part of your retirement budget. Research shows that a 65-year-old couple retiring today may need $300,000+ for healthcare expenses throughout retirement. To prepare, understand Medicare coverage options and associated costs, consider supplemental insurance (Medigap or Medicare Advantage), contribute to Health Savings Accounts (HSAs) if eligible, evaluate long-term care insurance needs, and budget for increasing healthcare costs as you age. Our calculator helps you estimate healthcare expenses and factor them into your overall retirement planning, ensuring you're prepared for medical costs without compromising your financial security.
                         </p>
                       </div>
@@ -598,8 +601,8 @@ export default function RetirementCalculatorPage() {
                   </div>
 
                   {/* Related Tools Section */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
-                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-yellow-400">
+                  <div className="bg-black border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-orange-500">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
                         <Calculator className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-primary" />
                       </div>
@@ -608,120 +611,120 @@ export default function RetirementCalculatorPage() {
                     <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-2 xs:gap-3 sm:gap-4">
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-blue-100 dark:bg-blue-900/20 rounded-lg">
-                            <Calculator className="h-3 w-3 xs:h-4 xs:w-4 text-blue-600 dark:text-blue-400" />
+                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                            <Calculator className="h-3 w-3 xs:h-4 xs:w-4 text-white" />
                           </div>
-                          <h3 className="font-semibold text-foreground text-xs xs:text-sm">Investment Calculator</h3>
+                          <h3 className="font-semibold text-green-500 text-xs xs:text-sm">Investment Calculator</h3>
                         </div>
-                        <p className="text-xs xs:text-sm text-muted-foreground leading-relaxed">Calculate investment growth and portfolio analysis</p>
+                        <p className="text-xs xs:text-sm text-white leading-relaxed">Calculate investment growth and portfolio analysis</p>
                       </div>
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-green-100 dark:bg-green-900/20 rounded-lg">
-                            <BarChart3 className="h-3 w-3 xs:h-4 xs:w-4 text-green-600 dark:text-green-400" />
+                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                            <BarChart3 className="h-3 w-3 xs:h-4 xs:w-4 text-white" />
                           </div>
-                          <h3 className="font-semibold text-foreground text-xs xs:text-sm">Finance Calculator</h3>
+                          <h3 className="font-semibold text-green-500 text-xs xs:text-sm">Finance Calculator</h3>
                         </div>
-                        <p className="text-xs xs:text-sm text-muted-foreground leading-relaxed">Time value of money calculations and TVM analysis</p>
+                        <p className="text-xs xs:text-sm text-white leading-relaxed">Time value of money calculations and TVM analysis</p>
                       </div>
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-purple-100 dark:bg-purple-900/20 rounded-lg">
-                            <TrendingUp className="h-3 w-3 xs:h-4 xs:w-4 text-purple-600 dark:text-purple-400" />
+                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                            <TrendingUp className="h-3 w-3 xs:h-4 xs:w-4 text-white" />
                           </div>
-                          <h3 className="font-semibold text-foreground text-xs xs:text-sm">Inflation Calculator</h3>
+                          <h3 className="font-semibold text-green-500 text-xs xs:text-sm">Inflation Calculator</h3>
                         </div>
-                        <p className="text-xs xs:text-sm text-muted-foreground leading-relaxed">Calculate purchasing power and inflation impact</p>
+                        <p className="text-xs xs:text-sm text-white leading-relaxed">Calculate purchasing power and inflation impact</p>
                       </div>
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-orange-100 dark:bg-orange-900/20 rounded-lg">
-                            <Home className="h-3 w-3 xs:h-4 xs:w-4 text-orange-600 dark:text-orange-400" />
+                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                            <Home className="h-3 w-3 xs:h-4 xs:w-4 text-white" />
                           </div>
-                          <h3 className="font-semibold text-foreground text-xs xs:text-sm">Mortgage Calculator</h3>
+                          <h3 className="font-semibold text-green-500 text-xs xs:text-sm">Mortgage Calculator</h3>
                         </div>
-                        <p className="text-xs xs:text-sm text-muted-foreground leading-relaxed">Calculate mortgage payments and home affordability</p>
+                        <p className="text-xs xs:text-sm text-white leading-relaxed">Calculate mortgage payments and home affordability</p>
                       </div>
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-red-100 dark:bg-red-900/20 rounded-lg">
-                            <DollarSign className="h-3 w-3 xs:h-4 xs:w-4 text-red-600 dark:text-red-400" />
+                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                            <DollarSign className="h-3 w-3 xs:h-4 xs:w-4 text-white" />
                           </div>
-                          <h3 className="font-semibold text-foreground text-xs xs:text-sm">Amortization Calculator</h3>
+                          <h3 className="font-semibold text-green-500 text-xs xs:text-sm">Amortization Calculator</h3>
                         </div>
-                        <p className="text-xs xs:text-sm text-muted-foreground leading-relaxed">Calculate loan payments, interest, and amortization schedules</p>
+                        <p className="text-xs xs:text-sm text-white leading-relaxed">Calculate loan payments, interest, and amortization schedules</p>
                       </div>
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
-                        <div className="p-1 xs:p-1.5 bg-teal-100 dark:bg-teal-900/20 rounded-lg">
-                          <Percent className="h-3 w-3 xs:h-4 xs:w-4 text-teal-600 dark:text-teal-400" />
+                        <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                          <Percent className="h-3 w-3 xs:h-4 xs:w-4 text-white" />
                         </div>
-                        <h3 className="font-semibold text-foreground text-xs xs:text-sm">Interest Rate Calculator</h3>
-                        <p className="text-xs xs:text-sm text-muted-foreground leading-relaxed">Calculate real interest rates on loans and investments</p>
-                      </div>
-                      
-                      <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
-                        <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-indigo-100 dark:bg-indigo-900/20 rounded-lg">
-                            <FileText className="h-3 w-3 xs:h-4 xs:w-4 text-indigo-600 dark:text-indigo-400" />
-                          </div>
-                          <h3 className="font-semibold text-foreground text-xs xs:text-sm">Salary Calculator</h3>
-                        </div>
-                        <p className="text-xs xs:text-sm text-muted-foreground leading-relaxed">Convert salary across different pay frequencies</p>
+                        <h3 className="font-semibold text-green-500 text-xs xs:text-sm">Interest Rate Calculator</h3>
+                        <p className="text-xs xs:text-sm text-white leading-relaxed">Calculate real interest rates on loans and investments</p>
                       </div>
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-pink-100 dark:bg-pink-900/20 rounded-lg">
-                            <Award className="h-3 w-3 xs:h-4 xs:w-4 text-pink-600 dark:text-pink-400" />
+                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                            <FileText className="h-3 w-3 xs:h-4 xs:w-4 text-white" />
                           </div>
-                          <h3 className="font-semibold text-foreground text-xs xs:text-sm">Sales Tax Calculator</h3>
+                          <h3 className="font-semibold text-green-500 text-xs xs:text-sm">Salary Calculator</h3>
                         </div>
-                        <p className="text-xs xs:text-sm text-muted-foreground leading-relaxed">Calculate sales tax for all 50 US states</p>
+                        <p className="text-xs xs:text-sm text-white leading-relaxed">Convert salary across different pay frequencies</p>
                       </div>
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-cyan-100 dark:bg-cyan-900/20 rounded-lg">
-                            <Globe className="h-3 w-3 xs:h-4 xs:w-4 text-cyan-600 dark:text-cyan-400" />
+                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                            <Award className="h-3 w-3 xs:h-4 xs:w-4 text-white" />
                           </div>
-                          <h3 className="font-semibold text-foreground text-xs xs:text-sm">Currency Converter</h3>
+                          <h3 className="font-semibold text-green-500 text-xs xs:text-sm">Sales Tax Calculator</h3>
                         </div>
-                        <p className="text-xs xs:text-sm text-muted-foreground leading-relaxed">Convert between different currencies and exchange rates</p>
+                        <p className="text-xs xs:text-sm text-white leading-relaxed">Calculate sales tax for all 50 US states</p>
                       </div>
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-amber-100 dark:bg-amber-900/20 rounded-lg">
-                            <PieChart className="h-3 w-3 xs:h-4 xs:w-4 text-amber-600 dark:text-amber-400" />
+                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                            <Globe className="h-3 w-3 xs:h-4 xs:w-4 text-white" />
                           </div>
-                          <h3 className="font-semibold text-foreground text-xs xs:text-sm">Tax Calculator</h3>
+                          <h3 className="font-semibold text-green-500 text-xs xs:text-sm">Currency Converter</h3>
                         </div>
-                        <p className="text-xs xs:text-sm text-muted-foreground leading-relaxed">Calculate income tax and sales tax amounts</p>
+                        <p className="text-xs xs:text-sm text-white leading-relaxed">Convert between different currencies and exchange rates</p>
                       </div>
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-emerald-100 dark:bg-emerald-900/20 rounded-lg">
-                            <Clock className="h-3 w-3 xs:h-4 xs:w-4 text-emerald-600 dark:text-emerald-400" />
+                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                            <PieChart className="h-3 w-3 xs:h-4 xs:w-4 text-white" />
                           </div>
-                          <h3 className="font-semibold text-foreground text-xs xs:text-sm">Scientific Calculator</h3>
+                          <h3 className="font-semibold text-green-500 text-xs xs:text-sm">Tax Calculator</h3>
                         </div>
-                        <p className="text-xs xs:text-sm text-muted-foreground leading-relaxed">Advanced mathematical and scientific calculations</p>
+                        <p className="text-xs xs:text-sm text-white leading-relaxed">Calculate income tax and sales tax amounts</p>
                       </div>
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-rose-100 dark:bg-rose-900/20 rounded-lg">
-                            <Target className="h-3 w-3 xs:h-4 xs:w-4 text-rose-600 dark:text-rose-400" />
+                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                            <Clock className="h-3 w-3 xs:h-4 xs:w-4 text-white" />
                           </div>
-                          <h3 className="font-semibold text-foreground text-xs xs:text-sm">BMI Calculator</h3>
+                          <h3 className="font-semibold text-green-500 text-xs xs:text-sm">Scientific Calculator</h3>
                         </div>
-                        <p className="text-xs xs:text-sm text-muted-foreground leading-relaxed">Calculate body mass index and health metrics</p>
+                        <p className="text-xs xs:text-sm text-white leading-relaxed">Advanced mathematical and scientific calculations</p>
+                      </div>
+                      
+                      <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
+                        <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
+                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                            <Target className="h-3 w-3 xs:h-4 xs:w-4 text-white" />
+                          </div>
+                          <h3 className="font-semibold text-green-500 text-xs xs:text-sm">BMI Calculator</h3>
+                        </div>
+                        <p className="text-xs xs:text-sm text-white leading-relaxed">Calculate body mass index and health metrics</p>
                       </div>
                     </div>
                   </div>
@@ -732,12 +735,7 @@ export default function RetirementCalculatorPage() {
               <div className="space-y-2 xs:space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8">
                 <div className="sticky top-2 xs:top-4 sm:top-6 space-y-2 xs:space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8">
                   {/* Sidebar Ad 1 */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 shadow-sm">
-                    <AdSpace slot="sidebar" className="h-28 xs:h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 2xl:h-72 rounded-lg overflow-hidden" />
-                  </div>
-                  
-                  {/* Sidebar Ad 2 */}
-                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 shadow-sm">
+                  <div className="bg-black border border-border rounded-xl p-2 xs:p-3 sm:p-4 shadow-sm">
                     <AdSpace slot="sidebar" className="h-28 xs:h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 2xl:h-72 rounded-lg overflow-hidden" />
                   </div>
                 </div>

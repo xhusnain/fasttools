@@ -1,10 +1,11 @@
 import { CompoundInterestCalculator } from "@/components/compound-interest-calculator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import { 
   Calculator, Globe, DollarSign, TrendingUp, BarChart3, 
-  PieChart, Target, Building, Users, Award, CheckCircle, 
-  BookOpen, Zap, Sparkles, AlertTriangle, Info
+  PieChart, Target, Building, Users, Award, 
+  BookOpen, Zap, Info
 } from "lucide-react"
 import type { Metadata } from "next"
 
@@ -247,10 +248,10 @@ export default function CompoundInterestPage() {
       },
       {
         "@type": "Question",
-        "name": "What is the difference between simple and compound interest?",
+        "name": "How do compound interest and simple interest differ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Simple interest is calculated only on the principal amount, while compound interest is calculated on the principal plus previously earned interest, leading to exponential growth over time."
+          "text": "Simple interest computes returns solely on your initial principal throughout the investment term. Compound interest calculates earnings on both the original principal and all accumulated interest from prior periods, resulting in exponential growth as time progresses."
         }
       },
       {
@@ -258,7 +259,7 @@ export default function CompoundInterestPage() {
         "name": "How often should interest compound for maximum growth?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "More frequent compounding (daily or monthly) generally leads to higher returns. However, the difference between monthly and daily compounding is usually minimal for most investments."
+          "text": "Increasing compounding frequency to daily or monthly periods typically generates superior returns compared to annual compounding. In practice, the performance gap between monthly and daily compounding remains relatively small for the majority of investment scenarios."
         }
       },
       {
@@ -323,7 +324,7 @@ export default function CompoundInterestPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-black">
         <div className="container mx-auto px-3 py-6 md:py-8">
       <Breadcrumbs
         items={[
@@ -332,89 +333,89 @@ export default function CompoundInterestPage() {
         ]}
       />
 
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3 text-yellow-400">Free Online Compound Interest Calculator</h1>
-              <p className="text-sm md:text-base text-muted-foreground text-pretty leading-relaxed">
-                Use our <strong>free Compound Interest Calculator</strong> to calculate <strong>how your money grows over time</strong>. 
-                Enter your <strong>principal</strong>, <strong>interest rate</strong>, <strong>time period</strong>, and <strong>compounding frequency</strong> to see <strong>total interest</strong> and <strong>final balance</strong> instantly.
-          </p>
+              <GHeader 
+                title="Free Online Compound Interest Calculator"
+                description="Use our free Compound Interest Calculator to calculate how your money grows over time. Enter your principal, interest rate, time period, and compounding frequency to see total interest and final balance instantly."
+                titleSize="medium"
+              />
+            </div>
+
+            {/* Mobile/Tablet AdSpace after GHeader */}
+            <div className="my-6 lg:hidden">
+              <div className="text-center mb-2">
+                <span className="text-xs text-slate-400 font-medium">Advertisement</span>
+              </div>
+              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
         </div>
 
             <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
               <div>
             <CompoundInterestCalculator />
-            
-                {/* Mobile/Tablet AdSpace */}
-                <div className="my-6 lg:hidden">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
-            </div>
 
                 {/* How to Use */}
-                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                    <div className="p-1.5 bg-primary/10 rounded-lg">
-                      <Calculator className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <Calculator className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                 </div>
                     How to Use Our Compound Interest Calculator
               </h2>
                   <div className="space-y-2 md:space-y-3">
                     <div className="flex items-start gap-2">
-                      <div className="p-1 bg-primary/10 rounded-lg">
-                        <span className="text-primary font-bold text-xs">1</span>
+                      <div className="p-1 bg-green-500/10 rounded-lg">
+                        <span className="text-green-500 font-bold text-xs">1</span>
                   </div>
                   <div>
-                        <h3 className="font-semibold text-foreground text-xs md:text-sm">Select Your Country</h3>
-                        <p className="text-xs text-muted-foreground">Choose from 9+ countries with real interest rates</p>
+                        <h3 className="font-semibold text-green-500 text-xs md:text-sm">Select Your Country</h3>
+                        <p className="text-xs text-slate-400">Choose from 9+ countries with real interest rates</p>
                   </div>
                 </div>
                     <div className="flex items-start gap-2">
-                      <div className="p-1 bg-primary/10 rounded-lg">
-                        <span className="text-primary font-bold text-xs">2</span>
+                      <div className="p-1 bg-green-500/10 rounded-lg">
+                        <span className="text-green-500 font-bold text-xs">2</span>
                   </div>
                   <div>
-                        <h3 className="font-semibold text-foreground text-xs md:text-sm">Enter Principal Amount</h3>
-                        <p className="text-xs text-muted-foreground">Input your initial investment amount</p>
+                        <h3 className="font-semibold text-green-500 text-xs md:text-sm">Enter Principal Amount</h3>
+                        <p className="text-xs text-slate-400">Input your initial investment amount</p>
                   </div>
                 </div>
                     <div className="flex items-start gap-2">
-                      <div className="p-1 bg-primary/10 rounded-lg">
-                        <span className="text-primary font-bold text-xs">3</span>
+                      <div className="p-1 bg-green-500/10 rounded-lg">
+                        <span className="text-green-500 font-bold text-xs">3</span>
                   </div>
                   <div>
-                        <h3 className="font-semibold text-foreground text-xs md:text-sm">Set Time Period</h3>
-                        <p className="text-xs text-muted-foreground">Specify how long you plan to invest</p>
+                        <h3 className="font-semibold text-green-500 text-xs md:text-sm">Set Time Period</h3>
+                        <p className="text-xs text-slate-400">Specify how long you plan to invest</p>
                   </div>
                 </div>
                     <div className="flex items-start gap-2">
-                      <div className="p-1 bg-primary/10 rounded-lg">
-                        <span className="text-primary font-bold text-xs">4</span>
+                      <div className="p-1 bg-green-500/10 rounded-lg">
+                        <span className="text-green-500 font-bold text-xs">4</span>
                   </div>
                   <div>
-                        <h3 className="font-semibold text-foreground text-xs md:text-sm">Choose Compounding Frequency</h3>
-                        <p className="text-xs text-muted-foreground">Select how often interest compounds</p>
+                        <h3 className="font-semibold text-green-500 text-xs md:text-sm">Choose Compounding Frequency</h3>
+                        <p className="text-xs text-slate-400">Select how often interest compounds</p>
                   </div>
                 </div>
                     <div className="flex items-start gap-2">
-                      <div className="p-1 bg-primary/10 rounded-lg">
-                        <span className="text-primary font-bold text-xs">5</span>
+                      <div className="p-1 bg-green-500/10 rounded-lg">
+                        <span className="text-green-500 font-bold text-xs">5</span>
                   </div>
                   <div>
-                        <h3 className="font-semibold text-foreground text-xs md:text-sm">Get Comprehensive Results</h3>
-                        <p className="text-xs text-muted-foreground">View detailed breakdown and yearly analysis</p>
+                        <h3 className="font-semibold text-green-500 text-xs md:text-sm">Get Comprehensive Results</h3>
+                        <p className="text-xs text-slate-400">View detailed breakdown and yearly analysis</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Supported Countries */}
-                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                    <div className="p-1.5 bg-primary/10 rounded-lg">
-                      <Globe className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <Globe className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                 </div>
                 Supported Countries & Interest Rates
               </h2>
@@ -430,20 +431,20 @@ export default function CompoundInterestPage() {
                   { country: "India", currency: "INR", rate: "8.5%", description: "RBI rates" },
                   { country: "Pakistan", currency: "PKR", rate: "15.0%", description: "SBP rates" }
                 ].map((country, index) => (
-                      <div key={index} className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h3 className="font-semibold text-foreground text-xs md:text-sm">{country.country}</h3>
-                        <p className="text-xs text-muted-foreground mb-1">{country.currency} • {country.rate}</p>
-                        <p className="text-xs text-primary">{country.description}</p>
+                      <div key={index} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
+                        <h3 className="font-semibold text-green-500 text-xs md:text-sm">{country.country}</h3>
+                        <p className="text-xs text-slate-400 mb-1">{country.currency} • {country.rate}</p>
+                        <p className="text-xs text-orange-400">{country.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
                 {/* Compound Interest Types */}
-                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                    <div className="p-1.5 bg-primary/10 rounded-lg">
-                      <Calculator className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <Calculator className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                     </div>
                     Compound Interest Calculation Types
                   </h2>
@@ -459,64 +460,64 @@ export default function CompoundInterestPage() {
                       { type: "Bank Interest Calculator", icon: Award, desc: "Calculate bank interest rates", example: "Bank account interest" },
                       { type: "Interest Compounding Calculator", icon: BookOpen, desc: "Calculate compounding frequency", example: "Compounding period analysis" }
                     ].map(({ type, icon: Icon, desc, example }) => (
-                      <div key={type} className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
+                      <div key={type} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
                         <div className="flex items-center gap-1.5 mb-1">
-                          <Icon className="h-3 w-3 text-primary" />
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm">{type}</h3>
+                          <Icon className="h-3 w-3 text-green-500" />
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">{type}</h3>
                         </div>
-                        <p className="text-xs text-muted-foreground mb-1">{desc}</p>
-                        <p className="text-xs text-primary font-mono bg-primary/10 px-1.5 py-0.5 rounded">{example}</p>
+                        <p className="text-xs text-slate-400 mb-1">{desc}</p>
+                        <p className="text-xs text-orange-400 font-mono bg-orange-500/10 px-1.5 py-0.5 rounded">{example}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Advanced Features */}
-                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                    <div className="p-1.5 bg-primary/10 rounded-lg">
-                      <TrendingUp className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <TrendingUp className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                 </div>
                 Advanced Calculation Features
               </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-primary/10 rounded-lg">
-                          <BarChart3 className="h-3 w-3 text-primary" />
+                        <div className="p-1 bg-green-500/10 rounded-lg">
+                          <BarChart3 className="h-3 w-3 text-green-500" />
                         </div>
                 <div>
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm">Yearly Breakdown</h3>
-                          <p className="text-xs text-muted-foreground">Detailed year-by-year growth analysis</p>
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Yearly Breakdown</h3>
+                          <p className="text-xs text-slate-400">Detailed year-by-year growth analysis</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-primary/10 rounded-lg">
-                          <PieChart className="h-3 w-3 text-primary" />
+                        <div className="p-1 bg-green-500/10 rounded-lg">
+                          <PieChart className="h-3 w-3 text-green-500" />
                 </div>
                 <div>
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm">Effective Rate</h3>
-                          <p className="text-xs text-muted-foreground">Calculate effective annual interest rate</p>
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Effective Rate</h3>
+                          <p className="text-xs text-slate-400">Calculate effective annual interest rate</p>
                 </div>
               </div>
             </div>
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-primary/10 rounded-lg">
-                          <Target className="h-3 w-3 text-primary" />
+                        <div className="p-1 bg-green-500/10 rounded-lg">
+                          <Target className="h-3 w-3 text-green-500" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm">Custom Rates</h3>
-                          <p className="text-xs text-muted-foreground">Override with your own interest rates</p>
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Custom Rates</h3>
+                          <p className="text-xs text-slate-400">Override with your own interest rates</p>
                         </div>
                 </div>
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-primary/10 rounded-lg">
-                          <Building className="h-3 w-3 text-primary" />
+                        <div className="p-1 bg-green-500/10 rounded-lg">
+                          <Building className="h-3 w-3 text-green-500" />
                 </div>
                         <div>
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm">Educational Content</h3>
-                          <p className="text-xs text-muted-foreground">Learn about compound interest concepts</p>
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Educational Content</h3>
+                          <p className="text-xs text-slate-400">Learn about compound interest concepts</p>
                 </div>
                 </div>
               </div>
@@ -524,14 +525,14 @@ export default function CompoundInterestPage() {
           </div>
 
                 {/* FAQ Section */}
-                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                    <div className="p-1.5 bg-primary/10 rounded-lg">
-                      <Info className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <Info className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                   </div>
                     Frequently Asked Questions
                   </h2>
-                  <div className="space-y-3">
+                  <div className="space-y-2 md:space-y-3">
                     {[
                       {
                         question: "What is compound interest and how does it work?",
@@ -542,16 +543,16 @@ export default function CompoundInterestPage() {
                         answer: "Use the formula: A = P(1 + r/n)^(nt), where A = future value, P = principal amount, r = annual interest rate (as decimal), n = compounding frequency per year, and t = time in years. For example, $10,000 at 5% compounded monthly for 10 years = $10,000(1 + 0.05/12)^(12×10) = $16,470.09."
                       },
                       {
-                        question: "What is the Rule of 72 and how do you use it?",
-                        answer: "The Rule of 72 estimates how long it takes for an investment to double. Divide 72 by the annual interest rate. For example, at 8% interest: 72 ÷ 8 = 9 years to double. At 6%: 72 ÷ 6 = 12 years to double."
+                        question: "How does the Rule of 72 help estimate investment doubling time?",
+                        answer: "The Rule of 72 provides a quick way to estimate when your investment will double in value. Simply divide 72 by your annual interest rate percentage. For instance, at an 8% annual rate: 72 divided by 8 equals approximately 9 years for your money to double. With a 6% rate: 72 divided by 6 gives you about 12 years."
                       },
                       {
-                        question: "How does compounding frequency affect investment growth?",
-                        answer: "More frequent compounding leads to higher returns. Daily compounding yields more than monthly, which yields more than annual compounding. For example, at 5% annual rate: annually = 5.00% effective rate, monthly = 5.12% effective rate, daily = 5.13% effective rate."
+                        question: "Why does more frequent compounding increase investment returns?",
+                        answer: "Higher compounding frequencies accelerate investment growth by applying interest calculations more frequently throughout each year. At identical annual rates, investments compound faster when interest is added monthly versus annually, and even faster with daily compounding. This frequency effect means your interest earns its own interest more often, creating accelerated wealth accumulation over time compared to less frequent compounding periods."
                       },
                       {
-                        question: "What's the difference between compound interest and simple interest?",
-                        answer: "Simple interest is calculated only on the original principal throughout the investment period. Compound interest is calculated on the principal plus previously earned interest, leading to significantly higher returns over time due to 'interest on interest' effect."
+                        question: "What distinguishes compound interest from simple interest calculations?",
+                        answer: "Compound interest generates earnings on both your original investment principal and all previously earned interest, creating exponential growth patterns. Simple interest calculations apply the interest rate only to the initial principal amount throughout the entire investment term, resulting in linear growth. Over extended timeframes, this fundamental difference becomes substantial, with compound interest producing significantly higher final balances due to interest-on-interest accumulation."
                       },
                       {
                         question: "Can compound interest work against you with loans?",
@@ -574,19 +575,19 @@ export default function CompoundInterestPage() {
                         answer: "Key mistakes: 1) Starting too late - time is crucial for compound growth, 2) Inconsistent contributions - irregular investments reduce compounding power, 3) Withdrawing early - interrupts compound growth, 4) Ignoring inflation - consider purchasing power, 5) Not reinvesting dividends - let earnings compound for maximum growth."
                       }
                     ].map((faq, index) => (
-                      <div key={index} className="border border-border rounded-lg p-3 md:p-4">
-                        <h3 className="font-semibold text-foreground text-sm md:text-base mb-2">{faq.question}</h3>
-                        <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
+                      <div key={index} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
+                        <h3 className="font-semibold text-green-500 mb-1 text-xs md:text-sm">{faq.question}</h3>
+                        <p className="text-xs text-slate-400 leading-relaxed">{faq.answer}</p>
                 </div>
                     ))}
                 </div>
               </div>
 
                 {/* Related Tools Section */}
-                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                    <div className="p-1.5 bg-primary/10 rounded-lg">
-                      <Calculator className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <Calculator className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                   </div>
                     Related Financial & Investment Tools
                   </h2>
@@ -608,24 +609,16 @@ export default function CompoundInterestPage() {
                       <a
                         key={name}
                         href={href}
-                        className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors group"
+                        className="p-2 md:p-3 bg-black rounded-lg border border-slate-700 hover:bg-slate-800 hover:border-green-500/50 transition-colors group"
                       >
                         <div className="flex items-center gap-2 mb-1">
-                          <Icon className="h-3 w-3 text-primary group-hover:text-primary/80" />
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm group-hover:text-primary">{name}</h3>
+                          <Icon className="h-3 w-3 text-green-500" />
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">{name}</h3>
                   </div>
-                        <p className="text-xs text-muted-foreground">{desc}</p>
+                        <p className="text-xs text-slate-400 group-hover:text-slate-300">{desc}</p>
                       </a>
                     ))}
                 </div>
-              </div>
-
-                {/* Mobile/Tablet Bottom AdSpace */}
-                <div className="my-8 lg:hidden">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
                 </div>
               </div>
 
@@ -634,16 +627,9 @@ export default function CompoundInterestPage() {
                 <div className="sticky top-32 space-y-6">
                   <div>
                     <div className="text-center mb-2">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                      <span className="text-xs text-slate-400 font-medium">Advertisement</span>
                     </div>
-                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-                  </div>
-
-                  <div>
-                    <div className="text-center mb-2">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                </div>
-                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
+                    <AdSpace slot="sidebar" className="w-full h-80 border border-slate-700 rounded-xl shadow-sm bg-black" />
                   </div>
                 </div>
               </div>

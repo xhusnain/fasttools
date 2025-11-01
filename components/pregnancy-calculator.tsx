@@ -336,21 +336,21 @@ Next Milestone: ${result.nextMilestone}`
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Input Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Calculator className="h-5 w-5 text-blue-500" />
+      <Card className="bg-black border-slate-700">
+        <CardHeader className="pb-2 px-3 sm:px-6">
+          <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg">
+            <Calculator className="h-4 w-4 text-orange-500" />
             Pregnancy Calculator
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="space-y-4">
-            <div>
-              <Label htmlFor="method">Calculation Method</Label>
+        <CardContent className="space-y-4 px-3 sm:px-6">
+          <div className="space-y-3">
+            <div className="space-y-1">
+              <Label htmlFor="method" className="text-[11px] font-medium text-green-500">Calculation Method</Label>
               <Select value={calculationMethod} onValueChange={(value: "dueDate" | "lmp" | "ultrasound" | "conception" | "ivf") => setCalculationMethod(value)}>
-                <SelectTrigger>
+                <SelectTrigger className="h-8 text-xs border-slate-700 bg-black text-slate-200">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -364,118 +364,127 @@ Next Milestone: ${result.nextMilestone}`
             </div>
 
             {calculationMethod === "dueDate" && (
-              <div>
-                <Label htmlFor="dueDate">Your Due Date</Label>
+              <div className="space-y-1">
+                <Label htmlFor="dueDate" className="text-[11px] font-medium text-green-500">Your Due Date</Label>
                 <Input
                   id="dueDate"
                   type="date"
                   value={dueDate}
                   onChange={(e) => setDueDate(e.target.value)}
+                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                 />
               </div>
             )}
 
             {calculationMethod === "lmp" && (
-              <div>
-                <Label htmlFor="lmpDate">First Day of Last Menstrual Period</Label>
+              <div className="space-y-1">
+                <Label htmlFor="lmpDate" className="text-[11px] font-medium text-green-500">First Day of Last Menstrual Period</Label>
                 <Input
                   id="lmpDate"
                   type="date"
                   value={lmpDate}
                   onChange={(e) => setLmpDate(e.target.value)}
+                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                 />
               </div>
             )}
 
             {calculationMethod === "ultrasound" && (
-              <div className="space-y-4">
-                <div>
-                  <Label htmlFor="ultrasoundDate">Ultrasound Date</Label>
+              <div className="space-y-3">
+                <div className="space-y-1">
+                  <Label htmlFor="ultrasoundDate" className="text-[11px] font-medium text-green-500">Ultrasound Date</Label>
                   <Input
                     id="ultrasoundDate"
                     type="date"
                     value={ultrasoundDate}
                     onChange={(e) => setUltrasoundDate(e.target.value)}
+                    className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                   />
                 </div>
-                <div>
-                  <Label htmlFor="gestationalAge">Gestational Age at Ultrasound (weeks)</Label>
+                <div className="space-y-1">
+                  <Label htmlFor="gestationalAge" className="text-[11px] font-medium text-green-500">Gestational Age at Ultrasound (weeks)</Label>
                   <Input
                     id="gestationalAge"
                     type="number"
                     placeholder="e.g., 12"
                     value={gestationalAge}
                     onChange={(e) => setGestationalAge(e.target.value)}
+                    className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                   />
                 </div>
               </div>
             )}
 
             {calculationMethod === "conception" && (
-              <div>
-                <Label htmlFor="conceptionDate">Conception Date</Label>
+              <div className="space-y-1">
+                <Label htmlFor="conceptionDate" className="text-[11px] font-medium text-green-500">Conception Date</Label>
                 <Input
                   id="conceptionDate"
                   type="date"
                   value={conceptionDate}
                   onChange={(e) => setConceptionDate(e.target.value)}
+                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                 />
               </div>
             )}
 
             {calculationMethod === "ivf" && (
-              <div>
-                <Label htmlFor="ivfDate">IVF Transfer Date</Label>
+              <div className="space-y-1">
+                <Label htmlFor="ivfDate" className="text-[11px] font-medium text-green-500">IVF Transfer Date</Label>
                 <Input
                   id="ivfDate"
                   type="date"
                   value={ivfDate}
                   onChange={(e) => setIvfDate(e.target.value)}
+                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                 />
               </div>
             )}
 
             {/* Weight and Height for BMI calculation */}
-            <div className="grid md:grid-cols-3 gap-4">
-              <div>
-                <Label htmlFor="prePregnancyWeight">Pre-Pregnancy Weight (kg)</Label>
+            <div className="grid md:grid-cols-3 gap-3">
+              <div className="space-y-1">
+                <Label htmlFor="prePregnancyWeight" className="text-[11px] font-medium text-green-500">Pre-Pregnancy Weight (kg)</Label>
                 <Input
                   id="prePregnancyWeight"
                   type="number"
                   placeholder="e.g., 65"
                   value={prePregnancyWeight}
                   onChange={(e) => setPrePregnancyWeight(e.target.value)}
+                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                 />
               </div>
-              <div>
-                <Label htmlFor="currentWeight">Current Weight (kg)</Label>
+              <div className="space-y-1">
+                <Label htmlFor="currentWeight" className="text-[11px] font-medium text-green-500">Current Weight (kg)</Label>
                 <Input
                   id="currentWeight"
                   type="number"
                   placeholder="e.g., 68"
                   value={currentWeight}
                   onChange={(e) => setCurrentWeight(e.target.value)}
+                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                 />
               </div>
-              <div>
-                <Label htmlFor="height">Height (cm)</Label>
+              <div className="space-y-1">
+                <Label htmlFor="height" className="text-[11px] font-medium text-green-500">Height (cm)</Label>
                 <Input
                   id="height"
                   type="number"
                   placeholder="e.g., 165"
                   value={height}
                   onChange={(e) => setHeight(e.target.value)}
+                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
                 />
               </div>
             </div>
 
             <div className="flex gap-2">
-              <Button onClick={calculatePregnancy} className="flex-1">
-                <Calculator className="mr-2 h-4 w-4" />
-                Calculate Pregnancy Schedule
+              <Button onClick={calculatePregnancy} className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white">
+                <Calculator className="mr-1 h-3 w-3" />
+                Calculate
               </Button>
-              <Button variant="outline" onClick={clearAll}>
-                Clear All
+              <Button variant="outline" onClick={clearAll} className="h-9 text-xs border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+                Clear
               </Button>
             </div>
           </div>
@@ -768,21 +777,21 @@ Next Milestone: ${result.nextMilestone}`
                   Medical Disclaimer
                 </p>
                 <p className="text-blue-700 dark:text-blue-300">
-                  This calculator provides estimates only. Always consult with your healthcare provider for accurate pregnancy dating and medical advice.
+                  The information shown here is approximate and intended for informational purposes. For precise timeline calculations and health guidance, please speak directly with your medical professional.
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="text-sm text-muted-foreground space-y-2">
+          <div className="text-xs text-slate-400 space-y-2">
             <p>
-              <strong>Due Date:</strong> The estimated date when your baby is expected to be born, typically 40 weeks after your last menstrual period.
+              <strong className="text-green-500">Baby's Anticipated Arrival:</strong> This shows the projected birth date, usually calculated as roughly 280 days (or about nine calendar months) from when your last period started.
             </p>
             <p>
-              <strong>Gestational Age:</strong> The age of the pregnancy calculated from the first day of the last menstrual period.
+              <strong className="text-green-500">How Far Along:</strong> Measured from day one of your last period start date, matching the standard method doctors use to track pregnancy advancement.
             </p>
             <p>
-              <strong>Weight Gain:</strong> Recommendations are based on pre-pregnancy BMI and Institute of Medicine guidelines.
+              <strong className="text-green-500">Healthy Weight Ranges:</strong> These suggestions factor in your body mass index from before conception and match guidelines from recognized health organizations.
             </p>
           </div>
         </CardContent>

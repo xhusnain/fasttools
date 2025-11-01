@@ -390,22 +390,22 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-black rounded-xl p-3 sm:p-4 md:p-6 w-full overflow-hidden">
       {/* Main Calculator */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Scale className="h-5 w-5 text-blue-500" />
-            Advanced Body Fat Calculator
+      <Card className="bg-black border-slate-700 w-full overflow-hidden">
+        <CardHeader className="px-3 sm:px-4 md:px-6 pb-3">
+          <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
+            <Scale className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500 flex-shrink-0" />
+            <span className="break-words">Advanced Body Fat Calculator</span>
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-4 sm:space-y-6 px-3 sm:px-4 md:px-6">
           {/* Unit System Selection */}
-          <div className="flex gap-4">
-            <div className="flex-1">
-              <Label>Unit System</Label>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full overflow-hidden">
+            <div className="flex-1 space-y-2 min-w-0 w-full sm:w-auto">
+              <Label className="text-green-500 text-xs sm:text-sm">Unit System</Label>
               <Select value={unitSystem} onValueChange={(value: "metric" | "imperial") => setUnitSystem(value)}>
-                <SelectTrigger>
+                <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -414,10 +414,10 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                 </SelectContent>
               </Select>
             </div>
-            <div className="flex-1">
-              <Label>Gender</Label>
+            <div className="flex-1 space-y-2 min-w-0 w-full sm:w-auto">
+              <Label className="text-green-500 text-xs sm:text-sm">Gender</Label>
               <Select value={gender} onValueChange={(value: "male" | "female") => setGender(value)}>
-                <SelectTrigger>
+                <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -429,9 +429,9 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
           </div>
 
           {/* Input Fields */}
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="age">Age</Label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
+            <div className="space-y-2 w-full min-w-0">
+              <Label htmlFor="age" className="text-green-500 text-xs sm:text-sm">Age</Label>
               <Input
                 id="age"
                 type="number"
@@ -440,89 +440,95 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                 onChange={(e) => setAge(e.target.value)}
                 min="15"
                 max="80"
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
               />
             </div>
-            <div>
-              <Label htmlFor="weight">Weight</Label>
+            <div className="space-y-2 w-full min-w-0">
+              <Label htmlFor="weight" className="text-green-500 text-xs sm:text-sm">Weight</Label>
               <Input
                 id="weight"
                 type="number"
                 placeholder={unitSystem === "metric" ? "70" : "154"}
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
               />
-              <p className="text-xs text-muted-foreground mt-1">
+              <p className="text-xs text-slate-400 mt-1">
                 {unitSystem === "metric" ? "kg" : "lbs"}
               </p>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="height">Height</Label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
+            <div className="space-y-2 w-full min-w-0">
+              <Label htmlFor="height" className="text-green-500 text-xs sm:text-sm">Height</Label>
               <Input
                 id="height"
                 type="number"
                 placeholder={unitSystem === "metric" ? "178" : "5.9"}
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
               />
-              <p className="text-xs text-muted-foreground mt-1">
+              <p className="text-xs text-slate-400 mt-1 break-words">
                 {unitSystem === "metric" ? "cm" : "ft (e.g., 5.9 for 5'9\")"}
               </p>
             </div>
-            <div>
-              <Label htmlFor="neck">Neck Circumference</Label>
+            <div className="space-y-2 w-full min-w-0">
+              <Label htmlFor="neck" className="text-green-500 text-xs sm:text-sm">Neck Circumference</Label>
               <Input
                 id="neck"
                 type="number"
                 placeholder={unitSystem === "metric" ? "50" : "19.7"}
                 value={neck}
                 onChange={(e) => setNeck(e.target.value)}
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
               />
-              <p className="text-xs text-muted-foreground mt-1">
+              <p className="text-xs text-slate-400 mt-1">
                 {unitSystem === "metric" ? "cm" : "inches"}
               </p>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="waist">Waist Circumference</Label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
+            <div className="space-y-2 w-full min-w-0">
+              <Label htmlFor="waist" className="text-green-500 text-xs sm:text-sm">Waist Circumference</Label>
               <Input
                 id="waist"
                 type="number"
                 placeholder={unitSystem === "metric" ? "96" : "37.8"}
                 value={waist}
                 onChange={(e) => setWaist(e.target.value)}
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
               />
-              <p className="text-xs text-muted-foreground mt-1">
+              <p className="text-xs text-slate-400 mt-1">
                 {unitSystem === "metric" ? "cm" : "inches"}
               </p>
             </div>
             {gender === "female" && (
-              <div>
-                <Label htmlFor="hip">Hip Circumference</Label>
+              <div className="space-y-2 w-full min-w-0">
+                <Label htmlFor="hip" className="text-green-500 text-xs sm:text-sm">Hip Circumference</Label>
                 <Input
                   id="hip"
                   type="number"
                   placeholder={unitSystem === "metric" ? "102" : "40.2"}
                   value={hip}
                   onChange={(e) => setHip(e.target.value)}
+                  className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
                 />
-                <p className="text-xs text-muted-foreground mt-1">
+                <p className="text-xs text-slate-400 mt-1">
                   {unitSystem === "metric" ? "cm" : "inches"} (Required for women)
                 </p>
               </div>
             )}
           </div>
 
-          <div className="flex gap-2">
-            <Button onClick={calculateBodyFat} className="flex-1">
+          <div className="flex flex-col sm:flex-row gap-2 w-full">
+            <Button onClick={calculateBodyFat} className="flex-1 w-full sm:w-auto text-sm sm:text-base">
               <Calculator className="mr-2 h-4 w-4" />
               Calculate Body Fat
             </Button>
-            <Button variant="outline" onClick={clearAll}>
+            <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
               Clear All
             </Button>
           </div>
@@ -531,49 +537,49 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
 
       {/* Results Section */}
       {result && (
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {/* Main Results */}
-          <Card>
+          <Card className="bg-black border-slate-700">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Target className="h-5 w-5 text-green-500" />
+              <CardTitle className="flex items-center gap-2 text-orange-500">
+                <Target className="h-5 w-5 text-orange-500" />
                 Body Fat Analysis Results
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">U.S. Navy Method</Label>
-                  <div className="text-3xl font-bold text-green-600">
+                  <Label className="text-sm font-medium text-slate-300">U.S. Navy Method</Label>
+                  <div className="text-2xl sm:text-3xl font-bold text-green-400">
                     {result.navyMethod.percentage}%
                   </div>
-                  <Badge variant="secondary" className="text-sm">
+                  <Badge variant="secondary" className="text-sm bg-slate-700 text-slate-200">
                     {result.navyMethod.category}
                   </Badge>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">BMI Method</Label>
-                  <div className="text-3xl font-bold text-blue-600">
+                  <Label className="text-sm font-medium text-slate-300">BMI Method</Label>
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-400">
                     {result.bmiMethod.percentage}%
                   </div>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-slate-400">
                     BMI: {result.bmiMethod.bmi}
                   </p>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-4 pt-4 border-t">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-700">
                 <div className="text-center">
-                  <div className="text-sm text-muted-foreground">Fat Mass</div>
-                  <div className="text-lg font-semibold text-red-600">{result.navyMethod.fatMass} kg</div>
+                  <div className="text-sm text-slate-400">Fat Mass</div>
+                  <div className="text-lg font-semibold text-red-400">{result.navyMethod.fatMass} kg</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-sm text-muted-foreground">Lean Mass</div>
-                  <div className="text-lg font-semibold text-blue-600">{result.navyMethod.leanMass} kg</div>
+                  <div className="text-sm text-slate-400">Lean Mass</div>
+                  <div className="text-lg font-semibold text-blue-400">{result.navyMethod.leanMass} kg</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-sm text-muted-foreground">Ideal Body Fat</div>
-                  <div className="text-lg font-semibold text-purple-600">{result.idealBodyFat.percentage}%</div>
+                  <div className="text-sm text-slate-400">Ideal Body Fat</div>
+                  <div className="text-lg font-semibold text-purple-400">{result.idealBodyFat.percentage}%</div>
                 </div>
               </div>
 
@@ -587,21 +593,21 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
           </Card>
 
           {/* Body Fat Categories */}
-          <Card>
+          <Card className="bg-black border-slate-700">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <BarChart3 className="h-5 w-5 text-purple-500" />
+              <CardTitle className="flex items-center gap-2 text-orange-500">
+                <BarChart3 className="h-5 w-5 text-orange-500" />
                 Body Fat Categories
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
                 {bodyFatCategories.map((category, index) => (
-                  <div key={index} className="flex justify-between items-center p-3 bg-muted rounded-lg">
+                  <div key={index} className="flex justify-between items-center p-3 bg-black border border-slate-700 rounded-lg">
                     <div>
-                      <span className="font-medium">{category.name}</span>
-                      <p className="text-sm text-muted-foreground">{category.description}</p>
-                      <p className="text-xs text-muted-foreground">{category.range}</p>
+                      <span className="font-medium text-slate-200">{category.name}</span>
+                      <p className="text-sm text-slate-300">{category.description}</p>
+                      <p className="text-xs text-slate-400">{category.range}</p>
                     </div>
                     <div className={`w-4 h-4 rounded-full ${category.color}`}></div>
                   </div>
@@ -612,19 +618,19 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
 
           {/* Health Risks */}
           {result.healthRisks.length > 0 && (
-            <Card>
+            <Card className="bg-black border-slate-700">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <AlertCircle className="h-5 w-5 text-red-500" />
+                <CardTitle className="flex items-center gap-2 text-orange-500">
+                  <AlertCircle className="h-5 w-5 text-orange-500" />
                   Health Considerations
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
                   {result.healthRisks.map((risk, index) => (
-                    <div key={index} className="flex items-start gap-2 p-3 bg-red-50 dark:bg-red-950/20 rounded-lg border border-red-200 dark:border-red-800">
-                      <AlertCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-red-700 dark:text-red-300">{risk}</span>
+                    <div key={index} className="flex items-start gap-2 p-3 bg-black border border-red-800 rounded-lg">
+                      <AlertCircle className="h-4 w-4 text-red-400 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-red-300">{risk}</span>
                     </div>
                   ))}
                 </div>
@@ -633,44 +639,44 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
           )}
 
           {/* Recommendations */}
-          <Card>
+          <Card className="bg-black border-slate-700">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Heart className="h-5 w-5 text-pink-500" />
+              <CardTitle className="flex items-center gap-2 text-orange-500">
+                <Heart className="h-5 w-5 text-orange-500" />
                 Personalized Recommendations
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-green-600">Nutrition</h4>
+                  <h4 className="font-semibold mb-3 text-green-500">Nutrition</h4>
                   <ul className="space-y-2 text-sm">
                     {result.recommendations.nutrition.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span>{rec}</span>
+                        <span className="text-slate-300">{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-blue-600">Exercise</h4>
+                  <h4 className="font-semibold mb-3 text-green-500">Exercise</h4>
                   <ul className="space-y-2 text-sm">
                     {result.recommendations.exercise.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                        <span>{rec}</span>
+                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-300">{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-purple-600">Lifestyle</h4>
+                  <h4 className="font-semibold mb-3 text-green-500">Lifestyle</h4>
                   <ul className="space-y-2 text-sm">
                     {result.recommendations.lifestyle.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-purple-500 mt-0.5 flex-shrink-0" />
-                        <span>{rec}</span>
+                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-300">{rec}</span>
                       </li>
                     ))}
                   </ul>
@@ -680,33 +686,33 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
           </Card>
 
           {/* Improvement Plan */}
-          <Card>
+          <Card className="bg-black border-slate-700">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Trophy className="h-5 w-5 text-yellow-500" />
+              <CardTitle className="flex items-center gap-2 text-orange-500">
+                <Trophy className="h-5 w-5 text-orange-500" />
                 Improvement Plan
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-orange-600">Short Term (1-3 months)</h4>
+                  <h4 className="font-semibold mb-3 text-green-500">Short Term (1-3 months)</h4>
                   <ul className="space-y-2 text-sm">
                     {result.improvementPlan.shortTerm.map((goal, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <Timer className="h-4 w-4 text-orange-500 mt-0.5 flex-shrink-0" />
-                        <span>{goal}</span>
+                        <Timer className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-300">{goal}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-blue-600">Long Term (3-12 months)</h4>
+                  <h4 className="font-semibold mb-3 text-green-500">Long Term (3-12 months)</h4>
                   <ul className="space-y-2 text-sm">
                     {result.improvementPlan.longTerm.map((goal, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <Target className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                        <span>{goal}</span>
+                        <Target className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-300">{goal}</span>
                       </li>
                     ))}
                   </ul>
@@ -719,22 +725,22 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card>
+        <Card className="bg-black border-slate-700">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Clock className="h-5 w-5 text-gray-500" />
+            <CardTitle className="flex items-center gap-2 text-orange-500">
+              <Clock className="h-5 w-5 text-orange-500" />
               Recent Calculations
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
               {history.map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                <div key={index} className="flex items-center justify-between p-3 bg-black border border-slate-700 rounded-lg">
                   <div className="space-y-1">
-                    <div className="font-medium">
+                    <div className="font-medium text-slate-200">
                       Navy: {item.navyMethod.percentage}% ({item.navyMethod.category})
                     </div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-sm text-slate-400">
                       BMI: {item.bmiMethod.percentage}% | Fat Mass: {item.navyMethod.fatMass} kg
                     </div>
                   </div>
@@ -753,40 +759,40 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
       )}
 
       {/* Information Section */}
-      <Card>
+      <Card className="bg-black border-slate-700">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Info className="h-5 w-5 text-blue-500" />
+          <CardTitle className="flex items-center gap-2 text-orange-500">
+            <Info className="h-5 w-5 text-orange-500" />
             Body Fat Calculator Features
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+          <div className="p-4 bg-black border border-slate-700 rounded-lg">
             <div className="flex items-start gap-2">
-              <Info className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+              <Info className="h-4 w-4 text-orange-500 mt-0.5 flex-shrink-0" />
               <div className="text-sm">
-                <p className="font-medium text-blue-800 dark:text-blue-200 mb-1">
+                <p className="font-medium text-orange-500 mb-1">
                   Professional Body Fat Analysis
                 </p>
-                <p className="text-blue-700 dark:text-blue-300">
+                <p className="text-slate-300">
                   This calculator uses the U.S. Navy method and BMI method to provide accurate body fat percentage estimates. Results include fat mass, lean mass, ideal body fat, and personalized recommendations for optimal health.
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="text-sm text-muted-foreground space-y-2">
+          <div className="text-sm text-slate-300 space-y-2">
             <p>
-              <strong>U.S. Navy Method:</strong> Most accurate for general population using circumference measurements.
+              <strong className="text-orange-500">U.S. Navy Method:</strong> Most accurate for general population using circumference measurements.
             </p>
             <p>
-              <strong>BMI Method:</strong> Alternative calculation using BMI and age for body fat estimation.
+              <strong className="text-orange-500">BMI Method:</strong> Alternative calculation using BMI and age for body fat estimation.
             </p>
             <p>
-              <strong>Body Fat Categories:</strong> Essential fat, athletes, fitness, average, and obese ranges.
+              <strong className="text-orange-500">Body Fat Categories:</strong> Essential fat, athletes, fitness, average, and obese ranges.
             </p>
             <p>
-              <strong>Health Analysis:</strong> Personalized recommendations based on your body fat percentage and health goals.
+              <strong className="text-orange-500">Health Analysis:</strong> Personalized recommendations based on your body fat percentage and health goals.
             </p>
           </div>
         </CardContent>

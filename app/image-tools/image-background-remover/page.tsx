@@ -774,50 +774,50 @@ export default function ImageBackgroundRemoverPage() {
                                 </h2>
                                 
                                 <div className="space-y-4 sm:space-y-6">
-                                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
-                                        <h3 className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">How accurate is the background removal?</h3>
+                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How accurate is the background removal?</h3>
                                         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                                             Our background remover achieves 95%+ accuracy with clear, high-resolution images. For best results, ensure your image has a good contrast between the subject and the background. The advanced AI handles most complexities automatically.
                                         </p>
                                     </div>
 
-                                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
-                                        <h3 className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">What image formats are supported?</h3>
+                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">What image formats are supported?</h3>
                                         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                                             We support JPG, JPEG, PNG, and WebP for input. The output is a high-quality PNG with a transparent background to preserve the cutout perfectly. Processing occurs automatically upon upload.
                                         </p>
                                     </div>
 
-                                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
-                                        <h3 className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">Is my data secure when using the background remover?</h3>
+                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">Is my data secure when using the background remover?</h3>
                                         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                                             Yes, your data is completely secure. The background removal processes all images locally in your browser—your files never leave your device. We don't store, track, or transmit any of your images, ensuring maximum privacy.
                                         </p>
                                     </div>
 
-                                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
-                                        <h3 className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">How can I improve removal accuracy?</h3>
+                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How can I improve removal accuracy?</h3>
                                         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                                             Use high-resolution images with strong contrast between the subject and the background. Ensure the subject is clearly defined and not blurry. Our AI engine works best when the main subject is centered and well-lit.
                                         </p>
                                     </div>
 
-                                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
-                                        <h3 className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">How does this compare to Photoshop?</h3>
+                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How does this compare to Photoshop?</h3>
                                         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                                             Our tool offers similar high-quality results to Photoshop's AI selection tools, but with better automation and zero cost. You don't need complex software installation or manual editing—just upload and download your transparent PNG in seconds.
                                         </p>
                                     </div>
 
-                                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
-                                        <h3 className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">Is there a mobile app or desktop version?</h3>
+                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">Is there a mobile app or desktop version?</h3>
                                         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                                             Our web tool is fully compatible with mobile devices. Additionally, we offer specific desktop downloads (for Windows) and dedicated Android app versions for users who prefer offline or native application functionality, ensuring we cover all your needs.
                                         </p>
                                     </div>
 
-                                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
-                                        <h3 className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">How to remove background of pictures?</h3>
+                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to remove background of pictures?</h3>
                                         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
                                             To remove background of pictures, simply upload your image to our free online tool. Click the upload area, select your photo, and our AI will automatically detect and remove the background within seconds. Download the result as a transparent PNG file—it's that easy! No software installation or technical skills required.
                                         </p>
@@ -826,8 +826,8 @@ export default function ImageBackgroundRemoverPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
-                                        <h3 className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">How to remove background of picture in Photoshop?</h3>
+                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to remove background of picture in Photoshop?</h3>
                                         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
                                             To remove background of picture in Photoshop: 1) Open your image, 2) Select the "Quick Selection Tool" or "Magic Wand Tool" from the toolbar, 3) Click and drag over the subject to select it, 4) Go to "Select" menu and choose "Select and Mask" for refinement, 5) Adjust edge detection settings, 6) Click "OK" and delete the background layer or add a layer mask.
                                         </p>
@@ -836,8 +836,8 @@ export default function ImageBackgroundRemoverPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
-                                        <h3 className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">How to remove photo bg easily?</h3>
+                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to remove photo bg easily?</h3>
                                         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
                                             To remove photo bg (background) easily, use our one-click online tool. Simply drag and drop your image, and our AI instantly processes it. No complicated steps, no manual selection—just automatic background detection and removal. The entire process takes less than 5 seconds for most images.
                                         </p>
@@ -846,8 +846,8 @@ export default function ImageBackgroundRemoverPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
-                                        <h3 className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">How to use a photo background remover tool?</h3>
+                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to use a photo background remover tool?</h3>
                                         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
                                             Using our photo background remover tool is simple: Step 1 - Click the upload area or drag your image onto the page. Step 2 - Wait a few seconds while our AI automatically removes the background. Step 3 - Review the result with transparent background. Step 4 - Click "Download PNG" to save your image. That's it!
                                         </p>
@@ -856,8 +856,8 @@ export default function ImageBackgroundRemoverPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
-                                        <h3 className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">How to remove background of pic in Photoshop quickly?</h3>
+                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to remove background of pic in Photoshop quickly?</h3>
                                         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
                                             For quick background removal in Photoshop: Use the "Object Selection Tool" (Photoshop CC 2020+) and click on your subject—Photoshop's AI will automatically select it. Then go to Select &gt; Select and Mask, refine edges if needed, and output to a new layer with a mask. Alternatively, use the "Remove Background" button in the Properties panel when a layer is selected.
                                         </p>
@@ -866,8 +866,8 @@ export default function ImageBackgroundRemoverPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
-                                        <h3 className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">How to remove picture background in Photoshop 2020?</h3>
+                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-slate-200 dark:border-slate-700">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to remove picture background in Photoshop 2020?</h3>
                                         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
                                             In Photoshop 2020, Adobe introduced the "Remove Background" feature: 1) Open your image, 2) Ensure the layer is selected in the Layers panel, 3) Go to the Properties panel on the right, 4) Click the "Remove Background" button. Photoshop's AI (Adobe Sensei) will automatically detect and remove the background, creating a layer mask.
                                         </p>

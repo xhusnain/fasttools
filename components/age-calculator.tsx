@@ -5,7 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Calendar, Copy, Share2, Check, Clock, Heart, Gift, Target, Settings, Calculator, Sparkles } from "lucide-react"
-import { AdSpace } from "@/components/ad-space"
 import { LoadingSpinner } from "@/components/loading-spinner"
 
 interface AgeResult {
@@ -143,7 +142,7 @@ Next Birthday: ${result.nextBirthday}`
   return (
     <div className="space-y-8">
       {/* Today's Date Display */}
-      <Card className="shadow-lg border-border bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20">
+      <Card className="shadow-lg border-border bg-black">
         <CardContent className="p-6">
           <div className="flex items-center justify-center gap-3 text-sm">
             <div className="flex items-center gap-2">
@@ -167,7 +166,7 @@ Next Birthday: ${result.nextBirthday}`
         </CardContent>
       </Card>
 
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-black">
         <CardHeader className="pb-4">
           <CardTitle className="flex items-center gap-3 text-2xl">
             <div className="p-2 bg-primary/10 rounded-lg">
@@ -236,7 +235,7 @@ Next Birthday: ${result.nextBirthday}`
       </Card>
 
       {result && !isCalculating && (
-        <Card className="shadow-lg border-primary/20 animate-fade-in-up bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20">
+        <Card className="shadow-lg border-primary/20 animate-fade-in-up bg-black">
           <CardHeader className="pb-4">
             <CardTitle className="text-2xl flex items-center gap-3">
               <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
@@ -252,56 +251,56 @@ Next Birthday: ${result.nextBirthday}`
           <CardContent className="space-y-8">
             {/* Main Age Display */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-              <div className="text-center p-4 sm:p-6 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 border-2 border-blue-200 dark:border-blue-800 hover:shadow-lg transition-all duration-300">
-                <div className="text-3xl sm:text-4xl font-bold text-blue-600 mb-1 sm:mb-2">{result.years}</div>
-                <div className="text-xs sm:text-sm font-semibold text-blue-800 dark:text-blue-200">Years</div>
+              <div className="text-center p-4 sm:p-6 rounded-xl bg-black border-2 border-blue-800 hover:shadow-lg transition-all duration-300">
+                <div className="text-3xl sm:text-4xl font-bold text-blue-400 mb-1 sm:mb-2">{result.years}</div>
+                <div className="text-xs sm:text-sm font-semibold text-blue-200">Years</div>
               </div>
-              <div className="text-center p-4 sm:p-6 rounded-xl bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/30 dark:to-purple-900/30 border-2 border-purple-200 dark:border-purple-800 hover:shadow-lg transition-all duration-300">
-                <div className="text-3xl sm:text-4xl font-bold text-purple-600 mb-1 sm:mb-2">{result.months}</div>
-                <div className="text-xs sm:text-sm font-semibold text-purple-800 dark:text-purple-200">Months</div>
+              <div className="text-center p-4 sm:p-6 rounded-xl bg-black border-2 border-purple-800 hover:shadow-lg transition-all duration-300">
+                <div className="text-3xl sm:text-4xl font-bold text-purple-400 mb-1 sm:mb-2">{result.months}</div>
+                <div className="text-xs sm:text-sm font-semibold text-purple-200">Months</div>
               </div>
-              <div className="text-center p-4 sm:p-6 rounded-xl bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950/30 dark:to-green-900/30 border-2 border-green-200 dark:border-green-800 hover:shadow-lg transition-all duration-300">
-                <div className="text-3xl sm:text-4xl font-bold text-green-600 mb-1 sm:mb-2">{result.days}</div>
-                <div className="text-xs sm:text-sm font-semibold text-green-800 dark:text-green-200">Days</div>
+              <div className="text-center p-4 sm:p-6 rounded-xl bg-black border-2 border-green-800 hover:shadow-lg transition-all duration-300">
+                <div className="text-3xl sm:text-4xl font-bold text-green-400 mb-1 sm:mb-2">{result.days}</div>
+                <div className="text-xs sm:text-sm font-semibold text-green-200">Days</div>
               </div>
             </div>
 
             {/* Detailed Breakdown */}
-            <div className="space-y-4 p-4 sm:p-6 bg-white/50 dark:bg-slate-800/50 rounded-xl border-2 border-slate-200 dark:border-slate-700">
+            <div className="space-y-4 p-4 sm:p-6 bg-black rounded-xl border-2 border-slate-700">
               <h3 className="text-base sm:text-lg font-semibold text-center mb-3 sm:mb-4 flex items-center justify-center gap-2">
                 <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 Detailed Time Breakdown
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 rounded-lg border border-blue-200 dark:border-blue-800">
-                  <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Total Days</span>
-                  <span className="font-bold text-lg text-blue-900 dark:text-blue-100">{result.totalDays.toLocaleString()}</span>
+                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-blue-800">
+                  <span className="text-sm font-medium text-blue-300">Total Days</span>
+                  <span className="font-bold text-lg text-blue-100">{result.totalDays.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-950/30 dark:to-purple-900/30 rounded-lg border border-purple-200 dark:border-purple-800">
-                  <span className="text-sm font-medium text-purple-700 dark:text-purple-300">Total Weeks</span>
-                  <span className="font-bold text-lg text-purple-900 dark:text-purple-100">{result.weeks.toLocaleString()}</span>
+                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-purple-800">
+                  <span className="text-sm font-medium text-purple-300">Total Weeks</span>
+                  <span className="font-bold text-lg text-purple-100">{result.weeks.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-950/30 dark:to-green-900/30 rounded-lg border border-green-200 dark:border-green-800">
-                  <span className="text-sm font-medium text-green-700 dark:text-green-300">Total Hours</span>
-                  <span className="font-bold text-lg text-green-900 dark:text-green-100">{result.totalHours.toLocaleString()}</span>
+                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-green-800">
+                  <span className="text-sm font-medium text-green-300">Total Hours</span>
+                  <span className="font-bold text-lg text-green-100">{result.totalHours.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-950/30 dark:to-orange-900/30 rounded-lg border border-orange-200 dark:border-orange-800">
-                  <span className="text-sm font-medium text-orange-700 dark:text-orange-300">Total Minutes</span>
-                  <span className="font-bold text-lg text-orange-900 dark:text-orange-100">{result.totalMinutes.toLocaleString()}</span>
+                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-orange-800">
+                  <span className="text-sm font-medium text-orange-300">Total Minutes</span>
+                  <span className="font-bold text-lg text-orange-100">{result.totalMinutes.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-pink-50 to-pink-100 dark:from-pink-950/30 dark:to-pink-900/30 rounded-lg border border-pink-200 dark:border-pink-800">
-                  <span className="text-sm font-medium text-pink-700 dark:text-pink-300">Total Seconds</span>
-                  <span className="font-bold text-lg text-pink-900 dark:text-pink-100">{result.totalSeconds.toLocaleString()}</span>
+                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-pink-800">
+                  <span className="text-sm font-medium text-pink-300">Total Seconds</span>
+                  <span className="font-bold text-lg text-pink-100">{result.totalSeconds.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-indigo-50 to-indigo-100 dark:from-indigo-950/30 dark:to-indigo-900/30 rounded-lg border border-indigo-200 dark:border-indigo-800">
-                  <span className="text-sm font-medium text-indigo-700 dark:text-indigo-300">Decimal Years</span>
-                  <span className="font-bold text-lg text-indigo-900 dark:text-indigo-100">{result.decimalYears.toFixed(2)}</span>
+                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-indigo-800">
+                  <span className="text-sm font-medium text-indigo-300">Decimal Years</span>
+                  <span className="font-bold text-lg text-indigo-100">{result.decimalYears.toFixed(2)}</span>
                 </div>
               </div>
             </div>
 
             {/* Answer Summary */}
-            <div className="p-6 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl border-2 border-primary/20">
+            <div className="p-6 bg-black rounded-xl border-2 border-primary/20">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">
                   {result.years} Years, {result.months} Months, {result.days} Days
@@ -316,48 +315,48 @@ Next Birthday: ${result.nextBirthday}`
             </div>
 
             {/* Birthday Information */}
-            <div className="space-y-4 p-4 sm:p-6 bg-gradient-to-r from-pink-50 to-rose-50 dark:from-pink-950/20 dark:to-rose-950/20 rounded-xl border-2 border-pink-200 dark:border-pink-800">
+            <div className="space-y-4 p-4 sm:p-6 bg-black rounded-xl border-2 border-pink-800">
               <h3 className="text-base sm:text-lg font-semibold flex items-center gap-2 text-pink-700 dark:text-pink-300">
                 <Gift className="h-4 w-4 sm:h-5 sm:w-5" />
                 Birthday Information
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-pink-200 dark:border-pink-700">
-                    <span className="text-sm font-medium text-pink-700 dark:text-pink-300">Days until next birthday</span>
-                    <span className="font-bold text-sm text-pink-900 dark:text-pink-100">{result.daysUntilNextBirthday} days</span>
+                  <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-pink-700">
+                    <span className="text-sm font-medium text-pink-300">Days until next birthday</span>
+                    <span className="font-bold text-sm text-pink-100">{result.daysUntilNextBirthday} days</span>
                   </div>
-                  <div className="flex justify-between items-center p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-pink-200 dark:border-pink-700">
-                    <span className="text-sm font-medium text-pink-700 dark:text-pink-300">Age Last Birthday</span>
-                    <span className="font-bold text-sm text-pink-900 dark:text-pink-100">{result.ageLastBirthday}</span>
+                  <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-pink-700">
+                    <span className="text-sm font-medium text-pink-300">Age Last Birthday</span>
+                    <span className="font-bold text-sm text-pink-100">{result.ageLastBirthday}</span>
                   </div>
-                  <div className="flex justify-between items-center p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-pink-200 dark:border-pink-700">
-                    <span className="text-sm font-medium text-pink-700 dark:text-pink-300">Age Next Birthday</span>
-                    <span className="font-bold text-sm text-pink-900 dark:text-pink-100">{result.ageNextBirthday}</span>
+                  <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-pink-700">
+                    <span className="text-sm font-medium text-pink-300">Age Next Birthday</span>
+                    <span className="font-bold text-sm text-pink-100">{result.ageNextBirthday}</span>
                   </div>
                 </div>
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-pink-200 dark:border-pink-700">
-                    <span className="text-sm font-medium text-pink-700 dark:text-pink-300">Age Nearest Birthday</span>
-                    <span className="font-bold text-sm text-pink-900 dark:text-pink-100">{result.ageNearestBirthday}</span>
+                  <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-pink-700">
+                    <span className="text-sm font-medium text-pink-300">Age Nearest Birthday</span>
+                    <span className="font-bold text-sm text-pink-100">{result.ageNearestBirthday}</span>
                   </div>
-                  <div className="flex justify-between items-center p-3 bg-white/50 dark:bg-slate-800/50 rounded-lg border border-pink-200 dark:border-pink-700">
-                    <span className="text-sm font-medium text-pink-700 dark:text-pink-300">Age on Today</span>
-                    <span className="font-bold text-sm text-pink-900 dark:text-pink-100">{result.ageOnToday}</span>
+                  <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-pink-700">
+                    <span className="text-sm font-medium text-pink-300">Age on Today</span>
+                    <span className="font-bold text-sm text-pink-100">{result.ageOnToday}</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Shareable Link */}
-            <div className="space-y-4 p-4 sm:p-6 bg-gradient-to-r from-cyan-50 to-teal-50 dark:from-cyan-950/20 dark:to-teal-950/20 rounded-xl border-2 border-cyan-200 dark:border-cyan-800">
+            <div className="space-y-4 p-4 sm:p-6 bg-black rounded-xl border-2 border-cyan-800">
               <h3 className="text-base sm:text-lg font-semibold text-cyan-700 dark:text-cyan-300">Save this link to check age given DOB:</h3>
               <div className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="text"
                   value={result.shareableLink}
                   readOnly
-                  className="flex-1 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm border-2 border-cyan-200 dark:border-cyan-700 rounded-lg bg-white/50 dark:bg-slate-800/50 text-cyan-900 dark:text-cyan-100"
+                  className="flex-1 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm border-2 border-cyan-700 rounded-lg bg-black text-cyan-100"
                 />
                 <Button
                   onClick={copyLink}
@@ -404,8 +403,6 @@ Next Birthday: ${result.nextBirthday}`
           </CardContent>
         </Card>
       )}
-
-      <AdSpace slot="content" className="h-32" />
     </div>
   )
 }

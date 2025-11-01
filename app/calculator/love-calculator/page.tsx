@@ -824,12 +824,7 @@ export default function LoveCalculatorPage() {
           {/* Sidebar */}
           <div className="hidden lg:block space-y-3 xs:space-y-4 sm:space-y-6">
             <div className="sticky top-4 space-y-3 xs:space-y-4 sm:space-y-6">
-              {/* Sidebar Ad 1 */}
-              <div className="bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-xl p-2 xs:p-3 shadow-sm">
-                <AdSpace slot="sidebar" className="h-48 xs:h-56 sm:h-64 md:h-72 lg:h-80 xl:h-88 2xl:h-96" />
-              </div>
-              
-              {/* Sidebar Ad 2 */}
+              {/* Sidebar Ad */}
               <div className="bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-xl p-2 xs:p-3 shadow-sm">
                 <AdSpace slot="sidebar" className="h-48 xs:h-56 sm:h-64 md:h-72 lg:h-80 xl:h-88 2xl:h-96" />
               </div>

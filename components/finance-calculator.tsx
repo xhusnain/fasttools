@@ -361,78 +361,83 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 md:space-y-8 w-full overflow-hidden">
       {/* Main Calculator */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Calculator className="h-5 w-5 text-blue-500" />
-            Advanced Finance Calculator
+      <Card className="bg-black border-slate-700 w-full overflow-hidden">
+        <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+          <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+            <Calculator className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
+            <span className="text-orange-500">Advanced Finance Calculator</span>
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-4 sm:space-y-6 px-2 sm:px-3 md:px-4">
           {/* Input Fields */}
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="fv">FV (Future Value)</Label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <div className="space-y-1.5 w-full min-w-0">
+              <Label htmlFor="fv" className="text-green-500 text-xs sm:text-sm">FV (Future Value)</Label>
               <Input
                 id="fv"
                 type="number"
                 placeholder="0"
                 value={fv}
                 onChange={(e) => setFv(e.target.value)}
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
               />
             </div>
-            <div>
-              <Label htmlFor="pmt">PMT (Periodic Payment)</Label>
+            <div className="space-y-1.5 w-full min-w-0">
+              <Label htmlFor="pmt" className="text-green-500 text-xs sm:text-sm">PMT (Periodic Payment)</Label>
               <Input
                 id="pmt"
                 type="number"
                 placeholder="0"
                 value={pmt}
                 onChange={(e) => setPmt(e.target.value)}
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
               />
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="iy">I/Y (Interest per Year) %</Label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <div className="space-y-1.5 w-full min-w-0">
+              <Label htmlFor="iy" className="text-green-500 text-xs sm:text-sm">I/Y (Interest per Year) %</Label>
               <Input
                 id="iy"
                 type="number"
                 placeholder="0"
                 value={iy}
                 onChange={(e) => setIy(e.target.value)}
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
               />
             </div>
-            <div>
-              <Label htmlFor="n">N (# of Periods)</Label>
+            <div className="space-y-1.5 w-full min-w-0">
+              <Label htmlFor="n" className="text-green-500 text-xs sm:text-sm">N (# of Periods)</Label>
               <Input
                 id="n"
                 type="number"
                 placeholder="0"
                 value={n}
                 onChange={(e) => setN(e.target.value)}
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
               />
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="pv">PV (Present Value)</Label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <div className="space-y-1.5 w-full min-w-0">
+              <Label htmlFor="pv" className="text-green-500 text-xs sm:text-sm">PV (Present Value)</Label>
               <Input
                 id="pv"
                 type="number"
                 placeholder="0"
                 value={pv}
                 onChange={(e) => setPv(e.target.value)}
+                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
               />
             </div>
-            <div>
-              <Label htmlFor="paymentTiming">Payment Timing</Label>
+            <div className="space-y-1.5 w-full min-w-0">
+              <Label htmlFor="paymentTiming" className="text-green-500 text-xs sm:text-sm">Payment Timing</Label>
               <Select value={paymentTiming} onValueChange={setPaymentTiming}>
-                <SelectTrigger>
+                <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm h-9">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -443,12 +448,12 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
             </div>
           </div>
 
-          <div className="flex gap-2">
-            <Button onClick={calculateFinance} className="flex-1">
-              <Calculator className="mr-2 h-4 w-4" />
+          <div className="flex flex-col sm:flex-row gap-2 w-full">
+            <Button onClick={calculateFinance} className="w-full sm:w-auto text-sm sm:text-base">
+              <Calculator className="mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
               Calculate
             </Button>
-            <Button variant="outline" onClick={clearAll}>
+            <Button variant="outline" onClick={clearAll} className="w-full sm:w-auto text-sm sm:text-base">
               Clear All
             </Button>
           </div>
@@ -457,49 +462,49 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
 
       {/* Results Section */}
       {result && (
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {/* Main Results */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <DollarSign className="h-5 w-5 text-green-500" />
-                Finance Calculation Results
+          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+                <DollarSign className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
+                <span className="text-orange-500">Finance Calculation Results</span>
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label className="text-sm font-medium">Future Value (FV)</Label>
-                  <div className="text-3xl font-bold text-blue-600">
+            <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="space-y-1.5">
+                  <Label className="text-xs sm:text-sm text-green-500">Future Value (FV)</Label>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200">
                     ${result.fv.toFixed(2)}
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <Label className="text-sm font-medium">Present Value (PV)</Label>
-                  <div className="text-3xl font-bold text-green-600">
+                <div className="space-y-1.5">
+                  <Label className="text-xs sm:text-sm text-green-500">Present Value (PV)</Label>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200">
                     ${result.pv.toFixed(2)}
                   </div>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-4 pt-4 border-t">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-slate-700">
                 <div className="text-center">
-                  <div className="text-sm text-muted-foreground">Periodic Payment</div>
-                  <div className="text-lg font-semibold text-purple-600">${result.pmt.toFixed(2)}</div>
+                  <div className="text-xs sm:text-sm text-slate-300">Periodic Payment</div>
+                  <div className="text-base sm:text-lg font-semibold text-slate-200">${result.pmt.toFixed(2)}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-sm text-muted-foreground">Interest Rate</div>
-                  <div className="text-lg font-semibold text-orange-600">{result.iy.toFixed(2)}%</div>
+                  <div className="text-xs sm:text-sm text-slate-300">Interest Rate</div>
+                  <div className="text-base sm:text-lg font-semibold text-orange-500">{result.iy.toFixed(2)}%</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-sm text-muted-foreground">Periods</div>
-                  <div className="text-lg font-semibold text-red-600">{result.n.toFixed(0)}</div>
+                  <div className="text-xs sm:text-sm text-slate-300">Periods</div>
+                  <div className="text-base sm:text-lg font-semibold text-slate-200">{result.n.toFixed(0)}</div>
                 </div>
               </div>
 
-              <div className="flex gap-2 pt-4">
-                <Button onClick={copyResult} variant="outline" size="sm">
-                  <Copy className="mr-2 h-4 w-4" />
+              <div className="flex gap-2 pt-2 sm:pt-4">
+                <Button onClick={copyResult} variant="outline" size="sm" className="text-xs sm:text-sm">
+                  <Copy className="mr-2 h-3 w-3 sm:h-3.5 sm:w-3.5" />
                   Copy Results
                 </Button>
               </div>
@@ -507,59 +512,59 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
           </Card>
 
           {/* Summary */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <BarChart3 className="h-5 w-5 text-purple-500" />
-                Financial Summary
+          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+                <BarChart3 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
+                <span className="text-orange-500">Financial Summary</span>
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                  <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Sum of Payments</h3>
-                  <div className="text-2xl font-bold text-blue-600">${result.summary.sumOfPayments.toFixed(2)}</div>
+            <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                <div className="p-2 sm:p-3 md:p-4 bg-black border border-slate-700 rounded-lg">
+                  <h3 className="font-semibold text-green-500 mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Sum of Payments</h3>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200">${result.summary.sumOfPayments.toFixed(2)}</div>
                 </div>
-                <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                  <h3 className="font-semibold text-green-800 dark:text-green-200 mb-2">Total Interest</h3>
-                  <div className="text-2xl font-bold text-green-600">${result.summary.totalInterest.toFixed(2)}</div>
+                <div className="p-2 sm:p-3 md:p-4 bg-black border border-slate-700 rounded-lg">
+                  <h3 className="font-semibold text-green-500 mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Total Interest</h3>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200">${result.summary.totalInterest.toFixed(2)}</div>
                 </div>
-                <div className="p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                  <h3 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">Principal Amount</h3>
-                  <div className="text-2xl font-bold text-purple-600">${result.summary.principalAmount.toFixed(2)}</div>
+                <div className="p-2 sm:p-3 md:p-4 bg-black border border-slate-700 rounded-lg">
+                  <h3 className="font-semibold text-green-500 mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Principal Amount</h3>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200">${result.summary.principalAmount.toFixed(2)}</div>
                 </div>
               </div>
             </CardContent>
           </Card>
 
           {/* Amortization Schedule */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Calendar className="h-5 w-5 text-orange-500" />
-                Amortization Schedule
+          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+                <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
+                <span className="text-orange-500">Amortization Schedule</span>
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="px-2 sm:px-3 md:px-4">
               <div className="overflow-x-auto">
-                <table className="w-full border-collapse border border-gray-300 dark:border-gray-600">
+                <table className="w-full border-collapse border border-slate-700">
                   <thead>
-                    <tr className="bg-gray-50 dark:bg-gray-800">
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-left">Period</th>
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-right">PV</th>
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-right">PMT</th>
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-right">Interest</th>
-                      <th className="border border-gray-300 dark:border-gray-600 p-3 text-right">FV</th>
+                    <tr className="bg-black border-b border-slate-700">
+                      <th className="border border-slate-700 p-2 sm:p-3 text-left text-xs sm:text-sm text-green-500">Period</th>
+                      <th className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-green-500">PV</th>
+                      <th className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-green-500">PMT</th>
+                      <th className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-green-500">Interest</th>
+                      <th className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-green-500">FV</th>
                     </tr>
                   </thead>
                   <tbody>
                     {result.amortizationSchedule.map((row, index) => (
                       <tr key={index}>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3">{row.period}</td>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3 text-right">${row.presentValue.toFixed(2)}</td>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3 text-right">${row.payment.toFixed(2)}</td>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3 text-right">${row.interest.toFixed(2)}</td>
-                        <td className="border border-gray-300 dark:border-gray-600 p-3 text-right">${row.futureValue.toFixed(2)}</td>
+                        <td className="border border-slate-700 p-2 sm:p-3 text-xs sm:text-sm text-slate-200">{row.period}</td>
+                        <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${row.presentValue.toFixed(2)}</td>
+                        <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${row.payment.toFixed(2)}</td>
+                        <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${row.interest.toFixed(2)}</td>
+                        <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${row.futureValue.toFixed(2)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -569,22 +574,22 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
           </Card>
 
           {/* Investment Scenarios */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-green-500" />
-                Investment Scenarios
+          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+                <TrendingUp className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
+                <span className="text-orange-500">Investment Scenarios</span>
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="px-2 sm:px-3 md:px-4">
               <div className="space-y-2">
                 {result.comparison.scenarios.map((scenario, index) => (
-                  <div key={index} className="flex justify-between items-center p-3 bg-muted rounded-lg">
-                    <div>
-                      <span className="font-medium">{scenario.scenario}</span>
-                      <p className="text-sm text-muted-foreground">${scenario.futureValue.toFixed(2)}</p>
+                  <div key={index} className="flex justify-between items-center p-2 sm:p-3 bg-black border border-slate-700 rounded-lg">
+                    <div className="min-w-0">
+                      <span className="font-medium text-slate-200 text-xs sm:text-sm break-words">{scenario.scenario}</span>
+                      <p className="text-xs text-slate-300 break-words">${scenario.futureValue.toFixed(2)}</p>
                     </div>
-                    <Badge variant={scenario.difference > 0 ? "default" : "destructive"}>
+                    <Badge className={scenario.difference > 0 ? "bg-green-500/20 text-green-400 border-green-500" : "bg-red-500/20 text-red-400 border-red-500"} variant="outline">
                       {scenario.difference > 0 ? "+" : ""}${scenario.difference.toFixed(2)}
                     </Badge>
                   </div>
@@ -594,44 +599,44 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
           </Card>
 
           {/* Recommendations */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Target className="h-5 w-5 text-green-500" />
-                Personalized Recommendations
+          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+            <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+              <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+                <Target className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
+                <span className="text-orange-500">Personalized Recommendations</span>
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-3 gap-6">
+            <CardContent className="px-2 sm:px-3 md:px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-blue-600">Investment Tips</h4>
-                  <ul className="space-y-2 text-sm">
+                  <h4 className="font-semibold mb-2 sm:mb-3 text-green-500 text-xs sm:text-sm break-words">Investment Tips</h4>
+                  <ul className="space-y-1 text-xs sm:text-sm">
                     {result.recommendations.investmentTips.map((rec, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                        <span>{rec}</span>
+                      <li key={index} className="flex items-start gap-1.5 sm:gap-2">
+                        <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-300 break-words">{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-green-600">Loan Advice</h4>
-                  <ul className="space-y-2 text-sm">
+                  <h4 className="font-semibold mb-2 sm:mb-3 text-green-500 text-xs sm:text-sm break-words">Loan Advice</h4>
+                  <ul className="space-y-1 text-xs sm:text-sm">
                     {result.recommendations.loanAdvice.map((rec, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span>{rec}</span>
+                      <li key={index} className="flex items-start gap-1.5 sm:gap-2">
+                        <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-300 break-words">{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-purple-600">Financial Planning</h4>
-                  <ul className="space-y-2 text-sm">
+                  <h4 className="font-semibold mb-2 sm:mb-3 text-green-500 text-xs sm:text-sm break-words">Financial Planning</h4>
+                  <ul className="space-y-1 text-xs sm:text-sm">
                     {result.recommendations.financialPlanning.map((rec, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-purple-500 mt-0.5 flex-shrink-0" />
-                        <span>{rec}</span>
+                      <li key={index} className="flex items-start gap-1.5 sm:gap-2">
+                        <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-300 break-words">{rec}</span>
                       </li>
                     ))}
                   </ul>
@@ -644,22 +649,22 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <History className="h-5 w-5 text-gray-500" />
-              Recent Calculations
+        <Card className="bg-black border-slate-700 w-full overflow-hidden">
+          <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+            <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+              <History className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
+              <span className="text-orange-500">Recent Calculations</span>
             </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="px-2 sm:px-3 md:px-4">
             <div className="space-y-2">
               {history.map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
-                  <div className="space-y-1">
-                    <div className="font-medium">
+                <div key={index} className="flex items-center justify-between p-2 sm:p-3 bg-black border border-slate-700 rounded-lg">
+                  <div className="space-y-1 min-w-0">
+                    <div className="font-medium text-xs sm:text-sm text-slate-200 break-words">
                       FV: ${item.fv.toFixed(0)} | PV: ${item.pv.toFixed(0)}
                     </div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-xs text-slate-300 break-words">
                       {item.iy.toFixed(1)}% for {item.n.toFixed(0)} periods
                     </div>
                   </div>
@@ -667,6 +672,7 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
                     variant="ghost"
                     size="sm"
                     onClick={() => setResult(item)}
+                    className="text-xs sm:text-sm flex-shrink-0"
                   >
                     View Details
                   </Button>
@@ -678,40 +684,40 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
       )}
 
       {/* Information Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Info className="h-5 w-5 text-blue-500" />
-            Finance Calculator Features
+      <Card className="bg-black border-slate-700 w-full overflow-hidden">
+        <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
+          <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
+            <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
+            <span className="text-orange-500">Finance Calculator Features</span>
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+        <CardContent className="space-y-3 px-2 sm:px-3 md:px-4">
+          <div className="p-2 sm:p-3 md:p-4 bg-black border border-slate-700 rounded-lg">
             <div className="flex items-start gap-2">
-              <Info className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
-              <div className="text-sm">
-                <p className="font-medium text-blue-800 dark:text-blue-200 mb-1">
+              <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500 mt-0.5 flex-shrink-0" />
+              <div className="text-xs sm:text-sm min-w-0">
+                <p className="font-medium text-orange-500 mb-1 break-words">
                   Professional Time Value of Money Calculator
                 </p>
-                <p className="text-blue-700 dark:text-blue-300">
+                <p className="text-slate-300 break-words">
                   This calculator uses the same formulas as professional financial calculators (BA II Plus, HP 12CP). Calculate any of the 5 key TVM variables: FV, PV, PMT, I/Y, or N.
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="text-sm text-muted-foreground space-y-2">
-            <p>
-              <strong>Time Value of Money:</strong> Calculate present value, future value, payments, interest rates, and periods.
+          <div className="text-xs sm:text-sm text-slate-300 space-y-1.5 sm:space-y-2">
+            <p className="break-words">
+              <strong className="text-green-500">Time Value of Money:</strong> Calculate present value, future value, payments, interest rates, and periods.
             </p>
-            <p>
-              <strong>Amortization Schedule:</strong> Complete payment breakdown showing principal and interest.
+            <p className="break-words">
+              <strong className="text-green-500">Amortization Schedule:</strong> Complete payment breakdown showing principal and interest.
             </p>
-            <p>
-              <strong>Investment Analysis:</strong> Compare different investment scenarios and returns.
+            <p className="break-words">
+              <strong className="text-green-500">Investment Analysis:</strong> Compare different investment scenarios and returns.
             </p>
-            <p>
-              <strong>Loan Calculations:</strong> Analyze loan payments, interest, and payoff strategies.
+            <p className="break-words">
+              <strong className="text-green-500">Loan Calculations:</strong> Analyze loan payments, interest, and payoff strategies.
             </p>
           </div>
         </CardContent>

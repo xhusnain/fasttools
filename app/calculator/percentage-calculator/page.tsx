@@ -1,6 +1,7 @@
 import { PercentageCalculator } from "@/components/percentage-calculator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import { Percent, Calculator, TrendingUp, TrendingDown, Target, DollarSign, BarChart3, PieChart, ArrowUp, ArrowDown, Minus, Plus, CheckCircle, BookOpen, Users, Award } from "lucide-react"
 import type { Metadata } from "next"
 
@@ -99,7 +100,7 @@ export const metadata: Metadata = {
 
 export default function PercentageCalculatorPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black">
       <div className="container mx-auto px-3 py-8 md:py-12">
       <Breadcrumbs
         items={[
@@ -108,62 +109,62 @@ export default function PercentageCalculatorPage() {
         ]}
       />
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="mb-6 md:mb-8">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-yellow-400">Free Online Percentage Calculator</h1>
-            <p className="text-base md:text-lg text-muted-foreground text-pretty leading-relaxed">
-              <strong>Free percentage calculator</strong> for all your math needs. Calculate <strong>percentage increase</strong>, <strong>percentage decrease</strong>, <strong>percentage difference</strong>, <strong>discounts</strong>, <strong>tips</strong>, <strong>grades</strong>, <strong>profit margins</strong>, and more. <strong>Accurate</strong> and <strong>quick</strong> online tool with step-by-step formulas.
-          </p>
+            <GHeader 
+              title="Free Online Percentage Calculator"
+              description="Free percentage calculator for all your math needs. Calculate percentage increase, percentage decrease, percentage difference, discounts, tips, grades, profit margins, and more. Accurate and quick online tool with step-by-step formulas."
+            />
+          </div>
+
+          {/* Mobile/Tablet AdSpace after GHeader */}
+          <div className="my-6 lg:hidden">
+            <div className="text-center mb-2">
+              <span className="text-xs text-slate-400 font-medium">Advertisement</span>
+            </div>
+            <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
         </div>
 
           <div className="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px] gap-3 md:gap-4 lg:gap-6">
           <div>
             <PercentageCalculator />
-            
-              {/* Mobile/Tablet AdSpace */}
-              <div className="my-6 lg:hidden">
-                <div className="text-center mb-2">
-                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
-            </div>
 
             {/* How to Use Section */}
               <div className="mt-8 md:mt-12 space-y-6 md:space-y-8">
-                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                  <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-yellow-400">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-4 md:p-6 shadow-sm">
+                  <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
+                    <div className="p-2 bg-orange-500/10 rounded-lg">
+                      <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-orange-500" />
                   </div>
                   How to Use Our Advanced Percentage Calculator
                 </h2>
                 <div className="space-y-4">
                     <div className="grid md:grid-cols-2 gap-3 md:gap-4">
-                      <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">1. Select Calculation Type</h3>
-                        <p className="text-xs md:text-sm text-muted-foreground">Choose from 7 different percentage calculation types</p>
+                      <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                        <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">1. Select Calculation Type</h3>
+                        <p className="text-xs md:text-sm text-slate-400">Choose from 7 different percentage calculation types</p>
                     </div>
-                      <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">2. Enter Values</h3>
-                        <p className="text-xs md:text-sm text-muted-foreground">Input your numbers in the appropriate fields</p>
+                      <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                        <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">2. Enter Values</h3>
+                        <p className="text-xs md:text-sm text-slate-400">Input your numbers in the appropriate fields</p>
                     </div>
-                      <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">3. Get Results</h3>
-                        <p className="text-xs md:text-sm text-muted-foreground">View detailed calculation with formulas</p>
+                      <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                        <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">3. Get Results</h3>
+                        <p className="text-xs md:text-sm text-slate-400">View detailed calculation with formulas</p>
                     </div>
-                      <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">4. Copy & Share</h3>
-                        <p className="text-xs md:text-sm text-muted-foreground">Copy results or share calculations</p>
+                      <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                        <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">4. Copy & Share</h3>
+                        <p className="text-xs md:text-sm text-slate-400">Copy results or share calculations</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Calculation Types */}
-                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-yellow-400">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Calculator className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-4 md:p-6 shadow-sm">
+                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-orange-500">
+                    <div className="p-2 bg-orange-500/10 rounded-lg">
+                      <Calculator className="h-4 w-4 md:h-5 md:w-5 text-orange-500" />
                   </div>
                   Percentage Calculation Types
                 </h2>
@@ -177,77 +178,77 @@ export default function PercentageCalculatorPage() {
                     { type: "Margin Calculation", icon: BarChart3, desc: "Calculate cost from selling price", example: "Selling $125 - 20% margin = $100" },
                     { type: "Compound Interest", icon: PieChart, desc: "Calculate compound interest", example: "$1000 at 5% for 3 years = $1157.63" }
                   ].map(({ type, icon: Icon, desc, example }) => (
-                      <div key={type} className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
+                      <div key={type} className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
                       <div className="flex items-center gap-2 mb-2">
-                        <Icon className="h-4 w-4 text-primary" />
-                          <h3 className="font-semibold text-foreground text-sm md:text-base">{type}</h3>
+                        <Icon className="h-4 w-4 text-green-500" />
+                          <h3 className="font-semibold text-green-500 text-sm md:text-base">{type}</h3>
                       </div>
-                        <p className="text-xs md:text-sm text-muted-foreground mb-2">{desc}</p>
-                      <p className="text-xs text-primary font-mono bg-primary/10 px-2 py-1 rounded">{example}</p>
+                        <p className="text-xs md:text-sm text-slate-400 mb-2">{desc}</p>
+                      <p className="text-xs text-orange-400 font-mono bg-orange-500/10 px-2 py-1 rounded">{example}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Targeted Use Cases by Intent */}
-              <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-yellow-400">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Users className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+              <div className="bg-black border border-slate-700 rounded-xl p-4 md:p-6 shadow-sm">
+                <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-orange-500">
+                  <div className="p-2 bg-orange-500/10 rounded-lg">
+                    <Users className="h-4 w-4 md:h-5 md:w-5 text-orange-500" />
                   </div>
                   Percentage Calculator Use Cases by Intent
                 </h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                   <div className="space-y-3">
-                    <h3 className="text-base md:text-lg font-semibold text-foreground">📊 Informational Intent</h3>
+                    <h3 className="text-base md:text-lg font-semibold text-green-500">📊 Informational Intent</h3>
                     <div className="space-y-2">
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Percentage Increase Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Calculate growth rates, salary increases, and performance improvements</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Percentage Increase Calculator</h4>
+                        <p className="text-xs text-slate-400">Calculate growth rates, salary increases, and performance improvements</p>
                       </div>
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Percentage Decrease Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Calculate price drops, budget reductions, and efficiency losses</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Percentage Decrease Calculator</h4>
+                        <p className="text-xs text-slate-400">Calculate price drops, budget reductions, and efficiency losses</p>
                       </div>
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Percentage Difference Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Compare two values to find percentage difference</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Percentage Difference Calculator</h4>
+                        <p className="text-xs text-slate-400">Compare two values to find percentage difference</p>
                       </div>
                     </div>
                   </div>
                   
                   <div className="space-y-3">
-                    <h3 className="text-base md:text-lg font-semibold text-foreground">🛒 Practical Intent</h3>
+                    <h3 className="text-base md:text-lg font-semibold text-green-500">🛒 Practical Intent</h3>
                     <div className="space-y-2">
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Discount Percentage Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Calculate sale prices, discount amounts, and savings</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Discount Percentage Calculator</h4>
+                        <p className="text-xs text-slate-400">Calculate sale prices, discount amounts, and savings</p>
                       </div>
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Tip Percentage Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Calculate restaurant tips, service charges, and gratuity</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Tip Percentage Calculator</h4>
+                        <p className="text-xs text-slate-400">Calculate restaurant tips, service charges, and gratuity</p>
                       </div>
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Percent Off Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Find final prices after percentage discounts</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Percent Off Calculator</h4>
+                        <p className="text-xs text-slate-400">Find final prices after percentage discounts</p>
                       </div>
                     </div>
                   </div>
                   
                   <div className="space-y-3">
-                    <h3 className="text-base md:text-lg font-semibold text-foreground">💼 Business Intent</h3>
+                    <h3 className="text-base md:text-lg font-semibold text-green-500">💼 Business Intent</h3>
                     <div className="space-y-2">
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Profit Percentage Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Calculate profit margins, markup percentages, and ROI</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Profit Percentage Calculator</h4>
+                        <p className="text-xs text-slate-400">Calculate profit margins, markup percentages, and ROI</p>
                       </div>
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Interest Percentage Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Calculate loan interest, investment returns, and APY</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Interest Percentage Calculator</h4>
+                        <p className="text-xs text-slate-400">Calculate loan interest, investment returns, and APY</p>
                       </div>
-                      <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                        <h4 className="font-semibold text-foreground mb-1 text-sm">Grade Percentage Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Calculate test scores, GPA, and academic performance</p>
+                      <div className="p-3 bg-black rounded-lg border border-slate-700">
+                        <h4 className="font-semibold text-green-500 mb-1 text-sm">Grade Percentage Calculator</h4>
+                        <p className="text-xs text-slate-400">Calculate test scores, GPA, and academic performance</p>
                       </div>
                     </div>
                   </div>
@@ -255,49 +256,49 @@ export default function PercentageCalculatorPage() {
               </div>
 
                 {/* How-To Guides for Different Intents */}
-                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-yellow-400">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-4 md:p-6 shadow-sm">
+                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-orange-500">
+                    <div className="p-2 bg-orange-500/10 rounded-lg">
+                      <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-orange-500" />
                   </div>
                     How-To Guides: Find Percentage of a Number
                 </h2>
                   <div className="space-y-4 md:space-y-6">
-                    <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                      <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">How to Find Percentage of a Number</h3>
-                      <p className="text-xs md:text-sm text-muted-foreground mb-2">
+                    <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                      <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">How to Find Percentage of a Number</h3>
+                      <p className="text-xs md:text-sm text-slate-400 mb-2">
                         <strong>Step 1:</strong> Identify the part and the whole
                       </p>
-                      <p className="text-xs md:text-sm text-muted-foreground mb-2">
+                      <p className="text-xs md:text-sm text-slate-400 mb-2">
                         <strong>Step 2:</strong> Use formula: (Part ÷ Whole) × 100
                       </p>
-                      <p className="text-xs md:text-sm text-muted-foreground">
+                      <p className="text-xs md:text-sm text-slate-400">
                         <strong>Example:</strong> What percent of 200 is 50? (50 ÷ 200) × 100 = 25%
                       </p>
                     </div>
                     
-                    <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                      <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">How to Calculate Percentage Change</h3>
-                      <p className="text-xs md:text-sm text-muted-foreground mb-2">
+                    <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                      <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">How to Calculate Percentage Change</h3>
+                      <p className="text-xs md:text-sm text-slate-400 mb-2">
                         <strong>Step 1:</strong> Find the difference: New Value - Old Value
                       </p>
-                      <p className="text-xs md:text-sm text-muted-foreground mb-2">
+                      <p className="text-xs md:text-sm text-slate-400 mb-2">
                         <strong>Step 2:</strong> Divide by old value: Difference ÷ Old Value
                       </p>
-                      <p className="text-xs md:text-sm text-muted-foreground">
+                      <p className="text-xs md:text-sm text-slate-400">
                         <strong>Step 3:</strong> Multiply by 100: Result × 100
                       </p>
                     </div>
                     
-                    <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                      <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">How to Convert Percentage to Fraction</h3>
-                      <p className="text-xs md:text-sm text-muted-foreground mb-2">
+                    <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                      <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">How to Convert Percentage to Fraction</h3>
+                      <p className="text-xs md:text-sm text-slate-400 mb-2">
                         <strong>Step 1:</strong> Write percentage as fraction over 100
                       </p>
-                      <p className="text-xs md:text-sm text-muted-foreground mb-2">
+                      <p className="text-xs md:text-sm text-slate-400 mb-2">
                         <strong>Step 2:</strong> Simplify the fraction
                       </p>
-                      <p className="text-xs md:text-sm text-muted-foreground">
+                      <p className="text-xs md:text-sm text-slate-400">
                         <strong>Example:</strong> 25% = 25/100 = 1/4
                       </p>
                     </div>
@@ -305,50 +306,50 @@ export default function PercentageCalculatorPage() {
                 </div>
 
                 {/* Mathematical Formulas Section */}
-                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-yellow-400">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Calculator className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-4 md:p-6 shadow-sm">
+                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-orange-500">
+                    <div className="p-2 bg-orange-500/10 rounded-lg">
+                      <Calculator className="h-4 w-4 md:h-5 md:w-5 text-orange-500" />
                     </div>
                     Mathematical Formulas & Examples
                   </h2>
                   <div className="space-y-4 md:space-y-6">
-                    <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                      <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">Basic Percentage Formula</h3>
-                      <p className="text-xs md:text-sm text-muted-foreground mb-2">
+                    <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                      <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">Basic Percentage Formula</h3>
+                      <p className="text-xs md:text-sm text-slate-400 mb-2">
                         <strong>Formula:</strong> Percentage = (Part / Whole) × 100
                       </p>
-                      <p className="text-xs md:text-sm text-muted-foreground">
+                      <p className="text-xs md:text-sm text-slate-400">
                         <strong>Example:</strong> What is 25% of 200? Step 1: Convert 25% to decimal (0.25), Step 2: Multiply 0.25 × 200 = 50
                       </p>
               </div>
 
-                    <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                      <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">Percentage Increase Formula</h3>
-                      <p className="text-xs md:text-sm text-muted-foreground mb-2">
-                        <strong>Formula:</strong> ((New Value - Original Value) / Original Value) × 100
+                    <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                      <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">Percentage Increase Formula</h3>
+                      <p className="text-xs md:text-sm text-slate-400 mb-2">
+                        <strong>Formula:</strong> ((Final Value - Starting Value) / Starting Value) × 100
                       </p>
-                      <p className="text-xs md:text-sm text-muted-foreground">
-                        <strong>Example:</strong> Price increases from $100 to $120: ((120-100)/100) × 100 = 20% increase
+                      <p className="text-xs md:text-sm text-slate-400">
+                        <strong>Example:</strong> If a product price rises from $100 to $120: ((120-100)/100) × 100 = 20% growth
                       </p>
                   </div>
                     
-                    <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                      <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">Markup vs Margin</h3>
-                      <p className="text-xs md:text-sm text-muted-foreground mb-2">
-                        <strong>Markup:</strong> Selling Price = Cost + (Cost × Markup%)
+                    <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                      <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">Markup vs Margin</h3>
+                      <p className="text-xs md:text-sm text-slate-400 mb-2">
+                        <strong>Markup Calculation:</strong> Final Price = Base Cost × (1 + Markup Percentage / 100)
                       </p>
-                      <p className="text-xs md:text-sm text-muted-foreground">
-                        <strong>Margin:</strong> Cost = Selling Price - (Selling Price × Margin%)
+                      <p className="text-xs md:text-sm text-slate-400">
+                        <strong>Margin Calculation:</strong> Base Cost = Final Price × (1 - Margin Percentage / 100)
                       </p>
                     </div>
                     
-                    <div className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                      <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">Compound Interest Formula</h3>
-                      <p className="text-xs md:text-sm text-muted-foreground mb-2">
+                    <div className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                      <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">Compound Interest Formula</h3>
+                      <p className="text-xs md:text-sm text-slate-400 mb-2">
                         <strong>Formula:</strong> A = P(1 + r/n)^(nt)
                       </p>
-                      <p className="text-xs md:text-sm text-muted-foreground">
+                      <p className="text-xs md:text-sm text-slate-400">
                         Where: A = final amount, P = principal, r = rate, n = compounding frequency, t = time
                       </p>
               </div>
@@ -356,37 +357,37 @@ export default function PercentageCalculatorPage() {
           </div>
           
                 {/* Real-World Applications */}
-                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-yellow-400">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Users className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-4 md:p-6 shadow-sm">
+                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-orange-500">
+                    <div className="p-2 bg-orange-500/10 rounded-lg">
+                      <Users className="h-4 w-4 md:h-5 md:w-5 text-orange-500" />
                   </div>
                     Real-World Applications
                   </h2>
                   <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                     <div className="space-y-3">
-                      <h3 className="text-base md:text-lg font-semibold text-foreground">Business & Finance</h3>
+                      <h3 className="text-base md:text-lg font-semibold text-green-500">Business & Finance</h3>
                       <div className="space-y-2">
-                        <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                          <h4 className="font-semibold text-foreground mb-1 text-sm">Sales & Discounts</h4>
-                          <p className="text-xs text-muted-foreground">Calculate sale prices, discount amounts, and profit margins for retail businesses.</p>
+                        <div className="p-3 bg-black rounded-lg border border-slate-700">
+                          <h4 className="font-semibold text-green-500 mb-1 text-sm">Sales & Discounts</h4>
+                          <p className="text-xs text-slate-400">Calculate sale prices, discount amounts, and profit margins for retail businesses.</p>
                 </div>
-                        <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                          <h4 className="font-semibold text-foreground mb-1 text-sm">Investment Returns</h4>
-                          <p className="text-xs text-muted-foreground">Analyze portfolio performance, calculate compound interest, and track growth rates.</p>
+                        <div className="p-3 bg-black rounded-lg border border-slate-700">
+                          <h4 className="font-semibold text-green-500 mb-1 text-sm">Investment Returns</h4>
+                          <p className="text-xs text-slate-400">Analyze portfolio performance, calculate compound interest, and track growth rates.</p>
                   </div>
                 </div>
                 </div>
                 <div className="space-y-3">
-                      <h3 className="text-base md:text-lg font-semibold text-foreground">Education & Statistics</h3>
+                      <h3 className="text-base md:text-lg font-semibold text-green-500">Education & Statistics</h3>
                       <div className="space-y-2">
-                        <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                          <h4 className="font-semibold text-foreground mb-1 text-sm">Test Scores & Grades</h4>
-                          <p className="text-xs text-muted-foreground">Calculate grade percentages, analyze test performance, and track academic progress.</p>
+                        <div className="p-3 bg-black rounded-lg border border-slate-700">
+                          <h4 className="font-semibold text-green-500 mb-1 text-sm">Test Scores & Grades</h4>
+                          <p className="text-xs text-slate-400">Calculate grade percentages, analyze test performance, and track academic progress.</p>
                   </div>
-                        <div className="p-3 bg-secondary/50 rounded-lg border border-border">
-                          <h4 className="font-semibold text-foreground mb-1 text-sm">Survey Analysis</h4>
-                          <p className="text-xs text-muted-foreground">Analyze survey results, calculate response rates, and interpret statistical data.</p>
+                        <div className="p-3 bg-black rounded-lg border border-slate-700">
+                          <h4 className="font-semibold text-green-500 mb-1 text-sm">Survey Analysis</h4>
+                          <p className="text-xs text-slate-400">Analyze survey results, calculate response rates, and interpret statistical data.</p>
                   </div>
                 </div>
               </div>
@@ -394,10 +395,10 @@ export default function PercentageCalculatorPage() {
                 </div>
 
                 {/* Related Tools Section */}
-                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-yellow-400">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Calculator className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-4 md:p-6 shadow-sm">
+                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-orange-500">
+                    <div className="p-2 bg-orange-500/10 rounded-lg">
+                      <Calculator className="h-4 w-4 md:h-5 md:w-5 text-orange-500" />
                     </div>
                     Related Math & Finance Calculators
                   </h2>
@@ -479,15 +480,15 @@ export default function PercentageCalculatorPage() {
                       <a
                         key={index}
                         href={tool.href}
-                        className="p-4 bg-secondary/50 rounded-lg border border-border hover:bg-primary/5 hover:border-primary/20 transition-colors group"
+                        className="p-4 bg-black rounded-lg border border-slate-700 hover:bg-slate-800 hover:border-orange-500/50 transition-colors group"
                       >
                         <div className="flex items-center gap-3 mb-2">
                           <span className="text-2xl">{tool.icon}</span>
-                          <h3 className="font-semibold text-foreground group-hover:text-primary text-sm md:text-base">
+                          <h3 className="font-semibold text-green-500 group-hover:text-orange-500 text-sm md:text-base">
                             {tool.name}
                           </h3>
                         </div>
-                        <p className="text-xs md:text-sm text-muted-foreground group-hover:text-foreground/80">
+                        <p className="text-xs md:text-sm text-slate-400 group-hover:text-slate-300">
                           {tool.desc}
                         </p>
                       </a>
@@ -496,10 +497,10 @@ export default function PercentageCalculatorPage() {
                 </div>
 
                 {/* Comprehensive FAQ Section */}
-                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-yellow-400">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Award className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-4 md:p-6 shadow-sm">
+                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-orange-500">
+                    <div className="p-2 bg-orange-500/10 rounded-lg">
+                      <Award className="h-4 w-4 md:h-5 md:w-5 text-orange-500" />
                     </div>
                     Frequently Asked Questions (FAQ) - 50 Questions
                   </h2>
@@ -507,7 +508,7 @@ export default function PercentageCalculatorPage() {
                     {[
                       {
                         q: "What is a percentage and how is it calculated?",
-                        a: "A percentage is a way of expressing a number as a fraction of 100, denoted by the symbol '%'. To calculate a percentage of a number, multiply the number by the percentage (expressed as a decimal). For example, to find 20% of 50: 50 × 0.20 = 10. The basic formula is: Percentage = (Part / Whole) × 100."
+                        a: "A percentage represents a number expressed as a fraction of 100, indicated by the '%' symbol. To compute a percentage of a number, multiply the number by the percentage value (converted to decimal form). For instance, to compute 20% of 50: 50 × 0.20 = 10. The fundamental calculation formula is: Percentage = (Component / Total) × 100."
                       },
                       {
                         q: "How do I convert a fraction to a percentage?",
@@ -515,23 +516,23 @@ export default function PercentageCalculatorPage() {
                       },
                       {
                         q: "How do I convert a decimal to a percentage?",
-                        a: "To convert a decimal to a percentage, multiply the decimal by 100 and add the percent symbol. For example, 0.85 as a percentage: 0.85 × 100 = 85%. This is useful when working with decimal results from calculations or when converting from scientific notation."
+                        a: "To transform a decimal into a percentage, multiply the decimal by 100 and append the percent symbol. For instance, converting 0.85 to a percentage: 0.85 × 100 = 85%. This transformation is helpful when processing decimal outcomes from mathematical operations or converting values from scientific notation formats."
                       },
                       {
                         q: "How do I convert a percentage to a decimal?",
-                        a: "To convert a percentage to a decimal, divide the percentage by 100. For example, 25% ÷ 100 = 0.25. This conversion is essential for mathematical calculations, as most formulas require percentages to be in decimal form for accurate computation."
+                        a: "To transform a percentage into a decimal, divide the percentage value by 100. For instance, converting 25% to decimal: 25% ÷ 100 = 0.25. This transformation is crucial for mathematical operations, since the majority of calculation formulas need percentages in decimal format to ensure precise computational results."
                       },
                       {
                         q: "What is the formula for percentage increase?",
-                        a: "The formula for percentage increase is: ((New Value - Original Value) / Original Value) × 100. For example, if a price increases from $50 to $60: ((60 - 50) ÷ 50) × 100 = 20%. This formula is commonly used to calculate salary increases, price hikes, and growth rates."
+                        a: "The percentage increase calculation uses: ((Final Value - Initial Value) / Initial Value) × 100. For instance, when a price rises from $50 to $60: ((60 - 50) ÷ 50) × 100 = 20%. This calculation method is widely applied for determining wage increases, price escalations, and rate of growth measurements."
                       },
                       {
                         q: "What is the formula for percentage decrease?",
-                        a: "The formula for percentage decrease is: ((Original Value - New Value) / Original Value) × 100. For example, if a price decreases from $60 to $50: ((60 - 50) ÷ 60) × 100 = 16.67%. This formula is used for calculating discounts, budget cuts, and efficiency losses."
+                        a: "The percentage decrease calculation uses: ((Initial Value - Final Value) / Initial Value) × 100. For instance, when a price drops from $60 to $50: ((60 - 50) ÷ 60) × 100 = 16.67%. This calculation method is applied for determining discount percentages, budget reductions, and efficiency decline measurements."
                       },
                       {
-                        q: "How do I calculate percentage difference between two numbers?",
-                        a: "Percentage difference is calculated using: |Value1 - Value2| / ((Value1 + Value2) / 2) × 100. This formula gives you the relative difference between two values, regardless of which is larger. It's useful for comparing prices, measurements, or any two quantities."
+                        q: "What's the formula for finding the percentage difference between two values?",
+                        a: "The percentage difference formula uses: |Value1 - Value2| / ((Value1 + Value2) / 2) × 100. This method computes the relative variation between two quantities independent of which value is greater. It's ideal for comparing measurements, prices, performance metrics, or any pair of numerical values."
                       },
                       {
                         q: "How do I find the original number if I know the percentage and the part?",
@@ -542,8 +543,8 @@ export default function PercentageCalculatorPage() {
                         a: "Reverse percentage calculation finds the original value before a percentage increase or decrease. For example, if a price after a 20% increase is $120, the original price was: $120 ÷ 1.20 = $100. This is essential for understanding original costs before markups or discounts."
                       },
                       {
-                        q: "How do I calculate what percentage one number is of another?",
-                        a: "To find what percentage one number is of another, use: (Part / Whole) × 100. For example, to find what percentage 25 is of 200: (25 ÷ 200) × 100 = 12.5%. This formula is used for test scores, market share, and any part-to-whole relationship."
+                        q: "How to determine what percent one value represents of another?",
+                        a: "To determine what percent one value represents of another, apply the formula: (Part / Whole) × 100. For instance, to determine what percent 25 represents of 200: (25 ÷ 200) × 100 = 12.5%. This calculation method is essential for analyzing test scores, calculating market share percentages, and evaluating any part-to-whole proportional relationships."
                       },
                       {
                         q: "How do I calculate discount percentage?",
@@ -667,7 +668,7 @@ export default function PercentageCalculatorPage() {
                       },
                       {
                         q: "What is a percentage point?",
-                        a: "A percentage point is the difference between two percentages. For example, an increase from 20% to 25% is a 5 percentage point increase (not 5% increase). This distinction is important in statistics, economics, and policy analysis to avoid confusion."
+                        a: "A percentage point represents the absolute difference between two percentage values. For instance, a change from 20% to 25% equals a 5 percentage point increase (distinct from a 5% increase). This distinction is crucial in statistical analysis, economic reporting, and policy evaluation to prevent misinterpretation of data."
                       },
                       {
                         q: "How do I calculate percentage of a percentage?",
@@ -714,38 +715,24 @@ export default function PercentageCalculatorPage() {
                         a: "In Excel, use the formula: =(Part/Whole)*100. For example, to calculate percentage of A1 relative to B1: =(A1/B1)*100. You can also use the percentage format to display results as percentages. Excel automatically handles the multiplication by 100 when using percentage format."
                       }
                     ].map(({ q, a }, index) => (
-                      <div key={index} className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border">
-                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">{q}</h3>
-                        <p className="text-xs md:text-sm text-muted-foreground">{a}</p>
+                      <div key={index} className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
+                        <h3 className="font-semibold text-green-500 mb-2 text-sm md:text-base">{q}</h3>
+                        <p className="text-xs md:text-sm text-slate-400">{a}</p>
                   </div>
                     ))}
                   </div>
                 </div>
               </div>
 
-              {/* Mobile/Tablet Bottom AdSpace */}
-              <div className="my-8 lg:hidden">
-                <div className="text-center mb-2">
-                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
-              </div>
             </div>
             
             <div className="space-y-6 hidden lg:block">
               <div className="sticky top-32 space-y-6">
                 <div>
                   <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                    <span className="text-xs text-slate-400 font-medium">Advertisement</span>
                   </div>
-                  <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
-
-                <div>
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
+                  <AdSpace slot="sidebar" className="w-full h-80 border border-slate-700 rounded-xl shadow-sm bg-black" />
                 </div>
               </div>
             </div>

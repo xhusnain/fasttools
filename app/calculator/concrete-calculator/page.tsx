@@ -1,6 +1,7 @@
 import { ConcreteCalculator } from "@/components/concrete-calculator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import { 
   Calculator, 
   Building, 
@@ -196,7 +197,7 @@ export default function ConcreteCalculatorPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       
-      <div className="bg-background">
+      <div className="bg-black">
         <div className="container mx-auto px-3 py-6 md:py-8">
       <Breadcrumbs 
         items={[
@@ -205,73 +206,73 @@ export default function ConcreteCalculatorPage() {
         ]}
       />
 
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3 text-yellow-400">Free Online Concrete Calculator</h1>
-              <p className="text-sm md:text-base text-muted-foreground text-pretty leading-relaxed">
-                Use our <strong>free Concrete Calculator</strong> to calculate <strong>volume</strong>, <strong>weight</strong>, <strong>materials</strong>, and <strong>cost</strong> for <strong>slabs</strong>, <strong>columns</strong>, <strong>stairs</strong>, <strong>curbs</strong>, and more. 
-                Supports <strong>multiple mix types</strong> with <strong>detailed breakdowns</strong>. Perfect for <strong>construction projects</strong>.
-          </p>
+              <GHeader 
+                title="Free Online Concrete Calculator"
+                description="Use our free Concrete Calculator to calculate volume, weight, materials, and cost for slabs, columns, stairs, curbs, and more. Supports multiple mix types with detailed breakdowns."
+                titleSize="medium"
+              />
+            </div>
+
+            {/* Mobile/Tablet AdSpace after GHeader */}
+            <div className="my-6 lg:hidden">
+              <div className="text-center mb-2">
+                <span className="text-xs text-slate-400 font-medium">Advertisement</span>
+              </div>
+              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
         </div>
 
             <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
               <div>
             <ConcreteCalculator />
-            
-                {/* Mobile/Tablet AdSpace */}
-                <div className="my-6 lg:hidden">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
 
                 {/* How to Use */}
-                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                    <div className="p-1.5 bg-primary/10 rounded-lg">
-                      <Calculator className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm mt-6 md:mt-8 mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <Calculator className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                     </div>
                     How to Use Our Concrete Calculator
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-primary/10 rounded-lg">
-                          <span className="text-primary font-bold text-xs">1</span>
+                        <div className="p-1 bg-green-500/10 rounded-lg">
+                          <span className="text-green-500 font-bold text-xs">1</span>
                         </div>
                         <div>
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm">Select Project Type</h3>
-                          <p className="text-xs text-muted-foreground">Choose from slabs, columns, stairs, curbs, and more</p>
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Select Project Type</h3>
+                          <p className="text-xs text-slate-400">Choose from slabs, columns, stairs, curbs, and more</p>
               </div>
             </div>
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-primary/10 rounded-lg">
-                          <span className="text-primary font-bold text-xs">2</span>
+                        <div className="p-1 bg-green-500/10 rounded-lg">
+                          <span className="text-green-500 font-bold text-xs">2</span>
                 </div>
                         <div>
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm">Enter Dimensions</h3>
-                          <p className="text-xs text-muted-foreground">Input length, width, height, and other measurements</p>
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Enter Dimensions</h3>
+                          <p className="text-xs text-slate-400">Input length, width, height, and other measurements</p>
                   </div>
                 </div>
               </div>
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-primary/10 rounded-lg">
-                          <span className="text-primary font-bold text-xs">3</span>
+                        <div className="p-1 bg-green-500/10 rounded-lg">
+                          <span className="text-green-500 font-bold text-xs">3</span>
             </div>
                         <div>
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm">Choose Mix Type</h3>
-                          <p className="text-xs text-muted-foreground">Select standard, high-strength, or lightweight mix</p>
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Choose Mix Type</h3>
+                          <p className="text-xs text-slate-400">Select standard, high-strength, or lightweight mix</p>
                   </div>
                 </div>
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-primary/10 rounded-lg">
-                          <span className="text-primary font-bold text-xs">4</span>
+                        <div className="p-1 bg-green-500/10 rounded-lg">
+                          <span className="text-green-500 font-bold text-xs">4</span>
                         </div>
                         <div>
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm">Get Results</h3>
-                          <p className="text-xs text-muted-foreground">View volume, weight, materials, and cost breakdown</p>
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Get Results</h3>
+                          <p className="text-xs text-slate-400">View volume, weight, materials, and cost breakdown</p>
                         </div>
                   </div>
                 </div>
@@ -279,10 +280,10 @@ export default function ConcreteCalculatorPage() {
                 </div>
 
                 {/* Supported Project Types */}
-                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                    <div className="p-1.5 bg-primary/10 rounded-lg">
-                      <Building className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <Building className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                     </div>
                     Supported Concrete Project Types
                   </h2>
@@ -298,23 +299,23 @@ export default function ConcreteCalculatorPage() {
                       { type: "Concrete Patio Calculator", icon: Globe, desc: "Calculate volume for patios", example: "Outdoor patios, entertainment areas" },
                       { type: "Concrete Foundation Calculator", icon: Hammer, desc: "Calculate volume for foundations", example: "House foundations, building bases" }
                     ].map(({ type, icon: Icon, desc, example }) => (
-                      <div key={type} className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
+                      <div key={type} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
                         <div className="flex items-center gap-1.5 mb-1">
-                          <Icon className="h-3 w-3 text-primary" />
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm">{type}</h3>
+                          <Icon className="h-3 w-3 text-green-500" />
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">{type}</h3>
                   </div>
-                        <p className="text-xs text-muted-foreground mb-1">{desc}</p>
-                        <p className="text-xs text-primary font-mono bg-primary/10 px-1.5 py-0.5 rounded">{example}</p>
+                        <p className="text-xs text-slate-400 mb-1">{desc}</p>
+                        <p className="text-xs text-orange-400 font-mono bg-orange-500/10 px-1.5 py-0.5 rounded">{example}</p>
                 </div>
                     ))}
               </div>
             </div>
 
                 {/* Concrete Mix Types */}
-                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                    <div className="p-1.5 bg-primary/10 rounded-lg">
-                      <Globe className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <Globe className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                 </div>
                     Supported Concrete Mix Types
               </h2>
@@ -325,19 +326,19 @@ export default function ConcreteCalculatorPage() {
                       { mix: "Lightweight Mix", strength: "2500 PSI", ratio: "1:1.5:2", use: "Reduced weight for non-structural applications" },
                       { mix: "Fiber Reinforced", strength: "3500 PSI", ratio: "1:2:3", use: "Enhanced with fiber reinforcement for crack resistance" }
                     ].map(({ mix, strength, ratio, use }, index) => (
-                      <div key={index} className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border">
+                      <div key={index} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
                         <div className="flex items-center gap-1.5 mb-1">
-                          <CheckCircle className="h-3 w-3 text-primary" />
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm">{mix}</h3>
+                          <CheckCircle className="h-3 w-3 text-green-500" />
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">{mix}</h3>
                         </div>
-                        <p className="text-xs text-muted-foreground mb-1">{use}</p>
-                        <div className="text-xs text-primary space-y-0.5">
+                        <p className="text-xs text-slate-400 mb-1">{use}</p>
+                        <div className="text-xs text-orange-400 space-y-0.5">
                           <div className="flex items-center gap-1">
-                            <div className="w-1 h-1 bg-primary rounded-full"></div>
+                            <div className="w-1 h-1 bg-orange-400 rounded-full"></div>
                             <span>Strength: {strength}</span>
                   </div>
                           <div className="flex items-center gap-1">
-                            <div className="w-1 h-1 bg-primary rounded-full"></div>
+                            <div className="w-1 h-1 bg-orange-400 rounded-full"></div>
                             <span>Ratio: {ratio} (Cement:Sand:Gravel)</span>
                 </div>
                   </div>
@@ -347,51 +348,51 @@ export default function ConcreteCalculatorPage() {
                 </div>
 
                 {/* Advanced Features */}
-                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                    <div className="p-1.5 bg-primary/10 rounded-lg">
-                      <Target className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <Target className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                   </div>
                     Advanced Calculation Features
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-primary/10 rounded-lg">
-                          <Volume className="h-3 w-3 text-primary" />
+                        <div className="p-1 bg-green-500/10 rounded-lg">
+                          <Volume className="h-3 w-3 text-green-500" />
                 </div>
                         <div>
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm">Volume Calculations</h3>
-                          <p className="text-xs text-muted-foreground">Precise volume calculations for complex shapes</p>
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Volume Calculations</h3>
+                          <p className="text-xs text-slate-400">Precise volume calculations for complex shapes</p>
                   </div>
                 </div>
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-primary/10 rounded-lg">
-                          <Weight className="h-3 w-3 text-primary" />
+                        <div className="p-1 bg-green-500/10 rounded-lg">
+                          <Weight className="h-3 w-3 text-green-500" />
                   </div>
                         <div>
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm">Weight Analysis</h3>
-                          <p className="text-xs text-muted-foreground">Calculate concrete weight for structural analysis</p>
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Weight Analysis</h3>
+                          <p className="text-xs text-slate-400">Calculate concrete weight for structural analysis</p>
                 </div>
               </div>
             </div>
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-primary/10 rounded-lg">
-                          <Package className="h-3 w-3 text-primary" />
+                        <div className="p-1 bg-green-500/10 rounded-lg">
+                          <Package className="h-3 w-3 text-green-500" />
                 </div>
                         <div>
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm">Material Breakdown</h3>
-                          <p className="text-xs text-muted-foreground">Detailed breakdown of cement, sand, gravel, and water</p>
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Material Breakdown</h3>
+                          <p className="text-xs text-slate-400">Detailed breakdown of cement, sand, gravel, and water</p>
                 </div>
                 </div>
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-primary/10 rounded-lg">
-                          <Zap className="h-3 w-3 text-primary" />
+                        <div className="p-1 bg-green-500/10 rounded-lg">
+                          <Zap className="h-3 w-3 text-green-500" />
                 </div>
                         <div>
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm">Professional Tips</h3>
-                          <p className="text-xs text-muted-foreground">Expert recommendations for mixing and curing</p>
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Professional Tips</h3>
+                          <p className="text-xs text-slate-400">Expert recommendations for mixing and curing</p>
                 </div>
               </div>
             </div>
@@ -399,14 +400,14 @@ export default function ConcreteCalculatorPage() {
                 </div>
 
                 {/* FAQ Section */}
-                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                    <div className="p-1.5 bg-primary/10 rounded-lg">
-                      <Info className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <Info className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
               </div>
                     Frequently Asked Questions
                   </h2>
-              <div className="space-y-3">
+              <div className="space-y-2 md:space-y-3">
                     {[
                       {
                         question: "How accurate is the concrete calculator?",
@@ -442,7 +443,7 @@ export default function ConcreteCalculatorPage() {
                       },
                       {
                         question: "How do I calculate concrete bags needed?",
-                        answer: "Our calculator shows both cubic yards and bag requirements. Standard 80-lb bags yield about 0.6 cubic feet of concrete. Always round up to the nearest whole bag."
+                        answer: "Our calculator displays cubic yard measurements and corresponding bag quantities. Typical 80-pound concrete bags provide approximately 0.6 cubic feet of material. Purchase whole bags only, ensuring you have sufficient coverage for your project dimensions."
                       },
                       {
                         question: "What's the difference between ready-mix and bagged concrete?",
@@ -473,8 +474,8 @@ export default function ConcreteCalculatorPage() {
                         answer: "Avoid insufficient curing, poor weather planning, inadequate reinforcement, overworking the surface, and incorrect water-cement ratios. These mistakes can lead to weak, cracked concrete with poor durability."
                       },
                       {
-                        question: "How do I choose the right concrete mix for my project?",
-                        answer: "Standard mix (1:2:3) for general construction, high-strength (1:1.5:2.5) for structural elements, lightweight (1:1.5:2) for non-structural applications, and fiber-reinforced (1:2:3) for industrial floors requiring crack resistance."
+                        question: "What factors should I consider when selecting a concrete mix type?",
+                        answer: "Consider your project's structural requirements, load-bearing needs, and environmental conditions. For standard applications like driveways and patios, use standard mix (1:2:3). For foundations and structural elements, choose high-strength mix (1:1.5:2.5). For non-load-bearing applications, lightweight mix (1:1.5:2) works well. For industrial or high-traffic areas, fiber-reinforced mix (1:2:3) provides enhanced crack resistance."
                       },
                       {
                         question: "What are the key components of concrete?",
@@ -489,19 +490,19 @@ export default function ConcreteCalculatorPage() {
                         answer: "Pre-construction: Check weather forecast, prepare tools and materials, ensure proper formwork. During pouring: Work quickly to avoid cold joints, use proper consolidation, maintain consistent temperature. Post-construction: Begin curing immediately, protect from temperature changes, monitor moisture levels."
                       }
                     ].map((faq, index) => (
-                      <div key={index} className="border border-border rounded-lg p-3 md:p-4">
-                        <h3 className="font-semibold text-foreground text-sm md:text-base mb-2">{faq.question}</h3>
-                        <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
+                      <div key={index} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
+                        <h3 className="font-semibold text-green-500 mb-1 text-xs md:text-sm">{faq.question}</h3>
+                        <p className="text-xs text-slate-400 leading-relaxed">{faq.answer}</p>
                 </div>
                     ))}
                 </div>
                 </div>
 
                 {/* Related Tools */}
-                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-yellow-400">
-                    <div className="p-1.5 bg-primary/10 rounded-lg">
-                      <Calculator className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <Calculator className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
                 </div>
                     Related Construction & Math Calculators
                   </h2>
@@ -523,24 +524,16 @@ export default function ConcreteCalculatorPage() {
                       <a
                         key={name}
                         href={href}
-                        className="p-2 md:p-3 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors group"
+                        className="p-2 md:p-3 bg-black rounded-lg border border-slate-700 hover:bg-slate-800 transition-colors group hover:border-green-500/50"
                       >
                         <div className="flex items-center gap-2 mb-1">
-                          <Icon className="h-3 w-3 text-primary group-hover:text-primary/80" />
-                          <h3 className="font-semibold text-foreground text-xs md:text-sm group-hover:text-primary">{name}</h3>
+                          <Icon className="h-3 w-3 text-green-500 group-hover:text-green-500" />
+                          <h3 className="font-semibold text-green-500 text-xs md:text-sm group-hover:text-green-500">{name}</h3>
                 </div>
-                        <p className="text-xs text-muted-foreground">{desc}</p>
+                        <p className="text-xs text-slate-400 group-hover:text-slate-300">{desc}</p>
                       </a>
                     ))}
             </div>
-                </div>
-
-                {/* Mobile/Tablet Bottom AdSpace */}
-                <div className="my-8 lg:hidden">
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                </div>
-                  <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
                 </div>
               </div>
 
@@ -549,16 +542,9 @@ export default function ConcreteCalculatorPage() {
                 <div className="sticky top-32 space-y-6">
                   <div>
                     <div className="text-center mb-2">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                      <span className="text-xs text-slate-400 font-medium">Advertisement</span>
                     </div>
-                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-            </div>
-
-                  <div>
-                    <div className="text-center mb-2">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                </div>
-                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
+                    <AdSpace slot="sidebar" className="w-full h-80 border border-slate-700 rounded-xl shadow-sm bg-black" />
               </div>
                 </div>
               </div>
