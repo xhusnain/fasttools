@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { YoutubeThumbnailDownloader } from "@/components/youtube-thumbnail-downloader"
 import { AdSpace } from "@/components/ad-space"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import { ArrowRight, ImageIcon, Download, Copy, Check } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -124,7 +125,6 @@ export default function YoutubeThumbnailPage() {
       <div className="container mx-auto px-4 py-8">
         <Breadcrumbs
           items={[
-            { label: "Home", href: "/" },
             { label: "Social Media Tools", href: "/social-media-tools" },
             { label: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
           ]}
@@ -135,56 +135,27 @@ export default function YoutubeThumbnailPage() {
             <div className="flex-1 lg:flex-[2] space-y-6">
               {/* Hero Section */}
               <div className="text-center space-y-5 animate-fade-in-up">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-4 shadow-md">
-                  <ImageIcon className="h-4 w-4 animate-pulse" />
-                  <span>YouTube Tools</span>
-                  <div className="h-2 w-2 bg-secondary-accent rounded-full animate-ping"></div>
-                </div>
-
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">
-                  YouTube Thumbnail Downloader
-                </h1>
-
-                <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
-                  Download YouTube video thumbnails in all available quality sizes. Get HD thumbnails instantly for your content creation needs.
-                </p>
-                
-                <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
-                  <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
-                    <ImageIcon className="h-4 w-4 text-primary" />
-                    <span className="text-primary font-medium text-sm">HD Quality</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
-                    <Download className="h-4 w-4 text-green-600" />
-                    <span className="text-green-600 font-medium text-sm">Instant Download</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-accent shadow">
-                    <Copy className="h-4 w-4 text-accent" />
-                    <span className="text-accent font-medium text-sm">Free Forever</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-secondary-accent shadow">
-                    <ArrowRight className="h-4 w-4 text-secondary-accent" />
-                    <span className="text-secondary-accent font-medium text-sm">All Sizes</span>
-                  </div>
-                </div>
+                <GHeader
+                  title="YouTube Thumbnail Downloader"
+                  description="Download YouTube video thumbnails in all available quality sizes. Get HD thumbnails instantly for your content creation needs."
+                  titleSize="large"
+                  descriptionSize="small"
+                />
               </div>
 
-              {/* Mobile/Tablet Ad - Top of Page */}
-              <div className="block xl:hidden mb-6">
-                <div className="text-center mb-2">
-                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
+              {/* Mobile Ad Space */}
+              <div className="lg:hidden mb-6">
+                <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
               </div>
 
               {/* Tool Card */}
-              <Card className="border border-border shadow-lg bg-card hover:shadow-xl transition-all duration-300">
+              <Card className="border border-border shadow-lg bg-black hover:shadow-xl transition-all duration-300">
                 <CardHeader className="p-6">
-                  <CardTitle className="text-xl font-bold text-card-foreground flex items-center gap-2">
-                    <ImageIcon className="h-5 w-5 text-primary" />
+                  <CardTitle className="text-xl font-bold text-orange-500 flex items-center gap-2">
+                    <ImageIcon className="h-5 w-5 text-orange-500" />
                     YouTube Thumbnail Downloader
                   </CardTitle>
-                  <CardDescription className="text-muted-foreground">
+                  <CardDescription className="text-gray-400">
                     Enter a YouTube video URL or ID to download thumbnails in all available quality sizes
                   </CardDescription>
                 </CardHeader>
@@ -193,48 +164,40 @@ export default function YoutubeThumbnailPage() {
                 </CardContent>
               </Card>
 
-              {/* Mobile/Tablet Ad - After tool */}
-              <div className="block xl:hidden my-8">
-                <div className="text-center mb-2">
-                  <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                </div>
-                <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
-              </div>
-
               {/* Content Sections */}
               <div className="space-y-5 animate-fade-in-up animation-delay-200">
-                <div className="p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-xl font-bold mb-4 text-card-foreground">How Our YouTube Thumbnail Downloader Works</h2>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                <div className="p-5 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-xl font-bold mb-4 text-orange-500">How Our YouTube Thumbnail Downloader Works</h2>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-4">
                     Our YouTube video thumbnail downloader extracts thumbnails directly from YouTube's CDN servers. 
                     It supports all available quality sizes including maximum quality (1280x720), high quality, medium, and standard resolutions.
                     Whether you want to download YouTube videos or just save the thumbnail images, our tool provides instant access to high-quality images.
                   </p>
 
-                  <h3 className="text-lg font-bold mb-3 text-card-foreground">Multiple Quality Options & YouTube Thumbnail Size</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  <h3 className="text-lg font-bold mb-3 text-green-500">Multiple Quality Options & YouTube Thumbnail Size</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-4">
                     Get thumbnails in all available YouTube thumbnail sizes: Maximum Quality (1280x720 pixels), High Quality (480x360 pixels), 
                     Medium Quality (320x180 pixels), and Standard Quality (640x480 pixels) for different use cases.
                     Understanding YouTube thumbnail size requirements helps you choose the perfect resolution for your content creation needs.
                   </p>
 
-                  <h3 className="text-lg font-bold mb-3 text-card-foreground">Instant Access</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <h3 className="text-lg font-bold mb-3 text-green-500">Instant Access</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">
                     No registration required. Simply paste a YouTube URL or video ID and get instant access 
                     to all available thumbnail sizes with download and copy options. Our YouTube video thumbnail downloader 
                     makes it easy to save thumbnails in the exact size you need.
                   </p>
                 </div>
 
-                <div className="p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-xl font-bold mb-4 text-card-foreground">Perfect for Content Creators</h2>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                <div className="p-5 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-xl font-bold mb-4 text-orange-500">Perfect for Content Creators</h2>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-4">
                     Whether you're a YouTuber, designer, or content creator, our thumbnail downloader helps you 
                     access high-quality thumbnails for inspiration, analysis, or content creation purposes.
                   </p>
 
-                  <h3 className="text-lg font-bold mb-3 text-card-foreground">Thumbnail Features</h3>
-                  <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                  <h3 className="text-lg font-bold mb-3 text-green-500">Thumbnail Features</h3>
+                  <ul className="list-disc list-inside space-y-2 text-sm text-gray-400">
                     <li>Download thumbnails in all available quality sizes</li>
                     <li>Copy thumbnail URLs for direct use</li>
                     <li>Maximum quality (1280x720) for best results</li>
@@ -247,13 +210,13 @@ export default function YoutubeThumbnailPage() {
 
               {/* FAQ Section */}
               <div className="space-y-5 animate-fade-in-up animation-delay-300">
-                <div className="p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-xl font-bold mb-4 text-card-foreground">Frequently Asked Questions</h2>
+                <div className="p-5 rounded-lg bg-black border border-border shadow">
+                  <h2 className="text-xl font-bold mb-4 text-orange-500">Frequently Asked Questions</h2>
                   
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-card-foreground">How do I download YouTube thumbnails?</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-green-500">How do I download YouTube thumbnails?</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">
                         Simply paste the YouTube video URL or video ID into our downloader tool and click "Get Thumbnails". 
                         Our tool will automatically extract all available thumbnail sizes including maximum quality (1280x720), 
                         high quality (480x360), medium quality (320x180), and standard quality (640x480). You can then 
@@ -262,8 +225,8 @@ export default function YoutubeThumbnailPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-card-foreground">What thumbnail sizes are available?</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-green-500">What thumbnail sizes are available?</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">
                         Our YouTube thumbnail downloader provides access to all available thumbnail sizes: Maximum Quality 
                         (1280x720 pixels) for the highest resolution, High Quality (480x360 pixels) for standard HD viewing, 
                         Medium Quality (320x180 pixels) for smaller displays, and Standard Quality (640x480 pixels) for 
@@ -273,8 +236,8 @@ export default function YoutubeThumbnailPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-card-foreground">Can I download thumbnails from any YouTube video?</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-green-500">Can I download thumbnails from any YouTube video?</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">
                         Yes, our tool works with any public YouTube video. Simply paste the video URL or video ID and 
                         our downloader will extract the thumbnails. The tool supports various YouTube URL formats including 
                         youtube.com/watch?v=, youtu.be/, and youtube.com/embed/ formats. It also works with just the 
@@ -283,8 +246,8 @@ export default function YoutubeThumbnailPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-card-foreground">Is it legal to download YouTube thumbnails?</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-green-500">Is it legal to download YouTube thumbnails?</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">
                         Downloading YouTube thumbnails for personal use, educational purposes, or content creation is 
                         generally acceptable. However, you should respect copyright laws and YouTube's Terms of Service. 
                         If you're using thumbnails for commercial purposes or republishing them, you may need permission 
@@ -294,8 +257,8 @@ export default function YoutubeThumbnailPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-card-foreground">Why would I need to download YouTube thumbnails?</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-green-500">Why would I need to download YouTube thumbnails?</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">
                         Content creators download YouTube thumbnails for various reasons: analyzing successful thumbnail 
                         designs for inspiration, creating thumbnail templates based on proven layouts, conducting A/B 
                         testing research, archiving thumbnail designs for reference, creating compilation videos or 
@@ -305,8 +268,8 @@ export default function YoutubeThumbnailPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-card-foreground">What's the difference between thumbnail qualities?</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-green-500">What's the difference between thumbnail qualities?</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">
                         Maximum Quality (1280x720) offers the highest resolution with crisp details, perfect for 
                         detailed analysis or high-quality presentations. High Quality (480x360) provides good clarity 
                         for most viewing purposes. Medium Quality (320x180) is suitable for smaller displays or 
@@ -317,8 +280,8 @@ export default function YoutubeThumbnailPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-card-foreground">Can I download thumbnails from private or unlisted videos?</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-green-500">Can I download thumbnails from private or unlisted videos?</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">
                         Our tool can only access thumbnails from public YouTube videos. Private, unlisted, or age-restricted 
                         videos may not be accessible through our downloader. If a video is set to private or requires 
                         authentication, the thumbnail extraction will not work. This is a limitation of YouTube's 
@@ -328,8 +291,8 @@ export default function YoutubeThumbnailPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-card-foreground">How can I improve my YouTube thumbnail design?</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-green-500">How can I improve my YouTube thumbnail design?</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">
                         Effective YouTube thumbnails use high contrast colors, clear focal subjects, readable text 
                         (especially on mobile), consistent branding, and emotional expressions. Study successful 
                         thumbnails in your niche, use bright colors that stand out, limit text to 3-5 words, 
@@ -340,8 +303,8 @@ export default function YoutubeThumbnailPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-card-foreground">What should I do if thumbnails don't load?</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-green-500">What should I do if thumbnails don't load?</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">
                         If thumbnails don't load, check that the YouTube URL is correct and the video is public. 
                         Try refreshing the page or clearing your browser cache. Some videos may have restricted 
                         access or be temporarily unavailable. Ensure you're using a valid YouTube URL format 
@@ -351,8 +314,8 @@ export default function YoutubeThumbnailPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-card-foreground">Can I use downloaded thumbnails for my own videos?</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-green-500">Can I use downloaded thumbnails for my own videos?</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">
                         While you can download thumbnails for analysis and inspiration, using someone else's 
                         thumbnail design for your own videos may violate copyright laws. Instead, use downloaded 
                         thumbnails as reference material to create your own original designs. Study successful 
@@ -363,8 +326,8 @@ export default function YoutubeThumbnailPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-card-foreground">What are the best practices for YouTube thumbnail optimization?</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-green-500">What are the best practices for YouTube thumbnail optimization?</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">
                         Optimize thumbnails by ensuring they're visually appealing at small sizes (mobile viewing), 
                         using high contrast between text and background, including emotional faces or expressions, 
                         maintaining consistent branding across your channel, testing different designs with A/B 
@@ -382,18 +345,7 @@ export default function YoutubeThumbnailPage() {
             {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
             <div className="hidden lg:block w-72">
               <div className="sticky top-32 space-y-6">
-                <div>
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
-                <div>
-                  <div className="text-center mb-2">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-                </div>
+                <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-black" />
               </div>
             </div>
           </div>
