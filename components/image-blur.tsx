@@ -22,21 +22,19 @@ export function ImageBlur() {
     setBlurIntensity,
     startProcessing,
     reset,
+    refineStrength,
+    setRefineStrength,
   } = useImageBlurStore();
 
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageDimensions, setImageDimensions] = useState<{ width: number; height: number } | null>(null);
+  const [debounceId, setDebounceId] = useState<number | null>(null);
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (!file) return
 
-    // Validate file type
-    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp']
-    if (!allowedTypes.includes(file.type)) {
-      alert('⚠️ Oops! Please upload a valid image file.\n\nSupported formats: JPEG, PNG, or WebP')
-      return
-    }
+    // Accept any file; will fail gracefully if not an image when loading
 
     const reader = new FileReader()
     reader.onload = async (event) => {
@@ -49,6 +47,7 @@ export function ImageBlur() {
         setImage(img, imageUrl)
         setImageDimensions({ width: img.naturalWidth, height: img.naturalHeight })
         setImageLoaded(true)
+        setTimeout(() => startProcessing(), 50)
       }
       img.onerror = () => {
         alert("⚠️ Failed to load image.\n\nPlease try uploading a different image.")
@@ -85,7 +84,7 @@ export function ImageBlur() {
     <div className="w-full">
       <Card className="shadow-lg w-full max-w-none border-slate-200 dark:border-slate-700">
         <div className="p-4 sm:p-6">
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Input Section */}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
@@ -104,7 +103,7 @@ export function ImageBlur() {
               </div>
 
               <div
-                className="relative w-full h-[500px] border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-xl overflow-hidden bg-white dark:bg-slate-800"
+                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-xl overflow-hidden bg-white dark:bg-slate-800"
               >
                 {!imageUrl && (
                   <label
@@ -128,7 +127,7 @@ export function ImageBlur() {
                     <input
                       id="image-upload-blur"
                       type="file"
-                      accept="image/jpeg,image/jpg,image/png,image/webp"
+                      
                       onChange={handleImageUpload}
                       className="hidden"
                     />
@@ -163,7 +162,7 @@ export function ImageBlur() {
               </div>
 
               <div
-                className="relative w-full h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden bg-white dark:bg-slate-800"
+                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden bg-white dark:bg-slate-800"
               >
                 {!imageUrl && !isProcessing && (
                   <div className="flex items-center justify-center h-full">
@@ -191,7 +190,6 @@ export function ImageBlur() {
                         <LoadingSpinner />
                         <div className="text-center space-y-2">
                           <p className="text-base font-semibold text-slate-900 dark:text-slate-100">{status.message}</p>
-                          <p className="text-sm font-medium text-slate-700 dark:text-slate-300">Applying AI-powered selective blur...</p>
                         </div>
                       </div>
                     </div>
@@ -229,18 +227,23 @@ export function ImageBlur() {
             </div>
           </div>
 
-          {/* Blur Intensity Control */}
-          {imageUrl && !isProcessing && (
+          {/* Controls - auto reprocess */}
+          {imageUrl && (
             <div className="mt-6 space-y-4">
               <div className="flex items-center justify-between">
                 <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
                   Blur Intensity: <span className="text-blue-600 dark:text-blue-400 font-semibold">{blurIntensity}px</span>
                 </label>
-                <span className="text-xs text-slate-500 dark:text-slate-400 italic">For background only</span>
+                <span className="text-xs text-slate-500 dark:text-slate-400 italic">Auto-applies</span>
               </div>
               <Slider
                 value={[blurIntensity]}
-                onValueChange={(value) => setBlurIntensity(value[0])}
+                onValueChange={(value) => {
+                  setBlurIntensity(value[0])
+                  if (debounceId) window.clearTimeout(debounceId)
+                  const id = window.setTimeout(() => startProcessing(), 350)
+                  setDebounceId(id)
+                }}
                 min={1}
                 max={50}
                 step={1}
@@ -251,27 +254,35 @@ export function ImageBlur() {
                 <span>Medium (25px)</span>
                 <span>Maximum (50px)</span>
               </div>
+
+              <div className="flex items-center justify-between pt-2">
+                <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                  Cutout strength: <span className="text-blue-600 dark:text-blue-400 font-semibold">{refineStrength}</span>
+                </label>
+              </div>
+              <Slider
+                value={[refineStrength === "light" ? 0 : refineStrength === "medium" ? 1 : 2]}
+                onValueChange={(v) => {
+                  const s = v[0] === 0 ? "light" : v[0] === 1 ? "medium" : "strong";
+                  setRefineStrength?.(s)
+                  if (debounceId) window.clearTimeout(debounceId)
+                  const id = window.setTimeout(() => startProcessing(), 350)
+                  setDebounceId(id)
+                }}
+                min={0}
+                max={2}
+                step={1}
+                className="w-full"
+              />
+              <div className="flex justify-between text-xs text-slate-500 dark:text-slate-400">
+                <span>Light</span>
+                <span>Medium</span>
+                <span>Strong</span>
+              </div>
             </div>
           )}
 
-          {/* Processing Button */}
-          {imageUrl && !isProcessing && (
-            <div className="mt-6 text-center space-y-3">
-              <Button 
-                onClick={startProcessing} 
-                className="gap-2 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold px-8 py-6 text-base"
-              >
-                <Zap className="h-5 w-5" />
-                {result ? 'Re-apply with New Intensity' : 'Apply AI Background Blur'}
-              </Button>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
-                {result 
-                  ? 'Adjust blur intensity above and click to re-process'
-                  : 'AI will detect your subject and blur only the background for professional results'
-                }
-              </p>
-            </div>
-          )}
+          {/* No button - auto processing */}
 
           {/* Error State */}
           {status.stage === "error" && (

@@ -55,12 +55,7 @@ const nextConfig = {
             chunks: "all",
             maxSize: 244000,
           },
-          onnx: {
-            test: /[\\/]node_modules[\\/]onnxruntime-web[\\/]/,
-            name: "onnx",
-            chunks: "all",
-            priority: 10,
-          },
+          
           workers: {
             test: /[\\/]workers[\\/]/,
             name: "workers",

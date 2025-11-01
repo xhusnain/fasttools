@@ -494,18 +494,19 @@ export default function ImageBackgroundRemoverPage() {
                     />
 
                     <div className="max-w-[1600px] mx-auto">
-                    <div className="text-center space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-500 text-white text-xs font-medium mb-4">
-                            <Zap className="h-3 w-3" />
-                            <span>AI-Powered Background Remover</span>
-                                    </div>
+                    <div className="text-center space-y-5 mb-6 sm:mb-8">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-2 shadow-md">
+                            <Zap className="h-4 w-4 animate-pulse" />
+                            <span>AI‑Powered Background Remover</span>
+                        </div>
 
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
-                                        Free Photo Background Remover - Remove BG from Images Online
-                                    </h1>
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">
+                            <span className="block">Free Photo Background Remover</span>
+                            <span className="block">Remove BG from Images Online</span>
+                        </h1>
 
-                        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mt-3 sm:mt-4">
-                            Remove photo bg instantly with our free AI photo background remover. Professional background removal for portraits, products, and pets. No photoshop needed—just upload, process & download. 100% free, fast, and secure on any device.
+                        <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
+                            Remove photo backgrounds instantly with our free AI tool. Professional results for portraits, products, and pets—no Photoshop needed. Upload, process, and download in seconds.
                         </p>
                     </div>
 

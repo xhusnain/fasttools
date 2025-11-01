@@ -2,10 +2,10 @@
 
 import type React from "react"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Upload, Download, RotateCcw, FileText, Zap } from "lucide-react"
+import { Upload, Download, RotateCcw, FileText, Zap, Image as ImageIcon, Palette } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
 import { useBgRemoverStore } from "@/lib/store-bg-remover"
 
@@ -19,21 +19,40 @@ export function ImageBackgroundRemover() {
     setImage,
     startProcessing,
     reset,
+    refineStrength,
+    setRefineStrength,
   } = useBgRemoverStore();
 
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageDimensions, setImageDimensions] = useState<{ width: number; height: number } | null>(null);
+  const [bgMode, setBgMode] = useState<"transparent" | "color" | "image">("transparent")
+  const [bgColor, setBgColor] = useState<string>("#ffffff")
+  const [bgImageUrl, setBgImageUrl] = useState<string | null>(null)
+  const [debounceId, setDebounceId] = useState<number | null>(null);
+  const [isBgMenuOpen, setIsBgMenuOpen] = useState(false)
+  const [isColorMenuOpen, setIsColorMenuOpen] = useState(false)
+  const colorMenuRef = useRef<HTMLDivElement | null>(null)
+
+  // Close background mode menu on outside click
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (!target.closest?.('#bg-mode-select')) {
+        setIsBgMenuOpen(false)
+      }
+      if (!colorMenuRef.current?.contains(target)) {
+        setIsColorMenuOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [])
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (!file) return
 
-    // Validate file type
-    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp']
-    if (!allowedTypes.includes(file.type)) {
-      alert('⚠️ Oops! Please upload a valid image file.\n\nSupported formats: JPEG, PNG, or WebP')
-      return
-    }
+    // Accept any file; will fail gracefully if not an image when loading
 
     const reader = new FileReader()
     reader.onload = async (event) => {
@@ -46,6 +65,8 @@ export function ImageBackgroundRemover() {
         setImage(img, imageUrl)
         setImageDimensions({ width: img.naturalWidth, height: img.naturalHeight })
         setImageLoaded(true)
+        // Auto-process on first load
+        setTimeout(() => startProcessing(), 50)
       }
       img.onerror = () => {
         alert("⚠️ Failed to load image.\n\nPlease try uploading a different image.")
@@ -58,12 +79,71 @@ export function ImageBackgroundRemover() {
   const downloadImage = () => {
     if (!result?.resultUrl) return
 
-    const link = document.createElement('a')
-    link.href = result.resultUrl
-    link.download = 'background-removed.png'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    // If transparent, download as-is
+    if (bgMode === "transparent") {
+      const link = document.createElement('a')
+      link.href = result.resultUrl
+      link.download = 'background-removed.png'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      return
+    }
+
+    // Compose with color or custom image using canvas
+    const subjectImg = new Image()
+    subjectImg.crossOrigin = "anonymous"
+    subjectImg.onload = () => {
+      const w = subjectImg.naturalWidth
+      const h = subjectImg.naturalHeight
+      const canvas = document.createElement('canvas')
+      canvas.width = w
+      canvas.height = h
+      const ctx = canvas.getContext('2d')!
+
+      if (bgMode === "color") {
+        ctx.fillStyle = bgColor
+        ctx.fillRect(0, 0, w, h)
+        ctx.drawImage(subjectImg, 0, 0)
+        canvas.toBlob((blob) => {
+          if (!blob) return
+          const url = URL.createObjectURL(blob)
+          const link = document.createElement('a')
+          link.href = url
+          link.download = 'background-colored.png'
+          document.body.appendChild(link)
+          link.click()
+          document.body.removeChild(link)
+          setTimeout(() => URL.revokeObjectURL(url), 0)
+        }, 'image/png')
+      } else if (bgMode === "image" && bgImageUrl) {
+        const bg = new Image()
+        bg.crossOrigin = "anonymous"
+        bg.onload = () => {
+          // Cover strategy
+          const ratio = Math.max(w / bg.naturalWidth, h / bg.naturalHeight)
+          const bw = Math.ceil(bg.naturalWidth * ratio)
+          const bh = Math.ceil(bg.naturalHeight * ratio)
+          const bx = Math.floor((w - bw) / 2)
+          const by = Math.floor((h - bh) / 2)
+          ctx.drawImage(bg, bx, by, bw, bh)
+          ctx.drawImage(subjectImg, 0, 0)
+          canvas.toBlob((blob) => {
+            if (!blob) return
+            const url = URL.createObjectURL(blob)
+            const link = document.createElement('a')
+            link.href = url
+            link.download = 'background-custom.png'
+            document.body.appendChild(link)
+            link.click()
+            document.body.removeChild(link)
+            setTimeout(() => URL.revokeObjectURL(url), 0)
+          }, 'image/png')
+        }
+        bg.src = bgImageUrl
+      }
+    }
+    subjectImg.src = result.resultUrl
   }
 
   const resetAll = () => {
@@ -98,7 +178,7 @@ export function ImageBackgroundRemover() {
               <div className="relative">
                 <label
                   htmlFor="image-upload-bg"
-                  className="block w-full h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl cursor-pointer bg-white hover:border-purple-400 dark:hover:border-purple-500 transition-all duration-300 overflow-hidden"
+                  className="block w-full h-[220px] sm:h-[340px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl cursor-pointer bg-white hover:border-purple-400 dark:hover:border-purple-500 transition-all duration-300 overflow-hidden"
                 >
                   {imageUrl ? (
                     <div className="w-full h-full flex items-center justify-center p-4 bg-white">
@@ -112,30 +192,30 @@ export function ImageBackgroundRemover() {
                     <div className="flex flex-col items-center justify-center h-full px-6">
                       <div className="relative mb-6">
                         <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full blur-xl opacity-30"></div>
-                        <div className="relative p-8 bg-gradient-to-br from-purple-500 via-purple-600 to-blue-600 rounded-full shadow-2xl">
-                          <Upload className="w-16 h-16 text-white" />
+                        <div className="relative p-6 sm:p-8 bg-gradient-to-br from-purple-500 via-purple-600 to-blue-600 rounded-full shadow-2xl">
+                          <Upload className="w-12 h-12 sm:w-16 sm:h-16 text-white" />
                         </div>
                       </div>
-                      <p className="text-xl font-bold text-slate-900 mb-2">
+                      <p className="text-lg sm:text-xl font-bold text-slate-900 mb-2 text-center">
                         Click to upload or drag and drop
                       </p>
-                      <p className="text-sm font-medium text-slate-700 mb-4">
+                      <p className="text-xs sm:text-sm font-medium text-slate-700 mb-4 text-center">
                         PNG, JPG, JPEG, WebP (MAX. 10MB)
                       </p>
                       <div className="flex gap-2 flex-wrap justify-center">
-                        <span className="px-4 py-1.5 bg-slate-800 text-white rounded-full text-xs font-medium shadow-sm">
+                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-slate-800 text-white rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
                           Product Photos
                         </span>
-                        <span className="px-4 py-1.5 bg-slate-800 text-white rounded-full text-xs font-medium shadow-sm">
+                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-slate-800 text-white rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
                           Portraits
                         </span>
-                        <span className="px-4 py-1.5 bg-slate-800 text-white rounded-full text-xs font-medium shadow-sm">
+                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-slate-800 text-white rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
                           Logos
                         </span>
                       </div>
                     </div>
                   )}
-                  <input id="image-upload-bg" type="file" className="hidden" accept="image/*" onChange={handleImageUpload} />
+                  <input id="image-upload-bg" type="file" className="hidden" onChange={handleImageUpload} />
                 </label>
               </div>
 
@@ -162,8 +242,8 @@ export function ImageBackgroundRemover() {
               </div>
 
               <div 
-                className="relative w-full h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"
-                style={{
+                className="relative w-full h-[220px] sm:h-[340px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"
+                style={bgMode === 'color' ? { backgroundColor: bgColor } : bgMode === 'image' && bgImageUrl ? { backgroundImage: `url(${bgImageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {
                   background: '#ffffff',
                   backgroundImage: 'repeating-conic-gradient(#d1d5db 0% 25%, #ffffff 0% 50%)',
                   backgroundSize: '20px 20px',
@@ -196,7 +276,6 @@ export function ImageBackgroundRemover() {
                         <LoadingSpinner />
                         <div className="text-center space-y-2">
                           <p className="text-base font-semibold text-slate-900">{status.message}</p>
-                          <p className="text-sm font-medium text-slate-700">This usually takes a few seconds</p>
                         </div>
                       </div>
                     </div>
@@ -216,13 +295,103 @@ export function ImageBackgroundRemover() {
 
               {result && !isProcessing && (
                 <div className="space-y-3">
-                  <Button 
-                    onClick={downloadImage} 
-                    className="w-full gap-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-6 text-base"
-                  >
-                    <Download className="h-5 w-5" />
-                    Download PNG
-                  </Button>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <Button 
+                      onClick={downloadImage} 
+                      className="w-full gap-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-6 text-base"
+                    >
+                      <Download className="h-5 w-5" />
+                      Download PNG
+                    </Button>
+                    <div className="flex items-center justify-center gap-3 flex-wrap md:flex-nowrap relative">
+                      <div id="bg-mode-select" className="relative inline-flex w-auto">
+                        <button
+                          type="button"
+                          onClick={() => setIsBgMenuOpen((o) => !o)}
+                          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setIsBgMenuOpen((o) => !o) } }}
+                          className="inline-flex items-center justify-center rounded-full border border-accent/60 bg-gradient-to-br from-primary/15 via-accent/15 to-transparent dark:from-primary/20 dark:via-accent/20 dark:to-transparent text-slate-800 dark:text-slate-100 shadow-sm hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-accent/40 h-12 w-12"
+                          aria-haspopup="listbox"
+                          aria-expanded={isBgMenuOpen}
+                        >
+                          <Palette className="h-5 w-5 text-primary dark:text-accent" />
+                          <span className="sr-only">
+                            {bgMode === 'transparent' ? 'Transparent' : bgMode === 'color' ? 'Color' : 'Custom Image'}
+                          </span>
+                          {/* Chevron hidden to keep circular shape */}
+                        </button>
+                        {isBgMenuOpen && (
+                          <ul
+                            role="listbox"
+                            className="absolute z-20 mt-2 left-1/2 -translate-x-1/2 md:left-auto md:right-0 w-60 max-w-[calc(100vw-3rem)] rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-xl overflow-hidden"
+                          >
+                            {[
+                              { v: 'transparent', l: 'Transparent' },
+                              { v: 'color', l: 'Color' },
+                              { v: 'image', l: 'Custom Image' },
+                            ].map((o) => (
+                              <li
+                                key={o.v}
+                                role="option"
+                                aria-selected={bgMode === (o.v as any)}
+                                className={`px-3 py-2 text-sm cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 ${bgMode === (o.v as any) ? 'bg-slate-50 dark:bg-slate-700/60' : ''}`}
+                                onClick={() => { setBgMode(o.v as any); setIsBgMenuOpen(false) }}
+                              >
+                                {o.l}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                      {bgMode === 'color' && (
+                        <div ref={colorMenuRef} className="relative">
+                          <button
+                            type="button"
+                            aria-label="Background color"
+                            onClick={() => setIsColorMenuOpen((o) => !o)}
+                            className="h-12 w-12 rounded-full border-2 border-accent/60 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-accent/40"
+                            style={{ backgroundColor: bgColor }}
+                          />
+                          {isColorMenuOpen && (
+                            <div className="absolute z-30 mt-2 left-1/2 -translate-x-1/2 md:left-auto md:right-0 w-64 max-w-[calc(100vw-3rem)] rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 shadow-xl">
+                              <div className="grid grid-cols-8 gap-2 mb-3">
+                                {['#ffffff','#f3f4f6','#000000','#ef4444','#3b82f6','#10b981','#a855f7','#f59e0b','#14b8a6','#e11d48','#7c3aed','#475569'].map(c => (
+                                  <button key={c} title={c} onClick={() => { setBgColor(c); setIsColorMenuOpen(false) }} className="h-6 w-6 rounded-full border border-slate-300 dark:border-slate-600" style={{ backgroundColor: c }} />
+                                ))}
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <span className="text-xs text-slate-500">Hex</span>
+                                <input
+                                  type="text"
+                                  value={bgColor}
+                                  onChange={(e) => setBgColor(e.target.value)}
+                                  className="flex-1 text-xs rounded-md border border-slate-300 dark:border-slate-600 bg-transparent px-2 py-1 outline-none"
+                                  placeholder="#ffffff"
+                                />
+                                <button onClick={() => setIsColorMenuOpen(false)} className="text-xs px-2 py-1 rounded-md bg-accent text-white">OK</button>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                      {bgMode === 'image' && (
+                        <label className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 cursor-pointer w-full md:w-auto justify-center bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                          <ImageIcon className="h-4 w-4" />
+                          <span className="text-sm">Choose image</span>
+                          <input
+                            type="file"
+                            className="hidden"
+                            onChange={(e) => {
+                              const f = e.target.files?.[0]
+                              if (!f) return
+                              const reader = new FileReader()
+                              reader.onload = (ev) => setBgImageUrl(ev.target?.result as string)
+                              reader.readAsDataURL(f)
+                            }}
+                          />
+                        </label>
+                      )}
+                    </div>
+                  </div>
                   
                   <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                     <div className="flex items-center gap-2">
@@ -246,18 +415,7 @@ export function ImageBackgroundRemover() {
             </div>
           </div>
 
-          {/* Processing Button */}
-          {imageUrl && !isProcessing && !result && (
-            <div className="mt-6 text-center">
-              <Button 
-                onClick={startProcessing} 
-                className="gap-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold px-8 py-6 text-base"
-              >
-                <Zap className="h-5 w-5" />
-                Remove Background
-              </Button>
-            </div>
-          )}
+          {/* Strength Slider removed – defaulting to medium */}
 
           {/* Error State */}
           {status.stage === "error" && (
