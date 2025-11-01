@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { JSONToCSV } from "@/components/json-to-csv"
 import { AdSpace } from "@/components/ad-space"
+import { GHeader } from "@/components/globalcomponents/gheader"
 import Link from "next/link"
 import { FileJson, FileSpreadsheet, Download, ArrowRight } from "lucide-react"
 
@@ -696,64 +697,42 @@ export default function JSONToCSVPage() {
         <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-6 md:py-8">
       <Breadcrumbs
         items={[
-          { label: "Home", href: "/" },
           { label: "Developer Tools", href: "/dev-tools" },
-              { label: "Convert JSON to CSV Online Free", href: "/dev-tools/json-to-csv" },
-            ]}
-          />
+          { label: "Convert JSON to CSV Online Free", href: "/dev-tools/json-to-csv" },
+        ]}
+      />
 
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8">
               <div className="flex-1 lg:flex-[2] space-y-4 sm:space-y-5 md:space-y-6">
                 {/* Hero Section */}
                 <div className="text-center space-y-3 sm:space-y-4 md:space-y-5 animate-fade-in-up">
-                  <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-2 sm:mb-4 shadow-md">
-                    <FileJson className="h-3.5 w-3.5 sm:h-4 sm:w-4 animate-pulse" />
-                    <span className="text-xs sm:text-sm">JSON to CSV Converter</span>
-                    <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-secondary-accent rounded-full animate-ping"></div>
-        </div>
+                  <GHeader
+                    title="Convert JSON to CSV Online Free - Instant Download"
+                    description="Transform JSON data to Excel-ready CSV format instantly. Supports nested JSON, arrays, custom delimiters, and one-click download. Perfect for developers, data analysts, Excel, and Google Sheets. Free JSON to CSV converter with Python and JavaScript code examples."
+                    titleSize="medium"
+                    descriptionSize="small"
+                  />
+                </div>
 
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight px-2 sm:px-0">
-                    Convert JSON to CSV Online Free - Instant Download
-                  </h1>
-
-                  <p className="text-sm sm:text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
-                    Transform JSON data to Excel-ready CSV format instantly. Supports nested JSON, arrays, custom delimiters, and one-click download. Perfect for developers, data analysts, Excel, and Google Sheets. Free JSON to CSV converter with Python and JavaScript code examples.
-                  </p>
-
-                  <div className="mt-4 sm:mt-6 grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 text-xs">
-                    <div className="flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-2 rounded-lg bg-card border border-primary shadow">
-                      <FileJson className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary flex-shrink-0" />
-                      <span className="text-primary font-medium text-xs sm:text-sm">Instant Convert</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
-                      <Download className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-green-600 flex-shrink-0" />
-                      <span className="text-green-600 font-medium text-xs sm:text-sm">Download CSV</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-2 rounded-lg bg-card border border-accent shadow">
-                      <FileSpreadsheet className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-accent flex-shrink-0" />
-                      <span className="text-accent font-medium text-xs sm:text-sm">Free Forever</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-2 rounded-lg bg-card border border-secondary-accent shadow">
-                      <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-secondary-accent flex-shrink-0" />
-                      <span className="text-secondary-accent font-medium text-xs sm:text-sm">Excel Ready</span>
-                    </div>
-                  </div>
-        </div>
+                {/* Mobile Ad Space */}
+                <div className="lg:hidden">
+                  <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
+                </div>
 
                 {/* Converter Tool */}
-                <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
+                <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-black border border-border shadow">
         <JSONToCSV />
         </div>
 
                 {/* Content Sections */}
                 <div className="space-y-4 sm:space-y-5 animate-fade-in-up animation-delay-200">
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">How to Convert JSON to CSV</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">How to Convert JSON to CSV</h2>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
                       Our JSON to CSV converter makes data transformation simple. Paste your JSON data, customize delimiters, and download CSV files instantly for use in Excel, Google Sheets, or any spreadsheet application.
                     </p>
-                    <ol className="list-decimal pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-muted-foreground leading-relaxed">
+                    <ol className="list-decimal pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-gray-400 leading-relaxed">
                       <li>Paste your JSON data or upload a JSON file</li>
                       <li>Choose your preferred delimiter (comma or semicolon)</li>
                       <li>Toggle header row inclusion based on your needs</li>
@@ -762,12 +741,12 @@ export default function JSONToCSVPage() {
           </ol>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">Features & Options</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Features & Options</h2>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
                       Our converter supports arrays, nested objects, and complex JSON structures. Customize your output with flexible delimiter options and header controls.
                     </p>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-muted-foreground leading-relaxed">
+                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-gray-400 leading-relaxed">
                       <li><strong>Delimiter Options:</strong> Choose between comma (,) or semicolon (;) separators for regional compatibility</li>
                       <li><strong>Header Row Control:</strong> Include or exclude column headers based on your requirements</li>
                       <li><strong>Nested JSON Support:</strong> Automatically flattens nested objects into CSV columns</li>
@@ -777,9 +756,9 @@ export default function JSONToCSVPage() {
           </ul>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">Tips for Best Results</h2>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-muted-foreground leading-relaxed">
+                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Tips for Best Results</h2>
+                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-gray-400 leading-relaxed">
                       <li>Validate your JSON structure before converting to avoid errors</li>
                       <li>Flatten deeply nested objects for clearer CSV columns</li>
                       <li>Ensure consistent keys across array items for complete headers</li>
@@ -789,33 +768,33 @@ export default function JSONToCSVPage() {
           </ul>
         </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">Convert JSON to CSV with Programming Languages</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Convert JSON to CSV with Programming Languages</h2>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
                       Our online converter provides instant results, but you can also convert JSON to CSV programmatically using Python, JavaScript, Node.js, Java, PHP, Go, Rust, and other languages.
                     </p>
-                    <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+                    <div className="space-y-3 text-sm text-gray-400 leading-relaxed">
                       <div>
-                        <strong className="text-card-foreground">Python JSON to CSV:</strong> Use the pandas library with json_normalize() or the built-in csv module to convert JSON files to CSV. Python code for JSON to CSV is simple: read JSON with json.load(), write CSV with csv.DictWriter(). Python pandas json to csv conversion handles nested structures elegantly. Python script to convert JSON to CSV can process large files efficiently. You can write JSON to CSV in Python without pandas using the standard library.
+                        <strong className="text-orange-500">Python JSON to CSV:</strong> Use the pandas library with json_normalize() or the built-in csv module to convert JSON files to CSV. Python code for JSON to CSV is simple: read JSON with json.load(), write CSV with csv.DictWriter(). Python pandas json to csv conversion handles nested structures elegantly. Python script to convert JSON to CSV can process large files efficiently. You can write JSON to CSV in Python without pandas using the standard library.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">JavaScript & Node.js:</strong> Convert JSON to CSV in JavaScript using libraries like json2csv or Papa Parse. Node.js JSON to CSV conversion is perfect for backend processing. Use npm packages like json2csv or csv-writer to convert JSON to CSV with headers. JavaScript functions can handle JSON arrays and convert them to downloadable CSV files in the browser.
+                        <strong className="text-orange-500">JavaScript & Node.js:</strong> Convert JSON to CSV in JavaScript using libraries like json2csv or Papa Parse. Node.js JSON to CSV conversion is perfect for backend processing. Use npm packages like json2csv or csv-writer to convert JSON to CSV with headers. JavaScript functions can handle JSON arrays and convert them to downloadable CSV files in the browser.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">Java & Kotlin:</strong> Use libraries like Jackson, Gson, or OpenCSV to convert JSON to CSV in Java. Java examples typically involve parsing JSON with ObjectMapper and writing CSV with CSVWriter. Kotlin JSON to CSV conversion follows similar patterns with enhanced syntax.
+                        <strong className="text-orange-500">Java & Kotlin:</strong> Use libraries like Jackson, Gson, or OpenCSV to convert JSON to CSV in Java. Java examples typically involve parsing JSON with ObjectMapper and writing CSV with CSVWriter. Kotlin JSON to CSV conversion follows similar patterns with enhanced syntax.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">Other Languages:</strong> Convert JSON to CSV in PHP using json_decode() and fputcsv(). Go (Golang) offers encoding/json and encoding/csv packages. Rust provides serde_json and csv crates. R users can use jsonlite and write.csv() functions. VB.NET and .NET developers can use System.Text.Json or Newtonsoft.Json with CsvHelper.
+                        <strong className="text-orange-500">Other Languages:</strong> Convert JSON to CSV in PHP using json_decode() and fputcsv(). Go (Golang) offers encoding/json and encoding/csv packages. Rust provides serde_json and csv crates. R users can use jsonlite and write.csv() functions. VB.NET and .NET developers can use System.Text.Json or Newtonsoft.Json with CsvHelper.
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">Framework Integration: Angular, React, Next.js & More</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Framework Integration: Angular, React, Next.js & More</h2>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
                       Integrate JSON to CSV conversion in your web applications with popular frameworks and libraries.
                     </p>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-muted-foreground leading-relaxed">
+                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-gray-400 leading-relaxed">
                       <li><strong>Angular JSON to CSV:</strong> Use HttpClient to fetch JSON, then convert to CSV with json2csv or custom services. Angular components can trigger CSV downloads directly in the browser.</li>
                       <li><strong>React & Next.js:</strong> React libraries like react-csv or react-json-to-csv provide components for export functionality. Next.js API routes can handle server-side JSON to CSV conversion.</li>
                       <li><strong>Laravel & PHP:</strong> Laravel's Collection methods make JSON to CSV conversion straightforward with League\Csv packages.</li>
@@ -824,36 +803,36 @@ export default function JSONToCSVPage() {
                     </ul>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">Platform-Specific Tools: Windows, Mac, Linux & IDE</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Platform-Specific Tools: Windows, Mac, Linux & IDE</h2>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
                       Convert JSON to CSV on any platform using command-line tools, IDEs, and platform-specific utilities.
                     </p>
-                    <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+                    <div className="space-y-3 text-sm text-gray-400 leading-relaxed">
                       <div>
-                        <strong className="text-card-foreground">Visual Studio Code:</strong> Use VS Code extensions to convert JSON to CSV directly in the editor. The JSON to CSV converter extension provides one-click conversion. Convert JSON to CSV in VS Code using Command Palette or right-click context menu.
+                        <strong className="text-orange-500">Visual Studio Code:</strong> Use VS Code extensions to convert JSON to CSV directly in the editor. The JSON to CSV converter extension provides one-click conversion. Convert JSON to CSV in VS Code using Command Palette or right-click context menu.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">Windows & PowerShell:</strong> Convert JSON to CSV in PowerShell using ConvertFrom-Json and Export-Csv cmdlets. Windows users can use PowerShell scripts or command-line tools for batch conversion. PowerShell JSON to CSV conversion is built into Windows 10 and 11.
+                        <strong className="text-orange-500">Windows & PowerShell:</strong> Convert JSON to CSV in PowerShell using ConvertFrom-Json and Export-Csv cmdlets. Windows users can use PowerShell scripts or command-line tools for batch conversion. PowerShell JSON to CSV conversion is built into Windows 10 and 11.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">Mac & macOS:</strong> Convert JSON to CSV on Mac using Terminal with jq, Python, or Node.js scripts. macOS users have access to Unix tools for JSON processing. Download JSON to CSV apps from the Mac App Store for GUI-based conversion.
+                        <strong className="text-orange-500">Mac & macOS:</strong> Convert JSON to CSV on Mac using Terminal with jq, Python, or Node.js scripts. macOS users have access to Unix tools for JSON processing. Download JSON to CSV apps from the Mac App Store for GUI-based conversion.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">Linux & Ubuntu:</strong> Linux command-line tools like jq, json2csv-cli, and custom bash scripts handle JSON to CSV conversion. Ubuntu and Debian users can install conversion tools via apt package manager. Use bash scripts to automate JSON to CSV workflows.
+                        <strong className="text-orange-500">Linux & Ubuntu:</strong> Linux command-line tools like jq, json2csv-cli, and custom bash scripts handle JSON to CSV conversion. Ubuntu and Debian users can install conversion tools via apt package manager. Use bash scripts to automate JSON to CSV workflows.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">Other IDEs:</strong> IntelliJ IDEA, Visual Studio, and other IDEs support JSON to CSV conversion through plugins or built-in features. GitHub repositories offer JSON to CSV scripts and tools for developers.
+                        <strong className="text-orange-500">Other IDEs:</strong> IntelliJ IDEA, Visual Studio, and other IDEs support JSON to CSV conversion through plugins or built-in features. GitHub repositories offer JSON to CSV scripts and tools for developers.
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">CLI & Automation: Bash, jq, PowerShell</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">CLI & Automation: Bash, jq, PowerShell</h2>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
                       Automate JSON to CSV conversion using command-line tools and scripts for DevOps, ETL pipelines, and data processing workflows.
                     </p>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-muted-foreground leading-relaxed">
+                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-gray-400 leading-relaxed">
                       <li><strong>jq JSON to CSV:</strong> Use the jq command-line tool to parse and convert JSON to CSV with custom filters. jq provides powerful JSON querying with output formatting options. Convert JSON to CSV with jq using @csv formatter and field selectors. Create CSV with headers using jq's map and keys functions.</li>
                       <li><strong>Bash Scripts:</strong> Write bash scripts to convert JSON to CSV using jq, awk, or Python one-liners. Bash JSON to CSV conversion is ideal for Linux/Unix automation. Process JSON files in batches with bash loops and convert to CSV for data analysis.</li>
                       <li><strong>Linux Command Line:</strong> Combine cat, jq, and sed to create JSON to CSV pipelines on Linux. Use json2csv CLI tools available through npm or pip. Ubuntu and Debian systems support JSON to CSV conversion via standard tools.</li>
@@ -861,33 +840,33 @@ export default function JSONToCSVPage() {
                     </ul>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">JSON vs CSV: Comparison & When to Use Each</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">JSON vs CSV: Comparison & When to Use Each</h2>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
                       Understanding JSON vs CSV helps you choose the right format for your data needs. Both formats have distinct advantages and use cases.
                     </p>
-                    <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+                    <div className="space-y-3 text-sm text-gray-400 leading-relaxed">
                       <div>
-                        <strong className="text-card-foreground">File Size & Performance:</strong> JSON vs CSV file size varies—CSV is typically smaller for flat data, while JSON handles nested structures better. JSON vs CSV performance depends on parsing needs; CSV is faster to parse for simple data. Is JSON smaller than CSV? For deeply nested data, JSON can be more efficient. Is JSON or CSV faster? CSV wins for large, flat datasets while JSON excels with complex structures.
+                        <strong className="text-orange-500">File Size & Performance:</strong> JSON vs CSV file size varies—CSV is typically smaller for flat data, while JSON handles nested structures better. JSON vs CSV performance depends on parsing needs; CSV is faster to parse for simple data. Is JSON smaller than CSV? For deeply nested data, JSON can be more efficient. Is JSON or CSV faster? CSV wins for large, flat datasets while JSON excels with complex structures.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">Format Differences:</strong> JSON vs CSV format: CSV is tabular with rows and columns, JSON is hierarchical with key-value pairs. JSON or CSV file selection depends on your application—use JSON for APIs, CSV for spreadsheets. JSON CSV difference: JSON supports nested objects and arrays, CSV requires flattening.
+                        <strong className="text-orange-500">Format Differences:</strong> JSON vs CSV format: CSV is tabular with rows and columns, JSON is hierarchical with key-value pairs. JSON or CSV file selection depends on your application—use JSON for APIs, CSV for spreadsheets. JSON CSV difference: JSON supports nested objects and arrays, CSV requires flattening.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">Which is Better?:</strong> JSON vs CSV which is better depends on your use case. For data analysis and Excel, CSV is preferred. For APIs and web apps, JSON is standard. JSON or CSV better for Python? Both work well—use pandas for CSV, requests for JSON APIs. JSON vs CSV pros and cons: CSV is human-readable and universal for spreadsheets; JSON is flexible and maintains data structure.
+                        <strong className="text-orange-500">Which is Better?:</strong> JSON vs CSV which is better depends on your use case. For data analysis and Excel, CSV is preferred. For APIs and web apps, JSON is standard. JSON or CSV better for Python? Both work well—use pandas for CSV, requests for JSON APIs. JSON vs CSV pros and cons: CSV is human-readable and universal for spreadsheets; JSON is flexible and maintains data structure.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">Other Comparisons:</strong> JSON vs CSV vs XML: CSV is simplest, JSON is most web-friendly, XML is most verbose. JSON vs CSV vs Parquet: Parquet is optimized for big data columnar storage. JSON vs CSV Reddit discussions often recommend CSV for analytics, JSON for data interchange. Check JSON vs CSV examples to see format differences in practice.
+                        <strong className="text-orange-500">Other Comparisons:</strong> JSON vs CSV vs XML: CSV is simplest, JSON is most web-friendly, XML is most verbose. JSON vs CSV vs Parquet: Parquet is optimized for big data columnar storage. JSON vs CSV Reddit discussions often recommend CSV for analytics, JSON for data interchange. Check JSON vs CSV examples to see format differences in practice.
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">Excel, Google Sheets & Spreadsheet Integration</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Excel, Google Sheets & Spreadsheet Integration</h2>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
                       Convert JSON to CSV for seamless import into Excel, Google Sheets, LibreOffice, and other spreadsheet applications.
                     </p>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-muted-foreground leading-relaxed">
+                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-gray-400 leading-relaxed">
                       <li><strong>JSON to CSV for Excel:</strong> Excel opens CSV files natively. Convert JSON to CSV and open in Excel for data analysis, pivot tables, and charts. Use our tool to convert JSON to Excel-compatible CSV with proper encoding and delimiters. Convert JSON to Excel table format by ensuring headers match your data structure. JSON to CSV to Excel workflow preserves data types and formatting.</li>
                       <li><strong>Google Sheets:</strong> Import CSV files to Google Sheets via File → Import. Convert JSON to CSV for Google Sheets to analyze API data, create dashboards, and collaborate. Google Sheets JSON to CSV conversion maintains UTF-8 encoding for international characters.</li>
                       <li><strong>Delimiter Options:</strong> Choose comma or semicolon delimiters for regional compatibility. Semicolon delimiters work better for European Excel versions. CSV delimiter options ensure your data imports correctly across different spreadsheet applications.</li>
@@ -896,36 +875,36 @@ export default function JSONToCSVPage() {
                     </ul>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">Advanced Features: Nested JSON, Arrays & Large Files</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Advanced Features: Nested JSON, Arrays & Large Files</h2>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
                       Handle complex JSON structures, arrays of objects, nested data, and large file conversions with our advanced features.
                     </p>
-                    <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+                    <div className="space-y-3 text-sm text-gray-400 leading-relaxed">
                       <div>
-                        <strong className="text-card-foreground">Nested JSON to CSV:</strong> Convert nested JSON to CSV by flattening hierarchical structures into columns. Our tool handles deeply nested objects automatically. Nested JSON to CSV online conversion preserves parent-child relationships through dot notation. Convert nested JSON to CSV in Python pandas using json_normalize() for complex structures. Hierarchical JSON to CSV conversion maintains data integrity.
+                        <strong className="text-orange-500">Nested JSON to CSV:</strong> Convert nested JSON to CSV by flattening hierarchical structures into columns. Our tool handles deeply nested objects automatically. Nested JSON to CSV online conversion preserves parent-child relationships through dot notation. Convert nested JSON to CSV in Python pandas using json_normalize() for complex structures. Hierarchical JSON to CSV conversion maintains data integrity.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">JSON Arrays to CSV:</strong> Convert JSON array to CSV with automatic row creation for each array item. Array of JSON to CSV conversion ensures consistent columns across all records. JSON with array to CSV handles both top-level arrays and nested array fields. List of JSON to CSV in Python iterates through items and writes CSV rows.
+                        <strong className="text-orange-500">JSON Arrays to CSV:</strong> Convert JSON array to CSV with automatic row creation for each array item. Array of JSON to CSV conversion ensures consistent columns across all records. JSON with array to CSV handles both top-level arrays and nested array fields. List of JSON to CSV in Python iterates through items and writes CSV rows.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">Large Files:</strong> Convert large JSON files to CSV using streaming or chunking techniques. JSON to CSV for large files requires memory-efficient processing. Convert huge JSON to CSV online with our optimized converter. Large JSON file to CSV conversion handles files up to several MB in the browser. For very large files (GB+), use command-line tools or Python scripts with chunked reading.
+                        <strong className="text-orange-500">Large Files:</strong> Convert large JSON files to CSV using streaming or chunking techniques. JSON to CSV for large files requires memory-efficient processing. Convert huge JSON to CSV online with our optimized converter. Large JSON file to CSV conversion handles files up to several MB in the browser. For very large files (GB+), use command-line tools or Python scripts with chunked reading.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">Multiple Files:</strong> Convert multiple JSON files to CSV in batch using scripts or desktop applications. Bulk JSON to CSV conversion automates repetitive data transformation tasks. Process entire directories of JSON files and output corresponding CSV files.
+                        <strong className="text-orange-500">Multiple Files:</strong> Convert multiple JSON files to CSV in batch using scripts or desktop applications. Bulk JSON to CSV conversion automates repetitive data transformation tasks. Process entire directories of JSON files and output corresponding CSV files.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">Data Types & Formatting:</strong> Handle JSON strings, numbers, booleans, and null values correctly in CSV output. Flatten JSON to CSV while preserving data types through proper quoting and escaping. JSON to CSV table format ensures each row aligns with column headers for consistent data structure.
+                        <strong className="text-orange-500">Data Types & Formatting:</strong> Handle JSON strings, numbers, booleans, and null values correctly in CSV output. Flatten JSON to CSV while preserving data types through proper quoting and escaping. JSON to CSV table format ensures each row aligns with column headers for consistent data structure.
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">Tool Integrations: Power Automate, Retool, n8n & More</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Tool Integrations: Power Automate, Retool, n8n & More</h2>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
                       Integrate JSON to CSV conversion in your automation workflows, no-code platforms, and enterprise tools.
                     </p>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-muted-foreground leading-relaxed">
+                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-gray-400 leading-relaxed">
                       <li><strong>Power Automate:</strong> Convert JSON to CSV in Power Automate using the "Create CSV table" action. Power Automate JSON to CSV workflows can process HTTP responses, database queries, and API data. JSON to CSV table in Power Automate creates Excel-compatible CSV for SharePoint, OneDrive, or email attachments.</li>
                       <li><strong>No-Code Platforms:</strong> Retool JSON to CSV conversion works with custom components and transformers. n8n JSON to CSV node processes data between workflow steps. Zapier converts JSON to CSV using Code by Zapier actions. Workato and Kestra support JSON to CSV transformation in integration recipes.</li>
                       <li><strong>Data Tools:</strong> Postman can export JSON responses to CSV using scripts. Snowflake and SQL databases parse JSON and export CSV with COPY INTO commands. UiPath RPA bots convert JSON to CSV for data entry automation. Excel Power Query imports JSON and transforms to CSV format.</li>
@@ -934,33 +913,33 @@ export default function JSONToCSVPage() {
                     </ul>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">Online, Offline & Local Conversion Options</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Online, Offline & Local Conversion Options</h2>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
                       Choose between online JSON to CSV converters, offline desktop apps, and local browser-based tools based on your privacy and connectivity needs.
                     </p>
-                    <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+                    <div className="space-y-3 text-sm text-gray-400 leading-relaxed">
                       <div>
-                        <strong className="text-card-foreground">Online Converters:</strong> Our free JSON to CSV converter online processes data directly in your browser—no server uploads required. Online JSON to CSV tools provide instant results without installation. JSON to CSV online free converters like ours support unlimited conversions. Convert JSON to CSV online free with our tool that respects your data privacy.
+                        <strong className="text-orange-500">Online Converters:</strong> Our free JSON to CSV converter online processes data directly in your browser—no server uploads required. Online JSON to CSV tools provide instant results without installation. JSON to CSV online free converters like ours support unlimited conversions. Convert JSON to CSV online free with our tool that respects your data privacy.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">Offline Tools:</strong> Download JSON to CSV converter offline applications for Windows, Mac, and Linux. JSON to CSV offline converters work without internet connection. Convert JSON to CSV locally using desktop apps or command-line tools. JSON to CSV tool offline options include standalone executables and Python scripts.
+                        <strong className="text-orange-500">Offline Tools:</strong> Download JSON to CSV converter offline applications for Windows, Mac, and Linux. JSON to CSV offline converters work without internet connection. Convert JSON to CSV locally using desktop apps or command-line tools. JSON to CSV tool offline options include standalone executables and Python scripts.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">Browser-Based:</strong> Our JSON to CSV converter processes data locally in your browser using JavaScript. All conversion happens client-side—your JSON data never leaves your computer. Convert JSON to CSV locally for maximum privacy and security. Local JSON to CSV processing ensures sensitive data stays on your machine.
+                        <strong className="text-orange-500">Browser-Based:</strong> Our JSON to CSV converter processes data locally in your browser using JavaScript. All conversion happens client-side—your JSON data never leaves your computer. Convert JSON to CSV locally for maximum privacy and security. Local JSON to CSV processing ensures sensitive data stays on your machine.
                       </div>
                       <div>
-                        <strong className="text-card-foreground">Download Options:</strong> JSON to CSV converter download options include browser extensions, desktop apps, and npm packages. Free JSON to CSV converter download available for all platforms. JSON to CSV tool download provides offline access for environments without internet connectivity. Convert JSON to CSV and download results as files instantly.
+                        <strong className="text-orange-500">Download Options:</strong> JSON to CSV converter download options include browser extensions, desktop apps, and npm packages. Free JSON to CSV converter download available for all platforms. JSON to CSV tool download provides offline access for environments without internet connectivity. Convert JSON to CSV and download results as files instantly.
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">Best Practices & Tips</h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Best Practices & Tips</h2>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
                       Follow these best practices to ensure successful JSON to CSV conversion and data integrity.
                     </p>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-muted-foreground leading-relaxed">
+                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-gray-400 leading-relaxed">
                       <li><strong>How to Convert JSON to CSV:</strong> Start by validating your JSON structure. Paste JSON into the converter, select delimiter and header options, preview output, and download CSV. How to convert JSON to CSV file: ensure consistent data structure across array items. How to change JSON to CSV: use our online tool for instant conversion.</li>
                       <li><strong>Best Way to Convert JSON to CSV:</strong> For small to medium files, use online converters for instant results. For large files, use command-line tools like jq or Python scripts. The best tool to convert JSON to CSV depends on your volume and automation needs. Best JSON to CSV converter combines speed, accuracy, and ease of use.</li>
                       <li><strong>Data Quality:</strong> Can you convert JSON to CSV? Yes, but ensure your JSON is well-formed. Can we convert JSON to CSV with nested objects? Yes, through flattening or multiple tables. Can I convert JSON to CSV with special characters? Yes, use UTF-8 encoding. How to transform JSON to CSV while preserving data types: use appropriate libraries and validation.</li>
@@ -969,216 +948,216 @@ export default function JSONToCSVPage() {
                     </ul>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">Frequently Asked Questions</h2>
+                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Frequently Asked Questions</h2>
                     <div className="space-y-4 sm:space-y-5">
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">How to convert JSON to CSV in Excel?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How to convert JSON to CSV in Excel?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           To convert JSON to CSV in Excel: 1) First convert your JSON to CSV using our online tool, 2) Download the CSV file, 3) Open Excel, 4) Go to File → Open and select your CSV file, 5) Excel will automatically parse the CSV data into columns and rows. Alternatively, use Excel&apos;s Power Query: Data → Get Data → From File → From JSON, then transform and export as CSV.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">How to convert JSON to CSV in Python?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How to convert JSON to CSV in Python?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Use pandas: <code className="bg-muted px-2 py-1 rounded text-xs">import pandas as pd; df = pd.read_json(&apos;data.json&apos;); df.to_csv(&apos;output.csv&apos;, index=False)</code>. Without pandas, use the csv module: read JSON with <code className="bg-muted px-1 rounded text-xs">json.load()</code>, then write CSV with <code className="bg-muted px-1 rounded text-xs">csv.DictWriter()</code>. For nested JSON, use <code className="bg-muted px-1 rounded text-xs">pd.json_normalize()</code> to flatten structures before converting.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">Can you convert JSON to CSV?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Can you convert JSON to CSV?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Yes, you can convert JSON to CSV easily. JSON (JavaScript Object Notation) and CSV (Comma-Separated Values) are both data formats, and conversion is straightforward for flat JSON arrays of objects. Each JSON object becomes a CSV row, and object keys become column headers. For nested JSON, flattening is required. Use our online converter for instant, free conversion.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">How to download JSON to CSV?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How to download JSON to CSV?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Using our tool: 1) Paste your JSON data in the input field, 2) Click &quot;Convert to CSV&quot; to process, 3) Review the CSV output, 4) Click the &quot;Download&quot; button to save the CSV file to your computer. The file downloads instantly as a .csv file that you can open in Excel, Google Sheets, or any spreadsheet application.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">How to convert CSV to JSON in React?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How to convert CSV to JSON in React?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           In React, use libraries like Papa Parse or csv-parser. Install with <code className="bg-muted px-1 rounded text-xs">npm install papaparse</code>, then: <code className="bg-muted px-2 py-1 rounded text-xs">import Papa from &apos;papaparse&apos;; Papa.parse(csvFile, &#123;header: true, complete: (result) =&gt; console.log(result.data)&#125;)</code>. For JSON to CSV in React, use react-csv or create a custom download function with URL.createObjectURL().
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">How to convert CSV to JSON file?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How to convert CSV to JSON file?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Use Python: <code className="bg-muted px-2 py-1 rounded text-xs">import csv, json; csv_file = open(&apos;data.csv&apos;); reader = csv.DictReader(csv_file); json.dump(list(reader), open(&apos;output.json&apos;, &apos;w&apos;))</code>. Or use pandas: <code className="bg-muted px-2 py-1 rounded text-xs">pd.read_csv(&apos;data.csv&apos;).to_json(&apos;output.json&apos;, orient=&apos;records&apos;)</code>. Online converters also work for quick conversions without coding.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">What code converts JSON to CSV?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">What code converts JSON to CSV?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Python: <code className="bg-muted px-2 py-1 rounded text-xs">import pandas as pd; pd.read_json(&apos;file.json&apos;).to_csv(&apos;output.csv&apos;)</code>. JavaScript/Node.js: <code className="bg-muted px-2 py-1 rounded text-xs">const json2csv = require(&apos;json2csv&apos;); const csv = json2csv.parse(jsonData); fs.writeFileSync(&apos;output.csv&apos;, csv)</code>. The code reads JSON, parses it into a data structure, and writes it as CSV with proper formatting and delimiters.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">How to convert JSON to CSV locally?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How to convert JSON to CSV locally?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Our online tool processes JSON to CSV locally in your browser—your data never leaves your computer. Alternatively, use command-line tools: Python script (<code className="bg-muted px-1 rounded text-xs">python convert.py</code>), jq (<code className="bg-muted px-1 rounded text-xs">jq -r &apos;.[] | [.field1, .field2] | @csv&apos;</code>), or PowerShell (<code className="bg-muted px-1 rounded text-xs">ConvertFrom-Json | Export-Csv</code>). Desktop apps like Notepad++ with plugins also work offline.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">What is a CSV to JSON example?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">What is a CSV to JSON example?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           CSV: <code className="bg-muted px-2 py-1 rounded text-xs">name,age,city\nJohn,30,NYC\nJane,25,LA</code> converts to JSON: <code className="bg-muted px-2 py-1 rounded text-xs">[&#123;&quot;name&quot;:&quot;John&quot;,&quot;age&quot;:30,&quot;city&quot;:&quot;NYC&quot;&#125;,&#123;&quot;name&quot;:&quot;Jane&quot;,&quot;age&quot;:25,&quot;city&quot;:&quot;LA&quot;&#125;]</code>. Each CSV row becomes a JSON object, and column headers become object keys. The first row (headers) defines the JSON structure.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">Can Excel convert JSON to CSV?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Can Excel convert JSON to CSV?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Yes, Excel can import JSON and export as CSV. Use Power Query: Data → Get Data → From File → From JSON. Excel will load the JSON and allow you to transform it. Click &quot;Load&quot; to import into a worksheet, then File → Save As → CSV. However, for simpler conversion, use our online tool first, then open the CSV directly in Excel.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">How to convert JSON to CSV in Visual Studio Code?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How to convert JSON to CSV in Visual Studio Code?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Install the &quot;JSON to CSV&quot; extension from VS Code marketplace. Open your JSON file, press Ctrl+Shift+P (Cmd+Shift+P on Mac), type &quot;JSON to CSV&quot;, and select the convert command. Alternatively, use integrated terminal: run a Python script (<code className="bg-muted px-1 rounded text-xs">python convert.py</code>) or Node.js script with json2csv package directly in VS Code&apos;s terminal.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">What is JSON to CSV data conversion?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">What is JSON to CSV data conversion?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           JSON to CSV data conversion transforms hierarchical JSON data into flat, tabular CSV format. JSON objects become rows, keys become columns, and values populate cells. This conversion enables JSON API data to be analyzed in spreadsheets, imported into databases, or processed by analytics tools that expect CSV input. Nested JSON requires flattening for proper CSV structure.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">Can we convert CSV file to JSON?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Can we convert CSV file to JSON?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Yes, CSV can be converted to JSON easily. CSV is simpler than JSON, so conversion is straightforward: each row becomes a JSON object, column headers become keys. Use Python (<code className="bg-muted px-1 rounded text-xs">pd.read_csv().to_json()</code>), JavaScript (Papa Parse), or online converters. The reverse (JSON to CSV) is also common for data analysis workflows.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">Why use JSON over CSV?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Why use JSON over CSV?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           JSON is better for APIs, nested data structures, and web applications. It supports hierarchical data (objects within objects), arrays, and multiple data types (strings, numbers, booleans, null). JSON is the standard for REST APIs and web services. CSV is better for flat, tabular data and spreadsheet analysis. Choose JSON for data interchange between applications, CSV for data analysis.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">Why is JSON better than CSV?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Why is JSON better than CSV?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           JSON is better than CSV for: 1) Nested/hierarchical data structures, 2) Mixed data types in the same dataset, 3) API responses and web services, 4) Maintaining data relationships without flattening, 5) Self-describing structure with key-value pairs. However, CSV is better for: tabular data, Excel compatibility, smaller file size for flat data, and human readability in text editors.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">How to use pandas to convert JSON to CSV?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How to use pandas to convert JSON to CSV?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Use pandas: <code className="bg-muted px-2 py-1 rounded text-xs">import pandas as pd; df = pd.read_json(&apos;data.json&apos;); df.to_csv(&apos;output.csv&apos;, index=False)</code>. For nested JSON: <code className="bg-muted px-2 py-1 rounded text-xs">df = pd.json_normalize(json_data)</code> to flatten first. Pandas handles arrays of JSON objects automatically. Use <code className="bg-muted px-1 rounded text-xs">orient=&apos;records&apos;</code> parameter if JSON structure is different. Set <code className="bg-muted px-1 rounded text-xs">index=False</code> to avoid adding row numbers.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">How to convert JSON to CSV in Python (py)?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How to convert JSON to CSV in Python (py)?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Quick method: <code className="bg-muted px-2 py-1 rounded text-xs">import pandas as pd; pd.read_json(&apos;file.json&apos;).to_csv(&apos;file.csv&apos;, index=False)</code>. Without pandas: <code className="bg-muted px-2 py-1 rounded text-xs">import json, csv; data = json.load(open(&apos;file.json&apos;)); csv.DictWriter(open(&apos;file.csv&apos;, &apos;w&apos;), fieldnames=data[0].keys()).writerows(data)</code>. Save as convert.py and run with <code className="bg-muted px-1 rounded text-xs">python convert.py</code>.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">Can CSV be converted to JSON if necessary?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Can CSV be converted to JSON if necessary?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Yes, CSV can always be converted to JSON when needed. CSV is simpler and more limited than JSON, so conversion preserves all data. Each CSV row becomes a JSON object with column names as keys. This is useful when you need to send CSV data to APIs that expect JSON, or when building web applications that consume JSON. Many tools and libraries support bidirectional conversion.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">How to flatten JSON to CSV?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How to flatten JSON to CSV?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           To flatten nested JSON to CSV: 1) In Python, use <code className="bg-muted px-1 rounded text-xs">pd.json_normalize(data)</code> which converts nested objects into dot-notation columns (e.g., <code className="bg-muted px-1 rounded text-xs">user.name</code>, <code className="bg-muted px-1 rounded text-xs">user.email</code>), 2) Then export to CSV with <code className="bg-muted px-1 rounded text-xs">to_csv()</code>. For deeply nested structures, consider multiple CSV files for parent-child relationships, or use recursive flattening to preserve all data in a single table.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">How to convert JSON to CSV in PowerShell?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How to convert JSON to CSV in PowerShell?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Use PowerShell cmdlets: <code className="bg-muted px-2 py-1 rounded text-xs">Get-Content data.json | ConvertFrom-Json | Export-Csv output.csv -NoTypeInformation</code>. For JSON files: <code className="bg-muted px-2 py-1 rounded text-xs">$json = Get-Content data.json -Raw | ConvertFrom-Json; $json | Export-Csv output.csv</code>. The <code className="bg-muted px-1 rounded text-xs">-NoTypeInformation</code> flag removes PowerShell type headers. Works on Windows 10/11 without additional tools.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">How to convert JSON to CSV in Google Sheets?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How to convert JSON to CSV in Google Sheets?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Two methods: 1) Convert JSON to CSV first using our tool, then in Google Sheets: File → Import → Upload → select your CSV file. 2) Use IMPORTDATA function with a JSON API: <code className="bg-muted px-1 rounded text-xs">=IMPORTDATA(&quot;url&quot;)</code>, though this has limitations. For complex JSON, use Google Apps Script with JSON.parse() to process and populate sheets. The first method is simplest for most use cases.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">What is the easiest way to convert JSON to CSV?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">What is the easiest way to convert JSON to CSV?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           The easiest way is using our free online JSON to CSV converter: 1) Paste your JSON data, 2) Click convert, 3) Download CSV file. No installation, no coding required. For developers, pandas in Python is easiest: <code className="bg-muted px-2 py-1 rounded text-xs">pd.read_json().to_csv()</code>. For command line, use jq. For Excel users, Power Query with Get Data → From JSON works well.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">What is JSON CSV?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">What is JSON CSV?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           &quot;JSON CSV&quot; refers to the process of converting between JSON (JavaScript Object Notation) and CSV (Comma-Separated Values) formats. JSON is a hierarchical, structured data format used in APIs and web applications. CSV is a flat, tabular format used in spreadsheets and databases. JSON CSV conversion tools transform data between these formats for different use cases and applications.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">Is JSON the same as CSV?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Is JSON the same as CSV?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           No, JSON is not CSV. They are different data formats: JSON is hierarchical with nested objects and arrays, uses key-value pairs, and supports multiple data types. CSV is flat/tabular, uses rows and columns, and treats all values as text (unless parsed). JSON is used for APIs and complex data structures. CSV is used for spreadsheets, databases, and simple data analysis. Both can represent similar data in different ways.
                         </p>
                       </div>
                       
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-2">What are the benefits of JSON over CSV?</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">What are the benefits of JSON over CSV?</h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           Benefits of JSON over CSV: 1) Supports nested/hierarchical data structures, 2) Multiple data types (strings, numbers, booleans, null, arrays, objects), 3) Self-describing with key-value pairs, 4) Standard format for REST APIs and web services, 5) Maintains data relationships without flattening, 6) Better for complex data models, 7) Native JavaScript support, 8) No ambiguity with delimiters or special characters, 9) Extensible structure, 10) Better for data interchange between systems.
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-card-foreground">Related Developer Tools</h2>
+                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Related Developer Tools</h2>
                     <div className="grid gap-2 sm:gap-3 grid-cols-1 sm:grid-cols-2 text-sm">
                       <Link 
                         href="/dev-tools/regex-tester"
-                        className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
+                        className="block p-2.5 sm:p-3 bg-black border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-1">Regex Tester</h3>
-                        <p className="text-xs text-muted-foreground">Test regular expressions online</p>
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-1">Regex Tester</h3>
+                        <p className="text-xs text-gray-400">Test regular expressions online</p>
                       </Link>
                       <Link 
                         href="/dev-tools/jwt-decoder"
-                        className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
+                        className="block p-2.5 sm:p-3 bg-black border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-1">JWT Decoder</h3>
-                        <p className="text-xs text-muted-foreground">Decode and inspect JSON Web Tokens</p>
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-1">JWT Decoder</h3>
+                        <p className="text-xs text-gray-400">Decode and inspect JSON Web Tokens</p>
                       </Link>
                       <Link 
                         href="/dev-tools/markdown-previewer"
-                        className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
+                        className="block p-2.5 sm:p-3 bg-black border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-1">Markdown Previewer</h3>
-                        <p className="text-xs text-muted-foreground">Preview markdown in real-time</p>
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-1">Markdown Previewer</h3>
+                        <p className="text-xs text-gray-400">Preview markdown in real-time</p>
                       </Link>
                       <Link 
                         href="/dev-tools"
-                        className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
+                        className="block p-2.5 sm:p-3 bg-black border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
-                        <h3 className="font-semibold text-sm sm:text-base text-card-foreground mb-1">All Developer Tools</h3>
-                        <p className="text-xs text-muted-foreground">Explore our complete toolkit</p>
+                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-1">All Developer Tools</h3>
+                        <p className="text-xs text-gray-400">Explore our complete toolkit</p>
                       </Link>
                     </div>
                   </div>
@@ -1188,15 +1167,7 @@ export default function JSONToCSVPage() {
               {/* Desktop Sidebar with AdSense (sticky, hidden on mobile/tablet) */}
               <div className="hidden lg:block w-72 flex-shrink-0">
                 <div className="sticky top-32 space-y-6">
-                  <div className="text-center">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
-                  
-                  <div className="text-center">
-                    <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
-                  </div>
-                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
+                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-black" />
                 </div>
               </div>
             </div>

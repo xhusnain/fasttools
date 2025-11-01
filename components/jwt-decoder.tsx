@@ -1245,11 +1245,11 @@ metadata:
   // Get performance rating
   const getPerformanceRating = () => {
     const size = performanceMetrics.tokenSize
-    if (size < 200) return { rating: 'Excellent', color: 'text-green-600', bgColor: 'bg-green-50 dark:bg-green-950/20', borderColor: 'border-green-200 dark:border-green-800' }
-    if (size < 512) return { rating: 'Good', color: 'text-blue-600', bgColor: 'bg-blue-50 dark:bg-blue-950/20', borderColor: 'border-blue-200 dark:border-blue-800' }
-    if (size < 1024) return { rating: 'Fair', color: 'text-yellow-600', bgColor: 'bg-yellow-50 dark:bg-yellow-950/20', borderColor: 'border-yellow-200 dark:border-yellow-800' }
-    if (size < 4096) return { rating: 'Large', color: 'text-orange-600', bgColor: 'bg-orange-50 dark:bg-orange-950/20', borderColor: 'border-orange-200 dark:border-orange-800' }
-    return { rating: 'Too Large', color: 'text-red-600', bgColor: 'bg-red-50 dark:bg-red-950/20', borderColor: 'border-red-200 dark:border-red-800' }
+    if (size < 200) return { rating: 'Excellent', color: 'text-green-600', bgColor: 'bg-black', borderColor: 'border-green-200 dark:border-green-800' }
+    if (size < 512) return { rating: 'Good', color: 'text-blue-600', bgColor: 'bg-black', borderColor: 'border-blue-200 dark:border-blue-800' }
+    if (size < 1024) return { rating: 'Fair', color: 'text-yellow-600', bgColor: 'bg-black', borderColor: 'border-yellow-200 dark:border-yellow-800' }
+    if (size < 4096) return { rating: 'Large', color: 'text-orange-600', bgColor: 'bg-black', borderColor: 'border-orange-200 dark:border-orange-800' }
+    return { rating: 'Too Large', color: 'text-red-600', bgColor: 'bg-black', borderColor: 'border-red-200 dark:border-red-800' }
   }
 
   // Calculate network impact
@@ -1629,7 +1629,7 @@ metadata:
             <div className="space-y-4 w-full max-w-full overflow-hidden">
               {/* Algorithm Info */}
               {decoded.header.alg && (
-                <div className="p-4 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg w-full max-w-full overflow-hidden">
+                <div className="p-4 bg-black border border-blue-200 dark:border-blue-800 rounded-lg w-full max-w-full overflow-hidden">
                   <div className="flex items-center justify-between gap-4">
                     <p className="text-base font-medium text-blue-900 dark:text-blue-100 break-words">
                       <strong>Algorithm:</strong> {decoded.header.alg} | <strong>Type:</strong> {decoded.header.typ || "JWT"}
@@ -1832,7 +1832,7 @@ metadata:
                   {isVerified !== null && (
                     <div className={`p-4 rounded-lg flex items-center gap-3 ${
                       isVerified 
-                        ? "bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800" 
+                        ? "bg-black border border-border" 
                         : "bg-destructive/10 border border-destructive/20"
                     }`}>
                       {isVerified ? (
@@ -1855,7 +1855,7 @@ metadata:
         </TabsContent>
 
         <TabsContent value="encode" className="space-y-6">
-          <div className="p-4 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+          <div className="p-4 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
             <p className="text-sm text-blue-900 dark:text-blue-100">
               <strong>Note:</strong> This encoder creates unsigned tokens for demonstration. Use proper JWT libraries with cryptographic signing for production use.
             </p>
@@ -1930,7 +1930,7 @@ metadata:
       </Tabs>
 
       {/* Security Warning */}
-      <div className="p-4 bg-yellow-50 dark:bg-yellow-950/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+      <div className="p-4 bg-black border border-yellow-200 dark:border-yellow-800 rounded-lg">
         <p className="text-xs text-yellow-900 dark:text-yellow-100">
           <strong>⚠️ Security Notice:</strong> All JWT processing happens in your browser. Never paste production tokens or sensitive secrets. This tool is for development and debugging purposes only. Always verify JWT signatures on your backend server.
         </p>
@@ -1961,7 +1961,7 @@ metadata:
             </div>
 
             {/* Mask Sensitive Data Toggle */}
-            <div className="p-4 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+            <div className="p-4 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
                   <Label className="text-base font-semibold text-blue-900 dark:text-blue-100">
@@ -2157,7 +2157,7 @@ metadata:
             </div>
 
             {/* Installation Instructions */}
-            <div className="p-4 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+            <div className="p-4 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
               <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">📦 Installation Required:</p>
               <code className="text-xs bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-800 dark:text-blue-200">
                 {selectedLanguage === 'nodejs' && 'npm install jsonwebtoken'}
@@ -2256,9 +2256,9 @@ metadata:
 
             {/* Security Score */}
             <div className={`p-4 rounded-lg border-2 ${
-              securityScore >= 80 ? 'bg-green-50 dark:bg-green-950/20 border-green-300 dark:border-green-700' :
-              securityScore >= 60 ? 'bg-yellow-50 dark:bg-yellow-950/20 border-yellow-300 dark:border-yellow-700' :
-              'bg-red-50 dark:bg-red-950/20 border-red-300 dark:border-red-700'
+              securityScore >= 80 ? 'bg-black border-green-300 dark:border-green-700' :
+              securityScore >= 60 ? 'bg-black border-yellow-300 dark:border-yellow-700' :
+              'bg-black border-red-300 dark:border-red-700'
             }`}>
               <div className="flex items-center justify-between">
                 <div>
@@ -2324,11 +2324,11 @@ metadata:
                   <div
                     key={index}
                     className={`p-3 rounded-lg border-l-4 ${
-                      issue.severity === 'critical' ? 'bg-red-50 dark:bg-red-950/20 border-red-500' :
-                      issue.severity === 'high' ? 'bg-orange-50 dark:bg-orange-950/20 border-orange-500' :
-                      issue.severity === 'medium' ? 'bg-yellow-50 dark:bg-yellow-950/20 border-yellow-500' :
-                      issue.severity === 'low' ? 'bg-blue-50 dark:bg-blue-950/20 border-blue-500' :
-                      'bg-green-50 dark:bg-green-950/20 border-green-500'
+                      issue.severity === 'critical' ? 'bg-black border-red-500' :
+                      issue.severity === 'high' ? 'bg-black border-orange-500' :
+                      issue.severity === 'medium' ? 'bg-black border-yellow-500' :
+                      issue.severity === 'low' ? 'bg-black border-blue-500' :
+                      'bg-black border-green-500'
                     }`}
                   >
                     <div className="flex items-start gap-2">
@@ -2360,25 +2360,25 @@ metadata:
 
             {/* Summary Stats */}
             <div className="grid grid-cols-4 gap-2">
-              <div className="p-2 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg text-center">
+              <div className="p-2 bg-black border border-border rounded-lg text-center">
                 <p className="text-xl font-bold text-red-600">
                   {securityIssues.filter(i => i.severity === 'critical').length}
                 </p>
                 <p className="text-xs text-red-700 dark:text-red-300 font-medium">Critical</p>
               </div>
-              <div className="p-2 bg-orange-50 dark:bg-orange-950/20 border border-orange-200 dark:border-orange-800 rounded-lg text-center">
+              <div className="p-2 bg-black border border-orange-200 dark:border-orange-800 rounded-lg text-center">
                 <p className="text-xl font-bold text-orange-600">
                   {securityIssues.filter(i => i.severity === 'high').length}
                 </p>
                 <p className="text-xs text-orange-700 dark:text-orange-300 font-medium">High</p>
               </div>
-              <div className="p-2 bg-yellow-50 dark:bg-yellow-950/20 border border-yellow-200 dark:border-yellow-800 rounded-lg text-center">
+              <div className="p-2 bg-black border border-yellow-200 dark:border-yellow-800 rounded-lg text-center">
                 <p className="text-xl font-bold text-yellow-600">
                   {securityIssues.filter(i => i.severity === 'medium').length}
                 </p>
                 <p className="text-xs text-yellow-700 dark:text-yellow-300 font-medium">Medium</p>
               </div>
-              <div className="p-2 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg text-center">
+              <div className="p-2 bg-black border border-blue-200 dark:border-blue-800 rounded-lg text-center">
                 <p className="text-xl font-bold text-blue-600">
                   {securityIssues.filter(i => i.severity === 'low').length}
                 </p>
@@ -2479,7 +2479,7 @@ metadata:
             {decoded1 && decoded2 && (
               <>
                 {/* Algorithm Comparison */}
-                <div className="p-3 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                <div className="p-3 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
                   <h4 className="text-sm font-bold text-foreground mb-2">Algorithm Comparison</h4>
                   <div className="grid grid-cols-3 gap-2 text-xs">
                     <div>
@@ -2516,9 +2516,9 @@ metadata:
                       <tbody>
                         {compareObjects(decoded1.header, decoded2.header).map((diff, idx) => (
                           <tr key={idx} className={`
-                            ${diff.status === 'changed' ? 'bg-orange-50 dark:bg-orange-950/20' : ''}
-                            ${diff.status === 'added' ? 'bg-green-50 dark:bg-green-950/20' : ''}
-                            ${diff.status === 'removed' ? 'bg-red-50 dark:bg-red-950/20' : ''}
+                            ${diff.status === 'changed' ? 'bg-black' : ''}
+                            ${diff.status === 'added' ? 'bg-black' : ''}
+                            ${diff.status === 'removed' ? 'bg-black' : ''}
                           `}>
                             <td className="px-3 py-2 font-mono font-semibold">{diff.key}</td>
                             <td className="px-3 py-2 font-mono break-all">
@@ -2556,9 +2556,9 @@ metadata:
                       <tbody>
                         {compareObjects(decoded1.payload, decoded2.payload).map((diff, idx) => (
                           <tr key={idx} className={`
-                            ${diff.status === 'changed' ? 'bg-orange-50 dark:bg-orange-950/20' : ''}
-                            ${diff.status === 'added' ? 'bg-green-50 dark:bg-green-950/20' : ''}
-                            ${diff.status === 'removed' ? 'bg-red-50 dark:bg-red-950/20' : ''}
+                            ${diff.status === 'changed' ? 'bg-black' : ''}
+                            ${diff.status === 'added' ? 'bg-black' : ''}
+                            ${diff.status === 'removed' ? 'bg-black' : ''}
                           `}>
                             <td className="px-3 py-2 font-mono font-semibold">{diff.key}</td>
                             <td className="px-3 py-2 font-mono break-all">
@@ -2598,25 +2598,25 @@ metadata:
 
                 {/* Summary Stats */}
                 <div className="grid grid-cols-4 gap-2">
-                  <div className="p-2 bg-gray-50 dark:bg-gray-950/20 border border-gray-200 dark:border-gray-700 rounded-lg text-center">
+                  <div className="p-2 bg-black border border-gray-200 dark:border-gray-700 rounded-lg text-center">
                     <p className="text-lg font-bold text-gray-600">
                       {[...compareObjects(decoded1.header, decoded2.header), ...compareObjects(decoded1.payload, decoded2.payload)].filter(d => d.status === 'same').length}
                     </p>
                     <p className="text-xs text-gray-700 dark:text-gray-300 font-medium">Same</p>
                   </div>
-                  <div className="p-2 bg-orange-50 dark:bg-orange-950/20 border border-orange-200 dark:border-orange-800 rounded-lg text-center">
+                  <div className="p-2 bg-black border border-orange-200 dark:border-orange-800 rounded-lg text-center">
                     <p className="text-lg font-bold text-orange-600">
                       {[...compareObjects(decoded1.header, decoded2.header), ...compareObjects(decoded1.payload, decoded2.payload)].filter(d => d.status === 'changed').length}
                     </p>
                     <p className="text-xs text-orange-700 dark:text-orange-300 font-medium">Changed</p>
                   </div>
-                  <div className="p-2 bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg text-center">
+                  <div className="p-2 bg-black border border-border rounded-lg text-center">
                     <p className="text-lg font-bold text-green-600">
                       {[...compareObjects(decoded1.header, decoded2.header), ...compareObjects(decoded1.payload, decoded2.payload)].filter(d => d.status === 'added').length}
                     </p>
                     <p className="text-xs text-green-700 dark:text-green-300 font-medium">Added</p>
                   </div>
-                  <div className="p-2 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg text-center">
+                  <div className="p-2 bg-black border border-border rounded-lg text-center">
                     <p className="text-lg font-bold text-red-600">
                       {[...compareObjects(decoded1.header, decoded2.header), ...compareObjects(decoded1.payload, decoded2.payload)].filter(d => d.status === 'removed').length}
                     </p>
@@ -2735,8 +2735,8 @@ metadata:
                       key={idx}
                       className={`p-3 border rounded-lg cursor-pointer transition-all ${
                         appliedOptimizations.has(suggestion.type)
-                          ? 'bg-cyan-50 dark:bg-cyan-950/20 border-cyan-300 dark:border-cyan-700'
-                          : 'bg-gray-50 dark:bg-gray-950/20 border-gray-200 dark:border-gray-700 hover:border-cyan-300'
+                          ? 'bg-black border-cyan-300 dark:border-cyan-700'
+                          : 'bg-black border-gray-200 dark:border-gray-700 hover:border-cyan-300'
                       }`}
                       onClick={() => toggleOptimization(suggestion.type)}
                     >
@@ -2764,7 +2764,7 @@ metadata:
                 </div>
               </div>
             ) : (
-              <div className="p-4 bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg text-center">
+              <div className="p-4 bg-black border border-border rounded-lg text-center">
                 <CheckCircle2 className="h-8 w-8 text-green-600 mx-auto mb-2" />
                 <p className="text-sm font-semibold text-foreground">Token Already Optimized!</p>
                 <p className="text-xs text-muted-foreground mt-1">No significant optimizations found</p>
@@ -2783,7 +2783,7 @@ metadata:
                         <Label className="text-xs font-semibold text-red-600">Before (Original)</Label>
                         <span className="text-xs font-mono text-red-600">{formatBytes(getTokenSize(token).bytes)}</span>
                       </div>
-                      <div className="p-2 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg">
+                      <div className="p-2 bg-black border border-border rounded-lg">
                         <p className="text-xs font-mono text-foreground break-all line-clamp-3">{token}</p>
                       </div>
                     </div>
@@ -2794,14 +2794,14 @@ metadata:
                         <Label className="text-xs font-semibold text-green-600">After (Optimized)</Label>
                         <span className="text-xs font-mono text-green-600">{formatBytes(getTokenSize(optimizedToken).bytes)}</span>
                       </div>
-                      <div className="p-2 bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg">
+                      <div className="p-2 bg-black border border-border rounded-lg">
                         <p className="text-xs font-mono text-foreground break-all line-clamp-3">{optimizedToken}</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Savings Summary */}
-                  <div className="mt-3 p-3 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border border-green-200 dark:border-green-800 rounded-lg">
+                  <div className="mt-3 p-3 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border border-border rounded-lg">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <TrendingDown className="h-5 w-5 text-green-600" />
@@ -2823,7 +2823,7 @@ metadata:
                 </div>
 
                 {/* Copy Optimized Token */}
-                <div className="flex items-center gap-2 p-3 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                <div className="flex items-center gap-2 p-3 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
                   <Info className="h-4 w-4 text-blue-600 shrink-0" />
                   <p className="text-xs text-muted-foreground flex-1">
                     Copy the optimized token and update your application code with the new claim names and structure.
@@ -2950,12 +2950,12 @@ metadata:
                 Processing Time
               </h4>
               <div className="grid grid-cols-2 gap-3">
-                <div className="p-3 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                <div className="p-3 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
                   <p className="text-xs text-muted-foreground mb-1">Decode Time</p>
                   <p className="text-2xl font-bold text-blue-600">{performanceMetrics.decodeTime.toFixed(3)}ms</p>
                   <p className="text-xs text-muted-foreground mt-1">Base64 decode + JSON parse</p>
                 </div>
-                <div className="p-3 bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg">
+                <div className="p-3 bg-black border border-border rounded-lg">
                   <p className="text-xs text-muted-foreground mb-1">Encode Time</p>
                   <p className="text-2xl font-bold text-green-600">{performanceMetrics.encodeTime.toFixed(3)}ms</p>
                   <p className="text-xs text-muted-foreground mt-1">JSON stringify + Base64 encode</p>
@@ -3043,22 +3043,22 @@ metadata:
                 Industry Benchmarks
               </h4>
               <div className="grid grid-cols-4 gap-2">
-                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize < 200 ? 'bg-green-50 dark:bg-green-950/20 border-green-300 dark:border-green-700' : 'bg-gray-50 dark:bg-gray-950/20 border-gray-200 dark:border-gray-700'}`}>
+                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize < 200 ? 'bg-black border-green-300 dark:border-green-700' : 'bg-black border-gray-200 dark:border-gray-700'}`}>
                   <p className="text-xs font-semibold text-foreground">Excellent</p>
                   <p className="text-lg font-bold text-green-600">&lt;200B</p>
                   <p className="text-xs text-muted-foreground">Minimal</p>
                 </div>
-                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 200 && performanceMetrics.tokenSize < 512 ? 'bg-blue-50 dark:bg-blue-950/20 border-blue-300 dark:border-blue-700' : 'bg-gray-50 dark:bg-gray-950/20 border-gray-200 dark:border-gray-700'}`}>
+                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 200 && performanceMetrics.tokenSize < 512 ? 'bg-black border-blue-300 dark:border-blue-700' : 'bg-black border-gray-200 dark:border-gray-700'}`}>
                   <p className="text-xs font-semibold text-foreground">Good</p>
                   <p className="text-lg font-bold text-blue-600">200-512B</p>
                   <p className="text-xs text-muted-foreground">Standard</p>
                 </div>
-                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 512 && performanceMetrics.tokenSize < 1024 ? 'bg-yellow-50 dark:bg-yellow-950/20 border-yellow-300 dark:border-yellow-700' : 'bg-gray-50 dark:bg-gray-950/20 border-gray-200 dark:border-gray-700'}`}>
+                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 512 && performanceMetrics.tokenSize < 1024 ? 'bg-black border-yellow-300 dark:border-yellow-700' : 'bg-black border-gray-200 dark:border-gray-700'}`}>
                   <p className="text-xs font-semibold text-foreground">Fair</p>
                   <p className="text-lg font-bold text-yellow-600">512B-1KB</p>
                   <p className="text-xs text-muted-foreground">Above Avg</p>
                 </div>
-                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 1024 ? 'bg-red-50 dark:bg-red-950/20 border-red-300 dark:border-red-700' : 'bg-gray-50 dark:bg-gray-950/20 border-gray-200 dark:border-gray-700'}`}>
+                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 1024 ? 'bg-black border-red-300 dark:border-red-700' : 'bg-black border-gray-200 dark:border-gray-700'}`}>
                   <p className="text-xs font-semibold text-foreground">Large</p>
                   <p className="text-lg font-bold text-red-600">&gt;1KB</p>
                   <p className="text-xs text-muted-foreground">Optimize!</p>
@@ -3155,7 +3155,7 @@ metadata:
         </div>
 
             {/* Table of Contents */}
-            <div className="p-4 bg-gradient-to-r from-teal-50 to-cyan-50 dark:from-teal-950/20 dark:to-cyan-950/20 border border-teal-200 dark:border-teal-800 rounded-lg">
+            <div className="p-4 bg-black border border-border rounded-lg">
               <h3 className="text-base font-bold text-foreground mb-3 flex items-center gap-2">
                 <BookOpen className="h-5 w-5 text-teal-600" />
                 What You&apos;ll Learn
@@ -3202,7 +3202,7 @@ metadata:
                   <p>
                     When you log into a website, the server creates a JWT containing your user information (like your user ID and permissions). This token is then sent to your browser, and your browser includes it with every request to prove you&apos;re authenticated. It&apos;s much faster than checking the database every single time!
                   </p>
-                  <div className="p-3 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                  <div className="p-3 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
                     <p className="font-semibold text-blue-900 dark:text-blue-100 mb-2">Why are JWTs so popular?</p>
                     <ul className="space-y-1 text-blue-800 dark:text-blue-200">
                       <li>• <strong>Stateless:</strong> The server doesn&apos;t need to store sessions - everything is in the token</li>
@@ -3235,12 +3235,12 @@ metadata:
                   </div>
 
                   {/* Header */}
-                  <div className="p-3 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-                    <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">Part 1: Header (Blue)</h4>
-                    <p className="text-blue-800 dark:text-blue-200 mb-2">
+                  <div className="p-3 bg-black border border-border rounded-lg">
+                    <h4 className="font-semibold text-white mb-2">Part 1: Header (Blue)</h4>
+                    <p className="text-gray-400 mb-2">
                       The header tells us what type of token this is and how it&apos;s signed. It&apos;s like the envelope that says &quot;This is a JWT, signed with HS256&quot;.
                     </p>
-                    <div className="bg-blue-100 dark:bg-blue-900 p-2 rounded font-mono text-xs">
+                    <div className="bg-black p-2 rounded font-mono text-xs">
                       &#123;<br />
                       &nbsp;&nbsp;&quot;alg&quot;: &quot;HS256&quot;,  // Algorithm used (HMAC SHA-256)<br />
                       &nbsp;&nbsp;&quot;typ&quot;: &quot;JWT&quot;      // Token type<br />
@@ -3249,12 +3249,12 @@ metadata:
                   </div>
 
                   {/* Payload */}
-                  <div className="p-3 bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg">
-                    <h4 className="font-semibold text-green-900 dark:text-green-100 mb-2">Part 2: Payload (Green)</h4>
-                    <p className="text-green-800 dark:text-green-200 mb-2">
+                  <div className="p-3 bg-black border border-border rounded-lg">
+                    <h4 className="font-semibold text-white mb-2">Part 2: Payload (Green)</h4>
+                    <p className="text-gray-400 mb-2">
                       The payload is the actual data - your user ID, name, permissions, expiration time, etc. This is where you store the information you want to share. Think of it as the content of a letter.
                     </p>
-                    <div className="bg-green-100 dark:bg-green-900 p-2 rounded font-mono text-xs">
+                    <div className="bg-black p-2 rounded font-mono text-xs">
                       &#123;<br />
                       &nbsp;&nbsp;&quot;sub&quot;: &quot;1234567890&quot;,  // Subject (user ID)<br />
                       &nbsp;&nbsp;&quot;name&quot;: &quot;John Doe&quot;,     // User name<br />
@@ -3264,18 +3264,18 @@ metadata:
                       &nbsp;&nbsp;&quot;exp&quot;: 1516242622      // Expiration timestamp<br />
                       &#125;
                     </div>
-                    <p className="text-green-700 dark:text-green-300 mt-2 text-xs">
+                    <p className="text-gray-400 mt-2 text-xs">
                       <strong>Important:</strong> The payload is NOT encrypted, only encoded! Anyone can decode it and read it. Never put passwords or credit card numbers here!
                     </p>
                   </div>
 
                   {/* Signature */}
-                  <div className="p-3 bg-orange-50 dark:bg-orange-950/20 border border-orange-200 dark:border-orange-800 rounded-lg">
-                    <h4 className="font-semibold text-orange-900 dark:text-orange-100 mb-2">Part 3: Signature (Orange)</h4>
-                    <p className="text-orange-800 dark:text-orange-200 mb-2">
+                  <div className="p-3 bg-black border border-border rounded-lg">
+                    <h4 className="font-semibold text-white mb-2">Part 3: Signature (Orange)</h4>
+                    <p className="text-gray-400 mb-2">
                       The signature is like a tamper-proof seal. It&apos;s created by combining the header, payload, and a secret key that only the server knows. If someone tries to change even one character in the header or payload, the signature won&apos;t match!
                     </p>
-                    <div className="bg-orange-100 dark:bg-orange-900 p-2 rounded font-mono text-xs">
+                    <div className="bg-black p-2 rounded font-mono text-xs">
                       HMACSHA256(<br />
                       &nbsp;&nbsp;base64UrlEncode(header) + &quot;.&quot; +<br />
                       &nbsp;&nbsp;base64UrlEncode(payload),<br />
@@ -3296,7 +3296,7 @@ metadata:
                   <p>Let&apos;s walk through a real-world example of how JWTs are used in a web application:</p>
                   
                   <div className="space-y-2">
-                    <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="flex items-start gap-3 p-3 bg-black rounded-lg">
                       <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500 text-white text-xs font-bold shrink-0">1</div>
                       <div>
                         <p className="font-semibold text-foreground">User logs in</p>
@@ -3304,7 +3304,7 @@ metadata:
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="flex items-start gap-3 p-3 bg-black rounded-lg">
                       <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500 text-white text-xs font-bold shrink-0">2</div>
                       <div>
                         <p className="font-semibold text-foreground">Server verifies credentials</p>
@@ -3312,7 +3312,7 @@ metadata:
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="flex items-start gap-3 p-3 bg-black rounded-lg">
                       <div className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white text-xs font-bold shrink-0">3</div>
                       <div>
                         <p className="font-semibold text-foreground">Server creates JWT</p>
@@ -3320,7 +3320,7 @@ metadata:
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="flex items-start gap-3 p-3 bg-black rounded-lg">
                       <div className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white text-xs font-bold shrink-0">4</div>
                       <div>
                         <p className="font-semibold text-foreground">Token sent to browser</p>
@@ -3328,7 +3328,7 @@ metadata:
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="flex items-start gap-3 p-3 bg-black rounded-lg">
                       <div className="flex items-center justify-center w-6 h-6 rounded-full bg-purple-500 text-white text-xs font-bold shrink-0">5</div>
                       <div>
                         <p className="font-semibold text-foreground">Browser includes token in requests</p>
@@ -3336,7 +3336,7 @@ metadata:
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="flex items-start gap-3 p-3 bg-black rounded-lg">
                       <div className="flex items-center justify-center w-6 h-6 rounded-full bg-purple-500 text-white text-xs font-bold shrink-0">6</div>
                       <div>
                         <p className="font-semibold text-foreground">Server verifies token</p>
@@ -3344,7 +3344,7 @@ metadata:
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="flex items-start gap-3 p-3 bg-black rounded-lg">
                       <div className="flex items-center justify-center w-6 h-6 rounded-full bg-orange-500 text-white text-xs font-bold shrink-0">7</div>
                       <div>
                         <p className="font-semibold text-foreground">Server processes request</p>
@@ -3367,12 +3367,12 @@ metadata:
 
                 {/* Node.js Example */}
                 <div className="pl-10 space-y-2">
-                  <div className="p-3 bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg">
+                  <div className="p-3 bg-black border border-border rounded-lg">
                     <div className="flex items-center gap-2 mb-2">
                       <FileCode className="h-5 w-5 text-green-600" />
                       <h4 className="font-semibold text-green-900 dark:text-green-100">Node.js (JavaScript)</h4>
                     </div>
-                    <p className="text-xs text-green-800 dark:text-green-200 mb-2">Install: <code className="bg-green-100 dark:bg-green-900 px-2 py-1 rounded">npm install jsonwebtoken</code></p>
+                    <p className="text-xs text-gray-400 mb-2">Install: <code className="bg-green-100 dark:bg-green-900 px-2 py-1 rounded">npm install jsonwebtoken</code></p>
                     <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">
 {`const jwt = require('jsonwebtoken');
 
@@ -3399,7 +3399,7 @@ try {
                   </div>
 
                   {/* Python Example */}
-                  <div className="p-3 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                  <div className="p-3 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
                     <div className="flex items-center gap-2 mb-2">
                       <FileCode className="h-5 w-5 text-blue-600" />
                       <h4 className="font-semibold text-blue-900 dark:text-blue-100">Python</h4>
@@ -3434,12 +3434,12 @@ except jwt.InvalidTokenError:
                   </div>
 
                   {/* Using Our JWT Decoder Tool */}
-                  <div className="p-4 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 border border-purple-200 dark:border-purple-800 rounded-lg">
-                    <h4 className="font-semibold text-purple-900 dark:text-purple-100 mb-2 flex items-center gap-2">
-                      <Lightbulb className="h-5 w-5 text-purple-600" />
+                  <div className="p-4 bg-black border border-border rounded-lg">
+                    <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                      <Lightbulb className="h-5 w-5 text-white" />
                       Quick Tip: Use Our Tool to Get Code!
                     </h4>
-                    <p className="text-xs text-purple-800 dark:text-purple-200">
+                    <p className="text-xs text-gray-400">
                       Don&apos;t want to write this code manually? Our JWT Decoder has a &quot;Get Code&quot; button that generates ready-to-use code snippets for all 6 languages (Node.js, Python, Java, PHP, Go, C#). Just decode your token and click the green &quot;Get Code&quot; button!
                     </p>
                   </div>
@@ -3457,61 +3457,61 @@ except jwt.InvalidTokenError:
 
                   <div className="space-y-3">
                     {/* Feature 1: Instant Decode */}
-                    <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="p-3 bg-black rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">🔍 Instant Decoding</h4>
                       <p className="text-xs">Just paste your JWT token in the text box and it automatically decodes! You&apos;ll see the header, payload, and signature split into three color-coded sections. We show both JSON format and a Claims Table view for easier reading.</p>
                     </div>
 
                     {/* Feature 2: Algorithm Selector */}
-                    <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="p-3 bg-black rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">⚙️ Algorithm Selector & Examples</h4>
                       <p className="text-xs">Use the dropdown menu to select from 12 different algorithms (HS256, RS256, ES256, etc.). Click &quot;Generate Example&quot; to create a sample token for that algorithm - perfect for learning or testing!</p>
                     </div>
 
                     {/* Feature 3: Expiration Countdown */}
-                    <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="p-3 bg-black rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">⏰ Live Expiration Countdown</h4>
                       <p className="text-xs">If your token has an expiration time (exp claim), you&apos;ll see a live countdown timer showing exactly how much time is left. The color changes from green to yellow to red as expiration approaches - so you never get caught with an expired token!</p>
                     </div>
 
                     {/* Feature 4: Performance Metrics */}
-                    <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="p-3 bg-black rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">⚡ Performance Metrics</h4>
                       <p className="text-xs">Click the yellow &quot;Performance&quot; button to see how your token performs. We show decode/encode times, size breakdown (header vs payload vs signature), network impact projections, and compare against industry benchmarks. Learn if your token is too large!</p>
                     </div>
 
                     {/* Feature 5: Export */}
-                    <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="p-3 bg-black rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">📤 Export to Multiple Formats</h4>
                       <p className="text-xs">Need to save your decoded token? Click &quot;Export&quot; to download in JSON, CSV, XML, YAML, or even a professional PDF report! Perfect for documentation or sharing with your team.</p>
                     </div>
 
                     {/* Feature 6: Size Optimizer */}
-                    <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="p-3 bg-black rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">📊 Token Size Optimizer</h4>
                       <p className="text-xs">Got a large token? Click &quot;Optimize&quot; to get smart suggestions on how to reduce its size. We&apos;ll show you exactly how many bytes you can save by shortening claim names, removing unnecessary data, or using a different algorithm. You can even preview the optimized token before using it!</p>
                     </div>
 
                     {/* Feature 7: Compare Tokens */}
-                    <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="p-3 bg-black rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">🔄 Token Comparison Tool</h4>
                       <p className="text-xs">Need to compare two tokens side-by-side? Click &quot;Compare&quot; to paste a second token and see exactly what changed. We highlight added, removed, and modified claims in different colors. Super useful for debugging token refresh issues or checking what changed between environments!</p>
                     </div>
 
                     {/* Feature 8: Security Analyzer */}
-                    <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="p-3 bg-black rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">🛡️ Security Analyzer</h4>
                       <p className="text-xs">Click the red &quot;Security&quot; button to scan your token for vulnerabilities. We check for weak algorithms, expired tokens, missing critical claims, sensitive data in the payload, and more. You&apos;ll get a security score from 0-100 plus specific recommendations to improve your token&apos;s security.</p>
                     </div>
 
                     {/* Feature 9: Code Generator */}
-                    <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="p-3 bg-black rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">💻 Multi-Language Code Generator</h4>
                       <p className="text-xs">Click &quot;Get Code&quot; to generate ready-to-use code snippets for verifying your token. Choose from Node.js, Python, Java, PHP, Go, or C#. Each snippet includes installation instructions and is ready to copy-paste into your project!</p>
                     </div>
 
                     {/* Feature 10: Share Anonymously */}
-                    <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                    <div className="p-3 bg-black rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">🔗 Share Token Anonymously</h4>
                       <p className="text-xs">Need to debug with your team? Click &quot;Share&quot; to generate a shareable link. You can choose to mask sensitive data (like emails or passwords) before sharing. The link never expires and your token is encoded in the URL - no data stored on our servers!</p>
                     </div>
@@ -3530,83 +3530,83 @@ except jwt.InvalidTokenError:
 
                   <div className="space-y-2">
                     {/* Mistake 1 */}
-                    <div className="p-3 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg">
-                      <h4 className="font-semibold text-red-900 dark:text-red-100 mb-2 flex items-center gap-2">
+                    <div className="p-3 bg-black border border-border rounded-lg">
+                      <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
                         Storing Sensitive Data in the Payload
                       </h4>
-                      <p className="text-xs text-red-800 dark:text-red-200 mb-2">
+                      <p className="text-xs text-gray-400 mb-2">
                         <strong>Problem:</strong> Putting passwords, credit card numbers, or API keys directly in the JWT payload.
                       </p>
-                      <p className="text-xs text-red-800 dark:text-red-200">
+                      <p className="text-xs text-gray-400">
                         <strong>Solution:</strong> Remember, JWTs are encoded, NOT encrypted! Anyone can decode them and read the payload. Only include non-sensitive information like user IDs, usernames, and permissions. Use our Security Analyzer to check for sensitive data!
                       </p>
                     </div>
 
                     {/* Mistake 2 */}
-                    <div className="p-3 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg">
-                      <h4 className="font-semibold text-red-900 dark:text-red-100 mb-2 flex items-center gap-2">
+                    <div className="p-3 bg-black border border-border rounded-lg">
+                      <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
                         Not Checking Token Expiration
                       </h4>
-                      <p className="text-xs text-red-800 dark:text-red-200 mb-2">
+                      <p className="text-xs text-gray-400 mb-2">
                         <strong>Problem:</strong> Accepting tokens without verifying if they&apos;ve expired.
                       </p>
-                      <p className="text-xs text-red-800 dark:text-red-200">
+                      <p className="text-xs text-gray-400">
                         <strong>Solution:</strong> Always check the &quot;exp&quot; claim and reject expired tokens. Our Live Expiration Countdown shows exactly when your token will expire, and the Security Analyzer will warn you about expired tokens!
                       </p>
                     </div>
 
                     {/* Mistake 3 */}
-                    <div className="p-3 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg">
-                      <h4 className="font-semibold text-red-900 dark:text-red-100 mb-2 flex items-center gap-2">
+                    <div className="p-3 bg-black border border-border rounded-lg">
+                      <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
                         Using Weak or No Signature
                       </h4>
-                      <p className="text-xs text-red-800 dark:text-red-200 mb-2">
+                      <p className="text-xs text-gray-400 mb-2">
                         <strong>Problem:</strong> Using the &quot;none&quot; algorithm or a weak secret key (like &quot;secret&quot; or &quot;password123&quot;).
                       </p>
-                      <p className="text-xs text-red-800 dark:text-red-200">
+                      <p className="text-xs text-gray-400">
                         <strong>Solution:</strong> Always use a strong algorithm (HS256 minimum) and a long, random secret key (at least 256 bits for HS256). Our Security Analyzer flags weak algorithms and short secrets!
                       </p>
                     </div>
 
                     {/* Mistake 4 */}
-                    <div className="p-3 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg">
-                      <h4 className="font-semibold text-red-900 dark:text-red-100 mb-2 flex items-center gap-2">
+                    <div className="p-3 bg-black border border-border rounded-lg">
+                      <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
                         Creating Tokens That Are Too Large
                       </h4>
-                      <p className="text-xs text-red-800 dark:text-red-200 mb-2">
+                      <p className="text-xs text-gray-400 mb-2">
                         <strong>Problem:</strong> Including too much data in the payload, resulting in tokens over 1KB or even 4KB+.
                       </p>
-                      <p className="text-xs text-red-800 dark:text-red-200">
+                      <p className="text-xs text-gray-400">
                         <strong>Solution:</strong> Keep your tokens lean! Only include essential data. Use our Performance Metrics to check token size and get benchmarked against industry standards. If your token is large, click &quot;Optimize&quot; for suggestions on reducing its size.</p>
                     </div>
 
                     {/* Mistake 5 */}
-                    <div className="p-3 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg">
-                      <h4 className="font-semibold text-red-900 dark:text-red-100 mb-2 flex items-center gap-2">
+                    <div className="p-3 bg-black border border-border rounded-lg">
+                      <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
                         Not Validating the Signature
                       </h4>
-                      <p className="text-xs text-red-800 dark:text-red-200 mb-2">
+                      <p className="text-xs text-gray-400 mb-2">
                         <strong>Problem:</strong> Just decoding the JWT without verifying its signature, allowing tampered tokens to be accepted.
                       </p>
-                      <p className="text-xs text-red-800 dark:text-red-200">
+                      <p className="text-xs text-gray-400">
                         <strong>Solution:</strong> Always verify the signature on the server side! Our Code Generator provides complete examples including signature verification for all 6 programming languages.</p>
                     </div>
 
                     {/* Mistake 6 */}
-                    <div className="p-3 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg">
-                      <h4 className="font-semibold text-red-900 dark:text-red-100 mb-2 flex items-center gap-2">
+                    <div className="p-3 bg-black border border-border rounded-lg">
+                      <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
                         Storing JWTs in LocalStorage (XSS Risk)
                       </h4>
-                      <p className="text-xs text-red-800 dark:text-red-200 mb-2">
+                      <p className="text-xs text-gray-400 mb-2">
                         <strong>Problem:</strong> Storing tokens in browser localStorage makes them vulnerable to XSS (Cross-Site Scripting) attacks.
                       </p>
-                      <p className="text-xs text-red-800 dark:text-red-200">
+                      <p className="text-xs text-gray-400">
                         <strong>Solution:</strong> For maximum security, store JWTs in httpOnly cookies that JavaScript can&apos;t access. If you must use localStorage, implement strong Content Security Policy (CSP) headers to prevent XSS attacks.</p>
                     </div>
                   </div>
@@ -3620,8 +3620,8 @@ except jwt.InvalidTokenError:
                   JWT Best Practices
                 </h3>
                 <div className="pl-10 space-y-2 text-sm text-muted-foreground">
-                  <div className="p-3 bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg">
-                    <ul className="space-y-2 text-green-800 dark:text-green-200">
+                  <div className="p-3 bg-black border border-border rounded-lg">
+                    <ul className="space-y-2 text-gray-400">
                       <li className="flex items-start gap-2">
                         <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
                         <span><strong>Use short expiration times:</strong> 15 minutes to 1 hour for access tokens. Use refresh tokens for longer sessions.</span>
@@ -3660,7 +3660,7 @@ except jwt.InvalidTokenError:
               </div>
 
               {/* Final Note */}
-              <div className="p-4 bg-gradient-to-r from-teal-50 to-cyan-50 dark:from-teal-950/20 dark:to-cyan-950/20 border border-teal-200 dark:border-teal-800 rounded-lg">
+              <div className="p-4 bg-black border border-border rounded-lg">
                 <h3 className="text-base font-bold text-foreground mb-2">🎓 Start Decoding JWTs Now!</h3>
                 <p className="text-sm text-muted-foreground">
                   Now that you understand JWTs, scroll up and paste a token to try our interactive features! Use all the powerful tools we&apos;ve built - Performance Metrics, Security Analyzer, Size Optimizer, Code Generator, and more. Your tokens are processed locally in your browser for maximum security.
@@ -3702,7 +3702,7 @@ except jwt.InvalidTokenError:
                   className={`p-3 border rounded-lg cursor-pointer transition-all ${
                     selectedExportFormat === 'json'
                       ? 'bg-indigo-50 dark:bg-indigo-950/20 border-indigo-300 dark:border-indigo-700'
-                      : 'bg-gray-50 dark:bg-gray-950/20 border-gray-200 dark:border-gray-700 hover:border-indigo-300'
+                      : 'bg-black border-gray-200 dark:border-gray-700 hover:border-indigo-300'
                   }`}
                   onClick={() => setSelectedExportFormat('json')}
                 >
@@ -3726,8 +3726,8 @@ except jwt.InvalidTokenError:
                 <div
                   className={`p-3 border rounded-lg cursor-pointer transition-all ${
                     selectedExportFormat === 'csv'
-                      ? 'bg-green-50 dark:bg-green-950/20 border-green-300 dark:border-green-700'
-                      : 'bg-gray-50 dark:bg-gray-950/20 border-gray-200 dark:border-gray-700 hover:border-green-300'
+                      ? 'bg-black border-green-300 dark:border-green-700'
+                      : 'bg-black border-gray-200 dark:border-gray-700 hover:border-green-300'
                   }`}
                   onClick={() => setSelectedExportFormat('csv')}
                 >
@@ -3751,8 +3751,8 @@ except jwt.InvalidTokenError:
                 <div
                   className={`p-3 border rounded-lg cursor-pointer transition-all ${
                     selectedExportFormat === 'xml'
-                      ? 'bg-orange-50 dark:bg-orange-950/20 border-orange-300 dark:border-orange-700'
-                      : 'bg-gray-50 dark:bg-gray-950/20 border-gray-200 dark:border-gray-700 hover:border-orange-300'
+                      ? 'bg-black border-orange-300 dark:border-orange-700'
+                      : 'bg-black border-gray-200 dark:border-gray-700 hover:border-orange-300'
                   }`}
                   onClick={() => setSelectedExportFormat('xml')}
                 >
@@ -3776,8 +3776,8 @@ except jwt.InvalidTokenError:
                 <div
                   className={`p-3 border rounded-lg cursor-pointer transition-all ${
                     selectedExportFormat === 'yaml'
-                      ? 'bg-blue-50 dark:bg-blue-950/20 border-blue-300 dark:border-blue-700'
-                      : 'bg-gray-50 dark:bg-gray-950/20 border-gray-200 dark:border-gray-700 hover:border-blue-300'
+                      ? 'bg-black border-blue-300 dark:border-blue-700'
+                      : 'bg-black border-gray-200 dark:border-gray-700 hover:border-blue-300'
                   }`}
                   onClick={() => setSelectedExportFormat('yaml')}
                 >
@@ -3801,8 +3801,8 @@ except jwt.InvalidTokenError:
                 <div
                   className={`p-3 border rounded-lg cursor-pointer transition-all ${
                     selectedExportFormat === 'pdf'
-                      ? 'bg-red-50 dark:bg-red-950/20 border-red-300 dark:border-red-700'
-                      : 'bg-gray-50 dark:bg-gray-950/20 border-gray-200 dark:border-gray-700 hover:border-red-300'
+                      ? 'bg-black border-red-300 dark:border-red-700'
+                      : 'bg-black border-gray-200 dark:border-gray-700 hover:border-red-300'
                   }`}
                   onClick={() => setSelectedExportFormat('pdf')}
                 >
