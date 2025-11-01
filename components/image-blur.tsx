@@ -103,12 +103,12 @@ export function ImageBlur() {
               </div>
 
               <div
-                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-xl overflow-hidden bg-white dark:bg-slate-800"
+                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-xl overflow-hidden bg-white"
               >
                 {!imageUrl && (
                   <label
                     htmlFor="image-upload-blur"
-                    className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+                    className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-50 transition-colors"
                   >
                     <div className="text-center px-6">
                       <div className="relative mb-4">
@@ -117,10 +117,10 @@ export function ImageBlur() {
                           <Upload className="w-12 h-12 text-white" />
                         </div>
                       </div>
-                      <p className="text-base font-semibold text-slate-900 dark:text-slate-100 mb-2">
+                      <p className="text-base font-semibold text-slate-900 mb-2">
                         Upload an image to blur background
                       </p>
-                      <p className="text-sm text-slate-600 dark:text-slate-400">
+                      <p className="text-sm text-slate-600">
                         Supports JPEG, PNG, and WebP
                       </p>
                     </div>
@@ -135,7 +135,7 @@ export function ImageBlur() {
                 )}
 
                 {imageUrl && (
-                  <div className="w-full h-full flex items-center justify-center p-4 bg-white dark:bg-slate-800">
+                  <div className="w-full h-full flex items-center justify-center p-4 bg-white">
                     <img
                       src={imageUrl}
                       alt="Original"
@@ -162,7 +162,7 @@ export function ImageBlur() {
               </div>
 
               <div
-                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden bg-white dark:bg-slate-800"
+                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden bg-white"
               >
                 {!imageUrl && !isProcessing && (
                   <div className="flex items-center justify-center h-full">
@@ -198,7 +198,7 @@ export function ImageBlur() {
 
                 {/* Show uploaded image (before AI processing) */}
                 {imageUrl && !result && !isProcessing && (
-                  <div className="w-full h-full flex items-center justify-center p-4 bg-white dark:bg-slate-800 relative">
+                  <div className="w-full h-full flex items-center justify-center p-4 bg-white relative">
                     <img
                       src={imageUrl}
                       alt="Original"
@@ -212,7 +212,7 @@ export function ImageBlur() {
 
                 {/* AI-processed result (selective background blur) */}
                 {result && !isProcessing && (
-                  <div className="w-full h-full flex items-center justify-center p-4 bg-white dark:bg-slate-800 relative">
+                  <div className="w-full h-full flex items-center justify-center p-4 bg-white relative">
                     <img
                       src={result.resultUrl}
                       alt="Background blurred"
