@@ -23,7 +23,7 @@ export function Footer() {
     <footer className="relative bg-orange-500 py-12 md:py-16 px-4 overflow-hidden">
       <div className="container mx-auto max-w-7xl">
         {/* Top Links Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16 relative z-10">
           {/* Column 1 - Newsletter */}
           <div className="sm:col-span-2 md:col-span-1">
             <h3 className="text-xs md:text-sm font-black text-black mb-3 md:mb-4 uppercase">Sign up for the latest updates & features</h3>
@@ -46,24 +46,15 @@ export function Footer() {
             )}
           </div>
 
-          {/* Column 2 - Tools */}
-          <div>
-            <Link href="/image-tools/bg-remove" className="block text-xs md:text-sm font-black text-black mb-2 md:mb-3 hover:underline uppercase">Remove Background →</Link>
-            <Link href="/converters/currency-api" className="block text-xs md:text-sm font-black text-black mb-2 md:mb-3 hover:underline uppercase">API Documentation →</Link>
-            <Link href="/#tools" className="block text-xs md:text-sm font-black text-black mb-2 md:mb-3 hover:underline uppercase">Features →</Link>
-          </div>
-
-          {/* Column 3 - Product */}
+          {/* Column 2 - Product */}
           <div>
             <Link href="/products" className="block text-xs md:text-sm font-black text-black mb-2 md:mb-3 hover:underline uppercase">Products →</Link>
           </div>
 
-          {/* Column 4 - Legal */}
+          {/* Column 3 - Downloads & APIs */}
           <div>
-            <Link href="/contact" className="block text-xs md:text-sm font-black text-black mb-2 md:mb-3 hover:underline uppercase">Contact Us →</Link>
-            <Link href="/terms" className="block text-xs md:text-sm font-black text-black mb-2 md:mb-3 hover:underline uppercase">Terms & Conditions →</Link>
-            <Link href="/privacy-policy" className="block text-xs md:text-sm font-black text-black mb-2 md:mb-3 hover:underline uppercase">Privacy Policy →</Link>
-            <Link href="/cookie-preferences" className="block text-xs md:text-sm font-black text-black mb-2 md:mb-3 hover:underline uppercase">Cookies Policy →</Link>
+            <Link href="/downloaders" className="block text-xs md:text-sm font-black text-black mb-2 md:mb-3 hover:underline uppercase">Downloaders →</Link>
+            <Link href="/api-docs" className="block text-xs md:text-sm font-black text-black mb-2 md:mb-3 hover:underline uppercase">API Docs →</Link>
           </div>
         </div>
 
@@ -81,17 +72,17 @@ export function Footer() {
             <div>
               <h3 className="text-xs md:text-sm font-black text-black mb-3 md:mb-4 uppercase">Quick Links</h3>
               <div className="space-y-1.5 md:space-y-2">
+                <Link href="/image-tools" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
+                  Image Tools
+                </Link>
                 <Link href="/calculator" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
                   Calculators
                 </Link>
-                <Link href="/converters" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
-                  Converters
+                <Link href="/pdf-tools" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
+                  PDF Tools
                 </Link>
                 <Link href="/ai-tools" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
                   AI Tools
-                </Link>
-                <Link href="/seo-tools" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
-                  SEO Tools
                 </Link>
               </div>
             </div>
@@ -100,17 +91,17 @@ export function Footer() {
             <div>
               <h3 className="text-xs md:text-sm font-black text-black mb-3 md:mb-4 uppercase">Popular Tools</h3>
               <div className="space-y-1.5 md:space-y-2">
-                <Link href="/ai-tools/caption-generator" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
-                  Caption Generator
-                </Link>
-                <Link href="/calculator/age-calculator" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
-                  Age Calculator
-                </Link>
                 <Link href="/converters/currency" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
                   Currency Converter
                 </Link>
-                <Link href="/seo-tools/meta-tags" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
-                  Meta Tag Generator
+                <Link href="/image-tools/image-background-remover" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
+                  Background Remover
+                </Link>
+                <Link href="/image-tools/image-blur" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
+                  Image Blur
+                </Link>
+                <Link href="/ai-tools/caption-generator" className="block text-xs md:text-sm font-bold text-black/80 hover:text-black transition-colors">
+                  Caption Generator
                 </Link>
               </div>
             </div>
