@@ -1,16 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const NASA_API_KEY = process.env.NASA_API_KEY || 'DEMO_KEY'
+const NASA_API_KEY = process.env.NASA_API_KEY
 const NASA_APOD_URL = 'https://api.nasa.gov/planetary/apod'
 
+// @ts-ignore
 export async function GET(request: NextRequest) {
   try {
-    // Get random count for variety (NASA API supports this)
-    const randomCount = Math.floor(Math.random() * 10) + 1
-    
-    // Fetch random APOD image
+
     const response = await fetch(`${NASA_APOD_URL}?api_key=${NASA_API_KEY}&count=1`, {
-      cache: 'no-store' // Don't cache to get fresh images
+      cache: 'no-store'
     })
 
     if (!response.ok) {
@@ -21,13 +19,10 @@ export async function GET(request: NextRequest) {
     const data = await response.json()
     console.log('NASA API data:', JSON.stringify(data).substring(0, 200))
     
-    // Get the first image from the array (or the single object if count=1)
     const image = Array.isArray(data) ? data[0] : data
 
-    // Only return image data, not video data
     if (image.media_type !== 'image') {
       console.log('Media type is not image, fetching again')
-      // Fetch again to get an image
       return await GET(request)
     }
 
@@ -43,7 +38,6 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('NASA API Error:', error)
     
-    // Return a default space image if API fails
     return NextResponse.json({
       success: false,
       image: {

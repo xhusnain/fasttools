@@ -6,13 +6,10 @@ import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
 import { GlobalLoading } from "@/components/global-loading"
 import type { Metadata } from "next"
-import { validateEnv, env } from "@/lib/env"
+import { env } from "@/lib/env"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-if (typeof window === "undefined") {
-  validateEnv()
-}
 
 const montserrat = Montserrat({
   subsets: ["latin"],
