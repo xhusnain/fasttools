@@ -20,7 +20,7 @@ export function Header() {
     { href: "/products", label: "Products" },
     { href: "/downloaders", label: "Downloaders" },
     { href: "/image-tools", label: "Image Tools" },
-    { href: "/converters/currency-api", label: "Currency API" },
+    { href: "/api-docs", label: "API Docs" },
   ]
 
   return (
