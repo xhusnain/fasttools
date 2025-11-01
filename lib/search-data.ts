@@ -123,3 +123,4 @@ export const searchItems: SearchItem[] = [
   { name: "Anniversary Calculator", description: "Calculate how long you've been together", path: "/fun-tools/anniversary", category: "Fun" },
 ]
 
+
