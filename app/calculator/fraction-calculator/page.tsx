@@ -140,7 +140,7 @@ export default function FractionCalculatorPage() {
         }}
       />
 
-      <div className="bg-black">
+      <div className="bg-card">
         <div className="container mx-auto px-3 py-6 md:py-8">
           <div className="max-w-7xl mx-auto">
             <Breadcrumbs items={[
@@ -159,9 +159,9 @@ export default function FractionCalculatorPage() {
             {/* Mobile/Tablet AdSpace after GHeader */}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
-                <span className="text-xs text-slate-400 font-medium">Advertisement</span>
+                <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
               </div>
-              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
+              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
             </div>
 
             {/* Main Content - Calculator and Sidebar in One Line */}
@@ -170,258 +170,258 @@ export default function FractionCalculatorPage() {
                 <FractionCalculator />
 
                 <div className="space-y-6 mt-6 md:mt-8">
-                  <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm">
-                    <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
-                      <Calculator className="h-5 w-5 text-orange-500" />
+                  <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
+                    <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
+                      <Calculator className="h-5 w-5 text-foreground" />
                       How to Use Fraction Calculator
                     </h2>
-                    <div className="space-y-4 text-sm text-slate-400">
+                    <div className="space-y-4 text-sm text-muted-foreground">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                          <h3 className="text-lg font-semibold mb-3 text-green-500">Step 1: Select Operation</h3>
+                          <h3 className="text-lg font-semibold mb-3 text-heading-accent">Step 1: Select Operation</h3>
                           <p className="mb-4">Choose from addition (+), subtraction (-), multiplication (×), or division (÷).</p>
                           <div className="grid grid-cols-2 gap-2">
-                            <Button size="sm" variant="outline" className="text-xs justify-start border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+                            <Button size="sm" variant="outline" className="text-xs justify-start border-border bg-card text-foreground hover:bg-slate-800">
                               <Plus className="h-3 w-3 mr-2" />Add
                             </Button>
-                            <Button size="sm" variant="outline" className="text-xs justify-start border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+                            <Button size="sm" variant="outline" className="text-xs justify-start border-border bg-card text-foreground hover:bg-slate-800">
                               <Minus className="h-3 w-3 mr-2" />Subtract
                             </Button>
-                            <Button size="sm" variant="outline" className="text-xs justify-start border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+                            <Button size="sm" variant="outline" className="text-xs justify-start border-border bg-card text-foreground hover:bg-slate-800">
                               <X className="h-3 w-3 mr-2" />Multiply
                             </Button>
-                            <Button size="sm" variant="outline" className="text-xs justify-start border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+                            <Button size="sm" variant="outline" className="text-xs justify-start border-border bg-card text-foreground hover:bg-slate-800">
                               <Divide className="h-3 w-3 mr-2" />Divide
                             </Button>
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold mb-3 text-green-500">Step 2: Enter Fractions</h3>
+                          <h3 className="text-lg font-semibold mb-3 text-heading-accent">Step 2: Enter Fractions</h3>
                           <p className="mb-4">Input the numerator and denominator for both fractions. The calculator will automatically calculate the result.</p>
-                          <div className="bg-slate-900 border border-slate-700 p-3 rounded-lg text-sm">
-                            <div className="text-center font-mono text-orange-400">3/4 + 1/6 = 11/12</div>
+                          <div className="bg-slate-900 border border-border p-3 rounded-lg text-sm">
+                            <div className="text-center font-mono text-foreground">3/4 + 1/6 = 11/12</div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm">
-                    <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
-                      <Plus className="h-5 w-5 text-orange-500" />
+                  <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
+                    <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
+                      <Plus className="h-5 w-5 text-foreground" />
                       Fraction Operations & Properties
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-400">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-muted-foreground">
                       <div>
-                        <h3 className="text-lg font-semibold mb-3 text-green-500">Addition & Subtraction</h3>
+                        <h3 className="text-lg font-semibold mb-3 text-heading-accent">Addition & Subtraction</h3>
                         <p className="mb-4">Fractions require a common denominator. The calculator finds the least common multiple (LCM) automatically.</p>
-                        <div className="bg-slate-900 border border-slate-700 p-3 rounded-lg text-sm">
-                          <div className="font-mono text-orange-400">3/4 + 1/6 = (3×6)/(4×6) + (1×4)/(6×4) = 18/24 + 4/24 = 22/24 = 11/12</div>
+                        <div className="bg-slate-900 border border-border p-3 rounded-lg text-sm">
+                          <div className="font-mono text-foreground">3/4 + 1/6 = (3×6)/(4×6) + (1×4)/(6×4) = 18/24 + 4/24 = 22/24 = 11/12</div>
                         </div>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold mb-3 text-green-500">Multiplication & Division</h3>
+                        <h3 className="text-lg font-semibold mb-3 text-heading-accent">Multiplication & Division</h3>
                         <p className="mb-4">Multiply numerators and denominators directly. For division, multiply by the reciprocal.</p>
-                        <div className="bg-slate-900 border border-slate-700 p-3 rounded-lg text-sm">
-                          <div className="font-mono text-orange-400">2/5 × 3/7 = (2×3)/(5×7) = 6/35</div>
+                        <div className="bg-slate-900 border border-border p-3 rounded-lg text-sm">
+                          <div className="font-mono text-foreground">2/5 × 3/7 = (2×3)/(5×7) = 6/35</div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm">
-                    <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
-                      <Brain className="h-5 w-5 text-orange-500" />
+                  <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
+                    <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
+                      <Brain className="h-5 w-5 text-foreground" />
                       Frequently Asked Questions
                     </h2>
                     <div className="space-y-4">
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           Why are fractions fundamental to mathematical understanding?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           Fractions express partial quantities through a ratio format with a top number (numerator) and bottom number (denominator). 
                           They enable precise representation of values that fall between integers, support ratio calculations, percentage conversions, 
                           and are crucial in practical scenarios including culinary measurements, engineering specifications, and analytical computations.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           What method should I use when adding fractions that have different bottom numbers?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           Identify the smallest common multiple of the denominators, then rewrite each fraction using that shared denominator before combining the top numbers. 
                           Our calculator performs these conversions automatically. Example calculation: 1/3 + 1/4 = 4/12 + 3/12 = 7/12.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           What is the process for transforming decimal numbers into fractional form?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           Express the decimal value as a ratio where the denominator reflects the place value (e.g., 0.5 = 5/10, 0.25 = 25/100), 
                           then reduce the fraction by dividing both parts by their greatest common factor. For instance, 0.5 simplifies to 1/2.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           What's the difference between proper and improper fractions?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           A proper fraction has a numerator smaller than the denominator (e.g., 3/4), while an improper fraction 
                           has a numerator equal to or larger than the denominator (e.g., 5/4). Improper fractions can be converted to mixed numbers.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           Why do I need to learn fractions if I have a calculator?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           Understanding fractions helps you interpret results, catch errors, and solve problems when calculators aren't available. 
                           It also builds mathematical thinking skills essential for advanced topics like algebra and calculus.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           How can I practice fractions effectively?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           Start with simple problems and gradually increase complexity. Use visual aids like pie charts and number lines, 
                           practice with real-world examples, and use our fraction calculator to check your work and build confidence.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           How can I identify fractions that represent the same numerical value?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           Fractions with identical values but different representations are called equivalent fractions (e.g., 2/4 = 1/2 = 4/8). 
                           Create equivalent fractions by applying the same multiplication or division operation to both the top and bottom numbers using any non-zero value.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           How do I simplify fractions to their lowest terms?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           To simplify fractions, find the greatest common divisor (GCD) of the numerator and denominator, then divide both by the GCD. 
                           For example, 8/12 simplifies to 2/3 because the GCD of 8 and 12 is 4.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           What is the least common denominator (LCD) and why is it important?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           The LCD is the smallest number that is a multiple of all denominators in a set of fractions. It's essential for adding and subtracting 
                           fractions with different denominators, as it allows you to convert them to equivalent fractions with the same denominator.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           How do I multiply fractions step by step?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           To multiply fractions: 1) Multiply the numerators together, 2) Multiply the denominators together, 3) Simplify the result if possible. 
                           For example, 2/3 × 3/4 = (2×3)/(3×4) = 6/12 = 1/2.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           What technique is used when dividing one fraction by another?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           Division of fractions is performed by taking the inverse of the divisor (swapping numerator and denominator) and then multiplying. 
                           For instance, 3/4 ÷ 2/5 = 3/4 × 5/2 = 15/8 = 1 7/8.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           What are the common fraction operations used in real life?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           Fraction operations are used in cooking (recipe scaling), construction (measurements), finance (interest calculations), 
                           science (concentration ratios), and many other fields where precise part-to-whole relationships are important.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           What steps are required to transform a mixed number into an improper fraction?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           The conversion process involves: first, multiplying the whole number portion by the fractional denominator, next, adding that product to the existing numerator, 
                           finally, writing that sum over the original denominator. Example: 3 2/5 = (3×5 + 2)/5 = 17/5.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           What is the formula for expressing fractions as percentages?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           Transform a fraction into a percentage by performing division between the top and bottom numbers, then scaling the result by 100. 
                           For instance, 1/2 = 0.50 = 50%. This calculator performs these transformations instantly.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           What are complex fraction problems and how do I solve them?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           Complex fraction problems involve multiple operations in sequence. Break them down step by step, follow the order of operations (PEMDAS), 
                           and use visual representations when helpful. For example: (2/3 + 1/4) × (3/5 - 1/2) = 11/12 × 1/10 = 11/120.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           How accurate are fraction calculator results?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           Our calculator provides exact fraction results using precise mathematical algorithms. For decimal conversions, 
                           results are accurate to 6 decimal places, which is sufficient for most academic and professional applications.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           What are the key features of a professional fraction calculator?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           Professional fraction calculators should support all four operations (addition, subtraction, multiplication, division), 
                           handle mixed numbers, provide step-by-step solutions, convert between fractions and decimals, simplify results, 
                           and work with both proper and improper fractions.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           How do fractions appear in everyday life?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           Fractions appear in time (quarter past 3), money (half dollar), sports (three-quarters of the game), 
                           cooking (3/4 cup of flour), construction (5/8 inch thickness), and measurements (half inch). Understanding fractions helps you navigate the world more effectively!
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           What are the different types of fractions I should know?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           The main types are: proper fractions (numerator &lt; denominator), improper fractions (numerator ≥ denominator), 
                           mixed numbers (whole number + fraction), and equivalent fractions (same value, different form). Each type has specific uses and conversion methods.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           How do I solve fraction word problems?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           For fraction word problems: 1) Read carefully and identify what's being asked, 2) Determine which operation to use, 
                           3) Set up the problem with fractions, 4) Solve step by step, 5) Check your answer makes sense in the original context.
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-green-500 mb-2">
+                        <h3 className="text-lg font-semibold text-heading-accent mb-2">
                           Can I use this calculator for complex fraction expressions?
                         </h3>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted-foreground">
                           Yes! Our calculator can handle complex expressions involving multiple operations, mixed numbers, and various fraction types. 
                           It automatically follows the order of operations and provides step-by-step solutions for educational purposes.
                         </p>
@@ -430,9 +430,9 @@ export default function FractionCalculatorPage() {
                   </div>
 
                   {/* Related Tools Section */}
-                  <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm">
-                    <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
-                      <Square className="h-5 w-5 text-orange-500" />
+                  <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
+                    <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
+                      <Square className="h-5 w-5 text-foreground" />
                       Related Math & Calculator Tools
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -452,13 +452,13 @@ export default function FractionCalculatorPage() {
                         <a
                           key={href}
                           href={href}
-                          className="p-3 bg-black rounded-lg border border-slate-700 hover:bg-slate-800 hover:border-green-500/50 transition-colors group"
+                          className="p-3 bg-card rounded-lg border border-border hover:bg-slate-800 hover:border-heading-accent-border/50 transition-colors group"
                         >
                           <div className="flex items-center gap-2 mb-1">
                             <span className="text-lg">{icon}</span>
-                            <h3 className="font-semibold text-sm text-green-500 group-hover:text-green-500">{name}</h3>
+                            <h3 className="font-semibold text-sm text-heading-accent group-hover:text-heading-accent">{name}</h3>
                           </div>
-                          <p className="text-xs text-slate-400 group-hover:text-slate-300">{desc}</p>
+                          <p className="text-xs text-muted-foreground group-hover:text-foreground">{desc}</p>
                         </a>
                       ))}
                     </div>
@@ -470,9 +470,9 @@ export default function FractionCalculatorPage() {
                 <div className="sticky top-32 space-y-6">
                   <div>
                     <div className="text-center mb-2">
-                      <span className="text-xs text-slate-400 font-medium">Advertisement</span>
+                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                     </div>
-                    <AdSpace slot="sidebar" className="w-full h-80 border border-slate-700 rounded-xl shadow-sm bg-black" />
+                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
                   </div>
                 </div>
               </div>

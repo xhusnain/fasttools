@@ -19,21 +19,21 @@ export function GHeader({
 }: GHeaderProps) {
   // Color classes
   const titleColors = {
-    orange: 'text-orange-500',
-    green: 'text-green-500',
-    blue: 'text-blue-500',
-    purple: 'text-purple-500',
-    pink: 'text-pink-500',
-    red: 'text-red-500'
+    orange: 'text-foreground',
+    green: 'text-heading-accent',
+    blue: 'text-foreground',
+    purple: 'text-foreground',
+    pink: 'text-foreground',
+    red: 'text-foreground'
   }
 
   const descColors = {
-    orange: 'text-orange-500',
-    green: 'text-green-400/80',
-    blue: 'text-blue-500',
-    purple: 'text-purple-500',
-    pink: 'text-pink-500',
-    red: 'text-red-500'
+    orange: 'text-foreground',
+    green: 'text-heading-accent/80',
+    blue: 'text-foreground',
+    purple: 'text-foreground',
+    pink: 'text-foreground',
+    red: 'text-foreground'
   }
 
   // Title size classes

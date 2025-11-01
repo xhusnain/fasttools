@@ -119,26 +119,26 @@ export function BirthdayCountdown() {
           {result && (
             <div className="p-4 sm:p-6 rounded-lg bg-gradient-to-br from-pink-500/20 to-purple-500/20 border border-pink-400/30 space-y-4 sm:space-y-6 animate-fade-in">
               <div className="text-center space-y-2 sm:space-y-3">
-                <Cake className="h-8 w-8 sm:h-12 sm:w-12 text-pink-300 mx-auto" />
-                <p className="text-sm sm:text-base text-pink-200">Next Birthday: {result.nextBirthday}</p>
+                <Cake className="h-8 w-8 sm:h-12 sm:w-12 text-foreground mx-auto" />
+                <p className="text-sm sm:text-base text-foreground">Next Birthday: {result.nextBirthday}</p>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
                 <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-400/30 text-center">
-                  <p className="text-xl sm:text-2xl font-bold text-blue-300">{result.days}</p>
-                  <p className="text-xs sm:text-sm text-blue-200">Days</p>
+                  <p className="text-xl sm:text-2xl font-bold text-foreground">{result.days}</p>
+                  <p className="text-xs sm:text-sm text-foreground">Days</p>
                 </div>
                 <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-400/30 text-center">
-                  <p className="text-xl sm:text-2xl font-bold text-purple-300">{result.hours}</p>
-                  <p className="text-xs sm:text-sm text-purple-200">Hours</p>
+                  <p className="text-xl sm:text-2xl font-bold text-foreground">{result.hours}</p>
+                  <p className="text-xs sm:text-sm text-foreground">Hours</p>
                 </div>
                 <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-400/30 text-center">
-                  <p className="text-xl sm:text-2xl font-bold text-green-300">{result.minutes}</p>
-                  <p className="text-xs sm:text-sm text-green-200">Minutes</p>
+                  <p className="text-xl sm:text-2xl font-bold text-heading-accent">{result.minutes}</p>
+                  <p className="text-xs sm:text-sm text-heading-accent">Minutes</p>
                 </div>
                 <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-orange-500/20 to-orange-600/20 border border-orange-400/30 text-center">
-                  <p className="text-xl sm:text-2xl font-bold text-orange-300">{result.seconds}</p>
-                  <p className="text-xs sm:text-sm text-orange-200">Seconds</p>
+                  <p className="text-xl sm:text-2xl font-bold text-foreground">{result.seconds}</p>
+                  <p className="text-xs sm:text-sm text-foreground">Seconds</p>
                 </div>
               </div>
 

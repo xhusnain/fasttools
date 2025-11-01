@@ -538,7 +538,7 @@ export function ElementsPanel({ canvas }: ElementsPanelProps) {
         {!showAllIcons && (
           <button
             onClick={() => setShowAllIcons(true)}
-            className="w-full mt-3 py-2.5 text-sm text-blue-600 hover:text-blue-700 font-semibold border-2 border-blue-200 hover:border-blue-300 rounded-lg transition-colors hover:bg-blue-50"
+            className="w-full mt-3 py-2.5 text-sm text-primary hover:text-primary/80 font-semibold border-2 border-border hover:border-border/50 rounded-lg transition-colors hover:bg-card"
           >
             View All {allIcons.length} Icons
           </button>

@@ -239,12 +239,12 @@ Mixed Number: ${result.mixedNumber}`
                 <Calculator className="h-4 w-4 text-white" />
               </div>
               <div>
-                <h2 className="text-base sm:text-lg font-bold text-orange-500">Fraction Calculator</h2>
+                <h2 className="text-base sm:text-lg font-bold text-foreground">Fraction Calculator</h2>
                 <p className="text-xs text-slate-400">Add, subtract, multiply, and divide fractions</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Badge variant="secondary" className="bg-orange-500/10 text-orange-400 border-orange-500/20 text-[10px] h-5">
+              <Badge variant="secondary" className="bg-orange-500/10 text-foreground border-orange-500/20 text-[10px] h-5">
                 <Zap className="h-2.5 w-2.5 mr-1" />
                 Auto-calc
               </Badge>
@@ -254,7 +254,7 @@ Mixed Number: ${result.mixedNumber}`
         <CardContent className="space-y-4 px-3 sm:px-6">
           {/* Operation Selection */}
           <div className="space-y-1">
-            <Label htmlFor="operation" className="text-[11px] font-medium text-green-500">Operation</Label>
+            <Label htmlFor="operation" className="text-[11px] font-medium text-heading-accent">Operation</Label>
             <Select value={operation} onValueChange={setOperation}>
               <SelectTrigger className="h-8 text-xs border-slate-700 bg-black text-slate-200">
                 <SelectValue placeholder="Select operation" />
@@ -292,7 +292,7 @@ Mixed Number: ${result.mixedNumber}`
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* First Fraction */}
               <div className="space-y-3">
-              <Label className="text-sm font-semibold text-green-500">First Fraction</Label>
+              <Label className="text-sm font-semibold text-heading-accent">First Fraction</Label>
                 <div className="space-y-2">
                 <div className="space-y-1">
                   <Label htmlFor="numerator1" className="text-[10px] text-slate-400">Numerator</Label>
@@ -324,7 +324,7 @@ Mixed Number: ${result.mixedNumber}`
 
             {/* Second Fraction */}
               <div className="space-y-3">
-              <Label className="text-sm font-semibold text-green-500">Second Fraction</Label>
+              <Label className="text-sm font-semibold text-heading-accent">Second Fraction</Label>
                 <div className="space-y-2">
                 <div className="space-y-1">
                   <Label htmlFor="numerator2" className="text-[10px] text-slate-400">Numerator</Label>
@@ -384,25 +384,25 @@ Mixed Number: ${result.mixedNumber}`
           <CardHeader className="pb-2 px-3 sm:px-6">
             <div className="flex items-center gap-2">
               {result.error ? (
-                <AlertCircle className="h-4 w-4 text-red-400" />
+                <AlertCircle className="h-4 w-4 text-foreground" />
               ) : (
-                <CheckCircle className="h-4 w-4 text-green-500" />
+                <CheckCircle className="h-4 w-4 text-heading-accent" />
               )}
-              <CardTitle className="text-base sm:text-lg text-orange-500">Results</CardTitle>
+              <CardTitle className="text-base sm:text-lg text-foreground">Results</CardTitle>
             </div>
           </CardHeader>
           <CardContent className="space-y-4 px-3 sm:px-6">
             {result.error ? (
               <div className="text-center py-6">
-                <AlertCircle className="h-10 w-10 text-red-400 mx-auto mb-2" />
-                <h3 className="text-base font-semibold text-red-400 mb-1">Calculation Error</h3>
-                <p className="text-red-400 text-sm">{result.error}</p>
+                <AlertCircle className="h-10 w-10 text-foreground mx-auto mb-2" />
+                <h3 className="text-base font-semibold text-foreground mb-1">Calculation Error</h3>
+                <p className="text-foreground text-sm">{result.error}</p>
               </div>
             ) : (
               <>
                 {/* Operation Display */}
                 <div className="bg-black rounded-lg p-3 border border-slate-700">
-                  <div className="text-center text-sm font-semibold text-orange-400">
+                  <div className="text-center text-sm font-semibold text-foreground">
                     {fraction1.numerator}/{fraction1.denominator} {getOperationSymbol(operation)} {fraction2.numerator}/{fraction2.denominator}
                   </div>
                 </div>
@@ -411,32 +411,32 @@ Mixed Number: ${result.mixedNumber}`
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
                   {/* Simplified Result */}
                   <div className="bg-black rounded-lg p-3 border border-slate-700">
-                    <div className="text-xs font-medium text-green-500 mb-1">Simplified Result</div>
-                    <div className="text-lg sm:text-xl font-bold text-orange-400 text-center">
+                    <div className="text-xs font-medium text-heading-accent mb-1">Simplified Result</div>
+                    <div className="text-lg sm:text-xl font-bold text-foreground text-center">
                       {result.result.numerator}/{result.result.denominator}
                     </div>
                   </div>
 
                   {/* Decimal Result */}
                   <div className="bg-black rounded-lg p-3 border border-slate-700">
-                    <div className="text-xs font-medium text-green-500 mb-1">Decimal</div>
-                    <div className="text-lg sm:text-xl font-bold text-orange-400 text-center">
+                    <div className="text-xs font-medium text-heading-accent mb-1">Decimal</div>
+                    <div className="text-lg sm:text-xl font-bold text-foreground text-center">
                       {formatNumber(result.decimal)}
                     </div>
                   </div>
 
                   {/* Percentage Result */}
                   <div className="bg-black rounded-lg p-3 border border-slate-700">
-                    <div className="text-xs font-medium text-green-500 mb-1">Percentage</div>
-                    <div className="text-lg sm:text-xl font-bold text-orange-400 text-center">
+                    <div className="text-xs font-medium text-heading-accent mb-1">Percentage</div>
+                    <div className="text-lg sm:text-xl font-bold text-foreground text-center">
                       {formatNumber(result.percentage)}%
                     </div>
                   </div>
 
                   {/* Mixed Number */}
                   <div className="bg-black rounded-lg p-3 border border-slate-700">
-                    <div className="text-xs font-medium text-green-500 mb-1">Mixed Number</div>
-                    <div className="text-lg sm:text-xl font-bold text-orange-400 text-center">
+                    <div className="text-xs font-medium text-heading-accent mb-1">Mixed Number</div>
+                    <div className="text-lg sm:text-xl font-bold text-foreground text-center">
                       {result.mixedNumber}
                     </div>
                   </div>
@@ -451,7 +451,7 @@ Mixed Number: ${result.mixedNumber}`
       {history.length > 0 && (
         <Card className="bg-black border-slate-700">
           <CardHeader className="pb-2 px-3 sm:px-6">
-            <CardTitle className="flex items-center gap-2 text-base text-orange-500">
+            <CardTitle className="flex items-center gap-2 text-base text-foreground">
               <Calculator className="h-4 w-4" />
               History
             </CardTitle>
@@ -475,7 +475,7 @@ Mixed Number: ${result.mixedNumber}`
                       const resultText = `Fraction: ${calc.fraction1.numerator}/${calc.fraction1.denominator} ${getOperationSymbol(calc.operation)} ${calc.fraction2.numerator}/${calc.fraction2.denominator} = ${calc.result.numerator}/${calc.result.denominator}`
                       navigator.clipboard.writeText(resultText)
                     }}
-                    className="h-7 w-7 p-0 text-slate-400 hover:text-green-500 hover:bg-slate-800"
+                    className="h-7 w-7 p-0 text-slate-400 hover:text-heading-accent hover:bg-slate-800"
                   >
                     <Copy className="h-3 w-3" />
                   </Button>

@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import { Menu, X, Wrench, Search } from "lucide-react"
 import { SearchBar } from "@/components/search-bar"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { usePathname } from "next/navigation"
 
 export function Header() {
@@ -71,7 +72,8 @@ export function Header() {
           </div>
 
           {/* Right side - Desktop Search */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden lg:flex items-center gap-2">
+            <ThemeToggle />
             {!showSearch ? (
               <button
                 aria-label="Open search"
@@ -95,6 +97,7 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
             {!showSearch ? (
               <>
                 <button

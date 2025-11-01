@@ -333,7 +333,7 @@ Calculated with FastTools Concrete Calculator`
         <CardHeader className="pb-3 px-3 sm:px-6">
           <CardTitle className="flex items-center gap-1.5 text-base">
             <div className="p-1 bg-orange-500/10 rounded">
-              <Calculator className="h-3.5 w-3.5 text-orange-500" />
+              <Calculator className="h-3.5 w-3.5 text-foreground" />
             </div>
             Concrete Calculator
           </CardTitle>
@@ -344,7 +344,7 @@ Calculated with FastTools Concrete Calculator`
         <CardContent className="space-y-6 px-3 sm:px-6">
           {/* Calculation Type Selection */}
           <div className="space-y-2">
-            <Label className="text-[11px] font-medium text-green-500">Calculation Type</Label>
+            <Label className="text-[11px] font-medium text-heading-accent">Calculation Type</Label>
             <Select value={calculationType} onValueChange={(value: CalculationType) => setCalculationType(value)}>
               <SelectTrigger className="w-full h-8 text-xs border-slate-700 bg-black text-slate-200">
                 <SelectValue placeholder="Select calculation type" />
@@ -365,7 +365,7 @@ Calculated with FastTools Concrete Calculator`
           {/* Unit Selection */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label className="text-[11px] font-medium text-green-500">Unit System</Label>
+              <Label className="text-[11px] font-medium text-heading-accent">Unit System</Label>
               <Select value={unit} onValueChange={(value: "metric" | "imperial") => setUnit(value)}>
                 <SelectTrigger className="h-8 text-xs border-slate-700 bg-black text-slate-200">
                   <SelectValue />
@@ -377,7 +377,7 @@ Calculated with FastTools Concrete Calculator`
               </Select>
             </div>
             <div className="space-y-2">
-              <Label className="text-[11px] font-medium text-green-500">Concrete Mix</Label>
+              <Label className="text-[11px] font-medium text-heading-accent">Concrete Mix</Label>
               <Select value={concreteMix} onValueChange={setConcreteMix}>
                 <SelectTrigger className="h-8 text-xs border-slate-700 bg-black text-slate-200">
                   <SelectValue />
@@ -395,7 +395,7 @@ Calculated with FastTools Concrete Calculator`
 
           {/* Dynamic Input Fields Based on Calculation Type */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-sm text-green-500 flex items-center gap-1.5">
+            <h3 className="font-semibold text-sm text-heading-accent flex items-center gap-1.5">
               {(() => {
                 const IconComponent = getCalculationIcon(calculationType)
                 return <IconComponent className="h-3.5 w-3.5" />
@@ -866,9 +866,9 @@ Calculated with FastTools Concrete Calculator`
       {result && (
         <Card className="shadow-lg border-slate-700 bg-black">
           <CardHeader className="pb-3 px-3 sm:px-6">
-            <CardTitle className="flex items-center gap-1.5 text-base sm:text-lg text-orange-500">
+            <CardTitle className="flex items-center gap-1.5 text-base sm:text-lg text-foreground">
               <div className="p-1 sm:p-1.5 bg-orange-500/10 rounded-lg">
-                <BarChart3 className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-orange-500" />
+                <BarChart3 className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-foreground" />
               </div>
               Results
             </CardTitle>
@@ -878,37 +878,37 @@ Calculated with FastTools Concrete Calculator`
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               <div className="bg-black p-3 rounded-lg border border-slate-700">
                 <div className="flex items-center gap-1.5 mb-1">
-                  <Volume className="h-3 w-3 text-green-500" />
-                  <span className="text-xs font-medium text-green-500">Volume</span>
+                  <Volume className="h-3 w-3 text-heading-accent" />
+                  <span className="text-xs font-medium text-heading-accent">Volume</span>
                 </div>
-                <div className="text-lg sm:text-xl font-bold text-orange-400">
+                <div className="text-lg sm:text-xl font-bold text-foreground">
                   {result.volume} {unit === "metric" ? "m³" : "ft³"}
                 </div>
               </div>
               <div className="bg-black p-3 rounded-lg border border-slate-700">
                 <div className="flex items-center gap-1.5 mb-1">
-                  <Weight className="h-3 w-3 text-green-500" />
-                  <span className="text-xs font-medium text-green-500">Weight</span>
+                  <Weight className="h-3 w-3 text-heading-accent" />
+                  <span className="text-xs font-medium text-heading-accent">Weight</span>
                 </div>
-                <div className="text-lg sm:text-xl font-bold text-orange-400">
+                <div className="text-lg sm:text-xl font-bold text-foreground">
                   {result.weight} {unit === "metric" ? "kg" : "lbs"}
                 </div>
               </div>
               <div className="bg-black p-3 rounded-lg border border-slate-700">
                 <div className="flex items-center gap-1.5 mb-1">
-                  <Package className="h-3 w-3 text-green-500" />
-                  <span className="text-xs font-medium text-green-500">Bags</span>
+                  <Package className="h-3 w-3 text-heading-accent" />
+                  <span className="text-xs font-medium text-heading-accent">Bags</span>
                 </div>
-                <div className="text-lg sm:text-xl font-bold text-orange-400">
+                <div className="text-lg sm:text-xl font-bold text-foreground">
                   {result.bags}
                 </div>
               </div>
               <div className="bg-black p-3 rounded-lg border border-slate-700">
                 <div className="flex items-center gap-1.5 mb-1">
-                  <Target className="h-3 w-3 text-green-500" />
-                  <span className="text-xs font-medium text-green-500">Cost</span>
+                  <Target className="h-3 w-3 text-heading-accent" />
+                  <span className="text-xs font-medium text-heading-accent">Cost</span>
                 </div>
-                <div className="text-lg sm:text-xl font-bold text-orange-400">
+                <div className="text-lg sm:text-xl font-bold text-foreground">
                   ${result.cost}
                 </div>
               </div>
@@ -916,32 +916,32 @@ Calculated with FastTools Concrete Calculator`
 
             {/* Material Breakdown */}
             <div className="bg-black p-3 rounded-lg border border-slate-700">
-              <h3 className="font-semibold text-sm mb-2 text-green-500 flex items-center gap-1.5">
+              <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
                 <PieChart className="h-3.5 w-3.5" />
                 Material Breakdown
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                 <div className="text-center">
                   <div className="text-xs text-slate-400">Cement</div>
-                  <div className="text-sm font-semibold text-orange-400">
+                  <div className="text-sm font-semibold text-foreground">
                     {result.materialBreakdown.cement.toFixed(2)} {unit === "metric" ? "kg" : "lbs"}
                   </div>
                 </div>
                 <div className="text-center">
                   <div className="text-xs text-slate-400">Sand</div>
-                  <div className="text-sm font-semibold text-orange-400">
+                  <div className="text-sm font-semibold text-foreground">
                     {result.materialBreakdown.sand.toFixed(2)} {unit === "metric" ? "kg" : "lbs"}
                   </div>
                 </div>
                 <div className="text-center">
                   <div className="text-xs text-slate-400">Gravel</div>
-                  <div className="text-sm font-semibold text-orange-400">
+                  <div className="text-sm font-semibold text-foreground">
                     {result.materialBreakdown.gravel.toFixed(2)} {unit === "metric" ? "kg" : "lbs"}
                   </div>
                 </div>
                 <div className="text-center">
                   <div className="text-xs text-slate-400">Water</div>
-                  <div className="text-sm font-semibold text-orange-400">
+                  <div className="text-sm font-semibold text-foreground">
                     {result.materialBreakdown.water.toFixed(2)} {unit === "metric" ? "L" : "gal"}
                   </div>
                 </div>
@@ -950,19 +950,19 @@ Calculated with FastTools Concrete Calculator`
 
             {/* Formula and Explanation */}
             <div className="bg-black p-3 rounded-lg border border-slate-700">
-              <h3 className="font-semibold text-sm mb-2 text-green-500 flex items-center gap-1.5">
+              <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
                 <Info className="h-3.5 w-3.5" />
                 Calculation Details
               </h3>
               <div className="space-y-2">
                 <div>
-                  <div className="text-xs font-medium text-green-500 mb-1">Formula Used:</div>
+                  <div className="text-xs font-medium text-heading-accent mb-1">Formula Used:</div>
                   <div className="bg-slate-900 p-2 rounded font-mono text-xs text-slate-300">
                     {result.formula}
                   </div>
                 </div>
                 <div>
-                  <div className="text-xs font-medium text-green-500 mb-1">Explanation:</div>
+                  <div className="text-xs font-medium text-heading-accent mb-1">Explanation:</div>
                   <div className="text-xs text-slate-400">{result.explanation}</div>
                 </div>
               </div>
@@ -970,7 +970,7 @@ Calculated with FastTools Concrete Calculator`
 
             {/* Recommendations */}
             <div className="bg-black p-3 rounded-lg border border-slate-700">
-              <h3 className="font-semibold text-sm mb-2 text-green-500 flex items-center gap-1.5">
+              <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
                 <Zap className="h-3.5 w-3.5" />
                 Recommendations
               </h3>
@@ -986,7 +986,7 @@ Calculated with FastTools Concrete Calculator`
 
             {/* Action Buttons */}
             <div className="flex gap-3">
-              <Button onClick={copyResult} className="flex-1 h-9 text-xs font-medium border border-green-700 hover:bg-slate-800 text-green-300 bg-black">
+              <Button onClick={copyResult} className="flex-1 h-9 text-xs font-medium border border-green-700 hover:bg-slate-800 text-heading-accent bg-black">
                 {copied ? (
                   <>
                     <Check className="mr-1.5 h-3.5 w-3.5" />

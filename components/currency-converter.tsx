@@ -142,7 +142,7 @@ export function CurrencyConverter() {
       {/* Main Converter */}
       <div className="bg-card border border-border rounded-lg p-5 shadow-sm">
         <div className="flex items-center gap-2 mb-4">
-          <DollarSign className="h-4 w-4 text-orange-500" />
+          <DollarSign className="h-4 w-4 text-foreground" />
           <h3 className="text-lg font-semibold text-card-foreground">Currency Converter</h3>
         </div>
         
@@ -175,7 +175,7 @@ export function CurrencyConverter() {
           <div className="space-y-2">
             <label className="text-sm font-medium text-card-foreground">Result</label>
             <div className="w-full px-3 py-2 border-2 border-orange-500 rounded-md bg-background text-foreground flex items-center justify-center font-medium">
-              {loading ? <RefreshCw className="h-4 w-4 animate-spin text-orange-500" /> : result || "0.00"}
+              {loading ? <RefreshCw className="h-4 w-4 animate-spin text-foreground" /> : result || "0.00"}
             </div>
           </div>
         </div>
@@ -216,7 +216,7 @@ export function CurrencyConverter() {
         {/* Error Display */}
         {error && (
           <div className="mt-4 p-3 bg-red-50 dark:bg-red-950/20 rounded-md border border-red-200 dark:border-red-800">
-            <p className="text-sm text-red-600 dark:text-red-400 text-center">
+            <p className="text-sm text-foreground text-center">
               {error}
             </p>
           </div>
@@ -230,7 +230,7 @@ export function CurrencyConverter() {
                 {amount} {fromCurrency}
               </span>{" "}
               <span className="text-muted-foreground">=</span>{" "}
-              <span className="font-bold text-orange-600 dark:text-orange-400">
+              <span className="font-bold text-foreground">
                 {result} {toCurrency}
               </span>
             </p>

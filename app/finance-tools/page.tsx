@@ -207,9 +207,9 @@ export default function FinanceToolsPage() {
                       <Code className="h-4 w-4 text-primary" />
                       <span className="text-primary font-medium text-sm">8+ Tools</span>
                     </div>
-                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-green-500 shadow">
-                      <Globe className="h-4 w-4 text-green-600" />
-                      <span className="text-green-600 font-medium text-sm">Global Use</span>
+                    <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-heading-accent-border shadow">
+                      <Globe className="h-4 w-4 text-heading-accent" />
+                      <span className="text-heading-accent font-medium text-sm">Global Use</span>
                     </div>
                     <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-accent shadow">
                       <Calculator className="h-4 w-4 text-accent" />

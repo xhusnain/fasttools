@@ -409,11 +409,11 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
         <CardHeader className="pb-2 px-3 sm:px-6">
           <div className="flex items-center justify-between">
             <CardTitle className="flex items-center gap-1.5 text-base">
-              <Calculator className="h-3.5 w-3.5 text-orange-500" />
+              <Calculator className="h-3.5 w-3.5 text-foreground" />
               Scientific Calculator
             </CardTitle>
             <div className="flex gap-2">
-              <Badge variant={angleMode === 'deg' ? 'default' : 'secondary'} className="text-[10px] h-6 bg-orange-500/10 text-orange-400 border-orange-500/20">
+              <Badge variant={angleMode === 'deg' ? 'default' : 'secondary'} className="text-[10px] h-6 bg-orange-500/10 text-foreground border-orange-500/20">
                 {angleMode}
               </Badge>
               <Badge variant={isShift ? 'default' : 'secondary'} className="text-[10px] h-6 bg-slate-800 text-slate-400 border-slate-700">
@@ -425,13 +425,13 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
         <CardContent className="space-y-3 px-3 sm:px-6">
           {/* Main Display */}
           <div className="bg-slate-900 border border-slate-700 rounded-lg p-3 sm:p-3 text-right">
-            <div className="text-2xl sm:text-xl md:text-2xl font-mono font-bold min-h-[3rem] sm:min-h-[2.5rem] break-all text-orange-400">
+            <div className="text-2xl sm:text-xl md:text-2xl font-mono font-bold min-h-[3rem] sm:min-h-[2.5rem] break-all text-foreground">
               {formatDisplay(display)}
             </div>
             <div className="text-sm sm:text-xs text-slate-400 mt-1">
               {operation && previousValue !== null && `${previousValue} ${operation}`}
             </div>
-            <div className="text-xs sm:text-[10px] text-green-500 mt-2 flex items-center justify-end gap-1">
+            <div className="text-xs sm:text-[10px] text-heading-accent mt-2 flex items-center justify-end gap-1">
               <svg className="h-3 w-3 sm:h-2.5 sm:w-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
               </svg>
@@ -467,7 +467,7 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
             {/* Mode Indicators */}
             <div className="flex justify-between items-center flex-wrap gap-2 text-sm sm:text-xs">
               <div className="flex gap-2">
-                <Badge variant={angleMode === 'deg' ? 'default' : 'secondary'} className="text-xs sm:text-[10px] h-6 sm:h-5 bg-orange-500/10 text-orange-400 border-orange-500/20 px-2 sm:px-1.5">
+                <Badge variant={angleMode === 'deg' ? 'default' : 'secondary'} className="text-xs sm:text-[10px] h-6 sm:h-5 bg-orange-500/10 text-foreground border-orange-500/20 px-2 sm:px-1.5">
                   {angleMode}
                 </Badge>
                 <Badge variant="outline" className="text-xs sm:text-[10px] h-6 sm:h-5 border-slate-700 bg-slate-900 text-slate-400 px-2 sm:px-1.5">

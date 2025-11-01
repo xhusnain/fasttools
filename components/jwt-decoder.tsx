@@ -656,10 +656,10 @@ class Program
   // Get color based on time remaining
   const getExpirationColor = (seconds: number | null) => {
     if (seconds === null) return 'text-muted-foreground'
-    if (seconds < 0) return 'text-red-600 dark:text-red-400'
-    if (seconds < 300) return 'text-red-600 dark:text-red-400' // < 5 minutes
-    if (seconds < 3600) return 'text-yellow-600 dark:text-yellow-400' // < 1 hour
-    return 'text-green-600 dark:text-green-400'
+    if (seconds < 0) return 'text-foreground'
+    if (seconds < 300) return 'text-foreground' // < 5 minutes
+    if (seconds < 3600) return 'text-foreground' // < 1 hour
+    return 'text-heading-accent'
   }
 
   // Open comparison tool
@@ -1245,11 +1245,11 @@ metadata:
   // Get performance rating
   const getPerformanceRating = () => {
     const size = performanceMetrics.tokenSize
-    if (size < 200) return { rating: 'Excellent', color: 'text-green-600', bgColor: 'bg-black', borderColor: 'border-green-200 dark:border-green-800' }
-    if (size < 512) return { rating: 'Good', color: 'text-blue-600', bgColor: 'bg-black', borderColor: 'border-blue-200 dark:border-blue-800' }
-    if (size < 1024) return { rating: 'Fair', color: 'text-yellow-600', bgColor: 'bg-black', borderColor: 'border-yellow-200 dark:border-yellow-800' }
-    if (size < 4096) return { rating: 'Large', color: 'text-orange-600', bgColor: 'bg-black', borderColor: 'border-orange-200 dark:border-orange-800' }
-    return { rating: 'Too Large', color: 'text-red-600', bgColor: 'bg-black', borderColor: 'border-red-200 dark:border-red-800' }
+    if (size < 200) return { rating: 'Excellent', color: 'text-heading-accent', bgColor: 'bg-black', borderColor: 'border-green-200 dark:border-green-800' }
+    if (size < 512) return { rating: 'Good', color: 'text-foreground', bgColor: 'bg-black', borderColor: 'border-blue-200 dark:border-blue-800' }
+    if (size < 1024) return { rating: 'Fair', color: 'text-foreground', bgColor: 'bg-black', borderColor: 'border-yellow-200 dark:border-yellow-800' }
+    if (size < 4096) return { rating: 'Large', color: 'text-foreground', bgColor: 'bg-black', borderColor: 'border-orange-200 dark:border-orange-800' }
+    return { rating: 'Too Large', color: 'text-foreground', bgColor: 'bg-black', borderColor: 'border-red-200 dark:border-red-800' }
   }
 
   // Calculate network impact
@@ -1430,12 +1430,12 @@ metadata:
         {/* Shared Token Notification */}
         {isSharedToken && (
           <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 border-2 border-blue-300 dark:border-blue-700 rounded-lg flex items-start gap-3 animate-in fade-in slide-in-from-top-2 duration-500">
-            <Share2 className="h-5 w-5 text-blue-600 dark:text-blue-400 mt-0.5 shrink-0" />
+            <Share2 className="h-5 w-5 text-foreground mt-0.5 shrink-0" />
             <div className="flex-1">
-              <p className="text-sm font-semibold text-blue-900 dark:text-blue-100">
+              <p className="text-sm font-semibold text-foreground">
                 🎉 Shared Token Loaded Successfully!
               </p>
-              <p className="text-xs text-blue-700 dark:text-blue-300 mt-1">
+              <p className="text-xs text-foreground mt-1">
                 You&apos;re viewing a JWT token shared by someone. Sensitive data may be masked for privacy.
               </p>
             </div>
@@ -1443,7 +1443,7 @@ metadata:
               variant="ghost"
               size="sm"
               onClick={() => setIsSharedToken(false)}
-              className="h-6 w-6 p-0 text-blue-600 hover:text-blue-800 dark:text-blue-400"
+              className="h-6 w-6 p-0 text-foreground hover:text-foreground"
             >
               <X className="h-4 w-4" />
             </Button>
@@ -1602,7 +1602,7 @@ metadata:
               {token && (
                 <div className="absolute top-3 right-3">
                   {isValid ? (
-                    <div className="flex items-center gap-1 text-green-600 text-xs">
+                    <div className="flex items-center gap-1 text-heading-accent text-xs">
                       <CheckCircle2 className="h-4 w-4" />
                       <span>Valid</span>
                     </div>
@@ -1631,7 +1631,7 @@ metadata:
               {decoded.header.alg && (
                 <div className="p-4 bg-black border border-blue-200 dark:border-blue-800 rounded-lg w-full max-w-full overflow-hidden">
                   <div className="flex items-center justify-between gap-4">
-                    <p className="text-base font-medium text-blue-900 dark:text-blue-100 break-words">
+                    <p className="text-base font-medium text-foreground break-words">
                       <strong>Algorithm:</strong> {decoded.header.alg} | <strong>Type:</strong> {decoded.header.typ || "JWT"}
                     </p>
                     {timeRemaining !== null && (
@@ -1837,8 +1837,8 @@ metadata:
                     }`}>
                       {isVerified ? (
                         <>
-                          <CheckCircle2 className="h-6 w-6 text-green-600" />
-                          <span className="text-base font-medium text-green-900 dark:text-green-100">Signature Verified</span>
+                          <CheckCircle2 className="h-6 w-6 text-heading-accent" />
+                          <span className="text-base font-medium text-heading-accent">Signature Verified</span>
                         </>
                       ) : (
                         <>
@@ -1856,7 +1856,7 @@ metadata:
 
         <TabsContent value="encode" className="space-y-6">
           <div className="p-4 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
-            <p className="text-sm text-blue-900 dark:text-blue-100">
+            <p className="text-sm text-foreground">
               <strong>Note:</strong> This encoder creates unsigned tokens for demonstration. Use proper JWT libraries with cryptographic signing for production use.
             </p>
           </div>
@@ -1931,7 +1931,7 @@ metadata:
 
       {/* Security Warning */}
       <div className="p-4 bg-black border border-yellow-200 dark:border-yellow-800 rounded-lg">
-        <p className="text-xs text-yellow-900 dark:text-yellow-100">
+        <p className="text-xs text-foreground">
           <strong>⚠️ Security Notice:</strong> All JWT processing happens in your browser. Never paste production tokens or sensitive secrets. This tool is for development and debugging purposes only. Always verify JWT signatures on your backend server.
         </p>
       </div>
@@ -1964,10 +1964,10 @@ metadata:
             <div className="p-4 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
-                  <Label className="text-base font-semibold text-blue-900 dark:text-blue-100">
+                  <Label className="text-base font-semibold text-foreground">
                     Mask Sensitive Data
                   </Label>
-                  <p className="text-sm text-blue-700 dark:text-blue-300">
+                  <p className="text-sm text-foreground">
                     Automatically hide sensitive fields like email, phone, passwords, etc.
                   </p>
                 </div>
@@ -2022,28 +2022,28 @@ metadata:
             {/* Features List */}
             <div className="grid md:grid-cols-2 gap-3 pt-2">
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">No Expiration</p>
                   <p className="text-xs text-muted-foreground">Link works forever</p>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">Privacy Protected</p>
                   <p className="text-xs text-muted-foreground">Sensitive data masked</p>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">No Database</p>
                   <p className="text-xs text-muted-foreground">All data in URL</p>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">Team Debugging</p>
                   <p className="text-xs text-muted-foreground">Perfect for collaboration</p>
@@ -2158,8 +2158,8 @@ metadata:
 
             {/* Installation Instructions */}
             <div className="p-4 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
-              <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">📦 Installation Required:</p>
-              <code className="text-xs bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-800 dark:text-blue-200">
+              <p className="text-sm font-semibold text-foreground mb-2">📦 Installation Required:</p>
+              <code className="text-xs bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-foreground">
                 {selectedLanguage === 'nodejs' && 'npm install jsonwebtoken'}
                 {selectedLanguage === 'python' && 'pip install PyJWT'}
                 {selectedLanguage === 'java' && 'Maven: io.jsonwebtoken:jjwt-api:0.11.5'}
@@ -2172,28 +2172,28 @@ metadata:
             {/* Features */}
             <div className="grid grid-cols-2 gap-3">
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">Token Verification</p>
                   <p className="text-xs text-muted-foreground">Validates JWT signature</p>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">Token Generation</p>
                   <p className="text-xs text-muted-foreground">Create new JWTs</p>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">Error Handling</p>
                   <p className="text-xs text-muted-foreground">Catches invalid tokens</p>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">Production Ready</p>
                   <p className="text-xs text-muted-foreground">Best practices included</p>
@@ -2265,18 +2265,18 @@ metadata:
                   <p className="text-xs font-semibold text-muted-foreground mb-1">Security Score</p>
                   <div className="flex items-baseline gap-2">
                     <p className={`text-4xl font-bold ${
-                      securityScore >= 80 ? 'text-green-600 dark:text-green-400' :
-                      securityScore >= 60 ? 'text-yellow-600 dark:text-yellow-400' :
-                      'text-red-600 dark:text-red-400'
+                      securityScore >= 80 ? 'text-heading-accent' :
+                      securityScore >= 60 ? 'text-foreground' :
+                      'text-foreground'
                     }`}>
                       {securityScore}
                     </p>
                     <p className="text-xl text-muted-foreground">/100</p>
                   </div>
                   <p className={`text-xs font-medium mt-1 ${
-                    securityScore >= 80 ? 'text-green-700 dark:text-green-300' :
-                    securityScore >= 60 ? 'text-yellow-700 dark:text-yellow-300' :
-                    'text-red-700 dark:text-red-300'
+                    securityScore >= 80 ? 'text-heading-accent' :
+                    securityScore >= 60 ? 'text-foreground' :
+                    'text-foreground'
                   }`}>
                     {securityScore >= 80 ? '✅ Excellent - Token is secure' :
                      securityScore >= 60 ? '⚠️ Good - Minor improvements needed' :
@@ -2305,9 +2305,9 @@ metadata:
                       strokeDasharray={`${2 * Math.PI * 40}`}
                       strokeDashoffset={`${2 * Math.PI * 40 * (1 - securityScore / 100)}`}
                       className={
-                        securityScore >= 80 ? 'text-green-600' :
-                        securityScore >= 60 ? 'text-yellow-600' :
-                        'text-red-600'
+                        securityScore >= 80 ? 'text-heading-accent' :
+                        securityScore >= 60 ? 'text-foreground' :
+                        'text-foreground'
                       }
                       strokeLinecap="round"
                     />
@@ -2332,11 +2332,11 @@ metadata:
                     }`}
                   >
                     <div className="flex items-start gap-2">
-                      {issue.severity === 'critical' ? <AlertTriangle className="h-4 w-4 text-red-600 mt-0.5 shrink-0" /> :
-                       issue.severity === 'high' ? <AlertCircle className="h-4 w-4 text-orange-600 mt-0.5 shrink-0" /> :
-                       issue.severity === 'medium' ? <AlertCircle className="h-4 w-4 text-yellow-600 mt-0.5 shrink-0" /> :
-                       issue.severity === 'low' ? <Info className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" /> :
-                       <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />}
+                      {issue.severity === 'critical' ? <AlertTriangle className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
+                       issue.severity === 'high' ? <AlertCircle className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
+                       issue.severity === 'medium' ? <AlertCircle className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
+                       issue.severity === 'low' ? <Info className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
+                       <CheckCircle2 className="h-4 w-4 text-heading-accent mt-0.5 shrink-0" />}
                       <div className="flex-1">
                         <p className="text-xs font-semibold text-foreground mb-0.5">{issue.message}</p>
                         <p className="text-xs text-muted-foreground">
@@ -2344,11 +2344,11 @@ metadata:
                         </p>
                       </div>
                       <span className={`px-2 py-1 text-xs font-semibold rounded shrink-0 ${
-                        issue.severity === 'critical' ? 'bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300' :
-                        issue.severity === 'high' ? 'bg-orange-100 dark:bg-orange-900/50 text-orange-700 dark:text-orange-300' :
-                        issue.severity === 'medium' ? 'bg-yellow-100 dark:bg-yellow-900/50 text-yellow-700 dark:text-yellow-300' :
-                        issue.severity === 'low' ? 'bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300' :
-                        'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300'
+                        issue.severity === 'critical' ? 'bg-red-100 dark:bg-red-900/50 text-foreground' :
+                        issue.severity === 'high' ? 'bg-orange-100 dark:bg-orange-900/50 text-foreground' :
+                        issue.severity === 'medium' ? 'bg-yellow-100 dark:bg-yellow-900/50 text-foreground' :
+                        issue.severity === 'low' ? 'bg-blue-100 dark:bg-blue-900/50 text-foreground' :
+                        'bg-green-100 dark:bg-green-900/50 text-heading-accent'
                       }`}>
                         {issue.severity.toUpperCase()}
                       </span>
@@ -2361,28 +2361,28 @@ metadata:
             {/* Summary Stats */}
             <div className="grid grid-cols-4 gap-2">
               <div className="p-2 bg-black border border-border rounded-lg text-center">
-                <p className="text-xl font-bold text-red-600">
+                <p className="text-xl font-bold text-foreground">
                   {securityIssues.filter(i => i.severity === 'critical').length}
                 </p>
-                <p className="text-xs text-red-700 dark:text-red-300 font-medium">Critical</p>
+                <p className="text-xs text-foreground font-medium">Critical</p>
               </div>
               <div className="p-2 bg-black border border-orange-200 dark:border-orange-800 rounded-lg text-center">
-                <p className="text-xl font-bold text-orange-600">
+                <p className="text-xl font-bold text-foreground">
                   {securityIssues.filter(i => i.severity === 'high').length}
                 </p>
-                <p className="text-xs text-orange-700 dark:text-orange-300 font-medium">High</p>
+                <p className="text-xs text-foreground font-medium">High</p>
               </div>
               <div className="p-2 bg-black border border-yellow-200 dark:border-yellow-800 rounded-lg text-center">
-                <p className="text-xl font-bold text-yellow-600">
+                <p className="text-xl font-bold text-foreground">
                   {securityIssues.filter(i => i.severity === 'medium').length}
                 </p>
-                <p className="text-xs text-yellow-700 dark:text-yellow-300 font-medium">Medium</p>
+                <p className="text-xs text-foreground font-medium">Medium</p>
               </div>
               <div className="p-2 bg-black border border-blue-200 dark:border-blue-800 rounded-lg text-center">
-                <p className="text-xl font-bold text-blue-600">
+                <p className="text-xl font-bold text-foreground">
                   {securityIssues.filter(i => i.severity === 'low').length}
                 </p>
-                <p className="text-xs text-blue-700 dark:text-blue-300 font-medium">Low</p>
+                <p className="text-xs text-foreground font-medium">Low</p>
               </div>
             </div>
 
@@ -2446,7 +2446,7 @@ metadata:
                   style={{ wordBreak: 'break-all', overflowWrap: 'anywhere', whiteSpace: 'normal' }}
                 />
                 {decoded1 && (
-                  <div className="flex items-center gap-2 text-xs text-green-600">
+                  <div className="flex items-center gap-2 text-xs text-heading-accent">
                     <CheckCircle2 className="h-4 w-4" />
                     <span>Valid JWT ({decoded1.header.alg})</span>
                   </div>
@@ -2467,7 +2467,7 @@ metadata:
                   style={{ wordBreak: 'break-all', overflowWrap: 'anywhere', whiteSpace: 'normal' }}
                 />
                 {decoded2 && (
-                  <div className="flex items-center gap-2 text-xs text-green-600">
+                  <div className="flex items-center gap-2 text-xs text-heading-accent">
                     <CheckCircle2 className="h-4 w-4" />
                     <span>Valid JWT ({decoded2.header.alg})</span>
                   </div>
@@ -2484,18 +2484,18 @@ metadata:
                   <div className="grid grid-cols-3 gap-2 text-xs">
                     <div>
                       <p className="font-medium text-muted-foreground">Token 1</p>
-                      <p className="font-mono text-purple-600 dark:text-purple-400">{decoded1.header.alg}</p>
+                      <p className="font-mono text-foreground">{decoded1.header.alg}</p>
                     </div>
                     <div className="flex items-center justify-center">
                       {decoded1.header.alg === decoded2.header.alg ? (
-                        <CheckCircle2 className="h-5 w-5 text-green-600" />
+                        <CheckCircle2 className="h-5 w-5 text-heading-accent" />
                       ) : (
-                        <AlertCircle className="h-5 w-5 text-orange-600" />
+                        <AlertCircle className="h-5 w-5 text-foreground" />
                       )}
                     </div>
                     <div className="text-right">
                       <p className="font-medium text-muted-foreground">Token 2</p>
-                      <p className="font-mono text-pink-600 dark:text-pink-400">{decoded2.header.alg}</p>
+                      <p className="font-mono text-foreground">{decoded2.header.alg}</p>
                     </div>
                   </div>
                 </div>
@@ -2529,9 +2529,9 @@ metadata:
                             </td>
                             <td className="px-3 py-2 text-center">
                               {diff.status === 'same' && <span className="text-gray-500">Same</span>}
-                              {diff.status === 'changed' && <span className="text-orange-600 font-semibold">Changed</span>}
-                              {diff.status === 'added' && <span className="text-green-600 font-semibold">Added</span>}
-                              {diff.status === 'removed' && <span className="text-red-600 font-semibold">Removed</span>}
+                              {diff.status === 'changed' && <span className="text-foreground font-semibold">Changed</span>}
+                              {diff.status === 'added' && <span className="text-heading-accent font-semibold">Added</span>}
+                              {diff.status === 'removed' && <span className="text-foreground font-semibold">Removed</span>}
                             </td>
                           </tr>
                         ))}
@@ -2585,9 +2585,9 @@ metadata:
                             </td>
                             <td className="px-3 py-2 text-center">
                               {diff.status === 'same' && <span className="text-gray-500">Same</span>}
-                              {diff.status === 'changed' && <span className="text-orange-600 font-semibold">Changed</span>}
-                              {diff.status === 'added' && <span className="text-green-600 font-semibold">Added</span>}
-                              {diff.status === 'removed' && <span className="text-red-600 font-semibold">Removed</span>}
+                              {diff.status === 'changed' && <span className="text-foreground font-semibold">Changed</span>}
+                              {diff.status === 'added' && <span className="text-heading-accent font-semibold">Added</span>}
+                              {diff.status === 'removed' && <span className="text-foreground font-semibold">Removed</span>}
                             </td>
                           </tr>
                         ))}
@@ -2605,22 +2605,22 @@ metadata:
                     <p className="text-xs text-gray-700 dark:text-gray-300 font-medium">Same</p>
                   </div>
                   <div className="p-2 bg-black border border-orange-200 dark:border-orange-800 rounded-lg text-center">
-                    <p className="text-lg font-bold text-orange-600">
+                    <p className="text-lg font-bold text-foreground">
                       {[...compareObjects(decoded1.header, decoded2.header), ...compareObjects(decoded1.payload, decoded2.payload)].filter(d => d.status === 'changed').length}
                     </p>
-                    <p className="text-xs text-orange-700 dark:text-orange-300 font-medium">Changed</p>
+                    <p className="text-xs text-foreground font-medium">Changed</p>
                   </div>
                   <div className="p-2 bg-black border border-border rounded-lg text-center">
-                    <p className="text-lg font-bold text-green-600">
+                    <p className="text-lg font-bold text-heading-accent">
                       {[...compareObjects(decoded1.header, decoded2.header), ...compareObjects(decoded1.payload, decoded2.payload)].filter(d => d.status === 'added').length}
                     </p>
-                    <p className="text-xs text-green-700 dark:text-green-300 font-medium">Added</p>
+                    <p className="text-xs text-heading-accent font-medium">Added</p>
                   </div>
                   <div className="p-2 bg-black border border-border rounded-lg text-center">
-                    <p className="text-lg font-bold text-red-600">
+                    <p className="text-lg font-bold text-foreground">
                       {[...compareObjects(decoded1.header, decoded2.header), ...compareObjects(decoded1.payload, decoded2.payload)].filter(d => d.status === 'removed').length}
                     </p>
-                    <p className="text-xs text-red-700 dark:text-red-300 font-medium">Removed</p>
+                    <p className="text-xs text-foreground font-medium">Removed</p>
                   </div>
                 </div>
 
@@ -2629,28 +2629,28 @@ metadata:
                   <h4 className="text-sm font-bold text-foreground mb-2">Perfect For:</h4>
                   <div className="grid grid-cols-2 gap-2">
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-purple-600 mt-0.5 shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                       <div>
                         <p className="text-xs font-medium text-foreground">Token Refresh Debugging</p>
                         <p className="text-xs text-muted-foreground">Compare old vs new tokens</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-purple-600 mt-0.5 shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                       <div>
                         <p className="text-xs font-medium text-foreground">Claims Validation</p>
                         <p className="text-xs text-muted-foreground">Verify claims changed correctly</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-purple-600 mt-0.5 shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                       <div>
                         <p className="text-xs font-medium text-foreground">Environment Comparison</p>
                         <p className="text-xs text-muted-foreground">Dev vs Prod tokens</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-purple-600 mt-0.5 shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                       <div>
                         <p className="text-xs font-medium text-foreground">Algorithm Migration</p>
                         <p className="text-xs text-muted-foreground">Track algorithm changes</p>
@@ -2719,7 +2719,7 @@ metadata:
                   <p className="text-xs text-muted-foreground">Original token length</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-2xl font-bold text-cyan-600">{formatBytes(getTokenSize(token).bytes)}</p>
+                  <p className="text-2xl font-bold text-foreground">{formatBytes(getTokenSize(token).bytes)}</p>
                   <p className="text-xs text-muted-foreground">{token.length} characters</p>
                 </div>
               </div>
@@ -2744,7 +2744,7 @@ metadata:
                         <div className="flex items-start gap-3 flex-1">
                           <div className="mt-0.5">
                             {appliedOptimizations.has(suggestion.type) ? (
-                              <CheckCircle2 className="h-5 w-5 text-cyan-600" />
+                              <CheckCircle2 className="h-5 w-5 text-foreground" />
                             ) : (
                               <div className="h-5 w-5 rounded-full border-2 border-gray-300" />
                             )}
@@ -2755,8 +2755,8 @@ metadata:
                           </div>
                         </div>
                         <div className="flex items-center gap-1 shrink-0">
-                          <TrendingDown className="h-4 w-4 text-green-600" />
-                          <span className="text-sm font-bold text-green-600">-{suggestion.savings}B</span>
+                          <TrendingDown className="h-4 w-4 text-heading-accent" />
+                          <span className="text-sm font-bold text-heading-accent">-{suggestion.savings}B</span>
                         </div>
                       </div>
                     </div>
@@ -2765,7 +2765,7 @@ metadata:
               </div>
             ) : (
               <div className="p-4 bg-black border border-border rounded-lg text-center">
-                <CheckCircle2 className="h-8 w-8 text-green-600 mx-auto mb-2" />
+                <CheckCircle2 className="h-8 w-8 text-heading-accent mx-auto mb-2" />
                 <p className="text-sm font-semibold text-foreground">Token Already Optimized!</p>
                 <p className="text-xs text-muted-foreground mt-1">No significant optimizations found</p>
               </div>
@@ -2780,8 +2780,8 @@ metadata:
                     {/* Before */}
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <Label className="text-xs font-semibold text-red-600">Before (Original)</Label>
-                        <span className="text-xs font-mono text-red-600">{formatBytes(getTokenSize(token).bytes)}</span>
+                        <Label className="text-xs font-semibold text-foreground">Before (Original)</Label>
+                        <span className="text-xs font-mono text-foreground">{formatBytes(getTokenSize(token).bytes)}</span>
                       </div>
                       <div className="p-2 bg-black border border-border rounded-lg">
                         <p className="text-xs font-mono text-foreground break-all line-clamp-3">{token}</p>
@@ -2791,8 +2791,8 @@ metadata:
                     {/* After */}
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <Label className="text-xs font-semibold text-green-600">After (Optimized)</Label>
-                        <span className="text-xs font-mono text-green-600">{formatBytes(getTokenSize(optimizedToken).bytes)}</span>
+                        <Label className="text-xs font-semibold text-heading-accent">After (Optimized)</Label>
+                        <span className="text-xs font-mono text-heading-accent">{formatBytes(getTokenSize(optimizedToken).bytes)}</span>
                       </div>
                       <div className="p-2 bg-black border border-border rounded-lg">
                         <p className="text-xs font-mono text-foreground break-all line-clamp-3">{optimizedToken}</p>
@@ -2804,14 +2804,14 @@ metadata:
                   <div className="mt-3 p-3 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border border-border rounded-lg">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <TrendingDown className="h-5 w-5 text-green-600" />
+                        <TrendingDown className="h-5 w-5 text-heading-accent" />
                         <div>
                           <h5 className="text-sm font-bold text-foreground">Total Savings</h5>
                           <p className="text-xs text-muted-foreground">Size reduced by optimizations</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-xl font-bold text-green-600">
+                        <p className="text-xl font-bold text-heading-accent">
                           {formatBytes(getTokenSize(token).bytes - getTokenSize(optimizedToken).bytes)}
                         </p>
                         <p className="text-xs text-muted-foreground">
@@ -2824,7 +2824,7 @@ metadata:
 
                 {/* Copy Optimized Token */}
                 <div className="flex items-center gap-2 p-3 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
-                  <Info className="h-4 w-4 text-blue-600 shrink-0" />
+                  <Info className="h-4 w-4 text-foreground shrink-0" />
                   <p className="text-xs text-muted-foreground flex-1">
                     Copy the optimized token and update your application code with the new claim names and structure.
                   </p>
@@ -2847,28 +2847,28 @@ metadata:
               <h4 className="text-sm font-bold text-foreground mb-2">💡 Optimization Tips</h4>
               <div className="grid grid-cols-2 gap-2">
                 <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-cyan-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                   <div>
                     <p className="text-xs font-medium text-foreground">Short Claim Names</p>
                     <p className="text-xs text-muted-foreground">Use 1-3 char names (e.g., 'u' vs 'username')</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-cyan-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                   <div>
                     <p className="text-xs font-medium text-foreground">Remove Optional Claims</p>
                     <p className="text-xs text-muted-foreground">Only include required data</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-cyan-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                   <div>
                     <p className="text-xs font-medium text-foreground">Use References</p>
                     <p className="text-xs text-muted-foreground">Store IDs instead of full objects</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-cyan-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                   <div>
                     <p className="text-xs font-medium text-foreground">Shorter Algorithms</p>
                     <p className="text-xs text-muted-foreground">HS256 is smaller than RS256</p>
@@ -2946,18 +2946,18 @@ metadata:
             {/* Processing Time */}
             <div>
               <h4 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
-                <Timer className="h-4 w-4 text-yellow-600" />
+                <Timer className="h-4 w-4 text-foreground" />
                 Processing Time
               </h4>
               <div className="grid grid-cols-2 gap-3">
                 <div className="p-3 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
                   <p className="text-xs text-muted-foreground mb-1">Decode Time</p>
-                  <p className="text-2xl font-bold text-blue-600">{performanceMetrics.decodeTime.toFixed(3)}ms</p>
+                  <p className="text-2xl font-bold text-foreground">{performanceMetrics.decodeTime.toFixed(3)}ms</p>
                   <p className="text-xs text-muted-foreground mt-1">Base64 decode + JSON parse</p>
                 </div>
                 <div className="p-3 bg-black border border-border rounded-lg">
                   <p className="text-xs text-muted-foreground mb-1">Encode Time</p>
-                  <p className="text-2xl font-bold text-green-600">{performanceMetrics.encodeTime.toFixed(3)}ms</p>
+                  <p className="text-2xl font-bold text-heading-accent">{performanceMetrics.encodeTime.toFixed(3)}ms</p>
                   <p className="text-xs text-muted-foreground mt-1">JSON stringify + Base64 encode</p>
                 </div>
               </div>
@@ -2966,7 +2966,7 @@ metadata:
             {/* Token Size Breakdown */}
             <div>
               <h4 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
-                <BarChart3 className="h-4 w-4 text-yellow-600" />
+                <BarChart3 className="h-4 w-4 text-foreground" />
                 Size Breakdown
               </h4>
               <div className="space-y-2">
@@ -2974,7 +2974,7 @@ metadata:
                 <div>
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-xs font-medium text-foreground">Header</span>
-                    <span className="text-xs font-bold text-blue-600">{performanceMetrics.headerSize} bytes ({((performanceMetrics.headerSize / performanceMetrics.tokenSize) * 100).toFixed(1)}%)</span>
+                    <span className="text-xs font-bold text-foreground">{performanceMetrics.headerSize} bytes ({((performanceMetrics.headerSize / performanceMetrics.tokenSize) * 100).toFixed(1)}%)</span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: `${(performanceMetrics.headerSize / performanceMetrics.tokenSize) * 100}%` }}></div>
@@ -2985,7 +2985,7 @@ metadata:
                 <div>
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-xs font-medium text-foreground">Payload</span>
-                    <span className="text-xs font-bold text-green-600">{performanceMetrics.payloadSize} bytes ({((performanceMetrics.payloadSize / performanceMetrics.tokenSize) * 100).toFixed(1)}%)</span>
+                    <span className="text-xs font-bold text-heading-accent">{performanceMetrics.payloadSize} bytes ({((performanceMetrics.payloadSize / performanceMetrics.tokenSize) * 100).toFixed(1)}%)</span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                     <div className="bg-green-600 h-2 rounded-full" style={{ width: `${(performanceMetrics.payloadSize / performanceMetrics.tokenSize) * 100}%` }}></div>
@@ -2996,7 +2996,7 @@ metadata:
                 <div>
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-xs font-medium text-foreground">Signature</span>
-                    <span className="text-xs font-bold text-orange-600">{performanceMetrics.signatureSize} bytes ({((performanceMetrics.signatureSize / performanceMetrics.tokenSize) * 100).toFixed(1)}%)</span>
+                    <span className="text-xs font-bold text-foreground">{performanceMetrics.signatureSize} bytes ({((performanceMetrics.signatureSize / performanceMetrics.tokenSize) * 100).toFixed(1)}%)</span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                     <div className="bg-orange-600 h-2 rounded-full" style={{ width: `${(performanceMetrics.signatureSize / performanceMetrics.tokenSize) * 100}%` }}></div>
@@ -3008,7 +3008,7 @@ metadata:
             {/* Network Impact */}
             <div>
               <h4 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
-                <Activity className="h-4 w-4 text-yellow-600" />
+                <Activity className="h-4 w-4 text-foreground" />
                 Network Impact
               </h4>
               <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
@@ -3024,8 +3024,8 @@ metadata:
                     {calculateNetworkImpact().map((item, idx) => (
                       <tr key={idx} className="border-t border-gray-200 dark:border-gray-700">
                         <td className="px-3 py-2 font-mono">{item.requests.toLocaleString()}</td>
-                        <td className="px-3 py-2 text-right font-bold text-blue-600">{item.daily} MB</td>
-                        <td className="px-3 py-2 text-right font-bold text-green-600">{item.monthly} GB</td>
+                        <td className="px-3 py-2 text-right font-bold text-foreground">{item.daily} MB</td>
+                        <td className="px-3 py-2 text-right font-bold text-heading-accent">{item.monthly} GB</td>
                       </tr>
                     ))}
                   </tbody>
@@ -3039,28 +3039,28 @@ metadata:
             {/* Benchmark Comparison */}
             <div>
               <h4 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
-                <BarChart3 className="h-4 w-4 text-yellow-600" />
+                <BarChart3 className="h-4 w-4 text-foreground" />
                 Industry Benchmarks
               </h4>
               <div className="grid grid-cols-4 gap-2">
                 <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize < 200 ? 'bg-black border-green-300 dark:border-green-700' : 'bg-black border-gray-200 dark:border-gray-700'}`}>
                   <p className="text-xs font-semibold text-foreground">Excellent</p>
-                  <p className="text-lg font-bold text-green-600">&lt;200B</p>
+                  <p className="text-lg font-bold text-heading-accent">&lt;200B</p>
                   <p className="text-xs text-muted-foreground">Minimal</p>
                 </div>
                 <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 200 && performanceMetrics.tokenSize < 512 ? 'bg-black border-blue-300 dark:border-blue-700' : 'bg-black border-gray-200 dark:border-gray-700'}`}>
                   <p className="text-xs font-semibold text-foreground">Good</p>
-                  <p className="text-lg font-bold text-blue-600">200-512B</p>
+                  <p className="text-lg font-bold text-foreground">200-512B</p>
                   <p className="text-xs text-muted-foreground">Standard</p>
                 </div>
                 <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 512 && performanceMetrics.tokenSize < 1024 ? 'bg-black border-yellow-300 dark:border-yellow-700' : 'bg-black border-gray-200 dark:border-gray-700'}`}>
                   <p className="text-xs font-semibold text-foreground">Fair</p>
-                  <p className="text-lg font-bold text-yellow-600">512B-1KB</p>
+                  <p className="text-lg font-bold text-foreground">512B-1KB</p>
                   <p className="text-xs text-muted-foreground">Above Avg</p>
                 </div>
                 <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 1024 ? 'bg-black border-red-300 dark:border-red-700' : 'bg-black border-gray-200 dark:border-gray-700'}`}>
                   <p className="text-xs font-semibold text-foreground">Large</p>
-                  <p className="text-lg font-bold text-red-600">&gt;1KB</p>
+                  <p className="text-lg font-bold text-foreground">&gt;1KB</p>
                   <p className="text-xs text-muted-foreground">Optimize!</p>
                 </div>
               </div>
@@ -3072,14 +3072,14 @@ metadata:
               <div className="space-y-2">
                 {performanceMetrics.tokenSize < 200 ? (
                   <div className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-heading-accent mt-0.5 shrink-0" />
                     <p className="text-xs text-foreground">Your token is optimally sized! No action needed.</p>
                   </div>
                 ) : (
                   <>
                     {performanceMetrics.tokenSize > 512 && (
                       <div className="flex items-start gap-2">
-                        <AlertTriangle className="h-4 w-4 text-yellow-600 mt-0.5 shrink-0" />
+                        <AlertTriangle className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                         <div className="flex-1">
                           <p className="text-xs font-medium text-foreground">Reduce Payload Size</p>
                           <p className="text-xs text-muted-foreground">Use shorter claim names and remove unnecessary data. Click "Optimize" for suggestions.</p>
@@ -3088,7 +3088,7 @@ metadata:
                     )}
                     {decoded && decoded.header.alg && ['RS256', 'RS384', 'RS512', 'ES256', 'ES384', 'ES512', 'PS256', 'PS384', 'PS512'].includes(decoded.header.alg) && (
                       <div className="flex items-start gap-2">
-                        <Info className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
+                        <Info className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                         <div className="flex-1">
                           <p className="text-xs font-medium text-foreground">Consider HMAC Algorithms</p>
                           <p className="text-xs text-muted-foreground">HS256 produces smaller signatures (~43 bytes) vs RSA/ECDSA (~200+ bytes).</p>
@@ -3097,7 +3097,7 @@ metadata:
                     )}
                     {performanceMetrics.tokenSize > 1024 && (
                       <div className="flex items-start gap-2">
-                        <AlertCircle className="h-4 w-4 text-red-600 mt-0.5 shrink-0" />
+                        <AlertCircle className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                         <div className="flex-1">
                           <p className="text-xs font-medium text-foreground">Token Too Large</p>
                           <p className="text-xs text-muted-foreground">Tokens &gt;1KB may cause performance issues. Consider using refresh tokens or reference tokens.</p>
@@ -3105,7 +3105,7 @@ metadata:
                       </div>
                     )}
                     <div className="flex items-start gap-2">
-                      <Info className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
+                      <Info className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                       <div className="flex-1">
                         <p className="text-xs font-medium text-foreground">Use Caching</p>
                         <p className="text-xs text-muted-foreground">Cache tokens in memory/storage to avoid repeated network transfers.</p>
@@ -3203,8 +3203,8 @@ metadata:
                     When you log into a website, the server creates a JWT containing your user information (like your user ID and permissions). This token is then sent to your browser, and your browser includes it with every request to prove you&apos;re authenticated. It&apos;s much faster than checking the database every single time!
                   </p>
                   <div className="p-3 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
-                    <p className="font-semibold text-blue-900 dark:text-blue-100 mb-2">Why are JWTs so popular?</p>
-                    <ul className="space-y-1 text-blue-800 dark:text-blue-200">
+                    <p className="font-semibold text-foreground mb-2">Why are JWTs so popular?</p>
+                    <ul className="space-y-1 text-foreground">
                       <li>• <strong>Stateless:</strong> The server doesn&apos;t need to store sessions - everything is in the token</li>
                       <li>• <strong>Compact:</strong> Small size makes them perfect for HTTP headers and mobile apps</li>
                       <li>• <strong>Self-contained:</strong> All user info is inside the token itself</li>
@@ -3227,11 +3227,11 @@ metadata:
                   </p>
                   
                   <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg font-mono text-xs break-all">
-                    <span className="text-blue-600 dark:text-blue-400">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>
+                    <span className="text-foreground">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>
                     .
-                    <span className="text-green-600 dark:text-green-400">eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIn0</span>
+                    <span className="text-heading-accent">eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIn0</span>
                     .
-                    <span className="text-orange-600 dark:text-orange-400">SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span>
+                    <span className="text-foreground">SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span>
                   </div>
 
                   {/* Header */}
@@ -3369,8 +3369,8 @@ metadata:
                 <div className="pl-10 space-y-2">
                   <div className="p-3 bg-black border border-border rounded-lg">
                     <div className="flex items-center gap-2 mb-2">
-                      <FileCode className="h-5 w-5 text-green-600" />
-                      <h4 className="font-semibold text-green-900 dark:text-green-100">Node.js (JavaScript)</h4>
+                      <FileCode className="h-5 w-5 text-heading-accent" />
+                      <h4 className="font-semibold text-heading-accent">Node.js (JavaScript)</h4>
                     </div>
                     <p className="text-xs text-gray-400 mb-2">Install: <code className="bg-green-100 dark:bg-green-900 px-2 py-1 rounded">npm install jsonwebtoken</code></p>
                     <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">
@@ -3401,10 +3401,10 @@ try {
                   {/* Python Example */}
                   <div className="p-3 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
                     <div className="flex items-center gap-2 mb-2">
-                      <FileCode className="h-5 w-5 text-blue-600" />
-                      <h4 className="font-semibold text-blue-900 dark:text-blue-100">Python</h4>
+                      <FileCode className="h-5 w-5 text-foreground" />
+                      <h4 className="font-semibold text-foreground">Python</h4>
                     </div>
-                    <p className="text-xs text-blue-800 dark:text-blue-200 mb-2">Install: <code className="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">pip install PyJWT</code></p>
+                    <p className="text-xs text-foreground mb-2">Install: <code className="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">pip install PyJWT</code></p>
                     <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">
 {`import jwt
 import datetime
@@ -3734,7 +3734,7 @@ except jwt.InvalidTokenError:
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className={`p-2 rounded-lg ${selectedExportFormat === 'csv' ? 'bg-green-100 dark:bg-green-900' : 'bg-gray-100 dark:bg-gray-800'}`}>
-                        <FileText className="h-5 w-5 text-green-600" />
+                        <FileText className="h-5 w-5 text-heading-accent" />
                       </div>
                       <div>
                         <h5 className="text-sm font-semibold text-foreground">CSV Format</h5>
@@ -3742,7 +3742,7 @@ except jwt.InvalidTokenError:
                       </div>
                     </div>
                     {selectedExportFormat === 'csv' && (
-                      <CheckCircle2 className="h-5 w-5 text-green-600" />
+                      <CheckCircle2 className="h-5 w-5 text-heading-accent" />
                     )}
                   </div>
                 </div>
@@ -3759,7 +3759,7 @@ except jwt.InvalidTokenError:
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className={`p-2 rounded-lg ${selectedExportFormat === 'xml' ? 'bg-orange-100 dark:bg-orange-900' : 'bg-gray-100 dark:bg-gray-800'}`}>
-                        <FileCode className="h-5 w-5 text-orange-600" />
+                        <FileCode className="h-5 w-5 text-foreground" />
                       </div>
                       <div>
                         <h5 className="text-sm font-semibold text-foreground">XML Format</h5>
@@ -3767,7 +3767,7 @@ except jwt.InvalidTokenError:
                       </div>
                     </div>
                     {selectedExportFormat === 'xml' && (
-                      <CheckCircle2 className="h-5 w-5 text-orange-600" />
+                      <CheckCircle2 className="h-5 w-5 text-foreground" />
                     )}
                   </div>
                 </div>
@@ -3784,7 +3784,7 @@ except jwt.InvalidTokenError:
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className={`p-2 rounded-lg ${selectedExportFormat === 'yaml' ? 'bg-blue-100 dark:bg-blue-900' : 'bg-gray-100 dark:bg-gray-800'}`}>
-                        <FileText className="h-5 w-5 text-blue-600" />
+                        <FileText className="h-5 w-5 text-foreground" />
                       </div>
                       <div>
                         <h5 className="text-sm font-semibold text-foreground">YAML Format</h5>
@@ -3792,7 +3792,7 @@ except jwt.InvalidTokenError:
                       </div>
                     </div>
                     {selectedExportFormat === 'yaml' && (
-                      <CheckCircle2 className="h-5 w-5 text-blue-600" />
+                      <CheckCircle2 className="h-5 w-5 text-foreground" />
                     )}
                   </div>
                 </div>
@@ -3809,7 +3809,7 @@ except jwt.InvalidTokenError:
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className={`p-2 rounded-lg ${selectedExportFormat === 'pdf' ? 'bg-red-100 dark:bg-red-900' : 'bg-gray-100 dark:bg-gray-800'}`}>
-                        <FileText className="h-5 w-5 text-red-600" />
+                        <FileText className="h-5 w-5 text-foreground" />
                       </div>
                       <div>
                         <h5 className="text-sm font-semibold text-foreground">PDF Report</h5>
@@ -3817,7 +3817,7 @@ except jwt.InvalidTokenError:
                       </div>
                     </div>
                     {selectedExportFormat === 'pdf' && (
-                      <CheckCircle2 className="h-5 w-5 text-red-600" />
+                      <CheckCircle2 className="h-5 w-5 text-foreground" />
                     )}
                   </div>
                 </div>

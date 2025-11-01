@@ -41,7 +41,7 @@ export function TemperatureConverter() {
       {/* Main Converter */}
       <div className="bg-card border border-border rounded-lg p-4 shadow-sm">
         <div className="flex items-center gap-2 mb-4">
-          <Thermometer className="h-4 w-4 text-orange-500" />
+          <Thermometer className="h-4 w-4 text-foreground" />
           <h3 className="text-lg font-semibold text-card-foreground">Temperature Converter</h3>
         </div>
         
@@ -89,7 +89,7 @@ export function TemperatureConverter() {
             <p className="text-sm text-center">
               <span className="font-bold text-foreground">{celsius}°C</span>{" "}
               <span className="text-muted-foreground">=</span>{" "}
-              <span className="font-bold text-orange-600 dark:text-orange-400">{fahrenheit}°F</span>
+              <span className="font-bold text-foreground">{fahrenheit}°F</span>
             </p>
           </div>
         )}

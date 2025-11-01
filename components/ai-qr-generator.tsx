@@ -444,19 +444,19 @@ END:VCARD`
           <Tabs value={qrType} onValueChange={(v) => setQrType(v as QRType)} className="w-full">
             <TabsList className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-1.5 h-auto p-1 bg-muted">
               <TabsTrigger value="url" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-blue-500 data-[state=active]:text-white">
-                <Globe className="h-3.5 w-3.5 text-blue-500" />
+                <Globe className="h-3.5 w-3.5 text-foreground" />
                 <span>URL</span>
               </TabsTrigger>
               <TabsTrigger value="wifi" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-green-500 data-[state=active]:text-white">
-                <Wifi className="h-3.5 w-3.5 text-green-500" />
+                <Wifi className="h-3.5 w-3.5 text-heading-accent" />
                 <span>WiFi</span>
               </TabsTrigger>
               <TabsTrigger value="vcard" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-purple-500 data-[state=active]:text-white">
-                <User className="h-3.5 w-3.5 text-purple-500" />
+                <User className="h-3.5 w-3.5 text-foreground" />
                 <span>vCard</span>
               </TabsTrigger>
               <TabsTrigger value="email" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-red-500 data-[state=active]:text-white">
-                <Mail className="h-3.5 w-3.5 text-red-500" />
+                <Mail className="h-3.5 w-3.5 text-foreground" />
                 <span>Email</span>
               </TabsTrigger>
               <TabsTrigger value="sms" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-amber-500 data-[state=active]:text-white">
@@ -468,11 +468,11 @@ END:VCARD`
                 <span>WhatsApp</span>
               </TabsTrigger>
               <TabsTrigger value="phone" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-cyan-500 data-[state=active]:text-white">
-                <Phone className="h-3.5 w-3.5 text-cyan-500" />
+                <Phone className="h-3.5 w-3.5 text-foreground" />
                 <span>Phone</span>
               </TabsTrigger>
               <TabsTrigger value="location" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-pink-500 data-[state=active]:text-white">
-                <MapPin className="h-3.5 w-3.5 text-pink-500" />
+                <MapPin className="h-3.5 w-3.5 text-foreground" />
                 <span>Location</span>
               </TabsTrigger>
               <TabsTrigger value="text" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-indigo-500 data-[state=active]:text-white">
@@ -480,7 +480,7 @@ END:VCARD`
                 <span>Text</span>
               </TabsTrigger>
               <TabsTrigger value="bulk" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-orange-500 data-[state=active]:text-white">
-                <ListOrdered className="h-3.5 w-3.5 text-orange-500" />
+                <ListOrdered className="h-3.5 w-3.5 text-foreground" />
                 <span>Bulk</span>
               </TabsTrigger>
             </TabsList>
@@ -729,11 +729,11 @@ END:VCARD`
             {/* Bulk QR Generation */}
             <TabsContent value="bulk" className="space-y-3 mt-3">
               <div className="p-3 rounded-lg bg-orange-50 dark:bg-orange-950/30 border border-orange-500/30">
-                <p className="text-xs font-semibold text-orange-700 dark:text-orange-400">
+                <p className="text-xs font-semibold text-foreground">
                   🚀 Generate hundreds of QR codes at once! Enter URLs/text (one per line) or upload CSV.
                 </p>
                 {logoImage && (
-                  <p className="text-xs text-orange-600 dark:text-orange-400 mt-2 flex items-center gap-1">
+                  <p className="text-xs text-foreground mt-2 flex items-center gap-1">
                     <ImageIcon className="h-3 w-3" />
                     Logo will be added to all QR codes
                   </p>
@@ -883,7 +883,7 @@ END:VCARD`
                 </SelectContent>
               </Select>
               {logoImage && errorCorrection === "L" && (
-                <p className="text-xs text-orange-600 dark:text-orange-400">
+                <p className="text-xs text-foreground">
                   ⚠️ Use Q or H error correction for better logo visibility
                 </p>
               )}
@@ -915,7 +915,7 @@ END:VCARD`
                           fileInputRef.current.value = ''
                         }
                       }}
-                      className="h-6 text-xs text-red-500 hover:text-red-600"
+                      className="h-6 text-xs text-foreground hover:text-foreground"
                     >
                       Remove
                     </Button>
@@ -977,7 +977,7 @@ END:VCARD`
                   <div className="mt-3 p-3 rounded-lg bg-orange-50 dark:bg-orange-950/30 border border-orange-500/30">
                     <div className="flex items-center gap-2 mb-2">
                       <LoadingSpinner className="h-4 w-4" />
-                      <p className="text-xs font-semibold text-orange-700 dark:text-orange-400">
+                      <p className="text-xs font-semibold text-foreground">
                         Generating QR codes... Please wait
                       </p>
                     </div>
@@ -989,7 +989,7 @@ END:VCARD`
                         }}
                       />
                     </div>
-                    <p className="text-xs text-orange-600 dark:text-orange-400 mt-1 text-center">
+                    <p className="text-xs text-foreground mt-1 text-center">
                       {bulkQRCodes.length} / {bulkText.split('\n').filter(line => line.trim()).length} completed
                     </p>
                   </div>
@@ -1063,7 +1063,7 @@ END:VCARD`
                       Download All as ZIP ({bulkQRCodes.length} files)
                     </Button>
                     <div className="p-3 rounded-lg bg-green-50 dark:bg-green-950/30 border border-green-500/30">
-                      <p className="text-xs font-medium text-center text-green-700 dark:text-green-400">
+                      <p className="text-xs font-medium text-center text-heading-accent">
                         ✨ {bulkQRCodes.length} QR codes generated {logoImage && "• Logo included"} • No Watermark • 100% Free
                       </p>
                     </div>
@@ -1096,7 +1096,7 @@ END:VCARD`
 
               {qrImage && (
                 <div className="mt-4 p-3 rounded-lg bg-green-50 dark:bg-green-950/30 border border-green-500/30">
-                  <p className="text-xs font-medium text-center text-green-700 dark:text-green-400">
+                  <p className="text-xs font-medium text-center text-heading-accent">
                     ✨ No Watermark • Unlimited Use • 100% Free
                   </p>
                 </div>

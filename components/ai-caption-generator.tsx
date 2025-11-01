@@ -152,7 +152,7 @@ export function AiCaptionGenerator() {
         <div className="space-y-4 animate-fade-in">
           <div className="flex items-center justify-between">
             <h3 className="font-semibold text-lg flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-green-500" />
+              <CheckCircle className="h-5 w-5 text-heading-accent" />
               Generated Captions
             </h3>
             <Button
@@ -179,7 +179,7 @@ export function AiCaptionGenerator() {
                     className="flex-shrink-0"
                   >
                     {copiedIndex === index ? (
-                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <CheckCircle className="h-4 w-4 text-heading-accent" />
                     ) : (
                       <Copy className="h-4 w-4" />
                     )}

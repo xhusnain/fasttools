@@ -391,7 +391,7 @@ puts replaced`
               className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7 p-0"
               onClick={copyPattern}
             >
-              {patternCopied ? <Check className="h-3.5 w-3.5 text-green-600" /> : <Copy className="h-3.5 w-3.5" />}
+              {patternCopied ? <Check className="h-3.5 w-3.5 text-heading-accent" /> : <Copy className="h-3.5 w-3.5" />}
             </Button>
           </div>
         </div>
@@ -497,7 +497,7 @@ puts replaced`
             <Card className="p-4 space-y-3">
               <div className="flex items-center justify-between">
                 <h3 className="font-semibold text-foreground flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-green-600" />
+                  <CheckCircle2 className="h-5 w-5 text-heading-accent" />
                   Matches Found
                 </h3>
                 <Badge variant="secondary" className="text-sm">{matches.length} match(es)</Badge>
@@ -590,7 +590,7 @@ puts replaced`
           {replaceResult && (
             <Card className="p-4">
               <h3 className="text-sm font-semibold mb-2 text-foreground flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-green-600" />
+                <CheckCircle2 className="h-4 w-4 text-heading-accent" />
                 Result After Replacement
               </h3>
               <div className="font-mono text-sm p-3 bg-muted rounded whitespace-pre-wrap break-all">
@@ -625,7 +625,7 @@ puts replaced`
             <div className="p-4 sm:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-                  <Code2 className="h-5 w-5 text-green-600" />
+                  <Code2 className="h-5 w-5 text-heading-accent" />
                   Code Generator
                 </h2>
                 <Button size="sm" variant="ghost" onClick={() => setShowCodeGenerator(false)}>
@@ -686,7 +686,7 @@ puts replaced`
             <div className="p-4 sm:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-                  <Lightbulb className="h-5 w-5 text-yellow-600" />
+                  <Lightbulb className="h-5 w-5 text-foreground" />
                   Pattern Explanation
                 </h2>
                 <Button size="sm" variant="ghost" onClick={() => setShowExplanation(false)}>

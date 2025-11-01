@@ -431,7 +431,7 @@ export function IPSubnetCalculator({
         <CardHeader className="pb-3 px-3 sm:px-6">
           <CardTitle className="flex items-center gap-1.5 text-base">
             <div className="p-1 bg-orange-500/10 rounded">
-              <Network className="h-3.5 w-3.5 text-orange-500" />
+              <Network className="h-3.5 w-3.5 text-foreground" />
             </div>
             IP Subnet Calculator
           </CardTitle>
@@ -443,7 +443,7 @@ export function IPSubnetCalculator({
           {/* IP Version Selection */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label className="text-[11px] font-medium text-green-500">IP Version</Label>
+              <Label className="text-[11px] font-medium text-heading-accent">IP Version</Label>
               <Select value={ipVersion} onValueChange={(value: IPVersion) => {
                 setIPVersion(value)
                 setHasUserInteracted(true)
@@ -467,7 +467,7 @@ export function IPSubnetCalculator({
               </Select>
             </div>
             <div className="space-y-2">
-              <Label className="text-[11px] font-medium text-green-500">Calculation Type</Label>
+              <Label className="text-[11px] font-medium text-heading-accent">Calculation Type</Label>
               <Select value={calculationType} onValueChange={(value: CalculationType) => {
                 setCalculationType(value)
                 setHasUserInteracted(true)
@@ -492,10 +492,10 @@ export function IPSubnetCalculator({
 
           {/* IP Address Input */}
           <div className="space-y-2">
-            <Label htmlFor="ip-address" className="text-[11px] font-medium text-green-500">
+            <Label htmlFor="ip-address" className="text-[11px] font-medium text-heading-accent">
               IP Address {ipVersion === "ipv4" ? "(e.g., 192.168.1.1)" : "(e.g., 2001:db8::1)"}
               {isDetectingIP && (
-                <span className="ml-2 text-xs text-green-500 flex items-center gap-1">
+                <span className="ml-2 text-xs text-heading-accent flex items-center gap-1">
                   <div className="w-3 h-3 border-2 border-green-500 border-t-transparent rounded-full animate-spin"></div>
                   Detecting...
                 </span>
@@ -526,13 +526,13 @@ export function IPSubnetCalculator({
               disabled={isDetectingIP}
             />
             {defaultIP && !isDetectingIP && (
-              <p className="text-xs text-green-400 mt-1 flex items-center gap-1">
+              <p className="text-xs text-heading-accent mt-1 flex items-center gap-1">
                 <Check className="h-3 w-3" />
                 IP address auto-detected
               </p>
             )}
             {validationError && (
-              <p className="text-xs text-red-400 mt-1 flex items-center gap-1">
+              <p className="text-xs text-foreground mt-1 flex items-center gap-1">
                 <AlertTriangle className="h-3 w-3" />
                 {validationError}
               </p>
@@ -542,7 +542,7 @@ export function IPSubnetCalculator({
           {/* Subnet Configuration */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="subnet-mask" className="text-[11px] font-medium text-green-500">Subnet Mask</Label>
+              <Label htmlFor="subnet-mask" className="text-[11px] font-medium text-heading-accent">Subnet Mask</Label>
               <Input
                 id="subnet-mask"
                 type="text"
@@ -561,14 +561,14 @@ export function IPSubnetCalculator({
                 placeholder="255.255.255.0"
               />
               {subnetMaskError && (
-                <p className="text-xs text-red-400 mt-1 flex items-center gap-1">
+                <p className="text-xs text-foreground mt-1 flex items-center gap-1">
                   <AlertTriangle className="h-3 w-3" />
                   {subnetMaskError}
                 </p>
               )}
             </div>
             <div className="space-y-2">
-              <Label htmlFor="prefix-length" className="text-[11px] font-medium text-green-500">CIDR Prefix Length</Label>
+              <Label htmlFor="prefix-length" className="text-[11px] font-medium text-heading-accent">CIDR Prefix Length</Label>
               <Input
                 id="prefix-length"
                 type="number"
@@ -589,7 +589,7 @@ export function IPSubnetCalculator({
                 className="h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
               />
               {cidrError && (
-                <p className="text-xs text-red-400 mt-1 flex items-center gap-1">
+                <p className="text-xs text-foreground mt-1 flex items-center gap-1">
                   <AlertTriangle className="h-3 w-3" />
                   {cidrError}
                 </p>
@@ -600,7 +600,7 @@ export function IPSubnetCalculator({
           {/* Advanced Options */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <Label className="text-xs font-medium text-green-500">Advanced Options</Label>
+              <Label className="text-xs font-medium text-heading-accent">Advanced Options</Label>
               <Button
                 variant="outline"
                 size="sm"
@@ -616,19 +616,19 @@ export function IPSubnetCalculator({
               <div className="space-y-3">
                 {/* Debug Information */}
                 <div className="bg-slate-900 p-3 rounded-lg border border-slate-700">
-                  <h4 className="font-semibold mb-2 text-xs text-green-500">Current State Debug:</h4>
+                  <h4 className="font-semibold mb-2 text-xs text-heading-accent">Current State Debug:</h4>
                   <div className="grid grid-cols-2 gap-2 text-xs">
-                    <div className="text-slate-400"><strong className="text-green-500">IP Version:</strong> {ipVersion}</div>
-                    <div className="text-slate-400"><strong className="text-green-500">Calculation Type:</strong> {calculationType}</div>
-                    <div className="text-slate-400"><strong className="text-green-500">IP Address:</strong> {ipAddress || "Empty"}</div>
-                    <div className="text-slate-400"><strong className="text-green-500">Subnet Mask:</strong> {subnetMask || "Empty"}</div>
-                    <div className="text-slate-400"><strong className="text-green-500">CIDR:</strong> {prefixLength || "Empty"}</div>
-                    <div className="text-slate-400"><strong className="text-green-500">User Interacted:</strong> {hasUserInteracted ? "Yes" : "No"}</div>
-                    <div className="text-slate-400"><strong className="text-green-500">Has Result:</strong> {result ? "Yes" : "No"}</div>
-                    <div className="text-slate-400"><strong className="text-green-500">Is Calculating:</strong> {isCalculating ? "Yes" : "No"}</div>
-                    <div className="text-slate-400"><strong className="text-green-500">IP Error:</strong> {validationError || "None"}</div>
-                    <div className="text-slate-400"><strong className="text-green-500">Mask Error:</strong> {subnetMaskError || "None"}</div>
-                    <div className="text-slate-400"><strong className="text-green-500">CIDR Error:</strong> {cidrError || "None"}</div>
+                    <div className="text-slate-400"><strong className="text-heading-accent">IP Version:</strong> {ipVersion}</div>
+                    <div className="text-slate-400"><strong className="text-heading-accent">Calculation Type:</strong> {calculationType}</div>
+                    <div className="text-slate-400"><strong className="text-heading-accent">IP Address:</strong> {ipAddress || "Empty"}</div>
+                    <div className="text-slate-400"><strong className="text-heading-accent">Subnet Mask:</strong> {subnetMask || "Empty"}</div>
+                    <div className="text-slate-400"><strong className="text-heading-accent">CIDR:</strong> {prefixLength || "Empty"}</div>
+                    <div className="text-slate-400"><strong className="text-heading-accent">User Interacted:</strong> {hasUserInteracted ? "Yes" : "No"}</div>
+                    <div className="text-slate-400"><strong className="text-heading-accent">Has Result:</strong> {result ? "Yes" : "No"}</div>
+                    <div className="text-slate-400"><strong className="text-heading-accent">Is Calculating:</strong> {isCalculating ? "Yes" : "No"}</div>
+                    <div className="text-slate-400"><strong className="text-heading-accent">IP Error:</strong> {validationError || "None"}</div>
+                    <div className="text-slate-400"><strong className="text-heading-accent">Mask Error:</strong> {subnetMaskError || "None"}</div>
+                    <div className="text-slate-400"><strong className="text-heading-accent">CIDR Error:</strong> {cidrError || "None"}</div>
                   </div>
                 </div>
                 
@@ -639,7 +639,7 @@ export function IPSubnetCalculator({
                     id="show-binary"
                     checked={showBinary}
                     onChange={(e) => setShowBinary(e.target.checked)}
-                    className="form-checkbox h-3.5 w-3.5 text-orange-500 rounded border-slate-700 bg-black"
+                    className="form-checkbox h-3.5 w-3.5 text-foreground rounded border-slate-700 bg-black"
                   />
                   <Label htmlFor="show-binary" className="text-xs text-slate-400">Show Binary</Label>
                 </div>
@@ -649,7 +649,7 @@ export function IPSubnetCalculator({
                     id="show-hex"
                     checked={showHex}
                     onChange={(e) => setShowHex(e.target.checked)}
-                    className="form-checkbox h-3.5 w-3.5 text-orange-500 rounded border-slate-700 bg-black"
+                    className="form-checkbox h-3.5 w-3.5 text-foreground rounded border-slate-700 bg-black"
                   />
                   <Label htmlFor="show-hex" className="text-xs text-slate-400">Show Hexadecimal</Label>
                 </div>
@@ -657,7 +657,7 @@ export function IPSubnetCalculator({
                   <input
                     type="checkbox"
                     id="show-reverse-dns"
-                    className="form-checkbox h-3.5 w-3.5 text-orange-500 rounded border-slate-700 bg-black"
+                    className="form-checkbox h-3.5 w-3.5 text-foreground rounded border-slate-700 bg-black"
                     defaultChecked
                   />
                   <Label htmlFor="show-reverse-dns" className="text-xs text-slate-400">Reverse DNS</Label>
@@ -707,9 +707,9 @@ export function IPSubnetCalculator({
       {result && (
         <Card className="shadow-lg border-slate-700 bg-black">
           <CardHeader className="pb-3 px-3 sm:px-6">
-            <CardTitle className="flex items-center gap-1.5 text-base sm:text-lg text-orange-500">
+            <CardTitle className="flex items-center gap-1.5 text-base sm:text-lg text-foreground">
               <div className="p-1 sm:p-1.5 bg-orange-500/10 rounded-lg">
-                <BarChart3 className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-orange-500" />
+                <BarChart3 className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-foreground" />
               </div>
               Results
             </CardTitle>
@@ -722,37 +722,37 @@ export function IPSubnetCalculator({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               <div className="bg-black p-3 rounded-lg border border-slate-700">
                 <div className="flex items-center gap-1.5 mb-1">
-                  <Network className="h-3 w-3 text-green-500" />
-                  <span className="text-xs font-medium text-green-500">Network Address</span>
+                  <Network className="h-3 w-3 text-heading-accent" />
+                  <span className="text-xs font-medium text-heading-accent">Network Address</span>
                 </div>
-                <div className="text-sm sm:text-base font-bold text-orange-400 font-mono">
+                <div className="text-sm sm:text-base font-bold text-foreground font-mono">
                   {result.networkAddress}
                 </div>
               </div>
               <div className="bg-black p-3 rounded-lg border border-slate-700">
                 <div className="flex items-center gap-1.5 mb-1">
-                  <Globe className="h-3 w-3 text-green-500" />
-                  <span className="text-xs font-medium text-green-500">Broadcast Address</span>
+                  <Globe className="h-3 w-3 text-heading-accent" />
+                  <span className="text-xs font-medium text-heading-accent">Broadcast Address</span>
                 </div>
-                <div className="text-sm sm:text-base font-bold text-orange-400 font-mono">
+                <div className="text-sm sm:text-base font-bold text-foreground font-mono">
                   {result.broadcastAddress}
                 </div>
               </div>
               <div className="bg-black p-3 rounded-lg border border-slate-700">
                 <div className="flex items-center gap-1.5 mb-1">
-                  <Server className="h-3 w-3 text-green-500" />
-                  <span className="text-xs font-medium text-green-500">Usable Hosts</span>
+                  <Server className="h-3 w-3 text-heading-accent" />
+                  <span className="text-xs font-medium text-heading-accent">Usable Hosts</span>
                 </div>
-                <div className="text-sm sm:text-base font-bold text-orange-400">
+                <div className="text-sm sm:text-base font-bold text-foreground">
                   {result.usableHosts.toLocaleString()}
                 </div>
               </div>
               <div className="bg-black p-3 rounded-lg border border-slate-700">
                 <div className="flex items-center gap-1.5 mb-1">
-                  <Shield className="h-3 w-3 text-green-500" />
-                  <span className="text-xs font-medium text-green-500">Network Class</span>
+                  <Shield className="h-3 w-3 text-heading-accent" />
+                  <span className="text-xs font-medium text-heading-accent">Network Class</span>
                 </div>
-                <div className="text-sm sm:text-base font-bold text-orange-400">
+                <div className="text-sm sm:text-base font-bold text-foreground">
                   {result.networkClass}
                 </div>
               </div>
@@ -761,55 +761,55 @@ export function IPSubnetCalculator({
             {/* Detailed Information */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="bg-black p-3 rounded-lg border border-slate-700">
-                <h3 className="font-semibold text-sm mb-2 text-green-500 flex items-center gap-1.5">
+                <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
                   <Info className="h-3.5 w-3.5" />
                   Network Details
                 </h3>
                 <div className="space-y-1.5 text-xs">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                     <span className="text-slate-400">First Host:</span>
-                    <span className="font-mono text-orange-400">{result.firstHost}</span>
+                    <span className="font-mono text-foreground">{result.firstHost}</span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                     <span className="text-slate-400">Last Host:</span>
-                    <span className="font-mono text-orange-400">{result.lastHost}</span>
+                    <span className="font-mono text-foreground">{result.lastHost}</span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                     <span className="text-slate-400">Subnet Mask:</span>
-                    <span className="font-mono text-orange-400">{result.subnetMask}</span>
+                    <span className="font-mono text-foreground">{result.subnetMask}</span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                     <span className="text-slate-400">CIDR Notation:</span>
-                    <span className="font-mono text-orange-400">{result.cidrNotation}</span>
+                    <span className="font-mono text-foreground">{result.cidrNotation}</span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                     <span className="text-slate-400">Wildcard Mask:</span>
-                    <span className="font-mono text-orange-400">{result.wildcardMask}</span>
+                    <span className="font-mono text-foreground">{result.wildcardMask}</span>
                   </div>
                 </div>
               </div>
 
               <div className="bg-black p-3 rounded-lg border border-slate-700">
-                <h3 className="font-semibold text-sm mb-2 text-green-500 flex items-center gap-1.5">
+                <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
                   <BarChart3 className="h-3.5 w-3.5" />
                   Network Statistics
                 </h3>
                 <div className="space-y-1.5 text-xs">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                     <span className="text-slate-400">Total Hosts:</span>
-                    <span className="font-mono text-orange-400">{result.totalHosts.toLocaleString()}</span>
+                    <span className="font-mono text-foreground">{result.totalHosts.toLocaleString()}</span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                     <span className="text-slate-400">Network Bits:</span>
-                    <span className="font-mono text-orange-400">{result.networkBits}</span>
+                    <span className="font-mono text-foreground">{result.networkBits}</span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                     <span className="text-slate-400">Host Bits:</span>
-                    <span className="font-mono text-orange-400">{result.hostBits}</span>
+                    <span className="font-mono text-foreground">{result.hostBits}</span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                     <span className="text-slate-400">Reverse DNS:</span>
-                    <span className="font-mono text-orange-400 text-[10px]">{result.reverseDNS}</span>
+                    <span className="font-mono text-foreground text-[10px]">{result.reverseDNS}</span>
                   </div>
                 </div>
               </div>
@@ -818,22 +818,22 @@ export function IPSubnetCalculator({
             {/* Advanced Information */}
             {showBinary && (
               <div className="bg-black p-3 rounded-lg border border-slate-700">
-                <h3 className="font-semibold text-sm mb-2 text-green-500 flex items-center gap-1.5">
+                <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
                   <BinaryIcon className="h-3.5 w-3.5" />
                   Binary Representation
                 </h3>
                 <div className="space-y-1.5 text-xs font-mono">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                     <span className="text-slate-400">Network Address:</span>
-                    <span className="text-orange-400 break-all">{result.binaryNetworkAddress}</span>
+                    <span className="text-foreground break-all">{result.binaryNetworkAddress}</span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                     <span className="text-slate-400">Broadcast Address:</span>
-                    <span className="text-orange-400 break-all">{result.binaryBroadcastAddress}</span>
+                    <span className="text-foreground break-all">{result.binaryBroadcastAddress}</span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                     <span className="text-slate-400">Subnet Mask:</span>
-                    <span className="text-orange-400 break-all">{result.binarySubnetMask}</span>
+                    <span className="text-foreground break-all">{result.binarySubnetMask}</span>
                   </div>
                 </div>
               </div>
@@ -841,18 +841,18 @@ export function IPSubnetCalculator({
 
             {showHex && (
               <div className="bg-black p-3 rounded-lg border border-slate-700">
-                <h3 className="font-semibold text-sm mb-2 text-green-500 flex items-center gap-1.5">
+                <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
                   <HexagonIcon className="h-3.5 w-3.5" />
                   Hexadecimal Representation
                 </h3>
                 <div className="space-y-1.5 text-xs font-mono">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                     <span className="text-slate-400">Network Address:</span>
-                    <span className="text-orange-400">{result.hexNetworkAddress}</span>
+                    <span className="text-foreground">{result.hexNetworkAddress}</span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                     <span className="text-slate-400">Broadcast Address:</span>
-                    <span className="text-orange-400">{result.hexBroadcastAddress}</span>
+                    <span className="text-foreground">{result.hexBroadcastAddress}</span>
                   </div>
                 </div>
               </div>
@@ -860,7 +860,7 @@ export function IPSubnetCalculator({
 
             {/* Advanced Network Analysis */}
             <div className="bg-black p-3 rounded-lg border border-slate-700">
-              <h3 className="font-semibold text-sm mb-2 text-green-500 flex items-center gap-1.5">
+              <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
                 <TargetIcon className="h-3.5 w-3.5" />
                 Advanced Network Analysis
               </h3>
@@ -868,29 +868,29 @@ export function IPSubnetCalculator({
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-1.5">
                     <div className={`w-2 h-2 rounded-full ${result.advancedInfo.privateNetwork ? 'bg-green-500' : 'bg-red-500'}`}></div>
-                    <span className="text-xs text-slate-400">Private Network: <span className="text-orange-400">{result.advancedInfo.privateNetwork ? 'Yes' : 'No'}</span></span>
+                    <span className="text-xs text-slate-400">Private Network: <span className="text-foreground">{result.advancedInfo.privateNetwork ? 'Yes' : 'No'}</span></span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <div className={`w-2 h-2 rounded-full ${result.advancedInfo.vlsmCapable ? 'bg-green-500' : 'bg-yellow-500'}`}></div>
-                    <span className="text-xs text-slate-400">VLSM Capable: <span className="text-orange-400">{result.advancedInfo.vlsmCapable ? 'Yes' : 'No'}</span></span>
+                    <span className="text-xs text-slate-400">VLSM Capable: <span className="text-foreground">{result.advancedInfo.vlsmCapable ? 'Yes' : 'No'}</span></span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <div className={`w-2 h-2 rounded-full ${result.advancedInfo.supernettingPossible ? 'bg-green-500' : 'bg-red-500'}`}></div>
-                    <span className="text-xs text-slate-400">Supernetting: <span className="text-orange-400">{result.advancedInfo.supernettingPossible ? 'Yes' : 'No'}</span></span>
+                    <span className="text-xs text-slate-400">Supernetting: <span className="text-foreground">{result.advancedInfo.supernettingPossible ? 'Yes' : 'No'}</span></span>
                   </div>
                 </div>
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-1.5">
                     <div className={`w-2 h-2 rounded-full ${result.advancedInfo.multicastAddress ? 'bg-blue-500' : 'bg-slate-600'}`}></div>
-                    <span className="text-xs text-slate-400">Multicast: <span className="text-orange-400">{result.advancedInfo.multicastAddress ? 'Yes' : 'No'}</span></span>
+                    <span className="text-xs text-slate-400">Multicast: <span className="text-foreground">{result.advancedInfo.multicastAddress ? 'Yes' : 'No'}</span></span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <div className={`w-2 h-2 rounded-full ${result.advancedInfo.loopback ? 'bg-purple-500' : 'bg-slate-600'}`}></div>
-                    <span className="text-xs text-slate-400">Loopback: <span className="text-orange-400">{result.advancedInfo.loopback ? 'Yes' : 'No'}</span></span>
+                    <span className="text-xs text-slate-400">Loopback: <span className="text-foreground">{result.advancedInfo.loopback ? 'Yes' : 'No'}</span></span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <div className={`w-2 h-2 rounded-full ${result.advancedInfo.linkLocal ? 'bg-orange-500' : 'bg-slate-600'}`}></div>
-                    <span className="text-xs text-slate-400">Link Local: <span className="text-orange-400">{result.advancedInfo.linkLocal ? 'Yes' : 'No'}</span></span>
+                    <span className="text-xs text-slate-400">Link Local: <span className="text-foreground">{result.advancedInfo.linkLocal ? 'Yes' : 'No'}</span></span>
                   </div>
                 </div>
               </div>
@@ -898,7 +898,7 @@ export function IPSubnetCalculator({
 
             {/* Action Buttons */}
             <div className="flex gap-3">
-              <Button onClick={copyResult} className="flex-1 h-9 text-xs font-medium border border-green-700 hover:bg-slate-800 text-green-300 bg-black">
+              <Button onClick={copyResult} className="flex-1 h-9 text-xs font-medium border border-green-700 hover:bg-slate-800 text-heading-accent bg-black">
                 {copied ? (
                   <>
                     <Check className="mr-1.5 h-3.5 w-3.5" />

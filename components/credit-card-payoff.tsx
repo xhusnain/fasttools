@@ -187,7 +187,7 @@ Payoff Date: ${result.payoffDate}`
 
             <div className="flex justify-between items-center p-3 bg-green-500/10 rounded-lg border border-green-500/20">
               <span className="text-xs font-medium text-foreground">Months to Payoff:</span>
-              <span className="text-xl font-bold text-green-600">{result.monthsToPayoff}</span>
+              <span className="text-xl font-bold text-heading-accent">{result.monthsToPayoff}</span>
             </div>
 
             <div className="flex justify-between items-center">
@@ -197,12 +197,12 @@ Payoff Date: ${result.payoffDate}`
 
             <div className="flex justify-between items-center">
               <span className="text-xs text-muted-foreground">Total Interest Paid:</span>
-              <span className="text-sm font-bold text-red-500">${result.totalInterest}</span>
+              <span className="text-sm font-bold text-foreground">${result.totalInterest}</span>
             </div>
 
             <div className="flex justify-between items-center p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
               <span className="text-xs font-medium text-foreground">Total Amount Paid:</span>
-              <span className="text-lg font-bold text-blue-600">${result.totalPaid}</span>
+              <span className="text-lg font-bold text-foreground">${result.totalPaid}</span>
             </div>
 
             <div className="p-3 bg-orange-500/10 rounded-lg border border-orange-500/20">

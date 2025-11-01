@@ -31,7 +31,7 @@ export function BMICalculatorPageContent() {
 
         {/* How to Use BMI Calculator */}
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
             <span className="p-2 bg-black rounded-lg">
               <svg className="h-5 w-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -41,51 +41,51 @@ export function BMICalculatorPageContent() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-green-500">Step-by-Step Guide</h3>
+              <h3 className="text-lg font-semibold text-heading-accent">Step-by-Step Guide</h3>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">1</div>
                   <div>
-                    <h4 className="font-medium text-green-500">Select Unit System</h4>
+                    <h4 className="font-medium text-heading-accent">Select Unit System</h4>
                     <p className="text-sm text-slate-400">Choose between Metric (kg/cm) or Imperial (lbs/in) units</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">2</div>
                   <div>
-                    <h4 className="font-medium text-green-500">Enter Your Measurements</h4>
+                    <h4 className="font-medium text-heading-accent">Enter Your Measurements</h4>
                     <p className="text-sm text-slate-400">Input your weight and height accurately</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">3</div>
                   <div>
-                    <h4 className="font-medium text-green-500">Add Optional Details</h4>
+                    <h4 className="font-medium text-heading-accent">Add Optional Details</h4>
                     <p className="text-sm text-slate-400">Include age and gender for more personalized results</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">4</div>
                   <div>
-                    <h4 className="font-medium text-green-500">Get Your Results</h4>
+                    <h4 className="font-medium text-heading-accent">Get Your Results</h4>
                     <p className="text-sm text-slate-400">View your BMI, category, and personalized recommendations</p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-green-500">Pro Tips for Accurate Results</h3>
+              <h3 className="text-lg font-semibold text-heading-accent">Pro Tips for Accurate Results</h3>
               <div className="space-y-3">
                 <div className="p-3 bg-black rounded-lg border border-blue-800">
-                  <h4 className="font-medium text-blue-300">Measure at the same time</h4>
+                  <h4 className="font-medium text-foreground">Measure at the same time</h4>
                   <p className="text-sm text-slate-400">Weigh yourself at the same time of day for consistency</p>
                 </div>
                 <div className="p-3 bg-black rounded-lg border border-green-800">
-                  <h4 className="font-medium text-green-300">Use accurate measurements</h4>
+                  <h4 className="font-medium text-heading-accent">Use accurate measurements</h4>
                   <p className="text-sm text-slate-400">Ensure your scale and measuring tools are calibrated</p>
                 </div>
                 <div className="p-3 bg-black rounded-lg border border-orange-800">
-                  <h4 className="font-medium text-orange-300">Consider body composition</h4>
+                  <h4 className="font-medium text-foreground">Consider body composition</h4>
                   <p className="text-sm text-slate-400">Remember that BMI treats all body weight equally, so individuals with higher muscle density may have elevated BMI values despite having low body fat percentages</p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export function BMICalculatorPageContent() {
 
         {/* BMI Categories and Health Implications */}
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
             <span className="p-2 bg-black rounded-lg">
               <svg className="h-5 w-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -106,7 +106,7 @@ export function BMICalculatorPageContent() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="p-4 bg-black border border-border rounded-lg">
-              <h3 className="font-semibold text-green-500 mb-2">Underweight (&lt;18.5)</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">Underweight (&lt;18.5)</h3>
               <p className="text-sm text-slate-400 mb-2">Health Risks:</p>
               <ul className="text-xs text-slate-400 space-y-1">
                 <li>• Nutritional deficiencies</li>
@@ -116,7 +116,7 @@ export function BMICalculatorPageContent() {
               </ul>
             </div>
             <div className="p-4 bg-black border border-border rounded-lg">
-              <h3 className="font-semibold text-green-500 mb-2">Normal (18.5-24.9)</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">Normal (18.5-24.9)</h3>
               <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">Health Benefits:</p>
               <ul className="text-xs text-slate-500 dark:text-slate-400 space-y-1">
                 <li>• Lower disease risk</li>
@@ -126,7 +126,7 @@ export function BMICalculatorPageContent() {
               </ul>
             </div>
             <div className="p-4 bg-black border border-border rounded-lg">
-              <h3 className="font-semibold text-green-500 mb-2">Overweight (25-29.9)</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">Overweight (25-29.9)</h3>
               <p className="text-sm text-slate-400 mb-2">Health Risks:</p>
               <ul className="text-xs text-slate-400 space-y-1">
                 <li>• Type 2 diabetes</li>
@@ -136,7 +136,7 @@ export function BMICalculatorPageContent() {
               </ul>
             </div>
             <div className="p-4 bg-black border border-border rounded-lg">
-              <h3 className="font-semibold text-green-500 mb-2">Obese Class I (30-34.9)</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">Obese Class I (30-34.9)</h3>
               <p className="text-sm text-slate-400 mb-2">Health Risks:</p>
               <ul className="text-xs text-slate-400 space-y-1">
                 <li>• Severe health complications</li>
@@ -146,7 +146,7 @@ export function BMICalculatorPageContent() {
               </ul>
             </div>
             <div className="p-4 bg-black border border-border rounded-lg">
-              <h3 className="font-semibold text-green-500 mb-2">Obese Class II (35-39.9)</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">Obese Class II (35-39.9)</h3>
               <p className="text-sm text-slate-400 mb-2">Health Risks:</p>
               <ul className="text-xs text-slate-400 space-y-1">
                 <li>• Very high health risks</li>
@@ -156,7 +156,7 @@ export function BMICalculatorPageContent() {
               </ul>
             </div>
             <div className="p-4 bg-black border border-border rounded-lg">
-              <h3 className="font-semibold text-green-500 mb-2">Obese Class III (&gt;40)</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">Obese Class III (&gt;40)</h3>
               <p className="text-sm text-slate-400 mb-2">Health Risks:</p>
               <ul className="text-xs text-slate-400 space-y-1">
                 <li>• Extreme health risks</li>
@@ -171,7 +171,7 @@ export function BMICalculatorPageContent() {
 
         {/* Advanced BMI Metrics Explained */}
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
             <span className="p-2 bg-black rounded-lg">
               <svg className="h-5 w-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -181,7 +181,7 @@ export function BMICalculatorPageContent() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 bg-black border border-border rounded-xl">
-              <h3 className="text-lg font-semibold text-green-500 mb-3">BMI Prime</h3>
+              <h3 className="text-lg font-semibold text-heading-accent mb-3">BMI Prime</h3>
               <p className="text-sm text-slate-400 mb-3">
                 BMI Prime is the ratio of your BMI to the upper limit of normal BMI (25). It provides a quick assessment of how much your BMI differs from the normal range.
               </p>
@@ -193,7 +193,7 @@ export function BMICalculatorPageContent() {
               </div>
             </div>
             <div className="p-6 bg-black border border-border rounded-xl">
-              <h3 className="text-lg font-semibold text-green-500 mb-3">Ponderal Index</h3>
+              <h3 className="text-lg font-semibold text-heading-accent mb-3">Ponderal Index</h3>
               <p className="text-sm text-slate-400 mb-3">
                 The Ponderal Index uses height cubed instead of squared, making it more reliable for very tall or short individuals where BMI may be misleading.
               </p>
@@ -210,9 +210,9 @@ export function BMICalculatorPageContent() {
 
         {/* Related Health Calculators */}
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
             <span className="p-2 bg-black rounded-lg">
-              <svg className="h-5 w-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-5 w-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </span>
@@ -220,27 +220,27 @@ export function BMICalculatorPageContent() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="p-4 bg-black border border-border rounded-lg hover:shadow-lg transition-shadow">
-              <h3 className="font-semibold text-green-500 mb-2">Body Fat Calculator</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">Body Fat Calculator</h3>
               <p className="text-sm text-slate-400">Calculate body fat percentage using various methods</p>
             </div>
             <div className="p-4 bg-black border border-border rounded-lg hover:shadow-lg transition-shadow">
-              <h3 className="font-semibold text-green-500 mb-2">Calorie Calculator</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">Calorie Calculator</h3>
               <p className="text-sm text-slate-400">Determine daily calorie needs for weight management</p>
             </div>
             <div className="p-4 bg-black border border-border rounded-lg hover:shadow-lg transition-shadow">
-              <h3 className="font-semibold text-green-500 mb-2">Ideal Weight Calculator</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">Ideal Weight Calculator</h3>
               <p className="text-sm text-slate-400">Find your ideal weight based on height and frame</p>
             </div>
             <div className="p-4 bg-black border border-border rounded-lg hover:shadow-lg transition-shadow">
-              <h3 className="font-semibold text-green-500 mb-2">BMR Calculator</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">BMR Calculator</h3>
               <p className="text-sm text-slate-400">Calculate your Basal Metabolic Rate</p>
             </div>
             <div className="p-4 bg-black border border-border rounded-lg hover:shadow-lg transition-shadow">
-              <h3 className="font-semibold text-green-500 mb-2">Waist-to-Hip Ratio</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">Waist-to-Hip Ratio</h3>
               <p className="text-sm text-slate-400">Assess body fat distribution and health risks</p>
             </div>
             <div className="p-4 bg-black border border-border rounded-lg hover:shadow-lg transition-shadow">
-              <h3 className="font-semibold text-green-500 mb-2">Macro Calculator</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">Macro Calculator</h3>
               <p className="text-sm text-slate-400">Calculate macronutrient needs for your goals</p>
             </div>
           </div>
@@ -248,7 +248,7 @@ export function BMICalculatorPageContent() {
 
         {/* Frequently Asked Questions */}
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
             <span className="p-2 bg-black rounded-lg">
               <svg className="h-5 w-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -258,31 +258,31 @@ export function BMICalculatorPageContent() {
           </h2>
           <div className="space-y-4">
             <div className="p-4 bg-black rounded-lg border border-slate-700">
-              <h3 className="font-semibold text-green-500 mb-2">What is a healthy BMI range?</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">What is a healthy BMI range?</h3>
               <p className="text-sm text-slate-400">
                 A healthy BMI typically falls between 18.5 and 24.9. However, BMI should be considered alongside other factors like muscle mass, age, and overall health.
               </p>
             </div>
             <div className="p-4 bg-black rounded-lg border border-slate-700">
-              <h3 className="font-semibold text-green-500 mb-2">Can BMI be misleading for athletes?</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">Can BMI be misleading for athletes?</h3>
               <p className="text-sm text-slate-400">
                 Yes, BMI can be misleading for athletes or very muscular individuals because muscle weighs more than fat. Consider additional measurements like body fat percentage.
               </p>
             </div>
             <div className="p-4 bg-black rounded-lg border border-slate-700">
-              <h3 className="font-semibold text-green-500 mb-2">How often should I check my BMI?</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">How often should I check my BMI?</h3>
               <p className="text-sm text-slate-400">
                 For most people, checking BMI monthly is sufficient. Focus more on long-term trends rather than daily fluctuations, which can be affected by water retention and other factors.
               </p>
             </div>
             <div className="p-4 bg-black rounded-lg border border-slate-700">
-              <h3 className="font-semibold text-green-500 mb-2">What should I do if my BMI is in the overweight or obese range?</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">What should I do if my BMI is in the overweight or obese range?</h3>
               <p className="text-sm text-slate-400">
                 Consult with a healthcare professional to develop a safe and effective weight management plan. Focus on sustainable lifestyle changes including diet and exercise.
               </p>
             </div>
             <div className="p-4 bg-black rounded-lg border border-slate-700">
-              <h3 className="font-semibold text-green-500 mb-2">Is BMI Prime more accurate than regular BMI?</h3>
+              <h3 className="font-semibold text-heading-accent mb-2">Is BMI Prime more accurate than regular BMI?</h3>
               <p className="text-sm text-slate-400">
                 BMI Prime provides a quick ratio comparison to the normal BMI upper limit (25), making it easier to understand how far you are from the normal range. Both metrics are useful for different purposes.
               </p>

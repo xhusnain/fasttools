@@ -207,89 +207,89 @@ export default function LengthConverterPage() {
               </div>
 
               {/* Tool Card */}
-              <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+              <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                 <LengthConverter />
               </div>
 
               {/* Understanding How This Tool Works */}
               <div className="space-y-5 animate-fade-in-up animation-delay-200">
-                <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-base md:text-xl font-bold mb-3 text-orange-500">Understanding How This Length Converter Works</h2>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-base md:text-xl font-bold mb-3 text-foreground">Understanding How This Length Converter Works</h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                     Conversions are computed with standardized factors for metric and imperial units. Input validation and
                     sensible rounding keep values readable while preserving accuracy.
                   </p>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">Real-Time Processing</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">Real-Time Processing</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                     Results update as you type. Mixed formats (like feet+inches) are handled cleanly and converted to any target unit.
                   </p>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">Professional Features</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">Professional Features</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Precision controls, unit hints, and copy‑ready output help in construction, engineering, education, and travel planning.
                   </p>
                 </div>
 
-                <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-base md:text-xl font-bold mb-3 text-orange-500">Advanced Usage Techniques</h2>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-base md:text-xl font-bold mb-3 text-foreground">Advanced Usage Techniques</h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                     Practical guidance for real‑world tasks across construction, travel, and science.
                   </p>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">Construction and Engineering</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">Construction and Engineering</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                     Convert between blueprint scales, material specs, and measurement systems without manual tables.
                   </p>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">Travel and Navigation</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">Travel and Navigation</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                     Switch quickly between miles and kilometers when comparing maps, routes, or fitness trackers.
                   </p>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">Education and Science</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">Education and Science</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Use consistent units across lab notes and reports; rely on exact factors, not approximations.
                   </p>
                 </div>
 
                 {/* Length Converter FAQ */}
-                <div className="p-6 rounded-lg bg-black border border-border shadow mt-6">
-                  <h2 className="text-2xl font-bold mb-4 text-orange-500">Length Converter FAQ</h2>
-                  <div className="space-y-4 text-sm text-gray-400">
+                <div className="p-6 rounded-lg bg-card border border-border shadow mt-6">
+                  <h2 className="text-2xl font-bold mb-4 text-foreground">Length Converter FAQ</h2>
+                  <div className="space-y-4 text-sm text-muted-foreground">
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">How do I convert between feet+inches and centimeters accurately?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">How do I convert between feet+inches and centimeters accurately?</h3>
                       <p>Enter feet and inches in the mixed format (for example, 5 ft 11 in). The tool normalizes it and converts directly to centimeters using exact definitions (1 in = 2.54 cm). For reverse, convert cm to decimal feet and optionally split back into ft+in.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">What precision should I use for construction measurements?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">What precision should I use for construction measurements?</h3>
                       <p>Match the smallest practical unit on site. For wood framing, 1/16 in (≈1.6 mm) is common; for metalwork, tighter tolerances may be needed. Keep internal precision high but round displays for readability, then note the rounding rule on drawings.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">Meters to feet: why doesn't my calculator match my colleague's number?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">Meters to feet: why doesn't my calculator match my colleague's number?</h3>
                       <p>Differences usually come from rounding at different steps. Convert once with full precision, then round at the end to an agreed decimal or fractional inch. If values must match exactly, share the factor and rounding policy with your team.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">Can I paste values with units (like "3.2 m" or "12 in")?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">Can I paste values with units (like "3.2 m" or "12 in")?</h3>
                       <p>Yes—unit‑aware parsing accepts common suffixes. If the input is ambiguous, specify the unit explicitly or use the unit selector. The converter validates and rejects impossible combinations to prevent silent errors.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">What's the difference between decimal feet and feet+inches, and when should I use each?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">What's the difference between decimal feet and feet+inches, and when should I use each?</h3>
                       <p>Decimal feet (e.g., 5.92 ft) is compact and ideal for calculations and spreadsheets. Feet+inches (5 ft 11 in) is human‑friendly on site. Convert to decimal for math, then present as feet+inches for field work.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">How do I convert map scales or drawings accurately?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">How do I convert map scales or drawings accurately?</h3>
                       <p>First convert the drawing measurement to true units using the scale (e.g., 1 cm on paper = 2 m in reality), then change units as needed (m ⇄ ft). Document the scale and unit system on the drawing to avoid misreads.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">Miles vs kilometers: any quick mental checks?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">Miles vs kilometers: any quick mental checks?</h3>
                       <p>Use 5 miles ≈ 8 km and 1 mile ≈ 1.6 km for estimates. For exact work, rely on the converter and keep one extra decimal place internally before rounding your final number.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">Why do some specs list millimeters instead of centimeters?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">Why do some specs list millimeters instead of centimeters?</h3>
                       <p>Millimeters remove decimal points and reduce rounding ambiguity in fabrication. If a spec is in mm, keep it in mm until the end, then convert for presentation only.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">Can I use the converter offline at a jobsite?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">Can I use the converter offline at a jobsite?</h3>
                       <p>Yes. Length and unit calculations run in your browser. You'll only need a connection to load the page the first time; after that, basic conversions continue to work offline.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">What are the most common unit mistakes to avoid?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">What are the most common unit mistakes to avoid?</h3>
                       <p>Avoid mixing systems within the same figure (e.g., meters and feet together) and avoid early rounding. Convert once, round at the end, and always annotate the unit and precision you used.</p>
                     </div>
                   </div>
@@ -300,7 +300,7 @@ export default function LengthConverterPage() {
             {/* Desktop Sidebar with AdSense */}
             <div className="hidden lg:block w-64 xl:w-72">
               <div className="sticky top-32 space-y-6">
-                <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-black" />
+                <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
               </div>
             </div>
           </div>

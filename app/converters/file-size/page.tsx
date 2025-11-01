@@ -256,83 +256,83 @@ export default function FileSizeConverterPage() {
               </div>
 
               {/* Tool Card */}
-              <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
+              <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                 <FileSizeConverter />
               </div>
 
               {/* Understanding How This Tool Works */}
               <div className="space-y-5 animate-fade-in-up animation-delay-200">
-                <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-base md:text-xl font-bold mb-3 text-orange-500">How This File Size Converter Works</h2>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-base md:text-xl font-bold mb-3 text-foreground">How This File Size Converter Works</h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                     We support both decimal and binary systems with deterministic formulas and sensible rounding. Results are
                     copy‑ready and consistent across refreshes.
                   </p>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">Real‑Time Processing</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">Real‑Time Processing</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                     Values update as you type. Switch units freely—internally we convert through bytes for accurate results.
                   </p>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">Professional Features</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">Professional Features</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Clear unit labels (KB vs KiB), precise factors, and compact UI help with cloud planning, uploads, and audits.
                   </p>
                 </div>
 
-                <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-base md:text-xl font-bold mb-3 text-orange-500">Advanced Usage</h2>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-base md:text-xl font-bold mb-3 text-foreground">Advanced Usage</h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                     Practical patterns for storage sizing, network estimates, and data workflows.
                   </p>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">Cloud & AI</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-3">Translate quotas (GB) to binary file sizes (GiB) to match OS usage; note provider pricing units.</p>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">Backups & Transfers</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-3">Estimate transfer time: size ÷ throughput, remembering 1 byte = 8 bits.</p>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-green-500">Dev & Ops</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">Align logging/metrics to a single unit system to avoid mismatched totals across dashboards.</p>
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">Cloud & AI</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">Translate quotas (GB) to binary file sizes (GiB) to match OS usage; note provider pricing units.</p>
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">Backups & Transfers</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">Estimate transfer time: size ÷ throughput, remembering 1 byte = 8 bits.</p>
+                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">Dev & Ops</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">Align logging/metrics to a single unit system to avoid mismatched totals across dashboards.</p>
                 </div>
 
                 {/* File Size Converter FAQ */}
-                <div className="p-6 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-2xl font-bold mb-4 text-orange-500">File Size Converter FAQ</h2>
-                  <div className="space-y-4 text-sm text-gray-400">
+                <div className="p-6 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-2xl font-bold mb-4 text-foreground">File Size Converter FAQ</h2>
+                  <div className="space-y-4 text-sm text-muted-foreground">
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">Why do OS disk sizes look smaller than vendor labels?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">Why do OS disk sizes look smaller than vendor labels?</h3>
                       <p>Vendors use decimal GB (1,000,000,000 bytes), while OS displays binary GiB (1,073,741,824 bytes). A 1 TB drive appears as about 931 GiB. Two systems, same bytes—our converter shows both so plans reflect reality.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">KB/MB/GB vs KiB/MiB/GiB—when to use each?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">KB/MB/GB vs KiB/MiB/GiB—when to use each?</h3>
                       <p>Use decimal for marketing/network specs, binary for OS/file system/memory. Label the unit system in reports and stick to one per dashboard to prevent mismatched totals.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">How do I estimate upload/download time?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">How do I estimate upload/download time?</h3>
                       <p>Convert size and speed to compatible units, then time = size ÷ throughput. Remember 1 byte = 8 bits. Example: 1 GB over 100 Mbps → 8,000 Mb ÷ 100 = 80 s (plus overhead).</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">Why doesn't compression reduce size much?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">Why doesn't compression reduce size much?</h3>
                       <p>Already‑compressed formats (JPEG/WebP/MP4) have little redundancy. Text and CSV compress well. Containers add overhead. Choose efficient codecs and verify before/after in the converter.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">How can I budget cloud storage precisely?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">How can I budget cloud storage precisely?</h3>
                       <p>Normalize everything to GB or GiB, then apply provider pricing. Include replication, versions, and growth. Note decimal vs binary and the date of your rate sheet.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">Do thumbnails and metadata matter at scale?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">Do thumbnails and metadata matter at scale?</h3>
                       <p>Yes—per‑object overhead multiplies. Add a 10–30% buffer for previews, indices, and metadata. Measure with a pilot before committing budgets.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">What rounding should I use for reports?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">What rounding should I use for reports?</h3>
                       <p>Keep high precision internally; round only at presentation. Dashboards: 1–2 decimals. Contracts: exact bytes in an appendix. Converting once and rounding last prevents drift.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">What drives image/video file size the most?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">What drives image/video file size the most?</h3>
                       <p>Images: resolution, format, and quality. Video: duration × bitrate plus codec efficiency (H.264/HEVC/AV1). Test multiple bitrates and compare results; use our converter to summarize.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">Why do backups occupy more space than raw data?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">Why do backups occupy more space than raw data?</h3>
                       <p>Indexes, checksums, dedup tables, and container overhead add up. Retention rules and incrementals also grow totals. Apply a factor (often 1.1–1.5×) unless deduplication offsets it.</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 text-green-500">What's the simplest decimal vs binary rule?</h3>
+                      <h3 className="text-lg font-bold mb-2 text-heading-accent">What's the simplest decimal vs binary rule?</h3>
                       <p>If the source is hardware/network marketing, it's decimal. If it's from your OS or memory metrics, it's binary. Convert once, label clearly (GB or GiB), and keep factors in docs.</p>
                     </div>
                   </div>
@@ -343,7 +343,7 @@ export default function FileSizeConverterPage() {
             {/* Desktop Sidebar with AdSense */}
             <div className="hidden lg:block w-64 xl:w-72">
               <div className="sticky top-32 space-y-6">
-                <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-black" />
+                <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
               </div>
             </div>
           </div>

@@ -335,11 +335,11 @@ export function InstagramDpViewer() {
 
             {error && (
               <div className="p-4 rounded-lg bg-red-500/20 border border-red-400/30">
-                <div className="flex items-center gap-2 text-red-300">
+                <div className="flex items-center gap-2 text-foreground">
                   <AlertCircle className="h-4 w-4" />
                   <span className="text-sm font-medium">{error}</span>
                 </div>
-                <p className="text-xs text-red-200 mt-2">
+                <p className="text-xs text-foreground mt-2">
                   💡 Alternative: Right-click on the profile picture and select "Save image as"
                 </p>
               </div>
@@ -423,7 +423,7 @@ export function InstagramDpViewer() {
               {/* Download Instructions */}
               <p className="text-xs text-white/60 text-center">
                 💡 Click the image above or use the download button below<br/>
-                <span className="text-yellow-300">⚠️ May open in new tab due to browser security</span>
+                <span className="text-foreground">⚠️ May open in new tab due to browser security</span>
               </p>
               
               {/* Profile Details */}

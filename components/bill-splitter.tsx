@@ -165,7 +165,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
 
             <div className="flex justify-between items-center">
               <span className="text-xs text-muted-foreground">Tip ({tipPercent}%):</span>
-              <span className="text-sm font-bold text-orange-500">+${result.tipAmount}</span>
+              <span className="text-sm font-bold text-foreground">+${result.tipAmount}</span>
             </div>
 
             <div className="flex justify-between items-center">
@@ -175,7 +175,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
 
             <div className="flex justify-between items-center p-3 bg-green-500/10 rounded-lg border border-green-500/20">
               <span className="text-xs font-medium text-foreground">Each Person Pays:</span>
-              <span className="text-xl font-bold text-green-600">${result.perPerson}</span>
+              <span className="text-xl font-bold text-heading-accent">${result.perPerson}</span>
             </div>
 
             <div className="p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">

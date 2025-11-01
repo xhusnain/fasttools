@@ -69,7 +69,7 @@ export function AnnouncementBanner() {
                 <div className="flex items-center gap-2 mb-1">
                   <Badge 
                     variant="secondary" 
-                    className="bg-orange-500/20 text-orange-100 border-orange-400/30 text-xs font-medium px-2 py-1"
+                    className="bg-orange-500/20 text-foreground border-orange-400/30 text-xs font-medium px-2 py-1"
                   >
                     {currentAnnouncement.badge}
                   </Badge>

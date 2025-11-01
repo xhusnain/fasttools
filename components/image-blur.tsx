@@ -232,7 +232,7 @@ export function ImageBlur() {
             <div className="mt-6 space-y-4">
               <div className="flex items-center justify-between">
                 <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                  Blur Intensity: <span className="text-blue-600 dark:text-blue-400 font-semibold">{blurIntensity}px</span>
+                  Blur Intensity: <span className="text-foreground font-semibold">{blurIntensity}px</span>
                 </label>
                 <span className="text-xs text-slate-500 dark:text-slate-400 italic">Auto-applies</span>
               </div>
@@ -257,7 +257,7 @@ export function ImageBlur() {
 
               <div className="flex items-center justify-between pt-2">
                 <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                  Cutout strength: <span className="text-blue-600 dark:text-blue-400 font-semibold">{refineStrength}</span>
+                  Cutout strength: <span className="text-foreground font-semibold">{refineStrength}</span>
                 </label>
               </div>
               <Slider
@@ -289,17 +289,17 @@ export function ImageBlur() {
             <div className="mt-6 p-6 bg-red-50 dark:bg-red-900/20 border-2 border-red-200 dark:border-red-800 rounded-xl">
               <div className="flex flex-col items-center text-center gap-4">
                 <div className="p-3 bg-red-100 dark:bg-red-900/40 rounded-full">
-                  <svg className="h-8 w-8 text-red-600 dark:text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="h-8 w-8 text-foreground" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-red-900 dark:text-red-200 mb-2">Oops! Something went wrong</h3>
-                  <p className="text-sm text-red-800 dark:text-red-300 mb-4 max-w-md">{status.message}</p>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Oops! Something went wrong</h3>
+                  <p className="text-sm text-foreground mb-4 max-w-md">{status.message}</p>
                   <Button 
                     onClick={resetAll} 
                     variant="outline"
-                    className="gap-2 border-red-300 text-red-700 hover:bg-red-100 dark:border-red-700 dark:text-red-300 dark:hover:bg-red-900/30"
+                    className="gap-2 border-red-300 text-foreground hover:bg-red-100 dark:border-red-700 dark:text-foreground dark:hover:bg-red-900/30"
                   >
                     <RotateCcw className="h-4 w-4" />
                     Try Again

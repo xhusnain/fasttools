@@ -517,15 +517,15 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
       {/* Main Calculator */}
       <Card className="bg-black border-slate-700 w-full overflow-hidden">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
-            <Calculator className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
+          <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+            <Calculator className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
             Advanced Investment Calculator
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4 sm:space-y-6">
           {/* Calculation Type Selection */}
           <div>
-            <Label className="text-green-500 text-xs sm:text-sm mb-2 block break-words">Calculate</Label>
+            <Label className="text-heading-accent text-xs sm:text-sm mb-2 block break-words">Calculate</Label>
             
             {/* Mobile Dropdown */}
             <div className="block md:hidden mb-4">
@@ -559,7 +559,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               {calculationType === "endAmount" && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="startingAmount" className="text-green-500 text-xs sm:text-sm">Starting Amount</Label>
+                    <Label htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</Label>
                     <Input
                       id="startingAmount"
                       type="number"
@@ -570,7 +570,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="returnRate" className="text-green-500 text-xs sm:text-sm">Return Rate (%)</Label>
+                    <Label htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</Label>
                     <Input
                       id="returnRate"
                       type="number"
@@ -581,7 +581,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="investmentLength" className="text-green-500 text-xs sm:text-sm">Investment Length (years)</Label>
+                    <Label htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</Label>
                     <Input
                       id="investmentLength"
                       type="number"
@@ -592,7 +592,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="additionalContribution" className="text-green-500 text-xs sm:text-sm">Additional Contribution</Label>
+                    <Label htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</Label>
                     <Input
                       id="additionalContribution"
                       type="number"
@@ -608,7 +608,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               {calculationType === "returnRate" && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="endAmount" className="text-green-500 text-xs sm:text-sm">End Amount</Label>
+                    <Label htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</Label>
                     <Input
                       id="endAmount"
                       type="number"
@@ -619,7 +619,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="startingAmount" className="text-green-500 text-xs sm:text-sm">Starting Amount</Label>
+                    <Label htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</Label>
                     <Input
                       id="startingAmount"
                       type="number"
@@ -630,7 +630,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="investmentLength" className="text-green-500 text-xs sm:text-sm">Investment Length (years)</Label>
+                    <Label htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</Label>
                     <Input
                       id="investmentLength"
                       type="number"
@@ -641,7 +641,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="additionalContribution" className="text-green-500 text-xs sm:text-sm">Additional Contribution</Label>
+                    <Label htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</Label>
                     <Input
                       id="additionalContribution"
                       type="number"
@@ -657,7 +657,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               {calculationType === "startingAmount" && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="endAmount" className="text-green-500 text-xs sm:text-sm">End Amount</Label>
+                    <Label htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</Label>
                     <Input
                       id="endAmount"
                       type="number"
@@ -668,7 +668,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="returnRate" className="text-green-500 text-xs sm:text-sm">Return Rate (%)</Label>
+                    <Label htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</Label>
                     <Input
                       id="returnRate"
                       type="number"
@@ -679,7 +679,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="investmentLength" className="text-green-500 text-xs sm:text-sm">Investment Length (years)</Label>
+                    <Label htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</Label>
                     <Input
                       id="investmentLength"
                       type="number"
@@ -690,7 +690,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="additionalContribution" className="text-green-500 text-xs sm:text-sm">Additional Contribution</Label>
+                    <Label htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</Label>
                     <Input
                       id="additionalContribution"
                       type="number"
@@ -706,7 +706,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               {calculationType === "additionalContribution" && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="endAmount" className="text-green-500 text-xs sm:text-sm">End Amount</Label>
+                    <Label htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</Label>
                     <Input
                       id="endAmount"
                       type="number"
@@ -717,7 +717,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="startingAmount" className="text-green-500 text-xs sm:text-sm">Starting Amount</Label>
+                    <Label htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</Label>
                     <Input
                       id="startingAmount"
                       type="number"
@@ -728,7 +728,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="returnRate" className="text-green-500 text-xs sm:text-sm">Return Rate (%)</Label>
+                    <Label htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</Label>
                     <Input
                       id="returnRate"
                       type="number"
@@ -739,7 +739,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="investmentLength" className="text-green-500 text-xs sm:text-sm">Investment Length (years)</Label>
+                    <Label htmlFor="investmentLength" className="text-heading-accent text-xs sm:text-sm">Investment Length (years)</Label>
                     <Input
                       id="investmentLength"
                       type="number"
@@ -755,7 +755,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               {calculationType === "investmentLength" && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="endAmount" className="text-green-500 text-xs sm:text-sm">End Amount</Label>
+                    <Label htmlFor="endAmount" className="text-heading-accent text-xs sm:text-sm">End Amount</Label>
                     <Input
                       id="endAmount"
                       type="number"
@@ -766,7 +766,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="startingAmount" className="text-green-500 text-xs sm:text-sm">Starting Amount</Label>
+                    <Label htmlFor="startingAmount" className="text-heading-accent text-xs sm:text-sm">Starting Amount</Label>
                     <Input
                       id="startingAmount"
                       type="number"
@@ -777,7 +777,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="returnRate" className="text-green-500 text-xs sm:text-sm">Return Rate (%)</Label>
+                    <Label htmlFor="returnRate" className="text-heading-accent text-xs sm:text-sm">Return Rate (%)</Label>
                     <Input
                       id="returnRate"
                       type="number"
@@ -788,7 +788,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="additionalContribution" className="text-green-500 text-xs sm:text-sm">Additional Contribution</Label>
+                    <Label htmlFor="additionalContribution" className="text-heading-accent text-xs sm:text-sm">Additional Contribution</Label>
                     <Input
                       id="additionalContribution"
                       type="number"
@@ -806,7 +806,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           {/* Additional Settings */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="compoundFrequency" className="text-green-500 text-xs sm:text-sm">Compound Frequency</Label>
+              <Label htmlFor="compoundFrequency" className="text-heading-accent text-xs sm:text-sm">Compound Frequency</Label>
               <Select value={compoundFrequency} onValueChange={setCompoundFrequency}>
                 <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm h-9">
                   <SelectValue />
@@ -821,7 +821,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               </Select>
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="contributionTiming" className="text-green-500 text-xs sm:text-sm">Contribution Timing</Label>
+              <Label htmlFor="contributionTiming" className="text-heading-accent text-xs sm:text-sm">Contribution Timing</Label>
               <Select value={contributionTiming} onValueChange={setContributionTiming}>
                 <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm h-9">
                   <SelectValue />
@@ -852,21 +852,21 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           {/* Main Results */}
           <Card className="bg-black border-slate-700 w-full overflow-hidden">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
-                <DollarSign className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
+              <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+                <DollarSign className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
                 Investment Calculation Results
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-green-500 text-xs sm:text-sm">End Amount</Label>
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-green-500">
+                  <Label className="text-heading-accent text-xs sm:text-sm">End Amount</Label>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-heading-accent">
                     ${result.endAmount.toFixed(2)}
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-green-500 text-xs sm:text-sm">Starting Amount</Label>
+                  <Label className="text-heading-accent text-xs sm:text-sm">Starting Amount</Label>
                   <div className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200">
                     ${result.startingAmount.toFixed(2)}
                   </div>
@@ -876,7 +876,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-700">
                 <div className="text-center">
                   <div className="text-xs sm:text-sm text-slate-300">Return Rate</div>
-                  <div className="text-lg sm:text-xl font-semibold text-orange-500">{result.returnRate.toFixed(2)}%</div>
+                  <div className="text-lg sm:text-xl font-semibold text-foreground">{result.returnRate.toFixed(2)}%</div>
                 </div>
                 <div className="text-center">
                   <div className="text-xs sm:text-sm text-slate-300">Investment Length</div>
@@ -900,23 +900,23 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           {/* Summary */}
           <Card className="bg-black border-slate-700 w-full overflow-hidden">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
-                <BarChart3 className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
+              <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+                <BarChart3 className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
                 Investment Summary
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="p-3 sm:p-4 bg-black rounded-lg border border-slate-700">
-                  <h3 className="font-semibold text-green-500 mb-2 text-xs sm:text-sm break-words">Total Contributions</h3>
+                  <h3 className="font-semibold text-heading-accent mb-2 text-xs sm:text-sm break-words">Total Contributions</h3>
                   <div className="text-xl sm:text-2xl font-bold text-slate-200">${result.calculations.totalContributions.toFixed(2)}</div>
                 </div>
                 <div className="p-3 sm:p-4 bg-black rounded-lg border border-slate-700">
-                  <h3 className="font-semibold text-green-500 mb-2 text-xs sm:text-sm break-words">Total Interest</h3>
-                  <div className="text-xl sm:text-2xl font-bold text-green-500">${result.calculations.totalInterest.toFixed(2)}</div>
+                  <h3 className="font-semibold text-heading-accent mb-2 text-xs sm:text-sm break-words">Total Interest</h3>
+                  <div className="text-xl sm:text-2xl font-bold text-heading-accent">${result.calculations.totalInterest.toFixed(2)}</div>
                 </div>
                 <div className="p-3 sm:p-4 bg-black rounded-lg border border-slate-700">
-                  <h3 className="font-semibold text-green-500 mb-2 text-xs sm:text-sm break-words">Interest Percentage</h3>
+                  <h3 className="font-semibold text-heading-accent mb-2 text-xs sm:text-sm break-words">Interest Percentage</h3>
                   <div className="text-xl sm:text-2xl font-bold text-slate-200">{result.calculations.interestPercentage.toFixed(1)}%</div>
                 </div>
               </div>
@@ -926,8 +926,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           {/* Accumulation Schedule */}
           <Card className="bg-black border-slate-700 w-full overflow-hidden">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
-                <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
+              <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+                <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
                 Accumulation Schedule
               </CardTitle>
             </CardHeader>
@@ -936,10 +936,10 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                 <table className="w-full border-collapse border border-slate-700">
                   <thead>
                     <tr className="bg-black border border-slate-700">
-                      <th className="border border-slate-700 p-2 sm:p-3 text-left text-green-500 text-xs sm:text-sm">Year</th>
-                      <th className="border border-slate-700 p-2 sm:p-3 text-right text-green-500 text-xs sm:text-sm">Deposit</th>
-                      <th className="border border-slate-700 p-2 sm:p-3 text-right text-green-500 text-xs sm:text-sm">Interest</th>
-                      <th className="border border-slate-700 p-2 sm:p-3 text-right text-green-500 text-xs sm:text-sm">Ending Balance</th>
+                      <th className="border border-slate-700 p-2 sm:p-3 text-left text-heading-accent text-xs sm:text-sm">Year</th>
+                      <th className="border border-slate-700 p-2 sm:p-3 text-right text-heading-accent text-xs sm:text-sm">Deposit</th>
+                      <th className="border border-slate-700 p-2 sm:p-3 text-right text-heading-accent text-xs sm:text-sm">Interest</th>
+                      <th className="border border-slate-700 p-2 sm:p-3 text-right text-heading-accent text-xs sm:text-sm">Ending Balance</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -960,8 +960,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           {/* Investment Scenarios */}
           <Card className="bg-black border-slate-700 w-full overflow-hidden">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
-                <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
+              <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+                <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
                 Investment Scenarios
               </CardTitle>
             </CardHeader>
@@ -973,7 +973,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
                       <span className="font-medium text-slate-200 text-xs sm:text-sm break-words">{scenario.scenario}</span>
                       <p className="text-xs sm:text-sm text-slate-300 break-words">${scenario.endAmount.toFixed(2)}</p>
                     </div>
-                    <Badge variant={scenario.difference > 0 ? "default" : "destructive"} className={scenario.difference > 0 ? "bg-green-500/20 text-green-400 border-green-500" : "bg-red-500/20 text-red-400 border-red-500"}>
+                    <Badge variant={scenario.difference > 0 ? "default" : "destructive"} className={scenario.difference > 0 ? "bg-green-500/20 text-heading-accent border-green-500" : "bg-red-500/20 text-foreground border-red-500"}>
                       {scenario.difference > 0 ? "+" : ""}${scenario.difference.toFixed(2)}
                     </Badge>
                   </div>
@@ -985,41 +985,41 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           {/* Recommendations */}
           <Card className="bg-black border-slate-700 w-full overflow-hidden">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
-                <Target className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
+              <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+                <Target className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
                 Personalized Recommendations
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-green-500 text-sm sm:text-base break-words">Investment Tips</h4>
+                  <h4 className="font-semibold mb-3 text-heading-accent text-sm sm:text-base break-words">Investment Tips</h4>
                   <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
                     {result.recommendations.investmentTips.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
                         <span>{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-green-500 text-sm sm:text-base break-words">Risk Management</h4>
+                  <h4 className="font-semibold mb-3 text-heading-accent text-sm sm:text-base break-words">Risk Management</h4>
                   <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
                     {result.recommendations.riskManagement.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
                         <span>{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-green-500 text-sm sm:text-base break-words">Portfolio Strategies</h4>
+                  <h4 className="font-semibold mb-3 text-heading-accent text-sm sm:text-base break-words">Portfolio Strategies</h4>
                   <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
                     {result.recommendations.portfolioStrategies.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
                         <span>{rec}</span>
                       </li>
                     ))}
@@ -1035,8 +1035,8 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
       {history.length > 0 && (
         <Card className="bg-black border-slate-700 w-full overflow-hidden">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
-              <History className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
+            <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+              <History className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
               Recent Calculations
             </CardTitle>
           </CardHeader>
@@ -1070,17 +1070,17 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
       {/* Information Section */}
       <Card className="bg-black border-slate-700 w-full overflow-hidden">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
-            <Info className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
+          <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+            <Info className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
             Investment Calculator Features
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
           <div className="p-3 sm:p-4 bg-black border border-slate-700 rounded-lg">
             <div className="flex items-start gap-2">
-              <Info className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+              <Info className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
               <div className="text-xs sm:text-sm min-w-0">
-                <p className="font-medium text-green-500 mb-1 break-words">
+                <p className="font-medium text-heading-accent mb-1 break-words">
                   Professional Investment Analysis
                 </p>
                 <p className="text-slate-300 break-words">
@@ -1092,16 +1092,16 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           
           <div className="text-xs sm:text-sm text-slate-300 space-y-2">
             <p className="break-words">
-              <strong className="text-green-500">Multiple Calculation Modes:</strong> Calculate end amount, return rate, starting amount, additional contributions, or investment length.
+              <strong className="text-heading-accent">Multiple Calculation Modes:</strong> Calculate end amount, return rate, starting amount, additional contributions, or investment length.
             </p>
             <p className="break-words">
-              <strong className="text-green-500">Compound Interest:</strong> Support for various compounding frequencies (annually, quarterly, monthly, daily).
+              <strong className="text-heading-accent">Compound Interest:</strong> Support for various compounding frequencies (annually, quarterly, monthly, daily).
             </p>
             <p className="break-words">
-              <strong className="text-green-500">Investment Analysis:</strong> Complete accumulation schedules and scenario comparisons.
+              <strong className="text-heading-accent">Investment Analysis:</strong> Complete accumulation schedules and scenario comparisons.
             </p>
             <p className="break-words">
-              <strong className="text-green-500">Professional Recommendations:</strong> Personalized investment tips and portfolio strategies.
+              <strong className="text-heading-accent">Professional Recommendations:</strong> Personalized investment tips and portfolio strategies.
             </p>
           </div>
         </CardContent>

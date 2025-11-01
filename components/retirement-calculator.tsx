@@ -428,7 +428,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
       <Card>
         <CardHeader className="pb-8">
           <CardTitle className="flex items-center gap-2">
-            <Calculator className="h-5 w-5 text-blue-500" />
+            <Calculator className="h-5 w-5 text-foreground" />
             Advanced Retirement Calculator
           </CardTitle>
         </CardHeader>
@@ -625,7 +625,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <DollarSign className="h-5 w-5 text-green-500" />
+                <DollarSign className="h-5 w-5 text-heading-accent" />
                 Retirement Analysis Results
               </CardTitle>
             </CardHeader>
@@ -633,13 +633,13 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label className="text-sm font-medium">Target Amount</Label>
-                  <div className="text-3xl font-bold text-green-600">
+                  <div className="text-3xl font-bold text-heading-accent">
                     ${result.targetAmount.toFixed(2)}
                   </div>
                 </div>
                 <div className="space-y-2">
                   <Label className="text-sm font-medium">Monthly Contribution</Label>
-                  <div className="text-3xl font-bold text-blue-600">
+                  <div className="text-3xl font-bold text-foreground">
                     ${result.monthlyContribution.toFixed(2)}
                   </div>
                 </div>
@@ -648,15 +648,15 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
               <div className="grid md:grid-cols-3 gap-4 pt-4 border-t">
                 <div className="text-center">
                   <div className="text-sm text-muted-foreground">Monthly Withdrawal</div>
-                  <div className="text-lg font-semibold text-purple-600">${result.monthlyWithdrawal.toFixed(2)}</div>
+                  <div className="text-lg font-semibold text-foreground">${result.monthlyWithdrawal.toFixed(2)}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-sm text-muted-foreground">Years to Retirement</div>
-                  <div className="text-lg font-semibold text-orange-600">{result.calculations.yearsToRetirement}</div>
+                  <div className="text-lg font-semibold text-foreground">{result.calculations.yearsToRetirement}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-sm text-muted-foreground">Years in Retirement</div>
-                  <div className="text-lg font-semibold text-red-600">{result.calculations.yearsInRetirement}</div>
+                  <div className="text-lg font-semibold text-foreground">{result.calculations.yearsInRetirement}</div>
                 </div>
               </div>
 
@@ -673,27 +673,27 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <BarChart3 className="h-5 w-5 text-blue-500" />
+                <BarChart3 className="h-5 w-5 text-foreground" />
                 Detailed Calculations
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                  <h3 className="font-semibold text-green-800 dark:text-green-200 mb-2">Total Contributions</h3>
-                  <div className="text-2xl font-bold text-green-600">${result.calculations.totalContributions.toFixed(2)}</div>
+                  <h3 className="font-semibold text-heading-accent mb-2">Total Contributions</h3>
+                  <div className="text-2xl font-bold text-heading-accent">${result.calculations.totalContributions.toFixed(2)}</div>
                 </div>
                 <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                  <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Total Growth</h3>
-                  <div className="text-2xl font-bold text-blue-600">${result.calculations.totalGrowth.toFixed(2)}</div>
+                  <h3 className="font-semibold text-foreground mb-2">Total Growth</h3>
+                  <div className="text-2xl font-bold text-foreground">${result.calculations.totalGrowth.toFixed(2)}</div>
                 </div>
                 <div className="p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                  <h3 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">Final Balance</h3>
-                  <div className="text-2xl font-bold text-purple-600">${result.calculations.finalBalance.toFixed(2)}</div>
+                  <h3 className="font-semibold text-foreground mb-2">Final Balance</h3>
+                  <div className="text-2xl font-bold text-foreground">${result.calculations.finalBalance.toFixed(2)}</div>
                 </div>
                 <div className="p-4 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200 dark:border-orange-800">
-                  <h3 className="font-semibold text-orange-800 dark:text-orange-200 mb-2">Income Replacement</h3>
-                  <div className="text-2xl font-bold text-orange-600">{result.calculations.incomeReplacement.toFixed(1)}%</div>
+                  <h3 className="font-semibold text-foreground mb-2">Income Replacement</h3>
+                  <div className="text-2xl font-bold text-foreground">{result.calculations.incomeReplacement.toFixed(1)}%</div>
                 </div>
               </div>
             </CardContent>
@@ -703,7 +703,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-green-500" />
+                <TrendingUp className="h-5 w-5 text-heading-accent" />
                 Return Scenarios
               </CardTitle>
             </CardHeader>
@@ -728,40 +728,40 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Target className="h-5 w-5 text-green-500" />
+                <Target className="h-5 w-5 text-heading-accent" />
                 Personalized Recommendations
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-blue-600">Savings Strategies</h4>
+                  <h4 className="font-semibold mb-3 text-foreground">Savings Strategies</h4>
                   <ul className="space-y-2 text-sm">
                     {result.recommendations.savingsStrategies.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
                         <span>{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-green-600">Investment Tips</h4>
+                  <h4 className="font-semibold mb-3 text-heading-accent">Investment Tips</h4>
                   <ul className="space-y-2 text-sm">
                     {result.recommendations.investmentTips.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
                         <span>{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-purple-600">Retirement Planning</h4>
+                  <h4 className="font-semibold mb-3 text-foreground">Retirement Planning</h4>
                   <ul className="space-y-2 text-sm">
                     {result.recommendations.retirementPlanning.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-purple-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
                         <span>{rec}</span>
                       </li>
                     ))}
@@ -812,19 +812,19 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Info className="h-5 w-5 text-blue-500" />
+            <Info className="h-5 w-5 text-foreground" />
             Retirement Calculator Features
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
           <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
             <div className="flex items-start gap-2">
-              <Info className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+              <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
               <div className="text-sm">
-                <p className="font-medium text-blue-800 dark:text-blue-200 mb-1">
+                <p className="font-medium text-foreground mb-1">
                   Comprehensive Retirement Planning
                 </p>
-                <p className="text-blue-700 dark:text-blue-300">
+                <p className="text-foreground">
                   This calculator provides detailed retirement analysis with multiple calculation modes, inflation adjustments, and personalized recommendations for optimal retirement planning.
                 </p>
               </div>

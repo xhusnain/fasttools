@@ -1249,7 +1249,7 @@ export default function RetirementPlannerPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="p-4 rounded-lg bg-blue-500/10 border border-blue-500/20">
+                      <div className="p-4 rounded-lg bg-blue-500/10 border border-border">
                         <h3 className="font-semibold text-foreground mb-2">North American Retirement Planning</h3>
                         <ul className="text-sm text-muted-foreground space-y-1">
                           <li>• <strong>Retirement Planner Canada</strong> - RRSP and TFSA planning</li>
@@ -1261,7 +1261,7 @@ export default function RetirementPlannerPage() {
                           <li>• <strong>Retirement Planner Winnipeg</strong> - Manitoba retirement planning</li>
           </ul>
                       </div>
-                      <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/20">
+                      <div className="p-4 rounded-lg bg-heading-accent-border/10 border border-heading-accent-border/20">
                         <h3 className="font-semibold text-foreground mb-2">International Retirement Planning</h3>
                         <ul className="text-sm text-muted-foreground space-y-1">
                           <li>• <strong>Retirement Planner Australia</strong> - Superannuation planning</li>
@@ -1287,7 +1287,7 @@ export default function RetirementPlannerPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="p-4 rounded-lg bg-purple-500/10 border border-purple-500/20">
+                      <div className="p-4 rounded-lg bg-purple-500/10 border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Major Financial Institutions</h3>
                         <ul className="text-sm text-muted-foreground space-y-1">
                           <li>• <strong>Retirement Planner Fidelity</strong> - Fidelity retirement tools</li>
@@ -1298,7 +1298,7 @@ export default function RetirementPlannerPage() {
                           <li>• <strong>Dave Ramsey Retirement Planner</strong> - DR retirement methods</li>
             </ul>
           </div>
-                      <div className="p-4 rounded-lg bg-orange-500/10 border border-orange-500/20">
+                      <div className="p-4 rounded-lg bg-orange-500/10 border border-border/20">
                         <h3 className="font-semibold text-foreground mb-2">Advanced Planning Features</h3>
                         <ul className="text-sm text-muted-foreground space-y-1">
                           <li>• <strong>Retirement Planner Monte Carlo Simulation</strong> - Risk analysis</li>

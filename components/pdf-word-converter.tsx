@@ -403,10 +403,10 @@ export function PDFWordConverter() {
               <span className="text-white text-xs font-bold">i</span>
             </div>
             <div className="flex-1">
-              <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-1">
+              <h4 className="font-semibold text-foreground mb-1">
                 {mode === "pdf-to-word" ? "PDF to Word Conversion" : "Word to PDF Conversion"}
               </h4>
-              <p className="text-sm text-blue-800 dark:text-blue-200 leading-relaxed">
+              <p className="text-sm text-foreground leading-relaxed">
                 {mode === "pdf-to-word" 
                   ? "Extracts text from your PDF and creates an editable Word document (DOCX). Text content is preserved with page markers. Perfect for editing PDF text or extracting content."
                   : "Creates a PDF from your Word file. Note: Full document structure conversion (images, formatting) is limited in browser. For complete conversion, use desktop software like Microsoft Word."

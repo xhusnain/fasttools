@@ -339,7 +339,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
             {/* Left Column - Input Fields */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
-                <Settings className="h-4 w-4 text-orange-500" />
+                <Settings className="h-4 w-4 text-foreground" />
                 Transaction Details
               </h3>
               
@@ -466,7 +466,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
             {/* Right Column - Results */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
-                <DollarSign className="h-4 w-4 text-green-500" />
+                <DollarSign className="h-4 w-4 text-heading-accent" />
                 Fee Breakdown
               </h3>
 
@@ -489,7 +489,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                       </div>
                       <div className="flex justify-between">
                         <span className="text-muted-foreground">International:</span>
-                        <span className={`font-medium ${result.isInternational ? 'text-orange-500' : 'text-green-500'}`}>
+                        <span className={`font-medium ${result.isInternational ? 'text-foreground' : 'text-heading-accent'}`}>
                           {result.isInternational ? 'Yes' : 'No'}
                         </span>
                       </div>
@@ -505,18 +505,18 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
 
                     <div className="flex justify-between items-center p-2 bg-card rounded border border-orange-300">
                       <span className="text-sm text-muted-foreground">Percentage Fee:</span>
-                      <span className="text-sm font-bold text-orange-500">{result.currency} {result.percentageFee}</span>
+                      <span className="text-sm font-bold text-foreground">{result.currency} {result.percentageFee}</span>
                     </div>
 
                     <div className="flex justify-between items-center p-2 bg-card rounded border border-orange-300">
                       <span className="text-sm text-muted-foreground">Fixed Fee:</span>
-                      <span className="text-sm font-bold text-orange-500">{result.currency} {result.fixedFee}</span>
+                      <span className="text-sm font-bold text-foreground">{result.currency} {result.fixedFee}</span>
                     </div>
 
                     {result.currencyConversionFee && (
                       <div className="flex justify-between items-center p-2 bg-card rounded border border-orange-300">
                         <span className="text-sm text-muted-foreground">Currency Conversion:</span>
-                        <span className="text-sm font-bold text-orange-500">{result.currency} {result.currencyConversionFee}</span>
+                        <span className="text-sm font-bold text-foreground">{result.currency} {result.currencyConversionFee}</span>
                       </div>
                     )}
                   </div>
@@ -524,13 +524,13 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                   {/* Total Fee */}
                   <div className="flex justify-between items-center p-3 bg-orange-500/10 rounded-lg border-2 border-orange-500">
                     <span className="text-sm font-medium text-foreground">Total Fee:</span>
-                    <span className="text-lg font-bold text-orange-500">{result.currency} {result.totalFee}</span>
+                    <span className="text-lg font-bold text-foreground">{result.currency} {result.totalFee}</span>
                   </div>
 
                   {/* You Receive */}
                   <div className="flex justify-between items-center p-3 bg-green-500/10 rounded-lg border-2 border-green-500">
                     <span className="text-sm font-medium text-foreground">You Receive:</span>
-                    <span className="text-lg font-bold text-green-500">{result.currency} {result.netAmount}</span>
+                    <span className="text-lg font-bold text-heading-accent">{result.currency} {result.netAmount}</span>
                   </div>
 
                   {/* Amount to Charge */}
@@ -538,7 +538,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                     <p className="text-xs text-muted-foreground mb-1">To receive exactly {result.currency} {result.amount}:</p>
                     <div className="flex justify-between items-center">
                       <span className="text-sm font-medium text-foreground">Charge:</span>
-                      <span className="text-lg font-bold text-blue-500">{result.currency} {result.grossAmount}</span>
+                      <span className="text-lg font-bold text-foreground">{result.currency} {result.grossAmount}</span>
                     </div>
                   </div>
 

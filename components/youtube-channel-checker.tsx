@@ -258,10 +258,10 @@ export function YoutubeChannelChecker() {
       {error && (
         <Card className="p-6 bg-card border-red-500 shadow-sm animate-fade-in">
           <div className="flex items-center gap-3">
-            <AlertCircle className="h-6 w-6 text-red-500" />
+            <AlertCircle className="h-6 w-6 text-foreground" />
             <div>
               <h3 className="text-base font-semibold text-foreground">Error</h3>
-              <p className="text-sm text-red-400">{error}</p>
+              <p className="text-sm text-foreground">{error}</p>
             </div>
           </div>
         </Card>
@@ -288,26 +288,26 @@ export function YoutubeChannelChecker() {
                       </>
                     ) : result.error && result.error !== 'Pending...' ? (
                       <>
-                        <AlertCircle className="h-6 w-6 text-orange-500" />
+                        <AlertCircle className="h-6 w-6 text-foreground" />
                         <div className="flex-1 min-w-0">
                           <h4 className="text-sm font-semibold text-foreground truncate">{result.channelName}</h4>
-                          <p className="text-xs text-orange-400">Error</p>
+                          <p className="text-xs text-foreground">Error</p>
                         </div>
                       </>
                     ) : result.available ? (
                       <>
-                        <CheckCircle className="h-6 w-6 text-green-500" />
+                        <CheckCircle className="h-6 w-6 text-heading-accent" />
                         <div className="flex-1 min-w-0">
                           <h4 className="text-sm font-semibold text-foreground truncate">{result.channelName}</h4>
-                          <p className="text-xs text-green-400">Available!</p>
+                          <p className="text-xs text-heading-accent">Available!</p>
                         </div>
                       </>
                     ) : (
                       <>
-                        <XCircle className="h-6 w-6 text-red-500" />
+                        <XCircle className="h-6 w-6 text-foreground" />
                         <div className="flex-1 min-w-0">
                           <h4 className="text-sm font-semibold text-foreground truncate">{result.channelName}</h4>
-                          <p className="text-xs text-red-400">Taken</p>
+                          <p className="text-xs text-foreground">Taken</p>
                         </div>
                       </>
                     )}

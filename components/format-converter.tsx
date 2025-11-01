@@ -1081,7 +1081,7 @@ email = "jane@example.com"`,
           className="min-h-64 font-mono text-sm border-2 border-primary/30 focus:border-primary/60"
         />
         {input && isValid !== null && (
-          <div className={`flex items-center gap-2 text-sm ${isValid ? "text-green-600" : "text-yellow-600"}`}>
+          <div className={`flex items-center gap-2 text-sm ${isValid ? "text-heading-accent" : "text-foreground"}`}>
             {isValid ? (
               <>
                 <CheckCircle2 className="h-4 w-4" />
@@ -1150,8 +1150,8 @@ email = "jane@example.com"`,
           {isPdfGenerated ? (
             <div className="min-h-64 flex items-center justify-center border-2 border-green-500/30 bg-green-50/5 rounded-md p-8">
               <div className="text-center space-y-4">
-                <CheckCircle2 className="h-16 w-16 text-green-600 mx-auto" />
-                <p className="text-lg font-semibold text-green-700">{output}</p>
+                <CheckCircle2 className="h-16 w-16 text-heading-accent mx-auto" />
+                <p className="text-lg font-semibold text-heading-accent">{output}</p>
                 <p className="text-sm text-muted-foreground">
                   Your PDF has been generated and is ready to download.
                 </p>

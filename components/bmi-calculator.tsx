@@ -60,49 +60,49 @@ export function BMICalculator({ onResultChange }: BMICalculatorProps = {}) {
 
       if (bmi < 16) {
         category = "Severe Thinness"
-        color = "text-red-600"
+        color = "text-foreground"
         healthyRange = "18.5 - 24.9"
         riskLevel = "High"
         recommendations = ["Consult a healthcare professional immediately", "Focus on healthy weight gain", "Consider nutritional counseling"]
       } else if (bmi >= 16 && bmi < 17) {
         category = "Moderate Thinness"
-        color = "text-orange-600"
+        color = "text-foreground"
         healthyRange = "18.5 - 24.9"
         riskLevel = "Moderate"
         recommendations = ["Consult a healthcare professional", "Focus on healthy weight gain", "Increase caloric intake with nutritious foods"]
       } else if (bmi >= 17 && bmi < 18.5) {
         category = "Mild Thinness"
-        color = "text-yellow-600"
+        color = "text-foreground"
         healthyRange = "18.5 - 24.9"
         riskLevel = "Low"
         recommendations = ["Consider healthy weight gain", "Focus on balanced nutrition", "Regular exercise"]
       } else if (bmi >= 18.5 && bmi < 25) {
         category = "Normal weight"
-        color = "text-green-600"
+        color = "text-heading-accent"
         healthyRange = "18.5 - 24.9"
         riskLevel = "Low"
         recommendations = ["Maintain current lifestyle", "Continue balanced diet", "Regular physical activity"]
       } else if (bmi >= 25 && bmi < 30) {
         category = "Overweight"
-        color = "text-orange-600"
+        color = "text-foreground"
         healthyRange = "18.5 - 24.9"
         riskLevel = "Moderate"
         recommendations = ["Consider weight loss", "Increase physical activity", "Focus on balanced diet"]
       } else if (bmi >= 30 && bmi < 35) {
         category = "Obese Class I"
-        color = "text-red-600"
+        color = "text-foreground"
         healthyRange = "18.5 - 24.9"
         riskLevel = "High"
         recommendations = ["Consult healthcare professional", "Weight loss program", "Regular exercise", "Dietary changes"]
       } else if (bmi >= 35 && bmi < 40) {
         category = "Obese Class II"
-        color = "text-red-700"
+        color = "text-foreground"
         healthyRange = "18.5 - 24.9"
         riskLevel = "Very High"
         recommendations = ["Immediate medical consultation", "Comprehensive weight management", "Professional guidance required"]
       } else {
         category = "Obese Class III"
-        color = "text-red-800"
+        color = "text-foreground"
         healthyRange = "18.5 - 24.9"
         riskLevel = "Extremely High"
         recommendations = ["Urgent medical consultation", "Specialized treatment program", "Comprehensive health monitoring"]
@@ -167,9 +167,9 @@ Risk Level: ${result.riskLevel}`
     <div className="space-y-8">
       <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-black">
         <CardHeader className="pb-4">
-          <CardTitle className="flex items-center gap-3 text-2xl text-orange-500">
+          <CardTitle className="flex items-center gap-3 text-2xl text-foreground">
             <div className="p-2 bg-orange-500/10 rounded-lg">
-              <Activity className="h-6 w-6 text-orange-500" />
+              <Activity className="h-6 w-6 text-foreground" />
             </div>
             BMI Calculator
           </CardTitle>
@@ -181,7 +181,7 @@ Risk Level: ${result.riskLevel}`
           {/* Unit Selection */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Scale className="h-4 w-4 text-green-500" />
+              <Scale className="h-4 w-4 text-heading-accent" />
               <Label className="text-base font-semibold text-slate-200">Measurement Units</Label>
             </div>
             <div className="flex gap-2 p-1 bg-black border border-slate-700 rounded-lg">
@@ -207,8 +207,8 @@ Risk Level: ${result.riskLevel}`
           {/* Input Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-3">
-              <Label htmlFor="weight" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-green-500">
-                <Scale className="h-4 w-4 text-green-500" />
+              <Label htmlFor="weight" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
+                <Scale className="h-4 w-4 text-heading-accent" />
                 Weight {unit === "metric" ? "(kg)" : "(lbs)"}
               </Label>
               <Input
@@ -222,8 +222,8 @@ Risk Level: ${result.riskLevel}`
             </div>
 
             <div className="space-y-3">
-              <Label htmlFor="height" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-green-500">
-                <Target className="h-4 w-4 text-green-500" />
+              <Label htmlFor="height" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
+                <Target className="h-4 w-4 text-heading-accent" />
                 Height {unit === "metric" ? "(cm)" : "(inches)"}
               </Label>
               <Input
@@ -240,8 +240,8 @@ Risk Level: ${result.riskLevel}`
           {/* Additional Information */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-3">
-              <Label htmlFor="age" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-green-500">
-                <Heart className="h-4 w-4 text-green-500" />
+              <Label htmlFor="age" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
+                <Heart className="h-4 w-4 text-heading-accent" />
                 Age (Optional)
               </Label>
               <Input
@@ -257,8 +257,8 @@ Risk Level: ${result.riskLevel}`
             </div>
 
             <div className="space-y-3">
-              <Label className="text-sm sm:text-base font-semibold flex items-center gap-2 text-green-500">
-                <Zap className="h-4 w-4 text-green-500" />
+              <Label className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
+                <Zap className="h-4 w-4 text-heading-accent" />
                 Gender (Optional)
               </Label>
               <div className="flex gap-2">
@@ -315,9 +315,9 @@ Risk Level: ${result.riskLevel}`
       {result && !isCalculating && (
         <Card className="shadow-lg border-slate-700 animate-fade-in-up bg-black">
           <CardHeader className="pb-4">
-            <CardTitle className="text-2xl flex items-center gap-3 text-orange-500">
+            <CardTitle className="text-2xl flex items-center gap-3 text-foreground">
               <div className="p-2 bg-orange-500/10 rounded-lg">
-                <Activity className="h-6 w-6 text-orange-500" />
+                <Activity className="h-6 w-6 text-foreground" />
               </div>
               Your BMI Result
             </CardTitle>
@@ -328,59 +328,59 @@ Risk Level: ${result.riskLevel}`
           <CardContent className="space-y-8">
             {/* Main BMI Display */}
             <div className="text-center p-6 sm:p-8 rounded-xl bg-black border-2 border-orange-500/20">
-              <div className="text-4xl sm:text-5xl font-bold text-orange-500 mb-2">{result.bmi}</div>
+              <div className="text-4xl sm:text-5xl font-bold text-foreground mb-2">{result.bmi}</div>
               <div className={`text-lg sm:text-xl font-semibold ${result.color} mb-2`}>{result.category}</div>
               <div className="text-sm text-slate-400">kg/m²</div>
             </div>
 
             {/* Advanced Metrics */}
             <div className="space-y-4 p-4 sm:p-6 bg-black rounded-xl border-2 border-slate-700">
-              <h3 className="text-base sm:text-lg font-semibold text-center mb-3 sm:mb-4 flex items-center justify-center gap-2 text-green-500">
-                <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-green-500" />
+              <h3 className="text-base sm:text-lg font-semibold text-center mb-3 sm:mb-4 flex items-center justify-center gap-2 text-heading-accent">
+                <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-heading-accent" />
                 Advanced Metrics
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                 <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-blue-700">
-                  <span className="text-sm font-medium text-blue-400">BMI Prime</span>
-                  <span className="font-bold text-sm text-blue-300">{result.bmiPrime}</span>
+                  <span className="text-sm font-medium text-foreground">BMI Prime</span>
+                  <span className="font-bold text-sm text-foreground">{result.bmiPrime}</span>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-orange-700">
-                  <span className="text-sm font-medium text-orange-400">Ponderal Index</span>
-                  <span className="font-bold text-sm text-orange-300">{result.ponderalIndex}</span>
+                  <span className="text-sm font-medium text-foreground">Ponderal Index</span>
+                  <span className="font-bold text-sm text-foreground">{result.ponderalIndex}</span>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-green-700">
-                  <span className="text-sm font-medium text-green-400">Healthy Range</span>
-                  <span className="font-bold text-sm text-green-300">{result.healthyRange}</span>
+                  <span className="text-sm font-medium text-heading-accent">Healthy Range</span>
+                  <span className="font-bold text-sm text-heading-accent">{result.healthyRange}</span>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-orange-700">
-                  <span className="text-sm font-medium text-orange-400">Risk Level</span>
-                  <span className="font-bold text-sm text-orange-300">{result.riskLevel}</span>
+                  <span className="text-sm font-medium text-foreground">Risk Level</span>
+                  <span className="font-bold text-sm text-foreground">{result.riskLevel}</span>
                 </div>
               </div>
             </div>
 
             {/* Healthy Weight Range */}
             <div className="space-y-4 p-4 sm:p-6 bg-black rounded-xl border-2 border-slate-700">
-              <h3 className="text-base sm:text-lg font-semibold text-green-500 flex items-center gap-2">
-                <Target className="h-4 w-4 sm:h-5 sm:w-5 text-green-500" />
+              <h3 className="text-base sm:text-lg font-semibold text-heading-accent flex items-center gap-2">
+                <Target className="h-4 w-4 sm:h-5 sm:w-5 text-heading-accent" />
                 Healthy Weight Range
               </h3>
               <div className="text-center p-4 bg-black rounded-lg border border-green-700">
-                <div className="text-lg sm:text-xl font-bold text-green-300">{result.healthyWeightRange}</div>
+                <div className="text-lg sm:text-xl font-bold text-heading-accent">{result.healthyWeightRange}</div>
                 <div className="text-sm text-slate-400 mt-1">Recommended weight for your height</div>
               </div>
             </div>
 
             {/* Recommendations */}
             <div className="space-y-4 p-4 sm:p-6 bg-black rounded-xl border-2 border-slate-700">
-              <h3 className="text-base sm:text-lg font-semibold text-green-500 flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-500" />
+              <h3 className="text-base sm:text-lg font-semibold text-heading-accent flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-heading-accent" />
                 Health Recommendations
               </h3>
               <div className="space-y-2">
                 {result.recommendations.map((recommendation, index) => (
                   <div key={index} className="flex items-start gap-2 p-3 bg-black rounded-lg border border-slate-700">
-                    <Sparkles className="h-4 w-4 text-green-400 mt-0.5 flex-shrink-0" />
+                    <Sparkles className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
                     <span className="text-sm text-slate-300">{recommendation}</span>
                   </div>
                 ))}

@@ -307,7 +307,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                   {/* Results Header */}
                   <div className="text-center mb-4">
                     <h3 className="text-lg font-bold text-foreground flex items-center justify-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <CheckCircle className="h-5 w-5 text-heading-accent" />
                       Results
                     </h3>
                   </div>
@@ -322,7 +322,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                     {result.totalDiscounts > 0 && (
                       <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
                         <span className="text-xs text-muted-foreground">Total Discounts:</span>
-                        <span className="text-sm font-bold text-red-500">-${result.totalDiscounts.toFixed(2)}</span>
+                        <span className="text-sm font-bold text-foreground">-${result.totalDiscounts.toFixed(2)}</span>
                       </div>
                     )}
 
@@ -335,13 +335,13 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
 
                     <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
                       <span className="text-xs text-muted-foreground">Tax Amount:</span>
-                      <span className="text-sm font-bold text-blue-500">${result.taxAmount.toFixed(2)}</span>
+                      <span className="text-sm font-bold text-foreground">${result.taxAmount.toFixed(2)}</span>
                     </div>
 
                     {result.totalDiscounts > 0 && (
                       <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
                         <span className="text-xs text-muted-foreground">Effective Rate:</span>
-                        <span className="text-sm font-bold text-orange-500">{result.effectiveDiscountRate.toFixed(2)}%</span>
+                        <span className="text-sm font-bold text-foreground">{result.effectiveDiscountRate.toFixed(2)}%</span>
                       </div>
                     )}
 
@@ -353,10 +353,10 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                     {result.totalSavings > 0 && (
                       <div className="p-3 bg-green-500/10 rounded-lg border border-green-500/20">
                         <div className="flex justify-between items-center">
-                          <span className="text-xs font-medium text-green-700 dark:text-green-300">Total Savings:</span>
-                          <span className="text-lg font-bold text-green-600 dark:text-green-400">${result.totalSavings.toFixed(2)}</span>
+                          <span className="text-xs font-medium text-heading-accent">Total Savings:</span>
+                          <span className="text-lg font-bold text-heading-accent">${result.totalSavings.toFixed(2)}</span>
                         </div>
-                        <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                        <p className="text-xs text-heading-accent mt-1">
                           Save {result.effectiveDiscountRate.toFixed(2)}% off original price
                         </p>
                       </div>

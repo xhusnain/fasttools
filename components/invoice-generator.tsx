@@ -991,7 +991,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                               onClick={() => removeItem(item.id)}
                               variant="outline"
                               size="sm"
-                              className="h-6 w-6 sm:h-8 sm:w-8 p-0 text-red-400 border-red-400 hover:bg-red-400 hover:text-white bg-transparent"
+                              className="h-6 w-6 sm:h-8 sm:w-8 p-0 text-foreground border-red-400 hover:bg-red-400 hover:text-white bg-transparent"
                             >
                               <Trash2 className="h-3 w-3 sm:h-4 sm:w-4" />
                             </Button>
@@ -1006,7 +1006,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                   onClick={addItem}
                   variant="outline"
                   size="sm"
-                  className="mt-4 sm:mt-6 text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white bg-transparent text-xs sm:text-sm px-3 sm:px-4 py-2"
+                  className="mt-4 sm:mt-6 text-foreground border-blue-400 hover:bg-blue-400 hover:text-white bg-transparent text-xs sm:text-sm px-3 sm:px-4 py-2"
                 >
                   <Plus className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                   {t('invoice.items.addItem')}
@@ -1048,7 +1048,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                   </div>
                   <div className="flex justify-between text-sm sm:text-xl font-bold border-t border-slate-600 pt-2 sm:pt-3">
                     <span className="text-white">{t('invoice.totals.total')}</span>
-                    <span className="text-blue-400">{getCurrencySymbol(currency)} {total.toFixed(2)}</span>
+                    <span className="text-foreground">{getCurrencySymbol(currency)} {total.toFixed(2)}</span>
                   </div>
                 </div>
               </div>

@@ -750,7 +750,7 @@ export function PDFToolsAdvanced() {
               </div>
               <div className="flex items-start gap-3">
                 <div className="h-6 w-6 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-xs font-bold text-green-600">✓</span>
+                  <span className="text-xs font-bold text-heading-accent">✓</span>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   <strong className="text-card-foreground">Download:</strong> Your merged PDF will download automatically with all content perfectly preserved
@@ -797,7 +797,7 @@ export function PDFToolsAdvanced() {
               </div>
               <div className="flex items-start gap-3">
                 <div className="h-6 w-6 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-xs font-bold text-green-600">✓</span>
+                  <span className="text-xs font-bold text-heading-accent">✓</span>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   <strong className="text-card-foreground">Download:</strong> Your split/extracted PDF files will download automatically - each file ready to use

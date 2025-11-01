@@ -137,7 +137,7 @@ export function FutureAgePredictor() {
               max={new Date().toISOString().split("T")[0]}
             />
             {errors.birthDate && (
-              <p className="text-xs text-orange-600 mt-1">{errors.birthDate}</p>
+              <p className="text-xs text-foreground mt-1">{errors.birthDate}</p>
             )}
           </div>
 
@@ -160,7 +160,7 @@ export function FutureAgePredictor() {
               min={new Date().getFullYear()}
             />
             {errors.targetYear && (
-              <p className="text-xs text-orange-600 mt-1">{errors.targetYear}</p>
+              <p className="text-xs text-foreground mt-1">{errors.targetYear}</p>
             )}
           </div>
 
@@ -215,7 +215,7 @@ export function FutureAgePredictor() {
               </Button>
               <Button
                 onClick={shareResult}
-                className="flex-1 h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all bg-white text-orange-600 hover:bg-white/90"
+                className="flex-1 h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all bg-white text-foreground hover:bg-white/90"
               >
                 Share Result
               </Button>

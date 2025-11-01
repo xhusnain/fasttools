@@ -5,6 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
 import { GlobalLoading } from "@/components/global-loading"
+import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next"
 import { env } from "@/lib/env"
 import { Analytics } from "@vercel/analytics/next"
@@ -339,7 +340,7 @@ export const metadata: Metadata = {
       }
     
       return (
-        <html lang="en" className={`dark ${montserrat.variable} ${roboto.variable} antialiased`}>
+        <html lang="en" className={`${montserrat.variable} ${roboto.variable} antialiased`} suppressHydrationWarning>
         <head>
             {/* Preload external scripts for better performance - Only in production */}
             {env.isProduction && (
@@ -538,19 +539,26 @@ export const metadata: Metadata = {
             
         </head>
         <body className="bg-background font-sans text-foreground">
-        <a href="#main-content" className="skip-link">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <a href="#main-content" className="skip-link">
             Skip to main content
-            </a>
-            <GlobalLoading />
-            <Header />
-            <main id="main-content" role="main">
-              {children}
-            </main>
-            <Footer />
-            <CookieConsent />
-            {env.isProduction && <Analytics/>}
-            {env.isProduction && <SpeedInsights/>}
-          </body>
+          </a>
+          <GlobalLoading />
+          <Header />
+          <main id="main-content" role="main">
+            {children}
+          </main>
+          <Footer />
+          <CookieConsent />
+          {env.isProduction && <Analytics/>}
+          {env.isProduction && <SpeedInsights/>}
+        </ThemeProvider>
+        </body>
         </html>
       )
     }

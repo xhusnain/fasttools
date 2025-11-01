@@ -240,72 +240,72 @@ export default function FAQPage() {
             {/* FAQ Sections */}
             <div className="space-y-8 mb-12">
               {/* General Questions */}
-              <div className="bg-black border border-orange-500/30 rounded-xl p-6 md:p-8">
+              <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
-                    <Star className="h-5 w-5 md:h-6 md:w-6 text-orange-500" />
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                    <Star className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-orange-500">General Questions</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">General Questions</h2>
                 </div>
                 <div className="space-y-6">
                   {faqs.slice(0, 6).map((faq, index) => (
-                    <div key={index} className="border-l-4 border-green-500 pl-6 py-2">
-                      <h3 className="text-lg md:text-xl font-bold text-green-500 mb-3">{faq.question}</h3>
-                      <p className="text-sm md:text-base text-gray-400 leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                    <div key={index} className="border-l-4 border-heading-accent-border pl-6 py-2">
+                      <h3 className="text-lg md:text-xl font-bold text-heading-accent mb-3">{faq.question}</h3>
+                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Tools & Features Questions */}
-              <div className="bg-black border border-orange-500/30 rounded-xl p-6 md:p-8">
+              <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
-                    <Users className="h-5 w-5 md:h-6 md:w-6 text-orange-500" />
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                    <Users className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-orange-500">Tools & Features</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">Tools & Features</h2>
                 </div>
                 <div className="space-y-6">
                   {faqs.slice(6, 14).map((faq, index) => (
-                    <div key={index + 6} className="border-l-4 border-green-500 pl-6 py-2">
-                      <h3 className="text-lg md:text-xl font-bold text-green-500 mb-3">{faq.question}</h3>
-                      <p className="text-sm md:text-base text-gray-400 leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                    <div key={index + 6} className="border-l-4 border-heading-accent-border pl-6 py-2">
+                      <h3 className="text-lg md:text-xl font-bold text-heading-accent mb-3">{faq.question}</h3>
+                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Privacy & Security Questions */}
-              <div className="bg-black border border-orange-500/30 rounded-xl p-6 md:p-8">
+              <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
-                    <Shield className="h-5 w-5 md:h-6 md:w-6 text-orange-500" />
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                    <Shield className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-orange-500">Privacy & Security</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">Privacy & Security</h2>
                 </div>
                 <div className="space-y-6">
                   {faqs.slice(14, 18).map((faq, index) => (
-                    <div key={index + 14} className="border-l-4 border-green-500 pl-6 py-2">
-                      <h3 className="text-lg md:text-xl font-bold text-green-500 mb-3">{faq.question}</h3>
-                      <p className="text-sm md:text-base text-gray-400 leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                    <div key={index + 14} className="border-l-4 border-heading-accent-border pl-6 py-2">
+                      <h3 className="text-lg md:text-xl font-bold text-heading-accent mb-3">{faq.question}</h3>
+                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Usage & Support Questions */}
-              <div className="bg-black border border-orange-500/30 rounded-xl p-6 md:p-8">
+              <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
-                    <Award className="h-5 w-5 md:h-6 md:w-6 text-orange-500" />
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                    <Award className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-orange-500">Usage & Support</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">Usage & Support</h2>
                 </div>
                 <div className="space-y-6">
                   {faqs.slice(18).map((faq, index) => (
-                    <div key={index + 18} className="border-l-4 border-green-500 pl-6 py-2">
-                      <h3 className="text-lg md:text-xl font-bold text-green-500 mb-3">{faq.question}</h3>
-                      <p className="text-sm md:text-base text-gray-400 leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                    <div key={index + 18} className="border-l-4 border-heading-accent-border pl-6 py-2">
+                      <h3 className="text-lg md:text-xl font-bold text-heading-accent mb-3">{faq.question}</h3>
+                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
                     </div>
                   ))}
                 </div>

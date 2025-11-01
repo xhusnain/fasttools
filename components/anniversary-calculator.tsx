@@ -195,43 +195,43 @@ export function AnniversaryCalculator() {
             <div className="p-4 sm:p-6 rounded-lg bg-gradient-to-br from-pink-500/20 to-red-500/20 border border-pink-400/30 space-y-4 sm:space-y-6 animate-fade-in">
               <div className="text-center space-y-2 sm:space-y-3">
                 <div className="relative">
-                  <Heart className="h-8 w-8 sm:h-12 sm:w-12 text-pink-300 fill-pink-300 mx-auto" />
+                  <Heart className="h-8 w-8 sm:h-12 sm:w-12 text-foreground fill-pink-300 mx-auto" />
                   {isLiveTimer && (
                     <div className="absolute -top-1 -right-1 h-3 w-3 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
                   )}
                 </div>
-                <p className="text-sm sm:text-base text-pink-200">
+                <p className="text-sm sm:text-base text-foreground">
                   {isLiveTimer ? "Live Time Together" : "Time Together"}
                 </p>
                 {isLiveTimer && (
-                  <p className="text-xs text-green-300 animate-pulse">Updating every second</p>
+                  <p className="text-xs text-heading-accent animate-pulse">Updating every second</p>
                 )}
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3">
                 <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-400/30 text-center">
-                  <p className={`text-xl sm:text-2xl font-bold text-blue-300 transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.years}</p>
-                  <p className="text-xs sm:text-sm text-blue-200">Years</p>
+                  <p className={`text-xl sm:text-2xl font-bold text-foreground transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.years}</p>
+                  <p className="text-xs sm:text-sm text-foreground">Years</p>
                 </div>
                 <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-400/30 text-center">
-                  <p className={`text-xl sm:text-2xl font-bold text-purple-300 transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.months}</p>
-                  <p className="text-xs sm:text-sm text-purple-200">Months</p>
+                  <p className={`text-xl sm:text-2xl font-bold text-foreground transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.months}</p>
+                  <p className="text-xs sm:text-sm text-foreground">Months</p>
                 </div>
                 <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-400/30 text-center">
-                  <p className={`text-xl sm:text-2xl font-bold text-green-300 transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.days}</p>
-                  <p className="text-xs sm:text-sm text-green-200">Days</p>
+                  <p className={`text-xl sm:text-2xl font-bold text-heading-accent transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.days}</p>
+                  <p className="text-xs sm:text-sm text-heading-accent">Days</p>
                 </div>
                 <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-orange-500/20 to-orange-600/20 border border-orange-400/30 text-center">
-                  <p className={`text-xl sm:text-2xl font-bold text-orange-300 transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.hours}</p>
-                  <p className="text-xs sm:text-sm text-orange-200">Hours</p>
+                  <p className={`text-xl sm:text-2xl font-bold text-foreground transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.hours}</p>
+                  <p className="text-xs sm:text-sm text-foreground">Hours</p>
                 </div>
                 <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-pink-500/20 to-pink-600/20 border border-pink-400/30 text-center">
-                  <p className={`text-xl sm:text-2xl font-bold text-pink-300 transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.minutes}</p>
-                  <p className="text-xs sm:text-sm text-pink-200">Minutes</p>
+                  <p className={`text-xl sm:text-2xl font-bold text-foreground transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.minutes}</p>
+                  <p className="text-xs sm:text-sm text-foreground">Minutes</p>
                 </div>
                 <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-cyan-500/20 to-cyan-600/20 border border-cyan-400/30 text-center">
-                  <p className={`text-xl sm:text-2xl font-bold text-cyan-300 transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.seconds}</p>
-                  <p className="text-xs sm:text-sm text-cyan-200">Seconds</p>
+                  <p className={`text-xl sm:text-2xl font-bold text-foreground transition-all duration-500 ${isLiveTimer ? 'transform' : ''}`}>{result.seconds}</p>
+                  <p className="text-xs sm:text-sm text-foreground">Seconds</p>
                 </div>
               </div>
 

@@ -228,22 +228,22 @@ export function HashtagCounter() {
               {/* Stats Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 <div className="p-3 sm:p-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-400/30 text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-blue-300">{result.count}</div>
-                  <div className="text-xs sm:text-sm text-blue-200">Existing Hashtags</div>
+                  <div className="text-xl sm:text-2xl font-bold text-foreground">{result.count}</div>
+                  <div className="text-xs sm:text-sm text-foreground">Existing Hashtags</div>
                 </div>
                 
                 {result.generatedHashtags && result.generatedHashtags.length > 0 && (
                   <div className="p-3 sm:p-4 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-400/30 text-center">
-                    <div className="text-xl sm:text-2xl font-bold text-purple-300">{result.generatedHashtags.length}</div>
-                    <div className="text-xs sm:text-sm text-purple-200">AI Generated</div>
+                    <div className="text-xl sm:text-2xl font-bold text-foreground">{result.generatedHashtags.length}</div>
+                    <div className="text-xs sm:text-sm text-foreground">AI Generated</div>
                   </div>
                 )}
                 
                 <div className="p-3 sm:p-4 rounded-xl bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-400/30 text-center sm:col-span-2 lg:col-span-1">
-                  <div className="text-xl sm:text-2xl font-bold text-green-300">
+                  <div className="text-xl sm:text-2xl font-bold text-heading-accent">
                     {result.count + (result.generatedHashtags ? result.generatedHashtags.length : 0)}
                   </div>
-                  <div className="text-xs sm:text-sm text-green-200">Total Hashtags</div>
+                  <div className="text-xs sm:text-sm text-heading-accent">Total Hashtags</div>
                 </div>
               </div>
 
@@ -254,7 +254,7 @@ export function HashtagCounter() {
                   <div className="space-y-3 sm:space-y-4">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
                       <h3 className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
-                        <Hash className="h-4 w-4 text-blue-300" />
+                        <Hash className="h-4 w-4 text-foreground" />
                         Existing Hashtags ({result.hashtags.length})
                       </h3>
                       <Button
@@ -282,7 +282,7 @@ export function HashtagCounter() {
                       {result.hashtags.map((tag, index) => (
                         <Badge
                           key={index}
-                          className="px-2 sm:px-3 py-1 bg-blue-500/20 text-blue-200 border border-blue-400/30 hover:bg-blue-500/30 transition-colors text-xs sm:text-sm"
+                          className="px-2 sm:px-3 py-1 bg-blue-500/20 text-foreground border border-blue-400/30 hover:bg-blue-500/30 transition-colors text-xs sm:text-sm"
                         >
                           {tag}
                         </Badge>
@@ -296,7 +296,7 @@ export function HashtagCounter() {
                   <div className="space-y-3 sm:space-y-4">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
                       <h3 className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
-                        <Sparkles className="h-4 w-4 text-purple-300" />
+                        <Sparkles className="h-4 w-4 text-foreground" />
                         AI Generated Hashtags ({result.generatedHashtags.length})
                       </h3>
                       <Button
@@ -324,7 +324,7 @@ export function HashtagCounter() {
                       {result.generatedHashtags.map((tag, index) => (
                         <Badge
                           key={index}
-                          className="px-2 sm:px-3 py-1 bg-purple-500/20 text-purple-200 border border-purple-400/30 hover:bg-purple-500/30 transition-colors text-xs sm:text-sm"
+                          className="px-2 sm:px-3 py-1 bg-purple-500/20 text-foreground border border-purple-400/30 hover:bg-purple-500/30 transition-colors text-xs sm:text-sm"
                         >
                           {tag}
                         </Badge>

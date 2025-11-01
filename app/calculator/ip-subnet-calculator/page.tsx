@@ -189,7 +189,7 @@ export default function IPSubnetCalculatorPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       
-      <div className="bg-black">
+      <div className="bg-card">
         <div className="container mx-auto px-3 py-6 md:py-8">
           <Breadcrumbs
             items={[
@@ -210,9 +210,9 @@ export default function IPSubnetCalculatorPage() {
             {/* Mobile/Tablet AdSpace after GHeader */}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
-                <span className="text-xs text-slate-400 font-medium">Advertisement</span>
+                <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
               </div>
-              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
+              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
             </div>
 
             <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
@@ -220,51 +220,51 @@ export default function IPSubnetCalculatorPage() {
                 <IPSubnetCalculator />
 
                 {/* How to Use */}
-                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm mt-6 md:mt-8 mb-4 md:mb-6">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mt-6 md:mt-8 mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-orange-500/10 rounded-lg">
-                      <Calculator className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
+                      <Calculator className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                     </div>
                     How to Use Our IP Subnet Calculator
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-white font-bold text-xs">1</span>
+                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
+                          <span className="text-foreground font-bold text-xs">1</span>
                         </div>
                         <div>
-                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Enter IP Address</h3>
-                          <p className="text-xs text-slate-400">Input your IPv4 or IPv6 address in the calculator</p>
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Enter IP Address</h3>
+                          <p className="text-xs text-muted-foreground">Input your IPv4 or IPv6 address in the calculator</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-white font-bold text-xs">2</span>
+                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
+                          <span className="text-foreground font-bold text-xs">2</span>
                         </div>
                         <div>
-                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Set Subnet Mask or CIDR</h3>
-                          <p className="text-xs text-slate-400">Enter subnet mask or CIDR prefix length</p>
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Set Subnet Mask or CIDR</h3>
+                          <p className="text-xs text-muted-foreground">Enter subnet mask or CIDR prefix length</p>
                         </div>
                       </div>
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-white font-bold text-xs">3</span>
+                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
+                          <span className="text-foreground font-bold text-xs">3</span>
                         </div>
                         <div>
-                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Calculate Results</h3>
-                          <p className="text-xs text-slate-400">Click calculate to get comprehensive network analysis</p>
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Calculate Results</h3>
+                          <p className="text-xs text-muted-foreground">Click calculate to get comprehensive network analysis</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-white font-bold text-xs">4</span>
+                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
+                          <span className="text-foreground font-bold text-xs">4</span>
                         </div>
                         <div>
-                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Analyze Network</h3>
-                          <p className="text-xs text-slate-400">Review network address, broadcast, host range, and more</p>
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Analyze Network</h3>
+                          <p className="text-xs text-muted-foreground">Review network address, broadcast, host range, and more</p>
                         </div>
                       </div>
                     </div>
@@ -272,10 +272,10 @@ export default function IPSubnetCalculatorPage() {
                 </div>
 
                 {/* Supported Network Types */}
-                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-orange-500/10 rounded-lg">
-                      <Network className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
+                      <Network className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                     </div>
                     Supported Network Types & Features
                   </h2>
@@ -291,23 +291,23 @@ export default function IPSubnetCalculatorPage() {
                       { type: "Hex Calculator", icon: Zap, desc: "Hexadecimal IP conversion", example: "C0A80100" },
                       { type: "Security Analysis", icon: Shield, desc: "Network security assessment", example: "Private vs public IPs" }
                     ].map(({ type, icon: Icon, desc, example }) => (
-                      <div key={type} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
+                      <div key={type} className="p-2 md:p-3 bg-card rounded-lg border border-border">
                         <div className="flex items-center gap-1.5 mb-1">
-                          <Icon className="h-3 w-3 text-white" />
-                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">{type}</h3>
+                          <Icon className="h-3 w-3 text-foreground" />
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">{type}</h3>
                         </div>
-                        <p className="text-xs text-slate-400 mb-1">{desc}</p>
-                        <p className="text-xs text-orange-400 font-mono bg-orange-500/10 px-1.5 py-0.5 rounded">{example}</p>
+                        <p className="text-xs text-muted-foreground mb-1">{desc}</p>
+                        <p className="text-xs text-foreground font-mono bg-orange-500/10 px-1.5 py-0.5 rounded">{example}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Network Classes */}
-                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-orange-500/10 rounded-lg">
-                      <Globe className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
+                      <Globe className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                     </div>
                     IPv4 Network Classes & Private Ranges
                   </h2>
@@ -320,12 +320,12 @@ export default function IPSubnetCalculatorPage() {
                       { class: "Class E (Reserved)", range: "240.0.0.0 - 255.255.255.255", private: "N/A", hosts: "N/A", mask: "N/A" },
                       { class: "Loopback", range: "127.0.0.0 - 127.255.255.255", private: "127.0.0.1", hosts: "1", mask: "255.0.0.0" }
                     ].map(({ class: className, range, private: privateRange, hosts, mask }, index) => (
-                      <div key={index} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
+                      <div key={index} className="p-2 md:p-3 bg-card rounded-lg border border-border">
                         <div className="flex items-center gap-1.5 mb-1">
-                          <CheckCircle className="h-3 w-3 text-white" />
-                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">{className}</h3>
+                          <CheckCircle className="h-3 w-3 text-foreground" />
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">{className}</h3>
                         </div>
-                        <div className="text-xs text-orange-400 space-y-0.5">
+                        <div className="text-xs text-foreground space-y-0.5">
                           <div className="flex items-center gap-1">
                             <div className="w-1 h-1 bg-orange-400 rounded-full"></div>
                             <span>Range: {range}</span>
@@ -349,51 +349,51 @@ export default function IPSubnetCalculatorPage() {
                 </div>
 
                 {/* Advanced Features */}
-                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-orange-500/10 rounded-lg">
-                      <Target className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
+                      <Target className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                     </div>
                     Advanced Network Calculation Features
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-green-500/10 rounded-lg">
-                          <Network className="h-3 w-3 text-white" />
+                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
+                          <Network className="h-3 w-3 text-foreground" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Network Address Calculation</h3>
-                          <p className="text-xs text-slate-400">Calculate network address using IP and subnet mask</p>
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Network Address Calculation</h3>
+                          <p className="text-xs text-muted-foreground">Calculate network address using IP and subnet mask</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-green-500/10 rounded-lg">
-                          <Shield className="h-3 w-3 text-white" />
+                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
+                          <Shield className="h-3 w-3 text-foreground" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Broadcast Address</h3>
-                          <p className="text-xs text-slate-400">Determine broadcast address for the subnet</p>
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Broadcast Address</h3>
+                          <p className="text-xs text-muted-foreground">Determine broadcast address for the subnet</p>
                         </div>
                       </div>
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-green-500/10 rounded-lg">
-                          <Users className="h-3 w-3 text-white" />
+                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
+                          <Users className="h-3 w-3 text-foreground" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Host Range Analysis</h3>
-                          <p className="text-xs text-slate-400">Calculate usable host addresses and ranges</p>
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Host Range Analysis</h3>
+                          <p className="text-xs text-muted-foreground">Calculate usable host addresses and ranges</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-2">
-                        <div className="p-1 bg-green-500/10 rounded-lg">
-                          <Database className="h-3 w-3 text-white" />
+                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
+                          <Database className="h-3 w-3 text-foreground" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-green-500 text-xs md:text-sm">Binary & Hex Conversion</h3>
-                          <p className="text-xs text-slate-400">Convert between decimal, binary, and hexadecimal</p>
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Binary & Hex Conversion</h3>
+                          <p className="text-xs text-muted-foreground">Convert between decimal, binary, and hexadecimal</p>
                         </div>
                       </div>
                     </div>
@@ -401,10 +401,10 @@ export default function IPSubnetCalculatorPage() {
                 </div>
 
                 {/* FAQ Section */}
-                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-orange-500/10 rounded-lg">
-                      <Info className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
+                      <Info className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                     </div>
                     Frequently Asked Questions
                   </h2>
@@ -511,19 +511,19 @@ export default function IPSubnetCalculatorPage() {
                         answer: "Windows: ipconfig /all, ping [destination], tracert [destination], route print. Linux: ip addr show, ping [destination], traceroute [destination], ip route show. These commands help verify IP configuration, test connectivity, trace routing paths, and display routing tables."
                       }
                     ].map((faq, index) => (
-                      <div key={index} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
-                        <h3 className="font-semibold text-green-500 mb-1 text-xs md:text-sm">{faq.question}</h3>
-                        <p className="text-xs text-slate-400 leading-relaxed">{faq.answer}</p>
+                      <div key={index} className="p-2 md:p-3 bg-card rounded-lg border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-1 text-xs md:text-sm">{faq.question}</h3>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{faq.answer}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Related Tools */}
-                <div className="bg-black border border-slate-700 rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
-                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-orange-500">
+                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-orange-500/10 rounded-lg">
-                      <Calculator className="h-3 w-3 md:h-4 md:w-4 text-orange-500" />
+                      <Calculator className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                     </div>
                     Related Network & IT Calculators
                   </h2>
@@ -545,13 +545,13 @@ export default function IPSubnetCalculatorPage() {
                       <a
                         key={name}
                         href={href}
-                        className="p-2 md:p-3 bg-black rounded-lg border border-slate-700 hover:bg-slate-800 transition-colors group hover:border-green-500/50"
+                        className="p-2 md:p-3 bg-card rounded-lg border border-border hover:bg-slate-800 transition-colors group hover:border-heading-accent-border/50"
                       >
                         <div className="flex items-center gap-2 mb-1">
-                          <Icon className="h-3 w-3 text-white group-hover:text-green-500" />
-                          <h3 className="font-semibold text-green-500 text-xs md:text-sm group-hover:text-green-500">{name}</h3>
+                          <Icon className="h-3 w-3 text-foreground group-hover:text-heading-accent" />
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm group-hover:text-heading-accent">{name}</h3>
                         </div>
-                        <p className="text-xs text-slate-400 group-hover:text-slate-300">{desc}</p>
+                        <p className="text-xs text-muted-foreground group-hover:text-foreground">{desc}</p>
                       </a>
                     ))}
                   </div>
@@ -563,9 +563,9 @@ export default function IPSubnetCalculatorPage() {
                 <div className="sticky top-32 space-y-6">
                   <div>
                     <div className="text-center mb-2">
-                      <span className="text-xs text-slate-400 font-medium">Advertisement</span>
+                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                     </div>
-                    <AdSpace slot="sidebar" className="w-full h-80 border border-slate-700 rounded-xl shadow-sm bg-black" />
+                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
                   </div>
                 </div>
               </div>

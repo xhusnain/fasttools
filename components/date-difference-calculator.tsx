@@ -132,7 +132,7 @@ export function DateDifferenceCalculator() {
 
   return (
     <div className="space-y-4">
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-black">
+      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center gap-2 text-xl">
             <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -205,14 +205,14 @@ export function DateDifferenceCalculator() {
                   </div>
 
                   {/* Business Days Options */}
-                  <div className="space-y-2 p-3 bg-black rounded-lg border border-amber-800">
+                  <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
                     <div className="flex items-center gap-2 mb-2">
-                      <Briefcase className="h-3.5 w-3.5 text-amber-500" />
-                      <h3 className="text-sm font-semibold text-green-500">Business Days</h3>
+                      <Briefcase className="h-3.5 w-3.5 text-primary" />
+                      <h3 className="text-sm font-semibold text-heading-accent">Business Days</h3>
                     </div>
             
             <div className="space-y-2">
-              <div className="flex items-center space-x-2 p-2 bg-black rounded border border-slate-700">
+              <div className="flex items-center space-x-2 p-2 bg-card rounded border border-border">
                 <Checkbox
                   id="business-days"
                   checked={businessDaysOnly}
@@ -225,7 +225,7 @@ export function DateDifferenceCalculator() {
               </div>
               
               {businessDaysOnly && (
-                <div className="flex items-center space-x-2 p-2 bg-black rounded ml-3 border-l-2 border-amber-800 border border-slate-700">
+                <div className="flex items-center space-x-2 p-2 bg-card rounded ml-3 border-l-2 border-border border border-border">
                   <Checkbox
                     id="saturday-business"
                     checked={saturdayIsBusinessDay}
@@ -261,11 +261,11 @@ export function DateDifferenceCalculator() {
       </Card>
 
       {result && !isCalculating && (
-        <Card className="shadow-lg border-primary/20 animate-fade-in-up bg-black">
+        <Card className="shadow-lg border-primary/20 animate-fade-in-up bg-card">
           <CardHeader className="pb-3">
             <CardTitle className="text-lg flex items-center gap-2">
               <div className="p-1.5 bg-green-900/30 rounded-lg">
-                <Calendar className="h-4 w-4 text-green-400" />
+                <Calendar className="h-4 w-4 text-heading-accent" />
               </div>
               Results
             </CardTitle>
@@ -276,58 +276,58 @@ export function DateDifferenceCalculator() {
           <CardContent className="space-y-4">
                     {/* Main Results Grid */}
                     <div className="grid grid-cols-3 gap-2">
-                      <div className="text-center p-3 rounded-lg bg-black border border-blue-800 hover:shadow-md transition-all">
-                        <div className="text-2xl font-bold text-blue-400 mb-1">{result.years}</div>
-                        <div className="text-xs font-semibold text-blue-200">Years</div>
+                      <div className="text-center p-3 rounded-lg bg-card border border-border hover:shadow-md transition-all">
+                        <div className="text-2xl font-bold text-foreground mb-1">{result.years}</div>
+                        <div className="text-xs font-semibold text-foreground">Years</div>
                       </div>
-                      <div className="text-center p-3 rounded-lg bg-black border border-purple-800 hover:shadow-md transition-all">
-                        <div className="text-2xl font-bold text-purple-400 mb-1">{result.months}</div>
-                        <div className="text-xs font-semibold text-purple-200">Months</div>
+                      <div className="text-center p-3 rounded-lg bg-card border border-border hover:shadow-md transition-all">
+                        <div className="text-2xl font-bold text-foreground mb-1">{result.months}</div>
+                        <div className="text-xs font-semibold text-foreground">Months</div>
                       </div>
-                      <div className="text-center p-3 rounded-lg bg-black border border-green-800 hover:shadow-md transition-all">
-                        <div className="text-2xl font-bold text-green-400 mb-1">{result.days}</div>
-                        <div className="text-xs font-semibold text-green-200">Days</div>
+                      <div className="text-center p-3 rounded-lg bg-card border border-border hover:shadow-md transition-all">
+                        <div className="text-2xl font-bold text-heading-accent mb-1">{result.days}</div>
+                        <div className="text-xs font-semibold text-heading-accent">Days</div>
                       </div>
                     </div>
 
             {/* Detailed Breakdown */}
-            <div className="space-y-2 p-3 bg-black rounded-lg border border-slate-700">
-              <h3 className="text-sm font-semibold text-center mb-2 text-green-500">Detailed Breakdown</h3>
+            <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
+              <h3 className="text-sm font-semibold text-center mb-2 text-heading-accent">Detailed Breakdown</h3>
               <div className="grid grid-cols-2 gap-2">
-                <div className="flex justify-between items-center p-2 bg-black rounded border border-slate-700">
-                  <span className="text-xs font-medium text-slate-300">Total Days</span>
-                  <span className="font-bold text-sm text-slate-100">{result.totalDays.toLocaleString()}</span>
+                <div className="flex justify-between items-center p-2 bg-card rounded border border-border">
+                  <span className="text-xs font-medium text-foreground">Total Days</span>
+                  <span className="font-bold text-sm text-foreground">{result.totalDays.toLocaleString()}</span>
                 </div>
                 {businessDaysOnly && (
-                  <div className="flex justify-between items-center p-2 bg-black rounded border border-amber-800">
-                    <span className="text-xs font-medium text-amber-300 flex items-center gap-1">
+                  <div className="flex justify-between items-center p-2 bg-card rounded border border-border">
+                    <span className="text-xs font-medium text-foreground flex items-center gap-1">
                       <Briefcase className="h-3 w-3" />
                       Business Days
                     </span>
-                    <span className="font-bold text-sm text-amber-100">{result.businessDays.toLocaleString()}</span>
+                    <span className="font-bold text-sm text-foreground">{result.businessDays.toLocaleString()}</span>
                   </div>
                 )}
-                <div className="flex justify-between items-center p-2 bg-black rounded border border-slate-700">
-                  <span className="text-xs font-medium text-slate-300">Weeks</span>
-                  <span className="font-bold text-sm text-slate-100">{result.totalWeeks.toLocaleString()}</span>
+                <div className="flex justify-between items-center p-2 bg-card rounded border border-border">
+                  <span className="text-xs font-medium text-foreground">Weeks</span>
+                  <span className="font-bold text-sm text-foreground">{result.totalWeeks.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-black rounded border border-slate-700">
-                  <span className="text-xs font-medium text-slate-300">Hours</span>
-                  <span className="font-bold text-sm text-slate-100">{result.totalHours.toLocaleString()}</span>
+                <div className="flex justify-between items-center p-2 bg-card rounded border border-border">
+                  <span className="text-xs font-medium text-foreground">Hours</span>
+                  <span className="font-bold text-sm text-foreground">{result.totalHours.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-black rounded border border-slate-700">
-                  <span className="text-xs font-medium text-slate-300">Minutes</span>
-                  <span className="font-bold text-sm text-slate-100">{result.totalMinutes.toLocaleString()}</span>
+                <div className="flex justify-between items-center p-2 bg-card rounded border border-border">
+                  <span className="text-xs font-medium text-foreground">Minutes</span>
+                  <span className="font-bold text-sm text-foreground">{result.totalMinutes.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-black rounded border border-slate-700">
-                  <span className="text-xs font-medium text-slate-300">Seconds</span>
-                  <span className="font-bold text-sm text-slate-100">{result.totalSeconds.toLocaleString()}</span>
+                <div className="flex justify-between items-center p-2 bg-card rounded border border-border">
+                  <span className="text-xs font-medium text-foreground">Seconds</span>
+                  <span className="font-bold text-sm text-foreground">{result.totalSeconds.toLocaleString()}</span>
                 </div>
               </div>
             </div>
 
             {/* Answer Summary */}
-            <div className="p-4 bg-black rounded-lg border border-primary/20">
+            <div className="p-4 bg-card rounded-lg border border-primary/20">
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary mb-1">
                   {businessDaysOnly ? result.businessDays : result.totalDays} Days

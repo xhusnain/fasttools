@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { NasaHeroImage } from "@/components/nasa-hero-image"
+import { HeroSectionBg } from "@/components/hero-section-bg"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import type { Metadata } from "next"
 import {
@@ -117,10 +117,10 @@ const categories = [
     description: "Accurate calculators for finance, health, and more",
     icon: Calculator,
     href: "/calculator",
-    borderColor: "border-blue-500/40",
-    hoverBorder: "hover:border-blue-500/80",
+    borderColor: "border-border",
+    hoverBorder: "hover:border-border",
     iconBg: "bg-blue-500/20",
-    iconColor: "text-blue-400",
+    iconColor: "text-foreground",
     glowColor: "hover:shadow-blue-500/20",
     tools: [
       {
@@ -145,7 +145,7 @@ const categories = [
         href: "/calculator/percentage-calculator",
         icon: Percent,
         badge: "Daily",
-        badgeColor: "bg-green-500/90",
+        badgeColor: "bg-heading-accent/90",
       },
       {
         title: "Loan Calculator",
@@ -169,7 +169,7 @@ const categories = [
         href: "/calculator/compound-interest",
         icon: TrendingUp,
         badge: "Investment",
-        badgeColor: "bg-green-500/90",
+        badgeColor: "bg-heading-accent/90",
       },
       {
         title: "Retirement Calculator",
@@ -201,7 +201,7 @@ const categories = [
         href: "/calculator/investment-calculator",
         icon: TrendingUp,
         badge: "Wealth",
-        badgeColor: "bg-green-500/90",
+        badgeColor: "bg-heading-accent/90",
       },
       {
         title: "GPA Calculator",
@@ -259,10 +259,10 @@ const categories = [
     description: "Intelligent tools powered by artificial intelligence",
     icon: Sparkles,
     href: "/ai-tools",
-    borderColor: "border-purple-500/40",
-    hoverBorder: "hover:border-purple-500/80",
+    borderColor: "border-border",
+    hoverBorder: "hover:border-border",
     iconBg: "bg-purple-500/20",
-    iconColor: "text-purple-400",
+    iconColor: "text-foreground",
     glowColor: "hover:shadow-purple-500/20",
     tools: [
       {
@@ -279,7 +279,7 @@ const categories = [
         href: "/ai-tools/lyrics-generator",
         icon: Music,
         badge: "New",
-        badgeColor: "bg-green-500/90",
+        badgeColor: "bg-heading-accent/90",
       },
       {
         title: "AI Caption Generator",
@@ -305,8 +305,8 @@ const categories = [
     description: "Convert between units, formats, and currencies instantly",
     icon: Wrench,
     href: "/converters",
-    borderColor: "border-emerald-500/40",
-    hoverBorder: "hover:border-emerald-500/80",
+    borderColor: "border-border",
+    hoverBorder: "hover:border-border",
     iconBg: "bg-emerald-500/20",
     iconColor: "text-emerald-400",
     glowColor: "hover:shadow-emerald-500/20",
@@ -357,7 +357,7 @@ const categories = [
         href: "/converters/timezone",
         icon: Globe,
         badge: "Time",
-        badgeColor: "bg-green-500/90",
+        badgeColor: "bg-heading-accent/90",
       },
     ],
   },
@@ -367,10 +367,10 @@ const categories = [
     description: "Professional tools for developers and designers",
     icon: Code,
     href: "/dev-tools",
-    borderColor: "border-orange-500/40",
-    hoverBorder: "hover:border-orange-500/80",
+    borderColor: "border-border/40",
+    hoverBorder: "hover:border-border/80",
     iconBg: "bg-orange-500/20",
-    iconColor: "text-orange-400",
+    iconColor: "text-foreground",
     glowColor: "hover:shadow-orange-500/20",
     tools: [
       {
@@ -419,7 +419,7 @@ const categories = [
         href: "/dev-tools/html-beautifier",
         icon: Code,
         badge: "Format",
-        badgeColor: "bg-green-500/90",
+        badgeColor: "bg-heading-accent/90",
       },
       {
         title: "HTML to Markdown",
@@ -445,16 +445,16 @@ const categories = [
     description: "Professional image editing powered by AI",
     icon: Image,
     href: "/image-tools",
-    borderColor: "border-pink-500/40",
-    hoverBorder: "hover:border-pink-500/80",
+    borderColor: "border-border",
+    hoverBorder: "hover:border-border",
     iconBg: "bg-pink-500/20",
-    iconColor: "text-pink-400",
+    iconColor: "text-foreground",
     glowColor: "hover:shadow-pink-500/20",
     tools: [
       {
         title: "Background Remover",
         description: "Remove backgrounds automatically with AI-powered precision for product photos, profile pictures, and marketing materials with professional results",
-        href: "/image-tools/bg-remover",
+        href: "/image-tools/image-background-remover",
         icon: Image,
         badge: "AI",
         badgeColor: "bg-purple-500/90",
@@ -473,23 +473,7 @@ const categories = [
       href: "/image-tools/image-to-text",
         icon: FileText,
         badge: "OCR",
-        badgeColor: "bg-green-500/90",
-      },
-      {
-        title: "Image Compressor",
-        description: "Compress images without quality loss for faster website loading and reduced storage with support for JPG, PNG, and WebP formats",
-        href: "/image-tools/image-compressor",
-        icon: Image,
-        badge: "Optimize",
-        badgeColor: "bg-orange-500/90",
-      },
-      {
-        title: "Image Resizer",
-        description: "Resize images to specific dimensions or percentage scale while maintaining aspect ratio and image quality for web and print",
-        href: "/image-tools/image-resizer",
-        icon: Image,
-        badge: "Resize",
-        badgeColor: "bg-blue-500/90",
+        badgeColor: "bg-heading-accent/90",
       },
     ],
   },
@@ -499,8 +483,8 @@ const categories = [
     description: "Complete PDF management solution",
       icon: FileText,
     href: "/pdf-tools",
-    borderColor: "border-indigo-500/40",
-    hoverBorder: "hover:border-indigo-500/80",
+    borderColor: "border-border",
+    hoverBorder: "hover:border-border",
     iconBg: "bg-indigo-500/20",
     iconColor: "text-indigo-400",
     glowColor: "hover:shadow-indigo-500/20",
@@ -527,7 +511,7 @@ const categories = [
         href: "/pdf-tools/pdf-to-image",
         icon: Image,
         badge: "Convert",
-        badgeColor: "bg-green-500/90",
+        badgeColor: "bg-heading-accent/90",
       },
       {
         title: "Sign PDF",
@@ -538,28 +522,12 @@ const categories = [
         badgeColor: "bg-red-500/90",
       },
       {
-        title: "Merge PDF",
-        description: "Combine multiple PDF files into one document with drag-and-drop reordering for easy document management and organization",
-        href: "/pdf-tools/pdf-merger",
+        title: "Merge & Split PDF",
+        description: "Combine multiple PDFs or split them into separate files by page ranges with drag-and-drop interface for easy document organization",
+        href: "/pdf-tools/pdf-splitter-merger",
         icon: FileText,
-        badge: "Combine",
+        badge: "Pro",
         badgeColor: "bg-purple-500/90",
-      },
-      {
-        title: "Split PDF",
-        description: "Split PDF into separate files by page ranges or extract specific pages for organizing large documents into smaller files",
-        href: "/pdf-tools/pdf-splitter",
-        icon: FileText,
-        badge: "Split",
-        badgeColor: "bg-blue-500/90",
-      },
-      {
-        title: "PDF to Excel",
-        description: "Convert PDF tables to Excel spreadsheets with accurate data extraction for analysis and editing financial documents",
-        href: "/pdf-tools/pdf-excel-converter",
-        icon: FileText,
-        badge: "Convert",
-        badgeColor: "bg-green-500/90",
       },
     ],
   },
@@ -569,16 +537,16 @@ const categories = [
     description: "Optimize content for search engines",
     icon: Search,
     href: "/seo-tools",
-    borderColor: "border-yellow-500/40",
-    hoverBorder: "hover:border-yellow-500/80",
+    borderColor: "border-border",
+    hoverBorder: "hover:border-border",
     iconBg: "bg-yellow-500/20",
-    iconColor: "text-yellow-400",
+    iconColor: "text-foreground",
     glowColor: "hover:shadow-yellow-500/20",
     tools: [
       {
         title: "Meta Tag Generator",
         description: "Generate SEO-optimized meta tags to improve search rankings and click-through rates with perfect title tags and descriptions",
-        href: "/seo-tools/meta-tag-generator",
+        href: "/seo-tools/meta-tags",
         icon: Code,
         badge: "SEO",
         badgeColor: "bg-blue-500/90",
@@ -586,7 +554,7 @@ const categories = [
       {
         title: "Keyword Density Checker",
         description: "Analyze keyword density in content to optimize for search engines and ensure proper keyword distribution without over-optimization",
-        href: "/seo-tools/keyword-density-checker",
+        href: "/seo-tools/keyword-density",
         icon: Search,
         badge: "Analytics",
         badgeColor: "bg-purple-500/90",
@@ -594,34 +562,26 @@ const categories = [
       {
         title: "Lorem Ipsum Generator",
         description: "Generate placeholder text for design mockups and website layouts in various lengths to visualize designs with realistic content",
-        href: "/seo-tools/lorem-ipsum-generator",
+        href: "/seo-tools/lorem-ipsum",
         icon: FileText,
         badge: "Content",
-        badgeColor: "bg-green-500/90",
+        badgeColor: "bg-heading-accent/90",
       },
       {
         title: "Blog Title Generator",
         description: "Create catchy, SEO-friendly titles that boost engagement and traffic with click-worthy headlines optimized for search engines",
-        href: "/seo-tools/blog-title-generator",
+        href: "/seo-tools/blog-titles",
         icon: Sparkles,
         badge: "Creative",
         badgeColor: "bg-pink-500/90",
       },
       {
-        title: "Word Counter",
-        description: "Count words, characters, sentences, and paragraphs in text with reading time estimation for content writers and SEO",
-        href: "/seo-tools/word-counter",
-        icon: FileText,
-        badge: "Writing",
-        badgeColor: "bg-blue-500/90",
-      },
-      {
-        title: "Backlink Checker",
-        description: "Check backlinks pointing to your website for SEO analysis and link building strategy with domain authority metrics",
-        href: "/seo-tools/backlink-checker",
-        icon: Search,
-        badge: "Analysis",
-        badgeColor: "bg-orange-500/90",
+        title: "Hashtag Generator",
+        description: "Generate trending hashtags for social media posts to boost engagement and reach across Instagram, Twitter, TikTok and more",
+        href: "/seo-tools/hashtags",
+        icon: Hash,
+        badge: "Viral",
+        badgeColor: "bg-pink-500/90",
       },
     ],
   },
@@ -631,16 +591,16 @@ const categories = [
     description: "Powerful social media management tools",
     icon: Globe,
     href: "/social-media-tools",
-    borderColor: "border-cyan-500/40",
-    hoverBorder: "hover:border-cyan-500/80",
+    borderColor: "border-border",
+    hoverBorder: "hover:border-border",
     iconBg: "bg-cyan-500/20",
-    iconColor: "text-cyan-400",
+    iconColor: "text-foreground",
     glowColor: "hover:shadow-cyan-500/20",
     tools: [
       {
         title: "Instagram DP Viewer",
         description: "View and download Instagram profile pictures in full resolution HD quality without login or registration required for any public profile",
-        href: "/social-media-tools/instagram-dp-viewer",
+        href: "/social-media-tools/instagram-dp",
         icon: Download,
         badge: "Popular",
         badgeColor: "bg-blue-500/90",
@@ -656,7 +616,7 @@ const categories = [
       {
         title: "YouTube Thumbnail Downloader",
         description: "Download YouTube thumbnails in HD and all available sizes for analysis, inspiration, and content creation workflow",
-        href: "/social-media-tools/youtube-thumbnail-downloader",
+        href: "/social-media-tools/youtube-thumbnail",
         icon: Download,
         badge: "YouTube",
         badgeColor: "bg-orange-500/90",
@@ -664,42 +624,34 @@ const categories = [
     {
       title: "Hashtag Generator",
         description: "Generate trending hashtags for posts to maximize reach and engagement across Instagram, Twitter, TikTok, and other platforms",
-        href: "/social-media-tools/hashtag-generator",
+        href: "/social-media-tools/hashtag-counter",
         icon: Hash,
         badge: "Viral",
+        badgeColor: "bg-heading-accent/90",
+      },
+      {
+        title: "YouTube Tags Extractor",
+        description: "Extract tags from any YouTube video to understand SEO strategy and optimize your own content for better discoverability",
+        href: "/social-media-tools/youtube-tags",
+        icon: Hash,
+        badge: "SEO",
+        badgeColor: "bg-blue-500/90",
+      },
+      {
+        title: "YouTube Channel Checker",
+        description: "Check if your desired YouTube channel name is available before creating your account with real-time availability checking",
+        href: "/social-media-tools/channel-checker",
+        icon: Search,
+        badge: "New",
         badgeColor: "bg-green-500/90",
       },
       {
-        title: "Instagram Story Downloader",
-        description: "Download Instagram stories anonymously in high quality without the account owner knowing for archiving and content reuse",
-        href: "/social-media-tools/instagram-story-downloader",
-        icon: Download,
-        badge: "Instagram",
-        badgeColor: "bg-pink-500/90",
-      },
-      {
-        title: "YouTube Video Downloader",
-        description: "Download YouTube videos in multiple quality options from 144p to 4K for offline viewing and content creation projects",
-        href: "/social-media-tools/youtube-video-downloader",
-        icon: Download,
-        badge: "YouTube",
-        badgeColor: "bg-red-500/90",
-      },
-      {
-        title: "Twitter Video Downloader",
-        description: "Download Twitter videos and GIFs in high quality with fast processing for saving and sharing viral content easily",
-        href: "/social-media-tools/twitter-video-downloader",
-        icon: Download,
-        badge: "Twitter",
-        badgeColor: "bg-blue-500/90",
-      },
-      {
-        title: "Facebook Video Downloader",
-        description: "Download Facebook videos in HD quality from public posts for offline viewing and content archiving purposes",
-        href: "/social-media-tools/facebook-video-downloader",
-        icon: Download,
-        badge: "Facebook",
-        badgeColor: "bg-blue-500/90",
+        title: "Link in Bio Tool",
+        description: "Create beautiful single-page link-in-bio sites for Instagram and TikTok with customizable themes and analytics tracking",
+        href: "/social-media-tools/link-in-bio",
+        icon: Globe,
+        badge: "Creator",
+        badgeColor: "bg-purple-500/90",
       },
     ],
   },
@@ -743,10 +695,10 @@ function CategorySection({ category }: { category: typeof categories[0] }) {
 
                 {/* Content */}
                 <div className="space-y-2.5">
-                  <h3 className="text-lg font-bold text-white group-hover:text-primary transition-colors leading-tight">
+                  <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
                     {tool.title}
                   </h3>
-                  <p className="text-sm text-gray-400 leading-relaxed line-clamp-2">
+                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
                     {tool.description}
                   </p>
                             </div>
@@ -1183,16 +1135,16 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      {/* Hero Section - Black Background with Orange Text */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-black">
-        {/* NASA Background Image */}
-        <NasaHeroImage />
+      {/* Hero Section - Background with Orange Text */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-background">
+        {/* Hero Background Image */}
+        <HeroSectionBg />
         
         <div className="container mx-auto max-w-6xl relative z-10 py-12 sm:py-16 md:py-20">
           <div className="text-center space-y-8 sm:space-y-10">
             {/* Main Heading - Orange Text with Highlights */}
             <div className="space-y-4 sm:space-y-6">
-              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-orange-500 leading-[1.1] tracking-tight px-2">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-foreground leading-[1.1] tracking-tight px-2">
                 <span className="block">
                   Access <span className="relative inline-block px-1">
                     <span className="relative z-10">1000+</span>
@@ -1202,19 +1154,19 @@ export default function Home() {
                 <span className="block">
                   Get work done <span className="relative inline-block px-1">
                     <span className="relative z-10">faster</span>
-                    <span className="absolute bottom-0 left-0 right-0 h-full bg-green-600/40 rounded rotate-1"></span>
+                    <span className="absolute bottom-0 left-0 right-0 h-full bg-heading-accent/40 rounded rotate-1"></span>
                   </span>.
                 </span>
               </h1>
               
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-orange-400/90 font-medium max-w-4xl mx-auto leading-relaxed px-4">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground font-medium max-w-4xl mx-auto leading-relaxed px-4">
                 No registration needed. All tools are free forever and process everything locally in your browser for complete privacy and security.
                 </p>
               </div>
 
             {/* Interactive Stats Display */}
             <div className="pt-6 sm:pt-8 md:pt-12 pb-6 sm:pb-8">
-              <div className="inline-flex items-center gap-2 text-orange-400/80 text-xs md:text-sm font-semibold mb-6">
+              <div className="inline-flex items-center gap-2 text-foreground text-xs md:text-sm font-semibold mb-6">
                 <Sparkles className="h-3 w-3 md:h-4 md:w-4" />
                 <span className="hidden sm:inline">Trusted by professionals worldwide</span>
                 <span className="sm:hidden">Trusted Worldwide</span>
@@ -1226,10 +1178,10 @@ export default function Home() {
                   <div className="relative">
                     <div className="absolute inset-0 bg-orange-500/5 rounded-2xl blur-xl group-hover:bg-orange-500/10 transition-all"></div>
                     <div className="relative space-y-1 md:space-y-2">
-                      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black text-orange-500 tracking-tight">5M+</div>
+                      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black text-foreground tracking-tight">5M+</div>
                       <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-                        <Users className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-orange-400/70" />
-                        <div className="text-[10px] sm:text-xs md:text-base font-bold text-orange-400/70 uppercase tracking-wide text-center">Active Users</div>
+                        <Users className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground/70" />
+                        <div className="text-[10px] sm:text-xs md:text-base font-bold text-foreground uppercase tracking-wide text-center">Active Users</div>
                       </div>
                     </div>
                   </div>
@@ -1240,10 +1192,10 @@ export default function Home() {
                   <div className="relative">
                     <div className="absolute inset-0 bg-orange-500/5 rounded-2xl blur-xl group-hover:bg-orange-500/10 transition-all"></div>
                     <div className="relative space-y-1 md:space-y-2">
-                      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black text-orange-500 tracking-tight">1000+</div>
+                      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black text-foreground tracking-tight">1000+</div>
                       <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-                        <Star className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-orange-400/70" />
-                        <div className="text-[10px] sm:text-xs md:text-base font-bold text-orange-400/70 uppercase tracking-wide text-center">Pro Tools</div>
+                        <Star className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground/70" />
+                        <div className="text-[10px] sm:text-xs md:text-base font-bold text-foreground uppercase tracking-wide text-center">Pro Tools</div>
                       </div>
                     </div>
                   </div>
@@ -1254,10 +1206,10 @@ export default function Home() {
                   <div className="relative">
                     <div className="absolute inset-0 bg-orange-500/5 rounded-2xl blur-xl group-hover:bg-orange-500/10 transition-all"></div>
                     <div className="relative space-y-1 md:space-y-2">
-                      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black text-orange-500 tracking-tight">100%</div>
+                      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black text-foreground tracking-tight">100%</div>
                       <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-                        <Shield className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-orange-400/70" />
-                        <div className="text-[10px] sm:text-xs md:text-base font-bold text-orange-400/70 uppercase tracking-wide text-center">Free Forever</div>
+                        <Shield className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-foreground/70" />
+                        <div className="text-[10px] sm:text-xs md:text-base font-bold text-foreground uppercase tracking-wide text-center">Free Forever</div>
                       </div>
                     </div>
                   </div>
@@ -1267,7 +1219,7 @@ export default function Home() {
 
             {/* Scroll Indicator */}
             <div className="pt-8 sm:pt-12">
-              <Link href="#tools" className="group inline-flex flex-col items-center gap-2 sm:gap-3 text-orange-400/70 hover:text-orange-500 transition-colors">
+              <Link href="#tools" className="group inline-flex flex-col items-center gap-2 sm:gap-3 text-foreground hover:text-primary transition-colors">
                 <div className="text-xs sm:text-sm font-semibold uppercase tracking-wider">Explore Tools</div>
                 <div className="flex flex-col items-center animate-bounce">
                   <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 rotate-90" />
@@ -1305,8 +1257,8 @@ export default function Home() {
                     <CategoryIcon className={`h-5 w-5 sm:h-7 sm:w-7 ${category.iconColor}`} />
                       </div>
                       <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-orange-500">{category.name}</h3>
-                    <p className="text-xs sm:text-sm text-orange-400/80 mt-0.5">{category.description}</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-foreground">{category.name}</h3>
+                    <p className="text-xs sm:text-sm text-foreground/80 mt-0.5">{category.description}</p>
                       </div>
                     </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 px-2">
@@ -1314,7 +1266,7 @@ export default function Home() {
                     const ToolIcon = tool.icon
                     return (
                       <Link key={i} href={tool.href} className="group">
-                        <div className={`relative h-full rounded-xl border-2 ${category.borderColor} ${category.hoverBorder} bg-black p-4 sm:p-6 space-y-3 sm:space-y-4 transition-all duration-300 hover:shadow-xl ${category.glowColor}`}>
+                        <div className={`relative h-full rounded-xl border-2 ${category.borderColor} ${category.hoverBorder} bg-card p-4 sm:p-6 space-y-3 sm:space-y-4 transition-all duration-300 hover:shadow-xl ${category.glowColor}`}>
                           <div className="flex items-start justify-between">
                             <div className={`${tool.badgeColor} px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md text-white text-[10px] sm:text-xs font-semibold`}>
                               {tool.badge}
@@ -1324,10 +1276,10 @@ export default function Home() {
                       </div>
                     </div>
                           <div className="space-y-2 sm:space-y-2.5">
-                            <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-primary transition-colors leading-tight">
+                            <h3 className="text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
                               {tool.title}
-                    </h3>
-                            <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                            </h3>
+                            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                               {tool.description}
                         </p>
                       </div>
@@ -1355,7 +1307,7 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-      <section className="py-12 md:py-20 px-4 bg-black">
+      <section className="py-12 md:py-20 px-4 bg-background">
         <div className="container mx-auto max-w-5xl">
           <div className="mb-8 md:mb-12">
             <GHeader 
@@ -1402,10 +1354,10 @@ export default function Home() {
             ].map((faq, i) => (
               <div 
                 key={i} 
-                className="bg-black backdrop-blur-sm rounded-2xl border-2 border-green-500/20 hover:border-green-500/40 transition-all overflow-hidden p-4 sm:p-5 md:p-8"
+                className="bg-card backdrop-blur-sm rounded-2xl border-2 border-heading-accent-border hover:border-heading-accent-border-hover transition-all overflow-hidden p-4 sm:p-5 md:p-8"
               >
-                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-green-400 leading-tight mb-2 sm:mb-3 md:mb-4">{faq.question}</h3>
-                <p className="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed">{faq.answer}</p>
+                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-heading-accent leading-tight mb-2 sm:mb-3 md:mb-4">{faq.question}</h3>
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>

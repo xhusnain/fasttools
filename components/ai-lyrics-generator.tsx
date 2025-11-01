@@ -289,7 +289,7 @@ export function AiLyricsGenerator() {
               >
                 {copied ? (
                   <>
-                    <Check className="h-4 w-4 mr-2 text-green-600" />
+                    <Check className="h-4 w-4 mr-2 text-heading-accent" />
                     Copied!
                   </>
                 ) : (
@@ -326,10 +326,10 @@ export function AiLyricsGenerator() {
               </div>
             </div>
             <div className="flex-1">
-              <p className="text-sm font-semibold text-green-700 dark:text-green-400 mb-1">
+              <p className="text-sm font-semibold text-heading-accent mb-1">
                 ✨ 100% Original AI-Generated Lyrics
               </p>
-              <p className="text-xs text-green-600 dark:text-green-500">
+              <p className="text-xs text-heading-accent">
                 These lyrics are completely original and free to use. Feel free to modify them for your creative projects, commercial releases, or performances. No attribution required!
               </p>
             </div>

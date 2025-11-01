@@ -138,7 +138,7 @@ export function AiPetNameGenerator() {
         {/* Pet Type */}
         <div className="space-y-2">
           <Label htmlFor="petType" className="text-sm font-medium">
-            Pet Type <span className="text-red-500">*</span>
+            Pet Type <span className="text-foreground">*</span>
           </Label>
           <Select value={petType} onValueChange={setPetType}>
             <SelectTrigger className="border-2 border-orange-500/50 focus:border-orange-500">
@@ -338,7 +338,7 @@ export function AiPetNameGenerator() {
           <div className="flex items-center justify-between">
             <div>
               <h3 className="font-bold text-xl text-primary flex items-center gap-2">
-                <Heart className="h-5 w-5 text-red-500" />
+                <Heart className="h-5 w-5 text-foreground" />
                 {getTotalNamesCount()} Perfect Names for Your {petType.charAt(0).toUpperCase() + petType.slice(1)}
               </h3>
               <p className="text-sm text-muted-foreground mt-1">
@@ -362,17 +362,17 @@ export function AiPetNameGenerator() {
               traditional: { 
                 border: "border-blue-500/30", 
                 bg: "bg-blue-500/20", 
-                text: "text-blue-600 dark:text-blue-400" 
+                text: "text-foreground" 
               },
               modern: { 
                 border: "border-green-500/30", 
                 bg: "bg-green-500/20", 
-                text: "text-green-600 dark:text-green-400" 
+                text: "text-heading-accent" 
               },
               unique: { 
                 border: "border-purple-500/30", 
                 bg: "bg-purple-500/20", 
-                text: "text-purple-600 dark:text-purple-400" 
+                text: "text-foreground" 
               },
               nature: { 
                 border: "border-emerald-500/30", 
@@ -382,17 +382,17 @@ export function AiPetNameGenerator() {
               cultural: { 
                 border: "border-orange-500/30", 
                 bg: "bg-orange-500/20", 
-                text: "text-orange-600 dark:text-orange-400" 
+                text: "text-foreground" 
               },
               celebrity: { 
                 border: "border-pink-500/30", 
                 bg: "bg-pink-500/20", 
-                text: "text-pink-600 dark:text-pink-400" 
+                text: "text-foreground" 
               },
               food: { 
                 border: "border-yellow-500/30", 
                 bg: "bg-yellow-500/20", 
-                text: "text-yellow-600 dark:text-yellow-400" 
+                text: "text-foreground" 
               },
               mythological: { 
                 border: "border-indigo-500/30", 
