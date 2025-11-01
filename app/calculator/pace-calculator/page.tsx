@@ -515,7 +515,7 @@ export default function PaceCalculatorPage() {
                           className="p-2 sm:p-3 md:p-4 bg-black rounded-lg border border-slate-700 hover:bg-slate-900 hover:border-slate-600 transition-colors group w-full overflow-hidden"
                         >
                           <div className="flex items-center gap-2 mb-1">
-                            <Icon className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 flex-shrink-0" />
+                            <Icon className="h-3 w-3 sm:h-4 sm:w-4 text-white flex-shrink-0" />
                             <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">{name}</h3>
                           </div>
                           <p className="text-xs text-slate-300 break-words">{desc}</p>

@@ -298,7 +298,7 @@ export default function GPACalculatorPage() {
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-green-500 font-bold text-xs">1</span>
+                          <span className="text-white font-bold text-xs">1</span>
                   </div>
                   <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Add Your Courses</h3>
@@ -307,7 +307,7 @@ export default function GPACalculatorPage() {
                 </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-green-500 font-bold text-xs">2</span>
+                          <span className="text-white font-bold text-xs">2</span>
                   </div>
                   <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Select Grading System</h3>
@@ -318,7 +318,7 @@ export default function GPACalculatorPage() {
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-green-500 font-bold text-xs">3</span>
+                          <span className="text-white font-bold text-xs">3</span>
                   </div>
                   <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Get Comprehensive Analysis</h3>
@@ -327,7 +327,7 @@ export default function GPACalculatorPage() {
                 </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-green-500 font-bold text-xs">4</span>
+                          <span className="text-white font-bold text-xs">4</span>
                   </div>
                   <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Plan Your Future</h3>
@@ -355,7 +355,7 @@ export default function GPACalculatorPage() {
                 ].map((system, index) => (
                       <div key={index} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
                         <div className="flex items-center gap-1.5 mb-1">
-                          <CheckCircle className="h-3 w-3 text-green-500" />
+                          <CheckCircle className="h-3 w-3 text-white" />
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">{system.system}</h3>
                         </div>
                         <p className="text-xs text-slate-400 mb-1">{system.description}</p>
@@ -384,7 +384,7 @@ export default function GPACalculatorPage() {
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <BarChart3 className="h-3 w-3 text-green-500" />
+                          <BarChart3 className="h-3 w-3 text-white" />
                         </div>
                 <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">GPA Analysis</h3>
@@ -393,7 +393,7 @@ export default function GPACalculatorPage() {
                       </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <PieChart className="h-3 w-3 text-green-500" />
+                          <PieChart className="h-3 w-3 text-white" />
                 </div>
                 <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Grade Distribution</h3>
@@ -404,7 +404,7 @@ export default function GPACalculatorPage() {
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <Target className="h-3 w-3 text-green-500" />
+                          <Target className="h-3 w-3 text-white" />
                         </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Planning Tools</h3>
@@ -413,7 +413,7 @@ export default function GPACalculatorPage() {
                 </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <Building className="h-3 w-3 text-green-500" />
+                          <Building className="h-3 w-3 text-white" />
                 </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Improvement Tips</h3>
@@ -532,7 +532,7 @@ export default function GPACalculatorPage() {
                         className="p-2 md:p-3 bg-black rounded-lg border border-slate-700 hover:bg-slate-800 hover:border-green-500/50 transition-colors group"
                       >
                         <div className="flex items-center gap-2 mb-1">
-                          <Icon className="h-3 w-3 text-green-500" />
+                          <Icon className="h-3 w-3 text-white" />
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">{name}</h3>
                   </div>
                         <p className="text-xs text-slate-400 group-hover:text-slate-300">{desc}</p>

@@ -438,14 +438,14 @@ export default function AgeCalculatorPage() {
                       <h3 className="text-lg font-semibold text-green-500">Personal Use</h3>
                       <div className="space-y-3">
                         <div className="flex items-start gap-3">
-                          <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="h-5 w-5 text-white mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-medium text-slate-200">Birthday Planning</h4>
                             <p className="text-sm text-slate-400">Plan milestone birthdays and celebrations with precise age calculations.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
-                          <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="h-5 w-5 text-white mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-medium text-slate-200">Personal Records</h4>
                             <p className="text-sm text-slate-400">Keep accurate personal records and milestone tracking.</p>
@@ -457,14 +457,14 @@ export default function AgeCalculatorPage() {
                       <h3 className="text-lg font-semibold text-green-500">Official Use</h3>
                       <div className="space-y-3">
                         <div className="flex items-start gap-3">
-                          <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="h-5 w-5 text-white mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-medium text-slate-200">Age Verification</h4>
                             <p className="text-sm text-slate-400">Verify age for legal documents and official requirements.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
-                          <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="h-5 w-5 text-white mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-medium text-slate-200">Legal Documents</h4>
                             <p className="text-sm text-slate-400">Complete government forms and legal documentation accurately.</p>

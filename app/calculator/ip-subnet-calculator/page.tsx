@@ -231,7 +231,7 @@ export default function IPSubnetCalculatorPage() {
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-green-500 font-bold text-xs">1</span>
+                          <span className="text-white font-bold text-xs">1</span>
                         </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Enter IP Address</h3>
@@ -240,7 +240,7 @@ export default function IPSubnetCalculatorPage() {
                       </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-green-500 font-bold text-xs">2</span>
+                          <span className="text-white font-bold text-xs">2</span>
                         </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Set Subnet Mask or CIDR</h3>
@@ -251,7 +251,7 @@ export default function IPSubnetCalculatorPage() {
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-green-500 font-bold text-xs">3</span>
+                          <span className="text-white font-bold text-xs">3</span>
                         </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Calculate Results</h3>
@@ -260,7 +260,7 @@ export default function IPSubnetCalculatorPage() {
                       </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-green-500 font-bold text-xs">4</span>
+                          <span className="text-white font-bold text-xs">4</span>
                         </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Analyze Network</h3>
@@ -293,7 +293,7 @@ export default function IPSubnetCalculatorPage() {
                     ].map(({ type, icon: Icon, desc, example }) => (
                       <div key={type} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
                         <div className="flex items-center gap-1.5 mb-1">
-                          <Icon className="h-3 w-3 text-green-500" />
+                          <Icon className="h-3 w-3 text-white" />
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">{type}</h3>
                         </div>
                         <p className="text-xs text-slate-400 mb-1">{desc}</p>
@@ -322,7 +322,7 @@ export default function IPSubnetCalculatorPage() {
                     ].map(({ class: className, range, private: privateRange, hosts, mask }, index) => (
                       <div key={index} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
                         <div className="flex items-center gap-1.5 mb-1">
-                          <CheckCircle className="h-3 w-3 text-green-500" />
+                          <CheckCircle className="h-3 w-3 text-white" />
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">{className}</h3>
                         </div>
                         <div className="text-xs text-orange-400 space-y-0.5">
@@ -360,7 +360,7 @@ export default function IPSubnetCalculatorPage() {
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <Network className="h-3 w-3 text-green-500" />
+                          <Network className="h-3 w-3 text-white" />
                         </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Network Address Calculation</h3>
@@ -369,7 +369,7 @@ export default function IPSubnetCalculatorPage() {
                       </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <Shield className="h-3 w-3 text-green-500" />
+                          <Shield className="h-3 w-3 text-white" />
                         </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Broadcast Address</h3>
@@ -380,7 +380,7 @@ export default function IPSubnetCalculatorPage() {
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <Users className="h-3 w-3 text-green-500" />
+                          <Users className="h-3 w-3 text-white" />
                         </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Host Range Analysis</h3>
@@ -389,7 +389,7 @@ export default function IPSubnetCalculatorPage() {
                       </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <Database className="h-3 w-3 text-green-500" />
+                          <Database className="h-3 w-3 text-white" />
                         </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Binary & Hex Conversion</h3>
@@ -548,7 +548,7 @@ export default function IPSubnetCalculatorPage() {
                         className="p-2 md:p-3 bg-black rounded-lg border border-slate-700 hover:bg-slate-800 transition-colors group hover:border-green-500/50"
                       >
                         <div className="flex items-center gap-2 mb-1">
-                          <Icon className="h-3 w-3 text-green-500 group-hover:text-green-500" />
+                          <Icon className="h-3 w-3 text-white group-hover:text-green-500" />
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm group-hover:text-green-500">{name}</h3>
                         </div>
                         <p className="text-xs text-slate-400 group-hover:text-slate-300">{desc}</p>

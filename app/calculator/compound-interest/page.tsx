@@ -365,7 +365,7 @@ export default function CompoundInterestPage() {
                   <div className="space-y-2 md:space-y-3">
                     <div className="flex items-start gap-2">
                       <div className="p-1 bg-green-500/10 rounded-lg">
-                        <span className="text-green-500 font-bold text-xs">1</span>
+                        <span className="text-white font-bold text-xs">1</span>
                   </div>
                   <div>
                         <h3 className="font-semibold text-green-500 text-xs md:text-sm">Select Your Country</h3>
@@ -374,7 +374,7 @@ export default function CompoundInterestPage() {
                 </div>
                     <div className="flex items-start gap-2">
                       <div className="p-1 bg-green-500/10 rounded-lg">
-                        <span className="text-green-500 font-bold text-xs">2</span>
+                        <span className="text-white font-bold text-xs">2</span>
                   </div>
                   <div>
                         <h3 className="font-semibold text-green-500 text-xs md:text-sm">Enter Principal Amount</h3>
@@ -383,7 +383,7 @@ export default function CompoundInterestPage() {
                 </div>
                     <div className="flex items-start gap-2">
                       <div className="p-1 bg-green-500/10 rounded-lg">
-                        <span className="text-green-500 font-bold text-xs">3</span>
+                        <span className="text-white font-bold text-xs">3</span>
                   </div>
                   <div>
                         <h3 className="font-semibold text-green-500 text-xs md:text-sm">Set Time Period</h3>
@@ -392,7 +392,7 @@ export default function CompoundInterestPage() {
                 </div>
                     <div className="flex items-start gap-2">
                       <div className="p-1 bg-green-500/10 rounded-lg">
-                        <span className="text-green-500 font-bold text-xs">4</span>
+                        <span className="text-white font-bold text-xs">4</span>
                   </div>
                   <div>
                         <h3 className="font-semibold text-green-500 text-xs md:text-sm">Choose Compounding Frequency</h3>
@@ -401,7 +401,7 @@ export default function CompoundInterestPage() {
                 </div>
                     <div className="flex items-start gap-2">
                       <div className="p-1 bg-green-500/10 rounded-lg">
-                        <span className="text-green-500 font-bold text-xs">5</span>
+                        <span className="text-white font-bold text-xs">5</span>
                   </div>
                   <div>
                         <h3 className="font-semibold text-green-500 text-xs md:text-sm">Get Comprehensive Results</h3>
@@ -462,7 +462,7 @@ export default function CompoundInterestPage() {
                     ].map(({ type, icon: Icon, desc, example }) => (
                       <div key={type} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
                         <div className="flex items-center gap-1.5 mb-1">
-                          <Icon className="h-3 w-3 text-green-500" />
+                          <Icon className="h-3 w-3 text-white" />
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">{type}</h3>
                         </div>
                         <p className="text-xs text-slate-400 mb-1">{desc}</p>
@@ -484,7 +484,7 @@ export default function CompoundInterestPage() {
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <BarChart3 className="h-3 w-3 text-green-500" />
+                          <BarChart3 className="h-3 w-3 text-white" />
                         </div>
                 <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Yearly Breakdown</h3>
@@ -493,7 +493,7 @@ export default function CompoundInterestPage() {
                       </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <PieChart className="h-3 w-3 text-green-500" />
+                          <PieChart className="h-3 w-3 text-white" />
                 </div>
                 <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Effective Rate</h3>
@@ -504,7 +504,7 @@ export default function CompoundInterestPage() {
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <Target className="h-3 w-3 text-green-500" />
+                          <Target className="h-3 w-3 text-white" />
                         </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Custom Rates</h3>

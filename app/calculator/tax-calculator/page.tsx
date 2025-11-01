@@ -461,7 +461,7 @@ export default function TaxCalculatorPage() {
                           <ul className="text-xs text-slate-400 space-y-0.5">
                       {country.features.map((feature, idx) => (
                         <li key={idx} className="flex items-center gap-1">
-                                <CheckCircle className="h-2 w-2 text-green-500" />
+                                <CheckCircle className="h-2 w-2 text-white" />
                           {feature}
                         </li>
                       ))}
@@ -493,7 +493,7 @@ export default function TaxCalculatorPage() {
                       ].map(({ type, icon: Icon, desc, example }) => (
                         <div key={type} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
                           <div className="flex items-center gap-1.5 mb-1">
-                            <Icon className="h-3 w-3 text-green-500" />
+                            <Icon className="h-3 w-3 text-white" />
                             <h3 className="font-semibold text-green-500 text-xs md:text-sm">{type}</h3>
                           </div>
                           <p className="text-xs text-slate-400 mb-1">{desc}</p>
@@ -515,7 +515,7 @@ export default function TaxCalculatorPage() {
                       <div className="space-y-2">
                         <div className="flex items-start gap-2">
                           <div className="p-1 bg-green-500/10 rounded-lg">
-                            <BarChart3 className="h-3 w-3 text-green-500" />
+                            <BarChart3 className="h-3 w-3 text-white" />
                     </div>
                     <div>
                             <h3 className="font-semibold text-green-500 text-xs md:text-sm">Progressive Tax Brackets</h3>
@@ -524,7 +524,7 @@ export default function TaxCalculatorPage() {
                   </div>
                         <div className="flex items-start gap-2">
                           <div className="p-1 bg-green-500/10 rounded-lg">
-                            <Building className="h-3 w-3 text-green-500" />
+                            <Building className="h-3 w-3 text-white" />
                     </div>
                     <div>
                             <h3 className="font-semibold text-green-500 text-xs md:text-sm">Social Security</h3>
@@ -535,7 +535,7 @@ export default function TaxCalculatorPage() {
                       <div className="space-y-2">
                         <div className="flex items-start gap-2">
                           <div className="p-1 bg-green-500/10 rounded-lg">
-                            <PieChart className="h-3 w-3 text-green-500" />
+                            <PieChart className="h-3 w-3 text-white" />
                     </div>
                     <div>
                             <h3 className="font-semibold text-green-500 text-xs md:text-sm">Tax Breakdown</h3>
@@ -544,7 +544,7 @@ export default function TaxCalculatorPage() {
                   </div>
                         <div className="flex items-start gap-2">
                           <div className="p-1 bg-green-500/10 rounded-lg">
-                            <Target className="h-3 w-3 text-green-500" />
+                            <Target className="h-3 w-3 text-white" />
                     </div>
                     <div>
                             <h3 className="font-semibold text-green-500 text-xs md:text-sm">Custom Rates</h3>

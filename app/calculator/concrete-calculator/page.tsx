@@ -239,7 +239,7 @@ export default function ConcreteCalculatorPage() {
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-green-500 font-bold text-xs">1</span>
+                          <span className="text-white font-bold text-xs">1</span>
                         </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Select Project Type</h3>
@@ -248,7 +248,7 @@ export default function ConcreteCalculatorPage() {
             </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-green-500 font-bold text-xs">2</span>
+                          <span className="text-white font-bold text-xs">2</span>
                 </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Enter Dimensions</h3>
@@ -259,7 +259,7 @@ export default function ConcreteCalculatorPage() {
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-green-500 font-bold text-xs">3</span>
+                          <span className="text-white font-bold text-xs">3</span>
             </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Choose Mix Type</h3>
@@ -268,7 +268,7 @@ export default function ConcreteCalculatorPage() {
                 </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <span className="text-green-500 font-bold text-xs">4</span>
+                          <span className="text-white font-bold text-xs">4</span>
                         </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Get Results</h3>
@@ -301,7 +301,7 @@ export default function ConcreteCalculatorPage() {
                     ].map(({ type, icon: Icon, desc, example }) => (
                       <div key={type} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
                         <div className="flex items-center gap-1.5 mb-1">
-                          <Icon className="h-3 w-3 text-green-500" />
+                          <Icon className="h-3 w-3 text-white" />
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">{type}</h3>
                   </div>
                         <p className="text-xs text-slate-400 mb-1">{desc}</p>
@@ -328,7 +328,7 @@ export default function ConcreteCalculatorPage() {
                     ].map(({ mix, strength, ratio, use }, index) => (
                       <div key={index} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
                         <div className="flex items-center gap-1.5 mb-1">
-                          <CheckCircle className="h-3 w-3 text-green-500" />
+                          <CheckCircle className="h-3 w-3 text-white" />
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">{mix}</h3>
                         </div>
                         <p className="text-xs text-slate-400 mb-1">{use}</p>
@@ -359,7 +359,7 @@ export default function ConcreteCalculatorPage() {
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <Volume className="h-3 w-3 text-green-500" />
+                          <Volume className="h-3 w-3 text-white" />
                 </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Volume Calculations</h3>
@@ -368,7 +368,7 @@ export default function ConcreteCalculatorPage() {
                 </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <Weight className="h-3 w-3 text-green-500" />
+                          <Weight className="h-3 w-3 text-white" />
                   </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Weight Analysis</h3>
@@ -379,7 +379,7 @@ export default function ConcreteCalculatorPage() {
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <Package className="h-3 w-3 text-green-500" />
+                          <Package className="h-3 w-3 text-white" />
                 </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Material Breakdown</h3>
@@ -388,7 +388,7 @@ export default function ConcreteCalculatorPage() {
                 </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-green-500/10 rounded-lg">
-                          <Zap className="h-3 w-3 text-green-500" />
+                          <Zap className="h-3 w-3 text-white" />
                 </div>
                         <div>
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm">Professional Tips</h3>
@@ -527,7 +527,7 @@ export default function ConcreteCalculatorPage() {
                         className="p-2 md:p-3 bg-black rounded-lg border border-slate-700 hover:bg-slate-800 transition-colors group hover:border-green-500/50"
                       >
                         <div className="flex items-center gap-2 mb-1">
-                          <Icon className="h-3 w-3 text-green-500 group-hover:text-green-500" />
+                          <Icon className="h-3 w-3 text-white group-hover:text-green-500" />
                           <h3 className="font-semibold text-green-500 text-xs md:text-sm group-hover:text-green-500">{name}</h3>
                 </div>
                         <p className="text-xs text-slate-400 group-hover:text-slate-300">{desc}</p>

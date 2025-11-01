@@ -394,9 +394,9 @@ export default function LoanCalculatorPage() {
                         </ul>
                       </div>
 
-                      <div className="bg-black rounded-lg p-3 border border-green-700">
+                      <div className="bg-black rounded-lg p-3 border border-border">
                         <div className="flex items-center gap-2 mb-2">
-                          <Car className="h-4 w-4 text-green-400" />
+                          <Car className="h-4 w-4 text-white" />
                           <h3 className="text-sm font-semibold text-green-500">Car Loan EMI</h3>
                     </div>
                         <ul className="text-xs text-slate-400 space-y-1">
@@ -563,19 +563,19 @@ export default function LoanCalculatorPage() {
                         <h3 className="text-sm md:text-base font-semibold text-green-500">Features</h3>
                         <div className="space-y-1 md:space-y-2">
                           <div className="flex items-center gap-2">
-                            <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-green-500 flex-shrink-0" />
+                            <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-white flex-shrink-0" />
                             <span className="text-xs text-slate-400">Detailed amortization schedule</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-green-500 flex-shrink-0" />
+                            <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-white flex-shrink-0" />
                             <span className="text-xs text-slate-400">Yearly payment breakdown</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-green-500 flex-shrink-0" />
+                            <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-white flex-shrink-0" />
                             <span className="text-xs text-slate-400">Visual charts and graphs</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-green-500 flex-shrink-0" />
+                            <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-white flex-shrink-0" />
                             <span className="text-xs text-slate-400">Prepayment calculations</span>
                     </div>
                   </div>

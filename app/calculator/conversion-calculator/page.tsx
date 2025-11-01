@@ -565,21 +565,21 @@ export default function ConversionCalculatorPage() {
                       <h3 className="text-lg font-semibold text-green-500">Precision & Accuracy</h3>
                       <div className="space-y-3">
                         <div className="flex items-start gap-3">
-                          <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="h-5 w-5 text-white mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-medium text-slate-800 dark:text-slate-200">International Standards Compliance</h4>
                             <p className="text-sm text-slate-600 dark:text-slate-400">Our calculator adheres to NIST, BIPM, and ISO standards for unit conversions, ensuring accuracy for professional applications.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
-                          <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="h-5 w-5 text-white mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-medium text-slate-800 dark:text-slate-200">6 Decimal Place Precision</h4>
                             <p className="text-sm text-slate-600 dark:text-slate-400">All conversions maintain high precision for scientific, engineering, and financial calculations.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
-                          <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="h-5 w-5 text-white mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-medium text-slate-800 dark:text-slate-200">Real-time Currency Rates</h4>
                             <p className="text-sm text-slate-600 dark:text-slate-400">Currency conversions use current exchange rates for accurate financial calculations.</p>
@@ -653,29 +653,29 @@ export default function ConversionCalculatorPage() {
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <div className="flex items-start gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="h-4 w-4 text-white mt-0.5 flex-shrink-0" />
                           <span className="text-sm text-white">Use decimal notation for precise calculations</span>
                         </div>
                         <div className="flex items-start gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="h-4 w-4 text-white mt-0.5 flex-shrink-0" />
                           <span className="text-sm text-white">Check conversion history for repeated calculations</span>
                         </div>
                         <div className="flex items-start gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="h-4 w-4 text-white mt-0.5 flex-shrink-0" />
                           <span className="text-sm text-white">Use swap function to quickly reverse conversions</span>
                         </div>
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-start gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="h-4 w-4 text-white mt-0.5 flex-shrink-0" />
                           <span className="text-sm text-white">Copy results for easy sharing and documentation</span>
                         </div>
                         <div className="flex items-start gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="h-4 w-4 text-white mt-0.5 flex-shrink-0" />
                           <span className="text-sm text-white">Bookmark for quick access to your favorite conversions</span>
                         </div>
                         <div className="flex items-start gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="h-4 w-4 text-white mt-0.5 flex-shrink-0" />
                           <span className="text-sm text-white">Verify results with multiple conversion sources for critical calculations</span>
                         </div>
                       </div>
@@ -696,19 +696,19 @@ export default function ConversionCalculatorPage() {
                     <h3 className="text-lg font-semibold text-green-500">Professional & Business</h3>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <CheckCircle className="h-4 w-4 text-white" />
                         <span>Engineering calculations and measurements</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <CheckCircle className="h-4 w-4 text-white" />
                         <span>International business and currency conversion</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <CheckCircle className="h-4 w-4 text-white" />
                         <span>Scientific research and data analysis</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <CheckCircle className="h-4 w-4 text-white" />
                         <span>Construction and architectural planning</span>
                       </div>
                     </div>
@@ -717,19 +717,19 @@ export default function ConversionCalculatorPage() {
                     <h3 className="text-lg font-semibold text-green-500">Education & Personal</h3>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <CheckCircle className="h-4 w-4 text-white" />
                         <span>Student homework and assignments</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <CheckCircle className="h-4 w-4 text-white" />
                         <span>Travel planning and currency exchange</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <CheckCircle className="h-4 w-4 text-white" />
                         <span>Cooking and recipe conversions</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <CheckCircle className="h-4 w-4 text-white" />
                         <span>Fitness and health measurements</span>
                       </div>
                     </div>

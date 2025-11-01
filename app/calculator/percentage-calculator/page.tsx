@@ -180,7 +180,7 @@ export default function PercentageCalculatorPage() {
                   ].map(({ type, icon: Icon, desc, example }) => (
                       <div key={type} className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
                       <div className="flex items-center gap-2 mb-2">
-                        <Icon className="h-4 w-4 text-green-500" />
+                        <Icon className="h-4 w-4 text-white" />
                           <h3 className="font-semibold text-green-500 text-sm md:text-base">{type}</h3>
                       </div>
                         <p className="text-xs md:text-sm text-slate-400 mb-2">{desc}</p>

@@ -533,7 +533,7 @@ export default function PregnancyCalculatorPage() {
                           className="p-2 md:p-3 bg-black rounded-lg border border-slate-700 hover:bg-slate-800 hover:border-green-500/50 transition-colors group"
                         >
                           <div className="flex items-center gap-2 mb-1">
-                            <Icon className="h-3 w-3 text-green-500 group-hover:text-green-500" />
+                            <Icon className="h-3 w-3 text-white group-hover:text-green-500" />
                             <h3 className="font-semibold text-green-500 text-xs md:text-sm group-hover:text-green-500">{name}</h3>
                           </div>
                           <p className="text-xs text-slate-400 group-hover:text-slate-300">{desc}</p>

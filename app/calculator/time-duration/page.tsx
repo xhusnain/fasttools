@@ -310,7 +310,7 @@ export default function TimeDurationPage() {
                       ].map(({ type, icon: Icon, desc, example }) => (
                         <div key={type} className="p-2 md:p-3 bg-black rounded-lg border border-slate-700">
                           <div className="flex items-center gap-1.5 mb-1">
-                            <Icon className="h-3 w-3 text-green-500" />
+                            <Icon className="h-3 w-3 text-white" />
                             <h3 className="font-semibold text-green-500 text-xs md:text-sm">{type}</h3>
                     </div>
                           <p className="text-xs text-slate-400 mb-1">{desc}</p>
@@ -333,19 +333,19 @@ export default function TimeDurationPage() {
                         <h3 className="text-sm md:text-base font-semibold text-green-500">Business & Finance</h3>
                         <div className="space-y-1">
                           <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                            <CheckCircle className="h-3 w-3 text-green-500" />
+                            <CheckCircle className="h-3 w-3 text-white" />
                             <span>Calculate total hours worked for payroll</span>
                   </div>
                           <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                            <CheckCircle className="h-3 w-3 text-green-500" />
+                            <CheckCircle className="h-3 w-3 text-white" />
                             <span>Time difference calculator for projects</span>
                     </div>
                           <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                            <CheckCircle className="h-3 w-3 text-green-500" />
+                            <CheckCircle className="h-3 w-3 text-white" />
                             <span>Work hours calculator for SLA tracking</span>
                   </div>
                           <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                            <CheckCircle className="h-3 w-3 text-green-500" />
+                            <CheckCircle className="h-3 w-3 text-white" />
                             <span>Duration calculator in hours and minutes</span>
                     </div>
                   </div>
@@ -354,19 +354,19 @@ export default function TimeDurationPage() {
                         <h3 className="text-sm md:text-base font-semibold text-green-500">Education & Productivity</h3>
                         <div className="space-y-1">
                           <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                            <CheckCircle className="h-3 w-3 text-green-500" />
+                            <CheckCircle className="h-3 w-3 text-white" />
                             <span>Calculate time between two times for study</span>
                   </div>
                           <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                            <CheckCircle className="h-3 w-3 text-green-500" />
+                            <CheckCircle className="h-3 w-3 text-white" />
                             <span>Time gap calculator for exam prep</span>
                     </div>
                           <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                            <CheckCircle className="h-3 w-3 text-green-500" />
+                            <CheckCircle className="h-3 w-3 text-white" />
                             <span>Elapsed time calculator for productivity</span>
                   </div>
                           <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                            <CheckCircle className="h-3 w-3 text-green-500" />
+                            <CheckCircle className="h-3 w-3 text-white" />
                             <span>Time interval calculator for habits</span>
                 </div>
                   </div>

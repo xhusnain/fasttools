@@ -288,7 +288,7 @@ export default function StandardDeviationCalculatorPage() {
                     ].map(({ type, icon: Icon, desc, example }) => (
                       <div key={type} className="p-3 md:p-4 bg-black rounded-lg border border-slate-700">
                         <div className="flex items-center gap-2 mb-2">
-                          <Icon className="h-4 w-4 text-green-500" />
+                          <Icon className="h-4 w-4 text-white" />
                           <h3 className="font-semibold text-green-500 text-sm md:text-base">{type}</h3>
                   </div>
                         <p className="text-xs md:text-sm text-slate-400 mb-2">{desc}</p>
@@ -856,7 +856,7 @@ export default function StandardDeviationCalculatorPage() {
                     className="p-2 md:p-3 bg-black rounded-lg border border-slate-700 hover:bg-slate-800 hover:border-green-500/50 transition-colors group"
                   >
                     <div className="flex items-center gap-2 mb-1">
-                      <Icon className="h-3 w-3 text-green-500 group-hover:text-green-500" />
+                      <Icon className="h-3 w-3 text-white group-hover:text-green-500" />
                       <h3 className="font-semibold text-green-500 text-xs md:text-sm group-hover:text-green-500">{name}</h3>
                     </div>
                     <p className="text-xs text-slate-400 group-hover:text-slate-300">{desc}</p>
