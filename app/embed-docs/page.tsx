@@ -3,13 +3,131 @@ import { Code, Globe, Check } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Embed Background Remover Widget - Documentation",
-  description: "Learn how to embed our free AI background remover widget on your website",
+  title: "Embed Background Remover Widget - Documentation | FastTools",
+  description: "Learn how to embed our free AI-powered background remover widget on your website. Complete guide with iframe code, WordPress, React, Vue.js, Django integration examples. No API key required.",
+  keywords: [
+    "embed background remover",
+    "background remover widget",
+    "iframe background remover",
+    "free background remover embed",
+    "ai background remover widget",
+    "embed image tool",
+    "wordpress background remover",
+    "react background remover",
+    "vue background remover",
+    "django background remover",
+    "javascript background remover",
+    "html background remover",
+    "free embed widget",
+    "background remover iframe",
+    "embed documentation",
+    "fasttools embed",
+    "background removal api",
+    "web widget integration",
+    "image processing widget",
+    "transparent background widget"
+  ],
+  openGraph: {
+    title: "Embed Background Remover Widget - Documentation | FastTools",
+    description: "Learn how to embed our free AI-powered background remover widget on your website. Complete guide with iframe code, WordPress, React, Vue.js, Django integration examples.",
+    type: "website",
+    url: "https://www.fasttools.store/embed-docs",
+    siteName: "FastTools",
+    locale: "en_US",
+    images: [
+      {
+        url: "https://www.fasttools.store/banner.png",
+        width: 1200,
+        height: 630,
+        alt: "FastTools Embed Background Remover Widget Documentation",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Embed Background Remover Widget - Documentation | FastTools",
+    description: "Learn how to embed our free AI-powered background remover widget on your website. Complete guide with iframe code, WordPress, React, Vue.js, Django integration examples.",
+    images: ["https://www.fasttools.store/banner.png"],
+  },
+  alternates: {
+    canonical: "https://www.fasttools.store/embed-docs",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 }
 
 export default function EmbedDocsPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Embed Background Remover Widget - Complete Integration Guide",
+    "description": "Learn how to embed our free AI-powered background remover widget on your website. Complete guide with iframe code, WordPress, React, Vue.js, Django integration examples.",
+    "url": "https://www.fasttools.store/embed-docs",
+    "datePublished": "2024-01-01",
+    "dateModified": new Date().toISOString(),
+    "author": {
+      "@type": "Organization",
+      "name": "FastTools",
+      "url": "https://www.fasttools.store"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "FastTools",
+      "url": "https://www.fasttools.store",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.fasttools.store/logo.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.fasttools.store/embed-docs"
+    },
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "inLanguage": "en-US",
+    "programmingLanguage": ["HTML", "JavaScript", "React", "Vue.js", "Django", "Python"],
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Background Removal",
+        "description": "AI-powered background removal tool"
+      },
+      {
+        "@type": "Thing",
+        "name": "Widget Integration",
+        "description": "Embedding widgets using iframe and JavaScript"
+      },
+      {
+        "@type": "Thing",
+        "name": "Web Development",
+        "description": "Web development and integration guides"
+      }
+    ]
+  }
+
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
       <div className="mb-8">
         <h1 className="text-4xl font-bold mb-4">Embed Background Remover Widget</h1>
         <p className="text-lg text-muted-foreground">
@@ -748,6 +866,7 @@ injectBgRemover('bg-remover-container', '800', '600');`}</code>
         <p>Made with ❤️ by <Link href="/" className="text-primary hover:underline">FastTools</Link></p>
       </div>
     </div>
+    </>
   )
 }
 
