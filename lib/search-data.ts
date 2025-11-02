@@ -11,6 +11,7 @@ export const searchItems: SearchItem[] = [
   { name: "Products", description: "Explore all our product categories and tools", path: "/products", category: "Pages" },
   { name: "Downloaders", description: "Download videos and media from popular platforms", path: "/downloaders", category: "Pages" },
   { name: "API Docs", description: "Comprehensive API documentation for developers", path: "/api-docs", category: "Pages" },
+  { name: "Photo Background Remover", description: "Learn how to embed our free AI background remover widget on your website", path: "/embed-docs", category: "Pages" },
   { name: "About Us", description: "Learn about FastTools and our mission", path: "/about", category: "Pages" },
   { name: "FAQ", description: "Frequently asked questions about FastTools", path: "/faq", category: "Pages" },
   { name: "Privacy Policy", description: "Read our privacy policy and data handling practices", path: "/privacy-policy", category: "Pages" },

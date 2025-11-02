@@ -30,6 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: "https://www.fasttools.store/embed-docs",
+      lastModified: currentDate,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+    },
+    {
       url: "https://www.fasttools.store/downloaders",
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
