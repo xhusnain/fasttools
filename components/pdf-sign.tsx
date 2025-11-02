@@ -672,7 +672,7 @@ export function PDFSign() {
                             e.stopPropagation()
                             removeSignature(sig.id)
                           }}
-                          className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600"
+                          className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-destructive"
                         >
                           <X className="h-3 w-3" />
                         </button>
@@ -751,25 +751,25 @@ export function PDFSign() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4 border-t border-border">
             <div className="text-center">
               <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-2">
-                <Check className="h-5 w-5 text-green-600" />
+                <Check className="h-5 w-5 text-heading-accent" />
               </div>
               <p className="text-xs font-medium">Free Forever</p>
             </div>
             <div className="text-center">
               <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-2">
-                <Check className="h-5 w-5 text-blue-600" />
+                <Check className="h-5 w-5 text-foreground" />
               </div>
               <p className="text-xs font-medium">No Upload</p>
             </div>
             <div className="text-center">
               <div className="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center mx-auto mb-2">
-                <Check className="h-5 w-5 text-purple-600" />
+                <Check className="h-5 w-5 text-foreground" />
               </div>
               <p className="text-xs font-medium">100% Secure</p>
             </div>
             <div className="text-center">
-              <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center mx-auto mb-2">
-                <Check className="h-5 w-5 text-orange-600" />
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                <Check className="h-5 w-5 text-foreground" />
               </div>
               <p className="text-xs font-medium">No Signup</p>
             </div>

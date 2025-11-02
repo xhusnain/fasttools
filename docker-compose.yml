@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  fasttools:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fasttools-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.production
+    environment:
+      - NODE_ENV=production
+    volumes:
+      # Optional: Mount models if needed
+      - ./public/models:/app/public/models:ro
+    networks:
+      - fasttools-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/api/instagram/test"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  fasttools-network:
+    driver: bridge
+

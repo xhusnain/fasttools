@@ -531,7 +531,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                         className="w-full max-w-sm mx-auto h-48 object-cover rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-200"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100">
+                      <div className="absolute inset-0 bg-card/0 group-hover:bg-card/20 transition-colors duration-200 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div className="bg-white/90 text-black px-3 py-1 rounded text-sm font-medium">
                           TikTok Image
                         </div>
@@ -575,7 +575,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                               className="w-full h-32 object-cover rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-200"
                               loading="lazy"
                             />
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <div className="absolute inset-0 bg-card/0 group-hover:bg-card/20 transition-colors duration-200 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100">
                               <div className="bg-white/90 text-black px-2 py-1 rounded text-xs font-medium">
                                 Image {index + 1}
                               </div>

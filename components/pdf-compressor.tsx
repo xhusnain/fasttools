@@ -273,7 +273,7 @@ export function PDFCompressor() {
                         <p className="text-xs text-muted-foreground">
                           {formatFileSize(originalSize)}
                           {compressed && (
-                            <span className="ml-2 text-green-600 dark:text-green-400">
+                            <span className="ml-2 text-heading-accent">
                               → {formatFileSize(compressedSize)} ({((1 - (compressedSize / originalSize)) * 100).toFixed(1)}% smaller)
                             </span>
                           )}
@@ -436,7 +436,7 @@ export function PDFCompressor() {
           <div className="space-y-2 text-sm text-muted-foreground leading-relaxed">
             <p><strong className="text-card-foreground">📦 How It Works:</strong> Our compressor renders each PDF page as an image, then compresses it using JPEG encoding. This achieves 50-90% file size reduction while preserving visual quality.</p>
             <p><strong className="text-card-foreground">🎯 Best For:</strong> Sharing PDFs via email, uploading to websites (file size limits), saving storage space, and faster downloads. Perfect for image-heavy PDFs, scanned documents, and presentations.</p>
-            <p className="text-xs text-orange-600 dark:text-orange-400 pt-2"><strong>⚠️ Important:</strong> Compressed PDFs become image-based. Text remains visible but won't be selectable or searchable. This is necessary for aggressive compression.</p>
+            <p className="text-xs text-foreground pt-2"><strong>⚠️ Important:</strong> Compressed PDFs become image-based. Text remains visible but won't be selectable or searchable. This is necessary for aggressive compression.</p>
           </div>
         </div>
       </div>

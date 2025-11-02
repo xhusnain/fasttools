@@ -138,52 +138,52 @@ export default function CookiePreferencesPage() {
           <div className="max-w-5xl mx-auto">
             {/* Hero Section */}
             <div className="text-center mb-12">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-orange-500">Cookie Policy</h1>
-              <p className="text-base sm:text-lg text-gray-400 mb-6 max-w-3xl mx-auto">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground">Cookie Policy</h1>
+              <p className="text-base sm:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
                 Manage your cookie preferences and learn about how we use cookies in compliance with Google AdSense, Google Analytics, and privacy regulations.
               </p>
               <div className="flex flex-wrap justify-center gap-3 mb-4">
-                <div className="flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-orange-500/30 rounded-lg">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
-                  <span className="text-sm font-medium text-white">GDPR Compliant</span>
+                <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border rounded-lg">
+                  <CheckCircle className="h-4 w-4 text-heading-accent" />
+                  <span className="text-sm font-medium text-foreground">GDPR Compliant</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-orange-500/30 rounded-lg">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
-                  <span className="text-sm font-medium text-white">CCPA Compliant</span>
+                <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border rounded-lg">
+                  <CheckCircle className="h-4 w-4 text-heading-accent" />
+                  <span className="text-sm font-medium text-foreground">CCPA Compliant</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-orange-500/30 rounded-lg">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
-                  <span className="text-sm font-medium text-white">Google AdSense Compliant</span>
+                <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border rounded-lg">
+                  <CheckCircle className="h-4 w-4 text-heading-accent" />
+                  <span className="text-sm font-medium text-foreground">Google AdSense Compliant</span>
                 </div>
               </div>
-              <p className="text-sm text-gray-400">Last updated: November 1, 2025</p>
+              <p className="text-sm text-muted-foreground">Last updated: November 1, 2025</p>
             </div>
 
             {/* Main Content */}
             <div className="space-y-8">
-              <div className="bg-black border border-orange-500/30 rounded-xl p-6">
+              <div className="bg-card border border-border rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center">
-                    <Eye className="h-5 w-5 text-orange-500" />
+                  <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border flex items-center justify-center">
+                    <Eye className="h-5 w-5 text-foreground" />
                   </div>
-                  <h2 className="text-2xl font-bold text-orange-500">What Are Cookies?</h2>
+                  <h2 className="text-2xl font-bold text-foreground">What Are Cookies?</h2>
                 </div>
-                <div className="space-y-4 text-gray-400 leading-relaxed">
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
                     Cookies are small text files that are stored on your device when you visit our website. They help us provide you with a better experience by remembering your preferences and understanding how you use our site.
                   </p>
                   <p>
                     You can learn more about our use of cookies in our{" "}
-                    <Link href="/privacy-policy" className="text-orange-500 hover:text-orange-400 hover:underline font-medium">
+                    <Link href="/privacy-policy" className="text-foreground hover:text-foreground hover:underline font-medium">
                       Privacy Policy
                     </Link>.
                   </p>
-                  <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+                  <div className="bg-primary/10 border border-border rounded-lg p-4">
                     <div className="flex items-start gap-3">
-                      <AlertTriangle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
+                      <AlertTriangle className="h-5 w-5 text-foreground mt-0.5 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold text-white mb-2">Important Notice</h4>
-                        <p className="text-sm text-gray-400">
+                        <h4 className="font-semibold text-foreground mb-2">Important Notice</h4>
+                        <p className="text-sm text-muted-foreground">
                           Our cookie usage complies with Google AdSense policies, Google Analytics requirements, GDPR, and CCPA regulations. You have full control over your cookie preferences.
                         </p>
                       </div>
@@ -193,19 +193,19 @@ export default function CookiePreferencesPage() {
               </div>
 
               {/* Cookie Categories */}
-              <div className="bg-black border border-orange-500/30 rounded-xl p-6">
+              <div className="bg-card border border-border rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center">
-                    <Cookie className="h-5 w-5 text-orange-500" />
+                  <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border flex items-center justify-center">
+                    <Cookie className="h-5 w-5 text-foreground" />
                   </div>
-                  <h2 className="text-2xl font-bold text-orange-500">Cookie Categories</h2>
+                  <h2 className="text-2xl font-bold text-foreground">Cookie Categories</h2>
                 </div>
                 <div className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-black border border-border rounded-lg p-4">
+                    <div className="bg-card border border-border rounded-lg p-4">
                       <div className="flex items-center justify-between mb-3">
-                        <h3 className="text-lg font-semibold text-green-500 flex items-center gap-2">
-                          <Lock className="h-4 w-4 text-orange-500" />
+                        <h3 className="text-lg font-semibold text-heading-accent flex items-center gap-2">
+                          <Lock className="h-4 w-4 text-foreground" />
                           Essential Cookies
                         </h3>
                         <div className="flex items-center">
@@ -215,18 +215,18 @@ export default function CookiePreferencesPage() {
                             disabled
                             className="w-4 h-4"
                           />
-                          <span className="ml-2 text-sm text-gray-400">Always Active</span>
+                          <span className="ml-2 text-sm text-muted-foreground">Always Active</span>
                         </div>
                       </div>
-                      <p className="text-gray-400 text-sm">
+                      <p className="text-muted-foreground text-sm">
                         These cookies are necessary for the website to function properly. They enable basic functions like page navigation, access to secure areas, and remembering your cookie preferences. These cookies cannot be disabled.
                       </p>
                     </div>
 
-                    <div className="bg-black border border-border rounded-lg p-4">
+                    <div className="bg-card border border-border rounded-lg p-4">
                       <div className="flex items-center justify-between mb-3">
-                        <h3 className="text-lg font-semibold text-green-500 flex items-center gap-2">
-                          <BarChart className="h-4 w-4 text-orange-500" />
+                        <h3 className="text-lg font-semibold text-heading-accent flex items-center gap-2">
+                          <BarChart className="h-4 w-4 text-foreground" />
                           Analytics Cookies
                         </h3>
                         <div className="flex items-center">
@@ -238,17 +238,17 @@ export default function CookiePreferencesPage() {
                           />
                         </div>
                       </div>
-                      <p className="text-gray-400 text-sm">
+                      <p className="text-muted-foreground text-sm">
                         These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. We use Google Analytics to analyze website usage and improve our services.
                       </p>
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-black border border-border rounded-lg p-4">
+                    <div className="bg-card border border-border rounded-lg p-4">
                       <div className="flex items-center justify-between mb-3">
-                        <h3 className="text-lg font-semibold text-green-500 flex items-center gap-2">
-                          <Target className="h-4 w-4 text-orange-500" />
+                        <h3 className="text-lg font-semibold text-heading-accent flex items-center gap-2">
+                          <Target className="h-4 w-4 text-foreground" />
                           Advertising Cookies
                         </h3>
                         <div className="flex items-center">
@@ -260,15 +260,15 @@ export default function CookiePreferencesPage() {
                           />
                         </div>
                       </div>
-                      <p className="text-gray-400 text-sm">
+                      <p className="text-muted-foreground text-sm">
                         These cookies are used to display relevant advertisements to you. They may be set by us or by third-party providers like Google AdSense. These cookies help us fund our free services.
                       </p>
                     </div>
 
-                    <div className="bg-black border border-border rounded-lg p-4">
+                    <div className="bg-card border border-border rounded-lg p-4">
                       <div className="flex items-center justify-between mb-3">
-                        <h3 className="text-lg font-semibold text-green-500 flex items-center gap-2">
-                          <Settings className="h-4 w-4 text-orange-500" />
+                        <h3 className="text-lg font-semibold text-heading-accent flex items-center gap-2">
+                          <Settings className="h-4 w-4 text-foreground" />
                           Functional Cookies
                         </h3>
                         <div className="flex items-center">
@@ -280,7 +280,7 @@ export default function CookiePreferencesPage() {
                           />
                         </div>
                       </div>
-                      <p className="text-gray-400 text-sm">
+                      <p className="text-muted-foreground text-sm">
                         These cookies enable enhanced functionality and personalization, such as remembering your preferences and settings for a better user experience.
                       </p>
                     </div>
@@ -289,26 +289,26 @@ export default function CookiePreferencesPage() {
               </div>
 
               {/* Google AdSense Compliance */}
-              <div className="bg-black border border-orange-500/30 rounded-xl p-6">
+              <div className="bg-card border border-border rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center">
-                    <Shield className="h-5 w-5 text-orange-500" />
+                  <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border flex items-center justify-center">
+                    <Shield className="h-5 w-5 text-foreground" />
                   </div>
-                  <h2 className="text-2xl font-bold text-orange-500">Google AdSense & Analytics Compliance</h2>
+                  <h2 className="text-2xl font-bold text-foreground">Google AdSense & Analytics Compliance</h2>
                 </div>
                 <div className="space-y-6">
-                  <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-6">
-                    <h3 className="text-xl font-semibold mb-4 text-green-500 flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
+                  <div className="bg-primary/10 border border-border rounded-lg p-6">
+                    <h3 className="text-xl font-semibold mb-4 text-heading-accent flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-heading-accent" />
                       Google AdSense Cookie Compliance
                     </h3>
-                    <p className="text-gray-400 leading-relaxed mb-4">
+                    <p className="text-muted-foreground leading-relaxed mb-4">
                       We use Google AdSense to display advertisements on our website. Google may use cookies to serve ads based on your prior visits to our website or other websites. Our implementation complies with Google AdSense policies and requirements.
                     </p>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="font-semibold text-white mb-2">Google AdSense Cookies:</h4>
-                        <ul className="space-y-1 text-sm text-gray-400">
+                        <h4 className="font-semibold text-foreground mb-2">Google AdSense Cookies:</h4>
+                        <ul className="space-y-1 text-sm text-muted-foreground">
                           <li>• __gads - Google AdSense advertising cookie</li>
                           <li>• __gpi - Google AdSense interest-based advertising</li>
                           <li>• __gcl_au - Google AdSense conversion tracking</li>
@@ -316,8 +316,8 @@ export default function CookiePreferencesPage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-white mb-2">Google Analytics Cookies:</h4>
-                        <ul className="space-y-1 text-sm text-gray-400">
+                        <h4 className="font-semibold text-foreground mb-2">Google Analytics Cookies:</h4>
+                        <ul className="space-y-1 text-sm text-muted-foreground">
                           <li>• _ga - Google Analytics identification</li>
                           <li>• _ga_[ID] - Google Analytics session data</li>
                           <li>• _gid - Google Analytics user identification</li>
@@ -328,22 +328,22 @@ export default function CookiePreferencesPage() {
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-black border border-border rounded-lg p-4">
-                      <h3 className="text-lg font-semibold mb-3 text-green-500">Cookie Consent Management</h3>
-                      <p className="text-sm text-gray-400 mb-3">
+                    <div className="bg-card border border-border rounded-lg p-4">
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Cookie Consent Management</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
                         We implement proper cookie consent management in compliance with GDPR and CCPA requirements. You can control your cookie preferences at any time.
                       </p>
-                      <p className="text-sm text-gray-400">
+                      <p className="text-sm text-muted-foreground">
                         Your consent is required for non-essential cookies, and you can withdraw consent at any time.
                       </p>
                     </div>
 
-                    <div className="bg-black border border-border rounded-lg p-4">
-                      <h3 className="text-lg font-semibold mb-3 text-green-500">Third-Party Cookie Controls</h3>
-                      <p className="text-sm text-gray-400 mb-3">
+                    <div className="bg-card border border-border rounded-lg p-4">
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Third-Party Cookie Controls</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
                         You can manage third-party cookies through your browser settings or by visiting the opt-out pages provided by Google and other advertising networks.
                       </p>
-                      <p className="text-sm text-gray-400">
+                      <p className="text-sm text-muted-foreground">
                         We respect your privacy choices and implement appropriate technical measures to honor your preferences.
                       </p>
                     </div>
@@ -352,46 +352,46 @@ export default function CookiePreferencesPage() {
               </div>
 
               {/* Third-Party Cookie Management */}
-              <div className="bg-black border border-orange-500/30 rounded-xl p-6">
+              <div className="bg-card border border-border rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center">
-                    <ExternalLink className="h-5 w-5 text-orange-500" />
+                  <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border flex items-center justify-center">
+                    <ExternalLink className="h-5 w-5 text-foreground" />
                   </div>
-                  <h2 className="text-2xl font-bold text-orange-500">Third-Party Cookie Management</h2>
+                  <h2 className="text-2xl font-bold text-foreground">Third-Party Cookie Management</h2>
                 </div>
                 <div className="space-y-4">
-                  <p className="text-gray-400 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     Some cookies on our site are set by third-party services. You can manage these cookies through your browser settings or by visiting the following links:
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
-                    <div className="bg-black border border-border rounded-lg p-4">
-                      <h3 className="text-lg font-semibold mb-3 text-green-500">Google Ad Settings</h3>
-                      <p className="text-sm text-gray-400 mb-3">
+                    <div className="bg-card border border-border rounded-lg p-4">
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Google Ad Settings</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
                         Manage Google advertising cookies and personalized ads
                       </p>
-                      <a href="https://www.google.com/settings/ads" className="flex items-center gap-2 text-orange-500 hover:text-orange-400 hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
+                      <a href="https://www.google.com/settings/ads" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4" />
                         Visit Google Ad Settings
                       </a>
                     </div>
 
-                    <div className="bg-black border border-border rounded-lg p-4">
-                      <h3 className="text-lg font-semibold mb-3 text-green-500">Google Analytics Opt-out</h3>
-                      <p className="text-sm text-gray-400 mb-3">
+                    <div className="bg-card border border-border rounded-lg p-4">
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Google Analytics Opt-out</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
                         Opt out of Google Analytics tracking
                       </p>
-                      <a href="https://tools.google.com/dlpage/gaoptout" className="flex items-center gap-2 text-orange-500 hover:text-orange-400 hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
+                      <a href="https://tools.google.com/dlpage/gaoptout" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4" />
                         Opt out of Analytics
                       </a>
                     </div>
 
-                    <div className="bg-black border border-border rounded-lg p-4">
-                      <h3 className="text-lg font-semibold mb-3 text-green-500">Digital Advertising Alliance</h3>
-                      <p className="text-sm text-gray-400 mb-3">
+                    <div className="bg-card border border-border rounded-lg p-4">
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Digital Advertising Alliance</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
                         Manage advertising preferences across networks
                       </p>
-                      <a href="https://www.aboutads.info/choices/" className="flex items-center gap-2 text-orange-500 hover:text-orange-400 hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
+                      <a href="https://www.aboutads.info/choices/" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium text-sm" target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4" />
                         Visit DAA Opt-out
                       </a>
@@ -401,12 +401,12 @@ export default function CookiePreferencesPage() {
               </div>
 
               {/* Cookie Management Controls */}
-              <div className="bg-black border border-orange-500/30 rounded-xl p-6">
+              <div className="bg-card border border-border rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center">
-                    <Settings className="h-5 w-5 text-orange-500" />
+                  <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border flex items-center justify-center">
+                    <Settings className="h-5 w-5 text-foreground" />
                   </div>
-                  <h2 className="text-2xl font-bold text-orange-500">Manage Your Cookie Preferences</h2>
+                  <h2 className="text-2xl font-bold text-foreground">Manage Your Cookie Preferences</h2>
                 </div>
                 <div className="space-y-6">
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -422,7 +422,7 @@ export default function CookiePreferencesPage() {
                   </div>
                   
                   {saved && (
-                    <div className="mt-4 p-4 bg-green-500/10 border border-green-500/30 text-green-500 rounded-lg flex items-center gap-2">
+                    <div className="mt-4 p-4 bg-heading-accent-border/10 border border-heading-accent-border/30 text-heading-accent rounded-lg flex items-center gap-2">
                       <CheckCircle className="h-5 w-5" />
                       Your cookie preferences have been saved!
                     </div>

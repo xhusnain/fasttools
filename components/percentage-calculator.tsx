@@ -245,15 +245,15 @@ export function PercentageCalculator() {
   return (
     <div className="space-y-6">
       {/* Calculation Type Selector */}
-      <Card className="shadow-lg border-slate-700 hover:shadow-xl transition-all duration-300 bg-black">
+      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-xl text-orange-500">
-            <div className="p-2 bg-orange-500/10 rounded-lg">
-              <IconComponent className="h-5 w-5 text-orange-500" />
+          <CardTitle className="flex items-center gap-2 text-xl text-foreground">
+            <div className="p-2 bg-primary/10 rounded-lg">
+              <IconComponent className="h-5 w-5 text-foreground" />
             </div>
             {typeInfo.title}
           </CardTitle>
-          <CardDescription className="text-base text-slate-400">{typeInfo.description}</CardDescription>
+          <CardDescription className="text-base text-muted-foreground">{typeInfo.description}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Calculation Type Buttons */}
@@ -273,8 +273,8 @@ export function PercentageCalculator() {
                 onClick={() => setCalculationType(type as CalculationType)}
                 className={`h-10 text-xs sm:text-sm font-medium transition-all duration-300 ${
                   calculationType === type
-                    ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg border-orange-500"
-                    : "hover:bg-slate-800 border-slate-700 bg-black text-slate-400 hover:text-orange-500"
+                    ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg border-primary"
+                    : "hover:bg-secondary border-border bg-card text-muted-foreground hover:text-foreground"
                 }`}
               >
                 <Icon className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
@@ -286,9 +286,9 @@ export function PercentageCalculator() {
           {/* Input Fields */}
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="value1" className="text-sm font-medium flex items-center gap-2 text-green-500">
+              <Label htmlFor="value1" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
                 <div className="p-1 bg-green-500/10 rounded">
-                  <Calculator className="h-3 w-3 text-green-500" />
+                  <Calculator className="h-3 w-3 text-heading-accent" />
                 </div>
                 {inputLabels.label1}
               </Label>
@@ -298,14 +298,14 @@ export function PercentageCalculator() {
                 value={value1}
                 onChange={(e) => setValue1(e.target.value)}
                 placeholder={inputLabels.placeholder1}
-                className="h-10 sm:h-12 text-sm sm:text-base px-3 sm:px-4 py-2 sm:py-3 rounded-lg border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 hover:border-orange-500/50"
+                className="h-10 sm:h-12 text-sm sm:text-base px-3 sm:px-4 py-2 sm:py-3 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary hover:border-primary/50"
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="percentage" className="text-sm font-medium flex items-center gap-2 text-green-500">
+              <Label htmlFor="percentage" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
                 <div className="p-1 bg-green-500/10 rounded">
-                  <Percent className="h-3 w-3 text-green-500" />
+                  <Percent className="h-3 w-3 text-heading-accent" />
                 </div>
                 {inputLabels.label2}
               </Label>
@@ -315,15 +315,15 @@ export function PercentageCalculator() {
                 value={percentage}
                 onChange={(e) => setPercentage(e.target.value)}
                 placeholder={inputLabels.placeholder2}
-                className="h-10 sm:h-12 text-sm sm:text-base px-3 sm:px-4 py-2 sm:py-3 rounded-lg border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 hover:border-orange-500/50"
+                className="h-10 sm:h-12 text-sm sm:text-base px-3 sm:px-4 py-2 sm:py-3 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary hover:border-primary/50"
               />
             </div>
 
             {calculationType === "compound" && (
               <div className="space-y-2">
-                <Label htmlFor="value2" className="text-sm font-medium flex items-center gap-2 text-green-500">
+                <Label htmlFor="value2" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
                   <div className="p-1 bg-green-500/10 rounded">
-                    <Target className="h-3 w-3 text-green-500" />
+                    <Target className="h-3 w-3 text-heading-accent" />
                   </div>
                   {inputLabels.label3}
                 </Label>
@@ -333,7 +333,7 @@ export function PercentageCalculator() {
                   value={value2}
                   onChange={(e) => setValue2(e.target.value)}
                   placeholder={inputLabels.placeholder3}
-                  className="h-10 sm:h-12 text-sm sm:text-base px-3 sm:px-4 py-2 sm:py-3 rounded-lg border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 hover:border-orange-500/50"
+                  className="h-10 sm:h-12 text-sm sm:text-base px-3 sm:px-4 py-2 sm:py-3 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary hover:border-primary/50"
                 />
               </div>
             )}
@@ -341,7 +341,7 @@ export function PercentageCalculator() {
 
           <Button
             onClick={calculatePercentage}
-            className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
+            className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
             disabled={!isFormValid() || isCalculating}
           >
             {isCalculating ? (
@@ -363,23 +363,23 @@ export function PercentageCalculator() {
 
       {/* Results */}
       {result && !isCalculating && (
-        <Card className="shadow-lg border-slate-700 animate-fade-in-up bg-black">
+        <Card className="shadow-lg border-border animate-fade-in-up bg-card">
           <CardHeader>
-            <CardTitle className="text-xl flex items-center gap-2 text-orange-500">
-              <div className="p-2 bg-orange-500/10 rounded-lg">
-                <IconComponent className="h-5 w-5 text-orange-500" />
+            <CardTitle className="text-xl flex items-center gap-2 text-foreground">
+              <div className="p-2 bg-primary/10 rounded-lg">
+                <IconComponent className="h-5 w-5 text-foreground" />
               </div>
               {result.type} Result
             </CardTitle>
-            <CardDescription className="text-base text-slate-400">{result.explanation}</CardDescription>
+            <CardDescription className="text-base text-muted-foreground">{result.explanation}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             {/* Main Result Display */}
-            <div className="text-center p-6 sm:p-8 rounded-xl bg-black border border-orange-500/20">
-              <div className="text-3xl sm:text-4xl font-bold text-orange-500 mb-2">
+            <div className="text-center p-6 sm:p-8 rounded-xl bg-card border border-primary/20">
+              <div className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
                 {result.result.toLocaleString()}
               </div>
-              <div className="text-sm sm:text-base text-slate-400">
+              <div className="text-sm sm:text-base text-muted-foreground">
                 {result.type === "Basic Percentage" && `${result.percentage}% of ${result.originalValue}`}
                 {result.type === "Percentage Increase" && `Increase: ${result.difference?.toLocaleString()}`}
                 {result.type === "Percentage Decrease" && `Decrease: ${result.difference?.toLocaleString()}`}
@@ -391,36 +391,36 @@ export function PercentageCalculator() {
             </div>
 
             {/* Detailed Breakdown */}
-            <div className="space-y-3 p-4 sm:p-6 bg-black rounded-lg border border-slate-700">
-              <div className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-green-500">Calculation Details</div>
+            <div className="space-y-3 p-4 sm:p-6 bg-card rounded-lg border border-border">
+              <div className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-heading-accent">Calculation Details</div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-blue-700">
-                  <span className="text-sm text-blue-400">Original Value</span>
-                  <span className="font-semibold text-sm text-blue-300">{result.originalValue.toLocaleString()}</span>
+                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-blue-700">
+                  <span className="text-sm text-foreground">Original Value</span>
+                  <span className="font-semibold text-sm text-foreground">{result.originalValue.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-green-700">
-                  <span className="text-sm text-green-400">Percentage</span>
-                  <span className="font-semibold text-sm text-green-300">{result.percentage}%</span>
+                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-green-700">
+                  <span className="text-sm text-heading-accent">Percentage</span>
+                  <span className="font-semibold text-sm text-heading-accent">{result.percentage}%</span>
                 </div>
                 {result.newValue && (
-                  <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-purple-700">
-                    <span className="text-sm text-purple-400">Final Value</span>
-                    <span className="font-semibold text-sm text-purple-300">{result.newValue.toLocaleString()}</span>
+                  <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-purple-700">
+                    <span className="text-sm text-foreground">Final Value</span>
+                    <span className="font-semibold text-sm text-foreground">{result.newValue.toLocaleString()}</span>
                   </div>
                 )}
                 {result.difference && (
-                  <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-orange-700">
-                    <span className="text-sm text-orange-400">Difference</span>
-                    <span className="font-semibold text-sm text-orange-300">{result.difference.toLocaleString()}</span>
+                  <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-primary">
+                    <span className="text-sm text-foreground">Difference</span>
+                    <span className="font-semibold text-sm text-foreground">{result.difference.toLocaleString()}</span>
                   </div>
                 )}
               </div>
             </div>
 
             {/* Formula Display */}
-            <div className="p-4 sm:p-6 bg-black rounded-xl border border-slate-700">
-              <div className="text-sm sm:text-base font-semibold text-green-500 mb-2">Formula Used:</div>
-              <div className="text-xs sm:text-sm text-slate-300 font-mono bg-black border border-slate-700 p-2 rounded">
+            <div className="p-4 sm:p-6 bg-card rounded-xl border border-border">
+              <div className="text-sm sm:text-base font-semibold text-heading-accent mb-2">Formula Used:</div>
+              <div className="text-xs sm:text-sm text-foreground font-mono bg-card border border-border p-2 rounded">
                 {result.formula}
               </div>
             </div>
@@ -429,7 +429,7 @@ export function PercentageCalculator() {
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
               <Button
                 onClick={copyResult}
-                className="flex-1 h-10 sm:h-12 text-sm sm:text-base font-semibold transition-all duration-300 border border-green-700 hover:bg-slate-800 text-green-300 bg-black"
+                className="flex-1 h-10 sm:h-12 text-sm sm:text-base font-semibold transition-all duration-300 border border-green-700 hover:bg-secondary text-heading-accent bg-card"
               >
                 {copied ? (
                   <>

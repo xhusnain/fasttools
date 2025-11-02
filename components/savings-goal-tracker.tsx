@@ -260,9 +260,9 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
-      case 'high': return 'text-red-500'
-      case 'medium': return 'text-yellow-500'
-      case 'low': return 'text-green-500'
+      case 'high': return 'text-foreground'
+      case 'medium': return 'text-foreground'
+      case 'low': return 'text-heading-accent'
       default: return 'text-muted-foreground'
     }
   }
@@ -357,7 +357,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                         {getCategoryIcon(expense.category)}
                         <span className="text-xs font-medium text-foreground">{expense.category}</span>
                         {expense.name && <span className="text-xs text-muted-foreground">- {expense.name}</span>}
-                        {expense.amount > 0 && <span className="text-xs text-green-500">${expense.amount}</span>}
+                        {expense.amount > 0 && <span className="text-xs text-heading-accent">${expense.amount}</span>}
                       </div>
                       <div className="flex items-center gap-1">
                         {openExpenseId !== expense.id && (
@@ -365,7 +365,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                             onClick={() => setOpenExpenseId(expense.id)}
                             variant="ghost"
                             size="sm"
-                            className="h-5 w-5 p-0 text-blue-500 hover:text-blue-700"
+                            className="h-5 w-5 p-0 text-foreground hover:text-foreground"
                           >
                             <Plus className="h-3 w-3" />
                           </Button>
@@ -374,7 +374,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                           onClick={() => removeExpense(expense.id)}
                           variant="ghost"
                           size="sm"
-                          className="h-5 w-5 p-0 text-red-500 hover:text-red-700"
+                          className="h-5 w-5 p-0 text-foreground hover:text-foreground"
                         >
                           <Trash2 className="h-3 w-3" />
                         </Button>
@@ -490,7 +490,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                           {goal.priority.toUpperCase()}
                         </span>
                         {goal.name && <span className="text-xs text-muted-foreground">- {goal.name}</span>}
-                        {goal.targetAmount > 0 && <span className="text-xs text-green-500">${goal.targetAmount}</span>}
+                        {goal.targetAmount > 0 && <span className="text-xs text-heading-accent">${goal.targetAmount}</span>}
                       </div>
                       <div className="flex items-center gap-1">
                         {openGoalId !== goal.id && (
@@ -498,7 +498,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                             onClick={() => setOpenGoalId(goal.id)}
                             variant="ghost"
                             size="sm"
-                            className="h-5 w-5 p-0 text-blue-500 hover:text-blue-700"
+                            className="h-5 w-5 p-0 text-foreground hover:text-foreground"
                           >
                             <Plus className="h-3 w-3" />
                           </Button>
@@ -507,7 +507,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                           onClick={() => removeGoal(goal.id)}
                           variant="ghost"
                           size="sm"
-                          className="h-5 w-5 p-0 text-red-500 hover:text-red-700"
+                          className="h-5 w-5 p-0 text-foreground hover:text-foreground"
                         >
                           <Trash2 className="h-3 w-3" />
                         </Button>
@@ -614,17 +614,17 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                 <div className="space-y-2">
                   <div className="flex justify-between items-center p-2 rounded-lg bg-card border border-border">
                     <span className="text-xs text-muted-foreground">Monthly Income:</span>
-                    <span className="text-xs font-bold text-green-600 dark:text-green-400">${monthlyIncome}</span>
+                    <span className="text-xs font-bold text-heading-accent">${monthlyIncome}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-2 rounded-lg bg-card border border-border">
                     <span className="text-xs text-muted-foreground">Monthly Expenses:</span>
-                    <span className="text-xs font-bold text-red-500">${result.monthlyExpenses.toFixed(2)}</span>
+                    <span className="text-xs font-bold text-foreground">${result.monthlyExpenses.toFixed(2)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-2 rounded-lg bg-card border border-border">
                     <span className="text-xs text-muted-foreground">Monthly Savings:</span>
-                    <span className="text-xs font-bold text-blue-500">${result.monthlySavings.toFixed(2)}</span>
+                    <span className="text-xs font-bold text-foreground">${result.monthlySavings.toFixed(2)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-2 rounded-lg bg-primary/5 border border-primary/20">
@@ -634,17 +634,17 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
 
                   <div className="flex justify-between items-center p-2 rounded-lg bg-card border border-border">
                     <span className="text-xs text-muted-foreground">Total Goals:</span>
-                    <span className="text-xs font-bold text-orange-500">${result.totalGoals.toFixed(2)}</span>
+                    <span className="text-xs font-bold text-foreground">${result.totalGoals.toFixed(2)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-2 rounded-lg bg-green-500/10 border border-green-500/20">
                     <span className="text-xs text-muted-foreground">Years to Complete:</span>
-                    <span className="text-sm font-bold text-green-600 dark:text-green-400">{result.yearsToComplete.toFixed(1)}</span>
+                    <span className="text-sm font-bold text-heading-accent">{result.yearsToComplete.toFixed(1)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-2 rounded-lg bg-card border border-border">
                     <span className="text-xs text-muted-foreground">Tax Savings/Month:</span>
-                    <span className="text-xs font-bold text-purple-500">${result.taxSavings.toFixed(2)}</span>
+                    <span className="text-xs font-bold text-foreground">${result.taxSavings.toFixed(2)}</span>
                   </div>
                 </div>
 

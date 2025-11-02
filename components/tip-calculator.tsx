@@ -177,7 +177,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
 
               <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
                 <span className="text-xs text-muted-foreground">Tip ({tipPercent}%):</span>
-                <span className="text-sm font-bold text-green-500">+${result.tipAmount}</span>
+                <span className="text-sm font-bold text-heading-accent">+${result.tipAmount}</span>
               </div>
 
               <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
@@ -189,11 +189,11 @@ Split ${numPeople} ways: $${result.perPerson} per person`
                 <>
                   <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
                     <span className="text-xs text-muted-foreground">Per Person:</span>
-                    <span className="text-sm font-bold text-blue-500">${result.perPerson}</span>
+                    <span className="text-sm font-bold text-foreground">${result.perPerson}</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
                     <span className="text-xs text-muted-foreground">Tip per person:</span>
-                    <span className="text-sm font-bold text-orange-500">${result.tipPerPerson}</span>
+                    <span className="text-sm font-bold text-foreground">${result.tipPerPerson}</span>
                   </div>
                 </>
               )}

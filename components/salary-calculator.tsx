@@ -298,31 +298,31 @@ Working Days: ${result.adjustedWorkingDays} days/year`
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 w-full overflow-hidden">
       {/* Main Calculator */}
-      <Card className="bg-black border-slate-700 w-full overflow-hidden">
+      <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
-            <Calculator className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
-            <span className="text-orange-500">Advanced Salary Calculator</span>
+            <Calculator className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
+            <span className="text-foreground">Advanced Salary Calculator</span>
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4 sm:space-y-6 px-2 sm:px-3 md:px-4">
           {/* Input Fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="salaryAmount" className="text-green-500 text-xs sm:text-sm">Salary Amount ($)</Label>
+              <Label htmlFor="salaryAmount" className="text-heading-accent text-xs sm:text-sm">Salary Amount ($)</Label>
               <Input
                 id="salaryAmount"
                 type="number"
                 placeholder="50"
                 value={salaryAmount}
                 onChange={(e) => setSalaryAmount(e.target.value)}
-                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
               />
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="payFrequency" className="text-green-500 text-xs sm:text-sm">Pay Frequency</Label>
+              <Label htmlFor="payFrequency" className="text-heading-accent text-xs sm:text-sm">Pay Frequency</Label>
               <Select value={payFrequency} onValueChange={setPayFrequency}>
-                <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm h-9">
+                <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -338,50 +338,50 @@ Working Days: ${result.adjustedWorkingDays} days/year`
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="hoursPerWeek" className="text-green-500 text-xs sm:text-sm">Hours per Week</Label>
+              <Label htmlFor="hoursPerWeek" className="text-heading-accent text-xs sm:text-sm">Hours per Week</Label>
               <Input
                 id="hoursPerWeek"
                 type="number"
                 placeholder="40"
                 value={hoursPerWeek}
                 onChange={(e) => setHoursPerWeek(e.target.value)}
-                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
               />
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="daysPerWeek" className="text-green-500 text-xs sm:text-sm">Days per Week</Label>
+              <Label htmlFor="daysPerWeek" className="text-heading-accent text-xs sm:text-sm">Days per Week</Label>
               <Input
                 id="daysPerWeek"
                 type="number"
                 placeholder="5"
                 value={daysPerWeek}
                 onChange={(e) => setDaysPerWeek(e.target.value)}
-                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="holidaysPerYear" className="text-green-500 text-xs sm:text-sm">Holidays per Year</Label>
+              <Label htmlFor="holidaysPerYear" className="text-heading-accent text-xs sm:text-sm">Holidays per Year</Label>
               <Input
                 id="holidaysPerYear"
                 type="number"
                 placeholder="10"
                 value={holidaysPerYear}
                 onChange={(e) => setHolidaysPerYear(e.target.value)}
-                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
               />
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="vacationDaysPerYear" className="text-green-500 text-xs sm:text-sm">Vacation Days per Year</Label>
+              <Label htmlFor="vacationDaysPerYear" className="text-heading-accent text-xs sm:text-sm">Vacation Days per Year</Label>
               <Input
                 id="vacationDaysPerYear"
                 type="number"
                 placeholder="15"
                 value={vacationDaysPerYear}
                 onChange={(e) => setVacationDaysPerYear(e.target.value)}
-                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
               />
             </div>
           </div>
@@ -402,63 +402,63 @@ Working Days: ${result.adjustedWorkingDays} days/year`
       {result && (
         <div className="space-y-4 sm:space-y-6">
           {/* Main Results */}
-          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+          <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
-                <DollarSign className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
-                <span className="text-orange-500">Salary Calculation Results</span>
+                <DollarSign className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
+                <span className="text-foreground">Salary Calculation Results</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
               <div className="overflow-x-auto">
-                <table className="w-full border-collapse border border-slate-700">
+                <table className="w-full border-collapse border border-border">
                   <thead>
-                    <tr className="bg-black border-b border-slate-700">
-                      <th className="border border-slate-700 p-2 sm:p-3 text-left text-xs sm:text-sm text-green-500">Pay Frequency</th>
-                      <th className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-green-500">Unadjusted</th>
-                      <th className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-green-500">Holidays & Vacation Adjusted</th>
+                    <tr className="bg-card border-b border-border">
+                      <th className="border border-border p-2 sm:p-3 text-left text-xs sm:text-sm text-heading-accent">Pay Frequency</th>
+                      <th className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-heading-accent">Unadjusted</th>
+                      <th className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-heading-accent">Holidays & Vacation Adjusted</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-slate-700 p-2 sm:p-3 font-medium text-xs sm:text-sm text-slate-200">Hourly</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${result.calculations.hourly.unadjusted.toFixed(2)}</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${result.calculations.hourly.adjusted.toFixed(2)}</td>
+                      <td className="border border-border p-2 sm:p-3 font-medium text-xs sm:text-sm text-foreground">Hourly</td>
+                      <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-foreground">${result.calculations.hourly.unadjusted.toFixed(2)}</td>
+                      <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-foreground">${result.calculations.hourly.adjusted.toFixed(2)}</td>
                     </tr>
                     <tr>
-                      <td className="border border-slate-700 p-2 sm:p-3 font-medium text-xs sm:text-sm text-slate-200">Daily</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${result.calculations.daily.unadjusted.toFixed(2)}</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${result.calculations.daily.adjusted.toFixed(2)}</td>
+                      <td className="border border-border p-2 sm:p-3 font-medium text-xs sm:text-sm text-foreground">Daily</td>
+                      <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-foreground">${result.calculations.daily.unadjusted.toFixed(2)}</td>
+                      <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-foreground">${result.calculations.daily.adjusted.toFixed(2)}</td>
                     </tr>
                     <tr>
-                      <td className="border border-slate-700 p-2 sm:p-3 font-medium text-xs sm:text-sm text-slate-200">Weekly</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${result.calculations.weekly.unadjusted.toFixed(2)}</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${result.calculations.weekly.adjusted.toFixed(2)}</td>
+                      <td className="border border-border p-2 sm:p-3 font-medium text-xs sm:text-sm text-foreground">Weekly</td>
+                      <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-foreground">${result.calculations.weekly.unadjusted.toFixed(2)}</td>
+                      <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-foreground">${result.calculations.weekly.adjusted.toFixed(2)}</td>
                     </tr>
                     <tr>
-                      <td className="border border-slate-700 p-2 sm:p-3 font-medium text-xs sm:text-sm text-slate-200">Bi-weekly</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${result.calculations.biweekly.unadjusted.toFixed(2)}</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${result.calculations.biweekly.adjusted.toFixed(2)}</td>
+                      <td className="border border-border p-2 sm:p-3 font-medium text-xs sm:text-sm text-foreground">Bi-weekly</td>
+                      <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-foreground">${result.calculations.biweekly.unadjusted.toFixed(2)}</td>
+                      <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-foreground">${result.calculations.biweekly.adjusted.toFixed(2)}</td>
                     </tr>
                     <tr>
-                      <td className="border border-slate-700 p-2 sm:p-3 font-medium text-xs sm:text-sm text-slate-200">Semi-monthly</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${result.calculations.semimonthly.unadjusted.toFixed(2)}</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${result.calculations.semimonthly.adjusted.toFixed(2)}</td>
+                      <td className="border border-border p-2 sm:p-3 font-medium text-xs sm:text-sm text-foreground">Semi-monthly</td>
+                      <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-foreground">${result.calculations.semimonthly.unadjusted.toFixed(2)}</td>
+                      <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-foreground">${result.calculations.semimonthly.adjusted.toFixed(2)}</td>
                     </tr>
                     <tr>
-                      <td className="border border-slate-700 p-2 sm:p-3 font-medium text-xs sm:text-sm text-slate-200">Monthly</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${result.calculations.monthly.unadjusted.toFixed(2)}</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${result.calculations.monthly.adjusted.toFixed(2)}</td>
+                      <td className="border border-border p-2 sm:p-3 font-medium text-xs sm:text-sm text-foreground">Monthly</td>
+                      <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-foreground">${result.calculations.monthly.unadjusted.toFixed(2)}</td>
+                      <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-foreground">${result.calculations.monthly.adjusted.toFixed(2)}</td>
                     </tr>
                     <tr>
-                      <td className="border border-slate-700 p-2 sm:p-3 font-medium text-xs sm:text-sm text-slate-200">Quarterly</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${result.calculations.quarterly.unadjusted.toFixed(2)}</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">${result.calculations.quarterly.adjusted.toFixed(2)}</td>
+                      <td className="border border-border p-2 sm:p-3 font-medium text-xs sm:text-sm text-foreground">Quarterly</td>
+                      <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-foreground">${result.calculations.quarterly.unadjusted.toFixed(2)}</td>
+                      <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-foreground">${result.calculations.quarterly.adjusted.toFixed(2)}</td>
                     </tr>
-                    <tr className="bg-slate-800/50">
-                      <td className="border border-slate-700 p-2 sm:p-3 font-bold text-xs sm:text-sm text-orange-500">Annual</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right font-bold text-xs sm:text-sm text-orange-500">${result.calculations.annual.unadjusted.toFixed(2)}</td>
-                      <td className="border border-slate-700 p-2 sm:p-3 text-right font-bold text-xs sm:text-sm text-orange-500">${result.calculations.annual.adjusted.toFixed(2)}</td>
+                    <tr className="bg-secondary/50">
+                      <td className="border border-border p-2 sm:p-3 font-bold text-xs sm:text-sm text-foreground">Annual</td>
+                      <td className="border border-border p-2 sm:p-3 text-right font-bold text-xs sm:text-sm text-foreground">${result.calculations.annual.unadjusted.toFixed(2)}</td>
+                      <td className="border border-border p-2 sm:p-3 text-right font-bold text-xs sm:text-sm text-foreground">${result.calculations.annual.adjusted.toFixed(2)}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -474,46 +474,46 @@ Working Days: ${result.adjustedWorkingDays} days/year`
           </Card>
 
           {/* Working Days Summary */}
-          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+          <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
-                <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
-                <span className="text-orange-500">Working Days Summary</span>
+                <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
+                <span className="text-foreground">Working Days Summary</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                <div className="p-2 sm:p-3 md:p-4 bg-black border border-slate-700 rounded-lg">
-                  <h3 className="font-semibold text-green-500 mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Total Working Days</h3>
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200">{result.workingDaysPerYear} days</div>
-                  <p className="text-xs sm:text-sm text-slate-300 break-words">52 weeks × {result.daysPerWeek} days/week</p>
+                <div className="p-2 sm:p-3 md:p-4 bg-card border border-border rounded-lg">
+                  <h3 className="font-semibold text-heading-accent mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Total Working Days</h3>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">{result.workingDaysPerYear} days</div>
+                  <p className="text-xs sm:text-sm text-foreground break-words">52 weeks × {result.daysPerWeek} days/week</p>
                 </div>
-                <div className="p-2 sm:p-3 md:p-4 bg-black border border-slate-700 rounded-lg">
-                  <h3 className="font-semibold text-green-500 mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Adjusted Working Days</h3>
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200">{result.adjustedWorkingDays} days</div>
-                  <p className="text-xs sm:text-sm text-slate-300 break-words">After holidays and vacation</p>
+                <div className="p-2 sm:p-3 md:p-4 bg-card border border-border rounded-lg">
+                  <h3 className="font-semibold text-heading-accent mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Adjusted Working Days</h3>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">{result.adjustedWorkingDays} days</div>
+                  <p className="text-xs sm:text-sm text-foreground break-words">After holidays and vacation</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
           {/* Industry Comparison */}
-          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+          <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
-                <BarChart3 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
-                <span className="text-orange-500">Industry Salary Comparison</span>
+                <BarChart3 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
+                <span className="text-foreground">Industry Salary Comparison</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="px-2 sm:px-3 md:px-4">
               <div className="space-y-2">
                 {result.comparison.industryAverages.map((industry, index) => (
-                  <div key={index} className="flex justify-between items-center p-2 sm:p-3 bg-black border border-slate-700 rounded-lg">
+                  <div key={index} className="flex justify-between items-center p-2 sm:p-3 bg-card border border-border rounded-lg">
                     <div className="min-w-0">
-                      <span className="font-medium text-slate-200 text-xs sm:text-sm break-words">{industry.industry}</span>
-                      <p className="text-xs text-slate-300 break-words">Average: ${industry.averageSalary.toLocaleString()}</p>
+                      <span className="font-medium text-foreground text-xs sm:text-sm break-words">{industry.industry}</span>
+                      <p className="text-xs text-foreground break-words">Average: ${industry.averageSalary.toLocaleString()}</p>
                     </div>
-                    <Badge className={industry.difference > 0 ? "bg-green-500/20 text-green-400 border-green-500" : "bg-red-500/20 text-red-400 border-red-500"} variant="outline">
+                    <Badge className={industry.difference > 0 ? "bg-green-500/20 text-heading-accent border-green-500" : "bg-red-500/20 text-foreground border-red-500"} variant="outline">
                       {industry.difference > 0 ? "+" : ""}${industry.difference.toLocaleString()}
                     </Badge>
                   </div>
@@ -523,44 +523,44 @@ Working Days: ${result.adjustedWorkingDays} days/year`
           </Card>
 
           {/* Recommendations */}
-          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+          <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
-                <Target className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
-                <span className="text-orange-500">Personalized Recommendations</span>
+                <Target className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
+                <span className="text-foreground">Personalized Recommendations</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div>
-                  <h4 className="font-semibold mb-2 sm:mb-3 text-green-500 text-xs sm:text-sm break-words">Salary Optimization</h4>
+                  <h4 className="font-semibold mb-2 sm:mb-3 text-heading-accent text-xs sm:text-sm break-words">Salary Optimization</h4>
                   <ul className="space-y-1 text-xs sm:text-sm">
                     {result.recommendations.salaryOptimization.map((rec, index) => (
                       <li key={index} className="flex items-start gap-1.5 sm:gap-2">
-                        <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300 break-words">{rec}</span>
+                        <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-heading-accent mt-0.5 flex-shrink-0" />
+                        <span className="text-foreground break-words">{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 sm:mb-3 text-green-500 text-xs sm:text-sm break-words">Negotiation Tips</h4>
+                  <h4 className="font-semibold mb-2 sm:mb-3 text-heading-accent text-xs sm:text-sm break-words">Negotiation Tips</h4>
                   <ul className="space-y-1 text-xs sm:text-sm">
                     {result.recommendations.negotiationTips.map((rec, index) => (
                       <li key={index} className="flex items-start gap-1.5 sm:gap-2">
-                        <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300 break-words">{rec}</span>
+                        <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-heading-accent mt-0.5 flex-shrink-0" />
+                        <span className="text-foreground break-words">{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 sm:mb-3 text-green-500 text-xs sm:text-sm break-words">Career Advice</h4>
+                  <h4 className="font-semibold mb-2 sm:mb-3 text-heading-accent text-xs sm:text-sm break-words">Career Advice</h4>
                   <ul className="space-y-1 text-xs sm:text-sm">
                     {result.recommendations.careerAdvice.map((rec, index) => (
                       <li key={index} className="flex items-start gap-1.5 sm:gap-2">
-                        <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300 break-words">{rec}</span>
+                        <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-heading-accent mt-0.5 flex-shrink-0" />
+                        <span className="text-foreground break-words">{rec}</span>
                       </li>
                     ))}
                   </ul>
@@ -573,22 +573,22 @@ Working Days: ${result.adjustedWorkingDays} days/year`
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card className="bg-black border-slate-700 w-full overflow-hidden">
+        <Card className="bg-card border-border w-full overflow-hidden">
           <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
             <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
-              <History className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
-              <span className="text-orange-500">Recent Calculations</span>
+              <History className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
+              <span className="text-foreground">Recent Calculations</span>
             </CardTitle>
           </CardHeader>
           <CardContent className="px-2 sm:px-3 md:px-4">
             <div className="space-y-2">
               {history.map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-2 sm:p-3 bg-black border border-slate-700 rounded-lg">
+                <div key={index} className="flex items-center justify-between p-2 sm:p-3 bg-card border border-border rounded-lg">
                   <div className="space-y-1 min-w-0">
-                    <div className="font-medium text-xs sm:text-sm text-slate-200 break-words">
+                    <div className="font-medium text-xs sm:text-sm text-foreground break-words">
                       ${item.salaryAmount.toFixed(0)} {item.payFrequency} → ${item.calculations.annual.adjusted.toFixed(0)}/year
                     </div>
-                    <div className="text-xs text-slate-300 break-words">
+                    <div className="text-xs text-foreground break-words">
                       {item.adjustedWorkingDays} working days
                     </div>
                   </div>
@@ -608,40 +608,40 @@ Working Days: ${result.adjustedWorkingDays} days/year`
       )}
 
       {/* Information Section */}
-      <Card className="bg-black border-slate-700 w-full overflow-hidden">
+      <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
-            <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
-            <span className="text-orange-500">Salary Calculator Features</span>
+            <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
+            <span className="text-foreground">Salary Calculator Features</span>
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3 px-2 sm:px-3 md:px-4">
-          <div className="p-2 sm:p-3 md:p-4 bg-black border border-slate-700 rounded-lg">
+          <div className="p-2 sm:p-3 md:p-4 bg-card border border-border rounded-lg">
             <div className="flex items-start gap-2">
-              <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500 mt-0.5 flex-shrink-0" />
+              <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground mt-0.5 flex-shrink-0" />
               <div className="text-xs sm:text-sm min-w-0">
-                <p className="font-medium text-orange-500 mb-1 break-words">
+                <p className="font-medium text-foreground mb-1 break-words">
                   Professional Salary Analysis
                 </p>
-                <p className="text-slate-300 break-words">
+                <p className="text-foreground break-words">
                   This calculator converts salary amounts across all pay frequencies with accurate adjustments for holidays and vacation days. Perfect for salary negotiations, job comparisons, and financial planning.
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="text-xs sm:text-sm text-slate-300 space-y-1.5 sm:space-y-2">
+          <div className="text-xs sm:text-sm text-foreground space-y-1.5 sm:space-y-2">
             <p className="break-words">
-              <strong className="text-green-500">Pay Frequency Conversion:</strong> Convert between hourly, daily, weekly, bi-weekly, semi-monthly, monthly, quarterly, and annual pay.
+              <strong className="text-heading-accent">Pay Frequency Conversion:</strong> Convert between hourly, daily, weekly, bi-weekly, semi-monthly, monthly, quarterly, and annual pay.
             </p>
             <p className="break-words">
-              <strong className="text-green-500">Holiday & Vacation Adjustment:</strong> Calculate adjusted salaries accounting for paid time off.
+              <strong className="text-heading-accent">Holiday & Vacation Adjustment:</strong> Calculate adjusted salaries accounting for paid time off.
             </p>
             <p className="break-words">
-              <strong className="text-green-500">Industry Comparison:</strong> Compare your salary against industry averages across different sectors.
+              <strong className="text-heading-accent">Industry Comparison:</strong> Compare your salary against industry averages across different sectors.
             </p>
             <p className="break-words">
-              <strong className="text-green-500">Negotiation Support:</strong> Get personalized tips for salary negotiations and career advancement.
+              <strong className="text-heading-accent">Negotiation Support:</strong> Get personalized tips for salary negotiations and career advancement.
             </p>
           </div>
         </CardContent>

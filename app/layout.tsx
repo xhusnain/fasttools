@@ -5,14 +5,10 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
 import { GlobalLoading } from "@/components/global-loading"
+import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next"
-import { validateEnv, env } from "@/lib/env"
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { env } from "@/lib/env"
 
-if (typeof window === "undefined") {
-  validateEnv()
-}
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -342,7 +338,7 @@ export const metadata: Metadata = {
       }
     
       return (
-        <html lang="en" className={`dark ${montserrat.variable} ${roboto.variable} antialiased`}>
+        <html lang="en" className={`${montserrat.variable} ${roboto.variable} antialiased`} suppressHydrationWarning>
         <head>
             {/* Preload external scripts for better performance - Only in production */}
             {env.isProduction && (
@@ -377,7 +373,7 @@ export const metadata: Metadata = {
                             var s = document.createElement('script');
                             s.type = 'text/javascript';
                             s.async = true;
-                            s.src = "https://tracker.clickfortify.com/cdn/spcZrjg3d1d/wstIuxvN4do";
+                            s.src = "https://tracker.clickfortify.com/cdn/spcZrjg3d1d/wstSb2fQc7v";
                             var x = document.getElementsByTagName('script')[0];
                             x.parentNode.insertBefore(s, x);
                           })();
@@ -452,7 +448,6 @@ export const metadata: Metadata = {
                 <link rel="dns-prefetch" href="//www.googletagmanager.com"/>
               </>
             )}
-            <link rel="dns-prefetch" href="//vercel.live"/>
             <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous"/>
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
             {env.isProduction && (
@@ -461,7 +456,6 @@ export const metadata: Metadata = {
                 <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous"/>
               </>
             )}
-            <link rel="preconnect" href="https://vercel.live" crossOrigin="anonymous"/>
             <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
             
             {/* Core Web Vitals Optimization */}
@@ -541,19 +535,24 @@ export const metadata: Metadata = {
             
         </head>
         <body className="bg-background font-sans text-foreground">
-        <a href="#main-content" className="skip-link">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <a href="#main-content" className="skip-link">
             Skip to main content
-            </a>
-            <GlobalLoading />
-            <Header />
-            <main id="main-content" role="main">
-              {children}
-            </main>
-            <Footer />
-            <CookieConsent />
-            {env.isProduction && <Analytics/>}
-            {env.isProduction && <SpeedInsights/>}
-          </body>
+          </a>
+          <GlobalLoading />
+          <Header />
+          <main id="main-content" role="main">
+            {children}
+          </main>
+          <Footer />
+          <CookieConsent />
+        </ThemeProvider>
+        </body>
         </html>
       )
     }

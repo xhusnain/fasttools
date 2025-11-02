@@ -107,37 +107,30 @@ export function HashtagCounter() {
 
 
   const getPlatformColor = (platform: string) => {
-    switch (platform) {
-      case 'instagram': return 'from-pink-500 to-purple-500'
-      case 'twitter': return 'from-blue-400 to-blue-600'
-      case 'facebook': return 'from-blue-600 to-blue-800'
-      case 'linkedin': return 'from-blue-700 to-blue-900'
-      case 'youtube': return 'from-red-500 to-red-700'
-      case 'tiktok': return 'from-black to-gray-800'
-      default: return 'from-gray-500 to-gray-700'
-    }
+    // Use primary theme color for all platforms
+    return 'from-primary to-primary/90'
   }
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
       {/* Main Calculator Card */}
-      <Card className="border-2 border-white/20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl shadow-2xl">
+      <Card className="border-2 border-border bg-card shadow-2xl">
         <CardHeader className="text-center space-y-3 sm:space-y-4 p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
             <div className={`h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br ${getPlatformColor(platform)} flex items-center justify-center shadow-lg`}>
-              {platform === 'instagram' && <Instagram className="h-5 w-5 sm:h-6 sm:w-6 text-white" />}
-              {platform === 'twitter' && <Twitter className="h-5 w-5 sm:h-6 sm:w-6 text-white" />}
-              {platform === 'facebook' && <Facebook className="h-5 w-5 sm:h-6 sm:w-6 text-white" />}
-              {platform === 'linkedin' && <Linkedin className="h-5 w-5 sm:h-6 sm:w-6 text-white" />}
-              {platform === 'youtube' && <Youtube className="h-5 w-5 sm:h-6 sm:w-6 text-white" />}
-              {platform === 'tiktok' && <Video className="h-5 w-5 sm:h-6 sm:w-6 text-white" />}
-              {!['instagram', 'twitter', 'facebook', 'linkedin', 'youtube', 'tiktok'].includes(platform) && <Hash className="h-5 w-5 sm:h-6 sm:w-6 text-white" />}
+              {platform === 'instagram' && <Instagram className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />}
+              {platform === 'twitter' && <Twitter className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />}
+              {platform === 'facebook' && <Facebook className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />}
+              {platform === 'linkedin' && <Linkedin className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />}
+              {platform === 'youtube' && <Youtube className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />}
+              {platform === 'tiktok' && <Video className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />}
+              {!['instagram', 'twitter', 'facebook', 'linkedin', 'youtube', 'tiktok'].includes(platform) && <Hash className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />}
             </div>
             <div className="text-center sm:text-left">
-              <CardTitle className="text-xl sm:text-2xl font-bold text-white">
+              <CardTitle className="text-xl sm:text-2xl font-bold text-foreground">
                 Hashtag Counter & Generator
               </CardTitle>
-              <CardDescription className="text-white/80 text-sm sm:text-base">
+              <CardDescription className="text-muted-foreground text-sm sm:text-base">
                 Count existing hashtags and generate new ones with AI
               </CardDescription>
             </div>
@@ -145,36 +138,36 @@ export function HashtagCounter() {
           
           {/* Platform Selector */}
           <div className="flex flex-col items-center gap-2 sm:gap-3">
-            <Label className="text-white font-medium text-sm sm:text-base">Choose Platform:</Label>
+            <Label className="text-foreground font-medium text-sm sm:text-base">Choose Platform:</Label>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
               {[
-                { value: 'instagram', icon: Instagram, label: 'Instagram', color: 'from-pink-500 to-purple-500' },
-                { value: 'twitter', icon: Twitter, label: 'Twitter', color: 'from-blue-400 to-blue-600' },
-                { value: 'facebook', icon: Facebook, label: 'Facebook', color: 'from-blue-600 to-blue-800' },
-                { value: 'linkedin', icon: Linkedin, label: 'LinkedIn', color: 'from-blue-700 to-blue-900' },
-                { value: 'youtube', icon: Youtube, label: 'YouTube', color: 'from-red-500 to-red-700' },
-                { value: 'tiktok', icon: Video, label: 'TikTok', color: 'from-black to-gray-800' }
-              ].map(({ value, icon: Icon, label, color }) => (
+                { value: 'instagram', icon: Instagram, label: 'Instagram' },
+                { value: 'twitter', icon: Twitter, label: 'Twitter' },
+                { value: 'facebook', icon: Facebook, label: 'Facebook' },
+                { value: 'linkedin', icon: Linkedin, label: 'LinkedIn' },
+                { value: 'youtube', icon: Youtube, label: 'YouTube' },
+                { value: 'tiktok', icon: Video, label: 'TikTok' }
+              ].map(({ value, icon: Icon, label }) => (
                 <button
                   key={value}
                   onClick={() => setPlatform(value)}
                   className={`group relative flex flex-col items-center gap-1 p-2 sm:p-3 rounded-lg transition-all duration-300 hover:scale-105 ${
                     platform === value 
-                      ? `bg-gradient-to-br ${color} shadow-lg` 
-                      : 'bg-white/10 hover:bg-white/20 border border-white/20'
+                      ? 'bg-gradient-to-br from-primary to-primary/90 shadow-lg' 
+                      : 'bg-secondary hover:bg-secondary/80 border border-border'
                   }`}
                   title={label}
                 >
                   <Icon className={`h-5 w-5 sm:h-6 sm:w-6 ${
-                    platform === value ? 'text-white' : 'text-white/70 group-hover:text-white'
+                    platform === value ? 'text-primary-foreground' : 'text-muted-foreground group-hover:text-foreground'
                   } transition-colors duration-300`} />
                   <span className={`text-xs font-medium ${
-                    platform === value ? 'text-white' : 'text-white/70 group-hover:text-white'
+                    platform === value ? 'text-primary-foreground' : 'text-muted-foreground group-hover:text-foreground'
                   } transition-colors duration-300 hidden sm:block`}>
                     {label}
                   </span>
                   {platform === value && (
-                    <div className="absolute -top-1 -right-1 h-3 w-3 bg-green-400 rounded-full border-2 border-white"></div>
+                    <div className="absolute -top-1 -right-1 h-3 w-3 bg-secondary-accent rounded-full border-2 border-card"></div>
                   )}
                 </button>
               ))}
@@ -186,7 +179,7 @@ export function HashtagCounter() {
           {/* Input Section */}
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="text" className="text-sm font-medium text-white">
+              <Label htmlFor="text" className="text-sm font-medium text-foreground">
                 Your Post Content
               </Label>
               <Textarea
@@ -194,7 +187,7 @@ export function HashtagCounter() {
                 placeholder="Paste your social media post content here..."
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                className="min-h-24 sm:min-h-32 text-sm resize-none bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                className="min-h-24 sm:min-h-32 text-sm resize-none bg-background border-border text-foreground placeholder:text-muted-foreground"
               />
             </div>
 
@@ -203,7 +196,7 @@ export function HashtagCounter() {
               <Button
                 onClick={generateHashtags}
                 disabled={!text || isGenerating}
-                className="w-full max-w-xs h-10 sm:h-12 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
+                className="w-full max-w-xs h-10 sm:h-12 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
               >
                 {isGenerating ? (
                   <>
@@ -227,23 +220,23 @@ export function HashtagCounter() {
             <div className="space-y-4 sm:space-y-6">
               {/* Stats Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                <div className="p-3 sm:p-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-400/30 text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-blue-300">{result.count}</div>
-                  <div className="text-xs sm:text-sm text-blue-200">Existing Hashtags</div>
+                <div className="p-3 sm:p-4 rounded-xl bg-muted border border-border text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-foreground">{result.count}</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Existing Hashtags</div>
                 </div>
                 
                 {result.generatedHashtags && result.generatedHashtags.length > 0 && (
-                  <div className="p-3 sm:p-4 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-400/30 text-center">
-                    <div className="text-xl sm:text-2xl font-bold text-purple-300">{result.generatedHashtags.length}</div>
-                    <div className="text-xs sm:text-sm text-purple-200">AI Generated</div>
+                  <div className="p-3 sm:p-4 rounded-xl bg-muted border border-border text-center">
+                    <div className="text-xl sm:text-2xl font-bold text-foreground">{result.generatedHashtags.length}</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground">AI Generated</div>
                   </div>
                 )}
                 
-                <div className="p-3 sm:p-4 rounded-xl bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-400/30 text-center sm:col-span-2 lg:col-span-1">
-                  <div className="text-xl sm:text-2xl font-bold text-green-300">
+                <div className="p-3 sm:p-4 rounded-xl bg-primary/10 border border-primary/20 text-center sm:col-span-2 lg:col-span-1">
+                  <div className="text-xl sm:text-2xl font-bold text-foreground">
                     {result.count + (result.generatedHashtags ? result.generatedHashtags.length : 0)}
                   </div>
-                  <div className="text-xs sm:text-sm text-green-200">Total Hashtags</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Total Hashtags</div>
                 </div>
               </div>
 
@@ -253,15 +246,15 @@ export function HashtagCounter() {
                 {result.hashtags.length > 0 && (
                   <div className="space-y-3 sm:space-y-4">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-                      <h3 className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
-                        <Hash className="h-4 w-4 text-blue-300" />
+                      <h3 className="text-base sm:text-lg font-semibold text-foreground flex items-center gap-2">
+                        <Hash className="h-4 w-4 text-foreground" />
                         Existing Hashtags ({result.hashtags.length})
                       </h3>
                       <Button
                         onClick={() => copyHashtags(result.hashtags)}
                         variant="outline"
                         size="sm"
-                        className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs sm:text-sm"
+                        className="bg-card border-border text-foreground hover:bg-secondary text-xs sm:text-sm"
                       >
                         {copied ? (
                           <>
@@ -282,7 +275,7 @@ export function HashtagCounter() {
                       {result.hashtags.map((tag, index) => (
                         <Badge
                           key={index}
-                          className="px-2 sm:px-3 py-1 bg-blue-500/20 text-blue-200 border border-blue-400/30 hover:bg-blue-500/30 transition-colors text-xs sm:text-sm"
+                          className="px-2 sm:px-3 py-1 bg-muted text-foreground border border-border hover:bg-secondary transition-colors text-xs sm:text-sm"
                         >
                           {tag}
                         </Badge>
@@ -295,15 +288,15 @@ export function HashtagCounter() {
                 {result.generatedHashtags && result.generatedHashtags.length > 0 && (
                   <div className="space-y-3 sm:space-y-4">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-                      <h3 className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
-                        <Sparkles className="h-4 w-4 text-purple-300" />
+                      <h3 className="text-base sm:text-lg font-semibold text-foreground flex items-center gap-2">
+                        <Sparkles className="h-4 w-4 text-foreground" />
                         AI Generated Hashtags ({result.generatedHashtags.length})
                       </h3>
                       <Button
                         onClick={() => result.generatedHashtags && copyHashtags(result.generatedHashtags)}
                         variant="outline"
                         size="sm"
-                        className="bg-white/10 border-white/20 text-white hover:bg-white/20 text-xs sm:text-sm"
+                        className="bg-card border-border text-foreground hover:bg-secondary text-xs sm:text-sm"
                       >
                         {copied ? (
                           <>
@@ -324,7 +317,7 @@ export function HashtagCounter() {
                       {result.generatedHashtags.map((tag, index) => (
                         <Badge
                           key={index}
-                          className="px-2 sm:px-3 py-1 bg-purple-500/20 text-purple-200 border border-purple-400/30 hover:bg-purple-500/30 transition-colors text-xs sm:text-sm"
+                          className="px-2 sm:px-3 py-1 bg-primary/10 text-foreground border border-primary/20 hover:bg-primary/20 transition-colors text-xs sm:text-sm"
                         >
                           {tag}
                         </Badge>
@@ -341,7 +334,7 @@ export function HashtagCounter() {
                         const allHashtags = [...result.hashtags, ...(result.generatedHashtags || [])]
                         copyHashtags(allHashtags)
                       }}
-                      className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-sm px-6 py-2"
+                      className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-sm px-6 py-2"
                     >
                       <Copy className="mr-2 h-4 w-4" />
                       Copy All Hashtags ({result.hashtags.length + (result.generatedHashtags?.length || 0)})
@@ -351,10 +344,10 @@ export function HashtagCounter() {
 
                 {/* Empty State */}
                 {result.hashtags.length === 0 && (!result.generatedHashtags || result.generatedHashtags.length === 0) && (
-                  <div className="text-center py-6 sm:py-8 text-white/60">
+                  <div className="text-center py-6 sm:py-8 text-muted-foreground">
                     <Hash className="h-8 w-8 sm:h-12 sm:w-12 mx-auto mb-3 sm:mb-4 opacity-50" />
                     <p className="text-sm sm:text-base">No hashtags found in your content</p>
-                    <p className="text-xs sm:text-sm text-white/40 mt-2">Click "Generate AI Hashtags" to get suggestions</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground mt-2">Click "Generate AI Hashtags" to get suggestions</p>
                   </div>
                 )}
               </div>

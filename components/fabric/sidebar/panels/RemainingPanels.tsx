@@ -15,7 +15,7 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
   const brushes = [
     { id: 'pencil', name: 'Pencil', icon: Pencil, width: 2, color: 'from-slate-600 to-slate-700' },
     { id: 'marker', name: 'Marker', icon: Pen, width: 8, color: 'from-blue-600 to-blue-700' },
-    { id: 'highlighter', name: 'Highlighter', icon: Brush, width: 15, color: 'from-yellow-500 to-orange-600' },
+    { id: 'highlighter', name: 'Highlighter', icon: Brush, width: 15, color: 'from-yellow-500 to-primary/90' },
     { id: 'spray', name: 'Spray', icon: Sparkles, width: 20, color: 'from-purple-600 to-pink-600' }
   ]
 
@@ -93,8 +93,8 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
                   <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${brush.color} flex items-center justify-center text-white`}>
                     <Icon className="w-6 h-6" />
                   </div>
-                  <div className="text-xs text-slate-600 font-medium">{brush.name}</div>
-                  <div className="text-xs text-slate-400">{brush.width}px</div>
+                  <div className="text-xs text-muted-foreground font-medium">{brush.name}</div>
+                  <div className="text-xs text-muted-foreground">{brush.width}px</div>
                 </div>
               </button>
             )
@@ -153,7 +153,7 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
   const filters = [
     { id: 'blur', name: 'Blur', icon: '🌫️', color: 'from-gray-500 to-gray-600' },
     { id: 'sharpen', name: 'Sharpen', icon: '🔍', color: 'from-blue-500 to-blue-600' },
-    { id: 'vintage', name: 'Vintage', icon: '📷', color: 'from-amber-500 to-orange-600' },
+    { id: 'vintage', name: 'Vintage', icon: '📷', color: 'from-amber-500 to-primary/90' },
     { id: 'blackwhite', name: 'B&W', icon: '⚫', color: 'from-slate-700 to-slate-800' },
     { id: 'sepia', name: 'Sepia', icon: '☕', color: 'from-yellow-700 to-amber-800' },
     { id: 'invert', name: 'Invert', icon: '🔄', color: 'from-purple-500 to-purple-600' },
@@ -258,7 +258,7 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
                 <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${filter.color} flex items-center justify-center text-white text-2xl`}>
                   {filter.icon}
                 </div>
-                <div className="text-xs text-slate-600 font-medium">{filter.name}</div>
+                <div className="text-xs text-muted-foreground font-medium">{filter.name}</div>
               </div>
             </button>
           ))}
@@ -397,14 +397,14 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
       <div className="flex-1 overflow-y-auto p-4 space-y-6">
         <div>
           <h3 className="font-semibold text-slate-800 mb-1 text-base">Adjustments</h3>
-          <p className="text-xs text-slate-500 mb-6">Select an image to adjust its properties</p>
+          <p className="text-xs text-muted-foreground mb-6">Select an image to adjust its properties</p>
           
           <div className="space-y-6">
             {/* Brightness */}
       <div>
               <div className="flex justify-between items-center mb-3">
                 <label className="text-sm text-slate-700 font-medium">Brightness</label>
-                <span className="text-sm text-slate-600 font-semibold min-w-[2rem] text-right">{brightness}</span>
+                <span className="text-sm text-muted-foreground font-semibold min-w-[2rem] text-right">{brightness}</span>
               </div>
               <div className="relative">
                 <input 
@@ -429,7 +429,7 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
       <div>
               <div className="flex justify-between items-center mb-3">
                 <label className="text-sm text-slate-700 font-medium">Contrast</label>
-                <span className="text-sm text-slate-600 font-semibold min-w-[2rem] text-right">{contrast}</span>
+                <span className="text-sm text-muted-foreground font-semibold min-w-[2rem] text-right">{contrast}</span>
               </div>
               <div className="relative">
                 <input 
@@ -451,7 +451,7 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
       <div>
               <div className="flex justify-between items-center mb-3">
                 <label className="text-sm text-slate-700 font-medium">Saturation</label>
-                <span className="text-sm text-slate-600 font-semibold min-w-[2rem] text-right">{saturation}</span>
+                <span className="text-sm text-muted-foreground font-semibold min-w-[2rem] text-right">{saturation}</span>
           </div>
               <div className="relative">
                 <input 
@@ -473,7 +473,7 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
       <div>
               <div className="flex justify-between items-center mb-3">
                 <label className="text-sm text-slate-700 font-medium">Hue Rotation</label>
-                <span className="text-sm text-slate-600 font-semibold min-w-[2rem] text-right">{hue}°</span>
+                <span className="text-sm text-muted-foreground font-semibold min-w-[2rem] text-right">{hue}°</span>
               </div>
               <div className="relative">
                 <input 
@@ -497,7 +497,7 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
       {/* Reset Button */}
       <div className="p-4 border-t border-slate-200">
         <button
-          className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2"
+          className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-primary to-red-500 text-white font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2"
           onClick={resetAdjustments}
         >
           <span className="text-base">🔄</span>
@@ -603,7 +603,7 @@ export function BackgroundPanel({ canvas }: BackgroundPanelProps) {
         {/* Preset Colors */}
       <div>
           <h3 className="font-semibold text-slate-800 mb-1 text-base">Preset Colors</h3>
-          <p className="text-xs text-slate-500 mb-4">Quick color selection</p>
+          <p className="text-xs text-muted-foreground mb-4">Quick color selection</p>
           
         <div className="space-y-2">
             {presetColors.map((colorRow, rowIndex) => (
@@ -625,7 +625,7 @@ export function BackgroundPanel({ canvas }: BackgroundPanelProps) {
         {/* Custom Color Picker */}
         <div>
           <h3 className="font-semibold text-slate-800 mb-1 text-base">Custom Color</h3>
-          <p className="text-xs text-slate-500 mb-4">Pick any color you want</p>
+          <p className="text-xs text-muted-foreground mb-4">Pick any color you want</p>
           
           <div className="flex items-center gap-3">
             <input

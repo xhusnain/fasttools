@@ -133,11 +133,11 @@ export function FutureAgePredictor() {
                   setErrors(prev => ({ ...prev, birthDate: "" }))
                 }
               }}
-              className={`h-11 text-sm border-orange-500 focus:border-orange-500 focus:ring-orange-500 ${errors.birthDate ? 'border-orange-600' : ''}`}
+              className={`h-11 text-sm border-primary focus:border-primary focus:ring-orange-500 ${errors.birthDate ? 'border-orange-600' : ''}`}
               max={new Date().toISOString().split("T")[0]}
             />
             {errors.birthDate && (
-              <p className="text-xs text-orange-600 mt-1">{errors.birthDate}</p>
+              <p className="text-xs text-foreground mt-1">{errors.birthDate}</p>
             )}
           </div>
 
@@ -156,11 +156,11 @@ export function FutureAgePredictor() {
                   setErrors(prev => ({ ...prev, targetYear: "" }))
                 }
               }}
-              className={`h-11 text-sm border-orange-500 focus:border-orange-500 focus:ring-orange-500 ${errors.targetYear ? 'border-orange-600' : ''}`}
+              className={`h-11 text-sm border-primary focus:border-primary focus:ring-orange-500 ${errors.targetYear ? 'border-orange-600' : ''}`}
               min={new Date().getFullYear()}
             />
             {errors.targetYear && (
-              <p className="text-xs text-orange-600 mt-1">{errors.targetYear}</p>
+              <p className="text-xs text-foreground mt-1">{errors.targetYear}</p>
             )}
           </div>
 
@@ -184,7 +184,7 @@ export function FutureAgePredictor() {
         </div>
 
         {result && (
-          <div className="p-6 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 border border-orange-400 space-y-4 animate-fade-in shadow-lg">
+          <div className="p-6 rounded-lg bg-gradient-to-br from-primary to-primary/90 border border-orange-400 space-y-4 animate-fade-in shadow-lg">
             <div className="text-center space-y-2">
               <p className="text-sm text-white/90">In the year {result.year}, you will be</p>
               <p className="text-5xl font-bold text-white drop-shadow-lg">{result.age}</p>
@@ -215,7 +215,7 @@ export function FutureAgePredictor() {
               </Button>
               <Button
                 onClick={shareResult}
-                className="flex-1 h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all bg-white text-orange-600 hover:bg-white/90"
+                className="flex-1 h-10 text-sm font-medium shadow-sm hover:shadow-md transition-all bg-white text-foreground hover:bg-white/90"
               >
                 Share Result
               </Button>

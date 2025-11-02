@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import { Menu, X, Wrench, Search } from "lucide-react"
 import { SearchBar } from "@/components/search-bar"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { usePathname } from "next/navigation"
 
 export function Header() {
@@ -26,7 +27,7 @@ export function Header() {
   return (
     <>
       {/* Gradient accent bar at the very top */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-orange-400 to-primary/90" />
       
       <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-border/10 transition-all duration-300">
         <nav className="container mx-auto flex items-center justify-between h-16 sm:h-20 md:h-24 px-4 lg:px-8">
@@ -57,7 +58,7 @@ export function Header() {
                 href={link.href}
                 className={`relative px-5 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 group ${
                   pathname === link.href
-                    ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30"
+                    ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg shadow-orange-500/30"
                     : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"
                 }`}
               >
@@ -71,7 +72,8 @@ export function Header() {
           </div>
 
           {/* Right side - Desktop Search */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden lg:flex items-center gap-2">
+            <ThemeToggle />
             {!showSearch ? (
               <button
                 aria-label="Open search"
@@ -95,6 +97,7 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
             {!showSearch ? (
               <>
                 <button
@@ -144,7 +147,7 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 ${
                 pathname === link.href
-                  ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30"
+                  ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg shadow-orange-500/30"
                   : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"
               }`}
             >

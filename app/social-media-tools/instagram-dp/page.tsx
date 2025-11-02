@@ -142,7 +142,7 @@ export default function InstagramDpPage() {
                 <GHeader
                   title="Instagram DP Viewer"
                   description="View and download Instagram profile pictures in HD quality. Works with public Instagram accounts."
-                  titleSize="large"
+                  titleSize="medium"
                   descriptionSize="small"
                 />
               </div>
@@ -153,13 +153,13 @@ export default function InstagramDpPage() {
               </div>
 
               {/* Tool Card */}
-              <Card className="border border-border shadow-lg bg-black hover:shadow-xl transition-all duration-300">
+              <Card className="border border-border shadow-lg bg-card hover:shadow-xl transition-all duration-300">
                 <CardHeader className="p-6">
-                  <CardTitle className="text-xl font-bold text-orange-500 flex items-center gap-2">
-                    <User className="h-5 w-5 text-orange-500" />
+                  <CardTitle className="text-xl font-bold text-foreground flex items-center gap-2">
+                    <User className="h-5 w-5 text-foreground" />
                     Instagram DP Viewer
                   </CardTitle>
-                  <CardDescription className="text-gray-400">
+                  <CardDescription className="text-muted-foreground">
                     Enter an Instagram username to view and download profile pictures in HD quality
                   </CardDescription>
                 </CardHeader>
@@ -170,38 +170,38 @@ export default function InstagramDpPage() {
 
               {/* Content Sections */}
               <div className="space-y-5 animate-fade-in-up animation-delay-200">
-                <div className="p-5 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-xl font-bold mb-4 text-orange-500">How Our Instagram DP Viewer Works</h2>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                <div className="p-5 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-xl font-bold mb-4 text-foreground">How Our Instagram DP Viewer Works</h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     Our Instagram DP viewer (also known as insta dp viewer or ig dp viewer) allows you to view instagram dp and download profile pictures from public Instagram accounts. 
                     This free dp viewer tool respects user privacy and only works with publicly available profile pictures.
                     Whether you search for "instagram image viewer" or "instagram profile dp viewer", our tool provides the best solution to view dp from any public Instagram account.
                   </p>
 
-                  <h3 className="text-lg font-bold mb-3 text-green-500">Privacy-First Approach</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                  <h3 className="text-lg font-bold mb-3 text-heading-accent">Privacy-First Approach</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     We prioritize user privacy and only access profile pictures from public accounts. 
                     Private accounts and restricted content are not accessible through our dp viewer instagram tool.
                     Our insta dp.view service is designed to be safe, secure, and compliant with Instagram's terms of service.
                   </p>
 
-                  <h3 className="text-lg font-bold mb-3 text-green-500">HD Quality Downloads with IG DP Viewer</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">
+                  <h3 className="text-lg font-bold mb-3 text-heading-accent">HD Quality Downloads with IG DP Viewer</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Download profile pictures in their original high-definition quality using our instagram profile dp viewer. 
                     Perfect for content creators, designers, or anyone who needs high-quality profile images.
                     Our ig dp viewer ensures you get the best quality images for your creative projects.
                   </p>
                 </div>
 
-                <div className="p-5 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-xl font-bold mb-4 text-orange-500">Perfect for Content Creators</h2>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                <div className="p-5 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-xl font-bold mb-4 text-foreground">Perfect for Content Creators</h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     Whether you're a content creator, designer, or marketer, our Instagram DP viewer helps you 
                     access profile pictures for legitimate purposes like inspiration, analysis, or content creation.
                   </p>
 
-                  <h3 className="text-lg font-bold mb-3 text-green-500">DP Viewer Features</h3>
-                  <ul className="list-disc list-inside space-y-2 text-sm text-gray-400">
+                  <h3 className="text-lg font-bold mb-3 text-heading-accent">DP Viewer Features</h3>
+                  <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
                     <li>View profile pictures in HD quality</li>
                     <li>Download images instantly</li>
                     <li>Works with any public Instagram account</li>
@@ -214,13 +214,13 @@ export default function InstagramDpPage() {
 
               {/* FAQ Section */}
               <div className="space-y-5 animate-fade-in-up animation-delay-300">
-                <div className="p-5 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-xl font-bold mb-4 text-orange-500">Frequently Asked Questions</h2>
+                <div className="p-5 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-xl font-bold mb-4 text-foreground">Frequently Asked Questions</h2>
                   
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-green-500">How do I view Instagram profile pictures?</h3>
-                      <p className="text-sm text-gray-400 leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-heading-accent">How do I view Instagram profile pictures?</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         Simply enter the Instagram username (with or without @) into our DP viewer tool and click "View Profile Picture". 
                         Our tool will display the profile picture in high quality, and you can download it if needed. 
                         The tool only works with public Instagram accounts to respect user privacy.
@@ -228,8 +228,8 @@ export default function InstagramDpPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-green-500">Is it legal to download Instagram profile pictures?</h3>
-                      <p className="text-sm text-gray-400 leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-heading-accent">Is it legal to download Instagram profile pictures?</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         Downloading profile pictures from public Instagram accounts is generally legal for personal use, 
                         educational purposes, or content creation. However, you should respect copyright laws and Instagram's 
                         Terms of Service. If you're using profile pictures for commercial purposes or republishing them, 
@@ -239,8 +239,8 @@ export default function InstagramDpPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-green-500">Can I download profile pictures from private accounts?</h3>
-                      <p className="text-sm text-gray-400 leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-heading-accent">Can I download profile pictures from private accounts?</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         No, our Instagram DP viewer only works with public Instagram accounts. Private accounts, 
                         restricted accounts, or accounts that require authentication are not accessible through our tool. 
                         This is a privacy protection feature that respects Instagram's privacy settings and user preferences. 
@@ -249,8 +249,8 @@ export default function InstagramDpPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-green-500">What quality are the downloaded profile pictures?</h3>
-                      <p className="text-sm text-gray-400 leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-heading-accent">What quality are the downloaded profile pictures?</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         Our tool downloads profile pictures in their original high-definition quality. Instagram typically 
                         stores profile pictures in high resolution (up to 1080x1080 pixels), and our viewer preserves 
                         this quality when displaying and downloading images. The downloaded images maintain their 
@@ -259,8 +259,8 @@ export default function InstagramDpPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-green-500">Why would I need to download Instagram profile pictures?</h3>
-                      <p className="text-sm text-gray-400 leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-heading-accent">Why would I need to download Instagram profile pictures?</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         Content creators download Instagram profile pictures for various legitimate reasons: analyzing 
                         successful profile designs for inspiration, creating profile templates based on proven layouts, 
                         conducting brand research and competitive analysis, archiving profile designs for reference, 
@@ -270,8 +270,8 @@ export default function InstagramDpPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-green-500">Is my privacy protected when using this tool?</h3>
-                      <p className="text-sm text-gray-400 leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-heading-accent">Is my privacy protected when using this tool?</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         Yes, your privacy is completely protected. We don't store any user data, downloaded images, 
                         or usernames you search for. All searches are processed in real-time without logging or 
                         storing information. The tool operates entirely in your browser, ensuring that your search 
@@ -280,8 +280,8 @@ export default function InstagramDpPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-green-500">Do I need to install any software to use this tool?</h3>
-                      <p className="text-sm text-gray-400 leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-heading-accent">Do I need to install any software to use this tool?</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         No, our Instagram DP viewer is completely web-based and doesn't require any software installation. 
                         Simply visit our website, enter the Instagram username, and view or download the profile picture. 
                         The tool works directly in your web browser on any device - desktop, tablet, or mobile phone. 
@@ -290,8 +290,8 @@ export default function InstagramDpPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-green-500">What should I do if the profile picture doesn't load?</h3>
-                      <p className="text-sm text-gray-400 leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-heading-accent">What should I do if the profile picture doesn't load?</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         If the profile picture doesn't load, check that the Instagram username is correct and the account 
                         is public. Try refreshing the page or clearing your browser cache. Some accounts may have 
                         restricted access or be temporarily unavailable. Ensure you're using a valid Instagram username 
@@ -301,8 +301,8 @@ export default function InstagramDpPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-green-500">Can I use downloaded profile pictures for my own content?</h3>
-                      <p className="text-sm text-gray-400 leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-heading-accent">Can I use downloaded profile pictures for my own content?</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         While you can download profile pictures for analysis and inspiration, using someone else's 
                         profile picture for your own content may violate copyright laws. Instead, use downloaded 
                         profile pictures as reference material to create your own original designs. Study successful 
@@ -312,8 +312,8 @@ export default function InstagramDpPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-green-500">How can I improve my own Instagram profile picture?</h3>
-                      <p className="text-sm text-gray-400 leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-heading-accent">How can I improve my own Instagram profile picture?</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         Effective Instagram profile pictures use high contrast colors, clear focal subjects, 
                         readable elements (especially on mobile), consistent branding, and emotional expressions. 
                         Study successful profile pictures in your niche, use bright colors that stand out, 
@@ -324,8 +324,8 @@ export default function InstagramDpPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-green-500">What are the best practices for Instagram profile pictures?</h3>
-                      <p className="text-sm text-gray-400 leading-relaxed">
+                      <h3 className="text-lg font-semibold mb-2 text-heading-accent">What are the best practices for Instagram profile pictures?</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         Optimize your Instagram profile picture by ensuring it's visually appealing at small sizes 
                         (mobile viewing), using high contrast between elements, including clear focal subjects, 
                         maintaining consistent branding across your social media presence, testing different designs 
@@ -343,7 +343,7 @@ export default function InstagramDpPage() {
             {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
             <div className="hidden lg:block w-72">
               <div className="sticky top-32 space-y-6">
-                <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-black" />
+                <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
               </div>
             </div>
           </div>

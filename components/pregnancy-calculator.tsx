@@ -338,19 +338,19 @@ Next Milestone: ${result.nextMilestone}`
   return (
     <div className="space-y-4">
       {/* Input Section */}
-      <Card className="bg-black border-slate-700">
+      <Card className="bg-card border-border">
         <CardHeader className="pb-2 px-3 sm:px-6">
-          <CardTitle className="flex items-center gap-2 text-orange-500 text-base sm:text-lg">
-            <Calculator className="h-4 w-4 text-orange-500" />
+          <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg">
+            <Calculator className="h-4 w-4 text-foreground" />
             Pregnancy Calculator
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4 px-3 sm:px-6">
           <div className="space-y-3">
             <div className="space-y-1">
-              <Label htmlFor="method" className="text-[11px] font-medium text-green-500">Calculation Method</Label>
+              <Label htmlFor="method" className="text-[11px] font-medium text-heading-accent">Calculation Method</Label>
               <Select value={calculationMethod} onValueChange={(value: "dueDate" | "lmp" | "ultrasound" | "conception" | "ivf") => setCalculationMethod(value)}>
-                <SelectTrigger className="h-8 text-xs border-slate-700 bg-black text-slate-200">
+                <SelectTrigger className="h-8 text-xs border-border bg-card text-foreground">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -365,26 +365,26 @@ Next Milestone: ${result.nextMilestone}`
 
             {calculationMethod === "dueDate" && (
               <div className="space-y-1">
-                <Label htmlFor="dueDate" className="text-[11px] font-medium text-green-500">Your Due Date</Label>
+                <Label htmlFor="dueDate" className="text-[11px] font-medium text-heading-accent">Your Due Date</Label>
                 <Input
                   id="dueDate"
                   type="date"
                   value={dueDate}
                   onChange={(e) => setDueDate(e.target.value)}
-                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                  className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                 />
               </div>
             )}
 
             {calculationMethod === "lmp" && (
               <div className="space-y-1">
-                <Label htmlFor="lmpDate" className="text-[11px] font-medium text-green-500">First Day of Last Menstrual Period</Label>
+                <Label htmlFor="lmpDate" className="text-[11px] font-medium text-heading-accent">First Day of Last Menstrual Period</Label>
                 <Input
                   id="lmpDate"
                   type="date"
                   value={lmpDate}
                   onChange={(e) => setLmpDate(e.target.value)}
-                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                  className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                 />
               </div>
             )}
@@ -392,24 +392,24 @@ Next Milestone: ${result.nextMilestone}`
             {calculationMethod === "ultrasound" && (
               <div className="space-y-3">
                 <div className="space-y-1">
-                  <Label htmlFor="ultrasoundDate" className="text-[11px] font-medium text-green-500">Ultrasound Date</Label>
+                  <Label htmlFor="ultrasoundDate" className="text-[11px] font-medium text-heading-accent">Ultrasound Date</Label>
                   <Input
                     id="ultrasoundDate"
                     type="date"
                     value={ultrasoundDate}
                     onChange={(e) => setUltrasoundDate(e.target.value)}
-                    className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="gestationalAge" className="text-[11px] font-medium text-green-500">Gestational Age at Ultrasound (weeks)</Label>
+                  <Label htmlFor="gestationalAge" className="text-[11px] font-medium text-heading-accent">Gestational Age at Ultrasound (weeks)</Label>
                   <Input
                     id="gestationalAge"
                     type="number"
                     placeholder="e.g., 12"
                     value={gestationalAge}
                     onChange={(e) => setGestationalAge(e.target.value)}
-                    className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
               </div>
@@ -417,26 +417,26 @@ Next Milestone: ${result.nextMilestone}`
 
             {calculationMethod === "conception" && (
               <div className="space-y-1">
-                <Label htmlFor="conceptionDate" className="text-[11px] font-medium text-green-500">Conception Date</Label>
+                <Label htmlFor="conceptionDate" className="text-[11px] font-medium text-heading-accent">Conception Date</Label>
                 <Input
                   id="conceptionDate"
                   type="date"
                   value={conceptionDate}
                   onChange={(e) => setConceptionDate(e.target.value)}
-                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                  className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                 />
               </div>
             )}
 
             {calculationMethod === "ivf" && (
               <div className="space-y-1">
-                <Label htmlFor="ivfDate" className="text-[11px] font-medium text-green-500">IVF Transfer Date</Label>
+                <Label htmlFor="ivfDate" className="text-[11px] font-medium text-heading-accent">IVF Transfer Date</Label>
                 <Input
                   id="ivfDate"
                   type="date"
                   value={ivfDate}
                   onChange={(e) => setIvfDate(e.target.value)}
-                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                  className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                 />
               </div>
             )}
@@ -444,46 +444,46 @@ Next Milestone: ${result.nextMilestone}`
             {/* Weight and Height for BMI calculation */}
             <div className="grid md:grid-cols-3 gap-3">
               <div className="space-y-1">
-                <Label htmlFor="prePregnancyWeight" className="text-[11px] font-medium text-green-500">Pre-Pregnancy Weight (kg)</Label>
+                <Label htmlFor="prePregnancyWeight" className="text-[11px] font-medium text-heading-accent">Pre-Pregnancy Weight (kg)</Label>
                 <Input
                   id="prePregnancyWeight"
                   type="number"
                   placeholder="e.g., 65"
                   value={prePregnancyWeight}
                   onChange={(e) => setPrePregnancyWeight(e.target.value)}
-                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                  className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                 />
               </div>
               <div className="space-y-1">
-                <Label htmlFor="currentWeight" className="text-[11px] font-medium text-green-500">Current Weight (kg)</Label>
+                <Label htmlFor="currentWeight" className="text-[11px] font-medium text-heading-accent">Current Weight (kg)</Label>
                 <Input
                   id="currentWeight"
                   type="number"
                   placeholder="e.g., 68"
                   value={currentWeight}
                   onChange={(e) => setCurrentWeight(e.target.value)}
-                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                  className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                 />
               </div>
               <div className="space-y-1">
-                <Label htmlFor="height" className="text-[11px] font-medium text-green-500">Height (cm)</Label>
+                <Label htmlFor="height" className="text-[11px] font-medium text-heading-accent">Height (cm)</Label>
                 <Input
                   id="height"
                   type="number"
                   placeholder="e.g., 165"
                   value={height}
                   onChange={(e) => setHeight(e.target.value)}
-                  className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                  className="h-7 text-xs border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                 />
               </div>
             </div>
 
             <div className="flex gap-2">
-              <Button onClick={calculatePregnancy} className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white">
+              <Button onClick={calculatePregnancy} className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white">
                 <Calculator className="mr-1 h-3 w-3" />
                 Calculate
               </Button>
-              <Button variant="outline" onClick={clearAll} className="h-9 text-xs border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" onClick={clearAll} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
                 Clear
               </Button>
             </div>
@@ -498,7 +498,7 @@ Next Milestone: ${result.nextMilestone}`
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Heart className="h-5 w-5 text-pink-500" />
+                <Heart className="h-5 w-5 text-foreground" />
                 Pregnancy Results
               </CardTitle>
             </CardHeader>
@@ -506,19 +506,19 @@ Next Milestone: ${result.nextMilestone}`
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label className="text-sm font-medium">Due Date</Label>
-                  <div className="text-lg font-semibold text-blue-600">
+                  <div className="text-lg font-semibold text-foreground">
                     {formatDate(result.dueDate)}
                   </div>
                 </div>
                 <div className="space-y-2">
                   <Label className="text-sm font-medium">Conception Date</Label>
-                  <div className="text-lg font-semibold text-green-600">
+                  <div className="text-lg font-semibold text-heading-accent">
                     {formatDate(result.conceptionDate)}
                   </div>
                 </div>
                 <div className="space-y-2">
                   <Label className="text-sm font-medium">Current Gestational Age</Label>
-                  <div className="text-lg font-semibold text-purple-600">
+                  <div className="text-lg font-semibold text-foreground">
                     {result.weeksPregnant} weeks, {result.daysPregnant} days
                   </div>
                 </div>
@@ -546,7 +546,7 @@ Next Milestone: ${result.nextMilestone}`
 
               <div className="pt-4 border-t">
                 <div className="flex items-center gap-2 mb-2">
-                  <Target className="h-4 w-4 text-orange-500" />
+                  <Target className="h-4 w-4 text-foreground" />
                   <span className="font-medium">Next Milestone</span>
                 </div>
                 <p className="text-sm text-muted-foreground">{result.nextMilestone}</p>
@@ -565,17 +565,17 @@ Next Milestone: ${result.nextMilestone}`
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <TrendingUp className="h-5 w-5 text-green-500" />
+                  <TrendingUp className="h-5 w-5 text-heading-accent" />
                   Weight Gain Recommendation
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
+                <div className="p-4 bg-muted rounded-lg border border-green-200 dark:border-green-800">
                   <div className="text-sm">
-                    <p className="font-medium text-green-800 dark:text-green-200 mb-2">
+                    <p className="font-medium text-heading-accent mb-2">
                       Recommended Weight Gain: {result.weightGainRecommendation.min}-{result.weightGainRecommendation.max} pounds
                     </p>
-                    <p className="text-green-700 dark:text-green-300">
+                    <p className="text-heading-accent">
                       Based on your pre-pregnancy BMI category: {result.weightGainRecommendation.category}
                     </p>
                   </div>
@@ -588,7 +588,7 @@ Next Milestone: ${result.nextMilestone}`
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Stethoscope className="h-5 w-5 text-purple-500" />
+                <Stethoscope className="h-5 w-5 text-foreground" />
                 Common Symptoms This Week
               </CardTitle>
             </CardHeader>
@@ -596,7 +596,7 @@ Next Milestone: ${result.nextMilestone}`
               <div className="grid md:grid-cols-2 gap-2">
                 {result.symptoms.map((symptom, index) => (
                   <div key={index} className="flex items-center gap-2 text-sm">
-                    <AlertCircle className="h-4 w-4 text-orange-500" />
+                    <AlertCircle className="h-4 w-4 text-foreground" />
                     <span>{symptom}</span>
                   </div>
                 ))}
@@ -608,7 +608,7 @@ Next Milestone: ${result.nextMilestone}`
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Baby className="h-5 w-5 text-blue-500" />
+                <Baby className="h-5 w-5 text-foreground" />
                 Fetal Development This Week
               </CardTitle>
             </CardHeader>
@@ -616,7 +616,7 @@ Next Milestone: ${result.nextMilestone}`
               <ul className="space-y-2">
                 {result.fetalDevelopment.map((development, index) => (
                   <li key={index} className="flex items-start gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
                     <span>{development}</span>
                   </li>
                 ))}
@@ -649,7 +649,7 @@ Next Milestone: ${result.nextMilestone}`
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Baby className="h-5 w-5 text-green-500" />
+                  <Baby className="h-5 w-5 text-heading-accent" />
                   Nutrition Recommendations
                 </CardTitle>
               </CardHeader>
@@ -657,7 +657,7 @@ Next Milestone: ${result.nextMilestone}`
                 <ul className="space-y-2">
                   {result.recommendations.nutrition.map((rec, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
                       <span>{rec}</span>
                     </li>
                   ))}
@@ -668,7 +668,7 @@ Next Milestone: ${result.nextMilestone}`
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Heart className="h-5 w-5 text-blue-500" />
+                  <Heart className="h-5 w-5 text-foreground" />
                   Exercise Recommendations
                 </CardTitle>
               </CardHeader>
@@ -676,7 +676,7 @@ Next Milestone: ${result.nextMilestone}`
                 <ul className="space-y-2">
                   {result.recommendations.exercise.map((rec, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
                       <span>{rec}</span>
                     </li>
                   ))}
@@ -687,7 +687,7 @@ Next Milestone: ${result.nextMilestone}`
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Stethoscope className="h-5 w-5 text-purple-500" />
+                  <Stethoscope className="h-5 w-5 text-foreground" />
                   Health Recommendations
                 </CardTitle>
               </CardHeader>
@@ -695,7 +695,7 @@ Next Milestone: ${result.nextMilestone}`
                 <ul className="space-y-2">
                   {result.recommendations.health.map((rec, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-purple-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
                       <span>{rec}</span>
                     </li>
                   ))}
@@ -706,7 +706,7 @@ Next Milestone: ${result.nextMilestone}`
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5 text-orange-500" />
+                  <Calendar className="h-5 w-5 text-foreground" />
                   Lifestyle Recommendations
                 </CardTitle>
               </CardHeader>
@@ -714,7 +714,7 @@ Next Milestone: ${result.nextMilestone}`
                 <ul className="space-y-2">
                   {result.recommendations.lifestyle.map((rec, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-orange-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
                       <span>{rec}</span>
                     </li>
                   ))}
@@ -764,34 +764,34 @@ Next Milestone: ${result.nextMilestone}`
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Info className="h-5 w-5 text-blue-500" />
+            <Info className="h-5 w-5 text-foreground" />
             Important Information
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+          <div className="p-4 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
             <div className="flex items-start gap-2">
-              <Info className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+              <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
               <div className="text-sm">
-                <p className="font-medium text-blue-800 dark:text-blue-200 mb-1">
+                <p className="font-medium text-foreground mb-1">
                   Medical Disclaimer
                 </p>
-                <p className="text-blue-700 dark:text-blue-300">
+                <p className="text-foreground">
                   The information shown here is approximate and intended for informational purposes. For precise timeline calculations and health guidance, please speak directly with your medical professional.
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="text-xs text-slate-400 space-y-2">
+          <div className="text-xs text-muted-foreground space-y-2">
             <p>
-              <strong className="text-green-500">Baby's Anticipated Arrival:</strong> This shows the projected birth date, usually calculated as roughly 280 days (or about nine calendar months) from when your last period started.
+              <strong className="text-heading-accent">Baby's Anticipated Arrival:</strong> This shows the projected birth date, usually calculated as roughly 280 days (or about nine calendar months) from when your last period started.
             </p>
             <p>
-              <strong className="text-green-500">How Far Along:</strong> Measured from day one of your last period start date, matching the standard method doctors use to track pregnancy advancement.
+              <strong className="text-heading-accent">How Far Along:</strong> Measured from day one of your last period start date, matching the standard method doctors use to track pregnancy advancement.
             </p>
             <p>
-              <strong className="text-green-500">Healthy Weight Ranges:</strong> These suggestions factor in your body mass index from before conception and match guidelines from recognized health organizations.
+              <strong className="text-heading-accent">Healthy Weight Ranges:</strong> These suggestions factor in your body mass index from before conception and match guidelines from recognized health organizations.
             </p>
           </div>
         </CardContent>

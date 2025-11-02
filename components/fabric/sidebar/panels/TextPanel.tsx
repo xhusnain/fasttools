@@ -212,7 +212,7 @@ export function TextPanel({ canvas }: TextPanelProps) {
     { id: 'heading', name: 'Heading', preview: 'H1', size: 'text-2xl', color: 'from-purple-500 to-pink-500' },
     { id: 'subheading', name: 'Subheading', preview: 'H2', size: 'text-xl', color: 'from-blue-500 to-cyan-500' },
     { id: 'body', name: 'Body Text', preview: 'Aa', size: 'text-base', color: 'from-green-500 to-emerald-500' },
-    { id: 'caption', name: 'Caption', preview: 'C', size: 'text-sm', color: 'from-orange-500 to-yellow-500' }
+    { id: 'caption', name: 'Caption', preview: 'C', size: 'text-sm', color: 'from-primary to-yellow-500' }
   ]
 
   const fonts = [
@@ -231,11 +231,11 @@ export function TextPanel({ canvas }: TextPanelProps) {
   ]
 
   const effects = [
-    { id: 'bold', name: 'Bold', icon: 'B', color: 'bg-slate-700' },
-    { id: 'italic', name: 'Italic', icon: 'I', color: 'bg-slate-600' },
+    { id: 'bold', name: 'Bold', icon: 'B', color: 'bg-border' },
+    { id: 'italic', name: 'Italic', icon: 'I', color: 'bg-muted-foreground' },
     { id: 'underline', name: 'Underline', icon: 'U̲', color: 'bg-blue-600' },
     { id: 'overline', name: 'Overline', icon: 'Ō', color: 'bg-cyan-600' },
-    { id: 'linethrough', name: 'Strike', icon: 'S̶', color: 'bg-red-600' },
+    { id: 'linethrough', name: 'Strike', icon: 'S̶', color: 'bg-destructive' },
     { id: 'shadow', name: 'Shadow', icon: '✨', color: 'bg-gray-700' },
     { id: 'outline', name: 'Outline', icon: '⬚', color: 'bg-indigo-600' },
     { id: 'gradient', name: 'Gradient', icon: '🌈', color: 'bg-gradient-to-r from-purple-600 to-pink-600' }
@@ -256,7 +256,7 @@ export function TextPanel({ canvas }: TextPanelProps) {
                 <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${style.color} flex items-center justify-center text-white font-bold ${style.size}`}>
                   {style.preview}
                 </div>
-                <div className="text-xs text-slate-600 font-medium">{style.name}</div>
+                <div className="text-xs text-muted-foreground font-medium">{style.name}</div>
               </div>
             </button>
           ))}
@@ -274,7 +274,7 @@ export function TextPanel({ canvas }: TextPanelProps) {
             >
               <div className="flex flex-col">
                 <span className="text-sm font-semibold text-slate-800">{font.name}</span>
-                <span className="text-xs text-slate-500" style={{ fontFamily: font.family }}>{font.preview}</span>
+                <span className="text-xs text-muted-foreground" style={{ fontFamily: font.family }}>{font.preview}</span>
               </div>
             </button>
           ))}
@@ -295,7 +295,7 @@ export function TextPanel({ canvas }: TextPanelProps) {
             </button>
           ))}
         </div>
-        <p className="text-xs text-slate-500 mt-2">Select text first, then click effect to toggle</p>
+        <p className="text-xs text-muted-foreground mt-2">Select text first, then click effect to toggle</p>
       </div>
     </div>
   )

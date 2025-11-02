@@ -132,8 +132,9 @@ Generate the complete song lyrics now. Make it professional, original, and ready
 
     if (!response.success) {
       console.error("Gemini API Error:", response.error)
+      // Return user-friendly error (already sanitized by gemini-api.ts)
       return NextResponse.json(
-        { error: response.error || "Failed to generate lyrics" },
+        { error: response.error || "Something went wrong. Please try again later." },
         { status: 500 }
       )
     }
@@ -160,9 +161,11 @@ Generate the complete song lyrics now. Make it professional, original, and ready
 
   } catch (error) {
     console.error("Error generating lyrics:", error)
+    // Always return generic error messages to users
+    // Never expose internal error details
     return NextResponse.json(
       { 
-        error: error instanceof Error ? error.message : "Failed to generate lyrics",
+        error: "Something went wrong. Please try again later.",
         success: false
       },
       { status: 500 }

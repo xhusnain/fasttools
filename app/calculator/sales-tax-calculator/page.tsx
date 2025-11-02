@@ -167,9 +167,9 @@ export default function SalesTaxCalculatorPage() {
             {/* Mobile/Tablet AdSpace after GHeader */}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
-                <span className="text-xs text-slate-400 font-medium">Advertisement</span>
+                <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
               </div>
-              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
+              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] 2xl:grid-cols-[1fr_450px] gap-4 sm:gap-6 lg:gap-8 w-full">
@@ -179,10 +179,10 @@ export default function SalesTaxCalculatorPage() {
                 </div>
             
                 {/* Educational Content Sections */}
-                <div className="space-y-3 sm:space-y-4 md:space-y-5 bg-black rounded-lg p-2 sm:p-3 md:p-4 w-full">
+                <div className="space-y-3 sm:space-y-4 md:space-y-5 bg-card rounded-lg p-2 sm:p-3 md:p-4 w-full">
                   {/* How to Use Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
-                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-orange-500 break-words">
+                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
                         <Calculator className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-primary" />
                       </div>
@@ -190,21 +190,21 @@ export default function SalesTaxCalculatorPage() {
                     </h2>
                     <div className="space-y-2 sm:space-y-3 overflow-hidden">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                        <div className="p-2 sm:p-2.5 md:p-3 bg-black rounded-lg border border-slate-700 overflow-hidden">
-                          <h3 className="font-semibold text-green-500 mb-1 text-xs sm:text-sm break-words">1. Choose Calculation Method</h3>
-                          <p className="text-xs text-slate-300 break-words">Select forward calculation (add tax), reverse calculation (remove tax), or rate calculation</p>
+                        <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border overflow-hidden">
+                          <h3 className="font-semibold text-heading-accent mb-1 text-xs sm:text-sm break-words">1. Choose Calculation Method</h3>
+                          <p className="text-xs text-foreground break-words">Select forward calculation (add tax), reverse calculation (remove tax), or rate calculation</p>
                         </div>
-                        <div className="p-2 sm:p-2.5 md:p-3 bg-black rounded-lg border border-slate-700 overflow-hidden">
-                          <h3 className="font-semibold text-green-500 mb-1 text-xs sm:text-sm break-words">2. Select State (Optional)</h3>
-                          <p className="text-xs text-slate-300 break-words">Choose your state for automatic tax rate application, or enter a custom rate manually</p>
+                        <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border overflow-hidden">
+                          <h3 className="font-semibold text-heading-accent mb-1 text-xs sm:text-sm break-words">2. Select State (Optional)</h3>
+                          <p className="text-xs text-foreground break-words">Choose your state for automatic tax rate application, or enter a custom rate manually</p>
                         </div>
-                        <div className="p-2 sm:p-2.5 md:p-3 bg-black rounded-lg border border-slate-700 overflow-hidden">
-                          <h3 className="font-semibold text-green-500 mb-1 text-xs sm:text-sm break-words">3. Enter Your Values</h3>
-                          <p className="text-xs text-slate-300 break-words">Input the required prices and tax rates based on your selected calculation method</p>
+                        <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border overflow-hidden">
+                          <h3 className="font-semibold text-heading-accent mb-1 text-xs sm:text-sm break-words">3. Enter Your Values</h3>
+                          <p className="text-xs text-foreground break-words">Input the required prices and tax rates based on your selected calculation method</p>
                         </div>
-                        <div className="p-2 sm:p-2.5 md:p-3 bg-black rounded-lg border border-slate-700 overflow-hidden">
-                          <h3 className="font-semibold text-green-500 mb-1 text-xs sm:text-sm break-words">4. Get Comprehensive Results</h3>
-                          <p className="text-xs text-slate-300 break-words">Receive detailed tax breakdown, state comparisons, business tips, and compliance recommendations</p>
+                        <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border overflow-hidden">
+                          <h3 className="font-semibold text-heading-accent mb-1 text-xs sm:text-sm break-words">4. Get Comprehensive Results</h3>
+                          <p className="text-xs text-foreground break-words">Receive detailed tax breakdown, state comparisons, business tips, and compliance recommendations</p>
                         </div>
                       </div>
                     </div>
@@ -212,7 +212,7 @@ export default function SalesTaxCalculatorPage() {
 
                   {/* Features Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
-                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-orange-500 break-words">
+                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
                         <Target className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-primary" />
                       </div>
@@ -221,59 +221,59 @@ export default function SalesTaxCalculatorPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                       <div className="space-y-2 sm:space-y-3">
                         <div className="flex items-start gap-1.5 sm:gap-2">
-                          <div className="p-1 sm:p-1.5 bg-green-500/10 rounded flex-shrink-0">
-                            <Calculator className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500" />
+                          <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded flex-shrink-0">
+                            <Calculator className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-heading-accent" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Multiple Calculation Methods</h3>
-                            <p className="text-xs text-slate-300 break-words">Forward, reverse, and rate calculations for comprehensive tax analysis</p>
+                            <h3 className="font-semibold text-heading-accent text-xs sm:text-sm break-words">Multiple Calculation Methods</h3>
+                            <p className="text-xs text-foreground break-words">Forward, reverse, and rate calculations for comprehensive tax analysis</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-1.5 sm:gap-2">
-                          <div className="p-1 sm:p-1.5 bg-green-500/10 rounded flex-shrink-0">
-                            <BarChart3 className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500" />
+                          <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded flex-shrink-0">
+                            <BarChart3 className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-heading-accent" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">State Tax Comparison</h3>
-                            <p className="text-xs text-slate-300 break-words">Compare tax rates across all 50 US states with detailed analysis</p>
+                            <h3 className="font-semibold text-heading-accent text-xs sm:text-sm break-words">State Tax Comparison</h3>
+                            <p className="text-xs text-foreground break-words">Compare tax rates across all 50 US states with detailed analysis</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-1.5 sm:gap-2">
-                          <div className="p-1 sm:p-1.5 bg-green-500/10 rounded flex-shrink-0">
-                            <TrendingUp className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500" />
+                          <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded flex-shrink-0">
+                            <TrendingUp className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-heading-accent" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Business Compliance</h3>
-                            <p className="text-xs text-slate-300 break-words">Professional compliance guidance and tax optimization recommendations</p>
+                            <h3 className="font-semibold text-heading-accent text-xs sm:text-sm break-words">Business Compliance</h3>
+                            <p className="text-xs text-foreground break-words">Professional compliance guidance and tax optimization recommendations</p>
                           </div>
                         </div>
                       </div>
                       <div className="space-y-2 sm:space-y-3">
                         <div className="flex items-start gap-1.5 sm:gap-2">
-                          <div className="p-1 sm:p-1.5 bg-green-500/10 rounded flex-shrink-0">
-                            <BookOpen className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500" />
+                          <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded flex-shrink-0">
+                            <BookOpen className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-heading-accent" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Local Tax Inclusion</h3>
-                            <p className="text-xs text-slate-300 break-words">Comprehensive local tax calculations for accurate total tax burden</p>
+                            <h3 className="font-semibold text-heading-accent text-xs sm:text-sm break-words">Local Tax Inclusion</h3>
+                            <p className="text-xs text-foreground break-words">Comprehensive local tax calculations for accurate total tax burden</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-1.5 sm:gap-2">
-                          <div className="p-1 sm:p-1.5 bg-green-500/10 rounded flex-shrink-0">
-                            <Users className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500" />
+                          <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded flex-shrink-0">
+                            <Users className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-heading-accent" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Multi-State Support</h3>
-                            <p className="text-xs text-slate-300 break-words">Support for businesses operating across multiple states</p>
+                            <h3 className="font-semibold text-heading-accent text-xs sm:text-sm break-words">Multi-State Support</h3>
+                            <p className="text-xs text-foreground break-words">Support for businesses operating across multiple states</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-1.5 sm:gap-2">
-                          <div className="p-1 sm:p-1.5 bg-green-500/10 rounded flex-shrink-0">
-                            <Clock className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500" />
+                          <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded flex-shrink-0">
+                            <Clock className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-heading-accent" />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Tax History Tracking</h3>
-                            <p className="text-xs text-slate-300 break-words">Track tax calculations and maintain historical records</p>
+                            <h3 className="font-semibold text-heading-accent text-xs sm:text-sm break-words">Tax History Tracking</h3>
+                            <p className="text-xs text-foreground break-words">Track tax calculations and maintain historical records</p>
                           </div>
                         </div>
                       </div>
@@ -282,7 +282,7 @@ export default function SalesTaxCalculatorPage() {
 
                   {/* Use Cases Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
-                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-orange-500 break-words">
+                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
                         <Home className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-primary" />
                       </div>
@@ -290,8 +290,8 @@ export default function SalesTaxCalculatorPage() {
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                       <div className="space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">For Consumers & Shoppers</h3>
-                        <ul className="space-y-1 text-xs text-slate-300">
+                        <h3 className="font-semibold text-heading-accent text-xs sm:text-sm break-words">For Consumers & Shoppers</h3>
+                        <ul className="space-y-1 text-xs text-foreground">
                           <li>• Calculate total cost including sales tax</li>
                           <li>• Compare prices across different states</li>
                           <li>• Plan purchases for tax-free states</li>
@@ -300,8 +300,8 @@ export default function SalesTaxCalculatorPage() {
                         </ul>
                       </div>
                       <div className="space-y-1.5 sm:space-y-2">
-                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">For Businesses & E-commerce</h3>
-                        <ul className="space-y-1 text-xs text-slate-300">
+                        <h3 className="font-semibold text-heading-accent text-xs sm:text-sm break-words">For Businesses & E-commerce</h3>
+                        <ul className="space-y-1 text-xs text-foreground">
                           <li>• Calculate accurate tax for pricing</li>
                           <li>• Ensure compliance across multiple states</li>
                           <li>• Optimize pricing strategies for different markets</li>
@@ -314,22 +314,22 @@ export default function SalesTaxCalculatorPage() {
 
                   {/* US Sales Tax Overview */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
-                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-orange-500 break-words">
+                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
                         <BookOpen className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-primary" />
                       </div>
                       US Sales Tax Overview
                     </h2>
                     <div className="space-y-2 sm:space-y-3">
-                      <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg overflow-hidden">
-                        <h3 className="text-xs sm:text-sm md:text-base font-semibold text-green-500 mb-1.5 sm:mb-2 break-words">State Sales Tax Rates</h3>
-                        <p className="text-xs text-slate-300 mb-2 break-words">
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
+                        <h3 className="text-xs sm:text-sm md:text-base font-semibold text-heading-accent mb-1.5 sm:mb-2 break-words">State Sales Tax Rates</h3>
+                        <p className="text-xs text-foreground mb-2 break-words">
                           Sales tax rates vary significantly across US states, ranging from 0% to over 16% when including local taxes. Five states have no statewide sales tax: Alaska, Delaware, Montana, New Hampshire, and Oregon.
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                           <div>
-                            <h4 className="font-semibold mb-1 text-xs sm:text-sm text-green-500">Highest Tax States</h4>
-                            <ul className="text-xs text-slate-300 space-y-0.5">
+                            <h4 className="font-semibold mb-1 text-xs sm:text-sm text-heading-accent">Highest Tax States</h4>
+                            <ul className="text-xs text-foreground space-y-0.5">
                               <li>• Tennessee: 7% + local</li>
                               <li>• Louisiana: 4.45% + local</li>
                               <li>• Arkansas: 6.5% + local</li>
@@ -337,8 +337,8 @@ export default function SalesTaxCalculatorPage() {
                             </ul>
                           </div>
                           <div>
-                            <h4 className="font-semibold mb-1 text-xs sm:text-sm text-green-500">Lowest Tax States</h4>
-                            <ul className="text-xs text-slate-300 space-y-0.5">
+                            <h4 className="font-semibold mb-1 text-xs sm:text-sm text-heading-accent">Lowest Tax States</h4>
+                            <ul className="text-xs text-foreground space-y-0.5">
                               <li>• Alaska: 0% (local only)</li>
                               <li>• Delaware: 0%</li>
                               <li>• Montana: 0%</li>
@@ -349,25 +349,25 @@ export default function SalesTaxCalculatorPage() {
                         </div>
                       </div>
                       
-                      <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg overflow-hidden">
-                        <h3 className="text-xs sm:text-sm md:text-base font-semibold text-green-500 mb-1.5 sm:mb-2 break-words">Local Tax Considerations</h3>
-                        <p className="text-xs text-slate-300 mb-2 break-words">
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
+                        <h3 className="text-xs sm:text-sm md:text-base font-semibold text-heading-accent mb-1.5 sm:mb-2 break-words">Local Tax Considerations</h3>
+                        <p className="text-xs text-foreground mb-2 break-words">
                           Many states allow local governments to impose additional sales taxes on top of state rates. These can significantly increase the total tax burden, especially in major metropolitan areas.
                         </p>
-                        <div className="bg-black border border-slate-700 p-1.5 sm:p-2 rounded-lg">
-                          <div className="text-xs sm:text-sm text-slate-200">
-                            <div className="mb-1"><strong className="text-green-500">Example:</strong> California has a 7.25% state rate, but local taxes can push the total to 10.5%</div>
-                            <div><strong className="text-green-500">Impact:</strong> A $100 purchase could have $10.50 in total sales tax</div>
+                        <div className="bg-card border border-border p-1.5 sm:p-2 rounded-lg">
+                          <div className="text-xs sm:text-sm text-foreground">
+                            <div className="mb-1"><strong className="text-heading-accent">Example:</strong> California has a 7.25% state rate, but local taxes can push the total to 10.5%</div>
+                            <div><strong className="text-heading-accent">Impact:</strong> A $100 purchase could have $10.50 in total sales tax</div>
                           </div>
                         </div>
                       </div>
                       
-                      <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg overflow-hidden">
-                        <h3 className="text-xs sm:text-sm md:text-base font-semibold text-green-500 mb-1.5 sm:mb-2 break-words">Business Tax Compliance</h3>
-                        <p className="text-xs text-slate-300 mb-2 break-words">
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
+                        <h3 className="text-xs sm:text-sm md:text-base font-semibold text-heading-accent mb-1.5 sm:mb-2 break-words">Business Tax Compliance</h3>
+                        <p className="text-xs text-foreground mb-2 break-words">
                           Businesses must understand nexus rules, which determine when they're required to collect sales tax in different states. This is especially important for e-commerce businesses.
                         </p>
-                        <ul className="text-xs text-slate-300 space-y-0.5">
+                        <ul className="text-xs text-foreground space-y-0.5">
                           <li>• Physical presence creates nexus</li>
                           <li>• Economic nexus thresholds vary by state</li>
                           <li>• Remote seller laws affect online businesses</li>
@@ -379,48 +379,48 @@ export default function SalesTaxCalculatorPage() {
 
                   {/* Sales Tax Calculation Methods */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
-                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-orange-500 break-words">
+                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
                         <Calculator className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-primary" />
                       </div>
                       Sales Tax Calculation Methods
                     </h2>
                     <div className="space-y-2 sm:space-y-3">
-                      <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg overflow-hidden">
-                        <h3 className="font-semibold text-green-500 mb-1.5 text-xs sm:text-sm break-words">Forward Calculation (Add Tax)</h3>
-                        <p className="text-xs text-slate-300 mb-2 break-words">
-                          Calculate the final price including sales tax: <strong className="text-green-500">Final Price = Original Price × (1 + Tax Rate)</strong>
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
+                        <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm break-words">Forward Calculation (Add Tax)</h3>
+                        <p className="text-xs text-foreground mb-2 break-words">
+                          Calculate the final price including sales tax: <strong className="text-heading-accent">Final Price = Original Price × (1 + Tax Rate)</strong>
                         </p>
-                        <div className="bg-black border border-slate-700 p-1.5 sm:p-2 rounded-lg">
-                          <div className="text-xs text-slate-200">
-                            <div className="mb-1"><strong className="text-green-500">Example:</strong> $100 item with 8.5% tax = $100 × 1.085 = $108.50</div>
-                            <div><strong className="text-green-500">Tax Amount:</strong> $108.50 - $100 = $8.50</div>
+                        <div className="bg-card border border-border p-1.5 sm:p-2 rounded-lg">
+                          <div className="text-xs text-foreground">
+                            <div className="mb-1"><strong className="text-heading-accent">Example:</strong> $100 item with 8.5% tax = $100 × 1.085 = $108.50</div>
+                            <div><strong className="text-heading-accent">Tax Amount:</strong> $108.50 - $100 = $8.50</div>
                           </div>
                         </div>
                       </div>
                       
-                      <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg overflow-hidden">
-                        <h3 className="font-semibold text-green-500 mb-1.5 text-xs sm:text-sm break-words">Reverse Calculation (Remove Tax)</h3>
-                        <p className="text-xs text-slate-300 mb-2 break-words">
-                          Calculate the pre-tax price from a total: <strong className="text-green-500">Original Price = Total Price ÷ (1 + Tax Rate)</strong>
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
+                        <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm break-words">Reverse Calculation (Remove Tax)</h3>
+                        <p className="text-xs text-foreground mb-2 break-words">
+                          Calculate the pre-tax price from a total: <strong className="text-heading-accent">Original Price = Total Price ÷ (1 + Tax Rate)</strong>
                         </p>
-                        <div className="bg-black border border-slate-700 p-1.5 sm:p-2 rounded-lg">
-                          <div className="text-xs text-slate-200">
-                            <div className="mb-1"><strong className="text-green-500">Example:</strong> $108.50 total with 8.5% tax = $108.50 ÷ 1.085 = $100</div>
-                            <div><strong className="text-green-500">Tax Amount:</strong> $108.50 - $100 = $8.50</div>
+                        <div className="bg-card border border-border p-1.5 sm:p-2 rounded-lg">
+                          <div className="text-xs text-foreground">
+                            <div className="mb-1"><strong className="text-heading-accent">Example:</strong> $108.50 total with 8.5% tax = $108.50 ÷ 1.085 = $100</div>
+                            <div><strong className="text-heading-accent">Tax Amount:</strong> $108.50 - $100 = $8.50</div>
                           </div>
                         </div>
                       </div>
                       
-                      <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg overflow-hidden">
-                        <h3 className="font-semibold text-green-500 mb-1.5 text-xs sm:text-sm break-words">Tax Rate Calculation</h3>
-                        <p className="text-xs text-slate-300 mb-2 break-words">
-                          Calculate the effective tax rate: <strong className="text-green-500">Tax Rate = (Tax Amount ÷ Original Price) × 100</strong>
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
+                        <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm break-words">Tax Rate Calculation</h3>
+                        <p className="text-xs text-foreground mb-2 break-words">
+                          Calculate the effective tax rate: <strong className="text-heading-accent">Tax Rate = (Tax Amount ÷ Original Price) × 100</strong>
                         </p>
-                        <div className="bg-black border border-slate-700 p-1.5 sm:p-2 rounded-lg">
-                          <div className="text-xs text-slate-200">
-                            <div className="mb-1"><strong className="text-green-500">Example:</strong> $8.50 tax on $100 item = ($8.50 ÷ $100) × 100 = 8.5%</div>
-                            <div><strong className="text-green-500">Verification:</strong> $100 × 0.085 = $8.50 ✓</div>
+                        <div className="bg-card border border-border p-1.5 sm:p-2 rounded-lg">
+                          <div className="text-xs text-foreground">
+                            <div className="mb-1"><strong className="text-heading-accent">Example:</strong> $8.50 tax on $100 item = ($8.50 ÷ $100) × 100 = 8.5%</div>
+                            <div><strong className="text-heading-accent">Verification:</strong> $100 × 0.085 = $8.50 ✓</div>
                           </div>
                         </div>
                       </div>
@@ -429,49 +429,49 @@ export default function SalesTaxCalculatorPage() {
 
                   {/* Business Compliance Guide */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
-                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-orange-500 break-words">
+                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
                         <Target className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-primary" />
                       </div>
                       Business Compliance Guide
                     </h2>
                     <div className="space-y-2 sm:space-y-3">
-                      <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg overflow-hidden">
-                        <h3 className="font-semibold text-green-500 mb-1.5 text-xs sm:text-sm break-words">Understanding Nexus Requirements</h3>
-                        <p className="text-xs text-slate-300 mb-2 break-words">
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
+                        <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm break-words">Understanding Nexus Requirements</h3>
+                        <p className="text-xs text-foreground mb-2 break-words">
                           Nexus determines when you must collect sales tax. Physical nexus occurs when you have a physical presence, while economic nexus is based on sales volume or transaction count.
                         </p>
-                        <ul className="text-xs text-slate-300 space-y-0.5">
-                          <li>• <strong className="text-green-500">Physical Nexus:</strong> Office, warehouse, employees, or inventory in state</li>
-                          <li>• <strong className="text-green-500">Economic Nexus:</strong> $100K-$500K in sales or 200+ transactions</li>
-                          <li>• <strong className="text-green-500">Affiliate Nexus:</strong> Related companies with physical presence</li>
-                          <li>• <strong className="text-green-500">Click-Through Nexus:</strong> Referral agreements with in-state businesses</li>
+                        <ul className="text-xs text-foreground space-y-0.5">
+                          <li>• <strong className="text-heading-accent">Physical Nexus:</strong> Office, warehouse, employees, or inventory in state</li>
+                          <li>• <strong className="text-heading-accent">Economic Nexus:</strong> $100K-$500K in sales or 200+ transactions</li>
+                          <li>• <strong className="text-heading-accent">Affiliate Nexus:</strong> Related companies with physical presence</li>
+                          <li>• <strong className="text-heading-accent">Click-Through Nexus:</strong> Referral agreements with in-state businesses</li>
                         </ul>
                       </div>
                       
-                      <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg overflow-hidden">
-                        <h3 className="font-semibold text-green-500 mb-1.5 text-xs sm:text-sm break-words">Registration and Filing Requirements</h3>
-                        <p className="text-xs text-slate-300 mb-2 break-words">
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
+                        <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm break-words">Registration and Filing Requirements</h3>
+                        <p className="text-xs text-foreground mb-2 break-words">
                           Once you have nexus, you must register, collect tax, and file returns. Requirements vary by state and business type.
                         </p>
-                        <ul className="text-xs text-slate-300 space-y-0.5">
-                          <li>• <strong className="text-green-500">Registration:</strong> Complete state application and obtain permit</li>
-                          <li>• <strong className="text-green-500">Collection:</strong> Add tax to taxable sales at point of sale</li>
-                          <li>• <strong className="text-green-500">Filing:</strong> Submit returns monthly, quarterly, or annually</li>
-                          <li>• <strong className="text-green-500">Remittance:</strong> Pay collected tax to state by due date</li>
+                        <ul className="text-xs text-foreground space-y-0.5">
+                          <li>• <strong className="text-heading-accent">Registration:</strong> Complete state application and obtain permit</li>
+                          <li>• <strong className="text-heading-accent">Collection:</strong> Add tax to taxable sales at point of sale</li>
+                          <li>• <strong className="text-heading-accent">Filing:</strong> Submit returns monthly, quarterly, or annually</li>
+                          <li>• <strong className="text-heading-accent">Remittance:</strong> Pay collected tax to state by due date</li>
                         </ul>
                       </div>
                       
-                      <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg overflow-hidden">
-                        <h3 className="font-semibold text-green-500 mb-1.5 text-xs sm:text-sm break-words">Record Keeping and Audit Preparation</h3>
-                        <p className="text-xs text-slate-300 mb-2 break-words">
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
+                        <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm break-words">Record Keeping and Audit Preparation</h3>
+                        <p className="text-xs text-foreground mb-2 break-words">
                           Maintain detailed records for compliance and audit purposes. Most states require 3-7 years of records.
                         </p>
-                        <ul className="text-xs text-slate-300 space-y-0.5">
-                          <li>• <strong className="text-green-500">Sales Records:</strong> Customer info, product details, tax rates</li>
-                          <li>• <strong className="text-green-500">Exemption Certificates:</strong> Resale certificates, exemption forms</li>
-                          <li>• <strong className="text-green-500">Filing Records:</strong> Returns, payments, correspondence</li>
-                          <li>• <strong className="text-green-500">Nexus Documentation:</strong> Physical presence, economic thresholds</li>
+                        <ul className="text-xs text-foreground space-y-0.5">
+                          <li>• <strong className="text-heading-accent">Sales Records:</strong> Customer info, product details, tax rates</li>
+                          <li>• <strong className="text-heading-accent">Exemption Certificates:</strong> Resale certificates, exemption forms</li>
+                          <li>• <strong className="text-heading-accent">Filing Records:</strong> Returns, payments, correspondence</li>
+                          <li>• <strong className="text-heading-accent">Nexus Documentation:</strong> Physical presence, economic thresholds</li>
                         </ul>
                       </div>
                     </div>
@@ -479,30 +479,30 @@ export default function SalesTaxCalculatorPage() {
 
                   {/* Tax Deduction Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
-                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-orange-500 break-words">
+                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
                         <DollarSign className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-primary" />
                       </div>
                       Sales Tax Deduction
                     </h2>
                     <div className="space-y-2 sm:space-y-3">
-                      <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg overflow-hidden">
-                        <h3 className="font-semibold text-green-500 mb-1.5 text-xs sm:text-sm break-words">Federal Income Tax Deduction</h3>
-                        <p className="text-xs text-slate-300 break-words">
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
+                        <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm break-words">Federal Income Tax Deduction</h3>
+                        <p className="text-xs text-foreground break-words">
                           You can deduct sales tax from federal income tax if you itemize deductions. This is beneficial for taxpayers who made large purchases during the year, such as cars, weddings, or major appliances. Our calculator helps you track these amounts for tax planning.
                         </p>
                       </div>
                       
-                      <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg overflow-hidden">
-                        <h3 className="font-semibold text-green-500 mb-1.5 text-xs sm:text-sm break-words">Record Keeping Requirements</h3>
-                        <p className="text-xs text-slate-300 break-words">
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
+                        <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm break-words">Record Keeping Requirements</h3>
+                        <p className="text-xs text-foreground break-words">
                           The IRS requires detailed records of sales tax paid, including receipts and documentation. This can be tedious but may result in significant tax savings for high-spending taxpayers. Our calculator helps you organize and track these records.
                         </p>
                       </div>
                       
-                      <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg overflow-hidden">
-                        <h3 className="font-semibold text-green-500 mb-1.5 text-xs sm:text-sm break-words">Standard vs Itemized Deductions</h3>
-                        <p className="text-xs text-slate-300 break-words">
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
+                        <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm break-words">Standard vs Itemized Deductions</h3>
+                        <p className="text-xs text-foreground break-words">
                           Most taxpayers choose the standard deduction, but those with large purchases may benefit from itemizing to claim sales tax deductions. Compare both options to maximize your tax savings. Our calculator helps you determine which approach is better for your situation.
                         </p>
                       </div>
@@ -511,7 +511,7 @@ export default function SalesTaxCalculatorPage() {
 
                   {/* FAQ Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
-                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-orange-500 break-words">
+                    <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
                         <BookOpen className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-primary" />
                       </div>
@@ -519,14 +519,14 @@ export default function SalesTaxCalculatorPage() {
                     </h2>
                     <div className="space-y-2 sm:space-y-2.5 md:space-y-3">
                       <div className="space-y-1 sm:space-y-1.5">
-                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">What's the difference between sales tax and VAT?</h3>
-                        <p className="text-xs text-slate-300 break-words">
+                        <h3 className="font-semibold text-heading-accent text-xs sm:text-sm break-words">What's the difference between sales tax and VAT?</h3>
+                        <p className="text-xs text-foreground break-words">
                           Sales tax is imposed only on the final consumer at the point of sale, while VAT (Value-Added Tax) is imposed at each stage of production. VAT is used in over 160 countries outside the US. Our calculator helps you understand these differences and calculate accurate tax amounts for US sales tax purposes.
                         </p>
                       </div>
                       <div className="space-y-1 sm:space-y-1.5">
-                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Are online businesses required to collect sales tax from customers?</h3>
-                        <p className="text-xs text-slate-300 break-words">
+                        <h3 className="font-semibold text-heading-accent text-xs sm:text-sm break-words">Are online businesses required to collect sales tax from customers?</h3>
+                        <p className="text-xs text-foreground break-words">
                           Online business sales tax obligations depend on nexus requirements established in each state. When your business maintains a physical presence or reaches economic nexus thresholds within a particular state, you become legally obligated to collect and remit sales tax for transactions with customers located in that jurisdiction. Our calculator assists in identifying applicable tax rates across various states and clarifying your specific compliance responsibilities.
                         </p>
                       </div>
@@ -567,8 +567,8 @@ export default function SalesTaxCalculatorPage() {
                         </p>
                       </div>
                       <div className="space-y-1 sm:space-y-1.5">
-                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">How do state-level and local jurisdiction sales taxes differ?</h3>
-                        <p className="text-xs text-slate-300 break-words">
+                        <h3 className="font-semibold text-heading-accent text-xs sm:text-sm break-words">How do state-level and local jurisdiction sales taxes differ?</h3>
+                        <p className="text-xs text-foreground break-words">
                           State sales tax represents a levy imposed by state-level government authorities, whereas local sales tax originates from municipal, county, or regional government bodies. When calculating total tax burden, you combine both rates together—state plus local equals your complete sales tax percentage. Our tool incorporates data from both state and local tax jurisdictions to provide precise combined rate calculations.
                         </p>
                       </div>
@@ -603,8 +603,8 @@ export default function SalesTaxCalculatorPage() {
                         </p>
                       </div>
                       <div className="space-y-1 sm:space-y-1.5">
-                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">Which documentation must businesses maintain for sales tax compliance?</h3>
-                        <p className="text-xs text-slate-300 break-words">
+                        <h3 className="font-semibold text-heading-accent text-xs sm:text-sm break-words">Which documentation must businesses maintain for sales tax compliance?</h3>
+                        <p className="text-xs text-foreground break-words">
                           Businesses should maintain comprehensive documentation covering all sales transactions, documenting customer details, product specifications, applicable tax percentages used, and total tax amounts collected. The majority of state regulations mandate retention periods spanning 3 to 7 years for these financial records. Our calculator provides functionality to systematically record and organize this critical compliance data for audit readiness.
                         </p>
                       </div>
@@ -615,8 +615,8 @@ export default function SalesTaxCalculatorPage() {
                         </p>
                       </div>
                       <div className="space-y-1 sm:space-y-1.5">
-                        <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">What is the difference between sales tax and use tax, and when do I need to pay use tax?</h3>
-                        <p className="text-xs text-slate-300 break-words">
+                        <h3 className="font-semibold text-heading-accent text-xs sm:text-sm break-words">What is the difference between sales tax and use tax, and when do I need to pay use tax?</h3>
+                        <p className="text-xs text-foreground break-words">
                           Sales tax represents a levy collected by merchants during the transaction process on taxable products and services, whereas use tax addresses purchases completed without sales tax payment, commonly occurring with out-of-state sellers or e-commerce platforms that don't collect tax. Purchasers bear responsibility for self-reporting and remitting use tax directly to their state revenue department. This system maintains tax parity between local and remote transactions. Use tax typically becomes applicable for online orders from non-collecting merchants, interstate purchases, and business acquisitions. Our calculator clarifies use tax applicability scenarios and computes proper amounts using your state's use tax percentage, which usually matches the standard sales tax rate.
                         </p>
                       </div>
@@ -648,10 +648,10 @@ export default function SalesTaxCalculatorPage() {
                   </div>
 
                   {/* Related Tools Section */}
-                  <div className="border border-slate-700 rounded-lg p-2 sm:p-3 md:p-4 shadow-sm mb-3 sm:mb-4 overflow-hidden">
-                    <h2 className="text-sm sm:text-base md:text-lg font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-green-500 break-words">
-                      <div className="p-1 sm:p-1.5 bg-green-500/10 rounded">
-                        <Calculator className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-green-500" />
+                  <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm mb-3 sm:mb-4 overflow-hidden">
+                    <h2 className="text-sm sm:text-base md:text-lg font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-heading-accent break-words">
+                      <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded">
+                        <Calculator className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-heading-accent" />
                       </div>
                       Related Business & Finance Calculators
                     </h2>
@@ -673,13 +673,13 @@ export default function SalesTaxCalculatorPage() {
                         <a
                           key={name}
                           href={href}
-                          className="p-2 sm:p-2.5 bg-black rounded-lg border border-slate-700 hover:bg-slate-900 hover:border-slate-600 transition-colors group w-full overflow-hidden"
+                          className="p-2 sm:p-2.5 bg-card rounded-lg border border-border hover:bg-muted hover:border-border transition-colors group w-full overflow-hidden"
                         >
                           <div className="flex items-center gap-1.5 sm:gap-2 mb-0.5">
-                            <Icon className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-white flex-shrink-0" />
-                            <h3 className="font-semibold text-green-500 text-xs sm:text-sm break-words">{name}</h3>
+                            <Icon className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-foreground flex-shrink-0" />
+                            <h3 className="font-semibold text-heading-accent text-xs sm:text-sm break-words">{name}</h3>
                           </div>
-                          <p className="text-xs text-slate-300 break-words">{desc}</p>
+                          <p className="text-xs text-foreground break-words">{desc}</p>
                         </a>
                       ))}
                     </div>

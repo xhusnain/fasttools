@@ -331,21 +331,21 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
   }
 
   return (
-    <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-black rounded-xl p-2 sm:p-3 md:p-4 w-full overflow-hidden">
+    <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-2 sm:p-3 md:p-4 w-full overflow-hidden">
       {/* Main Calculator */}
-      <Card className="bg-black border-slate-700 w-full overflow-hidden">
+      <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
-            <Calculator className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
-            <span className="text-orange-500">Advanced Inflation Calculator</span>
+            <Calculator className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
+            <span className="text-foreground">Advanced Inflation Calculator</span>
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4 sm:space-y-6 px-2 sm:px-3 md:px-4">
           {/* Calculation Type Selection */}
           <div>
-            <Label className="text-xs sm:text-sm text-green-500 mb-2 block">Calculation Type</Label>
+            <Label className="text-xs sm:text-sm text-heading-accent mb-2 block">Calculation Type</Label>
             <Tabs value={calculationType} onValueChange={setCalculationType} className="w-full">
-              <TabsList className="grid w-full grid-cols-3 bg-black border border-slate-700">
+              <TabsList className="grid w-full grid-cols-3 bg-card border border-border">
                 <TabsTrigger value="cpi" className="text-xs sm:text-sm">CPI Data</TabsTrigger>
                 <TabsTrigger value="forward" className="text-xs sm:text-sm">Forward Rate</TabsTrigger>
                 <TabsTrigger value="backward" className="text-xs sm:text-sm">Backward Rate</TabsTrigger>
@@ -354,37 +354,37 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
               <TabsContent value="cpi" className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="amount" className="text-xs sm:text-sm text-green-500">Amount</Label>
+                    <Label htmlFor="amount" className="text-xs sm:text-sm text-heading-accent">Amount</Label>
                     <Input
                       id="amount"
                       type="number"
                       placeholder="100"
                       value={originalAmount}
                       onChange={(e) => setOriginalAmount(e.target.value)}
-                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="startYear" className="text-xs sm:text-sm text-green-500">Start Year</Label>
+                    <Label htmlFor="startYear" className="text-xs sm:text-sm text-heading-accent">Start Year</Label>
                     <Input
                       id="startYear"
                       type="number"
                       placeholder="2015"
                       value={startYear}
                       onChange={(e) => setStartYear(e.target.value)}
-                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
                     />
                   </div>
                 </div>
                 <div className="space-y-1.5 w-full min-w-0">
-                  <Label htmlFor="endYear" className="text-xs sm:text-sm text-green-500">End Year</Label>
+                  <Label htmlFor="endYear" className="text-xs sm:text-sm text-heading-accent">End Year</Label>
                   <Input
                     id="endYear"
                     type="number"
                     placeholder="2025"
                     value={endYear}
                     onChange={(e) => setEndYear(e.target.value)}
-                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                    className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
                   />
                 </div>
               </TabsContent>
@@ -392,37 +392,37 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
               <TabsContent value="forward" className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="amount" className="text-xs sm:text-sm text-green-500">Amount</Label>
+                    <Label htmlFor="amount" className="text-xs sm:text-sm text-heading-accent">Amount</Label>
                     <Input
                       id="amount"
                       type="number"
                       placeholder="100"
                       value={originalAmount}
                       onChange={(e) => setOriginalAmount(e.target.value)}
-                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="inflationRate" className="text-xs sm:text-sm text-green-500">Inflation Rate (%)</Label>
+                    <Label htmlFor="inflationRate" className="text-xs sm:text-sm text-heading-accent">Inflation Rate (%)</Label>
                     <Input
                       id="inflationRate"
                       type="number"
                       placeholder="3"
                       value={inflationRate}
                       onChange={(e) => setInflationRate(e.target.value)}
-                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
                     />
                   </div>
                 </div>
                 <div className="space-y-1.5 w-full min-w-0">
-                  <Label htmlFor="years" className="text-xs sm:text-sm text-green-500">Years</Label>
+                  <Label htmlFor="years" className="text-xs sm:text-sm text-heading-accent">Years</Label>
                   <Input
                     id="years"
                     type="number"
                     placeholder="10"
                     value={years}
                     onChange={(e) => setYears(e.target.value)}
-                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                    className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
                   />
                 </div>
               </TabsContent>
@@ -430,25 +430,25 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
               <TabsContent value="backward" className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="amount" className="text-xs sm:text-sm text-green-500">Amount</Label>
+                    <Label htmlFor="amount" className="text-xs sm:text-sm text-heading-accent">Amount</Label>
                     <Input
                       id="amount"
                       type="number"
                       placeholder="100"
                       value={originalAmount}
                       onChange={(e) => setOriginalAmount(e.target.value)}
-                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
                     />
                   </div>
                   <div className="space-y-1.5 w-full min-w-0">
-                    <Label htmlFor="inflationRate" className="text-xs sm:text-sm text-green-500">Inflation Rate (%)</Label>
+                    <Label htmlFor="inflationRate" className="text-xs sm:text-sm text-heading-accent">Inflation Rate (%)</Label>
                     <Input
                       id="inflationRate"
                       type="number"
                       placeholder="3"
                       value={inflationRate}
                       onChange={(e) => setInflationRate(e.target.value)}
-                      className="border-slate-700 !bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                      className="border-border !bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
                     />
                   </div>
                 </div>
@@ -482,41 +482,41 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
       {result && (
         <div className="space-y-6">
           {/* Main Results */}
-          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+          <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
-                <DollarSign className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
-                <span className="text-orange-500">Inflation Calculation Results</span>
+                <DollarSign className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
+                <span className="text-foreground">Inflation Calculation Results</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-1.5">
-                  <Label className="text-xs sm:text-sm text-green-500">Original Amount</Label>
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200">
+                  <Label className="text-xs sm:text-sm text-heading-accent">Original Amount</Label>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                     ${result.originalAmount.toFixed(2)}
                   </div>
                 </div>
                 <div className="space-y-1.5">
-                  <Label className="text-xs sm:text-sm text-green-500">Adjusted Amount</Label>
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200">
+                  <Label className="text-xs sm:text-sm text-heading-accent">Adjusted Amount</Label>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                     ${result.adjustedAmount.toFixed(2)}
                   </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-slate-700">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-border">
                 <div className="text-center">
-                  <div className="text-xs sm:text-sm text-slate-300">Inflation Rate</div>
-                  <div className="text-base sm:text-lg font-semibold text-orange-500">{result.inflationRate.toFixed(2)}%</div>
+                  <div className="text-xs sm:text-sm text-foreground">Inflation Rate</div>
+                  <div className="text-base sm:text-lg font-semibold text-foreground">{result.inflationRate.toFixed(2)}%</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xs sm:text-sm text-slate-300">Years</div>
-                  <div className="text-base sm:text-lg font-semibold text-slate-200">{result.yearsDifference}</div>
+                  <div className="text-xs sm:text-sm text-foreground">Years</div>
+                  <div className="text-base sm:text-lg font-semibold text-foreground">{result.yearsDifference}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xs sm:text-sm text-slate-300">Total Inflation</div>
-                  <div className="text-base sm:text-lg font-semibold text-slate-200">${result.totalInflation.toFixed(2)}</div>
+                  <div className="text-xs sm:text-sm text-foreground">Total Inflation</div>
+                  <div className="text-base sm:text-lg font-semibold text-foreground">${result.totalInflation.toFixed(2)}</div>
                 </div>
               </div>
 
@@ -530,31 +530,31 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
           </Card>
 
           {/* Summary */}
-          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+          <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
-                <BarChart3 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
-                <span className="text-orange-500">Inflation Analysis</span>
+                <BarChart3 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
+                <span className="text-foreground">Inflation Analysis</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-                <div className="p-2 sm:p-3 md:p-4 bg-black border border-slate-700 rounded-lg">
-                  <h3 className="font-semibold text-green-500 mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Purchasing Power</h3>
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200">{result.purchasingPower.toFixed(1)}%</div>
-                  <div className="text-xs sm:text-sm text-slate-300 break-words">of original value</div>
+                <div className="p-2 sm:p-3 md:p-4 bg-card border border-border rounded-lg">
+                  <h3 className="font-semibold text-heading-accent mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Purchasing Power</h3>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">{result.purchasingPower.toFixed(1)}%</div>
+                  <div className="text-xs sm:text-sm text-foreground break-words">of original value</div>
                 </div>
-                <div className="p-2 sm:p-3 md:p-4 bg-black border border-slate-700 rounded-lg">
-                  <h3 className="font-semibold text-green-500 mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Value Change</h3>
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200">
+                <div className="p-2 sm:p-3 md:p-4 bg-card border border-border rounded-lg">
+                  <h3 className="font-semibold text-heading-accent mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Value Change</h3>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                     {result.adjustedAmount > result.originalAmount ? "+" : ""}${(result.adjustedAmount - result.originalAmount).toFixed(2)}
                   </div>
-                  <div className="text-xs sm:text-sm text-slate-300 break-words">total change</div>
+                  <div className="text-xs sm:text-sm text-foreground break-words">total change</div>
                 </div>
-                <div className="p-2 sm:p-3 md:p-4 bg-black border border-slate-700 rounded-lg">
-                  <h3 className="font-semibold text-green-500 mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Calculation Type</h3>
-                  <div className="text-base sm:text-lg font-bold text-slate-200">{result.calculationType}</div>
-                  <div className="text-xs sm:text-sm text-slate-300 break-words">method used</div>
+                <div className="p-2 sm:p-3 md:p-4 bg-card border border-border rounded-lg">
+                  <h3 className="font-semibold text-heading-accent mb-1.5 sm:mb-2 text-xs sm:text-sm break-words">Calculation Type</h3>
+                  <div className="text-base sm:text-lg font-bold text-foreground">{result.calculationType}</div>
+                  <div className="text-xs sm:text-sm text-foreground break-words">method used</div>
                 </div>
               </div>
             </CardContent>
@@ -562,30 +562,30 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
 
           {/* Historical Data */}
           {result.historicalData.length > 0 && (
-            <Card className="bg-black border-slate-700 w-full overflow-hidden">
+            <Card className="bg-card border-border w-full overflow-hidden">
               <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
                 <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
-                  <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
-                  <span className="text-orange-500">Historical Inflation Data</span>
+                  <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
+                  <span className="text-foreground">Historical Inflation Data</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="px-2 sm:px-3 md:px-4">
                 <div className="overflow-x-auto">
-                  <table className="w-full border-collapse border border-slate-700">
+                  <table className="w-full border-collapse border border-border">
                     <thead>
-                      <tr className="bg-black border-b border-slate-700">
-                        <th className="border border-slate-700 p-2 sm:p-3 text-left text-xs sm:text-sm text-green-500">Year</th>
-                        <th className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-green-500">CPI</th>
-                        <th className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-green-500">Inflation Rate</th>
+                      <tr className="bg-card border-b border-border">
+                        <th className="border border-border p-2 sm:p-3 text-left text-xs sm:text-sm text-heading-accent">Year</th>
+                        <th className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-heading-accent">CPI</th>
+                        <th className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-heading-accent">Inflation Rate</th>
                       </tr>
                     </thead>
                     <tbody>
                       {result.historicalData.map((row, index) => (
                         <tr key={index}>
-                          <td className="border border-slate-700 p-2 sm:p-3 text-xs sm:text-sm text-slate-200">{row.year}</td>
-                          <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm text-slate-200">{row.cpi.toFixed(1)}</td>
-                          <td className="border border-slate-700 p-2 sm:p-3 text-right text-xs sm:text-sm">
-                            <span className={row.inflationRate > 0 ? "text-red-400" : "text-green-400"}>
+                          <td className="border border-border p-2 sm:p-3 text-xs sm:text-sm text-foreground">{row.year}</td>
+                          <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm text-foreground">{row.cpi.toFixed(1)}</td>
+                          <td className="border border-border p-2 sm:p-3 text-right text-xs sm:text-sm">
+                            <span className={row.inflationRate > 0 ? "text-foreground" : "text-heading-accent"}>
                               {row.inflationRate > 0 ? "+" : ""}{row.inflationRate.toFixed(2)}%
                             </span>
                           </td>
@@ -599,22 +599,22 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
           )}
 
           {/* Inflation Scenarios */}
-          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+          <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
-                <TrendingUp className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
-                <span className="text-orange-500">Inflation Scenarios</span>
+                <TrendingUp className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
+                <span className="text-foreground">Inflation Scenarios</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="px-2 sm:px-3 md:px-4">
               <div className="space-y-2">
                 {result.comparison.scenarios.map((scenario, index) => (
-                  <div key={index} className="flex justify-between items-center p-2 sm:p-3 bg-black border border-slate-700 rounded-lg">
+                  <div key={index} className="flex justify-between items-center p-2 sm:p-3 bg-card border border-border rounded-lg">
                     <div className="min-w-0">
-                      <span className="font-medium text-slate-200 text-xs sm:text-sm break-words">{scenario.scenario}</span>
-                      <p className="text-xs text-slate-300 break-words">${scenario.adjustedAmount.toFixed(2)}</p>
+                      <span className="font-medium text-foreground text-xs sm:text-sm break-words">{scenario.scenario}</span>
+                      <p className="text-xs text-foreground break-words">${scenario.adjustedAmount.toFixed(2)}</p>
                     </div>
-                    <Badge className={scenario.difference > 0 ? "bg-green-500/20 text-green-400 border-green-500" : "bg-red-500/20 text-red-400 border-red-500"} variant="outline">
+                    <Badge className={scenario.difference > 0 ? "bg-green-500/20 text-heading-accent border-green-500" : "bg-red-500/20 text-foreground border-red-500"} variant="outline">
                       {scenario.difference > 0 ? "+" : ""}${scenario.difference.toFixed(2)}
                     </Badge>
                   </div>
@@ -624,44 +624,44 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
           </Card>
 
           {/* Recommendations */}
-          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+          <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
-                <Target className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
-                <span className="text-orange-500">Personalized Recommendations</span>
+                <Target className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
+                <span className="text-foreground">Personalized Recommendations</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div>
-                  <h4 className="font-semibold mb-2 sm:mb-3 text-green-500 text-xs sm:text-sm break-words">Investment Tips</h4>
+                  <h4 className="font-semibold mb-2 sm:mb-3 text-heading-accent text-xs sm:text-sm break-words">Investment Tips</h4>
                   <ul className="space-y-1 text-xs sm:text-sm">
                     {result.recommendations.investmentTips.map((rec, index) => (
                       <li key={index} className="flex items-start gap-1.5 sm:gap-2">
-                        <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300 break-words">{rec}</span>
+                        <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-heading-accent mt-0.5 flex-shrink-0" />
+                        <span className="text-foreground break-words">{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 sm:mb-3 text-green-500 text-xs sm:text-sm break-words">Inflation Hedges</h4>
+                  <h4 className="font-semibold mb-2 sm:mb-3 text-heading-accent text-xs sm:text-sm break-words">Inflation Hedges</h4>
                   <ul className="space-y-1 text-xs sm:text-sm">
                     {result.recommendations.inflationHedges.map((rec, index) => (
                       <li key={index} className="flex items-start gap-1.5 sm:gap-2">
-                        <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300 break-words">{rec}</span>
+                        <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-heading-accent mt-0.5 flex-shrink-0" />
+                        <span className="text-foreground break-words">{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 sm:mb-3 text-green-500 text-xs sm:text-sm break-words">Financial Planning</h4>
+                  <h4 className="font-semibold mb-2 sm:mb-3 text-heading-accent text-xs sm:text-sm break-words">Financial Planning</h4>
                   <ul className="space-y-1 text-xs sm:text-sm">
                     {result.recommendations.financialPlanning.map((rec, index) => (
                       <li key={index} className="flex items-start gap-1.5 sm:gap-2">
-                        <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300 break-words">{rec}</span>
+                        <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-heading-accent mt-0.5 flex-shrink-0" />
+                        <span className="text-foreground break-words">{rec}</span>
                       </li>
                     ))}
                   </ul>
@@ -674,22 +674,22 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card className="bg-black border-slate-700 w-full overflow-hidden">
+        <Card className="bg-card border-border w-full overflow-hidden">
           <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
             <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
-              <History className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
-              <span className="text-orange-500">Recent Calculations</span>
+              <History className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
+              <span className="text-foreground">Recent Calculations</span>
             </CardTitle>
           </CardHeader>
           <CardContent className="px-2 sm:px-3 md:px-4">
             <div className="space-y-2">
               {history.map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-2 sm:p-3 bg-black border border-slate-700 rounded-lg">
+                <div key={index} className="flex items-center justify-between p-2 sm:p-3 bg-card border border-border rounded-lg">
                   <div className="space-y-1 min-w-0">
-                    <div className="font-medium text-xs sm:text-sm text-slate-200 break-words">
+                    <div className="font-medium text-xs sm:text-sm text-foreground break-words">
                       ${item.originalAmount.toFixed(0)} → ${item.adjustedAmount.toFixed(0)}
                     </div>
-                    <div className="text-xs text-slate-300 break-words">
+                    <div className="text-xs text-foreground break-words">
                       {item.inflationRate.toFixed(1)}% over {item.yearsDifference} years
                     </div>
                   </div>
@@ -709,40 +709,40 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
       )}
 
       {/* Information Section */}
-      <Card className="bg-black border-slate-700 w-full overflow-hidden">
+      <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
-            <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
-            <span className="text-orange-500">Inflation Calculator Features</span>
+            <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
+            <span className="text-foreground">Inflation Calculator Features</span>
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3 px-2 sm:px-3 md:px-4">
-          <div className="p-2 sm:p-3 md:p-4 bg-black border border-slate-700 rounded-lg">
+          <div className="p-2 sm:p-3 md:p-4 bg-card border border-border rounded-lg">
             <div className="flex items-start gap-2">
-              <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500 mt-0.5 flex-shrink-0" />
+              <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground mt-0.5 flex-shrink-0" />
               <div className="text-xs sm:text-sm min-w-0">
-                <p className="font-medium text-orange-500 mb-1 break-words">
+                <p className="font-medium text-foreground mb-1 break-words">
                   Professional Inflation Analysis
                 </p>
-                <p className="text-slate-300 break-words">
+                <p className="text-foreground break-words">
                   This calculator uses historical CPI data and advanced inflation formulas to provide accurate purchasing power calculations. Perfect for financial planning, investment analysis, and economic research.
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="text-xs sm:text-sm text-slate-300 space-y-1.5 sm:space-y-2">
+          <div className="text-xs sm:text-sm text-foreground space-y-1.5 sm:space-y-2">
             <p className="break-words">
-              <strong className="text-green-500">CPI Data:</strong> Uses historical Consumer Price Index data from 1913 to 2025.
+              <strong className="text-heading-accent">CPI Data:</strong> Uses historical Consumer Price Index data from 1913 to 2025.
             </p>
             <p className="break-words">
-              <strong className="text-green-500">Multiple Calculation Methods:</strong> CPI-based, forward flat rate, and backward flat rate calculations.
+              <strong className="text-heading-accent">Multiple Calculation Methods:</strong> CPI-based, forward flat rate, and backward flat rate calculations.
             </p>
             <p className="break-words">
-              <strong className="text-green-500">Investment Analysis:</strong> Personalized recommendations for inflation hedging and investment strategies.
+              <strong className="text-heading-accent">Investment Analysis:</strong> Personalized recommendations for inflation hedging and investment strategies.
             </p>
             <p className="break-words">
-              <strong className="text-green-500">Historical Analysis:</strong> Complete inflation data and trends for informed decision-making.
+              <strong className="text-heading-accent">Historical Analysis:</strong> Complete inflation data and trends for informed decision-making.
             </p>
           </div>
         </CardContent>

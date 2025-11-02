@@ -507,7 +507,7 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
         {/* Applied filters count */}
         {appliedFilters.size > 0 && (
           <div className="bg-slate-50 border border-slate-200 rounded-lg p-2">
-            <p className="text-xs text-slate-600 text-center">
+            <p className="text-xs text-muted-foreground text-center">
               {appliedFilters.size} filter{appliedFilters.size > 1 ? 's' : ''} applied
             </p>
           </div>
@@ -554,7 +554,7 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
                   className="w-6 h-6 rounded-full border-2 border-purple-300 shadow-md ring-2 ring-purple-100"
                   style={{ backgroundColor: selectedColor }}
                 />
-                <span className="text-xs text-slate-600 font-mono font-medium">{selectedColor}</span>
+                <span className="text-xs text-muted-foreground font-mono font-medium">{selectedColor}</span>
               </div>
             </div>
           )}
@@ -564,7 +564,7 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
         <div>
           <button
             onClick={() => setShowGradientPicker(!showGradientPicker)}
-            className="w-full py-2.5 px-4 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 text-white rounded-lg font-medium text-sm hover:shadow-lg transition-all flex items-center justify-between group"
+            className="w-full py-2.5 px-4 bg-gradient-to-r from-primary via-pink-500 to-purple-500 text-white rounded-lg font-medium text-sm hover:shadow-lg transition-all flex items-center justify-between group"
           >
             <span className="flex items-center gap-2">
               <span className="text-base">🌈</span>
@@ -610,7 +610,7 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
                   className="w-6 h-6 rounded-full border-2 border-purple-300 shadow-md ring-2 ring-purple-100"
                   style={{ background: `linear-gradient(${selectedGradient.angle}deg, ${selectedGradient.colors.join(', ')})` }}
                 />
-                <span className="text-xs text-slate-600 font-medium">{selectedGradient.colors.length} colors</span>
+                <span className="text-xs text-muted-foreground font-medium">{selectedGradient.colors.length} colors</span>
               </div>
             </div>
           )}
@@ -625,7 +625,7 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
           className={`w-full py-2.5 px-4 rounded-lg font-semibold text-sm text-white transition-all flex items-center justify-center gap-2 ${
             appliedFilters.size === 0
               ? 'bg-slate-300 cursor-not-allowed'
-              : 'bg-red-500 hover:bg-red-600'
+              : 'bg-red-500 hover:bg-destructive'
           }`}
         >
           <X className="w-4 h-4" />

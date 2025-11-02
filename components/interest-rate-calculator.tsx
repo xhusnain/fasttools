@@ -272,12 +272,12 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
   }
 
   return (
-    <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-black rounded-xl p-2 sm:p-3 md:p-4 w-full overflow-hidden">
+    <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-2 sm:p-3 md:p-4 w-full overflow-hidden">
       {/* Main Calculator */}
-      <Card className="bg-black border-slate-700 w-full overflow-hidden">
+      <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-          <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
-            <Calculator className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
+          <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+            <Calculator className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
             Advanced Interest Rate Calculator
           </CardTitle>
         </CardHeader>
@@ -285,50 +285,50 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
           {/* Input Fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="loanAmount" className="text-green-500 text-xs sm:text-sm">Loan Amount ($)</Label>
+              <Label htmlFor="loanAmount" className="text-heading-accent text-xs sm:text-sm">Loan Amount ($)</Label>
               <Input
                 id="loanAmount"
                 type="number"
                 placeholder="32000"
                 value={loanAmount}
                 onChange={(e) => setLoanAmount(e.target.value)}
-                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
               />
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="monthlyPayment" className="text-green-500 text-xs sm:text-sm">Monthly Payment ($)</Label>
+              <Label htmlFor="monthlyPayment" className="text-heading-accent text-xs sm:text-sm">Monthly Payment ($)</Label>
               <Input
                 id="monthlyPayment"
                 type="number"
                 placeholder="960"
                 value={monthlyPayment}
                 onChange={(e) => setMonthlyPayment(e.target.value)}
-                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="loanTerm" className="text-green-500 text-xs sm:text-sm">Loan Term (Years)</Label>
+              <Label htmlFor="loanTerm" className="text-heading-accent text-xs sm:text-sm">Loan Term (Years)</Label>
               <Input
                 id="loanTerm"
                 type="number"
                 placeholder="3"
                 value={loanTerm}
                 onChange={(e) => setLoanTerm(e.target.value)}
-                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
               />
             </div>
             <div className="space-y-1.5 w-full min-w-0">
-              <Label htmlFor="loanTermMonths" className="text-green-500 text-xs sm:text-sm">Additional Months</Label>
+              <Label htmlFor="loanTermMonths" className="text-heading-accent text-xs sm:text-sm">Additional Months</Label>
               <Input
                 id="loanTermMonths"
                 type="number"
                 placeholder="0"
                 value={loanTermMonths}
                 onChange={(e) => setLoanTermMonths(e.target.value)}
-                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm h-9"
+                className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm h-9"
               />
             </div>
           </div>
@@ -349,41 +349,41 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
       {result && (
         <div className="space-y-4 sm:space-y-6">
           {/* Main Results */}
-          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+          <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
-                <Percent className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
+              <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+                <Percent className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 Interest Rate Calculation Results
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-1">
-                  <Label className="text-xs sm:text-sm text-green-500">Interest Rate</Label>
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-400">
+                  <Label className="text-xs sm:text-sm text-heading-accent">Interest Rate</Label>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                     {result.interestRate.toFixed(3)}%
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label className="text-xs sm:text-sm text-green-500">Monthly Payment</Label>
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-green-400">
+                  <Label className="text-xs sm:text-sm text-heading-accent">Monthly Payment</Label>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-heading-accent">
                     ${result.monthlyPayment.toFixed(2)}
                   </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-3 border-t border-slate-700">
-                <div className="text-center p-2 bg-black border border-slate-700 rounded-lg">
-                  <div className="text-xs text-slate-300">Total Interest</div>
-                  <div className="text-base sm:text-lg font-semibold text-red-400">${result.totalInterest.toFixed(2)}</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-3 border-t border-border">
+                <div className="text-center p-2 bg-card border border-border rounded-lg">
+                  <div className="text-xs text-foreground">Total Interest</div>
+                  <div className="text-base sm:text-lg font-semibold text-foreground">${result.totalInterest.toFixed(2)}</div>
                 </div>
-                <div className="text-center p-2 bg-black border border-slate-700 rounded-lg">
-                  <div className="text-xs text-slate-300">Total Payments</div>
-                  <div className="text-base sm:text-lg font-semibold text-purple-400">${result.totalPayments.toFixed(2)}</div>
+                <div className="text-center p-2 bg-card border border-border rounded-lg">
+                  <div className="text-xs text-foreground">Total Payments</div>
+                  <div className="text-base sm:text-lg font-semibold text-foreground">${result.totalPayments.toFixed(2)}</div>
                 </div>
-                <div className="text-center p-2 bg-black border border-slate-700 rounded-lg">
-                  <div className="text-xs text-slate-300">Loan Term</div>
-                  <div className="text-base sm:text-lg font-semibold text-orange-500">{result.loanTerm} months</div>
+                <div className="text-center p-2 bg-card border border-border rounded-lg">
+                  <div className="text-xs text-foreground">Loan Term</div>
+                  <div className="text-base sm:text-lg font-semibold text-foreground">{result.loanTerm} months</div>
                 </div>
               </div>
 
@@ -397,50 +397,50 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
           </Card>
 
           {/* Payment Breakdown */}
-          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+          <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
-                <PieChart className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
+              <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+                <PieChart className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 Payment Breakdown
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg">
-                  <h3 className="font-semibold text-green-500 mb-1.5 text-xs sm:text-sm">Principal</h3>
-                  <div className="text-xl sm:text-2xl font-bold text-blue-400">${result.paymentBreakdown.principal.toFixed(2)}</div>
-                  <p className="text-xs text-slate-300">{result.paymentBreakdown.principalPercentage.toFixed(1)}% of total</p>
+                <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg">
+                  <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm">Principal</h3>
+                  <div className="text-xl sm:text-2xl font-bold text-foreground">${result.paymentBreakdown.principal.toFixed(2)}</div>
+                  <p className="text-xs text-foreground">{result.paymentBreakdown.principalPercentage.toFixed(1)}% of total</p>
                 </div>
-                <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg">
-                  <h3 className="font-semibold text-green-500 mb-1.5 text-xs sm:text-sm">Interest</h3>
-                  <div className="text-xl sm:text-2xl font-bold text-red-400">${result.paymentBreakdown.interest.toFixed(2)}</div>
-                  <p className="text-xs text-slate-300">{result.paymentBreakdown.interestPercentage.toFixed(1)}% of total</p>
+                <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg">
+                  <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm">Interest</h3>
+                  <div className="text-xl sm:text-2xl font-bold text-foreground">${result.paymentBreakdown.interest.toFixed(2)}</div>
+                  <p className="text-xs text-foreground">{result.paymentBreakdown.interestPercentage.toFixed(1)}% of total</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
           {/* Rate Comparison */}
-          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+          <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
-                <BarChart3 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
+              <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+                <BarChart3 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 Rate Comparison
               </CardTitle>
             </CardHeader>
             <CardContent className="px-2 sm:px-3 md:px-4">
               <div className="space-y-1.5 sm:space-y-2">
                 {result.comparison.otherRates.map((rate, index) => (
-                  <div key={index} className="flex justify-between items-center p-2 sm:p-2.5 bg-black border border-slate-700 rounded-lg">
+                  <div key={index} className="flex justify-between items-center p-2 sm:p-2.5 bg-card border border-border rounded-lg">
                     <div>
-                      <span className="font-medium text-slate-200 text-xs sm:text-sm">{rate.rate}% rate</span>
-                      <p className="text-xs text-slate-300">${rate.monthlyPayment.toFixed(2)}/month</p>
+                      <span className="font-medium text-foreground text-xs sm:text-sm">{rate.rate}% rate</span>
+                      <p className="text-xs text-foreground">${rate.monthlyPayment.toFixed(2)}/month</p>
                     </div>
                     <div className="text-right">
-                      <Badge className={rate.difference > 0 ? "bg-red-500/20 text-red-400 border-red-500" : "bg-slate-700 text-slate-200"} variant="outline">
+                      <Badge className={rate.difference > 0 ? "bg-red-500/20 text-foreground border-red-500" : "bg-border text-foreground"} variant="outline">
                         {rate.difference > 0 ? "+" : ""}${rate.difference.toFixed(2)}
                       </Badge>
-                      <p className="text-xs text-slate-300">${rate.totalInterest.toFixed(2)} interest</p>
+                      <p className="text-xs text-foreground">${rate.totalInterest.toFixed(2)} interest</p>
                     </div>
                   </div>
                 ))}
@@ -449,43 +449,43 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
           </Card>
 
           {/* Recommendations */}
-          <Card className="bg-black border-slate-700 w-full overflow-hidden">
+          <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-              <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
-                <Target className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
+              <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+                <Target className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
                 Personalized Recommendations
               </CardTitle>
             </CardHeader>
             <CardContent className="px-2 sm:px-3 md:px-4">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 <div>
-                  <h4 className="font-semibold mb-2 text-green-500 text-xs sm:text-sm">Rate Optimization</h4>
+                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">Rate Optimization</h4>
                   <ul className="space-y-1 text-xs">
                     {result.recommendations.rateOptimization.map((rec, index) => (
-                      <li key={index} className="flex items-start gap-1.5 text-slate-300">
-                        <CheckCircle className="h-3 w-3 text-green-500 mt-0.5 flex-shrink-0" />
+                      <li key={index} className="flex items-start gap-1.5 text-foreground">
+                        <CheckCircle className="h-3 w-3 text-heading-accent mt-0.5 flex-shrink-0" />
                         <span className="break-words">{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 text-green-500 text-xs sm:text-sm">Loan Tips</h4>
+                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">Loan Tips</h4>
                   <ul className="space-y-1 text-xs">
                     {result.recommendations.loanTips.map((rec, index) => (
-                      <li key={index} className="flex items-start gap-1.5 text-slate-300">
-                        <CheckCircle className="h-3 w-3 text-green-500 mt-0.5 flex-shrink-0" />
+                      <li key={index} className="flex items-start gap-1.5 text-foreground">
+                        <CheckCircle className="h-3 w-3 text-heading-accent mt-0.5 flex-shrink-0" />
                         <span className="break-words">{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 text-green-500 text-xs sm:text-sm">Refinancing</h4>
+                  <h4 className="font-semibold mb-2 text-heading-accent text-xs sm:text-sm">Refinancing</h4>
                   <ul className="space-y-1 text-xs">
                     {result.recommendations.refinancing.map((rec, index) => (
-                      <li key={index} className="flex items-start gap-1.5 text-slate-300">
-                        <CheckCircle className="h-3 w-3 text-green-500 mt-0.5 flex-shrink-0" />
+                      <li key={index} className="flex items-start gap-1.5 text-foreground">
+                        <CheckCircle className="h-3 w-3 text-heading-accent mt-0.5 flex-shrink-0" />
                         <span className="break-words">{rec}</span>
                       </li>
                     ))}
@@ -499,22 +499,22 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card className="bg-black border-slate-700 w-full overflow-hidden">
+        <Card className="bg-card border-border w-full overflow-hidden">
           <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-            <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
-              <History className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
+            <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+              <History className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
               Recent Calculations
             </CardTitle>
           </CardHeader>
           <CardContent className="px-2 sm:px-3 md:px-4">
             <div className="space-y-1.5 sm:space-y-2">
               {history.map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-2 sm:p-2.5 bg-black border border-slate-700 rounded-lg">
+                <div key={index} className="flex items-center justify-between p-2 sm:p-2.5 bg-card border border-border rounded-lg">
                   <div className="space-y-0.5">
-                    <div className="font-medium text-slate-200 text-xs sm:text-sm">
+                    <div className="font-medium text-foreground text-xs sm:text-sm">
                       ${item.loanAmount.toFixed(0)} @ {item.interestRate.toFixed(3)}%
                     </div>
-                    <div className="text-xs text-slate-300">
+                    <div className="text-xs text-foreground">
                       ${item.monthlyPayment.toFixed(2)}/month - {item.loanTerm} months
                     </div>
                   </div>
@@ -534,40 +534,40 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
       )}
 
       {/* Information Section */}
-      <Card className="bg-black border-slate-700 w-full overflow-hidden">
+      <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
-          <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-orange-500 text-base sm:text-lg md:text-xl break-words">
-            <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-500" />
+          <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
+            <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-foreground" />
             Interest Rate Calculator Features
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-2 sm:space-y-3 px-2 sm:px-3 md:px-4">
-          <div className="p-2 sm:p-2.5 md:p-3 bg-black border border-slate-700 rounded-lg">
+          <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg">
             <div className="flex items-start gap-1.5 sm:gap-2">
-              <Info className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-orange-500 mt-0.5 flex-shrink-0" />
+              <Info className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-foreground mt-0.5 flex-shrink-0" />
               <div className="text-xs sm:text-sm">
-                <p className="font-medium text-orange-500 mb-1 break-words">
+                <p className="font-medium text-foreground mb-1 break-words">
                   Professional Interest Rate Analysis
                 </p>
-                <p className="text-slate-300 break-words">
+                <p className="text-foreground break-words">
                   This calculator uses the Newton-Raphson method to determine the exact interest rate on loans with fixed terms and monthly payments. Perfect for analyzing car loans, personal loans, and other fixed-rate financing.
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="text-xs sm:text-sm text-slate-300 space-y-1">
+          <div className="text-xs sm:text-sm text-foreground space-y-1">
             <p className="break-words">
-              <strong className="text-green-500">Newton-Raphson Method:</strong> Advanced mathematical algorithm for precise interest rate calculation.
+              <strong className="text-heading-accent">Newton-Raphson Method:</strong> Advanced mathematical algorithm for precise interest rate calculation.
             </p>
             <p className="break-words">
-              <strong className="text-green-500">Amortization Analysis:</strong> Complete payment breakdown showing principal vs interest.
+              <strong className="text-heading-accent">Amortization Analysis:</strong> Complete payment breakdown showing principal vs interest.
             </p>
             <p className="break-words">
-              <strong className="text-green-500">Rate Comparison:</strong> Compare your rate against market rates from 3% to 10%.
+              <strong className="text-heading-accent">Rate Comparison:</strong> Compare your rate against market rates from 3% to 10%.
             </p>
             <p className="break-words">
-              <strong className="text-green-500">Optimization Tips:</strong> Personalized recommendations for better rates and loan management.
+              <strong className="text-heading-accent">Optimization Tips:</strong> Personalized recommendations for better rates and loan management.
             </p>
           </div>
         </CardContent>

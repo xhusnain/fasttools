@@ -43,6 +43,17 @@ const config: Config = {
           DEFAULT: 'var(--destructive)',
           foreground: 'var(--destructive-foreground)',
         },
+        'heading-accent': {
+          DEFAULT: 'var(--heading-accent)',
+          foreground: 'var(--heading-accent-foreground)',
+          border: 'var(--heading-accent-border)',
+          'border-hover': 'var(--heading-accent-border-hover)',
+        },
+        'hero-title': {
+          DEFAULT: 'var(--hero-title)',
+          hover: 'var(--hero-title-hover)',
+        },
+        'hero-description': 'var(--hero-description)',
         border: 'var(--border)',
         input: 'var(--input)',
         ring: 'var(--ring)',

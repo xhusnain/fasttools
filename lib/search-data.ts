@@ -1,0 +1,127 @@
+// Comprehensive search data for all tools and pages on FastTools
+export interface SearchItem {
+  name: string
+  description: string
+  path: string
+  category: string
+}
+
+export const searchItems: SearchItem[] = [
+  // Main Pages
+  { name: "Products", description: "Explore all our product categories and tools", path: "/products", category: "Pages" },
+  { name: "Downloaders", description: "Download videos and media from popular platforms", path: "/downloaders", category: "Pages" },
+  { name: "API Docs", description: "Comprehensive API documentation for developers", path: "/api-docs", category: "Pages" },
+  { name: "About Us", description: "Learn about FastTools and our mission", path: "/about", category: "Pages" },
+  { name: "FAQ", description: "Frequently asked questions about FastTools", path: "/faq", category: "Pages" },
+  { name: "Privacy Policy", description: "Read our privacy policy and data handling practices", path: "/privacy-policy", category: "Pages" },
+  { name: "Terms of Service", description: "Terms and conditions for using FastTools", path: "/terms", category: "Pages" },
+  { name: "Cookie Preferences", description: "Manage your cookie preferences", path: "/cookie-preferences", category: "Pages" },
+
+  // Calculator Tools
+  { name: "BMI Calculator", description: "Calculate your Body Mass Index with detailed health insights", path: "/calculator/bmi-calculator", category: "Calculator" },
+  { name: "Age Calculator", description: "Calculate exact age in years, months, weeks, days, hours, minutes, and seconds", path: "/calculator/age-calculator", category: "Calculator" },
+  { name: "Percentage Calculator", description: "Calculate percentages, discounts, increases, decreases, and percentage differences", path: "/calculator/percentage-calculator", category: "Calculator" },
+  { name: "Loan Calculator", description: "Calculate loan payments, total interest, amortization schedules", path: "/calculator/loan-calculator", category: "Calculator" },
+  { name: "Mortgage Calculator", description: "Calculate monthly mortgage payments including principal, interest, taxes", path: "/calculator/mortgage-calculator", category: "Calculator" },
+  { name: "Compound Interest Calculator", description: "Calculate investment growth with compound interest", path: "/calculator/compound-interest", category: "Calculator" },
+  { name: "Retirement Calculator", description: "Plan your retirement with confidence", path: "/calculator/retirement-calculator", category: "Calculator" },
+  { name: "Salary Calculator", description: "Convert between hourly, daily, weekly, monthly, and annual salary", path: "/calculator/salary-calculator", category: "Calculator" },
+  { name: "Tax Calculator", description: "Calculate federal and state income taxes", path: "/calculator/tax-calculator", category: "Calculator" },
+  { name: "Investment Calculator", description: "Calculate investment returns and compare options", path: "/calculator/investment-calculator", category: "Calculator" },
+  { name: "GPA Calculator", description: "Calculate semester GPA, cumulative GPA, and weighted GPA", path: "/calculator/gpa-calculator", category: "Calculator" },
+  { name: "Calorie Calculator", description: "Calculate daily calorie needs based on age, gender, activity level", path: "/calculator/calorie-calculator", category: "Calculator" },
+  { name: "BMR Calculator", description: "Calculate your Basal Metabolic Rate", path: "/calculator/bmr-calculator", category: "Calculator" },
+  { name: "Body Fat Calculator", description: "Estimate body fat percentage using multiple methods", path: "/calculator/body-fat-calculator", category: "Calculator" },
+  { name: "Pregnancy Calculator", description: "Calculate due date, pregnancy timeline, and fetal development", path: "/calculator/pregnancy-calculator", category: "Calculator" },
+  { name: "Love Calculator", description: "Calculate love compatibility percentage based on names", path: "/calculator/love-calculator", category: "Calculator" },
+  { name: "Date Difference Calculator", description: "Calculate the exact difference between two dates", path: "/calculator/date-difference", category: "Calculator" },
+  { name: "Time Duration Calculator", description: "Calculate the time duration between two times", path: "/calculator/time-duration", category: "Calculator" },
+  { name: "Conversion Calculator", description: "Convert between 1000+ units instantly", path: "/calculator/conversion-calculator", category: "Calculator" },
+  { name: "Concrete Calculator", description: "Calculate concrete volume, weight, materials, and cost", path: "/calculator/concrete-calculator", category: "Calculator" },
+  { name: "IP Subnet Calculator", description: "Calculate IPv4 and IPv6 subnets with CIDR notation", path: "/calculator/ip-subnet-calculator", category: "Calculator" },
+  { name: "Scientific Calculator", description: "Advanced scientific calculator with trigonometric and logarithmic functions", path: "/calculator/scientific-calculator", category: "Calculator" },
+  { name: "Triangle Calculator", description: "Calculate triangle area, perimeter, angles, and heights", path: "/calculator/triangle-calculator", category: "Calculator" },
+  { name: "Fraction Calculator", description: "Add, subtract, multiply, and divide fractions", path: "/calculator/fraction-calculator", category: "Calculator" },
+  { name: "Standard Deviation Calculator", description: "Calculate standard deviation, variance, and mean", path: "/calculator/standard-deviation-calculator", category: "Calculator" },
+  { name: "Pregnancy Conception Calculator", description: "Calculate your conception date with personalized guidance", path: "/calculator/pregnancy-conception-calculator", category: "Calculator" },
+  { name: "Pace Calculator", description: "Calculate running pace, training zones, and race predictions", path: "/calculator/pace-calculator", category: "Calculator" },
+  { name: "Sales Tax Calculator", description: "Calculate sales tax for all 50 US states", path: "/calculator/sales-tax-calculator", category: "Calculator" },
+  { name: "Interest Rate Calculator", description: "Calculate real interest rates on loans", path: "/calculator/interest-rate-calculator", category: "Calculator" },
+  { name: "Finance Calculator", description: "Professional finance calculator for time value of money", path: "/calculator/finance-calculator", category: "Calculator" },
+  { name: "Inflation Calculator", description: "Calculate purchasing power and inflation rates", path: "/calculator/inflation-calculator", category: "Calculator" },
+  { name: "Amortization Calculator", description: "Professional amortization calculator for loan payment analysis", path: "/calculator/amortization-calculator", category: "Calculator" },
+  { name: "Payment Calculator", description: "Professional payment calculator for loan analysis", path: "/calculator/payment-calculator", category: "Calculator" },
+
+  // AI Tools
+  { name: "AI QR Code Generator", description: "Create stunning, branded QR codes with AI-powered customization", path: "/ai-tools/qr-generator", category: "AI" },
+  { name: "AI Lyrics Generator", description: "Generate creative, original song lyrics for any genre", path: "/ai-tools/lyrics-generator", category: "AI" },
+  { name: "AI Caption Generator", description: "Create engaging captions for social media posts automatically", path: "/ai-tools/caption-generator", category: "AI" },
+  { name: "AI Pet Name Generator", description: "Discover unique, creative names for your pets using AI", path: "/ai-tools/pet-names", category: "AI" },
+
+  // Converter Tools
+  { name: "Currency Converter", description: "Real-time currency conversion for 150+ world currencies", path: "/converters/currency", category: "Converter" },
+  { name: "Text Case Converter", description: "Transform text between uppercase, lowercase, title case, camelCase", path: "/converters/text-case", category: "Converter" },
+  { name: "Length Converter", description: "Convert between all major length units", path: "/converters/length", category: "Converter" },
+  { name: "Temperature Converter", description: "Convert between Celsius, Fahrenheit, Kelvin, and Rankine", path: "/converters/temperature", category: "Converter" },
+  { name: "File Size Converter", description: "Convert between bytes, KB, MB, GB, TB", path: "/converters/file-size", category: "Converter" },
+  { name: "Timezone Converter", description: "Convert time between different time zones worldwide", path: "/converters/timezone", category: "Converter" },
+  { name: "Currency API", description: "Free currency exchange API with real-time rates", path: "/converters/currency-api", category: "Converter" },
+
+  // Developer Tools
+  { name: "Color Palette Generator", description: "Generate beautiful, harmonious color schemes", path: "/dev-tools/color-palette", category: "Developer" },
+  { name: "Hex to RGB Converter", description: "Convert between HEX, RGB, HSL, and other color formats", path: "/dev-tools/hex-to-rgb", category: "Developer" },
+  { name: "JSON to CSV Converter", description: "Convert JSON data to CSV format", path: "/dev-tools/json-to-csv", category: "Developer" },
+  { name: "JWT Decoder", description: "Decode and inspect JSON Web Tokens securely", path: "/dev-tools/jwt-decoder", category: "Developer" },
+  { name: "Regex Tester", description: "Test regular expressions with live results", path: "/dev-tools/regex-tester", category: "Developer" },
+  { name: "HTML Beautifier", description: "Format and beautify HTML code", path: "/dev-tools/html-beautifier", category: "Developer" },
+  { name: "HTML to Markdown", description: "Convert HTML content to Markdown format", path: "/dev-tools/html-to-markdown", category: "Developer" },
+  { name: "Markdown Previewer", description: "Preview Markdown content in real-time", path: "/dev-tools/markdown-previewer", category: "Developer" },
+
+  // Image Tools
+  { name: "Background Remover", description: "Remove backgrounds automatically with AI-powered precision", path: "/image-tools/image-background-remover", category: "Image" },
+  { name: "Image Blur Tool", description: "Blur sensitive areas for privacy protection", path: "/image-tools/image-blur", category: "Image" },
+  { name: "Image to Text (OCR)", description: "Extract text from images with OCR technology", path: "/image-tools/image-to-text", category: "Image" },
+
+  // PDF Tools
+  { name: "PDF to Word Converter", description: "Convert PDF to editable Word documents", path: "/pdf-tools/pdf-word-converter", category: "PDF" },
+  { name: "PDF Compressor", description: "Reduce PDF file size efficiently", path: "/pdf-tools/pdf-compressor", category: "PDF" },
+  { name: "PDF to Image", description: "Convert PDF pages to JPG and PNG images", path: "/pdf-tools/pdf-to-image", category: "PDF" },
+  { name: "Sign PDF", description: "Add secure digital signatures to PDFs", path: "/pdf-tools/pdf-sign", category: "PDF" },
+  { name: "Merge PDF", description: "Combine multiple PDF files into one document", path: "/pdf-tools/pdf-splitter-merger", category: "PDF" },
+  { name: "Split PDF", description: "Split PDF into separate files by page ranges", path: "/pdf-tools/pdf-splitter-merger", category: "PDF" },
+  { name: "PDF Unlocker", description: "Remove password protection from PDF files", path: "/pdf-tools/pdf-unlocker", category: "PDF" },
+
+  // SEO Tools
+  { name: "Meta Tag Generator", description: "Generate SEO-optimized meta tags", path: "/seo-tools/meta-tags", category: "SEO" },
+  { name: "Keyword Density Checker", description: "Analyze keyword density in content", path: "/seo-tools/keyword-density", category: "SEO" },
+  { name: "Lorem Ipsum Generator", description: "Generate placeholder text for design mockups", path: "/seo-tools/lorem-ipsum", category: "SEO" },
+  { name: "Blog Title Generator", description: "Create catchy, SEO-friendly titles", path: "/seo-tools/blog-titles", category: "SEO" },
+  { name: "Hashtag Generator", description: "Generate trending hashtags for posts", path: "/seo-tools/hashtags", category: "SEO" },
+
+  // Social Media Tools
+  { name: "Instagram DP Viewer", description: "View and download Instagram profile pictures", path: "/social-media-tools/instagram-dp", category: "Social Media" },
+  { name: "TikTok Video Downloader", description: "Download TikTok videos without watermark", path: "/social-media-tools/tiktok-downloader", category: "Social Media" },
+  { name: "YouTube Thumbnail Downloader", description: "Download YouTube thumbnails in HD", path: "/social-media-tools/youtube-thumbnail", category: "Social Media" },
+  { name: "YouTube Tag Extractor", description: "Extract tags from any YouTube video", path: "/social-media-tools/youtube-tags", category: "Social Media" },
+  { name: "Link in Bio Generator", description: "Create beautiful link-in-bio pages", path: "/social-media-tools/link-in-bio", category: "Social Media" },
+  { name: "YouTube Channel Checker", description: "Check if your desired channel name is available", path: "/social-media-tools/channel-checker", category: "Social Media" },
+  { name: "Hashtag Counter", description: "Count and extract hashtags from posts", path: "/social-media-tools/hashtag-counter", category: "Social Media" },
+
+  // Finance Tools
+  { name: "Invoice Generator", description: "Create professional invoices for your business", path: "/finance-tools/invoice-generator", category: "Finance" },
+  { name: "PayPal Fee Calculator", description: "Calculate PayPal transaction fees", path: "/finance-tools/paypal-fee", category: "Finance" },
+  { name: "Discount Calculator", description: "Calculate sale prices and savings", path: "/finance-tools/discount-calculator", category: "Finance" },
+  { name: "Tip Calculator", description: "Calculate tips for restaurants and services", path: "/finance-tools/tip-calculator", category: "Finance" },
+  { name: "Savings Goal Tracker", description: "Track your savings goals", path: "/finance-tools/savings-tracker", category: "Finance" },
+  { name: "Retirement Planner", description: "Plan your retirement with compound interest", path: "/finance-tools/retirement-planner", category: "Finance" },
+  { name: "Bill Splitter", description: "Split bills and expenses fairly", path: "/finance-tools/bill-splitter", category: "Finance" },
+  { name: "Credit Card Payoff Calculator", description: "Calculate credit card debt payoff time", path: "/finance-tools/credit-card-payoff", category: "Finance" },
+
+  // Fun Tools
+  { name: "Future Age Predictor", description: "See how old you'll be on any future date", path: "/fun-tools/future-age", category: "Fun" },
+  { name: "Birthday Countdown", description: "Countdown to your next birthday", path: "/fun-tools/birthday-countdown", category: "Fun" },
+  { name: "Anniversary Calculator", description: "Calculate how long you've been together", path: "/fun-tools/anniversary", category: "Fun" },
+]
+
+
+

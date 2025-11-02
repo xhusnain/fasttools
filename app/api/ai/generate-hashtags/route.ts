@@ -67,7 +67,7 @@ Example format: #hashtag1 #hashtag2 #hashtag3 #hashtag4`
 
     if (!response.ok) {
       console.error("Gemini API error:", response.status, response.statusText)
-      // Fallback to enhanced hashtag generation
+      // Fallback to enhanced hashtag generation - silent fallback, user doesn't need to know
       const fallbackHashtags = generateEnhancedFallbackHashtags(text, platform)
       return NextResponse.json({
         hashtags: fallbackHashtags,

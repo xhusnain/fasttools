@@ -618,12 +618,12 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
 
                   <div className="flex justify-between items-center p-2 rounded-lg bg-card border border-border">
                     <span className="text-xs text-muted-foreground">Monthly Retirement Income:</span>
-                    <span className="text-sm font-bold text-green-500">${result.monthlyRetirementIncome.toLocaleString()}</span>
+                    <span className="text-sm font-bold text-heading-accent">${result.monthlyRetirementIncome.toLocaleString()}</span>
               </div>
 
                   <div className="flex justify-between items-center p-2 rounded-lg bg-card border border-border">
                     <span className="text-xs text-muted-foreground">Replacement Ratio:</span>
-                    <span className={`text-sm font-bold ${result.replacementRatio >= 70 ? 'text-green-500' : 'text-orange-500'}`}>
+                    <span className={`text-sm font-bold ${result.replacementRatio >= 70 ? 'text-heading-accent' : 'text-foreground'}`}>
                       {result.replacementRatio}%
                 </span>
               </div>
@@ -636,7 +636,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   {result.shortfall > 0 && (
                     <div className="flex justify-between items-center p-2 rounded-lg bg-red-500/10 border border-red-500/20">
                       <span className="text-xs text-muted-foreground">Shortfall:</span>
-                      <span className="text-sm font-bold text-red-500">${result.shortfall.toLocaleString()}</span>
+                      <span className="text-sm font-bold text-foreground">${result.shortfall.toLocaleString()}</span>
                     </div>
                   )}
 

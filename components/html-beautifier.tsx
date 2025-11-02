@@ -210,7 +210,7 @@ export function HTMLBeautifier() {
           placeholder="Paste your HTML here..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="min-h-48 font-mono text-sm border-2 border-orange-300 focus:border-orange-500"
+          className="min-h-48 font-mono text-sm border-2 border-orange-300 focus:border-primary"
         />
         {inputStats && (
           <div className="flex gap-4 text-xs text-muted-foreground">
@@ -230,18 +230,18 @@ export function HTMLBeautifier() {
       {isValid !== null && (
         <div className={`flex items-center gap-2 p-3 rounded-lg border ${
           isValid 
-            ? "bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-900" 
+            ? "bg-muted border-green-200 dark:border-green-900" 
             : "bg-yellow-50 dark:bg-yellow-950/20 border-yellow-200 dark:border-yellow-900"
         }`}>
           {isValid ? (
             <>
-              <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400 flex-shrink-0" />
-              <span className="text-sm text-green-700 dark:text-green-300">HTML structure looks good!</span>
+              <CheckCircle2 className="h-4 w-4 text-heading-accent flex-shrink-0" />
+              <span className="text-sm text-heading-accent">HTML structure looks good!</span>
             </>
           ) : (
             <>
-              <AlertCircle className="h-4 w-4 text-yellow-600 dark:text-yellow-400 flex-shrink-0" />
-              <span className="text-sm text-yellow-700 dark:text-yellow-300">HTML may have issues, but formatting will proceed</span>
+              <AlertCircle className="h-4 w-4 text-foreground flex-shrink-0" />
+              <span className="text-sm text-foreground">HTML may have issues, but formatting will proceed</span>
             </>
           )}
         </div>
@@ -279,7 +279,7 @@ export function HTMLBeautifier() {
               <span>{outputStats.chars} characters</span>
               <span>{outputStats.charsNoSpaces} (no spaces)</span>
               {inputStats && (
-                <span className={inputStats.chars > outputStats.chars ? "text-green-600 font-medium" : "text-blue-600 font-medium"}>
+                <span className={inputStats.chars > outputStats.chars ? "text-heading-accent font-medium" : "text-foreground font-medium"}>
                   {inputStats.chars > outputStats.chars ? "↓" : "↑"} {Math.abs(((outputStats.chars - inputStats.chars) / inputStats.chars) * 100).toFixed(1)}%
                 </span>
               )}

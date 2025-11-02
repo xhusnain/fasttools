@@ -377,10 +377,10 @@ export function PDFUnlocker() {
                     <div className="flex items-center gap-2 mt-3">
                       <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium ${
                         encryptionType === "none" 
-                          ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
+                          ? "bg-green-100 text-heading-accent dark:bg-green-900/30 dark:text-heading-accent"
                           : encryptionType === "owner"
-                          ? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
-                          : "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400"
+                          ? "bg-blue-100 text-foreground dark:bg-blue-900/30 dark:text-foreground"
+                          : "bg-yellow-100 text-foreground dark:bg-yellow-900/30 dark:text-foreground"
                       }`}>
                         {encryptionType === "none" && "✓ No Protection"}
                         {encryptionType === "owner" && "🔓 Has Restrictions (Can Unlock!)"}
@@ -393,7 +393,7 @@ export function PDFUnlocker() {
                 {/* Info for Owner Password PDFs */}
                 {!unlocked && encryptionType === "owner" && (
                   <div className="p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800">
-                    <p className="text-sm text-blue-900 dark:text-blue-200">
+                    <p className="text-sm text-foreground">
                       <strong>✅ Good news!</strong> This PDF only has restrictions (can't print, can't copy, can't edit). 
                       We can remove these restrictions <strong>without any password</strong>!
                     </p>
@@ -403,7 +403,7 @@ export function PDFUnlocker() {
                 {/* Info for User Password PDFs */}
                 {!unlocked && encryptionType === "user" && (
                   <div className="p-3 rounded-lg bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800">
-                    <p className="text-sm text-yellow-900 dark:text-yellow-200">
+                    <p className="text-sm text-foreground">
                       <strong>🔒 Password Protected:</strong> This PDF's content is encrypted. Enter the password below and we'll render all pages to images, creating a completely unlocked PDF with all content preserved!
                     </p>
                   </div>
@@ -413,7 +413,7 @@ export function PDFUnlocker() {
                 {!unlocked && encryptionType === "user" && (
                   <div className="space-y-2">
                     <Label htmlFor="pdf-password" className="text-sm font-medium">
-                      PDF Password <span className="text-red-500">*</span>
+                      PDF Password <span className="text-foreground">*</span>
                     </Label>
                     <Input
                       id="pdf-password"
@@ -421,7 +421,7 @@ export function PDFUnlocker() {
                       placeholder="Enter password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="h-11 border-2 border-orange-500 focus:border-orange-600 focus:ring-orange-500"
+                      className="h-11 border-2 border-primary focus:border-orange-600 focus:ring-orange-500"
                       disabled={loading}
                     />
                     <p className="text-xs text-muted-foreground">
@@ -540,7 +540,7 @@ export function PDFUnlocker() {
               </p>
             </div>
             <div className="flex items-start gap-3">
-              <div className="h-2 w-2 rounded-full bg-orange-500 mt-2 flex-shrink-0"></div>
+              <div className="h-2 w-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 <strong className="text-card-foreground">📝 Note:</strong> Password-protected PDFs become image-based after unlocking. Text remains visible but won't be selectable. This is necessary to remove encryption.
               </p>
@@ -556,7 +556,7 @@ export function PDFUnlocker() {
           </h2>
           <div className="space-y-3">
             <div className="flex items-start gap-3">
-              <div className="h-2 w-2 rounded-full bg-orange-500 mt-2 flex-shrink-0"></div>
+              <div className="h-2 w-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Only unlock PDFs that you own or have explicit permission to access. This tool is designed for legitimate use - removing passwords from your own documents for convenience, or accessing documents you have been given permission to view. Unauthorized access to password-protected documents may violate copyright laws.
               </p>

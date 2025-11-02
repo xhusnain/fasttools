@@ -63,10 +63,39 @@ export class GeminiAPI {
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}))
-        throw new Error(
-          errorData.error?.message || 
-          `Gemini API error: ${response.status} ${response.statusText}`
-        )
+        const errorMessage = errorData.error?.message || ""
+        
+        // Return generic user-friendly error messages
+        if (response.status === 429 || errorMessage.includes("Resource exhausted") || errorMessage.includes("quota")) {
+          return {
+            text: "",
+            success: false,
+            error: "AI service is experiencing high demand. Please wait a moment and try again."
+          }
+        }
+        
+        if (errorMessage.includes("safety") || errorMessage.includes("SAFETY")) {
+          return {
+            text: "",
+            success: false,
+            error: "Content could not be generated due to safety guidelines. Please try a different request."
+          }
+        }
+        
+        if (response.status >= 500) {
+          return {
+            text: "",
+            success: false,
+            error: "AI service is temporarily unavailable. Please try again in a moment."
+          }
+        }
+        
+        // Generic error for all other cases
+        return {
+          text: "",
+          success: false,
+          error: "Something went wrong. Please try again later."
+        }
       }
 
       const data = await response.json()
@@ -84,10 +113,23 @@ export class GeminiAPI {
     } catch (error) {
       console.error("Gemini API Error:", error)
       
+      // Sanitize error messages - never expose internal API details
+      const errorMessage = error instanceof Error ? error.message : "Unknown error occurred"
+      
+      // Check for rate limiting or resource exhaustion
+      if (errorMessage.includes("429") || errorMessage.includes("Resource exhausted") || errorMessage.includes("quota")) {
+        return {
+          text: "",
+          success: false,
+          error: "AI service is experiencing high demand. Please wait a moment and try again."
+        }
+      }
+      
+      // Generic error for all cases - hide internal details
       return {
         text: "",
         success: false,
-        error: error instanceof Error ? error.message : "Unknown error occurred",
+        error: "Something went wrong. Please try again later."
       }
     }
   }

@@ -975,8 +975,8 @@ export default function PDFToImagePage() {
                 {/* Content Sections */}
                 <div className="space-y-6">
                   {/* How to Use Section */}
-                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <Info className="h-4 w-4 text-accent" />
                       </div>
@@ -988,8 +988,8 @@ export default function PDFToImagePage() {
                           1
                         </div>
                         <div>
-                          <h3 className="font-semibold text-green-500 mb-1">Upload Your PDF</h3>
-                          <p className="text-sm text-gray-400 leading-relaxed">
+                          <h3 className="font-semibold text-heading-accent mb-1">Upload Your PDF</h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
                             Click or drag-and-drop your PDF file to upload. Supports PDF files up to 2GB. Your file never leaves your browser for maximum privacy.
                           </p>
                         </div>
@@ -999,8 +999,8 @@ export default function PDFToImagePage() {
                           2
                         </div>
                         <div>
-                          <h3 className="font-semibold text-green-500 mb-1">Choose Format & Quality</h3>
-                          <p className="text-sm text-gray-400 leading-relaxed">
+                          <h3 className="font-semibold text-heading-accent mb-1">Choose Format & Quality</h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
                             Select output format (JPG, PNG, WEBP), image quality (Low, Medium, High), and whether to convert all pages or specific pages.
                           </p>
                         </div>
@@ -1010,8 +1010,8 @@ export default function PDFToImagePage() {
                           3
                         </div>
                         <div>
-                          <h3 className="font-semibold text-green-500 mb-1">Convert & Download</h3>
-                          <p className="text-sm text-gray-400 leading-relaxed">
+                          <h3 className="font-semibold text-heading-accent mb-1">Convert & Download</h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
                             Click "Convert to Images" and wait for processing. Download individual images or get all images in a ZIP file. Fast conversion powered by your browser.
                           </p>
                         </div>
@@ -1020,8 +1020,8 @@ export default function PDFToImagePage() {
                   </div>
 
                   {/* Features & Security */}
-                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <Shield className="h-4 w-4 text-accent" />
                       </div>
@@ -1029,26 +1029,26 @@ export default function PDFToImagePage() {
                     </h2>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <h3 className="font-semibold text-green-500 text-sm mb-1">Multiple Formats</h3>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent text-sm mb-1">Multiple Formats</h3>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
                           Convert PDF to JPG, PNG, or WEBP. Choose the best format for your needs.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-green-500 text-sm mb-1">High Quality</h3>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent text-sm mb-1">High Quality</h3>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
                           Adjustable quality settings (Low/Medium/High) for perfect balance of size and clarity.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-green-500 text-sm mb-1">100% Private</h3>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent text-sm mb-1">100% Private</h3>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
                           All conversion happens in your browser. Files never uploaded to servers. Complete privacy.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-green-500 text-sm mb-1">Batch Download</h3>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent text-sm mb-1">Batch Download</h3>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
                           Download all converted images as a ZIP file. Save time with bulk downloads.
                         </p>
                       </div>
@@ -1056,8 +1056,8 @@ export default function PDFToImagePage() {
                   </div>
 
                   {/* FAQ Section */}
-                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <FileText className="h-4 w-4 text-accent" />
                       </div>
@@ -1065,200 +1065,200 @@ export default function PDFToImagePage() {
                     </h2>
                     <div className="space-y-4">
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to image?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">How to convert PDF to image?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Converting PDF to image is simple with FastTools. First, upload your PDF file by clicking the upload area or dragging and dropping. Next, select your desired output format (JPG for smaller files, PNG for lossless quality, or WEBP for modern web use). Choose quality level based on your needs: Low for fastest conversion, Medium for balanced results, or High for best quality. Finally, click "Convert to Images" and wait for processing. You can download individual images or get all pages as a ZIP file. The entire process is free, unlimited, and works directly in your browser without uploading files to any server.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to image file?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">How to convert PDF to image file?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           To convert PDF to image file, use our online converter. Upload your PDF document, select the image format (JPG, PNG, or WEBP), and choose quality settings. Click convert and each PDF page will become a separate image file. You can download files individually or as a compressed ZIP archive. Each image file is named automatically (e.g., document_page_1.jpg) for easy organization. This method preserves the visual appearance of your PDF while making it compatible with image viewers and editors.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to image free?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">How to convert PDF to image free?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           FastTools offers completely free PDF to image conversion with no hidden costs. Simply visit our website, upload your PDF (up to 2GB), select format and quality, then convert. There are no daily limits, no signup requirements, and no watermarks on your converted images. All processing happens in your browser, so your files remain private. Unlike other services that charge for high-quality conversions or batch processing, our tool is 100% free forever for all features.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to image on iPhone?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">How to convert PDF to image on iPhone?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           To convert PDF to image on iPhone, open Safari and navigate to FastTools PDF to Image converter. Tap the upload button and select your PDF from Files, iCloud Drive, or other sources. Choose your preferred image format (JPG recommended for iPhone) and quality level. Tap "Convert to Images" and wait for processing. Download images individually or tap "Download All as ZIP" to get all pages at once. The ZIP file will save to your iPhone's Files app. No app installation needed—everything works in Safari browser.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to image without losing quality?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">How to convert PDF to image without losing quality?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           To maintain maximum quality, select PNG format and "High" quality setting. PNG is lossless, meaning no quality degradation during conversion. The High quality setting uses 2x scale rendering, producing sharp, clear images at higher resolution. For text-heavy PDFs or documents with fine details, PNG with high quality ensures perfect reproduction. Avoid JPG with low quality settings if you need to preserve all details. The resulting images will be larger in file size but maintain the original PDF's visual fidelity.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">How to pdf photo on iPhone?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">How to pdf photo on iPhone?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           If you want to convert photos to PDF on iPhone, use the Files app or Photos app. In Photos, select images, tap Share, then "Print". Pinch-zoom the print preview to create a PDF. Save it to Files. For converting PDF to photo/image on iPhone, use FastTools converter in Safari. Upload your PDF, convert to JPG format (best for photos), and download the resulting image files to your iPhone's Photos app or Files app.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">How to make PDF of pictures?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">How to make PDF of pictures?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           To make PDF of pictures, you can use various methods. On iPhone, select photos in Photos app, tap Share {">"} Print, then pinch-zoom the preview and tap Share to save as PDF. On Windows or Mac, open images, select Print, and choose "Microsoft Print to PDF" or "Save as PDF" option. For more control, use online tools that combine multiple images into a single PDF file. You can arrange images, adjust quality, and set page size before creating the final PDF document.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">How to make PDF of pictures in iPhone?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">How to make PDF of pictures in iPhone?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Open Photos app on your iPhone, select the pictures you want to include, tap the Share icon, scroll down and tap "Print". In the print preview, use pinch-to-zoom gesture on the preview thumbnail—this converts it to PDF. Tap the Share icon in the top-right corner of the enlarged preview and choose where to save your PDF (Files, Mail, etc.). This method works for single or multiple photos and creates a properly formatted PDF document.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">How to make PDF of pictures in laptop?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">How to make PDF of pictures in laptop?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           On Windows laptop, select your images, right-click and choose "Print", then select "Microsoft Print to PDF" as printer and click Print. On Mac laptop, select images, click File {">"} Print, click "PDF" dropdown at bottom-left, then choose "Save as PDF". Alternatively, use Microsoft Word or Google Docs: insert images, arrange them, then export/save as PDF. Online converters also work well: upload multiple images and they'll be combined into a single PDF file.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Convert PDF images to Word?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Convert PDF images to Word?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           To convert PDF images to Word, first convert your PDF to image format (JPG/PNG) using our tool. Then, in Microsoft Word, go to Insert {">"} Pictures and add the converted images. For editable text, use Word's OCR feature: Insert {">"} Pictures, then right-click the image and select "Copy Text from Picture". Alternatively, use dedicated PDF to Word converters that maintain formatting and convert images to editable elements. Google Docs also offers built-in OCR when you upload PDF/image files.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">How to change picture in PDF?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">How to change picture in PDF?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           To change pictures in PDF, use Adobe Acrobat or similar PDF editors. Open the PDF, select the Edit tool, click on the image you want to change, then right-click and choose "Replace Image". Select your new image file. For free alternatives, convert your PDF to images using our tool, edit the images in any image editor (Photoshop, GIMP, Paint), then convert the edited images back to PDF. This method gives you full control over image editing.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">How to convert image to PDF in CamScanner?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">How to convert image to PDF in CamScanner?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           In CamScanner app, tap the camera icon to capture images or tap the gallery icon to select existing photos. After capturing, adjust borders and apply filters if needed. Tap the checkmark to save. The images are automatically saved as PDF format within CamScanner. To share, open the document, tap Share icon, and choose your sharing method. CamScanner combines multiple images into a single PDF and offers enhancement features like auto-crop and brightness adjustment.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">How to convert multiple PDF to image?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">How to convert multiple PDF to image?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           For batch conversion of multiple PDFs, upload each PDF file one at a time to our converter. Convert the first PDF to images, download results, then upload the next PDF and repeat. Each PDF's pages will be converted to separate image files with auto-generated names. For true bulk processing of multiple PDF files simultaneously, use desktop software or command-line tools like ImageMagick. Our browser-based tool handles one PDF at a time but with unlimited page counts per PDF.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Can I convert PDF to picture?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Can I convert PDF to picture?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes, you can absolutely convert PDF to picture format. Our tool converts each PDF page into high-quality picture files (JPG, PNG, or WEBP). Simply upload your PDF, select your preferred picture format, choose quality level, and convert. Each page becomes a separate picture file that you can use in presentations, websites, social media, or image editing software. The conversion is free, unlimited, and maintains visual quality.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Can you convert PDF to image on iPhone?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Can you convert PDF to image on iPhone?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes, you can convert PDF to image on iPhone using Safari browser. Visit FastTools PDF to Image converter, upload your PDF from Files or iCloud, select output format and quality, then convert. Download individual images or all pages as ZIP. The entire process works in Safari without installing any apps. Images save to your iPhone's Files app and can be moved to Photos if needed. Works on all iPhone models with iOS 12 or later.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">What is PDF to image?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">What is PDF to image?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           PDF to image is the process of converting PDF (Portable Document Format) pages into image file formats like JPG, PNG, or WEBP. This conversion makes PDF content viewable in image viewers, editable in image editors, and usable in contexts that don't support PDF format (social media, some websites). Each PDF page becomes a separate image file. The process preserves the visual appearance but converts text and vectors into raster pixels.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Is PDF image vector?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Is PDF image vector?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           PDFs can contain both vector and raster (bitmap) content. Native PDF elements like text and shapes are vector-based, meaning they scale without quality loss. However, when you convert PDF to image formats (JPG, PNG), the output becomes raster/bitmap images with fixed resolution. If you need to preserve vector quality, keep content in PDF format or use vector image formats like SVG. Our PDF to image converter creates high-quality raster images from PDF pages.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Can convert PDF to image?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Can convert PDF to image?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes, you can convert PDF to image using our free online tool. Upload your PDF file, select image format (JPG, PNG, or WEBP), choose quality level, and click convert. Each PDF page becomes a separate image file. The conversion works for any PDF—scanned documents, text documents, presentations, forms, or mixed content. All processing happens securely in your browser with no file uploads to servers.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Can PDF image be edited?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Can PDF image be edited?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Once you convert PDF to image, you can edit it in any image editing software like Photoshop, GIMP, Paint, or online editors like Canva. However, text becomes part of the image and isn't directly editable as text—you'd need to use image editing tools to modify it. For true text editing, use PDF editors before converting, or use OCR (Optical Character Recognition) software after converting to extract and edit text content.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Can PDF convert image to text?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Can PDF convert image to text?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           PDF to image conversion creates picture files, not editable text. To extract text from PDF images, you need OCR (Optical Character Recognition) software. First, convert PDF to image using our tool, then use OCR tools like Adobe Acrobat, Google Drive (upload image and open with Google Docs), or free OCR websites to recognize and extract text from the images. This two-step process converts visual text into editable, searchable text content.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Is image to PDF converter safe?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Is image to PDF converter safe?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes, our image to PDF and PDF to image converters are completely safe. All conversion happens locally in your web browser—your files never get uploaded to our servers or any third-party services. This browser-based processing ensures complete privacy and security for your documents. Your files stay on your device throughout the entire process. Additionally, we don't collect, store, or track any file data, making it one of the safest conversion methods available.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Can Adobe convert PDF to image?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Can Adobe convert PDF to image?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes, Adobe Acrobat Pro can convert PDF to image. Go to File {">"} Export To {">"} Image, select format (JPG, PNG, TIFF), adjust settings, and save. However, Adobe Acrobat requires an expensive subscription. Our free FastTools converter offers similar quality without any cost or subscription. Both tools produce high-quality images, but FastTools works entirely in your browser with no software installation and no payment required.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Can Canva convert PDF to image?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Can Canva convert PDF to image?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes, Canva can convert PDF to image. Upload your PDF to Canva, it will import as editable pages. Then download each page as PNG or JPG image. However, Canva has file size limits and requires an account. Our FastTools converter is simpler: no account needed, supports files up to 2GB, and converts PDFs to images instantly without importing to an editor. Use Canva if you need to edit the PDF content; use FastTools for straightforward PDF to image conversion.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Is PDF image file?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Is PDF image file?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           PDF (Portable Document Format) is a document format, not strictly an image format. PDFs can contain text, images, vector graphics, forms, and interactive elements. However, some PDFs are "image-only" PDFs created by scanning documents—these contain only images of pages without selectable text. When you convert PDF to image using our tool, you create actual image files (JPG, PNG, WEBP) where all content becomes raster pixels.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">What is PDF image file?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">What is PDF image file?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           A "PDF image file" typically refers to either: 1) A PDF document that contains embedded images, or 2) An image file format (JPG, PNG) created from a PDF page. When you convert PDF to image, you're creating image files from PDF content. These resulting image files display PDF content as pictures, viewable in any image viewer or editor. Unlike PDFs, these image files don't support text selection or hypterlinks.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">What is PDF image size?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">What is PDF image size?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           PDF image size refers to: 1) The file size (storage space) of images within a PDF or converted from PDF, or 2) The dimensions (width × height in pixels) of converted images. When converting PDF to image, output size depends on quality settings and scale. Our High quality setting uses 2x scale, producing larger, sharper images. File size varies by format: PNG creates larger files with perfect quality, JPG creates smaller files with some compression, WEBP offers best compression while maintaining quality.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Is PDF image format?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Is PDF image format?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           No, PDF is a document format, not an image format. Image formats (JPG, PNG, GIF, WEBP) store visual data as pixels. PDF is more versatile—it can store text, images, fonts, vector graphics, forms, and interactive elements. However, you can convert PDF pages to image formats using our converter. This creates actual image files that work in image viewers and editors but lose PDF-specific features like searchable text and hyperlinks.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Can I convert PDF to image for free?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Can I convert PDF to image for free?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes, absolutely! FastTools offers completely free PDF to image conversion with zero cost, no signup requirements, no daily limits, and no watermarks. Convert unlimited PDFs to images in JPG, PNG, or WEBP formats with quality control options. Files up to 2GB are supported. All processing happens in your browser for maximum privacy. Unlike premium services, we never charge for high-quality conversions, batch processing, or any features—everything is free forever.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Can you convert PDF image to text free?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Can you convert PDF image to text free?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           To convert PDF images to text, you need OCR (Optical Character Recognition) software. First, convert your PDF to image format using our free tool. Then, use free OCR services like Google Drive (upload image, open with Google Docs), Microsoft OneNote, or online OCR websites. These tools analyze the image, recognize text characters, and convert them to editable text. The PDF to image conversion is free with FastTools; OCR services have both free and paid options depending on your needs.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">How to convert PDF to image online free?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">How to convert PDF to image online free?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Upload your PDF file, select output format (JPG, PNG, or WEBP), choose quality level, and click "Convert to Images". Download individual images or all at once in a ZIP file. Our tool is completely free with unlimited conversions.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">What formats are supported for PDF to image conversion?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">What formats are supported for PDF to image conversion?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           We support three popular image formats: JPG (best for photos, smaller file size), PNG (supports transparency, lossless), and WEBP (modern format, excellent compression). Choose based on your needs.
                         </p>
                       </div>
                       <div className="border-b border-border pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Is it safe to convert PDF to JPG online?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Is it safe to convert PDF to JPG online?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! Our PDF to image converter is 100% safe because all conversion happens locally in your browser. Your PDF files never leave your device or get uploaded to any server. This ensures complete privacy and security.
                         </p>
                       </div>
                       <div className="pb-4">
-                        <h3 className="font-semibold text-green-500 mb-2">Can I convert all PDF pages to images at once?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-heading-accent mb-2">Can I convert all PDF pages to images at once?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! You can convert all pages or select specific pages. After conversion, download individual images or use the "Download All as ZIP" button to get all images in a single compressed file. Perfect for multi-page PDFs.
                         </p>
                       </div>
@@ -1266,8 +1266,8 @@ export default function PDFToImagePage() {
                   </div>
 
                   {/* Platform-Specific Guides */}
-                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <Info className="h-4 w-4 text-accent" />
                       </div>
@@ -1275,26 +1275,26 @@ export default function PDFToImagePage() {
                     </h2>
                     <div className="space-y-6">
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">Convert PDF to Image on iPhone</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">Convert PDF to Image on iPhone</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           Converting PDF to image on iPhone is simple with FastTools. Open Safari on your iPhone, visit our PDF to image converter, and upload your PDF file. Select your preferred image format (JPG, PNG, or WEBP), choose quality settings, and tap "Convert to Images". Download individual images or get all images in a ZIP file directly to your iPhone. Our iphone pdf to image tool works perfectly on iOS without any app installation.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">Convert PDF to Image on Mac</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">Convert PDF to Image on Mac</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           For Mac users, our pdf to image mac converter offers the best online solution. Simply open your browser (Safari, Chrome, or Firefox), navigate to FastTools, and upload your PDF. Choose from JPG, PNG, or WEBP formats with adjustable quality levels. How to convert PDF to image on Mac? Just drag and drop your PDF file, select settings, and convert. No software installation required—everything works directly in your macOS browser.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">Convert PDF to Image on Windows</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">Convert PDF to Image on Windows</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           Windows users can convert PDF to image windows 11 or earlier versions using our free online tool. Access FastTools from any Windows browser, upload your PDF document, and select your desired output format. Our pdf to image windows converter supports batch conversion, allowing you to convert all pages or specific pages. Download results as individual files or compressed ZIP archives.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">Convert PDF to Image on Android</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">Convert PDF to Image on Android</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Android smartphone and tablet users can easily convert pdf to image android using our mobile-optimized interface. Open Chrome or any browser on your Android device, visit FastTools, and upload PDF files from your device storage or cloud drives. The pdf to image converter app alternative works seamlessly without installing any APK, ensuring your device stays clean and secure.
                         </p>
                       </div>
@@ -1302,8 +1302,8 @@ export default function PDFToImagePage() {
                   </div>
 
                   {/* Technical Guide for Developers */}
-                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <FileText className="h-4 w-4 text-accent" />
                       </div>
@@ -1311,32 +1311,32 @@ export default function PDFToImagePage() {
                     </h2>
                     <div className="space-y-6">
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">Python PDF to Image Conversion</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">Python PDF to Image Conversion</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           For python pdf to image conversion, developers can use libraries like pdf2image, PyMuPDF, or Pillow. To python convert pdf to image, install the required package (<code className="px-2 py-1 bg-muted rounded text-xs">pip install pdf2image</code>) and use it in your code. The python pdf to image without poppler solution is available through PyMuPDF, which doesn't require external dependencies.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">Node.js PDF to Image</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">Node.js PDF to Image</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           The nodejs pdf to image and node pdf to image conversion can be achieved using packages like pdf-poppler, pdf2pic, or pdfjs-dist. For pdf to image node js applications, install via npm (<code className="px-2 py-1 bg-muted rounded text-xs">npm install pdf2pic</code>) and implement server-side PDF rendering. The pdf to image npm packages provide various options for quality, format, and page selection.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">React & JavaScript PDF to Image</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">React & JavaScript PDF to Image</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           For react pdf to image and pdf to image js solutions, use client-side libraries like pdfjs-dist (Mozilla's PDF.js). The js pdf to image conversion happens directly in the browser, ensuring user privacy. Implement pdf to image react native solutions using react-native-pdf or similar packages for mobile apps.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">PHP PDF to Image Conversion</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">PHP PDF to Image Conversion</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           To php convert pdf to image, use Imagick or Spatie PDF to Image package. The spatie pdf to image library is popular for Laravel applications. For php pdf to image without imagemagick, consider using Ghostscript or pdftohtml alternatives. Install via Composer (<code className="px-2 py-1 bg-muted rounded text-xs">composer require spatie/pdf-to-image</code>) for easy integration.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">Java PDF to Image</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">Java PDF to Image</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           For java pdf to image conversion, Apache PDFBox is the most popular choice. It provides robust PDF rendering capabilities and supports converting PDF pages to BufferedImage objects, which can be saved as JPG, PNG, or other formats.
                         </p>
                       </div>
@@ -1344,8 +1344,8 @@ export default function PDFToImagePage() {
                   </div>
 
                   {/* Quality & Format Guide */}
-                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <Shield className="h-4 w-4 text-accent" />
                       </div>
@@ -1353,26 +1353,26 @@ export default function PDFToImagePage() {
                     </h2>
                     <div className="space-y-6">
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">Convert PDF to Image High Quality</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">Convert PDF to Image High Quality</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           To convert pdf to image high quality, select the "High" quality setting in our converter. This ensures pdf to image high resolution output at 2x scale rendering. For convert pdf to image without losing quality, use PNG format with high quality settings. Our pdf to image hd converter supports pdf to image 600 dpi and even pdf to image 4k resolution for professional-grade output.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">PDF to Image HD & 4K</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">PDF to Image HD & 4K</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           Our pdf to image hd quality converter supports ultra-high resolution output. Choose pdf to image 4k quality for presentations or professional documents. The pdf to image high quality 600 dpi setting is perfect for printing. For maximum clarity, use pdf to image 1080p or higher settings with PNG format to maintain lossless quality.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">PDF to PNG vs JPG</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">PDF to PNG vs JPG</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           When deciding between pdf to image png vs pdf to image jpg, consider your needs. Convert pdf to image png for lossless quality, transparency support, and text-heavy documents. Use pdf to image jpg for smaller file sizes and photo-like content. Our pdf to image converter online free supports both formats plus WEBP for modern web optimization.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">PDF to Image Best Quality Settings</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">PDF to Image Best Quality Settings</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           For pdf to image best quality results, use these settings: PNG format for documents with text, High quality level (95% compression), and 2x scale rendering. This ensures pdf to image full quality output. For pdf to image original quality preservation, avoid low quality settings and choose formats that support lossless compression.
                         </p>
                       </div>
@@ -1380,8 +1380,8 @@ export default function PDFToImagePage() {
                   </div>
 
                   {/* How-To Guides */}
-                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <Info className="h-4 w-4 text-accent" />
                       </div>
@@ -1389,26 +1389,26 @@ export default function PDFToImagePage() {
                     </h2>
                     <div className="space-y-6">
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">How to Make PDF to Image?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">How to Make PDF to Image?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           Learning how to make pdf to image is simple with FastTools. Upload your PDF file, select output format (JPG, PNG, WEBP), choose quality level, and click "Convert to Images". You can make pdf to image conversions for single pages or entire documents. Download results individually or as ZIP archives.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">How to Save PDF to Image?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">How to Save PDF to Image?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           To understand how to save pdf to image, first convert your PDF using our online tool. After conversion, click the "Download" button under each image or use "Download All as ZIP" for multiple pages. Images save directly to your device's download folder. This how to export pdf to image method works on all devices and browsers.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">How to Turn PDF to Image?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">How to Turn PDF to Image?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           To turn pdf to image or change pdf to image format, use our free converter. Simply upload, select format, and convert. You can turn each page into a separate image file. The change pdf to image file process takes seconds and requires no software installation.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">How to Convert PDF to Image File?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">How to Convert PDF to Image File?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Wondering how to convert pdf to image file? Upload your PDF, choose JPG, PNG, or WEBP format, select quality, and convert. Each PDF page becomes a separate image file. For how to convert pdf to image free, use FastTools—no signup, no payment, unlimited conversions.
                         </p>
                       </div>
@@ -1416,8 +1416,8 @@ export default function PDFToImagePage() {
                   </div>
 
                   {/* Tool Comparisons */}
-                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <ArrowRight className="h-4 w-4 text-accent" />
                       </div>
@@ -1425,26 +1425,26 @@ export default function PDFToImagePage() {
                     </h2>
                     <div className="space-y-6">
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">FastTools vs iLovePDF</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">FastTools vs iLovePDF</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           While ilovepdf pdf to image and i love pdf pdf to image require file uploads to servers, FastTools processes everything in your browser. Our pdf to image converter i love pdf alternative offers better privacy, no file size limits (up to 2GB), and no daily conversion limits. The i love pdf to image converter is good, but FastTools is 100% client-side and free forever.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">FastTools vs Adobe PDF to Image</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">FastTools vs Adobe PDF to Image</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           Adobe pdf to image tools require expensive subscriptions. Our free pdf to image converter offers similar quality without cost. While adobe provides desktop software, FastTools works entirely online without installations. Convert pdf to image adobe-style quality for free with our high-resolution settings.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">FastTools vs 11zon</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">FastTools vs 11zon</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           Both 11zon pdf to image and our converter offer free conversions, but FastTools provides better quality control with three quality levels (Low, Medium, High). Our pdf to image 11zon alternative supports larger files (up to 2GB) and offers WEBP format alongside JPG and PNG.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">FastTools vs Canva PDF to Image</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">FastTools vs Canva PDF to Image</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Canva pdf to image requires a Canva account and has file size limits. Our pdf to image converter canva alternative requires no signup, supports 2GB files, and offers more format options. While canva is great for design, FastTools specializes in fast, high-quality PDF to image conversion.
                         </p>
                       </div>
@@ -1452,8 +1452,8 @@ export default function PDFToImagePage() {
                   </div>
 
                   {/* Advanced Features Guide */}
-                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <Shield className="h-4 w-4 text-accent" />
                       </div>
@@ -1461,26 +1461,26 @@ export default function PDFToImagePage() {
                     </h2>
                     <div className="space-y-6">
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">Batch PDF to Image Conversion</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">Batch PDF to Image Conversion</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           Our pdf to image bulk converter and pdf to image batch processing allows you to convert multiple pdf to image files efficiently. Use the multiple pdf to image converter feature to process all pages at once. The pdf to image bulk converter supports downloading all converted images as a ZIP file for convenience.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">PDF to Image Split & Merge</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">PDF to Image Split & Merge</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           Convert PDF pages individually with pdf to image split functionality. Each page becomes a separate image file. Need to combine multiple images? Use our pdf to image merge and merge pdf to image features. The pdf to image separate pages option lets you choose specific pages (e.g., pages 1, 3, 5-7) for conversion.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">PDF to Image Compression</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">PDF to Image Compression</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                           Use our pdf to image compressor to reduce file sizes. Compress pdf to image output by selecting JPG format with lower quality settings. The pdf to image and compress feature is perfect for web uploads. You can also convert pdf to image and reduce size for email attachments or mobile viewing.
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-bold text-orange-500 mb-3 text-lg">PDF to Image Without Watermark</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">PDF to Image Without Watermark</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           FastTools provides pdf to image without watermark, pdf to image without zip file downloads, and pdf to image without losing quality online. Unlike some converters, we never add watermarks, and we offer both individual file downloads and ZIP archives. All conversions are pdf to image free with no hidden fees or branding.
                         </p>
                       </div>
@@ -1488,8 +1488,8 @@ export default function PDFToImagePage() {
                   </div>
 
                   {/* Related Tools */}
-                  <div className="p-6 rounded-lg bg-black border border-border shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
                         <ArrowRight className="h-4 w-4 text-accent" />
                       </div>
@@ -1504,8 +1504,8 @@ export default function PDFToImagePage() {
                           <FileText className="h-5 w-5 text-primary" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-green-500 text-sm">PDF Compressor</h3>
-                          <p className="text-xs text-gray-400">Reduce PDF file size</p>
+                          <h3 className="font-semibold text-heading-accent text-sm">PDF Compressor</h3>
+                          <p className="text-xs text-muted-foreground">Reduce PDF file size</p>
                         </div>
                       </Link>
                       <Link 
@@ -1516,8 +1516,8 @@ export default function PDFToImagePage() {
                           <FileText className="h-5 w-5 text-primary" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-green-500 text-sm">PDF Splitter & Merger</h3>
-                          <p className="text-xs text-gray-400">Split or merge PDF files</p>
+                          <h3 className="font-semibold text-heading-accent text-sm">PDF Splitter & Merger</h3>
+                          <p className="text-xs text-muted-foreground">Split or merge PDF files</p>
                         </div>
                       </Link>
                     </div>
@@ -1528,7 +1528,7 @@ export default function PDFToImagePage() {
               {/* Desktop Sidebar Ads */}
               <div className="hidden lg:block lg:w-80 space-y-6 flex-shrink-0">
                 <div className="sticky top-8 space-y-6">
-                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-black" />
+                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
                 </div>
               </div>
             </div>

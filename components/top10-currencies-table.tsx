@@ -62,22 +62,22 @@ export function Top10CurrenciesTable() {
   const getTrendIcon = (trend: string) => {
     switch (trend) {
       case 'up':
-        return <TrendingUp className="h-4 w-4 text-green-500" />
+        return <TrendingUp className="h-4 w-4 text-heading-accent" />
       case 'down':
-        return <TrendingDown className="h-4 w-4 text-red-500" />
+        return <TrendingDown className="h-4 w-4 text-foreground" />
       default:
         return <Minus className="h-4 w-4 text-gray-500" />
     }
   }
 
   const getChangeColor = (changePercent: number) => {
-    if (changePercent > 0) return 'text-green-600 dark:text-green-400'
-    if (changePercent < 0) return 'text-red-600 dark:text-red-400'
+    if (changePercent > 0) return 'text-heading-accent'
+    if (changePercent < 0) return 'text-foreground'
     return 'text-gray-600 dark:text-gray-400'
   }
 
   const getChangeBgColor = (changePercent: number) => {
-    if (changePercent > 0) return 'bg-green-50 dark:bg-green-950/20'
+    if (changePercent > 0) return 'bg-muted'
     if (changePercent < 0) return 'bg-red-50 dark:bg-red-950/20'
     return 'bg-gray-50 dark:bg-gray-950/20'
   }
@@ -86,7 +86,7 @@ export function Top10CurrenciesTable() {
     return (
       <div className="bg-card border border-border rounded-lg p-4 shadow-sm">
         <div className="flex items-center justify-center py-8">
-          <RefreshCw className="h-6 w-6 animate-spin text-orange-500 mr-2" />
+          <RefreshCw className="h-6 w-6 animate-spin text-foreground mr-2" />
           <span className="text-sm text-muted-foreground">Loading currency data...</span>
         </div>
       </div>
@@ -97,10 +97,10 @@ export function Top10CurrenciesTable() {
     return (
       <div className="bg-card border border-border rounded-lg p-4 shadow-sm">
         <div className="text-center py-8">
-          <p className="text-sm text-red-600 dark:text-red-400 mb-4">{error}</p>
+          <p className="text-sm text-foreground mb-4">{error}</p>
           <button
             onClick={fetchData}
-            className="px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors text-sm"
+            className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary transition-colors text-sm"
           >
             Try Again
           </button>
@@ -115,7 +115,7 @@ export function Top10CurrenciesTable() {
     <div className="bg-card border border-border rounded-lg p-5 shadow-sm">
       <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-2">
-          <DollarSign className="h-5 w-5 text-orange-500" />
+          <DollarSign className="h-5 w-5 text-foreground" />
           <h3 className="text-lg font-semibold text-card-foreground">Top 10 Currencies</h3>
         </div>
         <div className="flex items-center gap-2">

@@ -408,7 +408,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
       <Card>
         <CardHeader className="pb-8">
           <CardTitle className="flex items-center gap-2">
-            <Calculator className="h-5 w-5 text-blue-500" />
+            <Calculator className="h-5 w-5 text-foreground" />
             Advanced Mortgage Calculator
           </CardTitle>
         </CardHeader>
@@ -552,7 +552,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <DollarSign className="h-5 w-5 text-green-500" />
+                <DollarSign className="h-5 w-5 text-heading-accent" />
                 Mortgage Analysis Results
               </CardTitle>
             </CardHeader>
@@ -560,13 +560,13 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label className="text-sm font-medium">Monthly Payment</Label>
-                  <div className="text-3xl font-bold text-green-600">
+                  <div className="text-3xl font-bold text-heading-accent">
                     ${result.monthlyPayment.toFixed(2)}
                   </div>
                 </div>
                 <div className="space-y-2">
                   <Label className="text-sm font-medium">Total Out-of-Pocket</Label>
-                  <div className="text-3xl font-bold text-blue-600">
+                  <div className="text-3xl font-bold text-foreground">
                     ${result.totalMonthlyPayment.toFixed(2)}
                   </div>
                 </div>
@@ -575,19 +575,19 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
               <div className="grid md:grid-cols-4 gap-4 pt-4 border-t">
                 <div className="text-center">
                   <div className="text-sm text-muted-foreground">Total Interest</div>
-                  <div className="text-lg font-semibold text-red-600">${result.totalInterest.toFixed(2)}</div>
+                  <div className="text-lg font-semibold text-foreground">${result.totalInterest.toFixed(2)}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-sm text-muted-foreground">Loan Amount</div>
-                  <div className="text-lg font-semibold text-purple-600">${result.loanAmount.toFixed(2)}</div>
+                  <div className="text-lg font-semibold text-foreground">${result.loanAmount.toFixed(2)}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-sm text-muted-foreground">Down Payment</div>
-                  <div className="text-lg font-semibold text-orange-600">${result.downPayment.toFixed(2)}</div>
+                  <div className="text-lg font-semibold text-foreground">${result.downPayment.toFixed(2)}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-sm text-muted-foreground">Interest Rate</div>
-                  <div className="text-lg font-semibold text-blue-600">{result.interestRate.toFixed(3)}%</div>
+                  <div className="text-lg font-semibold text-foreground">{result.interestRate.toFixed(3)}%</div>
                 </div>
               </div>
 
@@ -604,34 +604,34 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <PieChart className="h-5 w-5 text-blue-500" />
+                <PieChart className="h-5 w-5 text-foreground" />
                 Payment Breakdown
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                    <h3 className="font-semibold text-green-800 dark:text-green-200 mb-2">Principal & Interest</h3>
-                    <div className="text-2xl font-bold text-green-600">${result.monthlyPayment.toFixed(2)}</div>
-                    <div className="text-sm text-green-600">{result.principalPercentage.toFixed(1)}%</div>
+                  <div className="p-4 bg-muted rounded-lg border border-green-200 dark:border-green-800">
+                    <h3 className="font-semibold text-heading-accent mb-2">Principal & Interest</h3>
+                    <div className="text-2xl font-bold text-heading-accent">${result.monthlyPayment.toFixed(2)}</div>
+                    <div className="text-sm text-heading-accent">{result.principalPercentage.toFixed(1)}%</div>
                   </div>
-                  <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                    <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Property Taxes</h3>
-                    <div className="text-2xl font-bold text-blue-600">${result.propertyTax.toFixed(2)}</div>
-                    <div className="text-sm text-blue-600">{result.propertyTaxPercentage.toFixed(1)}%</div>
+                  <div className="p-4 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
+                    <h3 className="font-semibold text-foreground mb-2">Property Taxes</h3>
+                    <div className="text-2xl font-bold text-foreground">${result.propertyTax.toFixed(2)}</div>
+                    <div className="text-sm text-foreground">{result.propertyTaxPercentage.toFixed(1)}%</div>
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <div className="p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                    <h3 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">Home Insurance</h3>
-                    <div className="text-2xl font-bold text-purple-600">${result.homeInsurance.toFixed(2)}</div>
-                    <div className="text-sm text-purple-600">{result.homeInsurancePercentage.toFixed(1)}%</div>
+                  <div className="p-4 bg-muted rounded-lg border border-purple-200 dark:border-purple-800">
+                    <h3 className="font-semibold text-foreground mb-2">Home Insurance</h3>
+                    <div className="text-2xl font-bold text-foreground">${result.homeInsurance.toFixed(2)}</div>
+                    <div className="text-sm text-foreground">{result.homeInsurancePercentage.toFixed(1)}%</div>
                   </div>
-                  <div className="p-4 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200 dark:border-orange-800">
-                    <h3 className="font-semibold text-orange-800 dark:text-orange-200 mb-2">Other Costs</h3>
-                    <div className="text-2xl font-bold text-orange-600">${(result.pmiInsurance + result.hoaFee + result.otherCosts).toFixed(2)}</div>
-                    <div className="text-sm text-orange-600">{result.otherCostsPercentage.toFixed(1)}%</div>
+                  <div className="p-4 bg-muted rounded-lg border border-primary/20">
+                    <h3 className="font-semibold text-foreground mb-2">Other Costs</h3>
+                    <div className="text-2xl font-bold text-foreground">${(result.pmiInsurance + result.hoaFee + result.otherCosts).toFixed(2)}</div>
+                    <div className="text-sm text-foreground">{result.otherCostsPercentage.toFixed(1)}%</div>
                   </div>
                 </div>
               </div>
@@ -642,7 +642,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <BarChart3 className="h-5 w-5 text-green-500" />
+                <BarChart3 className="h-5 w-5 text-heading-accent" />
                 Amortization Schedule
               </CardTitle>
             </CardHeader>
@@ -678,7 +678,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-green-500" />
+                <TrendingUp className="h-5 w-5 text-heading-accent" />
                 Payment Scenarios
               </CardTitle>
             </CardHeader>
@@ -707,40 +707,40 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Target className="h-5 w-5 text-green-500" />
+                <Target className="h-5 w-5 text-heading-accent" />
                 Personalized Recommendations
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-blue-600">Mortgage Optimization</h4>
+                  <h4 className="font-semibold mb-3 text-foreground">Mortgage Optimization</h4>
                   <ul className="space-y-2 text-sm">
                     {result.recommendations.mortgageOptimization.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
                         <span>{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-green-600">Payment Strategies</h4>
+                  <h4 className="font-semibold mb-3 text-heading-accent">Payment Strategies</h4>
                   <ul className="space-y-2 text-sm">
                     {result.recommendations.paymentStrategies.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
                         <span>{rec}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-purple-600">Financial Tips</h4>
+                  <h4 className="font-semibold mb-3 text-foreground">Financial Tips</h4>
                   <ul className="space-y-2 text-sm">
                     {result.recommendations.financialTips.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-purple-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
                         <span>{rec}</span>
                       </li>
                     ))}
@@ -791,19 +791,19 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Info className="h-5 w-5 text-blue-500" />
+            <Info className="h-5 w-5 text-foreground" />
             Mortgage Calculator Features
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+          <div className="p-4 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
             <div className="flex items-start gap-2">
-              <Info className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+              <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
               <div className="text-sm">
-                <p className="font-medium text-blue-800 dark:text-blue-200 mb-1">
+                <p className="font-medium text-foreground mb-1">
                   Comprehensive Mortgage Analysis
                 </p>
-                <p className="text-blue-700 dark:text-blue-300">
+                <p className="text-foreground">
                   This calculator provides detailed mortgage analysis with amortization schedules, scenario comparisons, and personalized recommendations for optimal mortgage management.
                 </p>
               </div>

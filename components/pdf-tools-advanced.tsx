@@ -253,7 +253,7 @@ export function PDFToolsAdvanced() {
 
       setProgress(95)
       const mergedPdfBytes = await mergedPdf.save()
-      const blob = new Blob([mergedPdfBytes], { type: "application/pdf" })
+      const blob = new Blob([new Uint8Array(mergedPdfBytes)], { type: "application/pdf" })
       const url = URL.createObjectURL(blob)
 
       const link = document.createElement("a")
@@ -294,7 +294,7 @@ export function PDFToolsAdvanced() {
       newPdf.addPage(copiedPage)
 
       const pdfBytes = await newPdf.save()
-      const blob = new Blob([pdfBytes], { type: "application/pdf" })
+      const blob = new Blob([new Uint8Array(pdfBytes)], { type: "application/pdf" })
       const url = URL.createObjectURL(blob)
 
       const link = document.createElement("a")
@@ -334,7 +334,7 @@ export function PDFToolsAdvanced() {
 
     setProgress(90)
     const pdfBytes = await newPdf.save()
-    const blob = new Blob([pdfBytes], { type: "application/pdf" })
+    const blob = new Blob([new Uint8Array(pdfBytes)], { type: "application/pdf" })
     const url = URL.createObjectURL(blob)
 
     const link = document.createElement("a")
@@ -375,7 +375,7 @@ export function PDFToolsAdvanced() {
 
     setProgress(90)
     const pdfBytes = await newPdf.save()
-    const blob = new Blob([pdfBytes], { type: "application/pdf" })
+    const blob = new Blob([new Uint8Array(pdfBytes)], { type: "application/pdf" })
     const url = URL.createObjectURL(blob)
 
     const link = document.createElement("a")
@@ -750,7 +750,7 @@ export function PDFToolsAdvanced() {
               </div>
               <div className="flex items-start gap-3">
                 <div className="h-6 w-6 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-xs font-bold text-green-600">✓</span>
+                  <span className="text-xs font-bold text-heading-accent">✓</span>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   <strong className="text-card-foreground">Download:</strong> Your merged PDF will download automatically with all content perfectly preserved
@@ -797,7 +797,7 @@ export function PDFToolsAdvanced() {
               </div>
               <div className="flex items-start gap-3">
                 <div className="h-6 w-6 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-xs font-bold text-green-600">✓</span>
+                  <span className="text-xs font-bold text-heading-accent">✓</span>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   <strong className="text-card-foreground">Download:</strong> Your split/extracted PDF files will download automatically - each file ready to use

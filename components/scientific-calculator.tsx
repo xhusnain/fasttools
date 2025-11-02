@@ -405,18 +405,18 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
     >
 
       {/* Calculator Display */}
-      <Card className="bg-black border-slate-700">
+      <Card className="bg-card border-border">
         <CardHeader className="pb-2 px-3 sm:px-6">
           <div className="flex items-center justify-between">
             <CardTitle className="flex items-center gap-1.5 text-base">
-              <Calculator className="h-3.5 w-3.5 text-orange-500" />
+              <Calculator className="h-3.5 w-3.5 text-foreground" />
               Scientific Calculator
             </CardTitle>
             <div className="flex gap-2">
-              <Badge variant={angleMode === 'deg' ? 'default' : 'secondary'} className="text-[10px] h-6 bg-orange-500/10 text-orange-400 border-orange-500/20">
+              <Badge variant={angleMode === 'deg' ? 'default' : 'secondary'} className="text-[10px] h-6 bg-primary/10 text-foreground border-primary/20">
                 {angleMode}
               </Badge>
-              <Badge variant={isShift ? 'default' : 'secondary'} className="text-[10px] h-6 bg-slate-800 text-slate-400 border-slate-700">
+              <Badge variant={isShift ? 'default' : 'secondary'} className="text-[10px] h-6 bg-secondary text-muted-foreground border-border">
                 SHIFT
               </Badge>
             </div>
@@ -424,14 +424,14 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
         </CardHeader>
         <CardContent className="space-y-3 px-3 sm:px-6">
           {/* Main Display */}
-          <div className="bg-slate-900 border border-slate-700 rounded-lg p-3 sm:p-3 text-right">
-            <div className="text-2xl sm:text-xl md:text-2xl font-mono font-bold min-h-[3rem] sm:min-h-[2.5rem] break-all text-orange-400">
+          <div className="bg-muted border border-border rounded-lg p-3 sm:p-3 text-right">
+            <div className="text-2xl sm:text-xl md:text-2xl font-mono font-bold min-h-[3rem] sm:min-h-[2.5rem] break-all text-foreground">
               {formatDisplay(display)}
             </div>
-            <div className="text-sm sm:text-xs text-slate-400 mt-1">
+            <div className="text-sm sm:text-xs text-muted-foreground mt-1">
               {operation && previousValue !== null && `${previousValue} ${operation}`}
             </div>
-            <div className="text-xs sm:text-[10px] text-green-500 mt-2 flex items-center justify-end gap-1">
+            <div className="text-xs sm:text-[10px] text-heading-accent mt-2 flex items-center justify-end gap-1">
               <svg className="h-3 w-3 sm:h-2.5 sm:w-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
               </svg>
@@ -441,18 +441,18 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
 
           {/* Memory Controls */}
           <div className="flex justify-between items-center flex-wrap gap-2">
-            <div className="text-sm sm:text-xs font-medium text-slate-400">Memory: {memory}</div>
+            <div className="text-sm sm:text-xs font-medium text-muted-foreground">Memory: {memory}</div>
             <div className="flex gap-2 sm:gap-1.5">
-              <Button size="sm" variant="outline" onClick={() => handleMemory("M+")} className="text-xs sm:text-[10px] h-8 sm:h-7 px-3 sm:px-2 border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button size="sm" variant="outline" onClick={() => handleMemory("M+")} className="text-xs sm:text-[10px] h-8 sm:h-7 px-3 sm:px-2 border-border bg-card text-foreground hover:bg-secondary">
                 M+
               </Button>
-              <Button size="sm" variant="outline" onClick={() => handleMemory("M-")} className="text-xs sm:text-[10px] h-8 sm:h-7 px-3 sm:px-2 border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button size="sm" variant="outline" onClick={() => handleMemory("M-")} className="text-xs sm:text-[10px] h-8 sm:h-7 px-3 sm:px-2 border-border bg-card text-foreground hover:bg-secondary">
                 M-
               </Button>
-              <Button size="sm" variant="outline" onClick={() => handleMemory("MR")} className="text-xs sm:text-[10px] h-8 sm:h-7 px-3 sm:px-2 border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button size="sm" variant="outline" onClick={() => handleMemory("MR")} className="text-xs sm:text-[10px] h-8 sm:h-7 px-3 sm:px-2 border-border bg-card text-foreground hover:bg-secondary">
                 MR
               </Button>
-              <Button size="sm" variant="outline" onClick={() => handleMemory("MC")} className="text-xs sm:text-[10px] h-8 sm:h-7 px-3 sm:px-2 border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button size="sm" variant="outline" onClick={() => handleMemory("MC")} className="text-xs sm:text-[10px] h-8 sm:h-7 px-3 sm:px-2 border-border bg-card text-foreground hover:bg-secondary">
                 MC
               </Button>
             </div>
@@ -461,20 +461,20 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
       </Card>
 
       {/* Calculator Grid */}
-      <Card className="bg-black border-slate-700">
+      <Card className="bg-card border-border">
         <CardContent className="p-4 sm:p-3 md:p-4">
           <div className="space-y-3">
             {/* Mode Indicators */}
             <div className="flex justify-between items-center flex-wrap gap-2 text-sm sm:text-xs">
               <div className="flex gap-2">
-                <Badge variant={angleMode === 'deg' ? 'default' : 'secondary'} className="text-xs sm:text-[10px] h-6 sm:h-5 bg-orange-500/10 text-orange-400 border-orange-500/20 px-2 sm:px-1.5">
+                <Badge variant={angleMode === 'deg' ? 'default' : 'secondary'} className="text-xs sm:text-[10px] h-6 sm:h-5 bg-primary/10 text-foreground border-primary/20 px-2 sm:px-1.5">
                   {angleMode}
                 </Badge>
-                <Badge variant="outline" className="text-xs sm:text-[10px] h-6 sm:h-5 border-slate-700 bg-slate-900 text-slate-400 px-2 sm:px-1.5">
+                <Badge variant="outline" className="text-xs sm:text-[10px] h-6 sm:h-5 border-border bg-muted text-muted-foreground px-2 sm:px-1.5">
                   Data: {dataSet.length}
                 </Badge>
               </div>
-              <div className="text-slate-400 text-sm sm:text-xs">
+              <div className="text-muted-foreground text-sm sm:text-xs">
                 Memory: {memory.toFixed(2)}
               </div>
             </div>
@@ -482,268 +482,268 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
             {/* Scientific Functions Grid - Standard Calculator Layout */}
             <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-1.5 sm:gap-2 text-xs">
               {/* Row 1 - Scientific Functions Row 1 */}
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sin")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sin")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 sin
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cos")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cos")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 cos
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tan")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tan")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 tan
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("ln")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("ln")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 ln
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("log")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("log")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 log
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("eˣ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("eˣ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 eˣ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("10ˣ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("10ˣ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 10ˣ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x²")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x²")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 x²
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x³")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x³")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 x³
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("√")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("√")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 √x
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("∛")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("∛")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 ∛x
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("xy")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("xy")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 xʸ
               </Button>
 
               {/* Row 2 - Scientific Functions Row 2 */}
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sin⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sin⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 sin⁻¹
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cos⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cos⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 cos⁻¹
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tan⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tan⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 tan⁻¹
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("log₂")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("log₂")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 log₂
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("log")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("log")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 logₓ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("y√x")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("y√x")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 ʸ√x
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("n!")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("n!")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 n!
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("nCr")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("nCr")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 nCr
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("nPr")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("nPr")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 nPr
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("Γ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("Γ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 Γ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("erf")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("erf")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 erf
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("erfc")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("erfc")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 erfc
               </Button>
 
               {/* Row 3 - Scientific Functions Row 3 */}
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sinh")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sinh")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 sinh
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cosh")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cosh")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 cosh
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tanh")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tanh")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 tanh
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sinh⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sinh⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 sinh⁻¹
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cosh⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cosh⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 cosh⁻¹
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tanh⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tanh⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 tanh⁻¹
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("DATA")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("DATA")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 DATA
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("mean")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("mean")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 mean
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("std")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("std")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 std
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("var")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("var")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 var
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("SHOW_DATA")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("SHOW_DATA")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 Show
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("CLR_DATA")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("CLR_DATA")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 Clear
               </Button>
 
               {/* Row 4 - Constants & Special Functions */}
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("π")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("π")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 π
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("e")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("e")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 e
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("φ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("φ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 φ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("1/x")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("1/x")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 1/x
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("±")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("±")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 ±
               </Button>
-              <Button variant="outline" size="sm" onClick={() => setAngleMode(angleMode === 'deg' ? 'rad' : 'deg')} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => setAngleMode(angleMode === 'deg' ? 'rad' : 'deg')} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 Deg/Rad
               </Button>
-              <Button variant="outline" size="sm" onClick={() => setDisplay(display + "(")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => setDisplay(display + "(")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 (
               </Button>
-              <Button variant="outline" size="sm" onClick={() => setDisplay(display + ")")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => setDisplay(display + ")")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 )
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("Ans")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("Ans")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 Ans
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("RND")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("RND")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 RND
               </Button>
-              <Button variant="outline" size="sm" onClick={() => setDisplay(display + "e")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => setDisplay(display + "e")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 EXP
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("%")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("%")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 %
               </Button>
 
               {/* Row 5 - Number Pad: 7, 8, 9 + Operations */}
-              <Button variant="outline" size="sm" onClick={() => handleNumber("7")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("7")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 7
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleNumber("8")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("8")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 8
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleNumber("9")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("9")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 9
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("+")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("+")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 +
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("-")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("-")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 -
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("×")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("×")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 ×
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("÷")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("÷")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 ÷
               </Button>
-              <Button variant="outline" size="sm" onClick={handleBackspace} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={handleBackspace} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 ⌫
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sin")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sin")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 sin
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cos")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("cos")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 cos
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tan")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("tan")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 tan
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("ln")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("ln")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 ln
               </Button>
 
               {/* Row 6 - Number Pad: 4, 5, 6 + Functions */}
-              <Button variant="outline" size="sm" onClick={() => handleNumber("4")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("4")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 4
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleNumber("5")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("5")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 5
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleNumber("6")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("6")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 6
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("log")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("log")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 log
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("eˣ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("eˣ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 eˣ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("10ˣ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("10ˣ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 10ˣ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x²")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x²")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 x²
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x³")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("x³")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 x³
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("√")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("√")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 √x
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("∛")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("∛")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 ∛x
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("xy")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("xy")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 xʸ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleOperation("y√x")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleOperation("y√x")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 ʸ√x
               </Button>
 
               {/* Row 7 - Number Pad: 1, 2, 3 + Bottom Row */}
-              <Button variant="outline" size="sm" onClick={() => handleNumber("1")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("1")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 1
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleNumber("2")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("2")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 2
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleNumber("3")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("3")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 3
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleNumber("0")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleNumber("0")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 0
               </Button>
-              <Button variant="outline" size="sm" onClick={handleDecimal} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={handleDecimal} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 .
               </Button>
-              <Button variant="destructive" size="sm" onClick={handleClear} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap bg-red-600 hover:bg-red-700 text-white border-red-700">
+              <Button variant="destructive" size="sm" onClick={handleClear} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap bg-destructive hover:bg-destructive/90 text-destructive-foreground border-destructive">
                 AC
               </Button>
-              <Button variant="default" size="sm" onClick={handleEquals} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-orange-700">
+              <Button variant="default" size="sm" onClick={handleEquals} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground border-primary">
                 =
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("π")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("π")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 π
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("e")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("e")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 e
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("φ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("φ")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 φ
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("1/x")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("1/x")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 1/x
               </Button>
-              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("±")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={() => handleScientificFunction("±")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 ±
               </Button>
             </div>

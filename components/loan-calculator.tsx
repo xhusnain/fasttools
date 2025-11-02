@@ -145,7 +145,7 @@ export function LoanCalculator() {
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-sm text-muted-foreground">Total Interest</span>
-                <span className="font-semibold text-sm text-orange-600">${result.totalInterest.toLocaleString()}</span>
+                <span className="font-semibold text-sm text-foreground">${result.totalInterest.toLocaleString()}</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-sm text-muted-foreground">Total Payment</span>

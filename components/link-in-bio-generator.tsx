@@ -334,7 +334,7 @@ export function LinkInBioGenerator() {
               placeholder="Your Name or Brand"
               value={profileName}
               onChange={(e) => setProfileName(e.target.value)}
-                  className="mt-2 h-11 text-base border-2 border-orange-500 focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+                  className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
             />
           </div>
           <div>
@@ -347,7 +347,7 @@ export function LinkInBioGenerator() {
               placeholder="A short description about you"
               value={bio}
               onChange={(e) => setBio(e.target.value)}
-              className="mt-2 h-11 text-base border-2 border-orange-500 focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+              className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
             />
           </div>
           <div>
@@ -360,7 +360,7 @@ export function LinkInBioGenerator() {
               placeholder="https://yourwebsite.com"
               value={websiteUrl}
               onChange={(e) => setWebsiteUrl(e.target.value)}
-              className="mt-2 h-11 text-base border-2 border-orange-500 focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+              className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
             />
           </div>
           <div>
@@ -373,7 +373,7 @@ export function LinkInBioGenerator() {
               placeholder="Footer text (e.g., © 2024 Your Name)"
               value={footer}
               onChange={(e) => setFooter(e.target.value)}
-              className="mt-2 h-11 text-base border-2 border-orange-500 focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+              className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
             />
           </div>
         </div>
@@ -567,7 +567,7 @@ export function LinkInBioGenerator() {
               <select
                 value={selectedPlatform}
                 onChange={(e) => setSelectedPlatform(e.target.value)}
-                className="flex-1 h-11 px-3 rounded-lg border-2 border-orange-500 focus:border-orange-600 focus:ring-2 focus:ring-orange-200 bg-background text-foreground"
+                className="flex-1 h-11 px-3 rounded-lg border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200 bg-background text-foreground"
               >
                 <option value="social">Social Media</option>
                 <option value="email">Email</option>
@@ -576,7 +576,7 @@ export function LinkInBioGenerator() {
                   <Button
                     variant="outline"
                 onClick={() => setShowAddDropdown(!showAddDropdown)}
-                className="h-11 px-4 border-2 border-orange-500 hover:border-orange-600"
+                className="h-11 px-4 border-2 border-primary hover:border-orange-600"
                   >
                 <Plus className="h-4 w-4 mr-2" />
                 Add {selectedPlatform === "custom" ? "Link" : selectedPlatform === "social" ? "Social" : "Email"}
@@ -650,8 +650,8 @@ export function LinkInBioGenerator() {
                     {/* Link Type Badge */}
                     <div className="flex gap-2">
                       <span className={`px-2 py-1 rounded text-xs font-medium ${
-                        link.type === "social" ? "bg-blue-100 text-blue-800" :
-                        link.type === "email" ? "bg-green-100 text-green-800" :
+                        link.type === "social" ? "bg-blue-100 text-foreground" :
+                        link.type === "email" ? "bg-green-100 text-heading-accent" :
                         "bg-gray-100 text-gray-800"
                       }`}>
                         {link.type === "social" ? "Social" : link.type === "email" ? "Email" : "Custom"}
@@ -676,7 +676,7 @@ export function LinkInBioGenerator() {
                   value={link.title}
                   onChange={(e) => updateLink(link.id, "title", e.target.value)}
                         placeholder="Link title"
-                        className="mt-1 h-10 text-sm border-2 border-orange-500 focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+                        className="mt-1 h-10 text-sm border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
                 />
                     </div>
                     <div>
@@ -685,7 +685,7 @@ export function LinkInBioGenerator() {
                   value={link.url}
                   onChange={(e) => updateLink(link.id, "url", e.target.value)}
                         placeholder="https://example.com"
-                        className="mt-1 h-10 text-sm border-2 border-orange-500 focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
+                        className="mt-1 h-10 text-sm border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
                       />
                     </div>
                   </div>
@@ -870,8 +870,8 @@ export function LinkInBioGenerator() {
             {viewMode === "mobile" && (
               <div className="relative max-w-xs w-full">
                 {/* Mobile Device Frame */}
-                <div className="w-72 h-[500px] bg-gray-800 rounded-[2rem] p-1.5 shadow-xl">
-                  <div className="w-full h-full bg-black rounded-[1.5rem] overflow-hidden relative">
+                <div className="w-72 h-[500px] bg-muted rounded-[2rem] p-1.5 shadow-xl">
+                  <div className="w-full h-full bg-card rounded-[1.5rem] overflow-hidden relative">
                     {/* Mobile Screen */}
                     <div className="w-full h-full bg-white">
                       <div
@@ -1001,7 +1001,7 @@ export function LinkInBioGenerator() {
               <div className="relative max-w-md w-full">
                 {/* Tablet Device Frame */}
                 <div className="w-[450px] h-[600px] bg-gray-600 rounded-[1.5rem] p-2.5 shadow-xl">
-                  <div className="w-full h-full bg-black rounded-[1rem] overflow-hidden relative">
+                  <div className="w-full h-full bg-card rounded-[1rem] overflow-hidden relative">
                     {/* Tablet Screen */}
                     <div className="w-full h-full bg-white">
                       <div

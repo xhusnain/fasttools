@@ -109,10 +109,10 @@ export function YoutubeTagExtractor() {
       {error && (
         <Card className="p-6 bg-red-50 border-red-200 shadow-sm animate-fade-in">
           <div className="flex items-start gap-3">
-            <AlertCircle className="h-5 w-5 text-red-600 mt-0.5" />
+            <AlertCircle className="h-5 w-5 text-foreground mt-0.5" />
             <div>
-              <h3 className="text-sm font-semibold text-red-800 mb-1">Error</h3>
-              <p className="text-sm text-red-700">{error}</p>
+              <h3 className="text-sm font-semibold text-foreground mb-1">Error</h3>
+              <p className="text-sm text-foreground">{error}</p>
             </div>
           </div>
         </Card>

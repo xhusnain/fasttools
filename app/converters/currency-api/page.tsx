@@ -120,15 +120,15 @@ export default function CurrencyAPIDocsPage() {
               </div>
 
               {/* Live Convert Button */}
-              <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-black border border-border shadow">
+              <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-card border border-border shadow">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
                   <div className="text-center sm:text-left">
-                    <h4 className="text-sm sm:text-base font-semibold text-orange-500 mb-1 sm:mb-2">Try It Live!</h4>
+                    <h4 className="text-sm sm:text-base font-semibold text-foreground mb-1 sm:mb-2">Try It Live!</h4>
                     <p className="text-xs sm:text-sm text-muted-foreground">Test the API with our interactive currency converter</p>
                   </div>
                   <Link 
                     href="/converters/currency"
-                    className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-3 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors text-sm sm:text-base font-medium w-full sm:w-auto"
+                    className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-3 bg-primary text-foreground rounded-md hover:bg-primary transition-colors text-sm sm:text-base font-medium w-full sm:w-auto"
                   >
                     <Code className="h-4 w-4 sm:h-5 sm:w-5" />
                     Live Convert
@@ -137,8 +137,8 @@ export default function CurrencyAPIDocsPage() {
               </div>
 
               {/* Quick Start */}
-              <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-black border border-border shadow">
-                <h2 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Quick Start</h2>
+              <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-card border border-border shadow">
+                <h2 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 text-foreground">Quick Start</h2>
                 <p className="text-muted-foreground text-xs sm:text-sm mb-4 sm:mb-6">
                   Get started with FastTools Currency API in seconds. No API key required for basic usage.
                 </p>
@@ -160,7 +160,7 @@ export default function CurrencyAPIDocsPage() {
                 </div>
 
                 <div className="bg-muted rounded-lg p-3 sm:p-4 md:p-5">
-                  <h4 className="font-medium mb-2 sm:mb-3 text-orange-500 text-xs sm:text-sm">Response:</h4>
+                  <h4 className="font-medium mb-2 sm:mb-3 text-foreground text-xs sm:text-sm">Response:</h4>
                   <pre className="text-xs sm:text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600 scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600">
 {`{
   "success": true,
@@ -181,8 +181,8 @@ export default function CurrencyAPIDocsPage() {
               </div>
 
               {/* API Key Generation */}
-              <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-black border border-border shadow">
-                <h2 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Get Your Free API Key</h2>
+              <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-card border border-border shadow">
+                <h2 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 text-foreground">Get Your Free API Key</h2>
                 <p className="text-muted-foreground text-xs sm:text-sm mb-4 sm:mb-6">
                   Get a free API key to enhance your FastTools Currency API experience. No registration required - just click the button below!
                 </p>
@@ -190,8 +190,8 @@ export default function CurrencyAPIDocsPage() {
               </div>
 
               {/* Step-by-Step Guide */}
-              <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-black border border-border shadow">
-                <h2 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 text-orange-500">How to Use Your API Key</h2>
+              <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-card border border-border shadow">
+                <h2 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 text-foreground">How to Use Your API Key</h2>
                 <p className="text-muted-foreground text-xs sm:text-sm mb-4 sm:mb-6">
                   Once you have your API key, here's how to use it with FastTools Currency API.
                 </p>
@@ -199,9 +199,9 @@ export default function CurrencyAPIDocsPage() {
                 <div className="space-y-4 sm:space-y-6">
                   {/* Step 1 */}
                   <div className="flex gap-3 sm:gap-4">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">1</div>
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-primary text-foreground rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">1</div>
                     <div className="flex-1">
-                      <h3 className="text-sm sm:text-base font-semibold text-orange-500 mb-2">Copy Your API Key</h3>
+                      <h3 className="text-sm sm:text-base font-semibold text-foreground mb-2">Copy Your API Key</h3>
                       <p className="text-xs sm:text-sm text-muted-foreground mb-3">After clicking "Get My Key", you'll receive a response with your unique API key:</p>
                       <div className="bg-muted rounded-lg p-2 sm:p-3">
                         <code className="text-xs sm:text-sm text-foreground break-all">
@@ -213,19 +213,19 @@ export default function CurrencyAPIDocsPage() {
 
                   {/* Step 2 */}
                   <div className="flex gap-3 sm:gap-4">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">2</div>
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-primary text-foreground rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">2</div>
                     <div className="flex-1">
-                      <h3 className="text-sm sm:text-base font-semibold text-orange-500 mb-2">Use Your Key in API Calls</h3>
+                      <h3 className="text-sm sm:text-base font-semibold text-foreground mb-2">Use Your Key in API Calls</h3>
                       <p className="text-xs sm:text-sm text-muted-foreground mb-3">Add your key to API requests using either method:</p>
                       <div className="space-y-2">
                         <div className="bg-muted rounded-lg p-2 sm:p-3">
-                          <div className="text-xs sm:text-sm font-medium text-orange-500 mb-1">Header Method:</div>
+                          <div className="text-xs sm:text-sm font-medium text-foreground mb-1">Header Method:</div>
                           <code className="text-xs sm:text-sm text-foreground break-all">
                             X-API-Key: K8mN2pQ7vfsfsR9sT4uW6xY1zA3bC5dE8fG
                           </code>
                         </div>
                         <div className="bg-muted rounded-lg p-2 sm:p-3">
-                          <div className="text-xs sm:text-sm font-medium text-orange-500 mb-1">Query Parameter Method:</div>
+                          <div className="text-xs sm:text-sm font-medium text-foreground mb-1">Query Parameter Method:</div>
                           <code className="text-xs sm:text-sm text-foreground break-all">
                             ?api_key=K8mN2pQ7vR9sT4uW6xY1zA3bC5dE8fGfsfs
                           </code>
@@ -236,9 +236,9 @@ export default function CurrencyAPIDocsPage() {
 
                   {/* Step 3 */}
                   <div className="flex gap-3 sm:gap-4">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">3</div>
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-primary text-foreground rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">3</div>
                     <div className="flex-1">
-                      <h3 className="text-sm sm:text-base font-semibold text-orange-500 mb-2">Test Your Integration</h3>
+                      <h3 className="text-sm sm:text-base font-semibold text-foreground mb-2">Test Your Integration</h3>
                       <p className="text-xs sm:text-sm text-muted-foreground mb-3">Try making a currency conversion with your new key:</p>
                       <div className="bg-muted rounded-lg p-2 sm:p-3">
                         <code className="text-xs sm:text-sm text-foreground break-all">
@@ -249,9 +249,9 @@ export default function CurrencyAPIDocsPage() {
                   </div>
                 </div>
 
-                <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
-                  <h4 className="font-medium mb-2 text-green-800 dark:text-green-400 text-xs sm:text-sm">✅ You're All Set!</h4>
-                  <p className="text-xs sm:text-sm text-green-700 dark:text-green-300">
+                <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-heading-accent-border0 dark:bg-heading-accent-border/20 rounded-lg border border-heading-accent-border dark:border-heading-accent-border">
+                  <h4 className="font-medium mb-2 text-heading-accent dark:text-heading-accent text-xs sm:text-sm">✅ You're All Set!</h4>
+                  <p className="text-xs sm:text-sm text-heading-accent dark:text-heading-accent">
                     Your API key is now ready to use with all FastTools Currency API endpoints. Keep it secure and enjoy unlimited access to our currency data!
                   </p>
                 </div>
@@ -259,13 +259,13 @@ export default function CurrencyAPIDocsPage() {
 
               {/* API Endpoints */}
               <div className="space-y-4 sm:space-y-6">
-                <h2 className="text-base sm:text-lg md:text-xl font-bold text-orange-500">API Endpoints</h2>
+                <h2 className="text-base sm:text-lg md:text-xl font-bold text-foreground">API Endpoints</h2>
 
                 {/* Get Available Currencies */}
-                <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-black border border-border shadow">
+                <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-card border border-border shadow">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                    <span className="px-2 sm:px-3 py-1 bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400 rounded text-xs sm:text-sm font-medium">GET</span>
-                    <h3 className="text-sm sm:text-base md:text-lg font-semibold text-orange-500">Get Available Currencies</h3>
+                    <span className="px-2 sm:px-3 py-1 bg-heading-accent-border dark:bg-heading-accent-border/20 text-heading-accent dark:text-heading-accent rounded text-xs sm:text-sm font-medium">GET</span>
+                    <h3 className="text-sm sm:text-base md:text-lg font-semibold text-foreground">Get Available Currencies</h3>
                   </div>
                   <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">
                     Retrieve a list of all supported currencies with their codes, names, and symbols.
@@ -287,7 +287,7 @@ export default function CurrencyAPIDocsPage() {
                     </div>
                   </div>
 
-                  <h4 className="font-medium mb-2 sm:mb-3 text-orange-500 text-xs sm:text-sm">Response:</h4>
+                  <h4 className="font-medium mb-2 sm:mb-3 text-foreground text-xs sm:text-sm">Response:</h4>
                   <pre className="text-xs sm:text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600 bg-muted rounded-lg p-3 sm:p-4 scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600">
 {`{
   "success": true,
@@ -309,10 +309,10 @@ export default function CurrencyAPIDocsPage() {
                 </div>
 
                 {/* Get Latest Rates */}
-                <div className="p-6 sm:p-8 rounded-lg bg-black border border-border shadow">
+                <div className="p-6 sm:p-8 rounded-lg bg-card border border-border shadow">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400 rounded text-sm font-medium">GET</span>
-                    <h3 className="text-base md:text-lg font-semibold text-orange-500">Get Latest Exchange Rates</h3>
+                    <span className="px-3 py-1 bg-heading-accent-border dark:bg-heading-accent-border/20 text-heading-accent dark:text-heading-accent rounded text-sm font-medium">GET</span>
+                    <h3 className="text-base md:text-lg font-semibold text-foreground">Get Latest Exchange Rates</h3>
                   </div>
                   <p className="text-muted-foreground text-sm mb-4">
                     Get the latest exchange rates for a base currency. Optionally filter by specific target currencies.
@@ -334,7 +334,7 @@ export default function CurrencyAPIDocsPage() {
                     </div>
                   </div>
 
-                  <h4 className="font-medium mb-3 text-orange-500 text-sm">Parameters:</h4>
+                  <h4 className="font-medium mb-3 text-foreground text-sm">Parameters:</h4>
                   <div className="space-y-2 mb-4 text-sm">
                     <div className="flex items-center gap-3">
                       <code className="bg-muted px-2 py-1 rounded text-sm">base</code>
@@ -346,7 +346,7 @@ export default function CurrencyAPIDocsPage() {
                     </div>
                   </div>
 
-                  <h4 className="font-medium mb-3 text-orange-500 text-sm">Response:</h4>
+                  <h4 className="font-medium mb-3 text-foreground text-sm">Response:</h4>
                   <pre className="text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600 bg-muted rounded-lg p-4">
 {`{
   "success": true,
@@ -365,10 +365,10 @@ export default function CurrencyAPIDocsPage() {
                 </div>
 
                 {/* Currency Conversion */}
-                <div className="p-6 sm:p-8 rounded-lg bg-black border border-border shadow">
+                <div className="p-6 sm:p-8 rounded-lg bg-card border border-border shadow">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 rounded text-sm font-medium">POST</span>
-                    <h3 className="text-base md:text-lg font-semibold text-orange-500">Convert Currency</h3>
+                    <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/20 text-foreground rounded text-sm font-medium">POST</span>
+                    <h3 className="text-base md:text-lg font-semibold text-foreground">Convert Currency</h3>
                   </div>
                   <p className="text-muted-foreground text-sm mb-4">
                     Convert an amount from one currency to another using real-time exchange rates.
@@ -390,7 +390,7 @@ export default function CurrencyAPIDocsPage() {
                     </div>
                   </div>
 
-                  <h4 className="font-medium mb-3 text-orange-500 text-sm">Request Body:</h4>
+                  <h4 className="font-medium mb-3 text-foreground text-sm">Request Body:</h4>
                   <pre className="text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600 bg-muted rounded-lg p-4 mb-4">
 {`{
   "from": "USD",
@@ -399,7 +399,7 @@ export default function CurrencyAPIDocsPage() {
 }`}
                   </pre>
 
-                  <h4 className="font-medium mb-3 text-orange-500 text-sm">Response:</h4>
+                  <h4 className="font-medium mb-3 text-foreground text-sm">Response:</h4>
                   <pre className="text-sm text-muted-foreground overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-transparent hover:scrollbar-thumb-orange-600 bg-muted rounded-lg p-4">
 {`{
   "success": true,
@@ -417,10 +417,10 @@ export default function CurrencyAPIDocsPage() {
                 </div>
 
                 {/* Historical Rates */}
-                <div className="p-6 sm:p-8 rounded-lg bg-black border border-border shadow">
+                <div className="p-6 sm:p-8 rounded-lg bg-card border border-border shadow">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400 rounded text-sm font-medium">GET</span>
-                    <h3 className="text-base md:text-lg font-semibold text-orange-500">Get Historical Rates (by Date)</h3>
+                    <span className="px-3 py-1 bg-heading-accent-border dark:bg-heading-accent-border/20 text-heading-accent dark:text-heading-accent rounded text-sm font-medium">GET</span>
+                    <h3 className="text-base md:text-lg font-semibold text-foreground">Get Historical Rates (by Date)</h3>
                   </div>
                   <p className="text-muted-foreground text-sm mb-4">
                     Retrieve exchange rates for a specific historical date.
@@ -442,7 +442,7 @@ export default function CurrencyAPIDocsPage() {
                     </div>
                   </div>
 
-                  <h4 className="font-medium mb-3 text-orange-500 text-sm">Parameters:</h4>
+                  <h4 className="font-medium mb-3 text-foreground text-sm">Parameters:</h4>
                   <div className="space-y-2 mb-4 text-sm">
                     <div className="flex items-center gap-3">
                       <code className="bg-muted px-2 py-1 rounded text-sm">date</code>
@@ -460,10 +460,10 @@ export default function CurrencyAPIDocsPage() {
                 </div>
 
                 {/* Time Series Rates */}
-                <div className="p-6 sm:p-8 rounded-lg bg-black border border-border shadow">
+                <div className="p-6 sm:p-8 rounded-lg bg-card border border-border shadow">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400 rounded text-sm font-medium">GET</span>
-                    <h3 className="text-base md:text-lg font-semibold text-orange-500">Get Time Series Rates</h3>
+                    <span className="px-3 py-1 bg-heading-accent-border dark:bg-heading-accent-border/20 text-heading-accent dark:text-heading-accent rounded text-sm font-medium">GET</span>
+                    <h3 className="text-base md:text-lg font-semibold text-foreground">Get Time Series Rates</h3>
                   </div>
                   <p className="text-muted-foreground text-sm mb-4">
                     Fetch exchange rates over a date range (up to 365 days).
@@ -485,7 +485,7 @@ export default function CurrencyAPIDocsPage() {
                     </div>
                   </div>
 
-                  <h4 className="font-medium mb-3 text-orange-500 text-sm">Parameters:</h4>
+                  <h4 className="font-medium mb-3 text-foreground text-sm">Parameters:</h4>
                   <div className="space-y-2 mb-4 text-sm">
                     <div className="flex items-center gap-3">
                       <code className="bg-muted px-2 py-1 rounded text-sm">start_date</code>
@@ -507,10 +507,10 @@ export default function CurrencyAPIDocsPage() {
                 </div>
 
                 {/* Top 10 Currencies */}
-                <div className="p-6 sm:p-8 rounded-lg bg-black border border-border shadow">
+                <div className="p-6 sm:p-8 rounded-lg bg-card border border-border shadow">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400 rounded text-sm font-medium">GET</span>
-                    <h3 className="text-base md:text-lg font-semibold text-orange-500">Get Top 10 Currencies (last N days)</h3>
+                    <span className="px-3 py-1 bg-heading-accent-border dark:bg-heading-accent-border/20 text-heading-accent dark:text-heading-accent rounded text-sm font-medium">GET</span>
+                    <h3 className="text-base md:text-lg font-semibold text-foreground">Get Top 10 Currencies (last N days)</h3>
                   </div>
                   <p className="text-muted-foreground text-sm mb-4">
                     Return processed stats for the top 10 traded currencies over a recent period.
@@ -532,7 +532,7 @@ export default function CurrencyAPIDocsPage() {
                     </div>
                   </div>
 
-                  <h4 className="font-medium mb-3 text-orange-500 text-sm">Parameters:</h4>
+                  <h4 className="font-medium mb-3 text-foreground text-sm">Parameters:</h4>
                   <div className="space-y-2 mb-4 text-sm">
                     <div className="flex items-center gap-3">
                       <code className="bg-muted px-2 py-1 rounded text-sm">base</code>
@@ -546,16 +546,16 @@ export default function CurrencyAPIDocsPage() {
                 </div>
 
                 {/* Usage Examples */}
-                <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Usage Examples</h2>
+                <div className="p-4 sm:p-6 md:p-8 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 text-foreground">Usage Examples</h2>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                     {/* JavaScript */}
                     <div className="bg-muted rounded-lg p-2 sm:p-3">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
                         <div className="flex items-center gap-2">
-                          <Code className="h-3 w-3 sm:h-4 sm:w-4 text-blue-500" />
-                          <h3 className="text-xs sm:text-sm font-semibold text-orange-500">JavaScript</h3>
+                          <Code className="h-3 w-3 sm:h-4 sm:w-4 text-foreground" />
+                          <h3 className="text-xs sm:text-sm font-semibold text-foreground">JavaScript</h3>
                         </div>
                         <CopyButton 
                           text={`// Get latest rates
@@ -614,8 +614,8 @@ console.log(convertData.data.convertedAmount);`}
                     <div className="bg-muted rounded-lg p-3">
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
-                          <Code className="h-4 w-4 text-green-500" />
-                          <h3 className="text-sm font-semibold text-orange-500">Python</h3>
+                          <Code className="h-4 w-4 text-heading-accent" />
+                          <h3 className="text-sm font-semibold text-foreground">Python</h3>
                         </div>
                         <CopyButton 
                           text={`import requests
@@ -669,8 +669,8 @@ print(convert_data['data']['convertedAmount'])`}
                     <div className="bg-muted rounded-lg p-3">
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
-                          <Code className="h-4 w-4 text-gray-500" />
-                          <h3 className="text-sm font-semibold text-orange-500">cURL</h3>
+                          <Code className="h-4 w-4 text-muted-foreground" />
+                          <h3 className="text-sm font-semibold text-foreground">cURL</h3>
                         </div>
                         <CopyButton 
                           text={`# Get latest rates
@@ -707,12 +707,12 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                 </div>
 
                 {/* Rate Limits & Policies */}
-                <div className="p-6 sm:p-8 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-lg md:text-xl font-bold mb-4 text-orange-500">Rate Limits & Policies</h2>
+                <div className="p-6 sm:p-8 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-lg md:text-xl font-bold mb-4 text-foreground">Rate Limits & Policies</h2>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <h3 className="text-sm font-semibold text-orange-500 mb-2">Rate Limits</h3>
+                      <h3 className="text-sm font-semibold text-foreground mb-2">Rate Limits</h3>
                       <ul className="space-y-1 text-xs text-muted-foreground">
                         <li>• <strong>Free Tier:</strong> 1,000 requests per day</li>
                         <li>• <strong>Rate Limit:</strong> 100 requests per minute</li>
@@ -722,7 +722,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                     </div>
 
                     <div>
-                      <h3 className="text-sm font-semibold text-orange-500 mb-2">Usage Policies</h3>
+                      <h3 className="text-sm font-semibold text-foreground mb-2">Usage Policies</h3>
                       <ul className="space-y-1 text-xs text-muted-foreground">
                         <li>• <strong>Commercial Use:</strong> Allowed with attribution</li>
                         <li>• <strong>Attribution:</strong> Powered by FastTools.store</li>
@@ -734,12 +734,12 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                 </div>
 
                 {/* FAQ Section */}
-                <div className="p-6 sm:p-8 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-2xl font-bold mb-6 text-orange-500">Currency API FAQ - Everything You Need to Know</h2>
+                <div className="p-6 sm:p-8 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-2xl font-bold mb-6 text-foreground">Currency API FAQ - Everything You Need to Know</h2>
                   <div className="space-y-6 text-sm text-muted-foreground">
                     
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">1. How accurate are FastTools currency exchange rates?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">1. How accurate are FastTools currency exchange rates?</h3>
                       <p className="mb-3">FastTools.store provides highly accurate, real-time exchange rates that are updated throughout the day to reflect current market conditions. Our currency API is trusted by thousands of developers worldwide.</p>
                       <p className="mb-3">The rates shown represent mid-market rates (the average between buy and sell rates). When you actually exchange currency through banks or exchange services, you'll typically pay slightly different rates due to:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
@@ -751,7 +751,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">2. How often does FastTools update exchange rates?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">2. How often does FastTools update exchange rates?</h3>
                       <p className="mb-3">FastTools.store updates exchange rates in real-time during market hours to ensure you always have the most current information:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Active trading hours:</strong> Rates update every few minutes for maximum accuracy</li>
@@ -764,7 +764,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">3. Do I need an API key to use FastTools Currency API?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">3. Do I need an API key to use FastTools Currency API?</h3>
                       <p className="mb-3">No API key is required for basic usage! FastTools.store offers a generous free tier that allows you to start using our currency API immediately:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Free Tier:</strong> 1,000 requests per day without any API key</li>
@@ -784,7 +784,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">4. What currencies are supported by FastTools Currency API?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">4. What currencies are supported by FastTools Currency API?</h3>
                       <p className="mb-3">FastTools.store supports over 100 currencies from around the world, including all major and many minor currencies:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Major Currencies:</strong> USD, EUR, GBP, JPY, CHF, CAD, AUD, NZD</li>
@@ -798,7 +798,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">5. How do I handle API errors and rate limits?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">5. How do I handle API errors and rate limits?</h3>
                       <p className="mb-3">FastTools Currency API provides comprehensive error handling and rate limit information:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Error Responses:</strong> All errors include success: false, error type, and descriptive message</li>
@@ -817,7 +817,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">6. Is FastTools Currency API really free? What are the limitations?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">6. Is FastTools Currency API really free? What are the limitations?</h3>
                       <p className="mb-3">Yes, FastTools.store offers a completely free currency API with generous limits designed for developers and businesses of all sizes:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>No Cost:</strong> Absolutely free to use with no hidden fees or charges</li>
@@ -837,7 +837,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">7. How do I get started with FastTools Currency API quickly?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">7. How do I get started with FastTools Currency API quickly?</h3>
                       <p className="mb-3">Getting started with FastTools Currency API is incredibly simple and takes just minutes:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>No Registration:</strong> Start making API calls immediately without signing up</li>
@@ -857,7 +857,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">8. What's the difference between FastTools and other currency APIs?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">8. What's the difference between FastTools and other currency APIs?</h3>
                       <p className="mb-3">FastTools.store stands out from other currency APIs in several key ways:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Truly Free:</strong> No hidden costs, no credit card required, no trial periods</li>
@@ -877,7 +877,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">9. Can I use FastTools Currency API for commercial applications?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">9. Can I use FastTools Currency API for commercial applications?</h3>
                       <p className="mb-3">Absolutely! FastTools.store encourages commercial use of our currency API:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Commercial License:</strong> Free for commercial applications and businesses</li>
@@ -898,7 +898,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">10. How reliable is FastTools Currency API? What about uptime?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">10. How reliable is FastTools Currency API? What about uptime?</h3>
                       <p className="mb-3">FastTools.store is built for reliability and performance:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>99.9% Uptime:</strong> Industry-leading reliability with redundant infrastructure</li>
@@ -919,7 +919,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">11. What programming languages and frameworks work with FastTools API?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">11. What programming languages and frameworks work with FastTools API?</h3>
                       <p className="mb-3">FastTools Currency API works with virtually any programming language that can make HTTP requests:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Web Languages:</strong> JavaScript, TypeScript, HTML/CSS</li>
@@ -939,7 +939,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">12. How do I handle historical currency data and time series?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">12. How do I handle historical currency data and time series?</h3>
                       <p className="mb-3">FastTools.store provides comprehensive historical data capabilities:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Historical Rates:</strong> Get rates for any specific date</li>
@@ -960,7 +960,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">13. What should I do if I exceed the rate limits?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">13. What should I do if I exceed the rate limits?</h3>
                       <p className="mb-3">If you exceed FastTools API rate limits, here's how to handle it gracefully:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Check Headers:</strong> Monitor X-RateLimit-Remaining and X-RateLimit-Reset headers</li>
@@ -981,7 +981,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">14. How do I ensure my FastTools API integration is secure?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">14. How do I ensure my FastTools API integration is secure?</h3>
                       <p className="mb-3">Security is crucial when integrating any API. Here are FastTools.store security best practices:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Use HTTPS:</strong> Always make requests over HTTPS to encrypt data</li>
@@ -1002,7 +1002,7 @@ curl -X POST "https://www.fasttools.store/api/currency_converter/convert?api_key
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">15. Can I get support or help with FastTools Currency API?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">15. Can I get support or help with FastTools Currency API?</h3>
                       <p className="mb-3">FastTools.store provides comprehensive support options:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
                         <li><strong>Documentation:</strong> Detailed guides, examples, and reference materials</li>

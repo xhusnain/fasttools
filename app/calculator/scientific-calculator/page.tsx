@@ -139,7 +139,7 @@ export default function ScientificCalculatorPage() {
         })
       }} />
       
-      <div className="bg-black">
+      <div className="bg-card">
         <div className="container mx-auto px-3 py-6 md:py-8">
         <Breadcrumbs items={[
           { label: "Calculator", href: "/calculator" },
@@ -158,9 +158,9 @@ export default function ScientificCalculatorPage() {
             {/* Mobile/Tablet AdSpace after GHeader */}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
-                <span className="text-xs text-slate-400 font-medium">Advertisement</span>
+                <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
               </div>
-              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-slate-700 rounded-xl shadow-sm bg-black" />
+              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
             </div>
 
         <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
@@ -175,24 +175,24 @@ export default function ScientificCalculatorPage() {
               />
 
               <div className="space-y-8 mt-6 md:mt-8">
-                <div className="bg-black border border-slate-700 rounded-2xl p-6 shadow-xl">
-                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
-                    <Calculator className="h-6 w-6 text-orange-500" />
+                <div className="bg-card border border-border rounded-2xl p-6 shadow-xl">
+                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
+                    <Calculator className="h-6 w-6 text-foreground" />
                     What is a Scientific Calculator?
                   </h2>
                   <div className="prose prose-slate dark:prose-invert max-w-none">
-                    <p className="text-slate-400 mb-4">
+                    <p className="text-muted-foreground mb-4">
                       A scientific calculator is an advanced mathematical tool designed for complex calculations beyond basic arithmetic. 
                       Unlike standard calculators, scientific calculators include specialized functions for trigonometry, logarithms, 
                       exponentials, statistics, and advanced mathematics.
                     </p>
-                    <p className="text-slate-400 mb-4">
+                    <p className="text-muted-foreground mb-4">
                       Our free online scientific calculator provides all the functionality of professional calculators like CASIO fx-991EX, 
                       TI-84 Plus, HP 35s, and Sharp EL-W516X. It's perfect for students, engineers, scientists, and anyone who needs 
                       to perform advanced mathematical calculations.
                     </p>
-                    <h3 className="text-lg font-semibold mb-3 text-green-500">Key Features:</h3>
-                    <ul className="list-disc list-inside space-y-2 text-slate-400">
+                    <h3 className="text-lg font-semibold mb-3 text-heading-accent">Key Features:</h3>
+                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                       <li><strong>70+ Mathematical Functions:</strong> Complete set of scientific, trigonometric, logarithmic, and statistical functions</li>
                       <li><strong>Professional Grade:</strong> Equivalent to high-end physical calculators</li>
                       <li><strong>Free to Use:</strong> No registration required, completely free online calculator</li>
@@ -202,15 +202,15 @@ export default function ScientificCalculatorPage() {
                   </div>
                 </div>
 
-                <div className="bg-black border border-slate-700 rounded-2xl p-6 shadow-xl">
-                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
-                    <Brain className="h-6 w-6 text-orange-500" />
+                <div className="bg-card border border-border rounded-2xl p-6 shadow-xl">
+                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
+                    <Brain className="h-6 w-6 text-foreground" />
                     Mathematical Functions Guide
                   </h2>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <h3 className="text-lg font-semibold mb-3 text-green-500">Trigonometric Functions</h3>
-                      <ul className="space-y-2 text-sm text-slate-400">
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Trigonometric Functions</h3>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
                         <li><strong>sin, cos, tan:</strong> Basic trigonometric functions</li>
                         <li><strong>asin, acos, atan:</strong> Inverse trigonometric functions</li>
                         <li><strong>sinh, cosh, tanh:</strong> Hyperbolic functions</li>
@@ -218,8 +218,8 @@ export default function ScientificCalculatorPage() {
                       </ul>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-3 text-green-500">Logarithmic Functions</h3>
-                      <ul className="space-y-2 text-sm text-slate-400">
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Logarithmic Functions</h3>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
                         <li><strong>ln:</strong> Natural logarithm (base e)</li>
                         <li><strong>log:</strong> Common logarithm (base 10)</li>
                         <li><strong>log₂:</strong> Binary logarithm (base 2)</li>
@@ -227,8 +227,8 @@ export default function ScientificCalculatorPage() {
                       </ul>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-3 text-green-500">Power & Root Functions</h3>
-                      <ul className="space-y-2 text-sm text-slate-400">
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Power & Root Functions</h3>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
                         <li><strong>x², x³:</strong> Square and cube functions</li>
                         <li><strong>√x, ∛x:</strong> Square root and cube root</li>
                         <li><strong>xʸ:</strong> Power function (x to the power of y)</li>
@@ -236,8 +236,8 @@ export default function ScientificCalculatorPage() {
                       </ul>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-3 text-green-500">Advanced Mathematics</h3>
-                      <ul className="space-y-2 text-sm text-slate-400">
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Advanced Mathematics</h3>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
                         <li><strong>n!:</strong> Factorial function</li>
                         <li><strong>nCr, nPr:</strong> Combinations and permutations</li>
                         <li><strong>Γ:</strong> Gamma function</li>
@@ -247,37 +247,37 @@ export default function ScientificCalculatorPage() {
                   </div>
                 </div>
 
-                <div className="bg-black border border-slate-700 rounded-2xl p-6 shadow-xl">
-                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
-                    <Pi className="h-6 w-6 text-orange-500" />
+                <div className="bg-card border border-border rounded-2xl p-6 shadow-xl">
+                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
+                    <Pi className="h-6 w-6 text-foreground" />
                     Mathematical Constants
                   </h2>
                   <div className="grid md:grid-cols-3 gap-6">
-                    <div className="text-center p-4 bg-slate-900 rounded-lg border border-slate-700">
-                      <div className="text-2xl font-bold text-green-500">π</div>
-                      <div className="text-sm text-slate-400">Pi</div>
-                      <div className="text-xs text-slate-500">3.14159265359</div>
+                    <div className="text-center p-4 bg-muted rounded-lg border border-border">
+                      <div className="text-2xl font-bold text-heading-accent">π</div>
+                      <div className="text-sm text-muted-foreground">Pi</div>
+                      <div className="text-xs text-muted-foreground">3.14159265359</div>
                     </div>
-                    <div className="text-center p-4 bg-slate-900 rounded-lg border border-slate-700">
-                      <div className="text-2xl font-bold text-green-500">e</div>
-                      <div className="text-sm text-slate-400">Euler's Number</div>
-                      <div className="text-xs text-slate-500">2.71828182846</div>
+                    <div className="text-center p-4 bg-muted rounded-lg border border-border">
+                      <div className="text-2xl font-bold text-heading-accent">e</div>
+                      <div className="text-sm text-muted-foreground">Euler's Number</div>
+                      <div className="text-xs text-muted-foreground">2.71828182846</div>
                     </div>
-                    <div className="text-center p-4 bg-slate-900 rounded-lg border border-slate-700">
-                      <div className="text-2xl font-bold text-green-500">φ</div>
-                      <div className="text-sm text-slate-400">Golden Ratio</div>
-                      <div className="text-xs text-slate-500">1.61803398875</div>
+                    <div className="text-center p-4 bg-muted rounded-lg border border-border">
+                      <div className="text-2xl font-bold text-heading-accent">φ</div>
+                      <div className="text-sm text-muted-foreground">Golden Ratio</div>
+                      <div className="text-xs text-muted-foreground">1.61803398875</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Quick Help Section */}
-                <div className="bg-black border border-slate-700 rounded-2xl p-6 shadow-xl">
-                  <h2 className="text-xl font-bold mb-4 text-orange-500">Quick Help & Usage Guide</h2>
+                <div className="bg-card border border-border rounded-2xl p-6 shadow-xl">
+                  <h2 className="text-xl font-bold mb-4 text-foreground">Quick Help & Usage Guide</h2>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <h3 className="text-lg font-semibold mb-3 text-green-500">Basic Operations</h3>
-                      <ul className="list-disc list-inside space-y-2 text-slate-400">
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Basic Operations</h3>
+                      <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                         <li><strong>Arithmetic:</strong> Use +, -, ×, ÷ for standard calculations</li>
                         <li><strong>Memory:</strong> M+, M-, MR, MC to store and recall values</li>
                         <li><strong>Clear:</strong> AC to clear all, ⌫ for backspace</li>
@@ -285,8 +285,8 @@ export default function ScientificCalculatorPage() {
                       </ul>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-3 text-green-500">Advanced Features</h3>
-                      <ul className="list-disc list-inside space-y-2 text-slate-400">
+                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Advanced Features</h3>
+                      <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                         <li><strong>Angle Modes:</strong> Toggle between Degrees and Radians</li>
                         <li><strong>Statistical:</strong> Use DATA, mean, std, var for data analysis</li>
                         <li><strong>Constants:</strong> Insert π, e, φ with one click</li>
@@ -296,9 +296,9 @@ export default function ScientificCalculatorPage() {
                   </div>
                 </div>
 
-                <div className="bg-black border border-slate-700 rounded-2xl p-6 shadow-xl">
-                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
-                    <Brain className="h-6 w-6 text-orange-500" />
+                <div className="bg-card border border-border rounded-2xl p-6 shadow-xl">
+                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
+                    <Brain className="h-6 w-6 text-foreground" />
                     Frequently Asked Questions
                   </h2>
                   <div className="space-y-4">
@@ -364,18 +364,18 @@ export default function ScientificCalculatorPage() {
                         answer: "Our scientific calculator operates without usage restrictions, allowing you to execute calculations continuously throughout your session. There are no rate limits, subscription requirements, or hidden fees. Your calculation history persists during your active browser session, enabling you to reference previous results and perform extensive mathematical computations without interruption."
                       }
                     ].map((faq, index) => (
-                      <div key={index} className="border border-slate-700 rounded-lg p-4 bg-black">
-                        <h3 className="font-semibold text-green-500 mb-2">{faq.question}</h3>
-                        <p className="text-sm text-slate-400 leading-relaxed">{faq.answer}</p>
+                      <div key={index} className="border border-border rounded-lg p-4 bg-card">
+                        <h3 className="font-semibold text-heading-accent mb-2">{faq.question}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Related Tools Section */}
-                <div className="bg-black border border-slate-700 rounded-2xl p-6 shadow-xl">
-                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-orange-500">
-                    <Calculator className="h-6 w-6 text-orange-500" />
+                <div className="bg-card border border-border rounded-2xl p-6 shadow-xl">
+                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
+                    <Calculator className="h-6 w-6 text-foreground" />
                     Related Math & Calculator Tools
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -396,13 +396,13 @@ export default function ScientificCalculatorPage() {
                       <a
                         key={name}
                         href={href}
-                        className="p-4 bg-black rounded-lg border border-slate-700 hover:bg-slate-800 hover:border-green-500/50 transition-colors group"
+                        className="p-4 bg-card rounded-lg border border-border hover:bg-secondary hover:border-heading-accent-border/50 transition-colors group"
                       >
                         <div className="flex items-center gap-3 mb-2">
                           <span className="text-2xl">{icon}</span>
-                          <h3 className="font-semibold text-green-500 group-hover:text-green-500">{name}</h3>
+                          <h3 className="font-semibold text-heading-accent group-hover:text-heading-accent">{name}</h3>
                         </div>
-                        <p className="text-sm text-slate-400 group-hover:text-slate-300">{desc}</p>
+                        <p className="text-sm text-muted-foreground group-hover:text-foreground">{desc}</p>
                       </a>
                     ))}
                   </div>
@@ -415,28 +415,28 @@ export default function ScientificCalculatorPage() {
                 <div className="sticky top-32 space-y-6">
                   <div>
                     <div className="text-center mb-2">
-                      <span className="text-xs text-slate-400 font-medium">Advertisement</span>
+                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                     </div>
-                    <AdSpace slot="sidebar" className="w-full h-80 border border-slate-700 rounded-xl shadow-sm bg-black" />
+                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
                   </div>
 
                   {/* History */}
-                  <div className="bg-black border border-slate-700 rounded-2xl p-4 shadow-xl">
+                  <div className="bg-card border border-border rounded-2xl p-4 shadow-xl">
                     <div className="flex items-center gap-2 mb-4">
-                      <div className="w-6 h-6 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                        <Clock className="h-3 w-3 text-white" />
+                      <div className="w-6 h-6 bg-gradient-to-r from-primary to-primary/90 rounded-lg flex items-center justify-center">
+                        <Clock className="h-3 w-3 text-primary-foreground" />
                       </div>
-                      <span className="text-sm font-semibold text-green-500">History</span>
+                      <span className="text-sm font-semibold text-heading-accent">History</span>
                     </div>
                     <div className="space-y-2 max-h-60 overflow-y-auto">
                       {history.length > 0 ? (
                         history.slice(0, 6).map((entry, index) => (
-                          <div key={index} className="text-xs text-slate-400 font-mono break-words p-2 bg-slate-900 rounded border border-slate-700">
+                          <div key={index} className="text-xs text-muted-foreground font-mono break-words p-2 bg-muted rounded border border-border">
                             {entry}
                           </div>
                         ))
                       ) : (
-                        <div className="text-sm text-slate-500 text-center py-4">
+                        <div className="text-sm text-muted-foreground text-center py-4">
                           No calculations yet
                         </div>
                       )}
@@ -445,7 +445,7 @@ export default function ScientificCalculatorPage() {
                       <div className="flex gap-2 mt-3">
                         <button 
                           onClick={clearHistory}
-                          className="flex items-center gap-1 px-3 py-1 text-xs bg-slate-800 text-slate-300 rounded hover:bg-slate-700 transition-colors border border-slate-700"
+                          className="flex items-center gap-1 px-3 py-1 text-xs bg-secondary text-foreground rounded hover:bg-secondary/80 transition-colors border border-border"
                         >
                           <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -454,7 +454,7 @@ export default function ScientificCalculatorPage() {
                         </button>
                         <button 
                           onClick={copyResult}
-                          className="flex items-center gap-1 px-3 py-1 text-xs bg-slate-800 text-slate-300 rounded hover:bg-slate-700 transition-colors border border-slate-700"
+                          className="flex items-center gap-1 px-3 py-1 text-xs bg-secondary text-foreground rounded hover:bg-secondary/80 transition-colors border border-border"
                         >
                           <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />

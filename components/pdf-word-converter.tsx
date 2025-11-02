@@ -397,16 +397,16 @@ export function PDFWordConverter() {
         </div>
 
         {/* Info Card */}
-        <Card className="p-4 bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-800">
+        <Card className="p-4 bg-muted border-border">
           <div className="flex items-start gap-3">
-            <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center mt-0.5">
-              <span className="text-white text-xs font-bold">i</span>
+            <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary flex items-center justify-center mt-0.5">
+              <span className="text-primary-foreground text-xs font-bold">i</span>
             </div>
             <div className="flex-1">
-              <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-1">
+              <h4 className="font-semibold text-foreground mb-1">
                 {mode === "pdf-to-word" ? "PDF to Word Conversion" : "Word to PDF Conversion"}
               </h4>
-              <p className="text-sm text-blue-800 dark:text-blue-200 leading-relaxed">
+              <p className="text-sm text-foreground leading-relaxed">
                 {mode === "pdf-to-word" 
                   ? "Extracts text from your PDF and creates an editable Word document (DOCX). Text content is preserved with page markers. Perfect for editing PDF text or extracting content."
                   : "Creates a PDF from your Word file. Note: Full document structure conversion (images, formatting) is limited in browser. For complete conversion, use desktop software like Microsoft Word."

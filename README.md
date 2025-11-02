@@ -1,30 +1,53 @@
-# Public tools website
+# FastTools - Free Online Tools Platform
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
-
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/husnainbabardev-gmailcoms-projects/v0-public-tools-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/6wTIDgtBnoi)
+A comprehensive collection of 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities.
 
 ## Overview
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+FastTools offers a wide range of free online tools to help with productivity, content creation, conversions, calculations, and more. All tools are fast, accurate, and easy to use with no registration required.
 
-## Deployment
+## Technology Stack
 
-Your project is live at:
+- **Framework:** Next.js 15 with React 19
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Deployment:** Self-hosted on VM/Server
 
-**[https://vercel.com/husnainbabardev-gmailcoms-projects/v0-public-tools-website](https://vercel.com/husnainbabardev-gmailcoms-projects/v0-public-tools-website)**
+## Getting Started
 
-## Build your app
+### Prerequisites
 
-Continue building your app on:
+- Node.js 18+ 
+- pnpm (or npm/yarn)
 
-**[https://v0.app/chat/projects/6wTIDgtBnoi](https://v0.app/chat/projects/6wTIDgtBnoi)**
+### Installation
 
-## How It Works
+```bash
+# Install dependencies
+pnpm install
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+# Run development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
+```
+
+## Project Structure
+
+- `/app` - Next.js app router pages and API routes
+- `/components` - Reusable React components
+- `/lib` - Utility functions and configurations
+- `/public` - Static assets
+
+## Features
+
+- 1000+ free online tools
+- No registration required
+- Fast and accurate results
+- Modern, responsive UI
+- Dark/Light theme support
+- SEO optimized

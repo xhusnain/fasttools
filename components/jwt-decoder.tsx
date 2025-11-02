@@ -656,10 +656,10 @@ class Program
   // Get color based on time remaining
   const getExpirationColor = (seconds: number | null) => {
     if (seconds === null) return 'text-muted-foreground'
-    if (seconds < 0) return 'text-red-600 dark:text-red-400'
-    if (seconds < 300) return 'text-red-600 dark:text-red-400' // < 5 minutes
-    if (seconds < 3600) return 'text-yellow-600 dark:text-yellow-400' // < 1 hour
-    return 'text-green-600 dark:text-green-400'
+    if (seconds < 0) return 'text-foreground'
+    if (seconds < 300) return 'text-foreground' // < 5 minutes
+    if (seconds < 3600) return 'text-foreground' // < 1 hour
+    return 'text-heading-accent'
   }
 
   // Open comparison tool
@@ -1245,11 +1245,11 @@ metadata:
   // Get performance rating
   const getPerformanceRating = () => {
     const size = performanceMetrics.tokenSize
-    if (size < 200) return { rating: 'Excellent', color: 'text-green-600', bgColor: 'bg-black', borderColor: 'border-green-200 dark:border-green-800' }
-    if (size < 512) return { rating: 'Good', color: 'text-blue-600', bgColor: 'bg-black', borderColor: 'border-blue-200 dark:border-blue-800' }
-    if (size < 1024) return { rating: 'Fair', color: 'text-yellow-600', bgColor: 'bg-black', borderColor: 'border-yellow-200 dark:border-yellow-800' }
-    if (size < 4096) return { rating: 'Large', color: 'text-orange-600', bgColor: 'bg-black', borderColor: 'border-orange-200 dark:border-orange-800' }
-    return { rating: 'Too Large', color: 'text-red-600', bgColor: 'bg-black', borderColor: 'border-red-200 dark:border-red-800' }
+    if (size < 200) return { rating: 'Excellent', color: 'text-heading-accent', bgColor: 'bg-card', borderColor: 'border-green-200 dark:border-green-800' }
+    if (size < 512) return { rating: 'Good', color: 'text-foreground', bgColor: 'bg-card', borderColor: 'border-blue-200 dark:border-blue-800' }
+    if (size < 1024) return { rating: 'Fair', color: 'text-foreground', bgColor: 'bg-card', borderColor: 'border-yellow-200 dark:border-yellow-800' }
+    if (size < 4096) return { rating: 'Large', color: 'text-foreground', bgColor: 'bg-card', borderColor: 'border-primary/20' }
+    return { rating: 'Too Large', color: 'text-foreground', bgColor: 'bg-card', borderColor: 'border-red-200 dark:border-red-800' }
   }
 
   // Calculate network impact
@@ -1430,12 +1430,12 @@ metadata:
         {/* Shared Token Notification */}
         {isSharedToken && (
           <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 border-2 border-blue-300 dark:border-blue-700 rounded-lg flex items-start gap-3 animate-in fade-in slide-in-from-top-2 duration-500">
-            <Share2 className="h-5 w-5 text-blue-600 dark:text-blue-400 mt-0.5 shrink-0" />
+            <Share2 className="h-5 w-5 text-foreground mt-0.5 shrink-0" />
             <div className="flex-1">
-              <p className="text-sm font-semibold text-blue-900 dark:text-blue-100">
+              <p className="text-sm font-semibold text-foreground">
                 🎉 Shared Token Loaded Successfully!
               </p>
-              <p className="text-xs text-blue-700 dark:text-blue-300 mt-1">
+              <p className="text-xs text-foreground mt-1">
                 You&apos;re viewing a JWT token shared by someone. Sensitive data may be masked for privacy.
               </p>
             </div>
@@ -1443,7 +1443,7 @@ metadata:
               variant="ghost"
               size="sm"
               onClick={() => setIsSharedToken(false)}
-              className="h-6 w-6 p-0 text-blue-600 hover:text-blue-800 dark:text-blue-400"
+              className="h-6 w-6 p-0 text-foreground hover:text-foreground"
             >
               <X className="h-4 w-4" />
             </Button>
@@ -1461,7 +1461,7 @@ metadata:
                   <select
                     value={selectedAlgorithm}
                     onChange={(e) => setSelectedAlgorithm(e.target.value)}
-                    className="px-3 py-1.5 text-sm border-2 border-orange-300 rounded-md bg-background focus:border-orange-500 focus:outline-none cursor-pointer w-24"
+                    className="px-3 py-1.5 text-sm border-2 border-orange-300 rounded-md bg-background focus:border-primary focus:outline-none cursor-pointer w-24"
                     style={{ wordBreak: 'normal' }}
                   >
                     <option value="HS256">HS256</option>
@@ -1509,7 +1509,7 @@ metadata:
                       variant="outline"
                       size="sm"
                       onClick={analyzePerformance}
-                      className="text-xs bg-gradient-to-r from-yellow-500 to-orange-500 text-white hover:from-yellow-600 hover:to-orange-600 border-0"
+                      className="text-xs bg-gradient-to-r from-yellow-500 to-orange-500 text-white hover:from-yellow-600 hover:to-primary/90 border-0"
                     >
                       <Zap className="h-3 w-3 mr-1" />
                       Performance
@@ -1545,7 +1545,7 @@ metadata:
                       variant="outline"
                       size="sm"
                       onClick={analyzeSecurity}
-                      className="text-xs bg-gradient-to-r from-red-500 to-orange-500 text-white hover:from-red-600 hover:to-orange-600 border-0"
+                      className="text-xs bg-gradient-to-r from-red-500 to-orange-500 text-white hover:from-red-600 hover:to-primary/90 border-0"
                     >
                       <Shield className="h-3 w-3 mr-1" />
                       Security
@@ -1587,7 +1587,7 @@ metadata:
           placeholder="Paste your JWT token here..."
           value={token}
           onChange={(e) => setToken(e.target.value)}
-                className="!h-32 !max-h-32 !min-h-32 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base pr-20 border-2 border-orange-300 focus:border-orange-500"
+                className="!h-32 !max-h-32 !min-h-32 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base pr-20 border-2 border-orange-300 focus:border-primary"
                 style={{ 
                   wordBreak: 'break-all', 
                   overflowWrap: 'break-word', 
@@ -1602,7 +1602,7 @@ metadata:
               {token && (
                 <div className="absolute top-3 right-3">
                   {isValid ? (
-                    <div className="flex items-center gap-1 text-green-600 text-xs">
+                    <div className="flex items-center gap-1 text-heading-accent text-xs">
                       <CheckCircle2 className="h-4 w-4" />
                       <span>Valid</span>
                     </div>
@@ -1629,9 +1629,9 @@ metadata:
             <div className="space-y-4 w-full max-w-full overflow-hidden">
               {/* Algorithm Info */}
               {decoded.header.alg && (
-                <div className="p-4 bg-black border border-blue-200 dark:border-blue-800 rounded-lg w-full max-w-full overflow-hidden">
+                <div className="p-4 bg-card border border-blue-200 dark:border-blue-800 rounded-lg w-full max-w-full overflow-hidden">
                   <div className="flex items-center justify-between gap-4">
-                    <p className="text-base font-medium text-blue-900 dark:text-blue-100 break-words">
+                    <p className="text-base font-medium text-foreground break-words">
                       <strong>Algorithm:</strong> {decoded.header.alg} | <strong>Type:</strong> {decoded.header.typ || "JWT"}
                     </p>
                     {timeRemaining !== null && (
@@ -1816,7 +1816,7 @@ metadata:
                         placeholder="Enter your secret key..."
                         value={secret}
                         onChange={(e) => setSecret(e.target.value)}
-                        className="font-mono text-base border-2 border-orange-300 focus:border-orange-500"
+                        className="font-mono text-base border-2 border-orange-300 focus:border-primary"
                         style={{ wordBreak: 'break-all', overflowWrap: 'anywhere' }}
                       />
                       <Button 
@@ -1832,13 +1832,13 @@ metadata:
                   {isVerified !== null && (
                     <div className={`p-4 rounded-lg flex items-center gap-3 ${
                       isVerified 
-                        ? "bg-black border border-border" 
+                        ? "bg-card border border-border" 
                         : "bg-destructive/10 border border-destructive/20"
                     }`}>
                       {isVerified ? (
                         <>
-                          <CheckCircle2 className="h-6 w-6 text-green-600" />
-                          <span className="text-base font-medium text-green-900 dark:text-green-100">Signature Verified</span>
+                          <CheckCircle2 className="h-6 w-6 text-heading-accent" />
+                          <span className="text-base font-medium text-heading-accent">Signature Verified</span>
                         </>
                       ) : (
                         <>
@@ -1855,8 +1855,8 @@ metadata:
         </TabsContent>
 
         <TabsContent value="encode" className="space-y-6">
-          <div className="p-4 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
-            <p className="text-sm text-blue-900 dark:text-blue-100">
+          <div className="p-4 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
+            <p className="text-sm text-foreground">
               <strong>Note:</strong> This encoder creates unsigned tokens for demonstration. Use proper JWT libraries with cryptographic signing for production use.
             </p>
           </div>
@@ -1868,7 +1868,7 @@ metadata:
               <Textarea
                 value={headerInput}
                 onChange={(e) => setHeaderInput(e.target.value)}
-                className="!h-40 !max-h-40 !min-h-40 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base border-2 border-orange-300 focus:border-orange-500"
+                className="!h-40 !max-h-40 !min-h-40 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base border-2 border-orange-300 focus:border-primary"
                 style={{ 
                   wordBreak: 'break-all', 
                   overflowWrap: 'break-word', 
@@ -1889,7 +1889,7 @@ metadata:
               <Textarea
                 value={payloadInput}
                 onChange={(e) => setPayloadInput(e.target.value)}
-                className="!h-40 !max-h-40 !min-h-40 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base border-2 border-orange-300 focus:border-orange-500"
+                className="!h-40 !max-h-40 !min-h-40 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base border-2 border-orange-300 focus:border-primary"
                 style={{ 
                   wordBreak: 'break-all', 
                   overflowWrap: 'break-word', 
@@ -1930,15 +1930,15 @@ metadata:
       </Tabs>
 
       {/* Security Warning */}
-      <div className="p-4 bg-black border border-yellow-200 dark:border-yellow-800 rounded-lg">
-        <p className="text-xs text-yellow-900 dark:text-yellow-100">
+      <div className="p-4 bg-card border border-yellow-200 dark:border-yellow-800 rounded-lg">
+        <p className="text-xs text-foreground">
           <strong>⚠️ Security Notice:</strong> All JWT processing happens in your browser. Never paste production tokens or sensitive secrets. This tool is for development and debugging purposes only. Always verify JWT signatures on your backend server.
         </p>
       </div>
 
       {/* Share Modal */}
       {showShareModal && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowShareModal(false)}>
+        <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowShareModal(false)}>
           <Card className="w-full max-w-2xl p-6 space-y-5 animate-in fade-in zoom-in duration-200" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -1961,13 +1961,13 @@ metadata:
             </div>
 
             {/* Mask Sensitive Data Toggle */}
-            <div className="p-4 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
+            <div className="p-4 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
-                  <Label className="text-base font-semibold text-blue-900 dark:text-blue-100">
+                  <Label className="text-base font-semibold text-foreground">
                     Mask Sensitive Data
                   </Label>
-                  <p className="text-sm text-blue-700 dark:text-blue-300">
+                  <p className="text-sm text-foreground">
                     Automatically hide sensitive fields like email, phone, passwords, etc.
                   </p>
                 </div>
@@ -2022,28 +2022,28 @@ metadata:
             {/* Features List */}
             <div className="grid md:grid-cols-2 gap-3 pt-2">
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">No Expiration</p>
                   <p className="text-xs text-muted-foreground">Link works forever</p>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">Privacy Protected</p>
                   <p className="text-xs text-muted-foreground">Sensitive data masked</p>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">No Database</p>
                   <p className="text-xs text-muted-foreground">All data in URL</p>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">Team Debugging</p>
                   <p className="text-xs text-muted-foreground">Perfect for collaboration</p>
@@ -2076,7 +2076,7 @@ metadata:
 
       {/* Code Generator Modal */}
       {showCodeGenerator && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowCodeGenerator(false)}>
+        <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowCodeGenerator(false)}>
           <Card className="w-full max-w-4xl max-h-[90vh] flex flex-col p-6 space-y-5 animate-in fade-in zoom-in duration-200" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -2157,9 +2157,9 @@ metadata:
             </div>
 
             {/* Installation Instructions */}
-            <div className="p-4 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
-              <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">📦 Installation Required:</p>
-              <code className="text-xs bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-800 dark:text-blue-200">
+            <div className="p-4 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
+              <p className="text-sm font-semibold text-foreground mb-2">📦 Installation Required:</p>
+              <code className="text-xs bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-foreground">
                 {selectedLanguage === 'nodejs' && 'npm install jsonwebtoken'}
                 {selectedLanguage === 'python' && 'pip install PyJWT'}
                 {selectedLanguage === 'java' && 'Maven: io.jsonwebtoken:jjwt-api:0.11.5'}
@@ -2172,28 +2172,28 @@ metadata:
             {/* Features */}
             <div className="grid grid-cols-2 gap-3">
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">Token Verification</p>
                   <p className="text-xs text-muted-foreground">Validates JWT signature</p>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">Token Generation</p>
                   <p className="text-xs text-muted-foreground">Create new JWTs</p>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">Error Handling</p>
                   <p className="text-xs text-muted-foreground">Catches invalid tokens</p>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">Production Ready</p>
                   <p className="text-xs text-muted-foreground">Best practices included</p>
@@ -2226,7 +2226,7 @@ metadata:
 
       {/* Security Analyzer Modal */}
       {showSecurityAnalyzer && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowSecurityAnalyzer(false)}>
+        <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowSecurityAnalyzer(false)}>
           <Card className="w-full max-w-4xl p-5 space-y-3 animate-in fade-in zoom-in duration-200" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -2256,27 +2256,27 @@ metadata:
 
             {/* Security Score */}
             <div className={`p-4 rounded-lg border-2 ${
-              securityScore >= 80 ? 'bg-black border-green-300 dark:border-green-700' :
-              securityScore >= 60 ? 'bg-black border-yellow-300 dark:border-yellow-700' :
-              'bg-black border-red-300 dark:border-red-700'
+              securityScore >= 80 ? 'bg-card border-green-300 dark:border-green-700' :
+              securityScore >= 60 ? 'bg-card border-yellow-300 dark:border-yellow-700' :
+              'bg-card border-red-300 dark:border-destructive'
             }`}>
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-semibold text-muted-foreground mb-1">Security Score</p>
                   <div className="flex items-baseline gap-2">
                     <p className={`text-4xl font-bold ${
-                      securityScore >= 80 ? 'text-green-600 dark:text-green-400' :
-                      securityScore >= 60 ? 'text-yellow-600 dark:text-yellow-400' :
-                      'text-red-600 dark:text-red-400'
+                      securityScore >= 80 ? 'text-heading-accent' :
+                      securityScore >= 60 ? 'text-foreground' :
+                      'text-foreground'
                     }`}>
                       {securityScore}
                     </p>
                     <p className="text-xl text-muted-foreground">/100</p>
                   </div>
                   <p className={`text-xs font-medium mt-1 ${
-                    securityScore >= 80 ? 'text-green-700 dark:text-green-300' :
-                    securityScore >= 60 ? 'text-yellow-700 dark:text-yellow-300' :
-                    'text-red-700 dark:text-red-300'
+                    securityScore >= 80 ? 'text-heading-accent' :
+                    securityScore >= 60 ? 'text-foreground' :
+                    'text-foreground'
                   }`}>
                     {securityScore >= 80 ? '✅ Excellent - Token is secure' :
                      securityScore >= 60 ? '⚠️ Good - Minor improvements needed' :
@@ -2305,9 +2305,9 @@ metadata:
                       strokeDasharray={`${2 * Math.PI * 40}`}
                       strokeDashoffset={`${2 * Math.PI * 40 * (1 - securityScore / 100)}`}
                       className={
-                        securityScore >= 80 ? 'text-green-600' :
-                        securityScore >= 60 ? 'text-yellow-600' :
-                        'text-red-600'
+                        securityScore >= 80 ? 'text-heading-accent' :
+                        securityScore >= 60 ? 'text-foreground' :
+                        'text-foreground'
                       }
                       strokeLinecap="round"
                     />
@@ -2324,19 +2324,19 @@ metadata:
                   <div
                     key={index}
                     className={`p-3 rounded-lg border-l-4 ${
-                      issue.severity === 'critical' ? 'bg-black border-red-500' :
-                      issue.severity === 'high' ? 'bg-black border-orange-500' :
-                      issue.severity === 'medium' ? 'bg-black border-yellow-500' :
-                      issue.severity === 'low' ? 'bg-black border-blue-500' :
-                      'bg-black border-green-500'
+                      issue.severity === 'critical' ? 'bg-card border-red-500' :
+                      issue.severity === 'high' ? 'bg-card border-primary' :
+                      issue.severity === 'medium' ? 'bg-card border-yellow-500' :
+                      issue.severity === 'low' ? 'bg-card border-blue-500' :
+                      'bg-card border-green-500'
                     }`}
                   >
                     <div className="flex items-start gap-2">
-                      {issue.severity === 'critical' ? <AlertTriangle className="h-4 w-4 text-red-600 mt-0.5 shrink-0" /> :
-                       issue.severity === 'high' ? <AlertCircle className="h-4 w-4 text-orange-600 mt-0.5 shrink-0" /> :
-                       issue.severity === 'medium' ? <AlertCircle className="h-4 w-4 text-yellow-600 mt-0.5 shrink-0" /> :
-                       issue.severity === 'low' ? <Info className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" /> :
-                       <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />}
+                      {issue.severity === 'critical' ? <AlertTriangle className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
+                       issue.severity === 'high' ? <AlertCircle className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
+                       issue.severity === 'medium' ? <AlertCircle className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
+                       issue.severity === 'low' ? <Info className="h-4 w-4 text-foreground mt-0.5 shrink-0" /> :
+                       <CheckCircle2 className="h-4 w-4 text-heading-accent mt-0.5 shrink-0" />}
                       <div className="flex-1">
                         <p className="text-xs font-semibold text-foreground mb-0.5">{issue.message}</p>
                         <p className="text-xs text-muted-foreground">
@@ -2344,11 +2344,11 @@ metadata:
                         </p>
                       </div>
                       <span className={`px-2 py-1 text-xs font-semibold rounded shrink-0 ${
-                        issue.severity === 'critical' ? 'bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300' :
-                        issue.severity === 'high' ? 'bg-orange-100 dark:bg-orange-900/50 text-orange-700 dark:text-orange-300' :
-                        issue.severity === 'medium' ? 'bg-yellow-100 dark:bg-yellow-900/50 text-yellow-700 dark:text-yellow-300' :
-                        issue.severity === 'low' ? 'bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300' :
-                        'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300'
+                        issue.severity === 'critical' ? 'bg-red-100 dark:bg-red-900/50 text-foreground' :
+                        issue.severity === 'high' ? 'bg-orange-100 dark:bg-orange-900/50 text-foreground' :
+                        issue.severity === 'medium' ? 'bg-yellow-100 dark:bg-yellow-900/50 text-foreground' :
+                        issue.severity === 'low' ? 'bg-blue-100 dark:bg-blue-900/50 text-foreground' :
+                        'bg-green-100 dark:bg-green-900/50 text-heading-accent'
                       }`}>
                         {issue.severity.toUpperCase()}
                       </span>
@@ -2360,29 +2360,29 @@ metadata:
 
             {/* Summary Stats */}
             <div className="grid grid-cols-4 gap-2">
-              <div className="p-2 bg-black border border-border rounded-lg text-center">
-                <p className="text-xl font-bold text-red-600">
+              <div className="p-2 bg-card border border-border rounded-lg text-center">
+                <p className="text-xl font-bold text-foreground">
                   {securityIssues.filter(i => i.severity === 'critical').length}
                 </p>
-                <p className="text-xs text-red-700 dark:text-red-300 font-medium">Critical</p>
+                <p className="text-xs text-foreground font-medium">Critical</p>
               </div>
-              <div className="p-2 bg-black border border-orange-200 dark:border-orange-800 rounded-lg text-center">
-                <p className="text-xl font-bold text-orange-600">
+              <div className="p-2 bg-card border border-primary/20 rounded-lg text-center">
+                <p className="text-xl font-bold text-foreground">
                   {securityIssues.filter(i => i.severity === 'high').length}
                 </p>
-                <p className="text-xs text-orange-700 dark:text-orange-300 font-medium">High</p>
+                <p className="text-xs text-foreground font-medium">High</p>
               </div>
-              <div className="p-2 bg-black border border-yellow-200 dark:border-yellow-800 rounded-lg text-center">
-                <p className="text-xl font-bold text-yellow-600">
+              <div className="p-2 bg-card border border-yellow-200 dark:border-yellow-800 rounded-lg text-center">
+                <p className="text-xl font-bold text-foreground">
                   {securityIssues.filter(i => i.severity === 'medium').length}
                 </p>
-                <p className="text-xs text-yellow-700 dark:text-yellow-300 font-medium">Medium</p>
+                <p className="text-xs text-foreground font-medium">Medium</p>
               </div>
-              <div className="p-2 bg-black border border-blue-200 dark:border-blue-800 rounded-lg text-center">
-                <p className="text-xl font-bold text-blue-600">
+              <div className="p-2 bg-card border border-blue-200 dark:border-blue-800 rounded-lg text-center">
+                <p className="text-xl font-bold text-foreground">
                   {securityIssues.filter(i => i.severity === 'low').length}
                 </p>
-                <p className="text-xs text-blue-700 dark:text-blue-300 font-medium">Low</p>
+                <p className="text-xs text-foreground font-medium">Low</p>
               </div>
             </div>
 
@@ -2397,7 +2397,7 @@ metadata:
               </Button>
               <Button
                 onClick={analyzeSecurity}
-                className="flex-1 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600"
+                className="flex-1 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-primary/90"
               >
                 Re-scan Security
               </Button>
@@ -2408,7 +2408,7 @@ metadata:
 
       {/* Token Comparison Modal */}
       {showComparison && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowComparison(false)}>
+        <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowComparison(false)}>
           <Card className="w-full max-w-6xl p-5 space-y-3 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             {/* Header */}
             <div className="flex items-center justify-between border-b pb-3">
@@ -2446,7 +2446,7 @@ metadata:
                   style={{ wordBreak: 'break-all', overflowWrap: 'anywhere', whiteSpace: 'normal' }}
                 />
                 {decoded1 && (
-                  <div className="flex items-center gap-2 text-xs text-green-600">
+                  <div className="flex items-center gap-2 text-xs text-heading-accent">
                     <CheckCircle2 className="h-4 w-4" />
                     <span>Valid JWT ({decoded1.header.alg})</span>
                   </div>
@@ -2467,7 +2467,7 @@ metadata:
                   style={{ wordBreak: 'break-all', overflowWrap: 'anywhere', whiteSpace: 'normal' }}
                 />
                 {decoded2 && (
-                  <div className="flex items-center gap-2 text-xs text-green-600">
+                  <div className="flex items-center gap-2 text-xs text-heading-accent">
                     <CheckCircle2 className="h-4 w-4" />
                     <span>Valid JWT ({decoded2.header.alg})</span>
                   </div>
@@ -2479,23 +2479,23 @@ metadata:
             {decoded1 && decoded2 && (
               <>
                 {/* Algorithm Comparison */}
-                <div className="p-3 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
+                <div className="p-3 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
                   <h4 className="text-sm font-bold text-foreground mb-2">Algorithm Comparison</h4>
                   <div className="grid grid-cols-3 gap-2 text-xs">
                     <div>
                       <p className="font-medium text-muted-foreground">Token 1</p>
-                      <p className="font-mono text-purple-600 dark:text-purple-400">{decoded1.header.alg}</p>
+                      <p className="font-mono text-foreground">{decoded1.header.alg}</p>
                     </div>
                     <div className="flex items-center justify-center">
                       {decoded1.header.alg === decoded2.header.alg ? (
-                        <CheckCircle2 className="h-5 w-5 text-green-600" />
+                        <CheckCircle2 className="h-5 w-5 text-heading-accent" />
                       ) : (
-                        <AlertCircle className="h-5 w-5 text-orange-600" />
+                        <AlertCircle className="h-5 w-5 text-foreground" />
                       )}
                     </div>
                     <div className="text-right">
                       <p className="font-medium text-muted-foreground">Token 2</p>
-                      <p className="font-mono text-pink-600 dark:text-pink-400">{decoded2.header.alg}</p>
+                      <p className="font-mono text-foreground">{decoded2.header.alg}</p>
                     </div>
                   </div>
                 </div>
@@ -2505,7 +2505,7 @@ metadata:
                   <h4 className="text-sm font-bold text-foreground mb-2">Header Differences</h4>
                   <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
                     <table className="w-full text-xs">
-                      <thead className="bg-gray-100 dark:bg-gray-800">
+                      <thead className="bg-gray-100 dark:bg-muted">
                         <tr>
                           <th className="px-3 py-2 text-left font-semibold">Field</th>
                           <th className="px-3 py-2 text-left font-semibold">Token 1</th>
@@ -2516,9 +2516,9 @@ metadata:
                       <tbody>
                         {compareObjects(decoded1.header, decoded2.header).map((diff, idx) => (
                           <tr key={idx} className={`
-                            ${diff.status === 'changed' ? 'bg-black' : ''}
-                            ${diff.status === 'added' ? 'bg-black' : ''}
-                            ${diff.status === 'removed' ? 'bg-black' : ''}
+                            ${diff.status === 'changed' ? 'bg-card' : ''}
+                            ${diff.status === 'added' ? 'bg-card' : ''}
+                            ${diff.status === 'removed' ? 'bg-card' : ''}
                           `}>
                             <td className="px-3 py-2 font-mono font-semibold">{diff.key}</td>
                             <td className="px-3 py-2 font-mono break-all">
@@ -2529,9 +2529,9 @@ metadata:
                             </td>
                             <td className="px-3 py-2 text-center">
                               {diff.status === 'same' && <span className="text-gray-500">Same</span>}
-                              {diff.status === 'changed' && <span className="text-orange-600 font-semibold">Changed</span>}
-                              {diff.status === 'added' && <span className="text-green-600 font-semibold">Added</span>}
-                              {diff.status === 'removed' && <span className="text-red-600 font-semibold">Removed</span>}
+                              {diff.status === 'changed' && <span className="text-foreground font-semibold">Changed</span>}
+                              {diff.status === 'added' && <span className="text-heading-accent font-semibold">Added</span>}
+                              {diff.status === 'removed' && <span className="text-foreground font-semibold">Removed</span>}
                             </td>
                           </tr>
                         ))}
@@ -2545,7 +2545,7 @@ metadata:
                   <h4 className="text-sm font-bold text-foreground mb-2">Payload (Claims) Differences</h4>
                   <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
                     <table className="w-full text-xs">
-                      <thead className="bg-gray-100 dark:bg-gray-800">
+                      <thead className="bg-gray-100 dark:bg-muted">
                         <tr>
                           <th className="px-3 py-2 text-left font-semibold">Claim</th>
                           <th className="px-3 py-2 text-left font-semibold">Token 1</th>
@@ -2556,9 +2556,9 @@ metadata:
                       <tbody>
                         {compareObjects(decoded1.payload, decoded2.payload).map((diff, idx) => (
                           <tr key={idx} className={`
-                            ${diff.status === 'changed' ? 'bg-black' : ''}
-                            ${diff.status === 'added' ? 'bg-black' : ''}
-                            ${diff.status === 'removed' ? 'bg-black' : ''}
+                            ${diff.status === 'changed' ? 'bg-card' : ''}
+                            ${diff.status === 'added' ? 'bg-card' : ''}
+                            ${diff.status === 'removed' ? 'bg-card' : ''}
                           `}>
                             <td className="px-3 py-2 font-mono font-semibold">{diff.key}</td>
                             <td className="px-3 py-2 font-mono break-all">
@@ -2585,9 +2585,9 @@ metadata:
                             </td>
                             <td className="px-3 py-2 text-center">
                               {diff.status === 'same' && <span className="text-gray-500">Same</span>}
-                              {diff.status === 'changed' && <span className="text-orange-600 font-semibold">Changed</span>}
-                              {diff.status === 'added' && <span className="text-green-600 font-semibold">Added</span>}
-                              {diff.status === 'removed' && <span className="text-red-600 font-semibold">Removed</span>}
+                              {diff.status === 'changed' && <span className="text-foreground font-semibold">Changed</span>}
+                              {diff.status === 'added' && <span className="text-heading-accent font-semibold">Added</span>}
+                              {diff.status === 'removed' && <span className="text-foreground font-semibold">Removed</span>}
                             </td>
                           </tr>
                         ))}
@@ -2598,29 +2598,29 @@ metadata:
 
                 {/* Summary Stats */}
                 <div className="grid grid-cols-4 gap-2">
-                  <div className="p-2 bg-black border border-gray-200 dark:border-gray-700 rounded-lg text-center">
+                  <div className="p-2 bg-card border border-gray-200 dark:border-gray-700 rounded-lg text-center">
                     <p className="text-lg font-bold text-gray-600">
                       {[...compareObjects(decoded1.header, decoded2.header), ...compareObjects(decoded1.payload, decoded2.payload)].filter(d => d.status === 'same').length}
                     </p>
                     <p className="text-xs text-gray-700 dark:text-gray-300 font-medium">Same</p>
                   </div>
-                  <div className="p-2 bg-black border border-orange-200 dark:border-orange-800 rounded-lg text-center">
-                    <p className="text-lg font-bold text-orange-600">
+                  <div className="p-2 bg-card border border-primary/20 rounded-lg text-center">
+                    <p className="text-lg font-bold text-foreground">
                       {[...compareObjects(decoded1.header, decoded2.header), ...compareObjects(decoded1.payload, decoded2.payload)].filter(d => d.status === 'changed').length}
                     </p>
-                    <p className="text-xs text-orange-700 dark:text-orange-300 font-medium">Changed</p>
+                    <p className="text-xs text-foreground font-medium">Changed</p>
                   </div>
-                  <div className="p-2 bg-black border border-border rounded-lg text-center">
-                    <p className="text-lg font-bold text-green-600">
+                  <div className="p-2 bg-card border border-border rounded-lg text-center">
+                    <p className="text-lg font-bold text-heading-accent">
                       {[...compareObjects(decoded1.header, decoded2.header), ...compareObjects(decoded1.payload, decoded2.payload)].filter(d => d.status === 'added').length}
                     </p>
-                    <p className="text-xs text-green-700 dark:text-green-300 font-medium">Added</p>
+                    <p className="text-xs text-heading-accent font-medium">Added</p>
                   </div>
-                  <div className="p-2 bg-black border border-border rounded-lg text-center">
-                    <p className="text-lg font-bold text-red-600">
+                  <div className="p-2 bg-card border border-border rounded-lg text-center">
+                    <p className="text-lg font-bold text-foreground">
                       {[...compareObjects(decoded1.header, decoded2.header), ...compareObjects(decoded1.payload, decoded2.payload)].filter(d => d.status === 'removed').length}
                     </p>
-                    <p className="text-xs text-red-700 dark:text-red-300 font-medium">Removed</p>
+                    <p className="text-xs text-foreground font-medium">Removed</p>
                   </div>
                 </div>
 
@@ -2629,28 +2629,28 @@ metadata:
                   <h4 className="text-sm font-bold text-foreground mb-2">Perfect For:</h4>
                   <div className="grid grid-cols-2 gap-2">
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-purple-600 mt-0.5 shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                       <div>
                         <p className="text-xs font-medium text-foreground">Token Refresh Debugging</p>
                         <p className="text-xs text-muted-foreground">Compare old vs new tokens</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-purple-600 mt-0.5 shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                       <div>
                         <p className="text-xs font-medium text-foreground">Claims Validation</p>
                         <p className="text-xs text-muted-foreground">Verify claims changed correctly</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-purple-600 mt-0.5 shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                       <div>
                         <p className="text-xs font-medium text-foreground">Environment Comparison</p>
                         <p className="text-xs text-muted-foreground">Dev vs Prod tokens</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-purple-600 mt-0.5 shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                       <div>
                         <p className="text-xs font-medium text-foreground">Algorithm Migration</p>
                         <p className="text-xs text-muted-foreground">Track algorithm changes</p>
@@ -2689,7 +2689,7 @@ metadata:
 
       {/* Token Size Optimizer Modal */}
       {showOptimizer && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowOptimizer(false)}>
+        <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowOptimizer(false)}>
           <Card className="w-full max-w-5xl p-5 space-y-3 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             {/* Header */}
             <div className="flex items-center justify-between border-b pb-3">
@@ -2719,7 +2719,7 @@ metadata:
                   <p className="text-xs text-muted-foreground">Original token length</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-2xl font-bold text-cyan-600">{formatBytes(getTokenSize(token).bytes)}</p>
+                  <p className="text-2xl font-bold text-foreground">{formatBytes(getTokenSize(token).bytes)}</p>
                   <p className="text-xs text-muted-foreground">{token.length} characters</p>
                 </div>
               </div>
@@ -2735,8 +2735,8 @@ metadata:
                       key={idx}
                       className={`p-3 border rounded-lg cursor-pointer transition-all ${
                         appliedOptimizations.has(suggestion.type)
-                          ? 'bg-black border-cyan-300 dark:border-cyan-700'
-                          : 'bg-black border-gray-200 dark:border-gray-700 hover:border-cyan-300'
+                          ? 'bg-card border-cyan-300 dark:border-cyan-700'
+                          : 'bg-card border-gray-200 dark:border-gray-700 hover:border-cyan-300'
                       }`}
                       onClick={() => toggleOptimization(suggestion.type)}
                     >
@@ -2744,7 +2744,7 @@ metadata:
                         <div className="flex items-start gap-3 flex-1">
                           <div className="mt-0.5">
                             {appliedOptimizations.has(suggestion.type) ? (
-                              <CheckCircle2 className="h-5 w-5 text-cyan-600" />
+                              <CheckCircle2 className="h-5 w-5 text-foreground" />
                             ) : (
                               <div className="h-5 w-5 rounded-full border-2 border-gray-300" />
                             )}
@@ -2755,8 +2755,8 @@ metadata:
                           </div>
                         </div>
                         <div className="flex items-center gap-1 shrink-0">
-                          <TrendingDown className="h-4 w-4 text-green-600" />
-                          <span className="text-sm font-bold text-green-600">-{suggestion.savings}B</span>
+                          <TrendingDown className="h-4 w-4 text-heading-accent" />
+                          <span className="text-sm font-bold text-heading-accent">-{suggestion.savings}B</span>
                         </div>
                       </div>
                     </div>
@@ -2764,8 +2764,8 @@ metadata:
                 </div>
               </div>
             ) : (
-              <div className="p-4 bg-black border border-border rounded-lg text-center">
-                <CheckCircle2 className="h-8 w-8 text-green-600 mx-auto mb-2" />
+              <div className="p-4 bg-card border border-border rounded-lg text-center">
+                <CheckCircle2 className="h-8 w-8 text-heading-accent mx-auto mb-2" />
                 <p className="text-sm font-semibold text-foreground">Token Already Optimized!</p>
                 <p className="text-xs text-muted-foreground mt-1">No significant optimizations found</p>
               </div>
@@ -2780,10 +2780,10 @@ metadata:
                     {/* Before */}
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <Label className="text-xs font-semibold text-red-600">Before (Original)</Label>
-                        <span className="text-xs font-mono text-red-600">{formatBytes(getTokenSize(token).bytes)}</span>
+                        <Label className="text-xs font-semibold text-foreground">Before (Original)</Label>
+                        <span className="text-xs font-mono text-foreground">{formatBytes(getTokenSize(token).bytes)}</span>
                       </div>
-                      <div className="p-2 bg-black border border-border rounded-lg">
+                      <div className="p-2 bg-card border border-border rounded-lg">
                         <p className="text-xs font-mono text-foreground break-all line-clamp-3">{token}</p>
                       </div>
                     </div>
@@ -2791,10 +2791,10 @@ metadata:
                     {/* After */}
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <Label className="text-xs font-semibold text-green-600">After (Optimized)</Label>
-                        <span className="text-xs font-mono text-green-600">{formatBytes(getTokenSize(optimizedToken).bytes)}</span>
+                        <Label className="text-xs font-semibold text-heading-accent">After (Optimized)</Label>
+                        <span className="text-xs font-mono text-heading-accent">{formatBytes(getTokenSize(optimizedToken).bytes)}</span>
                       </div>
-                      <div className="p-2 bg-black border border-border rounded-lg">
+                      <div className="p-2 bg-card border border-border rounded-lg">
                         <p className="text-xs font-mono text-foreground break-all line-clamp-3">{optimizedToken}</p>
                       </div>
                     </div>
@@ -2804,14 +2804,14 @@ metadata:
                   <div className="mt-3 p-3 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border border-border rounded-lg">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <TrendingDown className="h-5 w-5 text-green-600" />
+                        <TrendingDown className="h-5 w-5 text-heading-accent" />
                         <div>
                           <h5 className="text-sm font-bold text-foreground">Total Savings</h5>
                           <p className="text-xs text-muted-foreground">Size reduced by optimizations</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-xl font-bold text-green-600">
+                        <p className="text-xl font-bold text-heading-accent">
                           {formatBytes(getTokenSize(token).bytes - getTokenSize(optimizedToken).bytes)}
                         </p>
                         <p className="text-xs text-muted-foreground">
@@ -2823,8 +2823,8 @@ metadata:
                 </div>
 
                 {/* Copy Optimized Token */}
-                <div className="flex items-center gap-2 p-3 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
-                  <Info className="h-4 w-4 text-blue-600 shrink-0" />
+                <div className="flex items-center gap-2 p-3 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
+                  <Info className="h-4 w-4 text-foreground shrink-0" />
                   <p className="text-xs text-muted-foreground flex-1">
                     Copy the optimized token and update your application code with the new claim names and structure.
                   </p>
@@ -2847,28 +2847,28 @@ metadata:
               <h4 className="text-sm font-bold text-foreground mb-2">💡 Optimization Tips</h4>
               <div className="grid grid-cols-2 gap-2">
                 <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-cyan-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                   <div>
                     <p className="text-xs font-medium text-foreground">Short Claim Names</p>
                     <p className="text-xs text-muted-foreground">Use 1-3 char names (e.g., 'u' vs 'username')</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-cyan-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                   <div>
                     <p className="text-xs font-medium text-foreground">Remove Optional Claims</p>
                     <p className="text-xs text-muted-foreground">Only include required data</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-cyan-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                   <div>
                     <p className="text-xs font-medium text-foreground">Use References</p>
                     <p className="text-xs text-muted-foreground">Store IDs instead of full objects</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-cyan-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                   <div>
                     <p className="text-xs font-medium text-foreground">Shorter Algorithms</p>
                     <p className="text-xs text-muted-foreground">HS256 is smaller than RS256</p>
@@ -2904,7 +2904,7 @@ metadata:
 
       {/* Performance Metrics Modal */}
       {showPerformance && performanceMetrics.tokenSize > 0 && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowPerformance(false)}>
+        <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowPerformance(false)}>
           <Card className="w-full max-w-4xl p-5 space-y-3 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             {/* Header */}
             <div className="flex items-center justify-between border-b pb-3">
@@ -2946,18 +2946,18 @@ metadata:
             {/* Processing Time */}
             <div>
               <h4 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
-                <Timer className="h-4 w-4 text-yellow-600" />
+                <Timer className="h-4 w-4 text-foreground" />
                 Processing Time
               </h4>
               <div className="grid grid-cols-2 gap-3">
-                <div className="p-3 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
+                <div className="p-3 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
                   <p className="text-xs text-muted-foreground mb-1">Decode Time</p>
-                  <p className="text-2xl font-bold text-blue-600">{performanceMetrics.decodeTime.toFixed(3)}ms</p>
+                  <p className="text-2xl font-bold text-foreground">{performanceMetrics.decodeTime.toFixed(3)}ms</p>
                   <p className="text-xs text-muted-foreground mt-1">Base64 decode + JSON parse</p>
                 </div>
-                <div className="p-3 bg-black border border-border rounded-lg">
+                <div className="p-3 bg-card border border-border rounded-lg">
                   <p className="text-xs text-muted-foreground mb-1">Encode Time</p>
-                  <p className="text-2xl font-bold text-green-600">{performanceMetrics.encodeTime.toFixed(3)}ms</p>
+                  <p className="text-2xl font-bold text-heading-accent">{performanceMetrics.encodeTime.toFixed(3)}ms</p>
                   <p className="text-xs text-muted-foreground mt-1">JSON stringify + Base64 encode</p>
                 </div>
               </div>
@@ -2966,7 +2966,7 @@ metadata:
             {/* Token Size Breakdown */}
             <div>
               <h4 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
-                <BarChart3 className="h-4 w-4 text-yellow-600" />
+                <BarChart3 className="h-4 w-4 text-foreground" />
                 Size Breakdown
               </h4>
               <div className="space-y-2">
@@ -2974,7 +2974,7 @@ metadata:
                 <div>
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-xs font-medium text-foreground">Header</span>
-                    <span className="text-xs font-bold text-blue-600">{performanceMetrics.headerSize} bytes ({((performanceMetrics.headerSize / performanceMetrics.tokenSize) * 100).toFixed(1)}%)</span>
+                    <span className="text-xs font-bold text-foreground">{performanceMetrics.headerSize} bytes ({((performanceMetrics.headerSize / performanceMetrics.tokenSize) * 100).toFixed(1)}%)</span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: `${(performanceMetrics.headerSize / performanceMetrics.tokenSize) * 100}%` }}></div>
@@ -2985,7 +2985,7 @@ metadata:
                 <div>
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-xs font-medium text-foreground">Payload</span>
-                    <span className="text-xs font-bold text-green-600">{performanceMetrics.payloadSize} bytes ({((performanceMetrics.payloadSize / performanceMetrics.tokenSize) * 100).toFixed(1)}%)</span>
+                    <span className="text-xs font-bold text-heading-accent">{performanceMetrics.payloadSize} bytes ({((performanceMetrics.payloadSize / performanceMetrics.tokenSize) * 100).toFixed(1)}%)</span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                     <div className="bg-green-600 h-2 rounded-full" style={{ width: `${(performanceMetrics.payloadSize / performanceMetrics.tokenSize) * 100}%` }}></div>
@@ -2996,10 +2996,10 @@ metadata:
                 <div>
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-xs font-medium text-foreground">Signature</span>
-                    <span className="text-xs font-bold text-orange-600">{performanceMetrics.signatureSize} bytes ({((performanceMetrics.signatureSize / performanceMetrics.tokenSize) * 100).toFixed(1)}%)</span>
+                    <span className="text-xs font-bold text-foreground">{performanceMetrics.signatureSize} bytes ({((performanceMetrics.signatureSize / performanceMetrics.tokenSize) * 100).toFixed(1)}%)</span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <div className="bg-orange-600 h-2 rounded-full" style={{ width: `${(performanceMetrics.signatureSize / performanceMetrics.tokenSize) * 100}%` }}></div>
+                    <div className="bg-primary h-2 rounded-full" style={{ width: `${(performanceMetrics.signatureSize / performanceMetrics.tokenSize) * 100}%` }}></div>
                   </div>
                 </div>
               </div>
@@ -3008,12 +3008,12 @@ metadata:
             {/* Network Impact */}
             <div>
               <h4 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
-                <Activity className="h-4 w-4 text-yellow-600" />
+                <Activity className="h-4 w-4 text-foreground" />
                 Network Impact
               </h4>
               <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
                 <table className="w-full text-xs">
-                  <thead className="bg-gray-100 dark:bg-gray-800">
+                  <thead className="bg-gray-100 dark:bg-muted">
                     <tr>
                       <th className="px-3 py-2 text-left font-semibold">Requests/Day</th>
                       <th className="px-3 py-2 text-right font-semibold">Daily Transfer</th>
@@ -3024,8 +3024,8 @@ metadata:
                     {calculateNetworkImpact().map((item, idx) => (
                       <tr key={idx} className="border-t border-gray-200 dark:border-gray-700">
                         <td className="px-3 py-2 font-mono">{item.requests.toLocaleString()}</td>
-                        <td className="px-3 py-2 text-right font-bold text-blue-600">{item.daily} MB</td>
-                        <td className="px-3 py-2 text-right font-bold text-green-600">{item.monthly} GB</td>
+                        <td className="px-3 py-2 text-right font-bold text-foreground">{item.daily} MB</td>
+                        <td className="px-3 py-2 text-right font-bold text-heading-accent">{item.monthly} GB</td>
                       </tr>
                     ))}
                   </tbody>
@@ -3039,28 +3039,28 @@ metadata:
             {/* Benchmark Comparison */}
             <div>
               <h4 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
-                <BarChart3 className="h-4 w-4 text-yellow-600" />
+                <BarChart3 className="h-4 w-4 text-foreground" />
                 Industry Benchmarks
               </h4>
               <div className="grid grid-cols-4 gap-2">
-                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize < 200 ? 'bg-black border-green-300 dark:border-green-700' : 'bg-black border-gray-200 dark:border-gray-700'}`}>
+                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize < 200 ? 'bg-card border-green-300 dark:border-green-700' : 'bg-card border-gray-200 dark:border-gray-700'}`}>
                   <p className="text-xs font-semibold text-foreground">Excellent</p>
-                  <p className="text-lg font-bold text-green-600">&lt;200B</p>
+                  <p className="text-lg font-bold text-heading-accent">&lt;200B</p>
                   <p className="text-xs text-muted-foreground">Minimal</p>
                 </div>
-                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 200 && performanceMetrics.tokenSize < 512 ? 'bg-black border-blue-300 dark:border-blue-700' : 'bg-black border-gray-200 dark:border-gray-700'}`}>
+                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 200 && performanceMetrics.tokenSize < 512 ? 'bg-card border-blue-300 dark:border-blue-700' : 'bg-card border-gray-200 dark:border-gray-700'}`}>
                   <p className="text-xs font-semibold text-foreground">Good</p>
-                  <p className="text-lg font-bold text-blue-600">200-512B</p>
+                  <p className="text-lg font-bold text-foreground">200-512B</p>
                   <p className="text-xs text-muted-foreground">Standard</p>
                 </div>
-                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 512 && performanceMetrics.tokenSize < 1024 ? 'bg-black border-yellow-300 dark:border-yellow-700' : 'bg-black border-gray-200 dark:border-gray-700'}`}>
+                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 512 && performanceMetrics.tokenSize < 1024 ? 'bg-card border-yellow-300 dark:border-yellow-700' : 'bg-card border-gray-200 dark:border-gray-700'}`}>
                   <p className="text-xs font-semibold text-foreground">Fair</p>
-                  <p className="text-lg font-bold text-yellow-600">512B-1KB</p>
+                  <p className="text-lg font-bold text-foreground">512B-1KB</p>
                   <p className="text-xs text-muted-foreground">Above Avg</p>
                 </div>
-                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 1024 ? 'bg-black border-red-300 dark:border-red-700' : 'bg-black border-gray-200 dark:border-gray-700'}`}>
+                <div className={`p-2 border rounded-lg text-center ${performanceMetrics.tokenSize >= 1024 ? 'bg-card border-red-300 dark:border-destructive' : 'bg-card border-gray-200 dark:border-gray-700'}`}>
                   <p className="text-xs font-semibold text-foreground">Large</p>
-                  <p className="text-lg font-bold text-red-600">&gt;1KB</p>
+                  <p className="text-lg font-bold text-foreground">&gt;1KB</p>
                   <p className="text-xs text-muted-foreground">Optimize!</p>
                 </div>
               </div>
@@ -3072,14 +3072,14 @@ metadata:
               <div className="space-y-2">
                 {performanceMetrics.tokenSize < 200 ? (
                   <div className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-heading-accent mt-0.5 shrink-0" />
                     <p className="text-xs text-foreground">Your token is optimally sized! No action needed.</p>
                   </div>
                 ) : (
                   <>
                     {performanceMetrics.tokenSize > 512 && (
                       <div className="flex items-start gap-2">
-                        <AlertTriangle className="h-4 w-4 text-yellow-600 mt-0.5 shrink-0" />
+                        <AlertTriangle className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                         <div className="flex-1">
                           <p className="text-xs font-medium text-foreground">Reduce Payload Size</p>
                           <p className="text-xs text-muted-foreground">Use shorter claim names and remove unnecessary data. Click "Optimize" for suggestions.</p>
@@ -3088,7 +3088,7 @@ metadata:
                     )}
                     {decoded && decoded.header.alg && ['RS256', 'RS384', 'RS512', 'ES256', 'ES384', 'ES512', 'PS256', 'PS384', 'PS512'].includes(decoded.header.alg) && (
                       <div className="flex items-start gap-2">
-                        <Info className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
+                        <Info className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                         <div className="flex-1">
                           <p className="text-xs font-medium text-foreground">Consider HMAC Algorithms</p>
                           <p className="text-xs text-muted-foreground">HS256 produces smaller signatures (~43 bytes) vs RSA/ECDSA (~200+ bytes).</p>
@@ -3097,7 +3097,7 @@ metadata:
                     )}
                     {performanceMetrics.tokenSize > 1024 && (
                       <div className="flex items-start gap-2">
-                        <AlertCircle className="h-4 w-4 text-red-600 mt-0.5 shrink-0" />
+                        <AlertCircle className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                         <div className="flex-1">
                           <p className="text-xs font-medium text-foreground">Token Too Large</p>
                           <p className="text-xs text-muted-foreground">Tokens &gt;1KB may cause performance issues. Consider using refresh tokens or reference tokens.</p>
@@ -3105,7 +3105,7 @@ metadata:
                       </div>
                     )}
                     <div className="flex items-start gap-2">
-                      <Info className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
+                      <Info className="h-4 w-4 text-foreground mt-0.5 shrink-0" />
                       <div className="flex-1">
                         <p className="text-xs font-medium text-foreground">Use Caching</p>
                         <p className="text-xs text-muted-foreground">Cache tokens in memory/storage to avoid repeated network transfers.</p>
@@ -3130,7 +3130,7 @@ metadata:
                   setShowPerformance(false)
                   openOptimizer()
                 }}
-                className="flex-1 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600"
+                className="flex-1 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-primary/90"
               >
                 Optimize Token
               </Button>
@@ -3155,7 +3155,7 @@ metadata:
         </div>
 
             {/* Table of Contents */}
-            <div className="p-4 bg-black border border-border rounded-lg">
+            <div className="p-4 bg-card border border-border rounded-lg">
               <h3 className="text-base font-bold text-foreground mb-3 flex items-center gap-2">
                 <BookOpen className="h-5 w-5 text-teal-600" />
                 What You&apos;ll Learn
@@ -3202,9 +3202,9 @@ metadata:
                   <p>
                     When you log into a website, the server creates a JWT containing your user information (like your user ID and permissions). This token is then sent to your browser, and your browser includes it with every request to prove you&apos;re authenticated. It&apos;s much faster than checking the database every single time!
                   </p>
-                  <div className="p-3 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
-                    <p className="font-semibold text-blue-900 dark:text-blue-100 mb-2">Why are JWTs so popular?</p>
-                    <ul className="space-y-1 text-blue-800 dark:text-blue-200">
+                  <div className="p-3 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
+                    <p className="font-semibold text-foreground mb-2">Why are JWTs so popular?</p>
+                    <ul className="space-y-1 text-foreground">
                       <li>• <strong>Stateless:</strong> The server doesn&apos;t need to store sessions - everything is in the token</li>
                       <li>• <strong>Compact:</strong> Small size makes them perfect for HTTP headers and mobile apps</li>
                       <li>• <strong>Self-contained:</strong> All user info is inside the token itself</li>
@@ -3226,21 +3226,21 @@ metadata:
                     A JWT looks like a long random string, but it&apos;s actually three parts separated by dots (.). Each part has a specific purpose. Let&apos;s break it down:
                   </p>
                   
-                  <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg font-mono text-xs break-all">
-                    <span className="text-blue-600 dark:text-blue-400">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>
+                  <div className="p-3 bg-gray-100 dark:bg-muted rounded-lg font-mono text-xs break-all">
+                    <span className="text-foreground">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>
                     .
-                    <span className="text-green-600 dark:text-green-400">eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIn0</span>
+                    <span className="text-heading-accent">eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIn0</span>
                     .
-                    <span className="text-orange-600 dark:text-orange-400">SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span>
+                    <span className="text-foreground">SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span>
                   </div>
 
                   {/* Header */}
-                  <div className="p-3 bg-black border border-border rounded-lg">
+                  <div className="p-3 bg-card border border-border rounded-lg">
                     <h4 className="font-semibold text-white mb-2">Part 1: Header (Blue)</h4>
                     <p className="text-gray-400 mb-2">
                       The header tells us what type of token this is and how it&apos;s signed. It&apos;s like the envelope that says &quot;This is a JWT, signed with HS256&quot;.
                     </p>
-                    <div className="bg-black p-2 rounded font-mono text-xs">
+                    <div className="bg-card p-2 rounded font-mono text-xs">
                       &#123;<br />
                       &nbsp;&nbsp;&quot;alg&quot;: &quot;HS256&quot;,  // Algorithm used (HMAC SHA-256)<br />
                       &nbsp;&nbsp;&quot;typ&quot;: &quot;JWT&quot;      // Token type<br />
@@ -3249,12 +3249,12 @@ metadata:
                   </div>
 
                   {/* Payload */}
-                  <div className="p-3 bg-black border border-border rounded-lg">
+                  <div className="p-3 bg-card border border-border rounded-lg">
                     <h4 className="font-semibold text-white mb-2">Part 2: Payload (Green)</h4>
                     <p className="text-gray-400 mb-2">
                       The payload is the actual data - your user ID, name, permissions, expiration time, etc. This is where you store the information you want to share. Think of it as the content of a letter.
                     </p>
-                    <div className="bg-black p-2 rounded font-mono text-xs">
+                    <div className="bg-card p-2 rounded font-mono text-xs">
                       &#123;<br />
                       &nbsp;&nbsp;&quot;sub&quot;: &quot;1234567890&quot;,  // Subject (user ID)<br />
                       &nbsp;&nbsp;&quot;name&quot;: &quot;John Doe&quot;,     // User name<br />
@@ -3270,12 +3270,12 @@ metadata:
                   </div>
 
                   {/* Signature */}
-                  <div className="p-3 bg-black border border-border rounded-lg">
+                  <div className="p-3 bg-card border border-border rounded-lg">
                     <h4 className="font-semibold text-white mb-2">Part 3: Signature (Orange)</h4>
                     <p className="text-gray-400 mb-2">
                       The signature is like a tamper-proof seal. It&apos;s created by combining the header, payload, and a secret key that only the server knows. If someone tries to change even one character in the header or payload, the signature won&apos;t match!
                     </p>
-                    <div className="bg-black p-2 rounded font-mono text-xs">
+                    <div className="bg-card p-2 rounded font-mono text-xs">
                       HMACSHA256(<br />
                       &nbsp;&nbsp;base64UrlEncode(header) + &quot;.&quot; +<br />
                       &nbsp;&nbsp;base64UrlEncode(payload),<br />
@@ -3296,7 +3296,7 @@ metadata:
                   <p>Let&apos;s walk through a real-world example of how JWTs are used in a web application:</p>
                   
                   <div className="space-y-2">
-                    <div className="flex items-start gap-3 p-3 bg-black rounded-lg">
+                    <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
                       <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500 text-white text-xs font-bold shrink-0">1</div>
                       <div>
                         <p className="font-semibold text-foreground">User logs in</p>
@@ -3304,7 +3304,7 @@ metadata:
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-3 bg-black rounded-lg">
+                    <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
                       <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500 text-white text-xs font-bold shrink-0">2</div>
                       <div>
                         <p className="font-semibold text-foreground">Server verifies credentials</p>
@@ -3312,7 +3312,7 @@ metadata:
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-3 bg-black rounded-lg">
+                    <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
                       <div className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white text-xs font-bold shrink-0">3</div>
                       <div>
                         <p className="font-semibold text-foreground">Server creates JWT</p>
@@ -3320,7 +3320,7 @@ metadata:
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-3 bg-black rounded-lg">
+                    <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
                       <div className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white text-xs font-bold shrink-0">4</div>
                       <div>
                         <p className="font-semibold text-foreground">Token sent to browser</p>
@@ -3328,7 +3328,7 @@ metadata:
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-3 bg-black rounded-lg">
+                    <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
                       <div className="flex items-center justify-center w-6 h-6 rounded-full bg-purple-500 text-white text-xs font-bold shrink-0">5</div>
                       <div>
                         <p className="font-semibold text-foreground">Browser includes token in requests</p>
@@ -3336,7 +3336,7 @@ metadata:
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-3 bg-black rounded-lg">
+                    <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
                       <div className="flex items-center justify-center w-6 h-6 rounded-full bg-purple-500 text-white text-xs font-bold shrink-0">6</div>
                       <div>
                         <p className="font-semibold text-foreground">Server verifies token</p>
@@ -3344,8 +3344,8 @@ metadata:
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-3 bg-black rounded-lg">
-                      <div className="flex items-center justify-center w-6 h-6 rounded-full bg-orange-500 text-white text-xs font-bold shrink-0">7</div>
+                    <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
+                      <div className="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white text-xs font-bold shrink-0">7</div>
                       <div>
                         <p className="font-semibold text-foreground">Server processes request</p>
                         <p className="text-xs">If the token is valid, the server processes your request and sends back the data you asked for.</p>
@@ -3367,13 +3367,13 @@ metadata:
 
                 {/* Node.js Example */}
                 <div className="pl-10 space-y-2">
-                  <div className="p-3 bg-black border border-border rounded-lg">
+                  <div className="p-3 bg-card border border-border rounded-lg">
                     <div className="flex items-center gap-2 mb-2">
-                      <FileCode className="h-5 w-5 text-green-600" />
-                      <h4 className="font-semibold text-green-900 dark:text-green-100">Node.js (JavaScript)</h4>
+                      <FileCode className="h-5 w-5 text-heading-accent" />
+                      <h4 className="font-semibold text-heading-accent">Node.js (JavaScript)</h4>
                     </div>
                     <p className="text-xs text-gray-400 mb-2">Install: <code className="bg-green-100 dark:bg-green-900 px-2 py-1 rounded">npm install jsonwebtoken</code></p>
-                    <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">
+                    <pre className="bg-muted text-gray-100 p-3 rounded text-xs overflow-x-auto">
 {`const jwt = require('jsonwebtoken');
 
 // Create a JWT
@@ -3399,13 +3399,13 @@ try {
                   </div>
 
                   {/* Python Example */}
-                  <div className="p-3 bg-black border border-blue-200 dark:border-blue-800 rounded-lg">
+                  <div className="p-3 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
                     <div className="flex items-center gap-2 mb-2">
-                      <FileCode className="h-5 w-5 text-blue-600" />
-                      <h4 className="font-semibold text-blue-900 dark:text-blue-100">Python</h4>
+                      <FileCode className="h-5 w-5 text-foreground" />
+                      <h4 className="font-semibold text-foreground">Python</h4>
                     </div>
-                    <p className="text-xs text-blue-800 dark:text-blue-200 mb-2">Install: <code className="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">pip install PyJWT</code></p>
-                    <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">
+                    <p className="text-xs text-foreground mb-2">Install: <code className="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">pip install PyJWT</code></p>
+                    <pre className="bg-muted text-gray-100 p-3 rounded text-xs overflow-x-auto">
 {`import jwt
 import datetime
 
@@ -3434,7 +3434,7 @@ except jwt.InvalidTokenError:
                   </div>
 
                   {/* Using Our JWT Decoder Tool */}
-                  <div className="p-4 bg-black border border-border rounded-lg">
+                  <div className="p-4 bg-card border border-border rounded-lg">
                     <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                       <Lightbulb className="h-5 w-5 text-white" />
                       Quick Tip: Use Our Tool to Get Code!
@@ -3457,61 +3457,61 @@ except jwt.InvalidTokenError:
 
                   <div className="space-y-3">
                     {/* Feature 1: Instant Decode */}
-                    <div className="p-3 bg-black rounded-lg">
+                    <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">🔍 Instant Decoding</h4>
                       <p className="text-xs">Just paste your JWT token in the text box and it automatically decodes! You&apos;ll see the header, payload, and signature split into three color-coded sections. We show both JSON format and a Claims Table view for easier reading.</p>
                     </div>
 
                     {/* Feature 2: Algorithm Selector */}
-                    <div className="p-3 bg-black rounded-lg">
+                    <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">⚙️ Algorithm Selector & Examples</h4>
                       <p className="text-xs">Use the dropdown menu to select from 12 different algorithms (HS256, RS256, ES256, etc.). Click &quot;Generate Example&quot; to create a sample token for that algorithm - perfect for learning or testing!</p>
                     </div>
 
                     {/* Feature 3: Expiration Countdown */}
-                    <div className="p-3 bg-black rounded-lg">
+                    <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">⏰ Live Expiration Countdown</h4>
                       <p className="text-xs">If your token has an expiration time (exp claim), you&apos;ll see a live countdown timer showing exactly how much time is left. The color changes from green to yellow to red as expiration approaches - so you never get caught with an expired token!</p>
                     </div>
 
                     {/* Feature 4: Performance Metrics */}
-                    <div className="p-3 bg-black rounded-lg">
+                    <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">⚡ Performance Metrics</h4>
                       <p className="text-xs">Click the yellow &quot;Performance&quot; button to see how your token performs. We show decode/encode times, size breakdown (header vs payload vs signature), network impact projections, and compare against industry benchmarks. Learn if your token is too large!</p>
                     </div>
 
                     {/* Feature 5: Export */}
-                    <div className="p-3 bg-black rounded-lg">
+                    <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">📤 Export to Multiple Formats</h4>
                       <p className="text-xs">Need to save your decoded token? Click &quot;Export&quot; to download in JSON, CSV, XML, YAML, or even a professional PDF report! Perfect for documentation or sharing with your team.</p>
                     </div>
 
                     {/* Feature 6: Size Optimizer */}
-                    <div className="p-3 bg-black rounded-lg">
+                    <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">📊 Token Size Optimizer</h4>
                       <p className="text-xs">Got a large token? Click &quot;Optimize&quot; to get smart suggestions on how to reduce its size. We&apos;ll show you exactly how many bytes you can save by shortening claim names, removing unnecessary data, or using a different algorithm. You can even preview the optimized token before using it!</p>
                     </div>
 
                     {/* Feature 7: Compare Tokens */}
-                    <div className="p-3 bg-black rounded-lg">
+                    <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">🔄 Token Comparison Tool</h4>
                       <p className="text-xs">Need to compare two tokens side-by-side? Click &quot;Compare&quot; to paste a second token and see exactly what changed. We highlight added, removed, and modified claims in different colors. Super useful for debugging token refresh issues or checking what changed between environments!</p>
                     </div>
 
                     {/* Feature 8: Security Analyzer */}
-                    <div className="p-3 bg-black rounded-lg">
+                    <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">🛡️ Security Analyzer</h4>
                       <p className="text-xs">Click the red &quot;Security&quot; button to scan your token for vulnerabilities. We check for weak algorithms, expired tokens, missing critical claims, sensitive data in the payload, and more. You&apos;ll get a security score from 0-100 plus specific recommendations to improve your token&apos;s security.</p>
                     </div>
 
                     {/* Feature 9: Code Generator */}
-                    <div className="p-3 bg-black rounded-lg">
+                    <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">💻 Multi-Language Code Generator</h4>
                       <p className="text-xs">Click &quot;Get Code&quot; to generate ready-to-use code snippets for verifying your token. Choose from Node.js, Python, Java, PHP, Go, or C#. Each snippet includes installation instructions and is ready to copy-paste into your project!</p>
                     </div>
 
                     {/* Feature 10: Share Anonymously */}
-                    <div className="p-3 bg-black rounded-lg">
+                    <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">🔗 Share Token Anonymously</h4>
                       <p className="text-xs">Need to debug with your team? Click &quot;Share&quot; to generate a shareable link. You can choose to mask sensitive data (like emails or passwords) before sharing. The link never expires and your token is encoded in the URL - no data stored on our servers!</p>
                     </div>
@@ -3530,7 +3530,7 @@ except jwt.InvalidTokenError:
 
                   <div className="space-y-2">
                     {/* Mistake 1 */}
-                    <div className="p-3 bg-black border border-border rounded-lg">
+                    <div className="p-3 bg-card border border-border rounded-lg">
                       <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
                         Storing Sensitive Data in the Payload
@@ -3544,7 +3544,7 @@ except jwt.InvalidTokenError:
                     </div>
 
                     {/* Mistake 2 */}
-                    <div className="p-3 bg-black border border-border rounded-lg">
+                    <div className="p-3 bg-card border border-border rounded-lg">
                       <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
                         Not Checking Token Expiration
@@ -3558,7 +3558,7 @@ except jwt.InvalidTokenError:
                     </div>
 
                     {/* Mistake 3 */}
-                    <div className="p-3 bg-black border border-border rounded-lg">
+                    <div className="p-3 bg-card border border-border rounded-lg">
                       <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
                         Using Weak or No Signature
@@ -3572,7 +3572,7 @@ except jwt.InvalidTokenError:
                     </div>
 
                     {/* Mistake 4 */}
-                    <div className="p-3 bg-black border border-border rounded-lg">
+                    <div className="p-3 bg-card border border-border rounded-lg">
                       <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
                         Creating Tokens That Are Too Large
@@ -3585,7 +3585,7 @@ except jwt.InvalidTokenError:
                     </div>
 
                     {/* Mistake 5 */}
-                    <div className="p-3 bg-black border border-border rounded-lg">
+                    <div className="p-3 bg-card border border-border rounded-lg">
                       <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
                         Not Validating the Signature
@@ -3598,7 +3598,7 @@ except jwt.InvalidTokenError:
                     </div>
 
                     {/* Mistake 6 */}
-                    <div className="p-3 bg-black border border-border rounded-lg">
+                    <div className="p-3 bg-card border border-border rounded-lg">
                       <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
                         Storing JWTs in LocalStorage (XSS Risk)
@@ -3620,7 +3620,7 @@ except jwt.InvalidTokenError:
                   JWT Best Practices
                 </h3>
                 <div className="pl-10 space-y-2 text-sm text-muted-foreground">
-                  <div className="p-3 bg-black border border-border rounded-lg">
+                  <div className="p-3 bg-card border border-border rounded-lg">
                     <ul className="space-y-2 text-gray-400">
                       <li className="flex items-start gap-2">
                         <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0" />
@@ -3660,7 +3660,7 @@ except jwt.InvalidTokenError:
               </div>
 
               {/* Final Note */}
-              <div className="p-4 bg-black border border-border rounded-lg">
+              <div className="p-4 bg-card border border-border rounded-lg">
                 <h3 className="text-base font-bold text-foreground mb-2">🎓 Start Decoding JWTs Now!</h3>
                 <p className="text-sm text-muted-foreground">
                   Now that you understand JWTs, scroll up and paste a token to try our interactive features! Use all the powerful tools we&apos;ve built - Performance Metrics, Security Analyzer, Size Optimizer, Code Generator, and more. Your tokens are processed locally in your browser for maximum security.
@@ -3671,7 +3671,7 @@ except jwt.InvalidTokenError:
 
       {/* Export Modal */}
       {showExport && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowExport(false)}>
+        <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowExport(false)}>
           <Card className="w-full max-w-2xl p-5 space-y-4" onClick={(e) => e.stopPropagation()}>
             {/* Header */}
             <div className="flex items-center justify-between border-b pb-3">
@@ -3702,13 +3702,13 @@ except jwt.InvalidTokenError:
                   className={`p-3 border rounded-lg cursor-pointer transition-all ${
                     selectedExportFormat === 'json'
                       ? 'bg-indigo-50 dark:bg-indigo-950/20 border-indigo-300 dark:border-indigo-700'
-                      : 'bg-black border-gray-200 dark:border-gray-700 hover:border-indigo-300'
+                      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-indigo-300'
                   }`}
                   onClick={() => setSelectedExportFormat('json')}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg ${selectedExportFormat === 'json' ? 'bg-indigo-100 dark:bg-indigo-900' : 'bg-gray-100 dark:bg-gray-800'}`}>
+                      <div className={`p-2 rounded-lg ${selectedExportFormat === 'json' ? 'bg-indigo-100 dark:bg-indigo-900' : 'bg-gray-100 dark:bg-muted'}`}>
                         <FileJson className="h-5 w-5 text-indigo-600" />
                       </div>
                       <div>
@@ -3726,15 +3726,15 @@ except jwt.InvalidTokenError:
                 <div
                   className={`p-3 border rounded-lg cursor-pointer transition-all ${
                     selectedExportFormat === 'csv'
-                      ? 'bg-black border-green-300 dark:border-green-700'
-                      : 'bg-black border-gray-200 dark:border-gray-700 hover:border-green-300'
+                      ? 'bg-card border-green-300 dark:border-green-700'
+                      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-green-300'
                   }`}
                   onClick={() => setSelectedExportFormat('csv')}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg ${selectedExportFormat === 'csv' ? 'bg-green-100 dark:bg-green-900' : 'bg-gray-100 dark:bg-gray-800'}`}>
-                        <FileText className="h-5 w-5 text-green-600" />
+                      <div className={`p-2 rounded-lg ${selectedExportFormat === 'csv' ? 'bg-green-100 dark:bg-green-900' : 'bg-gray-100 dark:bg-muted'}`}>
+                        <FileText className="h-5 w-5 text-heading-accent" />
                       </div>
                       <div>
                         <h5 className="text-sm font-semibold text-foreground">CSV Format</h5>
@@ -3742,7 +3742,7 @@ except jwt.InvalidTokenError:
                       </div>
                     </div>
                     {selectedExportFormat === 'csv' && (
-                      <CheckCircle2 className="h-5 w-5 text-green-600" />
+                      <CheckCircle2 className="h-5 w-5 text-heading-accent" />
                     )}
                   </div>
                 </div>
@@ -3751,15 +3751,15 @@ except jwt.InvalidTokenError:
                 <div
                   className={`p-3 border rounded-lg cursor-pointer transition-all ${
                     selectedExportFormat === 'xml'
-                      ? 'bg-black border-orange-300 dark:border-orange-700'
-                      : 'bg-black border-gray-200 dark:border-gray-700 hover:border-orange-300'
+                      ? 'bg-card border-orange-300 dark:border-primary'
+                      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-orange-300'
                   }`}
                   onClick={() => setSelectedExportFormat('xml')}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg ${selectedExportFormat === 'xml' ? 'bg-orange-100 dark:bg-orange-900' : 'bg-gray-100 dark:bg-gray-800'}`}>
-                        <FileCode className="h-5 w-5 text-orange-600" />
+                      <div className={`p-2 rounded-lg ${selectedExportFormat === 'xml' ? 'bg-orange-100 dark:bg-orange-900' : 'bg-gray-100 dark:bg-muted'}`}>
+                        <FileCode className="h-5 w-5 text-foreground" />
                       </div>
                       <div>
                         <h5 className="text-sm font-semibold text-foreground">XML Format</h5>
@@ -3767,7 +3767,7 @@ except jwt.InvalidTokenError:
                       </div>
                     </div>
                     {selectedExportFormat === 'xml' && (
-                      <CheckCircle2 className="h-5 w-5 text-orange-600" />
+                      <CheckCircle2 className="h-5 w-5 text-foreground" />
                     )}
                   </div>
                 </div>
@@ -3776,15 +3776,15 @@ except jwt.InvalidTokenError:
                 <div
                   className={`p-3 border rounded-lg cursor-pointer transition-all ${
                     selectedExportFormat === 'yaml'
-                      ? 'bg-black border-blue-300 dark:border-blue-700'
-                      : 'bg-black border-gray-200 dark:border-gray-700 hover:border-blue-300'
+                      ? 'bg-card border-blue-300 dark:border-blue-700'
+                      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-blue-300'
                   }`}
                   onClick={() => setSelectedExportFormat('yaml')}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg ${selectedExportFormat === 'yaml' ? 'bg-blue-100 dark:bg-blue-900' : 'bg-gray-100 dark:bg-gray-800'}`}>
-                        <FileText className="h-5 w-5 text-blue-600" />
+                      <div className={`p-2 rounded-lg ${selectedExportFormat === 'yaml' ? 'bg-blue-100 dark:bg-blue-900' : 'bg-gray-100 dark:bg-muted'}`}>
+                        <FileText className="h-5 w-5 text-foreground" />
                       </div>
                       <div>
                         <h5 className="text-sm font-semibold text-foreground">YAML Format</h5>
@@ -3792,7 +3792,7 @@ except jwt.InvalidTokenError:
                       </div>
                     </div>
                     {selectedExportFormat === 'yaml' && (
-                      <CheckCircle2 className="h-5 w-5 text-blue-600" />
+                      <CheckCircle2 className="h-5 w-5 text-foreground" />
                     )}
                   </div>
                 </div>
@@ -3801,15 +3801,15 @@ except jwt.InvalidTokenError:
                 <div
                   className={`p-3 border rounded-lg cursor-pointer transition-all ${
                     selectedExportFormat === 'pdf'
-                      ? 'bg-black border-red-300 dark:border-red-700'
-                      : 'bg-black border-gray-200 dark:border-gray-700 hover:border-red-300'
+                      ? 'bg-card border-red-300 dark:border-destructive'
+                      : 'bg-card border-gray-200 dark:border-gray-700 hover:border-red-300'
                   }`}
                   onClick={() => setSelectedExportFormat('pdf')}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg ${selectedExportFormat === 'pdf' ? 'bg-red-100 dark:bg-red-900' : 'bg-gray-100 dark:bg-gray-800'}`}>
-                        <FileText className="h-5 w-5 text-red-600" />
+                      <div className={`p-2 rounded-lg ${selectedExportFormat === 'pdf' ? 'bg-red-100 dark:bg-red-900' : 'bg-gray-100 dark:bg-muted'}`}>
+                        <FileText className="h-5 w-5 text-foreground" />
                       </div>
                       <div>
                         <h5 className="text-sm font-semibold text-foreground">PDF Report</h5>
@@ -3817,7 +3817,7 @@ except jwt.InvalidTokenError:
                       </div>
                     </div>
                     {selectedExportFormat === 'pdf' && (
-                      <CheckCircle2 className="h-5 w-5 text-red-600" />
+                      <CheckCircle2 className="h-5 w-5 text-foreground" />
                     )}
                   </div>
                 </div>

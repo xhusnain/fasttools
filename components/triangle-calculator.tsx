@@ -417,20 +417,20 @@ Type: ${result.triangleType}`
       }}
     >
       {/* Calculator Display */}
-      <Card className="bg-black border-slate-700">
+      <Card className="bg-card border-border">
         <CardHeader className="pb-2 px-3 sm:px-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                <Triangle className="h-4 w-4 text-white" />
+              <div className="w-8 h-8 bg-gradient-to-r from-primary to-primary/90 rounded-lg flex items-center justify-center">
+                <Triangle className="h-4 w-4 text-primary-foreground" />
               </div>
               <div>
-                <h2 className="text-base sm:text-lg font-bold text-orange-500">Triangle Calculator</h2>
-                <p className="text-xs text-slate-400">Advanced triangle calculations</p>
+                <h2 className="text-base sm:text-lg font-bold text-foreground">Triangle Calculator</h2>
+                <p className="text-xs text-muted-foreground">Advanced triangle calculations</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Badge variant="secondary" className="bg-orange-500/10 text-orange-400 border-orange-500/20 text-[10px] h-5">
+              <Badge variant="secondary" className="bg-primary/10 text-foreground border-primary/20 text-[10px] h-5">
                 <Zap className="h-3 w-3 mr-1" />
                 Advanced
               </Badge>
@@ -442,42 +442,42 @@ Type: ${result.triangleType}`
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Sides */}
             <div className="space-y-3">
-              <h3 className="text-sm font-semibold flex items-center gap-1.5 text-green-500">
+              <h3 className="text-sm font-semibold flex items-center gap-1.5 text-heading-accent">
                 <Ruler className="h-3.5 w-3.5" />
                 Sides
               </h3>
               <div className="grid grid-cols-3 gap-2">
                 <div className="space-y-1">
-                  <Label htmlFor="sideA" className="text-[10px] font-medium text-slate-400">Side a</Label>
+                  <Label htmlFor="sideA" className="text-[10px] font-medium text-muted-foreground">Side a</Label>
                   <Input
                     id="sideA"
                     type="number"
                     placeholder="0"
                     value={formatValue(inputData.sideA)}
                     onChange={(e) => handleInputChange('sideA', e.target.value)}
-                    className="text-center h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="text-center h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="sideB" className="text-[10px] font-medium text-slate-400">Side b</Label>
+                  <Label htmlFor="sideB" className="text-[10px] font-medium text-muted-foreground">Side b</Label>
                   <Input
                     id="sideB"
                     type="number"
                     placeholder="0"
                     value={formatValue(inputData.sideB)}
                     onChange={(e) => handleInputChange('sideB', e.target.value)}
-                    className="text-center h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="text-center h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="sideC" className="text-[10px] font-medium text-slate-400">Side c</Label>
+                  <Label htmlFor="sideC" className="text-[10px] font-medium text-muted-foreground">Side c</Label>
                   <Input
                     id="sideC"
                     type="number"
                     placeholder="0"
                     value={formatValue(inputData.sideC)}
                     onChange={(e) => handleInputChange('sideC', e.target.value)}
-                    className="text-center h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="text-center h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
               </div>
@@ -485,42 +485,42 @@ Type: ${result.triangleType}`
 
             {/* Angles */}
             <div className="space-y-3">
-              <h3 className="text-sm font-semibold flex items-center gap-1.5 text-green-500">
+              <h3 className="text-sm font-semibold flex items-center gap-1.5 text-heading-accent">
                 <Calculator className="h-3.5 w-3.5" />
                 Angles
               </h3>
               <div className="grid grid-cols-3 gap-2">
                 <div className="space-y-1">
-                  <Label htmlFor="angleA" className="text-[10px] font-medium text-slate-400">Angle A</Label>
+                  <Label htmlFor="angleA" className="text-[10px] font-medium text-muted-foreground">Angle A</Label>
                   <Input
                     id="angleA"
                     type="number"
                     placeholder="0"
                     value={formatValue(inputData.angleA)}
                     onChange={(e) => handleInputChange('angleA', e.target.value)}
-                    className="text-center h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="text-center h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="angleB" className="text-[10px] font-medium text-slate-400">Angle B</Label>
+                  <Label htmlFor="angleB" className="text-[10px] font-medium text-muted-foreground">Angle B</Label>
                   <Input
                     id="angleB"
                     type="number"
                     placeholder="0"
                     value={formatValue(inputData.angleB)}
                     onChange={(e) => handleInputChange('angleB', e.target.value)}
-                    className="text-center h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="text-center h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="angleC" className="text-[10px] font-medium text-slate-400">Angle C</Label>
+                  <Label htmlFor="angleC" className="text-[10px] font-medium text-muted-foreground">Angle C</Label>
                   <Input
                     id="angleC"
                     type="number"
                     placeholder="0"
                     value={formatValue(inputData.angleC)}
                     onChange={(e) => handleInputChange('angleC', e.target.value)}
-                    className="text-center h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="text-center h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
               </div>
@@ -529,9 +529,9 @@ Type: ${result.triangleType}`
 
           {/* Angle Unit Selection */}
           <div className="flex items-center gap-2">
-            <Label htmlFor="angleUnit" className="text-xs text-slate-400">Angle Unit:</Label>
+            <Label htmlFor="angleUnit" className="text-xs text-muted-foreground">Angle Unit:</Label>
             <Select value={angleUnit} onValueChange={(value: "degree" | "radian") => setAngleUnit(value)}>
-              <SelectTrigger className="w-28 h-8 text-xs border-slate-700 bg-black text-slate-200">
+              <SelectTrigger className="w-28 h-8 text-xs border-border bg-background text-foreground">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -546,7 +546,7 @@ Type: ${result.triangleType}`
             <Button 
               onClick={calculateTriangle} 
               disabled={isCalculating}
-              className="flex-1 min-w-[100px] h-9 text-xs font-medium bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
+              className="flex-1 min-w-[100px] h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
             >
               {isCalculating ? (
                 <>
@@ -560,12 +560,12 @@ Type: ${result.triangleType}`
                 </>
               )}
             </Button>
-            <Button variant="outline" onClick={resetCalculator} className="h-9 text-xs border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+            <Button variant="outline" onClick={resetCalculator} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
               <RotateCcw className="h-3 w-3 mr-1" />
               Reset
             </Button>
             {result && (
-              <Button variant="outline" onClick={copyResult} className="h-9 text-xs border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" onClick={copyResult} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
                 <Copy className="h-3 w-3 mr-1" />
                 Copy
               </Button>
@@ -573,12 +573,12 @@ Type: ${result.triangleType}`
           </div>
 
           {/* Instructions */}
-          <div className="bg-black border border-slate-700 rounded-lg p-3">
+          <div className="bg-card border border-border rounded-lg p-3">
             <div className="flex items-start gap-2">
-              <Info className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+              <Info className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
               <div className="text-xs">
-                <p className="font-medium text-green-500 mb-1">Instructions:</p>
-                <p className="text-slate-400">
+                <p className="font-medium text-heading-accent mb-1">Instructions:</p>
+                <p className="text-muted-foreground">
                   Provide 3 values including at least one side. When radians are selected, angles can be entered as π/2, π/4, etc.
                 </p>
               </div>
@@ -589,13 +589,13 @@ Type: ${result.triangleType}`
 
       {/* Results */}
       {result && (
-        <Card className="bg-black border-slate-700">
+        <Card className="bg-card border-border">
           <CardHeader className="pb-2 px-3 sm:px-6">
-            <CardTitle className="flex items-center gap-2 text-base text-orange-500">
+            <CardTitle className="flex items-center gap-2 text-base text-foreground">
               {result.isValid ? (
-                <CheckCircle className="h-4 w-4 text-green-500" />
+                <CheckCircle className="h-4 w-4 text-heading-accent" />
               ) : (
-                <AlertCircle className="h-4 w-4 text-red-500" />
+                <AlertCircle className="h-4 w-4 text-foreground" />
               )}
               Triangle Results
             </CardTitle>
@@ -605,38 +605,38 @@ Type: ${result.triangleType}`
               <div className="space-y-4">
                 {/* Basic Properties */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2 p-3 bg-black rounded-lg border border-slate-700">
-                    <h3 className="text-sm font-semibold text-green-500 mb-2">Sides</h3>
+                  <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
+                    <h3 className="text-sm font-semibold text-heading-accent mb-2">Sides</h3>
                     <div className="space-y-1.5">
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Side a:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.sides.a)}</span>
+                        <span className="text-muted-foreground">Side a:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.sides.a)}</span>
                       </div>
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Side b:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.sides.b)}</span>
+                        <span className="text-muted-foreground">Side b:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.sides.b)}</span>
                       </div>
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Side c:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.sides.c)}</span>
+                        <span className="text-muted-foreground">Side c:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.sides.c)}</span>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="space-y-2 p-3 bg-black rounded-lg border border-slate-700">
-                    <h3 className="text-sm font-semibold text-green-500 mb-2">Angles</h3>
+                  <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
+                    <h3 className="text-sm font-semibold text-heading-accent mb-2">Angles</h3>
                     <div className="space-y-1.5">
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Angle A:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.angles.A)}°</span>
+                        <span className="text-muted-foreground">Angle A:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.angles.A)}°</span>
                       </div>
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Angle B:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.angles.B)}°</span>
+                        <span className="text-muted-foreground">Angle B:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.angles.B)}°</span>
                       </div>
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Angle C:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.angles.C)}°</span>
+                        <span className="text-muted-foreground">Angle C:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.angles.C)}°</span>
                       </div>
                     </div>
                   </div>
@@ -644,34 +644,34 @@ Type: ${result.triangleType}`
 
                 {/* Advanced Properties */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2 p-3 bg-black rounded-lg border border-slate-700">
-                    <h3 className="text-sm font-semibold text-green-500 mb-2">Area & Perimeter</h3>
+                  <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
+                    <h3 className="text-sm font-semibold text-heading-accent mb-2">Area & Perimeter</h3>
                     <div className="space-y-1.5">
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Area:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.area)}</span>
+                        <span className="text-muted-foreground">Area:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.area)}</span>
                       </div>
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Perimeter:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.perimeter)}</span>
+                        <span className="text-muted-foreground">Perimeter:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.perimeter)}</span>
                       </div>
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Semiperimeter:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.semiperimeter)}</span>
+                        <span className="text-muted-foreground">Semiperimeter:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.semiperimeter)}</span>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="space-y-2 p-3 bg-black rounded-lg border border-slate-700">
-                    <h3 className="text-sm font-semibold text-green-500 mb-2">Radii</h3>
+                  <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
+                    <h3 className="text-sm font-semibold text-heading-accent mb-2">Radii</h3>
                     <div className="space-y-1.5">
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Inradius:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.inradius)}</span>
+                        <span className="text-muted-foreground">Inradius:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.inradius)}</span>
                       </div>
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Circumradius:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.circumradius)}</span>
+                        <span className="text-muted-foreground">Circumradius:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.circumradius)}</span>
                       </div>
                     </div>
                   </div>
@@ -679,57 +679,57 @@ Type: ${result.triangleType}`
 
                 {/* Heights and Medians */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2 p-3 bg-black rounded-lg border border-slate-700">
-                    <h3 className="text-sm font-semibold text-green-500 mb-2">Heights</h3>
+                  <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
+                    <h3 className="text-sm font-semibold text-heading-accent mb-2">Heights</h3>
                     <div className="space-y-1.5">
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Height to a:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.height.a)}</span>
+                        <span className="text-muted-foreground">Height to a:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.height.a)}</span>
                       </div>
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Height to b:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.height.b)}</span>
+                        <span className="text-muted-foreground">Height to b:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.height.b)}</span>
                       </div>
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Height to c:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.height.c)}</span>
+                        <span className="text-muted-foreground">Height to c:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.height.c)}</span>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="space-y-2 p-3 bg-black rounded-lg border border-slate-700">
-                    <h3 className="text-sm font-semibold text-green-500 mb-2">Medians</h3>
+                  <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
+                    <h3 className="text-sm font-semibold text-heading-accent mb-2">Medians</h3>
                     <div className="space-y-1.5">
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Median to a:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.median.a)}</span>
+                        <span className="text-muted-foreground">Median to a:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.median.a)}</span>
                       </div>
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Median to b:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.median.b)}</span>
+                        <span className="text-muted-foreground">Median to b:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.median.b)}</span>
                       </div>
                       <div className="flex justify-between text-xs">
-                        <span className="text-slate-400">Median to c:</span>
-                        <span className="font-mono text-orange-400">{formatNumber(result.median.c)}</span>
+                        <span className="text-muted-foreground">Median to c:</span>
+                        <span className="font-mono text-foreground">{formatNumber(result.median.c)}</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Triangle Type */}
-                <div className="bg-black border border-green-700 rounded-lg p-3">
+                <div className="bg-card border border-border rounded-lg p-3">
                   <div className="flex items-center gap-2 mb-1">
-                    <Triangle className="h-3.5 w-3.5 text-green-500" />
-                    <span className="font-semibold text-green-500 text-sm">Triangle Type:</span>
+                    <Triangle className="h-3.5 w-3.5 text-heading-accent" />
+                    <span className="font-semibold text-heading-accent text-sm">Triangle Type:</span>
                   </div>
-                  <p className="text-orange-400 font-medium text-sm">{result.triangleType}</p>
+                  <p className="text-foreground font-medium text-sm">{result.triangleType}</p>
                 </div>
               </div>
             ) : (
               <div className="text-center py-6">
-                <AlertCircle className="h-10 w-10 text-red-500 mx-auto mb-3" />
-                <h3 className="text-base font-semibold text-red-400 mb-2">Invalid Triangle</h3>
-                <p className="text-red-400 text-sm">{result.errorMessage}</p>
+                <AlertCircle className="h-10 w-10 text-foreground mx-auto mb-3" />
+                <h3 className="text-base font-semibold text-foreground mb-2">Invalid Triangle</h3>
+                <p className="text-foreground text-sm">{result.errorMessage}</p>
               </div>
             )}
           </CardContent>
@@ -738,14 +738,14 @@ Type: ${result.triangleType}`
 
       {/* History */}
       {history.length > 0 && (
-        <Card className="bg-black border-slate-700">
+        <Card className="bg-card border-border">
           <CardHeader className="pb-2 px-3 sm:px-6">
             <div className="flex items-center justify-between">
-            <CardTitle className="flex items-center gap-2 text-base text-orange-500">
+            <CardTitle className="flex items-center gap-2 text-base text-foreground">
               <Calculator className="h-4 w-4" />
               Recent Calculations
             </CardTitle>
-              <Button variant="outline" size="sm" onClick={clearHistory} className="h-8 text-xs border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" size="sm" onClick={clearHistory} className="h-8 text-xs border-border bg-card text-foreground hover:bg-secondary">
                 Clear
               </Button>
             </div>
@@ -753,16 +753,16 @@ Type: ${result.triangleType}`
           <CardContent className="px-3 sm:px-6">
             <div className="space-y-2">
               {history.slice(0, 5).map((calc, index) => (
-                <div key={index} className="flex items-center justify-between p-2 bg-black rounded-lg border border-slate-700">
+                <div key={index} className="flex items-center justify-between p-2 bg-card rounded-lg border border-border">
                   <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 bg-orange-500/10 rounded-full flex items-center justify-center border border-orange-500/20">
-                      <span className="text-[10px] font-semibold text-orange-400">{index + 1}</span>
+                    <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20">
+                      <span className="text-[10px] font-semibold text-foreground">{index + 1}</span>
                     </div>
                     <div>
-                      <div className="font-medium text-xs text-slate-300">
+                      <div className="font-medium text-xs text-foreground">
                         {calc.sides.a} × {calc.sides.b} × {calc.sides.c}
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] text-muted-foreground">
                         Area: {calc.area} | Type: {calc.triangleType}
                       </div>
                     </div>
@@ -774,7 +774,7 @@ Type: ${result.triangleType}`
                       const resultText = `Triangle: a=${calc.sides.a}, b=${calc.sides.b}, c=${calc.sides.c}, Area=${calc.area}`
                       navigator.clipboard.writeText(resultText)
                     }}
-                    className="h-7 w-7 p-0 text-slate-400 hover:text-green-500 hover:bg-slate-800"
+                    className="h-7 w-7 p-0 text-muted-foreground hover:text-heading-accent hover:bg-secondary"
                   >
                     <Copy className="h-3 w-3" />
                   </Button>

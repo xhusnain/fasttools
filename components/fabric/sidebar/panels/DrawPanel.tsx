@@ -121,7 +121,7 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
                     <Icon className="w-4 h-4 text-white" />
                   </div>
                   <span className="text-xs font-medium text-slate-700">{brush.name}</span>
-                  <span className="text-[10px] text-slate-500">{brush.width}px</span>
+                  <span className="text-[10px] text-muted-foreground">{brush.width}px</span>
                 </button>
               )
             })}
@@ -178,7 +178,7 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
           onClick={toggleDrawingMode}
           className={`w-full py-2.5 px-4 rounded-lg font-semibold text-sm text-white transition-all ${
             isDrawingMode
-              ? 'bg-red-500 hover:bg-red-600'
+              ? 'bg-red-500 hover:bg-destructive'
               : 'bg-purple-600 hover:bg-purple-700'
           }`}
         >
@@ -186,7 +186,7 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
         </button>
         
         {isDrawingMode && (
-          <p className="text-[10px] text-slate-500 text-center mt-1.5">
+          <p className="text-[10px] text-muted-foreground text-center mt-1.5">
             Click and drag on canvas to draw
           </p>
         )}

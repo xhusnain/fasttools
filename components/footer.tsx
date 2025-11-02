@@ -20,7 +20,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative bg-orange-500 py-12 md:py-16 px-4 overflow-hidden">
+    <footer className="relative bg-primary py-12 md:py-16 px-4 overflow-hidden">
       <div className="container mx-auto max-w-7xl">
         {/* Top Links Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16 relative z-10">

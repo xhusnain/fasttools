@@ -1203,7 +1203,7 @@ export function ColorPaletteGenerator() {
                   title={`Copy ${color}`}
                 >
                   {/* Hover overlay with copy icon */}
-                  <div className="absolute inset-0 bg-black/0 group-hover/color:bg-black/20 transition-colors flex items-center justify-center">
+                  <div className="absolute inset-0 bg-card/0 group-hover/color:bg-card/20 transition-colors flex items-center justify-center">
                     {copiedColor?.paletteIndex === paletteIndex && copiedColor?.colorIndex === colorIndex ? (
                       <Check className="h-5 w-5 text-white opacity-0 group-hover/color:opacity-100 transition-opacity" />
                     ) : (
@@ -1213,7 +1213,7 @@ export function ColorPaletteGenerator() {
                   
                   {/* Color HEX on hover */}
                   <div className="absolute bottom-1 left-0 right-0 text-center">
-                    <span className="text-[10px] font-mono font-medium bg-black/60 text-white px-1.5 py-0.5 rounded opacity-0 group-hover/color:opacity-100 transition-opacity">
+                    <span className="text-[10px] font-mono font-medium bg-card/60 text-white px-1.5 py-0.5 rounded opacity-0 group-hover/color:opacity-100 transition-opacity">
                       {color}
                     </span>
                   </div>

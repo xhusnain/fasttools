@@ -177,7 +177,7 @@ Time Period: ${result.years} years`
     <div className="space-y-3">
       {/* Warning Alert */}
       {showWarning && (
-        <Alert className="border-amber-700 bg-black py-2 [&>svg]:top-2">
+        <Alert className="border-amber-700 bg-card py-2 [&>svg]:top-2">
           <AlertTriangle className="h-3 w-3 text-amber-400" />
           <AlertDescription className="text-[10px] text-amber-300 leading-tight">
             <strong>Note:</strong> Interest rates change frequently. Verify with your financial institution for accuracy.
@@ -186,27 +186,27 @@ Time Period: ${result.years} years`
       )}
 
       {/* Main Calculator Card */}
-      <Card className="shadow-lg border-slate-700 hover:shadow-xl transition-all duration-300 bg-black">
+      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader className="pb-2 px-3 sm:px-6">
-          <CardTitle className="flex items-center gap-1.5 text-sm sm:text-base text-orange-500">
-            <div className="p-1 bg-orange-500/10 rounded">
-              <TrendingUp className="h-3 sm:h-3.5 w-3 sm:w-3.5 text-orange-500" />
+          <CardTitle className="flex items-center gap-1.5 text-sm sm:text-base text-foreground">
+            <div className="p-1 bg-primary/10 rounded">
+              <TrendingUp className="h-3 sm:h-3.5 w-3 sm:w-3.5 text-foreground" />
             </div>
             Compound Interest Calculator
           </CardTitle>
-          <CardDescription className="text-[10px] sm:text-xs text-slate-400">
+          <CardDescription className="text-[10px] sm:text-xs text-muted-foreground">
             Calculate growth with country-specific rates
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-3 px-3 sm:px-6">
           {/* Country Selection */}
           <div className="space-y-1">
-            <Label htmlFor="country" className="text-[11px] font-medium flex items-center gap-1 text-green-500">
-              <Globe className="h-2.5 w-2.5 text-green-500" />
+            <Label htmlFor="country" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
+              <Globe className="h-2.5 w-2.5 text-heading-accent" />
               Country
             </Label>
             <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-              <SelectTrigger className="h-8 text-xs border-slate-700 bg-black text-slate-200">
+              <SelectTrigger className="h-8 text-xs border-border bg-card text-foreground">
                 <SelectValue placeholder="Choose country" />
               </SelectTrigger>
               <SelectContent>
@@ -222,8 +222,8 @@ Time Period: ${result.years} years`
           {/* Principal and Time Period in Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             <div className="space-y-1">
-              <Label htmlFor="principal" className="text-[11px] font-medium flex items-center gap-1 text-green-500">
-                <DollarSign className="h-2.5 w-2.5 text-green-500" />
+              <Label htmlFor="principal" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
+                <DollarSign className="h-2.5 w-2.5 text-heading-accent" />
                 Principal ({countryRateData[selectedCountry]?.currency})
             </Label>
             <Input
@@ -232,12 +232,12 @@ Time Period: ${result.years} years`
               value={principal}
               onChange={(e) => setPrincipal(e.target.value)}
               placeholder="10000"
-                className="h-8 text-xs px-2 py-1.5 rounded-lg border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 hover:border-orange-500/50 ring-offset-1"
+                className="h-8 text-xs px-2 py-1.5 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary hover:border-primary/50 ring-offset-1"
             />
           </div>
             <div className="space-y-1">
-              <Label htmlFor="time" className="text-[11px] font-medium flex items-center gap-1 text-green-500">
-                <Target className="h-2.5 w-2.5 text-green-500" />
+              <Label htmlFor="time" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
+                <Target className="h-2.5 w-2.5 text-heading-accent" />
                 Years
             </Label>
             <Input
@@ -246,19 +246,19 @@ Time Period: ${result.years} years`
               value={time}
               onChange={(e) => setTime(e.target.value)}
               placeholder="10"
-                className="h-8 text-xs px-2 py-1.5 rounded-lg border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 hover:border-orange-500/50 ring-offset-1"
+                className="h-8 text-xs px-2 py-1.5 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary hover:border-primary/50 ring-offset-1"
             />
             </div>
           </div>
 
           {/* Compounding Frequency */}
           <div className="space-y-1">
-            <Label htmlFor="frequency" className="text-[11px] font-medium flex items-center gap-1 text-green-500">
-              <BarChart3 className="h-2.5 w-2.5 text-green-500" />
+            <Label htmlFor="frequency" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
+              <BarChart3 className="h-2.5 w-2.5 text-heading-accent" />
               Frequency
             </Label>
             <Select value={frequency} onValueChange={setFrequency}>
-              <SelectTrigger className="h-8 text-xs border-slate-700 bg-black text-slate-200">
+              <SelectTrigger className="h-8 text-xs border-border bg-card text-foreground">
                 <SelectValue placeholder="Select frequency" />
               </SelectTrigger>
               <SelectContent>
@@ -272,7 +272,7 @@ Time Period: ${result.years} years`
           </div>
 
           {/* Rate Selection */}
-          <div className="space-y-2 p-2 bg-black rounded-lg border border-slate-700">
+          <div className="space-y-2 p-2 bg-card rounded-lg border border-border">
             <div className="flex items-center space-x-1.5">
               <input 
                 type="checkbox" 
@@ -281,15 +281,15 @@ Time Period: ${result.years} years`
                 onChange={(e) => setUseCountryRate(e.target.checked)}
                 className="rounded border-gray-600 w-3 h-3"
               />
-              <Label htmlFor="use-country-rate" className="text-[11px] font-medium flex items-center gap-1 text-green-500">
-                <Calculator className="h-2.5 w-2.5 text-green-500" />
+              <Label htmlFor="use-country-rate" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
+                <Calculator className="h-2.5 w-2.5 text-heading-accent" />
                 Use Country Rate ({countryRateData[selectedCountry]?.investmentRate}%)
               </Label>
             </div>
             
             {!useCountryRate && (
               <div className="space-y-1">
-                <Label htmlFor="rate" className="text-[11px] font-medium text-green-500">
+                <Label htmlFor="rate" className="text-[11px] font-medium text-heading-accent">
                   Custom Rate (%)
                 </Label>
                 <Input
@@ -299,12 +299,12 @@ Time Period: ${result.years} years`
                   value={rate}
                   onChange={(e) => setRate(e.target.value)}
                   placeholder="5.0"
-                  className="h-8 text-xs px-2 py-1.5 rounded-lg border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 hover:border-orange-500/50 ring-offset-1"
+                  className="h-8 text-xs px-2 py-1.5 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary hover:border-primary/50 ring-offset-1"
                 />
               </div>
             )}
             
-            <p className="text-[10px] text-orange-300 leading-tight">
+            <p className="text-[10px] text-foreground leading-tight">
               {countryRateData[selectedCountry]?.description}
             </p>
           </div>
@@ -312,7 +312,7 @@ Time Period: ${result.years} years`
           {/* Calculate Button */}
           <Button
             onClick={calculateCompoundInterest}
-            className="w-full h-9 text-xs font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
+            className="w-full h-9 text-xs font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
             disabled={!principal || !time || isCalculating}
           >
             {isCalculating ? (
@@ -331,22 +331,22 @@ Time Period: ${result.years} years`
       </Card>
 
       {result && !isCalculating && (
-        <Card className="shadow-lg border-slate-700 animate-fade-in-up bg-black">
+        <Card className="shadow-lg border-border animate-fade-in-up bg-card">
           <CardHeader className="pb-3 px-3 sm:px-6">
-            <CardTitle className="text-base sm:text-lg flex items-center gap-2 text-orange-500">
-              <div className="p-1 sm:p-1.5 bg-orange-500/10 rounded-lg">
-                <TrendingUp className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-orange-500" />
+            <CardTitle className="text-base sm:text-lg flex items-center gap-2 text-foreground">
+              <div className="p-1 sm:p-1.5 bg-primary/10 rounded-lg">
+                <TrendingUp className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-foreground" />
               </div>
               <span className="break-words">Compound Interest Results - {result.country}</span>
             </CardTitle>
-            <CardDescription className="text-xs sm:text-sm text-slate-400">
+            <CardDescription className="text-xs sm:text-sm text-muted-foreground">
               Your investment growth over {result.years} years with {result.effectiveRate}% effective rate
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4 px-3 sm:px-6">
             {/* Main Result Display */}
-            <div className="text-center p-3 sm:p-4 rounded-xl bg-black border border-orange-500/20">
-              <div className="text-lg sm:text-xl md:text-2xl font-bold text-orange-500 mb-1 break-words overflow-hidden">
+            <div className="text-center p-3 sm:p-4 rounded-xl bg-card border border-primary/20">
+              <div className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-1 break-words overflow-hidden">
                 <span className="block">{result.currency}</span>
                 <span className="block text-base sm:text-lg md:text-xl">
                   {result.totalAmount > 1e15 
@@ -355,10 +355,10 @@ Time Period: ${result.years} years`
                   }
                 </span>
               </div>
-              <div className="text-xs sm:text-sm text-slate-400">
+              <div className="text-xs sm:text-sm text-muted-foreground">
                 Total Future Value
               </div>
-              <div className="text-xs sm:text-sm font-semibold text-green-400 mt-1 break-words px-2">
+              <div className="text-xs sm:text-sm font-semibold text-heading-accent mt-1 break-words px-2">
                 <span className="block">{result.currency}</span>
                 <span className="block">
                   {result.monthlyAmount > 1e15 
@@ -370,57 +370,57 @@ Time Period: ${result.years} years`
             </div>
 
             {/* Detailed Breakdown */}
-            <div className="space-y-2 p-3 bg-black rounded-lg border border-slate-700">
-              <div className="text-sm font-semibold mb-2 text-green-500 flex items-center gap-2">
+            <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
+              <div className="text-sm font-semibold mb-2 text-heading-accent flex items-center gap-2">
                 <PieChart className="h-3.5 w-3.5" />
                 Investment Breakdown
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-black rounded-lg border border-blue-700 gap-1">
-                  <span className="text-xs text-blue-300">Principal</span>
-                  <span className="font-semibold text-xs text-blue-400 break-words text-right sm:text-left">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-blue-700 gap-1">
+                  <span className="text-xs text-foreground">Principal</span>
+                  <span className="font-semibold text-xs text-foreground break-words text-right sm:text-left">
                     {result.currency} {result.principal > 1e15 
                       ? result.principal.toExponential(2)
                       : result.principal.toLocaleString(undefined, { maximumFractionDigits: 2 })
                     }
                   </span>
                 </div>
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-black rounded-lg border border-green-700 gap-1">
-                  <span className="text-xs text-green-300">Interest Earned</span>
-                  <span className="font-semibold text-xs text-green-400 break-words text-right sm:text-left">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-green-700 gap-1">
+                  <span className="text-xs text-heading-accent">Interest Earned</span>
+                  <span className="font-semibold text-xs text-heading-accent break-words text-right sm:text-left">
                     +{result.currency} {result.totalInterest > 1e15 
                       ? result.totalInterest.toExponential(2)
                       : result.totalInterest.toLocaleString(undefined, { maximumFractionDigits: 2 })
                     }
                   </span>
                 </div>
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-black rounded-lg border border-purple-700 gap-1">
-                  <span className="text-xs text-purple-300">Growth Rate</span>
-                  <span className="font-semibold text-xs text-purple-400 break-words text-right sm:text-left">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-purple-700 gap-1">
+                  <span className="text-xs text-foreground">Growth Rate</span>
+                  <span className="font-semibold text-xs text-foreground break-words text-right sm:text-left">
                     {result.totalInterest > 1e15 || result.principal === 0
                       ? ((result.totalInterest / result.principal) * 100).toExponential(2) + '%'
                       : ((result.totalInterest / result.principal) * 100).toFixed(1) + '%'
                     }
                   </span>
                 </div>
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-black rounded-lg border border-orange-700 gap-1">
-                  <span className="text-xs text-orange-300">Effective Rate</span>
-                  <span className="font-semibold text-xs text-orange-400">{result.effectiveRate}%</span>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-primary gap-1">
+                  <span className="text-xs text-foreground">Effective Rate</span>
+                  <span className="font-semibold text-xs text-foreground">{result.effectiveRate}%</span>
                 </div>
               </div>
             </div>
 
             {/* Yearly Breakdown */}
-            <div className="p-3 bg-black rounded-xl border border-slate-700">
-              <div className="text-xs font-semibold text-green-500 mb-2 flex items-center gap-1.5">
+            <div className="p-3 bg-card rounded-xl border border-border">
+              <div className="text-xs font-semibold text-heading-accent mb-2 flex items-center gap-1.5">
                 <BarChart3 className="h-3.5 w-3.5" />
                 Yearly Growth Breakdown
               </div>
               <div className="space-y-1.5 max-h-96 overflow-y-auto">
                 {result.yearlyBreakdown.map((year) => (
-                  <div key={year.year} className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-black rounded border border-slate-700 gap-1">
-                    <span className="text-xs text-slate-400">Year {year.year}</span>
-                    <span className="text-xs font-semibold text-slate-300 break-words text-right sm:text-left">
+                  <div key={year.year} className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded border border-border gap-1">
+                    <span className="text-xs text-muted-foreground">Year {year.year}</span>
+                    <span className="text-xs font-semibold text-foreground break-words text-right sm:text-left">
                       {result.currency} {year.balance > 1e15 
                         ? year.balance.toExponential(2)
                         : year.balance.toLocaleString(undefined, { maximumFractionDigits: 2 })
@@ -435,7 +435,7 @@ Time Period: ${result.years} years`
             <div className="flex flex-col sm:flex-row gap-2">
               <Button
                 onClick={copyResult}
-                className="flex-1 h-9 text-xs font-medium transition-all duration-300 border border-green-700 hover:bg-slate-800 text-green-300 bg-black"
+                className="flex-1 h-9 text-xs font-medium transition-all duration-300 border border-green-700 hover:bg-secondary text-heading-accent bg-card"
               >
                 {copied ? (
                   <>

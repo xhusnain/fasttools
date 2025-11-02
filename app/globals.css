@@ -74,34 +74,41 @@
 }
 
 :root {
-  /* Pure Black Theme with Orange Accents */
+  /* Light Theme with Orange Accents - Clean White Background */
   /* Font variable fallbacks (Next.js sets real values on <html>) */
   --font-roboto: 'Roboto';
   --font-montserrat: 'Montserrat';
-  --background: #000000; /* Pure black background */
-  --foreground: #ffffff; /* White text for dark background */
-  --card: #0A0A0A; /* Near black for cards */
-  --card-foreground: #ffffff;
-  --popover: #0A0A0A;
-  --popover-foreground: #ffffff;
+  --background: #FAFAFA; /* Clean white background */
+  --foreground: #1A1A1A; /* Near black text for light background */
+  --card: #FFFFFF; /* Pure white for cards */
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
   --primary: #FF7F00; /* Orange button color */
-  --primary-foreground: #ffffff; /* White text for orange buttons */
+  --primary-foreground: #FFFFFF; /* White text for orange buttons */
   --link: #FF7F00; /* Orange for links */
-  --link-hover: #FFA040; /* Lighter orange for hover */
-  --secondary: #1A1A1A; /* Dark gray for subtle elements */
-  --secondary-foreground: #ffffff;
-  --muted: #1A1A1A;
-  --muted-foreground: #999999; /* Light gray for muted text */
+  --link-hover: #E67300; /* Darker orange for hover */
+  --secondary: #F5F5F5; /* Light gray for subtle elements */
+  --secondary-foreground: #1A1A1A;
+  --muted: #E0E0E0; /* Light gray for muted elements */
+  --muted-foreground: #6B7280; /* Medium gray for muted text */
   --accent: #FF7F00; /* Orange accent for highlights */
-  --accent-foreground: #ffffff; /* White text for orange accent */
+  --accent-foreground: #FFFFFF; /* White text for orange accent */
   --secondary-accent: #10B981; /* Green for success states */
-  --secondary-accent-foreground: #ffffff;
+  --secondary-accent-foreground: #FFFFFF;
   --tertiary-accent: #F7B801; /* Gold for special highlights */
   --tertiary-accent-foreground: #000000;
   --destructive: #EF4444; /* Red 500 for errors */
-  --destructive-foreground: #ffffff;
-  --border: #333333; /* Dark gray borders */
-  --input: #1A1A1A;
+  --destructive-foreground: #FFFFFF;
+  --heading-accent: #374151; /* Gray for h3/FAQ headings on light theme */
+  --heading-accent-foreground: #FFFFFF;
+  --heading-accent-border: #E5E7EB; /* Light gray border for light theme */
+  --heading-accent-border-hover: #D1D5DB; /* Slightly darker gray on hover */
+  --hero-title: #EA580C; /* Orange for hero/main titles on light theme */
+  --hero-title-hover: #C2410C; /* Slightly darker for hover states */
+  --hero-description: #4B5563; /* Gray for descriptions on light theme */
+  --border: #E5E7EB; /* Light gray borders */
+  --input: #F9FAFB; /* Very light gray for inputs */
   --ring: #FF7F00;
   --chart-1: #FF7F00;
   --chart-2: #FFA040;
@@ -109,13 +116,13 @@
   --chart-4: #FFCC99;
   --chart-5: #EF4444;
   --radius: 0.75rem; /* Rounded corners for modern look */
-  --sidebar: #0A0A0A;
-  --sidebar-foreground: #ffffff;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1A1A1A;
   --sidebar-primary: #FF7F00;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #1A1A1A;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #333333;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F5F5F5;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: #E5E7EB;
   --sidebar-ring: #FF7F00;
 }
 
@@ -158,6 +165,13 @@
   /* Destructive */
   --destructive: #EF4444;
   --destructive-foreground: #ffffff;
+  --heading-accent: #10B981; /* Bright green for h3/FAQ headings on dark theme */
+  --heading-accent-foreground: #ffffff;
+  --heading-accent-border: #10B98133; /* Subtle border with heading accent color */
+  --heading-accent-border-hover: #10B98166; /* Hover border */
+  --hero-title: #FB923C; /* Warm orange for hero/main titles on dark theme */
+  --hero-title-hover: #F97316; /* Slightly deeper for hover states */
+  --hero-description: #9CA3AF; /* Softer gray for descriptions on dark theme */
 
   /* Borders - Dark gray borders */
   --border: #333333;
@@ -203,6 +217,11 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-heading-accent: var(--heading-accent);
+  --color-heading-accent-foreground: var(--heading-accent-foreground);
+  --color-hero-title: var(--hero-title);
+  --color-hero-title-hover: var(--hero-title-hover);
+  --color-hero-description: var(--hero-description);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -286,8 +305,18 @@
     cursor: pointer;
   }
 
+  /* Global link styles - consistent across all themes */
+  a {
+    color: var(--link);
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--link-hover);
+    cursor: pointer;
+  }
+
   /* Hover states for better UX */
-  a:hover,
   button:hover,
   input[type="button"]:hover,
   input[type="submit"]:hover,
@@ -394,8 +423,9 @@ html {
   background: transparent;
 }
 
+/* Light theme scrollbar */
 ::-webkit-scrollbar-thumb {
-  background: #333333;
+  background: #D1D5DB; /* Light gray for light theme */
   border-radius: 4px;
 }
 
@@ -403,6 +433,7 @@ html {
   background: #FF7F00;
 }
 
+/* Dark theme scrollbar */
 .dark ::-webkit-scrollbar-thumb {
   background: #333333;
 }

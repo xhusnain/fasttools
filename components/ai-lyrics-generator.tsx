@@ -101,7 +101,7 @@ export function AiLyricsGenerator() {
                 setTheme(e.target.value)
                 setError("")
               }}
-              className="h-12 text-base border-2 border-orange-500/50 focus:border-orange-500"
+              className="h-12 text-base border-2 border-primary/50 focus:border-primary"
             />
             <p className="text-xs text-muted-foreground">
               Describe what your song should be about
@@ -112,7 +112,7 @@ export function AiLyricsGenerator() {
             <div className="space-y-2">
               <Label htmlFor="genre" className="text-sm font-semibold">Genre (Optional)</Label>
               <Select value={genre} onValueChange={setGenre}>
-                <SelectTrigger className="h-11 border-2 border-orange-500/50 focus:border-orange-500">
+                <SelectTrigger className="h-11 border-2 border-primary/50 focus:border-primary">
                   <SelectValue placeholder="Select genre" />
                 </SelectTrigger>
                 <SelectContent>
@@ -141,7 +141,7 @@ export function AiLyricsGenerator() {
             <div className="space-y-2">
               <Label htmlFor="mood" className="text-sm font-semibold">Mood (Optional)</Label>
               <Select value={mood} onValueChange={setMood}>
-                <SelectTrigger className="h-11 border-2 border-orange-500/50 focus:border-orange-500">
+                <SelectTrigger className="h-11 border-2 border-primary/50 focus:border-primary">
                   <SelectValue placeholder="Select mood" />
                 </SelectTrigger>
                 <SelectContent>
@@ -168,7 +168,7 @@ export function AiLyricsGenerator() {
             <div className="space-y-2">
               <Label htmlFor="duration" className="text-sm font-semibold">Duration (Optional)</Label>
               <Select value={duration} onValueChange={setDuration}>
-                <SelectTrigger className="h-11 border-2 border-orange-500/50 focus:border-orange-500">
+                <SelectTrigger className="h-11 border-2 border-primary/50 focus:border-primary">
                   <SelectValue placeholder="Song length" />
                 </SelectTrigger>
                 <SelectContent>
@@ -184,7 +184,7 @@ export function AiLyricsGenerator() {
             <div className="space-y-2">
               <Label htmlFor="language" className="text-sm font-semibold">Language</Label>
               <Select value={language} onValueChange={setLanguage}>
-                <SelectTrigger className="h-11 border-2 border-orange-500/50 focus:border-orange-500">
+                <SelectTrigger className="h-11 border-2 border-primary/50 focus:border-primary">
                   <SelectValue placeholder="Select language" />
                 </SelectTrigger>
                 <SelectContent className="max-h-[300px]">
@@ -243,7 +243,7 @@ export function AiLyricsGenerator() {
           <Button 
             onClick={generateLyrics} 
             disabled={loading || !theme.trim()} 
-            className="w-full h-12 text-base bg-orange-500 hover:bg-orange-600 font-semibold"
+            className="w-full h-12 text-base bg-primary hover:bg-primary font-semibold"
           >
             {loading ? (
               <>
@@ -289,7 +289,7 @@ export function AiLyricsGenerator() {
               >
                 {copied ? (
                   <>
-                    <Check className="h-4 w-4 mr-2 text-green-600" />
+                    <Check className="h-4 w-4 mr-2 text-heading-accent" />
                     Copied!
                   </>
                 ) : (
@@ -326,10 +326,10 @@ export function AiLyricsGenerator() {
               </div>
             </div>
             <div className="flex-1">
-              <p className="text-sm font-semibold text-green-700 dark:text-green-400 mb-1">
+              <p className="text-sm font-semibold text-heading-accent mb-1">
                 ✨ 100% Original AI-Generated Lyrics
               </p>
-              <p className="text-xs text-green-600 dark:text-green-500">
+              <p className="text-xs text-heading-accent">
                 These lyrics are completely original and free to use. Feel free to modify them for your creative projects, commercial releases, or performances. No attribution required!
               </p>
             </div>

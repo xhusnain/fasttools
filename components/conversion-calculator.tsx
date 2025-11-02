@@ -322,7 +322,7 @@ export function ConversionCalculator() {
             <div className="p-3 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl shadow-md">
               <Calculator className="h-6 w-6 text-white" />
             </div>
-            <span className="text-yellow-500 dark:text-yellow-400">
+            <span className="text-foreground">
               Universal Conversion Calculator
             </span>
           </CardTitle>
@@ -355,7 +355,7 @@ export function ConversionCalculator() {
                 From
               </Label>
               <Select value={fromUnit} onValueChange={setFromUnit}>
-                <SelectTrigger className="w-full h-12 border-2 border-yellow-300 dark:border-yellow-700 rounded-lg [&>svg]:text-yellow-500 [&>svg]:hover:text-yellow-600 data-[state=open]:border-yellow-500 data-[state=open]:ring-yellow-500 focus:border-yellow-500">
+                <SelectTrigger className="w-full h-12 border-2 border-yellow-300 dark:border-yellow-700 rounded-lg [&>svg]:text-foreground [&>svg]:hover:text-foreground data-[state=open]:border-yellow-500 data-[state=open]:ring-yellow-500 focus:border-yellow-500">
                   <SelectValue placeholder="Select unit" />
                 </SelectTrigger>
                 <SelectContent className="max-h-60 overflow-y-auto [&>div]:data-[highlighted]:bg-yellow-500 [&>div]:data-[highlighted]:text-white">
@@ -369,7 +369,7 @@ export function ConversionCalculator() {
                 To
               </Label>
               <Select value={toUnit} onValueChange={setToUnit}>
-                <SelectTrigger className="w-full h-12 border-2 border-yellow-300 dark:border-yellow-700 rounded-lg [&>svg]:text-yellow-500 [&>svg]:hover:text-yellow-600 data-[state=open]:border-yellow-500 data-[state=open]:ring-yellow-500 focus:border-yellow-500">
+                <SelectTrigger className="w-full h-12 border-2 border-yellow-300 dark:border-yellow-700 rounded-lg [&>svg]:text-foreground [&>svg]:hover:text-foreground data-[state=open]:border-yellow-500 data-[state=open]:ring-yellow-500 focus:border-yellow-500">
                   <SelectValue placeholder="Select unit" />
                 </SelectTrigger>
                 <SelectContent className="max-h-60 overflow-y-auto [&>div]:data-[highlighted]:bg-yellow-500 [&>div]:data-[highlighted]:text-white">
@@ -411,8 +411,8 @@ export function ConversionCalculator() {
             <div className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-green-900/30 rounded-xl border-2 border-green-200 dark:border-green-800 shadow-md">
               <div className="space-y-3">
                 <div className="flex-1">
-                  <div className="text-sm text-green-700 dark:text-green-300 mb-1">Converted Result</div>
-                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-green-800 dark:text-green-200 break-all">
+                  <div className="text-sm text-heading-accent mb-1">Converted Result</div>
+                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-heading-accent break-all">
                     {result.toFixed(6).replace(/\.?0+$/, '')} {(currentUnits[toUnit as keyof typeof currentUnits] as any)?.symbol}
                   </div>
                 </div>
@@ -420,7 +420,7 @@ export function ConversionCalculator() {
                   <Button
                     variant="outline"
                     onClick={copyResult}
-                    className="text-green-700 hover:text-green-800 w-full h-10"
+                    className="text-heading-accent hover:text-heading-accent w-full h-10"
                   >
                     <Copy className="h-4 w-4 mr-2" />
                     Copy Result
@@ -459,7 +459,7 @@ export function ConversionCalculator() {
               {history.map((item) => (
                 <div
                   key={item.id}
-                  className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-slate-200 dark:border-slate-600 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                  className="p-3 bg-slate-50 dark:bg-border/50 rounded-lg border border-slate-200 dark:border-border cursor-pointer hover:bg-slate-100 dark:hover:bg-border transition-colors"
                   onClick={() => loadFromHistory(item)}
                 >
                   <div className="space-y-2">
@@ -483,11 +483,11 @@ export function ConversionCalculator() {
       )}
 
       {/* Quick Conversions */}
-      <Card className="bg-black border border-border shadow-lg rounded-xl">
+      <Card className="bg-card border border-border shadow-lg rounded-xl">
         <CardHeader className="pb-4">
-          <CardTitle className="flex items-center gap-3 text-xl font-bold text-orange-500">
-            <div className="p-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg">
-              <Star className="h-5 w-5 text-white" />
+          <CardTitle className="flex items-center gap-3 text-xl font-bold text-foreground">
+            <div className="p-2 bg-primary rounded-lg">
+              <Star className="h-5 w-5 text-primary-foreground" />
             </div>
             Popular Conversions
           </CardTitle>
@@ -502,14 +502,14 @@ export function ConversionCalculator() {
               { from: "1 kilometer", to: "0.621 miles", category: "Length" },
               { from: "1 square meter", to: "10.764 square feet", category: "Area" }
             ].map((conversion, index) => (
-              <div key={index} className="p-4 bg-black rounded-xl border-2 border-yellow-200 dark:border-yellow-800 min-h-[80px] shadow-sm hover:shadow-md transition-shadow hover:border-yellow-400 dark:hover:border-yellow-600">
+              <div key={index} className="p-4 bg-card rounded-xl border-2 border-border min-h-[80px] shadow-sm hover:shadow-md transition-shadow hover:border-primary/50">
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                  <div className="text-sm font-medium text-green-500">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <div className="text-sm font-medium text-heading-accent">
                     {conversion.category}
                   </div>
                 </div>
-                <div className="text-xs text-slate-600 dark:text-slate-400 break-all leading-relaxed">
+                <div className="text-xs text-muted-foreground break-all leading-relaxed">
                   {conversion.from} = {conversion.to}
                 </div>
               </div>

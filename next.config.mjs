@@ -2,6 +2,8 @@ import CopyPlugin from 'copy-webpack-plugin'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Enable standalone output for Docker
+  output: 'standalone',
   eslint: {
     ignoreDuringBuilds: true,
   },

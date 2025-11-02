@@ -28,27 +28,27 @@ export function LoveCalculator() {
       gradient: "from-pink-500 to-rose-500",
       bg: "from-pink-500/20 to-rose-500/20",
       border: "border-pink-400/30",
-      text: "text-pink-300",
+      text: "text-foreground",
       button: "from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600",
-      icon: "text-pink-400"
+      icon: "text-foreground"
     },
     red: {
       name: "Passionate Red",
       gradient: "from-red-500 to-pink-500",
       bg: "from-red-500/20 to-pink-500/20",
       border: "border-red-400/30",
-      text: "text-red-300",
+      text: "text-foreground",
       button: "from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600",
-      icon: "text-red-400"
+      icon: "text-foreground"
     },
     purple: {
       name: "Mystical Purple",
       gradient: "from-purple-500 to-pink-500",
       bg: "from-purple-500/20 to-pink-500/20",
       border: "border-purple-400/30",
-      text: "text-purple-300",
+      text: "text-foreground",
       button: "from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600",
-      icon: "text-purple-400"
+      icon: "text-foreground"
     },
     rose: {
       name: "Elegant Rose",
@@ -184,7 +184,7 @@ export function LoveCalculator() {
         </CardDescription>
         {isSharedResult && (
           <div className="mt-2 px-3 py-1 rounded-full bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-400/30">
-            <p className="text-xs text-green-300 font-medium flex items-center gap-1">
+            <p className="text-xs text-heading-accent font-medium flex items-center gap-1">
               <Sparkles className="h-3 w-3" />
               Shared Love Result
             </p>
@@ -203,9 +203,9 @@ export function LoveCalculator() {
             <SelectTrigger className={`h-11 bg-white/10 border-2 ${currentTheme.border} text-white`}>
               <SelectValue />
             </SelectTrigger>
-            <SelectContent className="bg-gray-900/95 backdrop-blur-xl border-gray-700/50 shadow-xl">
+            <SelectContent className="bg-muted/95 backdrop-blur-xl border-gray-700/50 shadow-xl">
               {Object.entries(themes).map(([key, themeData]) => (
-                <SelectItem key={key} value={key} className="text-white hover:bg-gray-800/50 focus:bg-gray-800/50">
+                <SelectItem key={key} value={key} className="text-white hover:bg-muted/50 focus:bg-muted/50">
                   <div className="flex items-center gap-2">
                     <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${themeData.gradient}`}></div>
                     <span className="text-white">{themeData.name}</span>

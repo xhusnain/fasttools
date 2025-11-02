@@ -810,18 +810,18 @@ export default function HTMLBeautifierPage() {
                 </div>
 
                 {/* HTML Beautifier Tool */}
-                <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-black border border-border shadow">
+                <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
         <HTMLBeautifier />
                 </div>
 
                 {/* Content Sections */}
                 <div className="space-y-4 sm:space-y-5 animate-fade-in-up animation-delay-200">
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">How to Use HTML Beautifier & Minifier</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">How to Use HTML Beautifier & Minifier</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                       Our HTML beautifier and minifier tool makes formatting and compressing HTML code simple. Choose beautify mode to format HTML with proper indentation, or minify mode to compress HTML and reduce file size for production.
                     </p>
-                    <ol className="list-decimal pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-gray-400 leading-relaxed">
+                    <ol className="list-decimal pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-muted-foreground leading-relaxed">
                       <li>Paste your HTML code into the input field</li>
                       <li>Select Beautify mode for formatted output with proper indentation</li>
                       <li>Select Minify mode to compress HTML and remove whitespace</li>
@@ -830,12 +830,12 @@ export default function HTMLBeautifierPage() {
                     </ol>
         </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Features & Options</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Features & Options</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       Our tool provides both beautification and minification features for HTML code, perfect for web development workflows.
                     </p>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-gray-400 leading-relaxed">
+                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-muted-foreground leading-relaxed">
                       <li><strong>HTML Beautifier:</strong> Format HTML with clean indentation, line breaks, and proper nesting</li>
                       <li><strong>HTML Minifier:</strong> Compress HTML by removing whitespace, line breaks, and comments</li>
                       <li><strong>Copy to Clipboard:</strong> One-click copying of formatted or minified HTML</li>
@@ -845,9 +845,9 @@ export default function HTMLBeautifierPage() {
                     </ul>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Tips for Best Results</h2>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-gray-400 leading-relaxed">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Tips for Best Results</h2>
+                    <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-muted-foreground leading-relaxed">
                       <li>Use beautify mode during development for readable, well-formatted HTML</li>
                       <li>Use minify mode for production to reduce HTML file size and improve load times</li>
                       <li>Ensure HTML is valid before beautifying for best formatting results</li>
@@ -857,412 +857,412 @@ export default function HTMLBeautifierPage() {
           </ul>
         </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">What is HTML Beautification and Minification?</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">What is HTML Beautification and Minification?</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       HTML beautification (also called HTML prettifier or HTML formatter) is the process of formatting HTML code with proper indentation, line breaks, and spacing to make it readable. A beautify HTML tool transforms minified or compressed HTML into a well-structured, easy-to-read format. When you beautify HTML code, you create clean, maintainable code that follows HTML structure beautify best practices. Our free HTML beautifier online tool makes this process instant and effortless.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       HTML minification (compress HTML) is the opposite process - it removes unnecessary whitespace, comments, and line breaks to reduce file size. Minify HTML online tools help compress HTML file size significantly, improving website load times and performance. The minify HTML meaning refers to code compression without losing functionality. Whether you need to minify HTML code or beautify HTML, our tool handles both operations seamlessly.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       Understanding when to use HTML beautifier vs minifier is crucial: use beautify HTML during development for clean, readable code, and minify HTML for production deployment to compress HTML and reduce bandwidth. Many developers ask &quot;is minifying HTML worth it&quot; - the answer is yes, as minified HTML can reduce file sizes by 20-40%, significantly improving page load times and SEO rankings.
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">IDE & Editor Integration</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">IDE & Editor Integration</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>VSCode HTML Formatter:</strong> Use html formatter vscode extensions for automatic formatting. Set up html default formatter vscode in settings, or use html formatter extension vscode like Prettier or Beautify. The html beautifier vscode and html prettify vs code extensions work seamlessly with our online tool for quick formatting.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Sublime Text:</strong> Configure html beautifier sublime text or html formatter sublime for automatic formatting. The html beautify sublime text 3 plugin integrates with html formatter in sublime for seamless code beautification. Use html beautifier sublime online as a backup when plugins aren&apos;t available.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>JetBrains IDEs:</strong> PhpStorm users can utilize phpstorm html beautifier and html formatter phpstorm built-in features. For IntelliJ, use html formatter intellij or html formatter for intellij. WebStorm supports html formatter webstorm and minify html webstorm for comprehensive HTML formatting.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Visual Studio:</strong> The html beautifier visual studio and html formatter visual studio 2022 provide native HTML formatting. Use html formatter for visual studio to beautify HTML body and html div formatter automatically during development.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       <strong>Vim & Neovim:</strong> Configure html beautifier vim, html formatter vim, html beautifier nvim, html beautifier neovim, and html formatter neovim for terminal-based editing. Eclipse users can use html formatter eclipse and html formatter in eclipse. Other editors include html formatter helix, html formatter zed, html formatter emacs, and html formatter pycharm.
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Programming Language Support</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Programming Language Support</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>PHP Integration:</strong> Use html beautifier php and html formatter php for server-side formatting. The html php beautifier online and html minifier php tools help format HTML in PHP applications. Install via Composer for html beautifier library support in Laravel, Symfony, and other frameworks.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Python Tools:</strong> Python developers can use html beautifier python, html formatter python, html formatter in python, and html prettify python libraries. Install with pip minify html or minify html pypi. For compression, use compress html python or compress html file size python. The minify html in python process uses html compressor python packages like htmlmin or Beautiful Soup&apos;s prettify html beautifulsoup feature.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>JavaScript & Node.js:</strong> For JavaScript, use html beautifier javascript library, javascript html beautifier, html beautifier js, and html formatter js. Node.js developers can use html beautifier node, html beautifier nodejs, html formatter nodejs, and node minify html minifier. Install packages with npm install html minifier or yarn for html minifier yarn support. The minify html with javascript and minify html using javascript operations use html minifier npm packages.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Java Integration:</strong> Java developers can use java html beautifier and html formatter java libraries. For minification, implement minify html in java using libraries like HtmlCompressor. The html minifier java and html compressor maven packages provide comprehensive HTML processing capabilities.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       <strong>Other Languages:</strong> Additional language support includes html formatter golang, html minifier golang for Go, html formatter rust for Rust, html formatter elixir for Elixir, and html formatter bash for shell scripting. These tools enable html beautify format across multiple programming ecosystems.
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Framework Integration</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Framework Integration</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>React & Angular:</strong> Use html beautifier react and react html beautifier for React applications. The html formatter react and html formatter angular tools integrate with component-based development. For Angular, use angular html beautifier and html minifier angular to optimize template files and improve performance.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Laravel & PHP Frameworks:</strong> Laravel developers benefit from html minifier laravel and spatie laravel html minifier packages. These tools integrate with Blade templates using html blade formatter for automatic HTML compression. Use html formatter django for Django templates and html minify django for Python web frameworks.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Template Engines:</strong> Format templates with html beautifier erb for Ruby ERB, html twig beautifier for Symfony Twig, html jinja formatter for Python Jinja2, and html liquid formatter for Jekyll/Shopify Liquid templates. The html beautifier mason supports Perl Mason templates.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       <strong>Content Management Systems:</strong> WordPress users can implement html minifier wordpress and compress html wordpress for faster sites. Use minify html wp rocket for automated compression. For Drupal, install minify html drupal modules to optimize HTML output and improve performance.
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Build Tools & Workflow Integration</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Build Tools & Workflow Integration</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Webpack:</strong> Integrate html minifier webpack using loader plugins. The html minifier terser webpack configuration enables automatic HTML compression during builds. Configure html minifier options for customized compression settings in your webpack config.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Vite:</strong> Modern projects use html minifier vite and vite plugin html minifier for fast HTML processing. The html minifier terser vite integration provides efficient minification during development and production builds. Configure html minify plugin settings for optimal compression.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Gulp & Rollup:</strong> Automate HTML formatting with minify html gulp tasks and gulp html minifier terser. For Rollup users, install rollup plugin html minifier to compress HTML in component builds. These tools support html minify remove comments and other advanced options.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Modern Frameworks:</strong> Next.js developers use html minifier next npm and html minifier next for SSR optimization. For Astro, implement astro html minifier and compress html astro for static site generation. SvelteKit projects benefit from sveltekit html minifier. Eleventy sites use eleventy html minifier for build-time compression.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       <strong>Package Managers:</strong> Install with npm install html minifier, html minifier npm, or html minifier package. The html minifier yarn command installs via Yarn. Access html compressor npm packages and html formatter npm for comprehensive tooling. Popular packages include html minifier by kangax, html minifier kangax, and html minifier terser versions like html minifier terser 6.1 0, html minifier terser 7.2 0, and html minifier 3.5.21.
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">CLI & Command Line Tools</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">CLI & Command Line Tools</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Command Line Usage:</strong> Use html formatter command line and html beautifier command line tools for terminal-based formatting. The html formatter cli and html beautifier cli provide scriptable HTML processing. Run commands on html formatter ubuntu, html formatter linux, and html beautifier linux systems for automated workflows.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Cross-Platform Support:</strong> The html formatter windows tools work on Windows systems, while minify html node darwin arm64 supports Apple Silicon Macs. These CLI tools enable html formatter download for offline use and batch processing of multiple HTML files.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       <strong>Automation:</strong> Integrate html minifier cli into CI/CD pipelines for automatic HTML compression. Use html minify script commands in build processes to compress html source code. The regex to minify html approach enables custom compression rules for specific HTML patterns.
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Online Tools & Features</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Online Tools & Features</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Free Online Tools:</strong> Access html beautifier online free, html formatter online free, and beautify html online tools without registration. Our html minify online tool and html code minifier online provide instant results. Use the html formatter online w3schools style interface for easy formatting. Compare with w3schools html beautifier and online html beautifier html formatter beautifytools com alternatives.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Advanced Features:</strong> Our tool supports html formatter and preview, html formatter live preview, html formatter with preview, and html formatter and viewer online. View beautified HTML with html beautifier viewer and html formatter viewer. The html formatter and html beautifier online combination provides comprehensive formatting capabilities.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Format Options:</strong> Customize html beautify options including indent sizes, comment removal with html minify remove comments, and html formatter remove spaces. Convert HTML to html formatter single line or html formatter 1 line for compact output. Use html formatter to one line or compress html in one line for minimalist formatting.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       <strong>Specialized Tools:</strong> Process html email beautifier and html formatter for email for email template formatting. Use html formatter for gmail to optimize email HTML. Format specific elements with html div formatter, html tag beautifier, html element beautifier, and beautify div. Handle json to html beautifier conversions and html formatter json for JSON-embedded HTML.
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Compression & Optimization</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Compression & Optimization</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>File Size Reduction:</strong> Use compress html file size and compress html file size online tools to reduce HTML weight. The compress html file size python scripts enable automated compression. Compress HTML to formats like compress html to pdf or compress html file to pdf for document conversion. Some tools even support compress html ke word for Word document conversion.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Multi-Format Compression:</strong> Compress HTML alongside other assets with minify html css and javascript, minify html and css, minify html and js, and html css javascript minifier. The minify html js css and html css js beautifier tools handle multiple file types. Use minify html css online for web-based compression.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Advanced Compression:</strong> Apply compress html gzip for server-side compression. Use compress html for llm to reduce HTML for AI processing. The compress html string and minify html string operations handle in-memory HTML. For specialized cases, compress html link and compress html one line provide targeted compression.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       <strong>Compression Tools:</strong> Use html file compressor, html compress file, html page compressor, html document compressor, and html file minifier for complete file processing. The html email compressor optimizes email HTML. Even handle html compress video and html video compressor for embedded media HTML.
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Specialized Use Cases</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Specialized Use Cases</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Format Conversion:</strong> Use html minify unminify to reverse minification. The html minifier reverse and html minify to normal operations restore readable HTML. Convert between formats with beautifier html converter and text to html beautifier. Handle html to formatter, html to beautify, and html to minify conversions.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>String Processing:</strong> Process HTML strings with beautify html string, html beautify text, and html formatter text. The html string formatter and html response formatter handle server responses. Use html beautifier render and html formatter render for dynamic content. Format HTML requests with html request formatter and responses with html response formatter.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Specific Elements:</strong> Format individual elements with html body formatter, beautify html body, html script formatter, html script beautifier, and html beautify table. The html markup formatter handles semantic HTML, while html dom formatter processes DOM structures. Use html query formatter for SQL-embedded HTML and html url formatter for URL-encoded HTML.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       <strong>Editor Features:</strong> Access html beautify editor, html formatter editor, html formatter and editor, and html beautifier web for in-browser editing. The html formatter app and html formatter program provide standalone applications. Use html beautify shortcut and beautify html shortcut for keyboard shortcuts in IDEs.
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Security & Best Practices</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Security & Best Practices</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Security Considerations:</strong> Be aware of html minifier terser vulnerability, html minifier vulnerability, html minifier redos vulnerability, and kangax html minifier redos vulnerability fix. Stay updated with html minifier cve reports and html minifier vulnerability fix patches. The html minifier terser cve database tracks security issues. Always use the html minifier terser latest version for security patches.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Error Handling:</strong> Handle html minifier parse error messages correctly. Use html formatter error debugging to identify formatting issues. The html formatter checker and html formatter validator ensure HTML validity. Combine with html formatter and validator or html formatter validator for comprehensive validation.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       <strong>Safe HTML Processing:</strong> Questions like are mhtml files safe concern MHTML security. Use html formatter open source tools for transparency. The html minifier browser and html minifier offline tools process HTML locally for privacy. Access html beautifier offline and html formatter offline for secure, local processing.
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">API & Library Integration</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">API & Library Integration</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>API Access:</strong> Integrate html beautifier api and html formatter api into applications for programmatic formatting. The html minifier api provides RESTful HTML compression. Use html beautifier library, html formatter library, and html minifier library for code-level integration.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>CDN & Package Distribution:</strong> Load html minifier cdn and html minifier terser cdn for browser-based minification. The html minifier terser npm and html formatter npm packages provide Node.js integration. Install via html minifier package and html minifier version management.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       <strong>Configuration:</strong> Customize with html minifier options and html minifier terser options. The html minifier terser example and html minifier code examples demonstrate usage. Access html minifier com and code beautify html minifier online platforms for quick processing.
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Comparison & Educational Content</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Comparison & Educational Content</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Tool Comparisons:</strong> Compare html minifier terser vs html minifier to choose the right tool. Understand html formatter vs code differences and best html beautifier options. Learn about best html minifier tools and what is minify javascript concepts. The html minify beautify process combines both operations.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>HTML Basics:</strong> Learn why html5 is better than html and understand is b tag deprecated in html5. Study body structure of html and 4 elements of html fundamentals. Compare htm vs html what&apos;s the difference to understand file extensions. These basics help with effective HTML formatting.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Format Variations:</strong> Understand html to min html conversion and html mini concepts. Learn how to minify html code and minify html output best practices. The html minify css operation handles embedded styles. Process html formatter inline styles and html formatter to one line for compact output.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       <strong>Community Resources:</strong> Explore html beautifier reddit and html minifier reddit discussions. Access html formatter w3, html formatter w3schools, html formatter tutorialspoint, and html formatter w3c resources. Join html gigs and html jobs in lahore opportunities. Use html fiverr services and html5 fiverr test 2022 resources. Reference html beautifier github and html minifier github repositories.
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Browser Extensions & Plugins</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Browser Extensions & Plugins</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Browser Integration:</strong> Install html beautifier chrome extension for in-browser formatting. These extensions provide html formatter browser access with one-click beautification. Use html formatter google tools for quick HTML processing while browsing.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       <strong>Additional Tools:</strong> Access html beautifier gem for Ruby, html beautifier css for style integration, and html beautifier extension for various editors. Use html formatter extension vscode, html formatter for vs code, and html formatter in vscode for development environment integration.
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Advanced Features & Variations</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Advanced Features & Variations</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Format Styles:</strong> Use html formatter pretty and beauty format html for aesthetic formatting. The beautiful html formatter, beautifully html, beautiful html, and beautiful html css create visually appealing code. Handle beautifil html typos and html buityfier variations in search.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Specialized Processing:</strong> Process beautify xhtml for XHTML documents and beautify zml for ZML markup. Use html formatter date for date formatting, html formatter bold for emphasis tags, and html formatter table for table structures. The html 5 formatter and html5 beautify tools support modern HTML5 features.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Preview & Testing:</strong> Use html formatter and preview for live previewing, html formatter and compare for diff viewing, and html mcqs quiz for HTML knowledge testing. Access html formatter generator tools and html formatter example templates for learning.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       <strong>Platform-Specific:</strong> Use html formatter nginx for Nginx configs, minify html mkdocs for MkDocs sites, and html formatter asp net core for .NET applications. Handle html formatter django templates, html formatter local for offline processing, and html formatter lazyvim for Lazy Vim users. Additional tools include html formatter biome, html formatter prettier, html formatter lsp, html formatter linter, html formatter leetcode, and html formatter data.
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Additional Tools & Resources</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Additional Tools & Resources</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Formatting Tools:</strong> Access format html beautifier, html beautifier tool, html beautifier formatter, and html beautifier web formatter for various needs. Use html beautifier online tool as the primary resource. The html beautifier code and beautifier code html process source code effectively.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Minification Tools:</strong> Use html minifier download for offline tools, html minify online tool for web access, and html page minifier for full page compression. Access minify html file online and minify html document for document processing. The html minifier com and html js minifier online provide JavaScript integration.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                       <strong>Specialized Keywords:</strong> Handle html minifier ctf for CTF challenges, html minifier replacement for tool alternatives, compress html link for URL compression, minify html nginx for server-side compression, minify html output for build output, minify html in vscode for editor integration, and html formatter ai for AI-powered formatting.
                     </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       <strong>Miscellaneous:</strong> Explore html file banane ka tarika (how to create HTML files in Urdu), html gfxmentor resources, html 155 references, without html for no-HTML approaches, html formatter mason for Mason templates, minify html asp net core for ASP.NET, minify html literals loader for Webpack, and html formatter biome for Biome formatter integration.
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Frequently Asked Questions</h2>
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Frequently Asked Questions</h2>
                     <div className="space-y-4 sm:space-y-5">
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How many HTML tags are there?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">How many HTML tags are there?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           HTML5 currently has over 140 tags, including semantic elements like &lt;header&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;section&gt;, &lt;footer&gt;, and media tags like &lt;video&gt; and &lt;audio&gt;. Common tags include &lt;div&gt;, &lt;p&gt;, &lt;a&gt;, &lt;img&gt;, &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;, &lt;table&gt;, &lt;form&gt;, &lt;input&gt;, and heading tags (&lt;h1&gt; through &lt;h6&gt;). While you don&apos;t need to memorize all tags, understanding the most commonly used 30-40 tags is essential for web development. Our HTML beautifier handles all valid HTML tags and formats them correctly.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">What is H3 in HTML?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">What is H3 in HTML?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           The &lt;h3&gt; tag is a third-level heading in HTML&apos;s hierarchy of six heading levels (H1 through H6). H1 is the most important heading (typically used once per page for the main title), H2 for major sections, and H3 for subsections within H2 sections. H3 tags are important for SEO and document structure, helping search engines understand content hierarchy. When you beautify HTML, proper indentation makes heading structures clearly visible, while minifying HTML preserves the semantic meaning while reducing file size.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How to minify HTML code?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">How to minify HTML code?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           To minify HTML code, use our free HTML minifier tool: paste your HTML, click &quot;Minify&quot;, and copy the compressed result. Minification removes whitespace, line breaks, and optional comments while preserving functionality. For automated workflows, use build tools like Webpack (html-minifier-terser plugin), Gulp (gulp-htmlmin), Vite (vite-plugin-html), or command-line tools. Programming languages offer libraries: JavaScript (html-minifier-terser npm package), Python (htmlmin or minify-html), PHP (HTML_Minifier), and Java (HtmlCompressor). Configure minification options to control comment removal, whitespace handling, and attribute trimming.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Why minify HTML?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Why minify HTML?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Minifying HTML reduces file sizes by 20-40%, improving website performance, load times, and SEO rankings. Smaller files mean faster page loads, reduced bandwidth costs, and better mobile experience. Minified HTML decreases server response times and improves Core Web Vitals scores (LCP, FID, CLS), which are critical ranking factors. For high-traffic sites, minification saves significant bandwidth and hosting costs. While the impact per page may seem small, it compounds across thousands of visitors and multiple pages, making HTML minification a best practice for production websites.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Does minifying HTML help?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Does minifying HTML help?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes, minifying HTML provides measurable benefits: 20-40% file size reduction, faster page load times (100-500ms improvement), improved SEO rankings through better Core Web Vitals, reduced bandwidth consumption, and lower hosting costs for high-traffic sites. While CSS and JavaScript minification typically yield larger savings, HTML minification is still valuable, especially for content-heavy sites with extensive markup. Combined with GZIP compression, minified HTML achieves optimal file sizes. The benefits are cumulative across all page loads, making it worthwhile for production deployments.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Can HTML be minified?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Can HTML be minified?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes, HTML can and should be minified for production. Minification removes unnecessary whitespace, line breaks, comments, and optional tags while maintaining functionality. Unlike beautified HTML (which is readable with proper indentation), minified HTML is compact and optimized for browsers, not humans. All modern build tools support HTML minification. Use beautified HTML during development for readability and debugging, then minify for production deployment. Our tool handles both operations, making it easy to switch between readable and optimized formats.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">What is HTML minifier?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">What is HTML minifier?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           An HTML minifier is a tool that compresses HTML code by removing unnecessary characters (whitespace, line breaks, comments) without changing functionality. Popular HTML minifiers include html-minifier-terser (Node.js), our free online HTML minifier, html-minifier by Kangax, and built-in minifiers in Webpack, Vite, and Gulp. Minifiers offer configurable options: remove comments, collapse whitespace, remove optional tags, minify inline CSS/JavaScript, and preserve specific formatting. Choose a minifier based on your workflow: online tools for quick tasks, CLI tools for automation, or build tool plugins for integrated workflows.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">What is HTML minifier tool?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">What is HTML minifier tool?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           HTML minifier tools compress HTML files by removing whitespace, comments, and unnecessary characters. Our free online HTML minifier tool offers instant minification with one-click processing, no installation required, customizable options (indent size, comment removal), and immediate download capability. For developers, popular tools include html-minifier-terser (npm package for Node.js), HTMLMinifier by Kangax (JavaScript library), Python&apos;s htmlmin package, PHP HTML_Minifier class, and build tool integrations (Webpack, Gulp, Vite). Choose online tools for quick tasks or programmatic tools for automated build pipelines.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">HTML minifier JavaScript?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">HTML minifier JavaScript?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           JavaScript HTML minifiers include html-minifier-terser (most popular npm package with 10M+ weekly downloads), html-minifier by Kangax (original implementation), and browser-based solutions for client-side minification. Install via npm: &quot;npm install html-minifier-terser&quot; or yarn: &quot;yarn add html-minifier-terser&quot;. Basic usage: import minify from &apos;html-minifier-terser&apos;; const result = await minify(html, options);. Options include removeComments, collapseWhitespace, minifyJS, minifyCSS, and more. For browser usage, load from CDN or bundle with your application for client-side HTML processing.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Why minify JavaScript?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Why minify JavaScript?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Minifying JavaScript reduces file sizes by 30-60%, dramatically improving load times and performance. JavaScript minification removes whitespace, shortens variable names, removes comments, and eliminates dead code. For JavaScript-heavy applications, minification is critical: faster script parsing, reduced network transfer time, improved Time to Interactive (TTI), better mobile performance, and lower bandwidth costs. Modern JavaScript bundles can be several megabytes; minification combined with compression (GZIP/Brotli) reduces this significantly. Use tools like Terser, UglifyJS, or build tool integrations (Webpack, Vite) for automated JavaScript minification in production builds.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Is HTML, CSS, and JavaScript enough for web development?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Is HTML, CSS, and JavaScript enough for web development?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           HTML, CSS, and JavaScript form the foundation of web development and are sufficient for building functional websites and applications. However, modern web development often requires additional skills: frameworks (React, Vue, Angular), backend languages (Node.js, Python, PHP), databases (MongoDB, PostgreSQL, MySQL), version control (Git), build tools (Webpack, Vite), package managers (npm, yarn), and deployment platforms (Vercel, Netlify, AWS). Start with HTML/CSS/JavaScript fundamentals, then expand based on project needs. For static sites, HTML/CSS/JavaScript is enough. For complex applications, additional tools and frameworks significantly improve development efficiency and maintainability.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How much HTML is enough?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">How much HTML is enough?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           To start building websites, learn these HTML essentials: document structure (DOCTYPE, html, head, body), common tags (div, p, a, img, ul/ol/li, table, form, input, button), semantic elements (header, nav, main, article, section, footer), heading hierarchy (h1-h6), forms and validation, and multimedia (video, audio, picture). This covers about 30-40 commonly used tags. Master these fundamentals (2-4 weeks of practice), then learn advanced topics (accessibility, SEO optimization, meta tags) as needed. The key is practical application—build real projects to reinforce learning. You don&apos;t need to memorize all 140+ HTML tags; focus on frequently used ones and reference documentation for specialized tags.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How much HTML, CSS, and JS is enough?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">How much HTML, CSS, and JS is enough?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           A solid foundation requires: HTML (semantic structure, forms, accessibility, 4-6 weeks), CSS (layout techniques—Flexbox, Grid, responsive design, 6-8 weeks), JavaScript (DOM manipulation, events, ES6+ features, async programming, 8-12 weeks). You&apos;re ready for basic projects when you can build a responsive, interactive website from scratch. For professional development, continue learning frameworks (React, Vue), build tools (Webpack, Vite), version control (Git), and backend basics. Focus on project-based learning—build portfolios, clone popular sites, and contribute to open source. The learning never stops; web technologies evolve continuously, but strong fundamentals make adapting to new tools easier.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How much HTML CSS?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">How much HTML CSS?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           For job-ready HTML/CSS skills, master: HTML5 semantic elements, forms with validation, accessibility (ARIA, semantic markup), SEO best practices; CSS Flexbox and Grid for layouts, responsive design and media queries, CSS variables and preprocessors (Sass), animations and transitions, cross-browser compatibility. This typically requires 3-4 months of consistent practice. Portfolio-ready skills include building responsive layouts from designs, optimizing for performance, writing maintainable CSS (BEM, SMACSS), and debugging cross-browser issues. Many developers learn HTML/CSS basics in weeks but spend months mastering advanced techniques and best practices through real projects.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">How much HTML tags?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">How much HTML tags?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Focus on learning approximately 30-40 commonly used HTML tags that cover 95% of web development needs: structural (div, span, header, nav, main, section, article, footer), text content (h1-h6, p, a, strong, em), lists (ul, ol, li), tables (table, thead, tbody, tr, th, td), forms (form, input, textarea, select, button, label), media (img, video, audio, picture, source), and metadata (meta, link, script, style). You don&apos;t need to memorize all 140+ HTML5 tags. Learn common tags thoroughly, then reference documentation for specialized tags (canvas, svg, details, summary) as needed for specific projects.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Who maintains HTML?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Who maintains HTML?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           HTML is maintained by the World Wide Web Consortium (W3C) and the Web Hypertext Application Technology Working Group (WHATWG). The WHATWG, formed by Apple, Mozilla, Opera, and Google in 2004, develops the HTML Living Standard—a continuously updated specification. Major browser vendors (Google Chrome, Mozilla Firefox, Apple Safari, Microsoft Edge) implement HTML standards and contribute to specification development. This collaborative approach ensures HTML evolves to meet modern web needs while maintaining backward compatibility. Developers can participate in the standardization process through public feedback, bug reports, and specification discussions on GitHub.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Who maintains the CSS specifications?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Who maintains the CSS specifications?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           CSS specifications are maintained by the CSS Working Group, part of the World Wide Web Consortium (W3C). The working group includes representatives from major browser vendors, web developers, and industry experts. CSS development follows a modular approach—different CSS features (Flexbox, Grid, Animations, Variables) are developed as separate specifications at different maturity levels. Browser vendors implement and test features, providing feedback that shapes the specifications. Developers can track CSS feature development through the W3C website, GitHub repositories, and browser implementation status on platforms like Can I Use and MDN Web Docs.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Why is HTML used to design web pages?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Why is HTML used to design web pages?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           HTML (HyperText Markup Language) is the standard language for creating web pages because it provides semantic structure, is universally supported by all browsers, enables accessibility through proper markup, supports SEO through semantic elements and metadata, integrates seamlessly with CSS (styling) and JavaScript (interactivity), and is human-readable and easy to learn. HTML defines content structure and meaning, not appearance—CSS handles presentation while JavaScript adds interactivity. This separation of concerns makes websites maintainable, accessible, and search engine friendly. HTML&apos;s evolution (HTML5) added semantic elements, multimedia support, and APIs, making it the foundation of modern web development.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">What are HTML advantages?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">What are HTML advantages?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           HTML advantages include: 1) Easy to learn—simple syntax and intuitive structure; 2) Universal browser support—works on all devices and browsers; 3) SEO-friendly—semantic markup helps search engines understand content; 4) Accessibility—proper HTML enables screen readers and assistive technologies; 5) Free and open standard—no licensing costs; 6) Lightweight—minimal file size for fast loading; 7) Integration—works seamlessly with CSS and JavaScript; 8) Platform-independent—runs on any operating system; 9) Rich multimedia support—native video, audio, and graphics; 10) Evolving standard—continuously updated with new features (HTML5, HTML Living Standard). These advantages make HTML the foundation of web development for over 30 years.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-2">Will Peavy HTML minifier?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Will Peavy HTML minifier?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Will Peavy is the developer behind html-minifier-terser, a widely-used HTML minification tool. His work on maintaining and improving the html-minifier project (originally by Kangax) has made it one of the most popular HTML minification libraries, with over 10 million weekly npm downloads. The html-minifier-terser package provides robust HTML minification with extensive configuration options, supports minifying inline CSS and JavaScript, handles edge cases and malformed HTML gracefully, and integrates with popular build tools (Webpack, Gulp, Rollup, Vite). Developers can use html-minifier-terser through npm, CDN, or online tools. The project is open-source and actively maintained on GitHub.
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-500">Related Developer Tools</h2>
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Related Developer Tools</h2>
                     <div className="grid gap-2 sm:gap-3 grid-cols-1 sm:grid-cols-2 text-sm">
                       <Link 
                         href="/dev-tools/json-to-csv"
-                        className="block p-2.5 sm:p-3 bg-black border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
+                        className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-1">JSON to CSV Converter</h3>
-                        <p className="text-xs text-gray-400">Convert JSON data to CSV format</p>
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">JSON to CSV Converter</h3>
+                        <p className="text-xs text-muted-foreground">Convert JSON data to CSV format</p>
                       </Link>
                       <Link 
                         href="/dev-tools/regex-tester"
-                        className="block p-2.5 sm:p-3 bg-black border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
+                        className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-1">Regex Tester</h3>
-                        <p className="text-xs text-gray-400">Test regular expressions online</p>
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">Regex Tester</h3>
+                        <p className="text-xs text-muted-foreground">Test regular expressions online</p>
                       </Link>
                       <Link 
                         href="/dev-tools/jwt-decoder"
-                        className="block p-2.5 sm:p-3 bg-black border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
+                        className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-1">JWT Decoder</h3>
-                        <p className="text-xs text-gray-400">Decode and inspect JSON Web Tokens</p>
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">JWT Decoder</h3>
+                        <p className="text-xs text-muted-foreground">Decode and inspect JSON Web Tokens</p>
                       </Link>
                       <Link 
                         href="/dev-tools"
-                        className="block p-2.5 sm:p-3 bg-black border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
+                        className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
-                        <h3 className="font-semibold text-sm sm:text-base text-green-500 mb-1">All Developer Tools</h3>
-                        <p className="text-xs text-gray-400">Explore our complete toolkit</p>
+                        <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">All Developer Tools</h3>
+                        <p className="text-xs text-muted-foreground">Explore our complete toolkit</p>
                       </Link>
                     </div>
                   </div>
@@ -1272,7 +1272,7 @@ export default function HTMLBeautifierPage() {
               {/* Desktop Sidebar with AdSense (sticky, hidden on mobile/tablet) */}
               <div className="hidden lg:block w-72 flex-shrink-0">
                 <div className="sticky top-32 space-y-6">
-                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-black" />
+                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
                 </div>
               </div>
             </div>

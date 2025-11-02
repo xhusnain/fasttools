@@ -111,7 +111,7 @@ export default function ApiDocsPage() {
 
             {/* API Services Grid */}
             <div className="mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-orange-500 mb-6 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 flex items-center gap-3">
                 <Code className="h-7 w-7" />
                 Available APIs
               </h2>
@@ -122,15 +122,15 @@ export default function ApiDocsPage() {
                     <Link
                       key={api.id}
                       href={api.href}
-                      className="bg-black border border-orange-500/40 rounded-xl p-6 hover:border-orange-500/70 transition-all duration-300 group relative h-full flex flex-col"
+                      className="bg-card border border-border/40 rounded-xl p-6 hover:border-border/70 transition-all duration-300 group relative h-full flex flex-col"
                     >
                       {/* Icon in top-right */}
                       <div className="absolute top-4 right-4 flex items-center gap-2">
-                        <div className="h-10 w-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
-                          <Icon className="h-5 w-5 text-orange-500" />
+                        <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                          <Icon className="h-5 w-5 text-primary" />
                         </div>
                         {api.status === "active" && (
-                          <span className="px-2 py-1 text-xs font-bold bg-green-500/10 text-green-500 border border-green-500/30 rounded">
+                          <span className="px-2 py-1 text-xs font-bold bg-heading-accent-border/10 text-heading-accent border border-heading-accent-border/30 rounded">
                             Active
                           </span>
                         )}
@@ -138,14 +138,14 @@ export default function ApiDocsPage() {
 
                       {/* Content */}
                       <div className="pr-20 flex-1 flex flex-col">
-                        <h3 className="text-lg font-bold text-green-500 mb-2 group-hover:text-green-400 transition-colors">
+                        <h3 className="text-lg font-bold text-heading-accent mb-2 group-hover:text-heading-accent transition-colors">
                           {api.name}
                         </h3>
-                        <p className="text-xs text-orange-500 mb-3 font-bold">Version {api.version}</p>
-                        <p className="text-sm text-gray-400 leading-relaxed mb-4 flex-1">
+                        <p className="text-xs text-primary mb-3 font-bold">Version {api.version}</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
                           {api.description}
                         </p>
-                        <div className="flex items-center gap-2 text-orange-500 group-hover:text-orange-400 transition-colors">
+                        <div className="flex items-center gap-2 text-primary group-hover:text-orange-400 transition-colors">
                           <span className="text-sm font-bold">View Docs</span>
                           <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                         </div>
@@ -159,13 +159,13 @@ export default function ApiDocsPage() {
             {/* More Coming Soon Section */}
             <div className="mt-16 md:mt-20 p-8 md:p-12">
               <div className="text-center max-w-3xl mx-auto">
-                <h2 className="text-2xl md:text-3xl font-bold text-orange-500 mb-4">More APIs Coming Soon</h2>
-                <p className="text-base md:text-lg text-gray-400 leading-relaxed mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">More APIs Coming Soon</h2>
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
                   We're constantly expanding our API offerings. If you need a specific API that's not available, please email us and we'll make it for you.
                 </p>
                 <a
                   href="mailto:fasttools.store@outlook.com"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-foreground font-bold rounded-lg hover:bg-primary transition-colors"
                 >
                   Contact Us
                   <ArrowRight className="h-5 w-5" />

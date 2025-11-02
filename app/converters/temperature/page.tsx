@@ -224,33 +224,33 @@ export default function TemperatureConverterPage() {
               </div>
 
               {/* Tool */}
-              <div className="p-3 sm:p-4 rounded-lg bg-black border border-border shadow">
+              <div className="p-3 sm:p-4 rounded-lg bg-card border border-border shadow">
                 <TemperatureConverter />
               </div>
 
 
               {/* Content Sections */}
               <div className="space-y-4 animate-fade-in-up">
-                <div className="p-3 sm:p-4 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-sm md:text-lg font-bold mb-2 text-orange-500">How to Convert Temperatures</h2>
-                  <h3 className="text-sm md:text-base font-bold mb-2 text-green-500">1) Enter a Value in °C or °F</h3>
-                  <ul className="list-disc pl-4 text-gray-400 text-xs">
+                <div className="p-3 sm:p-4 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-sm md:text-lg font-bold mb-2 text-foreground">How to Convert Temperatures</h2>
+                  <h3 className="text-sm md:text-base font-bold mb-2 text-heading-accent">1) Enter a Value in °C or °F</h3>
+                  <ul className="list-disc pl-4 text-muted-foreground text-xs">
                     <li>Type a temperature in Celsius or Fahrenheit and the other updates automatically.</li>
                     <li>Copy results or round to common cooking increments.</li>
                   </ul>
-                  <h3 className="text-sm md:text-base font-bold mt-3 mb-2 text-green-500">2) Understand the Formula</h3>
-                  <ul className="list-disc pl-4 text-gray-400 text-xs">
+                  <h3 className="text-sm md:text-base font-bold mt-3 mb-2 text-heading-accent">2) Understand the Formula</h3>
+                  <ul className="list-disc pl-4 text-muted-foreground text-xs">
                     <li>°F = (°C × 9/5) + 32</li>
                     <li>°C = (°F − 32) × 5/9</li>
                   </ul>
                 </div>
 
-                <div className="p-3 sm:p-4 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-sm md:text-lg font-bold mb-2 text-orange-500">Temperature Scale Comparison</h2>
-                  <p className="text-gray-400 text-xs mb-2">
+                <div className="p-3 sm:p-4 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-sm md:text-lg font-bold mb-2 text-foreground">Temperature Scale Comparison</h2>
+                  <p className="text-muted-foreground text-xs mb-2">
                     Understanding different temperature scales helps you work with international recipes, weather reports, and scientific data:
                   </p>
-                  <ul className="list-disc pl-4 text-gray-400 text-xs">
+                  <ul className="list-disc pl-4 text-muted-foreground text-xs">
                     <li><strong>Celsius (°C):</strong> Water freezes at 0°C, boils at 100°C</li>
                     <li><strong>Fahrenheit (°F):</strong> Water freezes at 32°F, boils at 212°F</li>
                     <li><strong>Kelvin (K):</strong> Absolute zero at 0K, same degree size as Celsius</li>
@@ -258,12 +258,12 @@ export default function TemperatureConverterPage() {
                   </ul>
                 </div>
 
-                <div className="p-3 sm:p-4 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-sm md:text-lg font-bold mb-2 text-orange-500">Common Temperature Reference Points</h2>
-                  <p className="text-gray-400 text-xs mb-2">
+                <div className="p-3 sm:p-4 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-sm md:text-lg font-bold mb-2 text-foreground">Common Temperature Reference Points</h2>
+                  <p className="text-muted-foreground text-xs mb-2">
                     These reference points help you understand temperature relationships:
                   </p>
-                  <ul className="list-disc pl-4 text-gray-400 text-xs">
+                  <ul className="list-disc pl-4 text-muted-foreground text-xs">
                     <li><strong>Absolute Zero:</strong> -273.15°C / -459.67°F (0K / 0°R)</li>
                     <li><strong>Dry Ice:</strong> -78.5°C / -109.3°F</li>
                     <li><strong>Water Freezing:</strong> 0°C / 32°F</li>
@@ -274,20 +274,20 @@ export default function TemperatureConverterPage() {
                   </ul>
                 </div>
 
-                <div className="p-3 sm:p-4 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-sm md:text-lg font-bold mb-2 text-orange-500">Cooking Temperature Guide</h2>
-                  <p className="text-gray-400 text-xs mb-2">
+                <div className="p-3 sm:p-4 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-sm md:text-lg font-bold mb-2 text-foreground">Cooking Temperature Guide</h2>
+                  <p className="text-muted-foreground text-xs mb-2">
                     Essential cooking temperatures for different techniques and foods:
                   </p>
-                  <h3 className="text-xs md:text-sm font-bold mb-1 text-green-500">Baking and Roasting</h3>
-                  <ul className="list-disc pl-4 text-gray-400 text-xs mb-2">
+                  <h3 className="text-xs md:text-sm font-bold mb-1 text-heading-accent">Baking and Roasting</h3>
+                  <ul className="list-disc pl-4 text-muted-foreground text-xs mb-2">
                     <li><strong>Slow Baking:</strong> 120°C / 250°F - Cakes, breads</li>
                     <li><strong>Moderate Baking:</strong> 180°C / 350°F - Cookies, muffins</li>
                     <li><strong>Hot Baking:</strong> 220°C / 425°F - Pizzas, pastries</li>
                     <li><strong>Very Hot:</strong> 250°C / 480°F - Bread crusts, pizza stones</li>
                   </ul>
-                  <h3 className="text-xs md:text-sm font-bold mb-1 text-green-500">Meat Cooking Temperatures</h3>
-                  <ul className="list-disc pl-4 text-gray-400 text-xs">
+                  <h3 className="text-xs md:text-sm font-bold mb-1 text-heading-accent">Meat Cooking Temperatures</h3>
+                  <ul className="list-disc pl-4 text-muted-foreground text-xs">
                     <li><strong>Rare Beef:</strong> 52°C / 125°F</li>
                     <li><strong>Medium Rare:</strong> 57°C / 135°F</li>
                     <li><strong>Medium:</strong> 63°C / 145°F</li>
@@ -296,12 +296,12 @@ export default function TemperatureConverterPage() {
                   </ul>
                 </div>
 
-                <div className="p-3 sm:p-4 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-sm md:text-lg font-bold mb-2 text-orange-500">Weather Temperature Ranges</h2>
-                  <p className="text-gray-400 text-xs mb-2">
+                <div className="p-3 sm:p-4 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-sm md:text-lg font-bold mb-2 text-foreground">Weather Temperature Ranges</h2>
+                  <p className="text-muted-foreground text-xs mb-2">
                     Understanding weather temperature ranges helps you dress appropriately and plan activities:
                   </p>
-                  <ul className="list-disc pl-4 text-gray-400 text-xs">
+                  <ul className="list-disc pl-4 text-muted-foreground text-xs">
                     <li><strong>Extreme Cold:</strong> Below -18°C / 0°F</li>
                     <li><strong>Very Cold:</strong> -18°C to -7°C / 0°F to 20°F</li>
                     <li><strong>Cold:</strong> -7°C to 4°C / 20°F to 40°F</li>
@@ -314,12 +314,12 @@ export default function TemperatureConverterPage() {
                 </div>
 
                 {/* Comprehensive FAQ Section */}
-                <div className="p-6 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-2xl font-bold mb-6 text-orange-500">Temperature Conversion FAQ - Everything You Need to Know</h2>
-                  <div className="space-y-6 text-sm text-gray-400">
+                <div className="p-6 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-2xl font-bold mb-6 text-foreground">Temperature Conversion FAQ - Everything You Need to Know</h2>
+                  <div className="space-y-6 text-sm text-muted-foreground">
                     
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">1. What's the easiest way to convert temperatures between Celsius and Fahrenheit?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">1. What's the easiest way to convert temperatures between Celsius and Fahrenheit?</h3>
                       <p className="mb-3">The most straightforward method is using our online temperature converter, which provides instant and accurate results. However, understanding the conversion formulas helps you convert temperatures manually when needed.</p>
                       <p className="mb-3">The standard formulas are:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
@@ -335,7 +335,7 @@ export default function TemperatureConverterPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">2. Why do different countries use different temperature scales, and which one should I use?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">2. Why do different countries use different temperature scales, and which one should I use?</h3>
                       <p className="mb-3">The choice of temperature scale is largely historical and cultural. The Fahrenheit scale was developed by Daniel Gabriel Fahrenheit in the early 18th century and became standard in English-speaking countries, particularly the United States. The Celsius scale, introduced by Anders Celsius in 1742, gained popularity in countries adopting the metric system.</p>
                       <p className="mb-3">Today, most countries worldwide use Celsius for everyday temperature measurements, while the United States continues to use Fahrenheit. In scientific contexts, the Kelvin scale is preferred because it starts from absolute zero, providing a direct relationship with thermal energy.</p>
                       <p className="mb-3">When choosing which scale to use, consider your audience and context:</p>
@@ -349,7 +349,7 @@ export default function TemperatureConverterPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">3. How do I convert cooking temperatures, and why do oven temperatures matter so much?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">3. How do I convert cooking temperatures, and why do oven temperatures matter so much?</h3>
                       <p className="mb-3">Cooking temperature conversion is crucial for successful recipes, especially when following international recipes or using ovens with different temperature scales. Even small temperature differences can significantly affect cooking results.</p>
                       <p className="mb-3">Common cooking temperature conversions include:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
@@ -371,7 +371,7 @@ export default function TemperatureConverterPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">4. What's the difference between body temperature measurements and why does it matter for medical purposes?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">4. What's the difference between body temperature measurements and why does it matter for medical purposes?</h3>
                       <p className="mb-3">Body temperature measurement is critical for health monitoring, and understanding the different scales helps ensure accurate readings. Normal body temperature varies slightly depending on the measurement method and individual factors.</p>
                       <p className="mb-3">Standard body temperature measurements:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
@@ -392,7 +392,7 @@ export default function TemperatureConverterPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">5. How does altitude affect temperature measurements and conversions?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">5. How does altitude affect temperature measurements and conversions?</h3>
                       <p className="mb-3">Altitude significantly impacts temperature-related phenomena, particularly boiling points, which affects cooking, scientific experiments, and industrial processes. Understanding these effects is crucial for accurate temperature management in various applications.</p>
                       <p className="mb-3">The primary effect of altitude on temperature is through atmospheric pressure changes:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
@@ -413,7 +413,7 @@ export default function TemperatureConverterPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">6. What are the most common temperature conversion mistakes, and how can I avoid them?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">6. What are the most common temperature conversion mistakes, and how can I avoid them?</h3>
                       <p className="mb-3">Temperature conversion errors are surprisingly common and can lead to significant problems in cooking, scientific work, and everyday applications. Understanding these common mistakes helps ensure accurate conversions.</p>
                       <p className="mb-3">The most frequent conversion mistakes include:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
@@ -436,7 +436,7 @@ export default function TemperatureConverterPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">7. How do I convert temperatures for scientific experiments and industrial applications?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">7. How do I convert temperatures for scientific experiments and industrial applications?</h3>
                       <p className="mb-3">Scientific and industrial temperature conversions require higher precision and often involve additional scales like Kelvin. Understanding the appropriate scale and conversion method is crucial for accurate results and safety.</p>
                       <p className="mb-3">For scientific applications, the Kelvin scale is often preferred because:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
@@ -469,7 +469,7 @@ export default function TemperatureConverterPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold mb-3 text-green-500">8. What are some practical tips for using temperature conversions in everyday life?</h3>
+                      <h3 className="text-lg font-bold mb-3 text-heading-accent">8. What are some practical tips for using temperature conversions in everyday life?</h3>
                       <p className="mb-3">Temperature conversions are part of daily life for many people, whether traveling, cooking, or working with international colleagues. Here are practical tips to make temperature conversions easier and more accurate.</p>
                       <p className="mb-3">For travel and weather:</p>
                       <ul className="list-disc pl-5 mb-3 space-y-1">
@@ -508,9 +508,9 @@ export default function TemperatureConverterPage() {
 
 
                 {/* Related Tools */}
-                <div className="p-3 sm:p-4 rounded-lg bg-black border border-border shadow">
-                  <h2 className="text-sm md:text-lg font-bold mb-2 text-orange-500">Related Tools</h2>
-                  <ul className="list-disc pl-4 text-gray-400 text-xs">
+                <div className="p-3 sm:p-4 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-sm md:text-lg font-bold mb-2 text-foreground">Related Tools</h2>
+                  <ul className="list-disc pl-4 text-muted-foreground text-xs">
                     <li><Link href="/converters/length">Length Converter</Link></li>
                     <li><Link href="/converters/file-size">File Size Converter</Link></li>
                     <li><Link href="/converters/timezone">Timezone Converter</Link></li>
@@ -522,7 +522,7 @@ export default function TemperatureConverterPage() {
             {/* Desktop Sidebar with AdSense */}
             <div className="hidden lg:block w-56 xl:w-64">
               <div className="sticky top-24 space-y-4">
-                <AdSpace slot="sidebar" className="w-full h-72 border border-border rounded-xl shadow-sm bg-black" />
+                <AdSpace slot="sidebar" className="w-full h-72 border border-border rounded-xl shadow-sm bg-card" />
               </div>
             </div>
           </div>

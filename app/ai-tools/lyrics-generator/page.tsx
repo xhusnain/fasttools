@@ -421,62 +421,62 @@ export default function LyricsGeneratorPage() {
                 {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-400">
                   {/* Features Section */}
-                  <div className="p-6 rounded-lg bg-black border-2 border-primary/30 shadow-sm">
-                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
+                  <div className="p-6 rounded-lg bg-card border-2 border-primary/30 shadow-sm">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <Sparkles className="h-6 w-6 text-primary" />
                       AI-Powered Lyrics Generation Features
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                      <div className="p-4 rounded-lg bg-black border border-border">
+                      <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-bold text-sm mb-2 flex items-center gap-2">
                           <Music className="h-4 w-4 text-primary" />
                           Multiple Genres Support
                         </h3>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                        <p className="text-xs text-muted-foreground leading-relaxed">
                           Generate lyrics for pop, rock, hip-hop, rap, country, R&B, jazz, folk, electronic, blues, and more. Our AI understands the unique characteristics and conventions of each musical style.
                         </p>
                       </div>
-                      <div className="p-4 rounded-lg bg-black border border-border">
+                      <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-bold text-sm mb-2 flex items-center gap-2">
                           <Zap className="h-4 w-4 text-accent" />
                           Customizable Themes & Moods
                         </h3>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                        <p className="text-xs text-muted-foreground leading-relaxed">
                           Create lyrics based on specific themes (love, heartbreak, celebration, struggle) and moods (happy, sad, energetic, mellow). Perfect for expressing any emotion through music.
                         </p>
                       </div>
-                      <div className="p-4 rounded-lg bg-black border border-border">
+                      <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-bold text-sm mb-2 flex items-center gap-2">
-                          <Code className="h-4 w-4 text-green-600" />
+                          <Code className="h-4 w-4 text-heading-accent" />
                           Song Structure Templates
                         </h3>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                        <p className="text-xs text-muted-foreground leading-relaxed">
                           Generate complete song structures with verses, chorus, bridge, pre-chorus, and outros. Our AI understands proper song formatting and creates cohesive lyrical flow.
                         </p>
                       </div>
-                      <div className="p-4 rounded-lg bg-black border border-border">
+                      <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-bold text-sm mb-2 flex items-center gap-2">
                           <Mic className="h-4 w-4 text-secondary-accent" />
                           Rhyme Scheme Optimization
                         </h3>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                        <p className="text-xs text-muted-foreground leading-relaxed">
                           AI-optimized rhyme schemes (AABB, ABAB, ABCB) ensure your lyrics have natural flow and musicality. Perfect for creating memorable hooks and catchy verses.
                         </p>
                       </div>
                     </div>
-                    <div className="p-4 rounded-lg bg-orange-50 dark:bg-slate-800 border border-orange-500/40">
+                    <div className="p-4 rounded-lg bg-orange-50 dark:bg-card border border-border/40">
                       <p className="text-sm font-semibold text-primary">
                         ⭐ 100% Original Content: Every lyric generated is unique and copyright-free. Use them in your commercial projects without worry!
                       </p>
                     </div>
                   </div>
                   
-                  <div className="p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-xl font-bold mb-4 text-orange-500">How to Use the AI Lyrics Generator</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                  <div className="p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-foreground">How to Use the AI Lyrics Generator</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                       Creating original song lyrics with our AI generator is simple and intuitive. Follow these steps to generate creative lyrics for your next hit song:
                     </p>
-                    <ol className="list-decimal list-inside space-y-2 text-sm text-gray-400 mb-4">
+                    <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground mb-4">
                       <li>Enter your song theme, topic, or creative inspiration</li>
                       <li>Select your preferred music genre (pop, rock, hip-hop, country, R&B, etc.)</li>
                       <li>Choose the mood or emotion you want to convey (happy, sad, energetic, romantic)</li>
@@ -487,13 +487,13 @@ export default function LyricsGeneratorPage() {
                       <li>Copy the lyrics and use them in your music project</li>
                     </ol>
 
-                    <h3 className="text-lg font-bold mb-3 text-green-500">Why Choose Our AI Lyrics Generator?</h3>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                    <h3 className="text-lg font-bold mb-3 text-heading-accent">Why Choose Our AI Lyrics Generator?</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                       Creating compelling song lyrics can be one of the most challenging aspects of music composition. Writer's block, repetitive themes, and finding the right words to express emotions are common struggles for songwriters. Our AI lyrics generator helps you overcome these challenges by providing instant creative inspiration, exploring new lyrical directions, and generating original content that resonates with your audience. Whether you're a professional songwriter, aspiring musician, recording artist, or creative hobbyist, our tool provides the structure, inspiration, and quality needed to create memorable songs that connect with listeners.
                     </p>
 
-                    <h3 className="text-lg font-bold mb-3 text-green-500">Key Features of Our Lyrics Generator</h3>
-                    <ul className="list-disc list-inside space-y-2 text-sm text-gray-400">
+                    <h3 className="text-lg font-bold mb-3 text-heading-accent">Key Features of Our Lyrics Generator</h3>
+                    <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
                       <li>AI-powered lyrics generation for all music genres and subgenres</li>
                       <li>Customizable themes, moods, and emotional tones</li>
                       <li>Multiple song structures (verse, chorus, bridge, pre-chorus, outro)</li>
@@ -509,12 +509,12 @@ export default function LyricsGeneratorPage() {
                     </ul>
                   </div>
 
-                  <div className="p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-xl font-bold mb-4 text-orange-500">Songwriting Tips and Best Practices</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                  <div className="p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-foreground">Songwriting Tips and Best Practices</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                       To create compelling song lyrics that connect emotionally with your audience and stand the test of time, consider these proven songwriting techniques and best practices:
                     </p>
-                    <ul className="list-disc list-inside space-y-2 text-sm text-gray-400 mb-4">
+                    <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground mb-4">
                       <li><strong>Start with a strong hook:</strong> Create a memorable opening line or phrase that captures attention immediately</li>
                       <li><strong>Use vivid imagery:</strong> Incorporate sensory details (sight, sound, touch, taste, smell) to paint pictures with words</li>
                       <li><strong>Show, don't tell:</strong> Use specific examples and stories rather than abstract statements</li>
@@ -527,11 +527,11 @@ export default function LyricsGeneratorPage() {
                       <li><strong>Get feedback:</strong> Share with trusted friends, fellow musicians, or mentors for constructive criticism</li>
                     </ul>
 
-                    <h3 className="text-lg font-bold mb-3 text-green-500">Genre-Specific Lyric Writing Techniques</h3>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                    <h3 className="text-lg font-bold mb-3 text-heading-accent">Genre-Specific Lyric Writing Techniques</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                       Different music genres have distinct lyrical characteristics, conventions, and audience expectations. Understanding these nuances helps create authentic, genre-appropriate lyrics:
                     </p>
-                    <ul className="list-disc list-inside space-y-2 text-sm text-gray-400">
+                    <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
                       <li><strong>Pop Music:</strong> Catchy hooks, universal themes (love, relationships, self-empowerment), simple language, repetitive choruses, and relatable emotions that appeal to mainstream audiences</li>
                       <li><strong>Rock Music:</strong> Raw emotional expression, themes of rebellion and independence, personal struggles, social commentary, and powerful, direct language</li>
                       <li><strong>Hip-Hop/Rap:</strong> Rhythmic flow and cadence, complex wordplay and metaphors, storytelling and narrative arcs, cultural references, internal rhymes, and multi-syllabic rhyme schemes</li>
@@ -543,220 +543,220 @@ export default function LyricsGeneratorPage() {
                     </ul>
                   </div>
 
-                  <div className="p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-xl font-bold mb-4 text-orange-500">Common Songwriting Challenges and Solutions</h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                  <div className="p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-foreground">Common Songwriting Challenges and Solutions</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                       Every songwriter, from beginners to professionals, faces creative challenges during the writing process. Here are common issues and how our AI lyrics generator can help you overcome them:
                     </p>
                     <div className="space-y-3">
                       <div className="p-3 rounded-lg bg-muted">
                         <h4 className="font-semibold text-sm mb-1">Writer's Block</h4>
-                        <p className="text-xs text-gray-400">Use AI-generated suggestions to spark new ideas, break through creative barriers, and explore fresh perspectives you might not have considered.</p>
+                        <p className="text-xs text-muted-foreground">Use AI-generated suggestions to spark new ideas, break through creative barriers, and explore fresh perspectives you might not have considered.</p>
                       </div>
                       <div className="p-3 rounded-lg bg-muted">
                         <h4 className="font-semibold text-sm mb-1">Repetitive Themes</h4>
-                        <p className="text-xs text-gray-400">Explore new topics, unconventional metaphors, and unique angles with AI-generated concepts that push your creativity beyond comfortable patterns.</p>
+                        <p className="text-xs text-muted-foreground">Explore new topics, unconventional metaphors, and unique angles with AI-generated concepts that push your creativity beyond comfortable patterns.</p>
                       </div>
                       <div className="p-3 rounded-lg bg-muted">
                         <h4 className="font-semibold text-sm mb-1">Rhyme Struggles</h4>
-                        <p className="text-xs text-gray-400">Get AI assistance with finding perfect rhymes, avoiding forced rhymes, and discovering creative alternatives that maintain natural flow.</p>
+                        <p className="text-xs text-muted-foreground">Get AI assistance with finding perfect rhymes, avoiding forced rhymes, and discovering creative alternatives that maintain natural flow.</p>
                       </div>
                       <div className="p-3 rounded-lg bg-muted">
                         <h4 className="font-semibold text-sm mb-1">Structure Issues</h4>
-                        <p className="text-xs text-gray-400">Use AI to create well-organized verse-chorus-bridge structures that build tension, release emotion, and keep listeners engaged throughout.</p>
+                        <p className="text-xs text-muted-foreground">Use AI to create well-organized verse-chorus-bridge structures that build tension, release emotion, and keep listeners engaged throughout.</p>
                       </div>
                       <div className="p-3 rounded-lg bg-muted">
                         <h4 className="font-semibold text-sm mb-1">Emotional Expression</h4>
-                        <p className="text-xs text-gray-400">Find the perfect words to convey complex emotions, subtle feelings, and nuanced experiences that resonate deeply with your audience.</p>
+                        <p className="text-xs text-muted-foreground">Find the perfect words to convey complex emotions, subtle feelings, and nuanced experiences that resonate deeply with your audience.</p>
                       </div>
                       <div className="p-3 rounded-lg bg-muted">
                         <h4 className="font-semibold text-sm mb-1">Genre Adaptation</h4>
-                        <p className="text-xs text-gray-400">Learn how to write authentically for different musical styles by studying AI-generated examples that demonstrate genre-specific conventions and techniques.</p>
+                        <p className="text-xs text-muted-foreground">Learn how to write authentically for different musical styles by studying AI-generated examples that demonstrate genre-specific conventions and techniques.</p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-5 rounded-lg bg-black border-2 border-orange-500/30 shadow">
-                    <h2 className="text-2xl font-bold mb-4 text-orange-500 flex items-center gap-2">
+                  <div className="p-5 rounded-lg bg-card border-2 border-border/30 shadow">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       🌍 Multilingual Song Lyrics Generator - Create Songs in 40+ Languages
                     </h2>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                       Our advanced AI lyrics generator supports song creation in over 40 languages, making it the most comprehensive multilingual lyrics generator available online. Whether you need an <strong>English song generator</strong>, <strong>Spanish lyrics generator</strong>, <strong>Hindi song generator</strong>, or lyrics in any other language, our AI delivers authentic, culturally-appropriate content that resonates with native speakers worldwide.
                     </p>
 
-                    <h3 className="text-xl font-bold mb-3 text-orange-500 mt-6">🌎 Popular Language Song Generators</h3>
+                    <h3 className="text-xl font-bold mb-3 text-foreground mt-6">🌎 Popular Language Song Generators</h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                      <div className="p-4 rounded-lg bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 border border-blue-500/40">
-                        <h4 className="font-bold text-sm mb-2 text-blue-700 dark:text-blue-300">🇬🇧 English Song Generator</h4>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                      <div className="p-4 rounded-lg bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 border border-border">
+                        <h4 className="font-bold text-sm mb-2 text-foreground">🇬🇧 English Song Generator</h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
                           Create authentic <strong>English lyrics</strong> with natural idioms, slang, and expressions. Our <strong>English song generator</strong> understands American, British, and international English variations, delivering lyrics that sound native and professional for pop, rock, country, and all English-language genres.
                         </p>
                       </div>
 
-                      <div className="p-4 rounded-lg bg-gradient-to-r from-red-50 to-yellow-50 dark:from-red-950/30 dark:to-yellow-900/30 border border-red-500/40">
-                        <h4 className="font-bold text-sm mb-2 text-red-700 dark:text-red-300">🇪🇸 Spanish Song Generator (Español)</h4>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                      <div className="p-4 rounded-lg bg-gradient-to-r from-red-50 to-yellow-50 dark:from-red-950/30 dark:to-yellow-900/30 border border-border">
+                        <h4 className="font-bold text-sm mb-2 text-foreground">🇪🇸 Spanish Song Generator (Español)</h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
                           Generate <strong>Spanish lyrics</strong> with authentic expressions and cultural references. Our <strong>Spanish song generator</strong> creates lyrics for reggaeton, bachata, salsa, Latin pop, and regional Mexican music, perfect for the growing Latin music market and Spanish-speaking audiences worldwide.
                         </p>
                       </div>
 
-                      <div className="p-4 rounded-lg bg-gradient-to-r from-orange-50 to-green-50 dark:from-orange-950/30 dark:to-green-900/30 border border-orange-500/40">
-                        <h4 className="font-bold text-sm mb-2 text-orange-700 dark:text-orange-300">🇮🇳 Hindi Song Generator (हिन्दी)</h4>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                      <div className="p-4 rounded-lg bg-gradient-to-r from-orange-50 to-heading-accent0 dark:from-orange-950/30 dark:to-heading-accent00/30 border border-border/40">
+                        <h4 className="font-bold text-sm mb-2 text-foreground dark:text-foreground">🇮🇳 Hindi Song Generator (हिन्दी)</h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
                           Create <strong>Hindi lyrics</strong> for Bollywood songs, devotional music, and contemporary Indian pop. Our <strong>Hindi song generator</strong> understands Urdu-Hindi fusion (Hindustani), poetic expressions, and classical Indian musical traditions, delivering lyrics perfect for the massive Indian music industry.
                         </p>
                       </div>
 
-                      <div className="p-4 rounded-lg bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-900/30 border border-green-500/40">
-                        <h4 className="font-bold text-sm mb-2 text-green-700 dark:text-green-300">🇵🇰 Urdu Song Generator (اردو)</h4>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                      <div className="p-4 rounded-lg bg-gradient-to-r from-heading-accent0 to-emerald-50 dark:from-heading-accent50/30 dark:to-emerald-900/30 border border-heading-accent-border/40">
+                        <h4 className="font-bold text-sm mb-2 text-heading-accent dark:text-heading-accent">🇵🇰 Urdu Song Generator (اردو)</h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
                           Generate <strong>Urdu lyrics</strong> with classical poetry influence, ghazal traditions, and contemporary Pakistani music styles. Our <strong>Urdu song generator</strong> creates sophisticated lyrics for qawwali, ghazals, and modern Urdu pop songs, maintaining the language's poetic beauty and cultural richness.
                         </p>
                       </div>
 
-                      <div className="p-4 rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-900/30 border border-purple-500/40">
-                        <h4 className="font-bold text-sm mb-2 text-purple-700 dark:text-purple-300">🇵🇰 Punjabi Song Generator (ਪੰਜਾਬੀ)</h4>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                      <div className="p-4 rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-900/30 border border-border">
+                        <h4 className="font-bold text-sm mb-2 text-foreground">🇵🇰 Punjabi Song Generator (ਪੰਜਾਬੀ)</h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
                           Create <strong>Punjabi lyrics</strong> for bhangra, folk songs, and modern Punjabi pop. Our <strong>Punjabi song generator</strong> delivers energetic, culturally authentic lyrics perfect for the vibrant Punjabi music scene in India, Pakistan, and the global diaspora.
                         </p>
                       </div>
 
-                      <div className="p-4 rounded-lg bg-gradient-to-r from-green-50 to-yellow-50 dark:from-green-950/30 dark:to-yellow-900/30 border border-green-500/40">
-                        <h4 className="font-bold text-sm mb-2 text-green-700 dark:text-green-300">🇧🇩 Bengali Song Generator (বাংলা)</h4>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                      <div className="p-4 rounded-lg bg-gradient-to-r from-heading-accent0 to-yellow-50 dark:from-heading-accent50/30 dark:to-yellow-900/30 border border-heading-accent-border/40">
+                        <h4 className="font-bold text-sm mb-2 text-heading-accent dark:text-heading-accent">🇧🇩 Bengali Song Generator (বাংলা)</h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
                           Generate <strong>Bengali lyrics</strong> influenced by Rabindra Sangeet and modern Bengali music. Our <strong>Bengali song generator</strong> creates lyrics for Bangladesh and West Bengal audiences, maintaining the language's rich literary and musical heritage.
                         </p>
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-bold mb-3 text-orange-500 mt-6">🌏 Asian Language Song Generators</h3>
+                    <h3 className="text-xl font-bold mb-3 text-foreground mt-6">🌏 Asian Language Song Generators</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇨🇳 Chinese Song Generator (中文)</h5>
-                        <p className="text-xs text-gray-400">Create <strong>Chinese lyrics</strong> for Mandopop, Cantopop, and C-pop with traditional poetic elements.</p>
+                        <p className="text-xs text-muted-foreground">Create <strong>Chinese lyrics</strong> for Mandopop, Cantopop, and C-pop with traditional poetic elements.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇯🇵 Japanese Song Generator (日本語)</h5>
-                        <p className="text-xs text-gray-400">Generate <strong>Japanese lyrics</strong> for J-pop, J-rock, and anime songs with cultural authenticity.</p>
+                        <p className="text-xs text-muted-foreground">Generate <strong>Japanese lyrics</strong> for J-pop, J-rock, and anime songs with cultural authenticity.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇰🇷 Korean Song Generator (한국어)</h5>
-                        <p className="text-xs text-gray-400">Create <strong>Korean lyrics</strong> for K-pop, K-R&B, and K-hip hop with modern Seoul slang.</p>
+                        <p className="text-xs text-muted-foreground">Create <strong>Korean lyrics</strong> for K-pop, K-R&B, and K-hip hop with modern Seoul slang.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇮🇳 Tamil Song Generator (தமிழ்)</h5>
-                        <p className="text-xs text-gray-400">Generate <strong>Tamil lyrics</strong> for Kollywood film songs and Carnatic fusion music.</p>
+                        <p className="text-xs text-muted-foreground">Generate <strong>Tamil lyrics</strong> for Kollywood film songs and Carnatic fusion music.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇮🇳 Telugu Song Generator (తెలుగు)</h5>
-                        <p className="text-xs text-gray-400">Create <strong>Telugu lyrics</strong> for Tollywood cinema and Telugu classical music traditions.</p>
+                        <p className="text-xs text-muted-foreground">Create <strong>Telugu lyrics</strong> for Tollywood cinema and Telugu classical music traditions.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇮🇳 Marathi Song Generator (मराठी)</h5>
-                        <p className="text-xs text-gray-400">Generate <strong>Marathi lyrics</strong> for folk music, devotional songs, and contemporary Marathi pop.</p>
+                        <p className="text-xs text-muted-foreground">Generate <strong>Marathi lyrics</strong> for folk music, devotional songs, and contemporary Marathi pop.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇮🇳 Gujarati Song Generator (ગુજરાતી)</h5>
-                        <p className="text-xs text-gray-400">Create <strong>Gujarati lyrics</strong> for garba, dandiya, and modern Gujarati music styles.</p>
+                        <p className="text-xs text-muted-foreground">Create <strong>Gujarati lyrics</strong> for garba, dandiya, and modern Gujarati music styles.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇮🇳 Kannada Song Generator (ಕನ್ನಡ)</h5>
-                        <p className="text-xs text-gray-400">Generate <strong>Kannada lyrics</strong> for Sandalwood film industry and Karnataka folk music.</p>
+                        <p className="text-xs text-muted-foreground">Generate <strong>Kannada lyrics</strong> for Sandalwood film industry and Karnataka folk music.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇮🇳 Malayalam Song Generator (മലയാളം)</h5>
-                        <p className="text-xs text-gray-400">Create <strong>Malayalam lyrics</strong> for Malayalam cinema and Kerala's rich musical heritage.</p>
+                        <p className="text-xs text-muted-foreground">Create <strong>Malayalam lyrics</strong> for Malayalam cinema and Kerala's rich musical heritage.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇹🇭 Thai Song Generator (ไทย)</h5>
-                        <p className="text-xs text-gray-400">Generate <strong>Thai lyrics</strong> for T-pop, Luk Thung, and contemporary Thai music.</p>
+                        <p className="text-xs text-muted-foreground">Generate <strong>Thai lyrics</strong> for T-pop, Luk Thung, and contemporary Thai music.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇻🇳 Vietnamese Song Generator (Tiếng Việt)</h5>
-                        <p className="text-xs text-gray-400">Create <strong>Vietnamese lyrics</strong> for V-pop and traditional Vietnamese music styles.</p>
+                        <p className="text-xs text-muted-foreground">Create <strong>Vietnamese lyrics</strong> for V-pop and traditional Vietnamese music styles.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇮🇩 Indonesian Song Generator (Bahasa Indonesia)</h5>
-                        <p className="text-xs text-gray-400">Generate <strong>Indonesian lyrics</strong> for dangdut, pop Indonesia, and regional music.</p>
+                        <p className="text-xs text-muted-foreground">Generate <strong>Indonesian lyrics</strong> for dangdut, pop Indonesia, and regional music.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇵🇭 Tagalog Song Generator (Filipino)</h5>
-                        <p className="text-xs text-gray-400">Create <strong>Tagalog lyrics</strong> for OPM (Original Pilipino Music) and Filipino pop.</p>
+                        <p className="text-xs text-muted-foreground">Create <strong>Tagalog lyrics</strong> for OPM (Original Pilipino Music) and Filipino pop.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇲🇾 Malay Song Generator (Bahasa Melayu)</h5>
-                        <p className="text-xs text-gray-400">Generate <strong>Malay lyrics</strong> for Malaysian and Indonesian music markets.</p>
+                        <p className="text-xs text-muted-foreground">Generate <strong>Malay lyrics</strong> for Malaysian and Indonesian music markets.</p>
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-bold mb-3 text-orange-500 mt-6">🌍 European & Middle Eastern Language Generators</h3>
+                    <h3 className="text-xl font-bold mb-3 text-foreground mt-6">🌍 European & Middle Eastern Language Generators</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇫🇷 French Song Generator (Français)</h5>
-                        <p className="text-xs text-gray-400">Create <strong>French lyrics</strong> for chanson, French pop, and contemporary European music.</p>
+                        <p className="text-xs text-muted-foreground">Create <strong>French lyrics</strong> for chanson, French pop, and contemporary European music.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇩🇪 German Song Generator (Deutsch)</h5>
-                        <p className="text-xs text-gray-400">Generate <strong>German lyrics</strong> for Neue Deutsche Welle, Schlager, and German rock.</p>
+                        <p className="text-xs text-muted-foreground">Generate <strong>German lyrics</strong> for Neue Deutsche Welle, Schlager, and German rock.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇮🇹 Italian Song Generator (Italiano)</h5>
-                        <p className="text-xs text-gray-400">Create <strong>Italian lyrics</strong> for Italian pop, opera fusion, and Mediterranean music.</p>
+                        <p className="text-xs text-muted-foreground">Create <strong>Italian lyrics</strong> for Italian pop, opera fusion, and Mediterranean music.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇵🇹 Portuguese Song Generator (Português)</h5>
-                        <p className="text-xs text-gray-400">Generate <strong>Portuguese lyrics</strong> for fado, bossa nova, and Brazilian/Portuguese pop.</p>
+                        <p className="text-xs text-muted-foreground">Generate <strong>Portuguese lyrics</strong> for fado, bossa nova, and Brazilian/Portuguese pop.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇷🇺 Russian Song Generator (Русский)</h5>
-                        <p className="text-xs text-gray-400">Create <strong>Russian lyrics</strong> for Russian pop, rock, and traditional folk music.</p>
+                        <p className="text-xs text-muted-foreground">Create <strong>Russian lyrics</strong> for Russian pop, rock, and traditional folk music.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇹🇷 Turkish Song Generator (Türkçe)</h5>
-                        <p className="text-xs text-gray-400">Generate <strong>Turkish lyrics</strong> for Turkish pop, arabesk, and Anatolian rock.</p>
+                        <p className="text-xs text-muted-foreground">Generate <strong>Turkish lyrics</strong> for Turkish pop, arabesk, and Anatolian rock.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇸🇦 Arabic Song Generator (العربية)</h5>
-                        <p className="text-xs text-gray-400">Create <strong>Arabic lyrics</strong> for Arabic pop, classical Arabic music, and modern Arab songs.</p>
+                        <p className="text-xs text-muted-foreground">Create <strong>Arabic lyrics</strong> for Arabic pop, classical Arabic music, and modern Arab songs.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇮🇷 Persian Song Generator (فارسی)</h5>
-                        <p className="text-xs text-gray-400">Generate <strong>Persian/Farsi lyrics</strong> with classical poetry influence and modern Iranian pop.</p>
+                        <p className="text-xs text-muted-foreground">Generate <strong>Persian/Farsi lyrics</strong> with classical poetry influence and modern Iranian pop.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇮🇱 Hebrew Song Generator (עברית)</h5>
-                        <p className="text-xs text-gray-400">Create <strong>Hebrew lyrics</strong> for Israeli pop, Mizrahi music, and contemporary Hebrew songs.</p>
+                        <p className="text-xs text-muted-foreground">Create <strong>Hebrew lyrics</strong> for Israeli pop, Mizrahi music, and contemporary Hebrew songs.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇳🇱 Dutch Song Generator (Nederlands)</h5>
-                        <p className="text-xs text-gray-400">Generate <strong>Dutch lyrics</strong> for Nederpop and contemporary Dutch music.</p>
+                        <p className="text-xs text-muted-foreground">Generate <strong>Dutch lyrics</strong> for Nederpop and contemporary Dutch music.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇵🇱 Polish Song Generator (Polski)</h5>
-                        <p className="text-xs text-gray-400">Create <strong>Polish lyrics</strong> for Polish disco polo and contemporary Polish pop.</p>
+                        <p className="text-xs text-muted-foreground">Create <strong>Polish lyrics</strong> for Polish disco polo and contemporary Polish pop.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇸🇪 Swedish Song Generator (Svenska)</h5>
-                        <p className="text-xs text-gray-400">Generate <strong>Swedish lyrics</strong> for Swedish pop and Nordic music traditions.</p>
+                        <p className="text-xs text-muted-foreground">Generate <strong>Swedish lyrics</strong> for Swedish pop and Nordic music traditions.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇬🇷 Greek Song Generator (Ελληνικά)</h5>
-                        <p className="text-xs text-gray-400">Create <strong>Greek lyrics</strong> for laiko, entechno, and modern Greek music.</p>
+                        <p className="text-xs text-muted-foreground">Create <strong>Greek lyrics</strong> for laiko, entechno, and modern Greek music.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇺🇦 Ukrainian Song Generator (Українська)</h5>
-                        <p className="text-xs text-gray-400">Generate <strong>Ukrainian lyrics</strong> for Ukrainian pop and folk music traditions.</p>
+                        <p className="text-xs text-muted-foreground">Generate <strong>Ukrainian lyrics</strong> for Ukrainian pop and folk music traditions.</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-black border border-border">
+                      <div className="p-3 rounded-lg bg-card border border-border">
                         <h5 className="font-semibold text-sm mb-1">🇷🇴 Romanian Song Generator (Română)</h5>
-                        <p className="text-xs text-gray-400">Create <strong>Romanian lyrics</strong> for manele, Romanian pop, and folk music.</p>
+                        <p className="text-xs text-muted-foreground">Create <strong>Romanian lyrics</strong> for manele, Romanian pop, and folk music.</p>
                       </div>
                     </div>
 
-                    <div className="p-4 rounded-lg bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-900/30 border-2 border-orange-500/50 mt-6">
-                      <h3 className="text-lg font-bold mb-2 text-orange-700 dark:text-orange-300">🎵 Why Use Our Multilingual Lyrics Generator?</h3>
-                      <ul className="list-disc list-inside space-y-1 text-xs text-gray-400">
+                    <div className="p-4 rounded-lg bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-900/30 border-2 border-border/50 mt-6">
+                      <h3 className="text-lg font-bold mb-2 text-foreground dark:text-foreground">🎵 Why Use Our Multilingual Lyrics Generator?</h3>
+                      <ul className="list-disc list-inside space-y-1 text-xs text-muted-foreground">
                         <li><strong>Native-Level Quality:</strong> AI trained on authentic songs from each language and culture</li>
                         <li><strong>Cultural Authenticity:</strong> Lyrics that respect idioms, slang, and cultural references specific to each language</li>
                         <li><strong>Genre-Specific:</strong> Understanding of regional music styles (Bollywood for Hindi, Reggaeton for Spanish, K-pop for Korean)</li>
@@ -767,297 +767,297 @@ export default function LyricsGeneratorPage() {
                       </ul>
                     </div>
 
-                    <p className="text-sm text-gray-400 leading-relaxed mt-4">
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-4">
                       Whether you need an <strong>automatic lyrics generator</strong> for English, a <strong>Hindi song generator</strong> for Bollywood music, a <strong>Spanish lyrics generator</strong> for Latin markets, or any other language combination, our AI delivers professional-quality, culturally-authentic lyrics that sound native and resonate with audiences worldwide. Our <strong>international song generator</strong> supports instant lyrics generation in <strong>multiple languages</strong>, making it the perfect tool for global music creators, multilingual artists, and anyone looking to create <strong>original song lyrics</strong> in their native tongue or explore new musical markets.
                     </p>
                   </div>
 
-                  <div className="p-5 rounded-lg bg-black border border-border shadow">
-                    <h2 className="text-xl font-bold mb-4 text-orange-500">Frequently Asked Questions</h2>
+                  <div className="p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-foreground">Frequently Asked Questions</h2>
                     <div className="space-y-4">
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Is the AI lyrics generator free to use?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Is the AI lyrics generator free to use?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes, our AI lyrics generator is completely free to use with no registration, subscription, or hidden fees required. You can generate unlimited lyrics for your songs without any cost. Whether you're creating one song or an entire album, there are no limits on usage.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can I use the generated lyrics commercially?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can I use the generated lyrics commercially?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Absolutely! All lyrics generated by our AI are 100% original and free from copyright restrictions. You can use them in your commercial music projects, albums, singles, performances, or any other professional application without licensing fees or attribution requirements. The lyrics become yours to use as you see fit.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">What music genres does the AI support?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">What music genres does the AI support?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Our AI supports all major music genres and subgenres including pop, rock, hip-hop, rap, country, R&B, soul, jazz, folk, blues, electronic, EDM, indie, alternative, punk, metal, reggae, gospel, and many more. You can specify your preferred genre to receive lyrics tailored to that style's unique characteristics and conventions.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">How original are the AI-generated lyrics?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">How original are the AI-generated lyrics?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Our AI creates completely original lyrics based on your input parameters using advanced language models trained on diverse musical styles and lyrical patterns. Each generation produces unique content that hasn't been used before, ensuring no plagiarism or copyright issues. The AI doesn't copy existing songs but creates new combinations of words, phrases, and ideas.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can I customize the generated lyrics?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can I customize the generated lyrics?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! The AI-generated lyrics serve as a creative starting point and inspiration. You can freely edit, modify, rearrange, and personalize them to match your unique artistic style, voice, and vision. Many songwriters use the AI output as a foundation and then refine it to create something truly their own.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Do I need to create an account to use this tool?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Do I need to create an account to use this tool?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           No account creation or registration is required. Simply visit the page, enter your creative parameters, and start generating lyrics immediately. We respect your privacy and don't require personal information to use our free tools.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can the AI help with writer's block?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can the AI help with writer's block?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! Our AI lyrics generator is specifically designed to help songwriters overcome writer's block by providing instant creative inspiration, fresh perspectives, and unexpected word combinations. When you're stuck, generate a few different options to spark new ideas and get your creative flow moving again.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">What song structures can the AI create?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">What song structures can the AI create?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Our AI can generate lyrics for all standard song structures including verses, chorus, bridge, pre-chorus, post-chorus, intro, and outro. You can specify which sections you need, and the AI will create cohesive lyrics that flow naturally between sections while maintaining thematic consistency.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">How does the AI ensure good rhyme schemes?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">How does the AI ensure good rhyme schemes?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Our AI is trained on extensive musical data and understands various rhyme schemes (AABB, ABAB, ABCB, internal rhymes, slant rhymes). It analyzes syllable counts, phonetic patterns, and natural speech rhythms to create lyrics that rhyme naturally without feeling forced, ensuring your songs have professional musicality and flow.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can I specify themes or topics for my lyrics?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can I specify themes or topics for my lyrics?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! You can specify any theme, topic, or subject matter you want your lyrics to explore. Whether it's love, heartbreak, celebration, social issues, personal growth, or abstract concepts, the AI will generate relevant, theme-appropriate lyrics that match your creative vision and emotional intent.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">How does the AI lyrics generator compare to other online tools?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">How does the AI lyrics generator compare to other online tools?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Our AI lyrics generator stands out by offering 40+ language support, genre-specific customization, mood selection, and duration control. Unlike basic rhyme generators or template-based tools, our AI understands context, cultural nuances, and musical conventions. It's powered by advanced language models (Gemini AI) that produce coherent, creative, and contextually relevant lyrics rather than random word combinations.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can the AI write rap lyrics specifically?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can the AI write rap lyrics specifically?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Absolutely! Our AI excels at generating rap lyrics with complex rhyme schemes, internal rhymes, multi-syllabic rhymes, wordplay, and authentic flow. Select "Rap" or "Hip-Hop" as your genre, and the AI will create lyrics with the rhythmic patterns, cadence, and lyrical complexity characteristic of rap music. You can also specify sub-genres like trap, conscious rap, or old-school hip-hop for more targeted results.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Does the AI understand different moods and emotions?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Does the AI understand different moods and emotions?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes, our AI has deep understanding of 15+ emotional states including happy, sad, energetic, melancholic, romantic, upbeat, mellow, intense, peaceful, aggressive, nostalgic, hopeful, dark, playful, and empowering. When you select a mood, the AI adjusts its word choice, imagery, tone, and thematic elements to match that emotional context, ensuring your lyrics authentically convey the intended feeling.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can I generate lyrics for love songs?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can I generate lyrics for love songs?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! Love songs are one of the most popular use cases for our AI lyrics generator. You can create lyrics for romantic ballads, passionate love songs, heartbreak anthems, wedding songs, or unrequited love themes. Select "romantic" as your mood, choose an appropriate genre (pop, R&B, country, soul), and enter your specific theme to generate emotionally resonant love lyrics that connect with listeners.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">How long does it take to generate lyrics?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">How long does it take to generate lyrics?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Our AI lyrics generator typically produces complete song lyrics in 5-15 seconds, depending on the complexity of your requirements and server load. The process is nearly instantaneous—simply enter your parameters, click "Generate Lyrics," and receive professionally-structured lyrics within seconds. This rapid generation allows you to experiment with multiple variations quickly.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can the AI generate lyrics in Hindi, Urdu, or other Indian languages?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can the AI generate lyrics in Hindi, Urdu, or other Indian languages?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! Our AI supports all major Indian languages including Hindi, Urdu, Punjabi, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, and Malayalam. The AI understands the cultural context, poetic traditions, and musical styles of each language. For Hindi and Urdu, it can create lyrics for Bollywood songs, ghazals, qawwali, and contemporary Indian pop with authentic expressions and proper language structure.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">What's the difference between AI-generated and human-written lyrics?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">What's the difference between AI-generated and human-written lyrics?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           AI-generated lyrics provide instant creative inspiration, perfect structure, and genre-appropriate language based on patterns learned from thousands of songs. Human-written lyrics offer deeply personal experiences, unique perspectives, and emotional authenticity. The best approach combines both: use AI for inspiration, structure, and overcoming writer's block, then add your personal touch, experiences, and emotional depth to create truly unique songs.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can I use the AI for songwriting competitions or contests?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can I use the AI for songwriting competitions or contests?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           While our AI-generated lyrics are copyright-free and original, most songwriting competitions require that entries be entirely your own work without AI assistance. We recommend checking the specific rules of each competition. However, you can use the AI for practice, learning song structure, or as inspiration, then create your competition entry entirely by yourself based on what you've learned.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">How can I make AI-generated lyrics sound more personal?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">How can I make AI-generated lyrics sound more personal?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           To personalize AI-generated lyrics: (1) Add specific personal details, memories, or experiences; (2) Replace generic phrases with unique metaphors from your life; (3) Adjust the language to match your speaking style; (4) Include inside references or specific locations meaningful to you; (5) Modify the emotional intensity to match your genuine feelings; (6) Rewrite lines that don't resonate with your authentic voice. Use the AI output as a canvas and paint your personal story over it.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can the AI create lyrics for specific song durations?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can the AI create lyrics for specific song durations?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! Our AI allows you to specify song duration from short (2 minutes) to extended (5+ minutes). The AI automatically adjusts the song structure, number of verses, chorus repetitions, and additional sections like bridges or outros to fit your target duration. This ensures your lyrics match the planned length of your musical composition without being too short or unnecessarily long.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Does the AI work for children's songs or educational music?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Does the AI work for children's songs or educational music?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Absolutely! You can use our AI to generate lyrics for children's songs, nursery rhymes, educational music, and kid-friendly content. Specify themes like "learning alphabet," "friendship," "nature," or "kindness" with a "playful" or "happy" mood. The AI will create age-appropriate, simple, repetitive, and engaging lyrics perfect for young audiences while maintaining educational value and entertainment.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can I generate Christmas songs, holiday songs, or seasonal music?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can I generate Christmas songs, holiday songs, or seasonal music?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! Our AI can create lyrics for any holiday or season. Enter themes like "Christmas celebration," "winter wonderland," "Halloween party," "summer vacation," or "Diwali festival." The AI will generate festive, season-appropriate lyrics with relevant imagery, traditions, and emotional tones. You can create original holiday songs for personal use, school performances, or commercial projects.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">How does the AI handle explicit content or profanity?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">How does the AI handle explicit content or profanity?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Our AI is designed to generate clean, family-friendly lyrics by default. It avoids explicit content, profanity, and offensive language unless specifically required for artistic purposes in genres like explicit rap. The AI focuses on creative expression through clever wordplay, metaphors, and powerful imagery rather than relying on explicit language. This makes the generated content suitable for all audiences and radio-friendly.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can the AI help me write a song for a specific person or occasion?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can the AI help me write a song for a specific person or occasion?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! You can create personalized songs for weddings, anniversaries, birthdays, graduations, or tributes. Enter specific themes like "wedding anniversary song for wife," "birthday song for best friend," or "tribute to father." The AI will generate appropriate lyrics, which you can then personalize by adding the person's name, specific memories, inside jokes, or unique characteristics that make the song truly special and meaningful.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">What if I don't like the first set of generated lyrics?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">What if I don't like the first set of generated lyrics?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           No problem! You can generate unlimited variations until you find lyrics you love. Each generation produces unique content, so try generating 3-5 different versions and compare them. You can also adjust your input parameters (change mood, modify theme, select different genre) to guide the AI in new directions. Many users combine the best lines from multiple generations to create their perfect song.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can the AI write lyrics that fit an existing melody?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can the AI write lyrics that fit an existing melody?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           While the AI doesn't directly analyze melodies, you can specify your song's duration and structure to match your existing music. The generated lyrics follow standard syllable patterns and rhythms for your chosen genre. You may need to make minor adjustments to syllable counts or phrasing to perfectly fit your specific melody, but the AI provides an excellent starting point that's close to your musical needs.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Is the AI suitable for professional musicians and producers?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Is the AI suitable for professional musicians and producers?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! Professional musicians, producers, and songwriters use AI lyrics generators as creative tools for brainstorming, overcoming blocks, exploring new lyrical directions, and speeding up the songwriting process. While professionals typically refine and personalize the output extensively, the AI serves as a valuable co-writing partner that offers fresh perspectives and helps maintain productivity during intensive creative sessions or tight deadlines.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can I download or export the generated lyrics?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can I download or export the generated lyrics?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! Once lyrics are generated, you can easily copy them to your clipboard with one click or download them as a .txt file for safekeeping. This allows you to save your lyrics in any format you prefer—paste them into word processors, songwriting apps, notation software, or lyric databases. You maintain full ownership and can use the downloaded lyrics in any way you choose.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">How does the AI understand different cultures when generating lyrics?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">How does the AI understand different cultures when generating lyrics?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Our AI is trained on diverse global music datasets representing different cultures, languages, and musical traditions. It understands cultural references, idioms, and context-specific imagery for each language and region. For example, when generating Hindi lyrics, it incorporates Bollywood themes and Indian cultural elements; for Spanish, it includes Latin music traditions; for Japanese, it respects J-pop conventions. This cultural awareness ensures authentic, relatable content.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can the AI generate lyrics for multiple verses with consistent themes?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can the AI generate lyrics for multiple verses with consistent themes?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! Our AI maintains thematic consistency across all song sections. It creates verses that develop your theme progressively, choruses that reinforce the central message, and bridges that offer new perspectives while staying connected to the overall narrative. The AI understands how to build emotional arcs within songs, ensuring each verse advances the story or deepens the emotion while maintaining coherent flow.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">What if English isn't my first language? Can I still use this tool?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">What if English isn't my first language? Can I still use this tool?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Absolutely! That's exactly why we support 40+ languages. You can generate lyrics in your native language—whether it's Spanish, Hindi, Arabic, Chinese, or any other supported language. The AI writes directly in your chosen language with native-level quality, not through translation. This makes it perfect for non-English speakers who want to create songs in their mother tongue with proper grammar, idioms, and cultural authenticity.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can the AI help me learn songwriting techniques?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can the AI help me learn songwriting techniques?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! By analyzing AI-generated lyrics, you can learn about song structure, rhyme schemes, metaphor usage, imagery, storytelling techniques, and genre-specific conventions. Generate lyrics in different genres and moods to study how language, tone, and themes vary. Pay attention to how verses build, how choruses create hooks, and how bridges provide contrast. The AI serves as an educational tool demonstrating professional songwriting patterns.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">How many languages can the AI write lyrics in?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">How many languages can the AI write lyrics in?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Our AI supports 40+ languages including English, Spanish, French, German, Italian, Portuguese, Russian, Japanese, Korean, Chinese, Arabic, Hindi, Urdu, Punjabi, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam, Turkish, Vietnamese, Indonesian, Thai, Tagalog, Malay, Persian, Hebrew, Dutch, Polish, Swedish, Norwegian, Danish, Finnish, Greek, Czech, Hungarian, Romanian, Ukrainian, and Swahili. Each language receives culturally-appropriate, native-quality lyrics.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can I use this tool on my mobile phone or tablet?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can I use this tool on my mobile phone or tablet?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! Our AI lyrics generator is fully responsive and works perfectly on smartphones, tablets, and desktop computers. The interface adapts to your screen size, making it easy to generate lyrics on any device. Create songs while traveling, during band practice, in the studio, or anywhere inspiration strikes. All features are available on mobile with the same speed and quality as desktop.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Does the AI plagiarize or copy existing songs?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Does the AI plagiarize or copy existing songs?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           No! Our AI generates completely original lyrics by learning patterns and styles, not by memorizing or copying existing songs. It creates new combinations of words and ideas inspired by its training but doesn't reproduce copyrighted material. Each output is unique content that hasn't existed before. However, common phrases or universal themes may naturally appear as they're part of the musical language itself, not plagiarism.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can the AI generate lyrics for instrumental sections like interludes?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can the AI generate lyrics for instrumental sections like interludes?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           While instrumental sections typically don't have lyrics, our AI can create lyrics for all sung parts of your song including intros, verses, pre-choruses, choruses, post-choruses, bridges, and outros. If you want brief vocal elements during instrumental sections (like ad-libs, vocal runs, or short phrases), you can specify that in your theme, and the AI will incorporate appropriate minimal vocal content.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">How can I collaborate with other songwriters using AI-generated lyrics?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">How can I collaborate with other songwriters using AI-generated lyrics?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Use the AI as a collaborative starting point: generate initial lyrics, share them with your co-writers, and collectively refine them. Each person can contribute personal touches, alternative lines, or structural changes. The AI removes the pressure of starting from a blank page, allowing collaborators to focus on enhancement and personalization rather than initial creation. It's like having a third creative partner in your songwriting sessions.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">What makes this AI lyrics generator better than others?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">What makes this AI lyrics generator better than others?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Our tool stands out with: (1) 40+ language support with native-quality output; (2) Advanced Gemini AI for superior coherence; (3) Genre-specific customization across 17+ genres; (4) Mood selection from 15+ emotional states; (5) Duration control for precise song length; (6) Completely free with unlimited generations; (7) No registration or sign-up required; (8) Copy and download features; (9) Mobile-friendly interface; (10) Cultural authenticity in multilingual output.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can the AI write lyrics for specific music keys or scales?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can the AI write lyrics for specific music keys or scales?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           The AI focuses on lyrical content rather than musical keys or scales, as those are melodic elements. However, the rhythm and syllable patterns in generated lyrics naturally work with most keys and scales. Once you have your lyrics, you can set them to any musical key that suits your vocal range or instrumental arrangement. The lyrical structure remains flexible for any musical accompaniment.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">How often is the AI updated or improved?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">How often is the AI updated or improved?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           We continuously improve our AI by updating the underlying models, expanding language support, refining genre understanding, and incorporating user feedback. The Gemini AI model we use receives regular updates from its developers, ensuring improving quality, creativity, and accuracy over time. Users automatically benefit from these improvements without needing to update anything—simply use the tool as always for the latest capabilities.
                         </p>
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold mb-2 text-green-500">Can I generate lyrics for parody songs or humorous content?</h3>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-heading-accent">Can I generate lyrics for parody songs or humorous content?</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           Yes! Set your mood to "playful" and enter humorous themes to generate funny, lighthearted, or satirical lyrics. The AI can create content for comedy songs, parodies, novelty music, or entertainment purposes. While it generates clean humor by default, you can guide it toward specific comedic styles through your theme description. Perfect for creating funny birthday songs, roast tracks, or comedic performances.
                         </p>
                       </div>
@@ -1069,7 +1069,7 @@ export default function LyricsGeneratorPage() {
               {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
               <div className="hidden lg:block w-72">
                 <div className="sticky top-32 space-y-6">
-                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-black" />
+                  <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />
                 </div>
               </div>
             </div>
