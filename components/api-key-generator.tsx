@@ -24,7 +24,7 @@ export function ApiKeyGenerator() {
 
   return (
     <div>
-      <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
+      <div className="bg-gradient-to-r from-primary to-red-500 rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
         <div className="text-center">
           <h3 className="text-white font-bold text-sm sm:text-base mb-2">Ready to Get Started?</h3>
           <p className="text-foreground text-xs sm:text-sm mb-4">Get your free API key instantly</p>
@@ -45,7 +45,7 @@ export function ApiKeyGenerator() {
         <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 sm:p-6 mb-4 sm:mb-6 border border-green-200 dark:border-green-800">
           <div className="text-center">
             <h4 className="font-bold text-heading-accent text-sm sm:text-base mb-3">🎉 Your API Key is Ready!</h4>
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-3 mb-3 border">
+            <div className="bg-white dark:bg-muted rounded-lg p-3 mb-3 border">
               <code className="text-sm font-mono text-gray-800 dark:text-gray-200 break-all">{apiKey}</code>
             </div>
             <button

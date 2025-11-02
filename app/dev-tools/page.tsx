@@ -802,7 +802,7 @@ export default function DevToolsPage() {
                   <GHeader
                     title="Free Developer Tools - JWT, Regex, JSON to CSV & More"
                     description="Essential coding utilities for developers. Decode JWT, test regex, convert data, beautify code — all free, fast, and secure. No signup required."
-                    titleSize="large"
+                    titleSize="medium"
                     descriptionSize="small"
                   />
                 </div>

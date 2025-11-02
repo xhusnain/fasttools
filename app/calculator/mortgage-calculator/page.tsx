@@ -256,7 +256,7 @@ export default function MortgageCalculatorPage() {
                 <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
                   <div className="space-y-1 xs:space-y-2">
                     <div className="flex items-center gap-1 xs:gap-2">
-                      <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg flex-shrink-0">
+                      <div className="p-1 xs:p-1.5 bg-primary rounded-lg flex-shrink-0">
                         <Home className="h-3 xs:h-4 w-3 xs:w-4 text-foreground" />
                       </div>
                       <h3 className="font-semibold text-heading-accent text-xs xs:text-sm sm:text-base">Basic Loan Information</h3>
@@ -269,7 +269,7 @@ export default function MortgageCalculatorPage() {
                   </div>
                   <div className="space-y-1 xs:space-y-2">
                     <div className="flex items-center gap-1 xs:gap-2">
-                      <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg flex-shrink-0">
+                      <div className="p-1 xs:p-1.5 bg-primary rounded-lg flex-shrink-0">
                         <DollarSign className="h-3 xs:h-4 w-3 xs:w-4 text-foreground" />
                       </div>
                       <h3 className="font-semibold text-heading-accent text-xs xs:text-sm sm:text-base">Additional Costs</h3>
@@ -293,7 +293,7 @@ export default function MortgageCalculatorPage() {
                 </h2>
                 <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
                   <div className="flex items-start gap-2 xs:gap-3">
-                    <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg flex-shrink-0 mt-0.5">
+                    <div className="p-1 xs:p-1.5 bg-primary rounded-lg flex-shrink-0 mt-0.5">
                       <BarChart3 className="h-3 xs:h-4 w-3 xs:w-4 text-foreground" />
                     </div>
                     <div>
@@ -302,7 +302,7 @@ export default function MortgageCalculatorPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-2 xs:gap-3">
-                    <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg flex-shrink-0 mt-0.5">
+                    <div className="p-1 xs:p-1.5 bg-primary rounded-lg flex-shrink-0 mt-0.5">
                       <TrendingUp className="h-3 xs:h-4 w-3 xs:w-4 text-foreground" />
                     </div>
                     <div>
@@ -311,7 +311,7 @@ export default function MortgageCalculatorPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-2 xs:gap-3">
-                    <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg flex-shrink-0 mt-0.5">
+                    <div className="p-1 xs:p-1.5 bg-primary rounded-lg flex-shrink-0 mt-0.5">
                       <Percent className="h-3 xs:h-4 w-3 xs:w-4 text-foreground" />
                     </div>
                     <div>
@@ -320,7 +320,7 @@ export default function MortgageCalculatorPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-2 xs:gap-3">
-                    <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg flex-shrink-0 mt-0.5">
+                    <div className="p-1 xs:p-1.5 bg-primary rounded-lg flex-shrink-0 mt-0.5">
                       <Clock className="h-3 xs:h-4 w-3 xs:w-4 text-foreground" />
                     </div>
                     <div>

@@ -262,7 +262,7 @@ export default function PaceCalculatorPage() {
                       </div>
                       <div className="space-y-3">
                         <div className="flex items-start gap-3">
-                          <div className="p-1.5 bg-orange-100 dark:bg-orange-900/20 rounded-lg">
+                          <div className="p-1.5 bg-primary/10 rounded-lg">
                             <BookOpen className="h-3 w-3 text-foreground" />
                           </div>
                           <div>
@@ -512,7 +512,7 @@ export default function PaceCalculatorPage() {
                         <a
                           key={name}
                           href={href}
-                          className="p-2 sm:p-3 md:p-4 bg-card rounded-lg border border-border hover:bg-slate-900 hover:border-border transition-colors group w-full overflow-hidden"
+                          className="p-2 sm:p-3 md:p-4 bg-card rounded-lg border border-border hover:bg-muted hover:border-border transition-colors group w-full overflow-hidden"
                         >
                           <div className="flex items-center gap-2 mb-1">
                             <Icon className="h-3 w-3 sm:h-4 sm:w-4 text-foreground flex-shrink-0" />

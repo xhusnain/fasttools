@@ -105,7 +105,7 @@ export default function SocialMediaToolsPage() {
                 <GHeader
                   title="Social Media Tools & Content Helpers"
                   description="Advanced social media utilities crafted for modern content creators. Our collection includes intelligent thumbnail downloaders, profile analyzers, and hashtag generators that help elevate your social presence and drive meaningful engagement."
-                  titleSize="large"
+                  titleSize="medium"
                   descriptionSize="small"
                 />
               </div>

@@ -76,7 +76,7 @@ export function MainSidebar({ onSidebarToggle, activeSidebar }: MainSidebarProps
             className={`w-12 h-12 p-0 flex flex-col items-center justify-center rounded-xl transition-all duration-200 ${
               isActive 
                 ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/25' 
-                : 'text-slate-500 hover:text-slate-700 hover:bg-slate-100'
+                : 'text-muted-foreground hover:text-slate-700 hover:bg-slate-100'
             }`}
             onClick={() => {
               console.log('Sidebar button clicked:', item.id)

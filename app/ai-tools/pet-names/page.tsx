@@ -560,7 +560,7 @@ export default function PetNamesPage() {
                         </div>
                         <p className="text-xs text-muted-foreground">Generate song lyrics with AI</p>
                       </a>
-                      <a href="/calculator/age-calculator" className="p-2 xs:p-3 bg-card rounded-lg border border-border/30 hover:bg-orange-500/30 transition-colors">
+                      <a href="/calculator/age-calculator" className="p-2 xs:p-3 bg-card rounded-lg border border-border/30 hover:bg-primary/30 transition-colors">
                         <div className="flex items-center gap-2 mb-1">
                           <Calculator className="h-3 w-3 text-foreground" />
                           <h3 className="font-semibold text-heading-accent text-xs xs:text-sm">Age Calculator</h3>

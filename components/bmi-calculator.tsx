@@ -165,15 +165,15 @@ Risk Level: ${result.riskLevel}`
 
   return (
     <div className="space-y-8">
-      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-black">
+      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader className="pb-4">
           <CardTitle className="flex items-center gap-3 text-2xl text-foreground">
-            <div className="p-2 bg-orange-500/10 rounded-lg">
+            <div className="p-2 bg-primary/10 rounded-lg">
               <Activity className="h-6 w-6 text-foreground" />
             </div>
             BMI Calculator
           </CardTitle>
-          <CardDescription className="text-base text-slate-400">
+          <CardDescription className="text-base text-muted-foreground">
             Calculate your Body Mass Index with advanced metrics including BMI Prime and Ponderal Index
           </CardDescription>
         </CardHeader>
@@ -182,13 +182,13 @@ Risk Level: ${result.riskLevel}`
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Scale className="h-4 w-4 text-heading-accent" />
-              <Label className="text-base font-semibold text-slate-200">Measurement Units</Label>
+              <Label className="text-base font-semibold text-foreground">Measurement Units</Label>
             </div>
-            <div className="flex gap-2 p-1 bg-black border border-slate-700 rounded-lg">
+            <div className="flex gap-2 p-1 bg-card border border-border rounded-lg">
               <button
                 onClick={() => setUnit("metric")}
                 className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${
-                  unit === "metric" ? "bg-orange-500 text-white shadow-sm" : "bg-black text-slate-400 hover:bg-slate-800 border border-slate-700"
+                  unit === "metric" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
                 }`}
               >
                 Metric (kg/cm)
@@ -196,7 +196,7 @@ Risk Level: ${result.riskLevel}`
               <button
                 onClick={() => setUnit("imperial")}
                 className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${
-                  unit === "imperial" ? "bg-orange-500 text-white shadow-sm" : "bg-black text-slate-400 hover:bg-slate-800 border border-slate-700"
+                  unit === "imperial" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
                 }`}
               >
                 Imperial (lbs/in)
@@ -217,7 +217,7 @@ Risk Level: ${result.riskLevel}`
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
                 placeholder={unit === "metric" ? "70" : "154"}
-                className="h-10 sm:h-12 text-sm sm:text-base bg-black border-slate-700 text-slate-200 focus:border-orange-500 focus:ring-orange-500"
+                className="h-10 sm:h-12 text-sm sm:text-base bg-card border-border text-foreground focus:border-primary focus:ring-orange-500"
               />
             </div>
 
@@ -232,7 +232,7 @@ Risk Level: ${result.riskLevel}`
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
                 placeholder={unit === "metric" ? "170" : "67"}
-                className="h-10 sm:h-12 text-sm sm:text-base bg-black border-slate-700 text-slate-200 focus:border-orange-500 focus:ring-orange-500"
+                className="h-10 sm:h-12 text-sm sm:text-base bg-card border-border text-foreground focus:border-primary focus:ring-orange-500"
               />
             </div>
           </div>
@@ -252,7 +252,7 @@ Risk Level: ${result.riskLevel}`
                 placeholder="25"
                 min="2"
                 max="120"
-                className="h-10 sm:h-12 text-sm sm:text-base bg-black border-slate-700 text-slate-200 focus:border-orange-500 focus:ring-orange-500"
+                className="h-10 sm:h-12 text-sm sm:text-base bg-card border-border text-foreground focus:border-primary focus:ring-orange-500"
               />
             </div>
 
@@ -265,7 +265,7 @@ Risk Level: ${result.riskLevel}`
                 <button
                   onClick={() => setGender("male")}
                   className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${
-                    gender === "male" ? "bg-orange-500 text-white shadow-sm" : "bg-black text-slate-400 hover:bg-slate-800 border border-slate-700"
+                    gender === "male" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
                   }`}
                 >
                   Male
@@ -273,7 +273,7 @@ Risk Level: ${result.riskLevel}`
                 <button
                   onClick={() => setGender("female")}
                   className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${
-                    gender === "female" ? "bg-orange-500 text-white shadow-sm" : "bg-black text-slate-400 hover:bg-slate-800 border border-slate-700"
+                    gender === "female" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
                   }`}
                 >
                   Female
@@ -281,7 +281,7 @@ Risk Level: ${result.riskLevel}`
                 <button
                   onClick={() => setGender("other")}
                   className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${
-                    gender === "other" ? "bg-orange-500 text-white shadow-sm" : "bg-black text-slate-400 hover:bg-slate-800 border border-slate-700"
+                    gender === "other" ? "bg-primary text-white shadow-sm" : "bg-card text-muted-foreground hover:bg-secondary border border-border"
                   }`}
                 >
                   Other
@@ -292,7 +292,7 @@ Risk Level: ${result.riskLevel}`
 
           <Button
             onClick={calculateBMI}
-            className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
+            className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
             disabled={!weight || !height || isCalculating}
           >
             {isCalculating ? (
@@ -313,46 +313,46 @@ Risk Level: ${result.riskLevel}`
       </Card>
 
       {result && !isCalculating && (
-        <Card className="shadow-lg border-slate-700 animate-fade-in-up bg-black">
+        <Card className="shadow-lg border-border animate-fade-in-up bg-card">
           <CardHeader className="pb-4">
             <CardTitle className="text-2xl flex items-center gap-3 text-foreground">
-              <div className="p-2 bg-orange-500/10 rounded-lg">
+              <div className="p-2 bg-primary/10 rounded-lg">
                 <Activity className="h-6 w-6 text-foreground" />
               </div>
               Your BMI Result
             </CardTitle>
-            <CardDescription className="text-base text-slate-400">
+            <CardDescription className="text-base text-muted-foreground">
               Comprehensive Body Mass Index analysis with advanced metrics
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-8">
             {/* Main BMI Display */}
-            <div className="text-center p-6 sm:p-8 rounded-xl bg-black border-2 border-orange-500/20">
+            <div className="text-center p-6 sm:p-8 rounded-xl bg-card border-2 border-primary/20">
               <div className="text-4xl sm:text-5xl font-bold text-foreground mb-2">{result.bmi}</div>
               <div className={`text-lg sm:text-xl font-semibold ${result.color} mb-2`}>{result.category}</div>
-              <div className="text-sm text-slate-400">kg/m²</div>
+              <div className="text-sm text-muted-foreground">kg/m²</div>
             </div>
 
             {/* Advanced Metrics */}
-            <div className="space-y-4 p-4 sm:p-6 bg-black rounded-xl border-2 border-slate-700">
+            <div className="space-y-4 p-4 sm:p-6 bg-card rounded-xl border-2 border-border">
               <h3 className="text-base sm:text-lg font-semibold text-center mb-3 sm:mb-4 flex items-center justify-center gap-2 text-heading-accent">
                 <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-heading-accent" />
                 Advanced Metrics
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-blue-700">
+                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-blue-700">
                   <span className="text-sm font-medium text-foreground">BMI Prime</span>
                   <span className="font-bold text-sm text-foreground">{result.bmiPrime}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-orange-700">
+                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-primary">
                   <span className="text-sm font-medium text-foreground">Ponderal Index</span>
                   <span className="font-bold text-sm text-foreground">{result.ponderalIndex}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-green-700">
+                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-green-700">
                   <span className="text-sm font-medium text-heading-accent">Healthy Range</span>
                   <span className="font-bold text-sm text-heading-accent">{result.healthyRange}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-black rounded-lg border border-orange-700">
+                <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-primary">
                   <span className="text-sm font-medium text-foreground">Risk Level</span>
                   <span className="font-bold text-sm text-foreground">{result.riskLevel}</span>
                 </div>
@@ -360,35 +360,35 @@ Risk Level: ${result.riskLevel}`
             </div>
 
             {/* Healthy Weight Range */}
-            <div className="space-y-4 p-4 sm:p-6 bg-black rounded-xl border-2 border-slate-700">
+            <div className="space-y-4 p-4 sm:p-6 bg-card rounded-xl border-2 border-border">
               <h3 className="text-base sm:text-lg font-semibold text-heading-accent flex items-center gap-2">
                 <Target className="h-4 w-4 sm:h-5 sm:w-5 text-heading-accent" />
                 Healthy Weight Range
               </h3>
-              <div className="text-center p-4 bg-black rounded-lg border border-green-700">
+              <div className="text-center p-4 bg-card rounded-lg border border-green-700">
                 <div className="text-lg sm:text-xl font-bold text-heading-accent">{result.healthyWeightRange}</div>
-                <div className="text-sm text-slate-400 mt-1">Recommended weight for your height</div>
+                <div className="text-sm text-muted-foreground mt-1">Recommended weight for your height</div>
               </div>
             </div>
 
             {/* Recommendations */}
-            <div className="space-y-4 p-4 sm:p-6 bg-black rounded-xl border-2 border-slate-700">
+            <div className="space-y-4 p-4 sm:p-6 bg-card rounded-xl border-2 border-border">
               <h3 className="text-base sm:text-lg font-semibold text-heading-accent flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-heading-accent" />
                 Health Recommendations
               </h3>
               <div className="space-y-2">
                 {result.recommendations.map((recommendation, index) => (
-                  <div key={index} className="flex items-start gap-2 p-3 bg-black rounded-lg border border-slate-700">
+                  <div key={index} className="flex items-start gap-2 p-3 bg-card rounded-lg border border-border">
                     <Sparkles className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-slate-300">{recommendation}</span>
+                    <span className="text-sm text-foreground">{recommendation}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Disclaimer */}
-            <div className="p-4 bg-black rounded-xl border-2 border-amber-700">
+            <div className="p-4 bg-card rounded-xl border-2 border-amber-700">
               <div className="flex items-start gap-2">
                 <Info className="h-4 w-4 text-amber-400 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-amber-300">
@@ -402,7 +402,7 @@ Risk Level: ${result.riskLevel}`
             <Button
               onClick={copyResult}
               variant="outline"
-              className="w-full h-10 sm:h-12 text-sm sm:text-base font-semibold hover:bg-slate-800 transition-all duration-300 border-2 border-slate-700 text-slate-200 hover:text-white"
+              className="w-full h-10 sm:h-12 text-sm sm:text-base font-semibold hover:bg-secondary transition-all duration-300 border-2 border-border text-foreground hover:text-white"
             >
               {copied ? (
                 <>

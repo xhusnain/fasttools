@@ -251,7 +251,7 @@ export function HexToRGB() {
                   placeholder="#2563eb"
                   value={hexInput}
                   onChange={(e) => setHexInput(e.target.value)}
-                  className="font-mono border-2 border-orange-300 focus:border-orange-500"
+                  className="font-mono border-2 border-orange-300 focus:border-primary"
                 />
                 <input
                   type="color"
@@ -276,7 +276,7 @@ export function HexToRGB() {
                   max="255"
                   value={rgbR}
                   onChange={(e) => setRgbR(e.target.value)}
-                  className="border-2 border-orange-300 focus:border-orange-500"
+                  className="border-2 border-orange-300 focus:border-primary"
                 />
               </div>
               <div className="space-y-2">
@@ -287,7 +287,7 @@ export function HexToRGB() {
                   max="255"
                   value={rgbG}
                   onChange={(e) => setRgbG(e.target.value)}
-                  className="border-2 border-orange-300 focus:border-orange-500"
+                  className="border-2 border-orange-300 focus:border-primary"
                 />
               </div>
               <div className="space-y-2">
@@ -298,7 +298,7 @@ export function HexToRGB() {
                   max="255"
                   value={rgbB}
                   onChange={(e) => setRgbB(e.target.value)}
-                  className="border-2 border-orange-300 focus:border-orange-500"
+                  className="border-2 border-orange-300 focus:border-primary"
                 />
               </div>
             </div>
@@ -314,7 +314,7 @@ export function HexToRGB() {
                   max="360"
                   value={hslH}
                   onChange={(e) => setHslH(e.target.value)}
-                  className="border-2 border-orange-300 focus:border-orange-500"
+                  className="border-2 border-orange-300 focus:border-primary"
                 />
               </div>
               <div className="space-y-2">
@@ -325,7 +325,7 @@ export function HexToRGB() {
                   max="100"
                   value={hslS}
                   onChange={(e) => setHslS(e.target.value)}
-                  className="border-2 border-orange-300 focus:border-orange-500"
+                  className="border-2 border-orange-300 focus:border-primary"
                 />
               </div>
               <div className="space-y-2">
@@ -336,7 +336,7 @@ export function HexToRGB() {
                   max="100"
                   value={hslL}
                   onChange={(e) => setHslL(e.target.value)}
-                  className="border-2 border-orange-300 focus:border-orange-500"
+                  className="border-2 border-orange-300 focus:border-primary"
                 />
               </div>
             </div>

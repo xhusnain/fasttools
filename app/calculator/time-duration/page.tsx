@@ -263,7 +263,7 @@ export default function TimeDurationPage() {
                 <div className="mt-6 md:mt-8 space-y-4 md:space-y-6">
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
                         <BookOpen className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                   </div>
                   How to Use Our Time Duration Calculator
@@ -293,7 +293,7 @@ export default function TimeDurationPage() {
               {/* Calculation Types Section */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
                         <Calculator className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                   </div>
                       Time Calculation Types
@@ -314,7 +314,7 @@ export default function TimeDurationPage() {
                             <h3 className="font-semibold text-heading-accent text-xs md:text-sm">{type}</h3>
                     </div>
                           <p className="text-xs text-muted-foreground mb-1">{desc}</p>
-                          <p className="text-xs text-foreground font-mono bg-orange-500/10 px-1.5 py-0.5 rounded">{example}</p>
+                          <p className="text-xs text-foreground font-mono bg-primary/10 px-1.5 py-0.5 rounded">{example}</p>
                   </div>
                       ))}
                     </div>
@@ -323,7 +323,7 @@ export default function TimeDurationPage() {
                   {/* Common Use Cases */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
                         <Users className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                     </div>
                       Common Use Cases for Time Duration Calculator
@@ -377,7 +377,7 @@ export default function TimeDurationPage() {
                   {/* Comprehensive FAQ Section */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
                         <Award className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                   </div>
                       Frequently Asked Questions (FAQ) - 50 Questions
@@ -1016,7 +1016,7 @@ export default function TimeDurationPage() {
                   {/* Related Tools Section */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
                         <Calculator className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                   </div>
                       Related Time & Date Calculators
@@ -1093,7 +1093,7 @@ export default function TimeDurationPage() {
                         <a
                           key={index}
                           href={tool.href}
-                          className="p-3 bg-card rounded-lg border border-border hover:bg-slate-800 hover:border-border/50 transition-colors group"
+                          className="p-3 bg-card rounded-lg border border-border hover:bg-secondary hover:border-border/50 transition-colors group"
                         >
                           <div className="flex items-center gap-2 mb-1">
                             <span className="text-lg">{tool.icon}</span>

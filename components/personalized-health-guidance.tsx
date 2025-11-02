@@ -86,7 +86,7 @@ export function PersonalizedHealthGuidance({ bmi, category, riskLevel, age, gend
       return {
         title: "Healthy Weight Loss Plan",
         color: "from-orange-50 to-red-50 dark:from-orange-950/30 dark:to-red-950/30",
-        borderColor: "border-orange-200 dark:border-orange-800",
+        borderColor: "border-primary/20",
         textColor: "text-foreground",
         icon: <Target className="h-4 w-4 text-foreground" />,
         nutrition: {
@@ -171,7 +171,7 @@ export function PersonalizedHealthGuidance({ bmi, category, riskLevel, age, gend
       </div>
 
       {/* Nutrition Guidance */}
-      <Card className="border-2 border-slate-200 dark:border-slate-700">
+      <Card className="border-2 border-slate-200 dark:border-border">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center gap-2 text-lg">
             <Apple className="h-5 w-5 text-heading-accent" />
@@ -181,7 +181,7 @@ export function PersonalizedHealthGuidance({ bmi, category, riskLevel, age, gend
         <CardContent className="space-y-4">
           <div>
             <h4 className="font-semibold text-heading-accent mb-2">✅ Recommended Foods:</h4>
-            <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+            <ul className="space-y-1 text-sm text-slate-700 dark:text-foreground">
               {guidance.nutrition.foods.map((food, index) => (
                 <li key={index} className="flex items-start gap-2">
                   <span className="text-heading-accent mt-1">•</span>
@@ -192,7 +192,7 @@ export function PersonalizedHealthGuidance({ bmi, category, riskLevel, age, gend
           </div>
           <div>
             <h4 className="font-semibold text-foreground mb-2">❌ Foods to Avoid:</h4>
-            <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+            <ul className="space-y-1 text-sm text-slate-700 dark:text-foreground">
               {guidance.nutrition.avoid.map((food, index) => (
                 <li key={index} className="flex items-start gap-2">
                   <span className="text-foreground mt-1">•</span>
@@ -205,7 +205,7 @@ export function PersonalizedHealthGuidance({ bmi, category, riskLevel, age, gend
       </Card>
 
       {/* Exercise Guidance */}
-      <Card className="border-2 border-slate-200 dark:border-slate-700">
+      <Card className="border-2 border-slate-200 dark:border-border">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center gap-2 text-lg">
             <Dumbbell className="h-5 w-5 text-foreground" />
@@ -231,7 +231,7 @@ export function PersonalizedHealthGuidance({ bmi, category, riskLevel, age, gend
       </Card>
 
       {/* Equipment Recommendations */}
-      <Card className="border-2 border-slate-200 dark:border-slate-700">
+      <Card className="border-2 border-slate-200 dark:border-border">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center gap-2 text-lg">
             <Scale className="h-5 w-5 text-foreground" />
@@ -241,9 +241,9 @@ export function PersonalizedHealthGuidance({ bmi, category, riskLevel, age, gend
         <CardContent>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {guidance.equipment.map((item, index) => (
-              <div key={index} className="flex items-center gap-2 p-2 bg-slate-50 dark:bg-slate-800 rounded-lg">
+              <div key={index} className="flex items-center gap-2 p-2 bg-slate-50 dark:bg-secondary rounded-lg">
                 <Sparkles className="h-4 w-4 text-foreground" />
-                <span className="text-sm text-slate-700 dark:text-slate-300">{item}</span>
+                <span className="text-sm text-slate-700 dark:text-foreground">{item}</span>
               </div>
             ))}
           </div>
@@ -252,7 +252,7 @@ export function PersonalizedHealthGuidance({ bmi, category, riskLevel, age, gend
 
       {/* Additional Tips Based on Age and Gender */}
       {(age || gender) && (
-        <Card className="border-2 border-slate-200 dark:border-slate-700">
+        <Card className="border-2 border-slate-200 dark:border-border">
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center gap-2 text-lg">
               <Info className="h-5 w-5 text-amber-600" />

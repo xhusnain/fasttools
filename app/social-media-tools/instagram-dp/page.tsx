@@ -142,7 +142,7 @@ export default function InstagramDpPage() {
                 <GHeader
                   title="Instagram DP Viewer"
                   description="View and download Instagram profile pictures in HD quality. Works with public Instagram accounts."
-                  titleSize="large"
+                  titleSize="medium"
                   descriptionSize="small"
                 />
               </div>

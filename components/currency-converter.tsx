@@ -155,7 +155,7 @@ export function CurrencyConverter() {
               placeholder="Enter amount"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
-              className="w-full px-3 py-2 border-2 border-orange-500 rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500"
+              className="w-full px-3 py-2 border-2 border-primary rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-primary"
             />
           </div>
 
@@ -165,7 +165,7 @@ export function CurrencyConverter() {
               onClick={swapCurrencies} 
               variant="outline" 
               size="sm" 
-              className="h-8 w-8 p-0 border-orange-500 hover:bg-orange-500 hover:text-white"
+              className="h-8 w-8 p-0 border-primary hover:bg-primary hover:text-white"
             >
               <ArrowLeftRight className="h-4 w-4" />
             </Button>
@@ -174,7 +174,7 @@ export function CurrencyConverter() {
           {/* Result Display */}
           <div className="space-y-2">
             <label className="text-sm font-medium text-card-foreground">Result</label>
-            <div className="w-full px-3 py-2 border-2 border-orange-500 rounded-md bg-background text-foreground flex items-center justify-center font-medium">
+            <div className="w-full px-3 py-2 border-2 border-primary rounded-md bg-background text-foreground flex items-center justify-center font-medium">
               {loading ? <RefreshCw className="h-4 w-4 animate-spin text-foreground" /> : result || "0.00"}
             </div>
           </div>
@@ -187,7 +187,7 @@ export function CurrencyConverter() {
             <select
               value={fromCurrency}
               onChange={(e) => setFromCurrency(e.target.value)}
-              className="w-full px-3 py-2 border-2 border-orange-500 rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500"
+              className="w-full px-3 py-2 border-2 border-primary rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-primary"
             >
               {currencies.map((currency) => (
                 <option key={currency.code} value={currency.code}>
@@ -202,7 +202,7 @@ export function CurrencyConverter() {
             <select
               value={toCurrency}
               onChange={(e) => setToCurrency(e.target.value)}
-              className="w-full px-3 py-2 border-2 border-orange-500 rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500"
+              className="w-full px-3 py-2 border-2 border-primary rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-primary"
             >
               {currencies.map((currency) => (
                 <option key={currency.code} value={currency.code}>
@@ -224,7 +224,7 @@ export function CurrencyConverter() {
 
         {/* Result Display */}
         {result && !error && (
-          <div className="mt-4 p-3 bg-orange-50 dark:bg-orange-950/20 rounded-md border border-orange-200 dark:border-orange-800">
+          <div className="mt-4 p-3 bg-muted rounded-md border border-primary/20">
             <p className="text-sm text-center">
               <span className="font-bold text-foreground">
                 {amount} {fromCurrency}

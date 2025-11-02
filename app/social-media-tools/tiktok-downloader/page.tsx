@@ -190,7 +190,7 @@ export default function TiktokDownloaderPage() {
             <GHeader
               title="TikTok Downloader – HD Videos & Images Without Watermark"
               description="Download TikTok videos and wallpapers in HD without watermark for free. Fast, secure, and easy-to-use online TikTok downloader for videos and images. Works on PC, Android, iPhone, and all devices. Perfect for creators, marketers, and social media enthusiasts."
-              titleSize="large"
+              titleSize="medium"
               descriptionSize="small"
             />
           </div>

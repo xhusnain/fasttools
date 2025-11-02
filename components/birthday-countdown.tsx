@@ -136,7 +136,7 @@ export function BirthdayCountdown() {
                   <p className="text-xl sm:text-2xl font-bold text-heading-accent">{result.minutes}</p>
                   <p className="text-xs sm:text-sm text-heading-accent">Minutes</p>
                 </div>
-                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-orange-500/20 to-orange-600/20 border border-orange-400/30 text-center">
+                <div className="p-3 sm:p-4 rounded-lg bg-gradient-to-br from-primary/20 to-primary/90/20 border border-orange-400/30 text-center">
                   <p className="text-xl sm:text-2xl font-bold text-foreground">{result.seconds}</p>
                   <p className="text-xs sm:text-sm text-foreground">Seconds</p>
                 </div>

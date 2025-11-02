@@ -495,10 +495,10 @@ export default function ImageBlurPage() {
                             <ImageBlur />
 
                             {/* Content Sections */}
-                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-black border border-border rounded-lg p-4 sm:p-6 lg:p-8">
+                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
-                                    <span className="hidden sm:inline text-orange-500">Why Choose Our Image Background Blur Tool</span>
-                                    <span className="sm:hidden text-orange-500">AI Features</span>
+                                    <span className="hidden sm:inline text-primary">Why Choose Our Image Background Blur Tool</span>
+                                    <span className="sm:hidden text-primary">AI Features</span>
                                 </h2>
 
                                 <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-6">
@@ -506,21 +506,21 @@ export default function ImageBlurPage() {
                                 </p>
 
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <Zap className="h-8 w-8 text-white mb-3" />
                                         <h3 className="text-lg font-semibold text-green-500 mb-2">AI Subject Detection</h3>
                                         <p className="text-sm text-gray-400">
                                             Advanced AI automatically identifies your subject and preserves sharp focus while blurring the background perfectly.
                                         </p>
                                     </div>
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <Shield className="h-8 w-8 text-white mb-3" />
                                         <h3 className="text-lg font-semibold text-green-500 mb-2">Complete Privacy</h3>
                                         <p className="text-sm text-gray-400">
                                             All processing happens in your browser. Your images never leave your device and are never uploaded to our servers.
                                         </p>
                                     </div>
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <Globe className="h-8 w-8 text-white mb-3" />
                                         <h3 className="text-lg font-semibold text-green-500 mb-2">Adjustable Intensity</h3>
                                         <p className="text-sm text-gray-400">
@@ -532,13 +532,13 @@ export default function ImageBlurPage() {
 
                             {/* Before/After Examples */}
                             <section className="mt-8 sm:mt-10 lg:mt-12">
-                                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-orange-500 text-center">
+                                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-primary text-center">
                                     See the Difference: AI Background Blur in Action
                                 </h2>
                                 
                                 <div className="space-y-6 sm:space-y-8">
                                     {/* Example 1 - Human */}
-                                    <div className="bg-black rounded-xl p-6 sm:p-8 lg:p-10 border border-border">
+                                    <div className="bg-card rounded-xl p-6 sm:p-8 lg:p-10 border border-border">
                                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                                             <div className="order-2 lg:order-1">
                                                 <h3 className="text-2xl sm:text-3xl font-bold text-green-500 mb-4">
@@ -579,7 +579,7 @@ export default function ImageBlurPage() {
                                     </div>
 
                                     {/* Example 2 - Dog */}
-                                    <div className="bg-black rounded-xl p-6 sm:p-8 lg:p-10 border border-border">
+                                    <div className="bg-card rounded-xl p-6 sm:p-8 lg:p-10 border border-border">
                                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                                             <div className="order-2 lg:order-2">
                                                 <h3 className="text-2xl sm:text-3xl font-bold text-green-500 mb-4">
@@ -620,7 +620,7 @@ export default function ImageBlurPage() {
                                     </div>
 
                                     {/* Example 3 - Object */}
-                                    <div className="bg-black rounded-xl p-6 sm:p-8 lg:p-10 border border-border">
+                                    <div className="bg-card rounded-xl p-6 sm:p-8 lg:p-10 border border-border">
                                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                                             <div className="order-2 lg:order-1">
                                                 <h3 className="text-2xl sm:text-3xl font-bold text-green-500 mb-4">
@@ -663,10 +663,10 @@ export default function ImageBlurPage() {
                             </section>
 
                             {/* Use Cases */}
-                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-black border border-border rounded-lg p-4 sm:p-6 lg:p-8">
+                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
-                                    <span className="hidden sm:inline text-orange-500">Background Blur Use Cases</span>
-                                    <span className="sm:hidden text-orange-500">Use Cases</span>
+                                    <span className="hidden sm:inline text-primary">Background Blur Use Cases</span>
+                                    <span className="sm:hidden text-primary">Use Cases</span>
                                 </h2>
 
                                 <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-6">
@@ -674,7 +674,7 @@ export default function ImageBlurPage() {
                                 </p>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-green-500 mb-2 flex items-center gap-2">
                                             <ArrowRight className="h-4 w-4 text-white" />
                                             Portrait Photography
@@ -683,7 +683,7 @@ export default function ImageBlurPage() {
                                             Create professional portrait mode effects with beautiful bokeh blur. Perfect for profile pictures, headshots, and social media.
                                         </p>
                                     </div>
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-green-500 mb-2 flex items-center gap-2">
                                             <ArrowRight className="h-4 w-4 text-white" />
                                             Product Photography
@@ -692,7 +692,7 @@ export default function ImageBlurPage() {
                                             Make your products stand out with professional background blur. Ideal for e-commerce and catalog photography.
                                         </p>
                                     </div>
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-green-500 mb-2 flex items-center gap-2">
                                             <ArrowRight className="h-4 w-4 text-white" />
                                             Social Media Content
@@ -701,7 +701,7 @@ export default function ImageBlurPage() {
                                             Enhance your Instagram, Facebook, and LinkedIn posts with professional-looking blur effects.
                                         </p>
                                     </div>
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-green-500 mb-2 flex items-center gap-2">
                                             <ArrowRight className="h-4 w-4 text-white" />
                                             Creative Photography
@@ -714,7 +714,7 @@ export default function ImageBlurPage() {
                             </section>
 
                             {/* Platform Compatibility */}
-                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-black border border-border rounded-lg p-4 sm:p-6 lg:p-8">
+                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-green-500">
                                     Compatible with All Devices & Platforms
                                 </h2>
@@ -724,7 +724,7 @@ export default function ImageBlurPage() {
                                 </p>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="bg-black rounded-lg p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-6 border border-border">
                                         <h3 className="text-lg font-semibold text-green-500 mb-3">Mobile Devices</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed mb-3">
                                             Perfect for iPhone and Android users! Blur image background on iOS and Samsung devices without downloading any app. Our mobile-optimized interface makes it easy to blur photo backgrounds on the go.
@@ -734,7 +734,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-6 border border-border">
                                         <h3 className="text-lg font-semibold text-green-500 mb-3">Desktop Applications</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed mb-3">
                                             Alternative to expensive software like Photoshop, Canva Pro, and GIMP. Get professional DSLR-style bokeh effects and background blur without software downloads or subscriptions.
@@ -744,7 +744,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-6 border border-border">
                                         <h3 className="text-lg font-semibold text-green-500 mb-3">Video Conferencing</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed mb-3">
                                             Need a professional background for Zoom meetings? Download your blurred background images in HD 4K quality and use them as virtual backgrounds. Perfect for video calls, YouTube videos, and online meetings.
@@ -754,7 +754,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-6 border border-border">
                                         <h3 className="text-lg font-semibold text-green-500 mb-3">Social Media Platforms</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed mb-3">
                                             Create stunning Instagram story backgrounds, Facebook posts, and profile pictures with professional blur effects. No need for CapCut or other video editing apps - blur backgrounds instantly online.
@@ -767,7 +767,7 @@ export default function ImageBlurPage() {
                             </section>
 
                             {/* Quality & Resolution */}
-                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-black border border-border rounded-lg p-4 sm:p-6 lg:p-8">
+                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-green-500">
                                     High-Quality 4K & HD Background Blur
                                 </h2>
@@ -777,28 +777,28 @@ export default function ImageBlurPage() {
                                 </p>
 
                                 <div className="space-y-4">
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-green-500 mb-2">4K Ultra HD Support</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed">
                                             Upload and process 4K background blur images (3840×2160) with full resolution preserved. Get blur background image download HD 4K quality for professional photography, presentations, and digital displays. Our tool handles large image files efficiently.
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-green-500 mb-2">Full HD 1080p Processing</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed">
                                             Photo background blur full HD 1080p free download available instantly. Perfect for HD photo background blur wala content, social media posts, and high-quality prints. Export in PNG or JPEG formats with adjustable compression.
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-green-500 mb-2">Professional DSLR Bokeh Effects</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed">
                                             Achieve photo background blur DSLR quality without expensive cameras or lenses. Our AI creates natural bokeh blur effects similar to professional photography with f/1.8 aperture. Perfect for background image DSLR blur style portraits and product photos.
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-green-500 mb-2">Free Download Options</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed">
                                             Photo background blur free download with no watermarks or restrictions. Download your HD photo background blur images immediately after processing. No signup required - completely free picture blur background HD tool.
@@ -808,7 +808,7 @@ export default function ImageBlurPage() {
                             </section>
 
                             {/* For Developers */}
-                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-black border border-border rounded-lg p-4 sm:p-6 lg:p-8">
+                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-green-500">
                                     Background Blur for Web Developers
                                 </h2>
@@ -818,28 +818,28 @@ export default function ImageBlurPage() {
                                 </p>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-md font-semibold text-green-500 mb-2">CSS Background Blur</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed">
                                             Use CSS backdrop-filter for background image blur CSS effects. Apply background image blur filter CSS to div elements, body backgrounds, and image overlays. Learn css background image blur edges techniques and blur background image but not content methods.
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-md font-semibold text-green-500 mb-2">Tailwind CSS Blur</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed">
                                             Implement background image blur in Tailwind CSS using backdrop-blur utilities. Perfect for background image blur Tailwind components and modern web designs. Learn background image blur in Tailwind CSS best practices.
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-md font-semibold text-green-500 mb-2">React & JavaScript</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed">
                                             Add background image blur React components with dynamic blur intensity. Use canvas API for client-side image processing. Implement background image blur using CSS in React apps with styled-components.
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-md font-semibold text-green-500 mb-2">Other Frameworks</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed">
                                             Background image blur in Flutter for mobile apps, Bootstrap blur effects, Elementor blur backgrounds for WordPress, and W3Schools background image blur tutorials. Check background image blur HTML CSS code examples.
@@ -849,13 +849,13 @@ export default function ImageBlurPage() {
                             </section>
 
                             {/* Regional Language Content */}
-                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-black border border-border rounded-lg p-4 sm:p-6 lg:p-8">
-                                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-orange-500">
+                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
+                                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-primary">
                                     फोटो की बैकग्राउंड ब्लर कैसे करे (How to Blur Photo Background)
                                 </h2>
                                 
                                 <div className="space-y-4">
-                                    <div className="bg-black rounded-lg p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-6 border border-border">
                                         <h3 className="text-lg font-semibold text-green-500 mb-3">Photo Background Blur Kaise Kare?</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed mb-3">
                                             हमारी वेबसाइट पर photo background blur kaise kare बहुत आसान है। बस अपनी photo upload करें, AI automatically subject को detect करेगा, और blur slider से background blur intensity adjust करें। यह picture ka background blur kaise kare का सबसे आसान तरीका है।
@@ -865,7 +865,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-lg font-semibold text-green-500 mb-2">Video Background Blur Karne Ka Tarika</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed">
                                             Video के लिए भी आप इस tool से blur backgrounds बना सकते हैं। Photo background blur wala images को Zoom, Teams, या video calls में background की तरह use करें। HD photo background blur wala content के लिए perfect!
@@ -875,27 +875,27 @@ export default function ImageBlurPage() {
                             </section>
 
                             {/* Advanced Features */}
-                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-black border border-border rounded-lg p-4 sm:p-6 lg:p-8">
+                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-green-500">
                                     Advanced Blur Effects & Customization
                                 </h2>
                                 
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-md font-semibold text-green-500 mb-2">Blur Styles</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed">
                                             Choose from various effects: photo background circle blur, round blur, motion blur, gradient blur, light blur effects, and bokeh blur. Customize photo background blur colour and create unique styles.
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-md font-semibold text-green-500 mb-2">Background Types</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed">
                                             Perfect for all backgrounds: gym background blur image, garden backgrounds, village backgrounds, jungle backgrounds, restaurant backgrounds, road backgrounds, nature blur images, and studio backgrounds.
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 border border-border">
+                                    <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-md font-semibold text-green-500 mb-2">Output Formats</h3>
                                         <p className="text-sm text-gray-400 leading-relaxed">
                                             Export as background blur image PNG with transparency, JPG for smaller file sizes, or blur background girl image for social media. Get blur gradient background images and blur no background options.
@@ -905,56 +905,56 @@ export default function ImageBlurPage() {
                             </section>
 
                             {/* FAQ Section */}
-                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-black border border-border rounded-lg p-4 sm:p-6 lg:p-8">
+                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
-                                    <span className="hidden sm:inline text-orange-500">Frequently Asked Questions</span>
-                                    <span className="sm:hidden text-orange-500">FAQ</span>
+                                    <span className="hidden sm:inline text-primary">Frequently Asked Questions</span>
+                                    <span className="sm:hidden text-primary">FAQ</span>
                                 </h2>
 
                                 <div className="space-y-4 sm:space-y-6">
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How does the AI background blur work?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                                             Our tool uses advanced U²-Net AI model to automatically detect the main subject in your image. It then applies a Gaussian blur effect to the background while keeping your subject sharp and in focus, creating a professional portrait mode effect.
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">Can I adjust the blur intensity?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                                             Yes! You can adjust the blur intensity from 5px (subtle blur) to 50px (strong blur) using the slider. This gives you full control over the depth of field effect to match your creative vision.
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">Is my photo secure and private?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                                             Absolutely! All image processing happens entirely in your browser. Your photos never leave your device and are never uploaded to any server. This ensures complete privacy and security for your images.
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">What image formats are supported?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                                             We support JPEG, JPG, PNG, and WebP formats. The output is saved as a high-quality JPEG file with 95% quality compression to maintain excellent image quality while keeping file sizes reasonable.
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">Does this work on mobile devices?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                                             Yes! Our tool is fully responsive and works perfectly on smartphones and tablets (iOS and Android). You can blur photo backgrounds on the go with the same quality as desktop.
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">Is there a limit on image size?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                                             No size limits! You can process images of any resolution. However, larger images may take slightly longer to process depending on your device's processing power.
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to photo background blur?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             To blur a photo background, follow these simple steps: 1) Click the upload button and select your image, 2) Wait for AI to process and detect the subject, 3) Use the blur intensity slider to adjust blur strength (1px-50px), and 4) Click download to save your edited image. Our free online tool makes photo background blur easy without any software installation.
@@ -964,7 +964,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to blur background of picture?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             To blur the background of a picture, upload your image to our AI-powered tool. The advanced U²-Net machine learning model automatically identifies the main subject (person, pet, or object) and separates it from the background. You can then apply Gaussian blur to the background while keeping your subject sharp and focused.
@@ -974,7 +974,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to blur background of picture in iPhone?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             To blur the background of a picture on iPhone, open Safari or any browser and visit our website. No app download needed! Simply tap the upload button, select a photo from your iPhone camera roll, and our AI will process it instantly. The tool is fully optimized for iOS devices with touch-friendly controls.
@@ -987,7 +987,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How do you blur a background on a picture / photo?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             There are several ways to blur a background on a photo: 1) Use our free AI online tool (fastest and easiest), 2) Use photo editing software like Photoshop or GIMP (requires skills), 3) Use mobile apps like CapCut or Canva (may have watermarks), or 4) Shoot with a DSLR camera using wide aperture (expensive equipment required).
@@ -997,7 +997,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">Can you blur the background of a photo?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             Yes, absolutely! You can blur the background of any photo using our free AI tool. Unlike camera Portrait mode which only works during capture, our tool adds professional blur effects to existing photos retroactively. It works with images from any camera, phone, or source - even old photos from years ago.
@@ -1007,7 +1007,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How do I blur a background on a photo?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             To blur a background on a photo using our tool: <strong>Step 1:</strong> Navigate to fasttools.store/image-tools/image-blur. <strong>Step 2:</strong> Click "Choose Image" and upload your photo (JPEG, PNG, or WebP). <strong>Step 3:</strong> Wait 2-5 seconds for AI processing. <strong>Step 4:</strong> Adjust the blur intensity slider (1-50px). <strong>Step 5:</strong> Click "Apply AI Background Blur" to process. <strong>Step 6:</strong> Preview the result and download.
@@ -1017,7 +1017,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to blur picture background on Android?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             To blur picture background on Android phones (Samsung, Google Pixel, OnePlus, etc.): Open Chrome or any browser, visit our website, tap the upload button, select photo from gallery, and let AI process it. The interface is touch-optimized for Android devices with smooth slider controls for blur adjustment.
@@ -1030,7 +1030,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to make background image blur in Instagram story?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             To create Instagram story background blur: First, use our tool to blur your photo's background. Upload your image, adjust blur intensity for Instagram-appropriate effects (15-25px works best), and download. Then, open Instagram, swipe to Stories, upload your pre-blurred image, and post. This method gives you much more control than Instagram's built-in Focus mode.
@@ -1040,7 +1040,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">What is background blur?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             Background blur (also called bokeh effect or depth of field) is a photographic technique where the main subject remains sharp while the background appears soft and out-of-focus. In professional photography, this is achieved using wide aperture lenses (f/1.4, f/1.8, f/2.8) on DSLR or mirrorless cameras, which naturally blur backgrounds due to shallow depth of field.
@@ -1053,7 +1053,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to make image background blur?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             To make an image background blur online: Use our free AI tool at fasttools.store. Simply upload your image (drag-and-drop or click to select), and our advanced neural network will automatically process it. The AI detects edges, identifies the main subject, and prepares the image for blur application. Then use the slider to set your preferred blur intensity and click "Apply AI Background Blur."
@@ -1063,7 +1063,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How blur background in CapCut?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             To blur background in CapCut: 1) Open CapCut app, 2) Import your video or photo, 3) Tap on the clip, 4) Select "Effects" {">"} "Body Effects" {">"} "Auto Cutout" to remove background, 5) Add a blurred background layer, 6) Adjust blur intensity. However, CapCut requires app installation, has a learning curve, and is primarily designed for video editing.
@@ -1073,7 +1073,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to make picture background blur in Photoshop?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             To blur picture background in Photoshop: 1) Open your image, 2) Use Quick Selection Tool (W) or Pen Tool (P) to select the subject, 3) Press Shift+Ctrl+I (Windows) or Shift+Cmd+I (Mac) to invert selection (now background is selected), 4) Go to Filter {">"} Blur {">"} Gaussian Blur, 5) Adjust blur radius (10-50 pixels), 6) Click OK, 7) Save as JPEG or PNG.
@@ -1086,7 +1086,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to make image background blur in Canva?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             To make image background blur in Canva: 1) Open Canva and create a new design, 2) Upload your image, 3) Click on the image, 4) Select "Edit image" {">"} "Background Remover" (requires Canva Pro subscription $13/month), 5) Once background is removed, 6) Add a blurred background element from Canva's library or use the "Blur" effect if available.
@@ -1096,7 +1096,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to blur picture background in mobile?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             To blur picture background on mobile (iPhone or Android): Open your mobile browser (Safari, Chrome, Firefox), visit fasttools.store/image-tools/image-blur, tap "Choose Image," select photo from camera roll or gallery, wait for AI processing (3-5 seconds), adjust blur slider to your preference (touch and drag), tap "Apply AI Background Blur," preview the result, and tap "Download" to save to your phone.
@@ -1109,7 +1109,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How to background image blur in HTML/CSS?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             To create background image blur in HTML/CSS, use the backdrop-filter property or filter property. Method 1 (backdrop-filter): Use backdrop-filter: blur(10px) on an overlay element to blur the background behind it. Method 2 (filter): Apply filter: blur(10px) directly to the background image element. For modern browsers, backdrop-filter provides better performance.
@@ -1119,7 +1119,7 @@ export default function ImageBlurPage() {
                                         </p>
                                     </div>
 
-                                    <div className="bg-black rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
+                                    <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-green-500 mb-3 sm:mb-4">How image background blur works?</h3>
                                         <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3">
                                             Image background blur works through AI-powered image segmentation: 1) <strong>Subject Detection:</strong> The U²-Net neural network analyzes the image to identify the main subject (person, pet, or object) by detecting edges, colors, and patterns. 2) <strong>Segmentation Mask:</strong> AI creates a pixel-perfect mask separating foreground (subject) from background. 3) <strong>Selective Blur:</strong> Gaussian blur filter is applied only to background pixels while preserving subject sharpness.
@@ -1139,7 +1139,7 @@ export default function ImageBlurPage() {
                         <aside className="hidden xl:block xl:col-span-1">
                             <div className="sticky top-6 space-y-6">
                                 {/* First Ad */}
-                                <div className="bg-black border border-border rounded-lg p-4">
+                                <div className="bg-card border border-border rounded-lg p-4">
                                     <div className="text-center">
                                         <div className="text-sm font-medium text-muted-foreground mb-2">Advertisement</div>
                                         <AdSpace slot="sidebar" className="w-full h-96" />

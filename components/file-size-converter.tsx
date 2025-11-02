@@ -95,7 +95,7 @@ export function FileSizeConverter() {
   return (
     <div className="space-y-6">
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 gap-2">
           <TabsTrigger value="converter" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
             <Calculator className="h-4 w-4" />
             Converter
@@ -111,10 +111,6 @@ export function FileSizeConverter() {
           <TabsTrigger value="faq" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
             <Code className="h-4 w-4" />
             FAQ
-          </TabsTrigger>
-          <TabsTrigger value="docs" className="flex items-center justify-center gap-2 text-xs sm:text-sm py-2">
-            <Archive className="h-4 w-4" />
-            Official Docs
           </TabsTrigger>
         </TabsList>
 
@@ -137,13 +133,13 @@ export function FileSizeConverter() {
                     placeholder="Enter file size"
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
-                    className="h-11 text-sm w-full border-2 border-orange-500 focus-visible:ring-0 focus:border-orange-500 placeholder:text-muted-foreground"
+                    className="h-11 text-sm w-full border-2 border-primary focus-visible:ring-0 focus:border-primary placeholder:text-muted-foreground"
                   />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="unit">From Unit</Label>
                   <Select value={fromUnit} onValueChange={setFromUnit}>
-                    <SelectTrigger className="h-11 text-sm w-full border-2 border-orange-500 focus:border-orange-500">
+                    <SelectTrigger className="h-11 text-sm w-full border-2 border-primary focus:border-primary">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -240,7 +236,7 @@ export function FileSizeConverter() {
                   </div>
                 </div>
               </div>
-              <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <div className="mt-4 p-3 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
                 <h5 className="font-semibold text-foreground mb-2">💡 Quick Tips</h5>
                 <ul className="text-xs text-foreground space-y-1">
                   <li>• Use KB/MB/GB for decimal (storage manufacturers, network throughput)</li>
@@ -422,7 +418,7 @@ export function FileSizeConverter() {
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <div className="p-2 bg-blue-50 dark:bg-blue-950/20 rounded border border-blue-200 dark:border-blue-800">
+                  <div className="p-2 bg-muted rounded border border-blue-200 dark:border-blue-800">
                     <p className="text-xs text-foreground">
                       <strong>All abbreviations:</strong><br/>
                       b, B, KB, KiB, MB, MiB, GB, GiB, TB, TiB, PB, PiB, EB, EiB, ZB, ZiB, YB, YiB, RB, RiB, QB, QiB
@@ -447,14 +443,14 @@ export function FileSizeConverter() {
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold text-foreground">Mathematical Formulas</h3>
                   <div className="space-y-3">
-                    <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                    <div className="p-4 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
                       <h4 className="font-semibold text-foreground mb-2">Decimal (SI) Formula</h4>
                       <p className="text-sm text-foreground">
                         <strong>Size in bytes = Value × 10^n</strong><br/>
                         Where n = 3, 6, 9, 12, 15, 18, 21, 24, 27, 30
                       </p>
                     </div>
-                    <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
+                    <div className="p-4 bg-muted rounded-lg border border-green-200 dark:border-green-800">
                       <h4 className="font-semibold text-heading-accent mb-2">Binary (IEC) Formula</h4>
                       <p className="text-sm text-heading-accent">
                         <strong>Size in bytes = Value × 2^n</strong><br/>
@@ -467,14 +463,14 @@ export function FileSizeConverter() {
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold text-foreground">Conversion Examples</h3>
                   <div className="space-y-3">
-                    <div className="p-4 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200 dark:border-orange-800">
+                    <div className="p-4 bg-muted rounded-lg border border-primary/20">
                       <h4 className="font-semibold text-foreground mb-2">1 GB to MB</h4>
                       <p className="text-sm text-foreground">
                         <strong>Decimal:</strong> 1 GB = 1,000 MB<br/>
                         <strong>Binary:</strong> 1 GiB = 1,024 MiB
                       </p>
                     </div>
-                    <div className="p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
+                    <div className="p-4 bg-muted rounded-lg border border-purple-200 dark:border-purple-800">
                       <h4 className="font-semibold text-foreground mb-2">Bit to Byte</h4>
                       <p className="text-sm text-foreground">
                         <strong>1 Byte = 8 bits</strong><br/>
@@ -512,7 +508,7 @@ export function FileSizeConverter() {
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-foreground">Real-World Applications</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                  <div className="p-4 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
                     <h4 className="font-semibold text-foreground mb-2">Storage Devices</h4>
                     <ul className="text-sm text-foreground space-y-1">
                       <li>• Hard drives: TB range</li>
@@ -521,7 +517,7 @@ export function FileSizeConverter() {
                       <li>• Memory cards: GB range</li>
                     </ul>
                   </div>
-                  <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
+                  <div className="p-4 bg-muted rounded-lg border border-green-200 dark:border-green-800">
                     <h4 className="font-semibold text-heading-accent mb-2">Network Speeds</h4>
                     <ul className="text-sm text-heading-accent space-y-1">
                       <li>• Internet: Mbps, Gbps</li>
@@ -530,7 +526,7 @@ export function FileSizeConverter() {
                       <li>• 5G: Up to 10 Gbps</li>
                     </ul>
                   </div>
-                  <div className="p-4 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200 dark:border-orange-800">
+                  <div className="p-4 bg-muted rounded-lg border border-primary/20">
                     <h4 className="font-semibold text-foreground mb-2">Data Centers</h4>
                     <ul className="text-sm text-foreground space-y-1">
                       <li>• Server storage: TB to PB</li>
@@ -642,197 +638,6 @@ export function FileSizeConverter() {
                     Games (GB), Operating System (GB). Add 20-30% buffer for future needs. 
                     Use binary units (GiB, TiB) for accurate calculations as that's what your OS uses.
                   </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="docs" className="space-y-6">
-          <Card className="border border-border shadow-sm">
-            <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
-                <Archive className="h-5 w-5" />
-                Official Documentation & Standards
-              </CardTitle>
-              <p className="text-sm text-muted-foreground">
-                Official standards and documentation for data storage units and file size calculations
-              </p>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-foreground">International Standards</h3>
-                  <div className="space-y-3">
-                    <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                      <h4 className="font-semibold text-foreground mb-2">ISO/IEC 80000-13:2008</h4>
-                      <p className="text-sm text-foreground mb-2">
-                        International standard for information technology quantities and units
-                      </p>
-                      <a 
-                        href="https://www.iso.org/standard/31898.html" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:underline text-sm"
-                      >
-                        View Official Standard →
-                      </a>
-                    </div>
-
-                    <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                      <h4 className="font-semibold text-heading-accent mb-2">IEC 80000-13:2008</h4>
-                      <p className="text-sm text-heading-accent mb-2">
-                        International Electrotechnical Commission standard for binary prefixes
-                      </p>
-                      <a 
-                        href="https://www.iec.ch/publication/iec-80000-13" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-heading-accent hover:underline text-sm"
-                      >
-                        View IEC Standard →
-                      </a>
-                    </div>
-
-                    <div className="p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                      <h4 className="font-semibold text-foreground mb-2">NIST SP 330</h4>
-                      <p className="text-sm text-foreground mb-2">
-                        National Institute of Standards and Technology - International System of Units
-                      </p>
-                      <a 
-                        href="https://www.nist.gov/pml/special-publication-330" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:underline text-sm"
-                      >
-                        View NIST Documentation →
-                      </a>
-                    </div>
-
-                    <div className="p-4 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200 dark:border-orange-800">
-                      <h4 className="font-semibold text-foreground mb-2">IEEE 1541-2002</h4>
-                      <p className="text-sm text-foreground mb-2">
-                        IEEE Standard for Prefixes for Binary Multiples
-                      </p>
-                      <a 
-                        href="https://standards.ieee.org/standard/1541-2002.html" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:underline text-sm"
-                      >
-                        View IEEE Standard →
-                      </a>
-                    </div>
-
-                    <div className="p-4 bg-red-50 dark:bg-red-950/20 rounded-lg border border-red-200 dark:border-red-800">
-                      <h4 className="font-semibold text-foreground mb-2">RFC 3986</h4>
-                      <p className="text-sm text-foreground mb-2">
-                        Internet Engineering Task Force - Uniform Resource Identifier (URI) Generic Syntax
-                      </p>
-                      <a 
-                        href="https://tools.ietf.org/html/rfc3986" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:underline text-sm"
-                      >
-                        View RFC Documentation →
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-foreground">Technology Standards</h3>
-                  <div className="space-y-3">
-                    <div className="p-4 bg-indigo-50 dark:bg-indigo-950/20 rounded-lg border border-indigo-200 dark:border-indigo-800">
-                      <h4 className="font-semibold text-indigo-800 dark:text-indigo-200 mb-2">W3C Standards</h4>
-                      <p className="text-sm text-indigo-700 dark:text-indigo-300 mb-2">
-                        World Wide Web Consortium standards for web technologies and data formats
-                      </p>
-                      <a 
-                        href="https://www.w3.org/standards/" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-indigo-600 dark:text-indigo-400 hover:underline text-sm"
-                      >
-                        View W3C Standards →
-                      </a>
-                    </div>
-
-                    <div className="p-4 bg-teal-50 dark:bg-teal-950/20 rounded-lg border border-teal-200 dark:border-teal-800">
-                      <h4 className="font-semibold text-teal-800 dark:text-teal-200 mb-2">ECMA-262</h4>
-                      <p className="text-sm text-teal-700 dark:text-teal-300 mb-2">
-                        ECMAScript Language Specification for JavaScript data handling
-                      </p>
-                      <a 
-                        href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-teal-600 dark:text-teal-400 hover:underline text-sm"
-                      >
-                        View ECMA Standard →
-                      </a>
-                    </div>
-
-                    <div className="p-4 bg-cyan-50 dark:bg-cyan-950/20 rounded-lg border border-cyan-200 dark:border-cyan-800">
-                      <h4 className="font-semibold text-foreground mb-2">ANSI X3.4-1986</h4>
-                      <p className="text-sm text-foreground mb-2">
-                        American National Standards Institute - Information Systems
-                      </p>
-                      <a 
-                        href="https://webstore.ansi.org/standards/iso/isoiec80000132008" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:underline text-sm"
-                      >
-                        View ANSI Standard →
-                      </a>
-                    </div>
-
-                    <div className="p-4 bg-pink-50 dark:bg-pink-950/20 rounded-lg border border-pink-200 dark:border-pink-800">
-                      <h4 className="font-semibold text-foreground mb-2">JEDEC JESD 100B.01</h4>
-                      <p className="text-sm text-foreground mb-2">
-                        Joint Electron Device Engineering Council - Terms, Definitions, and Letter Symbols
-                      </p>
-                      <a 
-                        href="https://www.jedec.org/standards-documents/dictionary/terms/units" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:underline text-sm"
-                      >
-                        View JEDEC Standards →
-                      </a>
-                    </div>
-
-                    <div className="p-4 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
-                      <h4 className="font-semibold text-foreground mb-2">ITU-T Recommendations</h4>
-                      <p className="text-sm text-foreground mb-2">
-                        International Telecommunication Union - Telecommunication Standardization Sector
-                      </p>
-                      <a 
-                        href="https://www.itu.int/rec/T-REC-X/en" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:underline text-sm"
-                      >
-                        View ITU-T Standards →
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-950/20 dark:to-green-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                <h4 className="font-semibold text-foreground mb-2">📚 Educational Resources</h4>
-                <p className="text-sm text-foreground mb-3">
-                  These official standards provide the foundation for accurate file size calculations and data storage measurements. 
-                  Our converter implements these international standards to ensure precision and compliance.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-foreground">
-                  <div>• ISO/IEC 80000-13: Decimal prefixes (KB, MB, GB, TB)</div>
-                  <div>• IEC 80000-13: Binary prefixes (KiB, MiB, GiB, TiB)</div>
-                  <div>• IEEE 1541: Binary unit definitions</div>
-                  <div>• NIST SP 330: SI unit system</div>
                 </div>
               </div>
             </CardContent>

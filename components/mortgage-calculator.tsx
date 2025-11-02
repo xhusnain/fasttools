@@ -611,24 +611,24 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
             <CardContent>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
+                  <div className="p-4 bg-muted rounded-lg border border-green-200 dark:border-green-800">
                     <h3 className="font-semibold text-heading-accent mb-2">Principal & Interest</h3>
                     <div className="text-2xl font-bold text-heading-accent">${result.monthlyPayment.toFixed(2)}</div>
                     <div className="text-sm text-heading-accent">{result.principalPercentage.toFixed(1)}%</div>
                   </div>
-                  <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                  <div className="p-4 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
                     <h3 className="font-semibold text-foreground mb-2">Property Taxes</h3>
                     <div className="text-2xl font-bold text-foreground">${result.propertyTax.toFixed(2)}</div>
                     <div className="text-sm text-foreground">{result.propertyTaxPercentage.toFixed(1)}%</div>
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <div className="p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
+                  <div className="p-4 bg-muted rounded-lg border border-purple-200 dark:border-purple-800">
                     <h3 className="font-semibold text-foreground mb-2">Home Insurance</h3>
                     <div className="text-2xl font-bold text-foreground">${result.homeInsurance.toFixed(2)}</div>
                     <div className="text-sm text-foreground">{result.homeInsurancePercentage.toFixed(1)}%</div>
                   </div>
-                  <div className="p-4 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200 dark:border-orange-800">
+                  <div className="p-4 bg-muted rounded-lg border border-primary/20">
                     <h3 className="font-semibold text-foreground mb-2">Other Costs</h3>
                     <div className="text-2xl font-bold text-foreground">${(result.pmiInsurance + result.hoaFee + result.otherCosts).toFixed(2)}</div>
                     <div className="text-sm text-foreground">{result.otherCostsPercentage.toFixed(1)}%</div>
@@ -796,7 +796,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+          <div className="p-4 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
               <div className="text-sm">

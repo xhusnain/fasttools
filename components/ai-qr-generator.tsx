@@ -428,7 +428,7 @@ END:VCARD`
     }
   }
 
-  const inputClass = "h-9 border-2 border-orange-500/50 focus:border-orange-500 text-sm"
+  const inputClass = "h-9 border-2 border-primary/50 focus:border-primary text-sm"
   const labelClass = "text-xs font-medium"
 
   return (
@@ -479,7 +479,7 @@ END:VCARD`
                 <FileText className="h-3.5 w-3.5 text-indigo-500" />
                 <span>Text</span>
               </TabsTrigger>
-              <TabsTrigger value="bulk" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-orange-500 data-[state=active]:text-white">
+              <TabsTrigger value="bulk" className="flex items-center gap-1.5 text-xs py-2 data-[state=active]:bg-primary data-[state=active]:text-white">
                 <ListOrdered className="h-3.5 w-3.5 text-foreground" />
                 <span>Bulk</span>
               </TabsTrigger>
@@ -505,7 +505,7 @@ END:VCARD`
                 placeholder="Enter any text..."
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                className="min-h-[60px] border-2 border-orange-500/50 focus:border-orange-500 text-sm"
+                className="min-h-[60px] border-2 border-primary/50 focus:border-primary text-sm"
               />
             </TabsContent>
 
@@ -536,7 +536,7 @@ END:VCARD`
                 <div className="space-y-2">
                   <Label htmlFor="wifi-encryption" className={labelClass}>Encryption</Label>
                   <Select value={wifiEncryption} onValueChange={(v) => setWifiEncryption(v as "WPA" | "WEP" | "nopass")}>
-                    <SelectTrigger className="h-9 border-2 border-orange-500/50">
+                    <SelectTrigger className="h-9 border-2 border-primary/50">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -546,12 +546,12 @@ END:VCARD`
                     </SelectContent>
                   </Select>
                 </div>
-                <div className="flex items-center gap-2 p-2 rounded-lg bg-background border border-orange-500/30 mt-6">
+                <div className="flex items-center gap-2 p-2 rounded-lg bg-background border border-primary/30 mt-6">
                   <Switch
                     id="wifi-hidden"
                     checked={wifiHidden}
                     onCheckedChange={setWifiHidden}
-                    className="data-[state=checked]:bg-orange-500"
+                    className="data-[state=checked]:bg-primary"
                   />
                   <Label htmlFor="wifi-hidden" className="text-sm cursor-pointer font-medium">Hidden Network</Label>
                 </div>
@@ -635,7 +635,7 @@ END:VCARD`
                   placeholder="Message..."
                   value={emailBody}
                   onChange={(e) => setEmailBody(e.target.value)}
-                  className="min-h-[60px] border-2 border-orange-500/50 focus:border-orange-500 text-sm"
+                  className="min-h-[60px] border-2 border-primary/50 focus:border-primary text-sm"
                 />
               </div>
             </TabsContent>
@@ -659,7 +659,7 @@ END:VCARD`
                   placeholder="SMS message..."
                   value={smsMessage}
                   onChange={(e) => setSmsMessage(e.target.value)}
-                  className="min-h-[60px] border-2 border-orange-500/50 focus:border-orange-500 text-sm"
+                  className="min-h-[60px] border-2 border-primary/50 focus:border-primary text-sm"
                 />
               </div>
             </TabsContent>
@@ -683,7 +683,7 @@ END:VCARD`
                   placeholder="Hello! I'd like to..."
                   value={smsMessage}
                   onChange={(e) => setSmsMessage(e.target.value)}
-                  className="min-h-[60px] border-2 border-orange-500/50 focus:border-orange-500 text-sm"
+                  className="min-h-[60px] border-2 border-primary/50 focus:border-primary text-sm"
                 />
               </div>
             </TabsContent>
@@ -728,7 +728,7 @@ END:VCARD`
 
             {/* Bulk QR Generation */}
             <TabsContent value="bulk" className="space-y-3 mt-3">
-              <div className="p-3 rounded-lg bg-orange-50 dark:bg-orange-950/30 border border-orange-500/30">
+              <div className="p-3 rounded-lg bg-orange-50 dark:bg-orange-950/30 border border-primary/30">
                 <p className="text-xs font-semibold text-foreground">
                   🚀 Generate hundreds of QR codes at once! Enter URLs/text (one per line) or upload CSV.
                 </p>
@@ -747,7 +747,7 @@ END:VCARD`
                   placeholder={"https://example.com/page1\nhttps://example.com/page2\nhttps://example.com/page3"}
                   value={bulkText}
                   onChange={(e) => setBulkText(e.target.value)}
-                  className="min-h-[120px] border-2 border-orange-500/50 focus:border-orange-500 text-sm font-mono"
+                  className="min-h-[120px] border-2 border-primary/50 focus:border-primary text-sm font-mono"
                 />
                 <p className="text-xs text-muted-foreground">
                   {bulkText.split('\n').filter(line => line.trim()).length} items to generate
@@ -770,7 +770,7 @@ END:VCARD`
                   type="file"
                   accept=".csv,.txt"
                   onChange={handleCSVUpload}
-                  className="h-9 border-2 border-orange-500/50 text-xs file:mr-2 file:text-xs"
+                  className="h-9 border-2 border-primary/50 text-xs file:mr-2 file:text-xs"
                   ref={csvInputRef}
                 />
                 <p className="text-xs text-muted-foreground">
@@ -799,12 +799,12 @@ END:VCARD`
                     type="color"
                     value={isValidHexColor(foregroundColor) ? foregroundColor : "#000000"}
                     onChange={(e) => setForegroundColor(e.target.value)}
-                    className="h-9 w-12 p-1 border-2 border-orange-500/50"
+                    className="h-9 w-12 p-1 border-2 border-primary/50"
                   />
                   <Input 
                     value={foregroundColor} 
                     onChange={(e) => handleColorChange(e.target.value, setForegroundColor)} 
-                    className="h-9 flex-1 border-2 border-orange-500/50 text-xs"
+                    className="h-9 flex-1 border-2 border-primary/50 text-xs"
                     placeholder="#000000"
                     maxLength={7}
                   />
@@ -818,13 +818,13 @@ END:VCARD`
               type="color"
                     value={isValidHexColor(backgroundColor) ? backgroundColor : "#ffffff"}
                     onChange={(e) => setBackgroundColor(e.target.value)}
-                    className="h-9 w-12 p-1 border-2 border-orange-500/50"
+                    className="h-9 w-12 p-1 border-2 border-primary/50"
                     disabled={transparentBg}
                   />
                   <Input 
                     value={backgroundColor} 
                     onChange={(e) => handleColorChange(e.target.value, setBackgroundColor)} 
-                    className="h-9 flex-1 border-2 border-orange-500/50 text-xs"
+                    className="h-9 flex-1 border-2 border-primary/50 text-xs"
                     placeholder="#ffffff"
                     maxLength={7}
                     disabled={transparentBg}
@@ -833,18 +833,18 @@ END:VCARD`
           </div>
         </div>
 
-            <div className="flex items-center gap-3 p-2 rounded-lg bg-background border border-orange-500/30">
+            <div className="flex items-center gap-3 p-2 rounded-lg bg-background border border-primary/30">
               <Switch
                 id="transparent-bg"
                 checked={transparentBg}
                 onCheckedChange={setTransparentBg}
-                className="data-[state=checked]:bg-orange-500"
+                className="data-[state=checked]:bg-primary"
               />
               <Label htmlFor="transparent-bg" className="text-sm cursor-pointer font-medium">Transparent Background</Label>
             </div>
 
             {/* Size & Margin */}
-            <div className="space-y-2 p-3 rounded-lg bg-background border border-orange-500/20">
+            <div className="space-y-2 p-3 rounded-lg bg-background border border-primary/20">
               <Label className="text-sm font-medium">Size: {size[0]}px</Label>
               <Slider
                 min={200}
@@ -852,11 +852,11 @@ END:VCARD`
                 step={50}
                 value={size}
                 onValueChange={setSize}
-                className="py-3 [&_[role=slider]]:bg-orange-500 [&_[role=slider]]:border-orange-500"
+                className="py-3 [&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary"
               />
             </div>
 
-            <div className="space-y-2 p-3 rounded-lg bg-background border border-orange-500/20">
+            <div className="space-y-2 p-3 rounded-lg bg-background border border-primary/20">
               <Label className="text-sm font-medium">Margin: {margin[0]}</Label>
               <Slider
                 min={0}
@@ -864,7 +864,7 @@ END:VCARD`
                 step={1}
                 value={margin}
                 onValueChange={setMargin}
-                className="py-3 [&_[role=slider]]:bg-orange-500 [&_[role=slider]]:border-orange-500"
+                className="py-3 [&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary"
               />
             </div>
 
@@ -872,7 +872,7 @@ END:VCARD`
             <div className="space-y-2">
               <Label className={labelClass}>Error Correction</Label>
               <Select value={errorCorrection} onValueChange={(v) => setErrorCorrection(v as ErrorCorrectionLevel)}>
-                <SelectTrigger className="h-9 border-2 border-orange-500/50">
+                <SelectTrigger className="h-9 border-2 border-primary/50">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -899,11 +899,11 @@ END:VCARD`
                 type="file"
                 accept="image/*"
                 onChange={handleLogoUpload}
-                className="h-9 border-2 border-orange-500/50 text-xs file:mr-2 file:text-xs"
+                className="h-9 border-2 border-primary/50 text-xs file:mr-2 file:text-xs"
                 ref={fileInputRef}
               />
               {logoImage && (
-                <div className="space-y-2 p-3 rounded-lg bg-background border border-orange-500/20 mt-2">
+                <div className="space-y-2 p-3 rounded-lg bg-background border border-primary/20 mt-2">
                   <div className="flex items-center justify-between">
                     <Label className="text-sm font-medium">Logo Size: {logoSize[0]}%</Label>
                     <Button 
@@ -926,7 +926,7 @@ END:VCARD`
                     step={1}
                     value={logoSize}
                     onValueChange={setLogoSize}
-                    className="py-3 [&_[role=slider]]:bg-orange-500 [&_[role=slider]]:border-orange-500"
+                    className="py-3 [&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary"
                   />
                   <div className="mt-2 p-2 bg-muted rounded flex justify-center">
                     <img src={logoImage} alt="Logo preview" className="max-w-[60px] max-h-[60px] object-contain" />
@@ -942,7 +942,7 @@ END:VCARD`
             <div className="space-y-2">
               <Label className={labelClass}>Download Format</Label>
               <Select value={downloadFormat} onValueChange={(v) => setDownloadFormat(v as DownloadFormat)}>
-                <SelectTrigger className="h-9 border-2 border-orange-500/50">
+                <SelectTrigger className="h-9 border-2 border-primary/50">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -959,7 +959,7 @@ END:VCARD`
                 <Button 
                   onClick={generateBulkQR} 
                   disabled={bulkLoading || !bulkText.trim()} 
-                  className="w-full h-10 text-sm bg-orange-500 hover:bg-orange-600"
+                  className="w-full h-10 text-sm bg-primary hover:bg-primary"
                 >
                   {bulkLoading ? (
                     <>
@@ -974,7 +974,7 @@ END:VCARD`
           )}
         </Button>
                 {bulkLoading && (
-                  <div className="mt-3 p-3 rounded-lg bg-orange-50 dark:bg-orange-950/30 border border-orange-500/30">
+                  <div className="mt-3 p-3 rounded-lg bg-orange-50 dark:bg-orange-950/30 border border-primary/30">
                     <div className="flex items-center gap-2 mb-2">
                       <LoadingSpinner className="h-4 w-4" />
                       <p className="text-xs font-semibold text-foreground">
@@ -983,7 +983,7 @@ END:VCARD`
                     </div>
                     <div className="w-full bg-orange-200 dark:bg-orange-900/30 rounded-full h-2">
                       <div 
-                        className="bg-orange-500 h-2 rounded-full transition-all duration-300"
+                        className="bg-primary h-2 rounded-full transition-all duration-300"
                         style={{ 
                           width: `${(bulkQRCodes.length / bulkText.split('\n').filter(line => line.trim()).length) * 100}%` 
                         }}
@@ -1009,7 +1009,7 @@ END:VCARD`
               {qrType === "bulk" ? `Bulk QR Codes (${bulkQRCodes.length})` : "Your QR Code"} {(loading || bulkLoading) && "Generating..."}
             </h3>
             {qrType === "bulk" && bulkQRCodes.length > 0 && (
-              <Button variant="default" size="sm" onClick={downloadBulkQR} className="h-8 text-xs bg-orange-500 hover:bg-orange-600">
+              <Button variant="default" size="sm" onClick={downloadBulkQR} className="h-8 text-xs bg-primary hover:bg-primary">
                 <Archive className="h-3 w-3 mr-1.5" />
                 Download ZIP ({bulkQRCodes.length} files)
               </Button>
@@ -1057,7 +1057,7 @@ END:VCARD`
                   <div className="space-y-2 mt-3">
                     <Button 
                       onClick={downloadBulkQR}
-                      className="w-full h-9 text-sm bg-orange-500 hover:bg-orange-600"
+                      className="w-full h-9 text-sm bg-primary hover:bg-primary"
                     >
                       <Archive className="h-4 w-4 mr-2" />
                       Download All as ZIP ({bulkQRCodes.length} files)
@@ -1105,7 +1105,7 @@ END:VCARD`
           )}
 
           {/* Feature Highlights */}
-          <div className="mt-4 p-3 rounded-lg bg-orange-50 dark:bg-orange-950/30 border border-orange-500/30">
+          <div className="mt-4 p-3 rounded-lg bg-orange-50 dark:bg-orange-950/30 border border-primary/30">
             <p className="text-xs font-semibold text-center mb-2">
               🎉 All Premium Features FREE
             </p>

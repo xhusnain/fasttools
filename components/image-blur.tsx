@@ -82,13 +82,13 @@ export function ImageBlur() {
 
   return (
     <div className="w-full">
-      <Card className="shadow-lg w-full max-w-none border-slate-200 dark:border-slate-700">
+      <Card className="shadow-lg w-full max-w-none border-border">
         <div className="p-4 sm:p-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Input Section */}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Original Image</h3>
+                <h3 className="text-lg font-semibold text-foreground">Original Image</h3>
                 {imageUrl && (
                   <Button
                     onClick={resetAll}
@@ -103,24 +103,24 @@ export function ImageBlur() {
               </div>
 
               <div
-                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-xl overflow-hidden bg-white"
+                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-dashed border-border rounded-xl overflow-hidden bg-card"
               >
                 {!imageUrl && (
                   <label
                     htmlFor="image-upload-blur"
-                    className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer hover:bg-slate-50 transition-colors"
+                    className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary transition-colors"
                   >
                     <div className="text-center px-6">
                       <div className="relative mb-4">
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-lg opacity-20"></div>
-                        <div className="relative w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-xl">
-                          <Upload className="w-12 h-12 text-white" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/90 rounded-full blur-lg opacity-20"></div>
+                        <div className="relative w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary to-primary/90 flex items-center justify-center shadow-xl">
+                          <Upload className="w-12 h-12 text-primary-foreground" />
                         </div>
                       </div>
-                      <p className="text-base font-semibold text-slate-900 mb-2">
+                      <p className="text-base font-semibold text-foreground mb-2">
                         Upload an image to blur background
                       </p>
-                      <p className="text-sm text-slate-600">
+                      <p className="text-sm text-muted-foreground">
                         Supports JPEG, PNG, and WebP
                       </p>
                     </div>
@@ -135,7 +135,7 @@ export function ImageBlur() {
                 )}
 
                 {imageUrl && (
-                  <div className="w-full h-full flex items-center justify-center p-4 bg-white">
+                  <div className="w-full h-full flex items-center justify-center p-4 bg-card">
                     <img
                       src={imageUrl}
                       alt="Original"
@@ -149,7 +149,7 @@ export function ImageBlur() {
             {/* Output Section */}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Blurred Result</h3>
+                <h3 className="text-lg font-semibold text-foreground">Blurred Result</h3>
                 {result && !isProcessing && (
                   <Button
                     onClick={downloadImage}
@@ -162,21 +162,21 @@ export function ImageBlur() {
               </div>
 
               <div
-                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden bg-white"
+                className="relative w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[500px] border-2 border-border rounded-xl overflow-hidden bg-card"
               >
                 {!imageUrl && !isProcessing && (
                   <div className="flex items-center justify-center h-full">
-                    <div className="text-center px-6 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-8 rounded-xl shadow-lg">
+                    <div className="text-center px-6 bg-card/90 backdrop-blur-sm p-8 rounded-xl shadow-lg">
                       <div className="relative mb-4">
-                        <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full blur-lg opacity-20"></div>
-                        <div className="relative w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-xl">
-                          <ImageIcon className="w-12 h-12 text-white" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/90 rounded-full blur-lg opacity-20"></div>
+                        <div className="relative w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary to-primary/90 flex items-center justify-center shadow-xl">
+                          <ImageIcon className="w-12 h-12 text-primary-foreground" />
                         </div>
                       </div>
-                      <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                      <p className="text-sm font-semibold text-foreground">
                         Upload an image to see the result
                       </p>
-                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-2">
+                      <p className="text-xs text-muted-foreground mt-2">
                         AI will blur only the background
                       </p>
                     </div>
@@ -185,11 +185,11 @@ export function ImageBlur() {
 
                 {isProcessing && (
                   <div className="flex flex-col items-center justify-center h-full">
-                    <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-8 rounded-xl shadow-lg">
+                    <div className="bg-card/90 backdrop-blur-sm p-8 rounded-xl shadow-lg">
                       <div className="flex flex-col items-center space-y-4">
                         <LoadingSpinner />
                         <div className="text-center space-y-2">
-                          <p className="text-base font-semibold text-slate-900 dark:text-slate-100">{status.message}</p>
+                          <p className="text-base font-semibold text-foreground">{status.message}</p>
                         </div>
                       </div>
                     </div>
@@ -198,13 +198,13 @@ export function ImageBlur() {
 
                 {/* Show uploaded image (before AI processing) */}
                 {imageUrl && !result && !isProcessing && (
-                  <div className="w-full h-full flex items-center justify-center p-4 bg-white relative">
+                  <div className="w-full h-full flex items-center justify-center p-4 bg-card relative">
                     <img
                       src={imageUrl}
                       alt="Original"
                       className="max-w-full max-h-full object-contain"
                     />
-                    <div className="absolute top-4 left-4 bg-slate-500 text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg">
+                    <div className="absolute top-4 left-4 bg-muted-foreground text-primary-foreground px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg">
                       Original
                     </div>
                   </div>
@@ -212,7 +212,7 @@ export function ImageBlur() {
 
                 {/* AI-processed result (selective background blur) */}
                 {result && !isProcessing && (
-                  <div className="w-full h-full flex items-center justify-center p-4 bg-white relative">
+                  <div className="w-full h-full flex items-center justify-center p-4 bg-card relative">
                     <img
                       src={result.resultUrl}
                       alt="Background blurred"
@@ -231,10 +231,10 @@ export function ImageBlur() {
           {imageUrl && (
             <div className="mt-6 space-y-4">
               <div className="flex items-center justify-between">
-                <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <label className="text-sm font-medium text-foreground">
                   Blur Intensity: <span className="text-foreground font-semibold">{blurIntensity}px</span>
                 </label>
-                <span className="text-xs text-slate-500 dark:text-slate-400 italic">Auto-applies</span>
+                <span className="text-xs text-muted-foreground italic">Auto-applies</span>
               </div>
               <Slider
                 value={[blurIntensity]}
@@ -249,14 +249,14 @@ export function ImageBlur() {
                 step={1}
                 className="w-full"
               />
-              <div className="flex justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div className="flex justify-between text-xs text-muted-foreground">
                 <span>Minimal (1px)</span>
                 <span>Medium (25px)</span>
                 <span>Maximum (50px)</span>
               </div>
 
               <div className="flex items-center justify-between pt-2">
-                <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <label className="text-sm font-medium text-foreground">
                   Cutout strength: <span className="text-foreground font-semibold">{refineStrength}</span>
                 </label>
               </div>
@@ -274,7 +274,7 @@ export function ImageBlur() {
                 step={1}
                 className="w-full"
               />
-              <div className="flex justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div className="flex justify-between text-xs text-muted-foreground">
                 <span>Light</span>
                 <span>Medium</span>
                 <span>Strong</span>
@@ -299,7 +299,7 @@ export function ImageBlur() {
                   <Button 
                     onClick={resetAll} 
                     variant="outline"
-                    className="gap-2 border-red-300 text-foreground hover:bg-red-100 dark:border-red-700 dark:text-foreground dark:hover:bg-red-900/30"
+                    className="gap-2 border-red-300 text-foreground hover:bg-red-100 dark:border-destructive dark:text-foreground dark:hover:bg-red-900/30"
                   >
                     <RotateCcw className="h-4 w-4" />
                     Try Again
@@ -311,16 +311,16 @@ export function ImageBlur() {
 
           {/* Processing Info */}
           {result && !isProcessing && (
-            <div className="mt-6 p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-200 dark:border-slate-700">
+            <div className="mt-6 p-4 bg-muted rounded-lg border border-border">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-600 dark:text-slate-400">Processing Time:</span>
-                <span className="font-semibold text-slate-900 dark:text-slate-100">
+                <span className="text-muted-foreground">Processing Time:</span>
+                <span className="font-semibold text-foreground">
                   {(result.processingTime / 1000).toFixed(2)}s
                 </span>
               </div>
               <div className="flex items-center justify-between text-sm mt-2">
-                <span className="text-slate-600 dark:text-slate-400">Blur Intensity:</span>
-                <span className="font-semibold text-slate-900 dark:text-slate-100">{blurIntensity}px</span>
+                <span className="text-muted-foreground">Blur Intensity:</span>
+                <span className="font-semibold text-foreground">{blurIntensity}px</span>
               </div>
             </div>
           )}

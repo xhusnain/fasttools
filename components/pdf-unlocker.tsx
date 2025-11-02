@@ -421,7 +421,7 @@ export function PDFUnlocker() {
                       placeholder="Enter password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="h-11 border-2 border-orange-500 focus:border-orange-600 focus:ring-orange-500"
+                      className="h-11 border-2 border-primary focus:border-orange-600 focus:ring-orange-500"
                       disabled={loading}
                     />
                     <p className="text-xs text-muted-foreground">
@@ -540,7 +540,7 @@ export function PDFUnlocker() {
               </p>
             </div>
             <div className="flex items-start gap-3">
-              <div className="h-2 w-2 rounded-full bg-orange-500 mt-2 flex-shrink-0"></div>
+              <div className="h-2 w-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 <strong className="text-card-foreground">📝 Note:</strong> Password-protected PDFs become image-based after unlocking. Text remains visible but won't be selectable. This is necessary to remove encryption.
               </p>
@@ -556,7 +556,7 @@ export function PDFUnlocker() {
           </h2>
           <div className="space-y-3">
             <div className="flex items-start gap-3">
-              <div className="h-2 w-2 rounded-full bg-orange-500 mt-2 flex-shrink-0"></div>
+              <div className="h-2 w-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Only unlock PDFs that you own or have explicit permission to access. This tool is designed for legitimate use - removing passwords from your own documents for convenience, or accessing documents you have been given permission to view. Unauthorized access to password-protected documents may violate copyright laws.
               </p>

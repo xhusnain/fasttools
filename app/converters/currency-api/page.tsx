@@ -128,7 +128,7 @@ export default function CurrencyAPIDocsPage() {
                   </div>
                   <Link 
                     href="/converters/currency"
-                    className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-3 bg-orange-500 text-foreground rounded-md hover:bg-orange-600 transition-colors text-sm sm:text-base font-medium w-full sm:w-auto"
+                    className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-3 bg-primary text-foreground rounded-md hover:bg-primary transition-colors text-sm sm:text-base font-medium w-full sm:w-auto"
                   >
                     <Code className="h-4 w-4 sm:h-5 sm:w-5" />
                     Live Convert
@@ -199,7 +199,7 @@ export default function CurrencyAPIDocsPage() {
                 <div className="space-y-4 sm:space-y-6">
                   {/* Step 1 */}
                   <div className="flex gap-3 sm:gap-4">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-orange-500 text-foreground rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">1</div>
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-primary text-foreground rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">1</div>
                     <div className="flex-1">
                       <h3 className="text-sm sm:text-base font-semibold text-foreground mb-2">Copy Your API Key</h3>
                       <p className="text-xs sm:text-sm text-muted-foreground mb-3">After clicking "Get My Key", you'll receive a response with your unique API key:</p>
@@ -213,7 +213,7 @@ export default function CurrencyAPIDocsPage() {
 
                   {/* Step 2 */}
                   <div className="flex gap-3 sm:gap-4">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-orange-500 text-foreground rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">2</div>
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-primary text-foreground rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">2</div>
                     <div className="flex-1">
                       <h3 className="text-sm sm:text-base font-semibold text-foreground mb-2">Use Your Key in API Calls</h3>
                       <p className="text-xs sm:text-sm text-muted-foreground mb-3">Add your key to API requests using either method:</p>
@@ -236,7 +236,7 @@ export default function CurrencyAPIDocsPage() {
 
                   {/* Step 3 */}
                   <div className="flex gap-3 sm:gap-4">
-                    <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-orange-500 text-foreground rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">3</div>
+                    <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-primary text-foreground rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">3</div>
                     <div className="flex-1">
                       <h3 className="text-sm sm:text-base font-semibold text-foreground mb-2">Test Your Integration</h3>
                       <p className="text-xs sm:text-sm text-muted-foreground mb-3">Try making a currency conversion with your new key:</p>

@@ -434,7 +434,7 @@ export default function TriangleCalculatorPage() {
                                                 <a
                                                     key={name}
                                                     href={href}
-                                                    className="p-3 bg-card rounded-lg border border-border hover:bg-slate-800 hover:border-heading-accent-border/50 transition-colors group"
+                                                    className="p-3 bg-card rounded-lg border border-border hover:bg-secondary hover:border-heading-accent-border/50 transition-colors group"
                                                 >
                                                     <div className="flex items-center gap-2 mb-1">
                                                         <span className="text-lg">{icon}</span>

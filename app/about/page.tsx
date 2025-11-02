@@ -162,7 +162,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                 {/* Hard to Find Tools */}
                 <div className="flex flex-col items-center text-center">
-                  <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-orange-500/10 border border-border/30 flex items-center justify-center mb-4">
+                  <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-primary/10 border border-border/30 flex items-center justify-center mb-4">
                     <Search className="h-8 w-8 md:h-10 md:w-10 text-foreground" />
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-heading-accent mb-2">Hard to Find</h3>
@@ -173,7 +173,7 @@ export default function AboutPage() {
 
                 {/* Tools That Work */}
                 <div className="flex flex-col items-center text-center">
-                  <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-orange-500/10 border border-border/30 flex items-center justify-center mb-4">
+                  <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-primary/10 border border-border/30 flex items-center justify-center mb-4">
                     <CheckCircle className="h-8 w-8 md:h-10 md:w-10 text-foreground" />
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-heading-accent mb-2">Tools That Actually Work</h3>
@@ -184,7 +184,7 @@ export default function AboutPage() {
 
                 {/* All in One Place */}
                 <div className="flex flex-col items-center text-center">
-                  <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-orange-500/10 border border-border/30 flex items-center justify-center mb-4">
+                  <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-primary/10 border border-border/30 flex items-center justify-center mb-4">
                     <Zap className="h-8 w-8 md:h-10 md:w-10 text-foreground" />
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-heading-accent mb-2">All in One Place</h3>
@@ -195,7 +195,7 @@ export default function AboutPage() {
 
                 {/* Trusted Worldwide */}
                 <div className="flex flex-col items-center text-center">
-                  <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-orange-500/10 border border-border/30 flex items-center justify-center mb-4">
+                  <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-primary/10 border border-border/30 flex items-center justify-center mb-4">
                     <Globe className="h-8 w-8 md:h-10 md:w-10 text-foreground" />
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-heading-accent mb-2">Trusted Worldwide</h3>
@@ -280,7 +280,7 @@ export default function AboutPage() {
               {/* Vision */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Eye className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-xl md:text-2xl font-bold text-heading-accent">Vision</h2>
@@ -293,7 +293,7 @@ export default function AboutPage() {
               {/* Mission */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Compass className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-xl md:text-2xl font-bold text-heading-accent">Mission</h2>
@@ -308,7 +308,7 @@ export default function AboutPage() {
             <div className="mt-12 md:mt-16 text-center">
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 text-foreground font-bold rounded-lg hover:bg-orange-600 transition-colors text-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-foreground font-bold rounded-lg hover:bg-primary transition-colors text-lg"
               >
                 View Our Products
                 <ArrowRight className="h-5 w-5" />

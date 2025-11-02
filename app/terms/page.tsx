@@ -103,15 +103,15 @@ export default function TermsPage() {
                 color="orange"
               />
               <div className="flex flex-wrap justify-center gap-3 mt-6">
-                <div className="flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-border/30 rounded-lg">
+                <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
                   <span className="text-sm font-medium text-foreground">Google AdSense Compliant</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-border/30 rounded-lg">
+                <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
                   <span className="text-sm font-medium text-foreground">Legal Compliance</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-border/30 rounded-lg">
+                <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
                   <span className="text-sm font-medium text-foreground">User Protection</span>
                 </div>
@@ -124,7 +124,7 @@ export default function TermsPage() {
               {/* Agreement to Terms */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <FileText className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Agreement to Terms</h2>
@@ -136,7 +136,7 @@ export default function TermsPage() {
                   <p>
                     If you do not agree to these Terms, please do not use our Services. We reserve the right to modify these Terms at any time, and your continued use of our Services after such modifications constitutes acceptance of the updated Terms.
                   </p>
-                  <div className="bg-orange-500/10 border border-border/30 rounded-lg p-4 mt-4">
+                  <div className="bg-primary/10 border border-border/30 rounded-lg p-4 mt-4">
                     <p className="text-sm">
                       These terms comply with Google AdSense policies, Google Search Console requirements, and applicable laws. By using our services, you agree to comply with all Google policies and guidelines.
                     </p>
@@ -147,7 +147,7 @@ export default function TermsPage() {
               {/* Description of Services */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <BookOpen className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Description of Services</h2>
@@ -201,13 +201,13 @@ export default function TermsPage() {
               {/* Google AdSense */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Shield className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Google AdSense & Advertising Compliance</h2>
                 </div>
                 <div className="space-y-6">
-                  <div className="bg-orange-500/10 border border-border/30 rounded-lg p-6">
+                  <div className="bg-primary/10 border border-border/30 rounded-lg p-6">
                     <h3 className="text-xl font-semibold mb-4 text-heading-accent flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-heading-accent" />
                       Google AdSense Policy Compliance
@@ -263,7 +263,7 @@ export default function TermsPage() {
               {/* User Rights */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Users className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">User Rights & Legal Protections</h2>
@@ -302,7 +302,7 @@ export default function TermsPage() {
               {/* Terms Updates */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <RefreshCw className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Terms Updates</h2>

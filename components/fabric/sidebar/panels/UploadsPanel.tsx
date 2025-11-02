@@ -162,9 +162,9 @@ export function UploadsPanel({ canvas }: UploadsPanelProps) {
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
         >
-          <Upload className="w-8 h-8 mx-auto mb-3 text-slate-400" />
-          <p className="text-sm text-slate-600 mb-4">Drag & drop images here</p>
-          <p className="text-xs text-slate-500 mb-4">Supports: JPG, PNG, GIF, WebP, SVG, BMP, TIFF, AVIF, HEIC, RAW & more</p>
+          <Upload className="w-8 h-8 mx-auto mb-3 text-muted-foreground" />
+          <p className="text-sm text-muted-foreground mb-4">Drag & drop images here</p>
+          <p className="text-xs text-muted-foreground mb-4">Supports: JPG, PNG, GIF, WebP, SVG, BMP, TIFF, AVIF, HEIC, RAW & more</p>
           
           <input
             ref={fileInputRef}
@@ -189,7 +189,7 @@ export function UploadsPanel({ canvas }: UploadsPanelProps) {
         <h3 className="font-semibold text-slate-800 mb-4 text-sm">Recent Uploads</h3>
         
         {uploadedImages.length === 0 ? (
-          <p className="text-sm text-slate-500 text-center py-4">No recent uploads</p>
+          <p className="text-sm text-muted-foreground text-center py-4">No recent uploads</p>
         ) : (
           <div className="grid grid-cols-2 gap-3">
             {uploadedImages.map((image) => (
@@ -217,7 +217,7 @@ export function UploadsPanel({ canvas }: UploadsPanelProps) {
                   />
                   {/* Fallback icon if image fails to load */}
                   <div className="fallback-icon w-full h-full hidden items-center justify-center">
-                    <ImageIcon className="w-8 h-8 text-slate-400" />
+                    <ImageIcon className="w-8 h-8 text-muted-foreground" />
                   </div>
                 </div>
                 
@@ -227,14 +227,14 @@ export function UploadsPanel({ canvas }: UploadsPanelProps) {
                     e.stopPropagation()
                     removeImage(image.id)
                   }}
-                  className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1.5 hover:bg-red-600 transition-all duration-200 shadow-lg z-10"
+                  className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1.5 hover:bg-destructive transition-all duration-200 shadow-lg z-10"
                   title="Remove image"
                 >
                   <X className="w-3 h-3" />
                 </button>
                 
                 {/* Image name */}
-                <p className="text-xs text-slate-600 mt-1.5 truncate" title={image.name}>
+                <p className="text-xs text-muted-foreground mt-1.5 truncate" title={image.name}>
                   {image.name}
                 </p>
               </div>

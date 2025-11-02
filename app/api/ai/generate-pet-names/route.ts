@@ -112,7 +112,7 @@ Generate the 100 names now as a valid JSON object:`
     if (!result.success || !result.text) {
       return NextResponse.json({
         success: false,
-        error: result.error || "Failed to generate names from AI",
+        error: result.error || "Something went wrong. Please try again later.",
       }, { status: 500 })
     }
 
@@ -151,7 +151,7 @@ Generate the 100 names now as a valid JSON object:`
       // Fallback: Return empty categories if parsing fails
       return NextResponse.json({
         success: false,
-        error: "Failed to parse AI response. Please try again.",
+        error: "Something went wrong. Please try again later.",
       }, { status: 500 })
     }
 
@@ -171,10 +171,12 @@ Generate the 100 names now as a valid JSON object:`
 
   } catch (error: any) {
     console.error("Error in pet names generation:", error)
+    // Always return generic error messages to users
+    // Never expose internal error details
     return NextResponse.json(
       { 
         success: false, 
-        error: error.message || "Failed to generate pet names. Please try again." 
+        error: "Something went wrong. Please try again later."
       },
       { status: 500 }
     )

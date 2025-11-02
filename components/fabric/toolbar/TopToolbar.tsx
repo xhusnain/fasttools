@@ -114,14 +114,14 @@ export function TopToolbar({ canvas, onDownload, onReset }: TopToolbarProps) {
   }
 
   return (
-    <div className="bg-slate-800 border-b border-slate-700 px-3 sm:px-6 py-2 sm:py-3 shadow-sm">
+    <div className="bg-secondary border-b border-border px-3 sm:px-6 py-2 sm:py-3 shadow-sm">
       <div className="flex items-center justify-between gap-2">
         {/* Left side - Object controls */}
         <div className="flex items-center space-x-1 sm:space-x-2">
           <button 
             onClick={handleDelete}
             disabled={!activeObject}
-            className="p-1.5 sm:p-2 text-slate-300 hover:text-white hover:bg-slate-700 rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="p-1.5 sm:p-2 text-foreground hover:text-white hover:bg-border rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             title="Delete (Del)"
           >
             <Trash2 className="w-4 h-4" />
@@ -130,17 +130,17 @@ export function TopToolbar({ canvas, onDownload, onReset }: TopToolbarProps) {
           <button 
             onClick={handleDuplicate}
             disabled={!activeObject}
-            className="p-1.5 sm:p-2 text-slate-300 hover:text-white hover:bg-slate-700 rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="p-1.5 sm:p-2 text-foreground hover:text-white hover:bg-border rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             title="Duplicate (Ctrl+D)"
           >
             <Copy className="w-4 h-4" />
           </button>
 
-          <div className="w-px h-6 bg-slate-600 mx-1"></div>
+          <div className="w-px h-6 bg-muted-foreground mx-1"></div>
 
           <button 
             disabled
-            className="p-1.5 sm:p-2 text-slate-300 opacity-30 cursor-not-allowed rounded-lg"
+            className="p-1.5 sm:p-2 text-foreground opacity-30 cursor-not-allowed rounded-lg"
             title="Coming Soon"
           >
             <Undo className="w-4 h-4" />
@@ -148,18 +148,18 @@ export function TopToolbar({ canvas, onDownload, onReset }: TopToolbarProps) {
 
           <button 
             disabled
-            className="p-1.5 sm:p-2 text-slate-300 opacity-30 cursor-not-allowed rounded-lg"
+            className="p-1.5 sm:p-2 text-foreground opacity-30 cursor-not-allowed rounded-lg"
             title="Coming Soon"
           >
             <Redo className="w-4 h-4" />
           </button>
 
-          <div className="hidden sm:block w-px h-6 bg-slate-600 mx-1"></div>
+          <div className="hidden sm:block w-px h-6 bg-muted-foreground mx-1"></div>
 
           <button 
             onClick={handleFlipX}
             disabled={!activeObject}
-            className="p-1.5 sm:p-2 text-slate-300 hover:text-white hover:bg-slate-700 rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="p-1.5 sm:p-2 text-foreground hover:text-white hover:bg-border rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             title="Flip Horizontal"
           >
             <FlipHorizontal className="w-4 h-4" />
@@ -168,18 +168,18 @@ export function TopToolbar({ canvas, onDownload, onReset }: TopToolbarProps) {
           <button 
             onClick={handleFlipY}
             disabled={!activeObject}
-            className="hidden sm:block p-2 text-slate-300 hover:text-white hover:bg-slate-700 rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="hidden sm:block p-2 text-foreground hover:text-white hover:bg-border rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             title="Flip Vertical"
           >
             <FlipVertical className="w-4 h-4" />
           </button>
 
-          <div className="hidden md:block w-px h-6 bg-slate-600 mx-1"></div>
+          <div className="hidden md:block w-px h-6 bg-muted-foreground mx-1"></div>
 
           <button 
             onClick={handleBringToFront}
             disabled={!activeObject}
-            className="hidden md:block p-2 text-slate-300 hover:text-white hover:bg-slate-700 rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="hidden md:block p-2 text-foreground hover:text-white hover:bg-border rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             title="Bring to Front"
           >
             <ChevronsUp className="w-4 h-4" />
@@ -188,7 +188,7 @@ export function TopToolbar({ canvas, onDownload, onReset }: TopToolbarProps) {
           <button 
             onClick={handleBringForward}
             disabled={!activeObject}
-            className="hidden md:block p-2 text-slate-300 hover:text-white hover:bg-slate-700 rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="hidden md:block p-2 text-foreground hover:text-white hover:bg-border rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             title="Bring Forward"
           >
             <ArrowUp className="w-4 h-4" />
@@ -197,7 +197,7 @@ export function TopToolbar({ canvas, onDownload, onReset }: TopToolbarProps) {
           <button 
             onClick={handleSendBackward}
             disabled={!activeObject}
-            className="hidden md:block p-2 text-slate-300 hover:text-white hover:bg-slate-700 rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="hidden md:block p-2 text-foreground hover:text-white hover:bg-border rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             title="Send Backward"
           >
             <ArrowDown className="w-4 h-4" />
@@ -206,7 +206,7 @@ export function TopToolbar({ canvas, onDownload, onReset }: TopToolbarProps) {
           <button 
             onClick={handleSendToBack}
             disabled={!activeObject}
-            className="hidden md:block p-2 text-slate-300 hover:text-white hover:bg-slate-700 rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="hidden md:block p-2 text-foreground hover:text-white hover:bg-border rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             title="Send to Back"
           >
             <ChevronsDown className="w-4 h-4" />
@@ -216,7 +216,7 @@ export function TopToolbar({ canvas, onDownload, onReset }: TopToolbarProps) {
         {/* Right side - Canvas actions */}
         <div className="flex items-center space-x-1 sm:space-x-2">
           <button 
-            className="p-1.5 sm:px-3 sm:py-2 text-slate-200 bg-slate-700 rounded-lg hover:bg-slate-600 transition-colors flex items-center gap-1 sm:gap-2"
+            className="p-1.5 sm:px-3 sm:py-2 text-foreground bg-border rounded-lg hover:bg-muted-foreground transition-colors flex items-center gap-1 sm:gap-2"
             onClick={onReset}
             title="Reset Canvas"
           >

@@ -230,7 +230,7 @@ export default function ConcreteCalculatorPage() {
                 {/* How to Use */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mt-6 md:mt-8 mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                    <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Calculator className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                     </div>
                     How to Use Our Concrete Calculator
@@ -282,7 +282,7 @@ export default function ConcreteCalculatorPage() {
                 {/* Supported Project Types */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                    <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Building className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                     </div>
                     Supported Concrete Project Types
@@ -305,7 +305,7 @@ export default function ConcreteCalculatorPage() {
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm">{type}</h3>
                   </div>
                         <p className="text-xs text-muted-foreground mb-1">{desc}</p>
-                        <p className="text-xs text-foreground font-mono bg-orange-500/10 px-1.5 py-0.5 rounded">{example}</p>
+                        <p className="text-xs text-foreground font-mono bg-primary/10 px-1.5 py-0.5 rounded">{example}</p>
                 </div>
                     ))}
               </div>
@@ -314,7 +314,7 @@ export default function ConcreteCalculatorPage() {
                 {/* Concrete Mix Types */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                    <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Globe className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                 </div>
                     Supported Concrete Mix Types
@@ -334,11 +334,11 @@ export default function ConcreteCalculatorPage() {
                         <p className="text-xs text-muted-foreground mb-1">{use}</p>
                         <div className="text-xs text-foreground space-y-0.5">
                           <div className="flex items-center gap-1">
-                            <div className="w-1 h-1 bg-orange-400 rounded-full"></div>
+                            <div className="w-1 h-1 bg-primary rounded-full"></div>
                             <span>Strength: {strength}</span>
                   </div>
                           <div className="flex items-center gap-1">
-                            <div className="w-1 h-1 bg-orange-400 rounded-full"></div>
+                            <div className="w-1 h-1 bg-primary rounded-full"></div>
                             <span>Ratio: {ratio} (Cement:Sand:Gravel)</span>
                 </div>
                   </div>
@@ -350,7 +350,7 @@ export default function ConcreteCalculatorPage() {
                 {/* Advanced Features */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                    <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Target className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                   </div>
                     Advanced Calculation Features
@@ -402,7 +402,7 @@ export default function ConcreteCalculatorPage() {
                 {/* FAQ Section */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                    <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Info className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
               </div>
                     Frequently Asked Questions
@@ -501,7 +501,7 @@ export default function ConcreteCalculatorPage() {
                 {/* Related Tools */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                    <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                    <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Calculator className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                 </div>
                     Related Construction & Math Calculators
@@ -524,7 +524,7 @@ export default function ConcreteCalculatorPage() {
                       <a
                         key={name}
                         href={href}
-                        className="p-2 md:p-3 bg-card rounded-lg border border-border hover:bg-slate-800 transition-colors group hover:border-heading-accent-border/50"
+                        className="p-2 md:p-3 bg-card rounded-lg border border-border hover:bg-secondary transition-colors group hover:border-heading-accent-border/50"
                       >
                         <div className="flex items-center gap-2 mb-1">
                           <Icon className="h-3 w-3 text-foreground group-hover:text-heading-accent" />

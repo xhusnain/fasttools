@@ -396,7 +396,7 @@ export default function ScientificCalculatorPage() {
                       <a
                         key={name}
                         href={href}
-                        className="p-4 bg-card rounded-lg border border-border hover:bg-slate-800 hover:border-heading-accent-border/50 transition-colors group"
+                        className="p-4 bg-card rounded-lg border border-border hover:bg-secondary hover:border-heading-accent-border/50 transition-colors group"
                       >
                         <div className="flex items-center gap-3 mb-2">
                           <span className="text-2xl">{icon}</span>

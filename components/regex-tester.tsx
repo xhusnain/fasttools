@@ -383,7 +383,7 @@ puts replaced`
               placeholder="e.g., \d{3}-\d{3}-\d{4}"
               value={pattern}
               onChange={(e) => handlePatternChange(e.target.value)}
-              className="font-mono pr-10 border-2 border-orange-300 focus:border-orange-500"
+              className="font-mono pr-10 border-2 border-orange-300 focus:border-primary"
             />
             <Button
               size="sm"
@@ -403,7 +403,7 @@ puts replaced`
               placeholder="e.g., g, gi, gim"
               value={flags}
               onChange={(e) => handleFlagsChange(e.target.value)}
-              className="font-mono flex-1 border-2 border-orange-300 focus:border-orange-500"
+              className="font-mono flex-1 border-2 border-orange-300 focus:border-primary"
             />
             <Button size="sm" onClick={openExplanation} className="flex-shrink-0 gap-1.5">
               <Lightbulb className="h-4 w-4" />
@@ -415,7 +415,7 @@ puts replaced`
       </div>
 
       {/* Quick Pattern Templates */}
-      <Card className="p-3 sm:p-4 bg-black">
+      <Card className="p-3 sm:p-4 bg-card">
         <h3 className="text-sm font-semibold mb-2 text-foreground flex items-center gap-2">
           <Sparkles className="h-4 w-4 text-accent" />
           Quick Pattern Templates
@@ -437,7 +437,7 @@ puts replaced`
 
       {/* Test String & Tabs */}
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-2 bg-black p-1">
+        <TabsList className="grid w-full grid-cols-2 bg-card p-1">
           <TabsTrigger 
             value="test" 
             className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm font-semibold"
@@ -459,14 +459,14 @@ puts replaced`
               placeholder="Enter text to test against your regex..."
               value={testString}
               onChange={(e) => handleTestStringChange(e.target.value)}
-              className="min-h-32 font-mono text-sm border-2 border-orange-300 focus:border-orange-500"
+              className="min-h-32 font-mono text-sm border-2 border-orange-300 focus:border-primary"
               style={{ wordBreak: 'break-all', overflowWrap: 'anywhere', whiteSpace: 'normal' }}
             />
           </div>
 
           {/* Visual Highlighting */}
           {Array.isArray(highlightedText) && highlightedText.length > 0 && (
-            <Card className="p-4 bg-black">
+            <Card className="p-4 bg-card">
               <h3 className="text-sm font-semibold mb-2 text-foreground">Visual Match Highlighting</h3>
               <div className="font-mono text-sm whitespace-pre-wrap break-words">
                 {highlightedText.map((part, idx) => (
@@ -483,7 +483,7 @@ puts replaced`
 
           {/* Error Display */}
           {error && (
-            <div className="p-4 bg-black border border-destructive/20 rounded-lg flex items-start gap-2">
+            <div className="p-4 bg-card border border-destructive/20 rounded-lg flex items-start gap-2">
               <AlertCircle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
               <div>
                 <p className="text-sm font-semibold text-destructive">Invalid Pattern</p>
@@ -521,7 +521,7 @@ puts replaced`
                         <p className="text-xs font-semibold mb-1 text-muted-foreground">Capture Groups:</p>
                         <div className="space-y-1">
                           {detail.groups.map((group, gIndex) => group !== undefined && (
-                            <div key={gIndex} className="text-xs font-mono p-1.5 bg-black rounded">
+                            <div key={gIndex} className="text-xs font-mono p-1.5 bg-card rounded">
                               <span className="text-muted-foreground">Group {gIndex + 1}:</span>{' '}
                               <span className="text-foreground">{group}</span>
                             </div>
@@ -536,7 +536,7 @@ puts replaced`
                         <p className="text-xs font-semibold mb-1 text-muted-foreground">Named Groups:</p>
                         <div className="space-y-1">
                           {Object.entries(detail.namedGroups).map(([name, value]) => (
-                            <div key={name} className="text-xs font-mono p-1.5 bg-black rounded">
+                            <div key={name} className="text-xs font-mono p-1.5 bg-card rounded">
                               <span className="text-muted-foreground">{name}:</span>{' '}
                               <span className="text-foreground">{value}</span>
                             </div>
@@ -552,7 +552,7 @@ puts replaced`
 
           {/* No Matches */}
           {pattern && testString && matches.length === 0 && !error && (
-            <div className="p-4 bg-black border border-border rounded-lg flex items-center gap-2">
+            <div className="p-4 bg-card border border-border rounded-lg flex items-center gap-2">
               <AlertCircle className="h-5 w-5 text-muted-foreground" />
               <p className="text-sm text-muted-foreground">No matches found</p>
             </div>
@@ -566,7 +566,7 @@ puts replaced`
               placeholder="Enter text to test against your regex..."
               value={testString}
               onChange={(e) => handleTestStringChange(e.target.value)}
-              className="min-h-24 font-mono text-sm border-2 border-orange-300 focus:border-orange-500"
+              className="min-h-24 font-mono text-sm border-2 border-orange-300 focus:border-primary"
               style={{ wordBreak: 'break-all', overflowWrap: 'anywhere', whiteSpace: 'normal' }}
             />
           </div>
@@ -580,7 +580,7 @@ puts replaced`
               placeholder="Replacement string (use $1, $2 for groups)"
               value={replaceString}
               onChange={(e) => handleReplaceStringChange(e.target.value)}
-              className="font-mono border-2 border-orange-300 focus:border-orange-500"
+              className="font-mono border-2 border-orange-300 focus:border-primary"
             />
             <p className="text-xs text-muted-foreground">
               Use $1, $2, etc. for capture groups. Use $& for full match.
@@ -620,7 +620,7 @@ puts replaced`
 
       {/* Code Generator Modal */}
       {showCodeGenerator && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 bg-card/50 flex items-center justify-center z-50 p-4">
           <Card className="w-full max-w-3xl max-h-[90vh] overflow-y-auto">
             <div className="p-4 sm:p-6 space-y-4">
               <div className="flex items-center justify-between">
@@ -681,7 +681,7 @@ puts replaced`
 
       {/* Explanation Modal */}
       {showExplanation && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 bg-card/50 flex items-center justify-center z-50 p-4">
           <Card className="w-full max-w-2xl max-h-[90vh] overflow-y-auto">
             <div className="p-4 sm:p-6 space-y-4">
               <div className="flex items-center justify-between">

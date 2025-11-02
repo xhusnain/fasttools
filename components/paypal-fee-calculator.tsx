@@ -447,7 +447,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
           <Button
             onClick={calculateFee}
             disabled={loading || !amount || Number.parseFloat(amount) <= 0}
-                className="w-full h-9 text-sm font-medium shadow-sm hover:shadow-md transition-all bg-orange-500 hover:bg-orange-600 text-white"
+                className="w-full h-9 text-sm font-medium shadow-sm hover:shadow-md transition-all bg-primary hover:bg-primary text-white"
           >
             {loading ? (
               <>
@@ -522,7 +522,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                   </div>
 
                   {/* Total Fee */}
-                  <div className="flex justify-between items-center p-3 bg-orange-500/10 rounded-lg border-2 border-orange-500">
+                  <div className="flex justify-between items-center p-3 bg-primary/10 rounded-lg border-2 border-primary">
                     <span className="text-sm font-medium text-foreground">Total Fee:</span>
                     <span className="text-lg font-bold text-foreground">{result.currency} {result.totalFee}</span>
                   </div>

@@ -560,7 +560,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
             <CardContent>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
+                  <div className="p-4 bg-muted rounded-lg border border-green-200 dark:border-green-800">
                     <h3 className="font-semibold text-heading-accent mb-2">Principal</h3>
                     <div className="text-2xl font-bold text-heading-accent">${result.loanAmount.toFixed(2)}</div>
                     <div className="text-sm text-heading-accent">{result.principalPercentage.toFixed(1)}%</div>
@@ -572,12 +572,12 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                  <div className="p-4 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
                     <h3 className="font-semibold text-foreground mb-2">Total Cost</h3>
                     <div className="text-2xl font-bold text-foreground">${result.totalPayments.toFixed(2)}</div>
                     <div className="text-sm text-foreground">Over {result.loanTerm.toFixed(1)} years</div>
                   </div>
-                  <div className="p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
+                  <div className="p-4 bg-muted rounded-lg border border-purple-200 dark:border-purple-800">
                     <h3 className="font-semibold text-foreground mb-2">Monthly Payment</h3>
                     <div className="text-2xl font-bold text-foreground">${result.monthlyPayment.toFixed(2)}</div>
                     <div className="text-sm text-foreground">Per month</div>
@@ -743,7 +743,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+          <div className="p-4 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
               <div className="text-sm">

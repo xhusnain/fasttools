@@ -141,7 +141,7 @@ export function AiPetNameGenerator() {
             Pet Type <span className="text-foreground">*</span>
           </Label>
           <Select value={petType} onValueChange={setPetType}>
-            <SelectTrigger className="border-2 border-orange-500/50 focus:border-orange-500">
+            <SelectTrigger className="border-2 border-primary/50 focus:border-primary">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -168,7 +168,7 @@ export function AiPetNameGenerator() {
         <div className="space-y-2">
           <Label htmlFor="gender" className="text-sm font-medium">Gender</Label>
           <Select value={gender} onValueChange={setGender}>
-            <SelectTrigger className="border-2 border-orange-500/50 focus:border-orange-500">
+            <SelectTrigger className="border-2 border-primary/50 focus:border-primary">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -187,7 +187,7 @@ export function AiPetNameGenerator() {
             placeholder="e.g., black, white, brown, golden, spotted"
             value={color}
             onChange={(e) => setColor(e.target.value)}
-            className="border-2 border-orange-500/50 focus:border-orange-500"
+            className="border-2 border-primary/50 focus:border-primary"
           />
         </div>
 
@@ -195,7 +195,7 @@ export function AiPetNameGenerator() {
         <div className="space-y-2">
           <Label htmlFor="age" className="text-sm font-medium">Age</Label>
           <Select value={age} onValueChange={setAge}>
-            <SelectTrigger className="border-2 border-orange-500/50 focus:border-orange-500">
+            <SelectTrigger className="border-2 border-primary/50 focus:border-primary">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -212,7 +212,7 @@ export function AiPetNameGenerator() {
         <div className="space-y-2">
           <Label htmlFor="size" className="text-sm font-medium">Size</Label>
           <Select value={size} onValueChange={setSize}>
-            <SelectTrigger className="border-2 border-orange-500/50 focus:border-orange-500">
+            <SelectTrigger className="border-2 border-primary/50 focus:border-primary">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -234,7 +234,7 @@ export function AiPetNameGenerator() {
             placeholder="e.g., Golden Retriever, Persian, Cockatiel"
             value={breed}
             onChange={(e) => setBreed(e.target.value)}
-            className="border-2 border-orange-500/50 focus:border-orange-500"
+            className="border-2 border-primary/50 focus:border-primary"
           />
         </div>
       </div>
@@ -249,7 +249,7 @@ export function AiPetNameGenerator() {
           placeholder="Describe your pet's personality: playful, calm, energetic, shy, friendly, independent, cuddly, adventurous, smart, lazy, protective, gentle..."
           value={personality}
           onChange={(e) => setPersonality(e.target.value)}
-          className="border-2 border-orange-500/50 focus:border-orange-500 min-h-20"
+          className="border-2 border-primary/50 focus:border-primary min-h-20"
         />
       </div>
 
@@ -263,7 +263,7 @@ export function AiPetNameGenerator() {
           placeholder="Any specific preferences? Short names, long names, specific cultural origins, name styles you prefer, special meanings you want, etc."
           value={additionalInfo}
           onChange={(e) => setAdditionalInfo(e.target.value)}
-          className="border-2 border-orange-500/50 focus:border-orange-500 min-h-20"
+          className="border-2 border-primary/50 focus:border-primary min-h-20"
         />
       </div>
 
@@ -322,7 +322,7 @@ export function AiPetNameGenerator() {
               Finding meanings
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
-              <div className="h-2 w-2 bg-orange-500 rounded-full animate-pulse animation-delay-600" />
+              <div className="h-2 w-2 bg-primary rounded-full animate-pulse animation-delay-600" />
               Organizing categories
             </div>
           </div>
@@ -380,8 +380,8 @@ export function AiPetNameGenerator() {
                 text: "text-emerald-600 dark:text-emerald-400" 
               },
               cultural: { 
-                border: "border-orange-500/30", 
-                bg: "bg-orange-500/20", 
+                border: "border-primary/30", 
+                bg: "bg-primary/20", 
                 text: "text-foreground" 
               },
               celebrity: { 
@@ -420,7 +420,7 @@ export function AiPetNameGenerator() {
                   {names.map((item, index) => (
                     <Card 
                       key={index} 
-                      className="p-4 hover:shadow-lg transition-shadow border-2 border-border hover:border-orange-500/50"
+                      className="p-4 hover:shadow-lg transition-shadow border-2 border-border hover:border-primary/50"
                     >
                       <div className="flex items-start justify-between gap-3">
                         <div className="flex-1 min-w-0">

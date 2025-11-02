@@ -100,7 +100,7 @@ export default function LinkInBioPage() {
           <GHeader
             title="Free Link in Bio Generator – Create All-in-One Bio Page"
             description="Create a free, customizable link in bio page for Instagram, TikTok, and more. Add unlimited links, social profiles, and buttons. Fast, secure, and mobile-friendly."
-            titleSize="large"
+            titleSize="medium"
             descriptionSize="small"
           />
         </div>

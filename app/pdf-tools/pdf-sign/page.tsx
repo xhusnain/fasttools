@@ -827,7 +827,7 @@ export default function PDFSignPage() {
                   <GHeader
                     title="Sign PDF Free Online - eSign PDF, Fill & Sign PDF Documents"
                     description="Sign PDF online free - No signup, no download required. eSign PDF documents electronically on iPhone, Android, Windows, Mac. Fill and sign PDF forms instantly. 100% secure browser-based tool. No upload to server. Unlimited free signatures."
-                    titleSize="large"
+                    titleSize="medium"
                     descriptionSize="small"
                   />
                 </div>

@@ -326,9 +326,9 @@ VO2 Max: ${result.vo2Max}`
   }
 
   return (
-    <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-black rounded-xl p-3 sm:p-4 md:p-6 w-full overflow-hidden">
+    <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-3 sm:p-4 md:p-6 w-full overflow-hidden">
       {/* Mode Selection */}
-      <Card className="bg-black border-slate-700 w-full overflow-hidden">
+      <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-3 sm:px-4 md:px-6 pb-3">
           <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
             <Calculator className="h-4 w-4 sm:h-5 sm:w-5 text-foreground flex-shrink-0" />
@@ -337,7 +337,7 @@ VO2 Max: ${result.vo2Max}`
         </CardHeader>
         <CardContent className="px-3 sm:px-4 md:px-6 space-y-4 sm:space-y-6">
           <Tabs value={calculationMode} onValueChange={(value: "basic" | "multipoint" | "converter" | "finish") => setCalculationMode(value)}>
-            <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 bg-black border border-slate-700">
+            <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 bg-card border border-border">
               <TabsTrigger value="basic" className="text-xs sm:text-sm">Basic Pace</TabsTrigger>
               <TabsTrigger value="multipoint" className="text-xs sm:text-sm">Multipoint</TabsTrigger>
               <TabsTrigger value="converter" className="text-xs sm:text-sm">Converter</TabsTrigger>
@@ -354,7 +354,7 @@ VO2 Max: ${result.vo2Max}`
                     placeholder="0:50:25"
                     value={time}
                     onChange={handleTimeChange}
-                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
+                    className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm"
                   />
                 </div>
                 <div className="space-y-2 w-full min-w-0">
@@ -365,10 +365,10 @@ VO2 Max: ${result.vo2Max}`
                       placeholder="5"
                       value={distance}
                       onChange={(e) => setDistance(e.target.value)}
-                      className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 flex-1 text-sm"
+                      className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary flex-1 text-sm"
                     />
                     <Select value={distanceUnit} onValueChange={(value: "miles" | "km") => setDistanceUnit(value)}>
-                      <SelectTrigger className="w-20 sm:w-24 border-slate-700 bg-black text-slate-200 text-xs sm:text-sm">
+                      <SelectTrigger className="w-20 sm:w-24 border-border bg-card text-foreground text-xs sm:text-sm">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -388,7 +388,7 @@ VO2 Max: ${result.vo2Max}`
                     placeholder="70"
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
-                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
+                    className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm"
                   />
                 </div>
                 <div className="space-y-2 w-full min-w-0">
@@ -398,13 +398,13 @@ VO2 Max: ${result.vo2Max}`
                     placeholder="30"
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
-                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
+                    className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm"
                   />
                 </div>
                 <div className="space-y-2 w-full min-w-0">
                   <Label className="text-heading-accent text-xs sm:text-sm">Pace Unit</Label>
                   <Select value={paceUnit} onValueChange={(value: "perMile" | "perKm") => setPaceUnit(value)}>
-                    <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm">
+                    <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -430,13 +430,13 @@ VO2 Max: ${result.vo2Max}`
             <TabsContent value="multipoint" className="space-y-4 sm:space-y-6">
               <div className="space-y-3 sm:space-y-4">
                 {multipointSegments.map((segment, index) => (
-                  <div key={index} className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 p-3 sm:p-4 border border-slate-700 rounded-lg bg-black w-full overflow-hidden">
+                  <div key={index} className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 p-3 sm:p-4 border border-border rounded-lg bg-card w-full overflow-hidden">
                     <div className="space-y-2 w-full min-w-0">
                       <Label className="text-heading-accent text-xs sm:text-sm">Distance (km)</Label>
                       <Input
                         value={segment.distance}
                         onChange={(e) => updateMultipointSegment(index, 'distance', parseFloat(e.target.value) || 0)}
-                        className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
+                        className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm"
                       />
                     </div>
                     <div className="space-y-2 w-full min-w-0">
@@ -444,16 +444,16 @@ VO2 Max: ${result.vo2Max}`
                       <Input
                         value={segment.time}
                         onChange={(e) => updateMultipointSegment(index, 'time', formatMinutesSecondsInput(e.target.value))}
-                        className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
+                        className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm"
                       />
                     </div>
                     <div className="space-y-2 w-full min-w-0">
                       <Label className="text-heading-accent text-xs sm:text-sm">Pace</Label>
-                      <Input value={segment.pace} disabled className="border-slate-700 bg-black text-slate-200 w-full text-sm" />
+                      <Input value={segment.pace} disabled className="border-border bg-card text-foreground w-full text-sm" />
                     </div>
                     <div className="space-y-2 w-full min-w-0">
                       <Label className="text-heading-accent text-xs sm:text-sm">Split</Label>
-                      <Input value={segment.split} disabled className="border-slate-700 bg-black text-slate-200 w-full text-sm" />
+                      <Input value={segment.split} disabled className="border-border bg-card text-foreground w-full text-sm" />
                     </div>
                   </div>
                 ))}
@@ -481,13 +481,13 @@ VO2 Max: ${result.vo2Max}`
                     placeholder="5:30"
                     value={pace}
                     onChange={(e) => setPace(e.target.value)}
-                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
+                    className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm"
                   />
                 </div>
                 <div className="space-y-2 w-full min-w-0">
                   <Label className="text-heading-accent text-xs sm:text-sm">From</Label>
                   <Select value={paceUnit} onValueChange={(value: "perMile" | "perKm") => setPaceUnit(value)}>
-                    <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm">
+                    <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -498,7 +498,7 @@ VO2 Max: ${result.vo2Max}`
                 </div>
               </div>
 
-              <div className="text-center p-3 sm:p-4 bg-black border border-slate-700 rounded-lg w-full overflow-hidden">
+              <div className="text-center p-3 sm:p-4 bg-card border border-border rounded-lg w-full overflow-hidden">
                 <div className="text-2xl font-bold">
                   {pace && paceUnit === "perMile" 
                     ? formatPace(parseTimeToSeconds(pace) * 1.60934)
@@ -523,7 +523,7 @@ VO2 Max: ${result.vo2Max}`
                     placeholder="1"
                     value={currentDistance}
                     onChange={(e) => setCurrentDistance(e.target.value)}
-                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
                 <div className="space-y-2">
@@ -533,7 +533,7 @@ VO2 Max: ${result.vo2Max}`
                     placeholder="6:15"
                     value={elapsedTime}
                     onChange={handleMinutesSecondsChange}
-                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
                 <div className="space-y-2">
@@ -543,7 +543,7 @@ VO2 Max: ${result.vo2Max}`
                     placeholder="5"
                     value={fullDistance}
                     onChange={(e) => setFullDistance(e.target.value)}
-                    className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
               </div>
@@ -561,7 +561,7 @@ VO2 Max: ${result.vo2Max}`
       {result && (
         <div className="space-y-6">
           {/* Main Results */}
-          <Card className="bg-black border-slate-700">
+          <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
                 <Target className="h-5 w-5 text-foreground" />
@@ -621,7 +621,7 @@ VO2 Max: ${result.vo2Max}`
           </Card>
 
           {/* Race Predictions */}
-          <Card className="bg-black border-slate-700">
+          <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
                 <Trophy className="h-5 w-5 text-foreground" />
@@ -631,7 +631,7 @@ VO2 Max: ${result.vo2Max}`
             <CardContent>
               <div className="grid md:grid-cols-2 gap-4">
                 {Object.entries(result.racePrediction).map(([race, time]) => (
-                  <div key={race} className="flex justify-between items-center p-3 bg-black border border-slate-700 rounded-lg">
+                  <div key={race} className="flex justify-between items-center p-3 bg-card border border-border rounded-lg">
                     <span className="font-medium">{race}</span>
                     <Badge variant="secondary">{time}</Badge>
                   </div>
@@ -641,7 +641,7 @@ VO2 Max: ${result.vo2Max}`
           </Card>
 
           {/* Training Zones */}
-          <Card className="bg-black border-slate-700">
+          <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
                 <Heart className="h-5 w-5 text-foreground" />
@@ -651,11 +651,11 @@ VO2 Max: ${result.vo2Max}`
             <CardContent>
               <div className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
+                  <div className="p-3 bg-muted rounded-lg border border-green-200 dark:border-green-800">
                     <h4 className="font-semibold text-heading-accent">Recovery Zone</h4>
                     <p className="text-sm text-heading-accent">50-60% max HR - Easy pace for recovery</p>
                   </div>
-                  <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                  <div className="p-3 bg-muted rounded-lg border border-blue-200 dark:border-blue-800">
                     <h4 className="font-semibold text-foreground">Aerobic Base</h4>
                     <p className="text-sm text-foreground">60-70% max HR - Builds aerobic fitness</p>
                   </div>
@@ -663,7 +663,7 @@ VO2 Max: ${result.vo2Max}`
                     <h4 className="font-semibold text-foreground">Aerobic Threshold</h4>
                     <p className="text-sm text-foreground">70-80% max HR - Comfortable hard pace</p>
                   </div>
-                  <div className="p-3 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200 dark:border-orange-800">
+                  <div className="p-3 bg-muted rounded-lg border border-primary/20">
                     <h4 className="font-semibold text-foreground">Lactate Threshold</h4>
                     <p className="text-sm text-foreground">80-90% max HR - Race pace training</p>
                   </div>
@@ -676,7 +676,7 @@ VO2 Max: ${result.vo2Max}`
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card className="bg-black border-slate-700">
+        <Card className="bg-card border-border">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-foreground">
               <Clock className="h-5 w-5 text-foreground" />
@@ -686,7 +686,7 @@ VO2 Max: ${result.vo2Max}`
           <CardContent>
             <div className="space-y-2">
               {history.map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-black border border-slate-700 rounded-lg">
+                <div key={index} className="flex items-center justify-between p-3 bg-card border border-border rounded-lg">
                   <div className="space-y-1">
                     <div className="font-medium">
                       {item.pace} - {item.distance} {distanceUnit}
@@ -710,7 +710,7 @@ VO2 Max: ${result.vo2Max}`
       )}
 
       {/* Information Section */}
-      <Card className="bg-black border-slate-700">
+      <Card className="bg-card border-border">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-foreground">
             <Info className="h-5 w-5 text-foreground" />
@@ -718,14 +718,14 @@ VO2 Max: ${result.vo2Max}`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="p-4 bg-black border border-slate-700 rounded-lg">
+          <div className="p-4 bg-card border border-border rounded-lg">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
               <div className="text-sm">
                 <p className="font-medium text-foreground mb-1">
                   Professional Training Features
                 </p>
-                <p className="text-slate-300">
+                <p className="text-foreground">
                   This calculator provides advanced athletic-level analysis including heart rate zones, VO2 Max estimation, race predictions, and training zone recommendations for serious athletes and coaches.
                 </p>
               </div>

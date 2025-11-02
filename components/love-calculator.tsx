@@ -203,9 +203,9 @@ export function LoveCalculator() {
             <SelectTrigger className={`h-11 bg-white/10 border-2 ${currentTheme.border} text-white`}>
               <SelectValue />
             </SelectTrigger>
-            <SelectContent className="bg-gray-900/95 backdrop-blur-xl border-gray-700/50 shadow-xl">
+            <SelectContent className="bg-muted/95 backdrop-blur-xl border-gray-700/50 shadow-xl">
               {Object.entries(themes).map(([key, themeData]) => (
-                <SelectItem key={key} value={key} className="text-white hover:bg-gray-800/50 focus:bg-gray-800/50">
+                <SelectItem key={key} value={key} className="text-white hover:bg-muted/50 focus:bg-muted/50">
                   <div className="flex items-center gap-2">
                     <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${themeData.gradient}`}></div>
                     <span className="text-white">{themeData.name}</span>

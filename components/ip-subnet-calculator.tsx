@@ -522,7 +522,7 @@ export function IPSubnetCalculator({
                 }
               }}
               placeholder={isDetectingIP ? "Detecting your IP address..." : (ipVersion === "ipv4" ? "192.168.1.1" : "2001:db8::1")}
-              className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+              className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
               disabled={isDetectingIP}
             />
             {defaultIP && !isDetectingIP && (
@@ -547,7 +547,7 @@ export function IPSubnetCalculator({
                 id="subnet-mask"
                 type="text"
                 value={subnetMask}
-                className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                 onChange={(e) => {
                   const value = e.target.value
                   setSubnetMask(value)
@@ -586,7 +586,7 @@ export function IPSubnetCalculator({
                 placeholder="24"
                 min="0"
                 max={ipVersion === "ipv4" ? "32" : "128"}
-                className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
               />
               {cidrError && (
                 <p className="text-xs text-foreground mt-1 flex items-center gap-1">

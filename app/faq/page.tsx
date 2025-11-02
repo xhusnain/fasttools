@@ -242,7 +242,7 @@ export default function FAQPage() {
               {/* General Questions */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Star className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">General Questions</h2>
@@ -260,7 +260,7 @@ export default function FAQPage() {
               {/* Tools & Features Questions */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Users className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Tools & Features</h2>
@@ -278,7 +278,7 @@ export default function FAQPage() {
               {/* Privacy & Security Questions */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Shield className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Privacy & Security</h2>
@@ -296,7 +296,7 @@ export default function FAQPage() {
               {/* Usage & Support Questions */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Award className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Usage & Support</h2>

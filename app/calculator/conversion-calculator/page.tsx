@@ -370,7 +370,7 @@ export default function ConversionCalculatorPage() {
 
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-orange-500 to-orange-500 text-foreground text-xs font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-primary to-orange-500 text-foreground text-xs font-medium mb-4">
               <Calculator className="h-3 w-3" />
               <span>Professional Unit Converter</span>
             </div>
@@ -417,7 +417,7 @@ export default function ConversionCalculatorPage() {
 
               <div className="bg-card border border-border rounded-lg p-4">
                 <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                  <div className="p-1.5 bg-orange-500 rounded-lg">
+                  <div className="p-1.5 bg-primary rounded-lg">
                     <BookOpen className="h-4 w-4 text-foreground" />
                   </div>
                   Why Use Our Conversion Calculator?
@@ -445,7 +445,7 @@ export default function ConversionCalculatorPage() {
 
               <div className="bg-card border border-border rounded-lg p-4">
                 <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                  <div className="p-1.5 bg-orange-500 rounded-lg">
+                  <div className="p-1.5 bg-primary rounded-lg">
                     <Calculator className="h-4 w-4 text-foreground" />
                   </div>
                   The Science Behind Unit Conversion
@@ -464,7 +464,7 @@ export default function ConversionCalculatorPage() {
 
               <div className="bg-card border border-border rounded-lg p-4">
                 <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                  <div className="p-1.5 bg-orange-500 rounded-lg">
+                  <div className="p-1.5 bg-primary rounded-lg">
                     <Users className="h-4 w-4 text-foreground" />
                   </div>
                   Professional Applications
@@ -493,7 +493,7 @@ export default function ConversionCalculatorPage() {
             <div className="mt-8 space-y-4">
               <div className="bg-card border border-border rounded-lg p-4">
                 <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                  <div className="p-1.5 bg-orange-500 rounded-lg">
+                  <div className="p-1.5 bg-primary rounded-lg">
                     <BookOpen className="h-4 w-4 text-foreground" />
                     </div>
                   How to Use Our Calculator
@@ -545,7 +545,7 @@ export default function ConversionCalculatorPage() {
                         <Icon className="h-4 w-4 text-primary" />
                         <h3 className="font-semibold text-slate-800 dark:text-foreground">{category}</h3>
                       </div>
-                      <p className="text-sm text-slate-600 dark:text-muted-foreground mb-2">{desc}</p>
+                      <p className="text-sm text-muted-foreground dark:text-muted-foreground mb-2">{desc}</p>
                       <p className="text-xs text-primary font-mono bg-primary/10 px-2 py-1 rounded">{example}</p>
                     </div>
                   ))}
@@ -568,21 +568,21 @@ export default function ConversionCalculatorPage() {
                           <CheckCircle className="h-5 w-5 text-foreground mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-medium text-slate-800 dark:text-foreground">International Standards Compliance</h4>
-                            <p className="text-sm text-slate-600 dark:text-muted-foreground">Our calculator adheres to NIST, BIPM, and ISO standards for unit conversions, ensuring accuracy for professional applications.</p>
+                            <p className="text-sm text-muted-foreground dark:text-muted-foreground">Our calculator adheres to NIST, BIPM, and ISO standards for unit conversions, ensuring accuracy for professional applications.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
                           <CheckCircle className="h-5 w-5 text-foreground mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-medium text-slate-800 dark:text-foreground">6 Decimal Place Precision</h4>
-                            <p className="text-sm text-slate-600 dark:text-muted-foreground">All conversions maintain high precision for scientific, engineering, and financial calculations.</p>
+                            <p className="text-sm text-muted-foreground dark:text-muted-foreground">All conversions maintain high precision for scientific, engineering, and financial calculations.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
                           <CheckCircle className="h-5 w-5 text-foreground mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-medium text-slate-800 dark:text-foreground">Real-time Currency Rates</h4>
-                            <p className="text-sm text-slate-600 dark:text-muted-foreground">Currency conversions use current exchange rates for accurate financial calculations.</p>
+                            <p className="text-sm text-muted-foreground dark:text-muted-foreground">Currency conversions use current exchange rates for accurate financial calculations.</p>
                           </div>
                         </div>
                       </div>
@@ -594,21 +594,21 @@ export default function ConversionCalculatorPage() {
                           <CheckCircle className="h-5 w-5 text-foreground mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-medium text-slate-800 dark:text-foreground">1000+ Unit Combinations</h4>
-                            <p className="text-sm text-slate-600 dark:text-muted-foreground">Covering metric, imperial, US customary, and international unit systems.</p>
+                            <p className="text-sm text-muted-foreground dark:text-muted-foreground">Covering metric, imperial, US customary, and international unit systems.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
                           <CheckCircle className="h-5 w-5 text-foreground mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-medium text-slate-800 dark:text-foreground">12+ Conversion Categories</h4>
-                            <p className="text-sm text-slate-600 dark:text-muted-foreground">Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure, and data storage.</p>
+                            <p className="text-sm text-muted-foreground dark:text-muted-foreground">Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure, and data storage.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
                           <CheckCircle className="h-5 w-5 text-foreground mt-0.5 flex-shrink-0" />
                           <div>
                             <h4 className="font-medium text-slate-800 dark:text-foreground">Professional Applications</h4>
-                            <p className="text-sm text-slate-600 dark:text-muted-foreground">Perfect for engineering, science, business, cooking, travel, and everyday calculations.</p>
+                            <p className="text-sm text-muted-foreground dark:text-muted-foreground">Perfect for engineering, science, business, cooking, travel, and everyday calculations.</p>
                           </div>
                         </div>
                       </div>
@@ -628,24 +628,24 @@ export default function ConversionCalculatorPage() {
                   <div className="grid md:grid-cols-3 gap-6">
                     <div className="space-y-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-orange-500 text-foreground rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                        <div className="w-8 h-8 bg-primary text-foreground rounded-full flex items-center justify-center font-bold text-sm">1</div>
                         <h3 className="text-lg font-semibold text-heading-accent">Select Category</h3>
                       </div>
-                      <p className="text-sm text-slate-600 dark:text-muted-foreground">Choose from 12+ conversion categories including length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure, and data storage.</p>
+                      <p className="text-sm text-muted-foreground dark:text-muted-foreground">Choose from 12+ conversion categories including length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure, and data storage.</p>
                     </div>
                     <div className="space-y-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-orange-500 text-foreground rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                        <div className="w-8 h-8 bg-primary text-foreground rounded-full flex items-center justify-center font-bold text-sm">2</div>
                         <h3 className="text-lg font-semibold text-heading-accent">Choose Units</h3>
                       </div>
-                      <p className="text-sm text-slate-600 dark:text-muted-foreground">Select your source unit (From) and target unit (To) from the comprehensive dropdown menus with 1000+ unit options.</p>
+                      <p className="text-sm text-muted-foreground dark:text-muted-foreground">Select your source unit (From) and target unit (To) from the comprehensive dropdown menus with 1000+ unit options.</p>
                     </div>
                     <div className="space-y-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-orange-500 text-foreground rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                        <div className="w-8 h-8 bg-primary text-foreground rounded-full flex items-center justify-center font-bold text-sm">3</div>
                         <h3 className="text-lg font-semibold text-heading-accent">Enter Value</h3>
                       </div>
-                      <p className="text-sm text-slate-600 dark:text-muted-foreground">Input the value you want to convert and get instant, accurate results with 6 decimal place precision.</p>
+                      <p className="text-sm text-muted-foreground dark:text-muted-foreground">Input the value you want to convert and get instant, accurate results with 6 decimal place precision.</p>
                     </div>
                   </div>
                   <div className="bg-card p-6 rounded-lg border border-border">
@@ -695,19 +695,19 @@ export default function ConversionCalculatorPage() {
                   <div className="space-y-4">
                     <h3 className="text-lg font-semibold text-heading-accent">Professional & Business</h3>
                     <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-muted-foreground">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground dark:text-muted-foreground">
                         <CheckCircle className="h-4 w-4 text-foreground" />
                         <span>Engineering calculations and measurements</span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-muted-foreground">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground dark:text-muted-foreground">
                         <CheckCircle className="h-4 w-4 text-foreground" />
                         <span>International business and currency conversion</span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-muted-foreground">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground dark:text-muted-foreground">
                         <CheckCircle className="h-4 w-4 text-foreground" />
                         <span>Scientific research and data analysis</span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-muted-foreground">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground dark:text-muted-foreground">
                         <CheckCircle className="h-4 w-4 text-foreground" />
                         <span>Construction and architectural planning</span>
                       </div>
@@ -716,19 +716,19 @@ export default function ConversionCalculatorPage() {
                   <div className="space-y-4">
                     <h3 className="text-lg font-semibold text-heading-accent">Education & Personal</h3>
                     <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-muted-foreground">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground dark:text-muted-foreground">
                         <CheckCircle className="h-4 w-4 text-foreground" />
                         <span>Student homework and assignments</span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-muted-foreground">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground dark:text-muted-foreground">
                         <CheckCircle className="h-4 w-4 text-foreground" />
                         <span>Travel planning and currency exchange</span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-muted-foreground">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground dark:text-muted-foreground">
                         <CheckCircle className="h-4 w-4 text-foreground" />
                         <span>Cooking and recipe conversions</span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-muted-foreground">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground dark:text-muted-foreground">
                         <CheckCircle className="h-4 w-4 text-foreground" />
                         <span>Fitness and health measurements</span>
                       </div>
@@ -1489,7 +1489,7 @@ export default function ConversionCalculatorPage() {
                   ].map(({ q, a }, index) => (
                     <div key={index} className="p-4 bg-card rounded-lg border border-border dark:border-border">
                       <h3 className="font-semibold text-heading-accent mb-2 text-sm sm:text-base">{q}</h3>
-                      <p className="text-xs sm:text-sm text-slate-600 dark:text-muted-foreground leading-relaxed">{a}</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground dark:text-muted-foreground leading-relaxed">{a}</p>
                     </div>
                   ))}
                 </div>

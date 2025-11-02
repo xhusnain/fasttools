@@ -459,7 +459,7 @@ export function ConversionCalculator() {
               {history.map((item) => (
                 <div
                   key={item.id}
-                  className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-slate-200 dark:border-slate-600 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                  className="p-3 bg-slate-50 dark:bg-border/50 rounded-lg border border-slate-200 dark:border-border cursor-pointer hover:bg-slate-100 dark:hover:bg-border transition-colors"
                   onClick={() => loadFromHistory(item)}
                 >
                   <div className="space-y-2">

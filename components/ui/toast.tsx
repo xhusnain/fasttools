@@ -28,7 +28,7 @@ export function Toast({ type, message, duration = 3000, onClose }: ToastProps) {
     switch (type) {
       case "success":
         return {
-          container: "bg-orange-500 border-orange-600",
+          container: "bg-primary border-orange-600",
           text: "text-white",
           subtext: "text-white",
           dot: "bg-white",

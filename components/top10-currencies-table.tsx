@@ -77,7 +77,7 @@ export function Top10CurrenciesTable() {
   }
 
   const getChangeBgColor = (changePercent: number) => {
-    if (changePercent > 0) return 'bg-green-50 dark:bg-green-950/20'
+    if (changePercent > 0) return 'bg-muted'
     if (changePercent < 0) return 'bg-red-50 dark:bg-red-950/20'
     return 'bg-gray-50 dark:bg-gray-950/20'
   }
@@ -100,7 +100,7 @@ export function Top10CurrenciesTable() {
           <p className="text-sm text-foreground mb-4">{error}</p>
           <button
             onClick={fetchData}
-            className="px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors text-sm"
+            className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary transition-colors text-sm"
           >
             Try Again
           </button>

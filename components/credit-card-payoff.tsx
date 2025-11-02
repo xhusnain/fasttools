@@ -205,7 +205,7 @@ Payoff Date: ${result.payoffDate}`
               <span className="text-lg font-bold text-foreground">${result.totalPaid}</span>
             </div>
 
-            <div className="p-3 bg-orange-500/10 rounded-lg border border-orange-500/20">
+            <div className="p-3 bg-primary/10 rounded-lg border border-primary/20">
               <p className="text-xs text-muted-foreground mb-1">Monthly Breakdown:</p>
               <p className="text-xs font-medium text-foreground">
                 Paying ${monthlyPayment}/month at {apr}% APR

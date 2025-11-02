@@ -76,7 +76,7 @@ export function TimezoneConverter() {
                 type="time"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
-                className="h-11 text-sm border-2 border-orange-500 focus-visible:ring-0 focus:border-orange-500"
+                className="h-11 text-sm border-2 border-primary focus-visible:ring-0 focus:border-primary"
               />
               <div className="flex items-center gap-2">
                 <button type="button" onClick={setCurrentLocalTime} className="h-8 px-3 rounded-md text-xs font-medium bg-primary text-white hover:bg-primary/90 w-max">
@@ -93,7 +93,7 @@ export function TimezoneConverter() {
             <div className="space-y-2">
               <Label htmlFor="from-timezone">From Timezone</Label>
               <Select value={fromTimezone} onValueChange={setFromTimezone}>
-                <SelectTrigger className="h-11 text-sm border-2 border-orange-500 focus:border-orange-500">
+                <SelectTrigger className="h-11 text-sm border-2 border-primary focus:border-primary">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>

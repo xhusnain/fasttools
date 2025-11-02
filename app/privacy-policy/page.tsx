@@ -108,15 +108,15 @@ export default function PrivacyPolicyPage() {
                 color="orange"
               />
               <div className="flex flex-wrap justify-center gap-3 mt-6">
-                <div className="flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-border/30 rounded-lg">
+                <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
                   <span className="text-sm font-medium text-foreground">GDPR Compliant</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-border/30 rounded-lg">
+                <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
                   <span className="text-sm font-medium text-foreground">CCPA Compliant</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-border/30 rounded-lg">
+                <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
                   <span className="text-sm font-medium text-foreground">Google AdSense Policy</span>
                 </div>
@@ -129,7 +129,7 @@ export default function PrivacyPolicyPage() {
               {/* Introduction */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <FileText className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Introduction</h2>
@@ -141,7 +141,7 @@ export default function PrivacyPolicyPage() {
                   <p>
                     By using our Site, you consent to the data practices described in this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not use our Site.
                   </p>
-                  <div className="bg-orange-500/10 border border-border/30 rounded-lg p-4 mt-4">
+                  <div className="bg-primary/10 border border-border/30 rounded-lg p-4 mt-4">
                     <p className="text-sm">
                       This policy complies with GDPR, CCPA, and Google AdSense requirements. We prioritize transparency and user control over personal data.
                     </p>
@@ -152,7 +152,7 @@ export default function PrivacyPolicyPage() {
               {/* Information We Collect */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Eye className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Information We Collect</h2>
@@ -207,7 +207,7 @@ export default function PrivacyPolicyPage() {
               {/* Tool Usage Data */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Database className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Tool Data</h2>
@@ -225,7 +225,7 @@ export default function PrivacyPolicyPage() {
               {/* How We Use Your Information */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Lock className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">How We Use Your Information</h2>
@@ -294,13 +294,13 @@ export default function PrivacyPolicyPage() {
               {/* Google AdSense */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Shield className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Google AdSense & Third-Party Services</h2>
                 </div>
                 <div className="space-y-6">
-                  <div className="bg-orange-500/10 border border-border/30 rounded-lg p-6">
+                  <div className="bg-primary/10 border border-border/30 rounded-lg p-6">
                     <h3 className="text-xl font-semibold mb-4 text-heading-accent flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-heading-accent" />
                       Google AdSense Compliance
@@ -360,7 +360,7 @@ export default function PrivacyPolicyPage() {
               {/* Children's Privacy */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Shield className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Children's Privacy</h2>
@@ -378,7 +378,7 @@ export default function PrivacyPolicyPage() {
               {/* Your Privacy Rights */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Users className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Your Privacy Rights</h2>
@@ -419,7 +419,7 @@ export default function PrivacyPolicyPage() {
                     </div>
                   </div>
 
-                  <div className="bg-orange-500/10 border border-border/30 rounded-lg p-4">
+                  <div className="bg-primary/10 border border-border/30 rounded-lg p-4">
                     <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                       <Mail className="h-4 w-4 text-foreground" />
                       Exercise Your Rights
@@ -440,7 +440,7 @@ export default function PrivacyPolicyPage() {
               {/* Policy Updates */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <RefreshCw className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Policy Updates</h2>
@@ -461,7 +461,7 @@ export default function PrivacyPolicyPage() {
               {/* Contact Us */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
                     <Mail className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Contact Us</h2>

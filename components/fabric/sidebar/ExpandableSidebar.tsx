@@ -62,7 +62,7 @@ export function ExpandableSidebar({ sidebarType, canvas, onClose }: ExpandableSi
         </h2>
         <button
           onClick={onClose}
-          className="p-2 text-slate-500 hover:text-slate-700 hover:bg-slate-200 rounded-lg transition-colors duration-200"
+          className="p-2 text-muted-foreground hover:text-slate-700 hover:bg-slate-200 rounded-lg transition-colors duration-200"
         >
           <X className="w-4 h-4" />
         </button>

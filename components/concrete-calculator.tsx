@@ -414,7 +414,7 @@ Calculated with FastTools Concrete Calculator`
                       value={length}
                       onChange={(e) => setLength(e.target.value)}
                       placeholder="5"
-                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
                     <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
                       <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
@@ -437,7 +437,7 @@ Calculated with FastTools Concrete Calculator`
                       value={width}
                       onChange={(e) => setWidth(e.target.value)}
                       placeholder="2.5"
-                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
                     <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
                       <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
@@ -460,7 +460,7 @@ Calculated with FastTools Concrete Calculator`
                       value={height}
                       onChange={(e) => setHeight(e.target.value)}
                       placeholder="5"
-                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
                     <Select defaultValue={unit === "metric" ? "centimeters" : "inches"}>
                       <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
@@ -482,7 +482,7 @@ Calculated with FastTools Concrete Calculator`
                     value={quantity}
                     onChange={(e) => setQuantity(e.target.value)}
                     placeholder="1"
-                    className="h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
               </div>
@@ -499,7 +499,7 @@ Calculated with FastTools Concrete Calculator`
                       value={diameter}
                       onChange={(e) => setDiameter(e.target.value)}
                       placeholder="2.5"
-                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
                     <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
                       <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
@@ -522,7 +522,7 @@ Calculated with FastTools Concrete Calculator`
                       value={height}
                       onChange={(e) => setHeight(e.target.value)}
                       placeholder="6"
-                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
                     <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
                       <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
@@ -544,7 +544,7 @@ Calculated with FastTools Concrete Calculator`
                     value={quantity}
                     onChange={(e) => setQuantity(e.target.value)}
                     placeholder="1"
-                    className="h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
               </div>
@@ -561,7 +561,7 @@ Calculated with FastTools Concrete Calculator`
                       value={diameter}
                       onChange={(e) => setDiameter(e.target.value)}
                       placeholder="5"
-                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
                     <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
                       <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
@@ -584,7 +584,7 @@ Calculated with FastTools Concrete Calculator`
                       value={innerDiameter}
                       onChange={(e) => setInnerDiameter(e.target.value)}
                       placeholder="4"
-                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
                     <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
                       <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
@@ -607,7 +607,7 @@ Calculated with FastTools Concrete Calculator`
                       value={height}
                       onChange={(e) => setHeight(e.target.value)}
                       placeholder="6"
-                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
                     <Select defaultValue={unit === "metric" ? "centimeters" : "inches"}>
                       <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
@@ -645,7 +645,7 @@ Calculated with FastTools Concrete Calculator`
                       value={run}
                       onChange={(e) => setRun(e.target.value)}
                       placeholder="12"
-                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
                     <Select defaultValue="inches">
                       <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
@@ -666,7 +666,7 @@ Calculated with FastTools Concrete Calculator`
                       value={rise}
                       onChange={(e) => setRise(e.target.value)}
                       placeholder="6"
-                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
                     <Select defaultValue="inches">
                       <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
@@ -687,7 +687,7 @@ Calculated with FastTools Concrete Calculator`
                       value={width}
                       onChange={(e) => setWidth(e.target.value)}
                       placeholder="50"
-                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
                     <Select defaultValue="inches">
                       <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
@@ -707,7 +707,7 @@ Calculated with FastTools Concrete Calculator`
                     value={steps}
                     onChange={(e) => setSteps(e.target.value)}
                     placeholder="5"
-                    className="h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                   />
                 </div>
                 <div className="space-y-1">

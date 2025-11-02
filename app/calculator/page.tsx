@@ -2242,7 +2242,7 @@ export default function ToolsPage() {
 
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
-                      <div className="h-6 w-6 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                      <div className="h-6 w-6 rounded-lg bg-primary/10 flex items-center justify-center">
                         <Calculator className="h-4 w-4 text-foreground" />
                 </div>
                       Expert Analysis: The Mathematical Foundation of Modern Calculator Tools
@@ -2306,7 +2306,7 @@ export default function ToolsPage() {
                           </p>
                         </div>
                         
-                        <div className="p-4 rounded-lg bg-blue-50 dark:bg-blue-950/20 border border-border">
+                        <div className="p-4 rounded-lg bg-muted border border-border">
                           <h3 className="text-lg font-bold mb-2 text-foreground">Financial Services Calculators</h3>
                           <p className="text-sm text-muted-foreground mb-2">
                             Loan calculators process 2.3 million calculations daily, with mortgage calculators being the most requested. 
@@ -2328,7 +2328,7 @@ export default function ToolsPage() {
                           </p>
                         </div>
                         
-                        <div className="p-4 rounded-lg bg-purple-50 dark:bg-purple-950/20 border border-border">
+                        <div className="p-4 rounded-lg bg-muted border border-border">
                           <h3 className="text-lg font-bold mb-2 text-foreground">Engineering & Construction Calculators</h3>
                           <p className="text-sm text-muted-foreground mb-2">
                             Conversion calculators standardize measurements for 5 million industrial applications. Temperature 
@@ -2392,12 +2392,12 @@ export default function ToolsPage() {
                             <div className="text-sm text-muted-foreground">Accuracy Rate</div>
                           </div>
                           
-                          <div className="text-center p-4 rounded-lg bg-blue-50 dark:bg-blue-950/20 border border-border">
+                          <div className="text-center p-4 rounded-lg bg-muted border border-border">
                             <div className="text-2xl font-bold text-foreground mb-1">15+</div>
                             <div className="text-sm text-muted-foreground">Decimal Precision</div>
                           </div>
                           
-                          <div className="text-center p-4 rounded-lg bg-purple-50 dark:bg-purple-950/20 border border-border">
+                          <div className="text-center p-4 rounded-lg bg-muted border border-border">
                             <div className="text-2xl font-bold text-foreground mb-1">&lt;0.001%</div>
                             <div className="text-sm text-muted-foreground">Error Rate</div>
                           </div>
@@ -2436,7 +2436,7 @@ export default function ToolsPage() {
                             </ul>
                           </div>
                           
-                          <div className="p-4 rounded-lg bg-blue-50 dark:bg-blue-950/20 border border-border">
+                          <div className="p-4 rounded-lg bg-muted border border-border">
                             <h4 className="font-bold mb-2 text-foreground">Authority Building</h4>
                             <ul className="text-sm text-muted-foreground space-y-1">
                               <li>• Comprehensive calculator coverage (50+ tools)</li>
@@ -2463,12 +2463,12 @@ export default function ToolsPage() {
                             <div className="text-sm text-muted-foreground">Words of Unique Content</div>
                           </div>
                           
-                          <div className="text-center p-4 rounded-lg bg-purple-50 dark:bg-purple-950/20 border border-border">
+                          <div className="text-center p-4 rounded-lg bg-muted border border-border">
                             <div className="text-2xl font-bold text-foreground mb-1">50+</div>
                             <div className="text-sm text-muted-foreground">Calculator Tools</div>
                           </div>
                           
-                          <div className="text-center p-4 rounded-lg bg-orange-50 dark:bg-orange-950/20 border border-border">
+                          <div className="text-center p-4 rounded-lg bg-muted border border-border">
                             <div className="text-2xl font-bold text-foreground mb-1">100%</div>
                             <div className="text-sm text-muted-foreground">Mobile Optimized</div>
                           </div>

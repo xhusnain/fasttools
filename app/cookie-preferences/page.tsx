@@ -143,15 +143,15 @@ export default function CookiePreferencesPage() {
                 Manage your cookie preferences and learn about how we use cookies in compliance with Google AdSense, Google Analytics, and privacy regulations.
               </p>
               <div className="flex flex-wrap justify-center gap-3 mb-4">
-                <div className="flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-border/30 rounded-lg">
+                <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
                   <span className="text-sm font-medium text-foreground">GDPR Compliant</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-border/30 rounded-lg">
+                <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
                   <span className="text-sm font-medium text-foreground">CCPA Compliant</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-border/30 rounded-lg">
+                <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-border/30 rounded-lg">
                   <CheckCircle className="h-4 w-4 text-heading-accent" />
                   <span className="text-sm font-medium text-foreground">Google AdSense Compliant</span>
                 </div>
@@ -163,7 +163,7 @@ export default function CookiePreferencesPage() {
             <div className="space-y-8">
               <div className="bg-card border border-border/30 rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center">
                     <Eye className="h-5 w-5 text-foreground" />
                   </div>
                   <h2 className="text-2xl font-bold text-foreground">What Are Cookies?</h2>
@@ -178,7 +178,7 @@ export default function CookiePreferencesPage() {
                       Privacy Policy
                     </Link>.
                   </p>
-                  <div className="bg-orange-500/10 border border-border/30 rounded-lg p-4">
+                  <div className="bg-primary/10 border border-border/30 rounded-lg p-4">
                     <div className="flex items-start gap-3">
                       <AlertTriangle className="h-5 w-5 text-foreground mt-0.5 flex-shrink-0" />
                       <div>
@@ -195,7 +195,7 @@ export default function CookiePreferencesPage() {
               {/* Cookie Categories */}
               <div className="bg-card border border-border/30 rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center">
                     <Cookie className="h-5 w-5 text-foreground" />
                   </div>
                   <h2 className="text-2xl font-bold text-foreground">Cookie Categories</h2>
@@ -291,13 +291,13 @@ export default function CookiePreferencesPage() {
               {/* Google AdSense Compliance */}
               <div className="bg-card border border-border/30 rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center">
                     <Shield className="h-5 w-5 text-foreground" />
                   </div>
                   <h2 className="text-2xl font-bold text-foreground">Google AdSense & Analytics Compliance</h2>
                 </div>
                 <div className="space-y-6">
-                  <div className="bg-orange-500/10 border border-border/30 rounded-lg p-6">
+                  <div className="bg-primary/10 border border-border/30 rounded-lg p-6">
                     <h3 className="text-xl font-semibold mb-4 text-heading-accent flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-heading-accent" />
                       Google AdSense Cookie Compliance
@@ -354,7 +354,7 @@ export default function CookiePreferencesPage() {
               {/* Third-Party Cookie Management */}
               <div className="bg-card border border-border/30 rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center">
                     <ExternalLink className="h-5 w-5 text-foreground" />
                   </div>
                   <h2 className="text-2xl font-bold text-foreground">Third-Party Cookie Management</h2>
@@ -403,7 +403,7 @@ export default function CookiePreferencesPage() {
               {/* Cookie Management Controls */}
               <div className="bg-card border border-border/30 rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 rounded-lg bg-orange-500/10 border border-border/30 flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center">
                     <Settings className="h-5 w-5 text-foreground" />
                   </div>
                   <h2 className="text-2xl font-bold text-foreground">Manage Your Cookie Preferences</h2>

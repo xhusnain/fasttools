@@ -333,10 +333,10 @@ export function ElementsPanel({ canvas }: ElementsPanelProps) {
 
   const shapes = [
     { id: 'rectangle', name: 'Rectangle', Icon: Square, bgColor: 'bg-blue-500', hoverColor: 'hover:bg-blue-600' },
-    { id: 'circle', name: 'Circle', Icon: CircleIcon, bgColor: 'bg-red-500', hoverColor: 'hover:bg-red-600' },
+    { id: 'circle', name: 'Circle', Icon: CircleIcon, bgColor: 'bg-red-500', hoverColor: 'hover:bg-destructive' },
     { id: 'triangle', name: 'Triangle', Icon: TriangleIcon, bgColor: 'bg-green-500', hoverColor: 'hover:bg-green-600' },
     { id: 'ellipse', name: 'Ellipse', icon: '⬭', bgColor: 'bg-cyan-500', hoverColor: 'hover:bg-cyan-600' },
-    { id: 'line', name: 'Line', Icon: Minus, bgColor: 'bg-orange-500', hoverColor: 'hover:bg-orange-600' },
+    { id: 'line', name: 'Line', Icon: Minus, bgColor: 'bg-primary', hoverColor: 'hover:bg-primary' },
     { id: 'arrow', name: 'Arrow', Icon: ArrowRight, bgColor: 'bg-purple-500', hoverColor: 'hover:bg-purple-600' },
     { id: 'star', name: 'Star', Icon: Star, bgColor: 'bg-pink-500', hoverColor: 'hover:bg-pink-600' },
     { id: 'hexagon', name: 'Hexagon', Icon: Hexagon, bgColor: 'bg-indigo-500', hoverColor: 'hover:bg-indigo-600' },
@@ -513,7 +513,7 @@ export function ElementsPanel({ canvas }: ElementsPanelProps) {
       <div>
         <div className="flex items-center justify-between mb-3">
           <h3 className="font-semibold text-slate-800 text-sm">Colorful Icons</h3>
-          <span className="text-xs text-slate-500 font-medium">{allIcons.length} icons</span>
+          <span className="text-xs text-muted-foreground font-medium">{allIcons.length} icons</span>
         </div>
 
         {/* Icons Grid */}
@@ -527,7 +527,7 @@ export function ElementsPanel({ canvas }: ElementsPanelProps) {
               title={iconData.name}
             >
               <Icon icon={iconData.icon} className="w-8 h-8" />
-              <span className="text-[9px] text-slate-600 font-medium text-center line-clamp-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="text-[9px] text-muted-foreground font-medium text-center line-clamp-1 opacity-0 group-hover:opacity-100 transition-opacity">
                 {iconData.name}
               </span>
             </button>
@@ -547,7 +547,7 @@ export function ElementsPanel({ canvas }: ElementsPanelProps) {
         {showAllIcons && (
           <button
             onClick={() => setShowAllIcons(false)}
-            className="w-full mt-3 py-2.5 text-sm text-slate-600 hover:text-slate-700 font-semibold border-2 border-slate-200 hover:border-slate-300 rounded-lg transition-colors hover:bg-slate-50"
+            className="w-full mt-3 py-2.5 text-sm text-muted-foreground hover:text-slate-700 font-semibold border-2 border-slate-200 hover:border-slate-300 rounded-lg transition-colors hover:bg-slate-50"
           >
             Show Less
           </button>

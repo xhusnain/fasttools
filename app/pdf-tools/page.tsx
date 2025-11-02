@@ -357,7 +357,7 @@ export default function PDFToolsPage() {
                   <GHeader
                     title="Free PDF Tools - Split, Merge, Unlock & Compress PDFs Online"
                     description="Split PDFs, merge documents, unlock password-protected files, compress file sizes, and convert PDFs to images — all free, fast, and online. No signup or software needed."
-                    titleSize="large"
+                    titleSize="medium"
                     descriptionSize="small"
                   />
                 </div>

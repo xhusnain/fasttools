@@ -1298,7 +1298,7 @@ export default function RetirementPlannerPage() {
                           <li>• <strong>Dave Ramsey Retirement Planner</strong> - DR retirement methods</li>
             </ul>
           </div>
-                      <div className="p-4 rounded-lg bg-orange-500/10 border border-border/20">
+                      <div className="p-4 rounded-lg bg-primary/10 border border-border/20">
                         <h3 className="font-semibold text-foreground mb-2">Advanced Planning Features</h3>
                         <ul className="text-sm text-muted-foreground space-y-1">
                           <li>• <strong>Retirement Planner Monte Carlo Simulation</strong> - Risk analysis</li>

@@ -137,7 +137,7 @@ const categories = [
         href: "/calculator/age-calculator",
         icon: Calendar,
         badge: "Essential",
-        badgeColor: "bg-orange-500/90",
+        badgeColor: "bg-primary/90",
       },
       {
         title: "Percentage Calculator",
@@ -193,7 +193,7 @@ const categories = [
         href: "/calculator/tax-calculator",
         icon: DollarSign,
         badge: "Finance",
-        badgeColor: "bg-orange-500/90",
+        badgeColor: "bg-primary/90",
       },
       {
         title: "Investment Calculator",
@@ -287,7 +287,7 @@ const categories = [
         href: "/ai-tools/caption-generator",
         icon: Hash,
         badge: "Trending",
-        badgeColor: "bg-orange-500/90",
+        badgeColor: "bg-primary/90",
       },
       {
         title: "AI Pet Name Generator",
@@ -341,7 +341,7 @@ const categories = [
         href: "/converters/temperature",
         icon: Thermometer,
         badge: "Fast",
-        badgeColor: "bg-orange-500/90",
+        badgeColor: "bg-primary/90",
       },
       {
         title: "File Size Converter",
@@ -369,7 +369,7 @@ const categories = [
     href: "/dev-tools",
     borderColor: "border-border/40",
     hoverBorder: "hover:border-border/80",
-    iconBg: "bg-orange-500/20",
+    iconBg: "bg-primary/20",
     iconColor: "text-foreground",
     glowColor: "hover:shadow-orange-500/20",
     tools: [
@@ -435,7 +435,7 @@ const categories = [
         href: "/dev-tools/markdown-previewer",
         icon: FileText,
         badge: "Preview",
-        badgeColor: "bg-orange-500/90",
+        badgeColor: "bg-primary/90",
       },
     ],
   },
@@ -503,7 +503,7 @@ const categories = [
         href: "/pdf-tools/pdf-compressor",
         icon: FileText,
         badge: "Optimize",
-        badgeColor: "bg-orange-500/90",
+        badgeColor: "bg-primary/90",
       },
       {
         title: "PDF to Image",
@@ -619,7 +619,7 @@ const categories = [
         href: "/social-media-tools/youtube-thumbnail",
         icon: Download,
         badge: "YouTube",
-        badgeColor: "bg-orange-500/90",
+        badgeColor: "bg-primary/90",
     },
     {
       title: "Hashtag Generator",
@@ -1176,7 +1176,7 @@ export default function Home() {
                 {/* Stat 1 */}
                 <div className="group cursor-default">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-orange-500/5 rounded-2xl blur-xl group-hover:bg-orange-500/10 transition-all"></div>
+                    <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl group-hover:bg-primary/10 transition-all"></div>
                     <div className="relative space-y-1 md:space-y-2">
                       <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black text-foreground tracking-tight">5M+</div>
                       <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
@@ -1190,7 +1190,7 @@ export default function Home() {
                 {/* Stat 2 */}
                 <div className="group cursor-default">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-orange-500/5 rounded-2xl blur-xl group-hover:bg-orange-500/10 transition-all"></div>
+                    <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl group-hover:bg-primary/10 transition-all"></div>
                     <div className="relative space-y-1 md:space-y-2">
                       <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black text-foreground tracking-tight">1000+</div>
                       <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
@@ -1204,7 +1204,7 @@ export default function Home() {
                 {/* Stat 3 */}
                 <div className="group cursor-default">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-orange-500/5 rounded-2xl blur-xl group-hover:bg-orange-500/10 transition-all"></div>
+                    <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl group-hover:bg-primary/10 transition-all"></div>
                     <div className="relative space-y-1 md:space-y-2">
                       <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black text-foreground tracking-tight">100%</div>
                       <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">

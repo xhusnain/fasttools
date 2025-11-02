@@ -84,7 +84,7 @@ export function FAQSection() {
         {faqs.map((faq, index) => (
         <Card
           key={index}
-          className="bg-black border border-border/50 overflow-hidden transition-all hover:shadow-md hover:border-primary/30"
+          className="bg-card border border-border/50 overflow-hidden transition-all hover:shadow-md hover:border-primary/30"
         >
           <button
             onClick={() => toggleFAQ(index)}

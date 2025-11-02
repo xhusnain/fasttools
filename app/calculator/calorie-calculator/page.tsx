@@ -574,7 +574,7 @@ export default function CalorieCalculatorPage() {
                         <a
                           key={name}
                           href={href}
-                          className="p-2 sm:p-2.5 bg-card rounded-lg border border-border hover:bg-slate-900 hover:border-border transition-colors group w-full overflow-hidden"
+                          className="p-2 sm:p-2.5 bg-card rounded-lg border border-border hover:bg-muted hover:border-border transition-colors group w-full overflow-hidden"
                         >
                           <div className="flex items-center gap-1.5 sm:gap-2 mb-0.5">
                             <Icon className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-foreground flex-shrink-0" />

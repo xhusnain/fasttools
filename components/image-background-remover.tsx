@@ -160,16 +160,16 @@ export function ImageBackgroundRemover() {
 
   return (
     <div className="w-full">
-      <Card className="shadow-lg w-full max-w-none border-slate-200 dark:border-slate-700">
+      <Card className="shadow-lg w-full max-w-none border-slate-200 dark:border-border">
         <div className="p-4 sm:p-6">
           {/* Side-by-Side Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
             {/* Left Side - Original Image */}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <h2 className="text-lg font-bold text-slate-800 dark:text-slate-200">Original Image</h2>
+                <h2 className="text-lg font-bold text-slate-800 dark:text-foreground">Original Image</h2>
                 {imageDimensions && (
-                  <span className="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full">
+                  <span className="text-xs text-muted-foreground dark:text-muted-foreground bg-slate-100 dark:bg-secondary px-3 py-1 rounded-full">
                     {imageDimensions.width} × {imageDimensions.height}
                   </span>
                 )}
@@ -178,7 +178,7 @@ export function ImageBackgroundRemover() {
               <div className="relative">
                 <label
                   htmlFor="image-upload-bg"
-                  className="block w-full h-[220px] sm:h-[340px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl cursor-pointer bg-white hover:border-purple-400 dark:hover:border-purple-500 transition-all duration-300 overflow-hidden"
+                  className="block w-full h-[220px] sm:h-[340px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-border rounded-xl cursor-pointer bg-white hover:border-purple-400 dark:hover:border-purple-500 transition-all duration-300 overflow-hidden"
                 >
                   {imageUrl ? (
                     <div className="w-full h-full flex items-center justify-center p-4 bg-white">
@@ -203,13 +203,13 @@ export function ImageBackgroundRemover() {
                         PNG, JPG, JPEG, WebP (MAX. 10MB)
                       </p>
                       <div className="flex gap-2 flex-wrap justify-center">
-                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-slate-800 text-white rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
+                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-secondary text-white rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
                           Product Photos
                         </span>
-                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-slate-800 text-white rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
+                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-secondary text-white rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
                           Portraits
                         </span>
-                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-slate-800 text-white rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
+                        <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-secondary text-white rounded-full text-[11px] sm:text-xs font-medium shadow-sm">
                           Logos
                         </span>
                       </div>
@@ -232,7 +232,7 @@ export function ImageBackgroundRemover() {
             {/* Right Side - Result */}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <h2 className="text-lg font-bold text-slate-800 dark:text-slate-200">Result</h2>
+                <h2 className="text-lg font-bold text-slate-800 dark:text-foreground">Result</h2>
                 {result && !isProcessing && (
                   <div className="flex items-center gap-2 bg-green-50 dark:bg-green-900/20 px-3 py-1.5 rounded-full">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -242,7 +242,7 @@ export function ImageBackgroundRemover() {
               </div>
 
               <div 
-                className="relative w-full h-[220px] sm:h-[340px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"
+                className="relative w-full h-[220px] sm:h-[340px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-border rounded-xl overflow-hidden"
                 style={bgMode === 'color' ? { backgroundColor: bgColor } : bgMode === 'image' && bgImageUrl ? { backgroundImage: `url(${bgImageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {
                   background: '#ffffff',
                   backgroundImage: 'repeating-conic-gradient(#d1d5db 0% 25%, #ffffff 0% 50%)',
@@ -262,7 +262,7 @@ export function ImageBackgroundRemover() {
                       <p className="text-sm font-semibold text-slate-900">
                         Upload an image to see the result
                       </p>
-                      <p className="text-xs text-slate-600 mt-2">
+                      <p className="text-xs text-muted-foreground mt-2">
                         Checkered pattern shows transparency
                       </p>
                     </div>
@@ -322,7 +322,7 @@ export function ImageBackgroundRemover() {
                         {isBgMenuOpen && (
                           <ul
                             role="listbox"
-                            className="absolute z-20 mt-2 left-1/2 -translate-x-1/2 md:left-auto md:right-0 w-60 max-w-[calc(100vw-3rem)] rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-xl overflow-hidden"
+                            className="absolute z-20 mt-2 left-1/2 -translate-x-1/2 md:left-auto md:right-0 w-60 max-w-[calc(100vw-3rem)] rounded-xl border border-slate-200 dark:border-border bg-white dark:bg-secondary shadow-xl overflow-hidden"
                           >
                             {[
                               { v: 'transparent', l: 'Transparent' },
@@ -333,7 +333,7 @@ export function ImageBackgroundRemover() {
                                 key={o.v}
                                 role="option"
                                 aria-selected={bgMode === (o.v as any)}
-                                className={`px-3 py-2 text-sm cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 ${bgMode === (o.v as any) ? 'bg-slate-50 dark:bg-slate-700/60' : ''}`}
+                                className={`px-3 py-2 text-sm cursor-pointer hover:bg-slate-100 dark:hover:bg-border ${bgMode === (o.v as any) ? 'bg-slate-50 dark:bg-border/60' : ''}`}
                                 onClick={() => { setBgMode(o.v as any); setIsBgMenuOpen(false) }}
                               >
                                 {o.l}
@@ -352,19 +352,19 @@ export function ImageBackgroundRemover() {
                             style={{ backgroundColor: bgColor }}
                           />
                           {isColorMenuOpen && (
-                            <div className="absolute z-30 mt-2 left-1/2 -translate-x-1/2 md:left-auto md:right-0 w-64 max-w-[calc(100vw-3rem)] rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 shadow-xl">
+                            <div className="absolute z-30 mt-2 left-1/2 -translate-x-1/2 md:left-auto md:right-0 w-64 max-w-[calc(100vw-3rem)] rounded-xl border border-slate-200 dark:border-border bg-white dark:bg-secondary p-3 shadow-xl">
                               <div className="grid grid-cols-8 gap-2 mb-3">
                                 {['#ffffff','#f3f4f6','#000000','#ef4444','#3b82f6','#10b981','#a855f7','#f59e0b','#14b8a6','#e11d48','#7c3aed','#475569'].map(c => (
-                                  <button key={c} title={c} onClick={() => { setBgColor(c); setIsColorMenuOpen(false) }} className="h-6 w-6 rounded-full border border-slate-300 dark:border-slate-600" style={{ backgroundColor: c }} />
+                                  <button key={c} title={c} onClick={() => { setBgColor(c); setIsColorMenuOpen(false) }} className="h-6 w-6 rounded-full border border-slate-300 dark:border-border" style={{ backgroundColor: c }} />
                                 ))}
                               </div>
                               <div className="flex items-center gap-2">
-                                <span className="text-xs text-slate-500">Hex</span>
+                                <span className="text-xs text-muted-foreground">Hex</span>
                                 <input
                                   type="text"
                                   value={bgColor}
                                   onChange={(e) => setBgColor(e.target.value)}
-                                  className="flex-1 text-xs rounded-md border border-slate-300 dark:border-slate-600 bg-transparent px-2 py-1 outline-none"
+                                  className="flex-1 text-xs rounded-md border border-slate-300 dark:border-border bg-transparent px-2 py-1 outline-none"
                                   placeholder="#ffffff"
                                 />
                                 <button onClick={() => setIsColorMenuOpen(false)} className="text-xs px-2 py-1 rounded-md bg-accent text-white">OK</button>
@@ -374,7 +374,7 @@ export function ImageBackgroundRemover() {
                         </div>
                       )}
                       {bgMode === 'image' && (
-                        <label className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 cursor-pointer w-full md:w-auto justify-center bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                        <label className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-border cursor-pointer w-full md:w-auto justify-center bg-white dark:bg-secondary text-slate-800 dark:text-slate-100 shadow-sm hover:shadow-md transition-shadow">
                           <ImageIcon className="h-4 w-4" />
                           <span className="text-sm">Choose image</span>
                           <input
@@ -393,7 +393,7 @@ export function ImageBackgroundRemover() {
                     </div>
                   </div>
                   
-                  <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                  <div className="flex items-center justify-between text-xs text-muted-foreground dark:text-muted-foreground">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                       <span className="font-medium">AI-Powered Background Removal</span>
@@ -432,7 +432,7 @@ export function ImageBackgroundRemover() {
                   <Button 
                     onClick={resetAll} 
                     variant="outline"
-                    className="gap-2 border-red-300 text-foreground hover:bg-red-100 dark:border-red-700 dark:text-foreground dark:hover:bg-red-900/30"
+                    className="gap-2 border-red-300 text-foreground hover:bg-red-100 dark:border-destructive dark:text-foreground dark:hover:bg-red-900/30"
                   >
                     <RotateCcw className="h-4 w-4" />
                     Try Again

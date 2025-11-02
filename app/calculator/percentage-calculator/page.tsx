@@ -133,7 +133,7 @@ export default function PercentageCalculatorPage() {
               <div className="mt-8 md:mt-12 space-y-6 md:space-y-8">
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
-                    <div className="p-2 bg-orange-500/10 rounded-lg">
+                    <div className="p-2 bg-primary/10 rounded-lg">
                       <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
                   </div>
                   How to Use Our Advanced Percentage Calculator
@@ -163,7 +163,7 @@ export default function PercentageCalculatorPage() {
               {/* Calculation Types */}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
-                    <div className="p-2 bg-orange-500/10 rounded-lg">
+                    <div className="p-2 bg-primary/10 rounded-lg">
                       <Calculator className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
                   </div>
                   Percentage Calculation Types
@@ -184,7 +184,7 @@ export default function PercentageCalculatorPage() {
                           <h3 className="font-semibold text-heading-accent text-sm md:text-base">{type}</h3>
                       </div>
                         <p className="text-xs md:text-sm text-muted-foreground mb-2">{desc}</p>
-                      <p className="text-xs text-foreground font-mono bg-orange-500/10 px-2 py-1 rounded">{example}</p>
+                      <p className="text-xs text-foreground font-mono bg-primary/10 px-2 py-1 rounded">{example}</p>
                     </div>
                   ))}
                 </div>
@@ -193,7 +193,7 @@ export default function PercentageCalculatorPage() {
               {/* Targeted Use Cases by Intent */}
               <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                 <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
-                  <div className="p-2 bg-orange-500/10 rounded-lg">
+                  <div className="p-2 bg-primary/10 rounded-lg">
                     <Users className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
                   </div>
                   Percentage Calculator Use Cases by Intent
@@ -258,7 +258,7 @@ export default function PercentageCalculatorPage() {
                 {/* How-To Guides for Different Intents */}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
-                    <div className="p-2 bg-orange-500/10 rounded-lg">
+                    <div className="p-2 bg-primary/10 rounded-lg">
                       <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
                   </div>
                     How-To Guides: Find Percentage of a Number
@@ -308,7 +308,7 @@ export default function PercentageCalculatorPage() {
                 {/* Mathematical Formulas Section */}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
-                    <div className="p-2 bg-orange-500/10 rounded-lg">
+                    <div className="p-2 bg-primary/10 rounded-lg">
                       <Calculator className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
                     </div>
                     Mathematical Formulas & Examples
@@ -359,7 +359,7 @@ export default function PercentageCalculatorPage() {
                 {/* Real-World Applications */}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
-                    <div className="p-2 bg-orange-500/10 rounded-lg">
+                    <div className="p-2 bg-primary/10 rounded-lg">
                       <Users className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
                   </div>
                     Real-World Applications
@@ -397,7 +397,7 @@ export default function PercentageCalculatorPage() {
                 {/* Related Tools Section */}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
-                    <div className="p-2 bg-orange-500/10 rounded-lg">
+                    <div className="p-2 bg-primary/10 rounded-lg">
                       <Calculator className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
                     </div>
                     Related Math & Finance Calculators
@@ -480,7 +480,7 @@ export default function PercentageCalculatorPage() {
                       <a
                         key={index}
                         href={tool.href}
-                        className="p-4 bg-card rounded-lg border border-border hover:bg-slate-800 hover:border-border/50 transition-colors group"
+                        className="p-4 bg-card rounded-lg border border-border hover:bg-secondary hover:border-border/50 transition-colors group"
                       >
                         <div className="flex items-center gap-3 mb-2">
                           <span className="text-2xl">{tool.icon}</span>
@@ -499,7 +499,7 @@ export default function PercentageCalculatorPage() {
                 {/* Comprehensive FAQ Section */}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
-                    <div className="p-2 bg-orange-500/10 rounded-lg">
+                    <div className="p-2 bg-primary/10 rounded-lg">
                       <Award className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
                     </div>
                     Frequently Asked Questions (FAQ) - 50 Questions

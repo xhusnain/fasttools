@@ -408,7 +408,7 @@ export default function TaxCalculatorPage() {
                 <div className="mt-6 md:mt-8 space-y-4 md:space-y-6">
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
                         <BookOpen className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                     </div>
                       How to Use Our Tax Calculator
@@ -438,7 +438,7 @@ export default function TaxCalculatorPage() {
             {/* Supported Countries */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
                         <Globe className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                 </div>
                 Supported Countries & Tax Systems
@@ -474,7 +474,7 @@ export default function TaxCalculatorPage() {
                   {/* Tax Calculation Types */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
                         <Calculator className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                       </div>
                       Tax Calculation Types
@@ -497,7 +497,7 @@ export default function TaxCalculatorPage() {
                             <h3 className="font-semibold text-heading-accent text-xs md:text-sm">{type}</h3>
                           </div>
                           <p className="text-xs text-muted-foreground mb-1">{desc}</p>
-                          <p className="text-xs text-foreground font-mono bg-orange-500/10 px-1.5 py-0.5 rounded">{example}</p>
+                          <p className="text-xs text-foreground font-mono bg-primary/10 px-1.5 py-0.5 rounded">{example}</p>
                   </div>
                 ))}
               </div>
@@ -506,7 +506,7 @@ export default function TaxCalculatorPage() {
             {/* Advanced Features */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
                         <Zap className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                 </div>
                 Advanced Calculation Features
@@ -558,7 +558,7 @@ export default function TaxCalculatorPage() {
                   {/* Tax Formulas Section */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
                         <Calculator className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                 </div>
                       Tax Calculation Formulas
@@ -585,7 +585,7 @@ export default function TaxCalculatorPage() {
                   {/* FAQ Section */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
                         <Info className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                       </div>
                       Frequently Asked Questions
@@ -721,7 +721,7 @@ export default function TaxCalculatorPage() {
                   {/* Related Tools Section */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
                         <Calculator className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                       </div>
                       Related Financial & Tax Tools
@@ -744,7 +744,7 @@ export default function TaxCalculatorPage() {
                         <a
                           key={name}
                           href={href}
-                          className="p-2 md:p-3 bg-card rounded-lg border border-border hover:bg-slate-800 hover:border-heading-accent-border/50 transition-colors group"
+                          className="p-2 md:p-3 bg-card rounded-lg border border-border hover:bg-secondary hover:border-heading-accent-border/50 transition-colors group"
                         >
                           <div className="flex items-center gap-2 mb-1">
                             <Icon className="h-3 w-3 text-heading-accent" />

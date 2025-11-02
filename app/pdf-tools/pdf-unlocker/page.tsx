@@ -686,25 +686,25 @@ export default function PDFUnlockerPage() {
                   </h2>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
-                      <div className="h-2 w-2 rounded-full bg-orange-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-2 w-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         <strong className="text-foreground">Business & Legal Documents:</strong> Remove password protection from contracts, NDAs, and legal PDFs you've received for signing or review. Unlock PDF files for editing to add comments or annotations.
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="h-2 w-2 rounded-full bg-orange-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-2 w-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         <strong className="text-foreground">Education & Research:</strong> Unlock PDF files to copy text for citations, quotes, and research papers. Remove restrictions from academic papers and textbooks you legally own.
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="h-2 w-2 rounded-full bg-orange-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-2 w-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         <strong className="text-foreground">Personal Documents:</strong> Unlock password-protected PDFs like tax returns, bank statements, or insurance documents that you've password-protected but need quick access to.
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="h-2 w-2 rounded-full bg-orange-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-2 w-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         <strong className="text-foreground">Archive Management:</strong> Permanently unlock PDF files in your document archives to simplify future access. Great for digitizing old files with forgotten passwords.
                       </p>

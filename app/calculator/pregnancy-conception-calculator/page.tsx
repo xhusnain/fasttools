@@ -220,7 +220,7 @@ export default function PregnancyConceptionCalculatorPage() {
                   {/* How to Use Section */}
                   <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                     <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
-                      <div className="p-2 bg-orange-500/10 rounded-lg">
+                      <div className="p-2 bg-primary/10 rounded-lg">
                         <Calculator className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
                       </div>
                       How to Use Pregnancy Conception Calculator
@@ -250,7 +250,7 @@ export default function PregnancyConceptionCalculatorPage() {
                   {/* Features Section */}
                   <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                     <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
-                      <div className="p-2 bg-orange-500/10 rounded-lg">
+                      <div className="p-2 bg-primary/10 rounded-lg">
                         <Target className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
                       </div>
                       Key Features
@@ -320,7 +320,7 @@ export default function PregnancyConceptionCalculatorPage() {
                   {/* Use Cases Section */}
                   <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                     <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
-                      <div className="p-2 bg-orange-500/10 rounded-lg">
+                      <div className="p-2 bg-primary/10 rounded-lg">
                         <Home className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
                       </div>
                       Use Cases
@@ -352,7 +352,7 @@ export default function PregnancyConceptionCalculatorPage() {
                   {/* FAQ Section */}
                   <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                     <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
-                      <div className="p-2 bg-orange-500/10 rounded-lg">
+                      <div className="p-2 bg-primary/10 rounded-lg">
                         <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
                       </div>
                       Frequently Asked Questions
@@ -586,7 +586,7 @@ export default function PregnancyConceptionCalculatorPage() {
                   {/* Related Tools Section */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                      <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
                         <Calculator className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
                       </div>
                       Related Health & Pregnancy Calculators
@@ -609,7 +609,7 @@ export default function PregnancyConceptionCalculatorPage() {
                         <a
                           key={href}
                           href={href}
-                          className="p-2 md:p-3 bg-card rounded-lg border border-border hover:bg-slate-800 hover:border-heading-accent-border/50 transition-colors group"
+                          className="p-2 md:p-3 bg-card rounded-lg border border-border hover:bg-secondary hover:border-heading-accent-border/50 transition-colors group"
                         >
                           <div className="flex items-center gap-2 mb-1">
                             <Icon className="h-3 w-3 text-foreground group-hover:text-heading-accent" />

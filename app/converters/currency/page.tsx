@@ -261,7 +261,7 @@ export default function CurrencyConverterPage() {
                     </div>
                     <Link 
                       href="/converters/currency-api"
-                      className="flex items-center gap-2 px-4 py-2 bg-orange-500 text-foreground rounded-md hover:bg-orange-600 transition-colors text-sm font-medium"
+                      className="flex items-center gap-2 px-4 py-2 bg-primary text-foreground rounded-md hover:bg-primary transition-colors text-sm font-medium"
                     >
                       <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -350,16 +350,16 @@ export default function CurrencyConverterPage() {
                         Perfect for developers, businesses, and financial applications.
                       </p>
                       <div className="flex flex-wrap gap-2 text-xs">
-                        <span className="px-2 py-1 bg-orange-500 text-foreground rounded-full">Free Forever</span>
-                        <span className="px-2 py-1 bg-orange-500 text-foreground rounded-full">1000 requests/day</span>
-                        <span className="px-2 py-1 bg-orange-500 text-foreground rounded-full">100+ Currencies</span>
-                        <span className="px-2 py-1 bg-orange-500 text-foreground rounded-full">Real-time Rates</span>
+                        <span className="px-2 py-1 bg-primary text-foreground rounded-full">Free Forever</span>
+                        <span className="px-2 py-1 bg-primary text-foreground rounded-full">1000 requests/day</span>
+                        <span className="px-2 py-1 bg-primary text-foreground rounded-full">100+ Currencies</span>
+                        <span className="px-2 py-1 bg-primary text-foreground rounded-full">Real-time Rates</span>
                       </div>
                     </div>
                     <div className="ml-4">
                       <Link 
                         href="/converters/currency-api"
-                        className="flex items-center gap-2 px-4 py-2 bg-orange-500 text-foreground rounded-md hover:bg-orange-600 transition-colors text-sm font-medium"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary text-foreground rounded-md hover:bg-primary transition-colors text-sm font-medium"
                       >
                         <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />

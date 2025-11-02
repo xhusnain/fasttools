@@ -45,10 +45,10 @@ export function AnnouncementBanner() {
   return (
     <div className="relative max-w-4xl mx-auto">
       {/* Professional square/rectangular design */}
-      <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-slate-700/50 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-border/50 overflow-hidden">
         {/* Subtle background pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5" />
-        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-500/10 to-transparent rounded-full blur-2xl" />
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/10 to-transparent rounded-full blur-2xl" />
         
         <div className="relative">
           {/* Header with badges */}
@@ -56,7 +56,7 @@ export function AnnouncementBanner() {
             <div className="flex items-center gap-3">
               {/* Professional icon container */}
               <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-red-500 rounded-xl flex items-center justify-center shadow-lg">
                   <IconComponent className="h-6 w-6 text-white" />
                 </div>
                 {currentAnnouncement.isLive && (
@@ -69,7 +69,7 @@ export function AnnouncementBanner() {
                 <div className="flex items-center gap-2 mb-1">
                   <Badge 
                     variant="secondary" 
-                    className="bg-orange-500/20 text-foreground border-orange-400/30 text-xs font-medium px-2 py-1"
+                    className="bg-primary/20 text-foreground border-orange-400/30 text-xs font-medium px-2 py-1"
                   >
                     {currentAnnouncement.badge}
                   </Badge>
@@ -92,7 +92,7 @@ export function AnnouncementBanner() {
             <Button 
               asChild 
               size="lg"
-              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-200 px-6 py-3 rounded-xl font-semibold"
+              className="bg-gradient-to-r from-primary to-red-500 hover:from-orange-600 hover:to-red-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-200 px-6 py-3 rounded-xl font-semibold"
             >
               <Link href={currentAnnouncement.href} className="flex items-center gap-2">
                 Try Now
@@ -102,8 +102,8 @@ export function AnnouncementBanner() {
           </div>
           
           {/* Description */}
-          <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
-            <p className="text-slate-200 text-sm leading-relaxed">
+          <div className="bg-secondary/50 rounded-xl p-4 border border-border/50">
+            <p className="text-foreground text-sm leading-relaxed">
               {currentAnnouncement.description}
             </p>
           </div>
@@ -123,10 +123,10 @@ export function CompactAnnouncementBanner() {
 
   return (
     <div className="relative max-w-2xl mx-auto">
-      <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-4 shadow-lg border border-slate-700/50">
+      <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-4 shadow-lg border border-border/50">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-primary to-red-500 rounded-lg flex items-center justify-center">
               <IconComponent className="h-4 w-4 text-white" />
             </div>
             <div>
@@ -140,7 +140,7 @@ export function CompactAnnouncementBanner() {
                   </span>
                 )}
               </div>
-              <p className="text-slate-300 text-xs">
+              <p className="text-foreground text-xs">
                 {currentAnnouncement.description}
               </p>
             </div>
@@ -149,7 +149,7 @@ export function CompactAnnouncementBanner() {
           <Button 
             asChild 
             size="sm"
-            className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white border-0 shadow-md hover:shadow-lg transition-all duration-200 px-4 py-2 rounded-lg font-medium"
+            className="bg-gradient-to-r from-primary to-red-500 hover:from-orange-600 hover:to-red-600 text-white border-0 shadow-md hover:shadow-lg transition-all duration-200 px-4 py-2 rounded-lg font-medium"
           >
             <Link href={currentAnnouncement.href} className="flex items-center gap-1">
               Try Now

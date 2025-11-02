@@ -38,8 +38,8 @@ export function HeroSectionBg() {
 
   if (loading || !imageUrl) {
     return (
-      <div className="absolute inset-0 bg-black/20 animate-pulse">
-        <div className="w-full h-full bg-gradient-to-br from-orange-500/10 to-orange-600/10"></div>
+      <div className="absolute inset-0 bg-card/20 animate-pulse">
+        <div className="w-full h-full bg-gradient-to-br from-primary/10 to-primary/90/10"></div>
       </div>
     )
   }
@@ -52,11 +52,9 @@ export function HeroSectionBg() {
         <img
           src={imageUrl}
           alt="Space"
-          className="absolute inset-0 w-full h-full object-cover opacity-30 dark:opacity-40"
+          className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
         />
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
       </div>
     </>
   )

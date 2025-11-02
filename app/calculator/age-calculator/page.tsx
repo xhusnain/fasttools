@@ -298,7 +298,7 @@ export default function AgeCalculatorPage() {
 
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-orange-500 to-orange-500 text-foreground text-xs font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-primary to-orange-500 text-foreground text-xs font-medium mb-4">
               <Calculator className="h-3 w-3" />
               <span>Professional Age Calculator</span>
             </div>

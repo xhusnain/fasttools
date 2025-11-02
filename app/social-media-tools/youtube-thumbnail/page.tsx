@@ -138,7 +138,7 @@ export default function YoutubeThumbnailPage() {
                 <GHeader
                   title="YouTube Thumbnail Downloader"
                   description="Download YouTube video thumbnails in all available quality sizes. Get HD thumbnails instantly for your content creation needs."
-                  titleSize="large"
+                  titleSize="medium"
                   descriptionSize="small"
                 />
               </div>

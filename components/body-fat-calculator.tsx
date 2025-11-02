@@ -119,7 +119,7 @@ export default function BodyFatCalculator() {
       name: "Obese",
       range: "25%+ (Men) / 32%+ (Women)",
       description: "Increased health risks",
-      color: "bg-red-600"
+      color: "bg-destructive"
     }
   ]
 
@@ -390,9 +390,9 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
   }
 
   return (
-    <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-black rounded-xl p-3 sm:p-4 md:p-6 w-full overflow-hidden">
+    <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-3 sm:p-4 md:p-6 w-full overflow-hidden">
       {/* Main Calculator */}
-      <Card className="bg-black border-slate-700 w-full overflow-hidden">
+      <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-3 sm:px-4 md:px-6 pb-3">
           <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
             <Scale className="h-4 w-4 sm:h-5 sm:w-5 text-foreground flex-shrink-0" />
@@ -405,7 +405,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
             <div className="flex-1 space-y-2 min-w-0 w-full sm:w-auto">
               <Label className="text-heading-accent text-xs sm:text-sm">Unit System</Label>
               <Select value={unitSystem} onValueChange={(value: "metric" | "imperial") => setUnitSystem(value)}>
-                <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm">
+                <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -417,7 +417,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
             <div className="flex-1 space-y-2 min-w-0 w-full sm:w-auto">
               <Label className="text-heading-accent text-xs sm:text-sm">Gender</Label>
               <Select value={gender} onValueChange={(value: "male" | "female") => setGender(value)}>
-                <SelectTrigger className="border-slate-700 bg-black text-slate-200 w-full text-xs sm:text-sm">
+                <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -440,7 +440,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                 onChange={(e) => setAge(e.target.value)}
                 min="15"
                 max="80"
-                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
+                className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm"
               />
             </div>
             <div className="space-y-2 w-full min-w-0">
@@ -451,9 +451,9 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                 placeholder={unitSystem === "metric" ? "70" : "154"}
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
-                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
+                className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm"
               />
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-muted-foreground mt-1">
                 {unitSystem === "metric" ? "kg" : "lbs"}
               </p>
             </div>
@@ -468,9 +468,9 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                 placeholder={unitSystem === "metric" ? "178" : "5.9"}
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
-                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
+                className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm"
               />
-              <p className="text-xs text-slate-400 mt-1 break-words">
+              <p className="text-xs text-muted-foreground mt-1 break-words">
                 {unitSystem === "metric" ? "cm" : "ft (e.g., 5.9 for 5'9\")"}
               </p>
             </div>
@@ -482,9 +482,9 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                 placeholder={unitSystem === "metric" ? "50" : "19.7"}
                 value={neck}
                 onChange={(e) => setNeck(e.target.value)}
-                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
+                className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm"
               />
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-muted-foreground mt-1">
                 {unitSystem === "metric" ? "cm" : "inches"}
               </p>
             </div>
@@ -499,9 +499,9 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                 placeholder={unitSystem === "metric" ? "96" : "37.8"}
                 value={waist}
                 onChange={(e) => setWaist(e.target.value)}
-                className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
+                className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm"
               />
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-muted-foreground mt-1">
                 {unitSystem === "metric" ? "cm" : "inches"}
               </p>
             </div>
@@ -514,9 +514,9 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                   placeholder={unitSystem === "metric" ? "102" : "40.2"}
                   value={hip}
                   onChange={(e) => setHip(e.target.value)}
-                  className="border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500 w-full text-sm"
+                  className="border-border bg-card text-foreground focus-visible:ring-primary focus:border-primary w-full text-sm"
                 />
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-xs text-muted-foreground mt-1">
                   {unitSystem === "metric" ? "cm" : "inches"} (Required for women)
                 </p>
               </div>
@@ -539,7 +539,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
       {result && (
         <div className="space-y-4 sm:space-y-6">
           {/* Main Results */}
-          <Card className="bg-black border-slate-700">
+          <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
                 <Target className="h-5 w-5 text-foreground" />
@@ -549,36 +549,36 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
             <CardContent className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium text-slate-300">U.S. Navy Method</Label>
+                  <Label className="text-sm font-medium text-foreground">U.S. Navy Method</Label>
                   <div className="text-2xl sm:text-3xl font-bold text-heading-accent">
                     {result.navyMethod.percentage}%
                   </div>
-                  <Badge variant="secondary" className="text-sm bg-slate-700 text-slate-200">
+                  <Badge variant="secondary" className="text-sm bg-border text-foreground">
                     {result.navyMethod.category}
                   </Badge>
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium text-slate-300">BMI Method</Label>
+                  <Label className="text-sm font-medium text-foreground">BMI Method</Label>
                   <div className="text-2xl sm:text-3xl font-bold text-foreground">
                     {result.bmiMethod.percentage}%
                   </div>
-                  <p className="text-sm text-slate-400">
+                  <p className="text-sm text-muted-foreground">
                     BMI: {result.bmiMethod.bmi}
                   </p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-700">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-border">
                 <div className="text-center">
-                  <div className="text-sm text-slate-400">Fat Mass</div>
+                  <div className="text-sm text-muted-foreground">Fat Mass</div>
                   <div className="text-lg font-semibold text-foreground">{result.navyMethod.fatMass} kg</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-sm text-slate-400">Lean Mass</div>
+                  <div className="text-sm text-muted-foreground">Lean Mass</div>
                   <div className="text-lg font-semibold text-foreground">{result.navyMethod.leanMass} kg</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-sm text-slate-400">Ideal Body Fat</div>
+                  <div className="text-sm text-muted-foreground">Ideal Body Fat</div>
                   <div className="text-lg font-semibold text-foreground">{result.idealBodyFat.percentage}%</div>
                 </div>
               </div>
@@ -593,7 +593,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
           </Card>
 
           {/* Body Fat Categories */}
-          <Card className="bg-black border-slate-700">
+          <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
                 <BarChart3 className="h-5 w-5 text-foreground" />
@@ -603,11 +603,11 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
             <CardContent>
               <div className="space-y-3">
                 {bodyFatCategories.map((category, index) => (
-                  <div key={index} className="flex justify-between items-center p-3 bg-black border border-slate-700 rounded-lg">
+                  <div key={index} className="flex justify-between items-center p-3 bg-card border border-border rounded-lg">
                     <div>
-                      <span className="font-medium text-slate-200">{category.name}</span>
-                      <p className="text-sm text-slate-300">{category.description}</p>
-                      <p className="text-xs text-slate-400">{category.range}</p>
+                      <span className="font-medium text-foreground">{category.name}</span>
+                      <p className="text-sm text-foreground">{category.description}</p>
+                      <p className="text-xs text-muted-foreground">{category.range}</p>
                     </div>
                     <div className={`w-4 h-4 rounded-full ${category.color}`}></div>
                   </div>
@@ -618,7 +618,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
 
           {/* Health Risks */}
           {result.healthRisks.length > 0 && (
-            <Card className="bg-black border-slate-700">
+            <Card className="bg-card border-border">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-foreground">
                   <AlertCircle className="h-5 w-5 text-foreground" />
@@ -628,7 +628,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
               <CardContent>
                 <div className="space-y-2">
                   {result.healthRisks.map((risk, index) => (
-                    <div key={index} className="flex items-start gap-2 p-3 bg-black border border-red-800 rounded-lg">
+                    <div key={index} className="flex items-start gap-2 p-3 bg-card border border-red-800 rounded-lg">
                       <AlertCircle className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
                       <span className="text-sm text-foreground">{risk}</span>
                     </div>
@@ -639,7 +639,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
           )}
 
           {/* Recommendations */}
-          <Card className="bg-black border-slate-700">
+          <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
                 <Heart className="h-5 w-5 text-foreground" />
@@ -654,7 +654,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                     {result.recommendations.nutrition.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300">{rec}</span>
+                        <span className="text-foreground">{rec}</span>
                       </li>
                     ))}
                   </ul>
@@ -665,7 +665,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                     {result.recommendations.exercise.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300">{rec}</span>
+                        <span className="text-foreground">{rec}</span>
                       </li>
                     ))}
                   </ul>
@@ -676,7 +676,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                     {result.recommendations.lifestyle.map((rec, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300">{rec}</span>
+                        <span className="text-foreground">{rec}</span>
                       </li>
                     ))}
                   </ul>
@@ -686,7 +686,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
           </Card>
 
           {/* Improvement Plan */}
-          <Card className="bg-black border-slate-700">
+          <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
                 <Trophy className="h-5 w-5 text-foreground" />
@@ -701,7 +701,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                     {result.improvementPlan.shortTerm.map((goal, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <Timer className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300">{goal}</span>
+                        <span className="text-foreground">{goal}</span>
                       </li>
                     ))}
                   </ul>
@@ -712,7 +712,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
                     {result.improvementPlan.longTerm.map((goal, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <Target className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-300">{goal}</span>
+                        <span className="text-foreground">{goal}</span>
                       </li>
                     ))}
                   </ul>
@@ -725,7 +725,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
 
       {/* History Section */}
       {history.length > 0 && (
-        <Card className="bg-black border-slate-700">
+        <Card className="bg-card border-border">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-foreground">
               <Clock className="h-5 w-5 text-foreground" />
@@ -735,12 +735,12 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
           <CardContent>
             <div className="space-y-2">
               {history.map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-black border border-slate-700 rounded-lg">
+                <div key={index} className="flex items-center justify-between p-3 bg-card border border-border rounded-lg">
                   <div className="space-y-1">
-                    <div className="font-medium text-slate-200">
+                    <div className="font-medium text-foreground">
                       Navy: {item.navyMethod.percentage}% ({item.navyMethod.category})
                     </div>
-                    <div className="text-sm text-slate-400">
+                    <div className="text-sm text-muted-foreground">
                       BMI: {item.bmiMethod.percentage}% | Fat Mass: {item.navyMethod.fatMass} kg
                     </div>
                   </div>
@@ -759,7 +759,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
       )}
 
       {/* Information Section */}
-      <Card className="bg-black border-slate-700">
+      <Card className="bg-card border-border">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-foreground">
             <Info className="h-5 w-5 text-foreground" />
@@ -767,21 +767,21 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="p-4 bg-black border border-slate-700 rounded-lg">
+          <div className="p-4 bg-card border border-border rounded-lg">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-foreground mt-0.5 flex-shrink-0" />
               <div className="text-sm">
                 <p className="font-medium text-foreground mb-1">
                   Professional Body Fat Analysis
                 </p>
-                <p className="text-slate-300">
+                <p className="text-foreground">
                   This calculator uses the U.S. Navy method and BMI method to provide accurate body fat percentage estimates. Results include fat mass, lean mass, ideal body fat, and personalized recommendations for optimal health.
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="text-sm text-slate-300 space-y-2">
+          <div className="text-sm text-foreground space-y-2">
             <p>
               <strong className="text-foreground">U.S. Navy Method:</strong> Most accurate for general population using circumference measurements.
             </p>

@@ -265,7 +265,7 @@ export default function AmortizationCalculatorPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
                       <div className="space-y-2 xs:space-y-3">
                         <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-orange-500 rounded-lg flex-shrink-0">
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-primary rounded-lg flex-shrink-0">
                             <BarChart3 className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-foreground" />
                           </div>
                           <div className="min-w-0">
@@ -274,7 +274,7 @@ export default function AmortizationCalculatorPage() {
                           </div>
                         </div>
                         <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-orange-500 rounded-lg flex-shrink-0">
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-primary rounded-lg flex-shrink-0">
                             <TrendingUp className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-foreground" />
                           </div>
                           <div className="min-w-0">
@@ -283,7 +283,7 @@ export default function AmortizationCalculatorPage() {
                           </div>
                         </div>
                         <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-orange-500 rounded-lg flex-shrink-0">
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-primary rounded-lg flex-shrink-0">
                             <DollarSign className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-foreground" />
                           </div>
                           <div className="min-w-0">
@@ -294,7 +294,7 @@ export default function AmortizationCalculatorPage() {
                       </div>
                       <div className="space-y-2 xs:space-y-3">
                         <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-orange-500 rounded-lg flex-shrink-0">
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-primary rounded-lg flex-shrink-0">
                             <BookOpen className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-foreground" />
                           </div>
                           <div className="min-w-0">
@@ -303,7 +303,7 @@ export default function AmortizationCalculatorPage() {
                           </div>
                         </div>
                         <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-orange-500 rounded-lg flex-shrink-0">
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-primary rounded-lg flex-shrink-0">
                             <Users className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-foreground" />
                           </div>
                           <div className="min-w-0">
@@ -312,7 +312,7 @@ export default function AmortizationCalculatorPage() {
                           </div>
                         </div>
                         <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                          <div className="p-1 xs:p-1.5 sm:p-2 bg-orange-500 rounded-lg flex-shrink-0">
+                          <div className="p-1 xs:p-1.5 sm:p-2 bg-primary rounded-lg flex-shrink-0">
                             <Clock className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-foreground" />
                           </div>
                           <div className="min-w-0">
@@ -645,7 +645,7 @@ export default function AmortizationCalculatorPage() {
                     <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-2 xs:gap-3 sm:gap-4">
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                          <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
                             <Calculator className="h-3 w-3 xs:h-4 xs:w-4 text-foreground" />
                           </div>
                           <h3 className="font-semibold text-heading-accent text-xs xs:text-sm">Mortgage Calculator</h3>
@@ -655,7 +655,7 @@ export default function AmortizationCalculatorPage() {
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                          <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
                             <BarChart3 className="h-3 w-3 xs:h-4 xs:w-4 text-foreground" />
                           </div>
                           <h3 className="font-semibold text-heading-accent text-xs xs:text-sm">Interest Rate Calculator</h3>
@@ -665,7 +665,7 @@ export default function AmortizationCalculatorPage() {
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                          <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
                             <TrendingUp className="h-3 w-3 xs:h-4 xs:w-4 text-foreground" />
                           </div>
                           <h3 className="font-semibold text-heading-accent text-xs xs:text-sm">Investment Calculator</h3>
@@ -675,7 +675,7 @@ export default function AmortizationCalculatorPage() {
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                          <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
                             <Home className="h-3 w-3 xs:h-4 xs:w-4 text-foreground" />
                           </div>
                           <h3 className="font-semibold text-heading-accent text-xs xs:text-sm">Loan Calculator</h3>
@@ -685,7 +685,7 @@ export default function AmortizationCalculatorPage() {
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                          <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
                             <DollarSign className="h-3 w-3 xs:h-4 xs:w-4 text-foreground" />
                           </div>
                           <h3 className="font-semibold text-heading-accent text-xs xs:text-sm">Finance Calculator</h3>
@@ -695,7 +695,7 @@ export default function AmortizationCalculatorPage() {
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                          <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
                             <Percent className="h-3 w-3 xs:h-4 xs:w-4 text-foreground" />
                           </div>
                           <h3 className="font-semibold text-heading-accent text-xs xs:text-sm">Sales Tax Calculator</h3>
@@ -705,7 +705,7 @@ export default function AmortizationCalculatorPage() {
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                          <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
                             <FileText className="h-3 w-3 xs:h-4 xs:w-4 text-foreground" />
                           </div>
                           <h3 className="font-semibold text-heading-accent text-xs xs:text-sm">Salary Calculator</h3>
@@ -715,7 +715,7 @@ export default function AmortizationCalculatorPage() {
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                          <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
                             <Award className="h-3 w-3 xs:h-4 xs:w-4 text-foreground" />
                           </div>
                           <h3 className="font-semibold text-heading-accent text-xs xs:text-sm">Inflation Calculator</h3>
@@ -725,7 +725,7 @@ export default function AmortizationCalculatorPage() {
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                          <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
                             <Globe className="h-3 w-3 xs:h-4 xs:w-4 text-foreground" />
                           </div>
                           <h3 className="font-semibold text-heading-accent text-xs xs:text-sm">Currency Converter</h3>
@@ -735,7 +735,7 @@ export default function AmortizationCalculatorPage() {
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                          <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
                             <PieChart className="h-3 w-3 xs:h-4 xs:w-4 text-foreground" />
                           </div>
                           <h3 className="font-semibold text-heading-accent text-xs xs:text-sm">Tax Calculator</h3>
@@ -745,7 +745,7 @@ export default function AmortizationCalculatorPage() {
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                          <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
                             <Clock className="h-3 w-3 xs:h-4 xs:w-4 text-foreground" />
                           </div>
                           <h3 className="font-semibold text-heading-accent text-xs xs:text-sm">Scientific Calculator</h3>
@@ -755,7 +755,7 @@ export default function AmortizationCalculatorPage() {
                       
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
-                          <div className="p-1 xs:p-1.5 bg-orange-500 rounded-lg">
+                          <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
                             <Target className="h-3 w-3 xs:h-4 xs:w-4 text-foreground" />
                           </div>
                           <h3 className="font-semibold text-heading-accent text-xs xs:text-sm">BMI Calculator</h3>

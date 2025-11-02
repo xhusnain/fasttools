@@ -182,7 +182,7 @@ export default function ProductsPage() {
                   >
                     {/* Icon in top-right */}
                     <div className="absolute top-4 right-4">
-                      <div className="h-10 w-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                      <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
                         <Icon className="h-5 w-5 text-foreground" />
                       </div>
                     </div>
@@ -214,7 +214,7 @@ export default function ProductsPage() {
                 </p>
                 <a
                   href="mailto:fasttools.store@outlook.com"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 text-foreground font-bold rounded-lg hover:bg-orange-600 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-foreground font-bold rounded-lg hover:bg-primary transition-colors"
                 >
                   Contact Us
                   <ArrowRight className="h-5 w-5" />

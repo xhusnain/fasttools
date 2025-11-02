@@ -335,26 +335,26 @@ export function TimeDurationCalculator() {
   return (
     <div className="space-y-4">
       {/* Current Time Display */}
-      <Card className="shadow-lg border-slate-700 hover:shadow-xl transition-all duration-300 bg-card">
+      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardContent className="p-3">
           <div className="flex items-center gap-2 text-heading-accent">
             <Timer className="h-3.5 w-3.5 text-heading-accent" />
-            <span className="text-xs font-medium text-slate-300">Current Time (UTC):</span>
+            <span className="text-xs font-medium text-foreground">Current Time (UTC):</span>
             <span className="text-sm font-bold text-heading-accent">{currentTime}</span>
           </div>
         </CardContent>
       </Card>
 
       {/* Calculation Type Selector */}
-      <Card className="shadow-lg border-slate-700 hover:shadow-xl transition-all duration-300 bg-card">
+      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center gap-2 text-lg text-heading-accent">
-            <div className="p-1.5 bg-orange-500/10 rounded-lg">
+            <div className="p-1.5 bg-primary/10 rounded-lg">
               <IconComponent className="h-4 w-4 text-heading-accent" />
             </div>
             {typeInfo.title}
           </CardTitle>
-          <CardDescription className="text-sm text-slate-400">{typeInfo.description}</CardDescription>
+          <CardDescription className="text-sm text-muted-foreground">{typeInfo.description}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           {/* Calculation Type Buttons */}
@@ -374,8 +374,8 @@ export function TimeDurationCalculator() {
                 onClick={() => setCalculationType(type as CalculationType)}
                 className={`h-9 text-xs font-medium transition-all duration-300 ${
                   calculationType === type
-                    ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg border-border"
-                    : "hover:bg-slate-800 border-slate-700 bg-card text-slate-400 hover:text-heading-accent"
+                    ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg border-border"
+                    : "hover:bg-secondary border-border bg-card text-muted-foreground hover:text-heading-accent"
                 }`}
               >
                 <Icon className="h-3 w-3 mr-1" />
@@ -401,7 +401,7 @@ export function TimeDurationCalculator() {
                     type="time"
                     value={startTime}
                     onChange={(e) => setStartTime(e.target.value)}
-                    className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                    className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -416,7 +416,7 @@ export function TimeDurationCalculator() {
                     type="time"
                     value={endTime}
                     onChange={(e) => setEndTime(e.target.value)}
-                    className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                    className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                   />
                 </div>
               </>
@@ -436,7 +436,7 @@ export function TimeDurationCalculator() {
                     type="time"
                     value={startTime}
                     onChange={(e) => setStartTime(e.target.value)}
-                    className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                    className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                   />
                 </div>
                 <div className="space-y-2">
@@ -451,7 +451,7 @@ export function TimeDurationCalculator() {
                     type="time"
                     value={timeToAdd}
                     onChange={(e) => setTimeToAdd(e.target.value)}
-                    className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                    className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                   />
                 </div>
               </>
@@ -471,7 +471,7 @@ export function TimeDurationCalculator() {
                     type="time"
                     value={startTime}
                     onChange={(e) => setStartTime(e.target.value)}
-                    className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                    className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                   />
                 </div>
                 <div className="space-y-2">
@@ -486,7 +486,7 @@ export function TimeDurationCalculator() {
                     type="time"
                     value={timeToSubtract}
                     onChange={(e) => setTimeToSubtract(e.target.value)}
-                    className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                    className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                   />
                 </div>
               </>
@@ -506,7 +506,7 @@ export function TimeDurationCalculator() {
                     type="time"
                     value={startTime}
                     onChange={(e) => setStartTime(e.target.value)}
-                    className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                    className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -521,7 +521,7 @@ export function TimeDurationCalculator() {
                     type="time"
                     value={endTime}
                     onChange={(e) => setEndTime(e.target.value)}
-                    className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                    className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -532,7 +532,7 @@ export function TimeDurationCalculator() {
                       type="time"
                       value={businessStart}
                       onChange={(e) => setBusinessStart(e.target.value)}
-                      className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                      className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                     />
                   </div>
                   <div className="space-y-2">
@@ -542,7 +542,7 @@ export function TimeDurationCalculator() {
                       type="time"
                       value={businessEnd}
                       onChange={(e) => setBusinessEnd(e.target.value)}
-                      className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                      className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                     />
                   </div>
                 </div>
@@ -563,7 +563,7 @@ export function TimeDurationCalculator() {
                     type="time"
                     value={startTime}
                     onChange={(e) => setStartTime(e.target.value)}
-                    className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                    className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -578,7 +578,7 @@ export function TimeDurationCalculator() {
                     type="time"
                     value={endTime}
                     onChange={(e) => setEndTime(e.target.value)}
-                    className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                    className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                   />
                 </div>
                 <div className="space-y-2">
@@ -594,7 +594,7 @@ export function TimeDurationCalculator() {
                     value={overtimeThreshold}
                     onChange={(e) => setOvertimeThreshold(e.target.value)}
                     placeholder="40"
-                    className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                    className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                   />
                 </div>
               </>
@@ -614,7 +614,7 @@ export function TimeDurationCalculator() {
                     type="time"
                     value={startTime}
                     onChange={(e) => setStartTime(e.target.value)}
-                    className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                    className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                   />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -626,7 +626,7 @@ export function TimeDurationCalculator() {
                       value={timezone1}
                       onChange={(e) => setTimezone1(e.target.value)}
                       placeholder="UTC"
-                      className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                      className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                     />
                   </div>
                   <div className="space-y-2">
@@ -637,7 +637,7 @@ export function TimeDurationCalculator() {
                       value={timezone2}
                       onChange={(e) => setTimezone2(e.target.value)}
                       placeholder="EST"
-                      className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                      className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                     />
                   </div>
                 </div>
@@ -658,7 +658,7 @@ export function TimeDurationCalculator() {
                     type="date"
                     value={startDate}
                     onChange={(e) => setStartDate(e.target.value)}
-                    className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                    className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                   />
                 </div>
                 <div className="space-y-2">
@@ -673,7 +673,7 @@ export function TimeDurationCalculator() {
                     type="date"
                     value={endDate}
                     onChange={(e) => setEndDate(e.target.value)}
-                    className="h-9 text-sm px-3 py-2 rounded-lg border-slate-700 bg-card text-slate-200 focus-visible:ring-orange-500 focus:border-border hover:border-border/50 ring-offset-1"
+                    className="h-9 text-sm px-3 py-2 rounded-lg border-border bg-card text-foreground focus-visible:ring-primary focus:border-border hover:border-border/50 ring-offset-1"
                   />
                 </div>
               </>
@@ -682,7 +682,7 @@ export function TimeDurationCalculator() {
 
           <Button
             onClick={calculateDuration}
-            className="w-full h-10 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
+            className="w-full h-10 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
             disabled={!isFormValid() || isCalculating}
           >
             {isCalculating ? (
@@ -702,15 +702,15 @@ export function TimeDurationCalculator() {
 
       {/* Results */}
       {result && !isCalculating && (
-        <Card className="shadow-lg border-slate-700 animate-fade-in-up bg-card">
+        <Card className="shadow-lg border-border animate-fade-in-up bg-card">
           <CardHeader className="pb-3">
             <CardTitle className="text-lg flex items-center gap-2 text-heading-accent">
-              <div className="p-1.5 bg-orange-500/10 rounded-lg">
+              <div className="p-1.5 bg-primary/10 rounded-lg">
                 <IconComponent className="h-4 w-4 text-heading-accent" />
               </div>
               {typeInfo.title} Result
             </CardTitle>
-            <CardDescription className="text-sm text-slate-400">{result.explanation}</CardDescription>
+            <CardDescription className="text-sm text-muted-foreground">{result.explanation}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             {/* Main Result Display */}
@@ -718,13 +718,13 @@ export function TimeDurationCalculator() {
               <div className="text-2xl font-bold text-heading-accent mb-1">
                 {result.hours}h {result.minutes}m
               </div>
-              <div className="text-xs text-slate-400">
+              <div className="text-xs text-muted-foreground">
                 {result.totalHours.toFixed(2)} total hours
               </div>
             </div>
 
             {/* Detailed Breakdown */}
-            <div className="space-y-2 p-3 bg-card rounded-lg border border-slate-700">
+            <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
               <div className="text-sm font-semibold mb-2 text-heading-accent">Calculation Details</div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div className="flex justify-between items-center p-2 bg-card rounded-lg border border-border">
@@ -759,9 +759,9 @@ export function TimeDurationCalculator() {
             </div>
 
             {/* Formula Display */}
-            <div className="p-3 bg-card rounded-xl border border-slate-700">
+            <div className="p-3 bg-card rounded-xl border border-border">
               <div className="text-xs font-semibold text-heading-accent mb-1.5">Formula Used:</div>
-              <div className="text-[10px] text-slate-300 font-mono bg-card border border-slate-700 p-1.5 rounded">
+              <div className="text-[10px] text-foreground font-mono bg-card border border-border p-1.5 rounded">
                 {result.formula}
               </div>
             </div>
@@ -770,7 +770,7 @@ export function TimeDurationCalculator() {
             <div className="flex flex-col sm:flex-row gap-2">
               <Button
                 onClick={copyResult}
-                className="flex-1 h-9 text-xs font-medium transition-all duration-300 border border-border hover:bg-slate-800 text-heading-accent bg-card"
+                className="flex-1 h-9 text-xs font-medium transition-all duration-300 border border-border hover:bg-secondary text-heading-accent bg-card"
               >
                 {copied ? (
                   <>

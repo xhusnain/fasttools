@@ -615,7 +615,7 @@ export default function InflationCalculatorPage() {
                       Related Business & Finance Calculators
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
-                      <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border hover:bg-slate-900 transition-colors overflow-hidden">
+                      <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
                             <Calculator className="h-3 w-3 xs:h-4 xs:w-4 text-heading-accent" />
@@ -625,7 +625,7 @@ export default function InflationCalculatorPage() {
                         <p className="text-xs text-foreground break-words">Time value of money calculations and TVM analysis</p>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-slate-900 transition-colors overflow-hidden">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
                             <BarChart3 className="h-3 w-3 xs:h-4 xs:w-4 text-heading-accent" />
@@ -635,7 +635,7 @@ export default function InflationCalculatorPage() {
                         <p className="text-xs text-foreground break-words">Calculate investment returns and compound interest growth</p>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-slate-900 transition-colors overflow-hidden">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
                             <TrendingUp className="h-3 w-3 xs:h-4 xs:w-4 text-heading-accent" />
@@ -645,7 +645,7 @@ export default function InflationCalculatorPage() {
                         <p className="text-xs text-foreground break-words">Plan for retirement with savings and investment calculations</p>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-slate-900 transition-colors overflow-hidden">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
                             <Home className="h-3 w-3 xs:h-4 xs:w-4 text-heading-accent" />
@@ -655,7 +655,7 @@ export default function InflationCalculatorPage() {
                         <p className="text-xs text-foreground break-words">Calculate mortgage payments and home affordability</p>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-slate-900 transition-colors overflow-hidden">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
                             <DollarSign className="h-3 w-3 xs:h-4 xs:w-4 text-heading-accent" />
@@ -665,7 +665,7 @@ export default function InflationCalculatorPage() {
                         <p className="text-xs text-foreground break-words">Convert salary across different pay frequencies</p>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-slate-900 transition-colors overflow-hidden">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
                             <Percent className="h-3 w-3 xs:h-4 xs:w-4 text-heading-accent" />
@@ -675,7 +675,7 @@ export default function InflationCalculatorPage() {
                         <p className="text-xs text-foreground break-words">Calculate real interest rates on loans and investments</p>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-slate-900 transition-colors overflow-hidden">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
                             <FileText className="h-3 w-3 xs:h-4 xs:w-4 text-heading-accent" />
@@ -685,7 +685,7 @@ export default function InflationCalculatorPage() {
                         <p className="text-xs text-foreground break-words">Calculate loan payments, interest, and amortization schedules</p>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-slate-900 transition-colors overflow-hidden">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
                             <Award className="h-3 w-3 xs:h-4 xs:w-4 text-heading-accent" />
@@ -695,7 +695,7 @@ export default function InflationCalculatorPage() {
                         <p className="text-xs text-foreground break-words">Calculate compound interest and investment growth</p>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-slate-900 transition-colors overflow-hidden">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
                             <Globe className="h-3 w-3 xs:h-4 xs:w-4 text-heading-accent" />
@@ -705,7 +705,7 @@ export default function InflationCalculatorPage() {
                         <p className="text-xs text-foreground break-words">Convert between different currencies and exchange rates</p>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-slate-900 transition-colors overflow-hidden">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
                             <PieChart className="h-3 w-3 xs:h-4 xs:w-4 text-heading-accent" />
@@ -715,7 +715,7 @@ export default function InflationCalculatorPage() {
                         <p className="text-xs text-foreground break-words">Calculate income tax and sales tax amounts</p>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-slate-900 transition-colors overflow-hidden">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
                             <Clock className="h-3 w-3 xs:h-4 xs:w-4 text-heading-accent" />
@@ -725,7 +725,7 @@ export default function InflationCalculatorPage() {
                         <p className="text-xs text-foreground break-words">Advanced mathematical and scientific calculations</p>
                       </div>
                       
-                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-slate-900 transition-colors overflow-hidden">
+                      <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
                             <Target className="h-3 w-3 xs:h-4 xs:w-4 text-heading-accent" />

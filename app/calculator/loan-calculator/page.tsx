@@ -292,7 +292,7 @@ export default function LoanCalculatorPage() {
             {/* Hero Section */}
             <div className="text-center mb-8 md:mb-12">
               <div className="flex items-center justify-center mb-4">
-                <div className="h-12 w-12 rounded-full bg-orange-500/10 flex items-center justify-center">
+                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
                   <Calculator className="h-6 w-6 text-foreground" />
                 </div>
               </div>
