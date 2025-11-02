@@ -253,7 +253,7 @@ export function PDFToolsAdvanced() {
 
       setProgress(95)
       const mergedPdfBytes = await mergedPdf.save()
-      const blob = new Blob([mergedPdfBytes], { type: "application/pdf" })
+      const blob = new Blob([new Uint8Array(mergedPdfBytes)], { type: "application/pdf" })
       const url = URL.createObjectURL(blob)
 
       const link = document.createElement("a")
@@ -294,7 +294,7 @@ export function PDFToolsAdvanced() {
       newPdf.addPage(copiedPage)
 
       const pdfBytes = await newPdf.save()
-      const blob = new Blob([pdfBytes], { type: "application/pdf" })
+      const blob = new Blob([new Uint8Array(pdfBytes)], { type: "application/pdf" })
       const url = URL.createObjectURL(blob)
 
       const link = document.createElement("a")
@@ -334,7 +334,7 @@ export function PDFToolsAdvanced() {
 
     setProgress(90)
     const pdfBytes = await newPdf.save()
-    const blob = new Blob([pdfBytes], { type: "application/pdf" })
+    const blob = new Blob([new Uint8Array(pdfBytes)], { type: "application/pdf" })
     const url = URL.createObjectURL(blob)
 
     const link = document.createElement("a")
@@ -375,7 +375,7 @@ export function PDFToolsAdvanced() {
 
     setProgress(90)
     const pdfBytes = await newPdf.save()
-    const blob = new Blob([pdfBytes], { type: "application/pdf" })
+    const blob = new Blob([new Uint8Array(pdfBytes)], { type: "application/pdf" })
     const url = URL.createObjectURL(blob)
 
     const link = document.createElement("a")
