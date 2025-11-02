@@ -340,6 +340,21 @@ export const metadata: Metadata = {
       return (
         <html lang="en" className={`${montserrat.variable} ${roboto.variable} antialiased`} suppressHydrationWarning>
         <head>
+            {/* Theme initialization script - prevents flash of wrong theme */}
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  (function() {
+                    const theme = localStorage.getItem('theme') || 'dark';
+                    if (theme === 'dark') {
+                      document.documentElement.classList.add('dark');
+                    } else {
+                      document.documentElement.classList.remove('dark');
+                    }
+                  })();
+                `,
+              }}
+            />
             {/* Preload external scripts for better performance - Only in production */}
             {env.isProduction && (
               <>
@@ -538,7 +553,8 @@ export const metadata: Metadata = {
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
+          storageKey="theme"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <a href="#main-content" className="skip-link">
