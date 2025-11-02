@@ -1,9 +1,9 @@
 import type React from "react"
 import { Montserrat, Roboto } from "next/font/google"
 import "./globals.css"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { CookieConsent } from "@/components/cookie-consent"
+import { ConditionalHeader } from "@/components/conditional-header-footer"
+import { ConditionalFooter } from "@/components/conditional-header-footer"
+import { ConditionalCookieConsent } from "@/components/conditional-header-footer"
 import { GlobalLoading } from "@/components/global-loading"
 import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next"
@@ -379,12 +379,16 @@ export const metadata: Metadata = {
               </>
             )}
             
-            {/* Clickfortify Tracker - Only in production */}
+            {/* Clickfortify Tracker - Only in production and not on embed routes */}
             {env.isProduction && (
               <script
                   dangerouslySetInnerHTML={{
                       __html: `
                           (function() {
+                            // Skip Clickfortify on embed routes
+                            if (window.location.pathname.startsWith('/embed/')) {
+                              return;
+                            }
                             var s = document.createElement('script');
                             s.type = 'text/javascript';
                             s.async = true;
@@ -561,12 +565,12 @@ export const metadata: Metadata = {
             Skip to main content
           </a>
           <GlobalLoading />
-          <Header />
+          <ConditionalHeader />
           <main id="main-content" role="main">
             {children}
           </main>
-          <Footer />
-          <CookieConsent />
+          <ConditionalFooter />
+          <ConditionalCookieConsent />
         </ThemeProvider>
         </body>
         </html>

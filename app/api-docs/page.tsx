@@ -5,7 +5,8 @@ import type { Metadata } from "next"
 import {
   ArrowRight,
   Globe,
-  Code
+  Code,
+  Layout
 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -70,6 +71,15 @@ const apis = [
     version: "v1",
     status: "active",
   },
+  {
+    id: "embed-widget",
+    name: "Background Remover Embed Widget",
+    description: "Embed our AI-powered background removal tool on your website with a simple iframe",
+    icon: Layout,
+    href: "/embed-docs",
+    version: "v1",
+    status: "active",
+  },
 ]
 
 export default function ApiDocsPage() {
@@ -125,7 +135,7 @@ export default function ApiDocsPage() {
                       className="bg-card border border-border/40 rounded-xl p-6 hover:border-border/70 transition-all duration-300 group relative h-full flex flex-col"
                     >
                       {/* Icon in top-right */}
-                      <div className="absolute top-4 right-4 flex items-center gap-2">
+                      <div className="absolute top-4 right-4 flex items-center gap-3">
                         <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
                           <Icon className="h-5 w-5 text-primary" />
                         </div>
@@ -137,7 +147,7 @@ export default function ApiDocsPage() {
                       </div>
 
                       {/* Content */}
-                      <div className="pr-20 flex-1 flex flex-col">
+                      <div className="pr-32 flex-1 flex flex-col">
                         <h3 className="text-lg font-bold text-heading-accent mb-2 group-hover:text-heading-accent transition-colors">
                           {api.name}
                         </h3>

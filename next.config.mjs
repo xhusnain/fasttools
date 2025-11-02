@@ -100,6 +100,15 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: "/embed/:path*",
+        headers: [
+          {
+            key: "X-Frame-Options",
+            value: "ALLOWALL",
+          },
+        ],
+      },
     ]
   },
 }

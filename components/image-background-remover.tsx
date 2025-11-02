@@ -19,8 +19,6 @@ export function ImageBackgroundRemover() {
     setImage,
     startProcessing,
     reset,
-    refineStrength,
-    setRefineStrength,
   } = useBgRemoverStore();
 
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -28,7 +26,6 @@ export function ImageBackgroundRemover() {
   const [bgMode, setBgMode] = useState<"transparent" | "color" | "image">("transparent")
   const [bgColor, setBgColor] = useState<string>("#ffffff")
   const [bgImageUrl, setBgImageUrl] = useState<string | null>(null)
-  const [debounceId, setDebounceId] = useState<number | null>(null);
   const [isBgMenuOpen, setIsBgMenuOpen] = useState(false)
   const [isColorMenuOpen, setIsColorMenuOpen] = useState(false)
   const colorMenuRef = useRef<HTMLDivElement | null>(null)
@@ -167,7 +164,7 @@ export function ImageBackgroundRemover() {
             {/* Left Side - Original Image */}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <h2 className="text-lg font-bold text-slate-800 dark:text-foreground">Original Image</h2>
+                <h2 className="text-lg font-bold text-slate-800 dark:text-white">Original Image</h2>
                 {imageDimensions && (
                   <span className="text-xs text-muted-foreground dark:text-muted-foreground bg-slate-100 dark:bg-secondary px-3 py-1 rounded-full">
                     {imageDimensions.width} × {imageDimensions.height}
@@ -232,7 +229,7 @@ export function ImageBackgroundRemover() {
             {/* Right Side - Result */}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <h2 className="text-lg font-bold text-slate-800 dark:text-foreground">Result</h2>
+                <h2 className="text-lg font-bold text-slate-800 dark:text-white">Result</h2>
                 {result && !isProcessing && (
                   <div className="flex items-center gap-2 bg-green-50 dark:bg-green-900/20 px-3 py-1.5 rounded-full">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>

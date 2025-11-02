@@ -22,6 +22,7 @@ export function Header() {
     { href: "/downloaders", label: "Downloaders" },
     { href: "/image-tools", label: "Image Tools" },
     { href: "/api-docs", label: "API Docs" },
+    { href: "/embed-docs", label: "Embed" },
   ]
 
   return (

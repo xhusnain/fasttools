@@ -4,6 +4,20 @@ import { removeBackground, loadU2NetSession } from "@/lib/server/u2net";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
+// CORS headers for embed support
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
+
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 200,
+    headers: corsHeaders,
+  });
+}
+
 export async function POST(req: Request) {
   try {
     // Ensure model session is ready before reading the image
@@ -11,13 +25,13 @@ export async function POST(req: Request) {
 
     const contentType = req.headers.get("content-type") || "";
     if (!contentType.includes("multipart/form-data")) {
-      return NextResponse.json({ error: "Expected multipart/form-data with field 'image'" }, { status: 400 });
+      return NextResponse.json({ error: "Expected multipart/form-data with field 'image'" }, { status: 400, headers: corsHeaders });
     }
 
     const form = await req.formData();
     const file = form.get("image");
     if (!(file instanceof File)) {
-      return NextResponse.json({ error: "Missing 'image' file" }, { status: 400 });
+      return NextResponse.json({ error: "Missing 'image' file" }, { status: 400, headers: corsHeaders });
     }
 
     const arrayBuffer = await file.arrayBuffer();
@@ -30,6 +44,7 @@ export async function POST(req: Request) {
     return new NextResponse(output, {
       status: 200,
       headers: {
+        ...corsHeaders,
         "Content-Type": "image/png",
         "Cache-Control": "no-store",
       },
@@ -39,7 +54,7 @@ export async function POST(req: Request) {
     // Temporary diagnostics
     console.error("/api/bg-remover error:", err);
     // Return plaintext for easier client-side surfacing
-    return new NextResponse(message, { status: 500, headers: { "Content-Type": "text/plain" } });
+    return new NextResponse(message, { status: 500, headers: { ...corsHeaders, "Content-Type": "text/plain" } });
   }
 }
 

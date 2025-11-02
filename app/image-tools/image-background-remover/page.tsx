@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { ImageBackgroundRemover } from "@/components/image-background-remover"
 import { AdSpace } from "@/components/ad-space"
 import { FileText, ArrowRight, Code, Globe, Zap, Shield } from "lucide-react"
+import Link from "next/link"
 import { GHeader } from "@/components/globalcomponents/gheader"
 
 export const metadata: Metadata = {
@@ -1145,6 +1146,36 @@ export default function ImageBackgroundRemoverPage() {
                                             Create outputs with photo background remover and png formats, image bg remover hd free quality, image bg remover hd processing, photo background remover png online exports, and photo background remover remover for double-processing needs.
                                         </p>
                                     </div>
+                                </div>
+                            </section>
+
+                            {/* Embed Widget Section */}
+                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-gradient-to-br from-purple-50 via-blue-50 to-purple-50 dark:from-purple-950/20 dark:via-blue-950/20 dark:to-purple-950/20 border border-purple-200 dark:border-purple-800 rounded-lg p-4 sm:p-6 lg:p-8">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <Code className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+                                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground">
+                                        Embed on Your Website
+                                    </h2>
+                                </div>
+                                <p className="text-sm sm:text-base text-muted-foreground mb-6">
+                                    Add our background remover widget to your website for free. No API keys required, no limits, perfect for your visitors.
+                                </p>
+                                <div className="flex flex-col sm:flex-row gap-4">
+                                    <Link 
+                                        href="/embed-docs"
+                                        className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl"
+                                    >
+                                        <Code className="h-5 w-5" />
+                                        Get Embed Code
+                                        <ArrowRight className="h-5 w-5" />
+                                    </Link>
+                                    <Link 
+                                        href="/embed/bg-remover"
+                                        className="inline-flex items-center justify-center gap-2 border-2 border-purple-600 text-purple-600 dark:text-purple-400 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 dark:hover:bg-purple-950/40 transition-all"
+                                    >
+                                        <Globe className="h-5 w-5" />
+                                        View Live Demo
+                                    </Link>
                                 </div>
                             </section>
                             </div>
