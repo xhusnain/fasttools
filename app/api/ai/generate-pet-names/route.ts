@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import { geminiAPI } from "@/lib/gemini-api"
 
-export const runtime = "edge"
+export const runtime = "nodejs"
 export const maxDuration = 60
 
 interface PetNameRequest {

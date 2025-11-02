@@ -8,8 +8,6 @@ import { GlobalLoading } from "@/components/global-loading"
 import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next"
 import { env } from "@/lib/env"
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 const montserrat = Montserrat({
@@ -450,7 +448,6 @@ export const metadata: Metadata = {
                 <link rel="dns-prefetch" href="//www.googletagmanager.com"/>
               </>
             )}
-            <link rel="dns-prefetch" href="//vercel.live"/>
             <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous"/>
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
             {env.isProduction && (
@@ -459,7 +456,6 @@ export const metadata: Metadata = {
                 <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous"/>
               </>
             )}
-            <link rel="preconnect" href="https://vercel.live" crossOrigin="anonymous"/>
             <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
             
             {/* Core Web Vitals Optimization */}
@@ -555,8 +551,6 @@ export const metadata: Metadata = {
           </main>
           <Footer />
           <CookieConsent />
-          {env.isProduction && <Analytics/>}
-          {env.isProduction && <SpeedInsights/>}
         </ThemeProvider>
         </body>
         </html>

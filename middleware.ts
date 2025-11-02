@@ -18,11 +18,10 @@ export function middleware(request: NextRequest) {
     })
   }
 
-  // Skip redirects for localhost, 127.0.0.1, and Vercel preview URLs
+  // Skip redirects for localhost and 127.0.0.1
   if (
       hostname.includes('localhost') ||
-      hostname.includes('127.0.0.1') ||
-      hostname.endsWith('.vercel.app')
+      hostname.includes('127.0.0.1')
   ) {
     return NextResponse.next()
   }
