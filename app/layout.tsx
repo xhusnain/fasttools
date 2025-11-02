@@ -385,11 +385,8 @@ export const metadata: Metadata = {
                   dangerouslySetInnerHTML={{
                       __html: `
                           (function() {
-                            // Skip Clickfortify on embed routes
-                            if (window.location.pathname.startsWith('/embed/')) {
-                              return;
-                            }
-                            var s = document.createElement('script');
+             
+                           var s = document.createElement('script');
                             s.type = 'text/javascript';
                             s.async = true;
                             s.src = "https://tracker.clickfortify.com/cdn/spcZrjg3d1d/wstSb2fQc7v";

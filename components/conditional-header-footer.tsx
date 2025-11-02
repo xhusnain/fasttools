@@ -7,8 +7,8 @@ import { CookieConsent } from './cookie-consent'
 export function ConditionalHeader() {
   const pathname = usePathname()
   
-  // Hide header for embed routes
-  const isEmbedRoute = pathname.startsWith('/embed/')
+  // Hide header for embed routes and embed-docs
+  const isEmbedRoute = pathname.startsWith('/embed/') || pathname.startsWith('/embed-docs')
   
   if (isEmbedRoute) {
     return null
@@ -25,8 +25,8 @@ export function ConditionalFooter() {
 export function ConditionalCookieConsent() {
   const pathname = usePathname()
   
-  // Hide cookie consent for embed routes
-  const isEmbedRoute = pathname.startsWith('/embed/')
+  // Hide cookie consent for embed routes and embed-docs
+  const isEmbedRoute = pathname.startsWith('/embed/') || pathname.startsWith('/embed-docs')
   
   if (isEmbedRoute) {
     return null

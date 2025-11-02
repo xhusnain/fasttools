@@ -1150,9 +1150,9 @@ export default function ImageBackgroundRemoverPage() {
                             </section>
 
                             {/* Embed Widget Section */}
-                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-gradient-to-br from-purple-50 via-blue-50 to-purple-50 dark:from-purple-950/20 dark:via-blue-950/20 dark:to-purple-950/20 border border-purple-200 dark:border-purple-800 rounded-lg p-4 sm:p-6 lg:p-8">
+                            <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <Code className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+                                    <Code className="h-8 w-8 text-primary" />
                                     <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground">
                                         Embed on Your Website
                                     </h2>
@@ -1163,7 +1163,7 @@ export default function ImageBackgroundRemoverPage() {
                                 <div className="flex flex-col sm:flex-row gap-4">
                                     <Link 
                                         href="/embed-docs"
-                                        className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl"
+                                        className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#FF7F00] to-[#E67300] text-white px-6 py-3 rounded-lg font-semibold hover:from-[#E67300] hover:to-[#CC6600] transition-all shadow-lg hover:shadow-xl"
                                     >
                                         <Code className="h-5 w-5" />
                                         Get Embed Code
@@ -1171,7 +1171,7 @@ export default function ImageBackgroundRemoverPage() {
                                     </Link>
                                     <Link 
                                         href="/embed/bg-remover"
-                                        className="inline-flex items-center justify-center gap-2 border-2 border-purple-600 text-purple-600 dark:text-purple-400 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 dark:hover:bg-purple-950/40 transition-all"
+                                        className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary/10 transition-all"
                                     >
                                         <Globe className="h-5 w-5" />
                                         View Live Demo
