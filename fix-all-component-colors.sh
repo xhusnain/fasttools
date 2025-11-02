@@ -17,3 +17,4 @@ done
 echo "Colors fixed in all component files"
 
 
+

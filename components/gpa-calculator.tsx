@@ -246,15 +246,15 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
   return (
     <div className="space-y-4">
       {/* Main GPA Calculator */}
-      <Card className="shadow-lg border-slate-700 hover:shadow-xl transition-all duration-300 bg-black">
+      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader className="pb-2 px-3 sm:px-6">
           <CardTitle className="flex items-center gap-1.5 text-base text-foreground">
-            <div className="p-1 bg-orange-500/10 rounded">
+            <div className="p-1 bg-primary/10 rounded">
               <GraduationCap className="h-3.5 w-3.5 text-foreground" />
             </div>
             GPA Calculator
           </CardTitle>
-          <CardDescription className="text-xs text-slate-400">
+          <CardDescription className="text-xs text-muted-foreground">
             Calculate your Grade Point Average with comprehensive analysis
           </CardDescription>
         </CardHeader>
@@ -266,7 +266,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
               Grading System
             </Label>
             <Select value={gradingSystem} onValueChange={setGradingSystem}>
-              <SelectTrigger className="h-8 text-xs border-slate-700 bg-black text-slate-200">
+              <SelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
                 <SelectValue placeholder="Select grading system" />
               </SelectTrigger>
               <SelectContent>
@@ -285,7 +285,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 <BookOpen className="h-2.5 w-2.5 text-heading-accent" />
                 Courses
               </Label>
-              <Button onClick={addCourse} size="sm" className="h-7 text-xs px-2 bg-orange-500 hover:bg-orange-600 text-white">
+              <Button onClick={addCourse} size="sm" className="h-7 text-xs px-2 bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Plus className="h-3 w-3 mr-1" />
                 Add
               </Button>
@@ -293,31 +293,31 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
 
             <div className="space-y-2">
               {courses.map((course, index) => (
-                <div key={course.id} className="grid grid-cols-1 sm:grid-cols-4 gap-2 p-2 bg-black rounded-lg border border-slate-700">
+                <div key={course.id} className="grid grid-cols-1 sm:grid-cols-4 gap-2 p-2 bg-card rounded-lg border border-border">
                   <div className="space-y-1">
-                    <Label className="text-[10px] text-slate-400">Course Name</Label>
+                    <Label className="text-[10px] text-muted-foreground">Course Name</Label>
                     <Input
                       value={course.name}
                       onChange={(e) => updateCourse(course.id, 'name', e.target.value)}
                       placeholder="Mathematics"
-                      className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     />
                   </div>
                   <div className="space-y-1">
-                    <Label className="text-[10px] text-slate-400">Credits</Label>
+                    <Label className="text-[10px] text-muted-foreground">Credits</Label>
                     <Input
                       type="number"
                       value={course.credits}
                       onChange={(e) => updateCourse(course.id, 'credits', Number(e.target.value))}
-                      className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="h-7 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                       min="0"
                       step="0.5"
                     />
                   </div>
                   <div className="space-y-1">
-                    <Label className="text-[10px] text-slate-400">Grade</Label>
+                    <Label className="text-[10px] text-muted-foreground">Grade</Label>
                     <Select value={course.grade} onValueChange={(value) => updateCourse(course.id, 'grade', value)}>
-                      <SelectTrigger className="h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -346,7 +346,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                       onClick={() => removeCourse(course.id)}
                       variant="outline"
                       size="sm"
-                      className="h-7 w-7 p-0 text-foreground hover:text-foreground hover:bg-slate-800 border-red-700 bg-black"
+                      className="h-7 w-7 p-0 text-foreground hover:text-destructive hover:bg-secondary border-destructive bg-card"
                     >
                       <Trash2 className="h-3 w-3" />
                     </Button>
@@ -359,7 +359,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
           {/* Calculate Button */}
           <Button
             onClick={calculateGPA}
-            className="w-full h-9 text-xs font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
+            className="w-full h-9 text-xs font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
             disabled={courses.length === 0 || isCalculating}
           >
             {isCalculating ? (
@@ -378,15 +378,15 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
       </Card>
 
       {/* GPA Planning Calculator */}
-      <Card className="shadow-lg border-slate-700 hover:shadow-xl transition-all duration-300 bg-black">
+      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader className="pb-2 px-3 sm:px-6">
           <CardTitle className="flex items-center gap-1.5 text-base text-foreground">
-            <div className="p-1 bg-orange-500/10 rounded">
+            <div className="p-1 bg-primary/10 rounded">
               <Target className="h-3.5 w-3.5 text-foreground" />
             </div>
             GPA Planning Calculator
           </CardTitle>
-          <CardDescription className="text-xs text-slate-400">
+          <CardDescription className="text-xs text-muted-foreground">
             Determine minimum GPA required to reach your target
           </CardDescription>
         </CardHeader>
@@ -401,7 +401,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 value={currentGPA}
                 onChange={(e) => setCurrentGPA(e.target.value)}
                 placeholder="2.8"
-                className="h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
               />
             </div>
             <div className="space-y-1">
@@ -413,7 +413,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 value={targetGPA}
                 onChange={(e) => setTargetGPA(e.target.value)}
                 placeholder="3.0"
-                className="h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
               />
             </div>
             <div className="space-y-1">
@@ -424,7 +424,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 value={currentCredits}
                 onChange={(e) => setCurrentCredits(e.target.value)}
                 placeholder="25"
-                className="h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
               />
             </div>
             <div className="space-y-1">
@@ -435,14 +435,14 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
                 value={additionalCredits}
                 onChange={(e) => setAdditionalCredits(e.target.value)}
                 placeholder="15"
-                className="h-8 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                className="h-8 text-xs border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
               />
             </div>
           </div>
 
           <Button
             onClick={calculateGPAPlanning}
-            className="w-full h-8 text-xs font-medium bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
+            className="w-full h-8 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
             disabled={!currentGPA || !targetGPA || !currentCredits || !additionalCredits}
           >
             <Target className="mr-1 h-3 w-3" />
@@ -450,15 +450,15 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
           </Button>
 
           {planningResult && (
-            <div className="p-3 bg-black rounded-lg border border-slate-700">
+            <div className="p-3 bg-card rounded-lg border border-border">
               <h3 className="font-semibold text-heading-accent mb-2 text-sm">Planning Results</h3>
               <div className="space-y-1.5 text-xs">
                 <div className="flex justify-between">
-                  <span className="text-slate-400">Required GPA:</span>
+                  <span className="text-muted-foreground">Required GPA:</span>
                   <span className="font-semibold text-foreground">{planningResult.requiredGPA}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-400">Achievable:</span>
+                  <span className="text-muted-foreground">Achievable:</span>
                   <span className={`font-semibold ${planningResult.achievable ? 'text-heading-accent' : 'text-foreground'}`}>
                     {planningResult.achievable ? 'Yes' : 'No'}
                   </span>
@@ -467,7 +467,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
               {planningResult.recommendations.length > 0 && (
                 <div className="mt-2">
                   <h4 className="font-medium text-heading-accent mb-1 text-xs">Recommendations:</h4>
-                  <ul className="text-[10px] text-slate-400 space-y-0.5">
+                  <ul className="text-[10px] text-muted-foreground space-y-0.5">
                     {planningResult.recommendations.map((rec, index) => (
                       <li key={index}>• {rec}</li>
                     ))}
@@ -481,25 +481,25 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
 
       {/* Results Section */}
       {result && !isCalculating && (
-        <Card className="shadow-lg border-slate-700 animate-fade-in-up bg-black">
+        <Card className="shadow-lg border-border animate-fade-in-up bg-card">
           <CardHeader className="pb-3 px-3 sm:px-6">
             <CardTitle className="text-base sm:text-lg flex items-center gap-2 text-foreground">
-              <div className="p-1 sm:p-1.5 bg-orange-500/10 rounded-lg">
+              <div className="p-1 sm:p-1.5 bg-primary/10 rounded-lg">
                 <Award className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-foreground" />
               </div>
               GPA Results & Analysis
             </CardTitle>
-            <CardDescription className="text-xs sm:text-sm text-slate-400">
+            <CardDescription className="text-xs sm:text-sm text-muted-foreground">
               Comprehensive GPA analysis with academic standing and improvement suggestions
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4 px-3 sm:px-6">
             {/* Main GPA Display */}
-            <div className="text-center p-4 rounded-xl bg-black border border-orange-500/20">
+            <div className="text-center p-4 rounded-xl bg-card border border-primary/20">
               <div className="text-2xl sm:text-3xl font-bold text-foreground mb-1">
                 {result.gpa}
               </div>
-              <div className="text-xs sm:text-sm text-slate-400">
+              <div className="text-xs sm:text-sm text-muted-foreground">
                 Grade Point Average
               </div>
               <div className="text-sm font-semibold text-heading-accent mt-1">
@@ -508,21 +508,21 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
             </div>
 
             {/* Detailed Breakdown */}
-            <div className="space-y-2 p-3 bg-black rounded-lg border border-slate-700">
+            <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
               <div className="text-sm font-semibold mb-2 text-heading-accent flex items-center gap-2">
                 <BarChart3 className="h-3.5 w-3.5" />
                 Academic Breakdown
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-black rounded-lg border border-blue-700 gap-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-border gap-1">
                   <span className="text-xs text-foreground">Total Credits</span>
                   <span className="font-semibold text-xs text-foreground">{result.totalCredits}</span>
                 </div>
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-black rounded-lg border border-green-700 gap-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-border gap-1">
                   <span className="text-xs text-heading-accent">Total Points</span>
                   <span className="font-semibold text-xs text-heading-accent">{result.totalPoints}</span>
                 </div>
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-black rounded-lg border border-purple-700 gap-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded-lg border border-border gap-1">
                   <span className="text-xs text-foreground">Honors Eligible</span>
                   <span className="font-semibold text-xs text-foreground">{result.honorsEligibility ? 'Yes' : 'No'}</span>
                 </div>
@@ -531,16 +531,16 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
 
             {/* Grade Distribution */}
             {showGradeDistribution && (
-              <div className="p-3 bg-black rounded-xl border border-slate-700">
+              <div className="p-3 bg-card rounded-xl border border-border">
                 <div className="text-xs font-semibold text-heading-accent mb-2 flex items-center gap-1.5">
                   <PieChart className="h-3.5 w-3.5" />
                   Grade Distribution
                 </div>
                 <div className="space-y-1.5">
                   {result.gradeDistribution.map((grade, index) => (
-                    <div key={index} className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-black rounded border border-slate-700 gap-1">
-                      <span className="text-xs text-slate-400">{grade.grade}</span>
-                      <span className="text-xs font-semibold text-slate-300">
+                    <div key={index} className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-card rounded border border-border gap-1">
+                      <span className="text-xs text-muted-foreground">{grade.grade}</span>
+                      <span className="text-xs font-semibold text-foreground">
                         {grade.count} ({grade.percentage.toFixed(1)}%)
                       </span>
                     </div>
@@ -551,12 +551,12 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
 
             {/* Improvement Suggestions */}
             {result.improvementSuggestions.length > 0 && (
-              <div className="p-3 bg-black rounded-xl border border-slate-700">
+              <div className="p-3 bg-card rounded-xl border border-border">
                 <div className="text-xs font-semibold text-heading-accent mb-2 flex items-center gap-1.5">
                   <Lightbulb className="h-3.5 w-3.5" />
                   Improvement Suggestions
                 </div>
-                <ul className="space-y-1.5 text-xs text-slate-400">
+                <ul className="space-y-1.5 text-xs text-muted-foreground">
                   {result.improvementSuggestions.map((suggestion, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <span className="text-foreground mt-0.5">•</span>
@@ -571,7 +571,8 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
             <div className="flex flex-col sm:flex-row gap-2">
               <Button
                 onClick={copyResult}
-                className="flex-1 h-9 text-xs font-medium transition-all duration-300 border border-green-700 hover:bg-slate-800 text-heading-accent bg-black"
+                variant="outline"
+                className="flex-1 h-9 text-xs font-medium transition-all duration-300 border-border hover:bg-secondary text-heading-accent bg-card"
               >
                 {copied ? (
                   <>

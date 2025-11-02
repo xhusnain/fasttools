@@ -253,20 +253,20 @@ export default function ScientificCalculatorPage() {
                     Mathematical Constants
                   </h2>
                   <div className="grid md:grid-cols-3 gap-6">
-                    <div className="text-center p-4 bg-slate-900 rounded-lg border border-border">
+                    <div className="text-center p-4 bg-muted rounded-lg border border-border">
                       <div className="text-2xl font-bold text-heading-accent">π</div>
                       <div className="text-sm text-muted-foreground">Pi</div>
-                      <div className="text-xs text-slate-500">3.14159265359</div>
+                      <div className="text-xs text-muted-foreground">3.14159265359</div>
                     </div>
-                    <div className="text-center p-4 bg-slate-900 rounded-lg border border-border">
+                    <div className="text-center p-4 bg-muted rounded-lg border border-border">
                       <div className="text-2xl font-bold text-heading-accent">e</div>
                       <div className="text-sm text-muted-foreground">Euler's Number</div>
-                      <div className="text-xs text-slate-500">2.71828182846</div>
+                      <div className="text-xs text-muted-foreground">2.71828182846</div>
                     </div>
-                    <div className="text-center p-4 bg-slate-900 rounded-lg border border-border">
+                    <div className="text-center p-4 bg-muted rounded-lg border border-border">
                       <div className="text-2xl font-bold text-heading-accent">φ</div>
                       <div className="text-sm text-muted-foreground">Golden Ratio</div>
-                      <div className="text-xs text-slate-500">1.61803398875</div>
+                      <div className="text-xs text-muted-foreground">1.61803398875</div>
                     </div>
                   </div>
                 </div>
@@ -423,20 +423,20 @@ export default function ScientificCalculatorPage() {
                   {/* History */}
                   <div className="bg-card border border-border rounded-2xl p-4 shadow-xl">
                     <div className="flex items-center gap-2 mb-4">
-                      <div className="w-6 h-6 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                        <Clock className="h-3 w-3 text-foreground" />
+                      <div className="w-6 h-6 bg-gradient-to-r from-primary to-primary/90 rounded-lg flex items-center justify-center">
+                        <Clock className="h-3 w-3 text-primary-foreground" />
                       </div>
                       <span className="text-sm font-semibold text-heading-accent">History</span>
                     </div>
                     <div className="space-y-2 max-h-60 overflow-y-auto">
                       {history.length > 0 ? (
                         history.slice(0, 6).map((entry, index) => (
-                          <div key={index} className="text-xs text-muted-foreground font-mono break-words p-2 bg-slate-900 rounded border border-border">
+                          <div key={index} className="text-xs text-muted-foreground font-mono break-words p-2 bg-muted rounded border border-border">
                             {entry}
                           </div>
                         ))
                       ) : (
-                        <div className="text-sm text-slate-500 text-center py-4">
+                        <div className="text-sm text-muted-foreground text-center py-4">
                           No calculations yet
                         </div>
                       )}
@@ -445,7 +445,7 @@ export default function ScientificCalculatorPage() {
                       <div className="flex gap-2 mt-3">
                         <button 
                           onClick={clearHistory}
-                          className="flex items-center gap-1 px-3 py-1 text-xs bg-slate-800 text-foreground rounded hover:bg-slate-700 transition-colors border border-border"
+                          className="flex items-center gap-1 px-3 py-1 text-xs bg-secondary text-foreground rounded hover:bg-secondary/80 transition-colors border border-border"
                         >
                           <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -454,7 +454,7 @@ export default function ScientificCalculatorPage() {
                         </button>
                         <button 
                           onClick={copyResult}
-                          className="flex items-center gap-1 px-3 py-1 text-xs bg-slate-800 text-foreground rounded hover:bg-slate-700 transition-colors border border-border"
+                          className="flex items-center gap-1 px-3 py-1 text-xs bg-secondary text-foreground rounded hover:bg-secondary/80 transition-colors border border-border"
                         >
                           <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />

@@ -329,15 +329,15 @@ Calculated with FastTools Concrete Calculator`
   return (
     <div className="space-y-6">
       {/* Main Calculator Card */}
-      <Card className="shadow-lg border-slate-700 hover:shadow-xl transition-all duration-300 bg-black">
+      <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader className="pb-3 px-3 sm:px-6">
           <CardTitle className="flex items-center gap-1.5 text-base">
-            <div className="p-1 bg-orange-500/10 rounded">
+            <div className="p-1 bg-primary/10 rounded">
               <Calculator className="h-3.5 w-3.5 text-foreground" />
             </div>
             Concrete Calculator
           </CardTitle>
-          <CardDescription className="text-xs text-slate-400">
+          <CardDescription className="text-xs text-muted-foreground">
             Calculate volume, weight, materials, and cost.
           </CardDescription>
         </CardHeader>
@@ -346,7 +346,7 @@ Calculated with FastTools Concrete Calculator`
           <div className="space-y-2">
             <Label className="text-[11px] font-medium text-heading-accent">Calculation Type</Label>
             <Select value={calculationType} onValueChange={(value: CalculationType) => setCalculationType(value)}>
-              <SelectTrigger className="w-full h-8 text-xs border-slate-700 bg-black text-slate-200">
+              <SelectTrigger className="w-full h-8 text-xs border-border bg-background text-foreground">
                 <SelectValue placeholder="Select calculation type" />
               </SelectTrigger>
               <SelectContent>
@@ -367,7 +367,7 @@ Calculated with FastTools Concrete Calculator`
             <div className="space-y-2">
               <Label className="text-[11px] font-medium text-heading-accent">Unit System</Label>
               <Select value={unit} onValueChange={(value: "metric" | "imperial") => setUnit(value)}>
-                <SelectTrigger className="h-8 text-xs border-slate-700 bg-black text-slate-200">
+                <SelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -379,7 +379,7 @@ Calculated with FastTools Concrete Calculator`
             <div className="space-y-2">
               <Label className="text-[11px] font-medium text-heading-accent">Concrete Mix</Label>
               <Select value={concreteMix} onValueChange={setConcreteMix}>
-                <SelectTrigger className="h-8 text-xs border-slate-700 bg-black text-slate-200">
+                <SelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -406,7 +406,7 @@ Calculated with FastTools Concrete Calculator`
             {(calculationType === "slab" || calculationType === "footing" || calculationType === "wall" || calculationType === "driveway") && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <Label htmlFor="length" className="text-[10px] text-slate-400">Length (l)</Label>
+                  <Label htmlFor="length" className="text-[10px] text-muted-foreground">Length (l)</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="length"
@@ -414,10 +414,10 @@ Calculated with FastTools Concrete Calculator`
                       value={length}
                       onChange={(e) => setLength(e.target.value)}
                       placeholder="5"
-                      className="flex-1 h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
                     />
                     <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -429,7 +429,7 @@ Calculated with FastTools Concrete Calculator`
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="width" className="text-[10px] text-slate-400">Width (w)</Label>
+                  <Label htmlFor="width" className="text-[10px] text-muted-foreground">Width (w)</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="width"
@@ -437,10 +437,10 @@ Calculated with FastTools Concrete Calculator`
                       value={width}
                       onChange={(e) => setWidth(e.target.value)}
                       placeholder="2.5"
-                      className="flex-1 h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
                     />
                     <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -452,7 +452,7 @@ Calculated with FastTools Concrete Calculator`
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="height" className="text-[10px] text-slate-400">Thickness or Height (h)</Label>
+                  <Label htmlFor="height" className="text-[10px] text-muted-foreground">Thickness or Height (h)</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="height"
@@ -460,10 +460,10 @@ Calculated with FastTools Concrete Calculator`
                       value={height}
                       onChange={(e) => setHeight(e.target.value)}
                       placeholder="5"
-                      className="flex-1 h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
                     />
                     <Select defaultValue={unit === "metric" ? "centimeters" : "inches"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -475,14 +475,14 @@ Calculated with FastTools Concrete Calculator`
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="quantity" className="text-[10px] text-slate-400">Quantity</Label>
+                  <Label htmlFor="quantity" className="text-[10px] text-muted-foreground">Quantity</Label>
                   <Input
                     id="quantity"
                     type="number"
                     value={quantity}
                     onChange={(e) => setQuantity(e.target.value)}
                     placeholder="1"
-                    className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
                   />
                 </div>
               </div>
@@ -491,7 +491,7 @@ Calculated with FastTools Concrete Calculator`
             {(calculationType === "column") && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <Label htmlFor="diameter" className="text-[10px] text-slate-400">Diameter (d)</Label>
+                  <Label htmlFor="diameter" className="text-[10px] text-muted-foreground">Diameter (d)</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="diameter"
@@ -499,10 +499,10 @@ Calculated with FastTools Concrete Calculator`
                       value={diameter}
                       onChange={(e) => setDiameter(e.target.value)}
                       placeholder="2.5"
-                      className="flex-1 h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
                     />
                     <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -514,7 +514,7 @@ Calculated with FastTools Concrete Calculator`
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="height" className="text-[10px] text-slate-400">Depth or Height (h)</Label>
+                  <Label htmlFor="height" className="text-[10px] text-muted-foreground">Depth or Height (h)</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="height"
@@ -522,10 +522,10 @@ Calculated with FastTools Concrete Calculator`
                       value={height}
                       onChange={(e) => setHeight(e.target.value)}
                       placeholder="6"
-                      className="flex-1 h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
                     />
                     <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -537,14 +537,14 @@ Calculated with FastTools Concrete Calculator`
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="quantity" className="text-[10px] text-slate-400">Quantity</Label>
+                  <Label htmlFor="quantity" className="text-[10px] text-muted-foreground">Quantity</Label>
                   <Input
                     id="quantity"
                     type="number"
                     value={quantity}
                     onChange={(e) => setQuantity(e.target.value)}
                     placeholder="1"
-                    className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
                   />
                 </div>
               </div>
@@ -553,7 +553,7 @@ Calculated with FastTools Concrete Calculator`
             {(calculationType === "tube") && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <Label htmlFor="diameter" className="text-[10px] text-slate-400">Outer Diameter (d1)</Label>
+                  <Label htmlFor="diameter" className="text-[10px] text-muted-foreground">Outer Diameter (d1)</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="diameter"
@@ -561,10 +561,10 @@ Calculated with FastTools Concrete Calculator`
                       value={diameter}
                       onChange={(e) => setDiameter(e.target.value)}
                       placeholder="5"
-                      className="flex-1 h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
                     />
                     <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -576,7 +576,7 @@ Calculated with FastTools Concrete Calculator`
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="innerDiameter" className="text-[10px] text-slate-400">Inner Diameter (d2)</Label>
+                  <Label htmlFor="innerDiameter" className="text-[10px] text-muted-foreground">Inner Diameter (d2)</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="innerDiameter"
@@ -584,10 +584,10 @@ Calculated with FastTools Concrete Calculator`
                       value={innerDiameter}
                       onChange={(e) => setInnerDiameter(e.target.value)}
                       placeholder="4"
-                      className="flex-1 h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
                     />
                     <Select defaultValue={unit === "metric" ? "meters" : "feet"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -599,7 +599,7 @@ Calculated with FastTools Concrete Calculator`
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="height" className="text-[10px] text-slate-400">Length or Height (h)</Label>
+                  <Label htmlFor="height" className="text-[10px] text-muted-foreground">Length or Height (h)</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="height"
@@ -607,10 +607,10 @@ Calculated with FastTools Concrete Calculator`
                       value={height}
                       onChange={(e) => setHeight(e.target.value)}
                       placeholder="6"
-                      className="flex-1 h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
                     />
                     <Select defaultValue={unit === "metric" ? "centimeters" : "inches"}>
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -637,7 +637,7 @@ Calculated with FastTools Concrete Calculator`
             {(calculationType === "stairs") && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <Label htmlFor="run" className="text-[10px] text-slate-400">Run</Label>
+                  <Label htmlFor="run" className="text-[10px] text-muted-foreground">Run</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="run"
@@ -645,10 +645,10 @@ Calculated with FastTools Concrete Calculator`
                       value={run}
                       onChange={(e) => setRun(e.target.value)}
                       placeholder="12"
-                      className="flex-1 h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
                     />
                     <Select defaultValue="inches">
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -658,7 +658,7 @@ Calculated with FastTools Concrete Calculator`
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="rise" className="text-[10px] text-slate-400">Rise</Label>
+                  <Label htmlFor="rise" className="text-[10px] text-muted-foreground">Rise</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="rise"
@@ -666,10 +666,10 @@ Calculated with FastTools Concrete Calculator`
                       value={rise}
                       onChange={(e) => setRise(e.target.value)}
                       placeholder="6"
-                      className="flex-1 h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
                     />
                     <Select defaultValue="inches">
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -679,7 +679,7 @@ Calculated with FastTools Concrete Calculator`
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="width" className="text-[10px] text-slate-400">Width</Label>
+                  <Label htmlFor="width" className="text-[10px] text-muted-foreground">Width</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="width"
@@ -687,10 +687,10 @@ Calculated with FastTools Concrete Calculator`
                       value={width}
                       onChange={(e) => setWidth(e.target.value)}
                       placeholder="50"
-                      className="flex-1 h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
                     />
                     <Select defaultValue="inches">
-                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-full sm:w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -700,18 +700,18 @@ Calculated with FastTools Concrete Calculator`
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="steps" className="text-[10px] text-slate-400">Number of Steps</Label>
+                  <Label htmlFor="steps" className="text-[10px] text-muted-foreground">Number of Steps</Label>
                   <Input
                     id="steps"
                     type="number"
                     value={steps}
                     onChange={(e) => setSteps(e.target.value)}
                     placeholder="5"
-                    className="h-7 text-xs border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="h-7 text-xs border-border bg-background text-foreground focus-visible:ring-orange-500 focus:border-orange-500"
                   />
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="platformDepth" className="text-[10px] text-slate-400">Platform Depth</Label>
+                  <Label htmlFor="platformDepth" className="text-[10px] text-muted-foreground">Platform Depth</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="platformDepth"
@@ -721,7 +721,7 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="5"
                     />
                     <Select defaultValue="inches">
-                      <SelectTrigger className="w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -736,7 +736,7 @@ Calculated with FastTools Concrete Calculator`
             {(calculationType === "curb") && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <Label htmlFor="curbDepth" className="text-[10px] text-slate-400">Curb Depth</Label>
+                  <Label htmlFor="curbDepth" className="text-[10px] text-muted-foreground">Curb Depth</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="curbDepth"
@@ -746,7 +746,7 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="4"
                     />
                     <Select defaultValue="inches">
-                      <SelectTrigger className="w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -756,7 +756,7 @@ Calculated with FastTools Concrete Calculator`
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="gutterWidth" className="text-[10px] text-slate-400">Gutter Width</Label>
+                  <Label htmlFor="gutterWidth" className="text-[10px] text-muted-foreground">Gutter Width</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="gutterWidth"
@@ -766,7 +766,7 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="10"
                     />
                     <Select defaultValue="inches">
-                      <SelectTrigger className="w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -776,7 +776,7 @@ Calculated with FastTools Concrete Calculator`
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="curbHeight" className="text-[10px] text-slate-400">Curb Height</Label>
+                  <Label htmlFor="curbHeight" className="text-[10px] text-muted-foreground">Curb Height</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="curbHeight"
@@ -786,7 +786,7 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="4"
                     />
                     <Select defaultValue="inches">
-                      <SelectTrigger className="w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -796,7 +796,7 @@ Calculated with FastTools Concrete Calculator`
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="flagThickness" className="text-[10px] text-slate-400">Flag Thickness</Label>
+                  <Label htmlFor="flagThickness" className="text-[10px] text-muted-foreground">Flag Thickness</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="flagThickness"
@@ -806,7 +806,7 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="5"
                     />
                     <Select defaultValue="inches">
-                      <SelectTrigger className="w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -816,7 +816,7 @@ Calculated with FastTools Concrete Calculator`
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="length" className="text-[10px] text-slate-400">Length</Label>
+                  <Label htmlFor="length" className="text-[10px] text-muted-foreground">Length</Label>
                   <div className="flex flex-col sm:flex-row gap-1.5">
                     <Input
                       id="length"
@@ -826,7 +826,7 @@ Calculated with FastTools Concrete Calculator`
                       placeholder="10"
                     />
                     <Select defaultValue="feet">
-                      <SelectTrigger className="w-16 h-7 text-xs border-slate-700 bg-black text-slate-200">
+                      <SelectTrigger className="w-16 h-7 text-xs border-border bg-background text-foreground">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -851,11 +851,11 @@ Calculated with FastTools Concrete Calculator`
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3">
-            <Button onClick={calculateConcrete} disabled={isCalculating} className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white">
+            <Button onClick={calculateConcrete} disabled={isCalculating} className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground">
               {isCalculating ? <LoadingSpinner size="sm" className="mr-1 h-3 w-3" /> : <Calculator className="mr-1 h-3 w-3" />}
               Calculate
             </Button>
-            <Button variant="outline" onClick={clearForm} className="w-full sm:w-auto h-9 text-xs border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+            <Button variant="outline" onClick={clearForm} className="w-full sm:w-auto h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
               Clear
             </Button>
           </div>
@@ -864,10 +864,10 @@ Calculated with FastTools Concrete Calculator`
 
       {/* Results Section */}
       {result && (
-        <Card className="shadow-lg border-slate-700 bg-black">
+        <Card className="shadow-lg border-border bg-card">
           <CardHeader className="pb-3 px-3 sm:px-6">
             <CardTitle className="flex items-center gap-1.5 text-base sm:text-lg text-foreground">
-              <div className="p-1 sm:p-1.5 bg-orange-500/10 rounded-lg">
+              <div className="p-1 sm:p-1.5 bg-primary/10 rounded-lg">
                 <BarChart3 className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-foreground" />
               </div>
               Results
@@ -876,7 +876,7 @@ Calculated with FastTools Concrete Calculator`
           <CardContent className="space-y-6 px-3 sm:px-6">
             {/* Main Results */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-              <div className="bg-black p-3 rounded-lg border border-slate-700">
+              <div className="bg-card p-3 rounded-lg border border-border">
                 <div className="flex items-center gap-1.5 mb-1">
                   <Volume className="h-3 w-3 text-heading-accent" />
                   <span className="text-xs font-medium text-heading-accent">Volume</span>
@@ -885,7 +885,7 @@ Calculated with FastTools Concrete Calculator`
                   {result.volume} {unit === "metric" ? "m³" : "ft³"}
                 </div>
               </div>
-              <div className="bg-black p-3 rounded-lg border border-slate-700">
+              <div className="bg-card p-3 rounded-lg border border-border">
                 <div className="flex items-center gap-1.5 mb-1">
                   <Weight className="h-3 w-3 text-heading-accent" />
                   <span className="text-xs font-medium text-heading-accent">Weight</span>
@@ -894,7 +894,7 @@ Calculated with FastTools Concrete Calculator`
                   {result.weight} {unit === "metric" ? "kg" : "lbs"}
                 </div>
               </div>
-              <div className="bg-black p-3 rounded-lg border border-slate-700">
+              <div className="bg-card p-3 rounded-lg border border-border">
                 <div className="flex items-center gap-1.5 mb-1">
                   <Package className="h-3 w-3 text-heading-accent" />
                   <span className="text-xs font-medium text-heading-accent">Bags</span>
@@ -903,7 +903,7 @@ Calculated with FastTools Concrete Calculator`
                   {result.bags}
                 </div>
               </div>
-              <div className="bg-black p-3 rounded-lg border border-slate-700">
+              <div className="bg-card p-3 rounded-lg border border-border">
                 <div className="flex items-center gap-1.5 mb-1">
                   <Target className="h-3 w-3 text-heading-accent" />
                   <span className="text-xs font-medium text-heading-accent">Cost</span>
@@ -915,32 +915,32 @@ Calculated with FastTools Concrete Calculator`
             </div>
 
             {/* Material Breakdown */}
-            <div className="bg-black p-3 rounded-lg border border-slate-700">
+            <div className="bg-card p-3 rounded-lg border border-border">
               <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
                 <PieChart className="h-3.5 w-3.5" />
                 Material Breakdown
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                 <div className="text-center">
-                  <div className="text-xs text-slate-400">Cement</div>
+                  <div className="text-xs text-muted-foreground">Cement</div>
                   <div className="text-sm font-semibold text-foreground">
                     {result.materialBreakdown.cement.toFixed(2)} {unit === "metric" ? "kg" : "lbs"}
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xs text-slate-400">Sand</div>
+                  <div className="text-xs text-muted-foreground">Sand</div>
                   <div className="text-sm font-semibold text-foreground">
                     {result.materialBreakdown.sand.toFixed(2)} {unit === "metric" ? "kg" : "lbs"}
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xs text-slate-400">Gravel</div>
+                  <div className="text-xs text-muted-foreground">Gravel</div>
                   <div className="text-sm font-semibold text-foreground">
                     {result.materialBreakdown.gravel.toFixed(2)} {unit === "metric" ? "kg" : "lbs"}
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xs text-slate-400">Water</div>
+                  <div className="text-xs text-muted-foreground">Water</div>
                   <div className="text-sm font-semibold text-foreground">
                     {result.materialBreakdown.water.toFixed(2)} {unit === "metric" ? "L" : "gal"}
                   </div>
@@ -949,7 +949,7 @@ Calculated with FastTools Concrete Calculator`
             </div>
 
             {/* Formula and Explanation */}
-            <div className="bg-black p-3 rounded-lg border border-slate-700">
+            <div className="bg-card p-3 rounded-lg border border-border">
               <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
                 <Info className="h-3.5 w-3.5" />
                 Calculation Details
@@ -957,19 +957,19 @@ Calculated with FastTools Concrete Calculator`
               <div className="space-y-2">
                 <div>
                   <div className="text-xs font-medium text-heading-accent mb-1">Formula Used:</div>
-                  <div className="bg-slate-900 p-2 rounded font-mono text-xs text-slate-300">
+                  <div className="bg-muted p-2 rounded font-mono text-xs text-foreground">
                     {result.formula}
                   </div>
                 </div>
                 <div>
                   <div className="text-xs font-medium text-heading-accent mb-1">Explanation:</div>
-                  <div className="text-xs text-slate-400">{result.explanation}</div>
+                  <div className="text-xs text-muted-foreground">{result.explanation}</div>
                 </div>
               </div>
             </div>
 
             {/* Recommendations */}
-            <div className="bg-black p-3 rounded-lg border border-slate-700">
+            <div className="bg-card p-3 rounded-lg border border-border">
               <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
                 <Zap className="h-3.5 w-3.5" />
                 Recommendations
@@ -977,8 +977,8 @@ Calculated with FastTools Concrete Calculator`
               <div className="space-y-1.5">
                 {result.recommendations.map((rec, index) => (
                   <div key={index} className="flex items-start gap-1.5">
-                    <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-1"></div>
-                    <span className="text-xs text-slate-400">{rec}</span>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-1"></div>
+                    <span className="text-xs text-muted-foreground">{rec}</span>
                   </div>
                 ))}
               </div>
@@ -986,7 +986,7 @@ Calculated with FastTools Concrete Calculator`
 
             {/* Action Buttons */}
             <div className="flex gap-3">
-              <Button onClick={copyResult} className="flex-1 h-9 text-xs font-medium border border-green-700 hover:bg-slate-800 text-heading-accent bg-black">
+              <Button onClick={copyResult} variant="outline" className="flex-1 h-9 text-xs font-medium border border-border hover:bg-secondary text-heading-accent bg-card">
                 {copied ? (
                   <>
                     <Check className="mr-1.5 h-3.5 w-3.5" />

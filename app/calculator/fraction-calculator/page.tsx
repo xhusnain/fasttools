@@ -181,16 +181,16 @@ export default function FractionCalculatorPage() {
                           <h3 className="text-lg font-semibold mb-3 text-heading-accent">Step 1: Select Operation</h3>
                           <p className="mb-4">Choose from addition (+), subtraction (-), multiplication (×), or division (÷).</p>
                           <div className="grid grid-cols-2 gap-2">
-                            <Button size="sm" variant="outline" className="text-xs justify-start border-border bg-card text-foreground hover:bg-slate-800">
+                            <Button size="sm" variant="outline" className="text-xs justify-start border-border bg-card text-foreground hover:bg-secondary">
                               <Plus className="h-3 w-3 mr-2" />Add
                             </Button>
-                            <Button size="sm" variant="outline" className="text-xs justify-start border-border bg-card text-foreground hover:bg-slate-800">
+                            <Button size="sm" variant="outline" className="text-xs justify-start border-border bg-card text-foreground hover:bg-secondary">
                               <Minus className="h-3 w-3 mr-2" />Subtract
                             </Button>
-                            <Button size="sm" variant="outline" className="text-xs justify-start border-border bg-card text-foreground hover:bg-slate-800">
+                            <Button size="sm" variant="outline" className="text-xs justify-start border-border bg-card text-foreground hover:bg-secondary">
                               <X className="h-3 w-3 mr-2" />Multiply
                             </Button>
-                            <Button size="sm" variant="outline" className="text-xs justify-start border-border bg-card text-foreground hover:bg-slate-800">
+                            <Button size="sm" variant="outline" className="text-xs justify-start border-border bg-card text-foreground hover:bg-secondary">
                               <Divide className="h-3 w-3 mr-2" />Divide
                             </Button>
                           </div>
@@ -198,7 +198,7 @@ export default function FractionCalculatorPage() {
                         <div>
                           <h3 className="text-lg font-semibold mb-3 text-heading-accent">Step 2: Enter Fractions</h3>
                           <p className="mb-4">Input the numerator and denominator for both fractions. The calculator will automatically calculate the result.</p>
-                          <div className="bg-slate-900 border border-border p-3 rounded-lg text-sm">
+                          <div className="bg-muted border border-border p-3 rounded-lg text-sm">
                             <div className="text-center font-mono text-foreground">3/4 + 1/6 = 11/12</div>
                           </div>
                         </div>
@@ -215,14 +215,14 @@ export default function FractionCalculatorPage() {
                       <div>
                         <h3 className="text-lg font-semibold mb-3 text-heading-accent">Addition & Subtraction</h3>
                         <p className="mb-4">Fractions require a common denominator. The calculator finds the least common multiple (LCM) automatically.</p>
-                        <div className="bg-slate-900 border border-border p-3 rounded-lg text-sm">
+                        <div className="bg-muted border border-border p-3 rounded-lg text-sm">
                           <div className="font-mono text-foreground">3/4 + 1/6 = (3×6)/(4×6) + (1×4)/(6×4) = 18/24 + 4/24 = 22/24 = 11/12</div>
                         </div>
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold mb-3 text-heading-accent">Multiplication & Division</h3>
                         <p className="mb-4">Multiply numerators and denominators directly. For division, multiply by the reciprocal.</p>
-                        <div className="bg-slate-900 border border-border p-3 rounded-lg text-sm">
+                        <div className="bg-muted border border-border p-3 rounded-lg text-sm">
                           <div className="font-mono text-foreground">2/5 × 3/7 = (2×3)/(5×7) = 6/35</div>
                         </div>
                       </div>
@@ -452,7 +452,7 @@ export default function FractionCalculatorPage() {
                         <a
                           key={href}
                           href={href}
-                          className="p-3 bg-card rounded-lg border border-border hover:bg-slate-800 hover:border-heading-accent-border/50 transition-colors group"
+                          className="p-3 bg-card rounded-lg border border-border hover:bg-secondary hover:border-heading-accent-border/50 transition-colors group"
                         >
                           <div className="flex items-center gap-2 mb-1">
                             <span className="text-lg">{icon}</span>

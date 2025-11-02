@@ -231,20 +231,20 @@ Mixed Number: ${result.mixedNumber}`
   return (
     <div className="space-y-4">
       {/* Calculator Display */}
-      <Card className="bg-black border-slate-700">
+      <Card className="bg-card border-border">
         <CardHeader className="pb-2 px-3 sm:px-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                <Calculator className="h-4 w-4 text-white" />
+              <div className="w-8 h-8 bg-gradient-to-r from-primary to-primary/90 rounded-lg flex items-center justify-center">
+                <Calculator className="h-4 w-4 text-primary-foreground" />
               </div>
               <div>
                 <h2 className="text-base sm:text-lg font-bold text-foreground">Fraction Calculator</h2>
-                <p className="text-xs text-slate-400">Add, subtract, multiply, and divide fractions</p>
+                <p className="text-xs text-muted-foreground">Add, subtract, multiply, and divide fractions</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Badge variant="secondary" className="bg-orange-500/10 text-foreground border-orange-500/20 text-[10px] h-5">
+              <Badge variant="secondary" className="bg-primary/10 text-foreground border-primary/20 text-[10px] h-5">
                 <Zap className="h-2.5 w-2.5 mr-1" />
                 Auto-calc
               </Badge>
@@ -256,7 +256,7 @@ Mixed Number: ${result.mixedNumber}`
           <div className="space-y-1">
             <Label htmlFor="operation" className="text-[11px] font-medium text-heading-accent">Operation</Label>
             <Select value={operation} onValueChange={setOperation}>
-              <SelectTrigger className="h-8 text-xs border-slate-700 bg-black text-slate-200">
+              <SelectTrigger className="h-8 text-xs border-border bg-background text-foreground">
                 <SelectValue placeholder="Select operation" />
               </SelectTrigger>
               <SelectContent>
@@ -295,27 +295,27 @@ Mixed Number: ${result.mixedNumber}`
               <Label className="text-sm font-semibold text-heading-accent">First Fraction</Label>
                 <div className="space-y-2">
                 <div className="space-y-1">
-                  <Label htmlFor="numerator1" className="text-[10px] text-slate-400">Numerator</Label>
+                  <Label htmlFor="numerator1" className="text-[10px] text-muted-foreground">Numerator</Label>
                   <Input
                     id="numerator1"
                     type="number"
                     value={fraction1.numerator === 0 ? "" : fraction1.numerator}
                     onChange={(e) => handleFractionChange("fraction1", "numerator", e.target.value)}
-                    className="h-7 text-xs text-center font-semibold border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="h-7 text-xs text-center font-semibold border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     placeholder="Num"
                   />
                 </div>
                 <div className="flex items-center justify-center">
-                  <div className="w-full h-px bg-slate-700"></div>
+                  <div className="w-full h-px bg-border"></div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="denominator1" className="text-[10px] text-slate-400">Denominator</Label>
+                  <Label htmlFor="denominator1" className="text-[10px] text-muted-foreground">Denominator</Label>
                   <Input
                     id="denominator1"
                     type="number"
                     value={fraction1.denominator === 0 ? "" : fraction1.denominator}
                     onChange={(e) => handleFractionChange("fraction1", "denominator", e.target.value)}
-                    className="h-7 text-xs text-center font-semibold border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="h-7 text-xs text-center font-semibold border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     placeholder="Den"
                   />
                 </div>
@@ -327,27 +327,27 @@ Mixed Number: ${result.mixedNumber}`
               <Label className="text-sm font-semibold text-heading-accent">Second Fraction</Label>
                 <div className="space-y-2">
                 <div className="space-y-1">
-                  <Label htmlFor="numerator2" className="text-[10px] text-slate-400">Numerator</Label>
+                  <Label htmlFor="numerator2" className="text-[10px] text-muted-foreground">Numerator</Label>
                   <Input
                     id="numerator2"
                     type="number"
                     value={fraction2.numerator === 0 ? "" : fraction2.numerator}
                     onChange={(e) => handleFractionChange("fraction2", "numerator", e.target.value)}
-                    className="h-7 text-xs text-center font-semibold border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="h-7 text-xs text-center font-semibold border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     placeholder="Num"
                   />
                 </div>
                 <div className="flex items-center justify-center">
-                  <div className="w-full h-px bg-slate-700"></div>
+                  <div className="w-full h-px bg-border"></div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="denominator2" className="text-[10px] text-slate-400">Denominator</Label>
+                  <Label htmlFor="denominator2" className="text-[10px] text-muted-foreground">Denominator</Label>
                   <Input
                     id="denominator2"
                     type="number"
                     value={fraction2.denominator === 0 ? "" : fraction2.denominator}
                     onChange={(e) => handleFractionChange("fraction2", "denominator", e.target.value)}
-                    className="h-7 text-xs text-center font-semibold border-slate-700 bg-black text-slate-200 focus-visible:ring-orange-500 focus:border-orange-500"
+                    className="h-7 text-xs text-center font-semibold border-border bg-background text-foreground focus-visible:ring-primary focus:border-primary"
                     placeholder="Den"
                   />
                 </div>
@@ -359,17 +359,17 @@ Mixed Number: ${result.mixedNumber}`
           <div className="flex flex-col sm:flex-row gap-2">
             <Button 
               onClick={calculateFraction} 
-              className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
+              className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
             >
               <Calculator className="h-3 w-3 mr-1" />
               Calculate
             </Button>
-            <Button variant="outline" onClick={resetCalculator} className="h-9 text-xs border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+            <Button variant="outline" onClick={resetCalculator} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
               <RotateCcw className="h-3 w-3 mr-1" />
               Clear
             </Button>
             {result && (
-              <Button variant="outline" onClick={copyResult} className="h-9 text-xs border-slate-700 bg-black text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" onClick={copyResult} className="h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
                 <Copy className="h-3 w-3 mr-1" />
                 Copy
               </Button>
@@ -380,7 +380,7 @@ Mixed Number: ${result.mixedNumber}`
 
       {/* Results Display */}
       {result && (
-        <Card className="bg-black border-slate-700">
+        <Card className="bg-card border-border">
           <CardHeader className="pb-2 px-3 sm:px-6">
             <div className="flex items-center gap-2">
               {result.error ? (
@@ -401,7 +401,7 @@ Mixed Number: ${result.mixedNumber}`
             ) : (
               <>
                 {/* Operation Display */}
-                <div className="bg-black rounded-lg p-3 border border-slate-700">
+                <div className="bg-card rounded-lg p-3 border border-border">
                   <div className="text-center text-sm font-semibold text-foreground">
                     {fraction1.numerator}/{fraction1.denominator} {getOperationSymbol(operation)} {fraction2.numerator}/{fraction2.denominator}
                   </div>
@@ -410,7 +410,7 @@ Mixed Number: ${result.mixedNumber}`
                 {/* Results Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
                   {/* Simplified Result */}
-                  <div className="bg-black rounded-lg p-3 border border-slate-700">
+                  <div className="bg-card rounded-lg p-3 border border-border">
                     <div className="text-xs font-medium text-heading-accent mb-1">Simplified Result</div>
                     <div className="text-lg sm:text-xl font-bold text-foreground text-center">
                       {result.result.numerator}/{result.result.denominator}
@@ -418,7 +418,7 @@ Mixed Number: ${result.mixedNumber}`
                   </div>
 
                   {/* Decimal Result */}
-                  <div className="bg-black rounded-lg p-3 border border-slate-700">
+                  <div className="bg-card rounded-lg p-3 border border-border">
                     <div className="text-xs font-medium text-heading-accent mb-1">Decimal</div>
                     <div className="text-lg sm:text-xl font-bold text-foreground text-center">
                       {formatNumber(result.decimal)}
@@ -426,7 +426,7 @@ Mixed Number: ${result.mixedNumber}`
                   </div>
 
                   {/* Percentage Result */}
-                  <div className="bg-black rounded-lg p-3 border border-slate-700">
+                  <div className="bg-card rounded-lg p-3 border border-border">
                     <div className="text-xs font-medium text-heading-accent mb-1">Percentage</div>
                     <div className="text-lg sm:text-xl font-bold text-foreground text-center">
                       {formatNumber(result.percentage)}%
@@ -434,7 +434,7 @@ Mixed Number: ${result.mixedNumber}`
                   </div>
 
                   {/* Mixed Number */}
-                  <div className="bg-black rounded-lg p-3 border border-slate-700">
+                  <div className="bg-card rounded-lg p-3 border border-border">
                     <div className="text-xs font-medium text-heading-accent mb-1">Mixed Number</div>
                     <div className="text-lg sm:text-xl font-bold text-foreground text-center">
                       {result.mixedNumber}
@@ -449,7 +449,7 @@ Mixed Number: ${result.mixedNumber}`
 
       {/* History */}
       {history.length > 0 && (
-        <Card className="bg-black border-slate-700">
+        <Card className="bg-card border-border">
           <CardHeader className="pb-2 px-3 sm:px-6">
             <CardTitle className="flex items-center gap-2 text-base text-foreground">
               <Calculator className="h-4 w-4" />
@@ -459,12 +459,12 @@ Mixed Number: ${result.mixedNumber}`
           <CardContent className="px-3 sm:px-6">
             <div className="space-y-2 max-h-60 overflow-y-auto">
               {history.map((calc, index) => (
-                <div key={index} className="flex items-center justify-between p-2 bg-black rounded-lg border border-slate-700">
+                <div key={index} className="flex items-center justify-between p-2 bg-card rounded-lg border border-border">
                   <div className="flex-1">
-                    <div className="text-xs font-medium text-slate-300">
+                    <div className="text-xs font-medium text-foreground">
                       {calc.fraction1.numerator}/{calc.fraction1.denominator} {getOperationSymbol(calc.operation)} {calc.fraction2.numerator}/{calc.fraction2.denominator}
                     </div>
-                    <div className="text-[10px] text-slate-400">
+                    <div className="text-[10px] text-muted-foreground">
                       = {calc.result.numerator}/{calc.result.denominator} ({formatNumber(calc.decimal)})
                     </div>
                   </div>
@@ -475,7 +475,7 @@ Mixed Number: ${result.mixedNumber}`
                       const resultText = `Fraction: ${calc.fraction1.numerator}/${calc.fraction1.denominator} ${getOperationSymbol(calc.operation)} ${calc.fraction2.numerator}/${calc.fraction2.denominator} = ${calc.result.numerator}/${calc.result.denominator}`
                       navigator.clipboard.writeText(resultText)
                     }}
-                    className="h-7 w-7 p-0 text-slate-400 hover:text-heading-accent hover:bg-slate-800"
+                    className="h-7 w-7 p-0 text-muted-foreground hover:text-heading-accent hover:bg-secondary"
                   >
                     <Copy className="h-3 w-3" />
                   </Button>
