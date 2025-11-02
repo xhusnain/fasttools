@@ -46,16 +46,19 @@ jobs:
           echo "Access Key ID prefix: ${ACCESS_KEY:0:4}..."
 
       - name: Configure AWS credentials
+        id: aws-credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
           mask-aws-account-id: false
+        continue-on-error: false
 
       - name: Verify AWS credentials
         run: |
-          aws sts get-caller-identity
+          echo "Attempting to verify AWS credentials..."
+          aws sts get-caller-identity || (echo "Failed to verify credentials. Please check:" && echo "1. AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are correct" && echo "2. Credentials are not expired" && echo "3. IAM user has necessary permissions" && exit 1)
 
       - name: Login to Amazon ECR
         id: login-ecr
