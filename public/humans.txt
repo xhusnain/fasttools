@@ -16,8 +16,8 @@
     Frontend: Next.js, React, TypeScript
     Styling: Tailwind CSS
     Icons: Lucide React
-    Analytics: Vercel Analytics
-    Hosting: Vercel
+    Analytics: Google Analytics
+    Hosting: Self-hosted VM
     Domain: fasttools.store
 
 # SITE

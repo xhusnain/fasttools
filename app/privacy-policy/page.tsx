@@ -346,13 +346,6 @@ export default function PrivacyPolicyPage() {
                         Opt out of Google Analytics
                       </a>
                     </div>
-
-                    <div className="bg-card border border-border rounded-lg p-4">
-                      <h3 className="text-lg font-semibold mb-3 text-heading-accent">Vercel Analytics</h3>
-                      <p className="text-sm text-muted-foreground">
-                        We use Vercel Analytics to monitor website performance and user experience. This service collects anonymous usage data to help us improve our services.
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
