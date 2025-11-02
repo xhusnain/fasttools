@@ -373,7 +373,7 @@ export const metadata: Metadata = {
                             var s = document.createElement('script');
                             s.type = 'text/javascript';
                             s.async = true;
-                            s.src = "https://tracker.clickfortify.com/cdn/spcZrjg3d1d/wstIuxvN4do";
+                            s.src = "https://tracker.clickfortify.com/cdn/spcZrjg3d1d/wstSb2fQc7v";
                             var x = document.getElementsByTagName('script')[0];
                             x.parentNode.insertBefore(s, x);
                           })();
