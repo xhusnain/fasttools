@@ -103,8 +103,7 @@ const fetchInstagramProfile = async (username: string) => {
         profilePicUrl = profilePicUrl.replace(/&amp;/g, '&')
       }
 
-      console.log('Successfully fetched profile data')
-      
+
       const profileData = {
         username: user.username || cleanUsername,
         fullName: user.full_name || user.fullName || '',
