@@ -28,7 +28,22 @@ jobs:
             echo "Error: AWS_REGION secret is not set"
             exit 1
           fi
+          
+          # Check Access Key ID format (should start with AKIA for IAM user or ASIA for temp)
+          ACCESS_KEY="${{ secrets.AWS_ACCESS_KEY_ID }}"
+          if [[ ! "$ACCESS_KEY" =~ ^(AKIA|ASIA)[A-Z0-9]{16}$ ]]; then
+            echo "Warning: AWS_ACCESS_KEY_ID format may be incorrect (should be 20 chars, starting with AKIA or ASIA)"
+          fi
+          
+          # Check Secret Access Key length (should be ~40 chars)
+          SECRET_KEY="${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          if [ ${#SECRET_KEY} -lt 30 ] || [ ${#SECRET_KEY} -gt 50 ]; then
+            echo "Warning: AWS_SECRET_ACCESS_KEY length seems incorrect (should be ~40 characters)"
+          fi
+          
           echo "All required secrets are set"
+          echo "Region: ${{ secrets.AWS_REGION }}"
+          echo "Access Key ID prefix: ${ACCESS_KEY:0:4}..."
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -36,6 +51,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
+          mask-aws-account-id: false
 
       - name: Verify AWS credentials
         run: |
