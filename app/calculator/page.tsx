@@ -59,11 +59,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
-  },
   keywords: [
     "calculator",
     "calculator tools",
@@ -964,7 +959,6 @@ export default function ToolsPage() {
     "what calculator is allowed on the ged",
     "what calculator is allowed in board exam",
     "which calculator",
-    "which calculator is allowed in ssc exam in bangladesh",
     "calculator when to take social security",
     "what calculator do you need for calculus",
     "what calculator for a level maths",
@@ -1039,7 +1033,6 @@ export default function ToolsPage() {
     "how calculator display works",
     "how many calculator papers are there",
     "how many calculator papers are there gcse",
-    "where is calculator in samsung a32",
     "who to use calculator",
     "where to find calculator on windows 10",
     "calculator tricks game",
@@ -1646,7 +1639,63 @@ export default function ToolsPage() {
                     </p>
                   </div>
 
+                  {/* Semantic SEO: Methodology, Expertise, and Internal References */}
+                  <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground">How We Build and Validate Calculators</h2>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
+                      Our calculators are engineered with transparent formulas, reproducible steps, and precise in‑browser arithmetic.
+                      The explanations below are original descriptions written by our team to clarify how each tool works in practice.
+                    </p>
 
+                    <h3 className="text-lg font-bold text-heading-accent mb-2">Financial calculators (loan, mortgage, payment)</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-2">
+                      We compute payments using the annuity model with period compounding and track balances in an amortization table.
+                      Try the <Link href="/calculator/loan-calculator" className="underline">Loan Calculator</Link>,
+                      {" "}<Link href="/calculator/mortgage-calculator" className="underline">Mortgage Calculator</Link>, and
+                      {" "}<Link href="/calculator/payment-calculator" className="underline">Payment Calculator</Link>.
+                    </p>
+                    <ul className="list-disc pl-6 text-sm text-muted-foreground mb-4">
+                      <li>Keywords: loan calculator, mortgage calculator, payment calculator, amortization calculator</li>
+                      <li>Inputs: principal, rate, term; Outputs: payment, total interest, payoff date</li>
+                    </ul>
+
+                    <h3 className="text-lg font-bold text-heading-accent mb-2">Percentage and tax</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-2">
+                      Percentage change separates difference from base; taxes compute levies on the taxable amount and return gross, net, and tax.
+                      Use the <Link href="/calculator/percentage-calculator" className="underline">Percentage Calculator</Link>
+                      {" "}and <Link href="/calculator/tax-calculator" className="underline">Tax Calculator</Link>.
+                    </p>
+                    <ul className="list-disc pl-6 text-sm text-muted-foreground mb-4">
+                      <li>Keywords: percentage calculator, tax calculator, sales tax calculator</li>
+                      <li>Use cases: discounts, markups, VAT/GST totals</li>
+                    </ul>
+
+                    <h3 className="text-lg font-bold text-heading-accent mb-2">Health and fitness</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-2">
+                      BMI uses mass divided by height squared; BMR estimates resting energy; daily calories depend on activity and goal.
+                      See <Link href="/calculator/bmi-calculator" className="underline">BMI</Link>,
+                      {" "}<Link href="/calculator/bmr-calculator" className="underline">BMR</Link>, and
+                      {" "}<Link href="/calculator/calorie-calculator" className="underline">Calorie</Link> calculators.
+                    </p>
+                    <ul className="list-disc pl-6 text-sm text-muted-foreground mb-4">
+                      <li>Keywords: BMI calculator, BMR calculator, calorie calculator</li>
+                      <li>Outputs: BMI category, basal energy, calories for maintenance/deficit/surplus</li>
+                    </ul>
+
+                    <h3 className="text-lg font-bold text-heading-accent mb-2">Time and date</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-2">
+                      Our date engine handles leap years and month lengths; the time utility computes exact hh:mm:ss differences.
+                      Use <Link href="/calculator/date-difference" className="underline">Date Difference</Link> and
+                      {" "}<Link href="/calculator/time-duration" className="underline">Time Duration</Link>.
+                    </p>
+
+                    <h3 className="text-lg font-bold text-heading-accent mb-2">Networking and geometry</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                      The <Link href="/calculator/ip-subnet-calculator" className="underline">IP Subnet Calculator</Link> enumerates CIDR, masks, and host ranges.
+                      The <Link href="/calculator/triangle-calculator" className="underline">Triangle Calculator</Link> solves sides, angles, perimeter, and area.
+                        </p>
+                      </div>
+                      
 
                   {/* FAQ Section (user-provided questions with references to relevant calculators) */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
@@ -1661,7 +1710,7 @@ export default function ToolsPage() {
                       {userFaqQuestions.map((q) => (
                         <div key={q}>
                           <h3 className="text-lg font-bold mb-2 text-heading-accent">{q.charAt(0).toUpperCase() + q.slice(1)}</h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                             {answerForQuestion(q)}{" "}
                             {/* Inline references where useful */}
                             {q.toLowerCase().includes("date") && (
@@ -1674,8 +1723,8 @@ export default function ToolsPage() {
                                 Try <Link href="/calculator/time-duration" className="underline">Time Duration</Link>.
                               </>
                             )}
-                          </p>
-                        </div>
+                        </p>
+                      </div>
                       ))}
                     </div>
                   </div>
