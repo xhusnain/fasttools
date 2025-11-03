@@ -506,7 +506,59 @@ export default function ToolsPage() {
     "how many coupons toloka exam",
     "why calculator was invented",
     "are calculators certain",
-    "what is calculation tools"
+    "what is calculation tools",
+    "are calculators allowed in mdcat",
+    "are calculators allowed in net",
+    "are calculators allowed in nust entry test",
+    "are calculators allowed in a level maths",
+    "are calculators allowed in jee",
+    "can calculators die",
+    "can calculators make mistakes",
+    "can calculators solve for x",
+    "can calculators explode",
+    "how calculators are made",
+    "how calculators calculate sine",
+    "what calculators are allowed on fe exam",
+    "what calculators are allowed on psat",
+    "what calculators are not allowed on the sat",
+    "when did calculators come out",
+    "when did calculators become common",
+    "when were calculators first used in schools",
+    "where are calculators in target",
+    "where are calculators in walmart",
+    "where are calculators made",
+    "where sells calculators",
+    "where are calculators in staples",
+    "which calculators are allowed in o levels",
+    "which calculators are allowed in exams",
+    "which calculators are allowed in ssc",
+    "why calculators are expensive",
+    "why calculators are bad for students",
+    "calculators for sale",
+    "calculators for school",
+    "calculators for calculus",
+    "calculators for a level maths",
+    "calculators for engineers",
+    "calculators for algebra",
+    "calculators near me",
+    "calculators to buy",
+    "calculators to download",
+    "calculators to play games on",
+    "calculators with cas",
+    "calculators with cas functionality",
+    "calculators with fractions",
+    "calculators with games",
+    "calculators with paper",
+    "calculators without cas",
+    "calculators like ti 84",
+    "calculators like mathway",
+    "calculators like desmos",
+    "calculators online",
+    "calculators online free",
+    "calculators in pakistan",
+    "calculators that can play games",
+    "calculators that connect to the internet",
+    "calculators that show work"
   ]
 
   function answerForQuestion(q: string): string {
@@ -537,6 +589,27 @@ export default function ToolsPage() {
     if (lower.includes("tool cost")) return "Use Percentage and Compound Interest calculators to estimate markups, depreciation, and ROI."
     if (lower.includes("use calculator effectively")) return "Enter clean inputs, choose correct units, and bookmark specialized tools for speed."
     if (lower.includes("sample size")) return "We don't host a full sample-size tool; use reputable WHO/biostat resources; our Standard Deviation calculator can assist."
+    if (lower.includes("allowed in mdcat") || lower.includes("allowed in net") || lower.includes("allowed in nust")) return "Policies vary; check your exam board. Our Scientific Calculator can help with practice calculations. Verify allowed models before exam day."
+    if (lower.includes("allowed in a level") || lower.includes("allowed in jee")) return "Check official exam guidelines. For practice, use our Scientific Calculator. Physical calculators may be required—verify allowed models."
+    if (lower.includes("can calculators die") || lower.includes("can calculators explode")) return "Physical calculators can fail over time; replace batteries or devices as needed. Our online calculators don't require hardware maintenance."
+    if (lower.includes("can calculators make mistakes") || lower.includes("can calculators be wrong")) return "Our calculators use validated formulas; errors are rare with correct inputs. Always verify critical calculations against independent sources."
+    if (lower.includes("can calculators solve for x")) return "Our Scientific Calculator handles algebraic operations; for complex equation solving, consider dedicated math software or graphing calculators."
+    if (lower.includes("how calculators are made") || lower.includes("how calculators calculate sine")) return "Electronic calculators use binary arithmetic and lookup tables/approximations (e.g., CORDIC) for trigonometric functions. Our Scientific Calculator implements these algorithms in JavaScript."
+    if (lower.includes("allowed on fe exam") || lower.includes("allowed on psat") || lower.includes("not allowed on sat")) return "Check the official exam website for current policies. SAT/PSAT allow specific models; FE exam has engineering calculator rules. Our online tools are for practice only."
+    if (lower.includes("come out") || lower.includes("become common") || lower.includes("first used in schools")) return "Electronic calculators became common in the 1970s; schools adopted them gradually. Online calculators emerged with web browsers in the 1990s."
+    if (lower.includes("where are calculators") || lower.includes("where sells calculators") || lower.includes("calculators near me")) return "Physical calculators are sold at Target, Walmart, Staples, Best Buy, and office supply stores. For online tools, browse our calculator collection—no purchase needed."
+    if (lower.includes("allowed in o levels") || lower.includes("allowed in ssc")) return "Policies vary by region and exam board. Our Scientific Calculator works for practice; verify allowed physical models with your exam authority."
+    if (lower.includes("why calculators are expensive") || lower.includes("why calculators are bad")) return "Premium graphing calculators have specialized hardware and certification costs. Our online calculators are free and accessible. Some educators prefer mental math for foundational learning."
+    if (lower.includes("calculators for sale") || lower.includes("calculators to buy") || lower.includes("calculators for school")) return "Buy physical calculators from retailers like Target, Walmart, Staples, or online. For daily use, try our free online calculators—no purchase required."
+    if (lower.includes("calculators for calculus") || lower.includes("calculators for algebra") || lower.includes("calculators for engineers")) return "Use our Scientific Calculator for calculus and algebra. Engineers also benefit from Triangle, IP Subnet, and Standard Deviation calculators."
+    if (lower.includes("calculators to download") || lower.includes("calculators to play games")) return "We provide web-based calculators—no downloads needed. For mobile apps, search app stores. Some physical calculators have game modes, but our focus is calculation tools."
+    if (lower.includes("calculators with cas") || lower.includes("calculators without cas")) return "CAS (Computer Algebra System) calculators solve symbolic math. Our Scientific Calculator handles numeric calculations; CAS features require specialized physical calculators allowed in specific exams."
+    if (lower.includes("calculators with fractions") || lower.includes("calculators with games") || lower.includes("calculators with paper")) return "Our calculators handle fractions numerically. Some physical calculators have paper tape printouts and game modes; our online tools focus on calculation accuracy."
+    if (lower.includes("calculators like ti 84") || lower.includes("calculators like mathway") || lower.includes("calculators like desmos")) return "TI-84 is a graphing calculator; Mathway and Desmos are online math tools. Our Scientific Calculator offers core functions; for graphing, use Desmos or similar visualization tools."
+    if (lower.includes("calculators online") || lower.includes("calculators online free")) return "Yes—all our calculators are free and run online. No downloads or registration required. Access from any device with a browser."
+    if (lower.includes("calculators in pakistan")) return "Our online calculators work worldwide, including Pakistan. For physical calculators, check local electronics stores or online retailers. All tools are accessible regardless of location."
+    if (lower.includes("calculators that can play games") || lower.includes("calculators that connect to internet")) return "Some physical calculators have game modes or connectivity. Our online calculators require internet access but focus purely on calculations—no games included."
+    if (lower.includes("calculators that show work")) return "Our calculators provide step-by-step explanations where applicable. Check individual calculator pages for detailed methodology and formula breakdowns."
     return "Use our relevant calculator: Scientific, Percentage, Date Difference, Time Duration, Tax, Retirement, Currency, IP Subnet, Triangle, BMI/BMR/Calorie, etc."
   }
 
@@ -1246,11 +1319,44 @@ export default function ToolsPage() {
                       <li>Math and stats → <Link href="/calculator/scientific-calculator" className="underline">Scientific</Link>, <Link href="/calculator/standard-deviation-calculator" className="underline">Standard Deviation</Link></li>
                     </ul>
 
+                    <h3 className="text-xl font-bold text-heading-accent mb-2">Exam Calculator Policies: SAT, ACT, JEE, MDCAT, and More</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                      Exam policies vary by test and region. The SAT allows most scientific and graphing calculators (not models with 
+                      QWERTY keyboards or internet access). The ACT has similar restrictions. For JEE, MDCAT, NET, NUST entry tests, 
+                      and board exams, policies differ—check official guidelines. Our online calculators are ideal for practice; verify 
+                      which physical calculators are allowed on exam day.
+                    </p>
+
+                    <h3 className="text-xl font-bold text-heading-accent mb-2">Where to Buy Calculators: Physical vs Online Options</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                      Physical calculators are available at Target, Walmart, Staples, Best Buy, and office supply stores. Popular models 
+                      include Casio, Texas Instruments (TI-84, TI-30X), and Sharp. For calculators in Pakistan, India, or other regions, 
+                      check local electronics retailers or online marketplaces. Our free online calculators require no purchase—access 
+                      from any device with internet. Calculators online free tools are perfect for daily use, homework, and professional work.
+                    </p>
+
+                    <h3 className="text-xl font-bold text-heading-accent mb-2">Specialized Calculators: CAS, Fractions, and Graphing</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                      CAS (Computer Algebra System) calculators solve symbolic math—allowed in some exams like AP Calculus. Calculators with 
+                      fractions handle mixed numbers and rational arithmetic. Graphing calculators (like TI-84) plot functions and data. 
+                      Calculators with paper tape print historical calculations. Our online calculators with fractions handle numeric 
+                      operations; for symbolic math or graphing, consider dedicated physical calculators or visualization tools like Desmos.
+                    </p>
+
+                    <h3 className="text-xl font-bold text-heading-accent mb-2">Calculators for Students: School, Calculus, Algebra, and A-Level</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                      Calculators for school use depend on grade level and subject. Basic calculators for elementary math, scientific calculators 
+                      for high school science and algebra, and graphing calculators for calculus and advanced math. Calculators for A-level 
+                      maths may require specific models—verify with your curriculum. Calculators for calculus need trigonometric and logarithmic 
+                      functions. Our Scientific Calculator covers these needs for homework and practice.
+                    </p>
+
                     <h3 className="text-xl font-bold text-heading-accent mb-2">Conclusion: Make an Informed Choice</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                       The best calculator is the one aligned with your task. Start with the tool that matches your goal, then add
                       specialty calculators as your needs grow. Our library covers finance, math, health, networking, and time—each
-                      with clear methods and precise results—so you can work faster and make better decisions.
+                      with clear methods and precise results—so you can work faster and make better decisions. Whether you need calculators 
+                      for engineers, calculators for algebra, or calculators online free tools, we provide accurate, accessible solutions.
                         </p>
                       </div>
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
