@@ -160,6 +160,19 @@ export const metadata: Metadata = {
           worstRating: "1"
         }
       }
+
+      const websiteSchema = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "FastTools",
+        alternateName: ["fasttools", "fast tools", "fasttools.store"],
+        url: "https://www.fasttools.store/",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: "https://www.fasttools.store/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
     
       return (
         <html lang="en" className={`${montserrat.variable} ${roboto.variable} antialiased`} suppressHydrationWarning>
@@ -280,6 +293,11 @@ export const metadata: Metadata = {
                 suppressHydrationWarning
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{__html: JSON.stringify(organizationSchema)}}
+            />
+            <script
+                suppressHydrationWarning
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{__html: JSON.stringify(websiteSchema)}}
             />
             
             
