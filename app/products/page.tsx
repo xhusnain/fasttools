@@ -15,7 +15,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Products - FastTools | All Free Online Tools Categories",
+  title: "Products",
   description: "Explore all FastTools product categories including calculators, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, and social media tools.",
   keywords: [
     "fasttools products",
@@ -33,30 +33,29 @@ export const metadata: Metadata = {
     "social media tools"
   ],
   openGraph: {
-    title: "Products - FastTools | All Free Online Tools Categories",
+    title: "Products",
     description: "Explore all FastTools product categories including calculators, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, and social media tools.",
     type: "website",
-    url: "https://www.fasttools.store/products",
+    url: "/products",
     siteName: "FastTools",
-    locale: "en_US",
     images: [
       {
-        url: "https://www.fasttools.store/banner.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "FastTools Products - All Tool Categories",
+        alt: "FastTools - Free Online Tools Platform",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Products - FastTools | All Free Online Tools Categories",
+    title: "Products",
     description: "Explore all FastTools product categories including calculators, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, and social media tools.",
-    images: ["https://www.fasttools.store/banner.png"],
+    images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://www.fasttools.store/products",
+    canonical: "/products",
   },
   robots: {
     index: true,
@@ -147,9 +146,29 @@ export default function ProductsPage() {
     }))
   }
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.fasttools.store/"
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Products",
+        item: "https://www.fasttools.store/products"
+      }
+    ]
+  }
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <Breadcrumbs

@@ -8,7 +8,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Downloaders - FastTools | Free Media Download Tools",
+  title: "Downloaders",
   description: "Download videos and media from popular platforms. Free TikTok downloader and more tools to save your favorite content.",
   keywords: [
     "tiktok downloader",
@@ -20,30 +20,29 @@ export const metadata: Metadata = {
     "online downloader"
   ],
   openGraph: {
-    title: "Downloaders - FastTools | Free Media Download Tools",
+    title: "Downloaders",
     description: "Download videos and media from popular platforms. Free TikTok downloader and more tools to save your favorite content.",
     type: "website",
-    url: "https://www.fasttools.store/downloaders",
+    url: "/downloaders",
     siteName: "FastTools",
-    locale: "en_US",
     images: [
       {
-        url: "https://www.fasttools.store/banner.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "FastTools Downloaders",
+        alt: "FastTools - Free Online Tools Platform",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Downloaders - FastTools | Free Media Download Tools",
+    title: "Downloaders",
     description: "Download videos and media from popular platforms. Free TikTok downloader and more tools to save your favorite content.",
-    images: ["https://www.fasttools.store/banner.png"],
+    images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://www.fasttools.store/downloaders",
+    canonical: "/downloaders",
   },
   robots: {
     index: true,
@@ -85,9 +84,29 @@ export default function DownloadersPage() {
     }))
   }
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.fasttools.store/"
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Downloaders",
+        item: "https://www.fasttools.store/downloaders"
+      }
+    ]
+  }
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <Breadcrumbs
