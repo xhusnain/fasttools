@@ -13,8 +13,8 @@ import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "About FastTools | Free Online Tools Platform | FastTools",
-  description: "Discover FastTools, a comprehensive free online tools platform with 1000+ AI, converter, calculator, SEO and productivity utilities.",
+  title: "About FastTools",
+  description: "Discover FastTools, the comprehensive free online tools platform with 1000+ AI, converter, calculator, SEO and productivity utilities.",
   keywords: [
     "fasttools",
     "free online tools",
@@ -38,18 +38,18 @@ export const metadata: Metadata = {
     "online calculators"
   ],
   openGraph: {
-    title: "About FastTools - Leading Free Online Tools Platform | 1000+ Digital Tools",
-    description: "Discover FastTools, the world's most comprehensive free online tools platform. Access 1000+ professional tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
+    title: "About FastTools",
+    description: "Learn about FastTools and our mission to provide 1000+ reliable, free online tools across AI, conversion, calculation, SEO and productivity.",
     type: "website",
-    url: "https://www.fasttools.store/about",
+    url: "/about",
     siteName: "FastTools",
     images: [
       {
-        url: "https://www.fasttools.store/og-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "FastTools - Leading Free Online Tools Platform",
-        type: "image/svg+xml",
+        alt: "FastTools - Free Online Tools Platform",
+        type: "image/png",
       },
     ],
   },
@@ -57,12 +57,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@ZamanIsmail7",
     creator: "@ZamanIsmail7",
-    title: "About FastTools - Leading Free Online Tools Platform",
-    description: "Discover FastTools, the world's most comprehensive free online tools platform. Access 1000+ professional tools including AI generators, converters, calculators, SEO tools, and productivity utilities.",
-    images: ["https://www.fasttools.store/banner.png"],
+    title: "About FastTools",
+    description: "Learn about FastTools and our mission to deliver 1000+ reliable, free tools.",
+    images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://www.fasttools.store/about",
+    canonical: "/about",
   },
   robots: {
     index: true,
@@ -134,9 +134,29 @@ export default function AboutPage() {
     }
   }
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.fasttools.store/"
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About",
+        item: "https://www.fasttools.store/about"
+      }
+    ]
+  }
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <Breadcrumbs
