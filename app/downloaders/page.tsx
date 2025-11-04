@@ -9,19 +9,24 @@ import {
 
 export const metadata: Metadata = {
   title: "Downloaders",
-  description: "Download videos and media from popular platforms. Free TikTok downloader and more tools to save your favorite content.",
+  description: "Download videos and media from popular platforms. Free TikTok and Instagram downloader tools to save your favorite content.",
   keywords: [
     "tiktok downloader",
+    "instagram downloader",
     "video downloader",
     "media downloader",
     "free downloader",
     "social media downloader",
     "video saver",
-    "online downloader"
+    "online downloader",
+    "instagram video downloader",
+    "instagram image downloader",
+    "download instagram posts",
+    "download instagram reels"
   ],
   openGraph: {
     title: "Downloaders",
-    description: "Download videos and media from popular platforms. Free TikTok downloader and more tools to save your favorite content.",
+    description: "Download videos and media from popular platforms. Free TikTok and Instagram downloader tools to save your favorite content.",
     type: "website",
     url: "/downloaders",
     siteName: "FastTools",
@@ -38,7 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Downloaders",
-    description: "Download videos and media from popular platforms. Free TikTok downloader and more tools to save your favorite content.",
+    description: "Download videos and media from popular platforms. Free TikTok and Instagram downloader tools to save your favorite content.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -64,6 +69,13 @@ const downloaders = [
     description: "Download TikTok videos without watermark in high quality",
     icon: Download,
     href: "/social-media-tools/tiktok-downloader",
+  },
+  {
+    id: "instagram-downloader",
+    name: "Instagram Downloader",
+    description: "Download Instagram posts, reels, and images in HD quality",
+    icon: Download,
+    href: "/social-media-tools/instagram-downloader",
   },
 ]
 

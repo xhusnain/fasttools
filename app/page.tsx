@@ -1858,6 +1858,14 @@ const categories = [
         badgeColor: "bg-blue-500/90",
       },
       {
+        title: "Instagram Downloader",
+        description: "Download Instagram posts, reels, and images in HD quality for offline viewing, content creation, and sharing across platforms",
+        href: "/social-media-tools/instagram-downloader",
+        icon: Download,
+        badge: "New",
+        badgeColor: "bg-pink-500/90",
+      },
+      {
         title: "TikTok Video Downloader",
         description: "Download TikTok videos without watermark in HD quality for offline viewing, content creation, and sharing across platforms",
         href: "/social-media-tools/tiktok-downloader",
