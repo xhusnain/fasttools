@@ -244,14 +244,14 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {!compact && (
-        <Card className="p-6 bg-card border border-border shadow-sm">
-          <div className="flex gap-3">
-            <AlertTriangle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-            <div className="space-y-2">
-              <p className="text-sm font-medium text-foreground">Legal Disclaimer</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+        <Card className="p-4 sm:p-5 md:p-6 bg-card border border-border shadow-sm">
+          <div className="flex gap-2 sm:gap-3">
+            <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0 mt-0.5" />
+            <div className="space-y-1 sm:space-y-2">
+              <p className="text-xs sm:text-sm font-medium text-foreground">Legal Disclaimer</p>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 Downloading Instagram content may violate copyright laws and Instagram's terms of service. This tool is for
                 educational purposes only. Always respect content creators' rights and only download content you have
                 permission to use. Use downloaded content responsibly and give proper credit to original creators.
@@ -261,10 +261,10 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
         </Card>
       )}
 
-      <Card className={`p-6 bg-card border-border shadow-sm ${compact ? "" : ""}`}>
-        <div className="space-y-4">
+      <Card className={`p-4 sm:p-5 md:p-6 bg-card border-border shadow-sm ${compact ? "" : ""}`}>
+        <div className="space-y-3 sm:space-y-4">
           <div>
-            <Label htmlFor="post-url" className="text-sm font-medium text-foreground">
+            <Label htmlFor="post-url" className="text-xs sm:text-sm font-medium text-foreground">
               Instagram Post URL
             </Label>
             <Input
@@ -273,23 +273,24 @@ export function InstagramDownloader({ compact = false }: InstagramDownloaderProp
               placeholder="https://www.instagram.com/p/... or https://www.instagram.com/reel/..."
               value={postUrl}
               onChange={(e) => setPostUrl(e.target.value)}
-              className={`mt-2 ${compact ? "h-11" : "h-14"} text-base border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20`}
+              className={`mt-2 ${compact ? "h-10 sm:h-11" : "h-12 sm:h-14"} text-sm sm:text-base border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20`}
             />
           </div>
 
           <Button
             onClick={handleFetch}
             disabled={!postUrl || loading}
-            className={`w-full ${compact ? "h-11" : "h-14"} text-base font-medium shadow-sm hover:shadow-md transition-all`}
+            className={`w-full ${compact ? "h-10 sm:h-11" : "h-12 sm:h-14"} text-sm sm:text-base font-medium shadow-sm hover:shadow-md transition-all`}
           >
             {loading ? (
               <>
-                <LoadingSpinner className="mr-2" />
-                Processing content... (Usually takes 1-3 seconds)
+                <LoadingSpinner className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                <span className="hidden xs:inline">Processing content... (Usually takes 1-3 seconds)</span>
+                <span className="xs:hidden">Processing...</span>
               </>
             ) : (
               <>
-                <Download className="mr-2 h-5 w-5" />
+                <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Get Download Links
               </>
             )}
