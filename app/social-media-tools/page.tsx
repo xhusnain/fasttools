@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Youtube, Instagram, Music, Tag, LinkIcon, Search, Hash, Code, Globe, Calculator } from "lucide-react"
+import { ArrowRight, Youtube, Instagram, Music, Tag, LinkIcon, Search, Hash, Code, Globe, Calculator, Download } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -49,6 +49,13 @@ export default function SocialMediaToolsPage() {
       description: "View and download Instagram profile pictures in HD quality for brand research and analysis.",
       icon: Instagram,
       href: "/social-media-tools/instagram-dp",
+      color: "pink"
+    },
+    {
+      title: "Instagram Downloader",
+      description: "Download Instagram posts, reels, and images in HD quality for educational purposes and content inspiration.",
+      icon: Download,
+      href: "/social-media-tools/instagram-downloader",
       color: "pink"
     },
     {
