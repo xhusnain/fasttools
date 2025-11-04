@@ -380,6 +380,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: "https://www.fasttools.store/social-media-tools/instagram-downloader",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
       url: "https://www.fasttools.store/social-media-tools/youtube-tags",
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,
