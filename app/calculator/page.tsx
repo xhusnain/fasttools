@@ -59,7 +59,40 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.fasttools.store/calculator",
+    siteName: "FastTools - Free Online Tools Store",
+    title: "Online Calculators | 50+ Free Tools | FastTools",
+    description:
+      "Explore 50+ free online calculators: loan, mortgage, percentage, tax, BMI/BMR, calorie, date difference, and more—fast, accurate, and no signup.",
+    images: [
+      {
+        url: "https://www.fasttools.store/banner.png",
+        width: 1200,
+        height: 630,
+        alt: "FastTools - Free Online Calculators | 50+ Professional Calculation Tools",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@ZamanIsmail7",
+    creator: "@ZamanIsmail7",
+    title: "Online Calculators | 50+ Free Tools | FastTools",
+    description:
+      "Explore 50+ free online calculators: loan, mortgage, percentage, tax, BMI/BMR, calorie, date difference, and more—fast, accurate, and no signup.",
+    images: [
+      {
+        url: "https://www.fasttools.store/banner.png",
+        width: 1200,
+        height: 630,
+        alt: "FastTools - Free Online Calculators | 50+ Professional Calculation Tools",
+      },
+    ],
+  },
   icons: {
     icon: [
       { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
@@ -87,7 +120,7 @@ export const metadata: Metadata = {
     appArgument: "https://www.fasttools.store/calculator",
   },
   alternates: {
-    canonical: "/calculator",
+    canonical: "https://www.fasttools.store/calculator",
     languages: {
       "en-US": "/calculator",
       "en": "/calculator",
@@ -1140,7 +1173,7 @@ export default function ToolsPage() {
                 </div>
 
                 <GHeader 
-                  title="All Calculation Tools"
+                  title="Online Calculators"
                   description="Discover our comprehensive collection of free online calculation tools designed for professionals, students, and everyday users. All tools are 100% free, highly accurate, and optimized for both desktop and mobile use."
                   titleSize="medium"
                   descriptionSize="small"

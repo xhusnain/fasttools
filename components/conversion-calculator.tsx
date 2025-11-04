@@ -218,6 +218,22 @@ interface ConversionHistory {
   timestamp: Date
 }
 
+// Default units for each category (From, To)
+const defaultUnits: { [key: string]: { from: string; to: string } } = {
+  length: { from: "meter", to: "foot" },
+  weight: { from: "kilogram", to: "pound" },
+  temperature: { from: "celsius", to: "fahrenheit" },
+  currency: { from: "usd", to: "eur" },
+  time: { from: "hour", to: "minute" },
+  area: { from: "square_meter", to: "square_foot" },
+  volume: { from: "liter", to: "gallon" },
+  speed: { from: "kilometer_per_hour", to: "mile_per_hour" },
+  power: { from: "kilowatt", to: "horsepower" },
+  energy: { from: "kilojoule", to: "calorie" },
+  pressure: { from: "pascal", to: "psi" },
+  data: { from: "megabyte", to: "kilobyte" }
+}
+
 export function ConversionCalculator() {
   const [selectedCategory, setSelectedCategory] = useState<keyof typeof conversionCategories>("length")
   const [fromUnit, setFromUnit] = useState("meter")
@@ -229,6 +245,31 @@ export function ConversionCalculator() {
 
   const currentCategory = conversionCategories[selectedCategory]
   const currentUnits = currentCategory.units
+
+  // Update default units when category changes
+  useEffect(() => {
+    const defaults = defaultUnits[selectedCategory]
+    const categoryUnits = conversionCategories[selectedCategory].units
+    const unitKeys = Object.keys(categoryUnits)
+    
+    if (defaults && unitKeys.includes(defaults.from) && unitKeys.includes(defaults.to)) {
+      setFromUnit(defaults.from)
+      setToUnit(defaults.to)
+    } else {
+      // Fallback to first two units if defaults don't exist
+      const firstTwoUnits = unitKeys.slice(0, 2)
+      if (firstTwoUnits.length >= 2) {
+        setFromUnit(firstTwoUnits[0])
+        setToUnit(firstTwoUnits[1])
+      } else if (firstTwoUnits.length === 1) {
+        setFromUnit(firstTwoUnits[0])
+        setToUnit(firstTwoUnits[0])
+      }
+    }
+    // Clear input and result when category changes
+    setInputValue("")
+    setResult(null)
+  }, [selectedCategory])
 
   // Calculate conversion
   const calculateConversion = () => {
@@ -276,6 +317,7 @@ export function ConversionCalculator() {
   // Auto-calculate when inputs change
   useEffect(() => {
     calculateConversion()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCategory, fromUnit, toUnit, inputValue])
 
   // Copy result to clipboard

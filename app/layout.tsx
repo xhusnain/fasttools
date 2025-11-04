@@ -157,22 +157,8 @@ export const metadata: Metadata = {
       }
     
       return (
-          <html lang="en" className="antialiased">
+          <html lang="en" className="antialiased" suppressHydrationWarning>
         <head>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  (function() {
-                    const theme = localStorage.getItem('theme') || 'dark';
-                    if (theme === 'dark') {
-                      document.documentElement.classList.add('dark');
-                    } else {
-                      document.documentElement.classList.remove('dark');
-                    }
-                  })();
-                `,
-              }}
-            />
             {env.isProduction && (
               <>
                 <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-4G804HZ22C" as="script" crossOrigin="anonymous"/>
