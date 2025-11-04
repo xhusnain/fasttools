@@ -7,7 +7,7 @@ export const env = {
 
   // AI Configuration
   openaiApiKey: process.env.OPENAI_API_KEY || " ",
-  geminiApiKey: process.env.GEMINI_API_KEY || "\"***REMOVED***\"",
+  geminiApiKey: process.env.GEMINI_API_KEY || "***REMOVED***",
 
   // Currency Converter
   exchangeRateApiKey: process.env.NEXT_PUBLIC_EXCHANGE_RATE_API_KEY,
