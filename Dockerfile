@@ -1,10 +1,8 @@
 # ----------------------------
 # Base image for Node.js
+# Using Debian-based image for onnxruntime-node compatibility (requires glibc)
 # ----------------------------
-FROM node:20-alpine AS base
-
-# Add compatibility libraries
-RUN apk add --no-cache libc6-compat
+FROM node:20-slim AS base
 
 WORKDIR /app
 
@@ -59,8 +57,8 @@ ENV PORT=7000
 ENV HOSTNAME="0.0.0.0"
 
 # Create non-root user
-RUN addgroup --system --gid 1001 nodejs \
-  && adduser --system --uid 1001 nextjs
+RUN groupadd -r -g 1001 nodejs \
+  && useradd -r -u 1001 -g nodejs nextjs
 
 # Copy the built application
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
