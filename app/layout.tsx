@@ -1,5 +1,4 @@
 import type React from "react"
-import { Montserrat, Roboto } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -8,6 +7,7 @@ import { GlobalLoading } from "@/components/global-loading"
 import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next"
 import { env } from "@/lib/env"
+import {Montserrat, Roboto} from "next/font/google";
 
 
 const montserrat = Montserrat({
@@ -273,7 +273,6 @@ export const metadata: Metadata = {
                 <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous"/>
               </>
             )}
-            <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
             <meta name="color-scheme" content="dark light"/>
             <meta name="supported-color-schemes" content="dark light"/>
             <meta name="theme-color" content="#3D348B" media="(prefers-color-scheme: light)"/>
