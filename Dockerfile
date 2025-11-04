@@ -43,6 +43,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 RUN pnpm run download-models
 
 # Build the application
+# ✅ Do not require API keys at build time for server-only routes
 RUN pnpm run build
 
 # ----------------------------
@@ -51,8 +52,11 @@ RUN pnpm run build
 FROM base AS runner
 WORKDIR /app
 
+# Set runtime environment variables (can be overridden via docker-compose)
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=7000
+ENV HOSTNAME="0.0.0.0"
 
 # Create non-root user
 RUN addgroup --system --gid 1001 nodejs \
@@ -63,13 +67,13 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 
+# Use non-root user
 USER nextjs
 
 # ----------------------------
 # ✅ Expose on port 7000
 # ----------------------------
 EXPOSE 7000
-ENV PORT=7000
-ENV HOSTNAME="0.0.0.0"
 
+# Start the server
 CMD ["node", "server.js"]
