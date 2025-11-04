@@ -40,7 +40,7 @@ ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
 # (Optional) Download models if needed
-RUN pnpm run download-models || echo "Skipping model download"
+RUN pnpm run download-models
 
 # Build the application
 RUN pnpm run build

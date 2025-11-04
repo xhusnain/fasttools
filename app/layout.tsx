@@ -7,24 +7,6 @@ import { GlobalLoading } from "@/components/global-loading"
 import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next"
 import { env } from "@/lib/env"
-import {Montserrat, Roboto} from "next/font/google";
-
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
-  display: 'swap',
-  preload: true,
-})
-
-const roboto = Roboto({
-  subsets: ["latin"],
-  variable: "--font-roboto",
-  weight: ['300', '400', '500', '700'],
-  display: 'swap',
-  preload: true,
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
@@ -175,7 +157,7 @@ export const metadata: Metadata = {
       }
     
       return (
-        <html lang="en" className={`${montserrat.variable} ${roboto.variable} antialiased`} suppressHydrationWarning>
+          <html lang="en" className="antialiased">
         <head>
             <script
               dangerouslySetInnerHTML={{
