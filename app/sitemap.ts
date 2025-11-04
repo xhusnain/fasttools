@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     date.setDate(date.getDate() - daysAgo)
     return date
   }
+    console.log("Sitemap started")
 
   const mainPages = [
     {
