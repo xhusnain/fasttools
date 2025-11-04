@@ -161,7 +161,7 @@ export default function InstagramDownloaderPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
         <div className="max-w-7xl mx-auto">
         <Breadcrumbs
           items={[
@@ -171,7 +171,7 @@ export default function InstagramDownloaderPage() {
         />
 
           {/* Hero Section */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-4 sm:mb-6 md:mb-8">
             <GHeader
               title="Instagram Downloader – HD Videos & Images"
               description="Download Instagram posts, reels, and images in HD quality for free. Fast, secure, and easy-to-use online Instagram downloader for videos and images. Works on PC, Android, iPhone, and all devices. Perfect for creators, marketers, and social media enthusiasts."
@@ -181,21 +181,21 @@ export default function InstagramDownloaderPage() {
           </div>
 
           {/* Mobile Ad Space */}
-          <div className="lg:hidden mb-6">
+          <div className="lg:hidden mb-4 sm:mb-6">
             <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
           </div>
 
           {/* Main Layout */}
-          <div className="flex flex-col lg:flex-row gap-8">
+          <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8">
           {/* Main Content */}
-            <div className="flex-1 space-y-8">
+            <div className="flex-1 space-y-4 sm:space-y-6 md:space-y-8">
             <InstagramDownloader />
 
 
               {/* How to Use Section */}
-              <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
-                <h2 className="text-xl font-bold mb-4 text-foreground">How to Use Instagram Downloader</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
+                <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">How to Use Instagram Downloader</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                   <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/50 border border-border">
                     <div className="p-2 bg-primary/20 rounded-lg">
                       <FileText className="h-5 w-5 text-primary" />
@@ -236,9 +236,9 @@ export default function InstagramDownloaderPage() {
             </div>
 
             {/* Key Features Section */}
-              <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-300">
-                <h2 className="text-xl font-bold mb-4 text-foreground">Key Features</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-300">
+                <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Key Features</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                   <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/50 border border-border">
                     <div className="p-2 bg-primary/20 rounded-lg">
                       <Download className="h-5 w-5 text-primary" />
@@ -320,15 +320,15 @@ export default function InstagramDownloaderPage() {
             </div>
 
             {/* Comprehensive Guide Section */}
-              <div className="p-6 rounded-lg bg-card border border-border shadow-lg animate-fade-in-up animation-delay-400">
-                <h2 className="text-2xl font-bold mb-6 text-foreground flex items-center gap-2">
-                  <div className="h-6 w-6 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Download className="h-4 w-4 text-primary" />
+              <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow-lg animate-fade-in-up animation-delay-400">
+                <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground flex items-center gap-2">
+                  <div className="h-5 w-5 sm:h-6 sm:w-6 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Download className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
                   </div>
-                  Complete Guide to Instagram Video Downloader: Everything You Need to Know
+                  <span className="break-words">Complete Guide to Instagram Video Downloader: Everything You Need to Know</span>
                 </h2>
                 
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                   {/* Introduction Section */}
                   <div>
                     <h3 className="text-lg font-bold mb-3 text-heading-accent">Unlocking the Secrets: How to Use an Instagram Video Downloader for Effortless Content Saving</h3>
@@ -404,202 +404,204 @@ export default function InstagramDownloaderPage() {
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                       We've analyzed the top Instagram video downloader tools available online to help you choose the best option for your needs. Here's our comprehensive comparison:
                     </p>
-                    <div className="overflow-x-auto mb-4">
-                      <table className="w-full text-sm border-collapse border border-border">
-                        <thead>
-                          <tr className="bg-card border-b border-border">
-                            <th className="text-left py-3 px-4 font-semibold text-heading-accent border-r border-border">Feature</th>
-                            <th className="text-center py-3 px-4 font-semibold text-primary border-r border-border">FastTools</th>
-                            <th className="text-center py-3 px-4 font-semibold text-muted-foreground border-r border-border">SaveFrom.net</th>
-                            <th className="text-center py-3 px-4 font-semibold text-muted-foreground border-r border-border">4K Video Downloader</th>
-                            <th className="text-center py-3 px-4 font-semibold text-muted-foreground">Other Online Tools</th>
-                          </tr>
-                        </thead>
-                        <tbody className="text-muted-foreground">
+                    <div className="overflow-x-auto mb-4 -mx-4 sm:mx-0">
+                      <div className="min-w-full inline-block">
+                        <table className="w-full text-xs sm:text-sm border-collapse border border-border min-w-[600px]">
+                          <thead>
+                            <tr className="bg-card border-b border-border">
+                              <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-semibold text-heading-accent border-r border-border">Feature</th>
+                              <th className="text-center py-2 sm:py-3 px-2 sm:px-4 font-semibold text-primary border-r border-border">FastTools</th>
+                              <th className="text-center py-2 sm:py-3 px-2 sm:px-4 font-semibold text-muted-foreground border-r border-border">SaveFrom.net</th>
+                              <th className="text-center py-2 sm:py-3 px-2 sm:px-4 font-semibold text-muted-foreground border-r border-border">4K Video Downloader</th>
+                              <th className="text-center py-2 sm:py-3 px-2 sm:px-4 font-semibold text-muted-foreground">Other Online Tools</th>
+                            </tr>
+                          </thead>
+                          <tbody className="text-muted-foreground">
+                            <tr className="border-b border-border">
+                              <td className="py-2 sm:py-3 px-2 sm:px-4 font-medium border-r border-border">Price</td>
+                              <td className="text-center py-2 sm:py-3 px-2 sm:px-4 text-heading-accent font-semibold border-r border-border">100% Free</td>
+                              <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">Free (with ads)</td>
+                              <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">Free/Premium</td>
+                              <td className="text-center py-2 sm:py-3 px-2 sm:px-4">Free/Premium</td>
+                            </tr>
                           <tr className="border-b border-border">
-                            <td className="py-3 px-4 font-medium border-r border-border">Price</td>
-                            <td className="text-center py-3 px-4 text-heading-accent font-semibold border-r border-border">100% Free</td>
-                            <td className="text-center py-3 px-4 border-r border-border">Free (with ads)</td>
-                            <td className="text-center py-3 px-4 border-r border-border">Free/Premium</td>
-                            <td className="text-center py-3 px-4">Free/Premium</td>
-                          </tr>
-                          <tr className="border-b border-border">
-                            <td className="py-3 px-4 font-medium border-r border-border">Registration Required</td>
-                            <td className="text-center py-3 px-4 text-heading-accent border-r border-border">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="py-2 sm:py-3 px-2 sm:px-4 font-medium border-r border-border">Registration Required</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 text-heading-accent border-r border-border">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">No</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">Sometimes</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">Yes</span>
                             </td>
-                            <td className="text-center py-3 px-4">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">Varies</span>
                             </td>
                           </tr>
                           <tr className="border-b border-border">
-                            <td className="py-3 px-4 font-medium border-r border-border">Download Speed</td>
-                            <td className="text-center py-3 px-4 text-heading-accent font-semibold border-r border-border">Under 2 seconds</td>
-                            <td className="text-center py-3 px-4 border-r border-border">3-5 seconds</td>
-                            <td className="text-center py-3 px-4 border-r border-border">Varies</td>
-                            <td className="text-center py-3 px-4">5-10 seconds</td>
+                            <td className="py-2 sm:py-3 px-2 sm:px-4 font-medium border-r border-border">Download Speed</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 text-heading-accent font-semibold border-r border-border text-xs sm:text-sm">Under 2 seconds</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border text-xs sm:text-sm">3-5 seconds</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border text-xs sm:text-sm">Varies</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 text-xs sm:text-sm">5-10 seconds</td>
                           </tr>
                           <tr className="border-b border-border">
-                            <td className="py-3 px-4 font-medium border-r border-border">Video Quality</td>
-                            <td className="text-center py-3 px-4 text-heading-accent font-semibold border-r border-border">Up to 1080p HD</td>
-                            <td className="text-center py-3 px-4 border-r border-border">720p-1080p</td>
-                            <td className="text-center py-3 px-4 border-r border-border">4K (premium)</td>
-                            <td className="text-center py-3 px-4">720p (limited)</td>
+                            <td className="py-2 sm:py-3 px-2 sm:px-4 font-medium border-r border-border">Video Quality</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 text-heading-accent font-semibold border-r border-border text-xs sm:text-sm">Up to 1080p HD</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border text-xs sm:text-sm">720p-1080p</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border text-xs sm:text-sm">4K (premium)</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 text-xs sm:text-sm">720p (limited)</td>
                           </tr>
                           <tr className="border-b border-border">
-                            <td className="py-3 px-4 font-medium border-r border-border">Download Limits</td>
-                            <td className="text-center py-3 px-4 text-heading-accent border-r border-border">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="py-2 sm:py-3 px-2 sm:px-4 font-medium border-r border-border">Download Limits</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 text-heading-accent border-r border-border">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">Unlimited</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">Daily limits</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">Premium only</span>
                             </td>
-                            <td className="text-center py-3 px-4">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">Limited</span>
                             </td>
                           </tr>
                           <tr className="border-b border-border">
-                            <td className="py-3 px-4 font-medium border-r border-border">Installation Required</td>
-                            <td className="text-center py-3 px-4 text-heading-accent border-r border-border">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="py-2 sm:py-3 px-2 sm:px-4 font-medium border-r border-border">Installation Required</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 text-heading-accent border-r border-border">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">No</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">No</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">Yes</span>
                             </td>
-                            <td className="text-center py-3 px-4">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">Varies</span>
                             </td>
                           </tr>
                           <tr className="border-b border-border">
-                            <td className="py-3 px-4 font-medium border-r border-border">Mobile Support</td>
-                            <td className="text-center py-3 px-4 text-heading-accent border-r border-border">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="py-2 sm:py-3 px-2 sm:px-4 font-medium border-r border-border">Mobile Support</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 text-heading-accent border-r border-border">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">iPhone, Android</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">Limited</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">Desktop only</span>
                             </td>
-                            <td className="text-center py-3 px-4">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">Varies</span>
                             </td>
                           </tr>
                           <tr className="border-b border-border">
-                            <td className="py-3 px-4 font-medium border-r border-border">Instagram Reels Support</td>
-                            <td className="text-center py-3 px-4 text-heading-accent border-r border-border">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="py-2 sm:py-3 px-2 sm:px-4 font-medium border-r border-border">Instagram Reels Support</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 text-heading-accent border-r border-border">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">Yes</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">Yes</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">Yes</span>
                             </td>
-                            <td className="text-center py-3 px-4">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">Limited</span>
                             </td>
                           </tr>
                           <tr className="border-b border-border">
-                            <td className="py-3 px-4 font-medium border-r border-border">Multiple Images (Carousel)</td>
-                            <td className="text-center py-3 px-4 text-heading-accent border-r border-border">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="py-2 sm:py-3 px-2 sm:px-4 font-medium border-r border-border">Multiple Images (Carousel)</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 text-heading-accent border-r border-border">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">Yes</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">No</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">No</span>
                             </td>
-                            <td className="text-center py-3 px-4">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">Rarely</span>
                             </td>
                           </tr>
                           <tr className="border-b border-border">
-                            <td className="py-3 px-4 font-medium border-r border-border">Ads & Pop-ups</td>
-                            <td className="text-center py-3 px-4 text-heading-accent border-r border-border">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="py-2 sm:py-3 px-2 sm:px-4 font-medium border-r border-border">Ads & Pop-ups</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 text-heading-accent border-r border-border">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">No intrusive ads</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">Many ads</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">No ads</span>
                             </td>
-                            <td className="text-center py-3 px-4">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">Many ads</span>
                             </td>
                           </tr>
                           <tr className="border-b border-border">
-                            <td className="py-3 px-4 font-medium border-r border-border">Privacy & Security</td>
-                            <td className="text-center py-3 px-4 text-heading-accent border-r border-border">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="py-2 sm:py-3 px-2 sm:px-4 font-medium border-r border-border">Privacy & Security</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 text-heading-accent border-r border-border">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">100% Secure</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">Data tracking</span>
                             </td>
-                            <td className="text-center py-3 px-4 border-r border-border">
-                              <CheckCircle className="h-4 w-4 mx-auto text-green-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border">
+                              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-green-500" />
                               <span className="block text-xs mt-1">Secure</span>
                             </td>
-                            <td className="text-center py-3 px-4">
-                              <X className="h-4 w-4 mx-auto text-red-500" />
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4">
+                              <X className="h-3 w-3 sm:h-4 sm:w-4 mx-auto text-red-500" />
                               <span className="block text-xs mt-1">Varies</span>
                             </td>
                           </tr>
                           <tr>
-                            <td className="py-3 px-4 font-medium border-r border-border">Best For</td>
-                            <td className="text-center py-3 px-4 text-heading-accent font-semibold border-r border-border">All Users</td>
-                            <td className="text-center py-3 px-4 border-r border-border">Basic downloads</td>
-                            <td className="text-center py-3 px-4 border-r border-border">Desktop users</td>
-                            <td className="text-center py-3 px-4">Occasional use</td>
+                            <td className="py-2 sm:py-3 px-2 sm:px-4 font-medium border-r border-border">Best For</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 text-heading-accent font-semibold border-r border-border text-xs sm:text-sm">All Users</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border text-xs sm:text-sm">Basic downloads</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 border-r border-border text-xs sm:text-sm">Desktop users</td>
+                            <td className="text-center py-2 sm:py-3 px-2 sm:px-4 text-xs sm:text-sm">Occasional use</td>
                           </tr>
                         </tbody>
                       </table>
+                      </div>
                     </div>
-                    <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
+                    <div className="p-3 sm:p-4 rounded-lg bg-primary/5 border border-primary/20">
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         <span className="font-semibold text-primary">Recommendation:</span> FastTools Instagram Video Downloader is the clear winner for most users. It offers unlimited downloads, lightning-fast processing (under 2 seconds), no registration required, full mobile support, and handles all Instagram content types including reels and carousel posts. While 4K Video Downloader offers 4K quality for premium users, FastTools provides the best balance of speed, features, and convenience—all completely free. For anyone looking for the world's best and fastest unlimited Instagram video downloader, FastTools is the optimal choice.
                       </p>
@@ -763,10 +765,10 @@ export default function InstagramDownloaderPage() {
               </div>
 
             {/* FAQ Section */}
-              <div className="p-6 rounded-lg bg-card border border-border shadow-lg animate-fade-in-up animation-delay-500">
-                <h2 className="text-xl font-bold mb-4 text-foreground flex items-center gap-2">
-                  <AlertCircle className="h-5 w-5 text-primary" />
-                Frequently Asked Questions
+              <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow-lg animate-fade-in-up animation-delay-500">
+                <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground flex items-center gap-2">
+                  <AlertCircle className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
+                <span className="break-words">Frequently Asked Questions</span>
               </h2>
                 <div className="space-y-4">
                   <div className="space-y-2">
