@@ -100,6 +100,32 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: "/og-image.svg",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex",
+          },
+          {
+            key: "Content-Type",
+            value: "image/svg+xml",
+          },
+        ],
+      },
+      {
+        source: "/logo.svg",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex",
+          },
+          {
+            key: "Content-Type",
+            value: "image/svg+xml",
+          },
+        ],
+      },
     ]
   },
 }

@@ -22,7 +22,7 @@ export async function GET() {
     return date
   }
 
-  // CLEAN IMAGE SITEMAP - Only includes images that actually exist in public folder
+  // IMAGE SITEMAP - Only includes images that actually exist in public folder
   // Organized by priority and avoiding duplicates
 
   // ===== MAIN SITE IMAGES (Highest Priority) =====
@@ -49,9 +49,19 @@ export async function GET() {
           caption: "FastTools Open Graph image for social media sharing and SEO optimization"
         },
         {
-          url: "https://www.fasttools.store/og-image.svg",
-          title: "FastTools Open Graph SVG",
-          caption: "FastTools Open Graph SVG image for scalable social media sharing"
+          url: "https://www.fasttools.store/apple-touch-icon.png",
+          title: "FastTools Apple Touch Icon",
+          caption: "FastTools iOS app icon for home screen and mobile devices"
+        },
+        {
+          url: "https://www.fasttools.store/icon-192.png",
+          title: "FastTools PWA Icon 192x192",
+          caption: "FastTools Progressive Web App icon for mobile and desktop installation"
+        },
+        {
+          url: "https://www.fasttools.store/icon-512.png",
+          title: "FastTools PWA Icon 512x512",
+          caption: "FastTools Progressive Web App icon for high-resolution displays and app stores"
         }
       ]
     }
@@ -254,7 +264,11 @@ export async function GET() {
           caption: "Professional logo for FastTools OCR and text extraction tool"
         }
       ]
-    },
+    }
+  ]
+
+  // ===== PDF TOOLS =====
+  const pdfToolsPages = [
     {
       url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
       lastModified: getFreshnessDate(3),
@@ -293,55 +307,12 @@ export async function GET() {
     }
   ]
 
-  // ===== BRAND ASSETS (High Priority) =====
-  const brandImages = [
-    {
-      url: "https://www.fasttools.store/logo.png",
-      lastModified: getFreshnessDate(7),
-      changeFrequency: "monthly" as const,
-      priority: 0.95,
-      images: [
-        {
-          url: "https://www.fasttools.store/logo.png",
-          title: "FastTools Professional Logo",
-          caption: "FastTools professional logo with modern FT symbol and blue gradient design"
-        }
-      ]
-    },
-    {
-      url: "https://www.fasttools.store/banner.png",
-      lastModified: getFreshnessDate(7),
-      changeFrequency: "monthly" as const,
-      priority: 0.9,
-      images: [
-        {
-          url: "https://www.fasttools.store/banner.png",
-          title: "FastTools Social Media Banner",
-          caption: "FastTools professional social media banner with tools showcase"
-        }
-      ]
-    },
-    {
-      url: "https://www.fasttools.store/og-image.png",
-      lastModified: getFreshnessDate(7),
-      changeFrequency: "monthly" as const,
-      priority: 0.9,
-      images: [
-        {
-          url: "https://www.fasttools.store/og-image.png",
-          title: "FastTools Open Graph Image",
-          caption: "FastTools Open Graph image optimized for social media sharing"
-        }
-      ]
-    }
-  ]
-
   // Combine all image entries
   const allImageEntries = [
     ...mainImages,
     ...toolCategoryImages,
     ...imageToolsPages,
-    ...brandImages
+    ...pdfToolsPages
   ]
 
   // Generate enhanced XML sitemap with cluster organization
