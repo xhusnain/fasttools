@@ -1,0 +1,83 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Plasma Orange -->
+    <linearGradient id="plasma" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff3d00;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff6b00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffaa00;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Deep Black -->
+    <linearGradient id="deepBlack" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="32" cy="32" r="30" fill="url(#deepBlack)"/>
+  
+  <!-- Border -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="url(#plasma)" stroke-width="2"/>
+  
+  <!-- Simplified Tesseract (4D Cube) -->
+  <g filter="url(#glow)">
+    <!-- Outer Square -->
+    <rect x="14" y="14" width="20" height="20" fill="none" stroke="url(#plasma)" stroke-width="2"/>
+    
+    <!-- Inner Square (Offset) -->
+    <rect x="19" y="19" width="20" height="20" fill="none" stroke="url(#plasma)" stroke-width="1.5"/>
+    
+    <!-- Connecting Lines (4D Effect) -->
+    <line x1="14" y1="14" x2="19" y2="19" stroke="url(#plasma)" stroke-width="1.5"/>
+    <line x1="34" y1="14" x2="39" y2="19" stroke="url(#plasma)" stroke-width="1.5"/>
+    <line x1="34" y1="34" x2="39" y2="39" stroke="url(#plasma)" stroke-width="1.5"/>
+    <line x1="14" y1="34" x2="19" y2="39" stroke="url(#plasma)" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Central Vortex -->
+  <g transform="translate(32, 32)" filter="url(#glow)">
+    <!-- Speed Lines -->
+    <line x1="-8" y1="0" x2="-4" y2="0" stroke="url(#plasma)" stroke-width="2" stroke-linecap="round"/>
+    <line x1="4" y1="0" x2="8" y2="0" stroke="url(#plasma)" stroke-width="2" stroke-linecap="round"/>
+    <line x1="0" y1="-8" x2="0" y2="-4" stroke="url(#plasma)" stroke-width="2" stroke-linecap="round"/>
+    <line x1="0" y1="4" x2="0" y2="8" stroke="url(#plasma)" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Core -->
+    <circle cx="0" cy="0" r="4" fill="url(#plasma)"/>
+    <circle cx="0" cy="0" r="2.5" fill="#ffaa00"/>
+    <circle cx="0" cy="0" r="1.5" fill="#fff" opacity="0.9"/>
+  </g>
+  
+  <!-- Tool Shards (Simplified for small size) -->
+  <g fill="url(#plasma)" opacity="0.8">
+    <!-- Top Shard -->
+    <path d="M 32 8 L 28 12 L 36 12 Z"/>
+    
+    <!-- Right Shard -->
+    <path d="M 56 32 L 52 28 L 52 36 Z"/>
+    
+    <!-- Bottom Shard -->
+    <path d="M 32 56 L 28 52 L 36 52 Z"/>
+    
+    <!-- Left Shard -->
+    <path d="M 8 32 L 12 28 L 12 36 Z"/>
+  </g>
+  
+  <!-- Corner Markers -->
+  <g fill="url(#plasma)" opacity="0.6">
+    <circle cx="6" cy="6" r="1.5"/>
+    <circle cx="58" cy="6" r="1.5"/>
+    <circle cx="6" cy="58" r="1.5"/>
+    <circle cx="58" cy="58" r="1.5"/>
+  </g>
+</svg>
