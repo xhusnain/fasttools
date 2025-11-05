@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Youtube, Instagram, Music, Tag, LinkIcon, Search, Hash, Code, Globe, Calculator, Download } from "lucide-react"
+import { ArrowRight, Youtube, Instagram, Music, Tag, LinkIcon, Search, Hash, Code, Globe, Calculator, Download, Facebook } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -64,6 +64,13 @@ export default function SocialMediaToolsPage() {
       icon: Music,
       href: "/social-media-tools/tiktok-downloader",
       color: "purple"
+    },
+    {
+      title: "Facebook Video Downloader",
+      description: "Download Facebook videos in HD quality for educational purposes and content inspiration.",
+      icon: Facebook,
+      href: "/social-media-tools/facebook-downloader",
+      color: "blue"
     },
     {
       title: "YouTube Tag Extractor",

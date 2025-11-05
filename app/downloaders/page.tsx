@@ -77,6 +77,13 @@ const downloaders = [
     icon: Download,
     href: "/social-media-tools/instagram-downloader",
   },
+  {
+    id: "facebook-downloader",
+    name: "Facebook Downloader",
+    description: "Download Facebook videos in HD quality",
+    icon: Download,
+    href: "/social-media-tools/facebook-downloader",
+  },
 ]
 
 export default function DownloadersPage() {
