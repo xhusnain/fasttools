@@ -36,6 +36,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
     video?: number
     [key: string]: number | undefined
   }>({})
+  const [videoLoadError, setVideoLoadError] = useState(false)
 
   const isLikelyFacebookUrl = (url: string) => {
     const pattern = /^(https?:\/\/)?(www\.)?(facebook\.com|fb\.com|m\.facebook\.com)\/.+/i
@@ -45,6 +46,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
   const handleFetch = async () => {
     setError(null)
     setResult(null)
+    setVideoLoadError(false)
     if (!isLikelyFacebookUrl(videoUrl)) {
       setError("Please enter a valid Facebook video URL.")
       return
@@ -86,6 +88,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
         downloading: false,
         downloadStarted: false
       })
+      setVideoLoadError(false)
 
     } catch (e: any) {
       setError(e?.message || "Failed to fetch download links. Please try again.")
@@ -390,7 +393,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
           {result && (
             <div className="space-y-3">
               {/* Show video preview if we have a video URL - prefer HD for preview */}
-              {(result.hdUrl || result.videoUrl || result.normalUrl) && (
+              {(result.hdUrl || result.videoUrl || result.normalUrl) && !videoLoadError && (
                 <div className="flex justify-center">
                   <div className={`relative ${compact ? "w-full max-w-xs" : "w-full max-w-sm"} rounded-md border overflow-hidden bg-black`}>
                     <video
@@ -398,6 +401,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
                       controls
                       className={`${compact ? "h-32" : "h-40 xs:h-44 sm:h-48"} w-full object-contain`}
                       preload="metadata"
+                      onError={() => setVideoLoadError(true)}
                     >
                       Your browser does not support the video tag.
                     </video>
@@ -405,12 +409,15 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
                 </div>
               )}
               {/* Fallback to thumbnail image if available */}
-              {!result.videoUrl && result.thumbnail && (
+              {(videoLoadError || (!result.videoUrl && !result.hdUrl && !result.normalUrl)) && result.thumbnail && (
                 <div className="flex justify-center">
                   <img
                     src={result.thumbnail}
                     alt={result.title || "Facebook video preview"}
                     className={`${compact ? "w-full max-w-xs h-32 object-cover rounded-md border" : "w-full max-w-sm h-40 xs:h-44 sm:h-48 object-cover rounded-md border"}`}
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none'
+                    }}
                   />
                 </div>
               )}
