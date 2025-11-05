@@ -25,41 +25,28 @@ export async function POST(request: NextRequest) {
     // The ab-downloader should handle different URL formats
     const finalUrl = url.trim()
 
-    console.log('Original URL:', url)
-    console.log('Using URL as-is:', finalUrl)
-
     try {
       // Use ab-downloader's fbdown function with the exact URL user provided
       // Try both the original URL and watch format if it's a share URL
       let data = null
-      let error = null
       
       // First try the URL as-is
       try {
         data = await fbdown(finalUrl)
-        console.log('Success with original URL')
       } catch (firstError: any) {
-        console.log('Failed with original URL, trying watch format:', firstError?.message)
-        error = firstError
-        
         // If it's a share URL and first attempt failed, try converting to watch format
         const shareMatch = finalUrl.match(/facebook\.com\/share\/v\/([^\/\?]+)/i)
         if (shareMatch) {
           const watchUrl = `https://www.facebook.com/watch/?v=${shareMatch[1]}`
-          console.log('Trying watch format:', watchUrl)
           try {
             data = await fbdown(watchUrl)
-            console.log('Success with watch format')
           } catch (secondError: any) {
-            console.log('Failed with watch format too:', secondError?.message)
             throw firstError // Throw original error
           }
         } else {
           throw firstError
         }
       }
-
-      console.log('Facebook download response:', JSON.stringify(data, null, 2))
 
       if (!data) {
         return NextResponse.json(
@@ -117,16 +104,11 @@ export async function POST(request: NextRequest) {
             if (typeof obj === 'object') {
               for (const key in obj) {
                 const value = obj[key]
+                const keyLower = key.toLowerCase()
                 
                 // Check property names that might contain video URLs
-                if (key.toLowerCase().includes('video') || 
-                    key.toLowerCase().includes('url') || 
-                    key.toLowerCase().includes('download') ||
-                    key.toLowerCase().includes('stream') ||
-                    key.toLowerCase().includes('hd') ||
-                    key.toLowerCase().includes('sd') ||
-                    key.toLowerCase().includes('link')) {
-                  
+                if (keyLower.includes('video') || keyLower.includes('url') || keyLower.includes('download') ||
+                    keyLower.includes('stream') || keyLower.includes('hd') || keyLower.includes('sd') || keyLower.includes('link')) {
                   if (typeof value === 'string' && 
                       (value.includes('.mp4') || value.includes('video') || value.includes('fbcdn') || value.includes('fbexternal')) &&
                       (value.startsWith('http://') || value.startsWith('https://'))) {
@@ -146,19 +128,6 @@ export async function POST(request: NextRequest) {
       }
 
       if (!videoUrl) {
-        console.error('No video URL found. Response structure:', JSON.stringify(data, null, 2))
-        console.error('Response type:', typeof data)
-        console.error('Response keys:', typeof data === 'object' ? Object.keys(data) : 'N/A')
-        
-        // Try to extract any URL from the response as last resort
-        if (typeof data === 'object') {
-          for (const key in data) {
-            if (typeof data[key] === 'string' && data[key].startsWith('http')) {
-              console.log(`Found potential URL in key "${key}":`, data[key])
-            }
-          }
-        }
-        
         return NextResponse.json(
           { 
             success: false, 
@@ -188,7 +157,6 @@ export async function POST(request: NextRequest) {
 
     } catch (error: any) {
       // Provide more specific error messages
-      console.error('Facebook download error:', error)
       const errorMessage = error?.message || 'Failed to download Facebook video'
       
       return NextResponse.json(

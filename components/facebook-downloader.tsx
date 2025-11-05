@@ -137,34 +137,26 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
   }
 
   const performBackgroundDownload = async (url: string, filename: string, downloadType: string) => {
-    // Skip background download for proxy URLs (like dl.snapcdn.app) to avoid CORS errors
-    // These URLs work better with direct download
+    // Skip background download for proxy URLs to avoid CORS errors
     if (url.includes('dl.snapcdn.app') || url.includes('download?token=')) {
       return
     }
     
     try {
-      try {
-        const response = await fetch(url, {
-          method: 'GET',
-          headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            'Accept': '*/*',
-            'Referer': 'https://www.facebook.com/'
-          }
-        })
-
-        if (response.ok) {
-          const blob = await response.blob()
-          
-          if (blob.size > 0) {
-            ;(window as any)[`downloadedBlob_${downloadType}`] = blob
-            return
-          }
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          'Accept': '*/*',
+          'Referer': 'https://www.facebook.com/'
         }
-      } catch (directError) {
-        // Silent fail - background download is not critical
-        // CORS errors are expected for proxy URLs
+      })
+
+      if (response.ok) {
+        const blob = await response.blob()
+        if (blob.size > 0) {
+          ;(window as any)[`downloadedBlob_${downloadType}`] = blob
+        }
       }
     } catch (error) {
       // Silent fail - background download is not critical
@@ -222,7 +214,6 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
           
           return
         } catch (linkError) {
-          console.error('Direct link failed:', linkError)
           throw new Error('Download failed. Please try again.')
         }
       }
@@ -287,7 +278,6 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
           
           return
         } catch (linkError) {
-          console.error('Direct link also failed:', linkError)
           // Fall through to error
         }
       }
