@@ -1,59 +1,116 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useTheme } from "next-themes"
+import { useEffect, useState } from "react"
 
-const HERO_IMAGES = [
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/greg-rakozy-oMpAz-DN-9I-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-5477L9Z5eqI-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-6-jTZysYY_U-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-8Hjx3GNZYeA-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-E7q00J_8N7A-unsplash%20(1).jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-E7q00J_8N7A-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-HWIOLU7_O6w-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-O0dEH-UPj68-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-OVO8nK-7Rfs-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-Q1p7bh3SHj8-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-WKT3TE5AQu0-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-_SFJhRPzJHs-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-fDSqEWLRNFE-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-lEBDlbXLEgs-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-pd4lo70LdbI-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-rTZW4f02zY8-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-vltMzn0jqsA-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-whDrFMucHkc-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-yZygONrUBe8-unsplash.jpg",
-  "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/shot-by-cerqueira-0o_GEzyargo-unsplash.jpg",
-]
+// Theme-based hero images
+const HERO_IMAGES = {
+  dark: "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/greg-rakozy-oMpAz-DN-9I-unsplash.jpg",
+  light: "https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-HWIOLU7_O6w-unsplash.jpg",
+}
 
 export function HeroSectionBg() {
-  const [imageUrl, setImageUrl] = useState<string>("")
-  const [loading, setLoading] = useState(true)
-
+  const { theme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  const [imageError, setImageError] = useState(false)
+  const [imageLoaded, setImageLoaded] = useState(false)
+  
+  // Handle hydration - only show theme-based image after mount
   useEffect(() => {
-    // Pick a random image on mount
-    const randomIndex = Math.floor(Math.random() * HERO_IMAGES.length)
-    setImageUrl(HERO_IMAGES[randomIndex])
-    setLoading(false)
+    setMounted(true)
+    
+    // Preload both images to ensure they're cached
+    const preloadImages = () => {
+      const images = [HERO_IMAGES.dark, HERO_IMAGES.light]
+      images.forEach((src) => {
+        const img = new Image()
+        img.onload = () => {
+          // Image loaded successfully
+        }
+        img.onerror = () => {
+          console.warn(`Failed to preload image: ${src}`)
+        }
+        img.src = src
+      })
+    }
+    
+    preloadImages()
   }, [])
+  
+  // Use resolvedTheme to handle SSR and default to dark if undefined
+  const currentTheme = mounted ? (resolvedTheme || theme || "dark") : "dark"
+  const imageUrl = currentTheme === "dark" ? HERO_IMAGES.dark : HERO_IMAGES.light
 
-  if (loading || !imageUrl) {
-    return (
-      <div className="absolute inset-0 bg-card/20 animate-pulse">
-        <div className="w-full h-full bg-gradient-to-br from-primary/10 to-primary/90/10"></div>
-      </div>
-    )
+  // Reset error state when theme changes
+  useEffect(() => {
+    setImageError(false)
+    setImageLoaded(false)
+  }, [currentTheme])
+
+  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.currentTarget
+    if (img.complete && img.naturalHeight !== 0) {
+      setImageLoaded(true)
+      setImageError(false)
+    }
   }
+
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    console.error(`Failed to load hero image: ${imageUrl}`)
+    setImageError(true)
+    setImageLoaded(false)
+  }
+
+  // Check if image is already loaded (cached)
+  useEffect(() => {
+    if (!mounted || !imageUrl) return
+    
+    const img = new Image()
+    img.onload = () => {
+      setImageLoaded(true)
+      setImageError(false)
+    }
+    img.onerror = () => {
+      setImageError(true)
+      setImageLoaded(false)
+    }
+    img.src = imageUrl
+    
+    // If image is already cached, check immediately
+    if (img.complete) {
+      if (img.naturalHeight !== 0) {
+        setImageLoaded(true)
+        setImageError(false)
+      } else {
+        setImageError(true)
+        setImageLoaded(false)
+      }
+    }
+  }, [mounted, imageUrl])
 
   return (
     <>
       {/* Hero Background Image */}
       <div className="absolute inset-0 w-full h-full">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imageUrl}
-          alt="Space"
-          className="absolute inset-0 w-full h-full object-cover"
+          alt=""
+          className={`absolute inset-0 w-full h-full object-cover ${
+            imageLoaded ? 'opacity-100' : 'opacity-0'
+          } transition-opacity duration-300 ease-in-out`}
           loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          onLoad={handleImageLoad}
+          onError={handleImageError}
+        />
+        {/* Fallback gradient background - shows when image is loading or on error */}
+        <div 
+          className={`absolute inset-0 w-full h-full bg-gradient-to-br ${
+            currentTheme === "dark" 
+              ? "from-slate-900 via-slate-800 to-slate-900" 
+              : "from-slate-100 via-slate-50 to-slate-100"
+          } ${imageError || !imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300 ease-in-out`}
         />
       </div>
     </>

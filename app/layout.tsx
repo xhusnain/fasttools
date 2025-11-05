@@ -235,6 +235,18 @@ export const metadata: Metadata = {
             )}
             <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous"/>
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
+            <link rel="preconnect" href="https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev"/>
+            {/* Preload hero background images for caching */}
+            <link 
+              rel="preload" 
+              href="https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/greg-rakozy-oMpAz-DN-9I-unsplash.jpg" 
+              as="image"
+            />
+            <link 
+              rel="preload" 
+              href="https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-HWIOLU7_O6w-unsplash.jpg" 
+              as="image"
+            />
             {env.isProduction && (
               <>
                 <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous"/>
