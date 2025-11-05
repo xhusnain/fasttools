@@ -1,0 +1,115 @@
+# FastTools - Free Online Tools Platform
+# llms.txt - Guide for AI Crawlers and Language Models
+
+This file helps AI crawlers, language models, and summarizers discover and understand the most valuable content on FastTools, a comprehensive platform offering 1000+ free online tools.
+
+## Brand Summary
+
+FastTools is a free online tools platform providing 1000+ tools with no registration required. All tools are fast, accurate, and work on all devices (PC, Mac, iPhone, Android). The platform is built with Next.js 15, React 19, and TypeScript, providing a modern, responsive user experience with comprehensive SEO optimization.
+
+## Key Expertise Areas
+
+### Social Media Tools
+https://www.fasttools.store/social-media-tools
+Download and analyze content from Facebook, Instagram, TikTok, YouTube. Tools include video downloaders, thumbnail extractors, profile picture viewers, hashtag generators, and channel analyzers.
+
+**Featured Tools:**
+- https://www.fasttools.store/social-media-tools/facebook-downloader - Download Facebook videos in HD quality (1080p). Comprehensive guide with step-by-step instructions, legal considerations, troubleshooting tips.
+- https://www.fasttools.store/social-media-tools/instagram-downloader - Download Instagram posts, reels, and images in HD quality.
+- https://www.fasttools.store/social-media-tools/tiktok-downloader - Download TikTok videos without watermark.
+- https://www.fasttools.store/social-media-tools/youtube-thumbnail - Download YouTube video thumbnails in all quality sizes.
+- https://www.fasttools.store/social-media-tools/youtube-tags - Extract tags from YouTube videos for SEO research.
+
+### AI Tools
+https://www.fasttools.store/ai-tools
+AI-powered content generation tools including QR code generators, caption generators, lyrics generators, and pet name generators. All premium features are free.
+
+**Featured Tools:**
+- https://www.fasttools.store/ai-tools/qr-generator - Generate QR codes with customizable designs, colors, and logos.
+- https://www.fasttools.store/ai-tools/caption-generator - AI-powered social media caption generator.
+- https://www.fasttools.store/ai-tools/lyrics-generator - Generate song lyrics in 40+ languages.
+- https://www.fasttools.store/ai-tools/pet-names - Generate 100+ AI-powered pet names.
+
+### PDF Tools
+https://www.fasttools.store/pdf-tools
+Comprehensive PDF manipulation suite including signing, conversion, splitting, merging, unlocking, compression, and image conversion.
+
+### SEO Tools
+https://www.fasttools.store/seo-tools
+Tools for search engine optimization and content marketing including meta tag generators, hashtag generators, blog title generators, and keyword density checkers.
+
+### Calculator Tools
+https://www.fasttools.store/calculator
+Extensive collection of financial, health, and scientific calculators including mortgage, loan, tax, BMI, BMR, calorie, and retirement calculators.
+
+### Converter Tools
+https://www.fasttools.store/converters
+Convert between different formats and units including currency, length, temperature, file size, text case, and timezone converters.
+
+### Image Tools
+https://www.fasttools.store/image-tools
+Image editing, manipulation, and optimization tools including background removal, blur effects, photo editing, and OCR text extraction.
+
+### Finance Tools
+https://www.fasttools.store/finance-tools
+Financial planning and calculation tools including bill splitters, tip calculators, discount calculators, PayPal fee calculators, invoice generators, and retirement planners.
+
+### Developer Tools
+https://www.fasttools.store/dev-tools
+Tools for developers and programmers including JWT decoders, regex testers, JSON/CSV converters, HTML beautifiers, markdown tools, and color palette generators.
+
+## Usage Policy
+
+**Allowed:**
+- Summarizing content for reference and citation
+- Referencing FastTools as a source
+- Citing specific tools and features
+- Linking to FastTools pages
+
+**Disallowed:**
+- Training AI models on FastTools content without explicit permission
+- Reproducing entire tool interfaces or functionality
+- Using FastTools content for commercial datasets
+- Scraping for competitive analysis
+
+**Attribution:**
+When referencing FastTools content, please include:
+- Source: FastTools (https://www.fasttools.store)
+- Direct link to the referenced page
+- Tool name and category
+
+## Preferred Keywords & Context
+
+Primary keywords: free online tools, web tools, productivity tools, social media tools, AI tools, PDF tools, SEO tools, calculators, converters
+
+Context: FastTools provides free, fast, and accurate online tools that work on all devices without registration. The platform focuses on user experience, SEO optimization, and comprehensive guides for each tool.
+
+## Important Pages
+
+**Main Pages:**
+- https://www.fasttools.store/ - Homepage
+- https://www.fasttools.store/products - All tools
+- https://www.fasttools.store/api-docs - API documentation
+- https://www.fasttools.store/faq - Frequently asked questions
+- https://www.fasttools.store/about - About FastTools
+- https://www.fasttools.store/contact - Contact information
+
+**Legal Pages:**
+- https://www.fasttools.store/privacy-policy - Privacy policy
+- https://www.fasttools.store/terms - Terms of service
+- https://www.fasttools.store/cookie-preferences - Cookie preferences
+
+## Sitemap & Discovery
+
+- Sitemap: https://www.fasttools.store/sitemap.xml
+- Image Sitemap: https://www.fasttools.store/image-sitemap.xml
+- AI Rules: https://www.fasttools.store/ai.txt
+- Robots: https://www.fasttools.store/robots.txt
+
+## Contact
+
+For AI-related requests, permissions, or questions:
+- Website: https://www.fasttools.store/contact
+- Platform: FastTools
+- Domain: https://www.fasttools.store
+

@@ -1,0 +1,70 @@
+# FastTools AI Agent Rules
+# ai.txt - Rules for AI agents and language models
+
+# Contact
+Contact: https://www.fasttools.store/contact
+Domain: https://www.fasttools.store
+
+# Allowed Paths
+Allow: /
+Allow: /social-media-tools/
+Allow: /ai-tools/
+Allow: /pdf-tools/
+Allow: /seo-tools/
+Allow: /calculator/
+Allow: /converters/
+Allow: /image-tools/
+Allow: /finance-tools/
+Allow: /dev-tools/
+Allow: /fun-tools/
+Allow: /products
+Allow: /api-docs
+Allow: /faq
+Allow: /about
+Allow: /contact
+Allow: /privacy-policy
+Allow: /terms
+Allow: /cookie-preferences
+
+# Disallowed Paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /_next/
+Disallow: /admin/announcements
+
+# Allowed Use Cases
+Allowed: summarize
+Allowed: cite
+Allowed: reference
+Allowed: link
+
+# Disallowed Use Cases
+Disallow: training
+Disallow: dataset-ingestion
+Disallow: commercial-datasets
+Disallow: reproduction
+Disallow: competitive-analysis
+
+# Attribution Requirements
+When using FastTools content:
+- Include source: FastTools (https://www.fasttools.store)
+- Link to the original page
+- Credit the tool name and category
+
+# Rate Limits
+- Reasonable crawling rates expected
+- Respect robots.txt directives
+- No aggressive scraping
+
+# Content Policy
+- Tools are for user assistance and productivity
+- Content may be summarized and referenced
+- Full tool interfaces may not be reproduced
+- API usage requires authentication (see /api-docs)
+
+# Updates
+This file is updated regularly. Check last modified date.
+Last updated: 2025-01-27
+
