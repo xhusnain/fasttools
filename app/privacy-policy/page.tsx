@@ -363,7 +363,7 @@ export default function PrivacyPolicyPage() {
                     Our website and tools are not directed to children under 13 years of age. We do not knowingly collect personal information from children. If we become aware that a child has provided us with personal information, we will delete it immediately.
                   </p>
                   <p>
-                    If you are a parent or guardian and believe that your child has provided us with personal information, please contact us immediately at fasttools.store@outlook.com so we can take appropriate action.
+                    If you are a parent or guardian and believe that your child has provided us with personal information, please contact us immediately at support@fasttools.store so we can take appropriate action.
                   </p>
                 </div>
               </div>
@@ -420,8 +420,8 @@ export default function PrivacyPolicyPage() {
                     <p className="text-sm text-muted-foreground mb-3">
                       To exercise these rights, please contact us at:
                     </p>
-                    <a href="mailto:fasttools.store@outlook.com" className="text-foreground hover:text-foreground hover:underline font-medium">
-                      fasttools.store@outlook.com
+                    <a href="mailto:support@fasttools.store" className="text-foreground hover:text-foreground hover:underline font-medium">
+                      support@fasttools.store
                     </a>
                     <p className="text-xs text-muted-foreground mt-2">
                       We will respond to your request within 30 days.
@@ -467,9 +467,9 @@ export default function PrivacyPolicyPage() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">Privacy Inquiries</h4>
-                        <a href="mailto:fasttools.store@outlook.com" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium">
+                        <a href="mailto:support@fasttools.store" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium">
                           <Mail className="h-4 w-4" />
-                          fasttools.store@outlook.com
+                          support@fasttools.store
                         </a>
                       </div>
                       <div>

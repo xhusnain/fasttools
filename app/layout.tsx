@@ -200,7 +200,7 @@ export const metadata: Metadata = {
         contactPoint: {
           "@type": "ContactPoint",
           contactType: "customer service",
-          email: "fasttools.store@outlook.com",
+          email: "support@fasttools.store",
           availableLanguage: "English"
         },
         address: {

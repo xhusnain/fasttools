@@ -151,7 +151,7 @@ export default function DownloadersPage() {
                   We're constantly adding new downloaders to help you save your favorite content. If you need a downloader that's not available, please email us and we'll make it for you.
                 </p>
                 <a
-                  href="mailto:fasttools.store@outlook.com"
+                  href="mailto:support@fasttools.store"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-foreground font-bold rounded-lg hover:bg-primary transition-colors"
                 >
                   Contact Us
