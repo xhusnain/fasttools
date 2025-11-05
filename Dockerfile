@@ -1,27 +1,35 @@
-# Dockerfile for production build
-FROM node:20-alpine AS base
+# ----------------------------
+# Base image for Node.js
+# Using Debian-based image for onnxruntime-node compatibility (requires glibc)
+# ----------------------------
+FROM node:20-slim AS base
 
-# Install dependencies only when needed
-FROM base AS deps
-RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
+# ----------------------------
+# Dependency installation
+# ----------------------------
+FROM base AS deps
+
+# Enable corepack and install a stable pnpm version
+RUN corepack enable && corepack prepare pnpm@10.18.0 --activate
 
 # Copy package files
 COPY package.json pnpm-lock.yaml* ./
 
-# Install dependencies
-RUN pnpm install --frozen-lockfile
+# Install dependencies (safe for CI/CD)
+RUN pnpm install --no-frozen-lockfile
 
-# Rebuild the source code only when needed
+# ----------------------------
+# Build stage
+# ----------------------------
 FROM base AS builder
 WORKDIR /app
 
-# Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
+# Use same pnpm version as in deps
+RUN corepack enable && corepack prepare pnpm@10.18.0 --activate
 
+# Copy dependencies and source
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
@@ -29,34 +37,41 @@ COPY . .
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Download models before build
+# (Optional) Download models if needed
 RUN pnpm run download-models
 
 # Build the application
+# ✅ Do not require API keys at build time for server-only routes
 RUN pnpm run build
 
-# Production image, copy all the files and run next
+# ----------------------------
+# Production runtime
+# ----------------------------
 FROM base AS runner
 WORKDIR /app
 
+# Set runtime environment variables (can be overridden via docker-compose)
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=7000
+ENV HOSTNAME="0.0.0.0"
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+# Create non-root user
+RUN groupadd -r -g 1001 nodejs \
+  && useradd -r -u 1001 -g nodejs nextjs
 
-# Copy built application
-# Note: Next.js standalone output includes public and .next/static
+# Copy the built application
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 
+# Use non-root user
 USER nextjs
 
-EXPOSE 3000
+# ----------------------------
+# ✅ Expose on port 7000
+# ----------------------------
+EXPOSE 7000
 
-ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
-
+# Start the server
 CMD ["node", "server.js"]
-

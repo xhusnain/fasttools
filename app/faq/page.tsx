@@ -15,9 +15,9 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-    title: "FastTools FAQ | Free Online Tools Questions & Answers",
+    title: "FAQ",
     description:
-        "Get answers to frequently asked questions about FastTools - the world's leading free online tools platform. Learn about our tools, privacy, features, and more.",
+        "Get answers to frequently asked questions about FastTools — learn about our tools, privacy, features, and more.",
     keywords: [
         "fasttools",
         "free online tools FAQ",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         "digital tools help",
         "web utilities FAQ"
     ],
-    alternates: { canonical: "https://www.fasttools.store/faq" },
+    alternates: { canonical: "/faq" },
     robots: {
         index: true,
         follow: true,
@@ -46,27 +46,26 @@ export const metadata: Metadata = {
         }
     },
     openGraph: {
-        title: "FastTools FAQ - Free Online Tools Questions & Answers",
-        description: "Get answers to frequently asked questions about FastTools - the world's leading free online tools platform. Learn about our tools, privacy, features, and more.",
-        url: "https://www.fasttools.store/faq",
-        type: "article",
+        title: "FAQ",
+        description: "Answers to common questions about FastTools — our tools, privacy, features, and more.",
+        url: "/faq",
+        type: "website",
         siteName: "FastTools",
-        locale: "en_US",
         images: [
             {
-                url: "/og-image.svg",
+                url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "FastTools FAQ - Free Online Tools",
-                type: "image/svg+xml",
+                alt: "FastTools - Free Online Tools Platform",
+                type: "image/png",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "FastTools FAQ - Free Online Tools Questions & Answers",
-        description: "Get answers to frequently asked questions about FastTools. Learn about our tools, privacy, features, and more.",
-        images: ["/og-image.svg"],
+        title: "FAQ",
+        description: "Answers to common questions about FastTools — tools, privacy, features, and more.",
+        images: ["/og-image.png"],
     },
 }
 
@@ -264,9 +263,29 @@ export default function FAQPage() {
         }))
     }
 
+    const breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.fasttools.store/"
+            },
+            {
+                "@type": "ListItem",
+                position: 2,
+                name: "FAQ",
+                item: "https://www.fasttools.store/faq"
+            }
+        ]
+    }
+
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
             <div className="min-h-screen bg-background">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
                     <Breadcrumbs

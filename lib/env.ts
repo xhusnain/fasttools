@@ -6,14 +6,14 @@ export const env = {
   siteName: process.env.NEXT_PUBLIC_SITE_NAME || "fasttools.store",
 
   // AI Configuration
-  openaiApiKey: process.env.OPENAI_API_KEY,
-  geminiApiKey: process.env.GEMINI_API_KEY,
+  openaiApiKey: process.env.OPENAI_API_KEY || " ",
+  geminiApiKey: process.env.GEMINI_API_KEY || "***REMOVED***",
 
   // Currency Converter
   exchangeRateApiKey: process.env.NEXT_PUBLIC_EXCHANGE_RATE_API_KEY,
 
   // Analytics
-  gaId: process.env.NEXT_PUBLIC_GA_ID,
+  gaId: process.env.NEXT_PUBLIC_GA_ID || "G-4G804HZ22C",
   gtmId: process.env.NEXT_PUBLIC_GTM_ID,
 
   // Social Media APIs

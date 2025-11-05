@@ -9,8 +9,8 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "API Documentation - FastTools | Free APIs & Developer Resources",
-  description: "Comprehensive API documentation for FastTools. Free currency conversion API and more developer tools. Get started with our RESTful APIs.",
+  title: "API Documentation",
+  description: "Comprehensive API docs for FastTools. Free currency conversion API and more developer tools.",
   keywords: [
     "api documentation",
     "currency api",
@@ -22,30 +22,29 @@ export const metadata: Metadata = {
     "webhook api"
   ],
   openGraph: {
-    title: "API Documentation - FastTools | Free APIs & Developer Resources",
-    description: "Comprehensive API documentation for FastTools. Free currency conversion API and more developer tools.",
+    title: "API Documentation",
+    description: "Comprehensive API docs for FastTools. Free currency conversion API and more developer tools.",
     type: "website",
-    url: "https://www.fasttools.store/api-docs",
+    url: "/api-docs",
     siteName: "FastTools",
-    locale: "en_US",
     images: [
       {
-        url: "https://www.fasttools.store/banner.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "FastTools API Documentation",
+        alt: "FastTools - Free Online Tools Platform",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "API Documentation - FastTools | Free APIs & Developer Resources",
-    description: "Comprehensive API documentation for FastTools. Free currency conversion API and more developer tools.",
-    images: ["https://www.fasttools.store/banner.png"],
+    title: "API Documentation",
+    description: "Comprehensive API docs for FastTools. Free currency conversion API and more developer tools.",
+    images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://www.fasttools.store/api-docs",
+    canonical: "/api-docs",
   },
   robots: {
     index: true,
@@ -86,9 +85,29 @@ export default function ApiDocsPage() {
     }
   }
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.fasttools.store/"
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "API Docs",
+        item: "https://www.fasttools.store/api-docs"
+      }
+    ]
+  }
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <Breadcrumbs

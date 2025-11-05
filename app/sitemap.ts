@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     date.setDate(date.getDate() - daysAgo)
     return date
   }
+    console.log("Sitemap started")
 
   const mainPages = [
     {
@@ -19,21 +20,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://www.fasttools.store/products",
-      lastModified: currentDate,
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
     },
     {
       url: "https://www.fasttools.store/api-docs",
-      lastModified: currentDate,
-      changeFrequency: "weekly" as const,
-      priority: 0.85,
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
     },
     {
       url: "https://www.fasttools.store/downloaders",
-      lastModified: currentDate,
-      changeFrequency: "weekly" as const,
-      priority: 0.85,
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
     },
     {
       url: "https://www.fasttools.store/about",
@@ -374,6 +375,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Social Media Tools
     {
       url: "https://www.fasttools.store/social-media-tools/tiktok-downloader",
+      lastModified: getFreshnessDate(1),
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    },
+    {
+      url: "https://www.fasttools.store/social-media-tools/instagram-downloader",
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,
       priority: 0.95,

@@ -25,7 +25,7 @@ export async function POST(req: Request) {
 
     if (!result.success) {
       // Fallback to OpenAI if Gemini fails
-      if (env.openaiApiKey) {
+      if (env.geminiApiKey) {
         try {
           const prompt = `Generate 5 engaging ${platform} captions for an image with this description: "${description}"
 
