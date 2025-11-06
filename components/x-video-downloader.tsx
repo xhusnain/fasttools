@@ -429,14 +429,14 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
   }
 
   return (
-    <div className="space-y-4 sm:space-y-6">
+    <div className="space-y-3 xs:space-y-4 sm:space-y-5 md:space-y-6">
       {!compact && (
-        <Card className="p-4 sm:p-5 md:p-6 bg-card border border-border shadow-sm">
-          <div className="flex gap-2 sm:gap-3">
-            <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0 mt-0.5" />
-            <div className="space-y-1 sm:space-y-2">
-              <p className="text-xs sm:text-sm font-medium text-foreground">Legal Disclaimer</p>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+        <Card className="p-3 xs:p-4 sm:p-5 md:p-6 bg-card border border-border shadow-sm">
+          <div className="flex gap-2 xs:gap-2.5 sm:gap-3">
+            <AlertTriangle className="h-4 w-4 xs:h-[18px] xs:w-[18px] sm:h-5 sm:w-5 text-primary flex-shrink-0 mt-0.5" />
+            <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
+              <p className="text-xs xs:text-sm font-medium text-foreground">Legal Disclaimer</p>
+              <p className="text-[11px] xs:text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 Downloading X/Twitter content may violate copyright laws and X/Twitter's terms of service. This tool is for
                 educational purposes only. Always respect content creators' rights and only download content you have
                 permission to use. Use downloaded content responsibly and give proper credit to original creators.
@@ -446,10 +446,10 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
         </Card>
       )}
 
-      <Card className={`p-4 sm:p-5 md:p-6 bg-card border-border shadow-sm ${compact ? "" : ""}`}>
-        <div className="space-y-3 sm:space-y-4">
+      <Card className={`p-3 xs:p-4 sm:p-5 md:p-6 lg:p-7 bg-card border-border shadow-sm ${compact ? "" : ""}`}>
+        <div className="space-y-3 xs:space-y-3.5 sm:space-y-4 md:space-y-5">
           <div>
-            <Label htmlFor="post-url" className="text-xs sm:text-sm font-medium text-foreground">
+            <Label htmlFor="post-url" className="text-xs xs:text-sm sm:text-base font-medium text-foreground block mb-1.5 xs:mb-2">
               X/Twitter Post URL
             </Label>
             <Input
@@ -458,39 +458,40 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
               placeholder="https://twitter.com/username/status/... or https://x.com/username/status/..."
               value={postUrl}
               onChange={(e) => setPostUrl(e.target.value)}
-              className={`mt-2 ${compact ? "h-10 sm:h-11" : "h-12 sm:h-14"} text-sm sm:text-base border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20`}
+              className={`mt-1 xs:mt-1.5 ${compact ? "h-10 xs:h-11 sm:h-12" : "h-11 xs:h-12 sm:h-[52px] md:h-14"} text-xs xs:text-sm sm:text-base px-3 xs:px-4 border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20`}
             />
           </div>
 
           <Button
             onClick={handleFetch}
             disabled={!postUrl || loading}
-            className={`w-full ${compact ? "h-10 sm:h-11" : "h-12 sm:h-14"} text-sm sm:text-base font-medium shadow-sm hover:shadow-md transition-all`}
+            className={`w-full ${compact ? "h-10 xs:h-11 sm:h-12" : "h-11 xs:h-12 sm:h-[52px] md:h-14"} text-xs xs:text-sm sm:text-base md:text-lg font-medium shadow-sm hover:shadow-md transition-all px-4 xs:px-6`}
           >
             {loading ? (
               <>
-                <LoadingSpinner className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                <span className="hidden xs:inline">Processing content... (Usually takes 1-3 seconds)</span>
+                <LoadingSpinner className="mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
+                <span className="hidden xs:inline sm:hidden">Processing...</span>
+                <span className="hidden sm:inline">Processing content... (Usually takes 1-3 seconds)</span>
                 <span className="xs:hidden">Processing...</span>
               </>
             ) : (
               <>
-                <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                Get Download Links
+                <Download className="mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
+                <span className="text-xs xs:text-sm sm:text-base">Get Download Links</span>
               </>
             )}
           </Button>
 
           {error && (
-            <div className="text-sm text-muted-foreground bg-muted/50 border border-border rounded-md p-3">
-              <div className="flex items-start gap-2">
-                <AlertTriangle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                <div className="flex-1">
-                  <p className="font-medium text-foreground">Download Failed</p>
-                  <p className="mt-1">{error}</p>
-                  <div className="mt-2 text-xs text-muted-foreground">
-                    <p><strong>Troubleshooting tips:</strong></p>
-                    <ul className="list-disc list-inside mt-1 space-y-1">
+            <div className="text-xs xs:text-sm text-muted-foreground bg-muted/50 border border-border rounded-md p-2.5 xs:p-3 sm:p-4">
+              <div className="flex items-start gap-2 xs:gap-2.5">
+                <AlertTriangle className="h-3.5 w-3.5 xs:h-4 xs:w-4 text-primary flex-shrink-0 mt-0.5" />
+                <div className="flex-1 min-w-0">
+                  <p className="font-medium text-foreground text-xs xs:text-sm">Download Failed</p>
+                  <p className="mt-1 text-[11px] xs:text-xs sm:text-sm break-words">{error}</p>
+                  <div className="mt-2 xs:mt-2.5 text-[10px] xs:text-xs">
+                    <p className="font-semibold mb-1"><strong>Troubleshooting tips:</strong></p>
+                    <ul className="list-disc list-inside mt-1 space-y-0.5 xs:space-y-1 text-[10px] xs:text-xs leading-relaxed">
                       <li>Make sure the X/Twitter post contains a video (image-only posts are not supported)</li>
                       <li>Ensure the post is public and accessible</li>
                       <li>Try refreshing the page and attempting again</li>
@@ -506,16 +507,16 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                     disabled={loading}
                     variant="outline"
                     size="sm"
-                    className="mt-3"
+                    className="mt-2.5 xs:mt-3 h-8 xs:h-9 text-xs xs:text-sm px-3 xs:px-4"
                   >
                     {loading ? (
                       <>
-                        <LoadingSpinner className="mr-2 h-3 w-3" />
+                        <LoadingSpinner className="mr-1.5 xs:mr-2 h-3 w-3 xs:h-3.5 xs:w-3.5" />
                         Retrying...
                       </>
                     ) : (
                       <>
-                        <Download className="mr-2 h-3 w-3" />
+                        <Download className="mr-1.5 xs:mr-2 h-3 w-3 xs:h-3.5 xs:w-3.5" />
                         Try Again
                       </>
                     )}
@@ -526,22 +527,22 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
           )}
 
           {result && (
-            <div className="space-y-3">
+            <div className="space-y-3 xs:space-y-3.5 sm:space-y-4">
               {/* Debug info - remove in production */}
               {process.env.NODE_ENV === 'development' && (
-                <div className="text-xs text-muted-foreground p-2 bg-muted rounded">
+                <div className="text-[10px] xs:text-xs text-muted-foreground p-2 xs:p-2.5 bg-muted rounded">
                   Debug: videoUrl={result.videoUrl ? 'exists' : 'null'}, imageUrl={result.imageUrl ? 'exists' : 'null'}, images={result.images?.length || 0}
                 </div>
               )}
               
               {/* Show video preview if we have a video URL */}
               {result.videoUrl && !videoLoadError && (
-                <div className="flex justify-center">
-                  <div className={`relative ${compact ? "w-full max-w-xs" : "w-full max-w-sm"} rounded-md border overflow-hidden bg-black`}>
+                <div className="flex justify-center px-1">
+                  <div className={`relative ${compact ? "w-full max-w-[280px] xs:max-w-xs" : "w-full max-w-[320px] xs:max-w-sm sm:max-w-md md:max-w-lg"} rounded-md border overflow-hidden bg-black`}>
                     <video
                       src={result.videoUrl}
                       controls
-                      className={`${compact ? "h-32" : "h-40 xs:h-44 sm:h-48"} w-full object-contain`}
+                      className={`${compact ? "h-32 xs:h-36 sm:h-40" : "h-36 xs:h-40 sm:h-48 md:h-56 lg:h-64"} w-full object-contain`}
                       preload="metadata"
                       onError={() => setVideoLoadError(true)}
                     >
@@ -553,10 +554,10 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
               
               {/* Show image preview if we have images */}
               {!result.videoUrl && (result.imageUrl || (result.images && result.images.length > 0)) && (
-                <div className="flex justify-center">
-                  <div className={`${compact ? "w-full max-w-xs" : "w-full max-w-sm"} rounded-md border overflow-hidden`}>
+                <div className="flex justify-center px-1">
+                  <div className={`${compact ? "w-full max-w-[280px] xs:max-w-xs" : "w-full max-w-[320px] xs:max-w-sm sm:max-w-md md:max-w-lg"} rounded-md border overflow-hidden`}>
                     {result.images && result.images.length > 1 ? (
-                      <div className="grid grid-cols-2 gap-1">
+                      <div className="grid grid-cols-2 gap-0.5 xs:gap-1">
                         {result.images.slice(0, 4).map((img, idx) => {
                           const imgSrc = typeof img === 'string' 
                             ? img 
@@ -569,7 +570,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                               key={idx}
                               src={imgSrc}
                               alt={`X post image ${idx + 1}`}
-                              className="w-full h-32 object-cover"
+                              className="w-full h-28 xs:h-32 sm:h-36 md:h-40 object-cover"
                               onError={(e) => {
                                 e.currentTarget.style.display = 'none'
                               }}
@@ -589,7 +590,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                             : undefined) || 
                           result.thumbnail}
                         alt={result.title || "X post image"}
-                        className={`${compact ? "h-32" : "h-40 xs:h-44 sm:h-48"} w-full object-cover`}
+                        className={`${compact ? "h-32 xs:h-36 sm:h-40" : "h-36 xs:h-40 sm:h-48 md:h-56 lg:h-64"} w-full object-cover`}
                         onError={(e) => {
                           e.currentTarget.style.display = 'none'
                         }}
@@ -601,11 +602,11 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
               
               {/* Fallback to thumbnail if available */}
               {(videoLoadError || (!result.videoUrl && !result.imageUrl && (!result.images || result.images.length === 0))) && result.thumbnail && (
-                <div className="flex justify-center">
+                <div className="flex justify-center px-1">
                   <img
                     src={result.thumbnail}
                     alt={result.title || "X post preview"}
-                    className={`${compact ? "w-full max-w-xs h-32 object-cover rounded-md border" : "w-full max-w-sm h-40 xs:h-44 sm:h-48 object-cover rounded-md border"}`}
+                    className={`${compact ? "w-full max-w-[280px] xs:max-w-xs h-32 xs:h-36" : "w-full max-w-[320px] xs:max-w-sm sm:max-w-md md:max-w-lg h-36 xs:h-40 sm:h-48 md:h-56 object-cover rounded-md border"}`}
                     onError={(e) => {
                       e.currentTarget.style.display = 'none'
                     }}
@@ -613,10 +614,10 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                 </div>
               )}
               
-              <div className="space-y-2">
+              <div className="space-y-2 xs:space-y-2.5 sm:space-y-3">
                 {result.downloadStarted && (
-                  <div className="text-center p-3 bg-muted/50 border border-border rounded-md">
-                    <p className="text-sm text-foreground font-medium">✅ Download started! Check your downloads folder.</p>
+                  <div className="text-center p-2.5 xs:p-3 sm:p-4 bg-muted/50 border border-border rounded-md">
+                    <p className="text-xs xs:text-sm sm:text-base text-foreground font-medium">✅ Download started! Check your downloads folder.</p>
                   </div>
                 )}
                 
@@ -629,22 +630,22 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                       await startCountdownAndDownload(result.videoUrl!, title, "video")
                     }}
                     disabled={downloadingStates.video || countdownStates.video !== undefined}
-                    className="inline-flex items-center justify-center w-full h-10 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="inline-flex items-center justify-center w-full h-10 xs:h-11 sm:h-12 md:h-[52px] rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity text-xs xs:text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed px-3 xs:px-4 sm:px-6"
                   >
                     {countdownStates.video !== undefined ? (
                       <>
-                        <LoadingSpinner className="mr-2 h-4 w-4" />
-                        Preparing Download... ({countdownStates.video}s)
+                        <LoadingSpinner className="mr-1.5 xs:mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
+                        <span className="text-xs xs:text-sm">Preparing Download... ({countdownStates.video}s)</span>
                       </>
                     ) : downloadingStates.video ? (
                       <>
-                        <LoadingSpinner className="mr-2 h-4 w-4" />
-                        Downloading Video...
+                        <LoadingSpinner className="mr-1.5 xs:mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
+                        <span className="text-xs xs:text-sm">Downloading Video...</span>
                       </>
                     ) : (
                       <>
-                        <Video className="mr-2 h-4 w-4" />
-                        Download Video
+                        <Video className="mr-1.5 xs:mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
+                        <span className="text-xs xs:text-sm sm:text-base">Download Video</span>
                       </>
                     )}
                   </button>
@@ -659,22 +660,22 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                       await startCountdownAndDownload(result.imageUrl!, title, "image")
                     }}
                     disabled={downloadingStates.image || countdownStates.image !== undefined}
-                    className="inline-flex items-center justify-center w-full h-10 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="inline-flex items-center justify-center w-full h-10 xs:h-11 sm:h-12 md:h-[52px] rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity text-xs xs:text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed px-3 xs:px-4 sm:px-6"
                   >
                     {countdownStates.image !== undefined ? (
                       <>
-                        <LoadingSpinner className="mr-2 h-4 w-4" />
-                        Preparing Download... ({countdownStates.image}s)
+                        <LoadingSpinner className="mr-1.5 xs:mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
+                        <span className="text-xs xs:text-sm">Preparing Download... ({countdownStates.image}s)</span>
                       </>
                     ) : downloadingStates.image ? (
                       <>
-                        <LoadingSpinner className="mr-2 h-4 w-4" />
-                        Downloading Image...
+                        <LoadingSpinner className="mr-1.5 xs:mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
+                        <span className="text-xs xs:text-sm">Downloading Image...</span>
                       </>
                     ) : (
                       <>
-                        <ImageIcon className="mr-2 h-4 w-4" />
-                        Download Image
+                        <ImageIcon className="mr-1.5 xs:mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
+                        <span className="text-xs xs:text-sm sm:text-base">Download Image</span>
                       </>
                     )}
                   </button>
@@ -682,7 +683,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                 
                 {/* Multiple images download buttons */}
                 {result.images && result.images.length > 0 && (
-                  <div className="space-y-2">
+                  <div className="space-y-2 xs:space-y-2.5">
                     {result.images.map((img, idx) => {
                       // Ensure img is a string
                       const imgUrl = typeof img === 'string' 
@@ -701,22 +702,22 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                           await startCountdownAndDownload(imgUrl, title, `image-${idx}`)
                         }}
                         disabled={downloadingStates[`image-${idx}`] || countdownStates[`image-${idx}`] !== undefined}
-                        className="inline-flex items-center justify-center w-full h-10 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="inline-flex items-center justify-center w-full h-10 xs:h-11 sm:h-12 md:h-[52px] rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity text-xs xs:text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed px-3 xs:px-4 sm:px-6"
                       >
                         {countdownStates[`image-${idx}`] !== undefined ? (
                           <>
-                            <LoadingSpinner className="mr-2 h-4 w-4" />
-                            Preparing Download... ({countdownStates[`image-${idx}`]}s)
+                            <LoadingSpinner className="mr-1.5 xs:mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
+                            <span className="text-xs xs:text-sm">Preparing Download... ({countdownStates[`image-${idx}`]}s)</span>
                           </>
                         ) : downloadingStates[`image-${idx}`] ? (
                           <>
-                            <LoadingSpinner className="mr-2 h-4 w-4" />
-                            Downloading Image {idx + 1}...
+                            <LoadingSpinner className="mr-1.5 xs:mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
+                            <span className="text-xs xs:text-sm">Downloading Image {idx + 1}...</span>
                           </>
                         ) : (
                           <>
-                            <ImageIcon className="mr-2 h-4 w-4" />
-                            Download Image {idx + 1}
+                            <ImageIcon className="mr-1.5 xs:mr-2 h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5" />
+                            <span className="text-xs xs:text-sm sm:text-base">Download Image {idx + 1}</span>
                           </>
                         )}
                       </button>
@@ -727,9 +728,9 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                 
                 {/* Show message if result exists but no valid media URLs */}
                 {!result.videoUrl && !result.imageUrl && (!result.images || result.images.length === 0) && (
-                  <div className="text-center p-4 bg-muted/50 border border-border rounded-md">
-                    <p className="text-sm text-foreground font-medium mb-2">Media found but unable to extract URLs</p>
-                    <p className="text-xs text-muted-foreground">
+                  <div className="text-center p-3 xs:p-4 sm:p-5 bg-muted/50 border border-border rounded-md">
+                    <p className="text-xs xs:text-sm sm:text-base text-foreground font-medium mb-1.5 xs:mb-2">Media found but unable to extract URLs</p>
+                    <p className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground px-2">
                       The API returned a response, but we couldn't extract valid media URLs. Please check the browser console for details.
                     </p>
                   </div>
@@ -741,9 +742,9 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
       </Card>
 
       {!compact && (
-        <Card className="p-6 bg-card border border-border shadow-sm">
-          <h3 className="text-base font-semibold text-foreground mb-3">Important Information</h3>
-          <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
+        <Card className="p-3 xs:p-4 sm:p-5 md:p-6 bg-card border border-border shadow-sm">
+          <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-foreground mb-2 xs:mb-2.5 sm:mb-3">Important Information</h3>
+          <ul className="space-y-1.5 xs:space-y-2 text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
             <li>• How to use: paste X/Twitter video post link → Get Download Links → Download Video.</li>
             <li>• Works with posts containing videos; image-only posts are not supported.</li>
             <li>• Works best with public posts; private or restricted content may not load.</li>
