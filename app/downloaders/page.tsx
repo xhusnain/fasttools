@@ -9,10 +9,13 @@ import {
 
 export const metadata: Metadata = {
   title: "Downloaders",
-  description: "Download videos and media from popular platforms. Free TikTok and Instagram downloader tools to save your favorite content.",
+  description: "Download videos and media from popular platforms. Free TikTok, Instagram, Facebook, and X/Twitter downloader tools to save your favorite content.",
   keywords: [
     "tiktok downloader",
     "instagram downloader",
+    "x video downloader",
+    "twitter downloader",
+    "facebook downloader",
     "video downloader",
     "media downloader",
     "free downloader",
@@ -22,11 +25,13 @@ export const metadata: Metadata = {
     "instagram video downloader",
     "instagram image downloader",
     "download instagram posts",
-    "download instagram reels"
+    "download instagram reels",
+    "download x videos",
+    "download twitter videos"
   ],
   openGraph: {
     title: "Downloaders",
-    description: "Download videos and media from popular platforms. Free TikTok and Instagram downloader tools to save your favorite content.",
+    description: "Download videos and media from popular platforms. Free TikTok, Instagram, Facebook, and X/Twitter downloader tools to save your favorite content.",
     type: "website",
     url: "/downloaders",
     siteName: "FastTools",
@@ -43,7 +48,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Downloaders",
-    description: "Download videos and media from popular platforms. Free TikTok and Instagram downloader tools to save your favorite content.",
+    description: "Download videos and media from popular platforms. Free TikTok, Instagram, Facebook, and X/Twitter downloader tools to save your favorite content.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -83,6 +88,13 @@ const downloaders = [
     description: "Download Facebook videos in HD quality",
     icon: Download,
     href: "/social-media-tools/facebook-downloader",
+  },
+  {
+    id: "x-video-downloader",
+    name: "X Video Downloader",
+    description: "Download X/Twitter videos in HD without watermark",
+    icon: Download,
+    href: "/social-media-tools/x-video-downloader",
   },
 ]
 
