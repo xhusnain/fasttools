@@ -49,6 +49,19 @@ export function DateDifferenceCalculator() {
     setToday(todayStr)
   }, [])
 
+  useEffect(() => {
+    const handleSetDates = (event: CustomEvent) => {
+      const { startDate: newStartDate, endDate: newEndDate } = event.detail
+      if (newStartDate) setStartDate(newStartDate)
+      if (newEndDate) setEndDate(newEndDate)
+    }
+
+    window.addEventListener('setDateDifference', handleSetDates as EventListener)
+    return () => {
+      window.removeEventListener('setDateDifference', handleSetDates as EventListener)
+    }
+  }, [])
+
   const calculateBusinessDays = (start: Date, end: Date): number => {
     let count = 0
     const current = new Date(start)
@@ -131,7 +144,7 @@ export function DateDifferenceCalculator() {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4" data-calculator="date-difference">
       <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center gap-2 text-xl">

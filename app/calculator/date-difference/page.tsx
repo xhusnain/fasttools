@@ -4,6 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { CheckCircle, Calendar, Briefcase, Target, BookOpen, Clock, TrendingUp, Calculator } from "lucide-react"
 import type { Metadata } from "next"
+import { ExampleCard } from "./example-card"
 
 const currentYear = new Date().getFullYear()
 
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Date Difference Calculator | Free Online Tool | FastTools",
-    description: "Calculate the exact difference between two dates in years, months, and days with business day options and multiple date formats.",
+    description: "Calculate exact days, weeks, months & years between any two dates. Includes business days, leap years & multiple formats. Free, no signup required! ✓",
     type: "website",
     url: "https://www.fasttools.store/calculator/date-difference",
     siteName: "FastTools",
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Date Difference Calculator | Free Online Tool",
-    description: "Calculate the exact difference between two dates with business day options and multiple date formats.",
+    description: "Calculate exact days, weeks, months & years between any two dates. Includes business days, leap years & multiple formats. Free, no signup required! ✓",
     images: ["https://www.fasttools.store/og-image.svg"]
   },
   alternates: {
@@ -209,6 +210,36 @@ export default function DateDifferencePage() {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ 
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.fasttools.store"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Calculator",
+                "item": "https://www.fasttools.store/calculator"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Date Difference Calculator",
+                "item": "https://www.fasttools.store/calculator/date-difference"
+              }
+            ]
+          })
+        }} 
+      />
       <script 
         type="application/ld+json" 
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -221,7 +252,7 @@ export default function DateDifferencePage() {
           "aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "2100"}
         }) }} 
       />
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-6 max-w-6xl">
         <Breadcrumbs
           items={[
             { label: "Calculator", href: "/calculator" },
@@ -257,6 +288,49 @@ export default function DateDifferencePage() {
                 <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700">
                   <DateDifferenceCalculator />
                 </div>
+
+                {/* Popular Related Calculators */}
+                <div className="mt-6 bg-gradient-to-r from-primary/5 to-orange-500/5 border border-primary/20 rounded-xl p-5">
+                  <div className="flex items-center gap-2 mb-4">
+                    <TrendingUp className="h-5 w-5 text-primary" />
+                    <h3 className="text-base font-semibold text-foreground">
+                      🔥 Popular Related Calculators
+                    </h3>
+                  </div>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <a 
+                      href="/calculator/age-calculator" 
+                      className="px-4 py-3 bg-card border border-border rounded-lg text-sm font-medium hover:border-primary hover:bg-primary/5 transition-all text-center"
+                    >
+                      <Calendar className="h-4 w-4 mx-auto mb-1 text-primary" />
+                      <div className="text-xs">Age Calculator</div>
+                    </a>
+                    <a 
+                      href="/calculator/time-duration" 
+                      className="px-4 py-3 bg-card border border-border rounded-lg text-sm font-medium hover:border-primary hover:bg-primary/5 transition-all text-center"
+                    >
+                      <Clock className="h-4 w-4 mx-auto mb-1 text-primary" />
+                      <div className="text-xs">Time Duration</div>
+                    </a>
+                    <a 
+                      href="/calculator/date-difference" 
+                      className="px-4 py-3 bg-card border border-border rounded-lg text-sm font-medium hover:border-primary hover:bg-primary/5 transition-all text-center"
+                    >
+                      <Target className="h-4 w-4 mx-auto mb-1 text-primary" />
+                      <div className="text-xs">Date Difference</div>
+                    </a>
+                    <a 
+                      href="/calculator" 
+                      className="px-4 py-3 bg-card border border-border rounded-lg text-sm font-medium hover:border-primary hover:bg-primary/5 transition-all text-center"
+                    >
+                      <Calculator className="h-4 w-4 mx-auto mb-1 text-primary" />
+                      <div className="text-xs">All Calculators</div>
+                    </a>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-3 text-center">
+                    💡 Explore our complete suite of date and time calculators
+                  </p>
+                </div>
               </div>
               <div className="space-y-6">
                 {/* Sticky Sidebar Container */}
@@ -287,35 +361,38 @@ export default function DateDifferencePage() {
                 </div>
                 How to Calculate Days Between Dates: Quick Start Guide
               </h2>
+              <p className="text-sm text-muted-foreground mb-6">
+                Follow these simple steps to calculate the difference between any two dates in seconds.
+              </p>
               <div className="space-y-4">
                 <div className="grid md:grid-cols-4 gap-4">
-                  <div className="p-4 bg-card rounded-lg border border-border text-center">
-                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-primary font-bold text-sm">1</span>
+                  <div className="p-5 bg-card rounded-lg border-2 border-primary/20 text-center hover:border-primary/40 transition-colors">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-primary font-bold text-lg">1</span>
                     </div>
-                    <h3 className="font-semibold text-heading-accent mb-1 text-sm">Select Format</h3>
-                    <p className="text-xs text-muted-foreground">Choose US, EU, or ISO date format</p>
+                    <h3 className="font-semibold text-heading-accent mb-2 text-base">Select Format</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">Choose US (MM/DD/YYYY), EU (DD/MM/YYYY), or ISO (YYYY-MM-DD) date format</p>
                   </div>
-                  <div className="p-4 bg-card rounded-lg border border-heading-accent-border text-center">
-                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-primary font-bold text-sm">2</span>
+                  <div className="p-5 bg-card rounded-lg border-2 border-heading-accent-border text-center hover:border-heading-accent transition-colors">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-primary font-bold text-lg">2</span>
                     </div>
-                    <h3 className="font-semibold text-heading-accent mb-1 text-sm">Enter Start Date</h3>
-                    <p className="text-xs text-heading-accent">Pick your first date</p>
+                    <h3 className="font-semibold text-heading-accent mb-2 text-base">Enter Start Date</h3>
+                    <p className="text-xs text-heading-accent leading-relaxed">Pick your first date using the date picker or type it manually</p>
                   </div>
-                  <div className="p-4 bg-card rounded-lg border border-border text-center">
-                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-primary font-bold text-sm">3</span>
+                  <div className="p-5 bg-card rounded-lg border-2 border-primary/20 text-center hover:border-primary/40 transition-colors">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-primary font-bold text-lg">3</span>
                     </div>
-                    <h3 className="font-semibold text-heading-accent mb-1 text-sm">Enter End Date</h3>
-                    <p className="text-xs text-muted-foreground">Pick your second date</p>
+                    <h3 className="font-semibold text-heading-accent mb-2 text-base">Enter End Date</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">Pick your second date - this is the date you want to calculate to</p>
                   </div>
-                  <div className="p-4 bg-card rounded-lg border border-border text-center">
-                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-primary font-bold text-sm">4</span>
+                  <div className="p-5 bg-card rounded-lg border-2 border-primary/20 text-center hover:border-primary/40 transition-colors">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-primary font-bold text-lg">4</span>
                     </div>
-                    <h3 className="font-semibold text-heading-accent mb-1 text-sm">Get Results</h3>
-                    <p className="text-xs text-muted-foreground">See days, months, years instantly</p>
+                    <h3 className="font-semibold text-heading-accent mb-2 text-base">Get Results</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">See days, months, years, and weeks instantly displayed below</p>
                   </div>
                 </div>
               </div>
@@ -334,42 +411,38 @@ export default function DateDifferencePage() {
                   Use our days between dates calculator to see real results. These examples show how to calculate days for common scenarios. Perfect for anyone asking "how many days between dates" or "calculate days between two dates".
                 </p>
                 <div className="grid md:grid-cols-2 gap-4 mt-4">
-                  <div className="p-4 bg-card rounded-lg border border-border">
-                    <h3 className="font-semibold text-heading-accent mb-2">Example 1: Full Year Calculation</h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      <strong>From:</strong> January 1, {year}<br/>
-                      <strong>To:</strong> December 31, {year}<br/>
-                      <strong>Result:</strong> 364 days (1 year, 0 months, 0 days)
-                    </p>
-                    <p className="text-xs text-muted-foreground">Perfect for tracking annual milestones or year-long projects.</p>
-                  </div>
-                  <div className="p-4 bg-card rounded-lg border border-heading-accent-border">
-                    <h3 className="font-semibold text-heading-accent mb-2">Example 2: Business Days</h3>
-                    <p className="text-sm text-heading-accent mb-2">
-                      <strong>From:</strong> Monday, January 6, {year}<br/>
-                      <strong>To:</strong> Friday, January 31, {year}<br/>
-                      <strong>Result:</strong> 20 business days (excluding weekends)
-                    </p>
-                    <p className="text-xs text-heading-accent">Ideal for project timelines and deadline tracking.</p>
-                  </div>
-                  <div className="p-4 bg-card rounded-lg border border-border">
-                    <h3 className="font-semibold text-heading-accent mb-2">Example 3: Days Until Calculator</h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      <strong>From:</strong> Today<br/>
-                      <strong>To:</strong> December 25, {year}<br/>
-                      <strong>Result:</strong> Calculate days until Christmas or any future event
-                    </p>
-                    <p className="text-xs text-muted-foreground">Perfect for countdowns and event planning. Use as a days until calculator for birthdays, holidays, or deadlines.</p>
-                  </div>
-                  <div className="p-4 bg-card rounded-lg border border-border">
-                    <h3 className="font-semibold text-heading-accent mb-2">Example 4: Leap Year Handling</h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      <strong>From:</strong> February 28, 2024<br/>
-                      <strong>To:</strong> March 1, 2024<br/>
-                      <strong>Result:</strong> 2 days (includes leap day Feb 29)
-                    </p>
-                    <p className="text-xs text-muted-foreground">Automatically handles leap years for accuracy.</p>
-                  </div>
+                  <ExampleCard
+                    title="Example 1: Full Year Calculation"
+                    exampleText={`From Jan 1, ${year} to Dec 31, ${year} = <span class="text-primary">364 days</span>`}
+                    description="Perfect for tracking annual milestones or year-long projects."
+                    startDate={`01/01/${year}`}
+                    endDate={`12/31/${year}`}
+                  />
+                  <ExampleCard
+                    title="Example 2: Business Days"
+                    exampleText={`From Jan 6, ${year} to Jan 31, ${year} = <span class="text-primary">20 business days</span>`}
+                    description="Ideal for project timelines and deadline tracking."
+                    startDate={`01/06/${year}`}
+                    endDate={`01/31/${year}`}
+                    highlightColor="border-heading-accent-border"
+                  />
+                  <ExampleCard
+                    title="Example 3: Days Until Calculator"
+                    exampleText={`From Today to Dec 25, ${year} = <span class="text-primary">Calculate days until Christmas</span>`}
+                    description="Perfect for countdowns and event planning. Use as a days until calculator for birthdays, holidays, or deadlines."
+                    startDate={(() => {
+                      const today = new Date()
+                      return `${String(today.getMonth() + 1).padStart(2, '0')}/${String(today.getDate()).padStart(2, '0')}/${today.getFullYear()}`
+                    })()}
+                    endDate={`12/25/${year}`}
+                  />
+                  <ExampleCard
+                    title="Example 4: Leap Year Handling"
+                    exampleText={`From Feb 28, 2024 to Mar 1, 2024 = <span class="text-primary">2 days</span> (includes leap day)`}
+                    description="Automatically handles leap years for accuracy."
+                    startDate="02/28/2024"
+                    endDate="03/01/2024"
+                  />
                 </div>
               </div>
             </div>
