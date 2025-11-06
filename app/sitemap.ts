@@ -193,9 +193,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://www.fasttools.store/calculator/date-difference",
-      lastModified: getFreshnessDate(8),
-      changeFrequency: "weekly" as const,
-      priority: 0.75,
+      lastModified: getFreshnessDate(0),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
     },
     {
       url: "https://www.fasttools.store/calculator/time-duration",
