@@ -392,6 +392,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95, // High priority - popular video downloader tool
     },
     {
+      url: "https://www.fasttools.store/social-media-tools/x-video-downloader",
+      lastModified: getFreshnessDate(0),
+      changeFrequency: "daily" as const,
+      priority: 0.95, // High priority - popular X/Twitter video downloader tool
+    },
+    {
       url: "https://www.fasttools.store/social-media-tools/youtube-tags",
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,

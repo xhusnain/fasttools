@@ -102,6 +102,8 @@ export const searchItems: SearchItem[] = [
   { name: "Instagram DP Viewer", description: "View and download Instagram profile pictures", path: "/social-media-tools/instagram-dp", category: "Social Media" },
   { name: "Instagram Downloader", description: "Download Instagram posts, reels, and images in HD", path: "/social-media-tools/instagram-downloader", category: "Social Media" },
   { name: "TikTok Video Downloader", description: "Download TikTok videos without watermark", path: "/social-media-tools/tiktok-downloader", category: "Social Media" },
+  { name: "Facebook Video Downloader", description: "Download Facebook videos in HD quality", path: "/social-media-tools/facebook-downloader", category: "Social Media" },
+  { name: "X Video Downloader", description: "Download X (Twitter) videos in HD without watermark", path: "/social-media-tools/x-video-downloader", category: "Social Media" },
   { name: "YouTube Thumbnail Downloader", description: "Download YouTube thumbnails in HD", path: "/social-media-tools/youtube-thumbnail", category: "Social Media" },
   { name: "YouTube Tag Extractor", description: "Extract tags from any YouTube video", path: "/social-media-tools/youtube-tags", category: "Social Media" },
   { name: "Link in Bio Generator", description: "Create beautiful link-in-bio pages", path: "/social-media-tools/link-in-bio", category: "Social Media" },
