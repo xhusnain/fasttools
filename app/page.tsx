@@ -1915,6 +1915,44 @@ const categories = [
       },
     ],
   },
+  {
+    id: "fun-tools",
+    name: "Fun Tools",
+    description: "Entertaining tools for celebrations and social content",
+    icon: Smile,
+    href: "/fun-tools",
+    borderColor: "border-border",
+    hoverBorder: "hover:border-border",
+    iconBg: "bg-pink-500/20",
+    iconColor: "text-foreground",
+    glowColor: "hover:shadow-pink-500/20",
+    tools: [
+      {
+        title: "Future Age Predictor",
+        description: "See how old you'll be on any future date with precise calculations for birthdays, milestones, and special events",
+        href: "/fun-tools/future-age",
+        icon: Calendar,
+        badge: "Fun",
+        badgeColor: "bg-pink-500/90",
+      },
+      {
+        title: "Birthday Countdown",
+        description: "Countdown to your next birthday in days, hours, minutes, and seconds with real-time updates and celebration planning",
+        href: "/fun-tools/birthday-countdown",
+        icon: Heart,
+        badge: "Popular",
+        badgeColor: "bg-red-500/90",
+      },
+      {
+        title: "Anniversary Calculator",
+        description: "Calculate how long you've been together and when your next anniversary is with detailed relationship milestones",
+        href: "/fun-tools/anniversary",
+        icon: Heart,
+        badge: "Love",
+        badgeColor: "bg-pink-500/90",
+      },
+    ],
+  },
 ]
 
 // Category Section Component

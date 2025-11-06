@@ -16,7 +16,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Products",
-  description: "Explore all FastTools product categories including calculators, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, and social media tools.",
+  description: "Explore all FastTools product categories including calculators, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, social media tools, and fun tools.",
   keywords: [
     "fasttools products",
     "online tools categories",
@@ -30,11 +30,12 @@ export const metadata: Metadata = {
     "image tools",
     "PDF tools",
     "SEO tools",
-    "social media tools"
+    "social media tools",
+    "fun tools"
   ],
   openGraph: {
     title: "Products",
-    description: "Explore all FastTools product categories including calculators, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, and social media tools.",
+    description: "Explore all FastTools product categories including calculators, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, social media tools, and fun tools.",
     type: "website",
     url: "/products",
     siteName: "FastTools",
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Products",
-    description: "Explore all FastTools product categories including calculators, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, and social media tools.",
+    description: "Explore all FastTools product categories including calculators, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, social media tools, and fun tools.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -126,6 +127,13 @@ const categories = [
     description: "Powerful social media management tools",
     icon: Globe,
     href: "/social-media-tools",
+  },
+  {
+    id: "fun-tools",
+    name: "Fun Tools",
+    description: "Entertaining tools for celebrations and social content",
+    icon: Sparkles,
+    href: "/fun-tools",
   },
 ]
 

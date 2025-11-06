@@ -121,6 +121,7 @@ export const searchItems: SearchItem[] = [
   { name: "Credit Card Payoff Calculator", description: "Calculate credit card debt payoff time", path: "/finance-tools/credit-card-payoff", category: "Finance" },
 
   // Fun Tools
+  { name: "Fun Tools", description: "Entertaining tools for celebrations and social content", path: "/fun-tools", category: "Pages" },
   { name: "Future Age Predictor", description: "See how old you'll be on any future date", path: "/fun-tools/future-age", category: "Fun" },
   { name: "Birthday Countdown", description: "Countdown to your next birthday", path: "/fun-tools/birthday-countdown", category: "Fun" },
   { name: "Anniversary Calculator", description: "Calculate how long you've been together", path: "/fun-tools/anniversary", category: "Fun" },
