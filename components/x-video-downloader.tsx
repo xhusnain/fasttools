@@ -22,7 +22,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
         type?: 'video' | 'image' | 'mixed'
         videoUrl?: string
         imageUrl?: string
-        images?: string[]
+        images?: (string | { url?: string; media_url?: string; url_https?: string })[]
         thumbnail?: string
         title?: string
         downloading?: boolean
@@ -194,21 +194,63 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
       return
     }
 
-    const sanitizedFilename = filename
-      .replace(/[^\x00-\x7F]/g, '')
-      .replace(/[<>:"/\\|?*]/g, '')
-      .replace(/\s+/g, '_')
-      .replace(/_+/g, '_')
-      .replace(/^_|_$/g, '')
-      .substring(0, 100)
-      || 'x_media'
+    // Extract file extension from filename if present, or determine from downloadType/URL
+    const filenameWithExt = filename.trim()
+    let fileExtension: string
+    let cleanFilename = filename
+    
+    // Check if filename already has an extension
+    const extMatch = filenameWithExt.match(/\.(mp4|jpg|jpeg|png|gif|webp)$/i)
+    if (extMatch) {
+      fileExtension = extMatch[0].toLowerCase()
+      cleanFilename = filenameWithExt.substring(0, filenameWithExt.lastIndexOf('.'))
+    } else {
+      // Determine extension based on downloadType or URL
+      if (downloadType === 'video' || urlString.includes('.mp4') || urlString.includes('video')) {
+        fileExtension = '.mp4'
+      } else if (urlString.includes('.jpg') || urlString.includes('.jpeg')) {
+        fileExtension = '.jpg'
+      } else if (urlString.includes('.png')) {
+        fileExtension = '.png'
+      } else if (urlString.includes('.gif')) {
+        fileExtension = '.gif'
+      } else if (urlString.includes('.webp')) {
+        fileExtension = '.webp'
+      } else {
+        // Default based on downloadType
+        fileExtension = downloadType === 'video' ? '.mp4' : '.jpg'
+      }
+    }
+
+    // Sanitize filename (without extension)
+    let sanitizedFilename = cleanFilename
+      .replace(/[^\x00-\x7F]/g, '') // Remove non-ASCII characters
+      .replace(/[<>:"/\\|?*]/g, '') // Remove invalid filename characters
+      .replace(/\s+/g, '_') // Replace spaces with underscores
+      .replace(/_+/g, '_') // Replace multiple underscores with single
+      .replace(/^_|_$/g, '') // Remove leading/trailing underscores
+      .substring(0, 100) // Limit length (we'll add extension after)
+
+    // If filename is empty or too short after sanitization, use default
+    if (!sanitizedFilename || sanitizedFilename.length < 3) {
+      sanitizedFilename = downloadType === 'video' ? 'x_video' : 'x_image'
+    }
+
+    // Ensure filename doesn't exceed reasonable length (max 200 chars total with extension)
+    const maxLength = 200 - fileExtension.length
+    if (sanitizedFilename.length > maxLength) {
+      sanitizedFilename = sanitizedFilename.substring(0, maxLength)
+    }
+
+    // Add extension to sanitized filename
+    const finalFilename = sanitizedFilename + fileExtension
 
     setError(null)
     
     // Skip countdown for proxy URLs - they download directly
     if (urlString.includes('dl.snapcdn.app') || urlString.includes('download?token=')) {
       setDownloadingStates(prev => ({ ...prev, [downloadType]: true }))
-      performDownload(urlString, sanitizedFilename, downloadType)
+      void performDownload(urlString, finalFilename, downloadType)
       return
     }
 
@@ -225,14 +267,14 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
         setCountdownStates(prev => ({ ...prev, [downloadType]: undefined }))
         setDownloadingStates(prev => ({ ...prev, [downloadType]: true }))
         
-        performDownload(urlString, sanitizedFilename, downloadType)
+        void performDownload(urlString, finalFilename, downloadType)
       }
     }, 1000)
 
-    performBackgroundDownload(urlString, sanitizedFilename, downloadType)
+    void performBackgroundDownload(urlString, finalFilename, downloadType)
   }
 
-  const performBackgroundDownload = async (url: string, filename: string, downloadType: string) => {
+  const performBackgroundDownload = async (url: string, _filename: string, downloadType: string) => {
     // Skip background download for proxy URLs to avoid CORS errors
     if (url.includes('dl.snapcdn.app') || url.includes('download?token=')) {
       return
@@ -516,7 +558,11 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                     {result.images && result.images.length > 1 ? (
                       <div className="grid grid-cols-2 gap-1">
                         {result.images.slice(0, 4).map((img, idx) => {
-                          const imgSrc = typeof img === 'string' ? img : (typeof img === 'object' && img.url ? img.url : String(img))
+                          const imgSrc = typeof img === 'string' 
+                            ? img 
+                            : (typeof img === 'object' && img !== null && 'url' in img && typeof img.url === 'string')
+                              ? img.url
+                              : String(img)
                           if (!imgSrc || !imgSrc.startsWith('http')) return null
                           return (
                             <img
@@ -533,7 +579,15 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                       </div>
                     ) : (
                       <img
-                        src={result.imageUrl || (result.images && result.images[0] && typeof result.images[0] === 'string' ? result.images[0] : typeof result.images?.[0] === 'object' && result.images[0].url ? result.images[0].url : undefined) || result.thumbnail}
+                        src={result.imageUrl || 
+                          (result.images && result.images[0] 
+                            ? (typeof result.images[0] === 'string' 
+                                ? result.images[0] 
+                                : (typeof result.images[0] === 'object' && result.images[0] !== null && 'url' in result.images[0] && typeof result.images[0].url === 'string'
+                                  ? result.images[0].url 
+                                  : undefined))
+                            : undefined) || 
+                          result.thumbnail}
                         alt={result.title || "X post image"}
                         className={`${compact ? "h-32" : "h-40 xs:h-44 sm:h-48"} w-full object-cover`}
                         onError={(e) => {
@@ -570,8 +624,9 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                 {result.videoUrl && (
                   <button
                     type="button"
-                    onClick={() => {
-                      startCountdownAndDownload(result.videoUrl!, (result.title || "x-video") + ".mp4", "video")
+                    onClick={async () => {
+                      const title = result.title || "x_video"
+                      await startCountdownAndDownload(result.videoUrl!, title, "video")
                     }}
                     disabled={downloadingStates.video || countdownStates.video !== undefined}
                     className="inline-flex items-center justify-center w-full h-10 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity text-sm disabled:opacity-50 disabled:cursor-not-allowed"
@@ -599,9 +654,9 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                 {result.imageUrl && !result.images && (
                   <button
                     type="button"
-                    onClick={() => {
-                      const ext = result.imageUrl!.includes('.jpg') ? '.jpg' : result.imageUrl!.includes('.png') ? '.png' : '.jpg'
-                      startCountdownAndDownload(result.imageUrl!, (result.title || "x-image") + ext, "image")
+                    onClick={async () => {
+                      const title = result.title || "x_image"
+                      await startCountdownAndDownload(result.imageUrl!, title, "image")
                     }}
                     disabled={downloadingStates.image || countdownStates.image !== undefined}
                     className="inline-flex items-center justify-center w-full h-10 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity text-sm disabled:opacity-50 disabled:cursor-not-allowed"
@@ -630,16 +685,20 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                   <div className="space-y-2">
                     {result.images.map((img, idx) => {
                       // Ensure img is a string
-                      const imgUrl = typeof img === 'string' ? img : (typeof img === 'object' && img.url ? img.url : String(img))
+                      const imgUrl = typeof img === 'string' 
+                        ? img 
+                        : (typeof img === 'object' && img !== null && 'url' in img && typeof img.url === 'string')
+                          ? img.url
+                          : String(img)
                       if (!imgUrl || !imgUrl.startsWith('http')) return null
                       
                       return (
                       <button
                         key={idx}
                         type="button"
-                        onClick={() => {
-                          const ext = imgUrl.includes('.jpg') ? '.jpg' : imgUrl.includes('.png') ? '.png' : '.jpg'
-                          startCountdownAndDownload(imgUrl, (result.title || "x-image") + `-${idx + 1}${ext}`, `image-${idx}`)
+                        onClick={async () => {
+                          const title = result.title ? `${result.title}_${idx + 1}` : `x_image_${idx + 1}`
+                          await startCountdownAndDownload(imgUrl, title, `image-${idx}`)
                         }}
                         disabled={downloadingStates[`image-${idx}`] || countdownStates[`image-${idx}`] !== undefined}
                         className="inline-flex items-center justify-center w-full h-10 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity text-sm disabled:opacity-50 disabled:cursor-not-allowed"
