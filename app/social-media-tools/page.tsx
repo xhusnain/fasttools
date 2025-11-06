@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Youtube, Instagram, Music, Tag, LinkIcon, Search, Hash, Code, Globe, Calculator, Download, Facebook } from "lucide-react"
+import { ArrowRight, Youtube, Instagram, Music, Tag, LinkIcon, Search, Hash, Code, Globe, Calculator, Download, Facebook, MessageSquare } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -71,6 +71,13 @@ export default function SocialMediaToolsPage() {
       icon: Facebook,
       href: "/social-media-tools/facebook-downloader",
       color: "blue"
+    },
+    {
+      title: "X Video Downloader",
+      description: "Download X (Twitter) videos in HD quality without watermark for educational purposes and content inspiration.",
+      icon: MessageSquare,
+      href: "/social-media-tools/x-video-downloader",
+      color: "slate"
     },
     {
       title: "YouTube Tag Extractor",
