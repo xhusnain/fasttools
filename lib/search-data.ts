@@ -105,6 +105,7 @@ export const searchItems: SearchItem[] = [
   { name: "Facebook Video Downloader", description: "Download Facebook videos in HD quality", path: "/social-media-tools/facebook-downloader", category: "Social Media" },
   { name: "X Video Downloader", description: "Download X (Twitter) videos in HD without watermark", path: "/social-media-tools/x-video-downloader", category: "Social Media" },
   { name: "YouTube Thumbnail Downloader", description: "Download YouTube thumbnails in HD", path: "/social-media-tools/youtube-thumbnail", category: "Social Media" },
+  { name: "YouTube Downloader", description: "Download YouTube videos in HD and extract MP3 audio", path: "/social-media-tools/youtube-downloader", category: "Social Media" },
   { name: "YouTube Tag Extractor", description: "Extract tags from any YouTube video", path: "/social-media-tools/youtube-tags", category: "Social Media" },
   { name: "Link in Bio Generator", description: "Create beautiful link-in-bio pages", path: "/social-media-tools/link-in-bio", category: "Social Media" },
   { name: "YouTube Channel Checker", description: "Check if your desired channel name is available", path: "/social-media-tools/channel-checker", category: "Social Media" },

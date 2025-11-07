@@ -28,5 +28,8 @@ yarn-error.log*
 next-env.d.ts
 /public/models/u2net.onnx
 
+# binaries (downloaded automatically)
+/bin/yt-dlp
+
 # macOS
 .DS_Store

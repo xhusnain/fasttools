@@ -45,6 +45,13 @@ export default function SocialMediaToolsPage() {
       color: "red"
     },
     {
+      title: "YouTube Downloader",
+      description: "Download YouTube videos in HD quality and extract MP3 audio for educational purposes and content inspiration.",
+      icon: Download,
+      href: "/social-media-tools/youtube-downloader",
+      color: "red"
+    },
+    {
       title: "Instagram DP Viewer",
       description: "View and download Instagram profile pictures in HD quality for brand research and analysis.",
       icon: Instagram,
