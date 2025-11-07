@@ -13,6 +13,48 @@ export const dynamic = 'force-dynamic'
 
 export async function POST(request: NextRequest) {
   let downloadId = `download_${Date.now()}_${Math.random().toString(36).substring(7)}`
+  let ytDlpProcess: ReturnType<typeof spawn> | null = null
+  let tempDir: string | null = null
+  
+  // Cleanup function to kill process and clean up resources
+  const cleanup = async () => {
+    if (ytDlpProcess && ytDlpProcess.pid) {
+      console.log(`🛑 Killing yt-dlp process ${ytDlpProcess.pid} due to client cancellation`)
+      try {
+        ytDlpProcess.kill('SIGTERM')
+        // Force kill if still running after 2 seconds
+        setTimeout(() => {
+          if (ytDlpProcess && !ytDlpProcess.killed && ytDlpProcess.pid) {
+            console.log(`🔪 Force killing yt-dlp process ${ytDlpProcess.pid}`)
+            ytDlpProcess.kill('SIGKILL')
+          }
+        }, 2000)
+      } catch (error) {
+        console.error('Error killing yt-dlp process:', error)
+      }
+    }
+    
+    if (tempDir) {
+      try {
+        const files = await fs.readdir(tempDir).catch(() => [])
+        for (const file of files) {
+          await fs.unlink(path.join(tempDir, file)).catch(() => {})
+        }
+        await fs.rmdir(tempDir).catch(() => {})
+        console.log(`🧹 Cleaned up temp directory: ${tempDir}`)
+      } catch (error) {
+        console.error('Error cleaning up temp directory:', error)
+      }
+    }
+    
+    clearProgress(downloadId)
+  }
+  
+  // Handle client disconnection
+  request.signal.addEventListener('abort', () => {
+    console.log(`⚠️  Client disconnected/cancelled request for download: ${downloadId}`)
+    cleanup()
+  })
   
   try {
     const { url, format = 'mp4', videoId, title, downloadId: providedDownloadId } = await request.json()
@@ -146,7 +188,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create temp directory with proper permissions
-    const tempDir = path.join(os.tmpdir(), `youtube-downloads-${Date.now()}`)
+    tempDir = path.join(os.tmpdir(), `youtube-downloads-${Date.now()}`)
     try {
       await fs.mkdir(tempDir, { recursive: true, mode: 0o755 })
       console.log('✅ Created temp directory:', tempDir)
@@ -214,7 +256,7 @@ export async function POST(request: NextRequest) {
           part.replace(/^"|"$/g, '')
         ) || []
         
-        const ytDlpProcess = spawn(commandParts[0], commandParts.slice(1), {
+        ytDlpProcess = spawn(commandParts[0], commandParts.slice(1), {
           cwd: tempDir,
           shell: false,
           env: {
@@ -226,6 +268,24 @@ export async function POST(request: NextRequest) {
         console.log('Spawned yt-dlp process with PID:', ytDlpProcess.pid)
         console.log('Command parts:', commandParts)
         console.log('Working directory:', tempDir)
+        
+        // Check if request was cancelled before process starts
+        if (request.signal.aborted) {
+          console.log('⚠️  Request cancelled before yt-dlp started')
+          if (ytDlpProcess && ytDlpProcess.pid) {
+            ytDlpProcess.kill('SIGTERM')
+          }
+          await cleanup()
+          return NextResponse.json(
+            { success: false, message: 'Download cancelled' },
+            { status: 499 } // 499 = Client Closed Request
+          )
+        }
+        
+        // Ensure process and streams are not null
+        if (!ytDlpProcess || !ytDlpProcess.stdout || !ytDlpProcess.stderr) {
+          throw new Error('Failed to spawn yt-dlp process')
+        }
         
         // Collect output in real-time
         ytDlpProcess.stdout.on('data', (data: Buffer) => {
@@ -259,12 +319,39 @@ export async function POST(request: NextRequest) {
         
           // Wait for process to complete
           await new Promise<void>((resolve, reject) => {
+            // Check for cancellation periodically
+            const checkCancellation = setInterval(() => {
+              if (request.signal.aborted) {
+                clearInterval(checkCancellation)
+                console.log('⚠️  Request cancelled during download, killing yt-dlp process')
+                if (ytDlpProcess && ytDlpProcess.pid) {
+                  ytDlpProcess.kill('SIGTERM')
+                  setTimeout(() => {
+                    if (ytDlpProcess && !ytDlpProcess.killed) {
+                      ytDlpProcess.kill('SIGKILL')
+                    }
+                  }, 2000)
+                }
+                cleanup()
+                reject(new Error('Download cancelled by client'))
+              }
+            }, 1000) // Check every second
+            
             ytDlpProcess.on('close', (code: number, signal: string | null) => {
+              clearInterval(checkCancellation)
               console.log(`yt-dlp process closed with code ${code}, signal: ${signal}`)
               console.log('stdout length:', stdout.length)
               console.log('stderr length:', stderr.length)
               if (stderr) {
                 console.log('stderr content:', stderr.substring(0, 1000))
+              }
+              
+              // If process was killed due to cancellation, don't treat as error
+              if (request.signal.aborted || signal === 'SIGTERM' || signal === 'SIGKILL') {
+                console.log('✅ yt-dlp process terminated due to cancellation')
+                cleanup()
+                reject(new Error('Download cancelled'))
+                return
               }
               
               if (code !== 0) {
@@ -295,6 +382,7 @@ export async function POST(request: NextRequest) {
             })
             
             ytDlpProcess.on('error', (error: Error) => {
+              clearInterval(checkCancellation)
               console.error('❌ yt-dlp process error:', error.message)
               console.error('Error stack:', error.stack)
               setProgress(downloadId, 0, 'error')
@@ -341,6 +429,10 @@ export async function POST(request: NextRequest) {
       }
 
       // Find the downloaded file (yt-dlp might rename it)
+      if (!tempDir) {
+        throw new Error('Temp directory is null')
+      }
+      
       const files = await fs.readdir(tempDir)
       console.log('Files in temp directory after download:', files)
       
@@ -424,13 +516,15 @@ export async function POST(request: NextRequest) {
       console.error('yt-dlp download error:', downloadError)
       
       // Clean up temp directory on error
-      try {
-        const files = await fs.readdir(tempDir)
-        for (const file of files) {
-          await fs.unlink(path.join(tempDir, file)).catch(() => {})
-        }
-        await fs.rmdir(tempDir).catch(() => {})
-      } catch {}
+      if (tempDir) {
+        try {
+          const files = await fs.readdir(tempDir)
+          for (const file of files) {
+            await fs.unlink(path.join(tempDir, file)).catch(() => {})
+          }
+          await fs.rmdir(tempDir).catch(() => {})
+        } catch {}
+      }
 
       let errorMessage = 'Failed to download video.'
       
@@ -455,15 +549,18 @@ export async function POST(request: NextRequest) {
     console.error('Error stack:', error?.stack)
     console.error('Error message:', error?.message)
     
-    // Clear progress
-    try {
-      clearProgress(downloadId)
-    } catch {}
+    // Cleanup on any error
+    await cleanup()
     
     // Return more specific error message
     let errorMessage = 'Internal server error. Please try again later.'
+    let statusCode = 500
+    
     if (error?.message) {
-      if (error.message.includes('yt-dlp')) {
+      if (error.message.includes('cancelled') || error.message.includes('Download cancelled')) {
+        errorMessage = 'Download cancelled by user'
+        statusCode = 499 // Client Closed Request
+      } else if (error.message.includes('yt-dlp')) {
         errorMessage = error.message
       } else if (error.message.includes('ENOENT')) {
         errorMessage = 'yt-dlp binary not found. Please check server configuration.'
@@ -479,7 +576,7 @@ export async function POST(request: NextRequest) {
         success: false,
         message: errorMessage
       },
-      { status: 500 }
+      { status: statusCode }
     )
   }
 }
