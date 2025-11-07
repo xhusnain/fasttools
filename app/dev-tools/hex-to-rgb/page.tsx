@@ -885,6 +885,63 @@ export default function HexToRGBPage() {
                     </div>
                   </div>
 
+                  {/* Color Code Keywords Content */}
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Specific Color Codes and Conversions</h2>
+                    
+                    <div className="space-y-4">
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">36393e Color: Discord Dark Theme Hex Code</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          The 36393e color is a popular dark gray color code commonly used in Discord's dark theme interface. The 36393e hex code represents a specific shade of dark gray that provides excellent contrast for text and UI elements. When you search for 36393e color, you're looking for this specific hex code used in modern dark-themed applications. The 36393e discord color is widely recognized by users of the Discord platform, making it a sought-after color code for developers creating Discord-themed applications or websites. Our color converter helps you understand 36393e color by converting it to RGB, HSL, and other color formats. The 36393e hex code converts to RGB values that create the distinctive dark gray appearance familiar to Discord users.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          If you're working with 36393e color in your designs, our converter shows that 36393e hex equals RGB(54, 57, 62), creating a sophisticated dark gray perfect for modern UI designs. The 36393e discord color has become synonymous with dark theme interfaces, making it a popular choice for applications seeking a Discord-like aesthetic. Use our tool to convert 36393e color to various formats and understand how this specific hex code translates across different color systems. The 36393e hex code is particularly useful for developers and designers working on dark-themed applications, social media platforms, or gaming interfaces that require this specific shade.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">To RGB Color: Converting Various Formats to RGB</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Converting colors to RGB format is essential for web development, digital design, and color consistency across platforms. Our to RGB color converter supports converting from hex codes, HSL values, and other color formats to standard RGB notation. When you need to convert a color to RGB color format, our tool provides instant conversions showing the exact RGB values (0-255 for each channel) needed for CSS, programming, and design applications. The to RGB color conversion is fundamental for web developers who need RGB values for styling, designers working with digital media, and anyone requiring precise color format translations. Use our to RGB color converter to transform any color format into RGB values instantly.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The to RGB color functionality supports converting hex codes, HSL values, and named colors to RGB format, ensuring you have the exact RGB values needed for your project. Whether you're converting hex to RGB color, HSL to RGB color, or any other format to RGB color, our converter provides accurate, instant results. The to RGB color conversion is essential for maintaining color consistency across different platforms, applications, and design tools that require RGB format input.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Convert Hex Code to RGB: Complete Conversion Guide</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Learning how to convert hex code to RGB is essential for web development and digital design workflows. Our convert hex code to RGB tool provides instant, accurate conversions from any hex color code to standard RGB format. When you convert hex code to RGB, each pair of hexadecimal digits represents the intensity of red, green, and blue channels respectively. The process to convert hex code to RGB involves converting each hex pair (00-FF) to its decimal equivalent (0-255), creating the RGB color values. Our convert hex code to RGB converter handles all hex code formats including 3-digit shorthand (#FFF) and 6-digit full codes (#FFFFFF), providing accurate RGB conversions for any hex color.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The convert hex code to RGB functionality is widely used in web development, CSS styling, and digital design where RGB format is required. Whether you need to convert hex code to RGB for programming, design work, or color analysis, our tool provides the precision needed for accurate conversions. The convert hex code to RGB process ensures color consistency across different platforms and applications that require RGB format input for proper color rendering and display.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Color Code to RGB: Universal Color Conversion</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our color code to RGB converter supports converting any color code format to standard RGB values. The color code to RGB conversion is essential for web developers, designers, and anyone working with digital colors who need RGB format for their projects. When you convert a color code to RGB, you're translating the color representation into red, green, and blue intensity values that can be used in CSS, programming, and design applications. The color code to RGB functionality supports hex codes, HSL values, named colors, and other formats, providing comprehensive color conversion capabilities. Use our color code to RGB converter to transform any color format into accurate RGB values instantly.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The color code to RGB conversion ensures color consistency across different platforms and applications. Whether you're converting hex color codes to RGB, HSL color codes to RGB, or any other color code to RGB, our tool provides precise conversions showing exact RGB values. The color code to RGB functionality is fundamental for maintaining accurate color representation across web browsers, design software, and digital media platforms that require RGB format for proper color rendering.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">ARGB Color Converter: Alpha Channel Color Conversion</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our ARGB color converter helps you convert colors to and from ARGB format, which includes alpha channel (transparency) information along with red, green, and blue color values. The ARGB color converter is essential for developers and designers working with graphics, game development, and applications that require transparency control. When you use the ARGB color converter, you can convert colors between ARGB format (where alpha comes first: Alpha-Red-Green-Blue) and other color formats like RGBA, hex, and RGB. The ARGB color converter is particularly useful for Android development, image processing, and graphics programming where ARGB format is commonly used. Use our ARGB color converter to convert colors with alpha channels, ensuring accurate transparency representation in your projects.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The ARGB color converter provides comprehensive conversion capabilities between ARGB and other color formats, making it easy to work with colors that include transparency information. Whether you're converting ARGB to RGBA, ARGB to hex, or ARGB to RGB, our ARGB color converter ensures accurate color and transparency values. The ARGB color converter tool is free to use and supports all standard ARGB formats, making it perfect for developers and designers who need to work with alpha channel colors.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Frequently Asked Questions</h2>
                     <div className="space-y-4 sm:space-y-5">

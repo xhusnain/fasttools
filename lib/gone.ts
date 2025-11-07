@@ -83,7 +83,6 @@ export const goneUrls = new Set([
   '/tools/finance-calculator',
 
   // Other removed pages
-  '/social-media-tools/youtube-downloader',
   '/resources',
     "/announcements"
 ])

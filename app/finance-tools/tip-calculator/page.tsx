@@ -626,6 +626,39 @@ export default function TipCalculatorPage() {
                   </CardContent>
                 </Card>
 
+                {/* Tip Calculator Keywords Content */}
+                <Card className="border border-border shadow-sm">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold text-foreground flex items-center gap-2">
+                      <Calculator className="h-5 w-5 text-primary" />
+                      Tip Calculator: Restaurant Tips and Reverse Calculations
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-4">
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">How to Calculate a Tip at a Restaurant: Complete Guide</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Learning how to calculate a tip at a restaurant is essential for dining out, and our tip calculator makes it easy to determine the appropriate tip amount quickly. When you want to know how to calculate a tip at a restaurant, start by identifying your bill total, then choose a tip percentage based on service quality (typically 15-20% for good service). Our guide on how to calculate a tip at a restaurant explains that you multiply the bill amount by the tip percentage to get the tip amount, then add it to the bill total for the final amount. The method for how to calculate a tip at a restaurant varies by location: in the US, 15-20% is standard, while other countries may have different customs. Understanding how to calculate a tip at a restaurant helps you tip appropriately and avoid overpaying or underpaying for service.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Our tool simplifies the process of how to calculate a tip at a restaurant by automatically computing tip amounts based on your bill total and desired tip percentage. Whether you're calculating tips for dinner, lunch, or special occasions, our guide on how to calculate a tip at a restaurant provides clear instructions and instant calculations. Use our calculator to learn how to calculate a tip at a restaurant accurately, ensuring you always tip the right amount based on service quality and local customs.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">Reverse Tip Calculator: Calculate Bill from Tip Amount</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our reverse tip calculator helps you work backwards from a tip amount to determine the original bill total or tip percentage. The reverse tip calculator is useful when you know the tip amount but need to calculate what percentage it represents or what the original bill was before the tip. When using the reverse tip calculator, you can input the tip amount and either the bill total or tip percentage to calculate the missing value. The reverse tip calculator is particularly helpful for verifying tip calculations, understanding tip percentages from actual tip amounts, or calculating bill totals when you only know the tip. Use our reverse tip calculator to work backwards from tip amounts, making it easy to verify calculations or determine original bill amounts from known tip values.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The reverse tip calculator provides accurate reverse calculations, helping you understand tip percentages and bill totals from any known tip amount. Whether you're verifying restaurant receipts, calculating tip percentages from actual tips paid, or determining original bill amounts, our reverse tip calculator makes reverse calculations simple and accurate. The reverse tip calculator tool is free to use and provides instant results for all reverse tip calculations.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
                 <Card className="border border-border shadow-sm">
                   <CardHeader>
                     <CardTitle className="text-xl font-bold text-foreground flex items-center gap-2">
