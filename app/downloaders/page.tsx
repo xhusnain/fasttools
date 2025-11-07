@@ -4,13 +4,19 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import {
   Download,
-  ArrowRight
+  ArrowRight,
+  Youtube
 } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Downloaders",
-  description: "Download videos and media from popular platforms. Free TikTok, Instagram, Facebook, and X/Twitter downloader tools to save your favorite content.",
+  description: "Download videos and media from popular platforms. Free YouTube, TikTok, Instagram, Facebook, and X/Twitter downloader tools to save your favorite content.",
   keywords: [
+    "youtube downloader",
+    "youtube video downloader",
+    "youtube mp3 downloader",
+    "download youtube videos",
+    "download youtube audio",
     "tiktok downloader",
     "instagram downloader",
     "x video downloader",
@@ -31,7 +37,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Downloaders",
-    description: "Download videos and media from popular platforms. Free TikTok, Instagram, Facebook, and X/Twitter downloader tools to save your favorite content.",
+    description: "Download videos and media from popular platforms. Free YouTube, TikTok, Instagram, Facebook, and X/Twitter downloader tools to save your favorite content.",
     type: "website",
     url: "/downloaders",
     siteName: "FastTools",
@@ -48,7 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Downloaders",
-    description: "Download videos and media from popular platforms. Free TikTok, Instagram, Facebook, and X/Twitter downloader tools to save your favorite content.",
+    description: "Download videos and media from popular platforms. Free YouTube, TikTok, Instagram, Facebook, and X/Twitter downloader tools to save your favorite content.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -68,6 +74,13 @@ export const metadata: Metadata = {
 }
 
 const downloaders = [
+  {
+    id: "youtube-downloader",
+    name: "YouTube Downloader",
+    description: "Download YouTube videos in MP4 and extract MP3 audio in high quality",
+    icon: Youtube,
+    href: "/social-media-tools/youtube-downloader",
+  },
   {
     id: "tiktok-downloader",
     name: "TikTok Downloader",
@@ -151,7 +164,7 @@ export default function DownloadersPage() {
             <div className="mb-12 md:mb-16">
               <GHeader
                 title="Free Downloaders"
-                description="Download videos and media from your favorite platforms. Fast, free, and easy to use."
+                description="Download videos and media from YouTube, TikTok, Instagram, Facebook, and X/Twitter. Fast, free, and easy to use."
                 titleSize="large"
                 descriptionSize="medium"
                 color="orange"

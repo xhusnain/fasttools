@@ -17,44 +17,28 @@ RUN corepack enable && corepack prepare pnpm@10.18.0 --activate
 # Copy package files
 COPY package.json pnpm-lock.yaml* ./
 
-# Copy scripts directory needed for postinstall script
-COPY scripts ./scripts
-
-# Create bin directory for yt-dlp binary
-RUN mkdir -p bin
+# Copy bin directory with yt-dlp binary (already downloaded and committed to repo)
+COPY bin ./bin
 
 # Install dependencies (safe for CI/CD)
-# This will run postinstall script which downloads yt-dlp
 RUN pnpm install --no-frozen-lockfile
 
-# Verify yt-dlp was downloaded successfully
-# Wait a moment for file system to sync before verifying
-RUN sleep 1 && \
-    if [ -f ./bin/yt-dlp ]; then \
+# Verify yt-dlp binary exists
+RUN if [ -f ./bin/yt-dlp ]; then \
       FILE_SIZE=$(stat -c%s ./bin/yt-dlp 2>/dev/null || stat -f%z ./bin/yt-dlp 2>/dev/null || echo "0"); \
-      echo "✅ yt-dlp downloaded in deps stage"; \
+      echo "✅ yt-dlp binary found in deps stage"; \
       echo "File size: $FILE_SIZE bytes"; \
       if [ "$FILE_SIZE" -eq "0" ]; then \
-        echo "❌ ERROR: yt-dlp binary is 0 bytes after download!"; \
-        echo "The download may have failed. Retrying download..."; \
-        node scripts/download-yt-dlp.js || exit 1; \
-        sleep 1; \
-        FILE_SIZE=$(stat -c%s ./bin/yt-dlp 2>/dev/null || stat -f%z ./bin/yt-dlp 2>/dev/null || echo "0"); \
-        if [ "$FILE_SIZE" -eq "0" ]; then \
-          echo "❌ ERROR: Retry also failed. yt-dlp binary is still 0 bytes."; \
-          exit 1; \
-        fi; \
+        echo "❌ ERROR: yt-dlp binary is 0 bytes!"; \
+        echo "Please ensure bin/yt-dlp is properly committed to the repository."; \
+        exit 1; \
       fi; \
-      chmod +x ./bin/yt-dlp && \
-      echo "Testing yt-dlp version (with retry if file is busy)..." && \
-      (./bin/yt-dlp --version 2>&1 || (sleep 2 && ./bin/yt-dlp --version 2>&1)) || \
-      (echo "⚠️  WARNING: yt-dlp verification failed, but file exists (${FILE_SIZE} bytes). This may be OK." && \
-       echo "File will be verified again in the runner stage."); \
+      chmod +x ./bin/yt-dlp; \
     else \
-      echo "❌ ERROR: yt-dlp binary not found after postinstall!"; \
-      echo "Attempting manual download..."; \
-      node scripts/download-yt-dlp.js || exit 1; \
-      sleep 1; \
+      echo "❌ ERROR: yt-dlp binary not found in bin/ directory!"; \
+      echo "Please download yt-dlp and place it in bin/yt-dlp"; \
+      echo "Download from: https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux"; \
+      exit 1; \
     fi
 
 # ----------------------------
@@ -69,8 +53,7 @@ RUN corepack enable && corepack prepare pnpm@10.18.0 --activate
 # Copy dependencies and source
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-# Copy bin directory from deps stage (contains yt-dlp binary from postinstall)
-# This ensures the downloaded yt-dlp binary is preserved even if bin/ exists in source
+# Copy bin directory from deps stage (contains yt-dlp binary)
 COPY --from=deps /app/bin ./bin
 
 # Set production environment
@@ -90,9 +73,11 @@ RUN pnpm run build
 FROM base AS runner
 WORKDIR /app
 
-# Install ffmpeg for video/audio processing (required by yt-dlp for some formats)
+# Install ffmpeg and python3 for video/audio processing
+# Note: We use standalone yt-dlp binary which doesn't require Python, but keeping it as fallback
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg \
+    python3 \
     && rm -rf /var/lib/apt/lists/*
 
 # Set runtime environment variables (can be overridden via docker-compose)
@@ -110,64 +95,24 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 
-# Copy bin directory (contains yt-dlp binary) - CRITICAL: Must be at /app/bin
-# Check if bin exists in builder first and verify file size
-RUN if [ -d /app/bin ] && [ -f /app/bin/yt-dlp ]; then \
-      FILE_SIZE=$(stat -c%s /app/bin/yt-dlp 2>/dev/null || stat -f%z /app/bin/yt-dlp 2>/dev/null || echo "0"); \
-      echo "✅ yt-dlp found in builder at /app/bin/yt-dlp"; \
-      echo "File size: $FILE_SIZE bytes"; \
-      if [ "$FILE_SIZE" -eq "0" ]; then \
-        echo "❌ ERROR: yt-dlp binary is 0 bytes in builder!"; \
-        exit 1; \
-      fi; \
-    else \
-      echo "❌ ERROR: yt-dlp not found in builder /app/bin/"; \
-      ls -la /app/bin/ 2>/dev/null || echo "bin directory does not exist in builder"; \
-      exit 1; \
-    fi
-
-# Copy bin directory to /app/bin (main location)
+# Copy bin directory (contains yt-dlp binary) from builder
+# The postbuild script already copied it to .next/standalone/bin, but we also copy to root for direct access
 COPY --from=builder --chown=nextjs:nodejs /app/bin ./bin
 
-# Also ensure it's in standalone directory (postbuild should have done this, but double-check)
-RUN if [ -d .next/standalone ] && [ -f ./bin/yt-dlp ]; then \
-      mkdir -p .next/standalone/bin && \
-      cp ./bin/yt-dlp .next/standalone/bin/yt-dlp && \
-      chmod +x .next/standalone/bin/yt-dlp && \
-      echo "✅ Also copied yt-dlp to .next/standalone/bin/"; \
-    fi
-
-# Ensure yt-dlp is executable and verify it exists and has content (must be done as root before switching to non-root user)
-RUN echo "🔍 Verifying yt-dlp installation..." && \
-    if [ -f ./bin/yt-dlp ]; then \
+# Verify yt-dlp is executable and working (must be done as root before switching to non-root user)
+RUN if [ -f ./bin/yt-dlp ]; then \
+      chmod +x ./bin/yt-dlp && \
       FILE_SIZE=$(stat -c%s ./bin/yt-dlp 2>/dev/null || stat -f%z ./bin/yt-dlp 2>/dev/null || echo "0"); \
-      echo "✅ yt-dlp found at ./bin/yt-dlp"; \
-      echo "File size: $FILE_SIZE bytes"; \
-      ls -lh ./bin/yt-dlp; \
+      echo "✅ yt-dlp found at ./bin/yt-dlp (${FILE_SIZE} bytes)"; \
       if [ "$FILE_SIZE" -eq "0" ]; then \
         echo "❌ ERROR: yt-dlp binary is 0 bytes!"; \
-        echo "This means the download failed or file was corrupted during copy."; \
         exit 1; \
       fi; \
-      chmod +x ./bin/yt-dlp && \
-      echo "Testing yt-dlp version..." && \
-      VERSION_OUTPUT=$(./bin/yt-dlp --version 2>&1) && \
-      if [ -z "$VERSION_OUTPUT" ]; then \
-        echo "❌ ERROR: yt-dlp --version returned empty output!"; \
-        echo "Binary may be corrupted or incompatible with this system."; \
-        exit 1; \
-      fi; \
-      echo "✅ yt-dlp version: $VERSION_OUTPUT"; \
+      echo "Testing yt-dlp..." && \
+      ./bin/yt-dlp --version && \
       echo "✅ yt-dlp is working!"; \
     else \
-      echo "❌ ERROR: yt-dlp not found in ./bin directory!" && \
-      echo "Current directory: $(pwd)" && \
-      echo "Contents of /app:" && \
-      ls -la /app/ | head -20 && \
-      echo "Contents of ./bin (if exists):" && \
-      ls -la ./bin/ 2>/dev/null || echo "bin directory does not exist" && \
-      echo "Contents of .next/standalone/bin (if exists):" && \
-      ls -la .next/standalone/bin/ 2>/dev/null || echo ".next/standalone/bin does not exist" && \
+      echo "❌ ERROR: yt-dlp not found in ./bin directory!"; \
       exit 1; \
     fi
 

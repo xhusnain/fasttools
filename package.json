@@ -9,9 +9,7 @@
     "lint": "next lint",
     "start": "next start",
     "download-models": "node scripts/download-models.js",
-    "download-yt-dlp": "node scripts/download-yt-dlp.js",
-    "prebuild": "node scripts/download-models.js",
-    "postinstall": "node scripts/download-yt-dlp.js"
+    "prebuild": "node scripts/download-models.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
