@@ -25,59 +25,125 @@ if (fs.existsSync(ytDlpPath)) {
   }
 }
 
-console.log('Downloading yt-dlp binary...')
+console.log('Downloading yt-dlp binary from GitHub...')
 
-// Download yt-dlp binary
-const file = fs.createWriteStream(ytDlpPath)
-const url = 'https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp'
-
-https.get(url, (response) => {
-  if (response.statusCode === 302 || response.statusCode === 301) {
-    // Follow redirect
-    https.get(response.headers.location, (redirectResponse) => {
-      redirectResponse.pipe(file)
+// Function to download with proper error handling
+function downloadYtDlp(downloadUrl) {
+  return new Promise((resolve, reject) => {
+    const file = fs.createWriteStream(ytDlpPath)
+    let bytesDownloaded = 0
+    
+    console.log(`Downloading from: ${downloadUrl}`)
+    
+    https.get(downloadUrl, (response) => {
+      // Handle redirects
+      if (response.statusCode === 301 || response.statusCode === 302 || response.statusCode === 307 || response.statusCode === 308) {
+        const redirectUrl = response.headers.location
+        console.log(`Following redirect to: ${redirectUrl}`)
+        file.close()
+        try {
+          if (fs.existsSync(ytDlpPath)) {
+            fs.unlinkSync(ytDlpPath)
+          }
+        } catch {}
+        return downloadYtDlp(redirectUrl).then(resolve).catch(reject)
+      }
+      
+      // Check for errors
+      if (response.statusCode !== 200) {
+        file.close()
+        try {
+          if (fs.existsSync(ytDlpPath)) {
+            fs.unlinkSync(ytDlpPath)
+          }
+        } catch {}
+        reject(new Error(`Failed to download yt-dlp: HTTP ${response.statusCode}`))
+        return
+      }
+      
+      const contentLength = parseInt(response.headers['content-length'] || '0', 10)
+      console.log(`Content-Length: ${contentLength} bytes`)
+      
+      // Pipe response to file
+      response.pipe(file)
+      
+      // Track download progress
+      response.on('data', (chunk) => {
+        bytesDownloaded += chunk.length
+      })
+      
+      // Handle file completion
       file.on('finish', () => {
         file.close()
-        // Make executable
-        fs.chmodSync(ytDlpPath, '755')
-        console.log('yt-dlp downloaded successfully!')
         
-        // Verify it works
+        // Verify file was actually written
+        const stats = fs.statSync(ytDlpPath)
+        console.log(`Downloaded ${bytesDownloaded} bytes, file size: ${stats.size} bytes`)
+        
+        if (stats.size === 0) {
+          try {
+            if (fs.existsSync(ytDlpPath)) {
+              fs.unlinkSync(ytDlpPath)
+            }
+          } catch {}
+          reject(new Error('Downloaded file is empty (0 bytes)'))
+          return
+        }
+        
+        if (contentLength > 0 && stats.size < contentLength * 0.9) {
+          console.warn(`Warning: File size (${stats.size}) is significantly smaller than expected (${contentLength})`)
+        }
+        
+        // Make executable
         try {
-          const version = execSync(`${ytDlpPath} --version`, { encoding: 'utf-8' })
-          console.log(`yt-dlp version: ${version.trim()}`)
-        } catch (error) {
-          console.error('Error verifying yt-dlp:', error.message)
+          fs.chmodSync(ytDlpPath, 0o755)
+          console.log('✅ yt-dlp downloaded and made executable')
+          
+          // Verify it works
+          try {
+            const version = execSync(`"${ytDlpPath}" --version`, { encoding: 'utf-8', timeout: 10000 })
+            console.log(`✅ yt-dlp version: ${version.trim()}`)
+            resolve()
+          } catch (error) {
+            console.error('❌ Error verifying yt-dlp:', error.message)
+            reject(new Error(`yt-dlp downloaded but verification failed: ${error.message}`))
+          }
+        } catch (chmodError) {
+          reject(new Error(`Failed to make yt-dlp executable: ${chmodError.message}`))
         }
       })
-    })
-  } else {
-    response.pipe(file)
-    file.on('finish', () => {
-      file.close()
-      // Make executable
-      fs.chmodSync(ytDlpPath, '755')
-      console.log('yt-dlp downloaded successfully!')
       
-      // Verify it works
+      // Handle file errors
+      file.on('error', (err) => {
+        file.close()
+        try {
+          if (fs.existsSync(ytDlpPath)) {
+            fs.unlinkSync(ytDlpPath)
+          }
+        } catch {}
+        reject(new Error(`File write error: ${err.message}`))
+      })
+    }).on('error', (err) => {
+      file.close()
       try {
-        const version = execSync(`${ytDlpPath} --version`, { encoding: 'utf-8' })
-        console.log(`yt-dlp version: ${version.trim()}`)
-      } catch (error) {
-        console.error('Error verifying yt-dlp:', error.message)
-      }
+        if (fs.existsSync(ytDlpPath)) {
+          fs.unlinkSync(ytDlpPath)
+        }
+      } catch {}
+      reject(new Error(`Download error: ${err.message}`))
     })
-  }
-}).on('error', (err) => {
-  // Only unlink if file exists
-  if (fs.existsSync(ytDlpPath)) {
-    try {
-      fs.unlinkSync(ytDlpPath)
-    } catch (unlinkError) {
-      // Ignore unlink errors
-    }
-  }
-  console.error('Error downloading yt-dlp:', err.message)
-  process.exit(1)
-})
+  })
+}
+
+// Start download
+const url = 'https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp'
+downloadYtDlp(url)
+  .then(() => {
+    console.log('✅ yt-dlp installation completed successfully')
+    process.exit(0)
+  })
+  .catch((error) => {
+    console.error('❌ Failed to download yt-dlp:', error.message)
+    process.exit(1)
+  })
 

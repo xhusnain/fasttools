@@ -12,11 +12,13 @@ export const maxDuration = 300
 export const dynamic = 'force-dynamic'
 
 export async function POST(request: NextRequest) {
+  let downloadId = `download_${Date.now()}_${Math.random().toString(36).substring(7)}`
+  
   try {
     const { url, format = 'mp4', videoId, title, downloadId: providedDownloadId } = await request.json()
     
-    // Use provided download ID or generate one
-    const downloadId = providedDownloadId || `download_${Date.now()}_${Math.random().toString(36).substring(7)}`
+    // Use provided download ID or use the generated one
+    downloadId = providedDownloadId || downloadId
     
     console.log('Starting download with ID:', downloadId, 'provided:', !!providedDownloadId)
     
@@ -40,25 +42,34 @@ export async function POST(request: NextRequest) {
 
     // Get yt-dlp binary path - handle both local and production (standalone) modes
     const projectRoot = process.cwd()
-    const isStandalone = projectRoot.includes('.next/standalone') || projectRoot.endsWith('/app')
     
-    // Try multiple possible locations for the binary
+    // In Docker/production, the working directory is usually /app
+    // In standalone mode, Next.js runs from .next/standalone but cwd is usually the project root
+    // Try multiple possible locations for the binary, prioritizing Docker paths
     const possiblePaths = [
-      path.join(projectRoot, 'bin', 'yt-dlp'), // Standard location
-      path.join(projectRoot, '..', 'bin', 'yt-dlp'), // If running from .next/standalone/api
-      path.join(projectRoot, '../..', 'bin', 'yt-dlp'), // If running from .next/standalone/server/pages/api
-      '/app/bin/yt-dlp', // Docker production path (absolute)
+      '/app/bin/yt-dlp', // Docker production path (absolute - most reliable)
+      path.join(projectRoot, 'bin', 'yt-dlp'), // Standard location (if cwd is /app)
+      path.join('/app', 'bin', 'yt-dlp'), // Alternative Docker path
+      path.join(projectRoot, '..', 'bin', 'yt-dlp'), // If running from .next/standalone
+      path.join(projectRoot, '../..', 'bin', 'yt-dlp'), // If running from .next/standalone/server
       path.resolve(projectRoot, 'bin', 'yt-dlp'), // Resolved absolute path
-      path.resolve(__dirname, '..', '..', '..', 'bin', 'yt-dlp'), // Relative from API route
-      path.resolve(__dirname, '..', '..', '..', '..', 'bin', 'yt-dlp'), // Alternative relative path
+      path.resolve('/app', 'bin', 'yt-dlp'), // Resolved Docker path
+      // Try to find from __dirname (compiled route location)
+      ...(typeof __dirname !== 'undefined' ? [
+        path.resolve(__dirname, '..', '..', '..', '..', 'bin', 'yt-dlp'),
+        path.resolve(__dirname, '..', '..', '..', 'bin', 'yt-dlp'),
+        path.resolve(__dirname, '..', '..', '..', '..', '..', 'bin', 'yt-dlp'),
+      ] : []),
     ]
     
     let ytDlpPath: string | null = null
     
     // Find the first existing path
-    console.log('Searching for yt-dlp in production. Working directory:', projectRoot)
-    console.log('Is standalone mode:', isStandalone)
-    console.log('__dirname:', __dirname)
+    console.log('🔍 Searching for yt-dlp binary...')
+    console.log('Working directory (process.cwd()):', projectRoot)
+    console.log('__dirname:', typeof __dirname !== 'undefined' ? __dirname : 'undefined (ESM)')
+    console.log('NODE_ENV:', process.env.NODE_ENV)
+    console.log('Checking', possiblePaths.length, 'possible paths...')
     
     for (const possiblePath of possiblePaths) {
       try {
@@ -439,12 +450,34 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
-  } catch (error) {
-    console.error('YouTube download file API error:', error)
+  } catch (error: any) {
+    console.error('❌ YouTube download file API error:', error)
+    console.error('Error stack:', error?.stack)
+    console.error('Error message:', error?.message)
+    
+    // Clear progress
+    try {
+      clearProgress(downloadId)
+    } catch {}
+    
+    // Return more specific error message
+    let errorMessage = 'Internal server error. Please try again later.'
+    if (error?.message) {
+      if (error.message.includes('yt-dlp')) {
+        errorMessage = error.message
+      } else if (error.message.includes('ENOENT')) {
+        errorMessage = 'yt-dlp binary not found. Please check server configuration.'
+      } else if (error.message.includes('EACCES')) {
+        errorMessage = 'Permission denied. yt-dlp may not be executable.'
+      } else {
+        errorMessage = `Server error: ${error.message.substring(0, 200)}`
+      }
+    }
+    
     return NextResponse.json(
-      { 
-        success: false, 
-        message: 'Internal server error. Please try again later.' 
+      {
+        success: false,
+        message: errorMessage
       },
       { status: 500 }
     )
