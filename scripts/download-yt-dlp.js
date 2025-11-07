@@ -69,7 +69,14 @@ https.get(url, (response) => {
     })
   }
 }).on('error', (err) => {
-  fs.unlinkSync(ytDlpPath)
+  // Only unlink if file exists
+  if (fs.existsSync(ytDlpPath)) {
+    try {
+      fs.unlinkSync(ytDlpPath)
+    } catch (unlinkError) {
+      // Ignore unlink errors
+    }
+  }
   console.error('Error downloading yt-dlp:', err.message)
   process.exit(1)
 })

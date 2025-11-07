@@ -1,9 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { downloadVideo } from 'ytsave'
+import { exec } from 'child_process'
 import { promises as fs } from 'fs'
 import path from 'path'
 import os from 'os'
 import archiver from 'archiver'
+import { promisify } from 'util'
+
+const execAsync = promisify(exec)
 
 export const maxDuration = 600
 export const dynamic = 'force-dynamic'
@@ -27,11 +30,23 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Set PATH to include local yt-dlp binary
+    // Get yt-dlp binary path
     const projectRoot = process.cwd()
     const binPath = path.join(projectRoot, 'bin')
-    const currentPath = process.env.PATH || ''
-    process.env.PATH = `${binPath}:${currentPath}`
+    const ytDlpPath = path.join(binPath, 'yt-dlp')
+
+    // Check if yt-dlp exists
+    try {
+      await fs.access(ytDlpPath)
+    } catch {
+      return NextResponse.json(
+        { 
+          success: false, 
+          message: 'yt-dlp not found. Please ensure yt-dlp is installed in the bin directory.' 
+        },
+        { status: 500 }
+      )
+    }
 
     // Create temp directory
     const tempDir = path.join(os.tmpdir(), `youtube-selected-${Date.now()}`)
@@ -48,13 +63,26 @@ export async function POST(request: NextRequest) {
           console.log(`Downloading video ${i + 1}/${videos.length}: ${video.url || video}`)
           
           const videoUrl = typeof video === 'string' ? video : video.url
-          
-          await downloadVideo(videoUrl, {
-            format: format as 'mp4' | 'mp3',
-            output: tempDir
+          const outputFilename = `video_${i + 1}.${format === 'mp4' ? 'mp4' : 'mp3'}`
+          const outputPath = path.join(tempDir, outputFilename)
+
+          // Build yt-dlp command
+          let command: string
+          if (format === 'mp3') {
+            // For MP3, extract audio and convert to MP3
+            command = `"${ytDlpPath}" -x --audio-format mp3 --audio-quality 0 -o "${outputPath}" --no-warnings --no-check-certificate "${videoUrl}"`
+          } else {
+            // For MP4, get best video+audio format
+            command = `"${ytDlpPath}" -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" -o "${outputPath}" --merge-output-format mp4 --no-warnings --no-check-certificate "${videoUrl}"`
+          }
+
+          // Execute yt-dlp
+          await execAsync(command, {
+            maxBuffer: 50 * 1024 * 1024, // 50MB buffer
+            timeout: 300000 // 5 minute timeout per video
           })
 
-          // Find the downloaded file
+          // Find the downloaded file (yt-dlp might rename it)
           const files = await fs.readdir(tempDir)
           const newFiles = files.filter(file => 
             !downloadedFiles.includes(file) && (

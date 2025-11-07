@@ -76,6 +76,9 @@ COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 # Copy bin directory (contains yt-dlp binary) if needed at runtime
 COPY --from=builder --chown=nextjs:nodejs /app/bin ./bin
 
+# Ensure yt-dlp is executable (must be done before switching to non-root user)
+RUN if [ -f ./bin/yt-dlp ]; then chmod +x ./bin/yt-dlp; fi
+
 # Use non-root user
 USER nextjs
 
