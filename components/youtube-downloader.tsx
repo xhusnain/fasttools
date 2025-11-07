@@ -47,7 +47,6 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     video?: boolean
     audio?: boolean
   }>({})
-  const [singleVideoProgress, setSingleVideoProgress] = useState(0)
 
   // Playlist state
   const [playlistUrl, setPlaylistUrl] = useState("")
@@ -90,7 +89,6 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
   const handleSingleVideoFetch = async () => {
     setError(null)
     setResult(null)
-    setSingleVideoProgress(0)
     if (!isLikelyYoutubeUrl(videoUrl)) {
       setError("Please enter a valid YouTube video URL.")
       return
@@ -148,7 +146,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     }
   }
 
-  // Single video download with progress
+  // Single video download - direct browser download (no server bandwidth)
   const handleSingleVideoDownload = async () => {
     if (!result?.videoId || !result?.title) {
       setError("Please fetch video information first")
@@ -157,66 +155,9 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
 
     setDownloadingStates(prev => ({ ...prev, [format === 'mp4' ? 'video' : 'audio']: true }))
     setError(null)
-    setSingleVideoProgress(0)
-
-    // Declare progress interval outside try block so it's accessible in catch
-    let progressInterval: NodeJS.Timeout | null = null
-    let isComplete = false
 
     try {
-      // Generate download ID on frontend so we can start polling immediately
-      const downloadId = `download_${Date.now()}_${Math.random().toString(36).substring(7)}`
-      
-      console.log('Frontend: Starting download with ID:', downloadId)
-      
-      // Start with initial progress
-      setSingleVideoProgress(5)
-
-      // Start polling for progress immediately
-      
-      progressInterval = setInterval(async () => {
-        if (isComplete) {
-          if (progressInterval) clearInterval(progressInterval)
-          return
-        }
-        
-        try {
-          const progressResponse = await fetch(`/api/youtube-download-progress?id=${encodeURIComponent(downloadId)}`)
-          if (progressResponse.ok) {
-            const progressData = await progressResponse.json()
-            if (progressData.progress !== undefined) {
-              // Always update progress - React will handle re-rendering
-              const newProgress = Math.max(0, Math.min(100, progressData.progress)) // Clamp between 0-100
-              console.log('Progress update received:', newProgress + '%', 'Status:', progressData.status, 'Download ID:', downloadId)
-              
-              // Force update even if value is same (in case of React optimization)
-              setSingleVideoProgress(prev => {
-                if (prev !== newProgress) {
-                  console.log('Updating progress from', prev + '%', 'to', newProgress + '%')
-                  return newProgress
-                }
-                return prev // Return same value if unchanged
-              })
-              
-              // Stop polling if complete or error
-              if (progressData.status === 'complete' || progressData.status === 'error') {
-                console.log('Download complete or error, stopping polling')
-                isComplete = true
-                if (progressInterval) clearInterval(progressInterval)
-              }
-            } else {
-              console.log('Progress data missing progress field:', progressData)
-            }
-          } else {
-            const errorText = await progressResponse.text().catch(() => '')
-            console.log('Progress endpoint returned:', progressResponse.status, errorText)
-          }
-        } catch (e) {
-          console.error('Progress polling error:', e)
-          // Ignore progress polling errors but log them
-        }
-      }, 500) // Poll every 500ms
-
+      // Step 1: Get direct download URL from server (lightweight, no file download)
       const response = await fetch('/api/youtube-download-file', {
         method: 'POST',
         headers: {
@@ -226,99 +167,56 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
           url: cleanYouTubeUrl(videoUrl),
           format: format,
           videoId: result.videoId,
-          title: result.title,
-          downloadId: downloadId // Send download ID to backend
+          title: result.title
         })
       })
 
       if (!response.ok) {
-        isComplete = true
-        if (progressInterval) clearInterval(progressInterval)
         const errorData = await response.json().catch(() => ({}))
-        throw new Error(errorData.message || 'Download failed')
+        throw new Error(errorData.message || 'Failed to get download URL')
       }
 
-      // Check if we can track progress via Content-Length
-      const contentLength = response.headers.get('content-length')
-      const total = contentLength ? parseInt(contentLength, 10) : 0
+      const data = await response.json()
 
-      // Track HTTP download progress (for the final file transfer)
-      // This will be 90-100% since yt-dlp progress is 0-90%
-      if (total > 0 && response.body) {
-        const reader = response.body.getReader()
-        const chunks: Uint8Array[] = []
-        let receivedLength = 0
-
-        while (true) {
-          const { done, value } = await reader.read()
-          
-          if (done) break
-          
-          chunks.push(value)
-          receivedLength += value.length
-          
-          // Update progress: 90% to 98% (yt-dlp already did 0-90%)
-          const httpProgress = 90 + Math.floor((receivedLength / total) * 8)
-          setSingleVideoProgress(Math.min(httpProgress, 98))
-        }
-
-        // Clear progress polling
-        isComplete = true
-        if (progressInterval) clearInterval(progressInterval)
-
-        // Combine chunks into blob
-        const blob = new Blob(chunks)
-        setSingleVideoProgress(99)
-        
-        const url = window.URL.createObjectURL(blob)
-        const a = document.createElement('a')
-        a.href = url
-        a.download = `${result.title || 'youtube-video'}.${format}`
-        document.body.appendChild(a)
-        a.click()
-        window.URL.revokeObjectURL(url)
-        document.body.removeChild(a)
-
-        setSingleVideoProgress(100)
-      } else {
-        // Fallback: download without progress tracking
-        const blob = await response.blob()
-        
-        // Clear progress polling
-        isComplete = true
-        if (progressInterval) clearInterval(progressInterval)
-        
-        setSingleVideoProgress(99)
-        
-        const url = window.URL.createObjectURL(blob)
-        const a = document.createElement('a')
-        a.href = url
-        a.download = `${result.title || 'youtube-video'}.${format}`
-        document.body.appendChild(a)
-        a.click()
-        window.URL.revokeObjectURL(url)
-        document.body.removeChild(a)
-
-        setSingleVideoProgress(100)
+      if (!data.success || !data.downloadUrl) {
+        throw new Error(data.message || 'No download URL received')
       }
 
-      setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
+      // Note: HLS detection is now handled on the backend
+      // The backend will try multiple strategies to find a direct URL
+      // If it fails, it will return an error message
+
+      // Step 2: Download via streaming proxy (for direct video URLs)
+      // Use GET request with query parameters to avoid POST body issues
+      // This approach is simpler and avoids Range header complications
+      console.log('Starting download via streaming proxy...')
       
-      // Reset downloading state immediately after successful download
-      setDownloadingStates(prev => ({ ...prev, [format === 'mp4' ? 'video' : 'audio']: false }))
+      const safeFilename = encodeURIComponent(data.filename || `${result.title || 'youtube-video'}.${format}`)
+      const encodedVideoUrl = encodeURIComponent(data.downloadUrl)
       
+      // Create a direct download link using GET request
+      // This avoids fetch() Range header issues
+      const proxyDownloadUrl = `/api/youtube-proxy-download?url=${encodedVideoUrl}&filename=${safeFilename}`
+      
+      // Create a temporary anchor element and trigger download
+      const a = document.createElement('a')
+      a.href = proxyDownloadUrl
+      a.download = data.filename || `${result.title || 'youtube-video'}.${format}`
+      a.style.display = 'none'
+      document.body.appendChild(a)
+      a.click()
+      
+      // Clean up after download starts
       setTimeout(() => {
-        setSingleVideoProgress(0)
-      }, 2000)
-    } catch (e: any) {
-      setError(e?.message || "Download failed. Please try again.")
-      setSingleVideoProgress(0)
-      // Make sure to clear any intervals
-      if (progressInterval) clearInterval(progressInterval)
-      // Reset downloading state on error too
+        document.body.removeChild(a)
+      }, 1000)
+      
+      setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
       setDownloadingStates(prev => ({ ...prev, [format === 'mp4' ? 'video' : 'audio']: false }))
-    } finally {
-      // Ensure state is reset even if something unexpected happens
+      
+    } catch (e: any) {
+      console.error('Download error:', e)
+      setError(e?.message || "Download failed. Please try again.")
       setDownloadingStates(prev => ({ ...prev, [format === 'mp4' ? 'video' : 'audio']: false }))
     }
   }
@@ -397,7 +295,8 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     }
   }
 
-  // Download selected videos
+  // Download selected videos - Client-side download (zero server bandwidth)
+  // This uses the SAME logic as single video downloads - no server bandwidth usage
   const handleDownloadSelected = async () => {
     if (selectedVideos.size === 0) {
       setPlaylistError("Please select at least one video to download")
@@ -409,14 +308,10 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     
     // Get selected videos with their titles
     const selectedVideosList = playlistVideos.filter(v => selectedVideos.has(v.id))
-    const videosToDownload = selectedVideosList.map(v => v.url)
-    const videoTitles = selectedVideosList.map(v => v.title)
-    const totalVideos = videosToDownload.length
+    const totalVideos = selectedVideosList.length
 
-    // Generate download ID for progress tracking
-    const downloadId = `playlist_${Date.now()}_${Math.random().toString(36).substring(7)}`
-    
-    console.log('Frontend: Starting playlist download with ID:', downloadId, 'Total videos:', totalVideos)
+    console.log('🚀 Frontend: Starting CLIENT-SIDE playlist download', 'Total videos:', totalVideos)
+    console.log('⚠️  This should NOT call /api/youtube-download-selected - all downloads are client-side!')
     
     setPlaylistProgress({ 
       current: 0, 
@@ -427,114 +322,126 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
       videoProgress: 0
     })
 
-    // Declare progress interval outside try block
-    let progressInterval: NodeJS.Timeout | null = null
-    let isComplete = false
-    
-    progressInterval = setInterval(async () => {
-      if (isComplete) {
-        if (progressInterval) clearInterval(progressInterval)
-        return
-      }
-      
-      try {
-        const progressResponse = await fetch(`/api/youtube-download-progress?id=${encodeURIComponent(downloadId)}`)
-        if (progressResponse.ok) {
-          const progressData = await progressResponse.json()
-          if (progressData.progress !== undefined) {
-            const newProgress = Math.max(0, Math.min(100, progressData.progress))
-            console.log('Playlist progress update:', newProgress + '%', 'Video:', progressData.currentVideoTitle, 'Video progress:', progressData.videoProgress + '%')
-            
-            setPlaylistProgress({
-              current: progressData.currentVideoIndex || 0,
-              total: progressData.totalVideos || totalVideos,
-              percentage: newProgress,
-              currentVideoTitle: progressData.currentVideoTitle || '',
-              currentVideoIndex: progressData.currentVideoIndex || 0,
-              videoProgress: progressData.videoProgress || 0
-            })
-            
-            // Stop polling if complete or error
-            if (progressData.status === 'complete' || progressData.status === 'error') {
-              isComplete = true
-              if (progressInterval) clearInterval(progressInterval)
-            }
-          }
-        }
-      } catch (e) {
-        console.error('Playlist progress polling error:', e)
-      }
-    }, 500) // Poll every 500ms
-
     try {
-      const response = await fetch('/api/youtube-download-selected', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          videos: videosToDownload,
-          format: playlistFormat,
-          videoTitles: videoTitles,
-          downloadId: downloadId
+      // Download each video one by one on the client side - EXACTLY like single video downloads
+      for (let i = 0; i < selectedVideosList.length; i++) {
+        const video = selectedVideosList[i]
+        const videoUrl = video.url
+        const videoTitle = video.title
+        
+        console.log(`📥 Processing video ${i + 1}/${totalVideos}: ${videoTitle}`)
+        
+        // Update progress
+        setPlaylistProgress({
+          current: i,
+          total: totalVideos,
+          percentage: Math.floor((i / totalVideos) * 100),
+          currentVideoTitle: videoTitle,
+          currentVideoIndex: i + 1,
+          videoProgress: 0
         })
-      })
 
-      if (!response.ok) {
-        isComplete = true
-        if (progressInterval) clearInterval(progressInterval)
-        const errorData = await response.json().catch(() => ({}))
-        throw new Error(errorData.message || 'Download failed')
+        try {
+          // Step 1: Get direct download URL from server (lightweight API call, no file download)
+          console.log(`  → Step 1: Getting direct URL for video ${i + 1}...`)
+          const response = await fetch('/api/youtube-download-file', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              url: videoUrl,
+              format: playlistFormat, // Use selected format (mp4 or mp3)
+              videoId: video.id,
+              title: videoTitle
+            })
+          })
+
+          if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}))
+            throw new Error(errorData.message || `Failed to get download URL for video ${i + 1}`)
+          }
+
+          const data = await response.json()
+
+          if (!data.success || !data.downloadUrl) {
+            throw new Error(data.message || `No download URL received for video ${i + 1}`)
+          }
+
+          // Check if this is an HLS manifest
+          if (data.isHLS || data.downloadUrl.includes('manifest.googlevideo.com') || data.downloadUrl.includes('.m3u8')) {
+            throw new Error(`Video ${i + 1} (${videoTitle}) uses HLS format and cannot be downloaded directly.`)
+          }
+
+          console.log(`  ✅ Got direct URL for video ${i + 1}, starting browser download...`)
+
+          // Step 2: Download via streaming proxy (direct browser download)
+          // This is the SAME approach as single video downloads
+          const fileExtension = playlistFormat === 'mp3' ? 'mp3' : 'mp4'
+          const safeFilename = encodeURIComponent(data.filename || `${videoTitle || 'youtube-video'}.${fileExtension}`)
+          const encodedVideoUrl = encodeURIComponent(data.downloadUrl)
+          
+          // Create a direct download link using GET request (same as single videos)
+          const proxyDownloadUrl = `/api/youtube-proxy-download?url=${encodedVideoUrl}&filename=${safeFilename}`
+          
+          console.log(`  → Step 2: Triggering browser download via proxy: ${proxyDownloadUrl.substring(0, 80)}...`)
+          
+          // Create a temporary anchor element and trigger download (same as single videos)
+          const a = document.createElement('a')
+          a.href = proxyDownloadUrl
+          a.download = data.filename || `${videoTitle || 'youtube-video'}.${fileExtension}`
+          a.style.display = 'none'
+          document.body.appendChild(a)
+          a.click()
+          
+          // Clean up after download starts
+          setTimeout(() => {
+            try {
+              document.body.removeChild(a)
+            } catch (e) {
+              // Element may have already been removed
+            }
+          }, 1000)
+
+          console.log(`  ✅ Download triggered for video ${i + 1}: ${data.filename}`)
+
+          // Update progress after download starts
+          setPlaylistProgress({
+            current: i + 1,
+            total: totalVideos,
+            percentage: Math.floor(((i + 1) / totalVideos) * 100),
+            currentVideoTitle: videoTitle,
+            currentVideoIndex: i + 1,
+            videoProgress: 100
+          })
+
+          // Small delay between downloads to avoid overwhelming the browser
+          if (i < selectedVideosList.length - 1) {
+            await new Promise(resolve => setTimeout(resolve, 1000)) // Increased delay to 1s
+          }
+
+        } catch (videoError: any) {
+          console.error(`❌ Error downloading video ${i + 1}:`, videoError)
+          setPlaylistError(`Failed to download video ${i + 1} (${videoTitle}): ${videoError.message}`)
+          // Continue with next video instead of stopping
+        }
       }
 
-      const blob = await response.blob()
-      isComplete = true
-      if (progressInterval) clearInterval(progressInterval)
-      
-      setPlaylistProgress({ 
-        current: totalVideos, 
-        total: totalVideos, 
+      console.log('✅ All playlist downloads initiated (client-side)')
+
+      // All downloads completed
+      setPlaylistProgress({
+        current: totalVideos,
+        total: totalVideos,
         percentage: 100,
         currentVideoTitle: '',
         currentVideoIndex: totalVideos,
         videoProgress: 100
       })
-      
-      const url = window.URL.createObjectURL(blob)
-      const a = document.createElement('a')
-      a.href = url
-      
-      const contentType = response.headers.get('content-type') || ''
-      const isZip = contentType.includes('application/zip')
-      a.download = isZip ? `youtube-videos-${Date.now()}.zip` : `youtube-video.${playlistFormat}`
-      
-      document.body.appendChild(a)
-      a.click()
-      window.URL.revokeObjectURL(url)
-      document.body.removeChild(a)
-
-      setTimeout(() => {
-        setPlaylistProgress({ 
-          current: 0, 
-          total: 0, 
-          percentage: 0,
-          currentVideoTitle: '',
-          currentVideoIndex: 0,
-          videoProgress: 0
-        })
-      }, 2000)
 
     } catch (e: any) {
-      setPlaylistError(e?.message || "Download failed. Please try again.")
-      setPlaylistProgress({ 
-        current: 0, 
-        total: 0, 
-        percentage: 0,
-        currentVideoTitle: '',
-        currentVideoIndex: 0,
-        videoProgress: 0
-      })
-      if (progressInterval) clearInterval(progressInterval)
+      console.error('❌ Playlist download error:', e)
+      setPlaylistError(e?.message || "Failed to download videos. Please try again.")
     } finally {
       setPlaylistDownloading(false)
     }
@@ -652,18 +559,9 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                   </div>
                 )}
                 <div className="space-y-2">
-                  {singleVideoProgress > 0 && (
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-xs text-muted-foreground">
-                        <span>Downloading...</span>
-                        <span>{Math.round(singleVideoProgress)}%</span>
-                      </div>
-                      <Progress value={singleVideoProgress} className="h-2" />
-                    </div>
-                  )}
                   {result.downloadStarted && (
                     <div className="text-center p-3 bg-green-500/10 border border-green-500/20 rounded-md">
-                      <p className="text-sm text-green-600 dark:text-green-400 font-medium">✅ Download started! Check your downloads folder.</p>
+                      <p className="text-sm text-green-600 dark:text-green-400 font-medium">✅ Download started! Your browser will download the file directly.</p>
                     </div>
                   )}
                   <Button

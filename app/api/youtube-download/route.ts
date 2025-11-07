@@ -157,7 +157,7 @@ export async function POST(request: NextRequest) {
     for (const api of downloadApis) {
       try {
         const controller = new AbortController()
-        const timeoutId = setTimeout(() => controller.abort(), 10000)
+        const timeoutId = setTimeout(() => controller.abort(), 8000) // Reduced timeout to 8s
 
         const fetchOptions: RequestInit = {
           method: api.method || 'GET',
@@ -198,8 +198,12 @@ export async function POST(request: NextRequest) {
             })
           }
         }
-      } catch (error) {
-        console.error(`API ${api.name} error:`, error)
+      } catch (error: any) {
+        // Silently continue if API fails - these are external services that may be unreliable
+        // Only log if it's not a timeout or connection error (expected failures)
+        if (error?.name !== 'AbortError' && error?.code !== 'UND_ERR_SOCKET' && !error?.message?.includes('fetch failed')) {
+          console.error(`API ${api.name} error:`, error?.message || error)
+        }
         continue
       }
     }

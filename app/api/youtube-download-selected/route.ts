@@ -13,77 +13,24 @@ export const maxDuration = 600
 export const dynamic = 'force-dynamic'
 
 export async function POST(request: NextRequest) {
-  const activeProcesses: Array<ReturnType<typeof spawn>> = []
-  let tempDir: string | null = null
-  let finalDownloadId: string = ''
-  
-  // Cleanup function to kill all processes and clean up resources
-  const cleanup = async () => {
-    console.log(`🛑 Cleaning up ${activeProcesses.length} active yt-dlp processes due to cancellation`)
-    
-    // Kill all active processes
-    for (const process of activeProcesses) {
-      if (process && process.pid && !process.killed) {
-        try {
-          console.log(`🛑 Killing yt-dlp process ${process.pid}`)
-          process.kill('SIGTERM')
-          // Force kill if still running after 2 seconds
-          setTimeout(() => {
-            if (process && !process.killed) {
-              console.log(`🔪 Force killing yt-dlp process ${process.pid}`)
-              process.kill('SIGKILL')
-            }
-          }, 2000)
-        } catch (error) {
-          console.error('Error killing yt-dlp process:', error)
-        }
-      }
-    }
-    activeProcesses.length = 0 // Clear the array
-    
-    // Clean up temp directory
-    if (tempDir) {
-      try {
-        const files = await fs.readdir(tempDir).catch(() => [])
-        for (const file of files) {
-          await fs.unlink(path.join(tempDir, file)).catch(() => {})
-        }
-        await fs.rmdir(tempDir).catch(() => {})
-        console.log(`🧹 Cleaned up temp directory: ${tempDir}`)
-      } catch (error) {
-        console.error('Error cleaning up temp directory:', error)
-      }
-    }
-    
-    if (finalDownloadId) {
-      clearProgress(finalDownloadId)
-    }
-  }
-  
   try {
     const { videos, format = 'mp4', videoTitles, downloadId: providedDownloadId } = await request.json()
     
     // Use provided download ID or generate one
-    finalDownloadId = providedDownloadId || `playlist_${Date.now()}_${Math.random().toString(36).substring(7)}`
+    const downloadId = providedDownloadId || `playlist_${Date.now()}_${Math.random().toString(36).substring(7)}`
     
-    // Handle client disconnection (set up after we have the downloadId)
-    request.signal.addEventListener('abort', () => {
-      console.log(`⚠️  Client disconnected/cancelled request for playlist download: ${finalDownloadId}`)
-      cleanup()
-    })
-    
-    console.log('Starting playlist download with ID:', finalDownloadId, 'Total videos:', videos?.length || 0, 'Provided ID:', !!providedDownloadId)
+    console.log('Starting playlist download with ID:', downloadId, 'Total videos:', videos?.length || 0, 'Provided ID:', !!providedDownloadId)
     
     // Set initial progress immediately - this must happen BEFORE any validation
     // so the frontend can start polling right away
     if (videos && Array.isArray(videos) && videos.length > 0) {
-      setProgress(finalDownloadId, 0, 'starting', { 
+      setProgress(downloadId, 0, 'starting', { 
         totalVideos: videos.length, 
         currentVideoIndex: 0,
         currentVideoTitle: '',
         videoProgress: 0
       })
-      console.log('Initial progress set for', finalDownloadId)
+      console.log('Initial progress set for', downloadId)
     }
 
     if (!videos || !Array.isArray(videos) || videos.length === 0) {
@@ -120,7 +67,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create temp directory
-    tempDir = path.join(os.tmpdir(), `youtube-selected-${Date.now()}`)
+    const tempDir = path.join(os.tmpdir(), `youtube-selected-${Date.now()}`)
     await fs.mkdir(tempDir, { recursive: true })
 
     try {
@@ -129,20 +76,10 @@ export async function POST(request: NextRequest) {
       const totalVideos = videos.length
 
       // Progress already set above, verify it's there
-      console.log('About to start downloads, downloadId:', finalDownloadId)
+      console.log('About to start downloads, downloadId:', downloadId)
 
       // Download each video one by one
       for (let i = 0; i < videos.length; i++) {
-        // Check if request was cancelled before starting next video
-        if (request.signal.aborted) {
-          console.log('⚠️  Request cancelled, stopping playlist download')
-          await cleanup()
-          return NextResponse.json(
-            { success: false, message: 'Download cancelled by user' },
-            { status: 499 } // 499 = Client Closed Request
-          )
-        }
-        
         const video = videos[i]
         const videoUrl = typeof video === 'string' ? video : video.url
         const videoTitle = videoTitles?.[i] || `Video ${i + 1}`
@@ -151,16 +88,12 @@ export async function POST(request: NextRequest) {
           console.log(`Downloading video ${i + 1}/${videos.length}: ${videoTitle}`)
           
           // Update progress to show current video
-          setProgress(finalDownloadId, Math.floor((i / totalVideos) * 90), 'downloading', {
+          setProgress(downloadId, Math.floor((i / totalVideos) * 90), 'downloading', {
             currentVideoIndex: i + 1,
             currentVideoTitle: videoTitle,
             totalVideos,
             videoProgress: 0
           })
-          
-          if (!tempDir) {
-            throw new Error('Temp directory is null')
-          }
           
           const outputFilename = `video_${i + 1}.${format === 'mp4' ? 'mp4' : 'mp3'}`
           const outputPattern = path.join(tempDir, `video_${i + 1}`)
@@ -187,9 +120,6 @@ export async function POST(request: NextRequest) {
             }
           })
           
-          // Track this process for cleanup if cancelled
-          activeProcesses.push(ytDlpProcess)
-          
           let stdout = ''
           let stderr = ''
           
@@ -207,7 +137,7 @@ export async function POST(request: NextRequest) {
                 (i / totalVideos) * 90 + (videoProgressPercent / 100) * (90 / totalVideos)
               )
               
-              setProgress(finalDownloadId, overallProgress, 'downloading', {
+              setProgress(downloadId, overallProgress, 'downloading', {
                 currentVideoIndex: i + 1,
                 currentVideoTitle: videoTitle,
                 totalVideos,
@@ -229,44 +159,7 @@ export async function POST(request: NextRequest) {
               return
             }
             
-            // Check for cancellation periodically
-            const checkCancellation = setInterval(() => {
-              if (request.signal.aborted) {
-                clearInterval(checkCancellation)
-                console.log('⚠️  Request cancelled during video download, killing yt-dlp process')
-                if (ytDlpProcess && ytDlpProcess.pid) {
-                  ytDlpProcess.kill('SIGTERM')
-                  setTimeout(() => {
-                    if (ytDlpProcess && !ytDlpProcess.killed && ytDlpProcess.pid) {
-                      ytDlpProcess.kill('SIGKILL')
-                    }
-                  }, 2000)
-                }
-                // Remove from active processes
-                const index = activeProcesses.indexOf(ytDlpProcess)
-                if (index > -1) {
-                  activeProcesses.splice(index, 1)
-                }
-                reject(new Error('Download cancelled by client'))
-              }
-            }, 1000) // Check every second
-            
-            ytDlpProcess.on('close', (code: number, signal: string | null) => {
-              clearInterval(checkCancellation)
-              
-              // Remove from active processes
-              const index = activeProcesses.indexOf(ytDlpProcess)
-              if (index > -1) {
-                activeProcesses.splice(index, 1)
-              }
-              
-              // If process was killed due to cancellation, don't treat as error
-              if (request.signal.aborted || signal === 'SIGTERM' || signal === 'SIGKILL') {
-                console.log('✅ yt-dlp process terminated due to cancellation')
-                reject(new Error('Download cancelled'))
-                return
-              }
-              
+            ytDlpProcess.on('close', (code: number) => {
               if (code !== 0) {
                 reject(new Error(`yt-dlp exited with code ${code}`))
               } else {
@@ -275,20 +168,11 @@ export async function POST(request: NextRequest) {
             })
             
             ytDlpProcess.on('error', (error: Error) => {
-              clearInterval(checkCancellation)
-              // Remove from active processes
-              const index = activeProcesses.indexOf(ytDlpProcess)
-              if (index > -1) {
-                activeProcesses.splice(index, 1)
-              }
               reject(error)
             })
           })
 
           // Find the downloaded file (yt-dlp might rename it)
-          if (!tempDir) {
-            throw new Error('Temp directory is null')
-          }
           const files = await fs.readdir(tempDir)
           const newFiles = files.filter(file => 
             !downloadedFiles.includes(file) && (
@@ -302,28 +186,18 @@ export async function POST(request: NextRequest) {
           }
           
           // Update progress after video completes
-          setProgress(finalDownloadId, Math.floor(((i + 1) / totalVideos) * 90), 'downloading', {
+          setProgress(downloadId, Math.floor(((i + 1) / totalVideos) * 90), 'downloading', {
             currentVideoIndex: i + 1,
             currentVideoTitle: videoTitle,
             totalVideos,
             videoProgress: 100
           })
         } catch (videoError: any) {
-          // If cancelled, don't treat as error - just break out of loop
-          if (videoError.message?.includes('cancelled') || request.signal.aborted) {
-            console.log('⚠️  Download cancelled, stopping playlist download')
-            await cleanup()
-            return NextResponse.json(
-              { success: false, message: 'Download cancelled by user' },
-              { status: 499 }
-            )
-          }
-          
           console.error(`Error downloading video ${i + 1}:`, videoError)
           errors.push(`Video ${i + 1} (${videoTitle}): ${videoError.message || 'Download failed'}`)
           
           // Update progress even on error
-          setProgress(finalDownloadId, Math.floor(((i + 1) / totalVideos) * 90), 'downloading', {
+          setProgress(downloadId, Math.floor(((i + 1) / totalVideos) * 90), 'downloading', {
             currentVideoIndex: i + 1,
             currentVideoTitle: videoTitle,
             totalVideos,
@@ -332,18 +206,8 @@ export async function POST(request: NextRequest) {
         }
       }
       
-      // Check if cancelled after loop completes
-      if (request.signal.aborted) {
-        console.log('⚠️  Request cancelled after downloads, cleaning up')
-        await cleanup()
-        return NextResponse.json(
-          { success: false, message: 'Download cancelled by user' },
-          { status: 499 }
-        )
-      }
-      
       // Set progress to 95% when all videos downloaded, starting zip creation
-      setProgress(finalDownloadId, 95, 'processing', {
+      setProgress(downloadId, 95, 'processing', {
         currentVideoIndex: totalVideos,
         totalVideos
       })
@@ -354,9 +218,6 @@ export async function POST(request: NextRequest) {
 
       // If only one file, return it directly
       if (downloadedFiles.length === 1) {
-        if (!tempDir) {
-          throw new Error('Temp directory is null')
-        }
         const filePath = path.join(tempDir, downloadedFiles[0])
         const fileBuffer = await fs.readFile(filePath)
         
@@ -378,10 +239,6 @@ export async function POST(request: NextRequest) {
       }
 
       // Multiple files - create ZIP
-      if (!tempDir) {
-        throw new Error('Temp directory is null')
-      }
-      
       const zipFilename = `youtube-videos-${Date.now()}.zip`
       
       const chunks: Buffer[] = []
@@ -404,7 +261,7 @@ export async function POST(request: NextRequest) {
             const zipBuffer = Buffer.concat(chunks)
             
             // Set progress to complete
-            setProgress(finalDownloadId, 100, 'complete', {
+            setProgress(downloadId, 100, 'complete', {
               currentVideoIndex: totalVideos,
               totalVideos
             })
@@ -422,12 +279,12 @@ export async function POST(request: NextRequest) {
                 'Content-Disposition': `attachment; filename="${zipFilename}"`,
                 'Content-Length': zipBuffer.length.toString(),
                 'Cache-Control': 'no-cache, no-store, must-revalidate',
-                'X-Download-ID': finalDownloadId,
+                'X-Download-ID': downloadId,
               },
             })
             
             // Clear progress after delay
-            setTimeout(() => clearProgress(finalDownloadId), 5000)
+            setTimeout(() => clearProgress(downloadId), 5000)
             
             resolve(response)
           } catch (error) {
@@ -444,40 +301,34 @@ export async function POST(request: NextRequest) {
     } catch (downloadError: any) {
       console.error('Download error:', downloadError)
       
-      // Cleanup on error
-      await cleanup()
-      
-      // Return more specific error message
-      let errorMessage = downloadError?.message || 'Failed to download videos.'
-      let statusCode = 500
-      
-      if (downloadError?.message?.includes('cancelled') || downloadError?.message?.includes('Download cancelled')) {
-        errorMessage = 'Download cancelled by user'
-        statusCode = 499 // Client Closed Request
-      }
+      // Clean up temp directory on error
+      try {
+        const files = await fs.readdir(tempDir)
+        for (const file of files) {
+          await fs.unlink(path.join(tempDir, file)).catch(() => {})
+        }
+        await fs.rmdir(tempDir).catch(() => {})
+      } catch {}
+
+      setProgress(downloadId, 0, 'error')
+      clearProgress(downloadId)
 
       return NextResponse.json(
         { 
           success: false, 
-          message: errorMessage
+          message: downloadError?.message || 'Failed to download videos.'
         },
-        { status: statusCode }
+        { status: 500 }
       )
     }
   } catch (error: any) {
     console.error('Download selected API error:', error)
-    
-    // Cleanup on any error
-    await cleanup()
-    
     return NextResponse.json(
       { 
         success: false, 
-        message: error?.message?.includes('cancelled') 
-          ? 'Download cancelled by user'
-          : 'Internal server error. Please try again later.'
+        message: 'Internal server error. Please try again later.'
       },
-      { status: error?.message?.includes('cancelled') ? 499 : 500 }
+      { status: 500 }
     )
   }
 }
