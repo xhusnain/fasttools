@@ -6,71 +6,12 @@ import { Calculator } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "FastTools - BMI Calculator | Free Body Mass Index Calculator",
+  title: "Free BMI Calculator - Instant Body Mass Index Results (2025)",
   description:
-    "FastTools BMI Calculator - Free tool to determine your Body Mass Index. Find out if you're underweight, normal, overweight, or obese based on WHO standards.",
-  keywords: [
-    "fasttools",
-    "fast tools",
-    "BMI calculator",
-    "body mass index calculator",
-    "BMI calculator online",
-    "calculate BMI",
-    "BMI chart",
-    "healthy BMI range",
-    "BMI for men and women",
-    "adult BMI calculator",
-    "BMI calculator metric",
-    "BMI calculator imperial",
-    "calculate BMI by height and weight",
-    "BMI interpretation",
-    "ideal weight calculator",
-    "BMI categories",
-    "WHO BMI calculator",
-    "BMI calculator free",
-    "BMI calculator for fitness",
-    "BMI result meaning",
-    "BMI health checker",
-    "accurate BMI calculator",
-    "BMI normal range",
-    "what is my BMI",
-    "BMI formula",
-    "free BMI calculator",
-    "online BMI calculator",
-    "BMI classification",
-    "health assessment",
-    "weight management",
-    "BMI calculator with age",
-    "BMI calculator with gender",
-    "advanced BMI calculator",
-    "BMI health recommendations",
-    "weight category",
-    "body fat calculator",
-    "healthy lifestyle",
-    "ideal weight",
-    "instant results",
-    "bmi calculator",
-    "math solver",
-    "calculator",
-    "weight watchers",
-    // Additional BMI Keywords
-    "BMI",
-    "BMI Calculator 🏋️",
-    "calculator.net bmi calculator",
-    "bmi calculater",
-    "bmi calculation",
-    "bmi index",
-    "body mass index",
-    "body mass index (bmi)",
-    "body mass index calculator",
-    "online bmi calculator",
-    "مؤشر كتلة الجسم",
-    "calculators to determine your body mass index",
-    "national institutes of health"
-  ],
+    "Calculate your BMI instantly with our free Body Mass Index calculator. Get accurate results, health category, BMI Prime & expert recommendations based on WHO standards.",
   openGraph: {
-    title: "BMI Calculator | Calculate Your Body Mass Index | FastTools",
-    description: "Use our free BMI Calculator to quickly determine your Body Mass Index. Instantly find out if you're underweight, normal, overweight, or obese based on WHO standards. Accurate, fast, and perfect for fitness and health tracking.",
+    title: "Free BMI Calculator - Instant Body Mass Index Results (2025)",
+    description: "Calculate your BMI instantly with our free Body Mass Index calculator. Get accurate results, health category, BMI Prime & expert recommendations based on WHO standards.",
     type: "website",
     url: "https://www.fasttools.store/calculator/bmi-calculator",
     siteName: "FastTools",
@@ -86,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BMI Calculator – Calculate Your Body Mass Index Instantly",
-    description: "Use our free BMI Calculator to quickly determine your Body Mass Index. Instantly find out if you're underweight, normal, overweight, or obese based on WHO standards.",
+    title: "Free BMI Calculator - Instant Body Mass Index Results (2025)",
+    description: "Calculate your BMI instantly with our free Body Mass Index calculator. Get accurate results, health category, BMI Prime & expert recommendations based on WHO standards.",
   },
   alternates: {
     canonical: "https://www.fasttools.store/calculator/bmi-calculator",
@@ -104,8 +45,29 @@ export default function BMICalculatorPage() {
     operatingSystem: "Any",
     author: {
       "@type": "Organization",
-      name: "FastTools"
+      name: "FastTools",
+      url: "https://www.fasttools.store",
+      sameAs: [
+        "https://www.fasttools.store"
+      ]
     },
+    publisher: {
+      "@type": "Organization",
+      name: "FastTools",
+      url: "https://www.fasttools.store"
+    },
+    about: {
+      "@type": "Thing",
+      name: "Body Mass Index",
+      description: "Body Mass Index (BMI) is a measure of body fat based on height and weight, used by healthcare providers worldwide to assess health risks."
+    },
+    mentions: [
+      {
+        "@type": "Organization",
+        name: "World Health Organization",
+        url: "https://www.who.int"
+      }
+    ],
     datePublished: "2024-01-01",
     dateModified: new Date().toISOString().split('T')[0],
     version: "2.0",
@@ -230,6 +192,30 @@ export default function BMICalculatorPage() {
           "@type": "Answer",
           text: "Yes, BMI has limitations. It doesn't distinguish between muscle and fat mass, so athletes may have high BMI due to muscle. It also doesn't account for age, gender, ethnicity, or body composition. For comprehensive health assessment, consider additional measurements like waist circumference and body fat percentage."
         }
+      },
+      {
+        "@type": "Question",
+        name: "What is a healthy BMI range according to WHO?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The World Health Organization defines a healthy BMI range as 18.5 to 24.9. Healthcare providers use this range to assess weight-related health risks. However, BMI should be considered alongside other factors like muscle mass, age, and overall health status."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Can BMI be misleading for athletes and muscular individuals?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, BMI can be misleading for athletes or very muscular individuals. Muscle tissue weighs more than fat tissue, which can skew BMI calculations. Healthcare providers recommend additional measurements like body fat percentage for athletes. Medical professionals use body composition analysis for accurate health assessments."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "How often should healthcare providers check BMI?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "For most people, checking BMI monthly is sufficient. Healthcare providers recommend focusing on long-term trends rather than daily fluctuations. Daily fluctuations can be affected by water retention and other factors. Medical professionals use regular BMI monitoring for weight management tracking."
+        }
       }
     ]
   }
@@ -255,7 +241,7 @@ export default function BMICalculatorPage() {
 
           <GHeader 
             title="BMI Calculator – Calculate Your Body Mass Index Instantly"
-            description="The Body Mass Index (BMI) Calculator helps you measure your body fat based on your height and weight. It's an essential tool for tracking fitness goals, maintaining a healthy lifestyle, and understanding your health category. Whether you're planning a diet, monitoring progress, or checking your ideal weight range, this calculator provides instant, accurate results."
+            description="What is BMI? Body Mass Index measures body fat using height and weight. Healthcare providers use BMI to assess health risks. Our calculator follows World Health Organization standards. Get instant results: BMI value, category classification, BMI Prime, and Ponderal Index. Perfect for tracking fitness goals, understanding weight-related health risks, and maintaining optimal health."
             titleSize="medium"
             descriptionSize="small"
             color="orange"
@@ -272,6 +258,21 @@ export default function BMICalculatorPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[1fr_350px] gap-6 lg:gap-8">
           <div className="lg:col-span-1">
+            {/* Semantic SEO Content Section - First 100 words with primary keyword */}
+            <section className="mb-8 bg-card border border-border rounded-lg p-6">
+              <div className="prose prose-sm max-w-none">
+                <p className="text-base text-foreground leading-relaxed mb-4">
+                  <strong>What is BMI?</strong> Body Mass Index (BMI) is a health screening tool used by healthcare providers worldwide. The World Health Organization (WHO) established BMI standards to assess weight-related health risks. Our BMI calculator uses these WHO guidelines to provide accurate results.
+                </p>
+                <p className="text-base text-foreground leading-relaxed mb-4">
+                  <strong>How does BMI work?</strong> BMI calculates body fat by dividing weight by height squared. Medical professionals use BMI categories to identify health risks. These categories include underweight, normal weight, overweight, and obesity classifications.
+                </p>
+                <p className="text-base text-foreground leading-relaxed">
+                  <strong>Why use our BMI calculator?</strong> FastTools provides instant BMI calculations following WHO standards. Get BMI Prime, Ponderal Index, and health recommendations. Healthcare providers recommend regular BMI monitoring for weight management and fitness tracking.
+                </p>
+              </div>
+            </section>
+
             <BMICalculatorPageContent />
             
             {/* Personalized 24-Hour Diet Plan Section */}
