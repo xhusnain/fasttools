@@ -59,6 +59,11 @@ RUN pnpm run build
 FROM base AS runner
 WORKDIR /app
 
+# Install ffmpeg for video/audio processing (required by yt-dlp for some formats)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+
 # Set runtime environment variables (can be overridden via docker-compose)
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1

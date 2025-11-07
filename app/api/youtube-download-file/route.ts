@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { exec } from 'child_process'
+import { exec, spawn } from 'child_process'
 import { promises as fs } from 'fs'
 import path from 'path'
 import os from 'os'
 import { promisify } from 'util'
+import { setProgress, clearProgress, type ProgressData } from '../youtube-download-progress/route'
 
 const execAsync = promisify(exec)
 
@@ -12,7 +13,15 @@ export const dynamic = 'force-dynamic'
 
 export async function POST(request: NextRequest) {
   try {
-    const { url, format = 'mp4', videoId, title } = await request.json()
+    const { url, format = 'mp4', videoId, title, downloadId: providedDownloadId } = await request.json()
+    
+    // Use provided download ID or generate one
+    const downloadId = providedDownloadId || `download_${Date.now()}_${Math.random().toString(36).substring(7)}`
+    
+    console.log('Starting download with ID:', downloadId, 'provided:', !!providedDownloadId)
+    
+    // Set initial progress
+    setProgress(downloadId, 5, 'initializing')
 
     if (!url) {
       return NextResponse.json(
@@ -67,6 +76,7 @@ export async function POST(request: NextRequest) {
         console.error('Contents of bin directory:', binContents)
       } catch {}
       
+      clearProgress(downloadId)
       return NextResponse.json(
         { 
           success: false, 
@@ -80,8 +90,10 @@ export async function POST(request: NextRequest) {
     try {
       const { stdout } = await execAsync(`"${ytDlpPath}" --version`, { timeout: 5000 })
       console.log('yt-dlp version check successful:', stdout.trim())
+      setProgress(downloadId, 10, 'ready')
     } catch (versionError: any) {
       console.error('yt-dlp version check failed:', versionError.message)
+      clearProgress(downloadId)
       return NextResponse.json(
         { 
           success: false, 
@@ -115,28 +127,113 @@ export async function POST(request: NextRequest) {
       let command: string
       if (format === 'mp3') {
         // For MP3, extract audio and convert to MP3
-        // yt-dlp will append .mp3 to the output pattern
-        command = `"${ytDlpPath}" -x --audio-format mp3 --audio-quality 0 -o "${outputPattern}.%(ext)s" --no-warnings --no-check-certificate "${url}"`
+        // Use bestaudio format and let yt-dlp handle conversion
+        // Add progress output and verbose logging
+        command = `"${ytDlpPath}" -x --audio-format mp3 --audio-quality 0 -o "${outputPattern}.%(ext)s" --newline --progress --no-check-certificate --no-playlist "${url}"`
       } else {
-        // For MP4, get best video+audio format
-        // yt-dlp will append .mp4 to the output pattern
-        command = `"${ytDlpPath}" -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" -o "${outputPattern}.%(ext)s" --merge-output-format mp4 --no-warnings --no-check-certificate "${url}"`
+        // For MP4, use best single file format (avoids need for ffmpeg merging)
+        // Fallback to formats that don't require merging
+        // Add progress output and verbose logging
+        command = `"${ytDlpPath}" -f "best[ext=mp4]/best[height<=720]/best" -o "${outputPattern}.%(ext)s" --newline --progress --no-check-certificate --no-playlist "${url}"`
       }
 
-      // Execute yt-dlp
+      // Execute yt-dlp with real-time output streaming
       console.log('Executing yt-dlp command:', command)
       console.log('Working directory:', process.cwd())
       console.log('yt-dlp path:', ytDlpPath)
+      console.log('Temp directory:', tempDir)
       
-      const { stdout, stderr } = await execAsync(command, {
-        maxBuffer: 50 * 1024 * 1024, // 50MB buffer
-        timeout: 300000, // 5 minute timeout
-        cwd: tempDir // Set working directory to temp dir
-      })
-
-      console.log('yt-dlp stdout length:', stdout?.length || 0)
-      if (stderr && !stderr.includes('WARNING') && !stderr.includes('DeprecationWarning') && !stderr.includes('ERROR')) {
-        console.error('yt-dlp stderr:', stderr)
+      let stdout = ''
+      let stderr = ''
+      
+      try {
+        // Use spawn instead of exec to get real-time output
+        // Parse command into parts for spawn
+        const commandParts = command.match(/"([^"]+)"|([^\s"]+)/g)?.map((part: string) => 
+          part.replace(/^"|"$/g, '')
+        ) || []
+        
+        const ytDlpProcess = spawn(commandParts[0], commandParts.slice(1), {
+          cwd: tempDir,
+          shell: false
+        })
+        
+        // Collect output in real-time
+        ytDlpProcess.stdout.on('data', (data: Buffer) => {
+          const output = data.toString()
+          stdout += output
+          
+          // Parse progress percentage from yt-dlp output
+          // Format: [download]  10.2% of ~ 347.15MiB at 1.40MiB/s ETA 03:41 (frag 37/374)
+          const progressMatch = output.match(/\[download\]\s+(\d+\.?\d*)%/)
+          if (progressMatch) {
+            const progressPercent = parseFloat(progressMatch[1])
+            // Map yt-dlp progress (0-100%) to our progress (10-90%)
+            // 10% = starting, 90% = yt-dlp complete, 100% = file sent
+            const mappedProgress = 10 + (progressPercent * 0.8) // 10% to 90%
+            const roundedProgress = Math.round(mappedProgress)
+            setProgress(downloadId, roundedProgress, 'downloading')
+            console.log('yt-dlp progress:', progressPercent + '%', 'mapped to:', roundedProgress + '%', 'downloadId:', downloadId)
+          } else if (output.includes('[download]') || output.includes('%')) {
+            console.log('yt-dlp progress:', output.trim())
+          }
+        })
+        
+        ytDlpProcess.stderr.on('data', (data: Buffer) => {
+          const output = data.toString()
+          stderr += output
+          // Log errors/warnings in real-time
+          if (output.includes('ERROR') || output.includes('WARNING')) {
+            console.error('yt-dlp stderr:', output.trim())
+          }
+        })
+        
+        // Wait for process to complete
+        await new Promise<void>((resolve, reject) => {
+          ytDlpProcess.on('close', (code: number) => {
+            if (code !== 0) {
+              setProgress(downloadId, 0, 'error')
+              clearProgress(downloadId)
+              reject(new Error(`yt-dlp exited with code ${code}. stderr: ${stderr.substring(0, 500)}`))
+            } else {
+              setProgress(downloadId, 90, 'processing')
+              resolve()
+            }
+          })
+          
+          ytDlpProcess.on('error', (error: Error) => {
+            setProgress(downloadId, 0, 'error')
+            clearProgress(downloadId)
+            reject(error)
+          })
+        })
+        
+        console.log('yt-dlp completed successfully')
+        console.log('yt-dlp stdout length:', stdout.length)
+        console.log('yt-dlp stderr length:', stderr.length)
+        setProgress(downloadId, 95, 'finalizing')
+        
+      } catch (execError: any) {
+        // Capture stderr even if command fails
+        stdout = execError.stdout || stdout || ''
+        stderr = execError.stderr || stderr || execError.message || ''
+        console.error('yt-dlp execution error:', execError.message)
+        console.error('yt-dlp exit code:', execError.code)
+        console.error('Full stderr:', stderr)
+        
+        setProgress(downloadId, 0, 'error')
+        clearProgress(downloadId)
+        
+        // Check for common errors
+        if (stderr.includes('ffmpeg') && stderr.includes('not found')) {
+          throw new Error('ffmpeg is required but not installed. Please install ffmpeg on the server.')
+        }
+        if (stderr.includes('ERROR') || stderr.includes('ERROR:')) {
+          throw new Error(`yt-dlp error: ${stderr.substring(0, 500)}`)
+        }
+        
+        // Re-throw if it's not a handled error
+        throw execError
       }
 
       // Find the downloaded file (yt-dlp might rename it)
@@ -165,7 +262,21 @@ export async function POST(request: NextRequest) {
         console.error('No downloaded file found. Available files:', files)
         console.error('Looking for format:', format)
         console.error('Expected filename base:', expectedFilenameBase)
-        throw new Error(`Downloaded file not found. yt-dlp may have failed to download the video. Files in temp dir: ${files.join(', ')}`)
+        console.error('yt-dlp stdout:', stdout)
+        console.error('yt-dlp stderr:', stderr)
+        
+        // Provide more helpful error message
+        let errorMsg = `Downloaded file not found. yt-dlp may have failed to download the video.`
+        if (files.length === 0) {
+          errorMsg += ' No files were created in the temp directory.'
+        } else {
+          errorMsg += ` Found files: ${files.join(', ')}`
+        }
+        if (stderr) {
+          errorMsg += ` yt-dlp error: ${stderr.substring(0, 200)}`
+        }
+        
+        throw new Error(errorMsg)
       }
       
       console.log('Found downloaded file:', downloadedFile)
@@ -185,8 +296,10 @@ export async function POST(request: NextRequest) {
       await fs.unlink(filePath).catch(() => {})
       await fs.rmdir(tempDir).catch(() => {})
 
-      // Return file with proper headers
-      return new NextResponse(fileBuffer, {
+      setProgress(downloadId, 100, 'complete')
+      
+      // Return file with proper headers (include download ID for progress tracking)
+      const response = new NextResponse(fileBuffer, {
         status: 200,
         headers: {
           'Content-Type': format === 'mp4' ? 'video/mp4' : 'audio/mpeg',
@@ -195,8 +308,14 @@ export async function POST(request: NextRequest) {
           'Cache-Control': 'no-cache, no-store, must-revalidate',
           'Pragma': 'no-cache',
           'Expires': '0',
+          'X-Download-ID': downloadId, // Include download ID in response
         },
       })
+      
+      // Clear progress after a delay (give frontend time to see 100%)
+      setTimeout(() => clearProgress(downloadId), 5000)
+      
+      return response
     } catch (downloadError: any) {
       console.error('yt-dlp download error:', downloadError)
       

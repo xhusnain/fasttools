@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { exec } from 'child_process'
+import { exec, spawn } from 'child_process'
 import { promises as fs } from 'fs'
 import path from 'path'
 import os from 'os'
 import archiver from 'archiver'
 import { promisify } from 'util'
+import { setProgress, clearProgress } from '../youtube-download-progress/route'
 
 const execAsync = promisify(exec)
 
@@ -13,7 +14,24 @@ export const dynamic = 'force-dynamic'
 
 export async function POST(request: NextRequest) {
   try {
-    const { videos, format = 'mp4' } = await request.json()
+    const { videos, format = 'mp4', videoTitles, downloadId: providedDownloadId } = await request.json()
+    
+    // Use provided download ID or generate one
+    const downloadId = providedDownloadId || `playlist_${Date.now()}_${Math.random().toString(36).substring(7)}`
+    
+    console.log('Starting playlist download with ID:', downloadId, 'Total videos:', videos?.length || 0, 'Provided ID:', !!providedDownloadId)
+    
+    // Set initial progress immediately - this must happen BEFORE any validation
+    // so the frontend can start polling right away
+    if (videos && Array.isArray(videos) && videos.length > 0) {
+      setProgress(downloadId, 0, 'starting', { 
+        totalVideos: videos.length, 
+        currentVideoIndex: 0,
+        currentVideoTitle: '',
+        videoProgress: 0
+      })
+      console.log('Initial progress set for', downloadId)
+    }
 
     if (!videos || !Array.isArray(videos) || videos.length === 0) {
       return NextResponse.json(
@@ -55,31 +73,94 @@ export async function POST(request: NextRequest) {
     try {
       const downloadedFiles: string[] = []
       const errors: string[] = []
+      const totalVideos = videos.length
+
+      // Progress already set above at line 25, verify it's there
+      console.log('About to start downloads, downloadId:', downloadId)
 
       // Download each video one by one
       for (let i = 0; i < videos.length; i++) {
         const video = videos[i]
+        const videoUrl = typeof video === 'string' ? video : video.url
+        const videoTitle = videoTitles?.[i] || `Video ${i + 1}`
+        
         try {
-          console.log(`Downloading video ${i + 1}/${videos.length}: ${video.url || video}`)
+          console.log(`Downloading video ${i + 1}/${videos.length}: ${videoTitle}`)
           
-          const videoUrl = typeof video === 'string' ? video : video.url
+          // Update progress to show current video
+          setProgress(downloadId, Math.floor((i / totalVideos) * 90), 'downloading', {
+            currentVideoIndex: i + 1,
+            currentVideoTitle: videoTitle,
+            totalVideos,
+            videoProgress: 0
+          })
+          
           const outputFilename = `video_${i + 1}.${format === 'mp4' ? 'mp4' : 'mp3'}`
-          const outputPath = path.join(tempDir, outputFilename)
+          const outputPattern = path.join(tempDir, `video_${i + 1}`)
 
-          // Build yt-dlp command
+          // Build yt-dlp command with progress output
           let command: string
           if (format === 'mp3') {
-            // For MP3, extract audio and convert to MP3
-            command = `"${ytDlpPath}" -x --audio-format mp3 --audio-quality 0 -o "${outputPath}" --no-warnings --no-check-certificate "${videoUrl}"`
+            command = `"${ytDlpPath}" -x --audio-format mp3 --audio-quality 0 -o "${outputPattern}.%(ext)s" --newline --progress --no-check-certificate --no-playlist "${videoUrl}"`
           } else {
-            // For MP4, get best video+audio format
-            command = `"${ytDlpPath}" -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" -o "${outputPath}" --merge-output-format mp4 --no-warnings --no-check-certificate "${videoUrl}"`
+            command = `"${ytDlpPath}" -f "best[ext=mp4]/best[height<=720]/best" -o "${outputPattern}.%(ext)s" --newline --progress --no-check-certificate --no-playlist "${videoUrl}"`
           }
 
-          // Execute yt-dlp
-          await execAsync(command, {
-            maxBuffer: 50 * 1024 * 1024, // 50MB buffer
-            timeout: 300000 // 5 minute timeout per video
+          // Use spawn to get real-time progress
+          const commandParts = command.match(/"([^"]+)"|([^\s"]+)/g)?.map((part: string) => 
+            part.replace(/^"|"$/g, '')
+          ) || []
+          
+          const ytDlpProcess = spawn(commandParts[0], commandParts.slice(1), {
+            cwd: tempDir,
+            shell: false
+          })
+          
+          let stdout = ''
+          let stderr = ''
+          
+          // Collect output and parse progress
+          ytDlpProcess.stdout.on('data', (data: Buffer) => {
+            const output = data.toString()
+            stdout += output
+            
+            // Parse progress percentage from yt-dlp output
+            const progressMatch = output.match(/\[download\]\s+(\d+\.?\d*)%/)
+            if (progressMatch) {
+              const videoProgressPercent = parseFloat(progressMatch[1])
+              // Calculate overall progress: (current video index / total) * 90 + (video progress * 0.9)
+              const overallProgress = Math.floor(
+                (i / totalVideos) * 90 + (videoProgressPercent / 100) * (90 / totalVideos)
+              )
+              
+              setProgress(downloadId, overallProgress, 'downloading', {
+                currentVideoIndex: i + 1,
+                currentVideoTitle: videoTitle,
+                totalVideos,
+                videoProgress: Math.round(videoProgressPercent)
+              })
+              
+              console.log(`Video ${i + 1}/${totalVideos} (${videoTitle}): ${videoProgressPercent}% - Overall: ${overallProgress}%`)
+            }
+          })
+          
+          ytDlpProcess.stderr.on('data', (data: Buffer) => {
+            stderr += data.toString()
+          })
+          
+          // Wait for process to complete
+          await new Promise<void>((resolve, reject) => {
+            ytDlpProcess.on('close', (code: number) => {
+              if (code !== 0) {
+                reject(new Error(`yt-dlp exited with code ${code}`))
+              } else {
+                resolve()
+              }
+            })
+            
+            ytDlpProcess.on('error', (error: Error) => {
+              reject(error)
+            })
           })
 
           // Find the downloaded file (yt-dlp might rename it)
@@ -94,11 +175,33 @@ export async function POST(request: NextRequest) {
           if (newFiles.length > 0) {
             downloadedFiles.push(...newFiles)
           }
+          
+          // Update progress after video completes
+          setProgress(downloadId, Math.floor(((i + 1) / totalVideos) * 90), 'downloading', {
+            currentVideoIndex: i + 1,
+            currentVideoTitle: videoTitle,
+            totalVideos,
+            videoProgress: 100
+          })
         } catch (videoError: any) {
           console.error(`Error downloading video ${i + 1}:`, videoError)
-          errors.push(`Video ${i + 1}: ${videoError.message || 'Download failed'}`)
+          errors.push(`Video ${i + 1} (${videoTitle}): ${videoError.message || 'Download failed'}`)
+          
+          // Update progress even on error
+          setProgress(downloadId, Math.floor(((i + 1) / totalVideos) * 90), 'downloading', {
+            currentVideoIndex: i + 1,
+            currentVideoTitle: videoTitle,
+            totalVideos,
+            videoProgress: 0
+          })
         }
       }
+      
+      // Set progress to 95% when all videos downloaded, starting zip creation
+      setProgress(downloadId, 95, 'processing', {
+        currentVideoIndex: totalVideos,
+        totalVideos
+      })
 
       if (downloadedFiles.length === 0) {
         throw new Error('No files were successfully downloaded. ' + (errors.length > 0 ? errors.join('; ') : ''))
@@ -148,21 +251,33 @@ export async function POST(request: NextRequest) {
           try {
             const zipBuffer = Buffer.concat(chunks)
             
+            // Set progress to complete
+            setProgress(downloadId, 100, 'complete', {
+              currentVideoIndex: totalVideos,
+              totalVideos
+            })
+            
             // Clean up temp files
             for (const file of downloadedFiles) {
               await fs.unlink(path.join(tempDir, file)).catch(() => {})
             }
             await fs.rmdir(tempDir).catch(() => {})
 
-            resolve(new NextResponse(zipBuffer, {
+            const response = new NextResponse(zipBuffer, {
               status: 200,
               headers: {
                 'Content-Type': 'application/zip',
                 'Content-Disposition': `attachment; filename="${zipFilename}"`,
                 'Content-Length': zipBuffer.length.toString(),
                 'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'X-Download-ID': downloadId,
               },
-            }))
+            })
+            
+            // Clear progress after delay
+            setTimeout(() => clearProgress(downloadId), 5000)
+            
+            resolve(response)
           } catch (error) {
             reject(error)
           }
@@ -176,6 +291,9 @@ export async function POST(request: NextRequest) {
       })
     } catch (downloadError: any) {
       console.error('Download error:', downloadError)
+      
+      setProgress(downloadId, 0, 'error')
+      clearProgress(downloadId)
       
       // Clean up temp directory on error
       try {

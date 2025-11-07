@@ -57,7 +57,14 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
   const [playlistVideos, setPlaylistVideos] = useState<PlaylistVideo[]>([])
   const [selectedVideos, setSelectedVideos] = useState<Set<string>>(new Set())
   const [playlistDownloading, setPlaylistDownloading] = useState(false)
-  const [playlistProgress, setPlaylistProgress] = useState({ current: 0, total: 0, percentage: 0 })
+  const [playlistProgress, setPlaylistProgress] = useState({ 
+    current: 0, 
+    total: 0, 
+    percentage: 0,
+    currentVideoTitle: '',
+    currentVideoIndex: 0,
+    videoProgress: 0
+  })
 
   const isLikelyYoutubeUrl = (url: string) => {
     const pattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/i
@@ -152,17 +159,63 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     setError(null)
     setSingleVideoProgress(0)
 
+    // Declare progress interval outside try block so it's accessible in catch
+    let progressInterval: NodeJS.Timeout | null = null
+    let isComplete = false
+
     try {
-      // Simulate progress for single video
-      const progressInterval = setInterval(() => {
-        setSingleVideoProgress(prev => {
-          if (prev >= 90) {
-            clearInterval(progressInterval)
-            return prev
+      // Generate download ID on frontend so we can start polling immediately
+      const downloadId = `download_${Date.now()}_${Math.random().toString(36).substring(7)}`
+      
+      console.log('Frontend: Starting download with ID:', downloadId)
+      
+      // Start with initial progress
+      setSingleVideoProgress(5)
+
+      // Start polling for progress immediately
+      
+      progressInterval = setInterval(async () => {
+        if (isComplete) {
+          if (progressInterval) clearInterval(progressInterval)
+          return
+        }
+        
+        try {
+          const progressResponse = await fetch(`/api/youtube-download-progress?id=${encodeURIComponent(downloadId)}`)
+          if (progressResponse.ok) {
+            const progressData = await progressResponse.json()
+            if (progressData.progress !== undefined) {
+              // Always update progress - React will handle re-rendering
+              const newProgress = Math.max(0, Math.min(100, progressData.progress)) // Clamp between 0-100
+              console.log('Progress update received:', newProgress + '%', 'Status:', progressData.status, 'Download ID:', downloadId)
+              
+              // Force update even if value is same (in case of React optimization)
+              setSingleVideoProgress(prev => {
+                if (prev !== newProgress) {
+                  console.log('Updating progress from', prev + '%', 'to', newProgress + '%')
+                  return newProgress
+                }
+                return prev // Return same value if unchanged
+              })
+              
+              // Stop polling if complete or error
+              if (progressData.status === 'complete' || progressData.status === 'error') {
+                console.log('Download complete or error, stopping polling')
+                isComplete = true
+                if (progressInterval) clearInterval(progressInterval)
+              }
+            } else {
+              console.log('Progress data missing progress field:', progressData)
+            }
+          } else {
+            const errorText = await progressResponse.text().catch(() => '')
+            console.log('Progress endpoint returned:', progressResponse.status, errorText)
           }
-          return prev + 10
-        })
-      }, 500)
+        } catch (e) {
+          console.error('Progress polling error:', e)
+          // Ignore progress polling errors but log them
+        }
+      }, 500) // Poll every 500ms
 
       const response = await fetch('/api/youtube-download-file', {
         method: 'POST',
@@ -173,34 +226,86 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
           url: cleanYouTubeUrl(videoUrl),
           format: format,
           videoId: result.videoId,
-          title: result.title
+          title: result.title,
+          downloadId: downloadId // Send download ID to backend
         })
       })
 
-      clearInterval(progressInterval)
-      setSingleVideoProgress(50)
-
       if (!response.ok) {
+        isComplete = true
+        if (progressInterval) clearInterval(progressInterval)
         const errorData = await response.json().catch(() => ({}))
         throw new Error(errorData.message || 'Download failed')
       }
 
-      setSingleVideoProgress(75)
+      // Check if we can track progress via Content-Length
+      const contentLength = response.headers.get('content-length')
+      const total = contentLength ? parseInt(contentLength, 10) : 0
 
-      const blob = await response.blob()
-      setSingleVideoProgress(90)
-      
-      const url = window.URL.createObjectURL(blob)
-      const a = document.createElement('a')
-      a.href = url
-      a.download = `${result.title || 'youtube-video'}.${format}`
-      document.body.appendChild(a)
-      a.click()
-      window.URL.revokeObjectURL(url)
-      document.body.removeChild(a)
+      // Track HTTP download progress (for the final file transfer)
+      // This will be 90-100% since yt-dlp progress is 0-90%
+      if (total > 0 && response.body) {
+        const reader = response.body.getReader()
+        const chunks: Uint8Array[] = []
+        let receivedLength = 0
 
-      setSingleVideoProgress(100)
+        while (true) {
+          const { done, value } = await reader.read()
+          
+          if (done) break
+          
+          chunks.push(value)
+          receivedLength += value.length
+          
+          // Update progress: 90% to 98% (yt-dlp already did 0-90%)
+          const httpProgress = 90 + Math.floor((receivedLength / total) * 8)
+          setSingleVideoProgress(Math.min(httpProgress, 98))
+        }
+
+        // Clear progress polling
+        isComplete = true
+        if (progressInterval) clearInterval(progressInterval)
+
+        // Combine chunks into blob
+        const blob = new Blob(chunks)
+        setSingleVideoProgress(99)
+        
+        const url = window.URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        a.download = `${result.title || 'youtube-video'}.${format}`
+        document.body.appendChild(a)
+        a.click()
+        window.URL.revokeObjectURL(url)
+        document.body.removeChild(a)
+
+        setSingleVideoProgress(100)
+      } else {
+        // Fallback: download without progress tracking
+        const blob = await response.blob()
+        
+        // Clear progress polling
+        isComplete = true
+        if (progressInterval) clearInterval(progressInterval)
+        
+        setSingleVideoProgress(99)
+        
+        const url = window.URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        a.download = `${result.title || 'youtube-video'}.${format}`
+        document.body.appendChild(a)
+        a.click()
+        window.URL.revokeObjectURL(url)
+        document.body.removeChild(a)
+
+        setSingleVideoProgress(100)
+      }
+
       setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
+      
+      // Reset downloading state immediately after successful download
+      setDownloadingStates(prev => ({ ...prev, [format === 'mp4' ? 'video' : 'audio']: false }))
       
       setTimeout(() => {
         setSingleVideoProgress(0)
@@ -208,7 +313,12 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     } catch (e: any) {
       setError(e?.message || "Download failed. Please try again.")
       setSingleVideoProgress(0)
+      // Make sure to clear any intervals
+      if (progressInterval) clearInterval(progressInterval)
+      // Reset downloading state on error too
+      setDownloadingStates(prev => ({ ...prev, [format === 'mp4' ? 'video' : 'audio']: false }))
     } finally {
+      // Ensure state is reset even if something unexpected happens
       setDownloadingStates(prev => ({ ...prev, [format === 'mp4' ? 'video' : 'audio']: false }))
     }
   }
@@ -296,13 +406,67 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
 
     setPlaylistError(null)
     setPlaylistDownloading(true)
-    setPlaylistProgress({ current: 0, total: selectedVideos.size, percentage: 0 })
+    
+    // Get selected videos with their titles
+    const selectedVideosList = playlistVideos.filter(v => selectedVideos.has(v.id))
+    const videosToDownload = selectedVideosList.map(v => v.url)
+    const videoTitles = selectedVideosList.map(v => v.title)
+    const totalVideos = videosToDownload.length
+
+    // Generate download ID for progress tracking
+    const downloadId = `playlist_${Date.now()}_${Math.random().toString(36).substring(7)}`
+    
+    console.log('Frontend: Starting playlist download with ID:', downloadId, 'Total videos:', totalVideos)
+    
+    setPlaylistProgress({ 
+      current: 0, 
+      total: totalVideos, 
+      percentage: 0,
+      currentVideoTitle: '',
+      currentVideoIndex: 0,
+      videoProgress: 0
+    })
+
+    // Declare progress interval outside try block
+    let progressInterval: NodeJS.Timeout | null = null
+    let isComplete = false
+    
+    progressInterval = setInterval(async () => {
+      if (isComplete) {
+        if (progressInterval) clearInterval(progressInterval)
+        return
+      }
+      
+      try {
+        const progressResponse = await fetch(`/api/youtube-download-progress?id=${encodeURIComponent(downloadId)}`)
+        if (progressResponse.ok) {
+          const progressData = await progressResponse.json()
+          if (progressData.progress !== undefined) {
+            const newProgress = Math.max(0, Math.min(100, progressData.progress))
+            console.log('Playlist progress update:', newProgress + '%', 'Video:', progressData.currentVideoTitle, 'Video progress:', progressData.videoProgress + '%')
+            
+            setPlaylistProgress({
+              current: progressData.currentVideoIndex || 0,
+              total: progressData.totalVideos || totalVideos,
+              percentage: newProgress,
+              currentVideoTitle: progressData.currentVideoTitle || '',
+              currentVideoIndex: progressData.currentVideoIndex || 0,
+              videoProgress: progressData.videoProgress || 0
+            })
+            
+            // Stop polling if complete or error
+            if (progressData.status === 'complete' || progressData.status === 'error') {
+              isComplete = true
+              if (progressInterval) clearInterval(progressInterval)
+            }
+          }
+        }
+      } catch (e) {
+        console.error('Playlist progress polling error:', e)
+      }
+    }, 500) // Poll every 500ms
 
     try {
-      const videosToDownload = playlistVideos
-        .filter(v => selectedVideos.has(v.id))
-        .map(v => v.url)
-
       const response = await fetch('/api/youtube-download-selected', {
         method: 'POST',
         headers: {
@@ -310,35 +474,31 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
         },
         body: JSON.stringify({
           videos: videosToDownload,
-          format: playlistFormat
+          format: playlistFormat,
+          videoTitles: videoTitles,
+          downloadId: downloadId
         })
       })
 
-      // Track progress (simulated - in real implementation, you'd use SSE or polling)
-      const totalVideos = videosToDownload.length
-      let downloaded = 0
-      const progressInterval = setInterval(() => {
-        downloaded++
-        const percentage = Math.min((downloaded / totalVideos) * 100, 95)
-        setPlaylistProgress({
-          current: downloaded,
-          total: totalVideos,
-          percentage
-        })
-        if (downloaded >= totalVideos) {
-          clearInterval(progressInterval)
-        }
-      }, 2000)
-
       if (!response.ok) {
-        clearInterval(progressInterval)
+        isComplete = true
+        if (progressInterval) clearInterval(progressInterval)
         const errorData = await response.json().catch(() => ({}))
         throw new Error(errorData.message || 'Download failed')
       }
 
       const blob = await response.blob()
-      clearInterval(progressInterval)
-      setPlaylistProgress({ current: totalVideos, total: totalVideos, percentage: 100 })
+      isComplete = true
+      if (progressInterval) clearInterval(progressInterval)
+      
+      setPlaylistProgress({ 
+        current: totalVideos, 
+        total: totalVideos, 
+        percentage: 100,
+        currentVideoTitle: '',
+        currentVideoIndex: totalVideos,
+        videoProgress: 100
+      })
       
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
@@ -354,12 +514,27 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
       document.body.removeChild(a)
 
       setTimeout(() => {
-        setPlaylistProgress({ current: 0, total: 0, percentage: 0 })
+        setPlaylistProgress({ 
+          current: 0, 
+          total: 0, 
+          percentage: 0,
+          currentVideoTitle: '',
+          currentVideoIndex: 0,
+          videoProgress: 0
+        })
       }, 2000)
 
     } catch (e: any) {
       setPlaylistError(e?.message || "Download failed. Please try again.")
-      setPlaylistProgress({ current: 0, total: 0, percentage: 0 })
+      setPlaylistProgress({ 
+        current: 0, 
+        total: 0, 
+        percentage: 0,
+        currentVideoTitle: '',
+        currentVideoIndex: 0,
+        videoProgress: 0
+      })
+      if (progressInterval) clearInterval(progressInterval)
     } finally {
       setPlaylistDownloading(false)
     }
@@ -620,12 +795,36 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                 </div>
 
                 {playlistProgress.total > 0 && (
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-sm text-muted-foreground">
-                      <span>Downloading {playlistProgress.current} of {playlistProgress.total} videos...</span>
-                      <span>{Math.round(playlistProgress.percentage)}%</span>
+                  <div className="space-y-3">
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-sm text-muted-foreground">
+                        <span>Downloading {playlistProgress.current} of {playlistProgress.total} videos...</span>
+                        <span>{Math.round(playlistProgress.percentage)}%</span>
+                      </div>
+                      <Progress value={playlistProgress.percentage} className="h-3" />
                     </div>
-                    <Progress value={playlistProgress.percentage} className="h-3" />
+                    {playlistProgress.currentVideoTitle && (
+                      <div className="space-y-2 p-3 bg-muted/50 border border-border rounded-md">
+                        <div className="flex justify-between items-center text-sm">
+                          <span className="font-medium text-foreground">
+                            {playlistProgress.currentVideoIndex > 0 && (
+                              <>Video {playlistProgress.currentVideoIndex}: </>
+                            )}
+                            <span className="text-muted-foreground">
+                              {playlistProgress.currentVideoTitle.length > 60 
+                                ? playlistProgress.currentVideoTitle.substring(0, 60) + '...'
+                                : playlistProgress.currentVideoTitle}
+                            </span>
+                          </span>
+                          <span className="text-primary font-medium">
+                            {playlistProgress.videoProgress > 0 ? `${Math.round(playlistProgress.videoProgress)}%` : 'Starting...'}
+                          </span>
+                        </div>
+                        {playlistProgress.videoProgress > 0 && (
+                          <Progress value={playlistProgress.videoProgress} className="h-2" />
+                        )}
+                      </div>
+                    )}
                   </div>
                 )}
 
@@ -667,3 +866,4 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     </div>
   )
 }
+
