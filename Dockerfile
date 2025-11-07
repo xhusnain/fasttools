@@ -78,11 +78,23 @@ RUN groupadd -r -g 1001 nodejs \
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
-# Copy bin directory (contains yt-dlp binary) if needed at runtime
+# Copy bin directory (contains yt-dlp binary) - ensure it's copied to both root and standalone
 COPY --from=builder --chown=nextjs:nodejs /app/bin ./bin
+# Also copy to standalone directory if it exists (for Next.js standalone mode)
+RUN if [ -d .next/standalone ]; then \
+      mkdir -p .next/standalone/bin && \
+      cp -r ./bin/* .next/standalone/bin/ 2>/dev/null || true; \
+    fi
 
-# Ensure yt-dlp is executable (must be done before switching to non-root user)
-RUN if [ -f ./bin/yt-dlp ]; then chmod +x ./bin/yt-dlp; fi
+# Ensure yt-dlp is executable and verify it exists (must be done as root before switching to non-root user)
+RUN if [ -f ./bin/yt-dlp ]; then \
+      chmod +x ./bin/yt-dlp && \
+      ls -lh ./bin/yt-dlp && \
+      ./bin/yt-dlp --version || echo "Warning: yt-dlp version check failed"; \
+    else \
+      echo "ERROR: yt-dlp not found in ./bin directory!" && \
+      ls -la ./bin/ || echo "bin directory does not exist"; \
+    fi
 
 # Use non-root user
 USER nextjs

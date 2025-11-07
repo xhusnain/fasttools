@@ -40,47 +40,78 @@ export async function POST(request: NextRequest) {
 
     // Get yt-dlp binary path - handle both local and production (standalone) modes
     const projectRoot = process.cwd()
+    const isStandalone = projectRoot.includes('.next/standalone') || projectRoot.endsWith('/app')
     
     // Try multiple possible locations for the binary
     const possiblePaths = [
       path.join(projectRoot, 'bin', 'yt-dlp'), // Standard location
-      path.join(projectRoot, '..', 'bin', 'yt-dlp'), // If running from .next/standalone
-      '/app/bin/yt-dlp', // Docker production path
-      path.join(__dirname, '..', '..', '..', 'bin', 'yt-dlp'), // Relative from API route
+      path.join(projectRoot, '..', 'bin', 'yt-dlp'), // If running from .next/standalone/api
+      path.join(projectRoot, '../..', 'bin', 'yt-dlp'), // If running from .next/standalone/server/pages/api
+      '/app/bin/yt-dlp', // Docker production path (absolute)
+      path.resolve(projectRoot, 'bin', 'yt-dlp'), // Resolved absolute path
+      path.resolve(__dirname, '..', '..', '..', 'bin', 'yt-dlp'), // Relative from API route
+      path.resolve(__dirname, '..', '..', '..', '..', 'bin', 'yt-dlp'), // Alternative relative path
     ]
     
     let ytDlpPath: string | null = null
     
     // Find the first existing path
+    console.log('Searching for yt-dlp in production. Working directory:', projectRoot)
+    console.log('Is standalone mode:', isStandalone)
+    console.log('__dirname:', __dirname)
+    
     for (const possiblePath of possiblePaths) {
       try {
         await fs.access(possiblePath)
-        ytDlpPath = possiblePath
-        console.log('Found yt-dlp at:', ytDlpPath)
-        break
-      } catch {
-        // Continue to next path
+        // Also check if it's a file (not a directory)
+        const stats = await fs.stat(possiblePath)
+        if (stats.isFile()) {
+          ytDlpPath = possiblePath
+          console.log('✅ Found yt-dlp at:', ytDlpPath)
+          console.log('File size:', stats.size, 'bytes')
+          break
+        }
+      } catch (err: any) {
+        console.log(`❌ Not found at: ${possiblePath} (${err.message})`)
       }
     }
     
-    // If not found, return error
+    // If not found, return error with detailed debugging info
     if (!ytDlpPath) {
-      console.error('yt-dlp not found in any of these locations:', possiblePaths)
+      console.error('❌ yt-dlp not found in any of these locations:')
+      possiblePaths.forEach((p, i) => console.error(`  ${i + 1}. ${p}`))
       console.error('Current working directory:', projectRoot)
       console.error('__dirname:', __dirname)
+      console.error('process.env.PWD:', process.env.PWD)
+      console.error('process.env.NODE_ENV:', process.env.NODE_ENV)
       
-      // Try to list what's in the bin directory
-      try {
-        const binDir = path.join(projectRoot, 'bin')
-        const binContents = await fs.readdir(binDir).catch(() => [])
-        console.error('Contents of bin directory:', binContents)
-      } catch {}
+      // Try to list what's in common directories
+      const dirsToCheck = [
+        projectRoot,
+        path.join(projectRoot, 'bin'),
+        path.join(projectRoot, '..', 'bin'),
+        '/app',
+        '/app/bin',
+      ]
+      
+      for (const dir of dirsToCheck) {
+        try {
+          const contents = await fs.readdir(dir).catch(() => [])
+          console.error(`Contents of ${dir}:`, contents)
+          if (contents.includes('bin')) {
+            try {
+              const binContents = await fs.readdir(path.join(dir, 'bin'))
+              console.error(`Contents of ${dir}/bin:`, binContents)
+            } catch {}
+          }
+        } catch {}
+      }
       
       clearProgress(downloadId)
       return NextResponse.json(
         { 
           success: false, 
-          message: 'yt-dlp not found. Please ensure yt-dlp is installed in the bin directory. Checked paths: ' + possiblePaths.join(', ') 
+          message: 'yt-dlp binary not found in production. Please check server logs for details.' 
         },
         { status: 500 }
       )
@@ -103,9 +134,28 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Create temp directory
+    // Create temp directory with proper permissions
     const tempDir = path.join(os.tmpdir(), `youtube-downloads-${Date.now()}`)
-    await fs.mkdir(tempDir, { recursive: true })
+    try {
+      await fs.mkdir(tempDir, { recursive: true, mode: 0o755 })
+      console.log('✅ Created temp directory:', tempDir)
+      
+      // Verify we can write to it
+      const testFile = path.join(tempDir, 'test-write.tmp')
+      await fs.writeFile(testFile, 'test')
+      await fs.unlink(testFile)
+      console.log('✅ Temp directory is writable')
+    } catch (tempError: any) {
+      console.error('❌ Failed to create/write to temp directory:', tempError.message)
+      clearProgress(downloadId)
+      return NextResponse.json(
+        { 
+          success: false, 
+          message: `Failed to create temp directory: ${tempError.message}` 
+        },
+        { status: 500 }
+      )
+    }
 
     try {
       // Sanitize filename for output
@@ -155,8 +205,16 @@ export async function POST(request: NextRequest) {
         
         const ytDlpProcess = spawn(commandParts[0], commandParts.slice(1), {
           cwd: tempDir,
-          shell: false
+          shell: false,
+          env: {
+            ...process.env,
+            PATH: process.env.PATH || '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+          }
         })
+        
+        console.log('Spawned yt-dlp process with PID:', ytDlpProcess.pid)
+        console.log('Command parts:', commandParts)
+        console.log('Working directory:', tempDir)
         
         // Collect output in real-time
         ytDlpProcess.stdout.on('data', (data: Buffer) => {
@@ -188,25 +246,60 @@ export async function POST(request: NextRequest) {
           }
         })
         
-        // Wait for process to complete
-        await new Promise<void>((resolve, reject) => {
-          ytDlpProcess.on('close', (code: number) => {
-            if (code !== 0) {
+          // Wait for process to complete
+          await new Promise<void>((resolve, reject) => {
+            ytDlpProcess.on('close', (code: number, signal: string | null) => {
+              console.log(`yt-dlp process closed with code ${code}, signal: ${signal}`)
+              console.log('stdout length:', stdout.length)
+              console.log('stderr length:', stderr.length)
+              if (stderr) {
+                console.log('stderr content:', stderr.substring(0, 1000))
+              }
+              
+              if (code !== 0) {
+                console.error(`❌ yt-dlp failed with exit code ${code}`)
+                console.error('Full stderr:', stderr)
+                setProgress(downloadId, 0, 'error')
+                clearProgress(downloadId)
+                
+                // Provide more helpful error message
+                let errorMsg = `yt-dlp exited with code ${code}`
+                if (stderr.includes('ffmpeg')) {
+                  errorMsg += '. ffmpeg may be missing or not in PATH.'
+                } else if (stderr.includes('ERROR')) {
+                  const errorMatch = stderr.match(/ERROR:\s*(.+)/)
+                  if (errorMatch) {
+                    errorMsg += `. ${errorMatch[1].substring(0, 200)}`
+                  }
+                } else if (stderr) {
+                  errorMsg += `. ${stderr.substring(0, 300)}`
+                }
+                
+                reject(new Error(errorMsg))
+              } else {
+                console.log('✅ yt-dlp completed successfully')
+                setProgress(downloadId, 90, 'processing')
+                resolve()
+              }
+            })
+            
+            ytDlpProcess.on('error', (error: Error) => {
+              console.error('❌ yt-dlp process error:', error.message)
+              console.error('Error stack:', error.stack)
               setProgress(downloadId, 0, 'error')
               clearProgress(downloadId)
-              reject(new Error(`yt-dlp exited with code ${code}. stderr: ${stderr.substring(0, 500)}`))
-            } else {
-              setProgress(downloadId, 90, 'processing')
-              resolve()
-            }
+              
+              // More specific error message
+              let errorMsg = error.message
+              if (error.message.includes('ENOENT')) {
+                errorMsg = 'yt-dlp binary not found or not executable. Please check server configuration.'
+              } else if (error.message.includes('EACCES')) {
+                errorMsg = 'Permission denied. yt-dlp may not be executable.'
+              }
+              
+              reject(new Error(errorMsg))
+            })
           })
-          
-          ytDlpProcess.on('error', (error: Error) => {
-            setProgress(downloadId, 0, 'error')
-            clearProgress(downloadId)
-            reject(error)
-          })
-        })
         
         console.log('yt-dlp completed successfully')
         console.log('yt-dlp stdout length:', stdout.length)
