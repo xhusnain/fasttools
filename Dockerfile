@@ -17,6 +17,12 @@ RUN corepack enable && corepack prepare pnpm@10.18.0 --activate
 # Copy package files
 COPY package.json pnpm-lock.yaml* ./
 
+# Copy scripts directory needed for postinstall script
+COPY scripts ./scripts
+
+# Create bin directory for yt-dlp binary
+RUN mkdir -p bin
+
 # Install dependencies (safe for CI/CD)
 RUN pnpm install --no-frozen-lockfile
 
@@ -32,6 +38,9 @@ RUN corepack enable && corepack prepare pnpm@10.18.0 --activate
 # Copy dependencies and source
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+# Copy bin directory from deps stage (contains yt-dlp binary from postinstall)
+# This ensures the downloaded yt-dlp binary is preserved even if bin/ exists in source
+COPY --from=deps /app/bin ./bin
 
 # Set production environment
 ENV NODE_ENV=production
@@ -64,6 +73,8 @@ RUN groupadd -r -g 1001 nodejs \
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+# Copy bin directory (contains yt-dlp binary) if needed at runtime
+COPY --from=builder --chown=nextjs:nodejs /app/bin ./bin
 
 # Use non-root user
 USER nextjs
