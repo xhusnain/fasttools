@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Progress } from "@/components/ui/progress"
-import { Download, AlertTriangle, Music, Youtube, List, CheckCircle2, Circle } from "lucide-react"
+import { Download, AlertTriangle, Music, Video, List } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
@@ -148,7 +148,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
       return
     }
 
-    setDownloadingStates(prev => ({ ...prev, [format]: true }))
+    setDownloadingStates(prev => ({ ...prev, [format === 'mp4' ? 'video' : 'audio']: true }))
     setError(null)
     setSingleVideoProgress(0)
 
@@ -209,7 +209,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
       setError(e?.message || "Download failed. Please try again.")
       setSingleVideoProgress(0)
     } finally {
-      setDownloadingStates(prev => ({ ...prev, [format]: false }))
+      setDownloadingStates(prev => ({ ...prev, [format === 'mp4' ? 'video' : 'audio']: false }))
     }
   }
 
@@ -387,7 +387,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
         <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as "single" | "playlist")} className="w-full">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="single" className="flex items-center gap-2">
-              <Youtube className="h-4 w-4" />
+              <Video className="h-4 w-4" />
               Single Video
             </TabsTrigger>
             <TabsTrigger value="playlist" className="flex items-center gap-2">
@@ -493,10 +493,10 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                   )}
                   <Button
                     onClick={handleSingleVideoDownload}
-                    disabled={downloadingStates[format] || !result.videoId}
+                    disabled={downloadingStates[format === 'mp4' ? 'video' : 'audio'] || !result.videoId}
                     className="w-full h-10"
                   >
-                    {downloadingStates[format] ? (
+                    {downloadingStates[format === 'mp4' ? 'video' : 'audio'] ? (
                       <>
                         <LoadingSpinner className="mr-2 h-4 w-4" />
                         Downloading {format.toUpperCase()}...
