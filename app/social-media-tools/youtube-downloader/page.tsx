@@ -374,6 +374,73 @@ export default function YoutubeDownloaderPage() {
             <div className="flex-1 space-y-8">
               <YoutubeDownloader />
 
+              {/* YouTube Related Tools Section */}
+              <section className="p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
+                <h2 className="text-2xl font-bold mb-4 text-foreground">🔗 YouTube Related Tools</h2>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Explore more YouTube tools to enhance your content creation workflow:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <Link 
+                    href="/social-media-tools/youtube-thumbnail" 
+                    className="p-4 rounded-lg bg-muted/50 border border-border hover:bg-muted transition-colors group"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-primary/20 rounded-lg group-hover:bg-primary/30 transition-colors">
+                        <Download className="h-5 w-5 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-heading-accent mb-1 group-hover:text-primary transition-colors flex items-center gap-2">
+                          YouTube Thumbnail Downloader
+                          <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Download YouTube video thumbnails in all available quality sizes for competitor analysis and inspiration.
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                  <Link 
+                    href="/social-media-tools/youtube-tags" 
+                    className="p-4 rounded-lg bg-muted/50 border border-border hover:bg-muted transition-colors group"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-primary/20 rounded-lg group-hover:bg-primary/30 transition-colors">
+                        <FileText className="h-5 w-5 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-heading-accent mb-1 group-hover:text-primary transition-colors flex items-center gap-2">
+                          YouTube Tag Extractor
+                          <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Extract tags from any YouTube video for SEO research and content optimization.
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                  <Link 
+                    href="/social-media-tools/channel-checker" 
+                    className="p-4 rounded-lg bg-muted/50 border border-border hover:bg-muted transition-colors group"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-primary/20 rounded-lg group-hover:bg-primary/30 transition-colors">
+                        <Target className="h-5 w-5 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-heading-accent mb-1 group-hover:text-primary transition-colors flex items-center gap-2">
+                          YouTube Channel Name Checker
+                          <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Check if your desired YouTube channel name is available across all platforms.
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              </section>
+
               {/* What is YT Downloader Section - Enhanced with Semantic SEO */}
               <article className="p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
                 <h2 className="text-2xl font-bold mb-4 text-foreground">🎬 What is YouTube Downloader?</h2>
@@ -670,63 +737,6 @@ export default function YoutubeDownloaderPage() {
                   Explore more social media tools to enhance your content creation workflow:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Link 
-                    href="/social-media-tools/youtube-thumbnail" 
-                    className="p-4 rounded-lg bg-muted/50 border border-border hover:bg-muted transition-colors group"
-                  >
-                    <div className="flex items-start gap-3">
-                      <div className="p-2 bg-primary/20 rounded-lg group-hover:bg-primary/30 transition-colors">
-                        <Download className="h-5 w-5 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-heading-accent mb-1 group-hover:text-primary transition-colors flex items-center gap-2">
-                          YouTube Thumbnail Downloader
-                          <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Download YouTube video thumbnails in all available quality sizes for competitor analysis and inspiration.
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-                  <Link 
-                    href="/social-media-tools/youtube-tags" 
-                    className="p-4 rounded-lg bg-muted/50 border border-border hover:bg-muted transition-colors group"
-                  >
-                    <div className="flex items-start gap-3">
-                      <div className="p-2 bg-primary/20 rounded-lg group-hover:bg-primary/30 transition-colors">
-                        <FileText className="h-5 w-5 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-heading-accent mb-1 group-hover:text-primary transition-colors flex items-center gap-2">
-                          YouTube Tag Extractor
-                          <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Extract tags from any YouTube video for SEO research and content optimization.
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-                  <Link 
-                    href="/social-media-tools/channel-checker" 
-                    className="p-4 rounded-lg bg-muted/50 border border-border hover:bg-muted transition-colors group"
-                  >
-                    <div className="flex items-start gap-3">
-                      <div className="p-2 bg-primary/20 rounded-lg group-hover:bg-primary/30 transition-colors">
-                        <Target className="h-5 w-5 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-heading-accent mb-1 group-hover:text-primary transition-colors flex items-center gap-2">
-                          YouTube Channel Name Checker
-                          <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Check if your desired YouTube channel name is available across all platforms.
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
                   <Link 
                     href="/social-media-tools/instagram-downloader" 
                     className="p-4 rounded-lg bg-muted/50 border border-border hover:bg-muted transition-colors group"
