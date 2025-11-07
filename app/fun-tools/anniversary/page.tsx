@@ -229,6 +229,25 @@ export default function AnniversaryPage() {
                 <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
               </div>
 
+              {/* Anniversary Calculator Keywords Content */}
+              <div className="space-y-5 animate-fade-in-up animation-delay-300">
+                <div className="p-5 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-xl font-bold mb-4 text-card-foreground">When Is My Anniversary: Calculate Anniversary Dates</h2>
+                  
+                  <div className="space-y-6">
+                    <div className="p-4 rounded-lg bg-card border border-border">
+                      <h3 className="font-semibold text-heading-accent mb-3">When Is My Anniversary: Find Your Anniversary Date</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                        Wondering when is my anniversary? Our anniversary calculator helps you determine your exact anniversary date, calculate how long you've been together, and find upcoming anniversary milestones. When you ask "when is my anniversary," our tool calculates the anniversary date from your start date, showing you exactly when your anniversary occurs each year. The question "when is my anniversary" is easily answered by entering your relationship start date or wedding date into our calculator. Whether you want to know when is my anniversary for planning purposes, calculating relationship duration, or finding milestone dates, our tool provides accurate anniversary calculations. Use our calculator to answer "when is my anniversary" quickly and accurately, helping you plan celebrations and remember important dates.
+                      </p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Our tool makes it simple to answer "when is my anniversary" by providing instant calculations from any start date. Whether you're calculating relationship anniversaries, wedding anniversaries, or other important milestones, our calculator helps you determine exactly when is my anniversary. The tool handles all date calculations accurately, accounting for leap years and showing anniversary dates for years to come, making it easy to answer "when is my anniversary" at any time.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* FAQ Section */}
               <div className="space-y-5 animate-fade-in-up animation-delay-300">
                 <div className="p-5 rounded-lg bg-card border border-border shadow">

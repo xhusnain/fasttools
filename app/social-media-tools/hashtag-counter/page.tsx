@@ -439,6 +439,33 @@ export default function HashtagCounterPage() {
                   </p>
                 </div>
 
+                {/* Hashtag Counter Keywords Content */}
+                <div className="p-5 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-xl font-bold mb-4 text-foreground">Hashtag Counter and Tag Counter: Complete Guide</h2>
+                  
+                  <div className="space-y-6">
+                    <div className="p-4 rounded-lg bg-card border border-border">
+                      <h3 className="font-semibold text-heading-accent mb-3">Hashtag Counter: Count Hashtags in Your Content</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                        Our hashtag counter helps you count hashtags in your social media posts, ensuring you stay within platform limits and optimize your hashtag usage. The hashtag counter tool analyzes your content and displays the exact number of hashtags present, helping you avoid exceeding platform restrictions. When using the hashtag counter, you can quickly verify that your Instagram posts stay within the 30-hashtag limit, your Twitter posts comply with character limits, and your TikTok content follows platform guidelines. The hashtag counter is essential for social media managers, content creators, and marketers who need to optimize hashtag usage across multiple platforms. Use our hashtag counter to count hashtags before posting, ensuring your content reaches maximum visibility without violating platform rules.
+                      </p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        The hashtag counter provides instant results, showing you exactly how many hashtags are in your content and highlighting any that exceed platform limits. Whether you're counting hashtags for Instagram, Twitter, LinkedIn, or TikTok, our hashtag counter helps you optimize your social media strategy by ensuring proper hashtag usage. The hashtag counter tool is free to use and requires no registration, making it easy to count hashtags quickly whenever you need to verify your content before posting.
+                      </p>
+                    </div>
+
+                    <div className="p-4 rounded-lg bg-card border border-border">
+                      <h3 className="font-semibold text-heading-accent mb-3">Tag Counter: Count Tags Across Platforms</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                        Our tag counter helps you count tags in your social media content, ensuring compliance with platform-specific tag limits and optimal tag usage. The tag counter tool analyzes your posts and displays the exact number of tags present, whether they're hashtags, user mentions, or location tags. When using the tag counter, you can verify that your content stays within platform limits: Instagram allows up to 30 hashtags per post, Twitter has character limits that affect tag usage, and LinkedIn recommends 3-5 hashtags for optimal engagement. The tag counter is essential for content creators who need to optimize tag usage across multiple social media platforms while maintaining compliance with platform guidelines.
+                      </p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        The tag counter provides comprehensive tag analysis, showing not just the count but also identifying different types of tags in your content. Use our tag counter to count tags before posting, ensuring your social media content is optimized for maximum reach and engagement. The tag counter tool helps you understand tag density, identify over-tagging, and optimize your content for better performance across all major social media platforms.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 {/* FAQ Section */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">

@@ -840,6 +840,29 @@ export default function BillSplitterPage() {
                   </CardContent>
                 </Card>
 
+                {/* Receipt Splitter Keywords Content */}
+                <Card className="border border-border shadow-sm">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold text-foreground flex items-center gap-2">
+                      <Calculator className="h-5 w-5 text-primary" />
+                      Receipt Splitter: Split Bills and Receipts Easily
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-4">
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-foreground mb-2">Receipt Splitter: Split Restaurant Bills and Receipts</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our receipt splitter helps you split restaurant bills, receipts, and invoices quickly and accurately among multiple people. The receipt splitter tool allows you to divide bills evenly, split by item, or calculate custom splits based on what each person ordered. When using the receipt splitter, you can input the total bill amount, add tax and tip, and divide it among your group with precision. The receipt splitter is perfect for dining out with friends, splitting household expenses, dividing group purchases, and managing shared costs. Use our receipt splitter to eliminate confusion when splitting bills, ensuring everyone pays their fair share without complicated calculations or disputes.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The receipt splitter provides detailed breakdowns showing each person's share, including tax and tip calculations, making it easy to understand exactly what everyone owes. Whether you're splitting a restaurant receipt, dividing utility bills, or sharing costs for group activities, our receipt splitter makes bill splitting simple and accurate. The receipt splitter tool is free to use and works on any device, making it convenient to split bills whenever you need it, whether at restaurants, cafes, or after group purchases.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
                 <Card className="border border-border shadow-sm">
                   <CardHeader>
                     <CardTitle className="text-xl font-bold text-foreground flex items-center gap-2">

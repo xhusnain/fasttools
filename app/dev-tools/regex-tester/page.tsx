@@ -930,6 +930,163 @@ export default function RegexTesterPage() {
                     </p>
         </div>
 
+                  {/* Regex Keywords Content */}
+                  <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Regex Pattern Testing: Complete Guide</h2>
+                    
+                    <div className="space-y-4">
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Test Regex Pattern: Validate and Test Regular Expressions</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our test regex pattern tool helps you test regex patterns against sample text, validate pattern syntax, and see real-time matching results. When you test regex pattern, you can verify that your pattern works correctly, identify matching text, and debug pattern issues instantly. The test regex pattern functionality shows which parts of your text match the pattern, displays capture groups, and highlights matches for easy understanding. Use our test regex pattern tool to validate patterns before using them in code, ensuring your regular expressions work as expected. The test regex pattern feature supports all standard regex syntax including character classes, quantifiers, anchors, and groups, making it perfect for testing any regex pattern.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The test regex pattern tool provides instant feedback, showing matches, non-matches, and error messages when patterns are invalid. Whether you're testing simple patterns or complex expressions, our test regex pattern tool makes it easy to verify pattern correctness and understand matching behavior. The test regex pattern functionality is essential for developers, data analysts, and anyone working with text processing who needs to validate regex patterns before implementation.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Regex Pattern Check: Verify Pattern Validity</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our regex pattern check tool helps you verify pattern validity, check syntax errors, and validate regex patterns before using them in your code. When you perform a regex pattern check, the tool analyzes your pattern for syntax errors, validates special character usage, and confirms that the pattern is properly formatted. The regex pattern check functionality identifies common mistakes like unclosed brackets, invalid quantifiers, and syntax errors that would cause pattern failures. Use our regex pattern check tool to validate patterns quickly, ensuring they're syntactically correct and ready for use. The regex pattern check feature works with all regex flavors and helps you catch errors before they cause problems in your applications.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The regex pattern check tool provides detailed error messages when patterns are invalid, helping you fix syntax issues quickly. Whether you're checking simple patterns or complex expressions, our regex pattern check tool ensures your patterns are valid and ready to use. The regex pattern check functionality is essential for preventing runtime errors and ensuring reliable pattern matching in your code.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Regex Pattern Checker: Comprehensive Pattern Validation</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our regex pattern checker provides comprehensive pattern validation, testing, and debugging capabilities for regular expressions. The regex pattern checker analyzes your patterns for syntax correctness, tests them against sample text, and provides detailed feedback about matches and non-matches. When using the regex pattern checker, you can verify pattern behavior, test edge cases, and understand how your pattern matches different inputs. The regex pattern checker is perfect for developers who need to validate patterns, debug matching issues, and ensure pattern reliability. Use our regex pattern checker to test patterns thoroughly, validate syntax, and understand pattern behavior before implementing them in production code.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The regex pattern checker provides comprehensive validation including syntax checking, match testing, and detailed result analysis. Whether you're checking patterns for email validation, URL matching, or text extraction, our regex pattern checker ensures your patterns work correctly. The regex pattern checker tool is free to use and supports all standard regex features, making it the perfect solution for pattern validation and testing.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Regex Matching Online: Test Patterns in Your Browser</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our regex matching online tool allows you to test regex patterns directly in your browser without installing any software or plugins. The regex matching online functionality provides instant pattern testing, real-time match highlighting, and detailed result analysis without requiring downloads or installations. When you use regex matching online, you can test patterns immediately, see matches highlighted in your text, and understand pattern behavior through visual feedback. The regex matching online tool is perfect for quick pattern testing, learning regex syntax, and validating patterns without setting up development environments. Use our regex matching online tool to test patterns instantly, validate syntax, and see matching results in real-time.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The regex matching online tool provides comprehensive testing capabilities accessible from any device with a web browser. Whether you're testing patterns on desktop, tablet, or mobile, our regex matching online tool works everywhere. The regex matching online functionality is free to use, requires no registration, and provides instant results for all your pattern testing needs.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Validate Regex Online: Verify Pattern Correctness</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our validate regex online tool helps you verify pattern correctness, check syntax validity, and ensure patterns work as expected before using them in your code. When you validate regex online, the tool checks your pattern for syntax errors, validates special character usage, and tests the pattern against sample text to confirm it works correctly. The validate regex online functionality provides instant validation feedback, showing whether your pattern is valid, highlighting syntax errors, and displaying match results. Use our validate regex online tool to verify patterns quickly, catch errors early, and ensure pattern reliability. The validate regex online feature supports all standard regex syntax and helps you create reliable patterns for text processing.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The validate regex online tool provides comprehensive validation including syntax checking, match testing, and error identification. Whether you're validating email patterns, URL patterns, or custom text patterns, our validate regex online tool ensures your patterns are correct and ready to use. The validate regex online functionality is essential for preventing runtime errors and ensuring reliable pattern matching in applications.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Regex Tester Online Java: Test Java-Style Regex Patterns</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our regex tester online Java helps you test Java-style regex patterns, validate pattern syntax, and see matching results compatible with Java's Pattern class. The regex tester online Java supports Java regex syntax including character classes, quantifiers, and special constructs used in Java regular expressions. When you use regex tester online Java, you can test patterns that will work in Java applications, validate syntax before implementing in Java code, and understand how Java handles pattern matching. The regex tester online Java is perfect for Java developers who need to test patterns before using them with java.util.regex.Pattern and Matcher classes. Use our regex tester online Java to test patterns, validate syntax, and ensure compatibility with Java's regex engine.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The regex tester online Java provides Java-compatible pattern testing, ensuring your patterns will work correctly in Java applications. Whether you're testing patterns for input validation, text processing, or data extraction in Java, our regex tester online Java ensures compatibility and correctness. The regex tester online Java tool is free to use and provides instant results for all your Java regex testing needs.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Validate Regular Expression Online: Comprehensive Pattern Validation</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our validate regular expression online tool provides comprehensive pattern validation, syntax checking, and match testing for regular expressions. The validate regular expression online functionality checks your patterns for syntax errors, validates special character usage, and tests patterns against sample text to ensure they work correctly. When you validate regular expression online, you get instant feedback about pattern validity, syntax errors, and matching behavior. The validate regular expression online tool is perfect for developers, data analysts, and anyone working with text processing who needs to verify pattern correctness. Use our validate regular expression online tool to validate patterns quickly, catch errors early, and ensure pattern reliability before implementation.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The validate regular expression online tool provides comprehensive validation including syntax checking, match testing, and detailed error reporting. Whether you're validating simple patterns or complex expressions, our validate regular expression online tool ensures your patterns are correct and ready to use. The validate regular expression online functionality is essential for preventing runtime errors and ensuring reliable pattern matching in your applications.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Regex Match Online: Test Pattern Matching</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our regex match online tool helps you test pattern matching, see which parts of your text match patterns, and understand matching behavior. The regex match online functionality provides real-time match testing, highlighting matched text, and displaying detailed information about matches including positions and capture groups. When you use regex match online, you can test patterns against sample text, see matches highlighted, and understand how your pattern matches different inputs. The regex match online tool is perfect for testing patterns, debugging matching issues, and learning how regex matching works. Use our regex match online tool to test patterns instantly, see matches clearly, and understand pattern behavior.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The regex match online tool provides comprehensive matching capabilities including match highlighting, capture group display, and detailed match information. Whether you're testing simple patterns or complex expressions, our regex match online tool makes it easy to understand how patterns match text. The regex match online functionality is free to use and provides instant results for all your pattern matching needs.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Test Regular Expression Online Java: Java-Compatible Pattern Testing</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our test regular expression online Java tool helps you test Java-compatible regex patterns, validate syntax, and see matching results that work with Java's regex engine. The test regular expression online Java functionality supports Java regex syntax and provides testing capabilities compatible with java.util.regex classes. When you test regular expression online Java, you can validate patterns before using them in Java code, test matching behavior, and ensure compatibility with Java's Pattern and Matcher classes. The test regular expression online Java tool is perfect for Java developers who need to test patterns before implementation. Use our test regular expression online Java to test patterns, validate syntax, and ensure Java compatibility.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The test regular expression online Java tool provides Java-compatible pattern testing, ensuring your patterns will work correctly in Java applications. Whether you're testing patterns for input validation, text processing, or data extraction in Java, our test regular expression online Java ensures compatibility and correctness. The test regular expression online Java functionality is free to use and provides instant results for all your Java regex testing needs.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Regex Test Online Java: Java Regex Pattern Testing</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our regex test online Java tool provides Java-compatible regex pattern testing, allowing you to test patterns that will work with Java's regex engine. The regex test online Java functionality supports Java regex syntax and provides testing capabilities that match Java's Pattern class behavior. When you use regex test online Java, you can test patterns before implementing them in Java code, validate syntax, and see matching results compatible with Java applications. The regex test online Java tool is perfect for Java developers who need to test and validate patterns before using them in production code. Use our regex test online Java to test patterns, validate syntax, and ensure Java compatibility.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The regex test online Java tool provides comprehensive Java-compatible pattern testing, ensuring your patterns will work correctly in Java applications. Whether you're testing patterns for validation, text processing, or data extraction, our regex test online Java ensures compatibility and correctness. The regex test online Java functionality is free to use and provides instant results for all your Java regex testing needs.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Regex Check Online: Verify Pattern Validity</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our regex check online tool helps you verify pattern validity, check syntax errors, and validate regex patterns quickly without installing any software. The regex check online functionality provides instant pattern validation, syntax checking, and match testing accessible from any web browser. When you use regex check online, you can verify patterns quickly, catch syntax errors, and test patterns against sample text to ensure they work correctly. The regex check online tool is perfect for quick pattern validation, debugging pattern issues, and ensuring pattern correctness. Use our regex check online to verify patterns instantly, validate syntax, and test matching behavior.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The regex check online tool provides comprehensive validation including syntax checking, match testing, and error identification. Whether you're checking simple patterns or complex expressions, our regex check online tool ensures your patterns are valid and ready to use. The regex check online functionality is free to use, requires no registration, and provides instant results for all your pattern validation needs.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Ruby Regex Test: Test Ruby-Compatible Patterns</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our ruby regex test tool helps you test Ruby-compatible regex patterns, validate syntax, and see matching results that work with Ruby's regex engine. The ruby regex test functionality supports Ruby regex syntax including Ruby-specific features like named groups and special constructs. When you use ruby regex test, you can test patterns before using them in Ruby code, validate syntax, and ensure compatibility with Ruby's Regexp class. The ruby regex test tool is perfect for Ruby developers who need to test patterns before implementation. Use our ruby regex test to test patterns, validate syntax, and ensure Ruby compatibility.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The ruby regex test tool provides Ruby-compatible pattern testing, ensuring your patterns will work correctly in Ruby applications. Whether you're testing patterns for string matching, text processing, or data extraction in Ruby, our ruby regex test ensures compatibility and correctness. The ruby regex test functionality is free to use and provides instant results for all your Ruby regex testing needs.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Ruby Test Regex: Validate Ruby Regex Patterns</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our ruby test regex tool provides Ruby-compatible regex pattern testing, allowing you to test patterns that will work with Ruby's regex engine. The ruby test regex functionality supports Ruby regex syntax and provides testing capabilities compatible with Ruby's Regexp and MatchData classes. When you use ruby test regex, you can test patterns before implementing them in Ruby code, validate syntax, and see matching results compatible with Ruby applications. The ruby test regex tool is perfect for Ruby developers who need to test and validate patterns before using them in production code. Use our ruby test regex to test patterns, validate syntax, and ensure Ruby compatibility.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The ruby test regex tool provides comprehensive Ruby-compatible pattern testing, ensuring your patterns will work correctly in Ruby applications. Whether you're testing patterns for validation, text processing, or data extraction, our ruby test regex ensures compatibility and correctness. The ruby test regex functionality is free to use and provides instant results for all your Ruby regex testing needs.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Regex Match Tester: Test Pattern Matching Behavior</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our regex match tester helps you test pattern matching behavior, see which parts of text match patterns, and understand how patterns match different inputs. The regex match tester provides real-time match testing, highlighting matched text, and displaying detailed information about matches including positions, lengths, and capture groups. When you use regex match tester, you can test patterns against sample text, see matches highlighted, and understand matching behavior through visual feedback. The regex match tester is perfect for testing patterns, debugging matching issues, and learning how regex matching works. Use our regex match tester to test patterns instantly, see matches clearly, and understand pattern behavior.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The regex match tester provides comprehensive matching capabilities including match highlighting, capture group display, and detailed match information. Whether you're testing simple patterns or complex expressions, our regex match tester makes it easy to understand how patterns match text. The regex match tester functionality is free to use and provides instant results for all your pattern matching needs.
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-lg bg-card border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-3">Regex Perl Tester: Test Perl-Compatible Patterns</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                          Our regex perl tester helps you test Perl-compatible regex patterns, validate syntax, and see matching results that work with Perl's regex engine. The regex perl tester functionality supports Perl regex syntax including Perl-specific features like lookaheads, lookbehinds, and special constructs. When you use regex perl tester, you can test patterns before using them in Perl code, validate syntax, and ensure compatibility with Perl's regex engine. The regex perl tester tool is perfect for Perl developers who need to test patterns before implementation. Use our regex perl tester to test patterns, validate syntax, and ensure Perl compatibility.
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The regex perl tester provides Perl-compatible pattern testing, ensuring your patterns will work correctly in Perl applications. Whether you're testing patterns for text processing, data extraction, or validation in Perl, our regex perl tester ensures compatibility and correctness. The regex perl tester functionality is free to use and provides instant results for all your Perl regex testing needs.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
                   {/* Comprehensive FAQ Section */}
                   <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Frequently Asked Questions (FAQ)</h2>

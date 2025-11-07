@@ -334,6 +334,25 @@ export default function TiktokDownloaderPage() {
               </div>
             </div>
 
+            {/* TikTok Photo Downloader Keywords Content */}
+            <div className="p-6 rounded-lg bg-card border border-border shadow-lg animate-fade-in-up animation-delay-500">
+              <h2 className="text-xl font-bold mb-4 text-foreground flex items-center gap-2">
+                <AlertCircle className="h-5 w-5 text-primary" />
+                TikTok Photo Downloader HD: High-Quality Downloads
+              </h2>
+              <div className="space-y-4">
+                <div className="p-4 rounded-lg bg-card border border-border">
+                  <h3 className="font-semibold text-heading-accent mb-3">TikTok Photo Downloader HD: Download High-Quality Images</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    Our TikTok photo downloader HD helps you download high-quality images and photos from TikTok videos in HD resolution. The TikTok photo downloader HD extracts individual frames and images from TikTok videos, allowing you to save photos in the highest available quality. When using the TikTok photo downloader HD, you can download images from any TikTok video, extracting frames at the best resolution possible. The TikTok photo downloader HD is perfect for saving favorite moments from TikTok videos as high-quality images, creating collections of images, or extracting photos for personal use. Use our TikTok photo downloader HD to download images in HD quality, ensuring you get the best resolution available from TikTok content.
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    The TikTok photo downloader HD provides access to high-quality image downloads, making it easy to save photos from TikTok videos at maximum resolution. Whether you want to download images for personal collections, create image galleries, or save favorite moments as photos, our TikTok photo downloader HD delivers HD quality images. The TikTok photo downloader HD tool is free to use and works with any public TikTok video, making it convenient to download images whenever you need them.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* FAQ Section */}
               <div className="p-6 rounded-lg bg-card border border-border shadow-lg animate-fade-in-up animation-delay-500">
                 <h2 className="text-xl font-bold mb-4 text-foreground flex items-center gap-2">

@@ -212,6 +212,35 @@ export default function InstagramDpPage() {
                 </div>
               </div>
 
+              {/* Instagram DP Keywords Content */}
+              <div className="space-y-5 animate-fade-in-up animation-delay-300">
+                <div className="p-5 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-xl font-bold mb-4 text-foreground">View Instagram DP: Complete Guide</h2>
+                  
+                  <div className="space-y-6">
+                    <div className="p-4 rounded-lg bg-card border border-border">
+                      <h3 className="font-semibold text-heading-accent mb-3">View Instagram DP: View and Download Profile Pictures</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                        Our view Instagram DP tool helps you view Instagram profile pictures in high quality, allowing you to see and download profile photos from any public Instagram account. When you want to view Instagram DP, simply enter the Instagram username and our tool displays the profile picture in full resolution. The view Instagram DP feature works with any public Instagram account, showing profile pictures that are often displayed in small sizes on the platform. Use our view Instagram DP tool to see profile pictures clearly, download them if needed, or save them for reference. The view Instagram DP functionality is particularly useful for viewing profile pictures from accounts where the image appears small or you want to see details more clearly.
+                      </p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        The view Instagram DP tool provides instant access to profile pictures without requiring you to follow the account or have special access. Whether you want to view Instagram DP for personal use, reference, or other purposes, our tool makes it easy to access profile pictures from any public Instagram account. The view Instagram DP feature is free to use and works on both desktop and mobile devices, making it convenient to view profile pictures whenever you need them.
+                      </p>
+                    </div>
+
+                    <div className="p-4 rounded-lg bg-card border border-border">
+                      <h3 className="font-semibold text-heading-accent mb-3">How to View Instagram DP: Step-by-Step Guide</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                        Learning how to view Instagram DP is simple with our tool - just enter the Instagram username and click to view the profile picture. The process for how to view Instagram DP involves entering the username (with or without @ symbol) into our viewer, and the tool automatically fetches and displays the profile picture in high quality. When you want to know how to view Instagram DP, our tool provides the easiest method: no account required, no login needed, just enter the username and view the profile picture instantly. The guide for how to view Instagram DP works for any public Instagram account, showing profile pictures that may be difficult to see clearly on the platform itself. Understanding how to view Instagram DP helps you access profile pictures quickly for personal use, reference, or saving.
+                      </p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        The method for how to view Instagram DP is straightforward: enter username, view profile picture, and optionally download if needed. Our tool simplifies the process of how to view Instagram DP, eliminating the need for complicated methods or third-party apps. Use our guide on how to view Instagram DP to quickly access profile pictures from any public Instagram account whenever you need them.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* FAQ Section */}
               <div className="space-y-5 animate-fade-in-up animation-delay-300">
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
