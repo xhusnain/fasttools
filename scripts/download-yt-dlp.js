@@ -74,43 +74,45 @@ function downloadYtDlp(downloadUrl) {
       
       // Handle file completion
       file.on('finish', () => {
-        file.close()
-        
-        // Verify file was actually written
-        const stats = fs.statSync(ytDlpPath)
-        console.log(`Downloaded ${bytesDownloaded} bytes, file size: ${stats.size} bytes`)
-        
-        if (stats.size === 0) {
-          try {
-            if (fs.existsSync(ytDlpPath)) {
-              fs.unlinkSync(ytDlpPath)
+        file.close(() => {
+          // Wait a bit for file system to sync (prevents "Text file busy" error)
+          setTimeout(() => {
+            try {
+              // Verify file was actually written
+              const stats = fs.statSync(ytDlpPath)
+              console.log(`Downloaded ${bytesDownloaded} bytes, file size: ${stats.size} bytes`)
+              
+              if (stats.size === 0) {
+                try {
+                  if (fs.existsSync(ytDlpPath)) {
+                    fs.unlinkSync(ytDlpPath)
+                  }
+                } catch {}
+                reject(new Error('Downloaded file is empty (0 bytes)'))
+                return
+              }
+              
+              if (contentLength > 0 && stats.size < contentLength * 0.9) {
+                console.warn(`Warning: File size (${stats.size}) is significantly smaller than expected (${contentLength})`)
+              }
+              
+              // Make executable
+              try {
+                fs.chmodSync(ytDlpPath, 0o755)
+                console.log('✅ yt-dlp downloaded and made executable')
+                
+                // File is downloaded and executable - verification will be done in Dockerfile
+                // (Skipping verification here to avoid "Text file busy" errors in Docker build)
+                console.log('✅ yt-dlp downloaded successfully (verification will be done in Dockerfile)')
+                resolve()
+              } catch (chmodError) {
+                reject(new Error(`Failed to make yt-dlp executable: ${chmodError.message}`))
+              }
+            } catch (statError) {
+              reject(new Error(`Failed to verify downloaded file: ${statError.message}`))
             }
-          } catch {}
-          reject(new Error('Downloaded file is empty (0 bytes)'))
-          return
-        }
-        
-        if (contentLength > 0 && stats.size < contentLength * 0.9) {
-          console.warn(`Warning: File size (${stats.size}) is significantly smaller than expected (${contentLength})`)
-        }
-        
-        // Make executable
-        try {
-          fs.chmodSync(ytDlpPath, 0o755)
-          console.log('✅ yt-dlp downloaded and made executable')
-          
-          // Verify it works
-          try {
-            const version = execSync(`"${ytDlpPath}" --version`, { encoding: 'utf-8', timeout: 10000 })
-            console.log(`✅ yt-dlp version: ${version.trim()}`)
-            resolve()
-          } catch (error) {
-            console.error('❌ Error verifying yt-dlp:', error.message)
-            reject(new Error(`yt-dlp downloaded but verification failed: ${error.message}`))
-          }
-        } catch (chmodError) {
-          reject(new Error(`Failed to make yt-dlp executable: ${chmodError.message}`))
-        }
+          }, 100)
+        })
       })
       
       // Handle file errors
