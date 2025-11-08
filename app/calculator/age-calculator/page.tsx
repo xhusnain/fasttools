@@ -87,7 +87,13 @@ export default function AgeCalculatorPage() {
       }
     },
     datePublished: "2024-01-01",
-    dateModified: new Date().toISOString().split('T')[0],
+    dateModified: (() => {
+      try {
+        return new Date().toISOString().split('T')[0]
+      } catch {
+        return "2024-01-01"
+      }
+    })(),
     version: "2.0",
     offers: {
       "@type": "Offer",
@@ -567,13 +573,22 @@ export default function AgeCalculatorPage() {
     ]
   }
 
+  // Safely stringify JSON-LD to prevent SSR errors
+  const safeStringify = (obj: any): string => {
+    try {
+      return JSON.stringify(obj)
+    } catch (error) {
+      console.error('Error stringifying JSON-LD:', error)
+      return '{}'
+    }
+  }
+
   return (
     <>
-      <meta name="theme-color" content="#0ea5e9" />
       <div className="min-h-screen bg-background">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeStringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeStringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeStringify(breadcrumbJsonLd) }} />
 
       <div className="container mx-auto px-4 py-6 max-w-6xl">
         <Breadcrumbs

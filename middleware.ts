@@ -55,6 +55,82 @@ export function middleware(request: NextRequest) {
   const protocol = request.headers.get('x-forwarded-proto') || 'https'
   const pathname = request.nextUrl.pathname
 
+  // Skip redirects for localhost and 127.0.0.1 in development
+  if (
+    hostname.includes('localhost') ||
+    hostname.includes('127.0.0.1')
+  ) {
+    // Handle CORS for API routes
+    if (pathname.startsWith('/api/')) {
+      const allowedOrigin = getAllowedOrigin(request)
+      
+      // Handle preflight OPTIONS requests
+      if (request.method === 'OPTIONS') {
+        if (!allowedOrigin) {
+          return new NextResponse(null, {
+            status: 403,
+            statusText: 'Forbidden - Origin not allowed',
+          })
+        }
+
+        return new NextResponse(null, {
+          status: 200,
+          headers: {
+            'Access-Control-Allow-Origin': allowedOrigin,
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-API-Key',
+            'Access-Control-Allow-Credentials': 'true',
+            'Access-Control-Max-Age': '86400',
+          },
+        })
+      }
+      
+      const response = NextResponse.next()
+      if (allowedOrigin) {
+        response.headers.set('Access-Control-Allow-Origin', allowedOrigin)
+        response.headers.set('Access-Control-Allow-Credentials', 'true')
+      }
+      return response
+    }
+
+    // Check if URL is permanently deleted (410 Gone)
+    if (isGoneUrl(pathname)) {
+      return new NextResponse(null, {
+        status: 410,
+        statusText: 'Gone',
+        headers: {
+          'Content-Type': 'text/html',
+        },
+      })
+    }
+
+    return NextResponse.next()
+  }
+
+  // Production redirects: Handle HTTP to HTTPS and non-www to www
+  if (env.isProduction) {
+    const normalizedHost = hostname.toLowerCase().replace(/^www\./, '')
+    const isHttps = protocol === 'https'
+    const hasWww = hostname.toLowerCase().startsWith('www.')
+    const isFastToolsStore = normalizedHost === 'fasttools.store'
+
+    if (isFastToolsStore) {
+      // Determine if we need to redirect
+      const needsWwwRedirect = !hasWww
+      const needsHttpsRedirect = !isHttps
+
+      if (needsWwwRedirect || needsHttpsRedirect) {
+        // Construct the canonical URL (https://www.fasttools.store)
+        const url = request.nextUrl.clone()
+        url.hostname = 'www.fasttools.store'
+        url.protocol = 'https:'
+        url.port = ''
+        
+        return NextResponse.redirect(url, 301)
+      }
+    }
+  }
+
   // Handle CORS for API routes
   if (pathname.startsWith('/api/')) {
     const allowedOrigin = getAllowedOrigin(request)
@@ -103,13 +179,6 @@ export function middleware(request: NextRequest) {
     })
   }
 
-  // Skip redirects for localhost and 127.0.0.1
-  if (
-      hostname.includes('localhost') ||
-      hostname.includes('127.0.0.1')
-  ) {
-    return NextResponse.next()
-  }
   return NextResponse.next()
 }
 

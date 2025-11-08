@@ -661,9 +661,11 @@ export const metadata: Metadata = {
     creator: "@FastToolsStore",
   },
   other: {
-    "application/ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
+    "application/ld+json": (() => {
+      try {
+        return JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
       name: "FastTools Color Palettes",
       alternateName: ["Color Palette Library", "Color Schemes Collection", "Design Color Palettes", "Free Color Palette Generator", "HEX Color Code Library"],
       applicationCategory: "DeveloperApplication",
@@ -719,7 +721,13 @@ export const metadata: Metadata = {
         worstRating: "1"
       },
       datePublished: "2024-01-01",
-      dateModified: new Date().toISOString().split('T')[0],
+      dateModified: (() => {
+        try {
+          return new Date().toISOString().split('T')[0]
+        } catch {
+          return "2024-01-01"
+        }
+      })(),
       version: "2.0",
       softwareVersion: "2.0",
       downloadUrl: "https://www.fasttools.store/dev-tools/color-palette",
@@ -735,7 +743,17 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       }
-    }),
+        })
+      } catch (error) {
+        console.error('Error creating JSON-LD for color-palette page:', error)
+        return JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Color Palettes - FastTools",
+          url: "https://www.fasttools.store/dev-tools/color-palette"
+        })
+      }
+    })(),
   },
 }
 
