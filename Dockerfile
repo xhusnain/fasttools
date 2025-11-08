@@ -9,12 +9,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 FROM base AS deps
 RUN corepack enable && corepack prepare pnpm@10.18.0 --activate
-COPY package.json pnpm-lock.yaml* ./
-RUN if [ -f pnpm-lock.yaml ]; then \
-      pnpm install --frozen-lockfile; \
-    else \
-      pnpm install; \
-    fi
+COPY package.json pnpm-lock.yaml* .pnpmfile.cjs* ./
+RUN pnpm install --no-frozen-lockfile
 
 FROM base AS builder
 RUN corepack enable && corepack prepare pnpm@10.18.0 --activate
