@@ -53,8 +53,8 @@ const fetchInstagramProfile = async (username: string) => {
           timeout: 15000,
         })
 
-        if (htmlResponse.ok) {
-          const html = await htmlResponse.text()
+        if (response.ok) {
+          const html = await response.text()
 
           const scriptMatches = html.match(/<script[^>]*>window\._sharedData\s*=\s*({.+?});<\/script>/g)
           if (scriptMatches) {
@@ -66,11 +66,6 @@ const fetchInstagramProfile = async (username: string) => {
                   const user = jsonData?.entry_data?.ProfilePage?.[0]?.graphql?.user
 
                   if (user && user.username === cleanUsername) {
-                      username: user.username,
-                      fullName: user.full_name,
-                      followers: user.edge_followed_by?.count,
-                      posts: user.edge_owner_to_timeline_media?.count
-                    })
 
                     let profilePicUrl = user.profile_pic_url_hd || user.profile_pic_url || `https://via.placeholder.com/400x400/6366f1/ffffff?text=${cleanUsername.charAt(0).toUpperCase()}`
 
@@ -211,16 +206,6 @@ const fetchInstagramProfile = async (username: string) => {
               break
             }
           }
-
-            username: cleanUsername,
-            fullName,
-            followers,
-            following,
-            posts,
-            isVerified,
-            biography: biography.substring(0, 100) + (biography.length > 100 ? '...' : ''),
-            profilePicUrl: profilePicUrl.includes('placeholder') ? 'placeholder' : 'real'
-          })
 
           const profileData = {
             username: cleanUsername,
