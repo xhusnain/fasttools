@@ -1,126 +1,11 @@
-/**
- * IndexNow Submission Script
- * 
- * This script:
- * - Fetches URLs from sitemaps (sitemap.xml and image-sitemap.xml)
- * - Submits all URLs to IndexNow API
- * 
- * Usage:
- * - Run after build: npm run postbuild
- * - Run manually: node scripts/submit-indexnow.js
- * - Schedule via cron: 0 0 * * * node /path/to/scripts/submit-indexnow.js
- */
-
 const https = require('https')
-const http = require('http')
 
 const INDEXNOW_API_URL = 'https://api.indexnow.org/IndexNow'
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.fasttools.store'
+const BASE_URL = 'https://www.fasttools.store'
 const INDEXNOW_API_KEY = 'cf40da0a93bd49748db36add6b8d12bc'
+const INDEXNOW_HOST = 'www.fasttools.store'
+const INDEXNOW_KEY_LOCATION = 'https://www.fasttools.store/cf40da0a93bd49748db36add6b8d12bc.txt'
 
-// Use hostname as-is (with www if present) to match IndexNow documentation
-const host = new URL(BASE_URL).hostname
-const keyLocation = `${BASE_URL}/${INDEXNOW_API_KEY}.txt`
-
-/**
- * Extract URLs from XML sitemap content
- */
-function extractUrlsFromSitemap(xmlContent) {
-  const urls = []
-  const locRegex = /<loc>(.*?)<\/loc>/gi
-  let match
-  
-  while ((match = locRegex.exec(xmlContent)) !== null) {
-    const url = match[1].trim()
-    if (url && url.startsWith('http')) {
-      urls.push(url)
-    }
-  }
-  
-  return urls
-}
-
-/**
- * Extract image URLs from image sitemap
- */
-function extractImageUrlsFromSitemap(xmlContent) {
-  const urls = []
-  const imageLocRegex = /<image:loc>(.*?)<\/image:loc>/gi
-  let match
-  
-  while ((match = imageLocRegex.exec(xmlContent)) !== null) {
-    const url = match[1].trim()
-    if (url && url.startsWith('http')) {
-      urls.push(url)
-    }
-  }
-  
-  return urls
-}
-
-/**
- * Fetch URL content
- */
-function fetchUrl(url) {
-  return new Promise((resolve, reject) => {
-    const client = url.startsWith('https') ? https : http
-    
-    client.get(url, (res) => {
-      if (res.statusCode !== 200) {
-        reject(new Error(`Failed to fetch ${url}: ${res.statusCode} ${res.statusMessage}`))
-        return
-      }
-      
-      let data = ''
-      res.on('data', (chunk) => {
-        data += chunk
-      })
-      
-      res.on('end', () => {
-        resolve(data)
-      })
-    }).on('error', (error) => {
-      reject(error)
-    })
-  })
-}
-
-/**
- * Fetch sitemap and extract URLs
- */
-async function fetchSitemapUrls(sitemapUrl) {
-  try {
-    console.log(`📥 Fetching sitemap from ${sitemapUrl}`)
-    const xmlContent = await fetchUrl(sitemapUrl)
-    const urls = extractUrlsFromSitemap(xmlContent)
-    console.log(`✅ Found ${urls.length} URLs in sitemap`)
-    return urls
-  } catch (error) {
-    console.error(`❌ Failed to fetch sitemap ${sitemapUrl}:`, error.message)
-    return []
-  }
-}
-
-/**
- * Fetch image sitemap and extract URLs
- */
-async function fetchImageSitemapUrls(sitemapUrl) {
-  try {
-    console.log(`📥 Fetching image sitemap from ${sitemapUrl}`)
-    const xmlContent = await fetchUrl(sitemapUrl)
-    const pageUrls = extractUrlsFromSitemap(xmlContent)
-    const imageUrls = extractImageUrlsFromSitemap(xmlContent)
-    console.log(`✅ Found ${pageUrls.length} page URLs and ${imageUrls.length} image URLs in image sitemap`)
-    return { pageUrls, imageUrls }
-  } catch (error) {
-    console.error(`❌ Failed to fetch image sitemap ${sitemapUrl}:`, error.message)
-    return { pageUrls: [], imageUrls: [] }
-  }
-}
-
-/**
- * Submit URLs to IndexNow API
- */
 function submitToIndexNow(urls) {
   return new Promise((resolve, reject) => {
     if (urls.length === 0) {
@@ -128,7 +13,6 @@ function submitToIndexNow(urls) {
       return
     }
 
-    // IndexNow accepts up to 10,000 URLs per request
     const BATCH_SIZE = 10000
     const batches = []
     
@@ -141,14 +25,10 @@ function submitToIndexNow(urls) {
     let completedBatches = 0
 
     batches.forEach((batch, index) => {
-      // Build payload exactly as per IndexNow documentation
-      // POST /IndexNow HTTP/1.1
-      // Content-Type: application/json; charset=utf-8
-      // Host: api.indexnow.org
       const payload = JSON.stringify({
-        host: host,
+        host: INDEXNOW_HOST,
         key: INDEXNOW_API_KEY,
-        keyLocation: keyLocation,
+        keyLocation: INDEXNOW_KEY_LOCATION,
         urlList: batch,
       })
 
@@ -177,7 +57,6 @@ function submitToIndexNow(urls) {
             totalSubmitted += batch.length
             console.log(`✅ Batch ${index + 1}/${batches.length}: Successfully submitted ${batch.length} URLs (status: ${res.statusCode})`)
           } else {
-            // Extract error message from IndexNow API response
             let errorMsg = ''
             let errorCode = ''
             
@@ -190,30 +69,13 @@ function submitToIndexNow(urls) {
                 errorMsg = errorBody.message
               }
             } catch {
-              // Not JSON, use raw data as error message
               if (data) {
                 errorMsg = data
               }
             }
             
-            // Default error messages if API didn't provide one
             if (!errorMsg) {
-              switch (res.statusCode) {
-                case 400:
-                  errorMsg = 'Bad request: Invalid format'
-                  break
-                case 403:
-                  errorMsg = 'Forbidden: API key not valid'
-                  break
-                case 422:
-                  errorMsg = "Unprocessable Entity: URLs don't belong to host or key mismatch"
-                  break
-                case 429:
-                  errorMsg = 'Too Many Requests: Rate limit exceeded'
-                  break
-                default:
-                  errorMsg = `Unexpected status: ${res.statusCode}`
-              }
+              errorMsg = `${res.statusCode} ${res.statusMessage || ''}`
             }
             
             errors.push(`Batch ${index + 1}: ${errorMsg}`)
@@ -262,124 +124,23 @@ function submitToIndexNow(urls) {
   })
 }
 
-/**
- * Verify that the key file is accessible
- */
-function verifyKeyFile(keyLocation) {
-  return new Promise((resolve) => {
-    const urlObj = new URL(keyLocation)
-    const client = urlObj.protocol === 'https:' ? https : http
-    
-    const options = {
-      hostname: urlObj.hostname,
-      port: urlObj.port || (urlObj.protocol === 'https:' ? 443 : 80),
-      path: urlObj.pathname,
-      method: 'GET',
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; IndexNow-Verifier/1.0)',
-      },
-      timeout: 10000, // 10 second timeout
-    }
-    
-    const req = client.request(options, (res) => {
-      let data = ''
-      res.on('data', (chunk) => {
-        data += chunk
-      })
-      
-      res.on('end', () => {
-        if (res.statusCode === 200) {
-          const content = data.trim()
-          const expectedKey = INDEXNOW_API_KEY.trim()
-          if (content === expectedKey) {
-            console.log(`✅ Key file verified at ${keyLocation}`)
-            resolve(true)
-          } else {
-            console.warn(`⚠️  Key file content mismatch. Expected: ${expectedKey}, Got: ${content}`)
-            resolve(false)
-          }
-        } else {
-          console.warn(`⚠️  Key file not accessible at ${keyLocation} (status: ${res.statusCode})`)
-          resolve(false)
-        }
-      })
-    })
-    
-    req.on('error', (error) => {
-      console.warn(`⚠️  Could not verify key file: ${error.message}`)
-      resolve(false)
-    })
-    
-    req.on('timeout', () => {
-      req.destroy()
-      console.warn(`⚠️  Key file verification timed out`)
-      resolve(false)
-    })
-    
-    req.end()
-  })
-}
-
-/**
- * Main function
- */
 async function main() {
   try {
     console.log(`🚀 Starting IndexNow submission for ${BASE_URL}`)
     console.log(`🔑 Using API key: ${INDEXNOW_API_KEY.substring(0, 8)}...`)
-    console.log(`📍 Key location: ${keyLocation}`)
-    
-    // Verify key file is accessible (optional check, but helpful for debugging)
-    const keyFileAccessible = await verifyKeyFile(keyLocation)
-    if (!keyFileAccessible) {
-      console.warn(`⚠️  Warning: Key file may not be accessible. IndexNow may reject the submission.`)
-      console.warn(`⚠️  Make sure the site is deployed and the key file is accessible at: ${keyLocation}`)
-      console.warn(`⚠️  If running during build, the site needs to be deployed first for IndexNow to verify the key.`)
-    }
-    
-    const allUrls = new Set()
-    
-    // Fetch regular sitemap
-    const sitemapUrl = `${BASE_URL}/sitemap.xml`
-    const sitemapUrls = await fetchSitemapUrls(sitemapUrl)
-    sitemapUrls.forEach(url => allUrls.add(url))
-    
-    // Fetch image sitemap
-    const imageSitemapUrl = `${BASE_URL}/image-sitemap.xml`
-    const { pageUrls, imageUrls } = await fetchImageSitemapUrls(imageSitemapUrl)
-    pageUrls.forEach(url => allUrls.add(url))
-    imageUrls.forEach(url => allUrls.add(url))
-    
-    const uniqueUrls = Array.from(allUrls)
-    console.log(`📋 Total unique URLs to submit: ${uniqueUrls.length}`)
-    
-    if (uniqueUrls.length === 0) {
-      console.error('❌ No URLs found in sitemaps')
-      process.exit(1)
-    }
-    
-    // Submit to IndexNow
-    const result = await submitToIndexNow(uniqueUrls)
-    
-    if (result.success) {
-      console.log(`✅ Successfully submitted ${result.submittedUrls} URLs to IndexNow`)
-      process.exit(0)
-    } else {
-      console.error(`❌ Failed to submit URLs to IndexNow`)
-      console.error(`❌ Error: ${result.message}`)
-      // Don't fail the build, just log the error
-      process.exit(0)
-    }
+    console.log(`📍 Key location: ${INDEXNOW_KEY_LOCATION}`)
+    console.log(`🌐 Host (for IndexNow): ${INDEXNOW_HOST}`)
+    console.log(`⚠️  Note: This script requires Node.js with ES modules or should use the API route instead`)
+    console.log(`⚠️  The script cannot directly import TypeScript files. Use the API route: POST /api/indexnow`)
+    process.exit(1)
   } catch (error) {
     console.error(`❌ Error:`, error.message)
     process.exit(1)
   }
 }
 
-// Run if executed directly
 if (require.main === module) {
   main()
 }
 
 module.exports = { main }
-
