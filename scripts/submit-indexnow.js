@@ -16,7 +16,7 @@ const http = require('http')
 
 const INDEXNOW_API_URL = 'https://api.indexnow.org/IndexNow'
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.fasttools.store'
-const INDEXNOW_API_KEY = 'd647980ec12b43bb8dbb90f8ffd156e6'
+const INDEXNOW_API_KEY = '977d14c55f1dcd71171724c3e6ae4adf'
 
 const host = new URL(BASE_URL).hostname
 const keyLocation = `${BASE_URL}/${INDEXNOW_API_KEY}.txt`

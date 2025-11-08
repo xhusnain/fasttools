@@ -9,7 +9,7 @@
 
 const INDEXNOW_API_URL = 'https://api.indexnow.org/IndexNow'
 const BASE_URL = 'https://www.fasttools.store'
-const INDEXNOW_API_KEY = 'd647980ec12b43bb8dbb90f8ffd156e6'
+const INDEXNOW_API_KEY = '977d14c55f1dcd71171724c3e6ae4adf'
 
 export interface IndexNowConfig {
   apiKey: string
