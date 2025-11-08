@@ -11,28 +11,25 @@ import { submitSitemapsToIndexNow } from '@/lib/indexnow'
  * - Internal schedulers
  * - Vercel Cron (if using Vercel)
  * 
- * The endpoint can be protected with a secret token in the environment variable INDEXNOW_SECRET_TOKEN
+ * The endpoint is protected with a hardcoded secret token
  */
 export async function POST(request: NextRequest) {
   try {
-    // Optional: Add authentication/authorization here
+    // Authentication: Check for secret token in headers
     const authHeader = request.headers.get('authorization')
-    const expectedToken = process.env.INDEXNOW_SECRET_TOKEN
+    const expectedToken = 'cf40da0a93bd49748db36add6b8d12bc'
     
-    if (expectedToken && authHeader !== `Bearer ${expectedToken}`) {
+    if (authHeader !== `Bearer ${expectedToken}`) {
       return NextResponse.json(
         { success: false, message: 'Unauthorized' },
         { status: 401 }
       )
     }
     
-    // Optional: Verify it's being called at the right time (midnight check)
-    // This is optional since external cron services handle timing
+    // Log the time for monitoring
     const now = new Date()
     const hour = now.getHours()
     const minute = now.getMinutes()
-    
-    // Log the time for monitoring
     console.log(`⏰ IndexNow scheduled submission triggered at ${now.toISOString()}`)
     console.log(`📍 Local time: ${hour}:${minute}`)
     
@@ -81,8 +78,8 @@ export async function GET() {
     endpoint: 'POST /api/indexnow/schedule - Submit sitemap URLs to IndexNow',
     usage: {
       description: 'This endpoint should be called daily at midnight (00:00)',
-      authentication: 'Optional: Set INDEXNOW_SECRET_TOKEN environment variable and use Bearer token',
-      cronExample: '0 0 * * * curl -X POST https://www.fasttools.store/api/indexnow/schedule -H "Authorization: Bearer YOUR_SECRET_TOKEN"',
+      authentication: 'Required: Use Bearer token in Authorization header',
+      cronExample: '0 0 * * * curl -X POST https://www.fasttools.store/api/indexnow/schedule -H "Authorization: Bearer cf40da0a93bd49748db36add6b8d12bc"',
     },
   })
 }

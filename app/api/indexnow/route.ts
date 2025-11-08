@@ -13,12 +13,11 @@ import { submitSitemapsToIndexNow } from '@/lib/indexnow'
  */
 export async function POST(request: NextRequest) {
   try {
-    // Optional: Add authentication/authorization here
-    // For example, check for a secret token in headers
+    // Authentication: Check for secret token in headers
     const authHeader = request.headers.get('authorization')
-    const expectedToken = process.env.INDEXNOW_SECRET_TOKEN
+    const expectedToken = 'cf40da0a93bd49748db36add6b8d12bc'
     
-    if (expectedToken && authHeader !== `Bearer ${expectedToken}`) {
+    if (authHeader !== `Bearer ${expectedToken}`) {
       return NextResponse.json(
         { success: false, message: 'Unauthorized' },
         { status: 401 }

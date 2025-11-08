@@ -7,7 +7,7 @@
  * - Managing API key and key file
  */
 
-const INDEXNOW_API_URL = 'https://api.indexnow.org/indexnow'
+const INDEXNOW_API_URL = 'https://api.indexnow.org/IndexNow'
 const BASE_URL = 'https://www.fasttools.store'
 const INDEXNOW_API_KEY = 'cf40da0a93bd49748db36add6b8d12bc'
 
@@ -141,27 +141,16 @@ export async function submitToIndexNow(
 
   for (const batch of batches) {
     try {
-      // Build payload according to IndexNow documentation
-      // keyLocation is optional when key file is at root: /{key}.txt
-      const payload: {
-        host: string
-        key: string
-        keyLocation?: string
-        urlList: string[]
-      } = {
+      // Build payload exactly as per IndexNow documentation
+      // POST /IndexNow HTTP/1.1
+      // Content-Type: application/json; charset=utf-8
+      // Host: api.indexnow.org
+      const payload = {
         host: config.host,
         key: config.apiKey,
+        keyLocation: config.keyLocation,
         urlList: batch,
       }
-      
-      // Debug: Log the exact payload (for troubleshooting)
-      console.log(`📤 Payload:`, JSON.stringify({
-        host: payload.host,
-        key: payload.key.substring(0, 8) + '...',
-        keyLength: payload.key.length,
-        urlCount: payload.urlList.length,
-        firstUrl: payload.urlList[0],
-      }))
 
       const response = await fetch(INDEXNOW_API_URL, {
         method: 'POST',
@@ -296,11 +285,8 @@ export async function getAllSitemapUrls(baseUrl: string = BASE_URL): Promise<str
 export function getIndexNowConfig(): IndexNowConfig {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || BASE_URL
   const urlObj = new URL(baseUrl)
-  // Use hostname without www for IndexNow (IndexNow prefers non-www hostname)
-  let host = urlObj.hostname
-  if (host.startsWith('www.')) {
-    host = host.substring(4) // Remove 'www.' prefix
-  }
+  // Use hostname as-is (with www if present) to match IndexNow documentation
+  const host = urlObj.hostname
   const keyLocation = `${baseUrl}/${INDEXNOW_API_KEY}.txt`
   
   return {

@@ -14,15 +14,12 @@
 const https = require('https')
 const http = require('http')
 
-const INDEXNOW_API_URL = 'https://api.indexnow.org/indexnow'
+const INDEXNOW_API_URL = 'https://api.indexnow.org/IndexNow'
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.fasttools.store'
 const INDEXNOW_API_KEY = 'cf40da0a93bd49748db36add6b8d12bc'
 
-// Use hostname without www for IndexNow (IndexNow prefers non-www hostname)
-let host = new URL(BASE_URL).hostname
-if (host.startsWith('www.')) {
-  host = host.substring(4) // Remove 'www.' prefix
-}
+// Use hostname as-is (with www if present) to match IndexNow documentation
+const host = new URL(BASE_URL).hostname
 const keyLocation = `${BASE_URL}/${INDEXNOW_API_KEY}.txt`
 
 /**
@@ -144,18 +141,16 @@ function submitToIndexNow(urls) {
     let completedBatches = 0
 
     batches.forEach((batch, index) => {
-      // According to IndexNow docs, keyLocation is optional when key file is at root
-      // Since our key file is at root: /{key}.txt, we can omit keyLocation
-      // IndexNow will automatically look for the key file at /{key}.txt
-      const payloadObj = {
+      // Build payload exactly as per IndexNow documentation
+      // POST /IndexNow HTTP/1.1
+      // Content-Type: application/json; charset=utf-8
+      // Host: api.indexnow.org
+      const payload = JSON.stringify({
         host: host,
         key: INDEXNOW_API_KEY,
+        keyLocation: keyLocation,
         urlList: batch,
-      }
-      // Uncomment to explicitly specify keyLocation (optional when at root)
-      // payloadObj.keyLocation = keyLocation
-      
-      const payload = JSON.stringify(payloadObj)
+      })
 
       const urlObj = new URL(INDEXNOW_API_URL)
       const options = {
