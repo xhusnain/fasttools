@@ -2,7 +2,7 @@ import sitemap from '@/app/sitemap'
 
 const INDEXNOW_API_URL = 'https://api.indexnow.org/IndexNow'
 const INDEXNOW_API_KEY = 'cf40da0a93bd49748db36add6b8d12bc'
-const INDEXNOW_HOST = 'www.fasttools.store'
+const INDEXNOW_HOST = 'fasttools.store'
 const INDEXNOW_KEY_LOCATION = 'https://www.fasttools.store/cf40da0a93bd49748db36add6b8d12bc.txt'
 
 export interface IndexNowResponse {
