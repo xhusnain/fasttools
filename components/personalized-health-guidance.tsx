@@ -12,7 +12,7 @@ interface PersonalizedHealthGuidanceProps {
 }
 
 export function PersonalizedHealthGuidance({ bmi, category, riskLevel, age, gender }: PersonalizedHealthGuidanceProps) {
-  // Determine guidance based on BMI category
+
   const getGuidanceForCategory = () => {
     if (bmi < 18.5) {
       return {
@@ -157,7 +157,7 @@ export function PersonalizedHealthGuidance({ bmi, category, riskLevel, age, gend
 
   return (
     <div className="space-y-6">
-      {/* Personalized Plan Header */}
+      {}
       <div className={`p-4 rounded-xl bg-gradient-to-r ${guidance.color} border-2 ${guidance.borderColor}`}>
         <div className="flex items-center gap-3 mb-2">
           {guidance.icon}
@@ -170,7 +170,6 @@ export function PersonalizedHealthGuidance({ bmi, category, riskLevel, age, gend
         </p>
       </div>
 
-      {/* Nutrition Guidance */}
       <Card className="border-2 border-slate-200 dark:border-border">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center gap-2 text-lg">
@@ -204,7 +203,6 @@ export function PersonalizedHealthGuidance({ bmi, category, riskLevel, age, gend
         </CardContent>
       </Card>
 
-      {/* Exercise Guidance */}
       <Card className="border-2 border-slate-200 dark:border-border">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center gap-2 text-lg">
@@ -230,7 +228,6 @@ export function PersonalizedHealthGuidance({ bmi, category, riskLevel, age, gend
         </CardContent>
       </Card>
 
-      {/* Equipment Recommendations */}
       <Card className="border-2 border-slate-200 dark:border-border">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center gap-2 text-lg">
@@ -250,7 +247,6 @@ export function PersonalizedHealthGuidance({ bmi, category, riskLevel, age, gend
         </CardContent>
       </Card>
 
-      {/* Additional Tips Based on Age and Gender */}
       {(age || gender) && (
         <Card className="border-2 border-slate-200 dark:border-border">
           <CardHeader className="pb-3">

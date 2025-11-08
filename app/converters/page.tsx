@@ -283,7 +283,7 @@ export default function ConvertersPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {/* Hero Section */}
+                {}
               <div className="text-center space-y-5 animate-fade-in-up">
                 <GHeader
                   title="All Conversion Tools"
@@ -293,7 +293,7 @@ export default function ConvertersPage() {
                 />
               </div>
 
-              {/* Mobile/Tablet Ad - Top of Page */}
+              {}
               <div className="lg:hidden">
                 <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
               </div>
@@ -330,8 +330,7 @@ export default function ConvertersPage() {
                 ))}
               </div>
 
-
-              {/* Research and Use Cases */}
+              {}
               <div className="space-y-5 animate-fade-in-up animation-delay-200">
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">How Our Converters Actually Work</h2>
@@ -382,8 +381,8 @@ export default function ConvertersPage() {
                   </p>
                 </div>
 
-                {/* No bottom ads on desktop; keep mobile/tablet only above */}
-                {/* FAQ Section (matches calculator theme) */}
+                {}
+                {}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -420,7 +419,7 @@ export default function ConvertersPage() {
                 </div>
               </div>
             </div>
-            {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
+            {}
             <div className="hidden lg:block w-72">
               <div className="sticky top-32 space-y-6">
                 <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />

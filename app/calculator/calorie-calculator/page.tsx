@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         "calorie calculator with macros",
         "Indian food calorie calculator",
         "free daily calorie calculator online",
-        // Additional Calorie Keywords
+
         "calorie calculator",
         "calculator.net calorie calculator",
         "online calorie calculator",
@@ -147,7 +147,7 @@ export default function CalorieCalculatorPage() {
           }
         })
       }} />
-      
+
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 py-6 sm:py-8 md:py-12">
           <Breadcrumbs
@@ -159,7 +159,7 @@ export default function CalorieCalculatorPage() {
 
           <div className="max-w-7xl mx-auto w-full overflow-hidden">
             <div className="mb-4 sm:mb-6 md:mb-8 w-full overflow-hidden">
-              <GHeader 
+              <GHeader
                 title="Calorie Calculator - Advanced Daily Calorie Needs Analysis"
                 description="Calculate your daily calorie needs with our advanced calorie calculator. Get BMR and TDEE analysis, weight management goals, zigzag calorie cycling, and personalized nutrition recommendations for optimal health and fitness."
                 titleSize="medium"
@@ -167,7 +167,7 @@ export default function CalorieCalculatorPage() {
               />
             </div>
 
-            {/* Mobile/Tablet AdSpace after GHeader */}
+            {}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -180,10 +180,10 @@ export default function CalorieCalculatorPage() {
                 <div className="w-full">
                   <CalorieCalculator />
                 </div>
-                
-                {/* Educational Content Sections */}
+
+                {}
                 <div className="space-y-3 sm:space-y-4 md:space-y-5 bg-card rounded-lg p-2 sm:p-3 md:p-4 w-full">
-                  {/* How to Use Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -213,7 +213,7 @@ export default function CalorieCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Features Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -283,7 +283,7 @@ export default function CalorieCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Use Cases Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -315,7 +315,7 @@ export default function CalorieCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Calorie Equations Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -339,7 +339,7 @@ export default function CalorieCalculatorPage() {
                           </div>
                         </div>
                       </div>
-                  
+
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="text-xs sm:text-sm md:text-base font-semibold text-heading-accent mb-1.5 sm:mb-2 break-words">Revised Harris-Benedict Equation</h3>
                         <p className="text-xs text-foreground mb-2 break-words">
@@ -355,7 +355,7 @@ export default function CalorieCalculatorPage() {
                           </div>
                         </div>
                       </div>
-                  
+
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="text-xs sm:text-sm md:text-base font-semibold text-heading-accent mb-1.5 sm:mb-2 break-words">Katch-McArdle Formula</h3>
                         <p className="text-xs text-foreground mb-2 break-words">
@@ -373,7 +373,7 @@ export default function CalorieCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Zigzag Calorie Cycling Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -410,7 +410,6 @@ export default function CalorieCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* FAQ Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -548,7 +547,7 @@ export default function CalorieCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Related Tools Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm mb-3 sm:mb-4 overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-heading-accent break-words">
                       <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded">
@@ -587,11 +586,11 @@ export default function CalorieCalculatorPage() {
                   </div>
                 </div>
               </div>
-              
-              {/* Sidebar */}
+
+              {}
               <div className="hidden lg:block space-y-6 lg:space-y-8">
                 <div className="sticky top-4">
-                  {/* Sidebar Ad */}
+                  {}
                   <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                     <AdSpace slot="sidebar" className="h-64 md:h-80 rounded-lg overflow-hidden" />
                   </div>

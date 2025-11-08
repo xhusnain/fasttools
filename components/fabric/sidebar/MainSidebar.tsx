@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Button } from "@/components/ui/button"
-import { 
+import {
   Shapes,
   Type,
   Upload,
@@ -69,13 +69,13 @@ export function MainSidebar({ onSidebarToggle, activeSidebar }: MainSidebarProps
       {sidebarItems.map((item) => {
         const Icon = item.icon
         const isActive = activeSidebar === item.id
-        
+
         return (
           <button
             key={item.id}
             className={`w-12 h-12 p-0 flex flex-col items-center justify-center rounded-xl transition-all duration-200 ${
-              isActive 
-                ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/25' 
+              isActive
+                ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/25'
                 : 'text-muted-foreground hover:text-slate-700 hover:bg-slate-100'
             }`}
             onClick={() => {

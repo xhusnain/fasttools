@@ -3,12 +3,11 @@ import { isValidApiKey } from '@/lib/api-keys'
 
 export function validateApiKey(request: NextRequest): { isValid: boolean; keyId?: string; error?: string } {
   const apiKey = request.headers.get('x-api-key') || request.nextUrl.searchParams.get('api_key')
-  
+
   if (!apiKey) {
-    return { isValid: true } // No API key means free tier
+    return { isValid: true }
   }
 
-  // Check if the key exists in our array
   if (isValidApiKey(apiKey)) {
     return { isValid: true, keyId: apiKey }
   }

@@ -170,7 +170,7 @@ export default function InstagramDownloaderPage() {
           ]}
         />
 
-          {/* Hero Section */}
+          {}
           <div className="text-center mb-4 sm:mb-6 md:mb-8">
             <GHeader
               title="Instagram Downloader – HD Videos & Images"
@@ -180,19 +180,18 @@ export default function InstagramDownloaderPage() {
             />
           </div>
 
-          {/* Mobile Ad Space */}
+          {}
           <div className="lg:hidden mb-4 sm:mb-6">
             <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
           </div>
 
-          {/* Main Layout */}
+          {}
           <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8">
-          {/* Main Content */}
+          {}
             <div className="flex-1 space-y-4 sm:space-y-6 md:space-y-8">
             <InstagramDownloader />
 
-
-              {/* How to Use Section */}
+              {}
               <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
                 <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">How to Use Instagram Downloader</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
@@ -235,7 +234,7 @@ export default function InstagramDownloaderPage() {
               </div>
             </div>
 
-            {/* Key Features Section */}
+            {}
               <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-300">
                 <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Key Features</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
@@ -296,7 +295,7 @@ export default function InstagramDownloaderPage() {
               </div>
             </div>
 
-            {/* Use Cases Section */}
+            {}
               <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-400">
                 <h2 className="text-xl font-bold mb-4 text-foreground">Use Cases</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -319,7 +318,7 @@ export default function InstagramDownloaderPage() {
               </div>
             </div>
 
-            {/* Comprehensive Guide Section */}
+            {}
               <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow-lg animate-fade-in-up animation-delay-400">
                 <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground flex items-center gap-2">
                   <div className="h-5 w-5 sm:h-6 sm:w-6 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -327,9 +326,9 @@ export default function InstagramDownloaderPage() {
                   </div>
                   <span className="break-words">Complete Guide to Instagram Video Downloader: Everything You Need to Know</span>
                 </h2>
-                
+
                 <div className="space-y-4 sm:space-y-6">
-                  {/* Introduction Section */}
+                  {}
                   <div>
                     <h3 className="text-lg font-bold mb-3 text-heading-accent">Unlocking the Secrets: How to Use an Instagram Video Downloader for Effortless Content Saving</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-3">
@@ -340,7 +339,7 @@ export default function InstagramDownloaderPage() {
                     </p>
                   </div>
 
-                  {/* Why You Need Section */}
+                  {}
                   <div>
                     <h3 className="text-lg font-bold mb-3 text-heading-accent">Why You Might Need an Instagram Video Downloader</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-3">
@@ -358,7 +357,6 @@ export default function InstagramDownloaderPage() {
                     </p>
                   </div>
 
-                  {/* How It Works Section */}
                   <div>
                     <h3 className="text-lg font-bold mb-3 text-heading-accent">How Instagram Video Downloaders Work</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-3">
@@ -375,7 +373,6 @@ export default function InstagramDownloaderPage() {
                     </p>
                   </div>
 
-                  {/* Best Instagram Video Downloader Section */}
                   <div>
                     <h3 className="text-lg font-bold mb-3 text-heading-accent">Best Instagram Video Downloader Tools and Apps</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-3">
@@ -398,7 +395,6 @@ export default function InstagramDownloaderPage() {
                     </p>
                   </div>
 
-                  {/* Comparison Table Section */}
                   <div>
                     <h3 className="text-lg font-bold mb-4 text-heading-accent">Instagram Video Downloader Comparison: Which is the Best?</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -608,7 +604,7 @@ export default function InstagramDownloaderPage() {
                     </div>
                   </div>
 
-                  {/* Top Features Section */}
+                  {}
                   <div>
                     <h3 className="text-lg font-bold mb-3 text-heading-accent">Top Features to Look for in an Instagram Video Downloader</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-3">
@@ -648,7 +644,7 @@ export default function InstagramDownloaderPage() {
                     </div>
                   </div>
 
-                  {/* Step-by-Step Guide */}
+                  {}
                   <div>
                     <h3 className="text-lg font-bold mb-3 text-heading-accent">Step-by-Step Guide to Using an Instagram Video Downloader</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-3">
@@ -679,7 +675,7 @@ export default function InstagramDownloaderPage() {
                     </p>
                   </div>
 
-                  {/* Legal Considerations */}
+                  {}
                   <div>
                     <h3 className="text-lg font-bold mb-3 text-heading-accent">Legal Considerations When Downloading Instagram Videos</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-3">
@@ -696,7 +692,6 @@ export default function InstagramDownloaderPage() {
                     </p>
                   </div>
 
-                  {/* Troubleshooting Section */}
                   <div>
                     <h3 className="text-lg font-bold mb-3 text-heading-accent">Troubleshooting Common Issues with Instagram Video Downloaders</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-3">
@@ -730,7 +725,6 @@ export default function InstagramDownloaderPage() {
                     </div>
                   </div>
 
-                  {/* Tips for Organization */}
                   <div>
                     <h3 className="text-lg font-bold mb-3 text-heading-accent">Tips for Organizing and Managing Downloaded Instagram Content</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-3">
@@ -748,7 +742,6 @@ export default function InstagramDownloaderPage() {
                     </p>
                   </div>
 
-                  {/* Conclusion */}
                   <div>
                     <h3 className="text-lg font-bold mb-3 text-heading-accent">Enhancing Your Instagram Experience with Video Downloaders</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-3">
@@ -764,7 +757,7 @@ export default function InstagramDownloaderPage() {
                 </div>
               </div>
 
-            {/* FAQ Section */}
+            {}
               <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow-lg animate-fade-in-up animation-delay-500">
                 <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground flex items-center gap-2">
                   <AlertCircle className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
@@ -1153,7 +1146,6 @@ export default function InstagramDownloaderPage() {
               </div>
             </div>
 
-            {/* Sidebar */}
             <div className="hidden lg:block w-full lg:w-80 space-y-6">
               <div className="sticky top-32">
                 <AdSpace slot="sidebar" className="h-96 border border-border rounded-xl shadow-sm bg-card" />

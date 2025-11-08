@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-// In-memory store for download progress (in production, use Redis or similar)
 export interface ProgressData {
   progress: number
   status: string
@@ -8,7 +7,7 @@ export interface ProgressData {
   currentVideoIndex?: number
   currentVideoTitle?: string
   totalVideos?: number
-  videoProgress?: number // Progress for current video (0-100)
+  videoProgress?: number
 }
 
 const progressStore = new Map<string, ProgressData>()
@@ -25,11 +24,10 @@ export async function GET(request: NextRequest) {
   }
 
   const progress = progressStore.get(downloadId)
-  
+
   if (!progress) {
-    // Log all keys in store for debugging
-    if (progressStore.size > 0) {
-    }
+
+    if (progressStore.size > 0) {}
     return NextResponse.json({
       progress: 0,
       status: 'starting',
@@ -39,8 +37,6 @@ export async function GET(request: NextRequest) {
       videoProgress: undefined
     })
   }
-  
-  // Log for debugging
 
   return NextResponse.json({
     progress: progress.progress,
@@ -48,13 +44,13 @@ export async function GET(request: NextRequest) {
     currentVideoIndex: progress.currentVideoIndex,
     currentVideoTitle: progress.currentVideoTitle,
     totalVideos: progress.totalVideos,
-    videoProgress: progress.videoProgress // Progress for current video
+    videoProgress: progress.videoProgress
   })
 }
 
 export function setProgress(
-  downloadId: string, 
-  progress: number, 
+  downloadId: string,
+  progress: number,
   status: string = 'downloading',
   options?: {
     currentVideoIndex?: number
@@ -64,10 +60,10 @@ export function setProgress(
   }
 ) {
   const existing = progressStore.get(downloadId) || { progress: 0, status: 'starting', timestamp: Date.now() }
-  const newData: ProgressData = { 
+  const newData: ProgressData = {
     ...existing,
-    progress, 
-    status, 
+    progress,
+    status,
     timestamp: Date.now(),
     currentVideoIndex: options?.currentVideoIndex !== undefined ? options.currentVideoIndex : existing.currentVideoIndex,
     currentVideoTitle: options?.currentVideoTitle !== undefined ? options.currentVideoTitle : existing.currentVideoTitle,
@@ -81,7 +77,6 @@ export function clearProgress(downloadId: string) {
   progressStore.delete(downloadId)
 }
 
-// Clean up old progress entries periodically (older than 10 minutes)
 setInterval(() => {
   const tenMinutesAgo = Date.now() - 10 * 60 * 1000
   for (const [id, data] of progressStore.entries()) {
@@ -89,5 +84,5 @@ setInterval(() => {
       progressStore.delete(id)
     }
   }
-}, 60000) // Run cleanup every minute
+}, 60000)
 

@@ -8,47 +8,47 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  DollarSign, 
-  Percent, 
-  Calendar, 
-  TrendingUp, 
-  TrendingDown, 
-  Info, 
-  AlertCircle, 
-  CheckCircle, 
-  Copy, 
-  Download, 
-  History, 
-  Star, 
-  Globe, 
-  Shield, 
-  FileText, 
-  BarChart3, 
-  PieChart, 
-  Target, 
-  Zap, 
-  Clock, 
-  Users, 
-  Home, 
-  Car, 
-  ShoppingBag, 
-  CreditCard, 
-  Banknote, 
-  Coins, 
-  Wallet, 
-  Briefcase, 
-  Store, 
-  Truck, 
-  Package, 
-  Tag, 
-  ShoppingCart, 
-  HandHeart, 
-  Gift, 
-  Award, 
-  Trophy, 
-  TrendingUp as TrendingUpIcon, 
+import {
+  Calculator,
+  DollarSign,
+  Percent,
+  Calendar,
+  TrendingUp,
+  TrendingDown,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Copy,
+  Download,
+  History,
+  Star,
+  Globe,
+  Shield,
+  FileText,
+  BarChart3,
+  PieChart,
+  Target,
+  Zap,
+  Clock,
+  Users,
+  Home,
+  Car,
+  ShoppingBag,
+  CreditCard,
+  Banknote,
+  Coins,
+  Wallet,
+  Briefcase,
+  Store,
+  Truck,
+  Package,
+  Tag,
+  ShoppingCart,
+  HandHeart,
+  Gift,
+  Award,
+  Trophy,
+  TrendingUp as TrendingUpIcon,
   TrendingDown as TrendingDownIcon,
   Stethoscope,
   Brain,
@@ -116,7 +116,6 @@ export default function AmortizationCalculator() {
     const rate = parseFloat(interestRate) || 0
     const extra = parseFloat(extraPayment) || 0
 
-    // Input validation
     if (principal <= 0) {
       alert("Loan amount must be greater than $0")
       return
@@ -136,31 +135,29 @@ export default function AmortizationCalculator() {
 
     const monthlyRate = rate / 100 / 12
     const totalMonths = termYears * 12
-    
-    // Calculate monthly payment
-    const monthlyPayment = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / 
+
+    const monthlyPayment = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
                           (Math.pow(1 + monthlyRate, totalMonths) - 1)
-    
+
     const totalPayment = monthlyPayment * totalMonths
     const totalInterest = totalPayment - principal
-    
-    // Generate amortization schedule
+
     const monthlySchedule = []
     const annualSchedule = []
     let balance = principal
     let totalInterestPaid = 0
     let totalPrincipalPaid = 0
-    
+
     for (let month = 1; month <= totalMonths; month++) {
       const interestPayment = balance * monthlyRate
       const principalPayment = monthlyPayment - interestPayment
       const extraPrincipal = extra
       const totalPrincipalPayment = principalPayment + extraPrincipal
-      
+
       balance = Math.max(0, balance - totalPrincipalPayment)
       totalInterestPaid += interestPayment
       totalPrincipalPaid += totalPrincipalPayment
-      
+
       monthlySchedule.push({
         month,
         payment: monthlyPayment + extra,
@@ -168,8 +165,7 @@ export default function AmortizationCalculator() {
         interest: interestPayment,
         balance: balance
       })
-      
-      // Create annual summary
+
       if (month % 12 === 0 || month === totalMonths) {
         const year = Math.ceil(month / 12)
         annualSchedule.push({
@@ -182,13 +178,12 @@ export default function AmortizationCalculator() {
         totalPrincipalPaid = 0
       }
     }
-    
-    // Calculate extra payment analysis
+
     const withoutExtraTotal = monthlyPayment * totalMonths
     const withExtraTotal = monthlySchedule.reduce((sum, payment) => sum + payment.payment, 0)
     const savings = withoutExtraTotal - withExtraTotal
     const timeSaved = totalMonths - monthlySchedule.length
-    
+
     const calculatedResult: AmortizationResult = {
       loanAmount: principal,
       loanTerm: termYears,
@@ -199,7 +194,7 @@ export default function AmortizationCalculator() {
       principalPercentage: (totalPrincipalPaid / withExtraTotal) * 100,
       interestPercentage: (totalInterest / withExtraTotal) * 100,
       amortizationSchedule: annualSchedule,
-      monthlySchedule: monthlySchedule.slice(0, 12), // Show first 12 months
+      monthlySchedule: monthlySchedule.slice(0, 12),
       extraPaymentAnalysis: {
         withExtraPayment: withExtraTotal,
         withoutExtraPayment: withoutExtraTotal,
@@ -218,7 +213,6 @@ export default function AmortizationCalculator() {
     const refinancingTips: string[] = []
     const debtReductionTips: string[] = []
 
-    // Payment strategies based on interest rate
     if (rate > 6) {
       paymentStrategies.push("Consider making extra principal payments to reduce interest costs")
       paymentStrategies.push("Bi-weekly payments can save significant interest over time")
@@ -233,7 +227,6 @@ export default function AmortizationCalculator() {
       paymentStrategies.push("Build emergency fund and retirement savings")
     }
 
-    // Refinancing tips
     if (rate > 5) {
       refinancingTips.push("Consider refinancing if rates have dropped significantly")
       refinancingTips.push("Calculate break-even point for refinancing costs")
@@ -244,7 +237,6 @@ export default function AmortizationCalculator() {
       refinancingTips.push("Consider shorter loan terms if financially feasible")
     }
 
-    // Debt reduction tips
     debtReductionTips.push("Create a detailed budget to identify extra payment opportunities")
     debtReductionTips.push("Use windfalls (tax refunds, bonuses) for extra payments")
     debtReductionTips.push("Consider debt consolidation if you have multiple high-interest debts")
@@ -276,7 +268,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
 
   return (
     <div className="space-y-6">
-      {/* Main Calculator */}
+      {}
       <Card>
         <CardHeader className="pb-8">
           <CardTitle className="flex items-center gap-2">
@@ -285,7 +277,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          {/* Input Fields */}
+          {}
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="loanAmount">Loan Amount</Label>
@@ -344,10 +336,10 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
         </CardContent>
       </Card>
 
-      {/* Results Section */}
+      {}
       {result && (
         <div className="space-y-6">
-          {/* Main Results */}
+          {}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -395,7 +387,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
             </CardContent>
           </Card>
 
-          {/* Payment Breakdown */}
+          {}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -417,7 +409,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
             </CardContent>
           </Card>
 
-          {/* Extra Payment Analysis */}
+          {}
           {parseFloat(extraPayment) > 0 && (
             <Card>
               <CardHeader>
@@ -441,7 +433,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
             </Card>
           )}
 
-          {/* Annual Amortization Schedule */}
+          {}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -475,7 +467,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
             </CardContent>
           </Card>
 
-          {/* Monthly Schedule (First 12 months) */}
+          {}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -511,7 +503,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
             </CardContent>
           </Card>
 
-          {/* Recommendations */}
+          {}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -560,7 +552,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
         </div>
       )}
 
-      {/* History Section */}
+      {}
       {history.length > 0 && (
         <Card>
           <CardHeader>
@@ -595,7 +587,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
         </Card>
       )}
 
-      {/* Information Section */}
+      {}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -617,7 +609,7 @@ Interest Rate: ${result.interestRate.toFixed(2)}%`
               </div>
             </div>
           </div>
-          
+
           <div className="text-sm text-muted-foreground space-y-2">
             <p>
               <strong>Detailed Schedules:</strong> Complete annual and monthly amortization schedules with principal and interest breakdowns.

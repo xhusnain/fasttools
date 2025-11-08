@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   keywords: [
     "fasttools",
     "fast tools",
-    // Primary Keywords (20)
+
     "color palettes",
     "color palette",
     "color schemes",
@@ -35,8 +35,7 @@ export const metadata: Metadata = {
     "color palette inspiration",
     "professional color palettes",
     "website color palettes",
-    
-    // Secondary Keywords (20)
+
     "red color palettes",
     "blue color palettes",
     "green color palettes",
@@ -57,8 +56,7 @@ export const metadata: Metadata = {
     "pastel color palettes",
     "vibrant color palettes",
     "neutral color palettes",
-    
-    // Long-tail Keywords (40)
+
     "best color palettes for websites",
     "modern color palettes for web design",
     "professional color palette ideas",
@@ -99,8 +97,7 @@ export const metadata: Metadata = {
     "twilight color palettes",
     "sunrise color palettes",
     "sunset color palettes",
-    
-    // High-Volume Specific Keywords (50)
+
     "color palette generator",
     "free color palette generator",
     "color scheme generator",
@@ -151,8 +148,7 @@ export const metadata: Metadata = {
     "search color palettes",
     "browse color schemes",
     "explore color palettes",
-    
-    // Industry & Use Case Keywords (40)
+
     "corporate color palette",
     "business color scheme",
     "tech startup colors",
@@ -193,8 +189,7 @@ export const metadata: Metadata = {
     "tailwind color scheme",
     "material ui colors",
     "chakra ui palette",
-    
-    // Color Theory & Design Keywords (30)
+
     "color harmony",
     "color wheel palette",
     "complementary colors",
@@ -225,8 +220,7 @@ export const metadata: Metadata = {
     "hover state colors",
     "active state palette",
     "disabled state colors",
-    
-    // Specific Color Combinations (50)
+
     "black and gold palette",
     "black and white color scheme",
     "navy and gold palette",
@@ -277,8 +271,7 @@ export const metadata: Metadata = {
     "grandmillennial palette",
     "maximalist colors",
     "eclectic color scheme",
-    
-    // Accessibility & Modern Design (30)
+
     "accessible color palette",
     "wcag color contrast",
     "ada compliant colors",
@@ -309,8 +302,7 @@ export const metadata: Metadata = {
     "css variables colors",
     "sass color palette",
     "less color scheme",
-    
-    // Action & Intent Keywords (20)
+
     "copy color codes",
     "download color palette",
     "save color scheme",
@@ -331,8 +323,7 @@ export const metadata: Metadata = {
     "color palette for framer",
     "procreate color palette",
     "affinity color scheme",
-    
-    // Alphabetical High-Ranking Keywords (200+)
+
     "color palettes aesthetic",
     "color palettes adobe",
     "color palettes analysis",
@@ -599,8 +590,7 @@ export const metadata: Metadata = {
     "color palettes with gold",
     "best color palettes for websites",
     "color palettes images",
-    
-    // CSS Color Keywords (10)
+
     "css all colours",
     "css colours light grey",
     "css colours light blue",
@@ -673,9 +663,9 @@ export const metadata: Metadata = {
         "Explore 1000+ free color palettes for websites, branding, UI/UX and graphic design. 43 categories including aesthetic, pastel, vintage, modern and seasonal themes. Copy HEX codes instantly and filter by theme, season, or color.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: { 
-        "@type": "Offer", 
-        price: "0", 
+      offers: {
+        "@type": "Offer",
+        price: "0",
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
@@ -700,9 +690,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: { 
-        "@type": "Organization", 
-        name: "FastTools", 
+      publisher: {
+        "@type": "Organization",
+        name: "FastTools",
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -754,7 +744,7 @@ export default function ColorPalettePage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8">
               <div className="flex-1 lg:flex-[2] space-y-4 sm:space-y-5 md:space-y-6">
-                {/* Hero Section */}
+                {}
                 <div className="text-center space-y-3 sm:space-y-4 animate-fade-in-up">
                   <GHeader
                     title="1000+ Free Color Palettes & Schemes with HEX Codes"
@@ -764,17 +754,17 @@ export default function ColorPalettePage() {
                   />
                 </div>
 
-                {/* Mobile Ad Space */}
+                {}
                 <div className="lg:hidden">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {/* Tool Container */}
+                {}
                 <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
                   <ColorPaletteGenerator />
                 </div>
 
-                {/* Content Sections */}
+                {}
                 <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">How to Use FastTools Color Palettes</h2>
                   <ol className="pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-muted-foreground leading-relaxed list-decimal">
@@ -818,28 +808,28 @@ export default function ColorPalettePage() {
                 <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Related Developer Tools</h2>
                   <div className="grid gap-2 sm:gap-3 grid-cols-1 sm:grid-cols-2 text-sm">
-                    <Link 
+                    <Link
                       href="/dev-tools/hex-to-rgb"
                       className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                     >
                       <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">Color Converter</h3>
                       <p className="text-xs text-muted-foreground">Convert HEX to RGB, HSL formats</p>
                     </Link>
-                    <Link 
+                    <Link
                       href="/dev-tools/html-beautifier"
                       className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                     >
                       <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">HTML Beautifier</h3>
                       <p className="text-xs text-muted-foreground">Format and beautify HTML code</p>
                     </Link>
-                    <Link 
+                    <Link
                       href="/dev-tools/json-to-csv"
                       className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                     >
                       <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">JSON to CSV</h3>
                       <p className="text-xs text-muted-foreground">Convert JSON to CSV format</p>
                     </Link>
-                    <Link 
+                    <Link
                       href="/dev-tools"
                       className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                     >
@@ -849,15 +839,15 @@ export default function ColorPalettePage() {
                   </div>
                 </div>
 
-                {/* Comprehensive Content Section - 4000+ Words */}
+                {}
                 <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow space-y-6">
                   <h2 className="text-xl sm:text-2xl font-bold mb-4 text-foreground">Complete Guide to Color Palettes: Thousands of Beautiful Color Combinations</h2>
-                  
+
                   <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
                     <p>
                       Welcome to FastTools Color Palettes, your comprehensive library of over 1,000 professionally curated color schemes designed for designers, developers, and creatives. Our extensive collection spans 43 unique categories, offering everything from timeless classic colors to cutting-edge modern palettes. Whether you're designing a website, creating a brand identity, developing a mobile app, or working on any creative project, you'll find the perfect color combination here.
                     </p>
-                    
+
                     <p>
                       Color is one of the most powerful tools in design. It influences emotions, conveys meaning, establishes brand identity, and guides user behavior. The right color palette can make the difference between a design that resonates with your audience and one that falls flat. That's why we've assembled this massive collection of color palettes, each carefully selected to ensure harmony, visual appeal, and practical usability across different design contexts.
                     </p>
@@ -1093,10 +1083,9 @@ export default function ColorPalettePage() {
                   </div>
                 </div>
 
-                {/* Frequently Asked Questions Section */}
                 <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold mb-4 text-foreground">Frequently Asked Questions (FAQ)</h2>
-                  
+
                   <div className="space-y-4">
                     <div>
                       <h3 className="text-base font-semibold mb-2 text-foreground">What are color palettes?</h3>
@@ -1241,7 +1230,7 @@ export default function ColorPalettePage() {
                 </div>
               </div>
 
-              {/* Desktop Sidebar */}
+              {}
               <aside className="hidden lg:block w-72 flex-shrink-0">
                 <div className="sticky top-32 space-y-8">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

@@ -66,7 +66,7 @@ export const metadata: Metadata = {
         "investment rate of return calculator",
         "expected return calculator",
         "personal investment calculator",
-        // Additional Investment Calculator Keywords
+
         "Investment Calculator",
         "calculator.net investment calculator",
         "roi calculator",
@@ -162,7 +162,7 @@ export default function InvestmentCalculatorPage() {
           }
         })
       }} />
-      
+
       <div className="min-h-screen bg-card">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 py-6 sm:py-8 md:py-12">
           <Breadcrumbs
@@ -174,7 +174,7 @@ export default function InvestmentCalculatorPage() {
 
           <div className="max-w-7xl mx-auto w-full">
             <div className="mb-4 md:mb-6">
-              <GHeader 
+              <GHeader
                 title="Investment Calculator - Advanced Portfolio Analysis"
                 description="Professional investment calculator for comprehensive portfolio analysis with multiple calculation modes. Calculate end amount, return rate, starting amount, and investment length with our advanced portfolio calculator."
                 titleSize="medium"
@@ -182,7 +182,7 @@ export default function InvestmentCalculatorPage() {
               />
             </div>
 
-            {/* Mobile/Tablet AdSpace after GHeader */}
+            {}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -193,10 +193,10 @@ export default function InvestmentCalculatorPage() {
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_260px] xl:grid-cols-[1fr_300px] 2xl:grid-cols-[1fr_360px] gap-4 md:gap-6 lg:gap-8">
               <div className="space-y-3 sm:space-y-4 md:space-y-5 bg-card rounded-lg p-2 sm:p-3 md:p-4 w-full">
                 <InvestmentCalculator />
-            
-            {/* Educational Content Sections */}
+
+            {}
                 <div className="mt-4 sm:mt-6 md:mt-8 space-y-3 sm:space-y-4 md:space-y-5">
-              {/* How to Use Section */}
+              {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground break-words">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -226,7 +226,7 @@ export default function InvestmentCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Features Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground break-words">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -296,7 +296,7 @@ export default function InvestmentCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Use Cases Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground break-words">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -328,7 +328,7 @@ export default function InvestmentCalculatorPage() {
                 </div>
               </div>
 
-              {/* Investment Types Section */}
+              {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground break-words">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -378,7 +378,7 @@ export default function InvestmentCalculatorPage() {
                 </div>
               </div>
 
-              {/* Investment Strategies Section */}
+              {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground break-words">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -428,7 +428,7 @@ export default function InvestmentCalculatorPage() {
                 </div>
               </div>
 
-                  {/* Professional Insights Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground break-words">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -444,7 +444,7 @@ export default function InvestmentCalculatorPage() {
                         </p>
                         <p className="text-xs text-muted-foreground break-words">- David Thompson, CFA, Senior Portfolio Manager, Fidelity Investments</p>
                       </div>
-                      
+
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border overflow-hidden">
                         <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-heading-accent mb-1 xs:mb-2 break-words">Lisa Rodriguez, CFP - Financial Advisor</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-foreground mb-2 leading-relaxed break-words">
@@ -452,7 +452,7 @@ export default function InvestmentCalculatorPage() {
                         </p>
                         <p className="text-xs text-muted-foreground break-words">- Lisa Rodriguez, CFP, Senior Financial Advisor, Charles Schwab</p>
                       </div>
-                      
+
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border overflow-hidden">
                         <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-heading-accent mb-1 xs:mb-2 break-words">Dr. James Wilson, PhD - Investment Research</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-foreground mb-2 leading-relaxed break-words">
@@ -463,7 +463,7 @@ export default function InvestmentCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Success Stories Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground break-words">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -479,7 +479,7 @@ export default function InvestmentCalculatorPage() {
                         </p>
                         <p className="text-xs text-muted-foreground break-words">- Michael R., Software Engineer</p>
                       </div>
-                      
+
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border overflow-hidden">
                         <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-heading-accent mb-1 xs:mb-2 break-words">College Savings Success</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-foreground mb-2 leading-relaxed break-words">
@@ -487,7 +487,7 @@ export default function InvestmentCalculatorPage() {
                         </p>
                         <p className="text-xs text-muted-foreground break-words">- Sarah M., Marketing Manager</p>
                       </div>
-                      
+
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border overflow-hidden">
                         <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-heading-accent mb-1 xs:mb-2 break-words">Investment Strategy Success</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-foreground mb-2 leading-relaxed break-words">
@@ -498,7 +498,7 @@ export default function InvestmentCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* FAQ Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground break-words">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -618,7 +618,7 @@ export default function InvestmentCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Related Tools Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-heading-accent break-words">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-heading-accent-border/10 rounded-lg flex-shrink-0">
@@ -636,7 +636,7 @@ export default function InvestmentCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed break-words">Time value of money calculations and TVM analysis</p>
                       </div>
-                      
+
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -646,7 +646,7 @@ export default function InvestmentCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed break-words">Calculate purchasing power and inflation impact on investments</p>
                       </div>
-                      
+
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -656,7 +656,7 @@ export default function InvestmentCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed break-words">Plan for retirement with savings and investment calculations</p>
                       </div>
-                      
+
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -666,7 +666,7 @@ export default function InvestmentCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed break-words">Calculate mortgage payments and home affordability</p>
                       </div>
-                      
+
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -676,7 +676,7 @@ export default function InvestmentCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed break-words">Convert salary across different pay frequencies</p>
                       </div>
-                      
+
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -686,7 +686,7 @@ export default function InvestmentCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed break-words">Calculate real interest rates on loans and investments</p>
                       </div>
-                      
+
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -696,7 +696,7 @@ export default function InvestmentCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed break-words">Calculate loan payments, interest, and amortization schedules</p>
                       </div>
-                      
+
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -706,7 +706,7 @@ export default function InvestmentCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed break-words">Calculate compound interest and investment growth</p>
                       </div>
-                      
+
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -716,7 +716,7 @@ export default function InvestmentCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed break-words">Convert between different currencies and exchange rates</p>
                       </div>
-                      
+
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -726,7 +726,7 @@ export default function InvestmentCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed break-words">Calculate income tax and sales tax amounts</p>
                       </div>
-                      
+
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -736,7 +736,7 @@ export default function InvestmentCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed break-words">Advanced mathematical and scientific calculations</p>
                       </div>
-                      
+
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -750,8 +750,8 @@ export default function InvestmentCalculatorPage() {
                   </div>
                 </div>
               </div>
-              
-              {/* Sidebar */}
+
+              {}
               <div className="hidden lg:block">
                 <div className="sticky top-4">
                   <AdSpace slot="sidebar" className="h-96 rounded-lg overflow-hidden" />

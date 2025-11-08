@@ -13,7 +13,7 @@ interface AgeResult {
   days: number
   totalDays: number
   nextBirthday: string
-  // Enhanced features
+
   totalHours: number
   totalMinutes: number
   totalSeconds: number
@@ -39,7 +39,6 @@ export function AgeCalculator() {
 
     setIsCalculating(true)
 
-    // Simulate calculation delay for smooth UX
     setTimeout(() => {
       const birth = new Date(birthDate)
       const today = targetDate ? new Date(targetDate) : new Date()
@@ -66,20 +65,17 @@ export function AgeCalculator() {
       const decimalYears = totalDays / 365.25
       const weeks = Math.floor(totalDays / 7)
 
-      // Next birthday calculation
       const nextBirthday = new Date(today.getFullYear(), birth.getMonth(), birth.getDate())
       if (nextBirthday < today) {
         nextBirthday.setFullYear(today.getFullYear() + 1)
       }
       const daysUntilNextBirthday = Math.ceil((nextBirthday.getTime() - today.getTime()) / (1000 * 60 * 60 * 24))
 
-      // Age calculations
       const ageLastBirthday = `${years} years, ${months} months, ${days} days`
       const ageNextBirthday = `${years + 1} years, ${months} months, ${days} days`
       const ageNearestBirthday = daysUntilNextBirthday <= 183 ? ageNextBirthday : ageLastBirthday
       const ageOnToday = `${years} years, ${months} months, ${days} days`
 
-      // Shareable link
       const shareableLink = `https://www.fasttools.store/calculator/age-calculator?dob=${birthDate}${targetDate ? `&target=${targetDate}` : ''}`
 
       setResult({
@@ -124,9 +120,7 @@ Next Birthday: ${result.nextBirthday}`
     if (navigator.share) {
       try {
         await navigator.share({ text, title: "My Age Calculation", url: result.shareableLink })
-      } catch (err) {
-        // Share cancelled
-      }
+      } catch (err) {}
     } else {
       copyResult()
     }
@@ -141,7 +135,7 @@ Next Birthday: ${result.nextBirthday}`
 
   return (
     <div className="space-y-8">
-      {/* Today's Date Display */}
+      {}
       <Card className="shadow-lg border-border bg-card">
         <CardContent className="p-6">
           <div className="flex items-center justify-center gap-3 text-sm">
@@ -151,11 +145,11 @@ Next Birthday: ${result.nextBirthday}`
             </div>
             <div className="text-center">
               <div className="font-bold text-lg text-foreground">
-                {new Date().toLocaleDateString('en-US', { 
-                  weekday: 'long', 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
+                {new Date().toLocaleDateString('en-US', {
+                  weekday: 'long',
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
                 })}
               </div>
               <div className="text-sm text-muted-foreground">
@@ -179,7 +173,7 @@ Next Birthday: ${result.nextBirthday}`
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-8">
-          {/* Date Inputs */}
+          {}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-3">
               <Label htmlFor="birthdate" className="text-sm sm:text-base font-semibold flex items-center gap-2">
@@ -244,12 +238,12 @@ Next Birthday: ${result.nextBirthday}`
               Your Age Results
             </CardTitle>
             <CardDescription className="text-base">
-              Born on: {new Date(birthDate).toLocaleDateString()} | 
+              Born on: {new Date(birthDate).toLocaleDateString()} |
               Age on: {targetDate ? new Date(targetDate).toLocaleDateString() : 'Today'}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-8">
-            {/* Main Age Display */}
+            {}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
               <div className="text-center p-4 sm:p-6 rounded-xl bg-card border-2 border-border hover:shadow-lg transition-all duration-300">
                 <div className="text-3xl sm:text-4xl font-bold text-foreground mb-1 sm:mb-2">{result.years}</div>
@@ -265,7 +259,7 @@ Next Birthday: ${result.nextBirthday}`
               </div>
             </div>
 
-            {/* Detailed Breakdown */}
+            {}
             <div className="space-y-4 p-4 sm:p-6 bg-card rounded-xl border-2 border-border">
               <h3 className="text-base sm:text-lg font-semibold text-center mb-3 sm:mb-4 flex items-center justify-center gap-2">
                 <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
@@ -299,7 +293,7 @@ Next Birthday: ${result.nextBirthday}`
               </div>
             </div>
 
-            {/* Answer Summary */}
+            {}
             <div className="p-6 bg-card rounded-xl border-2 border-primary/20">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">
@@ -314,7 +308,7 @@ Next Birthday: ${result.nextBirthday}`
               </div>
             </div>
 
-            {/* Birthday Information */}
+            {}
             <div className="space-y-4 p-4 sm:p-6 bg-card rounded-xl border-2 border-border">
               <h3 className="text-base sm:text-lg font-semibold flex items-center gap-2 text-foreground">
                 <Gift className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -348,7 +342,7 @@ Next Birthday: ${result.nextBirthday}`
               </div>
             </div>
 
-            {/* Shareable Link */}
+            {}
             <div className="space-y-4 p-4 sm:p-6 bg-card rounded-xl border-2 border-border">
               <h3 className="text-base sm:text-lg font-semibold text-foreground">Save this link to check age given DOB:</h3>
               <div className="flex flex-col sm:flex-row gap-2">
@@ -369,7 +363,7 @@ Next Birthday: ${result.nextBirthday}`
               </div>
             </div>
 
-            {/* Action Buttons */}
+            {}
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
               <Button
                 onClick={copyResult}

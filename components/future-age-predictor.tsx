@@ -32,7 +32,6 @@ export function FutureAgePredictor() {
       targetYear: ""
     }
 
-    // Validate birth date
     if (!birthDate) {
       newErrors.birthDate = "Birth date is required"
     } else {
@@ -43,7 +42,6 @@ export function FutureAgePredictor() {
       }
     }
 
-    // Validate target year
     if (!targetYear) {
       newErrors.targetYear = "Target year is required"
     } else {

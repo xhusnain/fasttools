@@ -35,33 +35,26 @@ export function FabricCanvasFixed({ onCanvasReady, width, height }: FabricCanvas
     isInitializingRef.current = true
 
     try {
-      
-      // Dispose any existing canvas first
+
       disposeCanvas()
-      
-      // Wait for disposal to complete
+
       await new Promise(resolve => setTimeout(resolve, 200))
-      
-      // Get Fabric.js
+
       const fabric = await getFabric()
       if (!fabric || !fabric.Canvas) {
         throw new Error('Fabric.js not available')
       }
 
-      // Create a completely new canvas element if needed
       let canvasElement = canvasRef.current
-      
-      // Check if the canvas element is already initialized
+
       if (canvasElement.fabric) {
-        
-        // Create a new canvas element
+
         const newCanvas = document.createElement('canvas')
         newCanvas.width = width
         newCanvas.height = height
         newCanvas.className = canvasElement.className
         newCanvas.style.cssText = canvasElement.style.cssText
-        
-        // Replace the old canvas with the new one
+
         if (canvasElement.parentNode) {
           canvasElement.parentNode.replaceChild(newCanvas, canvasElement)
           canvasRef.current = newCanvas
@@ -69,7 +62,6 @@ export function FabricCanvasFixed({ onCanvasReady, width, height }: FabricCanvas
         }
       }
 
-      // Now create the Fabric.js canvas
       const fabricCanvas = new fabric.Canvas(canvasElement, {
         width: width,
         height: height,
@@ -80,16 +72,12 @@ export function FabricCanvasFixed({ onCanvasReady, width, height }: FabricCanvas
         skipTargetFind: false
       })
 
-      
-      // Store reference
       fabricCanvasRef.current = fabricCanvas
       isInitializedRef.current = true
-      
-      // Notify parent
+
       onCanvasReady(fabricCanvas)
       setIsLoaded(true)
 
-      // Add test objects
       const testRect = new fabric.Rect({
         left: 50,
         top: 50,
@@ -122,26 +110,24 @@ export function FabricCanvasFixed({ onCanvasReady, width, height }: FabricCanvas
     } finally {
       isInitializingRef.current = false
     }
-  }, []) // Remove all dependencies to prevent re-initialization
+  }, [])
 
-  // Initialize once on mount
   useEffect(() => {
     let mounted = true
-    
+
     const init = async () => {
       if (mounted) {
         await initializeCanvas()
       }
     }
-    
+
     init()
-    
+
     return () => {
       mounted = false
     }
-  }, []) // Empty dependency array to run only once
+  }, [])
 
-  // Handle resize
   useEffect(() => {
     if (fabricCanvasRef.current && isLoaded) {
       try {
@@ -154,7 +140,6 @@ export function FabricCanvasFixed({ onCanvasReady, width, height }: FabricCanvas
     }
   }, [width, height, isLoaded])
 
-  // Cleanup on unmount
   useEffect(() => {
     return () => {
       disposeCanvas()
@@ -168,8 +153,8 @@ export function FabricCanvasFixed({ onCanvasReady, width, height }: FabricCanvas
       <canvas
         ref={canvasRef}
         className="border border-slate-200 rounded-xl shadow-lg bg-white"
-        style={{ 
-          maxWidth: '100%', 
+        style={{
+          maxWidth: '100%',
           maxHeight: '80vh',
           cursor: 'default'
         }}

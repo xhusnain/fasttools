@@ -54,17 +54,13 @@ export function JWTDecoder() {
     signatureSize: 0
   })
 
-  
-  // For header/payload view toggles
   const [headerView, setHeaderView] = useState<"json" | "table">("json")
   const [payloadView, setPayloadView] = useState<"json" | "table">("json")
-  
-  // For encoding mode
+
   const [headerInput, setHeaderInput] = useState('{\n  "alg": "HS256",\n  "typ": "JWT"\n}')
   const [payloadInput, setPayloadInput] = useState('{\n  "sub": "1234567890",\n  "name": "John Doe",\n  "iat": 1516239022\n}')
   const [encodedToken, setEncodedToken] = useState("")
 
-  // Example tokens for different algorithms
   const exampleTokens: Record<string, { token: string; secret: string }> = {
     HS256: {
       token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNzM1Njg5NjAwfQ.4Adcj0qhB3h2RRXXr0Sf3Gz_iRdnb-bHs1PxXBGGg-Y",
@@ -116,7 +112,6 @@ export function JWTDecoder() {
     }
   }
 
-  // Generate example JWT
   const generateExample = () => {
     const example = exampleTokens[selectedAlgorithm] || exampleTokens.HS256
     setToken(example.token)
@@ -124,7 +119,6 @@ export function JWTDecoder() {
     decodeJWT(example.token)
   }
 
-  // Auto-decode when token changes
   useEffect(() => {
     if (token) {
       const timer = setTimeout(() => {
@@ -134,7 +128,6 @@ export function JWTDecoder() {
     }
   }, [token])
 
-  // Load token from URL on mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search)
@@ -144,7 +137,7 @@ export function JWTDecoder() {
           const decodedToken = atob(sharedToken)
           setToken(decodedToken)
           setIsSharedToken(true)
-          // Clear URL parameter after loading
+
           window.history.replaceState({}, '', window.location.pathname)
         } catch (e) {
           console.error('Invalid shared token')
@@ -153,7 +146,6 @@ export function JWTDecoder() {
     }
   }, [])
 
-  // Update countdown timer every second
   useEffect(() => {
     if (!decoded || !decoded.payload.exp) {
       setTimeRemaining(null)
@@ -167,10 +159,8 @@ export function JWTDecoder() {
       setTimeRemaining(remaining)
     }
 
-    // Update immediately
     updateTimer()
 
-    // Update every second
     const interval = setInterval(updateTimer, 1000)
 
     return () => clearInterval(interval)
@@ -194,7 +184,6 @@ export function JWTDecoder() {
         throw new Error("Invalid JWT format - must have 3 parts separated by dots")
       }
 
-      // Decode with proper base64url handling
       const base64UrlDecode = (str: string) => {
         const base64 = str.replace(/-/g, '+').replace(/_/g, '/')
         const pad = str.length % 4
@@ -213,8 +202,7 @@ export function JWTDecoder() {
 
       setDecoded({ header, payload, signature })
       setIsValid(true)
-      
-      // Try to verify if secret is provided
+
       if (secret) {
         verifySignature(jwtToken, secret, header.alg)
       }
@@ -224,7 +212,6 @@ export function JWTDecoder() {
     }
   }
 
-  // Simple signature verification (note: this is client-side demo only)
   const verifySignature = async (token: string, secret: string, algorithm: string) => {
     try {
       if (!secret) {
@@ -232,12 +219,9 @@ export function JWTDecoder() {
         return
       }
 
-      // This is a simplified verification - in production, use proper JWT libraries
-      // For demo purposes, we'll just check if the token structure is valid
       const parts = token.split(".")
       if (parts.length === 3 && algorithm) {
-        // Note: Real verification requires proper crypto implementation
-        // This is just a UI indication
+
         setIsVerified(true)
       } else {
         setIsVerified(false)
@@ -247,23 +231,21 @@ export function JWTDecoder() {
     }
   }
 
-  // Encode JWT
   const encodeJWT = () => {
     try {
       const header = JSON.parse(headerInput)
       const payload = JSON.parse(payloadInput)
-      
+
       const base64UrlEncode = (str: string) => {
         return btoa(str)
           .replace(/\+/g, '-')
-          .replace(/\//g, '_')
+          .replace(/\
           .replace(/=/g, '')
       }
 
       const encodedHeader = base64UrlEncode(JSON.stringify(header))
       const encodedPayload = base64UrlEncode(JSON.stringify(payload))
-      
-      // Note: This creates an unsigned token. Real signing requires crypto libraries
+
       const unsignedToken = `${encodedHeader}.${encodedPayload}.SIGNATURE_HERE`
       setEncodedToken(unsignedToken)
       setError("")
@@ -286,7 +268,6 @@ export function JWTDecoder() {
     setTimeout(() => setCopied(null), 2000)
   }
 
-  // Mask sensitive data in JWT
   const maskSensitiveFields = (jwtToken: string): string => {
     try {
       const parts = jwtToken.split(".")
@@ -305,16 +286,14 @@ export function JWTDecoder() {
       const base64UrlEncode = (str: string) => {
         return btoa(str)
           .replace(/\+/g, '-')
-          .replace(/\//g, '_')
+          .replace(/\
           .replace(/=/g, '')
       }
 
       const payload = JSON.parse(base64UrlDecode(parts[1]))
-      
-      // List of sensitive fields to mask
+
       const sensitiveFields = ['email', 'phone', 'password', 'secret', 'apiKey', 'token', 'key', 'ssn', 'credit_card']
-      
-      // Mask sensitive fields
+
       Object.keys(payload).forEach(key => {
         if (sensitiveFields.some(field => key.toLowerCase().includes(field.toLowerCase()))) {
           const value = String(payload[key])
@@ -326,7 +305,6 @@ export function JWTDecoder() {
         }
       })
 
-      // Reconstruct token with masked payload
       const maskedPayload = base64UrlEncode(JSON.stringify(payload))
       return `${parts[0]}.${maskedPayload}.${parts[2]}`
     } catch (e) {
@@ -334,51 +312,45 @@ export function JWTDecoder() {
     }
   }
 
-  // Generate shareable link
   const generateShareLink = () => {
     if (!token) return
 
     const tokenToShare = maskSensitiveData ? maskSensitiveFields(token) : token
     const encodedToken = btoa(tokenToShare)
     const url = `${window.location.origin}${window.location.pathname}?token=${encodedToken}`
-    
+
     setShareLink(url)
     setShowShareModal(true)
   }
 
-  // Copy share link
   const copyShareLink = () => {
     navigator.clipboard.writeText(shareLink)
     setShareLinkCopied(true)
     setTimeout(() => setShareLinkCopied(false), 2000)
   }
 
-  // Generate code snippets for different languages
   const generateCodeSnippet = (language: string): string => {
     const algo = decoded?.header.alg || selectedAlgorithm
     const secretKey = secret || "your-secret-key"
-    
+
     const codeTemplates: Record<string, string> = {
-      nodejs: `// Node.js - Using jsonwebtoken
+      nodejs: `
 const jwt = require('jsonwebtoken');
 
-// Your JWT token
 const token = '${token.substring(0, 50)}...';
 
-// Your secret key
 const secretKey = '${secretKey}';
 
 try {
-  // Verify and decode the JWT token
+
   const decoded = jwt.verify(token, secretKey, {
     algorithms: ['${algo}']
   });
-  
+
 } catch (error) {
   console.error('Token verification failed:', error.message);
 }
 
-// Generate a new JWT token
 const payload = {
   sub: '1234567890',
   name: 'John Doe',
@@ -389,7 +361,6 @@ const newToken = jwt.sign(payload, secretKey, {
   algorithm: '${algo}',
   expiresIn: '1h'
 });
-
 
       python: `# Python - Using PyJWT
 import jwt
@@ -408,7 +379,7 @@ try:
         secret_key,
         algorithms=['${algo}']
     )
-    
+
     print('Token is valid!')
     print('Decoded payload:', decoded)
 except jwt.ExpiredSignatureError:
@@ -427,7 +398,7 @@ payload = {
 new_token = jwt.encode(payload, secret_key, algorithm='${algo}')
 print('New token:', new_token)`,
 
-      java: `// Java - Using jjwt
+      java: `
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import java.security.Key;
@@ -435,29 +406,27 @@ import java.util.Date;
 
 public class JWTExample {
     public static void main(String[] args) {
-        // Your JWT token
+
         String token = "${token.substring(0, 50)}...";
-        
-        // Your secret key
+
         String secretKey = "${secretKey}";
         Key key = Keys.hmacShaKeyFor(secretKey.getBytes());
-        
+
         try {
-            // Verify and decode the JWT token
+
             Claims claims = Jwts.parserBuilder()
                 .setSigningKey(key)
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
-            
+
             System.out.println("Token is valid!");
             System.out.println("Subject: " + claims.getSubject());
             System.out.println("Claims: " + claims);
         } catch (JwtException e) {
             System.err.println("Token verification failed: " + e.getMessage());
         }
-        
-        // Generate a new JWT token
+
         String newToken = Jwts.builder()
             .setSubject("1234567890")
             .claim("name", "John Doe")
@@ -465,27 +434,25 @@ public class JWTExample {
             .setExpiration(new Date(System.currentTimeMillis() + 3600000))
             .signWith(key, SignatureAlgorithm.${algo})
             .compact();
-        
+
         System.out.println("New token: " + newToken);
     }
 }`,
 
       php: `<?php
-// PHP - Using firebase/php-jwt
+
 require_once 'vendor/autoload.php';
 use Firebase\\JWT\\JWT;
 use Firebase\\JWT\\Key;
 
-// Your JWT token
 $token = '${token.substring(0, 50)}...';
 
-// Your secret key
 $secretKey = '${secretKey}';
 
 try {
-    // Verify and decode the JWT token
+
     $decoded = JWT::decode($token, new Key($secretKey, '${algo}'));
-    
+
     echo "Token is valid!\\n";
     echo "Decoded payload:\\n";
     print_r($decoded);
@@ -493,7 +460,6 @@ try {
     echo "Token verification failed: " . $e->getMessage() . "\\n";
 }
 
-// Generate a new JWT token
 $payload = [
     'sub' => '1234567890',
     'name' => 'John Doe',
@@ -505,7 +471,7 @@ $newToken = JWT::encode($payload, $secretKey, '${algo}');
 echo "New token: " . $newToken . "\\n";
 ?>`,
 
-      go: `// Go - Using golang-jwt
+      go: `
 package main
 
 import (
@@ -515,35 +481,32 @@ import (
 )
 
 func main() {
-    // Your JWT token
+
     token := "${token.substring(0, 50)}..."
-    
-    // Your secret key
+
     secretKey := []byte("${secretKey}")
-    
-    // Verify and decode the JWT token
+
     parsedToken, err := jwt.Parse(token, func(token *jwt.Token) (interface{}, error) {
         if _, ok := token.Method.(*jwt.SigningMethod${algo.startsWith('HS') ? 'HMAC' : 'RSA'}); !ok {
             return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
         }
         return secretKey, nil
     })
-    
+
     if err != nil {
         fmt.Println("Token verification failed:", err)
     } else if claims, ok := parsedToken.Claims.(jwt.MapClaims); ok && parsedToken.Valid {
         fmt.Println("Token is valid!")
         fmt.Printf("Decoded payload: %v\\n", claims)
     }
-    
-    // Generate a new JWT token
+
     newToken := jwt.NewWithClaims(jwt.SigningMethod${algo}, jwt.MapClaims{
         "sub":  "1234567890",
         "name": "John Doe",
         "iat":  time.Now().Unix(),
         "exp":  time.Now().Add(time.Hour * 1).Unix(),
     })
-    
+
     tokenString, err := newToken.SignedString(secretKey)
     if err != nil {
         fmt.Println("Token generation failed:", err)
@@ -552,7 +515,7 @@ func main() {
     }
 }`,
 
-      csharp: `// C# - Using System.IdentityModel.Tokens.Jwt
+      csharp: `
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -563,18 +526,17 @@ class Program
 {
     static void Main()
     {
-        // Your JWT token
+
         string token = "${token.substring(0, 50)}...";
-        
-        // Your secret key
+
         string secretKey = "${secretKey}";
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
-        
+
         var tokenHandler = new JwtSecurityTokenHandler();
-        
+
         try
         {
-            // Verify and decode the JWT token
+
             var validationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,
@@ -584,9 +546,9 @@ class Program
                 ValidateLifetime = true,
                 ClockSkew = TimeSpan.Zero
             };
-            
+
             var principal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
-            
+
             Console.WriteLine("Token is valid!");
             Console.WriteLine($"Claims: {string.Join(", ", principal.Claims)}");
         }
@@ -594,15 +556,14 @@ class Program
         {
             Console.WriteLine($"Token verification failed: {ex.Message}");
         }
-        
-        // Generate a new JWT token
+
         var claims = new[]
         {
             new Claim("sub", "1234567890"),
             new Claim("name", "John Doe"),
             new Claim("iat", DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString())
         };
-        
+
         var credentials = new SigningCredentials(key, SecurityAlgorithms.${algo === 'HS256' ? 'HmacSha256' : algo === 'HS384' ? 'HmacSha384' : 'HmacSha512'});
         var tokenDescriptor = new SecurityTokenDescriptor
         {
@@ -610,7 +571,7 @@ class Program
             Expires = DateTime.UtcNow.AddHours(1),
             SigningCredentials = credentials
         };
-        
+
         var newToken = tokenHandler.CreateToken(tokenDescriptor);
         Console.WriteLine($"New token: {tokenHandler.WriteToken(newToken)}");
     }
@@ -620,21 +581,18 @@ class Program
     return codeTemplates[language] || codeTemplates.nodejs;
   }
 
-  // Open code generator
   const openCodeGenerator = () => {
     const code = generateCodeSnippet(selectedLanguage)
     setGeneratedCode(code)
     setShowCodeGenerator(true)
   }
 
-  // Copy generated code
   const copyGeneratedCode = () => {
     navigator.clipboard.writeText(generatedCode)
     setCodeCopied(true)
     setTimeout(() => setCodeCopied(false), 2000)
   }
 
-  // Format time remaining
   const formatTimeRemaining = (seconds: number) => {
     if (seconds < 0) {
       const absSeconds = Math.abs(seconds)
@@ -643,23 +601,21 @@ class Program
       if (absSeconds < 86400) return `Expired ${Math.floor(absSeconds / 3600)}h ago`
       return `Expired ${Math.floor(absSeconds / 86400)}d ago`
     }
-    
+
     if (seconds < 60) return `${seconds}s`
     if (seconds < 3600) return `${Math.floor(seconds / 60)}m ${seconds % 60}s`
     if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ${Math.floor((seconds % 3600) / 60)}m`
     return `${Math.floor(seconds / 86400)}d ${Math.floor((seconds % 86400) / 3600)}h`
   }
 
-  // Get color based on time remaining
   const getExpirationColor = (seconds: number | null) => {
     if (seconds === null) return 'text-muted-foreground'
     if (seconds < 0) return 'text-foreground'
-    if (seconds < 300) return 'text-foreground' // < 5 minutes
-    if (seconds < 3600) return 'text-foreground' // < 1 hour
+if (seconds < 300) return 'text-foreground'
+if (seconds < 3600) return 'text-foreground'
     return 'text-heading-accent'
   }
 
-  // Open comparison tool
   const openComparison = () => {
     setToken1(token)
     setToken2("")
@@ -668,7 +624,6 @@ class Program
     setShowComparison(true)
   }
 
-  // Decode token for comparison
   const decodeComparisonToken = (tokenToDecode: string, tokenNumber: 1 | 2) => {
     try {
       const parts = tokenToDecode.split(".")
@@ -691,7 +646,7 @@ class Program
       const signature = parts[2]
 
       const decodedResult = { header, payload, signature }
-      
+
       if (tokenNumber === 1) {
         setDecoded1(decodedResult)
       } else {
@@ -704,7 +659,6 @@ class Program
     }
   }
 
-  // Compare objects and find differences
   const compareObjects = (obj1: any, obj2: any) => {
     const differences: { key: string; value1: any; value2: any; status: 'changed' | 'added' | 'removed' | 'same' }[] = []
     const allKeys = new Set([...Object.keys(obj1 || {}), ...Object.keys(obj2 || {})])
@@ -729,7 +683,6 @@ class Program
     return differences
   }
 
-  // Calculate token size
   const getTokenSize = (tokenStr: string) => {
     const bytes = new Blob([tokenStr]).size
     return {
@@ -738,19 +691,16 @@ class Program
     }
   }
 
-  // Format bytes to readable string
   const formatBytes = (bytes: number) => {
     if (bytes < 1024) return `${bytes} bytes`
     return `${(bytes / 1024).toFixed(2)} KB`
   }
 
-  // Open optimizer
   const openOptimizer = () => {
     if (!token || !decoded) return
 
     const suggestions: Array<{type: string, title: string, description: string, savings: number}> = []
-    
-    // Check for long claim names
+
     const longClaimNames = Object.keys(decoded.payload).filter(key => key.length > 3)
     if (longClaimNames.length > 0) {
       const estimatedSavings = longClaimNames.reduce((acc, key) => acc + (key.length - 1), 0)
@@ -762,7 +712,6 @@ class Program
       })
     }
 
-    // Check for unnecessary standard claims
     const optionalClaims = ['jti', 'nbf', 'aud', 'iss']
     const unnecessaryClaims = optionalClaims.filter(claim => claim in decoded.payload)
     if (unnecessaryClaims.length > 0) {
@@ -778,7 +727,6 @@ class Program
       })
     }
 
-    // Check algorithm
     const currentAlg = decoded.header.alg
     const algSuggestions: {[key: string]: {shorter: string, savings: number}} = {
       'HS256': { shorter: 'none', savings: 0 },
@@ -804,7 +752,6 @@ class Program
       })
     }
 
-    // Check for large values
     const largeValues = Object.entries(decoded.payload).filter(([key, value]) => {
       const strValue = JSON.stringify(value)
       return strValue.length > 50
@@ -821,7 +768,6 @@ class Program
       })
     }
 
-    // Check for redundant header fields
     const redundantHeaders = Object.keys(decoded.header).filter(key => key !== 'alg' && key !== 'typ')
     if (redundantHeaders.length > 0) {
       const estimatedSavings = redundantHeaders.reduce((acc, key) => {
@@ -841,14 +787,12 @@ class Program
     setShowOptimizer(true)
   }
 
-  // Apply optimizations
   const applyOptimizations = (types: Set<string>) => {
     if (!decoded) return
 
     let optimizedHeader = { ...decoded.header }
     let optimizedPayload = { ...decoded.payload }
 
-    // Apply shorten claims
     if (types.has('shorten-claims')) {
       const claimMapping: {[key: string]: string} = {
         'username': 'u',
@@ -868,7 +812,6 @@ class Program
       optimizedPayload = newPayload
     }
 
-    // Apply remove claims
     if (types.has('remove-claims')) {
       const optionalClaims = ['jti', 'nbf', 'aud', 'iss']
       optionalClaims.forEach(claim => {
@@ -876,12 +819,10 @@ class Program
       })
     }
 
-    // Apply algorithm change
     if (types.has('algorithm')) {
       optimizedHeader.alg = 'HS256'
     }
 
-    // Apply large values optimization (示例: 截断)
     if (types.has('large-values')) {
       Object.entries(optimizedPayload).forEach(([key, value]) => {
         if (typeof value === 'string' && value.length > 50) {
@@ -892,7 +833,6 @@ class Program
       })
     }
 
-    // Apply header fields removal
     if (types.has('header-fields')) {
       const standardFields = ['alg', 'typ']
       Object.keys(optimizedHeader).forEach(key => {
@@ -902,11 +842,10 @@ class Program
       })
     }
 
-    // Encode optimized token
     const base64UrlEncode = (str: string) => {
       return btoa(str)
         .replace(/\+/g, '-')
-        .replace(/\//g, '_')
+.replace(/\
         .replace(/=/g, '')
     }
 
@@ -918,7 +857,6 @@ class Program
     setOptimizedToken(newToken)
   }
 
-  // Toggle optimization
   const toggleOptimization = (type: string) => {
     const newSet = new Set(appliedOptimizations)
     if (newSet.has(type)) {
@@ -930,7 +868,6 @@ class Program
     applyOptimizations(newSet)
   }
 
-  // Export functions
   const exportAsJSON = () => {
     if (!decoded) return
 
@@ -1025,7 +962,7 @@ ${Object.entries(decoded.payload).map(([key, value]) => `      <${key}>${escapeX
     if (!decoded) return
 
     const indent = (level: number) => '  '.repeat(level)
-    
+
     const toYAML = (obj: any, level: number = 0): string => {
       return Object.entries(obj).map(([key, value]) => {
         if (value === null) return `${indent(level)}${key}: null`
@@ -1063,7 +1000,6 @@ metadata:
   const exportAsPDF = () => {
     if (!decoded) return
 
-    // Create a simple HTML template for PDF
     const htmlContent = `
 <!DOCTYPE html>
 <html>
@@ -1085,7 +1021,7 @@ metadata:
 </head>
 <body>
   <h1>🔐 JWT Decoded Report</h1>
-  
+
   <div class="section">
     <h2>Token Information</h2>
     <p><strong>Algorithm:</strong> ${decoded.header.alg}</p>
@@ -1138,12 +1074,12 @@ metadata:
           else if (key === 'aud') description = 'Audience'
           else if (key === 'iss') description = 'Issuer'
           else if (key === 'jti') description = 'JWT ID'
-          
+
           return `
           <tr>
             <td class="key">${key}</td>
-            <td>${typeof value === 'number' && (key === 'exp' || key === 'iat' || key === 'nbf') ? 
-              `${value} (${new Date(value * 1000).toLocaleString()})` : 
+            <td>${typeof value === 'number' && (key === 'exp' || key === 'iat' || key === 'nbf') ?
+              `${value} (${new Date(value * 1000).toLocaleString()})` :
               JSON.stringify(value)}</td>
             <td>${description}</td>
           </tr>
@@ -1164,7 +1100,6 @@ metadata:
 </body>
 </html>`
 
-    // Create blob and download
     const blob = new Blob([htmlContent], { type: 'text/html' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
@@ -1192,32 +1127,31 @@ metadata:
         exportAsPDF()
         break
     }
-    
+
     setTimeout(() => setShowExport(false), 500)
   }
 
-  // Performance metrics
   const analyzePerformance = () => {
     if (!token || !decoded) return
 
     const startDecode = performance.now()
-    // Simulate decode measurement
+
     try {
       const parts = token.split('.')
       JSON.parse(atob(parts[0].replace(/-/g, '+').replace(/_/g, '/')))
       JSON.parse(atob(parts[1].replace(/-/g, '+').replace(/_/g, '/')))
     } catch (e) {
-      // ignore
+
     }
     const decodeTime = performance.now() - startDecode
 
     const startEncode = performance.now()
-    // Simulate encode measurement
+
     try {
       btoa(JSON.stringify(decoded.header))
       btoa(JSON.stringify(decoded.payload))
     } catch (e) {
-      // ignore
+
     }
     const encodeTime = performance.now() - startEncode
 
@@ -1239,7 +1173,6 @@ metadata:
     setShowPerformance(true)
   }
 
-  // Get performance rating
   const getPerformanceRating = () => {
     const size = performanceMetrics.tokenSize
     if (size < 200) return { rating: 'Excellent', color: 'text-heading-accent', bgColor: 'bg-card', borderColor: 'border-green-200 dark:border-green-800' }
@@ -1249,32 +1182,29 @@ metadata:
     return { rating: 'Too Large', color: 'text-foreground', bgColor: 'bg-card', borderColor: 'border-red-200 dark:border-red-800' }
   }
 
-  // Calculate network impact
   const calculateNetworkImpact = () => {
     const tokenSize = performanceMetrics.tokenSize
-    // Typical HTTP header overhead
-    const httpHeaderOverhead = 200 // bytes
+
+const httpHeaderOverhead = 200
     const authHeaderKey = 'Authorization: Bearer '.length
     const totalPerRequest = httpHeaderOverhead + authHeaderKey + tokenSize
-    
+
     const requestsPerDay = [100, 1000, 10000, 100000, 1000000]
     const dataTransfer = requestsPerDay.map(requests => ({
       requests,
-      daily: (totalPerRequest * requests / 1024 / 1024).toFixed(2), // MB
-      monthly: (totalPerRequest * requests * 30 / 1024 / 1024 / 1024).toFixed(2) // GB
+daily: (totalPerRequest * requests / 1024 / 1024).toFixed(2),
+monthly: (totalPerRequest * requests * 30 / 1024 / 1024 / 1024).toFixed(2)
     }))
 
     return dataTransfer
   }
 
-  // Security Analyzer
   const analyzeSecurity = () => {
     if (!token || !decoded) return
 
     const issues: Array<{severity: 'critical' | 'high' | 'medium' | 'low' | 'info', message: string, recommendation: string}> = []
     let score = 100
 
-    // Check algorithm
     const algo = decoded.header.alg
     if (algo === 'none') {
       issues.push({
@@ -1299,7 +1229,6 @@ metadata:
       })
     }
 
-    // Check token expiration
     const now = Math.floor(Date.now() / 1000)
     if (decoded.payload.exp) {
       if (decoded.payload.exp < now) {
@@ -1311,7 +1240,7 @@ metadata:
         score -= 20
       } else {
         const expiresIn = decoded.payload.exp - now
-        if (expiresIn > 86400 * 30) { // 30 days
+if (expiresIn > 86400 * 30) {
           issues.push({
             severity: 'medium',
             message: '⚠️ Token expiration is very long (>30 days)',
@@ -1329,7 +1258,6 @@ metadata:
       score -= 20
     }
 
-    // Check issued at
     if (!decoded.payload.iat) {
       issues.push({
         severity: 'medium',
@@ -1339,7 +1267,6 @@ metadata:
       score -= 10
     }
 
-    // Check not before
     if (decoded.payload.nbf && decoded.payload.nbf > now) {
       issues.push({
         severity: 'low',
@@ -1349,7 +1276,6 @@ metadata:
       score -= 5
     }
 
-    // Check token size
     const tokenSize = token.length
     if (tokenSize > 8192) {
       issues.push({
@@ -1367,11 +1293,10 @@ metadata:
       score -= 5
     }
 
-    // Check for sensitive data
     const sensitiveFields = ['password', 'ssn', 'credit_card', 'api_key', 'secret', 'private_key', 'access_token']
     const payloadString = JSON.stringify(decoded.payload).toLowerCase()
     const foundSensitive = sensitiveFields.filter(field => payloadString.includes(field))
-    
+
     if (foundSensitive.length > 0) {
       issues.push({
         severity: 'critical',
@@ -1381,7 +1306,6 @@ metadata:
       score -= 30
     }
 
-    // Check for standard claims
     if (!decoded.payload.sub && !decoded.payload.user_id && !decoded.payload.userId) {
       issues.push({
         severity: 'low',
@@ -1391,7 +1315,6 @@ metadata:
       score -= 5
     }
 
-    // Email format check
     if (decoded.payload.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(decoded.payload.email)) {
       issues.push({
         severity: 'low',
@@ -1401,7 +1324,6 @@ metadata:
       score -= 5
     }
 
-    // If no issues, add a success message
     if (issues.length === 0) {
       issues.push({
         severity: 'info',
@@ -1410,7 +1332,6 @@ metadata:
       })
     }
 
-    // Ensure score doesn't go below 0
     setSecurityScore(Math.max(0, score))
     setSecurityIssues(issues)
     setShowSecurityAnalyzer(true)
@@ -1424,7 +1345,6 @@ metadata:
           <TabsTrigger value="encode">Encoder</TabsTrigger>
         </TabsList>
 
-        {/* Shared Token Notification */}
         {isSharedToken && (
           <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 border-2 border-blue-300 dark:border-blue-700 rounded-lg flex items-start gap-3 animate-in fade-in slide-in-from-top-2 duration-500">
             <Share2 className="h-5 w-5 text-foreground mt-0.5 shrink-0" />
@@ -1448,7 +1368,7 @@ metadata:
         )}
 
         <TabsContent value="decode" className="space-y-6">
-          {/* Token Input */}
+
           <div className="space-y-3">
             <div className="flex items-center justify-between flex-wrap gap-3">
               <Label className="text-base font-semibold text-foreground">Encoded JWT Token</Label>
@@ -1578,16 +1498,16 @@ metadata:
                 )}
               </div>
             </div>
-            
+
             <div className="relative w-full">
         <Textarea
           placeholder="Paste your JWT token here..."
           value={token}
           onChange={(e) => setToken(e.target.value)}
                 className="!h-32 !max-h-32 !min-h-32 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base pr-20 border-2 border-orange-300 focus:border-primary"
-                style={{ 
-                  wordBreak: 'break-all', 
-                  overflowWrap: 'break-word', 
+                style={{
+                  wordBreak: 'break-all',
+                  overflowWrap: 'break-word',
                   whiteSpace: 'normal',
                   height: '128px !important',
                   maxHeight: '128px !important',
@@ -1624,7 +1544,7 @@ metadata:
 
       {decoded && (
             <div className="space-y-4 w-full max-w-full overflow-hidden">
-              {/* Algorithm Info */}
+
               {decoded.header.alg && (
                 <div className="p-4 bg-card border border-blue-200 dark:border-blue-800 rounded-lg w-full max-w-full overflow-hidden">
                   <div className="flex items-center justify-between gap-4">
@@ -1643,7 +1563,6 @@ metadata:
                 </div>
               )}
 
-              {/* Header */}
               <Card className="p-5 space-y-4 border-blue-200 dark:border-blue-800 w-full max-w-full overflow-hidden">
             <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
@@ -1698,7 +1617,6 @@ metadata:
                 </Tabs>
           </Card>
 
-              {/* Payload */}
               <Card className="p-5 space-y-4 border-purple-200 dark:border-purple-800 w-full max-w-full overflow-hidden">
             <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
@@ -1735,11 +1653,10 @@ metadata:
                         </thead>
                         <tbody>
                           {Object.entries(decoded.payload).map(([key, value]) => {
-                            // Format value based on type
+
                             let displayValue = String(value)
                             let description = 'Custom claim'
-                            
-                            // Standard JWT claims descriptions
+
                             if (key === 'sub') description = 'The subject of the JWT (the user)'
                             else if (key === 'iss') description = 'Issuer - who created and signed this token'
                             else if (key === 'aud') description = 'Audience - who this token is intended for'
@@ -1769,7 +1686,7 @@ metadata:
                             else if (key === 'email') description = 'Email address of the user'
                             else if (key === 'admin') description = 'Admin status'
                             else if (key === 'role' || key === 'roles') description = 'User role(s)'
-                            
+
                             return (
                               <tr key={key} className="border-t">
                                 <td className="p-3 font-mono font-semibold break-words">{key}</td>
@@ -1785,7 +1702,6 @@ metadata:
                 </Tabs>
           </Card>
 
-              {/* Signature */}
               <Card className="p-5 space-y-4 border-cyan-200 dark:border-cyan-800 w-full max-w-full overflow-hidden">
             <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-foreground">Signature</h3>
@@ -1798,7 +1714,6 @@ metadata:
             </pre>
           </Card>
 
-              {/* Signature Verification */}
               <Card className="p-5 space-y-4 w-full max-w-full overflow-hidden">
         <div className="space-y-4">
                   <h3 className="text-lg font-bold text-foreground">Verify Signature (Optional)</h3>
@@ -1816,7 +1731,7 @@ metadata:
                         className="font-mono text-base border-2 border-orange-300 focus:border-primary"
                         style={{ wordBreak: 'break-all', overflowWrap: 'anywhere' }}
                       />
-                      <Button 
+                      <Button
                         onClick={() => verifySignature(token, secret, decoded.header.alg)}
                         disabled={!secret}
                         className="text-base px-6"
@@ -1825,11 +1740,11 @@ metadata:
                       </Button>
         </div>
                   </div>
-                  
+
                   {isVerified !== null && (
                     <div className={`p-4 rounded-lg flex items-center gap-3 ${
-                      isVerified 
-                        ? "bg-card border border-border" 
+                      isVerified
+                        ? "bg-card border border-border"
                         : "bg-destructive/10 border border-destructive/20"
                     }`}>
                       {isVerified ? (
@@ -1859,16 +1774,16 @@ metadata:
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
-            {/* Header Input */}
+
             <div className="space-y-2 w-full">
               <Label className="text-base font-medium">Header</Label>
               <Textarea
                 value={headerInput}
                 onChange={(e) => setHeaderInput(e.target.value)}
                 className="!h-40 !max-h-40 !min-h-40 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base border-2 border-orange-300 focus:border-primary"
-                style={{ 
-                  wordBreak: 'break-all', 
-                  overflowWrap: 'break-word', 
+                style={{
+                  wordBreak: 'break-all',
+                  overflowWrap: 'break-word',
                   whiteSpace: 'normal',
                   height: '160px !important',
                   maxHeight: '160px !important',
@@ -1880,16 +1795,15 @@ metadata:
               />
             </div>
 
-            {/* Payload Input */}
             <div className="space-y-2 w-full">
               <Label className="text-base font-medium">Payload</Label>
               <Textarea
                 value={payloadInput}
                 onChange={(e) => setPayloadInput(e.target.value)}
                 className="!h-40 !max-h-40 !min-h-40 !w-full resize-none overflow-y-auto overflow-x-hidden font-mono text-base border-2 border-orange-300 focus:border-primary"
-                style={{ 
-                  wordBreak: 'break-all', 
-                  overflowWrap: 'break-word', 
+                style={{
+                  wordBreak: 'break-all',
+                  overflowWrap: 'break-word',
                   whiteSpace: 'normal',
                   height: '160px !important',
                   maxHeight: '160px !important',
@@ -1926,14 +1840,12 @@ metadata:
         </TabsContent>
       </Tabs>
 
-      {/* Security Warning */}
       <div className="p-4 bg-card border border-yellow-200 dark:border-yellow-800 rounded-lg">
         <p className="text-xs text-foreground">
           <strong>⚠️ Security Notice:</strong> All JWT processing happens in your browser. Never paste production tokens or sensitive secrets. This tool is for development and debugging purposes only. Always verify JWT signatures on your backend server.
         </p>
       </div>
 
-      {/* Share Modal */}
       {showShareModal && (
         <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowShareModal(false)}>
           <Card className="w-full max-w-2xl p-6 space-y-5 animate-in fade-in zoom-in duration-200" onClick={(e) => e.stopPropagation()}>
@@ -1957,7 +1869,6 @@ metadata:
               </Button>
             </div>
 
-            {/* Mask Sensitive Data Toggle */}
             <div className="p-4 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
@@ -1972,7 +1883,7 @@ metadata:
                   checked={maskSensitiveData}
                   onCheckedChange={(checked) => {
                     setMaskSensitiveData(checked)
-                    // Regenerate link with new masking preference
+
                     const tokenToShare = checked ? maskSensitiveFields(token) : token
                     const encodedToken = btoa(tokenToShare)
                     const url = `${window.location.origin}${window.location.pathname}?token=${encodedToken}`
@@ -1983,7 +1894,6 @@ metadata:
               </div>
             </div>
 
-            {/* Shareable Link */}
             <div className="space-y-3">
               <Label className="text-base font-semibold text-foreground">Shareable Link</Label>
               <div className="flex gap-2">
@@ -2016,7 +1926,6 @@ metadata:
               </p>
             </div>
 
-            {/* Features List */}
             <div className="grid md:grid-cols-2 gap-3 pt-2">
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
@@ -2048,7 +1957,6 @@ metadata:
               </div>
             </div>
 
-            {/* Action Buttons */}
             <div className="flex gap-2 pt-2">
               <Button
                 onClick={() => setShowShareModal(false)}
@@ -2071,7 +1979,6 @@ metadata:
         </div>
       )}
 
-      {/* Code Generator Modal */}
       {showCodeGenerator && (
         <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowCodeGenerator(false)}>
           <Card className="w-full max-w-4xl max-h-[90vh] flex flex-col p-6 space-y-5 animate-in fade-in zoom-in duration-200" onClick={(e) => e.stopPropagation()}>
@@ -2095,7 +2002,6 @@ metadata:
               </Button>
             </div>
 
-            {/* Language Selector in Modal */}
             <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
               <Label className="text-sm font-semibold text-foreground">Select Language:</Label>
               <div className="flex gap-2 flex-wrap">
@@ -2124,7 +2030,6 @@ metadata:
               </div>
             </div>
 
-            {/* Generated Code */}
             <div className="flex-1 overflow-hidden flex flex-col space-y-3">
               <div className="flex items-center justify-between">
                 <Label className="text-base font-semibold text-foreground">Generated Code</Label>
@@ -2153,7 +2058,6 @@ metadata:
               </div>
             </div>
 
-            {/* Installation Instructions */}
             <div className="p-4 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
               <p className="text-sm font-semibold text-foreground mb-2">📦 Installation Required:</p>
               <code className="text-xs bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-foreground">
@@ -2166,7 +2070,6 @@ metadata:
               </code>
             </div>
 
-            {/* Features */}
             <div className="grid grid-cols-2 gap-3">
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="h-5 w-5 text-heading-accent mt-0.5 shrink-0" />
@@ -2198,7 +2101,6 @@ metadata:
               </div>
             </div>
 
-            {/* Action Buttons */}
             <div className="flex gap-2 pt-2">
               <Button
                 onClick={() => setShowCodeGenerator(false)}
@@ -2221,7 +2123,6 @@ metadata:
         </div>
       )}
 
-      {/* Security Analyzer Modal */}
       {showSecurityAnalyzer && (
         <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowSecurityAnalyzer(false)}>
           <Card className="w-full max-w-4xl p-5 space-y-3 animate-in fade-in zoom-in duration-200" onClick={(e) => e.stopPropagation()}>
@@ -2251,7 +2152,6 @@ metadata:
               </Button>
             </div>
 
-            {/* Security Score */}
             <div className={`p-4 rounded-lg border-2 ${
               securityScore >= 80 ? 'bg-card border-green-300 dark:border-green-700' :
               securityScore >= 60 ? 'bg-card border-yellow-300 dark:border-yellow-700' :
@@ -2313,7 +2213,6 @@ metadata:
               </div>
             </div>
 
-            {/* Issues List */}
             <div className="space-y-2">
               <Label className="text-sm font-semibold text-foreground">Security Issues & Recommendations</Label>
               <div className="space-y-2 max-h-60 overflow-y-auto pr-2">
@@ -2355,7 +2254,6 @@ metadata:
               </div>
             </div>
 
-            {/* Summary Stats */}
             <div className="grid grid-cols-4 gap-2">
               <div className="p-2 bg-card border border-border rounded-lg text-center">
                 <p className="text-xl font-bold text-foreground">
@@ -2383,7 +2281,6 @@ metadata:
               </div>
             </div>
 
-            {/* Action Button */}
             <div className="flex gap-2">
               <Button
                 onClick={() => setShowSecurityAnalyzer(false)}
@@ -2403,11 +2300,10 @@ metadata:
         </div>
       )}
 
-      {/* Token Comparison Modal */}
       {showComparison && (
         <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowComparison(false)}>
           <Card className="w-full max-w-6xl p-5 space-y-3 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            {/* Header */}
+
             <div className="flex items-center justify-between border-b pb-3">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg">
@@ -2427,9 +2323,8 @@ metadata:
               </Button>
             </div>
 
-            {/* Token Inputs */}
             <div className="grid grid-cols-2 gap-4">
-              {/* Token 1 */}
+
               <div className="space-y-2">
                 <Label className="text-sm font-semibold text-foreground">Token 1 (Current)</Label>
                 <Textarea
@@ -2450,7 +2345,6 @@ metadata:
                 )}
               </div>
 
-              {/* Token 2 */}
               <div className="space-y-2">
                 <Label className="text-sm font-semibold text-foreground">Token 2 (Compare)</Label>
                 <Textarea
@@ -2472,10 +2366,9 @@ metadata:
               </div>
             </div>
 
-            {/* Comparison Results */}
             {decoded1 && decoded2 && (
               <>
-                {/* Algorithm Comparison */}
+
                 <div className="p-3 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
                   <h4 className="text-sm font-bold text-foreground mb-2">Algorithm Comparison</h4>
                   <div className="grid grid-cols-3 gap-2 text-xs">
@@ -2497,7 +2390,6 @@ metadata:
                   </div>
                 </div>
 
-                {/* Header Differences */}
                 <div>
                   <h4 className="text-sm font-bold text-foreground mb-2">Header Differences</h4>
                   <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
@@ -2537,7 +2429,6 @@ metadata:
                   </div>
                 </div>
 
-                {/* Payload Differences */}
                 <div>
                   <h4 className="text-sm font-bold text-foreground mb-2">Payload (Claims) Differences</h4>
                   <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
@@ -2593,7 +2484,6 @@ metadata:
                   </div>
                 </div>
 
-                {/* Summary Stats */}
                 <div className="grid grid-cols-4 gap-2">
                   <div className="p-2 bg-card border border-gray-200 dark:border-gray-700 rounded-lg text-center">
                     <p className="text-lg font-bold text-gray-600">
@@ -2621,7 +2511,6 @@ metadata:
                   </div>
                 </div>
 
-                {/* Use Cases */}
                 <div className="p-3 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 border border-purple-200 dark:border-purple-800 rounded-lg">
                   <h4 className="text-sm font-bold text-foreground mb-2">Perfect For:</h4>
                   <div className="grid grid-cols-2 gap-2">
@@ -2658,7 +2547,6 @@ metadata:
               </>
             )}
 
-            {/* Action Buttons */}
             <div className="flex gap-2 pt-2">
               <Button
                 onClick={() => setShowComparison(false)}
@@ -2684,11 +2572,10 @@ metadata:
         </div>
       )}
 
-      {/* Token Size Optimizer Modal */}
       {showOptimizer && (
         <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowOptimizer(false)}>
           <Card className="w-full max-w-5xl p-5 space-y-3 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            {/* Header */}
+
             <div className="flex items-center justify-between border-b pb-3">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg">
@@ -2708,7 +2595,6 @@ metadata:
               </Button>
             </div>
 
-            {/* Current Size */}
             <div className="p-3 bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-cyan-950/20 dark:to-blue-950/20 border border-cyan-200 dark:border-cyan-800 rounded-lg">
               <div className="flex items-center justify-between">
                 <div>
@@ -2722,7 +2608,6 @@ metadata:
               </div>
             </div>
 
-            {/* Optimization Suggestions */}
             {optimizationSuggestions.length > 0 ? (
               <div className="space-y-2">
                 <h4 className="text-sm font-bold text-foreground">Optimization Suggestions</h4>
@@ -2768,13 +2653,12 @@ metadata:
               </div>
             )}
 
-            {/* Before/After Comparison */}
             {optimizedToken && (
               <>
                 <div className="border-t pt-3">
                   <h4 className="text-sm font-bold text-foreground mb-2">Before vs After Comparison</h4>
                   <div className="grid grid-cols-2 gap-3">
-                    {/* Before */}
+
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
                         <Label className="text-xs font-semibold text-foreground">Before (Original)</Label>
@@ -2785,7 +2669,6 @@ metadata:
                       </div>
                     </div>
 
-                    {/* After */}
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
                         <Label className="text-xs font-semibold text-heading-accent">After (Optimized)</Label>
@@ -2797,7 +2680,6 @@ metadata:
                     </div>
                   </div>
 
-                  {/* Savings Summary */}
                   <div className="mt-3 p-3 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border border-border rounded-lg">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
@@ -2819,7 +2701,6 @@ metadata:
                   </div>
                 </div>
 
-                {/* Copy Optimized Token */}
                 <div className="flex items-center gap-2 p-3 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
                   <Info className="h-4 w-4 text-foreground shrink-0" />
                   <p className="text-xs text-muted-foreground flex-1">
@@ -2839,7 +2720,6 @@ metadata:
               </>
             )}
 
-            {/* Optimization Tips */}
             <div className="p-3 bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-cyan-950/20 dark:to-blue-950/20 border border-cyan-200 dark:border-cyan-800 rounded-lg">
               <h4 className="text-sm font-bold text-foreground mb-2">💡 Optimization Tips</h4>
               <div className="grid grid-cols-2 gap-2">
@@ -2874,7 +2754,6 @@ metadata:
               </div>
             </div>
 
-            {/* Action Buttons */}
             <div className="flex gap-2 pt-2">
               <Button
                 onClick={() => setShowOptimizer(false)}
@@ -2899,11 +2778,10 @@ metadata:
         </div>
       )}
 
-      {/* Performance Metrics Modal */}
       {showPerformance && performanceMetrics.tokenSize > 0 && (
         <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowPerformance(false)}>
           <Card className="w-full max-w-4xl p-5 space-y-3 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            {/* Header */}
+
             <div className="flex items-center justify-between border-b pb-3">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg">
@@ -2923,7 +2801,6 @@ metadata:
               </Button>
             </div>
 
-            {/* Performance Rating */}
             <div className={`p-3 border rounded-lg ${getPerformanceRating().bgColor} ${getPerformanceRating().borderColor}`}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -2940,7 +2817,6 @@ metadata:
               </div>
             </div>
 
-            {/* Processing Time */}
             <div>
               <h4 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
                 <Timer className="h-4 w-4 text-foreground" />
@@ -2960,14 +2836,13 @@ metadata:
               </div>
             </div>
 
-            {/* Token Size Breakdown */}
             <div>
               <h4 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
                 <BarChart3 className="h-4 w-4 text-foreground" />
                 Size Breakdown
               </h4>
               <div className="space-y-2">
-                {/* Header Size */}
+
                 <div>
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-xs font-medium text-foreground">Header</span>
@@ -2978,7 +2853,6 @@ metadata:
                   </div>
                 </div>
 
-                {/* Payload Size */}
                 <div>
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-xs font-medium text-foreground">Payload</span>
@@ -2989,7 +2863,6 @@ metadata:
                   </div>
                 </div>
 
-                {/* Signature Size */}
                 <div>
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-xs font-medium text-foreground">Signature</span>
@@ -3002,7 +2875,6 @@ metadata:
               </div>
             </div>
 
-            {/* Network Impact */}
             <div>
               <h4 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
                 <Activity className="h-4 w-4 text-foreground" />
@@ -3033,7 +2905,6 @@ metadata:
               </p>
             </div>
 
-            {/* Benchmark Comparison */}
             <div>
               <h4 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
                 <BarChart3 className="h-4 w-4 text-foreground" />
@@ -3063,7 +2934,6 @@ metadata:
               </div>
             </div>
 
-            {/* Optimization Recommendations */}
             <div className="p-3 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-950/20 dark:to-orange-950/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
               <h4 className="text-sm font-bold text-foreground mb-2">💡 Performance Recommendations</h4>
               <div className="space-y-2">
@@ -3113,7 +2983,6 @@ metadata:
               </div>
             </div>
 
-            {/* Action Buttons */}
             <div className="flex gap-2 pt-2">
               <Button
                 onClick={() => setShowPerformance(false)}
@@ -3136,9 +3005,8 @@ metadata:
         </div>
       )}
 
-      {/* How to Use JWT Decoder - Always Visible Tutorial Section */}
       <div className="mt-12 space-y-6">
-        {/* Header */}
+
         <div className="text-center space-y-2">
           <div className="flex items-center justify-center gap-3">
             <div className="p-3 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-lg">
@@ -3151,7 +3019,6 @@ metadata:
           </p>
         </div>
 
-            {/* Table of Contents */}
             <div className="p-4 bg-card border border-border rounded-lg">
               <h3 className="text-base font-bold text-foreground mb-3 flex items-center gap-2">
                 <BookOpen className="h-5 w-5 text-teal-600" />
@@ -3186,7 +3053,7 @@ metadata:
             </div>
 
             <div className="space-y-6">
-              {/* Section 1: What is JWT */}
+
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">1</span>
@@ -3212,7 +3079,6 @@ metadata:
                 </div>
               </div>
 
-              {/* Section 2: JWT Structure */}
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">2</span>
@@ -3222,7 +3088,7 @@ metadata:
                   <p>
                     A JWT looks like a long random string, but it&apos;s actually three parts separated by dots (.). Each part has a specific purpose. Let&apos;s break it down:
                   </p>
-                  
+
                   <div className="p-3 bg-gray-100 dark:bg-muted rounded-lg font-mono text-xs break-all">
                     <span className="text-foreground">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>
                     .
@@ -3231,7 +3097,6 @@ metadata:
                     <span className="text-foreground">SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span>
                   </div>
 
-                  {/* Header */}
                   <div className="p-3 bg-card border border-border rounded-lg">
                     <h4 className="font-semibold text-white mb-2">Part 1: Header (Blue)</h4>
                     <p className="text-gray-400 mb-2">
@@ -3239,13 +3104,12 @@ metadata:
                     </p>
                     <div className="bg-card p-2 rounded font-mono text-xs">
                       &#123;<br />
-                      &nbsp;&nbsp;&quot;alg&quot;: &quot;HS256&quot;,  // Algorithm used (HMAC SHA-256)<br />
-                      &nbsp;&nbsp;&quot;typ&quot;: &quot;JWT&quot;      // Token type<br />
+&nbsp;&nbsp;&quot;alg&quot;: &quot;HS256&quot;,
+&nbsp;&nbsp;&quot;typ&quot;: &quot;JWT&quot;
                       &#125;
                     </div>
                   </div>
 
-                  {/* Payload */}
                   <div className="p-3 bg-card border border-border rounded-lg">
                     <h4 className="font-semibold text-white mb-2">Part 2: Payload (Green)</h4>
                     <p className="text-gray-400 mb-2">
@@ -3253,12 +3117,12 @@ metadata:
                     </p>
                     <div className="bg-card p-2 rounded font-mono text-xs">
                       &#123;<br />
-                      &nbsp;&nbsp;&quot;sub&quot;: &quot;1234567890&quot;,  // Subject (user ID)<br />
-                      &nbsp;&nbsp;&quot;name&quot;: &quot;John Doe&quot;,     // User name<br />
+&nbsp;&nbsp;&quot;sub&quot;: &quot;1234567890&quot;,
+&nbsp;&nbsp;&quot;name&quot;: &quot;John Doe&quot;,
                       &nbsp;&nbsp;&quot;email&quot;: &quot;john@example.com&quot;,<br />
-                      &nbsp;&nbsp;&quot;role&quot;: &quot;admin&quot;,         // User role<br />
-                      &nbsp;&nbsp;&quot;iat&quot;: 1516239022,     // Issued at timestamp<br />
-                      &nbsp;&nbsp;&quot;exp&quot;: 1516242622      // Expiration timestamp<br />
+&nbsp;&nbsp;&quot;role&quot;: &quot;admin&quot;,
+&nbsp;&nbsp;&quot;iat&quot;: 1516239022,
+&nbsp;&nbsp;&quot;exp&quot;: 1516242622
                       &#125;
                     </div>
                     <p className="text-gray-400 mt-2 text-xs">
@@ -3266,7 +3130,6 @@ metadata:
                     </p>
                   </div>
 
-                  {/* Signature */}
                   <div className="p-3 bg-card border border-border rounded-lg">
                     <h4 className="font-semibold text-white mb-2">Part 3: Signature (Orange)</h4>
                     <p className="text-gray-400 mb-2">
@@ -3283,7 +3146,6 @@ metadata:
                 </div>
               </div>
 
-              {/* Section 3: How JWT Works */}
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">3</span>
@@ -3291,7 +3153,7 @@ metadata:
                 </h3>
                 <div className="pl-10 space-y-3 text-sm text-muted-foreground">
                   <p>Let&apos;s walk through a real-world example of how JWTs are used in a web application:</p>
-                  
+
                   <div className="space-y-2">
                     <div className="flex items-start gap-3 p-3 bg-card rounded-lg">
                       <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500 text-white text-xs font-bold shrink-0">1</div>
@@ -3352,7 +3214,6 @@ metadata:
                 </div>
               </div>
 
-              {/* Code Examples */}
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">4</span>
@@ -3362,7 +3223,6 @@ metadata:
                   Let&apos;s see how to create and verify JWTs in different programming languages. These are real, working code examples you can use in your projects! Our tool provides these code snippets automatically - just click the &quot;Get Code&quot; button after decoding a token.
                 </p>
 
-                {/* Node.js Example */}
                 <div className="pl-10 space-y-2">
                   <div className="p-3 bg-card border border-border rounded-lg">
                     <div className="flex items-center gap-2 mb-2">
@@ -3373,7 +3233,6 @@ metadata:
                     <pre className="bg-muted text-gray-100 p-3 rounded text-xs overflow-x-auto">
 {`const jwt = require('jsonwebtoken');
 
-// Create a JWT
 const payload = {
   userId: 123,
   username: 'johndoe',
@@ -3382,18 +3241,15 @@ const payload = {
 const secretKey = 'your-secret-key-keep-it-safe';
 const token = jwt.sign(payload, secretKey, { expiresIn: '1h' });
 
-
-// Verify a JWT
 try {
   const decoded = jwt.verify(token, secretKey);
-  // You can now access: decoded.userId, decoded.username, etc.
+
 } catch (error) {
   console.error('Invalid token:', error.message);
 }`}
                     </pre>
                   </div>
 
-                  {/* Python Example */}
                   <div className="p-3 bg-card border border-blue-200 dark:border-blue-800 rounded-lg">
                     <div className="flex items-center gap-2 mb-2">
                       <FileCode className="h-5 w-5 text-foreground" />
@@ -3428,7 +3284,6 @@ except jwt.InvalidTokenError:
                     </pre>
                   </div>
 
-                  {/* Using Our JWT Decoder Tool */}
                   <div className="p-4 bg-card border border-border rounded-lg">
                     <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                       <Lightbulb className="h-5 w-5 text-white" />
@@ -3441,7 +3296,6 @@ except jwt.InvalidTokenError:
                 </div>
               </div>
 
-              {/* Using Our JWT Decoder Features */}
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">5</span>
@@ -3451,61 +3305,52 @@ except jwt.InvalidTokenError:
                   <p>Our JWT Decoder is packed with powerful features to make working with JWTs easy. Let&apos;s explore each one:</p>
 
                   <div className="space-y-3">
-                    {/* Feature 1: Instant Decode */}
+
                     <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">🔍 Instant Decoding</h4>
                       <p className="text-xs">Just paste your JWT token in the text box and it automatically decodes! You&apos;ll see the header, payload, and signature split into three color-coded sections. We show both JSON format and a Claims Table view for easier reading.</p>
                     </div>
 
-                    {/* Feature 2: Algorithm Selector */}
                     <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">⚙️ Algorithm Selector & Examples</h4>
                       <p className="text-xs">Use the dropdown menu to select from 12 different algorithms (HS256, RS256, ES256, etc.). Click &quot;Generate Example&quot; to create a sample token for that algorithm - perfect for learning or testing!</p>
                     </div>
 
-                    {/* Feature 3: Expiration Countdown */}
                     <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">⏰ Live Expiration Countdown</h4>
                       <p className="text-xs">If your token has an expiration time (exp claim), you&apos;ll see a live countdown timer showing exactly how much time is left. The color changes from green to yellow to red as expiration approaches - so you never get caught with an expired token!</p>
                     </div>
 
-                    {/* Feature 4: Performance Metrics */}
                     <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">⚡ Performance Metrics</h4>
                       <p className="text-xs">Click the yellow &quot;Performance&quot; button to see how your token performs. We show decode/encode times, size breakdown (header vs payload vs signature), network impact projections, and compare against industry benchmarks. Learn if your token is too large!</p>
                     </div>
 
-                    {/* Feature 5: Export */}
                     <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">📤 Export to Multiple Formats</h4>
                       <p className="text-xs">Need to save your decoded token? Click &quot;Export&quot; to download in JSON, CSV, XML, YAML, or even a professional PDF report! Perfect for documentation or sharing with your team.</p>
                     </div>
 
-                    {/* Feature 6: Size Optimizer */}
                     <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">📊 Token Size Optimizer</h4>
                       <p className="text-xs">Got a large token? Click &quot;Optimize&quot; to get smart suggestions on how to reduce its size. We&apos;ll show you exactly how many bytes you can save by shortening claim names, removing unnecessary data, or using a different algorithm. You can even preview the optimized token before using it!</p>
                     </div>
 
-                    {/* Feature 7: Compare Tokens */}
                     <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">🔄 Token Comparison Tool</h4>
                       <p className="text-xs">Need to compare two tokens side-by-side? Click &quot;Compare&quot; to paste a second token and see exactly what changed. We highlight added, removed, and modified claims in different colors. Super useful for debugging token refresh issues or checking what changed between environments!</p>
                     </div>
 
-                    {/* Feature 8: Security Analyzer */}
                     <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">🛡️ Security Analyzer</h4>
                       <p className="text-xs">Click the red &quot;Security&quot; button to scan your token for vulnerabilities. We check for weak algorithms, expired tokens, missing critical claims, sensitive data in the payload, and more. You&apos;ll get a security score from 0-100 plus specific recommendations to improve your token&apos;s security.</p>
                     </div>
 
-                    {/* Feature 9: Code Generator */}
                     <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">💻 Multi-Language Code Generator</h4>
                       <p className="text-xs">Click &quot;Get Code&quot; to generate ready-to-use code snippets for verifying your token. Choose from Node.js, Python, Java, PHP, Go, or C#. Each snippet includes installation instructions and is ready to copy-paste into your project!</p>
                     </div>
 
-                    {/* Feature 10: Share Anonymously */}
                     <div className="p-3 bg-card rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">🔗 Share Token Anonymously</h4>
                       <p className="text-xs">Need to debug with your team? Click &quot;Share&quot; to generate a shareable link. You can choose to mask sensitive data (like emails or passwords) before sharing. The link never expires and your token is encoded in the URL - no data stored on our servers!</p>
@@ -3514,7 +3359,6 @@ except jwt.InvalidTokenError:
                 </div>
               </div>
 
-              {/* Common Mistakes */}
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">6</span>
@@ -3524,7 +3368,7 @@ except jwt.InvalidTokenError:
                   <p>Everyone makes mistakes when learning JWT. Here are the most common ones and how to avoid them:</p>
 
                   <div className="space-y-2">
-                    {/* Mistake 1 */}
+
                     <div className="p-3 bg-card border border-border rounded-lg">
                       <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
@@ -3538,7 +3382,6 @@ except jwt.InvalidTokenError:
                       </p>
                     </div>
 
-                    {/* Mistake 2 */}
                     <div className="p-3 bg-card border border-border rounded-lg">
                       <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
@@ -3552,7 +3395,6 @@ except jwt.InvalidTokenError:
                       </p>
                     </div>
 
-                    {/* Mistake 3 */}
                     <div className="p-3 bg-card border border-border rounded-lg">
                       <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
@@ -3566,7 +3408,6 @@ except jwt.InvalidTokenError:
                       </p>
                     </div>
 
-                    {/* Mistake 4 */}
                     <div className="p-3 bg-card border border-border rounded-lg">
                       <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
@@ -3579,7 +3420,6 @@ except jwt.InvalidTokenError:
                         <strong>Solution:</strong> Keep your tokens lean! Only include essential data. Use our Performance Metrics to check token size and get benchmarked against industry standards. If your token is large, click &quot;Optimize&quot; for suggestions on reducing its size.</p>
                     </div>
 
-                    {/* Mistake 5 */}
                     <div className="p-3 bg-card border border-border rounded-lg">
                       <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
@@ -3592,7 +3432,6 @@ except jwt.InvalidTokenError:
                         <strong>Solution:</strong> Always verify the signature on the server side! Our Code Generator provides complete examples including signature verification for all 6 programming languages.</p>
                     </div>
 
-                    {/* Mistake 6 */}
                     <div className="p-3 bg-card border border-border rounded-lg">
                       <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                         <AlertCircle className="h-4 w-4" />
@@ -3608,7 +3447,6 @@ except jwt.InvalidTokenError:
                 </div>
               </div>
 
-              {/* Best Practices */}
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">7</span>
@@ -3654,7 +3492,6 @@ except jwt.InvalidTokenError:
                 </div>
               </div>
 
-              {/* Final Note */}
               <div className="p-4 bg-card border border-border rounded-lg">
                 <h3 className="text-base font-bold text-foreground mb-2">🎓 Start Decoding JWTs Now!</h3>
                 <p className="text-sm text-muted-foreground">
@@ -3664,11 +3501,10 @@ except jwt.InvalidTokenError:
             </div>
           </div>
 
-      {/* Export Modal */}
       {showExport && (
         <div className="fixed inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setShowExport(false)}>
           <Card className="w-full max-w-2xl p-5 space-y-4" onClick={(e) => e.stopPropagation()}>
-            {/* Header */}
+
             <div className="flex items-center justify-between border-b pb-3">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg">
@@ -3688,11 +3524,10 @@ except jwt.InvalidTokenError:
               </Button>
             </div>
 
-            {/* Format Selection */}
             <div className="space-y-3">
               <h4 className="text-sm font-bold text-foreground">Select Export Format</h4>
               <div className="grid grid-cols-1 gap-2">
-                {/* JSON Format */}
+
                 <div
                   className={`p-3 border rounded-lg cursor-pointer transition-all ${
                     selectedExportFormat === 'json'
@@ -3717,7 +3552,6 @@ except jwt.InvalidTokenError:
                   </div>
                 </div>
 
-                {/* CSV Format */}
                 <div
                   className={`p-3 border rounded-lg cursor-pointer transition-all ${
                     selectedExportFormat === 'csv'
@@ -3742,7 +3576,6 @@ except jwt.InvalidTokenError:
                   </div>
                 </div>
 
-                {/* XML Format */}
                 <div
                   className={`p-3 border rounded-lg cursor-pointer transition-all ${
                     selectedExportFormat === 'xml'
@@ -3767,7 +3600,6 @@ except jwt.InvalidTokenError:
                   </div>
                 </div>
 
-                {/* YAML Format */}
                 <div
                   className={`p-3 border rounded-lg cursor-pointer transition-all ${
                     selectedExportFormat === 'yaml'
@@ -3792,7 +3624,6 @@ except jwt.InvalidTokenError:
                   </div>
                 </div>
 
-                {/* PDF Report */}
                 <div
                   className={`p-3 border rounded-lg cursor-pointer transition-all ${
                     selectedExportFormat === 'pdf'
@@ -3819,7 +3650,6 @@ except jwt.InvalidTokenError:
               </div>
             </div>
 
-            {/* Format Info */}
             <div className="p-3 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/20 dark:to-purple-950/20 border border-indigo-200 dark:border-indigo-800 rounded-lg">
               <h4 className="text-sm font-bold text-foreground mb-2">What&apos;s Included:</h4>
               <div className="grid grid-cols-2 gap-2">
@@ -3850,7 +3680,6 @@ except jwt.InvalidTokenError:
               </div>
             </div>
 
-            {/* Action Buttons */}
             <div className="flex gap-2 pt-2">
               <Button
                 onClick={() => setShowExport(false)}

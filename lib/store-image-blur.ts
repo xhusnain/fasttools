@@ -92,7 +92,7 @@ export const useImageBlurStore = create<EditorStore>()(
         result: null,
         isProcessing: false,
         blurIntensity: 10,
-        
+
       });
     },
 
@@ -100,7 +100,6 @@ export const useImageBlurStore = create<EditorStore>()(
       const { originalImage, blurIntensity, result, refineStrength } = get();
       if (!originalImage) return;
 
-      // Clear previous result if re-processing
       if (result?.resultUrl) {
         URL.revokeObjectURL(result.resultUrl);
       }

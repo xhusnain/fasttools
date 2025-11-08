@@ -6,12 +6,10 @@ const MODEL_URL = 'https://github.com/danielgatis/rembg/releases/download/v0.0.0
 const MODEL_DIR = path.join(__dirname, '..', 'public', 'models');
 const MODEL_PATH = path.join(MODEL_DIR, 'u2net.onnx');
 
-// Create models directory if it doesn't exist
 if (!fs.existsSync(MODEL_DIR)) {
   fs.mkdirSync(MODEL_DIR, { recursive: true });
 }
 
-// Remove any existing model files to prevent corruption
 if (fs.existsSync(MODEL_PATH)) {
   try {
     fs.unlinkSync(MODEL_PATH);
@@ -20,20 +18,16 @@ if (fs.existsSync(MODEL_PATH)) {
   }
 }
 
-// Check for and remove any partial downloads
-const partialFiles = fs.readdirSync(MODEL_DIR).filter(file => 
+const partialFiles = fs.readdirSync(MODEL_DIR).filter(file =>
   file.startsWith('u2net') && (file.endsWith('.tmp') || file.endsWith('.partial'))
 );
 if (partialFiles.length > 0) {
   partialFiles.forEach(file => {
     try {
       fs.unlinkSync(path.join(MODEL_DIR, file));
-    } catch (err) {
-      // Silently ignore
-    }
+    } catch (err) {}
   });
 }
-
 
 const file = fs.createWriteStream(MODEL_PATH);
 let downloadedBytes = 0;
@@ -41,7 +35,7 @@ let totalBytes = 0;
 let lastProgress = 0;
 
 https.get(MODEL_URL, (response) => {
-  // Handle redirects
+
   if (response.statusCode === 302 || response.statusCode === 301) {
     https.get(response.headers.location, handleDownload);
     return;
@@ -65,8 +59,7 @@ function handleDownload(response) {
   response.on('data', (chunk) => {
     downloadedBytes += chunk.length;
     const progress = Math.floor((downloadedBytes / totalBytes) * 100);
-    
-    // Update progress every 5%
+
     if (progress >= lastProgress + 5 || progress === 100) {
       const downloaded = (downloadedBytes / 1024 / 1024).toFixed(2);
       const total = (totalBytes / 1024 / 1024).toFixed(2);

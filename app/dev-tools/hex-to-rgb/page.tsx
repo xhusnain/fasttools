@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   keywords: [
     "fasttools",
     "fast tools",
-    // Core Conversion Keywords
+
     "color converter",
     "hex to rgb",
     "rgb to hex",
@@ -39,8 +39,7 @@ export const metadata: Metadata = {
     "rgb to cmyk",
     "hex to oklch",
     "rgb to pantone converter",
-    
-    // Format-Specific Keywords
+
     "hex color",
     "hex color codes",
     "hex color code",
@@ -59,8 +58,7 @@ export const metadata: Metadata = {
     "hex value",
     "rgb into hex",
     "colour conversion",
-    
-    // Color Picker Keywords
+
     "color picker",
     "color picker online",
     "hex code color picker",
@@ -72,8 +70,7 @@ export const metadata: Metadata = {
     "hex finder",
     "hex code finder",
     "online color picker",
-    
-    // Specific Color Keywords
+
     "hex red color",
     "hex blue",
     "hex green",
@@ -94,8 +91,7 @@ export const metadata: Metadata = {
     "rgb navy blue",
     "hex number color",
     "hex number for gold",
-    
-    // Feature-Based Keywords
+
     "alpha channel",
     "opacity converter",
     "hex opacity",
@@ -111,8 +107,7 @@ export const metadata: Metadata = {
     "hex calculator",
     "hex decoder",
     "color code generator",
-    
-    // Online/Free Keywords
+
     "color converter online",
     "free color converter",
     "hex to rgb online",
@@ -122,8 +117,7 @@ export const metadata: Metadata = {
     "free rgb converter",
     "rgb online",
     "hex online",
-    
-    // Use Case Keywords
+
     "web color converter",
     "css color format",
     "design color tools",
@@ -137,8 +131,7 @@ export const metadata: Metadata = {
     "rgb full form",
     "rgb to color",
     "rgb numbers",
-    
-    // Tool-Specific Keywords
+
     "hex rgb hsl converter",
     "all color formats",
     "multi format color converter",
@@ -151,8 +144,7 @@ export const metadata: Metadata = {
     "hex value converter",
     "rgb value finder",
     "hex value finder",
-    
-    // Additional Color Format Keywords
+
     "color converter cmyk to hex",
     "color converter pantone",
     "color converter ral",
@@ -169,15 +161,13 @@ export const metadata: Metadata = {
     "rgb zu cmyk",
     "rgb zu ral",
     "hex zu dezimal",
-    
-    // Specific Hex Values
+
     "hex 000",
     "hex 00ff00",
     "hex 00ffff",
     "hex 0000ff",
     "hex value colors",
-    
-    // Specific RGB Values
+
     "rgb 1 1 1",
     "rgb 20 20 20",
     "rgb 25 25 25",
@@ -193,8 +183,7 @@ export const metadata: Metadata = {
     "rgb 565",
     "rgb 000 color",
     "rgb of black",
-    
-    // Image Color Conversion
+
     "convert color jpg to black and white",
     "convert color logo to white",
     "convert color logo to white online",
@@ -205,8 +194,7 @@ export const metadata: Metadata = {
     "bw to color converter",
     "add color to black and white picture",
     "get color hex from image",
-    
-    // Core Color Conversions
+
     "hex to color",
     "color to hex",
     "hex to dec",
@@ -239,8 +227,7 @@ export const metadata: Metadata = {
     "binary in hex",
     "to hex string",
     "hex string",
-    
-    // Specific Color Hex Codes
+
     "hex for black",
     "hex for white",
     "hex for red",
@@ -301,8 +288,7 @@ export const metadata: Metadata = {
     "hex number color",
     "hex skin color",
     "36393e hex",
-    
-    // Specific RGB Color Codes
+
     "rgb for black",
     "rgb for white",
     "rgb for red",
@@ -313,8 +299,7 @@ export const metadata: Metadata = {
     "rgb for grey",
     "rgb for silver",
     "black in rgb",
-    
-    // Color Tools & Utilities
+
     "calculate hex",
     "hex finder",
     "hex number system",
@@ -339,8 +324,7 @@ export const metadata: Metadata = {
     "hex with numbers",
     "for hex code",
     "with hex code",
-    
-    // RGB Utilities
+
     "to rgb converter",
     "to rgb hex",
     "to rgb css",
@@ -351,8 +335,7 @@ export const metadata: Metadata = {
     "rgb with numbers",
     "rgb nearest color",
     "in rgb",
-    
-    // Advanced Color Conversions
+
     "wavelength to color converter",
     "grayscale to color converter",
     "black to color converter",
@@ -383,8 +366,7 @@ export const metadata: Metadata = {
     "color converter to pms",
     "color converter to paint",
     "color converter to argb",
-    
-    // Color Format Comparisons
+
     "rgb and cmyk",
     "rgb vs cmyk",
     "rgb and cmyk color",
@@ -427,8 +409,7 @@ export const metadata: Metadata = {
     "hex or rgb colors",
     "colors like rgb",
     "hex vs binary",
-    
-    // Specific Color Codes (Additional)
+
     "lime green hex code"
   ],
   applicationName: "FastTools",
@@ -449,7 +430,7 @@ export const metadata: Metadata = {
     },
   },
   category: "Developer Tools",
-  alternates: { 
+  alternates: {
     canonical: "https://www.fasttools.store/dev-tools/hex-to-rgb",
     languages: {
       "en-US": "https://www.fasttools.store/dev-tools/hex-to-rgb",
@@ -519,14 +500,14 @@ export const metadata: Metadata = {
           "Free online color converter tool. Convert Hex to RGB, RGB to Hex, HSL, RGBA, HSLA instantly. Color picker, hex to decimal converter, alpha channel support. Best color code converter for web developers and designers with live preview and one-click copy.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: { 
-        "@type": "Offer", 
-        price: "0", 
+      offers: {
+        "@type": "Offer",
+        price: "0",
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
       featureList: [
-          "Hex to RGB conversion", 
+          "Hex to RGB conversion",
           "RGB to Hex conversion",
           "HSL to RGB conversion",
           "RGB to HSL conversion",
@@ -548,9 +529,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: { 
-        "@type": "Organization", 
-        name: "FastTools", 
+      publisher: {
+        "@type": "Organization",
+        name: "FastTools",
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -642,7 +623,7 @@ export default function HexToRGBPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8">
               <div className="flex-1 lg:flex-[2] space-y-4 sm:space-y-5 md:space-y-6">
-                {/* Hero Section */}
+                {}
                 <div className="text-center space-y-3 sm:space-y-4 md:space-y-5 animate-fade-in-up">
                   <GHeader
                     title="Color Converter - Hex to RGB, RGB to Hex, HSL Online Free"
@@ -652,17 +633,17 @@ export default function HexToRGBPage() {
                   />
                 </div>
 
-                {/* Mobile Ad Space */}
+                {}
                 <div className="lg:hidden">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {/* Hex to RGB Tool */}
+                {}
                 <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
                   <HexToRGB />
                 </div>
 
-                {/* Content Sections */}
+                {}
                 <div className="space-y-4 sm:space-y-5 animate-fade-in-up animation-delay-200">
                   <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">How to Use the Color Converter</h2>
@@ -885,10 +866,10 @@ export default function HexToRGBPage() {
                     </div>
                   </div>
 
-                  {/* Color Code Keywords Content */}
+                  {}
                   <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Specific Color Codes and Conversions</h2>
-                    
+
                     <div className="space-y-4">
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-heading-accent mb-3">36393e Color: Discord Dark Theme Hex Code</h3>
@@ -1272,28 +1253,28 @@ export default function HexToRGBPage() {
                   <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Related Developer Tools</h2>
                     <div className="grid gap-2 sm:gap-3 grid-cols-1 sm:grid-cols-2 text-sm">
-                      <Link 
+                      <Link
                         href="/dev-tools/html-beautifier"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">HTML Beautifier</h3>
                         <p className="text-xs text-muted-foreground">Format and minify HTML code</p>
                       </Link>
-                      <Link 
+                      <Link
                         href="/dev-tools/json-to-csv"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">JSON to CSV</h3>
                         <p className="text-xs text-muted-foreground">Convert JSON data to CSV format</p>
                       </Link>
-                      <Link 
+                      <Link
                         href="/dev-tools/regex-tester"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">Regex Tester</h3>
                         <p className="text-xs text-muted-foreground">Test regular expressions online</p>
                       </Link>
-                      <Link 
+                      <Link
                         href="/dev-tools"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
@@ -1305,7 +1286,7 @@ export default function HexToRGBPage() {
                 </div>
         </div>
 
-              {/* Desktop Sidebar with AdSense (sticky, hidden on mobile/tablet) */}
+              {}
               <div className="hidden lg:block w-72 flex-shrink-0">
                 <div className="sticky top-32 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

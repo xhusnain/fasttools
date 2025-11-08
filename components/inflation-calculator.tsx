@@ -8,47 +8,47 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  DollarSign, 
-  Percent, 
-  Calendar, 
-  TrendingUp, 
-  TrendingDown, 
-  Info, 
-  AlertCircle, 
-  CheckCircle, 
-  Copy, 
-  Download, 
-  History, 
-  Star, 
-  Globe, 
-  Shield, 
-  FileText, 
-  BarChart3, 
-  PieChart, 
-  Target, 
-  Zap, 
-  Clock, 
-  Users, 
-  Home, 
-  Car, 
-  ShoppingBag, 
-  CreditCard, 
-  Banknote, 
-  Coins, 
-  Wallet, 
-  Briefcase, 
-  Store, 
-  Truck, 
-  Package, 
-  Tag, 
-  ShoppingCart, 
-  HandHeart, 
-  Gift, 
-  Award, 
-  Trophy, 
-  TrendingUp as TrendingUpIcon, 
+import {
+  Calculator,
+  DollarSign,
+  Percent,
+  Calendar,
+  TrendingUp,
+  TrendingDown,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Copy,
+  Download,
+  History,
+  Star,
+  Globe,
+  Shield,
+  FileText,
+  BarChart3,
+  PieChart,
+  Target,
+  Zap,
+  Clock,
+  Users,
+  Home,
+  Car,
+  ShoppingBag,
+  CreditCard,
+  Banknote,
+  Coins,
+  Wallet,
+  Briefcase,
+  Store,
+  Truck,
+  Package,
+  Tag,
+  ShoppingCart,
+  HandHeart,
+  Gift,
+  Award,
+  Trophy,
+  TrendingUp as TrendingUpIcon,
   TrendingDown as TrendingDownIcon,
   Stethoscope,
   Brain,
@@ -110,7 +110,6 @@ export default function InflationCalculator() {
   const [result, setResult] = useState<InflationResult | null>(null)
   const [history, setHistory] = useState<InflationResult[]>([])
 
-  // Historical CPI data (simplified for demonstration)
   const cpiData: { [key: number]: number } = {
     2025: 310.0,
     2024: 308.0,
@@ -164,7 +163,7 @@ export default function InflationCalculator() {
     let calculatedResult: InflationResult
 
     if (calculationType === "cpi") {
-      // CPI-based calculation
+
       const startCPI = cpiData[start] || 100
       const endCPI = cpiData[end] || 100
       const inflationRate = ((endCPI - startCPI) / startCPI) * 100
@@ -191,7 +190,7 @@ export default function InflationCalculator() {
         comparison: generateComparison(adjustedAmount, inflationRate)
       }
     } else if (calculationType === "forward") {
-      // Forward flat rate calculation
+
       const adjustedAmount = amount * Math.pow(1 + rate / 100, yearsCount)
       const totalInflation = adjustedAmount - amount
       const purchasingPower = (amount / adjustedAmount) * 100
@@ -215,7 +214,7 @@ export default function InflationCalculator() {
         comparison: generateComparison(adjustedAmount, rate)
       }
     } else {
-      // Backward flat rate calculation
+
       const adjustedAmount = amount / Math.pow(1 + rate / 100, yearsCount)
       const totalInflation = amount - adjustedAmount
       const purchasingPower = (adjustedAmount / amount) * 100
@@ -265,7 +264,6 @@ export default function InflationCalculator() {
     const inflationHedges: string[] = []
     const financialPlanning: string[] = []
 
-    // Investment recommendations based on inflation rate
     if (inflationRate > 5) {
       investmentTips.push("Consider inflation-protected securities (TIPS)")
       investmentTips.push("Diversify into commodities and real estate")
@@ -280,14 +278,12 @@ export default function InflationCalculator() {
       investmentTips.push("Consider municipal bonds for tax efficiency")
     }
 
-    // Inflation hedge recommendations
     inflationHedges.push("Treasury Inflation-Protected Securities (TIPS)")
     inflationHedges.push("Real estate investment trusts (REITs)")
     inflationHedges.push("Commodities like gold, silver, and oil")
     inflationHedges.push("Stocks of companies with strong pricing power")
     inflationHedges.push("International diversification")
 
-    // Financial planning recommendations
     financialPlanning.push("Review and adjust your investment allocation")
     financialPlanning.push("Consider inflation in retirement planning")
     financialPlanning.push("Evaluate your emergency fund adequacy")
@@ -332,7 +328,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
 
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-2 sm:p-3 md:p-4 w-full overflow-hidden">
-      {/* Main Calculator */}
+      {}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -341,7 +337,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4 sm:space-y-6 px-2 sm:px-3 md:px-4">
-          {/* Calculation Type Selection */}
+          {}
           <div>
             <Label className="text-xs sm:text-sm text-heading-accent mb-2 block">Calculation Type</Label>
             <Tabs value={calculationType} onValueChange={setCalculationType} className="w-full">
@@ -350,7 +346,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                 <TabsTrigger value="forward" className="text-xs sm:text-sm">Forward Rate</TabsTrigger>
                 <TabsTrigger value="backward" className="text-xs sm:text-sm">Backward Rate</TabsTrigger>
               </TabsList>
-              
+
               <TabsContent value="cpi" className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
@@ -388,7 +384,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                   />
                 </div>
               </TabsContent>
-              
+
               <TabsContent value="forward" className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
@@ -426,7 +422,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
                   />
                 </div>
               </TabsContent>
-              
+
               <TabsContent value="backward" className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-1.5 w-full min-w-0">
@@ -478,10 +474,10 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
         </CardContent>
       </Card>
 
-      {/* Results Section */}
+      {}
       {result && (
         <div className="space-y-6">
-          {/* Main Results */}
+          {}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -529,7 +525,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
             </CardContent>
           </Card>
 
-          {/* Summary */}
+          {}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -560,7 +556,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
             </CardContent>
           </Card>
 
-          {/* Historical Data */}
+          {}
           {result.historicalData.length > 0 && (
             <Card className="bg-card border-border w-full overflow-hidden">
               <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
@@ -598,7 +594,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
             </Card>
           )}
 
-          {/* Inflation Scenarios */}
+          {}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -623,7 +619,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
             </CardContent>
           </Card>
 
-          {/* Recommendations */}
+          {}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -672,7 +668,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
         </div>
       )}
 
-      {/* History Section */}
+      {}
       {history.length > 0 && (
         <Card className="bg-card border-border w-full overflow-hidden">
           <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
@@ -708,7 +704,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
         </Card>
       )}
 
-      {/* Information Section */}
+      {}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -730,7 +726,7 @@ Purchasing Power: ${result.purchasingPower.toFixed(1)}%`
               </div>
             </div>
           </div>
-          
+
           <div className="text-xs sm:text-sm text-foreground space-y-1.5 sm:space-y-2">
             <p className="break-words">
               <strong className="text-heading-accent">CPI Data:</strong> Uses historical Consumer Price Index data from 1913 to 2025.

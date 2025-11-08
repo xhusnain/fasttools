@@ -8,47 +8,47 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  DollarSign, 
-  Percent, 
-  Calendar, 
-  TrendingUp, 
-  TrendingDown, 
-  Info, 
-  AlertCircle, 
-  CheckCircle, 
-  Copy, 
-  Download, 
-  History, 
-  Star, 
-  Globe, 
-  Shield, 
-  FileText, 
-  BarChart3, 
-  PieChart, 
-  Target, 
-  Zap, 
-  Clock, 
-  Users, 
-  Home, 
-  Car, 
-  ShoppingBag, 
-  CreditCard, 
-  Banknote, 
-  Coins, 
-  Wallet, 
-  Briefcase, 
-  Store, 
-  Truck, 
-  Package, 
-  Tag, 
-  ShoppingCart, 
-  HandHeart, 
-  Gift, 
-  Award, 
-  Trophy, 
-  TrendingUp as TrendingUpIcon, 
+import {
+  Calculator,
+  DollarSign,
+  Percent,
+  Calendar,
+  TrendingUp,
+  TrendingDown,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Copy,
+  Download,
+  History,
+  Star,
+  Globe,
+  Shield,
+  FileText,
+  BarChart3,
+  PieChart,
+  Target,
+  Zap,
+  Clock,
+  Users,
+  Home,
+  Car,
+  ShoppingBag,
+  CreditCard,
+  Banknote,
+  Coins,
+  Wallet,
+  Briefcase,
+  Store,
+  Truck,
+  Package,
+  Tag,
+  ShoppingCart,
+  HandHeart,
+  Gift,
+  Award,
+  Trophy,
+  TrendingUp as TrendingUpIcon,
   TrendingDown as TrendingDownIcon,
   Stethoscope,
   Brain,
@@ -115,7 +115,7 @@ export default function InvestmentCalculator() {
   const [history, setHistory] = useState<InvestmentResult[]>([])
 
   const formatNumber = (num: number): number => {
-    // Round to 2 decimal places and avoid scientific notation
+
     return Math.round(num * 100) / 100
   }
 
@@ -126,7 +126,6 @@ export default function InvestmentCalculator() {
     const rate = parseFloat(returnRate) || 0
     const length = parseFloat(investmentLength) || 0
 
-    // Input validation
     if (rate < 0) {
       alert("Return rate cannot be negative")
       return
@@ -151,18 +150,18 @@ export default function InvestmentCalculator() {
     let calculatedResult: InvestmentResult
 
     if (calculationType === "endAmount") {
-      // Calculate End Amount
+
       const annualRate = rate / 100
       const periods = length
       const compoundPeriods = getCompoundPeriods(compoundFrequency)
       const effectiveRate = Math.pow(1 + annualRate / compoundPeriods, compoundPeriods) - 1
-      
+
       let futureValue = starting * Math.pow(1 + effectiveRate, periods)
-      
+
       if (additional > 0) {
         const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
         if (effectiveRate === 0) {
-          // If no interest, just add contributions
+
           futureValue += additional * periods
         } else {
           const annuityFactor = ((Math.pow(1 + effectiveRate, periods) - 1) / effectiveRate) * contributionFactor
@@ -190,71 +189,70 @@ export default function InvestmentCalculator() {
         comparison: generateComparison(futureValue, rate)
       }
     } else if (calculationType === "returnRate") {
-      // Calculate Return Rate using Newton-Raphson method
+
       const targetAmount = end
       const periods = length
       const compoundPeriods = getCompoundPeriods(compoundFrequency)
-      
-      let rateGuess = 0.05 // Start with 5%
+
+      let rateGuess = 0.05
       let tolerance = 0.0001
       let maxIterations = 50
       let iteration = 0
-      
+
       while (iteration < maxIterations) {
         const f = (r: number) => {
           const effectiveRate = Math.pow(1 + r / compoundPeriods, compoundPeriods) - 1
           let futureValue = starting * Math.pow(1 + effectiveRate, periods)
-          
+
           if (additional > 0) {
             const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
             const annuityFactor = ((Math.pow(1 + effectiveRate, periods) - 1) / effectiveRate) * contributionFactor
             futureValue += additional * annuityFactor
           }
-          
+
           return futureValue - targetAmount
         }
-        
+
         const fPrime = (r: number) => {
           const effectiveRate = Math.pow(1 + r / compoundPeriods, compoundPeriods) - 1
           let derivative = starting * periods * Math.pow(1 + effectiveRate, periods - 1) * (1 / compoundPeriods) * Math.pow(1 + r / compoundPeriods, compoundPeriods - 1)
-          
+
           if (additional > 0) {
             const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
             const annuityDerivative = ((periods * Math.pow(1 + effectiveRate, periods - 1) * (1 / compoundPeriods) * Math.pow(1 + r / compoundPeriods, compoundPeriods - 1) * periods - (Math.pow(1 + effectiveRate, periods) - 1) * (1 / compoundPeriods) * Math.pow(1 + r / compoundPeriods, compoundPeriods - 1)) / (effectiveRate * effectiveRate)) * contributionFactor
             derivative += additional * annuityDerivative
           }
-          
+
           return derivative
         }
-        
+
         const fValue = f(rateGuess)
         const fPrimeValue = fPrime(rateGuess)
-        
+
         if (Math.abs(fValue) < tolerance) break
-        
+
         if (fPrimeValue === 0) break
-        
+
         const newRateGuess = rateGuess - fValue / fPrimeValue
-        
-        // Bounds checking to prevent extreme values
+
         if (newRateGuess < 0 || newRateGuess > 2) {
           break
         }
-        
+
         rateGuess = newRateGuess
         iteration++
       }
 
-      const finalRate = Math.min(Math.max(rateGuess * 100, 0), 200) // Cap between 0% and 200%
+      const finalRate = Math.min(Math.max(rateGuess * 100, 0), 200)
       const annualRate = finalRate / 100
       const effectiveRate = Math.pow(1 + annualRate / compoundPeriods, compoundPeriods) - 1
-      
+
       let futureValue = starting * Math.pow(1 + effectiveRate, periods)
-      
+
       if (additional > 0) {
         const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
         if (effectiveRate === 0) {
-          // If no interest, just add contributions
+
           futureValue += additional * periods
         } else {
           const annuityFactor = ((Math.pow(1 + effectiveRate, periods) - 1) / effectiveRate) * contributionFactor
@@ -282,12 +280,12 @@ export default function InvestmentCalculator() {
         comparison: generateComparison(futureValue, finalRate)
       }
     } else if (calculationType === "startingAmount") {
-      // Calculate Starting Amount
+
       const annualRate = rate / 100
       const periods = length
       const compoundPeriods = getCompoundPeriods(compoundFrequency)
       const effectiveRate = Math.pow(1 + annualRate / compoundPeriods, compoundPeriods) - 1
-      
+
       let annuityValue = 0
       if (additional > 0) {
         const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
@@ -298,7 +296,7 @@ export default function InvestmentCalculator() {
           annuityValue = additional * annuityFactor
         }
       }
-      
+
       const requiredStarting = (end - annuityValue) / Math.pow(1 + effectiveRate, periods)
 
       calculatedResult = {
@@ -321,15 +319,15 @@ export default function InvestmentCalculator() {
         comparison: generateComparison(end, rate)
       }
     } else if (calculationType === "additionalContribution") {
-      // Calculate Additional Contribution
+
       const annualRate = rate / 100
       const periods = length
       const compoundPeriods = getCompoundPeriods(compoundFrequency)
       const effectiveRate = Math.pow(1 + annualRate / compoundPeriods, compoundPeriods) - 1
-      
+
       const startingValue = starting * Math.pow(1 + effectiveRate, periods)
       const remainingAmount = end - startingValue
-      
+
       let requiredContribution = 0
       if (remainingAmount > 0) {
         const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
@@ -361,14 +359,14 @@ export default function InvestmentCalculator() {
         comparison: generateComparison(end, rate)
       }
     } else {
-      // Calculate Investment Length
+
       const annualRate = rate / 100
       const compoundPeriods = getCompoundPeriods(compoundFrequency)
       const effectiveRate = Math.pow(1 + annualRate / compoundPeriods, compoundPeriods) - 1
-      
+
       let periods = 0
       if (effectiveRate === 0) {
-        // If no interest, just divide by contributions
+
         periods = (end - starting) / additional
       } else if (additional > 0) {
         const contributionFactor = contributionTiming === "beginning" ? (1 + effectiveRate) : 1
@@ -379,7 +377,6 @@ export default function InvestmentCalculator() {
         periods = Math.log(end / starting) / Math.log(1 + effectiveRate)
       }
 
-      // Cap periods to reasonable range
       periods = Math.min(Math.max(periods, 0), 100)
 
       calculatedResult = {
@@ -423,14 +420,14 @@ export default function InvestmentCalculator() {
     const annualRate = rate / 100
     const compoundPeriods = getCompoundPeriods(frequency)
     const effectiveRate = Math.pow(1 + annualRate / compoundPeriods, compoundPeriods) - 1
-    
+
     let balance = starting
-    
-    for (let year = 1; year <= Math.min(length, 50); year++) { // Cap at 50 years
+
+    for (let year = 1; year <= Math.min(length, 50); year++) {
       const deposit = additional
       const interest = balance * effectiveRate
       balance = balance + deposit + interest
-      
+
       schedule.push({
         year,
         deposit: formatNumber(starting + (additional * year)),
@@ -438,7 +435,7 @@ export default function InvestmentCalculator() {
         endingBalance: formatNumber(balance)
       })
     }
-    
+
     return schedule
   }
 
@@ -447,7 +444,6 @@ export default function InvestmentCalculator() {
     const riskManagement: string[] = []
     const portfolioStrategies: string[] = []
 
-    // Investment recommendations based on return rate
     if (rate > 10) {
       investmentTips.push("Consider high-growth investments like growth stocks")
       investmentTips.push("Evaluate risk tolerance for higher returns")
@@ -462,14 +458,12 @@ export default function InvestmentCalculator() {
       investmentTips.push("Consider inflation-protected securities")
     }
 
-    // Risk management recommendations
     riskManagement.push("Diversify your investment portfolio")
     riskManagement.push("Regularly rebalance your portfolio")
     riskManagement.push("Consider dollar-cost averaging")
     riskManagement.push("Review and adjust risk tolerance over time")
     riskManagement.push("Maintain an emergency fund")
 
-    // Portfolio strategies
     portfolioStrategies.push("Age-appropriate asset allocation")
     portfolioStrategies.push("Consider target-date funds")
     portfolioStrategies.push("Regular portfolio rebalancing")
@@ -514,7 +508,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
 
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-2 sm:p-3 md:p-4 w-full overflow-hidden">
-      {/* Main Calculator */}
+      {}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -523,11 +517,11 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4 sm:space-y-6">
-          {/* Calculation Type Selection */}
+          {}
           <div>
             <Label className="text-heading-accent text-xs sm:text-sm mb-2 block break-words">Calculate</Label>
-            
-            {/* Mobile Dropdown */}
+
+            {}
             <div className="block md:hidden mb-4">
               <Select value={calculationType} onValueChange={setCalculationType}>
                 <SelectTrigger className="border-border bg-card text-foreground w-full text-xs sm:text-sm h-9">
@@ -543,7 +537,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               </Select>
             </div>
 
-            {/* Desktop Tabs */}
+            {}
             <Tabs value={calculationType} onValueChange={setCalculationType} className="w-full hidden md:block">
               <TabsList className="grid w-full grid-cols-5 bg-card border border-border">
                 <TabsTrigger value="endAmount" className="text-xs sm:text-sm">End Amount</TabsTrigger>
@@ -554,7 +548,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               </TabsList>
             </Tabs>
 
-            {/* Mobile/Desktop Input Fields */}
+            {}
             <div className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
               {calculationType === "endAmount" && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
@@ -803,7 +797,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
             </div>
           </div>
 
-          {/* Additional Settings */}
+          {}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-1.5 w-full min-w-0">
               <Label htmlFor="compoundFrequency" className="text-heading-accent text-xs sm:text-sm">Compound Frequency</Label>
@@ -846,10 +840,10 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
         </CardContent>
       </Card>
 
-      {/* Results Section */}
+      {}
       {result && (
         <div className="space-y-4 sm:space-y-6">
-          {/* Main Results */}
+          {}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -897,7 +891,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
             </CardContent>
           </Card>
 
-          {/* Summary */}
+          {}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -923,7 +917,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
             </CardContent>
           </Card>
 
-          {/* Accumulation Schedule */}
+          {}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -957,7 +951,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
             </CardContent>
           </Card>
 
-          {/* Investment Scenarios */}
+          {}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -982,7 +976,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
             </CardContent>
           </Card>
 
-          {/* Recommendations */}
+          {}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -1031,7 +1025,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
         </div>
       )}
 
-      {/* History Section */}
+      {}
       {history.length > 0 && (
         <Card className="bg-card border-border w-full overflow-hidden">
           <CardHeader>
@@ -1067,7 +1061,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
         </Card>
       )}
 
-      {/* Information Section */}
+      {}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -1089,7 +1083,7 @@ Total Interest: $${result.calculations.totalInterest.toFixed(2)}`
               </div>
             </div>
           </div>
-          
+
           <div className="text-xs sm:text-sm text-foreground space-y-2">
             <p className="break-words">
               <strong className="text-heading-accent">Multiple Calculation Modes:</strong> Calculate end amount, return rate, starting amount, additional contributions, or investment length.

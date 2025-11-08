@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 }
 
 export default function XVideoDownloaderPage() {
-  // BreadcrumbList Schema
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -79,7 +79,6 @@ export default function XVideoDownloaderPage() {
     ]
   }
 
-  // FAQ Schema for Rich Snippets
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -151,7 +150,6 @@ export default function XVideoDownloaderPage() {
     ]
   }
 
-  // HowTo Schema for Step-by-Step Guide
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
@@ -201,7 +199,6 @@ export default function XVideoDownloaderPage() {
     ]
   }
 
-  // Article Schema for Content Authority
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -273,32 +270,32 @@ export default function XVideoDownloaderPage() {
 
   return (
     <>
-      {/* Structured Data - WebApplication */}
+      {}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Structured Data - BreadcrumbList */}
+      {}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      {/* Structured Data - HowTo */}
+      {}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      {/* Structured Data - Article */}
+      {}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      {/* Structured Data - FAQPage */}
+      {}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      
+
       <div className="min-h-screen bg-background overflow-x-hidden">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
           <div className="max-w-7xl mx-auto w-full">
@@ -311,7 +308,7 @@ export default function XVideoDownloaderPage() {
               />
             </nav>
 
-            {/* Hero Section */}
+            {}
             <header className="text-center mb-4 sm:mb-6 md:mb-8">
               <GHeader
                 title="X Video Downloader – HD Videos Without Watermark"
@@ -324,7 +321,7 @@ export default function XVideoDownloaderPage() {
               </p>
             </header>
 
-            {/* Stats Counter */}
+            {}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 p-3 sm:p-4 md:p-5 lg:p-6 bg-primary/5 rounded-lg mb-4 sm:mb-6 md:mb-8">
               <div className="text-center p-2 sm:p-3">
                 <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">2M+</div>
@@ -344,20 +341,20 @@ export default function XVideoDownloaderPage() {
               </div>
             </div>
 
-            {/* Mobile Ad Space */}
+            {}
             <div className="lg:hidden mb-4 sm:mb-6">
               <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
             </div>
 
-            {/* Main Layout */}
+            {}
             <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8">
-              {/* Main Content */}
+              {}
               <main className="flex-1 lg:flex-[2] space-y-4 sm:space-y-6 md:space-y-8 min-w-0" role="main">
                 <section aria-label="X Video Downloader Tool">
                   <XVideoDownloader />
                 </section>
 
-                {/* Pro Tips Box */}
+                {}
                 <div className="p-3 sm:p-4 md:p-5 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
                   <h3 className="text-sm sm:text-base font-semibold mb-2 flex items-center gap-2">
                     <Zap className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-600 dark:text-yellow-400" />
@@ -371,7 +368,7 @@ export default function XVideoDownloaderPage() {
                   </ul>
                 </div>
 
-                {/* What is X Video Downloader - Definition Section */}
+                {}
                 <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
                   <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">What is an X Video Downloader?</h2>
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-2 sm:mb-3">
@@ -385,7 +382,7 @@ export default function XVideoDownloaderPage() {
                   </p>
                 </div>
 
-                {/* How to Use Section */}
+                {}
                 <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
                 <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">How to Use X Video Downloader</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
@@ -428,7 +425,7 @@ export default function XVideoDownloaderPage() {
                 </div>
                 </div>
 
-                {/* Why Use X Video Downloader Section */}
+                {}
                 <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-300">
                   <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Why Use an X Video Downloader?</h2>
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-2 sm:mb-3">
@@ -453,7 +450,7 @@ export default function XVideoDownloaderPage() {
                   </div>
                 </div>
 
-                {/* How Does X Video Downloader Work Section */}
+                {}
                 <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-300">
                   <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">How Does X Video Downloader Work?</h2>
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-2 sm:mb-3">
@@ -477,7 +474,7 @@ export default function XVideoDownloaderPage() {
                   </div>
                 </div>
 
-                {/* Key Features Section */}
+                {}
                 <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-300">
                   <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Key Features</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
@@ -538,7 +535,7 @@ export default function XVideoDownloaderPage() {
                   </div>
                 </div>
 
-                {/* Security & Privacy Section */}
+                {}
                 <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-300">
                   <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground flex items-center gap-2">
                     <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
@@ -563,7 +560,7 @@ export default function XVideoDownloaderPage() {
                   </div>
                 </div>
 
-                {/* Technical Specifications Section */}
+                {}
                 <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-300">
                   <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Technical Specifications</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
@@ -588,7 +585,7 @@ export default function XVideoDownloaderPage() {
                   </div>
                 </div>
 
-                {/* Mobile Download Guide */}
+                {}
                 <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-400">
                   <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">📱 How to Download X Videos on Mobile</h2>
                   <div className="space-y-3 sm:space-y-4">
@@ -615,7 +612,7 @@ export default function XVideoDownloaderPage() {
                   </div>
                 </div>
 
-                {/* Use Cases Section */}
+                {}
                 <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-400">
                 <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Who Uses X Video Downloader?</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
@@ -658,7 +655,7 @@ export default function XVideoDownloaderPage() {
                 </div>
                 </div>
 
-                {/* Comparison Section */}
+                {}
                 <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-400">
                 <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Why Choose FastTools X Video Downloader?</h2>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-3 sm:mb-4">
@@ -714,7 +711,6 @@ export default function XVideoDownloaderPage() {
                 </div>
                 </div>
 
-                {/* Troubleshooting Section */}
                 <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-400">
                 <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground flex items-center gap-2">
                   <AlertCircle className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
@@ -767,7 +763,6 @@ export default function XVideoDownloaderPage() {
                 </div>
                 </div>
 
-                {/* FAQ Section */}
                 <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow-lg animate-fade-in-up animation-delay-500">
                 <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground flex items-center gap-2">
                   <AlertCircle className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
@@ -855,13 +850,13 @@ export default function XVideoDownloaderPage() {
                 </div>
               </div>
 
-              {/* Legal & Copyright Section */}
+              {}
               <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-400">
                 <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Legal & Copyright Information</h2>
                 <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   <p>
-                    <strong className="text-foreground">Fair Use & Legal Compliance:</strong> This tool is provided for 
-                    personal, educational, and fair use purposes only. Users are responsible 
+                    <strong className="text-foreground">Fair Use & Legal Compliance:</strong> This tool is provided for
+                    personal, educational, and fair use purposes only. Users are responsible
                     for ensuring they have the right to download and use any content.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mt-3 sm:mt-4">
@@ -887,14 +882,13 @@ export default function XVideoDownloaderPage() {
                     </div>
                   </div>
                   <p className="text-[10px] sm:text-xs mt-3 sm:mt-4 p-2.5 sm:p-3 bg-muted/50 rounded-lg">
-                    <strong>Important:</strong> We do not host, store, or distribute any videos. We only provide links 
-                    to publicly available content hosted on X/Twitter's servers. Users are solely responsible for 
+                    <strong>Important:</strong> We do not host, store, or distribute any videos. We only provide links
+                    to publicly available content hosted on X/Twitter's servers. Users are solely responsible for
                     ensuring their use complies with all applicable laws and platform terms of service.
                   </p>
                 </div>
               </div>
 
-              {/* Statistics & Trends Section */}
               <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-400">
                 <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">X Video Downloader Statistics & Trends (2025)</h2>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-3 sm:mb-4">
@@ -927,7 +921,6 @@ export default function XVideoDownloaderPage() {
                 </p>
               </div>
 
-              {/* Related Tools Section */}
                 <div className="p-4 sm:p-5 md:p-6 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-400">
                 <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Related Social Media Tools</h2>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-3 sm:mb-4">
@@ -958,7 +951,6 @@ export default function XVideoDownloaderPage() {
               </div>
               </main>
 
-              {/* Sidebar - shows ad on desktop */}
               <aside className="hidden xl:block w-80 flex-shrink-0" aria-label="Sidebar">
                 <div className="sticky top-32">
                   <AdSpace slot="content" className="h-96 border border-border rounded-xl shadow-sm bg-card" />

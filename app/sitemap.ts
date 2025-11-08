@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next"
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.fasttools.store"
   const currentDate = new Date()
-  
+
   const getFreshnessDate = (daysAgo: number) => {
     const date = new Date()
     date.setDate(date.getDate() - daysAgo)
@@ -76,9 +76,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const categoryPages = [
     {
       url: "https://www.fasttools.store/ai-tools",
-      lastModified: getFreshnessDate(0), // Updated today - all tools SEO optimized
+      lastModified: getFreshnessDate(0),
       changeFrequency: "daily" as const,
-      priority: 0.97, // High priority - 4 premium AI tools all FREE
+      priority: 0.97,
     },
 
     {
@@ -94,7 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.85,
     },
-    
+
     {
       url: "https://www.fasttools.store/social-media-tools",
       lastModified: getFreshnessDate(5),
@@ -135,14 +135,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://www.fasttools.store/pdf-tools",
-      lastModified: getFreshnessDate(0), // Updated today - all tools SEO optimized
+      lastModified: getFreshnessDate(0),
       changeFrequency: "daily" as const,
-      priority: 0.98, // High priority - comprehensive PDF tools suite
+      priority: 0.98,
     },
   ]
 
   const toolPages = [
-    
 
     {
       url: "https://www.fasttools.store/calculator/conversion-calculator",
@@ -150,8 +149,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.9,
     },
-
-
 
     {
       url: "https://www.fasttools.store/calculator/ip-subnet-calculator",
@@ -346,32 +343,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.95,
     },
-    // AI Tools - All Premium Features FREE
+
     {
       url: "https://www.fasttools.store/ai-tools/qr-generator",
-      lastModified: getFreshnessDate(0), // Updated today with premium features
+      lastModified: getFreshnessDate(0),
       changeFrequency: "daily" as const,
-      priority: 0.98, // High priority - all premium features FREE
+      priority: 0.98,
     },
     {
       url: "https://www.fasttools.store/ai-tools/caption-generator",
-      lastModified: getFreshnessDate(0), // Recently SEO optimized
+      lastModified: getFreshnessDate(0),
       changeFrequency: "daily" as const,
       priority: 0.96,
     },
     {
       url: "https://www.fasttools.store/ai-tools/lyrics-generator",
-      lastModified: getFreshnessDate(0), // Recently SEO optimized with 40+ languages
+      lastModified: getFreshnessDate(0),
       changeFrequency: "daily" as const,
       priority: 0.95,
     },
     {
       url: "https://www.fasttools.store/ai-tools/pet-names",
-      lastModified: getFreshnessDate(0), // Updated today with 100 AI-generated names + SEO
+      lastModified: getFreshnessDate(0),
       changeFrequency: "daily" as const,
-      priority: 0.94, // High priority - 100 free categorized names
+      priority: 0.94,
     },
-    // Social Media Tools
+
     {
       url: "https://www.fasttools.store/social-media-tools/tiktok-downloader",
       lastModified: getFreshnessDate(1),
@@ -386,15 +383,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://www.fasttools.store/social-media-tools/facebook-downloader",
-      lastModified: getFreshnessDate(0), // Updated today with comprehensive SEO optimization
+      lastModified: getFreshnessDate(0),
       changeFrequency: "daily" as const,
-      priority: 0.95, // High priority - popular video downloader tool
+      priority: 0.95,
     },
     {
       url: "https://www.fasttools.store/social-media-tools/x-video-downloader",
       lastModified: getFreshnessDate(0),
       changeFrequency: "daily" as const,
-      priority: 0.95, // High priority - popular X/Twitter video downloader tool
+      priority: 0.95,
     },
     {
       url: "https://www.fasttools.store/social-media-tools/youtube-tags",
@@ -412,7 +409,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.fasttools.store/social-media-tools/youtube-downloader",
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,
-      priority: 0.95, // High priority - popular YouTube video downloader tool
+      priority: 0.95,
     },
     {
       url: "https://www.fasttools.store/social-media-tools/channel-checker",
@@ -439,7 +436,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
 
-    // API Documentation Pages
     {
       url: "https://www.fasttools.store/converters/currency-api",
       lastModified: getFreshnessDate(1),
@@ -447,7 +443,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
 
-    // Converter Tools
     {
       url: "https://www.fasttools.store/converters/currency",
       lastModified: getFreshnessDate(1),
@@ -485,7 +480,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
 
-    // SEO Tools
     {
       url: "https://www.fasttools.store/seo-tools/meta-tags",
       lastModified: getFreshnessDate(1),
@@ -517,7 +511,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
 
-    // Fun Tools
     {
       url: "https://www.fasttools.store/fun-tools/anniversary",
       lastModified: getFreshnessDate(1),
@@ -537,7 +530,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
 
-    // Finance Tools
     {
       url: "https://www.fasttools.store/finance-tools/bill-splitter",
       lastModified: getFreshnessDate(1),
@@ -587,7 +579,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
 
-    // Developer Tools
     {
       url: "https://www.fasttools.store/dev-tools/jwt-decoder",
       lastModified: getFreshnessDate(1),
@@ -637,7 +628,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
 
-    // Image Tools
     {
       url: "https://www.fasttools.store/image-tools/image-background-remover",
       lastModified: getFreshnessDate(1),
@@ -663,42 +653,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
 
-    // PDF Tools
     {
       url: "https://www.fasttools.store/pdf-tools/pdf-sign",
-      lastModified: getFreshnessDate(0), // Updated today - production ready
+      lastModified: getFreshnessDate(0),
       changeFrequency: "daily" as const,
-      priority: 0.98, // High priority - popular for HR, freelancers, legal
+      priority: 0.98,
     },
     {
       url: "https://www.fasttools.store/pdf-tools/pdf-word-converter",
-      lastModified: getFreshnessDate(0), // Updated today - production ready
+      lastModified: getFreshnessDate(0),
       changeFrequency: "daily" as const,
-      priority: 0.97, // High priority - bidirectional converter
+      priority: 0.97,
     },
     {
       url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
-      lastModified: getFreshnessDate(0), // Updated today - production ready
+      lastModified: getFreshnessDate(0),
       changeFrequency: "daily" as const,
-      priority: 0.97, // High priority - essential PDF tool
+      priority: 0.97,
     },
     {
       url: "https://www.fasttools.store/pdf-tools/pdf-unlocker",
-      lastModified: getFreshnessDate(0), // Updated today - production ready
+      lastModified: getFreshnessDate(0),
       changeFrequency: "daily" as const,
-      priority: 0.96, // High priority - password removal tool
+      priority: 0.96,
     },
     {
       url: "https://www.fasttools.store/pdf-tools/pdf-compressor",
-      lastModified: getFreshnessDate(0), // Updated today - production ready
+      lastModified: getFreshnessDate(0),
       changeFrequency: "daily" as const,
-      priority: 0.96, // High priority - file size optimization
+      priority: 0.96,
     },
     {
       url: "https://www.fasttools.store/pdf-tools/pdf-to-image",
-      lastModified: getFreshnessDate(0), // Updated today - production ready
+      lastModified: getFreshnessDate(0),
       changeFrequency: "daily" as const,
-      priority: 0.95, // High priority - format conversion
+      priority: 0.95,
     },
 
   ]

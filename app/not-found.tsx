@@ -18,14 +18,14 @@ export default function NotFound() {
     <div className="min-h-screen flex items-center justify-center bg-background">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-2xl mx-auto text-center space-y-8">
-          {/* 404 Icon */}
+          {}
           <div className="flex justify-center">
             <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center">
               <Calculator className="h-12 w-12 text-primary" />
             </div>
           </div>
 
-          {/* 404 Content */}
+          {}
           <div className="space-y-4">
             <h1 className="text-6xl md:text-8xl font-bold text-primary">404</h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
@@ -36,7 +36,7 @@ export default function NotFound() {
             </p>
           </div>
 
-          {/* Popular Tools */}
+          {}
           <Card className="text-left">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -81,7 +81,7 @@ export default function NotFound() {
             </CardContent>
           </Card>
 
-          {/* Action Buttons */}
+          {}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="w-full sm:w-auto">
               <Link href="/">
@@ -97,7 +97,7 @@ export default function NotFound() {
             </Button>
           </div>
 
-          {/* Help Text */}
+          {}
           <div className="text-sm text-muted-foreground">
             <p>
               If you believe this is an error, please{" "}

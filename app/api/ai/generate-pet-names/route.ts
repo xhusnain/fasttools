@@ -27,7 +27,6 @@ export async function POST(request: Request) {
       )
     }
 
-    // Build context for the AI
     const petContext = []
     petContext.push(`Pet Type: ${petType}`)
     if (gender && gender !== "any") petContext.push(`Gender: ${gender}`)
@@ -40,7 +39,6 @@ export async function POST(request: Request) {
 
     const contextString = petContext.join("\n")
 
-    // Comprehensive Gemini prompt for 100 pet names
     const prompt = `You are an expert pet naming consultant with deep knowledge of names from various cultures, languages, and traditions. Generate 100 unique and perfect pet names based on the following pet characteristics:
 
 ${contextString}
@@ -102,7 +100,6 @@ QUALITY STANDARDS:
 
 Generate the 100 names now as a valid JSON object:`
 
-    // Call Gemini API
     const result = await geminiAPI.generateText({
       prompt,
       temperature: 0.9,
@@ -118,36 +115,32 @@ Generate the 100 names now as a valid JSON object:`
 
     const response = result.text
 
-    // Parse the response
     let parsedNames
     try {
-      // Try to extract JSON from the response
+
       const jsonMatch = response.match(/\{[\s\S]*\}/)
       if (!jsonMatch) {
         throw new Error("No JSON found in response")
       }
-      
+
       parsedNames = JSON.parse(jsonMatch[0])
-      
-      // Validate structure
+
       const requiredCategories = ["traditional", "modern", "unique", "nature", "cultural", "celebrity", "food", "mythological"]
       for (const category of requiredCategories) {
         if (!parsedNames[category] || !Array.isArray(parsedNames[category])) {
           parsedNames[category] = []
         }
       }
-      
-      // Validate each name has required fields
+
       for (const category of requiredCategories) {
-        parsedNames[category] = parsedNames[category].filter((name: any) => 
+        parsedNames[category] = parsedNames[category].filter((name: any) =>
           name && name.name && name.meaning && name.origin
         )
       }
-      
+
     } catch (parseError) {
       console.error("Error parsing Gemini response:", parseError)
-      
-      // Fallback: Return empty categories if parsing fails
+
       return NextResponse.json({
         success: false,
         error: "Something went wrong. Please try again later.",
@@ -170,11 +163,10 @@ Generate the 100 names now as a valid JSON object:`
 
   } catch (error: any) {
     console.error("Error in pet names generation:", error)
-    // Always return generic error messages to users
-    // Never expose internal error details
+
     return NextResponse.json(
-      { 
-        success: false, 
+      {
+        success: false,
         error: "Something went wrong. Please try again later."
       },
       { status: 500 }

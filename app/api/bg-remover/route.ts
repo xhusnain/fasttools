@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 
 export async function POST(req: Request) {
   try {
-    // Ensure model session is ready before reading the image
+
     await loadU2NetSession();
 
     const contentType = req.headers.get("content-type") || "";
@@ -36,11 +36,10 @@ export async function POST(req: Request) {
     });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";
-    // Temporary diagnostics
+
     console.error("/api/bg-remover error:", err);
-    // Return plaintext for easier client-side surfacing
+
     return new NextResponse(message, { status: 500, headers: { "Content-Type": "text/plain" } });
   }
 }
-
 

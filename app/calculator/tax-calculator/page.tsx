@@ -2,9 +2,9 @@ import { TaxCalculator } from "@/components/tax-calculator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import { 
-  Calculator, Globe, DollarSign, TrendingUp, BarChart3, 
-  PieChart, Target, Building, Users, Award, CheckCircle, 
+import {
+  Calculator, Globe, DollarSign, TrendingUp, BarChart3,
+  PieChart, Target, Building, Users, Award, CheckCircle,
   BookOpen, Zap, Sparkles, AlertTriangle, Info
 } from "lucide-react"
 import type { Metadata } from "next"
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "tax breakdown",
     "international tax calculator",
     "US income tax calculator",
-    "UK income tax calculator", 
+    "UK income tax calculator",
     "Canada income tax calculator",
     "Australia income tax calculator",
     "Germany income tax calculator",
@@ -385,14 +385,14 @@ export default function TaxCalculatorPage() {
 
           <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
-              <GHeader 
+              <GHeader
                 title="Free Online Tax Calculator"
                 description="Use our free Tax Calculator to instantly calculate income tax, GST, VAT, or sales tax. Enter your amount and tax rate to get total payable tax and net amount. Fast, accurate, and completely online."
                 titleSize="medium"
               />
             </div>
 
-            {/* Mobile/Tablet AdSpace after GHeader */}
+            {}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -403,8 +403,8 @@ export default function TaxCalculatorPage() {
             <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
               <div>
             <TaxCalculator />
-                
-                {/* How to Use Section */}
+
+                {}
                 <div className="mt-6 md:mt-8 space-y-4 md:space-y-6">
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
@@ -435,7 +435,7 @@ export default function TaxCalculatorPage() {
               </div>
             </div>
 
-            {/* Supported Countries */}
+            {}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                       <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -471,7 +471,7 @@ export default function TaxCalculatorPage() {
               </div>
             </div>
 
-                  {/* Tax Calculation Types */}
+                  {}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                       <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -503,7 +503,7 @@ export default function TaxCalculatorPage() {
               </div>
             </div>
 
-            {/* Advanced Features */}
+            {}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                       <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -555,7 +555,7 @@ export default function TaxCalculatorPage() {
               </div>
             </div>
 
-                  {/* Tax Formulas Section */}
+                  {}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                       <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -582,7 +582,7 @@ export default function TaxCalculatorPage() {
               </div>
             </div>
 
-                  {/* FAQ Section */}
+                  {}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                       <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -718,7 +718,6 @@ export default function TaxCalculatorPage() {
               </div>
             </div>
 
-                  {/* Related Tools Section */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                       <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -759,7 +758,6 @@ export default function TaxCalculatorPage() {
                 </div>
               </div>
 
-              {/* Desktop Sidebar with AdSense */}
               <div className="space-y-4 hidden lg:block">
                 <div className="sticky top-24 space-y-4">
                   <div>

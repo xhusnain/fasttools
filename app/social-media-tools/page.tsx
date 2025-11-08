@@ -128,7 +128,7 @@ export default function SocialMediaToolsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1 lg:flex-[2] space-y-6">
-              {/* Hero Section */}
+              {}
               <div className="text-center space-y-5 animate-fade-in-up">
                 <GHeader
                   title="Social Media Tools & Content Helpers"
@@ -138,7 +138,7 @@ export default function SocialMediaToolsPage() {
                 />
               </div>
 
-              {/* Mobile Ad Space */}
+              {}
               <div className="lg:hidden mb-6">
                 <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
               </div>
@@ -175,26 +175,25 @@ export default function SocialMediaToolsPage() {
                 ))}
               </div>
 
-
-              {/* Content Sections */}
+              {}
               <div className="space-y-5 animate-fade-in-up animation-delay-200">
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">How Our Social Media Tools Work</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Our advanced social media toolkit leverages cutting-edge web technologies and API integrations 
-                    to provide real-time access to social media data. Each tool is designed with user privacy and 
+                    Our advanced social media toolkit leverages cutting-edge web technologies and API integrations
+                    to provide real-time access to social media data. Each tool is designed with user privacy and
                     platform compliance in mind.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Smart Data Extraction</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Our tools use secure API endpoints and advanced parsing techniques to extract public data 
+                    Our tools use secure API endpoints and advanced parsing techniques to extract public data
                     from social media platforms while respecting terms of service and user privacy.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">AI-Powered Analysis</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Generate intelligent insights using AI technology. Our hashtag counter analyzes content 
+                    Generate intelligent insights using AI technology. Our hashtag counter analyzes content
                     and suggests trending, niche, and platform-specific hashtags for maximum reach.
                   </p>
                 </div>
@@ -202,24 +201,24 @@ export default function SocialMediaToolsPage() {
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">Perfect for Content Creators & Marketers</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Use these tools for YouTube content optimization, Instagram profile analysis, TikTok video 
+                    Use these tools for YouTube content optimization, Instagram profile analysis, TikTok video
                     research, and cross-platform social media strategy development.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Platform-Specific Optimization</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Get tools tailored for each platform. YouTube thumbnail analysis, Instagram profile research, 
+                    Get tools tailored for each platform. YouTube thumbnail analysis, Instagram profile research,
                     TikTok content extraction, and comprehensive hashtag strategies for all social networks.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Creator Benefits</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Save time with instant data extraction, avoid manual research, and discover new trending 
+                    Save time with instant data extraction, avoid manual research, and discover new trending
                     content patterns to boost your social media performance and audience growth.
                   </p>
                 </div>
 
-                {/* FAQ Section */}
+                {}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -286,7 +285,7 @@ export default function SocialMediaToolsPage() {
                 </div>
               </div>
             </div>
-            {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
+            {}
             <div className="hidden lg:block w-72">
               <div className="sticky top-32 space-y-6">
                 <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

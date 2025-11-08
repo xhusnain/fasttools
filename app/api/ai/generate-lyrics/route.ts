@@ -5,7 +5,6 @@ export async function POST(req: Request) {
   try {
     const { theme, genre, mood, duration, language } = await req.json()
 
-    // Validate required fields
     if (!theme || theme.trim().length === 0) {
       return NextResponse.json(
         { error: "Song theme is required" },
@@ -13,10 +12,8 @@ export async function POST(req: Request) {
       )
     }
 
-    // Default to English if no language specified
     const selectedLanguage = language || "english"
 
-    // Calculate approximate structure based on duration
     const getStructure = (minutes: number) => {
       if (minutes <= 2) {
         return "2 verses, 1 chorus (repeated), 1 bridge"
@@ -30,8 +27,7 @@ export async function POST(req: Request) {
     }
 
     const structure = duration ? getStructure(duration) : "2-3 verses, choruses, and a bridge"
-    
-    // Get language-specific instructions
+
     const getLanguageInstructions = (lang: string) => {
       const languageMap: { [key: string]: string } = {
         english: "Write lyrics in English. Use natural, flowing English language and idiomatic expressions.",
@@ -80,8 +76,7 @@ export async function POST(req: Request) {
     }
 
     const languageInstructions = getLanguageInstructions(selectedLanguage)
-    
-    // Create a production-level prompt for Gemini
+
     const prompt = `You are a professional songwriter and lyricist with expertise in multiple languages. Generate original, creative, and emotionally resonant song lyrics based on the following specifications:
 
 **LANGUAGE REQUIREMENT (MOST IMPORTANT):**
@@ -122,31 +117,28 @@ ${genre === "R&B" || genre === "soul" ? "- Focus on love, relationships, and emo
 
 Generate the complete song lyrics now. Make it professional, original, and ready to be set to music.`
 
-    // Call Gemini API
     const response = await geminiAPI.generateText({
       prompt,
       maxTokens: 2500,
-      temperature: 0.85, // Higher temperature for more creativity
+      temperature: 0.85,
       model: "gemini-2.0-flash-lite"
     })
 
     if (!response.success) {
       console.error("Gemini API Error:", response.error)
-      // Return user-friendly error (already sanitized by gemini-api.ts)
+
       return NextResponse.json(
         { error: response.error || "Something went wrong. Please try again later." },
         { status: 500 }
       )
     }
 
-    // Clean up the response
     let lyrics = response.text.trim()
-    
-    // Remove markdown code blocks if present
+
     lyrics = lyrics.replace(/```[\w]*\n?/g, "")
     lyrics = lyrics.replace(/```/g, "")
-    
-    return NextResponse.json({ 
+
+    return NextResponse.json({
       lyrics,
       success: true,
       metadata: {
@@ -161,10 +153,9 @@ Generate the complete song lyrics now. Make it professional, original, and ready
 
   } catch (error) {
     console.error("Error generating lyrics:", error)
-    // Always return generic error messages to users
-    // Never expose internal error details
+
     return NextResponse.json(
-      { 
+      {
         error: "Something went wrong. Please try again later.",
         success: false
       },

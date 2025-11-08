@@ -8,47 +8,47 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  DollarSign, 
-  Percent, 
-  Calendar, 
-  TrendingUp, 
-  TrendingDown, 
-  Info, 
-  AlertCircle, 
-  CheckCircle, 
-  Copy, 
-  Download, 
-  History, 
-  Star, 
-  Globe, 
-  Shield, 
-  FileText, 
-  BarChart3, 
-  PieChart, 
-  Target, 
-  Zap, 
-  Clock, 
-  Users, 
-  Home, 
-  Car, 
-  ShoppingBag, 
-  CreditCard, 
-  Banknote, 
-  Coins, 
-  Wallet, 
-  Briefcase, 
-  Store, 
-  Truck, 
-  Package, 
-  Tag, 
-  ShoppingCart, 
-  HandHeart, 
-  Gift, 
-  Award, 
-  Trophy, 
-  TrendingUp as TrendingUpIcon, 
+import {
+  Calculator,
+  DollarSign,
+  Percent,
+  Calendar,
+  TrendingUp,
+  TrendingDown,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Copy,
+  Download,
+  History,
+  Star,
+  Globe,
+  Shield,
+  FileText,
+  BarChart3,
+  PieChart,
+  Target,
+  Zap,
+  Clock,
+  Users,
+  Home,
+  Car,
+  ShoppingBag,
+  CreditCard,
+  Banknote,
+  Coins,
+  Wallet,
+  Briefcase,
+  Store,
+  Truck,
+  Package,
+  Tag,
+  ShoppingCart,
+  HandHeart,
+  Gift,
+  Award,
+  Trophy,
+  TrendingUp as TrendingUpIcon,
   TrendingDown as TrendingDownIcon,
   Stethoscope,
   Brain,
@@ -115,13 +115,12 @@ export default function InterestRateCalculator() {
       const principal = parseFloat(loanAmount)
       const termMonths = parseInt(loanTerm) * 12 + parseInt(loanTermMonths || "0")
       const payment = parseFloat(monthlyPayment)
-      
-      // Use Newton-Raphson method to find interest rate
-      let rate = 0.01 // Start with 1%
+
+      let rate = 0.01
       let tolerance = 0.0001
       let maxIterations = 100
       let iteration = 0
-      
+
       while (iteration < maxIterations) {
         const f = (r: number) => {
           if (r === 0) {
@@ -129,7 +128,7 @@ export default function InterestRateCalculator() {
           }
           return principal * (r * Math.pow(1 + r, termMonths)) / (Math.pow(1 + r, termMonths) - 1) - payment
         }
-        
+
         const fPrime = (r: number) => {
           if (r === 0) {
             return -payment * termMonths * (termMonths + 1) / 2
@@ -138,25 +137,24 @@ export default function InterestRateCalculator() {
           const temp2 = termMonths * Math.pow(1 + r, termMonths - 1)
           return principal * (temp2 * (temp1 - 1) - r * temp2 * temp1) / Math.pow(temp1 - 1, 2)
         }
-        
+
         const fValue = f(rate)
         const fPrimeValue = fPrime(rate)
-        
+
         if (Math.abs(fValue) < tolerance) break
-        
+
         if (fPrimeValue === 0) break
-        
+
         rate = rate - fValue / fPrimeValue
         iteration++
       }
-      
+
       const annualRate = rate * 12 * 100
       const totalPayments = payment * termMonths
       const totalInterest = totalPayments - principal
-      
-      // Generate amortization schedule
+
       const schedule = generateAmortizationSchedule(principal, rate, termMonths, payment)
-      
+
       const newResult: InterestRateResult = {
         loanAmount: principal,
         loanTerm: termMonths,
@@ -175,7 +173,7 @@ export default function InterestRateCalculator() {
         recommendations: generateRecommendations(principal, annualRate, termMonths),
         comparison: generateComparison(principal, termMonths, payment)
       }
-      
+
       setResult(newResult)
       setHistory(prev => [newResult, ...prev.slice(0, 4)])
     }
@@ -184,12 +182,12 @@ export default function InterestRateCalculator() {
   const generateAmortizationSchedule = (principal: number, rate: number, termMonths: number, payment: number) => {
     const schedule = []
     let balance = principal
-    
+
     for (let i = 0; i < termMonths; i++) {
       const interestPayment = balance * rate
       const principalPayment = payment - interestPayment
       balance = Math.max(0, balance - principalPayment)
-      
+
       schedule.push({
         payment: i + 1,
         principal: principalPayment,
@@ -197,7 +195,7 @@ export default function InterestRateCalculator() {
         balance: balance
       })
     }
-    
+
     return schedule
   }
 
@@ -206,7 +204,6 @@ export default function InterestRateCalculator() {
     const loanTips: string[] = []
     const refinancing: string[] = []
 
-    // Rate optimization recommendations
     if (rate > 8) {
       rateOptimization.push("Consider shopping around for better rates")
       rateOptimization.push("Improve your credit score to qualify for lower rates")
@@ -216,13 +213,11 @@ export default function InterestRateCalculator() {
       rateOptimization.push("Look into credit union rates which are often lower")
     }
 
-    // Loan tips
     loanTips.push("Make extra principal payments to reduce total interest")
     loanTips.push("Consider bi-weekly payments to pay off loan faster")
     loanTips.push("Refinance if rates drop significantly")
     loanTips.push("Avoid prepayment penalties when possible")
 
-    // Refinancing tips
     if (rate > 6) {
       refinancing.push("Monitor market rates for refinancing opportunities")
       refinancing.push("Consider refinancing if rates drop by 1% or more")
@@ -239,7 +234,7 @@ export default function InterestRateCalculator() {
       const monthlyRate = rate / 100 / 12
       const calculatedPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1)
       const totalInterest = calculatedPayment * termMonths - principal
-      
+
       return {
         rate: rate,
         monthlyPayment: calculatedPayment,
@@ -273,7 +268,7 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
 
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-2 sm:p-3 md:p-4 w-full overflow-hidden">
-      {/* Main Calculator */}
+      {}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -282,7 +277,7 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3 sm:space-y-4 md:space-y-6 px-2 sm:px-3 md:px-4">
-          {/* Input Fields */}
+          {}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
             <div className="space-y-1.5 w-full min-w-0">
               <Label htmlFor="loanAmount" className="text-heading-accent text-xs sm:text-sm">Loan Amount ($)</Label>
@@ -345,10 +340,10 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
         </CardContent>
       </Card>
 
-      {/* Results Section */}
+      {}
       {result && (
         <div className="space-y-4 sm:space-y-6">
-          {/* Main Results */}
+          {}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -396,7 +391,7 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
             </CardContent>
           </Card>
 
-          {/* Payment Breakdown */}
+          {}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -420,7 +415,7 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
             </CardContent>
           </Card>
 
-          {/* Rate Comparison */}
+          {}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -448,7 +443,7 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
             </CardContent>
           </Card>
 
-          {/* Recommendations */}
+          {}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -497,7 +492,7 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
         </div>
       )}
 
-      {/* History Section */}
+      {}
       {history.length > 0 && (
         <Card className="bg-card border-border w-full overflow-hidden">
           <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
@@ -533,7 +528,7 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
         </Card>
       )}
 
-      {/* Information Section */}
+      {}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -555,7 +550,7 @@ Total Payments: $${result.totalPayments.toFixed(2)}`
               </div>
             </div>
           </div>
-          
+
           <div className="text-xs sm:text-sm text-foreground space-y-1">
             <p className="break-words">
               <strong className="text-heading-accent">Newton-Raphson Method:</strong> Advanced mathematical algorithm for precise interest rate calculation.

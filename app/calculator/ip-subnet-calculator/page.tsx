@@ -2,12 +2,12 @@ import { IPSubnetCalculator } from "@/components/ip-subnet-calculator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import { 
-  Network, 
-  Globe, 
-  Shield, 
-  Layers, 
-  Hash, 
+import {
+  Network,
+  Globe,
+  Shield,
+  Layers,
+  Hash,
   Info,
   Calculator,
   Lightbulb,
@@ -188,7 +188,7 @@ export default function IPSubnetCalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      
+
       <div className="bg-card">
         <div className="container mx-auto px-3 py-6 md:py-8">
           <Breadcrumbs
@@ -200,14 +200,14 @@ export default function IPSubnetCalculatorPage() {
 
           <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
-              <GHeader 
+              <GHeader
                 title="Free Online IP Subnet Calculator"
                 description="Use our free IP Subnet Calculator to calculate IPv4/IPv6 subnets, CIDR notation, VLSM, supernetting, and network analysis. Perfect for network engineers, IT professionals, and students."
                 titleSize="medium"
               />
             </div>
 
-            {/* Mobile/Tablet AdSpace after GHeader */}
+            {}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -219,7 +219,7 @@ export default function IPSubnetCalculatorPage() {
               <div>
                 <IPSubnetCalculator />
 
-                {/* How to Use */}
+                {}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mt-6 md:mt-8 mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -271,7 +271,7 @@ export default function IPSubnetCalculatorPage() {
                   </div>
                 </div>
 
-                {/* Supported Network Types */}
+                {}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -303,7 +303,7 @@ export default function IPSubnetCalculatorPage() {
                   </div>
                 </div>
 
-                {/* Network Classes */}
+                {}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -348,7 +348,7 @@ export default function IPSubnetCalculatorPage() {
                   </div>
                 </div>
 
-                {/* Advanced Features */}
+                {}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -400,7 +400,7 @@ export default function IPSubnetCalculatorPage() {
                   </div>
                 </div>
 
-                {/* FAQ Section */}
+                {}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -519,7 +519,7 @@ export default function IPSubnetCalculatorPage() {
                   </div>
                 </div>
 
-                {/* Related Tools */}
+                {}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -558,7 +558,7 @@ export default function IPSubnetCalculatorPage() {
                 </div>
               </div>
 
-              {/* Desktop Sidebar with AdSense */}
+              {}
               <div className="space-y-6 hidden lg:block">
                 <div className="sticky top-32 space-y-6">
                   <div>

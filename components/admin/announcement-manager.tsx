@@ -10,7 +10,6 @@ import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
 import { Download, Sparkles, Music, Code, Image, Calculator, Heart, Hash } from "lucide-react"
 
-// Icon mapping for easy selection
 const iconMap = {
   Download,
   Sparkles,
@@ -73,7 +72,7 @@ export function AnnouncementManager() {
 
   const addAnnouncement = () => {
     if (!newAnnouncement.title || !newAnnouncement.description || !newAnnouncement.href) return
-    
+
     const announcement: Announcement = {
       id: Date.now().toString(),
       title: newAnnouncement.title,
@@ -85,7 +84,7 @@ export function AnnouncementManager() {
       isLive: newAnnouncement.isLive,
       isActive: newAnnouncement.isActive
     }
-    
+
     setAnnouncements([announcement, ...announcements])
     setNewAnnouncement({
       title: "",
@@ -100,8 +99,8 @@ export function AnnouncementManager() {
   }
 
   const toggleActive = (id: string) => {
-    setAnnouncements(prev => 
-      prev.map(ann => 
+    setAnnouncements(prev =>
+      prev.map(ann =>
         ann.id === id ? { ...ann, isActive: !ann.isActive } : ann
       )
     )
@@ -120,7 +119,7 @@ export function AnnouncementManager() {
         <p className="text-muted-foreground">Manage your homepage announcements and featured tools</p>
       </div>
 
-      {/* Current Active Announcement */}
+      {}
       {activeAnnouncement && (
         <Card>
           <CardHeader>
@@ -143,7 +142,7 @@ export function AnnouncementManager() {
         </Card>
       )}
 
-      {/* Add New Announcement */}
+      {}
       <Card>
         <CardHeader>
           <CardTitle>Add New Announcement</CardTitle>
@@ -170,7 +169,7 @@ export function AnnouncementManager() {
               />
             </div>
           </div>
-          
+
           <div>
             <Label htmlFor="description">Description</Label>
             <Textarea
@@ -239,7 +238,7 @@ export function AnnouncementManager() {
         </CardContent>
       </Card>
 
-      {/* All Announcements */}
+      {}
       <div className="space-y-4">
         <h2 className="text-xl font-semibold">All Announcements</h2>
         {announcements.map((announcement) => (

@@ -74,7 +74,7 @@ export const metadata: Metadata = {
         "body fat nutrition calculator",
         "body fat health calculator",
         "body fat loss percentage calculator",
-        // Additional Body Fat Keywords
+
         "Body Fat Calculator",
         "calculator.net body fat calculator",
         "body fat",
@@ -169,7 +169,7 @@ export default function BodyFatCalculatorPage() {
           }
         })
       }} />
-      
+
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 py-6 sm:py-8 md:py-12">
           <Breadcrumbs
@@ -181,7 +181,7 @@ export default function BodyFatCalculatorPage() {
 
           <div className="max-w-7xl mx-auto w-full overflow-hidden">
             <div className="mb-4 sm:mb-6 md:mb-8 w-full overflow-hidden">
-              <GHeader 
+              <GHeader
                 title="Body Fat Calculator - Advanced Body Composition Analysis"
                 description="Calculate your body fat percentage with our advanced body fat calculator. Get accurate body composition analysis, fat mass and lean mass, ideal body fat recommendations, and personalized health insights for optimal fitness and health."
                 titleSize="medium"
@@ -189,7 +189,7 @@ export default function BodyFatCalculatorPage() {
               />
             </div>
 
-            {/* Mobile/Tablet AdSpace after GHeader */}
+            {}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -202,10 +202,10 @@ export default function BodyFatCalculatorPage() {
                 <div className="w-full overflow-hidden">
                   <BodyFatCalculator />
                 </div>
-                
-                {/* Educational Content Sections */}
+
+                {}
                 <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-3 sm:p-4 md:p-5 lg:p-6 w-full overflow-hidden">
-                  {/* How to Use Section */}
+                  {}
                   <div className="border border-border rounded-xl p-3 sm:p-4 md:p-6 shadow-sm overflow-hidden">
                     <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 flex items-center gap-2 text-foreground break-words">
                       <div className="p-1.5 sm:p-2 bg-primary/10 rounded-lg">
@@ -235,7 +235,7 @@ export default function BodyFatCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Features Section */}
+                  {}
                   <div className="border border-border rounded-xl p-3 sm:p-4 md:p-6 shadow-sm overflow-hidden">
                     <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 flex items-center gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 md:p-2 bg-primary/10 rounded-lg">
@@ -304,8 +304,8 @@ export default function BodyFatCalculatorPage() {
                       </div>
                     </div>
                   </div>
-                  
-                  {/* Use Cases Section */}
+
+                  {}
                   <div className="border border-border rounded-xl p-3 sm:p-4 md:p-6 shadow-sm overflow-hidden">
                     <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 flex items-center gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 md:p-2 bg-primary/10 rounded-lg">
@@ -336,8 +336,8 @@ export default function BodyFatCalculatorPage() {
                       </div>
                     </div>
                   </div>
-                  
-                  {/* FAQ Section */}
+
+                  {}
                   <div className="border border-border rounded-xl p-3 sm:p-4 md:p-6 shadow-sm overflow-hidden">
                     <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 flex items-center gap-2 text-foreground break-words">
                       <div className="p-1.5 sm:p-2 bg-primary/10 rounded-lg">
@@ -505,7 +505,7 @@ export default function BodyFatCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Related Tools Section */}
+                  {}
                   <div className="border border-border rounded-xl p-3 sm:p-4 md:p-6 shadow-sm mb-4 sm:mb-6 overflow-hidden">
                     <h2 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 flex items-center gap-2 text-heading-accent break-words">
                       <div className="p-1.5 sm:p-2 bg-heading-accent-border/10 rounded-lg">
@@ -544,11 +544,11 @@ export default function BodyFatCalculatorPage() {
                   </div>
                 </div>
               </div>
-              
-              {/* Sidebar */}
+
+              {}
               <div className="hidden lg:block space-y-6 lg:space-y-8">
                 <div className="sticky top-4">
-                  {/* Sidebar Ad */}
+                  {}
                   <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                     <AdSpace slot="sidebar" className="h-64 md:h-80 rounded-lg overflow-hidden" />
                   </div>

@@ -74,13 +74,10 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
 
       const data = await response.json()
 
-      // Debug logging
-
       if (!data.success) {
         throw new Error(data.message || "Failed to fetch download links")
       }
 
-      // Check if we have any media at all (be more lenient)
       const hasVideo = data.videoUrl && (typeof data.videoUrl === 'string' || typeof data.videoUrl === 'object')
       const hasImage = data.imageUrl && (typeof data.imageUrl === 'string' || typeof data.imageUrl === 'object')
       const hasImages = data.images && Array.isArray(data.images) && data.images.length > 0
@@ -89,18 +86,17 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
         throw new Error("No downloadable media found for this URL")
       }
 
-      // Ensure all URLs are strings, not objects
       const ensureString = (value: any): string | undefined => {
         if (!value) return undefined
         if (typeof value === 'string') {
-          // Validate it's actually a URL
+
           if (value.startsWith('http://') || value.startsWith('https://')) {
             return value
           }
           return undefined
         }
         if (typeof value === 'object') {
-          // Try common URL properties
+
           if (value.url && typeof value.url === 'string' && (value.url.startsWith('http://') || value.url.startsWith('https://'))) {
             return value.url
           }
@@ -110,7 +106,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
           if (value.url_https && typeof value.url_https === 'string' && (value.url_https.startsWith('http://') || value.url_https.startsWith('https://'))) {
             return value.url_https
           }
-          // Try to find any string property that looks like a URL
+
           for (const key in value) {
             if (typeof value[key] === 'string' && (value[key].startsWith('http://') || value[key].startsWith('https://'))) {
               return value[key]
@@ -120,7 +116,6 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
         return undefined
       }
 
-      // Ensure images array contains only strings
       const ensureImagesArray = (images: any): string[] => {
         if (!images || !Array.isArray(images)) return []
         return images
@@ -132,7 +127,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
               return null
             }
             if (typeof img === 'object') {
-              // Try common URL properties
+
               if (img.url && typeof img.url === 'string' && (img.url.startsWith('http://') || img.url.startsWith('https://'))) {
                 return img.url
               }
@@ -142,7 +137,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
               if (img.url_https && typeof img.url_https === 'string' && (img.url_https.startsWith('http://') || img.url_https.startsWith('https://'))) {
                 return img.url_https
               }
-              // Try to find any string property that looks like a URL
+
               for (const key in img) {
                 if (typeof img[key] === 'string' && (img[key].startsWith('http://') || img[key].startsWith('https://'))) {
                   return img[key]
@@ -176,7 +171,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
   }
 
   const startCountdownAndDownload = async (url: string | any, filename: string, downloadType: string) => {
-    // Ensure url is a string
+
     let urlString: string
     if (typeof url === 'string' && url) {
       urlString = url
@@ -191,18 +186,16 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
       return
     }
 
-    // Extract file extension from filename if present, or determine from downloadType/URL
     const filenameWithExt = filename.trim()
     let fileExtension: string
     let cleanFilename = filename
-    
-    // Check if filename already has an extension
+
     const extMatch = filenameWithExt.match(/\.(mp4|jpg|jpeg|png|gif|webp)$/i)
     if (extMatch) {
       fileExtension = extMatch[0].toLowerCase()
       cleanFilename = filenameWithExt.substring(0, filenameWithExt.lastIndexOf('.'))
     } else {
-      // Determine extension based on downloadType or URL
+
       if (downloadType === 'video' || urlString.includes('.mp4') || urlString.includes('video')) {
         fileExtension = '.mp4'
       } else if (urlString.includes('.jpg') || urlString.includes('.jpeg')) {
@@ -214,56 +207,50 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
       } else if (urlString.includes('.webp')) {
         fileExtension = '.webp'
       } else {
-        // Default based on downloadType
+
         fileExtension = downloadType === 'video' ? '.mp4' : '.jpg'
       }
     }
 
-    // Sanitize filename (without extension)
     let sanitizedFilename = cleanFilename
-      .replace(/[^\x00-\x7F]/g, '') // Remove non-ASCII characters
+      .replace(/[^\x00-\x7F]/g, '')
       .replace(/[<>:"/\\|?*]/g, '') // Remove invalid filename characters
-      .replace(/\s+/g, '_') // Replace spaces with underscores
-      .replace(/_+/g, '_') // Replace multiple underscores with single
-      .replace(/^_|_$/g, '') // Remove leading/trailing underscores
-      .substring(0, 100) // Limit length (we'll add extension after)
+.replace(/\s+/g, '_')
+.replace(/_+/g, '_')
+.replace(/^_|_$/g, '')
+.substring(0, 100)
 
-    // If filename is empty or too short after sanitization, use default
     if (!sanitizedFilename || sanitizedFilename.length < 3) {
       sanitizedFilename = downloadType === 'video' ? 'x_video' : 'x_image'
     }
 
-    // Ensure filename doesn't exceed reasonable length (max 200 chars total with extension)
     const maxLength = 200 - fileExtension.length
     if (sanitizedFilename.length > maxLength) {
       sanitizedFilename = sanitizedFilename.substring(0, maxLength)
     }
 
-    // Add extension to sanitized filename
     const finalFilename = sanitizedFilename + fileExtension
 
     setError(null)
-    
-    // Skip countdown for proxy URLs - they download directly
+
     if (urlString.includes('dl.snapcdn.app') || urlString.includes('download?token=')) {
       setDownloadingStates(prev => ({ ...prev, [downloadType]: true }))
       void performDownload(urlString, finalFilename, downloadType)
       return
     }
 
-    // For direct URLs, use countdown
     setCountdownStates(prev => ({ ...prev, [downloadType]: 15 }))
 
     let countdown = 15
     const countdownInterval = setInterval(() => {
       countdown--
       setCountdownStates(prev => ({ ...prev, [downloadType]: countdown }))
-      
+
       if (countdown <= 0) {
         clearInterval(countdownInterval)
         setCountdownStates(prev => ({ ...prev, [downloadType]: undefined }))
         setDownloadingStates(prev => ({ ...prev, [downloadType]: true }))
-        
+
         void performDownload(urlString, finalFilename, downloadType)
       }
     }, 1000)
@@ -272,93 +259,17 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
   }
 
   const performBackgroundDownload = async (url: string, _filename: string, downloadType: string) => {
-    // Skip background download for proxy URLs to avoid CORS errors
+
     if (url.includes('dl.snapcdn.app') || url.includes('download?token=')) {
       return
     }
-    
+
     try {
       const response = await fetch(url, {
         method: 'GET',
         headers: {
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-          'Accept': '*/*',
-          'Referer': 'https://twitter.com/'
-        }
-      })
-
-      if (response.ok) {
-        const blob = await response.blob()
-        if (blob.size > 0) {
-          ;(window as any)[`downloadedBlob_${downloadType}`] = blob
-        }
-      }
-    } catch (error) {
-      // Silent fail - background download is not critical
-    }
-  }
-
-  const performDownload = async (url: string, filename: string, downloadType: string) => {
-    try {
-      const preDownloadedBlob = (window as any)[`downloadedBlob_${downloadType}`]
-      
-      if (preDownloadedBlob) {
-        const objectUrl = URL.createObjectURL(preDownloadedBlob)
-        
-        const link = document.createElement("a")
-        link.href = objectUrl
-        link.download = filename
-        link.style.display = 'none'
-        
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
-        
-        setTimeout(() => {
-          URL.revokeObjectURL(objectUrl)
-          delete (window as any)[`downloadedBlob_${downloadType}`]
-        }, 1000)
-        
-        setTimeout(() => {
-          setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
-          setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
-        }, 500)
-        
-        return
-      }
-
-      // For proxy URLs, use direct download without fetch
-      if (url.includes('dl.snapcdn.app') || url.includes('download?token=')) {
-        try {
-          const link = document.createElement("a")
-          link.href = url
-          link.download = filename
-          link.target = '_blank'
-          link.rel = 'noopener noreferrer'
-          link.style.display = 'none'
-          
-          document.body.appendChild(link)
-          link.click()
-          document.body.removeChild(link)
-          
-          setTimeout(() => {
-            setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
-            setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
-          }, 500)
-          
-          return
-        } catch (linkError) {
-          throw new Error('Download failed. Please try again.')
-        }
-      }
-
-      // For direct media URLs, try fetch first
-      try {
-        const response = await fetch(url, {
-          method: 'GET',
-          headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            'Accept': '*/*',
+          'Accept': '**',
             'Referer': 'https://twitter.com/'
           },
           mode: 'cors'
@@ -366,33 +277,33 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
 
         if (response.ok) {
           const blob = await response.blob()
-          
+
           if (blob.size > 0) {
             const objectUrl = URL.createObjectURL(blob)
-            
+
             const link = document.createElement("a")
             link.href = objectUrl
             link.download = filename
             link.style.display = 'none'
-            
+
             document.body.appendChild(link)
             link.click()
             document.body.removeChild(link)
-            
+
             setTimeout(() => {
               URL.revokeObjectURL(objectUrl)
             }, 1000)
-            
+
             setTimeout(() => {
               setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
               setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
             }, 500)
-            
+
             return
           }
         }
       } catch (directError) {
-        // If fetch fails, try direct link as fallback
+
         try {
           const link = document.createElement("a")
           link.href = url
@@ -400,24 +311,24 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
           link.target = '_blank'
           link.rel = 'noopener noreferrer'
           link.style.display = 'none'
-          
+
           document.body.appendChild(link)
           link.click()
           document.body.removeChild(link)
-          
+
           setTimeout(() => {
             setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
             setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
           }, 500)
-          
+
           return
         } catch (linkError) {
-          // Fall through to error
+
         }
       }
 
       throw new Error('Download failed. The media URL may be expired or inaccessible.')
-      
+
     } catch (e) {
       const errorMessage = e instanceof Error ? e.message : "Download failed. Please try again."
       setError(errorMessage)
@@ -452,7 +363,7 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
             <Input
               id="post-url"
               type="text"
-              placeholder="https://twitter.com/username/status/... or https://x.com/username/status/..."
+              placeholder="https:
               value={postUrl}
               onChange={(e) => setPostUrl(e.target.value)}
               className={`mt-1 xs:mt-1.5 ${compact ? "h-10 xs:h-11 sm:h-12" : "h-11 xs:h-12 sm:h-[52px] md:h-14"} text-xs xs:text-sm sm:text-base px-3 xs:px-4 border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20`}
@@ -525,14 +436,14 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
 
           {result && (
             <div className="space-y-3 xs:space-y-3.5 sm:space-y-4">
-              {/* Debug info - remove in production */}
+              {}
               {process.env.NODE_ENV === 'development' && (
                 <div className="text-[10px] xs:text-xs text-muted-foreground p-2 xs:p-2.5 bg-muted rounded">
                   Debug: videoUrl={result.videoUrl ? 'exists' : 'null'}, imageUrl={result.imageUrl ? 'exists' : 'null'}, images={result.images?.length || 0}
                 </div>
               )}
-              
-              {/* Show video preview if we have a video URL */}
+
+              {}
               {result.videoUrl && !videoLoadError && (
                 <div className="flex justify-center px-1">
                   <div className={`relative ${compact ? "w-full max-w-[280px] xs:max-w-xs" : "w-full max-w-[320px] xs:max-w-sm sm:max-w-md md:max-w-lg"} rounded-md border overflow-hidden bg-black`}>
@@ -548,16 +459,16 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                   </div>
                 </div>
               )}
-              
-              {/* Show image preview if we have images */}
+
+              {}
               {!result.videoUrl && (result.imageUrl || (result.images && result.images.length > 0)) && (
                 <div className="flex justify-center px-1">
                   <div className={`${compact ? "w-full max-w-[280px] xs:max-w-xs" : "w-full max-w-[320px] xs:max-w-sm sm:max-w-md md:max-w-lg"} rounded-md border overflow-hidden`}>
                     {result.images && result.images.length > 1 ? (
                       <div className="grid grid-cols-2 gap-0.5 xs:gap-1">
                         {result.images.slice(0, 4).map((img, idx) => {
-                          const imgSrc = typeof img === 'string' 
-                            ? img 
+                          const imgSrc = typeof img === 'string'
+                            ? img
                             : (typeof img === 'object' && img !== null && 'url' in img && typeof img.url === 'string')
                               ? img.url
                               : String(img)
@@ -577,14 +488,14 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                       </div>
                     ) : (
                       <img
-                        src={result.imageUrl || 
-                          (result.images && result.images[0] 
-                            ? (typeof result.images[0] === 'string' 
-                                ? result.images[0] 
+                        src={result.imageUrl ||
+                          (result.images && result.images[0]
+                            ? (typeof result.images[0] === 'string'
+                                ? result.images[0]
                                 : (typeof result.images[0] === 'object' && result.images[0] !== null && 'url' in result.images[0] && typeof result.images[0].url === 'string'
-                                  ? result.images[0].url 
+                                  ? result.images[0].url
                                   : undefined))
-                            : undefined) || 
+                            : undefined) ||
                           result.thumbnail}
                         alt={result.title || "X post image"}
                         className={`${compact ? "h-32 xs:h-36 sm:h-40" : "h-36 xs:h-40 sm:h-48 md:h-56 lg:h-64"} w-full object-cover`}
@@ -596,8 +507,8 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                   </div>
                 </div>
               )}
-              
-              {/* Fallback to thumbnail if available */}
+
+              {}
               {(videoLoadError || (!result.videoUrl && !result.imageUrl && (!result.images || result.images.length === 0))) && result.thumbnail && (
                 <div className="flex justify-center px-1">
                   <img
@@ -610,15 +521,15 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                   />
                 </div>
               )}
-              
+
               <div className="space-y-2 xs:space-y-2.5 sm:space-y-3">
                 {result.downloadStarted && (
                   <div className="text-center p-2.5 xs:p-3 sm:p-4 bg-muted/50 border border-border rounded-md">
                     <p className="text-xs xs:text-sm sm:text-base text-foreground font-medium">✅ Download started! Check your downloads folder.</p>
                   </div>
                 )}
-                
-                {/* Video download button */}
+
+                {}
                 {result.videoUrl && (
                   <button
                     type="button"
@@ -647,8 +558,8 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                     )}
                   </button>
                 )}
-                
-                {/* Single image download button */}
+
+                {}
                 {result.imageUrl && !result.images && (
                   <button
                     type="button"
@@ -677,19 +588,19 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                     )}
                   </button>
                 )}
-                
-                {/* Multiple images download buttons */}
+
+                {}
                 {result.images && result.images.length > 0 && (
                   <div className="space-y-2 xs:space-y-2.5">
                     {result.images.map((img, idx) => {
-                      // Ensure img is a string
-                      const imgUrl = typeof img === 'string' 
-                        ? img 
+
+                      const imgUrl = typeof img === 'string'
+                        ? img
                         : (typeof img === 'object' && img !== null && 'url' in img && typeof img.url === 'string')
                           ? img.url
                           : String(img)
                       if (!imgUrl || !imgUrl.startsWith('http')) return null
-                      
+
                       return (
                       <button
                         key={idx}
@@ -722,8 +633,8 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
                     })}
                   </div>
                 )}
-                
-                {/* Show message if result exists but no valid media URLs */}
+
+                {}
                 {!result.videoUrl && !result.imageUrl && (!result.images || result.images.length === 0) && (
                   <div className="text-center p-3 xs:p-4 sm:p-5 bg-muted/50 border border-border rounded-md">
                     <p className="text-xs xs:text-sm sm:text-base text-foreground font-medium mb-1.5 xs:mb-2">Media found but unable to extract URLs</p>

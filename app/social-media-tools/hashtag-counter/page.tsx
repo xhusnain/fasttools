@@ -7,7 +7,6 @@ import { ArrowRight, Hash, Code, Globe, Calculator } from "lucide-react"
 import type { Metadata } from "next"
 import Link from "next/link"
 
-// Function to get current year dynamically
 function getCurrentYear(): number {
   return new Date().getFullYear()
 }
@@ -113,16 +112,16 @@ export const metadata: Metadata = {
         "Free Instagram hashtag counter, generator, and extractor tool. Count hashtags from Instagram posts, extract hashtags, and generate AI-powered hashtags for better reach and engagement. Perfect hashtag counter tool for calculating conversions and optimizing social media performance.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: { 
-        "@type": "Offer", 
-        price: "0", 
+      offers: {
+        "@type": "Offer",
+        price: "0",
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
       featureList: [
         "Instagram hashtag counter",
         "Instagram hashtag generator",
-        "Hashtag extractor for Instagram", 
+        "Hashtag extractor for Instagram",
         "Instagram tag extractor",
         "Instagram tags extractor",
         "Instagram hashtag for posts count",
@@ -146,9 +145,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: { 
-        "@type": "Organization", 
-        name: "FastTools", 
+      publisher: {
+        "@type": "Organization",
+        name: "FastTools",
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -192,7 +191,7 @@ export default function HashtagCounterPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1 lg:flex-[2] space-y-6">
-              {/* Hero Section */}
+              {}
               <div className="text-center space-y-5 animate-fade-in-up">
                 <GHeader
                   title={`Instagram AI Hashtag Generator & Counter (${getCurrentYear()})`}
@@ -202,12 +201,12 @@ export default function HashtagCounterPage() {
                 />
               </div>
 
-              {/* Mobile Ad Space */}
+              {}
               <div className="lg:hidden mb-6">
                 <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
               </div>
 
-              {/* Tool Card */}
+              {}
               <Card className="border border-border shadow-lg bg-card hover:shadow-xl transition-all duration-300">
                 <CardHeader className="p-6">
                   <CardTitle className="text-xl font-bold text-foreground flex items-center gap-2">
@@ -223,48 +222,47 @@ export default function HashtagCounterPage() {
                 </CardContent>
               </Card>
 
-              {/* Content Sections */}
+              {}
               <div className="space-y-5 animate-fade-in-up animation-delay-200">
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">How Our Hashtag Counter Works</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Our advanced hashtag counter analyzes your text to identify, count, and extract all hashtags. 
+                    Our advanced hashtag counter analyzes your text to identify, count, and extract all hashtags.
                     It uses intelligent parsing to handle various hashtag formats and provides instant results.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Smart Detection Engine</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    The tool automatically detects hashtags regardless of format, removes duplicates, and provides 
+                    The tool automatically detects hashtags regardless of format, removes duplicates, and provides
                     accurate counts for Instagram's 30-hashtag limit and other platform requirements.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">AI-Powered Generation</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Generate relevant hashtags using AI technology. Our system analyzes your content and suggests 
+                    Generate relevant hashtags using AI technology. Our system analyzes your content and suggests
                     trending, niche, and platform-specific hashtags for maximum reach.
                   </p>
                 </div>
 
-                {/* Conversion Tracking and Performance Analysis */}
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">Calculating Conversions and Performance Metrics</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Our hashtag counter tool goes beyond simple counting to help you calculate conversions and measure 
-                    social media performance. Track hashtag effectiveness, measure engagement rates, and optimize your 
+                    Our hashtag counter tool goes beyond simple counting to help you calculate conversions and measure
+                    social media performance. Track hashtag effectiveness, measure engagement rates, and optimize your
                     content strategy for better results.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Instagram Hashtag for Posts Count Analysis</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Get detailed analysis of your Instagram hashtag usage with our advanced counter. Track hashtag 
-                    performance across different posts, identify high-performing hashtags, and optimize your hashtag 
+                    Get detailed analysis of your Instagram hashtag usage with our advanced counter. Track hashtag
+                    performance across different posts, identify high-performing hashtags, and optimize your hashtag
                     strategy for maximum reach and engagement.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Duration Calculation and Timing Optimization</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Use our tool to calculate optimal posting durations and timing for different hashtag strategies. 
-                    Analyze hashtag performance over time, track seasonal trends, and optimize your content calendar 
+                    Use our tool to calculate optimal posting durations and timing for different hashtag strategies.
+                    Analyze hashtag performance over time, track seasonal trends, and optimize your content calendar
                     for better conversion rates and engagement.
                   </p>
                 </div>
@@ -272,27 +270,27 @@ export default function HashtagCounterPage() {
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">Perfect for Social Media Optimization</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Use this tool for Instagram posts, Twitter content, TikTok videos, LinkedIn articles, and more. 
+                    Use this tool for Instagram posts, Twitter content, TikTok videos, LinkedIn articles, and more.
                     Optimize your hashtag strategy across all social media platforms.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Platform-Specific Optimization</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Get hashtag suggestions tailored for each platform. Instagram (30 limit), Twitter (1-2 recommended), 
+                    Get hashtag suggestions tailored for each platform. Instagram (30 limit), Twitter (1-2 recommended),
                     TikTok (3-5 trending), LinkedIn (3-5 professional), and more.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Content Creator Benefits</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Save time with instant hashtag extraction, avoid duplicate hashtags, and discover new trending 
+                    Save time with instant hashtag extraction, avoid duplicate hashtags, and discover new trending
                     hashtags to boost your content's visibility and engagement.
                   </p>
                 </div>
 
-                {/* Advanced Hashtag Strategies Section */}
+                {}
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">Advanced Hashtag Strategies for Maximum Impact</h2>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div className="p-4 rounded-lg bg-muted/30 border border-border">
                       <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
@@ -300,20 +298,20 @@ export default function HashtagCounterPage() {
                         Hashtag Mix Strategy
                       </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Combine 40% popular hashtags for broad reach, 40% niche hashtags for targeted engagement, 
-                        and 20% branded hashtags for community building. This balanced approach maximizes both 
+                        Combine 40% popular hashtags for broad reach, 40% niche hashtags for targeted engagement,
+                        and 20% branded hashtags for community building. This balanced approach maximizes both
                         visibility and meaningful interactions.
                       </p>
                     </div>
-                    
+
                     <div className="p-4 rounded-lg bg-muted/30 border border-border">
                       <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                         <Code className="h-4 w-4 text-primary" />
                         Seasonal Optimization
                       </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Adapt your hashtag strategy to seasonal trends, holidays, and industry events. 
-                        Use our tool to identify trending seasonal hashtags and create timely content 
+                        Adapt your hashtag strategy to seasonal trends, holidays, and industry events.
+                        Use our tool to identify trending seasonal hashtags and create timely content
                         that resonates with current conversations.
                       </p>
                     </div>
@@ -321,39 +319,38 @@ export default function HashtagCounterPage() {
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Hashtag Research Techniques</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Effective hashtag research involves analyzing competitor content, monitoring trending topics, 
-                    and understanding your audience's language. Use our counter to track hashtag performance 
+                    Effective hashtag research involves analyzing competitor content, monitoring trending topics,
+                    and understanding your audience's language. Use our counter to track hashtag performance
                     and identify patterns that drive engagement in your niche.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Content-Specific Hashtag Planning</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Different content types require different hashtag approaches. Product posts need descriptive 
-                    hashtags, behind-the-scenes content benefits from personal hashtags, and educational content 
-                    performs well with industry-specific hashtags. Plan your hashtag strategy based on content 
+                    Different content types require different hashtag approaches. Product posts need descriptive
+                    hashtags, behind-the-scenes content benefits from personal hashtags, and educational content
+                    performs well with industry-specific hashtags. Plan your hashtag strategy based on content
                     goals and audience expectations.
                   </p>
                 </div>
 
-                {/* Hashtag Analytics and Performance Section */}
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">Understanding Hashtag Performance Metrics</h2>
-                  
+
                   <div className="space-y-4 mb-6">
                     <div className="p-4 rounded-lg bg-muted/30 border border-border">
                       <h3 className="font-semibold text-foreground mb-2">Reach vs. Engagement Analysis</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        High-reach hashtags bring visibility but may have lower engagement rates. Niche hashtags 
-                        often generate more meaningful interactions with your target audience. Use our tool to 
+                        High-reach hashtags bring visibility but may have lower engagement rates. Niche hashtags
+                        often generate more meaningful interactions with your target audience. Use our tool to
                         track which hashtag combinations deliver the best balance of reach and engagement for your content.
                       </p>
                     </div>
-                    
+
                     <div className="p-4 rounded-lg bg-muted/30 border border-border">
                       <h3 className="font-semibold text-foreground mb-2">Hashtag Longevity and Trends</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Some hashtags maintain consistent performance over time, while others spike during specific 
-                        events or trends. Our counter helps you identify evergreen hashtags for consistent use and 
+                        Some hashtags maintain consistent performance over time, while others spike during specific
+                        events or trends. Our counter helps you identify evergreen hashtags for consistent use and
                         trending hashtags for timely content opportunities.
                       </p>
                     </div>
@@ -361,61 +358,60 @@ export default function HashtagCounterPage() {
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Building Your Hashtag Library</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Create organized hashtag libraries categorized by content type, audience segment, or campaign. 
-                    Use our extraction tool to build comprehensive hashtag collections from successful posts, 
-                    competitor analysis, and industry research. Regular updates ensure your hashtag strategy 
+                    Create organized hashtag libraries categorized by content type, audience segment, or campaign.
+                    Use our extraction tool to build comprehensive hashtag collections from successful posts,
+                    competitor analysis, and industry research. Regular updates ensure your hashtag strategy
                     stays current and effective.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Cross-Platform Hashtag Adaptation</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    While some hashtags work across platforms, others are platform-specific. Adapt your hashtag 
-                    strategy for each platform's unique characteristics and audience behavior. Instagram favors 
-                    detailed hashtags, Twitter works with concise ones, and TikTok thrives on trending challenges. 
+                    While some hashtags work across platforms, others are platform-specific. Adapt your hashtag
+                    strategy for each platform's unique characteristics and audience behavior. Instagram favors
+                    detailed hashtags, Twitter works with concise ones, and TikTok thrives on trending challenges.
                     Use our tool to optimize hashtag sets for each platform's best practices.
                   </p>
                 </div>
 
-                {/* Industry-Specific Hashtag Guidance */}
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">Industry-Specific Hashtag Strategies</h2>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div className="space-y-4">
                       <div className="p-4 rounded-lg bg-muted/30 border border-border">
                         <h3 className="font-semibold text-foreground mb-2">E-commerce & Retail</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          Focus on product-specific hashtags, seasonal shopping trends, and lifestyle hashtags 
-                          that connect with your target customers. Use our counter to track product launch 
+                          Focus on product-specific hashtags, seasonal shopping trends, and lifestyle hashtags
+                          that connect with your target customers. Use our counter to track product launch
                           hashtags and customer-generated content tags.
                         </p>
                       </div>
-                      
+
                       <div className="p-4 rounded-lg bg-muted/30 border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Fitness & Wellness</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          Combine motivational hashtags with specific workout types, nutrition topics, and 
-                          wellness goals. Track trending fitness challenges and health awareness campaigns 
+                          Combine motivational hashtags with specific workout types, nutrition topics, and
+                          wellness goals. Track trending fitness challenges and health awareness campaigns
                           for timely content opportunities.
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="space-y-4">
                       <div className="p-4 rounded-lg bg-muted/30 border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Food & Cooking</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          Use ingredient-specific hashtags, cooking techniques, dietary preferences, and 
-                          meal planning tags. Our tool helps identify trending food hashtags and seasonal 
+                          Use ingredient-specific hashtags, cooking techniques, dietary preferences, and
+                          meal planning tags. Our tool helps identify trending food hashtags and seasonal
                           cooking trends for maximum engagement.
                         </p>
                       </div>
-                      
+
                       <div className="p-4 rounded-lg bg-muted/30 border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Travel & Lifestyle</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          Combine destination hashtags with travel tips, adventure activities, and cultural 
-                          experiences. Track location-specific hashtags and travel trend tags to reach 
+                          Combine destination hashtags with travel tips, adventure activities, and cultural
+                          experiences. Track location-specific hashtags and travel trend tags to reach
                           wanderlust-driven audiences effectively.
                         </p>
                       </div>
@@ -424,25 +420,24 @@ export default function HashtagCounterPage() {
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">B2B and Professional Services</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Professional services benefit from industry-specific hashtags, thought leadership tags, 
-                    and networking hashtags. Use our counter to identify professional development hashtags, 
-                    industry event tags, and business networking opportunities that connect with your 
+                    Professional services benefit from industry-specific hashtags, thought leadership tags,
+                    and networking hashtags. Use our counter to identify professional development hashtags,
+                    industry event tags, and business networking opportunities that connect with your
                     professional audience.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Creative Industries</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Artists, designers, and creators should focus on technique-specific hashtags, art movement 
-                    tags, and creative challenge hashtags. Our tool helps identify trending creative hashtags, 
-                    art community tags, and inspiration-focused hashtags that resonate with creative audiences 
+                    Artists, designers, and creators should focus on technique-specific hashtags, art movement
+                    tags, and creative challenge hashtags. Our tool helps identify trending creative hashtags,
+                    art community tags, and inspiration-focused hashtags that resonate with creative audiences
                     and fellow artists.
                   </p>
                 </div>
 
-                {/* Hashtag Counter Keywords Content */}
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">Hashtag Counter and Tag Counter: Complete Guide</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="p-4 rounded-lg bg-card border border-border">
                       <h3 className="font-semibold text-heading-accent mb-3">Hashtag Counter: Count Hashtags in Your Content</h3>
@@ -466,7 +461,6 @@ export default function HashtagCounterPage() {
                   </div>
                 </div>
 
-                {/* FAQ Section */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -568,7 +562,7 @@ export default function HashtagCounterPage() {
                 </div>
               </div>
             </div>
-            {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
+
             <div className="hidden lg:block w-72">
               <div className="sticky top-32 space-y-6">
                 <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

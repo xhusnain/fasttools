@@ -74,7 +74,7 @@ export function AiCaptionGenerator() {
 
   return (
     <div className="space-y-8">
-      {/* Input Section */}
+      {}
       <div className="grid gap-8">
         <div className="space-y-4">
           <Label htmlFor="description" className="text-base font-semibold">
@@ -119,9 +119,9 @@ export function AiCaptionGenerator() {
           </div>
         </div>
 
-        <Button 
-          onClick={generateCaptions} 
-          disabled={loading || !description.trim()} 
+        <Button
+          onClick={generateCaptions}
+          disabled={loading || !description.trim()}
           className="w-full h-12 text-base font-semibold"
           size="lg"
         >
@@ -139,7 +139,7 @@ export function AiCaptionGenerator() {
         </Button>
       </div>
 
-      {/* Error Display */}
+      {}
       {error && (
         <Alert variant="destructive">
           <AlertCircle className="h-4 w-4" />
@@ -147,7 +147,7 @@ export function AiCaptionGenerator() {
         </Alert>
       )}
 
-      {/* Results Section */}
+      {}
       {captions.length > 0 && (
         <div className="space-y-4 animate-fade-in">
           <div className="flex items-center justify-between">
@@ -166,15 +166,15 @@ export function AiCaptionGenerator() {
               Regenerate
             </Button>
           </div>
-          
+
           <div className="grid gap-4">
             {captions.map((caption, index) => (
               <Card key={index} className="p-4 hover:shadow-md transition-shadow">
                 <div className="flex items-start justify-between gap-4">
                   <p className="text-sm leading-relaxed flex-1 font-medium">{caption}</p>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
+                  <Button
+                    variant="outline"
+                    size="sm"
                     onClick={() => copyCaption(caption, index)}
                     className="flex-shrink-0"
                   >
@@ -200,7 +200,7 @@ export function AiCaptionGenerator() {
         </div>
       )}
 
-      {/* Loading State */}
+      {}
       {loading && (
         <div className="text-center py-8">
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 text-primary">

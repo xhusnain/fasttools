@@ -9,8 +9,7 @@ export async function GET(request: NextRequest) {
     const endDate = searchParams.get('end_date')
     const base = searchParams.get('base') || 'EUR'
     const symbols = searchParams.get('symbols')
-    
-    // Validate date parameters
+
     if (!startDate || !endDate) {
       return NextResponse.json(
         {
@@ -21,8 +20,7 @@ export async function GET(request: NextRequest) {
         { status: 400 }
       )
     }
-    
-    // Validate date format (YYYY-MM-DD)
+
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/
     if (!dateRegex.test(startDate) || !dateRegex.test(endDate)) {
       return NextResponse.json(
@@ -34,8 +32,7 @@ export async function GET(request: NextRequest) {
         { status: 400 }
       )
     }
-    
-    // Check if start date is not after end date
+
     const start = new Date(startDate)
     const end = new Date(endDate)
     if (start > end) {
@@ -48,8 +45,7 @@ export async function GET(request: NextRequest) {
         { status: 400 }
       )
     }
-    
-    // Check if end date is not in the future
+
     const today = new Date()
     if (end > today) {
       return NextResponse.json(
@@ -61,8 +57,7 @@ export async function GET(request: NextRequest) {
         { status: 400 }
       )
     }
-    
-    // Check if date range is not too large (max 1 year)
+
     const diffTime = Math.abs(end.getTime() - start.getTime())
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
     if (diffDays > 365) {
@@ -75,13 +70,12 @@ export async function GET(request: NextRequest) {
         { status: 400 }
       )
     }
-    
-    // Build the API URL
+
     let apiUrl = `${FRANKFURTER_API_BASE}/${startDate}..${endDate}?base=${base}`
     if (symbols) {
       apiUrl += `&symbols=${symbols}`
     }
-    
+
     const response = await fetch(apiUrl)
     if (!response.ok) {
       if (response.status === 404) {
@@ -100,7 +94,7 @@ export async function GET(request: NextRequest) {
     if (!data) {
       return NextResponse.json({ success: false, error: 'Service Unavailable', message: 'Server error. Please wait a minute and try again.' }, { status: 503 })
     }
-    
+
     return NextResponse.json({
       success: true,
       data: {
@@ -111,7 +105,7 @@ export async function GET(request: NextRequest) {
       },
       timestamp: new Date().toISOString()
     })
-    
+
   } catch (error) {
     console.error('Error fetching time series rates:', error)
     return NextResponse.json({ success: false, error: 'Service Unavailable', message: 'Server error. Please wait a minute and try again.' }, { status: 503 })

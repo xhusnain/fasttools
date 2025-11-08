@@ -8,15 +8,15 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  Clock, 
-  Activity, 
-  Target, 
-  TrendingUp, 
-  Heart, 
-  Zap, 
-  Trophy, 
+import {
+  Calculator,
+  Clock,
+  Activity,
+  Target,
+  TrendingUp,
+  Heart,
+  Zap,
+  Trophy,
   Users,
   Timer,
   BarChart3,
@@ -113,7 +113,6 @@ export default function BMRCalculator() {
       let equationName = ""
       let accuracy = ""
 
-      // Convert units if needed
       const heightCm = unitSystem === "imperial" ? heightNum * 2.54 : heightNum
       const weightKg = unitSystem === "imperial" ? weightNum * 0.453592 : weightNum
 
@@ -141,23 +140,20 @@ export default function BMRCalculator() {
         return
       }
 
-      // Calculate TDEE for different activity levels
-      const tdee = bmr * 1.55 // Moderate activity as default
-      
-      // Weight management calculations
+      const tdee = bmr * 1.55
+
       const weightLoss = {
-        mild: Math.round(bmr * 1.2 - 250), // 0.5 lb/week
-        moderate: Math.round(bmr * 1.2 - 500), // 1 lb/week
-        aggressive: Math.round(bmr * 1.2 - 750) // 1.5 lb/week
+        mild: Math.round(bmr * 1.2 - 250),
+        moderate: Math.round(bmr * 1.2 - 500),
+        aggressive: Math.round(bmr * 1.2 - 750)
       }
 
       const weightGain = {
-        mild: Math.round(bmr * 1.2 + 250), // 0.5 lb/week
-        moderate: Math.round(bmr * 1.2 + 500), // 1 lb/week
-        aggressive: Math.round(bmr * 1.2 + 750) // 1.5 lb/week
+        mild: Math.round(bmr * 1.2 + 250),
+        moderate: Math.round(bmr * 1.2 + 500),
+        aggressive: Math.round(bmr * 1.2 + 750)
       }
 
-      // Generate recommendations
       const recommendations = generateRecommendations(bmr, ageNum, gender)
 
       const newResult: BMRResult = {
@@ -184,21 +180,18 @@ export default function BMRCalculator() {
     const exercise: string[] = []
     const lifestyle: string[] = []
 
-    // Nutrition recommendations
     nutrition.push("Eat 5-6 small meals throughout the day to maintain metabolism")
     nutrition.push("Include lean proteins (chicken, fish, beans) in every meal")
     nutrition.push("Consume complex carbohydrates (oats, quinoa, sweet potatoes)")
     nutrition.push("Stay hydrated with 8-10 glasses of water daily")
     nutrition.push("Include healthy fats (avocado, nuts, olive oil)")
 
-    // Exercise recommendations
     exercise.push("Combine cardio and strength training for optimal results")
     exercise.push("Aim for 150 minutes of moderate cardio per week")
     exercise.push("Include 2-3 strength training sessions weekly")
     exercise.push("Add high-intensity interval training (HIIT) 1-2 times/week")
     exercise.push("Incorporate daily movement and walking")
 
-    // Lifestyle recommendations
     lifestyle.push("Get 7-9 hours of quality sleep nightly")
     lifestyle.push("Manage stress through meditation or yoga")
     lifestyle.push("Avoid prolonged sitting - take breaks every hour")
@@ -239,7 +232,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
 
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-3 sm:p-4 md:p-6 w-full overflow-hidden">
-      {/* Main Calculator */}
+      {}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-3 sm:px-4 md:px-6 pb-3">
           <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -248,7 +241,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4 sm:space-y-6 px-3 sm:px-4 md:px-6">
-          {/* Unit System Selection */}
+          {}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full overflow-hidden">
             <div className="flex-1 space-y-2 min-w-0 w-full sm:w-auto">
               <Label className="text-heading-accent text-xs sm:text-sm">Unit System</Label>
@@ -277,7 +270,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
             </div>
           </div>
 
-          {/* Input Fields */}
+          {}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
             <div className="space-y-2 w-full min-w-0">
               <Label htmlFor="age" className="text-heading-accent text-xs sm:text-sm">Age</Label>
@@ -367,10 +360,10 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
         </CardContent>
       </Card>
 
-      {/* Results Section */}
+      {}
       {result && (
         <div className="space-y-6">
-          {/* Main Results */}
+          {}
           <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
@@ -420,7 +413,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
             </CardContent>
           </Card>
 
-          {/* Activity Levels */}
+          {}
           <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
@@ -445,7 +438,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
             </CardContent>
           </Card>
 
-          {/* Weight Management */}
+          {}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <Card className="bg-card border-border">
               <CardHeader>
@@ -512,7 +505,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
             </Card>
           </div>
 
-          {/* Recommendations */}
+          {}
           <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
@@ -561,7 +554,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
         </div>
       )}
 
-      {/* History Section */}
+      {}
       {history.length > 0 && (
         <Card className="bg-card border-border">
           <CardHeader>
@@ -596,7 +589,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
         </Card>
       )}
 
-      {/* Information Section */}
+      {}
       <Card className="bg-card border-border">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-foreground">
@@ -618,7 +611,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               </div>
             </div>
           </div>
-          
+
           <div className="text-sm text-muted-foreground space-y-2">
             <p>
               <strong>BMR:</strong> Basal Metabolic Rate - calories burned at rest for basic body functions.

@@ -8,13 +8,13 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Label } from "@/components/ui/label"
-import { 
-  Copy, 
-  Check, 
-  Code2, 
-  Lightbulb, 
-  Replace, 
-  Sparkles, 
+import {
+  Copy,
+  Check,
+  Code2,
+  Lightbulb,
+  Replace,
+  Sparkles,
   BookOpen,
   Download,
   AlertCircle,
@@ -31,7 +31,7 @@ interface MatchDetail {
 
 const commonPatterns = {
   email: { pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", flags: "" },
-  url: { pattern: "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)", flags: "g" },
+  url: { pattern: "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&
   phone: { pattern: "^(\\+1[-\\.\\s]?)?\\(?\\d{3}\\)?[-\\.\\s]?\\d{3}[-\\.\\s]?\\d{4}$", flags: "" },
   date: { pattern: "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$", flags: "" },
   ipv4: { pattern: "^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$", flags: "" },
@@ -69,15 +69,14 @@ export function RegexTester() {
     try {
       const regex = new RegExp(newPattern, newFlags)
       const foundMatches = newTestString.match(regex)
-      
+
       if (foundMatches) {
         setMatches(foundMatches)
-        
-        // Get detailed match information
+
         const details: MatchDetail[] = []
         const regexForExec = new RegExp(newPattern, newFlags)
         let execResult
-        
+
         while ((execResult = regexForExec.exec(newTestString)) !== null) {
           details.push({
             match: execResult[0],
@@ -85,14 +84,13 @@ export function RegexTester() {
             groups: execResult.slice(1),
             namedGroups: execResult.groups
           })
-          
+
           if (!newFlags.includes('g')) break
         }
-        
+
         setMatchDetails(details)
       }
 
-      // Handle replace if replace string is provided
       if (newReplaceString !== undefined) {
         const replaced = newTestString.replace(regex, newReplaceString)
         setReplaceResult(replaced)
@@ -131,19 +129,16 @@ export function RegexTester() {
 
   const generateCodeSnippet = (language: string) => {
     const escapedPattern = pattern.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
-    
+
     const snippets: Record<string, string> = {
       javascript: `// JavaScript Regex Pattern
 const regex = /${pattern}/${flags};
 const testString = "${testString.replace(/\n/g, '\\n').replace(/"/g, '\\"')}";
 
-// Test for matches
 const matches = testString.match(regex);
 
-// Test if pattern exists
 const hasMatch = regex.test(testString);
 
-// Replace matches
 const replaced = testString.replace(regex, '${replaceString}');
 
       python: `# Python Regex Pattern
@@ -166,47 +161,42 @@ if match:
 replaced = re.sub(pattern, "${replaceString}", test_string, flags=flags)
 print(replaced)`,
 
-      java: `// Java Regex Pattern
+      java: `
 import java.util.regex.*;
 
 public class RegexTest {
     public static void main(String[] args) {
         String pattern = "${escapedPattern}";
         String testString = "${testString.replace(/\n/g, '\\n').replace(/"/g, '\\"')}";
-        
+
         Pattern regex = Pattern.compile(pattern${flags.includes('i') ? ', Pattern.CASE_INSENSITIVE' : ''}${flags.includes('m') ? ' | Pattern.MULTILINE' : ''});
         Matcher matcher = regex.matcher(testString);
-        
-        // Find all matches
+
         while (matcher.find()) {
             System.out.println("Match: " + matcher.group());
         }
-        
-        // Replace matches
+
         String replaced = matcher.replaceAll("${replaceString}");
         System.out.println(replaced);
     }
 }`,
 
       php: `<?php
-// PHP Regex Pattern
+
 $pattern = '/${pattern}/${flags}';
 $testString = '${testString.replace(/'/g, "\\'")}';
 
-// Find all matches
 preg_match_all($pattern, $testString, $matches);
 print_r($matches);
 
-// Test for match
 $hasMatch = preg_match($pattern, $testString);
 echo $hasMatch ? "Match found" : "No match";
 
-// Replace matches
 $replaced = preg_replace($pattern, '${replaceString}', $testString);
 echo $replaced;
 ?>`,
 
-      go: `// Go Regex Pattern
+      go: `
 package main
 
 import (
@@ -217,23 +207,20 @@ import (
 func main() {
     pattern := \`${pattern}\`
     testString := \`${testString}\`
-    
+
     regex := regexp.MustCompile(pattern)
-    
-    // Find all matches
+
     matches := regex.FindAllString(testString, -1)
     fmt.Println(matches)
-    
-    // Test for match
+
     hasMatch := regex.MatchString(testString)
     fmt.Println(hasMatch)
-    
-    // Replace matches
+
     replaced := regex.ReplaceAllString(testString, "${replaceString}")
     fmt.Println(replaced)
 }`,
 
-      csharp: `// C# Regex Pattern
+      csharp: `
 using System;
 using System.Text.RegularExpressions;
 
@@ -242,16 +229,14 @@ class Program {
         string pattern = @"${pattern}";
         string testString = @"${testString}";
         RegexOptions options = RegexOptions.None${flags.includes('i') ? ' | RegexOptions.IgnoreCase' : ''}${flags.includes('m') ? ' | RegexOptions.Multiline' : ''};
-        
+
         Regex regex = new Regex(pattern, options);
-        
-        // Find all matches
+
         MatchCollection matches = regex.Matches(testString);
         foreach (Match match in matches) {
             Console.WriteLine($"Match: {match.Value}");
         }
-        
-        // Replace matches
+
         string replaced = regex.Replace(testString, "${replaceString}");
         Console.WriteLine(replaced);
     }
@@ -279,10 +264,9 @@ puts replaced`
 
   const explainPattern = (pattern: string): string => {
     if (!pattern) return "Enter a regex pattern to see explanation"
-    
+
     let explanation = "Regex Pattern Breakdown:\n\n"
-    
-    // Basic patterns
+
     if (pattern.includes('^')) explanation += "^ - Matches start of string/line\n"
     if (pattern.includes('$')) explanation += "$ - Matches end of string/line\n"
     if (pattern.includes('\\d')) explanation += "\\d - Matches any digit (0-9)\n"
@@ -296,25 +280,22 @@ puts replaced`
     if (pattern.includes('(') && pattern.includes(')')) explanation += "() - Defines a capture group\n"
     if (pattern.includes('[') && pattern.includes(']')) explanation += "[] - Defines a character set\n"
     if (pattern.includes('{') && pattern.includes('}')) explanation += "{n,m} - Matches between n and m of the preceding token\n"
-    
-    // Character classes
+
     if (pattern.includes('[a-z]')) explanation += "[a-z] - Matches any lowercase letter\n"
     if (pattern.includes('[A-Z]')) explanation += "[A-Z] - Matches any uppercase letter\n"
     if (pattern.includes('[0-9]')) explanation += "[0-9] - Matches any digit\n"
-    
-    // Lookahead/lookbehind
+
     if (pattern.includes('(?=')) explanation += "(?=...) - Positive lookahead\n"
     if (pattern.includes('(?!')) explanation += "(?!...) - Negative lookahead\n"
     if (pattern.includes('(?<=')) explanation += "(?<=...) - Positive lookbehind\n"
     if (pattern.includes('(?<!')) explanation += "(?<!...) - Negative lookbehind\n"
-    
-    // Named groups
+
     if (pattern.includes('(?<')) explanation += "(?<name>...) - Named capture group\n"
-    
+
     if (explanation === "Regex Pattern Breakdown:\n\n") {
       explanation += "This pattern uses literal characters for matching."
     }
-    
+
     return explanation
   }
 
@@ -342,7 +323,6 @@ puts replaced`
     setShowExplanation(true)
   }
 
-  // Visual highlighting of matches
   const highlightedText = useMemo(() => {
     if (!testString || !pattern || matches.length === 0) return testString
 
@@ -350,7 +330,7 @@ puts replaced`
       const regex = new RegExp(pattern, flags)
       let lastIndex = 0
       const parts: { text: string; isMatch: boolean }[] = []
-      
+
       matchDetails.forEach((detail) => {
         if (detail.index > lastIndex) {
           parts.push({ text: testString.slice(lastIndex, detail.index), isMatch: false })
@@ -358,11 +338,11 @@ puts replaced`
         parts.push({ text: detail.match, isMatch: true })
         lastIndex = detail.index + detail.match.length
       })
-      
+
       if (lastIndex < testString.length) {
         parts.push({ text: testString.slice(lastIndex), isMatch: false })
       }
-      
+
       return parts
     } catch {
       return testString
@@ -371,7 +351,7 @@ puts replaced`
 
   return (
     <div className="w-full max-w-full overflow-hidden space-y-4 sm:space-y-6">
-      {/* Pattern Input Section */}
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
         <div className="space-y-2">
           <Label className="text-sm font-medium text-foreground">Regular Expression Pattern</Label>
@@ -411,7 +391,6 @@ puts replaced`
         </div>
       </div>
 
-      {/* Quick Pattern Templates */}
       <Card className="p-3 sm:p-4 bg-card">
         <h3 className="text-sm font-semibold mb-2 text-foreground flex items-center gap-2">
           <Sparkles className="h-4 w-4 text-accent" />
@@ -432,16 +411,15 @@ puts replaced`
         </div>
       </Card>
 
-      {/* Test String & Tabs */}
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <TabsList className="grid w-full grid-cols-2 bg-card p-1">
-          <TabsTrigger 
-            value="test" 
+          <TabsTrigger
+            value="test"
             className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm font-semibold"
           >
             Test & Match
           </TabsTrigger>
-          <TabsTrigger 
+          <TabsTrigger
             value="replace"
             className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm font-semibold"
           >
@@ -461,7 +439,6 @@ puts replaced`
             />
           </div>
 
-          {/* Visual Highlighting */}
           {Array.isArray(highlightedText) && highlightedText.length > 0 && (
             <Card className="p-4 bg-card">
               <h3 className="text-sm font-semibold mb-2 text-foreground">Visual Match Highlighting</h3>
@@ -478,7 +455,6 @@ puts replaced`
             </Card>
           )}
 
-          {/* Error Display */}
           {error && (
             <div className="p-4 bg-card border border-destructive/20 rounded-lg flex items-start gap-2">
               <AlertCircle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
@@ -489,7 +465,6 @@ puts replaced`
             </div>
           )}
 
-          {/* Matches Found */}
           {matches.length > 0 && (
             <Card className="p-4 space-y-3">
               <div className="flex items-center justify-between">
@@ -500,7 +475,6 @@ puts replaced`
                 <Badge variant="secondary" className="text-sm">{matches.length} match(es)</Badge>
               </div>
 
-              {/* Match Details */}
               <div className="space-y-2">
                 {matchDetails.map((detail, index) => (
                   <Card key={index} className="p-3 bg-card border">
@@ -511,8 +485,7 @@ puts replaced`
                     <div className="font-mono text-sm p-2 bg-muted rounded break-all">
                       {detail.match}
                     </div>
-                    
-                    {/* Capture Groups */}
+
                     {detail.groups.length > 0 && detail.groups.some(g => g !== undefined) && (
                       <div className="mt-2 pt-2 border-t border-border">
                         <p className="text-xs font-semibold mb-1 text-muted-foreground">Capture Groups:</p>
@@ -527,7 +500,6 @@ puts replaced`
                       </div>
                     )}
 
-                    {/* Named Groups */}
                     {detail.namedGroups && Object.keys(detail.namedGroups).length > 0 && (
                       <div className="mt-2 pt-2 border-t border-border">
                         <p className="text-xs font-semibold mb-1 text-muted-foreground">Named Groups:</p>
@@ -547,7 +519,6 @@ puts replaced`
             </Card>
           )}
 
-          {/* No Matches */}
           {pattern && testString && matches.length === 0 && !error && (
             <div className="p-4 bg-card border border-border rounded-lg flex items-center gap-2">
               <AlertCircle className="h-5 w-5 text-muted-foreground" />
@@ -603,7 +574,6 @@ puts replaced`
         </TabsContent>
       </Tabs>
 
-      {/* Action Buttons */}
       <div className="flex flex-wrap gap-2">
         <Button onClick={openCodeGenerator} className="gap-2 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700">
           <Code2 className="h-4 w-4" />
@@ -615,7 +585,6 @@ puts replaced`
         </Button>
       </div>
 
-      {/* Code Generator Modal */}
       {showCodeGenerator && (
         <div className="fixed inset-0 bg-card/50 flex items-center justify-center z-50 p-4">
           <Card className="w-full max-w-3xl max-h-[90vh] overflow-y-auto">
@@ -630,7 +599,6 @@ puts replaced`
                 </Button>
               </div>
 
-              {/* Language Selection */}
               <div className="flex flex-wrap gap-2">
                 {['javascript', 'python', 'java', 'php', 'go', 'csharp', 'ruby'].map((lang) => (
                   <Button
@@ -648,7 +616,6 @@ puts replaced`
                 ))}
               </div>
 
-              {/* Generated Code */}
               <div className="relative">
                 <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-xs font-mono whitespace-pre-wrap break-words">
                   {generatedCode}
@@ -676,7 +643,6 @@ puts replaced`
         </div>
       )}
 
-      {/* Explanation Modal */}
       {showExplanation && (
         <div className="fixed inset-0 bg-card/50 flex items-center justify-center z-50 p-4">
           <Card className="w-full max-w-2xl max-h-[90vh] overflow-y-auto">

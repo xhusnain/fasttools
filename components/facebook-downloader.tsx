@@ -80,7 +80,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
       }
 
       setResult({
-        videoUrl: data.hdUrl || data.videoUrl, // Prefer HD URL
+        videoUrl: data.hdUrl || data.videoUrl,
         hdUrl: data.hdUrl,
         normalUrl: data.normalUrl,
         thumbnail: data.thumbnail,
@@ -110,28 +110,25 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
       || 'facebook_video'
 
     setError(null)
-    
-    // Skip countdown for proxy URLs (like dl.snapcdn.app) - they download directly
-    // This avoids CORS errors during countdown and makes download faster
+
     if (url.includes('dl.snapcdn.app') || url.includes('download?token=')) {
       setDownloadingStates(prev => ({ ...prev, [downloadType]: true }))
       performDownload(url, sanitizedFilename, downloadType)
       return
     }
 
-    // For direct URLs, use countdown
     setCountdownStates(prev => ({ ...prev, [downloadType]: 15 }))
 
     let countdown = 15
     const countdownInterval = setInterval(() => {
       countdown--
       setCountdownStates(prev => ({ ...prev, [downloadType]: countdown }))
-      
+
       if (countdown <= 0) {
         clearInterval(countdownInterval)
         setCountdownStates(prev => ({ ...prev, [downloadType]: undefined }))
         setDownloadingStates(prev => ({ ...prev, [downloadType]: true }))
-        
+
         performDownload(url, sanitizedFilename, downloadType)
       }
     }, 1000)
@@ -140,94 +137,17 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
   }
 
   const performBackgroundDownload = async (url: string, filename: string, downloadType: string) => {
-    // Skip background download for proxy URLs to avoid CORS errors
+
     if (url.includes('dl.snapcdn.app') || url.includes('download?token=')) {
       return
     }
-    
+
     try {
       const response = await fetch(url, {
         method: 'GET',
         headers: {
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-          'Accept': '*/*',
-          'Referer': 'https://www.facebook.com/'
-        }
-      })
-
-      if (response.ok) {
-        const blob = await response.blob()
-        if (blob.size > 0) {
-          ;(window as any)[`downloadedBlob_${downloadType}`] = blob
-        }
-      }
-    } catch (error) {
-      // Silent fail - background download is not critical
-    }
-  }
-
-  const performDownload = async (url: string, filename: string, downloadType: string) => {
-    try {
-      const preDownloadedBlob = (window as any)[`downloadedBlob_${downloadType}`]
-      
-      if (preDownloadedBlob) {
-        const objectUrl = URL.createObjectURL(preDownloadedBlob)
-        
-        const link = document.createElement("a")
-        link.href = objectUrl
-        link.download = filename
-        link.style.display = 'none'
-        
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
-        
-        setTimeout(() => {
-          URL.revokeObjectURL(objectUrl)
-          delete (window as any)[`downloadedBlob_${downloadType}`]
-        }, 1000)
-        
-        setTimeout(() => {
-          setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
-          setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
-        }, 500)
-        
-        return
-      }
-
-      // For proxy URLs (like dl.snapcdn.app), use direct download without fetch
-      // This avoids CORS errors and works better with these URLs
-      if (url.includes('dl.snapcdn.app') || url.includes('download?token=')) {
-        try {
-          const link = document.createElement("a")
-          link.href = url
-          link.download = filename
-          link.target = '_blank'
-          link.rel = 'noopener noreferrer'
-          link.style.display = 'none'
-          
-          document.body.appendChild(link)
-          link.click()
-          document.body.removeChild(link)
-          
-          setTimeout(() => {
-            setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
-            setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
-          }, 500)
-          
-          return
-        } catch (linkError) {
-          throw new Error('Download failed. Please try again.')
-        }
-      }
-
-      // For direct video URLs, try fetch first
-      try {
-        const response = await fetch(url, {
-          method: 'GET',
-          headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            'Accept': '*/*',
+          'Accept': '**',
             'Referer': 'https://www.facebook.com/'
           },
           mode: 'cors'
@@ -235,33 +155,33 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
 
         if (response.ok) {
           const blob = await response.blob()
-          
+
           if (blob.size > 0) {
             const objectUrl = URL.createObjectURL(blob)
-            
+
             const link = document.createElement("a")
             link.href = objectUrl
             link.download = filename
             link.style.display = 'none'
-            
+
             document.body.appendChild(link)
             link.click()
             document.body.removeChild(link)
-            
+
             setTimeout(() => {
               URL.revokeObjectURL(objectUrl)
             }, 1000)
-            
+
             setTimeout(() => {
               setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
               setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
             }, 500)
-            
+
             return
           }
         }
       } catch (directError) {
-        // If fetch fails, try direct link as fallback
+
         try {
           const link = document.createElement("a")
           link.href = url
@@ -269,24 +189,24 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
           link.target = '_blank'
           link.rel = 'noopener noreferrer'
           link.style.display = 'none'
-          
+
           document.body.appendChild(link)
           link.click()
           document.body.removeChild(link)
-          
+
           setTimeout(() => {
             setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
             setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
           }, 500)
-          
+
           return
         } catch (linkError) {
-          // Fall through to error
+
         }
       }
 
       throw new Error('Download failed. The video URL may be expired or inaccessible.')
-      
+
     } catch (e) {
       const errorMessage = e instanceof Error ? e.message : "Download failed. Please try again."
       setError(errorMessage)
@@ -321,7 +241,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
             <Input
               id="video-url"
               type="text"
-              placeholder="https://www.facebook.com/watch/?v=... or https://www.facebook.com/.../videos/..."
+              placeholder="https:
               value={videoUrl}
               onChange={(e) => setVideoUrl(e.target.value)}
               className={`mt-2 ${compact ? "h-10 sm:h-11" : "h-12 sm:h-14"} text-sm sm:text-base border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20`}
@@ -392,7 +312,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
 
           {result && (
             <div className="space-y-3">
-              {/* Show video preview if we have a video URL - prefer HD for preview */}
+              {}
               {(result.hdUrl || result.videoUrl || result.normalUrl) && !videoLoadError && (
                 <div className="flex justify-center">
                   <div className={`relative ${compact ? "w-full max-w-xs" : "w-full max-w-sm"} rounded-md border overflow-hidden bg-black`}>
@@ -408,7 +328,7 @@ export function FacebookDownloader({ compact = false }: FacebookDownloaderProps)
                   </div>
                 </div>
               )}
-              {/* Fallback to thumbnail image if available */}
+              {}
               {(videoLoadError || (!result.videoUrl && !result.hdUrl && !result.normalUrl)) && result.thumbnail && (
                 <div className="flex justify-center">
                   <img

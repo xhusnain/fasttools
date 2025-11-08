@@ -11,11 +11,10 @@ export const metadata: Metadata = {
     description:
         "Remove photo bg instantly with our free AI background remover. Professional photo background remover for portraits, products & pets. Remove backgrounds online - no photoshop needed. Free, fast & secure.",
     keywords: [
-        // High Volume Keywords (10k+ searches)
+
         "removing bg in photoshop",
         "photoroom bg remover",
 
-        // Medium Volume Keywords (1k-10k searches)
         "photo bg remover",
         "photo bg remover for free",
         "photo bg remover ai",
@@ -24,7 +23,6 @@ export const metadata: Metadata = {
         "photo bg remover free online",
         "photo bg remover white",
 
-        // Keywords (100-1000 searches)
         "photo bg remover hd free",
         "photo enhancer bg remover",
         "photo editor bg remover free",
@@ -39,7 +37,6 @@ export const metadata: Metadata = {
         "ai photo editor bg remover",
         "photo remove bg upload",
 
-        // Keywords (50-100 searches)
         "png remove background photoshop",
         "photo background remover cutout pro",
         "photo background remover png",
@@ -55,7 +52,6 @@ export const metadata: Metadata = {
         "photo background remover software for pc",
         "photo remove bg photoshop",
 
-        // Additional Relevant Keywords
         "photo background remover adobe",
         "photo background remover change",
         "photo background remover iphone",
@@ -65,7 +61,6 @@ export const metadata: Metadata = {
         "photo background remover high quality free",
         "photo background shadow remover",
 
-        // Core Keywords
         "remove background",
         "background remover",
         "free background remover",
@@ -79,7 +74,6 @@ export const metadata: Metadata = {
         "background eraser",
         "background remover online free",
 
-        // Additional Feature-Specific Keywords
         "photo background remover to white",
         "ai photo editor bg remover mod apk",
         "photo background remover tool",
@@ -116,7 +110,6 @@ export const metadata: Metadata = {
         "photo background remover download for pc",
         "photo background remover google",
 
-        // Platform & Device-Specific Keywords
         "photo background remover passport size",
         "photo background remover for windows 10",
         "photo background remover hd free online",
@@ -183,14 +176,12 @@ export const metadata: Metadata = {
         "photo background remover in online",
         "ai photo editor bg remover mod",
 
-        // Software-Specific & Crack Keywords (informational)
         "leawo photo bg remover crack",
         "softorbits photo background remover license key",
         "photo background remover crack",
         "photo background remove in photoshop",
         "passport photo background remover reddit",
 
-        // Advanced Features & Quality Keywords
         "bg remove 3d",
         "photo background remover free offline",
         "photo background remover by ai",
@@ -227,7 +218,6 @@ export const metadata: Metadata = {
         "ai photo editor & bg remover دانلود",
         "photo background remover eraser",
 
-        // Technical & Professional Keywords
         "photo background remover tool free",
         "image bg remove in css",
         "photo background remover without watermark",
@@ -264,7 +254,6 @@ export const metadata: Metadata = {
         "photo bg remove 4k",
         "photo background remover blur",
 
-        // Additional High-Value Keywords
         "photo background remover hd online",
         "photo background remover for cv",
         "photo background remover samsung",
@@ -277,7 +266,6 @@ export const metadata: Metadata = {
         "ai photo bg remover video",
         "bulk photo bg remover",
 
-        // Top High-Volume Keywords
         "photo background remover",
         "photo background remover online",
         "photo background remover free",
@@ -307,7 +295,6 @@ export const metadata: Metadata = {
         "photo to bg remover",
         "photo to background remover png",
 
-        // Combination Features Keywords (Remover + Other Features)
         "photo background remover and changer",
         "photo background remover and editor",
         "photo background remover and changer online",
@@ -503,7 +490,7 @@ export default function ImageBackgroundRemoverPage() {
                         />
                     </div>
 
-                    {/* Mobile Ad Space */}
+                    {}
                     <div className="lg:hidden mb-6">
                         <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                     </div>
@@ -512,13 +499,13 @@ export default function ImageBackgroundRemoverPage() {
                         <div className="xl:col-span-3">
                             <ImageBackgroundRemover />
 
-                            {/* Content Sections */}
+                            {}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                     <span className="hidden sm:inline text-foreground">Why Our AI Remover is the Best Free Tool</span>
                                     <span className="sm:hidden text-foreground">AI Features</span>
                                 </h2>
-                                
+
                                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
                                     Our image background remover uses cutting-edge AI technology for high accuracy and superior privacy, processing everything locally in your browser.
                                 </p>
@@ -548,9 +535,9 @@ export default function ImageBackgroundRemoverPage() {
                                 </div>
                             </section>
 
-                            {/* Example Showcases */}
+                            {}
                             <section className="mt-8 sm:mt-10 lg:mt-12 space-y-12">
-                                {/* Example 1 - People */}
+                                {}
                                 <div className="bg-card rounded-xl p-6 sm:p-8 lg:p-10 border border-border">
                                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                                         <div className="order-2 lg:order-1">
@@ -595,7 +582,7 @@ export default function ImageBackgroundRemoverPage() {
                                     </div>
                                 </div>
 
-                                {/* Example 2 - Pets */}
+                                {}
                                 <div className="bg-card rounded-xl p-6 sm:p-8 lg:p-10 border border-border">
                                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                                         <div className="order-2 lg:order-2">
@@ -640,7 +627,7 @@ export default function ImageBackgroundRemoverPage() {
                                                 </div>
                                             </div>
 
-                                {/* Example 3 - Objects */}
+                                {}
                                 <div className="bg-card rounded-xl p-6 sm:p-8 lg:p-10 border border-border">
                                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                                         <div className="order-2 lg:order-1">
@@ -686,7 +673,7 @@ export default function ImageBackgroundRemoverPage() {
                                 </div>
                             </section>
 
-                            {/* Background Removal Use Cases & Applications */}
+                            {}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                     <span className="hidden sm:inline text-foreground">Background Removal Use Cases & Applications</span>
@@ -737,13 +724,13 @@ export default function ImageBackgroundRemoverPage() {
                                 </div>
                             </section>
 
-                            {/* FAQ Section */}
+                            {}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                     <span className="hidden sm:inline text-foreground">Frequently Asked Questions</span>
                                     <span className="sm:hidden text-foreground">FAQ</span>
                                 </h2>
-                                
+
                                 <div className="space-y-4 sm:space-y-6">
                                     <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                                         <h3 className="text-lg sm:text-xl font-semibold text-heading-accent mb-3 sm:mb-4">How accurate is the background removal?</h3>
@@ -849,7 +836,7 @@ export default function ImageBackgroundRemoverPage() {
                                 </div>
                             </section>
 
-                            {/* Platform & Device Compatibility */}
+                            {}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                     <span className="text-foreground">Platform & Device Compatibility</span>
@@ -889,7 +876,7 @@ export default function ImageBackgroundRemoverPage() {
                                 </div>
                             </section>
 
-                            {/* Quality & Format Options */}
+                            {}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                     <span className="text-foreground">High-Quality Output Formats</span>
@@ -930,7 +917,7 @@ export default function ImageBackgroundRemoverPage() {
                                 </div>
                             </section>
 
-                            {/* Advanced Features & Editing Tools */}
+                            {}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                     <span className="text-foreground">Advanced Editing Features</span>
@@ -977,7 +964,7 @@ export default function ImageBackgroundRemoverPage() {
                                         </div>
                             </section>
 
-                            {/* Specialized Removal Features */}
+                            {}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                     <span className="text-foreground">Specialized Removal Capabilities</span>
@@ -1014,7 +1001,7 @@ export default function ImageBackgroundRemoverPage() {
                                 </div>
                             </section>
 
-                            {/* Integration & Technical Features */}
+                            {}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                     <span className="text-foreground">Developer & Integration Tools</span>
@@ -1044,7 +1031,7 @@ export default function ImageBackgroundRemoverPage() {
                                 </div>
                             </section>
 
-                            {/* Popular Alternatives & Comparisons */}
+                            {}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                     <span className="text-foreground">Tool Comparisons & Alternatives</span>
@@ -1088,7 +1075,7 @@ export default function ImageBackgroundRemoverPage() {
                                         </div>
                             </section>
 
-                            {/* Access Methods & Download Options */}
+                            {}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                     <span className="text-foreground">Free Access & Download Options</span>
@@ -1125,7 +1112,7 @@ export default function ImageBackgroundRemoverPage() {
                                 </div>
                             </section>
 
-                            {/* Professional & Commercial Use */}
+                            {}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                     <span className="text-foreground">Professional & Commercial Applications</span>
@@ -1150,9 +1137,9 @@ export default function ImageBackgroundRemoverPage() {
                             </div>
 
                         <div className="space-y-6">
-                            {/* Desktop Sticky Sidebar Container */}
+                            {}
                             <div className="hidden xl:block sticky top-4 space-y-6">
-                                {/* Top Sidebar Ad */}
+                                {}
                                 <div className="bg-card border border-border rounded-lg p-4 min-h-[360px]">
                                     <div className="text-center">
                                         <div className="text-sm font-medium text-muted-foreground mb-2">Advertisement</div>

@@ -117,7 +117,7 @@ export default function SalesTaxCalculatorPage() {
           },
           featureList: [
             "Forward Tax Calculation",
-            "Reverse Tax Calculation", 
+            "Reverse Tax Calculation",
             "Tax Rate Calculation",
             "State Tax Comparison",
             "Local Tax Inclusion",
@@ -144,7 +144,7 @@ export default function SalesTaxCalculatorPage() {
           }
         })
       }} />
-      
+
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 py-6 sm:py-8 md:py-12">
           <Breadcrumbs
@@ -156,7 +156,7 @@ export default function SalesTaxCalculatorPage() {
 
           <div className="max-w-7xl mx-auto w-full">
             <div className="mb-4 sm:mb-6 md:mb-8 w-full">
-              <GHeader 
+              <GHeader
                 title="Sales Tax Calculator - Advanced State Tax Analysis"
                 description="Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, business tips, and compliance guidance for optimal tax planning."
                 titleSize="medium"
@@ -164,7 +164,7 @@ export default function SalesTaxCalculatorPage() {
               />
             </div>
 
-            {/* Mobile/Tablet AdSpace after GHeader */}
+            {}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -177,10 +177,10 @@ export default function SalesTaxCalculatorPage() {
                 <div className="w-full">
                   <SalesTaxCalculator />
                 </div>
-            
-                {/* Educational Content Sections */}
+
+                {}
                 <div className="space-y-3 sm:space-y-4 md:space-y-5 bg-card rounded-lg p-2 sm:p-3 md:p-4 w-full">
-                  {/* How to Use Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -210,7 +210,7 @@ export default function SalesTaxCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Features Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -280,7 +280,7 @@ export default function SalesTaxCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Use Cases Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -312,7 +312,7 @@ export default function SalesTaxCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* US Sales Tax Overview */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -348,7 +348,7 @@ export default function SalesTaxCalculatorPage() {
                           </div>
                         </div>
                       </div>
-                      
+
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="text-xs sm:text-sm md:text-base font-semibold text-heading-accent mb-1.5 sm:mb-2 break-words">Local Tax Considerations</h3>
                         <p className="text-xs text-foreground mb-2 break-words">
@@ -361,7 +361,7 @@ export default function SalesTaxCalculatorPage() {
                           </div>
                         </div>
                       </div>
-                      
+
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="text-xs sm:text-sm md:text-base font-semibold text-heading-accent mb-1.5 sm:mb-2 break-words">Business Tax Compliance</h3>
                         <p className="text-xs text-foreground mb-2 break-words">
@@ -377,7 +377,6 @@ export default function SalesTaxCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Sales Tax Calculation Methods */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -398,7 +397,7 @@ export default function SalesTaxCalculatorPage() {
                           </div>
                         </div>
                       </div>
-                      
+
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm break-words">Reverse Calculation (Remove Tax)</h3>
                         <p className="text-xs text-foreground mb-2 break-words">
@@ -411,7 +410,7 @@ export default function SalesTaxCalculatorPage() {
                           </div>
                         </div>
                       </div>
-                      
+
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm break-words">Tax Rate Calculation</h3>
                         <p className="text-xs text-foreground mb-2 break-words">
@@ -427,7 +426,6 @@ export default function SalesTaxCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Business Compliance Guide */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -448,7 +446,7 @@ export default function SalesTaxCalculatorPage() {
                           <li>• <strong className="text-heading-accent">Click-Through Nexus:</strong> Referral agreements with in-state businesses</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm break-words">Registration and Filing Requirements</h3>
                         <p className="text-xs text-foreground mb-2 break-words">
@@ -461,7 +459,7 @@ export default function SalesTaxCalculatorPage() {
                           <li>• <strong className="text-heading-accent">Remittance:</strong> Pay collected tax to state by due date</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm break-words">Record Keeping and Audit Preparation</h3>
                         <p className="text-xs text-foreground mb-2 break-words">
@@ -477,7 +475,6 @@ export default function SalesTaxCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Tax Deduction Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -492,14 +489,14 @@ export default function SalesTaxCalculatorPage() {
                           You can deduct sales tax from federal income tax if you itemize deductions. This is beneficial for taxpayers who made large purchases during the year, such as cars, weddings, or major appliances. Our calculator helps you track these amounts for tax planning.
                         </p>
                       </div>
-                      
+
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm break-words">Record Keeping Requirements</h3>
                         <p className="text-xs text-foreground break-words">
                           The IRS requires detailed records of sales tax paid, including receipts and documentation. This can be tedious but may result in significant tax savings for high-spending taxpayers. Our calculator helps you organize and track these records.
                         </p>
                       </div>
-                      
+
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="font-semibold text-heading-accent mb-1.5 text-xs sm:text-sm break-words">Standard vs Itemized Deductions</h3>
                         <p className="text-xs text-foreground break-words">
@@ -509,7 +506,6 @@ export default function SalesTaxCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* FAQ Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -647,7 +643,6 @@ export default function SalesTaxCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Related Tools Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm mb-3 sm:mb-4 overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-heading-accent break-words">
                       <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded">
@@ -686,11 +681,10 @@ export default function SalesTaxCalculatorPage() {
                   </div>
                 </div>
               </div>
-              
-              {/* Sidebar */}
+
               <div className="hidden lg:block space-y-6 lg:space-y-8">
                 <div className="sticky top-4">
-                  {/* Sidebar Ad */}
+
                   <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                     <AdSpace slot="sidebar" className="h-64 md:h-80 rounded-lg overflow-hidden" />
                   </div>

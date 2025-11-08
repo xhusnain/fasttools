@@ -1,14 +1,14 @@
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import { 
-  Shield, 
-  Lock, 
-  Eye, 
-  Users, 
-  Cookie, 
-  CheckCircle, 
-  Mail, 
-  Globe, 
+import {
+  Shield,
+  Lock,
+  Eye,
+  Users,
+  Cookie,
+  CheckCircle,
+  Mail,
+  Globe,
   FileText,
   Database,
   Clock,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "privacy policy",
     "data protection",
     "GDPR compliance",
-    "CCPA compliance", 
+    "CCPA compliance",
     "Google AdSense privacy",
     "cookie policy",
     "data security",
@@ -98,7 +98,7 @@ export default function PrivacyPolicyPage() {
           <Breadcrumbs items={[{ label: "Privacy Policy", href: "/privacy-policy" }]} />
 
           <div className="max-w-5xl mx-auto mt-8 md:mt-12">
-            {/* Title Section */}
+            {}
             <div className="mb-12 md:mb-16">
               <GHeader
                 title="Privacy Policy"
@@ -124,9 +124,9 @@ export default function PrivacyPolicyPage() {
               <p className="text-sm text-muted-foreground text-center mt-4">Last updated: November 1, 2025</p>
             </div>
 
-            {/* Main Content */}
+            {}
             <div className="space-y-8">
-              {/* Introduction */}
+              {}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -149,7 +149,7 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
 
-              {/* Information We Collect */}
+              {}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -160,7 +160,7 @@ export default function PrivacyPolicyPage() {
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   We collect information about you in several ways when you use our Site:
                 </p>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="bg-card border border-border rounded-lg p-4">
                     <h3 className="text-lg font-semibold text-heading-accent mb-3 flex items-center gap-2">
@@ -204,7 +204,7 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
 
-              {/* Tool Usage Data */}
+              {}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -222,7 +222,6 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
 
-              {/* How We Use Your Information */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -233,7 +232,7 @@ export default function PrivacyPolicyPage() {
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   We use the information we collect for the following purposes:
                 </p>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
@@ -291,7 +290,6 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
 
-              {/* Google AdSense */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -350,7 +348,6 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
 
-              {/* Children's Privacy */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -368,7 +365,6 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
 
-              {/* Your Privacy Rights */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -380,7 +376,7 @@ export default function PrivacyPolicyPage() {
                   <p className="text-muted-foreground leading-relaxed">
                     Depending on your location, you may have certain rights regarding your personal information:
                   </p>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-card border border-border rounded-lg p-4">
                       <h3 className="font-semibold text-heading-accent mb-2 flex items-center gap-2">
@@ -396,7 +392,7 @@ export default function PrivacyPolicyPage() {
                         <li>• Right to object to processing</li>
                       </ul>
                     </div>
-                    
+
                     <div className="bg-card border border-border rounded-lg p-4">
                       <h3 className="font-semibold text-heading-accent mb-2 flex items-center gap-2">
                         <CheckCircle className="h-4 w-4 text-heading-accent" />
@@ -430,7 +426,6 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
 
-              {/* Policy Updates */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -451,7 +446,6 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
 
-              {/* Contact Us */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -476,7 +470,7 @@ export default function PrivacyPolicyPage() {
                         <h4 className="font-semibold text-foreground mb-2">Website</h4>
                         <a href="https://www.fasttools.store" className="flex items-center gap-2 text-foreground hover:text-foreground hover:underline font-medium">
                           <Globe className="h-4 w-4" />
-                          https://www.fasttools.store
+                          https:
                         </a>
                       </div>
                     </div>

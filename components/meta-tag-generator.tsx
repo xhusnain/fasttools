@@ -24,7 +24,7 @@ export function MetaTagGenerator() {
     setIsGenerating(true)
 
     setTimeout(() => {
-      const metaTags = ` Primary Meta Tags 
+      const metaTags = ` Primary Meta Tags
 <title>${title || "Your Page Title"}</title>
 <meta name="title" content="${title || "Your Page Title"}" />
 <meta name="description" content="${description || "Your page description"}" />
@@ -32,16 +32,16 @@ ${keywords ? `<meta name="keywords" content="${keywords}" />` : ""}
 ${author ? `<meta name="author" content="${author}" />` : ""}
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
 
- Open Graph / Facebook 
+ Open Graph / Facebook
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://yourwebsite.com/" />
+<meta property="og:url" content="https:
 <meta property="og:title" content="${title || "Your Page Title"}" />
 <meta property="og:description" content="${description || "Your page description"}" />
 ${ogImage ? `<meta property="og:image" content="${ogImage}" />` : ""}
 
- Twitter 
+ Twitter
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://yourwebsite.com/" />
+<meta property="twitter:url" content="https:
 <meta property="twitter:title" content="${title || "Your Page Title"}" />
 <meta property="twitter:description" content="${description || "Your page description"}" />
 ${ogImage ? `<meta property="twitter:image" content="${ogImage}" />` : ""}
@@ -133,7 +133,7 @@ ${twitterHandle ? `<meta name="twitter:creator" content="${twitterHandle}" />` :
             </Label>
             <Input
               id="ogImage"
-              placeholder="https://example.com/image.jpg"
+              placeholder="https:
               value={ogImage}
               onChange={(e) => setOgImage(e.target.value)}
               className="h-10 text-sm border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20"

@@ -29,28 +29,26 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
   ]
 
   const colors = [
-    '#000000', // Black
-    '#ef4444', // Red
-    '#22c55e', // Green
-    '#3b82f6', // Blue
-    '#eab308', // Yellow
-    '#ec4899', // Pink/Magenta
-    '#06b6d4', // Cyan
-    '#ffffff'  // White
+    '#000000',
+    '#ef4444',
+    '#22c55e',
+    '#3b82f6',
+    '#eab308',
+    '#ec4899',
+    '#06b6d4',
+    '#ffffff'
   ]
 
-  // Apply brush settings to canvas
   useEffect(() => {
     if (!canvas) return
 
     const applyBrushSettings = async () => {
       try {
         const fabric = await getFabric()
-        
+
         if (isDrawingMode) {
           canvas.isDrawingMode = true
-          
-          // Set brush type
+
           if (selectedBrush === 'pencil') {
             canvas.freeDrawingBrush = new fabric.PencilBrush(canvas)
           } else if (selectedBrush === 'marker') {
@@ -63,11 +61,9 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
             canvas.freeDrawingBrush = new fabric.SprayBrush(canvas)
           }
 
-          // Set brush properties
           canvas.freeDrawingBrush.color = brushColor
           canvas.freeDrawingBrush.width = brushSize
 
-          // For spray brush, set additional properties
           if (selectedBrush === 'spray') {
             canvas.freeDrawingBrush.density = 20
             canvas.freeDrawingBrush.dotWidth = 1
@@ -97,7 +93,7 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
   return (
     <div className="h-full flex flex-col">
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
-        {/* Brushes */}
+        {}
         <div>
           <h3 className="text-xs font-semibold text-slate-700 mb-2">Brushes</h3>
           <div className="grid grid-cols-2 gap-2">
@@ -128,7 +124,7 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
           </div>
         </div>
 
-        {/* Brush Size */}
+        {}
         <div>
           <h3 className="text-xs font-semibold text-slate-700 mb-2">Brush Size</h3>
           <div className="grid grid-cols-2 gap-2">
@@ -148,7 +144,7 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
           </div>
         </div>
 
-        {/* Brush Color */}
+        {}
         <div>
           <h3 className="text-xs font-semibold text-slate-700 mb-2">Brush Color</h3>
           <div className="grid grid-cols-4 gap-2">
@@ -172,7 +168,7 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
         </div>
       </div>
 
-      {/* Enable Drawing Mode Button */}
+      {}
       <div className="p-3 border-t border-slate-200">
         <button
           onClick={toggleDrawingMode}
@@ -184,7 +180,7 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
         >
           {isDrawingMode ? 'Disable Drawing Mode' : 'Enable Drawing Mode'}
         </button>
-        
+
         {isDrawingMode && (
           <p className="text-[10px] text-muted-foreground text-center mt-1.5">
             Click and drag on canvas to draw

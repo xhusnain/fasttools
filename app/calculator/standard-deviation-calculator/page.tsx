@@ -92,7 +92,7 @@ export default function StandardDeviationCalculatorPage() {
           featureList: [
             "Standard Deviation Calculation",
             "Population Standard Deviation",
-            "Sample Standard Deviation", 
+            "Sample Standard Deviation",
             "Variance Calculation",
             "Mean and Median Calculation",
             "Confidence Intervals",
@@ -200,7 +200,7 @@ export default function StandardDeviationCalculatorPage() {
           }
         })
       }} />
-      
+
       <div className="container mx-auto px-3 py-8 md:py-12">
           <Breadcrumbs
             items={[
@@ -211,14 +211,14 @@ export default function StandardDeviationCalculatorPage() {
 
           <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
-              <GHeader 
+              <GHeader
                 title="Standard Deviation Calculator - Free Online Statistics Tool"
                 description="Calculate standard deviation, variance, mean, confidence intervals, and comprehensive statistical analysis instantly. Advanced calculator with population and sample modes, quartiles, outliers detection, and detailed distribution analysis."
                 titleSize="medium"
               />
             </div>
 
-            {/* Mobile/Tablet AdSpace after GHeader */}
+            {}
                 <div className="my-6 lg:hidden">
                   <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -229,10 +229,10 @@ export default function StandardDeviationCalculatorPage() {
             <div className="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px] gap-3 md:gap-4 lg:gap-6">
               <div>
                 <StandardDeviationCalculator />
-            
-            {/* Educational Content Sections */}
+
+            {}
                 <div className="mt-6 md:mt-8 space-y-6 md:space-y-8">
-              {/* How to Use Section */}
+              {}
                   <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                     <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
                       <div className="p-2 bg-primary/10 rounded-lg">
@@ -269,7 +269,7 @@ export default function StandardDeviationCalculatorPage() {
                 </div>
               </div>
 
-              {/* Features Section */}
+              {}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
                     <div className="p-2 bg-primary/10 rounded-lg">
@@ -298,7 +298,7 @@ export default function StandardDeviationCalculatorPage() {
                 </div>
               </div>
 
-              {/* Use Cases Section */}
+              {}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                 <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
                   <div className="p-2 bg-primary/10 rounded-lg">
@@ -324,7 +324,7 @@ export default function StandardDeviationCalculatorPage() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-3">
                     <h3 className="text-base md:text-lg font-semibold text-heading-accent">💼 Business & Finance</h3>
                     <div className="space-y-2">
@@ -342,7 +342,7 @@ export default function StandardDeviationCalculatorPage() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-3">
                     <h3 className="text-base md:text-lg font-semibold text-heading-accent">🔬 Scientific & Medical</h3>
                     <div className="space-y-2">
@@ -363,7 +363,7 @@ export default function StandardDeviationCalculatorPage() {
                 </div>
               </div>
 
-              {/* FAQ Section */}
+              {}
               <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                 <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
                   <div className="p-2 bg-primary/10 rounded-lg">
@@ -827,7 +827,7 @@ export default function StandardDeviationCalculatorPage() {
                   </div>
                   </div>
 
-            {/* Related Tools */}
+            {}
             <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
               <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                 <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -865,8 +865,8 @@ export default function StandardDeviationCalculatorPage() {
               </div>
             </div>
           </div>
-          
-          {/* Sidebar */}
+
+          {}
           <div className="space-y-6 hidden lg:block">
             <div className="sticky top-32 space-y-6">
               <div>

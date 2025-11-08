@@ -21,7 +21,6 @@ export function TextPanel({ canvas }: TextPanelProps) {
         throw new Error('Fabric.js IText not available')
       }
 
-      // Center position like shapes and icons
       const centerX = canvas.getWidth() / 2
       const centerY = canvas.getHeight() / 2
 
@@ -139,29 +138,29 @@ export function TextPanel({ canvas }: TextPanelProps) {
         const currentWeight = activeObject.get('fontWeight')
         activeObject.set('fontWeight', currentWeight === 'bold' ? 'normal' : 'bold')
         break
-      
+
       case 'italic':
         const currentStyle = activeObject.get('fontStyle')
         activeObject.set('fontStyle', currentStyle === 'italic' ? 'normal' : 'italic')
         break
-      
+
       case 'underline':
-        // Fabric.js 2.0+ uses boolean for underline
+
         const currentUnderline = activeObject.get('underline')
         activeObject.set('underline', !currentUnderline)
         break
-      
+
       case 'overline':
-        // Fabric.js 2.0+ uses boolean for overline
+
         const currentOverline = activeObject.get('overline')
         activeObject.set('overline', !currentOverline)
         break
-      
+
       case 'linethrough':
         const currentLinethrough = activeObject.get('linethrough')
         activeObject.set('linethrough', !currentLinethrough)
         break
-      
+
       case 'shadow':
         const currentShadow = activeObject.get('shadow')
         if (currentShadow) {
@@ -177,7 +176,7 @@ export function TextPanel({ canvas }: TextPanelProps) {
           })
         }
         break
-      
+
       case 'outline':
         const currentStroke = activeObject.get('stroke')
         if (currentStroke) {
@@ -190,7 +189,7 @@ export function TextPanel({ canvas }: TextPanelProps) {
           })
         }
         break
-      
+
       case 'gradient':
         const gradient = new fabric.Gradient({
           type: 'linear',
@@ -247,8 +246,8 @@ export function TextPanel({ canvas }: TextPanelProps) {
         <h3 className="font-semibold text-slate-800 mb-3 text-sm">Text Styles</h3>
         <div className="grid grid-cols-2 gap-3">
           {textStyles.map((style) => (
-            <button 
-              key={style.id} 
+            <button
+              key={style.id}
               className="p-4 bg-white rounded-xl hover:shadow-md transition-all duration-200 border-2 border-slate-200 hover:border-slate-300"
               onClick={() => addText(style.id)}
             >
@@ -267,7 +266,7 @@ export function TextPanel({ canvas }: TextPanelProps) {
         <h3 className="font-semibold text-slate-800 mb-3 text-sm">Fonts</h3>
         <div className="space-y-2 max-h-64 overflow-y-auto">
           {fonts.map((font) => (
-            <button 
+            <button
               key={font.name}
               className="w-full p-3 text-left bg-white rounded-lg hover:bg-slate-50 transition-colors duration-200 border border-slate-200 hover:border-slate-300 shadow-sm"
               onClick={() => changeFontFamily(font.family)}
@@ -285,7 +284,7 @@ export function TextPanel({ canvas }: TextPanelProps) {
         <h3 className="font-semibold text-slate-800 mb-3 text-sm">Text Effects</h3>
         <div className="grid grid-cols-2 gap-2">
           {effects.map((effect) => (
-            <button 
+            <button
               key={effect.id}
               className={`p-3 rounded-lg text-white hover:opacity-90 transition-all duration-200 shadow-md hover:shadow-lg flex flex-col items-center justify-center space-y-1 ${effect.color}`}
               onClick={() => applyTextEffect(effect.id)}

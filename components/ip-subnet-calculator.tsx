@@ -6,14 +6,14 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { 
-  Calculator, 
-  Copy, 
-  Check, 
-  Network, 
-  Globe, 
-  Shield, 
-  Info, 
+import {
+  Calculator,
+  Copy,
+  Check,
+  Network,
+  Globe,
+  Shield,
+  Info,
   AlertTriangle,
   BarChart3,
   Server,
@@ -72,11 +72,11 @@ interface IPSubnetCalculatorProps {
   isDetectingIP?: boolean
 }
 
-export function IPSubnetCalculator({ 
-  defaultIP = "", 
+export function IPSubnetCalculator({
+  defaultIP = "",
   defaultSubnetMask = "",
   defaultCIDR = "",
-  isDetectingIP = false 
+  isDetectingIP = false
 }: IPSubnetCalculatorProps) {
   const [ipAddress, setIPAddress] = useState(defaultIP)
   const [subnetMask, setSubnetMask] = useState(defaultSubnetMask)
@@ -96,7 +96,6 @@ export function IPSubnetCalculator({
   const calculateButtonRef = useRef<HTMLButtonElement>(null)
   const loadingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  // Update IP address, subnet mask, and CIDR when props change (no auto-calculate)
   useEffect(() => {
     if (defaultIP && defaultIP !== ipAddress && !hasUserInteracted) {
       setIPAddress(defaultIP)
@@ -109,10 +108,9 @@ export function IPSubnetCalculator({
     }
   }, [defaultIP, defaultSubnetMask, defaultCIDR, hasUserInteracted])
 
-  // Auto-calculate only once on initial load with default values
   useEffect(() => {
     if (defaultIP && (defaultSubnetMask || defaultCIDR) && !hasUserInteracted && !result) {
-      // Single auto-calculation on initial load
+
       const timer = setTimeout(() => {
         try {
           calculateSubnet()
@@ -121,12 +119,11 @@ export function IPSubnetCalculator({
           setIsCalculating(false)
         }
       }, 1000)
-      
+
       return () => clearTimeout(timer)
     }
-  }, [defaultIP, defaultSubnetMask, defaultCIDR]) // Remove hasUserInteracted and result from dependencies
+  }, [defaultIP, defaultSubnetMask, defaultCIDR])
 
-  // Cleanup timeouts on unmount
   useEffect(() => {
     return () => {
       if (loadingTimeoutRef.current) {
@@ -147,64 +144,63 @@ export function IPSubnetCalculator({
 
   const validateAndGetErrorMessage = (ip: string, version: IPVersion): string => {
     if (!ip.trim()) return ""
-    
+
     if (version === "ipv4") {
       const octets = ip.split('.')
       if (octets.length !== 4) {
         return "IPv4 address must have exactly 4 octets (e.g., 192.168.1.1)"
       }
-      
+
       for (let i = 0; i < octets.length; i++) {
         const octet = parseInt(octets[i])
         if (isNaN(octet) || octet < 0 || octet > 255) {
           return `Invalid octet ${i + 1}: "${octets[i]}" must be between 0 and 255`
         }
       }
-      
+
       return ""
     } else {
-      // IPv6 validation would go here
+
       return ""
     }
   }
 
   const validateSubnetMask = (mask: string, version: IPVersion): string => {
     if (!mask.trim()) return ""
-    
+
     if (version === "ipv4") {
       const octets = mask.split('.')
       if (octets.length !== 4) {
         return "Subnet mask must have exactly 4 octets (e.g., 255.255.255.0)"
       }
-      
+
       for (let i = 0; i < octets.length; i++) {
         const octet = parseInt(octets[i])
         if (isNaN(octet) || octet < 0 || octet > 255) {
           return `Invalid octet ${i + 1}: "${octets[i]}" must be between 0 and 255`
         }
       }
-      
-      // Check if it's a valid subnet mask (contiguous 1s followed by 0s)
+
       const binary = octets.map(octet => parseInt(octet).toString(2).padStart(8, '0')).join('')
       if (!/^1*0*$/.test(binary)) {
         return "Invalid subnet mask: must be contiguous 1s followed by 0s"
       }
-      
+
       return ""
     } else {
-      // IPv6 validation would go here
+
       return ""
     }
   }
 
   const validateCIDR = (cidr: string, version: IPVersion): string => {
     if (!cidr.trim()) return ""
-    
+
     const cidrNum = parseInt(cidr)
     if (isNaN(cidrNum)) {
       return "CIDR must be a number"
     }
-    
+
     if (version === "ipv4") {
       if (cidrNum < 0 || cidrNum > 32) {
         return "IPv4 CIDR must be between 0 and 32"
@@ -214,24 +210,24 @@ export function IPSubnetCalculator({
         return "IPv6 CIDR must be between 0 and 128"
       }
     }
-    
+
     return ""
   }
 
   const ipToBinary = (ip: string): string => {
-    return ip.split('.').map(octet => 
+    return ip.split('.').map(octet =>
       parseInt(octet).toString(2).padStart(8, '0')
     ).join('.')
   }
 
   const binaryToIP = (binary: string): string => {
-    return binary.split('.').map(bin => 
+    return binary.split('.').map(bin =>
       parseInt(bin, 2).toString()
     ).join('.')
   }
 
   const ipToHex = (ip: string): string => {
-    return ip.split('.').map(octet => 
+    return ip.split('.').map(octet =>
       parseInt(octet).toString(16).padStart(2, '0').toUpperCase()
     ).join('.')
   }
@@ -249,7 +245,7 @@ export function IPSubnetCalculator({
   const isPrivateIP = (ip: string): boolean => {
     const octets = ip.split('.').map(Number)
     const [a, b, c, d] = octets
-    
+
     return (
       (a === 10) ||
       (a === 172 && b >= 16 && b <= 31) ||
@@ -266,17 +262,15 @@ export function IPSubnetCalculator({
     }
 
     setIsCalculating(true)
-    
-    // Clear any existing timeout
+
     if (loadingTimeoutRef.current) {
       clearTimeout(loadingTimeoutRef.current)
     }
-    
-    // Set a timeout to prevent infinite loading
+
     loadingTimeoutRef.current = setTimeout(() => {
       setIsCalculating(false)
-    }, 3000) // 3 second timeout
-    
+    }, 3000)
+
     setTimeout(() => {
       if (!validateIPAddress(ipAddress, ipVersion)) {
         setResult(null)
@@ -288,13 +282,13 @@ export function IPSubnetCalculator({
       let cidr = prefixLength
 
       if (subnetMask && !prefixLength) {
-        // Convert subnet mask to CIDR
+
         const maskOctets = subnetMask.split('.').map(Number)
         cidr = maskOctets.reduce((acc, octet) => {
           return acc + octet.toString(2).split('1').length - 1
         }, 0).toString()
       } else if (prefixLength && !subnetMask) {
-        // Convert CIDR to subnet mask
+
         const cidrNum = parseInt(cidr)
         const maskNum = (0xFFFFFFFF << (32 - cidrNum)) >>> 0
         mask = [
@@ -307,43 +301,43 @@ export function IPSubnetCalculator({
 
       const ipOctets = ipAddress.split('.').map(Number)
       const maskOctets = mask.split('.').map(Number)
-      
-      const networkOctets = ipOctets.map((octet, index) => 
+
+      const networkOctets = ipOctets.map((octet, index) =>
         octet & maskOctets[index]
       )
-      
-      const broadcastOctets = ipOctets.map((octet, index) => 
+
+      const broadcastOctets = ipOctets.map((octet, index) =>
         octet | (~maskOctets[index] & 0xFF)
       )
 
       const networkAddress = networkOctets.join('.')
       const broadcastAddress = broadcastOctets.join('.')
-      
+
       const firstHost = [...networkOctets]
       firstHost[3] += 1
       const firstHostAddress = firstHost.join('.')
-      
+
       const lastHost = [...broadcastOctets]
       lastHost[3] -= 1
       const lastHostAddress = lastHost.join('.')
-      
+
       const wildcardMask = maskOctets.map(octet => ~octet & 0xFF).join('.')
-      
+
       const totalHosts = Math.pow(2, 32 - parseInt(cidr))
       const usableHosts = Math.max(0, totalHosts - 2)
-      
+
       const networkClass = getNetworkClass(ipAddress)
       const privateNetwork = isPrivateIP(ipAddress)
-      
+
       const binarySubnetMask = ipToBinary(mask)
       const binaryNetworkAddress = ipToBinary(networkAddress)
       const binaryBroadcastAddress = ipToBinary(broadcastAddress)
-      
+
       const hexNetworkAddress = ipToHex(networkAddress)
       const hexBroadcastAddress = ipToHex(broadcastAddress)
-      
+
       const reverseDNS = `${ipOctets.reverse().join('.')}.in-addr.arpa`
-      
+
       setResult({
         networkAddress,
         broadcastAddress,
@@ -380,7 +374,7 @@ export function IPSubnetCalculator({
           loopback: ipAddress.startsWith('127.')
         }
       })
-      
+
       setIsCalculating(false)
       if (loadingTimeoutRef.current) {
         clearTimeout(loadingTimeoutRef.current)
@@ -423,7 +417,7 @@ export function IPSubnetCalculator({
 
   return (
     <div className="space-y-6">
-      {/* Main Calculator Card */}
+      {}
       <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader className="pb-3 px-3 sm:px-6">
           <CardTitle className="flex items-center gap-1.5 text-base">
@@ -437,18 +431,18 @@ export function IPSubnetCalculator({
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6 px-3 sm:px-6">
-          {/* IP Version Selection */}
+          {}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label className="text-[11px] font-medium text-heading-accent">IP Version</Label>
               <Select value={ipVersion} onValueChange={(value: IPVersion) => {
                 setIPVersion(value)
                 setHasUserInteracted(true)
-                // Clear validation errors when switching IP versions
+
                 setValidationError("")
                 setSubnetMaskError("")
                 setCidrError("")
-                // Clear form when switching versions
+
                 setIPAddress("")
                 setSubnetMask("")
                 setPrefixLength("")
@@ -468,7 +462,7 @@ export function IPSubnetCalculator({
               <Select value={calculationType} onValueChange={(value: CalculationType) => {
                 setCalculationType(value)
                 setHasUserInteracted(true)
-                // Clear results when changing calculation type
+
                 setResult(null)
                 setIsCalculating(false)
               }}>
@@ -487,7 +481,7 @@ export function IPSubnetCalculator({
             </div>
           </div>
 
-          {/* IP Address Input */}
+          {}
           <div className="space-y-2">
             <Label htmlFor="ip-address" className="text-[11px] font-medium text-heading-accent">
               IP Address {ipVersion === "ipv4" ? "(e.g., 192.168.1.1)" : "(e.g., 2001:db8::1)"}
@@ -506,13 +500,11 @@ export function IPSubnetCalculator({
                 const value = e.target.value
                 setIPAddress(value)
                 setHasUserInteracted(true)
-                setIsCalculating(false) // Clear loading state when user types
-                
-                // Validate and show error message
+                setIsCalculating(false)
+
                 const errorMessage = validateAndGetErrorMessage(value, ipVersion)
                 setValidationError(errorMessage)
-                
-                // Clear any pending timeouts
+
                 if (loadingTimeoutRef.current) {
                   clearTimeout(loadingTimeoutRef.current)
                   loadingTimeoutRef.current = null
@@ -536,7 +528,7 @@ export function IPSubnetCalculator({
             )}
           </div>
 
-          {/* Subnet Configuration */}
+          {}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="subnet-mask" className="text-[11px] font-medium text-heading-accent">Subnet Mask</Label>
@@ -549,9 +541,8 @@ export function IPSubnetCalculator({
                   const value = e.target.value
                   setSubnetMask(value)
                   setHasUserInteracted(true)
-                  setIsCalculating(false) // Clear loading state when user types
-                  
-                  // Validate subnet mask
+                  setIsCalculating(false)
+
                   const errorMessage = validateSubnetMask(value, ipVersion)
                   setSubnetMaskError(errorMessage)
                 }}
@@ -574,9 +565,8 @@ export function IPSubnetCalculator({
                   const value = e.target.value
                   setPrefixLength(value)
                   setHasUserInteracted(true)
-                  setIsCalculating(false) // Clear loading state when user types
-                  
-                  // Validate CIDR
+                  setIsCalculating(false)
+
                   const errorMessage = validateCIDR(value, ipVersion)
                   setCidrError(errorMessage)
                 }}
@@ -594,7 +584,7 @@ export function IPSubnetCalculator({
             </div>
           </div>
 
-          {/* Advanced Options */}
+          {}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <Label className="text-xs font-medium text-heading-accent">Advanced Options</Label>
@@ -608,10 +598,10 @@ export function IPSubnetCalculator({
                 {showAdvanced ? "Hide" : "Show"}
               </Button>
             </div>
-            
+
             {showAdvanced && (
               <div className="space-y-3">
-                {/* Debug Information */}
+                {}
                 <div className="bg-muted p-3 rounded-lg border border-border">
                   <h4 className="font-semibold mb-2 text-xs text-heading-accent">Current State Debug:</h4>
                   <div className="grid grid-cols-2 gap-2 text-xs">
@@ -628,7 +618,7 @@ export function IPSubnetCalculator({
                     <div className="text-muted-foreground"><strong className="text-heading-accent">CIDR Error:</strong> {cidrError || "None"}</div>
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="flex items-center space-x-2">
                   <input
@@ -664,7 +654,7 @@ export function IPSubnetCalculator({
             )}
           </div>
 
-          {/* Action Buttons */}
+          {}
           <div className="flex flex-col sm:flex-row gap-3">
             <Button ref={calculateButtonRef} onClick={() => {
               setHasUserInteracted(true)
@@ -676,8 +666,8 @@ export function IPSubnetCalculator({
             <Button variant="outline" onClick={clearForm} className="w-full sm:w-auto h-9 text-xs border-border bg-card text-foreground hover:bg-secondary">
               Clear
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               onClick={() => {
                   ipAddress,
                   subnetMask,
@@ -690,7 +680,7 @@ export function IPSubnetCalculator({
                   hasUserInteracted,
                   result: !!result
                 })
-              }} 
+              }}
               className="w-full sm:w-auto h-9 text-xs border-border bg-card text-foreground hover:bg-secondary"
             >
               Debug
@@ -699,7 +689,7 @@ export function IPSubnetCalculator({
         </CardContent>
       </Card>
 
-      {/* Results Section */}
+      {}
       {result && (
         <Card className="shadow-lg border-border bg-card">
           <CardHeader className="pb-3 px-3 sm:px-6">
@@ -714,7 +704,7 @@ export function IPSubnetCalculator({
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6 px-3 sm:px-6">
-            {/* Main Results */}
+            {}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               <div className="bg-card p-3 rounded-lg border border-border">
                 <div className="flex items-center gap-1.5 mb-1">
@@ -754,7 +744,7 @@ export function IPSubnetCalculator({
               </div>
             </div>
 
-            {/* Detailed Information */}
+            {}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="bg-card p-3 rounded-lg border border-border">
                 <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
@@ -811,7 +801,7 @@ export function IPSubnetCalculator({
               </div>
             </div>
 
-            {/* Advanced Information */}
+            {}
             {showBinary && (
               <div className="bg-card p-3 rounded-lg border border-border">
                 <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
@@ -854,7 +844,7 @@ export function IPSubnetCalculator({
               </div>
             )}
 
-            {/* Advanced Network Analysis */}
+            {}
             <div className="bg-card p-3 rounded-lg border border-border">
               <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
                 <TargetIcon className="h-3.5 w-3.5" />
@@ -892,7 +882,7 @@ export function IPSubnetCalculator({
               </div>
             </div>
 
-            {/* Action Buttons */}
+            {}
             <div className="flex gap-3">
               <Button onClick={copyResult} variant="outline" className="flex-1 h-9 text-xs font-medium border border-border hover:bg-secondary text-heading-accent bg-card">
                 {copied ? (

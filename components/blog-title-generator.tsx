@@ -176,16 +176,14 @@ export function BlogTitleGenerator() {
     setTimeout(() => {
       const allTitles: string[] = []
       const capitalizedKeyword = keyword.charAt(0).toUpperCase() + keyword.slice(1)
-      
-      // Generate titles from each category
+
       Object.values(templates).forEach(categoryTemplates => {
         categoryTemplates.forEach(template => {
           const title = template.replace(/{keyword}/g, capitalizedKeyword)
           allTitles.push(title)
         })
       })
-      
-      // Shuffle and take 30 titles for maximum variety
+
       const shuffledTitles = allTitles.sort(() => Math.random() - 0.5)
       setResult(shuffledTitles.slice(0, 30))
       setIsGenerating(false)
@@ -285,7 +283,7 @@ export function BlogTitleGenerator() {
             </div>
             <div className="mt-4 p-3 bg-accent/10 rounded-lg border border-accent/20">
               <p className="text-xs text-muted-foreground">
-                💡 <strong>Pro Tip:</strong> These titles are optimized for search engines and designed to increase click-through rates. 
+                💡 <strong>Pro Tip:</strong> These titles are optimized for search engines and designed to increase click-through rates.
                 Choose titles that best match your content and target audience.
               </p>
             </div>

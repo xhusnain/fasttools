@@ -1964,13 +1964,12 @@ const categories = [
   },
 ]
 
-// Category Section Component
 function CategorySection({ category }: { category: typeof categories[0] }) {
   const IconComponent = category.icon
 
   return (
     <section className="mb-16">
-      {/* Category Header */}
+      {}
       <div className="flex items-center justify-between mb-8">
         <div className="flex items-center gap-4">
           <div className={`p-3.5 rounded-xl ${category.iconBg} border ${category.borderColor}`}>
@@ -1983,14 +1982,14 @@ function CategorySection({ category }: { category: typeof categories[0] }) {
                           </div>
                             </div>
 
-      {/* Tools Grid */}
+      {}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {category.tools.map((tool) => {
           const ToolIcon = tool.icon
           return (
             <Link key={tool.href} href={tool.href} className="group">
               <div className={`relative h-full rounded-xl border-2 ${category.borderColor} ${category.hoverBorder} bg-[#1E293B] p-6 space-y-4 transition-all duration-300 ${category.glowColor} hover:shadow-xl`}>
-                {/* Badge and Icon */}
+                {}
                 <div className="flex items-start justify-between">
                   <div className={`${tool.badgeColor} px-2.5 py-1 rounded-md text-white text-xs font-semibold`}>
                     {tool.badge}
@@ -2000,7 +1999,7 @@ function CategorySection({ category }: { category: typeof categories[0] }) {
                             </div>
                           </div>
 
-                {/* Content */}
+                {}
                 <div className="space-y-2.5">
                   <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
                     {tool.title}
@@ -2010,7 +2009,7 @@ function CategorySection({ category }: { category: typeof categories[0] }) {
                   </p>
                             </div>
 
-                {/* Try Now */}
+                {}
                 <div className="flex items-center gap-2 text-primary font-semibold text-sm pt-1">
                   <span>Try Now</span>
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -2021,7 +2020,7 @@ function CategorySection({ category }: { category: typeof categories[0] }) {
         })}
                         </div>
 
-      {/* View All Button - Bottom Center */}
+      {}
       <div className="flex justify-center mt-8">
         <Link href={category.href}>
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg gap-2 px-8">
@@ -2080,7 +2079,7 @@ export default function Home() {
       "love calculator",
       "birthday countdown",
       "age calculator",
-      "BMI calculator", 
+      "BMI calculator",
       "loan EMI calculator",
       "mortgage calculator",
       "compound interest calculator",
@@ -2484,7 +2483,7 @@ export default function Home() {
 
   return (
     <div className="bg-background">
-      {/* JSON-LD Structured Data */}
+      {}
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -2495,15 +2494,15 @@ export default function Home() {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      
-      {/* Hero Section - Background with Orange Text */}
+
+      {}
       <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-background">
-        {/* Hero Background Image */}
+        {}
         <HeroSectionBg />
-        
+
         <div className="container mx-auto max-w-6xl relative z-10 py-12 sm:py-16 md:py-20">
           <div className="text-center space-y-8 sm:space-y-10">
-            {/* Main Heading - Orange Text with Highlights */}
+            {}
             <div className="space-y-4 sm:space-y-6">
               <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-foreground leading-[1.1] tracking-tight px-2">
                 <span className="block">
@@ -2519,22 +2518,22 @@ export default function Home() {
                   </span>.
                 </span>
               </h1>
-              
+
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground font-medium max-w-4xl mx-auto leading-relaxed px-4">
                 No registration needed. All tools are free forever and process everything locally in your browser for complete privacy and security.
                 </p>
               </div>
 
-            {/* Interactive Stats Display */}
+            {}
             <div className="pt-6 sm:pt-8 md:pt-12 pb-6 sm:pb-8">
               <div className="inline-flex items-center gap-2 text-foreground text-xs md:text-sm font-semibold mb-6">
                 <Sparkles className="h-3 w-3 md:h-4 md:w-4" />
                 <span className="hidden sm:inline">Trusted by professionals worldwide</span>
                 <span className="sm:hidden">Trusted Worldwide</span>
               </div>
-              
+
               <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-8 lg:gap-16 max-w-4xl mx-auto px-4">
-                {/* Stat 1 */}
+                {}
                 <div className="group cursor-default">
                   <div className="relative">
                     <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl group-hover:bg-primary/10 transition-all"></div>
@@ -2548,7 +2547,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Stat 2 */}
+                {}
                 <div className="group cursor-default">
                   <div className="relative">
                     <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl group-hover:bg-primary/10 transition-all"></div>
@@ -2562,7 +2561,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Stat 3 */}
+                {}
                 <div className="group cursor-default">
                   <div className="relative">
                     <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl group-hover:bg-primary/10 transition-all"></div>
@@ -2578,7 +2577,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Scroll Indicator */}
+            {}
             <div className="pt-8 sm:pt-12">
               <Link href="#tools" className="group inline-flex flex-col items-center gap-2 sm:gap-3 text-foreground hover:text-primary transition-colors">
                 <div className="text-xs sm:text-sm font-semibold uppercase tracking-wider">Explore Tools</div>
@@ -2591,7 +2590,7 @@ export default function Home() {
           </div>
         </section>
 
-      {/* About FastTools - Complete Tools Directory */}
+      {}
       <section id="tools" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4">
         <div className="container mx-auto max-w-7xl">
               <div className="text-center mb-12 sm:mb-16">
@@ -2599,8 +2598,8 @@ export default function Home() {
               <Award className="h-4 w-4" />
               COMPLETE TOOLS DIRECTORY
                 </div>
-            
-            <GHeader 
+
+            <GHeader
               title="Every Tool We Offer"
               description="Discover professional-grade tools designed to supercharge your productivity and creativity"
               titleSize="medium"
@@ -2608,7 +2607,7 @@ export default function Home() {
             />
                     </div>
 
-          {/* Display All Categories with All Tools */}
+          {}
           {categories.map((category) => {
             const CategoryIcon = category.icon
             return (
@@ -2667,11 +2666,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FAQ Section */}
+        {}
       <section className="py-12 md:py-20 px-4 bg-background">
         <div className="container mx-auto max-w-5xl">
           <div className="mb-8 md:mb-12">
-            <GHeader 
+            <GHeader
               title="FAQ"
               description="Find quick answers to common questions about FastTools. Get instant clarity on features, pricing, security, and how to make the most of our 1000+ free online tools. Everything you need to know in one place."
               titleSize="large"
@@ -2733,8 +2732,8 @@ export default function Home() {
                 answer: "To organize your digital tools, start by categorizing them — for example: design, writing, analytics, and automation. FastTools makes this easy with clear categories like AI Tools, Calculators, Converters, SEO Tools, Image Tools, Developer Tools, and more. Bookmark your favorite FastTools pages in your browser for quick access. Since all tools work directly in your browser without requiring accounts or installations, you can access them instantly from any device. Regularly explore our tool directory to discover new tools that can streamline your workflow and keep your digital toolkit efficient and up-to-date."
               },
             ].map((faq, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className="bg-card backdrop-blur-sm rounded-2xl border-2 border-heading-accent-border hover:border-heading-accent-border-hover transition-all overflow-hidden p-4 sm:p-5 md:p-8"
               >
                 <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-heading-accent leading-tight mb-2 sm:mb-3 md:mb-4">{faq.question}</h3>

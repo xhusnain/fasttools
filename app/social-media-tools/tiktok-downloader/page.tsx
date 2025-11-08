@@ -92,7 +92,6 @@ export const metadata: Metadata = {
               "tiktok wallpaper extractor"
           ],
 
-
   openGraph: {
     title: "TikTok Downloader – HD Videos Without Watermark | FastTools",
     description: "Download TikTok videos and wallpapers in HD without watermark for free. Fast, secure, and easy-to-use online TikTok downloader for videos and images. Works on PC, Android, iPhone, and all devices. Perfect for creators, marketers, and social media enthusiasts.",
@@ -185,7 +184,7 @@ export default function TiktokDownloaderPage() {
           ]}
         />
 
-          {/* Hero Section */}
+          {}
           <div className="text-center mb-8">
             <GHeader
               title="TikTok Downloader – HD Videos & Images Without Watermark"
@@ -195,19 +194,18 @@ export default function TiktokDownloaderPage() {
             />
           </div>
 
-          {/* Mobile Ad Space */}
+          {}
           <div className="lg:hidden mb-6">
             <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
           </div>
 
-          {/* Main Layout */}
+          {}
           <div className="flex flex-col lg:flex-row gap-8">
-          {/* Main Content */}
+          {}
             <div className="flex-1 space-y-8">
             <TiktokDownloader />
 
-
-              {/* How to Use Section */}
+              {}
               <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
                 <h2 className="text-xl font-bold mb-4 text-foreground">How to Use TikTok Downloader</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -250,7 +248,7 @@ export default function TiktokDownloaderPage() {
               </div>
             </div>
 
-            {/* Key Features Section */}
+            {}
               <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-300">
                 <h2 className="text-xl font-bold mb-4 text-foreground">Key Features</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -311,7 +309,7 @@ export default function TiktokDownloaderPage() {
               </div>
             </div>
 
-            {/* Use Cases Section */}
+            {}
               <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-400">
                 <h2 className="text-xl font-bold mb-4 text-foreground">Use Cases</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -334,7 +332,7 @@ export default function TiktokDownloaderPage() {
               </div>
             </div>
 
-            {/* TikTok Photo Downloader Keywords Content */}
+            {}
             <div className="p-6 rounded-lg bg-card border border-border shadow-lg animate-fade-in-up animation-delay-500">
               <h2 className="text-xl font-bold mb-4 text-foreground flex items-center gap-2">
                 <AlertCircle className="h-5 w-5 text-primary" />
@@ -353,7 +351,7 @@ export default function TiktokDownloaderPage() {
               </div>
             </div>
 
-            {/* FAQ Section */}
+            {}
               <div className="p-6 rounded-lg bg-card border border-border shadow-lg animate-fade-in-up animation-delay-500">
                 <h2 className="text-xl font-bold mb-4 text-foreground flex items-center gap-2">
                   <AlertCircle className="h-5 w-5 text-primary" />
@@ -532,7 +530,6 @@ export default function TiktokDownloaderPage() {
               </div>
             </div>
 
-            {/* Sidebar */}
             <div className="w-full lg:w-80 space-y-6">
               <div className="sticky top-32">
                 <AdSpace slot="sidebar" className="h-96 border border-border rounded-xl shadow-sm bg-card" />

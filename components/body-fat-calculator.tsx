@@ -8,15 +8,15 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  Clock, 
-  Activity, 
-  Target, 
-  TrendingUp, 
-  Heart, 
-  Zap, 
-  Trophy, 
+import {
+  Calculator,
+  Clock,
+  Activity,
+  Target,
+  TrendingUp,
+  Heart,
+  Zap,
+  Trophy,
   Users,
   Timer,
   BarChart3,
@@ -135,17 +135,14 @@ export default function BodyFatCalculator() {
       const waistNum = parseFloat(waist)
       const hipNum = hip ? parseFloat(hip) : 0
 
-      // Convert units if needed
       const weightKg = unitSystem === "imperial" ? weightNum * 0.453592 : weightNum
       const heightCm = unitSystem === "imperial" ? heightNum * 2.54 : heightNum
       const neckCm = unitSystem === "imperial" ? neckNum * 2.54 : neckNum
       const waistCm = unitSystem === "imperial" ? waistNum * 2.54 : waistNum
       const hipCm = hip ? (unitSystem === "imperial" ? hipNum * 2.54 : hipNum) : 0
 
-      // Calculate BMI
       const bmi = weightKg / Math.pow(heightCm / 100, 2)
 
-      // U.S. Navy Method
       let navyPercentage = 0
       if (gender === "male") {
         navyPercentage = 495 / (1.0324 - 0.19077 * Math.log10(waistCm - neckCm) + 0.15456 * Math.log10(heightCm)) - 450
@@ -153,7 +150,6 @@ export default function BodyFatCalculator() {
         navyPercentage = 495 / (1.29579 - 0.35004 * Math.log10(waistCm + hipCm - neckCm) + 0.22100 * Math.log10(heightCm)) - 450
       }
 
-      // BMI Method
       let bmiPercentage = 0
       if (gender === "male") {
         bmiPercentage = 1.20 * bmi + 0.23 * ageNum - 16.2
@@ -161,7 +157,6 @@ export default function BodyFatCalculator() {
         bmiPercentage = 1.20 * bmi + 0.23 * ageNum - 5.4
       }
 
-      // Get category
       const getCategory = (percentage: number) => {
         if (gender === "male") {
           if (percentage < 6) return "Essential Fat"
@@ -182,7 +177,6 @@ export default function BodyFatCalculator() {
       const fatMass = (navyPercentage / 100) * weightKg
       const leanMass = weightKg - fatMass
 
-      // Ideal body fat (Jackson & Pollock)
       const getIdealBodyFat = (age: number, gender: string) => {
         if (gender === "male") {
           if (age <= 20) return 8.5
@@ -208,7 +202,6 @@ export default function BodyFatCalculator() {
       const idealBodyFat = getIdealBodyFat(ageNum, gender)
       const fatToLose = Math.max(0, (navyPercentage - idealBodyFat) / 100 * weightKg)
 
-      // Generate recommendations
       const recommendations = generateRecommendations(navyPercentage, category, ageNum, gender)
       const healthRisks = generateHealthRisks(navyPercentage, category)
       const improvementPlan = generateImprovementPlan(navyPercentage, idealBodyFat)
@@ -245,7 +238,6 @@ export default function BodyFatCalculator() {
     const exercise: string[] = []
     const lifestyle: string[] = []
 
-    // Nutrition recommendations based on body fat percentage
     if (percentage > 25) {
       nutrition.push("Focus on a caloric deficit of 500-750 calories per day")
       nutrition.push("Increase protein intake to 1.6-2.2g per kg body weight")
@@ -266,7 +258,6 @@ export default function BodyFatCalculator() {
       nutrition.push("Limit processed foods and added sugars")
     }
 
-    // Exercise recommendations
     if (percentage > 25) {
       exercise.push("Combine cardio and strength training for optimal fat loss")
       exercise.push("Aim for 150-300 minutes of moderate cardio per week")
@@ -287,7 +278,6 @@ export default function BodyFatCalculator() {
       exercise.push("Listen to your body and adjust intensity as needed")
     }
 
-    // Lifestyle recommendations
     lifestyle.push("Get 7-9 hours of quality sleep nightly")
     lifestyle.push("Manage stress through meditation, yoga, or deep breathing")
     lifestyle.push("Avoid prolonged sitting - take breaks every hour")
@@ -391,7 +381,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
 
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-3 sm:p-4 md:p-6 w-full overflow-hidden">
-      {/* Main Calculator */}
+      {}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-3 sm:px-4 md:px-6 pb-3">
           <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -400,7 +390,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4 sm:space-y-6 px-3 sm:px-4 md:px-6">
-          {/* Unit System Selection */}
+          {}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full overflow-hidden">
             <div className="flex-1 space-y-2 min-w-0 w-full sm:w-auto">
               <Label className="text-heading-accent text-xs sm:text-sm">Unit System</Label>
@@ -428,7 +418,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
             </div>
           </div>
 
-          {/* Input Fields */}
+          {}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
             <div className="space-y-2 w-full min-w-0">
               <Label htmlFor="age" className="text-heading-accent text-xs sm:text-sm">Age</Label>
@@ -535,10 +525,10 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
         </CardContent>
       </Card>
 
-      {/* Results Section */}
+      {}
       {result && (
         <div className="space-y-4 sm:space-y-6">
-          {/* Main Results */}
+          {}
           <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
@@ -592,7 +582,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
             </CardContent>
           </Card>
 
-          {/* Body Fat Categories */}
+          {}
           <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
@@ -616,7 +606,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
             </CardContent>
           </Card>
 
-          {/* Health Risks */}
+          {}
           {result.healthRisks.length > 0 && (
             <Card className="bg-card border-border">
               <CardHeader>
@@ -638,7 +628,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
             </Card>
           )}
 
-          {/* Recommendations */}
+          {}
           <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
@@ -685,7 +675,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
             </CardContent>
           </Card>
 
-          {/* Improvement Plan */}
+          {}
           <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
@@ -723,7 +713,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
         </div>
       )}
 
-      {/* History Section */}
+      {}
       {history.length > 0 && (
         <Card className="bg-card border-border">
           <CardHeader>
@@ -758,7 +748,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
         </Card>
       )}
 
-      {/* Information Section */}
+      {}
       <Card className="bg-card border-border">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-foreground">
@@ -780,7 +770,7 @@ Fat to Lose: ${result.idealBodyFat.fatToLose} kg`
               </div>
             </div>
           </div>
-          
+
           <div className="text-sm text-foreground space-y-2">
             <p>
               <strong className="text-foreground">U.S. Navy Method:</strong> Most accurate for general population using circumference measurements.

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   keywords: [
     "fasttools",
     "fast tools",
-    // Primary Keywords (20)
+
     "image to text",
     "free image to text",
     "ocr converter",
@@ -37,8 +37,7 @@ export const metadata: Metadata = {
     "copy text from image",
     "ocr privacy",
     "ocr in browser",
-    
-    // Secondary Keywords (20)
+
     "no upload ocr",
     "business card ocr",
     "receipt ocr",
@@ -59,8 +58,7 @@ export const metadata: Metadata = {
     "ocr deskew",
     "ocr denoise",
     "ocr contrast",
-    
-    // Long-tail Keywords (20)
+
     "free online image to text",
     "best image to text online",
     "image to text with live preview",
@@ -508,8 +506,7 @@ export const metadata: Metadata = {
     "how image to text converter works",
     "how image to text converter",
     "how convert image to text in excel",
-    
-    // Eighth Batch Extended Keywords
+
     "image to text converter for pc",
     "image to text converter for pc offline",
     "image to text converter for windows 10",
@@ -570,15 +567,15 @@ export const metadata: Metadata = {
         "Convert images to editable text in seconds with our free AI-powered OCR tool. Extract text from photos, screenshots, JPG, PNG, or PDF — fast, accurate, and secure on any device.",
       inLanguage: ["en", "es", "fr", "de", "zh", "ar", "pt", "ru", "ja", "ko", "hi", "it", "nl", "tr", "pl"],
       isAccessibleForFree: true,
-      offers: { 
-        "@type": "Offer", 
-        price: "0", 
+      offers: {
+        "@type": "Offer",
+        price: "0",
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
       featureList: [
-        "Multi‑format input (JPG, PNG, JPEG, PDF)", 
-        "Copy text to clipboard", 
+        "Multi‑format input (JPG, PNG, JPEG, PDF)",
+        "Copy text to clipboard",
         "In‑browser OCR processing",
         "Image to text conversion",
         "OCR converter with AI technology",
@@ -613,9 +610,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: { 
-        "@type": "Organization", 
-        name: "FastTools", 
+      publisher: {
+        "@type": "Organization",
+        name: "FastTools",
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -683,7 +680,7 @@ export default function ImageToTextPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {/* Hero Section */}
+                {}
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <GHeader
                     title="Free AI Image to Text Converter (OCR) – Copy & Edit Text from Any Image"
@@ -693,17 +690,17 @@ export default function ImageToTextPage() {
                   />
                 </div>
 
-                {/* Mobile Ad Space */}
+                {}
                 <div className="lg:hidden mb-6">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {/* Tool Component */}
+                {}
                 <div className="animate-fade-in-up animation-delay-200">
                   <ImageToText />
                 </div>
 
-                {/* Content Sections */}
+                {}
                 <div className="space-y-5 animate-fade-in-up animation-delay-200">
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Advanced OCR Technology</h2>
@@ -744,7 +741,7 @@ export default function ImageToTextPage() {
                     </p>
                   </div>
 
-                  {/* FAQ Section */}
+                  {}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1290,7 +1287,7 @@ export default function ImageToTextPage() {
                     </div>
                   </div>
 
-                  {/* Related Tools */}
+                  {}
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Related Image & File Tools</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1313,7 +1310,7 @@ export default function ImageToTextPage() {
                   </div>
                 </div>
               </div>
-              {/* Desktop Sidebar with AdSense */}
+              {}
               <div className="hidden lg:block w-72">
                 <div className="sticky top-32 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

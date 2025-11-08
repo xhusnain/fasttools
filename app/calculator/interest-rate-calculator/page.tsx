@@ -142,7 +142,7 @@ export default function InterestRateCalculatorPage() {
           }
         })
       }} />
-      
+
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 py-6 sm:py-8 md:py-12">
           <Breadcrumbs
@@ -154,7 +154,7 @@ export default function InterestRateCalculatorPage() {
 
           <div className="max-w-7xl mx-auto w-full">
             <div className="mb-4 sm:mb-6 md:mb-8 w-full">
-              <GHeader 
+              <GHeader
                 title="Interest Rate Calculator - Advanced Loan Analysis"
                 description="Calculate real interest rates on loans with our advanced interest rate calculator. Get precise rate calculations, amortization analysis, loan optimization, and professional recommendations for optimal financial planning."
                 titleSize="medium"
@@ -162,7 +162,7 @@ export default function InterestRateCalculatorPage() {
               />
             </div>
 
-            {/* Mobile/Tablet AdSpace after GHeader */}
+            {}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -175,10 +175,10 @@ export default function InterestRateCalculatorPage() {
                 <div className="w-full">
                   <InterestRateCalculator />
                 </div>
-            
-                {/* Educational Content Sections */}
+
+                {}
                 <div className="space-y-3 sm:space-y-4 md:space-y-5 bg-card rounded-lg p-2 sm:p-3 md:p-4 w-full">
-                  {/* How to Use Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -208,7 +208,7 @@ export default function InterestRateCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Features Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -278,7 +278,7 @@ export default function InterestRateCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Use Cases Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -310,7 +310,7 @@ export default function InterestRateCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Understanding Interest Rates Section */}
+                  {}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -331,7 +331,7 @@ export default function InterestRateCalculatorPage() {
                           </div>
                         </div>
                       </div>
-                      
+
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="text-xs sm:text-sm md:text-base font-semibold text-heading-accent mb-1.5 sm:mb-2 break-words">Simple vs. Compound Interest</h3>
                         <p className="text-xs text-foreground mb-2 break-words">
@@ -356,7 +356,7 @@ export default function InterestRateCalculatorPage() {
                           </div>
                         </div>
                       </div>
-                      
+
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="text-xs sm:text-sm md:text-base font-semibold text-heading-accent mb-1.5 sm:mb-2 break-words">Fixed vs. Variable Rates</h3>
                         <p className="text-xs text-foreground mb-2 break-words">
@@ -384,7 +384,6 @@ export default function InterestRateCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* FAQ Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -457,11 +456,10 @@ export default function InterestRateCalculatorPage() {
                   </div>
                 </div>
               </div>
-              
-              {/* Sidebar */}
+
               <div className="hidden lg:block space-y-6 lg:space-y-8">
                 <div className="sticky top-4">
-                  {/* Sidebar Ad */}
+
                   <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                     <AdSpace slot="sidebar" className="h-64 md:h-80 rounded-lg overflow-hidden" />
                   </div>

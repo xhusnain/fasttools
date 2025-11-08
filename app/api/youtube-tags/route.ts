@@ -11,7 +11,6 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Validate YouTube URL
     const youtubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/v\/|youtube\.com\/shorts\/)[\w-]+/
     if (!youtubeRegex.test(url)) {
       return NextResponse.json(
@@ -20,7 +19,6 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Extract video ID from URL
     let videoId = ''
     if (url.includes('youtube.com/watch?v=')) {
       videoId = url.split('v=')[1]?.split('&')[0] || ''
@@ -39,7 +37,6 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Fetch video metadata from YouTube
     try {
       const response = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
         headers: {
@@ -63,11 +60,9 @@ export async function POST(request: NextRequest) {
       }
 
       const html = await response.text()
-      
-      // Extract tags from the HTML using multiple methods
+
       const tags: string[] = []
-      
-      // Method 1: Look for keywords in meta tags
+
       const metaKeywordsMatch = html.match(/<meta name="keywords" content="([^"]+)"/i)
       if (metaKeywordsMatch) {
         const keywords = metaKeywordsMatch[1]
@@ -77,7 +72,6 @@ export async function POST(request: NextRequest) {
         tags.push(...keywords)
       }
 
-      // Method 2: Look for video tags in JSON-LD structured data
       const jsonLdMatches = html.match(/<script type="application\/ld\+json"[^>]*>([^<]+)<\/script>/g)
       if (jsonLdMatches) {
         for (const match of jsonLdMatches) {
@@ -85,18 +79,17 @@ export async function POST(request: NextRequest) {
             const jsonContent = match.replace(/<script[^>]*>|<\/script>/g, '')
             const data = JSON.parse(jsonContent)
             if (data.keywords) {
-              const keywords = Array.isArray(data.keywords) 
-                ? data.keywords 
+              const keywords = Array.isArray(data.keywords)
+                ? data.keywords
                 : data.keywords.split(',').map((k: string) => k.trim())
               tags.push(...keywords.filter((k: string) => k.length > 0 && k.length < 100))
             }
           } catch (e) {
-            // Continue if JSON parsing fails
+
           }
         }
       }
 
-      // Method 3: Look for tags in video metadata (more specific patterns)
       const videoTagsPatterns = [
         /"keywords":\s*\[([^\]]+)\]/i,
         /"tags":\s*\[([^\]]+)\]/i,
@@ -116,7 +109,6 @@ export async function POST(request: NextRequest) {
         }
       }
 
-      // Method 4: Look for tags in player response
       const playerResponseMatch = html.match(/"player_response":"([^"]+)"/)
       if (playerResponseMatch) {
         try {
@@ -128,16 +120,15 @@ export async function POST(request: NextRequest) {
             tags.push(...keywords.filter((k: string) => k.length > 0 && k.length < 100))
           }
         } catch (e) {
-          // Continue if JSON parsing fails
+
         }
       }
 
-      // Method 5: Look for tags in initial data
       const initialDataMatch = html.match(/var ytInitialData = ({.+?});/i)
       if (initialDataMatch) {
         try {
           const initialData = JSON.parse(initialDataMatch[1])
-          // Navigate through the complex structure to find keywords
+
           const findKeywords = (obj: any): string[] => {
             if (typeof obj === 'string' && obj.includes(',')) {
               return obj.split(',').map((k: string) => k.trim()).filter((k: string) => k.length > 0 && k.length < 100)
@@ -164,24 +155,23 @@ export async function POST(request: NextRequest) {
           const foundKeywords = findKeywords(initialData)
           tags.push(...foundKeywords)
         } catch (e) {
-          // Continue if JSON parsing fails
+
         }
       }
 
-      // Remove duplicates and clean up tags
       const uniqueTags = [...new Set(tags)]
         .filter(tag => {
-          // Filter out common non-tag content
+
           const lowerTag = tag.toLowerCase()
-          return !lowerTag.includes('youtube') && 
-                 !lowerTag.includes('video') && 
+          return !lowerTag.includes('youtube') &&
+                 !lowerTag.includes('video') &&
                  !lowerTag.includes('watch') &&
                  !lowerTag.includes('http') &&
                  !lowerTag.includes('www') &&
                  tag.length > 1 &&
                  tag.length < 100
         })
-        .slice(0, 50) // Limit to 50 tags max
+.slice(0, 50)
 
       if (uniqueTags.length === 0) {
         return NextResponse.json(

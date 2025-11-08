@@ -1,4 +1,4 @@
-// Fabric.js wrapper to handle dynamic imports properly
+
 let fabricInstance: any = null
 
 export const getFabric = async () => {
@@ -7,10 +7,9 @@ export const getFabric = async () => {
   }
 
   try {
-    // Dynamic import with proper error handling
+
     const fabricModule = await import('fabric')
-    
-    // Handle different export patterns
+
     if (fabricModule.fabric) {
       fabricInstance = fabricModule.fabric
     } else if (fabricModule.default) {
@@ -19,7 +18,6 @@ export const getFabric = async () => {
       fabricInstance = fabricModule
     }
 
-    // Expose fabric as global for fabric-history to access
     if (typeof window !== 'undefined') {
       (window as any).fabric = fabricInstance
     }

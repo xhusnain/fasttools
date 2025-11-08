@@ -7,16 +7,16 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { 
-  Calculator, 
-  Copy, 
-  Check, 
-  Building, 
-  Ruler, 
-  Weight, 
-  Volume, 
-  Target, 
-  Info, 
+import {
+  Calculator,
+  Copy,
+  Check,
+  Building,
+  Ruler,
+  Weight,
+  Volume,
+  Target,
+  Info,
   AlertTriangle,
   TrendingUp,
   BarChart3,
@@ -176,19 +176,19 @@ export function ConcreteCalculator() {
           volume = (outerVolume - innerVolume) * qty
           formula = `V = π × ((d1/2)² - (d2/2)²) × h × qty = π × ((${od}/2)² - (${id}/2)²) × ${ht} × ${qty} = ${volume.toFixed(2)} ${unit === "metric" ? "m³" : "ft³"}`
           explanation = "Volume = π × ((Outer Diameter/2)² - (Inner Diameter/2)²) × Height × Quantity"
-            // @ts-ignore
+
             dimensions = { length: od, width: od, height: ht, diameter: od, innerDiameter: id }
           break
 
         case "stairs":
           if (!run || !rise || !width || !steps) return
-          const r = Number.parseFloat(run) / 12 // Convert inches to feet
-          const ri = Number.parseFloat(rise) / 12 // Convert inches to feet
-          const stairW = Number.parseFloat(width) / 12 // Convert inches to feet
+          const r = Number.parseFloat(run) / 12
+          const ri = Number.parseFloat(rise) / 12
+          const stairW = Number.parseFloat(width) / 12
           const s = Number.parseFloat(steps)
-          const platDepth = Number.parseFloat(platformDepth) / 12 || 0 // Convert inches to feet
+          const platDepth = Number.parseFloat(platformDepth) / 12 || 0
           const stepVolume = (r * ri * stairW * s) / 2
-          const platformVolume = platDepth * stairW * 1 // Platform depth in feet
+          const platformVolume = platDepth * stairW * 1
           volume = (stepVolume + platformVolume) * qty
           formula = `V = ((run × rise × width × steps) / 2 + platform) × qty = ${volume.toFixed(2)} ${unit === "metric" ? "m³" : "ft³"}`
           explanation = "Volume = ((Run × Rise × Width × Steps) / 2 + Platform Volume) × Quantity"
@@ -197,11 +197,11 @@ export function ConcreteCalculator() {
 
         case "curb":
           if (!curbDepth || !gutterWidth || !curbHeight || !flagThickness || !length) return
-          const cd = Number.parseFloat(curbDepth) / 12 // Convert inches to feet
-          const gw = Number.parseFloat(gutterWidth) / 12 // Convert inches to feet
-          const ch = Number.parseFloat(curbHeight) / 12 // Convert inches to feet
-          const ft = Number.parseFloat(flagThickness) / 12 // Convert inches to feet
-          const len = Number.parseFloat(length) // Already in feet
+          const cd = Number.parseFloat(curbDepth) / 12
+          const gw = Number.parseFloat(gutterWidth) / 12
+          const ch = Number.parseFloat(curbHeight) / 12
+          const ft = Number.parseFloat(flagThickness) / 12
+          const len = Number.parseFloat(length)
           const curbVolume = (cd * ch * len) + (gw * ft * len)
           volume = curbVolume * qty
           formula = `V = (curb_depth × curb_height × length + gutter_width × flag_thickness × length) × qty = ${volume.toFixed(2)} ${unit === "metric" ? "m³" : "ft³"}`
@@ -210,10 +210,10 @@ export function ConcreteCalculator() {
           break
       }
 
-      const density = unit === "metric" ? 2400 : 150 // kg/m³ or lbs/ft³
+      const density = unit === "metric" ? 2400 : 150
       const weight = volume * density
-      const bags = Math.ceil(volume * (unit === "metric" ? 0.6 : 0.45)) // 60L bags or 0.45 ft³ bags
-      const cost = bags * (unit === "metric" ? 8 : 6) // Cost per bag
+      const bags = Math.ceil(volume * (unit === "metric" ? 0.6 : 0.45))
+      const cost = bags * (unit === "metric" ? 8 : 6)
 
       const mix = concreteMixes[concreteMix]
       const materialBreakdown = {
@@ -328,7 +328,7 @@ Calculated with FastTools Concrete Calculator`
 
   return (
     <div className="space-y-6">
-      {/* Main Calculator Card */}
+      {}
       <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader className="pb-3 px-3 sm:px-6">
           <CardTitle className="flex items-center gap-1.5 text-base">
@@ -342,7 +342,7 @@ Calculated with FastTools Concrete Calculator`
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6 px-3 sm:px-6">
-          {/* Calculation Type Selection */}
+          {}
           <div className="space-y-2">
             <Label className="text-[11px] font-medium text-heading-accent">Calculation Type</Label>
             <Select value={calculationType} onValueChange={(value: CalculationType) => setCalculationType(value)}>
@@ -362,7 +362,7 @@ Calculated with FastTools Concrete Calculator`
             </Select>
           </div>
 
-          {/* Unit Selection */}
+          {}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label className="text-[11px] font-medium text-heading-accent">Unit System</Label>
@@ -393,7 +393,7 @@ Calculated with FastTools Concrete Calculator`
             </div>
           </div>
 
-          {/* Dynamic Input Fields Based on Calculation Type */}
+          {}
           <div className="space-y-4">
             <h3 className="font-semibold text-sm text-heading-accent flex items-center gap-1.5">
               {(() => {
@@ -849,7 +849,7 @@ Calculated with FastTools Concrete Calculator`
             )}
           </div>
 
-          {/* Action Buttons */}
+          {}
           <div className="flex flex-col sm:flex-row gap-3">
             <Button onClick={calculateConcrete} disabled={isCalculating} className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground">
               {isCalculating ? <LoadingSpinner size="sm" className="mr-1 h-3 w-3" /> : <Calculator className="mr-1 h-3 w-3" />}
@@ -862,7 +862,7 @@ Calculated with FastTools Concrete Calculator`
         </CardContent>
       </Card>
 
-      {/* Results Section */}
+      {}
       {result && (
         <Card className="shadow-lg border-border bg-card">
           <CardHeader className="pb-3 px-3 sm:px-6">
@@ -874,7 +874,7 @@ Calculated with FastTools Concrete Calculator`
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-6 px-3 sm:px-6">
-            {/* Main Results */}
+            {}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               <div className="bg-card p-3 rounded-lg border border-border">
                 <div className="flex items-center gap-1.5 mb-1">
@@ -914,7 +914,7 @@ Calculated with FastTools Concrete Calculator`
               </div>
             </div>
 
-            {/* Material Breakdown */}
+            {}
             <div className="bg-card p-3 rounded-lg border border-border">
               <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
                 <PieChart className="h-3.5 w-3.5" />
@@ -948,7 +948,7 @@ Calculated with FastTools Concrete Calculator`
               </div>
             </div>
 
-            {/* Formula and Explanation */}
+            {}
             <div className="bg-card p-3 rounded-lg border border-border">
               <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
                 <Info className="h-3.5 w-3.5" />
@@ -968,7 +968,7 @@ Calculated with FastTools Concrete Calculator`
               </div>
             </div>
 
-            {/* Recommendations */}
+            {}
             <div className="bg-card p-3 rounded-lg border border-border">
               <h3 className="font-semibold text-sm mb-2 text-heading-accent flex items-center gap-1.5">
                 <Zap className="h-3.5 w-3.5" />
@@ -984,7 +984,7 @@ Calculated with FastTools Concrete Calculator`
               </div>
             </div>
 
-            {/* Action Buttons */}
+            {}
             <div className="flex gap-3">
               <Button onClick={copyResult} variant="outline" className="flex-1 h-9 text-xs font-medium border border-border hover:bg-secondary text-heading-accent bg-card">
                 {copied ? (

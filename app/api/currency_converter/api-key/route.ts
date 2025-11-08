@@ -3,9 +3,9 @@ import { getRandomApiKey } from '@/lib/api-keys'
 
 export async function GET(request: NextRequest) {
   try {
-    // Generate a random API key from our array
+
     const apiKey = getRandomApiKey()
-    
+
     return NextResponse.json({
       success: true,
       data: {
@@ -25,10 +25,10 @@ export async function GET(request: NextRequest) {
       },
       timestamp: new Date().toISOString()
     })
-    
+
   } catch (error) {
     console.error('Error generating API key:', error)
-    
+
     return NextResponse.json(
       {
         success: false,
@@ -44,10 +44,9 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
     const { name, email } = body
-    
-    // Generate a random API key from our array
+
     const apiKey = getRandomApiKey()
-    
+
     return NextResponse.json({
       success: true,
       data: {
@@ -69,10 +68,10 @@ export async function POST(request: NextRequest) {
       },
       timestamp: new Date().toISOString()
     })
-    
+
   } catch (error) {
     console.error('Error generating API key:', error)
-    
+
     return NextResponse.json(
       {
         success: false,

@@ -10,7 +10,6 @@ import { Upload, X, Download, Image as ImageIcon, FileText, Loader2, FolderArchi
 import * as pdfjsLib from "pdfjs-dist"
 import JSZip from "jszip"
 
-// Configure PDF.js worker
 if (typeof window !== "undefined") {
   pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs`
 }
@@ -44,21 +43,19 @@ export function PDFToImage() {
   const handleFileUpload = async (selectedFile: File | null) => {
     if (!selectedFile) return
 
-    // Validate file type
     if (selectedFile.type !== "application/pdf") {
       showToast("error", "❌ Please select a valid PDF file")
       return
     }
 
-    // Validate file size (max 2GB)
-    const maxSize = 2 * 1024 * 1024 * 1024 // 2GB in bytes
+    const maxSize = 2 * 1024 * 1024 * 1024
     if (selectedFile.size > maxSize) {
       showToast("error", "❌ File size exceeds 2GB limit")
       return
     }
 
     try {
-      // Load PDF to get page count
+
       const arrayBuffer = await selectedFile.arrayBuffer()
       const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer })
       const pdfDoc = await loadingTask.promise
@@ -226,7 +223,6 @@ export function PDFToImage() {
 
         setProgress(Math.round(((i + 1) / pagesToConvert.length) * 100))
 
-        // Small delay to prevent browser freezing
         await new Promise((resolve) => setTimeout(resolve, 50))
       }
 
@@ -345,7 +341,7 @@ export function PDFToImage() {
                 </Button>
               </div>
 
-              {/* Conversion Mode */}
+              {}
               <div className="space-y-3">
                 <Label className="text-sm font-medium text-foreground">Conversion Mode</Label>
                 <div className="grid grid-cols-2 gap-2">
@@ -372,7 +368,7 @@ export function PDFToImage() {
                 </div>
               </div>
 
-              {/* Page Numbers Input */}
+              {}
               {mode === "specific" && (
                 <div className="space-y-2">
                   <Label htmlFor="page-numbers" className="text-sm font-medium text-foreground">
@@ -393,7 +389,7 @@ export function PDFToImage() {
                 </div>
               )}
 
-              {/* Image Format */}
+              {}
               <div className="space-y-3">
                 <Label className="text-sm font-medium text-foreground">Image Format</Label>
                 <div className="grid grid-cols-3 gap-2">
@@ -439,7 +435,7 @@ export function PDFToImage() {
                 </div>
               </div>
 
-              {/* Quality Level */}
+              {}
               <div className="space-y-3">
                 <Label className="text-sm font-medium text-foreground">Quality Level</Label>
                 <div className="grid grid-cols-3 gap-2">
@@ -485,7 +481,7 @@ export function PDFToImage() {
                 </div>
               </div>
 
-              {/* Progress Bar */}
+              {}
               {loading && (
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
@@ -496,7 +492,7 @@ export function PDFToImage() {
                 </div>
               )}
 
-              {/* Convert Button */}
+              {}
               {!convertedImages.length && (
                 <Button
                   onClick={convertToImages}
@@ -520,7 +516,7 @@ export function PDFToImage() {
           )}
         </div>
 
-        {/* Converted Images */}
+        {}
         {convertedImages.length > 0 && (
           <div className="p-6 rounded-lg bg-card border border-border shadow-lg space-y-4">
             <div className="flex items-center justify-between">

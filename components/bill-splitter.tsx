@@ -57,7 +57,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      {/* Left Column - Inputs */}
+      {}
       <div className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="totalBill" className="text-xs font-medium text-foreground">
@@ -154,7 +154,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
         </div>
       </div>
 
-      {/* Right Column - Results */}
+      {}
       <div className="space-y-4">
         {result ? (
           <div className="space-y-3">

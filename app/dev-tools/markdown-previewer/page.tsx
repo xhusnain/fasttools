@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   keywords: [
     "fasttools",
     "fast tools",
-    // Core Keywords
+
     "markdown previewer",
     "markdown editor",
     "markdown viewer",
@@ -23,14 +23,12 @@ export const metadata: Metadata = {
     "markdown renderer",
     "free markdown previewer",
     "online markdown editor",
-    
-    // GitHub Features
+
     "github flavored markdown",
     "gfm preview",
     "github markdown",
     "gfm editor",
-    
-    // Markdown Features
+
     "markdown tables",
     "markdown code blocks",
     "markdown syntax highlighting",
@@ -40,23 +38,20 @@ export const metadata: Metadata = {
     "markdown images",
     "markdown blockquotes",
     "markdown formatting",
-    
-    // Use Cases
+
     "readme previewer",
     "documentation writing",
     "markdown for blogging",
     "technical documentation",
     "markdown notes",
     "github readme editor",
-    
-    // Learning & Help
+
     "markdown cheatsheet",
     "markdown tutorial",
     "learn markdown",
     "markdown syntax",
     "markdown guide",
-    
-    // Tool Variations
+
     "best markdown previewer",
     "free markdown editor online",
     "markdown live preview",
@@ -64,14 +59,12 @@ export const metadata: Metadata = {
     "instant markdown preview",
     "markdown to html preview",
     "markdown preview online",
-    
-    // Developer Tools
+
     "developer markdown tool",
     "programmer markdown editor",
     "coding documentation tool",
     "markdown for developers",
-    
-    // Platform-Specific
+
     "markdown previewer codepen",
     "markdown previewer freecodecamp",
     "markdown previewer fcc",
@@ -81,8 +74,7 @@ export const metadata: Metadata = {
     "build a markdown previewer github",
     "markdown previewer windows",
     "markdown previewer neovim",
-    
-    // Feature-Based Keywords
+
     "markdown live editor",
     "markdown side by side",
     "markdown split view",
@@ -111,7 +103,7 @@ export const metadata: Metadata = {
     "markdown viewer online",
     "interactive markdown editor"
   ],
-  alternates: { 
+  alternates: {
     canonical: "https://www.fasttools.store/dev-tools/markdown-previewer",
     languages: {
       "en-US": "https://www.fasttools.store/dev-tools/markdown-previewer",
@@ -199,9 +191,9 @@ export const metadata: Metadata = {
           "Free markdown previewer with live preview and split view. Online markdown editor supporting GitHub Flavored Markdown, syntax highlighting, markdown to HTML conversion, and real-time preview. Best markdown editor online with dual-pane layout, no signup required.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: { 
-        "@type": "Offer", 
-        price: "0", 
+      offers: {
+        "@type": "Offer",
+        price: "0",
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
@@ -234,9 +226,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: { 
-        "@type": "Organization", 
-        name: "FastTools", 
+      publisher: {
+        "@type": "Organization",
+        name: "FastTools",
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -321,7 +313,7 @@ export default function MarkdownPreviewerPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8">
               <div className="flex-1 lg:flex-[2] space-y-4 sm:space-y-5 md:space-y-6">
-                {/* Hero Section */}
+                {}
                 <div className="text-center space-y-3 sm:space-y-4 animate-fade-in-up">
                   <GHeader
                     title="Free Markdown Previewer Online - Live Markdown Editor with Split View"
@@ -331,17 +323,17 @@ export default function MarkdownPreviewerPage() {
                   />
                 </div>
 
-                {/* Mobile Ad Space */}
+                {}
                 <div className="lg:hidden">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {/* Tool Container */}
+                {}
                 <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
         <MarkdownPreviewer />
                 </div>
 
-                {/* Content Sections */}
+                {}
                 <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">How to Use Markdown Previewer</h2>
                   <ol className="pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-muted-foreground leading-relaxed list-decimal">
@@ -467,10 +459,10 @@ export default function MarkdownPreviewerPage() {
                   </p>
                 </div>
 
-                {/* Markdown Preview Keywords Content */}
+                {}
                 <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Render Markdown Online: Complete Guide</h2>
-                  
+
                   <div className="space-y-4">
                     <div className="p-4 rounded-lg bg-card border border-border">
                       <h3 className="font-semibold text-heading-accent mb-3">Render Markdown Online: Convert Markdown to HTML</h3>
@@ -743,28 +735,28 @@ export default function MarkdownPreviewerPage() {
                 <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Related Developer Tools</h2>
                   <div className="grid gap-2 sm:gap-3 grid-cols-1 sm:grid-cols-2 text-sm">
-                    <Link 
+                    <Link
                       href="/dev-tools/html-to-markdown"
                       className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                     >
                       <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">HTML to Markdown Converter</h3>
                       <p className="text-xs text-muted-foreground">Convert HTML to Markdown format</p>
                     </Link>
-                    <Link 
+                    <Link
                       href="/dev-tools/regex-tester"
                       className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                     >
                       <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">Regex Tester</h3>
                       <p className="text-xs text-muted-foreground">Test regular expressions</p>
                     </Link>
-                    <Link 
+                    <Link
                       href="/dev-tools/json-to-csv"
                       className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                     >
                       <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">JSON to CSV</h3>
                       <p className="text-xs text-muted-foreground">Convert JSON to CSV format</p>
                     </Link>
-                    <Link 
+                    <Link
                       href="/dev-tools"
                       className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                     >
@@ -775,7 +767,6 @@ export default function MarkdownPreviewerPage() {
                 </div>
               </div>
 
-              {/* Desktop Sidebar */}
               <aside className="hidden lg:block w-72 flex-shrink-0">
                 <div className="sticky top-32 space-y-8">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

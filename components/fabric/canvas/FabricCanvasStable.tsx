@@ -64,7 +64,7 @@ export function FabricCanvasStable({ onCanvasReady, width, height }: FabricCanva
         return () => {
             isMounted = false
             clearTimeout(timeoutId)
-            
+
             if (fabricCanvasRef.current) {
                 fabricCanvasRef.current.dispose()
                 fabricCanvasRef.current = null

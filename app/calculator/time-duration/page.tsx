@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "duration calculator in hours and minutes",
     "calculate time difference in hours",
     "time calculator",
-    "business hours calculator", 
+    "business hours calculator",
     "overtime calculator",
     "timezone conversion",
     "work days calculator",
@@ -121,7 +121,7 @@ export default function TimeDurationPage() {
     "description": "Free time duration calculator for all your time management needs. Calculate duration, addition, subtraction, business hours, timezone conversion, work days, and overtime.",
     "featureList": [
       "Time Duration Calculation",
-      "Time Addition & Subtraction", 
+      "Time Addition & Subtraction",
       "Business Hours Calculator",
       "Timezone Conversion",
       "Work Days Calculator",
@@ -143,13 +143,13 @@ export default function TimeDurationPage() {
           "text": "Choose from 7 calculation types: Duration, Addition, Subtraction, Business Hours, Timezone Conversion, Work Days, or Overtime Calculator"
         },
         {
-          "@type": "HowToStep", 
+          "@type": "HowToStep",
           "name": "Enter Time Values",
           "text": "Input the required time values based on your selected calculation type"
         },
         {
           "@type": "HowToStep",
-          "name": "Calculate Results", 
+          "name": "Calculate Results",
           "text": "Click calculate to get detailed results with formulas and explanations"
         }
       ]
@@ -184,7 +184,7 @@ export default function TimeDurationPage() {
         }
       },
       {
-        "@type": "Question", 
+        "@type": "Question",
         "name": "How accurate are the time calculations?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -195,7 +195,7 @@ export default function TimeDurationPage() {
         "@type": "Question",
         "name": "Can I calculate business hours only?",
         "acceptedAnswer": {
-          "@type": "Answer", 
+          "@type": "Answer",
           "text": "Yes! Our business hours calculator allows you to set custom business hours (e.g., 9 AM to 5 PM) and calculates only the time that falls within those hours. This is perfect for payroll, project management, and SLA calculations."
         }
       },
@@ -228,7 +228,7 @@ export default function TimeDurationPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      
+
       <div className="min-h-screen bg-card">
         <div className="container mx-auto px-3 py-6 md:py-8">
         <Breadcrumbs
@@ -240,14 +240,14 @@ export default function TimeDurationPage() {
 
           <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
-              <GHeader 
+              <GHeader
                 title="Free Online Time Duration Calculator"
                 description="Use our free Time Duration Calculator to find the exact time between two points — in hours, minutes, and seconds. Perfect for tracking work hours, study time, events, or any time interval. Fast, accurate, and easy to use online."
                 titleSize="medium"
               />
             </div>
 
-            {/* Mobile/Tablet AdSpace after GHeader */}
+            {}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -258,8 +258,8 @@ export default function TimeDurationPage() {
             <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
             <div>
               <TimeDurationCalculator />
-              
-              {/* How to Use Section */}
+
+              {}
                 <div className="mt-6 md:mt-8 space-y-4 md:space-y-6">
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
@@ -290,7 +290,7 @@ export default function TimeDurationPage() {
                     </div>
                   </div>
 
-              {/* Calculation Types Section */}
+              {}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                       <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -320,7 +320,7 @@ export default function TimeDurationPage() {
                     </div>
                   </div>
 
-                  {/* Common Use Cases */}
+                  {}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                       <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -374,7 +374,7 @@ export default function TimeDurationPage() {
                   </div>
                 </div>
 
-                  {/* Comprehensive FAQ Section */}
+                  {}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                       <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -1013,7 +1013,7 @@ export default function TimeDurationPage() {
                   </div>
                   </div>
 
-                  {/* Related Tools Section */}
+                  {}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                       <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -1110,7 +1110,7 @@ export default function TimeDurationPage() {
                 </div>
               </div>
             </div>
-            
+
               <div className="space-y-4 hidden lg:block">
                 <div className="sticky top-24 space-y-4">
                   <div>

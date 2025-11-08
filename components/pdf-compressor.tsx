@@ -13,7 +13,6 @@ import { useToast } from "@/components/ui/toast"
 import { PDFDocument } from "pdf-lib"
 import * as pdfjsLib from "pdfjs-dist"
 
-// Configure PDF.js worker
 if (typeof window !== "undefined") {
   pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs`
 }
@@ -43,13 +42,13 @@ export function PDFCompressor() {
         showToast("error", "File size must be less than 2GB")
         return
       }
-      
+
       setFile(uploadedFile)
       setOriginalSize(uploadedFile.size)
       setCompressed(false)
       setCompressedPdfBytes(null)
       setProgress(0)
-      
+
       showToast("success", "✅ PDF loaded successfully")
     }
   }
@@ -66,13 +65,13 @@ export function PDFCompressor() {
         showToast("error", "File size must be less than 2GB")
         return
       }
-      
+
       setFile(droppedFile)
       setOriginalSize(droppedFile.size)
       setCompressed(false)
       setCompressedPdfBytes(null)
       setProgress(0)
-      
+
       showToast("success", "✅ PDF loaded successfully")
     }
   }
@@ -96,11 +95,11 @@ export function PDFCompressor() {
   const getCompressionQuality = (level: CompressionLevel) => {
     switch (level) {
       case "low":
-        return { quality: 0.85, scale: 2.0 } // Best quality, minimal compression
+        return { quality: 0.85, scale: 2.0 }
       case "medium":
-        return { quality: 0.65, scale: 1.5 } // Balanced
+        return { quality: 0.65, scale: 1.5 }
       case "high":
-        return { quality: 0.40, scale: 1.0 } // Maximum compression
+        return { quality: 0.40, scale: 1.0 }
       default:
         return { quality: 0.65, scale: 1.5 }
     }
@@ -108,52 +107,44 @@ export function PDFCompressor() {
 
   const compressPDF = async () => {
     if (!file) return
-    
+
     setLoading(true)
     setProgress(5)
-    
+
     try {
       const arrayBuffer = await file.arrayBuffer()
       setProgress(10)
-      
-      // Load PDF with PDF.js for rendering
+
       const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer })
       const pdfDoc = await loadingTask.promise
       const numPages = pdfDoc.numPages
       setProgress(15)
-      
-      // Create new compressed PDF
+
       const newPdf = await PDFDocument.create()
       setProgress(20)
-      
-      // Get compression settings
+
       const settings = getCompressionQuality(compressionLevel)
-      
-      // Render each page to canvas and compress
+
       for (let pageNum = 1; pageNum <= numPages; pageNum++) {
         const page = await pdfDoc.getPage(pageNum)
         const viewport = page.getViewport({ scale: settings.scale })
-        
-        // Create canvas
+
         const canvas = document.createElement('canvas')
         canvas.width = viewport.width
         canvas.height = viewport.height
         const context = canvas.getContext('2d', { alpha: false })
-        
+
         if (!context) throw new Error("Failed to get canvas context")
-        
-        // White background
+
         context.fillStyle = 'white'
         context.fillRect(0, 0, canvas.width, canvas.height)
-        
-        // Render PDF page to canvas
+
         await page.render({
           canvasContext: context,
           viewport: viewport,
           intent: 'print'
         }).promise
-        
-        // Convert canvas to JPEG with compression
+
         const blob = await new Promise<Blob>((resolve, reject) => {
           canvas.toBlob(
             (b) => b ? resolve(b) : reject(new Error("Failed to convert canvas")),
@@ -161,10 +152,9 @@ export function PDFCompressor() {
             settings.quality
           )
         })
-        
+
         const imageBytes = new Uint8Array(await blob.arrayBuffer())
-        
-        // Embed in new PDF
+
         const jpegImage = await newPdf.embedJpg(imageBytes)
         const pdfPage = newPdf.addPage([viewport.width, viewport.height])
         pdfPage.drawImage(jpegImage, {
@@ -173,31 +163,29 @@ export function PDFCompressor() {
           width: viewport.width,
           height: viewport.height
         })
-        
-        // Update progress
+
         const pageProgress = 20 + ((pageNum / numPages) * 75)
         setProgress(Math.round(pageProgress))
       }
-      
+
       setProgress(95)
-      
-      // Save compressed PDF
+
       const pdfBytes = await newPdf.save()
       setProgress(100)
-      
+
       setCompressedSize(pdfBytes.length)
       setCompressedPdfBytes(pdfBytes)
       setCompressed(true)
-      
+
       const reduction = ((1 - (pdfBytes.length / originalSize)) * 100).toFixed(1)
       const savedKB = ((originalSize - pdfBytes.length) / 1024).toFixed(0)
-      
+
       if (pdfBytes.length >= originalSize) {
         showToast("warning", "⚠️ PDF is already optimized. Try a higher compression level.", 5000)
       } else {
         showToast("success", `✅ PDF compressed! Reduced by ${reduction}% (Saved ${savedKB} KB)`, 5000)
       }
-      
+
     } catch (error: any) {
       if (error.message?.includes("empty")) {
         showToast("error", "❌ Generated PDF is empty. Please try again.", 5000)
@@ -212,7 +200,7 @@ export function PDFCompressor() {
 
   const downloadCompressedPDF = () => {
     if (!compressedPdfBytes || !file) return
-    
+
     const blob = new Blob([compressedPdfBytes], { type: "application/pdf" })
     const url = URL.createObjectURL(blob)
     const link = document.createElement("a")
@@ -222,7 +210,7 @@ export function PDFCompressor() {
     link.click()
     document.body.removeChild(link)
     URL.revokeObjectURL(url)
-    
+
     showToast("success", "PDF downloaded successfully!")
   }
 
@@ -238,7 +226,7 @@ export function PDFCompressor() {
       <div className="space-y-6">
         <Card className="p-6 shadow-lg border-border">
           <div className="space-y-6">
-            {/* Upload Area */}
+            {}
             {!file ? (
               <div
                 onDrop={handleDrop}
@@ -263,7 +251,7 @@ export function PDFCompressor() {
               </div>
             ) : (
               <div className="space-y-4">
-                {/* File Info */}
+                {}
                 <div className="p-4 rounded-lg bg-muted/50 border border-border">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3 flex-1 min-w-0">
@@ -291,7 +279,7 @@ export function PDFCompressor() {
                   </div>
                 </div>
 
-                {/* Compression Level Selector */}
+                {}
                 {!compressed && (
                   <div className="space-y-3">
                     <Label className="text-sm font-medium text-foreground">Compression Level</Label>
@@ -345,7 +333,7 @@ export function PDFCompressor() {
                   </div>
                 )}
 
-                {/* Progress Bar */}
+                {}
                 {loading && (
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
@@ -356,12 +344,12 @@ export function PDFCompressor() {
                   </div>
                 )}
 
-                {/* Action Buttons */}
+                {}
                 <div className="space-y-3">
                   {!compressed ? (
-                    <Button 
-                      onClick={compressPDF} 
-                      disabled={loading} 
+                    <Button
+                      onClick={compressPDF}
+                      disabled={loading}
                       className="w-full h-11 text-sm font-semibold shadow-sm"
                       size="lg"
                     >
@@ -378,7 +366,7 @@ export function PDFCompressor() {
                       )}
                     </Button>
                   ) : (
-                    <Button 
+                    <Button
                       onClick={downloadCompressedPDF}
                       className="w-full h-11 text-sm font-semibold shadow-sm bg-green-600 hover:bg-green-700"
                       size="lg"
@@ -393,7 +381,7 @@ export function PDFCompressor() {
           </div>
         </Card>
 
-        {/* Features */}
+        {}
         <div className="p-5 rounded-lg bg-card border border-border shadow">
           <h2 className="text-xl font-bold mb-4 text-card-foreground flex items-center gap-2">
             <CheckCircle2 className="h-5 w-5 text-primary" />
@@ -427,7 +415,7 @@ export function PDFCompressor() {
           </div>
         </div>
 
-        {/* Info */}
+        {}
         <div className="p-5 rounded-lg bg-card border border-border shadow">
           <h2 className="text-lg font-bold mb-3 text-card-foreground flex items-center gap-2">
             <Info className="h-5 w-5 text-primary" />

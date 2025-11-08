@@ -42,11 +42,11 @@ export default function PregnancyConceptionCalculator() {
     try {
       if (calculationMethod === "dueDate" && dueDate) {
         const due = new Date(dueDate)
-        conceptionDate = new Date(due.getTime() - (266 * 24 * 60 * 60 * 1000)) // 266 days before due date
+        conceptionDate = new Date(due.getTime() - (266 * 24 * 60 * 60 * 1000))
         gestationalAgeWeeks = Math.floor((new Date().getTime() - conceptionDate.getTime()) / (7 * 24 * 60 * 60 * 1000))
       } else if (calculationMethod === "lmp" && lmpDate) {
         const lmp = new Date(lmpDate)
-        conceptionDate = new Date(lmp.getTime() + (14 * 24 * 60 * 60 * 1000)) // 14 days after LMP
+        conceptionDate = new Date(lmp.getTime() + (14 * 24 * 60 * 60 * 1000))
         gestationalAgeWeeks = Math.floor((new Date().getTime() - lmp.getTime()) / (7 * 24 * 60 * 60 * 1000))
       } else if (calculationMethod === "ultrasound" && ultrasoundDate && gestationalAge) {
         const ultrasound = new Date(ultrasoundDate)
@@ -249,7 +249,7 @@ Next Milestone: ${result.nextMilestone}`
 
   return (
     <div className="space-y-4">
-      {/* Input Section */}
+      {}
       <Card className="bg-card border-border">
         <CardHeader className="pb-2 px-3 sm:px-6">
           <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg">
@@ -338,10 +338,10 @@ Next Milestone: ${result.nextMilestone}`
         </CardContent>
       </Card>
 
-      {/* Results Section */}
+      {}
       {result && (
         <div className="space-y-4">
-          {/* Main Results */}
+          {}
           <Card className="bg-card border-border">
             <CardHeader className="pb-2 px-3 sm:px-6">
               <CardTitle className="flex items-center gap-2 text-foreground text-base">
@@ -393,7 +393,7 @@ Next Milestone: ${result.nextMilestone}`
             </CardContent>
           </Card>
 
-          {/* Current Symptoms */}
+          {}
           <Card className="bg-card border-border">
             <CardHeader className="pb-2 px-3 sm:px-6">
               <CardTitle className="flex items-center gap-2 text-foreground text-base">
@@ -413,7 +413,7 @@ Next Milestone: ${result.nextMilestone}`
             </CardContent>
           </Card>
 
-          {/* Recommendations */}
+          {}
           <div className="grid md:grid-cols-2 gap-4">
             <Card className="bg-card border-border">
               <CardHeader className="pb-2 px-3 sm:px-6">
@@ -494,7 +494,7 @@ Next Milestone: ${result.nextMilestone}`
         </div>
       )}
 
-      {/* History Section */}
+      {}
       {history.length > 0 && (
         <Card className="bg-card border-border">
           <CardHeader className="pb-2 px-3 sm:px-6">
@@ -530,7 +530,7 @@ Next Milestone: ${result.nextMilestone}`
         </Card>
       )}
 
-      {/* Information Section */}
+      {}
       <Card className="bg-card border-border">
         <CardHeader className="pb-2 px-3 sm:px-6">
           <CardTitle className="flex items-center gap-2 text-foreground text-base">
@@ -552,7 +552,7 @@ Next Milestone: ${result.nextMilestone}`
               </div>
             </div>
           </div>
-          
+
           <div className="text-xs text-muted-foreground space-y-2">
             <p>
               <strong className="text-heading-accent">Conception Date:</strong> The estimated date when fertilization occurred, typically 11-21 days after the first day of your last menstrual period.

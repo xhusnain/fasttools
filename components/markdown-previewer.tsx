@@ -28,7 +28,7 @@ export function MarkdownPreviewer() {
 
   return (
     <div className="space-y-4">
-      {/* Action Buttons */}
+      {}
       <div className="flex gap-3 justify-end">
         <Button
           onClick={resetMarkdown}

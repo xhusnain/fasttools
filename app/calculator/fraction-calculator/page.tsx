@@ -4,11 +4,11 @@ import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { Button } from "@/components/ui/button"
-import { 
-  Calculator, 
-  Plus, 
-  Minus, 
-  X, 
+import {
+  Calculator,
+  Plus,
+  Minus,
+  X,
   Divide,
   Brain,
   Square
@@ -128,7 +128,7 @@ export default function FractionCalculatorPage() {
             },
             featureList: [
               "Fraction addition and subtraction",
-              "Fraction multiplication and division", 
+              "Fraction multiplication and division",
               "Fraction simplification",
               "Decimal to fraction conversion",
               "Fraction to decimal conversion",
@@ -149,14 +149,14 @@ export default function FractionCalculatorPage() {
             ]} />
 
             <div className="mb-4 md:mb-6">
-              <GHeader 
+              <GHeader
                 title="Fraction Calculator - Free Online Math Tool"
                 description="Advanced fraction calculator with addition, subtraction, multiplication, division, simplification, and conversion between fractions and decimals. Perfect for students, teachers, and professionals."
                 titleSize="medium"
               />
                 </div>
 
-            {/* Mobile/Tablet AdSpace after GHeader */}
+            {}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -164,7 +164,7 @@ export default function FractionCalculatorPage() {
               <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
             </div>
 
-            {/* Main Content - Calculator and Sidebar in One Line */}
+            {}
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-4 md:gap-6 lg:gap-4">
               <div className="space-y-6">
                 <FractionCalculator />
@@ -240,8 +240,8 @@ export default function FractionCalculatorPage() {
                           Why are fractions fundamental to mathematical understanding?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Fractions express partial quantities through a ratio format with a top number (numerator) and bottom number (denominator). 
-                          They enable precise representation of values that fall between integers, support ratio calculations, percentage conversions, 
+                          Fractions express partial quantities through a ratio format with a top number (numerator) and bottom number (denominator).
+                          They enable precise representation of values that fall between integers, support ratio calculations, percentage conversions,
                           and are crucial in practical scenarios including culinary measurements, engineering specifications, and analytical computations.
                         </p>
                       </div>
@@ -250,7 +250,7 @@ export default function FractionCalculatorPage() {
                           What method should I use when adding fractions that have different bottom numbers?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Identify the smallest common multiple of the denominators, then rewrite each fraction using that shared denominator before combining the top numbers. 
+                          Identify the smallest common multiple of the denominators, then rewrite each fraction using that shared denominator before combining the top numbers.
                           Our calculator performs these conversions automatically. Example calculation: 1/3 + 1/4 = 4/12 + 3/12 = 7/12.
                         </p>
                       </div>
@@ -259,7 +259,7 @@ export default function FractionCalculatorPage() {
                           What is the process for transforming decimal numbers into fractional form?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Express the decimal value as a ratio where the denominator reflects the place value (e.g., 0.5 = 5/10, 0.25 = 25/100), 
+                          Express the decimal value as a ratio where the denominator reflects the place value (e.g., 0.5 = 5/10, 0.25 = 25/100),
                           then reduce the fraction by dividing both parts by their greatest common factor. For instance, 0.5 simplifies to 1/2.
                         </p>
                       </div>
@@ -268,7 +268,7 @@ export default function FractionCalculatorPage() {
                           What's the difference between proper and improper fractions?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          A proper fraction has a numerator smaller than the denominator (e.g., 3/4), while an improper fraction 
+                          A proper fraction has a numerator smaller than the denominator (e.g., 3/4), while an improper fraction
                           has a numerator equal to or larger than the denominator (e.g., 5/4). Improper fractions can be converted to mixed numbers.
                         </p>
                       </div>
@@ -277,7 +277,7 @@ export default function FractionCalculatorPage() {
                           Why do I need to learn fractions if I have a calculator?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Understanding fractions helps you interpret results, catch errors, and solve problems when calculators aren't available. 
+                          Understanding fractions helps you interpret results, catch errors, and solve problems when calculators aren't available.
                           It also builds mathematical thinking skills essential for advanced topics like algebra and calculus.
                         </p>
                       </div>
@@ -286,7 +286,7 @@ export default function FractionCalculatorPage() {
                           How can I practice fractions effectively?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Start with simple problems and gradually increase complexity. Use visual aids like pie charts and number lines, 
+                          Start with simple problems and gradually increase complexity. Use visual aids like pie charts and number lines,
                           practice with real-world examples, and use our fraction calculator to check your work and build confidence.
                         </p>
                       </div>
@@ -295,7 +295,7 @@ export default function FractionCalculatorPage() {
                           How can I identify fractions that represent the same numerical value?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Fractions with identical values but different representations are called equivalent fractions (e.g., 2/4 = 1/2 = 4/8). 
+                          Fractions with identical values but different representations are called equivalent fractions (e.g., 2/4 = 1/2 = 4/8).
                           Create equivalent fractions by applying the same multiplication or division operation to both the top and bottom numbers using any non-zero value.
                         </p>
                       </div>
@@ -304,7 +304,7 @@ export default function FractionCalculatorPage() {
                           How do I simplify fractions to their lowest terms?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          To simplify fractions, find the greatest common divisor (GCD) of the numerator and denominator, then divide both by the GCD. 
+                          To simplify fractions, find the greatest common divisor (GCD) of the numerator and denominator, then divide both by the GCD.
                           For example, 8/12 simplifies to 2/3 because the GCD of 8 and 12 is 4.
                         </p>
                       </div>
@@ -313,7 +313,7 @@ export default function FractionCalculatorPage() {
                           What is the least common denominator (LCD) and why is it important?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          The LCD is the smallest number that is a multiple of all denominators in a set of fractions. It's essential for adding and subtracting 
+                          The LCD is the smallest number that is a multiple of all denominators in a set of fractions. It's essential for adding and subtracting
                           fractions with different denominators, as it allows you to convert them to equivalent fractions with the same denominator.
                         </p>
                       </div>
@@ -322,7 +322,7 @@ export default function FractionCalculatorPage() {
                           How do I multiply fractions step by step?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          To multiply fractions: 1) Multiply the numerators together, 2) Multiply the denominators together, 3) Simplify the result if possible. 
+                          To multiply fractions: 1) Multiply the numerators together, 2) Multiply the denominators together, 3) Simplify the result if possible.
                           For example, 2/3 × 3/4 = (2×3)/(3×4) = 6/12 = 1/2.
                         </p>
                       </div>
@@ -331,7 +331,7 @@ export default function FractionCalculatorPage() {
                           What technique is used when dividing one fraction by another?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Division of fractions is performed by taking the inverse of the divisor (swapping numerator and denominator) and then multiplying. 
+                          Division of fractions is performed by taking the inverse of the divisor (swapping numerator and denominator) and then multiplying.
                           For instance, 3/4 ÷ 2/5 = 3/4 × 5/2 = 15/8 = 1 7/8.
                         </p>
                       </div>
@@ -340,7 +340,7 @@ export default function FractionCalculatorPage() {
                           What are the common fraction operations used in real life?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Fraction operations are used in cooking (recipe scaling), construction (measurements), finance (interest calculations), 
+                          Fraction operations are used in cooking (recipe scaling), construction (measurements), finance (interest calculations),
                           science (concentration ratios), and many other fields where precise part-to-whole relationships are important.
                         </p>
                       </div>
@@ -349,7 +349,7 @@ export default function FractionCalculatorPage() {
                           What steps are required to transform a mixed number into an improper fraction?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          The conversion process involves: first, multiplying the whole number portion by the fractional denominator, next, adding that product to the existing numerator, 
+                          The conversion process involves: first, multiplying the whole number portion by the fractional denominator, next, adding that product to the existing numerator,
                           finally, writing that sum over the original denominator. Example: 3 2/5 = (3×5 + 2)/5 = 17/5.
                         </p>
                       </div>
@@ -358,7 +358,7 @@ export default function FractionCalculatorPage() {
                           What is the formula for expressing fractions as percentages?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Transform a fraction into a percentage by performing division between the top and bottom numbers, then scaling the result by 100. 
+                          Transform a fraction into a percentage by performing division between the top and bottom numbers, then scaling the result by 100.
                           For instance, 1/2 = 0.50 = 50%. This calculator performs these transformations instantly.
                         </p>
                       </div>
@@ -367,7 +367,7 @@ export default function FractionCalculatorPage() {
                           What are complex fraction problems and how do I solve them?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Complex fraction problems involve multiple operations in sequence. Break them down step by step, follow the order of operations (PEMDAS), 
+                          Complex fraction problems involve multiple operations in sequence. Break them down step by step, follow the order of operations (PEMDAS),
                           and use visual representations when helpful. For example: (2/3 + 1/4) × (3/5 - 1/2) = 11/12 × 1/10 = 11/120.
                         </p>
                       </div>
@@ -376,7 +376,7 @@ export default function FractionCalculatorPage() {
                           How accurate are fraction calculator results?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Our calculator provides exact fraction results using precise mathematical algorithms. For decimal conversions, 
+                          Our calculator provides exact fraction results using precise mathematical algorithms. For decimal conversions,
                           results are accurate to 6 decimal places, which is sufficient for most academic and professional applications.
                         </p>
                       </div>
@@ -385,8 +385,8 @@ export default function FractionCalculatorPage() {
                           What are the key features of a professional fraction calculator?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Professional fraction calculators should support all four operations (addition, subtraction, multiplication, division), 
-                          handle mixed numbers, provide step-by-step solutions, convert between fractions and decimals, simplify results, 
+                          Professional fraction calculators should support all four operations (addition, subtraction, multiplication, division),
+                          handle mixed numbers, provide step-by-step solutions, convert between fractions and decimals, simplify results,
                           and work with both proper and improper fractions.
                         </p>
                       </div>
@@ -395,7 +395,7 @@ export default function FractionCalculatorPage() {
                           How do fractions appear in everyday life?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Fractions appear in time (quarter past 3), money (half dollar), sports (three-quarters of the game), 
+                          Fractions appear in time (quarter past 3), money (half dollar), sports (three-quarters of the game),
                           cooking (3/4 cup of flour), construction (5/8 inch thickness), and measurements (half inch). Understanding fractions helps you navigate the world more effectively!
                         </p>
                       </div>
@@ -404,7 +404,7 @@ export default function FractionCalculatorPage() {
                           What are the different types of fractions I should know?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          The main types are: proper fractions (numerator &lt; denominator), improper fractions (numerator ≥ denominator), 
+                          The main types are: proper fractions (numerator &lt; denominator), improper fractions (numerator ≥ denominator),
                           mixed numbers (whole number + fraction), and equivalent fractions (same value, different form). Each type has specific uses and conversion methods.
                         </p>
                       </div>
@@ -413,7 +413,7 @@ export default function FractionCalculatorPage() {
                           How do I solve fraction word problems?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          For fraction word problems: 1) Read carefully and identify what's being asked, 2) Determine which operation to use, 
+                          For fraction word problems: 1) Read carefully and identify what's being asked, 2) Determine which operation to use,
                           3) Set up the problem with fractions, 4) Solve step by step, 5) Check your answer makes sense in the original context.
                         </p>
                       </div>
@@ -422,14 +422,14 @@ export default function FractionCalculatorPage() {
                           Can I use this calculator for complex fraction expressions?
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Yes! Our calculator can handle complex expressions involving multiple operations, mixed numbers, and various fraction types. 
+                          Yes! Our calculator can handle complex expressions involving multiple operations, mixed numbers, and various fraction types.
                           It automatically follows the order of operations and provides step-by-step solutions for educational purposes.
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Related Tools Section */}
+                  {}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                     <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                       <Square className="h-5 w-5 text-foreground" />
@@ -465,7 +465,7 @@ export default function FractionCalculatorPage() {
                   </div>
                 </div>
               </div>
-              {/* Desktop Sidebar with AdSense */}
+              {}
               <div className="space-y-6 hidden lg:block">
                 <div className="sticky top-32 space-y-6">
                   <div>

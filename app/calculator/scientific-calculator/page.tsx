@@ -9,7 +9,7 @@ import { useState } from "react"
 import Head from "next/head"
 
 const seoKeywords = [
-    // Tier 1 - Core Primary (High Intent)
+
     "advanced scientific calculator", "scientific calculator", "online scientific calculator",
     "free scientific calculator", "scientific calculator online free",
     "math calculator", "scientific calculator app", "calculator online",
@@ -67,25 +67,25 @@ export default function ScientificCalculatorPage() {
         <meta name="author" content="FastTools" />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
-        
-        {/* Open Graph */}
+
+        {}
         <meta property="og:title" content="Scientific Calculator Online Free | Advanced Math Calculator" />
         <meta property="og:description" content="Professional scientific calculator with 70+ functions. Free online calculator for trigonometry, logarithms, statistics, and engineering calculations." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.fasttools.store/calculator/scientific-calculator" />
         <meta property="og:image" content="https://www.fasttools.store/og-scientific-calculator.png" />
         <meta property="og:site_name" content="FastTools" />
-        
-        {/* Twitter Card */}
+
+        {}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Scientific Calculator Online Free | Advanced Math Calculator" />
         <meta name="twitter:description" content="Professional scientific calculator with 70+ functions. Free online calculator for trigonometry, logarithms, statistics, and engineering calculations." />
         <meta name="twitter:image" content="https://www.fasttools.store/og-scientific-calculator.png" />
-        
-        {/* Canonical URL */}
+
+        {}
         <link rel="canonical" href="https://www.fasttools.store/calculator/scientific-calculator" />
-        
-        {/* Additional SEO */}
+
+        {}
         <meta name="theme-color" content="#3b82f6" />
         <meta name="msapplication-TileColor" content="#3b82f6" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -138,24 +138,24 @@ export default function ScientificCalculatorPage() {
           educationalLevel: ["High School", "Undergraduate", "Graduate", "Professional"]
         })
       }} />
-      
+
       <div className="bg-card">
         <div className="container mx-auto px-3 py-6 md:py-8">
         <Breadcrumbs items={[
           { label: "Calculator", href: "/calculator" },
           { label: "Scientific Calculator", href: "/calculator/scientific-calculator" }
         ]} />
-        
+
           <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
-              <GHeader 
+              <GHeader
                 title="Advanced Scientific Calculator Online Free"
                 description="Professional-grade scientific calculator with 70+ mathematical functions. Advanced trigonometry, logarithms, statistics, and engineering calculations. Free online calculator for students, engineers, and scientists. Compatible with CASIO, TI, Sharp, and HP calculator functions."
                 titleSize="medium"
               />
         </div>
 
-            {/* Mobile/Tablet AdSpace after GHeader */}
+            {}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -165,7 +165,7 @@ export default function ScientificCalculatorPage() {
 
         <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-6">
-              <ScientificCalculator 
+              <ScientificCalculator
                 history={history}
                 setHistory={setHistory}
                 clearHistory={clearHistory}
@@ -182,13 +182,13 @@ export default function ScientificCalculatorPage() {
                   </h2>
                   <div className="prose prose-slate dark:prose-invert max-w-none">
                     <p className="text-muted-foreground mb-4">
-                      A scientific calculator is an advanced mathematical tool designed for complex calculations beyond basic arithmetic. 
-                      Unlike standard calculators, scientific calculators include specialized functions for trigonometry, logarithms, 
+                      A scientific calculator is an advanced mathematical tool designed for complex calculations beyond basic arithmetic.
+                      Unlike standard calculators, scientific calculators include specialized functions for trigonometry, logarithms,
                       exponentials, statistics, and advanced mathematics.
                     </p>
                     <p className="text-muted-foreground mb-4">
-                      Our free online scientific calculator provides all the functionality of professional calculators like CASIO fx-991EX, 
-                      TI-84 Plus, HP 35s, and Sharp EL-W516X. It's perfect for students, engineers, scientists, and anyone who needs 
+                      Our free online scientific calculator provides all the functionality of professional calculators like CASIO fx-991EX,
+                      TI-84 Plus, HP 35s, and Sharp EL-W516X. It's perfect for students, engineers, scientists, and anyone who needs
                       to perform advanced mathematical calculations.
                     </p>
                     <h3 className="text-lg font-semibold mb-3 text-heading-accent">Key Features:</h3>
@@ -271,7 +271,7 @@ export default function ScientificCalculatorPage() {
                   </div>
                 </div>
 
-                {/* Quick Help Section */}
+                {}
                 <div className="bg-card border border-border rounded-2xl p-6 shadow-xl">
                   <h2 className="text-xl font-bold mb-4 text-foreground">Quick Help & Usage Guide</h2>
                   <div className="grid md:grid-cols-2 gap-6">
@@ -372,7 +372,7 @@ export default function ScientificCalculatorPage() {
                   </div>
                 </div>
 
-                {/* Related Tools Section */}
+                {}
                 <div className="bg-card border border-border rounded-2xl p-6 shadow-xl">
                   <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
                     <Calculator className="h-6 w-6 text-foreground" />
@@ -409,8 +409,8 @@ export default function ScientificCalculatorPage() {
                 </div>
               </div>
           </div>
-          
-              {/* Desktop Sidebar with AdSense */}
+
+              {}
               <div className="space-y-6 hidden lg:block">
                 <div className="sticky top-32 space-y-6">
                   <div>
@@ -420,7 +420,7 @@ export default function ScientificCalculatorPage() {
                     <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
                   </div>
 
-                  {/* History */}
+                  {}
                   <div className="bg-card border border-border rounded-2xl p-4 shadow-xl">
                     <div className="flex items-center gap-2 mb-4">
                       <div className="w-6 h-6 bg-gradient-to-r from-primary to-primary/90 rounded-lg flex items-center justify-center">
@@ -443,7 +443,7 @@ export default function ScientificCalculatorPage() {
                     </div>
                     {history.length > 0 && (
                       <div className="flex gap-2 mt-3">
-                        <button 
+                        <button
                           onClick={clearHistory}
                           className="flex items-center gap-1 px-3 py-1 text-xs bg-secondary text-foreground rounded hover:bg-secondary/80 transition-colors border border-border"
                         >
@@ -452,7 +452,7 @@ export default function ScientificCalculatorPage() {
                           </svg>
                           Clear
                         </button>
-                        <button 
+                        <button
                           onClick={copyResult}
                           className="flex items-center gap-1 px-3 py-1 text-xs bg-secondary text-foreground rounded hover:bg-secondary/80 transition-colors border border-border"
                         >

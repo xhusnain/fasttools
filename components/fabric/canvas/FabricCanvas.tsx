@@ -24,10 +24,9 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
         console.error('Error disposing canvas:', error)
       }
     }
-    
-    // Clear the canvas element completely
+
     if (canvasRef.current) {
-      // Check if canvas has fabric property and dispose it
+
       if (canvasRef.current.fabric) {
         try {
           canvasRef.current.fabric.dispose()
@@ -36,12 +35,12 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
           console.error('Error disposing fabric from canvas element:', error)
         }
       }
-      
+
       const ctx = canvasRef.current.getContext('2d')
       if (ctx) {
         ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height)
       }
-      // Remove all event listeners and reset the canvas
+
       canvasRef.current.width = canvasRef.current.width
       canvasRef.current.height = canvasRef.current.height
     }
@@ -52,40 +51,33 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
 
     const initFabric = async () => {
       if (!canvasRef.current || !isMounted || isInitializedRef.current) return
-      
+
       isInitializedRef.current = true
 
       try {
-        
-        // Dispose existing canvas if it exists
+
         disposeCanvas()
-        
-        // Wait a bit to ensure cleanup is complete
+
         await new Promise(resolve => setTimeout(resolve, 100))
-        
-        // Double check canvas element is clean
+
         if (!canvasRef.current) {
           console.error('Canvas element is null after disposal')
           return
         }
-        
-        // Get Fabric.js instance
+
         const fabric = await getFabric()
-        
+
         if (!fabric || !fabric.Canvas) {
           throw new Error('Fabric.js Canvas not available')
         }
-        
-        // Check if canvas is already initialized by Fabric.js
+
         if (canvasRef.current.fabric) {
           try {
             canvasRef.current.fabric.dispose()
             delete canvasRef.current.fabric
-          } catch (e) {
-          }
+          } catch (e) {}
         }
-        
-        // Create new canvas instance
+
         const canvas = new fabric.Canvas(canvasRef.current, {
           width: width,
           height: height,
@@ -99,19 +91,13 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
           defaultCursor: 'default'
         })
 
-        
-        // Store canvas reference
         fabricCanvasRef.current = canvas
-        
-        // Notify parent component
+
         if (isMounted) {
           onCanvasReady(canvas)
           setIsLoaded(true)
         }
 
-        // Add test objects
-        
-        // Add a test rectangle
         const testRect = new fabric.Rect({
           left: 50,
           top: 50,
@@ -125,7 +111,6 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
         })
         canvas.add(testRect)
 
-        // Add test text
         const testText = new fabric.IText('Test Text', {
           left: 200,
           top: 50,
@@ -136,31 +121,26 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
         })
         canvas.add(testText)
 
-        // Render the canvas once
         canvas.renderAll()
-        
 
       } catch (error) {
         console.error('Failed to initialize Fabric.js:', error)
-        isInitializedRef.current = false // Reset on error
+        isInitializedRef.current = false
         if (isMounted) {
           setIsLoaded(true)
         }
       }
     }
 
-    // Initialize Fabric.js
     initFabric()
 
-    // Cleanup function
     return () => {
       isMounted = false
       disposeCanvas()
       isInitializedRef.current = false
     }
-  }, []) // Remove all dependencies to prevent re-initialization
+  }, [])
 
-  // Handle width and height changes
   useEffect(() => {
     if (fabricCanvasRef.current && isLoaded) {
       try {
@@ -178,8 +158,8 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
       <canvas
         ref={canvasRef}
         className="border border-slate-200 rounded-xl shadow-lg bg-white"
-        style={{ 
-          maxWidth: '100%', 
+        style={{
+          maxWidth: '100%',
           maxHeight: '80vh',
           cursor: 'default'
         }}

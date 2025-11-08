@@ -111,13 +111,13 @@ export default function PercentageCalculatorPage() {
 
         <div className="max-w-7xl mx-auto">
           <div className="mb-6 md:mb-8">
-            <GHeader 
+            <GHeader
               title="Free Online Percentage Calculator"
               description="Free percentage calculator for all your math needs. Calculate percentage increase, percentage decrease, percentage difference, discounts, tips, grades, profit margins, and more. Accurate and quick online tool with step-by-step formulas."
             />
           </div>
 
-          {/* Mobile/Tablet AdSpace after GHeader */}
+          {}
           <div className="my-6 lg:hidden">
             <div className="text-center mb-2">
               <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -129,7 +129,7 @@ export default function PercentageCalculatorPage() {
           <div>
             <PercentageCalculator />
 
-            {/* How to Use Section */}
+            {}
               <div className="mt-8 md:mt-12 space-y-6 md:space-y-8">
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
@@ -160,7 +160,7 @@ export default function PercentageCalculatorPage() {
                 </div>
               </div>
 
-              {/* Calculation Types */}
+              {}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
                     <div className="p-2 bg-primary/10 rounded-lg">
@@ -190,7 +190,7 @@ export default function PercentageCalculatorPage() {
                 </div>
               </div>
 
-              {/* Targeted Use Cases by Intent */}
+              {}
               <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                 <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
                   <div className="p-2 bg-primary/10 rounded-lg">
@@ -216,7 +216,7 @@ export default function PercentageCalculatorPage() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-3">
                     <h3 className="text-base md:text-lg font-semibold text-heading-accent">🛒 Practical Intent</h3>
                     <div className="space-y-2">
@@ -234,7 +234,7 @@ export default function PercentageCalculatorPage() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-3">
                     <h3 className="text-base md:text-lg font-semibold text-heading-accent">💼 Business Intent</h3>
                     <div className="space-y-2">
@@ -255,7 +255,7 @@ export default function PercentageCalculatorPage() {
                 </div>
               </div>
 
-                {/* How-To Guides for Different Intents */}
+                {}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
                     <div className="p-2 bg-primary/10 rounded-lg">
@@ -276,7 +276,7 @@ export default function PercentageCalculatorPage() {
                         <strong>Example:</strong> What percent of 200 is 50? (50 ÷ 200) × 100 = 25%
                       </p>
                     </div>
-                    
+
                     <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
                       <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">How to Calculate Percentage Change</h3>
                       <p className="text-xs md:text-sm text-muted-foreground mb-2">
@@ -289,7 +289,7 @@ export default function PercentageCalculatorPage() {
                         <strong>Step 3:</strong> Multiply by 100: Result × 100
                       </p>
                     </div>
-                    
+
                     <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
                       <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">How to Convert Percentage to Fraction</h3>
                       <p className="text-xs md:text-sm text-muted-foreground mb-2">
@@ -305,7 +305,7 @@ export default function PercentageCalculatorPage() {
                   </div>
                 </div>
 
-                {/* Mathematical Formulas Section */}
+                {}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
                     <div className="p-2 bg-primary/10 rounded-lg">
@@ -333,7 +333,7 @@ export default function PercentageCalculatorPage() {
                         <strong>Example:</strong> If a product price rises from $100 to $120: ((120-100)/100) × 100 = 20% growth
                       </p>
                   </div>
-                    
+
                     <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
                       <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">Markup vs Margin</h3>
                       <p className="text-xs md:text-sm text-muted-foreground mb-2">
@@ -343,7 +343,7 @@ export default function PercentageCalculatorPage() {
                         <strong>Margin Calculation:</strong> Base Cost = Final Price × (1 - Margin Percentage / 100)
                       </p>
                     </div>
-                    
+
                     <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
                       <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">Compound Interest Formula</h3>
                       <p className="text-xs md:text-sm text-muted-foreground mb-2">
@@ -355,8 +355,8 @@ export default function PercentageCalculatorPage() {
               </div>
             </div>
           </div>
-          
-                {/* Real-World Applications */}
+
+                {}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
                     <div className="p-2 bg-primary/10 rounded-lg">
@@ -394,7 +394,7 @@ export default function PercentageCalculatorPage() {
                   </div>
                 </div>
 
-                {/* Related Tools Section */}
+                {}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
                     <div className="p-2 bg-primary/10 rounded-lg">
@@ -404,75 +404,75 @@ export default function PercentageCalculatorPage() {
                   </h2>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     {[
-                      { 
-                        name: "BMI Calculator", 
-                        desc: "Calculate Body Mass Index and health metrics", 
+                      {
+                        name: "BMI Calculator",
+                        desc: "Calculate Body Mass Index and health metrics",
                         href: "/calculator/bmi-calculator",
                         icon: "📊"
                       },
-                      { 
-                        name: "EMI Calculator", 
-                        desc: "Calculate loan payments and interest", 
+                      {
+                        name: "EMI Calculator",
+                        desc: "Calculate loan payments and interest",
                         href: "/calculator/loan-calculator",
                         icon: "💰"
                       },
-                      { 
-                        name: "Age Calculator", 
-                        desc: "Calculate age in years, months, days", 
+                      {
+                        name: "Age Calculator",
+                        desc: "Calculate age in years, months, days",
                         href: "/calculator/age-calculator",
                         icon: "🎂"
                       },
-                      { 
-                        name: "Date Difference Calculator", 
-                        desc: "Calculate days between dates", 
+                      {
+                        name: "Date Difference Calculator",
+                        desc: "Calculate days between dates",
                         href: "/calculator/date-difference",
                         icon: "📅"
                       },
-                      { 
-                        name: "Tip Calculator", 
-                        desc: "Calculate tips and gratuity", 
+                      {
+                        name: "Tip Calculator",
+                        desc: "Calculate tips and gratuity",
                         href: "/finance-tools/tip-calculator",
                         icon: "🍽️"
                       },
-                      { 
-                        name: "Discount Calculator", 
-                        desc: "Calculate discounts and savings", 
+                      {
+                        name: "Discount Calculator",
+                        desc: "Calculate discounts and savings",
                         href: "/finance-tools/discount-calculator",
                         icon: "🏷️"
                       },
-                      { 
-                        name: "Compound Interest Calculator", 
-                        desc: "Calculate compound interest growth", 
+                      {
+                        name: "Compound Interest Calculator",
+                        desc: "Calculate compound interest growth",
                         href: "/calculator/compound-interest",
                         icon: "📈"
                       },
-                      { 
-                        name: "Sales Tax Calculator", 
-                        desc: "Calculate sales tax and total amounts", 
+                      {
+                        name: "Sales Tax Calculator",
+                        desc: "Calculate sales tax and total amounts",
                         href: "/calculator/sales-tax-calculator",
                         icon: "💼"
                       },
-                      { 
-                        name: "Grade Calculator", 
-                        desc: "Calculate GPA and academic grades", 
+                      {
+                        name: "Grade Calculator",
+                        desc: "Calculate GPA and academic grades",
                         href: "/calculator/gpa-calculator",
                         icon: "🎓"
                       },
-                      { 
-                        name: "Tax Calculator", 
-                        desc: "Calculate income and sales tax", 
+                      {
+                        name: "Tax Calculator",
+                        desc: "Calculate income and sales tax",
                         href: "/calculator/tax-calculator",
                         icon: "🧾"
                       },
-                      { 
-                        name: "Investment Calculator", 
-                        desc: "Calculate investment returns and ROI", 
+                      {
+                        name: "Investment Calculator",
+                        desc: "Calculate investment returns and ROI",
                         href: "/calculator/investment-calculator",
                         icon: "📊"
                       },
-                      { 
-                        name: "Salary Calculator", 
-                        desc: "Calculate salary and wage conversions", 
+                      {
+                        name: "Salary Calculator",
+                        desc: "Calculate salary and wage conversions",
                         href: "/calculator/salary-calculator",
                         icon: "💵"
                       }
@@ -496,7 +496,7 @@ export default function PercentageCalculatorPage() {
                   </div>
                 </div>
 
-                {/* Comprehensive FAQ Section */}
+                {}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
                     <div className="p-2 bg-primary/10 rounded-lg">
@@ -725,7 +725,7 @@ export default function PercentageCalculatorPage() {
               </div>
 
             </div>
-            
+
             <div className="space-y-6 hidden lg:block">
               <div className="sticky top-32 space-y-6">
                 <div>

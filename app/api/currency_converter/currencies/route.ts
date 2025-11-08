@@ -12,27 +12,25 @@ export async function GET() {
     if (!currencies) {
       return NextResponse.json({ success: false, error: 'Service Unavailable', message: 'Server error. Please wait a minute and try again.' }, { status: 503 })
     }
-    
-    // Transform the data to include both code and name
+
     const formattedCurrencies = Object.entries(currencies).map(([code, name]) => ({
       code,
       name: name as string,
       symbol: getCurrencySymbol(code)
     }))
-    
+
     return NextResponse.json({
       success: true,
       data: formattedCurrencies,
       count: formattedCurrencies.length
     })
-    
+
   } catch (error) {
     console.error('Error fetching currencies:', error)
     return NextResponse.json({ success: false, error: 'Service Unavailable', message: 'Server error. Please wait a minute and try again.' }, { status: 503 })
   }
 }
 
-// Helper function to get currency symbols
 function getCurrencySymbol(code: string): string {
   const symbols: Record<string, string> = {
     'USD': '$',
@@ -151,6 +149,6 @@ function getCurrencySymbol(code: string): string {
     'TOP': 'T$',
     'XPF': '₣'
   }
-  
+
   return symbols[code] || code
 }

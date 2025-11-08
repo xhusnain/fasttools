@@ -72,7 +72,7 @@ const TabsContent = React.forwardRef<
   }
 >(({ className, value, ...props }, ref) => {
   const { value: selectedValue } = React.useContext(TabsContext)
-  
+
   if (selectedValue !== value) {
     return null
   }

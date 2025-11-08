@@ -36,11 +36,11 @@ export function Top10CurrenciesTable() {
   const fetchData = async () => {
     setLoading(true)
     setError("")
-    
+
     try {
       const response = await fetch('/api/currency_converter/top10?base=USD&days=10')
       const result = await response.json()
-      
+
       if (result.success) {
         setData(result.data)
         setLastRefresh(new Date().toLocaleString())

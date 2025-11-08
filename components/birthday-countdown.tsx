@@ -34,7 +34,6 @@ export function BirthdayCountdown() {
     const today = new Date()
     const birth = new Date(birthDate)
 
-    // Get next birthday
     let nextBirthday = new Date(today.getFullYear(), birth.getMonth(), birth.getDate())
 
     if (nextBirthday < today) {
@@ -79,7 +78,7 @@ export function BirthdayCountdown() {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
-      {/* Main Calculator Card */}
+      {}
       <Card className="border-2 border-white/20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl shadow-2xl">
         <CardHeader className="text-center space-y-3 sm:space-y-4 p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">

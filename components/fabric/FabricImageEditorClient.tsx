@@ -14,76 +14,65 @@ export function FabricImageEditorClient() {
   const [isToggling, setIsToggling] = useState(false)
   const [canvasKey, setCanvasKey] = useState(0)
   const [canvasSize, setCanvasSize] = useState({ width: 800, height: 600 })
-  
 
   useEffect(() => {
     setIsMounted(true)
   }, [])
 
-  // Calculate responsive canvas size
   useEffect(() => {
     const calculateCanvasSize = () => {
       const width = window.innerWidth
       const height = window.innerHeight
-      
-      // Reserve space for sidebars and padding
+
       const sidebarWidth = isSidebarExpanded ? 360 : 80
       const toolbarHeight = 60
       const padding = 48
-      
+
       const availableWidth = width - sidebarWidth - padding
       const availableHeight = height - toolbarHeight - padding
-      
-      // Calculate canvas size maintaining aspect ratio
+
       let canvasWidth = Math.min(availableWidth, 1400)
       let canvasHeight = Math.min(availableHeight, 900)
-      
-      // Mobile adjustments
+
       if (width < 768) {
         canvasWidth = width - 32
         canvasHeight = height - toolbarHeight - 32
       }
-      
-      setCanvasSize({ 
-        width: Math.max(canvasWidth, 320), 
-        height: Math.max(canvasHeight, 400) 
+
+      setCanvasSize({
+        width: Math.max(canvasWidth, 320),
+        height: Math.max(canvasHeight, 400)
       })
     }
 
     calculateCanvasSize()
     window.addEventListener('resize', calculateCanvasSize)
-    
+
     return () => window.removeEventListener('resize', calculateCanvasSize)
   }, [isSidebarExpanded])
 
-
-  // Keyboard shortcuts
   useEffect(() => {
     if (!canvas) return
 
     const handleKeyDown = (e: KeyboardEvent) => {
       const activeObject = canvas.getActiveObject()
-      
-      // Check if user is editing text - if so, don't intercept keyboard shortcuts
-      const isEditingText = activeObject && 
-        (activeObject.type === 'i-text' || activeObject.type === 'text' || activeObject.type === 'textbox') && 
+
+      const isEditingText = activeObject &&
+        (activeObject.type === 'i-text' || activeObject.type === 'text' || activeObject.type === 'textbox') &&
         activeObject.isEditing
 
-      // If editing text, allow all default text editing behavior
       if (isEditingText) {
         return
       }
 
       if (!activeObject) return
 
-      // Delete (Del or Backspace) - only when not editing text
       if (e.key === 'Delete' || e.key === 'Backspace') {
         e.preventDefault()
         canvas.remove(activeObject)
         canvas.renderAll()
       }
 
-      // Duplicate (Ctrl+D or Cmd+D)
       if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
         e.preventDefault()
         activeObject.clone((cloned: any) => {
@@ -120,9 +109,9 @@ export function FabricImageEditorClient() {
 
   const handleSidebarToggle = useCallback((sidebarType: string) => {
     if (isToggling) return
-    
+
     setIsToggling(true)
-    
+
     if (activeSidebar === sidebarType) {
       setIsSidebarExpanded(false)
       setTimeout(() => {
@@ -167,24 +156,24 @@ export function FabricImageEditorClient() {
 
   return (
     <div className="flex flex-col h-screen bg-slate-100">
-      {/* Top Toolbar */}
-      <TopToolbar 
+      {}
+      <TopToolbar
         canvas={canvas}
         onDownload={downloadCanvas}
         onReset={resetCanvas}
       />
 
-      {/* Main Content */}
+      {}
       <div className="flex flex-1 overflow-hidden">
-        {/* Main Sidebar */}
-        <MainSidebar 
+        {}
+        <MainSidebar
           onSidebarToggle={handleSidebarToggle}
           activeSidebar={activeSidebar}
         />
 
-        {/* Expandable Sidebar */}
+        {}
         {isSidebarExpanded && activeSidebar && (
-          <ExpandableSidebar 
+          <ExpandableSidebar
             sidebarType={activeSidebar}
             canvas={canvas}
             onClose={() => {
@@ -194,9 +183,9 @@ export function FabricImageEditorClient() {
           />
         )}
 
-        {/* Canvas Area */}
+        {}
         <div className="flex-1 flex items-center justify-center p-6 overflow-auto">
-          <FabricCanvas 
+          <FabricCanvas
             key={canvasKey}
             onCanvasReady={setCanvasInstance}
             width={canvasSize.width}

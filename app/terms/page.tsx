@@ -1,13 +1,13 @@
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import { 
-  Shield, 
-  FileText, 
-  Users, 
-  CheckCircle, 
-  Mail, 
-  Globe, 
-  Scale, 
+import {
+  Shield,
+  FileText,
+  Users,
+  CheckCircle,
+  Mail,
+  Globe,
+  Scale,
   BookOpen,
   RefreshCw
 } from "lucide-react"
@@ -93,7 +93,7 @@ export default function TermsPage() {
           <Breadcrumbs items={[{ label: "Terms of Service", href: "/terms" }]} />
 
           <div className="max-w-5xl mx-auto mt-8 md:mt-12">
-            {/* Title Section */}
+            {}
             <div className="mb-12 md:mb-16">
               <GHeader
                 title="Terms of Service"
@@ -119,9 +119,9 @@ export default function TermsPage() {
               <p className="text-sm text-muted-foreground text-center mt-4">Last updated: November 1, 2025</p>
             </div>
 
-            {/* Main Content */}
+            {}
             <div className="space-y-8">
-              {/* Agreement to Terms */}
+              {}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -144,7 +144,7 @@ export default function TermsPage() {
                 </div>
               </div>
 
-              {/* Description of Services */}
+              {}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -198,7 +198,7 @@ export default function TermsPage() {
                 </p>
               </div>
 
-              {/* Google AdSense */}
+              {}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -260,7 +260,7 @@ export default function TermsPage() {
                 </div>
               </div>
 
-              {/* User Rights */}
+              {}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -282,7 +282,7 @@ export default function TermsPage() {
                       <li>• Protection from unauthorized data collection</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-card border border-border rounded-lg p-4">
                     <h3 className="text-lg font-semibold mb-3 text-heading-accent flex items-center gap-2">
                       <Shield className="h-4 w-4 text-heading-accent" />
@@ -299,7 +299,7 @@ export default function TermsPage() {
                 </div>
               </div>
 
-              {/* Terms Updates */}
+              {}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">

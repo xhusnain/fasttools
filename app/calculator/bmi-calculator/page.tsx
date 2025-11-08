@@ -74,7 +74,7 @@ export default function BMICalculatorPage() {
     featureList: [
       "BMI calculation with metric and imperial units",
       "BMI Prime calculation",
-      "Ponderal Index calculation", 
+      "Ponderal Index calculation",
       "Health recommendations based on BMI category",
       "Risk level assessment",
       "Healthy weight range calculation",
@@ -93,13 +93,13 @@ export default function BMICalculatorPage() {
           text: "Choose between metric (kg/cm) or imperial (lbs/in) units"
         },
         {
-          "@type": "HowToStep", 
+          "@type": "HowToStep",
           name: "Enter Weight",
           text: "Input your weight in the selected unit"
         },
         {
           "@type": "HowToStep",
-          name: "Enter Height", 
+          name: "Enter Height",
           text: "Input your height in the selected unit"
         },
         {
@@ -162,7 +162,7 @@ export default function BMICalculatorPage() {
         }
       },
       {
-        "@type": "Question", 
+        "@type": "Question",
         name: "What are the different BMI categories?",
         acceptedAnswer: {
           "@type": "Answer",
@@ -173,7 +173,7 @@ export default function BMICalculatorPage() {
         "@type": "Question",
         name: "What is BMI Prime and how is it different from BMI?",
         acceptedAnswer: {
-          "@type": "Answer", 
+          "@type": "Answer",
           text: "BMI Prime is the ratio of a person's BMI to the upper limit of normal BMI (25). It's calculated as BMI Prime = BMI ÷ 25. Values less than 0.74 indicate underweight, 0.74-1.0 is normal, and greater than 1.0 indicates overweight."
         }
       },
@@ -239,7 +239,7 @@ export default function BMICalculatorPage() {
             <span>Professional BMI Calculator</span>
           </div>
 
-          <GHeader 
+          <GHeader
             title="BMI Calculator – Calculate Your Body Mass Index Instantly"
             description="What is BMI? Body Mass Index measures body fat using height and weight. Healthcare providers use BMI to assess health risks. Our calculator follows World Health Organization standards. Get instant results: BMI value, category classification, BMI Prime, and Ponderal Index. Perfect for tracking fitness goals, understanding weight-related health risks, and maintaining optimal health."
             titleSize="medium"
@@ -247,7 +247,7 @@ export default function BMICalculatorPage() {
             color="orange"
           />
 
-          {/* Mobile/Tablet AdSpace - shows on mobile/tablet, hidden on desktop */}
+          {}
           <div className="lg:hidden mt-6">
             <div className="text-center mb-2">
               <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -258,7 +258,7 @@ export default function BMICalculatorPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[1fr_350px] gap-6 lg:gap-8">
           <div className="lg:col-span-1">
-            {/* Semantic SEO Content Section - First 100 words with primary keyword */}
+            {}
             <section className="mb-8 bg-card border border-border rounded-lg p-6">
               <div className="prose prose-sm max-w-none">
                 <p className="text-base text-foreground leading-relaxed mb-4">
@@ -274,8 +274,8 @@ export default function BMICalculatorPage() {
             </section>
 
             <BMICalculatorPageContent />
-            
-            {/* Personalized 24-Hour Diet Plan Section */}
+
+            {}
             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3 text-foreground">
                 <div className="p-2 bg-heading-accent-border/30 rounded-lg">
@@ -286,7 +286,7 @@ export default function BMICalculatorPage() {
                 <span className="hidden sm:inline">Personalized 24-Hour Diet Plan</span>
                 <span className="sm:hidden">Diet Plan</span>
               </h2>
-              
+
               <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-card rounded-lg border border-border">
                 <p className="text-xs sm:text-sm text-foreground">
                   <strong>Note:</strong> These diet plans are general recommendations. For personalized nutrition advice, consult with a registered dietitian or healthcare provider.
@@ -511,7 +511,7 @@ export default function BMICalculatorPage() {
               </div>
             </section>
 
-            {/* Comprehensive BMI FAQ Section */}
+            {}
             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3 text-foreground">
                 <div className="p-2 bg-blue-900/30 rounded-lg">
@@ -522,7 +522,7 @@ export default function BMICalculatorPage() {
                 <span className="hidden sm:inline">Understanding BMI: Essential Questions and Answers</span>
                 <span className="sm:hidden">BMI FAQ</span>
               </h2>
-              
+
               <div className="space-y-4 sm:space-y-6 lg:space-y-8">
                 <div className="bg-card rounded-lg p-4 sm:p-5 lg:p-6 border border-border">
                   <h3 className="text-lg sm:text-xl font-semibold text-heading-accent mb-3 sm:mb-4">Q1: What exactly is BMI and why do healthcare providers use it?</h3>
@@ -724,9 +724,9 @@ export default function BMICalculatorPage() {
           </div>
 
           <div className="space-y-6">
-            {/* Desktop Sticky Sidebar Container */}
+            {}
             <div className="hidden lg:block sticky top-4 space-y-6">
-              {/* Sidebar Ad */}
+              {}
               <div className="bg-card border border-border rounded-lg p-4">
                   <div className="text-center">
                   <div className="text-sm font-medium text-muted-foreground mb-2">Advertisement</div>

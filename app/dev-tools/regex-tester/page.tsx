@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     },
   },
   keywords: [
-    // Top 20 Code Generation Keywords
+
     "regex code generator",
     "regex email code",
     "regex python email",
@@ -54,8 +54,7 @@ export const metadata: Metadata = {
     "regex replace code",
     "regex match code",
     "regex code snippet",
-    
-    // Top 10 Feature-Based Keywords
+
     "regex pattern tester with explanations",
     "test regex with capture groups",
     "regex find and replace online",
@@ -66,8 +65,7 @@ export const metadata: Metadata = {
     "test regex patterns multiple languages",
     "regex testing tool with examples",
     "online regex builder",
-    
-    // All Premium Keywords (Comprehensive List - No Duplicates)
+
     "test regex",
     "regex test",
     "regex tester",
@@ -424,7 +422,7 @@ export const metadata: Metadata = {
     "regex test or",
     "regex check or"
   ],
-  alternates: { 
+  alternates: {
     canonical: "https://www.fasttools.store/dev-tools/regex-tester",
     languages: {
       'en': 'https://www.fasttools.store/dev-tools/regex-tester',
@@ -469,15 +467,15 @@ export const metadata: Metadata = {
         "Test regex patterns online with instant visual matching, capture groups, and multi-language code generation. Debug and validate regular expressions for JavaScript, Python, Java, PHP, and more with live preview and pattern explanations.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: { 
-        "@type": "Offer", 
-        price: "0", 
+      offers: {
+        "@type": "Offer",
+        price: "0",
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
       featureList: [
-        "Live visual matching with highlighting", 
-        "Multi-language code generation (JavaScript, Python, Java, PHP, Go, C#, Ruby)", 
+        "Live visual matching with highlighting",
+        "Multi-language code generation (JavaScript, Python, Java, PHP, Go, C#, Ruby)",
         "Find and replace functionality",
         "Pattern explanation and breakdown",
         "Capture groups and named groups support",
@@ -492,9 +490,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: { 
-        "@type": "Organization", 
-        name: "FastTools", 
+      publisher: {
+        "@type": "Organization",
+        name: "FastTools",
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -536,7 +534,7 @@ export default function RegexTesterPage() {
         ]}
       />
 
-      {/* JSON-LD Schemas */}
+      {}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -656,7 +654,7 @@ export default function RegexTesterPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8">
               <div className="flex-1 lg:flex-[2] space-y-4 sm:space-y-5 md:space-y-6">
-                {/* Hero Section */}
+                {}
                 <div className="text-center space-y-3 sm:space-y-4 md:space-y-5 animate-fade-in-up">
                   <GHeader
                     title="Free Online Regex Tester - Test Regular Expressions with Live Results"
@@ -666,17 +664,17 @@ export default function RegexTesterPage() {
                   />
                 </div>
 
-                {/* Mobile Ad Space */}
+                {}
                 <div className="lg:hidden">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {/* Regex Tester Tool */}
+                {}
                 <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
                   <RegexTester />
                 </div>
 
-                {/* Content Sections */}
+                {}
                 <div className="space-y-4 sm:space-y-5 animate-fade-in-up animation-delay-200">
                   <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">How to Use Regex Tester</h2>
@@ -742,28 +740,28 @@ export default function RegexTesterPage() {
                   <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Related Developer Tools</h2>
                     <div className="grid gap-2 sm:gap-3 grid-cols-1 sm:grid-cols-2 text-sm">
-                      <Link 
+                      <Link
                         href="/dev-tools/jwt-decoder"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">JWT Decoder</h3>
                         <p className="text-xs text-muted-foreground">Decode and inspect JSON Web Tokens</p>
                       </Link>
-                      <Link 
+                      <Link
                         href="/dev-tools/json-to-csv"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">JSON to CSV</h3>
                         <p className="text-xs text-muted-foreground">Convert JSON data to CSV format</p>
                       </Link>
-                      <Link 
+                      <Link
                         href="/dev-tools/markdown-previewer"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">Markdown Previewer</h3>
                         <p className="text-xs text-muted-foreground">Preview markdown in real-time</p>
                       </Link>
-                      <Link 
+                      <Link
                         href="/dev-tools"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
@@ -773,7 +771,7 @@ export default function RegexTesterPage() {
                     </div>
                   </div>
 
-                  {/* Comprehensive Content Sections */}
+                  {}
                   <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Test Regex in Different Programming Languages</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-3">
@@ -930,10 +928,10 @@ export default function RegexTesterPage() {
                     </p>
         </div>
 
-                  {/* Regex Keywords Content */}
+                  {}
                   <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Regex Pattern Testing: Complete Guide</h2>
-                    
+
                     <div className="space-y-4">
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-heading-accent mb-3">Test Regex Pattern: Validate and Test Regular Expressions</h3>
@@ -1087,11 +1085,11 @@ export default function RegexTesterPage() {
                     </div>
                   </div>
 
-                  {/* Comprehensive FAQ Section */}
+                  {}
                   <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Frequently Asked Questions (FAQ)</h2>
                     <div className="space-y-4 sm:space-y-5">
-                      
+
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">What is regex test?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1179,7 +1177,7 @@ export default function RegexTesterPage() {
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">How to test regex in Java?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          In Java, test regex using Pattern and Matcher classes: import java.util.regex.*; Pattern pattern = Pattern.compile(&quot;\\d+&quot;); Matcher matcher = pattern.matcher(&quot;test123&quot;); boolean found = matcher.find(); // returns true. For simple validation: boolean matches = &quot;test&quot;.matches(&quot;[a-z]+&quot;);. Use Pattern.CASE_INSENSITIVE for case-insensitive matching. For multiple matches: while (matcher.find()) &#123; System.out.println(matcher.group()); &#125;. Java regex uses slightly different syntax than JavaScript (double backslashes for escape sequences).
+                          In Java, test regex using Pattern and Matcher classes: import java.util.regex.*; Pattern pattern = Pattern.compile(&quot;\\d+&quot;); Matcher matcher = pattern.matcher(&quot;test123&quot;); boolean found = matcher.find();
                         </p>
                       </div>
 
@@ -1214,7 +1212,7 @@ export default function RegexTesterPage() {
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Test if regex is valid - pattern validation</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          To test if regex is valid: JavaScript: try &#123; new RegExp(pattern); console.log(&quot;Valid&quot;); &#125; catch (e) &#123; console.log(&quot;Invalid: &quot; + e.message); &#125;. Python: import re; try: re.compile(pattern); except re.error: print(&quot;Invalid&quot;). Java: try &#123; Pattern.compile(pattern); &#125; catch (PatternSyntaxException e) &#123; /* invalid */ &#125;. Our tool automatically validates patterns and shows errors if syntax is incorrect. Common issues: unmatched brackets, invalid escape sequences, unclosed groups. Always validate user-provided patterns before use.
+                          To test if regex is valid: JavaScript: try &#123; new RegExp(pattern); console.log(&quot;Valid&quot;); &#125; catch (e) &#123; console.log(&quot;Invalid: &quot; + e.message); &#125;. Python: import re; try: re.compile(pattern); except re.error: print(&quot;Invalid&quot;). Java: try &#123; Pattern.compile(pattern); &#125; catch (PatternSyntaxException e) &#123;  &#125;. Our tool automatically validates patterns and shows errors if syntax is incorrect. Common issues: unmatched brackets, invalid escape sequences, unclosed groups. Always validate user-provided patterns before use.
                         </p>
                       </div>
 
@@ -1257,7 +1255,7 @@ export default function RegexTesterPage() {
                 </div>
               </div>
 
-              {/* Desktop Sidebar with AdSense (sticky, hidden on mobile/tablet) */}
+              {}
               <div className="hidden lg:block w-72 flex-shrink-0">
                 <div className="sticky top-32 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

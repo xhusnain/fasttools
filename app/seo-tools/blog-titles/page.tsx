@@ -46,7 +46,7 @@ export default function BlogTitleGeneratorPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1 lg:flex-[2] space-y-6">
-              {/* Hero Section */}
+              {}
               <div className="text-center space-y-5 animate-fade-in-up">
                 <GHeader
                   title="Blog Title Generator"
@@ -56,14 +56,14 @@ export default function BlogTitleGeneratorPage() {
                 />
               </div>
 
-              {/* Mobile Ad Space */}
+              {}
               <div className="lg:hidden mb-6">
                 <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
               </div>
 
               <BlogTitleGenerator />
 
-              {/* Content Sections */}
+              {}
               <div className="space-y-5 animate-fade-in-up animation-delay-200">
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">AI-Powered Blog Title Strategy and Content Marketing</h2>
@@ -104,7 +104,6 @@ export default function BlogTitleGeneratorPage() {
                   </p>
                 </div>
 
-                {/* FAQ Section */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -171,7 +170,7 @@ export default function BlogTitleGeneratorPage() {
                 </div>
               </div>
             </div>
-            {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
+            {}
             <div className="hidden lg:block w-72">
               <div className="sticky top-32 space-y-6">
                 <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

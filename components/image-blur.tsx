@@ -34,13 +34,10 @@ export function ImageBlur() {
     const file = e.target.files?.[0]
     if (!file) return
 
-    // Accept any file; will fail gracefully if not an image when loading
-
     const reader = new FileReader()
     reader.onload = async (event) => {
       const imageUrl = event.target?.result as string
-      
-      // Create HTMLImageElement
+
       const img = new Image()
       img.crossOrigin = "anonymous"
       img.onload = () => {
@@ -72,8 +69,7 @@ export function ImageBlur() {
     reset()
     setImageLoaded(false)
     setImageDimensions(null)
-    
-    // Reset the file input
+
     const fileInput = document.getElementById("image-upload-blur") as HTMLInputElement
     if (fileInput) {
       fileInput.value = ""
@@ -85,7 +81,7 @@ export function ImageBlur() {
       <Card className="shadow-lg w-full max-w-none border-border">
         <div className="p-4 sm:p-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Input Section */}
+            {}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold text-foreground">Original Image</h3>
@@ -127,7 +123,7 @@ export function ImageBlur() {
                     <input
                       id="image-upload-blur"
                       type="file"
-                      
+
                       onChange={handleImageUpload}
                       className="hidden"
                     />
@@ -146,7 +142,7 @@ export function ImageBlur() {
               </div>
             </div>
 
-            {/* Output Section */}
+            {}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold text-foreground">Blurred Result</h3>
@@ -196,7 +192,7 @@ export function ImageBlur() {
                   </div>
                 )}
 
-                {/* Show uploaded image (before AI processing) */}
+                {}
                 {imageUrl && !result && !isProcessing && (
                   <div className="w-full h-full flex items-center justify-center p-4 bg-card relative">
                     <img
@@ -210,7 +206,7 @@ export function ImageBlur() {
                   </div>
                 )}
 
-                {/* AI-processed result (selective background blur) */}
+                {}
                 {result && !isProcessing && (
                   <div className="w-full h-full flex items-center justify-center p-4 bg-card relative">
                     <img
@@ -227,7 +223,7 @@ export function ImageBlur() {
             </div>
           </div>
 
-          {/* Controls - auto reprocess */}
+          {}
           {imageUrl && (
             <div className="mt-6 space-y-4">
               <div className="flex items-center justify-between">
@@ -282,9 +278,9 @@ export function ImageBlur() {
             </div>
           )}
 
-          {/* No button - auto processing */}
+          {}
 
-          {/* Error State */}
+          {}
           {status.stage === "error" && (
             <div className="mt-6 p-6 bg-red-50 dark:bg-red-900/20 border-2 border-red-200 dark:border-red-800 rounded-xl">
               <div className="flex flex-col items-center text-center gap-4">
@@ -296,8 +292,8 @@ export function ImageBlur() {
                 <div>
                   <h3 className="text-lg font-bold text-foreground mb-2">Oops! Something went wrong</h3>
                   <p className="text-sm text-foreground mb-4 max-w-md">{status.message}</p>
-                  <Button 
-                    onClick={resetAll} 
+                  <Button
+                    onClick={resetAll}
                     variant="outline"
                     className="gap-2 border-red-300 text-foreground hover:bg-red-100 dark:border-destructive dark:text-foreground dark:hover:bg-red-900/30"
                   >
@@ -309,7 +305,7 @@ export function ImageBlur() {
             </div>
           )}
 
-          {/* Processing Info */}
+          {}
           {result && !isProcessing && (
             <div className="mt-6 p-4 bg-muted rounded-lg border border-border">
               <div className="flex items-center justify-between text-sm">

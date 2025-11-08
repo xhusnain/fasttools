@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   keywords: [
-    //Core PDF Unlocker Keywords
+
     "pdf unlocker",
     "pdf unlocker online",
     "unlock pdf",
@@ -42,8 +42,7 @@ export const metadata: Metadata = {
     "pdf unlocker online tool",
     "best pdf unlocker online",
     "systools pdf unlocker online",
-    
-    // Password & Security Keywords
+
     "pdf owner password",
     "pdf user password",
     "remove pdf owner password",
@@ -58,8 +57,7 @@ export const metadata: Metadata = {
     "unlock pdf security online",
     "unlock pdf protection online",
     "unlock pdf lock online",
-    
-    // Action Keywords
+
     "open locked pdf",
     "unlock encrypted pdf",
     "unlock secured pdf",
@@ -71,8 +69,7 @@ export const metadata: Metadata = {
     "unlock pdf restrictions online",
     "unlock pdf permanently online",
     "unlock pdf signature online",
-    
-    // Free & Online Keywords
+
     "free pdf unlocker",
     "pdf unlocker free",
     "unlock pdf free",
@@ -88,8 +85,7 @@ export const metadata: Metadata = {
     "unlock pdf online without password",
     "unlock a pdf online for free",
     "unlock large pdf free",
-    
-    // Password Remover Keywords
+
     "pdf password remover online",
     "pdf password remover online free",
     "pdf password remover online tool",
@@ -107,15 +103,13 @@ export const metadata: Metadata = {
     "pdf password remover online adobe",
     "pdf password remover online free download",
     "pdf password remover online without password free",
-    
-    // With Password Keywords
+
     "unlock pdf online with password",
     "unlock pdf online password",
     "pdf unlock password online free",
     "unlock pdf online forgot password",
     "unlock pdf online lost my pass",
-    
-    // Browser & Privacy Keywords
+
     "pdf unlock browser",
     "in browser pdf unlock",
     "no upload pdf unlock",
@@ -123,16 +117,14 @@ export const metadata: Metadata = {
     "private pdf unlock",
     "client side pdf unlock",
     "offline pdf unlocker",
-    
-    // Technical Keywords
+
     "pdf password removal tool",
     "pdf encryption removal",
     "pdf protection removal",
     "unlock pdf javascript",
     "pdf decrypt online",
     "pdf password bypass",
-    
-    // Specific Action Keywords
+
     "unlock pdf for editing online free",
     "unlock pdf online for editing",
     "pdf unlock edit online",
@@ -146,8 +138,7 @@ export const metadata: Metadata = {
     "unlock multiple pdf online free",
     "unlock pdf online in bulk",
     "unlock pdf online bulk",
-    
-    // Tool Comparison Keywords
+
     "unlock pdf online ilovepdf",
     "unlock pdf online i love",
     "unlock pdf online smallpdf",
@@ -160,8 +151,7 @@ export const metadata: Metadata = {
     "unlock pdf4me",
     "pdf gear online unlocker",
     "cloudxtra pdf unlocker online",
-    
-    // Conversion & Utility Keywords
+
     "pdf to unlock online",
     "pdf to password remover online",
     "online pdf converter unlock",
@@ -172,27 +162,24 @@ export const metadata: Metadata = {
     "free pdf unlock online utility",
     "free pdf unlock online utility website",
     "pdf unlock file online tools",
-    
-    // Download & Save Keywords
+
     "unlock pdf online download",
     "unlock pdf online and save",
     "unlock pdf online and download",
     "online unlocked pdf",
     "pdf file unlocked",
-    
-    // Misc/Other Keywords
+
     "unlock pdf online gratis",
     "pdf unlock in online",
     "pdf unlock online without password",
     "unlock pdf doc online",
     "unlock pdf online link",
     "unlock pdf online url",
-    
-    // FastTools branded
+
     "fasttools pdf unlocker",
     "fast tools pdf unlock"
   ],
-  alternates: { 
+  alternates: {
     canonical: "https://www.fasttools.store/pdf-tools/pdf-unlocker",
     languages: {
       "en-US": "https://www.fasttools.store/pdf-tools/pdf-unlocker",
@@ -397,7 +384,6 @@ const jsonLd = {
   }
 }
 
-// FAQ Schema
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -446,7 +432,6 @@ const faqSchema = {
   ]
 }
 
-// HowTo Schema
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
@@ -522,7 +507,7 @@ export default function PDFUnlockerPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {/* Hero Section */}
+                {}
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <GHeader
                     title="PDF Unlocker Online Free - Unlock PDF & Remove Password"
@@ -532,17 +517,17 @@ export default function PDFUnlockerPage() {
                   />
                 </div>
 
-                {/* Mobile Ad Space */}
+                {}
                 <div className="lg:hidden mb-6">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {/* PDF Unlocker Tool */}
+                {}
                 <div className="animate-fade-in-up animation-delay-100">
                   <PDFUnlocker />
                 </div>
 
-                {/* Content Sections */}
+                {}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -586,7 +571,7 @@ export default function PDFUnlockerPage() {
                   </div>
                 </div>
 
-                {/* Common PDF Unlocking Scenarios */}
+                {}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -628,7 +613,6 @@ export default function PDFUnlockerPage() {
                   </div>
         </div>
 
-                {/* Why Choose Our PDF Unlocker */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -676,7 +660,6 @@ export default function PDFUnlockerPage() {
                   </div>
                 </div>
 
-                {/* Use Cases */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -712,7 +695,6 @@ export default function PDFUnlockerPage() {
                   </div>
           </div>
 
-                {/* FAQ Section */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -838,7 +820,6 @@ export default function PDFUnlockerPage() {
                   </div>
                 </div>
 
-                {/* Related Tools Section */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -847,7 +828,7 @@ export default function PDFUnlockerPage() {
                     Related PDF Tools
                   </h2>
                   <div className="grid md:grid-cols-2 gap-4">
-                    <Link 
+                    <Link
                       href="/pdf-tools/pdf-splitter-merger"
                       className="group p-4 rounded-lg bg-muted/20 hover:bg-muted/40 border border-border hover:border-primary transition-all"
                     >
@@ -859,7 +840,7 @@ export default function PDFUnlockerPage() {
                         <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                       </div>
                     </Link>
-                    <Link 
+                    <Link
                       href="/image-tools/image-to-text"
                       className="group p-4 rounded-lg bg-muted/20 hover:bg-muted/40 border border-border hover:border-primary transition-all"
                     >
@@ -875,7 +856,6 @@ export default function PDFUnlockerPage() {
                 </div>
           </div>
 
-              {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
               <div className="hidden lg:block w-72">
                 <div className="sticky top-32 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

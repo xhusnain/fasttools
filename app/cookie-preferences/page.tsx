@@ -55,8 +55,8 @@ export default function CookiePreferencesPage() {
   }
 
   const togglePreference = (key: keyof CookiePreferences) => {
-    if (key === 'essential') return // Essential cookies cannot be disabled
-    
+    if (key === 'essential') return
+
     setPreferences(prev => ({
       ...prev,
       [key]: !prev[key]
@@ -67,10 +67,9 @@ export default function CookiePreferencesPage() {
     localStorage.setItem("cookie-preferences", JSON.stringify(preferences))
     localStorage.setItem("cookie-consent", "accepted")
     setSaved(true)
-    
-    // Initialize tracking based on preferences
+
     initializeTracking(preferences.analytics || preferences.advertising)
-    
+
     setTimeout(() => setSaved(false), 3000)
   }
 
@@ -85,7 +84,7 @@ export default function CookiePreferencesPage() {
     localStorage.setItem("cookie-preferences", JSON.stringify(allAccepted))
     localStorage.setItem("cookie-consent", "accepted")
     setSaved(true)
-    
+
     initializeTracking(true)
     setTimeout(() => setSaved(false), 3000)
   }
@@ -101,14 +100,14 @@ export default function CookiePreferencesPage() {
     localStorage.setItem("cookie-preferences", JSON.stringify(essentialOnly))
     localStorage.setItem("cookie-consent", "declined")
     setSaved(true)
-    
+
     initializeTracking(false)
     setTimeout(() => setSaved(false), 3000)
   }
 
   const initializeTracking = (consent: boolean) => {
     if (typeof window !== "undefined") {
-      // Google Analytics consent
+
       if ((window as any).gtag) {
         (window as any).gtag('consent', 'update', {
           'analytics_storage': consent ? 'granted' : 'denied',
@@ -136,7 +135,7 @@ export default function CookiePreferencesPage() {
           ]} />
 
           <div className="max-w-5xl mx-auto">
-            {/* Hero Section */}
+            {}
             <div className="text-center mb-12">
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground">Cookie Policy</h1>
               <p className="text-base sm:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
@@ -159,7 +158,7 @@ export default function CookiePreferencesPage() {
               <p className="text-sm text-muted-foreground">Last updated: November 1, 2025</p>
             </div>
 
-            {/* Main Content */}
+            {}
             <div className="space-y-8">
               <div className="bg-card border border-border rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
@@ -192,7 +191,7 @@ export default function CookiePreferencesPage() {
                 </div>
               </div>
 
-              {/* Cookie Categories */}
+              {}
               <div className="bg-card border border-border rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border flex items-center justify-center">
@@ -288,7 +287,7 @@ export default function CookiePreferencesPage() {
                 </div>
               </div>
 
-              {/* Google AdSense Compliance */}
+              {}
               <div className="bg-card border border-border rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border flex items-center justify-center">
@@ -351,7 +350,7 @@ export default function CookiePreferencesPage() {
                 </div>
               </div>
 
-              {/* Third-Party Cookie Management */}
+              {}
               <div className="bg-card border border-border rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border flex items-center justify-center">
@@ -400,7 +399,7 @@ export default function CookiePreferencesPage() {
                 </div>
               </div>
 
-              {/* Cookie Management Controls */}
+              {}
               <div className="bg-card border border-border rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 rounded-lg bg-primary/10 border border-border flex items-center justify-center">
@@ -420,7 +419,7 @@ export default function CookiePreferencesPage() {
                       Save Current Preferences
                     </Button>
                   </div>
-                  
+
                   {saved && (
                     <div className="mt-4 p-4 bg-heading-accent-border/10 border border-heading-accent-border/30 text-heading-accent rounded-lg flex items-center gap-2">
                       <CheckCircle className="h-5 w-5" />

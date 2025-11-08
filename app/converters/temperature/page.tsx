@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "f to c converter free",
     "temperature conversion free",
     "celsius fahrenheit conversion free",
-    
+
     "convert 100 c to f",
     "convert 32 f to c",
     "weather temperature converter",
@@ -139,15 +139,15 @@ export const metadata: Metadata = {
         "Convert temperatures between Celsius and Fahrenheit for weather, cooking and science.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: { 
-        "@type": "Offer", 
-        price: "0", 
+      offers: {
+        "@type": "Offer",
+        price: "0",
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
       featureList: [
-        "Celsius ⇄ Fahrenheit", 
-        "Copy results", 
+        "Celsius ⇄ Fahrenheit",
+        "Copy results",
         "Mobile friendly",
         "Cooking temperatures",
         "Weather conversions",
@@ -162,9 +162,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: { 
-        "@type": "Organization", 
-        name: "FastTools", 
+      publisher: {
+        "@type": "Organization",
+        name: "FastTools",
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -208,7 +208,7 @@ export default function TemperatureConverterPage() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-4 lg:gap-6">
             <div className="flex-1 lg:flex-[2] space-y-4 sm:space-y-5">
-              {/* Hero */}
+              {}
               <div className="text-center space-y-3 animate-fade-in-up">
                 <GHeader
                   title="Temperature Converter - Celsius (°C) ⇄ Fahrenheit (°F)"
@@ -218,18 +218,17 @@ export default function TemperatureConverterPage() {
                 />
               </div>
 
-              {/* Mobile Ad Space */}
+              {}
               <div className="lg:hidden">
                 <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
               </div>
 
-              {/* Tool */}
+              {}
               <div className="p-3 sm:p-4 rounded-lg bg-card border border-border shadow">
                 <TemperatureConverter />
               </div>
 
-
-              {/* Content Sections */}
+              {}
               <div className="space-y-4 animate-fade-in-up">
                 <div className="p-3 sm:p-4 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-sm md:text-lg font-bold mb-2 text-foreground">How to Convert Temperatures</h2>
@@ -313,11 +312,11 @@ export default function TemperatureConverterPage() {
                   </ul>
                 </div>
 
-                {/* Comprehensive FAQ Section */}
+                {}
                 <div className="p-6 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-2xl font-bold mb-6 text-foreground">Temperature Conversion FAQ - Everything You Need to Know</h2>
                   <div className="space-y-6 text-sm text-muted-foreground">
-                    
+
                     <div>
                       <h3 className="text-lg font-bold mb-3 text-heading-accent">1. What's the easiest way to convert temperatures between Celsius and Fahrenheit?</h3>
                       <p className="mb-3">The most straightforward method is using our online temperature converter, which provides instant and accurate results. However, understanding the conversion formulas helps you convert temperatures manually when needed.</p>
@@ -506,8 +505,6 @@ export default function TemperatureConverterPage() {
                   </div>
                 </div>
 
-
-                {/* Related Tools */}
                 <div className="p-3 sm:p-4 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-sm md:text-lg font-bold mb-2 text-foreground">Related Tools</h2>
                   <ul className="list-disc pl-4 text-muted-foreground text-xs">
@@ -519,7 +516,6 @@ export default function TemperatureConverterPage() {
               </div>
             </div>
 
-            {/* Desktop Sidebar with AdSense */}
             <div className="hidden lg:block w-56 xl:w-64">
               <div className="sticky top-24 space-y-4">
                 <AdSpace slot="sidebar" className="w-full h-72 border border-border rounded-xl shadow-sm bg-card" />

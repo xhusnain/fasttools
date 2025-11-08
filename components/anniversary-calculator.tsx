@@ -47,16 +47,13 @@ export function AnniversaryCalculator() {
 
     const today = new Date()
 
-    // Calculate total time difference in milliseconds
     const totalTimeDiff = today.getTime() - relationshipStartDate.getTime()
-    
-    // Calculate total units
+
     const totalSeconds = Math.floor(totalTimeDiff / 1000)
     const totalMinutes = Math.floor(totalSeconds / 60)
     const totalHours = Math.floor(totalMinutes / 60)
     const totalDays = Math.floor(totalHours / 24)
 
-    // Calculate years, months, days
     let years = today.getFullYear() - relationshipStartDate.getFullYear()
     let months = today.getMonth() - relationshipStartDate.getMonth()
     let days = today.getDate() - relationshipStartDate.getDate()
@@ -72,12 +69,10 @@ export function AnniversaryCalculator() {
       months += 12
     }
 
-    // Calculate hours, minutes, seconds from today
     const hours = today.getHours()
     const minutes = today.getMinutes()
     const seconds = today.getSeconds()
 
-    // Calculate next anniversary
     let nextAnniversary = new Date(today.getFullYear(), relationshipStartDate.getMonth(), relationshipStartDate.getDate())
     if (nextAnniversary < today) {
       nextAnniversary = new Date(today.getFullYear() + 1, relationshipStartDate.getMonth(), relationshipStartDate.getDate())
@@ -105,15 +100,11 @@ export function AnniversaryCalculator() {
     })
   }
 
-
-  // Live timer effect
   useEffect(() => {
     if (!isLiveTimer || !relationshipStartDate) return
 
-    // Initial calculation
     updateLiveTimer()
 
-    // Set up interval to update every second
     const interval = setInterval(updateLiveTimer, 1000)
 
     return () => clearInterval(interval)
@@ -137,7 +128,7 @@ export function AnniversaryCalculator() {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
-      {/* Main Calculator Card */}
+      {}
       <Card className="border-2 border-white/20 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl shadow-2xl">
         <CardHeader className="text-center space-y-3 sm:space-y-4 p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">

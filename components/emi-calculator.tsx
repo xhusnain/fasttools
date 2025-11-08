@@ -65,17 +65,14 @@ export function EMICalculator() {
       const P = Number.parseFloat(loanAmount)
       const annualRate = Number.parseFloat(interestRate)
       const tenureYears = Number.parseFloat(loanTenure)
-      
-      // Convert annual rate to monthly rate (R = annual rate / 12 / 100)
+
       const r = annualRate / 12 / 100
       const n = tenureYears * 12
 
-      // Standard EMI Formula used by banks: EMI = P × R × (1 + R)^N / ((1 + R)^N - 1)
       const emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1)
       const totalPayment = emi * n
       const totalInterest = totalPayment - P
 
-      // Generate Amortization Schedule using real banking calculations
       const amortizationSchedule: AmortizationEntry[] = []
       const yearlySchedule: YearlyEntry[] = []
       let balance = P
@@ -85,16 +82,13 @@ export function EMICalculator() {
       let monthCount = 0
 
       for (let i = 1; i <= n; i++) {
-        // Calculate interest payment for current month
+
         const interestPayment = balance * r
-        
-        // Calculate principal payment (EMI - Interest)
+
         const principalPayment = emi - interestPayment
-        
-        // Update balance
+
         balance = Math.max(0, balance - principalPayment)
 
-        // Store monthly data
         amortizationSchedule.push({
           month: i,
           principal: Number.parseFloat(principalPayment.toFixed(2)),
@@ -105,12 +99,10 @@ export function EMICalculator() {
           interestPercentage: Number.parseFloat(((interestPayment / emi) * 100).toFixed(1))
         })
 
-        // Accumulate yearly totals
         yearlyPrincipal += principalPayment
         yearlyInterest += interestPayment
         monthCount++
 
-        // Create yearly entry every 12 months or at the end
         if (monthCount === 12 || i === n) {
           const year = currentYear + Math.floor((i - 1) / 12)
           const totalYearlyPayment = yearlyPrincipal + yearlyInterest
@@ -125,7 +117,6 @@ export function EMICalculator() {
             loanPaidToDate
           })
 
-          // Reset yearly counters
           yearlyPrincipal = 0
           yearlyInterest = 0
           monthCount = 0
@@ -180,7 +171,7 @@ export function EMICalculator() {
 
   return (
     <div className="space-y-8">
-      {/* Main Calculator Card */}
+      {}
       <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader>
           <CardTitle className="flex items-center gap-3 text-2xl text-foreground">
@@ -194,7 +185,7 @@ export function EMICalculator() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
-          {/* Loan Type Selection */}
+          {}
           <div className="space-y-3">
             <Label className="text-base font-semibold flex items-center gap-2 text-heading-accent">
               <Target className="h-4 w-4 text-heading-accent" />
@@ -221,7 +212,7 @@ export function EMICalculator() {
             </div>
           </div>
 
-          {/* Input Fields */}
+          {}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <div className="space-y-3">
               <Label htmlFor="loanAmount" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
@@ -279,7 +270,7 @@ export function EMICalculator() {
             </div>
           </div>
 
-          {/* EMI in Advance Option (for Car Loans) */}
+          {}
           {loanType === "car" && (
             <div className="space-y-3">
               <Label className="text-sm font-semibold flex items-center gap-2 text-heading-accent">
@@ -311,7 +302,7 @@ export function EMICalculator() {
             </div>
           )}
 
-          {/* Calculate Button */}
+          {}
           <Button
             onClick={calculateEMI}
             disabled={isCalculating || !loanAmount || !interestRate || !loanTenure}
@@ -332,9 +323,9 @@ export function EMICalculator() {
         </CardContent>
       </Card>
 
-      {/* Results Section */}
+      {}
       <div className="space-y-4">
-          {/* Main Results */}
+          {}
           <Card className="shadow-lg border-border animate-fade-in-up bg-card">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-lg text-foreground">
@@ -345,7 +336,7 @@ export function EMICalculator() {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              {/* Main EMI Display */}
+              {}
               <div className="text-center p-4 rounded-xl bg-card border border-primary/20">
                 <div className="text-2xl font-bold text-foreground mb-1">
                   {result ? formatCurrency(result.emi) : "₹0"}
@@ -353,7 +344,7 @@ export function EMICalculator() {
                 <div className="text-sm text-muted-foreground">Monthly EMI</div>
               </div>
 
-              {/* Summary Cards */}
+              {}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="p-3 rounded-lg bg-card border border-blue-700">
                   <div className="text-xl font-bold text-foreground mb-0.5">
@@ -375,7 +366,7 @@ export function EMICalculator() {
                 </div>
               </div>
 
-              {/* Payment Breakdown Pie Chart */}
+              {}
               <div className="p-3 bg-card rounded-lg border border-border">
                 <h3 className="text-sm font-semibold mb-3 flex items-center gap-1.5 text-heading-accent">
                   <PieChart className="h-3.5 w-3.5 text-heading-accent" />
@@ -397,7 +388,7 @@ export function EMICalculator() {
                 </div>
               </div>
 
-              {/* Action Buttons */}
+              {}
               <div className="flex flex-col sm:flex-row gap-2">
                 <Button
                   onClick={copyResult}
@@ -416,7 +407,7 @@ export function EMICalculator() {
                   )}
                 </Button>
                 <Button
-                  onClick={() => {/* Share functionality */}}
+                  onClick={() => {}}
                   className="flex-1 h-9 text-xs font-medium transition-all duration-300 border border-blue-700 hover:bg-secondary text-foreground bg-card"
                 >
                   <Share2 className="mr-1.5 h-3.5 w-3.5" />
@@ -426,7 +417,7 @@ export function EMICalculator() {
             </CardContent>
           </Card>
 
-          {/* Amortization Schedule */}
+          {}
           <Card className="shadow-lg border-border bg-card">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-lg text-foreground">
@@ -455,7 +446,7 @@ export function EMICalculator() {
               </div>
             </CardHeader>
             <CardContent>
-              {/* Chart Section */}
+              {}
               <div className="mb-4">
                 <h3 className="text-sm font-semibold mb-3 flex items-center gap-1.5 text-heading-accent">
                   <BarChart3 className="h-3.5 w-3.5 text-heading-accent" />
@@ -485,7 +476,7 @@ export function EMICalculator() {
                                 <span className="font-medium text-foreground">{formatCurrency(entry.totalPayment)}</span>
                               </div>
                               <div className="w-full bg-border rounded-full h-1.5 mt-1.5">
-                                <div 
+                                <div
                                   className="bg-primary h-1.5 rounded-full transition-all duration-300"
                                   style={{ width: `${entry.loanPaidToDate}%` }}
                                 ></div>
@@ -528,7 +519,7 @@ export function EMICalculator() {
                                 <span className="font-medium text-foreground">{formatCurrency(entry.totalPayment)}</span>
                               </div>
                               <div className="w-full bg-border rounded-full h-1.5 mt-1.5">
-                                <div 
+                                <div
                                   className="bg-green-500 h-1.5 rounded-full transition-all duration-300"
                                   style={{ width: `${entry.principalPercentage}%` }}
                                 ></div>

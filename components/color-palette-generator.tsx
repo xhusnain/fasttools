@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Copy, Check, MoreVertical, Search, Filter } from "lucide-react"
 import { Input } from "@/components/ui/input"
 
-// Comprehensive color palette data structure
 interface ColorPalette {
   name: string
   colors: string[]
@@ -13,7 +12,7 @@ interface ColorPalette {
 }
 
 const COLOR_PALETTES: ColorPalette[] = [
-  // Red & Crimson Palettes
+
   { name: "Garnet Sunrise", colors: ["#D3045D", "#E484AC", "#740C08", "#B3CED6", "#927B67", "#523F2B"], categories: ["Red", "Gemstone", "Warm"] },
   { name: "Ruby Charcoal Twilight", colors: ["#D91B24", "#761F21", "#C4C4C4", "#504141"], categories: ["Red", "Dark", "Gemstone"] },
   { name: "Emerald Ruby Dawn", colors: ["#C4214A", "#34542C", "#AE5264", "#EC849A", "#67CA16"], categories: ["Red", "Green", "Gemstone"] },
@@ -28,8 +27,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Aqua Ruby Nightfall", colors: ["#F61C24", "#41D2EF", "#03020C", "#1D2180"], categories: ["Red", "Blue", "Dark", "Gemstone"] },
   { name: "Ocean Ruby Radiance", colors: ["#D8226C", "#F86A38", "#B2DAE4", "#029456", "#005BB3"], categories: ["Red", "Ocean", "Gemstone"] },
   { name: "Crimson Azure Cascade", colors: ["#D34599", "#EE1C25", "#95D8F6", "#0880C6", "#F75931", "#2E4EA2"], categories: ["Red", "Blue", "Vibrant"] },
-  
-  // Blue & Sapphire Palettes
+
   { name: "Royal Gemstone Dusk", colors: ["#D3045D", "#0C8EF4", "#D1BBAD", "#2B384C", "#A162A1", "#0C287B"], categories: ["Blue", "Purple", "Gemstone", "Evening"] },
   { name: "Emerald Sapphire Daybreak", colors: ["#F3000E", "#F25016", "#6596F3", "#83B366", "#D3A4EA", "#EAD094", "#B2DCE2", "#D7EAAC"], categories: ["Blue", "Green", "Morning", "Gemstone"] },
   { name: "Emerald Lapis Twilight", colors: ["#DBEE82", "#2C543C", "#224074", "#5D3067", "#00C588", "#678AF4", "#BF6CE9"], categories: ["Blue", "Green", "Evening", "Gemstone"] },
@@ -58,8 +56,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Sapphire Tangerine Daylight", colors: ["#ECB332", "#F6D992", "#0474D4", "#CE2B1A", "#E2DDD8", "#041F9B"], categories: ["Blue", "Orange", "Morning"] },
   { name: "Lapis Lazuli Twilight", colors: ["#502630", "#FA756A", "#0424AC", "#6C3A9B", "#C4FC04"], categories: ["Blue", "Purple", "Evening", "Gemstone"] },
   { name: "Navy Lemon Sorbet", colors: ["#F1F11C", "#1350C5", "#081F5D", "#A0AFB5", "#CCD418", "#3C2F39"], categories: ["Blue", "Yellow", "Cool"] },
-  
-  // Green & Emerald Palettes
+
   { name: "Jade Amethyst Forest", colors: ["#126842", "#F48B9A", "#5CA484", "#CFB177", "#C9C3BD"], categories: ["Green", "Purple", "Forest", "Gemstone"] },
   { name: "Emerald Spring Whisper", colors: ["#135E4B", "#4CB572", "#A1D8B5", "#CCDCDB"], categories: ["Green", "Spring", "Gemstone"] },
   { name: "Emerald Harvest Twilight", colors: ["#397234", "#283F23", "#3F2617", "#0B0F08", "#ACBD5E", "#B78449"], categories: ["Green", "Autumn", "Evening", "Gemstone"] },
@@ -91,8 +88,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Jade Fawn Sunrise", colors: ["#BB9D77", "#ACDFF2", "#FBF266", "#785637", "#E5978E", "#90C76F"], categories: ["Green", "Yellow", "Morning", "Gemstone"] },
   { name: "Turquoise Citrine Dawn", colors: ["#FCD404", "#04B07B", "#8BCAFC", "#FB6F74"], categories: ["Green", "Yellow", "Morning", "Gemstone"] },
   { name: "Forest Breeze", colors: ["#F49808", "#0184BB", "#2A5D35", "#36A55A", "#ACCCD4", "#FBDC83"], categories: ["Green", "Blue", "Forest"] },
-  
-  // Yellow & Gold Palettes
+
   { name: "Jeweled Autumn Shades", colors: ["#E01305", "#EDB55E", "#7D58D9", "#D6C3DF", "#E1E1E1", "#5CB855"], categories: ["Yellow", "Autumn", "Gemstone"] },
   { name: "Lemon Granite Morning", colors: ["#F3E308", "#B8BFC1", "#6C8494", "#2C4C5C"], categories: ["Yellow", "Morning", "Cool"] },
   { name: "Golden Chestnut Afternoon", colors: ["#DFBC3F", "#563D39", "#F4DCA4", "#E1DAC8", "#C99F9F"], categories: ["Yellow", "Brown", "Afternoon"] },
@@ -115,8 +111,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Celestial Dawn", colors: ["#A08A62", "#FCBC6C", "#FA7E0E", "#9EACCE", "#2A77EB"], categories: ["Yellow", "Blue", "Morning"] },
   { name: "Gilded Oasis", colors: ["#EC9B05", "#F7D04E", "#D48914", "#7F3005", "#5A8241", "#4C738D"], categories: ["Yellow", "Green", "Warm"] },
   { name: "Amethyst Sunset Glow", colors: ["#F3B448", "#FCCA74", "#D1CCAB", "#273051", "#E9696D", "#761230"], categories: ["Yellow", "Purple", "Evening", "Gemstone"] },
-  
-  // Orange & Amber Palettes
+
   { name: "Amber Obsidian Autumn", colors: ["#DC3C0C", "#691F0C", "#D3C0B2", "#7A7A78", "#E1E1E1", "#1D1816"], categories: ["Orange", "Autumn", "Dark"] },
   { name: "Sunset Topaz Skies", colors: ["#FC0C04", "#F5BF0F", "#F2720C", "#DAD5D0", "#10EDF5", "#9AC6C6", "#2D11E9", "#150D0D"], categories: ["Orange", "Evening", "Gemstone"] },
   { name: "Magma Obsidian Spectrum", colors: ["#FE3B15", "#545245", "#9DA1AA", "#3C3C4C", "#B7B6AC"], categories: ["Orange", "Dark", "Gemstone"] },
@@ -134,8 +129,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Amethyst Tangerine Sunset", colors: ["#361D1D", "#9E6861", "#FC8355", "#CEB1E8", "#FEDA99"], categories: ["Orange", "Purple", "Evening", "Gemstone"] },
   { name: "Seashell Garnet Afternoon", colors: ["#F6C992", "#D396A6", "#FA6E82", "#09A1A1", "#ACC0D3", "#5484A4"], categories: ["Orange", "Pink", "Afternoon", "Gemstone"] },
   { name: "Garnet Honeycomb Daybreak", colors: ["#AE614C", "#B4B4BC", "#F4E44C", "#E02404", "#3A3737"], categories: ["Orange", "Yellow", "Morning", "Gemstone"] },
-  
-  // Purple & Amethyst Palettes
+
   { name: "Amethyst Wisteria Twilight", colors: ["#744B93", "#C889B5", "#F0F0F0", "#FCE5CC", "#D0ADC4", "#736EAE"], categories: ["Purple", "Evening", "Gemstone"] },
   { name: "Heirloom Plum Brunch", colors: ["#EC9CCC", "#6F2451", "#CCD0DC", "#D0AFCD", "#683759", "#D45C1C"], categories: ["Purple", "Pink"] },
   { name: "Amethyst Dawn Haze", colors: ["#341C67", "#C4AEF4", "#472F5B", "#CCA4B4", "#DCCE40"], categories: ["Purple", "Morning", "Gemstone"] },
@@ -152,8 +146,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Amethyst Moonlight Dream", colors: ["#4C066C", "#9940FF", "#31003C", "#C8A79C", "#34146C"], categories: ["Purple", "Dark", "Gemstone"] },
   { name: "Mystic Amethyst Twilight", colors: ["#8E55C4", "#562F54", "#ADA1D1", "#1E1238", "#A66783", "#E6B855"], categories: ["Purple", "Evening", "Gemstone"] },
   { name: "Amethyst Galaxy Dawn", colors: ["#4044F9", "#6A57F3", "#EB70EC", "#463FA9", "#B693EF", "#FAC08B"], categories: ["Purple", "Morning", "Vibrant", "Gemstone"] },
-  
-  // Brown & Neutral Palettes
+
   { name: "Woodland Topaz Afternoon", colors: ["#79472F", "#9F6331", "#F2CFAB", "#3C9EA4", "#348080", "#3A423B"], categories: ["Brown", "Green", "Afternoon", "Gemstone"] },
   { name: "Caramel Agate Evening", colors: ["#73503F", "#BE8435", "#C3B495", "#3B221D"], categories: ["Brown", "Evening", "Gemstone"] },
   { name: "Garnet Pine Morning", colors: ["#A44718", "#6E4841", "#04317F", "#AC795C", "#B3C3D8", "#ECB09A"], categories: ["Brown", "Blue", "Morning", "Gemstone"] },
@@ -170,8 +163,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Twilight Dreams", colors: ["#DC9632", "#5C3C04", "#5C9EA7", "#B2AFA0", "#ECD488", "#937B3D", "#B85F5A"], categories: ["Brown", "Blue", "Evening"] },
   { name: "Golden Serenade", colors: ["#AF6A19", "#EDC18B", "#090909", "#896741", "#C6AC8D", "#CA8627", "#EFE1D5"], categories: ["Brown", "Gold"] },
   { name: "Royal Glimmer", colors: ["#AD7C4B", "#C7984F", "#293C7C", "#024944", "#812B4A"], categories: ["Brown", "Blue", "Purple"] },
-  
-  // Pink & Rose Palettes
+
   { name: "Seashell Garnet Afternoon", colors: ["#F6C992", "#D396A6", "#FA6E82", "#09A1A1", "#ACC0D3", "#5484A4"], categories: ["Pink", "Orange", "Afternoon", "Gemstone"] },
   { name: "Rose Petal Dawn", colors: ["#FFB6C1", "#FFC0CB", "#FF69B4", "#DB7093"], categories: ["Pink", "Light", "Morning"] },
   { name: "Blush Coral Breeze", colors: ["#FFE4E1", "#FFC1CC", "#FF9999", "#F08080"], categories: ["Pink", "Light", "Spring"] },
@@ -183,8 +175,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Salmon Sunset", colors: ["#FA8072", "#E9967A", "#FFA07A", "#F4A582"], categories: ["Pink", "Orange", "Warm", "Evening"] },
   { name: "Cherry Blossom Spring", colors: ["#FFB7C5", "#FF9EC1", "#FF8DBD", "#FF7AB9"], categories: ["Pink", "Spring", "Light"] },
   { name: "Raspberry Sorbet", colors: ["#E30B5C", "#C70039", "#900C3F", "#581845"], categories: ["Pink", "Red", "Vibrant"] },
-  
-  // Gradient & Multi-Color Palettes
+
   { name: "Jeweled Autumn Shades", colors: ["#E01305", "#EDB55E", "#7D58D9", "#D6C3DF", "#E1E1E1", "#5CB855"], categories: ["Gradient", "Autumn", "Vibrant"] },
   { name: "Rainbow Gradient", colors: ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#4B0082", "#9400D3"], categories: ["Gradient", "Vibrant"] },
   { name: "Sunset to Night", colors: ["#FFD700", "#FF8C00", "#FF4500", "#8B0000", "#4B0082", "#191970"], categories: ["Gradient", "Warm", "Evening"] },
@@ -196,8 +187,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Arctic Aurora", colors: ["#E3F2FD", "#90CAF9", "#42A5F5", "#9C27B0", "#7B1FA2", "#4A148C"], categories: ["Gradient", "Blue", "Purple", "Cool"] },
   { name: "Tropical Paradise", colors: ["#FFF9C4", "#FFEB3B", "#81C784", "#26A69A", "#00ACC1", "#0097A7"], categories: ["Gradient", "Warm", "Cool", "Nature"] },
   { name: "Cherry Cola", colors: ["#FFEBEE", "#FFCDD2", "#EF5350", "#C62828", "#8B0000", "#4A0000"], categories: ["Gradient", "Red", "Dark"] },
-  
-  // Light Theme Palettes
+
   { name: "Cloud White", colors: ["#FFFFFF", "#F8F9FA", "#F1F3F5", "#E9ECEF", "#DEE2E6"], categories: ["Light", "Neutral"] },
   { name: "Soft Pastels", colors: ["#FFE4E1", "#E6E6FA", "#F0FFF0", "#FFF0F5", "#F0F8FF"], categories: ["Light", "Pastel"] },
   { name: "Cream Dream", colors: ["#FFFAF0", "#FFF5EE", "#FAEBD7", "#FFE4C4", "#FFDEAD"], categories: ["Light", "Warm", "Neutral"] },
@@ -213,8 +203,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Powder Pink", colors: ["#FFE1E9", "#FFCDD8", "#FFB9C7", "#FFA5B6", "#FF91A5"], categories: ["Light", "Pink"] },
   { name: "Seafoam Light", colors: ["#E0F7F4", "#B2EBF2", "#80DEEA", "#4DD0E1", "#26C6DA"], categories: ["Light", "Green", "Blue", "Ocean"] },
   { name: "Butter Yellow", colors: ["#FFF8DC", "#FFFACD", "#FAFAD2", "#F0E68C", "#EEE8AA"], categories: ["Light", "Yellow"] },
-  
-  // Dark Theme Palettes
+
   { name: "Midnight Black", colors: ["#000000", "#0D0D0D", "#1A1A1A", "#262626", "#333333"], categories: ["Dark", "Neutral"] },
   { name: "Deep Ocean", colors: ["#001F3F", "#002B4D", "#00375C", "#00436A", "#004F78"], categories: ["Dark", "Blue", "Ocean"] },
   { name: "Forest Night", colors: ["#0A1F0F", "#152B1E", "#20372D", "#2B433C", "#364F4B"], categories: ["Dark", "Green", "Forest"] },
@@ -230,8 +219,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Noir Elegance", colors: ["#0F0F0F", "#1F1F1F", "#2F2F2F", "#3F3F3F", "#4F4F4F"], categories: ["Dark", "Neutral"] },
   { name: "Plum Dark", colors: ["#2E0854", "#44126A", "#5A1C80", "#702696", "#8630AC"], categories: ["Dark", "Purple"] },
   { name: "Obsidian Stone", colors: ["#0C0C0C", "#191919", "#262626", "#333333", "#404040"], categories: ["Dark", "Neutral", "Gemstone"] },
-  
-  // More Seasonal Palettes
+
   { name: "Spring Meadow", colors: ["#98D8C8", "#6BCF7F", "#F7DC6F", "#F8B878", "#FF9999"], categories: ["Spring", "Green", "Light", "Nature"] },
   { name: "Summer Sunshine", colors: ["#FFF9C4", "#FFD54F", "#FFA726", "#FF7043", "#FF5252"], categories: ["Summer", "Yellow", "Orange", "Warm"] },
   { name: "Autumn Leaves", colors: ["#D32F2F", "#F57C00", "#FBC02D", "#7CB342", "#5D4037"], categories: ["Autumn", "Red", "Orange", "Brown", "Nature"] },
@@ -244,8 +232,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Summer Tropical", colors: ["#FF6F00", "#FFA000", "#FFCA28", "#AFB42B", "#7CB342"], categories: ["Summer", "Orange", "Yellow", "Green"] },
   { name: "Autumn Pumpkin", colors: ["#FF6E40", "#FF5722", "#F4511E", "#E64A19", "#D84315"], categories: ["Autumn", "Orange", "Warm"] },
   { name: "Winter Ice", colors: ["#E1F5FE", "#B3E5FC", "#81D4FA", "#4FC3F7", "#29B6F6"], categories: ["Winter", "Blue", "Light", "Cool"] },
-  
-  // More Time-Based Palettes
+
   { name: "Early Dawn", colors: ["#FFF3E0", "#FFE0B2", "#FFCC80", "#FF6F00", "#E65100"], categories: ["Morning", "Orange", "Yellow", "Warm"] },
   { name: "Bright Morning", colors: ["#FFFDE7", "#FFF9C4", "#FFF59D", "#FFF176", "#FFEE58"], categories: ["Morning", "Yellow", "Light"] },
   { name: "Noon Sky", colors: ["#E1F5FE", "#B3E5FC", "#81D4FA", "#4FC3F7", "#03A9F4"], categories: ["Afternoon", "Blue", "Light"] },
@@ -256,8 +243,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Night Stars", colors: ["#1A237E", "#283593", "#303F9F", "#3F51B5", "#5C6BC0"], categories: ["Evening", "Dark", "Blue"] },
   { name: "Midnight Moon", colors: ["#263238", "#37474F", "#455A64", "#546E7A", "#607D8B"], categories: ["Evening", "Dark", "Blue", "Neutral"] },
   { name: "Sunrise Coral", colors: ["#FFCCBC", "#FFAB91", "#FF8A65", "#FF7043", "#FF5722"], categories: ["Morning", "Orange", "Warm"] },
-  
-  // More Gemstone-Inspired Palettes
+
   { name: "Diamond Brilliance", colors: ["#FFFFFF", "#E8F4F8", "#D1E9F2", "#BADEEB", "#A3D3E5"], categories: ["Gemstone", "Light", "Blue"] },
   { name: "Pearl Iridescent", colors: ["#FFF8DC", "#FFFAF0", "#F5F5DC", "#FAEBD7", "#FFE4C4"], categories: ["Gemstone", "Light", "Neutral"] },
   { name: "Sapphire Deep", colors: ["#0F3460", "#16213E", "#0D1B2A", "#1B1F3B", "#2C3E50"], categories: ["Gemstone", "Blue", "Dark"] },
@@ -273,8 +259,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Turquoise Paradise", colors: ["#00897B", "#009688", "#26A69A", "#4DB6AC", "#80CBC4"], categories: ["Gemstone", "Green", "Blue"] },
   { name: "Onyx Shadow", colors: ["#000000", "#212121", "#424242", "#616161", "#757575"], categories: ["Gemstone", "Dark", "Neutral"] },
   { name: "Moonstone Glow", colors: ["#F5F5F5", "#E0E0E0", "#BDBDBD", "#9E9E9E", "#757575"], categories: ["Gemstone", "Neutral", "Light"] },
-  
-  // More Nature-Inspired Palettes
+
   { name: "Mountain Range", colors: ["#ECEFF1", "#CFD8DC", "#B0BEC5", "#90A4AE", "#78909C"], categories: ["Nature", "Neutral", "Cool"] },
   { name: "Desert Sand", colors: ["#FFF8DC", "#F5DEB3", "#DEB887", "#D2B48C", "#BC8F8F"], categories: ["Nature", "Brown", "Warm", "Neutral"] },
   { name: "Rainforest Canopy", colors: ["#1B5E20", "#2E7D32", "#388E3C", "#43A047", "#66BB6A"], categories: ["Nature", "Green", "Forest", "Dark"] },
@@ -285,8 +270,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Arctic Tundra", colors: ["#F1F8E9", "#DCEDC8", "#C5E1A5", "#AED581", "#9CCC65"], categories: ["Nature", "Green", "Light", "Cool"] },
   { name: "Volcanic Lava", colors: ["#BF360C", "#D84315", "#E64A19", "#F4511E", "#FF5722"], categories: ["Nature", "Red", "Orange", "Warm"] },
   { name: "Bamboo Forest", colors: ["#827717", "#9E9D24", "#AFB42B", "#C0CA33", "#CDDC39"], categories: ["Nature", "Green", "Forest"] },
-  
-  // Additional Red Variations (50 more)
+
   { name: "Scarlet Sunrise", colors: ["#FF2400", "#DC143C", "#C71585", "#B22222", "#8B0000"], categories: ["Red", "Warm", "Vibrant"] },
   { name: "Crimson Velvet", colors: ["#DC143C", "#B22222", "#8B0000", "#800000", "#660000"], categories: ["Red", "Dark"] },
   { name: "Cherry Red", colors: ["#DE3163", "#C41E3A", "#990000", "#800000", "#660000"], categories: ["Red", "Vibrant"] },
@@ -337,8 +321,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Pomegranate", colors: ["#F34723", "#E3421F", "#D33D1B", "#C33817", "#B33313"], categories: ["Red", "Orange"] },
   { name: "Red Salsa", colors: ["#F94144", "#E93D40", "#D9393C", "#C93538", "#B93134"], categories: ["Red", "Vibrant"] },
   { name: "Fire Brick", colors: ["#B22222", "#A21F1F", "#921C1C", "#821919", "#721616"], categories: ["Red"] },
-  
-  // Additional Blue Variations (60 more)
+
   { name: "Navy Blue", colors: ["#000080", "#000070", "#000060", "#000050", "#000040"], categories: ["Blue", "Dark"] },
   { name: "Royal Blue", colors: ["#4169E1", "#3A5FCC", "#3355B7", "#2C4BA2", "#25418D"], categories: ["Blue"] },
   { name: "Sky Blue", colors: ["#87CEEB", "#7DC4E6", "#73BAE1", "#69B0DC", "#5FA6D7"], categories: ["Blue", "Light"] },
@@ -398,8 +381,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Starlight Blue", colors: ["#1F3A93", "#1B3489", "#172E7F", "#132875", "#0F226B"], categories: ["Blue", "Dark", "Evening"] },
   { name: "Galaxy Blue", colors: ["#2A4D69", "#26455F", "#223D55", "#1E354B", "#1A2D41"], categories: ["Blue", "Dark"] },
   { name: "Nebula Blue", colors: ["#3E5C76", "#38526C", "#324862", "#2C3E58", "#26344E"], categories: ["Blue", "Dark"] },
-  
-  // Additional Green Variations (60 more)
+
   { name: "Forest Green", colors: ["#228B22", "#1F7D1F", "#1C6F1C", "#196119", "#165316"], categories: ["Green", "Forest", "Nature", "Dark"] },
   { name: "Lime Green", colors: ["#32CD32", "#2DC32D", "#28B928", "#23AF23", "#1EA51E"], categories: ["Green", "Vibrant"] },
   { name: "Olive Green", colors: ["#808000", "#737300", "#666600", "#595900", "#4C4C00"], categories: ["Green", "Brown", "Dark"] },
@@ -459,8 +441,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Lettuce Green", colors: ["#D9E778", "#CFDD6E", "#C5D364", "#BBC95A", "#B1BF50"], categories: ["Green", "Yellow", "Light"] },
   { name: "Pear Green", colors: ["#D1E231", "#C7D82D", "#BDCE29", "#B3C425", "#A9BA21"], categories: ["Green", "Yellow", "Vibrant"] },
   { name: "Green Apple", colors: ["#8DB600", "#83AC00", "#79A200", "#6F9800", "#658E00"], categories: ["Green", "Nature"] },
-  
-  // Additional Yellow Variations (50 palettes)
+
   { name: "Canary Yellow", colors: ["#FFEF00", "#F5E500", "#EBDB00", "#E1D100", "#D7C700"], categories: ["Yellow", "Vibrant"] },
   { name: "Lemon Yellow", colors: ["#FFF44F", "#F5EA45", "#EBE03B", "#E1D631", "#D7CC27"], categories: ["Yellow", "Light"] },
   { name: "Golden Yellow", colors: ["#FFD700", "#F5CD00", "#EBC300", "#E1B900", "#D7AF00"], categories: ["Yellow", "Warm"] },
@@ -510,8 +491,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Lemon Zest", colors: ["#FFEB00", "#F5E100", "#EBD700", "#E1CD00", "#D7C300"], categories: ["Yellow", "Vibrant"] },
   { name: "Electric Yellow", colors: ["#FFFF00", "#F5F500", "#EBEB00", "#E1E100", "#D7D700"], categories: ["Yellow", "Vibrant"] },
   { name: "Neon Yellow", colors: ["#CCFF00", "#C2F500", "#B8EB00", "#AEE100", "#A4D700"], categories: ["Yellow", "Green", "Vibrant"] },
-  
-  // Additional Orange Variations (50 palettes)
+
   { name: "Tangerine Orange", colors: ["#F28500", "#E87B00", "#DE7100", "#D46700", "#CA5D00"], categories: ["Orange", "Vibrant"] },
   { name: "Mandarin Orange", colors: ["#F37A48", "#E9703E", "#DF6634", "#D55C2A", "#CB5220"], categories: ["Orange", "Vibrant"] },
   { name: "Pumpkin Orange", colors: ["#FF7518", "#F56B0E", "#EB6104", "#E15700", "#D74D00"], categories: ["Orange", "Autumn", "Nature"] },
@@ -562,8 +542,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Peach Bellini", colors: ["#FFDAB9", "#F5D0AF", "#EBC6A5", "#E1BC9B", "#D7B291"], categories: ["Orange", "Light", "Pink"] },
   { name: "Orange Cream", colors: ["#FFE5B4", "#F5DBAA", "#EBD1A0", "#E1C796", "#D7BD8C"], categories: ["Orange", "Light", "Yellow"] },
   { name: "Orange Sorbet", colors: ["#FF7F00", "#F57500", "#EB6B00", "#E16100", "#D75700"], categories: ["Orange", "Vibrant"] },
-  
-  // Additional Purple Variations (50 palettes)
+
   { name: "Violet Purple", colors: ["#8F00FF", "#8500F5", "#7B00EB", "#7100E1", "#6700D7"], categories: ["Purple", "Vibrant"] },
   { name: "Royal Purple", colors: ["#7851A9", "#6E479F", "#643D95", "#5A338B", "#502981"], categories: ["Purple"] },
   { name: "Deep Purple", colors: ["#673AB7", "#5D30AD", "#5326A3", "#491C99", "#3F128F"], categories: ["Purple", "Dark"] },
@@ -614,8 +593,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Purple Sunset", colors: ["#8B7AB8", "#8170AE", "#7766A4", "#6D5C9A", "#635290"], categories: ["Purple", "Evening"] },
   { name: "Purple Storm", colors: ["#4C516D", "#424763", "#383D59", "#2E334F", "#242945"], categories: ["Purple", "Dark", "Blue"] },
   { name: "Purple Thunder", colors: ["#4A2040", "#401636", "#360C2C", "#2C0222", "#220018"], categories: ["Purple", "Dark"] },
-  
-  // Additional Pink Variations (40 palettes)
+
   { name: "Hot Pink", colors: ["#FF69B4", "#F55FAA", "#EB55A0", "#E14B96", "#D7418C"], categories: ["Pink", "Vibrant"] },
   { name: "Deep Pink", colors: ["#FF1493", "#F50A89", "#EB007F", "#E10075", "#D7006B"], categories: ["Pink", "Vibrant", "Dark"] },
   { name: "Light Pink", colors: ["#FFB6C1", "#F5ACB7", "#EBA2AD", "#E198A3", "#D78E99"], categories: ["Pink", "Light"] },
@@ -656,8 +634,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Pink Clay", colors: ["#C99890", "#BF8E86", "#B5847C", "#AB7A72", "#A17068"], categories: ["Pink", "Brown"] },
   { name: "Pink Pearl", colors: ["#F4E8E8", "#EADEDE", "#E0D4D4", "#D6CACA", "#CCC0C0"], categories: ["Pink", "Light", "Neutral"] },
   { name: "Pink Sherbet", colors: ["#F780A1", "#ED7697", "#E36C8D", "#D96283", "#CF5879"], categories: ["Pink"] },
-  
-  // Additional Brown Variations (40 palettes)
+
   { name: "Chocolate Brown", colors: ["#7B3F00", "#713700", "#672F00", "#5D2700", "#531F00"], categories: ["Brown", "Dark"] },
   { name: "Coffee Brown", colors: ["#6F4E37", "#65442D", "#5B3A23", "#513019", "#47260F"], categories: ["Brown", "Dark"] },
   { name: "Mocha Brown", colors: ["#8B4513", "#813B09", "#773100", "#6D2700", "#631D00"], categories: ["Brown"] },
@@ -698,8 +675,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Ecru Brown", colors: ["#C2B280", "#B8A876", "#AE9E6C", "#A49462", "#9A8A58"], categories: ["Brown", "Yellow", "Neutral"] },
   { name: "Buff Brown", colors: ["#F0DC82", "#E6D278", "#DCC86E", "#D2BE64", "#C8B45A"], categories: ["Brown", "Yellow"] },
   { name: "Wheat Brown", colors: ["#F5DEB3", "#EBD4A9", "#E1CA9F", "#D7C095", "#CDB68B"], categories: ["Brown", "Yellow", "Neutral"] },
-  
-  // Additional Neutral/Gray/Black/White Variations (60 palettes)
+
   { name: "Pure White", colors: ["#FFFFFF", "#F5F5F5", "#EBEBEB", "#E1E1E1", "#D7D7D7"], categories: ["Neutral", "Light"] },
   { name: "Snow White", colors: ["#FFFAFA", "#F5F0F0", "#EBE6E6", "#E1DCDC", "#D7D2D2"], categories: ["Neutral", "Light"] },
   { name: "Ivory White", colors: ["#FFFFF0", "#F5F5E6", "#EBEBDC", "#E1E1D2", "#D7D7C8"], categories: ["Neutral", "Light", "Yellow"] },
@@ -759,8 +735,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Lead Gray", colors: ["#6C7073", "#626669", "#585C5F", "#4E5255", "#44484B"], categories: ["Neutral", "Gray", "Dark"] },
   { name: "Mercury Gray", colors: ["#E1E1E1", "#D7D7D7", "#CDCDCD", "#C3C3C3", "#B9B9B9"], categories: ["Neutral", "Gray", "Light"] },
   { name: "Nickel Gray", colors: ["#727472", "#686A68", "#5E605E", "#545654", "#4A4C4A"], categories: ["Neutral", "Gray", "Dark"] },
-  
-  // Modern/Contemporary Palettes (30 palettes)
+
   { name: "Modern Minimalist", colors: ["#FFFFFF", "#F5F5F5", "#000000", "#808080", "#C0C0C0"], categories: ["Modern", "Light", "Neutral"] },
   { name: "Contemporary Elegance", colors: ["#2E3440", "#D8DEE9", "#88C0D0", "#EBCB8B", "#BF616A"], categories: ["Modern", "Blue", "Yellow"] },
   { name: "Urban Chic", colors: ["#34495E", "#95A5A6", "#ECF0F1", "#1ABC9C", "#F39C12"], categories: ["Modern", "Blue", "Orange"] },
@@ -791,8 +766,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Netflix Modern", colors: ["#E50914", "#221F1F", "#F5F5F1", "#B20710", "#831010"], categories: ["Modern", "Red", "Dark"] },
   { name: "Airbnb Modern", colors: ["#FF5A5F", "#00A699", "#FC642D", "#484848", "#767676"], categories: ["Modern", "Red", "Blue"] },
   { name: "Uber Modern", colors: ["#000000", "#FFFFFF", "#1FBAD6", "#545454", "#C0C0C0"], categories: ["Modern", "Dark", "Blue"] },
-  
-  // Vintage/Retro Palettes (30 palettes)
+
   { name: "Vintage Rose", colors: ["#D4A5A5", "#C08686", "#9C6B6B", "#7D5A5A", "#5E4848"], categories: ["Vintage", "Pink", "Brown"] },
   { name: "Retro 70s", colors: ["#F4A460", "#D2691E", "#8B4513", "#CD853F", "#DEB887"], categories: ["Retro", "Orange", "Brown", "Warm"] },
   { name: "Retro 80s", colors: ["#FF00FF", "#00FFFF", "#FFFF00", "#FF00FF", "#00FF00"], categories: ["Retro", "Vibrant", "Neon"] },
@@ -823,8 +797,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Daguerreotype", colors: ["#5C5552", "#4D4643", "#3E3734", "#2F2825", "#201916"], categories: ["Vintage", "Brown", "Dark"] },
   { name: "Tintype", colors: ["#6B6156", "#5C5247", "#4D4338", "#3E3429", "#2F251A"], categories: ["Vintage", "Brown", "Dark"] },
   { name: "Albumen Print", colors: ["#EDEAE5", "#DEDBD6", "#CFCCC7", "#C0BDB8", "#B1AEA9"], categories: ["Vintage", "Neutral", "Light"] },
-  
-  // Neon/Electric Palettes (25 palettes)
+
   { name: "Neon Nights", colors: ["#FF00FF", "#00FFFF", "#FFFF00", "#FF00AA", "#00FF00"], categories: ["Neon", "Vibrant"] },
   { name: "Electric Blue", colors: ["#7DF9FF", "#00BFFF", "#1E90FF", "#0080FF", "#0000FF"], categories: ["Neon", "Blue", "Vibrant"] },
   { name: "Neon Pink", colors: ["#FF10F0", "#FF1493", "#FF007F", "#FF00FF", "#FE019A"], categories: ["Neon", "Pink", "Vibrant"] },
@@ -850,8 +823,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Neon Magenta", colors: ["#FF00AA", "#F500A1", "#EB0098", "#E1008F", "#D70086"], categories: ["Neon", "Pink", "Vibrant"] },
   { name: "Radium Glow", colors: ["#00FF41", "#00F53D", "#00EB39", "#00E135", "#00D731"], categories: ["Neon", "Green", "Vibrant"] },
   { name: "Ultraviolet", colors: ["#5F00BA", "#5700AE", "#4F00A2", "#470096", "#3F008A"], categories: ["Neon", "Purple", "Dark"] },
-  
-  // Corporate/Professional Palettes (25 palettes)
+
   { name: "Corporate Blue", colors: ["#003366", "#004080", "#004D99", "#0059B3", "#0066CC"], categories: ["Corporate", "Blue", "Dark"] },
   { name: "Executive Gray", colors: ["#4A4A4A", "#5E5E5E", "#727272", "#868686", "#9A9A9A"], categories: ["Corporate", "Gray", "Neutral"] },
   { name: "Professional Navy", colors: ["#000080", "#001A4D", "#00334D", "#004D66", "#006680"], categories: ["Corporate", "Blue", "Dark"] },
@@ -877,8 +849,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Corporate Identity", colors: ["#003366", "#336699", "#6699CC", "#99CCFF", "#CCDDFF"], categories: ["Corporate", "Blue"] },
   { name: "Brand Blue", colors: ["#005EB8", "#0072CE", "#0085E3", "#0099F9", "#1AACFF"], categories: ["Corporate", "Blue", "Vibrant"] },
   { name: "Industry Gray", colors: ["#5A5A5A", "#6E6E6E", "#828282", "#969696", "#AAAAAA"], categories: ["Corporate", "Gray", "Neutral"] },
-  
-  // Tropical/Island Palettes (25 palettes)
+
   { name: "Tropical Paradise", colors: ["#00CED1", "#20B2AA", "#FF6347", "#FFD700", "#32CD32"], categories: ["Tropical", "Blue", "Orange", "Green"] },
   { name: "Caribbean Blue", colors: ["#00CED1", "#40E0D0", "#48D1CC", "#00CED1", "#5F9EA0"], categories: ["Tropical", "Blue", "Ocean"] },
   { name: "Island Sunset", colors: ["#FF4500", "#FF6347", "#FF7F50", "#FFA07A", "#FFB6C1"], categories: ["Tropical", "Orange", "Evening"] },
@@ -904,8 +875,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Beach Umbrella", colors: ["#FF4500", "#FFD700", "#1E90FF", "#32CD32", "#FF1493"], categories: ["Tropical", "Vibrant"] },
   { name: "Luau Night", colors: ["#FF6347", "#FF4500", "#FFD700", "#32CD32", "#8B4513"], categories: ["Tropical", "Orange", "Evening"] },
   { name: "Rainforest", colors: ["#228B22", "#2E8B57", "#3CB371", "#90EE90", "#98FB98"], categories: ["Tropical", "Green", "Forest", "Nature"] },
-  
-  // Nordic/Scandinavian Palettes (20 palettes)
+
   { name: "Nordic White", colors: ["#FFFFFF", "#F8F8F8", "#F0F0F0", "#E8E8E8", "#E0E0E0"], categories: ["Nordic", "Light", "Neutral"] },
   { name: "Scandinavian Blue", colors: ["#4682B4", "#5F9EA0", "#6CA6CD", "#87CEEB", "#B0C4DE"], categories: ["Nordic", "Blue", "Light"] },
   { name: "Fjord Blue", colors: ["#191970", "#1E90FF", "#4169E1", "#6495ED", "#87CEEB"], categories: ["Nordic", "Blue"] },
@@ -926,8 +896,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Icelandic Blue", colors: ["#02529C", "#003D7A", "#005EB8", "#0072CE", "#0085E3"], categories: ["Nordic", "Blue"] },
   { name: "Polar Bear", colors: ["#F8F8F8", "#F0F0F0", "#E8E8E8", "#E0E0E0", "#D8D8D8"], categories: ["Nordic", "Light", "Neutral"] },
   { name: "Viking Gray", colors: ["#4A4A4A", "#5E5E5E", "#727272", "#868686", "#9A9A9A"], categories: ["Nordic", "Gray", "Neutral"] },
-  
-  // Space/Cosmic Palettes (20 palettes)
+
   { name: "Deep Space", colors: ["#000000", "#0A0A0A", "#141414", "#1E1E1E", "#282828"], categories: ["Space", "Dark", "Black"] },
   { name: "Nebula Cloud", colors: ["#8B00FF", "#9D00FF", "#AF00FF", "#C100FF", "#D300FF"], categories: ["Space", "Purple", "Vibrant"] },
   { name: "Galaxy Spiral", colors: ["#4B0082", "#6A0DAD", "#8A2BE2", "#9932CC", "#BA55D3"], categories: ["Space", "Purple"] },
@@ -948,8 +917,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Comet Tail", colors: ["#F0F8FF", "#E0FFFF", "#B0E0E6", "#ADD8E6", "#87CEEB"], categories: ["Space", "Blue", "Light"] },
   { name: "Interstellar", colors: ["#191970", "#000080", "#00008B", "#0000CD", "#0000FF"], categories: ["Space", "Blue", "Dark"] },
   { name: "Cosmic Dust", colors: ["#D2B48C", "#BC8F8F", "#CD853F", "#DEB887", "#F5DEB3"], categories: ["Space", "Brown", "Neutral"] },
-  
-  // Mediterranean Palettes (30 palettes)
+
   { name: "Santorini Blue", colors: ["#0077BE", "#0088CC", "#0099DD", "#00AAEE", "#00BBFF"], categories: ["Mediterranean", "Blue"] },
   { name: "Greek White", colors: ["#FFFFFF", "#FAFAFA", "#F5F5F5", "#F0F0F0", "#EBEBEB"], categories: ["Mediterranean", "Light", "Neutral"] },
   { name: "Olive Grove", colors: ["#808000", "#8B8500", "#969600", "#A1A700", "#ACB800"], categories: ["Mediterranean", "Green", "Nature"] },
@@ -980,8 +948,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Venetian Red", colors: ["#C80815", "#CD1520", "#D2222B", "#D72F36", "#DC3C41"], categories: ["Mediterranean", "Red"] },
   { name: "Monaco Blue", colors: ["#1034A6", "#1E3FAA", "#2C4AAE", "#3A55B2", "#4860B6"], categories: ["Mediterranean", "Blue", "Dark"] },
   { name: "Barcelona Tile", colors: ["#E6B800", "#EABC0A", "#EEC014", "#F2C41E", "#F6C828"], categories: ["Mediterranean", "Yellow", "Orange"] },
-  
-  // Final Mixed Theme Palettes (20 palettes)
+
   { name: "Royal Gold", colors: ["#FFD700", "#F4C430", "#E6BE8A", "#FFDF00", "#CFAC7A"], categories: ["Royal", "Yellow", "Warm"] },
   { name: "Luxury Purple", colors: ["#663399", "#7851A9", "#9966CC", "#BA55D3", "#DA70D6"], categories: ["Royal", "Purple"] },
   { name: "Minimalist Black", colors: ["#000000", "#1A1A1A", "#333333", "#4D4D4D", "#666666"], categories: ["Minimalist", "Dark", "Black"] },
@@ -1002,8 +969,7 @@ const COLOR_PALETTES: ColorPalette[] = [
   { name: "Candy Shop", colors: ["#FF1493", "#FF69B4", "#FFB6C1", "#FFC0CB", "#FFE4E1"], categories: ["Pink", "Light"] },
   { name: "Gothic Dark", colors: ["#0C0C0C", "#1A1A1A", "#2E2E2E", "#3E3E3E", "#4E4E4E"], categories: ["Dark", "Black"] },
   { name: "Zen Garden", colors: ["#F5F5DC", "#E0E0D1", "#CBCBB8", "#B6B69F", "#A1A186"], categories: ["Neutral", "Green", "Light"] },
-  
-  // Additional Themed Palettes (80 more to exceed 1000 total)
+
   { name: "Midnight Navy", colors: ["#000428", "#004E92", "#2E4053", "#34495E", "#5D6D7E"], categories: ["Blue", "Dark"] },
   { name: "Forest Emerald", colors: ["#014421", "#0B6623", "#228B22", "#2E8B57", "#3CB371"], categories: ["Green", "Forest", "Dark"] },
   { name: "Ruby Red Gem", colors: ["#9B111E", "#B7141F", "#D31F2E", "#E74C3C", "#F47983"], categories: ["Red", "Gemstone"] },
@@ -1150,7 +1116,7 @@ export function ColorPaletteGenerator() {
 
   return (
     <div className="space-y-6">
-      {/* Search and Filter Section */}
+      {}
       <div className="space-y-4">
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -1163,7 +1129,7 @@ export function ColorPaletteGenerator() {
           />
         </div>
 
-        {/* Category Filter Buttons */}
+        {}
         <div className="flex items-center gap-2">
           <Filter className="h-4 w-4 text-muted-foreground flex-shrink-0" />
           <div className="flex flex-wrap gap-2">
@@ -1182,17 +1148,17 @@ export function ColorPaletteGenerator() {
         </div>
       </div>
 
-      {/* Results Count */}
+      {}
       <div className="text-sm text-muted-foreground">
         Showing <strong>{filteredPalettes.length}</strong> {filteredPalettes.length === 1 ? "palette" : "palettes"}
         {selectedCategory !== "All" && ` in ${selectedCategory}`}
       </div>
 
-      {/* Palette Grid */}
+      {}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredPalettes.map((palette, paletteIndex) => (
           <div key={paletteIndex} className="group rounded-lg border border-border bg-card shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-            {/* Colors Display */}
+            {}
             <div className="flex h-32">
               {palette.colors.map((color, colorIndex) => (
                 <button
@@ -1202,7 +1168,7 @@ export function ColorPaletteGenerator() {
                   onClick={() => copyToClipboard(color, paletteIndex, colorIndex)}
                   title={`Copy ${color}`}
                 >
-                  {/* Hover overlay with copy icon */}
+                  {}
                   <div className="absolute inset-0 bg-card/0 group-hover/color:bg-card/20 transition-colors flex items-center justify-center">
                     {copiedColor?.paletteIndex === paletteIndex && copiedColor?.colorIndex === colorIndex ? (
                       <Check className="h-5 w-5 text-white opacity-0 group-hover/color:opacity-100 transition-opacity" />
@@ -1210,8 +1176,8 @@ export function ColorPaletteGenerator() {
                       <Copy className="h-5 w-5 text-white opacity-0 group-hover/color:opacity-100 transition-opacity" />
                     )}
                   </div>
-                  
-                  {/* Color HEX on hover */}
+
+                  {}
                   <div className="absolute bottom-1 left-0 right-0 text-center">
                     <span className="text-[10px] font-mono font-medium bg-card/60 text-white px-1.5 py-0.5 rounded opacity-0 group-hover/color:opacity-100 transition-opacity">
                       {color}
@@ -1221,7 +1187,7 @@ export function ColorPaletteGenerator() {
               ))}
             </div>
 
-            {/* Palette Info */}
+            {}
             <div className="p-3">
               <div className="flex items-start justify-between gap-2">
                 <div className="flex-1 min-w-0">
@@ -1250,7 +1216,7 @@ export function ColorPaletteGenerator() {
           ))}
         </div>
 
-      {/* No Results Message */}
+      {}
       {filteredPalettes.length === 0 && (
         <div className="text-center py-12">
           <p className="text-muted-foreground mb-2">No palettes found</p>

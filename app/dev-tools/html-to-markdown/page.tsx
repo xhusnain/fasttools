@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   keywords: [
     "fasttools",
     "fast tools",
-    // Top 10 Feature-Related Conversions (20)
+
     "html to toml converter",
     "toml to html converter",
     "markdown to yaml converter",
@@ -35,8 +35,7 @@ export const metadata: Metadata = {
     "csv to markdown",
     "yaml to xml",
     "xml to yaml",
-    
-    // PDF Conversion Keywords (15)
+
     "html to pdf",
     "html to pdf converter",
     "markdown to pdf",
@@ -52,8 +51,7 @@ export const metadata: Metadata = {
     "html pdf converter",
     "online html to pdf",
     "free html to pdf converter",
-    
-    // Core Format Conversion (15)
+
     "format converter",
     "universal format converter",
     "online format converter",
@@ -72,8 +70,6 @@ export const metadata: Metadata = {
       "md to pdf",
       "pdf to md",
 
-
-      // Format-Specific (14)
     "html converter",
     "markdown converter",
     "json converter",
@@ -88,8 +84,7 @@ export const metadata: Metadata = {
     "convert xml online",
     "convert csv online",
     "convert toml online",
-    
-    // Bidirectional Conversions (12)
+
     "html markdown converter",
     "json yaml converter",
     "xml json converter",
@@ -102,8 +97,7 @@ export const metadata: Metadata = {
     "yaml xml converter",
     "toml json converter",
     "json toml converter",
-    
-    // Feature-Based (10)
+
     "free online converter",
     "format converter online free",
     "multi format converter",
@@ -114,8 +108,7 @@ export const metadata: Metadata = {
     "instant format converter",
     "auto format converter",
     "developer format converter",
-    
-    // Use Cases (8)
+
     "convert data format",
     "convert file format",
     "convert markup language",
@@ -124,16 +117,14 @@ export const metadata: Metadata = {
     "convert data structure",
     "convert document format",
     "convert web format",
-    
-    // Tool-Specific (6)
+
     "format conversion tool",
     "online format conversion",
     "free format conversion tool",
     "best format converter",
     "format converter with preview",
     "format converter no signup",
-    
-    // HTML Tool Keywords (30)
+
     "html converter",
     "html beautifier",
     "html formatter",
@@ -164,8 +155,7 @@ export const metadata: Metadata = {
     "html editor online",
     "html formatter online",
     "html validator online",
-    
-    // HTML Integration & Conversion (10)
+
     "html with css",
     "html with javascript",
     "html with python",
@@ -176,8 +166,7 @@ export const metadata: Metadata = {
     "html without javascript",
     "html without css example",
     "convert html with css",
-    
-    // HTML Comparison Keywords (15)
+
     "html and css",
     "html and javascript",
     "html vs css",
@@ -193,8 +182,7 @@ export const metadata: Metadata = {
     "html or css",
     "html or text email format",
     "html and css editor",
-    
-    // HTML Version & Conversion (5)
+
     "html 5 template",
     "html 5 canvas",
     "html 5 doctype",
@@ -219,7 +207,7 @@ export const metadata: Metadata = {
     },
   },
   category: "Technology",
-  alternates: { 
+  alternates: {
     canonical: "https://www.fasttools.store/dev-tools/html-to-markdown",
     languages: {
       "en-US": "https://www.fasttools.store/dev-tools/html-to-markdown",
@@ -288,9 +276,9 @@ export const metadata: Metadata = {
         description: "Free HTML converter and format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML, PDF instantly. Professional HTML formatter, HTML beautifier, HTML validator, and HTML parser with auto-conversion, validation, and instant download. No signup required.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: { 
-        "@type": "Offer", 
-        price: "0", 
+      offers: {
+        "@type": "Offer",
+        price: "0",
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
@@ -326,9 +314,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: { 
-        "@type": "Organization", 
-        name: "FastTools", 
+      publisher: {
+        "@type": "Organization",
+        name: "FastTools",
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -459,7 +447,7 @@ export default function HTMLToMarkdownPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8">
               <div className="flex-1 lg:flex-[2] space-y-4 sm:space-y-5 md:space-y-6">
-                {/* Hero Section */}
+                {}
                 <div className="text-center space-y-3 sm:space-y-4 animate-fade-in-up">
                   <GHeader
                     title="HTML Converter - Free Format Converter Online"
@@ -469,17 +457,17 @@ export default function HTMLToMarkdownPage() {
                   />
                 </div>
 
-                {/* Mobile Ad Space */}
+                {}
                 <div className="lg:hidden">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {/* Tool Container */}
+                {}
                 <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
                   <FormatConverter />
                 </div>
 
-                {/* Content Sections */}
+                {}
                 <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">How to Use Universal Format Converter</h2>
                   <ol className="pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-sm text-muted-foreground leading-relaxed list-decimal">
@@ -602,7 +590,7 @@ export default function HTMLToMarkdownPage() {
                         HTML (HyperText Markup Language) is used for creating and structuring web pages and web applications. It defines the structure and layout of content including headings, paragraphs, links, images, tables, forms, and multimedia elements. HTML is essential for building websites, email templates, web-based documentation, landing pages, and interactive web applications. Our converter helps transform HTML to other formats like Markdown for documentation, JSON for data processing, or plain text for content extraction.
                       </p>
                     </div>
-                    
+
                     <div>
                       <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">What is HTML in simple words?</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
@@ -685,28 +673,28 @@ export default function HTMLToMarkdownPage() {
                 <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Related Developer Tools</h2>
                   <div className="grid gap-2 sm:gap-3 grid-cols-1 sm:grid-cols-2 text-sm">
-                    <Link 
+                    <Link
                       href="/dev-tools/markdown-previewer"
                       className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                     >
                       <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">Markdown Previewer</h3>
                       <p className="text-xs text-muted-foreground">Preview Markdown in real-time</p>
                     </Link>
-                    <Link 
+                    <Link
                       href="/dev-tools/html-beautifier"
                       className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                     >
                       <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">HTML Beautifier</h3>
                       <p className="text-xs text-muted-foreground">Format and beautify HTML code</p>
                     </Link>
-                    <Link 
+                    <Link
                       href="/dev-tools/json-to-csv"
                       className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                     >
                       <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">JSON to CSV</h3>
                       <p className="text-xs text-muted-foreground">Convert JSON to CSV format</p>
                     </Link>
-                    <Link 
+                    <Link
                       href="/dev-tools"
                       className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                     >
@@ -717,7 +705,7 @@ export default function HTMLToMarkdownPage() {
                 </div>
               </div>
 
-              {/* Desktop Sidebar */}
+              {}
               <aside className="hidden lg:block w-72 flex-shrink-0">
                 <div className="sticky top-32 space-y-8">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

@@ -33,7 +33,6 @@ export function ImageBackgroundRemover() {
   const [isColorMenuOpen, setIsColorMenuOpen] = useState(false)
   const colorMenuRef = useRef<HTMLDivElement | null>(null)
 
-  // Close background mode menu on outside click
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement
@@ -52,20 +51,17 @@ export function ImageBackgroundRemover() {
     const file = e.target.files?.[0]
     if (!file) return
 
-    // Accept any file; will fail gracefully if not an image when loading
-
     const reader = new FileReader()
     reader.onload = async (event) => {
       const imageUrl = event.target?.result as string
-      
-      // Create HTMLImageElement
+
       const img = new Image()
       img.crossOrigin = "anonymous"
       img.onload = () => {
         setImage(img, imageUrl)
         setImageDimensions({ width: img.naturalWidth, height: img.naturalHeight })
         setImageLoaded(true)
-        // Auto-process on first load
+
         setTimeout(() => startProcessing(), 50)
       }
       img.onerror = () => {
@@ -79,7 +75,6 @@ export function ImageBackgroundRemover() {
   const downloadImage = () => {
     if (!result?.resultUrl) return
 
-    // If transparent, download as-is
     if (bgMode === "transparent") {
       const link = document.createElement('a')
       link.href = result.resultUrl
@@ -90,7 +85,6 @@ export function ImageBackgroundRemover() {
       return
     }
 
-    // Compose with color or custom image using canvas
     const subjectImg = new Image()
     subjectImg.crossOrigin = "anonymous"
     subjectImg.onload = () => {
@@ -120,7 +114,7 @@ export function ImageBackgroundRemover() {
         const bg = new Image()
         bg.crossOrigin = "anonymous"
         bg.onload = () => {
-          // Cover strategy
+
           const ratio = Math.max(w / bg.naturalWidth, h / bg.naturalHeight)
           const bw = Math.ceil(bg.naturalWidth * ratio)
           const bh = Math.ceil(bg.naturalHeight * ratio)
@@ -150,8 +144,7 @@ export function ImageBackgroundRemover() {
     reset()
     setImageLoaded(false)
     setImageDimensions(null)
-    
-    // Reset the file input
+
     const fileInput = document.getElementById("image-upload-bg") as HTMLInputElement
     if (fileInput) {
       fileInput.value = ""
@@ -162,9 +155,9 @@ export function ImageBackgroundRemover() {
     <div className="w-full">
       <Card className="shadow-lg w-full max-w-none border-slate-200 dark:border-border">
         <div className="p-4 sm:p-6">
-          {/* Side-by-Side Layout */}
+          {}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-            {/* Left Side - Original Image */}
+            {}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <h2 className="text-lg font-bold text-slate-800 dark:text-foreground">Original Image</h2>
@@ -174,7 +167,7 @@ export function ImageBackgroundRemover() {
                   </span>
                 )}
               </div>
-              
+
               <div className="relative">
                 <label
                   htmlFor="image-upload-bg"
@@ -182,10 +175,10 @@ export function ImageBackgroundRemover() {
                 >
                   {imageUrl ? (
                     <div className="w-full h-full flex items-center justify-center p-4 bg-white">
-                      <img 
-                        src={imageUrl || "/placeholder.svg"} 
-                        alt="Original" 
-                        className="max-w-full max-h-full object-contain" 
+                      <img
+                        src={imageUrl || "/placeholder.svg"}
+                        alt="Original"
+                        className="max-w-full max-h-full object-contain"
                       />
                     </div>
                   ) : (
@@ -229,7 +222,7 @@ export function ImageBackgroundRemover() {
               )}
             </div>
 
-            {/* Right Side - Result */}
+            {}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <h2 className="text-lg font-bold text-slate-800 dark:text-foreground">Result</h2>
@@ -241,7 +234,7 @@ export function ImageBackgroundRemover() {
                 )}
               </div>
 
-              <div 
+              <div
                 className="relative w-full h-[220px] sm:h-[340px] md:h-[420px] lg:h-[500px] border-2 border-slate-200 dark:border-border rounded-xl overflow-hidden"
                 style={bgMode === 'color' ? { backgroundColor: bgColor } : bgMode === 'image' && bgImageUrl ? { backgroundImage: `url(${bgImageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {
                   background: '#ffffff',
@@ -284,9 +277,9 @@ export function ImageBackgroundRemover() {
 
                 {result && !isProcessing && (
                   <div className="w-full h-full flex items-center justify-center p-4">
-                    <img 
-                      src={result.resultUrl} 
-                      alt="Background removed" 
+                    <img
+                      src={result.resultUrl}
+                      alt="Background removed"
                       className="max-w-full max-h-full object-contain drop-shadow-2xl"
                     />
                   </div>
@@ -296,8 +289,8 @@ export function ImageBackgroundRemover() {
               {result && !isProcessing && (
                 <div className="space-y-3">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <Button 
-                      onClick={downloadImage} 
+                    <Button
+                      onClick={downloadImage}
                       className="w-full gap-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-6 text-base"
                     >
                       <Download className="h-5 w-5" />
@@ -317,7 +310,7 @@ export function ImageBackgroundRemover() {
                           <span className="sr-only">
                             {bgMode === 'transparent' ? 'Transparent' : bgMode === 'color' ? 'Color' : 'Custom Image'}
                           </span>
-                          {/* Chevron hidden to keep circular shape */}
+                          {}
                         </button>
                         {isBgMenuOpen && (
                           <ul
@@ -392,7 +385,7 @@ export function ImageBackgroundRemover() {
                       )}
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center justify-between text-xs text-muted-foreground dark:text-muted-foreground">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -401,10 +394,10 @@ export function ImageBackgroundRemover() {
                     <span>Processing time: {result.processingTime.toFixed(0)}ms</span>
                   </div>
 
-                  <Button 
-                    size="sm" 
-                    variant="outline" 
-                    onClick={resetAll} 
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={resetAll}
                     className="w-full gap-2"
                   >
                     <RotateCcw className="h-4 w-4" />
@@ -415,9 +408,9 @@ export function ImageBackgroundRemover() {
             </div>
           </div>
 
-          {/* Strength Slider removed – defaulting to medium */}
+          {}
 
-          {/* Error State */}
+          {}
           {status.stage === "error" && (
             <div className="mt-6 p-6 bg-red-50 dark:bg-red-900/20 border-2 border-red-200 dark:border-red-800 rounded-xl">
               <div className="flex flex-col items-center text-center gap-4">
@@ -429,8 +422,8 @@ export function ImageBackgroundRemover() {
                 <div>
                   <h3 className="text-lg font-bold text-foreground mb-2">Oops! Something went wrong</h3>
                   <p className="text-sm text-foreground mb-4 max-w-md">{status.message}</p>
-                  <Button 
-                    onClick={resetAll} 
+                  <Button
+                    onClick={resetAll}
                     variant="outline"
                     className="gap-2 border-red-300 text-foreground hover:bg-red-100 dark:border-destructive dark:text-foreground dark:hover:bg-red-900/30"
                   >

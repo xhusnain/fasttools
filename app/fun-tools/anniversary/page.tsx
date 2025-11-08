@@ -91,15 +91,15 @@ export const metadata: Metadata = {
         "Calculate relationship duration and next anniversary with days remaining.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: { 
-        "@type": "Offer", 
-        price: "0", 
+      offers: {
+        "@type": "Offer",
+        price: "0",
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
       featureList: [
-        "Duration in years/months/days", 
-        "Next anniversary", 
+        "Duration in years/months/days",
+        "Next anniversary",
         "Days remaining",
         "Anniversary calculator",
         "Relationship calculator",
@@ -114,9 +114,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: { 
-        "@type": "Organization", 
-        name: "FastTools", 
+      publisher: {
+        "@type": "Organization",
+        name: "FastTools",
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -161,7 +161,7 @@ export default function AnniversaryPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1 lg:flex-[2] space-y-6">
-              {/* Hero Section */}
+              {}
               <div className="text-center space-y-5 animate-fade-in-up">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-4 shadow-md">
                   <Heart className="h-4 w-4 animate-pulse" />
@@ -176,7 +176,7 @@ export default function AnniversaryPage() {
                 <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
                   Calculate how long you've been together and discover when your next anniversary is. Perfect for couples celebrating their love!
                 </p>
-                
+
                 <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
                   <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
                     <Calendar className="h-4 w-4 text-primary" />
@@ -197,7 +197,6 @@ export default function AnniversaryPage() {
                 </div>
               </div>
 
-              {/* Mobile/Tablet Ad - Top of Page */}
               <div className="block xl:hidden mb-6">
                 <div className="text-center mb-2">
                   <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -205,7 +204,6 @@ export default function AnniversaryPage() {
                 <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
               </div>
 
-              {/* Tool Card */}
               <Card className="border border-border shadow-lg bg-card hover:shadow-xl transition-all duration-300">
                 <CardHeader className="p-6">
                   <CardTitle className="text-xl font-bold text-card-foreground flex items-center gap-2">
@@ -221,7 +219,6 @@ export default function AnniversaryPage() {
                 </CardContent>
               </Card>
 
-              {/* Mobile/Tablet Ad - After tool */}
               <div className="block xl:hidden my-8">
                 <div className="text-center mb-2">
                   <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -229,11 +226,10 @@ export default function AnniversaryPage() {
                 <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
               </div>
 
-              {/* Anniversary Calculator Keywords Content */}
               <div className="space-y-5 animate-fade-in-up animation-delay-300">
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-card-foreground">When Is My Anniversary: Calculate Anniversary Dates</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="p-4 rounded-lg bg-card border border-border">
                       <h3 className="font-semibold text-heading-accent mb-3">When Is My Anniversary: Find Your Anniversary Date</h3>
@@ -248,11 +244,10 @@ export default function AnniversaryPage() {
                 </div>
               </div>
 
-              {/* FAQ Section */}
               <div className="space-y-5 animate-fade-in-up animation-delay-300">
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-card-foreground">Complete Guide to Anniversary Calculators: Everything You Need to Know</h2>
-                  
+
                   <div className="space-y-6">
                     <div>
                       <h3 className="text-lg font-bold mb-2 text-card-foreground">How accurate is the anniversary calculator?</h3>
@@ -313,7 +308,6 @@ export default function AnniversaryPage() {
               </div>
             </div>
 
-            {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
             <div className="hidden lg:block w-72">
               <div className="sticky top-32 space-y-6">
                 <div>

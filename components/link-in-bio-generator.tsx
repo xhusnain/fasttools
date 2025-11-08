@@ -170,7 +170,6 @@ export function LinkInBioGenerator() {
     setShowAddDropdown(false)
   }
 
-
   const removeLink = (id: string) => {
     setLinks(links.filter((link) => link.id !== id))
   }
@@ -178,7 +177,6 @@ export function LinkInBioGenerator() {
   const updateLink = (id: string, field: "title" | "url", value: string) => {
     setLinks(links.map((link) => (link.id === id ? { ...link, [field]: value } : link)))
   }
-
 
   const getCurrentTheme = () => {
     if (selectedTheme === "custom") {
@@ -204,56 +202,56 @@ export function LinkInBioGenerator() {
   <title>${profileName || "My Links"}</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
-      background: ${theme.gradient}; 
-      min-height: 100vh; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      padding: 20px; 
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: ${theme.gradient};
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
     }
-    .container { 
-      max-width: 500px; 
-      width: 100%; 
-      background: ${theme.cardBg}; 
-      border-radius: 16px; 
-      padding: 32px; 
-      box-shadow: 0 16px 48px rgba(0,0,0,0.2); 
+    .container {
+      max-width: 500px;
+      width: 100%;
+      background: ${theme.cardBg};
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.2);
     }
-    h1 { 
-      font-size: ${textSizes.heading}px; 
-      margin-bottom: 10px; 
-      color: ${theme.textColor}; 
-      text-align: center; 
+    h1 {
+      font-size: ${textSizes.heading}px;
+      margin-bottom: 10px;
+      color: ${theme.textColor};
+      text-align: center;
     }
-    .bio { 
-      color: ${theme.textColor === "#ffffff" ? "#cccccc" : "#666"}; 
+    .bio {
+      color: ${theme.textColor === "#ffffff" ? "#cccccc" : "#666"};
       font-size: ${textSizes.bio}px;
-      text-align: center; 
-      margin-bottom: 30px; 
-      line-height: 1.6; 
+      text-align: center;
+      margin-bottom: 30px;
+      line-height: 1.6;
     }
-    .link { 
-      display: block; 
-      padding: 12px; 
-      margin-bottom: 10px; 
-      background: ${theme.linkBg}; 
-      border: 2px solid ${theme.linkBg === "#ffffff" ? "#e9ecef" : theme.linkBg}; 
-      border-radius: 10px; 
-      text-decoration: none; 
-      color: ${theme.textColor}; 
-      font-weight: 500; 
+    .link {
+      display: block;
+      padding: 12px;
+      margin-bottom: 10px;
+      background: ${theme.linkBg};
+      border: 2px solid ${theme.linkBg === "#ffffff" ? "#e9ecef" : theme.linkBg};
+      border-radius: 10px;
+      text-decoration: none;
+      color: ${theme.textColor};
+      font-weight: 500;
       font-size: ${textSizes.linkButton}px;
-      text-align: center; 
-      transition: all 0.3s; 
+      text-align: center;
+      transition: all 0.3s;
     }
-    .link:hover { 
-      background: ${theme.linkHover}; 
-      color: ${theme.linkBg === "#ffffff" ? "white" : theme.textColor}; 
-      border-color: ${theme.linkHover}; 
-      transform: translateY(-2px); 
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+    .link:hover {
+      background: ${theme.linkHover};
+      color: ${theme.linkBg === "#ffffff" ? "white" : theme.textColor};
+      border-color: ${theme.linkHover};
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -285,13 +283,13 @@ export function LinkInBioGenerator() {
       .map((link) => {
         let logoHtml = ""
         let textHtml = link.title
-        
+
         if (link.displayMode === "both" || link.displayMode === "text" || !link.displayMode) {
-          logoHtml = link.logo 
+          logoHtml = link.logo
             ? `<img src="${link.logo}" alt="Platform logo" style="width: 20px; height: 20px; object-fit: contain; margin-right: 8px; vertical-align: middle;" />`
             : `<span style="font-size: 16px; margin-right: 8px; vertical-align: middle;">🔗</span>`
         }
-        
+
         return `<a href="${link.url}" class="link" target="_blank" style="display: flex; align-items: center;">${logoHtml}${textHtml}</a>`
       })
       .join("\n    ")}
@@ -314,10 +312,10 @@ export function LinkInBioGenerator() {
 
   return (
     <div className="space-y-6">
-      {/* Main Editor Card */}
+      {}
       <Card className="p-4 sm:p-6 bg-card border-border shadow-sm">
         <div className="space-y-6">
-          {/* Basic Information */}
+          {}
         <div className="space-y-4">
             <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
               <Settings className="h-5 w-5" />
@@ -357,7 +355,7 @@ export function LinkInBioGenerator() {
             <Input
               id="website-url"
               type="url"
-              placeholder="https://yourwebsite.com"
+              placeholder="https:
               value={websiteUrl}
               onChange={(e) => setWebsiteUrl(e.target.value)}
               className="mt-2 h-11 text-base border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
@@ -379,7 +377,7 @@ export function LinkInBioGenerator() {
         </div>
           </div>
 
-          {/* Theme Selection */}
+          {}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
               <Palette className="h-5 w-5" />
@@ -402,7 +400,7 @@ export function LinkInBioGenerator() {
                       style={{ background: theme.gradient }}
                     />
                     <p className="text-xs font-medium text-foreground">{theme.name}</p>
-                    {/* Color Section Bar */}
+                    {}
                     <div className="space-y-1">
                       <div className="flex gap-1">
                         <div className="flex-1 h-2 rounded" style={{ backgroundColor: theme.background }} />
@@ -429,7 +427,7 @@ export function LinkInBioGenerator() {
                 <div className="space-y-2">
                   <div className="w-full h-8 rounded bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500" />
                   <p className="text-xs font-medium text-foreground">Custom</p>
-                  {/* Custom Color Section Bar */}
+                  {}
                   <div className="space-y-1">
                     <div className="flex gap-1">
                       <div className="flex-1 h-2 rounded" style={{ backgroundColor: customColors.background }} />
@@ -447,7 +445,7 @@ export function LinkInBioGenerator() {
             </div>
           </div>
 
-          {/* Custom Colors (only show when custom theme is selected) */}
+          {}
           {selectedTheme === "custom" && (
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
@@ -489,7 +487,7 @@ export function LinkInBioGenerator() {
             </div>
           )}
 
-          {/* Text Size Customization */}
+          {}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
               <Settings className="h-5 w-5" />
@@ -555,14 +553,14 @@ export function LinkInBioGenerator() {
             </div>
           </div>
 
-          {/* Links Section */}
+          {}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
               <Plus className="h-5 w-5" />
               Links
             </h3>
           <div className="space-y-4">
-            {/* Platform Selection */}
+            {}
             <div className="flex gap-2">
               <select
                 value={selectedPlatform}
@@ -572,7 +570,7 @@ export function LinkInBioGenerator() {
                 <option value="social">Social Media</option>
                 <option value="email">Email</option>
               </select>
-              
+
                   <Button
                     variant="outline"
                 onClick={() => setShowAddDropdown(!showAddDropdown)}
@@ -583,7 +581,7 @@ export function LinkInBioGenerator() {
                   </Button>
             </div>
 
-            {/* Dropdown for Social Media and Email */}
+            {}
             {showAddDropdown && (
               <div className="p-4 rounded-lg bg-muted/30 border border-border">
                 {selectedPlatform === "social" && (
@@ -629,12 +627,12 @@ export function LinkInBioGenerator() {
               </div>
             )}
 
-            {/* Links List */}
+            {}
             <div className="space-y-3">
             {links.map((link, index) => (
                 <div key={link.id} className="p-4 rounded-lg bg-muted/30 border border-border">
                   <div className="flex items-center gap-3 mb-3">
-                    {/* Logo Display */}
+                    {}
                     <div className="flex items-center gap-2">
                       {link.customLogo ? (
                         <img src={link.customLogo} alt="Custom logo" className="w-6 h-6 rounded object-cover" />
@@ -647,7 +645,7 @@ export function LinkInBioGenerator() {
                       )}
                     </div>
 
-                    {/* Link Type Badge */}
+                    {}
                     <div className="flex gap-2">
                       <span className={`px-2 py-1 rounded text-xs font-medium ${
                         link.type === "social" ? "bg-blue-100 text-foreground" :
@@ -658,7 +656,7 @@ export function LinkInBioGenerator() {
                       </span>
                     </div>
 
-                    {/* Remove Button */}
+                    {}
                     <Button
                       variant="ghost"
                       size="sm"
@@ -684,13 +682,13 @@ export function LinkInBioGenerator() {
                 <Input
                   value={link.url}
                   onChange={(e) => updateLink(link.id, "url", e.target.value)}
-                        placeholder="https://example.com"
+                        placeholder="https:
                         className="mt-1 h-10 text-sm border-2 border-primary focus:border-orange-600 focus:ring-2 focus:ring-orange-200"
                       />
                     </div>
                   </div>
 
-                  {/* Display Mode Selector */}
+                  {}
                   <div className="mt-3">
                     <Label className="text-sm font-medium text-foreground">Display Mode</Label>
                     <div className="flex gap-2 mt-2">
@@ -733,13 +731,13 @@ export function LinkInBioGenerator() {
           </div>
           </div>
 
-          {/* Action Buttons */}
+          {}
           <div className="flex flex-col sm:flex-row gap-2">
             <Button
               onClick={() => {
                 setPreview(!preview)
                 if (!preview) {
-                  setShowHtml(false) // Close HTML when opening preview
+                  setShowHtml(false)
                 }
               }}
               variant="outline"
@@ -752,7 +750,7 @@ export function LinkInBioGenerator() {
               onClick={() => {
                 setShowHtml(!showHtml)
                 if (!showHtml) {
-                  setPreview(false) // Close preview when opening HTML
+                  setPreview(false)
                 }
               }}
               variant="outline"
@@ -794,7 +792,7 @@ export function LinkInBioGenerator() {
         </div>
       </Card>
 
-      {/* HTML Code View */}
+      {}
       {showHtml && (
         <Card className="p-4 sm:p-6 bg-card border-border shadow-sm animate-fade-in max-w-4xl mx-auto">
           <div className="flex items-center justify-between mb-4">
@@ -827,7 +825,7 @@ export function LinkInBioGenerator() {
         </Card>
       )}
 
-      {/* Live Preview */}
+      {}
       {preview && (
         <Card className="p-4 sm:p-6 bg-card border-border shadow-sm animate-fade-in max-w-4xl mx-auto">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-2">
@@ -866,33 +864,33 @@ export function LinkInBioGenerator() {
             </div>
           </div>
           <div className="flex justify-center overflow-hidden">
-            {/* Mobile Preview */}
+            {}
             {viewMode === "mobile" && (
               <div className="relative max-w-xs w-full">
-                {/* Mobile Device Frame */}
+                {}
                 <div className="w-72 h-[500px] bg-muted rounded-[2rem] p-1.5 shadow-xl">
                   <div className="w-full h-full bg-card rounded-[1.5rem] overflow-hidden relative">
-                    {/* Mobile Screen */}
+                    {}
                     <div className="w-full h-full bg-white">
                       <div
                         className="w-full h-full p-3 text-center overflow-y-auto"
-                        style={{ 
+                        style={{
                           background: getCurrentTheme().background
                         }}
                       >
-                        {/* Mobile Profile Info */}
-                        <h1 
+                        {}
+                        <h1
                           className="font-bold mb-2"
-                          style={{ 
+                          style={{
                             color: getCurrentTheme().textColor,
                             fontSize: `${textSizes.heading}px`
                           }}
                         >
                           {profileName || "Your Name"}
                         </h1>
-                        <p 
+                        <p
                           className="mb-4 leading-relaxed"
-                          style={{ 
+                          style={{
                             color: getCurrentTheme().textColor,
                             fontSize: `${textSizes.bio}px`
                           }}
@@ -900,7 +898,7 @@ export function LinkInBioGenerator() {
                           {bio || "Your bio description"}
                         </p>
 
-                        {/* Website URL */}
+                        {}
                         {websiteUrl && (
                           <div className="mb-4">
                             <a
@@ -908,7 +906,7 @@ export function LinkInBioGenerator() {
                               target="_blank"
                               rel="noopener noreferrer"
                               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors"
-                              style={{ 
+                              style={{
                                 backgroundColor: getCurrentTheme().linkBg,
                                 color: getCurrentTheme().textColor,
                                 fontSize: `${textSizes.linkButton}px`
@@ -920,7 +918,7 @@ export function LinkInBioGenerator() {
                           </div>
                         )}
 
-                        {/* Social Media Icons - Only show if any link has icon-only or both mode */}
+                        {}
                         {links.filter(link => link.type === "social" && link.logo && (link.displayMode === "icon" || link.displayMode === "both" || !link.displayMode)).length > 0 && (
                           <div className="flex flex-wrap justify-center gap-2 mb-4 px-4">
                             {links
@@ -937,7 +935,7 @@ export function LinkInBioGenerator() {
                           </div>
                         )}
 
-                        {/* Mobile Links - Only show if any link has text-only or both mode */}
+                        {}
                         {links.filter(link => link.title && link.url && (link.displayMode === "text" || link.displayMode === "both" || !link.displayMode)).length > 0 && (
                           <div className="space-y-2">
                             {links
@@ -946,7 +944,7 @@ export function LinkInBioGenerator() {
                                 <div
                                   key={link.id}
                                   className="p-1.5 rounded-md transition-colors cursor-pointer flex items-center gap-2"
-                                  style={{ 
+                                  style={{
                                     backgroundColor: getCurrentTheme().linkBg,
                                     color: getCurrentTheme().textColor,
                                     fontSize: `${textSizes.linkButton}px`
@@ -958,7 +956,7 @@ export function LinkInBioGenerator() {
                                     e.currentTarget.style.backgroundColor = getCurrentTheme().linkBg
                                   }}
                                 >
-                                  {/* Logo Display */}
+                                  {}
                                   {(link.displayMode === "both" || link.displayMode === "text" || !link.displayMode) && (
                                     link.customLogo ? (
                                       <img src={link.customLogo} alt="Custom logo" className="w-4 h-4 rounded object-cover" />
@@ -968,19 +966,19 @@ export function LinkInBioGenerator() {
                                       <span className="text-xs">🔗</span>
                                     )
                                   )}
-                                  {/* Text Display */}
+                                  {}
                                   <span className="flex-1">{link.title}</span>
                                 </div>
                               ))}
                           </div>
                         )}
-                        
-                        {/* Footer */}
+
+                        {}
                         {footer && (
                           <div className="mt-6 px-4">
-                            <p 
+                            <p
                               className="text-center opacity-70"
-                              style={{ 
+                              style={{
                                 color: getCurrentTheme().textColor,
                                 fontSize: `${textSizes.footer}px`
                               }}
@@ -996,33 +994,33 @@ export function LinkInBioGenerator() {
               </div>
             )}
 
-            {/* Tablet Preview */}
+            {}
             {viewMode === "tablet" && (
               <div className="relative max-w-md w-full">
-                {/* Tablet Device Frame */}
+                {}
                 <div className="w-[450px] h-[600px] bg-gray-600 rounded-[1.5rem] p-2.5 shadow-xl">
                   <div className="w-full h-full bg-card rounded-[1rem] overflow-hidden relative">
-                    {/* Tablet Screen */}
+                    {}
                     <div className="w-full h-full bg-white">
                       <div
                         className="w-full h-full p-4 text-center overflow-y-auto"
-                        style={{ 
+                        style={{
                           background: getCurrentTheme().background
                         }}
                       >
-                        {/* Tablet Profile Info */}
-                        <h1 
+                        {}
+                        <h1
                           className="font-bold mb-3"
-                          style={{ 
+                          style={{
                             color: getCurrentTheme().textColor,
                             fontSize: `${textSizes.heading}px`
                           }}
                         >
                           {profileName || "Your Name"}
                         </h1>
-                        <p 
+                        <p
                           className="mb-6 leading-relaxed"
-                          style={{ 
+                          style={{
                             color: getCurrentTheme().textColor,
                             fontSize: `${textSizes.bio}px`
                           }}
@@ -1030,7 +1028,7 @@ export function LinkInBioGenerator() {
                           {bio || "Your bio description"}
                         </p>
 
-                        {/* Website URL */}
+                        {}
                         {websiteUrl && (
                           <div className="mb-6">
                             <a
@@ -1038,7 +1036,7 @@ export function LinkInBioGenerator() {
                               target="_blank"
                               rel="noopener noreferrer"
                               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-colors"
-                              style={{ 
+                              style={{
                                 backgroundColor: getCurrentTheme().linkBg,
                                 color: getCurrentTheme().textColor,
                                 fontSize: `${textSizes.linkButton}px`
@@ -1050,7 +1048,7 @@ export function LinkInBioGenerator() {
                           </div>
                         )}
 
-                        {/* Social Media Icons - Only show if any link has icon-only or both mode */}
+                        {}
                         {links.filter(link => link.type === "social" && link.logo && (link.displayMode === "icon" || link.displayMode === "both" || !link.displayMode)).length > 0 && (
                           <div className="flex flex-wrap justify-center gap-3 mb-6 px-4">
                             {links
@@ -1067,7 +1065,7 @@ export function LinkInBioGenerator() {
                           </div>
                         )}
 
-                        {/* Tablet Links - Only show if any link has text-only or both mode */}
+                        {}
                         {links.filter(link => link.title && link.url && (link.displayMode === "text" || link.displayMode === "both" || !link.displayMode)).length > 0 && (
               <div className="space-y-3">
                 {links
@@ -1076,7 +1074,7 @@ export function LinkInBioGenerator() {
                     <div
                       key={link.id}
                                   className="p-2.5 rounded-lg transition-colors cursor-pointer flex items-center gap-3"
-                                  style={{ 
+                                  style={{
                                     backgroundColor: getCurrentTheme().linkBg,
                                     color: getCurrentTheme().textColor,
                                     fontSize: `${textSizes.linkButton}px`
@@ -1088,7 +1086,7 @@ export function LinkInBioGenerator() {
                                     e.currentTarget.style.backgroundColor = getCurrentTheme().linkBg
                                   }}
                                 >
-                                  {/* Logo Display */}
+                                  {}
                                   {(link.displayMode === "both" || link.displayMode === "text" || !link.displayMode) && (
                                     link.customLogo ? (
                                       <img src={link.customLogo} alt="Custom logo" className="w-5 h-5 rounded object-cover" />
@@ -1098,19 +1096,19 @@ export function LinkInBioGenerator() {
                                       <span className="text-sm">🔗</span>
                                     )
                                   )}
-                                  {/* Text Display */}
+                                  {}
                                   <span className="flex-1">{link.title}</span>
                     </div>
                   ))}
               </div>
                         )}
-                        
-                        {/* Footer */}
+
+                        {}
                         {footer && (
                           <div className="mt-6 px-4">
-                            <p 
+                            <p
                               className="text-center opacity-70"
-                              style={{ 
+                              style={{
                                 color: getCurrentTheme().textColor,
                                 fontSize: `${textSizes.footer}px`
                               }}
@@ -1126,38 +1124,38 @@ export function LinkInBioGenerator() {
               </div>
             )}
 
-            {/* Desktop Preview */}
+            {}
             {viewMode === "desktop" && (
               <div className="relative max-w-xl w-full">
-                {/* Desktop Preview */}
-                <div 
+                {}
+                <div
                   className="border border-border rounded-lg overflow-hidden shadow-lg"
-                  style={{ 
+                  style={{
                     width: "350px",
                     maxWidth: "100%"
                   }}
                 >
                   <div
                     className="p-4 text-center"
-                    style={{ 
+                    style={{
                       background: getCurrentTheme().background,
                       minHeight: "400px",
-                      fontSize: "16px" // Desktop font size
+                      fontSize: "16px"
                     }}
                   >
-                    {/* Desktop Profile Info */}
-                    <h1 
+                    {}
+                    <h1
                       className="font-bold mb-3"
-                      style={{ 
+                      style={{
                         color: getCurrentTheme().textColor,
                         fontSize: `${textSizes.heading}px`
                       }}
                     >
                       {profileName || "Your Name"}
                     </h1>
-                    <p 
+                    <p
                       className="mb-6 leading-relaxed"
-                      style={{ 
+                      style={{
                         color: getCurrentTheme().textColor,
                         fontSize: `${textSizes.bio}px`
                       }}
@@ -1165,7 +1163,7 @@ export function LinkInBioGenerator() {
                       {bio || "Your bio description"}
                     </p>
 
-                    {/* Website URL */}
+                    {}
                     {websiteUrl && (
                       <div className="mb-6">
                         <a
@@ -1173,7 +1171,7 @@ export function LinkInBioGenerator() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-colors"
-                          style={{ 
+                          style={{
                             backgroundColor: getCurrentTheme().linkBg,
                             color: getCurrentTheme().textColor,
                             fontSize: `${textSizes.linkButton}px`
@@ -1185,7 +1183,7 @@ export function LinkInBioGenerator() {
                       </div>
                     )}
 
-                    {/* Social Media Icons - Only show if any link has icon-only or both mode */}
+                    {}
                     {links.filter(link => link.type === "social" && link.logo && (link.displayMode === "icon" || link.displayMode === "both" || !link.displayMode)).length > 0 && (
                       <div className="flex flex-wrap justify-center gap-4 mb-6">
                         {links
@@ -1202,7 +1200,7 @@ export function LinkInBioGenerator() {
                       </div>
                     )}
 
-                    {/* Desktop Links - Only show if any link has text-only or both mode */}
+                    {}
                     {links.filter(link => link.title && link.url && (link.displayMode === "text" || link.displayMode === "both" || !link.displayMode)).length > 0 && (
                       <div className="space-y-3">
                         {links
@@ -1211,7 +1209,7 @@ export function LinkInBioGenerator() {
                             <div
                               key={link.id}
                               className="p-3 rounded-lg transition-colors cursor-pointer flex items-center gap-3"
-                              style={{ 
+                              style={{
                                 backgroundColor: getCurrentTheme().linkBg,
                                 color: getCurrentTheme().textColor,
                                 fontSize: `${textSizes.linkButton}px`
@@ -1223,7 +1221,7 @@ export function LinkInBioGenerator() {
                                 e.currentTarget.style.backgroundColor = getCurrentTheme().linkBg
                               }}
                             >
-                              {/* Logo Display */}
+                              {}
                               {(link.displayMode === "both" || link.displayMode === "text" || !link.displayMode) && (
                                 link.customLogo ? (
                                   <img src={link.customLogo} alt="Custom logo" className="w-6 h-6 rounded object-cover" />
@@ -1233,19 +1231,19 @@ export function LinkInBioGenerator() {
                                   <span className="text-base">🔗</span>
                                 )
                               )}
-                              {/* Text Display */}
+                              {}
                               <span className="flex-1">{link.title}</span>
                             </div>
                           ))}
                       </div>
                     )}
-                    
-                    {/* Footer */}
+
+                    {}
                     {footer && (
                       <div className="mt-6">
-                        <p 
+                        <p
                           className="text-center opacity-70"
-                          style={{ 
+                          style={{
                             color: getCurrentTheme().textColor,
                             fontSize: `${textSizes.footer}px`
                           }}
@@ -1262,7 +1260,7 @@ export function LinkInBioGenerator() {
         </Card>
       )}
 
-      {/* How to Use */}
+      {}
       <Card className="p-6 bg-muted/30 border-border">
         <h3 className="text-base font-semibold text-foreground mb-3">How to Use</h3>
         <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">

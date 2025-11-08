@@ -8,15 +8,15 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  Clock, 
-  Activity, 
-  Target, 
-  TrendingUp, 
-  Heart, 
-  Zap, 
-  Trophy, 
+import {
+  Calculator,
+  Clock,
+  Activity,
+  Target,
+  TrendingUp,
+  Heart,
+  Zap,
+  Trophy,
   Users,
   Timer,
   BarChart3,
@@ -160,7 +160,6 @@ export default function CalorieCalculator() {
       const weightNum = parseFloat(weight)
       const bodyFatNum = bodyFat ? parseFloat(bodyFat) : null
 
-      // Convert units if needed
       const heightCm = unitSystem === "imperial" ? heightNum * 2.54 : heightNum
       const weightKg = unitSystem === "imperial" ? weightNum * 0.453592 : weightNum
 
@@ -192,25 +191,22 @@ export default function CalorieCalculator() {
         return
       }
 
-      // Get activity multiplier
       const activity = activityLevels.find(a => a.name.toLowerCase().includes(activityLevel.toLowerCase()))
       const multiplier = activity ? activity.multiplier : 1.55
       const tdee = bmr * multiplier
 
-      // Weight management calculations
       const weightLoss = {
-        mild: Math.round(tdee - 250), // 0.5 lb/week
-        moderate: Math.round(tdee - 500), // 1 lb/week
-        aggressive: Math.round(tdee - 750) // 1.5 lb/week
+        mild: Math.round(tdee - 250),
+        moderate: Math.round(tdee - 500),
+        aggressive: Math.round(tdee - 750)
       }
 
       const weightGain = {
-        mild: Math.round(tdee + 250), // 0.5 lb/week
-        moderate: Math.round(tdee + 500), // 1 lb/week
-        aggressive: Math.round(tdee + 750) // 1.5 lb/week
+        mild: Math.round(tdee + 250),
+        moderate: Math.round(tdee + 500),
+        aggressive: Math.round(tdee + 750)
       }
 
-      // Zigzag calorie cycling
       const zigzagPlan = {
         high: Math.round(tdee + 200),
         low: Math.round(tdee - 200),
@@ -225,7 +221,6 @@ export default function CalorieCalculator() {
         ]
       }
 
-      // Generate recommendations
       const recommendations = generateRecommendations(bmr, tdee, ageNum, gender)
       const mealPlans = generateMealPlans(tdee)
 
@@ -254,7 +249,6 @@ export default function CalorieCalculator() {
     const exercise: string[] = []
     const lifestyle: string[] = []
 
-    // Nutrition recommendations
     nutrition.push("Eat 5-6 small meals throughout the day to maintain metabolism")
     nutrition.push("Include lean proteins (chicken, fish, beans) in every meal")
     nutrition.push("Consume complex carbohydrates (oats, quinoa, sweet potatoes)")
@@ -262,7 +256,6 @@ export default function CalorieCalculator() {
     nutrition.push("Include healthy fats (avocado, nuts, olive oil)")
     nutrition.push("Focus on whole, unprocessed foods for better satiety")
 
-    // Exercise recommendations
     exercise.push("Combine cardio and strength training for optimal results")
     exercise.push("Aim for 150 minutes of moderate cardio per week")
     exercise.push("Include 2-3 strength training sessions weekly")
@@ -270,7 +263,6 @@ export default function CalorieCalculator() {
     exercise.push("Incorporate daily movement and walking")
     exercise.push("Track your workouts to monitor calorie burn")
 
-    // Lifestyle recommendations
     lifestyle.push("Get 7-9 hours of quality sleep nightly")
     lifestyle.push("Manage stress through meditation or yoga")
     lifestyle.push("Avoid prolonged sitting - take breaks every hour")
@@ -356,7 +348,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
 
   return (
     <div className="space-y-3 sm:space-y-4 md:space-y-5 bg-card rounded-lg p-2 sm:p-3 md:p-4 w-full overflow-hidden">
-      {/* Main Calculator */}
+      {}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base md:text-lg break-words">
@@ -365,7 +357,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3 sm:space-y-4 px-2 sm:px-3 md:px-4">
-          {/* Unit System Selection */}
+          {}
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full overflow-hidden">
             <div className="flex-1 space-y-1.5 min-w-0 w-full sm:w-auto">
               <Label className="text-heading-accent text-xs">Unit System</Label>
@@ -394,7 +386,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
             </div>
           </div>
 
-          {/* Input Fields */}
+          {}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 w-full">
             <div className="space-y-1.5 w-full min-w-0">
               <Label htmlFor="age" className="text-heading-accent text-xs">Age</Label>
@@ -500,7 +492,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
         </CardContent>
       </Card>
 
-      {/* Food Energy Converter */}
+      {}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base md:text-lg break-words">
@@ -543,10 +535,10 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
         </CardContent>
       </Card>
 
-      {/* Results Section */}
+      {}
       {result && (
         <div className="space-y-3 sm:space-y-4">
-          {/* Main Results */}
+          {}
           <Card className="bg-card border-border">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base md:text-lg">
@@ -596,7 +588,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
             </CardContent>
           </Card>
 
-          {/* Weight Management */}
+          {}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <Card className="bg-card border-border">
               <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
@@ -663,7 +655,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
             </Card>
           </div>
 
-          {/* Zigzag Calorie Cycling */}
+          {}
           <Card className="bg-card border-border">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base">
@@ -695,7 +687,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
             </CardContent>
           </Card>
 
-          {/* Meal Plans */}
+          {}
           <Card className="bg-card border-border">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base">
@@ -753,7 +745,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
             </CardContent>
           </Card>
 
-          {/* Recommendations */}
+          {}
           <Card className="bg-card border-border">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base">
@@ -802,7 +794,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
         </div>
       )}
 
-      {/* Common Foods Section */}
+      {}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base">
@@ -825,7 +817,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
         </CardContent>
       </Card>
 
-      {/* History Section */}
+      {}
       {history.length > 0 && (
         <Card className="bg-card border-border w-full overflow-hidden">
           <CardHeader>
@@ -861,7 +853,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
         </Card>
       )}
 
-      {/* Information Section */}
+      {}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base">
@@ -883,7 +875,7 @@ Aggressive (1.5 lb/week): ${result.weightGain.aggressive} calories/day`
               </div>
             </div>
           </div>
-          
+
           <div className="text-xs sm:text-sm text-foreground space-y-1.5">
             <p>
               <strong className="text-foreground">BMR:</strong> Basal Metabolic Rate - calories burned at rest for basic body functions.

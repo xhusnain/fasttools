@@ -8,47 +8,47 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { 
-  Calculator, 
-  DollarSign, 
-  Percent, 
-  Calendar, 
-  TrendingUp, 
-  TrendingDown, 
-  Info, 
-  AlertCircle, 
-  CheckCircle, 
-  Copy, 
-  Download, 
-  History, 
-  Star, 
-  Globe, 
-  Shield, 
-  FileText, 
-  BarChart3, 
-  PieChart, 
-  Target, 
-  Zap, 
-  Clock, 
-  Users, 
-  Home, 
-  Car, 
-  ShoppingBag, 
-  CreditCard, 
-  Banknote, 
-  Coins, 
-  Wallet, 
-  Briefcase, 
-  Store, 
-  Truck, 
-  Package, 
-  Tag, 
-  ShoppingCart, 
-  HandHeart, 
-  Gift, 
-  Award, 
-  Trophy, 
-  TrendingUp as TrendingUpIcon, 
+import {
+  Calculator,
+  DollarSign,
+  Percent,
+  Calendar,
+  TrendingUp,
+  TrendingDown,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Copy,
+  Download,
+  History,
+  Star,
+  Globe,
+  Shield,
+  FileText,
+  BarChart3,
+  PieChart,
+  Target,
+  Zap,
+  Clock,
+  Users,
+  Home,
+  Car,
+  ShoppingBag,
+  CreditCard,
+  Banknote,
+  Coins,
+  Wallet,
+  Briefcase,
+  Store,
+  Truck,
+  Package,
+  Tag,
+  ShoppingCart,
+  HandHeart,
+  Gift,
+  Award,
+  Trophy,
+  TrendingUp as TrendingUpIcon,
   TrendingDown as TrendingDownIcon,
   Stethoscope,
   Brain,
@@ -169,7 +169,6 @@ export default function RetirementCalculator() {
     const monthlyContrib = parseFloat(monthlyContribution) || 0
     const monthlyWithdraw = parseFloat(monthlyWithdrawal) || 0
 
-    // Input validation
     if (age <= 0) {
       alert("Current age must be greater than 0")
       return
@@ -212,12 +211,12 @@ export default function RetirementCalculator() {
     let calculatedResult: RetirementResult
 
     if (calculationType === "howMuchToSave") {
-      // Calculate how much to save for retirement
+
       const futureIncome = income * Math.pow(1 + incomeInc / 100, yearsToRetirement)
       const neededIncome = (futureIncome * retirementIncome / 100) - (otherInc * 12)
       const targetAmount = neededIncome / (annualRate) * (1 - Math.pow(1 + annualRate, -yearsInRetirement))
-      
-      const monthlyContribNeeded = (targetAmount - savings * Math.pow(1 + annualRate, yearsToRetirement)) / 
+
+      const monthlyContribNeeded = (targetAmount - savings * Math.pow(1 + annualRate, yearsToRetirement)) /
                                    ((Math.pow(1 + annualRate, yearsToRetirement) - 1) / annualRate)
 
       calculatedResult = {
@@ -254,10 +253,10 @@ export default function RetirementCalculator() {
         scenarios: generateScenarios(targetAmount, invReturn)
       }
     } else if (calculationType === "howMuchCanWithdraw") {
-      // Calculate how much can be withdrawn
-      const futureValue = savings * Math.pow(1 + annualRate, yearsToRetirement) + 
+
+      const futureValue = savings * Math.pow(1 + annualRate, yearsToRetirement) +
                           (monthlyContrib * 12 * ((Math.pow(1 + annualRate, yearsToRetirement) - 1) / annualRate))
-      
+
       const monthlyWithdrawAmount = futureValue * (monthlyRate / (1 - Math.pow(1 + monthlyRate, -yearsInRetirement * 12)))
 
       calculatedResult = {
@@ -294,7 +293,7 @@ export default function RetirementCalculator() {
         scenarios: generateScenarios(futureValue, invReturn)
       }
     } else {
-      // Calculate how long money will last
+
       const yearsToLast = Math.log(1 + (monthlyWithdraw * 12) / (savings * annualRate)) / Math.log(1 + annualRate)
       const finalAge = age + yearsToLast
 
@@ -342,7 +341,6 @@ export default function RetirementCalculator() {
     const investmentTips: string[] = []
     const retirementPlanning: string[] = []
 
-    // Savings strategies based on return rate
     if (returnRate < 4) {
       savingsStrategies.push("Consider increasing your savings rate to compensate for lower returns")
       savingsStrategies.push("Focus on maximizing employer 401(k) matching contributions")
@@ -357,7 +355,6 @@ export default function RetirementCalculator() {
       savingsStrategies.push("Focus on consistent, long-term investing")
     }
 
-    // Investment tips
     if (returnRate < 5) {
       investmentTips.push("Consider increasing stock allocation for higher long-term returns")
       investmentTips.push("Review your investment fees and expenses")
@@ -372,7 +369,6 @@ export default function RetirementCalculator() {
       investmentTips.push("Consider professional financial advice for complex strategies")
     }
 
-    // Retirement planning
     retirementPlanning.push("Start saving early - time is your greatest asset")
     retirementPlanning.push("Maximize employer matching contributions")
     retirementPlanning.push("Consider healthcare costs in retirement planning")
@@ -424,7 +420,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
 
   return (
     <div className="space-y-6">
-      {/* Main Calculator */}
+      {}
       <Card>
         <CardHeader className="pb-8">
           <CardTitle className="flex items-center gap-2">
@@ -433,7 +429,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          {/* Calculation Type Selection */}
+          {}
           <div>
             <Label className="text-lg font-semibold mb-4 block">Calculation Type</Label>
             <Tabs value={calculationType} onValueChange={setCalculationType}>
@@ -445,7 +441,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
             </Tabs>
           </div>
 
-          {/* Input Fields */}
+          {}
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="currentAge">Current Age</Label>
@@ -618,10 +614,10 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
         </CardContent>
       </Card>
 
-      {/* Results Section */}
+      {}
       {result && (
         <div className="space-y-6">
-          {/* Main Results */}
+          {}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -669,7 +665,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
             </CardContent>
           </Card>
 
-          {/* Detailed Calculations */}
+          {}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -699,7 +695,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
             </CardContent>
           </Card>
 
-          {/* Scenarios */}
+          {}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -724,7 +720,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
             </CardContent>
           </Card>
 
-          {/* Recommendations */}
+          {}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -773,7 +769,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
         </div>
       )}
 
-      {/* History Section */}
+      {}
       {history.length > 0 && (
         <Card>
           <CardHeader>
@@ -808,7 +804,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
         </Card>
       )}
 
-      {/* Information Section */}
+      {}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -830,7 +826,7 @@ Investment Return: ${result.investmentReturn.toFixed(2)}%`
               </div>
             </div>
           </div>
-          
+
           <div className="text-sm text-muted-foreground space-y-2">
             <p>
               <strong>Multiple Calculation Modes:</strong> Calculate how much to save, how much you can withdraw, or how long your money will last.

@@ -35,7 +35,7 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
 
   const handleBrushSizeChange = (size: number) => {
     if (!canvas || !canvas.freeDrawingBrush) return
-    
+
     try {
       canvas.freeDrawingBrush.width = size
     } catch (error) {
@@ -45,7 +45,7 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
 
   const handleColorChange = (color: string) => {
     if (!canvas || !canvas.freeDrawingBrush) return
-    
+
     try {
       canvas.freeDrawingBrush.color = color
     } catch (error) {
@@ -55,7 +55,7 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
 
   const toggleDrawingMode = () => {
     if (!canvas) return
-    
+
     try {
       canvas.isDrawingMode = !canvas.isDrawingMode
       setIsDrawingMode(canvas.isDrawingMode)
@@ -83,8 +83,8 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
               <button
                 key={brush.id}
                 className={`p-4 bg-white rounded-xl hover:shadow-md transition-all duration-200 border-2 ${
-                  currentBrush === brush.id 
-                    ? 'border-purple-400 shadow-lg' 
+                  currentBrush === brush.id
+                    ? 'border-purple-400 shadow-lg'
                     : 'border-slate-200 hover:border-slate-300'
                 }`}
                 onClick={() => handleBrushSelect(brush)}
@@ -133,8 +133,8 @@ export function DrawPanel({ canvas }: DrawPanelProps) {
 
       <button
         className={`w-full p-3 rounded-lg text-white font-medium transition-all duration-200 shadow-md hover:shadow-lg ${
-          isDrawingMode 
-            ? 'bg-gradient-to-r from-green-600 to-emerald-600' 
+          isDrawingMode
+            ? 'bg-gradient-to-r from-green-600 to-emerald-600'
             : 'bg-gradient-to-r from-purple-600 to-purple-700'
         }`}
         onClick={toggleDrawingMode}
@@ -222,7 +222,7 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
 
       activeObject.applyFilters()
       canvas.renderAll()
-      
+
     } catch (error) {
       console.error('Failed to apply filter:', error)
     }
@@ -230,7 +230,7 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
 
   const removeAllFilters = () => {
     if (!canvas) return
-    
+
     try {
       const activeObject = canvas.getActiveObject()
       if (activeObject) {
@@ -250,7 +250,7 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
         <div className="grid grid-cols-2 gap-3">
           {filters.map((filter) => (
             <button
-              key={filter.id} 
+              key={filter.id}
               className="p-4 bg-white rounded-xl hover:shadow-md transition-all duration-200 border-2 border-slate-200 hover:border-slate-300"
               onClick={() => handleFilterApply(filter.id)}
             >
@@ -263,7 +263,7 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
             </button>
           ))}
         </div>
-        
+
         <div className="pt-4">
           <button
             className="w-full p-3 rounded-lg bg-gradient-to-r from-red-600 to-rose-600 text-white font-medium hover:opacity-90 transition-all duration-200 shadow-md hover:shadow-lg"
@@ -292,7 +292,7 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
 
     try {
       const activeObject = canvas.getActiveObject()
-      
+
       if (!activeObject || activeObject.type !== 'image') {
         return
       }
@@ -307,7 +307,6 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
         activeObject.filters = []
       }
 
-      // Remove existing filter of the same type
       activeObject.filters = activeObject.filters.filter((filter: any) => {
         const filterType = filter.type || filter.constructor.name
         if (type === 'brightness' && filterType === 'Brightness') return false
@@ -317,34 +316,33 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
         return true
       })
 
-      // Add new filter only if value is not 0
       if (value !== 0) {
         switch (type) {
           case 'brightness':
             if (fabric.filters.Brightness) {
-              activeObject.filters.push(new fabric.filters.Brightness({ 
-                brightness: value / 100 
+              activeObject.filters.push(new fabric.filters.Brightness({
+                brightness: value / 100
               }))
             }
             break
           case 'contrast':
             if (fabric.filters.Contrast) {
-              activeObject.filters.push(new fabric.filters.Contrast({ 
-                contrast: value / 100 
+              activeObject.filters.push(new fabric.filters.Contrast({
+                contrast: value / 100
               }))
             }
             break
           case 'saturation':
             if (fabric.filters.Saturation) {
-              activeObject.filters.push(new fabric.filters.Saturation({ 
-                saturation: value / 100 
+              activeObject.filters.push(new fabric.filters.Saturation({
+                saturation: value / 100
               }))
             }
             break
           case 'hue':
             if (fabric.filters.HueRotation) {
-              activeObject.filters.push(new fabric.filters.HueRotation({ 
-                rotation: (value * Math.PI) / 180 
+              activeObject.filters.push(new fabric.filters.HueRotation({
+                rotation: (value * Math.PI) / 180
               }))
             }
             break
@@ -353,7 +351,7 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
 
       activeObject.applyFilters()
       canvas.renderAll()
-      
+
     } catch (error) {
       console.error('Failed to apply adjustment:', error)
     }
@@ -369,7 +367,6 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
         return
       }
 
-      // Remove adjustment filters only
       if (activeObject.filters) {
         activeObject.filters = activeObject.filters.filter((filter: any) => {
           const filterType = filter.type || filter.constructor.name
@@ -395,19 +392,19 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
         <div>
           <h3 className="font-semibold text-slate-800 mb-1 text-base">Adjustments</h3>
           <p className="text-xs text-muted-foreground mb-6">Select an image to adjust its properties</p>
-          
+
           <div className="space-y-6">
-            {/* Brightness */}
+            {}
       <div>
               <div className="flex justify-between items-center mb-3">
                 <label className="text-sm text-slate-700 font-medium">Brightness</label>
                 <span className="text-sm text-muted-foreground font-semibold min-w-[2rem] text-right">{brightness}</span>
               </div>
               <div className="relative">
-                <input 
-                  type="range" 
-                  min="-100" 
-                  max="100" 
+                <input
+                  type="range"
+                  min="-100"
+                  max="100"
                   value={brightness}
                   onChange={(e) => {
                     const value = parseInt(e.target.value)
@@ -422,17 +419,17 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
         </div>
       </div>
 
-            {/* Contrast */}
+            {}
       <div>
               <div className="flex justify-between items-center mb-3">
                 <label className="text-sm text-slate-700 font-medium">Contrast</label>
                 <span className="text-sm text-muted-foreground font-semibold min-w-[2rem] text-right">{contrast}</span>
               </div>
               <div className="relative">
-                <input 
-                  type="range" 
-                  min="-100" 
-                  max="100" 
+                <input
+                  type="range"
+                  min="-100"
+                  max="100"
                   value={contrast}
                   onChange={(e) => {
                     const value = parseInt(e.target.value)
@@ -444,17 +441,17 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
               </div>
       </div>
 
-            {/* Saturation */}
+            {}
       <div>
               <div className="flex justify-between items-center mb-3">
                 <label className="text-sm text-slate-700 font-medium">Saturation</label>
                 <span className="text-sm text-muted-foreground font-semibold min-w-[2rem] text-right">{saturation}</span>
           </div>
               <div className="relative">
-                <input 
-                  type="range" 
-                  min="-100" 
-                  max="100" 
+                <input
+                  type="range"
+                  min="-100"
+                  max="100"
                   value={saturation}
                   onChange={(e) => {
                     const value = parseInt(e.target.value)
@@ -466,17 +463,17 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
         </div>
       </div>
 
-            {/* Hue Rotation */}
+            {}
       <div>
               <div className="flex justify-between items-center mb-3">
                 <label className="text-sm text-slate-700 font-medium">Hue Rotation</label>
                 <span className="text-sm text-muted-foreground font-semibold min-w-[2rem] text-right">{hue}°</span>
               </div>
               <div className="relative">
-                <input 
-                  type="range" 
-                  min="-180" 
-                  max="180" 
+                <input
+                  type="range"
+                  min="-180"
+                  max="180"
                   value={hue}
                   onChange={(e) => {
                     const value = parseInt(e.target.value)
@@ -491,7 +488,7 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
         </div>
       </div>
 
-      {/* Reset Button */}
+      {}
       <div className="p-4 border-t border-slate-200">
         <button
           className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-primary to-red-500 text-white font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2"
@@ -503,14 +500,13 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
       </div>
 
       <style jsx>{`
-        /* Custom slider styles */
+
         input[type='range'] {
           -webkit-appearance: none;
           appearance: none;
           outline: none;
         }
 
-        /* Slider thumb - all types */
         input[type='range']::-webkit-slider-thumb {
           -webkit-appearance: none;
           appearance: none;
@@ -541,7 +537,6 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
           transform: scale(1.15);
         }
 
-        /* Purple slider (Brightness) */
         .slider-purple::-webkit-slider-thumb {
           background: #a855f7;
         }
@@ -549,7 +544,6 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
           background: #a855f7;
         }
 
-        /* Blue slider (Contrast) */
         .slider-blue::-webkit-slider-thumb {
           background: #3b82f6;
         }
@@ -557,7 +551,6 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
           background: #3b82f6;
         }
 
-        /* Pink slider (Saturation) */
         .slider-pink::-webkit-slider-thumb {
           background: #ec4899;
         }
@@ -565,7 +558,6 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
           background: #ec4899;
         }
 
-        /* Green slider (Hue) */
         .slider-green::-webkit-slider-thumb {
           background: #10b981;
         }
@@ -596,11 +588,11 @@ export function BackgroundPanel({ canvas }: BackgroundPanelProps) {
   return (
     <div className="h-full flex flex-col">
       <div className="flex-1 overflow-y-auto p-4 space-y-6">
-        {/* Preset Colors */}
+        {}
       <div>
           <h3 className="font-semibold text-slate-800 mb-1 text-base">Preset Colors</h3>
           <p className="text-xs text-muted-foreground mb-4">Quick color selection</p>
-          
+
         <div className="space-y-2">
             {presetColors.map((colorRow, rowIndex) => (
               <div key={rowIndex} className="grid grid-cols-4 gap-2">
@@ -618,11 +610,11 @@ export function BackgroundPanel({ canvas }: BackgroundPanelProps) {
       </div>
     </div>
 
-        {/* Custom Color Picker */}
+        {}
         <div>
           <h3 className="font-semibold text-slate-800 mb-1 text-base">Custom Color</h3>
           <p className="text-xs text-muted-foreground mb-4">Pick any color you want</p>
-          
+
           <div className="flex items-center gap-3">
             <input
               type="color"

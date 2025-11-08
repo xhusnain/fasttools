@@ -36,7 +36,7 @@ const announcements: Announcement[] = [
 ]
 
 export function AnnouncementBanner() {
-  const currentAnnouncement = announcements[0] // Show the first (most recent) announcement
+  const currentAnnouncement = announcements[0]
 
   if (!currentAnnouncement) return null
 
@@ -44,17 +44,17 @@ export function AnnouncementBanner() {
 
   return (
     <div className="relative max-w-4xl mx-auto">
-      {/* Professional square/rectangular design */}
+      {}
       <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl border border-border/50 overflow-hidden">
-        {/* Subtle background pattern */}
+        {}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5" />
         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/10 to-transparent rounded-full blur-2xl" />
-        
+
         <div className="relative">
-          {/* Header with badges */}
+          {}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
-              {/* Professional icon container */}
+              {}
               <div className="relative">
                 <div className="w-12 h-12 bg-gradient-to-br from-primary to-red-500 rounded-xl flex items-center justify-center shadow-lg">
                   <IconComponent className="h-6 w-6 text-white" />
@@ -63,19 +63,19 @@ export function AnnouncementBanner() {
                   <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse border-2 border-white" />
                 )}
               </div>
-              
-              {/* Title and badges */}
+
+              {}
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <Badge 
-                    variant="secondary" 
+                  <Badge
+                    variant="secondary"
                     className="bg-primary/20 text-foreground border-orange-400/30 text-xs font-medium px-2 py-1"
                   >
                     {currentAnnouncement.badge}
                   </Badge>
                   {currentAnnouncement.isLive && (
-                    <Badge 
-                      variant="destructive" 
+                    <Badge
+                      variant="destructive"
                       className="bg-red-500 text-white border-red-400 text-xs font-medium px-2 py-1 animate-pulse"
                     >
                       LIVE
@@ -87,10 +87,10 @@ export function AnnouncementBanner() {
                 </h3>
               </div>
             </div>
-            
-            {/* CTA Button */}
-            <Button 
-              asChild 
+
+            {}
+            <Button
+              asChild
               size="lg"
               className="bg-gradient-to-r from-primary to-red-500 hover:from-orange-600 hover:to-red-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-200 px-6 py-3 rounded-xl font-semibold"
             >
@@ -100,8 +100,8 @@ export function AnnouncementBanner() {
               </Link>
             </Button>
           </div>
-          
-          {/* Description */}
+
+          {}
           <div className="bg-secondary/50 rounded-xl p-4 border border-border/50">
             <p className="text-foreground text-sm leading-relaxed">
               {currentAnnouncement.description}
@@ -113,7 +113,6 @@ export function AnnouncementBanner() {
   )
 }
 
-// Alternative compact version for smaller spaces
 export function CompactAnnouncementBanner() {
   const currentAnnouncement = announcements[0]
 
@@ -145,9 +144,9 @@ export function CompactAnnouncementBanner() {
               </p>
             </div>
           </div>
-          
-          <Button 
-            asChild 
+
+          <Button
+            asChild
             size="sm"
             className="bg-gradient-to-r from-primary to-red-500 hover:from-orange-600 hover:to-red-600 text-white border-0 shadow-md hover:shadow-lg transition-all duration-200 px-4 py-2 rounded-lg font-medium"
           >

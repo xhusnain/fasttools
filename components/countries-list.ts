@@ -1,6 +1,6 @@
-// Global Currencies - Complete coverage of all world currencies
+
 export const currencies = [
-  // Major Global Currencies
+
   { code: "USD", symbol: "$", name: "US Dollar" },
   { code: "EUR", symbol: "€", name: "Euro" },
   { code: "GBP", symbol: "£", name: "British Pound" },
@@ -9,8 +9,7 @@ export const currencies = [
   { code: "CAD", symbol: "C$", name: "Canadian Dollar" },
   { code: "AUD", symbol: "A$", name: "Australian Dollar" },
   { code: "NZD", symbol: "NZ$", name: "New Zealand Dollar" },
-  
-  // Asia
+
   { code: "CNY", symbol: "¥", name: "Chinese Yuan" },
   { code: "INR", symbol: "₹", name: "Indian Rupee" },
   { code: "KRW", symbol: "₩", name: "South Korean Won" },
@@ -48,8 +47,7 @@ export const currencies = [
   { code: "TMT", symbol: "T", name: "Turkmenistani Manat" },
   { code: "UZS", symbol: "лв", name: "Uzbekistani Som" },
   { code: "MNT", symbol: "₮", name: "Mongolian Tugrik" },
-  
-  // Middle East & Africa
+
   { code: "SAR", symbol: "﷼", name: "Saudi Riyal" },
   { code: "AED", symbol: "د.إ", name: "UAE Dirham" },
   { code: "QAR", symbol: "﷼", name: "Qatari Riyal" },
@@ -93,8 +91,7 @@ export const currencies = [
   { code: "ZWL", symbol: "Z$", name: "Zimbabwean Dollar" },
   { code: "BIF", symbol: "FBu", name: "Burundian Franc" },
   { code: "RWF", symbol: "RF", name: "Rwandan Franc" },
-  
-  // Europe
+
   { code: "SEK", symbol: "kr", name: "Swedish Krona" },
   { code: "NOK", symbol: "kr", name: "Norwegian Krone" },
   { code: "DKK", symbol: "kr", name: "Danish Krone" },
@@ -108,8 +105,7 @@ export const currencies = [
   { code: "MKD", symbol: "ден", name: "Macedonian Denar" },
   { code: "ALL", symbol: "L", name: "Albanian Lek" },
   { code: "BAM", symbol: "КМ", name: "Bosnia-Herzegovina Convertible Mark" },
-  
-  // Americas
+
   { code: "MXN", symbol: "$", name: "Mexican Peso" },
   { code: "BRL", symbol: "R$", name: "Brazilian Real" },
   { code: "ARS", symbol: "$", name: "Argentine Peso" },
@@ -140,8 +136,7 @@ export const currencies = [
   { code: "AWG", symbol: "ƒ", name: "Aruban Florin" },
   { code: "ANG", symbol: "ƒ", name: "Netherlands Antillean Guilder" },
   { code: "XCD", symbol: "$", name: "East Caribbean Dollar" },
-  
-  // Oceania
+
   { code: "FJD", symbol: "FJ$", name: "Fijian Dollar" },
   { code: "PGK", symbol: "K", name: "Papua New Guinean Kina" },
   { code: "SBD", symbol: "SI$", name: "Solomon Islands Dollar" },
@@ -152,7 +147,6 @@ export const currencies = [
   { code: "TVD", symbol: "$", name: "Tuvaluan Dollar" }
 ]
 
-// Top 15 Most Spoken Languages Worldwide
 export const languages = [
   { code: "en", name: "English", native: "English" },
   { code: "zh", name: "Chinese", native: "中文" },
@@ -171,7 +165,6 @@ export const languages = [
   { code: "nl", name: "Dutch", native: "Nederlands" }
 ]
 
-// Helper function to get currency symbol
 export const getCurrencySymbol = (currencyCode: string) => {
   const currency = currencies.find(curr => curr.code === currencyCode)
   return currency ? currency.symbol : "$"

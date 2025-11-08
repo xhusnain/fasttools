@@ -6,7 +6,7 @@ export async function POST(req: Request) {
     const { topic, style } = await req.json()
 
     const prompt = `Generate a funny meme text for the topic: "${topic}"${style ? ` in a ${style} style` : ""}.
-    
+
 Return ONLY a JSON object with this exact format:
 {
   "top": "top text for the meme",
@@ -20,7 +20,6 @@ Make it funny, relatable, and suitable for a classic meme format.`
       prompt,
     }
 
-    // If user has provided their own OpenAI API key, use it
     if (process.env.OPENAI_API_KEY) {
       config.apiKey = process.env.OPENAI_API_KEY
     }

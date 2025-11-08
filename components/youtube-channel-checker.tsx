@@ -58,7 +58,7 @@ export function YoutubeChannelChecker() {
     setCheckingProgress(null)
 
     try {
-      // Parse comma-separated channel names
+
       const namesArray = channelNames
         .split(',')
         .map(name => name.trim())
@@ -76,7 +76,6 @@ export function YoutubeChannelChecker() {
         return
       }
 
-      // Initialize results array
       const initialResults: ChannelCheckResult[] = namesArray.map(name => ({
         channelName: name,
         available: false,
@@ -84,11 +83,9 @@ export function YoutubeChannelChecker() {
       }))
       setResults(initialResults)
 
-      // Check each channel name with 15-second delay
       for (let i = 0; i < namesArray.length; i++) {
         const currentName = namesArray[i]
-        
-        // Update progress
+
         setCheckingProgress({
           current: i + 1,
           total: namesArray.length,
@@ -96,25 +93,22 @@ export function YoutubeChannelChecker() {
         })
         setCurrentCheckingIndex(i)
 
-        // Start countdown timer
         let countdown = 15
         setTimeRemaining(countdown)
-        
+
         const timer = setInterval(() => {
           countdown--
           setTimeRemaining(countdown)
-          
+
           if (countdown <= 0) {
             clearInterval(timer)
           }
         }, 1000)
 
-        // Wait for 15 seconds
         await new Promise(resolve => setTimeout(resolve, 15000))
         clearInterval(timer)
         setTimeRemaining(0)
 
-        // Check the current channel name
         try {
           const response = await fetch('/api/youtube/channel-check', {
             method: 'POST',
@@ -132,7 +126,6 @@ export function YoutubeChannelChecker() {
           const data = await response.json()
           const result = data.results[0]
 
-          // Update the specific result
           setResults(prevResults => {
             const newResults = [...prevResults]
             newResults[i] = result
@@ -140,7 +133,7 @@ export function YoutubeChannelChecker() {
           })
 
         } catch (err) {
-          // Update with error
+
           setResults(prevResults => {
             const newResults = [...prevResults]
             newResults[i] = {
@@ -153,7 +146,6 @@ export function YoutubeChannelChecker() {
         }
       }
 
-      // Clear progress when done
       setCheckingProgress(null)
       setCurrentCheckingIndex(null)
 
@@ -220,7 +212,7 @@ export function YoutubeChannelChecker() {
             )}
           </Button>
 
-          {/* Progress and Timer Display */}
+          {}
           {checkingProgress && (
             <Card className="p-4 bg-card border-primary shadow-sm">
               <div className="space-y-3">
@@ -232,7 +224,7 @@ export function YoutubeChannelChecker() {
                     {checkingProgress.currentName}
                   </span>
                 </div>
-                
+
                 {timeRemaining > 0 && (
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
@@ -242,7 +234,7 @@ export function YoutubeChannelChecker() {
                       </span>
                     </div>
                     <div className="w-full bg-muted rounded-full h-2">
-                      <div 
+                      <div
                         className="bg-primary h-2 rounded-full transition-all duration-1000"
                         style={{ width: `${((15 - timeRemaining) / 15) * 100}%` }}
                       />
@@ -276,7 +268,7 @@ export function YoutubeChannelChecker() {
               currentCheckingIndex === index ? 'ring-2 ring-primary bg-muted/30' : ''
             }`}>
                 <div className="space-y-3">
-                  {/* Status Icon and Channel Name */}
+                  {}
                   <div className="flex items-center gap-2">
                     {result.error === 'Pending...' ? (
                       <>
@@ -313,8 +305,7 @@ export function YoutubeChannelChecker() {
                     )}
                   </div>
 
-
-                  {/* Action Button */}
+                  {}
                   {result.channelUrl && (
                     <Button
                       variant="outline"
@@ -327,7 +318,7 @@ export function YoutubeChannelChecker() {
                     </Button>
                   )}
 
-                  {/* Suggestions for Available Channels */}
+                  {}
                   {result.available && (
                     <div className="space-y-2">
                       <div className="flex items-center gap-1">

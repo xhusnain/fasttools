@@ -11,7 +11,6 @@ import { useToast } from "@/components/ui/toast"
 import { PDFDocument } from "pdf-lib"
 import * as pdfjsLib from "pdfjs-dist"
 
-// Configure PDF.js worker
 if (typeof window !== "undefined") {
   pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs`
 }
@@ -42,7 +41,7 @@ export function PDFSign() {
   const [pdfArrayBuffer, setPdfArrayBuffer] = useState<ArrayBuffer | null>(null)
   const [draggedSignature, setDraggedSignature] = useState<string | null>(null)
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
-  
+
   const fileInputRef = useRef<HTMLInputElement>(null)
   const pdfCanvasRef = useRef<HTMLCanvasElement>(null)
   const drawingCanvasRef = useRef<HTMLCanvasElement>(null)
@@ -55,13 +54,11 @@ export function PDFSign() {
     const selectedFile = event.target.files?.[0]
     if (!selectedFile) return
 
-    // Validate file type
     if (selectedFile.type !== "application/pdf") {
       showToast("error", "❌ Please upload a valid PDF file")
       return
     }
 
-    // Validate file size (max 100MB)
     const maxSize = 100 * 1024 * 1024
     if (selectedFile.size > maxSize) {
       showToast("error", "❌ File size exceeds 100MB limit")
@@ -69,7 +66,7 @@ export function PDFSign() {
     }
 
     try {
-      // Load PDF to get page count
+
       const arrayBuffer = await selectedFile.arrayBuffer()
       const pdfDoc = await PDFDocument.load(arrayBuffer)
       const pageCount = pdfDoc.getPageCount()
@@ -90,13 +87,11 @@ export function PDFSign() {
     const droppedFile = event.dataTransfer.files[0]
     if (!droppedFile) return
 
-    // Validate file type
     if (droppedFile.type !== "application/pdf") {
       showToast("error", "❌ Please upload a valid PDF file")
       return
     }
 
-    // Validate file size
     const maxSize = 100 * 1024 * 1024
     if (droppedFile.size > maxSize) {
       showToast("error", "❌ File size exceeds 100MB limit")
@@ -134,7 +129,6 @@ export function PDFSign() {
     }
   }
 
-  // Render PDF page
   useEffect(() => {
     if (!pdfArrayBuffer || !pdfCanvasRef.current) return
 
@@ -166,7 +160,6 @@ export function PDFSign() {
     renderPage()
   }, [pdfArrayBuffer, currentPage])
 
-  // Drawing canvas functions
   const startDrawing = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
     if (!drawingCanvasRef.current) return
     setIsDrawing(true)
@@ -258,7 +251,6 @@ export function PDFSign() {
     reader.readAsDataURL(imageFile)
   }
 
-  // Handle clicking on PDF canvas to place signature
   const handlePDFCanvasClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
     if (!signatureDataUrl) {
       showToast("error", "❌ Please create a signature first")
@@ -286,7 +278,6 @@ export function PDFSign() {
     showToast("success", "✅ Signature placed! Click and drag to reposition")
   }
 
-  // Handle signature dragging
   const handleSignatureMouseDown = (e: React.MouseEvent, sigId: string) => {
     e.stopPropagation()
     const sig = signatures.find((s) => s.id === sigId)
@@ -343,7 +334,6 @@ export function PDFSign() {
       const pdfDoc = await PDFDocument.load(arrayBuffer)
       setProgress(30)
 
-      // Group signatures by page
       const signaturesByPage = signatures.reduce((acc, sig) => {
         if (!acc[sig.page]) acc[sig.page] = []
         acc[sig.page].push(sig)
@@ -352,26 +342,22 @@ export function PDFSign() {
 
       setProgress(50)
 
-      // Add signatures to each page
-      const scale = 1.5 // Canvas rendering scale
+      const scale = 1.5
       for (const [pageNumStr, pageSigs] of Object.entries(signaturesByPage)) {
         const pageNum = parseInt(pageNumStr) - 1
         const page = pdfDoc.getPages()[pageNum]
         const { height: pageHeight } = page.getSize()
 
         for (const sig of pageSigs) {
-          // Fetch signature image
+
           const imageBytes = await fetch(sig.dataUrl).then((res) => res.arrayBuffer())
           const image = await pdfDoc.embedPng(imageBytes)
 
-          // Convert canvas coordinates to PDF coordinates
-          // Canvas coordinates are at scale 1.5, PDF is at scale 1.0
           const pdfX = sig.x / scale
           const pdfY = sig.y / scale
           const pdfWidth = sig.width / scale
           const pdfHeight = sig.height / scale
 
-          // Draw signature on page (PDF coordinates start from bottom-left)
           page.drawImage(image, {
             x: pdfX,
             y: pageHeight - pdfY - pdfHeight,
@@ -386,7 +372,6 @@ export function PDFSign() {
       const pdfBytes = await pdfDoc.save()
       setProgress(90)
 
-      // Download
       const blob = new Blob([pdfBytes], { type: "application/pdf" })
       const url = URL.createObjectURL(blob)
       const link = document.createElement("a")
@@ -399,8 +384,7 @@ export function PDFSign() {
 
       setProgress(100)
       showToast("success", `✅ Signed PDF downloaded successfully!`)
-      
-      // Reset after successful download
+
       setTimeout(() => {
         setProgress(0)
       }, 1000)
@@ -418,7 +402,7 @@ export function PDFSign() {
       <ToastContainer />
       <Card className="p-6 border-2 border-dashed border-border hover:border-primary/50 transition-colors">
         <div className="space-y-6">
-          {/* File Upload Area */}
+          {}
           {!file ? (
             <div
               onDrop={handleDrop}
@@ -463,13 +447,13 @@ export function PDFSign() {
             </div>
           )}
 
-          {/* Signature Creation */}
+          {}
           {file && (
             <>
               <div className="space-y-4">
                 <Label className="text-sm font-medium">Create Your Signature</Label>
-                
-                {/* Mode Selector */}
+
+                {}
                 <div className="flex gap-2">
                   <Button
                     type="button"
@@ -503,7 +487,7 @@ export function PDFSign() {
                   </Button>
                 </div>
 
-                {/* Draw Mode */}
+                {}
                 {signatureMode === "draw" && (
                   <div className="space-y-3">
                     <div className="border-2 border-border rounded-lg overflow-hidden bg-white">
@@ -545,7 +529,7 @@ export function PDFSign() {
                   </div>
                 )}
 
-                {/* Type Mode */}
+                {}
                 {signatureMode === "type" && (
                   <div className="space-y-3">
                     <Input
@@ -568,7 +552,7 @@ export function PDFSign() {
                   </div>
                 )}
 
-                {/* Upload Mode */}
+                {}
                 {signatureMode === "upload" && (
                   <div className="space-y-3">
                     <div
@@ -590,7 +574,7 @@ export function PDFSign() {
                   </div>
                 )}
 
-                {/* Signature Preview */}
+                {}
                 {signatureDataUrl && (
                   <div className="p-4 bg-muted rounded-lg">
                     <p className="text-sm font-medium mb-2">Signature Preview:</p>
@@ -601,7 +585,7 @@ export function PDFSign() {
                 )}
               </div>
 
-              {/* PDF Preview with Signatures */}
+              {}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <Label className="text-sm font-medium">PDF Preview - Click to Place Signature</Label>
@@ -630,7 +614,7 @@ export function PDFSign() {
                   </div>
                 </div>
 
-                <div 
+                <div
                   className="relative border-2 border-border rounded-lg overflow-auto max-h-[600px] bg-gray-100"
                   onMouseMove={handleCanvasMouseMove}
                   onMouseUp={handleCanvasMouseUp}
@@ -642,7 +626,7 @@ export function PDFSign() {
                     className="w-full cursor-crosshair"
                     style={{ display: "block" }}
                   />
-                  {/* Signature Overlays */}
+                  {}
                   {signatures
                     .filter((sig) => sig.page === currentPage)
                     .map((sig) => (
@@ -687,7 +671,7 @@ export function PDFSign() {
                 )}
               </div>
 
-              {/* Added Signatures */}
+              {}
               {signatures.length > 0 && (
                 <div className="space-y-3">
                   <Label className="text-sm font-medium">Added Signatures ({signatures.length})</Label>
@@ -714,7 +698,7 @@ export function PDFSign() {
                 </div>
               )}
 
-              {/* Progress Bar */}
+              {}
               {loading && progress > 0 && (
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
@@ -725,7 +709,7 @@ export function PDFSign() {
                 </div>
               )}
 
-              {/* Download Button */}
+              {}
               <Button
                 onClick={downloadSignedPDF}
                 disabled={loading || signatures.length === 0}
@@ -747,7 +731,7 @@ export function PDFSign() {
             </>
           )}
 
-          {/* Features */}
+          {}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4 border-t border-border">
             <div className="text-center">
               <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-2">

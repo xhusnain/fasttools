@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { 
+import {
   getRandomUserAgent,
   getCachedData,
   setCachedData,
@@ -9,17 +9,15 @@ import {
   getTimerStatus
 } from '@/lib/instagram-security'
 
-// Validate username
 const validateUsername = (username: string): boolean => {
   const usernameRegex = /^[a-zA-Z0-9._]{1,30}$/
   return usernameRegex.test(username) && username.length >= 1 && username.length <= 30
 }
 
-// Start timer endpoint
 export async function POST(request: NextRequest) {
   try {
     const { username } = await request.json()
-    
+
     if (!username) {
       return NextResponse.json(
         { error: 'Username is required' },
@@ -63,7 +61,6 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Check timer status endpoint
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url)
@@ -95,7 +92,6 @@ export async function GET(request: NextRequest) {
   }
 }
 
-// End timer endpoint
 export async function DELETE(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url)

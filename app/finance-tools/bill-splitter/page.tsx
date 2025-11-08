@@ -488,16 +488,16 @@ export const metadata: Metadata = {
       description: "Free bill splitter calculator for restaurants, groups, and shared expenses. Split bills evenly or by items, calculate tips and tax, track who owes what. Perfect for friends, roommates, and travel groups. No cost, instant results.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: { 
-        "@type": "Offer", 
-        price: "0", 
+      offers: {
+        "@type": "Offer",
+        price: "0",
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
       featureList: [
-        "Even/itemized split", 
-        "Tip & tax", 
-        "Per‑person totals", 
+        "Even/itemized split",
+        "Tip & tax",
+        "Per‑person totals",
         "Share results",
         "Split bill calculator",
         "Group expense calculator",
@@ -511,9 +511,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: { 
-        "@type": "Organization", 
-        name: "FastTools", 
+      publisher: {
+        "@type": "Organization",
+        name: "FastTools",
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -557,21 +557,21 @@ export default function BillSplitterPage() {
 
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 xl:grid-cols-4 gap-8">
-            {/* Main Content */}
+            {}
             <div className="xl:col-span-3 space-y-8">
-              {/* Hero Section */}
+              {}
         <div className="text-center mb-8 animate-fade-in-up">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
                   Free Bill Splitter Calculator – Split Bills, Tips & Shared Expenses ({getCurrentYear()})
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  Free bill splitter calculator for restaurants, groups, and shared expenses. Split bills evenly or by items, 
-                  calculate tips and tax, track who owes what. Perfect for friends, roommates, and travel groups. 
+                  Free bill splitter calculator for restaurants, groups, and shared expenses. Split bills evenly or by items,
+                  calculate tips and tax, track who owes what. Perfect for friends, roommates, and travel groups.
                   No cost, instant results.
                 </p>
         </div>
 
-              {/* Tool Card */}
+              {}
               <Card className="border border-border shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardHeader className="text-center pb-4">
                   <CardTitle className="text-2xl font-bold text-foreground flex items-center justify-center gap-2">
@@ -579,7 +579,7 @@ export default function BillSplitterPage() {
                     Advanced Bill Splitter
                   </CardTitle>
                   <CardDescription className="text-base text-muted-foreground">
-                    Split bills fairly with friends, roommates, and groups. Calculate tips, tax, and per-person totals 
+                    Split bills fairly with friends, roommates, and groups. Calculate tips, tax, and per-person totals
                     instantly. Features equal split, itemized split, and percentage-based splitting for any situation.
                   </CardDescription>
                 </CardHeader>
@@ -588,7 +588,7 @@ export default function BillSplitterPage() {
                 </CardContent>
               </Card>
 
-              {/* Features & Usage Guide */}
+              {}
               <div className="space-y-6">
                 <Card className="border border-border shadow-sm">
                   <CardHeader>
@@ -605,8 +605,8 @@ export default function BillSplitterPage() {
                           Smart Bill Splitting
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Our intelligent bill splitter supports equal splits, itemized splits, and percentage-based 
-                          splitting. Features automatic tip calculation, tax handling, and fair share algorithms 
+                          Our intelligent bill splitter supports equal splits, itemized splits, and percentage-based
+                          splitting. Features automatic tip calculation, tax handling, and fair share algorithms
                           for any group size or expense type.
                         </p>
                       </div>
@@ -616,8 +616,8 @@ export default function BillSplitterPage() {
                           Tip & Tax Integration
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Automatically calculate tips and taxes with our integrated calculator. Support for 
-                          different tip percentages, service charges, and tax rates. Features quick tip buttons 
+                          Automatically calculate tips and taxes with our integrated calculator. Support for
+                          different tip percentages, service charges, and tax rates. Features quick tip buttons
                           and custom percentage inputs for any situation.
                         </p>
                       </div>
@@ -627,8 +627,8 @@ export default function BillSplitterPage() {
                           Group Management
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Manage multiple people and complex splitting scenarios with ease. Features person 
-                          assignment, custom percentages, and detailed breakdowns. Perfect for roommates, 
+                          Manage multiple people and complex splitting scenarios with ease. Features person
+                          assignment, custom percentages, and detailed breakdowns. Perfect for roommates,
                           travel groups, and business meals.
                         </p>
                       </div>
@@ -638,8 +638,8 @@ export default function BillSplitterPage() {
                           Detailed Breakdowns
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Get comprehensive breakdowns showing original bill, tips, taxes, and per-person totals. 
-                          Features visual summaries, copy functionality, and shareable results for easy 
+                          Get comprehensive breakdowns showing original bill, tips, taxes, and per-person totals.
+                          Features visual summaries, copy functionality, and shareable results for easy
                           communication with group members.
                         </p>
                       </div>
@@ -662,8 +662,8 @@ export default function BillSplitterPage() {
                           Smart Bill Splitter Online
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Our smart bill splitter online uses AI-powered algorithms to analyze splitting scenarios, 
-                          suggest fair distributions, and automatically optimize for different group dynamics. 
+                          Our smart bill splitter online uses AI-powered algorithms to analyze splitting scenarios,
+                          suggest fair distributions, and automatically optimize for different group dynamics.
                           Features intelligent recommendations and adaptive splitting strategies.
                         </p>
                       </div>
@@ -673,8 +673,8 @@ export default function BillSplitterPage() {
                           Progress-Based Expense Tracker
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Track your group expenses with visual progress indicators, spending patterns, and 
-                          fairness metrics. Our progress-based expense tracker shows how balanced your 
+                          Track your group expenses with visual progress indicators, spending patterns, and
+                          fairness metrics. Our progress-based expense tracker shows how balanced your
                           splitting is and suggests improvements for future expenses.
                         </p>
                       </div>
@@ -684,8 +684,8 @@ export default function BillSplitterPage() {
                           Multi-Group Bill Calculator
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Manage multiple groups and splitting scenarios simultaneously. Track different 
-                          expense types, group dynamics, and splitting preferences. Perfect for people 
+                          Manage multiple groups and splitting scenarios simultaneously. Track different
+                          expense types, group dynamics, and splitting preferences. Perfect for people
                           who split expenses across different friend groups and situations.
                         </p>
                       </div>
@@ -695,8 +695,8 @@ export default function BillSplitterPage() {
                           Bill Splitter with Gamification
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Turn bill splitting into an engaging experience with our gamified features. Earn 
-                          points for fair splitting, unlock achievement badges, and compete with friends 
+                          Turn bill splitting into an engaging experience with our gamified features. Earn
+                          points for fair splitting, unlock achievement badges, and compete with friends
                           in expense management challenges.
                         </p>
                       </div>
@@ -719,8 +719,8 @@ export default function BillSplitterPage() {
                           Split Bills with Friends
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Our advanced bill splitter makes splitting bills with friends effortless. Features smart algorithms 
-                          for fair distribution, automatic tip calculations, and transparent breakdowns. Perfect for dinner 
+                          Our advanced bill splitter makes splitting bills with friends effortless. Features smart algorithms
+                          for fair distribution, automatic tip calculations, and transparent breakdowns. Perfect for dinner
                           outings, group activities, and shared expenses among friends.
                         </p>
                       </div>
@@ -730,8 +730,8 @@ export default function BillSplitterPage() {
                           Expense Sharing App
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Transform your expense management with our comprehensive expense sharing app. Track shared costs, 
-                          manage group finances, and maintain transparency in all financial interactions. Features real-time 
+                          Transform your expense management with our comprehensive expense sharing app. Track shared costs,
+                          manage group finances, and maintain transparency in all financial interactions. Features real-time
                           calculations and detailed expense reports.
                         </p>
                       </div>
@@ -741,8 +741,8 @@ export default function BillSplitterPage() {
                           Shared Expense Tracker
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Monitor and manage all shared expenses with our intelligent expense tracker. Features visual 
-                          progress indicators, spending analytics, and fairness metrics. Perfect for roommates, travel 
+                          Monitor and manage all shared expenses with our intelligent expense tracker. Features visual
+                          progress indicators, spending analytics, and fairness metrics. Perfect for roommates, travel
                           groups, and long-term expense management.
                         </p>
                       </div>
@@ -752,8 +752,8 @@ export default function BillSplitterPage() {
                           Split Restaurant Bill
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Handle complex restaurant bills with ease using our specialized restaurant bill splitter. 
-                          Features itemized splitting, tip calculations, tax handling, and per-person breakdowns. 
+                          Handle complex restaurant bills with ease using our specialized restaurant bill splitter.
+                          Features itemized splitting, tip calculations, tax handling, and per-person breakdowns.
                           Perfect for group dining and business meals.
                         </p>
                       </div>
@@ -763,8 +763,8 @@ export default function BillSplitterPage() {
                           Calculate Who Owes What
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Get crystal-clear breakdowns showing exactly who owes what with our intelligent calculator. 
-                          Features detailed per-person calculations, payment tracking, and transparent reporting. 
+                          Get crystal-clear breakdowns showing exactly who owes what with our intelligent calculator.
+                          Features detailed per-person calculations, payment tracking, and transparent reporting.
                           Eliminate confusion and ensure fair financial settlements.
                         </p>
                       </div>
@@ -774,8 +774,8 @@ export default function BillSplitterPage() {
                           Fair Bill Splitting
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Ensure equitable distribution of expenses with our fair bill splitting algorithm. Features 
-                          weighted splitting, proportional calculations, and intelligent recommendations. Perfect for 
+                          Ensure equitable distribution of expenses with our fair bill splitting algorithm. Features
+                          weighted splitting, proportional calculations, and intelligent recommendations. Perfect for
                           maintaining harmony in group financial situations.
                         </p>
                       </div>
@@ -840,7 +840,7 @@ export default function BillSplitterPage() {
                   </CardContent>
                 </Card>
 
-                {/* Receipt Splitter Keywords Content */}
+                {}
                 <Card className="border border-border shadow-sm">
                   <CardHeader>
                     <CardTitle className="text-xl font-bold text-foreground flex items-center gap-2">
@@ -875,8 +875,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">How to split a bill fairly with friends and roommates</h3>
                         <p className="text-sm text-muted-foreground">
-                          Fair bill splitting requires clear communication, agreed-upon rules, and the right tools. 
-                          Our advanced bill splitter supports equal splits, itemized splits, and percentage-based 
+                          Fair bill splitting requires clear communication, agreed-upon rules, and the right tools.
+                          Our advanced bill splitter supports equal splits, itemized splits, and percentage-based
                           splitting to ensure everyone pays their fair share without awkward conversations.
                         </p>
                       </div>
@@ -884,8 +884,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Restaurant bill splitter and dining expense management</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our restaurant bill splitter handles complex dining scenarios with multiple people, 
-                          different orders, and varying consumption. Features tip calculation, tax handling, 
+                          Our restaurant bill splitter handles complex dining scenarios with multiple people,
+                          different orders, and varying consumption. Features tip calculation, tax handling,
                           and itemized splitting for fair restaurant expense management.
                         </p>
                       </div>
@@ -893,8 +893,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Roommate expense tracker and household bill splitting</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our roommate expense tracker manages shared living costs including rent, utilities, 
-                          groceries, and household expenses. Features automatic calculations, payment tracking, 
+                          Our roommate expense tracker manages shared living costs including rent, utilities,
+                          groceries, and household expenses. Features automatic calculations, payment tracking,
                           and detailed breakdowns for transparent roommate financial management.
                         </p>
                       </div>
@@ -902,8 +902,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Travel expense splitter and vacation cost sharing</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our travel expense splitter handles complex vacation costs including accommodation, 
-                          transportation, meals, and activities. Features group management, expense categories, 
+                          Our travel expense splitter handles complex vacation costs including accommodation,
+                          transportation, meals, and activities. Features group management, expense categories,
                           and automatic calculations for stress-free travel expense sharing.
                         </p>
                       </div>
@@ -911,8 +911,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Tip calculator and gratuity splitting</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our integrated tip calculator handles different tip percentages, service charges, 
-                          and gratuity splitting. Features quick tip buttons, custom percentages, and 
+                          Our integrated tip calculator handles different tip percentages, service charges,
+                          and gratuity splitting. Features quick tip buttons, custom percentages, and
                           automatic per-person tip calculations for any dining situation.
                         </p>
                       </div>
@@ -920,8 +920,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Dutch pay calculator and equal expense splitting</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our Dutch pay calculator ensures equal expense splitting for group activities. 
-                          Features automatic calculations, fair share algorithms, and detailed breakdowns 
+                          Our Dutch pay calculator ensures equal expense splitting for group activities.
+                          Features automatic calculations, fair share algorithms, and detailed breakdowns
                           to eliminate confusion and ensure everyone pays their fair share.
                         </p>
                       </div>
@@ -929,8 +929,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Group expense calculator and shared cost management</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our group expense calculator manages complex shared costs across multiple people 
-                          and expense types. Features person assignment, custom percentages, and comprehensive 
+                          Our group expense calculator manages complex shared costs across multiple people
+                          and expense types. Features person assignment, custom percentages, and comprehensive
                           tracking for transparent group financial management.
                         </p>
                       </div>
@@ -938,8 +938,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Smart bill splitter online and AI-powered expense division</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our smart bill splitter online uses advanced algorithms to analyze splitting scenarios, 
-                          suggest fair distributions, and optimize for different group dynamics. Features 
+                          Our smart bill splitter online uses advanced algorithms to analyze splitting scenarios,
+                          suggest fair distributions, and optimize for different group dynamics. Features
                           intelligent recommendations and adaptive splitting strategies for maximum fairness.
                         </p>
                       </div>
@@ -947,8 +947,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Progress-based expense tracker and spending analytics</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our progress-based expense tracker provides visual insights into group spending patterns, 
-                          fairness metrics, and balance indicators. Features spending analytics, trend analysis, 
+                          Our progress-based expense tracker provides visual insights into group spending patterns,
+                          fairness metrics, and balance indicators. Features spending analytics, trend analysis,
                           and recommendations for improved expense management.
                         </p>
                       </div>
@@ -956,8 +956,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Multi-group bill calculator and comprehensive expense management</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our multi-group bill calculator manages expenses across different friend groups, 
-                          living situations, and activity types. Features group separation, expense categorization, 
+                          Our multi-group bill calculator manages expenses across different friend groups,
+                          living situations, and activity types. Features group separation, expense categorization,
                           and comprehensive tracking for complex social financial management.
                         </p>
                       </div>
@@ -965,8 +965,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Bill splitter with gamification and social features</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our gamified bill splitter makes expense management engaging and fun. Features 
-                          achievement badges, progress tracking, and social challenges to encourage fair 
+                          Our gamified bill splitter makes expense management engaging and fun. Features
+                          achievement badges, progress tracking, and social challenges to encourage fair
                           splitting and responsible financial behavior among friends and roommates.
                         </p>
                       </div>
@@ -974,8 +974,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Expense habit tracker and financial discipline</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our expense habit tracker helps build consistent splitting habits and financial 
-                          discipline. Features habit monitoring, reminder systems, and progress tracking 
+                          Our expense habit tracker helps build consistent splitting habits and financial
+                          discipline. Features habit monitoring, reminder systems, and progress tracking
                           to maintain fair expense management routines.
                         </p>
                       </div>
@@ -983,9 +983,9 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">How do I use the Bill Splitter Calculator effectively?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Using our bill splitter calculator is simple: enter the total bill amount, select the number of people, 
-                          choose your tip percentage, and click "Split Bill". The calculator will instantly show each person's 
-                          share, including the original bill portion and tip amount. Perfect for restaurants, group activities, 
+                          Using our bill splitter calculator is simple: enter the total bill amount, select the number of people,
+                          choose your tip percentage, and click "Split Bill". The calculator will instantly show each person's
+                          share, including the original bill portion and tip amount. Perfect for restaurants, group activities,
                           and shared expenses.
                         </p>
                       </div>
@@ -993,9 +993,9 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Can I split bills unequally with different amounts per person?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Yes! Our advanced bill splitter supports unequal splitting by allowing you to assign specific amounts 
-                          or percentages to each participant. This is perfect for situations where people ordered different 
-                          items or have different consumption levels. Features custom percentage inputs and weighted splitting 
+                          Yes! Our advanced bill splitter supports unequal splitting by allowing you to assign specific amounts
+                          or percentages to each participant. This is perfect for situations where people ordered different
+                          items or have different consumption levels. Features custom percentage inputs and weighted splitting
                           algorithms.
                         </p>
                       </div>
@@ -1003,8 +1003,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Does the calculator account for tips and taxes automatically?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Absolutely! Our bill splitter automatically calculates tips and taxes based on your input. Simply 
-                          enter the tip percentage (or use our quick tip buttons), and the calculator will distribute the 
+                          Absolutely! Our bill splitter automatically calculates tips and taxes based on your input. Simply
+                          enter the tip percentage (or use our quick tip buttons), and the calculator will distribute the
                           tip and tax amounts fairly among all participants. Features automatic per-person tip calculations.
                         </p>
                       </div>
@@ -1012,8 +1012,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Is the Bill Splitter Calculator completely free to use?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Yes, our bill splitter calculator is 100% free with no hidden costs, registration requirements, 
-                          or usage limits. Access all features including unequal splitting, tip calculations, and detailed 
+                          Yes, our bill splitter calculator is 100% free with no hidden costs, registration requirements,
+                          or usage limits. Access all features including unequal splitting, tip calculations, and detailed
                           breakdowns without any charges. Perfect for students, friends, and anyone needing fair bill splitting.
                         </p>
                       </div>
@@ -1021,8 +1021,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Can I save and share my bill splitting calculations?</h3>
                         <p className="text-sm text-muted-foreground">
-                          While our calculator doesn't store data permanently, you can easily copy the results using our 
-                          "Copy Results" button and share them via text, email, or messaging apps. This ensures transparency 
+                          While our calculator doesn't store data permanently, you can easily copy the results using our
+                          "Copy Results" button and share them via text, email, or messaging apps. This ensures transparency
                           and eliminates confusion about who owes what amount.
                         </p>
                       </div>
@@ -1030,8 +1030,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">How do I handle shared and individual expenses in one bill?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our bill splitter handles mixed expenses perfectly. For shared items, divide the cost equally among 
-                          all participants. For individual items, assign them to specific people. The calculator will 
+                          Our bill splitter handles mixed expenses perfectly. For shared items, divide the cost equally among
+                          all participants. For individual items, assign them to specific people. The calculator will
                           automatically compute each person's total share, combining both shared and individual expenses.
                         </p>
                       </div>
@@ -1039,8 +1039,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Can I use the calculator for large groups and events?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Yes! Our bill splitter supports any number of people, from small groups of 2-4 to large events 
-                          with 20+ participants. Features optimized calculations for large groups, clear breakdowns, and 
+                          Yes! Our bill splitter supports any number of people, from small groups of 2-4 to large events
+                          with 20+ participants. Features optimized calculations for large groups, clear breakdowns, and
                           easy-to-read results. Perfect for weddings, corporate events, and large gatherings.
                         </p>
                       </div>
@@ -1048,8 +1048,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Does the tool support different currencies and international use?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our bill splitter works with any currency - simply enter amounts in your local currency. While 
-                          the display shows dollar signs, you can use any currency symbol mentally. We're working on 
+                          Our bill splitter works with any currency - simply enter amounts in your local currency. While
+                          the display shows dollar signs, you can use any currency symbol mentally. We're working on
                           multi-currency support for future updates to make international use even easier.
                         </p>
                       </div>
@@ -1057,8 +1057,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">How accurate is the Bill Splitter Calculator for complex splitting scenarios?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our calculator uses precise algorithms to ensure 100% accuracy in all splitting scenarios. Features 
-                          decimal precision, rounding options, and error-free calculations. Whether splitting equally, by 
+                          Our calculator uses precise algorithms to ensure 100% accuracy in all splitting scenarios. Features
+                          decimal precision, rounding options, and error-free calculations. Whether splitting equally, by
                           percentage, or itemized, you can trust our calculator for accurate and fair results every time.
                         </p>
                       </div>
@@ -1066,8 +1066,8 @@ export default function BillSplitterPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Is there a mobile app version available for on-the-go splitting?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our bill splitter is fully optimized for mobile browsers and works perfectly on smartphones and 
-                          tablets. While we don't have a dedicated app yet, our mobile-responsive design provides the same 
+                          Our bill splitter is fully optimized for mobile browsers and works perfectly on smartphones and
+                          tablets. While we don't have a dedicated app yet, our mobile-responsive design provides the same
                           functionality as a native app. A dedicated mobile app is in development for enhanced convenience.
                         </p>
                       </div>
@@ -1106,7 +1106,6 @@ export default function BillSplitterPage() {
               </div>
             </div>
 
-            {/* Sidebar */}
             <div className="hidden xl:block w-80">
               <div className="sticky top-32 space-y-6">
                 <div>

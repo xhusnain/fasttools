@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Free image tools: OCR converter, photo editor, background blur, image processing. Professional results, 100% secure.",
   keywords: [
-    // High volume primary keywords
+
     "free image editor online",
     "free image editor program",
     "free image editor",
@@ -21,8 +21,7 @@ export const metadata: Metadata = {
     "free image editor software download",
     "free image editor best",
     "free image editor app",
-    
-    // Platform specific
+
     "free image editor for mac",
     "free image editor mac",
     "free image editor iphone",
@@ -36,15 +35,13 @@ export const metadata: Metadata = {
     "free image editor windows 7",
     "best free image editor iphone",
     "free mac image editor like paint",
-    
-    // AI powered
+
     "free image editor ai",
     "free ai image editor no sign up",
     "free ai image editor like chatgpt",
     "free image tools ai",
     "free image generation tools",
-    
-    // Alternative to popular software
+
     "free image editor online like photoshop",
     "free image editor like photoshop",
     "best free image editor like photoshop",
@@ -55,16 +52,14 @@ export const metadata: Metadata = {
     "free image editor like lightroom",
     "free image editor like paint",
     "free image editor photoshop",
-    
-    // Online tools
+
     "image tools online free",
     "free image tools online",
     "free image editor website",
     "free tool online",
     "free image editor no download",
     "free tools.com",
-    
-    // Features & functionality
+
     "free image editor and download",
     "free image editor and generator ai",
     "free image editor and generator",
@@ -78,16 +73,14 @@ export const metadata: Metadata = {
     "free image annotation tools",
     "free image compression tools",
     "free image creation tools",
-    
-    // Specific tools
+
     "free image editor pixlr",
     "free image editor gimp",
     "free image to text",
     "free image text editor online",
     "image tool software",
     "free image recovery tool",
-    
-    // Quality & comparison
+
     "what is the highest quality image file",
     "image comparison tools",
     "best free ai tools for logo design",
@@ -95,8 +88,7 @@ export const metadata: Metadata = {
     "where can i find free images to download",
     "where to find free images to use",
     "best image to vector software",
-    
-    // AI features & restrictions
+
     "free ai image editor no restrictions",
     "free ai image editor no login",
     "free ai image editor no sign up",
@@ -114,8 +106,7 @@ export const metadata: Metadata = {
     "free image generation tools ai",
     "free ai tools image to video generator",
     "free tools image to video",
-    
-    // Online & software
+
     "free online image editor software",
     "free online image editor no sign up",
     "free image editor no sign up",
@@ -125,8 +116,7 @@ export const metadata: Metadata = {
     "free photo tools",
     "free photo tools online",
     "free image editor software for windows 10",
-    
-    // Specific features
+
     "free image eraser tool",
     "free image eraser tool online",
     "free image markup tool",
@@ -153,8 +143,7 @@ export const metadata: Metadata = {
     "free image design tools",
     "free image processing tools",
     "free image converter tools",
-    
-    // Platform specific (additional)
+
     "free image editor osx",
     "free image editor browser",
     "free image editor for iphone",
@@ -182,8 +171,7 @@ export const metadata: Metadata = {
     "free image editor on iphone",
     "free image editor portable",
     "free image editor phone",
-    
-    // App specific
+
     "free image editor app android",
     "free image editor app iphone",
     "free image editor add text",
@@ -204,19 +192,16 @@ export const metadata: Metadata = {
     "free image editor pdf",
     "free image editor paint",
     "free image editor pixel",
-    
-    // Year specific
+
     "best free image editor 2025",
     "best free image editor 2024",
-    
-    // Other tools
+
     "tools to create 3d models",
     "3u tool free download for windows 10",
     "freehand 9.0 software free download",
     "free download windows 7 image file",
     "chatpy image editor free",
-    
-    // Advanced editing features
+
     "free image healing tool",
     "free image eraser tool",
     "free image editor eraser",
@@ -240,16 +225,14 @@ export const metadata: Metadata = {
     "free image editor rotate",
     "free image editor filter",
     "free image resizing tool download",
-    
-    // No copyright & resources
+
     "free tool images no copyright",
     "free image of tools",
     "toolbox image free",
     "tool kit pic",
     "image j tool",
     "imagej tool download",
-    
-    // Creator & generator tools
+
     "free image editor creator",
     "free image background editor ai",
     "free image editor photoshop alternative",
@@ -312,16 +295,14 @@ export const metadata: Metadata = {
     "free image editing tools for mac",
     "free image editor easy",
     "free ai image editor iphone",
-    
-    // Social media & commercial use
+
     "free image tools for social media",
     "name of tools with picture",
     "where to get free image",
     "what images can i use for free",
     "can i use free images for commercial use",
     "name of tools with images",
-    
-    // Online editor variants
+
     "online free image editor photoshop",
     "free online image editor remove background",
     "free online image editor add text",
@@ -335,8 +316,7 @@ export const metadata: Metadata = {
     "free online image editor transparent background",
     "free online image editor dot screen halftone",
     "is a free image editor",
-    
-    // Text to image & conversion
+
     "text to image free tools",
     "ai text to image free tools",
     "text to image free ai tools online",
@@ -344,8 +324,7 @@ export const metadata: Metadata = {
     "free image to video tools ai",
     "free image to animation tools",
     "pdf to image free tool",
-    
-    // Additional tool keywords from research
+
     "free image tools ai",
     "free image manipulation tools",
     "best free image upscaling tools",
@@ -465,7 +444,7 @@ export default function ImageToolsPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {/* Hero Section */}
+                {}
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <GHeader
                     title="Free Image Tools – OCR, Photo Editor, Background Blur Online"
@@ -475,7 +454,7 @@ export default function ImageToolsPage() {
                   />
                 </div>
 
-                {/* Mobile Ad Space */}
+                {}
                 <div className="lg:hidden mb-6">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
@@ -512,7 +491,7 @@ export default function ImageToolsPage() {
           ))}
         </div>
 
-                {/* Content Sections */}
+                {}
                 <div className="space-y-5 animate-fade-in-up animation-delay-200">
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Professional Image Processing & OCR Technology</h2>
@@ -662,7 +641,7 @@ export default function ImageToolsPage() {
                     </p>
                   </div>
 
-                  {/* Related Business Tools Section */}
+                  {}
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Related Business & Finance Tools</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -694,7 +673,7 @@ export default function ImageToolsPage() {
                     </div>
                   </div>
 
-                  {/* FAQ Section */}
+                  {}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -860,7 +839,7 @@ export default function ImageToolsPage() {
                   </div>
                 </div>
               </div>
-              {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
+              {}
               <div className="hidden lg:block w-72">
                 <div className="sticky top-32 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

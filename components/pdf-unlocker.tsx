@@ -14,7 +14,6 @@ import { useToast } from "@/components/ui/toast"
 import { PDFDocument } from "pdf-lib"
 import * as pdfjsLib from "pdfjs-dist"
 
-// Configure PDF.js worker
 if (typeof window !== "undefined") {
   pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs`
 }
@@ -30,33 +29,27 @@ export function PDFUnlocker() {
   const fileInputRef = useRef<HTMLInputElement>(null)
   const { showToast, ToastContainer } = useToast()
 
-  /**
-   * Detect PDF encryption type using PDF.js
-   * - none: No encryption
-   * - owner: Restrictions only (can unlock without password)
-   * - user: Password protected (need password from user)
-   */
   const detectEncryptionType = async (pdfFile: File): Promise<"none" | "owner" | "user"> => {
     try {
       const arrayBuffer = await pdfFile.arrayBuffer()
-      
+
       try {
-        // Try loading without password
+
         const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer })
         const pdfDoc = await loadingTask.promise
-        
+
         if (pdfDoc.numPages > 0) {
-          // Check if encrypted
+
           const data = await pdfDoc.getData()
           const isEncrypted = String.fromCharCode.apply(null, Array.from(data.slice(0, 1000))).includes('/Encrypt')
-          
+
           return isEncrypted ? "owner" : "none"
         }
-        
+
         return "none"
-        
+
       } catch (error: any) {
-        // Password exception means user password required
+
         if (error.name === 'PasswordException' || error.message?.includes('password')) {
           return "user"
         }
@@ -79,16 +72,16 @@ export function PDFUnlocker() {
         showToast("error", "File size must be less than 50MB")
         return
       }
-      
+
       setFile(uploadedFile)
       setUnlocked(false)
       setUnlockedPdfBytes(null)
       setPassword("")
       setProgress(0)
-      
+
       const encType = await detectEncryptionType(uploadedFile)
       setEncryptionType(encType)
-      
+
       if (encType === "none") {
         showToast("success", "✅ PDF loaded - no protection found")
       } else if (encType === "owner") {
@@ -111,16 +104,16 @@ export function PDFUnlocker() {
         showToast("error", "File size must be less than 50MB")
         return
       }
-      
+
       setFile(droppedFile)
       setUnlocked(false)
       setUnlockedPdfBytes(null)
       setPassword("")
       setProgress(0)
-      
+
       const encType = await detectEncryptionType(droppedFile)
       setEncryptionType(encType)
-      
+
       if (encType === "none") {
         showToast("success", "✅ PDF loaded - no protection found")
       } else if (encType === "owner") {
@@ -147,14 +140,9 @@ export function PDFUnlocker() {
     }
   }
 
-  /**
-   * Render PDF pages to images and create new unlocked PDF
-   * This preserves all visual content while removing encryption
-   */
   const renderPDFToImages = async (arrayBuffer: ArrayBuffer, userPassword?: string): Promise<Uint8Array> => {
     setProgress(5)
-    
-    // Load PDF with password (if provided)
+
     let pdfDoc
     try {
       const loadingTask = pdfjsLib.getDocument({
@@ -168,39 +156,33 @@ export function PDFUnlocker() {
       }
       throw error
     }
-    
+
     const numPages = pdfDoc.numPages
     setProgress(10)
-    
-    // Create new PDF
+
     const newPdf = await PDFDocument.create()
     setProgress(15)
-    
-    // Render each page to image
+
     for (let pageNum = 1; pageNum <= numPages; pageNum++) {
       const page = await pdfDoc.getPage(pageNum)
       const viewport = page.getViewport({ scale: 2.0 })
-      
-      // Create canvas
+
       const canvas = document.createElement('canvas')
       canvas.width = viewport.width
       canvas.height = viewport.height
       const context = canvas.getContext('2d', { alpha: false })
-      
+
       if (!context) throw new Error("Failed to get canvas context")
-      
-      // White background
+
       context.fillStyle = 'white'
       context.fillRect(0, 0, canvas.width, canvas.height)
-      
-      // Render PDF page to canvas
+
       await page.render({
         canvasContext: context,
         viewport: viewport,
         intent: 'print'
       }).promise
-      
-      // Convert canvas to JPEG
+
       const blob = await new Promise<Blob>((resolve, reject) => {
         canvas.toBlob(
           (b) => b ? resolve(b) : reject(new Error("Failed to convert canvas")),
@@ -208,10 +190,9 @@ export function PDFUnlocker() {
           0.95
         )
       })
-      
+
       const imageBytes = new Uint8Array(await blob.arrayBuffer())
-      
-      // Embed in new PDF
+
       const jpegImage = await newPdf.embedJpg(imageBytes)
       const pdfPage = newPdf.addPage([viewport.width, viewport.height])
       pdfPage.drawImage(jpegImage, {
@@ -220,65 +201,58 @@ export function PDFUnlocker() {
         width: viewport.width,
         height: viewport.height
       })
-      
-      // Update progress
+
       const pageProgress = 15 + ((pageNum / numPages) * 75)
       setProgress(Math.round(pageProgress))
     }
-    
+
     setProgress(95)
-    
-    // Save new PDF
+
     const pdfBytes = await newPdf.save()
     setProgress(100)
-    
+
     return pdfBytes
   }
 
-  /**
-   * Main unlock function
-   */
   const unlockPDF = async () => {
     if (!file) return
-    
-    // Check if password required
+
     if (encryptionType === "user" && (!password || password.trim() === "")) {
       showToast("error", "Password is required to unlock this PDF")
       return
     }
-    
+
     if (encryptionType === "none") {
       showToast("error", "This PDF has no protection to remove")
       return
     }
-    
+
     setLoading(true)
     setProgress(10)
-    
+
     try {
       const arrayBuffer = await file.arrayBuffer()
-      
-      // Render PDF to images (works for both owner and user passwords)
+
       const pdfBytes = await renderPDFToImages(
         arrayBuffer,
         encryptionType === "user" ? password : undefined
       )
-      
+
       if (!pdfBytes || pdfBytes.length < 1000) {
         throw new Error("Generated PDF is empty")
       }
-      
+
       setUnlockedPdfBytes(pdfBytes)
       setUnlocked(true)
-      
+
       const fileSizeKB = (pdfBytes.length / 1024).toFixed(0)
-      
+
       if (encryptionType === "owner") {
         showToast("success", `✅ Restrictions removed! (${fileSizeKB} KB)`)
       } else {
         showToast("success", `✅ Password removed! (${fileSizeKB} KB)`)
       }
-      
+
     } catch (error: any) {
       if (error.message === "INCORRECT_PASSWORD") {
         showToast("error", "🔒 Wrong password! Please enter the correct password and try again.", 5000)
@@ -287,12 +261,11 @@ export function PDFUnlocker() {
       } else if (error.message?.includes("empty")) {
         showToast("error", "❌ Generated PDF is empty. Please try again.", 5000)
       } else {
-        // Only log unexpected errors to console
+
         console.error("Error unlocking PDF:", error)
         showToast("error", `❌ Failed to unlock: ${error?.message || 'Unknown error'}`, 5000)
       }
-      
-      // Clear password field on error
+
       if (error.message === "INCORRECT_PASSWORD" || error.message?.toLowerCase().includes("password")) {
         setPassword("")
       }
@@ -304,7 +277,7 @@ export function PDFUnlocker() {
 
   const downloadUnlockedPDF = () => {
     if (!unlockedPdfBytes || !file) return
-    
+
     const blob = new Blob([unlockedPdfBytes], { type: "application/pdf" })
     const url = URL.createObjectURL(blob)
     const link = document.createElement("a")
@@ -314,7 +287,7 @@ export function PDFUnlocker() {
     link.click()
     document.body.removeChild(link)
     URL.revokeObjectURL(url)
-    
+
     showToast("success", "PDF downloaded successfully!")
   }
 
@@ -324,7 +297,7 @@ export function PDFUnlocker() {
       <div className="space-y-6">
         <Card className="p-6 shadow-lg border-border">
     <div className="space-y-6">
-            {/* Upload Area */}
+            {}
           {!file ? (
               <div
                 onDrop={handleDrop}
@@ -349,7 +322,7 @@ export function PDFUnlocker() {
             </div>
           ) : (
             <div className="space-y-4">
-                {/* File Info */}
+                {}
                 <div className="p-4 rounded-lg bg-muted/50 border border-border">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3 flex-1 min-w-0">
@@ -371,12 +344,12 @@ export function PDFUnlocker() {
                       <X className="h-4 w-4" />
                     </Button>
                   </div>
-                  
-                  {/* Encryption Type Badge */}
+
+                  {}
                   {!unlocked && (
                     <div className="flex items-center gap-2 mt-3">
                       <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium ${
-                        encryptionType === "none" 
+                        encryptionType === "none"
                           ? "bg-green-100 text-heading-accent dark:bg-green-900/30 dark:text-heading-accent"
                           : encryptionType === "owner"
                           ? "bg-blue-100 text-foreground dark:bg-blue-900/30 dark:text-foreground"
@@ -389,18 +362,17 @@ export function PDFUnlocker() {
                     </div>
                   )}
                 </div>
-                
-                {/* Info for Owner Password PDFs */}
+
+                {}
                 {!unlocked && encryptionType === "owner" && (
                   <div className="p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800">
                     <p className="text-sm text-foreground">
-                      <strong>✅ Good news!</strong> This PDF only has restrictions (can't print, can't copy, can't edit). 
+                      <strong>✅ Good news!</strong> This PDF only has restrictions (can't print, can't copy, can't edit).
                       We can remove these restrictions <strong>without any password</strong>!
                     </p>
               </div>
                 )}
-                
-                {/* Info for User Password PDFs */}
+
                 {!unlocked && encryptionType === "user" && (
                   <div className="p-3 rounded-lg bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800">
                     <p className="text-sm text-foreground">
@@ -409,7 +381,6 @@ export function PDFUnlocker() {
                   </div>
                 )}
 
-                {/* Password Input */}
                 {!unlocked && encryptionType === "user" && (
                   <div className="space-y-2">
                     <Label htmlFor="pdf-password" className="text-sm font-medium">
@@ -430,7 +401,7 @@ export function PDFUnlocker() {
                   </div>
                 )}
 
-                {/* Progress Bar */}
+                {}
                 {loading && (
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
@@ -443,12 +414,12 @@ export function PDFUnlocker() {
                   </div>
                 )}
 
-                {/* Action Buttons */}
+                {}
                 <div className="space-y-3">
                   {!unlocked ? (
-                    <Button 
-                      onClick={unlockPDF} 
-                      disabled={loading || encryptionType === "none"} 
+                    <Button
+                      onClick={unlockPDF}
+                      disabled={loading || encryptionType === "none"}
                       className="w-full h-11 text-sm font-semibold shadow-sm"
                       size="lg"
                     >
@@ -462,8 +433,8 @@ export function PDFUnlocker() {
                     ) : (
                       <>
                           <Unlock className="h-5 w-5 mr-2" />
-                          {encryptionType === "owner" 
-                            ? "Remove Restrictions" 
+                          {encryptionType === "owner"
+                            ? "Remove Restrictions"
                             : encryptionType === "user"
                             ? "Unlock PDF with Password"
                             : "No Protection to Remove"}
@@ -471,7 +442,7 @@ export function PDFUnlocker() {
                     )}
                   </Button>
                   ) : (
-                    <Button 
+                    <Button
                       onClick={downloadUnlockedPDF}
                       className="w-full h-11 text-sm font-semibold shadow-sm bg-green-600 hover:bg-green-700"
                       size="lg"
@@ -486,7 +457,7 @@ export function PDFUnlocker() {
         </div>
       </Card>
 
-        {/* Features */}
+        {}
         <div className="p-5 rounded-lg bg-card border border-border shadow">
           <h2 className="text-xl font-bold mb-4 text-card-foreground flex items-center gap-2">
             <CheckCircle2 className="h-5 w-5 text-primary" />
@@ -520,7 +491,7 @@ export function PDFUnlocker() {
           </div>
         </div>
 
-        {/* How It Works */}
+        {}
         <div className="p-5 rounded-lg bg-card border border-border shadow">
           <h2 className="text-xl font-bold mb-4 text-card-foreground flex items-center gap-2">
             <Shield className="h-5 w-5 text-primary" />
@@ -548,7 +519,6 @@ export function PDFUnlocker() {
           </div>
         </div>
 
-        {/* Legal Notice */}
         <div className="p-5 rounded-lg bg-card border border-border shadow">
           <h2 className="text-xl font-bold mb-4 text-card-foreground flex items-center gap-2">
             <AlertCircle className="h-5 w-5 text-primary" />

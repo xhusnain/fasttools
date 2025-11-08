@@ -106,16 +106,16 @@ export const metadata: Metadata = {
         "Convert text to common writing and programming cases quickly. Clean whitespace and copy results.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: { 
-        "@type": "Offer", 
-        price: "0", 
+      offers: {
+        "@type": "Offer",
+        price: "0",
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
       featureList: [
         "Many case styles",
-        "Whitespace cleanup", 
-        "Copy results", 
+        "Whitespace cleanup",
+        "Copy results",
         "Mobile friendly",
         "Unicode support",
         "Bulk processing",
@@ -129,9 +129,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: { 
-        "@type": "Organization", 
-        name: "FastTools", 
+      publisher: {
+        "@type": "Organization",
+        name: "FastTools",
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -175,7 +175,7 @@ export default function TextCaseConverterPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
             <div className="flex-1 lg:flex-[2] space-y-5 sm:space-y-6">
-              {/* Hero Section */}
+              {}
               <div className="text-center space-y-5 animate-fade-in-up">
                 <GHeader
                   title="Free Text Case Converter"
@@ -185,17 +185,17 @@ export default function TextCaseConverterPage() {
                 />
               </div>
 
-              {/* Mobile Ad Space */}
+              {}
               <div className="lg:hidden">
                 <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
               </div>
 
-              {/* Tool Card */}
+              {}
               <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                 <TextCaseConverter />
               </div>
 
-              {/* Understanding How This Tool Works */}
+              {}
               <div className="space-y-5 animate-fade-in-up animation-delay-200">
                 <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-base md:text-xl font-bold mb-3 text-foreground">Understanding How This Text Case Converter Works</h2>
@@ -236,7 +236,7 @@ export default function TextCaseConverterPage() {
                   </p>
                 </div>
 
-                {/* FAQ Section for Text Case Converter */}
+                {}
                 <div className="p-4 sm:p-6 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -290,7 +290,6 @@ export default function TextCaseConverterPage() {
               </div>
             </div>
 
-            {/* Desktop Sidebar with AdSense */}
             <div className="hidden lg:block w-64 xl:w-72">
               <div className="sticky top-32 space-y-6">
                 <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />

@@ -122,16 +122,16 @@ export const metadata: Metadata = {
         "Convert length units across metric and imperial systems for construction, travel and education.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: { 
-        "@type": "Offer", 
-        price: "0", 
+      offers: {
+        "@type": "Offer",
+        price: "0",
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
       featureList: [
-        "Metric and imperial units", 
-        "Feet+inches support", 
-        "Copy results", 
+        "Metric and imperial units",
+        "Feet+inches support",
+        "Copy results",
         "Mobile friendly",
         "Precise conversions",
         "Multiple unit support",
@@ -145,9 +145,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: { 
-        "@type": "Organization", 
-        name: "FastTools", 
+      publisher: {
+        "@type": "Organization",
+        name: "FastTools",
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -191,7 +191,7 @@ export default function LengthConverterPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
             <div className="flex-1 lg:flex-[2] space-y-5 sm:space-y-6">
-              {/* Hero Section */}
+              {}
               <div className="text-center space-y-5 animate-fade-in-up">
                 <GHeader
                   title="Free Length Converter"
@@ -201,17 +201,17 @@ export default function LengthConverterPage() {
                 />
               </div>
 
-              {/* Mobile Ad Space */}
+              {}
               <div className="lg:hidden">
                 <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
               </div>
 
-              {/* Tool Card */}
+              {}
               <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                 <LengthConverter />
               </div>
 
-              {/* Understanding How This Tool Works */}
+              {}
               <div className="space-y-5 animate-fade-in-up animation-delay-200">
                 <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-base md:text-xl font-bold mb-3 text-foreground">Understanding How This Length Converter Works</h2>
@@ -248,7 +248,7 @@ export default function LengthConverterPage() {
                   </p>
                 </div>
 
-                {/* Length Converter FAQ */}
+                {}
                 <div className="p-6 rounded-lg bg-card border border-border shadow mt-6">
                   <h2 className="text-2xl font-bold mb-4 text-foreground">Length Converter FAQ</h2>
                   <div className="space-y-4 text-sm text-muted-foreground">
@@ -297,7 +297,7 @@ export default function LengthConverterPage() {
               </div>
             </div>
 
-            {/* Desktop Sidebar with AdSense */}
+            {}
             <div className="hidden lg:block w-64 xl:w-72">
               <div className="sticky top-32 space-y-6">
                 <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
