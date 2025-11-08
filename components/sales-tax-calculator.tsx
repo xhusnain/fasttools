@@ -7,50 +7,51 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import {
-  Calculator,
-  DollarSign,
-  Percent,
-  Receipt,
-  Building,
-  MapPin,
-  TrendingUp,
-  TrendingDown,
-  Info,
-  AlertCircle,
-  CheckCircle,
-  Copy,
-  Download,
-  History,
-  Star,
-  Globe,
-  Shield,
-  FileText,
-  BarChart3,
-  PieChart,
-  Target,
-  Zap,
-  Clock,
-  Calendar,
-  Users,
-  Home,
-  Car,
-  ShoppingBag,
-  CreditCard,
-  Banknote,
-  Coins,
-  Wallet,
-  Briefcase,
-  Store,
-  Truck,
-  Package,
-  Tag,
-  ShoppingCart,
-  HandHeart,
-  Gift,
-  Award,
-  Trophy,
-  TrendingUp as TrendingUpIcon,
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { 
+  Calculator, 
+  DollarSign, 
+  Percent, 
+  Receipt, 
+  Building, 
+  MapPin, 
+  TrendingUp, 
+  TrendingDown, 
+  Info, 
+  AlertCircle, 
+  CheckCircle, 
+  Copy, 
+  Download, 
+  History, 
+  Star, 
+  Globe, 
+  Shield, 
+  FileText, 
+  BarChart3, 
+  PieChart, 
+  Target, 
+  Zap, 
+  Clock, 
+  Calendar, 
+  Users, 
+  Home, 
+  Car, 
+  ShoppingBag, 
+  CreditCard, 
+  Banknote, 
+  Coins, 
+  Wallet, 
+  Briefcase, 
+  Store, 
+  Truck, 
+  Package, 
+  Tag, 
+  ShoppingCart, 
+  HandHeart, 
+  Gift, 
+  Award, 
+  Trophy, 
+  TrendingUp as TrendingUpIcon, 
   TrendingDown as TrendingDownIcon
 } from "lucide-react"
 
@@ -159,11 +160,11 @@ export default function SalesTaxCalculator() {
       const rate = parseFloat(taxRate)
       const taxAmount = (price * rate) / 100
       const afterTax = price + taxAmount
-
+      
       const stateData = stateTaxRates.find(s => s.state === selectedState)
       const localTax = stateData ? stateData.localTax : 0
       const totalTaxRate = rate + localTax
-
+      
       const newResult: SalesTaxResult = {
         beforeTaxPrice: price,
         taxRate: rate,
@@ -182,7 +183,7 @@ export default function SalesTaxCalculator() {
         recommendations: generateRecommendations(price, rate, selectedState),
         comparison: generateComparison(rate, selectedState)
       }
-
+      
       setResult(newResult)
       setHistory(prev => [newResult, ...prev.slice(0, 4)])
     } else if (calculationMethod === "reverse" && afterTaxPrice && taxRate) {
@@ -190,11 +191,11 @@ export default function SalesTaxCalculator() {
       const rate = parseFloat(taxRate)
       const beforeTax = price / (1 + rate / 100)
       const taxAmount = price - beforeTax
-
+      
       const stateData = stateTaxRates.find(s => s.state === selectedState)
       const localTax = stateData ? stateData.localTax : 0
       const totalTaxRate = rate + localTax
-
+      
       const newResult: SalesTaxResult = {
         beforeTaxPrice: beforeTax,
         taxRate: rate,
@@ -213,7 +214,7 @@ export default function SalesTaxCalculator() {
         recommendations: generateRecommendations(beforeTax, rate, selectedState),
         comparison: generateComparison(rate, selectedState)
       }
-
+      
       setResult(newResult)
       setHistory(prev => [newResult, ...prev.slice(0, 4)])
     } else if (calculationMethod === "rate" && beforeTaxPrice && afterTaxPrice) {
@@ -221,11 +222,11 @@ export default function SalesTaxCalculator() {
       const afterTax = parseFloat(afterTaxPrice)
       const taxAmount = afterTax - beforeTax
       const rate = (taxAmount / beforeTax) * 100
-
+      
       const stateData = stateTaxRates.find(s => s.state === selectedState)
       const localTax = stateData ? stateData.localTax : 0
       const totalTaxRate = rate + localTax
-
+      
       const newResult: SalesTaxResult = {
         beforeTaxPrice: beforeTax,
         taxRate: rate,
@@ -244,7 +245,7 @@ export default function SalesTaxCalculator() {
         recommendations: generateRecommendations(beforeTax, rate, selectedState),
         comparison: generateComparison(rate, selectedState)
       }
-
+      
       setResult(newResult)
       setHistory(prev => [newResult, ...prev.slice(0, 4)])
     }
@@ -255,6 +256,7 @@ export default function SalesTaxCalculator() {
     const businessTips: string[] = []
     const compliance: string[] = []
 
+    // Tax optimization recommendations
     if (rate > 8) {
       taxOptimization.push("Consider purchasing in a state with lower tax rates")
       taxOptimization.push("Look for tax-free shopping events or holidays")
@@ -264,11 +266,13 @@ export default function SalesTaxCalculator() {
       taxOptimization.push("Research business tax exemptions in your state")
     }
 
+    // Business tips
     businessTips.push("Keep detailed records of all sales tax collected")
     businessTips.push("File sales tax returns on time to avoid penalties")
     businessTips.push("Consider using sales tax software for compliance")
     businessTips.push("Understand nexus rules for online sales")
 
+    // Compliance tips
     compliance.push("Verify your business has proper sales tax permits")
     compliance.push("Understand which products are taxable in your state")
     compliance.push("Keep receipts for all business purchases")
@@ -322,7 +326,7 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
 
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-2 sm:p-3 md:p-4 w-full overflow-hidden">
-      {}
+      {/* Main Calculator */}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -331,7 +335,7 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3 sm:space-y-4 md:space-y-6 px-2 sm:px-3 md:px-4">
-          {}
+          {/* Calculation Method Selection */}
           <div className="space-y-1.5 w-full min-w-0">
             <Label className="text-heading-accent text-xs sm:text-sm">Calculation Method</Label>
             <Select value={calculationMethod} onValueChange={(value: "forward" | "reverse" | "rate") => setCalculationMethod(value)}>
@@ -346,7 +350,7 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
             </Select>
           </div>
 
-          {}
+          {/* State Selection */}
           <div className="space-y-1.5 w-full min-w-0">
             <Label className="text-heading-accent text-xs sm:text-sm">State (Optional)</Label>
             <Select value={selectedState} onValueChange={handleStateChange}>
@@ -363,7 +367,7 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
             </Select>
           </div>
 
-          {}
+          {/* Input Fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
             <div className="space-y-1.5 w-full min-w-0">
               <Label htmlFor="beforeTaxPrice" className="text-heading-accent text-xs sm:text-sm">Before Tax Price ($)</Label>
@@ -431,10 +435,10 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
         </CardContent>
       </Card>
 
-      {}
+      {/* Results Section */}
       {result && (
         <div className="space-y-4 sm:space-y-6">
-          {}
+          {/* Main Results */}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -482,7 +486,7 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
             </CardContent>
           </Card>
 
-          {}
+          {/* Tax Breakdown */}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -511,7 +515,7 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
             </CardContent>
           </Card>
 
-          {}
+          {/* State Comparison */}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -536,7 +540,7 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
             </CardContent>
           </Card>
 
-          {}
+          {/* Recommendations */}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -585,7 +589,7 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
         </div>
       )}
 
-      {}
+      {/* History Section */}
       {history.length > 0 && (
         <Card className="bg-card border-border w-full overflow-hidden">
           <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
@@ -621,7 +625,7 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
         </Card>
       )}
 
-      {}
+      {/* Information Section */}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-1.5 sm:gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -643,7 +647,7 @@ Total Tax Rate: ${result.totalTaxRate.toFixed(2)}%`
               </div>
             </div>
           </div>
-
+          
           <div className="text-xs sm:text-sm text-foreground space-y-1">
             <p className="break-words">
               <strong className="text-heading-accent">Forward Calculation:</strong> Calculate the final price after adding sales tax to the before-tax price.

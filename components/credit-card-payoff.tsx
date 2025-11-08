@@ -32,15 +32,16 @@ export function CreditCardPayoff() {
       let months = 0
       let totalInterest = 0
 
+      // Calculate payoff timeline
       while (remainingBalance > 0 && months < 600) {
-
+        // max 50 years
         const interestCharge = remainingBalance * monthlyRate
         totalInterest += interestCharge
 
         const principalPayment = payment - interestCharge
 
         if (principalPayment <= 0) {
-
+          // Payment too low to cover interest
           months = -1
           break
         }
@@ -54,7 +55,7 @@ export function CreditCardPayoff() {
       }
 
       if (months === -1) {
-
+        // Handle case where payment is too low
         setResult(null)
         setLoading(false)
         return
@@ -90,7 +91,7 @@ Payoff Date: ${result.payoffDate}`
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      {}
+      {/* Left Column - Inputs */}
       <div className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="balance" className="text-xs font-medium text-foreground">
@@ -175,7 +176,7 @@ Payoff Date: ${result.payoffDate}`
         </div>
       </div>
 
-      {}
+      {/* Right Column - Results */}
       <div className="space-y-4">
         {result ? (
           <div className="space-y-3">

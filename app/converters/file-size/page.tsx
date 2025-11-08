@@ -161,9 +161,9 @@ export const metadata: Metadata = {
         "Convert file sizes instantly across bytes, KB, MB, GB, TB, PB, EB, ZB, YB for cloud storage, AI datasets, uploads, and optimization. Support for AWS S3, Google Cloud, Azure storage calculations.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: {
-        "@type": "Offer",
-        price: "0",
+      offers: { 
+        "@type": "Offer", 
+        price: "0", 
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
@@ -198,8 +198,8 @@ export const metadata: Metadata = {
         "@type": "Organization",
         name: "FastTools",
         url: "https://www.fasttools.store",
-        logo: {
-          "@type": "ImageObject",
+        logo: { 
+          "@type": "ImageObject", 
           url: "https://www.fasttools.store/logo.svg",
           width: 320,
           height: 80
@@ -240,7 +240,7 @@ export default function FileSizeConverterPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
             <div className="flex-1 lg:flex-[2] space-y-5 sm:space-y-6">
-              {}
+              {/* Hero Section */}
               <div className="text-center space-y-5 animate-fade-in-up">
                 <GHeader
                   title="Free File Size Converter"
@@ -250,17 +250,17 @@ export default function FileSizeConverterPage() {
                 />
               </div>
 
-              {}
+              {/* Mobile Ad Space */}
               <div className="lg:hidden">
                 <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
               </div>
 
-              {}
+              {/* Tool Card */}
               <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                 <FileSizeConverter />
               </div>
 
-              {}
+              {/* Understanding How This Tool Works */}
               <div className="space-y-5 animate-fade-in-up animation-delay-200">
                 <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-base md:text-xl font-bold mb-3 text-foreground">How This File Size Converter Works</h2>
@@ -291,10 +291,10 @@ export default function FileSizeConverterPage() {
                   <p className="text-sm text-muted-foreground leading-relaxed">Align logging/metrics to a single unit system to avoid mismatched totals across dashboards.</p>
                 </div>
 
-                {}
+                {/* File Size KB Keywords Content */}
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">File Size KB: Understanding Kilobyte Measurements</h2>
-
+                  
                   <div className="space-y-6">
                     <div className="p-4 rounded-lg bg-card border border-border">
                       <h3 className="font-semibold text-heading-accent mb-3">File Size KB: Complete Guide to Kilobyte Measurements</h3>
@@ -318,6 +318,7 @@ export default function FileSizeConverterPage() {
                   </div>
                 </div>
 
+                {/* File Size Converter FAQ */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-2xl font-bold mb-4 text-foreground">File Size Converter FAQ</h2>
                   <div className="space-y-4 text-sm text-muted-foreground">
@@ -366,7 +367,7 @@ export default function FileSizeConverterPage() {
               </div>
             </div>
 
-            {}
+            {/* Desktop Sidebar with AdSense */}
             <div className="hidden lg:block w-64 xl:w-72">
               <div className="sticky top-32 space-y-6">
                 <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />

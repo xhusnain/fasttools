@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { exec } from 'child_process'
+import { promises as fs } from 'fs'
+import path from 'path'
+import os from 'os'
 import { promisify } from 'util'
 
 const execAsync = promisify(exec)
@@ -27,6 +30,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Validate it's a playlist URL
     const isPlaylistPage = url.includes('playlist?list=') && !url.includes('watch?v=')
     if (!isPlaylistPage) {
       return NextResponse.json(
@@ -35,6 +39,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Set PATH to include local yt-dlp binary
     const projectRoot = process.cwd()
     const binPath = path.join(projectRoot, 'bin')
     const currentPath = process.env.PATH || ''
@@ -43,25 +48,26 @@ export async function POST(request: NextRequest) {
     const ytDlpPath = path.join(binPath, 'yt-dlp')
 
     try {
-
+      // Use yt-dlp to get playlist information
       const command = `"${ytDlpPath}" --flat-playlist --dump-json --no-warnings --no-check-certificate "${url}"`
-
+      
       const { stdout, stderr } = await execAsync(command, {
-        maxBuffer: 10 * 1024 * 1024,
-        timeout: 60000
+        maxBuffer: 10 * 1024 * 1024, // 10MB buffer
+        timeout: 60000 // 60 second timeout
       })
 
       if (stderr && !stderr.includes('WARNING')) {
         console.error('yt-dlp stderr:', stderr)
       }
 
+      // Parse JSON lines (yt-dlp outputs one JSON object per line)
       const lines = stdout.trim().split('\n').filter(line => line.trim())
       const videos: PlaylistVideo[] = []
 
       for (const line of lines) {
         try {
           const videoData = JSON.parse(line)
-
+          
           videos.push({
             id: videoData.id || videoData.url?.split('v=')[1]?.split('&')[0] || '',
             title: videoData.title || 'Untitled',
@@ -78,9 +84,9 @@ export async function POST(request: NextRequest) {
 
       if (videos.length === 0) {
         return NextResponse.json(
-          {
-            success: false,
-            message: 'No videos found in playlist. The playlist may be empty, private, or unavailable.'
+          { 
+            success: false, 
+            message: 'No videos found in playlist. The playlist may be empty, private, or unavailable.' 
           },
           { status: 404 }
         )
@@ -94,9 +100,9 @@ export async function POST(request: NextRequest) {
 
     } catch (execError: any) {
       console.error('yt-dlp exec error:', execError)
-
+      
       let errorMessage = 'Failed to fetch playlist information.'
-
+      
       if (execError.code === 'ETIMEDOUT' || execError.signal === 'SIGTERM') {
         errorMessage = 'Request timed out. The playlist may be too large. Please try a smaller playlist.'
       } else if (execError.message?.includes('yt-dlp')) {
@@ -104,10 +110,10 @@ export async function POST(request: NextRequest) {
       }
 
       return NextResponse.json(
-        {
-          success: false,
+        { 
+          success: false, 
           message: errorMessage,
-          error: execError.message
+          error: execError.message 
         },
         { status: 500 }
       )
@@ -115,9 +121,9 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Playlist info API error:', error)
     return NextResponse.json(
-      {
-        success: false,
-        message: 'Internal server error. Please try again later.'
+      { 
+        success: false, 
+        message: 'Internal server error. Please try again later.' 
       },
       { status: 500 }
     )

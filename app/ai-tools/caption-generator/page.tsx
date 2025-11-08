@@ -3,24 +3,25 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AiCaptionGenerator } from "@/components/ai-caption-generator"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import {
-  Sparkles,
-  Calculator,
-  BarChart3,
-  TrendingUp,
-  BookOpen,
-  Users,
-  Clock,
-  Target,
-  AlertCircle,
-  FileText,
-  Award,
-  Globe,
+import { 
+  Sparkles, 
+  Calculator, 
+  BarChart3, 
+  TrendingUp, 
+  BookOpen, 
+  Users, 
+  Clock, 
+  Target, 
+  AlertCircle, 
+  FileText, 
+  Award, 
+  Globe, 
   QrCode,
   Music,
   Heart
 } from "lucide-react"
 
+// Auto-update year
 const currentYear = new Date().getFullYear()
 
 export const metadata: Metadata = {
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
   keywords: [
         "fasttools",
         "fast tools",
-
+        // --- Primary Focus Keywords ---
         "AI caption generator",
         "free AI caption generator",
         "AI social media caption generator",
@@ -53,6 +54,7 @@ export const metadata: Metadata = {
         "AI automation tools",
         "AI social media manager",
 
+        // --- Social Media Specific ---
         "Instagram caption generator",
         "Facebook caption generator",
         "LinkedIn caption generator",
@@ -70,6 +72,7 @@ export const metadata: Metadata = {
         "social media copy generator",
         "AI content writing generator",
 
+        // --- Long-tail & Niche Keywords ---
         "free AI caption generator for Instagram",
         "AI caption generator for businesses",
         "AI caption generator for influencers",
@@ -91,6 +94,7 @@ export const metadata: Metadata = {
         "free social media caption generator online",
         "AI-powered social media caption tool",
 
+        // --- Related SEO & Engagement Keywords ---
         "caption writing tool",
         "social media content generator",
         "social media post ideas",
@@ -111,7 +115,8 @@ export const metadata: Metadata = {
         "AI content generation software",
         "caption creator online",
         "free caption maker",
-
+        
+        // --- Top User-Searched Keywords (Based on 2025 Trends) ---
         "caption generator with hashtags",
         "viral caption generator",
         "AI caption maker",
@@ -384,7 +389,7 @@ export default function CaptionGeneratorPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-
+      
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-2 xs:px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-2 xs:py-3 sm:py-4 md:py-6 lg:py-8 xl:py-10 2xl:py-12">
           <Breadcrumbs
@@ -397,7 +402,7 @@ export default function CaptionGeneratorPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {}
+                {/* Hero Section */}
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <GHeader
                     title="Free AI Caption Generator - Create Viral Social Media Captions Instantly"
@@ -407,21 +412,21 @@ export default function CaptionGeneratorPage() {
                   />
                 </div>
 
-                {}
+                {/* Mobile Ad Space */}
                 <div className="lg:hidden">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {}
+                {/* Caption Generator Tool */}
                 <div className="animate-fade-in-up animation-delay-200">
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                     <AiCaptionGenerator />
                   </div>
                 </div>
 
-                {}
+                {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-400">
-                  {}
+                  {/* How to Use Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                 <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                   <div className="p-1 xs:p-1.5 sm:p-2 bg-card rounded-lg flex-shrink-0">
@@ -449,7 +454,7 @@ export default function CaptionGeneratorPage() {
                   </div>
                   </div>
 
-                  {}
+                  {/* Key Features Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                 <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                   <div className="p-1 xs:p-1.5 sm:p-2 bg-card rounded-lg flex-shrink-0">
@@ -503,7 +508,7 @@ export default function CaptionGeneratorPage() {
                   </div>
                   </div>
 
-                  {}
+                  {/* Use Cases Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                 <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                   <div className="p-1 xs:p-1.5 sm:p-2 bg-card rounded-lg flex-shrink-0">
@@ -531,7 +536,7 @@ export default function CaptionGeneratorPage() {
                 </div>
                   </div>
 
-                  {}
+                  {/* FAQ Section */}
                   <div className="bg-card rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm border border-border/30">
                 <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                   <div className="p-1 xs:p-1.5 sm:p-2 bg-card rounded-lg flex-shrink-0">
@@ -710,6 +715,7 @@ export default function CaptionGeneratorPage() {
                   </div>
                   </div>
 
+                  {/* Related Tools Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                 <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                   <div className="p-1 xs:p-1.5 sm:p-2 bg-card rounded-lg flex-shrink-0">
@@ -758,6 +764,7 @@ export default function CaptionGeneratorPage() {
             </div>
           </div>
 
+          {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
           <div className="hidden lg:block w-72">
             <div className="sticky top-24 space-y-6">
               <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

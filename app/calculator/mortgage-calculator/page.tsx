@@ -1,22 +1,24 @@
 import { Metadata } from "next"
+import MortgageCalculator from "@/components/mortgage-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import {
-  Calculator,
-  BarChart3,
-  TrendingUp,
-  BookOpen,
-  Users,
-  Clock,
-  Target,
-  AlertCircle,
-  Home,
-  DollarSign,
-  FileText,
-  Award,
-  Globe,
-  PieChart,
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { 
+  Calculator, 
+  BarChart3, 
+  TrendingUp, 
+  BookOpen, 
+  Users, 
+  Clock, 
+  Target, 
+  AlertCircle, 
+  Home, 
+  DollarSign, 
+  FileText, 
+  Award, 
+  Globe, 
+  PieChart, 
   Percent,
   CreditCard,
   Banknote,
@@ -107,7 +109,7 @@ export const metadata: Metadata = {
         "mortgage affordability estimator",
       "mortgage calculator",
         "calculator",
-
+        // Additional Mortgage Calculator Keywords
         "Mortgage Calculator",
         "calculator.net mortgage calculator",
         "mortgage payment calculator",
@@ -212,16 +214,16 @@ export default function MortgageCalculatorPage() {
           }
         })
       }} />
-
+      
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-2 xs:px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-2 xs:py-3 sm:py-4 md:py-6 lg:py-8 xl:py-10 2xl:py-12">
-          {}
+          {/* Breadcrumbs */}
           <Breadcrumbs items={[
             { label: "Calculator", href: "/calculator" },
             { label: "Mortgage Calculator", href: "/calculator/mortgage-calculator" }
           ]} />
-
-          {}
+          
+          {/* Header Section */}
           <div className="text-center mb-4 xs:mb-6 sm:mb-8 md:mb-10 lg:mb-12">
             <GHeader
               title="Mortgage Calculator - Advanced Home Loan Calculator"
@@ -231,19 +233,19 @@ export default function MortgageCalculatorPage() {
             />
           </div>
 
-          {}
+          {/* Main Grid Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] xl:grid-cols-[1fr_320px] 2xl:grid-cols-[1fr_380px] gap-2 xs:gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10">
-            {}
+            {/* Main Content */}
             <div className="space-y-3 xs:space-y-4 sm:space-y-6">
-              {}
+              {/* Calculator */}
               <MortgageCalculator />
-
-              {}
+              
+              {/* Mobile Ad Space */}
               <div className="lg:hidden">
                 <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
               </div>
 
-              {}
+              {/* How to Use Section */}
               <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                 <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                   <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -281,7 +283,7 @@ export default function MortgageCalculatorPage() {
                 </div>
               </div>
 
-              {}
+              {/* Key Features Section */}
               <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                 <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                   <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -329,7 +331,7 @@ export default function MortgageCalculatorPage() {
                 </div>
               </div>
 
-              {}
+              {/* Mortgage Types Section */}
               <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                 <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                   <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -385,7 +387,7 @@ export default function MortgageCalculatorPage() {
                 </div>
               </div>
 
-              {}
+              {/* Payment Strategies Section */}
               <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                 <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                   <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -441,7 +443,7 @@ export default function MortgageCalculatorPage() {
                 </div>
               </div>
 
-              {}
+              {/* Professional Insights Section */}
               <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                 <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                   <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -474,7 +476,7 @@ export default function MortgageCalculatorPage() {
                 </div>
               </div>
 
-              {}
+              {/* Success Stories Section */}
               <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                 <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                   <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -507,7 +509,7 @@ export default function MortgageCalculatorPage() {
                 </div>
               </div>
 
-              {}
+              {/* FAQ Section */}
               <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                 <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                   <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -597,6 +599,7 @@ export default function MortgageCalculatorPage() {
                 </div>
               </div>
 
+              {/* Related Tools Section */}
               <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                 <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                   <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -640,10 +643,11 @@ export default function MortgageCalculatorPage() {
                 </div>
               </div>
             </div>
-
+            
+            {/* Sidebar */}
             <div className="hidden lg:block space-y-3 xs:space-y-4 sm:space-y-6">
               <div className="sticky top-4 space-y-3 xs:space-y-4 sm:space-y-6">
-
+                {/* Sidebar Ad 1 */}
                 <div className="bg-card border border-border rounded-xl p-2 xs:p-3 shadow-sm">
                   <AdSpace slot="sidebar" className="h-48 xs:h-56 sm:h-64 md:h-72 lg:h-80 xl:h-88 2xl:h-96" />
                 </div>

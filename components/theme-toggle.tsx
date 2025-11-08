@@ -8,19 +8,23 @@ export function ThemeToggle() {
   const [mounted, setMounted] = React.useState(false)
   const { theme, setTheme } = useTheme()
 
+  // useEffect only runs on the client, so now we can safely show the UI
   React.useEffect(() => {
     setMounted(true)
-
+    
+    // Ensure default theme is dark if no theme is stored
+    // next-themes will load from localStorage automatically, but we ensure default
     const storedTheme = typeof window !== "undefined" ? localStorage.getItem("theme") : null
     if (!storedTheme && theme !== "dark") {
       setTheme("dark")
     }
   }, [theme, setTheme])
 
+  // Handle theme change - next-themes automatically saves to localStorage
   const handleThemeToggle = () => {
     const newTheme = theme === "dark" ? "light" : "dark"
     setTheme(newTheme)
-
+    // Ensure localStorage is updated (next-themes handles this, but we make it explicit)
     if (typeof window !== "undefined") {
       localStorage.setItem("theme", newTheme)
     }
@@ -51,4 +55,6 @@ export function ThemeToggle() {
     </button>
   )
 }
+
+
 

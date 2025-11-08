@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { HTMLBeautifier } from "@/components/html-beautifier"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import Link from "next/link"
 import { Code, Minimize2, Copy, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -13,14 +14,15 @@ export const metadata: Metadata = {
   keywords: [
     "fasttools",
     "fast tools",
-
+    // High-Volume Core Keywords
     "beautify html",
     "html minif",
     "html formatter online",
     "beautify x",
     "beautiful html",
     "minify html online",
-
+    
+    // Core Tool Features
     "html beautifier",
     "html minifier",
     "html formatter",
@@ -30,13 +32,15 @@ export const metadata: Metadata = {
     "minify html",
     "prettify html",
     "compress html",
-
+    
+    // Online Variations
     "html beautifier online",
     "html minifier online",
     "format html online",
     "html compressor online",
     "html code beautifier online",
-
+    
+    // Free Tool Keywords
     "free html beautifier",
     "free html minifier",
     "free html formatter",
@@ -44,14 +48,16 @@ export const metadata: Metadata = {
     "html minifier free",
     "html formatter free",
     "html formatter online free",
-
+    
+    // Long-tail Keywords
     "online html beautifier free",
     "free online html beautifier",
     "best html beautifier online",
     "html beautifier tool",
     "html minifier tool",
     "html formatter tool",
-
+    
+    // Feature-based Keywords
     "indent html",
     "html cleanup",
     "html optimizer",
@@ -66,7 +72,8 @@ export const metadata: Metadata = {
     "compress html file size online",
     "html formatter remove spaces",
     "html beautify format",
-
+    
+    // Format & Minify Variations
     "minify html css and javascript",
     "minify html js css",
     "html css js beautifier",
@@ -76,7 +83,8 @@ export const metadata: Metadata = {
     "minifier html validator",
     "html formatter and viewer",
     "html formatter viewer",
-
+    
+    // Programming Language Integration
     "html formatter php",
     "minify html with php",
     "html beautifier php",
@@ -85,7 +93,8 @@ export const metadata: Metadata = {
     "html beautifier javascript library",
     "minify html using javascript",
     "javascript minification tools",
-
+    
+    // IDE & Editor Integration
     "html formatter vscode",
     "html formatter extension vscode",
     "html formatter for vs code",
@@ -106,7 +115,8 @@ export const metadata: Metadata = {
     "html formatter nvim",
     "html formatter neovim",
     "html formatter emacs",
-
+    
+    // CLI & Tools
     "html formatter npm",
     "html formatter cli",
     "html beautifier cli",
@@ -114,7 +124,8 @@ export const metadata: Metadata = {
     "html formatter linux",
     "html beautifier linux",
     "html formatter download",
-
+    
+    // Specific Use Cases
     "html email formatter",
     "html tag beautifier",
     "html page beautifier",
@@ -124,7 +135,8 @@ export const metadata: Metadata = {
     "html message formatter",
     "html template beautifier",
     "beautify html template",
-
+    
+    // Framework Integration
     "html formatter django",
     "html formatter angular",
     "html formatter for angular",
@@ -135,7 +147,8 @@ export const metadata: Metadata = {
     "html jinja formatter",
     "html liquid formatter",
     "html markdown formatter",
-
+    
+    // Additional Variations
     "html 5 formatter",
     "html5 beautify",
     "html formatter code",
@@ -154,14 +167,16 @@ export const metadata: Metadata = {
     "ai html formatter",
     "html beautifier ai",
     "html formatter with preview",
-
+    
+    // Build Tools
     "minify html gulp",
     "minify html drupal",
     "vite plugin html minifier",
     "html minifier next",
     "rollup plugin html minifier",
     "minify html wp rocket",
-
+    
+    // Use Case Keywords
     "html validator online",
     "html linter",
     "html code cleaner",
@@ -213,7 +228,8 @@ export const metadata: Metadata = {
     "html prettify sublime",
     "beautiful html design",
     "make html beautifier",
-
+    
+    // Additional Formatter Variations
     "html formatter inline",
     "html formatter helix",
     "html formatter in eclipse",
@@ -312,7 +328,8 @@ export const metadata: Metadata = {
     "html formatter w3c",
     "compress html source code",
     "html buityfier",
-
+    
+    // Minifier Specific Keywords
     "node minify html minifier",
     "html gigs",
     "compress html link",
@@ -425,7 +442,8 @@ export const metadata: Metadata = {
     "sveltekit html minifier",
     "html minifier package",
     "compress html in one line",
-
+    
+    // Additional Minifier Keywords
     "minify html in js",
     "html minifier golang",
     "html minifier library",
@@ -457,13 +475,15 @@ export const metadata: Metadata = {
     "minify html and js",
     "html minifier terser npm",
     "html minifier vulnerability",
-
+    
+    // High-Volume Beautifier Keywords
     "html beautifier'",
     "beautifier html",
     "html beautifier online",
     "beautify html online",
     "html minifier terser",
-
+    
+    // Beautifier Tool Variations
     "html beautifier php",
     "html beautifier vscode",
     "html beautifier download",
@@ -519,14 +539,16 @@ export const metadata: Metadata = {
     "react html beautifier",
     "html beautifier viewer",
     "html prettify vs code",
-
+    
+    // Additional Beautifier Variations
     "beautifully html",
     "beautiful html formatter",
     "html to beautify",
     "text to html beautifier",
     "html to formatter",
     "without html",
-
+    
+    // Comparison & Educational Keywords
     "body structure of html",
     "html minifier github",
     "html minifier python",
@@ -536,11 +558,12 @@ export const metadata: Metadata = {
     "html formatter vs code",
     "htm vs html what's the difference",
     "html minifier npm",
-
+    
+    // Additional Tool & Platform Keywords
     "html fiverr",
     "html jobs in lahore"
   ],
-  alternates: {
+  alternates: { 
     canonical: "https://www.fasttools.store/dev-tools/html-beautifier",
     languages: {
       "en-US": "https://www.fasttools.store/dev-tools/html-beautifier",
@@ -628,15 +651,15 @@ export const metadata: Metadata = {
           "Free online HTML beautifier and minifier tool. Beautify HTML code with proper formatting or minify HTML to compress file size. Best HTML formatter online with instant results, download, validation, code statistics, indent options, and comment removal. No signup required.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: {
-        "@type": "Offer",
-        price: "0",
+      offers: { 
+        "@type": "Offer", 
+        price: "0", 
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
       featureList: [
           "Beautify HTML online with proper indentation",
-          "Minify HTML code to compress file size",
+          "Minify HTML code to compress file size", 
           "HTML formatter online with live preview",
           "Free HTML beautifier with no signup",
           "Download formatted HTML instantly",
@@ -655,9 +678,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: {
-        "@type": "Organization",
-        name: "FastTools",
+      publisher: { 
+        "@type": "Organization", 
+        name: "FastTools", 
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -771,7 +794,7 @@ export default function HTMLBeautifierPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8">
               <div className="flex-1 lg:flex-[2] space-y-4 sm:space-y-5 md:space-y-6">
-                {}
+                {/* Hero Section */}
                 <div className="text-center space-y-3 sm:space-y-4 md:space-y-5 animate-fade-in-up">
                   <GHeader
                     title="Free HTML Beautifier Online - Beautify HTML & Minify HTML Code"
@@ -781,17 +804,17 @@ export default function HTMLBeautifierPage() {
                   />
                 </div>
 
-                {}
+                {/* Mobile Ad Space */}
                 <div className="lg:hidden">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {}
+                {/* HTML Beautifier Tool */}
                 <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
         <HTMLBeautifier />
                 </div>
 
-                {}
+                {/* Content Sections */}
                 <div className="space-y-4 sm:space-y-5 animate-fade-in-up animation-delay-200">
                   <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">How to Use HTML Beautifier & Minifier</h2>
@@ -1213,28 +1236,28 @@ export default function HTMLBeautifierPage() {
                   <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Related Developer Tools</h2>
                     <div className="grid gap-2 sm:gap-3 grid-cols-1 sm:grid-cols-2 text-sm">
-                      <Link
+                      <Link 
                         href="/dev-tools/json-to-csv"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">JSON to CSV Converter</h3>
                         <p className="text-xs text-muted-foreground">Convert JSON data to CSV format</p>
                       </Link>
-                      <Link
+                      <Link 
                         href="/dev-tools/regex-tester"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">Regex Tester</h3>
                         <p className="text-xs text-muted-foreground">Test regular expressions online</p>
                       </Link>
-                      <Link
+                      <Link 
                         href="/dev-tools/jwt-decoder"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">JWT Decoder</h3>
                         <p className="text-xs text-muted-foreground">Decode and inspect JSON Web Tokens</p>
                       </Link>
-                      <Link
+                      <Link 
                         href="/dev-tools"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
@@ -1246,7 +1269,7 @@ export default function HTMLBeautifierPage() {
                 </div>
               </div>
 
-              {}
+              {/* Desktop Sidebar with AdSense (sticky, hidden on mobile/tablet) */}
               <div className="hidden lg:block w-72 flex-shrink-0">
                 <div className="sticky top-32 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

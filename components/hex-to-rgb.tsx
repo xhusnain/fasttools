@@ -23,7 +23,8 @@ const SAMPLE_COLORS = [
 
 export function HexToRGB() {
   const [inputMode, setInputMode] = useState<"hex" | "rgb" | "hsl">("hex")
-
+  
+  // Input states
   const [hexInput, setHexInput] = useState("#2563eb")
   const [rgbR, setRgbR] = useState("37")
   const [rgbG, setRgbG] = useState("99")
@@ -32,14 +33,16 @@ export function HexToRGB() {
   const [hslS, setHslS] = useState("83")
   const [hslL, setHslL] = useState("53")
   const [alpha, setAlpha] = useState("1")
-
+  
+  // Output states
   const [hex, setHex] = useState("#2563eb")
   const [rgb, setRgb] = useState({ r: 37, g: 99, b: 235 })
   const [hsl, setHsl] = useState({ h: 217, s: 83, l: 53 })
-
+  
   const [copied, setCopied] = useState<CopiedState>({})
   const [error, setError] = useState("")
 
+  // Color conversion functions
   const hexToRgb = (hexValue: string) => {
     const cleanHex = hexValue.replace("#", "")
     if (cleanHex.length !== 6) return null
@@ -139,10 +142,11 @@ export function HexToRGB() {
     }
   }
 
+  // Update all formats when input changes
   useEffect(() => {
     try {
       setError("")
-
+      
       if (inputMode === "hex") {
         const rgbResult = hexToRgb(hexInput)
         if (rgbResult) {
@@ -157,12 +161,12 @@ export function HexToRGB() {
         const r = parseInt(rgbR) || 0
         const g = parseInt(rgbG) || 0
         const b = parseInt(rgbB) || 0
-
+        
         if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255) {
           setError("RGB values must be between 0-255")
           return
         }
-
+        
         setRgb({ r, g, b })
         setHex(rgbToHex(r, g, b))
         const hslResult = rgbToHsl(r, g, b)
@@ -171,12 +175,12 @@ export function HexToRGB() {
         const h = parseInt(hslH) || 0
         const s = parseInt(hslS) || 0
         const l = parseInt(hslL) || 0
-
+        
         if (h < 0 || h > 360 || s < 0 || s > 100 || l < 0 || l > 100) {
           setError("HSL values out of range")
           return
         }
-
+        
         setHsl({ h, s, l })
         const rgbResult = hslToRgb(h, s, l)
         setRgb(rgbResult)
@@ -204,7 +208,7 @@ export function HexToRGB() {
 
   return (
     <div className="space-y-6">
-      {}
+      {/* Sample Colors */}
       <div className="space-y-2">
         <div className="flex items-center gap-2">
           <Sparkles className="h-4 w-4 text-primary" />
@@ -229,7 +233,7 @@ export function HexToRGB() {
         </div>
       </div>
 
-      {}
+      {/* Input Section */}
       <Card className="p-4 sm:p-6">
         <Tabs value={inputMode} onValueChange={(v) => setInputMode(v as any)}>
           <TabsList className="grid w-full grid-cols-3">
@@ -339,7 +343,7 @@ export function HexToRGB() {
           </TabsContent>
         </Tabs>
 
-        {}
+        {/* Alpha Channel */}
         <div className="mt-4 space-y-2">
           <Label>Alpha / Opacity (0-1)</Label>
           <div className="flex items-center gap-3">
@@ -372,7 +376,7 @@ export function HexToRGB() {
         )}
       </Card>
 
-      {}
+      {/* Color Preview */}
       <Card className="p-6">
         <div className="flex items-center gap-4">
           <div
@@ -405,12 +409,12 @@ export function HexToRGB() {
         </div>
       </Card>
 
-      {}
+      {/* Output Formats */}
       <Card className="p-6 space-y-4">
         <h3 className="font-semibold text-lg">All Color Formats</h3>
-
+        
         <div className="space-y-3">
-          {}
+          {/* Hex */}
           <div className="flex items-center justify-between p-3 bg-muted/30 rounded-lg border border-border">
             <div className="flex-1">
               <p className="text-sm text-muted-foreground">Hex</p>
@@ -420,7 +424,7 @@ export function HexToRGB() {
               variant="outline"
               size="sm"
               onClick={() => copyToClipboard(hex, "hex")}
-              style={{
+              style={{ 
                 backgroundColor: hex,
                 borderColor: hex,
                 color: hsl.l > 50 ? '#000000' : '#FFFFFF'
@@ -431,7 +435,7 @@ export function HexToRGB() {
             </Button>
           </div>
 
-          {}
+          {/* RGB */}
           <div className="flex items-center justify-between p-3 bg-muted/30 rounded-lg border border-border">
             <div className="flex-1">
               <p className="text-sm text-muted-foreground">RGB</p>
@@ -441,7 +445,7 @@ export function HexToRGB() {
               variant="outline"
               size="sm"
               onClick={() => copyToClipboard(`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`, "rgb")}
-              style={{
+              style={{ 
                 backgroundColor: hex,
                 borderColor: hex,
                 color: hsl.l > 50 ? '#000000' : '#FFFFFF'
@@ -452,7 +456,7 @@ export function HexToRGB() {
             </Button>
           </div>
 
-          {}
+          {/* RGBA */}
           <div className="flex items-center justify-between p-3 bg-muted/30 rounded-lg border border-border">
             <div className="flex-1">
               <p className="text-sm text-muted-foreground">RGBA</p>
@@ -462,7 +466,7 @@ export function HexToRGB() {
               variant="outline"
               size="sm"
               onClick={() => copyToClipboard(`rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alphaValue})`, "rgba")}
-              style={{
+              style={{ 
                 backgroundColor: hex,
                 borderColor: hex,
                 color: hsl.l > 50 ? '#000000' : '#FFFFFF'
@@ -473,7 +477,7 @@ export function HexToRGB() {
             </Button>
           </div>
 
-          {}
+          {/* HSL */}
           <div className="flex items-center justify-between p-3 bg-muted/30 rounded-lg border border-border">
             <div className="flex-1">
               <p className="text-sm text-muted-foreground">HSL</p>
@@ -483,7 +487,7 @@ export function HexToRGB() {
               variant="outline"
               size="sm"
               onClick={() => copyToClipboard(`hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`, "hsl")}
-              style={{
+              style={{ 
                 backgroundColor: hex,
                 borderColor: hex,
                 color: hsl.l > 50 ? '#000000' : '#FFFFFF'
@@ -494,7 +498,7 @@ export function HexToRGB() {
             </Button>
           </div>
 
-          {}
+          {/* HSLA */}
           <div className="flex items-center justify-between p-3 bg-muted/30 rounded-lg border border-border">
             <div className="flex-1">
               <p className="text-sm text-muted-foreground">HSLA</p>
@@ -504,7 +508,7 @@ export function HexToRGB() {
               variant="outline"
               size="sm"
               onClick={() => copyToClipboard(`hsla(${hsl.h}, ${hsl.s}%, ${hsl.l}%, ${alphaValue})`, "hsla")}
-              style={{
+              style={{ 
                 backgroundColor: hex,
                 borderColor: hex,
                 color: hsl.l > 50 ? '#000000' : '#FFFFFF'
@@ -515,7 +519,7 @@ export function HexToRGB() {
             </Button>
           </div>
 
-          {}
+          {/* CSS Variable */}
           <div className="flex items-center justify-between p-3 bg-muted/30 rounded-lg border border-border">
             <div className="flex-1">
               <p className="text-sm text-muted-foreground">CSS Variable</p>
@@ -525,7 +529,7 @@ export function HexToRGB() {
               variant="outline"
               size="sm"
               onClick={() => copyToClipboard(`--color-primary: ${hex};`, "css")}
-              style={{
+              style={{ 
                 backgroundColor: hex,
                 borderColor: hex,
                 color: hsl.l > 50 ? '#000000' : '#FFFFFF'

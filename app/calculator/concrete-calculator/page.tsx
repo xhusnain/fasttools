@@ -2,13 +2,13 @@ import { ConcreteCalculator } from "@/components/concrete-calculator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import {
-  Calculator,
-  Building,
-  Ruler,
-  Weight,
-  Volume,
-  Target,
+import { 
+  Calculator, 
+  Building, 
+  Ruler, 
+  Weight, 
+  Volume, 
+  Target, 
   Info,
   Globe,
   CheckCircle,
@@ -167,7 +167,7 @@ const faqJsonLd = {
       }
     },
     {
-      "@type": "Question",
+      "@type": "Question", 
       "name": "What's the difference between concrete mixes?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -178,7 +178,7 @@ const faqJsonLd = {
       "@type": "Question",
       "name": "How long does concrete take to cure?",
       "acceptedAnswer": {
-        "@type": "Answer",
+        "@type": "Answer", 
         "text": "Concrete typically reaches 90% strength in 28 days, but initial setting occurs within 24-48 hours. Proper curing is essential for maximum strength and durability."
       }
     }
@@ -196,10 +196,10 @@ export default function ConcreteCalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-
+      
       <div className="bg-card">
         <div className="container mx-auto px-3 py-6 md:py-8">
-      <Breadcrumbs
+      <Breadcrumbs 
         items={[
           { label: "Calculator", href: "/calculator" },
           { label: "Concrete Calculator", href: "/calculator/concrete-calculator" },
@@ -208,14 +208,14 @@ export default function ConcreteCalculatorPage() {
 
           <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
-              <GHeader
+              <GHeader 
                 title="Free Online Concrete Calculator"
                 description="Use our free Concrete Calculator to calculate volume, weight, materials, and cost for slabs, columns, stairs, curbs, and more. Supports multiple mix types with detailed breakdowns."
                 titleSize="medium"
               />
             </div>
 
-            {}
+            {/* Mobile/Tablet AdSpace after GHeader */}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -227,7 +227,7 @@ export default function ConcreteCalculatorPage() {
               <div>
             <ConcreteCalculator />
 
-                {}
+                {/* How to Use */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mt-6 md:mt-8 mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -279,7 +279,7 @@ export default function ConcreteCalculatorPage() {
                   </div>
                 </div>
 
-                {}
+                {/* Supported Project Types */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -311,7 +311,7 @@ export default function ConcreteCalculatorPage() {
               </div>
             </div>
 
-                {}
+                {/* Concrete Mix Types */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -347,7 +347,7 @@ export default function ConcreteCalculatorPage() {
                   </div>
                 </div>
 
-                {}
+                {/* Advanced Features */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -399,7 +399,7 @@ export default function ConcreteCalculatorPage() {
           </div>
                 </div>
 
-                {}
+                {/* FAQ Section */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -498,7 +498,7 @@ export default function ConcreteCalculatorPage() {
                 </div>
                 </div>
 
-                {}
+                {/* Related Tools */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -537,7 +537,7 @@ export default function ConcreteCalculatorPage() {
                 </div>
               </div>
 
-              {}
+              {/* Desktop Sidebar with AdSense */}
               <div className="space-y-6 hidden lg:block">
                 <div className="sticky top-32 space-y-6">
                   <div>

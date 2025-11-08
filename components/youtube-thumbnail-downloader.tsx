@@ -19,19 +19,19 @@ export function YoutubeThumbnailDownloader() {
 
   const extractVideoId = (url: string): string | null => {
     const trimmedUrl = url.trim()
-
+    
     const patterns = [
-
+      // youtube.com/watch?v=VIDEO_ID
       /(?:youtube\.com\/watch\?v=)([a-zA-Z0-9_-]{11})/i,
-
+      // youtu.be/VIDEO_ID
       /(?:youtu\.be\/)([a-zA-Z0-9_-]{11})/i,
-
+      // youtube.com/embed/VIDEO_ID
       /(?:youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/i,
-
+      // youtube.com/v/VIDEO_ID
       /(?:youtube\.com\/v\/)([a-zA-Z0-9_-]{11})/i,
-
+      // youtube.com/shorts/VIDEO_ID
       /(?:youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/i,
-
+      // Direct video ID (11 characters)
       /^([a-zA-Z0-9_-]{11})$/,
     ]
 
@@ -51,22 +51,26 @@ export function YoutubeThumbnailDownloader() {
 
     const trimmedUrl = url.trim()
 
+    // YouTube URL patterns
     const urlPatterns = [
       /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/i,
-      /^[a-zA-Z0-9_-]{11}$/,
+      /^[a-zA-Z0-9_-]{11}$/, // Direct video ID
     ]
 
+    // Check if it matches any URL pattern
     const isUrlPattern = urlPatterns.some(pattern => pattern.test(trimmedUrl))
 
     if (!isUrlPattern && !/^[a-zA-Z0-9_-]{11}$/.test(trimmedUrl)) {
       return { valid: false, message: "Invalid YouTube URL format. Please enter a valid YouTube URL or 11-character video ID" }
     }
 
+    // Extract video ID to verify format
     const videoId = extractVideoId(trimmedUrl)
     if (!videoId) {
       return { valid: false, message: "Could not extract video ID. Please check your URL format" }
     }
 
+    // Verify video ID is exactly 11 characters (YouTube standard)
     if (videoId.length !== 11) {
       return { valid: false, message: "Invalid video ID format. YouTube video IDs must be 11 characters" }
     }
@@ -78,8 +82,9 @@ export function YoutubeThumbnailDownloader() {
     setError(null)
     setIsValidating(true)
 
+    // Validate URL first
     const validation = validateYouTubeUrl(videoUrl)
-
+    
     if (!validation.valid) {
       setError(validation.message || "Invalid YouTube URL")
       setIsValidating(false)
@@ -89,7 +94,7 @@ export function YoutubeThumbnailDownloader() {
 
     setLoading(true)
     setIsValidating(false)
-
+    
     setTimeout(() => {
       const videoId = extractVideoId(videoUrl)
 
@@ -102,17 +107,17 @@ export function YoutubeThumbnailDownloader() {
           },
           {
             quality: "High Quality",
-            url: `https:
+            url: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
             size: "480x360",
           },
           {
             quality: "Medium Quality",
-            url: `https:
+            url: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`,
             size: "320x180",
           },
           {
             quality: "Standard Quality",
-            url: `https:
+            url: `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
             size: "640x480",
           },
         ])
@@ -143,7 +148,7 @@ export function YoutubeThumbnailDownloader() {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
-      {}
+      {/* Main Downloader Card */}
       <Card className="border-2 border-border bg-card shadow-2xl">
         <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
           <div className="text-center space-y-3 sm:space-y-4">
@@ -174,8 +179,8 @@ export function YoutubeThumbnailDownloader() {
                 value={videoUrl}
                 onChange={(e) => {
                   setVideoUrl(e.target.value)
-                  setError(null)
-                  setThumbnails([])
+                  setError(null) // Clear error when user types
+                  setThumbnails([]) // Clear thumbnails when URL changes
                 }}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" && videoUrl.trim() && !loading) {

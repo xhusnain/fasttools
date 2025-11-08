@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Upload, Copy, Check, FileText, RotateCcw } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
+import Tesseract from "tesseract.js"
 
 export function ImageToText() {
   const [image, setImage] = useState<string | null>(null)
@@ -59,7 +60,7 @@ export function ImageToText() {
     setLoading(false)
     setProgress(0)
     setCopied(false)
-
+    // Reset the file input
     const fileInput = document.getElementById("image-upload") as HTMLInputElement
     if (fileInput) {
       fileInput.value = ""
@@ -90,7 +91,7 @@ export function ImageToText() {
                 <input id="image-upload" type="file" className="hidden" accept="image/*" onChange={handleImageUpload} />
               </label>
             </div>
-
+            
             {image && (
               <div className="flex justify-center">
                 <Button size="sm" variant="outline" onClick={resetAll} className="h-8 text-xs bg-transparent">

@@ -3,6 +3,8 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { JWTDecoder } from "@/components/jwt-decoder"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import Link from "next/link"
+import { Code, Code2, Globe, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
@@ -12,13 +14,14 @@ export const metadata: Metadata = {
   keywords: [
     "fasttools",
     "fast tools",
-
+    // Ultra High Volume Keywords (100k+)
     "jwt",
     "jwt json web token",
     "jwt decode",
     "jwt i o",
     "jwt token",
-
+    
+    // High Volume Core Keywords (10k-100k)
     "jwt token decode",
     "jwt authentication",
     "decoding jwt",
@@ -34,7 +37,8 @@ export const metadata: Metadata = {
     "what is jwt",
     "jwt examples",
     "jwt online",
-
+    
+    // Feature-Based Keywords
     "jwt decoder",
     "jwt encoder",
     "jwt generator",
@@ -60,7 +64,8 @@ export const metadata: Metadata = {
     "jwt tool",
     "jwt checker",
     "jwt converter",
-
+    
+    // Action Keywords
     "jwt token decode online",
     "jwt debug",
     "jwt verify",
@@ -80,7 +85,8 @@ export const metadata: Metadata = {
     "generate secret key for jwt",
     "generate jwt secret key",
     "jwt token online",
-
+    
+    // Technical Components
     "jwt payload",
     "jwt header",
     "jwt signature",
@@ -108,7 +114,8 @@ export const metadata: Metadata = {
     "iat jwt",
     "jti jwt",
     "jwt scope",
-
+    
+    // Framework/Language Keywords
     "jwt python",
     "go jwt",
     "spring security jwt",
@@ -166,7 +173,8 @@ export const metadata: Metadata = {
     "fastapi jwt authentication",
     "simple jwt django",
     "jwt library",
-
+    
+    // Authentication & Security
     "jwt authentication token",
     "jwt token refresh",
     "refresh tokens jwt",
@@ -186,7 +194,8 @@ export const metadata: Metadata = {
     "jwt token bearer",
     "bearer token vs jwt",
     "jwt token vs oauth 2",
-
+    
+    // Comparison Keywords (High Value)
     "jwt vs oauth",
     "jwt vs oauth2",
     "jwt and oauth2",
@@ -207,7 +216,8 @@ export const metadata: Metadata = {
     "oauth vs jwt",
     "oauth jwt",
     "jwt oauth",
-
+    
+    // Educational & Documentation
     "what is a jwt token",
     "what is jwt authentication",
     "how jwt works",
@@ -222,7 +232,8 @@ export const metadata: Metadata = {
     "signed jwt example",
     "jwt lecture",
     "jwt talks",
-
+    
+    // Integration Keywords
     "jwt and oauth difference",
     "jwt and cookies",
     "jwt and refresh tokens",
@@ -239,7 +250,8 @@ export const metadata: Metadata = {
     "jwt or cookies",
     "jwt and bearer token difference",
     "jwt and cookies for security",
-
+    
+    // Alternative/Tool Comparison
     "jwt or passport",
     "jwt one liner",
     "jwt like tokens",
@@ -257,7 +269,8 @@ export const metadata: Metadata = {
     "jwt or auth0",
     "jwt or bearer",
     "authentication like jwt",
-
+    
+    // Misc & Brand
     "jwt token parser",
     "jwt logo",
     "jwt icon",
@@ -266,7 +279,8 @@ export const metadata: Metadata = {
     "audiences in jwt are not allowed",
     "audiences in jwt are not allowed spotify",
     "module jwt has no attribute encode",
-
+    
+    // Algorithm Keywords
     "jwt hs256",
     "jwt rs256",
     "json web token decoder",
@@ -275,7 +289,8 @@ export const metadata: Metadata = {
     "jwt header decoder",
     "jwt token generator",
     "jwt base64 decoder",
-
+    
+    // Framework Integration Keywords (with/for)
     "jwt with spring security",
     "jwt with spring boot",
     "jwt with node js",
@@ -297,13 +312,15 @@ export const metadata: Metadata = {
     "jwt for react",
     "jwt for golang",
     "jwt for django",
-
+    
+    // Use Case Keywords
     "jwt for authorization",
     "jwt for authentication or authorization",
     "jwt for session management",
     "jwt for api authentication",
     "jwt for login",
-
+    
+    // Security & Validation Questions
     "is jwt secure",
     "is jwt safe",
     "is jwt encrypted",
@@ -318,12 +335,14 @@ export const metadata: Metadata = {
     "is jwt and oauth same",
     "is jwt authentication or authorization",
     "is jwt base64 encoded",
-
+    
+    // Alternative & Comparison
     "alternative to jwt",
     "go jwt example",
     "jwt simple example",
     "jwt secret example",
-
+    
+    // Technical Variations (without)
     "jwt without expiration",
     "jwt without signature",
     "jwt without refresh token",
@@ -337,9 +356,11 @@ export const metadata: Metadata = {
     "jwt without oauth2",
     "jwt without expiration time",
     "jwt without expiry",
-
+    
+    // Token Management
     "jwt with refresh token",
-
+    
+    // Conversion Keywords (to)
     "jwt to json",
     "jwt to pem",
     "jwt to text",
@@ -355,7 +376,8 @@ export const metadata: Metadata = {
     "jwt to decode",
     "jwt to bearer",
     "jwt to io",
-
+    
+    // Location & Misc
     "near js bank",
     "jwt near me",
     "jwt lahore",
@@ -397,15 +419,15 @@ export const metadata: Metadata = {
         "Developer tool to decode JWT header and payload in the browser for debugging.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: {
-        "@type": "Offer",
-        price: "0",
+      offers: { 
+        "@type": "Offer", 
+        price: "0", 
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
       featureList: [
-        "Decode header/payload",
-        "Base64URL",
+        "Decode header/payload", 
+        "Base64URL", 
         "Claims viewer",
         "JWT inspection",
         "Token debugging",
@@ -420,9 +442,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: {
-        "@type": "Organization",
-        name: "FastTools",
+      publisher: { 
+        "@type": "Organization", 
+        name: "FastTools", 
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -467,7 +489,7 @@ export default function JWTDecoderPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8">
               <div className="flex-1 lg:flex-[2] space-y-4 sm:space-y-5 md:space-y-6">
-                {}
+                {/* Hero Section */}
                 <div className="text-center space-y-3 sm:space-y-4 md:space-y-5 animate-fade-in-up">
                   <GHeader
                     title="Decode & Inspect JSON Web Tokens"
@@ -477,17 +499,17 @@ export default function JWTDecoderPage() {
                   />
                 </div>
 
-                {}
+                {/* Mobile Ad Space */}
                 <div className="lg:hidden">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {}
+                {/* JWT Decoder Tool */}
                 <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
         <JWTDecoder />
         </div>
 
-                {}
+                {/* Content Sections */}
                 <div className="space-y-4 sm:space-y-5 animate-fade-in-up animation-delay-200">
                   <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">How to Use JWT Decoder</h2>
@@ -647,8 +669,8 @@ export default function JWTDecoderPage() {
                   <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Frequently Asked Questions</h2>
                     <div className="space-y-4 sm:space-y-5">
-
-                      {}
+                      
+                      {/* How JWT Works */}
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">How JWT works?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -719,7 +741,7 @@ export default function JWTDecoderPage() {
                         </p>
                       </div>
 
-                      {}
+                      {/* What JWT Is */}
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">What jwt token?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -755,7 +777,7 @@ export default function JWTDecoderPage() {
                         </p>
                       </div>
 
-                      {}
+                      {/* Why JWT */}
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Why jwt token is used?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -812,7 +834,7 @@ export default function JWTDecoderPage() {
                         </p>
                       </div>
 
-                      {}
+                      {/* Security Questions */}
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Are jwt tokens secure?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -869,7 +891,7 @@ export default function JWTDecoderPage() {
                         </p>
                       </div>
 
-                      {}
+                      {/* Storage & Location */}
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Where jwt token is stored?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -933,7 +955,7 @@ export default function JWTDecoderPage() {
                         </p>
                       </div>
 
-                      {}
+                      {/* Who & When */}
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Who created jwt?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -951,7 +973,7 @@ export default function JWTDecoderPage() {
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Who issues jwt token?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          JWT tokens are issued by: 1) Authentication servers (your backend login service). 2) Identity providers (Auth0, Okta, Keycloak, Firebase Auth). 3) OAuth 2.0 authorization servers. 4) OIDC (OpenID Connect) providers. 5) Custom auth microservices. The issuer is identified by the iss claim in the token. Receiving services validate that the iss matches expected/trusted issuers. In distributed systems, a central auth service issues tokens that multiple services validate using shared secret or public key. Issuer URL is typically your auth domain (e.g., https:
+                          JWT tokens are issued by: 1) Authentication servers (your backend login service). 2) Identity providers (Auth0, Okta, Keycloak, Firebase Auth). 3) OAuth 2.0 authorization servers. 4) OIDC (OpenID Connect) providers. 5) Custom auth microservices. The issuer is identified by the iss claim in the token. Receiving services validate that the iss matches expected/trusted issuers. In distributed systems, a central auth service issues tokens that multiple services validate using shared secret or public key. Issuer URL is typically your auth domain (e.g., https://auth.example.com).
                         </p>
                       </div>
 
@@ -976,7 +998,7 @@ export default function JWTDecoderPage() {
                         </p>
                       </div>
 
-                      {}
+                      {/* Technical Details */}
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">How jwt token is generated?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1005,7 +1027,7 @@ export default function JWTDecoderPage() {
                         </p>
                       </div>
 
-                      {}
+                      {/* Additional Who Questions */}
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Who created jwt token?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1034,7 +1056,7 @@ export default function JWTDecoderPage() {
                         </p>
                       </div>
 
-                      {}
+                      {/* Which Questions */}
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">JWT which algorithm?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1098,7 +1120,7 @@ export default function JWTDecoderPage() {
                         </p>
                       </div>
 
-                      {}
+                      {/* When Questions */}
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">When does jwt token expire?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1148,7 +1170,7 @@ export default function JWTDecoderPage() {
                         </p>
                       </div>
 
-                      {}
+                      {/* What Questions */}
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">What jwt verify return?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1219,7 +1241,7 @@ export default function JWTDecoderPage() {
                         </p>
                       </div>
 
-                      {}
+                      {/* Are Questions */}
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Are jwt tokens stored in cookies?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1297,7 +1319,7 @@ export default function JWTDecoderPage() {
                         </p>
                       </div>
 
-                      {}
+                      {/* Can/How Questions */}
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">Can jwt be decoded?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1451,28 +1473,28 @@ export default function JWTDecoderPage() {
                   <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Related Developer Tools</h2>
                     <div className="grid gap-2 sm:gap-3 grid-cols-1 sm:grid-cols-2 text-sm">
-                      <Link
+                      <Link 
                         href="/dev-tools/regex-tester"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">Regex Tester</h3>
                         <p className="text-xs text-muted-foreground">Test and debug regular expressions</p>
                       </Link>
-                      <Link
+                      <Link 
                         href="/dev-tools/json-to-csv"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">JSON to CSV</h3>
                         <p className="text-xs text-muted-foreground">Convert JSON data to CSV format</p>
                       </Link>
-                      <Link
+                      <Link 
                         href="/dev-tools/markdown-previewer"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-1">Markdown Previewer</h3>
                         <p className="text-xs text-muted-foreground">Preview markdown in real-time</p>
                       </Link>
-                      <Link
+                      <Link 
                         href="/dev-tools"
                         className="block p-2.5 sm:p-3 bg-card border border-border rounded-lg hover:shadow-md hover:border-primary/50 transition-all no-underline"
                       >
@@ -1484,7 +1506,7 @@ export default function JWTDecoderPage() {
                 </div>
               </div>
 
-              {}
+              {/* Desktop Sidebar with AdSense (sticky, hidden on mobile/tablet) */}
               <div className="hidden lg:block w-72 flex-shrink-0">
                 <div className="sticky top-32 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

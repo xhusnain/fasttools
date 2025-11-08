@@ -5,46 +5,49 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import {
-  Calculator,
-  DollarSign,
-  Percent,
-  Calendar,
-  TrendingUp,
-  TrendingDown,
-  Info,
-  AlertCircle,
-  CheckCircle,
-  Copy,
-  Download,
-  History,
-  Star,
-  Globe,
-  Shield,
-  FileText,
-  BarChart3,
-  PieChart,
-  Target,
-  Zap,
-  Clock,
-  Users,
-  Home,
-  Car,
-  ShoppingBag,
-  CreditCard,
-  Banknote,
-  Coins,
-  Wallet,
-  Briefcase,
-  Store,
-  Truck,
-  Package,
-  Tag,
-  ShoppingCart,
-  HandHeart,
-  Gift,
-  Award,
-  Trophy,
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Badge } from "@/components/ui/badge"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { 
+  Calculator, 
+  DollarSign, 
+  Percent, 
+  Calendar, 
+  TrendingUp, 
+  TrendingDown, 
+  Info, 
+  AlertCircle, 
+  CheckCircle, 
+  Copy, 
+  Download, 
+  History, 
+  Star, 
+  Globe, 
+  Shield, 
+  FileText, 
+  BarChart3, 
+  PieChart, 
+  Target, 
+  Zap, 
+  Clock, 
+  Users, 
+  Home, 
+  Car, 
+  ShoppingBag, 
+  CreditCard, 
+  Banknote, 
+  Coins, 
+  Wallet, 
+  Briefcase, 
+  Store, 
+  Truck, 
+  Package, 
+  Tag, 
+  ShoppingCart, 
+  HandHeart, 
+  Gift, 
+  Award, 
+  Trophy, 
   Stethoscope,
   Brain,
   Dumbbell,
@@ -159,6 +162,7 @@ export default function MortgageCalculator() {
     const hoa = parseFloat(hoaFee) || 0
     const other = parseFloat(otherCosts) || 0
 
+    // Input validation
     if (price <= 0) {
       alert("Home price must be greater than $0")
       return
@@ -181,28 +185,32 @@ export default function MortgageCalculator() {
     const monthlyRate = rate / 100 / 12
     const totalMonths = term * 12
 
-    const monthlyPayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
+    // Calculate monthly mortgage payment
+    const monthlyPayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / 
                           (Math.pow(1 + monthlyRate, totalMonths) - 1)
-
+    
     const totalPayments = monthlyPayment * totalMonths
     const totalInterest = totalPayments - loanAmount
 
+    // Calculate additional costs
     const monthlyPropertyTax = (price * tax / 100) / 12
     const monthlyHomeInsurance = insurance / 12
     const monthlyPmi = pmi / 12
     const monthlyHoa = hoa / 12
     const monthlyOtherCosts = other / 12
 
-    const totalMonthlyPayment = monthlyPayment + monthlyPropertyTax + monthlyHomeInsurance +
+    const totalMonthlyPayment = monthlyPayment + monthlyPropertyTax + monthlyHomeInsurance + 
                                monthlyPmi + monthlyHoa + monthlyOtherCosts
     const totalOutOfPocket = totalMonthlyPayment * totalMonths
 
+    // Calculate percentages
     const principalPercentage = (loanAmount / totalOutOfPocket) * 100
     const interestPercentage = (totalInterest / totalOutOfPocket) * 100
     const propertyTaxPercentage = (monthlyPropertyTax * totalMonths / totalOutOfPocket) * 100
     const homeInsurancePercentage = (monthlyHomeInsurance * totalMonths / totalOutOfPocket) * 100
     const otherCostsPercentage = ((monthlyPmi + monthlyHoa + monthlyOtherCosts) * totalMonths / totalOutOfPocket) * 100
 
+    // Generate amortization schedule
     const amortizationSchedule = generateAmortizationSchedule(loanAmount, monthlyRate, totalMonths, monthlyPayment, startDate)
     const monthlySchedule = generateMonthlySchedule(loanAmount, monthlyRate, totalMonths, monthlyPayment)
 
@@ -301,6 +309,7 @@ export default function MortgageCalculator() {
     const paymentStrategies: string[] = []
     const financialTips: string[] = []
 
+    // Mortgage optimization based on interest rate
     if (rate < 4) {
       mortgageOptimization.push("Consider making extra payments to reduce total interest")
       mortgageOptimization.push("Your low interest rate makes this a good mortgage to keep")
@@ -315,16 +324,19 @@ export default function MortgageCalculator() {
       mortgageOptimization.push("Make extra payments a priority")
     }
 
+    // Payment strategies
     paymentStrategies.push("Make one extra payment per year to save interest")
     paymentStrategies.push("Round up to the nearest $100 for easy budgeting")
     paymentStrategies.push("Apply windfalls to principal when possible")
     paymentStrategies.push("Consider bi-weekly payment schedule")
 
+    // Financial tips
     financialTips.push("Build an emergency fund before making extra payments")
     financialTips.push("Consider the opportunity cost of extra payments vs. investing")
     financialTips.push("Review your mortgage terms annually for better rates")
     financialTips.push("Track your mortgage progress to stay motivated")
 
+    // Down payment specific advice
     if (downPayment < 20) {
       financialTips.push("Consider paying PMI until you reach 20% equity")
       financialTips.push("Make extra payments to eliminate PMI faster")
@@ -336,29 +348,29 @@ export default function MortgageCalculator() {
   const generateScenarios = (amount: number, rate: number, term: number, payment: number) => {
     const monthlyRate = rate / 100 / 12
     const totalMonths = term * 12
-
+    
     return [
-      {
-        scenario: "Current Payment",
-        monthlyPayment: payment,
+      { 
+        scenario: "Current Payment", 
+        monthlyPayment: payment, 
         totalInterest: (payment * totalMonths) - amount,
         savings: 0
       },
-      {
-        scenario: "+$100 Extra",
-        monthlyPayment: payment + 100,
+      { 
+        scenario: "+$100 Extra", 
+        monthlyPayment: payment + 100, 
         totalInterest: ((payment + 100) * totalMonths) - amount,
         savings: 0
       },
-      {
-        scenario: "+$200 Extra",
-        monthlyPayment: payment + 200,
+      { 
+        scenario: "+$200 Extra", 
+        monthlyPayment: payment + 200, 
         totalInterest: ((payment + 200) * totalMonths) - amount,
         savings: 0
       },
-      {
-        scenario: "Bi-weekly",
-        monthlyPayment: payment * 1.083,
+      { 
+        scenario: "Bi-weekly", 
+        monthlyPayment: payment * 1.083, 
         totalInterest: ((payment * 1.083) * totalMonths) - amount,
         savings: 0
       }
@@ -392,7 +404,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
 
   return (
     <div className="space-y-6">
-      {}
+      {/* Main Calculator */}
       <Card>
         <CardHeader className="pb-8">
           <CardTitle className="flex items-center gap-2">
@@ -401,7 +413,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          {}
+          {/* Basic Loan Information */}
           <div>
             <Label className="text-lg font-semibold mb-4 block">Basic Loan Information</Label>
             <div className="grid md:grid-cols-2 gap-4">
@@ -428,7 +440,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
             </div>
           </div>
 
-          {}
+          {/* Loan Terms */}
           <div>
             <Label className="text-lg font-semibold mb-4 block">Loan Terms</Label>
             <div className="grid md:grid-cols-3 gap-4">
@@ -464,7 +476,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
             </div>
           </div>
 
-          {}
+          {/* Additional Costs */}
           <div>
             <Label className="text-lg font-semibold mb-4 block">Annual Tax & Costs</Label>
             <div className="grid md:grid-cols-2 gap-4">
@@ -533,10 +545,10 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
         </CardContent>
       </Card>
 
-      {}
+      {/* Results Section */}
       {result && (
         <div className="space-y-6">
-          {}
+          {/* Main Results */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -588,7 +600,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
             </CardContent>
           </Card>
 
-          {}
+          {/* Payment Breakdown */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -626,7 +638,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
             </CardContent>
           </Card>
 
-          {}
+          {/* Amortization Schedule */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -662,7 +674,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
             </CardContent>
           </Card>
 
-          {}
+          {/* Scenarios */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -691,7 +703,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
             </CardContent>
           </Card>
 
-          {}
+          {/* Recommendations */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -740,7 +752,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
         </div>
       )}
 
-      {}
+      {/* History Section */}
       {history.length > 0 && (
         <Card>
           <CardHeader>
@@ -775,7 +787,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
         </Card>
       )}
 
-      {}
+      {/* Information Section */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -797,7 +809,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
               </div>
             </div>
           </div>
-
+          
           <div className="text-sm text-muted-foreground space-y-2">
             <p>
               <strong>Mortgage Payments:</strong> Principal, interest, property taxes, insurance, and other costs.

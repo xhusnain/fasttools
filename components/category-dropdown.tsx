@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import Link from "next/link"
 import { ChevronDown } from "lucide-react"
 
 export function CategoryDropdown() {
@@ -20,6 +21,7 @@ export function CategoryDropdown() {
     { name: "AI Tools", href: "/ai-tools" },
   ]
 
+  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {

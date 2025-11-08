@@ -295,7 +295,7 @@ export default function FAQPage() {
                     />
 
                     <div className="max-w-5xl mx-auto mt-8 md:mt-12">
-                        {}
+                        {/* Title Section */}
                         <div className="mb-12 md:mb-16">
                             <GHeader
                                 title="Frequently Asked Questions"
@@ -306,9 +306,9 @@ export default function FAQPage() {
                             />
                         </div>
 
-                        {}
+                        {/* FAQ Sections */}
                         <div className="space-y-8 mb-12">
-                            {}
+                            {/* General Questions */}
                             <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                                 <div className="flex items-center gap-3 mb-6">
                                     <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -326,7 +326,7 @@ export default function FAQPage() {
                                 </div>
                             </div>
 
-                            {}
+                            {/* Tools & Features Questions */}
                             <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                                 <div className="flex items-center gap-3 mb-6">
                                     <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -344,7 +344,7 @@ export default function FAQPage() {
                                 </div>
                             </div>
 
-                            {}
+                            {/* Privacy & Security Questions */}
                             <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                                 <div className="flex items-center gap-3 mb-6">
                                     <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -362,7 +362,7 @@ export default function FAQPage() {
                                 </div>
                             </div>
 
-                            {}
+                            {/* Usage & Support Questions */}
                             <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                                 <div className="flex items-center gap-3 mb-6">
                                     <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">

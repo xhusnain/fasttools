@@ -1,5 +1,6 @@
 "use client"
 
+import React, { useState, useEffect, useRef } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Upload, Download, RotateCcw, Square, Circle, Type, Image as ImageIcon } from "lucide-react"
@@ -14,7 +15,7 @@ export function SimpleImageEditor() {
       if (!canvasRef.current) return
 
       try {
-
+        // Dynamic import of Fabric.js
         const fabricModule = await import('fabric')
         const fabric = fabricModule.fabric || fabricModule.default || fabricModule
 
@@ -22,6 +23,7 @@ export function SimpleImageEditor() {
           throw new Error('Fabric.js not available')
         }
 
+        // Create canvas
         const fabricCanvas = new fabric.Canvas(canvasRef.current, {
           width: 800,
           height: 600,
@@ -31,6 +33,7 @@ export function SimpleImageEditor() {
         setCanvas(fabricCanvas)
         setIsLoaded(true)
 
+        // Add test objects
         const rect = new fabric.Rect({
           left: 100,
           top: 100,
@@ -139,7 +142,7 @@ export function SimpleImageEditor() {
           const imageUrl = URL.createObjectURL(file)
           fabric.Image.fromURL(imageUrl, (img: any) => {
             if (img) {
-
+              // Scale to fit
               const scale = Math.min(400 / img.width, 300 / img.height, 1)
               img.set({
                 scaleX: scale,
@@ -161,13 +164,13 @@ export function SimpleImageEditor() {
 
   const downloadImage = () => {
     if (!canvas) return
-
+    
     try {
       const dataURL = canvas.toDataURL({
         format: 'png',
         quality: 1
       })
-
+      
       const link = document.createElement('a')
       link.download = 'image.png'
       link.href = dataURL
@@ -179,7 +182,7 @@ export function SimpleImageEditor() {
 
   const resetCanvas = () => {
     if (!canvas) return
-
+    
     try {
       canvas.clear()
       canvas.renderAll()
@@ -190,12 +193,12 @@ export function SimpleImageEditor() {
 
   return (
     <div className="h-screen flex bg-slate-50">
-      {}
+      {/* Left Sidebar */}
       <div className="w-64 bg-white border-r border-slate-200 p-4">
         <h2 className="text-lg font-semibold mb-4">Tools</h2>
-
+        
         <div className="space-y-3">
-          <Button
+          <Button 
             onClick={uploadImage}
             className="w-full justify-start"
             variant="outline"
@@ -204,7 +207,7 @@ export function SimpleImageEditor() {
             Upload Image
           </Button>
 
-          <Button
+          <Button 
             onClick={() => addShape('rectangle')}
             className="w-full justify-start"
             variant="outline"
@@ -213,7 +216,7 @@ export function SimpleImageEditor() {
             Add Rectangle
           </Button>
 
-          <Button
+          <Button 
             onClick={() => addShape('circle')}
             className="w-full justify-start"
             variant="outline"
@@ -222,7 +225,7 @@ export function SimpleImageEditor() {
             Add Circle
           </Button>
 
-          <Button
+          <Button 
             onClick={addText}
             className="w-full justify-start"
             variant="outline"
@@ -232,7 +235,7 @@ export function SimpleImageEditor() {
           </Button>
 
           <div className="border-t pt-3">
-            <Button
+            <Button 
               onClick={downloadImage}
               className="w-full justify-start"
               variant="default"
@@ -241,7 +244,7 @@ export function SimpleImageEditor() {
               Download
             </Button>
 
-            <Button
+            <Button 
               onClick={resetCanvas}
               className="w-full justify-start mt-2"
               variant="outline"
@@ -253,7 +256,7 @@ export function SimpleImageEditor() {
         </div>
       </div>
 
-      {}
+      {/* Main Canvas Area */}
       <div className="flex-1 p-6">
         <div className="h-full flex items-center justify-center">
           <Card className="p-4">

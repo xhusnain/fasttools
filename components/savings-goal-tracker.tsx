@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Copy, Target, Plus, Trash2, Calculator, TrendingUp, DollarSign, Percent, Calendar, PieChart, BarChart3, Wallet, CreditCard, Home, Car, Plane, ShoppingCart, GraduationCap, Heart, Briefcase, Shield, Zap } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
+import { Progress } from "@/components/ui/progress"
 
 interface ExpenseItem {
   id: string
@@ -37,7 +38,7 @@ export function SavingsGoalTracker() {
   const [interestRate, setInterestRate] = useState("4.0")
   const [openExpenseId, setOpenExpenseId] = useState<string | null>(null)
   const [openGoalId, setOpenGoalId] = useState<string | null>(null)
-
+  
   const [expenses, setExpenses] = useState<ExpenseItem[]>([
     { id: '1', category: 'Housing', name: 'Rent/Mortgage', amount: 0, frequency: 'monthly', priority: 'high', isTaxDeductible: false },
     { id: '2', category: 'Food', name: 'Groceries & Dining', amount: 0, frequency: 'monthly', priority: 'high', isTaxDeductible: false },
@@ -45,14 +46,14 @@ export function SavingsGoalTracker() {
     { id: '4', category: 'Utilities', name: 'Electricity, Water, Internet', amount: 0, frequency: 'monthly', priority: 'high', isTaxDeductible: false },
     { id: '5', category: 'Insurance', name: 'Health, Auto, Home', amount: 0, frequency: 'monthly', priority: 'high', isTaxDeductible: false },
   ])
-
+  
   const [goals, setGoals] = useState<GoalItem[]>([
     { id: '1', name: 'Emergency Fund', targetAmount: 0, currentAmount: 0, targetDate: '', priority: 'high', category: 'Emergency' },
     { id: '2', name: 'Vacation Fund', targetAmount: 0, currentAmount: 0, targetDate: '', priority: 'medium', category: 'Travel' },
     { id: '3', name: 'Car Purchase', targetAmount: 0, currentAmount: 0, targetDate: '', priority: 'medium', category: 'Transportation' },
     { id: '4', name: 'Home Down Payment', targetAmount: 0, currentAmount: 0, targetDate: '', priority: 'high', category: 'Housing' },
   ])
-
+  
   const [result, setResult] = useState<{
     monthlyExpenses: number
     monthlySavings: number
@@ -68,9 +69,9 @@ export function SavingsGoalTracker() {
   } | null>(null)
 
   const addExpense = () => {
-
+    // Close any open goal form
     setOpenGoalId(null)
-
+    
     const newExpense: ExpenseItem = {
       id: Date.now().toString(),
       category: 'Other',
@@ -92,15 +93,15 @@ export function SavingsGoalTracker() {
   }
 
   const updateExpense = (id: string, field: keyof ExpenseItem, value: any) => {
-    setExpenses(expenses.map(expense =>
+    setExpenses(expenses.map(expense => 
       expense.id === id ? { ...expense, [field]: value } : expense
     ))
   }
 
   const addGoal = () => {
-
+    // Close any open expense form
     setOpenExpenseId(null)
-
+    
     const newGoal: GoalItem = {
       id: Date.now().toString(),
       name: '',
@@ -122,7 +123,7 @@ export function SavingsGoalTracker() {
   }
 
   const updateGoal = (id: string, field: keyof GoalItem, value: any) => {
-    setGoals(goals.map(goal =>
+    setGoals(goals.map(goal => 
       goal.id === id ? { ...goal, [field]: value } : goal
     ))
   }
@@ -135,6 +136,7 @@ export function SavingsGoalTracker() {
       const inflation = Number.parseFloat(inflationRate) || 2.5
       const interest = Number.parseFloat(interestRate) || 4.0
 
+      // Calculate monthly expenses
       const monthlyExpenses = expenses.reduce((total, expense) => {
         if (expense.frequency === 'monthly') {
           return total + expense.amount
@@ -144,6 +146,7 @@ export function SavingsGoalTracker() {
         return total
       }, 0)
 
+      // Calculate tax savings from deductible expenses
       const taxSavings = expenses
         .filter(expense => expense.isTaxDeductible)
         .reduce((total, expense) => {
@@ -151,34 +154,41 @@ export function SavingsGoalTracker() {
           return total + (annualAmount * (tax / 100))
         }, 0) / 12
 
+      // Calculate total goals
       const totalGoals = goals.reduce((total, goal) => total + (goal.targetAmount - goal.currentAmount), 0)
 
+      // Calculate inflation-adjusted goals
       const inflationAdjustedGoals = goals.reduce((total, goal) => {
         const remainingAmount = goal.targetAmount - goal.currentAmount
-        const yearsToGoal = goal.targetDate ?
+        const yearsToGoal = goal.targetDate ? 
           (new Date(goal.targetDate).getFullYear() - new Date().getFullYear()) : 5
         const adjustedAmount = remainingAmount * Math.pow(1 + (inflation / 100), yearsToGoal)
         return total + adjustedAmount
       }, 0)
 
+      // Calculate monthly savings after expenses
       const monthlySavings = income - monthlyExpenses + taxSavings
       const annualSavings = monthlySavings * 12
 
+      // Calculate years to complete all goals
       const yearsToComplete = totalGoals > 0 ? totalGoals / annualSavings : 0
       const monthlyGoalContribution = totalGoals > 0 ? totalGoals / (yearsToComplete * 12) : 0
 
+      // Priority breakdown
       const priorityBreakdown = goals.reduce((acc, goal) => {
         const amount = goal.targetAmount - goal.currentAmount
         acc[goal.priority] = (acc[goal.priority] || 0) + amount
         return acc
       }, {} as { [key: string]: number })
 
+      // Category breakdown
       const categoryBreakdown = goals.reduce((acc, goal) => {
         const amount = goal.targetAmount - goal.currentAmount
         acc[goal.category] = (acc[goal.category] || 0) + amount
         return acc
       }, {} as { [key: string]: number })
 
+      // Generate recommendations
       const recommendations = []
       if (monthlySavings < 0) {
         recommendations.push("Your expenses exceed your income. Consider reducing expenses or increasing income.")
@@ -270,15 +280,15 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
         </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {}
+          {/* Left Column - Inputs */}
           <div className="space-y-4">
-            {}
+            {/* Income & Tax Configuration */}
             <div className="space-y-3">
               <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
                 <DollarSign className="h-4 w-4 text-primary" />
                 Income & Tax Configuration
               </h3>
-
+              
               <div className="grid grid-cols-2 gap-3">
           <div className="space-y-2">
                   <Label className="text-xs font-medium text-foreground">Monthly Income ($)</Label>
@@ -326,7 +336,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                 </div>
               </div>
 
-            {}
+            {/* Monthly Expenses */}
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
@@ -457,7 +467,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
               </div>
             </div>
 
-            {}
+            {/* Financial Goals */}
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
@@ -570,7 +580,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
               </div>
             </div>
 
-            {}
+            {/* Action Button */}
             <Button
               onClick={calculateFinancialPlan}
               disabled={loading || !monthlyIncome}
@@ -590,17 +600,17 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
             </Button>
           </div>
 
-          {}
+          {/* Right Column - Results */}
           <div className="space-y-3">
             {result ? (
               <>
-                {}
+                {/* Results Header */}
                 <div className="text-center mb-3">
                   <h3 className="text-sm font-semibold text-foreground mb-1">Financial Plan Results</h3>
                   <p className="text-xs text-muted-foreground">Your comprehensive financial analysis</p>
                 </div>
 
-                {}
+                {/* Key Metrics */}
                 <div className="space-y-2">
                   <div className="flex justify-between items-center p-2 rounded-lg bg-card border border-border">
                     <span className="text-xs text-muted-foreground">Monthly Income:</span>
@@ -638,7 +648,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   </div>
                 </div>
 
-                {}
+                {/* Recommendations */}
                 {result.recommendations.length > 0 && (
                   <div className="p-2 rounded-lg bg-accent/5 border border-accent/20">
                     <h4 className="text-xs font-semibold text-foreground mb-1 flex items-center gap-1">
@@ -653,7 +663,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   </div>
                 )}
 
-                {}
+                {/* Copy Button */}
                 <Button
                   onClick={copyResult}
                   variant="outline"

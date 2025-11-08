@@ -1,5 +1,27 @@
 "use client"
 
+import React, { useState, useRef, useEffect } from 'react'
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { 
+  Upload, 
+  Download, 
+  RotateCcw, 
+  ImageIcon, 
+  Palette, 
+  Zap,
+  Type,
+  Shapes,
+  Brush,
+  Filter,
+  Layers,
+  Settings,
+  ChevronRight,
+  ChevronLeft,
+  X
+} from "lucide-react"
+
+// Import sidebar components
 import { MainSidebar } from './sidebar/MainSidebar'
 import { ExpandableSidebar } from './sidebar/ExpandableSidebar'
 import { FabricCanvas } from './canvas/FabricCanvas'
@@ -9,13 +31,15 @@ export function FabricImageEditor() {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false)
   const [activeSidebar, setActiveSidebar] = useState<string | null>(null)
   const [canvas, setCanvasState] = useState<any>(null)
-
+  
   const setCanvas = (canvasInstance: any) => {
+    console.log('Setting canvas:', canvasInstance)
     setCanvasState(canvasInstance)
   }
   const [isProcessing, setIsProcessing] = useState(false)
 
   const handleSidebarToggle = (sidebarType: string) => {
+    console.log('Sidebar toggle:', sidebarType, 'Current canvas:', !!canvas)
     if (activeSidebar === sidebarType) {
       setActiveSidebar(null)
       setIsSidebarExpanded(false)
@@ -27,7 +51,7 @@ export function FabricImageEditor() {
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
-
+    
     if (!file || !canvas) {
       return
     }
@@ -35,39 +59,39 @@ export function FabricImageEditor() {
     try {
       const fabricModule = await import('fabric')
       const { Image } = fabricModule
-
+      
       if (!Image) {
         console.error('Fabric.js Image not available')
         return
       }
-
+      
       const reader = new FileReader()
       reader.onload = (event) => {
         const imageUrl = event.target?.result as string
-
+        
         Image.fromURL(imageUrl, (img: any) => {
           if (img) {
-
+            // Scale image to fit canvas
             const canvasWidth = canvas.getWidth()
             const canvasHeight = canvas.getHeight()
             const imgAspectRatio = img.width! / img.height!
             const canvasAspectRatio = canvasWidth / canvasHeight
-
+            
             let scale = 1
             if (imgAspectRatio > canvasAspectRatio) {
               scale = canvasWidth / img.width!
             } else {
               scale = canvasHeight / img.height!
             }
-
-            img.scale(scale * 0.8)
+            
+            img.scale(scale * 0.8) // 80% of canvas size
             img.set({
               left: canvasWidth / 2,
               top: canvasHeight / 2,
               originX: 'center',
               originY: 'center'
             })
-
+            
             canvas.add(img)
             canvas.setActiveObject(img)
             canvas.renderAll()
@@ -82,7 +106,7 @@ export function FabricImageEditor() {
 
   const downloadImage = () => {
     if (!canvas) return
-
+    
     const link = document.createElement("a")
     link.download = "edited-image.png"
     link.href = canvas.toDataURL()
@@ -97,26 +121,26 @@ export function FabricImageEditor() {
 
   return (
     <div className="h-full bg-gray-50 flex flex-col">
-      {}
-      <TopToolbar
+      {/* Top Toolbar */}
+      <TopToolbar 
         onDownload={downloadImage}
         onReset={resetCanvas}
         isProcessing={isProcessing}
       />
 
-      {}
+      {/* Main Content Area */}
       <div className="flex-1 flex overflow-hidden">
-        {}
+        {/* Left Sidebar */}
         <div className="flex">
-          {}
-          <MainSidebar
+          {/* Main Sidebar */}
+          <MainSidebar 
             onSidebarToggle={handleSidebarToggle}
             activeSidebar={activeSidebar}
           />
-
-          {}
+          
+          {/* Expandable Sidebar */}
           {isSidebarExpanded && activeSidebar && (
-            <ExpandableSidebar
+            <ExpandableSidebar 
               sidebarType={activeSidebar}
               canvas={canvas}
               onClose={() => {
@@ -127,9 +151,9 @@ export function FabricImageEditor() {
           )}
         </div>
 
-        {}
+        {/* Center Canvas Area */}
         <div className="flex-1 flex flex-col items-center justify-center p-6 bg-white">
-          <FabricCanvas
+          <FabricCanvas 
             onCanvasReady={setCanvas}
             width={1400}
             height={900}

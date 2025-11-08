@@ -4,6 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, Calendar, Code, Globe, Calculator } from "lucide-react"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
@@ -103,15 +104,15 @@ export const metadata: Metadata = {
         "Calculate how old you will be in any future year and share fun milestones.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: {
-        "@type": "Offer",
-        price: "0",
+      offers: { 
+        "@type": "Offer", 
+        price: "0", 
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
       featureList: [
-        "Enter target year",
-        "See age instantly",
+        "Enter target year", 
+        "See age instantly", 
         "Share result",
         "Future age predictor",
         "How old will I be",
@@ -126,9 +127,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: {
-        "@type": "Organization",
-        name: "FastTools",
+      publisher: { 
+        "@type": "Organization", 
+        name: "FastTools", 
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -173,7 +174,7 @@ export default function FutureAgePage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1 lg:flex-[2] space-y-6">
-              {}
+              {/* Hero Section */}
               <div className="text-center space-y-5 animate-fade-in-up">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-4 shadow-md">
                   <Calendar className="h-4 w-4 animate-pulse" />
@@ -186,10 +187,10 @@ export default function FutureAgePage() {
                 </h1>
 
                 <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
-                  Discover your age future and calculate how old you'll be in any future year. Perfect for planning milestones, visualizing your future age,
+                  Discover your age future and calculate how old you'll be in any future year. Perfect for planning milestones, visualizing your future age, 
                   and sharing fun age predictions with friends and family. Our future age predictor helps you plan for retirement, education, or any age-related milestone.
                 </p>
-
+                
                 <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
                   <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-card border border-primary shadow">
                     <Calendar className="h-4 w-4 text-primary" />
@@ -210,6 +211,7 @@ export default function FutureAgePage() {
                 </div>
               </div>
 
+              {/* Mobile/Tablet Ad - Top of Page */}
               <div className="block xl:hidden mb-6">
                 <div className="text-center mb-2">
                   <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -217,6 +219,7 @@ export default function FutureAgePage() {
                 <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
               </div>
 
+              {/* Tool Card */}
               <Card className="border border-border shadow-lg bg-card hover:shadow-xl transition-all duration-300">
                 <CardHeader className="p-6">
                   <CardTitle className="text-xl font-bold text-card-foreground flex items-center gap-2">
@@ -232,7 +235,7 @@ export default function FutureAgePage() {
                 </CardContent>
               </Card>
 
-              {}
+              {/* Mobile/Tablet Ad - After tool */}
               <div className="block xl:hidden my-8">
                 <div className="text-center mb-2">
                   <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -240,25 +243,25 @@ export default function FutureAgePage() {
                 <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
               </div>
 
-              {}
+              {/* Content Sections */}
               <div className="space-y-5 animate-fade-in-up animation-delay-200">
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-card-foreground">How Our Future Age Calculator Works</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Our future age calculator and age future predictor uses precise date mathematics to determine your exact age on any future date.
-                    It accounts for leap years, varying month lengths, and provides accurate age future predictions instantly.
+                    Our future age calculator and age future predictor uses precise date mathematics to determine your exact age on any future date. 
+                    It accounts for leap years, varying month lengths, and provides accurate age future predictions instantly. 
                     Whether you want to know your future age for retirement planning or just for fun, our tool gives you precise calculations.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-card-foreground">Simple Steps to Use</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Enter your birth date, select your target year, and get instant results showing your exact age
+                    Enter your birth date, select your target year, and get instant results showing your exact age 
                     in years, months, and days. Perfect for planning milestones and sharing with friends.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-card-foreground">Privacy-First Design</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    All calculations happen in your browser. No data is stored or transmitted, ensuring complete
+                    All calculations happen in your browser. No data is stored or transmitted, ensuring complete 
                     privacy while delivering fast, accurate results.
                   </p>
                 </div>
@@ -266,24 +269,24 @@ export default function FutureAgePage() {
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-card-foreground">Perfect for Planning and Fun</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Use this tool for retirement planning, milestone celebrations, event coordination, or simply
+                    Use this tool for retirement planning, milestone celebrations, event coordination, or simply 
                     satisfying curiosity about your future age.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-card-foreground">Planning Applications</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Calculate your age for retirement planning, college graduation, wedding anniversaries,
+                    Calculate your age for retirement planning, college graduation, wedding anniversaries, 
                     or any significant life event you want to prepare for.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-card-foreground">Social Sharing</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Share your future age predictions with friends and family. Great for social media posts,
+                    Share your future age predictions with friends and family. Great for social media posts, 
                     party planning, or creating fun content about life milestones.
                   </p>
                 </div>
 
-                {}
+                {/* FAQ Section */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -356,7 +359,7 @@ export default function FutureAgePage() {
                 </div>
               </div>
             </div>
-
+            {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
             <div className="hidden lg:block w-72">
               <div className="sticky top-32 space-y-6">
                 <div>

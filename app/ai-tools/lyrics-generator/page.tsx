@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { Music, Sparkles, Mic, Heart, Zap, Code } from "lucide-react"
 
+// Auto-update year
 const currentYear = new Date().getFullYear()
 
 export const metadata: Metadata = {
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
   },
   referrer: 'origin-when-cross-origin',
   keywords: [
-
+    // Main keywords
     "ai lyrics generator",
     "song lyrics generator",
     "free lyrics generator",
@@ -48,7 +49,8 @@ export const metadata: Metadata = {
     "lyrics maker",
     "song writer",
     "lyrics creator",
-
+    
+    // Genre-specific
     "rap lyrics generator",
     "pop lyrics generator",
     "rock lyrics generator",
@@ -58,7 +60,8 @@ export const metadata: Metadata = {
     "blues lyrics generator",
     "metal lyrics generator",
     "folk lyrics generator",
-
+    
+    // Language-specific song generators
     "english song generator",
     "english lyrics generator",
     "spanish song generator",
@@ -127,12 +130,14 @@ export const metadata: Metadata = {
     "romanian song generator",
     "ukrainian song generator",
     "malay song generator",
-
+    
+    // Multilingual keywords
     "multilingual lyrics generator",
     "song generator any language",
     "lyrics in multiple languages",
     "international song generator",
-
+    
+    // Features & Use cases
     "ai song writing",
     "free song maker",
     "songwriting tool",
@@ -145,7 +150,8 @@ export const metadata: Metadata = {
     "custom lyrics generator",
     "no signup lyrics generator",
     "unlimited lyrics generator",
-
+    
+    // Top user search queries (based on research)
     "ai lyrics generator online",
     "ai music lyrics creator",
     "ai lyric writing tool",
@@ -392,7 +398,7 @@ export default function LyricsGeneratorPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {}
+                {/* Hero Section */}
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <GHeader
                     title="Free AI Song Lyrics Generator - Create Original Lyrics for Any Genre"
@@ -402,19 +408,19 @@ export default function LyricsGeneratorPage() {
                   />
                 </div>
 
-                {}
+                {/* Mobile Ad Space */}
                 <div className="lg:hidden">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {}
+                {/* Lyrics Generator Tool */}
                 <div className="animate-fade-in-up animation-delay-200">
                   <AiLyricsGenerator />
                 </div>
 
-                {}
+                {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-400">
-                  {}
+                  {/* Features Section */}
                   <div className="p-6 rounded-lg bg-card border-2 border-primary/30 shadow-sm">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <Sparkles className="h-6 w-6 text-primary" />
@@ -464,7 +470,7 @@ export default function LyricsGeneratorPage() {
                       </p>
                     </div>
                   </div>
-
+                  
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">How to Use the AI Lyrics Generator</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -579,7 +585,7 @@ export default function LyricsGeneratorPage() {
                     </p>
 
                     <h3 className="text-xl font-bold mb-3 text-foreground mt-6">🌎 Popular Language Song Generators</h3>
-
+                    
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                       <div className="p-4 rounded-lg bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/30 border border-border">
                         <h4 className="font-bold text-sm mb-2 text-foreground">🇬🇧 English Song Generator</h4>
@@ -1060,7 +1066,7 @@ export default function LyricsGeneratorPage() {
                 </div>
               </div>
 
-              {}
+              {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
               <div className="hidden lg:block w-72">
                 <div className="sticky top-32 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

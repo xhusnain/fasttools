@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     "theme-color": "#3D348B",
   },
 }
-
+    
     export default function RootLayout({
       children,
     }: {
@@ -89,10 +89,10 @@ export const metadata: Metadata = {
         },
         knowsAbout: [
           "Online Tools",
-          "AI Content Generation",
+          "AI Content Generation", 
           "Web Development Tools",
           "Digital Conversion Tools",
-          "Business Productivity Tools",
+          "Business Productivity Tools", 
           "SEO Optimization",
           "Image Processing",
           "Financial Calculators",
@@ -156,19 +156,19 @@ export const metadata: Metadata = {
           "query-input": "required name=search_term_string"
         }
       }
-
+    
       return (
           <html lang="en" className="antialiased" suppressHydrationWarning>
         <head>
             {env.isProduction && (
               <>
-                <link rel="preload" href="https:
+                <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-4G804HZ22C" as="script" crossOrigin="anonymous"/>
               </>
             )}
-
+            
             {env.isProduction && (
               <>
-                <script async src="https:
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-4G804HZ22C"></script>
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `
@@ -181,7 +181,7 @@ export const metadata: Metadata = {
                 />
               </>
             )}
-
+            
             {env.isProduction && (
               <script
                   dangerouslySetInnerHTML={{
@@ -198,16 +198,16 @@ export const metadata: Metadata = {
                   }}
               />
             )}
-
+            
             <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
-
-            {}
+            
+            {/* Favicon Links - Critical for Google Search Results */}
             <link rel="icon" href="/favicon.ico" sizes="any"/>
             <link rel="shortcut icon" href="/favicon.ico"/>
             <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180"/>
-
+            
             <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5"/>
-
+            
             <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
             <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
             <meta name="bingbot" content="index, follow"/>
@@ -237,15 +237,15 @@ export const metadata: Metadata = {
             <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous"/>
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
             <link rel="preconnect" href="https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev"/>
-            {}
-            <link
-              rel="preload"
-              href="https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/greg-rakozy-oMpAz-DN-9I-unsplash.jpg"
+            {/* Preload hero background images for caching */}
+            <link 
+              rel="preload" 
+              href="https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/greg-rakozy-oMpAz-DN-9I-unsplash.jpg" 
               as="image"
             />
-            <link
-              rel="preload"
-              href="https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-HWIOLU7_O6w-unsplash.jpg"
+            <link 
+              rel="preload" 
+              href="https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-HWIOLU7_O6w-unsplash.jpg" 
               as="image"
             />
             {env.isProduction && (
@@ -279,7 +279,8 @@ export const metadata: Metadata = {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{__html: JSON.stringify(websiteSchema)}}
             />
-
+            
+            
         </head>
         <body className="bg-background font-sans text-foreground">
         <ThemeProvider

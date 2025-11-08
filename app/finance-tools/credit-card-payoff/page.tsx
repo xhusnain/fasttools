@@ -20,6 +20,7 @@ import {
   Users
 } from "lucide-react"
 import type { Metadata } from "next"
+import Link from "next/link"
 import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   keywords: [
     "fasttools",
     "fast tools",
-
+    // Golden Keywords - High Value, Low Competition
     "how to pay off credit card debt fast",
     "credit card debt payoff strategy",
     "debt free calculator",
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
     "credit card payoff planner",
     "debt elimination calculator",
     "credit card payoff schedule",
-
+    // Primary Keywords
     "credit card payoff calculator",
     "free credit card payoff calculator",
     "credit card debt calculator",
@@ -71,7 +72,8 @@ export const metadata: Metadata = {
     "debt consolidation calculator",
     "credit utilization",
     "debt payoff schedule",
-
+    
+    // Secondary Keywords (20)
     "amortization credit card",
     "compound interest on debt",
     "reduce interest charges",
@@ -93,7 +95,8 @@ export const metadata: Metadata = {
     "online payoff calculator",
     "debt freedom plan",
     "snowball spreadsheet alternative",
-
+    
+    // Long-tail Keywords (20)
     "free online credit card payoff calculator",
     "best credit card payoff calculator online",
     "credit card payoff calculator with live preview",
@@ -114,7 +117,8 @@ export const metadata: Metadata = {
     "interest rate calculator free online",
     "apr credit card calculator free online",
     "minimum payment calculator free online",
-
+    
+    // Additional SEO Keywords
     "balance transfer calculator",
     "debt consolidation calculator",
     "credit utilization",
@@ -345,16 +349,16 @@ export const metadata: Metadata = {
         "Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. Calculate how long to pay off credit card debt and save thousands in interest.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: {
-        "@type": "Offer",
-        price: "0",
+      offers: { 
+        "@type": "Offer", 
+        price: "0", 
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
       featureList: [
-        "Avalanche vs snowball",
-        "Extra payments",
-        "Debt‑free date",
+        "Avalanche vs snowball", 
+        "Extra payments", 
+        "Debt‑free date", 
         "Interest savings",
         "Credit card debt calculator",
         "Debt payoff calculator",
@@ -368,9 +372,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: {
-        "@type": "Organization",
-        name: "FastTools",
+      publisher: { 
+        "@type": "Organization", 
+        name: "FastTools", 
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -414,20 +418,20 @@ export default function CreditCardPayoffPage() {
 
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 xl:grid-cols-4 gap-8">
-            {}
+            {/* Main Content */}
             <div className="xl:col-span-3 space-y-8">
-              {}
+              {/* Hero Section */}
               <div className="text-center mb-8 animate-fade-in-up">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
                   Free Credit Card Payoff Calculator – Debt Payoff Timeline & Interest Savings ({getCurrentYear()})
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods.
+                  Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. 
                   Calculate how long to pay off credit card debt and save thousands in interest. Perfect for debt management and financial planning.
                 </p>
               </div>
 
-              {}
+              {/* Tool Card */}
               <Card className="border border-border shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardHeader className="text-center pb-4">
                   <CardTitle className="text-2xl font-bold text-foreground flex items-center justify-center gap-2">
@@ -435,7 +439,7 @@ export default function CreditCardPayoffPage() {
                     Advanced Credit Card Payoff Calculator
                   </CardTitle>
                   <CardDescription className="text-base text-muted-foreground">
-                    Calculate your debt payoff timeline, interest savings, and compare avalanche vs snowball methods.
+                    Calculate your debt payoff timeline, interest savings, and compare avalanche vs snowball methods. 
                     Features extra payment calculations, payoff date projections, and comprehensive debt management strategies.
                   </CardDescription>
                 </CardHeader>
@@ -444,7 +448,7 @@ export default function CreditCardPayoffPage() {
                 </CardContent>
               </Card>
 
-              {}
+              {/* Features & Usage Guide */}
               <div className="space-y-6">
                 <Card className="border border-border shadow-sm">
                   <CardHeader>
@@ -461,8 +465,8 @@ export default function CreditCardPayoffPage() {
                           Debt Payoff Timeline
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Our advanced calculator provides precise payoff timelines based on your current balance,
-                          APR, and monthly payments. Features detailed month-by-month breakdowns, interest calculations,
+                          Our advanced calculator provides precise payoff timelines based on your current balance, 
+                          APR, and monthly payments. Features detailed month-by-month breakdowns, interest calculations, 
                           and payoff date projections for complete debt management planning.
                         </p>
                       </div>
@@ -472,8 +476,8 @@ export default function CreditCardPayoffPage() {
                           Interest Savings Calculator
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Calculate potential interest savings from extra payments, balance transfers, and debt consolidation.
-                          Features side-by-side comparisons, savings projections, and optimization recommendations to
+                          Calculate potential interest savings from extra payments, balance transfers, and debt consolidation. 
+                          Features side-by-side comparisons, savings projections, and optimization recommendations to 
                           minimize total interest paid and accelerate debt freedom.
                         </p>
                       </div>
@@ -483,8 +487,8 @@ export default function CreditCardPayoffPage() {
                           Avalanche vs Snowball Methods
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Compare debt payoff strategies with our intelligent method analyzer. Avalanche method targets
-                          highest APR first for maximum interest savings, while snowball method focuses on smallest
+                          Compare debt payoff strategies with our intelligent method analyzer. Avalanche method targets 
+                          highest APR first for maximum interest savings, while snowball method focuses on smallest 
                           balances for psychological motivation and quick wins.
                         </p>
                       </div>
@@ -494,8 +498,8 @@ export default function CreditCardPayoffPage() {
                           Extra Payment Optimization
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Optimize your extra payments for maximum impact. Features payment allocation strategies,
-                          timing recommendations, and impact analysis. Calculate how small increases in monthly
+                          Optimize your extra payments for maximum impact. Features payment allocation strategies, 
+                          timing recommendations, and impact analysis. Calculate how small increases in monthly 
                           payments can dramatically reduce payoff time and total interest.
                         </p>
                       </div>
@@ -518,8 +522,8 @@ export default function CreditCardPayoffPage() {
                           How to Pay Off Credit Card Debt Fast
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Our comprehensive guide shows you exactly how to pay off credit card debt fast using proven strategies.
-                          Features step-by-step debt elimination plans, payment optimization techniques, and realistic timelines
+                          Our comprehensive guide shows you exactly how to pay off credit card debt fast using proven strategies. 
+                          Features step-by-step debt elimination plans, payment optimization techniques, and realistic timelines 
                           for becoming debt-free. Perfect for anyone serious about financial freedom.
                         </p>
                       </div>
@@ -529,8 +533,8 @@ export default function CreditCardPayoffPage() {
                           Credit Card Debt Payoff Strategy
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Develop a winning credit card debt payoff strategy with our intelligent planning tools. Features
-                          personalized recommendations, strategy comparisons, and progress tracking. Whether you prefer
+                          Develop a winning credit card debt payoff strategy with our intelligent planning tools. Features 
+                          personalized recommendations, strategy comparisons, and progress tracking. Whether you prefer 
                           avalanche or snowball methods, we'll help you choose the best approach for your situation.
                         </p>
                       </div>
@@ -540,8 +544,8 @@ export default function CreditCardPayoffPage() {
                           Debt Free Calculator
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Calculate your exact debt-free date with our comprehensive debt free calculator. Features
-                          multiple scenario modeling, payment optimization, and milestone tracking. See exactly when
+                          Calculate your exact debt-free date with our comprehensive debt free calculator. Features 
+                          multiple scenario modeling, payment optimization, and milestone tracking. See exactly when 
                           you'll be debt-free and how much you'll save in interest with different payment strategies.
                         </p>
                       </div>
@@ -551,8 +555,8 @@ export default function CreditCardPayoffPage() {
                           Pay Off Credit Card Calculator
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Our advanced pay off credit card calculator handles complex scenarios including multiple cards,
-                          different APRs, and varying payment amounts. Features detailed amortization schedules,
+                          Our advanced pay off credit card calculator handles complex scenarios including multiple cards, 
+                          different APRs, and varying payment amounts. Features detailed amortization schedules, 
                           interest breakdowns, and payment allocation recommendations for optimal debt elimination.
                         </p>
                       </div>
@@ -562,8 +566,8 @@ export default function CreditCardPayoffPage() {
                           Credit Card Payoff Timeline
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Visualize your complete credit card payoff timeline with our interactive timeline calculator.
-                          Features month-by-month progress tracking, payment schedules, and milestone celebrations.
+                          Visualize your complete credit card payoff timeline with our interactive timeline calculator. 
+                          Features month-by-month progress tracking, payment schedules, and milestone celebrations. 
                           See exactly how your payments reduce principal and interest over time.
                         </p>
                       </div>
@@ -573,8 +577,8 @@ export default function CreditCardPayoffPage() {
                           Debt Payoff Plan
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Create a comprehensive debt payoff plan tailored to your financial situation. Features
-                          budget integration, payment scheduling, and progress monitoring. Our plan adapts to your
+                          Create a comprehensive debt payoff plan tailored to your financial situation. Features 
+                          budget integration, payment scheduling, and progress monitoring. Our plan adapts to your 
                           changing circumstances and provides actionable steps for achieving debt freedom.
                         </p>
                       </div>
@@ -594,8 +598,8 @@ export default function CreditCardPayoffPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">How do I use the Credit Card Payoff Calculator effectively?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Using our credit card payoff calculator is simple: enter your current balance, APR, and monthly payment amount.
-                          The calculator will instantly show your payoff timeline, total interest paid, and payoff date. You can also
+                          Using our credit card payoff calculator is simple: enter your current balance, APR, and monthly payment amount. 
+                          The calculator will instantly show your payoff timeline, total interest paid, and payoff date. You can also 
                           experiment with extra payments to see how they accelerate your debt freedom and save money on interest.
                         </p>
                       </div>
@@ -603,8 +607,8 @@ export default function CreditCardPayoffPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">What's the difference between avalanche and snowball debt payoff methods?</h3>
                         <p className="text-sm text-muted-foreground">
-                          The avalanche method targets debts with the highest interest rates first, minimizing total interest paid and
-                          saving money long-term. The snowball method pays off smallest balances first, providing psychological wins
+                          The avalanche method targets debts with the highest interest rates first, minimizing total interest paid and 
+                          saving money long-term. The snowball method pays off smallest balances first, providing psychological wins 
                           and motivation. Our calculator shows you the impact of both strategies so you can choose what works best for you.
                         </p>
                       </div>
@@ -612,8 +616,8 @@ export default function CreditCardPayoffPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">How much can I save by making extra payments on my credit card?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Extra payments can save you thousands in interest and years of payments. Even small increases like $25-50
-                          per month can make a significant difference. Our calculator shows you exactly how much you'll save and
+                          Extra payments can save you thousands in interest and years of payments. Even small increases like $25-50 
+                          per month can make a significant difference. Our calculator shows you exactly how much you'll save and 
                           how much faster you'll become debt-free with different extra payment amounts.
                         </p>
                       </div>
@@ -621,8 +625,8 @@ export default function CreditCardPayoffPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Is it better to pay off credit cards or invest extra money?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Generally, it's better to pay off high-interest credit card debt first, as the guaranteed return (saved interest)
-                          typically exceeds average investment returns. However, this depends on your specific APR, investment opportunities,
+                          Generally, it's better to pay off high-interest credit card debt first, as the guaranteed return (saved interest) 
+                          typically exceeds average investment returns. However, this depends on your specific APR, investment opportunities, 
                           and risk tolerance. Our calculator helps you see the true cost of carrying debt.
                         </p>
                       </div>
@@ -630,8 +634,8 @@ export default function CreditCardPayoffPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Should I consider a balance transfer to pay off credit card debt faster?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Balance transfers can be effective if you can get a lower APR and pay off the balance during the promotional period.
-                          However, consider transfer fees, your ability to pay off the balance, and what happens after the promotional rate ends.
+                          Balance transfers can be effective if you can get a lower APR and pay off the balance during the promotional period. 
+                          However, consider transfer fees, your ability to pay off the balance, and what happens after the promotional rate ends. 
                           Our calculator can help you compare the costs and benefits.
                         </p>
                       </div>
@@ -639,8 +643,8 @@ export default function CreditCardPayoffPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">How does credit card interest work and how is it calculated?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Credit card interest is typically calculated daily using your average daily balance and APR. Interest compounds,
-                          meaning you pay interest on interest. Our calculator uses precise formulas to show you exactly how interest
+                          Credit card interest is typically calculated daily using your average daily balance and APR. Interest compounds, 
+                          meaning you pay interest on interest. Our calculator uses precise formulas to show you exactly how interest 
                           accumulates and how payments are applied to principal vs. interest.
                         </p>
                       </div>
@@ -648,8 +652,8 @@ export default function CreditCardPayoffPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">What's the minimum payment vs. extra payment impact on payoff time?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Minimum payments are designed to keep you in debt longer, often taking decades to pay off. Extra payments
-                          dramatically reduce payoff time and total interest. Our calculator shows you the stark difference between
+                          Minimum payments are designed to keep you in debt longer, often taking decades to pay off. Extra payments 
+                          dramatically reduce payoff time and total interest. Our calculator shows you the stark difference between 
                           minimum payments and even modest extra payments, helping you understand the true cost of minimum payments.
                         </p>
                       </div>
@@ -657,8 +661,8 @@ export default function CreditCardPayoffPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Can I use this calculator for multiple credit cards at once?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our calculator is designed for single credit card analysis, but you can use it multiple times for different cards.
-                          For multiple cards, we recommend using the avalanche method (highest APR first) or snowball method (lowest balance first)
+                          Our calculator is designed for single credit card analysis, but you can use it multiple times for different cards. 
+                          For multiple cards, we recommend using the avalanche method (highest APR first) or snowball method (lowest balance first) 
                           to prioritize which card to pay off first.
                         </p>
                       </div>
@@ -666,8 +670,8 @@ export default function CreditCardPayoffPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">How accurate is the payoff date calculation?</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our calculator uses precise mathematical formulas to ensure accurate payoff date calculations. We account for
-                          daily interest compounding, payment timing, and principal reduction. The calculations are accurate to the month,
+                          Our calculator uses precise mathematical formulas to ensure accurate payoff date calculations. We account for 
+                          daily interest compounding, payment timing, and principal reduction. The calculations are accurate to the month, 
                           giving you a reliable timeline for debt freedom planning.
                         </p>
                       </div>
@@ -675,7 +679,7 @@ export default function CreditCardPayoffPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">What if my credit card APR changes during the payoff period?</h3>
                         <p className="text-sm text-muted-foreground">
-                          If your APR changes, you can recalculate using the new rate to see how it affects your payoff timeline and total interest.
+                          If your APR changes, you can recalculate using the new rate to see how it affects your payoff timeline and total interest. 
                           Our calculator allows you to experiment with different APRs to see the impact of rate changes on your debt payoff strategy.
                         </p>
                       </div>
@@ -714,7 +718,7 @@ export default function CreditCardPayoffPage() {
               </div>
             </div>
 
-            {}
+            {/* Sidebar */}
             <div className="hidden xl:block w-80">
               <div className="sticky top-32 space-y-6">
                 <div>

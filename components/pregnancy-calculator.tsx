@@ -53,6 +53,11 @@ export default function PregnancyCalculator() {
     let calculatedConceptionDate: Date
     let gestationalAgeWeeks: number
 
+    console.log("Calculating pregnancy with method:", calculationMethod)
+    console.log("Due date:", dueDate)
+    console.log("Pre-pregnancy weight:", prePregnancyWeight)
+    console.log("Height:", height)
+
     try {
       if (calculationMethod === "dueDate" && dueDate) {
         calculatedDueDate = new Date(dueDate)
@@ -256,10 +261,11 @@ export default function PregnancyCalculator() {
         }
       }
 
+      // Calculate weight gain recommendation
       const preWeight = parseFloat(prePregnancyWeight)
       const heightInMeters = parseFloat(height) / 100
       const bmi = preWeight / (heightInMeters * heightInMeters)
-
+      
       let weightGainRecommendation = { min: 0, max: 0, category: "" }
       if (bmi < 18.5) {
         weightGainRecommendation = { min: 28, max: 40, category: "Underweight (BMI < 18.5)" }
@@ -289,6 +295,7 @@ export default function PregnancyCalculator() {
 
       setResult(newResult)
       setHistory(prev => [newResult, ...prev.slice(0, 4)])
+      console.log("Calculation successful:", newResult)
     } catch (error) {
       console.error("Calculation error:", error)
     }
@@ -330,7 +337,7 @@ Next Milestone: ${result.nextMilestone}`
 
   return (
     <div className="space-y-4">
-      {}
+      {/* Input Section */}
       <Card className="bg-card border-border">
         <CardHeader className="pb-2 px-3 sm:px-6">
           <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg">
@@ -434,7 +441,7 @@ Next Milestone: ${result.nextMilestone}`
               </div>
             )}
 
-            {}
+            {/* Weight and Height for BMI calculation */}
             <div className="grid md:grid-cols-3 gap-3">
               <div className="space-y-1">
                 <Label htmlFor="prePregnancyWeight" className="text-[11px] font-medium text-heading-accent">Pre-Pregnancy Weight (kg)</Label>
@@ -484,10 +491,10 @@ Next Milestone: ${result.nextMilestone}`
         </CardContent>
       </Card>
 
-      {}
+      {/* Results Section */}
       {result && (
         <div className="space-y-6">
-          {}
+          {/* Main Results */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -523,14 +530,14 @@ Next Milestone: ${result.nextMilestone}`
                 </div>
               </div>
 
-              {}
+              {/* Pregnancy Progress */}
               <div className="pt-4 border-t">
                 <div className="flex items-center justify-between mb-2">
                   <span className="font-medium">Pregnancy Progress</span>
                   <span className="text-sm text-muted-foreground">{result.pregnancyProgress.toFixed(1)}%</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div
+                  <div 
                     className="bg-gradient-to-r from-pink-500 to-purple-500 h-2 rounded-full transition-all duration-300"
                     style={{ width: `${result.pregnancyProgress}%` }}
                   ></div>
@@ -553,7 +560,7 @@ Next Milestone: ${result.nextMilestone}`
             </CardContent>
           </Card>
 
-          {}
+          {/* Weight Gain Recommendation */}
           {prePregnancyWeight && height && (
             <Card>
               <CardHeader>
@@ -577,7 +584,7 @@ Next Milestone: ${result.nextMilestone}`
             </Card>
           )}
 
-          {}
+          {/* Current Symptoms */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -597,7 +604,7 @@ Next Milestone: ${result.nextMilestone}`
             </CardContent>
           </Card>
 
-          {}
+          {/* Fetal Development */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -617,7 +624,7 @@ Next Milestone: ${result.nextMilestone}`
             </CardContent>
           </Card>
 
-          {}
+          {/* Upcoming Appointments */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -637,7 +644,7 @@ Next Milestone: ${result.nextMilestone}`
             </CardContent>
           </Card>
 
-          {}
+          {/* Recommendations */}
           <div className="grid md:grid-cols-2 gap-6">
             <Card>
               <CardHeader>
@@ -718,7 +725,7 @@ Next Milestone: ${result.nextMilestone}`
         </div>
       )}
 
-      {}
+      {/* History Section */}
       {history.length > 0 && (
         <Card>
           <CardHeader>
@@ -753,7 +760,7 @@ Next Milestone: ${result.nextMilestone}`
         </Card>
       )}
 
-      {}
+      {/* Information Section */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -775,7 +782,7 @@ Next Milestone: ${result.nextMilestone}`
               </div>
             </div>
           </div>
-
+          
           <div className="text-xs text-muted-foreground space-y-2">
             <p>
               <strong className="text-heading-accent">Baby's Anticipated Arrival:</strong> This shows the projected birth date, usually calculated as roughly 280 days (or about nine calendar months) from when your last period started.

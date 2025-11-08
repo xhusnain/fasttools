@@ -15,14 +15,14 @@ export function TextCaseConverter() {
   const cleanText = (input: string) => {
     if (!cleanup) return input
     return input
-      .replace(/\s+/g, " ")
-      .replace(/\n\s*\n/g, "\n")
+      .replace(/\s+/g, " ") // Replace multiple spaces with single space
+      .replace(/\n\s*\n/g, "\n") // Replace multiple newlines with single newline
       .trim()
   }
 
   const convertCase = (type: "upper" | "lower" | "title" | "sentence" | "camel" | "snake" | "kebab" | "pascal" | "dot" | "swap") => {
     if (!text) return ""
-
+    
     const processedText = cleanText(text)
 
     switch (type) {
@@ -80,11 +80,11 @@ export function TextCaseConverter() {
       { type: "dot" as const, label: "dot.case" },
       { type: "swap" as const, label: "Swap Case" }
     ]
-
-    const content = cases.map(caseItem =>
+    
+    const content = cases.map(caseItem => 
       `${caseItem.label}:\n${convertCase(caseItem.type)}\n`
     ).join("\n")
-
+    
     const blob = new Blob([content], { type: "text/plain" })
     const url = URL.createObjectURL(blob)
     const a = document.createElement("a")
@@ -96,7 +96,7 @@ export function TextCaseConverter() {
 
   return (
     <div className="space-y-6">
-      {}
+      {/* Input Section */}
       <Card className="border border-border shadow bg-card">
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2 text-card-foreground">
@@ -140,7 +140,7 @@ export function TextCaseConverter() {
         </CardContent>
       </Card>
 
-      {}
+      {/* Advanced Options */}
       <Card className="border border-border shadow bg-card">
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2 text-card-foreground">
@@ -172,7 +172,7 @@ export function TextCaseConverter() {
         </CardContent>
       </Card>
 
-      {}
+      {/* Conversion Results */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3 sm:gap-4">
         {[
           { type: "upper" as const, label: "UPPERCASE", desc: "ALL CAPS", color: "red" },

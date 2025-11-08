@@ -27,7 +27,7 @@ declare module 'ab-downloader' {
     error?: string
     status?: string
     message?: string
-    [key: string]: any
+    [key: string]: any // Allow additional properties
   }
 
   export interface InstagramDownloadResponse {
@@ -59,11 +59,11 @@ declare module 'ab-downloader' {
     type?: string
   }
 
-  export type DownloadResponse =
-    | FacebookDownloadResponse
-    | InstagramDownloadResponse
-    | TikTokDownloadResponse
-    | string
+  export type DownloadResponse = 
+    | FacebookDownloadResponse 
+    | InstagramDownloadResponse 
+    | TikTokDownloadResponse 
+    | string 
     | any[]
 
   export function fbdown(url: string): Promise<FacebookDownloadResponse | string | null>

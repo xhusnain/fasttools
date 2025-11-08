@@ -18,7 +18,7 @@ export function Toast({ type, message, duration = 3000, onClose }: ToastProps) {
       setIsVisible(false)
       setTimeout(() => {
         onClose?.()
-      }, 300)
+      }, 300) // Wait for animation to complete
     }, duration)
 
     return () => clearTimeout(timer)
@@ -85,7 +85,7 @@ export function Toast({ type, message, duration = 3000, onClose }: ToastProps) {
         >
           <X className="h-3.5 w-3.5" />
         </button>
-
+        
         <div className="flex items-center gap-2 pr-6">
           <p className={`text-sm font-medium ${theme.text}`}>
             {message}
@@ -96,12 +96,13 @@ export function Toast({ type, message, duration = 3000, onClose }: ToastProps) {
   )
 }
 
+// Hook for easy usage
 export function useToast() {
   const [toasts, setToasts] = useState<Array<{ id: string; type: "success" | "warning" | "error" | "info"; message: string; duration?: number }>>([])
 
   const showToast = (type: "success" | "warning" | "error" | "info", message: string, duration?: number) => {
     const id = Date.now().toString()
-
+    // Auto-dismiss previous toast and show new one
     setToasts([{ id, type, message, duration }])
   }
 

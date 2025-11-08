@@ -1,5 +1,6 @@
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import Link from "next/link"
 import type { Metadata } from "next"
 import {
   ArrowRight,
@@ -116,7 +117,7 @@ export default function ApiDocsPage() {
           />
 
           <div className="max-w-6xl mx-auto mt-8 md:mt-12">
-            {}
+            {/* Title Section */}
             <div className="mb-12 md:mb-16">
               <GHeader
                 title="API Documentation"
@@ -127,7 +128,7 @@ export default function ApiDocsPage() {
               />
             </div>
 
-            {}
+            {/* API Services Grid */}
             <div className="mb-12">
               <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 flex items-center gap-3">
                 <Code className="h-7 w-7" />
@@ -142,7 +143,7 @@ export default function ApiDocsPage() {
                       href={api.href}
                       className="bg-card border border-border/40 rounded-xl p-6 hover:border-border/70 transition-all duration-300 group relative h-full flex flex-col"
                     >
-                      {}
+                      {/* Icon in top-right */}
                       <div className="absolute top-4 right-4 flex items-center gap-2">
                         <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
                           <Icon className="h-5 w-5 text-primary" />
@@ -154,7 +155,7 @@ export default function ApiDocsPage() {
                         )}
                       </div>
 
-                      {}
+                      {/* Content */}
                       <div className="pr-20 flex-1 flex flex-col">
                         <h3 className="text-lg font-bold text-heading-accent mb-2 group-hover:text-heading-accent transition-colors">
                           {api.name}
@@ -174,7 +175,7 @@ export default function ApiDocsPage() {
               </div>
             </div>
 
-            {}
+            {/* More Coming Soon Section */}
             <div className="mt-16 md:mt-20 p-8 md:p-12">
               <div className="text-center max-w-3xl mx-auto">
                 <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">More APIs Coming Soon</h2>

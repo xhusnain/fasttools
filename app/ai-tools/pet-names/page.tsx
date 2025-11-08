@@ -3,45 +3,48 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AiPetNameGenerator } from "@/components/ai-pet-name-generator"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import {
-  Sparkles,
-  Calculator,
-  BarChart3,
-  TrendingUp,
-  BookOpen,
-  Users,
-  Clock,
-  Target,
-  AlertCircle,
-  FileText,
-  Award,
-  Globe,
+import { 
+  Sparkles, 
+  Calculator, 
+  BarChart3, 
+  TrendingUp, 
+  BookOpen, 
+  Users, 
+  Clock, 
+  Target, 
+  AlertCircle, 
+  FileText, 
+  Award, 
+  Globe, 
   Heart,
   PawPrint,
   Music
 } from "lucide-react"
 
+// Auto-update year
 const currentYear = new Date().getFullYear()
 
 export const metadata: Metadata = {
   title: `FastTools - AI Pet Name Generator ${currentYear} | Free 100 Names for Dogs, Cats & All Pets`,
   description: `Generate 100 unique pet names instantly with AI in ${currentYear}! Free pet name generator for dogs, cats, puppies, kittens & all animals. Get names by personality, breed, color & meaning. Popular, unique, cute & cool names. Works for male, female & all pets. No sign up required - Start now!`,
   keywords: [
-
+    // Primary Focus Keywords
     "AI pet name generator",
     "pet name generator",
     "dog name generator",
     "cat name generator",
     "free pet name generator",
     `pet names ${currentYear}`,
-
+    
+    // Pet Type Specific
     "puppy name generator",
     "kitten name generator",
     "bird name generator",
     "rabbit name generator",
     "unique pet names",
     "creative pet names",
-
+    
+    // Features
     "pet names with meanings",
     "personality-based pet names",
     "AI dog names",
@@ -49,7 +52,8 @@ export const metadata: Metadata = {
     "pet name ideas",
     "dog name ideas",
     "cat name ideas",
-
+    
+    // User Intent
     "best pet names",
     "popular dog names",
     "popular cat names",
@@ -57,21 +61,25 @@ export const metadata: Metadata = {
     "unique cat names",
     "cute pet names",
     "funny pet names",
-
+    
+    // Breed Specific
     "dog names by breed",
     "cat names by personality",
     "pet names by characteristics",
-
+    
+    // Free Tool Keywords
     "free dog name generator",
     "free cat name generator",
     "pet name generator no sign up",
     "instant pet names",
-
+    
+    // Additional
     "pet name inspiration",
     "pet naming tool",
     "animal name generator",
     "pet name suggestions",
-
+    
+    // Top User-Searched Keywords (Based on 2025 Trends)
     "how to name a dog",
     "how to name a cat",
     "how to choose a pet name",
@@ -104,7 +112,7 @@ export const metadata: Metadata = {
     "pet name meanings and origins",
     "pet naming guide"
   ],
-
+  
   applicationName: "FastTools - AI Pet Name Generator",
   authors: [{ name: "FastTools", url: "https://www.fasttools.store" }],
   generator: "Next.js",
@@ -123,7 +131,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.fasttools.store/ai-tools/pet-names",
   },
-
+  
   openGraph: {
     title: `AI Pet Name Generator ${currentYear} - 100 Free Names for Dogs, Cats & All Pets`,
     description: `Generate 100 unique pet names instantly with AI! Free for dogs, cats, puppies, kittens & all animals. Get popular, unique, cute & cool names by personality, breed & color. No sign up needed.`,
@@ -301,7 +309,7 @@ export default function PetNamesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-
+      
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-2 xs:px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-2 xs:py-3 sm:py-4 md:py-6 lg:py-8 xl:py-10 2xl:py-12">
         <Breadcrumbs
@@ -314,7 +322,7 @@ export default function PetNamesPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {}
+                {/* Hero Section */}
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <GHeader
                     title="AI Pet Name Generator - Get 100 Free Names Instantly"
@@ -324,21 +332,21 @@ export default function PetNamesPage() {
                   />
                 </div>
 
-                {}
+                {/* Mobile Ad Space */}
                 <div className="lg:hidden">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {}
+                {/* Pet Name Generator Tool */}
               <div className="animate-fade-in-up animation-delay-200">
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                 <AiPetNameGenerator />
                   </div>
                 </div>
 
-                {}
+                {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-400">
-                  {}
+                  {/* How to Use Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-card rounded-lg flex-shrink-0">
@@ -366,7 +374,7 @@ export default function PetNamesPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Key Features Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-card rounded-lg flex-shrink-0">
@@ -420,6 +428,7 @@ export default function PetNamesPage() {
                     </div>
                   </div>
 
+                  {/* Use Cases Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-card rounded-lg flex-shrink-0">
@@ -447,6 +456,7 @@ export default function PetNamesPage() {
                     </div>
                   </div>
 
+                  {/* FAQ Section */}
                   <div className="bg-card rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm border border-border/30">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-card rounded-lg flex-shrink-0">
@@ -475,49 +485,49 @@ export default function PetNamesPage() {
                           Choosing a name based on your pet's breed can be a wonderful way to honor their heritage, physical characteristics, and traditional roles. Many breeds have fascinating histories and origins that can inspire meaningful names. For example, German Shepherds might suit strong German names like "Kaiser," "Fritz," "Greta," or "Heidi," while French Bulldogs could carry elegant French names like "Pierre," "Amélie," "Beau," or "Colette." Japanese breeds like Akitas or Shiba Inus often suit Japanese names such as "Yuki" (snow), "Hoshi" (star), "Sakura" (cherry blossom), or "Kenji" (strong). English breeds like Bulldogs, Cocker Spaniels, or English Setters might carry names like "Winston," "Duchess," "Earl," or "Lady." For Irish breeds like Irish Setters or Wolfhounds, consider Gaelic names like "Finn," "Aoife," "Paddy," or "Siobhan." Breed-specific names can also reflect the dog's original purpose or characteristics. Hunting breeds like Beagles, Pointers, or Retrievers might suit names like "Hunter," "Scout," "Tracker," "Ranger," or "Arrow." Herding breeds like Border Collies or Australian Shepherds could be named "Shepherd," "Ranger," "Dusty," or "Outback." Working breeds like Huskies, Malamutes, or Saint Bernards might carry strong names like "Yukon," "Everest," "Summit," or "Avalanche." For toy breeds like Chihuahuas, Pomeranians, or Yorkies, consider cute, diminutive names like "Tiny," "Pixie," "Peanut," "Button," or "Biscuit." However, you're not limited to breed-specific names—sometimes the most charming names are those that create an amusing contrast, like a tiny Chihuahua named "Hercules" or a massive Great Dane named "Peanut." Cat breeds also offer naming inspiration: Persian cats might suit elegant names like "Princess," "Sultan," or "Jasmine," while Maine Coons could carry strong names like "Thor," "Bear," or "Moose." Siamese cats might suit Thai names like "Mali," "Chai," or "Som." The key is to research your breed's origin, history, and characteristics, then choose a name that either honors that heritage or creates a fun personality match. Ultimately, while breed can provide excellent naming inspiration, the most important factor is choosing a name that resonates with you and fits your individual pet's personality—regardless of whether it matches their breed stereotype.
                         </p>
                       </div>
-
+                      
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
                         <h3 className="font-semibold text-heading-accent text-xs xs:text-sm sm:text-base md:text-lg">What are the best one-syllable and two-syllable names for dogs, and why do they work better for training?</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
                           One-syllable and two-syllable names are widely recommended by professional dog trainers and behaviorists because they're easier for dogs to recognize, distinguish from other words, and respond to quickly. Dogs process sounds differently than humans, and shorter names with clear consonant sounds are most effective for training and communication. Popular one-syllable dog names include "Max," "Rex," "Duke," "Bear," "Jack," "Zeus," "Blue," "Scout," "Dash," and "Chase" for males, and "Belle," "Joy," "Hope," "Grace," "Sage," "Sky," "Rose," and "Pearl" for females. These names are punchy, distinct, and easy to call out clearly, even at a distance or in noisy environments like dog parks. Two-syllable names offer a bit more variety while maintaining ease of use. Excellent examples include "Charlie," "Bailey," "Buddy," "Cooper," "Rocky," "Tucker," "Oliver," "Jasper," and "Murphy" for males, and "Daisy," "Molly," "Lucy," "Sadie," "Maggie," "Chloe," "Bella," and "Rosie" for females. The key advantage of these names is that they have a natural rhythm that dogs can easily recognize—the two syllables create a distinct pattern that stands out from general conversation. When choosing a one or two-syllable name, consider names with hard consonants (like K, T, P, D, B) at the beginning or end, as these sounds are sharper and easier for dogs to distinguish. Names like "Tucker," "Parker," "Rocket," or "Dakota" work particularly well because of these strong consonant sounds. Avoid names that sound too similar to common commands: "Ray" might be confused with "stay," "Kit" sounds like "sit," and "Joe" could be confused with "no." Also consider how the name sounds when you add common phrases—"Come, Bella!" or "Good boy, Max!" should sound natural and flow well. The two-syllable structure also allows for cute nicknames—"Charlie" can become "Char," "Bailey" can be "Bay," and "Daisy" can be "Day." This flexibility is useful for different situations: you might use the full name for commands and training, and the nickname for casual affection. Remember that while longer names like "Alexander" or "Anastasia" might sound elegant, they're often impractical for daily use and training. Most owners of pets with long names end up shortening them anyway (Alexander becomes "Alex," Anastasia becomes "Ana"), so you might as well choose the short version from the start for consistency in training and communication.
                         </p>
                       </div>
-
+                      
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
                         <h3 className="font-semibold text-heading-accent text-xs xs:text-sm sm:text-base md:text-lg">How can I choose a unique or rare pet name that stands out from common names?</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
                           Finding a unique or rare pet name that truly stands out requires creativity, research, and thinking beyond traditional pet naming conventions. One excellent approach is exploring names from different languages and cultures: consider Irish Gaelic names like "Saoirse" (freedom) or "Cillian," Welsh names like "Bronwyn" or "Rhys," Norse names like "Freya" or "Odin," or Hawaiian names like "Leilani" or "Kai." You can also look to mythology from various cultures—Greek mythology offers names like "Athena," "Apollo," or "Perseus," while Norse mythology provides "Loki," "Thor," or "Valkyrie." Egyptian mythology features "Anubis," "Bastet," or "Ra," and Celtic mythology includes "Brigid" or "Cernunnos." Another creative source is nature-inspired names beyond the common "Daisy" or "Rose"—consider gemstones like "Onyx," "Jasper," "Opal," or "Topaz," celestial names like "Orion," "Nova," "Cosmo," or "Nebula," or unique nature terms like "Aspen," "Canyon," "Reef," or "Storm." Literary and historical references can yield distinctive names: characters from classic literature like "Gatsby," "Atticus," "Scout," or "Darcy," historical figures like "Galileo," "Tesla," "Cleopatra," or "Churchill," or philosophical concepts like "Socrates" or "Plato." Food and beverage names can be quirky and memorable: consider "Mochi," "Biscotti," "Wasabi," "Miso," "Sake," "Espresso," or "Cognac"—these are unexpected but charming. For truly unique names, try combining elements: merge two words you love (like "Moon" + "Beam" = "Moonbeam"), use meaningful words from your favorite hobbies or interests (musicians might choose "Chord," "Jazz," or "Lyric"), or select names from your favorite video games, books, or movies that aren't mainstream. Consider occupational names with a twist: "Ranger," "Maverick," "Scout," "Pilot," or "Captain." You can also look at vintage or old-fashioned names that have fallen out of use but are charming: "Barnaby," "Clementine," "Percival," "Cordelia," or "Thaddeus." Geographic locations can inspire unique names: cities like "Paris," "Oslo," or "Cairo," countries like "India" or "Ireland," or natural landmarks like "Denali," "Kilimanjaro," or "Everest." The key to choosing a unique name is ensuring it's still pronounceable and not too complicated—you want it to be distinctive, not difficult. Test the name by saying it out loud multiple times, imagine calling it at a dog park, and consider how it sounds with common phrases like "Good boy/girl, [Name]!" A truly great unique name should be memorable, meaningful to you, appropriate for your pet's personality, and not so obscure that you constantly have to explain or spell it for others.
                         </p>
                       </div>
-
+                      
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
                         <h3 className="font-semibold text-heading-accent text-xs xs:text-sm sm:text-base md:text-lg">What are good pet names based on personality traits, and how do I match a name to my pet's character?</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
                           Matching a pet's name to their personality creates a meaningful connection and often results in the most fitting and memorable names. For energetic, playful pets, consider active names like "Dash," "Rocket," "Zoom," "Turbo," "Sparky," "Bounce," "Flash," "Peppy," or "Zippy"—these names capture their lively spirit and constant motion. For calm, gentle pets, peaceful names work beautifully: "Zen," "Peace," "Calm," "Willow," "Breeze," "Dove," "Sage," or "Harmony." If your pet is particularly intelligent and quick-learning, consider names like "Einstein," "Sherlock," "Watson," "Athena," "Sage," "Professor," or "Genius." For brave, bold pets with fearless personalities, strong names suit them well: "Maverick," "Rebel," "Warrior," "Hero," "Blaze," "Storm," "Thunder," or "Valiant." Shy or timid pets might suit softer names: "Whisper," "Shadow," "Misty," "Luna," "Violet," "Pearl," or "Lily." Food-loving pets (and let's be honest, most pets!) can carry adorable food names: "Cookie," "Muffin," "Biscuit," "Waffles," "Pudding," "Honey," "Peanut," or "Butterscotch." For mischievous, troublemaking pets who always seem to find trouble, consider names like "Bandit," "Rascal," "Trouble," "Chaos," "Mischief," "Loki," or "Rebel." Loyal, devoted pets deserve names that reflect their faithfulness: "Loyal," "True," "Faith," "Guardian," "Keeper," or "Devoted." For particularly vocal pets who love to "talk," consider "Chatter," "Echo," "Opera," "Diva," or "Howler." Cuddly, affectionate pets suit sweet names: "Cuddles," "Snuggles," "Huggy," "Lovey," "Sweetie," or "Honey." The process of matching a name to personality requires observation—spend at least a few days with your new pet before committing to a name. Notice their habits: are they always getting into things? ("Bandit"), do they sleep constantly? ("Dozer" or "Snooze"), are they graceful and elegant? ("Grace" or "Ballet"), or clumsy and goofy? ("Goofy" or "Fumble"). You can also combine personality traits: a brave but small pet might be "Napoleon" or "Mighty," while a large but gentle pet could be "Tiny" or "Gentle Giant" (shortened to "Giant"). Sometimes the best names create an amusing contrast that highlights the pet's personality—a fearsome-looking dog who's actually a sweetheart might be named "Cupcake" or "Fluffy," while a tiny, feisty pet might carry a powerful name like "Thor" or "Hercules." The key is authenticity—the name should genuinely reflect something true about your pet's nature, whether that's their energy level, temperament, quirks, or most endearing characteristics.
                         </p>
                       </div>
-
+                      
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
                         <h3 className="font-semibold text-heading-accent text-xs xs:text-sm sm:text-base md:text-lg">Should I choose a pet name based on their color or physical appearance, and what are good color-based names?</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
                           Choosing a name based on your pet's color or physical appearance is a time-honored tradition that often results in perfectly fitting, immediately recognizable names. For black pets, popular names include "Shadow," "Midnight," "Onyx," "Coal," "Ebony," "Raven," "Panther," "Eclipse," "Pepper," "Olive," "Ink," or "Jet." These names not only describe the pet's appearance but often carry an air of mystery and elegance. White or light-colored pets suit names like "Snow," "Frost," "Ice," "Ghost," "Cloud," "Pearl," "Ivory," "Cotton," "Angel," "Blizzard," "Crystal," or "Casper." For brown pets, consider "Cocoa," "Mocha," "Coffee," "Espresso," "Brownie," "Bear," "Teddy," "Cinnamon," "Hazel," "Chestnut," "Maple," or "Toffee." Golden or blonde pets often receive names like "Honey," "Goldie," "Sunny," "Butter," "Caramel," "Amber," "Biscuit," "Blondie," "Nugget," or "Marigold." For gray pets, appropriate names include "Ash," "Smokey," "Steel," "Silver," "Pewter," "Graphite," "Stormy," "Misty," or "Slate." Orange or ginger pets might be named "Ginger," "Rusty," "Copper," "Marmalade," "Pumpkin," "Peaches," "Cheddar," "Apricot," or "Butterscotch." Multi-colored or spotted pets can inspire creative names: "Patches," "Spot," "Dotty," "Freckles," "Speckles," "Marble," "Mosaic," or "Calico" for calico cats. Beyond color, physical features can inspire names: small pets might be "Tiny," "Peanut," "Mini," "Pixie," or "Button," while large pets could be "Tank," "Bear," "Moose," "Monster," or "Titan." Fluffy pets suit names like "Fluffy," "Fuzzy," "Puff," "Cloud," or "Furball," while sleek, short-haired pets might be "Slick," "Silk," or "Satin." Unique markings can inspire names too: a pet with a white chest patch might be "Tuxedo" or "Suit," one with eyebrow markings could be "Brows," and a pet with a distinctive spot might be named after its location ("Spot" for obvious reasons, or "Heart" if the marking is heart-shaped). However, consider longevity when choosing appearance-based names: puppies and kittens change significantly as they grow, and a name that perfectly describes a fluffy puppy might not suit a sleek adult dog. Some colors intensify or lighten with age, and size obviously changes dramatically. For this reason, some pet owners prefer to wait a few weeks or months before settling on an appearance-based name, ensuring it will remain appropriate throughout the pet's life. You can also choose names that are slightly more abstract or poetic rather than literally descriptive: instead of "Black," consider "Noir" (French for black) or "Sable"; instead of "White," try "Blanc" or "Frost." This approach gives the name more sophistication and personality beyond just a color descriptor. Combining appearance with personality often yields the best results: a black, mysterious cat might be "Shadow," while a black, playful dog might be "Pepper," and a black, elegant cat could be "Ebony" or "Onyx." The goal is finding a name that not only describes how your pet looks but also captures their essence.
                         </p>
                       </div>
-
+                      
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
                         <h3 className="font-semibold text-heading-accent text-xs xs:text-sm sm:text-base md:text-lg">What are the best pet names from movies, TV shows, and pop culture, and when should I use them?</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
                           Pop culture-inspired pet names are incredibly popular because they carry instant recognition and often reflect the owner's interests and fandoms. From movies and TV, consider iconic names like "Simba," "Nala," or "Mufasa" from The Lion King, "Elsa" or "Anna" from Frozen, "Groot" or "Rocket" from Guardians of the Galaxy, or "Loki," "Thor," and "Hela" from the Marvel universe. Star Wars has given us "Yoda," "Chewie," "Leia," "Han," "Rey," and "Kylo." Harry Potter fans often choose "Harry," "Hermione," "Luna," "Dobby," "Hedwig," or "Sirius." From Game of Thrones: "Arya," "Sansa," "Khaleesi," "Tyrion," "Ghost," or "Dragon." Classic Disney provides timeless options: "Mickey," "Minnie," "Pluto," "Goofy," "Donald," or "Bambi." From famous TV shows: "Scooby," "Lassie," "Snoopy," "Garfield," "Tom," "Jerry," "Chandler," "Phoebe," or "Ross" from Friends. More recent shows have popularized "Eleven" or "Dustin" from Stranger Things, "Walter" or "Jesse" from Breaking Bad, or "Ted" from Ted Lasso. Animated movies offer endless inspiration: "Po" from Kung Fu Panda, "Dory" or "Nemo" from Finding Nemo, "Remy" from Ratatouille, or "Moana." Literary characters work wonderfully too: "Gatsby," "Atticus," "Scout," "Holden," "Katniss," or "Sherlock." Video game characters are increasingly popular: "Mario," "Luigi," "Zelda," "Link," "Sonic," "Pikachu," "Kirby," or "Crash." Music and celebrity-inspired names include "Elvis," "Bowie," "Hendrix," "Jagger," "Freddie," or "Madonna." When deciding whether to use a pop culture name, consider several factors: First, how timeless is the reference? "Simba" and "Leia" have remained relevant for decades, while names from trendy shows might feel dated in a few years. Second, does the name work independently of its reference? "Luna" is beautiful whether or not someone knows it's from Harry Potter, but "Khaleesi" might seem odd to those unfamiliar with Game of Thrones. Third, does the character's personality match your pet? Naming your cat "Garfield" makes sense if they're lazy and food-obsessed, but less so if they're active and athletic. Fourth, consider pronunciation and spelling—names like "Hermione" or "Daenerys" might be difficult for some people to say or spell, which could be frustrating at the vet's office or dog park. Finally, think about your own connection to the reference: choose a pop culture name because you genuinely love the character or show, not just because it's trendy. The best pop culture pet names are those that resonate with you personally, suit your pet's personality, work well practically (easy to say, train with, and remember), and ideally have some staying power beyond current trends. These names can be great conversation starters and a fun way to express your interests while also giving your pet a name with personality and character built right in.
                         </p>
                       </div>
-
+                      
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
                         <h3 className="font-semibold text-heading-accent text-xs xs:text-sm sm:text-base md:text-lg">How do I choose names for multiple pets, and what are good paired or themed names?</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
                           Choosing names for multiple pets offers a wonderful opportunity to create themed pairs, sets, or collections that showcase your creativity and the bonds between your pets. For pairs, classic duos from pop culture work beautifully: "Batman and Robin," "Luke and Leia," "Mario and Luigi," "Tom and Jerry," "Bonnie and Clyde," "Romeo and Juliet," "Peanut Butter and Jelly," "Salt and Pepper," "Thunder and Lightning," or "Sun and Moon." Food pairings are adorable: "Mac and Cheese," "Cookies and Cream," "Fish and Chips," "Peanut and Butter," "Sugar and Spice," "Bacon and Eggs," or "Coffee and Cream." For three pets, consider trios like "Snap, Crackle, and Pop," "Huey, Dewey, and Louie," "Larry, Moe, and Curly," "Alvin, Simon, and Theodore," or "Faith, Hope, and Charity." Literary trios include "Athos, Porthos, and Aramis" from The Three Musketeers, or "Harry, Ron, and Hermione" from Harry Potter. Themed sets can follow various patterns: planetary names (Mercury, Venus, Earth, Mars, Jupiter, Saturn), Greek gods (Zeus, Hera, Poseidon, Athena, Apollo), gemstones (Ruby, Pearl, Sapphire, Emerald, Diamond), seasons (Spring, Summer, Autumn, Winter), or elements (Earth, Wind, Fire, Water). Color themes work well: a rainbow collection (Red, Orange, Yellow, Green, Blue, Violet) or monochrome variations (Shadow, Midnight, Ebony, Coal for black pets). Nature-themed sets might include flower names (Rose, Lily, Daisy, Violet, Iris), tree names (Oak, Maple, Birch, Willow, Aspen), or weather phenomena (Storm, Cloud, Rain, Thunder, Breeze). For music lovers, consider instruments (Banjo, Viola, Piano, Harp), musical terms (Melody, Harmony, Rhythm, Tempo), or famous composers (Mozart, Bach, Beethoven, Chopin). When choosing themed names, ensure each name works independently—you don't want a pet's name to only make sense as part of a pair. For instance, "Batman" works alone, but "Robin" might seem incomplete without Batman. Also consider distinctiveness; names should sound different enough that pets can tell when you're calling them specifically versus their sibling. Avoid names that are too similar in sound, like "Benji and Benny" or "Molly and Polly," as this can cause confusion during training. The rhyming can be cute, but practical training suggests more distinct sounds work better. Length consistency can be pleasing aesthetically—two-syllable names for all pets, or one-syllable names—but it's not necessary if the names work well individually. Think about how names will sound when called together: "Come here, Peanut Butter and Jelly!" should flow naturally. Consider future additions too—if you choose a theme, can it expand if you get more pets later? "Salt and Pepper" is a perfect pair, but what if you get a third pet? Some themes are more expandable than others. Finally, while themed names are fun, don't force it if you find individual names you absolutely love—the perfect names for your specific pets matter more than sticking to a theme. The best multiple-pet names are those that work both independently and collectively, reflect each pet's personality while sharing a common thread, and bring you joy every time you use them.
                         </p>
                       </div>
-
+                      
                       <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
                         <h3 className="font-semibold text-heading-accent text-xs xs:text-sm sm:text-base md:text-lg">Can I change my pet's name if I adopt an adult pet or don't like their current name?</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-white/80 leading-relaxed">
@@ -527,6 +537,7 @@ export default function PetNamesPage() {
                     </div>
                   </div>
 
+                  {/* Related Tools Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-card rounded-lg flex-shrink-0">
@@ -575,7 +586,7 @@ export default function PetNamesPage() {
                   </div>
               </div>
 
-              {}
+              {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
               <div className="hidden lg:block w-72">
                 <div className="sticky top-24 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

@@ -67,16 +67,16 @@ export function TimeDurationCalculator() {
           if (!startTime || !endTime) return
           const [startHour, startMin] = startTime.split(":").map(Number)
           const [endHour, endMin] = endTime.split(":").map(Number)
-
+          
           let totalMinutes = endHour * 60 + endMin - (startHour * 60 + startMin)
           if (totalMinutes < 0) totalMinutes += 24 * 60
-
+          
           const hours = Math.floor(totalMinutes / 60)
           const minutes = totalMinutes % 60
           const seconds = 0
           const totalSeconds = totalMinutes * 60
           const totalHours = totalMinutes / 60
-
+          
           calculationResult = {
             hours,
             minutes,
@@ -98,11 +98,11 @@ export function TimeDurationCalculator() {
           if (!startTime || !timeToAdd) return
           const [addStartH, addStartM] = startTime.split(":").map(Number)
           const [addH, addM] = timeToAdd.split(":").map(Number)
-
+          
           let newMinutes = (addStartH * 60 + addStartM) + (addH * 60 + addM)
           const newHours = Math.floor(newMinutes / 60) % 24
           const newMins = newMinutes % 60
-
+          
           calculationResult = {
             hours: newHours,
             minutes: newMins,
@@ -124,13 +124,13 @@ export function TimeDurationCalculator() {
           if (!startTime || !timeToSubtract) return
           const [startHSub, startMSub] = startTime.split(":").map(Number)
           const [subH, subM] = timeToSubtract.split(":").map(Number)
-
+          
           let subMinutes = (startHSub * 60 + startMSub) - (subH * 60 + subM)
           if (subMinutes < 0) subMinutes += 24 * 60
-
+          
           const subHours = Math.floor(subMinutes / 60)
           const subMins = subMinutes % 60
-
+          
           calculationResult = {
             hours: subHours,
             minutes: subMins,
@@ -154,12 +154,12 @@ export function TimeDurationCalculator() {
           const [busEndH, busEndM] = businessEnd.split(":").map(Number)
           const [busStartH2, busStartM2] = startTime.split(":").map(Number)
           const [busEndH2, busEndM2] = endTime.split(":").map(Number)
-
+          
           const businessStartMinutes = busStartH * 60 + busStartM
           const businessEndMinutes = busEndH * 60 + busEndM
           const startMinutes = busStartH2 * 60 + busStartM2
           const endMinutes = busEndH2 * 60 + busEndM2
-
+          
           let businessMinutes = 0
           if (startMinutes >= businessStartMinutes && endMinutes <= businessEndMinutes) {
             businessMinutes = endMinutes - startMinutes
@@ -170,10 +170,10 @@ export function TimeDurationCalculator() {
           } else if (startMinutes >= businessStartMinutes && endMinutes > businessEndMinutes) {
             businessMinutes = businessEndMinutes - startMinutes
           }
-
+          
           const busHours = Math.floor(businessMinutes / 60)
           const busMins = businessMinutes % 60
-
+          
           calculationResult = {
             hours: busHours,
             minutes: busMins,
@@ -195,14 +195,14 @@ export function TimeDurationCalculator() {
           if (!startTime || !endTime) return
           const [otStartH, otStartM] = startTime.split(":").map(Number)
           const [otEndH, otEndM] = endTime.split(":").map(Number)
-
+          
           const otTotalMinutes = (otEndH * 60 + otEndM) - (otStartH * 60 + otStartM)
           const otTotalHours = otTotalMinutes / 60
           const threshold = Number.parseFloat(overtimeThreshold)
-
+          
           const regularH = Math.min(otTotalHours, threshold)
           const overtimeH = Math.max(0, otTotalHours - threshold)
-
+          
           calculationResult = {
             hours: Math.floor(otTotalHours),
             minutes: Math.round((otTotalHours % 1) * 60),
@@ -222,14 +222,14 @@ export function TimeDurationCalculator() {
 
         case "timezone-conversion":
           if (!startTime || !timezone1 || !timezone2) return
-
+          // Simple timezone conversion (UTC offset based)
           const [tzStartH, tzStartM] = startTime.split(":").map(Number)
           const tzStartMinutes = tzStartH * 60 + tzStartM
-          const tzOffset = timezone1 === timezone2 ? 0 : 2
+          const tzOffset = timezone1 === timezone2 ? 0 : 2 // Simple offset for demo
           const tzNewMinutes = (tzStartMinutes + tzOffset * 60) % (24 * 60)
           const tzNewHours = Math.floor(tzNewMinutes / 60)
           const tzNewMins = tzNewMinutes % 60
-
+          
           calculationResult = {
             hours: tzNewHours,
             minutes: tzNewMins,
@@ -253,13 +253,13 @@ export function TimeDurationCalculator() {
           const end = new Date(endDate)
           const diffTime = end.getTime() - start.getTime()
           const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
-          const workDaysCount = Math.max(0, diffDays - Math.floor(diffDays / 7) * 2)
-
+          const workDaysCount = Math.max(0, diffDays - Math.floor(diffDays / 7) * 2) // Exclude weekends
+          
           calculationResult = {
             hours: 0,
             minutes: 0,
             seconds: 0,
-            totalMinutes: workDaysCount * 8 * 60,
+            totalMinutes: workDaysCount * 8 * 60, // 8 hours per work day
             totalSeconds: workDaysCount * 8 * 60 * 60,
             totalHours: workDaysCount * 8,
             businessDays: workDaysCount,
@@ -334,7 +334,7 @@ export function TimeDurationCalculator() {
 
   return (
     <div className="space-y-4">
-      {}
+      {/* Current Time Display */}
       <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardContent className="p-3">
           <div className="flex items-center gap-2 text-heading-accent">
@@ -345,7 +345,7 @@ export function TimeDurationCalculator() {
         </CardContent>
       </Card>
 
-      {}
+      {/* Calculation Type Selector */}
       <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center gap-2 text-lg text-heading-accent">
@@ -357,7 +357,7 @@ export function TimeDurationCalculator() {
           <CardDescription className="text-sm text-muted-foreground">{typeInfo.description}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          {}
+          {/* Calculation Type Buttons */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
             {[
               { type: "time-duration", label: "Duration", shortLabel: "Duration", icon: Clock },
@@ -385,7 +385,7 @@ export function TimeDurationCalculator() {
             ))}
           </div>
 
-          {}
+          {/* Input Fields */}
           <div className="space-y-3">
             {calculationType === "time-duration" && (
               <>
@@ -700,7 +700,7 @@ export function TimeDurationCalculator() {
         </CardContent>
       </Card>
 
-      {}
+      {/* Results */}
       {result && !isCalculating && (
         <Card className="shadow-lg border-border animate-fade-in-up bg-card">
           <CardHeader className="pb-3">
@@ -713,7 +713,7 @@ export function TimeDurationCalculator() {
             <CardDescription className="text-sm text-muted-foreground">{result.explanation}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            {}
+            {/* Main Result Display */}
             <div className="text-center p-4 rounded-xl bg-card border border-border/20">
               <div className="text-2xl font-bold text-heading-accent mb-1">
                 {result.hours}h {result.minutes}m
@@ -723,7 +723,7 @@ export function TimeDurationCalculator() {
               </div>
             </div>
 
-            {}
+            {/* Detailed Breakdown */}
             <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
               <div className="text-sm font-semibold mb-2 text-heading-accent">Calculation Details</div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -758,7 +758,7 @@ export function TimeDurationCalculator() {
               </div>
             </div>
 
-            {}
+            {/* Formula Display */}
             <div className="p-3 bg-card rounded-xl border border-border">
               <div className="text-xs font-semibold text-heading-accent mb-1.5">Formula Used:</div>
               <div className="text-[10px] text-foreground font-mono bg-card border border-border p-1.5 rounded">
@@ -766,7 +766,7 @@ export function TimeDurationCalculator() {
               </div>
             </div>
 
-            {}
+            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-2">
               <Button
                 onClick={copyResult}

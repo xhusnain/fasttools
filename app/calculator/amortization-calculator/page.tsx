@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import AmortizationCalculator from "@/components/amortization-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -189,7 +190,7 @@ export default function AmortizationCalculatorPage() {
           }
         })
       }} />
-
+      
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-2 xs:px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-2 xs:py-3 sm:py-4 md:py-6 lg:py-8 xl:py-10 2xl:py-12">
           <Breadcrumbs
@@ -212,18 +213,18 @@ export default function AmortizationCalculatorPage() {
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_260px] xl:grid-cols-[1fr_300px] 2xl:grid-cols-[1fr_360px] gap-2 xs:gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10">
               <div>
                 <AmortizationCalculator />
-
-                {}
+                
+                {/* Mobile/Tablet AdSpace */}
                 <div className="my-2 xs:my-3 sm:my-4 md:my-6 lg:hidden">
                   <div className="text-center mb-1">
                     <span className="text-xs xs:text-sm text-muted-foreground font-medium">Advertisement</span>
                   </div>
                   <AdSpace slot="content" className="w-full h-8 xs:h-10 sm:h-12 md:h-16 lg:h-20 border border-border rounded-xl shadow-sm bg-card" />
                 </div>
-
-                {}
+            
+                {/* Educational Content Sections */}
                 <div className="mt-1 xs:mt-2 sm:mt-3 md:mt-4 lg:mt-6 xl:mt-8 space-y-1 xs:space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6">
-                  {}
+                  {/* How to Use Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -253,7 +254,7 @@ export default function AmortizationCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Features Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -323,7 +324,7 @@ export default function AmortizationCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Use Cases Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -355,7 +356,7 @@ export default function AmortizationCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Loan Types Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -405,7 +406,7 @@ export default function AmortizationCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Payment Strategies Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -455,7 +456,7 @@ export default function AmortizationCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Professional Insights Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -471,7 +472,7 @@ export default function AmortizationCalculatorPage() {
                         </p>
                         <p className="text-xs text-foreground">- Sarah Johnson, CFP, Senior Financial Planner, Charles Schwab</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border">
                         <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-heading-accent mb-1 xs:mb-2">Michael Chen, Mortgage Broker</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-foreground mb-2">
@@ -479,7 +480,7 @@ export default function AmortizationCalculatorPage() {
                         </p>
                         <p className="text-xs text-foreground">- Michael Chen, Licensed Mortgage Broker, Wells Fargo</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border">
                         <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-foreground mb-1 xs:mb-2">Dr. Lisa Rodriguez, PhD - Financial Education</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-foreground mb-2">
@@ -490,7 +491,7 @@ export default function AmortizationCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Success Stories Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -506,7 +507,7 @@ export default function AmortizationCalculatorPage() {
                         </p>
                         <p className="text-xs text-foreground">- Jennifer M., Homeowner</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border">
                         <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-heading-accent mb-1 xs:mb-2">Auto Loan Optimization</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-foreground mb-2">
@@ -514,7 +515,7 @@ export default function AmortizationCalculatorPage() {
                         </p>
                         <p className="text-xs text-foreground">- Robert K., Car Owner</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border">
                         <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-foreground mb-1 xs:mb-2">Debt Consolidation Success</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-foreground mb-2">
@@ -525,7 +526,7 @@ export default function AmortizationCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* FAQ Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -633,6 +634,7 @@ export default function AmortizationCalculatorPage() {
                     </div>
                   </div>
 
+                  {/* Related Tools Section */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -650,7 +652,7 @@ export default function AmortizationCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed">Calculate mortgage payments and home affordability</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
@@ -660,7 +662,7 @@ export default function AmortizationCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed">Calculate real interest rates on loans and investments</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
@@ -670,7 +672,7 @@ export default function AmortizationCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed">Calculate investment growth and portfolio analysis</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
@@ -680,7 +682,7 @@ export default function AmortizationCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed">Calculate loan payments, interest, and amortization schedules</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
@@ -690,7 +692,7 @@ export default function AmortizationCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed">Time value of money calculations and TVM analysis</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
@@ -700,7 +702,7 @@ export default function AmortizationCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed">Calculate sales tax for all 50 US states</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
@@ -710,7 +712,7 @@ export default function AmortizationCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed">Convert salary across different pay frequencies</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
@@ -720,7 +722,7 @@ export default function AmortizationCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed">Calculate purchasing power and inflation impact</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
@@ -730,7 +732,7 @@ export default function AmortizationCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed">Convert between different currencies and exchange rates</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
@@ -740,7 +742,7 @@ export default function AmortizationCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed">Calculate income tax and sales tax amounts</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
@@ -750,7 +752,7 @@ export default function AmortizationCalculatorPage() {
                         </div>
                         <p className="text-xs xs:text-sm text-foreground leading-relaxed">Advanced mathematical and scientific calculations</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border hover:bg-secondary/70 transition-colors">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-primary rounded-lg">
@@ -764,10 +766,11 @@ export default function AmortizationCalculatorPage() {
                   </div>
                 </div>
               </div>
-
+              
+              {/* Sidebar */}
               <div className="space-y-2 xs:space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8">
                 <div className="sticky top-2 xs:top-4 sm:top-6 space-y-2 xs:space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8">
-
+                  {/* Sidebar Ad */}
                   <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 shadow-sm">
                     <AdSpace slot="sidebar" className="h-28 xs:h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 2xl:h-72 rounded-lg overflow-hidden" />
                   </div>

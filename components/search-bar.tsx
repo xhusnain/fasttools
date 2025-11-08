@@ -4,6 +4,8 @@ import type React from "react"
 import { useState, useEffect, useRef, useMemo, useCallback } from "react"
 import { Search } from "lucide-react"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
+import Fuse from "fuse.js"
 import { searchItems, type SearchItem } from "@/lib/search-data"
 
 type SearchBarProps = {
@@ -15,27 +17,28 @@ type SearchBarProps = {
   variant?: "default" | "pill"
 }
 
+// Optimized Fuse.js configuration
 const fuseOptions = {
   includeScore: true,
   includeMatches: true,
   useExtendedSearch: true,
-  threshold: 0.3,
+  threshold: 0.3, // Balanced accuracy - allows some typos
   findAllMatches: true,
   minMatchCharLength: 2,
   keys: [
-    { name: 'name', weight: 0.7 },
+    { name: 'name', weight: 0.7 }, // Title is most important
     { name: 'description', weight: 0.3 },
     { name: 'category', weight: 0.2 }
   ]
 }
 
-export function SearchBar({
-  className,
-  inputClassName,
-  autoFocus = false,
-  placeholder = "Search tools...",
-  onBlur,
-  variant = "default"
+export function SearchBar({ 
+  className, 
+  inputClassName, 
+  autoFocus = false, 
+  placeholder = "Search tools...", 
+  onBlur, 
+  variant = "default" 
 }: SearchBarProps) {
   const [query, setQuery] = useState("")
   const [filteredSuggestions, setFilteredSuggestions] = useState<SearchItem[]>([])
@@ -47,6 +50,7 @@ export function SearchBar({
   const debounceTimer = useRef<NodeJS.Timeout | null>(null)
   const isClickingSuggestion = useRef(false)
 
+  // Create Fuse instance with pre-computed index for performance
   const fuse = useMemo(() => {
     const index = Fuse.createIndex(['name', 'description', 'category'], searchItems)
     return new Fuse(searchItems, fuseOptions, index)
@@ -56,10 +60,11 @@ export function SearchBar({
     setIsMounted(true)
   }, [])
 
+  // Debounced search function
   const performSearch = useCallback((searchQuery: string) => {
     if (searchQuery.trim().length > 0) {
       const results = fuse.search(searchQuery)
-      setFilteredSuggestions(results.map(result => result.item).slice(0, 8))
+      setFilteredSuggestions(results.map(result => result.item).slice(0, 8)) // Show max 8 suggestions
       setShowSuggestions(true)
     } else {
       setShowSuggestions(false)
@@ -67,15 +72,17 @@ export function SearchBar({
   }, [fuse])
 
   useEffect(() => {
-
+    // Clear existing timer
     if (debounceTimer.current) {
       clearTimeout(debounceTimer.current)
     }
 
+    // Set new timer for debounced search
     debounceTimer.current = setTimeout(() => {
       performSearch(query)
-    }, 150)
+    }, 150) // 150ms debounce for smooth UX
 
+    // Cleanup function
     return () => {
       if (debounceTimer.current) {
         clearTimeout(debounceTimer.current)
@@ -86,11 +93,13 @@ export function SearchBar({
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node
-
+      
+      // Don't close if clicking inside the search container (input or suggestions)
       if (searchRef.current && searchRef.current.contains(target)) {
         return
       }
-
+      
+      // Close suggestions if clicking outside
       setShowSuggestions(false)
     }
 
@@ -99,14 +108,14 @@ export function SearchBar({
   }, [])
 
   const handleInputBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-
+    // Only close suggestions if we're not clicking on a suggestion
     if (!isClickingSuggestion.current) {
       setShowSuggestions(false)
       if (onBlur) {
         onBlur()
       }
     }
-
+    // Reset the flag after a short delay
     setTimeout(() => {
       isClickingSuggestion.current = false
     }, 100)
@@ -121,19 +130,19 @@ export function SearchBar({
   }
 
   const handleSuggestionMouseDown = () => {
-
+    // Prevent blur from firing when clicking on suggestion
     isClickingSuggestion.current = true
   }
 
   const handleSuggestionClick = () => {
-
+    // Close suggestions and clear query immediately
     setShowSuggestions(false)
     setQuery("")
-
+    // Reset flag after click completes
     setTimeout(() => {
       isClickingSuggestion.current = false
     }, 100)
-
+    // Link will handle navigation
   }
 
   if (!isMounted) {
@@ -168,7 +177,7 @@ export function SearchBar({
       </form>
 
       {showSuggestions && filteredSuggestions.length > 0 && (
-        <div
+        <div 
           ref={suggestionsRef}
           className="absolute top-full mt-2 w-full bg-card border border-border rounded-lg shadow-lg overflow-hidden z-50 animate-fade-in max-h-[400px] overflow-y-auto"
         >

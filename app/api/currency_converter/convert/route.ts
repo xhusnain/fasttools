@@ -5,7 +5,7 @@ const FRANKFURTER_API_BASE = 'https://api.frankfurter.dev/v1'
 
 export async function POST(request: NextRequest) {
   try {
-
+    // Validate API key
     const keyValidation = validateApiKey(request)
     if (!keyValidation.isValid) {
       return createUnauthorizedResponse(keyValidation.error || 'Invalid API key')
@@ -13,7 +13,8 @@ export async function POST(request: NextRequest) {
 
     const body = await request.json()
     const { from, to, amount } = body
-
+    
+    // Validate input
     if (!from || !to || !amount) {
       return NextResponse.json(
         {
@@ -24,7 +25,7 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       )
     }
-
+    
     if (isNaN(Number(amount)) || Number(amount) <= 0) {
       return NextResponse.json(
         {
@@ -35,7 +36,8 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       )
     }
-
+    
+    // If converting to the same currency, return the same amount
     if (from === to) {
       return NextResponse.json({
         success: true,
@@ -50,7 +52,8 @@ export async function POST(request: NextRequest) {
         timestamp: new Date().toISOString()
       })
     }
-
+    
+    // Fetch exchange rate
     const response = await fetch(`${FRANKFURTER_API_BASE}/latest?base=${from}&symbols=${to}`)
     if (!response.ok) {
       return createUpstreamFailureResponse()
@@ -60,7 +63,7 @@ export async function POST(request: NextRequest) {
       return createUpstreamFailureResponse()
     }
     const rate = data.rates[to]
-
+    
     if (!rate) {
       return NextResponse.json(
         {
@@ -71,9 +74,9 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       )
     }
-
+    
     const convertedAmount = Number(amount) * rate
-
+    
     return NextResponse.json({
       success: true,
       data: {
@@ -86,10 +89,10 @@ export async function POST(request: NextRequest) {
       },
       timestamp: new Date().toISOString()
     })
-
+    
   } catch (error) {
     console.error('Error converting currency:', error)
-
+    
     return NextResponse.json(
       {
         success: false,
@@ -103,7 +106,7 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
   try {
-
+    // Validate API key
     const keyValidation = validateApiKey(request)
     if (!keyValidation.isValid) {
       return createUnauthorizedResponse(keyValidation.error || 'Invalid API key')
@@ -113,7 +116,8 @@ export async function GET(request: NextRequest) {
     const from = searchParams.get('from')
     const to = searchParams.get('to')
     const amount = searchParams.get('amount')
-
+    
+    // Validate input
     if (!from || !to || !amount) {
       return NextResponse.json(
         {
@@ -124,7 +128,7 @@ export async function GET(request: NextRequest) {
         { status: 400 }
       )
     }
-
+    
     if (isNaN(Number(amount)) || Number(amount) <= 0) {
       return NextResponse.json(
         {
@@ -135,7 +139,8 @@ export async function GET(request: NextRequest) {
         { status: 400 }
       )
     }
-
+    
+    // If converting to the same currency, return the same amount
     if (from === to) {
       return NextResponse.json({
         success: true,
@@ -150,7 +155,8 @@ export async function GET(request: NextRequest) {
         timestamp: new Date().toISOString()
       })
     }
-
+    
+    // Fetch exchange rate
     const response = await fetch(`${FRANKFURTER_API_BASE}/latest?base=${from}&symbols=${to}`)
     if (!response.ok) {
       return createUpstreamFailureResponse()
@@ -160,7 +166,7 @@ export async function GET(request: NextRequest) {
       return createUpstreamFailureResponse()
     }
     const rate = data.rates[to]
-
+    
     if (!rate) {
       return NextResponse.json(
         {
@@ -171,9 +177,9 @@ export async function GET(request: NextRequest) {
         { status: 400 }
       )
     }
-
+    
     const convertedAmount = Number(amount) * rate
-
+    
     return NextResponse.json({
       success: true,
       data: {
@@ -186,7 +192,7 @@ export async function GET(request: NextRequest) {
       },
       timestamp: new Date().toISOString()
     })
-
+    
   } catch (error) {
     console.error('Error converting currency:', error)
     return createUpstreamFailureResponse()

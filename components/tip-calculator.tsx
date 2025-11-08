@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Copy, DollarSign } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
 
@@ -56,9 +57,9 @@ Split ${numPeople} ways: $${result.perPerson} per person`
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      {}
+      {/* Left Column - Inputs */}
       <div className="space-y-6">
-        {}
+        {/* Bill Amount Input */}
         <div className="space-y-2">
           <Label htmlFor="billAmount" className="text-xs font-medium text-foreground">
             Bill Amount ($)
@@ -75,7 +76,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
           />
         </div>
 
-        {}
+        {/* Tip Percentage Input */}
         <div className="space-y-2">
           <Label htmlFor="tipPercent" className="text-xs font-medium text-foreground">
             Tip Percentage (%)
@@ -106,7 +107,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
           </div>
         </div>
 
-        {}
+        {/* Number of People Input */}
         <div className="space-y-2">
           <Label htmlFor="numPeople" className="text-xs font-medium text-foreground">
             Number of People
@@ -123,7 +124,7 @@ Split ${numPeople} ways: $${result.perPerson} per person`
           />
         </div>
 
-        {}
+        {/* Action Buttons */}
         <div className="flex gap-2">
           <Button
             onClick={calculateTip}
@@ -157,17 +158,17 @@ Split ${numPeople} ways: $${result.perPerson} per person`
         </div>
       </div>
 
-      {}
+      {/* Right Column - Results */}
       <div className="space-y-4">
         {result ? (
           <>
-            {}
+            {/* Results Header */}
             <div className="text-center mb-4">
               <h3 className="text-lg font-bold text-foreground">Tip Breakdown</h3>
               <p className="text-xs text-muted-foreground">Calculation Results</p>
             </div>
 
-            {}
+            {/* Results Grid */}
             <div className="space-y-3">
               <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
                 <span className="text-xs text-muted-foreground">Bill Amount:</span>
@@ -198,13 +199,13 @@ Split ${numPeople} ways: $${result.perPerson} per person`
               )}
             </div>
 
-            {}
+            {/* Final Total */}
             <div className="flex justify-between items-center p-4 bg-primary/5 rounded-lg border-2 border-primary/20">
               <span className="text-sm font-medium text-foreground">Final Total:</span>
               <span className="text-xl font-bold text-primary">${result.totalAmount}</span>
             </div>
 
-            {}
+            {/* Copy Button */}
             <Button
               onClick={copyResult}
               variant="outline"

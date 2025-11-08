@@ -1,11 +1,14 @@
+import path from "node:path";
+import fs from "node:fs";
 import * as ort from "onnxruntime-node";
+import sharp from "sharp";
 
 const INPUT_SIZE = 320;
 let sessionPromise: Promise<ort.InferenceSession> | null = null;
 let depthSessionPromise: Promise<ort.InferenceSession> | null = null;
 
 function getModelPath(): string {
-
+  // Load from public/models at runtime
   const modelPath = path.join(process.cwd(), "public", "models", "u2net.onnx");
   if (!fs.existsSync(modelPath)) {
     throw new Error(`U2Net model not found at ${modelPath}`);
@@ -16,7 +19,7 @@ function getModelPath(): string {
 export function loadU2NetSession(): Promise<ort.InferenceSession> {
   if (!sessionPromise) {
     const modelPath = getModelPath();
-
+    // Use default CPU provider; specifying an invalid provider causes "backend not found"
     sessionPromise = ort.InferenceSession.create(modelPath, {
       graphOptimizationLevel: "all",
     });
@@ -51,6 +54,7 @@ async function preprocessToTensor(imageBuffer: Buffer): Promise<{
   const originalWidth = metadata.width || INPUT_SIZE;
   const originalHeight = metadata.height || INPUT_SIZE;
 
+  // Letterbox to keep aspect ratio within INPUT_SIZE
   const scale = Math.min(INPUT_SIZE / originalWidth, INPUT_SIZE / originalHeight);
   const contentWidth = Math.max(1, Math.round(originalWidth * scale));
   const contentHeight = Math.max(1, Math.round(originalHeight * scale));
@@ -86,14 +90,14 @@ async function preprocessToTensor(imageBuffer: Buffer): Promise<{
 }
 
 async function postprocessMaskToBuffer(mask: Float32Array, width: number, height: number): Promise<Buffer> {
-
+  // mask is 1x1xH xW flattened
   const u8 = new Uint8ClampedArray(width * height);
   for (let i = 0; i < width * height; i++) {
-
+    // Clamp and scale
     const v = Math.max(0, Math.min(1, mask[i]));
     u8[i] = Math.round(v * 255);
   }
-
+  // single-channel grayscale png
   return await sharp(Buffer.from(u8), { raw: { width, height, channels: 1 } }).png().toBuffer();
 }
 
@@ -104,18 +108,20 @@ async function buildRefinedAlpha(
   options: { contrast?: number; offset?: number; threshold?: number; feather?: number } = {}
 ): Promise<Buffer> {
   const {
-    contrast = 2.2,
-    offset = -60,
-    threshold = 170,
-    feather = 1.2,
+    contrast = 2.2,        // stronger separation
+    offset = -60,          // push background darker
+    threshold = 170,       // tighten edge
+    feather = 1.2,         // light feathering
   } = options;
 
+  // linear expects (a, b) where out = in * a + b
+  // Work in 0..255 domain for clarity
   const refined = await sharp(maskPng)
     .resize(width, height, { fit: "fill" })
     .toColourspace("b-w")
-    .linear(contrast, offset)
-    .threshold(threshold)
-    .blur(feather)
+    .linear(contrast, offset)      // boost contrast, lower background
+    .threshold(threshold)          // enforce a solid trimap core
+    .blur(feather)                 // feather edges back for softness
     .raw()
     .toBuffer();
 
@@ -131,12 +137,13 @@ export async function runU2NetMask(imageBuffer: Buffer): Promise<{ maskPng: Buff
   const outputName = session.outputNames[0] ?? Object.keys(results)[0];
   const output = results[outputName] as ort.Tensor;
 
-  const maskFloat = output.data as Float32Array;
+  const maskFloat = output.data as Float32Array; // size 1*1*H*W
   const sourceHeight = output.dims[2];
   const sourceWidth = output.dims[3];
 
   const maskPngSmall = await postprocessMaskToBuffer(maskFloat, sourceWidth, sourceHeight);
 
+  // Unletterbox: crop padding, then upscale to original size preserving aspect
   const cropped = await sharp(maskPngSmall)
     .extract({ left: padLeft, top: padTop, width: contentWidth, height: contentHeight })
     .png()
@@ -162,28 +169,33 @@ function strengthToParams(s: RefineStrength): { contrast: number; offset: number
 
 export async function removeBackground(imageBuffer: Buffer, options?: { refineWithDepth?: boolean; strength?: RefineStrength }): Promise<Buffer> {
   const { maskPng, originalWidth, originalHeight } = await runU2NetMask(imageBuffer);
-
+  // Prepare base image RGBA
   const baseRgba = await sharp(imageBuffer)
     .resize({ width: originalWidth, height: originalHeight, fit: "fill" })
     .ensureAlpha()
     .raw()
     .toBuffer({ resolveWithObject: true });
 
+  // Build refined alpha from the mask
   const params = strengthToParams(options?.strength ?? "medium");
   let refinedAlpha = await buildRefinedAlpha(maskPng, originalWidth, originalHeight, params);
 
+  // Optional: depth-assisted refinement if model available
   if (options?.refineWithDepth) {
     try {
       const depthLoader = loadDepthSession();
       if (depthLoader) {
-
-        const depthAlpha = refinedAlpha;
-
+        // Simple intersection: erode alpha where depth indicates background
+        // Note: using refinedAlpha as a proxy input to keep pipeline robust if depth model absent
+        const depthAlpha = refinedAlpha; // placeholder if depth model not present
+        // Combine by minimum
         for (let i = 0; i < refinedAlpha.length; i++) {
           refinedAlpha[i] = Math.min(refinedAlpha[i], depthAlpha[i]);
         }
       }
-    } catch {}
+    } catch {
+      // ignore depth failures, keep saliency-only alpha
+    }
   }
 
   const out = Buffer.alloc(baseRgba.data.length);
@@ -203,6 +215,7 @@ export async function removeBackground(imageBuffer: Buffer, options?: { refineWi
 export async function blurBackground(imageBuffer: Buffer, blurSigma: number, options?: { refineWithDepth?: boolean; strength?: RefineStrength }): Promise<Buffer> {
   const { maskPng, originalWidth, originalHeight } = await runU2NetMask(imageBuffer);
 
+  // Prepare base and blurred images as raw RGBA
   const baseRgba = await sharp(imageBuffer)
     .resize({ width: originalWidth, height: originalHeight, fit: "fill" })
     .ensureAlpha()
@@ -213,13 +226,14 @@ export async function blurBackground(imageBuffer: Buffer, blurSigma: number, opt
     .raw()
     .toBuffer({ resolveWithObject: true });
 
+  // Prepare refined mask and inverse mask
   const params = strengthToParams(options?.strength ?? "medium");
   let maskAlpha = await buildRefinedAlpha(maskPng, originalWidth, originalHeight, params);
   if (options?.refineWithDepth) {
     try {
       const depthLoader = loadDepthSession();
       if (depthLoader) {
-        const depthAlpha = maskAlpha;
+        const depthAlpha = maskAlpha; // placeholder: keep same length; real depth model merges here
         for (let i = 0; i < maskAlpha.length; i++) maskAlpha[i] = Math.min(maskAlpha[i], depthAlpha[i]);
       }
     } catch {}
@@ -227,6 +241,7 @@ export async function blurBackground(imageBuffer: Buffer, blurSigma: number, opt
   const invMaskData = Buffer.alloc(maskAlpha.length);
   for (let i = 0; i < maskAlpha.length; i++) invMaskData[i] = 255 - maskAlpha[i];
 
+  // Subject RGBA: base RGB + alpha(mask)
   const subject = Buffer.alloc(baseRgba.data.length);
   for (let i = 0, q = 0; i < baseRgba.data.length; i += 4) {
     subject[i] = baseRgba.data[i];
@@ -235,6 +250,7 @@ export async function blurBackground(imageBuffer: Buffer, blurSigma: number, opt
     subject[i + 3] = maskAlpha[q++];
   }
 
+  // Background RGBA: blurred RGB + alpha(invMask)
   const background = Buffer.alloc(blurredRgba.data.length);
   for (let i = 0, q = 0; i < blurredRgba.data.length; i += 4) {
     background[i] = blurredRgba.data[i];
@@ -255,4 +271,5 @@ export async function blurBackground(imageBuffer: Buffer, blurSigma: number, opt
     .png()
     .toBuffer();
 }
+
 

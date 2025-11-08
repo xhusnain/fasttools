@@ -1,5 +1,6 @@
 "use client"
 
+import React, { useState } from 'react'
 import { Square, Circle as CircleIcon, Triangle as TriangleIcon, Minus, ArrowRight, Star, Hexagon, Pentagon, Diamond, Heart } from 'lucide-react'
 import { Icon } from '@iconify/react'
 import { getFabric } from '@/lib/fabric'
@@ -24,14 +25,16 @@ export function ElementsPanel({ canvas }: ElementsPanelProps) {
       const centerX = canvas.getWidth() / 2
       const centerY = canvas.getHeight() / 2
 
+      // Use Iconify API to get icon as SVG data URL
       const iconUrl = `https://api.iconify.design/${iconData.icon}.svg?height=100`
 
+      // Create an image element to load the SVG
       const imgElement = new Image()
       imgElement.crossOrigin = 'anonymous'
 
       imgElement.onload = () => {
         try {
-
+          // Create Fabric.js image from loaded element
           const fabricImg = new fabric.Image(imgElement, {
             left: centerX,
             top: centerY,
@@ -52,7 +55,8 @@ export function ElementsPanel({ canvas }: ElementsPanelProps) {
 
       imgElement.onerror = () => {
         console.error(`Failed to load icon "${iconData.name}" (${iconData.icon})`)
-
+        
+        // Create a fallback placeholder shape
         const placeholder = new fabric.Rect({
           left: centerX,
           top: centerY,
@@ -95,6 +99,7 @@ export function ElementsPanel({ canvas }: ElementsPanelProps) {
         canvas.renderAll()
       }
 
+      // Load the SVG as image source
       imgElement.src = iconUrl
 
     } catch (error) {
@@ -118,7 +123,7 @@ export function ElementsPanel({ canvas }: ElementsPanelProps) {
       let shape: any
       const colors = ['#3b82f6', '#ef4444', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899', '#06b6d4', '#14b8a6']
       const randomColor = colors[Math.floor(Math.random() * colors.length)]
-
+      
       const centerX = canvas.getWidth() / 2
       const centerY = canvas.getHeight() / 2
 
@@ -340,6 +345,7 @@ export function ElementsPanel({ canvas }: ElementsPanelProps) {
     { id: 'heart', name: 'Heart', Icon: Heart, bgColor: 'bg-rose-500', hoverColor: 'hover:bg-rose-600' },
   ]
 
+  // Colorful icons - 120+ icons organized by category
   const socialMediaIcons = [
     { id: 'facebook', name: 'Facebook', icon: 'logos:facebook' },
     { id: 'instagram', name: 'Instagram', icon: 'skill-icons:instagram' },
@@ -465,26 +471,26 @@ export function ElementsPanel({ canvas }: ElementsPanelProps) {
   ]
 
   const allIcons = [
-    ...socialMediaIcons,
-    ...techIcons,
-    ...toolsIcons,
-    ...brandIcons,
-    ...browserIcons,
-    ...designIcons,
+    ...socialMediaIcons, 
+    ...techIcons, 
+    ...toolsIcons, 
+    ...brandIcons, 
+    ...browserIcons, 
+    ...designIcons, 
     ...emojiIcons
   ]
-
+  
   const displayedIcons = showAllIcons ? allIcons : allIcons.slice(0, 24)
 
   return (
     <div className="p-4 space-y-6 h-full overflow-y-auto">
-      {}
+      {/* Shapes Section */}
       <div>
         <h3 className="font-semibold text-slate-800 mb-3 text-sm">Shapes</h3>
         <div className="grid grid-cols-2 gap-3">
           {shapes.map((shape) => (
-            <button
-              key={shape.id}
+            <button 
+              key={shape.id} 
               className="group p-3 bg-white rounded-xl hover:shadow-lg transition-all duration-200 border-2 border-slate-200 hover:border-slate-300 active:scale-95"
               onClick={() => addShape(shape.id)}
             >
@@ -503,14 +509,14 @@ export function ElementsPanel({ canvas }: ElementsPanelProps) {
         </div>
       </div>
 
-      {}
+      {/* Icons Section */}
       <div>
         <div className="flex items-center justify-between mb-3">
           <h3 className="font-semibold text-slate-800 text-sm">Colorful Icons</h3>
           <span className="text-xs text-muted-foreground font-medium">{allIcons.length} icons</span>
         </div>
 
-        {}
+        {/* Icons Grid */}
         <div className="grid grid-cols-4 gap-2">
           {displayedIcons.map((iconData) => (
             <button
@@ -528,7 +534,7 @@ export function ElementsPanel({ canvas }: ElementsPanelProps) {
           ))}
         </div>
 
-        {}
+        {/* View All / Show Less Button */}
         {!showAllIcons && (
           <button
             onClick={() => setShowAllIcons(true)}

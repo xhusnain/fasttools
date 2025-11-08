@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { QrCode, Globe, Code, ArrowRight, Sparkles, Wifi, User, Image as ImageIcon, FileText } from "lucide-react"
 
+// Auto-update year
 const currentYear = new Date().getFullYear()
 
 export const metadata: Metadata = {
@@ -31,13 +32,14 @@ export const metadata: Metadata = {
     canonical: "https://www.fasttools.store/ai-tools/qr-generator",
   },
   keywords: [
-
+    // Main keywords
     "free qr code generator",
     "qr code generator",
     "qr code maker free",
     `best qr code generator ${currentYear}`,
     "advanced qr code generator",
-
+    
+    // Template-specific (HIGH VALUE)
     "wifi qr code generator",
     "wifi qr code generator free",
     "vcard qr code generator",
@@ -48,26 +50,30 @@ export const metadata: Metadata = {
     "sms qr code generator",
     "phone qr code generator",
     "location qr code generator",
-
+    
+    // Premium features (NO COMPETITION)
     "qr code with logo free",
     "qr code logo embedding",
     "bulk qr code generator free",
     "qr code generator svg",
     "qr code generator no watermark",
     "qr code generator unlimited",
-
+    
+    // Customization
     "custom qr code generator",
     "qr code customization",
     "qr code color customization",
     "branded qr codes",
     "qr code with frame",
     "qr code design tool",
-
+    
+    // Format-related
     "svg qr code generator",
     "png qr code generator",
     "high resolution qr code",
     "print quality qr code",
-
+    
+    // Use cases
     "qr code for business",
     "marketing qr code",
     "restaurant menu qr code",
@@ -482,16 +488,19 @@ export const metadata: Metadata = {
       "qr code generator rss",
       "qr code generator routes",
       "qr code generator rtl",
-
+      
+      // High-volume search keywords (3.4M+ searches)
       "the qr code generator",
       "qr-code generator",
       "make qr code generator",
       "canvas qr code generator",
-
+      
+      // Mass/Bulk generation (HIGH VALUE)
       "mass qr code generator",
       "bulk qr code generator 128",
       "free bulk qr code generator",
-
+      
+      // Platform-specific
       "canva qr code generator",
       "adobe express qr code generator",
       "qr code generator google",
@@ -499,7 +508,8 @@ export const metadata: Metadata = {
       "qr code generator monkey",
       "qrcode monkey qr code generator",
       "qr code monkey qr code generator",
-
+      
+      // Premium features competitors charge for
       "customizable qr code generator",
       "qr code generator professional",
       "qr code generator site",
@@ -507,7 +517,8 @@ export const metadata: Metadata = {
       "how to qr code generator",
       "how to make a qr code generator",
       "how to make qr code generator",
-
+      
+      // Free/No limitations (HIGH INTENT)
       "qr code generator kostenlos",
       "gratis qr code generator",
       "qr code generator gratuit",
@@ -519,7 +530,8 @@ export const metadata: Metadata = {
       "free qr code generator that doesn't expire",
       "qr code generator no sign up",
       "qr code generator free no sign up",
-
+      
+      // Logo/Customization
       "logo qr code generator free",
       "qr code generator with link",
       "beautiful qr code generator",
@@ -532,21 +544,25 @@ export const metadata: Metadata = {
       "circle qr code generator",
       "circular qr code generator",
       "rectangular qr code generator",
-
+      
+      // Contact/vCard specific
       "qr code generator contact info",
       "vcf qr code generator",
       "free qr code generator for vcard",
       "contact qr code generator",
-
+      
+      // Social media
       "qr code generator for linkedin",
       "fb qr code generator",
       "facebook qr code generator",
       "instagram qr code generator",
-
+      
+      // Link/URL specific
       "link to qr code generator",
       "url to qr code generator",
       "bit ly qr code generator",
-
+      
+      // Technical/Developer
       "javascript qr code generator",
       "qr code generator js",
       "qr code generator python",
@@ -559,7 +575,8 @@ export const metadata: Metadata = {
       "qr code generator api",
       "zxing qr code generator",
       "qr code generator zxing",
-
+      
+      // Format/Export options
       "qr code generator vector",
       "qr code generator png",
       "transparent qr code generator",
@@ -568,7 +585,8 @@ export const metadata: Metadata = {
       "white qr code generator",
       "small qr code generator",
       "micro qr code generator",
-
+      
+      // Business/Professional
       "website qr code generator",
       "web qr code generator",
       "qr code generator for website",
@@ -578,50 +596,61 @@ export const metadata: Metadata = {
       "wix qr code generator",
       "wix com qr code generator",
       "vistaprint qr code generator",
-
+      
+      // Review/Feedback
       "google reviews qr code generator",
       "google review qr code generator",
       "qr code generator for google review",
-
+      
+      // Location/Maps
       "qr code generator google map",
       "map qr code generator",
       "location qr code generator free",
-
+      
+      // Google Forms
       "qr code generator for google forms",
       "qr code generator for google form",
       "google form qr code generator",
-
+      
+      // Tools/Resources
       "qr code generator tool",
       "qr code generator tools",
       "qr code generator program",
       "simple qr code generator",
       "qr code generator simple",
-
+      
+      // Dynamic/Static
       "qr code generator dynamic",
       "qr code generator dynamic free",
       "static qr code generator",
-
+      
+      // QR Tiger/Competitors
       "qr tiger qr code generator",
       "me qr code generator",
       "me qr qr code generator",
       "unitag qr code generator",
       "uniqode qr code generator",
       "qr code generator com",
-
+      
+      // Scanning/Reading
       "qr code generator scan",
       "qr code generator reader",
       "scan qr code generator",
-
+      
+      // Barcode related
       "barcode qr code generator",
       "qr code generator 128",
-
+      
+      // E-commerce/Payment
       "gcash qr code generator",
       "universal upi qr code generator",
       "npci qr code generator",
       "qr code generator postfinance",
-
+      
+      // Microsoft/Adobe
       "microsoft qr code generator",
-
+      
+      // Special features
       "qr code generator offline",
       "qr code generator for illustrator",
       "qr code generator in excel",
@@ -637,32 +666,42 @@ export const metadata: Metadata = {
       "qr code generator random",
       "qr code generator youtube",
       "youtube qr code generator",
-
+      
+      // Email
       "email qr code generator",
-
+      
+      // PDF
       "qr code generator free pdf",
       "pdf to qr code generator",
-
+      
+      // Text/Words
       "qr code generator for text",
       "qr code generator for words",
-
+      
+      // Video
       "qr code generator video",
-
+      
+      // App
       "qr code generator for app",
       "make your own qr code generator",
       "create my own qr code generator",
       "my qr code generator",
-
+      
+      // AI
       "a i qr code generator",
       "hugging face qr code generator",
-
+      
+      // WhatsApp
       "whatsapp qr code generator",
-
+      
+      // Dragon Ball Legends (niche but specific)
       "dragon ball legends qr code generator",
       "dbl qr code generator",
-
+      
+      // Reference URLs
       "https www qr code generator com",
-
+      
+      // Conversion keywords (HIGH COMMERCIAL INTENT - 9.9K searches)
       "link to qr code generator",
       "url to qr code generator",
       "pdf to qr code generator",
@@ -674,7 +713,8 @@ export const metadata: Metadata = {
       "photo to qr code generator",
       "link to qr code generator free",
       "to qr code generator",
-
+      
+      // Popular brand/platform searches
       "the qr code generator google",
       "the qr code generator free",
       "the qr code generator tqrcg",
@@ -689,50 +729,63 @@ export const metadata: Metadata = {
       "the qr code generator login",
       "the qr code generator extension",
       "the qr code generator app",
-
+      
+      // No limitations (HIGH CONVERSION KEYWORDS)
       "no expiry qr code generator",
       "no login qr code generator",
       "no background qr code generator",
       "no expiry qr code generator free",
       "serial no qr code generator",
       "no redirect qr code generator",
-
+      
+      // API/Developer searches
       "api for qr code generator",
-
+      
+      // Application searches
       "app for qr code generator",
       "qr code generator and scanner app",
       "qr code generator and scanner mod apk",
-
+      
+      // Logo specific
       "qr code with logo free generator",
       "logo with qr code generator",
-
+      
+      // Software/Tools
       "software for qr code generator",
       "program for qr code generator",
       "website for qr code generator",
-
+      
+      // Free variations
       "make qr code generator free",
       "free qr code generator small size",
       "for free qr code generator",
-
+      
+      // Platform-specific queries
       "is qr code generator in canva free",
       "is qr code generator safe reddit",
       "canva for qr code generator",
-
+      
+      // General searches
       "google for qr code generator",
       "link for qr code generator",
       "ppt for qr code generator",
       "javascript for qr code generator",
       "ai for qr code generator",
       "url for qr code generator",
-
+      
+      // Scanner + Generator (2.9K searches)
       "qr scanner and generator",
-
+      
+      // Business searches (HIGH CPC - $2.61)
       "qr code generator companies",
-
+      
+      // Hardware integration (HIGH CPC - $1.95)
       "qr code generator and printer",
-
+      
+      // Learning/Examples
       "qr code generator example",
-
+      
+      // Feature combinations
       "qr code generator and download",
       "qr code generator and tracker free",
       "qr code generator and url shortener",
@@ -750,26 +803,33 @@ export const metadata: Metadata = {
       "qr code generator and canva",
       "qr code generator and free",
       "qr code generator free and permanent",
-
+      
+      // Types/Categories
       "qr code generator types",
-
+      
+      // Gig/Service description
       "qr code gig description",
-
+      
+      // Comparison keywords
       "qr code generator free vs paid",
       "qr code generator or",
       "vs qr code free",
       "qr code generator vs bitly",
-
+      
+      // Format variations
       "qr code generator as image",
       "qr code generator as png",
       "qr code generator as text",
       "qr code generator as svg",
       "qr code generator as pdf",
-
+      
+      // List/Bulk related
       "qr code generator from list",
-
+      
+      // Similarity searches
       "like qr code generator",
-
+      
+      // Version
       "qr code generator v"
   ],
   openGraph: {
@@ -952,7 +1012,7 @@ export default function QrGeneratorPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {}
+                {/* Hero Section */}
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <GHeader
                     title="Free QR Code Generator - No Sign Up, No Expiration, All Features FREE"
@@ -962,19 +1022,19 @@ export default function QrGeneratorPage() {
                   />
                 </div>
 
-                {}
+                {/* Mobile Ad Space */}
                 <div className="lg:hidden">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {}
+                {/* QR Generator Tool */}
                 <div className="animate-fade-in-up animation-delay-200">
                   <AiQrGenerator />
                 </div>
 
-                {}
+                {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-400">
-                  {}
+                  {/* Premium Features Section */}
                   <div className="p-6 rounded-lg bg-card border-2 border-primary/30 shadow-sm">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <Sparkles className="h-6 w-6 text-primary" />
@@ -1042,7 +1102,7 @@ export default function QrGeneratorPage() {
                       </p>
                     </div>
                   </div>
-
+                  
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Advanced QR Code Generator ${currentYear} - Every QR Type You Need</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -1077,9 +1137,10 @@ export default function QrGeneratorPage() {
                     </p>
                   </div>
 
+                  {/* QR Code Keywords Content */}
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Free QR Code Generator: No Expiration, No Sign Up Required</h2>
-
+                    
                     <div className="space-y-6">
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-heading-accent mb-3">Cheap QR Code: Free Professional QR Code Generator</h3>
@@ -1591,6 +1652,7 @@ export default function QrGeneratorPage() {
                     </div>
                   </div>
 
+                  {/* Comprehensive SEO Content Section */}
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">The QR Code Generator - Complete Guide for ${currentYear}</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -1775,7 +1837,7 @@ export default function QrGeneratorPage() {
                 </div>
               </div>
 
-              {}
+              {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
               <div className="hidden lg:block w-72">
                 <div className="sticky top-32 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

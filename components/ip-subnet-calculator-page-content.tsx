@@ -4,12 +4,12 @@ import { IPSubnetCalculator } from "@/components/ip-subnet-calculator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { useState, useEffect } from "react"
-import {
-  Network,
-  Globe,
-  Shield,
-  Layers,
-  Hash,
+import { 
+  Network, 
+  Globe, 
+  Shield, 
+  Layers, 
+  Hash, 
   Info,
   Calculator,
   Lightbulb
@@ -22,7 +22,7 @@ const breadcrumbItems = [
 ]
 
 export function IPSubnetCalculatorPageContent() {
-
+  // Auto-detect user's IP address and subnet information
   const [userIP, setUserIP] = useState<string>("")
   const [userSubnetMask, setUserSubnetMask] = useState<string>("")
   const [userCIDR, setUserCIDR] = useState<string>("")
@@ -31,16 +31,16 @@ export function IPSubnetCalculatorPageContent() {
   useEffect(() => {
     const detectUserIP = async () => {
       try {
-
+        // Method 1: Use WebRTC to get local IP address
         const getLocalIP = () => {
           return new Promise<string>((resolve) => {
             const pc = new RTCPeerConnection({
               iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
             })
-
+            
             pc.createDataChannel('')
             pc.createOffer().then(offer => pc.setLocalDescription(offer))
-
+            
             pc.onicecandidate = (event) => {
               if (event.candidate) {
                 const candidate = event.candidate.candidate
@@ -52,7 +52,8 @@ export function IPSubnetCalculatorPageContent() {
                 }
               }
             }
-
+            
+            // Timeout after 3 seconds
             setTimeout(() => {
               pc.close()
               resolve('')
@@ -60,21 +61,24 @@ export function IPSubnetCalculatorPageContent() {
           })
         }
 
+        // Method 2: Try to detect from browser environment
         const getBrowserIP = () => {
-
+          // Check if we're in a local development environment
           if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
             return '127.0.0.1'
           }
-
+          
+          // Check if we're in a local network
           if (window.location.hostname.includes('192.168.') || window.location.hostname.includes('10.') || window.location.hostname.includes('172.')) {
             return window.location.hostname
           }
-
+          
           return ''
         }
 
+        // Helper function to get common subnet info based on IP
         const getSubnetInfo = (ip: string) => {
-
+          // Common subnet configurations based on IP ranges
           if (ip.startsWith('192.168.')) {
             return { subnetMask: '255.255.255.0', cidr: '24' }
           } else if (ip.startsWith('10.')) {
@@ -84,11 +88,12 @@ export function IPSubnetCalculatorPageContent() {
           } else if (ip.startsWith('127.')) {
             return { subnetMask: '255.0.0.0', cidr: '8' }
           } else {
-
+            // Default to /24 for unknown ranges
             return { subnetMask: '255.255.255.0', cidr: '24' }
           }
         }
 
+        // Try WebRTC first
         const webrtcIP = await getLocalIP()
         if (webrtcIP) {
           setUserIP(webrtcIP)
@@ -99,6 +104,7 @@ export function IPSubnetCalculatorPageContent() {
           return
         }
 
+        // Try browser environment detection
         const browserIP = getBrowserIP()
         if (browserIP) {
           setUserIP(browserIP)
@@ -109,6 +115,7 @@ export function IPSubnetCalculatorPageContent() {
           return
         }
 
+        // Fallback: Use common local network IPs with appropriate subnet info
         const commonConfigs = [
           { ip: '192.168.1.1', subnetMask: '255.255.255.0', cidr: '24' },
           { ip: '192.168.0.1', subnetMask: '255.255.255.0', cidr: '24' },
@@ -122,10 +129,10 @@ export function IPSubnetCalculatorPageContent() {
         setUserSubnetMask(randomConfig.subnetMask)
         setUserCIDR(randomConfig.cidr)
         setIsDetectingIP(false)
-
+        
       } catch (error) {
         console.error('IP detection failed:', error)
-
+        // Use default local network IP with subnet info
         setUserIP("192.168.1.1")
         setUserSubnetMask("255.255.255.0")
         setUserCIDR("24")
@@ -276,26 +283,26 @@ export function IPSubnetCalculatorPageContent() {
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Advanced IP Subnet Calculator</h1>
           <p className="text-xl text-muted-foreground dark:text-muted-foreground leading-relaxed">
-            Calculate IP subnets, CIDR notation, VLSM, and supernetting with our comprehensive network analysis tool.
+            Calculate IP subnets, CIDR notation, VLSM, and supernetting with our comprehensive network analysis tool. 
             Support for both IPv4 and IPv6 networks with detailed binary and hexadecimal representations.
           </p>
         </div>
 
         <div className="grid grid-cols-1 xl:grid-cols-[1fr_350px] gap-8">
           <div className="space-y-8">
-            <IPSubnetCalculator
+            <IPSubnetCalculator 
               defaultIP={userIP}
               defaultSubnetMask={userSubnetMask}
               defaultCIDR={userCIDR}
               isDetectingIP={isDetectingIP}
             />
-
-            {}
+            
+            {/* Center Content Ad */}
             <div className="my-8">
               <AdSpace slot="content" className="w-full h-32" />
             </div>
 
-            {}
+            {/* How to Use */}
             <div className="bg-white dark:bg-secondary p-6 rounded-xl border border-slate-200 dark:border-border">
               <h2 className="text-2xl font-bold mb-4 text-primary flex items-center gap-2">
                 <Calculator className="h-6 w-6" />
@@ -326,12 +333,12 @@ export function IPSubnetCalculatorPageContent() {
               </div>
             </div>
 
-            {}
+            {/* Content Ad Between Sections */}
             <div className="my-8">
               <AdSpace slot="content" className="w-full h-32" />
             </div>
 
-            {}
+            {/* Supported Features */}
             <div className="bg-white dark:bg-secondary p-6 rounded-xl border border-slate-200 dark:border-border">
               <h2 className="text-2xl font-bold mb-4 text-primary flex items-center gap-2">
                 <Network className="h-6 w-6" />
@@ -377,7 +384,7 @@ export function IPSubnetCalculatorPageContent() {
               </div>
             </div>
 
-            {}
+            {/* Comprehensive Educational Content */}
             <div className="mt-12 prose prose-slate max-w-none">
               <h2 className="text-2xl font-bold mb-4 text-primary">Complete Guide to IP Subnetting</h2>
               <p className="text-secondary leading-relaxed mb-4">
@@ -434,7 +441,7 @@ export function IPSubnetCalculatorPageContent() {
               </ul>
             </div>
 
-            {}
+            {/* FAQ Section */}
             <div className="bg-white dark:bg-secondary p-6 rounded-xl border border-slate-200 dark:border-border">
               <h2 className="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
                 <Info className="h-6 w-6" />
@@ -466,9 +473,9 @@ export function IPSubnetCalculatorPageContent() {
 
           </div>
 
-          {}
+          {/* Sidebar */}
           <div className="space-y-6">
-            {}
+            {/* Top Sidebar Ad */}
             <div className="sticky top-4 space-y-6">
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 p-4 rounded-xl border-2 border-blue-200 dark:border-blue-800">
                 <div className="flex items-center gap-2 mb-3">
@@ -485,7 +492,7 @@ export function IPSubnetCalculatorPageContent() {
                 </div>
               </div>
 
-              {}
+              {/* Network Planning Tips */}
               <div className="bg-white dark:bg-secondary rounded-xl p-6 shadow-lg border border-slate-200 dark:border-border">
                 <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
                   <div className="p-1 bg-green-100 dark:bg-green-900/30 rounded">
@@ -509,7 +516,7 @@ export function IPSubnetCalculatorPageContent() {
                 </div>
               </div>
 
-              {}
+              {/* Key Features */}
               <div className="bg-white dark:bg-secondary rounded-xl p-6 shadow-lg border border-slate-200 dark:border-border">
                 <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
                   <div className="p-1 bg-orange-100 dark:bg-orange-900/30 rounded">
@@ -541,7 +548,7 @@ export function IPSubnetCalculatorPageContent() {
                 </div>
               </div>
 
-              {}
+              {/* Related Tools */}
               <div className="bg-white dark:bg-secondary rounded-xl p-6 shadow-lg border border-slate-200 dark:border-border">
                 <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
                   <div className="p-1 bg-indigo-100 dark:bg-indigo-900/30 rounded">

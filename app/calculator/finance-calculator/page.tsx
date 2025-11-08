@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import FinanceCalculator from "@/components/finance-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -146,7 +147,7 @@ export default function FinanceCalculatorPage() {
           }
         })
       }} />
-
+      
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 py-6 sm:py-8 md:py-12">
           <Breadcrumbs
@@ -158,7 +159,7 @@ export default function FinanceCalculatorPage() {
 
           <div className="max-w-7xl mx-auto w-full">
             <div className="mb-4 sm:mb-6 md:mb-8 w-full">
-              <GHeader
+              <GHeader 
                 title="Finance Calculator - Advanced TVM Analysis"
                 description="Professional finance calculator for time value of money calculations with our advanced TVM calculator. Get precise financial calculations, amortization schedules, investment analysis, and financial planning tools for optimal investment decisions."
                 titleSize="medium"
@@ -166,7 +167,7 @@ export default function FinanceCalculatorPage() {
               />
             </div>
 
-            {}
+            {/* Mobile/Tablet AdSpace after GHeader */}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -179,10 +180,10 @@ export default function FinanceCalculatorPage() {
                 <div className="w-full bg-card rounded-xl p-3 sm:p-4 md:p-5 lg:p-6">
                   <FinanceCalculator />
                 </div>
-
-                {}
+            
+                {/* Educational Content Sections */}
                 <div className="space-y-3 sm:space-y-4 md:space-y-5 bg-card rounded-lg p-2 sm:p-3 md:p-4 w-full">
-              {}
+              {/* How to Use Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -212,7 +213,7 @@ export default function FinanceCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Features Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -282,7 +283,7 @@ export default function FinanceCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Use Cases Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -314,7 +315,7 @@ export default function FinanceCalculatorPage() {
                 </div>
               </div>
 
-              {}
+              {/* Time Value of Money Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -335,7 +336,7 @@ export default function FinanceCalculatorPage() {
                       </div>
                     </div>
                   </div>
-
+                  
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                         <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                           <h3 className="text-xs sm:text-sm md:text-base font-semibold text-heading-accent mb-1.5 sm:mb-2 break-words">Future Value (FV)</h3>
@@ -365,6 +366,7 @@ export default function FinanceCalculatorPage() {
                 </div>
               </div>
 
+                  {/* Professional Calculator Compatibility Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -401,7 +403,8 @@ export default function FinanceCalculatorPage() {
                       </div>
                     </div>
                   </div>
-
+                  
+                  {/* Professional Insights Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -419,7 +422,7 @@ export default function FinanceCalculatorPage() {
                           - Dr. Michael Chen, CFA, Senior Financial Analyst, Goldman Sachs
                         </p>
                       </div>
-
+                      
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="text-xs sm:text-sm md:text-base font-semibold text-heading-accent mb-1.5 sm:mb-2 break-words">Sarah Johnson, MBA - Finance Professor</h3>
                         <p className="text-xs text-foreground mb-2 break-words">
@@ -429,7 +432,7 @@ export default function FinanceCalculatorPage() {
                           - Sarah Johnson, MBA, Finance Professor, Wharton School
                         </p>
                       </div>
-
+                      
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="text-xs sm:text-sm md:text-base font-semibold text-heading-accent mb-1.5 sm:mb-2 break-words">Robert Martinez, CPA - Investment Advisor</h3>
                         <p className="text-xs text-foreground mb-2 break-words">
@@ -442,6 +445,7 @@ export default function FinanceCalculatorPage() {
                     </div>
                   </div>
 
+                  {/* Success Stories Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -457,7 +461,7 @@ export default function FinanceCalculatorPage() {
                         </p>
                         <p className="text-xs sm:text-sm text-muted-foreground break-words">- Jennifer L., Finance Student, Harvard Business School</p>
                       </div>
-
+                      
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="text-xs sm:text-sm md:text-base font-semibold text-heading-accent mb-1.5 sm:mb-2 break-words">Investment Analysis</h3>
                         <p className="text-xs text-foreground mb-2 break-words">
@@ -465,7 +469,7 @@ export default function FinanceCalculatorPage() {
                         </p>
                         <p className="text-xs sm:text-sm text-muted-foreground break-words">- David K., Financial Analyst, JP Morgan</p>
                         </div>
-
+                      
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="text-xs sm:text-sm md:text-base font-semibold text-heading-accent mb-1.5 sm:mb-2 break-words">Loan Analysis</h3>
                         <p className="text-xs text-foreground mb-2 break-words">
@@ -475,7 +479,8 @@ export default function FinanceCalculatorPage() {
                       </div>
                     </div>
                   </div>
-
+                  
+                  {/* Finance Course Applications Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -529,6 +534,7 @@ export default function FinanceCalculatorPage() {
                     </div>
                   </div>
 
+                  {/* FAQ Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -618,6 +624,7 @@ export default function FinanceCalculatorPage() {
                     </div>
                   </div>
 
+                  {/* Related Tools Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-heading-accent break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -635,7 +642,7 @@ export default function FinanceCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Calculate percentages, percentage change, and percentage of totals</p>
                       </div>
-
+                      
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border hover:border-heading-accent-border transition-colors w-full overflow-hidden">
                         <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
                           <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded">
@@ -645,7 +652,7 @@ export default function FinanceCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Calculate loan payments, interest, and amortization schedules</p>
                       </div>
-
+                      
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border hover:border-heading-accent-border transition-colors w-full overflow-hidden">
                         <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
                           <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded">
@@ -655,7 +662,7 @@ export default function FinanceCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Calculate investment returns and compound interest growth</p>
                       </div>
-
+                      
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border hover:border-heading-accent-border transition-colors w-full overflow-hidden">
                         <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
                           <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded">
@@ -665,7 +672,7 @@ export default function FinanceCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Calculate mortgage payments and home affordability</p>
                       </div>
-
+                      
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border hover:border-heading-accent-border transition-colors w-full overflow-hidden">
                         <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
                           <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded">
@@ -675,7 +682,7 @@ export default function FinanceCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Convert salary across different pay frequencies</p>
                       </div>
-
+                      
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border hover:border-heading-accent-border transition-colors w-full overflow-hidden">
                         <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
                           <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded">
@@ -685,7 +692,7 @@ export default function FinanceCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Calculate real interest rates on loans and investments</p>
                       </div>
-
+                      
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border hover:border-heading-accent-border transition-colors w-full overflow-hidden">
                         <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
                           <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded">
@@ -695,7 +702,7 @@ export default function FinanceCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Plan for retirement with savings and investment calculations</p>
                       </div>
-
+                      
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border hover:border-heading-accent-border transition-colors w-full overflow-hidden">
                         <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
                           <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded">
@@ -705,7 +712,7 @@ export default function FinanceCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Calculate compound interest and investment growth</p>
                       </div>
-
+                      
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border hover:border-heading-accent-border transition-colors w-full overflow-hidden">
                         <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
                           <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded">
@@ -715,7 +722,7 @@ export default function FinanceCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Convert between different currencies and exchange rates</p>
                       </div>
-
+                      
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border hover:border-heading-accent-border transition-colors w-full overflow-hidden">
                         <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
                           <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded">
@@ -725,7 +732,7 @@ export default function FinanceCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Calculate income tax and sales tax amounts</p>
                       </div>
-
+                      
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border hover:border-heading-accent-border transition-colors w-full overflow-hidden">
                         <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
                           <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded">
@@ -735,7 +742,7 @@ export default function FinanceCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Advanced mathematical and scientific calculations</p>
                       </div>
-
+                      
                       <div className="p-2 sm:p-2.5 md:p-3 bg-card rounded-lg border border-border hover:border-heading-accent-border transition-colors w-full overflow-hidden">
                         <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
                           <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded">
@@ -749,10 +756,11 @@ export default function FinanceCalculatorPage() {
                   </div>
                 </div>
               </div>
-
+              
+              {/* Sidebar */}
               <div className="hidden lg:block space-y-6 lg:space-y-8">
                 <div className="sticky top-4">
-
+                  {/* Sidebar Ad */}
                   <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                     <AdSpace slot="sidebar" className="h-64 md:h-80 rounded-lg overflow-hidden" />
                   </div>

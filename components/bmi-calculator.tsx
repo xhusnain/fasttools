@@ -108,8 +108,10 @@ export function BMICalculator({ onResultChange }: BMICalculatorProps = {}) {
         recommendations = ["Urgent medical consultation", "Specialized treatment program", "Comprehensive health monitoring"]
       }
 
+      // Calculate BMI Prime
       const bmiPrime = bmi / 25
 
+      // Calculate Ponderal Index
       let ponderalIndex: number
       if (unit === "metric") {
         ponderalIndex = w / Math.pow(h / 100, 3)
@@ -117,6 +119,7 @@ export function BMICalculator({ onResultChange }: BMICalculatorProps = {}) {
         ponderalIndex = h / Math.pow(w, 1/3)
       }
 
+      // Calculate healthy weight range
       let healthyWeightRange = ""
       if (unit === "metric") {
         const minWeight = 18.5 * Math.pow(h / 100, 2)
@@ -141,7 +144,7 @@ export function BMICalculator({ onResultChange }: BMICalculatorProps = {}) {
         age: age ? Number.parseInt(age) : undefined,
         gender: gender
       }
-
+      
       setResult(resultData)
       onResultChange?.(resultData)
       setIsCalculating(false)
@@ -175,7 +178,7 @@ Risk Level: ${result.riskLevel}`
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-8">
-          {}
+          {/* Unit Selection */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Scale className="h-4 w-4 text-heading-accent" />
@@ -201,7 +204,7 @@ Risk Level: ${result.riskLevel}`
             </div>
           </div>
 
-          {}
+          {/* Input Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-3">
               <Label htmlFor="weight" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
@@ -234,7 +237,7 @@ Risk Level: ${result.riskLevel}`
             </div>
           </div>
 
-          {}
+          {/* Additional Information */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-3">
               <Label htmlFor="age" className="text-sm sm:text-base font-semibold flex items-center gap-2 text-heading-accent">
@@ -323,14 +326,14 @@ Risk Level: ${result.riskLevel}`
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-8">
-            {}
+            {/* Main BMI Display */}
             <div className="text-center p-6 sm:p-8 rounded-xl bg-card border-2 border-primary/20">
               <div className="text-4xl sm:text-5xl font-bold text-foreground mb-2">{result.bmi}</div>
               <div className={`text-lg sm:text-xl font-semibold ${result.color} mb-2`}>{result.category}</div>
               <div className="text-sm text-muted-foreground">kg/m²</div>
             </div>
 
-            {}
+            {/* Advanced Metrics */}
             <div className="space-y-4 p-4 sm:p-6 bg-card rounded-xl border-2 border-border">
               <h3 className="text-base sm:text-lg font-semibold text-center mb-3 sm:mb-4 flex items-center justify-center gap-2 text-heading-accent">
                 <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-heading-accent" />
@@ -356,7 +359,7 @@ Risk Level: ${result.riskLevel}`
               </div>
             </div>
 
-            {}
+            {/* Healthy Weight Range */}
             <div className="space-y-4 p-4 sm:p-6 bg-card rounded-xl border-2 border-border">
               <h3 className="text-base sm:text-lg font-semibold text-heading-accent flex items-center gap-2">
                 <Target className="h-4 w-4 sm:h-5 sm:w-5 text-heading-accent" />
@@ -368,7 +371,7 @@ Risk Level: ${result.riskLevel}`
               </div>
             </div>
 
-            {}
+            {/* Recommendations */}
             <div className="space-y-4 p-4 sm:p-6 bg-card rounded-xl border-2 border-border">
               <h3 className="text-base sm:text-lg font-semibold text-heading-accent flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-heading-accent" />
@@ -384,18 +387,18 @@ Risk Level: ${result.riskLevel}`
               </div>
             </div>
 
-            {}
+            {/* Disclaimer */}
             <div className="p-4 bg-card rounded-xl border-2 border-amber-700">
               <div className="flex items-start gap-2">
                 <Info className="h-4 w-4 text-amber-400 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-amber-300">
-                  <strong>Disclaimer:</strong> BMI is a screening tool and should not be used as the sole indicator of health.
+                  <strong>Disclaimer:</strong> BMI is a screening tool and should not be used as the sole indicator of health. 
                   Consult a healthcare provider for personalized health advice and comprehensive health assessment.
                 </div>
               </div>
             </div>
 
-            {}
+            {/* Action Button */}
             <Button
               onClick={copyResult}
               variant="outline"

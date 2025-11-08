@@ -1,3 +1,4 @@
+import React from 'react'
 
 interface GHeaderProps {
   title: string
@@ -16,7 +17,7 @@ export function GHeader({
   centered = true,
   color = 'orange'
 }: GHeaderProps) {
-
+  // Color classes
   const titleColors = {
     orange: 'text-foreground',
     green: 'text-heading-accent',
@@ -35,12 +36,14 @@ export function GHeader({
     red: 'text-foreground'
   }
 
+  // Title size classes
   const titleClasses = {
     small: 'text-2xl sm:text-3xl md:text-4xl font-black',
     medium: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black',
     large: 'text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black'
   }
 
+  // Description size classes
   const descClasses = {
     small: 'text-base sm:text-lg',
     medium: 'text-lg md:text-xl',

@@ -8,9 +8,9 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import {
-  Wallet, Copy, Check, Calculator, Globe, AlertTriangle,
-  TrendingUp, DollarSign, Percent, Building, Users,
+import { 
+  Wallet, Copy, Check, Calculator, Globe, AlertTriangle, 
+  TrendingUp, DollarSign, Percent, Building, Users, 
   Target, BarChart3, PieChart, Info, Zap, Sparkles
 } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
@@ -54,6 +54,7 @@ export function TaxCalculator() {
   const [isCalculating, setIsCalculating] = useState(false)
   const [showWarning, setShowWarning] = useState(false)
 
+  // Comprehensive country tax data
   const countryTaxData: Record<string, CountryTaxData> = {
     US: {
       name: "United States",
@@ -214,13 +215,13 @@ export function TaxCalculator() {
     setTimeout(() => {
       const gross = Number.parseFloat(salary)
       const countryData = countryTaxData[selectedCountry]
-
+      
       let tax = 0
       let taxBreakdown: { bracket: string; amount: number; rate: number }[] = []
       let marginalRate = 0
 
       if (useCustomRate && customTaxRate) {
-
+        // Use custom tax rate
         const customRate = Number.parseFloat(customTaxRate) / 100
         tax = gross * customRate
         marginalRate = Number.parseFloat(customTaxRate)
@@ -230,17 +231,17 @@ export function TaxCalculator() {
           rate: Number.parseFloat(customTaxRate)
         }]
       } else {
-
+        // Use country-specific progressive tax brackets
         for (const bracket of countryData.brackets) {
           if (gross > bracket.min) {
             const taxableInBracket = Math.min(gross, bracket.max) - bracket.min
             const bracketTax = taxableInBracket * bracket.rate
             tax += bracketTax
-
+            
             if (gross >= bracket.min && gross <= bracket.max) {
               marginalRate = bracket.rate * 100
             }
-
+            
             taxBreakdown.push({
               bracket: `${bracket.min.toLocaleString()} - ${bracket.max === Infinity ? '∞' : bracket.max.toLocaleString()}`,
               amount: bracketTax,
@@ -250,6 +251,7 @@ export function TaxCalculator() {
         }
       }
 
+      // Calculate additional taxes
       let socialSecurity = 0
       let additionalTaxes: { name: string; amount: number }[] = []
 
@@ -305,18 +307,18 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
 
   return (
     <div className="space-y-4">
-      {}
+      {/* Warning Alert */}
       {showWarning && (
         <Alert className="border-amber-700 bg-card">
           <AlertTriangle className="h-3.5 w-3.5 text-amber-400" />
           <AlertDescription className="text-amber-300 text-xs">
-            <strong>Important:</strong> Tax rates and percentages may change or be updated according to your country's latest tax laws.
+            <strong>Important:</strong> Tax rates and percentages may change or be updated according to your country's latest tax laws. 
             Please verify with your local tax authority for the most accurate and up-to-date information.
           </AlertDescription>
         </Alert>
       )}
 
-      {}
+      {/* Main Calculator Card */}
       <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center gap-2 text-lg text-foreground">
@@ -330,7 +332,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          {}
+          {/* Country Selection */}
           <div className="space-y-1.5">
             <Label htmlFor="country" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
               <div className="p-0.5 bg-green-500/10 rounded">
@@ -352,7 +354,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
             </Select>
           </div>
 
-          {}
+          {/* Salary Input */}
           <div className="space-y-1.5">
             <Label htmlFor="salary" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
               <div className="p-0.5 bg-green-500/10 rounded">
@@ -370,12 +372,12 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
             />
           </div>
 
-          {}
+          {/* Custom Tax Rate Option */}
           <div className="space-y-3 p-3 bg-card rounded-xl border border-border">
             <div className="flex items-center space-x-2">
-              <Checkbox
-                id="custom-rate"
-                checked={useCustomRate}
+              <Checkbox 
+                id="custom-rate" 
+                checked={useCustomRate} 
                 onCheckedChange={(checked) => setUseCustomRate(checked === true)}
               />
               <Label htmlFor="custom-rate" className="text-xs font-medium flex items-center gap-1.5 text-heading-accent">
@@ -385,7 +387,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
                 Use Custom Tax Rate (Override Country Default)
               </Label>
             </div>
-
+            
             {useCustomRate && (
               <div className="space-y-1.5">
                 <Label htmlFor="custom-tax-rate" className="text-xs font-medium text-heading-accent">
@@ -406,7 +408,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
             )}
           </div>
 
-          {}
+          {/* Calculate Button */}
           <Button
             onClick={calculateTax}
             className="w-full h-10 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
@@ -427,7 +429,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
         </CardContent>
       </Card>
 
-      {}
+      {/* Results */}
       {result && !isCalculating && (
         <Card className="shadow-lg border-border animate-fade-in-up bg-card">
           <CardHeader className="pb-3">
@@ -442,7 +444,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            {}
+            {/* Main Result Display */}
             <div className="text-center p-4 rounded-xl bg-card border border-primary/20">
               <div className="text-2xl font-bold text-foreground mb-1">
                 {result.currency} {result.netSalary.toLocaleString()}
@@ -455,7 +457,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
               </div>
             </div>
 
-            {}
+            {/* Tax Breakdown */}
             <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
               <div className="text-sm font-semibold mb-2 text-heading-accent flex items-center gap-2">
                 <BarChart3 className="h-3.5 w-3.5" />
@@ -485,7 +487,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
               </div>
             </div>
 
-            {}
+            {/* Tax Rates */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="p-3 bg-card rounded-xl border border-cyan-700">
                 <div className="text-xs font-semibold text-heading-accent mb-1 flex items-center gap-1.5">
@@ -507,7 +509,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
               </div>
             </div>
 
-            {}
+            {/* Tax Bracket Breakdown */}
             <div className="p-3 bg-card rounded-xl border border-border">
               <div className="text-xs font-semibold text-heading-accent mb-2 flex items-center gap-1.5">
                 <PieChart className="h-3.5 w-3.5" />
@@ -525,7 +527,7 @@ Effective Tax Rate: ${result.effectiveTaxRate}%`
               </div>
             </div>
 
-            {}
+            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-2">
               <Button
                 onClick={copyResult}

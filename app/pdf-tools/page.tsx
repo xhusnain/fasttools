@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { FileText, FileStack, Unlock, ArrowRight, Code, Globe, File, Minimize2, Image, RefreshCw, FileSignature, DollarSign } from "lucide-react"
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "Free PDF tools: PDF splitter, PDF merger, PDF unlocker, PDF compressor, and PDF converter. Professional results, 100% secure.",
   keywords: [
-
+    // High-Volume PDF Keywords
     "PDF splitter online",
     "PDF merger free",
     "PDF unlocker tool",
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
     "PDF tools merge",
     "PDF tools 24",
 
+    // PDF Tools Keywords
     "split PDF online",
     "merge PDF free",
     "unlock PDF tool",
@@ -33,6 +35,7 @@ export const metadata: Metadata = {
     "PDF document merger",
     "PDF size reducer",
 
+    // Core PDF Tools
     "PDF tools",
     "free PDF tools",
     "online PDF tools",
@@ -44,6 +47,7 @@ export const metadata: Metadata = {
     "document tools",
     "file conversion tools",
 
+    // A-Z PDF Tools Keywords
     "pdf tools app",
     "pdf tools ai",
     "pdf tools app download",
@@ -163,6 +167,7 @@ export const metadata: Metadata = {
     "all the pdf tools you need",
     "pdf tools zip",
 
+    // Numbered PDF Tools
     "pdf tools 24 ocr",
     "pdf tools 24 compress",
     "pdf tools 24 merge",
@@ -174,16 +179,19 @@ export const metadata: Metadata = {
     "pdf tools 365",
     "pdf tools office 365",
 
+    // Use Cases
     "pdf tools for students",
     "pdf tools for business",
     "pdf tools for developers",
     "pdf tools for research",
     "pdf tools for education",
 
+    // Preposition Keywords (High CPC)
     "pdf tools for free",
     "pdf where is tools",
     "is pdf tools free",
 
+    // Related Keywords (High Volume)
     "combine pdf tools",
     "compare pdf tools",
     "freeware pdf tools",
@@ -197,11 +205,13 @@ export const metadata: Metadata = {
     "24 pdf tools",
     "pdf tools r",
 
+    // Brand/Software Specific
     "pdfill pdf tools 9.0 free download",
     "pdfill pdf tools 9.0",
     "12 pdf tools",
     "8vs pdf tools",
 
+    // Additional Numbered Keywords
     "pdf tools 10",
     "pdf tools 123",
     "pdf tools 15.0",
@@ -342,7 +352,7 @@ export default function PDFToolsPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {}
+                {/* Hero Section */}
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <GHeader
                     title="Free PDF Tools - Split, Merge, Unlock & Compress PDFs Online"
@@ -352,7 +362,7 @@ export default function PDFToolsPage() {
                   />
                 </div>
 
-                {}
+                {/* Mobile Ad Space */}
                 <div className="lg:hidden mb-6">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
@@ -389,7 +399,8 @@ export default function PDFToolsPage() {
           ))}
         </div>
 
-                {}
+
+                {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-200">
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Professional PDF Processing & Document Management</h2>
@@ -437,6 +448,7 @@ export default function PDFToolsPage() {
                     </p>
                   </div>
 
+                  {/* Combine & Compare PDF Tools */}
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Combine PDF Tools & Compare Solutions</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -459,7 +471,7 @@ export default function PDFToolsPage() {
                     </p>
                   </div>
 
-                  {}
+                  {/* Platform-Specific PDF Tools */}
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">PDF Tools for Mac, Windows & Linux</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -482,6 +494,7 @@ export default function PDFToolsPage() {
                     </p>
                   </div>
 
+                  {/* PDF Tools Software & Downloads */}
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">PDF Tools Download vs Online Solutions</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -504,6 +517,7 @@ export default function PDFToolsPage() {
                     </p>
                   </div>
 
+                  {/* PDF Tools for Teachers & Education */}
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">PDF Tools for Teachers, Students & Education</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -526,6 +540,7 @@ export default function PDFToolsPage() {
                     </p>
                   </div>
 
+                  {/* International PDF Tools */}
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">International PDF Tools: Global Access & Language Support</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -543,6 +558,7 @@ export default function PDFToolsPage() {
                     </p>
                   </div>
 
+                  {/* Related Business Tools Section */}
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Related Business & Finance Tools</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -574,6 +590,7 @@ export default function PDFToolsPage() {
                     </div>
                   </div>
 
+                  {/* FAQ Section */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -582,7 +599,7 @@ export default function PDFToolsPage() {
                       Free PDF Tools: Complete Guide
                     </h2>
                     <div className="space-y-6">
-
+                      {/* New FAQ Questions */}
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What are PDF tools?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">PDF tools are specialized software applications and online utilities designed to manipulate, edit, convert, and manage PDF (Portable Document Format) files. These tools include PDF splitters for dividing large documents, PDF mergers for combining multiple files, PDF compressors for reducing file sizes, PDF unlockers for removing password protection, and PDF converters for changing file formats. Our online PDF tools work entirely in your browser without requiring downloads or installations, making them accessible on any device with internet access. They're essential for businesses, students, and professionals who regularly work with PDF documents and need quick, secure processing capabilities.</p>
@@ -706,7 +723,7 @@ export default function PDFToolsPage() {
                   </div>
                 </div>
               </div>
-
+              {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
               <div className="hidden lg:block w-72">
                 <div className="sticky top-32 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

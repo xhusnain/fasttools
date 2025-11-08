@@ -1,5 +1,6 @@
 "use client"
 
+import React, { useRef, useEffect, useState } from 'react'
 import { getFabric } from '@/lib/fabric'
 
 interface FabricCanvasProps {
@@ -63,7 +64,7 @@ export function FabricCanvasStable({ onCanvasReady, width, height }: FabricCanva
         return () => {
             isMounted = false
             clearTimeout(timeoutId)
-
+            
             if (fabricCanvasRef.current) {
                 fabricCanvasRef.current.dispose()
                 fabricCanvasRef.current = null

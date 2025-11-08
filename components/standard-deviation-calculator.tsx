@@ -52,6 +52,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
   const [isCalculating, setIsCalculating] = useState(false)
   const [activeTab, setActiveTab] = useState("basic")
 
+  // Parse input data
   useEffect(() => {
     if (inputData.trim()) {
       const parsed = inputData
@@ -64,6 +65,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
     }
   }, [inputData])
 
+  // Calculate comprehensive statistics
   const calculateStatistics = (data: number[], mode: "population" | "sample"): CalculationResult => {
     if (data.length === 0) {
       throw new Error("No valid data points provided")
@@ -73,17 +75,20 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
     const n = data.length
     const mean = data.reduce((sum, val) => sum + val, 0) / n
 
-    const variance = data.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) /
+    // Variance calculation
+    const variance = data.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / 
       (mode === "population" ? n : n - 1)
 
     const standardDeviation = Math.sqrt(variance)
-    const sampleStandardDeviation = mode === "sample" ? standardDeviation :
+    const sampleStandardDeviation = mode === "sample" ? standardDeviation : 
       Math.sqrt(data.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / (n - 1))
 
-    const median = n % 2 === 0
+    // Median calculation
+    const median = n % 2 === 0 
       ? (sortedData[n / 2 - 1] + sortedData[n / 2]) / 2
       : sortedData[Math.floor(n / 2)]
 
+    // Mode calculation
     const frequency: { [key: number]: number } = {}
     data.forEach(val => {
       frequency[val] = (frequency[val] || 0) + 1
@@ -93,26 +98,33 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
       .filter(key => frequency[parseFloat(key)] === maxFreq)
       .map(key => parseFloat(key))
 
+    // Range
     const range = Math.max(...data) - Math.min(...data)
 
+    // Coefficient of variation
     const coefficientOfVariation = (standardDeviation / mean) * 100
 
+    // Skewness calculation
     const skewness = data.reduce((sum, val) => sum + Math.pow((val - mean) / standardDeviation, 3), 0) / n
 
+    // Kurtosis calculation
     const kurtosis = data.reduce((sum, val) => sum + Math.pow((val - mean) / standardDeviation, 4), 0) / n - 3
 
+    // Quartiles
     const q1Index = Math.floor(n * 0.25)
     const q2Index = Math.floor(n * 0.5)
     const q3Index = Math.floor(n * 0.75)
-
+    
     const q1 = sortedData[q1Index]
     const q2 = median
     const q3 = sortedData[q3Index]
     const iqr = q3 - q1
 
+    // Outliers (using IQR method)
     const outlierThreshold = 1.5 * iqr
     const outliers = data.filter(val => val < q1 - outlierThreshold || val > q3 + outlierThreshold)
 
+    // Confidence interval
     const tValue = confidenceLevel === 95 ? 1.96 : confidenceLevel === 99 ? 2.576 : 1.645
     const marginOfError = tValue * (standardDeviation / Math.sqrt(n))
     const confidenceInterval = {
@@ -121,8 +133,10 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
       marginOfError
     }
 
+    // Z-scores
     const zScores = data.map(val => (val - mean) / standardDeviation)
 
+    // Percentiles
     const percentiles = [10, 25, 50, 75, 90, 95, 99].map(p => {
       const index = Math.floor((p / 100) * (n - 1))
       return sortedData[index]
@@ -158,11 +172,12 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
 
     setIsCalculating(true)
 
+    // Simulate calculation delay for smooth UX
     setTimeout(() => {
       try {
         const calculationResult = calculateStatistics(dataPoints, calculationMode)
         setResult(calculationResult)
-        setHistory(prev => [calculationResult, ...prev.slice(0, 9)])
+        setHistory(prev => [calculationResult, ...prev.slice(0, 9)]) // Keep last 10 calculations
         onResultChange?.(calculationResult)
       } catch (error) {
         console.error("Error calculating statistics:", error)
@@ -180,7 +195,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
 
   const handleCopyResult = (value: number, label: string) => {
     navigator.clipboard.writeText(value.toString())
-
+    // You can add toast notification here if needed
   }
 
   const handleLoadExample = () => {
@@ -209,7 +224,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
 
   return (
     <div className="space-y-4">
-      {}
+      {/* Input Section */}
       <Card className="bg-card border-border">
         <CardHeader className="pb-2 px-3 sm:px-6">
           <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg">
@@ -217,7 +232,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
             Standard Deviation Calculator
           </CardTitle>
           <CardDescription className="text-muted-foreground text-xs">
-            Calculate standard deviation, variance, mean, and comprehensive statistical analysis.
+            Calculate standard deviation, variance, mean, and comprehensive statistical analysis. 
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-3 px-3 sm:px-6">
@@ -235,7 +250,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
                 Input values with commas, spaces, or line breaks.
               </p>
             </div>
-
+            
             <div className="space-y-1">
               <Label htmlFor="calculation-mode" className="text-[11px] font-medium text-heading-accent">Calculation Mode</Label>
               <Select value={calculationMode} onValueChange={(value: "population" | "sample") => setCalculationMode(value)}>
@@ -277,8 +292,8 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
           </div>
 
           <div className="flex gap-2">
-            <Button
-              onClick={handleCalculate}
+            <Button 
+              onClick={handleCalculate} 
               disabled={dataPoints.length < 2 || isCalculating}
               className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
             >
@@ -312,10 +327,10 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
         </CardContent>
       </Card>
 
-      {}
+      {/* Results Section */}
       {result && (
         <div className="space-y-6">
-          {}
+          {/* Quick Stats */}
           <Card className="bg-card border-border">
             <CardHeader className="pb-2 px-3 sm:px-6">
               <CardTitle className="flex items-center gap-2 text-foreground text-base">
@@ -365,29 +380,29 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
             </CardContent>
           </Card>
 
-          {}
+          {/* Detailed Results */}
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-4 bg-primary/10 border border-primary/20">
-              <TabsTrigger
-                value="basic"
+              <TabsTrigger 
+                value="basic" 
                 className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground hover:bg-secondary"
               >
                 Basic Stats
               </TabsTrigger>
-              <TabsTrigger
-                value="advanced"
+              <TabsTrigger 
+                value="advanced" 
                 className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground hover:bg-secondary"
               >
                 Advanced
               </TabsTrigger>
-              <TabsTrigger
-                value="distribution"
+              <TabsTrigger 
+                value="distribution" 
                 className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground hover:bg-secondary"
               >
                 Distribution
               </TabsTrigger>
-              <TabsTrigger
-                value="confidence"
+              <TabsTrigger 
+                value="confidence" 
                 className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground hover:bg-secondary"
               >
                 Confidence
@@ -620,7 +635,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
             </TabsContent>
           </Tabs>
 
-          {}
+          {/* Export and Actions */}
           <Card className="bg-card border-border">
             <CardContent className="pt-6">
               <div className="flex flex-wrap gap-2">
@@ -638,7 +653,7 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
         </div>
       )}
 
-      {}
+      {/* History Section */}
       {history.length > 0 && (
         <Card className="bg-card border-border">
           <CardHeader>
@@ -657,8 +672,8 @@ export function StandardDeviationCalculator({ onResultChange }: StandardDeviatio
                       Mean: {calc.mean.toFixed(2)}, Std Dev: {calc.standardDeviation.toFixed(2)}
                     </span>
                   </div>
-                  <Button
-                    size="sm"
+                  <Button 
+                    size="sm" 
                     variant="ghost"
                     onClick={() => setResult(calc)}
                   >

@@ -1,14 +1,15 @@
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import {
-  Search,
-  CheckCircle,
+import { 
+  Search, 
+  CheckCircle, 
   Zap,
   Globe,
   Eye,
   Compass,
   ArrowRight
 } from "lucide-react"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -166,7 +167,7 @@ export default function AboutPage() {
           />
 
           <div className="max-w-5xl mx-auto mt-8 md:mt-12">
-            {}
+            {/* Title Section */}
             <div className="mb-12 md:mb-16">
               <GHeader
                 title="Unveiling Our Identity, Vision and Values"
@@ -177,10 +178,10 @@ export default function AboutPage() {
               />
             </div>
 
-            {}
+            {/* Why FastTools Section */}
             <div className="bg-card border border-border/30 rounded-2xl p-8 md:p-12 mb-12 md:mb-16">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                {}
+                {/* Hard to Find Tools */}
                 <div className="flex flex-col items-center text-center">
                   <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-primary/10 border border-border/30 flex items-center justify-center mb-4">
                     <Search className="h-8 w-8 md:h-10 md:w-10 text-foreground" />
@@ -191,6 +192,7 @@ export default function AboutPage() {
                   </p>
                 </div>
 
+                {/* Tools That Work */}
                 <div className="flex flex-col items-center text-center">
                   <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-primary/10 border border-border/30 flex items-center justify-center mb-4">
                     <CheckCircle className="h-8 w-8 md:h-10 md:w-10 text-foreground" />
@@ -201,6 +203,7 @@ export default function AboutPage() {
                   </p>
                 </div>
 
+                {/* All in One Place */}
                 <div className="flex flex-col items-center text-center">
                   <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-primary/10 border border-border/30 flex items-center justify-center mb-4">
                     <Zap className="h-8 w-8 md:h-10 md:w-10 text-foreground" />
@@ -211,7 +214,7 @@ export default function AboutPage() {
                   </p>
                 </div>
 
-                {}
+                {/* Trusted Worldwide */}
                 <div className="flex flex-col items-center text-center">
                   <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-primary/10 border border-border/30 flex items-center justify-center mb-4">
                     <Globe className="h-8 w-8 md:h-10 md:w-10 text-foreground" />
@@ -224,10 +227,10 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {}
+            {/* Detailed Story Section */}
             <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8 mb-12 md:mb-16">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 md:mb-8 text-center">Our Story: Building the World's Most Comprehensive Free Tools Platform</h2>
-
+              
               <div className="space-y-6 text-muted-foreground text-base md:text-lg leading-relaxed">
                 <p>
                   FastTools was born in 2024 from a simple but powerful observation: finding reliable, genuinely free online tools shouldn't be this hard. We noticed that millions of people worldwide struggle daily with broken links, fake free tools that require credit cards, outdated software, and cluttered interfaces filled with advertisements. Something had to change.
@@ -293,9 +296,9 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {}
+            {/* Vision and Mission Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              {}
+              {/* Vision */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -308,7 +311,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              {}
+              {/* Mission */}
               <div className="bg-card border border-border/30 rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-primary/10 border border-border/30 flex items-center justify-center flex-shrink-0">
@@ -322,7 +325,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {}
+            {/* Call to Action */}
             <div className="mt-12 md:mt-16 text-center">
               <Link
                 href="/products"

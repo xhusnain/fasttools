@@ -2,9 +2,9 @@ import { CompoundInterestCalculator } from "@/components/compound-interest-calcu
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import {
-  Calculator, Globe, DollarSign, TrendingUp, BarChart3,
-  PieChart, Target, Building, Users, Award,
+import { 
+  Calculator, Globe, DollarSign, TrendingUp, BarChart3, 
+  PieChart, Target, Building, Users, Award, 
   BookOpen, Zap, Info
 } from "lucide-react"
 import type { Metadata } from "next"
@@ -165,6 +165,7 @@ export const metadata: Metadata = {
     },
     metadataBase: new URL("https://www.fasttools.store"),
 };
+
 
 export default function CompoundInterestPage() {
   const jsonLd = {
@@ -334,14 +335,14 @@ export default function CompoundInterestPage() {
 
           <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
-              <GHeader
+              <GHeader 
                 title="Free Online Compound Interest Calculator"
                 description="Use our free Compound Interest Calculator to calculate how your money grows over time. Enter your principal, interest rate, time period, and compounding frequency to see total interest and final balance instantly."
                 titleSize="medium"
               />
             </div>
 
-            {}
+            {/* Mobile/Tablet AdSpace after GHeader */}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -353,7 +354,7 @@ export default function CompoundInterestPage() {
               <div>
             <CompoundInterestCalculator />
 
-                {}
+                {/* How to Use */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -410,7 +411,7 @@ export default function CompoundInterestPage() {
               </div>
             </div>
 
-            {}
+            {/* Supported Countries */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -439,7 +440,7 @@ export default function CompoundInterestPage() {
               </div>
             </div>
 
-                {}
+                {/* Compound Interest Types */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -471,7 +472,7 @@ export default function CompoundInterestPage() {
               </div>
             </div>
 
-            {}
+            {/* Advanced Features */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -523,7 +524,7 @@ export default function CompoundInterestPage() {
             </div>
           </div>
 
-                {}
+                {/* FAQ Section */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -582,7 +583,7 @@ export default function CompoundInterestPage() {
                 </div>
               </div>
 
-                {}
+                {/* Related Tools Section */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -621,7 +622,7 @@ export default function CompoundInterestPage() {
                 </div>
               </div>
 
-              {}
+              {/* Desktop Sidebar with AdSense */}
               <div className="space-y-6 hidden lg:block">
                 <div className="sticky top-32 space-y-6">
                   <div>

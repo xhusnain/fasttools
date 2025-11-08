@@ -43,21 +43,24 @@ export function RetirementPlanner() {
   const [currentSalary, setCurrentSalary] = useState("")
   const [inflationRate, setInflationRate] = useState("3.0")
   const [expectedLifespan, setExpectedLifespan] = useState("85")
-
+  
+  // Government-specific
   const [dspFunds, setDspFunds] = useState<PensionFund[]>([])
   const [pensionMultiplier, setPensionMultiplier] = useState("2.5")
   const [yearsOfService, setYearsOfService] = useState("")
   const [highThreeSalary, setHighThreeSalary] = useState("")
-
+  
+  // Private sector
   const [retirementAccounts, setRetirementAccounts] = useState<RetirementAccount[]>([])
-
+  
+  // Social Security
   const [socialSecurity, setSocialSecurity] = useState<SocialSecurity>({
     estimatedMonthlyBenefit: 0,
     fullRetirementAge: 67,
     earlyRetirementAge: 62,
     delayedRetirementAge: 70
   })
-
+  
   const [result, setResult] = useState<{
     yearsToRetirement: number
     totalRetirementIncome: number
@@ -89,7 +92,7 @@ export function RetirementPlanner() {
   }
 
   const updateDspFund = (id: string, field: keyof PensionFund, value: any) => {
-    setDspFunds(dspFunds.map(fund =>
+    setDspFunds(dspFunds.map(fund => 
       fund.id === id ? { ...fund, [field]: value } : fund
     ))
   }
@@ -112,7 +115,7 @@ export function RetirementPlanner() {
   }
 
   const updateRetirementAccount = (id: string, field: keyof RetirementAccount, value: any) => {
-    setRetirementAccounts(retirementAccounts.map(account =>
+    setRetirementAccounts(retirementAccounts.map(account => 
       account.id === id ? { ...account, [field]: value } : account
     ))
   }
@@ -140,11 +143,12 @@ export function RetirementPlanner() {
       let socialSecurityBreakdown = 0
       const recommendations: string[] = []
 
+      // Calculate retirement accounts (401k, IRA, etc.)
       retirementAccounts.forEach(account => {
         if (account.isActive) {
           const monthlyRate = account.annualReturn / 100 / 12
           const futureValueCurrent = account.currentBalance * Math.pow(1 + monthlyRate, months)
-          const futureValueContributions = (account.monthlyContribution + account.employerMatch) *
+          const futureValueContributions = (account.monthlyContribution + account.employerMatch) * 
             ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate)
           const accountValue = futureValueCurrent + futureValueContributions
           const accountContributions = account.currentBalance + (account.monthlyContribution + account.employerMatch) * months
@@ -157,6 +161,7 @@ export function RetirementPlanner() {
         }
       })
 
+      // Calculate government pension (DSP)
       if (employmentType === 'government' && yearsOfServiceNum > 0 && highThree > 0) {
         const multiplier = Number.parseFloat(pensionMultiplier) / 100
         const annualPension = (highThree * multiplier * yearsOfServiceNum) * Math.pow(1 + inflation, yearsToRetirement)
@@ -168,19 +173,21 @@ export function RetirementPlanner() {
         recommendations.push(`Government pension will provide $${monthlyPension.toFixed(0)}/month`)
       }
 
+      // Calculate DSP funds
       dspFunds.forEach(fund => {
         if (fund.isActive) {
           const contributionAmount = (salary * fund.contributionRate / 100) / 12
           const yearsActive = fund.endYear - fund.startYear
           const monthsActive = yearsActive * 12
-          const monthlyRate = 7 / 100 / 12
+          const monthlyRate = 7 / 100 / 12 // Assuming 7% return for DSP
           const fundValue = contributionAmount * ((Math.pow(1 + monthlyRate, monthsActive) - 1) / monthlyRate)
-
+          
           totalRetirementIncome += fundValue
           pensionBreakdown[fund.name || 'DSP Fund'] = fundValue
         }
       })
 
+      // Calculate Social Security
       if (socialSecurity.estimatedMonthlyBenefit > 0) {
         const monthlySS = socialSecurity.estimatedMonthlyBenefit * Math.pow(1 + inflation, yearsToRetirement)
         const totalSSValue = monthlySS * retirementYears * 12
@@ -191,9 +198,10 @@ export function RetirementPlanner() {
 
       const monthlyRetirementIncome = totalRetirementIncome / (retirementYears * 12)
       const replacementRatio = (monthlyRetirementIncome / (salary / 12)) * 100
-      const targetReplacementRatio = 80
+      const targetReplacementRatio = 80 // 80% replacement ratio target
       const shortfall = Math.max(0, (salary * targetReplacementRatio / 100) - monthlyRetirementIncome)
 
+      // Generate recommendations
       if (replacementRatio < 70) {
         recommendations.push("Consider increasing retirement contributions to reach 70-80% replacement ratio")
       }
@@ -257,9 +265,9 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
         </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {}
+          {/* Left Column - Inputs */}
           <div className="space-y-6">
-            {}
+            {/* Employment Type */}
             <div className="space-y-2">
               <Label className="text-xs font-medium text-foreground flex items-center gap-2">
                 <Building className="h-4 w-4" />
@@ -277,7 +285,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
               </Select>
             </div>
 
-            {}
+            {/* Basic Info */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="currentAge" className="text-xs font-medium text-foreground">
@@ -328,7 +336,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
             />
           </div>
 
-            {}
+            {/* Government-specific fields */}
             {employmentType === 'government' && (
               <>
                 <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg">
@@ -383,7 +391,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                   </div>
                 </div>
 
-                {}
+                {/* DSP Funds */}
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <Label className="text-xs font-medium text-foreground flex items-center gap-2">
@@ -448,7 +456,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
               </>
             )}
 
-            {}
+            {/* Private sector retirement accounts */}
             {employmentType !== 'government' && (
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -526,7 +534,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
               </div>
             )}
 
-            {}
+            {/* Social Security */}
             <div className="p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
               <h4 className="text-sm font-medium text-foreground mb-3 flex items-center gap-2">
                 <Users className="h-4 w-4" />
@@ -544,7 +552,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
               </div>
             </div>
 
-            {}
+            {/* Additional settings */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="inflationRate" className="text-xs font-medium text-foreground flex items-center gap-2">
@@ -598,7 +606,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
           </Button>
           </div>
 
-          {}
+          {/* Right Column - Results */}
           <div className="space-y-4">
             {result ? (
               <>
@@ -632,7 +640,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                     </div>
                   )}
 
-                  {}
+                  {/* Account Breakdown */}
                   {Object.keys(result.accountBreakdown).length > 0 && (
                     <div className="p-2 rounded-lg bg-accent/5 border border-accent/20">
                       <p className="text-xs font-medium text-foreground mb-2">Account Breakdown:</p>
@@ -645,7 +653,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                     </div>
                   )}
 
-                  {}
+                  {/* Pension Breakdown */}
                   {Object.keys(result.pensionBreakdown).length > 0 && (
                     <div className="p-2 rounded-lg bg-blue-500/10 border border-blue-500/20">
                       <p className="text-xs font-medium text-foreground mb-2">Pension Breakdown:</p>
@@ -658,7 +666,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
               </div>
                   )}
 
-                  {}
+                  {/* Social Security */}
                   {result.socialSecurityBreakdown > 0 && (
                     <div className="p-2 rounded-lg bg-green-500/10 border border-green-500/20">
                       <p className="text-xs font-medium text-foreground mb-2">Social Security:</p>
@@ -669,7 +677,7 @@ ${result.recommendations.map(rec => `• ${rec}`).join('\n')}`
                     </div>
                   )}
 
-                  {}
+                  {/* Recommendations */}
                   {result.recommendations.length > 0 && (
                     <div className="p-2 rounded-lg bg-yellow-500/10 border border-yellow-500/20">
                       <p className="text-xs font-medium text-foreground mb-2 flex items-center gap-1">

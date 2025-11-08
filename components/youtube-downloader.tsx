@@ -27,7 +27,8 @@ interface PlaylistVideo {
 
 export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
   const [activeTab, setActiveTab] = useState<"single" | "playlist">("single")
-
+  
+  // Single video state
   const [videoUrl, setVideoUrl] = useState("")
   const [format, setFormat] = useState<"mp4" | "mp3">("mp4")
   const [loading, setLoading] = useState(false)
@@ -47,6 +48,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     audio?: boolean
   }>({})
 
+  // Playlist state
   const [playlistUrl, setPlaylistUrl] = useState("")
   const [playlistFormat, setPlaylistFormat] = useState<"mp4" | "mp3">("mp4")
   const [playlistLoading, setPlaylistLoading] = useState(false)
@@ -54,9 +56,9 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
   const [playlistVideos, setPlaylistVideos] = useState<PlaylistVideo[]>([])
   const [selectedVideos, setSelectedVideos] = useState<Set<string>>(new Set())
   const [playlistDownloading, setPlaylistDownloading] = useState(false)
-  const [playlistProgress, setPlaylistProgress] = useState({
-    current: 0,
-    total: 0,
+  const [playlistProgress, setPlaylistProgress] = useState({ 
+    current: 0, 
+    total: 0, 
     percentage: 0,
     currentVideoTitle: '',
     currentVideoIndex: 0,
@@ -68,20 +70,22 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     return pattern.test(url.trim())
   }
 
+  // Clean YouTube URL by extracting video ID (removes playlist parameters)
   const cleanYouTubeUrl = (url: string): string => {
     const trimmed = url.trim()
     if (trimmed.includes('playlist?list=') && !trimmed.includes('watch?v=')) {
       return trimmed
     }
-
+    
     const videoIdMatch = trimmed.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/v\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/)
     if (videoIdMatch && videoIdMatch[1]) {
       return `https://www.youtube.com/watch?v=${videoIdMatch[1]}`
     }
-
+    
     return trimmed
   }
 
+  // Single video download handler
   const handleSingleVideoFetch = async () => {
     setError(null)
     setResult(null)
@@ -142,6 +146,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     }
   }
 
+  // Single video download - direct browser download (no server bandwidth)
   const handleSingleVideoDownload = async () => {
     if (!result?.videoId || !result?.title) {
       setError("Please fetch video information first")
@@ -152,7 +157,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     setError(null)
 
     try {
-
+      // Step 1: Get direct download URL from server (lightweight, no file download)
       const response = await fetch('/api/youtube-download-file', {
         method: 'POST',
         headers: {
@@ -177,25 +182,38 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
         throw new Error(data.message || 'No download URL received')
       }
 
+      // Note: HLS detection is now handled on the backend
+      // The backend will try multiple strategies to find a direct URL
+      // If it fails, it will return an error message
+
+      // Step 2: Download via streaming proxy (for direct video URLs)
+      // Use GET request with query parameters to avoid POST body issues
+      // This approach is simpler and avoids Range header complications
+      console.log('Starting download via streaming proxy...')
+      
       const safeFilename = encodeURIComponent(data.filename || `${result.title || 'youtube-video'}.${format}`)
       const encodedVideoUrl = encodeURIComponent(data.downloadUrl)
-
+      
+      // Create a direct download link using GET request
+      // This avoids fetch() Range header issues
       const proxyDownloadUrl = `/api/youtube-proxy-download?url=${encodedVideoUrl}&filename=${safeFilename}`
-
+      
+      // Create a temporary anchor element and trigger download
       const a = document.createElement('a')
       a.href = proxyDownloadUrl
       a.download = data.filename || `${result.title || 'youtube-video'}.${format}`
       a.style.display = 'none'
       document.body.appendChild(a)
       a.click()
-
+      
+      // Clean up after download starts
       setTimeout(() => {
         document.body.removeChild(a)
       }, 1000)
-
+      
       setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
       setDownloadingStates(prev => ({ ...prev, [format === 'mp4' ? 'video' : 'audio']: false }))
-
+      
     } catch (e: any) {
       console.error('Download error:', e)
       setError(e?.message || "Download failed. Please try again.")
@@ -203,11 +221,12 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     }
   }
 
+  // Fetch playlist videos
   const handleFetchPlaylist = async () => {
     setPlaylistError(null)
     setPlaylistVideos([])
     setSelectedVideos(new Set())
-
+    
     if (!isLikelyYoutubeUrl(playlistUrl)) {
       setPlaylistError("Please enter a valid YouTube playlist URL.")
       return
@@ -244,7 +263,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
       }
 
       setPlaylistVideos(data.videos)
-
+      // Select all videos by default
       setSelectedVideos(new Set(data.videos.map((v: PlaylistVideo) => v.id)))
 
     } catch (e: any) {
@@ -254,6 +273,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     }
   }
 
+  // Toggle video selection
   const toggleVideoSelection = (videoId: string) => {
     setSelectedVideos(prev => {
       const newSet = new Set(prev)
@@ -266,6 +286,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     })
   }
 
+  // Select/Deselect all
   const toggleSelectAll = () => {
     if (selectedVideos.size === playlistVideos.length) {
       setSelectedVideos(new Set())
@@ -274,6 +295,8 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     }
   }
 
+  // Download selected videos - Client-side download (zero server bandwidth)
+  // This uses the SAME logic as single video downloads - no server bandwidth usage
   const handleDownloadSelected = async () => {
     if (selectedVideos.size === 0) {
       setPlaylistError("Please select at least one video to download")
@@ -282,13 +305,17 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
 
     setPlaylistError(null)
     setPlaylistDownloading(true)
-
+    
+    // Get selected videos with their titles
     const selectedVideosList = playlistVideos.filter(v => selectedVideos.has(v.id))
     const totalVideos = selectedVideosList.length
 
-    setPlaylistProgress({
-      current: 0,
-      total: totalVideos,
+    console.log('🚀 Frontend: Starting CLIENT-SIDE playlist download', 'Total videos:', totalVideos)
+    console.log('⚠️  This should NOT call /api/youtube-download-selected - all downloads are client-side!')
+    
+    setPlaylistProgress({ 
+      current: 0, 
+      total: totalVideos, 
       percentage: 0,
       currentVideoTitle: '',
       currentVideoIndex: 0,
@@ -296,12 +323,15 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     })
 
     try {
-
+      // Download each video one by one on the client side - EXACTLY like single video downloads
       for (let i = 0; i < selectedVideosList.length; i++) {
         const video = selectedVideosList[i]
         const videoUrl = video.url
         const videoTitle = video.title
-
+        
+        console.log(`📥 Processing video ${i + 1}/${totalVideos}: ${videoTitle}`)
+        
+        // Update progress
         setPlaylistProgress({
           current: i,
           total: totalVideos,
@@ -312,7 +342,8 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
         })
 
         try {
-
+          // Step 1: Get direct download URL from server (lightweight API call, no file download)
+          console.log(`  → Step 1: Getting direct URL for video ${i + 1}...`)
           const response = await fetch('/api/youtube-download-file', {
             method: 'POST',
             headers: {
@@ -320,7 +351,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
             },
             body: JSON.stringify({
               url: videoUrl,
-              format: playlistFormat,
+              format: playlistFormat, // Use selected format (mp4 or mp3)
               videoId: video.id,
               title: videoTitle
             })
@@ -337,29 +368,44 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
             throw new Error(data.message || `No download URL received for video ${i + 1}`)
           }
 
+          // Check if this is an HLS manifest
           if (data.isHLS || data.downloadUrl.includes('manifest.googlevideo.com') || data.downloadUrl.includes('.m3u8')) {
             throw new Error(`Video ${i + 1} (${videoTitle}) uses HLS format and cannot be downloaded directly.`)
           }
 
+          console.log(`  ✅ Got direct URL for video ${i + 1}, starting browser download...`)
+
+          // Step 2: Download via streaming proxy (direct browser download)
+          // This is the SAME approach as single video downloads
           const fileExtension = playlistFormat === 'mp3' ? 'mp3' : 'mp4'
           const safeFilename = encodeURIComponent(data.filename || `${videoTitle || 'youtube-video'}.${fileExtension}`)
           const encodedVideoUrl = encodeURIComponent(data.downloadUrl)
-
+          
+          // Create a direct download link using GET request (same as single videos)
           const proxyDownloadUrl = `/api/youtube-proxy-download?url=${encodedVideoUrl}&filename=${safeFilename}`
-
+          
+          console.log(`  → Step 2: Triggering browser download via proxy: ${proxyDownloadUrl.substring(0, 80)}...`)
+          
+          // Create a temporary anchor element and trigger download (same as single videos)
           const a = document.createElement('a')
           a.href = proxyDownloadUrl
           a.download = data.filename || `${videoTitle || 'youtube-video'}.${fileExtension}`
           a.style.display = 'none'
           document.body.appendChild(a)
           a.click()
-
+          
+          // Clean up after download starts
           setTimeout(() => {
             try {
               document.body.removeChild(a)
-            } catch (e) {}
+            } catch (e) {
+              // Element may have already been removed
+            }
           }, 1000)
 
+          console.log(`  ✅ Download triggered for video ${i + 1}: ${data.filename}`)
+
+          // Update progress after download starts
           setPlaylistProgress({
             current: i + 1,
             total: totalVideos,
@@ -369,17 +415,21 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
             videoProgress: 100
           })
 
+          // Small delay between downloads to avoid overwhelming the browser
           if (i < selectedVideosList.length - 1) {
-            await new Promise(resolve => setTimeout(resolve, 1000))
+            await new Promise(resolve => setTimeout(resolve, 1000)) // Increased delay to 1s
           }
 
         } catch (videoError: any) {
           console.error(`❌ Error downloading video ${i + 1}:`, videoError)
           setPlaylistError(`Failed to download video ${i + 1} (${videoTitle}): ${videoError.message}`)
-
+          // Continue with next video instead of stopping
         }
       }
 
+      console.log('✅ All playlist downloads initiated (client-side)')
+
+      // All downloads completed
       setPlaylistProgress({
         current: totalVideos,
         total: totalVideos,
@@ -428,7 +478,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
             </TabsTrigger>
           </TabsList>
 
-          {}
+          {/* Single Video Tab */}
           <TabsContent value="single" className="space-y-4 mt-4">
             <div>
               <Label htmlFor="video-url" className="text-sm font-medium text-foreground">
@@ -536,7 +586,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
             )}
           </TabsContent>
 
-          {}
+          {/* Playlist Tab */}
           <TabsContent value="playlist" className="space-y-4 mt-4">
             <div>
               <Label htmlFor="playlist-url" className="text-sm font-medium text-foreground">
@@ -659,7 +709,7 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
                               <>Video {playlistProgress.currentVideoIndex}: </>
                             )}
                             <span className="text-muted-foreground">
-                              {playlistProgress.currentVideoTitle.length > 60
+                              {playlistProgress.currentVideoTitle.length > 60 
                                 ? playlistProgress.currentVideoTitle.substring(0, 60) + '...'
                                 : playlistProgress.currentVideoTitle}
                             </span>

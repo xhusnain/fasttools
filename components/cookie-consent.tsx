@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 interface CookiePreferences {
   essential: boolean
@@ -14,7 +15,7 @@ export function CookieConsent() {
   const [showConsent, setShowConsent] = useState(false)
   const [showPreferences, setShowPreferences] = useState(false)
   const [preferences, setPreferences] = useState<CookiePreferences>({
-    essential: true,
+    essential: true, // Always required
     analytics: false,
     advertising: false,
     functional: false,
@@ -23,7 +24,7 @@ export function CookieConsent() {
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent")
     const savedPreferences = localStorage.getItem("cookie-preferences")
-
+    
     if (!consent) {
       setShowConsent(true)
     } else if (savedPreferences) {
@@ -39,12 +40,13 @@ export function CookieConsent() {
       advertising: true,
       functional: true,
     }
-
+    
     localStorage.setItem("cookie-consent", "accepted")
     localStorage.setItem("cookie-preferences", JSON.stringify(allAccepted))
     setPreferences(allAccepted)
     setShowConsent(false)
-
+    
+    // Initialize analytics and advertising with consent
     initializeTracking(true)
   }
 
@@ -53,7 +55,8 @@ export function CookieConsent() {
     localStorage.setItem("cookie-preferences", JSON.stringify(preferences))
     setShowConsent(false)
     setShowPreferences(false)
-
+    
+    // Initialize tracking based on preferences
     initializeTracking(preferences.analytics || preferences.advertising)
   }
 
@@ -64,19 +67,22 @@ export function CookieConsent() {
       advertising: false,
       functional: false,
     }
-
+    
     localStorage.setItem("cookie-consent", "declined")
     localStorage.setItem("cookie-preferences", JSON.stringify(essentialOnly))
     setPreferences(essentialOnly)
     setShowConsent(false)
-
+    
+    // Only initialize essential cookies
     initializeTracking(false)
   }
 
   const initializeTracking = (consent: boolean) => {
     if (typeof window !== "undefined") {
-
+      // Google Analytics and AdSense consent
+      // @ts-ignore
         if (window.gtag) {
+            // @ts-ignore
 
             window.gtag('consent', 'update', {
           'analytics_storage': consent ? 'granted' : 'denied',
@@ -86,17 +92,18 @@ export function CookieConsent() {
           'personalization_storage': consent ? 'granted' : 'denied'
         })
       }
-
+      
+      // Initialize Google AdSense with consent
       if (consent && window.adsbygoogle) {
-
+        // Re-initialize ads with consent
         window.adsbygoogle.push({})
       }
     }
   }
 
   const togglePreference = (key: keyof CookiePreferences) => {
-    if (key === 'essential') return
-
+    if (key === 'essential') return // Essential cookies cannot be disabled
+    
     setPreferences(prev => ({
       ...prev,
       [key]: !prev[key]
@@ -116,7 +123,7 @@ export function CookieConsent() {
                 <h3 className="text-lg font-semibold">Cookie Consent</h3>
               </div>
               <p className="text-sm text-foreground leading-relaxed">
-                We use cookies to enhance your browsing experience, analyze our traffic, and display relevant advertisements.
+                We use cookies to enhance your browsing experience, analyze our traffic, and display relevant advertisements. 
                 By clicking "Accept All", you consent to our use of all cookies. You can also{" "}
                 <Link href="/cookie-preferences" className="text-link hover:text-link-hover hover:underline font-medium">
                   customize your preferences
@@ -148,7 +155,7 @@ export function CookieConsent() {
                 Back
               </Button>
             </div>
-
+            
             <div className="space-y-3">
               <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
                 <div>

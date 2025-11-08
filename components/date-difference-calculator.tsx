@@ -65,17 +65,17 @@ export function DateDifferenceCalculator() {
   const calculateBusinessDays = (start: Date, end: Date): number => {
     let count = 0
     const current = new Date(start)
-
+    
     while (current <= end) {
       const dayOfWeek = current.getDay()
       if (businessDaysOnly) {
         if (saturdayIsBusinessDay) {
-
+          // Monday to Saturday are business days
           if (dayOfWeek >= 1 && dayOfWeek <= 6) {
             count++
           }
         } else {
-
+          // Monday to Friday are business days
           if (dayOfWeek >= 1 && dayOfWeek <= 5) {
             count++
           }
@@ -85,7 +85,7 @@ export function DateDifferenceCalculator() {
       }
       current.setDate(current.getDate() + 1)
     }
-
+    
     return count
   }
 
@@ -158,7 +158,7 @@ export function DateDifferenceCalculator() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          {}
+          {/* Date Format Selection */}
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <Settings className="h-3.5 w-3.5 text-muted-foreground" />
@@ -172,8 +172,8 @@ export function DateDifferenceCalculator() {
                   size="sm"
                   onClick={() => setDateFormat(format.value)}
                   className={`h-9 text-xs font-medium transition-all ${
-                    dateFormat === format.value
-                      ? 'bg-primary text-primary-foreground shadow-md'
+                    dateFormat === format.value 
+                      ? 'bg-primary text-primary-foreground shadow-md' 
                       : 'hover:bg-muted'
                   }`}
                 >
@@ -186,7 +186,7 @@ export function DateDifferenceCalculator() {
             </div>
           </div>
 
-                  {}
+                  {/* Date Inputs */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="space-y-2">
                       <Label htmlFor="startdate" className="text-sm font-semibold flex items-center gap-1.5">
@@ -217,13 +217,13 @@ export function DateDifferenceCalculator() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Business Days Options */}
                   <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
                     <div className="flex items-center gap-2 mb-2">
                       <Briefcase className="h-3.5 w-3.5 text-primary" />
                       <h3 className="text-sm font-semibold text-heading-accent">Business Days</h3>
                     </div>
-
+            
             <div className="space-y-2">
               <div className="flex items-center space-x-2 p-2 bg-card rounded border border-border">
                 <Checkbox
@@ -236,7 +236,7 @@ export function DateDifferenceCalculator() {
                   Exclude Weekends
                 </Label>
               </div>
-
+              
               {businessDaysOnly && (
                 <div className="flex items-center space-x-2 p-2 bg-card rounded ml-3 border-l-2 border-border border border-border">
                   <Checkbox
@@ -287,7 +287,7 @@ export function DateDifferenceCalculator() {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-                    {}
+                    {/* Main Results Grid */}
                     <div className="grid grid-cols-3 gap-2">
                       <div className="text-center p-3 rounded-lg bg-card border border-border hover:shadow-md transition-all">
                         <div className="text-2xl font-bold text-foreground mb-1">{result.years}</div>
@@ -303,7 +303,7 @@ export function DateDifferenceCalculator() {
                       </div>
                     </div>
 
-            {}
+            {/* Detailed Breakdown */}
             <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
               <h3 className="text-sm font-semibold text-center mb-2 text-heading-accent">Detailed Breakdown</h3>
               <div className="grid grid-cols-2 gap-2">
@@ -339,7 +339,7 @@ export function DateDifferenceCalculator() {
               </div>
             </div>
 
-            {}
+            {/* Answer Summary */}
             <div className="p-4 bg-card rounded-lg border border-primary/20">
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary mb-1">

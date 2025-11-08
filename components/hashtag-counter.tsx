@@ -6,11 +6,11 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import {
-  Hash,
-  Copy,
-  Check,
-  Sparkles,
+import { 
+  Hash, 
+  Copy, 
+  Check, 
+  Sparkles, 
   Loader2,
   Instagram,
   Twitter,
@@ -38,6 +38,7 @@ export function HashtagCounter() {
   const [copied, setCopied] = useState(false)
   const [isGenerating, setIsGenerating] = useState(false)
 
+  // Auto-count hashtags when text changes
   useEffect(() => {
     if (text) {
       const hashtagRegex = /#[\w]+/g
@@ -81,7 +82,7 @@ export function HashtagCounter() {
       }
 
       const data = await response.json()
-
+      
       if (data.hashtags && Array.isArray(data.hashtags) && data.hashtags.length > 0) {
         setResult(prev => ({
           ...prev,
@@ -91,7 +92,7 @@ export function HashtagCounter() {
       }
     } catch (error) {
       console.error('Error generating hashtags:', error)
-
+      // You could add a toast notification here if you have a toast system
     } finally {
       setIsGenerating(false)
     }
@@ -104,14 +105,15 @@ export function HashtagCounter() {
     setTimeout(() => setCopied(false), 2000)
   }
 
-  const getPlatformColor = (platform: string) => {
 
+  const getPlatformColor = (platform: string) => {
+    // Use primary theme color for all platforms
     return 'from-primary to-primary/90'
   }
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6">
-      {}
+      {/* Main Calculator Card */}
       <Card className="border-2 border-border bg-card shadow-2xl">
         <CardHeader className="text-center space-y-3 sm:space-y-4 p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
@@ -133,8 +135,8 @@ export function HashtagCounter() {
               </CardDescription>
             </div>
           </div>
-
-          {}
+          
+          {/* Platform Selector */}
           <div className="flex flex-col items-center gap-2 sm:gap-3">
             <Label className="text-foreground font-medium text-sm sm:text-base">Choose Platform:</Label>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
@@ -150,8 +152,8 @@ export function HashtagCounter() {
                   key={value}
                   onClick={() => setPlatform(value)}
                   className={`group relative flex flex-col items-center gap-1 p-2 sm:p-3 rounded-lg transition-all duration-300 hover:scale-105 ${
-                    platform === value
-                      ? 'bg-gradient-to-br from-primary to-primary/90 shadow-lg'
+                    platform === value 
+                      ? 'bg-gradient-to-br from-primary to-primary/90 shadow-lg' 
                       : 'bg-secondary hover:bg-secondary/80 border border-border'
                   }`}
                   title={label}
@@ -174,7 +176,7 @@ export function HashtagCounter() {
         </CardHeader>
 
         <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
-          {}
+          {/* Input Section */}
           <div className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="text" className="text-sm font-medium text-foreground">
@@ -189,7 +191,7 @@ export function HashtagCounter() {
               />
             </div>
 
-            {}
+            {/* Action Button */}
             <div className="flex justify-center">
               <Button
                 onClick={generateHashtags}
@@ -213,23 +215,23 @@ export function HashtagCounter() {
             </div>
           </div>
 
-          {}
+          {/* Results Section */}
           {text && (
             <div className="space-y-4 sm:space-y-6">
-              {}
+              {/* Stats Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 <div className="p-3 sm:p-4 rounded-xl bg-muted border border-border text-center">
                   <div className="text-xl sm:text-2xl font-bold text-foreground">{result.count}</div>
                   <div className="text-xs sm:text-sm text-muted-foreground">Existing Hashtags</div>
                 </div>
-
+                
                 {result.generatedHashtags && result.generatedHashtags.length > 0 && (
                   <div className="p-3 sm:p-4 rounded-xl bg-muted border border-border text-center">
                     <div className="text-xl sm:text-2xl font-bold text-foreground">{result.generatedHashtags.length}</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">AI Generated</div>
                   </div>
                 )}
-
+                
                 <div className="p-3 sm:p-4 rounded-xl bg-primary/10 border border-primary/20 text-center sm:col-span-2 lg:col-span-1">
                   <div className="text-xl sm:text-2xl font-bold text-foreground">
                     {result.count + (result.generatedHashtags ? result.generatedHashtags.length : 0)}
@@ -238,9 +240,9 @@ export function HashtagCounter() {
                 </div>
               </div>
 
-              {}
+              {/* Unified Hashtag Display */}
               <div className="space-y-4 sm:space-y-6">
-                {}
+                {/* Existing Hashtags Section */}
                 {result.hashtags.length > 0 && (
                   <div className="space-y-3 sm:space-y-4">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
@@ -282,7 +284,7 @@ export function HashtagCounter() {
                   </div>
                 )}
 
-                {}
+                {/* AI Generated Hashtags Section */}
                 {result.generatedHashtags && result.generatedHashtags.length > 0 && (
                   <div className="space-y-3 sm:space-y-4">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
@@ -324,7 +326,7 @@ export function HashtagCounter() {
                   </div>
                 )}
 
-                {}
+                {/* Copy All Combined Button */}
                 {(result.hashtags.length > 0 || (result.generatedHashtags && result.generatedHashtags.length > 0)) && (
                   <div className="flex justify-center pt-2">
                     <Button
@@ -340,7 +342,7 @@ export function HashtagCounter() {
                   </div>
                 )}
 
-                {}
+                {/* Empty State */}
                 {result.hashtags.length === 0 && (!result.generatedHashtags || result.generatedHashtags.length === 0) && (
                   <div className="text-center py-6 sm:py-8 text-muted-foreground">
                     <Hash className="h-8 w-8 sm:h-12 sm:w-12 mx-auto mb-3 sm:mb-4 opacity-50" />

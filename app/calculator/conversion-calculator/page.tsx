@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { Calculator, Zap, Target, TrendingUp, BookOpen, Users, CheckCircle, Info, Home, DollarSign, FileText, Percent, Clock, Award, BarChart3, Building, PieChart } from "lucide-react"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -76,7 +77,7 @@ export const metadata: Metadata = {
 }
 
 export default function ConversionCalculatorPage() {
-
+  // WebApplication Schema
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -139,6 +140,7 @@ export default function ConversionCalculatorPage() {
     ]
   }
 
+  // BreadcrumbList Schema
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -164,6 +166,7 @@ export default function ConversionCalculatorPage() {
     ]
   }
 
+  // FAQPage Schema
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -211,6 +214,7 @@ export default function ConversionCalculatorPage() {
     ]
   }
 
+  // Article Schema for main content
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -245,6 +249,7 @@ export default function ConversionCalculatorPage() {
     "isAccessibleForFree": true
   }
 
+  // HowTo Schema for using the calculator
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
@@ -272,6 +277,7 @@ export default function ConversionCalculatorPage() {
     ]
   }
 
+  // ItemList Schema for conversion categories
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -295,32 +301,32 @@ export default function ConversionCalculatorPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {}
+      {/* Structured Data - WebApplication */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
       />
-      {}
+      {/* Structured Data - BreadcrumbList */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      {}
+      {/* Structured Data - FAQPage */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      {}
+      {/* Structured Data - Article */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      {}
+      {/* Structured Data - HowTo */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      {}
+      {/* Structured Data - ItemList */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
@@ -342,14 +348,14 @@ export default function ConversionCalculatorPage() {
               <span>Professional Unit Converter</span>
             </div>
 
-            <GHeader
+            <GHeader 
               title="Unit Converter | Free Conversion Calculator"
               description="Convert between 1000+ units instantly. Length, weight, temperature, currency, time, area, volume, speed, power, energy, pressure conversions."
               titleSize="medium"
               descriptionSize="small"
             />
             <div className="text-center text-xs text-muted-foreground mt-2">
-              Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} •
+              Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} • 
               <span className="ml-1">Accurate conversions validated against <abbr title="National Institute of Standards and Technology">NIST</abbr>, <abbr title="International Bureau of Weights and Measures">BIPM</abbr>, and <abbr title="International Organization for Standardization">ISO</abbr> standards</span>
             </div>
 
@@ -373,7 +379,7 @@ export default function ConversionCalculatorPage() {
             </div>
           </header>
 
-          {}
+          {/* Mobile/Tablet Ad - After Stats */}
           <aside className="block lg:hidden my-6" aria-label="Advertisement">
             <div className="text-center mb-2">
               <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -384,6 +390,7 @@ export default function ConversionCalculatorPage() {
         <div className="grid lg:grid-cols-[1fr_350px] gap-4 lg:gap-8">
           <section className="space-y-4 lg:space-y-6" aria-label="Conversion Calculator and Content">
             <ConversionCalculator />
+            
 
               <section className="bg-card border border-border rounded-lg p-6" itemScope itemType="https://schema.org/Article">
                 <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-foreground">
@@ -396,7 +403,7 @@ export default function ConversionCalculatorPage() {
                   <p className="text-base text-foreground leading-relaxed">
                     Our <strong>conversion calculator online</strong> is the most comprehensive <strong>conversion calculator measurement</strong> tool available, handling over 1000+ unit conversions across 12+ categories. Whether you need a <strong>conversion calculator for currency</strong>, distance measurements, weight conversions, or specialized calculations, our free <strong>conversion calculator</strong> provides instant, accurate results. Our <strong>conversion calculator metric</strong> and <strong>conversion calculator imperial to metric</strong> features make it easy to switch between measurement systems.
                   </p>
-
+                  
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-4">
                       <h3 className="text-xl font-semibold text-heading-accent">Distance & Length Conversion Calculators</h3>
@@ -488,7 +495,7 @@ export default function ConversionCalculatorPage() {
                     </div>
                     </div>
                     </div>
-
+                  
                   <div className="bg-gradient-to-r from-primary/10 to-orange-500/10 p-6 rounded-lg border border-border">
                     <h3 className="text-xl font-semibold text-heading-accent mb-4">Imperial to Metric Conversion Calculator</h3>
                     <p className="text-base text-foreground mb-4">
@@ -538,7 +545,7 @@ export default function ConversionCalculatorPage() {
                   <p className="text-base text-foreground leading-relaxed">
                     Beyond everyday conversions, our conversion calculator supports specialized professional applications including engineering, cooking, scientific research, and more. Our <strong>conversion calculator online</strong> handles everything from simple measurements to complex calculations.
                   </p>
-
+                  
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-4">
                       <h3 className="text-xl font-semibold text-heading-accent">Cooking & Baking Conversions</h3>
@@ -575,7 +582,7 @@ export default function ConversionCalculatorPage() {
                         </div>
                       </div>
                     </div>
-
+                    
                     <div className="space-y-4">
                       <h3 className="text-xl font-semibold text-heading-accent">Engineering & Technical Conversions</h3>
                       <p className="text-sm text-foreground mb-4">
@@ -717,7 +724,7 @@ export default function ConversionCalculatorPage() {
                   <p className="text-base text-foreground leading-relaxed">
                     Our <strong>conversion calculator c to f</strong> (Celsius to Fahrenheit) is one of the most searched conversions with over 246,000 monthly searches. Whether you're cooking, traveling, or working in scientific fields, our <strong>conversion calculator for temperature</strong> and <strong>conversion calculator celsius to fahrenheit</strong> provides instant, accurate temperature conversions. Our <strong>conversion calculator temperature</strong> handles all temperature scales including Celsius, Fahrenheit, and Kelvin.
                   </p>
-
+                  
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="p-4 bg-card rounded-lg border border-border">
                       <h3 className="text-lg font-semibold text-heading-accent mb-3">Celsius to Fahrenheit Conversion</h3>
@@ -755,7 +762,7 @@ export default function ConversionCalculatorPage() {
                   <p className="text-base text-foreground leading-relaxed">
                     Our <strong>currency conversion calculator</strong> competes with professional tools like <strong>oanda currency conversion calculator</strong> (301k searches) and <strong>xe currency conversion calculator</strong> (135k searches). Our <strong>xe conversion calculator</strong>-style interface provides real-time exchange rates similar to <strong>yahoo currency conversion calculator</strong> and <strong>google conversion calculator</strong>. Whether you need a <strong>money conversion calculator</strong>, <strong>online currency conversion calculator</strong>, or <strong>currency conversion calculator online</strong>, our tool offers professional-grade accuracy.
                   </p>
-
+                  
                   <div className="bg-gradient-to-r from-primary/10 to-orange-500/10 p-6 rounded-lg border border-border">
                     <h3 className="text-xl font-semibold text-heading-accent mb-4">Advanced Currency Features</h3>
                   <div className="grid md:grid-cols-2 gap-6">
@@ -778,7 +785,7 @@ export default function ConversionCalculatorPage() {
                           </div>
                         </div>
                       </div>
-
+                    
                     <div className="mt-6 p-4 bg-card rounded-lg border border-border">
                       <h4 className="font-semibold text-heading-accent mb-2">Popular Currency Pairs</h4>
                       <div className="grid md:grid-cols-3 gap-4 text-sm text-foreground">
@@ -814,7 +821,7 @@ export default function ConversionCalculatorPage() {
                   <p className="text-base text-foreground leading-relaxed">
                     Our <strong>square feet conversion calculator</strong> (368k searches) is essential for real estate, construction, and interior design. Whether you need a <strong>conversion calculator area</strong>, <strong>conversion calculator square feet</strong>, or <strong>square meters to square feet conversion calculator</strong>, our tool handles all area measurements with precision. Perfect for calculating room sizes, land areas, and construction projects.
                   </p>
-
+                  
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-4">
                       <h3 className="text-xl font-semibold text-heading-accent">Square Feet & Area Conversions</h3>
@@ -895,7 +902,7 @@ export default function ConversionCalculatorPage() {
                   <p className="text-base text-foreground leading-relaxed">
                     Our comprehensive measurement conversion tools handle all length and distance conversions. From <strong>m to ft conversion calculator</strong> (201k searches) to <strong>inch to cm conversion calculator</strong> (60.5k searches), our <strong>conversion calculator cm to m</strong> (110k searches) and <strong>conversion calculator feet to metres</strong> (201k searches) provide instant, accurate results. Perfect for construction, engineering, and everyday measurements.
                   </p>
-
+                  
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-3">
                       <div className="p-4 bg-card rounded-lg border border-border">
@@ -970,7 +977,7 @@ export default function ConversionCalculatorPage() {
                   <p className="text-base text-foreground leading-relaxed">
                     Our <strong>weight conversion calculator</strong> and <strong>conversion calculator weight</strong> handle all weight conversions from grams to tons. Our <strong>pounds to kg conversion calculator</strong>, <strong>kg pounds conversion calculator</strong>, and <strong>kg to pounds conversion calculator</strong> are among the most popular searches. Perfect for cooking, fitness, shipping, and medical applications.
                   </p>
-
+                  
                   <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-3">
                         <div className="p-4 bg-card rounded-lg border border-border">
@@ -1045,7 +1052,7 @@ export default function ConversionCalculatorPage() {
                   <p className="text-base text-foreground leading-relaxed">
                     Our technical conversion calculators handle specialized conversions for engineering, computing, and scientific applications. From <strong>decimal to binary conversion calculator</strong> to <strong>kw to hp conversion calculator</strong>, our tools provide professional-grade accuracy for technical professionals.
                   </p>
-
+                  
                   <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-3">
                         <div className="p-4 bg-card rounded-lg border border-border">
@@ -1120,7 +1127,7 @@ export default function ConversionCalculatorPage() {
                   <p className="text-base text-foreground leading-relaxed">
                     Our <strong>conversion calculator online</strong> is designed for ease of use while providing professional-grade accuracy. Whether you need a simple <strong>conversion calculator</strong> for everyday measurements or a specialized tool for professional applications, follow these steps for best results.
                   </p>
-
+                  
                   <div className="grid md:grid-cols-3 gap-6">
                       <div className="space-y-4">
                       <div className="flex items-center gap-3">
@@ -1134,7 +1141,7 @@ export default function ConversionCalculatorPage() {
                         <strong>Popular categories:</strong> Currency (110k searches), Distance (301k searches), Weight (27k searches)
                             </div>
                           </div>
-
+                    
                     <div className="space-y-4">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-primary text-foreground rounded-full flex items-center justify-center font-bold text-lg">2</div>
@@ -1147,7 +1154,7 @@ export default function ConversionCalculatorPage() {
                         <strong>Examples:</strong> km to miles, lbs to kg, USD to EUR, Celsius to Fahrenheit
                             </div>
                           </div>
-
+                    
                     <div className="space-y-4">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-primary text-foreground rounded-full flex items-center justify-center font-bold text-lg">3</div>
@@ -1161,7 +1168,7 @@ export default function ConversionCalculatorPage() {
                             </div>
                           </div>
                         </div>
-
+                  
                   <div className="bg-gradient-to-r from-primary/10 to-orange-500/10 p-6 rounded-lg border border-border">
                     <h3 className="text-xl font-semibold text-heading-accent mb-4">Why Choose Our Conversion Calculator?</h3>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -1228,6 +1235,7 @@ export default function ConversionCalculatorPage() {
                 </div>
               </section>
 
+              {/* Articles Section */}
               <section className="space-y-6" aria-label="Educational Articles">
                 <article className="bg-card border border-border rounded-xl p-6" itemScope itemType="https://schema.org/Article">
                   <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-foreground">
@@ -1608,6 +1616,7 @@ export default function ConversionCalculatorPage() {
                 </article>
               </section>
 
+              {/* FAQ Section */}
               <section className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm" aria-label="Frequently Asked Questions" id="faq">
                 <h2 className="text-lg md:text-xl font-bold mb-4 flex items-center gap-2 text-foreground">
                   <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -1624,7 +1633,7 @@ export default function ConversionCalculatorPage() {
                       </p>
                         </div>
                       </div>
-
+                  
                   <div className="border-b border-border pb-3 md:pb-4" itemScope itemType="https://schema.org/Question">
                     <h3 className="font-semibold text-heading-accent mb-2 text-base md:text-lg" itemProp="name">How accurate is conversion calculator?</h3>
                     <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
@@ -1642,7 +1651,7 @@ export default function ConversionCalculatorPage() {
                       </p>
                             </div>
                             </div>
-
+                  
                   <div className="border-b border-border pb-3 md:pb-4" itemScope itemType="https://schema.org/Question">
                     <h3 className="font-semibold text-heading-accent mb-2 text-base md:text-lg" itemProp="name">Can I convert Canadian dollars to USD?</h3>
                     <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
@@ -1651,7 +1660,7 @@ export default function ConversionCalculatorPage() {
                       </p>
                           </div>
                             </div>
-
+                  
                   <div className="border-b border-border pb-3 md:pb-4" itemScope itemType="https://schema.org/Question">
                     <h3 className="font-semibold text-heading-accent mb-2 text-base md:text-lg" itemProp="name">How to calculate conversion rate?</h3>
                     <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
@@ -1660,7 +1669,7 @@ export default function ConversionCalculatorPage() {
                       </p>
                             </div>
                           </div>
-
+                  
                   <div className="border-b border-border pb-3 md:pb-4" itemScope itemType="https://schema.org/Question">
                     <h3 className="font-semibold text-heading-accent mb-2 text-base md:text-lg" itemProp="name">What is the difference between conversion and convert?</h3>
                     <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
@@ -1669,7 +1678,7 @@ export default function ConversionCalculatorPage() {
                       </p>
                         </div>
                       </div>
-
+                  
                   <div className="border-b border-border pb-3 md:pb-4" itemScope itemType="https://schema.org/Question">
                     <h3 className="font-semibold text-heading-accent mb-2 text-base md:text-lg" itemProp="name">What is a conversion table or conversion chart?</h3>
                     <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
@@ -1678,7 +1687,7 @@ export default function ConversionCalculatorPage() {
                       </p>
                             </div>
                             </div>
-
+                  
                   <div className="border-b border-border pb-3 md:pb-4" itemScope itemType="https://schema.org/Question">
                     <h3 className="font-semibold text-heading-accent mb-2 text-base md:text-lg" itemProp="name">How to convert hours and minutes?</h3>
                     <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
@@ -1687,7 +1696,7 @@ export default function ConversionCalculatorPage() {
                       </p>
                           </div>
                             </div>
-
+                  
                   <div className="border-b border-border pb-3 md:pb-4" itemScope itemType="https://schema.org/Question">
                     <h3 className="font-semibold text-heading-accent mb-2 text-base md:text-lg" itemProp="name">How to convert watts to amps?</h3>
                     <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
@@ -1696,7 +1705,7 @@ export default function ConversionCalculatorPage() {
                       </p>
                             </div>
                           </div>
-
+                  
                   <div className="border-b border-border pb-3 md:pb-4" itemScope itemType="https://schema.org/Question">
                     <h3 className="font-semibold text-heading-accent mb-2 text-base md:text-lg" itemProp="name">What is a metric conversion calculator?</h3>
                     <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
@@ -1705,7 +1714,7 @@ export default function ConversionCalculatorPage() {
                       </p>
                         </div>
                       </div>
-
+                  
                   <div className="border-b border-border pb-3 md:pb-4" itemScope itemType="https://schema.org/Question">
                     <h3 className="font-semibold text-heading-accent mb-2 text-base md:text-lg" itemProp="name">How to convert calculator from fraction to decimal?</h3>
                     <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
@@ -1714,7 +1723,7 @@ export default function ConversionCalculatorPage() {
                       </p>
                     </div>
                   </div>
-
+                  
                   <div className="border-b border-border pb-3 md:pb-4" itemScope itemType="https://schema.org/Question">
                     <h3 className="font-semibold text-heading-accent mb-2 text-base md:text-lg" itemProp="name">How to convert calculator from degree to radian?</h3>
                     <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
@@ -1732,7 +1741,7 @@ export default function ConversionCalculatorPage() {
                       </p>
                   </div>
                     </div>
-
+                  
                   <div className="border-b border-border pb-3 md:pb-4" itemScope itemType="https://schema.org/Question">
                     <h3 className="font-semibold text-heading-accent mb-2 text-base md:text-lg" itemProp="name">How many canals are in an acre?</h3>
                     <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
@@ -1741,7 +1750,7 @@ export default function ConversionCalculatorPage() {
                       </p>
                 </div>
               </div>
-
+                  
                   <div className="border-b border-border pb-3 md:pb-4" itemScope itemType="https://schema.org/Question">
                     <h3 className="font-semibold text-heading-accent mb-2 text-base md:text-lg" itemProp="name">How to convert calculator to scientific notation?</h3>
                     <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
@@ -1750,7 +1759,7 @@ export default function ConversionCalculatorPage() {
                       </p>
             </div>
           </div>
-
+          
                   <div className="border-b border-border pb-3 md:pb-4" itemScope itemType="https://schema.org/Question">
                     <h3 className="font-semibold text-heading-accent mb-2 text-base md:text-lg" itemProp="name">How to compute conversion or calculate equivalence?</h3>
                     <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
@@ -1762,7 +1771,7 @@ export default function ConversionCalculatorPage() {
                 </div>
               </section>
 
-              {}
+              {/* Related Tools Section */}
               <section className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                 <h2 className="text-lg md:text-xl font-bold mb-4 flex items-center gap-2 text-foreground">
                   <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -1807,7 +1816,7 @@ export default function ConversionCalculatorPage() {
               </section>
 
             </section>
-
+          
           <aside className="space-y-6" aria-label="Sidebar">
             <div className="sticky top-32 space-y-6 hidden lg:block">
               <div>
@@ -1824,4 +1833,6 @@ export default function ConversionCalculatorPage() {
     </div>
   )
 }
+
+
 

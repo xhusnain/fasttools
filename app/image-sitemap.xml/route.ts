@@ -5,6 +5,7 @@ export async function GET() {
   const baseUrl = "https://www.fasttools.store"
   const currentDate = new Date()
 
+  // XML escape function to properly encode special characters
   const escapeXml = (str: string): string => {
     return str
       .replace(/&/g, '&amp;')
@@ -14,15 +15,20 @@ export async function GET() {
       .replace(/'/g, '&apos;')
   }
 
+  // Content freshness strategy for images - different update frequencies
   const getFreshnessDate = (daysAgo: number) => {
     const date = new Date()
     date.setDate(date.getDate() - daysAgo)
     return date
   }
 
+  // IMAGE SITEMAP - Only includes images that actually exist in public folder
+  // Organized by priority and avoiding duplicates
+
+  // ===== MAIN SITE IMAGES (Highest Priority) =====
   const mainImages = [
     {
-      url: "https:
+      url: "https://www.fasttools.store",
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,
       priority: 1.0,
@@ -61,6 +67,7 @@ export async function GET() {
     }
   ]
 
+  // ===== KEY TOOL CATEGORIES (High Priority) =====
   const toolCategoryImages = [
     {
       url: "https://www.fasttools.store/ai-tools",
@@ -126,6 +133,7 @@ export async function GET() {
     }
   ]
 
+  // ===== IMAGE TOOLS (High Priority) =====
   const imageToolsPages = [
     {
       url: "https://www.fasttools.store/image-tools",
@@ -259,6 +267,7 @@ export async function GET() {
     }
   ]
 
+  // ===== PDF TOOLS =====
   const pdfToolsPages = [
     {
       url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
@@ -298,6 +307,7 @@ export async function GET() {
     }
   ]
 
+  // Combine all image entries
   const allImageEntries = [
     ...mainImages,
     ...toolCategoryImages,
@@ -305,6 +315,7 @@ export async function GET() {
     ...pdfToolsPages
   ]
 
+  // Generate enhanced XML sitemap with cluster organization
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${allImageEntries.map(item => `  <url>

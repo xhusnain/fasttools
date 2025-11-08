@@ -8,7 +8,8 @@ export async function GET(request: NextRequest) {
     const date = searchParams.get('date')
     const base = searchParams.get('base') || 'EUR'
     const symbols = searchParams.get('symbols')
-
+    
+    // Validate date parameter
     if (!date) {
       return NextResponse.json(
         {
@@ -19,7 +20,8 @@ export async function GET(request: NextRequest) {
         { status: 400 }
       )
     }
-
+    
+    // Validate date format (YYYY-MM-DD)
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/
     if (!dateRegex.test(date)) {
       return NextResponse.json(
@@ -31,7 +33,8 @@ export async function GET(request: NextRequest) {
         { status: 400 }
       )
     }
-
+    
+    // Check if date is not in the future
     const requestedDate = new Date(date)
     const today = new Date()
     if (requestedDate > today) {
@@ -44,12 +47,13 @@ export async function GET(request: NextRequest) {
         { status: 400 }
       )
     }
-
+    
+    // Build the API URL
     let apiUrl = `${FRANKFURTER_API_BASE}/${date}?base=${base}`
     if (symbols) {
       apiUrl += `&symbols=${symbols}`
     }
-
+    
     const response = await fetch(apiUrl)
     if (!response.ok) {
       if (response.status === 404) {
@@ -68,7 +72,7 @@ export async function GET(request: NextRequest) {
     if (!data) {
       return NextResponse.json({ success: false, error: 'Service Unavailable', message: 'Server error. Please wait a minute and try again.' }, { status: 503 })
     }
-
+    
     return NextResponse.json({
       success: true,
       data: {
@@ -78,7 +82,7 @@ export async function GET(request: NextRequest) {
       },
       timestamp: new Date().toISOString()
     })
-
+    
   } catch (error) {
     console.error('Error fetching historical rates:', error)
     return NextResponse.json({ success: false, error: 'Service Unavailable', message: 'Server error. Please wait a minute and try again.' }, { status: 503 })

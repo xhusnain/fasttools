@@ -95,7 +95,7 @@ export default function LinkInBioPage() {
         ]}
       />
 
-        {}
+        {/* Hero Section */}
         <div className="text-center mb-8">
           <GHeader
             title="Free Link in Bio Generator – Create All-in-One Bio Page"
@@ -105,22 +105,22 @@ export default function LinkInBioPage() {
           />
         </div>
 
-        {}
+        {/* Mobile Ad Space */}
         <div className="lg:hidden mb-6">
           <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
         </div>
 
-        {}
+        {/* Main Layout */}
         <div className="flex flex-col lg:flex-row gap-8">
-          {}
+          {/* Main Content */}
           <div className="flex-1 space-y-8">
       <LinkInBioGenerator />
 
-            {}
+            {/* How to Use Section */}
             <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
               <h2 className="text-xl font-bold mb-4 text-foreground">Complete Guide: How to Use Link in Bio Generator</h2>
               <div className="space-y-6">
-                {}
+                {/* Step 1: Basic Information */}
                 <div className="p-4 rounded-lg bg-muted/30 border border-border">
                   <h3 className="font-semibold text-heading-accent mb-3 flex items-center gap-2">
                     <FileText className="h-5 w-5 text-primary" />
@@ -134,7 +134,7 @@ export default function LinkInBioPage() {
                   </div>
                 </div>
 
-                {}
+                {/* Step 2: Theme Customization */}
                 <div className="p-4 rounded-lg bg-muted/30 border border-border">
                   <h3 className="font-semibold text-heading-accent mb-3 flex items-center gap-2">
                     <Palette className="h-5 w-5 text-primary" />
@@ -147,7 +147,7 @@ export default function LinkInBioPage() {
                   </div>
                 </div>
 
-                {}
+                {/* Step 3: Text Size Customization */}
                 <div className="p-4 rounded-lg bg-muted/30 border border-border">
                   <h3 className="font-semibold text-heading-accent mb-3 flex items-center gap-2">
                     <Settings className="h-5 w-5 text-primary" />
@@ -161,7 +161,7 @@ export default function LinkInBioPage() {
                   </div>
                 </div>
 
-                {}
+                {/* Step 4: Adding Links */}
                 <div className="p-4 rounded-lg bg-muted/30 border border-border">
                   <h3 className="font-semibold text-heading-accent mb-3 flex items-center gap-2">
                     <Link className="h-5 w-5 text-primary" />
@@ -175,7 +175,7 @@ export default function LinkInBioPage() {
                   </div>
                 </div>
 
-                {}
+                {/* Step 5: Preview & Device Testing */}
                 <div className="p-4 rounded-lg bg-muted/30 border border-border">
                   <h3 className="font-semibold text-heading-accent mb-3 flex items-center gap-2">
                     <Eye className="h-5 w-5 text-primary" />
@@ -188,7 +188,7 @@ export default function LinkInBioPage() {
                   </div>
                 </div>
 
-                {}
+                {/* Step 6: Generate & Share */}
                 <div className="p-4 rounded-lg bg-muted/30 border border-border">
                   <h3 className="font-semibold text-heading-accent mb-3 flex items-center gap-2">
                     <ExternalLink className="h-5 w-5 text-primary" />
@@ -204,7 +204,7 @@ export default function LinkInBioPage() {
               </div>
             </div>
 
-            {}
+            {/* Key Features Section */}
             <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-300">
               <h2 className="text-xl font-bold mb-4 text-foreground">Advanced Features & Capabilities</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -283,7 +283,7 @@ export default function LinkInBioPage() {
               </div>
             </div>
 
-            {}
+            {/* Use Cases Section */}
             <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-400">
               <h2 className="text-xl font-bold mb-4 text-foreground">Use Cases</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -326,7 +326,7 @@ export default function LinkInBioPage() {
               </div>
             </div>
 
-            {}
+            {/* FAQ Section */}
             <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-500">
               <h2 className="text-xl font-bold mb-4 text-foreground">Frequently Asked Questions</h2>
               <div className="space-y-6">
@@ -478,6 +478,7 @@ export default function LinkInBioPage() {
             </div>
           </div>
 
+                  {/* Sidebar */}
                   <div className="hidden xl:block w-80">
                     <div className="sticky top-32">
                       <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

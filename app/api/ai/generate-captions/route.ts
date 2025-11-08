@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     const result = await generateSocialMediaCaptions(description, platform, 5)
 
     if (!result.success) {
-
+      // Fallback to OpenAI if Gemini fails
       if (env.geminiApiKey) {
         try {
           const prompt = `Generate 5 engaging ${platform} captions for an image with this description: "${description}"
@@ -44,13 +44,14 @@ Return ONLY a JSON array of strings, like: ["caption 1", "caption 2", "caption 3
         }
       }
 
+      // Handle different error scenarios with user-friendly messages
       if (result.error?.includes("quota")) {
         return NextResponse.json(
           { error: "AI service is experiencing high demand. Please wait a moment and try again." },
           { status: 503 }
         )
       }
-
+      
       if (result.error?.includes("safety")) {
         return NextResponse.json(
           { error: "Content could not be generated due to safety guidelines. Please try a different description." },
@@ -65,9 +66,10 @@ Return ONLY a JSON array of strings, like: ["caption 1", "caption 2", "caption 3
     }
 
     try {
-
+      // Extract JSON from various response formats
       let jsonText = result.text.trim()
-
+      
+      // Remove markdown code blocks if present
       if (jsonText.includes('```json')) {
         const match = jsonText.match(/```json\s*([\s\S]*?)\s*```/)
         if (match) {
@@ -79,14 +81,15 @@ Return ONLY a JSON array of strings, like: ["caption 1", "caption 2", "caption 3
           jsonText = match[1].trim()
         }
       }
-
+      
+      // Try to find JSON array in the response
       const jsonMatch = jsonText.match(/\[[\s\S]*?\]/)
       if (jsonMatch) {
         jsonText = jsonMatch[0]
       }
-
+      
       const captions = JSON.parse(jsonText)
-
+      
       if (!Array.isArray(captions) || captions.length === 0) {
         throw new Error("Invalid response format")
       }
@@ -102,7 +105,8 @@ Return ONLY a JSON array of strings, like: ["caption 1", "caption 2", "caption 3
     }
   } catch (error) {
     console.error("Caption generation error:", error)
-
+    
+    // Handle rate limiting and other common errors
     if (error instanceof Error && error.message.includes("rate limit")) {
       return NextResponse.json(
         { error: "Too many requests. Please wait a moment before trying again." },

@@ -38,15 +38,15 @@ export function TemperatureConverter() {
 
   return (
     <div className="space-y-4">
-      {}
+      {/* Main Converter */}
       <div className="bg-card border border-border rounded-lg p-4 shadow-sm">
         <div className="flex items-center gap-2 mb-4">
           <Thermometer className="h-4 w-4 text-foreground" />
           <h3 className="text-lg font-semibold text-card-foreground">Temperature Converter</h3>
         </div>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
-          {}
+          {/* Celsius Input */}
           <div className="space-y-2">
             <label className="text-sm font-medium text-card-foreground">Celsius (°C)</label>
             <input
@@ -58,19 +58,19 @@ export function TemperatureConverter() {
             />
           </div>
 
-          {}
+          {/* Swap Button */}
           <div className="flex justify-center">
-            <Button
-              onClick={swapValues}
-              variant="outline"
-              size="sm"
+            <Button 
+              onClick={swapValues} 
+              variant="outline" 
+              size="sm" 
               className="h-8 w-8 p-0 border-primary hover:bg-primary hover:text-white"
             >
               <ArrowLeftRight className="h-4 w-4" />
             </Button>
           </div>
 
-          {}
+          {/* Fahrenheit Input */}
           <div className="space-y-2">
             <label className="text-sm font-medium text-card-foreground">Fahrenheit (°F)</label>
             <input
@@ -83,7 +83,7 @@ export function TemperatureConverter() {
           </div>
         </div>
 
-        {}
+        {/* Result Display */}
         {celsius && fahrenheit && (
           <div className="mt-4 p-3 bg-muted rounded-md border border-primary/20">
             <p className="text-sm text-center">
@@ -95,7 +95,7 @@ export function TemperatureConverter() {
         )}
       </div>
 
-      {}
+      {/* Quick Reference */}
       <div className="bg-card border border-border rounded-lg p-4 shadow-sm">
         <h4 className="text-sm font-semibold text-card-foreground mb-3">Quick Reference</h4>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">

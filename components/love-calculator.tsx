@@ -63,10 +63,11 @@ export function LoveCalculator() {
 
   const currentTheme = themes[theme as keyof typeof themes]
 
+  // Load shared result from URL
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search)
     const resultParam = urlParams.get('result')
-
+    
     if (resultParam) {
       try {
         const decodedData = JSON.parse(decodeURIComponent(resultParam))
@@ -91,13 +92,13 @@ export function LoveCalculator() {
     setIsCalculating(true)
 
     setTimeout(() => {
-
+      // Fun algorithm: use name lengths and character codes
       const combined = (name1 + name2).toLowerCase()
       let sum = 0
       for (let i = 0; i < combined.length; i++) {
         sum += combined.charCodeAt(i)
       }
-      const percentage = sum % 101
+      const percentage = sum % 101 // 0-100
 
       let message = ""
       let emoji = ""
@@ -138,7 +139,8 @@ export function LoveCalculator() {
 
   const shareResult = () => {
     if (!result) return
-
+    
+    // Create shareable URL with result data
     const shareData = {
       name1,
       name2,
@@ -147,20 +149,21 @@ export function LoveCalculator() {
       emoji: result.emoji,
       theme
     }
-
+    
+    // Encode the data for URL using encodeURIComponent to handle Unicode characters
     const jsonString = JSON.stringify(shareData)
     const encodedData = encodeURIComponent(jsonString)
-    const shareUrl = `https:
-
+    const shareUrl = `https://www.fasttools.store/calculator/love-calculator?result=${encodedData}`
+    
     const text = `Check out our love match! ${name1} + ${name2} = ${result.percentage}% Love Match! ${result.emoji}\n\nSee your own love match: ${shareUrl}`
-
+    
     if (navigator.share) {
-      navigator.share({
+      navigator.share({ 
         text,
         url: shareUrl
       })
     } else {
-
+      // Fallback: copy to clipboard
       navigator.clipboard.writeText(text)
       setCopied(true)
       setTimeout(() => setCopied(false), 3000)
@@ -189,7 +192,7 @@ export function LoveCalculator() {
         )}
       </CardHeader>
       <CardContent className="space-y-6">
-        {}
+        {/* Theme Selector */}
         <div className="space-y-2">
           <Label className="text-sm font-medium text-white flex items-center gap-2">
             <Palette className={`h-4 w-4 ${currentTheme.icon}`} />
@@ -211,8 +214,8 @@ export function LoveCalculator() {
               ))}
             </SelectContent>
           </Select>
-
-          {}
+          
+          {/* Theme Preview */}
           <div className={`p-3 rounded-lg bg-gradient-to-r ${currentTheme.bg} border ${currentTheme.border} mt-2`}>
             <div className="flex items-center gap-2 text-xs text-white/80">
               <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${currentTheme.gradient}`}></div>
@@ -331,15 +334,15 @@ export function LoveCalculator() {
                 Share URL
               </Button>
             </div>
-
-            {}
+            
+            {/* Share URL Info */}
             <div className="p-3 rounded-lg bg-white/5 border border-white/10">
               <p className="text-xs text-white/70 text-center">
                 💕 Share this URL to let others see your love match result!
               </p>
             </div>
-
-            {}
+            
+            {/* Try Your Own Button for Shared Results */}
             {isSharedResult && (
               <div className="mt-4">
                 <Button
@@ -348,7 +351,7 @@ export function LoveCalculator() {
                     setName2('')
                     setResult(null)
                     setIsSharedResult(false)
-
+                    // Clear URL parameters
                     window.history.replaceState({}, document.title, window.location.pathname)
                   }}
                   className={`w-full h-11 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white`}

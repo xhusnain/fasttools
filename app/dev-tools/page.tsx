@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Code2, FileJson, Palette, Hash, FileCode, Braces, Code, Globe, ArrowRight } from "lucide-react"
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "Free online developer tools for Chrome, Safari, Firefox & Edge. Access browser DevTools, React developer tools, JWT decoder, regex tester, JSON to CSV converter, HTML beautifier. No signup required - essential coding utilities for web development.",
   keywords: [
-
+    // High volume keywords
     "developer tools react",
     "developer tools for chrome",
     "developer tools for safari",
@@ -46,7 +47,8 @@ export const metadata: Metadata = {
     "developer tools mac safari",
     "developer tools on ipad",
     "developer tools google",
-
+    
+    // Additional platform & browser keywords
     "developer tools access",
     "developer tools discord",
     "developer tools in word",
@@ -82,12 +84,14 @@ export const metadata: Metadata = {
     "developer tools tutorial",
     "developer tool kit",
     "developer command line tools",
-
+    
+    // Year-specific & AI keywords
     "developer tools 2025",
     "ai developer tools 2025",
     "developer tools 2024",
     "developer tools ai",
-
+    
+    // Application & integration keywords
     "developer tools app",
     "developer tools bhutan",
     "developer tools chrome mobile android",
@@ -119,7 +123,8 @@ export const metadata: Metadata = {
     "developer tools keyboard shortcut",
     "developer tools windows 10",
     "microsoft developer tools 365",
-
+    
+    // Technical & troubleshooting keywords
     "developer tools for upnp technologies",
     "developer tools for xcode macos",
     "developer tools chrome iphone",
@@ -190,7 +195,8 @@ export const metadata: Metadata = {
     "developer tools office 365",
     "firefox developer tools 3d view",
     "windows developer tools 3.2",
-
+    
+    // Advanced technical & version-specific keywords
     "edge developer tools 3d view",
     "developer tools excel 365",
     "developer tools unreal engine 5",
@@ -296,7 +302,8 @@ export const metadata: Metadata = {
     "developer tools vue",
     "developer tools vencord",
     "developer tools vc",
-
+    
+    // Extended platform & utility keywords
     "developer tools view",
     "developer tools view headers",
     "developer tools vivo",
@@ -395,7 +402,8 @@ export const metadata: Metadata = {
     "quest developer tools",
     "facebook react developer tools 5.1 0",
     "developer tools ha",
-
+    
+    // High-value core keywords
     "oracle developer tools",
     "chrome developer tools",
     "developer tools safari",
@@ -537,7 +545,8 @@ export const metadata: Metadata = {
     "extension react developer tools",
     "developer tools salesforce",
     "what is developer tools in chrome",
-
+    
+    // Shortcuts & operations keywords
     "near tool shop",
     "developer tools examples",
     "no developer tools were found requesting install",
@@ -594,7 +603,8 @@ export const metadata: Metadata = {
     "keyboard shortcut for developer tools",
     "close developer tools firefox",
     "close developer tool to see page",
-
+    
+    // High-traffic browser & platform keywords
     "developer tools safari",
     "developer tools chrome android",
     "developer tools chrome mobile",
@@ -615,7 +625,8 @@ export const metadata: Metadata = {
     "developer tools vs code",
     "developer tools and platforms",
     "developer tools and frameworks",
-
+    
+    // Comparison keywords
     "firefox developer tools vs chrome devtools",
     "chrome developer tools vs firefox",
     "safari developer tools vs chrome",
@@ -628,7 +639,8 @@ export const metadata: Metadata = {
     "safari developer tools like chrome",
     "tools i use as a developer",
     "react developer tools vs code",
-
+    
+    // Core keywords
     "developer tools",
     "free developer tools",
     "JWT decoder",
@@ -785,7 +797,7 @@ export default function DevToolsPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {}
+                {/* Hero Section */}
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <GHeader
                     title="Free Developer Tools - JWT, Regex, JSON to CSV & More"
@@ -795,7 +807,7 @@ export default function DevToolsPage() {
                   />
                 </div>
 
-                {}
+                {/* Mobile Ad Space */}
                 <div className="lg:hidden">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
@@ -832,7 +844,7 @@ export default function DevToolsPage() {
           ))}
         </div>
 
-                {}
+                {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-200">
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Chrome Developer Tools - Complete Guide & Access Methods</h2>
@@ -1021,10 +1033,10 @@ export default function DevToolsPage() {
                     </p>
                   </div>
 
-                  {}
+                  {/* Comprehensive FAQ Section */}
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Developer Tools FAQ - Comprehensive Guide</h2>
-
+                    
                     <div className="space-y-6">
           <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What are developer tools?</h3>
@@ -1036,7 +1048,7 @@ export default function DevToolsPage() {
           <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">How to open developer tools in Chrome?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          How to access developer tools in chrome: Press F12, Ctrl+Shift+I (Windows/Linux), or Cmd+Option+I (Mac). How to open developer tools in chrome shortcut is the fastest method. Alternatively, right-click any element and select "Inspect" or access through Chrome menu &gt; More Tools &gt; Developer Tools. How open developer tools in chrome on mobile: Chrome Android doesn&apos;t have built-in DevTools, but you can use remote debugging by connecting your device to a computer via USB and accessing chrome:
+                          How to access developer tools in chrome: Press F12, Ctrl+Shift+I (Windows/Linux), or Cmd+Option+I (Mac). How to open developer tools in chrome shortcut is the fastest method. Alternatively, right-click any element and select "Inspect" or access through Chrome menu &gt; More Tools &gt; Developer Tools. How open developer tools in chrome on mobile: Chrome Android doesn&apos;t have built-in DevTools, but you can use remote debugging by connecting your device to a computer via USB and accessing chrome://inspect. How to open developer tools in chrome android mobile requires enabling USB debugging in Android developer options first. Where is developer tools in chrome? Look for the three-dot menu icon in the top-right corner, then navigate to More Tools &gt; Developer Tools. Where are developer tools in chrome can also be found through the View menu. What is developer tools in chrome provides comprehensive web development capabilities including element inspection, console, network monitoring, performance profiling, and JavaScript debugging.
                         </p>
                       </div>
 
@@ -1141,6 +1153,7 @@ export default function DevToolsPage() {
           <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What is developer tools console?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
+                          What is developer tools console: The console is a command-line interface within browser DevTools that executes JavaScript code, displays error messages and warnings, logs debugging information from console.log() statements, shows network errors and security warnings, allows DOM manipulation through direct JavaScript commands, provides autocomplete for available functions and objects, and enables real-time interaction with page variables. It's the primary tool for JavaScript debugging and testing code snippets directly in the browser context.
                         </p>
           </div>
 
@@ -1217,7 +1230,7 @@ export default function DevToolsPage() {
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">Mobile Browser with Developer Tools</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          Mobile browser with developer tools options: Kiwi Browser (browser with developer tools for android) supports Chrome extensions including DevTools. Eruda mobile console provides on-device debugging. Browser with developer tools for ios requires remote debugging through Mac Safari - connect iPhone/iPad via USB for inspection. Browser with developer tools for android includes Chrome remote debugging via chrome:
+                          Mobile browser with developer tools options: Kiwi Browser (browser with developer tools for android) supports Chrome extensions including DevTools. Eruda mobile console provides on-device debugging. Browser with developer tools for ios requires remote debugging through Mac Safari - connect iPhone/iPad via USB for inspection. Browser with developer tools for android includes Chrome remote debugging via chrome://inspect. In developer tools on mobile requires desktop connection for full DevTools experience. Developer use tools on mobile through remote debugging or specialized mobile browsers with console access.
                         </p>
                       </div>
 
@@ -1287,7 +1300,7 @@ export default function DevToolsPage() {
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">Developer Tools Android - Mobile Development</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-Developer tools android includes Android Studio (official IDE), Chrome DevTools for mobile debugging via chrome:
+                          Developer tools android includes Android Studio (official IDE), Chrome DevTools for mobile debugging via chrome://inspect, ADB (Android Debug Bridge) for device communication, and Android Profiler for performance analysis. Developer tools chrome android enables remote debugging by connecting Android devices via USB and accessing chrome://inspect in desktop Chrome. Browser with developer tools for android includes Kiwi Browser, which supports Chrome extensions. Mobile debugging requires enabling USB debugging in Android Developer Options, connecting device via USB, and authorizing the connection for full DevTools access.
                         </p>
                       </div>
 
@@ -1315,7 +1328,7 @@ Developer tools android includes Android Studio (official IDE), Chrome DevTools 
                   </div>
                 </div>
               </div>
-              {}
+              {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
               <div className="hidden lg:block w-72">
                 <div className="sticky top-32 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

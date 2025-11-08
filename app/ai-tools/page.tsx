@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Breadcrumbs } from "@/components/breadcrumbs"
@@ -6,6 +7,7 @@ import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { QrCode, Music, ImageIcon, Heart, Code, Globe, ArrowRight } from "lucide-react"
 
+// Auto-update year
 const currentYear = new Date().getFullYear()
 
 export const metadata: Metadata = {
@@ -70,7 +72,7 @@ const jsonLd = {
     "@type": "SoftwareApplication",
     "name": tool.title,
     "description": tool.description,
-    "url": `https:
+    "url": `https://www.fasttools.store${tool.href}`,
     "applicationCategory": "WebApplication",
     "offers": {
       "@type": "Offer",
@@ -95,7 +97,7 @@ export default function AiToolsPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {}
+                {/* Hero Section */}
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <GHeader
                     title="Free AI Tools – QR Codes, Lyrics, Captions & Pet Names"
@@ -105,7 +107,7 @@ export default function AiToolsPage() {
                   />
         </div>
 
-                {}
+                {/* Mobile Ad Space */}
                 <div className="lg:hidden">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
@@ -121,7 +123,7 @@ export default function AiToolsPage() {
                         <div className="flex items-start gap-3">
                           <div className="h-9 w-9 rounded-lg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300 flex-shrink-0 bg-primary/10 border border-primary/20">
                             <tool.icon className="h-4 w-4 text-primary" />
-                          </div>
+        </div>
                           <div className="flex-1 min-w-0">
                             <CardTitle className="text-sm md:text-base font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-2">{tool.title}</CardTitle>
                             <CardDescription className="leading-relaxed text-[11px] md:text-xs text-muted-foreground line-clamp-2">
@@ -142,7 +144,7 @@ export default function AiToolsPage() {
                   ))}
                 </div>
 
-                {}
+                {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-200">
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Best AI Tools ${currentYear} - Complete Guide to Free AI Software</h2>
@@ -234,10 +236,10 @@ export default function AiToolsPage() {
                     </p>
                   </div>
 
-                  {}
+                  {/* Comprehensive FAQ Section - 4000+ Words */}
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">AI Tools FAQ - Complete Guide ${currentYear} (Most Asked Questions)</h2>
-
+                    
                     <div className="space-y-6">
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What are AI tools and how do they work?</h3>
@@ -368,7 +370,7 @@ export default function AiToolsPage() {
                   </div>
                 </div>
               </div>
-              {}
+              {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
               <div className="hidden lg:block w-72">
                 <div className="sticky top-32 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

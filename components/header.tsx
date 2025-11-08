@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useState, useEffect } from "react"
 import { Menu, X, Wrench, Search } from "lucide-react"
 import { SearchBar } from "@/components/search-bar"
@@ -25,17 +26,17 @@ export function Header() {
 
   return (
     <>
-      {}
+      {/* Gradient accent bar at the very top */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-orange-400 to-primary/90" />
-
+      
       <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-border/10 transition-all duration-300">
         <nav className="container mx-auto flex items-center justify-between h-16 sm:h-20 md:h-24 px-4 lg:px-8">
-
-          {}
+          
+          {/* Left side - Logo */}
           <div className="flex items-center">
-            <Link
-              href="/"
-              aria-label="FastTools home"
+            <Link 
+              href="/" 
+              aria-label="FastTools home" 
               className="flex items-center gap-2 sm:gap-3 group transition-all duration-300"
             >
               <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-primary flex items-center justify-center">
@@ -49,7 +50,7 @@ export function Header() {
             </Link>
           </div>
 
-          {}
+          {/* Center - Navigation Links (Desktop) */}
           <div className="hidden lg:flex items-center gap-2">
             {navLinks.map((link) => (
               <Link
@@ -62,7 +63,7 @@ export function Header() {
                 }`}
               >
                 {link.label}
-                {}
+                {/* Active indicator dot */}
                 {pathname === link.href && (
                   <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-white animate-pulse" />
                 )}
@@ -70,7 +71,7 @@ export function Header() {
             ))}
           </div>
 
-          {}
+          {/* Right side - Desktop Search */}
           <div className="hidden lg:flex items-center gap-2">
             <ThemeToggle />
             {!showSearch ? (
@@ -94,7 +95,7 @@ export function Header() {
             )}
           </div>
 
-          {}
+          {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 lg:hidden">
             <ThemeToggle />
             {!showSearch ? (
@@ -129,16 +130,16 @@ export function Header() {
         </nav>
       </header>
 
-      {}
-      <div
+      {/* Mobile Menu Dropdown */}
+      <div 
         className={`lg:hidden fixed inset-x-0 top-16 sm:top-20 md:top-24 z-40 bg-background/98 backdrop-blur-xl border-b border-border/10 transition-all duration-300 ease-out ${
-          mobileMenuOpen
-            ? 'max-h-screen opacity-100 visible'
+          mobileMenuOpen 
+            ? 'max-h-screen opacity-100 visible' 
             : 'max-h-0 opacity-0 invisible'
         }`}
       >
         <div className="container mx-auto px-4 py-6 space-y-3">
-          {}
+          {/* Mobile Navigation Links */}
           {navLinks.map((link) => (
             <Link
               key={link.href}

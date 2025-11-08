@@ -6,19 +6,20 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import {
-  GraduationCap,
-  Copy,
-  Check,
-  Plus,
-  Trash2,
-  Calculator,
-  Target,
-  BookOpen,
-  Award,
-  BarChart3,
-  PieChart,
-  Lightbulb,
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { 
+  GraduationCap, 
+  Copy, 
+  Check, 
+  Plus, 
+  Trash2, 
+  Calculator, 
+  Target, 
+  BookOpen, 
+  Award, 
+  BarChart3, 
+  PieChart, 
+  Lightbulb, 
   Settings
 } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
@@ -114,7 +115,7 @@ export function GPACalculator() {
     setShowAdvanced(true)
 
     setTimeout(() => {
-      const validCourses = courses.filter(course =>
+      const validCourses = courses.filter(course => 
         course.name.trim() && course.credits > 0 && course.grade !== ""
       )
 
@@ -244,7 +245,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
 
   return (
     <div className="space-y-4">
-      {}
+      {/* Main GPA Calculator */}
       <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader className="pb-2 px-3 sm:px-6">
           <CardTitle className="flex items-center gap-1.5 text-base text-foreground">
@@ -258,7 +259,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4 px-3 sm:px-6">
-          {}
+          {/* Grading System Selection */}
           <div className="space-y-1">
             <Label htmlFor="grading-system" className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
               <Settings className="h-2.5 w-2.5 text-heading-accent" />
@@ -277,7 +278,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
             </Select>
           </div>
 
-          {}
+          {/* Courses Section */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <Label className="text-[11px] font-medium flex items-center gap-1 text-heading-accent">
@@ -355,7 +356,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
             </div>
           </div>
 
-          {}
+          {/* Calculate Button */}
           <Button
             onClick={calculateGPA}
             className="w-full h-9 text-xs font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
@@ -376,7 +377,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
         </CardContent>
       </Card>
 
-      {}
+      {/* GPA Planning Calculator */}
       <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader className="pb-2 px-3 sm:px-6">
           <CardTitle className="flex items-center gap-1.5 text-base text-foreground">
@@ -478,7 +479,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
         </CardContent>
       </Card>
 
-      {}
+      {/* Results Section */}
       {result && !isCalculating && (
         <Card className="shadow-lg border-border animate-fade-in-up bg-card">
           <CardHeader className="pb-3 px-3 sm:px-6">
@@ -493,7 +494,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4 px-3 sm:px-6">
-            {}
+            {/* Main GPA Display */}
             <div className="text-center p-4 rounded-xl bg-card border border-primary/20">
               <div className="text-2xl sm:text-3xl font-bold text-foreground mb-1">
                 {result.gpa}
@@ -506,7 +507,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
               </div>
             </div>
 
-            {}
+            {/* Detailed Breakdown */}
             <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
               <div className="text-sm font-semibold mb-2 text-heading-accent flex items-center gap-2">
                 <BarChart3 className="h-3.5 w-3.5" />
@@ -528,7 +529,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
               </div>
             </div>
 
-            {}
+            {/* Grade Distribution */}
             {showGradeDistribution && (
               <div className="p-3 bg-card rounded-xl border border-border">
                 <div className="text-xs font-semibold text-heading-accent mb-2 flex items-center gap-1.5">
@@ -548,7 +549,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
               </div>
             )}
 
-            {}
+            {/* Improvement Suggestions */}
             {result.improvementSuggestions.length > 0 && (
               <div className="p-3 bg-card rounded-xl border border-border">
                 <div className="text-xs font-semibold text-heading-accent mb-2 flex items-center gap-1.5">
@@ -566,7 +567,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
               </div>
             )}
 
-            {}
+            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-2">
               <Button
                 onClick={copyResult}

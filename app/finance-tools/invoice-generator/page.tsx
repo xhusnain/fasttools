@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { Code, Globe, Calculator, ArrowRight, FileText, DollarSign, Percent, Users } from "lucide-react"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
@@ -12,116 +13,137 @@ export const metadata: Metadata = {
   keywords: [
     "fasttools",
     "fast tools",
-
+    // Core Invoice Keywords
     "invoice generator", "free invoice generator", "free invoice maker", "invoice template", "professional invoice",
     "freelance invoice", "business invoice", "pdf invoice generator", "invoice with tax", "invoice with discount",
     "invoice currency", "download invoice pdf", "print invoice", "invoice number format", "client invoice",
     "service invoice", "product invoice", "hourly invoice", "fixed fee invoice", "invoice terms",
-
+    
+    // Multi-Language Invoice Keywords (15 languages)
     "invoice generator english", "invoice generator chinese", "invoice generator hindi", "invoice generator spanish",
     "invoice generator french", "invoice generator arabic", "invoice generator portuguese", "invoice generator russian",
     "invoice generator japanese", "invoice generator german", "invoice generator korean", "invoice generator italian",
     "invoice generator turkish", "invoice generator polish", "invoice generator dutch",
-
+    
+    // Language-Specific Invoice Terms
     "factura generator", "facture generator", "rechnung generator", "fattura generator", "fatura generator",
     "請求書 generator", "청구서 generator", "фактура generator", "فاتورة generator", "发票 generator",
     "faktura generator", "rachunek generator", "factuur generator", "invoice maker hindi", "invoice maker spanish",
     "invoice maker french", "invoice maker german", "invoice maker chinese", "invoice maker arabic",
-
+    
+    // Invoice in Specific Languages
     "invoice in english", "invoice in spanish", "invoice in french", "invoice in german", "invoice in chinese",
     "invoice in arabic", "invoice in portuguese", "invoice in russian", "invoice in japanese", "invoice in korean",
     "invoice in hindi", "invoice in italian", "invoice in turkish", "invoice in polish", "invoice in dutch",
-
+    
+    // Invoice Generator in Specific Languages
     "invoice generator in english", "invoice generator in spanish", "invoice generator in french", "invoice generator in german",
     "invoice generator in chinese", "invoice generator in arabic", "invoice generator in portuguese", "invoice generator in russian",
     "invoice generator in japanese", "invoice generator in korean", "invoice generator in hindi", "invoice generator in italian",
     "invoice generator in turkish", "invoice generator in polish", "invoice generator in dutch",
-
+    
+    // Free Invoice in Specific Languages
     "free invoice in english", "free invoice in spanish", "free invoice in french", "free invoice in german",
     "free invoice in chinese", "free invoice in arabic", "free invoice in portuguese", "free invoice in russian",
     "free invoice in japanese", "free invoice in korean", "free invoice in hindi", "free invoice in italian",
     "free invoice in turkish", "free invoice in polish", "free invoice in dutch",
-
+    
+    // Currency-Specific Invoice Keywords (Major Currencies)
     "invoice generator USD", "invoice generator EUR", "invoice generator GBP", "invoice generator JPY",
     "invoice generator CAD", "invoice generator AUD", "invoice generator CHF", "invoice generator CNY",
     "invoice generator INR", "invoice generator KRW", "invoice generator SGD", "invoice generator HKD",
     "invoice generator THB", "invoice generator MYR", "invoice generator PHP", "invoice generator VND",
     "invoice generator PKR", "invoice generator BDT", "invoice generator LKR", "invoice generator NPR",
-
+    
+    // Currency-Specific Invoice Terms
     "dollar invoice generator", "euro invoice generator", "pound invoice generator", "yen invoice generator",
     "rupee invoice generator", "won invoice generator", "peso invoice generator", "baht invoice generator",
     "ringgit invoice generator", "rupiah invoice generator", "dong invoice generator", "taka invoice generator",
     "yuan invoice generator", "franc invoice generator", "real invoice generator", "ruble invoice generator",
-
+    
+    // Regional Currency Invoice Keywords
     "US dollar invoice", "euro invoice", "british pound invoice", "japanese yen invoice", "canadian dollar invoice",
     "australian dollar invoice", "swiss franc invoice", "chinese yuan invoice", "indian rupee invoice",
     "south korean won invoice", "singapore dollar invoice", "hong kong dollar invoice", "thai baht invoice",
     "malaysian ringgit invoice", "indonesian rupiah invoice", "philippine peso invoice", "vietnamese dong invoice",
     "pakistani rupee invoice", "bangladeshi taka invoice", "sri lankan rupee invoice", "nepalese rupee invoice",
-
+    
+    // Business Type + Currency Combinations
     "freelance invoice USD", "business invoice EUR", "consulting invoice GBP", "agency invoice JPY",
     "small business invoice CAD", "startup invoice AUD", "self employed invoice CHF", "contractor invoice CNY",
     "professional invoice INR", "service invoice KRW", "product invoice SGD", "hourly invoice HKD",
-
+    
+    // Multi-Language + Currency Combinations
     "english invoice USD", "spanish invoice EUR", "french invoice GBP", "german invoice JPY",
     "chinese invoice CNY", "arabic invoice AED", "portuguese invoice BRL", "russian invoice RUB",
     "japanese invoice JPY", "korean invoice KRW", "hindi invoice INR", "italian invoice EUR",
     "turkish invoice TRY", "polish invoice PLN", "dutch invoice EUR",
-
+    
+    // Long-tail Multi-Language Keywords
     "free invoice generator english", "free invoice generator spanish", "free invoice generator french",
     "free invoice generator german", "free invoice generator chinese", "free invoice generator arabic",
     "free invoice generator portuguese", "free invoice generator russian", "free invoice generator japanese",
     "free invoice generator korean", "free invoice generator hindi", "free invoice generator italian",
     "free invoice generator turkish", "free invoice generator polish", "free invoice generator dutch",
-
+    
+    // Professional Invoice in Languages
     "professional invoice in english", "professional invoice in spanish", "professional invoice in french",
     "professional invoice in german", "professional invoice in chinese", "professional invoice in arabic",
     "professional invoice in portuguese", "professional invoice in russian", "professional invoice in japanese",
     "professional invoice in korean", "professional invoice in hindi", "professional invoice in italian",
     "professional invoice in turkish", "professional invoice in polish", "professional invoice in dutch",
-
+    
+    // Business Invoice in Languages
     "business invoice in english", "business invoice in spanish", "business invoice in french",
     "business invoice in german", "business invoice in chinese", "business invoice in arabic",
     "business invoice in portuguese", "business invoice in russian", "business invoice in japanese",
     "business invoice in korean", "business invoice in hindi", "business invoice in italian",
     "business invoice in turkish", "business invoice in polish", "business invoice in dutch",
-
+    
+    // Freelance Invoice in Languages
     "freelance invoice in english", "freelance invoice in spanish", "freelance invoice in french",
     "freelance invoice in german", "freelance invoice in chinese", "freelance invoice in arabic",
     "freelance invoice in portuguese", "freelance invoice in russian", "freelance invoice in japanese",
     "freelance invoice in korean", "freelance invoice in hindi", "freelance invoice in italian",
     "freelance invoice in turkish", "freelance invoice in polish", "freelance invoice in dutch",
-
+    
+    // Long-tail Currency Keywords
     "free invoice generator USD", "free invoice generator EUR", "free invoice generator GBP",
     "free invoice generator JPY", "free invoice generator CAD", "free invoice generator AUD",
     "free invoice generator CHF", "free invoice generator CNY", "free invoice generator INR",
     "free invoice generator KRW", "free invoice generator SGD", "free invoice generator HKD",
-
+    
+    // Professional Invoice Keywords
     "professional invoice generator", "business invoice maker", "freelance invoice creator",
     "small business invoice tool", "startup invoice generator", "self employed invoice maker",
     "independent contractor invoice", "consulting invoice generator", "agency invoice creator",
     "corporate invoice generator", "enterprise invoice maker", "commercial invoice creator",
-
+    
+    // Technical Invoice Keywords
     "pdf invoice generator", "printable invoice maker", "downloadable invoice creator",
     "online invoice generator", "web based invoice maker", "browser invoice generator",
     "no login invoice tool", "instant invoice generator", "quick invoice maker",
     "automated invoice generator", "smart invoice creator", "advanced invoice maker",
-
+    
+    // Feature-Specific Keywords
     "invoice with tax calculator", "invoice with discount calculator", "invoice with currency converter",
     "invoice with logo upload", "invoice with branding", "invoice with payment terms",
     "invoice with due date", "invoice with notes", "invoice with terms and conditions",
     "invoice with itemized billing", "invoice with hourly rates", "invoice with fixed fees",
-
+    
+    // Industry-Specific Keywords
     "freelancer invoice generator", "consultant invoice maker", "contractor invoice creator",
     "agency invoice generator", "service provider invoice maker", "professional services invoice",
     "creative services invoice", "digital marketing invoice", "web development invoice",
     "graphic design invoice", "writing services invoice", "translation services invoice",
-
+    
+    // Geographic Keywords
     "invoice generator USA", "invoice generator UK", "invoice generator Canada", "invoice generator Australia",
     "invoice generator Germany", "invoice generator France", "invoice generator Spain", "invoice generator Italy",
     "invoice generator Japan", "invoice generator China", "invoice generator India", "invoice generator Korea",
     "invoice generator Singapore", "invoice generator Malaysia", "invoice generator Thailand", "invoice generator Philippines",
-
+    
+    // Additional SEO Keywords
     "payment due date", "invoice notes", "logo on invoice", "invoice branding", "invoice totals",
     "subtotal tax total", "invoice fields", "bill to ship to", "invoice preview", "send invoice",
     "email invoice", "no login invoice tool", "online invoice maker", "invoice generator tool"
@@ -162,19 +184,19 @@ export const metadata: Metadata = {
         "Create professional invoices in 15+ languages and 200+ currencies. Auto tax, logo upload, instant PDF download — free, secure, and no sign-up needed.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: {
-        "@type": "Offer",
-        price: "0",
+      offers: { 
+        "@type": "Offer", 
+        price: "0", 
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
       featureList: [
-        "15 languages support",
-        "200+ currencies",
-        "Items & taxes",
-        "Discounts",
-        "Currency conversion",
-        "Branding",
+        "15 languages support", 
+        "200+ currencies", 
+        "Items & taxes", 
+        "Discounts", 
+        "Currency conversion", 
+        "Branding", 
         "PDF download",
         "Professional invoices",
         "Business invoices",
@@ -191,9 +213,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: {
-        "@type": "Organization",
-        name: "FastTools",
+      publisher: { 
+        "@type": "Organization", 
+        name: "FastTools", 
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -239,7 +261,7 @@ export default function InvoiceGeneratorPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {}
+                {/* Hero Section */}
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-4 shadow-md">
                     <Code className="h-4 w-4 animate-pulse" />
@@ -275,7 +297,7 @@ export default function InvoiceGeneratorPage() {
                   </div>
         </div>
 
-                {}
+                {/* Mobile/Tablet Ad - Top of Page */}
                 <div className="block xl:hidden mb-6">
                   <div className="text-center mb-2">
                     <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -283,12 +305,12 @@ export default function InvoiceGeneratorPage() {
                   <AdSpace slot="header" className="w-full h-24 border border-border rounded-xl shadow-sm bg-card" />
         </div>
 
-                {}
+                {/* Invoice Generator Tool */}
                 <div className="animate-fade-in-up">
         <InvoiceGenerator />
                 </div>
 
-                {}
+                {/* Mobile/Tablet Ad - After Tool */}
                 <div className="block xl:hidden my-8">
                   <div className="text-center mb-2">
                     <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -296,7 +318,7 @@ export default function InvoiceGeneratorPage() {
                   <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
                 </div>
 
-                {}
+                {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-200">
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-card-foreground">Professional Multi-Language Invoice Generator</h2>
@@ -337,7 +359,7 @@ export default function InvoiceGeneratorPage() {
                     </p>
                   </div>
 
-                  {}
+                  {/* FAQ Section */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -384,6 +406,7 @@ export default function InvoiceGeneratorPage() {
                     </div>
                   </div>
 
+                  {/* Related Tools Section */}
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-card-foreground">Related Finance Tools</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -416,7 +439,7 @@ export default function InvoiceGeneratorPage() {
                   </div>
                 </div>
               </div>
-
+              {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
               <div className="hidden lg:block w-72">
                 <div className="sticky top-32 space-y-6">
                   <div>

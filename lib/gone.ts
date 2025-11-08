@@ -1,7 +1,18 @@
-
+/**
+ * List of permanently deleted URLs (410 Gone)
+ * 
+ * These URLs will return a 410 Gone status, which tells search engines
+ * that the content is permanently removed and should be removed from their index.
+ * 
+ * Google's Policy:
+ * - 410 Gone signals that a page is permanently deleted
+ * - Google will remove these URLs from search results faster than 404
+ * - No SEO penalty for returning 410/404 for deleted content
+ * - You can also use Google Search Console to request URL removal
+ */
 
 export const goneUrls = new Set([
-
+  // Guide pages that were removed
   '/guides/instagram-dp-viewer-guide',
   '/guides/ai-qr-art-generator-guide',
   '/guides/sales-tax-calculator-guide',
@@ -51,12 +62,14 @@ export const goneUrls = new Set([
   '/guides/color-palette-generator-guide',
   '/guides/hex-to-rgb-converter-guide',
 
+  // Tool pages that were removed or renamed
   '/tools/body-fat-calculator',
   '/tools/mortgage-calculator',
   '/tools/bmr-calculator',
   '/tools/interest-rate-calculator',
   '/tools/scientific-calculator',
-
+  
+  // AI Tools that were removed
   '/ai-tools/meme-generator',
   '/ai-tools/hashtag-suggester',
   '/tools/calorie-calculator',
@@ -69,10 +82,14 @@ export const goneUrls = new Set([
   '/tools/standard-deviation-calculator',
   '/tools/finance-calculator',
 
+  // Other removed pages
   '/resources',
     "/announcements"
 ])
 
+/**
+ * Check if a URL path should return 410 Gone status
+ */
 export function isGoneUrl(pathname: string): boolean {
   return goneUrls.has(pathname)
 }

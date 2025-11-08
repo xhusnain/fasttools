@@ -244,7 +244,7 @@ export function PercentageCalculator() {
 
   return (
     <div className="space-y-6">
-      {}
+      {/* Calculation Type Selector */}
       <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-xl text-foreground">
@@ -256,7 +256,7 @@ export function PercentageCalculator() {
           <CardDescription className="text-base text-muted-foreground">{typeInfo.description}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
-          {}
+          {/* Calculation Type Buttons */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
             {[
               { type: "basic", label: "Basic", icon: Percent },
@@ -283,7 +283,7 @@ export function PercentageCalculator() {
             ))}
           </div>
 
-          {}
+          {/* Input Fields */}
           <div className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="value1" className="text-sm font-medium flex items-center gap-2 text-heading-accent">
@@ -361,7 +361,7 @@ export function PercentageCalculator() {
         </CardContent>
       </Card>
 
-      {}
+      {/* Results */}
       {result && !isCalculating && (
         <Card className="shadow-lg border-border animate-fade-in-up bg-card">
           <CardHeader>
@@ -374,7 +374,7 @@ export function PercentageCalculator() {
             <CardDescription className="text-base text-muted-foreground">{result.explanation}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
-            {}
+            {/* Main Result Display */}
             <div className="text-center p-6 sm:p-8 rounded-xl bg-card border border-primary/20">
               <div className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
                 {result.result.toLocaleString()}
@@ -390,7 +390,7 @@ export function PercentageCalculator() {
               </div>
             </div>
 
-            {}
+            {/* Detailed Breakdown */}
             <div className="space-y-3 p-4 sm:p-6 bg-card rounded-lg border border-border">
               <div className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-heading-accent">Calculation Details</div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
@@ -417,7 +417,7 @@ export function PercentageCalculator() {
               </div>
             </div>
 
-            {}
+            {/* Formula Display */}
             <div className="p-4 sm:p-6 bg-card rounded-xl border border-border">
               <div className="text-sm sm:text-base font-semibold text-heading-accent mb-2">Formula Used:</div>
               <div className="text-xs sm:text-sm text-foreground font-mono bg-card border border-border p-2 rounded">
@@ -425,7 +425,7 @@ export function PercentageCalculator() {
               </div>
             </div>
 
-            {}
+            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
               <Button
                 onClick={copyResult}

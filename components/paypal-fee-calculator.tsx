@@ -9,8 +9,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Copy, DollarSign, Calculator, Globe, CreditCard, Banknote, Coins, TrendingUp, Info, Settings } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
 
+// Comprehensive PayPal fee data structure
 const PAYPAL_FEES = {
-
+  // Personal Transaction Fees
   personal: {
     domestic: {
       paypalBalance: { percentage: 0, fixed: 0 },
@@ -27,7 +28,8 @@ const PAYPAL_FEES = {
       amexSend: { percentage: 5.0, fixed: 0.99, min: 0.99, max: 4.99 }
     }
   },
-
+  
+  // Commercial Transaction Fees
   commercial: {
     domestic: {
       paypalCheckout: { percentage: 3.49, fixed: 0.49 },
@@ -45,6 +47,7 @@ const PAYPAL_FEES = {
     }
   },
 
+  // Donation Fees
   donations: {
     domestic: {
       donateButton: { percentage: 2.89, fixed: 0.49 },
@@ -55,6 +58,7 @@ const PAYPAL_FEES = {
     }
   },
 
+  // Cryptocurrency Fees
   cryptocurrency: {
     buying: [
       { min: 1.00, max: 74.99, percentage: 2.20 },
@@ -66,12 +70,14 @@ const PAYPAL_FEES = {
     externalWalletTransfer: { percentage: 1.00 }
   },
 
+  // Currency Conversion Fees
   currencyConversion: {
     goodsAndServices: 4.00,
     other: 3.00
   }
 }
 
+// Fixed fees by currency
 const FIXED_FEES_BY_CURRENCY = {
   'USD': 0.49,
   'EUR': 0.39,
@@ -105,6 +111,7 @@ const FIXED_FEES_BY_CURRENCY = {
   'NZD': 0.69
 }
 
+// Countries and their regions
 const COUNTRIES = {
   'US': { name: 'United States', region: 'domestic', currency: 'USD' },
   'CA': { name: 'Canada', region: 'international', currency: 'CAD' },
@@ -186,37 +193,43 @@ export function PayPalFeeCalculator() {
       let feeStructure: any = {}
       let baseFee = { percentage: 0, fixed: 0 }
 
+      // Get base fee structure based on transaction type
       if (transactionType === 'personal') {
         feeStructure = isDomestic ? PAYPAL_FEES.personal.domestic : PAYPAL_FEES.personal.international
         baseFee = feeStructure[paymentMethod] || { percentage: 0, fixed: 0 }
       } else if (transactionType === 'commercial') {
         feeStructure = isDomestic ? PAYPAL_FEES.commercial.domestic : PAYPAL_FEES.commercial.international
         baseFee = feeStructure[paymentMethod] || { percentage: 0, fixed: 0 }
-
+        
+        // Add international fee for commercial transactions
         if (isInternational && feeStructure.additionalFee) {
           baseFee.percentage += feeStructure.additionalFee
         }
       } else if (transactionType === 'donations') {
         feeStructure = isDomestic ? PAYPAL_FEES.donations.domestic : PAYPAL_FEES.donations.international
         baseFee = feeStructure[paymentMethod] || { percentage: 0, fixed: 0 }
-
+        
+        // Add international fee for donations
         if (isInternational && feeStructure.additionalFee) {
           baseFee.percentage += feeStructure.additionalFee
         }
       } else if (transactionType === 'cryptocurrency') {
-
-        const cryptoFee = PAYPAL_FEES.cryptocurrency.buying.find(tier =>
+        // Cryptocurrency fee calculation
+        const cryptoFee = PAYPAL_FEES.cryptocurrency.buying.find(tier => 
           amountNum >= tier.min && amountNum <= tier.max
         )
         baseFee = cryptoFee ? { percentage: cryptoFee.percentage, fixed: 0 } : { percentage: 1.50, fixed: 0 }
       }
 
+      // Get fixed fee for currency
       const currencyFixedFee = FIXED_FEES_BY_CURRENCY[currency as keyof typeof FIXED_FEES_BY_CURRENCY] || 0
       const actualFixedFee = baseFee.fixed || currencyFixedFee
 
+      // Calculate fees
       const percentageFee = (amountNum * baseFee.percentage) / 100
       let totalFee = percentageFee + actualFixedFee
 
+      // Apply min/max limits if specified
       if (baseFee.min && totalFee < baseFee.min) {
         totalFee = baseFee.min
       }
@@ -227,10 +240,11 @@ export function PayPalFeeCalculator() {
       const netAmount = amountNum - totalFee
       const grossAmount = (amountNum + actualFixedFee) / (1 - baseFee.percentage / 100)
 
+      // Currency conversion fee (if applicable)
       let currencyConversionFee = 0
       if (isInternational && transactionType !== 'cryptocurrency') {
-        const conversionRate = transactionType === 'commercial' ?
-          PAYPAL_FEES.currencyConversion.goodsAndServices :
+        const conversionRate = transactionType === 'commercial' ? 
+          PAYPAL_FEES.currencyConversion.goodsAndServices : 
           PAYPAL_FEES.currencyConversion.other
         currencyConversionFee = (amountNum * conversionRate) / 100
       }
@@ -320,16 +334,16 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          {}
+          {/* Compact Form Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {}
+            {/* Left Column - Input Fields */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
                 <Settings className="h-4 w-4 text-foreground" />
                 Transaction Details
               </h3>
-
-              {}
+              
+              {/* Transaction Type & Payment Method */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
                   <Label className="text-xs font-medium text-muted-foreground">Transaction Type</Label>
@@ -363,7 +377,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                 </div>
               </div>
 
-              {}
+              {/* Countries */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
                   <Label className="text-xs font-medium text-muted-foreground">From Country</Label>
@@ -398,7 +412,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                 </div>
               </div>
 
-              {}
+              {/* Currency & Amount */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
                   <Label className="text-xs font-medium text-muted-foreground">Currency</Label>
@@ -449,7 +463,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
           </Button>
             </div>
 
-            {}
+            {/* Right Column - Results */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
                 <DollarSign className="h-4 w-4 text-heading-accent" />
@@ -458,7 +472,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
 
               {result ? (
             <div className="space-y-3">
-                  {}
+                  {/* Transaction Summary */}
                   <div className="p-3 bg-card rounded-lg border-2 border-orange-300">
                     <div className="grid grid-cols-2 gap-2 text-xs">
                       <div className="flex justify-between">
@@ -482,7 +496,7 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                     </div>
                   </div>
 
-                  {}
+                  {/* Amount & Fees */}
                   <div className="space-y-2">
                     <div className="flex justify-between items-center p-2 bg-card rounded border border-orange-300">
                       <span className="text-sm text-muted-foreground">Transaction Amount:</span>
@@ -507,19 +521,19 @@ International: ${result.isInternational ? 'Yes' : 'No'}`
                     )}
                   </div>
 
-                  {}
+                  {/* Total Fee */}
                   <div className="flex justify-between items-center p-3 bg-primary/10 rounded-lg border-2 border-primary">
                     <span className="text-sm font-medium text-foreground">Total Fee:</span>
                     <span className="text-lg font-bold text-foreground">{result.currency} {result.totalFee}</span>
                   </div>
 
-                  {}
+                  {/* You Receive */}
                   <div className="flex justify-between items-center p-3 bg-green-500/10 rounded-lg border-2 border-green-500">
                     <span className="text-sm font-medium text-foreground">You Receive:</span>
                     <span className="text-lg font-bold text-heading-accent">{result.currency} {result.netAmount}</span>
                   </div>
 
-                  {}
+                  {/* Amount to Charge */}
                   <div className="p-3 bg-blue-500/10 rounded-lg border-2 border-blue-500">
                     <p className="text-xs text-muted-foreground mb-1">To receive exactly {result.currency} {result.amount}:</p>
                     <div className="flex justify-between items-center">

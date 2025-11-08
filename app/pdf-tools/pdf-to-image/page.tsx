@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { PDFToImage } from "@/components/pdf-to-image"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import Link from "next/link"
 import { Image, FileText, Shield, Zap, ArrowRight, Download, Info, CheckCircle2 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -35,7 +36,8 @@ export const metadata: Metadata = {
     "pdf to png converter",
     "pdf to picture",
     "image to pdf",
-
+    
+    // Free & Online Keywords
     "free pdf to image",
     "pdf to image online",
     "pdf to jpg online",
@@ -46,7 +48,8 @@ export const metadata: Metadata = {
     "pdf to image converter online free",
     "pdf to image free converter",
     "pdf to image online converter",
-
+    
+    // Quality Keywords
     "pdf to high quality image",
     "pdf to image high resolution",
     "pdf to jpg high quality",
@@ -61,7 +64,8 @@ export const metadata: Metadata = {
     "pdf to image no quality loss",
     "pdf to image good quality",
     "pdf to very high quality images",
-
+    
+    // Format Keywords
     "pdf to webp",
     "pdf to jpeg",
     "convert pdf to webp",
@@ -70,7 +74,8 @@ export const metadata: Metadata = {
     "pdf to image jpg",
     "pdf to image png converter",
     "pdf to image jpg converter",
-
+    
+    // Action Keywords
     "extract images from pdf",
     "save pdf as image",
     "export pdf to image",
@@ -82,7 +87,8 @@ export const metadata: Metadata = {
     "pdf to image extract",
     "pdf to image download",
     "pdf to image file",
-
+    
+    // Tool Comparison Keywords
     "pdf to image online adobe",
     "pdf to jpg converter smallpdf",
     "pdf to image ilovepdf",
@@ -98,12 +104,14 @@ export const metadata: Metadata = {
     "11zon image to pdf",
     "image to pdf converter 11zon",
     "pdf to image 11zon",
-
+    
+    // Browser & Privacy Keywords
     "pdf to image browser",
     "pdf to image no upload",
     "secure pdf to image",
     "private pdf to image converter",
-
+    
+    // Platform Keywords
     "pdf to image windows",
     "pdf to image mac",
     "pdf to jpg mac",
@@ -119,7 +127,8 @@ export const metadata: Metadata = {
     "pdf to image on mac",
     "pdf to image iphone shortcut",
     "pdf to image shortcut ios",
-
+    
+    // Editor & Features
     "pdf to image editor",
     "pdf to image editor online free",
     "pdf to image editor free",
@@ -129,7 +138,8 @@ export const metadata: Metadata = {
     "pdf to image converter hd",
     "pdf to image resizer",
     "pdf to image size reducer",
-
+    
+    // DPI & Resolution
     "pdf to image 600 dpi",
     "pdf to image high resolution free",
     "pdf to image 4k",
@@ -153,7 +163,8 @@ export const metadata: Metadata = {
     "pdf to image with high resolution",
     "pdf to image with high quality",
     "pdf to image high quality online free",
-
+    
+    // File Size Keywords
     "pdf to image 100 kb",
     "pdf to image under 100kb",
     "pdf to image below 100kb",
@@ -193,7 +204,8 @@ export const metadata: Metadata = {
     "pdf to image in kb",
     "pdf to image reduce size",
     "pdf to image low size",
-
+    
+    // Converter Types
     "pdf to image converter free download",
     "pdf to image free download",
     "pdf to image converter download for pc",
@@ -208,7 +220,8 @@ export const metadata: Metadata = {
     "pdf to normal image",
     "pdf image to text converter online free",
     "pdf image to text free",
-
+    
+    // Technical Keywords
     "pdf to image python",
     "pdf to image npm",
     "pdf to image nodejs",
@@ -236,7 +249,8 @@ export const metadata: Metadata = {
     "pdf to image vba",
     "pdf to image zapier",
     "zapier convert pdf to image",
-
+    
+    // Additional Features
     "pdf to image split",
     "pdf to image separate",
     "pdf to image separate pages",
@@ -265,7 +279,8 @@ export const metadata: Metadata = {
     "pdf to image free no sign up",
     "pdf to image unlimited free",
     "pdf to image unlimited",
-
+    
+    // Tools & Software
     "pdf to image love",
     "pdf to image offline",
     "pdf to image tool",
@@ -290,7 +305,8 @@ export const metadata: Metadata = {
     "zon11 pdf to image",
     "pdf to image mod apk",
     "pdf to image mod",
-
+    
+    // Advanced Features
     "pdf to image add",
     "pdf to image adder",
     "pdf to image generator",
@@ -330,7 +346,8 @@ export const metadata: Metadata = {
     "pdf to image image",
     "pdf to image based pdf",
     "pdf to image based pdf converter",
-
+    
+    // Quality & Compression
     "pdf to image lossless",
     "pdf to image no compression",
     "pdf to image quality",
@@ -343,7 +360,8 @@ export const metadata: Metadata = {
     "pdf to image large file",
     "pdf to image big pdf",
     "pdf to image no limit",
-
+    
+    // Misc
     "pdf to image shortcut",
     "pdf to image extension",
     "pdf to image link",
@@ -410,7 +428,8 @@ export const metadata: Metadata = {
     "pdf to mirror image",
     "can you convert pdf to image",
     "can you change pdf to image",
-
+    
+    // Creator & Conversion Keywords
     "pdf to image creator",
     "create pdf to image",
     "conversion pdf to image",
@@ -429,7 +448,8 @@ export const metadata: Metadata = {
     "from pdf to image python",
     "from pdf to image ilovepdf",
     "from pdf to image iphone",
-
+    
+    // How To Keywords
     "how to make pdf to image",
     "make pdf to image",
     "how to save pdf to image",
@@ -440,7 +460,8 @@ export const metadata: Metadata = {
     "how to convert pdf to image without losing quality",
     "how to turn pdf to image",
     "how to export pdf to image",
-
+    
+    // Platform Specific
     "iphone pdf to image",
     "python pdf to image",
     "nodejs pdf to image",
@@ -451,7 +472,8 @@ export const metadata: Metadata = {
     "spatie pdf to image",
     "python pdf to image without poppler",
     "php pdf to image without imagemagick",
-
+    
+    // Action Keywords
     "turn pdf to image",
     "change pdf to image",
     "change pdf to image file",
@@ -460,7 +482,8 @@ export const metadata: Metadata = {
     "compress pdf to image",
     "print pdf to image",
     "add pdf to image",
-
+    
+    // Tool Specific
     "ilovepdf pdf to image",
     "i love pdf pdf to image",
     "i love pdf to image",
@@ -469,7 +492,8 @@ export const metadata: Metadata = {
     "adobe pdf to image",
     "canva pdf to image",
     "11zon pdf to image",
-
+    
+    // Technical Library Keywords
     "pdf to image js",
     "pdf to image node js",
     "pdf to image in php",
@@ -478,7 +502,8 @@ export const metadata: Metadata = {
     "react pdf to image",
     "imagemagick pdf to image",
     "n8n convert pdf to image",
-
+    
+    // Converter Variations
     "pdf to image convertor",
     "pdf to image converter mac",
     "pdf to image converter app",
@@ -501,7 +526,8 @@ export const metadata: Metadata = {
     "pdf to to image converter",
     "pdf to image to word converter",
     "pdf to picture converter online free",
-
+    
+    // Quality & Format Variations
     "pdf to image hd",
     "convert pdf to image hd",
     "pdf to image png",
@@ -514,9 +540,11 @@ export const metadata: Metadata = {
     "convert pdf to image and crop",
     "convert pdf to image and reduce size",
     "convert pdf to image or jpg",
-
+    
+    // Specific File Sizes
     "convert pdf to image 100kb",
-
+    
+    // Online Variations
     "pdf to image convert online",
     "pdf to image online conversion",
     "pdf to image convert pdf to jpg online",
@@ -524,7 +552,8 @@ export const metadata: Metadata = {
     "online pdf to image converter high quality",
     "online tool to convert pdf to image",
     "pdf to image online high quality",
-
+    
+    // Free Variations
     "pdf to image free",
     "pdf to image converter free",
     "pdf to image free convert",
@@ -532,7 +561,8 @@ export const metadata: Metadata = {
     "convert pdf to image free online",
     "convert pdf to image free",
     "convert pdf to image high quality free",
-
+    
+    // Platform Conversions
     "convert pdf to image python",
     "convert pdf to image android",
     "convert pdf to image mac",
@@ -541,11 +571,13 @@ export const metadata: Metadata = {
     "convert pdf to image ilovepdf",
     "convert pdf to image i love pdf",
     "linux pdf to image",
-
+    
+    // Files & Documents
     "pdf to image files",
     "pdf to image file",
     "convert from pdf to image file",
-
+    
+    // Additional Features
     "pdf to image com",
     "pdf to image gratuit",
     "pdf to image i love",
@@ -561,7 +593,8 @@ export const metadata: Metadata = {
     "pdf to image and merge",
     "pdf to image and rotate",
     "pdf to image black and white",
-
+    
+    // Text & OCR Related
     "pdf image to text",
     "pdf to image to text",
     "pdf to image to word",
@@ -573,7 +606,8 @@ export const metadata: Metadata = {
     "pdf with image to excel",
     "pdf pic to pdf text",
     "pdf pic to text converter",
-
+    
+    // Without Keywords
     "pdf to image without background",
     "pdf to image without quality loss",
     "pdf to image without losing quality online",
@@ -583,7 +617,8 @@ export const metadata: Metadata = {
     "pdf to image without software",
     "image to pdf without",
     "pdf to word without image",
-
+    
+    // Comparison Keywords
     "pdf or image",
     "pdf or image editor",
     "pdf or image file",
@@ -591,7 +626,8 @@ export const metadata: Metadata = {
     "pdf image vs png",
     "pdf vs image size",
     "convert pdf vs image",
-
+    
+    // Misc Keywords
     "pdf to image same size",
     "pdf to image v",
     "pdf like image",
@@ -602,11 +638,12 @@ export const metadata: Metadata = {
     "is pdf scanned image",
     "jpg to pdf to image",
     "change to pdf to image",
-
+    
+    // FastTools branded
     "fasttools pdf to image",
     "fast tools pdf converter",
   ],
-  alternates: {
+  alternates: { 
     canonical: "https://www.fasttools.store/pdf-tools/pdf-to-image",
     languages: {
       "en-US": "https://www.fasttools.store/pdf-tools/pdf-to-image",
@@ -917,7 +954,7 @@ export default function PDFToImagePage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {}
+                {/* Hero Section */}
                 <div className="text-center space-y-4">
                   <GHeader
                     title="PDF to Image Converter - Convert PDF to JPG, PNG, WEBP Free Online"
@@ -927,17 +964,17 @@ export default function PDFToImagePage() {
                   />
                 </div>
 
-                {}
+                {/* Mobile Ad Space */}
                 <div className="lg:hidden mb-6">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {}
+                {/* PDF to Image Tool */}
                 <PDFToImage />
 
-                {}
+                {/* Content Sections */}
                 <div className="space-y-6">
-                  {}
+                  {/* How to Use Section */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -982,7 +1019,7 @@ export default function PDFToImagePage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Features & Security */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1018,7 +1055,7 @@ export default function PDFToImagePage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* FAQ Section */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1228,6 +1265,7 @@ export default function PDFToImagePage() {
                     </div>
                   </div>
 
+                  {/* Platform-Specific Guides */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1263,6 +1301,7 @@ export default function PDFToImagePage() {
                     </div>
                   </div>
 
+                  {/* Technical Guide for Developers */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1304,6 +1343,7 @@ export default function PDFToImagePage() {
                     </div>
                   </div>
 
+                  {/* Quality & Format Guide */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1339,6 +1379,7 @@ export default function PDFToImagePage() {
                     </div>
                   </div>
 
+                  {/* How-To Guides */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1374,7 +1415,7 @@ export default function PDFToImagePage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Tool Comparisons */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1410,7 +1451,7 @@ export default function PDFToImagePage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Advanced Features Guide */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1446,7 +1487,7 @@ export default function PDFToImagePage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Related Tools */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1455,8 +1496,8 @@ export default function PDFToImagePage() {
                       Related PDF Tools
                     </h2>
                     <div className="grid md:grid-cols-2 gap-4">
-                      <Link
-                        href="/pdf-tools/pdf-compressor"
+                      <Link 
+                        href="/pdf-tools/pdf-compressor" 
                         className="flex items-center gap-3 p-4 rounded-lg bg-muted/20 border border-border hover:border-primary hover:bg-primary/5 transition-colors"
                       >
                         <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -1467,8 +1508,8 @@ export default function PDFToImagePage() {
                           <p className="text-xs text-muted-foreground">Reduce PDF file size</p>
                         </div>
                       </Link>
-                      <Link
-                        href="/pdf-tools/pdf-splitter-merger"
+                      <Link 
+                        href="/pdf-tools/pdf-splitter-merger" 
                         className="flex items-center gap-3 p-4 rounded-lg bg-muted/20 border border-border hover:border-primary hover:bg-primary/5 transition-colors"
                       >
                         <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -1484,7 +1525,7 @@ export default function PDFToImagePage() {
                 </div>
               </div>
 
-              {}
+              {/* Desktop Sidebar Ads */}
               <div className="hidden lg:block lg:w-80 space-y-6 flex-shrink-0">
                 <div className="sticky top-8 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

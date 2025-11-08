@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const FRANKFURTER_API_BASE = 'https://api.frankfurter.dev/v1'
 
+// Top 10 most traded currencies globally
 const TOP_10_CURRENCIES = [
   'USD', 'EUR', 'JPY', 'GBP', 'AUD', 'CAD', 'CHF', 'CNY', 'HKD', 'NZD'
 ]
@@ -11,14 +12,16 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url)
     const base = searchParams.get('base') || 'USD'
     const days = parseInt(searchParams.get('days') || '10')
-
+    
+    // Calculate start date (10 days ago)
     const endDate = new Date()
     const startDate = new Date()
     startDate.setDate(endDate.getDate() - days)
-
+    
     const startDateStr = startDate.toISOString().split('T')[0]
     const endDateStr = endDate.toISOString().split('T')[0]
-
+    
+    // Get time series data for the last 10 days
     const timeSeriesResponse = await fetch(
       `${FRANKFURTER_API_BASE}/${startDateStr}..${endDateStr}?base=${base}&symbols=${TOP_10_CURRENCIES.join(',')}`
     )
@@ -29,7 +32,8 @@ export async function GET(request: NextRequest) {
     if (!timeSeriesData) {
       return NextResponse.json({ success: false, error: 'Service Unavailable', message: 'Server error. Please wait a minute and try again.' }, { status: 503 })
     }
-
+    
+    // Get latest rates for comparison
     const latestResponse = await fetch(
       `${FRANKFURTER_API_BASE}/latest?base=${base}&symbols=${TOP_10_CURRENCIES.join(',')}`
     )
@@ -40,9 +44,10 @@ export async function GET(request: NextRequest) {
     if (!latestData) {
       return NextResponse.json({ success: false, error: 'Service Unavailable', message: 'Server error. Please wait a minute and try again.' }, { status: 503 })
     }
-
+    
+    // Process the data to create currency statistics
     const currencyStats = TOP_10_CURRENCIES.map(currency => {
-
+        // Handle base currency (USD when base is USD)
         if (currency === base) {
           return {
             currency,
@@ -57,9 +62,9 @@ export async function GET(request: NextRequest) {
             name: getCurrencyName(currency)
           }
         }
-
+        
         const rates = Object.values(timeSeriesData.rates).map((dayRates: any) => dayRates[currency]).filter(rate => rate !== undefined)
-
+        
         if (rates.length === 0) {
           return {
             currency,
@@ -72,7 +77,7 @@ export async function GET(request: NextRequest) {
             trend: 'stable'
           }
         }
-
+        
         const currentRate = latestData.rates[currency] || rates[rates.length - 1]
         const previousRate = rates[rates.length - 2] || rates[0]
         const change = currentRate - previousRate
@@ -80,11 +85,12 @@ export async function GET(request: NextRequest) {
         const minRate = Math.min(...rates)
         const maxRate = Math.max(...rates)
         const avgRate = rates.reduce((sum, rate) => sum + rate, 0) / rates.length
-
+        
+        // Determine trend based on recent movement
         let trend = 'stable'
         if (changePercent > 0.5) trend = 'up'
         else if (changePercent < -0.5) trend = 'down'
-
+        
         return {
           currency,
           currentRate: Number(currentRate.toFixed(4)),
@@ -98,9 +104,10 @@ export async function GET(request: NextRequest) {
           name: getCurrencyName(currency)
         }
       })
-
+    
+    // Sort by current rate (descending)
     currencyStats.sort((a, b) => b.currentRate - a.currentRate)
-
+    
     return NextResponse.json({
       success: true,
       data: {
@@ -115,13 +122,14 @@ export async function GET(request: NextRequest) {
       },
       timestamp: new Date().toISOString()
     })
-
+    
   } catch (error) {
     console.error('Error fetching top 10 currencies data:', error)
     return NextResponse.json({ success: false, error: 'Service Unavailable', message: 'Server error. Please wait a minute and try again.' }, { status: 503 })
   }
 }
 
+// Helper function to get currency symbols
 function getCurrencySymbol(code: string): string {
   const symbols: Record<string, string> = {
     'USD': '$',
@@ -234,10 +242,11 @@ function getCurrencySymbol(code: string): string {
     'TOP': 'T$',
     'XPF': '₣'
   }
-
+  
   return symbols[code] || code
 }
 
+// Helper function to get currency names
 function getCurrencyName(code: string): string {
   const names: Record<string, string> = {
     'USD': 'US Dollar',
@@ -350,6 +359,6 @@ function getCurrencyName(code: string): string {
     'TOP': 'Tongan Paʻanga',
     'XPF': 'CFP Franc'
   }
-
+  
   return names[code] || code
 }

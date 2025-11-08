@@ -24,7 +24,7 @@ export function CopyButton({ text, id, className = "" }: CopyButtonProps) {
   }
 
   return (
-    <button
+    <button 
       onClick={copyToClipboard}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

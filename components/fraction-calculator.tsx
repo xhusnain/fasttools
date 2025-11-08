@@ -7,12 +7,12 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import {
-  Calculator,
-  Plus,
-  Minus,
-  X,
-  Divide,
+import { 
+  Calculator, 
+  Plus, 
+  Minus, 
+  X, 
+  Divide, 
   Copy,
   RotateCcw,
   AlertCircle,
@@ -46,17 +46,20 @@ export default function FractionCalculator() {
   const [history, setHistory] = useState<FractionResult[]>([])
   const [showAdvanced, setShowAdvanced] = useState(false)
 
+  // Helper function to find GCD
   const gcd = (a: number, b: number): number => {
     return b === 0 ? a : gcd(b, a % b)
   }
 
+  // Helper function to find LCM
   const lcm = (a: number, b: number): number => {
     return Math.abs(a * b) / gcd(a, b)
   }
 
+  // Helper function to simplify fraction
   const simplifyFraction = (numerator: number, denominator: number): Fraction => {
     if (denominator === 0) return { numerator: 0, denominator: 1 }
-
+    
     const divisor = gcd(Math.abs(numerator), Math.abs(denominator))
     return {
       numerator: numerator / divisor,
@@ -64,12 +67,13 @@ export default function FractionCalculator() {
     }
   }
 
+  // Helper function to convert to mixed number
   const toMixedNumber = (numerator: number, denominator: number): string => {
     if (denominator === 0) return "Undefined"
-
+    
     const whole = Math.floor(numerator / denominator)
     const remainder = numerator % denominator
-
+    
     if (whole === 0) {
       return `${numerator}/${denominator}`
     } else if (remainder === 0) {
@@ -79,21 +83,25 @@ export default function FractionCalculator() {
     }
   }
 
+  // Helper function to format number
   const formatNumber = (num: number): string => {
     if (isNaN(num) || !isFinite(num)) return "N/A"
     return num.toFixed(6).replace(/\.?0+$/, '')
   }
 
+  // Calculate fraction operations
   const calculateFraction = useCallback(async () => {
     try {
       const { numerator: n1, denominator: d1 } = fraction1
       const { numerator: n2, denominator: d2 } = fraction2
 
+      // Check if inputs are empty or invalid - don't calculate if all fields are 0
       if (n1 === 0 && d1 === 0 && n2 === 0 && d2 === 0) {
         setResult(null)
         return
       }
 
+      // Validation
       if (d1 === 0 || d2 === 0) {
         setResult({
           operation,
@@ -164,13 +172,15 @@ export default function FractionCalculator() {
       }
 
       setResult(newResult)
-
+      
+      // Add to history
       setHistory(prev => [newResult, ...prev.slice(0, 9)])
     } catch (error) {
       console.error("Calculation error:", error)
     }
   }, [operation, fraction1, fraction2])
 
+  // Auto-calculate when inputs change
   useEffect(() => {
     const timer = setTimeout(() => {
       calculateFraction()
@@ -194,7 +204,7 @@ Result: ${result.result.numerator}/${result.result.denominator}
 Decimal: ${result.decimal}
 Percentage: ${result.percentage}%
 Mixed Number: ${result.mixedNumber}`
-
+      
       navigator.clipboard.writeText(resultText)
     }
   }
@@ -220,7 +230,7 @@ Mixed Number: ${result.mixedNumber}`
 
   return (
     <div className="space-y-4">
-      {}
+      {/* Calculator Display */}
       <Card className="bg-card border-border">
         <CardHeader className="pb-2 px-3 sm:px-6">
           <div className="flex items-center justify-between">
@@ -242,7 +252,7 @@ Mixed Number: ${result.mixedNumber}`
           </div>
         </CardHeader>
         <CardContent className="space-y-4 px-3 sm:px-6">
-          {}
+          {/* Operation Selection */}
           <div className="space-y-1">
             <Label htmlFor="operation" className="text-[11px] font-medium text-heading-accent">Operation</Label>
             <Select value={operation} onValueChange={setOperation}>
@@ -278,9 +288,9 @@ Mixed Number: ${result.mixedNumber}`
             </Select>
           </div>
 
-          {}
+          {/* Fraction Inputs */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {}
+            {/* First Fraction */}
               <div className="space-y-3">
               <Label className="text-sm font-semibold text-heading-accent">First Fraction</Label>
                 <div className="space-y-2">
@@ -312,7 +322,7 @@ Mixed Number: ${result.mixedNumber}`
               </div>
             </div>
 
-            {}
+            {/* Second Fraction */}
               <div className="space-y-3">
               <Label className="text-sm font-semibold text-heading-accent">Second Fraction</Label>
                 <div className="space-y-2">
@@ -345,10 +355,10 @@ Mixed Number: ${result.mixedNumber}`
             </div>
           </div>
 
-          {}
+          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-2">
-            <Button
-              onClick={calculateFraction}
+            <Button 
+              onClick={calculateFraction} 
               className="flex-1 h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
             >
               <Calculator className="h-3 w-3 mr-1" />
@@ -368,7 +378,7 @@ Mixed Number: ${result.mixedNumber}`
         </CardContent>
       </Card>
 
-      {}
+      {/* Results Display */}
       {result && (
         <Card className="bg-card border-border">
           <CardHeader className="pb-2 px-3 sm:px-6">
@@ -390,16 +400,16 @@ Mixed Number: ${result.mixedNumber}`
               </div>
             ) : (
               <>
-                {}
+                {/* Operation Display */}
                 <div className="bg-card rounded-lg p-3 border border-border">
                   <div className="text-center text-sm font-semibold text-foreground">
                     {fraction1.numerator}/{fraction1.denominator} {getOperationSymbol(operation)} {fraction2.numerator}/{fraction2.denominator}
                   </div>
                 </div>
 
-                {}
+                {/* Results Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                  {}
+                  {/* Simplified Result */}
                   <div className="bg-card rounded-lg p-3 border border-border">
                     <div className="text-xs font-medium text-heading-accent mb-1">Simplified Result</div>
                     <div className="text-lg sm:text-xl font-bold text-foreground text-center">
@@ -407,7 +417,7 @@ Mixed Number: ${result.mixedNumber}`
                     </div>
                   </div>
 
-                  {}
+                  {/* Decimal Result */}
                   <div className="bg-card rounded-lg p-3 border border-border">
                     <div className="text-xs font-medium text-heading-accent mb-1">Decimal</div>
                     <div className="text-lg sm:text-xl font-bold text-foreground text-center">
@@ -415,7 +425,7 @@ Mixed Number: ${result.mixedNumber}`
                     </div>
                   </div>
 
-                  {}
+                  {/* Percentage Result */}
                   <div className="bg-card rounded-lg p-3 border border-border">
                     <div className="text-xs font-medium text-heading-accent mb-1">Percentage</div>
                     <div className="text-lg sm:text-xl font-bold text-foreground text-center">
@@ -423,7 +433,7 @@ Mixed Number: ${result.mixedNumber}`
                     </div>
                   </div>
 
-                  {}
+                  {/* Mixed Number */}
                   <div className="bg-card rounded-lg p-3 border border-border">
                     <div className="text-xs font-medium text-heading-accent mb-1">Mixed Number</div>
                     <div className="text-lg sm:text-xl font-bold text-foreground text-center">
@@ -437,7 +447,7 @@ Mixed Number: ${result.mixedNumber}`
         </Card>
       )}
 
-      {}
+      {/* History */}
       {history.length > 0 && (
         <Card className="bg-card border-border">
           <CardHeader className="pb-2 px-3 sm:px-6">

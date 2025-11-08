@@ -8,15 +8,16 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {
-  HardDrive,
-  Copy,
-  Check,
-  Calculator,
-  FileText,
-  Image,
-  Video,
-  Music,
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { 
+  HardDrive, 
+  Copy, 
+  Check, 
+  Calculator, 
+  FileText, 
+  Image, 
+  Video, 
+  Music, 
   Archive,
   Database,
   Code,
@@ -24,40 +25,43 @@ import {
   Upload
 } from "lucide-react"
 
+
 export function FileSizeConverter() {
   const [value, setValue] = useState("")
   const [fromUnit, setFromUnit] = useState("MB")
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
   const [activeTab, setActiveTab] = useState("converter")
 
+  // Decimal units (SI Standard) - exact values in bytes
   const decimalUnits = {
-    "Bit (b)": 1/8,
+    "Bit (b)": 1/8, // 1 bit = 1/8 byte
     "Byte (B)": 1,
-    "Kilobyte (KB)": 1000,
-    "Megabyte (MB)": 1000000,
-    "Gigabyte (GB)": 1000000000,
-    "Terabyte (TB)": 1000000000000,
-    "Petabyte (PB)": 1000000000000000,
-    "Exabyte (EB)": 1000000000000000000,
-    "Zettabyte (ZB)": 1000000000000000000000,
-    "Yottabyte (YB)": 1000000000000000000000000,
-    "Ronnabyte (RB)": 1000000000000000000000000000,
-    "Quettabyte (QB)": 1000000000000000000000000000000,
+    "Kilobyte (KB)": 1000, // 10³ bytes
+    "Megabyte (MB)": 1000000, // 10⁶ bytes
+    "Gigabyte (GB)": 1000000000, // 10⁹ bytes
+    "Terabyte (TB)": 1000000000000, // 10¹² bytes
+    "Petabyte (PB)": 1000000000000000, // 10¹⁵ bytes
+    "Exabyte (EB)": 1000000000000000000, // 10¹⁸ bytes
+    "Zettabyte (ZB)": 1000000000000000000000, // 10²¹ bytes
+    "Yottabyte (YB)": 1000000000000000000000000, // 10²⁴ bytes
+    "Ronnabyte (RB)": 1000000000000000000000000000, // 10²⁷ bytes
+    "Quettabyte (QB)": 1000000000000000000000000000000, // 10³⁰ bytes
   }
 
+  // Binary units (IEC Standard) - exact values in bytes
   const binaryUnits = {
-    "Bit (b)": 1/8,
+    "Bit (b)": 1/8, // 1 bit = 1/8 byte
     "Byte (B)": 1,
-    "Kibibyte (KiB)": 1024,
-    "Mebibyte (MiB)": 1048576,
-    "Gibibyte (GiB)": 1073741824,
-    "Tebibyte (TiB)": 1099511627776,
-    "Pebibyte (PiB)": 1125899906842624,
-    "Exbibyte (EiB)": 1152921504606846976,
-    "Zebibyte (ZiB)": 1180591620717411303424,
-    "Yobibyte (YiB)": 1208925819614629174706176,
-    "Robibyte (RiB)": 1237940039285380274899124224,
-    "Qubibyte (QiB)": 1267650600228229401496703205376,
+    "Kibibyte (KiB)": 1024, // 2¹⁰ bytes
+    "Mebibyte (MiB)": 1048576, // 2²⁰ bytes
+    "Gibibyte (GiB)": 1073741824, // 2³⁰ bytes
+    "Tebibyte (TiB)": 1099511627776, // 2⁴⁰ bytes
+    "Pebibyte (PiB)": 1125899906842624, // 2⁵⁰ bytes
+    "Exbibyte (EiB)": 1152921504606846976, // 2⁶⁰ bytes
+    "Zebibyte (ZiB)": 1180591620717411303424, // 2⁷⁰ bytes
+    "Yobibyte (YiB)": 1208925819614629174706176, // 2⁸⁰ bytes
+    "Robibyte (RiB)": 1237940039285380274899124224, // 2⁹⁰ bytes
+    "Qubibyte (QiB)": 1267650600228229401496703205376, // 2¹⁰⁰ bytes
   }
 
   const allUnits = { ...decimalUnits, ...binaryUnits }
@@ -78,6 +82,7 @@ export function FileSizeConverter() {
       console.error('Failed to copy: ', err)
     }
   }
+
 
   const formatFileSize = (bytes: number) => {
     if (bytes === 0) return '0 Bytes'
@@ -454,7 +459,7 @@ export function FileSizeConverter() {
                     </div>
                   </div>
                 </div>
-
+                
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold text-foreground">Conversion Examples</h3>
                   <div className="space-y-3">
@@ -549,7 +554,7 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q1: Why is there a difference between decimal and binary units?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> Decimal units use base-10 (powers of 10) while binary units use base-2 (powers of 2).
+                    <strong>A:</strong> Decimal units use base-10 (powers of 10) while binary units use base-2 (powers of 2). 
                     This creates a difference because 1,000 ≠ 1,024. For example, 1 GB = 1,000 MB (decimal) but 1 GiB = 1,024 MiB (binary).
                     This difference becomes significant with larger units and affects storage capacity calculations.
                   </p>
@@ -558,7 +563,7 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q2: Which system should I use for file sizes?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> Use binary units (KiB, MiB, GiB) for file sizes as operating systems use binary calculations.
+                    <strong>A:</strong> Use binary units (KiB, MiB, GiB) for file sizes as operating systems use binary calculations. 
                     Use decimal units (KB, MB, GB) for network speeds and storage device marketing specifications.
                   </p>
                 </div>
@@ -566,7 +571,7 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q3: How do I convert between decimal and binary units?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> Use the conversion factor: 1 GiB = 1.073741824 GB.
+                    <strong>A:</strong> Use the conversion factor: 1 GiB = 1.073741824 GB. 
                     Multiply decimal by 1.024 to get binary, or divide binary by 1.024 to get decimal.
                     For example: 100 GB × 1.024 = 102.4 GiB.
                   </p>
@@ -575,8 +580,8 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q4: What's the difference between bits and bytes?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> A bit is the smallest unit of data (0 or 1). A byte consists of 8 bits.
-                    Network speeds are measured in bits per second (bps), while storage is measured in bytes.
+                    <strong>A:</strong> A bit is the smallest unit of data (0 or 1). A byte consists of 8 bits. 
+                    Network speeds are measured in bits per second (bps), while storage is measured in bytes. 
                     To convert: 1 byte = 8 bits, so 1 Mbps = 0.125 MB/s.
                   </p>
                 </div>
@@ -584,7 +589,7 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q5: Why do I see less storage than advertised?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> Storage manufacturers use decimal units (GB) while operating systems use binary units (GiB).
+                    <strong>A:</strong> Storage manufacturers use decimal units (GB) while operating systems use binary units (GiB). 
                     A 1 TB drive shows as ~931 GB in Windows because 1 TB = 1,000,000,000,000 bytes = 931.32 GiB.
                     This is normal and not a defect.
                   </p>
@@ -593,8 +598,8 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q6: How much data can a DVD hold?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> A standard single-layer DVD holds 4.7 GB (decimal) or 4.38 GiB (binary).
-                    Dual-layer DVDs hold 8.5 GB (decimal) or 7.92 GiB (binary).
+                    <strong>A:</strong> A standard single-layer DVD holds 4.7 GB (decimal) or 4.38 GiB (binary). 
+                    Dual-layer DVDs hold 8.5 GB (decimal) or 7.92 GiB (binary). 
                     The difference between decimal and binary affects actual usable space.
                   </p>
                 </div>
@@ -602,8 +607,8 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q7: What are the largest data units used today?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> Currently, petabytes (PB) and exabytes (EB) are used for large-scale data centers.
-                    Zettabytes (ZB) are used for global data measurements.
+                    <strong>A:</strong> Currently, petabytes (PB) and exabytes (EB) are used for large-scale data centers. 
+                    Zettabytes (ZB) are used for global data measurements. 
                     Yottabytes (YB) are theoretical units for future massive data storage.
                   </p>
                 </div>
@@ -611,7 +616,7 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q8: How do I calculate network transfer time?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> Time = File Size ÷ Network Speed. Convert units first:
+                    <strong>A:</strong> Time = File Size ÷ Network Speed. Convert units first: 
                     If file is 1 GB and speed is 100 Mbps: 1 GB = 8,000 Mb, so 8,000 ÷ 100 = 80 seconds.
                     Remember: 1 byte = 8 bits for speed calculations.
                   </p>
@@ -620,8 +625,8 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q9: What's the difference between RAM and storage?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> RAM (Random Access Memory) is temporary storage measured in GB/GiB,
-                    while storage (hard drives, SSDs) is permanent storage measured in TB/TiB.
+                    <strong>A:</strong> RAM (Random Access Memory) is temporary storage measured in GB/GiB, 
+                    while storage (hard drives, SSDs) is permanent storage measured in TB/TiB. 
                     RAM is faster but volatile, storage is slower but persistent.
                   </p>
                 </div>
@@ -629,8 +634,8 @@ export function FileSizeConverter() {
                 <div className="p-4 bg-muted rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Q10: How do I choose the right storage size?</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong>A:</strong> Consider your needs: Documents (MB), Photos (GB), Videos (GB-TB),
-                    Games (GB), Operating System (GB). Add 20-30% buffer for future needs.
+                    <strong>A:</strong> Consider your needs: Documents (MB), Photos (GB), Videos (GB-TB), 
+                    Games (GB), Operating System (GB). Add 20-30% buffer for future needs. 
                     Use binary units (GiB, TiB) for accurate calculations as that's what your OS uses.
                   </p>
                 </div>
@@ -640,7 +645,7 @@ export function FileSizeConverter() {
         </TabsContent>
 
       </Tabs>
-
+      
     </div>
   )
 }

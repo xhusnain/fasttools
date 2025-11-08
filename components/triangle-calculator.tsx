@@ -7,10 +7,10 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import {
-  Calculator,
-  Triangle,
-  Ruler,
+import { 
+  Calculator, 
+  Triangle, 
+  Ruler, 
   Info,
   Copy,
   RotateCcw,
@@ -68,13 +68,13 @@ export default function TriangleCalculator() {
     angleB: null,
     angleC: null
   })
-
+  
   const [angleUnit, setAngleUnit] = useState<"degree" | "radian">("degree")
   const [result, setResult] = useState<TriangleResult | null>(null)
   const [history, setHistory] = useState<TriangleResult[]>([])
   const [isCalculating, setIsCalculating] = useState(false)
   const [showAdvanced, setShowAdvanced] = useState(false)
-
+  
   const calculatorRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -83,6 +83,7 @@ export default function TriangleCalculator() {
     }
   }, [])
 
+  // Keyboard shortcuts
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.ctrlKey || e.metaKey) {
@@ -112,10 +113,11 @@ export default function TriangleCalculator() {
 
   const calculateTriangle = useCallback(async () => {
     setIsCalculating(true)
-
+    
     try {
       const data = { ...inputData }
-
+      
+      // Convert angles to radians for calculations
       if (angleUnit === "degree") {
         if (data.angleA !== null) data.angleA = toRadians(data.angleA)
         if (data.angleB !== null) data.angleB = toRadians(data.angleB)
@@ -124,9 +126,9 @@ export default function TriangleCalculator() {
 
       const result = await calculateTriangleValues(data)
       setResult(result)
-
+      
       if (result.isValid) {
-        setHistory(prev => [result, ...prev.slice(0, 9)])
+        setHistory(prev => [result, ...prev.slice(0, 9)]) // Keep last 10 calculations
       }
     } catch (error) {
       console.error('Calculation error:', error)
@@ -140,10 +142,11 @@ export default function TriangleCalculator() {
       setTimeout(() => {
         try {
           const { sideA, sideB, sideC, angleA, angleB, angleC } = data
-
+          
+          // Count provided values
           const providedSides = [sideA, sideB, sideC].filter(v => v !== null && v > 0).length
           const providedAngles = [angleA, angleB, angleC].filter(v => v !== null && v > 0).length
-
+          
           if (providedSides + providedAngles < 3) {
             resolve({
               sides: { a: 0, b: 0, c: 0 },
@@ -165,8 +168,10 @@ export default function TriangleCalculator() {
           let a = sideA || 0, b = sideB || 0, c = sideC || 0
           let A = angleA || 0, B = angleB || 0, C = angleC || 0
 
+          // Solve triangle based on provided information
           if (providedSides === 3) {
-
+            // SSS - All three sides provided
+            // Check triangle inequality first
             if (a + b <= c || a + c <= b || b + c <= a) {
               resolve({
                 sides: { a, b, c },
@@ -184,11 +189,13 @@ export default function TriangleCalculator() {
               })
               return
             }
-
+            
+            // Calculate angles using Law of Cosines
             const cosA = (b * b + c * c - a * a) / (2 * b * c)
             const cosB = (a * a + c * c - b * b) / (2 * a * c)
             const cosC = (a * a + b * b - c * c) / (2 * a * b)
-
+            
+            // Check if angles are valid (cosine values must be between -1 and 1)
             if (Math.abs(cosA) > 1 || Math.abs(cosB) > 1 || Math.abs(cosC) > 1) {
               resolve({
                 sides: { a, b, c },
@@ -206,79 +213,88 @@ export default function TriangleCalculator() {
               })
               return
             }
-
+            
             A = Math.acos(cosA)
             B = Math.acos(cosB)
             C = Math.acos(cosC)
           } else if (providedSides === 2 && providedAngles === 1) {
-
+            // SAS or SSA
             if (sideA && sideB && angleC) {
-
+              // SAS: a, b, C
               c = Math.sqrt(a * a + b * b - 2 * a * b * Math.cos(C))
               A = Math.acos((b * b + c * c - a * a) / (2 * b * c))
               B = Math.acos((a * a + c * c - b * b) / (2 * a * c))
             } else if (sideA && sideB && angleA) {
-
+              // SSA: a, b, A
               B = Math.asin((b * Math.sin(A)) / a)
               C = Math.PI - A - B
               c = (a * Math.sin(C)) / Math.sin(A)
             } else if (sideA && sideC && angleB) {
-
+              // SSA: a, c, B
               A = Math.asin((a * Math.sin(B)) / b)
               C = Math.PI - A - B
               b = (a * Math.sin(B)) / Math.sin(A)
             }
           } else if (providedSides === 1 && providedAngles === 2) {
-
+            // ASA or AAS
             if (sideA && angleB && angleC) {
-
+              // ASA: a, B, C
               A = Math.PI - B - C
               b = (a * Math.sin(B)) / Math.sin(A)
               c = (a * Math.sin(C)) / Math.sin(A)
             } else if (sideA && angleA && angleB) {
-
+              // AAS: a, A, B
               C = Math.PI - A - B
               b = (a * Math.sin(B)) / Math.sin(A)
               c = (a * Math.sin(C)) / Math.sin(A)
             }
           }
 
+          // Convert angles back to degrees if needed
           if (angleUnit === "degree") {
             A = toDegrees(A)
             B = toDegrees(B)
             C = toDegrees(C)
           }
 
+          // Calculate additional properties
           const perimeter = a + b + c
           const semiperimeter = perimeter / 2
-
+          
+          // Calculate area using Heron's formula with validation
           const heronValue = semiperimeter * (semiperimeter - a) * (semiperimeter - b) * (semiperimeter - c)
           let area = 0
           if (heronValue > 0) {
             area = Math.sqrt(heronValue)
           } else {
-
+            // If Heron's formula fails, try base × height method
+            // For now, set area to NaN if invalid
             area = NaN
           }
-
+          
+          // Heights (with validation)
           const heightA = (a > 0 && !isNaN(area)) ? (2 * area) / a : NaN
           const heightB = (b > 0 && !isNaN(area)) ? (2 * area) / b : NaN
           const heightC = (c > 0 && !isNaN(area)) ? (2 * area) / c : NaN
-
+          
+          // Medians (with validation)
           const medianA = (a > 0 && b > 0 && c > 0) ? 0.5 * Math.sqrt(2 * b * b + 2 * c * c - a * a) : NaN
           const medianB = (a > 0 && b > 0 && c > 0) ? 0.5 * Math.sqrt(2 * a * a + 2 * c * c - b * b) : NaN
           const medianC = (a > 0 && b > 0 && c > 0) ? 0.5 * Math.sqrt(2 * a * a + 2 * b * b - c * c) : NaN
-
+          
+          // Inradius and circumradius (with validation)
           const inradius = (!isNaN(area) && semiperimeter > 0) ? area / semiperimeter : NaN
           const circumradius = (!isNaN(area) && area > 0) ? (a * b * c) / (4 * area) : NaN
-
+          
+          // Determine triangle type
           let triangleType = "Scalene"
           if (Math.abs(a - b) < 0.001 && Math.abs(b - c) < 0.001) {
             triangleType = "Equilateral"
           } else if (Math.abs(a - b) < 0.001 || Math.abs(b - c) < 0.001 || Math.abs(a - c) < 0.001) {
             triangleType = "Isosceles"
           }
-
+          
+          // Check for right triangle
           const angles = [A, B, C]
           if (angles.some(angle => Math.abs(angle - 90) < 0.001)) {
             triangleType += " (Right)"
@@ -294,15 +310,15 @@ export default function TriangleCalculator() {
             area: Number(area.toFixed(6)),
             perimeter: Number(perimeter.toFixed(6)),
             semiperimeter: Number(semiperimeter.toFixed(6)),
-            height: {
-              a: Number(heightA.toFixed(6)),
-              b: Number(heightB.toFixed(6)),
-              c: Number(heightC.toFixed(6))
+            height: { 
+              a: Number(heightA.toFixed(6)), 
+              b: Number(heightB.toFixed(6)), 
+              c: Number(heightC.toFixed(6)) 
             },
-            median: {
-              a: Number(medianA.toFixed(6)),
-              b: Number(medianB.toFixed(6)),
-              c: Number(medianC.toFixed(6))
+            median: { 
+              a: Number(medianA.toFixed(6)), 
+              b: Number(medianB.toFixed(6)), 
+              c: Number(medianC.toFixed(6)) 
             },
             inradius: Number(inradius.toFixed(6)),
             circumradius: Number(circumradius.toFixed(6)),
@@ -343,14 +359,14 @@ export default function TriangleCalculator() {
 
   const copyResult = () => {
     if (!result) return
-
+    
     const resultText = `Triangle Calculator Results:
 Sides: a=${result.sides.a}, b=${result.sides.b}, c=${result.sides.c}
 Angles: A=${result.angles.A}°, B=${result.angles.B}°, C=${result.angles.C}°
 Area: ${result.area}
 Perimeter: ${result.perimeter}
 Type: ${result.triangleType}`
-
+    
     navigator.clipboard.writeText(resultText)
   }
 
@@ -373,23 +389,24 @@ Type: ${result.triangleType}`
     setInputData(prev => ({ ...prev, [field]: numValue }))
   }
 
+  // Auto-calculate when enough values are provided
   useEffect(() => {
     const { sideA, sideB, sideC, angleA, angleB, angleC } = inputData
     const providedSides = [sideA, sideB, sideC].filter(v => v !== null && v > 0).length
     const providedAngles = [angleA, angleB, angleC].filter(v => v !== null && v > 0).length
-
+    
     if (providedSides + providedAngles >= 3 && providedSides >= 1) {
-
+      // Debounce the calculation to avoid too many calls
       const timeoutId = setTimeout(() => {
         calculateTriangle()
       }, 500)
-
+      
       return () => clearTimeout(timeoutId)
     }
   }, [inputData, calculateTriangle])
 
   return (
-    <div
+    <div 
       ref={calculatorRef}
       tabIndex={0}
       className="space-y-4 focus:outline-none"
@@ -399,7 +416,7 @@ Type: ${result.triangleType}`
         }
       }}
     >
-      {}
+      {/* Calculator Display */}
       <Card className="bg-card border-border">
         <CardHeader className="pb-2 px-3 sm:px-6">
           <div className="flex items-center justify-between">
@@ -421,9 +438,9 @@ Type: ${result.triangleType}`
           </div>
         </CardHeader>
         <CardContent className="space-y-4 px-3 sm:px-6">
-          {}
+          {/* Input Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {}
+            {/* Sides */}
             <div className="space-y-3">
               <h3 className="text-sm font-semibold flex items-center gap-1.5 text-heading-accent">
                 <Ruler className="h-3.5 w-3.5" />
@@ -466,7 +483,7 @@ Type: ${result.triangleType}`
               </div>
             </div>
 
-            {}
+            {/* Angles */}
             <div className="space-y-3">
               <h3 className="text-sm font-semibold flex items-center gap-1.5 text-heading-accent">
                 <Calculator className="h-3.5 w-3.5" />
@@ -510,7 +527,7 @@ Type: ${result.triangleType}`
             </div>
           </div>
 
-          {}
+          {/* Angle Unit Selection */}
           <div className="flex items-center gap-2">
             <Label htmlFor="angleUnit" className="text-xs text-muted-foreground">Angle Unit:</Label>
             <Select value={angleUnit} onValueChange={(value: "degree" | "radian") => setAngleUnit(value)}>
@@ -524,10 +541,10 @@ Type: ${result.triangleType}`
             </Select>
           </div>
 
-          {}
+          {/* Action Buttons */}
           <div className="flex flex-wrap gap-2">
-            <Button
-              onClick={calculateTriangle}
+            <Button 
+              onClick={calculateTriangle} 
               disabled={isCalculating}
               className="flex-1 min-w-[100px] h-9 text-xs font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground"
             >
@@ -555,7 +572,7 @@ Type: ${result.triangleType}`
             )}
           </div>
 
-          {}
+          {/* Instructions */}
           <div className="bg-card border border-border rounded-lg p-3">
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-heading-accent mt-0.5 flex-shrink-0" />
@@ -570,7 +587,7 @@ Type: ${result.triangleType}`
         </CardContent>
       </Card>
 
-      {}
+      {/* Results */}
       {result && (
         <Card className="bg-card border-border">
           <CardHeader className="pb-2 px-3 sm:px-6">
@@ -586,7 +603,7 @@ Type: ${result.triangleType}`
           <CardContent className="px-3 sm:px-6">
             {result.isValid ? (
               <div className="space-y-4">
-                {}
+                {/* Basic Properties */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
                     <h3 className="text-sm font-semibold text-heading-accent mb-2">Sides</h3>
@@ -605,7 +622,7 @@ Type: ${result.triangleType}`
                       </div>
                     </div>
                   </div>
-
+                  
                   <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
                     <h3 className="text-sm font-semibold text-heading-accent mb-2">Angles</h3>
                     <div className="space-y-1.5">
@@ -625,7 +642,7 @@ Type: ${result.triangleType}`
                   </div>
                 </div>
 
-                {}
+                {/* Advanced Properties */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
                     <h3 className="text-sm font-semibold text-heading-accent mb-2">Area & Perimeter</h3>
@@ -644,7 +661,7 @@ Type: ${result.triangleType}`
                       </div>
                     </div>
                   </div>
-
+                  
                   <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
                     <h3 className="text-sm font-semibold text-heading-accent mb-2">Radii</h3>
                     <div className="space-y-1.5">
@@ -660,7 +677,7 @@ Type: ${result.triangleType}`
                   </div>
                 </div>
 
-                {}
+                {/* Heights and Medians */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
                     <h3 className="text-sm font-semibold text-heading-accent mb-2">Heights</h3>
@@ -679,7 +696,7 @@ Type: ${result.triangleType}`
                       </div>
                     </div>
                   </div>
-
+                  
                   <div className="space-y-2 p-3 bg-card rounded-lg border border-border">
                     <h3 className="text-sm font-semibold text-heading-accent mb-2">Medians</h3>
                     <div className="space-y-1.5">
@@ -699,7 +716,7 @@ Type: ${result.triangleType}`
                   </div>
                 </div>
 
-                {}
+                {/* Triangle Type */}
                 <div className="bg-card border border-border rounded-lg p-3">
                   <div className="flex items-center gap-2 mb-1">
                     <Triangle className="h-3.5 w-3.5 text-heading-accent" />
@@ -719,7 +736,7 @@ Type: ${result.triangleType}`
         </Card>
       )}
 
-      {}
+      {/* History */}
       {history.length > 0 && (
         <Card className="bg-card border-border">
           <CardHeader className="pb-2 px-3 sm:px-6">
@@ -750,8 +767,8 @@ Type: ${result.triangleType}`
                       </div>
                     </div>
                   </div>
-                  <Button
-                    variant="ghost"
+                  <Button 
+                    variant="ghost" 
                     size="sm"
                     onClick={() => {
                       const resultText = `Triangle: a=${calc.sides.a}, b=${calc.sides.b}, c=${calc.sides.c}, Area=${calc.area}`

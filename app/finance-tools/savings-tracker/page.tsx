@@ -51,6 +51,7 @@ import {
   Calendar
 } from "lucide-react"
 import type { Metadata } from "next"
+import Link from "next/link"
 import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
   keywords: [
     "fasttools",
     "fast tools",
-
+    // Primary Keywords (20)
     "savings goal tracker",
     "free savings goal tracker",
     "savings calculator",
@@ -81,7 +82,8 @@ export const metadata: Metadata = {
     "progress to goal",
     "savings percentage to goal",
     "savings habit tracker",
-
+    
+    // Advanced Financial Planning Keywords (25)
     "advanced financial planner",
     "comprehensive expense tracker",
     "tax deductible expense calculator",
@@ -107,7 +109,8 @@ export const metadata: Metadata = {
     "expense optimization tool",
     "savings strategy planner",
     "financial goal achievement calculator",
-
+    
+    // Category-Specific Keywords (20)
     "housing expense calculator",
     "transportation cost calculator",
     "food budget calculator",
@@ -128,7 +131,8 @@ export const metadata: Metadata = {
     "vehicle purchase calculator",
     "vacation budget planner",
     "holiday savings calculator",
-
+    
+    // Tax & Financial Optimization Keywords (15)
     "tax deduction calculator",
     "tax savings planner",
     "deductible expense tracker",
@@ -144,7 +148,8 @@ export const metadata: Metadata = {
     "financial deduction calculator",
     "expense tax planner",
     "tax efficient savings",
-
+    
+    // Priority & Timeline Keywords (15)
     "high priority savings",
     "medium priority goals",
     "low priority expenses",
@@ -160,7 +165,8 @@ export const metadata: Metadata = {
     "financial deadline calculator",
     "savings completion tracker",
     "goal timeline planner",
-
+    
+    // Frequency & Planning Keywords (10)
     "monthly expense calculator",
     "yearly expense planner",
     "one-time expense tracker",
@@ -171,7 +177,8 @@ export const metadata: Metadata = {
     "budget frequency calculator",
     "expense planning tool",
     "budget frequency planner",
-
+    
+    // Golden Keywords - High Value, Low Competition (10)
     "smart savings tracker online",
     "progress-based savings tracker",
     "multi-goal savings calculator",
@@ -182,7 +189,8 @@ export const metadata: Metadata = {
     "motivational savings tracker",
     "daily savings tracker online",
     "smart savings planner tool",
-
+    
+    // Primary Keywords - Core Savings Tracker Terms (10)
     "savings tracker",
     "savings goal tracker",
     "money savings tracker",
@@ -193,7 +201,8 @@ export const metadata: Metadata = {
     "personal savings tracker",
     "digital savings tracker",
     "goal savings calculator",
-
+    
+    // Supporting Keywords - Templates & Tools (10)
     "savings tracker template",
     "excel savings tracker",
     "printable savings tracker",
@@ -204,7 +213,8 @@ export const metadata: Metadata = {
     "automatic savings tracker",
     "savings goal planner",
     "personal finance tracker",
-
+    
+    // Secondary Keywords (20)
     "budget and savings",
     "automate savings",
     "high yield savings",
@@ -226,7 +236,8 @@ export const metadata: Metadata = {
     "time to reach savings goal online",
     "increase contribution calculator online",
     "step up savings online",
-
+    
+    // Long-tail Keywords (20)
     "free online savings goal tracker",
     "best savings goal tracker online",
     "savings goal tracker with live preview",
@@ -248,7 +259,8 @@ export const metadata: Metadata = {
     "increase contribution calculator free online",
     "step up savings free online",
     "lump sum vs monthly savings free online",
-
+    
+    // Additional SEO Keywords
     "progress to goal",
     "savings percentage to goal",
     "savings habit tracker",
@@ -369,9 +381,9 @@ export const metadata: Metadata = {
       description: "Comprehensive financial planning tool with expense tracking, tax calculations, inflation adjustments, and multiple goal management. Perfect for budgeting, savings planning, and achieving financial objectives. Features advanced expense categories, tax deductions, priority-based goal setting, and intelligent recommendations.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: {
-        "@type": "Offer",
-        price: "0",
+      offers: { 
+        "@type": "Offer", 
+        price: "0", 
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
@@ -412,9 +424,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: {
-        "@type": "Organization",
-        name: "FastTools",
+      publisher: { 
+        "@type": "Organization", 
+        name: "FastTools", 
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -458,24 +470,24 @@ export default function SavingsTrackerPage() {
 
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 xl:grid-cols-4 gap-8">
-            {}
+            {/* Main Content */}
             <div className="xl:col-span-3 space-y-8">
-              {}
+              {/* Hero Section */}
         <div className="text-center mb-8 animate-fade-in-up">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
                   Advanced Financial Goal Planner – Complete Expense & Savings Calculator ({getCurrentYear()})
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  Comprehensive financial planning tool with expense tracking, tax calculations, inflation adjustments,
-                  and multiple goal management. Perfect for budgeting, savings planning, and achieving financial objectives.
+                  Comprehensive financial planning tool with expense tracking, tax calculations, inflation adjustments, 
+                  and multiple goal management. Perfect for budgeting, savings planning, and achieving financial objectives. 
                   Features advanced expense categories, tax deductions, priority-based goal setting, and intelligent recommendations.
                 </p>
         </div>
 
-              {}
+              {/* Tool Card */}
         <SavingsGoalTracker />
 
-              {}
+              {/* Features & Usage Guide */}
               <div className="space-y-6">
                 <Card className="border border-border shadow-sm">
                   <CardHeader>
@@ -492,8 +504,8 @@ export default function SavingsTrackerPage() {
                           Goal Setting & Tracking
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Set specific savings goals with target amounts and track progress in real-time.
-                          Perfect for emergency funds, vacation savings, car purchases, and home down payments.
+                          Set specific savings goals with target amounts and track progress in real-time. 
+                          Perfect for emergency funds, vacation savings, car purchases, and home down payments. 
                           Visual progress indicators show completion percentage and remaining amounts.
                         </p>
                       </div>
@@ -503,8 +515,8 @@ export default function SavingsTrackerPage() {
                           Timeline Calculations
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Calculate exact timelines to reach your savings goals based on monthly contributions.
-                          Automatic date calculations show when you'll achieve your target. Adjust contributions
+                          Calculate exact timelines to reach your savings goals based on monthly contributions. 
+                          Automatic date calculations show when you'll achieve your target. Adjust contributions 
                           to accelerate or extend timelines based on your financial capacity.
                         </p>
                       </div>
@@ -514,8 +526,8 @@ export default function SavingsTrackerPage() {
                           Progress Monitoring
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Monitor savings progress with detailed breakdowns and visual indicators.
-                          Track current savings, remaining amounts, and completion percentages.
+                          Monitor savings progress with detailed breakdowns and visual indicators. 
+                          Track current savings, remaining amounts, and completion percentages. 
                           Perfect for staying motivated and adjusting strategies as needed.
                         </p>
                       </div>
@@ -525,8 +537,8 @@ export default function SavingsTrackerPage() {
                           Financial Planning Tools
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Comprehensive financial planning tools for various savings objectives.
-                          Supports emergency fund planning, vacation budgeting, major purchase planning,
+                          Comprehensive financial planning tools for various savings objectives. 
+                          Supports emergency fund planning, vacation budgeting, major purchase planning, 
                           and long-term financial goal setting with professional-grade calculations.
                         </p>
                       </div>
@@ -606,8 +618,8 @@ export default function SavingsTrackerPage() {
                           Comprehensive Expense Tracking
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Our advanced expense tracker supports multiple categories including housing, transportation, food, utilities,
-                          insurance, healthcare, entertainment, and shopping. Each expense can be categorized by frequency (monthly,
+                          Our advanced expense tracker supports multiple categories including housing, transportation, food, utilities, 
+                          insurance, healthcare, entertainment, and shopping. Each expense can be categorized by frequency (monthly, 
                           yearly, one-time) and priority level (high, medium, low) for optimal financial planning and budget management.
                         </p>
                       </div>
@@ -617,8 +629,8 @@ export default function SavingsTrackerPage() {
                           Tax Deduction Calculator
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Maximize your tax savings with our intelligent tax deduction calculator. Mark expenses as tax-deductible
-                          and automatically calculate monthly tax savings. Perfect for business expenses, medical costs, education
+                          Maximize your tax savings with our intelligent tax deduction calculator. Mark expenses as tax-deductible 
+                          and automatically calculate monthly tax savings. Perfect for business expenses, medical costs, education 
                           expenses, and other deductible items that can reduce your overall tax burden.
                         </p>
                       </div>
@@ -628,8 +640,8 @@ export default function SavingsTrackerPage() {
                           Inflation Adjustment Calculator
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Account for inflation in your long-term financial planning with our inflation adjustment calculator.
-                          Automatically adjust goal amounts based on projected inflation rates, ensuring your savings targets
+                          Account for inflation in your long-term financial planning with our inflation adjustment calculator. 
+                          Automatically adjust goal amounts based on projected inflation rates, ensuring your savings targets 
                           remain realistic and achievable over time. Essential for retirement planning and long-term goal setting.
                         </p>
                       </div>
@@ -639,8 +651,8 @@ export default function SavingsTrackerPage() {
                           Multi-Goal Management System
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Manage multiple financial goals simultaneously with our priority-based system. Set high, medium, and low
-                          priority goals, track progress across different categories, and receive intelligent recommendations for
+                          Manage multiple financial goals simultaneously with our priority-based system. Set high, medium, and low 
+                          priority goals, track progress across different categories, and receive intelligent recommendations for 
                           optimal goal achievement. Perfect for complex financial planning scenarios.
                         </p>
                       </div>
@@ -663,8 +675,8 @@ export default function SavingsTrackerPage() {
                           Smart Savings Tracker Online
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Our smart savings tracker online uses AI-powered algorithms to analyze your spending patterns,
-                          predict future expenses, and automatically suggest optimal savings strategies. Features intelligent
+                          Our smart savings tracker online uses AI-powered algorithms to analyze your spending patterns, 
+                          predict future expenses, and automatically suggest optimal savings strategies. Features intelligent 
                           categorization, spending predictions, and personalized recommendations for maximum savings efficiency.
                         </p>
                       </div>
@@ -674,8 +686,8 @@ export default function SavingsTrackerPage() {
                           Progress-Based Savings Tracker
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Track your savings progress with visual milestones, achievement badges, and progress bars that
-                          motivate continued saving. Our progress-based savings tracker celebrates small wins and keeps
+                          Track your savings progress with visual milestones, achievement badges, and progress bars that 
+                          motivate continued saving. Our progress-based savings tracker celebrates small wins and keeps 
                           you motivated throughout your financial journey with emotional engagement and visual feedback.
                         </p>
                       </div>
@@ -685,8 +697,8 @@ export default function SavingsTrackerPage() {
                           Multi-Goal Savings Calculator
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Manage multiple savings goals simultaneously with our advanced multi-goal savings calculator.
-                          Allocate funds across different objectives, prioritize goals by importance, and track progress
+                          Manage multiple savings goals simultaneously with our advanced multi-goal savings calculator. 
+                          Allocate funds across different objectives, prioritize goals by importance, and track progress 
                           across all targets. Perfect for complex financial planning with multiple competing priorities.
                         </p>
                       </div>
@@ -696,8 +708,8 @@ export default function SavingsTrackerPage() {
                           Savings Tracker with Gamification
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Turn saving money into an engaging game with our gamified savings tracker. Earn XP points for
-                          reaching milestones, unlock achievement badges, and compete with friends in savings challenges.
+                          Turn saving money into an engaging game with our gamified savings tracker. Earn XP points for 
+                          reaching milestones, unlock achievement badges, and compete with friends in savings challenges. 
                           Features level progression, streak tracking, and social sharing for maximum motivation.
                         </p>
                       </div>
@@ -707,8 +719,8 @@ export default function SavingsTrackerPage() {
                           Savings Habit Tracker
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Build consistent savings habits with our daily savings tracker online. Track daily contributions,
-                          monitor habit streaks, and receive reminders to maintain your savings routine. Perfect for
+                          Build consistent savings habits with our daily savings tracker online. Track daily contributions, 
+                          monitor habit streaks, and receive reminders to maintain your savings routine. Perfect for 
                           developing long-term financial discipline and creating sustainable money-saving habits.
                         </p>
                       </div>
@@ -718,8 +730,8 @@ export default function SavingsTrackerPage() {
                           Collaborative Savings Tracker
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Save together with family and friends using our collaborative savings tracker. Create shared
-                          savings goals, track group contributions, and celebrate collective achievements. Perfect for
+                          Save together with family and friends using our collaborative savings tracker. Create shared 
+                          savings goals, track group contributions, and celebrate collective achievements. Perfect for 
                           family vacations, group purchases, or shared financial objectives with built-in accountability.
                         </p>
                       </div>
@@ -729,8 +741,8 @@ export default function SavingsTrackerPage() {
                           Visual Savings Progress Calculator
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          See your savings progress with stunning visual charts, graphs, and progress indicators. Our
-                          visual savings progress calculator transforms numbers into engaging visuals that make tracking
+                          See your savings progress with stunning visual charts, graphs, and progress indicators. Our 
+                          visual savings progress calculator transforms numbers into engaging visuals that make tracking 
                           progress intuitive and motivating. Features interactive charts and real-time progress updates.
                         </p>
                       </div>
@@ -740,8 +752,8 @@ export default function SavingsTrackerPage() {
                           Motivational Savings Tracker
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Stay motivated with our inspirational savings tracker featuring daily quotes, success stories,
-                          and personalized encouragement. Perfect for Pinterest and social media sharing with motivational
+                          Stay motivated with our inspirational savings tracker featuring daily quotes, success stories, 
+                          and personalized encouragement. Perfect for Pinterest and social media sharing with motivational 
                           content that keeps you focused on your financial goals and celebrates your achievements.
                         </p>
                       </div>
@@ -871,9 +883,9 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">How to calculate savings timeline and reach financial goals</h3>
                         <p className="text-sm text-muted-foreground">
-                          To calculate savings timeline: Timeline = (Goal Amount - Current Savings) ÷ Monthly Contribution.
-                          Our savings tracker automatically calculates exact timelines based on your inputs.
-                          For example, saving $10,000 with $500 monthly contributions: ($10,000 - $2,000) ÷ $500 = 16 months.
+                          To calculate savings timeline: Timeline = (Goal Amount - Current Savings) ÷ Monthly Contribution. 
+                          Our savings tracker automatically calculates exact timelines based on your inputs. 
+                          For example, saving $10,000 with $500 monthly contributions: ($10,000 - $2,000) ÷ $500 = 16 months. 
                           Adjust contributions to accelerate or extend timelines as needed.
                         </p>
                       </div>
@@ -881,9 +893,9 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Emergency fund calculator and financial safety planning</h3>
                         <p className="text-sm text-muted-foreground">
-                          Emergency fund calculators help determine appropriate fund sizes based on monthly expenses.
-                          Standard recommendations: 3-6 months of expenses for job security, 6-12 months for variable income.
-                          Our calculator considers your specific situation and provides personalized recommendations
+                          Emergency fund calculators help determine appropriate fund sizes based on monthly expenses. 
+                          Standard recommendations: 3-6 months of expenses for job security, 6-12 months for variable income. 
+                          Our calculator considers your specific situation and provides personalized recommendations 
                           for building financial safety nets.
                         </p>
                       </div>
@@ -891,9 +903,9 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Vacation savings calculator and travel fund planning</h3>
                         <p className="text-sm text-muted-foreground">
-                          Vacation savings calculators help plan travel expenses including flights, accommodation,
-                          meals, activities, and unexpected costs. Our calculator accounts for destination-specific
-                          costs, seasonal variations, and multiple trip planning. Perfect for budgeting family vacations,
+                          Vacation savings calculators help plan travel expenses including flights, accommodation, 
+                          meals, activities, and unexpected costs. Our calculator accounts for destination-specific 
+                          costs, seasonal variations, and multiple trip planning. Perfect for budgeting family vacations, 
                           honeymoons, and international travel.
                         </p>
                       </div>
@@ -901,9 +913,9 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Car savings calculator and vehicle purchase planning</h3>
                         <p className="text-sm text-muted-foreground">
-                          Car savings calculators help plan for vehicle purchases including down payments,
-                          insurance, taxes, and registration fees. Our calculator considers different vehicle types,
-                          financing options, and trade-in values. Essential for avoiding high-interest auto loans
+                          Car savings calculators help plan for vehicle purchases including down payments, 
+                          insurance, taxes, and registration fees. Our calculator considers different vehicle types, 
+                          financing options, and trade-in values. Essential for avoiding high-interest auto loans 
                           and achieving better financing terms.
                         </p>
                       </div>
@@ -911,9 +923,9 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">House down payment savings and home purchase planning</h3>
                         <p className="text-sm text-muted-foreground">
-                          House down payment calculators help plan for home purchases with 20% down payment goals.
-                          Our calculator considers different home prices, closing costs, and additional expenses.
-                          Includes PMI avoidance strategies and first-time buyer programs. Essential for achieving
+                          House down payment calculators help plan for home purchases with 20% down payment goals. 
+                          Our calculator considers different home prices, closing costs, and additional expenses. 
+                          Includes PMI avoidance strategies and first-time buyer programs. Essential for achieving 
                           homeownership goals and reducing monthly payments.
                         </p>
                       </div>
@@ -921,8 +933,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Wedding savings planner and event budgeting</h3>
                         <p className="text-sm text-muted-foreground">
-                          Wedding savings planners help budget for ceremonies, receptions, and related expenses.
-                          Our calculator accounts for venue costs, catering, photography, attire, and miscellaneous expenses.
+                          Wedding savings planners help budget for ceremonies, receptions, and related expenses. 
+                          Our calculator accounts for venue costs, catering, photography, attire, and miscellaneous expenses. 
                           Includes timeline planning for 12-18 month engagement periods and family contribution considerations.
                         </p>
                       </div>
@@ -930,9 +942,9 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Sinking funds tracker and multiple goal management</h3>
                         <p className="text-sm text-muted-foreground">
-                          Sinking funds trackers help manage multiple savings goals simultaneously. Our calculator
-                          supports separate accounts for different objectives: emergency fund, vacation, car, home,
-                          and other major expenses. Provides allocation strategies and priority recommendations
+                          Sinking funds trackers help manage multiple savings goals simultaneously. Our calculator 
+                          supports separate accounts for different objectives: emergency fund, vacation, car, home, 
+                          and other major expenses. Provides allocation strategies and priority recommendations 
                           for efficient goal achievement.
                         </p>
                       </div>
@@ -940,9 +952,9 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Monthly savings plan and contribution optimization</h3>
                         <p className="text-sm text-muted-foreground">
-                          Monthly savings plans help optimize contribution amounts based on income and expenses.
-                          Our calculator considers budget constraints, income variations, and expense fluctuations.
-                          Provides recommendations for increasing contributions gradually and maintaining consistency
+                          Monthly savings plans help optimize contribution amounts based on income and expenses. 
+                          Our calculator considers budget constraints, income variations, and expense fluctuations. 
+                          Provides recommendations for increasing contributions gradually and maintaining consistency 
                           throughout goal achievement periods.
                         </p>
                       </div>
@@ -950,9 +962,9 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Free savings tracker vs manual calculations</h3>
                         <p className="text-sm text-muted-foreground">
-                          Free savings trackers provide instant, accurate calculations compared to manual methods.
-                          Our calculator handles complex scenarios like multiple goals, timeline adjustments, and
-                          contribution variations automatically. Perfect for busy individuals who need reliable
+                          Free savings trackers provide instant, accurate calculations compared to manual methods. 
+                          Our calculator handles complex scenarios like multiple goals, timeline adjustments, and 
+                          contribution variations automatically. Perfect for busy individuals who need reliable 
                           financial planning tools without spreadsheet complexity.
                         </p>
                       </div>
@@ -960,9 +972,9 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Financial goal planner and comprehensive planning tools</h3>
                         <p className="text-sm text-muted-foreground">
-                          Financial goal planners provide comprehensive tools for long-term financial planning.
-                          Our calculator supports retirement planning, education funding, major purchase planning,
-                          and wealth building strategies. Includes compound interest calculations and investment
+                          Financial goal planners provide comprehensive tools for long-term financial planning. 
+                          Our calculator supports retirement planning, education funding, major purchase planning, 
+                          and wealth building strategies. Includes compound interest calculations and investment 
                           growth projections for complete financial planning.
                         </p>
                       </div>
@@ -970,9 +982,9 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Advanced expense tracking and categorization for comprehensive budgeting</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our advanced expense tracker supports comprehensive categorization including housing, transportation,
-                          food, utilities, insurance, healthcare, entertainment, and shopping expenses. Each expense can be
-                          categorized by frequency (monthly, yearly, one-time) and priority level (high, medium, low) for
+                          Our advanced expense tracker supports comprehensive categorization including housing, transportation, 
+                          food, utilities, insurance, healthcare, entertainment, and shopping expenses. Each expense can be 
+                          categorized by frequency (monthly, yearly, one-time) and priority level (high, medium, low) for 
                           optimal financial planning and budget management. Perfect for detailed budget analysis and expense optimization.
                         </p>
                       </div>
@@ -980,9 +992,9 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Tax deduction calculator and deductible expense optimization</h3>
                         <p className="text-sm text-muted-foreground">
-                          Maximize your tax savings with our intelligent tax deduction calculator. Mark expenses as tax-deductible
-                          and automatically calculate monthly tax savings. Perfect for business expenses, medical costs, education
-                          expenses, and other deductible items that can reduce your overall tax burden. Essential for tax planning
+                          Maximize your tax savings with our intelligent tax deduction calculator. Mark expenses as tax-deductible 
+                          and automatically calculate monthly tax savings. Perfect for business expenses, medical costs, education 
+                          expenses, and other deductible items that can reduce your overall tax burden. Essential for tax planning 
                           and maximizing deductions.
                         </p>
                       </div>
@@ -990,9 +1002,9 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Inflation adjustment calculator and long-term financial planning</h3>
                         <p className="text-sm text-muted-foreground">
-                          Account for inflation in your long-term financial planning with our inflation adjustment calculator.
-                          Automatically adjust goal amounts based on projected inflation rates, ensuring your savings targets
-                          remain realistic and achievable over time. Essential for retirement planning, long-term goal setting,
+                          Account for inflation in your long-term financial planning with our inflation adjustment calculator. 
+                          Automatically adjust goal amounts based on projected inflation rates, ensuring your savings targets 
+                          remain realistic and achievable over time. Essential for retirement planning, long-term goal setting, 
                           and maintaining purchasing power.
                         </p>
                       </div>
@@ -1000,8 +1012,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Multi-goal financial planner and priority-based goal management</h3>
                         <p className="text-sm text-muted-foreground">
-                          Manage multiple financial goals simultaneously with our priority-based system. Set high, medium, and low
-                          priority goals, track progress across different categories, and receive intelligent recommendations for
+                          Manage multiple financial goals simultaneously with our priority-based system. Set high, medium, and low 
+                          priority goals, track progress across different categories, and receive intelligent recommendations for 
                           optimal goal achievement. Perfect for complex financial planning scenarios and comprehensive wealth building.
                         </p>
                       </div>
@@ -1009,9 +1021,9 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Category-specific financial calculators and specialized planning tools</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our platform includes specialized calculators for housing expenses, transportation costs, food budgets,
-                          utilities tracking, insurance planning, healthcare expenses, entertainment budgets, shopping costs,
-                          education savings, business expenses, wedding planning, travel funds, and emergency fund planning.
+                          Our platform includes specialized calculators for housing expenses, transportation costs, food budgets, 
+                          utilities tracking, insurance planning, healthcare expenses, entertainment budgets, shopping costs, 
+                          education savings, business expenses, wedding planning, travel funds, and emergency fund planning. 
                           Each calculator is optimized for specific financial scenarios and planning needs.
                         </p>
                       </div>
@@ -1019,8 +1031,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Expense frequency calculator and budget planning optimization</h3>
                         <p className="text-sm text-muted-foreground">
-                          Track expenses by frequency including monthly, yearly, and one-time expenses. Our expense frequency calculator
-                          helps optimize budget planning by categorizing recurring vs. irregular expenses. Perfect for annual budget
+                          Track expenses by frequency including monthly, yearly, and one-time expenses. Our expense frequency calculator 
+                          helps optimize budget planning by categorizing recurring vs. irregular expenses. Perfect for annual budget 
                           planning, cash flow management, and understanding spending patterns across different time periods.
                         </p>
                       </div>
@@ -1028,8 +1040,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Financial milestone tracker and goal achievement monitoring</h3>
                         <p className="text-sm text-muted-foreground">
-                          Monitor your progress toward financial milestones with our comprehensive tracking system. Track savings capacity,
-                          goal completion rates, and financial achievements across multiple objectives. Perfect for staying motivated
+                          Monitor your progress toward financial milestones with our comprehensive tracking system. Track savings capacity, 
+                          goal completion rates, and financial achievements across multiple objectives. Perfect for staying motivated 
                           and ensuring consistent progress toward your financial goals and long-term wealth building objectives.
                         </p>
                       </div>
@@ -1037,8 +1049,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Expense optimization tool and savings strategy planner</h3>
                         <p className="text-sm text-muted-foreground">
-                          Optimize your expenses and maximize savings with our intelligent analysis tools. Get recommendations for
-                          reducing costs, increasing savings capacity, and improving financial efficiency. Perfect for identifying
+                          Optimize your expenses and maximize savings with our intelligent analysis tools. Get recommendations for 
+                          reducing costs, increasing savings capacity, and improving financial efficiency. Perfect for identifying 
                           areas for improvement and developing effective savings strategies for long-term financial success.
                         </p>
                       </div>
@@ -1046,8 +1058,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Interest rate calculator and investment planning integration</h3>
                         <p className="text-sm text-muted-foreground">
-                          Factor in interest rates and investment returns with our comprehensive calculator. Account for different
-                          interest rates, compound growth, and investment performance in your financial planning. Essential for
+                          Factor in interest rates and investment returns with our comprehensive calculator. Account for different 
+                          interest rates, compound growth, and investment performance in your financial planning. Essential for 
                           retirement planning, investment goal setting, and maximizing returns on your savings and investments.
                         </p>
                       </div>
@@ -1055,8 +1067,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Smart savings tracker online and AI-powered financial planning</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our smart savings tracker online uses advanced AI algorithms to analyze your spending patterns, predict
-                          future expenses, and automatically suggest optimal savings strategies. Features intelligent categorization,
+                          Our smart savings tracker online uses advanced AI algorithms to analyze your spending patterns, predict 
+                          future expenses, and automatically suggest optimal savings strategies. Features intelligent categorization, 
                           spending predictions, and personalized recommendations for maximum savings efficiency and financial success.
                         </p>
                       </div>
@@ -1064,8 +1076,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Progress-based savings tracker and motivational features</h3>
                         <p className="text-sm text-muted-foreground">
-                          Track your savings progress with visual milestones, achievement badges, and progress bars that motivate
-                          continued saving. Our progress-based savings tracker celebrates small wins and keeps you motivated throughout
+                          Track your savings progress with visual milestones, achievement badges, and progress bars that motivate 
+                          continued saving. Our progress-based savings tracker celebrates small wins and keeps you motivated throughout 
                           your financial journey with emotional engagement and visual feedback that makes saving money rewarding.
                         </p>
                       </div>
@@ -1073,8 +1085,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Multi-goal savings calculator and complex financial planning</h3>
                         <p className="text-sm text-muted-foreground">
-                          Manage multiple savings goals simultaneously with our advanced multi-goal savings calculator. Allocate funds
-                          across different objectives, prioritize goals by importance, and track progress across all targets. Perfect
+                          Manage multiple savings goals simultaneously with our advanced multi-goal savings calculator. Allocate funds 
+                          across different objectives, prioritize goals by importance, and track progress across all targets. Perfect 
                           for complex financial planning with multiple competing priorities and comprehensive wealth building.
                         </p>
                       </div>
@@ -1082,8 +1094,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Savings tracker with gamification and engagement features</h3>
                         <p className="text-sm text-muted-foreground">
-                          Turn saving money into an engaging game with our gamified savings tracker. Earn XP points for reaching
-                          milestones, unlock achievement badges, and compete with friends in savings challenges. Features level
+                          Turn saving money into an engaging game with our gamified savings tracker. Earn XP points for reaching 
+                          milestones, unlock achievement badges, and compete with friends in savings challenges. Features level 
                           progression, streak tracking, and social sharing for maximum motivation and long-term habit formation.
                         </p>
                       </div>
@@ -1091,8 +1103,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Savings habit tracker and daily financial discipline</h3>
                         <p className="text-sm text-muted-foreground">
-                          Build consistent savings habits with our daily savings tracker online. Track daily contributions, monitor
-                          habit streaks, and receive reminders to maintain your savings routine. Perfect for developing long-term
+                          Build consistent savings habits with our daily savings tracker online. Track daily contributions, monitor 
+                          habit streaks, and receive reminders to maintain your savings routine. Perfect for developing long-term 
                           financial discipline and creating sustainable money-saving habits that last a lifetime.
                         </p>
                       </div>
@@ -1100,8 +1112,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Collaborative savings tracker for family and group goals</h3>
                         <p className="text-sm text-muted-foreground">
-                          Save together with family and friends using our collaborative savings tracker. Create shared savings goals,
-                          track group contributions, and celebrate collective achievements. Perfect for family vacations, group
+                          Save together with family and friends using our collaborative savings tracker. Create shared savings goals, 
+                          track group contributions, and celebrate collective achievements. Perfect for family vacations, group 
                           purchases, or shared financial objectives with built-in accountability and social motivation.
                         </p>
                       </div>
@@ -1109,8 +1121,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Visual savings progress calculator and interactive charts</h3>
                         <p className="text-sm text-muted-foreground">
-                          See your savings progress with stunning visual charts, graphs, and progress indicators. Our visual savings
-                          progress calculator transforms numbers into engaging visuals that make tracking progress intuitive and
+                          See your savings progress with stunning visual charts, graphs, and progress indicators. Our visual savings 
+                          progress calculator transforms numbers into engaging visuals that make tracking progress intuitive and 
                           motivating. Features interactive charts and real-time progress updates for better financial awareness.
                         </p>
                       </div>
@@ -1118,8 +1130,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Motivational savings tracker and inspirational content</h3>
                         <p className="text-sm text-muted-foreground">
-                          Stay motivated with our inspirational savings tracker featuring daily quotes, success stories, and
-                          personalized encouragement. Perfect for Pinterest and social media sharing with motivational content that
+                          Stay motivated with our inspirational savings tracker featuring daily quotes, success stories, and 
+                          personalized encouragement. Perfect for Pinterest and social media sharing with motivational content that 
                           keeps you focused on your financial goals and celebrates your achievements throughout your journey.
                         </p>
                       </div>
@@ -1127,8 +1139,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Smart savings planner tool and comprehensive financial management</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our smart savings planner tool combines all advanced features into one comprehensive platform. Features
-                          intelligent expense tracking, tax optimization, inflation adjustments, multi-goal management, gamification,
+                          Our smart savings planner tool combines all advanced features into one comprehensive platform. Features 
+                          intelligent expense tracking, tax optimization, inflation adjustments, multi-goal management, gamification, 
                           and collaborative features for complete financial planning and wealth building success.
                         </p>
                       </div>
@@ -1136,8 +1148,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Savings tracker and core tracking functionality</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our savings tracker provides essential tracking functionality for monitoring your financial progress.
-                          Features include goal setting, progress monitoring, contribution tracking, and milestone celebrations.
+                          Our savings tracker provides essential tracking functionality for monitoring your financial progress. 
+                          Features include goal setting, progress monitoring, contribution tracking, and milestone celebrations. 
                           Perfect for individuals who want a simple yet effective way to track their savings journey.
                         </p>
                       </div>
@@ -1145,8 +1157,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Online savings tracker and web-based platform benefits</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our online savings tracker offers the convenience of web-based access from any device. Features include
-                          real-time synchronization, cloud storage, multi-device access, and automatic backups. Perfect for users
+                          Our online savings tracker offers the convenience of web-based access from any device. Features include 
+                          real-time synchronization, cloud storage, multi-device access, and automatic backups. Perfect for users 
                           who want flexibility and accessibility without downloading software or mobile apps.
                         </p>
                       </div>
@@ -1154,8 +1166,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Savings tracker calculator and built-in calculation engine</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our savings tracker calculator includes a powerful built-in calculation engine for complex financial
-                          computations. Features include compound interest calculations, inflation adjustments, tax calculations,
+                          Our savings tracker calculator includes a powerful built-in calculation engine for complex financial 
+                          computations. Features include compound interest calculations, inflation adjustments, tax calculations, 
                           and goal timeline projections. Perfect for users who need advanced mathematical capabilities.
                         </p>
                       </div>
@@ -1163,8 +1175,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Free savings tracker and no-cost financial planning</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our free savings tracker provides comprehensive financial planning tools at no cost. Features include
-                          unlimited goals, advanced calculations, progress tracking, and export capabilities. Perfect for users
+                          Our free savings tracker provides comprehensive financial planning tools at no cost. Features include 
+                          unlimited goals, advanced calculations, progress tracking, and export capabilities. Perfect for users 
                           who want professional-grade financial tools without subscription fees or hidden costs.
                         </p>
                       </div>
@@ -1172,8 +1184,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Personal savings tracker and individual-focused features</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our personal savings tracker is designed specifically for individual users with personalized features.
-                          Includes custom goal categories, personal milestones, private tracking, and personalized recommendations.
+                          Our personal savings tracker is designed specifically for individual users with personalized features. 
+                          Includes custom goal categories, personal milestones, private tracking, and personalized recommendations. 
                           Perfect for users who want a tailored experience focused on their unique financial situation.
                         </p>
                       </div>
@@ -1181,8 +1193,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Digital savings tracker and modern interface design</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our digital savings tracker features a modern, intuitive interface designed for the digital age.
-                          Includes responsive design, touch-friendly controls, dark mode support, and accessibility features.
+                          Our digital savings tracker features a modern, intuitive interface designed for the digital age. 
+                          Includes responsive design, touch-friendly controls, dark mode support, and accessibility features. 
                           Perfect for users who want a contemporary, user-friendly experience with modern design principles.
                         </p>
                       </div>
@@ -1190,8 +1202,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Savings tracker template and pre-built tracking solutions</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our savings tracker template provides pre-built tracking solutions for common financial goals.
-                          Includes emergency fund templates, vacation savings templates, home purchase templates, and retirement
+                          Our savings tracker template provides pre-built tracking solutions for common financial goals. 
+                          Includes emergency fund templates, vacation savings templates, home purchase templates, and retirement 
                           planning templates. Perfect for users who want to start quickly with proven tracking structures.
                         </p>
                       </div>
@@ -1199,8 +1211,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Excel savings tracker and spreadsheet integration</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our Excel savings tracker offers seamless integration with Microsoft Excel and other spreadsheet
-                          applications. Features include data export, formula integration, chart generation, and macro support.
+                          Our Excel savings tracker offers seamless integration with Microsoft Excel and other spreadsheet 
+                          applications. Features include data export, formula integration, chart generation, and macro support. 
                           Perfect for users who prefer spreadsheet-based tracking and want to leverage existing Excel skills.
                         </p>
                       </div>
@@ -1208,8 +1220,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Printable savings tracker and physical tracking options</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our printable savings tracker provides physical tracking sheets for users who prefer paper-based
-                          methods. Includes goal tracking sheets, progress charts, contribution logs, and milestone certificates.
+                          Our printable savings tracker provides physical tracking sheets for users who prefer paper-based 
+                          methods. Includes goal tracking sheets, progress charts, contribution logs, and milestone certificates. 
                           Perfect for users who want tangible tracking materials or prefer offline tracking methods.
                         </p>
                       </div>
@@ -1217,8 +1229,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Notion savings tracker and workspace integration</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our Notion savings tracker integrates seamlessly with Notion workspaces for comprehensive project
-                          management. Features include database integration, template sharing, team collaboration, and workflow
+                          Our Notion savings tracker integrates seamlessly with Notion workspaces for comprehensive project 
+                          management. Features include database integration, template sharing, team collaboration, and workflow 
                           automation. Perfect for users who already use Notion for productivity and project management.
                         </p>
                       </div>
@@ -1226,8 +1238,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Savings goal chart and visual progress tracking</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our savings goal chart provides visual progress tracking with interactive charts and graphs.
-                          Features include progress bars, milestone markers, trend analysis, and achievement celebrations.
+                          Our savings goal chart provides visual progress tracking with interactive charts and graphs. 
+                          Features include progress bars, milestone markers, trend analysis, and achievement celebrations. 
                           Perfect for visual learners who want to see their progress in graphical format.
                         </p>
                       </div>
@@ -1235,8 +1247,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Budget and savings tracker combined functionality</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our budget and savings tracker combines expense tracking with savings goal management for comprehensive
-                          financial planning. Features include budget allocation, expense categorization, savings optimization,
+                          Our budget and savings tracker combines expense tracking with savings goal management for comprehensive 
+                          financial planning. Features include budget allocation, expense categorization, savings optimization, 
                           and financial health monitoring. Perfect for users who want integrated budget and savings management.
                         </p>
                       </div>
@@ -1244,8 +1256,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Automatic savings tracker and automated features</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our automatic savings tracker includes automated features for hands-free financial management.
-                          Features include automatic goal updates, smart notifications, progress calculations, and milestone
+                          Our automatic savings tracker includes automated features for hands-free financial management. 
+                          Features include automatic goal updates, smart notifications, progress calculations, and milestone 
                           celebrations. Perfect for users who want minimal manual intervention in their savings tracking.
                         </p>
                       </div>
@@ -1253,8 +1265,8 @@ export default function SavingsTrackerPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Personal finance tracker and comprehensive money management</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our personal finance tracker provides comprehensive money management beyond just savings. Features
-                          include expense tracking, income monitoring, debt management, investment tracking, and financial
+                          Our personal finance tracker provides comprehensive money management beyond just savings. Features 
+                          include expense tracking, income monitoring, debt management, investment tracking, and financial 
                           reporting. Perfect for users who want complete financial oversight and management.
                         </p>
                       </div>
@@ -1293,6 +1305,7 @@ export default function SavingsTrackerPage() {
               </Card>
             </div>
 
+            {/* Sidebar */}
             <div className="hidden xl:block w-80">
               <div className="sticky top-32 space-y-6">
                 <div>

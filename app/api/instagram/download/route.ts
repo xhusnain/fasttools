@@ -13,12 +13,14 @@ export async function GET(request: NextRequest) {
       )
     }
 
+    // Decode the URL properly
     const decodedUrl = decodeURIComponent(imageUrl)
 
+    // Fetch the image from Instagram with proper headers
     const response = await fetch(decodedUrl, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'image/webp,image/apng,image*;q=0.8',
+        'Accept': 'image/webp,image/apng,image/*,*/*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.9',
         'Referer': 'https://www.instagram.com/',
         'Cache-Control': 'no-cache',
@@ -34,6 +36,7 @@ export async function GET(request: NextRequest) {
 
     const imageBuffer = await response.arrayBuffer()
 
+    // Return the image with proper headers for download
     return new NextResponse(imageBuffer, {
       status: 200,
       headers: {

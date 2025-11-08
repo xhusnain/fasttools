@@ -16,7 +16,7 @@ export function ExampleCard({ title, exampleText, description, startDate, endDat
     window.dispatchEvent(new CustomEvent('setDateDifference', {
       detail: { startDate, endDate }
     }))
-
+    
     const calculatorElement = document.querySelector('[data-calculator="date-difference"]')
     if (calculatorElement) {
       calculatorElement.scrollIntoView({ behavior: 'smooth', block: 'start' })

@@ -1,7 +1,10 @@
 import { Metadata } from "next"
+import TriangleCalculator from "@/components/triangle-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import {
     Calculator,
     Triangle,
@@ -172,22 +175,22 @@ export default function TriangleCalculatorPage() {
             <div className="bg-card">
                 <div className="container mx-auto px-3 py-6 md:py-8">
                     <div className="max-w-7xl mx-auto">
-                        {}
+                        {/* Breadcrumbs */}
                         <Breadcrumbs items={[
                             { label: "Calculator", href: "/calculator" },
                             { label: "Triangle Calculator", href: "/calculator/triangle-calculator" }
                         ]} />
 
-                        {}
+                        {/* Header Section */}
                         <div className="mb-4 md:mb-6">
-                            <GHeader
+                            <GHeader 
                                 title="Triangle Calculator - Free Online Geometry Tool"
                                 description="Advanced triangle calculator with comprehensive geometry calculations including area, perimeter, angles, heights, medians, inradius, and circumradius. Supports all triangle solving methods: SSS, SAS, ASA, AAS, and SSA."
                                 titleSize="medium"
                             />
                                 </div>
 
-                        {}
+                        {/* Mobile/Tablet AdSpace after GHeader */}
                         <div className="my-6 lg:hidden">
                             <div className="text-center mb-2">
                                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -195,14 +198,14 @@ export default function TriangleCalculatorPage() {
                             <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
                         </div>
 
-                        {}
+                        {/* Main Content - Calculator and Sidebar in One Line */}
                         <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
                             <div className="space-y-6">
                                 <TriangleCalculator />
 
-                                {}
+                                {/* Educational Content Sections */}
                                 <div className="space-y-6 mt-6 md:mt-8">
-                                    {}
+                                    {/* How to Use Section */}
                                     <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                                         <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                                             <Calculator className="h-5 w-5 text-foreground" />
@@ -221,7 +224,7 @@ export default function TriangleCalculatorPage() {
                                         </div>
                                     </div>
 
-                                    {}
+                                    {/* Triangle Types Section */}
                                     <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                                         <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                                             <Triangle className="h-5 w-5 text-foreground" />
@@ -247,7 +250,7 @@ export default function TriangleCalculatorPage() {
                                         </div>
                                     </div>
 
-                                    {}
+                                    {/* Mathematical Formulas Section */}
                                     <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                                         <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                                             <Brain className="h-5 w-5 text-foreground" />
@@ -273,6 +276,7 @@ export default function TriangleCalculatorPage() {
                                         </div>
                                     </div>
 
+                                    {/* FAQ Section */}
                                     <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                                         <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                                             <BookOpen className="h-5 w-5 text-foreground" />
@@ -410,6 +414,7 @@ export default function TriangleCalculatorPage() {
                                         </div>
                                     </div>
 
+                                    {/* Related Tools Section */}
                                     <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                                         <h2 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                                             <Square className="h-5 w-5 text-foreground" />
@@ -443,6 +448,7 @@ export default function TriangleCalculatorPage() {
                                 </div>
                             </div>
 
+                            {/* Desktop Sidebar with AdSense */}
                             <div className="space-y-6 hidden lg:block">
                                 <div className="sticky top-32 space-y-6">
                                     <div>

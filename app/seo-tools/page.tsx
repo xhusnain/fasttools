@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, Code, FileText, Hash, Lightbulb, Search, Globe, Calculator } from "lucide-react"
@@ -89,7 +90,7 @@ export default function SEOToolsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1 lg:flex-[2] space-y-6">
-              {}
+              {/* Hero Section */}
               <div className="text-center space-y-5 animate-fade-in-up">
                 <GHeader
                   title="SEO Tools & Content Helpers"
@@ -99,7 +100,7 @@ export default function SEOToolsPage() {
                 />
               </div>
 
-              {}
+              {/* Mobile Ad Space */}
               <div className="lg:hidden mb-6">
                 <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
               </div>
@@ -136,14 +137,15 @@ export default function SEOToolsPage() {
             ))}
           </div>
 
-              {}
+
+              {/* Research and Use Cases */}
               <div className="space-y-5 animate-fade-in-up animation-delay-200">
                 <div className="p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-xl font-bold mb-4 text-foreground">Our SEO Tool Technology</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Our tools combine intuitive interfaces with sophisticated processing engines. We validate user inputs,
-                    examine content structures, and implement specialized optimization techniques to deliver consistent,
-                    reliable results. When real-time data is required (like trending hashtags), we synchronize information
+                    Our tools combine intuitive interfaces with sophisticated processing engines. We validate user inputs, 
+                    examine content structures, and implement specialized optimization techniques to deliver consistent, 
+                    reliable results. When real-time data is required (like trending hashtags), we synchronize information 
                     across consistent timeframes to prevent erratic outputs.
                   </p>
 
@@ -156,8 +158,8 @@ export default function SEOToolsPage() {
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Precision-Focused Design</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Our calculations employ reliable formulas, appropriate character constraints, and SEO-focused accuracy.
-                    Meta tags follow search engine standards; keyword analysis provides detailed frequency data and timestamps;
+                    Our calculations employ reliable formulas, appropriate character constraints, and SEO-focused accuracy. 
+                    Meta tags follow search engine standards; keyword analysis provides detailed frequency data and timestamps; 
                     and all results remain reproducible with identical inputs.
                   </p>
                 </div>
@@ -170,27 +172,27 @@ export default function SEOToolsPage() {
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Streamlined Workflow</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Leverage meta tag utilities to maintain consistent titles and descriptions throughout your website. Combine keyword
-                    analysis with content reviews when enhancing existing pages. For content strategy, utilize blog title creators to
+                    Leverage meta tag utilities to maintain consistent titles and descriptions throughout your website. Combine keyword 
+                    analysis with content reviews when enhancing existing pages. For content strategy, utilize blog title creators to 
                     develop multiple headline options for performance testing.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Content Strategy</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     Develop engaging titles using clear SEO principles, then verify hashtag relevance for social platforms.
-                    Lorem ipsum utilities assist in creating uniform placeholder content while keyword analysis guarantees ideal
+                    Lorem ipsum utilities assist in creating uniform placeholder content while keyword analysis guarantees ideal 
                     distribution without uncertainty.
                   </p>
 
                   <h3 className="text-lg font-bold mb-3 text-heading-accent">Multi-Platform Optimization</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Professionals can efficiently verify content optimization and social media effectiveness. Content creators can
-                    strategize across platforms using dependable meta tag and hashtag utilities. Developers can maintain content
+                    Professionals can efficiently verify content optimization and social media effectiveness. Content creators can 
+                    strategize across platforms using dependable meta tag and hashtag utilities. Developers can maintain content 
                     uniformity across platforms with reliable SEO tools.
                   </p>
                 </div>
 
-                {}
+                {/* FAQ Section (matches calculator theme) */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -277,7 +279,7 @@ export default function SEOToolsPage() {
                 </div>
               </div>
             </div>
-            {}
+            {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
             <div className="hidden lg:block w-72">
               <div className="sticky top-32 space-y-6">
                 <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

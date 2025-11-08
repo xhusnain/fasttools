@@ -4,6 +4,7 @@ import { AdSpace } from "@/components/ad-space"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calculator, Percent, DollarSign, ShoppingCart, Tag, TrendingDown, Target, Zap, Shield, Globe, Clock, FileText, Palette, BarChart3, Smartphone, Settings, Eye, Code, Copy, ExternalLink, Users, Lightbulb, Search, CheckCircle, XCircle, Video, AlertCircle, Hash, ArrowRight, CreditCard, Banknote, Coins, TrendingUp, Receipt, Wallet, PiggyBank, ArrowUp, ArrowDown, Minus, Plus, Equal, HashIcon, HelpCircle, BookOpen, Star, Heart, Gift, PieChart, Award } from "lucide-react"
 import type { Metadata } from "next"
+import Link from "next/link"
 import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   keywords: [
     "fasttools",
     "fast tools",
-
+    // Core Discount Calculator Keywords
     "discount calculator",
     `discount calculator ${getCurrentYear()}`,
     "free discount calculator",
@@ -23,7 +24,8 @@ export const metadata: Metadata = {
     "discount calculator online",
     "discount calculator tool",
     "discount calculator app",
-
+    
+    // Discount Type Keywords
     "percentage discount",
     "fixed discount",
     "stacked discounts",
@@ -36,7 +38,8 @@ export const metadata: Metadata = {
     "bulk discounts",
     "volume discounts",
     "quantity discounts",
-
+    
+    // Shopping & Sale Keywords
     "black friday discount calculator",
     "cyber monday discount calculator",
     "holiday sale calculator",
@@ -47,7 +50,8 @@ export const metadata: Metadata = {
     "weekly specials calculator",
     "monthly promotions calculator",
     "seasonal discounts calculator",
-
+    
+    // Coupon & Promo Keywords
     "coupon discount calculator",
     "promo code calculator",
     "discount code calculator",
@@ -58,7 +62,8 @@ export const metadata: Metadata = {
     "loyalty discount calculator",
     "membership discount calculator",
     "subscription discount calculator",
-
+    
+    // Business Discount Keywords
     "wholesale discount calculator",
     "trade discount calculator",
     "bulk purchase calculator",
@@ -69,7 +74,8 @@ export const metadata: Metadata = {
     "partner discount calculator",
     "reseller discount calculator",
     "distributor discount calculator",
-
+    
+    // Special Discount Types
     "student discount calculator",
     "senior discount calculator",
     "military discount calculator",
@@ -80,7 +86,8 @@ export const metadata: Metadata = {
     "anniversary discount calculator",
     "loyalty program discount",
     "VIP discount calculator",
-
+    
+    // BOGO & Special Offers
     "bogo calculator",
     "buy one get one calculator",
     "buy two get one free",
@@ -91,7 +98,8 @@ export const metadata: Metadata = {
     "buy more save more",
     "spend more save more",
     "free shipping calculator",
-
+    
+    // Tax & Pricing Keywords
     "discount before tax",
     "discount after tax",
     "tax inclusive discount",
@@ -102,7 +110,8 @@ export const metadata: Metadata = {
     "price with tax calculator",
     "price without tax calculator",
     "tax on discounted price",
-
+    
+    // Price Comparison Keywords
     "compare prices calculator",
     "price reduction calculator",
     "retail markdown calculator",
@@ -113,7 +122,8 @@ export const metadata: Metadata = {
     "savings calculator",
     "money saved calculator",
     "cost savings calculator",
-
+    
+    // Reverse Calculation Keywords
     "reverse discount calculator",
     "original price calculator",
     "find original price",
@@ -124,7 +134,8 @@ export const metadata: Metadata = {
     "profit margin calculator",
     "cost price calculator",
     "selling price calculator",
-
+    
+    // Advanced Features
     "multiple discount calculator",
     "two discounts in a row",
     "three discounts calculator",
@@ -135,7 +146,8 @@ export const metadata: Metadata = {
     "compound discount calculator",
     "progressive discount calculator",
     "tiered pricing calculator",
-
+    
+    // Specific Use Cases
     "what is 30% off 79.99",
     "how much is 15% off",
     "20% off calculator",
@@ -146,7 +158,8 @@ export const metadata: Metadata = {
     "half off calculator",
     "quarter off calculator",
     "third off calculator",
-
+    
+    // Currency & International
     "USD discount calculator",
     "EUR discount calculator",
     "GBP discount calculator",
@@ -157,7 +170,8 @@ export const metadata: Metadata = {
     "BRL discount calculator",
     "MXN discount calculator",
     "multi currency discount calculator",
-
+    
+    // Industry Specific
     "retail discount calculator",
     "ecommerce discount calculator",
     "online store discount",
@@ -168,7 +182,8 @@ export const metadata: Metadata = {
     "flight discount calculator",
     "car rental discount",
     "insurance discount calculator",
-
+    
+    // Mobile & App Keywords
     "discount calculator app",
     "mobile discount calculator",
     "iPhone discount calculator",
@@ -179,7 +194,8 @@ export const metadata: Metadata = {
     "offline discount calculator",
     "downloadable discount calculator",
     "portable discount calculator",
-
+    
+    // Long-tail Keywords
     "free online discount calculator",
     "best discount calculator online",
     "accurate discount calculator",
@@ -190,7 +206,8 @@ export const metadata: Metadata = {
     "advanced discount calculator",
     "professional discount calculator",
     "enterprise discount calculator",
-
+    
+    // FAQ Keywords
     "how to calculate discount",
     "how to calculate percentage off",
     "how to calculate sale price",
@@ -201,7 +218,8 @@ export const metadata: Metadata = {
     "how to find discount percentage",
     "how to calculate final price",
     "how to calculate total savings",
-
+    
+    // Comparison Keywords
     "discount calculator vs manual",
     "best discount calculator tool",
     "discount calculator comparison",
@@ -212,7 +230,8 @@ export const metadata: Metadata = {
     "basic vs professional discount calculator",
     "standard vs premium discount calculator",
     "basic vs enterprise discount calculator",
-
+    
+    // Additional High-Value Keywords
     "discount price calculator",
     "sale discount calculator",
     "calculate discount percentage",
@@ -265,16 +284,16 @@ export const metadata: Metadata = {
       description: "Use our free Discount Calculator to quickly find the final price after discount. Calculate savings, sale price, or original price easily. Works with any currency and supports tax or VAT calculations.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: {
-        "@type": "Offer",
-        price: "0",
+      offers: { 
+        "@type": "Offer", 
+        price: "0", 
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
       featureList: [
-        "Percentage discount calculator",
-        "Fixed discount calculator",
-        "Stacked discounts calculator",
+        "Percentage discount calculator", 
+        "Fixed discount calculator", 
+        "Stacked discounts calculator", 
         "Multiple discounts calculator",
         "Tax inclusive/exclusive discounts",
         "Sale price calculator",
@@ -298,9 +317,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: {
-        "@type": "Organization",
-        name: "FastTools",
+      publisher: { 
+        "@type": "Organization", 
+        name: "FastTools", 
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -344,21 +363,21 @@ export default function DiscountCalculatorPage() {
 
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 xl:grid-cols-4 gap-8">
-            {}
+            {/* Main Content */}
             <div className="xl:col-span-3 space-y-8">
-              {}
+              {/* Hero Section */}
         <div className="text-center mb-8 animate-fade-in-up">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
                   Free Discount Calculator – Calculate Sale Price & Savings ({getCurrentYear()})
                 </h1>
                         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                          Calculate percentage discounts, fixed amounts, and final sale prices instantly. Our free discount calculator
-                          supports multiple discounts, tax calculations, and works with any currency. Perfect for shopping,
+                          Calculate percentage discounts, fixed amounts, and final sale prices instantly. Our free discount calculator 
+                          supports multiple discounts, tax calculations, and works with any currency. Perfect for shopping, 
                           business pricing, and financial planning.
                         </p>
         </div>
 
-              {}
+              {/* Tool Card */}
               <Card className="border border-border shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardHeader className="text-center pb-4">
                   <CardTitle className="text-2xl font-bold text-foreground flex items-center justify-center gap-2">
@@ -366,8 +385,8 @@ export default function DiscountCalculatorPage() {
                     Discount Calculator
                   </CardTitle>
                           <CardDescription className="text-base text-muted-foreground">
-                            Calculate discounts, sale prices, and savings with our free online calculator.
-                            Supports percentage discounts, fixed amounts, multiple discounts, and tax calculations.
+                            Calculate discounts, sale prices, and savings with our free online calculator. 
+                            Supports percentage discounts, fixed amounts, multiple discounts, and tax calculations. 
                             Works with any currency for shopping, business, and financial planning.
                           </CardDescription>
                 </CardHeader>
@@ -376,7 +395,7 @@ export default function DiscountCalculatorPage() {
                 </CardContent>
               </Card>
 
-              {}
+              {/* Features & Usage Guide */}
               <div className="space-y-6">
                 <Card className="border border-border shadow-sm">
                   <CardHeader>
@@ -393,8 +412,8 @@ export default function DiscountCalculatorPage() {
                           Multi-Type Discount Engine
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Our advanced discount calculator supports both percentage-based reductions and fixed dollar amount discounts.
-                          Whether you're calculating Black Friday deals, Cyber Monday promotions, or seasonal clearance sales,
+                          Our advanced discount calculator supports both percentage-based reductions and fixed dollar amount discounts. 
+                          Whether you're calculating Black Friday deals, Cyber Monday promotions, or seasonal clearance sales, 
                           our tool handles complex pricing scenarios with precision and accuracy.
                         </p>
                       </div>
@@ -404,8 +423,8 @@ export default function DiscountCalculatorPage() {
                           Sequential Discount Processing
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Apply unlimited discounts in sequence with our compound discount calculator. Each discount is calculated
-                          on the already-reduced price, providing realistic savings calculations for stacked coupons,
+                          Apply unlimited discounts in sequence with our compound discount calculator. Each discount is calculated 
+                          on the already-reduced price, providing realistic savings calculations for stacked coupons, 
                           promotional codes, and multi-tier discount programs used by major retailers.
                         </p>
                       </div>
@@ -415,8 +434,8 @@ export default function DiscountCalculatorPage() {
                           Intelligent Tax Integration
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Handle both tax-inclusive and tax-exclusive pricing scenarios with our sophisticated tax calculator.
-                          Perfect for businesses operating across different jurisdictions with varying tax structures,
+                          Handle both tax-inclusive and tax-exclusive pricing scenarios with our sophisticated tax calculator. 
+                          Perfect for businesses operating across different jurisdictions with varying tax structures, 
                           including GST, VAT, sales tax, and regional tax variations.
                         </p>
                       </div>
@@ -426,8 +445,8 @@ export default function DiscountCalculatorPage() {
                           Professional Pricing Analysis
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Get comprehensive pricing breakdowns with effective discount rates, total savings calculations,
-                          and detailed cost analysis. Essential for e-commerce businesses, retail operations,
+                          Get comprehensive pricing breakdowns with effective discount rates, total savings calculations, 
+                          and detailed cost analysis. Essential for e-commerce businesses, retail operations, 
                           and financial planning professionals who need accurate pricing insights.
                         </p>
                       </div>
@@ -573,8 +592,8 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">How to calculate discount percentage and final sale price accurately</h3>
                         <p className="text-sm text-muted-foreground">
-                          Calculating discount percentages requires precise mathematical formulas: Discount Percentage = (Original Price - Sale Price) ÷ Original Price × 100.
-                          For sale price calculation: Sale Price = Original Price - (Original Price × Discount Percentage ÷ 100).
+                          Calculating discount percentages requires precise mathematical formulas: Discount Percentage = (Original Price - Sale Price) ÷ Original Price × 100. 
+                          For sale price calculation: Sale Price = Original Price - (Original Price × Discount Percentage ÷ 100). 
                           Our advanced calculator automates these complex calculations while handling tax implications and multiple discount scenarios simultaneously.
                         </p>
                       </div>
@@ -582,9 +601,9 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Understanding sequential discount application and compound savings</h3>
                         <p className="text-sm text-muted-foreground">
-                          Sequential discount processing follows a compound calculation method where each subsequent discount
-                          is applied to the already-reduced amount, not the original price. This creates exponential savings
-                          that differ significantly from simple addition. Our calculator demonstrates this compounding effect
+                          Sequential discount processing follows a compound calculation method where each subsequent discount 
+                          is applied to the already-reduced amount, not the original price. This creates exponential savings 
+                          that differ significantly from simple addition. Our calculator demonstrates this compounding effect 
                           with real-time calculations, showing how 20% + 15% discounts actually yield 32% total savings, not 35%.
                         </p>
                       </div>
@@ -592,9 +611,9 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Maximizing savings during major shopping events and seasonal sales</h3>
                         <p className="text-sm text-muted-foreground">
-                          Major shopping events like Black Friday, Cyber Monday, and holiday sales often feature complex
-                          discount structures combining percentage reductions, dollar-off coupons, and exclusive member discounts.
-                          Our calculator helps consumers and businesses navigate these multi-layered promotions, ensuring
+                          Major shopping events like Black Friday, Cyber Monday, and holiday sales often feature complex 
+                          discount structures combining percentage reductions, dollar-off coupons, and exclusive member discounts. 
+                          Our calculator helps consumers and businesses navigate these multi-layered promotions, ensuring 
                           accurate final price calculations while accounting for tax variations across different states and regions.
                         </p>
                       </div>
@@ -602,8 +621,8 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Coupon discount calculator and promo code savings</h3>
                         <p className="text-sm text-muted-foreground">
-                          Coupon discount calculator processes percentage or fixed amount coupons. Promo code calculator
-                          handles discount code calculator and voucher calculator scenarios. Both support gift card discount,
+                          Coupon discount calculator processes percentage or fixed amount coupons. Promo code calculator 
+                          handles discount code calculator and voucher calculator scenarios. Both support gift card discount, 
                           cashback calculator, and rebate calculator calculations.
                         </p>
                       </div>
@@ -611,8 +630,8 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">BOGO calculator and buy one get one deals</h3>
                         <p className="text-sm text-muted-foreground">
-                          BOGO calculator (Buy One Get One) calculates effective savings when buying multiple items.
-                          Buy one get one calculator, buy two get one free, and buy three get two free calculators
+                          BOGO calculator (Buy One Get One) calculates effective savings when buying multiple items. 
+                          Buy one get one calculator, buy two get one free, and buy three get two free calculators 
                           help determine the best value for bulk purchases.
                         </p>
                       </div>
@@ -620,8 +639,8 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Tax inclusive vs tax exclusive discount calculations</h3>
                         <p className="text-sm text-muted-foreground">
-                          Tax inclusive discount applies the discount to the price including tax. Tax exclusive discount
-                          applies to the price before tax. Our calculator supports GST discount calculator, VAT discount calculator,
+                          Tax inclusive discount applies the discount to the price including tax. Tax exclusive discount 
+                          applies to the price before tax. Our calculator supports GST discount calculator, VAT discount calculator, 
                           and sales tax discount calculations for different jurisdictions.
                         </p>
                       </div>
@@ -629,8 +648,8 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Reverse discount calculator and original price finder</h3>
                         <p className="text-sm text-muted-foreground">
-                          Reverse discount calculator finds the original price when you know the discounted price and discount percentage.
-                          Original price calculator, find original price calculator, and price before discount calculator
+                          Reverse discount calculator finds the original price when you know the discounted price and discount percentage. 
+                          Original price calculator, find original price calculator, and price before discount calculator 
                           help determine undiscounted prices for comparison.
                         </p>
                       </div>
@@ -638,8 +657,8 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Student discount calculator and special group discounts</h3>
                         <p className="text-sm text-muted-foreground">
-                          Student discount calculator, senior discount calculator, military discount calculator,
-                          and employee discount calculator help calculate savings for special groups. These often combine
+                          Student discount calculator, senior discount calculator, military discount calculator, 
+                          and employee discount calculator help calculate savings for special groups. These often combine 
                           with other discounts for maximum savings.
                         </p>
                       </div>
@@ -647,8 +666,8 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Wholesale discount calculator and bulk purchase savings</h3>
                         <p className="text-sm text-muted-foreground">
-                          Wholesale discount calculator, trade discount calculator, and bulk purchase calculator
-                          help businesses calculate savings on large orders. B2B discount calculator, corporate discount calculator,
+                          Wholesale discount calculator, trade discount calculator, and bulk purchase calculator 
+                          help businesses calculate savings on large orders. B2B discount calculator, corporate discount calculator, 
                           and distributor discount calculator support professional pricing strategies.
                         </p>
                       </div>
@@ -656,8 +675,8 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Compare prices calculator and savings optimization</h3>
                         <p className="text-sm text-muted-foreground">
-                          Compare prices calculator helps find the best deals across different retailers.
-                          Price reduction calculator, retail markdown calculator, and MSRP vs sale price calculator
+                          Compare prices calculator helps find the best deals across different retailers. 
+                          Price reduction calculator, retail markdown calculator, and MSRP vs sale price calculator 
                           help determine true savings and value.
                         </p>
                       </div>
@@ -665,8 +684,8 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Mobile discount calculator app and offline usage</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our discount calculator app works on iPhone discount calculator, Android discount calculator,
-                          and mobile discount calculator platforms. Browser discount calculator, desktop discount calculator,
+                          Our discount calculator app works on iPhone discount calculator, Android discount calculator, 
+                          and mobile discount calculator platforms. Browser discount calculator, desktop discount calculator, 
                           and offline discount calculator options ensure accessibility anywhere.
                         </p>
                       </div>
@@ -674,8 +693,8 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Industry-specific discount calculators</h3>
                         <p className="text-sm text-muted-foreground">
-                          Retail discount calculator, ecommerce discount calculator, restaurant discount calculator,
-                          hotel discount calculator, travel discount calculator, flight discount calculator,
+                          Retail discount calculator, ecommerce discount calculator, restaurant discount calculator, 
+                          hotel discount calculator, travel discount calculator, flight discount calculator, 
                           car rental discount calculator, and insurance discount calculator support industry-specific needs.
                         </p>
                       </div>
@@ -683,8 +702,8 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Currency support and international discount calculations</h3>
                         <p className="text-sm text-muted-foreground">
-                          USD discount calculator, EUR discount calculator, GBP discount calculator, CAD discount calculator,
-                          AUD discount calculator, JPY discount calculator, INR discount calculator, BRL discount calculator,
+                          USD discount calculator, EUR discount calculator, GBP discount calculator, CAD discount calculator, 
+                          AUD discount calculator, JPY discount calculator, INR discount calculator, BRL discount calculator, 
                           MXN discount calculator, and multi currency discount calculator support global pricing.
                         </p>
                       </div>
@@ -692,8 +711,8 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Advanced discount strategies and optimization</h3>
                         <p className="text-sm text-muted-foreground">
-                          Best discount combination calculator, optimal discount strategy calculator,
-                          discount stacking calculator, compound discount calculator, progressive discount calculator,
+                          Best discount combination calculator, optimal discount strategy calculator, 
+                          discount stacking calculator, compound discount calculator, progressive discount calculator, 
                           and tiered pricing calculator help maximize savings and profits.
                         </p>
                       </div>
@@ -701,9 +720,9 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Advanced pricing strategies for e-commerce businesses</h3>
                         <p className="text-sm text-muted-foreground">
-                          E-commerce businesses require sophisticated pricing models that account for customer acquisition costs,
-                          lifetime value, and competitive positioning. Our calculator enables merchants to test various discount
-                          scenarios, analyze profit margins, and optimize pricing strategies for maximum revenue while maintaining
+                          E-commerce businesses require sophisticated pricing models that account for customer acquisition costs, 
+                          lifetime value, and competitive positioning. Our calculator enables merchants to test various discount 
+                          scenarios, analyze profit margins, and optimize pricing strategies for maximum revenue while maintaining 
                           healthy profit margins across different customer segments and product categories.
                         </p>
                       </div>
@@ -711,9 +730,9 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Tax-inclusive vs tax-exclusive pricing calculations</h3>
                         <p className="text-sm text-muted-foreground">
-                          Understanding the difference between tax-inclusive and tax-exclusive pricing is crucial for accurate
-                          financial planning. Tax-inclusive pricing includes taxes in the displayed price, while tax-exclusive
-                          pricing adds taxes at checkout. Our calculator handles both scenarios, automatically adjusting
+                          Understanding the difference between tax-inclusive and tax-exclusive pricing is crucial for accurate 
+                          financial planning. Tax-inclusive pricing includes taxes in the displayed price, while tax-exclusive 
+                          pricing adds taxes at checkout. Our calculator handles both scenarios, automatically adjusting 
                           discount calculations and final pricing based on your jurisdiction's tax requirements and business model.
                         </p>
                       </div>
@@ -721,10 +740,10 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Professional discount calculator features for enterprise use</h3>
                         <p className="text-sm text-muted-foreground">
-                          Enterprise-level businesses require advanced discount calculation capabilities that go beyond basic
-                          percentage reductions. Our professional calculator supports complex pricing structures including
-                          tiered discounts, volume-based pricing, customer-specific rates, and multi-currency calculations.
-                          Perfect for B2B sales teams, procurement departments, and financial analysts who need precise
+                          Enterprise-level businesses require advanced discount calculation capabilities that go beyond basic 
+                          percentage reductions. Our professional calculator supports complex pricing structures including 
+                          tiered discounts, volume-based pricing, customer-specific rates, and multi-currency calculations. 
+                          Perfect for B2B sales teams, procurement departments, and financial analysts who need precise 
                           pricing models for contract negotiations and budget planning.
                         </p>
                       </div>
@@ -732,9 +751,9 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Optimizing profit margins with strategic discount planning</h3>
                         <p className="text-sm text-muted-foreground">
-                          Strategic discount planning requires balancing customer acquisition, retention, and profitability.
-                          Our calculator helps businesses determine optimal discount levels that maximize sales volume while
-                          maintaining healthy profit margins. By analyzing effective discount rates and total savings,
+                          Strategic discount planning requires balancing customer acquisition, retention, and profitability. 
+                          Our calculator helps businesses determine optimal discount levels that maximize sales volume while 
+                          maintaining healthy profit margins. By analyzing effective discount rates and total savings, 
                           companies can make data-driven decisions about promotional strategies and pricing adjustments.
                         </p>
                       </div>
@@ -742,9 +761,9 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">How to use discount calculator for shopping and product pricing</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our discount calculator for shopping helps consumers make informed purchasing decisions by calculating
-                          exact sale prices, total savings, and effective discount rates. Whether you're shopping online or
-                          in physical stores, our product discount calculator provides instant pricing calculations for
+                          Our discount calculator for shopping helps consumers make informed purchasing decisions by calculating 
+                          exact sale prices, total savings, and effective discount rates. Whether you're shopping online or 
+                          in physical stores, our product discount calculator provides instant pricing calculations for 
                           individual items, helping you compare deals and maximize your savings across different retailers.
                         </p>
                       </div>
@@ -752,9 +771,9 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Understanding discount formula calculator and mathematical principles</h3>
                         <p className="text-sm text-muted-foreground">
-                          The discount formula calculator uses precise mathematical formulas to ensure accurate calculations.
-                          Basic discount formula: Sale Price = Original Price × (1 - Discount Percentage ÷ 100).
-                          For fixed discounts: Sale Price = Original Price - Fixed Discount Amount. Our calculator
+                          The discount formula calculator uses precise mathematical formulas to ensure accurate calculations. 
+                          Basic discount formula: Sale Price = Original Price × (1 - Discount Percentage ÷ 100). 
+                          For fixed discounts: Sale Price = Original Price - Fixed Discount Amount. Our calculator 
                           automates these formulas while handling complex scenarios like sequential discounts and tax calculations.
                         </p>
                       </div>
@@ -762,9 +781,9 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Simple discount calculator vs advanced professional tools</h3>
                         <p className="text-sm text-muted-foreground">
-                          A simple discount calculator handles basic percentage and fixed amount discounts, perfect for
-                          quick calculations. Our advanced professional tool supports complex pricing scenarios including
-                          sequential discounts, tax integration, multiple discount types, and comprehensive pricing analysis.
+                          A simple discount calculator handles basic percentage and fixed amount discounts, perfect for 
+                          quick calculations. Our advanced professional tool supports complex pricing scenarios including 
+                          sequential discounts, tax integration, multiple discount types, and comprehensive pricing analysis. 
                           Choose the right tool based on your calculation complexity and business requirements.
                         </p>
                       </div>
@@ -772,9 +791,9 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Discount calculator with GST and VAT for international businesses</h3>
                         <p className="text-sm text-muted-foreground">
-                          International businesses require discount calculators that handle different tax systems. Our
-                          discount calculator with GST supports Goods and Services Tax calculations for countries like
-                          Australia, Canada, and India. The discount calculator with VAT handles Value Added Tax for
+                          International businesses require discount calculators that handle different tax systems. Our 
+                          discount calculator with GST supports Goods and Services Tax calculations for countries like 
+                          Australia, Canada, and India. The discount calculator with VAT handles Value Added Tax for 
                           European Union countries. Both tools support tax-inclusive and tax-exclusive pricing scenarios.
                         </p>
                       </div>
@@ -782,9 +801,9 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Discount calculator in PKR and multi-currency support</h3>
                         <p className="text-sm text-foreground">
-                          Our discount calculator in PKR (Pakistani Rupee) supports local pricing calculations for
-                          Pakistani businesses and consumers. The calculator handles PKR-specific pricing scenarios,
-                          local tax rates, and regional discount patterns. Multi-currency support enables international
+                          Our discount calculator in PKR (Pakistani Rupee) supports local pricing calculations for 
+                          Pakistani businesses and consumers. The calculator handles PKR-specific pricing scenarios, 
+                          local tax rates, and regional discount patterns. Multi-currency support enables international 
                           businesses to calculate discounts in their preferred currency while maintaining accurate conversions.
                         </p>
                       </div>
@@ -792,8 +811,8 @@ export default function DiscountCalculatorPage() {
                       <div className="p-4 rounded-lg bg-card border border-border">
                         <h3 className="font-semibold text-foreground mb-2">Free online discount calculator vs manual calculations</h3>
                         <p className="text-sm text-muted-foreground">
-                          Free online discount calculator provides instant, accurate results compared to manual calculations.
-                          Best discount calculator online tools offer advanced features like stacked discounts calculator,
+                          Free online discount calculator provides instant, accurate results compared to manual calculations. 
+                          Best discount calculator online tools offer advanced features like stacked discounts calculator, 
                           tax calculations, and multiple currency support for comprehensive pricing analysis.
                         </p>
                       </div>
@@ -803,6 +822,7 @@ export default function DiscountCalculatorPage() {
               </div>
             </div>
 
+            {/* Sidebar */}
             <div className="hidden xl:block w-80">
               <div className="sticky top-32 space-y-6">
                 <div>

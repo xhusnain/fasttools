@@ -46,7 +46,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
   }>({})
 
   const isLikelyTiktokUrl = (url: string) => {
-
+    // Accept typical TikTok URL patterns including vm.tiktok, vt.tiktok shorteners
     const pattern = /^(https?:\/\/)?(www\.)?(m\.)?(vm\.|vt\.)?tiktok\.com\/.+/i
     return pattern.test(url.trim())
   }
@@ -61,7 +61,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
 
     setLoading(true)
     try {
-
+      // Use our own API endpoint to avoid CORS issues
       const response = await fetch('/api/tiktok-download', {
         method: 'POST',
         headers: {
@@ -87,9 +87,10 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
         throw new Error("No downloadable content found for this URL")
       }
 
+      // Get thumbnail from TikTok oEmbed (non-blocking)
       let coverUrl = data.coverUrl
       if (!coverUrl) {
-
+        // Don't wait for oEmbed - fetch it in background and update when ready
         fetch(
           `https://www.tiktok.com/oembed?url=${encodeURIComponent(videoUrl.trim())}`,
           { method: "GET", mode: "cors", headers: { Accept: "application/json" } },
@@ -105,7 +106,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
             setResult(prev => prev ? { ...prev, coverUrl: oembed.thumbnail_url } : null)
           }
         })
-        .catch(() => {})
+        .catch(() => {}) // Silently fail - thumbnail is not critical
       }
 
       setResult({
@@ -132,77 +133,69 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
   const startCountdownAndDownload = async (url: string, filename: string, downloadType: string) => {
     if (!url) return
 
+    // Sanitize filename
     const sanitizedFilename = filename
-      .replace(/[^\x00-\x7F]/g, '')
+      .replace(/[^\x00-\x7F]/g, '') // Remove non-ASCII characters
       .replace(/[<>:"/\\|?*]/g, '') // Remove invalid filename characters
-.replace(/\s+/g, '_')
-.replace(/_+/g, '_')
-.replace(/^_|_$/g, '')
-.substring(0, 100)
-|| 'tiktok_download'
+      .replace(/\s+/g, '_') // Replace spaces with underscores
+      .replace(/_+/g, '_') // Replace multiple underscores with single
+      .replace(/^_|_$/g, '') // Remove leading/trailing underscores
+      .substring(0, 100) // Limit length
+      || 'tiktok_download' // Fallback if empty
 
     setError(null)
     setCountdownStates(prev => ({ ...prev, [downloadType]: 15 }))
+    console.log('Starting countdown for:', downloadType)
 
+    // Start countdown
     let countdown = 15
     const countdownInterval = setInterval(() => {
       countdown--
       setCountdownStates(prev => ({ ...prev, [downloadType]: countdown }))
-
+      
       if (countdown <= 0) {
         clearInterval(countdownInterval)
         setCountdownStates(prev => ({ ...prev, [downloadType]: undefined }))
         setDownloadingStates(prev => ({ ...prev, [downloadType]: true }))
-
+        console.log('Countdown finished, starting download for:', downloadType)
+        
+        // Start actual download
         performDownload(url, sanitizedFilename, downloadType)
       }
     }, 1000)
 
+    // Start background download immediately
     performBackgroundDownload(url, sanitizedFilename, downloadType)
   }
 
   const performBackgroundDownload = async (url: string, filename: string, downloadType: string) => {
     try {
-
+      // Try direct download first (faster)
       try {
         const response = await fetch(url, {
           method: 'GET',
           headers: {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            'Accept': '**',
+            'Accept': '*/*',
             'Referer': 'https://www.tiktok.com/'
           }
         })
 
         if (response.ok) {
           const blob = await response.blob()
-
+          
           if (blob.size > 0) {
-            const objectUrl = URL.createObjectURL(blob)
-
-            const link = document.createElement("a")
-            link.href = objectUrl
-            link.download = filename
-            link.style.display = 'none'
-
-            document.body.appendChild(link)
-            link.click()
-            document.body.removeChild(link)
-
-            setTimeout(() => {
-              URL.revokeObjectURL(objectUrl)
-            }, 1000)
-
-            setTimeout(() => {
-              setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
-              setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
-            }, 500)
-
+            // Store the blob for later use
+            ;(window as any)[`downloadedBlob_${downloadType}`] = blob
+            console.log('Background download completed for:', downloadType)
             return
           }
         }
-      } catch (directError) {}
+      } catch (directError) {
+        console.log('Direct background download failed, trying proxy:', directError)
+      }
 
+      // Fallback to proxy download
       const response = await fetch('/api/tiktok-download-file', {
         method: 'POST',
         headers: {
@@ -213,39 +206,151 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
           filename: filename
         })
       })
+      
+      if (response.ok) {
+        const blob = await response.blob()
+        if (blob.size > 0) {
+          ;(window as any)[`downloadedBlob_${downloadType}`] = blob
+          console.log('Background proxy download completed for:', downloadType)
+        }
+      }
+    } catch (error) {
+      console.log('Background download failed for:', downloadType, error)
+    }
+  }
 
+  const performDownload = async (url: string, filename: string, downloadType: string) => {
+    try {
+      // Check if we already have the blob from background download
+      const preDownloadedBlob = (window as any)[`downloadedBlob_${downloadType}`]
+      
+      if (preDownloadedBlob) {
+        console.log('Using pre-downloaded blob for:', downloadType)
+        const objectUrl = URL.createObjectURL(preDownloadedBlob)
+        
+        // Create download link
+        const link = document.createElement("a")
+        link.href = objectUrl
+        link.download = filename
+        link.style.display = 'none'
+        
+        // Add to DOM, click, and remove
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        
+        // Clean up object URL and stored blob
+        setTimeout(() => {
+          URL.revokeObjectURL(objectUrl)
+          delete (window as any)[`downloadedBlob_${downloadType}`]
+        }, 1000)
+        
+        // Show success message
+        setTimeout(() => {
+          setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
+          setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
+        }, 500)
+        
+        return
+      }
+
+      // If no pre-downloaded blob, download now
+      console.log('No pre-downloaded blob, downloading now for:', downloadType)
+      
+      // Try direct download first
+      try {
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': '*/*',
+            'Referer': 'https://www.tiktok.com/'
+          }
+        })
+
+        if (response.ok) {
+          const blob = await response.blob()
+          
+          if (blob.size > 0) {
+            const objectUrl = URL.createObjectURL(blob)
+            
+            // Create download link
+            const link = document.createElement("a")
+            link.href = objectUrl
+            link.download = filename
+            link.style.display = 'none'
+            
+            // Add to DOM, click, and remove
+            document.body.appendChild(link)
+            link.click()
+            document.body.removeChild(link)
+            
+            // Clean up object URL
+            setTimeout(() => {
+              URL.revokeObjectURL(objectUrl)
+            }, 1000)
+            
+            // Show success message
+            setTimeout(() => {
+              setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
+              setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
+            }, 500)
+            
+            return
+          }
+        }
+      } catch (directError) {
+        console.log('Direct download failed, trying proxy:', directError)
+      }
+
+      // Fallback to proxy download
+      const response = await fetch('/api/tiktok-download-file', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          url: url,
+          filename: filename
+        })
+      })
+      
       if (!response.ok) {
         throw new Error('Download failed')
       }
-
+      
       const blob = await response.blob()
-
+      
       if (blob.size === 0) {
         throw new Error('Empty file received. The content may be private or restricted.')
       }
-
+      
       const objectUrl = URL.createObjectURL(blob)
-
+      
+      // Create download link
       const link = document.createElement("a")
       link.href = objectUrl
       link.download = filename
       link.style.display = 'none'
-
+      
+      // Add to DOM, click, and remove
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
-
+      
+      // Clean up object URL
       setTimeout(() => {
         URL.revokeObjectURL(objectUrl)
       }, 1000)
-
+      
+      // Show success message
       setTimeout(() => {
         setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
         setResult(prev => prev ? { ...prev, downloadStarted: true } : null)
       }, 500)
-
+      
     } catch (e) {
-
+      // Show error
       const errorMessage = e instanceof Error ? e.message : "Download failed. Please try again."
       setError(errorMessage)
       setDownloadingStates(prev => ({ ...prev, [downloadType]: false }))
@@ -279,7 +384,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
             <Input
               id="video-url"
               type="text"
-              placeholder="https:
+              placeholder="https://www.tiktok.com/@username/video/... or https://vt.tiktok.com/..."
               value={videoUrl}
               onChange={(e) => setVideoUrl(e.target.value)}
               className={`mt-2 ${compact ? "h-11" : "h-14"} text-base border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20`}
@@ -368,6 +473,7 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                   <button
                     type="button"
                     onClick={() => {
+                      console.log('Video button clicked, current state:', downloadingStates.video)
                       startCountdownAndDownload(result.noWatermarkUrl || result.watermarkUrl!, (result.title || "tiktok-video") + ".mp4", "video")
                     }}
                     disabled={downloadingStates.video || countdownStates.video !== undefined}

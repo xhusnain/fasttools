@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     },
   },
   keywords: [
-
+    // Core High-Volume Keywords
     "sign pdf",
     "pdf signature",
     "esign pdf",
@@ -45,7 +45,8 @@ export const metadata: Metadata = {
     "sign pdf document",
     "pdf esignature",
     "pdf signer",
-
+    
+    // Action-Based Keywords
     "add signature to pdf",
     "add signature to pdf free",
     "insert signature in pdf",
@@ -56,7 +57,8 @@ export const metadata: Metadata = {
     "sign document online",
     "sign contract online",
     "sign agreement online",
-
+    
+    // Platform-Specific Keywords
     "sign pdf online free no download",
     "sign pdf without printing",
     "sign pdf on iphone",
@@ -67,7 +69,8 @@ export const metadata: Metadata = {
     "sign pdf in browser",
     "sign pdf chrome",
     "sign pdf safari",
-
+    
+    // Use Case Keywords
     "sign contract pdf",
     "sign lease agreement",
     "sign employment contract",
@@ -77,7 +80,8 @@ export const metadata: Metadata = {
     "sign invoice pdf",
     "sign proposal pdf",
     "sign receipt pdf",
-
+    
+    // Tool & Feature Keywords
     "pdf signature tool",
     "pdf signature maker",
     "pdf signature app",
@@ -88,7 +92,8 @@ export const metadata: Metadata = {
     "type signature on pdf",
     "upload signature to pdf",
     "handwritten signature pdf",
-
+    
+    // Security & Privacy Keywords
     "secure pdf signature",
     "encrypted pdf signature",
     "private pdf signing",
@@ -96,7 +101,8 @@ export const metadata: Metadata = {
     "offline pdf sign",
     "browser based pdf sign",
     "safe pdf signature",
-
+    
+    // Professional Keywords
     "business pdf signature",
     "legal pdf signature",
     "electronic signature software",
@@ -104,38 +110,44 @@ export const metadata: Metadata = {
     "esignature software free",
     "contract signing software",
     "document signing tool",
-
+    
+    // Comparison Keywords
     "docusign alternative",
     "adobe sign alternative",
     "hellosign alternative",
     "free docusign alternative",
     "pdf sign vs docusign",
-
+    
+    // Long-Tail Keywords
     "how to electronically sign pdf",
     "how to add electronic signature to pdf",
     "how to create digital signature for pdf",
     "can you sign pdf on iphone",
     "best way to sign pdf",
     "easiest way to sign pdf",
-
+    
+    // Technical Keywords
     "pdf signature field",
     "pdf form signature",
     "fillable pdf signature",
     "pdf signature placement",
     "multiple signatures pdf",
-
+    
+    // Industry-Specific
     "hr document signature",
     "freelance contract signature",
     "real estate pdf signature",
     "legal document signature",
     "medical consent signature",
-
+    
+    // FastTools Branding
     "fasttools pdf sign",
     "fasttools esignature",
     "fast tools pdf signature",
     "fasttools",
     "fast tools",
-
+    
+    // Additional High-Volume Keywords
     "sign pdf en ligne",
     "pdf signature validation online",
     "sign pdf app",
@@ -360,7 +372,8 @@ export const metadata: Metadata = {
     "sign pdf tool free",
     "sign pdf locked",
     "signature pdf kofax",
-
+    
+    // Document Related
     "sign pdf documents",
     "online sign pdf",
     "free sign pdf",
@@ -478,7 +491,8 @@ export const metadata: Metadata = {
     "small sign pdf",
     "sign pdf for free no sign up",
     "sign pdf file for free",
-
+    
+    // Sign For/In/With Keywords
     "sign for pdf",
     "signature for pdf",
     "sign in pdf file",
@@ -511,7 +525,8 @@ export const metadata: Metadata = {
     "sign with pdf free",
     "signature to pdf maker",
     "app for sign pdf",
-
+    
+    // And/As Keywords
     "pdf sign and fill free",
     "sign pdf and download free",
     "pdf sign and fill app",
@@ -807,7 +822,7 @@ export default function PDFSignPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {}
+                {/* Hero Section */}
                 <div className="text-center space-y-4 py-8">
                   <GHeader
                     title="Sign PDF Free Online - eSign PDF, Fill & Sign PDF Documents"
@@ -817,15 +832,15 @@ export default function PDFSignPage() {
                   />
                 </div>
 
-                {}
+                {/* Mobile Ad Space */}
                 <div className="lg:hidden mb-6">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {}
+                {/* PDF Sign Tool */}
                 <PDFSign />
 
-                {}
+                {/* How to Sign PDF */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -881,7 +896,7 @@ export default function PDFSignPage() {
                   </div>
                 </div>
 
-                {}
+                {/* Why Sign PDF Online */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -969,7 +984,7 @@ export default function PDFSignPage() {
                   </div>
                 </div>
 
-                {}
+                {/* Use Cases */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1077,7 +1092,7 @@ export default function PDFSignPage() {
                   </div>
                 </div>
 
-                {}
+                {/* How to Sign PDF on Different Platforms */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1142,6 +1157,7 @@ export default function PDFSignPage() {
                   </div>
                 </div>
 
+                {/* Digital Signature vs Electronic Signature */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -1182,6 +1198,7 @@ export default function PDFSignPage() {
                   </div>
                 </div>
 
+                {/* Fill and Sign PDF Guide */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1236,7 +1253,7 @@ export default function PDFSignPage() {
                   </div>
                 </div>
 
-                {}
+                {/* FastTools vs Competitors Comparison */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1322,7 +1339,7 @@ export default function PDFSignPage() {
                   </div>
                 </div>
 
-                {}
+                {/* Common Issues and Solutions */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                     <div className="h-6 w-6 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -1364,6 +1381,7 @@ export default function PDFSignPage() {
                   </div>
                 </div>
 
+                {/* FAQ Section */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-6 text-foreground">
                     Frequently Asked Questions
@@ -1417,8 +1435,8 @@ export default function PDFSignPage() {
                         No, we never add watermarks to your signed PDFs. The downloaded document is clean and professional, ready to send to clients, employers, or legal parties.
                       </p>
                     </div>
-
-                    {}
+                    
+                    {/* New FAQs */}
                     <div>
                       <h3 className="font-semibold text-heading-accent mb-2">How to sign PDF with digital signature?</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1632,7 +1650,7 @@ export default function PDFSignPage() {
                   </div>
                 </div>
 
-                {}
+                {/* Related Tools */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                   <h2 className="text-2xl font-bold mb-4 text-foreground">
                     Related PDF Tools
@@ -1670,7 +1688,7 @@ export default function PDFSignPage() {
                 </div>
               </div>
 
-              {}
+              {/* Desktop Sidebar - Ads only */}
               <div className="hidden lg:block lg:w-80 space-y-6 flex-shrink-0">
                 <div className="sticky top-8 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

@@ -70,14 +70,16 @@ export function JSONToCSV() {
         return
       }
 
+      // Get headers from first object
       const headers = Object.keys(array[0])
       const csvHeaders = headers.join(",")
 
+      // Convert rows
       const csvRows = array.map((row) => {
         return headers
           .map((header) => {
             const value = row[header]
-
+            // Escape quotes and wrap in quotes if contains comma
             const stringValue = String(value ?? "")
             return stringValue.includes(",") ? `"${stringValue.replace(/"/g, '""')}"` : stringValue
           })
@@ -112,9 +114,9 @@ export function JSONToCSV() {
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <label className="text-sm font-medium text-foreground">JSON Input</label>
-          <Button
-            variant="outline"
-            size="sm"
+          <Button 
+            variant="outline" 
+            size="sm" 
             onClick={loadSampleData}
             className="gap-1.5 text-xs"
           >

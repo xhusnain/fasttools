@@ -7,47 +7,48 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import {
-  Calculator,
-  DollarSign,
-  Percent,
-  Calendar,
-  TrendingUp,
-  TrendingDown,
-  Info,
-  AlertCircle,
-  CheckCircle,
-  Copy,
-  Download,
-  History,
-  Star,
-  Globe,
-  Shield,
-  FileText,
-  BarChart3,
-  PieChart,
-  Target,
-  Zap,
-  Clock,
-  Users,
-  Home,
-  Car,
-  ShoppingBag,
-  CreditCard,
-  Banknote,
-  Coins,
-  Wallet,
-  Briefcase,
-  Store,
-  Truck,
-  Package,
-  Tag,
-  ShoppingCart,
-  HandHeart,
-  Gift,
-  Award,
-  Trophy,
-  TrendingUp as TrendingUpIcon,
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { 
+  Calculator, 
+  DollarSign, 
+  Percent, 
+  Calendar, 
+  TrendingUp, 
+  TrendingDown, 
+  Info, 
+  AlertCircle, 
+  CheckCircle, 
+  Copy, 
+  Download, 
+  History, 
+  Star, 
+  Globe, 
+  Shield, 
+  FileText, 
+  BarChart3, 
+  PieChart, 
+  Target, 
+  Zap, 
+  Clock, 
+  Users, 
+  Home, 
+  Car, 
+  ShoppingBag, 
+  CreditCard, 
+  Banknote, 
+  Coins, 
+  Wallet, 
+  Briefcase, 
+  Store, 
+  Truck, 
+  Package, 
+  Tag, 
+  ShoppingCart, 
+  HandHeart, 
+  Gift, 
+  Award, 
+  Trophy, 
+  TrendingUp as TrendingUpIcon, 
   TrendingDown as TrendingDownIcon,
   Stethoscope,
   Brain,
@@ -127,12 +128,14 @@ export default function SalaryCalculator() {
       const days = parseFloat(daysPerWeek)
       const holidays = parseFloat(holidaysPerYear)
       const vacation = parseFloat(vacationDaysPerYear)
-
+      
+      // Calculate working days per year (52 weeks * 5 days = 260 days)
       const workingDaysPerYear = 52 * days
       const adjustedWorkingDays = workingDaysPerYear - holidays - vacation
-
+      
+      // Calculate hourly rate first
       let hourlyRate: number
-
+      
       switch (payFrequency) {
         case "hourly":
           hourlyRate = amount
@@ -147,13 +150,13 @@ export default function SalaryCalculator() {
           hourlyRate = amount / (hours * 2)
           break
         case "semimonthly":
-          hourlyRate = amount / (hours * 2.17)
+          hourlyRate = amount / (hours * 2.17) // 52 weeks / 24 pay periods
           break
         case "monthly":
-          hourlyRate = amount / (hours * 4.33)
+          hourlyRate = amount / (hours * 4.33) // 52 weeks / 12 months
           break
         case "quarterly":
-          hourlyRate = amount / (hours * 13)
+          hourlyRate = amount / (hours * 13) // 52 weeks / 4 quarters
           break
         case "annual":
           hourlyRate = amount / (hours * 52)
@@ -161,7 +164,8 @@ export default function SalaryCalculator() {
         default:
           hourlyRate = amount
       }
-
+      
+      // Calculate all pay frequencies
       const calculations = {
         hourly: {
           unadjusted: hourlyRate,
@@ -196,7 +200,8 @@ export default function SalaryCalculator() {
           adjusted: hourlyRate * hours * 52
         }
       }
-
+      
+      // Adjust for holidays and vacation days
       const adjustmentFactor = adjustedWorkingDays / workingDaysPerYear
       calculations.hourly.adjusted = hourlyRate * adjustmentFactor
       calculations.daily.adjusted = calculations.daily.unadjusted * adjustmentFactor
@@ -206,7 +211,7 @@ export default function SalaryCalculator() {
       calculations.monthly.adjusted = calculations.monthly.unadjusted * adjustmentFactor
       calculations.quarterly.adjusted = calculations.quarterly.unadjusted * adjustmentFactor
       calculations.annual.adjusted = calculations.annual.unadjusted * adjustmentFactor
-
+      
       const newResult: SalaryResult = {
         salaryAmount: amount,
         payFrequency: payFrequency,
@@ -220,7 +225,7 @@ export default function SalaryCalculator() {
         recommendations: generateRecommendations(amount, payFrequency, calculations.annual.adjusted),
         comparison: generateComparison(calculations.annual.adjusted)
       }
-
+      
       setResult(newResult)
       setHistory(prev => [newResult, ...prev.slice(0, 4)])
     }
@@ -231,6 +236,7 @@ export default function SalaryCalculator() {
     const negotiationTips: string[] = []
     const careerAdvice: string[] = []
 
+    // Salary optimization recommendations
     if (annualSalary < 50000) {
       salaryOptimization.push("Consider negotiating for a higher base salary")
       salaryOptimization.push("Research market rates for your position and experience")
@@ -240,11 +246,13 @@ export default function SalaryCalculator() {
       salaryOptimization.push("Consider equity and bonus structures")
     }
 
+    // Negotiation tips
     negotiationTips.push("Research industry salary benchmarks before negotiations")
     negotiationTips.push("Highlight your achievements and value to the company")
     negotiationTips.push("Consider total compensation, not just base salary")
     negotiationTips.push("Practice your negotiation pitch beforehand")
 
+    // Career advice
     careerAdvice.push("Continuously develop new skills and certifications")
     careerAdvice.push("Build a strong professional network")
     careerAdvice.push("Consider lateral moves for experience and growth")
@@ -289,7 +297,7 @@ Working Days: ${result.adjustedWorkingDays} days/year`
 
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 w-full overflow-hidden">
-      {}
+      {/* Main Calculator */}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -298,7 +306,7 @@ Working Days: ${result.adjustedWorkingDays} days/year`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4 sm:space-y-6 px-2 sm:px-3 md:px-4">
-          {}
+          {/* Input Fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-1.5 w-full min-w-0">
               <Label htmlFor="salaryAmount" className="text-heading-accent text-xs sm:text-sm">Salary Amount ($)</Label>
@@ -390,10 +398,10 @@ Working Days: ${result.adjustedWorkingDays} days/year`
         </CardContent>
       </Card>
 
-      {}
+      {/* Results Section */}
       {result && (
         <div className="space-y-4 sm:space-y-6">
-          {}
+          {/* Main Results */}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -465,7 +473,7 @@ Working Days: ${result.adjustedWorkingDays} days/year`
             </CardContent>
           </Card>
 
-          {}
+          {/* Working Days Summary */}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -489,7 +497,7 @@ Working Days: ${result.adjustedWorkingDays} days/year`
             </CardContent>
           </Card>
 
-          {}
+          {/* Industry Comparison */}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -514,7 +522,7 @@ Working Days: ${result.adjustedWorkingDays} days/year`
             </CardContent>
           </Card>
 
-          {}
+          {/* Recommendations */}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -563,7 +571,7 @@ Working Days: ${result.adjustedWorkingDays} days/year`
         </div>
       )}
 
-      {}
+      {/* History Section */}
       {history.length > 0 && (
         <Card className="bg-card border-border w-full overflow-hidden">
           <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
@@ -599,7 +607,7 @@ Working Days: ${result.adjustedWorkingDays} days/year`
         </Card>
       )}
 
-      {}
+      {/* Information Section */}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -621,7 +629,7 @@ Working Days: ${result.adjustedWorkingDays} days/year`
               </div>
             </div>
           </div>
-
+          
           <div className="text-xs sm:text-sm text-foreground space-y-1.5 sm:space-y-2">
             <p className="break-words">
               <strong className="text-heading-accent">Pay Frequency Conversion:</strong> Convert between hourly, daily, weekly, bi-weekly, semi-monthly, monthly, quarterly, and annual pay.

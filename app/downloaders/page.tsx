@@ -1,5 +1,6 @@
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import Link from "next/link"
 import type { Metadata } from "next"
 import {
   Download,
@@ -159,7 +160,7 @@ export default function DownloadersPage() {
           />
 
           <div className="max-w-6xl mx-auto mt-8 md:mt-12">
-            {}
+            {/* Title Section */}
             <div className="mb-12 md:mb-16">
               <GHeader
                 title="Free Downloaders"
@@ -170,7 +171,7 @@ export default function DownloadersPage() {
               />
             </div>
 
-            {}
+            {/* Downloaders Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {downloaders.map((downloader) => {
                 const Icon = downloader.icon
@@ -180,14 +181,14 @@ export default function DownloadersPage() {
                     href={downloader.href}
                     className="bg-card border border-border/40 rounded-xl p-6 hover:border-border/70 transition-all duration-300 group relative h-full flex flex-col"
                   >
-                    {}
+                    {/* Icon in top-right */}
                     <div className="absolute top-4 right-4">
                       <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
                         <Icon className="h-5 w-5 text-foreground" />
                       </div>
                     </div>
 
-                    {}
+                    {/* Content */}
                     <div className="pr-12 flex-1 flex flex-col">
                       <h3 className="text-lg font-bold text-heading-accent mb-3 group-hover:text-heading-accent transition-colors">
                         {downloader.name}
@@ -205,7 +206,7 @@ export default function DownloadersPage() {
               })}
             </div>
 
-            {}
+            {/* More Coming Soon Section */}
             <div className="mt-16 md:mt-20 p-8 md:p-12">
               <div className="text-center max-w-3xl mx-auto">
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">More Coming Soon</h2>
@@ -227,4 +228,7 @@ export default function DownloadersPage() {
     </>
   )
 }
+
+
+
 

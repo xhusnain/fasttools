@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import InflationCalculator from "@/components/inflation-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -142,7 +143,7 @@ export default function InflationCalculatorPage() {
           }
         })
       }} />
-
+      
       <div className="min-h-screen bg-card">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 py-6 sm:py-8 md:py-12">
           <Breadcrumbs
@@ -154,7 +155,7 @@ export default function InflationCalculatorPage() {
 
           <div className="max-w-7xl mx-auto w-full">
             <div className="mb-4 sm:mb-6 md:mb-8 w-full">
-              <GHeader
+              <GHeader 
                 title="Inflation Calculator - Advanced Economic Analysis"
                 description="Professional inflation calculator with historical CPI data from 1913-2025 for comprehensive economic analysis. Calculate purchasing power, inflation rates, and investment strategies with our advanced CPI calculator."
                 titleSize="medium"
@@ -162,7 +163,7 @@ export default function InflationCalculatorPage() {
               />
             </div>
 
-            {}
+            {/* Mobile/Tablet AdSpace after GHeader */}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -173,10 +174,10 @@ export default function InflationCalculatorPage() {
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] 2xl:grid-cols-[1fr_450px] gap-4 sm:gap-6 lg:gap-8 w-full">
               <div className="space-y-3 sm:space-y-4 md:space-y-5 w-full min-w-0">
                 <InflationCalculator />
-
-                {}
+            
+                {/* Educational Content Sections */}
                 <div className="mt-3 sm:mt-4 md:mt-6 space-y-3 sm:space-y-4 md:space-y-5 bg-card rounded-lg p-2 sm:p-3 md:p-4 w-full">
-                  {}
+                  {/* How to Use Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -206,7 +207,7 @@ export default function InflationCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Features Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-foreground break-words">
                       <div className="p-1 sm:p-1.5 bg-primary/10 rounded">
@@ -276,6 +277,7 @@ export default function InflationCalculatorPage() {
                     </div>
                   </div>
 
+                  {/* Use Cases Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -307,6 +309,7 @@ export default function InflationCalculatorPage() {
                     </div>
                   </div>
 
+                  {/* What is Inflation Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -327,7 +330,7 @@ export default function InflationCalculatorPage() {
                           </div>
                         </div>
                       </div>
-
+                      
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
                         <div className="p-2 xs:p-3 sm:p-4 bg-card border border-border rounded-lg overflow-hidden">
                           <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-heading-accent mb-1 xs:mb-2 sm:mb-3">Types of Inflation</h3>
@@ -351,7 +354,7 @@ export default function InflationCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* CPI Data Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -373,7 +376,7 @@ export default function InflationCalculatorPage() {
                           </div>
                         </div>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-heading-accent mb-1 xs:mb-2 sm:mb-3">Historical CPI Data</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-foreground mb-2 xs:mb-3 leading-relaxed">
@@ -393,7 +396,7 @@ export default function InflationCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Investment Strategies Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -443,7 +446,7 @@ export default function InflationCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Professional Insights Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -459,7 +462,7 @@ export default function InflationCalculatorPage() {
                         </p>
                         <p className="text-xs text-heading-accent">- Dr. Sarah Williams, PhD, Chief Economist, Federal Reserve Bank of New York</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-heading-accent mb-1 xs:mb-2">Michael Chen, CFA - Portfolio Manager</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-foreground mb-2 leading-relaxed">
@@ -467,7 +470,7 @@ export default function InflationCalculatorPage() {
                         </p>
                         <p className="text-xs text-heading-accent">- Michael Chen, CFA, Senior Portfolio Manager, BlackRock</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-heading-accent mb-1 xs:mb-2">Jennifer Martinez, CFP - Financial Planner</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-foreground mb-2 leading-relaxed">
@@ -478,7 +481,7 @@ export default function InflationCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Success Stories Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -494,7 +497,7 @@ export default function InflationCalculatorPage() {
                         </p>
                         <p className="text-xs text-foreground dark:text-foreground">- Robert K., Retired Engineer</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-heading-accent mb-1 xs:mb-2">Investment Strategy</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-foreground mb-2 leading-relaxed">
@@ -502,7 +505,7 @@ export default function InflationCalculatorPage() {
                         </p>
                         <p className="text-xs text-heading-accent">- Lisa M., Certified Financial Planner</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card border border-border rounded-lg overflow-hidden">
                         <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-heading-accent mb-1 xs:mb-2">Business Planning</h3>
                         <p className="text-xs xs:text-sm sm:text-base text-foreground mb-2 leading-relaxed">
@@ -513,7 +516,7 @@ export default function InflationCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* FAQ Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 flex items-center gap-1 xs:gap-2 text-foreground">
                       <div className="p-1 xs:p-1.5 sm:p-2 bg-primary/10 rounded-lg flex-shrink-0">
@@ -603,6 +606,7 @@ export default function InflationCalculatorPage() {
                     </div>
                   </div>
 
+                  {/* Related Tools Section */}
                   <div className="border border-border rounded-lg p-2 sm:p-3 md:p-4 shadow-sm overflow-hidden">
                     <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2 text-heading-accent break-words">
                       <div className="p-1 sm:p-1.5 bg-heading-accent-border/10 rounded">
@@ -620,7 +624,7 @@ export default function InflationCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Time value of money calculations and TVM analysis</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -630,7 +634,7 @@ export default function InflationCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Calculate investment returns and compound interest growth</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -640,7 +644,7 @@ export default function InflationCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Plan for retirement with savings and investment calculations</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -650,7 +654,7 @@ export default function InflationCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Calculate mortgage payments and home affordability</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -660,7 +664,7 @@ export default function InflationCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Convert salary across different pay frequencies</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -670,7 +674,7 @@ export default function InflationCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Calculate real interest rates on loans and investments</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -680,7 +684,7 @@ export default function InflationCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Calculate loan payments, interest, and amortization schedules</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -690,7 +694,7 @@ export default function InflationCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Calculate compound interest and investment growth</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -700,7 +704,7 @@ export default function InflationCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Convert between different currencies and exchange rates</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -710,7 +714,7 @@ export default function InflationCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Calculate income tax and sales tax amounts</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -720,7 +724,7 @@ export default function InflationCalculatorPage() {
                         </div>
                         <p className="text-xs text-foreground break-words">Advanced mathematical and scientific calculations</p>
                       </div>
-
+                      
                       <div className="p-2 xs:p-3 sm:p-4 bg-card rounded-lg border border-border hover:bg-muted transition-colors overflow-hidden">
                         <div className="flex items-center gap-2 xs:gap-3 mb-1 xs:mb-2">
                           <div className="p-1 xs:p-1.5 bg-heading-accent-border/10 rounded-lg">
@@ -734,7 +738,8 @@ export default function InflationCalculatorPage() {
                   </div>
                 </div>
               </div>
-
+              
+              {/* Sidebar */}
               <div className="hidden lg:block">
                 <div className="sticky top-4">
                   <AdSpace slot="sidebar" className="w-full h-96 rounded-lg overflow-hidden border border-border bg-card" />

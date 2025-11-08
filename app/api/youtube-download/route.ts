@@ -11,6 +11,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Validate YouTube URL
     const youtubePattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/i
     if (!youtubePattern.test(url)) {
       return NextResponse.json(
@@ -19,6 +20,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Validate format
     if (format !== 'mp4' && format !== 'mp3') {
       return NextResponse.json(
         { success: false, message: 'Format must be mp4 or mp3' },
@@ -26,11 +28,13 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Extract video ID
     const videoIdMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/v\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/)
     const videoId = videoIdMatch ? videoIdMatch[1] : null
-
+    
+    // Check if it's an actual playlist page (not a video with playlist parameters)
     const isPlaylistPage = url.includes('playlist?list=') && !url.includes('watch?v=')
-
+    
     if (isPlaylistPage) {
       return NextResponse.json({
         success: true,
@@ -40,6 +44,7 @@ export async function POST(request: NextRequest) {
       })
     }
 
+    // If no video ID found, it might be a playlist or invalid URL
     if (!videoId) {
       return NextResponse.json(
         { success: false, message: 'Could not extract video ID from URL. Please use a valid YouTube video URL.' },
@@ -47,16 +52,19 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Clean the URL to remove playlist parameters (keep only video ID)
+    // This allows videos that are part of playlists to still be downloaded
     const cleanUrl = `https://www.youtube.com/watch?v=${videoId}`
 
+    // Try multiple YouTube download APIs in parallel
     const apis = [
       {
         name: 'youtube-dl-api',
         url: `https://www.youtube.com/oembed?url=${encodeURIComponent(cleanUrl)}&format=json`,
         parser: async (data: any, vidId: string) => {
-
+          // Get video info from oEmbed
           if (data && data.title) {
-
+            // Use external service to get download URLs
             const downloadApiUrl = `https://api.vevioz.com/api/convert/mp4/${vidId}`
             try {
               const downloadResponse = await fetch(downloadApiUrl, {
@@ -76,13 +84,16 @@ export async function POST(request: NextRequest) {
                   }
                 }
               }
-            } catch (e) {}
+            } catch (e) {
+              // Fall through to next API
+            }
           }
           return null
         }
       }
     ]
 
+    // Get video metadata from oEmbed first
     let videoInfo: any = null
     try {
       const oembedUrl = `https://www.youtube.com/oembed?url=${encodeURIComponent(cleanUrl)}&format=json`
@@ -94,6 +105,7 @@ export async function POST(request: NextRequest) {
       console.error('OEmbed fetch error:', e)
     }
 
+    // Try to get download URLs using external services
     const downloadApis = [
       {
         name: 'y2mate',
@@ -110,7 +122,7 @@ export async function POST(request: NextRequest) {
             const mp3Links = data.links.mp3 || {}
             const bestQuality = Object.keys(mp4Links).sort().reverse()[0]
             const bestAudio = Object.keys(mp3Links).sort().reverse()[0]
-
+            
             return {
               videoUrl: format === 'mp4' && mp4Links[bestQuality] ? mp4Links[bestQuality].url : null,
               audioUrl: format === 'mp3' && mp3Links[bestAudio] ? mp3Links[bestAudio].url : null,
@@ -141,10 +153,11 @@ export async function POST(request: NextRequest) {
       }
     ]
 
+    // Try download APIs
     for (const api of downloadApis) {
       try {
         const controller = new AbortController()
-        const timeoutId = setTimeout(() => controller.abort(), 8000)
+        const timeoutId = setTimeout(() => controller.abort(), 8000) // Reduced timeout to 8s
 
         const fetchOptions: RequestInit = {
           method: api.method || 'GET',
@@ -171,7 +184,7 @@ export async function POST(request: NextRequest) {
         if (response.ok) {
           const data = await response.json()
           const result = api.parser(data)
-
+          
           if (result && (result.videoUrl || result.audioUrl)) {
             return NextResponse.json({
               success: true,
@@ -186,7 +199,8 @@ export async function POST(request: NextRequest) {
           }
         }
       } catch (error: any) {
-
+        // Silently continue if API fails - these are external services that may be unreliable
+        // Only log if it's not a timeout or connection error (expected failures)
         if (error?.name !== 'AbortError' && error?.code !== 'UND_ERR_SOCKET' && !error?.message?.includes('fetch failed')) {
           console.error(`API ${api.name} error:`, error?.message || error)
         }
@@ -194,6 +208,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // Fallback: Return video info with instructions to use yt-dlp or external tools
     return NextResponse.json({
       success: true,
       videoId: videoId,
@@ -203,16 +218,16 @@ export async function POST(request: NextRequest) {
       url: cleanUrl,
       format: format,
       message: 'Video information retrieved. Download links will be generated using alternative method.',
-
+      // Provide alternative download URL construction
       alternativeUrl: cleanUrl
     })
 
   } catch (error) {
     console.error('YouTube download API error:', error)
     return NextResponse.json(
-      {
-        success: false,
-        message: 'Internal server error. Please try again later.'
+      { 
+        success: false, 
+        message: 'Internal server error. Please try again later.' 
       },
       { status: 500 }
     )

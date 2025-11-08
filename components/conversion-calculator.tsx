@@ -7,9 +7,11 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Badge } from "@/components/ui/badge"
 import { Copy, Download, History, RefreshCw, Calculator, Ruler, Thermometer, DollarSign, Clock, Weight, Volume, Square, Gauge, Zap, Globe, Target, TrendingUp, BookOpen, Star, ArrowRight } from "lucide-react"
 import { toast } from "sonner"
 
+// Conversion categories and units
 const conversionCategories = {
   length: {
     name: "Length",
@@ -177,6 +179,7 @@ const conversionCategories = {
   }
 }
 
+// Temperature conversion functions
 const convertTemperature = (value: number, from: string, to: string): number => {
   const conversions: { [key: string]: { [key: string]: (val: number) => number } } = {
     celsius: {
@@ -200,7 +203,7 @@ const convertTemperature = (value: number, from: string, to: string): number => 
       kelvin: (val) => val * 5/9
     }
   }
-
+  
   if (from === to) return value
   return conversions[from]?.[to]?.(value) ?? value
 }
@@ -215,6 +218,7 @@ interface ConversionHistory {
   timestamp: Date
 }
 
+// Default units for each category (From, To)
 const defaultUnits: { [key: string]: { from: string; to: string } } = {
   length: { from: "meter", to: "foot" },
   weight: { from: "kilogram", to: "pound" },
@@ -242,16 +246,17 @@ export function ConversionCalculator() {
   const currentCategory = conversionCategories[selectedCategory]
   const currentUnits = currentCategory.units
 
+  // Update default units when category changes
   useEffect(() => {
     const defaults = defaultUnits[selectedCategory]
     const categoryUnits = conversionCategories[selectedCategory].units
     const unitKeys = Object.keys(categoryUnits)
-
+    
     if (defaults && unitKeys.includes(defaults.from) && unitKeys.includes(defaults.to)) {
       setFromUnit(defaults.from)
       setToUnit(defaults.to)
     } else {
-
+      // Fallback to first two units if defaults don't exist
       const firstTwoUnits = unitKeys.slice(0, 2)
       if (firstTwoUnits.length >= 2) {
         setFromUnit(firstTwoUnits[0])
@@ -261,11 +266,12 @@ export function ConversionCalculator() {
         setToUnit(firstTwoUnits[0])
       }
     }
-
+    // Clear input and result when category changes
     setInputValue("")
     setResult(null)
   }, [selectedCategory])
 
+  // Calculate conversion
   const calculateConversion = () => {
     if (!inputValue || isNaN(Number(inputValue))) {
       setResult(null)
@@ -283,16 +289,18 @@ export function ConversionCalculator() {
 
     let convertedValue: number
 
+    // Handle temperature conversion
     if ((fromUnitData as any).isTemperature && (toUnitData as any).isTemperature) {
       convertedValue = convertTemperature(value, fromUnit, toUnit)
     } else {
-
+      // Standard conversion
       const baseValue = value * (fromUnitData as any).factor
       convertedValue = baseValue / (toUnitData as any).factor
     }
 
     setResult(convertedValue)
 
+    // Add to history
     const historyItem: ConversionHistory = {
       id: Date.now().toString(),
       category: currentCategory.name,
@@ -303,14 +311,16 @@ export function ConversionCalculator() {
       timestamp: new Date()
     }
 
-    setHistory(prev => [historyItem, ...prev.slice(0, 49)])
+    setHistory(prev => [historyItem, ...prev.slice(0, 49)]) // Keep last 50 items
   }
 
+  // Auto-calculate when inputs change
   useEffect(() => {
     calculateConversion()
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCategory, fromUnit, toUnit, inputValue])
 
+  // Copy result to clipboard
   const copyResult = () => {
     if (result !== null) {
       navigator.clipboard.writeText(result.toString())
@@ -318,21 +328,25 @@ export function ConversionCalculator() {
     }
   }
 
+  // Clear all inputs
   const clearAll = () => {
     setInputValue("")
     setResult(null)
   }
 
+  // Swap units
   const swapUnits = () => {
     setFromUnit(toUnit)
     setToUnit(fromUnit)
   }
 
+  // Load from history
   const loadFromHistory = (item: ConversionHistory) => {
     setInputValue(item.value.toString())
     setResult(item.result)
   }
 
+  // Get unit options for current category
   const getUnitOptions = () => {
     return Object.entries(currentUnits).map(([key, unit]) => (
       <SelectItem key={key} value={key}>
@@ -343,7 +357,7 @@ export function ConversionCalculator() {
 
   return (
     <div className="space-y-6">
-      {}
+      {/* Main Calculator */}
       <Card className="bg-card border border-border shadow-lg rounded-xl">
         <CardHeader className="pb-4">
           <CardTitle className="flex items-center gap-3 text-xl font-bold">
@@ -356,15 +370,15 @@ export function ConversionCalculator() {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          {}
+          {/* Category Selection */}
           <div className="space-y-2">
             <Label className="text-sm font-medium">Conversion Category</Label>
             <Tabs value={selectedCategory} onValueChange={(value) => setSelectedCategory(value as keyof typeof conversionCategories)}>
               <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 p-1 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-950/20 dark:to-orange-950/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
                 {Object.entries(conversionCategories).map(([key, category]) => (
-                  <TabsTrigger
-                    key={key}
-                    value={key}
+                  <TabsTrigger 
+                    key={key} 
+                    value={key} 
                     className="flex flex-col items-center gap-1 text-xs px-2 py-2 sm:flex-row sm:gap-2 sm:px-3 sm:py-2 min-h-[60px] sm:min-h-[40px] data-[state=active]:!bg-yellow-500 data-[state=active]:!text-white data-[state=active]:!border-yellow-500 hover:bg-yellow-100 dark:hover:bg-yellow-900/20"
                   >
                     <category.icon className="h-4 w-4 flex-shrink-0" />
@@ -375,7 +389,7 @@ export function ConversionCalculator() {
             </Tabs>
           </div>
 
-          {}
+          {/* Conversion Inputs */}
           <div className="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
             <div className="space-y-2">
               <Label htmlFor="from-unit" className="text-sm font-semibold text-foreground flex items-center gap-2">
@@ -407,7 +421,7 @@ export function ConversionCalculator() {
             </div>
           </div>
 
-          {}
+          {/* Value Input */}
           <div className="space-y-2">
             <Label htmlFor="input-value" className="text-sm font-medium text-foreground flex items-center gap-2">
               <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
@@ -434,7 +448,7 @@ export function ConversionCalculator() {
             </div>
           </div>
 
-          {}
+          {/* Result Display */}
           {result !== null && (
             <div className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-green-900/30 rounded-xl border-2 border-green-200 dark:border-green-800 shadow-md">
               <div className="space-y-3">
@@ -458,7 +472,7 @@ export function ConversionCalculator() {
             </div>
           )}
 
-          {}
+          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3">
             <Button onClick={clearAll} variant="outline" className="flex-1 w-full h-12 rounded-lg font-medium">
               Clear All
@@ -471,7 +485,7 @@ export function ConversionCalculator() {
         </CardContent>
       </Card>
 
-      {}
+      {/* Conversion History */}
       {showHistory && history.length > 0 && (
         <Card className="bg-card border border-border shadow-lg rounded-xl">
           <CardHeader className="pb-4">
@@ -510,7 +524,7 @@ export function ConversionCalculator() {
         </Card>
       )}
 
-      {}
+      {/* Quick Conversions */}
       <Card className="bg-card border border-border shadow-lg rounded-xl">
         <CardHeader className="pb-4">
           <CardTitle className="flex items-center gap-3 text-xl font-bold text-foreground">

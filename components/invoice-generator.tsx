@@ -3,7 +3,10 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Copy, Download, Plus, Trash2, Printer, FileText, Palette, Save, Upload, Calendar } from "lucide-react"
+import { LoadingSpinner } from "@/components/loading-spinner"
 import { currencies, languages, getCurrencySymbol } from "./countries-list"
 
 interface InvoiceItem {
@@ -11,7 +14,7 @@ interface InvoiceItem {
   description: string
   quantity: number
   rate: number
-  taxRate: number
+  taxRate: number // Tax rate for this specific item (0-100)
 }
 
 export function InvoiceGenerator() {
@@ -43,9 +46,10 @@ export function InvoiceGenerator() {
   const [terms, setTerms] = useState("Payment is due within 30 days of invoice date. Late payments may incur additional fees.")
   const [currency, setCurrency] = useState("USD")
   const [language, setLanguage] = useState("en")
-  const [taxRate, setTaxRate] = useState(0)
-  const [discount, setDiscount] = useState(0)
+  const [taxRate, setTaxRate] = useState(0) // Tax rate as percentage (0-100)
+  const [discount, setDiscount] = useState(0) // Discount as percentage (0-100)
 
+  // Simple translation system with top 15 languages
   const translations: Record<string, Record<string, string>> = {
     en: {
       'invoice.companyName': 'Enter Company Name',
@@ -514,6 +518,7 @@ export function InvoiceGenerator() {
     }
   }
 
+  // Simple translation function
   const t = (key: string) => {
     const langTranslations = translations[language] || translations.en
     return langTranslations[key] || translations.en[key] || key
@@ -557,7 +562,7 @@ export function InvoiceGenerator() {
   }
 
   const calculateTax = (subtotal: number) => {
-    return subtotal * (taxRate / 100)
+    return subtotal * (taxRate / 100) // Use custom tax rate
   }
 
   const calculateTotal = () => {
@@ -599,13 +604,15 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
 
   const downloadPDF = () => {
     setLoading(true)
-
+    
+    // Create a new window for printing/downloading
     const printWindow = window.open('', '_blank')
     if (printWindow) {
       const invoiceHTML = generateInvoiceHTML()
       printWindow.document.write(invoiceHTML)
       printWindow.document.close()
-
+      
+      // Wait for content to load then trigger print dialog
       setTimeout(() => {
         printWindow.print()
         setLoading(false)
@@ -621,7 +628,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
       const invoiceHTML = generateInvoiceHTML()
       printWindow.document.write(invoiceHTML)
       printWindow.document.close()
-
+      
       setTimeout(() => {
         printWindow.print()
       }, 500)
@@ -633,7 +640,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
     const itemTaxes = calculateTotalItemTax()
     const total = calculateTotal()
     const currencySymbol = getCurrencySymbol(currency)
-
+    
     return `
     <!DOCTYPE html>
     <html>
@@ -670,14 +677,14 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
           <div><strong>Due Date:</strong> ${dueDate}</div>
         </div>
       </div>
-
+      
       <div class="company-info">
         <p><strong>${businessName}</strong><br>
         ${businessAddress}<br>
         ${businessCity}<br>
         ${businessCountry}</p>
       </div>
-
+      
       <div class="client-info">
         <h3>${t('invoice.sections.billTo')}</h3>
         <p><strong>${clientName}</strong><br>
@@ -685,7 +692,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
         ${clientCity}<br>
         ${clientCountry}</p>
       </div>
-
+      
       <table class="invoice-table">
         <thead>
           <tr>
@@ -706,7 +713,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
           `).join('')}
         </tbody>
       </table>
-
+      
       <div class="invoice-total">
         <div class="total-box">
           <div>Subtotal: ${currencySymbol}${subtotal.toFixed(2)}</div>
@@ -715,7 +722,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
           <div style="font-size: 18px; font-weight: bold; margin-top: 10px;">Total: ${currencySymbol}${total.toFixed(2)}</div>
         </div>
       </div>
-
+      
       <div class="notes">
         <h4>${t('invoice.pdf.notes')}</h4>
         <p>${notes}</p>
@@ -728,7 +735,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
   }
 
   const saveToCloud = () => {
-
+    // Simulate cloud saving functionality
     setLoading(true)
     setTimeout(() => {
       alert('Invoice saved to cloud successfully!')
@@ -742,14 +749,14 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
 
   return (
     <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
-      {}
+      {/* Main Invoice Preview */}
       <div className="w-full max-w-6xl mx-auto">
-        {}
+        {/* Invoice Preview */}
         <div className="bg-secondary border border-border rounded-lg p-3 sm:p-4 lg:p-6 shadow-sm text-white">
-              {}
+              {/* Header */}
               <div className="flex flex-col lg:flex-row justify-between items-start gap-4 mb-4 sm:mb-6">
                 <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 w-full lg:w-auto">
-                  {}
+                  {/* Logo Display */}
                   <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-border rounded-lg flex items-center justify-center border-2 border-dashed border-slate-500 flex-shrink-0">
                     {logoUrl ? (
                       <img src={logoUrl} alt="Logo" className="w-full h-full object-contain rounded-lg" />
@@ -769,8 +776,8 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                       id="logo-upload"
                     />
                     <label htmlFor="logo-upload" className="cursor-pointer">
-                      <Button
-                        size="sm"
+                      <Button 
+                        size="sm" 
                         className="bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 rounded-lg"
                         onClick={(e) => {
                           e.preventDefault()
@@ -784,8 +791,8 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                     <p className="text-xs text-muted-foreground mt-1 sm:hidden">Max 1MB</p>
                   </div>
                 </div>
-
-                {}
+                
+                {/* Language Selection */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full lg:w-auto">
                   <span className="text-xs sm:text-sm font-medium text-foreground">{t('invoice.controls.language')}:</span>
                   <select
@@ -800,7 +807,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                     ))}
                   </select>
                 </div>
-
+                
                 <div className="text-center w-full max-w-xs sm:max-w-sm">
                   <Input
                     value={companyName}
@@ -811,7 +818,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                 </div>
               </div>
 
-              {}
+              {/* Company and Client Info */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-4 sm:mb-6">
                 <div>
                   <h3 className="text-sm font-semibold text-foreground mb-3">{t('invoice.sections.yourCompany')}</h3>
@@ -869,7 +876,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                 </div>
             </div>
 
-              {}
+              {/* Invoice Details */}
               <div className="flex justify-end mb-4 sm:mb-6">
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 w-full sm:w-auto">
                   <div className="w-full sm:w-auto">
@@ -908,17 +915,17 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
             </div>
           </div>
 
-              {}
+              {/* Items Table */}
               <div className="mb-6 sm:mb-8 overflow-x-auto">
                 <table className="w-full border-collapse min-w-[600px]">
                   <thead>
-                    <tr
+                    <tr 
                       className="text-white"
-                      style={{
-                        backgroundColor: selectedTheme === 'red' ? '#dc2626' :
-                                       selectedTheme === 'blue' ? '#2563eb' :
-                                       selectedTheme === 'green' ? '#16a34a' :
-                                       selectedTheme === 'orange' ? '#ea580c' :
+                      style={{ 
+                        backgroundColor: selectedTheme === 'red' ? '#dc2626' : 
+                                       selectedTheme === 'blue' ? '#2563eb' : 
+                                       selectedTheme === 'green' ? '#16a34a' : 
+                                       selectedTheme === 'orange' ? '#ea580c' : 
                                        selectedTheme === 'purple' ? '#9333ea' : '#dc2626'
                       }}
                     >
@@ -994,7 +1001,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                     ))}
                   </tbody>
                 </table>
-
+                
                 <Button
                   onClick={addItem}
                   variant="outline"
@@ -1006,7 +1013,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                 </Button>
               </div>
 
-              {}
+              {/* Discount Controls */}
               <div className="flex justify-end mb-4 sm:mb-6">
                 <div className="w-full sm:w-64">
                   <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
@@ -1024,7 +1031,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                 </div>
               </div>
 
-              {}
+              {/* Totals */}
               <div className="flex justify-end mb-4 sm:mb-6">
                 <div className="w-full sm:w-64">
                   <div className="flex justify-between text-xs sm:text-sm mb-2 sm:mb-3">
@@ -1046,7 +1053,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                 </div>
               </div>
 
-              {}
+              {/* Notes and Terms */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-4 sm:mb-6">
                 <div>
                   <h4 className="text-xs sm:text-sm font-semibold text-foreground mb-2 sm:mb-3">{t('invoice.notes')}</h4>
@@ -1068,11 +1075,11 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
               </div>
             </div>
 
-              {}
+              {/* Controls Section */}
               <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-border">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-3 sm:gap-4">
                   <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full lg:w-auto">
-                    {}
+                    {/* Theme Selection */}
                     <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
                       <span className="text-xs sm:text-sm font-medium text-foreground">{t('invoice.controls.theme')}:</span>
                       <div className="flex gap-1 sm:gap-2">
@@ -1087,8 +1094,8 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
                             key={theme.name}
                             onClick={() => setSelectedTheme(theme.name)}
                             className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 transition-all ${
-                              selectedTheme === theme.name
-                                ? 'border-white scale-110'
+                              selectedTheme === theme.name 
+                                ? 'border-white scale-110' 
                                 : 'border-slate-500 hover:border-slate-300'
                             }`}
                             style={{ backgroundColor: theme.color }}
@@ -1097,7 +1104,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
             </div>
             </div>
 
-                    {}
+                    {/* Currency Selection */}
                     <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
                       <span className="text-xs sm:text-sm font-medium text-foreground">{t('invoice.controls.currency')}:</span>
                       <select
@@ -1114,7 +1121,7 @@ Total: ${getCurrencySymbol(currency)}${calculateTotal().toFixed(2)}
             </div>
           </div>
 
-                  {}
+                  {/* Download Button */}
         <Button
                     onClick={downloadPDF}
                     disabled={loading}

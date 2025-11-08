@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, Calendar, Hash, Cake, PartyPopper, Code, Globe, Calculator } from "lucide-react"
@@ -144,7 +145,7 @@ export default function FunToolsPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {}
+                {/* Hero Section */}
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border border-accent text-white text-xs md:text-sm font-semibold mb-4 shadow-md">
                     <Code className="h-4 w-4 animate-pulse" />
@@ -180,7 +181,7 @@ export default function FunToolsPage() {
                   </div>
                 </div>
 
-                {}
+                {/* Mobile/Tablet Ad - Top of Page */}
                 <div className="block xl:hidden mb-6">
                   <div className="text-center mb-2">
                     <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -220,7 +221,7 @@ export default function FunToolsPage() {
                   ))}
                 </div>
 
-                {}
+                {/* Mobile/Tablet Ad - After cards */}
                 <div className="block xl:hidden my-8">
                   <div className="text-center mb-2">
                     <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -228,7 +229,7 @@ export default function FunToolsPage() {
                   <AdSpace slot="content" className="w-full h-32 border border-border rounded-xl shadow-sm bg-card" />
                 </div>
 
-                {}
+                {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-200">
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-card-foreground">Our Fun Tool Technology</h2>
@@ -268,7 +269,7 @@ export default function FunToolsPage() {
                     </p>
                   </div>
 
-                  {}
+                  {/* FAQ Section (matches calculator theme) */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-card-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -341,7 +342,7 @@ export default function FunToolsPage() {
                   </div>
                 </div>
               </div>
-
+              {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
               <div className="hidden lg:block w-72">
                 <div className="sticky top-32 space-y-6">
                   <div>

@@ -29,7 +29,7 @@ export function BMICalculatorPageContent() {
     <div className="space-y-8">
       <BMICalculator onResultChange={handleResultChange} />
 
-        {}
+        {/* How to Use BMI Calculator */}
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
             <span className="p-2 bg-card rounded-lg">
@@ -93,7 +93,8 @@ export function BMICalculatorPageContent() {
           </div>
         </section>
 
-        {}
+
+        {/* Visual BMI Chart */}
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
             <span className="p-2 bg-card rounded-lg">
@@ -103,8 +104,8 @@ export function BMICalculatorPageContent() {
             </span>
             BMI Range Chart & Categories
           </h2>
-
-          {}
+          
+          {/* Visual BMI Scale */}
           <div className="mb-6 bg-card border border-border rounded-lg p-6">
             <div className="relative w-full h-12 bg-gradient-to-r from-blue-400 via-green-400 via-yellow-400 via-orange-400 to-red-500 rounded-lg overflow-hidden mb-4">
               <div className="absolute inset-0 flex items-center justify-between px-2 text-xs font-bold text-white">
@@ -138,7 +139,7 @@ export function BMICalculatorPageContent() {
             </div>
           </div>
 
-          {}
+          {/* BMI Categories and Health Implications */}
           <h3 className="text-xl font-bold mb-4 text-foreground">What Do BMI Categories Mean for Your Health?</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="p-4 bg-card border border-border rounded-lg">
@@ -204,7 +205,8 @@ export function BMICalculatorPageContent() {
           </div>
         </section>
 
-        {}
+
+        {/* Advanced BMI Metrics Explained */}
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
             <span className="p-2 bg-card rounded-lg">
@@ -248,6 +250,7 @@ export function BMICalculatorPageContent() {
           </div>
         </section>
 
+        {/* Comparison Tables */}
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
             <span className="p-2 bg-card rounded-lg">
@@ -259,7 +262,7 @@ export function BMICalculatorPageContent() {
           </h2>
 
           <div className="space-y-6">
-
+            {/* BMI vs Body Fat Percentage */}
             <div className="bg-card border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold text-heading-accent mb-4">BMI vs Body Fat Percentage</h3>
               <div className="overflow-x-auto">
@@ -298,7 +301,7 @@ export function BMICalculatorPageContent() {
               </div>
             </div>
 
-            {}
+            {/* BMI vs Waist Circumference */}
             <div className="bg-card border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold text-heading-accent mb-4">BMI vs Waist Circumference</h3>
               <div className="overflow-x-auto">
@@ -339,7 +342,7 @@ export function BMICalculatorPageContent() {
           </div>
         </section>
 
-        {}
+        {/* Related Health Calculators */}
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
             <span className="p-2 bg-card rounded-lg">
@@ -378,8 +381,8 @@ export function BMICalculatorPageContent() {
               <p className="text-sm text-muted-foreground">Calculate age accurately. Age is an important factor healthcare providers consider when interpreting BMI results.</p>
             </a>
           </div>
-
-          {}
+          
+          {/* You Might Also Like Section */}
           <div className="mt-6 p-4 bg-card border border-border rounded-lg">
             <h3 className="text-lg font-semibold text-heading-accent mb-3">You Might Also Like</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -399,7 +402,7 @@ export function BMICalculatorPageContent() {
           </div>
         </section>
 
-        {}
+        {/* Frequently Asked Questions */}
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
             <span className="p-2 bg-card rounded-lg">
@@ -458,7 +461,7 @@ export function BMICalculatorPageContent() {
           </div>
         </section>
 
-        {}
+        {/* Personalized Health Guidance */}
         {bmiResult && (
           <div className="bg-card border border-border rounded-lg p-4">
             <div className="flex items-center gap-2 mb-4">
@@ -469,7 +472,7 @@ export function BMICalculatorPageContent() {
               </div>
               <span className="text-sm font-semibold text-foreground">Your Personalized Plan</span>
             </div>
-            <PersonalizedHealthGuidance
+            <PersonalizedHealthGuidance 
               bmi={bmiResult.bmi}
               category={bmiResult.category}
               riskLevel={bmiResult.riskLevel}

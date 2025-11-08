@@ -1,4 +1,4 @@
-
+// Comprehensive Color Palette Data - 500+ Palettes
 export interface ColorPalette {
   name: string
   colors: string[]
@@ -6,5 +6,5 @@ export interface ColorPalette {
 }
 
 export const COLOR_PALETTES: ColorPalette[] = [
-
+  // Continue with expanded data...
 ]

@@ -8,15 +8,15 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {
-  Calculator,
-  Clock,
-  MapPin,
-  Target,
-  TrendingUp,
-  Heart,
-  Zap,
-  Trophy,
+import { 
+  Calculator, 
+  Clock, 
+  MapPin, 
+  Target, 
+  TrendingUp, 
+  Heart, 
+  Zap, 
+  Trophy, 
   Activity,
   Timer,
   Route,
@@ -67,14 +67,18 @@ export default function PaceCalculator() {
   const [age, setAge] = useState("")
   const [history, setHistory] = useState<PaceResult[]>([])
 
+  // Function to format time input as user types
   const formatTimeInput = (value: string) => {
-
+    // Remove all non-numeric characters
     const numbers = value.replace(/\D/g, '')
-
+    
+    // If empty, return empty string
     if (!numbers) return ''
-
+    
+    // Limit to 6 digits (hhmmss)
     const limitedNumbers = numbers.slice(0, 6)
-
+    
+    // Format based on length
     if (limitedNumbers.length <= 2) {
       return limitedNumbers
     } else if (limitedNumbers.length <= 4) {
@@ -89,14 +93,18 @@ export default function PaceCalculator() {
     setTime(formatted)
   }
 
+  // Function to format mm:ss time input as user types
   const formatMinutesSecondsInput = (value: string) => {
-
+    // Remove all non-numeric characters
     const numbers = value.replace(/\D/g, '')
-
+    
+    // If empty, return empty string
     if (!numbers) return ''
-
+    
+    // Limit to 4 digits (mmss)
     const limitedNumbers = numbers.slice(0, 4)
-
+    
+    // Format based on length
     if (limitedNumbers.length <= 2) {
       return limitedNumbers
     } else {
@@ -126,15 +134,19 @@ export default function PaceCalculator() {
       const speedKmh = (distanceInKm / timeInSeconds) * 3600
       const speedMph = (distanceInMiles / timeInSeconds) * 3600
 
+      // Calculate heart rate zones
       const maxHR = 220 - (age ? parseInt(age) : 30)
       const heartRateZone = calculateHeartRateZone(speedKmh, maxHR)
       const trainingZone = calculateTrainingZone(speedKmh, maxHR)
 
+      // Calculate calories burned
       const weightKg = weight ? parseFloat(weight) : 70
       const caloriesBurned = calculateCaloriesBurned(distanceInKm, weightKg, timeInSeconds)
 
+      // Calculate VO2 Max estimate
       const vo2Max = calculateVO2Max(distanceInKm, timeInSeconds, age ? parseInt(age) : 30)
 
+      // Race predictions
       const racePrediction = calculateRacePredictions(pacePerKm)
 
       const newResult: PaceResult = {
@@ -168,7 +180,7 @@ export default function PaceCalculator() {
       const pacePerKm = timeInSeconds / segment.distance
       const paceFormatted = formatPace(pacePerKm)
 
-      const split = index === 0 ? segment.time :
+      const split = index === 0 ? segment.time : 
         formatTime(parseTimeToSeconds(segment.time) - parseTimeToSeconds(multipointSegments[index - 1]?.time || "0:00"))
 
       return {
@@ -196,6 +208,8 @@ export default function PaceCalculator() {
       const finishTimeFormatted = formatTime(estimatedFinishTime)
       const totalTimeFormatted = formatTime(estimatedFinishTime)
 
+      // This would be displayed in the UI
+      console.log("Estimated finish time:", finishTimeFormatted)
     } catch (error) {
       console.error("Finish time calculation error:", error)
     }
@@ -229,7 +243,7 @@ export default function PaceCalculator() {
   }
 
   const calculateHeartRateZone = (speed: number, maxHR: number): string => {
-    const intensity = Math.min(speed / 20, 1)
+    const intensity = Math.min(speed / 20, 1) // Rough estimate
     const hr = Math.floor(maxHR * (0.5 + intensity * 0.4))
     return `${hr} bpm (${Math.floor(intensity * 100)}% max)`
   }
@@ -251,13 +265,13 @@ export default function PaceCalculator() {
   const calculateVO2Max = (distance: number, timeInSeconds: number, age: number): number => {
     const speed = (distance / timeInSeconds) * 3600
     const maxHR = 220 - age
-
+    // Simplified VO2 Max estimation
     return Math.round(15.3 * (maxHR / (timeInSeconds / 60)) - 0.028 * age)
   }
 
   const calculateRacePredictions = (pacePerKm: number): { [key: string]: string } => {
     const predictions: { [key: string]: string } = {}
-
+    
     const distances = {
       "5K": 5,
       "10K": 10,
@@ -278,7 +292,7 @@ export default function PaceCalculator() {
   }
 
   const updateMultipointSegment = (index: number, field: keyof MultipointSegment, value: string | number) => {
-    setMultipointSegments(prev => prev.map((segment, i) =>
+    setMultipointSegments(prev => prev.map((segment, i) => 
       i === index ? { ...segment, [field]: value } : segment
     ))
   }
@@ -313,7 +327,7 @@ VO2 Max: ${result.vo2Max}`
 
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 bg-card rounded-xl p-3 sm:p-4 md:p-6 w-full overflow-hidden">
-      {}
+      {/* Mode Selection */}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-3 sm:px-4 md:px-6 pb-3">
           <CardTitle className="flex items-center gap-2 text-foreground text-base sm:text-lg md:text-xl break-words">
@@ -330,7 +344,7 @@ VO2 Max: ${result.vo2Max}`
               <TabsTrigger value="finish" className="text-xs sm:text-sm">Finish Time</TabsTrigger>
             </TabsList>
 
-            {}
+            {/* Basic Pace Calculator */}
             <TabsContent value="basic" className="space-y-4 sm:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-2 w-full min-w-0">
@@ -412,7 +426,7 @@ VO2 Max: ${result.vo2Max}`
               </div>
             </TabsContent>
 
-            {}
+            {/* Multipoint Calculator */}
             <TabsContent value="multipoint" className="space-y-4 sm:space-y-6">
               <div className="space-y-3 sm:space-y-4">
                 {multipointSegments.map((segment, index) => (
@@ -457,7 +471,7 @@ VO2 Max: ${result.vo2Max}`
               </div>
             </TabsContent>
 
-            {}
+            {/* Pace Converter */}
             <TabsContent value="converter" className="space-y-4 sm:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="space-y-2 w-full min-w-0">
@@ -486,7 +500,7 @@ VO2 Max: ${result.vo2Max}`
 
               <div className="text-center p-3 sm:p-4 bg-card border border-border rounded-lg w-full overflow-hidden">
                 <div className="text-2xl font-bold">
-                  {pace && paceUnit === "perMile"
+                  {pace && paceUnit === "perMile" 
                     ? formatPace(parseTimeToSeconds(pace) * 1.60934)
                     : pace && paceUnit === "perKm"
                     ? formatPace(parseTimeToSeconds(pace) / 1.60934)
@@ -499,7 +513,7 @@ VO2 Max: ${result.vo2Max}`
               </div>
             </TabsContent>
 
-            {}
+            {/* Finish Time Calculator */}
             <TabsContent value="finish" className="space-y-6">
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="space-y-2">
@@ -543,10 +557,10 @@ VO2 Max: ${result.vo2Max}`
         </CardContent>
       </Card>
 
-      {}
+      {/* Results Section */}
       {result && (
         <div className="space-y-6">
-          {}
+          {/* Main Results */}
           <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
@@ -606,7 +620,7 @@ VO2 Max: ${result.vo2Max}`
             </CardContent>
           </Card>
 
-          {}
+          {/* Race Predictions */}
           <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
@@ -626,7 +640,7 @@ VO2 Max: ${result.vo2Max}`
             </CardContent>
           </Card>
 
-          {}
+          {/* Training Zones */}
           <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
@@ -660,7 +674,7 @@ VO2 Max: ${result.vo2Max}`
         </div>
       )}
 
-      {}
+      {/* History Section */}
       {history.length > 0 && (
         <Card className="bg-card border-border">
           <CardHeader>
@@ -695,7 +709,7 @@ VO2 Max: ${result.vo2Max}`
         </Card>
       )}
 
-      {}
+      {/* Information Section */}
       <Card className="bg-card border-border">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-foreground">
@@ -717,7 +731,7 @@ VO2 Max: ${result.vo2Max}`
               </div>
             </div>
           </div>
-
+          
           <div className="text-sm text-muted-foreground space-y-2">
             <p>
               <strong>Pace:</strong> Time per unit distance (e.g., minutes per mile or kilometer).

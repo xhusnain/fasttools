@@ -4,6 +4,12 @@ import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { 
+  Calculator, 
+  History, 
+  Copy, 
+  RotateCcw
+} from "lucide-react"
 
 interface ScientificCalculatorProps {
   history: string[]
@@ -29,6 +35,8 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
   const [isMobile, setIsMobile] = useState(false)
   const calculatorRef = useRef<HTMLDivElement>(null)
 
+
+  // Check if device is mobile
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
@@ -38,21 +46,24 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
+  // Keyboard functionality
   const handleKeyPress = (event: KeyboardEvent) => {
     const key = event.key.toLowerCase()
-
+    
+    // Prevent default for calculator keys
     if (['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '+', '-', '*', '/', '=', 'enter', 'escape', 'backspace', 'delete'].includes(key)) {
       event.preventDefault()
     }
 
+    // Numbers
     if (['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(key)) {
       handleNumber(key)
     }
-
+    // Decimal point
     else if (key === '.') {
       handleDecimal()
     }
-
+    // Basic operations
     else if (key === '+') {
       handleOperation('+')
     }
@@ -65,19 +76,19 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
     else if (key === '/') {
       handleOperation('÷')
     }
-
+    // Equals
     else if (key === '=' || key === 'enter') {
       handleEquals()
     }
-
+    // Clear
     else if (key === 'escape' || key === 'c') {
       handleClear()
     }
-
+    // Backspace
     else if (key === 'backspace' || key === 'delete') {
       handleBackspace()
     }
-
+    // Scientific functions
     else if (key === 's' && event.shiftKey) {
       handleScientificFunction('sin')
     }
@@ -108,24 +119,26 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
     else if (key === 'n' && event.shiftKey) {
       handleScientificFunction('n!')
     }
-
+    // Parentheses
     else if (key === '(') {
       setDisplay(display + '(')
     }
     else if (key === ')') {
       setDisplay(display + ')')
     }
-
+    // Percentage
     else if (key === '%') {
       handleOperation('%')
     }
   }
 
+  // Add keyboard event listener
   useEffect(() => {
     document.addEventListener('keydown', handleKeyPress)
     return () => document.removeEventListener('keydown', handleKeyPress)
   }, [display, operation, previousValue, waitingForOperand])
 
+  // Auto-focus calculator on mount
   useEffect(() => {
     if (calculatorRef.current) {
       calculatorRef.current.focus()
@@ -223,7 +236,7 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
 
   const handleMemory = (action: string) => {
     const currentValue = parseFloat(display)
-
+    
     switch (action) {
       case "M+":
         setMemory(memory + currentValue)
@@ -240,6 +253,7 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
         break
     }
   }
+
 
   const handleScientificFunction = (func: string) => {
     const inputValue = parseFloat(display)
@@ -281,17 +295,17 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
         case "±": result = -inputValue; break
         case "Ans": result = lastAnswer; break
         case "RND": result = Math.random(); break
-        case "DATA":
+        case "DATA": 
           setDataSet([...dataSet, inputValue])
           setDisplay("Data added")
           return
         case "mean": result = dataSet.length > 0 ? dataSet.reduce((a, b) => a + b) / dataSet.length : 0; break
         case "std": result = standardDeviation(dataSet); break
         case "var": result = variance(dataSet); break
-        case "SHOW_DATA":
+        case "SHOW_DATA": 
           setDisplay(`Data: [${dataSet.join(", ")}]`)
           return
-        case "CLR_DATA":
+        case "CLR_DATA": 
           setDataSet([])
           setDisplay("Data cleared")
           return
@@ -378,19 +392,19 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
   }
 
   return (
-    <div
+    <div 
       ref={calculatorRef}
       tabIndex={0}
       className="space-y-4 focus:outline-none"
       onKeyDown={(e) => {
-
+        // Handle focus for keyboard navigation
         if (e.key === 'Tab') {
           e.preventDefault()
         }
       }}
     >
 
-      {}
+      {/* Calculator Display */}
       <Card className="bg-card border-border">
         <CardHeader className="pb-2 px-3 sm:px-6">
           <div className="flex items-center justify-between">
@@ -409,7 +423,7 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
           </div>
         </CardHeader>
         <CardContent className="space-y-3 px-3 sm:px-6">
-          {}
+          {/* Main Display */}
           <div className="bg-muted border border-border rounded-lg p-3 sm:p-3 text-right">
             <div className="text-2xl sm:text-xl md:text-2xl font-mono font-bold min-h-[3rem] sm:min-h-[2.5rem] break-all text-foreground">
               {formatDisplay(display)}
@@ -425,7 +439,7 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
             </div>
           </div>
 
-          {}
+          {/* Memory Controls */}
           <div className="flex justify-between items-center flex-wrap gap-2">
             <div className="text-sm sm:text-xs font-medium text-muted-foreground">Memory: {memory}</div>
             <div className="flex gap-2 sm:gap-1.5">
@@ -446,11 +460,11 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
         </CardContent>
       </Card>
 
-      {}
+      {/* Calculator Grid */}
       <Card className="bg-card border-border">
         <CardContent className="p-4 sm:p-3 md:p-4">
           <div className="space-y-3">
-            {}
+            {/* Mode Indicators */}
             <div className="flex justify-between items-center flex-wrap gap-2 text-sm sm:text-xs">
               <div className="flex gap-2">
                 <Badge variant={angleMode === 'deg' ? 'default' : 'secondary'} className="text-xs sm:text-[10px] h-6 sm:h-5 bg-primary/10 text-foreground border-primary/20 px-2 sm:px-1.5">
@@ -465,9 +479,9 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
               </div>
             </div>
 
-            {}
+            {/* Scientific Functions Grid - Standard Calculator Layout */}
             <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-1.5 sm:gap-2 text-xs">
-              {}
+              {/* Row 1 - Scientific Functions Row 1 */}
               <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sin")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 sin
               </Button>
@@ -505,7 +519,7 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
                 xʸ
               </Button>
 
-              {}
+              {/* Row 2 - Scientific Functions Row 2 */}
               <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sin⁻¹")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 sin⁻¹
               </Button>
@@ -543,7 +557,7 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
                 erfc
               </Button>
 
-              {}
+              {/* Row 3 - Scientific Functions Row 3 */}
               <Button variant="outline" size="sm" onClick={() => handleScientificFunction("sinh")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 sinh
               </Button>
@@ -581,7 +595,7 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
                 Clear
               </Button>
 
-              {}
+              {/* Row 4 - Constants & Special Functions */}
               <Button variant="outline" size="sm" onClick={() => handleScientificFunction("π")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 π
               </Button>
@@ -619,7 +633,7 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
                 %
               </Button>
 
-              {}
+              {/* Row 5 - Number Pad: 7, 8, 9 + Operations */}
               <Button variant="outline" size="sm" onClick={() => handleNumber("7")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 7
               </Button>
@@ -657,7 +671,7 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
                 ln
               </Button>
 
-              {}
+              {/* Row 6 - Number Pad: 4, 5, 6 + Functions */}
               <Button variant="outline" size="sm" onClick={() => handleNumber("4")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 4
               </Button>
@@ -695,7 +709,7 @@ export function ScientificCalculator({ history, setHistory, clearHistory, copyRe
                 ʸ√x
               </Button>
 
-              {}
+              {/* Row 7 - Number Pad: 1, 2, 3 + Bottom Row */}
               <Button variant="outline" size="sm" onClick={() => handleNumber("1")} className="h-10 sm:h-9 text-xs sm:text-[11px] px-2 sm:px-1.5 whitespace-nowrap border-border bg-card text-foreground hover:bg-secondary">
                 1
               </Button>

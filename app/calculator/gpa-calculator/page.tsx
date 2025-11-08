@@ -2,10 +2,10 @@ import { GPACalculator } from "@/components/gpa-calculator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import {
-  Calculator,
-  Award,
-  TrendingUp,
+import { 
+  Calculator, 
+  Award, 
+  TrendingUp, 
   Info,
   Globe,
   CheckCircle,
@@ -125,7 +125,7 @@ export const metadata: Metadata = {
     "GPA calculation sheet",
     "GPA grading system calculator",
     "GPA calculator for report cards",
-
+    // Additional GPA Calculator Keywords
     "GPA Calculator",
     "calculator.net gpa calculator",
     "gpa",
@@ -196,7 +196,7 @@ const jsonLd = {
   },
   "featureList": [
     "4.0 Scale GPA Calculation",
-    "4.3 Scale GPA Calculation",
+    "4.3 Scale GPA Calculation", 
     "5.0 Scale GPA Calculation",
     "Percentage Grade Conversion",
     "Weighted GPA Support",
@@ -226,7 +226,7 @@ const faqJsonLd = {
       }
     },
     {
-      "@type": "Question",
+      "@type": "Question", 
       "name": "What's the difference between weighted and unweighted GPA?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -237,7 +237,7 @@ const faqJsonLd = {
       "@type": "Question",
       "name": "How can I improve my GPA?",
       "acceptedAnswer": {
-        "@type": "Answer",
+        "@type": "Answer", 
         "text": "Focus on study habits, time management, attend classes regularly, seek help when needed, and consider retaking courses with low grades if possible. Our calculator provides personalized improvement suggestions."
       }
     }
@@ -255,7 +255,7 @@ export default function GPACalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-
+      
       <div className="bg-card">
         <div className="container mx-auto px-3 py-6 md:py-8">
       <Breadcrumbs
@@ -267,14 +267,14 @@ export default function GPACalculatorPage() {
 
           <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
-              <GHeader
+              <GHeader 
                 title="Free Online GPA Calculator"
                 description="Use our free GPA Calculator to calculate your Grade Point Average instantly. Supports 4.0, 4.3, 5.0 scales and percentage grades. Perfect for students, academic planning, and grade tracking."
                 titleSize="medium"
               />
             </div>
 
-            {}
+            {/* Mobile/Tablet AdSpace after GHeader */}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -286,7 +286,7 @@ export default function GPACalculatorPage() {
               <div>
             <GPACalculator />
 
-                {}
+                {/* How to Use */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -338,7 +338,7 @@ export default function GPACalculatorPage() {
               </div>
             </div>
 
-                {}
+                {/* Supported Grading Systems */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -372,7 +372,7 @@ export default function GPACalculatorPage() {
               </div>
             </div>
 
-            {}
+            {/* Advanced Features */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -424,7 +424,7 @@ export default function GPACalculatorPage() {
             </div>
           </div>
 
-                {}
+                {/* FAQ Section */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -503,7 +503,7 @@ export default function GPACalculatorPage() {
                 </div>
               </div>
 
-                {}
+                {/* Related Tools */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -542,7 +542,7 @@ export default function GPACalculatorPage() {
                 </div>
               </div>
 
-              {}
+              {/* Desktop Sidebar with AdSense */}
               <div className="space-y-6 hidden lg:block">
                 <div className="sticky top-32 space-y-6">
                   <div>

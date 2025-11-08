@@ -12,6 +12,8 @@ import { Switch } from "@/components/ui/switch"
 import { Textarea } from "@/components/ui/textarea"
 import { Download, QrCode, Upload, Image as ImageIcon, Sparkles, Wifi, Mail, Phone, MessageSquare, User, MapPin, FileText, Zap, Globe, ListOrdered, Archive } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
+import QRCode from "qrcode"
+import JSZip from "jszip"
 
 type QRType = "url" | "wifi" | "vcard" | "email" | "sms" | "whatsapp" | "phone" | "location" | "text" | "bulk"
 type ErrorCorrectionLevel = "L" | "M" | "Q" | "H"
@@ -37,36 +39,45 @@ export function AiQrGenerator() {
   const [loading, setLoading] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
   const csvInputRef = useRef<HTMLInputElement>(null)
-
+  
+  // Bulk generation states
   const [bulkText, setBulkText] = useState("")
   const [bulkQRCodes, setBulkQRCodes] = useState<Array<{text: string, image: string}>>([])
   const [bulkLoading, setBulkLoading] = useState(false)
 
+  // Basic inputs
   const [url, setUrl] = useState("")
   const [text, setText] = useState("")
-
+  
+  // WiFi QR
   const [wifiSSID, setWifiSSID] = useState("")
   const [wifiPassword, setWifiPassword] = useState("")
   const [wifiEncryption, setWifiEncryption] = useState<"WPA" | "WEP" | "nopass">("WPA")
   const [wifiHidden, setWifiHidden] = useState(false)
 
+  // vCard QR (simplified for compact view)
   const [vcardName, setVcardName] = useState("")
   const [vcardPhone, setVcardPhone] = useState("")
   const [vcardEmail, setVcardEmail] = useState("")
   const [vcardCompany, setVcardCompany] = useState("")
 
+  // Email QR
   const [emailTo, setEmailTo] = useState("")
   const [emailSubject, setEmailSubject] = useState("")
   const [emailBody, setEmailBody] = useState("")
 
+  // SMS/WhatsApp QR
   const [smsPhone, setSmsPhone] = useState("")
   const [smsMessage, setSmsMessage] = useState("")
 
+  // Phone QR
   const [phoneNumber, setPhoneNumber] = useState("")
 
+  // Location QR
   const [locationLat, setLocationLat] = useState("")
   const [locationLng, setLocationLng] = useState("")
 
+  // Styling options (simplified)
   const [foregroundColor, setForegroundColor] = useState("#000000")
   const [backgroundColor, setBackgroundColor] = useState("#ffffff")
   const [transparentBg, setTransparentBg] = useState(false)
@@ -74,11 +85,14 @@ export function AiQrGenerator() {
   const [margin, setMargin] = useState<number[]>([2])
   const [errorCorrection, setErrorCorrection] = useState<ErrorCorrectionLevel>("M")
 
+  // Logo/Image
   const [logoImage, setLogoImage] = useState<string | null>(null)
   const [logoSize, setLogoSize] = useState<number[]>([20])
 
+  // Download format
   const [downloadFormat, setDownloadFormat] = useState<DownloadFormat>("png")
 
+  // Validate hex color format
   const isValidHexColor = (hexColor: string): boolean => {
     return /^#([0-9A-F]{3}){1,2}$/i.test(hexColor)
   }
@@ -89,18 +103,19 @@ export function AiQrGenerator() {
     }
   }
 
+  // Generate QR content based on type
   const generateQRContent = (): string => {
     switch (qrType) {
       case "url":
         return url.trim()
-
+      
       case "text":
         return text.trim()
-
+      
       case "wifi":
         const hidden = wifiHidden ? "H:true;" : ""
         return `WIFI:T:${wifiEncryption};S:${wifiSSID};P:${wifiPassword};${hidden};`
-
+      
       case "vcard":
         return `BEGIN:VCARD
 VERSION:3.0
@@ -109,27 +124,28 @@ TEL:${vcardPhone}
 EMAIL:${vcardEmail}
 ORG:${vcardCompany}
 END:VCARD`
-
+      
       case "email":
         return `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
-
+      
       case "sms":
         return `sms:${smsPhone}?body=${encodeURIComponent(smsMessage)}`
-
+      
       case "whatsapp":
-        return `https:
-
+        return `https://wa.me/${smsPhone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(smsMessage)}`
+      
       case "phone":
         return `tel:${phoneNumber}`
-
+      
       case "location":
         return `geo:${locationLat},${locationLng}`
-
+      
       default:
         return ""
     }
   }
 
+  // Generate QR code
   const generateQR = async () => {
     const content = generateQRContent()
     if (!content) return
@@ -151,6 +167,7 @@ END:VCARD`
 
       let qrDataUrl = await QRCode.toDataURL(content, options)
 
+      // Apply logo if uploaded
       if (logoImage) {
         qrDataUrl = await applyLogoToQR(qrDataUrl)
       }
@@ -164,16 +181,18 @@ END:VCARD`
     }
   }
 
+  // Auto-generate on input change
   useEffect(() => {
     const content = generateQRContent()
     if (content) {
       const timer = setTimeout(() => {
         generateQR()
-      }, 500)
+      }, 500) // Debounce
       return () => clearTimeout(timer)
     }
   }, [url, text, wifiSSID, wifiPassword, vcardName, vcardPhone, vcardEmail, emailTo, smsPhone, phoneNumber, locationLat, locationLng, foregroundColor, backgroundColor, size, margin, errorCorrection, logoImage, logoSize])
 
+  // Apply logo to QR code
   const applyLogoToQR = async (qrDataUrl: string): Promise<string> => {
     if (!logoImage) return qrDataUrl
 
@@ -186,16 +205,17 @@ END:VCARD`
       }
 
       const qrImg = new Image()
-
+      
       qrImg.onload = () => {
         try {
           canvas.width = qrImg.width
           canvas.height = qrImg.height
-
+          
+          // Draw QR code first
           ctx.drawImage(qrImg, 0, 0)
 
           const logoImg = new Image()
-
+          
           logoImg.onload = () => {
             try {
               const logoSizePercent = logoSize[0] / 100
@@ -204,10 +224,12 @@ END:VCARD`
               const x = (canvas.width - logoWidth) / 2
               const y = (canvas.height - logoHeight) / 2
 
+              // Draw white background for logo (better visibility)
               const padding = 10
               ctx.fillStyle = "#FFFFFF"
               ctx.fillRect(x - padding, y - padding, logoWidth + (padding * 2), logoHeight + (padding * 2))
 
+              // Draw logo
               ctx.drawImage(logoImg, x, y, logoWidth, logoHeight)
 
               const result = canvas.toDataURL("image/png", 1.0)
@@ -217,35 +239,36 @@ END:VCARD`
               resolve(qrDataUrl)
             }
           }
-
+          
           logoImg.onerror = (e) => {
             console.error("Failed to load logo image:", e)
             resolve(canvas.toDataURL("image/png", 1.0))
           }
-
+          
           logoImg.src = logoImage
         } catch (error) {
           console.error("Error in QR image load:", error)
           resolve(qrDataUrl)
         }
       }
-
+      
       qrImg.onerror = (e) => {
         console.error("Failed to load QR image:", e)
         resolve(qrDataUrl)
       }
-
+      
       qrImg.src = qrDataUrl
     })
   }
 
+  // Handle logo upload
   const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) {
       const reader = new FileReader()
       reader.onload = (event) => {
         setLogoImage(event.target?.result as string)
-
+        // Trigger QR regeneration after logo loads
         setTimeout(() => {
           if (generateQRContent()) {
             generateQR()
@@ -256,24 +279,26 @@ END:VCARD`
     }
   }
 
+  // Handle CSV upload
   const handleCSVUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) {
       const reader = new FileReader()
       reader.onload = (event) => {
         const text = event.target?.result as string
-
+        // Parse CSV - assuming first column contains the data
         const lines = text.split('\n').map(line => {
           const firstColumn = line.split(',')[0].trim()
           return firstColumn
         }).filter(line => line)
-
+        
         setBulkText(lines.join('\n'))
       }
       reader.readAsText(file)
     }
   }
 
+  // Generate bulk QR codes
   const generateBulkQR = async () => {
     const items = bulkText.split('\n').filter(line => line.trim())
     if (items.length === 0) return
@@ -283,7 +308,7 @@ END:VCARD`
 
     try {
       const qrCodes: Array<{text: string, image: string}> = []
-
+      
       for (let i = 0; i < items.length; i++) {
         const item = items[i]
         const options: QROptions = {
@@ -297,14 +322,16 @@ END:VCARD`
         }
 
         let qrDataUrl = await QRCode.toDataURL(item.trim(), options)
-
+        
+        // Apply logo if uploaded
         if (logoImage) {
           qrDataUrl = await applyLogoToQR(qrDataUrl)
         }
-
+        
         const newQR = { text: item.trim(), image: qrDataUrl }
         qrCodes.push(newQR)
-
+        
+        // Update state progressively to show progress
         setBulkQRCodes([...qrCodes])
       }
     } catch (error) {
@@ -315,6 +342,7 @@ END:VCARD`
     }
   }
 
+  // Download all bulk QR codes as ZIP
   const downloadBulkQR = async () => {
     if (bulkQRCodes.length === 0) return
 
@@ -322,19 +350,22 @@ END:VCARD`
       const zip = new JSZip()
       const folder = zip.folder("qr-codes")
 
+      // Add each QR code to the ZIP
       for (let i = 0; i < bulkQRCodes.length; i++) {
         const qr = bulkQRCodes[i]
-
+        // Convert data URL to blob
         const base64Data = qr.image.split(',')[1]
         folder?.file(`qr-code-${i + 1}.png`, base64Data, { base64: true })
       }
 
-      const content = await zip.generateAsync({
+      // Generate ZIP file
+      const content = await zip.generateAsync({ 
         type: "blob",
         compression: "DEFLATE",
         compressionOptions: { level: 6 }
       })
 
+      // Download ZIP file
       const link = document.createElement('a')
       link.href = URL.createObjectURL(content)
       link.download = `qr-codes-${new Date().getTime()}.zip`
@@ -346,6 +377,7 @@ END:VCARD`
     }
   }
 
+  // Download individual QR code from bulk
   const downloadIndividualQR = (image: string, index: number) => {
     const link = document.createElement('a')
     link.download = `qr-code-${index + 1}.png`
@@ -353,6 +385,7 @@ END:VCARD`
     link.click()
   }
 
+  // Download QR code
   const downloadQR = async () => {
     if (!qrImage) return
 
@@ -366,6 +399,7 @@ END:VCARD`
     }
   }
 
+  // Download as SVG
   const downloadAsSVG = async () => {
     const content = generateQRContent()
     if (!content) return
@@ -399,9 +433,9 @@ END:VCARD`
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      {}
+      {/* LEFT COLUMN - INPUTS */}
       <div className="space-y-4">
-        {}
+        {/* QR Type Selector */}
         <Card className="p-4 border-2 border-primary/20">
           <h3 className="font-semibold text-sm mb-3 flex items-center gap-2 text-primary">
             <Sparkles className="h-4 w-4" />
@@ -451,7 +485,7 @@ END:VCARD`
               </TabsTrigger>
             </TabsList>
 
-            {}
+            {/* URL Input */}
             <TabsContent value="url" className="space-y-2 mt-3">
               <Label htmlFor="url" className={labelClass}>Website URL</Label>
           <Input
@@ -463,7 +497,7 @@ END:VCARD`
               />
             </TabsContent>
 
-            {}
+            {/* Text Input */}
             <TabsContent value="text" className="space-y-2 mt-3">
               <Label htmlFor="text" className={labelClass}>Plain Text</Label>
               <Textarea
@@ -475,7 +509,7 @@ END:VCARD`
               />
             </TabsContent>
 
-            {}
+            {/* WiFi QR */}
             <TabsContent value="wifi" className="space-y-2 mt-3">
               <div className="space-y-2">
                 <Label htmlFor="wifi-ssid" className={labelClass}>Network Name (SSID) *</Label>
@@ -524,7 +558,7 @@ END:VCARD`
               </div>
             </TabsContent>
 
-            {}
+            {/* vCard QR */}
             <TabsContent value="vcard" className="space-y-2 mt-3">
               <div className="space-y-2">
                 <Label htmlFor="vcard-name" className={labelClass}>Full Name *</Label>
@@ -571,7 +605,7 @@ END:VCARD`
               </div>
             </TabsContent>
 
-            {}
+            {/* Email QR */}
             <TabsContent value="email" className="space-y-2 mt-3">
               <div className="space-y-2">
                 <Label htmlFor="email-to" className={labelClass}>Email Address *</Label>
@@ -606,7 +640,7 @@ END:VCARD`
               </div>
             </TabsContent>
 
-            {}
+            {/* SMS QR */}
             <TabsContent value="sms" className="space-y-2 mt-3">
               <div className="space-y-2">
                 <Label htmlFor="sms-phone" className={labelClass}>Phone Number *</Label>
@@ -630,7 +664,7 @@ END:VCARD`
               </div>
             </TabsContent>
 
-            {}
+            {/* WhatsApp QR */}
             <TabsContent value="whatsapp" className="space-y-2 mt-3">
               <div className="space-y-2">
                 <Label htmlFor="whatsapp-phone" className={labelClass}>Phone Number *</Label>
@@ -654,7 +688,7 @@ END:VCARD`
               </div>
             </TabsContent>
 
-            {}
+            {/* Phone QR */}
             <TabsContent value="phone" className="space-y-2 mt-3">
               <Label htmlFor="phone-number" className={labelClass}>Phone Number *</Label>
               <Input
@@ -666,7 +700,7 @@ END:VCARD`
               />
             </TabsContent>
 
-            {}
+            {/* Location QR */}
             <TabsContent value="location" className="space-y-2 mt-3">
               <div className="grid grid-cols-2 gap-2">
                 <div className="space-y-2">
@@ -692,7 +726,7 @@ END:VCARD`
               </div>
             </TabsContent>
 
-            {}
+            {/* Bulk QR Generation */}
             <TabsContent value="bulk" className="space-y-3 mt-3">
               <div className="p-3 rounded-lg bg-orange-50 dark:bg-orange-950/30 border border-primary/30">
                 <p className="text-xs font-semibold text-foreground">
@@ -705,7 +739,7 @@ END:VCARD`
                   </p>
                 )}
               </div>
-
+              
               <div className="space-y-2">
                 <Label htmlFor="bulk-text" className="text-sm font-medium">Enter URLs/Text (one per line)</Label>
                 <Textarea
@@ -748,15 +782,15 @@ END:VCARD`
           </Tabs>
         </Card>
 
-        {}
+        {/* Customization Options */}
         <Card className="p-4 border-2 border-primary/20">
           <h3 className="font-semibold text-sm mb-3 flex items-center gap-2 text-primary">
             <Zap className="h-4 w-4" />
             Customize (Premium - FREE!)
           </h3>
-
+          
           <div className="space-y-3">
-            {}
+            {/* Colors */}
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-2">
                 <Label className={labelClass}>Foreground</Label>
@@ -767,9 +801,9 @@ END:VCARD`
                     onChange={(e) => setForegroundColor(e.target.value)}
                     className="h-9 w-12 p-1 border-2 border-primary/50"
                   />
-                  <Input
-                    value={foregroundColor}
-                    onChange={(e) => handleColorChange(e.target.value, setForegroundColor)}
+                  <Input 
+                    value={foregroundColor} 
+                    onChange={(e) => handleColorChange(e.target.value, setForegroundColor)} 
                     className="h-9 flex-1 border-2 border-primary/50 text-xs"
                     placeholder="#000000"
                     maxLength={7}
@@ -787,9 +821,9 @@ END:VCARD`
                     className="h-9 w-12 p-1 border-2 border-primary/50"
                     disabled={transparentBg}
                   />
-                  <Input
-                    value={backgroundColor}
-                    onChange={(e) => handleColorChange(e.target.value, setBackgroundColor)}
+                  <Input 
+                    value={backgroundColor} 
+                    onChange={(e) => handleColorChange(e.target.value, setBackgroundColor)} 
                     className="h-9 flex-1 border-2 border-primary/50 text-xs"
                     placeholder="#ffffff"
                     maxLength={7}
@@ -809,7 +843,7 @@ END:VCARD`
               <Label htmlFor="transparent-bg" className="text-sm cursor-pointer font-medium">Transparent Background</Label>
             </div>
 
-            {}
+            {/* Size & Margin */}
             <div className="space-y-2 p-3 rounded-lg bg-background border border-primary/20">
               <Label className="text-sm font-medium">Size: {size[0]}px</Label>
               <Slider
@@ -834,7 +868,7 @@ END:VCARD`
               />
             </div>
 
-            {}
+            {/* Error Correction */}
             <div className="space-y-2">
               <Label className={labelClass}>Error Correction</Label>
               <Select value={errorCorrection} onValueChange={(v) => setErrorCorrection(v as ErrorCorrectionLevel)}>
@@ -855,7 +889,7 @@ END:VCARD`
               )}
             </div>
 
-            {}
+            {/* Logo Upload */}
             <div className="space-y-2">
               <Label className={labelClass}>
                 <ImageIcon className="h-3 w-3 inline mr-1" />
@@ -872,9 +906,9 @@ END:VCARD`
                 <div className="space-y-2 p-3 rounded-lg bg-background border border-primary/20 mt-2">
                   <div className="flex items-center justify-between">
                     <Label className="text-sm font-medium">Logo Size: {logoSize[0]}%</Label>
-                    <Button
-                      variant="ghost"
-                      size="sm"
+                    <Button 
+                      variant="ghost" 
+                      size="sm" 
                       onClick={() => {
                         setLogoImage(null)
                         if (fileInputRef.current) {
@@ -904,7 +938,7 @@ END:VCARD`
               )}
             </div>
 
-            {}
+            {/* Download Format */}
             <div className="space-y-2">
               <Label className={labelClass}>Download Format</Label>
               <Select value={downloadFormat} onValueChange={(v) => setDownloadFormat(v as DownloadFormat)}>
@@ -919,12 +953,12 @@ END:VCARD`
               </Select>
             </div>
 
-            {}
+            {/* Bulk Generation Button */}
             {qrType === "bulk" && (
               <div className="pt-3 border-t border-border">
-                <Button
-                  onClick={generateBulkQR}
-                  disabled={bulkLoading || !bulkText.trim()}
+                <Button 
+                  onClick={generateBulkQR} 
+                  disabled={bulkLoading || !bulkText.trim()} 
                   className="w-full h-10 text-sm bg-primary hover:bg-primary"
                 >
                   {bulkLoading ? (
@@ -948,10 +982,10 @@ END:VCARD`
                       </p>
                     </div>
                     <div className="w-full bg-orange-200 dark:bg-orange-900/30 rounded-full h-2">
-                      <div
+                      <div 
                         className="bg-primary h-2 rounded-full transition-all duration-300"
-                        style={{
-                          width: `${(bulkQRCodes.length / bulkText.split('\n').filter(line => line.trim()).length) * 100}%`
+                        style={{ 
+                          width: `${(bulkQRCodes.length / bulkText.split('\n').filter(line => line.trim()).length) * 100}%` 
                         }}
                       />
                     </div>
@@ -966,7 +1000,7 @@ END:VCARD`
         </Card>
       </div>
 
-      {}
+      {/* RIGHT COLUMN - QR OUTPUT */}
       <div className="space-y-4">
         <Card className="p-6 border-2 border-primary/20 sticky top-4 max-h-[calc(100vh-100px)] overflow-y-auto">
           <div className="flex items-center justify-between mb-4">
@@ -988,7 +1022,7 @@ END:VCARD`
             )}
           </div>
 
-          {}
+          {/* Bulk QR Codes Display */}
           {qrType === "bulk" ? (
             <div className="space-y-3">
               {bulkLoading ? (
@@ -1006,9 +1040,9 @@ END:VCARD`
                           <div className="flex-1 min-w-0">
                             <p className="text-xs font-medium mb-1">QR Code #{index + 1}</p>
                             <p className="text-xs text-muted-foreground truncate">{qr.text}</p>
-                            <Button
-                              variant="outline"
-                              size="sm"
+                            <Button 
+                              variant="outline" 
+                              size="sm" 
                               className="mt-2 h-7 text-xs"
                               onClick={() => downloadIndividualQR(qr.image, index)}
                             >
@@ -1021,7 +1055,7 @@ END:VCARD`
                     ))}
                   </div>
                   <div className="space-y-2 mt-3">
-                    <Button
+                    <Button 
                       onClick={downloadBulkQR}
                       className="w-full h-9 text-sm bg-primary hover:bg-primary"
                     >
@@ -1044,7 +1078,7 @@ END:VCARD`
               )}
             </div>
           ) : (
-
+            /* Single QR Code Display */
             <>
               <div className="flex justify-center items-center bg-muted p-8 rounded-lg min-h-[400px]">
                 {loading ? (
@@ -1070,7 +1104,7 @@ END:VCARD`
             </>
           )}
 
-          {}
+          {/* Feature Highlights */}
           <div className="mt-4 p-3 rounded-lg bg-orange-50 dark:bg-orange-950/30 border border-primary/30">
             <p className="text-xs font-semibold text-center mb-2">
               🎉 All Premium Features FREE

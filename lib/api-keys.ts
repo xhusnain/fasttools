@@ -1147,13 +1147,16 @@ const API_KEYS: string[] = [
   'W0puowTURNgJVP7nOEVXgq6UyVq0vH55'
 ]
 
+// Export the keys array
 export { API_KEYS }
 
+// Function to get a random key for user
 export function getRandomApiKey(): string {
   const randomIndex = Math.floor(Math.random() * API_KEYS.length)
   return API_KEYS[randomIndex]
 }
 
+// Function to validate if a key exists
 export function isValidApiKey(key: string): boolean {
   return API_KEYS.includes(key)
 }

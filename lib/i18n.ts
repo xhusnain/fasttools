@@ -1,5 +1,8 @@
+import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
+import LanguageDetector from 'i18next-browser-languagedetector'
 
+// Translation data for all languages
 const translations = {
   en: {
     "invoice": {
@@ -283,7 +286,7 @@ const translations = {
       }
     }
   },
-
+  // Additional major languages
   pt: {
     "invoice": {
       "title": "Fatura",
@@ -615,6 +618,7 @@ const translations = {
   }
 }
 
+// Only initialize on client side
 if (typeof window !== 'undefined') {
   i18n
     .use(LanguageDetector)

@@ -11,27 +11,30 @@ export const metadata: Metadata = {
     description:
         "Blur picture background online instantly with AI - no app needed! Create background blur pics, portrait mode & DSLR bokeh effects in seconds. Free tool for iPhone, Android & desktop. Better than Photoshop, Canva, CapCut - no watermarks!",
     keywords: [
-
+        // High volume primary keywords
         "image background blur",
         "background image blur",
         "photo background blur app",
         "image background blur online",
         "blur background images hd",
-
+        
+        // Free & online keywords
         "image background blur online free",
         "photo background blur free",
         "image background blur free",
         "photo background blur online free without watermark",
         "image background blur free online",
         "photo background blur effect online free",
-
+        
+        // AI-powered keywords
         "photo background blur ai",
         "image background blur ai",
         "online photo background blur ai",
         "ai image background blur",
         "image background blur ai free",
         "ai image background blur online free",
-
+        
+        // Tool & editor keywords
         "make image background blur",
         "photo background blur edit",
         "photo background changer blur",
@@ -46,7 +49,8 @@ export const metadata: Metadata = {
         "remove image background blur",
         "how image background blur",
         "iphone image background blur",
-
+        
+        // Platform specific
         "blur image background apk",
         "photo background blur photoshop",
         "zoom background image blur",
@@ -54,18 +58,21 @@ export const metadata: Metadata = {
         "image background blur css",
         "make background image blur css",
         "can you blur background on iphone pictures",
-
+        
+        // Quality & style keywords
         "photo background blur hd",
         "photo background blur full hd",
         "photo background blur black",
         "photo background blur image",
         "background image nature blur",
         "background images tree blur",
-
+        
+        // Download & usage
         "photo background blur download",
         "image background remove job",
         "how blur background in video",
-
+        
+        // 4K & HD quality keywords
         "background image 4k blur",
         "background image blur hd 4k",
         "blur background image download hd 4k",
@@ -74,12 +81,14 @@ export const metadata: Metadata = {
         "background image hd 4k blur free download",
         "photo background blur 4k",
         "photo background blur full hd online free",
-
+        
+        // Regional & language specific
         "photo background blur kaise kare",
         "picture ka background blur kaise kare",
         "video background blur karne ka tarika",
         "photo background blur wala",
-
+        
+        // Software & apps
         "photo background blur com",
         "photo background blur software",
         "photo editor background blur download",
@@ -92,7 +101,8 @@ export const metadata: Metadata = {
         "photo background blur samsung",
         "blur image background mac",
         "make photo background blur iphone",
-
+        
+        // Editing & tools
         "photo editing background blur image",
         "background image dslr blur",
         "photo background motion blur",
@@ -124,12 +134,14 @@ export const metadata: Metadata = {
         "blur image background using ai",
         "blur image background powerpoint",
         "photo blur background android app",
-
+        
+        // Video related
         "video background blur website",
         "can you blur background in a video",
         "photo background blur video",
         "blur background image for youtube video",
-
+        
+        // Platform & web dev
         "where is blur background in zoom",
         "instagram story background image blur",
         "background image blur react",
@@ -158,7 +170,8 @@ export const metadata: Metadata = {
         "set background image blur css",
         "background picture blur css",
         "background image in blur",
-
+        
+        // Specific styles & backgrounds
         "background image for blur",
         "background photo with blur",
         "image background motion blur",
@@ -172,12 +185,14 @@ export const metadata: Metadata = {
         "jungle background blur image",
         "background images road blur",
         "background blur jpg image",
-
+        
+        // Descriptive & naming
         "photo background full blur",
         "image background removal gig",
         "photo background blur called",
         "photo background blur name",
-
+        
+        // Free download keywords
         "photo background blur free download",
         "make image background blur free",
         "photo background blur online free download",
@@ -187,7 +202,8 @@ export const metadata: Metadata = {
         "photo background blur free app",
         "hd photo background blur download",
         "photo background blur free ai",
-
+        
+        // App & platform specific
         "photo background blur canva",
         "image background blur editor app",
         "photo background blur ios",
@@ -195,7 +211,8 @@ export const metadata: Metadata = {
         "blur image background gimp",
         "background image blur w3schools",
         "wezterm background image blur",
-
+        
+        // Style & design
         "hd photo background blur wala",
         "photo background circle blur",
         "gym background blur image",
@@ -213,7 +230,8 @@ export const metadata: Metadata = {
         "video background image blur",
         "blur background image unsplash",
         "background image blur light",
-
+        
+        // CSS & web development
         "css background image blur edges",
         "body background image blur css",
         "background image blur using css",
@@ -223,7 +241,8 @@ export const metadata: Metadata = {
         "background image blur filter",
         "blur background image but not content",
         "back background image blur",
-
+        
+        // Change & edit operations
         "image background change blur",
         "photo background blur change",
         "photo background blur online free reddit",
@@ -234,12 +253,14 @@ export const metadata: Metadata = {
         "photo background blur online app",
         "photo ka background blur karne ka tarika",
         "photo background blur online hd",
-
+        
+        // High volume blur keywords
         "background blur pics",
         "picture background blur online",
         "blur image background online",
         "background blur app",
-
+        
+        // Conversion & editing
         "photo to background blur",
         "image to background blur",
         "convert image to blur background",
@@ -249,39 +270,47 @@ export const metadata: Metadata = {
         "image background blue",
         "image background change to blue",
         "image background blue online",
-
+        
+        // Without background keywords
         "without background pics",
         "without blur",
         "without blur image",
         "photo without background blur",
         "blur image without background",
-
+        
+        // Picture/image variations
         "picture with background blur",
         "image with blur",
         "image with background blur",
         "image with non uniform background",
         "resize image with blur background",
-
+        
+        // How-to variations
         "where can i blur the background of a picture",
         "how to background blur a photo",
         "can you blur the background in a picture",
         "how to blur image background without photoshop peerzada tech",
-
+        
+        // Make/create operations
         "make an image background blur",
-
+        
+        // CSS code specific
         "css for background image blur",
         "css code for background image blur",
         "background image with blur css",
         "background image and blur",
         "background image with blur effect css",
         "background image with blur effect",
-
+        
+        // AI specific
         "image background blur with ai",
         "photo background blur with ai",
         "background blur and image enhancer",
-
+        
+        // DSLR style
         "photo background blur like dslr",
-
+        
+        // Technical terms
         "blur background meaning",
     ],
     alternates: { canonical: "https://www.fasttools.store/image-tools/image-blur" },
@@ -345,8 +374,8 @@ export const metadata: Metadata = {
                 availability: "https://schema.org/InStock"
             },
             featureList: [
-                "AI-powered subject detection", "Adjustable blur intensity (5px-50px)", "Portrait mode effect",
-                "Bokeh effect simulation", "Professional depth of field", "Multi‑format input (JPG, PNG, JPEG, WebP)",
+                "AI-powered subject detection", "Adjustable blur intensity (5px-50px)", "Portrait mode effect", 
+                "Bokeh effect simulation", "Professional depth of field", "Multi‑format input (JPG, PNG, JPEG, WebP)", 
                 "High-quality output", "In‑browser processing", "Privacy-focused processing", "No file upload required",
                 "Real-time preview", "Instant download"
             ],
@@ -456,7 +485,7 @@ export default function ImageBlurPage() {
                         />
                     </div>
 
-                    {}
+                    {/* Mobile Ad Space */}
                     <div className="lg:hidden mb-6">
                         <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                     </div>
@@ -465,7 +494,7 @@ export default function ImageBlurPage() {
                         <div className="xl:col-span-3">
                             <ImageBlur />
 
-                            {}
+                            {/* Content Sections */}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                     <span className="hidden sm:inline text-primary">Why Choose Our Image Background Blur Tool</span>
@@ -501,14 +530,14 @@ export default function ImageBlurPage() {
                                 </div>
                             </section>
 
-                            {}
+                            {/* Before/After Examples */}
                             <section className="mt-8 sm:mt-10 lg:mt-12">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-primary text-center">
                                     See the Difference: AI Background Blur in Action
                                 </h2>
-
+                                
                                 <div className="space-y-6 sm:space-y-8">
-                                    {}
+                                    {/* Example 1 - Human */}
                                     <div className="bg-card rounded-xl p-6 sm:p-8 lg:p-10 border border-border">
                                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                                             <div className="order-2 lg:order-1">
@@ -549,7 +578,7 @@ export default function ImageBlurPage() {
                                         </div>
                                     </div>
 
-                                    {}
+                                    {/* Example 2 - Dog */}
                                     <div className="bg-card rounded-xl p-6 sm:p-8 lg:p-10 border border-border">
                                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                                             <div className="order-2 lg:order-2">
@@ -590,7 +619,7 @@ export default function ImageBlurPage() {
                                         </div>
                                     </div>
 
-                                    {}
+                                    {/* Example 3 - Object */}
                                     <div className="bg-card rounded-xl p-6 sm:p-8 lg:p-10 border border-border">
                                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                                             <div className="order-2 lg:order-1">
@@ -633,7 +662,7 @@ export default function ImageBlurPage() {
                                 </div>
                             </section>
 
-                            {}
+                            {/* Use Cases */}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                     <span className="hidden sm:inline text-primary">Background Blur Use Cases</span>
@@ -684,12 +713,12 @@ export default function ImageBlurPage() {
                                 </div>
                             </section>
 
-                            {}
+                            {/* Platform Compatibility */}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-green-500">
                                     Compatible with All Devices & Platforms
                                 </h2>
-
+                                
                                 <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-6">
                                     Our image background blur tool works seamlessly across all devices and platforms. Whether you're using an iPhone, Android phone, Mac, Windows PC, or tablet, you can blur photo backgrounds online with the same professional quality. No need to download separate apps like Canva, Photoshop, or CapCut - our free online tool provides everything you need in your browser.
                                 </p>
@@ -737,11 +766,12 @@ export default function ImageBlurPage() {
                                 </div>
                             </section>
 
+                            {/* Quality & Resolution */}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-green-500">
                                     High-Quality 4K & HD Background Blur
                                 </h2>
-
+                                
                                 <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-6">
                                     Process your photos in full HD 1080p and 4K resolution without any quality loss. Our AI background blur tool maintains image clarity while applying professional blur effects. Download your edited images in high resolution - perfect for printing, professional portfolios, and large displays.
                                 </p>
@@ -777,11 +807,12 @@ export default function ImageBlurPage() {
                                 </div>
                             </section>
 
+                            {/* For Developers */}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-green-500">
                                     Background Blur for Web Developers
                                 </h2>
-
+                                
                                 <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-6">
                                     Learn how to implement background image blur effects in your web projects using CSS, Tailwind CSS, React, Flutter, and other frameworks. Our tool can also help you generate blur backgrounds for testing and prototypes.
                                 </p>
@@ -817,11 +848,12 @@ export default function ImageBlurPage() {
                                 </div>
                             </section>
 
+                            {/* Regional Language Content */}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-primary">
                                     फोटो की बैकग्राउंड ब्लर कैसे करे (How to Blur Photo Background)
                                 </h2>
-
+                                
                                 <div className="space-y-4">
                                     <div className="bg-card rounded-lg p-6 border border-border">
                                         <h3 className="text-lg font-semibold text-green-500 mb-3">Photo Background Blur Kaise Kare?</h3>
@@ -842,11 +874,12 @@ export default function ImageBlurPage() {
                                 </div>
                             </section>
 
+                            {/* Advanced Features */}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-green-500">
                                     Advanced Blur Effects & Customization
                                 </h2>
-
+                                
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     <div className="bg-card rounded-lg p-4 border border-border">
                                         <h3 className="text-md font-semibold text-green-500 mb-2">Blur Styles</h3>
@@ -871,6 +904,7 @@ export default function ImageBlurPage() {
                                 </div>
                             </section>
 
+                            {/* FAQ Section */}
                             <section className="mt-8 sm:mt-10 lg:mt-12 bg-card border border-border rounded-lg p-4 sm:p-6 lg:p-8">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                     <span className="hidden sm:inline text-primary">Frequently Asked Questions</span>
@@ -1101,10 +1135,10 @@ export default function ImageBlurPage() {
                             </section>
                         </div>
 
-                        {}
+                        {/* Sidebar Ads (Desktop Only) */}
                         <aside className="hidden xl:block xl:col-span-1">
                             <div className="sticky top-6 space-y-6">
-                                {}
+                                {/* First Ad */}
                                 <div className="bg-card border border-border rounded-lg p-4">
                                     <div className="text-center">
                                         <div className="text-sm font-medium text-muted-foreground mb-2">Advertisement</div>

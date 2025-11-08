@@ -5,6 +5,7 @@ import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { Link, Zap, Target, Shield, Globe, Clock, FileText, Hash, Lightbulb, Copy, Users, Code, Download, ExternalLink, Palette, BarChart3, Smartphone, Settings, Eye } from "lucide-react"
 
+// Function to get current year dynamically
 function getCurrentYear(): number {
   return new Date().getFullYear()
 }
@@ -126,7 +127,7 @@ export default function ChannelCheckerPage() {
         ]}
       />
 
-        {}
+        {/* Hero Section */}
         <div className="text-center mb-8">
           <GHeader
             title={`YouTube Channel Name Checker – Check YouTube Username Availability Instantly (${getCurrentYear()})`}
@@ -136,22 +137,22 @@ export default function ChannelCheckerPage() {
           />
         </div>
 
-        {}
+        {/* Mobile Ad Space */}
         <div className="lg:hidden mb-6">
           <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
         </div>
 
-        {}
+        {/* Main Layout */}
         <div className="flex flex-col lg:flex-row gap-8">
-          {}
+          {/* Main Content */}
           <div className="flex-1 space-y-8">
             <YoutubeChannelChecker />
 
-            {}
+            {/* Features & Usage Guide */}
             <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-200">
               <h2 className="text-xl font-bold mb-4 text-foreground">Features & Usage Guide</h2>
-
-              {}
+              
+              {/* Single Usage */}
               <div className="p-4 rounded-lg bg-muted/30 border border-border mb-4">
                 <h3 className="font-semibold text-heading-accent mb-3 flex items-center gap-2">
                   <Users className="h-5 w-5 text-primary" />
@@ -165,7 +166,7 @@ export default function ChannelCheckerPage() {
                 </div>
               </div>
 
-              {}
+              {/* Batch Usage */}
               <div className="p-4 rounded-lg bg-muted/30 border border-border mb-4">
                 <h3 className="font-semibold text-heading-accent mb-3 flex items-center gap-2">
                   <BarChart3 className="h-5 w-5 text-primary" />
@@ -180,7 +181,7 @@ export default function ChannelCheckerPage() {
                 </div>
               </div>
 
-              {}
+              {/* Step-by-Step Usage */}
               <div className="p-4 rounded-lg bg-muted/30 border border-border">
                 <h3 className="font-semibold text-heading-accent mb-3 flex items-center gap-2">
                   <FileText className="h-5 w-5 text-primary" />
@@ -211,7 +212,7 @@ export default function ChannelCheckerPage() {
               </div>
             </div>
 
-            {}
+            {/* Key Features Section */}
             <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-300">
               <h2 className="text-xl font-bold mb-4 text-foreground">Advanced Features & Capabilities</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -290,6 +291,7 @@ export default function ChannelCheckerPage() {
               </div>
             </div>
 
+            {/* Use Cases Section */}
             <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-400">
               <h2 className="text-xl font-bold mb-4 text-foreground">Use Cases</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -332,9 +334,10 @@ export default function ChannelCheckerPage() {
               </div>
             </div>
 
+            {/* Top Keywords Content Section */}
             <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-450">
               <h2 className="text-xl font-bold mb-4 text-foreground">YouTube Name Check: Complete Guide</h2>
-
+              
               <div className="space-y-6">
                 <div className="p-4 rounded-lg bg-card border border-border">
                   <h3 className="font-semibold text-heading-accent mb-3">Check YouTube Names: Username Availability Verification</h3>
@@ -388,19 +391,20 @@ export default function ChannelCheckerPage() {
               </div>
             </div>
 
-            {}
+            {/* Comprehensive FAQ Section */}
             <div className="p-5 rounded-lg bg-card border border-border shadow animate-fade-in-up animation-delay-500">
               <h2 className="text-xl font-bold mb-4 text-foreground">Frequently Asked Questions</h2>
               <div className="space-y-6">
-                {}
+                {/* Basic Usage Questions */}
                 <div className="space-y-2">
                   <h3 className="font-semibold text-heading-accent">How does the YouTube Channel Name Checker work?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Our channel checker uses advanced web scraping technology to check youtube channel availability by testing YouTube's public URLs. It tests multiple URL formats (@username, /c/username, /user/username) and analyzes the response to determine if a channel name is taken.
-                    Whether you want to check channel availability, check if youtube channel name is taken, or simply check youtube name availability, our youtube channel name availability checker provides reliable, accurate results.
+                    Our channel checker uses advanced web scraping technology to check youtube channel availability by testing YouTube's public URLs. It tests multiple URL formats (@username, /c/username, /user/username) and analyzes the response to determine if a channel name is taken. 
+                    Whether you want to check channel availability, check if youtube channel name is taken, or simply check youtube name availability, our youtube channel name availability checker provides reliable, accurate results. 
                     For those wondering "how to check youtube channel name availability" or "यूट्यूब चैनल नाम उपलब्धता चेक कैसे करें", our youtube channel username checker makes it simple with instant verification and suggestions.
                   </p>
                 </div>
+
 
                 <div className="space-y-2">
                   <h3 className="font-semibold text-heading-accent">How accurate are the availability results?</h3>
@@ -409,7 +413,7 @@ export default function ChannelCheckerPage() {
                   </p>
                 </div>
 
-                {}
+                {/* Channel Name Guidelines */}
                 <div className="space-y-2">
                   <h3 className="font-semibold text-heading-accent">What are YouTube's channel name requirements?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -431,7 +435,7 @@ export default function ChannelCheckerPage() {
                   </p>
                 </div>
 
-                {}
+                {/* Batch Checking Questions */}
                 <div className="space-y-2">
                   <h3 className="font-semibold text-heading-accent">Why is there a limit of 10 names per batch check?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -446,7 +450,7 @@ export default function ChannelCheckerPage() {
                   </p>
                 </div>
 
-                {}
+                {/* Suggestions and Alternatives */}
                 <div className="space-y-2">
                   <h3 className="font-semibold text-heading-accent">How are the alternative suggestions generated?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -461,7 +465,7 @@ export default function ChannelCheckerPage() {
                   </p>
                 </div>
 
-                {}
+                {/* Cross-Platform Considerations */}
                 <div className="space-y-2">
                   <h3 className="font-semibold text-heading-accent">Should I check availability on other platforms too?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -476,7 +480,7 @@ export default function ChannelCheckerPage() {
                   </p>
                 </div>
 
-                {}
+                {/* Technical Questions */}
                 <div className="space-y-2">
                   <h3 className="font-semibold text-heading-accent">Why do I sometimes see "Error" instead of availability status?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -491,7 +495,7 @@ export default function ChannelCheckerPage() {
                   </p>
                 </div>
 
-                {}
+                {/* Business and Legal Questions */}
                 <div className="space-y-2">
                   <h3 className="font-semibold text-heading-accent">Can I use trademarked names for my channel?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -506,6 +510,7 @@ export default function ChannelCheckerPage() {
                   </p>
                 </div>
 
+                {/* SEO and Discoverability */}
                 <div className="space-y-2">
                   <h3 className="font-semibold text-heading-accent">How can I make my channel name more discoverable?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -520,7 +525,7 @@ export default function ChannelCheckerPage() {
                   </p>
                 </div>
 
-                {}
+                {/* Troubleshooting */}
                 <div className="space-y-2">
                   <h3 className="font-semibold text-heading-accent">What if the tool shows a name as available but YouTube says it's taken?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -535,6 +540,7 @@ export default function ChannelCheckerPage() {
         </p>
       </div>
 
+                {/* Best Practices */}
                 <div className="space-y-2">
                   <h3 className="font-semibold text-heading-accent">How often should I check name availability?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -552,6 +558,7 @@ export default function ChannelCheckerPage() {
             </div>
           </div>
 
+          {/* Sidebar */}
           <div className="hidden xl:block w-80">
             <div className="sticky top-32">
               <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

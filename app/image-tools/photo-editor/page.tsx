@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: [
     "fasttools",
     "fast tools",
-
+    // Primary Keywords (20)
     "photo editor",
     "online photo editor",
     "free photo editor",
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     "photo editing website",
     "photo correction tool",
 
+    // Secondary Keywords (20)
     "free online photo editor",
     "AI photo editor online",
     "best free photo editor online",
@@ -52,6 +53,7 @@ export const metadata: Metadata = {
     "free image enhancer",
     "photo cleanup tool",
 
+    // Long-tail Keywords (20)
     "best free AI photo editor online",
     "AI photo editor for background removal",
     "online photo editor without watermark",
@@ -73,6 +75,7 @@ export const metadata: Metadata = {
     "AI photo restoration and retouch tool",
     "edit photos easily online without app",
 
+    // Additional SEO Keywords (20)
     "AI photo editing software",
     "AI image enhancer free",
     "photo editing tools online",
@@ -129,9 +132,9 @@ export const metadata: Metadata = {
       description: "Edit photos online with professional tools. Apply filters, adjust brightness, contrast, saturation, and more. Free, fast, and secure online photo editor.",
       inLanguage: ["en", "es", "fr", "de", "zh", "ar", "pt", "ru", "ja", "ko", "hi", "it", "nl", "tr", "pl"],
       isAccessibleForFree: true,
-      offers: {
-        "@type": "Offer",
-        price: "0",
+      offers: { 
+        "@type": "Offer", 
+        price: "0", 
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
@@ -167,9 +170,9 @@ export const metadata: Metadata = {
         name: "FastTools",
         url: "https://www.fasttools.store"
       },
-      publisher: {
-        "@type": "Organization",
-        name: "FastTools",
+      publisher: { 
+        "@type": "Organization", 
+        name: "FastTools", 
         url: "https://www.fasttools.store",
         logo: {
           "@type": "ImageObject",
@@ -213,7 +216,7 @@ export default function PhotoEditorPage() {
         <div className="w-full">
           <div className="max-w-full mx-auto h-full">
             <div className="h-full">
-              {}
+              {/* Tool Component */}
               <div className="h-full">
                 <FabricImageEditorClient />
               </div>

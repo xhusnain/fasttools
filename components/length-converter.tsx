@@ -118,9 +118,9 @@ export function LengthConverter() {
             </div>
           )}
 
-          {}
+          {/* Mobile Layout (Ultra Compact) */}
           <div className="block sm:hidden space-y-3">
-            {}
+            {/* From Section */}
             <div className="space-y-1">
               <Label htmlFor="from-value" className="text-card-foreground font-medium text-xs">From</Label>
               <Input
@@ -148,14 +148,14 @@ export function LengthConverter() {
               </Select>
             </div>
 
-            {}
+            {/* Swap Button - Mobile */}
             <div className="flex items-center justify-center py-0">
               <Button onClick={swapUnits} variant="outline" size="icon" className="h-7 w-7 border-border text-foreground hover:bg-accent/10">
                 <ArrowLeftRight className="h-3 w-3" />
               </Button>
             </div>
 
-            {}
+            {/* To Section */}
             <div className="space-y-1">
               <Label htmlFor="to-value" className="text-card-foreground font-medium text-xs">To</Label>
               <div className="h-9 px-3 py-2 bg-card border border-border rounded-md flex items-center text-sm font-medium text-card-foreground">
@@ -179,10 +179,10 @@ export function LengthConverter() {
             </div>
           </div>
 
-          {}
+          {/* Tablet Layout (2 columns) */}
           <div className="hidden sm:block lg:hidden">
             <div className="grid grid-cols-2 gap-4">
-              {}
+              {/* From Section */}
               <div className="space-y-3">
               <Label htmlFor="from-value-tablet" className="text-card-foreground font-medium text-sm">From</Label>
                 <Input
@@ -210,7 +210,7 @@ export function LengthConverter() {
                 </Select>
               </div>
 
-              {}
+              {/* To Section */}
               <div className="space-y-3">
               <Label htmlFor="to-value-tablet" className="text-card-foreground font-medium text-sm">To</Label>
               <div className="h-11 px-3 py-2 bg-card border border-border rounded-md flex items-center text-sm font-medium text-card-foreground">
@@ -234,7 +234,7 @@ export function LengthConverter() {
               </div>
             </div>
 
-            {}
+            {/* Swap Button - Tablet */}
             <div className="flex items-center justify-center mt-4">
               <Button onClick={swapUnits} variant="outline" size="icon" className="h-10 w-10 border-border text-foreground hover:bg-accent/10">
                 <ArrowLeftRight className="h-4 w-4" />
@@ -242,9 +242,9 @@ export function LengthConverter() {
             </div>
           </div>
 
-          {}
+          {/* Desktop Layout (3 columns) */}
           <div className="hidden lg:grid grid-cols-3 gap-6">
-            {}
+            {/* From Section */}
             <div className="space-y-3">
               <Label htmlFor="from-value-desktop" className="text-card-foreground font-medium">From</Label>
               <Input
@@ -272,14 +272,14 @@ export function LengthConverter() {
               </Select>
             </div>
 
-            {}
+            {/* Swap Button - Desktop */}
             <div className="flex items-center justify-center pt-8">
               <Button onClick={swapUnits} variant="outline" size="icon" className="h-12 w-12 border-border text-foreground hover:bg-accent/10">
                 <ArrowLeftRight className="h-5 w-5" />
               </Button>
             </div>
 
-            {}
+            {/* To Section */}
             <div className="space-y-3">
               <Label htmlFor="to-value-desktop" className="text-card-foreground font-medium">To</Label>
               <div className="h-12 px-3 py-2 bg-card border border-border rounded-md flex items-center text-sm font-medium text-card-foreground">

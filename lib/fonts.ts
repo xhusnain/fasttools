@@ -5,7 +5,7 @@ export const montserrat = Montserrat({
   variable: "--font-montserrat",
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
-  preload: false,
+  preload: false, // ✅ prevents timeout during build
 });
 
 export const roboto = Roboto({
@@ -13,5 +13,5 @@ export const roboto = Roboto({
   variable: "--font-roboto",
   weight: ["300", "400", "500", "700"],
   display: "swap",
-  preload: false,
+  preload: false, // ✅ prevents timeout during build
 });

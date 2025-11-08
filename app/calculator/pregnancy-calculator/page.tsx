@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import PregnancyCalculator from "@/components/pregnancy-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
         "pregnancy countdown calculator",
         "pregnancy timeline calculator",
         "pregnancy week estimator",
-
+        // Additional Pregnancy Calculator Keywords
         "Pregnancy Calculator",
         "pregnancy due date calculator",
         "pregnancy conception calculator",
@@ -182,7 +183,7 @@ export default function PregnancyCalculatorPage() {
           }
         })
       }} />
-
+      
       <div className="min-h-screen bg-card">
         <div className="container mx-auto px-3 py-8 md:py-12">
           <Breadcrumbs
@@ -194,14 +195,14 @@ export default function PregnancyCalculatorPage() {
 
           <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
-              <GHeader
+              <GHeader 
                 title="Pregnancy Calculator - Free Online Pregnancy Tracking Tool"
                 description="Use our pregnancy tracking tool to monitor your journey. Receive estimated delivery dates, track how far along you are, get customized weight management advice, and access trimester-by-trimester support tailored to your needs."
                 titleSize="medium"
               />
             </div>
 
-            {}
+            {/* Mobile/Tablet AdSpace after GHeader */}
             <div className="my-6 lg:hidden">
               <div className="text-center mb-2">
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
@@ -212,10 +213,10 @@ export default function PregnancyCalculatorPage() {
             <div className="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px] gap-3 md:gap-4 lg:gap-6">
               <div>
                 <PregnancyCalculator />
-
-                {}
+            
+                {/* Educational Content Sections */}
                 <div className="mt-6 md:mt-8 space-y-6 md:space-y-8">
-                  {}
+                  {/* How to Use Section */}
                   <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                     <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
                       <div className="p-2 bg-primary/10 rounded-lg">
@@ -245,6 +246,7 @@ export default function PregnancyCalculatorPage() {
                     </div>
                   </div>
 
+                  {/* Features Section */}
                   <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                     <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
                       <div className="p-2 bg-primary/10 rounded-lg">
@@ -314,7 +316,7 @@ export default function PregnancyCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Use Cases Section */}
                   <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                     <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
                       <div className="p-2 bg-primary/10 rounded-lg">
@@ -346,7 +348,7 @@ export default function PregnancyCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* FAQ Section */}
                   <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                     <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
                       <div className="p-2 bg-primary/10 rounded-lg">
@@ -502,7 +504,7 @@ export default function PregnancyCalculatorPage() {
                     </div>
                   </div>
 
-                  {}
+                  {/* Related Tools Section */}
                   <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                     <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                       <div className="p-1.5 bg-primary/10 rounded-lg">
@@ -541,8 +543,8 @@ export default function PregnancyCalculatorPage() {
                   </div>
                 </div>
               </div>
-
-              {}
+              
+              {/* Sidebar */}
               <div className="space-y-4 lg:space-y-6 hidden lg:block">
                 <div className="sticky top-32 space-y-6">
                   <div>

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 
+// Google AdSense type declarations
 declare global {
   interface Window {
     adsbygoogle: any[]
@@ -14,9 +15,10 @@ interface AdSpaceProps {
   shape?: "horizontal" | "vertical" | "square" | "auto"
 }
 
+// Ad slot configurations
 const AD_SLOTS = {
   horizontal: "4493038763",
-  vertical: "5211934507",
+  vertical: "5211934507", 
   square: "4114475250"
 } as const
 
@@ -29,14 +31,15 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
   const [adFailed, setAdFailed] = useState(false)
   const [adInitialized, setAdInitialized] = useState(false)
 
+  // Determine ad shape based on className or auto-detection
   useEffect(() => {
     if (shape === "auto") {
-
+      // Auto-detect shape based on className dimensions
       const isHorizontal = className.includes("h-24") || className.includes("h-20") || className.includes("h-36")
       const isVertical = className.includes("h-96") || className.includes("h-64") || className.includes("h-[600px]") || className.includes("h-[400px]") || className.includes("h-[500px]")
       const isSquare = className.includes("h-[600px]") && className.includes("w-full")
       const isMobileContent = className.includes("h-32") || className.includes("h-24")
-
+      
       if (isHorizontal || isMobileContent) {
         setAdShape("horizontal")
       } else if (isVertical) {
@@ -44,7 +47,7 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
       } else if (isSquare) {
         setAdShape("square")
       } else {
-
+        // Default to horizontal for header/footer/content, vertical for sidebar
         setAdShape(slot === "sidebar" ? "vertical" : "horizontal")
       }
     } else {
@@ -52,9 +55,11 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
     }
   }, [shape, className, slot])
 
+  // Load Google AdSense script (once per app)
   useEffect(() => {
     if (typeof window === "undefined") return
 
+    // If script already exists, mark loaded
     const existing = document.querySelector(
       `script[src^="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]`
     ) as HTMLScriptElement | null
@@ -75,6 +80,7 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
     }
   }, [])
 
+  // Initialize ad when script is loaded (avoid duplicate init)
   useEffect(() => {
     if (
       !scriptLoaded ||
@@ -86,16 +92,17 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
     }
 
     try {
-
+      // If an ad element already exists inside, skip
       if (adRef.current.querySelector("ins.adsbygoogle")) {
         setAdInitialized(true)
         return
       }
 
       try {
-
+        // Clear any existing ads
         adRef.current.innerHTML = ""
-
+        
+        // Create the ad element
         const adElement = document.createElement("ins")
         adElement.className = "adsbygoogle"
         adElement.style.display = "block"
@@ -103,27 +110,31 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
         adElement.setAttribute("data-ad-slot", AD_SLOTS[adShape])
         adElement.setAttribute("data-ad-format", "auto")
         adElement.setAttribute("data-full-width-responsive", "true")
-
+        
         adRef.current.appendChild(adElement)
-
+        
+        // Push the ad to Google AdSense
         if (window.adsbygoogle) {
           window.adsbygoogle.push({})
         }
         setAdInitialized(true)
-
+        
+        // Set a timeout to detect if ad fails to load
         setTimeout(() => {
           if (adRef.current && !adRef.current.querySelector("iframe")) {
             setAdFailed(true)
           }
         }, 3000)
       } catch (error) {
-
+        // Silently ignore TagError in case of policy/placement restrictions
+        // to avoid breaking the UI
         console.warn("Ad init warning:", error)
         setAdFailed(true)
       }
     } catch {}
   }, [scriptLoaded, adShape, adInitialized])
 
+  // In development, always show the ad space for layout testing
   if (process.env.NODE_ENV !== "production") {
     return (
       <div
@@ -140,6 +151,7 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
     )
   }
 
+  // Hide the ad space if ad failed to load
   if (adFailed) {
     return null
   }

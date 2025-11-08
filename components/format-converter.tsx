@@ -4,16 +4,18 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import {
-  Copy,
-  Check,
-  Download,
-  AlertCircle,
+import { 
+  Copy, 
+  Check, 
+  Download, 
+  AlertCircle, 
   CheckCircle2,
   Sparkles,
   ArrowLeftRight
 } from "lucide-react"
 import { Card } from "@/components/ui/card"
+import jsPDF from "jspdf"
+import html2canvas from "html2canvas"
 
 type Format = "html" | "markdown" | "json" | "yaml" | "xml" | "csv" | "toml" | "pdf"
 
@@ -47,6 +49,7 @@ export function FormatConverter() {
   const [isPdfGenerated, setIsPdfGenerated] = useState(false)
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false)
 
+  // Auto-convert on input change with debounce
   useEffect(() => {
     if (!input.trim()) {
       setOutput("")
@@ -63,9 +66,10 @@ export function FormatConverter() {
     }, 500)
 
     return () => clearTimeout(timer)
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [input, sourceFormat, targetFormat])
 
+  // Sample data for each format
   const getSampleData = () => {
     const samples: Record<Format, string> = {
       html: `<html>
@@ -163,6 +167,7 @@ email = "jane@example.com"`,
     setInput(getSampleData())
   }
 
+  // Validation functions
   const validateInput = (format: Format, data: string): boolean => {
     try {
       switch (format) {
@@ -170,7 +175,7 @@ email = "jane@example.com"`,
           JSON.parse(data)
           return true
         case "yaml":
-
+          // Basic YAML validation
           if (!data.trim()) return false
           return true
         case "xml":
@@ -187,45 +192,46 @@ email = "jane@example.com"`,
     }
   }
 
+  // Conversion functions
   const htmlToMarkdown = (html: string): string => {
     return html
-
+      // Headers
       .replace(/<h1[^>]*>(.*?)<\/h1>/gi, "# $1\n\n")
       .replace(/<h2[^>]*>(.*?)<\/h2>/gi, "## $1\n\n")
       .replace(/<h3[^>]*>(.*?)<\/h3>/gi, "### $1\n\n")
       .replace(/<h4[^>]*>(.*?)<\/h4>/gi, "#### $1\n\n")
       .replace(/<h5[^>]*>(.*?)<\/h5>/gi, "##### $1\n\n")
       .replace(/<h6[^>]*>(.*?)<\/h6>/gi, "###### $1\n\n")
-
+      // Bold and Italic
       .replace(/<strong[^>]*>(.*?)<\/strong>/gi, "**$1**")
       .replace(/<b[^>]*>(.*?)<\/b>/gi, "**$1**")
       .replace(/<em[^>]*>(.*?)<\/em>/gi, "*$1*")
       .replace(/<i[^>]*>(.*?)<\/i>/gi, "*$1*")
-
+      // Links
       .replace(/<a[^>]*href="([^"]*)"[^>]*>(.*?)<\/a>/gi, "[$2]($1)")
-
+      // Images
       .replace(/<img[^>]*src="([^"]*)"[^>]*alt="([^"]*)"[^>]*>/gi, "![$2]($1)")
-
+      // Lists
       .replace(/<ul[^>]*>/gi, "")
       .replace(/<\/ul>/gi, "\n")
       .replace(/<ol[^>]*>/gi, "")
       .replace(/<\/ol>/gi, "\n")
       .replace(/<li[^>]*>(.*?)<\/li>/gi, "- $1\n")
-
+      // Blockquote
       .replace(/<blockquote[^>]*>(.*?)<\/blockquote>/gi, "> $1\n\n")
-
+      // Code
       .replace(/<code[^>]*>(.*?)<\/code>/gi, "`$1`")
       .replace(/<pre[^>]*><code[^>]*>(.*?)<\/code><\/pre>/gi, "```\n$1\n```\n")
       .replace(/<pre[^>]*>(.*?)<\/pre>/gi, "```\n$1\n```\n")
-
+      // Paragraphs
       .replace(/<p[^>]*>(.*?)<\/p>/gi, "$1\n\n")
-
+      // Line breaks
       .replace(/<br\s*\/?>/gi, "\n")
-
+      // Horizontal rule
       .replace(/<hr\s*\/?>/gi, "\n---\n\n")
-
+      // Remove remaining HTML tags
       .replace(/<[^>]*>/g, "")
-
+      // Decode HTML entities
       .replace(/&nbsp;/g, " ")
       .replace(/&amp;/g, "&")
       .replace(/&lt;/g, "<")
@@ -237,29 +243,29 @@ email = "jane@example.com"`,
 
   const markdownToHtml = (md: string): string => {
     return md
-
+      // Headers
       .replace(/^######\s+(.*?)$/gm, "<h6>$1</h6>")
       .replace(/^#####\s+(.*?)$/gm, "<h5>$1</h5>")
       .replace(/^####\s+(.*?)$/gm, "<h4>$1</h4>")
       .replace(/^###\s+(.*?)$/gm, "<h3>$1</h3>")
       .replace(/^##\s+(.*?)$/gm, "<h2>$1</h2>")
       .replace(/^#\s+(.*?)$/gm, "<h1>$1</h1>")
-
+      // Bold
       .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-
+      // Italic
       .replace(/\*(.*?)\*/g, "<em>$1</em>")
-
+      // Links
       .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>')
-
+      // Images
       .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" />')
-
+      // Lists
       .replace(/^\-\s+(.*?)$/gm, "<li>$1</li>")
-
+      // Code
       .replace(/`(.*?)`/g, "<code>$1</code>")
-
+      // Paragraphs
       .replace(/\n\n/g, "</p><p>")
-
-      .replace(/^(.+)$/gm, (match) =>
+      // Wrap in paragraph tags
+      .replace(/^(.+)$/gm, (match) => 
         match.startsWith("<") ? match : `<p>${match}</p>`
       )
   }
@@ -312,7 +318,7 @@ email = "jane@example.com"`,
       const trimmed = line.trim()
 
       if (trimmed.startsWith("-")) {
-
+        // Array item
         const value = trimmed.substring(1).trim()
         const parent = stack[stack.length - 1]
         if (!Array.isArray(parent.obj)) {
@@ -326,20 +332,20 @@ email = "jane@example.com"`,
           parent.obj.push(obj)
           stack.push({ obj, indent, currentKey: null })
           const [k, v] = value.split(":").map(s => s.trim())
-
+          // @ts-ignore
             obj[k] = parseValue(v)
         } else {
           parent.obj.push(parseValue(value))
         }
       } else if (trimmed.includes(":")) {
         const [key, value] = trimmed.split(":").map(s => s.trim())
-
+        
         while (stack.length > 1 && stack[stack.length - 1].indent >= indent) {
           stack.pop()
         }
 
         const parent = stack[stack.length - 1]
-
+        
         if (value) {
           parent.obj[key] = parseValue(value)
         } else {
@@ -429,6 +435,7 @@ email = "jane@example.com"`,
     const obj = JSON.parse(json)
     let data = obj
 
+    // If it's an object with an array property, use that array
     if (!Array.isArray(obj)) {
       const arrays = Object.values(obj).filter(v => Array.isArray(v))
       if (arrays.length > 0) {
@@ -442,12 +449,15 @@ email = "jane@example.com"`,
       throw new Error("JSON must contain an array of objects")
     }
 
+    // Get all unique keys
     const keys = Array.from(
       new Set(data.flatMap(item => Object.keys(item)))
     )
 
+    // Create CSV header
     const header = keys.join(",")
 
+    // Create CSV rows
     const rows = data.map(item =>
       keys.map(key => {
         const value = item[key]
@@ -474,7 +484,7 @@ email = "jane@example.com"`,
       const obj: any = {}
       headers.forEach((header, index) => {
         const value = values[index]
-
+        // Try to parse numbers
         obj[header] = isNaN(Number(value)) ? value : Number(value)
       })
       return obj
@@ -500,7 +510,7 @@ email = "jane@example.com"`,
         if (value.length > 0 && typeof value[0] === "object") {
           arrays.push({ key: fullKey, value })
         } else {
-          toml += `${key} = [${value.map(v =>
+          toml += `${key} = [${value.map(v => 
             typeof v === "string" ? `"${v}"` : v
           ).join(", ")}]\n`
         }
@@ -512,10 +522,12 @@ email = "jane@example.com"`,
       }
     })
 
+    // Add tables
     tables.forEach(({ key, value }) => {
       toml += `\n[${key}]\n${objectToToml(value)}`
     })
 
+    // Add array of tables
     arrays.forEach(({ key, value }) => {
       value.forEach((item: any) => {
         toml += `\n[[${key}]]\n${objectToToml(item)}`
@@ -534,10 +546,11 @@ email = "jane@example.com"`,
     lines.forEach((line) => {
       const trimmed = line.trim()
 
+      // Array of tables [[section]]
       if (trimmed.startsWith("[[") && trimmed.endsWith("]]")) {
         const path = trimmed.slice(2, -2).split(".")
         currentPath = path
-
+        
         let target = obj
         for (let i = 0; i < path.length; i++) {
           const key = path[i]
@@ -552,11 +565,11 @@ email = "jane@example.com"`,
           }
         }
       }
-
+      // Regular table [section]
       else if (trimmed.startsWith("[") && trimmed.endsWith("]")) {
         const path = trimmed.slice(1, -1).split(".")
         currentPath = path
-
+        
         let target = obj
         path.forEach((key) => {
           if (!target[key]) target[key] = {}
@@ -564,7 +577,7 @@ email = "jane@example.com"`,
         })
         currentSection = target
       }
-
+      // Key-value pair
       else if (trimmed.includes("=")) {
         const [key, ...valueParts] = trimmed.split("=")
         const value = valueParts.join("=").trim()
@@ -576,28 +589,32 @@ email = "jane@example.com"`,
   }
 
   const parseTomlValue = (value: string): any => {
-
-    if ((value.startsWith('"') && value.endsWith('"')) ||
+    // Remove quotes
+    if ((value.startsWith('"') && value.endsWith('"')) || 
         (value.startsWith("'") && value.endsWith("'"))) {
       return value.slice(1, -1)
     }
-
+    
+    // Array
     if (value.startsWith("[") && value.endsWith("]")) {
       return value.slice(1, -1).split(",").map(v => parseTomlValue(v.trim()))
     }
-
+    
+    // Boolean
     if (value === "true") return true
     if (value === "false") return false
-
+    
+    // Number
     if (!isNaN(Number(value))) return Number(value)
-
+    
     return value
   }
 
+  // PDF conversion function using iframe for complete isolation
   const convertToPdf = async (content: string, sourceFormat: Format): Promise<Blob> => {
-
+    // Convert content to HTML first if needed
     let htmlContent = content
-
+    
     if (sourceFormat === "markdown") {
       htmlContent = markdownToHtml(content)
     } else if (sourceFormat === "json") {
@@ -619,7 +636,8 @@ email = "jane@example.com"`,
     } else if (sourceFormat === "toml") {
       htmlContent = `<pre style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-wrap: break-word; white-space: pre-wrap;">${content}</pre>`
     }
-
+    
+    // Create complete HTML document for iframe
     const fullHtml = `
       <!DOCTYPE html>
       <html>
@@ -665,7 +683,8 @@ email = "jane@example.com"`,
       </body>
       </html>
     `
-
+    
+    // Create completely hidden iframe
     const iframe = document.createElement("iframe")
     iframe.style.cssText = `
       position: absolute !important;
@@ -677,9 +696,10 @@ email = "jane@example.com"`,
       visibility: hidden !important;
       opacity: 0 !important;
     `
-
+    
     document.body.appendChild(iframe)
-
+    
+    // Wait for iframe to be ready
     await new Promise<void>((resolve) => {
       if (iframe.contentWindow) {
         iframe.onload = () => resolve()
@@ -688,15 +708,17 @@ email = "jane@example.com"`,
         iframe.contentWindow.document.close()
       }
     })
-
+    
+    // Wait a bit for rendering
     await new Promise(resolve => setTimeout(resolve, 200))
-
+    
     try {
       const iframeBody = iframe.contentWindow?.document.body
       if (!iframeBody) {
         throw new Error("Failed to access iframe content")
       }
-
+      
+      // Use html2canvas on the iframe body
       const canvas = await html2canvas(iframeBody, {
         scale: 2,
         backgroundColor: "#ffffff",
@@ -704,63 +726,71 @@ email = "jane@example.com"`,
         windowWidth: 800,
         windowHeight: iframeBody.scrollHeight,
       })
-
+      
+      // Create PDF with jsPDF
       const pdf = new jsPDF({
         orientation: "portrait",
         unit: "mm",
         format: "a4",
       })
-
-      const imgWidth = 210
-      const pageHeight = 297
+      
+      const imgWidth = 210 // A4 width in mm
+      const pageHeight = 297 // A4 height in mm
       const imgHeight = (canvas.height * imgWidth) / canvas.width
       let heightLeft = imgHeight
       let position = 0
-
+      
+      // Add first page
       pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, position, imgWidth, imgHeight)
       heightLeft -= pageHeight
-
+      
+      // Add additional pages if content is longer than one page
       while (heightLeft > 0) {
         position = heightLeft - imgHeight
         pdf.addPage()
         pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, position, imgWidth, imgHeight)
         heightLeft -= pageHeight
       }
-
+      
+      // Return the PDF as a Blob
       return pdf.output("blob")
     } finally {
-
+      // Clean up - remove the iframe
       if (iframe.parentNode) {
         document.body.removeChild(iframe)
       }
     }
   }
 
+  // Main conversion function
   const handleConvert = async () => {
     try {
       setError("")
       setPdfBlob(null)
       setIsPdfGenerated(false)
-
+      
       if (!input.trim()) {
         setOutput("")
         setIsValid(null)
         return
       }
 
+      // Validate input
       const valid = validateInput(sourceFormat, input)
       setIsValid(valid)
-
+      
       if (!valid && sourceFormat !== "html" && sourceFormat !== "markdown" && sourceFormat !== "pdf") {
         throw new Error(`Invalid ${sourceFormat.toUpperCase()} format`)
       }
 
+      // Handle PDF conversion
       if (targetFormat === "pdf") {
         setIsGeneratingPdf(true)
-        setOutput("")
-
+        setOutput("") // Clear output to show loading state
+        
+        // Wait for React to render the loading UI before manipulating DOM
         await new Promise(resolve => setTimeout(resolve, 50))
-
+        
         try {
           const pdfBlobResult = await convertToPdf(input, sourceFormat)
           setPdfBlob(pdfBlobResult)
@@ -777,19 +807,20 @@ email = "jane@example.com"`,
 
       let result = ""
 
+      // Convert based on source and target formats
       if (sourceFormat === targetFormat) {
         result = input
       }
-
+      // From HTML
       else if (sourceFormat === "html") {
         if (targetFormat === "markdown") {
           result = htmlToMarkdown(input)
         } else {
-
+          // HTML -> JSON (extract text content)
           const parser = new DOMParser()
           const doc = parser.parseFromString(input, "text/html")
           const text = doc.body.textContent || ""
-
+          
           if (targetFormat === "json") {
             result = JSON.stringify({ content: text }, null, 2)
           } else if (targetFormat === "yaml") {
@@ -803,17 +834,17 @@ email = "jane@example.com"`,
           }
         }
       }
-
+      // From Markdown
       else if (sourceFormat === "markdown") {
         if (targetFormat === "html") {
           result = markdownToHtml(input)
         } else {
-
+          // Markdown -> others (via HTML first)
           const html = markdownToHtml(input)
           const parser = new DOMParser()
           const doc = parser.parseFromString(html, "text/html")
           const text = doc.body.textContent || ""
-
+          
           if (targetFormat === "json") {
             result = JSON.stringify({ content: text }, null, 2)
           } else if (targetFormat === "yaml") {
@@ -827,7 +858,7 @@ email = "jane@example.com"`,
           }
         }
       }
-
+      // From JSON
       else if (sourceFormat === "json") {
         if (targetFormat === "yaml") result = jsonToYaml(input)
         else if (targetFormat === "xml") result = jsonToXml(input)
@@ -836,7 +867,7 @@ email = "jane@example.com"`,
         else if (targetFormat === "html") result = `<pre>${input}</pre>`
         else if (targetFormat === "markdown") result = `\`\`\`json\n${input}\n\`\`\``
       }
-
+      // From YAML
       else if (sourceFormat === "yaml") {
         if (targetFormat === "json") result = yamlToJson(input)
         else if (targetFormat === "xml") result = jsonToXml(yamlToJson(input))
@@ -845,7 +876,7 @@ email = "jane@example.com"`,
         else if (targetFormat === "html") result = `<pre>${input}</pre>`
         else if (targetFormat === "markdown") result = `\`\`\`yaml\n${input}\n\`\`\``
       }
-
+      // From XML
       else if (sourceFormat === "xml") {
         if (targetFormat === "json") result = xmlToJson(input)
         else if (targetFormat === "yaml") result = jsonToYaml(xmlToJson(input))
@@ -854,7 +885,7 @@ email = "jane@example.com"`,
         else if (targetFormat === "html") result = `<pre>${input}</pre>`
         else if (targetFormat === "markdown") result = `\`\`\`xml\n${input}\n\`\`\``
       }
-
+      // From CSV
       else if (sourceFormat === "csv") {
         if (targetFormat === "json") result = csvToJson(input)
         else if (targetFormat === "yaml") result = jsonToYaml(csvToJson(input))
@@ -863,7 +894,7 @@ email = "jane@example.com"`,
         else if (targetFormat === "html") result = `<pre>${input}</pre>`
         else if (targetFormat === "markdown") result = `\`\`\`csv\n${input}\n\`\`\``
       }
-
+      // From TOML
       else if (sourceFormat === "toml") {
         if (targetFormat === "json") result = tomlToJson(input)
         else if (targetFormat === "yaml") result = jsonToYaml(tomlToJson(input))
@@ -890,7 +921,8 @@ email = "jane@example.com"`,
 
   const downloadOutput = () => {
     const targetExt = formats.find(f => f.value === targetFormat)?.fileExtension || "txt"
-
+    
+    // Handle PDF download
     if (targetFormat === "pdf" && pdfBlob) {
       const url = URL.createObjectURL(pdfBlob)
       const a = document.createElement("a")
@@ -900,7 +932,8 @@ email = "jane@example.com"`,
       URL.revokeObjectURL(url)
       return
     }
-
+    
+    // Handle other formats
     const blob = new Blob([output], { type: "text/plain" })
     const url = URL.createObjectURL(blob)
     const a = document.createElement("a")
@@ -921,17 +954,18 @@ email = "jane@example.com"`,
   }
 
   const swapFormats = () => {
-
+    // Don't swap if either format is PDF (PDF is only a target format)
     if (sourceFormat === "pdf" || targetFormat === "pdf") {
       setError("PDF can only be used as a target format for conversion")
       setTimeout(() => setError(""), 3000)
       return
     }
-
+    
     const tempFormat = sourceFormat
     setSourceFormat(targetFormat)
     setTargetFormat(tempFormat)
-
+    
+    // Optionally swap input/output as well
     if (output && !isPdfGenerated) {
       setInput(output)
       setOutput(input)
@@ -940,9 +974,9 @@ email = "jane@example.com"`,
 
   return (
     <div className="space-y-6 relative">
-
+      {/* PDF Generation Overlay - Prevents any visual glitches */}
       {isGeneratingPdf && (
-        <div
+        <div 
           className="absolute inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center"
           style={{ minHeight: '400px' }}
         >
@@ -957,10 +991,11 @@ email = "jane@example.com"`,
           </div>
         </div>
       )}
-
+      
+      {/* Format Selectors */}
       <Card className="p-4 sm:p-6 bg-gradient-to-r from-primary/5 to-secondary-accent/5 border-primary/20">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-end">
-
+          {/* Source Format */}
           <div className="space-y-2">
             <Label className="text-sm font-semibold">Convert From</Label>
             <select
@@ -976,6 +1011,7 @@ email = "jane@example.com"`,
             </select>
           </div>
 
+          {/* Swap Button */}
           <div className="hidden md:flex items-center justify-center pb-2">
             <Button
               type="button"
@@ -989,6 +1025,7 @@ email = "jane@example.com"`,
             </Button>
           </div>
 
+          {/* Target Format */}
           <div className="space-y-2">
             <Label className="text-sm font-semibold">Convert To</Label>
             <select
@@ -1005,6 +1042,7 @@ email = "jane@example.com"`,
           </div>
         </div>
 
+        {/* Mobile Swap Button */}
         <div className="md:hidden flex justify-center -mt-2">
           <Button
             type="button"
@@ -1020,6 +1058,7 @@ email = "jane@example.com"`,
         </div>
       </Card>
 
+      {/* Input Section */}
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <Label className="text-base font-semibold">
@@ -1058,6 +1097,7 @@ email = "jane@example.com"`,
         )}
       </div>
 
+      {/* Error Display */}
       {error && (
         <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-lg flex items-start gap-3">
           <AlertCircle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
@@ -1068,6 +1108,7 @@ email = "jane@example.com"`,
         </div>
       )}
 
+      {/* Output Section */}
       {output && !isGeneratingPdf && (
         <div className="space-y-2">
           <div className="flex items-center justify-between">
@@ -1126,6 +1167,7 @@ email = "jane@example.com"`,
         </div>
       )}
 
+      {/* Action Button */}
       {(input || output) && (
         <div className="flex justify-end">
           <Button

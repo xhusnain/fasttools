@@ -5,48 +5,50 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {
-  Calculator,
-  DollarSign,
-  Percent,
-  Calendar,
-  TrendingUp,
-  TrendingDown,
-  Info,
-  AlertCircle,
-  CheckCircle,
-  Copy,
-  Download,
-  History,
-  Star,
-  Globe,
-  Shield,
-  FileText,
-  BarChart3,
-  PieChart,
-  Target,
-  Zap,
-  Clock,
-  Users,
-  Home,
-  Car,
-  ShoppingBag,
-  CreditCard,
-  Banknote,
-  Coins,
-  Wallet,
-  Briefcase,
-  Store,
-  Truck,
-  Package,
-  Tag,
-  ShoppingCart,
-  HandHeart,
-  Gift,
-  Award,
-  Trophy,
-  TrendingUp as TrendingUpIcon,
+import { 
+  Calculator, 
+  DollarSign, 
+  Percent, 
+  Calendar, 
+  TrendingUp, 
+  TrendingDown, 
+  Info, 
+  AlertCircle, 
+  CheckCircle, 
+  Copy, 
+  Download, 
+  History, 
+  Star, 
+  Globe, 
+  Shield, 
+  FileText, 
+  BarChart3, 
+  PieChart, 
+  Target, 
+  Zap, 
+  Clock, 
+  Users, 
+  Home, 
+  Car, 
+  ShoppingBag, 
+  CreditCard, 
+  Banknote, 
+  Coins, 
+  Wallet, 
+  Briefcase, 
+  Store, 
+  Truck, 
+  Package, 
+  Tag, 
+  ShoppingCart, 
+  HandHeart, 
+  Gift, 
+  Award, 
+  Trophy, 
+  TrendingUp as TrendingUpIcon, 
   TrendingDown as TrendingDownIcon,
   Stethoscope,
   Brain,
@@ -140,6 +142,7 @@ export default function PaymentCalculator() {
     const rate = parseFloat(interestRate) || 0
     const payment = parseFloat(monthlyPayment) || 0
 
+    // Input validation
     if (amount <= 0) {
       alert("Loan amount must be greater than $0")
       return
@@ -159,20 +162,21 @@ export default function PaymentCalculator() {
     let calculatedResult: PaymentResult
 
     if (calculationType === "fixedTerm") {
-
+      // Calculate monthly payment for fixed term
       if (term <= 0) {
         alert("Loan term must be greater than 0 years")
         return
       }
 
-      const monthlyPaymentAmount = amount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
+      const monthlyPaymentAmount = amount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / 
                                   (Math.pow(1 + monthlyRate, totalMonths) - 1)
-
+      
       const totalPayments = monthlyPaymentAmount * totalMonths
       const totalInterest = totalPayments - amount
       const principalPercentage = (amount / totalPayments) * 100
       const interestPercentage = (totalInterest / totalPayments) * 100
 
+      // Generate amortization schedule
       const amortizationSchedule = generateAmortizationSchedule(amount, monthlyRate, totalMonths, monthlyPaymentAmount)
       const monthlySchedule = generateMonthlySchedule(amount, monthlyRate, totalMonths, monthlyPaymentAmount)
 
@@ -192,17 +196,17 @@ export default function PaymentCalculator() {
         scenarios: generateScenarios(amount, rate, term)
       }
     } else {
-
+      // Calculate loan term for fixed payment
       if (payment <= 0) {
         alert("Monthly payment must be greater than $0")
         return
       }
 
       if (monthlyRate === 0) {
-
+        // No interest case
         const months = Math.ceil(amount / payment)
         const years = months / 12
-
+        
         calculatedResult = {
           calculationType: "fixedPayment",
           loanAmount: amount,
@@ -219,9 +223,9 @@ export default function PaymentCalculator() {
           scenarios: generateScenarios(amount, rate, years)
         }
       } else {
-
+        // Calculate months needed to pay off loan
         const months = Math.log(1 + (amount * monthlyRate) / payment) / Math.log(1 + monthlyRate)
-
+        
         if (months <= 0 || !isFinite(months)) {
           alert("Monthly payment is too low to pay off the loan. Please increase payment amount or decrease loan amount.")
           return
@@ -233,6 +237,7 @@ export default function PaymentCalculator() {
         const principalPercentage = (amount / totalPayments) * 100
         const interestPercentage = (totalInterest / totalPayments) * 100
 
+        // Generate amortization schedule
         const amortizationSchedule = generateAmortizationSchedule(amount, monthlyRate, months, payment)
         const monthlySchedule = generateMonthlySchedule(amount, monthlyRate, months, payment)
 
@@ -315,6 +320,7 @@ export default function PaymentCalculator() {
     const loanOptimization: string[] = []
     const financialTips: string[] = []
 
+    // Payment strategies based on interest rate
     if (rate < 3) {
       paymentStrategies.push("Consider making extra payments to reduce total interest")
       paymentStrategies.push("Your low interest rate makes this a good debt to keep")
@@ -329,6 +335,7 @@ export default function PaymentCalculator() {
       paymentStrategies.push("Make extra payments a priority")
     }
 
+    // Loan optimization
     if (term > 20) {
       loanOptimization.push("Consider shorter loan terms to reduce total interest")
       loanOptimization.push("Make bi-weekly payments to pay off loan faster")
@@ -343,6 +350,7 @@ export default function PaymentCalculator() {
       loanOptimization.push("Monitor for refinancing opportunities")
     }
 
+    // Financial tips
     financialTips.push("Build an emergency fund before making extra payments")
     financialTips.push("Consider the opportunity cost of extra payments vs. investing")
     financialTips.push("Review your loan terms annually for better rates")
@@ -355,32 +363,32 @@ export default function PaymentCalculator() {
   const generateScenarios = (amount: number, rate: number, term: number) => {
     const monthlyRate = rate / 100 / 12
     const totalMonths = term * 12
-
-    const basePayment = amount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) /
+    
+    const basePayment = amount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / 
                        (Math.pow(1 + monthlyRate, totalMonths) - 1)
-
+    
     return [
-      {
-        scenario: "Current Payment",
-        monthlyPayment: basePayment,
+      { 
+        scenario: "Current Payment", 
+        monthlyPayment: basePayment, 
         totalInterest: (basePayment * totalMonths) - amount,
         savings: 0
       },
-      {
-        scenario: "+$100 Extra",
-        monthlyPayment: basePayment + 100,
+      { 
+        scenario: "+$100 Extra", 
+        monthlyPayment: basePayment + 100, 
         totalInterest: ((basePayment + 100) * totalMonths) - amount,
         savings: 0
       },
-      {
-        scenario: "+$200 Extra",
-        monthlyPayment: basePayment + 200,
+      { 
+        scenario: "+$200 Extra", 
+        monthlyPayment: basePayment + 200, 
         totalInterest: ((basePayment + 200) * totalMonths) - amount,
         savings: 0
       },
-      {
-        scenario: "Bi-weekly",
-        monthlyPayment: basePayment * 1.083,
+      { 
+        scenario: "Bi-weekly", 
+        monthlyPayment: basePayment * 1.083, 
         totalInterest: ((basePayment * 1.083) * totalMonths) - amount,
         savings: 0
       }
@@ -408,7 +416,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
 
   return (
     <div className="space-y-6">
-      {}
+      {/* Main Calculator */}
       <Card>
         <CardHeader className="pb-8">
           <CardTitle className="flex items-center gap-2">
@@ -417,7 +425,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          {}
+          {/* Calculation Type Selection */}
           <div>
             <Label className="text-lg font-semibold mb-4 block">Calculation Type</Label>
             <Tabs value={calculationType} onValueChange={setCalculationType}>
@@ -428,7 +436,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
             </Tabs>
           </div>
 
-          {}
+          {/* Input Fields */}
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="loanAmount">Loan Amount</Label>
@@ -490,10 +498,10 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
         </CardContent>
       </Card>
 
-      {}
+      {/* Results Section */}
       {result && (
         <div className="space-y-6">
-          {}
+          {/* Main Results */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -541,7 +549,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
             </CardContent>
           </Card>
 
-          {}
+          {/* Payment Breakdown */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -579,7 +587,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
             </CardContent>
           </Card>
 
-          {}
+          {/* Amortization Schedule */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -613,7 +621,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
             </CardContent>
           </Card>
 
-          {}
+          {/* Scenarios */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -642,7 +650,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
             </CardContent>
           </Card>
 
-          {}
+          {/* Recommendations */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -691,7 +699,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
         </div>
       )}
 
-      {}
+      {/* History Section */}
       {history.length > 0 && (
         <Card>
           <CardHeader>
@@ -726,7 +734,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
         </Card>
       )}
 
-      {}
+      {/* Information Section */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -748,7 +756,7 @@ Loan Term: ${result.loanTerm.toFixed(1)} years`
               </div>
             </div>
           </div>
-
+          
           <div className="text-sm text-muted-foreground space-y-2">
             <p>
               <strong>Fixed Term Mode:</strong> Calculate monthly payment for a fixed loan term.

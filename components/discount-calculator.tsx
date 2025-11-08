@@ -48,7 +48,7 @@ export function DiscountCalculator() {
   }
 
   const updateDiscount = (id: string, field: keyof DiscountItem, value: string | number) => {
-    setDiscounts(discounts.map(d =>
+    setDiscounts(discounts.map(d => 
       d.id === id ? { ...d, [field]: value } : d
     ))
   }
@@ -58,11 +58,12 @@ export function DiscountCalculator() {
     setTimeout(() => {
       const price = Number.parseFloat(originalPrice) || 0
       const tax = Number.parseFloat(taxRate) || 0
-
+      
       let subtotal = price
       let totalDiscounts = 0
       let discountedSubtotal = price
 
+      // Apply discounts sequentially (if any)
       if (discounts.length > 0) {
         discounts.forEach(discount => {
           if (discount.type === 'percentage') {
@@ -77,16 +78,17 @@ export function DiscountCalculator() {
         })
       }
 
+      // Calculate tax
       let taxAmount = 0
       let finalPrice = discountedSubtotal
 
       if (taxInclusive) {
-
+        // Tax is already included in the original price
         const taxExclusivePrice = discountedSubtotal / (1 + tax / 100)
         taxAmount = discountedSubtotal - taxExclusivePrice
         finalPrice = taxExclusivePrice
       } else {
-
+        // Tax is added to the discounted price
         taxAmount = (discountedSubtotal * tax) / 100
         finalPrice = discountedSubtotal + taxAmount
       }
@@ -133,7 +135,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
 
   return (
     <div className="space-y-6">
-      {}
+      {/* Main Calculator Card */}
       <Card className="border border-border shadow-lg">
         <CardHeader className="text-center pb-4">
           <CardTitle className="text-2xl font-bold text-foreground flex items-center justify-center gap-2">
@@ -146,9 +148,9 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {}
+            {/* Left Column - Inputs */}
             <div className="space-y-6">
-              {}
+              {/* Original Price Input */}
               <div className="space-y-2">
                 <Label htmlFor="originalPrice" className="text-xs font-medium text-foreground">
                   Original Price ($)
@@ -165,7 +167,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                 />
               </div>
 
-              {}
+              {/* Tax Configuration */}
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="taxRate" className="text-xs font-medium text-foreground">
@@ -199,7 +201,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                 </div>
               </div>
 
-              {}
+              {/* Discounts Section */}
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <Label className="text-xs font-medium text-foreground">
@@ -269,7 +271,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                 )}
               </div>
 
-              {}
+              {/* Action Buttons */}
               <div className="flex gap-2">
               <Button
                 onClick={calculateDiscount}
@@ -298,11 +300,11 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
               </div>
             </div>
 
-            {}
+            {/* Right Column - Results */}
             <div className="space-y-4">
               {result ? (
                 <>
-                  {}
+                  {/* Results Header */}
                   <div className="text-center mb-4">
                     <h3 className="text-lg font-bold text-foreground flex items-center justify-center gap-2">
                       <CheckCircle className="h-5 w-5 text-heading-accent" />
@@ -310,7 +312,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                     </h3>
                   </div>
 
-                  {}
+                  {/* Results Grid */}
                   <div className="space-y-3">
                     <div className="flex justify-between items-center p-3 bg-card rounded-lg border border-border">
                       <span className="text-xs text-muted-foreground">Original Price:</span>
@@ -361,7 +363,7 @@ Effective Discount Rate: ${result.effectiveDiscountRate.toFixed(2)}%`
                     )}
                   </div>
 
-                  {}
+                  {/* Copy Button */}
                   <Button
                     onClick={copyResult}
                     variant="outline"

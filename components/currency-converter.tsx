@@ -29,17 +29,18 @@ export function CurrencyConverter() {
   const [lastUpdated, setLastUpdated] = useState<string>("")
   const [error, setError] = useState<string>("")
 
+  // Fetch available currencies on component mount
   useEffect(() => {
     const fetchCurrencies = async () => {
       try {
         const response = await fetch('/api/currency_converter/currencies')
         const data = await response.json()
-
+        
         if (data.success) {
           setCurrencies(data.data)
         } else {
           console.error('Failed to fetch currencies:', data.message)
-
+          // Fallback to basic currencies if API fails
           setCurrencies([
             { code: "USD", name: "US Dollar", symbol: "$" },
             { code: "EUR", name: "Euro", symbol: "€" },
@@ -54,7 +55,7 @@ export function CurrencyConverter() {
         }
       } catch (error) {
         console.error('Error fetching currencies:', error)
-
+        // Fallback to basic currencies
         setCurrencies([
           { code: "USD", name: "US Dollar", symbol: "$" },
           { code: "EUR", name: "Euro", symbol: "€" },
@@ -68,7 +69,7 @@ export function CurrencyConverter() {
         ])
       }
     }
-
+    
     fetchCurrencies()
   }, [])
 
@@ -125,11 +126,12 @@ export function CurrencyConverter() {
     setToCurrency(temp)
   }
 
+  // Convert when amount or currencies change
   useEffect(() => {
     if (amount && fromCurrency && toCurrency) {
       const timeoutId = setTimeout(() => {
         convertCurrency()
-      }, 500)
+      }, 500) // Debounce for 500ms
 
       return () => clearTimeout(timeoutId)
     }
@@ -137,15 +139,15 @@ export function CurrencyConverter() {
 
   return (
     <div className="space-y-5">
-      {}
+      {/* Main Converter */}
       <div className="bg-card border border-border rounded-lg p-5 shadow-sm">
         <div className="flex items-center gap-2 mb-4">
           <DollarSign className="h-4 w-4 text-foreground" />
           <h3 className="text-lg font-semibold text-card-foreground">Currency Converter</h3>
         </div>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
-          {}
+          {/* Amount Input */}
           <div className="space-y-2">
             <label className="text-sm font-medium text-card-foreground">Amount</label>
             <input
@@ -157,19 +159,19 @@ export function CurrencyConverter() {
             />
           </div>
 
-          {}
+          {/* Swap Button */}
           <div className="flex justify-center">
-            <Button
-              onClick={swapCurrencies}
-              variant="outline"
-              size="sm"
+            <Button 
+              onClick={swapCurrencies} 
+              variant="outline" 
+              size="sm" 
               className="h-8 w-8 p-0 border-primary hover:bg-primary hover:text-white"
             >
               <ArrowLeftRight className="h-4 w-4" />
             </Button>
           </div>
 
-          {}
+          {/* Result Display */}
           <div className="space-y-2">
             <label className="text-sm font-medium text-card-foreground">Result</label>
             <div className="w-full px-3 py-2 border-2 border-primary rounded-md bg-background text-foreground flex items-center justify-center font-medium">
@@ -178,7 +180,7 @@ export function CurrencyConverter() {
           </div>
         </div>
 
-        {}
+        {/* Currency Selectors */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div className="space-y-2">
             <label className="text-sm font-medium text-card-foreground">From Currency</label>
@@ -211,7 +213,7 @@ export function CurrencyConverter() {
           </div>
         </div>
 
-        {}
+        {/* Error Display */}
         {error && (
           <div className="mt-4 p-3 bg-red-50 dark:bg-red-950/20 rounded-md border border-red-200 dark:border-red-800">
             <p className="text-sm text-foreground text-center">
@@ -220,7 +222,7 @@ export function CurrencyConverter() {
           </div>
         )}
 
-        {}
+        {/* Result Display */}
         {result && !error && (
           <div className="mt-4 p-3 bg-muted rounded-md border border-primary/20">
             <p className="text-sm text-center">
@@ -235,7 +237,7 @@ export function CurrencyConverter() {
           </div>
         )}
 
-        {}
+        {/* Last Updated */}
         {lastUpdated && (
           <p className="text-xs text-muted-foreground mt-2 text-center">
             Last updated: {lastUpdated}
@@ -243,12 +245,12 @@ export function CurrencyConverter() {
         )}
       </div>
 
-      {}
+      {/* Note */}
       <div className="bg-card border border-border rounded-lg p-5 shadow-sm">
         <h4 className="text-sm font-semibold text-card-foreground mb-2">About FastTools Currency Converter</h4>
         <p className="text-xs text-muted-foreground">
-          FastTools.store provides real-time currency conversion with accurate exchange rates updated regularly.
-          Our free currency converter supports 100+ currencies and is perfect for travel, business, and personal use.
+          FastTools.store provides real-time currency conversion with accurate exchange rates updated regularly. 
+          Our free currency converter supports 100+ currencies and is perfect for travel, business, and personal use. 
           Always verify rates with your bank or exchange service before making transactions.
         </p>
       </div>

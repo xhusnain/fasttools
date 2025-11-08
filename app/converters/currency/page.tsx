@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
@@ -163,9 +164,9 @@ export const metadata: Metadata = {
         "Convert currencies instantly with accurate, real-time exchange rates. Compare conversions, understand fees, and export results.",
       inLanguage: "en",
       isAccessibleForFree: true,
-      offers: {
-        "@type": "Offer",
-        price: "0",
+      offers: { 
+        "@type": "Offer", 
+        price: "0", 
         priceCurrency: "USD",
         availability: "https://schema.org/InStock"
       },
@@ -232,7 +233,7 @@ export default function CurrencyConverterPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-5 lg:gap-7">
             <div className="flex-1 lg:flex-[2] space-y-5 sm:space-y-6">
-              {}
+              {/* Hero */}
               <div className="text-center space-y-4 animate-fade-in-up">
                 <GHeader
                   title="FastTools Currency Converter - Real-Time Exchange Rates"
@@ -242,23 +243,23 @@ export default function CurrencyConverterPage() {
                 />
               </div>
 
-              {}
+              {/* Mobile Ad Space */}
               <div className="lg:hidden">
                 <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
               </div>
 
-              {}
+              {/* Tool */}
               <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                 <CurrencyConverter />
-
-                {}
+                
+                {/* API Button */}
                 <div className="mt-4 pt-4 border-t border-border">
                   <div className="flex items-center justify-between">
                     <div>
                       <h4 className="text-sm font-semibold text-foreground mb-1">Need API Access?</h4>
                       <p className="text-xs text-muted-foreground">Integrate currency conversion into your app</p>
                     </div>
-                    <Link
+                    <Link 
                       href="/converters/currency-api"
                       className="flex items-center gap-2 px-4 py-2 bg-primary text-foreground rounded-md hover:bg-primary transition-colors text-sm font-medium"
                     >
@@ -271,10 +272,11 @@ export default function CurrencyConverterPage() {
                 </div>
               </div>
 
-              {}
+              {/* Top 10 Currencies Table */}
               <Top10CurrenciesTable />
 
-              {}
+
+              {/* Content Sections */}
               <div className="space-y-5 animate-fade-in-up">
                 <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-sm md:text-lg font-bold mb-2 text-foreground">How to Use the Currency Converter</h2>
@@ -338,13 +340,13 @@ export default function CurrencyConverterPage() {
                   </div>
                 </div>
 
-                {}
+                {/* API Promotion Section */}
                 <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <h2 className="text-sm md:text-lg font-bold mb-2 text-foreground">🔌 FastTools Currency API</h2>
                       <p className="text-xs text-muted-foreground mb-3">
-                        Integrate real-time currency conversion into your applications with our free REST API.
+                        Integrate real-time currency conversion into your applications with our free REST API. 
                         Perfect for developers, businesses, and financial applications.
                       </p>
                       <div className="flex flex-wrap gap-2 text-xs">
@@ -355,7 +357,7 @@ export default function CurrencyConverterPage() {
                       </div>
                     </div>
                     <div className="ml-4">
-                      <Link
+                      <Link 
                         href="/converters/currency-api"
                         className="flex items-center gap-2 px-4 py-2 bg-primary text-foreground rounded-md hover:bg-primary transition-colors text-sm font-medium"
                       >
@@ -385,11 +387,11 @@ export default function CurrencyConverterPage() {
                   </ul>
                 </div>
 
-                {}
+                {/* Comprehensive FAQ Section */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-2xl font-bold mb-6 text-foreground">Currency Converter FAQ - Everything You Need to Know</h2>
                   <div className="space-y-6 text-sm text-muted-foreground">
-
+                    
                     <div>
                       <h3 className="text-lg font-bold mb-3 text-heading-accent">1. How accurate are FastTools currency exchange rates?</h3>
                       <p className="mb-3">FastTools.store provides highly accurate, real-time exchange rates that are updated throughout the day to reflect current market conditions. Our currency converter is trusted by thousands of users worldwide.</p>
@@ -539,7 +541,8 @@ export default function CurrencyConverterPage() {
                   </div>
                 </div>
 
-                {}
+
+                {/* Related Tools */}
                 <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-sm md:text-lg font-bold mb-2 text-foreground">Related Tools</h2>
                   <ul className="list-disc pl-4 text-muted-foreground text-xs">
@@ -556,7 +559,7 @@ export default function CurrencyConverterPage() {
               </div>
             </div>
 
-            {}
+            {/* Desktop Sidebar with AdSense */}
             <div className="hidden lg:block w-60 xl:w-72">
               <div className="sticky top-28 space-y-5">
                 <AdSpace slot="sidebar" className="w-full h-72 border border-border rounded-xl shadow-sm bg-card" />

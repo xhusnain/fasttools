@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { PDFToolsAdvanced } from "@/components/pdf-tools-advanced"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import Link from "next/link"
 import { FileStack, Code, Globe, FileText, ArrowRight, Merge, Scissors } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   publisher: "FastTools",
   category: "Productivity Tools",
   keywords: [
-
+    // High-Volume PDF Keywords
     "PDF splitter online",
     "PDF merger free",
     "split PDF online",
@@ -27,7 +28,8 @@ export const metadata: Metadata = {
     "pdf split software",
     "online pdf merger",
     "pdf splitter software online",
-
+    
+    // PDF Split Keywords
     "pdf split pages",
     "pdf split to pages",
     "pdf splitter online free",
@@ -102,7 +104,8 @@ export const metadata: Metadata = {
     "pdf split 1 page into 2",
     "split pdf using adobe acrobat",
     "pdf split jpg",
-
+    
+    // PDF Merge Keywords
     "merge image online",
     "merge jpg online",
     "merge photos online",
@@ -213,7 +216,8 @@ export const metadata: Metadata = {
     "merge three pictures online",
     "merge hdr online",
     "merge word online i love",
-
+    
+    // General Keywords
     "fasttools",
     "fast tools",
     "free pdf editor",
@@ -819,7 +823,8 @@ export const metadata: Metadata = {
     "pdf splitter chrome",
     "offline pdf splitter",
     "pdf splitter gratuit",
-
+    
+    // PDF.js and JavaScript Library Keywords
     "pdf.js",
     "pdfjs",
     "pdf js library",
@@ -879,7 +884,7 @@ export const metadata: Metadata = {
     "pdf concatenate javascript",
     "pdf divide javascript"
   ],
-  alternates: {
+  alternates: { 
     canonical: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
     languages: {
       "en-US": "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
@@ -918,7 +923,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@FastTools",
     creator: "@FastTools",
-    title: "Free PDF Splitter & Merger Online - Split & Merge PDF Files | FastTools",
+    title: "Free PDF Splitter & Merger Online - Split & Merge PDF Files | FastTools", 
     description: "Free online PDF splitter and merger. Split PDF files into separate pages, extract page ranges, or merge multiple PDFs into one. 100% secure, browser-based. No upload required.",
     images: ["https://www.fasttools.store/og-image.svg"],
   },
@@ -939,7 +944,7 @@ const jsonLd = {
   inLanguage: "en-US",
       isAccessibleForFree: true,
   availableOnDevice: ["Desktop", "Mobile", "Tablet"],
-  offers: {
+  offers: { 
     "@type": "Offer",
     name: "Free PDF Splitter & Merger Tool",
     price: "0",
@@ -953,8 +958,8 @@ const jsonLd = {
     }
   },
   featureList: [
-    "Split PDF by pages",
-    "Merge multiple PDF files",
+    "Split PDF by pages", 
+    "Merge multiple PDF files", 
     "Reorder PDF pages",
     "Delete PDF pages",
     "Extract specific pages",
@@ -967,9 +972,9 @@ const jsonLd = {
     "Client-side processing",
     "Drag and drop interface"
   ],
-  publisher: {
-    "@type": "Organization",
-    name: "FastTools",
+  publisher: { 
+    "@type": "Organization", 
+    name: "FastTools", 
     url: "https://www.fasttools.store",
     logo: {
       "@type": "ImageObject",
@@ -982,28 +987,28 @@ const jsonLd = {
     "@type": "BreadcrumbList",
     name: "Breadcrumbs",
     itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
+      { 
+        "@type": "ListItem", 
+        position: 1, 
+        name: "Home", 
         item: {
           "@id": "https://www.fasttools.store",
           name: "FastTools Home"
         }
       },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "PDF Tools",
+      { 
+        "@type": "ListItem", 
+        position: 2, 
+        name: "PDF Tools", 
         item: {
           "@id": "https://www.fasttools.store/pdf-tools",
           name: "PDF Tools Collection"
         }
       },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Free PDF Splitter & Merger",
+      { 
+        "@type": "ListItem", 
+        position: 3, 
+        name: "Free PDF Splitter & Merger", 
         item: {
           "@id": "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
           name: "Free PDF Splitter & Merger Online"
@@ -1059,7 +1064,7 @@ export default function PDFSplitterMergerPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1 lg:flex-[2] space-y-6">
-                {}
+                {/* Hero Section */}
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <GHeader
                     title="Free PDF Splitter & Merger Online - Split & Merge PDFs Fast"
@@ -1069,17 +1074,17 @@ export default function PDFSplitterMergerPage() {
                   />
                 </div>
 
-                {}
+                {/* Mobile Ad Space */}
                 <div className="lg:hidden mb-6">
                   <AdSpace slot="content" className="h-12 xs:h-16 sm:h-20 md:h-24 lg:h-28" />
                 </div>
 
-                {}
+                {/* Main Tool */}
                 <div className="animate-fade-in-up animation-delay-100">
                   <PDFToolsAdvanced />
                 </div>
 
-                {}
+                {/* Content Sections */}
                 <div className="space-y-5 animate-fade-in-up animation-delay-200">
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Professional PDF Splitting & Merging</h2>
@@ -1100,7 +1105,7 @@ export default function PDFSplitterMergerPage() {
 
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">How to Use PDF Splitter & Merger</h2>
-
+                    
                     <h3 className="text-lg font-bold mb-3 text-heading-accent">How to Split PDF Online</h3>
                     <div className="text-sm text-muted-foreground leading-relaxed mb-4">
                       <p className="mb-2"><strong>Method 1: Split All Pages</strong> - Click "Split PDF" mode, upload your PDF file, select "All Pages" option, and click the split button. Each page will download as a separate PDF file. This is perfect when you need to split PDF pages into individual documents.</p>
@@ -1157,7 +1162,7 @@ export default function PDFSplitterMergerPage() {
 
                   <div className="p-5 rounded-lg bg-card border border-border shadow">
                     <h2 className="text-xl font-bold mb-4 text-foreground">Why Choose Our PDF Splitter & Merger?</h2>
-
+                    
                     <h3 className="text-lg font-bold mb-3 text-heading-accent">Free PDF Splitter & Merger Online</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                       Unlike paid software like Adobe PDF splitter or premium services, our tool is 100% free with no limitations. No watermarks, no file size restrictions, no page limits. Compare that to other free PDF splitter tools that often restrict features or require paid upgrades. We believe everyone should have access to professional PDF splitting and merging capabilities without cost barriers.
@@ -1174,7 +1179,7 @@ export default function PDFSplitterMergerPage() {
           </p>
         </div>
 
-                  {}
+                  {/* FAQ Section */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1321,6 +1326,7 @@ export default function PDFSplitterMergerPage() {
                     </div>
                   </div>
 
+                  {/* Technical Documentation Section */}
                   <div className="p-6 rounded-lg bg-card border border-border shadow-lg">
                     <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-2">
                       <div className="h-6 w-6 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -1360,33 +1366,40 @@ export default function PDFSplitterMergerPage() {
 {`import { PDFDocument } from 'pdf-lib';
 
 async function mergePDFs(files) {
-
+  // Create a new PDF document
   const mergedPdf = await PDFDocument.create();
-
+  
+  // Process each file
   for (const file of files) {
-
+    // Convert file to ArrayBuffer
     const arrayBuffer = await file.arrayBuffer();
-
+    
+    // Load the PDF
     const pdf = await PDFDocument.load(arrayBuffer);
-
+    
+    // Get all page indices [0, 1, 2, ...]
     const pageIndices = pdf.getPageIndices();
-
+    
+    // Copy pages from source to merged document
     const copiedPages = await mergedPdf.copyPages(
-      pdf,
+      pdf, 
       pageIndices
     );
-
+    
+    // Add each copied page to merged document
     copiedPages.forEach(page => {
       mergedPdf.addPage(page);
     });
   }
-
+  
+  // Save the merged PDF as bytes
   const mergedPdfBytes = await mergedPdf.save();
-
-  const blob = new Blob([mergedPdfBytes], {
-    type: 'application/pdf'
+  
+  // Create downloadable blob
+  const blob = new Blob([mergedPdfBytes], { 
+    type: 'application/pdf' 
   });
-
+  
   return blob;
 }`}</pre>
                         </div>
@@ -1411,35 +1424,42 @@ async function mergePDFs(files) {
 {`import { PDFDocument } from 'pdf-lib';
 
 async function splitPDFAllPages(file) {
-
+  // Load the source PDF
   const arrayBuffer = await file.arrayBuffer();
   const sourcePdf = await PDFDocument.load(arrayBuffer);
-
+  
+  // Get total page count
   const pageCount = sourcePdf.getPageCount();
-
+  
+  // Array to store split PDFs
   const splitPdfs = [];
-
+  
+  // Create a separate PDF for each page
   for (let i = 0; i < pageCount; i++) {
-
+    // Create new PDF for this page
     const newPdf = await PDFDocument.create();
-
+    
+    // Copy single page from source
     const [copiedPage] = await newPdf.copyPages(
-      sourcePdf,
-[i]
+      sourcePdf, 
+      [i]  // Page index
     );
-
+    
+    // Add page to new document
     newPdf.addPage(copiedPage);
-
+    
+    // Save as bytes
     const pdfBytes = await newPdf.save();
-
+    
+    // Create blob with filename
     splitPdfs.push({
-      blob: new Blob([pdfBytes], {
-        type: 'application/pdf'
+      blob: new Blob([pdfBytes], { 
+        type: 'application/pdf' 
       }),
       filename: \`page-\${i + 1}.pdf\`
     });
   }
-
+  
   return splitPdfs;
 }`}</pre>
                         </div>
@@ -1450,35 +1470,42 @@ async function splitPDFAllPages(file) {
 {`import { PDFDocument } from 'pdf-lib';
 
 async function splitPDFByRange(file, startPage, endPage) {
-
+  // Load source PDF
   const arrayBuffer = await file.arrayBuffer();
   const sourcePdf = await PDFDocument.load(arrayBuffer);
-
+  
+  // Validate page range
   const totalPages = sourcePdf.getPageCount();
   if (startPage < 1 || endPage > totalPages) {
     throw new Error(\`Invalid range. PDF has \${totalPages} pages\`);
   }
-
+  
+  // Create new PDF for extracted range
   const newPdf = await PDFDocument.create();
-
+  
+  // Create array of page indices (0-based)
+  // If user wants pages 5-10, we need indices 4-9
   const pageIndices = Array.from(
-    { length: endPage - startPage + 1 },
+    { length: endPage - startPage + 1 }, 
     (_, i) => startPage - 1 + i
   );
-
+  
+  // Copy pages in range
   const copiedPages = await newPdf.copyPages(
-    sourcePdf,
+    sourcePdf, 
     pageIndices
   );
-
+  
+  // Add all copied pages
   copiedPages.forEach(page => {
     newPdf.addPage(page);
   });
-
+  
+  // Save extracted PDF
   const pdfBytes = await newPdf.save();
-
-  return new Blob([pdfBytes], {
-    type: 'application/pdf'
+  
+  return new Blob([pdfBytes], { 
+    type: 'application/pdf' 
   });
 }`}</pre>
                         </div>
@@ -1567,6 +1594,7 @@ async function splitPDFByRange(file, startPage, endPage) {
                 </div>
           </div>
 
+              {/* Desktop Sidebar with AdSense (sticky, lowered start) */}
               <div className="hidden lg:block w-72">
                 <div className="sticky top-32 space-y-6">
                   <AdSpace slot="sidebar" className="w-full h-96 border border-border rounded-xl shadow-sm bg-card" />

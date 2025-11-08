@@ -1,4 +1,4 @@
-
+// Comprehensive search data for all tools and pages on FastTools
 export interface SearchItem {
   name: string
   description: string
@@ -7,7 +7,7 @@ export interface SearchItem {
 }
 
 export const searchItems: SearchItem[] = [
-
+  // Main Pages
   { name: "Products", description: "Explore all our product categories and tools", path: "/products", category: "Pages" },
   { name: "Downloaders", description: "Download videos and media from popular platforms", path: "/downloaders", category: "Pages" },
   { name: "API Docs", description: "Comprehensive API documentation for developers", path: "/api-docs", category: "Pages" },
@@ -17,6 +17,7 @@ export const searchItems: SearchItem[] = [
   { name: "Terms of Service", description: "Terms and conditions for using FastTools", path: "/terms", category: "Pages" },
   { name: "Cookie Preferences", description: "Manage your cookie preferences", path: "/cookie-preferences", category: "Pages" },
 
+  // Calculator Tools
   { name: "BMI Calculator", description: "Calculate your Body Mass Index with detailed health insights", path: "/calculator/bmi-calculator", category: "Calculator" },
   { name: "Age Calculator", description: "Calculate exact age in years, months, weeks, days, hours, minutes, and seconds", path: "/calculator/age-calculator", category: "Calculator" },
   { name: "Percentage Calculator", description: "Calculate percentages, discounts, increases, decreases, and percentage differences", path: "/calculator/percentage-calculator", category: "Calculator" },
@@ -51,11 +52,13 @@ export const searchItems: SearchItem[] = [
   { name: "Amortization Calculator", description: "Professional amortization calculator for loan payment analysis", path: "/calculator/amortization-calculator", category: "Calculator" },
   { name: "Payment Calculator", description: "Professional payment calculator for loan analysis", path: "/calculator/payment-calculator", category: "Calculator" },
 
+  // AI Tools
   { name: "AI QR Code Generator", description: "Create stunning, branded QR codes with AI-powered customization", path: "/ai-tools/qr-generator", category: "AI" },
   { name: "AI Lyrics Generator", description: "Generate creative, original song lyrics for any genre", path: "/ai-tools/lyrics-generator", category: "AI" },
   { name: "AI Caption Generator", description: "Create engaging captions for social media posts automatically", path: "/ai-tools/caption-generator", category: "AI" },
   { name: "AI Pet Name Generator", description: "Discover unique, creative names for your pets using AI", path: "/ai-tools/pet-names", category: "AI" },
 
+  // Converter Tools
   { name: "Currency Converter", description: "Real-time currency conversion for 150+ world currencies", path: "/converters/currency", category: "Converter" },
   { name: "Text Case Converter", description: "Transform text between uppercase, lowercase, title case, camelCase", path: "/converters/text-case", category: "Converter" },
   { name: "Length Converter", description: "Convert between all major length units", path: "/converters/length", category: "Converter" },
@@ -64,6 +67,7 @@ export const searchItems: SearchItem[] = [
   { name: "Timezone Converter", description: "Convert time between different time zones worldwide", path: "/converters/timezone", category: "Converter" },
   { name: "Currency API", description: "Free currency exchange API with real-time rates", path: "/converters/currency-api", category: "Converter" },
 
+  // Developer Tools
   { name: "Color Palette Generator", description: "Generate beautiful, harmonious color schemes", path: "/dev-tools/color-palette", category: "Developer" },
   { name: "Hex to RGB Converter", description: "Convert between HEX, RGB, HSL, and other color formats", path: "/dev-tools/hex-to-rgb", category: "Developer" },
   { name: "JSON to CSV Converter", description: "Convert JSON data to CSV format", path: "/dev-tools/json-to-csv", category: "Developer" },
@@ -73,10 +77,12 @@ export const searchItems: SearchItem[] = [
   { name: "HTML to Markdown", description: "Convert HTML content to Markdown format", path: "/dev-tools/html-to-markdown", category: "Developer" },
   { name: "Markdown Previewer", description: "Preview Markdown content in real-time", path: "/dev-tools/markdown-previewer", category: "Developer" },
 
+  // Image Tools
   { name: "Background Remover", description: "Remove backgrounds automatically with AI-powered precision", path: "/image-tools/image-background-remover", category: "Image" },
   { name: "Image Blur Tool", description: "Blur sensitive areas for privacy protection", path: "/image-tools/image-blur", category: "Image" },
   { name: "Image to Text (OCR)", description: "Extract text from images with OCR technology", path: "/image-tools/image-to-text", category: "Image" },
 
+  // PDF Tools
   { name: "PDF to Word Converter", description: "Convert PDF to editable Word documents", path: "/pdf-tools/pdf-word-converter", category: "PDF" },
   { name: "PDF Compressor", description: "Reduce PDF file size efficiently", path: "/pdf-tools/pdf-compressor", category: "PDF" },
   { name: "PDF to Image", description: "Convert PDF pages to JPG and PNG images", path: "/pdf-tools/pdf-to-image", category: "PDF" },
@@ -85,12 +91,14 @@ export const searchItems: SearchItem[] = [
   { name: "Split PDF", description: "Split PDF into separate files by page ranges", path: "/pdf-tools/pdf-splitter-merger", category: "PDF" },
   { name: "PDF Unlocker", description: "Remove password protection from PDF files", path: "/pdf-tools/pdf-unlocker", category: "PDF" },
 
+  // SEO Tools
   { name: "Meta Tag Generator", description: "Generate SEO-optimized meta tags", path: "/seo-tools/meta-tags", category: "SEO" },
   { name: "Keyword Density Checker", description: "Analyze keyword density in content", path: "/seo-tools/keyword-density", category: "SEO" },
   { name: "Lorem Ipsum Generator", description: "Generate placeholder text for design mockups", path: "/seo-tools/lorem-ipsum", category: "SEO" },
   { name: "Blog Title Generator", description: "Create catchy, SEO-friendly titles", path: "/seo-tools/blog-titles", category: "SEO" },
   { name: "Hashtag Generator", description: "Generate trending hashtags for posts", path: "/seo-tools/hashtags", category: "SEO" },
 
+  // Social Media Tools
   { name: "Instagram DP Viewer", description: "View and download Instagram profile pictures", path: "/social-media-tools/instagram-dp", category: "Social Media" },
   { name: "Instagram Downloader", description: "Download Instagram posts, reels, and images in HD", path: "/social-media-tools/instagram-downloader", category: "Social Media" },
   { name: "TikTok Video Downloader", description: "Download TikTok videos without watermark", path: "/social-media-tools/tiktok-downloader", category: "Social Media" },
@@ -103,6 +111,7 @@ export const searchItems: SearchItem[] = [
   { name: "YouTube Channel Checker", description: "Check if your desired channel name is available", path: "/social-media-tools/channel-checker", category: "Social Media" },
   { name: "Hashtag Counter", description: "Count and extract hashtags from posts", path: "/social-media-tools/hashtag-counter", category: "Social Media" },
 
+  // Finance Tools
   { name: "Invoice Generator", description: "Create professional invoices for your business", path: "/finance-tools/invoice-generator", category: "Finance" },
   { name: "PayPal Fee Calculator", description: "Calculate PayPal transaction fees", path: "/finance-tools/paypal-fee", category: "Finance" },
   { name: "Discount Calculator", description: "Calculate sale prices and savings", path: "/finance-tools/discount-calculator", category: "Finance" },
@@ -112,9 +121,13 @@ export const searchItems: SearchItem[] = [
   { name: "Bill Splitter", description: "Split bills and expenses fairly", path: "/finance-tools/bill-splitter", category: "Finance" },
   { name: "Credit Card Payoff Calculator", description: "Calculate credit card debt payoff time", path: "/finance-tools/credit-card-payoff", category: "Finance" },
 
+  // Fun Tools
   { name: "Fun Tools", description: "Entertaining tools for celebrations and social content", path: "/fun-tools", category: "Pages" },
   { name: "Future Age Predictor", description: "See how old you'll be on any future date", path: "/fun-tools/future-age", category: "Fun" },
   { name: "Birthday Countdown", description: "Countdown to your next birthday", path: "/fun-tools/birthday-countdown", category: "Fun" },
   { name: "Anniversary Calculator", description: "Calculate how long you've been together", path: "/fun-tools/anniversary", category: "Fun" },
 ]
+
+
+
 

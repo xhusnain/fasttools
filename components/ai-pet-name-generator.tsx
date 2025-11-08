@@ -36,7 +36,7 @@ export function AiPetNameGenerator() {
   const [breed, setBreed] = useState("")
   const [size, setSize] = useState("any")
   const [additionalInfo, setAdditionalInfo] = useState("")
-
+  
   const [categorizedNames, setCategorizedNames] = useState<CategorizedNames | null>(null)
   const [loading, setLoading] = useState(false)
   const [copiedName, setCopiedName] = useState("")
@@ -46,35 +46,36 @@ export function AiPetNameGenerator() {
     setLoading(true)
     setCategorizedNames(null)
     setLoadingProgress(0)
-
+    
+    // Simulate progress for better UX
     const progressInterval = setInterval(() => {
       setLoadingProgress((prev) => {
         if (prev >= 90) return prev
         return prev + Math.random() * 15
       })
     }, 500)
-
+    
     try {
       const response = await fetch("/api/ai/generate-pet-names", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          petType,
-          gender,
-          color,
-          age,
-          personality,
+        body: JSON.stringify({ 
+          petType, 
+          gender, 
+          color, 
+          age, 
+          personality, 
           breed,
           size,
-          additionalInfo
+          additionalInfo 
         }),
       })
 
       const data = await response.json()
-
+      
       clearInterval(progressInterval)
       setLoadingProgress(100)
-
+      
       if (data.success) {
         setCategorizedNames(data.names)
       } else {
@@ -101,10 +102,10 @@ export function AiPetNameGenerator() {
 
   const downloadNames = () => {
     if (!categorizedNames) return
-
+    
     let content = "🐾 AI-Generated Pet Names\n"
     content += "=" .repeat(50) + "\n\n"
-
+    
     Object.entries(categorizedNames).forEach(([category, names]) => {
       if (names.length > 0) {
         content += `\n${category.toUpperCase()} NAMES:\n`
@@ -116,7 +117,7 @@ export function AiPetNameGenerator() {
         })
       }
     })
-
+    
     const blob = new Blob([content], { type: "text/plain" })
     const url = URL.createObjectURL(blob)
     const a = document.createElement("a")
@@ -134,7 +135,7 @@ export function AiPetNameGenerator() {
   return (
     <div className="space-y-6">
       <div className="grid gap-4 md:grid-cols-2">
-        {}
+        {/* Pet Type */}
         <div className="space-y-2">
           <Label htmlFor="petType" className="text-sm font-medium">
             Pet Type <span className="text-foreground">*</span>
@@ -163,7 +164,7 @@ export function AiPetNameGenerator() {
           </Select>
         </div>
 
-        {}
+        {/* Gender */}
         <div className="space-y-2">
           <Label htmlFor="gender" className="text-sm font-medium">Gender</Label>
           <Select value={gender} onValueChange={setGender}>
@@ -178,7 +179,7 @@ export function AiPetNameGenerator() {
           </Select>
         </div>
 
-        {}
+        {/* Color */}
         <div className="space-y-2">
           <Label htmlFor="color" className="text-sm font-medium">Color / Appearance</Label>
           <Input
@@ -190,7 +191,7 @@ export function AiPetNameGenerator() {
           />
         </div>
 
-        {}
+        {/* Age */}
         <div className="space-y-2">
           <Label htmlFor="age" className="text-sm font-medium">Age</Label>
           <Select value={age} onValueChange={setAge}>
@@ -207,7 +208,7 @@ export function AiPetNameGenerator() {
           </Select>
         </div>
 
-        {}
+        {/* Size */}
         <div className="space-y-2">
           <Label htmlFor="size" className="text-sm font-medium">Size</Label>
           <Select value={size} onValueChange={setSize}>
@@ -225,7 +226,7 @@ export function AiPetNameGenerator() {
           </Select>
         </div>
 
-        {}
+        {/* Breed */}
         <div className="space-y-2">
           <Label htmlFor="breed" className="text-sm font-medium">Breed (Optional)</Label>
           <Input
@@ -238,7 +239,7 @@ export function AiPetNameGenerator() {
         </div>
       </div>
 
-      {}
+      {/* Personality */}
       <div className="space-y-2">
         <Label htmlFor="personality" className="text-sm font-medium">
           Personality Traits
@@ -252,7 +253,7 @@ export function AiPetNameGenerator() {
         />
       </div>
 
-      {}
+      {/* Additional Info */}
       <div className="space-y-2">
         <Label htmlFor="additionalInfo" className="text-sm font-medium">
           Additional Preferences (Optional)
@@ -266,9 +267,9 @@ export function AiPetNameGenerator() {
         />
       </div>
 
-      <Button
-        onClick={generateNames}
-        disabled={loading}
+      <Button 
+        onClick={generateNames} 
+        disabled={loading} 
         className="w-full h-12 text-base bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
       >
         {loading ? (
@@ -284,7 +285,7 @@ export function AiPetNameGenerator() {
         )}
       </Button>
 
-      {}
+      {/* Loading Progress Indicator */}
       {loading && (
         <div className="space-y-4 animate-fade-in bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl p-6 border-2 border-primary/30">
           <div className="flex items-center justify-center gap-3">
@@ -293,14 +294,14 @@ export function AiPetNameGenerator() {
               AI is crafting perfect names for your {petType}...
             </p>
           </div>
-
+          
           <div className="space-y-2">
             <div className="flex justify-between text-sm text-muted-foreground">
               <span>Progress</span>
               <span>{Math.round(loadingProgress)}%</span>
             </div>
             <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
-              <div
+              <div 
                 className="h-full bg-gradient-to-r from-primary to-accent transition-all duration-500 ease-out rounded-full"
                 style={{ width: `${loadingProgress}%` }}
               />
@@ -344,8 +345,8 @@ export function AiPetNameGenerator() {
                 Organized by category for easy browsing
               </p>
             </div>
-            <Button
-              variant="outline"
+            <Button 
+              variant="outline" 
               onClick={downloadNames}
               className="flex items-center gap-2"
             >
@@ -356,56 +357,56 @@ export function AiPetNameGenerator() {
 
           {Object.entries(categorizedNames).map(([category, names]) => {
             if (names.length === 0) return null
-
+            
             const categoryStyles: Record<string, { border: string; bg: string; text: string }> = {
-              traditional: {
-                border: "border-blue-500/30",
-                bg: "bg-blue-500/20",
-                text: "text-foreground"
+              traditional: { 
+                border: "border-blue-500/30", 
+                bg: "bg-blue-500/20", 
+                text: "text-foreground" 
               },
-              modern: {
-                border: "border-green-500/30",
-                bg: "bg-green-500/20",
-                text: "text-heading-accent"
+              modern: { 
+                border: "border-green-500/30", 
+                bg: "bg-green-500/20", 
+                text: "text-heading-accent" 
               },
-              unique: {
-                border: "border-purple-500/30",
-                bg: "bg-purple-500/20",
-                text: "text-foreground"
+              unique: { 
+                border: "border-purple-500/30", 
+                bg: "bg-purple-500/20", 
+                text: "text-foreground" 
               },
-              nature: {
-                border: "border-emerald-500/30",
-                bg: "bg-emerald-500/20",
-                text: "text-emerald-600 dark:text-emerald-400"
+              nature: { 
+                border: "border-emerald-500/30", 
+                bg: "bg-emerald-500/20", 
+                text: "text-emerald-600 dark:text-emerald-400" 
               },
-              cultural: {
-                border: "border-primary/30",
-                bg: "bg-primary/20",
-                text: "text-foreground"
+              cultural: { 
+                border: "border-primary/30", 
+                bg: "bg-primary/20", 
+                text: "text-foreground" 
               },
-              celebrity: {
-                border: "border-pink-500/30",
-                bg: "bg-pink-500/20",
-                text: "text-foreground"
+              celebrity: { 
+                border: "border-pink-500/30", 
+                bg: "bg-pink-500/20", 
+                text: "text-foreground" 
               },
-              food: {
-                border: "border-yellow-500/30",
-                bg: "bg-yellow-500/20",
-                text: "text-foreground"
+              food: { 
+                border: "border-yellow-500/30", 
+                bg: "bg-yellow-500/20", 
+                text: "text-foreground" 
               },
-              mythological: {
-                border: "border-indigo-500/30",
-                bg: "bg-indigo-500/20",
-                text: "text-indigo-600 dark:text-indigo-400"
+              mythological: { 
+                border: "border-indigo-500/30", 
+                bg: "bg-indigo-500/20", 
+                text: "text-indigo-600 dark:text-indigo-400" 
               }
             }
-
-            const styles = categoryStyles[category] || {
-              border: "border-gray-500/30",
-              bg: "bg-gray-500/20",
-              text: "text-gray-600 dark:text-gray-400"
+            
+            const styles = categoryStyles[category] || { 
+              border: "border-gray-500/30", 
+              bg: "bg-gray-500/20", 
+              text: "text-gray-600 dark:text-gray-400" 
             }
-
+            
             return (
               <div key={category} className="space-y-3">
                 <div className={`flex items-center gap-2 pb-2 border-b-2 ${styles.border}`}>
@@ -414,11 +415,11 @@ export function AiPetNameGenerator() {
                   </div>
                   <span className="text-xs text-muted-foreground">({names.length} names)</span>
                 </div>
-
+                
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {names.map((item, index) => (
-                    <Card
-                      key={index}
+                    <Card 
+                      key={index} 
                       className="p-4 hover:shadow-lg transition-shadow border-2 border-border hover:border-primary/50"
                     >
                       <div className="flex items-start justify-between gap-3">
@@ -433,9 +434,9 @@ export function AiPetNameGenerator() {
                             <span className="font-medium">Origin:</span> {item.origin}
                           </p>
                         </div>
-                        <Button
-                          variant={copiedName === item.name ? "default" : "outline"}
-                          size="sm"
+                        <Button 
+                          variant={copiedName === item.name ? "default" : "outline"} 
+                          size="sm" 
                           onClick={() => copyName(item.name)}
                           className="shrink-0"
                         >

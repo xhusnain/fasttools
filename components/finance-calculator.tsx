@@ -7,47 +7,48 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import {
-  Calculator,
-  DollarSign,
-  Percent,
-  Calendar,
-  TrendingUp,
-  TrendingDown,
-  Info,
-  AlertCircle,
-  CheckCircle,
-  Copy,
-  Download,
-  History,
-  Star,
-  Globe,
-  Shield,
-  FileText,
-  BarChart3,
-  PieChart,
-  Target,
-  Zap,
-  Clock,
-  Users,
-  Home,
-  Car,
-  ShoppingBag,
-  CreditCard,
-  Banknote,
-  Coins,
-  Wallet,
-  Briefcase,
-  Store,
-  Truck,
-  Package,
-  Tag,
-  ShoppingCart,
-  HandHeart,
-  Gift,
-  Award,
-  Trophy,
-  TrendingUp as TrendingUpIcon,
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { 
+  Calculator, 
+  DollarSign, 
+  Percent, 
+  Calendar, 
+  TrendingUp, 
+  TrendingDown, 
+  Info, 
+  AlertCircle, 
+  CheckCircle, 
+  Copy, 
+  Download, 
+  History, 
+  Star, 
+  Globe, 
+  Shield, 
+  FileText, 
+  BarChart3, 
+  PieChart, 
+  Target, 
+  Zap, 
+  Clock, 
+  Users, 
+  Home, 
+  Car, 
+  ShoppingBag, 
+  CreditCard, 
+  Banknote, 
+  Coins, 
+  Wallet, 
+  Briefcase, 
+  Store, 
+  Truck, 
+  Package, 
+  Tag, 
+  ShoppingCart, 
+  HandHeart, 
+  Gift, 
+  Award, 
+  Trophy, 
+  TrendingUp as TrendingUpIcon, 
   TrendingDown as TrendingDownIcon,
   Stethoscope,
   Brain,
@@ -124,32 +125,33 @@ export default function FinanceCalculator() {
     const iyValue = parseFloat(iy) || 0
     const nValue = parseFloat(n) || 0
     const pvValue = parseFloat(pv) || 0
-
+    
+    // Calculate the missing value
     let calculatedValue = 0
     let calculatedField = ""
-
+    
     if (!fv && pmtValue && iyValue && nValue && pvValue) {
-
+      // Calculate FV
       const rate = iyValue / 100
       const periods = nValue
       const presentValue = pvValue
       const payment = pmtValue
-
+      
       if (paymentTiming === "beginning") {
-        calculatedValue = presentValue * Math.pow(1 + rate, periods) +
+        calculatedValue = presentValue * Math.pow(1 + rate, periods) + 
                         payment * ((Math.pow(1 + rate, periods) - 1) / rate) * (1 + rate)
       } else {
-        calculatedValue = presentValue * Math.pow(1 + rate, periods) +
+        calculatedValue = presentValue * Math.pow(1 + rate, periods) + 
                         payment * ((Math.pow(1 + rate, periods) - 1) / rate)
       }
       calculatedField = "fv"
     } else if (!pv && fvValue && iyValue && nValue && pmtValue) {
-
+      // Calculate PV
       const rate = iyValue / 100
       const periods = nValue
       const futureValue = fvValue
       const payment = pmtValue
-
+      
       if (paymentTiming === "beginning") {
         calculatedValue = (futureValue - payment * ((Math.pow(1 + rate, periods) - 1) / rate) * (1 + rate)) / Math.pow(1 + rate, periods)
       } else {
@@ -157,71 +159,71 @@ export default function FinanceCalculator() {
       }
       calculatedField = "pv"
     } else if (!pmt && fvValue && iyValue && nValue && pvValue) {
-
+      // Calculate PMT
       const rate = iyValue / 100
       const periods = nValue
       const futureValue = fvValue
       const presentValue = pvValue
-
+      
       if (paymentTiming === "beginning") {
-        calculatedValue = (futureValue - presentValue * Math.pow(1 + rate, periods)) /
+        calculatedValue = (futureValue - presentValue * Math.pow(1 + rate, periods)) / 
                          (((Math.pow(1 + rate, periods) - 1) / rate) * (1 + rate))
       } else {
-        calculatedValue = (futureValue - presentValue * Math.pow(1 + rate, periods)) /
+        calculatedValue = (futureValue - presentValue * Math.pow(1 + rate, periods)) / 
                          ((Math.pow(1 + rate, periods) - 1) / rate)
       }
       calculatedField = "pmt"
     } else if (!iy && fvValue && pmtValue && nValue && pvValue) {
-
+      // Calculate I/Y using Newton-Raphson method
       const periods = nValue
       const futureValue = fvValue
       const payment = pmtValue
       const presentValue = pvValue
-
-      let rate = 0.01
+      
+      let rate = 0.01 // Start with 1%
       let tolerance = 0.0001
       let maxIterations = 100
       let iteration = 0
-
+      
       while (iteration < maxIterations) {
         const f = (r: number) => {
           if (r === 0) {
             return presentValue + payment * periods - futureValue
           }
           const factor = paymentTiming === "beginning" ? (1 + r) : 1
-          return presentValue * Math.pow(1 + r, periods) +
+          return presentValue * Math.pow(1 + r, periods) + 
                  payment * ((Math.pow(1 + r, periods) - 1) / r) * factor - futureValue
         }
-
+        
         const fPrime = (r: number) => {
           if (r === 0) {
             return presentValue * periods + payment * periods * (periods + 1) / 2
           }
           const factor = paymentTiming === "beginning" ? (1 + r) : 1
-          return presentValue * periods * Math.pow(1 + r, periods - 1) +
+          return presentValue * periods * Math.pow(1 + r, periods - 1) + 
                  payment * ((periods * Math.pow(1 + r, periods - 1) * r - (Math.pow(1 + r, periods) - 1)) / (r * r)) * factor
         }
-
+        
         const fValue = f(rate)
         const fPrimeValue = fPrime(rate)
-
+        
         if (Math.abs(fValue) < tolerance) break
-
+        
         if (fPrimeValue === 0) break
-
+        
         rate = rate - fValue / fPrimeValue
         iteration++
       }
-
+      
       calculatedValue = rate * 100
       calculatedField = "iy"
     } else if (!n && fvValue && pmtValue && iyValue && pvValue) {
-
+      // Calculate N
       const rate = iyValue / 100
       const futureValue = fvValue
       const payment = pmtValue
       const presentValue = pvValue
-
+      
       if (rate === 0) {
         calculatedValue = (futureValue - presentValue) / payment
       } else {
@@ -232,7 +234,8 @@ export default function FinanceCalculator() {
       }
       calculatedField = "n"
     }
-
+    
+    // Generate amortization schedule
     const schedule = generateAmortizationSchedule(
       calculatedField === "pv" ? calculatedValue : pvValue,
       calculatedField === "pmt" ? calculatedValue : pmtValue,
@@ -240,7 +243,7 @@ export default function FinanceCalculator() {
       calculatedField === "n" ? calculatedValue : nValue,
       calculatedField === "fv" ? calculatedValue : fvValue
     )
-
+    
     const newResult: FinanceResult = {
       fv: calculatedField === "fv" ? calculatedValue : fvValue,
       pmt: calculatedField === "pmt" ? calculatedValue : pmtValue,
@@ -265,7 +268,7 @@ export default function FinanceCalculator() {
       recommendations: generateRecommendations(calculatedField === "fv" ? calculatedValue : fvValue, calculatedField === "iy" ? calculatedValue : iyValue),
       comparison: generateComparison(calculatedField === "fv" ? calculatedValue : fvValue, calculatedField === "iy" ? calculatedValue : iyValue)
     }
-
+    
     setResult(newResult)
     setHistory(prev => [newResult, ...prev.slice(0, 4)])
   }
@@ -274,12 +277,12 @@ export default function FinanceCalculator() {
     const schedule = []
     const rate = iy / 100
     let balance = pv
-
+    
     for (let i = 1; i <= n; i++) {
       const interest = balance * rate
       const principal = pmt - interest
       balance = balance + principal
-
+      
       schedule.push({
         period: i,
         presentValue: balance - principal,
@@ -288,7 +291,7 @@ export default function FinanceCalculator() {
         futureValue: balance
       })
     }
-
+    
     return schedule
   }
 
@@ -297,6 +300,7 @@ export default function FinanceCalculator() {
     const loanAdvice: string[] = []
     const financialPlanning: string[] = []
 
+    // Investment recommendations
     if (iy > 8) {
       investmentTips.push("Consider high-yield investment options")
       investmentTips.push("Evaluate risk tolerance for higher returns")
@@ -306,6 +310,7 @@ export default function FinanceCalculator() {
       investmentTips.push("Consider tax-advantaged accounts")
     }
 
+    // Loan advice
     if (iy > 6) {
       loanAdvice.push("Consider refinancing for lower rates")
       loanAdvice.push("Make extra principal payments")
@@ -313,6 +318,7 @@ export default function FinanceCalculator() {
     loanAdvice.push("Compare loan terms from multiple lenders")
     loanAdvice.push("Consider loan consolidation options")
 
+    // Financial planning
     financialPlanning.push("Create a comprehensive financial plan")
     financialPlanning.push("Build an emergency fund")
     financialPlanning.push("Consider retirement planning")
@@ -356,7 +362,7 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
 
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 w-full overflow-hidden">
-      {}
+      {/* Main Calculator */}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -365,7 +371,7 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4 sm:space-y-6 px-2 sm:px-3 md:px-4">
-          {}
+          {/* Input Fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-1.5 w-full min-w-0">
               <Label htmlFor="fv" className="text-heading-accent text-xs sm:text-sm">FV (Future Value)</Label>
@@ -454,10 +460,10 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
         </CardContent>
       </Card>
 
-      {}
+      {/* Results Section */}
       {result && (
         <div className="space-y-4 sm:space-y-6">
-          {}
+          {/* Main Results */}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -505,7 +511,7 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
             </CardContent>
           </Card>
 
-          {}
+          {/* Summary */}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -531,7 +537,7 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
             </CardContent>
           </Card>
 
-          {}
+          {/* Amortization Schedule */}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -567,7 +573,7 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
             </CardContent>
           </Card>
 
-          {}
+          {/* Investment Scenarios */}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -592,7 +598,7 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
             </CardContent>
           </Card>
 
-          {}
+          {/* Recommendations */}
           <Card className="bg-card border-border w-full overflow-hidden">
             <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -641,7 +647,7 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
         </div>
       )}
 
-      {}
+      {/* History Section */}
       {history.length > 0 && (
         <Card className="bg-card border-border w-full overflow-hidden">
           <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
@@ -677,7 +683,7 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
         </Card>
       )}
 
-      {}
+      {/* Information Section */}
       <Card className="bg-card border-border w-full overflow-hidden">
         <CardHeader className="px-2 sm:px-3 md:px-4 pb-2">
           <CardTitle className="flex items-center gap-2 text-sm sm:text-base md:text-lg break-words">
@@ -699,7 +705,7 @@ Total Interest: $${result.summary.totalInterest.toFixed(2)}`
               </div>
             </div>
           </div>
-
+          
           <div className="text-xs sm:text-sm text-foreground space-y-1.5 sm:space-y-2">
             <p className="break-words">
               <strong className="text-heading-accent">Time Value of Money:</strong> Calculate present value, future value, payments, interest rates, and periods.
