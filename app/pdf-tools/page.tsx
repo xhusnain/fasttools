@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { FileText, FileStack, Unlock, ArrowRight, Code, Globe, File, Minimize2, Image, RefreshCw, FileSignature } from "lucide-react"
+import { FileText, FileStack, Unlock, ArrowRight, Code, Globe, File, Minimize2, Image, RefreshCw, FileSignature, DollarSign } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -556,6 +556,38 @@ export default function PDFToolsPage() {
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       International users appreciate that our online pdf tools work with PDFs in any language—from English and Spanish to Chinese, Arabic, Russian, and beyond. Unicode support ensures proper handling of special characters, diacritics, and non-Latin scripts. This makes our platform the go-to choice for multilingual businesses, international organizations, and global teams managing documents across language barriers.
                     </p>
+                  </div>
+
+                  {/* Related Business Tools Section */}
+                  <div className="p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-foreground">Related Business & Finance Tools</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Complete your business toolkit with our finance and payment processing tools for invoicing, fee calculation, and financial management.
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <Link href="/finance-tools/paypal-fee" className="p-4 rounded-lg border border-border hover:border-primary/50 transition-colors group">
+                        <div className="flex items-center gap-3">
+                          <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                            <DollarSign className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">PayPal Fee Calculator</h3>
+                            <p className="text-xs text-muted-foreground">Calculate accurate PayPal transaction fees for pricing</p>
+                          </div>
+                        </div>
+                      </Link>
+                      <Link href="/finance-tools/invoice-generator" className="p-4 rounded-lg border border-border hover:border-primary/50 transition-colors group">
+                        <div className="flex items-center gap-3">
+                          <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                            <FileText className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">Invoice Generator</h3>
+                            <p className="text-xs text-muted-foreground">Create professional invoices for your business</p>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
                   </div>
 
                   {/* FAQ Section */}

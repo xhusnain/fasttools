@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { FileText, Beer as Blur, Crop, FileStack, Unlock, ArrowRight, Code, Globe, Focus } from "lucide-react"
+import { FileText, Beer as Blur, Crop, FileStack, Unlock, ArrowRight, Code, Globe, Focus, DollarSign } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
@@ -660,6 +660,38 @@ export default function ImageToolsPage() {
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       While we recommend our browser-based tools, users seeking downloads can explore free image editor download, free image editor software download, free image editor program, free ai image editor download, free image tool download, and free image editor app for pc options. Additional software includes free image editor software windows, free image editor software for pc, free image editor download windows 10, free download windows 7 image file, 3u tool free download for windows 10, freehand 9.0 software free download, chatpy image editor free, and other name of tools with images alternatives.
                     </p>
+                  </div>
+
+                  {/* Related Business Tools Section */}
+                  <div className="p-5 rounded-lg bg-card border border-border shadow">
+                    <h2 className="text-xl font-bold mb-4 text-foreground">Related Business & Finance Tools</h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      Complete your business toolkit with our finance and payment processing tools for invoicing, fee calculation, and financial management.
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <Link href="/finance-tools/paypal-fee" className="p-4 rounded-lg border border-border hover:border-primary/50 transition-colors group">
+                        <div className="flex items-center gap-3">
+                          <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                            <DollarSign className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">PayPal Fee Calculator</h3>
+                            <p className="text-xs text-muted-foreground">Calculate accurate PayPal transaction fees for pricing</p>
+                          </div>
+                        </div>
+                      </Link>
+                      <Link href="/finance-tools/invoice-generator" className="p-4 rounded-lg border border-border hover:border-primary/50 transition-colors group">
+                        <div className="flex items-center gap-3">
+                          <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                            <FileText className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">Invoice Generator</h3>
+                            <p className="text-xs text-muted-foreground">Create professional invoices for your business</p>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
                   </div>
 
                   {/* FAQ Section */}
