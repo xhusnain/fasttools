@@ -4,13 +4,12 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "postbuild": "node scripts/copy-bin-to-standalone.js && (node scripts/submit-indexnow.js || echo '⚠️  IndexNow submission failed, but build continues')",
+    "postbuild": "node scripts/copy-bin-to-standalone.js",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
     "download-models": "node scripts/download-models.js",
     "prebuild": "node scripts/download-models.js",
-    "indexnow:submit": "node scripts/submit-indexnow.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
