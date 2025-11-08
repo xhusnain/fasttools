@@ -1,14 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
 import { Card } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Copy, Check, X, AlertCircle, CheckCircle2, Sparkles, Share2, Link2, Code2, ChevronDown, Shield, ShieldAlert, ShieldCheck, AlertTriangle, Info, Clock, GitCompare, Minimize2, TrendingDown, Download, FileJson, FileText, FileCode, Zap, Activity, BarChart3, Timer, BookOpen, GraduationCap, Lightbulb, ChevronRight } from "lucide-react"
-import { Label } from "@/components/ui/label"
-import { Switch } from "@/components/ui/switch"
 
 export function JWTDecoder() {
   const [mode, setMode] = useState<"decode" | "encode">("decode")
@@ -363,8 +357,6 @@ const newToken = jwt.sign(payload, secretKey, {
 });
 
       python: `# Python - Using PyJWT
-import jwt
-from datetime import datetime, timedelta
 
 # Your JWT token
 token = '${token.substring(0, 50)}...'
@@ -3258,62 +3250,6 @@ try {
                     <p className="text-xs text-foreground mb-2">Install: <code className="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">pip install PyJWT</code></p>
                     <pre className="bg-muted text-gray-100 p-3 rounded text-xs overflow-x-auto">
 {`import jwt
-import datetime
-
-# Create a JWT
-payload = {
-    'user_id': 123,
-    'username': 'johndoe',
-    'role': 'user',
-    'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1)
-}
-secret_key = 'your-secret-key-keep-it-safe'
-token = jwt.encode(payload, secret_key, algorithm='HS256')
-
-print(f'Generated Token: {token}')
-
-# Verify a JWT
-try:
-    decoded = jwt.decode(token, secret_key, algorithms=['HS256'])
-    print(f'Decoded: {decoded}')
-    # Access: decoded['user_id'], decoded['username'], etc.
-except jwt.ExpiredSignatureError:
-    print('Token has expired')
-except jwt.InvalidTokenError:
-    print('Invalid token')`}
-                    </pre>
-                  </div>
-
-                  <div className="p-4 bg-card border border-border rounded-lg">
-                    <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                      <Lightbulb className="h-5 w-5 text-white" />
-                      Quick Tip: Use Our Tool to Get Code!
-                    </h4>
-                    <p className="text-xs text-gray-400">
-                      Don&apos;t want to write this code manually? Our JWT Decoder has a &quot;Get Code&quot; button that generates ready-to-use code snippets for all 6 languages (Node.js, Python, Java, PHP, Go, C#). Just decode your token and click the green &quot;Get Code&quot; button!
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-sm font-bold">5</span>
-                  Mastering Our JWT Decoder Tool
-                </h3>
-                <div className="pl-10 space-y-3 text-sm text-muted-foreground">
-                  <p>Our JWT Decoder is packed with powerful features to make working with JWTs easy. Let&apos;s explore each one:</p>
-
-                  <div className="space-y-3">
-
-                    <div className="p-3 bg-card rounded-lg">
-                      <h4 className="font-semibold text-foreground mb-2">🔍 Instant Decoding</h4>
-                      <p className="text-xs">Just paste your JWT token in the text box and it automatically decodes! You&apos;ll see the header, payload, and signature split into three color-coded sections. We show both JSON format and a Claims Table view for easier reading.</p>
-                    </div>
-
-                    <div className="p-3 bg-card rounded-lg">
-                      <h4 className="font-semibold text-foreground mb-2">⚙️ Algorithm Selector & Examples</h4>
-                      <p className="text-xs">Use the dropdown menu to select from 12 different algorithms (HS256, RS256, ES256, etc.). Click &quot;Generate Example&quot; to create a sample token for that algorithm - perfect for learning or testing!</p>
                     </div>
 
                     <div className="p-3 bg-card rounded-lg">

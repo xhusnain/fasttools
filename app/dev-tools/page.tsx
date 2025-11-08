@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Code2, FileJson, Palette, Hash, FileCode, Braces, Code, Globe, ArrowRight } from "lucide-react"

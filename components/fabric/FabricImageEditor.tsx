@@ -1,26 +1,5 @@
 "use client"
 
-import React, { useState, useRef, useEffect } from 'react'
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import {
-  Upload,
-  Download,
-  RotateCcw,
-  ImageIcon,
-  Palette,
-  Zap,
-  Type,
-  Shapes,
-  Brush,
-  Filter,
-  Layers,
-  Settings,
-  ChevronRight,
-  ChevronLeft,
-  X
-} from "lucide-react"
-
 import { MainSidebar } from './sidebar/MainSidebar'
 import { ExpandableSidebar } from './sidebar/ExpandableSidebar'
 import { FabricCanvas } from './canvas/FabricCanvas'

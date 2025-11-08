@@ -14,8 +14,6 @@ import {
   ArrowLeftRight
 } from "lucide-react"
 import { Card } from "@/components/ui/card"
-import jsPDF from "jspdf"
-import html2canvas from "html2canvas"
 
 type Format = "html" | "markdown" | "json" | "yaml" | "xml" | "csv" | "toml" | "pdf"
 

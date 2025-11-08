@@ -3,10 +3,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Copy, Download, Plus, Trash2, Printer, FileText, Palette, Save, Upload, Calendar } from "lucide-react"
-import { LoadingSpinner } from "@/components/loading-spinner"
 import { currencies, languages, getCurrencySymbol } from "./countries-list"
 
 interface InvoiceItem {

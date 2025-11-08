@@ -1,6 +1,5 @@
 "use client"
 
-import React, { useState, useEffect, useRef } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Upload, Download, RotateCcw, Square, Circle, Type, Image as ImageIcon } from "lucide-react"

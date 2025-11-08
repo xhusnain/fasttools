@@ -3,7 +3,6 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { HTMLBeautifier } from "@/components/html-beautifier"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import Link from "next/link"
 import { Code, Minimize2, Copy, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {

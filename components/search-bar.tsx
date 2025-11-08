@@ -4,8 +4,6 @@ import type React from "react"
 import { useState, useEffect, useRef, useMemo, useCallback } from "react"
 import { Search } from "lucide-react"
 import { useRouter } from "next/navigation"
-import Link from "next/link"
-import Fuse from "fuse.js"
 import { searchItems, type SearchItem } from "@/lib/search-data"
 
 type SearchBarProps = {

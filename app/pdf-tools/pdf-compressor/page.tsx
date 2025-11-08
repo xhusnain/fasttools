@@ -3,7 +3,6 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { PDFCompressor } from "@/components/pdf-compressor"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import Link from "next/link"
 import { Minimize2, FileText, Shield, Zap, ArrowRight, HardDrive, Info, CheckCircle2 } from "lucide-react"
 
 export const metadata: Metadata = {

@@ -4,7 +4,6 @@ import { AdSpace } from "@/components/ad-space"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, Heart, Calendar, Clock, Gift } from "lucide-react"
 import type { Metadata } from "next"
-import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),

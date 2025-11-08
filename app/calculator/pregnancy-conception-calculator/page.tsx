@@ -1,5 +1,4 @@
 import { Metadata } from "next"
-import PregnancyConceptionCalculator from "@/components/pregnancy-conception-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"

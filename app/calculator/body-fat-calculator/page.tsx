@@ -1,5 +1,4 @@
 import { Metadata } from "next"
-import BodyFatCalculator from "@/components/body-fat-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"

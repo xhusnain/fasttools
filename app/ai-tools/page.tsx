@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Breadcrumbs } from "@/components/breadcrumbs"
@@ -122,7 +121,7 @@ export default function AiToolsPage() {
                         <div className="flex items-start gap-3">
                           <div className="h-9 w-9 rounded-lg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300 flex-shrink-0 bg-primary/10 border border-primary/20">
                             <tool.icon className="h-4 w-4 text-primary" />
-        </div>
+                          </div>
                           <div className="flex-1 min-w-0">
                             <CardTitle className="text-sm md:text-base font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-2">{tool.title}</CardTitle>
                             <CardDescription className="leading-relaxed text-[11px] md:text-xs text-muted-foreground line-clamp-2">

@@ -1,6 +1,5 @@
 "use client"
 
-import React, { useRef, useEffect, useState } from 'react'
 import { getFabric } from '@/lib/fabric'
 
 interface FabricCanvasProps {

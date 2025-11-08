@@ -1,5 +1,4 @@
 import { Metadata } from "next"
-import RetirementCalculator from "@/components/retirement-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"

@@ -3,7 +3,6 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { PDFUnlocker } from "@/components/pdf-unlocker"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import Link from "next/link"
 import { Lock, Unlock, Shield, FileText, ArrowRight, Key } from "lucide-react"
 
 export const metadata: Metadata = {

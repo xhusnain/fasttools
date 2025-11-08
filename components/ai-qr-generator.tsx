@@ -12,8 +12,6 @@ import { Switch } from "@/components/ui/switch"
 import { Textarea } from "@/components/ui/textarea"
 import { Download, QrCode, Upload, Image as ImageIcon, Sparkles, Wifi, Mail, Phone, MessageSquare, User, MapPin, FileText, Zap, Globe, ListOrdered, Archive } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
-import QRCode from "qrcode"
-import JSZip from "jszip"
 
 type QRType = "url" | "wifi" | "vcard" | "email" | "sms" | "whatsapp" | "phone" | "location" | "text" | "bulk"
 type ErrorCorrectionLevel = "L" | "M" | "Q" | "H"

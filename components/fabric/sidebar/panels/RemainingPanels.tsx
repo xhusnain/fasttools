@@ -1,6 +1,5 @@
 "use client"
 
-import React, { useState } from 'react'
 import { getFabric } from '@/lib/fabric'
 import { Pen, Pencil, Brush, Sparkles } from 'lucide-react'
 

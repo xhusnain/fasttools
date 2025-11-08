@@ -1,5 +1,4 @@
 import { Metadata } from "next"
-import Link from "next/link"
 import { ExternalLink, Code, Zap, Shield, Clock } from "lucide-react"
 import { CopyButton } from "@/components/copy-button"
 import { AdSpace } from "@/components/ad-space"

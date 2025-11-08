@@ -3,7 +3,6 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { PDFToolsAdvanced } from "@/components/pdf-tools-advanced"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import Link from "next/link"
 import { FileStack, Code, Globe, FileText, ArrowRight, Merge, Scissors } from "lucide-react"
 
 export const metadata: Metadata = {

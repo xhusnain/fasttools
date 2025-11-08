@@ -3,7 +3,6 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { ColorPaletteGenerator } from "@/components/color-palette-generator"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import Link from "next/link"
 import { Palette, Shuffle, Lock, Copy, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {

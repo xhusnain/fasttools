@@ -3,7 +3,6 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { PDFToImage } from "@/components/pdf-to-image"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import Link from "next/link"
 import { Image, FileText, Shield, Zap, ArrowRight, Download, Info, CheckCircle2 } from "lucide-react"
 
 export const metadata: Metadata = {

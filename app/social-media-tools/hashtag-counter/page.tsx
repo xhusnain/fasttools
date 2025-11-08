@@ -5,7 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { ArrowRight, Hash, Code, Globe, Calculator } from "lucide-react"
 import type { Metadata } from "next"
-import Link from "next/link"
 
 function getCurrentYear(): number {
   return new Date().getFullYear()

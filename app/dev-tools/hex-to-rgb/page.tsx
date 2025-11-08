@@ -3,7 +3,6 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { HexToRGB } from "@/components/hex-to-rgb"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import Link from "next/link"
 import { Palette, Copy, ArrowRight, Hash } from "lucide-react"
 
 export const metadata: Metadata = {

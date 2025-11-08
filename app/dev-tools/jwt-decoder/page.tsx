@@ -3,8 +3,6 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { JWTDecoder } from "@/components/jwt-decoder"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import Link from "next/link"
-import { Code, Code2, Globe, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),

@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { downloadPlaylist } from 'ytsave'
 import { promises as fs } from 'fs'
-import path from 'path'
-import os from 'os'
-import archiver from 'archiver'
 
 export const maxDuration = 600
 export const dynamic = 'force-dynamic'

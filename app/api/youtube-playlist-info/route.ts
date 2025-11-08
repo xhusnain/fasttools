@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { exec } from 'child_process'
-import { promises as fs } from 'fs'
-import path from 'path'
-import os from 'os'
 import { promisify } from 'util'
 
 const execAsync = promisify(exec)

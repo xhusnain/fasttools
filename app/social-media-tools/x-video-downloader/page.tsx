@@ -5,7 +5,6 @@ import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { Zap, Target, AlertCircle, Video, CheckCircle, FileText, Shield, Download } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
-import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),

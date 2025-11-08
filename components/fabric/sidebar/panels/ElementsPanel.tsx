@@ -1,6 +1,5 @@
 "use client"
 
-import React, { useState } from 'react'
 import { Square, Circle as CircleIcon, Triangle as TriangleIcon, Minus, ArrowRight, Star, Hexagon, Pentagon, Diamond, Heart } from 'lucide-react'
 import { Icon } from '@iconify/react'
 import { getFabric } from '@/lib/fabric'

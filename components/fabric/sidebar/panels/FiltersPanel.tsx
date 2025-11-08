@@ -1,6 +1,5 @@
 "use client"
 
-import React, { useState } from 'react'
 import { Square, Search, Camera, Circle, Coffee, RotateCw, Grid3x3, Mountain, X } from 'lucide-react'
 import { getFabric } from '@/lib/fabric'
 

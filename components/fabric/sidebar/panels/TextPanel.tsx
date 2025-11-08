@@ -1,6 +1,5 @@
 "use client"
 
-import React from 'react'
 import { getFabric } from '@/lib/fabric'
 
 interface TextPanelProps {

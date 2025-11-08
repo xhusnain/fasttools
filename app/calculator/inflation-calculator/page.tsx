@@ -1,5 +1,4 @@
 import { Metadata } from "next"
-import InflationCalculator from "@/components/inflation-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"

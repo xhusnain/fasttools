@@ -8,7 +8,6 @@ import { Progress } from "@/components/ui/progress"
 import { useToast } from "@/components/ui/toast"
 import { Upload, X, Download, Image as ImageIcon, FileText, Loader2, FolderArchive } from "lucide-react"
 import * as pdfjsLib from "pdfjs-dist"
-import JSZip from "jszip"
 
 if (typeof window !== "undefined") {
   pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs`

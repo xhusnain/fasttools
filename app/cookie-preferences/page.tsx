@@ -4,8 +4,6 @@ import { useState, useEffect } from "react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Button } from "@/components/ui/button"
 import { Shield, Cookie, Eye, Settings, CheckCircle, AlertTriangle, ExternalLink, Lock, BarChart, Target } from "lucide-react"
-import Link from "next/link"
-import Head from "next/head"
 
 interface CookiePreferences {
   essential: boolean

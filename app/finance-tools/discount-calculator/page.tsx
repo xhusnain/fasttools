@@ -4,7 +4,6 @@ import { AdSpace } from "@/components/ad-space"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calculator, Percent, DollarSign, ShoppingCart, Tag, TrendingDown, Target, Zap, Shield, Globe, Clock, FileText, Palette, BarChart3, Smartphone, Settings, Eye, Code, Copy, ExternalLink, Users, Lightbulb, Search, CheckCircle, XCircle, Video, AlertCircle, Hash, ArrowRight, CreditCard, Banknote, Coins, TrendingUp, Receipt, Wallet, PiggyBank, ArrowUp, ArrowDown, Minus, Plus, Equal, HashIcon, HelpCircle, BookOpen, Star, Heart, Gift, PieChart, Award } from "lucide-react"
 import type { Metadata } from "next"
-import Link from "next/link"
 import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {

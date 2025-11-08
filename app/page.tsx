@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { HeroSectionBg } from "@/components/hero-section-bg"
 import { GHeader } from "@/components/globalcomponents/gheader"

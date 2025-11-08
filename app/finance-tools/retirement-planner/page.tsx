@@ -21,7 +21,6 @@ import {
   Zap,
 } from "lucide-react"
 import type { Metadata } from "next"
-import Link from "next/link"
 import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {

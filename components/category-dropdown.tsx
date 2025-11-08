@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import Link from "next/link"
 import { ChevronDown } from "lucide-react"
 
 export function CategoryDropdown() {

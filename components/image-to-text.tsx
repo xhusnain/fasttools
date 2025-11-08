@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Upload, Copy, Check, FileText, RotateCcw } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
-import Tesseract from "tesseract.js"
 
 export function ImageToText() {
   const [image, setImage] = useState<string | null>(null)

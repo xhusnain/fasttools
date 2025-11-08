@@ -8,7 +8,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Copy, Target, Plus, Trash2, Calculator, TrendingUp, DollarSign, Percent, Calendar, PieChart, BarChart3, Wallet, CreditCard, Home, Car, Plane, ShoppingCart, GraduationCap, Heart, Briefcase, Shield, Zap } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
-import { Progress } from "@/components/ui/progress"
 
 interface ExpenseItem {
   id: string

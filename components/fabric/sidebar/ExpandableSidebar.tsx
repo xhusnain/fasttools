@@ -1,8 +1,5 @@
 "use client"
 
-import React from 'react'
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import { X, ChevronRight } from "lucide-react"
 
 import { ElementsPanel } from './panels/ElementsPanel'

@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MessageSquare, Clock, Users, HelpCircle, Send, CheckCircle } from "lucide-react"
 import { useState } from "react"
-import Head from "next/head"
 
 interface FormData {
   name: string

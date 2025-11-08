@@ -1,10 +1,7 @@
 import { Metadata } from "next"
-import TriangleCalculator from "@/components/triangle-calculator"
 import { AdSpace } from "@/components/ad-space"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import {
     Calculator,
     Triangle,

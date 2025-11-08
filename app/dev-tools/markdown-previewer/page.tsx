@@ -3,7 +3,6 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { MarkdownPreviewer } from "@/components/markdown-previewer"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import Link from "next/link"
 import { FileText, Eye, Code, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {

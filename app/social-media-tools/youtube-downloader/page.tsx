@@ -4,8 +4,6 @@ import { YoutubeDownloader } from "@/components/youtube-downloader"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { Download, Shield, Zap, Target, AlertCircle, Music, Clock, FileText, ExternalLink, Instagram, Video, Facebook, MessageSquare, List, CheckCircle2 } from "lucide-react"
-import { getCurrentYear } from "@/lib/utils"
-import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),

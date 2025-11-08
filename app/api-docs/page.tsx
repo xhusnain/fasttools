@@ -1,6 +1,5 @@
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import Link from "next/link"
 import type { Metadata } from "next"
 import {
   ArrowRight,

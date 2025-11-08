@@ -1,6 +1,5 @@
 "use client"
 
-import React, { useState, useRef } from 'react'
 import { Upload, X, Image as ImageIcon } from "lucide-react"
 import { getFabric } from '@/lib/fabric'
 

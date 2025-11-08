@@ -1,9 +1,7 @@
 import { LoveCalculator } from "@/components/love-calculator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import type { Metadata } from "next"
-import Link from "next/link"
 import {
   Heart,
   Users,

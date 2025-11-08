@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { exec, spawn } from 'child_process'
 import { promises as fs } from 'fs'
-import path from 'path'
-import os from 'os'
-import archiver from 'archiver'
 import { promisify } from 'util'
 import { setProgress, clearProgress } from '../youtube-download-progress/route'
 

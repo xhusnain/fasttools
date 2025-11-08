@@ -1,7 +1,4 @@
-import path from "node:path";
-import fs from "node:fs";
 import * as ort from "onnxruntime-node";
-import sharp from "sharp";
 
 const INPUT_SIZE = 320;
 let sessionPromise: Promise<ort.InferenceSession> | null = null;

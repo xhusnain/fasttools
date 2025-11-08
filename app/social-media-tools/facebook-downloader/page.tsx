@@ -4,7 +4,6 @@ import { FacebookDownloader } from "@/components/facebook-downloader"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { Zap, Target, AlertCircle, Globe, Video, CheckCircle, FileText, Settings, Smartphone, Monitor, Info, BookOpen, Scale, Wrench, Star, Code, ExternalLink, Link as LinkIcon } from "lucide-react"
-import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),

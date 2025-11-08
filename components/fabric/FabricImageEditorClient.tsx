@@ -1,6 +1,5 @@
 "use client"
 
-import React, { useState, useEffect, useCallback } from 'react'
 import { FabricCanvasStable as FabricCanvas } from './canvas/FabricCanvasStable'
 import { MainSidebar } from './sidebar/MainSidebar'
 import { ExpandableSidebar } from './sidebar/ExpandableSidebar'

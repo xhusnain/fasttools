@@ -6,7 +6,6 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { Calculator, Brain, Clock, Pi } from "lucide-react"
 import { useState } from "react"
-import Head from "next/head"
 
 const seoKeywords = [
 
