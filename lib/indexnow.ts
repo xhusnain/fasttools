@@ -9,7 +9,7 @@
 
 const INDEXNOW_API_URL = 'https://api.indexnow.org/IndexNow'
 const BASE_URL = 'https://www.fasttools.store'
-const INDEXNOW_API_KEY = '977d14c55f1dcd71171724c3e6ae4adf'
+const INDEXNOW_API_KEY = 'd647980ec12b43bb8dbb90f8ffd156e6'
 
 export interface IndexNowConfig {
   apiKey: string
@@ -141,12 +141,21 @@ export async function submitToIndexNow(
 
   for (const batch of batches) {
     try {
-      const payload = {
+      // According to IndexNow docs, keyLocation is optional if key file is at root: /{key}.txt
+      // But we'll include it explicitly to be clear
+      const payload: {
+        host: string
+        key: string
+        keyLocation?: string
+        urlList: string[]
+      } = {
         host: config.host,
         key: config.apiKey,
-        keyLocation: config.keyLocation,
         urlList: batch,
       }
+      
+      // Include keyLocation explicitly (IndexNow will verify the key file at this location)
+      payload.keyLocation = config.keyLocation
 
       const response = await fetch(INDEXNOW_API_URL, {
         method: 'POST',
@@ -156,17 +165,31 @@ export async function submitToIndexNow(
         body: JSON.stringify(payload),
       })
 
-      if (response.status === 200) {
+      if (response.status === 200 || response.status === 202) {
         totalSubmitted += batch.length
-        console.log(`✅ Successfully submitted ${batch.length} URLs to IndexNow`)
+        console.log(`✅ Successfully submitted ${batch.length} URLs to IndexNow (status: ${response.status})`)
       } else if (response.status === 400) {
         const error = `Bad request: Invalid format`
         errors.push(error)
         console.error(`❌ ${error}`)
       } else if (response.status === 403) {
-        const error = `Forbidden: API key not valid (key not found or key mismatch)`
-        errors.push(error)
-        console.error(`❌ ${error}`)
+        // Try to get more details from the response
+        let errorDetails = 'Forbidden: API key not valid'
+        try {
+          const errorBody = await response.json()
+          if (errorBody.message) {
+            errorDetails = `Forbidden: ${errorBody.message}`
+          }
+        } catch {
+          // Ignore JSON parsing errors
+        }
+        
+        errors.push(errorDetails)
+        console.error(`❌ ${errorDetails}`)
+        console.error(`❌ Note: If you see "User is unauthorized to access the site", you may need to:`)
+        console.error(`   1. Verify your site in Bing Webmaster Tools first`)
+        console.error(`   2. Ensure the key file is accessible at: ${config.keyLocation}`)
+        console.error(`   3. Wait a few minutes after deploying the key file for IndexNow to verify it`)
       } else if (response.status === 422) {
         const error = `Unprocessable Entity: URLs don't belong to host or key mismatch`
         errors.push(error)
@@ -251,6 +274,40 @@ export function getIndexNowConfig(): IndexNowConfig {
 }
 
 /**
+ * Verify that the key file is accessible
+ */
+async function verifyKeyFile(keyLocation: string): Promise<boolean> {
+  try {
+    const response = await fetch(keyLocation, {
+      method: 'GET',
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; IndexNow-Verifier/1.0)',
+      },
+    })
+    
+    if (!response.ok) {
+      console.warn(`⚠️  Key file not accessible at ${keyLocation} (status: ${response.status})`)
+      return false
+    }
+    
+    const content = await response.text()
+    const expectedKey = INDEXNOW_API_KEY.trim()
+    const actualKey = content.trim()
+    
+    if (actualKey !== expectedKey) {
+      console.warn(`⚠️  Key file content mismatch. Expected: ${expectedKey}, Got: ${actualKey}`)
+      return false
+    }
+    
+    console.log(`✅ Key file verified at ${keyLocation}`)
+    return true
+  } catch (error) {
+    console.warn(`⚠️  Could not verify key file: ${error instanceof Error ? error.message : 'Unknown error'}`)
+    return false
+  }
+}
+
+/**
  * Main function to submit all sitemap URLs to IndexNow
  */
 export async function submitSitemapsToIndexNow(): Promise<IndexNowResponse> {
@@ -261,6 +318,13 @@ export async function submitSitemapsToIndexNow(): Promise<IndexNowResponse> {
     console.log(`🚀 Starting IndexNow submission for ${baseUrl}`)
     console.log(`🔑 Using API key: ${config.apiKey.substring(0, 8)}...`)
     console.log(`📍 Key location: ${config.keyLocation}`)
+    
+    // Verify key file is accessible (optional check, but helpful for debugging)
+    const keyFileAccessible = await verifyKeyFile(config.keyLocation)
+    if (!keyFileAccessible) {
+      console.warn(`⚠️  Warning: Key file may not be accessible. IndexNow may reject the submission.`)
+      console.warn(`⚠️  Make sure the site is deployed and the key file is accessible at: ${config.keyLocation}`)
+    }
     
     // Get all URLs from sitemaps
     const urls = await getAllSitemapUrls(baseUrl)
@@ -280,6 +344,19 @@ export async function submitSitemapsToIndexNow(): Promise<IndexNowResponse> {
       console.log(`✅ Successfully submitted ${result.submittedUrls} URLs to IndexNow`)
     } else {
       console.error(`❌ Failed to submit URLs: ${result.message}`)
+      if (result.message?.includes('Forbidden') || result.message?.includes('403') || result.message?.includes('unauthorized')) {
+        console.error(`❌ This usually means:`)
+        console.error(`   1. The site needs to be verified in Bing Webmaster Tools first`)
+        console.error(`   2. The key file is not accessible at: ${config.keyLocation}`)
+        console.error(`   3. The key in the file doesn't match the API key being sent`)
+        console.error(`   4. IndexNow needs time to verify the key file after deployment`)
+        console.error(`   `)
+        console.error(`   To fix:`)
+        console.error(`   - Go to https://www.bing.com/webmasters`)
+        console.error(`   - Add and verify your site (www.fasttools.store)`)
+        console.error(`   - Ensure the key file is accessible: ${config.keyLocation}`)
+        console.error(`   - Wait a few minutes after verification before submitting URLs`)
+      }
     }
     
     return result

@@ -16,7 +16,7 @@ const http = require('http')
 
 const INDEXNOW_API_URL = 'https://api.indexnow.org/IndexNow'
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.fasttools.store'
-const INDEXNOW_API_KEY = '977d14c55f1dcd71171724c3e6ae4adf'
+const INDEXNOW_API_KEY = 'd647980ec12b43bb8dbb90f8ffd156e6'
 
 const host = new URL(BASE_URL).hostname
 const keyLocation = `${BASE_URL}/${INDEXNOW_API_KEY}.txt`
@@ -168,15 +168,28 @@ function submitToIndexNow(urls) {
         res.on('end', () => {
           completedBatches++
           
-          if (res.statusCode === 200) {
+          if (res.statusCode === 200 || res.statusCode === 202) {
             totalSubmitted += batch.length
-            console.log(`✅ Batch ${index + 1}/${batches.length}: Successfully submitted ${batch.length} URLs`)
+            console.log(`✅ Batch ${index + 1}/${batches.length}: Successfully submitted ${batch.length} URLs (status: ${res.statusCode})`)
           } else if (res.statusCode === 400) {
             errors.push(`Batch ${index + 1}: Bad request - Invalid format`)
             console.error(`❌ Batch ${index + 1}/${batches.length}: Bad request`)
           } else if (res.statusCode === 403) {
-            errors.push(`Batch ${index + 1}: Forbidden - API key not valid`)
-            console.error(`❌ Batch ${index + 1}/${batches.length}: Forbidden - API key not valid`)
+            // Try to parse error message from response
+            let errorMsg = 'Forbidden - API key not valid'
+            try {
+              const errorBody = JSON.parse(data)
+              if (errorBody.message) {
+                errorMsg = `Forbidden - ${errorBody.message}`
+              }
+            } catch {
+              // Ignore JSON parsing errors
+            }
+            errors.push(`Batch ${index + 1}: ${errorMsg}`)
+            console.error(`❌ Batch ${index + 1}/${batches.length}: ${errorMsg}`)
+            if (errorMsg.includes('unauthorized') || errorMsg.includes('verify')) {
+              console.error(`   ⚠️  Note: You may need to verify your site in Bing Webmaster Tools first`)
+            }
           } else if (res.statusCode === 422) {
             errors.push(`Batch ${index + 1}: Unprocessable Entity - URLs don't belong to host`)
             console.error(`❌ Batch ${index + 1}/${batches.length}: Unprocessable Entity`)
@@ -227,6 +240,64 @@ function submitToIndexNow(urls) {
 }
 
 /**
+ * Verify that the key file is accessible
+ */
+function verifyKeyFile(keyLocation) {
+  return new Promise((resolve) => {
+    const urlObj = new URL(keyLocation)
+    const client = urlObj.protocol === 'https:' ? https : http
+    
+    const options = {
+      hostname: urlObj.hostname,
+      port: urlObj.port || (urlObj.protocol === 'https:' ? 443 : 80),
+      path: urlObj.pathname,
+      method: 'GET',
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; IndexNow-Verifier/1.0)',
+      },
+      timeout: 10000, // 10 second timeout
+    }
+    
+    const req = client.request(options, (res) => {
+      let data = ''
+      res.on('data', (chunk) => {
+        data += chunk
+      })
+      
+      res.on('end', () => {
+        if (res.statusCode === 200) {
+          const content = data.trim()
+          const expectedKey = INDEXNOW_API_KEY.trim()
+          if (content === expectedKey) {
+            console.log(`✅ Key file verified at ${keyLocation}`)
+            resolve(true)
+          } else {
+            console.warn(`⚠️  Key file content mismatch. Expected: ${expectedKey}, Got: ${content}`)
+            resolve(false)
+          }
+        } else {
+          console.warn(`⚠️  Key file not accessible at ${keyLocation} (status: ${res.statusCode})`)
+          resolve(false)
+        }
+      })
+    })
+    
+    req.on('error', (error) => {
+      console.warn(`⚠️  Could not verify key file: ${error.message}`)
+      resolve(false)
+    })
+    
+    req.on('timeout', () => {
+      req.destroy()
+      console.warn(`⚠️  Key file verification timed out`)
+      resolve(false)
+    })
+    
+    req.end()
+  })
+}
+
+/**
  * Main function
  */
 async function main() {
@@ -234,6 +305,14 @@ async function main() {
     console.log(`🚀 Starting IndexNow submission for ${BASE_URL}`)
     console.log(`🔑 Using API key: ${INDEXNOW_API_KEY.substring(0, 8)}...`)
     console.log(`📍 Key location: ${keyLocation}`)
+    
+    // Verify key file is accessible (optional check, but helpful for debugging)
+    const keyFileAccessible = await verifyKeyFile(keyLocation)
+    if (!keyFileAccessible) {
+      console.warn(`⚠️  Warning: Key file may not be accessible. IndexNow may reject the submission.`)
+      console.warn(`⚠️  Make sure the site is deployed and the key file is accessible at: ${keyLocation}`)
+      console.warn(`⚠️  If running during build, the site needs to be deployed first for IndexNow to verify the key.`)
+    }
     
     const allUrls = new Set()
     
@@ -264,6 +343,19 @@ async function main() {
       process.exit(0)
     } else {
       console.error(`❌ Failed to submit URLs: ${result.message}`)
+      if (result.message && (result.message.includes('Forbidden') || result.message.includes('403') || result.message.includes('unauthorized'))) {
+        console.error(`❌ This usually means:`)
+        console.error(`   1. The site needs to be verified in Bing Webmaster Tools first`)
+        console.error(`   2. The key file is not accessible at: ${keyLocation}`)
+        console.error(`   3. The key in the file doesn't match the API key being sent`)
+        console.error(`   4. IndexNow needs time to verify the key file after deployment`)
+        console.error(`   `)
+        console.error(`   To fix:`)
+        console.error(`   - Go to https://www.bing.com/webmasters`)
+        console.error(`   - Add and verify your site (www.fasttools.store)`)
+        console.error(`   - Ensure the key file is accessible: ${keyLocation}`)
+        console.error(`   - Wait a few minutes after verification before submitting URLs`)
+      }
       // Don't fail the build, just log the error
       process.exit(0)
     }
