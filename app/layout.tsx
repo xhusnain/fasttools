@@ -40,6 +40,10 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
   manifest: "/manifest.json",
+  verification: {
+    google: "l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0",
+    yandex: "242a8cf232328714",
+  },
   other: {
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",
@@ -47,6 +51,9 @@ export const metadata: Metadata = {
     "apple-mobile-web-app-title": "fasttools",
     "msapplication-TileColor": "#3D348B",
     "theme-color": "#3D348B",
+    "google-site-verification": "l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0",
+    "yandex-verification": "242a8cf232328714",
+    "msvalidate.01": "DE0A07DC9E742C4C8E795D7C99EF238B",
   },
 }
     
@@ -200,8 +207,6 @@ export const metadata: Metadata = {
             )}
             
             <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
-            
-            {/* Favicon Links - Critical for Google Search Results */}
             <link rel="icon" href="/favicon.ico" sizes="any"/>
             <link rel="shortcut icon" href="/favicon.ico"/>
             <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180"/>
@@ -217,7 +222,9 @@ export const metadata: Metadata = {
             <meta name="baiduspider" content="index, follow"/>
             <meta name="applebot" content="index, follow"/>
             <meta name="google-adsense-account" content="ca-pub-6296569221534302"/>
+            <meta name="google-site-verification" content="l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0" />
             <meta name="yandex-verification" content="242a8cf232328714" />
+            <meta name="msvalidate.01" content="DE0A07DC9E742C4C8E795D7C99EF238B" />
             <meta name="p:domain_verify" content="603c992f6d70753cf89c1a0141990c73"/>
             <meta name="facebook-domain-verification" content="m4jw5d6c1jsteghq2xo00wflvif79x" />
             <meta name="format-detection" content="telephone=no"/>
