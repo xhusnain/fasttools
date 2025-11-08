@@ -14,11 +14,15 @@
 const https = require('https')
 const http = require('http')
 
-const INDEXNOW_API_URL = 'https://api.indexnow.org/IndexNow'
+const INDEXNOW_API_URL = 'https://api.indexnow.org/indexnow'
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.fasttools.store'
 const INDEXNOW_API_KEY = '977d14c55f1dcd71171724c3e6ae4adf'
 
-const host = new URL(BASE_URL).hostname
+// Use hostname without www for IndexNow (IndexNow prefers non-www hostname)
+let host = new URL(BASE_URL).hostname
+if (host.startsWith('www.')) {
+  host = host.substring(4) // Remove 'www.' prefix
+}
 const keyLocation = `${BASE_URL}/${INDEXNOW_API_KEY}.txt`
 
 /**
@@ -140,12 +144,18 @@ function submitToIndexNow(urls) {
     let completedBatches = 0
 
     batches.forEach((batch, index) => {
-      const payload = JSON.stringify({
+      // According to IndexNow docs, keyLocation is optional when key file is at root
+      // Since our key file is at root: /{key}.txt, we can omit keyLocation
+      // IndexNow will automatically look for the key file at /{key}.txt
+      const payloadObj = {
         host: host,
         key: INDEXNOW_API_KEY,
-        keyLocation: keyLocation,
         urlList: batch,
-      })
+      }
+      // Uncomment to explicitly specify keyLocation (optional when at root)
+      // payloadObj.keyLocation = keyLocation
+      
+      const payload = JSON.stringify(payloadObj)
 
       const urlObj = new URL(INDEXNOW_API_URL)
       const options = {
@@ -171,34 +181,52 @@ function submitToIndexNow(urls) {
           if (res.statusCode === 200 || res.statusCode === 202) {
             totalSubmitted += batch.length
             console.log(`✅ Batch ${index + 1}/${batches.length}: Successfully submitted ${batch.length} URLs (status: ${res.statusCode})`)
-          } else if (res.statusCode === 400) {
-            errors.push(`Batch ${index + 1}: Bad request - Invalid format`)
-            console.error(`❌ Batch ${index + 1}/${batches.length}: Bad request`)
-          } else if (res.statusCode === 403) {
-            // Try to parse error message from response
-            let errorMsg = 'Forbidden - API key not valid'
+          } else {
+            // Extract error message from IndexNow API response
+            let errorMsg = ''
+            let errorCode = ''
+            
             try {
               const errorBody = JSON.parse(data)
+              if (errorBody.code) {
+                errorCode = errorBody.code
+              }
               if (errorBody.message) {
-                errorMsg = `Forbidden - ${errorBody.message}`
+                errorMsg = errorBody.message
               }
             } catch {
-              // Ignore JSON parsing errors
+              // Not JSON, use raw data as error message
+              if (data) {
+                errorMsg = data
+              }
             }
+            
+            // Default error messages if API didn't provide one
+            if (!errorMsg) {
+              switch (res.statusCode) {
+                case 400:
+                  errorMsg = 'Bad request: Invalid format'
+                  break
+                case 403:
+                  errorMsg = 'Forbidden: API key not valid'
+                  break
+                case 422:
+                  errorMsg = "Unprocessable Entity: URLs don't belong to host or key mismatch"
+                  break
+                case 429:
+                  errorMsg = 'Too Many Requests: Rate limit exceeded'
+                  break
+                default:
+                  errorMsg = `Unexpected status: ${res.statusCode}`
+              }
+            }
+            
             errors.push(`Batch ${index + 1}: ${errorMsg}`)
-            console.error(`❌ Batch ${index + 1}/${batches.length}: ${errorMsg}`)
-            if (errorMsg.includes('unauthorized') || errorMsg.includes('verify')) {
-              console.error(`   ⚠️  Note: You may need to verify your site in Bing Webmaster Tools first`)
+            console.error(`❌ Batch ${index + 1}/${batches.length}: IndexNow API Error (${res.statusCode})`)
+            if (errorCode) {
+              console.error(`   Code: ${errorCode}`)
             }
-          } else if (res.statusCode === 422) {
-            errors.push(`Batch ${index + 1}: Unprocessable Entity - URLs don't belong to host`)
-            console.error(`❌ Batch ${index + 1}/${batches.length}: Unprocessable Entity`)
-          } else if (res.statusCode === 429) {
-            errors.push(`Batch ${index + 1}: Too Many Requests - Rate limit exceeded`)
-            console.error(`❌ Batch ${index + 1}/${batches.length}: Too Many Requests`)
-          } else {
-            errors.push(`Batch ${index + 1}: Unexpected status ${res.statusCode}`)
-            console.error(`❌ Batch ${index + 1}/${batches.length}: Unexpected status ${res.statusCode}`)
+            console.error(`   Message: ${errorMsg}`)
           }
 
           if (completedBatches === batches.length) {
@@ -342,20 +370,8 @@ async function main() {
       console.log(`✅ Successfully submitted ${result.submittedUrls} URLs to IndexNow`)
       process.exit(0)
     } else {
-      console.error(`❌ Failed to submit URLs: ${result.message}`)
-      if (result.message && (result.message.includes('Forbidden') || result.message.includes('403') || result.message.includes('unauthorized'))) {
-        console.error(`❌ This usually means:`)
-        console.error(`   1. The site needs to be verified in Bing Webmaster Tools first`)
-        console.error(`   2. The key file is not accessible at: ${keyLocation}`)
-        console.error(`   3. The key in the file doesn't match the API key being sent`)
-        console.error(`   4. IndexNow needs time to verify the key file after deployment`)
-        console.error(`   `)
-        console.error(`   To fix:`)
-        console.error(`   - Go to https://www.bing.com/webmasters`)
-        console.error(`   - Add and verify your site (www.fasttools.store)`)
-        console.error(`   - Ensure the key file is accessible: ${keyLocation}`)
-        console.error(`   - Wait a few minutes after verification before submitting URLs`)
-      }
+      console.error(`❌ Failed to submit URLs to IndexNow`)
+      console.error(`❌ Error: ${result.message}`)
       // Don't fail the build, just log the error
       process.exit(0)
     }

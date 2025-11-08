@@ -7,7 +7,7 @@
  * - Managing API key and key file
  */
 
-const INDEXNOW_API_URL = 'https://api.indexnow.org/IndexNow'
+const INDEXNOW_API_URL = 'https://api.indexnow.org/indexnow'
 const BASE_URL = 'https://www.fasttools.store'
 const INDEXNOW_API_KEY = '977d14c55f1dcd71171724c3e6ae4adf'
 
@@ -141,8 +141,8 @@ export async function submitToIndexNow(
 
   for (const batch of batches) {
     try {
-      // According to IndexNow docs, keyLocation is optional if key file is at root: /{key}.txt
-      // But we'll include it explicitly to be clear
+      // Build payload according to IndexNow documentation
+      // keyLocation is optional when key file is at root: /{key}.txt
       const payload: {
         host: string
         key: string
@@ -154,8 +154,14 @@ export async function submitToIndexNow(
         urlList: batch,
       }
       
-      // Include keyLocation explicitly (IndexNow will verify the key file at this location)
-      payload.keyLocation = config.keyLocation
+      // Debug: Log the exact payload (for troubleshooting)
+      console.log(`📤 Payload:`, JSON.stringify({
+        host: payload.host,
+        key: payload.key.substring(0, 8) + '...',
+        keyLength: payload.key.length,
+        urlCount: payload.urlList.length,
+        firstUrl: payload.urlList[0],
+      }))
 
       const response = await fetch(INDEXNOW_API_URL, {
         method: 'POST',
@@ -165,43 +171,69 @@ export async function submitToIndexNow(
         body: JSON.stringify(payload),
       })
 
+      // Read response body once (can only be read once)
+      let responseText = ''
+      let responseBody: any = null
+      try {
+        responseText = await response.text()
+        if (responseText) {
+          try {
+            responseBody = JSON.parse(responseText)
+          } catch {
+            // Not JSON, use text as-is
+          }
+        }
+      } catch {
+        // Ignore reading errors
+      }
+
       if (response.status === 200 || response.status === 202) {
         totalSubmitted += batch.length
         console.log(`✅ Successfully submitted ${batch.length} URLs to IndexNow (status: ${response.status})`)
-      } else if (response.status === 400) {
-        const error = `Bad request: Invalid format`
-        errors.push(error)
-        console.error(`❌ ${error}`)
-      } else if (response.status === 403) {
-        // Try to get more details from the response
-        let errorDetails = 'Forbidden: API key not valid'
-        try {
-          const errorBody = await response.json()
-          if (errorBody.message) {
-            errorDetails = `Forbidden: ${errorBody.message}`
+      } else {
+        // Extract error message from response
+        let errorMsg = ''
+        let errorCode = ''
+        
+        if (responseBody) {
+          if (responseBody.code) {
+            errorCode = responseBody.code
           }
-        } catch {
-          // Ignore JSON parsing errors
+          if (responseBody.message) {
+            errorMsg = responseBody.message
+          }
         }
         
-        errors.push(errorDetails)
-        console.error(`❌ ${errorDetails}`)
-        console.error(`❌ Note: If you see "User is unauthorized to access the site", you may need to:`)
-        console.error(`   1. Verify your site in Bing Webmaster Tools first`)
-        console.error(`   2. Ensure the key file is accessible at: ${config.keyLocation}`)
-        console.error(`   3. Wait a few minutes after deploying the key file for IndexNow to verify it`)
-      } else if (response.status === 422) {
-        const error = `Unprocessable Entity: URLs don't belong to host or key mismatch`
-        errors.push(error)
-        console.error(`❌ ${error}`)
-      } else if (response.status === 429) {
-        const error = `Too Many Requests: Rate limit exceeded`
-        errors.push(error)
-        console.error(`❌ ${error}`)
-      } else {
-        const error = `Unexpected status: ${response.status} ${response.statusText}`
-        errors.push(error)
-        console.error(`❌ ${error}`)
+        if (!errorMsg && responseText) {
+          errorMsg = responseText
+        }
+        
+        // Default error messages based on status code
+        if (!errorMsg) {
+          switch (response.status) {
+            case 400:
+              errorMsg = 'Bad request: Invalid format'
+              break
+            case 403:
+              errorMsg = 'Forbidden: API key not valid'
+              break
+            case 422:
+              errorMsg = "Unprocessable Entity: URLs don't belong to host or key mismatch"
+              break
+            case 429:
+              errorMsg = 'Too Many Requests: Rate limit exceeded'
+              break
+            default:
+              errorMsg = `Unexpected status: ${response.status} ${response.statusText}`
+          }
+        }
+        
+        errors.push(errorMsg)
+        console.error(`❌ IndexNow API Error (${response.status}):`)
+        if (errorCode) {
+          console.error(`   Code: ${errorCode}`)
+        }
+        console.error(`   Message: ${errorMsg}`)
       }
     } catch (error) {
       const errorMsg = error instanceof Error ? error.message : 'Unknown error'
@@ -263,7 +295,12 @@ export async function getAllSitemapUrls(baseUrl: string = BASE_URL): Promise<str
  */
 export function getIndexNowConfig(): IndexNowConfig {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || BASE_URL
-  const host = new URL(baseUrl).hostname
+  const urlObj = new URL(baseUrl)
+  // Use hostname without www for IndexNow (IndexNow prefers non-www hostname)
+  let host = urlObj.hostname
+  if (host.startsWith('www.')) {
+    host = host.substring(4) // Remove 'www.' prefix
+  }
   const keyLocation = `${baseUrl}/${INDEXNOW_API_KEY}.txt`
   
   return {
@@ -318,6 +355,7 @@ export async function submitSitemapsToIndexNow(): Promise<IndexNowResponse> {
     console.log(`🚀 Starting IndexNow submission for ${baseUrl}`)
     console.log(`🔑 Using API key: ${config.apiKey.substring(0, 8)}...`)
     console.log(`📍 Key location: ${config.keyLocation}`)
+    console.log(`🌐 Host (for IndexNow): ${config.host}`)
     
     // Verify key file is accessible (optional check, but helpful for debugging)
     const keyFileAccessible = await verifyKeyFile(config.keyLocation)
@@ -343,20 +381,8 @@ export async function submitSitemapsToIndexNow(): Promise<IndexNowResponse> {
     if (result.success) {
       console.log(`✅ Successfully submitted ${result.submittedUrls} URLs to IndexNow`)
     } else {
-      console.error(`❌ Failed to submit URLs: ${result.message}`)
-      if (result.message?.includes('Forbidden') || result.message?.includes('403') || result.message?.includes('unauthorized')) {
-        console.error(`❌ This usually means:`)
-        console.error(`   1. The site needs to be verified in Bing Webmaster Tools first`)
-        console.error(`   2. The key file is not accessible at: ${config.keyLocation}`)
-        console.error(`   3. The key in the file doesn't match the API key being sent`)
-        console.error(`   4. IndexNow needs time to verify the key file after deployment`)
-        console.error(`   `)
-        console.error(`   To fix:`)
-        console.error(`   - Go to https://www.bing.com/webmasters`)
-        console.error(`   - Add and verify your site (www.fasttools.store)`)
-        console.error(`   - Ensure the key file is accessible: ${config.keyLocation}`)
-        console.error(`   - Wait a few minutes after verification before submitting URLs`)
-      }
+      console.error(`❌ Failed to submit URLs to IndexNow`)
+      console.error(`❌ Error: ${result.message}`)
     }
     
     return result
