@@ -209,7 +209,6 @@ export default function PaceCalculator() {
       const totalTimeFormatted = formatTime(estimatedFinishTime)
 
       // This would be displayed in the UI
-      console.log("Estimated finish time:", finishTimeFormatted)
     } catch (error) {
       console.error("Finish time calculation error:", error)
     }

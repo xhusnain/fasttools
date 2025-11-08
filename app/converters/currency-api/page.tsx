@@ -563,7 +563,6 @@ const response = await fetch(
   'https://www.fasttools.store/api/currency_converter/latest?base=USD&api_key=YOUR_API_KEY'
 );
 const data = await response.json();
-console.log(data.data.rates);
 
 // Convert currency
 const convertResponse = await fetch(
@@ -579,7 +578,6 @@ const convertResponse = await fetch(
   }
 );
 const convertData = await convertResponse.json();
-console.log(convertData.data.convertedAmount);`}
                           id="js-example"
                           className="text-xs"
                         />
@@ -590,7 +588,6 @@ const response = await fetch(
   'https://www.fasttools.store/api/currency_converter/latest?base=USD&api_key=YOUR_API_KEY'
 );
 const data = await response.json();
-console.log(data.data.rates);
 
 // Convert currency
 const convertResponse = await fetch(
@@ -606,7 +603,6 @@ const convertResponse = await fetch(
   }
 );
 const convertData = await convertResponse.json();
-console.log(convertData.data.convertedAmount);`}
                       </pre>
                     </div>
 

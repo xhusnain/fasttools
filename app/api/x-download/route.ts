@@ -29,7 +29,6 @@ export async function POST(request: NextRequest) {
       // Use ab-downloader's twitter function
       const data = await twitter(normalizedUrl)
 
-      console.log('ab-downloader twitter response:', JSON.stringify(data, null, 2))
 
       if (!data) {
         return NextResponse.json(
@@ -262,7 +261,6 @@ export async function POST(request: NextRequest) {
         thumbnail: ensureString(thumbnail) || ensureString(imageUrl) || (images.length > 0 && typeof images[0] === 'string' ? images[0] : undefined)
       }
 
-      console.log('API returning result:', JSON.stringify(result, null, 2))
 
       return NextResponse.json(result)
 

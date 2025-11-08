@@ -79,7 +79,6 @@ export function MainSidebar({ onSidebarToggle, activeSidebar }: MainSidebarProps
                 : 'text-muted-foreground hover:text-slate-700 hover:bg-slate-100'
             }`}
             onClick={() => {
-              console.log('Sidebar button clicked:', item.id)
               onSidebarToggle(item.id)
             }}
             title={item.label}

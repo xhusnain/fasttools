@@ -53,10 +53,6 @@ export default function PregnancyCalculator() {
     let calculatedConceptionDate: Date
     let gestationalAgeWeeks: number
 
-    console.log("Calculating pregnancy with method:", calculationMethod)
-    console.log("Due date:", dueDate)
-    console.log("Pre-pregnancy weight:", prePregnancyWeight)
-    console.log("Height:", height)
 
     try {
       if (calculationMethod === "dueDate" && dueDate) {
@@ -295,7 +291,6 @@ export default function PregnancyCalculator() {
 
       setResult(newResult)
       setHistory(prev => [newResult, ...prev.slice(0, 4)])
-      console.log("Calculation successful:", newResult)
     } catch (error) {
       console.error("Calculation error:", error)
     }

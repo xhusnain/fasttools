@@ -145,7 +145,6 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
 
     setError(null)
     setCountdownStates(prev => ({ ...prev, [downloadType]: 15 }))
-    console.log('Starting countdown for:', downloadType)
 
     // Start countdown
     let countdown = 15
@@ -157,7 +156,6 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
         clearInterval(countdownInterval)
         setCountdownStates(prev => ({ ...prev, [downloadType]: undefined }))
         setDownloadingStates(prev => ({ ...prev, [downloadType]: true }))
-        console.log('Countdown finished, starting download for:', downloadType)
         
         // Start actual download
         performDownload(url, sanitizedFilename, downloadType)
@@ -187,12 +185,10 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
           if (blob.size > 0) {
             // Store the blob for later use
             ;(window as any)[`downloadedBlob_${downloadType}`] = blob
-            console.log('Background download completed for:', downloadType)
             return
           }
         }
       } catch (directError) {
-        console.log('Direct background download failed, trying proxy:', directError)
       }
 
       // Fallback to proxy download
@@ -211,11 +207,9 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
         const blob = await response.blob()
         if (blob.size > 0) {
           ;(window as any)[`downloadedBlob_${downloadType}`] = blob
-          console.log('Background proxy download completed for:', downloadType)
         }
       }
     } catch (error) {
-      console.log('Background download failed for:', downloadType, error)
     }
   }
 
@@ -225,7 +219,6 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
       const preDownloadedBlob = (window as any)[`downloadedBlob_${downloadType}`]
       
       if (preDownloadedBlob) {
-        console.log('Using pre-downloaded blob for:', downloadType)
         const objectUrl = URL.createObjectURL(preDownloadedBlob)
         
         // Create download link
@@ -255,7 +248,6 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
       }
 
       // If no pre-downloaded blob, download now
-      console.log('No pre-downloaded blob, downloading now for:', downloadType)
       
       // Try direct download first
       try {
@@ -300,7 +292,6 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
           }
         }
       } catch (directError) {
-        console.log('Direct download failed, trying proxy:', directError)
       }
 
       // Fallback to proxy download
@@ -473,7 +464,6 @@ export function TiktokDownloader({ compact = false }: TiktokDownloaderProps) {
                   <button
                     type="button"
                     onClick={() => {
-                      console.log('Video button clicked, current state:', downloadingStates.video)
                       startCountdownAndDownload(result.noWatermarkUrl || result.watermarkUrl!, (result.title || "tiktok-video") + ".mp4", "video")
                     }}
                     disabled={downloadingStates.video || countdownStates.video !== undefined}

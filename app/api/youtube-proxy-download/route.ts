@@ -29,14 +29,11 @@ export async function GET(request: NextRequest) {
       )
     }
 
-    console.log('Proxying download request (GET) for:', filename)
-    console.log('Source URL:', url.substring(0, 100) + '...')
 
     // Check if this is an HLS manifest
     const isHLS = url.includes('manifest.googlevideo.com') || url.includes('.m3u8')
     
     if (isHLS) {
-      console.log('⚠️  HLS manifest detected')
       return NextResponse.json(
         { 
           success: false, 
@@ -64,7 +61,6 @@ export async function GET(request: NextRequest) {
       
       if (videoResponse.status === 416) {
         // Retry without any special headers
-        console.log('Retrying fetch without additional headers...')
         const retryResponse = await fetch(url, {
           method: 'GET',
           headers: {
@@ -131,14 +127,11 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    console.log('Proxying download request (POST) for:', filename || 'video file')
-    console.log('Source URL:', url.substring(0, 100) + '...')
 
     // Check if this is an HLS manifest
     const isHLS = url.includes('manifest.googlevideo.com') || url.includes('.m3u8')
     
     if (isHLS) {
-      console.log('⚠️  HLS manifest detected')
       return NextResponse.json(
         { 
           success: false, 
@@ -165,7 +158,6 @@ export async function POST(request: NextRequest) {
       
       if (videoResponse.status === 416) {
         // Retry without additional headers
-        console.log('Retrying fetch without additional headers...')
         const retryResponse = await fetch(url, {
           method: 'GET',
           headers: {

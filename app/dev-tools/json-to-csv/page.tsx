@@ -982,7 +982,6 @@ export default function JSONToCSVPage() {
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">How to convert CSV to JSON in React?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          In React, use libraries like Papa Parse or csv-parser. Install with <code className="bg-muted px-1 rounded text-xs">npm install papaparse</code>, then: <code className="bg-muted px-2 py-1 rounded text-xs">import Papa from &apos;papaparse&apos;; Papa.parse(csvFile, &#123;header: true, complete: (result) =&gt; console.log(result.data)&#125;)</code>. For JSON to CSV in React, use react-csv or create a custom download function with URL.createObjectURL().
                         </p>
                       </div>
                       

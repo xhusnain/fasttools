@@ -374,8 +374,6 @@ try {
     algorithms: ['${algo}']
   });
   
-  console.log('Token is valid!');
-  console.log('Decoded payload:', decoded);
 } catch (error) {
   console.error('Token verification failed:', error.message);
 }
@@ -392,7 +390,6 @@ const newToken = jwt.sign(payload, secretKey, {
   expiresIn: '1h'
 });
 
-console.log('New token:', newToken);`,
 
       python: `# Python - Using PyJWT
 import jwt
@@ -3385,12 +3382,10 @@ const payload = {
 const secretKey = 'your-secret-key-keep-it-safe';
 const token = jwt.sign(payload, secretKey, { expiresIn: '1h' });
 
-console.log('Generated Token:', token);
 
 // Verify a JWT
 try {
   const decoded = jwt.verify(token, secretKey);
-  console.log('Decoded:', decoded);
   // You can now access: decoded.userId, decoded.username, etc.
 } catch (error) {
   console.error('Invalid token:', error.message);

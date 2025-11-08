@@ -27,10 +27,8 @@ export async function GET(request: NextRequest) {
   const progress = progressStore.get(downloadId)
   
   if (!progress) {
-    console.log(`Progress request for ${downloadId}: NOT FOUND in store. Store size: ${progressStore.size}`)
     // Log all keys in store for debugging
     if (progressStore.size > 0) {
-      console.log('Available download IDs in store:', Array.from(progressStore.keys()))
     }
     return NextResponse.json({
       progress: 0,
@@ -43,7 +41,6 @@ export async function GET(request: NextRequest) {
   }
   
   // Log for debugging
-  console.log(`Progress request for ${downloadId}:`, progress.progress + '%', progress.status, progress.currentVideoTitle || '', 'Video Progress:', progress.videoProgress || 0)
 
   return NextResponse.json({
     progress: progress.progress,
@@ -78,7 +75,6 @@ export function setProgress(
     videoProgress: options?.videoProgress !== undefined ? options.videoProgress : existing.videoProgress
   }
   progressStore.set(downloadId, newData)
-  console.log(`setProgress called for ${downloadId}:`, progress + '%', status, 'Video:', options?.currentVideoTitle || existing.currentVideoTitle || 'N/A', 'Video Progress:', options?.videoProgress ?? existing.videoProgress ?? 0)
 }
 
 export function clearProgress(downloadId: string) {

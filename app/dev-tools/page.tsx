@@ -1153,7 +1153,6 @@ export default function DevToolsPage() {
           <div>
                         <h3 className="text-lg font-bold mb-2 text-heading-accent">What is developer tools console?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          What is developer tools console: The console is a command-line interface within browser DevTools that executes JavaScript code, displays error messages and warnings, logs debugging information from console.log() statements, shows network errors and security warnings, allows DOM manipulation through direct JavaScript commands, provides autocomplete for available functions and objects, and enables real-time interaction with page variables. It's the primary tool for JavaScript debugging and testing code snippets directly in the browser context.
                         </p>
           </div>
 

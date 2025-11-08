@@ -146,7 +146,6 @@ Generate the 100 names now as a valid JSON object:`
       
     } catch (parseError) {
       console.error("Error parsing Gemini response:", parseError)
-      console.log("Raw response:", response)
       
       // Fallback: Return empty categories if parsing fails
       return NextResponse.json({

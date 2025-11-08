@@ -18,7 +18,6 @@ export async function POST(request: NextRequest) {
   try {
     const { url, format = 'mp4', videoId, title } = await request.json()
     
-    console.log('Getting direct download URL for:', url, 'format:', format)
 
     if (!url) {
       return NextResponse.json(
@@ -57,7 +56,6 @@ export async function POST(request: NextRequest) {
         const stats = await fs.stat(possiblePath)
         if (stats.isFile()) {
           ytDlpPath = possiblePath
-          console.log('✅ Found yt-dlp at:', ytDlpPath)
           break
         }
       } catch (err: any) {
@@ -111,7 +109,6 @@ export async function POST(request: NextRequest) {
       // --no-playlist: Only download the video, not the entire playlist
       const command = `"${ytDlpPath}" -g -f "${formatSelector}" --no-check-certificate --no-playlist "${url}"`
       
-      console.log('Executing yt-dlp command to get URL:', command)
       
       const { stdout, stderr } = await execAsync(command, { 
         timeout: 30000, // 30 second timeout
@@ -146,10 +143,8 @@ export async function POST(request: NextRequest) {
       // Check if the URL is an HLS manifest (m3u8 playlist)
       // HLS manifests are playlist files, not direct video files
       if (directUrl.includes('manifest.googlevideo.com') || directUrl.includes('.m3u8')) {
-        console.log('⚠️  HLS manifest URL detected, trying to get direct video URL...')
         
         // Strategy 1: Try worst quality (often has direct URLs, not HLS)
-        console.log('Strategy 1: Trying worst quality format...')
         try {
           const worstCommand = `"${ytDlpPath}" -g -f "worst[ext=mp4]/worst" --no-check-certificate --no-playlist "${url}"`
           const worstOutput = await execAsync(worstCommand, { timeout: 30000 })
@@ -161,15 +156,12 @@ export async function POST(request: NextRequest) {
           
           if (worstUrls.length > 0) {
             directUrl = worstUrls[0]
-            console.log('✅ Found direct video URL using worst quality')
           }
         } catch (worstError) {
-          console.log('Worst quality method failed, trying next strategy...')
         }
         
         // Strategy 2: Try listing formats and finding a non-HLS one
         if (directUrl.includes('manifest.googlevideo.com') || directUrl.includes('.m3u8')) {
-          console.log('Strategy 2: Listing formats to find non-HLS option...')
           try {
             // List all available formats
             const formatListCommand = `"${ytDlpPath}" -F --no-check-certificate --no-playlist "${url}"`
@@ -194,7 +186,6 @@ export async function POST(request: NextRequest) {
             
             // Try formats from lowest to highest quality (lower quality often has direct URLs)
             if (candidateFormats.length > 0) {
-              console.log(`Found ${candidateFormats.length} candidate formats, trying them...`)
               for (const fmt of candidateFormats) {
                 try {
                   const fmtCommand = `"${ytDlpPath}" -g -f "${fmt.id}" --no-check-certificate --no-playlist "${url}"`
@@ -207,7 +198,6 @@ export async function POST(request: NextRequest) {
                   
                   if (fmtUrls.length > 0) {
                     directUrl = fmtUrls[0]
-                    console.log(`✅ Found direct video URL using format ${fmt.id} (${fmt.quality})`)
                     break
                   }
                 } catch (fmtError) {
@@ -216,13 +206,11 @@ export async function POST(request: NextRequest) {
               }
             }
           } catch (formatListError) {
-            console.log('Format listing method failed')
           }
         }
         
         // Strategy 3: If still HLS, return error
         if (directUrl.includes('manifest.googlevideo.com') || directUrl.includes('.m3u8')) {
-          console.log('❌ All strategies failed. Video is only available in HLS format.')
           return NextResponse.json({
             success: false,
             message: 'This video is only available in HLS format which cannot be downloaded directly. Please try a different video or use a different quality setting.',
@@ -231,9 +219,6 @@ export async function POST(request: NextRequest) {
         }
       }
       
-      console.log('✅ Successfully extracted direct URL')
-      console.log('URL length:', directUrl.length)
-      console.log('URL preview:', directUrl.substring(0, 100) + '...')
 
       // Get video information for filename
       let videoTitle = title || 'youtube-video'
@@ -249,7 +234,6 @@ export async function POST(request: NextRequest) {
         }
       } catch (infoError) {
         // Use provided title or default
-        console.log('Could not get video info, using provided title')
       }
 
       // Sanitize filename

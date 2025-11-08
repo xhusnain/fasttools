@@ -139,15 +139,12 @@ const testString = "${testString.replace(/\n/g, '\\n').replace(/"/g, '\\"')}";
 
 // Test for matches
 const matches = testString.match(regex);
-console.log(matches);
 
 // Test if pattern exists
 const hasMatch = regex.test(testString);
-console.log(hasMatch);
 
 // Replace matches
 const replaced = testString.replace(regex, '${replaceString}');
-console.log(replaced);`,
 
       python: `# Python Regex Pattern
 import re

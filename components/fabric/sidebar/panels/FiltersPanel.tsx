@@ -199,12 +199,9 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
       const fabric = await getFabric()
       if (!fabric || !fabric.filters) {
         console.error('Fabric filters not available')
-        console.log('Fabric object:', fabric)
-        console.log('Available properties:', fabric ? Object.keys(fabric) : 'fabric is null')
         return
       }
 
-      console.log('✅ Fabric filters available:', Object.keys(fabric.filters))
 
       // Initialize filters array if not exists
       if (!activeObject.filters) {
@@ -214,7 +211,6 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
       // Check if this filter is already applied
       if (appliedFilters.has(filterId)) {
         // Remove the filter
-        console.log(`Removing ${filterId} filter...`)
         removeSpecificFilter(filterId, activeObject, fabric)
         
         // Update tracking
@@ -224,7 +220,6 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
           return newSet
         })
         
-        console.log(`✅ Removed ${filterId} filter successfully`)
         return
       }
 
@@ -302,7 +297,6 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
       // Track applied filter
       setAppliedFilters(prev => new Set(prev).add(filterId))
       
-      console.log(`✅ Applied ${filterId} filter successfully`)
     } catch (error) {
       console.error(`Failed to apply ${filterId} filter:`, error)
       alert(`Failed to apply filter: ${error}`)
@@ -346,7 +340,6 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
       
       setSelectedColor(color)
       setSelectedGradient(null) // Clear gradient selection
-      console.log(`✅ Applied solid color: ${color}`)
     } catch (error) {
       console.error('Failed to apply color:', error)
     }
@@ -423,7 +416,6 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
       
       setSelectedGradient(gradient)
       setSelectedColor(null) // Clear solid color selection
-      console.log(`✅ Applied gradient`)
     } catch (error) {
       console.error('Failed to apply gradient:', error)
     }
@@ -450,7 +442,6 @@ export function FiltersPanel({ canvas }: FiltersPanelProps) {
       setSelectedColor(null)
       setSelectedGradient(null)
       
-      console.log('✅ Removed all filters')
     } catch (error) {
       console.error('Failed to remove filters:', error)
     }

@@ -75,7 +75,6 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
       const data = await response.json()
 
       // Debug logging
-      console.log('X Download API Response:', data)
 
       if (!data.success) {
         throw new Error(data.message || "Failed to fetch download links")
@@ -87,7 +86,6 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
       const hasImages = data.images && Array.isArray(data.images) && data.images.length > 0
 
       if (!hasVideo && !hasImage && !hasImages) {
-        console.log('No media found in response:', { videoUrl: data.videoUrl, imageUrl: data.imageUrl, images: data.images })
         throw new Error("No downloadable media found for this URL")
       }
 
@@ -167,7 +165,6 @@ export function XVideoDownloader({ compact = false }: XVideoDownloaderProps) {
         downloadStarted: false
       }
 
-      console.log('Setting result data:', resultData)
       setResult(resultData)
       setVideoLoadError(false)
 

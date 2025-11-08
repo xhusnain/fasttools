@@ -19,7 +19,6 @@ export function FabricCanvasFixed({ onCanvasReady, width, height }: FabricCanvas
   const disposeCanvas = useCallback(() => {
     if (fabricCanvasRef.current) {
       try {
-        console.log('Disposing Fabric canvas...')
         fabricCanvasRef.current.dispose()
         fabricCanvasRef.current = null
       } catch (error) {
@@ -36,7 +35,6 @@ export function FabricCanvasFixed({ onCanvasReady, width, height }: FabricCanvas
     isInitializingRef.current = true
 
     try {
-      console.log('=== INITIALIZING FABRIC CANVAS ===')
       
       // Dispose any existing canvas first
       disposeCanvas()
@@ -55,7 +53,6 @@ export function FabricCanvasFixed({ onCanvasReady, width, height }: FabricCanvas
       
       // Check if the canvas element is already initialized
       if (canvasElement.fabric) {
-        console.log('Canvas element has fabric property, creating new element...')
         
         // Create a new canvas element
         const newCanvas = document.createElement('canvas')
@@ -73,7 +70,6 @@ export function FabricCanvasFixed({ onCanvasReady, width, height }: FabricCanvas
       }
 
       // Now create the Fabric.js canvas
-      console.log('Creating new Fabric canvas...')
       const fabricCanvas = new fabric.Canvas(canvasElement, {
         width: width,
         height: height,
@@ -84,7 +80,6 @@ export function FabricCanvasFixed({ onCanvasReady, width, height }: FabricCanvas
         skipTargetFind: false
       })
 
-      console.log('Fabric canvas created successfully')
       
       // Store reference
       fabricCanvasRef.current = fabricCanvas
@@ -119,7 +114,6 @@ export function FabricCanvasFixed({ onCanvasReady, width, height }: FabricCanvas
       fabricCanvas.add(testText)
 
       fabricCanvas.renderAll()
-      console.log('Canvas initialization complete')
 
     } catch (error) {
       console.error('Failed to initialize canvas:', error)

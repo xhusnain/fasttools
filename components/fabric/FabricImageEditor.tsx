@@ -33,13 +33,11 @@ export function FabricImageEditor() {
   const [canvas, setCanvasState] = useState<any>(null)
   
   const setCanvas = (canvasInstance: any) => {
-    console.log('Setting canvas:', canvasInstance)
     setCanvasState(canvasInstance)
   }
   const [isProcessing, setIsProcessing] = useState(false)
 
   const handleSidebarToggle = (sidebarType: string) => {
-    console.log('Sidebar toggle:', sidebarType, 'Current canvas:', !!canvas)
     if (activeSidebar === sidebarType) {
       setActiveSidebar(null)
       setIsSidebarExpanded(false)

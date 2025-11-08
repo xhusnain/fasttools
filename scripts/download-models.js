@@ -34,11 +34,6 @@ if (partialFiles.length > 0) {
   });
 }
 
-console.log('');
-console.log('📥 Downloading U²-Net model (167.84 MB)...');
-console.log(`   From: ${MODEL_URL}`);
-console.log(`   To: ${MODEL_PATH}`);
-console.log('');
 
 const file = fs.createWriteStream(MODEL_PATH);
 let downloadedBytes = 0;
@@ -84,8 +79,6 @@ function handleDownload(response) {
 
   file.on('finish', () => {
     file.close();
-    console.log('\n✅ Model downloaded successfully!');
-    console.log(`   Size: ${(fs.statSync(MODEL_PATH).size / 1024 / 1024).toFixed(2)} MB`);
   });
 
   file.on('error', (err) => {

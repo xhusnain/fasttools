@@ -294,7 +294,6 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
       const activeObject = canvas.getActiveObject()
       
       if (!activeObject || activeObject.type !== 'image') {
-        console.log('Please select an image to adjust')
         return
       }
 
@@ -355,7 +354,6 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
       activeObject.applyFilters()
       canvas.renderAll()
       
-      console.log(`✅ Applied ${type}: ${value}`)
     } catch (error) {
       console.error('Failed to apply adjustment:', error)
     }
@@ -386,7 +384,6 @@ export function AdjustPanel({ canvas }: AdjustPanelProps) {
       setSaturation(0)
       setHue(0)
 
-      console.log('✅ Reset all adjustments')
     } catch (error) {
       console.error('Failed to reset adjustments:', error)
     }
@@ -589,7 +586,6 @@ export function BackgroundPanel({ canvas }: BackgroundPanelProps) {
     if (!canvas) return
     canvas.backgroundColor = color
     canvas.renderAll()
-    console.log(`✅ Applied color: ${color}`)
   }
 
   const presetColors = [

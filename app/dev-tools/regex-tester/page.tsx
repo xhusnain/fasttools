@@ -1221,7 +1221,6 @@ export default function RegexTesterPage() {
                       <div>
                         <h3 className="font-semibold text-sm sm:text-base text-heading-accent mb-2">How to test regex performance?</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          To test regex performance: 1) Use performance.now() in JavaScript to measure execution time. 2) Test with varying input sizes to check scalability. 3) Watch for catastrophic backtracking - patterns that take exponential time. 4) Compare different pattern approaches. 5) Use profiling tools in your IDE. Example: const start = performance.now(); for (let i = 0; i &lt; 10000; i++) &#123; /pattern/.test(string); &#125; const end = performance.now(); console.log(`Time: $&#123;end - start&#125;ms`);. Avoid nested quantifiers like (a+)+ which cause backtracking. Use atomic groups or possessive quantifiers when possible.
                         </p>
                       </div>
 

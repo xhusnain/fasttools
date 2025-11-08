@@ -48,7 +48,6 @@ export async function POST(request: NextRequest) {
     await fs.mkdir(tempDir, { recursive: true })
 
     try {
-      console.log(`Starting playlist download: ${url}`)
       
       // Download playlist using ytsave with timeout
       const downloadPromise = downloadPlaylist(url, {
@@ -63,11 +62,9 @@ export async function POST(request: NextRequest) {
 
       await Promise.race([downloadPromise, timeoutPromise])
       
-      console.log(`Playlist download completed, checking files in: ${tempDir}`)
 
       // Find all downloaded files - check for various extensions and patterns
       const files = await fs.readdir(tempDir)
-      console.log(`Files found in temp directory:`, files)
       
       // Look for files with the expected format extension
       let downloadedFiles = files.filter(file => 
@@ -100,7 +97,6 @@ export async function POST(request: NextRequest) {
         downloadedFiles = fileStats.filter((file): file is string => file !== null && file.length > 0)
       }
 
-      console.log(`Downloaded files found: ${downloadedFiles.length}`, downloadedFiles)
 
       if (downloadedFiles.length === 0) {
         // Check if there are any files at all
@@ -189,7 +185,6 @@ export async function POST(request: NextRequest) {
       // Check what files exist before cleanup
       try {
         const existingFiles = await fs.readdir(tempDir)
-        console.log('Files in temp directory before cleanup:', existingFiles)
       } catch {}
 
       // Clean up temp directory on error

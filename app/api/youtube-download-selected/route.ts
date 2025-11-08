@@ -19,7 +19,6 @@ export async function POST(request: NextRequest) {
     // Use provided download ID or generate one
     const downloadId = providedDownloadId || `playlist_${Date.now()}_${Math.random().toString(36).substring(7)}`
     
-    console.log('Starting playlist download with ID:', downloadId, 'Total videos:', videos?.length || 0, 'Provided ID:', !!providedDownloadId)
     
     // Set initial progress immediately - this must happen BEFORE any validation
     // so the frontend can start polling right away
@@ -30,7 +29,6 @@ export async function POST(request: NextRequest) {
         currentVideoTitle: '',
         videoProgress: 0
       })
-      console.log('Initial progress set for', downloadId)
     }
 
     if (!videos || !Array.isArray(videos) || videos.length === 0) {
@@ -76,7 +74,6 @@ export async function POST(request: NextRequest) {
       const totalVideos = videos.length
 
       // Progress already set above, verify it's there
-      console.log('About to start downloads, downloadId:', downloadId)
 
       // Download each video one by one
       for (let i = 0; i < videos.length; i++) {
@@ -85,7 +82,6 @@ export async function POST(request: NextRequest) {
         const videoTitle = videoTitles?.[i] || `Video ${i + 1}`
         
         try {
-          console.log(`Downloading video ${i + 1}/${videos.length}: ${videoTitle}`)
           
           // Update progress to show current video
           setProgress(downloadId, Math.floor((i / totalVideos) * 90), 'downloading', {
@@ -144,7 +140,6 @@ export async function POST(request: NextRequest) {
                 videoProgress: Math.round(videoProgressPercent)
               })
               
-              console.log(`Video ${i + 1}/${totalVideos} (${videoTitle}): ${videoProgressPercent}% - Overall: ${overallProgress}%`)
             }
           })
           

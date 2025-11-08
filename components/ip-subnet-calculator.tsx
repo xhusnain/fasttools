@@ -112,10 +112,8 @@ export function IPSubnetCalculator({
   // Auto-calculate only once on initial load with default values
   useEffect(() => {
     if (defaultIP && (defaultSubnetMask || defaultCIDR) && !hasUserInteracted && !result) {
-      console.log('Auto-calculating with:', { defaultIP, defaultSubnetMask, defaultCIDR })
       // Single auto-calculation on initial load
       const timer = setTimeout(() => {
-        console.log('Attempting auto-calculation...')
         try {
           calculateSubnet()
         } catch (error) {
@@ -276,7 +274,6 @@ export function IPSubnetCalculator({
     
     // Set a timeout to prevent infinite loading
     loadingTimeoutRef.current = setTimeout(() => {
-      console.log('Loading timeout reached, clearing loading state')
       setIsCalculating(false)
     }, 3000) // 3 second timeout
     
@@ -682,7 +679,6 @@ export function IPSubnetCalculator({
             <Button 
               variant="outline" 
               onClick={() => {
-                console.log('Current State:', {
                   ipAddress,
                   subnetMask,
                   prefixLength,

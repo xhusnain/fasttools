@@ -145,7 +145,6 @@ export function InstagramDpViewer() {
   // Production-ready Instagram profile fetching
   const fetchInstagramProfile = async (username: string) => {
     try {
-      console.log(`Fetching profile for: ${username}`)
       
       const response = await fetch(`/api/instagram/profile?username=${encodeURIComponent(username)}`, {
         method: 'GET',
@@ -154,7 +153,6 @@ export function InstagramDpViewer() {
         },
       })
 
-      console.log(`Response status: ${response.status}`)
 
       if (!response.ok) {
         const errorData = await response.json()
@@ -163,7 +161,6 @@ export function InstagramDpViewer() {
       }
 
       const data = await response.json()
-      console.log('API Response:', data)
       
       if (!data.success || !data.data) {
         throw new Error('Invalid response from server')
@@ -215,7 +212,6 @@ export function InstagramDpViewer() {
           return
         }
       } catch (fetchError) {
-        console.log('Direct fetch failed, trying alternative method')
       }
       
       // Method 2: Use window.open with download attribute
@@ -391,7 +387,6 @@ export function InstagramDpViewer() {
                         return
                       }
                     } catch (fetchError) {
-                      console.log('Direct fetch failed, trying alternative method')
                     }
                     
                     // Fallback: Use direct link

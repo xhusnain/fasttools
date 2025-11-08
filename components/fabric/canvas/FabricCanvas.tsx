@@ -18,7 +18,6 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
   const disposeCanvas = () => {
     if (fabricCanvasRef.current) {
       try {
-        console.log('Disposing canvas...')
         fabricCanvasRef.current.dispose()
         fabricCanvasRef.current = null
       } catch (error) {
@@ -31,7 +30,6 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
       // Check if canvas has fabric property and dispose it
       if (canvasRef.current.fabric) {
         try {
-          console.log('Disposing fabric from canvas element...')
           canvasRef.current.fabric.dispose()
           delete canvasRef.current.fabric
         } catch (error) {
@@ -58,7 +56,6 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
       isInitializedRef.current = true
 
       try {
-        console.log('=== FABRIC.JS INITIALIZATION START ===')
         
         // Dispose existing canvas if it exists
         disposeCanvas()
@@ -73,9 +70,7 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
         }
         
         // Get Fabric.js instance
-        console.log('Loading Fabric.js...')
         const fabric = await getFabric()
-        console.log('Fabric.js loaded:', fabric)
         
         if (!fabric || !fabric.Canvas) {
           throw new Error('Fabric.js Canvas not available')
@@ -83,17 +78,14 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
         
         // Check if canvas is already initialized by Fabric.js
         if (canvasRef.current.fabric) {
-          console.log('Canvas already has fabric property, disposing first...')
           try {
             canvasRef.current.fabric.dispose()
             delete canvasRef.current.fabric
           } catch (e) {
-            console.log('Error disposing existing fabric:', e)
           }
         }
         
         // Create new canvas instance
-        console.log('Creating Fabric canvas...')
         const canvas = new fabric.Canvas(canvasRef.current, {
           width: width,
           height: height,
@@ -107,7 +99,6 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
           defaultCursor: 'default'
         })
 
-        console.log('Fabric canvas created successfully:', canvas)
         
         // Store canvas reference
         fabricCanvasRef.current = canvas
@@ -119,7 +110,6 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
         }
 
         // Add test objects
-        console.log('Adding test objects...')
         
         // Add a test rectangle
         const testRect = new fabric.Rect({
@@ -149,8 +139,6 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
         // Render the canvas once
         canvas.renderAll()
         
-        console.log('Canvas objects count:', canvas.getObjects().length)
-        console.log('=== FABRIC.JS INITIALIZATION COMPLETE ===')
 
       } catch (error) {
         console.error('Failed to initialize Fabric.js:', error)
@@ -179,7 +167,6 @@ export function FabricCanvas({ onCanvasReady, width, height }: FabricCanvasProps
         fabricCanvasRef.current.setWidth(width)
         fabricCanvasRef.current.setHeight(height)
         fabricCanvasRef.current.renderAll()
-        console.log('Canvas resized to:', width, 'x', height)
       } catch (error) {
         console.error('Failed to resize canvas:', error)
       }

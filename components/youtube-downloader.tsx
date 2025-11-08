@@ -189,7 +189,6 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
       // Step 2: Download via streaming proxy (for direct video URLs)
       // Use GET request with query parameters to avoid POST body issues
       // This approach is simpler and avoids Range header complications
-      console.log('Starting download via streaming proxy...')
       
       const safeFilename = encodeURIComponent(data.filename || `${result.title || 'youtube-video'}.${format}`)
       const encodedVideoUrl = encodeURIComponent(data.downloadUrl)
@@ -310,8 +309,6 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
     const selectedVideosList = playlistVideos.filter(v => selectedVideos.has(v.id))
     const totalVideos = selectedVideosList.length
 
-    console.log('🚀 Frontend: Starting CLIENT-SIDE playlist download', 'Total videos:', totalVideos)
-    console.log('⚠️  This should NOT call /api/youtube-download-selected - all downloads are client-side!')
     
     setPlaylistProgress({ 
       current: 0, 
@@ -329,7 +326,6 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
         const videoUrl = video.url
         const videoTitle = video.title
         
-        console.log(`📥 Processing video ${i + 1}/${totalVideos}: ${videoTitle}`)
         
         // Update progress
         setPlaylistProgress({
@@ -343,7 +339,6 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
 
         try {
           // Step 1: Get direct download URL from server (lightweight API call, no file download)
-          console.log(`  → Step 1: Getting direct URL for video ${i + 1}...`)
           const response = await fetch('/api/youtube-download-file', {
             method: 'POST',
             headers: {
@@ -373,7 +368,6 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
             throw new Error(`Video ${i + 1} (${videoTitle}) uses HLS format and cannot be downloaded directly.`)
           }
 
-          console.log(`  ✅ Got direct URL for video ${i + 1}, starting browser download...`)
 
           // Step 2: Download via streaming proxy (direct browser download)
           // This is the SAME approach as single video downloads
@@ -384,7 +378,6 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
           // Create a direct download link using GET request (same as single videos)
           const proxyDownloadUrl = `/api/youtube-proxy-download?url=${encodedVideoUrl}&filename=${safeFilename}`
           
-          console.log(`  → Step 2: Triggering browser download via proxy: ${proxyDownloadUrl.substring(0, 80)}...`)
           
           // Create a temporary anchor element and trigger download (same as single videos)
           const a = document.createElement('a')
@@ -403,7 +396,6 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
             }
           }, 1000)
 
-          console.log(`  ✅ Download triggered for video ${i + 1}: ${data.filename}`)
 
           // Update progress after download starts
           setPlaylistProgress({
@@ -427,7 +419,6 @@ export function YoutubeDownloader({ compact = false }: YoutubeDownloaderProps) {
         }
       }
 
-      console.log('✅ All playlist downloads initiated (client-side)')
 
       // All downloads completed
       setPlaylistProgress({
