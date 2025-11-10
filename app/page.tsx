@@ -41,7 +41,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "FastTools - Free Online Tools Store | Digital Tools, AI Generator, Calculator, Converter & SEO Tools",
+  title: "Free Online Tools Store | Digital Tools, AI & Calculators",
   description: "FastTools is a free online tools store offering 1000+ digital tools including AI generators, calculators, converters, SEO tools, image tools, developer tools, and productivity utilities. Fast, accurate, easy to use digital tools with no registration required. Access tools store online for instant results.",
   keywords: [
     "fasttools",

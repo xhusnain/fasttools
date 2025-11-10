@@ -8,7 +8,7 @@ import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
 
 export const metadata: Metadata = {
-  title: "Free PDF Tools – Split, Merge, Unlock & Compress PDFs Online | FastTools",
+  title: "Free PDF Tools | Split, Merge, Unlock & Compress PDFs",
   description:
     "Free PDF tools: PDF splitter, PDF merger, PDF unlocker, PDF compressor, and PDF converter. Professional results, 100% secure.",
   keywords: [

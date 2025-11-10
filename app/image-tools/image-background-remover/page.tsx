@@ -7,7 +7,7 @@ import { GHeader } from "@/components/globalcomponents/gheader"
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.fasttools.store"),
-    title: "Free Photo Background Remover - Remove BG from Images Online | AI Photo BG Remover Tool",
+    title: "Photo Background Remover | Free AI Remove BG Online",
     description:
         "Remove photo bg instantly with our free AI background remover. Professional photo background remover for portraits, products & pets. Remove backgrounds online - no photoshop needed. Free, fast & secure.",
     keywords: [

@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "FastTools - Time Zone Converter | Free Convert Time Zones Worldwide",
+  title: "Time Zone Converter | Free Convert Time Zones Worldwide",
   description:
     "FastTools Time Zone Converter - Convert time between time zones worldwide. Ideal for scheduling international meetings and remote teamwork.",
   keywords: [

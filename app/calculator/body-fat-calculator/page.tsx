@@ -6,7 +6,7 @@ import { GHeader } from "@/components/globalcomponents/gheader"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "FastTools - Body Fat Calculator | Free Body Fat Percentage Calculator",
+  title: "Body Fat Calculator | Free Body Fat Percentage Calculator",
   description: "FastTools Body Fat Calculator - Calculate your body fat percentage with advanced calculator. Uses U.S. Navy method and BMI method for accurate results with health recommendations.",
     keywords: [
         "fasttools",

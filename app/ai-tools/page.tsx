@@ -11,7 +11,7 @@ import { QrCode, Music, ImageIcon, Heart, Code, Globe, ArrowRight } from "lucide
 const currentYear = new Date().getFullYear()
 
 export const metadata: Metadata = {
-  title: `Best Free AI Tools in ${currentYear} | Top Artificial Intelligence Apps for Work, Design & Business`,
+  title: `Best Free AI Tools ${currentYear} | AI Apps for Work & Design`,
   description:
     `Discover the best free AI tools in ${currentYear} for content creation, social media marketing, and business. Free AI QR code creator, lyrics generator, caption maker, and pet name suggester. Create amazing content instantly with AI.`,
   keywords:

@@ -9,7 +9,7 @@ import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: `FastTools - Discount Calculator | Free Sale Price & Savings Calculator`,
+  title: `Discount Calculator | Free Sale Price & Savings Calculator`,
   description: "FastTools Discount Calculator - Free Discount Calculator to find final price after discount. Calculate savings, sale price, or original price easily. Works with any currency and supports tax.",
   keywords: [
     "fasttools",

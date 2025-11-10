@@ -6,7 +6,7 @@ import { GHeader } from "@/components/globalcomponents/gheader"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent, Trophy } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "FastTools - Retirement Calculator | Free Advanced Planning Calculator",
+  title: "Retirement Calculator | Free Advanced Planning Calculator",
   description: "FastTools Retirement Calculator - Professional tool for comprehensive planning. Calculate savings, withdrawal amounts, and retirement income needs with inflation adjustments.",
     keywords: [
         "fasttools",

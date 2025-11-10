@@ -14,7 +14,7 @@ function getCurrentYear(): number {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: `FastTools - Instagram Hashtag Generator & Counter | Free Hashtag Tool`,
+  title: `Instagram Hashtag Generator & Counter | Free Hashtag Tool`,
   description:
     "FastTools Instagram Hashtag Generator & Counter - Free Instagram hashtag counter, generator, and extractor tool. Count hashtags from Instagram posts, extract hashtags, and generate AI-powered hashtags for better reach and engagement.",
   keywords: [

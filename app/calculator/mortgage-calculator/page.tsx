@@ -44,7 +44,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "FastTools - Mortgage Calculator | Free Advanced Home Loan Calculator",
+  title: "Mortgage Calculator | Free Advanced Home Loan Calculator",
   description: "FastTools Mortgage Calculator - Calculate mortgage payments with our advanced mortgage calculator. Get accurate monthly payments, amortization schedules, total interest, and home loan costs.",
     keywords: [
         "fasttools",

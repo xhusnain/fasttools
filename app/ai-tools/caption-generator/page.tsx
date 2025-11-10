@@ -26,7 +26,7 @@ const currentYear = new Date().getFullYear()
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: `FastTools - AI Caption Generator ${currentYear} | Free Instagram, TikTok, Facebook Captions`,
+  title: `AI Caption Generator ${currentYear} | Free Instagram & TikTok Captions`,
   description:
     `FastTools AI Caption Generator - Generate viral social media captions with AI in ${currentYear}! Free AI-powered caption generator for Instagram, TikTok, Facebook, LinkedIn, Twitter/X, YouTube & Pinterest. Create engaging captions with hashtags instantly. Perfect for influencers, marketers & content creators. No sign up required.`,
   keywords: [

@@ -8,7 +8,7 @@ import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
 
 export const metadata: Metadata = {
-  title: "Free Developer Tools Online - Chrome, Safari, React DevTools | JWT Decoder, Regex Tester",
+  title: "Free Developer Tools | JWT Decoder, Regex Tester & More",
   description:
     "Free online developer tools for Chrome, Safari, Firefox & Edge. Access browser DevTools, React developer tools, JWT decoder, regex tester, JSON to CSV converter, HTML beautifier. No signup required - essential coding utilities for web development.",
   keywords: [

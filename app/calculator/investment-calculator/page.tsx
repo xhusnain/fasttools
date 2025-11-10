@@ -6,7 +6,7 @@ import { GHeader } from "@/components/globalcomponents/gheader"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "FastTools - Investment Calculator | Free Advanced Portfolio Calculator",
+  title: "Investment Calculator | Free Advanced Portfolio Calculator",
   description: "FastTools Investment Calculator - Professional tool for portfolio analysis. Calculate end amount, return rate, starting amount, additional contributions, and investment length.",
     keywords: [
         "fasttools",

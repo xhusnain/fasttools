@@ -6,7 +6,7 @@ import { GHeader } from "@/components/globalcomponents/gheader"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home, DollarSign, FileText, Award, Globe, PieChart, Percent } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "FastTools - Sales Tax Calculator | Free Advanced State Tax Calculator",
+  title: "Sales Tax Calculator | Free Advanced State Tax Calculator",
   description: "FastTools Sales Tax Calculator - Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, and compliance guidance.",
     keywords: [
         "fasttools",

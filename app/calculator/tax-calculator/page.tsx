@@ -10,7 +10,7 @@ import {
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "FastTools - Tax Calculator | Free Income, GST, VAT & Sales Tax Calculator",
+  title: "Tax Calculator | Free Income, GST, VAT & Sales Tax",
   description: "FastTools Tax Calculator - Free tool to calculate income tax, GST, VAT, or sales tax instantly. Enter amount and tax rate to get total payable tax and net amount.",
   keywords: [
     "fasttools",
