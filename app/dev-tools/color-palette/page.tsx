@@ -660,106 +660,87 @@ export const metadata: Metadata = {
     site: "@FastToolsStore",
     creator: "@FastToolsStore",
   },
-  other: {
-    "application/ld+json": (() => {
-      try {
-        return JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-      name: "FastTools Color Palettes",
-      alternateName: ["Color Palette Library", "Color Schemes Collection", "Design Color Palettes", "Free Color Palette Generator", "HEX Color Code Library"],
-      applicationCategory: "DeveloperApplication",
-      operatingSystem: "Web Browser",
-      url: "https://www.fasttools.store/dev-tools/color-palette",
-      description:
-        "Explore 1000+ free color palettes for websites, branding, UI/UX and graphic design. 43 categories including aesthetic, pastel, vintage, modern and seasonal themes. Copy HEX codes instantly and filter by theme, season, or color.",
-      inLanguage: "en",
-      isAccessibleForFree: true,
-      offers: { 
-        "@type": "Offer", 
-        price: "0", 
-        priceCurrency: "USD",
-        availability: "https://schema.org/InStock"
-      },
-      featureList: [
-        "Thousands of pre-made color palettes",
-        "Filter by category and theme",
-        "Filter by color (red, blue, green, etc.)",
-        "Gemstone and nature-inspired palettes",
-        "Gradient color palettes",
-        "Dark and light theme palettes",
-        "Copy HEX codes instantly",
-        "Professional design inspiration",
-        "Brand color schemes",
-        "UI/UX color palettes",
-        "Web design color combinations",
-        "Seasonal color palettes",
-        "Jewel tone palettes",
-        "Modern and minimalist palettes"
-      ],
-      author: {
-        "@type": "Organization",
-        name: "FastTools",
-        url: "https://www.fasttools.store"
-      },
-      publisher: { 
-        "@type": "Organization", 
-        name: "FastTools", 
-        url: "https://www.fasttools.store",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.fasttools.store/logo.svg",
-          width: 320,
-          height: 80
-        }
-      },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        ratingCount: "4200",
-        bestRating: "5",
-        worstRating: "1"
-      },
-      datePublished: "2024-01-01",
-      dateModified: (() => {
-        try {
-          return new Date().toISOString().split('T')[0]
-        } catch {
-          return "2024-01-01"
-        }
-      })(),
-      version: "2.0",
-      softwareVersion: "2.0",
-      downloadUrl: "https://www.fasttools.store/dev-tools/color-palette",
-      screenshot: "https://www.fasttools.store/og-image.svg",
-      keywords: "free color palettes, color schemes for websites, hex color codes, color palette generator, design color palettes, branding colors, ui ux color palettes, aesthetic color palettes, pastel color palettes, vintage color palettes, modern color palettes, seasonal color palettes, web design colors, graphic design palettes",
-      about: {
-        "@type": "Thing",
-        name: "Color Palettes and Design Inspiration",
-        description: "Comprehensive library of beautiful color palettes for design, branding, and web development"
-      },
-      isPartOf: {
-        "@type": "WebSite",
-        name: "FastTools",
-        url: "https://www.fasttools.store"
-      }
-        })
-      } catch (error) {
-        console.error('Error creating JSON-LD for color-palette page:', error)
-        return JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          name: "Color Palettes - FastTools",
-          url: "https://www.fasttools.store/dev-tools/color-palette"
-        })
-      }
-    })(),
-  },
 }
 
 export default function ColorPalettePage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "FastTools Color Palettes",
+    alternateName: ["Color Palette Library", "Color Schemes Collection", "Design Color Palettes", "Free Color Palette Generator", "HEX Color Code Library"],
+    applicationCategory: "DeveloperApplication",
+    operatingSystem: "Web Browser",
+    url: "https://www.fasttools.store/dev-tools/color-palette",
+    description: "Explore 1000+ free color palettes for websites, branding, UI/UX and graphic design. 43 categories including aesthetic, pastel, vintage, modern and seasonal themes. Copy HEX codes instantly and filter by theme, season, or color.",
+    inLanguage: "en",
+    isAccessibleForFree: true,
+    offers: { 
+      "@type": "Offer", 
+      price: "0", 
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock"
+    },
+    featureList: [
+      "Thousands of pre-made color palettes",
+      "Filter by category and theme",
+      "Filter by color (red, blue, green, etc.)",
+      "Gemstone and nature-inspired palettes",
+      "Gradient color palettes",
+      "Dark and light theme palettes",
+      "Copy HEX codes instantly",
+      "Professional design inspiration",
+      "Brand color schemes",
+      "UI/UX color palettes",
+      "Web design color combinations",
+      "Seasonal color palettes",
+      "Jewel tone palettes",
+      "Modern and minimalist palettes"
+    ],
+    author: {
+      "@type": "Organization",
+      name: "FastTools",
+      url: "https://www.fasttools.store"
+    },
+    publisher: { 
+      "@type": "Organization", 
+      name: "FastTools", 
+      url: "https://www.fasttools.store",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.fasttools.store/logo.svg",
+        width: 320,
+        height: 80
+      }
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      ratingCount: "4200",
+      bestRating: "5",
+      worstRating: "1"
+    },
+    datePublished: "2024-01-01",
+    dateModified: new Date().toISOString().split('T')[0],
+    version: "2.0",
+    softwareVersion: "2.0",
+    downloadUrl: "https://www.fasttools.store/dev-tools/color-palette",
+    screenshot: "https://www.fasttools.store/og-image.svg",
+    keywords: "free color palettes, color schemes for websites, hex color codes, color palette generator, design color palettes, branding colors, ui ux color palettes, aesthetic color palettes, pastel color palettes, vintage color palettes, modern color palettes, seasonal color palettes, web design colors, graphic design palettes",
+    about: {
+      "@type": "Thing",
+      name: "Color Palettes and Design Inspiration",
+      description: "Comprehensive library of beautiful color palettes for design, branding, and web development"
+    },
+    isPartOf: {
+      "@type": "WebSite",
+      name: "FastTools",
+      url: "https://www.fasttools.store"
+    }
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-6 md:py-8">
       <Breadcrumbs
