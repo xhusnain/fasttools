@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: "PDF to Word Converter | Free Online PDF & Word Converter",
   description:
-    "Free PDF to Word converter online. Convert PDF to Word, Word to PDF instantly. No upload to server, 100% secure, unlimited use. Edit PDF as DOCX, create PDF from Word document free.",
+    "Free PDF to Word converter online. Convert PDF to Word & Word to PDF instantly. No upload, 100% secure, unlimited use. Edit PDF as DOCX free.",
   applicationName: "FastTools - Free PDF to Word Converter Online",
   authors: [{ name: "FastTools", url: "https://www.fasttools.store" }],
   creator: "FastTools - PDF Word Converter",

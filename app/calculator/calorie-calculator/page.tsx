@@ -7,7 +7,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home
 
 export const metadata: Metadata = {
   title: "Calorie Calculator | Free Daily Calorie Needs Calculator",
-  description: "FastTools Calorie Calculator - Calculate your daily calorie needs with our advanced calorie calculator. Get BMR, TDEE, weight management goals, and personalized nutrition recommendations.",
+  description: "Calculate your daily calorie needs with our advanced calculator. Get BMR, TDEE, weight management goals & personalized nutrition recommendations.",
     keywords: [
         "fasttools",
         "fast tools",

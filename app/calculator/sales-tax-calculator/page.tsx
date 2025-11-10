@@ -7,7 +7,7 @@ import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, Home
 
 export const metadata: Metadata = {
   title: "Sales Tax Calculator | Free Advanced State Tax Calculator",
-  description: "FastTools Sales Tax Calculator - Calculate sales tax for all 50 US states with our advanced sales tax calculator. Get accurate tax calculations, state comparisons, and compliance guidance.",
+  description: "Calculate sales tax for all 50 US states with our advanced calculator. Get accurate tax calculations, state comparisons & compliance guidance.",
     keywords: [
         "fasttools",
         "fast tools",

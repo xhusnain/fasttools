@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: "JSON to CSV Converter | Free Convert JSON to CSV Online",
   description:
-    "FastTools JSON to CSV Converter - Convert JSON to CSV online free with instant download. Transform JSON data to Excel-ready CSV format. Supports nested JSON, arrays, Python/JavaScript code examples. Best JSON to CSV converter for developers & data analysts.",
+    "Convert JSON to CSV online free with instant download. Transform JSON data to Excel-ready CSV format. Supports nested JSON & arrays. Best for developers.",
   keywords: [
     "fasttools",
     "fast tools",

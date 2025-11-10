@@ -45,7 +45,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Mortgage Calculator | Free Advanced Home Loan Calculator",
-  description: "FastTools Mortgage Calculator - Calculate mortgage payments with our advanced mortgage calculator. Get accurate monthly payments, amortization schedules, total interest, and home loan costs.",
+  description: "Calculate mortgage payments with our advanced calculator. Get accurate monthly payments, amortization schedules & total interest costs.",
     keywords: [
         "fasttools",
         "fast tools",

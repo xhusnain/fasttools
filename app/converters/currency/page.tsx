@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: "Currency Converter | Free Real-Time Exchange Rates",
   description:
-    "FastTools Currency Converter - Convert currencies instantly with live exchange rates. Free currency converter with multiple currencies and export results. Fast, accurate, mobile-friendly.",
+    "Convert currencies instantly with live exchange rates. Free currency converter with multiple currencies. Fast, accurate, mobile-friendly.",
   keywords: [
     "fasttools",
     "fast tools",

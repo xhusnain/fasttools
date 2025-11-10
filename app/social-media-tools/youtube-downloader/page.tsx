@@ -10,7 +10,7 @@ import Link from "next/link"
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: "YouTube Downloader | 4K/1080p/MP3 Free & Safe",
-  description: "Download YouTube videos and entire playlists in 4K, 1080p HD, or MP3 format. 100% free, no ads, no watermark, completely safe. Download 100+ videos from playlists in minutes. Works on PC, Android, iPhone - no software required.",
+  description: "Download YouTube videos & playlists in 4K, 1080p HD or MP3 format. 100% free, no ads, no watermark, completely safe. Works on all devices.",
 
   openGraph: {
     title: "YouTube Downloader & Playlist Downloader - 4K/1080p/MP3 | Free & Safe",

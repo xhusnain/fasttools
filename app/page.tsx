@@ -42,7 +42,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Free Online Tools Store | Digital Tools, AI & Calculators",
-  description: "FastTools is a free online tools store offering 1000+ digital tools including AI generators, calculators, converters, SEO tools, image tools, developer tools, and productivity utilities. Fast, accurate, easy to use digital tools with no registration required. Access tools store online for instant results.",
+  description: "1000+ free online tools: AI generators, calculators, converters, SEO tools, image tools & more. Fast, accurate, no registration required.",
   keywords: [
     "fasttools",
     "fast tools",

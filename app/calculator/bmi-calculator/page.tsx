@@ -10,7 +10,7 @@ const currentYear = new Date().getFullYear()
 export const metadata: Metadata = {
   title: `Free BMI Calculator ${currentYear} | Instant Body Mass Index`,
   description:
-    "Calculate your Body Mass Index instantly with our free, accurate calculator. Supports metric and imperial units, age and gender considerations. Follows WHO standards.",
+    "Calculate your BMI instantly with our free calculator. Supports metric & imperial units, age & gender. Follows WHO standards.",
   openGraph: {
     title: `BMI Calculator - Free Online BMI Calculator ${currentYear}`,
     description: "Calculate your Body Mass Index instantly with our free, accurate calculator. Supports metric and imperial units, age and gender considerations. Follows WHO standards.",

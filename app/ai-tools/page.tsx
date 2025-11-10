@@ -13,7 +13,7 @@ const currentYear = new Date().getFullYear()
 export const metadata: Metadata = {
   title: `Best Free AI Tools ${currentYear} | AI Apps for Work & Design`,
   description:
-    `Discover the best free AI tools in ${currentYear} for content creation, social media marketing, and business. Free AI QR code creator, lyrics generator, caption maker, and pet name suggester. Create amazing content instantly with AI.`,
+    `Best free AI tools ${currentYear} for content creation & social media. QR codes, lyrics, captions & pet names. Create instantly with AI.`,
   keywords:
     `ai tools, best ai tools ${currentYear}, free ai tools, ai tools for business, ai productivity tools, ai content creation tools, ai tools for writing, ai tools for students, ai tools list, ai tools directory, top ai tools, ai tools for marketing, generative ai tools, ai image generator, ai video generator, ai tools online, ai tools free, ai tools app, best ai software, ai automation tools, AI QR code generator, QR code generator, QR art generator, custom QR code, artistic QR codes, branded QR codes, QR code design, scannable QR codes, free QR code maker, AI lyrics generator, song lyrics generator, songwriting tool, music lyrics creator, rap lyrics generator, song writer AI, lyric maker, AI caption generator, social media caption generator, Instagram caption generator, caption ideas, photo caption generator, engaging captions, caption writer, AI pet name generator, pet name generator, dog name generator, cat name generator, unique pet names, creative pet names, pet naming ideas, AI for social media, AI marketing tools, AI content tools, free QR generator`,
   alternates: {

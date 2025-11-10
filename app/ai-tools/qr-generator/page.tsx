@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: `QR Code Generator ${currentYear} | Free WiFi, vCard & Logo QR Codes`,
   description:
-    `The best free QR code generator ${currentYear}! Create unlimited QR codes - WiFi, vCard, email, WhatsApp, location. Logo embedding, bulk generation, SVG export. No watermark, no sign up, no expiration. All premium features competitors charge $19-99/month - FREE forever. Make QR codes instantly online.`,
+    `Best free QR code generator ${currentYear}! Create unlimited QR codes - WiFi, vCard, email, WhatsApp, location. Logo embedding, bulk generation. No watermark, no sign up.`,
   applicationName: "FastTools - Free QR Code Generator",
   authors: [{ name: "FastTools" }],
   generator: "Next.js",

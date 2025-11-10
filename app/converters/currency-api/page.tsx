@@ -10,7 +10,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: "Currency API | Free Exchange Rate API Documentation",
-  description: "FastTools Currency API - Free currency exchange API with real-time rates, historical data, and currency conversion. Get started with FastTools.store Currency API in minutes.",
+  description: "Free currency exchange API with real-time rates, historical data & currency conversion. Get started with FastTools Currency API in minutes.",
   keywords: [
     "fasttools",
     "fast tools",

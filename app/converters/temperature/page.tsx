@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
   title: "Temperature Converter | Free Celsius ⇄ Fahrenheit",
   description:
-    "FastTools Temperature Converter - Convert temperatures instantly between Celsius and Fahrenheit. Ideal for weather, cooking, science projects, and travel.",
+    "Convert temperatures instantly between Celsius & Fahrenheit. Ideal for weather, cooking, science projects & travel.",
   keywords: [
     "fasttools",
     "fast tools",

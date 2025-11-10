@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://www.fasttools.store"),
     title: "Photo Background Remover | Free AI Remove BG Online",
     description:
-        "Remove photo bg instantly with our free AI background remover. Professional photo background remover for portraits, products & pets. Remove backgrounds online - no photoshop needed. Free, fast & secure.",
+        "Remove photo backgrounds instantly with free AI. Professional background remover for portraits, products & pets. No photoshop needed. Free & secure.",
     keywords: [
         // High Volume Keywords (10k+ searches)
         "removing bg in photoshop",

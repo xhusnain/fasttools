@@ -10,7 +10,7 @@ import { GHeader } from "@/components/globalcomponents/gheader"
 export const metadata: Metadata = {
   title: "Free PDF Tools | Split, Merge, Unlock & Compress PDFs",
   description:
-    "Free PDF tools: PDF splitter, PDF merger, PDF unlocker, PDF compressor, and PDF converter. Professional results, 100% secure.",
+    "Free PDF tools: split, merge, unlock, compress & convert PDFs. Professional results, 100% secure. No registration required.",
   keywords: [
     // High-Volume PDF Keywords
     "PDF splitter online",
