@@ -212,6 +212,7 @@ export default function PhotoEditorPage() {
   return (
     <>
       <NavbarFooterHider />
+      <h1 className="sr-only">Free Photo Editor - Professional Online Image Editing Tool</h1>
       <div className="h-screen bg-background">
         <div className="w-full">
           <div className="max-w-full mx-auto h-full">

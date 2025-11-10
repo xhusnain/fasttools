@@ -94,7 +94,7 @@ export function HeroSectionBg() {
       <div className="absolute inset-0 w-full h-full">
         <img
           src={imageUrl}
-          alt=""
+          alt={currentTheme === "dark" ? "Space and stars background image for FastTools hero section" : "Astronomical space background image for FastTools hero section"}
           className={`absolute inset-0 w-full h-full object-cover ${
             imageLoaded ? 'opacity-100' : 'opacity-0'
           } transition-opacity duration-300 ease-in-out`}
