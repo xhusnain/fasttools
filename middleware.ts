@@ -3,9 +3,6 @@ import type { NextRequest } from 'next/server'
 import { isGoneUrl } from './lib/gone'
 import { env } from './lib/env'
 
-/**
- * Check if origin is allowed for CORS
- */
 function isAllowedOrigin(origin: string | null): boolean {
   if (!origin) return false
 
@@ -31,14 +28,10 @@ function isAllowedOrigin(origin: string | null): boolean {
   }
 }
 
-/**
- * Handle CORS for API routes
- */
 function handleCORS(request: NextRequest): NextResponse | null {
   const origin = request.headers.get('origin')
   const allowedOrigin = isAllowedOrigin(origin) ? origin : null
 
-  // Handle preflight OPTIONS requests
   if (request.method === 'OPTIONS') {
     if (!allowedOrigin) {
       return new NextResponse(null, { status: 403 })
@@ -55,7 +48,6 @@ function handleCORS(request: NextRequest): NextResponse | null {
     })
   }
 
-  // Add CORS headers to API responses
   const response = NextResponse.next()
   if (allowedOrigin) {
     response.headers.set('Access-Control-Allow-Origin', allowedOrigin)
@@ -64,9 +56,6 @@ function handleCORS(request: NextRequest): NextResponse | null {
   return response
 }
 
-/**
- * Handle URL redirects (HTTP to HTTPS, non-www to www)
- */
 function handleRedirects(request: NextRequest): NextResponse | null {
   if (!env.isProduction) return null
 
@@ -74,11 +63,9 @@ function handleRedirects(request: NextRequest): NextResponse | null {
   const protocol = request.headers.get('x-forwarded-proto') || 
                    (request.url.startsWith('http://') ? 'http' : 'https')
   
-  // Only process fasttools.store domain
   const normalizedHost = hostname.replace(/^www\./, '')
   if (normalizedHost !== 'fasttools.store') return null
 
-  // Check if redirect is needed
   const needsRedirect = protocol !== 'https' || !hostname.startsWith('www.')
   
   if (needsRedirect) {
@@ -92,7 +79,6 @@ function handleRedirects(request: NextRequest): NextResponse | null {
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
-  // Handle 410 Gone URLs
   if (isGoneUrl(pathname)) {
     return new NextResponse(null, { 
       status: 410, 
@@ -101,13 +87,11 @@ export function middleware(request: NextRequest) {
     })
   }
 
-  // Handle API routes CORS
   if (pathname.startsWith('/api/')) {
     const corsResponse = handleCORS(request)
     if (corsResponse) return corsResponse
   }
 
-  // Handle redirects (HTTP to HTTPS, non-www to www)
   const redirectResponse = handleRedirects(request)
   if (redirectResponse) return redirectResponse
 
