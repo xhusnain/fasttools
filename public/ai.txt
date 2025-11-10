@@ -70,6 +70,10 @@ When using FastTools content:
 URL: https://www.fasttools.store/social-media-tools/youtube-downloader
 Description: Free YouTube video downloader supporting 4K, 1080p HD, and MP3 formats. Browser-based, no software required. Features playlist downloads, real-time progress, and works on all devices. Enhanced with structured data for SEO and AI comprehension.
 
+## BMI Calculator
+URL: https://www.fasttools.store/calculator/bmi-calculator
+Description: Free BMI calculator online. Calculate Body Mass Index instantly with accurate results. Supports BMI calculator for women, men, and by age. Metric (kg/cm) and imperial units. Follows WHO and CDC standards. Features include BMI Prime calculation, Ponderal Index, healthy weight range, risk level assessment, and personalized health recommendations. Comprehensive 60-question FAQ section covering all aspects of BMI calculation, interpretation, and health implications. Includes topical authority content, entity SEO with WHO/CDC citations, E-E-A-T signals, and structured data (WebApplication, WebPage, FAQPage, Organization schemas). Optimized for semantic SEO, vector SEO, and AI search engines. Related tools: body fat calculator, calorie calculator, BMR calculator.
+
 # Updates
 This file is updated regularly. Check last modified date.
 Last updated: 2025-01-27

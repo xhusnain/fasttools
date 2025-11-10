@@ -37,38 +37,41 @@ export function BMICalculatorPageContent() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </span>
-            How to Calculate Your BMI: Step-by-Step Guide
+            How to Use BMI Calculator Online: Step-by-Step Guide
           </h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            Our free calculator works for women, men, and adults of all ages. The BMI formula uses your weight and height to provide accurate results. Whether you need metric (kg/cm) or imperial (lbs/in) measurements, our tool supports all unit systems.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-heading-accent">Step-by-Step Guide</h3>
+              <h3 className="text-lg font-semibold text-heading-accent">BMI Calculator Calculation Steps</h3>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">1</div>
                   <div>
                     <h4 className="font-medium text-heading-accent">Select Unit System</h4>
-                    <p className="text-sm text-muted-foreground">Choose between Metric (kg/cm) or Imperial (lbs/in) units</p>
+                    <p className="text-sm text-muted-foreground">Choose between Metric (kg/cm) or Imperial (lbs/in) units. Our calculator supports both systems.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">2</div>
                   <div>
                     <h4 className="font-medium text-heading-accent">Enter Your Measurements</h4>
-                    <p className="text-sm text-muted-foreground">Input your weight and height accurately</p>
+                    <p className="text-sm text-muted-foreground">Input your weight and height accurately. For metric units, use kilograms and centimeters. The BMI formula will calculate your result automatically.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">3</div>
                   <div>
                     <h4 className="font-medium text-heading-accent">Add Optional Details</h4>
-                    <p className="text-sm text-muted-foreground">Include age and gender for more personalized results</p>
+                    <p className="text-sm text-muted-foreground">Include age and gender for more personalized interpretations and recommendations.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">4</div>
                   <div>
                     <h4 className="font-medium text-heading-accent">Get Your Results</h4>
-                    <p className="text-sm text-muted-foreground">View your BMI, category, and personalized recommendations</p>
+                    <p className="text-sm text-muted-foreground">View your BMI value, category classification, chart position, and personalized health recommendations.</p>
                   </div>
                 </div>
               </div>
@@ -102,8 +105,11 @@ export function BMICalculatorPageContent() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
             </span>
-            BMI Range Chart & Categories
+            BMI Calculator Chart: Range & Categories
           </h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            Our BMI chart shows the standard BMI ranges used by healthcare providers worldwide. This chart applies to adults, with separate considerations for women and men. The chart follows WHO standards for accurate health assessment.
+          </p>
           
           {/* Visual BMI Scale */}
           <div className="mb-6 bg-card border border-border rounded-lg p-6">
@@ -214,8 +220,11 @@ export function BMICalculatorPageContent() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
             </span>
-            What Are BMI Prime and Ponderal Index?
+            Advanced BMI Calculator Metrics: BMI Prime and Ponderal Index
           </h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            Beyond the standard BMI calculation, our tool provides advanced metrics. BMI Prime and Ponderal Index offer additional insights for women, men, and adults seeking comprehensive health assessment.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 bg-card border border-border rounded-xl">
               <h3 className="text-lg font-semibold text-heading-accent mb-3">What is BMI Prime?</h3>
@@ -258,8 +267,11 @@ export function BMICalculatorPageContent() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
               </svg>
             </span>
-            BMI vs Other Health Metrics: Comparison Guide
+            BMI Calculator vs Other Health Metrics: Comparison Guide
           </h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            While our calculator provides accurate results, understanding how BMI compares to other metrics helps users make informed health decisions. Our calorie integration and body fat comparisons offer comprehensive health insights.
+          </p>
 
           <div className="space-y-6">
             {/* BMI vs Body Fat Percentage */}
@@ -296,7 +308,7 @@ export function BMICalculatorPageContent() {
               </div>
               <div className="mt-4 p-4 bg-card rounded-lg border border-border">
                 <p className="text-sm text-muted-foreground">
-                  <strong className="text-foreground">Key Takeaway:</strong> Healthcare providers use BMI for quick screening, but body fat percentage provides more accurate body composition data. For athletes or muscular individuals, body fat percentage is more reliable than BMI alone.
+                  <strong className="text-foreground">Key Takeaway:</strong> Healthcare providers use BMI for quick screening, but body fat percentage provides more accurate body composition data. For athletes or muscular individuals, body fat percentage is more reliable than BMI alone. Use our <a href="/calculator/body-fat-calculator" className="text-heading-accent hover:underline">body fat calculator</a> alongside this BMI calculator for comprehensive health assessment.
                 </p>
               </div>
             </div>
@@ -335,7 +347,7 @@ export function BMICalculatorPageContent() {
               </div>
               <div className="mt-4 p-4 bg-card rounded-lg border border-border">
                 <p className="text-sm text-muted-foreground">
-                  <strong className="text-foreground">Key Takeaway:</strong> Medical professionals recommend using both BMI and waist circumference together. A normal BMI with high waist circumference (normal weight obesity) still indicates increased health risks. Healthcare providers use this combination for comprehensive cardiovascular risk assessment.
+                  <strong className="text-foreground">Key Takeaway:</strong> Medical professionals recommend using both BMI and waist circumference together. A normal BMI with high waist circumference (normal weight obesity) still indicates increased health risks. Healthcare providers use this combination for comprehensive cardiovascular risk assessment. Combine BMI results with <a href="/calculator/calorie-calculator" className="text-heading-accent hover:underline">calorie calculator</a> and <a href="/calculator/bmr-calculator" className="text-heading-accent hover:underline">BMR calculator</a> for complete health planning.
                 </p>
               </div>
             </div>
@@ -353,20 +365,20 @@ export function BMICalculatorPageContent() {
             Related Health & Fitness Calculators
           </h2>
           <p className="text-sm text-muted-foreground mb-4">
-            Use these complementary calculators alongside BMI for comprehensive health assessment. Healthcare providers recommend combining multiple metrics for accurate health evaluation.
+            Use these complementary calculators alongside our BMI calculator for comprehensive health assessment. Our calorie and body fat integration help users achieve their health goals. Healthcare providers recommend combining multiple metrics for accurate health evaluation.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <a href="/calculator/body-fat-calculator" className="p-4 bg-card border border-border rounded-lg hover:shadow-lg transition-shadow block">
-              <h3 className="font-semibold text-heading-accent mb-2">Body Fat Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate body fat percentage using various methods. Healthcare providers use body fat measurements alongside BMI for comprehensive health assessments.</p>
+            <a href="/calculator/body-fat-calculator" className="p-4 bg-card border border-border rounded-lg hover:shadow-lg transition-shadow block group">
+              <h3 className="font-semibold text-heading-accent mb-2 group-hover:text-orange-600 transition-colors">Body Fat Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate body fat percentage using various methods. Healthcare providers use body fat measurements alongside BMI for comprehensive health assessments. Essential for athletes and fitness enthusiasts.</p>
             </a>
-            <a href="/calculator/calorie-calculator" className="p-4 bg-card border border-border rounded-lg hover:shadow-lg transition-shadow block">
-              <h3 className="font-semibold text-heading-accent mb-2">Calorie Calculator</h3>
-              <p className="text-sm text-muted-foreground">Determine daily calorie needs for weight management. Medical professionals use calorie calculations to support BMI-based health goals.</p>
+            <a href="/calculator/calorie-calculator" className="p-4 bg-card border border-border rounded-lg hover:shadow-lg transition-shadow block group">
+              <h3 className="font-semibold text-heading-accent mb-2 group-hover:text-orange-600 transition-colors">Calorie Calculator</h3>
+              <p className="text-sm text-muted-foreground">Determine daily calorie needs for weight management. Medical professionals use calorie calculations to support BMI-based health goals. Works perfectly with BMI results.</p>
             </a>
-            <a href="/calculator/bmr-calculator" className="p-4 bg-card border border-border rounded-lg hover:shadow-lg transition-shadow block">
-              <h3 className="font-semibold text-heading-accent mb-2">BMR Calculator</h3>
-              <p className="text-sm text-muted-foreground">Calculate your Basal Metabolic Rate. Healthcare providers use BMR alongside BMI to understand metabolic health and weight management needs.</p>
+            <a href="/calculator/bmr-calculator" className="p-4 bg-card border border-border rounded-lg hover:shadow-lg transition-shadow block group">
+              <h3 className="font-semibold text-heading-accent mb-2 group-hover:text-orange-600 transition-colors">BMR Calculator</h3>
+              <p className="text-sm text-muted-foreground">Calculate your Basal Metabolic Rate. Healthcare providers use BMR alongside BMI to understand metabolic health and weight management needs. Complete your health assessment toolkit.</p>
             </a>
             <a href="/calculator/pace-calculator" className="p-4 bg-card border border-border rounded-lg hover:shadow-lg transition-shadow block">
               <h3 className="font-semibold text-heading-accent mb-2">Pace Calculator</h3>
