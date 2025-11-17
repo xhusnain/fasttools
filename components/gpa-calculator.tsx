@@ -73,6 +73,7 @@ export function GPACalculator() {
   const [targetGPA, setTargetGPA] = useState("")
   const [currentCredits, setCurrentCredits] = useState("")
   const [additionalCredits, setAdditionalCredits] = useState("")
+  const [showGPAPlanner, setShowGPAPlanner] = useState(false)
 
   const gradePoints: Record<string, number> = {
     "A+": 4.3, "A": 4.0, "A-": 3.7,
@@ -374,10 +375,21 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
               </>
             )}
           </Button>
+
+          {/* Plan Your GPA Button */}
+          <Button
+            onClick={() => setShowGPAPlanner(!showGPAPlanner)}
+            variant="outline"
+            className="w-full h-9 text-xs font-medium border-border hover:bg-secondary text-heading-accent bg-card transition-all duration-300"
+          >
+            <Target className="mr-1 h-3 w-3" />
+            <span>{showGPAPlanner ? "Hide GPA Planner" : "Plan Your GPA"}</span>
+          </Button>
         </CardContent>
       </Card>
 
       {/* GPA Planning Calculator */}
+      {showGPAPlanner && (
       <Card className="shadow-lg border-border hover:shadow-xl transition-all duration-300 bg-card">
         <CardHeader className="pb-2 px-3 sm:px-6">
           <CardTitle className="flex items-center gap-1.5 text-base text-foreground">
@@ -478,6 +490,7 @@ ${result.courses.map(course => `${course.name}: ${course.grade} (${course.credit
           )}
         </CardContent>
       </Card>
+      )}
 
       {/* Results Section */}
       {result && !isCalculating && (
