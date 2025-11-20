@@ -116,7 +116,7 @@ export default function CurrencyAPIDocsPage() {
 
               {/* Mobile Ad */}
               <div className="lg:hidden">
-                <AdSpace slot="mobile-in-content" className="mb-8" />
+                <AdSpace slot="content" className="mb-8" />
               </div>
 
               {/* Live Convert Button */}

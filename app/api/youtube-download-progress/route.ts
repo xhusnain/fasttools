@@ -55,8 +55,10 @@ export async function GET(request: NextRequest) {
   })
 }
 
-export function setProgress(
-  downloadId: string, 
+// Helper functions that should not be exported from route handlers
+// These are used internally by other parts of the application
+function setProgress(
+  downloadId: string,
   progress: number, 
   status: string = 'downloading',
   options?: {
@@ -81,8 +83,15 @@ export function setProgress(
   console.log(`setProgress called for ${downloadId}:`, progress + '%', status, 'Video:', options?.currentVideoTitle || existing.currentVideoTitle || 'N/A', 'Video Progress:', options?.videoProgress ?? existing.videoProgress ?? 0)
 }
 
-export function clearProgress(downloadId: string) {
+function clearProgress(downloadId: string) {
   progressStore.delete(downloadId)
+}
+
+// Export the store and helpers for use by other modules
+export const progressHelpers = {
+  setProgress,
+  clearProgress,
+  progressStore
 }
 
 // Clean up old progress entries periodically (older than 10 minutes)

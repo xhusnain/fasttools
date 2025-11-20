@@ -57,7 +57,7 @@ const fetchInstagramProfile = async (username: string) => {
           'Referer': 'https://www.instagram.com/',
         },
         redirect: 'follow',
-        timeout: 15000, // 15 second timeout
+        signal: AbortSignal.timeout(15000), // 15 second timeout
       })
 
       console.log(`Response status: ${response.status}`)
@@ -160,7 +160,7 @@ const fetchInstagramProfile = async (username: string) => {
             'Pragma': 'no-cache',
             'Referer': 'https://www.instagram.com/',
           },
-          timeout: 15000,
+          signal: AbortSignal.timeout(15000),
         })
 
         if (htmlResponse.ok) {

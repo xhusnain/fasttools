@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
         // Handle ab-downloader's specific format where url is an array with hd/sd objects
         if (data.url && Array.isArray(data.url)) {
           // Check if array has any non-empty objects
-          const hasValidItems = data.url.some(item => 
+          const hasValidItems = data.url.some((item: any) =>
             item && typeof item === 'object' && Object.keys(item).length > 0
           )
           
@@ -227,8 +227,8 @@ export async function POST(request: NextRequest) {
         // Check if ab-downloader returned empty objects (common for image posts)
         const hasEmptyUrlArray = data.url && Array.isArray(data.url) && 
           data.url.length > 0 && 
-          data.url.every(item => !item || typeof item !== 'object' || Object.keys(item).length === 0)
-        
+          data.url.every((item: any) => !item || typeof item !== 'object' || Object.keys(item).length === 0)
+
         const errorMessage = hasEmptyUrlArray
           ? 'This X/Twitter post does not appear to contain a video. This tool only supports video downloads. Please use a post that contains a video, or ensure the post is public and contains video content.'
           : 'No video URL found in the response. The post may not contain a video, may be private, or the URL format may not be supported. Please ensure the post contains a video and is public.'

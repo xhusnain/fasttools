@@ -5,7 +5,9 @@ import path from 'path'
 import os from 'os'
 import archiver from 'archiver'
 import { promisify } from 'util'
-import { setProgress, clearProgress } from '../youtube-download-progress/route'
+import { progressHelpers } from '../youtube-download-progress/route'
+
+const { setProgress, clearProgress } = progressHelpers
 
 const execAsync = promisify(exec)
 
