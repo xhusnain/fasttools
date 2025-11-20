@@ -5,7 +5,8 @@ import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
 import { GlobalLoading } from "@/components/global-loading"
 import { ThemeProvider } from "@/components/theme-provider"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
+import Script from "next/script"
 import { env } from "@/lib/env"
 
 export const metadata: Metadata = {
@@ -49,16 +50,34 @@ export const metadata: Metadata = {
   other: {
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
     "apple-mobile-web-app-title": "fasttools",
+    "application-name": "fasttools",
     "msapplication-TileColor": "#3D348B",
-    "theme-color": "#3D348B",
+    "msapplication-navbutton-color": "#3D348B",
+    "msapplication-config": "/browserconfig.xml",
+    "msapplication-tap-highlight": "no",
     "google-site-verification": "l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0",
     "yandex-verification": "242a8cf232328714",
     "msvalidate.01": "DE0A07DC9E742C4C8E795D7C99EF238B",
+    "p:domain_verify": "603c992f6d70753cf89c1a0141990c73",
+    "facebook-domain-verification": "m4jw5d6c1jsteghq2xo00wflvif79x",
+    "google-adsense-account": "ca-pub-6296569221534302",
   },
 }
-    
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#3D348B" },
+    { media: "(prefers-color-scheme: dark)", color: "#3D348B" },
+  ],
+  colorScheme: "dark light",
+}
+
     export default function RootLayout({
       children,
     }: {
@@ -166,133 +185,37 @@ export const metadata: Metadata = {
         }
       }
     
-      return (
-          <html lang="en" className="antialiased" suppressHydrationWarning>
-        <head>
-            {env.isProduction && (
-              <>
-                <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-4G804HZ22C" as="script" crossOrigin="anonymous"/>
-              </>
-            )}
-            
-            {env.isProduction && (
-              <>
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-4G804HZ22C"></script>
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `
-                            window.dataLayer = window.dataLayer || [];
-                            function gtag(){dataLayer.push(arguments);}
-                            gtag('js', new Date());
-                            gtag('config', 'G-4G804HZ22C');
-                        `,
-                    }}
-                />
-              </>
-            )}
-            
-            {/*{env.isProduction && (*/}
-            {/*  <script*/}
-            {/*      dangerouslySetInnerHTML={{*/}
-            {/*          __html: `*/}
-            {/*              (function() {*/}
-            {/*                var s = document.createElement('script');*/}
-            {/*                s.type = 'text/javascript';*/}
-            {/*                s.async = true;*/}
-            {/*                s.src = "https://tracker.clickfortify.com/cdn/spcZrjg3d1d/wstSb2fQc7v";*/}
-            {/*                var x = document.getElementsByTagName('script')[0];*/}
-            {/*                x.parentNode.insertBefore(s, x);*/}
-            {/*              })();*/}
-            {/*          `,*/}
-            {/*      }}*/}
-            {/*  />*/}
-            {/*)}*/}
-            
-            <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
-            <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-            <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
-            <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
-            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-            
-            <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5"/>
-            
-            <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
-            <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
-            <meta name="bingbot" content="index, follow"/>
-            <meta name="slurp" content="index, follow"/>
-            <meta name="duckduckbot" content="index, follow"/>
-            <meta name="yandexbot" content="index, follow"/>
-            <meta name="baiduspider" content="index, follow"/>
-            <meta name="applebot" content="index, follow"/>
-            <meta name="google-adsense-account" content="ca-pub-6296569221534302"/>
-            <meta name="google-site-verification" content="l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0" />
-            <meta name="yandex-verification" content="242a8cf232328714" />
-            <meta name="msvalidate.01" content="DE0A07DC9E742C4C8E795D7C99EF238B" />
-            <meta name="p:domain_verify" content="603c992f6d70753cf89c1a0141990c73"/>
-            <meta name="facebook-domain-verification" content="m4jw5d6c1jsteghq2xo00wflvif79x" />
-            <meta name="format-detection" content="telephone=no"/>
-            <meta name="format-detection" content="address=no"/>
-            <meta name="format-detection" content="email=no"/>
-            <meta httpEquiv="x-dns-prefetch-control" content="on"/>
-            <meta httpEquiv="x-ua-compatible" content="IE=edge"/>
-            <meta httpEquiv="cleartype" content="on"/>
-            <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
-            <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
-            {env.isProduction && (
-              <>
-                <link rel="dns-prefetch" href="//www.google-analytics.com"/>
-                <link rel="dns-prefetch" href="//www.googletagmanager.com"/>
-              </>
-            )}
-            <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous"/>
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
-            <link rel="preconnect" href="https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev"/>
-            {/* Preload hero background images for caching */}
-            <link 
-              rel="preload" 
-              href="https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/greg-rakozy-oMpAz-DN-9I-unsplash.jpg" 
-              as="image"
+  return (
+    <html lang="en" className="antialiased" suppressHydrationWarning>
+      <body className="bg-background font-sans text-foreground">
+        {/* Google Analytics */}
+        {env.isProduction && (
+          <>
+            <Script
+              src="https://www.googletagmanager.com/gtag/js?id=G-4G804HZ22C"
+              strategy="afterInteractive"
             />
-            <link 
-              rel="preload" 
-              href="https://pub-d1560d7595cc45af999542c1c57c16f4.r2.dev/nasa%20images%20/nasa%20images%20/nasa-HWIOLU7_O6w-unsplash.jpg" 
-              as="image"
-            />
-            {env.isProduction && (
-              <>
-                <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous"/>
-                <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous"/>
-              </>
-            )}
-            <meta name="color-scheme" content="dark light"/>
-            <meta name="supported-color-schemes" content="dark light"/>
-            <meta name="theme-color" content="#3D348B" media="(prefers-color-scheme: light)"/>
-            <meta name="theme-color" content="#3D348B" media="(prefers-color-scheme: dark)"/>
-            <meta name="msapplication-navbutton-color" content="#3D348B"/>
-            <meta name="msapplication-TileColor" content="#3D348B"/>
-            <meta name="msapplication-config" content="/browserconfig.xml"/>
-            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-            <meta name="mobile-web-app-capable" content="yes"/>
-            <meta name="apple-mobile-web-app-capable" content="yes"/>
-            <meta name="apple-mobile-web-app-title" content="fasttools"/>
-            <meta name="application-name" content="fasttools"/>
-            <meta name="apple-touch-fullscreen" content="yes"/>
-            <meta name="apple-mobile-web-app-orientations" content="portrait"/>
-            <meta name="msapplication-tap-highlight" content="no"/>
-            <script
-                suppressHydrationWarning
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{__html: JSON.stringify(organizationSchema)}}
-            />
-            <script
-                suppressHydrationWarning
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{__html: JSON.stringify(websiteSchema)}}
-            />
-            
-            
-        </head>
-        <body className="bg-background font-sans text-foreground">
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-4G804HZ22C');
+              `}
+            </Script>
+          </>
+        )}
+
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -311,7 +234,7 @@ export const metadata: Metadata = {
           <Footer />
           <CookieConsent />
         </ThemeProvider>
-        </body>
-        </html>
-      )
+      </body>
+    </html>
+  )
     }
