@@ -11,12 +11,13 @@ import {
   FileText,
   Search,
   Globe,
+  DollarSign,
   ArrowRight
 } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Products",
-  description: "Explore all FastTools product categories including calculators, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, social media tools, and fun tools.",
+  description: "Explore all FastTools product categories including calculators, finance tools, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, social media tools, and fun tools.",
   keywords: [
     "fasttools products",
     "online tools categories",
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
     "digital tools categories",
     "productivity tools",
     "AI tools",
+    "finance tools",
     "calculator tools",
     "converter tools",
     "developer tools",
@@ -35,7 +37,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Products",
-    description: "Explore all FastTools product categories including calculators, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, social media tools, and fun tools.",
+    description: "Explore all FastTools product categories including calculators, finance tools, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, social media tools, and fun tools.",
     type: "website",
     url: "/products",
     siteName: "FastTools",
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Products",
-    description: "Explore all FastTools product categories including calculators, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, social media tools, and fun tools.",
+    description: "Explore all FastTools product categories including calculators, finance tools, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, social media tools, and fun tools.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -78,6 +80,13 @@ const categories = [
     description: "Accurate calculators for finance, health, business, and personal use",
     icon: Calculator,
     href: "/calculator",
+  },
+  {
+    id: "finance-tools",
+    name: "Finance Tools",
+    description: "Business-ready calculators for invoices, payments, and savings",
+    icon: DollarSign,
+    href: "/finance-tools",
   },
   {
     id: "ai-tools",

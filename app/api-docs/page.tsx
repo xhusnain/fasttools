@@ -10,7 +10,7 @@ import {
 
 export const metadata: Metadata = {
   title: "API Documentation",
-  description: "Comprehensive API docs for FastTools. Free currency conversion API and more developer tools.",
+  description: "Comprehensive API documentation for FastTools. Free currency conversion API, RESTful endpoints & developer tools. Get started with our free API in minutes.",
   keywords: [
     "api documentation",
     "currency api",
@@ -22,26 +22,27 @@ export const metadata: Metadata = {
     "webhook api"
   ],
   openGraph: {
-    title: "API Documentation",
-    description: "Comprehensive API docs for FastTools. Free currency conversion API and more developer tools.",
+    title: "API Documentation | FastTools",
+    description: "Comprehensive API documentation for FastTools. Free currency conversion API, RESTful endpoints & developer tools. Get started with our free API in minutes.",
     type: "website",
-    url: "/api-docs",
+    url: "https://www.fasttools.store/api-docs",
     siteName: "FastTools",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://www.fasttools.store/og-image.svg",
+        secureUrl: "https://www.fasttools.store/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "FastTools - Free Online Tools Platform",
-        type: "image/png",
+        alt: "FastTools API Documentation - Free Developer Tools",
+        type: "image/svg+xml",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "API Documentation",
-    description: "Comprehensive API docs for FastTools. Free currency conversion API and more developer tools.",
-    images: ["/og-image.png"],
+    title: "API Documentation | FastTools",
+    description: "Comprehensive API documentation for FastTools. Free currency conversion API, RESTful endpoints & developer tools. Get started with our free API in minutes.",
+    images: ["https://www.fasttools.store/og-image.svg"],
   },
   alternates: {
     canonical: "/api-docs",

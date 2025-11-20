@@ -8,7 +8,7 @@ import { GHeader } from "@/components/globalcomponents/gheader"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Online Converters: Text, Length, Currency | FastTools",
+  title: "Online Converters | Text, Length, Currency & Temperature",
   description:
     "Free converters for text case, length, file size, currency, time zones, temperature. Fast, accurate, real-time data.",
   keywords: [

@@ -81,6 +81,7 @@ export const goneUrls = new Set([
   '/tools/conversion-calculator',
   '/tools/standard-deviation-calculator',
   '/tools/finance-calculator',
+  '/tools/triangle-calculator',
 
   // Other removed pages
   '/resources',

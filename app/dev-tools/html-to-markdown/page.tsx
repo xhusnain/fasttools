@@ -8,9 +8,9 @@ import { FileCode, FileText, Copy, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "FastTools - HTML Converter | Free HTML to Markdown, JSON, YAML, XML, PDF",
+  title: "HTML Converter | Free HTML to Markdown, JSON, YAML, XML",
   description:
-    "FastTools HTML Converter - Free HTML converter and format converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML, PDF instantly. Best HTML formatter, beautifier & validator. No signup - 100% free.",
+    "Free HTML converter online. Convert HTML to Markdown, JSON, YAML, XML, CSV, TOML, PDF instantly. Best HTML formatter, beautifier & validator. No signup.",
   keywords: [
     "fasttools",
     "fast tools",

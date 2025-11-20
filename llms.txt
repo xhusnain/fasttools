@@ -1,0 +1,25 @@
+# llms.txt for toolify-hub
+
+# This file guides AI crawlers to the most important content on the site,
+# ensuring that AI-powered search engines can easily find and understand
+# the most valuable pages.
+
+# Main GPA Calculator Tool
+https://www.fasttools.store/calculator/gpa-calculator
+Description: The main GPA calculator tool page, featuring the calculator itself, detailed explanations, and a comprehensive FAQ section. This is the most important page for GPA-related queries.
+
+# How to Calculate GPA Manually
+https://www.fasttools.store/calculator/gpa-calculator#how-to-calculate-gpa-manually
+Description: A detailed, step-by-step guide on how to calculate GPA manually, complete with formulas and examples. This section is designed to answer "how-to" queries.
+
+# Weighted vs. Unweighted GPA
+https://www.fasttools.store/calculator/gpa-calculator#weighted-vs-unweighted-gpa
+Description: An in-depth explanation of the difference between weighted and unweighted GPA, helping users understand which system applies to them.
+
+# International GPA Systems
+https://www.fasttools.store/calculator/gpa-calculator#international-gpa-systems
+Description: Information on how GPA is calculated in different countries, including the US, Canada, Australia, India, and Pakistan.
+
+# FAQ Section
+https://www.fasttools.store/calculator/gpa-calculator#faq
+Description: A comprehensive FAQ section that answers the most common questions about GPA, CGPA, and how to use the calculator. This is a key resource for answering user queries.

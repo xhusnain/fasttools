@@ -6,8 +6,8 @@ import { GHeader } from "@/components/globalcomponents/gheader"
 import { Calculator, BarChart3, TrendingUp, BookOpen, Users, Clock, Target, AlertCircle, Home, DollarSign, FileText, Percent, Award, Globe, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "FastTools - Pace Calculator | Free Advanced Running Pace Calculator",
-  description: "FastTools Pace Calculator - Calculate running pace, training zones, heart rate zones, race predictions, and VO2 Max. Perfect for runners, coaches, and athletes.",
+  title: "Pace Calculator | Free Advanced Running Pace Calculator",
+  description: "Calculate running pace, training zones, heart rate zones, race predictions & VO2 Max. Perfect for runners, coaches & athletes.",
     keywords: [
         "fasttools",
         "fast tools",

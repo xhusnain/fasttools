@@ -8,9 +8,9 @@ import { Calculator, Target, CheckCircle, Home, Car, CreditCard, GraduationCap, 
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free Loan EMI Calculator | Home, Car & Personal Loans | FastTools",
+  title: "Loan EMI Calculator | Home, Car & Personal Loans",
   description:
-    "Free online EMI calculator for home loans, car loans, personal loans & education loans. Calculate monthly EMI, total interest & amortization schedule instantly. Works for SBI, HDFC, ICICI, Axis Bank & all major banks. RBI compliant, accurate results.",
+    "Free EMI calculator for home, car, personal & education loans. Calculate monthly EMI, total interest & amortization schedule. Works for all major banks.",
   openGraph: {
     title: "Advanced EMI Calculator | Home Loan, Car Loan & Personal Loan Calculator | FastTools",
     description: "The EMI Calculator helps you determine your monthly installment amount based on your loan amount, interest rate, and tenure. It's perfect for planning home loans, car loans, education loans, or personal loans. With instant results and detailed breakdowns, you can easily manage your budget and make smarter financial decisions.",

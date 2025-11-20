@@ -9,7 +9,7 @@ import { GHeader } from "@/components/globalcomponents/gheader"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free Image Tools – OCR, Photo Editor, Background Blur | FastTools",
+  title: "Free Image Tools | OCR, Photo Editor & Background Blur",
   description:
     "Free image tools: OCR converter, photo editor, background blur, image processing. Professional results, 100% secure.",
   keywords: [

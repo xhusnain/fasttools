@@ -10,8 +10,8 @@ import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "FastTools - TikTok Downloader | Free HD Videos Without Watermark",
-  description: "FastTools TikTok Downloader - Download TikTok videos and wallpapers in HD without watermark for free. Fast, secure, works on all devices. Perfect for creators and marketers.",
+  title: "TikTok Downloader | Free HD Videos Without Watermark",
+  description: "Download TikTok videos in HD without watermark. Free, fast, secure. Works on all devices. Perfect for creators and marketers.",
     keywords: [
               "fasttools",
               "fast tools",

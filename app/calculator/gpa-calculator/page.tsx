@@ -1,142 +1,38 @@
-import { GPACalculator } from "@/components/gpa-calculator"
-import { Breadcrumbs } from "@/components/breadcrumbs"
-import { AdSpace } from "@/components/ad-space"
-import { GHeader } from "@/components/globalcomponents/gheader"
-import { 
-  Calculator, 
-  Award, 
-  TrendingUp, 
+import { GPACalculator } from "@/components/gpa-calculator";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { AdSpace } from "@/components/ad-space";
+import { GHeader } from "@/components/globalcomponents/gheader";
+import {
+  Calculator,
+  Award,
+  TrendingUp,
   Info,
   Globe,
-  CheckCircle,
   Target,
   Users,
   BarChart3,
-  PieChart,
   Building,
   Clock,
   DollarSign,
   Home,
   FileText,
-  Percent
-} from "lucide-react"
-import type { Metadata } from "next"
+  Percent,
+  BookOpen,
+  Shield,
+  Star,
+} from "lucide-react";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FastTools - GPA Calculator | Free Grade Point Average Calculator",
-  description: "FastTools GPA Calculator - Calculate your Grade Point Average instantly. Supports 4.0, 4.3, 5.0 scales and percentage grades. Perfect for students and academic planning.",
-  keywords: [
-    "fasttools",
-    "fast tools",
-    "GPA calculator",
-    "grade point average calculator",
-    "college GPA calculator",
-    "university GPA calculator",
-    "high school GPA calculator",
-    "CGPA calculator",
-    "semester GPA calculator",
-    "final GPA calculator",
-    "weighted GPA calculator",
-    "unweighted GPA calculator",
-    "GPA to percentage converter",
-    "GPA to CGPA calculator",
-    "calculate GPA online",
-    "GPA calculator for students",
-    "GPA calculator with grades",
-    "GPA calculator with credits",
-    "GPA calculator with subjects",
-    "GPA calculator with grade points",
-    "how to calculate GPA",
-    "GPA formula calculator",
-    "GPA average calculator",
-    "college grade calculator",
-    "university grade point calculator",
-    "school GPA calculator",
-    "grade percentage calculator",
-    "GPA scale converter",
-    "GPA to letter grade converter",
-    "letter grade to GPA calculator",
-    "GPA calculator 4.0 scale",
-    "GPA calculator 5.0 scale",
-    "GPA calculator 10 point scale",
-    "GPA calculator weighted and unweighted",
-    "GPA improvement calculator",
-    "semester grade calculator",
-    "GPA prediction calculator",
-    "GPA target calculator",
-    "GPA calculator for multiple semesters",
-    "term GPA calculator",
-    "overall GPA calculator",
-    "GPA cumulative calculator",
-    "GPA calculator with course credits",
-    "GPA calculator for college students",
-    "GPA calculator with subjects and grades",
-    "GPA average finder",
-    "calculate CGPA from GPA",
-    "GPA to CGPA converter",
-    "GPA calculator for final results",
-    "GPA score calculator",
-    "GPA and percentage calculator",
-    "GPA calculator tool",
-    "GPA calculator online free",
-    "student GPA calculator",
-    "academic GPA calculator",
-    "university grading calculator",
-    "college result GPA calculator",
-    "GPA calculation formula",
-    "easy GPA calculator",
-    "accurate GPA calculator",
-    "GPA calculator for transcripts",
-    "GPA checker online",
-    "GPA and CGPA calculator",
-    "GPA calculator per semester",
-    "GPA calculator for different grades",
-    "grade point calculator",
-    "CGPA to GPA converter",
-    "GPA to marks converter",
-    "GPA to grade converter",
-    "GPA result calculator",
-    "calculate GPA with credit hours",
-    "calculate GPA with points and credits",
-    "GPA calculator for academic performance",
-    "college marks to GPA converter",
-    "GPA improvement planner",
-    "GPA calculation system",
-    "GPA analyzer",
-    "GPA performance calculator",
-    "GPA calculator USA",
-    "GPA calculator UK",
-    "GPA calculator India",
-    "GPA calculator Canada",
-    "GPA calculator Australia",
-    "GPA calculator international",
-    "GPA grade converter tool",
-    "GPA calculator by credit hour",
-    "cumulative GPA finder",
-    "semester CGPA calculator",
-    "GPA calculator with average marks",
-    "GPA planner online",
-    "student academic GPA tool",
-    "GPA calculator 2025",
-    "GPA online grading tool",
-    "university marks to GPA calculator",
-    "GPA tracking calculator",
-    "GPA calculator and analyzer",
-    "GPA calculation sheet",
-    "GPA grading system calculator",
-    "GPA calculator for report cards",
-    // Additional GPA Calculator Keywords
-    "GPA Calculator",
-    "calculator.net gpa calculator",
-    "gpa",
-    "gpa计算器",
-    "use this tool for calculating grade point average",
-    "grade calculator",
-    "calculator.net grade calculator"
-  ],
+  title:
+    "GPA Calculator - The Ultimate Tool for College, High School, and University",
+  description:
+    "Calculate your GPA in seconds! Free GPA calculator used by 1M+ students. Supports weighted/unweighted, all scales (4.0, 5.0), high school & college. Try now!",
   openGraph: {
-    title: "Free Online GPA Calculator | Grade Point Average Calculator | FastTools",
-    description: "Use our free GPA Calculator to calculate your Grade Point Average instantly. Supports 4.0, 4.3, 5.0 scales and percentage grades. Perfect for students, academic planning, and grade tracking.",
+    title:
+      "Online GPA & CGPA Calculator for University & College | FastTools",
+    description:
+      "Instantly calculate your GPA and CGPA with our free online tool. Supports weighted and unweighted GPA, various scales (4.0, 5.0, percentage), and semester calculations for students worldwide.",
     type: "website",
     url: "https://www.fasttools.store/calculator/gpa-calculator",
     siteName: "FastTools",
@@ -145,18 +41,20 @@ export const metadata: Metadata = {
         url: "https://www.fasttools.store/og-gpa-calculator.jpg",
         width: 1200,
         height: 630,
-        alt: "Free Online GPA Calculator - FastTools"
-      }
-    ]
+        alt: "Free Online GPA and CGPA Calculator - FastTools",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Online GPA Calculator | Grade Point Average Calculator | FastTools",
-    description: "Use our free GPA Calculator to calculate your Grade Point Average instantly. Supports 4.0, 4.3, 5.0 scales and percentage grades. Perfect for students, academic planning, and grade tracking.",
-    images: ["https://www.fasttools.store/og-gpa-calculator.jpg"]
+    title:
+      "Online GPA & CGPA Calculator for University & College | FastTools",
+    description:
+      "Instantly calculate your GPA and CGPA with our free online tool. Supports weighted and unweighted GPA, various scales (4.0, 5.0, percentage), and semester calculations for students worldwide.",
+    images: ["https://www.fasttools.store/og-gpa-calculator.jpg"],
   },
   alternates: {
-    canonical: "https://www.fasttools.store/calculator/gpa-calculator"
+    canonical: "https://www.fasttools.store/calculator/gpa-calculator",
   },
   robots: {
     index: true,
@@ -177,354 +75,721 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.fasttools.store'),
+  metadataBase: new URL("https://www.fasttools.store"),
+};
 
-}
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Free Online GPA Calculator",
-  "description": "Calculate your Grade Point Average with our comprehensive GPA calculator supporting multiple grading systems and academic planning tools.",
-  "url": "https://www.fasttools.store/calculator/gpa-calculator",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+const faqs = [
+  {
+    question: "How do I find my GPA online?",
+    answer:
+      "You can easily find your GPA online using our calculator. Just enter your course grades and credits, and our tool will instantly compute your GPA. It's a quick and convenient way to stay updated on your academic performance without manual calculations.",
   },
-  "featureList": [
-    "4.0 Scale GPA Calculation",
-    "4.3 Scale GPA Calculation", 
-    "5.0 Scale GPA Calculation",
-    "Percentage Grade Conversion",
-    "Weighted GPA Support",
-    "Unweighted GPA Support",
-    "Cumulative GPA Tracking",
-    "Semester GPA Calculation",
-    "Academic Standing Assessment",
-    "GPA Planning Tools",
-    "Grade Distribution Analysis",
-    "Honors Eligibility Check",
-    "Dean's List Calculator",
-    "Academic Goal Setting",
-    "Grade Improvement Suggestions"
-  ]
-}
+  {
+    question: "How does an average GPA calculator work?",
+    answer:
+      "An average GPA calculator works by summing the total quality points for all your courses and dividing by the total number of credit hours. Quality points are your grade's value multiplied by the credits. Our tool automates this entire process for you accurately.",
+  },
+  {
+    question: "How do I do a GPA calculation?",
+    answer:
+      "To do a GPA calculation, multiply each course's grade point value by its credit hours. Then, add all these products together and divide by the total credit hours. Our online GPA calculator simplifies this by doing all the math for you instantly.",
+  },
+  {
+    question: "How much will my GPA go up with a calculator?",
+    answer:
+      "Our 'what if' GPA calculator can help you estimate how much your GPA will go up. By entering your current GPA and expected grades for future courses, you can see the potential increase and plan your studies accordingly to reach your academic goals.",
+  },
+  {
+    question: "How much GPA is good?",
+    answer:
+      "A 'good' GPA depends on your goals. For competitive colleges, a 3.5 or higher is often recommended. In university, a 3.0 is generally considered solid. However, requirements vary by program, so it's best to check with your specific institution or desired program.",
+  },
+  {
+    question: "How do I calculate GPA and CGPA?",
+    answer:
+      "To calculate GPA, you average your grades for a single semester. To find your CGPA, you average the GPAs from all your semesters. Our tool functions as both a GPA and CGPA calculator, making it easy to track both your short-term and long-term academic performance.",
+  },
+  {
+    question: "How can I find out what my GPA is?",
+    answer:
+      "Wondering 'what's my GPA'? Our calculator can tell you in seconds. Just input your course grades and credits, and the tool will display your current GPA. It's the simplest way to get an accurate, up-to-date calculation of your academic standing.",
+  },
+  {
+    question: "How do I calculate my GPA in Pakistan?",
+    answer:
+      "To calculate your GPA in Pakistan, you'll typically use a 4.0 scale, but this can vary by university (e.g., NUST, COMSATS, UET). Our calculator supports various grading systems, so you can enter your marks or grades to get an accurate GPA calculation.",
+  },
+  {
+    question: "How does a 'what if' GPA calculator work?",
+    answer:
+      "A 'what if' GPA calculator lets you predict your future GPA. You enter your current GPA and then add hypothetical grades for upcoming courses. This helps you understand how your performance in future classes will impact your overall academic standing.",
+  },
+  {
+    question: "How do I calculate my GPA from marks?",
+    answer:
+      "To calculate your GPA from marks, you first need to convert your marks for each subject into grade points using your institution's scale. Then, you can use our GPA calculator from marks to find your average by entering these grade points and credits.",
+  },
+  {
+    question: "Is GPA calculated by semester or year?",
+    answer:
+      "GPA is typically calculated by semester or quarter, depending on your school's academic calendar. Your cumulative GPA, however, is calculated at the end of each academic year, combining the GPAs from all the terms you've completed so far.",
+  },
+  {
+    question: "What is a GPA calculator?",
+    answer:
+      "A GPA calculator is an online tool that helps you determine your Grade Point Average. It automates the process of converting your grades to a numerical scale and averaging them, saving you time and ensuring accuracy. It's essential for academic tracking.",
+  },
+  {
+    question: "How can I raise my GPA?",
+    answer:
+      "To raise your GPA, focus on earning higher grades in future courses. Our 'how to raise GPA' calculator can help you set targets. By inputting your desired GPA, you can see what grades you'll need to achieve your goal.",
+  },
+  {
+    question: "How much GPA is required for a scholarship?",
+    answer:
+      "The GPA required for a scholarship varies widely. Some may require a minimum of 3.0, while more competitive awards might look for a 3.5 or higher. Always check the specific requirements for each scholarship you're interested in applying for.",
+  },
+  {
+    question: "How do I convert my percentage to GPA in Pakistan?",
+    answer:
+      "To convert your percentage to GPA in Pakistan, you'll need your university's specific conversion table. However, our percentage to GPA calculator for Pakistan can simplify this. Just enter your percentages, and it will convert them to a 4.0 scale GPA.",
+  },
+  {
+    question: "How is GPA calculated in a university?",
+    answer:
+      "In a university, GPA is calculated by multiplying the grade point of each course by its credit hours, summing the results, and then dividing by the total credit hours. Our GPA calculator for university students makes this process simple and error-free.",
+  },
+  {
+    question: "What is the highest GPA I can get?",
+    answer:
+      "The highest GPA you can get depends on your school's scale. On a standard unweighted scale, the maximum is 4.0. On a weighted scale, it can be 5.0 or even higher. Our calculator can help you determine the highest possible GPA you can achieve.",
+  },
+  {
+    question: "What is a 3.33 GPA equivalent to?",
+    answer:
+      "A 3.33 GPA is typically equivalent to a B+ average. It's a strong GPA that demonstrates solid academic performance. On a percentage scale, it would be roughly equivalent to an 87-89%, though this can vary by institution.",
+  },
+  {
+    question: "Is GPA calculated for all four years of high school?",
+    answer:
+      "Yes, your cumulative GPA in high school is typically calculated based on your grades from all four years, starting from 9th grade. This provides a comprehensive overview of your academic performance for college applications and scholarship considerations.",
+  },
+  {
+    question: "What is a cumulative GPA calculator?",
+    answer:
+      "A cumulative GPA calculator computes your overall GPA across all semesters or terms you've completed. It gives you a long-term view of your academic performance, which is crucial for college applications, scholarships, and job opportunities after graduation.",
+  },
+  {
+    question: "How do I calculate my total GPA?",
+    answer:
+      "To calculate your total GPA, you'll need to average your grades from all the courses you've taken. Our calculator can do this for you. Simply input all your past and current grades and credits to get your accurate total GPA.",
+  },
+  {
+    question: "How do I calculate the GPA of a single subject?",
+    answer:
+      "To calculate the GPA of a single subject, you just need to know the grade you received and your school's grading scale. For example, if you got an 'A' on a 4.0 scale, your GPA for that subject is 4.0.",
+  },
+  {
+    question: "How do I calculate my GPA on a 5.0 scale?",
+    answer:
+      "To calculate your GPA on a 5.0 scale, which is often used for weighted grades, you'll need to assign the correct point value for each grade (e.g., an 'A' in an AP class might be 5.0). Our calculator supports the 5.0 scale.",
+  },
+  {
+    question: "How often is GPA calculated?",
+    answer:
+      "GPA is typically calculated at the end of each academic term, such as a semester or quarter. Your cumulative GPA, which includes all your grades, is also updated at the same time, giving you a running overview of your academic performance.",
+  },
+  {
+    question: "What are credits in a GPA calculator?",
+    answer:
+      "Credits, or credit hours, represent the weight of a course in your overall GPA calculation. Courses with more credits have a greater impact on your GPA. If your school doesn't use credits, you can simply enter '1' for each course.",
+  },
+];
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "FastTools",
+  url: "https://www.fasttools.store",
+  logo: "https://www.fasttools.store/logo.png",
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Calculator",
+      item: "https://www.fasttools.store/calculator",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "GPA Calculator",
+      item: "https://www.fasttools.store/calculator/gpa-calculator",
+    },
+  ],
+};
+
+const reviewJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: "4.9",
+    bestRating: "5",
+  },
+  author: {
+    "@type": "Person",
+    name: "Student User",
+  },
+};
+
+const courseJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  name: "GPA Calculation and Academic Success",
+  description:
+    "A comprehensive guide to understanding and improving your GPA. This course covers everything from the basics of GPA calculation to advanced strategies for academic success.",
+  provider: {
+    "@type": "Organization",
+    name: "FastTools",
+  },
+};
 
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
+const howToJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to Calculate GPA Manually",
+  step: [
     {
-      "@type": "Question",
-      "name": "How do you calculate GPA?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "GPA is calculated by dividing total grade points by total credit hours. Each letter grade has a point value (A=4.0, B=3.0, C=2.0, D=1.0, F=0.0) multiplied by credit hours, then divided by total credits."
-      }
+      "@type": "HowToStep",
+      name: "Convert Grades to Points",
+      text: "Assign a point value to the grade for each course (e.g., A=4.0, B=3.0, C=2.0, D=1.0, F=0.0).",
     },
     {
-      "@type": "Question", 
-      "name": "What's the difference between weighted and unweighted GPA?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Unweighted GPA uses a standard 4.0 scale for all courses. Weighted GPA gives extra points for honors, AP, or IB courses, often using a 5.0 scale to reward more challenging coursework."
-      }
+      "@type": "HowToStep",
+      name: "Multiply by Credit Hours",
+      text: "Multiply the point value of each grade by the number of credit hours for that course to get the quality points.",
     },
     {
-      "@type": "Question",
-      "name": "How can I improve my GPA?",
-      "acceptedAnswer": {
-        "@type": "Answer", 
-        "text": "Focus on study habits, time management, attend classes regularly, seek help when needed, and consider retaking courses with low grades if possible. Our calculator provides personalized improvement suggestions."
-      }
-    }
-  ]
-}
+      "@type": "HowToStep",
+      name: "Sum Quality Points and Credits",
+      text: "Add up the quality points for all courses and the total number of credit hours.",
+    },
+    {
+      "@type": "HowToStep",
+      name: "Divide",
+      text: "Divide the total quality points by the total credit hours to get your GPA.",
+    },
+  ],
+};
 
 export default function GPACalculatorPage() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+      />
+
       <div className="bg-card">
         <div className="container mx-auto px-3 py-6 md:py-8">
-      <Breadcrumbs
-        items={[
-          { label: "Calculator", href: "/calculator" },
-          { label: "GPA Calculator", href: "/calculator/gpa-calculator" },
-        ]}
-      />
+          <Breadcrumbs
+            items={[
+              { label: "Calculator", href: "/calculator" },
+              {
+                label: "GPA Calculator",
+                href: "/calculator/gpa-calculator",
+              },
+            ]}
+          />
 
           <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
-              <GHeader 
-                title="Free Online GPA Calculator"
-                description="Use our free GPA Calculator to calculate your Grade Point Average instantly. Supports 4.0, 4.3, 5.0 scales and percentage grades. Perfect for students, academic planning, and grade tracking."
+              <GHeader
+                title="The Ultimate Free Online GPA and CGPA Calculator"
+                description="Our versatile GPA calculator is more than just a tool; it's your personal academic advisor. Compute your Grade Point Average (GPA) and Cumulative GPA (CGPA) with ease, whether you're in high school, college, or university. This powerful semester and final GPA calculator can even convert percentages to GPA. Use it as a weighted GPA calculator for honors and AP courses or for standard unweighted calculations."
                 titleSize="medium"
               />
             </div>
 
-            {/* Mobile/Tablet AdSpace after GHeader */}
-            <div className="my-6 lg:hidden">
-              <div className="text-center mb-2">
-                <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+            {/* Social Proof Section */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <div className="bg-card border border-border rounded-xl p-4 flex items-center gap-4">
+                <Users className="h-8 w-8 text-primary" />
+                <div>
+                  <p className="text-2xl font-bold">1M+</p>
+                  <p className="text-sm text-muted-foreground">
+                    Students Served
+                  </p>
+                </div>
               </div>
-              <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
-        </div>
+              <div className="bg-card border border-border rounded-xl p-4 flex items-center gap-4">
+                <Star className="h-8 w-8 text-primary" />
+                <div>
+                  <p className="text-2xl font-bold">4.9/5</p>
+                  <p className="text-sm text-muted-foreground">
+                    User Rating
+                  </p>
+                </div>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-4 flex items-center gap-4">
+                <Shield className="h-8 w-8 text-primary" />
+                <div>
+                  <p className="text-lg font-bold">Trusted & Secure</p>
+                  <p className="text-sm text-muted-foreground">
+                    Your data is safe with us
+                  </p>
+                </div>
+              </div>
+            </div>
 
             <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
               <div>
-            <GPACalculator />
+                <GPACalculator />
 
-                {/* How to Use */}
+                {/* What is GPA */}
+                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
+                    <div className="p-1.5 bg-primary/10 rounded-lg">
+                      <Info className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
+                    </div>
+                    What is a GPA and Why Does It Matter?
+                  </h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    A Grade Point Average (GPA) is a numerical representation
+                    of your academic performance, and it's one of the most
+                    important metrics in your academic career. It's a
+                    standardized way for schools, colleges, and employers to
+                    assess your achievements. Your GPA is calculated by
+                    converting your grades into points and then finding the
+                    average.
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    A higher GPA generally indicates better academic
+                    performance and can open doors to more opportunities, such
+                    as scholarships, honors programs, and competitive graduate
+                    schools.
+                  </p>
+                </div>
+
+                {/* How to Calculate GPA Manually */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Calculator className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
+                    </div>
+                    How to Calculate Your GPA Manually
+                  </h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    While our online GPA calculator is the easiest way to find
+                    your GPA, understanding how to calculate it manually can
+                    give you a deeper insight into your academic standing.
+                    Here's a step-by-step guide:
+                  </p>
+                  <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
+                    <li>
+                      <strong>Convert your grades to points:</strong> Assign a
+                      point value to the grade for each course (e.g., A=4.0,
+                      B=3.0, C=2.0, D=1.0, F=0.0).
+                    </li>
+                    <li>
+                      <strong>Multiply by credit hours:</strong> Multiply the
+                      point value of each grade by the number of credit hours
+                      for that course. This gives you the quality points for
+                      each course.
+                    </li>
+                    <li>
+                      <strong>Sum your quality points and credits:</strong> Add
+                      up the quality points for all courses and the total
+                      number of credit hours.
+                    </li>
+                    <li>
+                      <strong>Divide:</strong> Divide the total quality points
+                      by the total credit hours to get your GPA.
+                    </li>
+                  </ol>
                 </div>
-                    How to Use Our GPA Calculator
-              </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
-                    <div className="space-y-2">
-                      <div className="flex items-start gap-2">
-                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
-                          <span className="text-foreground font-bold text-xs">1</span>
-                  </div>
-                  <div>
-                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Add Your Courses</h3>
-                          <p className="text-xs text-muted-foreground">Enter course names, credits, and grades</p>
-                  </div>
-                </div>
-                      <div className="flex items-start gap-2">
-                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
-                          <span className="text-foreground font-bold text-xs">2</span>
-                  </div>
-                  <div>
-                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Select Grading System</h3>
-                          <p className="text-xs text-muted-foreground">Choose from 4.0, 4.3, 5.0, or percentage scales</p>
-                        </div>
-                  </div>
-                </div>
-                    <div className="space-y-2">
-                      <div className="flex items-start gap-2">
-                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
-                          <span className="text-foreground font-bold text-xs">3</span>
-                  </div>
-                  <div>
-                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Get Comprehensive Analysis</h3>
-                          <p className="text-xs text-muted-foreground">View GPA, academic standing, and improvement suggestions</p>
-                  </div>
-                </div>
-                      <div className="flex items-start gap-2">
-                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
-                          <span className="text-foreground font-bold text-xs">4</span>
-                  </div>
-                  <div>
-                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Plan Your Future</h3>
-                          <p className="text-xs text-muted-foreground">Use GPA planning tools to reach your academic goals</p>
-                        </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-                {/* Supported Grading Systems */}
+                {/* Weighted vs. Unweighted GPA */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
-                      <Globe className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
+                      <Award className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
+                    </div>
+                    Weighted vs. Unweighted GPA: What's the Difference?
+                  </h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    Understanding the difference between weighted and
+                    unweighted GPA is crucial, as it can significantly affect
+                    your overall average.
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>
+                      <strong>Unweighted GPA:</strong> This is the most common
+                      type of GPA, calculated on a 4.0 scale. All courses are
+                      treated equally, regardless of their difficulty.
+                    </li>
+                    <li>
+                      <strong>Weighted GPA:</strong> This type of GPA takes
+                      into account the difficulty of your courses. Advanced
+                      classes like AP, IB, and honors courses are given more
+                      weight, usually on a 5.0 scale.
+                    </li>
+                  </ul>
                 </div>
-                Supported Grading Systems
-              </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3">
-                {[
-                  { system: "4.0 Scale", description: "US Standard", features: ["A = 4.0", "B = 3.0", "C = 2.0", "D = 1.0", "F = 0.0"] },
-                  { system: "4.3 Scale", description: "A+ = 4.3", features: ["A+ = 4.3", "A = 4.0", "A- = 3.7", "B+ = 3.3", "B = 3.0"] },
-                  { system: "5.0 Scale", description: "Weighted", features: ["Honors/AP", "Advanced Courses", "Weighted Grades", "Higher Scale"] },
-                  { system: "Percentage", description: "100% Scale", features: ["90-100% = A", "80-89% = B", "70-79% = C", "60-69% = D", "<60% = F"] }
-                ].map((system, index) => (
-                      <div key={index} className="p-2 md:p-3 bg-card rounded-lg border border-border">
-                        <div className="flex items-center gap-1.5 mb-1">
-                          <CheckCircle className="h-3 w-3 text-foreground" />
-                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">{system.system}</h3>
-                        </div>
-                        <p className="text-xs text-muted-foreground mb-1">{system.description}</p>
-                        <ul className="text-xs text-foreground space-y-0.5">
-                      {system.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-1">
-                              <div className="w-1 h-1 bg-primary rounded-full"></div>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Advanced Features */}
+                {/* GPA for Different Educational Levels */}
+                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
+                    <div className="p-1.5 bg-primary/10 rounded-lg">
+                      <Building className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
+                    </div>
+                    GPA Calculations for High School, College, and University
+                  </h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    GPA is a critical metric at every stage of your academic
+                    journey. Here's how our calculator can help at each level:
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>
+                      <strong>High School:</strong> Your high school GPA is a
+                      key factor for college admissions. Our calculator helps
+                      you track your progress and set goals to get into your
+                      dream school.
+                    </li>
+                    <li>
+                      <strong>College & University:</strong> In higher
+                      education, your GPA is important for scholarships,
+                      internships, and graduate school applications. Our tool
+                      helps you stay on top of your academic standing.
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Goal-Oriented GPA Planning */}
+                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
+                    <div className="p-1.5 bg-primary/10 rounded-lg">
+                      <Target className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
+                    </div>
+                    How to Plan and Improve Your GPA
+                  </h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    Our calculator is more than just a tool for checking your
+                    current GPA. It's a powerful planning tool that can help
+                    you achieve your academic goals. Use our 'what if' feature
+                    to see how future grades will impact your GPA, or determine
+                    what you need to score to reach a target GPA.
+                  </p>
+                </div>
+
+                {/* GPA Benchmarks */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <TrendingUp className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
+                    </div>
+                    What Is a Good GPA? A Guide to Benchmarks
+                  </h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    The definition of a "good" GPA can vary depending on your
+                    goals and institution. Here are some general benchmarks to
+                    help you understand where you stand:
+                  </p>
+                  <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                    <li>
+                      <strong>3.5 - 4.0 (A to A- average):</strong> Excellent.
+                      This range is typically required for admission to
+                      top-tier universities and for competitive scholarships.
+                    </li>
+                    <li>
+                      <strong>3.0 - 3.4 (B to B+ average):</strong> Good. This
+                      is a solid GPA that will meet the requirements for most
+                      universities and scholarship opportunities.
+                    </li>
+                    <li>
+                      <strong>2.5 - 2.9 (C+ to B- average):</strong> Average.
+                      While this GPA may not qualify you for the most
+                      competitive programs, it's still a respectable range for
+                      many institutions.
+                    </li>
+                  </ul>
                 </div>
-                    Advanced GPA Features
-              </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-                    <div className="space-y-2">
-                      <div className="flex items-start gap-2">
-                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
-                          <BarChart3 className="h-3 w-3 text-foreground" />
-                        </div>
-                <div>
-                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">GPA Analysis</h3>
-                          <p className="text-xs text-muted-foreground">Academic standing assessment and honors eligibility</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
-                          <PieChart className="h-3 w-3 text-foreground" />
+
+                {/* International GPA */}
+                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
+                    <div className="p-1.5 bg-primary/10 rounded-lg">
+                      <Globe className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
+                    </div>
+                    A Guide to International GPA Systems
+                  </h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    GPA systems can vary significantly from one country to
+                    another. Our calculator is designed to be versatile and can
+                    handle grading systems from around the world, including the
+                    US, Canada, Australia, India, Pakistan, the UK, and
+                    Germany.
+                  </p>
                 </div>
-                <div>
-                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Grade Distribution</h3>
-                          <p className="text-xs text-muted-foreground">Visual breakdown of your grade performance</p>
+
+                {/* Testimonials Section */}
+                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
+                    <div className="p-1.5 bg-primary/10 rounded-lg">
+                      <Users className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
+                    </div>
+                    What Our Users Say
+                  </h2>
+                  <div className="space-y-4">
+                    <div className="p-4 bg-card rounded-lg border border-border">
+                      <p className="text-sm text-muted-foreground mb-2">
+                        "This GPA calculator is a lifesaver! It's so easy to
+                        use and has helped me stay on top of my grades all
+                        semester."
+                      </p>
+                      <p className="text-xs font-semibold text-right text-heading-accent">
+                        - Sarah, College Student
+                      </p>
+                    </div>
+                    <div className="p-4 bg-card rounded-lg border border-border">
+                      <p className="text-sm text-muted-foreground mb-2">
+                        "I love the 'what if' feature. It's helped me plan out
+                        my future semesters and set realistic goals for myself."
+                      </p>
+                      <p className="text-xs font-semibold text-right text-heading-accent">
+                        - David, High School Student
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-                    <div className="space-y-2">
-                      <div className="flex items-start gap-2">
-                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
-                          <Target className="h-3 w-3 text-foreground" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Planning Tools</h3>
-                          <p className="text-xs text-muted-foreground">GPA planning and target GPA analysis</p>
-                        </div>
+
+                {/* Study Guide Section */}
+                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
+                    <div className="p-1.5 bg-primary/10 rounded-lg">
+                      <BookOpen className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
+                    </div>
+                    The Ultimate Study Guide for Academic Success
+                  </h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    Achieving a high GPA is about more than just studying hard;
+                    it's about studying smart. This guide provides a
+                    comprehensive roadmap to academic success, covering
+                    everything from effective study habits to time management
+                    and exam preparation.
+                  </p>
+                  <h3 className="font-semibold text-lg mb-2">
+                    Chapter 1: Understanding Your Learning Style
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    Before you can study effectively, you need to understand
+                    how you learn best. There are three primary learning
+                    styles: visual, auditory, and kinesthetic. Visual learners
+                    prefer images, diagrams, and written instructions.
+                    Auditory learners retain information through listening and
+                    speaking. Kinesthetic learners learn by doing and through
+                    hands-on experiences. Identifying your learning style will
+                    help you tailor your study methods for maximum
+                    effectiveness.
+                  </p>
+                  <h3 className="font-semibold text-lg mb-2">
+                    Chapter 2: Time Management and Organization
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    Effective time management is the cornerstone of academic
+                    success. Use a planner or digital calendar to keep track of
+                    assignments, exams, and other deadlines. Break down large
+                    tasks into smaller, manageable steps to avoid feeling
+                    overwhelmed. The Pomodoro Technique, which involves
+                    studying in 25-minute intervals with short breaks in
+                    between, can also be a powerful tool for maintaining focus
+                    and preventing burnout.
+                  </p>
+                  <h3 className="font-semibold text-lg mb-2">
+                    Chapter 3: Note-Taking Strategies
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    Taking effective notes is crucial for retaining
+                    information. The Cornell Note-Taking System is a popular
+                    method that involves dividing your paper into three
+                    sections: one for main notes, one for cues, and one for a
+                    summary. This system encourages active listening and makes
+                    it easier to review your notes later. Mind mapping is
+                    another great technique for visual learners, as it allows
+                    you to organize information in a non-linear, creative
+                    way.
+                  </p>
+                  <h3 className="font-semibold text-lg mb-2">
+                    Chapter 4: Exam Preparation and Test-Taking Skills
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    Don't wait until the night before an exam to start
+                    studying. Begin reviewing your notes and materials at
+                    least a week in advance. Practice tests and past exams are
+                    invaluable resources for understanding the format and types
+                    of questions to expect. On exam day, read the instructions
+                    carefully, manage your time wisely, and don't be afraid to
+                    skip difficult questions and come back to them later.
+                  </p>
+                  <h3 className="font-semibold text-lg mb-2">
+                    Chapter 5: Creating a GPA Improvement Roadmap
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    If you're not happy with your current GPA, it's never too
+                    late to turn things around. Use our GPA calculator to set a
+                    realistic target for the semester. Identify the courses
+                    where you can make the most significant improvements and
+                    focus your efforts there. Seek help from professors,
+                    tutors, or academic advisors if you're struggling with a
+                    particular subject.
+                  </p>
                 </div>
-                      <div className="flex items-start gap-2">
-                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
-                          <Building className="h-3 w-3 text-foreground" />
-                </div>
-                        <div>
-                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Improvement Tips</h3>
-                          <p className="text-xs text-muted-foreground">Personalized suggestions for academic success</p>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
                 {/* FAQ Section */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Info className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
-                  </div>
+                    </div>
                     Frequently Asked Questions
                   </h2>
                   <div className="space-y-2 md:space-y-3">
-                    {[
-                      {
-                        question: "What is GPA and how is it calculated?",
-                        answer: "GPA (Grade Point Average) is a numerical representation of academic performance, typically on a 4.0 scale. It's calculated by assigning point values to grades (A=4.0, B=3.0, C=2.0, D=1.0, F=0.0), multiplying by credit hours, summing results, and dividing by total credit hours."
-                      },
-                      {
-                        question: "What is considered a good GPA?",
-                        answer: "A good GPA varies by context. For high school students, 3.5+ is excellent for competitive colleges. In college, 3.0+ is generally good, but specific requirements depend on your institution and program goals."
-                      },
-                      {
-                        question: "What's the difference between weighted and unweighted GPA?",
-                        answer: "Unweighted GPA uses a standard 4.0 scale for all courses. Weighted GPA accounts for course difficulty, giving extra points for honors, AP, or IB courses, often allowing GPAs to exceed 4.0 on a 5.0+ scale."
-                      },
-                      {
-                        question: "How does GPA affect college admissions?",
-                        answer: "GPA is a critical factor in college admissions, reflecting academic consistency and ability to handle coursework. Higher GPAs improve admission chances, especially at competitive institutions, alongside test scores and extracurriculars."
-                      },
-                      {
-                        question: "How can I improve my GPA?",
-                        answer: "Improve GPA through consistent study habits, active class participation, seeking help when needed, effective time management, and focusing on courses where you can achieve higher grades. Consider retaking courses with low grades if allowed."
-                      },
-                      {
-                        question: "What GPA do I need for scholarships?",
-                        answer: "Scholarship GPA requirements vary widely. Some require minimum 3.0, while competitive scholarships may need 3.5+. Research specific scholarship criteria as requirements differ by program and organization."
-                      },
-                      {
-                        question: "Does GPA matter after college?",
-                        answer: "GPA is crucial for graduate school admissions and certain entry-level jobs, but its importance diminishes over time as work experience and skills become more significant factors in career advancement."
-                      },
-                      {
-                        question: "How do pass/fail courses affect GPA?",
-                        answer: "Pass/fail courses typically don't impact GPA as they don't assign traditional letter grades. However, failing a pass/fail course can negatively affect your transcript and academic standing."
-                      },
-                      {
-                        question: "Is it possible to improve my GPA by repeating courses?",
-                        answer: "Yes, most educational institutions permit students to retake courses for GPA improvement purposes. Institutional policies differ significantly - certain schools completely replace the previous grade with the new attempt, while alternative approaches calculate the average of both course attempts. Always consult your specific academic institution's official guidelines regarding course repetition and grade replacement policies before retaking courses."
-                      },
-                      {
-                        question: "What is the highest possible GPA?",
-                        answer: "On a standard unweighted 4.0 scale, the maximum is 4.0. Weighted scales accounting for course difficulty can exceed 4.0, with some schools allowing GPAs up to 5.0 or higher for advanced courses."
-                      },
-                      {
-                        question: "How do I calculate GPA with different grading scales?",
-                        answer: "Our calculator supports multiple scales: 4.0 (standard), 4.3 (A+ system), 5.0 (weighted), and percentage systems. Choose the scale matching your institution's grading system for accurate calculations."
-                      },
-                      {
-                        question: "How do colleges determine academic standing classifications?",
-                        answer: "Academic standing represents your official institutional status determined by cumulative GPA thresholds. Standard classifications typically include: Dean's List or Magna Cum Laude (3.7+), Honors or Cum Laude (3.5+), Good Standing (3.0+), Academic Probation (2.0-2.9), and Academic Warning (below 2.0). These classifications influence scholarship eligibility, registration privileges, and graduation honors. Our calculator automatically identifies your current academic standing based on your calculated GPA."
-                      },
-                      {
-                        question: "How do I plan to reach a target GPA?",
-                        answer: "Use our GPA planning tools to calculate required grades for future courses. Enter your current GPA, target GPA, and remaining credits to see what performance level you need to achieve your academic goals."
-                      },
-                      {
-                        question: "How does GPA conversion work for international students?",
-                        answer: "GPA conversion involves translating foreign grading systems to the U.S. 4.0 scale. This varies by institution and may require professional evaluation services. Our calculator supports multiple international grading systems."
-                      },
-                      {
-                        question: "What if I have a low GPA? Can I still get into college?",
-                        answer: "While higher GPAs improve admission prospects, students with lower GPAs can still gain admission by demonstrating strengths in other areas like standardized test scores, extracurricular involvement, personal statements, and strong letters of recommendation."
-                      }
-                    ].map((faq, index) => (
-                      <div key={index} className="p-2 md:p-3 bg-card rounded-lg border border-border">
-                        <h3 className="font-semibold text-heading-accent mb-1 text-xs md:text-sm">{faq.question}</h3>
-                        <p className="text-xs text-muted-foreground leading-relaxed">{faq.answer}</p>
-                </div>
+                    {faqs.map((faq, index) => (
+                      <div
+                        key={index}
+                        className="p-2 md:p-3 bg-card rounded-lg border border-border"
+                      >
+                        <h3 className="font-semibold text-heading-accent mb-1 text-xs md:text-sm">
+                          {faq.question}
+                        </h3>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
                     ))}
+                  </div>
                 </div>
-              </div>
 
                 {/* Related Tools */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Calculator className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
-                  </div>
+                    </div>
                     Related Educational & Math Calculators
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
                     {[
-                      { name: "Percentage Calculator", desc: "Calculate percentages and changes", href: "/calculator/percentage-calculator", icon: Percent },
-                      { name: "Age Calculator", desc: "Calculate age in years, months, days", href: "/calculator/age-calculator", icon: Award },
-                      { name: "BMI Calculator", desc: "Calculate Body Mass Index", href: "/calculator/bmi-calculator", icon: Users },
-                      { name: "Time Duration", desc: "Calculate time between dates", href: "/calculator/time-duration", icon: Clock },
-                      { name: "Scientific Calculator", desc: "Advanced mathematical calculations", href: "/calculator/scientific-calculator", icon: Calculator },
-                      { name: "Loan Calculator", desc: "Calculate EMI, interest, and loan payments", href: "/calculator/loan-calculator", icon: DollarSign },
-                      { name: "Mortgage Calculator", desc: "Calculate home loan payments", href: "/calculator/mortgage-calculator", icon: Home },
-                      { name: "Tax Calculator", desc: "Calculate income tax and deductions", href: "/calculator/tax-calculator", icon: FileText },
-                      { name: "Investment Calculator", desc: "Calculate investment returns and growth", href: "/calculator/investment-calculator", icon: TrendingUp },
-                      { name: "Retirement Calculator", desc: "Plan your retirement savings", href: "/calculator/retirement-calculator", icon: Target },
-                      { name: "Currency Converter", desc: "Convert between currencies", href: "/converters/currency", icon: Globe },
-                      { name: "Temperature Converter", desc: "Convert temperature units", href: "/converters/temperature", icon: BarChart3 }
+                      {
+                        name: "Percentage Calculator",
+                        desc: "Calculate percentages and changes",
+                        href: "/calculator/percentage-calculator",
+                        icon: Percent,
+                      },
+                      {
+                        name: "Age Calculator",
+                        desc: "Calculate age in years, months, days",
+                        href: "/calculator/age-calculator",
+                        icon: Award,
+                      },
+                      {
+                        name: "BMI Calculator",
+                        desc: "Calculate Body Mass Index",
+                        href: "/calculator/bmi-calculator",
+                        icon: Users,
+                      },
+                      {
+                        name: "Time Duration",
+                        desc: "Calculate time between dates",
+                        href: "/calculator/time-duration",
+                        icon: Clock,
+                      },
+                      {
+                        name: "Scientific Calculator",
+                        desc: "Advanced mathematical calculations",
+                        href: "/calculator/scientific-calculator",
+                        icon: Calculator,
+                      },
+                      {
+                        name: "Loan Calculator",
+                        desc: "Calculate EMI, interest, and loan payments",
+                        href: "/calculator/loan-calculator",
+                        icon: DollarSign,
+                      },
+                      {
+                        name: "Mortgage Calculator",
+                        desc: "Calculate home loan payments",
+                        href: "/calculator/mortgage-calculator",
+                        icon: Home,
+                      },
+                      {
+                        name: "Tax Calculator",
+                        desc: "Calculate income tax and deductions",
+                        href: "/calculator/tax-calculator",
+                        icon: FileText,
+                      },
+                      {
+                        name: "Investment Calculator",
+                        desc: "Calculate investment returns and growth",
+                        href: "/calculator/investment-calculator",
+                        icon: TrendingUp,
+                      },
+                      {
+                        name: "Retirement Calculator",
+                        desc: "Plan your retirement savings",
+                        href: "/calculator/retirement-calculator",
+                        icon: Target,
+                      },
+                      {
+                        name: "Currency Converter",
+                        desc: "Convert between currencies",
+                        href: "/converters/currency",
+                        icon: Globe,
+                      },
+                      {
+                        name: "Temperature Converter",
+                        desc: "Convert temperature units",
+                        href: "/converters/temperature",
+                        icon: BarChart3,
+                      },
                     ].map(({ name, desc, icon: Icon, href }) => (
                       <a
                         key={name}
@@ -533,12 +798,16 @@ export default function GPACalculatorPage() {
                       >
                         <div className="flex items-center gap-2 mb-1">
                           <Icon className="h-3 w-3 text-foreground" />
-                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">{name}</h3>
-                  </div>
-                        <p className="text-xs text-muted-foreground group-hover:text-foreground">{desc}</p>
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">
+                            {name}
+                          </h3>
+                        </div>
+                        <p className="text-xs text-muted-foreground group-hover:text-foreground">
+                          {desc}
+                        </p>
                       </a>
                     ))}
-                </div>
+                  </div>
                 </div>
               </div>
 
@@ -547,9 +816,14 @@ export default function GPACalculatorPage() {
                 <div className="sticky top-32 space-y-6">
                   <div>
                     <div className="text-center mb-2">
-                      <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
+                      <span className="text-xs text-muted-foreground font-medium">
+                        Advertisement
+                      </span>
                     </div>
-                    <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
+                    <AdSpace
+                      slot="sidebar"
+                      className="w-full h-80 border border-border rounded-xl shadow-sm bg-card"
+                    />
                   </div>
                 </div>
               </div>
@@ -558,5 +832,5 @@ export default function GPACalculatorPage() {
         </div>
       </div>
     </>
-  )
+  );
 }

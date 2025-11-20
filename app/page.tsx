@@ -41,8 +41,8 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "FastTools - Free Online Tools Store | Digital Tools, AI Generator, Calculator, Converter & SEO Tools",
-  description: "FastTools is a free online tools store offering 1000+ digital tools including AI generators, calculators, converters, SEO tools, image tools, developer tools, and productivity utilities. Fast, accurate, easy to use digital tools with no registration required. Access tools store online for instant results.",
+  title: "Free Online Tools Store | Digital Tools, AI & Calculators",
+  description: "1000+ free online tools: AI generators, calculators, converters, SEO tools, image tools & more. Fast, accurate, no registration required.",
   keywords: [
     "fasttools",
     "fast tools",
@@ -1920,6 +1920,52 @@ const categories = [
         href: "/social-media-tools/link-in-bio",
         icon: Globe,
         badge: "Creator",
+        badgeColor: "bg-purple-500/90",
+      },
+    ],
+  },
+  {
+    id: "finance-tools",
+    name: "Finance Tools",
+    description: "Business-ready calculators for payments, savings, and planning",
+    icon: DollarSign,
+    href: "/finance-tools",
+    borderColor: "border-border",
+    hoverBorder: "hover:border-border",
+    iconBg: "bg-emerald-500/20",
+    iconColor: "text-foreground",
+    glowColor: "hover:shadow-emerald-500/20",
+    tools: [
+      {
+        title: "Invoice Generator",
+        description: "Create professional invoices with automatic taxes, discounts, and PDF export in seconds",
+        href: "/finance-tools/invoice-generator",
+        icon: FileText,
+        badge: "Business",
+        badgeColor: "bg-primary/90",
+      },
+      {
+        title: "PayPal Fee Calculator",
+        description: "Calculate net payouts and required charges after PayPal fees for domestic and international payments",
+        href: "/finance-tools/paypal-fee",
+        icon: DollarSign,
+        badge: "Payments",
+        badgeColor: "bg-emerald-500/90",
+      },
+      {
+        title: "Savings Goal Tracker",
+        description: "Plan and track savings milestones with projections for vacations, emergency funds, or big purchases",
+        href: "/finance-tools/savings-tracker",
+        icon: TrendingUp,
+        badge: "Savings",
+        badgeColor: "bg-heading-accent/90",
+      },
+      {
+        title: "Bill Splitter",
+        description: "Split expenses fairly among friends or teams with tip support and customizable contributions",
+        href: "/finance-tools/bill-splitter",
+        icon: Users,
+        badge: "Groups",
         badgeColor: "bg-purple-500/90",
       },
     ],

@@ -7,9 +7,9 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: "FastTools - Meta Tag Generator | Free SEO Meta Tags Generator",
+  title: "Meta Tag Generator | Free SEO Meta Tags Generator",
   description:
-    "FastTools Meta Tag Generator - Professional meta tag generator for SEO. Create title tags, meta descriptions, Open Graph tags, Twitter cards. Improve search rankings instantly.",
+    "Professional meta tag generator for SEO. Create title tags, meta descriptions, Open Graph tags & Twitter cards. Improve search rankings instantly.",
   keywords: [
     "fasttools",
     "fast tools",

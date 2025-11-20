@@ -7,9 +7,9 @@ import { GHeader } from "@/components/globalcomponents/gheader"
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.fasttools.store"),
-    title: "Blur Image Background Online Free - AI Photo Background Blur Tool | No App",
+    title: "Blur Image Background Online | Free AI Photo Blur Tool",
     description:
-        "Blur picture background online instantly with AI - no app needed! Create background blur pics, portrait mode & DSLR bokeh effects in seconds. Free tool for iPhone, Android & desktop. Better than Photoshop, Canva, CapCut - no watermarks!",
+        "Blur image backgrounds online instantly with AI. Create portrait mode & DSLR bokeh effects. Free tool for iPhone, Android & desktop. No watermarks.",
     keywords: [
         // High volume primary keywords
         "image background blur",

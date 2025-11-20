@@ -33,6 +33,8 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
     ],
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
@@ -207,9 +209,10 @@ export const metadata: Metadata = {
             {/*)}*/}
             
             <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
-            <link rel="icon" href="/favicon.ico" sizes="any"/>
-            <link rel="shortcut icon" href="/favicon.ico"/>
-            <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180"/>
+            <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+            <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+            <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
+            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
             
             <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5"/>
             

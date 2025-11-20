@@ -18,8 +18,8 @@ import { getCurrentYear } from "@/lib/utils"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fasttools.store"),
-  title: `FastTools - PayPal Fee Calculator | Free Calculate PayPal Fees (${getCurrentYear()})`,
-  description: "FastTools PayPal Fee Calculator - Calculate PayPal fees instantly for domestic or international payments. Know exactly how much you'll receive or need to send. Free & supports all currencies.",
+  title: `PayPal Fee Calculator | Free Calculate PayPal Fees (${getCurrentYear()})`,
+  description: "Calculate PayPal fees instantly for domestic or international payments. Know exactly how much you'll receive or need to send. Free & supports all currencies.",
   keywords: [
     "fasttools",
     "fast tools",
