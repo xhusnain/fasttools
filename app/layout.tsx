@@ -189,22 +189,22 @@ export const metadata: Metadata = {
               </>
             )}
             
-            {env.isProduction && (
-              <script
-                  dangerouslySetInnerHTML={{
-                      __html: `
-                          (function() {
-                            var s = document.createElement('script');
-                            s.type = 'text/javascript';
-                            s.async = true;
-                            s.src = "https://tracker.clickfortify.com/cdn/spcZrjg3d1d/wstSb2fQc7v";
-                            var x = document.getElementsByTagName('script')[0];
-                            x.parentNode.insertBefore(s, x);
-                          })();
-                      `,
-                  }}
-              />
-            )}
+            {/*{env.isProduction && (*/}
+            {/*  <script*/}
+            {/*      dangerouslySetInnerHTML={{*/}
+            {/*          __html: `*/}
+            {/*              (function() {*/}
+            {/*                var s = document.createElement('script');*/}
+            {/*                s.type = 'text/javascript';*/}
+            {/*                s.async = true;*/}
+            {/*                s.src = "https://tracker.clickfortify.com/cdn/spcZrjg3d1d/wstSb2fQc7v";*/}
+            {/*                var x = document.getElementsByTagName('script')[0];*/}
+            {/*                x.parentNode.insertBefore(s, x);*/}
+            {/*              })();*/}
+            {/*          `,*/}
+            {/*      }}*/}
+            {/*  />*/}
+            {/*)}*/}
             
             <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
             <link rel="icon" href="/favicon.ico" sizes="any"/>
