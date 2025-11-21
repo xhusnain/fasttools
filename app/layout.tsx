@@ -7,12 +7,12 @@ import { GlobalLoading } from "@/components/global-loading"
 import { ThemeProvider } from "@/components/theme-provider"
 import Script from "next/script"
 import { env } from "@/lib/env"
-import { createMetadata, globalViewport } from "@/lib/metadata-base"
+import { createMetadata, globalViewport, getWebsiteSchema } from "@/lib/metadata-base"
 
 export const viewport = globalViewport
 
 export const metadata = createMetadata({
-  title: "FastTools - 1000+ Free Online Tools | AI, PDF, Image, Social Media & More",
+  title: "FastTools",
   description: "FastTools provides 1000+ free online tools: YouTube downloader, PDF tools (compress, convert, sign, merge), image tools (background remover, blur, OCR), calculators (BMI, loan, tax), AI generators, social media tools, SEO tools, converters, and developer utilities. 100% free, no registration, works on all devices.",
   path: "/",
 })
@@ -111,18 +111,7 @@ export const metadata = createMetadata({
         }
       }
 
-      const websiteSchema = {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        name: "FastTools",
-        alternateName: ["fasttools", "fast tools", "fasttools.store"],
-        url: "https://www.fasttools.store/",
-        potentialAction: {
-          "@type": "SearchAction",
-          target: "https://www.fasttools.store/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }
+      const websiteSchema = getWebsiteSchema()
     
   return (
     <html lang="en" className="antialiased" suppressHydrationWarning>
