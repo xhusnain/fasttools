@@ -5,50 +5,19 @@ import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { Download, Shield, Zap, Target, AlertCircle, Music, Clock, FileText, ExternalLink, Instagram, Video, Facebook, MessageSquare, List, CheckCircle2 } from "lucide-react"
 import { getCurrentYear } from "@/lib/utils"
+import { createMetadata } from "@/lib/metadata-base"
 import Link from "next/link"
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
+export const metadata = createMetadata({
   title: "YouTube Downloader | 4K/1080p/MP3 Free & Safe",
   description: "Download YouTube videos & playlists in 4K, 1080p HD or MP3 format. 100% free, no ads, no watermark, completely safe. Works on all devices.",
-
-  openGraph: {
-    title: "YouTube Downloader & Playlist Downloader - 4K/1080p/MP3 | Free & Safe",
-    description: "Download YouTube videos and entire playlists in 4K, 1080p HD, or MP3 format. 100% free, no ads, no watermark, completely safe. Download 100+ videos from playlists in minutes. Works on PC, Android, iPhone - no software required.",
-    url: "https://www.fasttools.store/social-media-tools/youtube-downloader",
-    siteName: "FastTools",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "YouTube Downloader - 4K/1080p/MP3 | Free & Safe",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "YouTube Downloader & Playlist Downloader - 4K/1080p/MP3 | Free & Safe",
-    description: "Download YouTube videos and entire playlists in 4K, 1080p HD, or MP3 format. 100% free, no ads, no watermark, completely safe. Download 100+ videos from playlists in minutes. Works on PC, Android, iPhone - no software required.",
-    images: ["https://www.fasttools.store/og-image.png"],
-  },
-  alternates: {
-    canonical: "https://www.fasttools.store/social-media-tools/youtube-downloader",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-}
+  path: "/social-media-tools/youtube-downloader",
+  ogTitle: "YouTube Downloader & Playlist Downloader - 4K/1080p/MP3 | Free & Safe",
+  ogDescription: "Download YouTube videos and entire playlists in 4K, 1080p HD, or MP3 format. 100% free, no ads, no watermark, completely safe. Download 100+ videos from playlists in minutes. Works on PC, Android, iPhone - no software required.",
+  ogImageAlt: "YouTube Downloader - 4K/1080p/MP3 | Free & Safe",
+  twitterTitle: "YouTube Downloader & Playlist Downloader - 4K/1080p/MP3 | Free & Safe",
+  twitterDescription: "Download YouTube videos and entire playlists in 4K, 1080p HD, or MP3 format. 100% free, no ads, no watermark, completely safe. Download 100+ videos from playlists in minutes. Works on PC, Android, iPhone - no software required.",
+})
 
 export default function YoutubeDownloaderPage() {
   const currentDate = new Date().toISOString().split('T')[0]

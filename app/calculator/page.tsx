@@ -31,103 +31,15 @@ import {
   Search,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
-import type { Metadata } from "next"
+import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Online Calculators | 50+ Free Tools",
   description:
     "Explore 50+ free online calculators: loan, mortgage, percentage, tax, BMI/BMR, calorie, date difference, and more—fast, accurate, and no signup.",
-  authors: [{ name: "FastTools Team", url: "https://www.fasttools.store" }],
-  creator: "FastTools",
-  publisher: "FastTools",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL("https://www.fasttools.store"),
-  applicationName: "FastTools",
-  referrer: "origin-when-cross-origin",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://www.fasttools.store/calculator",
-    siteName: "FastTools - Free Online Tools Store",
-    title: "Online Calculators | 50+ Free Tools | FastTools",
-    description:
-      "Explore 50+ free online calculators: loan, mortgage, percentage, tax, BMI/BMR, calorie, date difference, and more—fast, accurate, and no signup.",
-    images: [
-      {
-        url: "https://www.fasttools.store/banner.png",
-        width: 1200,
-        height: 630,
-        alt: "FastTools - Free Online Calculators | 50+ Professional Calculation Tools",
-        type: "image/png",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@ZamanIsmail7",
-    creator: "@ZamanIsmail7",
-    title: "Online Calculators | 50+ Free Tools | FastTools",
-    description:
-      "Explore 50+ free online calculators: loan, mortgage, percentage, tax, BMI/BMR, calorie, date difference, and more—fast, accurate, and no signup.",
-    images: [
-      {
-        url: "https://www.fasttools.store/banner.png",
-        width: 1200,
-        height: 630,
-        alt: "FastTools - Free Online Calculators | 50+ Professional Calculation Tools",
-      },
-    ],
-  },
-  icons: {
-    icon: [
-      { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/favicon-512.png", sizes: "512x512", type: "image/png" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/logo.svg",
-        color: "#2563eb",
-      },
-    ],
-  },
-  manifest: "/manifest.json",
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: "FastTools",
-  },
-  itunes: {
-    appId: "your-app-id",
-    appArgument: "https://www.fasttools.store/calculator",
-  },
-  alternates: {
-    canonical: "https://www.fasttools.store/calculator",
-    languages: {
-      "en-US": "/calculator",
-      "en": "/calculator",
-      "x-default": "/calculator",
-    },
-  },
-}
+  path: "/calculator",
+  ogImageAlt: "FastTools - Free Online Calculators | 50+ Professional Calculation Tools",
+})
 
 export default function ToolsPage() {
   const colorMap = {

@@ -4,16 +4,12 @@ import { YoutubeChannelChecker } from "@/components/youtube-channel-checker"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { Link, Zap, Target, Shield, Globe, Clock, FileText, Hash, Lightbulb, Copy, Users, Code, Download, ExternalLink, Palette, BarChart3, Smartphone, Settings, Eye } from "lucide-react"
+import { createMetadata, getCurrentYear } from "@/lib/metadata-base"
 
-// Function to get current year dynamically
-function getCurrentYear(): number {
-  return new Date().getFullYear()
-}
-
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
-  title: `FastTools - YouTube Channel Name Checker | Free Username Availability Tool`,
+export const metadata = createMetadata({
+  title: "YouTube Channel Name Checker | Free Username Availability Tool",
   description: "FastTools YouTube Channel Name Checker - Check if your desired YouTube channel name is available with our free YouTube Channel Name Checker. Instantly verify username availability and find unique channel ideas.",
+  path: "/social-media-tools/channel-checker",
   keywords: [
     "fasttools",
     "fast tools",
@@ -59,43 +55,12 @@ export const metadata: Metadata = {
     "how to check youtube channel name availability",
     "youtube channel name available checker"
   ],
-  openGraph: {
-    title: `YouTube Channel Name Checker | FastTools`,
-    description: "Check if your desired YouTube channel name is available with our free YouTube Channel Name Checker. Instantly verify username availability, find unique channel ideas, and secure your perfect YouTube handle in seconds.",
-    url: "https://www.fasttools.store/social-media-tools/channel-checker",
-    siteName: "FastTools",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: `YouTube Channel Name Checker | FastTools`,
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `YouTube Channel Name Checker | FastTools`,
-    description: "Check if your desired YouTube channel name is available with our free YouTube Channel Name Checker. Instantly verify username availability, find unique channel ideas, and secure your perfect YouTube handle in seconds.",
-    images: ["https://www.fasttools.store/og-image.png"],
-  },
-  alternates: {
-    canonical: "https://www.fasttools.store/social-media-tools/channel-checker",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-}
+  ogTitle: "YouTube Channel Name Checker | FastTools",
+  ogDescription: "Check if your desired YouTube channel name is available with our free YouTube Channel Name Checker. Instantly verify username availability, find unique channel ideas, and secure your perfect YouTube handle in seconds.",
+  ogImageAlt: "YouTube Channel Name Checker | FastTools",
+  twitterTitle: "YouTube Channel Name Checker | FastTools",
+  twitterDescription: "Check if your desired YouTube channel name is available with our free YouTube Channel Name Checker. Instantly verify username availability, find unique channel ideas, and secure your perfect YouTube handle in seconds.",
+})
 
 export default function ChannelCheckerPage() {
   const jsonLd = {

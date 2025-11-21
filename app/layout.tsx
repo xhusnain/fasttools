@@ -5,78 +5,17 @@ import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
 import { GlobalLoading } from "@/components/global-loading"
 import { ThemeProvider } from "@/components/theme-provider"
-import type { Metadata, Viewport } from "next"
 import Script from "next/script"
 import { env } from "@/lib/env"
+import { createMetadata, globalViewport } from "@/lib/metadata-base"
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
-  title: {
-    template: "%s | FastTools",
-    default: "FastTools",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    shortcut: "/favicon.ico",
-  },
-  manifest: "/manifest.json",
-  verification: {
-    google: "l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0",
-    yandex: "242a8cf232328714",
-  },
-  other: {
-    "mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-status-bar-style": "black-translucent",
-    "apple-mobile-web-app-title": "fasttools",
-    "application-name": "fasttools",
-    "msapplication-TileColor": "#3D348B",
-    "msapplication-navbutton-color": "#3D348B",
-    "msapplication-config": "/browserconfig.xml",
-    "msapplication-tap-highlight": "no",
-    "google-site-verification": "l2XEjZ8SEN_FD96ft9mIUW8cPiLW4mDbX6wZabF-xv0",
-    "yandex-verification": "242a8cf232328714",
-    "msvalidate.01": "DE0A07DC9E742C4C8E795D7C99EF238B",
-    "p:domain_verify": "603c992f6d70753cf89c1a0141990c73",
-    "facebook-domain-verification": "m4jw5d6c1jsteghq2xo00wflvif79x",
-    "google-adsense-account": "ca-pub-6296569221534302",
-  },
-}
+export const viewport = globalViewport
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 5,
-  viewportFit: "cover",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#3D348B" },
-    { media: "(prefers-color-scheme: dark)", color: "#3D348B" },
-  ],
-  colorScheme: "dark light",
-}
+export const metadata = createMetadata({
+  title: "FastTools - 1000+ Free Online Tools | AI, PDF, Image, Social Media & More",
+  description: "FastTools provides 1000+ free online tools: YouTube downloader, PDF tools (compress, convert, sign, merge), image tools (background remover, blur, OCR), calculators (BMI, loan, tax), AI generators, social media tools, SEO tools, converters, and developer utilities. 100% free, no registration, works on all devices.",
+  path: "/",
+})
 
     export default function RootLayout({
       children,
