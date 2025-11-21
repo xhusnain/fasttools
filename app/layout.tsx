@@ -17,102 +17,102 @@ export const metadata = createMetadata({
   path: "/",
 })
 
-    export default function RootLayout({
-      children,
-    }: {
-      children: React.ReactNode
-    }) {
-      const organizationSchema = {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        name: "FastTools",
-        alternateName: ["fasttools", "fast tools", "fasttools.store"],
-        url: "https://www.fasttools.store",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.fasttools.store/logo.png",
-          width: 500,
-          height: 500,
-          description: "FastTools professional logo with modern FT symbol and blue gradient"
-        },
-        image: "https://www.fasttools.store/banner.png",
-        description: "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, easy to use, no registration required.",
-        foundingDate: "2024",
-        sameAs: [
-          "https://x.com/ZamanIsmail7",
-          "https://www.facebook.com/profile.php?id=61582711433268",
-          "https://www.youtube.com/@fasttools_official",
-          "https://www.linkedin.com/company/fasttools/?viewAsMember=true"
-        ],
-        contactPoint: {
-          "@type": "ContactPoint",
-          contactType: "customer service",
-          email: "support@fasttools.store",
-          availableLanguage: "English"
-        },
-        address: {
-          "@type": "PostalAddress",
-          addressCountry: "US"
-        },
-        knowsAbout: [
-          "Online Tools",
-          "AI Content Generation", 
-          "Web Development Tools",
-          "Digital Conversion Tools",
-          "Business Productivity Tools", 
-          "SEO Optimization",
-          "Image Processing",
-          "Financial Calculators",
-          "Social Media Tools",
-          "Developer Utilities",
-          "Free Web Tools",
-          "Digital Productivity",
-          "Online Calculators",
-          "Web Utilities",
-          "Browser Tools",
-          "Instant Tools",
-          "Cloud Tools",
-          "Digital Solutions",
-          "Online Services",
-          "Web Services",
-          "Digital Platform",
-          "Online Platform",
-          "Web Platform",
-          "Digital Toolkit",
-          "Professional Tools",
-          "Business Tools",
-          "Marketing Tools",
-          "Content Creation Tools",
-          "Workflow Tools",
-          "Automation Tools",
-          "Digital Resources",
-          "Online Resources",
-          "Web Resources",
-          "Digital Assets",
-          "Online Assets",
-          "Web Assets"
-        ],
-        makesOffer: {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Free Online Tools",
-            description: "Comprehensive collection of free online tools and utilities"
-          },
-          price: "0",
-          priceCurrency: "USD"
-        },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.8",
-          ratingCount: "1250",
-          bestRating: "5",
-          worstRating: "1"
-        }
-      }
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "FastTools",
+    alternateName: ["fasttools", "fast tools", "fasttools.store"],
+    url: "https://www.fasttools.store",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.fasttools.store/logo.png",
+      width: 500,
+      height: 500,
+      description: "FastTools professional logo with modern FT symbol and blue gradient",
+    },
+    image: "https://www.fasttools.store/banner.png",
+    description: "FastTools offers 1000+ free online tools including AI generators, converters, calculators, SEO tools, and productivity utilities. Fast, accurate, easy to use, no registration required.",
+    foundingDate: "2024",
+    sameAs: [
+      "https://x.com/ZamanIsmail7",
+      "https://www.facebook.com/profile.php?id=61582711433268",
+      "https://www.youtube.com/@fasttools_official",
+      "https://www.linkedin.com/company/fasttools/?viewAsMember=true",
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      email: "support@fasttools.store",
+      availableLanguage: "English",
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "US",
+    },
+    knowsAbout: [
+      "Online Tools",
+      "AI Content Generation",
+      "Web Development Tools",
+      "Digital Conversion Tools",
+      "Business Productivity Tools",
+      "SEO Optimization",
+      "Image Processing",
+      "Financial Calculators",
+      "Social Media Tools",
+      "Developer Utilities",
+      "Free Web Tools",
+      "Digital Productivity",
+      "Online Calculators",
+      "Web Utilities",
+      "Browser Tools",
+      "Instant Tools",
+      "Cloud Tools",
+      "Digital Solutions",
+      "Online Services",
+      "Web Services",
+      "Digital Platform",
+      "Online Platform",
+      "Web Platform",
+      "Digital Toolkit",
+      "Professional Tools",
+      "Business Tools",
+      "Marketing Tools",
+      "Content Creation Tools",
+      "Workflow Tools",
+      "Automation Tools",
+      "Digital Resources",
+      "Online Resources",
+      "Web Resources",
+      "Digital Assets",
+      "Online Assets",
+      "Web Assets",
+    ],
+    makesOffer: {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Free Online Tools",
+        description: "Comprehensive collection of free online tools and utilities",
+      },
+      price: "0",
+      priceCurrency: "USD",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      ratingCount: "1250",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  }
 
-      const websiteSchema = getWebsiteSchema()
-    
+  const websiteSchema = getWebsiteSchema()
+
   return (
     <html lang="en" className="antialiased" suppressHydrationWarning>
       <body className="bg-background font-sans text-foreground">
@@ -165,4 +165,4 @@ export const metadata = createMetadata({
       </body>
     </html>
   )
-    }
+}
