@@ -3,64 +3,19 @@ import { CompoundInterestChart } from "@/components/compound-interest-chart"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import { 
-  Calculator, Globe, DollarSign, TrendingUp, BarChart3, 
-  PieChart, Target, Building, Users, Award, 
+import {
+  Calculator, Globe, DollarSign, TrendingUp, BarChart3,
+  PieChart, Target, Building, Users, Award,
   BookOpen, Zap, Info, CheckCircle2, Star, Shield, AlertCircle
 } from "lucide-react"
-import type { Metadata } from "next"
+import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata: Metadata = {
-    title: "Free Compound Interest Calculator Online | Investment & SIP Calculator 2024 | FastTools",
+export const metadata = createMetadata({
+  title: "Free Compound Interest Calculator Online | Investment & SIP Calculator",
   description:
     "Best free compound interest calculator online for 2024. Calculate compound interest for SIP, fixed deposits, savings, retirement, loans. Supports India, UK, Canada, Australia with daily, monthly, quarterly, annual compounding. Features visual charts, Rule of 72, 50+ examples, and comprehensive financial planning tools.",
-  openGraph: {
-        title: "Free Compound Interest Calculator Online | Investment & SIP Calculator 2024 | FastTools",
-  description:
-    "Best free compound interest calculator online for 2024. Calculate compound interest for SIP, fixed deposits, savings, retirement, loans. Supports India, UK, Canada, Australia with daily, monthly, quarterly, annual compounding. Features visual charts, Rule of 72, and 50+ examples.",
-    type: "website",
-    url: "https://www.fasttools.store/calculator/compound-interest",
-    siteName: "FastTools",
-    images: [
-      {
-                url: "https://www.fasttools.store/og-compound-interest-calculator.jpg",
-        width: 1200,
-        height: 630,
-                alt: "Free Online Compound Interest Calculator - FastTools",
-            },
-        ],
-  },
-  twitter: {
-    card: "summary_large_image",
-        title: "Free Compound Interest Calculator Online | Investment & SIP Calculator 2024 | FastTools",
-  description:
-    "Best free compound interest calculator online for 2024. Calculate compound interest for SIP, fixed deposits, savings, retirement, loans. Supports India, UK, Canada, Australia with daily, monthly, quarterly, annual compounding. Features visual charts, Rule of 72, and 50+ examples.",
-        images: ["https://www.fasttools.store/og-compound-interest-calculator.jpg"],
-  },
-  alternates: {
-        canonical: "https://www.fasttools.store/calculator/compound-interest",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-    },
-    authors: [{ name: "FastTools Investment Team" }],
-    creator: "FastTools",
-    publisher: "FastTools",
-    formatDetection: {
-        email: false,
-        address: false,
-        telephone: false,
-    },
-    metadataBase: new URL("https://www.fasttools.store"),
-};
+  path: "/calculator/compound-interest",
+})
 
 
 export default function CompoundInterestPage() {
@@ -345,16 +300,16 @@ export default function CompoundInterestPage() {
 
       <div className="min-h-screen bg-card">
         <div className="container mx-auto px-3 py-6 md:py-8">
-      <Breadcrumbs
-        items={[
-          { label: "Calculator", href: "/calculator" },
-          { label: "Compound Interest Calculator", href: "/calculator/compound-interest" },
-        ]}
-      />
+          <Breadcrumbs
+            items={[
+              { label: "Calculator", href: "/calculator" },
+              { label: "Compound Interest Calculator", href: "/calculator/compound-interest" },
+            ]}
+          />
 
           <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
-              <GHeader 
+              <GHeader
                 title="Free Online Compound Interest Calculator"
                 description="Use our free compound interest calculator online to calculate how your money grows over time. This comprehensive investment growth calculator helps you calculate compound interest for SIP, fixed deposits, savings accounts, retirement planning, and long-term investments. Whether you need a monthly compound interest calculator, daily compound interest calculator, quarterly compound interest calculator, or annual compound interest calculator, our tool supports all compounding frequencies. Perfect for compound interest calculator India, UK, Canada, Australia, and 9+ countries. Enter your principal amount, interest rate, time period, and compounding frequency to see your total interest earned and final balance with detailed yearly breakdowns."
                 titleSize="medium"
@@ -367,11 +322,11 @@ export default function CompoundInterestPage() {
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
               </div>
               <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
-        </div>
+            </div>
 
             <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
               <div>
-            <CompoundInterestCalculator />
+                <CompoundInterestCalculator />
 
                 {/* Visual Growth Chart - Compound vs Simple Interest */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4">
@@ -568,7 +523,7 @@ export default function CompoundInterestPage() {
                     </div>
                     Understanding Compound Interest: A Complete Guide
                   </h2>
-                  
+
                   {/* Sub-intent: What is compound interest? */}
                   <div className="space-y-3 text-xs md:text-sm text-muted-foreground leading-relaxed">
                     <div>
@@ -612,9 +567,9 @@ export default function CompoundInterestPage() {
 
                     <div className="mt-4 pt-3 border-t border-border">
                       <p className="text-xs text-muted-foreground">
-                        <strong className="text-foreground">Last Updated:</strong> {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} | 
-                        <strong className="text-foreground"> Author:</strong> FastTools Investment Team | 
-                        <strong className="text-foreground"> Expertise:</strong> Financial Planning & Investment Analysis | 
+                        <strong className="text-foreground">Last Updated:</strong> {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} |
+                        <strong className="text-foreground"> Author:</strong> FastTools Investment Team |
+                        <strong className="text-foreground"> Expertise:</strong> Financial Planning & Investment Analysis |
                         <strong className="text-foreground"> Reviewed by:</strong> CFA-certified financial analysts
                       </p>
                     </div>
@@ -626,9 +581,9 @@ export default function CompoundInterestPage() {
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Calculator className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
-                </div>
+                    </div>
                     How to Use Our Compound Interest Calculator: Step-by-Step Guide
-              </h2>
+                  </h2>
                   <p className="text-xs md:text-sm text-muted-foreground mb-3">
                     Here's a simple, step-by-step process to calculate compound interest using our free online calculator. Follow these steps to get accurate results for any investment scenario.
                   </p>
@@ -636,79 +591,79 @@ export default function CompoundInterestPage() {
                     <div className="flex items-start gap-2">
                       <div className="p-1 bg-heading-accent-border/10 rounded-lg">
                         <span className="text-foreground font-bold text-xs">1</span>
-                  </div>
-                  <div>
+                      </div>
+                      <div>
                         <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Select Your Country</h3>
                         <p className="text-xs text-muted-foreground">Choose from 9+ countries with real interest rates</p>
-                  </div>
-                </div>
+                      </div>
+                    </div>
                     <div className="flex items-start gap-2">
                       <div className="p-1 bg-heading-accent-border/10 rounded-lg">
                         <span className="text-foreground font-bold text-xs">2</span>
-                  </div>
-                  <div>
+                      </div>
+                      <div>
                         <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Enter Principal Amount</h3>
                         <p className="text-xs text-muted-foreground">Input your initial investment amount</p>
-                  </div>
-                </div>
+                      </div>
+                    </div>
                     <div className="flex items-start gap-2">
                       <div className="p-1 bg-heading-accent-border/10 rounded-lg">
                         <span className="text-foreground font-bold text-xs">3</span>
-                  </div>
-                  <div>
+                      </div>
+                      <div>
                         <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Set Time Period</h3>
                         <p className="text-xs text-muted-foreground">Specify how long you plan to invest</p>
-                  </div>
-                </div>
+                      </div>
+                    </div>
                     <div className="flex items-start gap-2">
                       <div className="p-1 bg-heading-accent-border/10 rounded-lg">
                         <span className="text-foreground font-bold text-xs">4</span>
-                  </div>
-                  <div>
+                      </div>
+                      <div>
                         <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Choose Compounding Frequency</h3>
                         <p className="text-xs text-muted-foreground">Select how often interest compounds</p>
-                  </div>
-                </div>
+                      </div>
+                    </div>
                     <div className="flex items-start gap-2">
                       <div className="p-1 bg-heading-accent-border/10 rounded-lg">
                         <span className="text-foreground font-bold text-xs">5</span>
-                  </div>
-                  <div>
+                      </div>
+                      <div>
                         <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Get Comprehensive Results</h3>
                         <p className="text-xs text-muted-foreground">View detailed breakdown and yearly analysis</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Supported Countries */}
+                {/* Supported Countries */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Globe className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
-                </div>
-                Supported Countries & Interest Rates
-              </h2>
+                    </div>
+                    Supported Countries & Interest Rates
+                  </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
-                {[
-                  { country: "United States", currency: "USD", rate: "7.0%", description: "Federal Reserve rates" },
-                  { country: "United Kingdom", currency: "GBP", rate: "6.5%", description: "Bank of England rates" },
-                  { country: "Canada", currency: "CAD", rate: "6.8%", description: "Bank of Canada rates" },
-                  { country: "Australia", currency: "AUD", rate: "7.2%", description: "Reserve Bank rates" },
-                  { country: "Germany", currency: "EUR", rate: "5.8%", description: "ECB rates" },
-                  { country: "France", currency: "EUR", rate: "5.5%", description: "ECB rates" },
-                  { country: "Japan", currency: "JPY", rate: "3.5%", description: "Bank of Japan rates" },
-                  { country: "India", currency: "INR", rate: "8.5%", description: "RBI rates" },
-                  { country: "Pakistan", currency: "PKR", rate: "15.0%", description: "SBP rates" }
-                ].map((country, index) => (
+                    {[
+                      { country: "United States", currency: "USD", rate: "7.0%", description: "Federal Reserve rates" },
+                      { country: "United Kingdom", currency: "GBP", rate: "6.5%", description: "Bank of England rates" },
+                      { country: "Canada", currency: "CAD", rate: "6.8%", description: "Bank of Canada rates" },
+                      { country: "Australia", currency: "AUD", rate: "7.2%", description: "Reserve Bank rates" },
+                      { country: "Germany", currency: "EUR", rate: "5.8%", description: "ECB rates" },
+                      { country: "France", currency: "EUR", rate: "5.5%", description: "ECB rates" },
+                      { country: "Japan", currency: "JPY", rate: "3.5%", description: "Bank of Japan rates" },
+                      { country: "India", currency: "INR", rate: "8.5%", description: "RBI rates" },
+                      { country: "Pakistan", currency: "PKR", rate: "15.0%", description: "SBP rates" }
+                    ].map((country, index) => (
                       <div key={index} className="p-2 md:p-3 bg-card rounded-lg border border-border">
                         <h3 className="font-semibold text-heading-accent text-xs md:text-sm">{country.country}</h3>
                         <p className="text-xs text-muted-foreground mb-1">{country.currency} • {country.rate}</p>
                         <p className="text-xs text-foreground">{country.description}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
 
                 {/* Compound Interest Types */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
@@ -740,10 +695,10 @@ export default function CompoundInterestPage() {
                         </div>
                         <p className="text-xs text-muted-foreground mb-1 leading-relaxed">{desc}</p>
                         <p className="text-xs text-foreground font-mono bg-primary/10 px-1.5 py-0.5 rounded">{example}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
 
                 {/* Trust Signals & Authority Section */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4">
@@ -1311,17 +1266,17 @@ export default function CompoundInterestPage() {
                     <p>
                       <strong className="text-foreground">Advanced features:</strong> Our calculator supports <strong className="text-foreground">compound interest calculator reverse</strong> (calculate principal from final amount), <strong className="text-foreground">compound interest calculator with tax</strong> adjustments, and <strong className="text-foreground">compound interest calculator inflation adjusted</strong> returns.
                     </p>
-              </div>
-            </div>
+                  </div>
+                </div>
 
-            {/* Advanced Features */}
+                {/* Advanced Features */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <TrendingUp className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
-                </div>
-                Advanced Calculation Features & Investment Planning Tools
-              </h2>
+                    </div>
+                    Advanced Calculation Features & Investment Planning Tools
+                  </h2>
                   <p className="text-xs md:text-sm text-muted-foreground mb-3 leading-relaxed">
                     Our compound interest calculator provides advanced features for comprehensive financial planning. Use this investment planning calculator and financial planning tool to create detailed investment growth projections, analyze compound interest returns, and plan for long-term wealth accumulation.
                   </p>
@@ -1331,7 +1286,7 @@ export default function CompoundInterestPage() {
                         <div className="p-1 bg-heading-accent-border/10 rounded-lg">
                           <BarChart3 className="h-3 w-3 text-foreground" />
                         </div>
-                <div>
+                        <div>
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Yearly Breakdown & Compound Interest Table</h3>
                           <p className="text-xs text-muted-foreground">Get detailed year-by-year growth analysis with our compound interest table calculator. See how your investment grows each year, track compound interest growth over years, and understand the progression of your savings compound interest projection.</p>
                         </div>
@@ -1339,13 +1294,13 @@ export default function CompoundInterestPage() {
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-heading-accent-border/10 rounded-lg">
                           <PieChart className="h-3 w-3 text-foreground" />
-                </div>
-                <div>
+                        </div>
+                        <div>
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Effective Annual Rate & Compound Interest Rate Formula</h3>
                           <p className="text-xs text-muted-foreground">Calculate effective annual interest rate using the compound interest rate formula. Our calculator shows the true return on your investment, accounting for compounding frequency and helping you understand compound interest rate growth.</p>
-                </div>
-              </div>
-            </div>
+                        </div>
+                      </div>
+                    </div>
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-heading-accent-border/10 rounded-lg">
@@ -1355,26 +1310,26 @@ export default function CompoundInterestPage() {
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Custom Interest Rates & Compound Interest Calculator with Interest Rate</h3>
                           <p className="text-xs text-muted-foreground">Override with your own interest rates using our compound interest calculator with interest rate feature. Perfect for calculating compound interest with principal and rate for specific investment scenarios, loans, or savings accounts.</p>
                         </div>
-                </div>
+                      </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-heading-accent-border/10 rounded-lg">
                           <Building className="h-3 w-3 text-heading-accent" />
-                </div>
+                        </div>
                         <div>
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Educational Content & Compound Interest Learning</h3>
                           <p className="text-xs text-muted-foreground">Learn about compound interest concepts with our comprehensive compound interest tutorial and guide. Perfect for compound interest for beginners, students learning financial literacy, and anyone wanting to understand how to calculate compound interest manually using the compound interest formula example.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
                 {/* FAQ Section */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Info className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
-                  </div>
+                    </div>
                     Frequently Asked Questions
                   </h2>
                   <div className="space-y-2 md:space-y-3">
@@ -1591,17 +1546,17 @@ export default function CompoundInterestPage() {
                       <div key={index} className="p-2 md:p-3 bg-card rounded-lg border border-border">
                         <h3 className="font-semibold text-heading-accent mb-1 text-xs md:text-sm">{faq.question}</h3>
                         <p className="text-xs text-muted-foreground leading-relaxed">{faq.answer}</p>
-                </div>
+                      </div>
                     ))}
+                  </div>
                 </div>
-              </div>
 
                 {/* Related Tools Section - Entity Relationships */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Calculator className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
-                  </div>
+                    </div>
                     Related Financial & Investment Tools
                   </h2>
                   <p className="text-xs md:text-sm text-muted-foreground mb-3">
@@ -1628,11 +1583,11 @@ export default function CompoundInterestPage() {
                         <div className="flex items-center gap-2 mb-1">
                           <Icon className="h-3 w-3 text-heading-accent" />
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm">{name}</h3>
-                  </div>
+                        </div>
                         <p className="text-xs text-muted-foreground group-hover:text-foreground leading-relaxed">{desc}</p>
                       </a>
                     ))}
-                </div>
+                  </div>
                 </div>
               </div>
 

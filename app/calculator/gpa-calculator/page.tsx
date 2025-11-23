@@ -21,62 +21,15 @@ import {
   Shield,
   Star,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata: Metadata = {
-  title:
-    "GPA Calculator - The Ultimate Tool for College, High School, and University",
+export const metadata = createMetadata({
+  title: "GPA Calculator - The Ultimate Tool for College, High School, and University",
   description:
     "Calculate your GPA in seconds! Free GPA calculator used by 1M+ students. Supports weighted/unweighted, all scales (4.0, 5.0), high school & college. Try now!",
-  openGraph: {
-    title:
-      "Online GPA & CGPA Calculator for University & College | FastTools",
-    description:
-      "Instantly calculate your GPA and CGPA with our free online tool. Supports weighted and unweighted GPA, various scales (4.0, 5.0, percentage), and semester calculations for students worldwide.",
-    type: "website",
-    url: "https://www.fasttools.store/calculator/gpa-calculator",
-    siteName: "FastTools",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-gpa-calculator.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Free Online GPA and CGPA Calculator - FastTools",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title:
-      "Online GPA & CGPA Calculator for University & College | FastTools",
-    description:
-      "Instantly calculate your GPA and CGPA with our free online tool. Supports weighted and unweighted GPA, various scales (4.0, 5.0, percentage), and semester calculations for students worldwide.",
-    images: ["https://www.fasttools.store/og-gpa-calculator.jpg"],
-  },
-  alternates: {
-    canonical: "https://www.fasttools.store/calculator/gpa-calculator",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  authors: [{ name: "FastTools Education Team" }],
-  creator: "FastTools",
-  publisher: "FastTools",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL("https://www.fasttools.store"),
-};
+  path: "/calculator/gpa-calculator",
+})
+
 
 const faqs = [
   {

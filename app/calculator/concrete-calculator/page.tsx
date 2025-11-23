@@ -2,13 +2,13 @@ import { ConcreteCalculator } from "@/components/concrete-calculator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import { 
-  Calculator, 
-  Building, 
-  Ruler, 
-  Weight, 
-  Volume, 
-  Target, 
+import {
+  Calculator,
+  Building,
+  Ruler,
+  Weight,
+  Volume,
+  Target,
   Info,
   Globe,
   CheckCircle,
@@ -29,98 +29,13 @@ import {
   FileText,
   Percent
 } from "lucide-react"
-import type { Metadata } from "next"
+import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata: Metadata = {
-  title: "FastTools - Concrete Calculator | Free Volume, Weight & Cost Calculator",
-  description: "FastTools Concrete Calculator - Calculate volume, weight, materials, and cost for slabs, columns, stairs, curbs. Supports multiple mix types with detailed breakdowns.",
-  keywords: [
-    "fasttools",
-    "fast tools",
-    "concrete calculator",
-    "concrete formula",
-    "concrete volume calculator",
-    "concrete cost calculator",
-    "concrete mix calculator",
-    "concrete weight calculator",
-    "concrete slab calculator",
-    "concrete footing calculator",
-    "concrete column calculator",
-    "concrete wall calculator",
-    "concrete stairs calculator",
-    "concrete driveway calculator",
-    "concrete patio calculator",
-    "concrete foundation calculator",
-    "concrete retaining wall calculator",
-    "concrete yard calculator",
-    "concrete cubic feet calculator",
-    "concrete cubic meters calculator",
-    "concrete bags calculator",
-    "concrete quantity calculator",
-    "concrete estimation calculator",
-    "concrete materials calculator",
-    "concrete mix ratio calculator",
-    "concrete strength calculator",
-    "concrete cost estimation",
-    "concrete project calculator",
-    "online concrete calculator",
-    "free concrete calculator",
-    "ready mix concrete calculator",
-    "cement sand aggregate calculator",
-    "concrete block calculator",
-    "concrete beam calculator"
-  ]
-  ,
-  openGraph: {
-    title: "Free Online Concrete Calculator | Volume, Weight, Materials & Cost Calculator | FastTools",
-    description: "Use our free Concrete Calculator to calculate volume, weight, materials, and cost for slabs, columns, stairs, curbs, and more. Supports multiple mix types with detailed breakdowns.",
-    type: "website",
-    url: "https://www.fasttools.store/calculator/concrete-calculator",
-    siteName: "FastTools",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-concrete-calculator.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Free Online Concrete Calculator - FastTools"
-      }
-    ]
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Free Online Concrete Calculator | Volume, Weight, Materials & Cost Calculator | FastTools",
-    description: "Use our free Concrete Calculator to calculate volume, weight, materials, and cost for slabs, columns, stairs, curbs, and more. Supports multiple mix types with detailed breakdowns.",
-    images: ["https://www.fasttools.store/og-concrete-calculator.jpg"]
-  },
-  alternates: {
-    canonical: "https://www.fasttools.store/calculator/concrete-calculator"
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  authors: [{ name: "FastTools Construction Team" }],
-  creator: "FastTools",
-  publisher: "FastTools",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://www.fasttools.store'),
-  verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
-  },
-}
+export const metadata = createMetadata({
+  title: "Concrete Calculator | Free Cement, Slab, Footing & Bag Estimator",
+  description: "Calculate concrete volume, bags, and cost for slabs, footings, columns, and stairs. Free online concrete estimator with waste factor and mix ratios. Accurate & easy to use.",
+  path: "/calculator/concrete-calculator",
+})
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -160,26 +75,42 @@ const faqJsonLd = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How accurate is the concrete calculator?",
+      "name": "How do I calculate how much concrete I need?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our calculator uses industry-standard formulas and provides accurate estimates for most concrete projects. Always add 5-10% extra concrete to account for waste and spillage."
+        "text": "To calculate concrete volume, multiply Length × Width × Thickness (in feet) to get cubic feet. Then divide by 27 to convert to cubic yards. Always add 5-10% for waste."
       }
     },
     {
-      "@type": "Question", 
-      "name": "What's the difference between concrete mixes?",
+      "@type": "Question",
+      "name": "How many 80lb bags of concrete make a cubic yard?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Different mixes have varying cement-to-aggregate ratios, affecting strength, workability, and cost. Choose based on your project requirements and structural needs."
+        "text": "You need approximately 45 bags of 80lb concrete to make one cubic yard. Each 80lb bag yields about 0.6 cubic feet of concrete."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the formula for concrete slab calculation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The formula is: Volume (cu yds) = (Length (ft) × Width (ft) × Thickness (in) / 12) / 27. This gives you the total cubic yards required for your slab."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much waste factor should I add?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is recommended to add 5-10% extra concrete to account for spillage, uneven subgrades, and measurement errors. For complex shapes, consider adding up to 15%."
       }
     },
     {
       "@type": "Question",
       "name": "How long does concrete take to cure?",
       "acceptedAnswer": {
-        "@type": "Answer", 
-        "text": "Concrete typically reaches 90% strength in 28 days, but initial setting occurs within 24-48 hours. Proper curing is essential for maximum strength and durability."
+        "@type": "Answer",
+        "text": "Concrete reaches about 70% of its strength within 7 days and fully cures in 28 days. However, it sets enough to walk on within 24-48 hours."
       }
     }
   ]
@@ -196,21 +127,21 @@ export default function ConcreteCalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      
+
       <div className="bg-card">
         <div className="container mx-auto px-3 py-6 md:py-8">
-      <Breadcrumbs 
-        items={[
-          { label: "Calculator", href: "/calculator" },
-          { label: "Concrete Calculator", href: "/calculator/concrete-calculator" },
-        ]}
-      />
+          <Breadcrumbs
+            items={[
+              { label: "Calculator", href: "/calculator" },
+              { label: "Concrete Calculator", href: "/calculator/concrete-calculator" },
+            ]}
+          />
 
           <div className="max-w-7xl mx-auto">
             <div className="mb-4 md:mb-6">
-              <GHeader 
-                title="Free Online Concrete Calculator"
-                description="Use our free Concrete Calculator to calculate volume, weight, materials, and cost for slabs, columns, stairs, curbs, and more. Supports multiple mix types with detailed breakdowns."
+              <GHeader
+                title="Free Concrete Calculator & Estimator"
+                description="Calculate concrete volume in cubic yards or bags for slabs, footings, and columns. Get accurate material estimates with our free concrete calculator including waste factors and cost breakdown."
                 titleSize="medium"
               />
             </div>
@@ -221,11 +152,63 @@ export default function ConcreteCalculatorPage() {
                 <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
               </div>
               <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
-        </div>
+            </div>
 
             <div className="grid lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_400px] gap-2 md:gap-3 lg:gap-4">
               <div>
-            <ConcreteCalculator />
+                <ConcreteCalculator />
+
+                {/* Why Use This Calculator */}
+                <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mt-6 md:mt-8 mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
+                    <div className="p-1.5 bg-primary/10 rounded-lg">
+                      <Award className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
+                    </div>
+                    Why Use Our Concrete Estimator?
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-2">
+                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
+                          <CheckCircle className="h-3 w-3 text-foreground" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Accurate Volume & Bags</h3>
+                          <p className="text-xs text-muted-foreground">Get precise cubic yardage and exact bag counts (40lb, 60lb, 80lb) instantly.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
+                          <DollarSign className="h-3 w-3 text-foreground" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Cost Estimation</h3>
+                          <p className="text-xs text-muted-foreground">Estimate total project cost based on local material prices.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-2">
+                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
+                          <TrendingUp className="h-3 w-3 text-foreground" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Waste Factor Included</h3>
+                          <p className="text-xs text-muted-foreground">Automatically calculate 5-10% waste to prevent shortages.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="p-1 bg-heading-accent-border/10 rounded-lg">
+                          <Zap className="h-3 w-3 text-foreground" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Multiple Project Types</h3>
+                          <p className="text-xs text-muted-foreground">Specialized formulas for slabs, footings, columns, stairs, and curbs.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 {/* How to Use */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mt-6 md:mt-8 mb-4 md:mb-6">
@@ -244,28 +227,28 @@ export default function ConcreteCalculatorPage() {
                         <div>
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Select Project Type</h3>
                           <p className="text-xs text-muted-foreground">Choose from slabs, columns, stairs, curbs, and more</p>
-              </div>
-            </div>
+                        </div>
+                      </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-heading-accent-border/10 rounded-lg">
                           <span className="text-foreground font-bold text-xs">2</span>
-                </div>
+                        </div>
                         <div>
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Enter Dimensions</h3>
                           <p className="text-xs text-muted-foreground">Input length, width, height, and other measurements</p>
-                  </div>
-                </div>
-              </div>
+                        </div>
+                      </div>
+                    </div>
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-heading-accent-border/10 rounded-lg">
                           <span className="text-foreground font-bold text-xs">3</span>
-            </div>
+                        </div>
                         <div>
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Choose Mix Type</h3>
                           <p className="text-xs text-muted-foreground">Select standard, high-strength, or lightweight mix</p>
-                  </div>
-                </div>
+                        </div>
+                      </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-heading-accent-border/10 rounded-lg">
                           <span className="text-foreground font-bold text-xs">4</span>
@@ -274,8 +257,8 @@ export default function ConcreteCalculatorPage() {
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Get Results</h3>
                           <p className="text-xs text-muted-foreground">View volume, weight, materials, and cost breakdown</p>
                         </div>
-                  </div>
-                </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -303,22 +286,22 @@ export default function ConcreteCalculatorPage() {
                         <div className="flex items-center gap-1.5 mb-1">
                           <Icon className="h-3 w-3 text-foreground" />
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm">{type}</h3>
-                  </div>
+                        </div>
                         <p className="text-xs text-muted-foreground mb-1">{desc}</p>
                         <p className="text-xs text-foreground font-mono bg-primary/10 px-1.5 py-0.5 rounded">{example}</p>
-                </div>
+                      </div>
                     ))}
-              </div>
-            </div>
+                  </div>
+                </div>
 
                 {/* Concrete Mix Types */}
                 <div className="bg-card border border-border rounded-xl p-3 md:p-4 shadow-sm mb-4 md:mb-6">
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Globe className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
-                </div>
+                    </div>
                     Supported Concrete Mix Types
-              </h2>
+                  </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
                     {[
                       { mix: "Standard Mix", strength: "3000 PSI", ratio: "1:2:3", use: "General purpose concrete for most applications" },
@@ -336,13 +319,13 @@ export default function ConcreteCalculatorPage() {
                           <div className="flex items-center gap-1">
                             <div className="w-1 h-1 bg-primary rounded-full"></div>
                             <span>Strength: {strength}</span>
-                  </div>
+                          </div>
                           <div className="flex items-center gap-1">
                             <div className="w-1 h-1 bg-primary rounded-full"></div>
                             <span>Ratio: {ratio} (Cement:Sand:Gravel)</span>
-                </div>
-                  </div>
-                </div>
+                          </div>
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -352,7 +335,7 @@ export default function ConcreteCalculatorPage() {
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Target className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
-                  </div>
+                    </div>
                     Advanced Calculation Features
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
@@ -360,43 +343,143 @@ export default function ConcreteCalculatorPage() {
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-heading-accent-border/10 rounded-lg">
                           <Volume className="h-3 w-3 text-foreground" />
-                </div>
+                        </div>
                         <div>
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Volume Calculations</h3>
                           <p className="text-xs text-muted-foreground">Precise volume calculations for complex shapes</p>
-                  </div>
-                </div>
+                        </div>
+                      </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-heading-accent-border/10 rounded-lg">
                           <Weight className="h-3 w-3 text-foreground" />
-                  </div>
+                        </div>
                         <div>
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Weight Analysis</h3>
                           <p className="text-xs text-muted-foreground">Calculate concrete weight for structural analysis</p>
-                </div>
-              </div>
-            </div>
+                        </div>
+                      </div>
+                    </div>
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-heading-accent-border/10 rounded-lg">
                           <Package className="h-3 w-3 text-foreground" />
-                </div>
+                        </div>
                         <div>
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Material Breakdown</h3>
                           <p className="text-xs text-muted-foreground">Detailed breakdown of cement, sand, gravel, and water</p>
-                </div>
-                </div>
+                        </div>
+                      </div>
                       <div className="flex items-start gap-2">
                         <div className="p-1 bg-heading-accent-border/10 rounded-lg">
                           <Zap className="h-3 w-3 text-foreground" />
-                </div>
+                        </div>
                         <div>
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm">Professional Tips</h3>
                           <p className="text-xs text-muted-foreground">Expert recommendations for mixing and curing</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
+
+                {/* New Content Sections for SEO */}
+                <div className="space-y-6 md:space-y-8 mb-6 md:mb-8">
+                  {/* Slab Thickness Guide */}
+                  <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
+                    <h2 className="text-lg md:text-xl font-bold mb-4 flex items-center gap-2 text-foreground">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
+                        <Ruler className="h-4 w-4 text-foreground" />
+                      </div>
+                      How Thick Should My Concrete Slab Be?
+                    </h2>
+                    <div className="prose prose-sm max-w-none text-muted-foreground">
+                      <p className="mb-4">
+                        Choosing the right thickness for your concrete slab is crucial for its longevity and performance. The ideal thickness depends largely on the intended use and the load it needs to support.
+                      </p>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="bg-secondary/50 p-4 rounded-lg">
+                          <h3 className="font-semibold text-foreground mb-2">Driveways (5-6 inches)</h3>
+                          <p className="text-sm">
+                            For standard residential driveways, a minimum thickness of <strong>4 inches</strong> is common, but increasing it to <strong>5 or 6 inches</strong> significantly boosts durability. This extra thickness prevents cracking under the weight of SUVs, trucks, or delivery vehicles. Always ensure a compacted gravel base of 4-6 inches for proper drainage.
+                          </p>
+                        </div>
+                        <div className="bg-secondary/50 p-4 rounded-lg">
+                          <h3 className="font-semibold text-foreground mb-2">Patios & Walkways (4 inches)</h3>
+                          <p className="text-sm">
+                            For patios, sidewalks, and steps that primarily see foot traffic and patio furniture, a standard <strong>4-inch slab</strong> is sufficient. However, if you plan to install a hot tub or heavy outdoor kitchen, consider thickening those specific areas to 6 inches to handle the concentrated load.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Common Mistakes */}
+                  <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
+                    <h2 className="text-lg md:text-xl font-bold mb-4 flex items-center gap-2 text-foreground">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
+                        <Info className="h-4 w-4 text-foreground" />
+                      </div>
+                      Common Concrete Calculation Mistakes
+                    </h2>
+                    <ul className="space-y-3 text-sm text-muted-foreground">
+                      <li className="flex gap-3">
+                        <div className="min-w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 font-bold text-xs">!</div>
+                        <div>
+                          <strong className="text-foreground block">Forgetting the Waste Factor</strong>
+                          Projects rarely go perfectly. Spillage, uneven ground, and formwork deflection can eat up your concrete. We recommend adding <strong>5-10% extra</strong> to your order to avoid running short mid-pour.
+                        </div>
+                      </li>
+                      <li className="flex gap-3">
+                        <div className="min-w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 font-bold text-xs">!</div>
+                        <div>
+                          <strong className="text-foreground block">Ignoring Ground Slope</strong>
+                          If your ground isn't perfectly level, your slab thickness will vary. Measure the depth at multiple points and use the average, or better yet, grade the soil properly before pouring.
+                        </div>
+                      </li>
+                      <li className="flex gap-3">
+                        <div className="min-w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 font-bold text-xs">!</div>
+                        <div>
+                          <strong className="text-foreground block">Wrong Unit Conversions</strong>
+                          Mixing up feet and inches is the #1 cause of calculation errors. Our calculator handles these conversions automatically, but always double-check your input units.
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Mixes & Curing Guide */}
+                  <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
+                    <h2 className="text-lg md:text-xl font-bold mb-4 flex items-center gap-2 text-foreground">
+                      <div className="p-1.5 bg-primary/10 rounded-lg">
+                        <Clock className="h-4 w-4 text-foreground" />
+                      </div>
+                      Concrete Mixes & Curing Guide
+                    </h2>
+                    <div className="space-y-4 text-sm text-muted-foreground">
+                      <p>
+                        <strong>Standard vs. High Strength:</strong> For most DIY projects like walkways and patios, a standard <strong>3000 PSI mix</strong> is perfect. For driveways or foundations supporting structures, opt for a <strong>4000 PSI or higher</strong> mix for better freeze-thaw resistance and load capacity.
+                      </p>
+                      <div className="border-t border-border pt-4 mt-4">
+                        <h3 className="font-semibold text-foreground mb-2">Curing Timeline</h3>
+                        <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                          <li className="bg-secondary/30 p-3 rounded text-center">
+                            <span className="block text-heading-accent font-bold">24-48 Hours</span>
+                            Safe for foot traffic
+                          </li>
+                          <li className="bg-secondary/30 p-3 rounded text-center">
+                            <span className="block text-heading-accent font-bold">7 Days</span>
+                            Cured enough for vehicles (70% strength)
+                          </li>
+                          <li className="bg-secondary/30 p-3 rounded text-center">
+                            <span className="block text-heading-accent font-bold">28 Days</span>
+                            Fully cured (100% strength)
+                          </li>
+                        </ul>
+                      </div>
+                      <p className="text-xs italic mt-2">
+                        *Tip: Keep your concrete moist (wet curing) for at least the first 7 days to prevent surface cracks and ensure maximum strength.
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 {/* FAQ Section */}
@@ -404,98 +487,50 @@ export default function ConcreteCalculatorPage() {
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Info className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
-              </div>
+                    </div>
                     Frequently Asked Questions
                   </h2>
-              <div className="space-y-2 md:space-y-3">
+                  <div className="space-y-2 md:space-y-3">
                     {[
                       {
-                        question: "How accurate is the concrete calculator?",
-                        answer: "Our calculator uses industry-standard formulas and provides accurate estimates for most concrete projects. Always add 5-10% extra concrete to account for waste and spillage during construction."
+                        question: "How do I calculate how much concrete I need?",
+                        answer: "To calculate concrete volume, multiply Length × Width × Thickness (in feet) to get cubic feet. Then divide by 27 to convert to cubic yards. Always add 5-10% for waste."
                       },
                       {
-                        question: "What's the difference between concrete mixes?",
-                        answer: "Different mixes have varying cement-to-aggregate ratios, affecting strength, workability, and cost. Standard mix (1:2:3) is for general use, high-strength (1:1.5:2.5) for structural elements, and lightweight (1:1.5:2) for non-structural applications."
+                        question: "How many 80lb bags of concrete make a cubic yard?",
+                        answer: "You need approximately 45 bags of 80lb concrete to make one cubic yard. Each 80lb bag yields about 0.6 cubic feet of concrete. For 60lb bags, you'll need about 60 bags."
+                      },
+                      {
+                        question: "What is the formula for concrete slab calculation?",
+                        answer: "The formula is: Volume (cu yds) = (Length (ft) × Width (ft) × Thickness (in) / 12) / 27. This gives you the total cubic yards required for your slab."
+                      },
+                      {
+                        question: "How much waste factor should I add?",
+                        answer: "It is recommended to add 5-10% extra concrete to account for spillage, uneven subgrades, and measurement errors. For complex shapes, consider adding up to 15%."
                       },
                       {
                         question: "How long does concrete take to cure?",
-                        answer: "Concrete typically reaches 90% strength in 28 days, but initial setting occurs within 24-48 hours. Proper curing with moisture retention is essential for maximum strength and durability."
+                        answer: "Concrete reaches about 70% of its strength within 7 days and fully cures in 28 days. However, it sets enough to walk on within 24-48 hours."
                       },
                       {
-                        question: "Can I use this for commercial projects?",
-                        answer: "While our calculator provides accurate estimates, always consult with a structural engineer for commercial projects to ensure compliance with building codes and safety requirements."
+                        question: "What is the best mix for a driveway?",
+                        answer: "For driveways, a standard mix with a compressive strength of 3000-4000 PSI is recommended. In colder climates, air-entrained concrete helps prevent freeze-thaw damage."
                       },
                       {
-                        question: "How do I calculate concrete for irregular shapes?",
-                        answer: "For irregular shapes, break them down into regular geometric shapes (rectangles, circles, triangles) and calculate each section separately, then add the volumes together."
+                        question: "How do I convert cubic feet to cubic yards?",
+                        answer: "Since there are 27 cubic feet in one cubic yard, simply divide your total cubic feet by 27. For example, 54 cubic feet / 27 = 2 cubic yards."
                       },
                       {
-                        question: "What factors affect concrete strength?",
-                        answer: "Concrete strength depends on water-cement ratio, curing conditions, temperature, mix proportions, and aggregate quality. Lower water-cement ratios generally produce stronger concrete."
-                      },
-                      {
-                        question: "How much extra concrete should I order?",
-                        answer: "Order 5-10% extra concrete to account for waste, spillage, and minor measurement errors. For complex projects or first-time concrete work, consider ordering 15-20% extra."
-                      },
-                      {
-                        question: "What's the best time to pour concrete?",
-                        answer: "Pour concrete when temperatures are between 50-80°F (10-27°C) with low humidity and no rain forecast. Avoid extreme temperatures that can affect curing and strength development."
-                      },
-                      {
-                        question: "How do I calculate concrete bags needed?",
-                        answer: "Our calculator displays cubic yard measurements and corresponding bag quantities. Typical 80-pound concrete bags provide approximately 0.6 cubic feet of material. Purchase whole bags only, ensuring you have sufficient coverage for your project dimensions."
-                      },
-                      {
-                        question: "What's the difference between ready-mix and bagged concrete?",
-                        answer: "Ready-mix concrete is delivered pre-mixed and is ideal for large projects. Bagged concrete is mixed on-site and suitable for smaller projects. Ready-mix is more consistent but requires proper timing and delivery coordination."
-                      },
-                      {
-                        question: "What are the basic volume formulas for concrete calculations?",
-                        answer: "For rectangular slabs: V = l × w × h. For cylindrical columns: V = π × r² × h. For hollow cylinders: V = π × (r₁² - r₂²) × h. For stairs: V = (run × rise × width × steps) / 2 + platform."
-                      },
-                      {
-                        question: "How do I calculate concrete weight?",
-                        answer: "Use the formula: Weight = Volume × Density. Standard concrete density is 2,400 kg/m³ (150 lbs/ft³), lightweight concrete is 1,800 kg/m³ (112 lbs/ft³), and heavy concrete is 3,000 kg/m³ (187 lbs/ft³)."
-                      },
-                      {
-                        question: "What are the material requirements for 1 cubic yard of concrete?",
-                        answer: "For 1 cubic yard (27 ft³): 6-7 bags of cement (94 lbs each), 0.5 cubic yards of sand, 0.75 cubic yards of gravel, and 30-35 gallons of water."
-                      },
-                      {
-                        question: "What are the optimal curing conditions for concrete?",
-                        answer: "Optimal temperature is 50-70°F (10-21°C), minimum 40°F (4°C), maximum 90°F (32°C). Curing duration is 7-28 days minimum using wet curing or plastic sheeting to maintain continuous moisture."
-                      },
-                      {
-                        question: "What are the concrete strength development stages?",
-                        answer: "Initial set occurs in 2-4 hours (no foot traffic), final set in 6-12 hours (forms can be removed), 7 days achieves 25% strength (light construction loads), and 28 days reaches 90% strength (full design strength)."
-                      },
-                      {
-                        question: "What are the most common concrete mistakes to avoid?",
-                        answer: "Avoid insufficient curing, poor weather planning, inadequate reinforcement, overworking the surface, and incorrect water-cement ratios. These mistakes can lead to weak, cracked concrete with poor durability."
-                      },
-                      {
-                        question: "What factors should I consider when selecting a concrete mix type?",
-                        answer: "Consider your project's structural requirements, load-bearing needs, and environmental conditions. For standard applications like driveways and patios, use standard mix (1:2:3). For foundations and structural elements, choose high-strength mix (1:1.5:2.5). For non-load-bearing applications, lightweight mix (1:1.5:2) works well. For industrial or high-traffic areas, fiber-reinforced mix (1:2:3) provides enhanced crack resistance."
-                      },
-                      {
-                        question: "What are the key components of concrete?",
-                        answer: "Concrete consists of cement (binds materials together), water (activates cement hydration), sand (fine aggregate for workability), and gravel (coarse aggregate for strength). The proper ratio of these components determines concrete properties."
-                      },
-                      {
-                        question: "How do I calculate concrete for stairs and curbs?",
-                        answer: "For stairs: V = (run × rise × width × steps) / 2 + platform. For curbs and gutters: V = (curb_depth × curb_height × length) + (gutter_width × flag_thickness × length). These formulas account for the complex shapes involved."
-                      },
-                      {
-                        question: "What are the professional construction tips for concrete projects?",
-                        answer: "Pre-construction: Check weather forecast, prepare tools and materials, ensure proper formwork. During pouring: Work quickly to avoid cold joints, use proper consolidation, maintain consistent temperature. Post-construction: Begin curing immediately, protect from temperature changes, monitor moisture levels."
+                        question: "Can I pour concrete in the rain?",
+                        answer: "Light rain is usually fine, but heavy rain can wash away the cement paste and weaken the surface. It's best to cover fresh concrete with plastic sheeting if rain starts."
                       }
                     ].map((faq, index) => (
                       <div key={index} className="p-2 md:p-3 bg-card rounded-lg border border-border">
                         <h3 className="font-semibold text-heading-accent mb-1 text-xs md:text-sm">{faq.question}</h3>
                         <p className="text-xs text-muted-foreground leading-relaxed">{faq.answer}</p>
-                </div>
+                      </div>
                     ))}
-                </div>
+                  </div>
                 </div>
 
                 {/* Related Tools */}
@@ -503,7 +538,7 @@ export default function ConcreteCalculatorPage() {
                   <h2 className="text-lg md:text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
                     <div className="p-1.5 bg-primary/10 rounded-lg">
                       <Calculator className="h-3 w-3 md:h-4 md:w-4 text-foreground" />
-                </div>
+                    </div>
                     Related Construction & Math Calculators
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
@@ -529,11 +564,11 @@ export default function ConcreteCalculatorPage() {
                         <div className="flex items-center gap-2 mb-1">
                           <Icon className="h-3 w-3 text-foreground group-hover:text-heading-accent" />
                           <h3 className="font-semibold text-heading-accent text-xs md:text-sm group-hover:text-heading-accent">{name}</h3>
-                </div>
+                        </div>
                         <p className="text-xs text-muted-foreground group-hover:text-foreground">{desc}</p>
                       </a>
                     ))}
-            </div>
+                  </div>
                 </div>
               </div>
 
@@ -545,7 +580,7 @@ export default function ConcreteCalculatorPage() {
                       <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
                     </div>
                     <AdSpace slot="sidebar" className="w-full h-80 border border-border rounded-xl shadow-sm bg-card" />
-              </div>
+                  </div>
                 </div>
               </div>
             </div>

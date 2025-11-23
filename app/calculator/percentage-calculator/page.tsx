@@ -3,63 +3,15 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import { Percent, Calculator, TrendingUp, TrendingDown, Target, DollarSign, BarChart3, PieChart, ArrowUp, ArrowDown, Minus, Plus, CheckCircle, BookOpen, Users, Award } from "lucide-react"
-import type { Metadata } from "next"
+import { createMetadata } from "@/lib/metadata-base"
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Percentage Calculator | Free Accurate Math Tool",
   description:
     "Calculate percentages instantly: increase, decrease, discounts, grades and more. Free, accurate percentage calculator with clear step-by-step formulas.",
-  openGraph: {
-    title: "Free Online Percentage Calculator | Accurate & Quick Math Tool | FastTools",
-    description: "Free percentage calculator for all your math needs. Calculate percentage increase, decrease, difference, discounts, tips, grades, profit margins, and more. Accurate, quick, and easy-to-use online tool.",
-    type: "website",
-    url: "https://www.fasttools.store/calculator/percentage-calculator",
-    siteName: "FastTools",
-    locale: "en_US",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-percentage-calculator.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Free Online Percentage Calculator - FastTools"
-      }
-    ]
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Free Online Percentage Calculator | Accurate & Quick Math Tool | FastTools",
-    description: "Free percentage calculator for all your math needs. Calculate percentage increase, decrease, difference, discounts, tips, grades, profit margins, and more.",
-    images: ["https://www.fasttools.store/og-percentage-calculator.jpg"]
-  },
-  alternates: {
-    canonical: "https://www.fasttools.store/calculator/percentage-calculator"
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  authors: [{ name: "FastTools Math Team" }],
-  creator: "FastTools",
-  publisher: "FastTools",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://www.fasttools.store'),
-  verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
-  },
-}
+  path: "/calculator/percentage-calculator",
+})
+
 
 export default function PercentageCalculatorPage() {
   const topQuestionAnswers = [
@@ -628,32 +580,32 @@ export default function PercentageCalculatorPage() {
   return (
     <div className="min-h-screen bg-card">
       <div className="container mx-auto px-3 py-8 md:py-12">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageStructuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToStructuredData) }}
-      />
-      <Breadcrumbs
-        items={[
-          { label: "Calculator", href: "/calculator" },
-          { label: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-        ]}
-      />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageStructuredData) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToStructuredData) }}
+        />
+        <Breadcrumbs
+          items={[
+            { label: "Calculator", href: "/calculator" },
+            { label: "Percentage Calculator", href: "/calculator/percentage-calculator" },
+          ]}
+        />
 
         <div className="max-w-7xl mx-auto">
           <div className="mb-6 md:mb-8">
-            <GHeader 
+            <GHeader
               title="Free Online Percentage Calculator"
               description="Free percentage calculator for all your math needs. Calculate percentage increase, percentage decrease, percentage difference, discounts, tips, grades, profit margins, and more. Accurate and quick online tool with step-by-step formulas."
               titleSize="medium"
@@ -676,322 +628,322 @@ export default function PercentageCalculatorPage() {
               <span className="text-xs text-muted-foreground font-medium">Advertisement</span>
             </div>
             <AdSpace slot="content" className="w-full h-24 sm:h-32 md:h-40 border border-border rounded-xl shadow-sm bg-card" />
-        </div>
+          </div>
 
           <div className="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px] gap-3 md:gap-4 lg:gap-6">
-          <div>
-            <PercentageCalculator />
+            <div>
+              <PercentageCalculator />
 
-            <div className="mt-8 md:mt-12">
-              <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm space-y-4">
-                <h2 className="text-xl md:text-2xl font-bold flex items-center gap-2 text-foreground">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
-                  </div>
-                  Comprehensive Percentage Calculator Guide
-                </h2>
-                <p className="text-xs md:text-sm text-muted-foreground">
-                  This versatile calculator covers day-to-day tasks like tracking growth, spotting declines, or comparing two values side by side. Use the built-in discount and percent-off modes before you shop, or switch to dedicated profit and interest views when you need confident planning for work or personal finances.
-                </p>
-                <p className="text-xs md:text-sm text-muted-foreground">
-                  Need to find part-of-whole results fast? Choose the “what percent” option, follow the guided formula, then convert outcomes to fractions or decimals in seconds. Each module adapts for tips, grades, or other quick-change scenarios, giving students, professionals, and everyday problem solvers a complete math toolkit.
-                </p>
-                <p className="text-xs md:text-sm text-muted-foreground">
-                  Explore real-world problems, work through guided examples, and master the underlying equations with tutorials embedded throughout the experience. Bookmark this free resource to keep a reliable reference handy for every walkthrough, practice question, or formula refresher you need.
-                </p>
-                <div className="space-y-2 text-xs md:text-sm text-muted-foreground">
-                  <p>
-                    For loan calculations, use our{" "}
-                    <a href="/calculator/loan-calculator" className="text-primary underline-offset-2 hover:underline">
-                      EMI Calculator
-                    </a>.
-                  </p>
-                  <p>
-                    Calculate your{" "}
-                    <a href="/calculator/gpa-calculator" className="text-primary underline-offset-2 hover:underline">
-                      GPA percentage
-                    </a>{" "}
-                    easily.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 md:mt-12">
-              <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm space-y-4">
-                <h2 className="text-xl md:text-2xl font-bold flex items-center gap-2 text-foreground">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Calculator className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
-                  </div>
-                  Related Percentage Calculator Questions
-                </h2>
-                <div className="space-y-4 md:space-y-6">
-                  <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
-                    <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">What is a percentage calculator and why do I need one?</h3>
-                    <p className="text-xs md:text-sm text-muted-foreground">
-                      A percentage calculator is a focused math assistant that converts part-versus-whole relationships into easy-to-read percentages. It keeps the formulas consistent, prevents manual errors, and stores your results. Use it whenever you are grading assignments, comparing budgets, or planning shopping trips that hinge on clear, reliable percentage answers.
-                    </p>
-                  </div>
-                  <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
-                    <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">How can I calculate the percentage of two numbers quickly?</h3>
-                    <p className="text-xs md:text-sm text-muted-foreground">
-                      Enter the part and the whole, then let the calculator handle division and multiplication automatically. The interface shows the underlying steps—part divided by whole, then multiplied by one hundred—so you understand the logic while saving time. Bookmark the quick-entry panel for repeated comparisons you run every day.
-                    </p>
-                  </div>
-                  <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
-                    <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">Where can I convert percentage increase and decrease without mistakes?</h3>
-                    <p className="text-xs md:text-sm text-muted-foreground">
-                      Switch to the change tab, supply your starting value and new value, and the tool instantly reveals the increase or decrease in percentage and absolute terms. Color-coded guidance highlights gains versus losses, while downloadable notes capture the math for reports, assignments, or stakeholder updates that demand accuracy.
-                    </p>
-                  </div>
-                  <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
-                    <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">Which percentage calculator mode helps compare discounts?</h3>
-                    <p className="text-xs md:text-sm text-muted-foreground">
-                      Use the discount mode to enter original price, sale price, or advertised percent off. The calculator shows how much you save, the percent discount, and the final cost. Add tax or shipping fields to mirror real checkout totals so you can choose the best offer with confidence every time.
-                    </p>
-                  </div>
-                  <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
-                    <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">How do I practice percentage formulas with guided examples?</h3>
-                    <p className="text-xs md:text-sm text-muted-foreground">
-                      Open the learn-and-practice section to see worked examples, quick quizzes, and printable worksheets. Each activity explains the formula, asks you to enter numbers, and confirms your answer using the calculator’s engine. Track progress over time to strengthen classroom fundamentals or prepare for exams that emphasize percentage mastery.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 md:mt-12">
-              <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm space-y-4">
-                <h2 className="text-xl md:text-2xl font-bold flex items-center gap-2 text-foreground">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Percent className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
-                  </div>
-                  Feature Highlights
-                </h2>
-                <div className="space-y-4 md:space-y-6">
-                  <p className="text-xs md:text-sm text-muted-foreground">
-                    The basic percentage calculator handles foundational needs like finding the percentage of a number, discovering what percent one figure is of another, and converting results into fractions or decimals. Every answer includes the math steps so you can verify the approach before sharing it with students, shoppers, or teammates.
-                  </p>
-                  <p className="text-xs md:text-sm text-muted-foreground">
-                    Switch to the percentage increase calculator or percentage decrease calculator to track changes between two values. You will see the absolute difference, the percentage swing, and plain-language commentary—ideal for budgeting, sales performance, grade tracking, or health progress that relies on transparent before-and-after comparisons.
-                  </p>
-                  <p className="text-xs md:text-sm text-muted-foreground">
-                    Advanced modes cover reverse percentage, percentage difference, and multi-step comparisons, helping you uncover original prices, measure gaps between data points, or evaluate stacked discounts. Pair these features with saved histories and exports to keep financial planning, academic analysis, and project reporting consistent across every scenario.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 md:mt-12">
-              <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm space-y-4">
-                <h2 className="text-xl md:text-2xl font-bold flex items-center gap-2 text-foreground">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Percent className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
-                  </div>
-                  Popular Percentage Calculator Requests
-                </h2>
-                <p className="text-xs md:text-sm text-muted-foreground">
-                  The core tool gives shoppers instant clarity on discounts and sales while finance teams compare profit versus tax impacts when margins matter.
-                </p>
-                <p className="text-xs md:text-sm text-muted-foreground">
-                  Students rely on the marks dashboard to translate raw scores, explore grading scenarios before finals, or double-check exam breakdowns for regional benchmarks.
-                </p>
-                <p className="text-xs md:text-sm text-muted-foreground">
-                  Everyday users toggle to the change view, run quick increase-or-decrease checks, or lean on the reduction panel when seasonal promotions appear.
-                </p>
-                <p className="text-xs md:text-sm text-muted-foreground">
-                  Personal goal tracking stays easy with weight-loss, growth, and averaging summaries, while a lighthearted compatibility spinner keeps things fun.
-                </p>
-                <p className="text-xs md:text-sm text-muted-foreground">
-                  Professionals can calculate raises, compare loan payments, and evaluate interest scenarios across multiple lenders in a single, organized workspace.
-                </p>
-                <p className="text-xs md:text-sm text-muted-foreground">
-                  Academics appreciate the GPA converter paired with reverse calculations, regional grading primers, budgeting helpers, and flexible add-and-combine workflows.
-                </p>
-                <p className="text-xs md:text-sm text-muted-foreground">
-                  When precision matters, yield, Excel formula walk-throughs, and uncertainty reference guides keep lab work and spreadsheets accurate—no guesswork required.
-                </p>
-                <p className="text-xs md:text-sm text-muted-foreground">
-                  Explore niche requests like mobile app recommendations, practice sets, quick-answer tips, or advice on choosing the right pricing tier for premium features.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-8 md:mt-12">
-              <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm space-y-4">
-                <h2 className="text-xl md:text-2xl font-bold flex items-center gap-2 text-foreground">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
-                  </div>
-                  Top Percentage Calculator Questions Answered
-                </h2>
-                <div className="space-y-4 md:space-y-6">
-                  {processedQuestionAnswers.map(({ question, answer }, index) => (
-                    <div key={index} className="p-3 md:p-4 bg-card rounded-lg border border-border">
-                      <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">{question}</h3>
-                      <p className="text-xs md:text-sm text-muted-foreground">{answer}</p>
+              <div className="mt-8 md:mt-12">
+                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm space-y-4">
+                  <h2 className="text-xl md:text-2xl font-bold flex items-center gap-2 text-foreground">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
                     </div>
-                  ))}
+                    Comprehensive Percentage Calculator Guide
+                  </h2>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    This versatile calculator covers day-to-day tasks like tracking growth, spotting declines, or comparing two values side by side. Use the built-in discount and percent-off modes before you shop, or switch to dedicated profit and interest views when you need confident planning for work or personal finances.
+                  </p>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Need to find part-of-whole results fast? Choose the “what percent” option, follow the guided formula, then convert outcomes to fractions or decimals in seconds. Each module adapts for tips, grades, or other quick-change scenarios, giving students, professionals, and everyday problem solvers a complete math toolkit.
+                  </p>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Explore real-world problems, work through guided examples, and master the underlying equations with tutorials embedded throughout the experience. Bookmark this free resource to keep a reliable reference handy for every walkthrough, practice question, or formula refresher you need.
+                  </p>
+                  <div className="space-y-2 text-xs md:text-sm text-muted-foreground">
+                    <p>
+                      For loan calculations, use our{" "}
+                      <a href="/calculator/loan-calculator" className="text-primary underline-offset-2 hover:underline">
+                        EMI Calculator
+                      </a>.
+                    </p>
+                    <p>
+                      Calculate your{" "}
+                      <a href="/calculator/gpa-calculator" className="text-primary underline-offset-2 hover:underline">
+                        GPA percentage
+                      </a>{" "}
+                      easily.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* How to Use Section */}
+              <div className="mt-8 md:mt-12">
+                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm space-y-4">
+                  <h2 className="text-xl md:text-2xl font-bold flex items-center gap-2 text-foreground">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <Calculator className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
+                    </div>
+                    Related Percentage Calculator Questions
+                  </h2>
+                  <div className="space-y-4 md:space-y-6">
+                    <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
+                      <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">What is a percentage calculator and why do I need one?</h3>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        A percentage calculator is a focused math assistant that converts part-versus-whole relationships into easy-to-read percentages. It keeps the formulas consistent, prevents manual errors, and stores your results. Use it whenever you are grading assignments, comparing budgets, or planning shopping trips that hinge on clear, reliable percentage answers.
+                      </p>
+                    </div>
+                    <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
+                      <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">How can I calculate the percentage of two numbers quickly?</h3>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Enter the part and the whole, then let the calculator handle division and multiplication automatically. The interface shows the underlying steps—part divided by whole, then multiplied by one hundred—so you understand the logic while saving time. Bookmark the quick-entry panel for repeated comparisons you run every day.
+                      </p>
+                    </div>
+                    <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
+                      <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">Where can I convert percentage increase and decrease without mistakes?</h3>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Switch to the change tab, supply your starting value and new value, and the tool instantly reveals the increase or decrease in percentage and absolute terms. Color-coded guidance highlights gains versus losses, while downloadable notes capture the math for reports, assignments, or stakeholder updates that demand accuracy.
+                      </p>
+                    </div>
+                    <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
+                      <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">Which percentage calculator mode helps compare discounts?</h3>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Use the discount mode to enter original price, sale price, or advertised percent off. The calculator shows how much you save, the percent discount, and the final cost. Add tax or shipping fields to mirror real checkout totals so you can choose the best offer with confidence every time.
+                      </p>
+                    </div>
+                    <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
+                      <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">How do I practice percentage formulas with guided examples?</h3>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        Open the learn-and-practice section to see worked examples, quick quizzes, and printable worksheets. Each activity explains the formula, asks you to enter numbers, and confirms your answer using the calculator’s engine. Track progress over time to strengthen classroom fundamentals or prepare for exams that emphasize percentage mastery.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 md:mt-12">
+                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm space-y-4">
+                  <h2 className="text-xl md:text-2xl font-bold flex items-center gap-2 text-foreground">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <Percent className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
+                    </div>
+                    Feature Highlights
+                  </h2>
+                  <div className="space-y-4 md:space-y-6">
+                    <p className="text-xs md:text-sm text-muted-foreground">
+                      The basic percentage calculator handles foundational needs like finding the percentage of a number, discovering what percent one figure is of another, and converting results into fractions or decimals. Every answer includes the math steps so you can verify the approach before sharing it with students, shoppers, or teammates.
+                    </p>
+                    <p className="text-xs md:text-sm text-muted-foreground">
+                      Switch to the percentage increase calculator or percentage decrease calculator to track changes between two values. You will see the absolute difference, the percentage swing, and plain-language commentary—ideal for budgeting, sales performance, grade tracking, or health progress that relies on transparent before-and-after comparisons.
+                    </p>
+                    <p className="text-xs md:text-sm text-muted-foreground">
+                      Advanced modes cover reverse percentage, percentage difference, and multi-step comparisons, helping you uncover original prices, measure gaps between data points, or evaluate stacked discounts. Pair these features with saved histories and exports to keep financial planning, academic analysis, and project reporting consistent across every scenario.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 md:mt-12">
+                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm space-y-4">
+                  <h2 className="text-xl md:text-2xl font-bold flex items-center gap-2 text-foreground">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <Percent className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
+                    </div>
+                    Popular Percentage Calculator Requests
+                  </h2>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    The core tool gives shoppers instant clarity on discounts and sales while finance teams compare profit versus tax impacts when margins matter.
+                  </p>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Students rely on the marks dashboard to translate raw scores, explore grading scenarios before finals, or double-check exam breakdowns for regional benchmarks.
+                  </p>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Everyday users toggle to the change view, run quick increase-or-decrease checks, or lean on the reduction panel when seasonal promotions appear.
+                  </p>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Personal goal tracking stays easy with weight-loss, growth, and averaging summaries, while a lighthearted compatibility spinner keeps things fun.
+                  </p>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Professionals can calculate raises, compare loan payments, and evaluate interest scenarios across multiple lenders in a single, organized workspace.
+                  </p>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Academics appreciate the GPA converter paired with reverse calculations, regional grading primers, budgeting helpers, and flexible add-and-combine workflows.
+                  </p>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    When precision matters, yield, Excel formula walk-throughs, and uncertainty reference guides keep lab work and spreadsheets accurate—no guesswork required.
+                  </p>
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Explore niche requests like mobile app recommendations, practice sets, quick-answer tips, or advice on choosing the right pricing tier for premium features.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-8 md:mt-12">
+                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm space-y-4">
+                  <h2 className="text-xl md:text-2xl font-bold flex items-center gap-2 text-foreground">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
+                    </div>
+                    Top Percentage Calculator Questions Answered
+                  </h2>
+                  <div className="space-y-4 md:space-y-6">
+                    {processedQuestionAnswers.map(({ question, answer }, index) => (
+                      <div key={index} className="p-3 md:p-4 bg-card rounded-lg border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">{question}</h3>
+                        <p className="text-xs md:text-sm text-muted-foreground">{answer}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* How to Use Section */}
               <div className="mt-8 md:mt-12 space-y-6 md:space-y-8">
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 text-foreground">
                     <div className="p-2 bg-primary/10 rounded-lg">
                       <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
-                  </div>
-                  How to Use Our Advanced Percentage Calculator
-                </h2>
-                <div className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-3 md:gap-4">
-                    <div id="choose-calculation-type" className="p-3 md:p-4 bg-card rounded-lg border border-border">
-                      <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">1. Select Calculation Type</h3>
+                    </div>
+                    How to Use Our Advanced Percentage Calculator
+                  </h2>
+                  <div className="space-y-4">
+                    <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+                      <div id="choose-calculation-type" className="p-3 md:p-4 bg-card rounded-lg border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">1. Select Calculation Type</h3>
+                        <p className="text-xs md:text-sm text-muted-foreground">
+                          Choose from seven calculation modes—percentage increase, decrease, difference, discount, markup, margin, or compound interest—to align with your scenario before entering any numbers.
+                        </p>
+                      </div>
+                      <div id="enter-values" className="p-3 md:p-4 bg-card rounded-lg border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">2. Enter Values</h3>
+                        <p className="text-xs md:text-sm text-muted-foreground">
+                          Input the relevant figures, percentages, or totals. Use keyboard tabbing for quick navigation or paste data directly from spreadsheets to keep workflows fast.
+                        </p>
+                      </div>
+                      <div id="get-results" className="p-3 md:p-4 bg-card rounded-lg border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">3. Get Results</h3>
+                        <p className="text-xs md:text-sm text-muted-foreground">
+                          Review the computed percentage alongside the exact formula, decimal conversion, and plain-language explanation so you can double-check every step.
+                        </p>
+                      </div>
+                      <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
+                        <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">4. Copy & Share</h3>
+                        <p className="text-xs md:text-sm text-muted-foreground">
+                          Download, copy, or share the calculation with context notes, making it simple to collaborate with classmates, clients, or teammates.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="border-t border-border pt-4">
                       <p className="text-xs md:text-sm text-muted-foreground">
-                        Choose from seven calculation modes—percentage increase, decrease, difference, discount, markup, margin, or compound interest—to align with your scenario before entering any numbers.
+                        Need a refresher on what percentages represent? Explore the{" "}
+                        <a
+                          href="https://en.wikipedia.org/wiki/Percentage"
+                          className="text-primary underline-offset-2 hover:underline"
+                          rel="noopener"
+                          target="_blank"
+                        >
+                          Percentage overview on Wikipedia
+                        </a>{" "}
+                        for historical context, formulas, and real-world examples.
                       </p>
                     </div>
-                    <div id="enter-values" className="p-3 md:p-4 bg-card rounded-lg border border-border">
-                      <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">2. Enter Values</h3>
-                      <p className="text-xs md:text-sm text-muted-foreground">
-                        Input the relevant figures, percentages, or totals. Use keyboard tabbing for quick navigation or paste data directly from spreadsheets to keep workflows fast.
-                      </p>
-                    </div>
-                    <div id="get-results" className="p-3 md:p-4 bg-card rounded-lg border border-border">
-                      <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">3. Get Results</h3>
-                      <p className="text-xs md:text-sm text-muted-foreground">
-                        Review the computed percentage alongside the exact formula, decimal conversion, and plain-language explanation so you can double-check every step.
-                      </p>
-                    </div>
-                    <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
-                      <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">4. Copy & Share</h3>
-                      <p className="text-xs md:text-sm text-muted-foreground">
-                        Download, copy, or share the calculation with context notes, making it simple to collaborate with classmates, clients, or teammates.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="border-t border-border pt-4">
-                    <p className="text-xs md:text-sm text-muted-foreground">
-                      Need a refresher on what percentages represent? Explore the{" "}
-                      <a
-                        href="https://en.wikipedia.org/wiki/Percentage"
-                        className="text-primary underline-offset-2 hover:underline"
-                        rel="noopener"
-                        target="_blank"
-                      >
-                        Percentage overview on Wikipedia
-                      </a>{" "}
-                      for historical context, formulas, and real-world examples.
-                    </p>
                   </div>
                 </div>
-              </div>
 
-              {/* Calculation Types */}
+                {/* Calculation Types */}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
                     <div className="p-2 bg-primary/10 rounded-lg">
                       <Calculator className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
-                  </div>
-                  Percentage Calculation Types
-                </h2>
+                    </div>
+                    Percentage Calculation Types
+                  </h2>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
-                  {[
-                    { type: "Basic Percentage", icon: Percent, desc: "Find what percentage of a number is", example: "25% of 1000 = 250" },
-                    { type: "Percentage Increase", icon: TrendingUp, desc: "Calculate increase by percentage", example: "1000 + 10% = 1100" },
-                    { type: "Percentage Decrease", icon: TrendingDown, desc: "Calculate decrease by percentage", example: "1000 - 10% = 900" },
-                    { type: "Percentage Difference", icon: Target, desc: "Find difference between two values", example: "Difference between 100 and 120 = 18.18%" },
-                    { type: "Markup Calculation", icon: DollarSign, desc: "Calculate selling price with markup", example: "Cost $100 + 25% markup = $125" },
-                    { type: "Margin Calculation", icon: BarChart3, desc: "Calculate cost from selling price", example: "Selling $125 - 20% margin = $100" },
-                    { type: "Compound Interest", icon: PieChart, desc: "Calculate compound interest", example: "$1000 at 5% for 3 years = $1157.63" }
-                  ].map(({ type, icon: Icon, desc, example }) => (
+                    {[
+                      { type: "Basic Percentage", icon: Percent, desc: "Find what percentage of a number is", example: "25% of 1000 = 250" },
+                      { type: "Percentage Increase", icon: TrendingUp, desc: "Calculate increase by percentage", example: "1000 + 10% = 1100" },
+                      { type: "Percentage Decrease", icon: TrendingDown, desc: "Calculate decrease by percentage", example: "1000 - 10% = 900" },
+                      { type: "Percentage Difference", icon: Target, desc: "Find difference between two values", example: "Difference between 100 and 120 = 18.18%" },
+                      { type: "Markup Calculation", icon: DollarSign, desc: "Calculate selling price with markup", example: "Cost $100 + 25% markup = $125" },
+                      { type: "Margin Calculation", icon: BarChart3, desc: "Calculate cost from selling price", example: "Selling $125 - 20% margin = $100" },
+                      { type: "Compound Interest", icon: PieChart, desc: "Calculate compound interest", example: "$1000 at 5% for 3 years = $1157.63" }
+                    ].map(({ type, icon: Icon, desc, example }) => (
                       <div key={type} className="p-3 md:p-4 bg-card rounded-lg border border-border">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Icon className="h-4 w-4 text-foreground" />
+                        <div className="flex items-center gap-2 mb-2">
+                          <Icon className="h-4 w-4 text-foreground" />
                           <h3 className="font-semibold text-heading-accent text-sm md:text-base">{type}</h3>
-                      </div>
+                        </div>
                         <p className="text-xs md:text-sm text-muted-foreground mb-2">{desc}</p>
-                      <p className="text-xs text-foreground font-mono bg-primary/10 px-2 py-1 rounded">{example}</p>
-                    </div>
-                  ))}
+                        <p className="text-xs text-foreground font-mono bg-primary/10 px-2 py-1 rounded">{example}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* Targeted Use Cases by Intent */}
-              <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
-                <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Users className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
-                  </div>
-                  Percentage Calculator Use Cases by Intent
-                </h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                  <div className="space-y-3">
-                    <h3 className="text-base md:text-lg font-semibold text-heading-accent">📊 Informational Intent</h3>
-                    <div className="space-y-2">
-                      <div className="p-3 bg-card rounded-lg border border-border">
-                        <h4 className="font-semibold text-heading-accent mb-1 text-sm">Percentage Increase Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Calculate growth rates, salary increases, and performance improvements</p>
-                      </div>
-                      <div className="p-3 bg-card rounded-lg border border-border">
-                        <h4 className="font-semibold text-heading-accent mb-1 text-sm">Percentage Decrease Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Calculate price drops, budget reductions, and efficiency losses</p>
-                      </div>
-                      <div className="p-3 bg-card rounded-lg border border-border">
-                        <h4 className="font-semibold text-heading-accent mb-1 text-sm">Percentage Difference Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Compare two values to find percentage difference</p>
+                {/* Targeted Use Cases by Intent */}
+                <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
+                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <Users className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
+                    </div>
+                    Percentage Calculator Use Cases by Intent
+                  </h2>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    <div className="space-y-3">
+                      <h3 className="text-base md:text-lg font-semibold text-heading-accent">📊 Informational Intent</h3>
+                      <div className="space-y-2">
+                        <div className="p-3 bg-card rounded-lg border border-border">
+                          <h4 className="font-semibold text-heading-accent mb-1 text-sm">Percentage Increase Calculator</h4>
+                          <p className="text-xs text-muted-foreground">Calculate growth rates, salary increases, and performance improvements</p>
+                        </div>
+                        <div className="p-3 bg-card rounded-lg border border-border">
+                          <h4 className="font-semibold text-heading-accent mb-1 text-sm">Percentage Decrease Calculator</h4>
+                          <p className="text-xs text-muted-foreground">Calculate price drops, budget reductions, and efficiency losses</p>
+                        </div>
+                        <div className="p-3 bg-card rounded-lg border border-border">
+                          <h4 className="font-semibold text-heading-accent mb-1 text-sm">Percentage Difference Calculator</h4>
+                          <p className="text-xs text-muted-foreground">Compare two values to find percentage difference</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <h3 className="text-base md:text-lg font-semibold text-heading-accent">🛒 Practical Intent</h3>
-                    <div className="space-y-2">
-                      <div className="p-3 bg-card rounded-lg border border-border">
-                        <h4 className="font-semibold text-heading-accent mb-1 text-sm">Discount Percentage Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Calculate sale prices, discount amounts, and savings</p>
-                      </div>
-                      <div className="p-3 bg-card rounded-lg border border-border">
-                        <h4 className="font-semibold text-heading-accent mb-1 text-sm">Tip Percentage Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Calculate restaurant tips, service charges, and gratuity</p>
-                      </div>
-                      <div className="p-3 bg-card rounded-lg border border-border">
-                        <h4 className="font-semibold text-heading-accent mb-1 text-sm">Percent Off Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Find final prices after percentage discounts</p>
+
+                    <div className="space-y-3">
+                      <h3 className="text-base md:text-lg font-semibold text-heading-accent">🛒 Practical Intent</h3>
+                      <div className="space-y-2">
+                        <div className="p-3 bg-card rounded-lg border border-border">
+                          <h4 className="font-semibold text-heading-accent mb-1 text-sm">Discount Percentage Calculator</h4>
+                          <p className="text-xs text-muted-foreground">Calculate sale prices, discount amounts, and savings</p>
+                        </div>
+                        <div className="p-3 bg-card rounded-lg border border-border">
+                          <h4 className="font-semibold text-heading-accent mb-1 text-sm">Tip Percentage Calculator</h4>
+                          <p className="text-xs text-muted-foreground">Calculate restaurant tips, service charges, and gratuity</p>
+                        </div>
+                        <div className="p-3 bg-card rounded-lg border border-border">
+                          <h4 className="font-semibold text-heading-accent mb-1 text-sm">Percent Off Calculator</h4>
+                          <p className="text-xs text-muted-foreground">Find final prices after percentage discounts</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <h3 className="text-base md:text-lg font-semibold text-heading-accent">💼 Business Intent</h3>
-                    <div className="space-y-2">
-                      <div className="p-3 bg-card rounded-lg border border-border">
-                        <h4 className="font-semibold text-heading-accent mb-1 text-sm">Profit Percentage Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Calculate profit margins, markup percentages, and ROI</p>
-                      </div>
-                      <div className="p-3 bg-card rounded-lg border border-border">
-                        <h4 className="font-semibold text-heading-accent mb-1 text-sm">Interest Percentage Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Calculate loan interest, investment returns, and APY</p>
-                      </div>
-                      <div className="p-3 bg-card rounded-lg border border-border">
-                        <h4 className="font-semibold text-heading-accent mb-1 text-sm">Grade Percentage Calculator</h4>
-                        <p className="text-xs text-muted-foreground">Calculate test scores, GPA, and academic performance</p>
+
+                    <div className="space-y-3">
+                      <h3 className="text-base md:text-lg font-semibold text-heading-accent">💼 Business Intent</h3>
+                      <div className="space-y-2">
+                        <div className="p-3 bg-card rounded-lg border border-border">
+                          <h4 className="font-semibold text-heading-accent mb-1 text-sm">Profit Percentage Calculator</h4>
+                          <p className="text-xs text-muted-foreground">Calculate profit margins, markup percentages, and ROI</p>
+                        </div>
+                        <div className="p-3 bg-card rounded-lg border border-border">
+                          <h4 className="font-semibold text-heading-accent mb-1 text-sm">Interest Percentage Calculator</h4>
+                          <p className="text-xs text-muted-foreground">Calculate loan interest, investment returns, and APY</p>
+                        </div>
+                        <div className="p-3 bg-card rounded-lg border border-border">
+                          <h4 className="font-semibold text-heading-accent mb-1 text-sm">Grade Percentage Calculator</h4>
+                          <p className="text-xs text-muted-foreground">Calculate test scores, GPA, and academic performance</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
                 {/* How-To Guides for Different Intents */}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
                     <div className="p-2 bg-primary/10 rounded-lg">
                       <BookOpen className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
-                  </div>
+                    </div>
                     How-To Guides: Find Percentage of a Number
-                </h2>
+                  </h2>
                   <div className="space-y-4 md:space-y-6">
                     <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
                       <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">How to Find Percentage of a Number</h3>
@@ -1005,7 +957,7 @@ export default function PercentageCalculatorPage() {
                         <strong>Example:</strong> What percent of 200 is 50? (50 ÷ 200) × 100 = 25%
                       </p>
                     </div>
-                    
+
                     <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
                       <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">How to Calculate Percentage Change</h3>
                       <p className="text-xs md:text-sm text-muted-foreground mb-2">
@@ -1018,7 +970,7 @@ export default function PercentageCalculatorPage() {
                         <strong>Step 3:</strong> Multiply by 100: Result × 100
                       </p>
                     </div>
-                    
+
                     <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
                       <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">How to Convert Percentage to Fraction</h3>
                       <p className="text-xs md:text-sm text-muted-foreground mb-2">
@@ -1051,7 +1003,7 @@ export default function PercentageCalculatorPage() {
                       <p className="text-xs md:text-sm text-muted-foreground">
                         <strong>Example:</strong> What is 25% of 200? Step 1: Convert 25% to decimal (0.25), Step 2: Multiply 0.25 × 200 = 50
                       </p>
-              </div>
+                    </div>
 
                     <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
                       <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">Percentage Increase Formula</h3>
@@ -1061,8 +1013,8 @@ export default function PercentageCalculatorPage() {
                       <p className="text-xs md:text-sm text-muted-foreground">
                         <strong>Example:</strong> If a product price rises from $100 to $120: ((120-100)/100) × 100 = 20% growth
                       </p>
-                  </div>
-                    
+                    </div>
+
                     <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
                       <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">Markup vs Margin</h3>
                       <p className="text-xs md:text-sm text-muted-foreground mb-2">
@@ -1072,7 +1024,7 @@ export default function PercentageCalculatorPage() {
                         <strong>Margin Calculation:</strong> Base Cost = Final Price × (1 - Margin Percentage / 100)
                       </p>
                     </div>
-                    
+
                     <div className="p-3 md:p-4 bg-card rounded-lg border border-border">
                       <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">Compound Interest Formula</h3>
                       <p className="text-xs md:text-sm text-muted-foreground mb-2">
@@ -1081,16 +1033,16 @@ export default function PercentageCalculatorPage() {
                       <p className="text-xs md:text-sm text-muted-foreground">
                         Where: A = final amount, P = principal, r = rate, n = compounding frequency, t = time
                       </p>
-              </div>
-            </div>
-          </div>
-          
+                    </div>
+                  </div>
+                </div>
+
                 {/* Real-World Applications */}
                 <div className="bg-card border border-border rounded-xl p-4 md:p-6 shadow-sm">
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-2 text-foreground">
                     <div className="p-2 bg-primary/10 rounded-lg">
                       <Users className="h-4 w-4 md:h-5 md:w-5 text-foreground" />
-                  </div>
+                    </div>
                     Real-World Applications
                   </h2>
                   <div className="grid md:grid-cols-2 gap-4 md:gap-6">
@@ -1100,26 +1052,26 @@ export default function PercentageCalculatorPage() {
                         <div className="p-3 bg-card rounded-lg border border-border">
                           <h4 className="font-semibold text-heading-accent mb-1 text-sm">Sales & Discounts</h4>
                           <p className="text-xs text-muted-foreground">Calculate sale prices, discount amounts, and profit margins for retail businesses.</p>
-                </div>
+                        </div>
                         <div className="p-3 bg-card rounded-lg border border-border">
                           <h4 className="font-semibold text-heading-accent mb-1 text-sm">Investment Returns</h4>
                           <p className="text-xs text-muted-foreground">Analyze portfolio performance, calculate compound interest, and track growth rates.</p>
-                  </div>
-                </div>
-                </div>
-                <div className="space-y-3">
+                        </div>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
                       <h3 className="text-base md:text-lg font-semibold text-heading-accent">Education & Statistics</h3>
                       <div className="space-y-2">
                         <div className="p-3 bg-card rounded-lg border border-border">
                           <h4 className="font-semibold text-heading-accent mb-1 text-sm">Test Scores & Grades</h4>
                           <p className="text-xs text-muted-foreground">Calculate grade percentages, analyze test performance, and track academic progress.</p>
-                  </div>
+                        </div>
                         <div className="p-3 bg-card rounded-lg border border-border">
                           <h4 className="font-semibold text-heading-accent mb-1 text-sm">Survey Analysis</h4>
                           <p className="text-xs text-muted-foreground">Analyze survey results, calculate response rates, and interpret statistical data.</p>
-                  </div>
-                </div>
-              </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -1133,75 +1085,75 @@ export default function PercentageCalculatorPage() {
                   </h2>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     {[
-                      { 
-                        name: "BMI Calculator", 
-                        desc: "Calculate Body Mass Index and health metrics", 
+                      {
+                        name: "BMI Calculator",
+                        desc: "Calculate Body Mass Index and health metrics",
                         href: "/calculator/bmi-calculator",
                         icon: "📊"
                       },
-                      { 
-                        name: "EMI Calculator", 
-                        desc: "Calculate loan payments and interest", 
+                      {
+                        name: "EMI Calculator",
+                        desc: "Calculate loan payments and interest",
                         href: "/calculator/loan-calculator",
                         icon: "💰"
                       },
-                      { 
-                        name: "Age Calculator", 
-                        desc: "Calculate age in years, months, days", 
+                      {
+                        name: "Age Calculator",
+                        desc: "Calculate age in years, months, days",
                         href: "/calculator/age-calculator",
                         icon: "🎂"
                       },
-                      { 
-                        name: "Date Difference Calculator", 
-                        desc: "Calculate days between dates", 
+                      {
+                        name: "Date Difference Calculator",
+                        desc: "Calculate days between dates",
                         href: "/calculator/date-difference",
                         icon: "📅"
                       },
-                      { 
-                        name: "Tip Calculator", 
-                        desc: "Calculate tips and gratuity", 
+                      {
+                        name: "Tip Calculator",
+                        desc: "Calculate tips and gratuity",
                         href: "/finance-tools/tip-calculator",
                         icon: "🍽️"
                       },
-                      { 
-                        name: "Discount Calculator", 
-                        desc: "Calculate discounts and savings", 
+                      {
+                        name: "Discount Calculator",
+                        desc: "Calculate discounts and savings",
                         href: "/finance-tools/discount-calculator",
                         icon: "🏷️"
                       },
-                      { 
-                        name: "Compound Interest Calculator", 
-                        desc: "Calculate compound interest growth", 
+                      {
+                        name: "Compound Interest Calculator",
+                        desc: "Calculate compound interest growth",
                         href: "/calculator/compound-interest",
                         icon: "📈"
                       },
-                      { 
-                        name: "Sales Tax Calculator", 
-                        desc: "Calculate sales tax and total amounts", 
+                      {
+                        name: "Sales Tax Calculator",
+                        desc: "Calculate sales tax and total amounts",
                         href: "/calculator/sales-tax-calculator",
                         icon: "💼"
                       },
-                      { 
-                        name: "Grade Calculator", 
-                        desc: "Calculate GPA and academic grades", 
+                      {
+                        name: "Grade Calculator",
+                        desc: "Calculate GPA and academic grades",
                         href: "/calculator/gpa-calculator",
                         icon: "🎓"
                       },
-                      { 
-                        name: "Tax Calculator", 
-                        desc: "Calculate income and sales tax", 
+                      {
+                        name: "Tax Calculator",
+                        desc: "Calculate income and sales tax",
                         href: "/calculator/tax-calculator",
                         icon: "🧾"
                       },
-                      { 
-                        name: "Investment Calculator", 
-                        desc: "Calculate investment returns and ROI", 
+                      {
+                        name: "Investment Calculator",
+                        desc: "Calculate investment returns and ROI",
                         href: "/calculator/investment-calculator",
                         icon: "📊"
                       },
-                      { 
-                        name: "Salary Calculator", 
-                        desc: "Calculate salary and wage conversions", 
+                      {
+                        name: "Salary Calculator",
+                        desc: "Calculate salary and wage conversions",
                         href: "/calculator/salary-calculator",
                         icon: "💵"
                       }
@@ -1447,14 +1399,14 @@ export default function PercentageCalculatorPage() {
                       <div key={index} className="p-3 md:p-4 bg-card rounded-lg border border-border">
                         <h3 className="font-semibold text-heading-accent mb-2 text-sm md:text-base">{q}</h3>
                         <p className="text-xs md:text-sm text-muted-foreground">{a}</p>
-                  </div>
+                      </div>
                     ))}
                   </div>
                 </div>
               </div>
 
             </div>
-            
+
             <div className="space-y-6 hidden lg:block">
               <div className="sticky top-32 space-y-6">
                 <div>

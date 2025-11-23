@@ -17,7 +17,7 @@ export const dynamic = 'force-dynamic'
 export async function POST(request: NextRequest) {
   try {
     const { url, format = 'mp4', videoId, title } = await request.json()
-    
+
     console.log('Getting direct download URL for:', url, 'format:', format)
 
     if (!url) {
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
 
     // Get yt-dlp binary path - handle both local and production (standalone) modes
     const projectRoot = process.cwd()
-    
+
     const possiblePaths = [
       '/app/bin/yt-dlp', // Docker production path (absolute - most reliable)
       path.join(projectRoot, 'bin', 'yt-dlp'), // Standard location
@@ -47,9 +47,9 @@ export async function POST(request: NextRequest) {
       path.resolve(projectRoot, 'bin', 'yt-dlp'), // Resolved absolute path
       path.resolve('/app', 'bin', 'yt-dlp'), // Resolved Docker path
     ]
-    
+
     let ytDlpPath: string | null = null
-    
+
     // Find the first existing path
     for (const possiblePath of possiblePaths) {
       try {
@@ -64,27 +64,27 @@ export async function POST(request: NextRequest) {
         // Continue searching
       }
     }
-    
+
     if (!ytDlpPath) {
       console.error('❌ yt-dlp not found in any of the checked locations')
       return NextResponse.json(
-        { 
-          success: false, 
-          message: 'yt-dlp binary not found. Please check server configuration.' 
+        {
+          success: false,
+          message: 'yt-dlp binary not found. Please check server configuration.'
         },
         { status: 500 }
       )
     }
-    
+
     // Verify yt-dlp is executable
     try {
       await execAsync(`"${ytDlpPath}" --version`, { timeout: 5000 })
     } catch (versionError: any) {
       console.error('❌ yt-dlp version check failed:', versionError.message)
       return NextResponse.json(
-        { 
-          success: false, 
-          message: `yt-dlp found but not executable. Error: ${versionError.message}` 
+        {
+          success: false,
+          message: `yt-dlp found but not executable. Error: ${versionError.message}`
         },
         { status: 500 }
       )
@@ -110,10 +110,10 @@ export async function POST(request: NextRequest) {
       // --no-check-certificate: Skip SSL certificate validation (may be needed)
       // --no-playlist: Only download the video, not the entire playlist
       const command = `"${ytDlpPath}" -g -f "${formatSelector}" --no-check-certificate --no-playlist "${url}"`
-      
+
       console.log('Executing yt-dlp command to get URL:', command)
-      
-      const { stdout, stderr } = await execAsync(command, { 
+
+      const { stdout, stderr } = await execAsync(command, {
         timeout: 30000, // 30 second timeout
         maxBuffer: 10 * 1024 * 1024 // 10MB buffer
       })
@@ -126,15 +126,15 @@ export async function POST(request: NextRequest) {
       // For video+audio formats, it might return 2 URLs (video and audio streams)
       // For audio-only, it returns 1 URL
       const urls = stdout.trim().split('\n').filter(line => line.trim().startsWith('http'))
-      
+
       if (urls.length === 0) {
         console.error('❌ No URLs returned from yt-dlp')
         console.error('yt-dlp stdout:', stdout)
         console.error('yt-dlp stderr:', stderr)
         return NextResponse.json(
-          { 
-            success: false, 
-            message: 'Failed to extract download URL. The video may be unavailable or restricted.' 
+          {
+            success: false,
+            message: 'Failed to extract download URL. The video may be unavailable or restricted.'
           },
           { status: 500 }
         )
@@ -142,23 +142,23 @@ export async function POST(request: NextRequest) {
 
       // Get the first URL (for audio) or handle multiple URLs (for video+audio)
       let directUrl = urls[0]
-      
+
       // Check if the URL is an HLS manifest (m3u8 playlist)
       // HLS manifests are playlist files, not direct video files
       if (directUrl.includes('manifest.googlevideo.com') || directUrl.includes('.m3u8')) {
         console.log('⚠️  HLS manifest URL detected, trying to get direct video URL...')
-        
+
         // Strategy 1: Try worst quality (often has direct URLs, not HLS)
         console.log('Strategy 1: Trying worst quality format...')
         try {
           const worstCommand = `"${ytDlpPath}" -g -f "worst[ext=mp4]/worst" --no-check-certificate --no-playlist "${url}"`
           const worstOutput = await execAsync(worstCommand, { timeout: 30000 })
-          const worstUrls = worstOutput.stdout.trim().split('\n').filter(line => 
-            line.trim().startsWith('http') && 
-            !line.includes('manifest.googlevideo.com') && 
+          const worstUrls = worstOutput.stdout.trim().split('\n').filter(line =>
+            line.trim().startsWith('http') &&
+            !line.includes('manifest.googlevideo.com') &&
             !line.includes('.m3u8')
           )
-          
+
           if (worstUrls.length > 0) {
             directUrl = worstUrls[0]
             console.log('✅ Found direct video URL using worst quality')
@@ -166,7 +166,7 @@ export async function POST(request: NextRequest) {
         } catch (worstError) {
           console.log('Worst quality method failed, trying next strategy...')
         }
-        
+
         // Strategy 2: Try listing formats and finding a non-HLS one
         if (directUrl.includes('manifest.googlevideo.com') || directUrl.includes('.m3u8')) {
           console.log('Strategy 2: Listing formats to find non-HLS option...')
@@ -174,24 +174,24 @@ export async function POST(request: NextRequest) {
             // List all available formats
             const formatListCommand = `"${ytDlpPath}" -F --no-check-certificate --no-playlist "${url}"`
             const formatListOutput = await execAsync(formatListCommand, { timeout: 30000 })
-            
+
             // Parse format list - look for formats that are mp4 and not HLS
             const formatLines = formatListOutput.stdout.split('\n')
             const candidateFormats: { id: string, quality: string }[] = []
-            
+
             for (const line of formatLines) {
               // Look for video formats (usually have resolution like 360p, 480p, etc.)
               if (line.includes('video') && (line.includes('mp4') || line.includes('webm'))) {
                 // Skip HLS formats
                 if (line.includes('HLS') || line.includes('m3u8')) continue
-                
+
                 const formatMatch = line.match(/^(\d+)\s+(\w+)\s+(\d+x\d+|\d+p)/)
                 if (formatMatch) {
                   candidateFormats.push({ id: formatMatch[1], quality: formatMatch[3] })
                 }
               }
             }
-            
+
             // Try formats from lowest to highest quality (lower quality often has direct URLs)
             if (candidateFormats.length > 0) {
               console.log(`Found ${candidateFormats.length} candidate formats, trying them...`)
@@ -199,12 +199,12 @@ export async function POST(request: NextRequest) {
                 try {
                   const fmtCommand = `"${ytDlpPath}" -g -f "${fmt.id}" --no-check-certificate --no-playlist "${url}"`
                   const fmtOutput = await execAsync(fmtCommand, { timeout: 30000 })
-                  const fmtUrls = fmtOutput.stdout.trim().split('\n').filter(line => 
-                    line.trim().startsWith('http') && 
-                    !line.includes('manifest.googlevideo.com') && 
+                  const fmtUrls = fmtOutput.stdout.trim().split('\n').filter(line =>
+                    line.trim().startsWith('http') &&
+                    !line.includes('manifest.googlevideo.com') &&
                     !line.includes('.m3u8')
                   )
-                  
+
                   if (fmtUrls.length > 0) {
                     directUrl = fmtUrls[0]
                     console.log(`✅ Found direct video URL using format ${fmt.id} (${fmt.quality})`)
@@ -219,7 +219,7 @@ export async function POST(request: NextRequest) {
             console.log('Format listing method failed')
           }
         }
-        
+
         // Strategy 3: If still HLS, return error
         if (directUrl.includes('manifest.googlevideo.com') || directUrl.includes('.m3u8')) {
           console.log('❌ All strategies failed. Video is only available in HLS format.')
@@ -230,7 +230,7 @@ export async function POST(request: NextRequest) {
           }, { status: 400 })
         }
       }
-      
+
       console.log('✅ Successfully extracted direct URL')
       console.log('URL length:', directUrl.length)
       console.log('URL preview:', directUrl.substring(0, 100) + '...')
@@ -238,7 +238,7 @@ export async function POST(request: NextRequest) {
       // Get video information for filename
       let videoTitle = title || 'youtube-video'
       let videoAuthor = 'Unknown'
-      
+
       try {
         // Get video info for better filename
         const infoCommand = `"${ytDlpPath}" --get-title --get-id --no-check-certificate --no-playlist "${url}"`
@@ -263,7 +263,7 @@ export async function POST(request: NextRequest) {
       // Note: For MP3, YouTube typically serves m4a/webm, so we'll keep that extension
       // The browser will handle the download with the correct content type
       let extension = format === 'mp4' ? 'mp4' : 'mp3'
-      
+
       // Check URL to determine actual format (for audio, it might be m4a/webm)
       if (format === 'mp3' && directUrl.includes('.m4a')) {
         extension = 'm4a'
@@ -292,33 +292,41 @@ export async function POST(request: NextRequest) {
       console.error('Error stderr:', execError.stderr)
 
       let errorMessage = 'Failed to extract download URL.'
-      
+      let statusCode = 500
+
       if (execError.stderr) {
         if (execError.stderr.includes('Private video')) {
-          errorMessage = 'This video is private and cannot be downloaded.'
+          errorMessage = 'This video is private and cannot be downloaded. Please try a public video.'
+          statusCode = 403 // Forbidden
         } else if (execError.stderr.includes('Video unavailable')) {
           errorMessage = 'Video is unavailable or has been removed.'
+          statusCode = 404 // Not Found
+        } else if (execError.stderr.includes('Sign in to confirm your age')) {
+          errorMessage = 'This video is age-restricted and cannot be downloaded.'
+          statusCode = 403 // Forbidden
         } else if (execError.stderr.includes('ERROR')) {
           const errorMatch = execError.stderr.match(/ERROR:\s*(.+)/)
           if (errorMatch) {
             errorMessage = `Error: ${errorMatch[1].substring(0, 200)}`
+            // If it's a generic yt-dlp error, it might be a bad request (invalid URL, etc)
+            // but we'll keep 500 unless we're sure
           }
         }
       }
 
       return NextResponse.json(
-        { 
-          success: false, 
+        {
+          success: false,
           message: errorMessage
         },
-        { status: 500 }
+        { status: statusCode }
       )
     }
   } catch (error: any) {
     console.error('❌ YouTube download URL API error:', error)
     console.error('Error stack:', error?.stack)
     console.error('Error message:', error?.message)
-    
+
     return NextResponse.json(
       {
         success: false,
