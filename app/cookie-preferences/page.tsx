@@ -5,7 +5,6 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Button } from "@/components/ui/button"
 import { Shield, Cookie, Eye, Settings, CheckCircle, AlertTriangle, ExternalLink, Lock, BarChart, Target } from "lucide-react"
 import Link from "next/link"
-import Head from "next/head"
 
 interface CookiePreferences {
   essential: boolean
@@ -56,7 +55,7 @@ export default function CookiePreferencesPage() {
 
   const togglePreference = (key: keyof CookiePreferences) => {
     if (key === 'essential') return // Essential cookies cannot be disabled
-    
+
     setPreferences(prev => ({
       ...prev,
       [key]: !prev[key]
@@ -67,10 +66,10 @@ export default function CookiePreferencesPage() {
     localStorage.setItem("cookie-preferences", JSON.stringify(preferences))
     localStorage.setItem("cookie-consent", "accepted")
     setSaved(true)
-    
+
     // Initialize tracking based on preferences
     initializeTracking(preferences.analytics || preferences.advertising)
-    
+
     setTimeout(() => setSaved(false), 3000)
   }
 
@@ -85,7 +84,7 @@ export default function CookiePreferencesPage() {
     localStorage.setItem("cookie-preferences", JSON.stringify(allAccepted))
     localStorage.setItem("cookie-consent", "accepted")
     setSaved(true)
-    
+
     initializeTracking(true)
     setTimeout(() => setSaved(false), 3000)
   }
@@ -101,7 +100,7 @@ export default function CookiePreferencesPage() {
     localStorage.setItem("cookie-preferences", JSON.stringify(essentialOnly))
     localStorage.setItem("cookie-consent", "declined")
     setSaved(true)
-    
+
     initializeTracking(false)
     setTimeout(() => setSaved(false), 3000)
   }
@@ -121,13 +120,6 @@ export default function CookiePreferencesPage() {
 
   return (
     <>
-      <Head>
-        <title>Cookie Preferences | Manage Your Privacy Settings | FastTools</title>
-        <meta name="description" content="Manage your cookie preferences on FastTools. Control analytics, advertising, and essential cookies. Customize privacy settings for our free online tools." />
-        <meta name="keywords" content="cookie preferences, privacy settings, cookie management, data protection, GDPR compliance" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.fasttools.store/cookie-preferences" />
-      </Head>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
@@ -420,7 +412,7 @@ export default function CookiePreferencesPage() {
                       Save Current Preferences
                     </Button>
                   </div>
-                  
+
                   {saved && (
                     <div className="mt-4 p-4 bg-heading-accent-border/10 border border-heading-accent-border/30 text-heading-accent rounded-lg flex items-center gap-2">
                       <CheckCircle className="h-5 w-5" />
