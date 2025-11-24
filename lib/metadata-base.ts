@@ -53,10 +53,16 @@ export interface MetadataOptions {
     twitterTitle?: string
     twitterDescription?: string
     twitterCreator?: string
+    includeSchema?: boolean // Whether to include SoftwareApplication schema
 }
 
-export function createMetadata(options: MetadataOptions): Metadata {
-    const { title, description, path, ogImageAlt, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator } = options
+export interface MetadataWithSchema {
+    metadata: Metadata
+    softwareSchema: ReturnType<typeof createSoftwareAppSchema>
+}
+
+export function createMetadata(options: MetadataOptions): Metadata & { softwareSchema?: ReturnType<typeof createSoftwareAppSchema> } {
+    const { title, description, path, ogImageAlt, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, includeSchema = true } = options
     const cleanPath = path.startsWith("/") ? path : `/${path}`
     const titleWithBranding = title === "FastTools" ? title : `${title} | FastTools`
     const fullTitle = addYearToTitle(titleWithBranding, cleanPath)
@@ -71,105 +77,62 @@ export function createMetadata(options: MetadataOptions): Metadata {
     const finalTwitterDescription = twitterDescription || description
     const finalTwitterCreator = twitterCreator || "@ZamanIsmail7"
 
-    const openGraphConfig = isCompany && !isFaqPage
-        ? {
-            type: "website" as const,
-            locale: "en_US" as const,
-            url: canonicalUrl,
-            siteName: SITE_NAME,
-            images: [
-                {
-                    url: defaultOgImage,
-                    width: 1200,
-                    height: 630,
-                    alt: DEFAULT_IMAGES.OG_IMAGE_ALT_TEXT,
-                    type: "image/png",
-                },
-            ],
-        }
-        : {
-            title: finalOgTitle,
-            description: finalOgDescription,
-            url: canonicalUrl,
-            siteName: SITE_NAME,
-            images: [
-                {
-                    url: defaultOgImage,
-                    width: 1200,
-                    height: 630,
-                    alt: ogImageAlt || DEFAULT_IMAGES.OG_IMAGE_ALT_TEXT,
-                    type: "image/png",
-                },
-            ],
-            locale: "en_US",
-            type: "website",
-        }
-
-    return {
-        metadataBase: new URL(BASE_URL),
-        title: {
-            default: "FastTools",
-            template: "%s | FastTools",
-            absolute: fullTitle,
-        },
-        description,
-        applicationName: SITE_NAME,
-        authors: AUTHORS,
-        creator: "FastTools Team",
-        publisher: "FastTools",
-        verification: VERIFICATION,
-        formatDetection: {
-            email: false,
-            address: false,
-            telephone: false,
-        },
-        manifest: "/manifest.json",
-        icons: {
-            icon: [
-                { url: "/favicon.ico", sizes: "any" },
-                { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-                { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
-            ],
-            apple: [
-                { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-            ],
-            shortcut: "/favicon.ico",
-        },
-        robots: {
-            index: !noIndex,
-            follow: !noIndex,
-            googleBot: {
-                index: !noIndex,
-                follow: !noIndex,
-                "max-video-preview": -1,
-                "max-image-preview": "large",
-                "max-snippet": -1,
+    const openGraphConfig = {
+        title: finalOgTitle,
+        description: finalOgDescription,
+        url: canonicalUrl,
+        siteName: SITE_NAME,
+        images: [
+            {
+                url: defaultOgImage,
+                width: 1200,
+                height: 630,
+                alt: ogImageAlt || DEFAULT_IMAGES.OG_IMAGE_ALT_TEXT,
+                type: "image/png",
             },
-        },
-        openGraph: openGraphConfig,
-        twitter: {
-            card: "summary_large_image",
-            title: finalTwitterTitle,
-            description: finalTwitterDescription,
-            images: [defaultOgImage],
-            creator: finalTwitterCreator,
-        },
+        ],
+        type: "website" as const,
+        locale: "en_US" as const,
+    }
+
+    const twitterConfig = {
+        card: "summary_large_image" as const,
+        title: finalTwitterTitle,
+        description: finalTwitterDescription,
+        creator: finalTwitterCreator,
+        images: [defaultOgImage],
+    }
+
+    const metadata: Metadata = {
+        title: fullTitle,
+        description,
         alternates: {
             canonical: canonicalUrl,
         },
-        other: {
-            "mobile-web-app-capable": "yes",
-            "apple-mobile-web-app-capable": "yes",
-            "apple-mobile-web-app-status-bar-style": "black-translucent",
-            "apple-mobile-web-app-title": "fasttools",
-            "application-name": "fasttools",
-            "msapplication-TileColor": "#3D348B",
-            "msapplication-navbutton-color": "#3D348B",
-            "msapplication-config": "/browserconfig.xml",
-            "msapplication-tap-highlight": "no",
-            ...VERIFICATION.other,
-        },
+        authors: AUTHORS,
+        openGraph: openGraphConfig,
+        twitter: twitterConfig,
+        robots: noIndex
+            ? {
+                index: false,
+                follow: false,
+            }
+            : {
+                index: true,
+                follow: true,
+            },
+        verification: VERIFICATION,
     }
+
+    // If includeSchema is true, add the software schema
+    if (includeSchema) {
+        return {
+            ...metadata,
+            softwareSchema: createSoftwareAppSchema({ title })
+        }
+    }
+
+    return metadata
 }
 
 export function getCurrentYear(): number {
@@ -229,5 +192,60 @@ export function getWebsiteSchema(searchUrl?: string) {
             target: searchUrl || `${BASE_URL}/?q={search_term_string}`,
             "query-input": "required name=search_term_string",
         },
+    }
+}
+
+export function extractToolName(title: string): string {
+    // Remove common suffixes like "- Free ...", "| FastTools", year patterns, etc.
+    return title
+        .replace(/\s*-\s*Free.*$/i, '')
+        .replace(/\s*\|\s*FastTools.*$/i, '')
+        .replace(/\s*\(\d{4}\).*$/i, '')
+        .replace(/\s*-\s*\d{4}.*$/i, '')
+        .trim()
+}
+
+export interface SoftwareAppSchemaOptions {
+    name?: string
+    title?: string
+    applicationCategory?: string
+    operatingSystem?: string
+    price?: string
+    currency?: string
+    ratingValue?: string
+    ratingCount?: string
+}
+
+export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
+    const {
+        name,
+        title,
+        applicationCategory = "NetworkApplication",
+        operatingSystem = "Any",
+        price = "0",
+        currency = "USD",
+        ratingValue = "4.8",
+        ratingCount = "50000"
+    } = options
+
+    // Use provided name, or extract from title, or use empty string
+    const appName = name || (title ? extractToolName(title) : "")
+
+    return {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": appName,
+        "applicationCategory": applicationCategory,
+        "operatingSystem": operatingSystem,
+        "offers": {
+            "@type": "Offer",
+            "price": price,
+            "priceCurrency": currency
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": ratingValue,
+            "ratingCount": ratingCount
+        }
     }
 }
