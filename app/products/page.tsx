@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { GHeader } from "@/components/globalcomponents/gheader"
 import Link from "next/link"
-import type { Metadata } from "next"
+import { createMetadata } from "@/lib/metadata-base"
 import {
   Calculator,
   Sparkles,
@@ -12,146 +12,144 @@ import {
   Search,
   Globe,
   DollarSign,
-  ArrowRight
+  ArrowRight,
+  User,
+  Briefcase,
+  GraduationCap
 } from "lucide-react"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
-export const metadata: Metadata = {
-  title: "Products",
-  description: "Explore all FastTools product categories including calculators, finance tools, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, social media tools, and fun tools.",
-  keywords: [
-    "fasttools products",
-    "online tools categories",
-    "free tools collection",
-    "digital tools categories",
-    "productivity tools",
-    "AI tools",
-    "finance tools",
-    "calculator tools",
-    "converter tools",
-    "developer tools",
-    "image tools",
-    "PDF tools",
-    "SEO tools",
-    "social media tools",
-    "fun tools"
-  ],
-  openGraph: {
-    title: "Products",
-    description: "Explore all FastTools product categories including calculators, finance tools, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, social media tools, and fun tools.",
-    type: "website",
-    url: "/products",
-    siteName: "FastTools",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "FastTools - Free Online Tools Platform",
-        type: "image/png",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Products",
-    description: "Explore all FastTools product categories including calculators, finance tools, AI tools, converters, developer tools, image tools, PDF tools, SEO tools, social media tools, and fun tools.",
-    images: ["/og-image.png"],
-  },
-  alternates: {
-    canonical: "/products",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-}
+export const metadata = createMetadata({
+  title: "100+ Free Online Tools for Every Need | FastTools",
+  description: "Discover our full suite of 100+ free online tools. From calculators and converters to AI-powered utilities and developer tools, FastTools has a solution for every task. All tools are free, secure, and easy to use.",
+  path: "/products",
+  ogImageAlt: "A showcase of the wide variety of free online tools offered by FastTools.",
+  twitterCreator: "@FastTools",
+  twitterTitle: "100+ Free Online Tools for Every Need | FastTools",
+  twitterDescription: "Discover our full suite of 100+ free online tools. From calculators and converters to AI-powered utilities and developer tools, FastTools has a solution for every task.",
+});
 
 const categories = [
   {
     id: "calculators",
     name: "Professional Calculators",
-    description: "Accurate calculators for finance, health, business, and personal use",
+    description: "A comprehensive collection of precise calculators for finance, health, business, and everyday life. Get accurate answers instantly.",
     icon: Calculator,
     href: "/calculator",
   },
   {
     id: "finance-tools",
     name: "Finance Tools",
-    description: "Business-ready calculators for invoices, payments, and savings",
+    description: "Take control of your finances with specialized tools for invoicing, payment calculations, savings goals, and investment planning.",
     icon: DollarSign,
     href: "/finance-tools",
   },
   {
     id: "ai-tools",
     name: "AI-Powered Tools",
-    description: "Intelligent tools powered by artificial intelligence",
+    description: "Harness the power of artificial intelligence to generate content, edit images, and automate tasks with our cutting-edge AI tools.",
     icon: Sparkles,
     href: "/ai-tools",
   },
   {
     id: "converters",
     name: "Smart Converters",
-    description: "Convert between units, formats, and currencies instantly",
+    description: "Seamlessly convert between a vast range of units, including currency, measurements, data sizes, and file formats.",
     icon: Wrench,
     href: "/converters",
   },
   {
     id: "dev-tools",
     name: "Developer Tools",
-    description: "Professional tools for developers and designers",
+    description: "Boost your productivity with essential utilities for developers, from formatters and validators to code generators and debuggers.",
     icon: Code,
     href: "/dev-tools",
   },
   {
     id: "image-tools",
     name: "Image Tools",
-    description: "Professional image editing powered by AI",
+    description: "Transform your images with our powerful editing suite. Resize, compress, convert, and apply AI-powered effects with ease.",
     icon: Image,
     href: "/image-tools",
   },
   {
     id: "pdf-tools",
     name: "PDF Tools",
-    description: "Complete PDF management solution",
+    description: "Effortlessly manage your PDF files. Merge, split, compress, convert, and edit your documents right in your browser.",
     icon: FileText,
     href: "/pdf-tools",
   },
   {
     id: "seo-tools",
     name: "SEO Tools",
-    description: "Optimize content for search engines",
+    description: "Improve your online visibility by analyzing keywords, checking site performance, and generating meta tags to rank higher.",
     icon: Search,
     href: "/seo-tools",
   },
   {
     id: "social-media",
     name: "Social Media Tools",
-    description: "Powerful social media management tools",
+    description: "Elevate your social media game. Download videos, generate post ideas, and manage your presence more effectively.",
     icon: Globe,
     href: "/social-media-tools",
   },
   {
     id: "fun-tools",
     name: "Fun Tools",
-    description: "Entertaining tools for celebrations and social content",
+    description: "Inject some fun into your day with entertaining tools for social media content, celebrations, and personal enjoyment.",
     icon: Sparkles,
     href: "/fun-tools",
   },
 ]
+
+const benefits = [
+    {
+        icon: User,
+        title: "Individuals",
+        description: "Simplify daily tasks, from calculating a tip to converting measurements for a recipe. Our tools are here to make your life easier."
+    },
+    {
+        icon: Briefcase,
+        title: "Professionals",
+        description: "Enhance your productivity with tools for finance, development, and marketing. Get the job done faster and more accurately."
+    },
+    {
+        icon: GraduationCap,
+        title: "Students & Educators",
+        description: "Access a wide range of academic and creative tools for research, projects, and learning, all in one accessible place."
+    }
+];
+
+const faqItems = [
+    {
+        question: "Are all the tools listed on this page really free?",
+        answer: "Yes, every tool you see on FastTools is completely free to use. We are committed to providing high-quality, accessible tools for everyone without any cost."
+    },
+    {
+        question: "Do I need to create an account to use the tools?",
+        answer: "No, registration is not required for most of our tools. You can start using them immediately. We believe in providing a quick and hassle-free experience."
+    },
+    {
+        question: "How often do you add new tools?",
+        answer: "We are constantly working on developing and adding new tools to our collection. We aim to release new utilities regularly based on user feedback and emerging needs."
+    },
+    {
+        question: "Is it safe to use these tools with my data?",
+        answer: "Yes, your privacy and security are our top priorities. Many of our tools perform their functions entirely within your browser, meaning your files and data are never uploaded to our servers."
+    }
+];
 
 export default function ProductsPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "FastTools Products - All Tool Categories",
-    description: "Complete collection of free online tools organized by category",
+    description: "Complete collection of free online tools organized by category, designed for productivity, creativity, and convenience.",
     url: "https://www.fasttools.store/products",
     numberOfItems: categories.length,
     itemListElement: categories.map((category, index) => ({
@@ -195,67 +193,101 @@ export default function ProductsPage() {
           />
 
           <div className="max-w-6xl mx-auto mt-8 md:mt-12">
-            {/* Title Section */}
             <div className="mb-12 md:mb-16">
               <GHeader
                 title="Our Products"
-                description="Explore our complete collection of free online tools organized by category. From calculators to AI generators, we have everything you need."
+                description="Welcome to our comprehensive suite of free online tools. We've organized our products into distinct categories to help you find the right tool for any task. Whether you're a developer, a student, a business professional, or just need to get something done, we have a solution for you."
                 titleSize="large"
                 descriptionSize="medium"
                 color="orange"
               />
             </div>
 
-            {/* Categories Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {categories.map((category) => {
-                const Icon = category.icon
-                return (
-                  <Link
-                    key={category.id}
-                    href={category.href}
-                    className="bg-card border border-border/40 rounded-xl p-6 hover:border-border/70 transition-all duration-300 group relative h-full flex flex-col"
-                  >
-                    {/* Icon in top-right */}
-                    <div className="absolute top-4 right-4">
-                      <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <Icon className="h-5 w-5 text-foreground" />
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="pr-12 flex-1 flex flex-col">
-                      <h3 className="text-lg font-bold text-heading-accent mb-3 group-hover:text-heading-accent transition-colors">
-                        {category.name}
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
-                        {category.description}
-                      </p>
-                      <div className="flex items-center gap-2 text-foreground group-hover:text-foreground transition-colors">
-                        <span className="text-sm font-bold">Try Now</span>
-                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </div>
-                  </Link>
-                )
-              })}
+            <div className="mb-16">
+                <h2 className="text-2xl md:text-3xl font-bold text-primary mb-8 text-center">Explore Our Tool Categories</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {categories.map((category) => {
+                    const Icon = category.icon
+                    return (
+                    <Link
+                        key={category.id}
+                        href={category.href}
+                        className="bg-card border border-border/40 rounded-xl p-6 hover:border-border/70 transition-all duration-300 group relative h-full flex flex-col"
+                    >
+                        <div className="absolute top-4 right-4">
+                        <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <Icon className="h-5 w-5 text-foreground" />
+                        </div>
+                        </div>
+                        <div className="pr-12 flex-1 flex flex-col">
+                        <h3 className="text-lg font-bold text-heading-accent mb-3 group-hover:text-heading-accent transition-colors">
+                            {category.name}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
+                            {category.description}
+                        </p>
+                        <div className="flex items-center gap-2 text-foreground group-hover:text-foreground transition-colors">
+                            <span className="text-sm font-bold">View Tools</span>
+                            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                        </div>
+                    </Link>
+                    )
+                })}
+                </div>
             </div>
 
-            {/* More Coming Soon Section */}
-            <div className="mt-16 md:mt-20 p-8 md:p-12">
-              <div className="text-center max-w-3xl mx-auto">
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">More Coming Soon</h2>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
-                  We're constantly adding new tools to help you be more productive. If you need a tool that's not available, please email us and we'll make it for you.
-                </p>
-                <a
-                  href="mailto:support@fasttools.store"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-foreground font-bold rounded-lg hover:bg-primary transition-colors"
-                >
-                  Contact Us
-                  <ArrowRight className="h-5 w-5" />
-                </a>
-              </div>
+            <div className="space-y-16 mb-16">
+                <div className="prose prose-lg max-w-none">
+                    <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">The Power of AI in Your Browser</h2>
+                    <p>Artificial intelligence is no longer a futuristic concept; it's a practical tool that can enhance creativity and productivity. Our suite of AI-powered tools brings the capabilities of machine learning directly to your browser, for free. Whether you're a content creator struggling with writer's block, a marketer looking for catchy social media captions, or a designer in need of inspiration, our AI tools are here to help. Use our AI content generator to brainstorm ideas, create outlines, or even write entire paragraphs of text. Our AI image tools can help you remove backgrounds, enhance photos, and generate unique visuals. The best part? It's all accessible without any complex software or expensive subscriptions. We believe in democratizing access to AI, and our tools are a testament to that commitment.</p>
+                </div>
+
+                <div className="prose prose-lg max-w-none">
+                    <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">Essential Tools for Modern Developers</h2>
+                    <p>In the fast-paced world of software development, efficiency is key. Our collection of developer tools is designed to streamline your workflow and handle the tedious tasks, so you can focus on what matters most: writing code. From front-end developers to data scientists, we have utilities to support every stage of the development lifecycle. Use our code formatters and beautifiers to ensure your HTML, CSS, and JavaScript are clean and readable. Validate your JSON, test your regular expressions, or decode a JWT token in seconds. Need placeholder data? Our Lorem Ipsum generator has you covered. These browser-based tools are lightweight, fast, and always available, saving you the need to install and manage countless standalone applications or IDE extensions. They are the perfect companions for any developer looking to boost their productivity.</p>
+                </div>
+
+                <div className="prose prose-lg max-w-none">
+                    <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">Your Complete Solution for PDF Management</h2>
+                    <p>The PDF is a universal format for documents, but managing them can often be a challenge. Our comprehensive suite of PDF tools puts you back in control. Whether you need to make a quick edit, combine multiple reports into a single file, or prepare a large document for email, we have a free online solution. Use our PDF merger to combine several files, or the splitter to extract specific pages. Our powerful compressor can significantly reduce file size without sacrificing quality, making it easy to share documents. Need to convert a PDF to another format? We offer conversions to Word, JPG, and more. All these tools run securely in your browser, meaning your sensitive documents are never uploaded to our servers. It's a complete, private, and free solution for all your PDF management needs.</p>
+                </div>
+            </div>
+
+            <div className="mb-16">
+                <h2 className="text-2xl md:text-3xl font-bold text-primary mb-8 text-center">Who We Serve</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {benefits.map((benefit, index) => {
+                        const Icon = benefit.icon;
+                        return (
+                            <div key={index} className="text-center p-6 bg-card border border-border/40 rounded-xl">
+                                <div className="flex justify-center mb-4">
+                                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                                        <Icon className="h-6 w-6 text-primary" />
+                                    </div>
+                                </div>
+                                <h3 className="text-lg font-bold text-heading-accent mb-2">{benefit.title}</h3>
+                                <p className="text-sm text-muted-foreground leading-relaxed">{benefit.description}</p>
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>
+
+            <div className="mt-12">
+                <h2 className="text-2xl md:text-3xl font-bold text-primary mb-8 text-center">Frequently Asked Questions</h2>
+                <Accordion type="single" collapsible className="w-full max-w-2xl mx-auto">
+                    {faqItems.map((item, index) => (
+                        <AccordionItem value={`item-${index}`} key={index}>
+                            <AccordionTrigger className="text-left text-base font-semibold hover:no-underline">
+                                {item.question}
+                            </AccordionTrigger>
+                            <AccordionContent className="text-base text-muted-foreground leading-relaxed">
+                                {item.answer}
+                            </AccordionContent>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
             </div>
           </div>
         </div>
@@ -263,4 +295,3 @@ export default function ProductsPage() {
     </>
   )
 }
-

@@ -1,4 +1,5 @@
 import React from 'react'
+import { cn } from "@/lib/utils"
 
 interface GHeaderProps {
   title: string
@@ -7,6 +8,7 @@ interface GHeaderProps {
   descriptionSize?: 'small' | 'medium' | 'large'
   centered?: boolean
   color?: 'orange' | 'green' | 'blue' | 'purple' | 'pink' | 'red'
+  className?: string
 }
 
 export function GHeader({
@@ -15,7 +17,8 @@ export function GHeader({
   titleSize = 'large',
   descriptionSize = 'medium',
   centered = true,
-  color = 'orange'
+  color = 'orange',
+  className
 }: GHeaderProps) {
   // Color classes
   const titleColors = {
@@ -54,7 +57,7 @@ export function GHeader({
   const maxWidthClass = centered ? 'max-w-3xl mx-auto' : 'max-w-4xl'
 
   return (
-    <div className={`${containerClass} space-y-4 sm:space-y-6 w-full`}>
+    <div className={cn(`${containerClass} space-y-4 sm:space-y-6 w-full`, className)}>
       <h1 className={`${titleClasses[titleSize]} ${titleColors[color]} leading-tight px-2 break-words hyphens-auto`}>
         {title}
       </h1>
