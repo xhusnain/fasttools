@@ -3,13 +3,13 @@ import type { MetadataRoute } from "next"
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.fasttools.store"
   const currentDate = new Date()
-  
+
   const getFreshnessDate = (daysAgo: number) => {
     const date = new Date()
     date.setDate(date.getDate() - daysAgo)
     return date
   }
-    console.log("Sitemap started")
+  console.log("Sitemap started")
 
   const mainPages = [
     {
@@ -95,7 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.85,
     },
-    
+
     {
       url: "https://www.fasttools.store/social-media-tools",
       lastModified: getFreshnessDate(5),
@@ -143,7 +143,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   const toolPages = [
-    
+
 
     {
       url: "https://www.fasttools.store/calculator/conversion-calculator",
@@ -223,9 +223,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://www.fasttools.store/calculator/scientific-calculator",
-      lastModified: getFreshnessDate(1),
+      lastModified: getFreshnessDate(0),
       changeFrequency: "daily" as const,
-      priority: 0.9,
+      priority: 0.95,
+      images: [
+        "https://www.fasttools.store/images/calculator/functions.png",
+        "https://www.fasttools.store/images/calculator/comparison.png",
+        "https://www.fasttools.store/images/calculator/advanced.png",
+      ],
     },
     {
       url: "https://www.fasttools.store/calculator/triangle-calculator",
