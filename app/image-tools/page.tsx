@@ -404,13 +404,6 @@ const imageTools = [
     href: "/image-tools/image-blur",
     popular: true,
   },
-  {
-    title: "Free AI Photo Editor – Edit, Enhance & Remove Backgrounds Online",
-    description: "Edit photos instantly with our free AI photo editor. Remove backgrounds, enhance images, add filters & effects – all online, no download needed.",
-    icon: Blur,
-    href: "/image-tools/photo-editor",
-    popular: true,
-  },
 ]
 
 const jsonLd = {
@@ -423,12 +416,11 @@ const jsonLd = {
   "@type": "ItemList",
   name: "Image Tools Collection",
   description: "Comprehensive collection of free online image processing and editing tools for OCR, photo editing, and visual content creation",
-  numberOfItems: 4,
+  numberOfItems: 3,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Image to Text (OCR)", description: "Extract text from images using OCR technology", url: "https://www.fasttools.store/image-tools/image-to-text" },
     { "@type": "ListItem", position: 2, name: "Image Background Remover", description: "Remove image backgrounds with AI technology", url: "https://www.fasttools.store/image-tools/image-background-remover" },
-    { "@type": "ListItem", position: 3, name: "Image Background Blur", description: "Blur image backgrounds with AI portrait mode for professional photos", url: "https://www.fasttools.store/image-tools/image-blur" },
-    { "@type": "ListItem", position: 4, name: "Photo Editor", description: "Edit photos with professional tools and filters", url: "https://www.fasttools.store/image-tools/photo-editor" }
+    { "@type": "ListItem", position: 3, name: "Image Background Blur", description: "Blur image backgrounds with AI portrait mode for professional photos", url: "https://www.fasttools.store/image-tools/image-blur" }
   ]
 },
   breadcrumb: {
@@ -468,8 +460,8 @@ export default function ImageToolsPage() {
                 {/* Hero Section */}
                 <div className="text-center space-y-5 animate-fade-in-up">
                   <GHeader
-                    title="Free Image Tools – OCR, Photo Editor, Background Blur Online"
-                    description="Edit photos, extract text (OCR), blur backgrounds, and process images — all free, fast, and online. No signup or software needed."
+                    title="Free Image Tools – OCR, Background Remover & Blur Online"
+                    description="Extract text (OCR), remove backgrounds with AI, blur backgrounds, and process images — all free, fast, and online. No signup or software needed."
                     titleSize="medium"
                     descriptionSize="small"
                   />

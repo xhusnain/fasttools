@@ -230,24 +230,6 @@ export async function GET() {
       ]
     },
     {
-      url: "https://www.fasttools.store/image-tools/photo-editor",
-      lastModified: getFreshnessDate(2),
-      changeFrequency: "weekly" as const,
-      priority: 0.85,
-      images: [
-        {
-          url: "https://www.fasttools.store/banner.png",
-          title: "Photo Editor - Free Online Image Editing Tool",
-          caption: "Professional photo editor with filters, adjustments, text, and drawing tools for comprehensive image editing"
-        },
-        {
-          url: "https://www.fasttools.store/logo.png",
-          title: "FastTools Photo Editor Logo",
-          caption: "Professional logo for FastTools advanced photo editing application"
-        }
-      ]
-    },
-    {
       url: "https://www.fasttools.store/image-tools/image-to-text",
       lastModified: getFreshnessDate(2),
       changeFrequency: "weekly" as const,

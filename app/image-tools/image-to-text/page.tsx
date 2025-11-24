@@ -1301,7 +1301,7 @@ export default function ImageToTextPage() {
                         </CardHeader>
                         <CardContent className="p-3 pt-0">
                           <Button asChild className="w-full h-8 text-xs font-semibold">
-                            <Link href="/image-tools/photo-editor" className="flex items-center justify-center gap-1">
+                            <Link href="/image-tools/image-blur" className="flex items-center justify-center gap-1">
                               Use Tool
                               <ArrowRight className="h-3 w-3" />
                             </Link>

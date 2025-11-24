@@ -85,7 +85,10 @@ export const goneUrls = new Set([
 
   // Other removed pages
   '/resources',
-    "/announcements"
+  '/announcements',
+
+  // Image tools removed
+  '/image-tools/photo-editor'
 ])
 
 /**
