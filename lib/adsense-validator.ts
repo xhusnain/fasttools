@@ -1,11 +1,13 @@
 // lib/adsense-validator.ts
+import React from 'react'
 
 export interface ContentData {
     toolName: string
     overview: string
     howToSteps: string[]
     features: string[]
-    aboutTool: string
+    aboutTool: string | React.ReactNode
+    aboutToolText?: string
     proTip?: string
     useCases?: string[]
     faqs: Array<{ question: string; answer: string }>
@@ -25,10 +27,11 @@ export interface ValidationResult {
 export function validateAdSenseCompliance(data: ContentData): ValidationResult[] {
     const results: ValidationResult[] = []
 
+    const aboutToolText = typeof data.aboutTool === 'string' ? data.aboutTool : ""
 
     const fullText = [
         data.overview,
-        data.aboutTool,
+        aboutToolText,
         data.proTip || "",
         ...data.howToSteps,
         ...data.features,
@@ -109,7 +112,7 @@ export function validateAdSenseCompliance(data: ContentData): ValidationResult[]
     }
 
 
-    if (data.overview === data.aboutTool && data.overview.length > 50) {
+    if (data.overview === aboutToolText && data.overview.length > 50) {
         results.push({
             type: 'CRITICAL',
             category: 'CONTENT',

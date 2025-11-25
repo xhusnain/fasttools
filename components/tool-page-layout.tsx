@@ -40,7 +40,7 @@ export interface ToolContentData {
     overview: string
     howToSteps: string[]
     features: string[]
-    aboutTool: string
+    aboutTool: string | React.ReactNode
     proTip?: string
     useCases?: string[]
     faqs: FAQItem[]
@@ -226,9 +226,15 @@ export function ToolPageLayout({
                                     About {toolContent.toolName}
                                 </h2>
                                 <div className="prose prose-slate max-w-none">
-                                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
-                                        {toolContent.aboutTool}
-                                    </p>
+                                    {typeof toolContent.aboutTool === 'string' ? (
+                                        <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                                            {toolContent.aboutTool}
+                                        </p>
+                                    ) : (
+                                        <div className="text-muted-foreground leading-relaxed">
+                                            {toolContent.aboutTool}
+                                        </div>
+                                    )}
                                 </div>
                             </section>
 

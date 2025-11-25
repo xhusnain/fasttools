@@ -35,7 +35,7 @@ export function AdSenseComplianceChecker({ data }: { data: ContentData }) {
 
 
     const wordCount = [
-        data.overview, data.aboutTool, ...data.howToSteps, ...data.features,
+        data.overview, data.aboutToolText || (typeof data.aboutTool === 'string' ? data.aboutTool : ""), ...data.howToSteps, ...data.features,
         ...data.faqs.map(f => f.question + " " + f.answer)
     ].join(" ").split(/\s+/).length
 

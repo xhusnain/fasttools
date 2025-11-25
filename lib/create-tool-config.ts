@@ -25,7 +25,8 @@ export interface UnifiedToolConfig {
         overview: string
         howToSteps: string[]
         features: string[]
-        aboutTool: string
+        aboutTool: string | React.ReactNode
+        aboutToolText?: string
         proTip?: string
         useCases?: string[]
         faqs: Array<{
@@ -63,6 +64,7 @@ export function createToolConfig(config: UnifiedToolConfig) {
             howToSteps: config.content.howToSteps,
             features: config.content.features,
             aboutTool: config.content.aboutTool,
+            aboutToolText: config.content.aboutToolText,
             proTip: config.content.proTip,
             useCases: config.content.useCases,
             faqs: config.content.faqs,

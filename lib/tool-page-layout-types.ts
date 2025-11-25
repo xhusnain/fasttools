@@ -1,3 +1,5 @@
+import React from 'react'
+
 export interface FAQItem {
     question: string
     answer: string
@@ -27,7 +29,8 @@ export interface ToolContentData {
     overview: string
     howToSteps: string[]
     features: string[]
-    aboutTool: string
+    aboutTool: string | React.ReactNode
+    aboutToolText?: string
     proTip?: string
     useCases?: string[]
     faqs: FAQItem[]
