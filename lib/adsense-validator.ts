@@ -1,4 +1,3 @@
-// lib/adsense-validator.ts
 import React from 'react'
 
 export interface ContentData {
@@ -50,18 +49,18 @@ export function validateAdSenseCompliance(data: ContentData): ValidationResult[]
             message: `Content Too Short: ${wordCount}/1500 words`,
             fix: `Add ~${1500 - wordCount} more words to reach the minimum target.`
         })
-    } else if (wordCount > 2000) {
+    } else if (wordCount > 3000) {
         results.push({
             type: 'CRITICAL',
             category: 'CONTENT',
-            message: `Content Too Long: ${wordCount}/2000 words`,
-            fix: 'Reduce content length to stay under 2000 words.'
+            message: `Content Too Long: ${wordCount}/3000 words`,
+            fix: 'Reduce content length to stay under 3000 words.'
         })
     } else {
         results.push({
             type: 'SUCCESS',
             category: 'CONTENT',
-            message: `Perfect Length: ${wordCount} words (Range: 1500-2000)`,
+            message: `Perfect Length: ${wordCount} words (Range: 1500-3000)`,
         })
     }
 

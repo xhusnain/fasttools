@@ -10,77 +10,21 @@ import {
     Star,
     ChevronRight
 } from "lucide-react"
-
-export interface FAQItem {
-    question: string
-    answer: string
-}
-
-export interface RelatedTool {
-    name: string
-    href: string
-}
-
-export interface BreadcrumbItem {
-    label: string
-    href: string
-}
-
-export interface ToolHeaderConfig {
-    title: string
-    description: string
-    titleSize?: 'small' | 'medium' | 'large'
-    descriptionSize?: 'small' | 'medium' | 'large'
-    centered?: boolean
-    color?: 'orange' | 'green' | 'blue' | 'purple' | 'pink' | 'red'
-}
-
-export interface ToolContentData {
-    toolName: string
-    overview: string
-    howToSteps: string[]
-    features: string[]
-    aboutTool: string | React.ReactNode
-    proTip?: string
-    useCases?: string[]
-    faqs: FAQItem[]
-    relatedTools?: RelatedTool[]
-}
-
-export interface AdConfig {
-    showMobileAd?: boolean
-    showSidebarAd?: boolean
-}
-
-export interface ExpectedMetadata {
-    title: string
-    description: string
-    path: string
-}
-
-export interface ToolPageLayoutProps {
-    header: ToolHeaderConfig
-    breadcrumbs?: BreadcrumbItem[]
-    toolComponent: React.ReactNode
-    toolContent: ToolContentData
-    adConfig?: AdConfig
-    expectedMetadata?: ExpectedMetadata
-    className?: string
-}
+import type { ToolPageLayoutProps } from "@/lib/tool-page-layout-types"
 
 export function ToolPageLayout({
     header,
     breadcrumbs,
     toolComponent,
     toolContent,
-    adConfig = {},
+    adConfig,
     expectedMetadata,
-    className = "",
+    className
 }: ToolPageLayoutProps) {
     const {
         showMobileAd = true,
         showSidebarAd = true,
-    } = adConfig
+    } = adConfig || {}
 
     if (process.env.NODE_ENV === "development" && expectedMetadata) {
         console.group("🔍 ToolPageLayout - Metadata Validation")
@@ -266,7 +210,7 @@ export function ToolPageLayout({
                                     {toolContent.faqs.map((faq, index) => (
                                         <div key={index} className="p-4 bg-muted/50 rounded-lg border border-border">
                                             <h3 className="font-semibold text-foreground mb-2">{faq.question}</h3>
-                                            <p className="text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
+                                            <div className="text-sm text-muted-foreground leading-relaxed">{faq.answer}</div>
                                         </div>
                                     ))}
                                 </div>
