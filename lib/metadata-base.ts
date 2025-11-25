@@ -53,8 +53,14 @@ export interface MetadataOptions {
     twitterTitle?: string
     twitterDescription?: string
     twitterCreator?: string
-    includeSchema?: boolean // Whether to include SoftwareApplication schema
-    schemaOptions?: Omit<SoftwareAppSchemaOptions, 'title' | 'path'> // Additional schema options (title and path are auto-filled)
+    includeSchema?: boolean
+    schemaOptions?: Omit<SoftwareAppSchemaOptions, 'title' | 'path'>
+    faqs?: Array<{
+        question: string
+        answer: string
+    }>
+    howToSteps?: string[]
+    toolName?: string
 }
 
 export interface MetadataWithSchema {
@@ -63,7 +69,7 @@ export interface MetadataWithSchema {
 }
 
 export function createMetadata(options: MetadataOptions): Metadata & { softwareSchema?: ReturnType<typeof createSoftwareAppSchema> } {
-    const { title, description, path, ogImageAlt, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, includeSchema = true, schemaOptions } = options
+    const { title, description, path, ogImageAlt, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, includeSchema = true, schemaOptions, faqs, howToSteps, toolName } = options
     const cleanPath = path.startsWith("/") ? path : `/${path}`
     const titleWithBranding = title === "FastTools" ? title : `${title} | FastTools`
     const fullTitle = addYearToTitle(titleWithBranding, cleanPath)
@@ -104,7 +110,6 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
         images: [defaultOgImage],
     }
 
-    // Create software schema if includeSchema is true
     let softwareSchema: ReturnType<typeof createSoftwareAppSchema> | undefined
 
     if (includeSchema) {
@@ -113,6 +118,40 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
             description,
             path: cleanPath,
             ...schemaOptions
+        })
+    }
+
+    const schemas: any[] = []
+
+    if (softwareSchema) {
+        schemas.push(softwareSchema)
+    }
+
+    if (faqs && faqs.length > 0) {
+        schemas.push({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                    "@type": "Answer",
+                    text: faq.answer,
+                },
+            })),
+        })
+    }
+
+    if (howToSteps && howToSteps.length > 0) {
+        schemas.push({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: `How to use ${toolName || title}`,
+            step: howToSteps.map((step, index) => ({
+                "@type": "HowToStep",
+                position: index + 1,
+                text: step,
+            })),
         })
     }
 
@@ -135,15 +174,13 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
                 follow: true,
             },
         verification: VERIFICATION,
-        // Automatically include SoftwareApplication schema in other property if includeSchema is true
-        ...(includeSchema && softwareSchema && {
+        ...(schemas.length > 0 && {
             other: {
-                "application/ld+json": JSON.stringify(softwareSchema)
+                "application/ld+json": JSON.stringify(schemas.length === 1 ? schemas[0] : schemas)
             }
         }),
     }
 
-    // Return metadata with softwareSchema for reference if needed
     if (includeSchema && softwareSchema) {
         return {
             ...metadata,
