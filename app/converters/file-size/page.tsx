@@ -151,9 +151,8 @@ export default function FileSizeConverterPage() {
                 whatItIs="A file size converter is an essential tool that transforms digital storage measurements between different units, helping you understand how much space your files actually occupy. This tool is crucial for professionals, developers, and everyday users who need to work with file sizes across different contexts—from cloud storage providers that use decimal units to operating systems that display binary units. Understanding file size conversions is fundamental to managing digital storage efficiently, planning cloud infrastructure, estimating backup requirements, and optimizing file transfers across networks."
                 howItWorks={[
                   "Enter the file size value you want to convert in the input field. You can enter values with or without units (e.g., '1024' or '1024 KB').",
-                  "Select the source unit from the dropdown menu. Options include bytes, KB, MB, GB, TB, PB, EB, ZB, YB, and their binary equivalents (KiB, MiB, GiB, TiB, etc.).",
-                  "Choose your target unit from the second dropdown. The converter will automatically display the equivalent value in your selected unit.",
-                  "View results instantly in real-time as you type. The converter shows both decimal (SI) and binary (IEC) values when applicable.",
+                    "Choose a source unit. Supports KB, MB, GB and binary equivalents (KiB, MiB, GiB)."  ,
+                    "View results instantly in real-time as you type. The converter shows both decimal (SI) and binary (IEC) values when applicable.",
                   "Copy the converted value to your clipboard or use it directly in your work. All conversions use standardized, internationally recognized conversion factors."
                 ]}
                 useCases={[
