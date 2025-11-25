@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from "next/link"
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import {
@@ -10,32 +11,19 @@ import {
   DollarSign,
   Percent,
   Clock,
-  Wallet,
   TrendingUp,
-  GraduationCap,
-  Building,
-  Network,
   Triangle,
   BarChart3,
   Heart,
-  Timer,
   Flame,
-  Receipt,
   Home,
   Zap,
   Target,
   Users,
   Utensils,
-  Baby,
-  Divide,
-  Box,
   ArrowRightLeft,
-  Lock,
   ShieldCheck,
   CalendarCheck,
-  Hourglass,
-  Scale,
-  Apple,
   PiggyBank,
   Landmark,
   FileText,
@@ -43,32 +31,25 @@ import {
   CreditCard,
   Coins,
   ChartLine,
-  PlusCircle,
   BookOpen,
   Pencil,
   Blocks,
   Router,
-  KeyRound,
   Cake,
   Stethoscope,
   HeartPulse,
   CalendarClock,
   CalendarHeart,
   CalendarDays,
-  CalendarRange,
   Binary,
   Sigma,
-  Shapes,
   Cuboid,
   Gauge,
   Footprints,
   ScrollText,
-  Weight,
-  PackageOpen,
   Banknote,
   TrendingDown,
   PercentCircle,
-  Gift,
   HandCoins,
   BadgeDollarSign,
   Database
@@ -810,6 +791,16 @@ const toolConfig = createToolConfig({
               students worldwide.
             </p>
 
+            {/* Accuracy Illustration */}
+            <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden border border-border shadow-lg my-6">
+              <Image
+                src="/images/calculation-accuracy.png"
+                alt="Precision and Accuracy in Calculations"
+                fill
+                className="object-cover"
+              />
+            </div>
+
             <h3 className="text-xl font-bold mb-3 text-heading-accent">Algorithm Accuracy</h3>
             <p className="text-base text-muted-foreground leading-relaxed mb-4">
               Modern calculator tools employ sophisticated algorithms that ensure accuracy to multiple decimal places.
@@ -1141,6 +1132,17 @@ export default function ToolsPage() {
 function CalculatorGrid() {
   return (
     <div className="space-y-8">
+      {/* Hero Image */}
+      <div className="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-border shadow-xl">
+        <Image
+          src="/images/calculator-hero.png"
+          alt="Calculator Tools Illustration"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
         <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-card border border-primary shadow-md hover:shadow-lg transition-all duration-300">
           <Calculator className="h-4 w-4 text-primary" />
