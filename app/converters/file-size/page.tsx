@@ -58,15 +58,370 @@ const toolConfig = createToolConfig({
       "Data Science: Estimate memory requirements for loading large AI datasets."
     ],
 
-    aboutTool: `Digital storage units can be confusing because there are two different systems in use. This File Size Converter helps you navigate this complexity with authority.
+    aboutTool: (
+      <div className="space-y-12">
+        <section>
+          <p className="text-lg leading-relaxed">
+            Digital storage units can be confusing because there are two different systems in use. This File Size Converter helps you navigate this complexity with authority, ensuring you never miscalculate storage requirements again.
+          </p>
+        </section>
 
-Why Trust This Tool?
-We strictly adhere to international standards set by the International Electrotechnical Commission (IEC) and the International System of Units (SI).
-- **Decimal (SI)**: Powers of 10. 1 Kilobyte (KB) = 1,000 bytes. Used by storage manufacturers (HDD/SSD labels) and network speeds.
-- **Binary (IEC)**: Powers of 2. 1 Kibibyte (KiB) = 1,024 bytes. Used by Windows and RAM specifications.
+        <section className="space-y-4">
+          <h3 className="text-2xl font-bold text-foreground">The Great Gigabyte Deception: Why 1TB = 931GB</h3>
+          <p className="leading-relaxed">
+            Have you ever bought a "1 TB" hard drive only to see "931 GB" in Windows? You weren't cheated. This is the result of a clash between two measurement systems:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+            <li><strong>Decimal (SI) System:</strong> Used by storage manufacturers (Western Digital, Seagate, Samsung). They define 1 Gigabyte as 1,000,000,000 bytes (10^9). This makes sense for marketing because it produces larger, rounder numbers.</li>
+            <li><strong>Binary (IEC) System:</strong> Used by operating systems like Windows. They define 1 Gibibyte (GiB) as 1,073,741,824 bytes (2^30).</li>
+          </ul>
+          <p className="leading-relaxed">
+            When you plug a "1,000,000,000,000 byte" drive (Manufacturer's 1TB) into a computer, the OS divides by 1,024 three times (1024 * 1024 * 1024), resulting in approximately 931 GiB. Our tool shows you both values side-by-side so you can plan accurately.
+          </p>
+        </section>
 
-The "Gigabyte Lie"
-Have you ever bought a "1 TB" hard drive only to see "931 GB" in Windows? You weren't cheated. The manufacturer sold you 1,000,000,000,000 bytes (Decimal TB), but Windows calculates in Binary GiB (1,099,511,627,776 bytes per TiB). Our tool shows you both values, eliminating this confusion forever.`,
+        <section className="space-y-4">
+          <h3 className="text-2xl font-bold text-foreground">Storage Capacity Cheat Sheet</h3>
+          <p className="leading-relaxed">
+            "How many photos fit on my phone?" is one of the most common questions we get. Actual capacity varies by file format and resolution, but here are the industry-standard estimates:
+          </p>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-left border-collapse">
+              <thead className="bg-muted text-foreground">
+                <tr>
+                  <th className="p-3 border">Storage Size</th>
+                  <th className="p-3 border">Photos (12MP JPEG)</th>
+                  <th className="p-3 border">Video (1080p HD)</th>
+                  <th className="p-3 border">Video (4K UHD)</th>
+                  <th className="p-3 border">Songs (MP3)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="p-3 border font-medium">64 GB</td>
+                  <td className="p-3 border">~16,000</td>
+                  <td className="p-3 border">~8.5 hours</td>
+                  <td className="p-3 border">~2 hours</td>
+                  <td className="p-3 border">~10,500</td>
+                </tr>
+                <tr>
+                  <td className="p-3 border font-medium">128 GB</td>
+                  <td className="p-3 border">~32,000</td>
+                  <td className="p-3 border">~17 hours</td>
+                  <td className="p-3 border">~4 hours</td>
+                  <td className="p-3 border">~21,000</td>
+                </tr>
+                <tr>
+                  <td className="p-3 border font-medium">256 GB</td>
+                  <td className="p-3 border">~64,000</td>
+                  <td className="p-3 border">~34 hours</td>
+                  <td className="p-3 border">~8 hours</td>
+                  <td className="p-3 border">~42,000</td>
+                </tr>
+                <tr>
+                  <td className="p-3 border font-medium">1 TB</td>
+                  <td className="p-3 border">~250,000</td>
+                  <td className="p-3 border">~136 hours</td>
+                  <td className="p-3 border">~32 hours</td>
+                  <td className="p-3 border">~165,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-muted-foreground mt-2">
+            *Estimates based on: 4MB per photo, 130MB/min for 1080p, 375MB/min for 4K, and 6MB per song.
+          </p>
+        </section>
+
+        <section className="space-y-4">
+          <h3 className="text-2xl font-bold text-foreground">The Math Behind the Conversion</h3>
+          <p className="leading-relaxed">
+            For those who want to understand the exact formulas used by our converter, here is the breakdown. The difference lies in the "base" number used for calculation.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">Decimal (Base 10) Formula</h4>
+              <p className="text-sm text-muted-foreground mb-2">Used for: Hard Drive Labels, Network Speeds, DVD/Blu-ray.</p>
+              <code className="block bg-muted p-2 rounded text-sm mb-2">Value = Bytes / 1000^n</code>
+              <ul className="text-sm space-y-1">
+                <li>1 KB = 1,000 Bytes (10^3)</li>
+                <li>1 MB = 1,000,000 Bytes (10^6)</li>
+                <li>1 GB = 1,000,000,000 Bytes (10^9)</li>
+              </ul>
+            </div>
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">Binary (Base 2) Formula</h4>
+              <p className="text-sm text-muted-foreground mb-2">Used for: Windows OS, RAM, File Systems.</p>
+              <code className="block bg-muted p-2 rounded text-sm mb-2">Value = Bytes / 1024^n</code>
+              <ul className="text-sm space-y-1">
+                <li>1 KiB = 1,024 Bytes (2^10)</li>
+                <li>1 MiB = 1,048,576 Bytes (2^20)</li>
+                <li>1 GiB = 1,073,741,824 Bytes (2^30)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <h3 className="text-2xl font-bold text-foreground">Network Speed vs. File Size (Mbps vs. MB/s)</h3>
+          <p className="leading-relaxed">
+            One of the most common points of confusion in the digital world is the difference between internet speed and file size. Internet Service Providers (ISPs) advertise speeds in <strong>Megabits per second (Mbps)</strong>, but file downloads are measured in <strong>Megabytes per second (MB/s)</strong>.
+          </p>
+          <p className="leading-relaxed">
+            The conversion factor is 8. Since 1 Byte = 8 bits:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+            <li>A <strong>100 Mbps</strong> internet connection can theoretically download at <strong>12.5 MB/s</strong> (100 / 8).</li>
+            <li>A <strong>1 Gbps</strong> (Gigabit) connection tops out at <strong>125 MB/s</strong>.</li>
+          </ul>
+          <p className="leading-relaxed">
+            This is why a 50 MB file doesn't download instantly on a 50 Mbps connection—it actually takes about 8 seconds (plus overhead).
+          </p>
+        </section>
+
+        <section className="space-y-4">
+          <h3 className="text-2xl font-bold text-foreground">Understanding File Compression</h3>
+          <p className="leading-relaxed">
+            File size isn't just about raw data; it's about how that data is packed. Compression algorithms reduce file size to save storage and bandwidth. There are two main types:
+          </p>
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-semibold">1. Lossless Compression (ZIP, PNG, FLAC)</h4>
+              <p className="text-muted-foreground">
+                Reduces file size without losing a single bit of data. It works by identifying patterns (e.g., "100 white pixels" instead of listing "white pixel" 100 times). When uncompressed, the file is identical to the original. Perfect for text documents, software, and professional photography.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold">2. Lossy Compression (JPEG, MP3, MP4)</h4>
+              <p className="text-muted-foreground">
+                Significantly reduces file size by permanently discarding data that the human eye or ear is less likely to notice. A high-quality JPEG might be 10x smaller than a PNG, but if you zoom in, you might see "artifacts." This is standard for streaming media and web images.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <h3 className="text-2xl font-bold text-foreground">A Brief History of Data Storage</h3>
+          <p className="leading-relaxed">
+            To appreciate the massive capacities we have today (like 1TB microSD cards), look at where we started:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+            <li><strong>1956:</strong> The IBM 305 RAMAC was the first hard drive. It stored <strong>5 MB</strong> and weighed over a ton. It had to be moved by a forklift.</li>
+            <li><strong>1971:</strong> The 8-inch Floppy Disk debuted, storing just <strong>80 KB</strong>.</li>
+            <li><strong>1980:</strong> The first consumer 1 GB hard drive was released by IBM. It weighed 550 pounds and cost $40,000.</li>
+            <li><strong>1990s:</strong> The CD-ROM brought <strong>700 MB</strong> of storage to the masses, revolutionizing software and music distribution.</li>
+            <li><strong>2000s:</strong> USB flash drives replaced floppies, starting at 8 MB and quickly growing to gigabytes.</li>
+            <li><strong>Today:</strong> We have <strong>100 TB</strong> SSDs for servers and <strong>1 TB</strong> cards the size of a fingernail. The cost per gigabyte has dropped from millions of dollars to mere cents.</li>
+          </ul>
+        </section>
+
+        <section className="space-y-4">
+          <h3 className="text-2xl font-bold text-foreground">Digital Storage Hierarchy</h3>
+          <p className="leading-relaxed">
+            From the smallest bit to the massive Yottabyte, here is the ladder of digital storage:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+            <li><strong>Bit (b):</strong> The fundamental unit (0 or 1).</li>
+            <li><strong>Byte (B):</strong> 8 bits. Enough for a single character of text.</li>
+            <li><strong>Kilobyte (KB):</strong> 1,000 bytes. A short email or text file.</li>
+            <li><strong>Megabyte (MB):</strong> 1,000 KB. A high-quality photo or MP3 song.</li>
+            <li><strong>Gigabyte (GB):</strong> 1,000 MB. A standard movie or smartphone app.</li>
+            <li><strong>Terabyte (TB):</strong> 1,000 GB. A modern hard drive or 250,000 photos.</li>
+            <li><strong>Petabyte (PB):</strong> 1,000 TB. The data generated by Google every hour.</li>
+            <li><strong>Exabyte (EB):</strong> 1,000 PB. The entire internet's traffic in a month (circa 2010).</li>
+            <li><strong>Zettabyte (ZB):</strong> 1,000 EB. The total amount of data in the world today.</li>
+            <li><strong>Yottabyte (YB):</strong> 1,000 ZB. A theoretical limit we are rapidly approaching with AI and IoT data.</li>
+          </ul>
+        </section>
+
+        <section className="space-y-4">
+          <h3 className="text-2xl font-bold text-foreground">Common File Size Reference</h3>
+          <p className="leading-relaxed">
+            Use this quick reference to estimate your own storage needs:
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+            <div className="p-3 border rounded">
+              <span className="block font-semibold">WhatsApp Image</span>
+              <span className="text-muted-foreground">100 - 300 KB</span>
+            </div>
+            <div className="p-3 border rounded">
+              <span className="block font-semibold">iPhone Photo (HEIC)</span>
+              <span className="text-muted-foreground">1.5 - 3 MB</span>
+            </div>
+            <div className="p-3 border rounded">
+              <span className="block font-semibold">Netflix Stream (HD)</span>
+              <span className="text-muted-foreground">3 GB / hour</span>
+            </div>
+            <div className="p-3 border rounded">
+              <span className="block font-semibold">Blu-ray Movie</span>
+              <span className="text-muted-foreground">25 - 50 GB</span>
+            </div>
+            <div className="p-3 border rounded">
+              <span className="block font-semibold">Windows 11 Install</span>
+              <span className="text-muted-foreground">~20 - 64 GB</span>
+            </div>
+            <div className="p-3 border rounded">
+              <span className="block font-semibold">Call of Duty: Warzone</span>
+              <span className="text-muted-foreground">~175 GB</span>
+            </div>
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <h3 className="text-2xl font-bold text-foreground">File Size vs. Size on Disk</h3>
+          <p className="leading-relaxed">
+            You might notice that a file's "Size" and "Size on disk" are different in Windows properties. This is due to <strong>Cluster Size</strong> (or Allocation Unit Size).
+          </p>
+          <p className="leading-relaxed">
+            Hard drives are divided into small chunks called clusters, typically 4 KB (4,096 bytes). A file must occupy a whole number of clusters.
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+            <li><strong>Scenario A:</strong> A 1-byte text file takes up 1 full cluster (4 KB on disk). That's 4000x overhead!</li>
+            <li><strong>Scenario B:</strong> A 4,097-byte file needs 2 clusters (8 KB on disk).</li>
+          </ul>
+          <p className="leading-relaxed">
+            This "Slack Space" is wasted storage. On a drive with millions of tiny files, this overhead can eat up gigabytes of space.
+          </p>
+        </section>
+
+        <section className="space-y-4">
+          <h3 className="text-2xl font-bold text-foreground">RAID Storage Explained</h3>
+          <p className="leading-relaxed">
+            If you manage a server or NAS, you use RAID (Redundant Array of Independent Disks). RAID combines multiple drives, but it affects your total usable storage:
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">RAID 0 (Striping)</h4>
+              <p className="text-sm text-muted-foreground">100% Capacity. Zero Redundancy.</p>
+              <p className="text-sm mt-2">Two 1TB drives = 2TB total. Fast, but if one drive fails, you lose EVERYTHING.</p>
+            </div>
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">RAID 1 (Mirroring)</h4>
+              <p className="text-sm text-muted-foreground">50% Capacity. High Redundancy.</p>
+              <p className="text-sm mt-2">Two 1TB drives = 1TB total. Data is copied to both. If one fails, you're safe.</p>
+            </div>
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">RAID 5</h4>
+              <p className="text-sm text-muted-foreground">(N-1) Capacity. Balanced.</p>
+              <p className="text-sm mt-2">Three 1TB drives = 2TB total. One drive's worth of space is used for "parity" data to rebuild failures.</p>
+            </div>
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold mb-2">RAID 10</h4>
+              <p className="text-sm text-muted-foreground">50% Capacity. Best Performance.</p>
+              <p className="text-sm mt-2">Four 1TB drives = 2TB total. Combines striping and mirroring for speed and safety.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <h3 className="text-2xl font-bold text-foreground">The Future of Storage</h3>
+          <p className="leading-relaxed">
+            We are reaching the physical limits of magnetic and flash storage. Here is what's coming next:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+            <li><strong>DNA Storage:</strong> Storing data in synthetic DNA strands. Theoretically, all the world's data could fit in a teaspoon of DNA. It's slow but lasts for thousands of years.</li>
+            <li><strong>5D Optical Data Storage:</strong> Often called "Superman memory crystals." Using nanostructures in glass to store data. It can survive 1,000°C heat and last 13.8 billion years.</li>
+            <li><strong>Holographic Storage:</strong> Recording data in 3D volume rather than just on the surface, potentially unlocking Exabyte-sized discs.</li>
+          </ul>
+        </section>
+      </div>
+    ),
+
+    aboutToolText: `Digital storage units can be confusing because there are two different systems in use. This File Size Converter helps you navigate this complexity with authority, ensuring you never miscalculate storage requirements again.
+
+        The Great Gigabyte Deception: Why 1TB = 931GB
+        Have you ever bought a "1 TB" hard drive only to see "931 GB" in Windows? You weren't cheated. This is the result of a clash between two measurement systems:
+        - Decimal (SI) System: Used by storage manufacturers (Western Digital, Seagate, Samsung). They define 1 Gigabyte as 1,000,000,000 bytes (10^9). This makes sense for marketing because it produces larger, rounder numbers.
+        - Binary (IEC) System: Used by operating systems like Windows. They define 1 Gibibyte (GiB) as 1,073,741,824 bytes (2^30).
+        When you plug a "1,000,000,000,000 byte" drive (Manufacturer's 1TB) into a computer, the OS divides by 1,024 three times (1024 * 1024 * 1024), resulting in approximately 931 GiB. Our tool shows you both values side-by-side so you can plan accurately.
+
+        The Math Behind the Conversion
+        For those who want to understand the exact formulas used by our converter, here is the breakdown. The difference lies in the "base" number used for calculation.
+        - Decimal (Base 10) Formula: Used for Hard Drive Labels, Network Speeds. Value = Bytes / 1000^n. (1 GB = 10^9 Bytes)
+        - Binary (Base 2) Formula: Used for Windows OS, RAM. Value = Bytes / 1024^n. (1 GiB = 2^30 Bytes)
+
+        Storage Capacity Cheat Sheet
+        "How many photos fit on my phone?" is one of the most common questions we get. Actual capacity varies by file format and resolution, but here are the industry-standard estimates:
+        - 64 GB: ~16,000 Photos (12MP), ~8.5 hours Video (1080p), ~2 hours Video (4K), ~10,500 Songs
+        - 128 GB: ~32,000 Photos (12MP), ~17 hours Video (1080p), ~4 hours Video (4K), ~21,000 Songs
+        - 256 GB: ~64,000 Photos (12MP), ~34 hours Video (1080p), ~8 hours Video (4K), ~42,000 Songs
+        - 1 TB: ~250,000 Photos (12MP), ~136 hours Video (1080p), ~32 hours Video (4K), ~165,000 Songs
+        *Estimates based on: 4MB per photo, 130MB/min for 1080p, 375MB/min for 4K, and 6MB per song.
+
+        Data Transfer Time Estimator
+        Knowing the file size is only half the battle; you also need to know how long it takes to move. Here is how long it takes to transfer 10 GB of data on common connection speeds:
+        - Slow Connections:
+        - 3G Mobile (3 Mbps): ~7.5 hours
+        - Basic DSL (10 Mbps): ~2.2 hours
+        - 4G LTE (20 Mbps): ~67 minutes
+        - Fast Connections:
+        - 5G / Wi-Fi 5 (100 Mbps): ~13 minutes
+        - Gigabit Fiber (1 Gbps): ~80 seconds
+        - USB 3.0 (5 Gbps): ~16 seconds
+
+        Network Speed vs. File Size (Mbps vs. MB/s)
+        One of the most common points of confusion in the digital world is the difference between internet speed and file size. Internet Service Providers (ISPs) advertise speeds in Megabits per second (Mbps), but file downloads are measured in Megabytes per second (MB/s).
+        The conversion factor is 8. Since 1 Byte = 8 bits:
+        - A 100 Mbps internet connection can theoretically download at 12.5 MB/s (100 / 8).
+        - A 1 Gbps (Gigabit) connection tops out at 125 MB/s.
+        This is why a 50 MB file doesn't download instantly on a 50 Mbps connection—it actually takes about 8 seconds (plus overhead).
+
+        Understanding File Compression
+        File size isn't just about raw data; it's about how that data is packed. Compression algorithms reduce file size to save storage and bandwidth. There are two main types:
+        1. Lossless Compression (ZIP, PNG, FLAC): Reduces file size without losing a single bit of data. Perfect for text documents and software.
+        2. Lossy Compression (JPEG, MP3, MP4): Significantly reduces file size by permanently discarding data. Standard for streaming media.
+
+        A Brief History of Data Storage
+        To appreciate the massive capacities we have today (like 1TB microSD cards), look at where we started:
+        - 1956: The IBM 305 RAMAC was the first hard drive. It stored 5 MB and weighed over a ton.
+        - 1971: The 8-inch Floppy Disk debuted, storing just 80 KB.
+        - 1980: The first consumer 1 GB hard drive was released by IBM. It weighed 550 pounds.
+        - 1990s: The CD-ROM brought 700 MB of storage to the masses.
+        - 2000s: USB flash drives replaced floppies, starting at 8 MB and quickly growing to gigabytes.
+        - Today: We have 100 TB SSDs for servers and 1 TB cards the size of a fingernail.
+
+        File Size vs. Size on Disk
+        You might notice that a file's "Size" and "Size on disk" are different in Windows properties. This is due to Cluster Size (or Allocation Unit Size).
+        Hard drives are divided into small chunks called clusters, typically 4 KB (4,096 bytes). A file must occupy a whole number of clusters.
+        - Scenario A: A 1-byte text file takes up 1 full cluster (4 KB on disk). That's 4000x overhead!
+        - Scenario B: A 4,097-byte file needs 2 clusters (8 KB on disk).
+        This "Slack Space" is wasted storage. On a drive with millions of tiny files, this overhead can eat up gigabytes of space.
+
+        RAID Storage Explained
+        If you manage a server or NAS, you use RAID (Redundant Array of Independent Disks). RAID combines multiple drives, but it affects your total usable storage:
+        - RAID 0 (Striping): 100% Capacity. Zero Redundancy. Two 1TB drives = 2TB total. Fast, but if one drive fails, you lose EVERYTHING.
+        - RAID 1 (Mirroring): 50% Capacity. High Redundancy. Two 1TB drives = 1TB total. Data is copied to both. If one fails, you're safe.
+        - RAID 5: (N-1) Capacity. Balanced. Three 1TB drives = 2TB total. One drive's worth of space is used for "parity" data to rebuild failures.
+        - RAID 10: 50% Capacity. Best Performance. Four 1TB drives = 2TB total. Combines striping and mirroring for speed and safety.
+
+        The Future of Storage
+        We are reaching the physical limits of magnetic and flash storage. Here is what's coming next:
+        - DNA Storage: Storing data in synthetic DNA strands. Theoretically, all the world's data could fit in a teaspoon of DNA.
+        - 5D Optical Data Storage: Often called "Superman memory crystals." Using nanostructures in glass to store data. It can survive 1,000°C heat and last 13.8 billion years.
+        - Holographic Storage: Recording data in 3D volume rather than just on the surface, potentially unlocking Exabyte-sized discs.
+
+        Digital Storage Hierarchy
+        From the smallest bit to the massive Yottabyte, here is the ladder of digital storage:
+        - Bit (b): The fundamental unit (0 or 1).
+        - Byte (B): 8 bits. Enough for a single character of text.
+        - Kilobyte (KB): 1,000 bytes. A short email or text file.
+        - Megabyte (MB): 1,000 KB. A high-quality photo or MP3 song.
+        - Gigabyte (GB): 1,000 MB. A standard movie or smartphone app.
+        - Terabyte (TB): 1,000 GB. A modern hard drive or 250,000 photos.
+        - Petabyte (PB): 1,000 TB. The data generated by Google every hour.
+        - Exabyte (EB): 1,000 PB. The entire internet's traffic in a month (circa 2010).
+        - Zettabyte (ZB): 1,000 EB. The total amount of data in the world today.
+        - Yottabyte (YB): 1,000 ZB. A theoretical limit we are rapidly approaching with AI and IoT data.
+
+        Common File Size Reference
+        Use this quick reference to estimate your own storage needs:
+        - WhatsApp Image: 100 - 300 KB
+        - iPhone Photo (HEIC): 1.5 - 3 MB
+        - Netflix Stream (HD): 3 GB / hour
+        - Blu-ray Movie: 25 - 50 GB
+        - Windows 11 Install: ~20 - 64 GB
+        - Call of Duty: Warzone: ~175 GB`,
 
     proTip: "Always check which unit your cloud provider uses. AWS S3 uses binary units (GiB) for storage pricing but often labels them as 'GB'. Misunderstanding this difference can lead to a 7% underestimation in storage costs at the petabyte scale.",
 
@@ -114,6 +469,38 @@ Have you ever bought a "1 TB" hard drive only to see "931 GB" in Windows? You we
       {
         question: "How to change file size on computer?",
         answer: "To reduce file size, you can compress it into a ZIP folder (Right-click > Send to > Compressed folder) or use specific tools to lower the resolution/quality of images and videos. To increase file size (padding), you would typically need specialized developer tools to add dummy data, which is useful for testing storage limits."
+      },
+      {
+        question: "What is a Yottabyte?",
+        answer: "A Yottabyte (YB) is the largest named unit in the standard metric system for storage. It is equal to 1,000 Zettabytes or 1 septillion bytes (10^24). To visualize this: if 1 GB is a brick, a Yottabyte would build the Hoover Dam. It represents a scale of data we are only just beginning to approach with the global internet."
+      },
+      {
+        question: "Does formatting a drive reduce its size?",
+        answer: "Yes, slightly. When you format a drive (e.g., to NTFS, exFAT, or APFS), the file system creates an index (like a book's table of contents) to track where files are stored. This index occupies some space, usually a few hundred megabytes on large drives, reducing the total usable capacity."
+      },
+      {
+        question: "Why is my 64GB USB drive only showing 57GB?",
+        answer: "This is the classic 'Decimal vs. Binary' confusion. The manufacturer built it with 64 billion bytes (Decimal 64 GB). Your computer reads it in Binary Gigabytes (GiB). 64,000,000,000 bytes ÷ 1,073,741,824 = 59.6 GiB. Minus file system overhead, you see about 57-59 GB available."
+      },
+      {
+        question: "What is the difference between a bit and a Byte?",
+        answer: "A 'bit' (lowercase 'b') is the smallest unit of data, a single 0 or 1. A 'Byte' (uppercase 'B') is a group of 8 bits. Internet speeds are measured in bits (Mbps), while file storage is measured in Bytes (MB). This is why downloading a 10 MB file takes longer than 1 second on a 10 Mbps connection."
+      },
+      {
+        question: "How much data is 1 Petabyte?",
+        answer: "1 Petabyte (PB) is 1,000 Terabytes. It's a massive amount of storage. To fill 1 PB, you would need to take a digital photo every second for the next 80 years, or store over 11,000 4K movies. It is the scale used by enterprise data centers and cloud providers."
+      },
+      {
+        question: "What is 'Other' storage on my phone?",
+        answer: "'Other' or 'System Data' usually consists of cached files, logs, voice memos, and temporary app data that doesn't fit into standard categories like Photos or Apps. If it grows too large (over 10-15GB), it often indicates a buildup of old streaming caches (like Spotify or Netflix) or failed iOS/Android updates."
+      },
+      {
+        question: "Why is SSD capacity smaller than HDD for the same price?",
+        answer: "SSDs (Solid State Drives) use flash memory chips, which are more expensive to manufacture per gigabyte than the magnetic spinning platters used in HDDs. However, SSDs are 10x-50x faster, more durable, and silent. The price gap is narrowing, but HDDs still offer the cheapest bulk storage."
+      },
+      {
+        question: "What is the difference between L1, L2, and L3 cache?",
+        answer: "These are ultra-fast, tiny memory banks inside your CPU. L1 is the smallest but fastest (instant access). L2 is larger but slightly slower. L3 is shared across cores. When the CPU needs data, it checks L1 -> L2 -> L3 -> RAM -> SSD. This hierarchy keeps your computer feeling snappy."
       }
     ],
 

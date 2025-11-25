@@ -3,7 +3,6 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AiCaptionGenerator } from "@/components/ai-caption-generator"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
-import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
 import { createMetadata } from "@/lib/metadata-base"
 import { 
   Sparkles, 
