@@ -27,7 +27,7 @@ export interface ValidationResult {
 export function validateAdSenseCompliance(data: ContentData): ValidationResult[] {
     const results: ValidationResult[] = []
 
-    const aboutToolText = typeof data.aboutTool === 'string' ? data.aboutTool : ""
+    const aboutToolText = data.aboutToolText || (typeof data.aboutTool === 'string' ? data.aboutTool : "")
 
     const fullText = [
         data.overview,
