@@ -31,6 +31,47 @@ import {
   Box,
   ArrowRightLeft,
   Lock,
+  ShieldCheck,
+  CalendarCheck,
+  Hourglass,
+  Scale,
+  Apple,
+  PiggyBank,
+  Landmark,
+  FileText,
+  BadgePercent,
+  CreditCard,
+  Coins,
+  ChartLine,
+  PlusCircle,
+  BookOpen,
+  Pencil,
+  Blocks,
+  Router,
+  KeyRound,
+  Cake,
+  Stethoscope,
+  HeartPulse,
+  CalendarClock,
+  CalendarHeart,
+  CalendarDays,
+  CalendarRange,
+  Binary,
+  Sigma,
+  Shapes,
+  Cuboid,
+  Gauge,
+  Footprints,
+  ScrollText,
+  Weight,
+  PackageOpen,
+  Banknote,
+  TrendingDown,
+  PercentCircle,
+  Gift,
+  HandCoins,
+  BadgeDollarSign,
+  Database
 } from "lucide-react"
 import { ToolPageLayout } from "@/components/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
@@ -102,147 +143,147 @@ const tools = [
   {
     title: "Tax Calculator",
     description: "Calculate income tax, GST, or VAT. Supports inclusive and exclusive tax calculations for accurate financial planning.",
-    icon: Receipt,
+    icon: FileText,
     href: "/calculator/tax-calculator",
     color: "emerald"
   },
   {
     title: "Sales Tax Calculator",
     description: "Calculate sales tax for any US state or custom rate. Get total costs instantly for budgeting and purchasing.",
-    icon: DollarSign,
+    icon: BadgePercent,
     href: "/calculator/sales-tax-calculator",
     color: "cyan"
   },
   {
     title: "Discount Calculator",
     description: "Calculate final prices after discounts. Compare multiple discount offers to find the best deal.",
-    icon: Percent,
+    icon: BadgeDollarSign,
     href: "/calculator/discount-calculator",
     color: "lime"
   },
   {
     title: "Tip Calculator",
     description: "Calculate tips per person and split bills easily. Perfect for dining out and shared expenses.",
-    icon: DollarSign,
+    icon: HandCoins,
     href: "/calculator/tip-calculator",
     color: "amber"
   },
   {
     title: "Retirement Calculator",
     description: "Plan your financial future. Estimate retirement savings growth and determine if you're on track for your goals.",
-    icon: Wallet,
+    icon: PiggyBank,
     href: "/calculator/retirement-calculator",
     color: "sky"
   },
   {
     title: "Investment Calculator",
     description: "Project investment growth over time with compound interest. Compare different return rates and contribution strategies.",
-    icon: TrendingUp,
+    icon: ChartLine,
     href: "/calculator/investment-calculator",
     color: "violet"
   },
   {
     title: "Compound Interest Calculator",
     description: "Visualize the power of compound interest. See how your money grows over time with reinvested earnings.",
-    icon: TrendingUp,
+    icon: Coins,
     href: "/calculator/compound-interest",
     color: "fuchsia"
   },
   {
     title: "Simple Interest Calculator",
     description: "Calculate simple interest for loans or savings. Understand the basic cost of borrowing or return on savings.",
-    icon: Percent,
+    icon: PercentCircle,
     href: "/calculator/simple-interest-calculator",
     color: "rose"
   },
   {
     title: "GPA Calculator",
     description: "Calculate your Grade Point Average. Track academic performance and plan for target grades.",
-    icon: GraduationCap,
+    icon: BookOpen,
     href: "/calculator/gpa-calculator",
     color: "blue"
   },
   {
     title: "Grade Calculator",
     description: "Calculate weighted grades and final scores. Know exactly what you need on the final exam to pass.",
-    icon: GraduationCap,
+    icon: Pencil,
     href: "/calculator/grade-calculator",
     color: "indigo"
   },
   {
     title: "Concrete Calculator",
     description: "Estimate concrete volume for slabs, footings, and columns. Essential for construction and DIY projects.",
-    icon: Building,
+    icon: Blocks,
     href: "/calculator/concrete-calculator",
     color: "stone"
   },
   {
     title: "IP Subnet Calculator",
     description: "Calculate subnet masks, network addresses, and host ranges. Essential tool for network engineers and IT professionals.",
-    icon: Network,
+    icon: Router,
     href: "/calculator/ip-subnet-calculator",
     color: "slate"
   },
   {
     title: "Password Strength Calculator",
     description: "Test password security and entropy. Ensure your accounts are protected with strong, unguessable passwords.",
-    icon: Lock,
+    icon: ShieldCheck,
     href: "/calculator/password-strength",
     color: "zinc"
   },
   {
     title: "Age Calculator",
     description: "Calculate exact age in years, months, and days. Also calculates days until next birthday.",
-    icon: Calendar,
+    icon: Cake,
     href: "/calculator/age-calculator",
     color: "orange"
   },
   {
     title: "Pregnancy Calculator",
     description: "Estimate due date and track pregnancy milestones. Based on last menstrual period or conception date.",
-    icon: Baby,
+    icon: Stethoscope,
     href: "/calculator/pregnancy-calculator",
     color: "pink"
   },
   {
     title: "Pregnancy Conception Calculator",
     description: "Calculate optimal conception dates and fertile windows. Plan pregnancy with ovulation tracking.",
-    icon: Heart,
+    icon: CalendarHeart,
     href: "/calculator/pregnancy-conception-calculator",
     color: "rose"
   },
   {
     title: "Ovulation Calculator",
     description: "Track ovulation cycles and fertility windows. Maximize chances of conception with precise timing.",
-    icon: Calendar,
+    icon: CalendarClock,
     href: "/calculator/ovulation-calculator",
     color: "red"
   },
   {
     title: "Period Calculator",
     description: "Track menstrual cycles and predict next periods. Monitor cycle health and regularity.",
-    icon: Calendar,
+    icon: CalendarDays,
     href: "/calculator/period-calculator",
     color: "rose"
   },
   {
     title: "Due Date Calculator",
     description: "Calculate pregnancy due date with high accuracy. Adjust for cycle length and other factors.",
-    icon: Calendar,
+    icon: CalendarCheck,
     href: "/calculator/due-date-calculator",
     color: "pink"
   },
   {
     title: "Fraction Calculator",
     description: "Add, subtract, multiply, and divide fractions. Simplifies results and converts to decimals.",
-    icon: Divide,
+    icon: Binary,
     href: "/calculator/fraction-calculator",
     color: "blue"
   },
   {
     title: "Standard Deviation Calculator",
     description: "Calculate mean, variance, and standard deviation. Essential for statistical analysis and data science.",
-    icon: BarChart3,
+    icon: Sigma,
     href: "/calculator/standard-deviation-calculator",
     color: "violet"
   },
@@ -256,35 +297,35 @@ const tools = [
   {
     title: "Volume Calculator",
     description: "Calculate volume for various 3D shapes. Supports cubes, cylinders, spheres, and more.",
-    icon: Box,
+    icon: Cuboid,
     href: "/calculator/volume-calculator",
     color: "cyan"
   },
   {
     title: "Speed Calculator",
     description: "Calculate speed, distance, or time. Essential for physics problems and travel planning.",
-    icon: Timer,
+    icon: Gauge,
     href: "/calculator/speed-calculator",
     color: "amber"
   },
   {
     title: "Pace Calculator",
     description: "Calculate running or cycling pace. Plan training targets and race strategies.",
-    icon: Timer,
+    icon: Footprints,
     href: "/calculator/pace-calculator",
     color: "emerald"
   },
   {
     title: "Amortization Calculator",
     description: "Generate detailed amortization schedules for loans. See principal and interest breakdown for each payment period.",
-    icon: Receipt,
+    icon: ScrollText,
     href: "/calculator/amortization-calculator",
     color: "blue"
   },
   {
     title: "Body Fat Calculator",
     description: "Estimate body fat percentage using various measurement methods. Track fitness progress beyond weight alone.",
-    icon: Activity,
+    icon: HeartPulse,
     href: "/calculator/body-fat-calculator",
     color: "purple"
   },
@@ -298,21 +339,21 @@ const tools = [
   {
     title: "Finance Calculator",
     description: "Comprehensive financial calculations for investments, loans, and savings. All-in-one financial planning tool.",
-    icon: DollarSign,
+    icon: Landmark,
     href: "/calculator/finance-calculator",
     color: "emerald"
   },
   {
     title: "Inflation Calculator",
     description: "Calculate the impact of inflation on purchasing power over time. Understand real value of money.",
-    icon: TrendingUp,
+    icon: TrendingDown,
     href: "/calculator/inflation-calculator",
     color: "red"
   },
   {
     title: "Interest Rate Calculator",
     description: "Calculate interest rates for loans and investments. Determine APR, APY, and effective rates.",
-    icon: Percent,
+    icon: Banknote,
     href: "/calculator/interest-rate-calculator",
     color: "indigo"
   },
@@ -326,14 +367,14 @@ const tools = [
   {
     title: "Payment Calculator",
     description: "Calculate payment amounts for various loan types. Plan monthly budgets with accurate payment estimates.",
-    icon: Wallet,
+    icon: CreditCard,
     href: "/calculator/payment-calculator",
     color: "cyan"
   },
   {
     title: "Salary Calculator",
     description: "Convert between hourly, weekly, monthly, and annual salary. Calculate take-home pay after taxes.",
-    icon: DollarSign,
+    icon: Banknote,
     href: "/calculator/salary-calculator",
     color: "lime"
   },
@@ -341,7 +382,7 @@ const tools = [
   {
     title: "Data Transfer Calculator",
     description: "Estimate file upload and download times. Plan data transfers based on internet speed.",
-    icon: ArrowRightLeft,
+    icon: Database,
     href: "/calculator/data-transfer-calculator",
     color: "blue"
   }
@@ -691,23 +732,27 @@ function answerForQuestion(q: string): { answer: string; links?: string[] } {
 }
 
 const colorMap = {
-  blue: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
+  blue: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
   green: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
-  purple: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
-  pink: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
-  orange: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
-  yellow: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
-  indigo: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
-  red: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
-  gray: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
-  violet: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
-  teal: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
-  lime: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
-  sky: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
-  rose: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
-  amber: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
-  emerald: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
-  cyan: { bg: "bg-primary/10 dark:bg-primary/20", border: "border-border", text: "text-primary" },
+  purple: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  pink: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  orange: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  yellow: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  indigo: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  red: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  gray: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  violet: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  teal: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  lime: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  sky: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  rose: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  amber: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  emerald: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  cyan: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  stone: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  slate: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  zinc: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
+  fuchsia: { bg: "bg-heading-accent-border/30 dark:bg-heading-accent-border/20", border: "border-heading-accent-border", text: "text-heading-accent" },
 }
 
 const toolConfig = createToolConfig({
