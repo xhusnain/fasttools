@@ -33,7 +33,7 @@ export function AdSenseComplianceChecker({ data }: { data: ContentData }) {
     const warnings = results.filter(r => r.type === 'WARNING')
     const isClean = criticalErrors.length === 0
 
-    // Calculate word count
+
     const wordCount = [
         data.overview, data.aboutTool, ...data.howToSteps, ...data.features,
         ...data.faqs.map(f => f.question + " " + f.answer)
@@ -86,11 +86,11 @@ export function AdSenseComplianceChecker({ data }: { data: ContentData }) {
 
     return (
         <div className="fixed bottom-6 right-6 z-[9999] font-sans">
-            {/* Expanded State */}
+
             {isOpen && (
                 <div className="absolute bottom-16 right-0 w-[400px] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden animate-in slide-in-from-bottom-5 fade-in duration-200 flex flex-col max-h-[80vh]">
 
-                    {/* Header */}
+
                     <div className={`${statusColor} p-4 text-white flex justify-between items-start shrink-0`}>
                         <div>
                             <h3 className="font-bold text-lg flex items-center gap-2">
@@ -119,7 +119,7 @@ export function AdSenseComplianceChecker({ data }: { data: ContentData }) {
                         </button>
                     </div>
 
-                    {/* Tabs */}
+
                     <div className="flex border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/50 overflow-x-auto shrink-0">
                         <button
                             onClick={() => setActiveTab('CONTENT')}
@@ -141,12 +141,12 @@ export function AdSenseComplianceChecker({ data }: { data: ContentData }) {
                         </button>
                     </div>
 
-                    {/* Content */}
+
                     <div className="overflow-y-auto flex-1 bg-white dark:bg-slate-900">
                         {renderTabContent()}
                     </div>
 
-                    {/* Footer */}
+
                     <div className="p-2 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 text-center shrink-0">
                         <p className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">
                             Developer Mode • AdSense Auditor v2.0
@@ -155,7 +155,7 @@ export function AdSenseComplianceChecker({ data }: { data: ContentData }) {
                 </div>
             )}
 
-            {/* Floating Button */}
+
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className={`${statusColor} w-14 h-14 rounded-full shadow-lg shadow-black/20 flex items-center justify-center transition-transform hover:scale-110 active:scale-95 ring-4 ring-white/20 dark:ring-black/20`}

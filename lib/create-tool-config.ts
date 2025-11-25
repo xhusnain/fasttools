@@ -5,6 +5,8 @@ import type { ToolPageLayoutProps } from "./tool-page-layout-types"
 export interface UnifiedToolConfig {
     toolName: string
     description: string
+    metaTitle?: string
+    metaDescription?: string
     path: string
     keywords?: string[]
     header: {
@@ -36,16 +38,15 @@ export interface UnifiedToolConfig {
         }>
     }
     adConfig?: {
-        showHeaderAd?: boolean
-        showContentAd?: boolean
-        showFooterAd?: boolean
+        showMobileAd?: boolean
+        showSidebarAd?: boolean
     }
 }
 
 export function createToolConfig(config: UnifiedToolConfig) {
     const metadata: Metadata = createMetadata({
-        title: config.toolName,
-        description: config.description,
+        title: config.metaTitle || config.toolName,
+        description: config.metaDescription || config.description,
         path: config.path,
         toolName: config.toolName,
         faqs: config.content.faqs,
@@ -69,8 +70,8 @@ export function createToolConfig(config: UnifiedToolConfig) {
         },
         adConfig: config.adConfig,
         expectedMetadata: {
-            title: config.toolName,
-            description: config.description,
+            title: config.metaTitle || config.toolName,
+            description: config.metaDescription || config.description,
             path: config.path,
         },
     })
