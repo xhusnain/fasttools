@@ -115,6 +115,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: getFreshnessDate(1),
       changeFrequency: "daily" as const,
       priority: 0.9,
+      images: [
+        "https://www.fasttools.store/images/calculator-hero.png",
+        "https://www.fasttools.store/images/calculation-accuracy.png",
+      ],
     },
     {
       url: "https://www.fasttools.store/image-tools",
@@ -227,9 +231,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.95,
       images: [
-        "https://www.fasttools.store/images/calculator/functions.png",
-        "https://www.fasttools.store/images/calculator/comparison.png",
-        "https://www.fasttools.store/images/calculator/advanced.png",
+        "https://www.fasttools.store/images/scientific-calculator-functions.png",
       ],
     },
     {
