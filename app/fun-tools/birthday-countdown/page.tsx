@@ -1,7 +1,6 @@
 import { BirthdayCountdown } from "@/components/birthday-countdown"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
-import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
 import { createMetadata } from "@/lib/metadata-base"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, Cake, Clock, Calendar, Gift } from "lucide-react"

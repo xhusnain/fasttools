@@ -14,8 +14,8 @@ interface GHeaderProps {
 export function GHeader({
   title,
   description,
-  titleSize = 'large',
-  descriptionSize = 'medium',
+  titleSize = 'small',
+  descriptionSize = 'small',
   centered = true,
   color = 'orange',
   className
@@ -41,16 +41,16 @@ export function GHeader({
 
   // Title size classes
   const titleClasses = {
-    small: 'text-2xl sm:text-3xl md:text-4xl font-black',
-    medium: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black',
-    large: 'text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black'
+    small: 'text-xl sm:text-2xl md:text-3xl font-bold',
+    medium: 'text-3xl sm:text-4xl md:text-5xl font-black',
+    large: 'text-4xl sm:text-5xl md:text-6xl font-black'
   }
 
   // Description size classes
   const descClasses = {
-    small: 'text-base sm:text-lg',
-    medium: 'text-lg md:text-xl',
-    large: 'text-xl md:text-2xl lg:text-3xl'
+    small: 'text-sm sm:text-base',
+    medium: 'text-base sm:text-lg',
+    large: 'text-lg sm:text-xl'
   }
 
   const containerClass = centered ? 'text-center' : 'text-left'

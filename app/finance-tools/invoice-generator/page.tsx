@@ -1,7 +1,6 @@
 import { InvoiceGenerator } from "@/components/invoice-generator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
-import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
 import { createMetadata } from "@/lib/metadata-base"
 import { Code, Globe, Calculator, ArrowRight, FileText, DollarSign, Percent, Users } from "lucide-react"
 import type { Metadata } from "next"
