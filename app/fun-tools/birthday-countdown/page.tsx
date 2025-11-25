@@ -1,16 +1,22 @@
 import { BirthdayCountdown } from "@/components/birthday-countdown"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
+import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
+import { createMetadata } from "@/lib/metadata-base"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, Cake, Clock, Calendar, Gift } from "lucide-react"
 import type { Metadata } from "next"
 import Link from "next/link"
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
-  title: "FastTools - Birthday Countdown | Free Real-Time Timer",
+const baseMetadata = createMetadata({
+  title: "Birthday Countdown | Free Real-Time Timer",
   description:
-    "FastTools Birthday Countdown - Live birthday countdown showing days, hours, minutes, and seconds until your next birthday. Share the timer with friends.",
+    "Live birthday countdown showing days, hours, minutes, and seconds until your next birthday. Share the timer with friends.",
+  path: "/fun-tools/birthday-countdown",
+})
+
+export const metadata: Metadata = {
+  ...baseMetadata,
     keywords: [
       "fasttools",
       "fast tools",
@@ -49,30 +55,6 @@ export const metadata: Metadata = {
         "birthday countdown timer full screen black background",
         "birthday countdown timer aesthetic"
     ],
-
-  alternates: { canonical: "https://www.fasttools.store/fun-tools/birthday-countdown" },
-  openGraph: {
-    title: "Free Birthday Countdown | Real‑Time Birthday Timer | FastTools",
-    description: "Live birthday countdown showing days, hours, minutes, and seconds until your next birthday. Share the timer with friends.",
-    url: "https://www.fasttools.store/fun-tools/birthday-countdown",
-    type: "website",
-    siteName: "FastTools",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "FastTools Free Birthday Countdown - Real‑Time Birthday Timer",
-        type: "image/svg+xml",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Free Birthday Countdown | Real‑Time Birthday Timer | FastTools",
-    description: "Live birthday countdown showing days, hours, minutes, and seconds until your next birthday. Share the timer with friends.",
-    images: ["https://www.fasttools.store/og-image.svg"],
-  },
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",

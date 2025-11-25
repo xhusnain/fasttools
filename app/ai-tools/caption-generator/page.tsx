@@ -3,6 +3,8 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AiCaptionGenerator } from "@/components/ai-caption-generator"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
+import { createMetadata } from "@/lib/metadata-base"
 import { 
   Sparkles, 
   Calculator, 
@@ -24,178 +26,21 @@ import {
 // Auto-update year
 const currentYear = new Date().getFullYear()
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
+const baseMetadata = createMetadata({
   title: `AI Caption Generator ${currentYear} | Free Instagram & TikTok Captions`,
   description:
     `Generate viral social media captions with AI ${currentYear}. Free caption generator for Instagram, TikTok, Facebook & more. No sign up.`,
-  keywords: [
-        "fasttools",
-        "fast tools",
-        // --- Primary Focus Keywords ---
-        "AI caption generator",
-        "free AI caption generator",
-        "AI social media caption generator",
-        "AI content generator",
-        "AI writing assistant",
-        "AI content creator",
-        "AI writing tool",
-        "AI copywriting tool",
-        "AI marketing tools",
-        "AI social media tools",
-        "AI content creation tool",
-        "AI post caption generator",
-        "AI productivity tools",
-        "AI content marketing",
-        "AI content planner",
-        "AI text generator",
-        "AI content strategy",
-        "AI digital marketing tool",
-        "AI automation tools",
-        "AI social media manager",
+  path: "/ai-tools/caption-generator",
+})
 
-        // --- Social Media Specific ---
-        "Instagram caption generator",
-        "Facebook caption generator",
-        "LinkedIn caption generator",
-        "TikTok caption generator",
-        "YouTube caption generator",
-        "Pinterest caption generator",
-        "Twitter caption generator",
-        "social media caption maker",
-        "viral caption generator",
-        "engaging caption generator",
-        "creative caption generator",
-        "caption ideas generator",
-        "AI hashtag generator",
-        "post caption maker",
-        "social media copy generator",
-        "AI content writing generator",
-
-        // --- Long-tail & Niche Keywords ---
-        "free AI caption generator for Instagram",
-        "AI caption generator for businesses",
-        "AI caption generator for influencers",
-        "AI caption generator for content creators",
-        "AI caption generator for marketers",
-        "AI caption generator for agencies",
-        "AI caption generator for small business",
-        "AI caption generator for startups",
-        "AI caption generator for brands",
-        "AI caption generator for social media managers",
-        "AI caption generator for e-commerce",
-        "AI caption generator for fitness influencers",
-        "AI caption generator for travel bloggers",
-        "AI caption generator for food bloggers",
-        "AI caption generator with templates",
-        "viral post caption generator",
-        "AI caption generator with hashtags",
-        "best AI caption generator 2025",
-        "free social media caption generator online",
-        "AI-powered social media caption tool",
-
-        // --- Related SEO & Engagement Keywords ---
-        "caption writing tool",
-        "social media content generator",
-        "social media post ideas",
-        "caption optimization tool",
-        "social media copywriting",
-        "content marketing AI",
-        "social media automation",
-        "digital content creation",
-        "social media planning",
-        "content strategy planner",
-        "content calendar generator",
-        "social media engagement tool",
-        "viral content generator",
-        "social media branding",
-        "AI social media optimization",
-        "automated caption generator",
-        "social media AI tools",
-        "AI content generation software",
-        "caption creator online",
-        "free caption maker",
-        
-        // --- Top User-Searched Keywords (Based on 2025 Trends) ---
-        "caption generator with hashtags",
-        "viral caption generator",
-        "AI caption maker",
-        "social media caption ideas",
-        "caption generator for influencers",
-        "AI caption generator no sign up",
-        "Instagram caption ideas",
-        "TikTok caption ideas",
-        "catchy caption generator",
-        "photo caption generator",
-        "AI caption generator for reels",
-        "short caption generator",
-        "long caption generator",
-        "motivational caption generator",
-        "funny caption generator",
-        "business caption generator",
-        "caption generator for stories",
-        "AI caption generator for posts",
-        "caption generator with emojis",
-        "trending caption generator",
-        "AI bio generator",
-        "Instagram bio generator"
-    ],
-
-  openGraph: {
-    title: `Best Free AI Caption Generator ${currentYear} | Instagram, TikTok, Facebook & All Social Media`,
-    description: `Generate viral social media captions with AI in ${currentYear}! Free AI-powered caption generator for Instagram, TikTok, Facebook, LinkedIn, Twitter/X, YouTube & Pinterest. Create engaging captions with hashtags. Perfect for influencers, marketers & content creators. No sign up required.`,
-    type: "website",
-    url: "https://www.fasttools.store/ai-tools/caption-generator",
-    siteName: "FastTools - Free Online Tools",
-    locale: "en_US",
-    countryName: "Global",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: `Best Free AI Caption Generator ${currentYear} - Create Viral Social Media Captions for Instagram, TikTok, Facebook, LinkedIn, Twitter/X, YouTube & Pinterest`,
-        type: "image/svg+xml",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `Best Free AI Caption Generator ${currentYear} | All Social Media Platforms`,
-    description: `Generate viral social media captions with AI! Free caption generator for Instagram, TikTok, Facebook, LinkedIn, Twitter/X, YouTube & Pinterest. Create engaging captions with hashtags instantly. No sign up required. Perfect for influencers & marketers.`,
-    images: ["https://www.fasttools.store/og-image.svg"],
-    creator: "@FastTools",
-    site: "@FastTools",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  alternates: {
-    canonical: "https://www.fasttools.store/ai-tools/caption-generator",
-  },
+export const metadata: Metadata = {
+  ...baseMetadata,
   category: "Social Media & Marketing",
-  classification: "Social Media Tool",
   applicationName: "FastTools - AI Caption Generator",
-  authors: [{ name: "FastTools" }],
-  generator: "Next.js",
-  publisher: "FastTools",
-  creator: "FastTools",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
-  },
-  referrer: 'origin-when-cross-origin',
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
   },
   other: {
     "apple-mobile-web-app-capable": "yes",
@@ -534,6 +379,78 @@ export default function CaptionGeneratorPage() {
                     <p className="text-xs xs:text-sm text-muted-foreground">Save time and increase productivity by generating multiple caption options for client accounts.</p>
                   </div>
                 </div>
+                  </div>
+
+                  {/* Semantic Content Section - Incorporating Valuable Keywords Naturally */}
+                  <div className="bg-card border border-border rounded-xl p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm">
+                    <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 xs:mb-3 sm:mb-4 text-foreground flex items-center gap-1 xs:gap-2">
+                      <div className="p-1 xs:p-1.5 sm:p-2 bg-card rounded-lg flex-shrink-0">
+                        <Sparkles className="h-3 xs:h-4 sm:h-5 w-3 xs:w-4 sm:w-5" />
+                      </div>
+                      Complete Guide to AI Caption Generation for Social Media
+                    </h2>
+                    
+                    <div className="space-y-4 text-xs xs:text-sm sm:text-base text-muted-foreground leading-relaxed">
+                      <p>
+                        Our free AI caption generator is the ultimate tool for content creators, influencers, marketers, and businesses looking to create engaging social media captions instantly. As a leading AI content generator and AI writing assistant, our platform helps you generate viral captions for Instagram, TikTok, Facebook, LinkedIn, Twitter/X, YouTube, and Pinterest without any sign-up requirements. Whether you're a social media manager handling multiple accounts, an influencer building your personal brand, or a small business owner managing your own marketing, our AI caption generator streamlines your content creation workflow.
+                      </p>
+                      
+                      <p>
+                        The AI caption generator serves as both an AI content creator and AI writing tool, designed specifically for social media copywriting and digital content creation. Unlike traditional caption writing tools that require manual brainstorming, our AI-powered social media caption generator analyzes your content description and generates multiple caption variations optimized for each platform's unique audience and character limits. The Instagram caption generator mode creates captions perfect for posts, stories, and reels, while the TikTok caption generator produces short, punchy captions that align with trending formats. For professional networks, the LinkedIn caption generator creates business-appropriate content, and the Facebook caption generator adapts to that platform's community-focused environment.
+                      </p>
+                      
+                      <p>
+                        Content creators and influencers particularly benefit from our AI caption generator for businesses, as it helps maintain consistent brand voice across all platforms while saving hours of writing time. The AI caption generator for influencers enables them to focus on creating visual content while the AI handles caption ideation and drafting. For social media managers and agencies, the AI caption generator for agencies provides scalable content creation that maintains quality across multiple client accounts. Small businesses and startups can leverage the AI caption generator for small business to compete with larger brands by maintaining active social media presences without dedicated content teams.
+                      </p>
+                      
+                      <p>
+                        Our platform functions as a comprehensive AI content creation tool that goes beyond simple caption generation. It serves as an AI content planner, helping you organize your social media content strategy and maintain consistent posting schedules. The AI content marketing capabilities allow you to create promotional captions, educational content, engagement-focused posts, and brand storytelling narratives. As an AI productivity tool, it dramatically reduces the time spent on routine caption writing, freeing you to focus on high-level strategy, audience engagement, and creative direction.
+                      </p>
+                      
+                      <p>
+                        The AI caption generator with hashtags automatically suggests relevant hashtags based on your content, helping increase discoverability across platforms. For Instagram specifically, the AI caption generator for reels creates captions optimized for short-form video content, while the caption generator for stories produces concise, engaging text perfect for temporary content. The photo caption generator mode helps you create compelling narratives for image-based posts, and the viral caption generator feature incorporates trending formats and engagement triggers that increase your chances of going viral.
+                      </p>
+                      
+                      <p>
+                        Marketers and content strategists use our AI caption generator as part of their broader content marketing AI toolkit. The social media content generator capabilities extend beyond captions to include post ideas, content calendar planning, and engagement optimization. As an AI social media optimization tool, it helps you create captions that align with platform algorithms, trending topics, and audience preferences. The automated caption generator feature enables batch content creation, allowing you to generate weeks of captions in minutes, perfect for content calendar generator workflows and social media planning.
+                      </p>
+                      
+                      <p>
+                        The best AI caption generator 2025 incorporates the latest AI technology to produce human-like, engaging captions that resonate with audiences. Our free social media caption generator online works entirely in your browser, ensuring privacy and security while providing instant results. The AI-powered social media caption tool adapts to different content types—whether you need a motivational caption generator for inspirational posts, a funny caption generator for entertainment content, a business caption generator for professional announcements, or a catchy caption generator for promotional materials.
+                      </p>
+                      
+                      <p>
+                        For specialized use cases, our AI caption generator excels across various industries. E-commerce businesses use it to create product announcement captions, the fitness industry leverages it for workout explanations and transformation stories, food bloggers utilize it for recipe descriptions and dining experiences, and real estate professionals employ it for property showcases and market updates. The AI caption generator for e-commerce, AI caption generator for fitness influencers, AI caption generator for travel bloggers, and AI caption generator for food bloggers all benefit from industry-specific optimization that understands each vertical's unique language and audience expectations.
+                      </p>
+                      
+                      <p>
+                        The caption generator with emojis feature automatically suggests relevant emojis that enhance visual appeal and engagement, while the trending caption generator keeps your content aligned with current platform trends and viral formats. For Instagram specifically, the Instagram caption ideas generated by our AI help overcome writer's block and provide fresh perspectives on your content. Similarly, TikTok caption ideas incorporate the platform's unique culture, trending sounds, and Gen Z communication styles. The short caption generator mode creates concise, impactful captions perfect for platforms with character limits, while the long caption generator produces detailed, storytelling captions ideal for platforms that favor comprehensive content.
+                      </p>
+                      
+                      <p>
+                        Our AI caption generator functions as both an AI text generator and AI copywriting tool, producing original, copyright-free captions suitable for commercial use. The AI content generation software utilizes advanced language models to understand context, tone, and platform-specific requirements. As a caption creator online and free caption maker, it democratizes professional-quality content creation, making sophisticated social media marketing accessible to businesses and creators of all sizes. The caption optimization tool features help refine your captions for maximum engagement, incorporating best practices for social media copywriting and content strategy planning.
+                      </p>
+                      
+                      <p>
+                        Social media managers particularly appreciate the AI social media tools integration, which allows seamless workflow integration with content calendars and publishing schedules. The social media automation capabilities enable efficient content batching, while the social media engagement tool features help create captions designed to drive likes, comments, shares, and saves. The viral content generator mode incorporates proven engagement triggers, emotional hooks, and strategic calls-to-action that increase interaction rates. For brand consistency, the social media branding features help maintain unified voice and messaging across all platforms.
+                      </p>
+                      
+                      <p>
+                        The AI bio generator and Instagram bio generator features extend beyond captions to help you create compelling profile descriptions that capture your brand essence in limited characters. These tools understand the importance of first impressions and help craft bios that communicate value propositions, personality, and call-to-action effectively. Whether you're an influencer building personal brand, a business establishing professional presence, or a creator showcasing your niche expertise, the AI bio generator provides multiple variations to help you find the perfect profile description.
+                      </p>
+                      
+                      <p>
+                        Our AI caption generator for posts handles all types of social media content, from promotional announcements to educational tutorials, from behind-the-scenes glimpses to customer testimonials. The AI content writing generator capabilities ensure that every caption is original, engaging, and optimized for its specific platform and audience. As an AI digital marketing tool, it integrates seamlessly into broader marketing strategies, supporting everything from product launches to brand awareness campaigns. The AI automation tools features enable scalable content creation that maintains quality while increasing output volume.
+                      </p>
+                      
+                      <p>
+                        For content creators working across multiple platforms, our AI caption generator serves as a unified social media AI tools solution that adapts to each platform's unique requirements. The AI social media manager capabilities help you maintain consistent brand voice while optimizing for platform-specific best practices. Whether you need captions for Instagram posts, Facebook updates, LinkedIn articles, Twitter threads, TikTok videos, Pinterest pins, or YouTube descriptions, our AI caption generator produces platform-optimized content that maximizes engagement and reach. The AI content strategy features help you plan cohesive campaigns that work across all your social media channels.
+                      </p>
+                      
+                      <p>
+                        The future of social media content creation lies in the intelligent combination of AI efficiency and human creativity. Our AI caption generator provides the speed, scalability, and consistency that modern content creators need, while leaving room for personalization, brand voice, and authentic storytelling. As AI content generation software continues evolving, we're committed to providing the best AI caption generator experience that helps creators, businesses, and marketers achieve their social media goals efficiently and effectively. Whether you're generating captions for a single post or planning an entire content calendar, our free AI caption generator empowers you to create engaging, professional-quality social media content that drives results.
+                      </p>
+                    </div>
                   </div>
 
                   {/* FAQ Section */}

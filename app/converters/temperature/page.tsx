@@ -2,130 +2,20 @@ import { TemperatureConverter } from "@/components/temperature-converter"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
+import { createMetadata } from "@/lib/metadata-base"
 import type { Metadata } from "next"
 import Link from "next/link"
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
+const baseMetadata = createMetadata({
   title: "Temperature Converter | Free Celsius ⇄ Fahrenheit",
   description:
     "Convert temperatures instantly between Celsius & Fahrenheit. Ideal for weather, cooking, science projects & travel.",
-  keywords: [
-    "fasttools",
-    "fast tools",
-    "temperature converter",
-    "free temperature converter",
-    "celsius to fahrenheit",
-    "fahrenheit to celsius",
-    "C to F",
-    "F to C",
-    "temperature converter online",
-    "celsius fahrenheit converter online",
-    "temperature calculator online",
-    "c to f converter online",
-    "f to c converter online",
-    "temperature conversion online",
-    "celsius fahrenheit conversion online",
-    "temperature converter free",
-    "celsius fahrenheit converter free",
-    "temperature calculator free",
-    "c to f converter free",
-    "f to c converter free",
-    "temperature conversion free",
-    "celsius fahrenheit conversion free",
-    
-    "convert 100 c to f",
-    "convert 32 f to c",
-    "weather temperature converter",
-    "cooking temperature converter",
-    "oven temperature c to f",
-    "baking temperature c to f",
-    "body temperature c to f",
-    "scientific temperature",
-    "temperature scale conversion",
-    "kelvin to celsius",
-    "kelvin to fahrenheit",
-    "celsius to kelvin",
-    "fahrenheit to kelvin",
-    "convert degree symbols",
-    "temperature chart",
-    "what is 180 c in f",
-    "what is 350 f in c",
-    "room temperature c to f",
-    "fever temperature c to f",
-    "water boiling point c to f",
-      "free online temperature converter",
-    "best temperature converter online",
-    "temperature converter with live preview",
-    "free temperature converter tool online",
-    "online temperature converter free",
-    "temperature converter online free",
-    "celsius to fahrenheit converter free",
-    "fahrenheit to celsius converter free",
-    "temperature calculator free online",
-    "c to f converter free online",
-    "f to c converter free online",
-    "temperature conversion free online",
-    "celsius fahrenheit conversion free online",
-    "temperature converter for cooking",
-    "temperature converter for weather",
-    "temperature converter for science",
-    "temperature converter for travel",
-    "temperature converter for baking",
-    "temperature converter for grilling",
-    "temperature converter for air fryer",
-    "water freezing point f to c",
-    "grill temperature c to f",
-    "air fryer temperature conversion",
-    "sous vide temperature fahrenheit celsius",
-    "thermometer conversion c f",
-    "temperature table c f",
-    "convert negative temperatures",
-    "absolute zero in c and f",
-    "formula c to f and f to c",
-    "quick temperature converter",
-    "instant c to f conversion",
-    "instant f to c conversion",
-    "convert 180c to f for baking",
-    "convert 375f to c",
-    "convert 400f to c",
-    "convert 200c to f",
-    "convert 425f to c",
-    "convert 160c to f",
-    "convert 450f to c",
-    "convert 0c to f",
-    "convert -40c to f",
-    "convert 212f to c",
-    "convert 98.6f to c",
-    "convert 37c to f",
-    "kitchen temperature guide",
-    "weather temperature scale",
-    "science temperature units",
-    "unit converter temperature"
-  ],
-  alternates: { canonical: "https://www.fasttools.store/converters/temperature" },
-  openGraph: {
-    title: "Free Temperature Converter | Celsius (°C) ⇄ Fahrenheit (°F) | FastTools",
-    description: "Convert temperatures instantly between Celsius and Fahrenheit. Ideal for weather, cooking, science projects, and travel.",
-    url: "https://www.fasttools.store/converters/temperature",
-    type: "website",
-    siteName: "FastTools",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "FastTools Free Temperature Converter - Celsius (°C) ⇄ Fahrenheit (°F)",
-        type: "image/svg+xml",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Free Temperature Converter | Celsius (°C) ⇄ Fahrenheit (°F) | FastTools",
-    description: "Convert temperatures instantly between Celsius and Fahrenheit. Ideal for weather, cooking, science projects, and travel.",
-    images: ["https://www.fasttools.store/og-image.svg"],
-  },
+  path: "/converters/temperature",
+})
+
+export const metadata: Metadata = {
+  ...baseMetadata,
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
@@ -231,6 +121,16 @@ export default function TemperatureConverterPage() {
 
               {/* Content Sections */}
               <div className="space-y-4 animate-fade-in-up">
+                {/* Comprehensive Temperature Conversion Guide */}
+                <div className="p-3 sm:p-4 rounded-lg bg-card border border-border shadow">
+                  <h2 className="text-sm md:text-lg font-bold mb-3 text-foreground">Complete Guide to Temperature Conversion and Scales</h2>
+                  <div className="space-y-3 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    <p>
+                      Our free temperature converter and celsius fahrenheit converter online provide instant temperature conversion between Celsius and Fahrenheit scales, making it the best temperature converter online for cooking, weather, science, and travel. Whether you need to convert 100 C to F, convert 32 F to C, or understand what is 180 C in F for baking, this temperature calculator online delivers accurate results instantly. The C to F converter and F to C converter support all common conversions including convert 180C to F for baking, convert 375F to C, convert 400F to C, convert 200C to F, convert 425F to C, convert 160C to F, convert 450F to C, convert 0C to F, convert -40C to F, convert 212F to C, convert 98.6F to C, and convert 37C to F. As a comprehensive temperature converter for cooking, our tool helps with oven temperature C to F conversions, baking temperature C to F adjustments, and provides a complete kitchen temperature guide for recipes. The weather temperature converter feature helps understand weather temperature scales when traveling internationally, while the temperature converter for science supports scientific temperature calculations including kelvin to celsius, kelvin to fahrenheit, celsius to kelvin, and fahrenheit to kelvin conversions. For cooking enthusiasts, the temperature converter for baking, temperature converter for grilling, and temperature converter for air fryer provide specialized conversions like grill temperature C to F, air fryer temperature conversion, and sous vide temperature fahrenheit celsius conversions. Understanding temperature scale conversion is essential for working with international recipes, scientific data, and weather reports. The tool handles convert negative temperatures accurately and explains absolute zero in C and F, while the formula C to F and F to C is clearly displayed for educational purposes. Common reference points like room temperature C to F, fever temperature C to F, body temperature C to F, water boiling point C to F, and water freezing point F to C are instantly available. As a quick temperature converter and instant C to F conversion tool, our temperature converter with live preview shows results in real-time, making it perfect for cooking, weather monitoring, and scientific work. The thermometer conversion C F feature helps calibrate devices, while the temperature table C F provides quick reference for common conversions. Whether you're using this as a free online temperature converter, best temperature converter online, or temperature converter tool online, our platform serves as both a celsius to fahrenheit converter free and fahrenheit to celsius converter free, providing comprehensive temperature conversion capabilities for all your needs.
+                    </p>
+                  </div>
+                </div>
+
                 <div className="p-3 sm:p-4 rounded-lg bg-card border border-border shadow">
                   <h2 className="text-sm md:text-lg font-bold mb-2 text-foreground">How to Convert Temperatures</h2>
                   <h3 className="text-sm md:text-base font-bold mb-2 text-heading-accent">1) Enter a Value in °C or °F</h3>

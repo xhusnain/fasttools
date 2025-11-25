@@ -3,20 +3,22 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { PDFCompressor } from "@/components/pdf-compressor"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
+import { createMetadata } from "@/lib/metadata-base"
 import Link from "next/link"
 import { Minimize2, FileText, Shield, Zap, ArrowRight, HardDrive, Info, CheckCircle2 } from "lucide-react"
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free PDF Compressor Online - Compress PDF to 200KB, 500KB, 1MB | FastTools",
+const baseMetadata = createMetadata({
+  title: "Free PDF Compressor Online - Compress PDF to 200KB, 500KB, 1MB",
   description:
     "Best free PDF compressor online. Compress PDF files by 50-90% to 200KB, 500KB, or 1MB. No upload, unlimited use, 100% secure. Works on Windows, Mac, iPhone. No size limit up to 2GB.",
+  path: "/pdf-tools/pdf-compressor",
+})
+
+export const metadata: Metadata = {
+  ...baseMetadata,
   applicationName: "FastTools - PDF Compressor",
-  authors: [{ name: "FastTools", url: "https://www.fasttools.store" }],
-  creator: "FastTools",
-  publisher: "FastTools",
   category: "Productivity Tools",
-  referrer: "origin-when-cross-origin",
   formatDetection: {
     email: false,
     address: false,

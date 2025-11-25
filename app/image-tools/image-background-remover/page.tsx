@@ -2,14 +2,20 @@ import type { Metadata } from "next"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { ImageBackgroundRemover } from "@/components/image-background-remover"
 import { AdSpace } from "@/components/ad-space"
+import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
+import { createMetadata } from "@/lib/metadata-base"
 import { FileText, ArrowRight, Code, Globe, Zap, Shield } from "lucide-react"
 import { GHeader } from "@/components/globalcomponents/gheader"
 
-export const metadata: Metadata = {
-    metadataBase: new URL("https://www.fasttools.store"),
+const baseMetadata = createMetadata({
     title: "Photo Background Remover | Free AI Remove BG Online",
     description:
         "Remove photo backgrounds instantly with free AI. Professional background remover for portraits, products & pets. No photoshop needed. Free & secure.",
+    path: "/image-tools/image-background-remover",
+})
+
+export const metadata: Metadata = {
+    ...baseMetadata,
     keywords: [
         // High Volume Keywords (10k+ searches)
         "removing bg in photoshop",

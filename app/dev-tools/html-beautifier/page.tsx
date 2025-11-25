@@ -3,14 +3,20 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { HTMLBeautifier } from "@/components/html-beautifier"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
+import { createMetadata } from "@/lib/metadata-base"
 import Link from "next/link"
 import { Code, Minimize2, Copy, ArrowRight } from "lucide-react"
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
-  title: "FastTools - HTML Beautifier | Free Beautify & Minify HTML Code Online",
+const baseMetadata = createMetadata({
+  title: "HTML Beautifier | Free Beautify & Minify HTML Code Online",
   description:
-    "FastTools HTML Beautifier - Free online HTML beautifier and minifier tool. Beautify HTML code with proper formatting or minify HTML to compress file size. Best HTML formatter online with instant results, download, and validation. No signup required.",
+    "Free online HTML beautifier and minifier tool. Beautify HTML code with proper formatting or minify HTML to compress file size. Best HTML formatter online with instant results, download, and validation.",
+  path: "/dev-tools/html-beautifier",
+})
+
+export const metadata: Metadata = {
+  ...baseMetadata,
   keywords: [
     "fasttools",
     "fast tools",
@@ -563,56 +569,8 @@ export const metadata: Metadata = {
     "html fiverr",
     "html jobs in lahore"
   ],
-  alternates: { 
-    canonical: "https://www.fasttools.store/dev-tools/html-beautifier",
-    languages: {
-      "en-US": "https://www.fasttools.store/dev-tools/html-beautifier",
-      "x-default": "https://www.fasttools.store/dev-tools/html-beautifier"
-    }
-  },
   applicationName: "FastTools",
-  authors: [{ name: "FastTools", url: "https://www.fasttools.store" }],
-  generator: "Next.js",
-  referrer: "origin-when-cross-origin",
-  creator: "FastTools",
-  publisher: "FastTools",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
   category: "Developer Tools",
-  openGraph: {
-    title: "Free HTML Beautifier Online - Beautify HTML & Minify HTML Code Instantly",
-    description: "Free online HTML beautifier and minifier tool. Beautify HTML code with proper formatting or minify HTML to compress file size. Best HTML formatter online with instant results, download, and validation. No signup required.",
-    url: "https://www.fasttools.store/dev-tools/html-beautifier",
-    type: "website",
-    siteName: "FastTools",
-    locale: "en_US",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "Free HTML Beautifier Online - Beautify HTML & Minify HTML Code Instantly with Download and Validation",
-        type: "image/svg+xml",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@FastToolsStore",
-    creator: "@FastToolsStore",
-    title: "Free HTML Beautifier Online - Beautify HTML & Minify HTML Code Instantly",
-    description: "Free online HTML beautifier and minifier tool. Beautify HTML code with proper formatting or minify HTML to compress file size. Best HTML formatter online with instant results, download, and validation. No signup required.",
-    images: ["https://www.fasttools.store/og-image.svg"],
-  },
   other: {
     "application/ld+json": JSON.stringify([
       {

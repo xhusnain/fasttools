@@ -2,113 +2,20 @@ import { LengthConverter } from "@/components/length-converter"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
+import { createMetadata } from "@/lib/metadata-base"
 import type { Metadata } from "next"
 import Link from "next/link"
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
-  title: "FastTools - Length Converter | Free Meters, Feet, Inches, CM Converter",
+const baseMetadata = createMetadata({
+  title: "Length Converter | Free Meters, Feet, Inches, CM Converter",
   description:
-    "FastTools Length Converter - Convert length units instantly: meters, feet, inches, centimeters, millimeters, kilometers, yards, miles. Accurate metric and imperial conversion tool.",
-  keywords:[
-    "fasttools",
-    "fast tools",
-    "length converter",
-    "convert length",
-    "length conversion",
-    "convert meters to feet",
-    "meters to feet converter",
-    "feet to meters converter",
-    "cm to inches",
-    "centimeters to inches",
-    "inches to cm converter",
-    "km to miles",
-    "kilometers to miles converter",
-    "miles to kilometers",
-    "convert mm to inches",
-    "millimeters to inches converter",
-    "convert inches to mm",
-    "feet and inches converter",
-    "convert ft in to cm",
-    "yards to meters",
-    "meters to yards converter",
-    "convert miles to meters",
-    "nautical miles to kilometers",
-    "convert kilometers to nautical miles",
-    "convert micrometers to meters",
-    "convert nanometers to meters",
-    "light year to kilometers",
-    "convert lightyears to meters",
-    "height converter cm to ft",
-    "convert height cm to feet and inches",
-    "convert cm to ft and in",
-    "convert inches to feet",
-    "imperial to metric converter",
-    "metric to imperial converter",
-    "length conversion table",
-    "length converter chart",
-    "online length converter",
-    "free length converter online",
-    "distance converter",
-    "distance conversion calculator",
-    "convert miles to feet",
-    "convert feet to yards",
-    "convert meters to centimeters",
-    "convert cm to meters",
-    "convert meters to millimeters",
-    "convert kilometers to meters",
-    "convert meters to kilometers",
-    "scale converter length",
-    "convert scale length to real length",
-    "convert furlongs to miles",
-    "convert rods to feet",
-    "convert chains to meters",
-    "engineering length converter",
-    "construction length converter",
-    "convert survey units",
-    "convert between metric and imperial length",
-    "convert imperial length units online",
-    "convert inches and fractions to decimal",
-    "decimal to fraction length converter",
-    "convert feet inches fraction to decimal",
-    "convert px to cm",
-    "convert pixels to inches at dpi",
-    "convert pixels to inches",
-    "convert pt to inches",
-    "convert pica to inches",
-    "convert mm to pt",
-    "convert cm to pt",
-    "interactive length converter",
-    "length conversion calculator with formula",
-    "how many inches in a meter",
-    "how many cm in a mile",
-    "convert height meters to feet"
-  ],
+    "Convert length units instantly: meters, feet, inches, centimeters, millimeters, kilometers, yards, miles. Accurate metric and imperial conversion tool for construction, travel, and education.",
+  path: "/converters/length",
+})
 
-  alternates: { canonical: "https://www.fasttools.store/converters/length" },
-  openGraph: {
-    title: "Free Length Converter | Convert Meters, Feet, Inches, CM, KM & Miles | FastTools",
-    description:
-      "Convert length units instantly: meters, feet, inches, centimeters, millimeters, kilometers, yards, and miles. Accurate metric and imperial conversion tool for construction, travel, and education.",
-    url: "https://www.fasttools.store/converters/length",
-    type: "website",
-    siteName: "FastTools",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "FastTools Free Length Converter - Convert Meters, Feet, Inches, CM, KM & Miles",
-        type: "image/svg+xml",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Free Length Converter | Convert Meters, Feet, Inches, CM, KM & Miles | FastTools",
-    description: "Convert length units instantly: meters, feet, inches, centimeters, millimeters, kilometers, yards, and miles. Accurate metric and imperial conversion tool for construction, travel, and education.",
-    images: ["https://www.fasttools.store/og-image.svg"],
-  },
+export const metadata: Metadata = {
+  ...baseMetadata,
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
@@ -211,42 +118,123 @@ export default function LengthConverterPage() {
                 <LengthConverter />
               </div>
 
-              {/* Understanding How This Tool Works */}
+              {/* Comprehensive Content Section */}
               <div className="space-y-5 animate-fade-in-up animation-delay-200">
-                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-base md:text-xl font-bold mb-3 text-foreground">Understanding How This Length Converter Works</h2>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                    Conversions are computed with standardized factors for metric and imperial units. Input validation and
-                    sensible rounding keep values readable while preserving accuracy.
-                  </p>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">Real-Time Processing</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                    Results update as you type. Mixed formats (like feet+inches) are handled cleanly and converted to any target unit.
-                  </p>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">Professional Features</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Precision controls, unit hints, and copy‑ready output help in construction, engineering, education, and travel planning.
-                  </p>
-                </div>
+                {/* What is Length Converter Section */}
+                <article className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                  <h2 className="text-2xl font-bold mb-4 text-foreground">What is a Length Converter?</h2>
+                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    <p className="text-base">
+                      A length converter is an essential tool that transforms measurements between different unit systems, primarily the metric system (meters, centimeters, kilometers) and the imperial system (feet, inches, yards, miles). This tool is indispensable for professionals, students, and everyday users who need to work with measurements from different countries or industries that use varying measurement standards.
+                    </p>
+                    <p className="text-base">
+                      Our free length converter provides instant, accurate conversions between over 20 different length units, including meters, feet, inches, centimeters, millimeters, kilometers, yards, miles, nautical miles, and even astronomical units. Whether you're working on a construction project, planning international travel, studying science, or simply need to understand measurements from different sources, this tool eliminates the need for manual calculations and conversion tables.
+                    </p>
+                    <p className="text-base">
+                      The converter uses standardized conversion factors recognized internationally, ensuring precision for critical applications in engineering, construction, manufacturing, and scientific research. All conversions happen instantly in your browser, with no data sent to external servers, ensuring complete privacy and security for your measurements.
+                    </p>
+                    <p className="text-base">
+                      Our comprehensive length converter and distance conversion calculator handles all major unit conversions you'll encounter in daily life and professional work. Whether you need to convert meters to feet for construction blueprints, convert centimeters to inches for international product specifications, or convert kilometers to miles for travel planning, this interactive length converter provides instant, accurate results. The tool seamlessly converts between metric and imperial systems—perfect for converting millimeters to inches in engineering drawings, converting yards to meters in sports fields, or converting nautical miles to kilometers for maritime navigation. For height measurements, our height converter easily converts cm to feet and inches, making it ideal for medical records, fitness tracking, or international ID requirements. Construction professionals rely on our engineering length converter and construction length converter to convert between survey units, handle decimal to fraction conversions for precise measurements, and convert scale lengths to real-world dimensions. Digital designers use our pixel conversion features to convert pixels to inches at specific DPI settings, convert px to cm for print layouts, or convert points and picas to inches for typography. This free length converter online serves as both a distance converter and a comprehensive length conversion calculator with formulas, supporting everything from converting miles to feet for road measurements to converting micrometers to meters for scientific research. Whether you're using it as an imperial to metric converter or a metric to imperial converter, our tool provides accurate conversions for all your length conversion needs, making it the perfect online length converter for professionals and students alike.
+                    </p>
+                  </div>
+                </article>
 
-                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-base md:text-xl font-bold mb-3 text-foreground">Advanced Usage Techniques</h2>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                    Practical guidance for real‑world tasks across construction, travel, and science.
-                  </p>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">Construction and Engineering</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                    Convert between blueprint scales, material specs, and measurement systems without manual tables.
-                  </p>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">Travel and Navigation</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                    Switch quickly between miles and kilometers when comparing maps, routes, or fitness trackers.
-                  </p>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">Education and Science</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Use consistent units across lab notes and reports; rely on exact factors, not approximations.
-                  </p>
-                </div>
+                {/* How to Use Section */}
+                    <article className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                  <h2 className="text-2xl font-bold mb-4 text-foreground">How to Use Our Length Converter</h2>
+                  <ol className="space-y-3 text-muted-foreground">
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary font-semibold text-sm flex items-center justify-center">1</span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Enter Your Value:</strong> Type or paste the length value you want to convert in the input field. You can enter values with or without units (e.g., "5.5" or "5.5 meters").</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary font-semibold text-sm flex items-center justify-center">2</span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Select Source Unit:</strong> Choose the unit of your input value from the dropdown menu. Options include meters, feet, inches, centimeters, kilometers, miles, yards, and many more.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary font-semibold text-sm flex items-center justify-center">3</span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Select Target Unit:</strong> Choose the unit you want to convert to. The converter will automatically display the equivalent value in your selected unit.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary font-semibold text-sm flex items-center justify-center">4</span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">View Results:</strong> The converted value appears instantly in real-time as you type. You can copy the result to your clipboard or use it directly in your work.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary font-semibold text-sm flex items-center justify-center">5</span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Mixed Format Support:</strong> For imperial measurements, you can enter values in combined formats like "5 feet 11 inches" or "6'11" and the converter will handle them automatically.</span>
+                    </li>
+                  </ol>
+                </article>
+
+                {/* Common Use Cases Section */}
+                <article className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                  <h2 className="text-2xl font-bold mb-4 text-foreground">Common Use Cases for Length Conversion</h2>
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2"></span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Construction and Architecture:</strong> Converting between metric and imperial measurements when working with international building codes, blueprints, or material specifications. Essential for contractors, architects, and engineers working on projects that span different measurement systems.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2"></span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">International Travel:</strong> Understanding distances in different countries. Converting kilometers to miles when driving in the US, or meters to feet when visiting countries using imperial measurements. Also useful for understanding road signs, map distances, and travel planning.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2"></span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Education and Learning:</strong> Students and teachers use length converters to understand measurement systems, complete homework assignments, and prepare for exams that may require conversions between metric and imperial units.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2"></span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Fitness and Sports:</strong> Converting running distances (miles to kilometers), track measurements, and understanding race distances in different unit systems. Essential for athletes training internationally or comparing performance metrics.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2"></span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Manufacturing and Engineering:</strong> Converting technical specifications, tolerances, and dimensions when working with international suppliers or clients. Critical for maintaining precision in manufacturing processes.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2"></span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Real Estate:</strong> Converting property dimensions, lot sizes, and room measurements between different measurement systems when dealing with international properties or clients.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2"></span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Scientific Research:</strong> Converting measurements in scientific papers, laboratory data, and research findings that may use different unit systems depending on the field or country of origin.</span>
+                    </li>
+                  </ul>
+                </article>
+
+                {/* Why Choose Our Tool Section */}
+                <article className="p-6 rounded-lg bg-card border border-border shadow-lg">
+                  <h2 className="text-2xl font-bold mb-4 text-foreground">Why Choose Our Length Converter?</h2>
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2"></span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Instant Accuracy:</strong> All conversions use internationally recognized conversion factors, ensuring precision for professional and academic use. No approximations or rounding errors.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2"></span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Comprehensive Unit Support:</strong> Convert between 20+ length units including metric (meters, centimeters, kilometers, millimeters), imperial (feet, inches, yards, miles), nautical (nautical miles), and scientific units (light years, astronomical units).</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2"></span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Mixed Format Handling:</strong> Enter measurements in combined formats like "5 feet 11 inches" or "6'11" and the converter automatically parses and converts them correctly.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2"></span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Real-Time Conversion:</strong> See results instantly as you type, with no delays or page refreshes. Perfect for quick conversions during work or study.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2"></span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Privacy and Security:</strong> All conversions happen locally in your browser. Your measurements never leave your device, ensuring complete privacy and security.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2"></span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Mobile-Friendly Design:</strong> Works perfectly on smartphones, tablets, and desktop computers. Access accurate conversions anywhere, anytime.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2"></span>
+                      <span className="text-base leading-relaxed"><strong className="text-foreground">Completely Free:</strong> No registration, no hidden costs, no premium features locked behind paywalls. All conversion capabilities are available free forever.</span>
+                    </li>
+                  </ul>
+                </article>
 
                 {/* Length Converter FAQ */}
                 <div className="p-6 rounded-lg bg-card border border-border shadow mt-6">

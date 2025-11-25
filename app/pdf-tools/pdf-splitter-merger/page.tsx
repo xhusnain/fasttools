@@ -3,18 +3,21 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { PDFToolsAdvanced } from "@/components/pdf-tools-advanced"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
+import { createMetadata } from "@/lib/metadata-base"
 import Link from "next/link"
 import { FileStack, Code, Globe, FileText, ArrowRight, Merge, Scissors } from "lucide-react"
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
-  title: "Free PDF Splitter & Merger Online - Split & Merge PDF Files | FastTools",
+const baseMetadata = createMetadata({
+  title: "PDF Splitter & Merger Online - Split & Merge PDF Files",
   description:
     "Free online PDF splitter and merger tool. Split PDF files into separate pages, extract page ranges, or merge multiple PDFs into one document. 100% secure, browser-based processing. No upload, no signup, unlimited use.",
+  path: "/pdf-tools/pdf-splitter-merger",
+})
+
+export const metadata: Metadata = {
+  ...baseMetadata,
   applicationName: "FastTools - PDF Splitter & Merger",
-  authors: [{ name: "FastTools", url: "https://www.fasttools.store" }],
-  creator: "FastTools",
-  publisher: "FastTools",
   category: "Productivity Tools",
   keywords: [
     // High-Volume PDF Keywords
@@ -884,49 +887,6 @@ export const metadata: Metadata = {
     "pdf concatenate javascript",
     "pdf divide javascript"
   ],
-  alternates: { 
-    canonical: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
-    languages: {
-      "en-US": "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
-    },
-  },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  openGraph: {
-    title: "Free PDF Splitter & Merger Online - Split & Merge PDF Files | FastTools",
-    description: "Free online PDF splitter and merger. Split PDF files into separate pages, extract page ranges, or merge multiple PDFs into one. 100% secure, browser-based. No upload required.",
-    url: "https://www.fasttools.store/pdf-tools/pdf-splitter-merger",
-    type: "website",
-    locale: "en_US",
-    siteName: "FastTools",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "Free PDF Splitter & Merger Tool - Split & Merge PDFs Online",
-        type: "image/svg+xml",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@FastTools",
-    creator: "@FastTools",
-    title: "Free PDF Splitter & Merger Online - Split & Merge PDF Files | FastTools", 
-    description: "Free online PDF splitter and merger. Split PDF files into separate pages, extract page ranges, or merge multiple PDFs into one. 100% secure, browser-based. No upload required.",
-    images: ["https://www.fasttools.store/og-image.svg"],
-  },
 }
 
 const jsonLd = {

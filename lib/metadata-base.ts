@@ -54,6 +54,7 @@ export interface MetadataOptions {
     twitterDescription?: string
     twitterCreator?: string
     includeSchema?: boolean // Whether to include SoftwareApplication schema
+    schemaOptions?: Omit<SoftwareAppSchemaOptions, 'title' | 'path'> // Additional schema options (title and path are auto-filled)
 }
 
 export interface MetadataWithSchema {
@@ -62,7 +63,7 @@ export interface MetadataWithSchema {
 }
 
 export function createMetadata(options: MetadataOptions): Metadata & { softwareSchema?: ReturnType<typeof createSoftwareAppSchema> } {
-    const { title, description, path, ogImageAlt, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, includeSchema = true } = options
+    const { title, description, path, ogImageAlt, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator, includeSchema = true, schemaOptions } = options
     const cleanPath = path.startsWith("/") ? path : `/${path}`
     const titleWithBranding = title === "FastTools" ? title : `${title} | FastTools`
     const fullTitle = addYearToTitle(titleWithBranding, cleanPath)
@@ -103,6 +104,18 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
         images: [defaultOgImage],
     }
 
+    // Create software schema if includeSchema is true
+    let softwareSchema: ReturnType<typeof createSoftwareAppSchema> | undefined
+
+    if (includeSchema) {
+        softwareSchema = createSoftwareAppSchema({
+            title,
+            description,
+            path: cleanPath,
+            ...schemaOptions
+        })
+    }
+
     const metadata: Metadata = {
         title: fullTitle,
         description,
@@ -122,13 +135,19 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
                 follow: true,
             },
         verification: VERIFICATION,
+        // Automatically include SoftwareApplication schema in other property if includeSchema is true
+        ...(includeSchema && softwareSchema && {
+            other: {
+                "application/ld+json": JSON.stringify(softwareSchema)
+            }
+        }),
     }
 
-    // If includeSchema is true, add the software schema
-    if (includeSchema) {
+    // Return metadata with softwareSchema for reference if needed
+    if (includeSchema && softwareSchema) {
         return {
             ...metadata,
-            softwareSchema: createSoftwareAppSchema({ title })
+            softwareSchema
         }
     }
 
@@ -208,44 +227,102 @@ export function extractToolName(title: string): string {
 export interface SoftwareAppSchemaOptions {
     name?: string
     title?: string
+    description?: string
+    path?: string
     applicationCategory?: string
     operatingSystem?: string
     price?: string
     currency?: string
     ratingValue?: string
     ratingCount?: string
+    alternateName?: string
+    featureList?: string[]
+    version?: string
 }
 
 export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
     const {
         name,
         title,
+        description,
+        path,
         applicationCategory = "NetworkApplication",
-        operatingSystem = "Any",
+        operatingSystem = "Web Browser",
         price = "0",
         currency = "USD",
         ratingValue = "4.8",
-        ratingCount = "50000"
+        ratingCount = "50000",
+        alternateName,
+        featureList,
+        version = "2.0"
     } = options
 
     // Use provided name, or extract from title, or use empty string
     const appName = name || (title ? extractToolName(title) : "")
+    const appUrl = path ? getCanonicalUrl(path) : BASE_URL
+    const currentDate = new Date().toISOString().split('T')[0]
 
-    return {
+    const schema: any = {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": appName,
         "applicationCategory": applicationCategory,
         "operatingSystem": operatingSystem,
+        "url": appUrl,
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
         "offers": {
             "@type": "Offer",
             "price": price,
-            "priceCurrency": currency
+            "priceCurrency": currency,
+            "availability": "https://schema.org/InStock"
         },
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": ratingValue,
             "ratingCount": ratingCount
+        },
+        "author": {
+            "@type": "Organization",
+            "name": SITE_NAME,
+            "url": BASE_URL
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": SITE_NAME,
+            "url": BASE_URL,
+            "logo": {
+                "@type": "ImageObject",
+                "url": DEFAULT_IMAGES.LOGO_SVG,
+                "width": 320,
+                "height": 80
+            }
+        },
+        "datePublished": "2024-01-01",
+        "dateModified": currentDate,
+        "version": version,
+        "softwareVersion": version,
+        "downloadUrl": appUrl,
+        "screenshot": DEFAULT_IMAGES.OG_IMAGE_SVG,
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": SITE_NAME,
+            "url": BASE_URL
         }
     }
+
+    // Add optional fields if provided
+    if (description) {
+        schema.description = description
+    }
+
+    if (alternateName) {
+        schema.alternateName = alternateName
+    }
+
+    if (featureList && featureList.length > 0) {
+        schema.featureList = featureList
+    }
+
+    return schema
 }

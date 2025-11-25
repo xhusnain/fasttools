@@ -1,16 +1,22 @@
 import { TipCalculator } from "@/components/tip-calculator"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
+import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
+import { createMetadata } from "@/lib/metadata-base"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calculator, Percent, DollarSign, Users, Receipt, Target, Zap, Shield, Globe, Clock, FileText, Palette, BarChart3, Smartphone, Settings, Eye, Code, Copy, ExternalLink, Lightbulb, Search, CheckCircle, XCircle, Video, AlertCircle, Hash, ArrowRight, CreditCard, Banknote, Coins, TrendingUp, Wallet, PiggyBank, ArrowUp, ArrowDown, Minus, Plus, Equal, HashIcon, HelpCircle, BookOpen, Star, Heart, Gift, PieChart, Award } from "lucide-react"
 import type { Metadata } from "next"
 import Link from "next/link"
 import { getCurrentYear } from "@/lib/utils"
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
+const baseMetadata = createMetadata({
   title: `Tip Calculator | Free Calculate Tips & Split Bills`,
   description: "Free tip calculator to calculate tip amounts, split bills & find total payments. Choose tip percentage & number of people. Works worldwide.",
+  path: "/finance-tools/tip-calculator",
+})
+
+export const metadata: Metadata = {
+  ...baseMetadata,
   keywords: [
     "fasttools",
     "fast tools",

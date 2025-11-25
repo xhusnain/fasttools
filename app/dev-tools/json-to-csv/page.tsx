@@ -3,14 +3,20 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { JSONToCSV } from "@/components/json-to-csv"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
+import { createMetadata } from "@/lib/metadata-base"
 import Link from "next/link"
 import { FileJson, FileSpreadsheet, Download, ArrowRight } from "lucide-react"
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
+const baseMetadata = createMetadata({
   title: "JSON to CSV Converter | Free Convert JSON to CSV Online",
   description:
     "Convert JSON to CSV online free with instant download. Transform JSON data to Excel-ready CSV format. Supports nested JSON & arrays. Best for developers.",
+  path: "/dev-tools/json-to-csv",
+})
+
+export const metadata: Metadata = {
+  ...baseMetadata,
   keywords: [
     "fasttools",
     "fast tools",
@@ -510,49 +516,7 @@ export const metadata: Metadata = {
     "json to csv converter offline",
     "convert json to csv offline"
   ],
-  alternates: { canonical: "https://www.fasttools.store/dev-tools/json-to-csv" },
-  openGraph: {
-    title: "Free JSON to CSV Converter Online - Convert JSON to CSV Instantly",
-    description: "Convert JSON to CSV online free with instant download. Transform JSON data to Excel-ready CSV format. Supports nested JSON, arrays, Python/JavaScript code examples. Best tool for developers.",
-    url: "https://www.fasttools.store/dev-tools/json-to-csv",
-    type: "website",
-    siteName: "FastTools",
-    locale: "en_US",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "Free JSON to CSV Converter Online - Convert JSON to CSV Instantly with Excel Support",
-        type: "image/svg+xml",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@FastToolsStore",
-    creator: "@FastToolsStore",
-    title: "Free JSON to CSV Converter Online - Convert JSON to CSV Instantly",
-    description: "Convert JSON to CSV online free with instant download. Transform JSON data to Excel-ready CSV format. Supports nested JSON, arrays, Python/JavaScript code examples.",
-    images: ["https://www.fasttools.store/og-image.svg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
   applicationName: "FastTools",
-  authors: [{ name: "FastTools", url: "https://www.fasttools.store" }],
-  generator: "Next.js",
-  referrer: "origin-when-cross-origin",
-  creator: "FastTools",
-  publisher: "FastTools",
   category: "Developer Tools",
   other: {
     "application/ld+json": JSON.stringify([

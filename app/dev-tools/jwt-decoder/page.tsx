@@ -3,14 +3,20 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { JWTDecoder } from "@/components/jwt-decoder"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
+import { createMetadata } from "@/lib/metadata-base"
 import Link from "next/link"
 import { Code, Code2, Globe, ArrowRight } from "lucide-react"
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
-  title: "FastTools - JWT Decoder | Free Decode JSON Web Tokens",
+const baseMetadata = createMetadata({
+  title: "JWT Decoder | Free Decode JSON Web Tokens",
   description:
-    "FastTools JWT Decoder - Decode JWT header and payload safely in your browser. Inspect claims, alg, exp/iat, and base64url content. Great for debugging auth.",
+    "Decode JWT header and payload safely in your browser. Inspect claims, alg, exp/iat, and base64url content. Great for debugging auth.",
+  path: "/dev-tools/jwt-decoder",
+})
+
+export const metadata: Metadata = {
+  ...baseMetadata,
   keywords: [
     "fasttools",
     "fast tools",
@@ -383,29 +389,6 @@ export const metadata: Metadata = {
     "jwt lahore",
     "jwt in next",
   ],
-  alternates: { canonical: "https://www.fasttools.store/dev-tools/jwt-decoder" },
-  openGraph: {
-    title: "JWT Decoder | Decode JSON Web Tokens | FastTools",
-    description: "Decode JWT header and payload safely in your browser. Inspect claims, alg, exp/iat, and base64url content. Great for debugging auth.",
-    url: "https://www.fasttools.store/dev-tools/jwt-decoder",
-    type: "website",
-    siteName: "FastTools",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "FastTools Free JWT Decoder - Decode JSON Web Tokens (JWT) Online",
-        type: "image/svg+xml",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "JWT Decoder | Decode JSON Web Tokens | FastTools",
-    description: "Decode JWT header and payload safely in your browser. Inspect claims, alg, exp/iat, and base64url content. Great for debugging auth.",
-    images: ["https://www.fasttools.store/og-image.svg"],
-  },
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",

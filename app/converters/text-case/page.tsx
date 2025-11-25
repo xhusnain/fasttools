@@ -2,97 +2,20 @@ import { TextCaseConverter } from "@/components/text-case-converter"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
+import { createMetadata } from "@/lib/metadata-base"
 import { Search } from "lucide-react"
 import type { Metadata } from "next"
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
-  title: "FastTools - Text Case Converter | Free Uppercase, Lowercase, Title Case Tool",
+const baseMetadata = createMetadata({
+  title: "Text Case Converter | Free Uppercase, Lowercase, Title Case Tool",
   description:
-    "FastTools Text Case Converter - Convert text to uppercase, lowercase, Title Case, Sentence case, camelCase, snake_case instantly. Clean formatting for writing and code.",
-  keywords:[
-    "fasttools",
-    "fast tools",
-    "text case converter",
-    "case converter online",
-    "uppercase to lowercase converter",
-    "lowercase to uppercase converter",
-    "title case converter",
-    "sentence case converter",
-    "word counter",
-    "character counter",
-    "text counter",
-    "word count tool",
-    "character count tool",
-    "online text tools",
-    "convert text case online",
-    "change text capitalization",
-    "free online case converter",
-    "text case converter online free",
-    "best online case converter",
-    "uppercase lowercase title case converter",
-    "sentence case to title case converter",
-    "proper case converter online",
-    "alternating case converter",
-    "random case text converter",
-    "text case changer tool",
-    "convert small letters to capital in Excel",
-    "uppercase to lowercase in Word",
-    "convert all caps to lowercase online",
-    "title capitalization tool",
-    "text formatting tool",
-    "copy paste case converter",
-    "case converter chrome extension",
-    "count words and characters online",
-    "word and character counter",
-    "word counter with grammar check",
-    "character counter with spaces",
-    "paragraph counter online",
-    "online capitalization tool",
-    "text case converter free",
-    "word counter tool online",
-    "text analyzer tool",
-    "text length calculator",
-    "sentence counter online",
-    "word count checker",
-    "character count with and without spaces",
-    "online writing assistant tools",
-    "content length counter",
-    "free character counter online",
-    "character counter without spaces",
-    "word character counter",
-    "free word counter tool",
-    "count letters and words online",
-    "twitter character counter",
-    "instagram character counter",
-    "sms character counter",
-    "word count and character count online"
-  ],
+    "Convert text to uppercase, lowercase, Title Case, Sentence case, camelCase, snake_case instantly. Clean formatting for writing and code.",
+  path: "/converters/text-case",
+})
 
-  alternates: { canonical: "https://www.fasttools.store/converters/text-case" },
-  openGraph: {
-    title: "Text Case Converter | Uppercase, Lowercase, Title Case | FastTools",
-    description:
-      "Convert text to uppercase, lowercase, Title Case, Sentence case, camelCase, snake_case instantly. Clean formatting for writing and code.",
-    url: "https://www.fasttools.store/converters/text-case",
-    type: "website",
-    siteName: "FastTools",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "FastTools Free Text Case Converter - Uppercase, Lowercase, Title Case, camelCase",
-        type: "image/svg+xml",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Text Case Converter | Uppercase, Lowercase, Title Case | FastTools",
-    description: "Convert text to uppercase, lowercase, Title Case, Sentence case, camelCase, snake_case instantly. Clean formatting for writing and code.",
-    images: ["https://www.fasttools.store/og-image.svg"],
-  },
+export const metadata: Metadata = {
+  ...baseMetadata,
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
@@ -193,6 +116,16 @@ export default function TextCaseConverterPage() {
               {/* Tool Card */}
               <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
                 <TextCaseConverter />
+              </div>
+
+              {/* Comprehensive Text Case Conversion Guide */}
+              <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow mb-5">
+                <h2 className="text-base md:text-xl font-bold mb-3 text-foreground">Complete Guide to Text Case Conversion and Text Analysis</h2>
+                <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+                  <p>
+                    Our free text case converter and case converter online provide instant text transformation between uppercase, lowercase, title case, sentence case, camelCase, snake_case, kebab-case, and PascalCase formats. Whether you need an uppercase to lowercase converter, lowercase to uppercase converter, title case converter, or sentence case converter, this online text tools platform delivers accurate conversions instantly. As a comprehensive word counter and character counter, our tool provides detailed text analysis including word count tool, character count tool, text counter, and word and character counter functionality. The text case converter online free supports convert text case online operations, change text capitalization tasks, and serves as both a free online case converter and best online case converter for professional use. Specialized conversions like uppercase lowercase title case converter, sentence case to title case converter, proper case converter online, alternating case converter, and random case text converter are all supported. For Microsoft Office users, the tool helps with convert small letters to capital in Excel, uppercase to lowercase in Word, and convert all caps to lowercase online operations. As a title capitalization tool and text formatting tool, our copy paste case converter works seamlessly across platforms, and can be used as a case converter chrome extension for browser integration. The comprehensive counting features include count words and characters online, word counter with grammar check, character counter with spaces, paragraph counter online, and sentence counter online. As an online capitalization tool and text case converter free, our platform serves as both a word counter tool online and text analyzer tool, providing text length calculator functionality for content creators. The word count checker and character count with and without spaces features help writers stay within limits, while the online writing assistant tools provide content length counter capabilities. Whether you're using this as a free character counter online, character counter without spaces, word character counter, or free word counter tool, our tool helps count letters and words online accurately. Social media users benefit from specialized counters like twitter character counter, instagram character counter, and sms character counter, ensuring content fits platform requirements. The word count and character count online feature provides comprehensive text analysis, making this the ultimate text case converter and text analysis tool for writers, developers, and content creators.
+                  </p>
+                </div>
               </div>
 
               {/* Understanding How This Tool Works */}

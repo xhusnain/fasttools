@@ -2,100 +2,22 @@ import { TimezoneConverter } from "@/components/timezone-converter"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { AdSpace } from "@/components/ad-space"
 import { GHeader } from "@/components/globalcomponents/gheader"
+import { ToolContentEnhancement } from "@/components/tool-content-enhancement"
+import { createMetadata } from "@/lib/metadata-base"
 import type { Metadata } from "next"
 import Link from "next/link"
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fasttools.store"),
+const baseMetadata = createMetadata({
   title: "Time Zone Converter | Free Convert Time Zones Worldwide",
   description:
-    "Convert time between time zones worldwide. Ideal for scheduling international meetings & remote teamwork.",
-  keywords: [
-    "fasttools",
-    "fast tools",
-    "timezone converter",
-    "time zone converter",
-    "world clock",
-    "time converter",
-    "international time",
-    "utc converter",
-    "gmt to est",
-    "est to pst",
-    "pst to ist",
-    "ist to gmt",
-    "meeting time converter",
-    "schedule across time zones",
-    "remote team scheduling",
-    "daylight saving time",
-    "dst adjustments",
-    "24 hour clock",
-    "12 hour clock",
-    "military time conversion",
-    "time difference calculator",
-    "convert date and time",
-    "city time converter",
-    "country time converter",
-    "time zone map",
-    "world time zones list",
-    "convert utc to local time",
-    "local time to utc",
-    "convert gmt to pst",
-    "convert est to cet",
-    "convert cet to ist",
-    "convert sgt to pst",
-    "convert aedt to ist",
-    "convert bst to ist",
-    "convert mst to est",
-    "convert ist to est",
-    "convert ist to pst",
-    "convert utc to est",
-    "convert utc to pst",
-    "convert utc to gmt",
-    "time zones by country",
-    "free online timezone converter",
-    "best timezone converter online",
-    "timezone converter with live preview",
-    "free timezone converter tool online",
-    "online timezone converter free",
-    "timezone converter online free",
-    "time zone converter free online",
-    "world clock free online",
-    "time converter free online",
-    "international time free online",
-    "utc converter free online",
-    "gmt to est free online",
-    "est to pst free online",
-    "pst to ist free online",
-    "ist to gmt free online",
-    "meeting time converter free online",
-    "schedule across time zones free online",
-    "remote team scheduling free online",
-    "daylight saving time free online",
+    "Convert time between time zones worldwide with DST awareness. Ideal for scheduling international meetings, remote teamwork, and travel planning.",
+  path: "/converters/timezone",
+})
+
+export const metadata: Metadata = {
+  ...baseMetadata,
     "dst adjustments free online"
   ],
-  alternates: { canonical: "https://www.fasttools.store/converters/timezone" },
-  openGraph: {
-    title: "Free Time Zone Converter | Convert Time Across Time Zones | FastTools",
-    description: "Convert time between time zones worldwide. Ideal for scheduling international meetings and remote teamwork.",
-    url: "https://www.fasttools.store/converters/timezone",
-    type: "website",
-    siteName: "FastTools",
-    images: [
-      {
-        url: "https://www.fasttools.store/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "FastTools Free Time Zone Converter - Convert Time Across Time Zones",
-        type: "image/svg+xml",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Free Time Zone Converter | Convert Time Across Time Zones | FastTools",
-    description: "Convert time between time zones worldwide. Ideal for scheduling international meetings and remote teamwork.",
-    images: ["https://www.fasttools.store/og-image.svg"],
-  },
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
@@ -199,117 +121,95 @@ export default function TimezoneConverterPage() {
               </div>
 
 
-              {/* Content Sections */}
-              <div className="space-y-5 animate-fade-in-up">
-                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-base md:text-xl font-bold mb-3 text-foreground">How to Use the Time Zone Converter</h2>
-                  <h3 className="text-base md:text-lg font-bold mb-2.5 text-heading-accent">1) Pick Locations and Date/Time</h3>
-                  <ul className="list-disc pl-5 text-muted-foreground text-sm">
-                  <li>Select source and destination cities or time zones.</li>
-                    <li>Pick date/time to account for DST changes.</li>
-                </ul>
-                  <h3 className="text-base md:text-lg font-bold mt-4 mb-2.5 text-heading-accent">2) Compare and Share</h3>
-                  <ul className="list-disc pl-5 text-muted-foreground text-sm">
-                    <li>See business‑hours overlap for remote teams.</li>
-                    <li>Copy converted time or add to your calendar.</li>
-                </ul>
-                </div>
-
-                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-base md:text-xl font-bold mb-3 text-foreground">Understanding Time Zones</h2>
-                  <ul className="list-disc pl-5 text-muted-foreground text-sm">
-                    <li><strong>UTC:</strong> Global reference standard.</li>
-                    <li><strong>GMT:</strong> Historical reference, often interchangeable with UTC.</li>
-                    <li><strong>DST:</strong> Seasonal offset changes (±1 hour).</li>
-                    <li><strong>Offset:</strong> Difference from UTC, e.g., UTC+2.</li>
-                </ul>
-                </div>
-
-                {/* Time Zone Converter Keywords Content */}
-                <div className="p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-xl font-bold mb-4 text-foreground">Time and Date Zone Converter: Complete Guide</h2>
-                  
-                  <div className="space-y-6">
-                    <div className="p-4 rounded-lg bg-card border border-border">
-                      <h3 className="font-semibold text-heading-accent mb-3">Time and Date Zone Converter: Global Time Conversion Tool</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                        Our time and date zone converter helps you convert times between different time zones while accounting for date changes that occur when crossing time zone boundaries. The time and date zone converter is essential for scheduling international meetings, coordinating remote teams, and planning events across multiple time zones. When using the time and date zone converter, you can see how times and dates change when converting between different locations, ensuring accurate scheduling and coordination. The time and date time zone converter functionality handles daylight saving time adjustments, date transitions, and time zone offset calculations automatically. Use our time and date zone converter to plan meetings, schedule calls, and coordinate activities across global time zones with precision.
-                      </p>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        The time and date zone converter supports all major time zones worldwide, providing accurate conversions that account for DST changes and date boundaries. Whether you need to convert times for business meetings, personal calls, or event planning, the time and date zone converter provides the precision needed for accurate scheduling. Our time and date time zone converter tool makes it easy to understand how times and dates change when working across different time zones, helping you avoid scheduling conflicts and confusion.
-                      </p>
-                    </div>
-
-                    <div className="p-4 rounded-lg bg-card border border-border">
-                      <h3 className="font-semibold text-heading-accent mb-3">Time and Date Time Zone Converter: Advanced Conversion Features</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                        The time and date time zone converter provides comprehensive time and date conversion capabilities for global scheduling and coordination. Our time and date time zone converter handles complex scenarios including date changes when crossing the International Date Line, daylight saving time transitions, and time zone offset calculations. When using the time and date time zone converter, you can convert specific dates and times between any two time zones, seeing exactly how both the time and date change during conversion. The time and date time zone converter is particularly useful for international businesses, remote teams, and event planners who need to coordinate across multiple time zones accurately.
-                      </p>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        Use our time and date time zone converter to plan meetings, schedule deadlines, and coordinate activities that span multiple time zones and date boundaries. The time and date time zone converter ensures you understand both time and date changes when converting between different locations, preventing scheduling errors and confusion. Our time and date time zone converter tool provides instant, accurate conversions for any date and time combination across all major time zones worldwide.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 10‑Item FAQ */}
-                <div className="p-6 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-2xl font-bold mb-4 text-foreground">Time Zone Converter FAQ</h2>
-                  <div className="space-y-4 text-sm text-muted-foreground">
-                    <div>
-                      <h3 className="text-lg font-bold mb-2 text-heading-accent">1) UTC vs GMT—what should I use?</h3>
-                      <p>UTC is the modern atomic‑time standard used by computers and APIs; GMT is a historical solar‑time label. For scheduling and code, prefer UTC; for human‑friendly labels GMT is acceptable if offsets are clear.</p>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-2 text-heading-accent">2) Does the converter handle future DST changes?</h3>
-                      <p>Yes—rules are sourced from authoritative data and applied by date. For meetings far in the future, re‑check close to the event in case a region updates its DST law.</p>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-2 text-heading-accent">3) How can I find overlapping work hours for two teams?</h3>
-                      <p>Convert a candidate time to both zones and compare against local business hours. Try several candidates and pick the widest overlap; rotate meeting times periodically to share inconvenience.</p>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-2 text-heading-accent">4) Why is my calendar showing a different time?</h3>
-                      <p>Calendars cache time zone settings per device and account. Ensure the event is saved in UTC or in the organizer’s zone and that all attendees’ devices use automatic time zone updates.</p>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-2 text-heading-accent">5) What’s the safest way to write times in emails?</h3>
-                      <p>Include the local time, zone abbreviation, and UTC: “10:00 AM PT (UTC‑7)”. Provide a clickable calendar link so recipients view it in their zone automatically.</p>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-2 text-heading-accent">6) Do countries ever change time zones abruptly?</h3>
-                      <p>Yes—governments occasionally shift base offsets or DST policies. Reconfirm times near political changes and avoid hard‑coding offsets in code; use time zone databases instead.</p>
-                    </div>
-                  <div>
-                      <h3 className="text-lg font-bold mb-2 text-heading-accent">7) How do I convert recurring meetings safely?</h3>
-                      <p>Store the canonical event in UTC, then let each client render local time with its current zone rules. This prevents drift when DST transitions occur.</p>
-                  </div>
-                  <div>
-                      <h3 className="text-lg font-bold mb-2 text-heading-accent">8) What if a city has multiple aliases (e.g., “Kiev” vs “Kyiv”)?</h3>
-                      <p>Time databases maintain canonical zone IDs even if city names change. Search by country/region when in doubt and prefer IANA IDs in integrations.</p>
-                  </div>
-                  <div>
-                      <h3 className="text-lg font-bold mb-2 text-heading-accent">9) How should I note half‑hour and 45‑minute offsets?</h3>
-                      <p>Some regions use offsets like UTC+5:30 or UTC+5:45. Always include the full offset (hours:minutes) in invites and documentation.</p>
-                  </div>
-                  <div>
-                      <h3 className="text-lg font-bold mb-2 text-heading-accent">10) Tips for travel and on‑call schedules</h3>
-                      <p>Switch devices to automatic time zone, keep a UTC watch for reference, and specify coverage windows in UTC. Confirm local holidays when planning critical calls.</p>
-                    </div>
+              {/* Comprehensive Time Zone Conversion Guide */}
+              <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow mb-6">
+                <h2 className="text-xl font-bold mb-3 text-foreground">Complete Guide to Time Zone Conversion and International Time Management</h2>
+                <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+                  <p>
+                    Our free timezone converter and time zone converter provide instant conversions between time zones worldwide, making it the best timezone converter online for scheduling international meetings, coordinating remote teams, and planning travel. Whether you need to convert UTC to local time, local time to UTC, convert GMT to PST, convert EST to CET, convert CET to IST, convert SGT to PST, convert AEDT to IST, convert BST to IST, convert MST to EST, convert IST to EST, convert IST to PST, convert UTC to EST, convert UTC to PST, or convert UTC to GMT, this world clock and time converter handles all conversions with automatic daylight saving time adjustments. As a comprehensive UTC converter and international time tool, our meeting time converter helps schedule across time zones, supports remote team scheduling, and accounts for daylight saving time and DST adjustments automatically. The tool supports both 24 hour clock and 12 hour clock formats, provides military time conversion capabilities, and serves as a time difference calculator for planning international communications. Whether you need to convert date and time, use a city time converter, country time converter, or reference a time zone map, our world time zones list covers all major locations. Popular conversions like GMT to EST, EST to PST, PST to IST, and IST to GMT are handled instantly, while the time zones by country feature helps find the correct zone for any location. As a free online timezone converter, best timezone converter online, and timezone converter with live preview, our platform serves as both a time zone converter free online and world clock free online, providing comprehensive time conversion capabilities. The time converter free online, international time free online, UTC converter free online, GMT to EST free online, EST to PST free online, PST to IST free online, and IST to GMT free online features ensure accurate conversions for all your scheduling needs. The meeting time converter free online, schedule across time zones free online, remote team scheduling free online, and daylight saving time free online capabilities make this the ultimate tool for international time management and coordination.
+                  </p>
                   </div>
               </div>
 
-
-                {/* Related Tools */}
-                <div className="p-4 sm:p-5 rounded-lg bg-card border border-border shadow">
-                  <h2 className="text-base md:text-xl font-bold mb-3 text-foreground">Related Tools</h2>
-                  <ul className="list-disc pl-5 text-muted-foreground text-sm">
-                  <li><Link href="/converters/currency">Currency Converter</Link></li>
-                  <li><Link href="/calculator/date-difference">Date Difference Calculator</Link></li>
-                  <li><Link href="/calculator/age-calculator">Age Calculator</Link></li>
-                </ul>
-                </div>
-              </div>
+              {/* Comprehensive Content Enhancement */}
+              <ToolContentEnhancement
+                toolName="Time Zone Converter"
+                toolDescription="Our free time zone converter helps you convert times between different time zones worldwide with automatic daylight saving time (DST) adjustments. Perfect for scheduling international meetings, coordinating remote teams, planning travel, and understanding time differences across global locations. Supports all major time zones including UTC, GMT, EST, PST, IST, and hundreds more."
+                whatItIs="A time zone converter is an essential tool that transforms time values between different geographic time zones, accounting for time zone offsets, daylight saving time changes, and date transitions. This tool is crucial for professionals, travelers, and anyone working across international boundaries who need to coordinate schedules, plan meetings, or understand time differences between locations. Time zones exist because the Earth rotates, creating different local times in different regions. Our converter handles the complex calculations needed to accurately convert times while accounting for DST rules that vary by country and change over time."
+                howItWorks={[
+                  "Select your source time zone or city from the dropdown menu. You can search by city name, country, or time zone abbreviation (e.g., EST, PST, UTC, GMT).",
+                  "Enter the date and time you want to convert. The converter will automatically account for daylight saving time based on the selected date.",
+                  "Choose your destination time zone or city. The converter supports all major time zones worldwide, including those with half-hour and 45-minute offsets.",
+                  "View the converted time instantly. The result shows the equivalent time in your destination time zone, including any date changes that occur when crossing time zone boundaries.",
+                  "Copy the converted time to your clipboard or use it to schedule meetings. The converter also shows the time difference between zones and business hours overlap for team coordination."
+                ]}
+                useCases={[
+                  "International Meeting Scheduling: Convert meeting times between different time zones to find suitable times for participants across multiple countries, ensuring everyone knows the correct local time for the meeting.",
+                  "Remote Team Coordination: Find overlapping business hours between team members in different time zones, helping remote teams schedule collaborative work sessions and maintain effective communication.",
+                  "Travel Planning: Convert departure and arrival times between your home time zone and destination, helping you plan flights, hotel check-ins, and activities while accounting for jet lag.",
+                  "Business Hours Verification: Check when businesses, banks, or services are open in different time zones before making international calls or scheduling important communications.",
+                  "Event Planning: Coordinate global events, webinars, and conferences by converting event times to all participant time zones, ensuring accurate scheduling for international audiences.",
+                  "On-Call Scheduling: Plan on-call rotations and support schedules across multiple time zones, ensuring 24/7 coverage while respecting team members' local business hours.",
+                  "Calendar Management: Convert calendar events between time zones when traveling or working with international colleagues, preventing scheduling conflicts and confusion."
+                ]}
+                whyChooseThis={[
+                  "Automatic DST Handling: Automatically accounts for daylight saving time changes based on the selected date, eliminating manual calculations and preventing scheduling errors during DST transitions.",
+                  "Comprehensive Time Zone Coverage: Supports all major time zones worldwide, including standard zones, DST zones, and regions with unusual offsets (half-hour, 45-minute offsets).",
+                  "Date Change Awareness: Correctly handles date changes when converting across the International Date Line or when time differences cause the date to change, showing both time and date accurately.",
+                  "City and Country Search: Search by city name, country, or time zone abbreviation, making it easy to find the exact time zone you need without memorizing UTC offsets.",
+                  "Business Hours Overlap: Shows overlapping business hours between time zones, helping remote teams find the best meeting times that work for everyone.",
+                  "Privacy and Security: All conversions happen locally in your browser—your scheduling data never leaves your device, ensuring complete privacy.",
+                  "Mobile-Friendly Design: Works perfectly on smartphones, tablets, and desktop computers, allowing you to convert times anywhere, anytime."
+                ]}
+                relatedTools={[
+                  { name: "Currency Converter", href: "/converters/currency" },
+                  { name: "Date Difference Calculator", href: "/calculator/date-difference" },
+                  { name: "Age Calculator", href: "/calculator/age-calculator" },
+                  { name: "Length Converter", href: "/converters/length" }
+                ]}
+                faqs={[
+                  {
+                    question: "What's the difference between UTC and GMT, and which should I use?",
+                    answer: "UTC (Coordinated Universal Time) is the modern atomic-time standard used by computers, APIs, and international systems. GMT (Greenwich Mean Time) is a historical solar-time reference. For scheduling, code, and technical applications, prefer UTC as it's more precise and doesn't vary. For human-friendly labels in communication, GMT is acceptable if the offset is clearly stated. In practice, UTC and GMT are often used interchangeably for most purposes, but UTC is the official standard."
+                  },
+                  {
+                    question: "Does the converter handle future daylight saving time changes accurately?",
+                    answer: "Yes, our converter uses authoritative time zone databases that include historical and projected DST rules. However, governments occasionally change DST policies with short notice. For meetings scheduled far in the future (more than a year), we recommend re-checking the conversion close to the event date, especially if a region has recently updated its DST legislation. The converter automatically applies the correct DST rules based on the selected date."
+                  },
+                  {
+                    question: "How can I find overlapping work hours for teams in different time zones?",
+                    answer: "Convert a candidate meeting time to both time zones and compare against typical business hours (usually 9 AM to 5 PM local time). Try several candidate times to find the widest overlap window. For fairness, rotate meeting times periodically so different team members don't always have to attend during off-hours. Our converter shows the time in both zones simultaneously, making it easy to identify suitable meeting windows."
+                  },
+                  {
+                    question: "Why does my calendar show a different time than the converter?",
+                    answer: "Calendars cache time zone settings per device and account. Ensure your calendar event is saved in UTC or in the organizer's time zone, and verify that all attendees' devices have automatic time zone updates enabled. Some calendar apps also have time zone display settings that can cause confusion. Always double-check critical meetings using our converter, especially for international events."
+                  },
+                  {
+                    question: "What's the safest way to write times in emails and invitations?",
+                    answer: "Include the local time, time zone abbreviation, and UTC equivalent. For example: '10:00 AM PT (UTC-7)' or '3:00 PM EST / 8:00 PM UTC'. Provide a clickable calendar link so recipients can view the event in their local time zone automatically. This prevents confusion and ensures everyone understands the correct meeting time regardless of their location."
+                  },
+                  {
+                    question: "Do countries ever change their time zones suddenly?",
+                    answer: "Yes, governments occasionally shift base time zone offsets or modify DST policies, sometimes with minimal notice. These changes can affect scheduling, especially for recurring meetings. Reconfirm times near any political changes or policy updates. For developers, avoid hard-coding time zone offsets in code—use time zone databases (like IANA Time Zone Database) that are regularly updated with these changes."
+                  },
+                  {
+                    question: "How do I convert recurring meetings safely across time zones?",
+                    answer: "Store the canonical event time in UTC in your calendar system, then let each client or calendar application render the local time using its current time zone rules. This prevents drift when DST transitions occur. For example, a meeting that's always at 2:00 PM EST will automatically adjust to 1:00 PM EST when DST ends, if stored correctly in UTC. Our converter helps you verify these conversions."
+                  },
+                  {
+                    question: "What if a city has multiple names or spelling variations?",
+                    answer: "Time zone databases maintain canonical zone identifiers even when city names change (e.g., 'Kiev' vs 'Kyiv'). If you're unsure about a city name, search by country or region instead. For technical integrations, prefer IANA time zone IDs (like 'America/New_York') over city names, as these are standardized and don't change with political or spelling updates."
+                  },
+                  {
+                    question: "How should I handle time zones with half-hour or 45-minute offsets?",
+                    answer: "Some regions use non-standard offsets like UTC+5:30 (India) or UTC+5:45 (Nepal). Always include the full offset including minutes (hours:minutes) in meeting invitations and documentation. Our converter handles these automatically, but when communicating times manually, specify the complete offset to avoid confusion. For example, write 'UTC+5:30' not just 'UTC+5' for Indian Standard Time."
+                  },
+                  {
+                    question: "What are the best practices for travel and on-call schedules across time zones?",
+                    answer: "Switch your devices to automatic time zone detection when traveling. Keep a UTC reference (watch or app) for critical scheduling. Specify coverage windows in UTC for on-call schedules to avoid confusion. Confirm local holidays and business days when planning critical calls or meetings. Use our converter to verify times before important international communications, and always include time zone information in written communications."
+                  }
+                ]}
+              />
             </div>
 
             {/* Desktop Sidebar with AdSense */}
