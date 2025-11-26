@@ -1,21 +1,16 @@
 "use client"
 
 import Link from "next/link"
-import { useState, useEffect } from "react"
-import { Menu, X, Wrench, Search } from "lucide-react"
+import { useState } from "react"
+import { Menu, X, Search } from "lucide-react"
 import { SearchBar } from "@/components/search-bar"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { usePathname } from "next/navigation"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [isHydrated, setIsHydrated] = useState(false)
   const [showSearch, setShowSearch] = useState(false)
   const pathname = usePathname()
-
-  useEffect(() => {
-    setIsHydrated(true)
-  }, [])
 
   const navLinks = [
     { href: "/products", label: "Products" },
@@ -28,24 +23,17 @@ export function Header() {
     <>
       {/* Gradient accent bar at the very top */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-orange-400 to-primary/90" />
-      
+
       <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-border/10 transition-all duration-300">
         <nav className="container mx-auto flex items-center justify-between h-16 sm:h-20 md:h-24 px-4 lg:px-8">
-          
+
           {/* Left side - Logo */}
           <div className="flex items-center">
-            <Link 
-              href="/" 
-              aria-label="FastTools home" 
-              className="flex items-center gap-2 sm:gap-3 group transition-all duration-300"
+            <Link
+              href="/"
+              aria-label="FastTools home"
+              className="group transition-all duration-300"
             >
-              <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-primary flex items-center justify-center">
-                {isHydrated ? (
-                  <img src="/logo.svg" alt="FastTools" className="h-5 w-5 sm:h-6 sm:w-6 object-contain" />
-                ) : (
-                  <Wrench className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />
-                )}
-              </div>
               <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground">FastTools</span>
             </Link>
           </div>
@@ -56,11 +44,10 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-5 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 group ${
-                  pathname === link.href
-                    ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg shadow-orange-500/30"
-                    : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"
-                }`}
+                className={`relative px-5 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 group ${pathname === link.href
+                  ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg shadow-orange-500/30"
+                  : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"
+                  }`}
               >
                 {link.label}
                 {/* Active indicator dot */}
@@ -131,12 +118,11 @@ export function Header() {
       </header>
 
       {/* Mobile Menu Dropdown */}
-      <div 
-        className={`lg:hidden fixed inset-x-0 top-16 sm:top-20 md:top-24 z-40 bg-background/98 backdrop-blur-xl border-b border-border/10 transition-all duration-300 ease-out ${
-          mobileMenuOpen 
-            ? 'max-h-screen opacity-100 visible' 
-            : 'max-h-0 opacity-0 invisible'
-        }`}
+      <div
+        className={`lg:hidden fixed inset-x-0 top-16 sm:top-20 md:top-24 z-40 bg-background/98 backdrop-blur-xl border-b border-border/10 transition-all duration-300 ease-out ${mobileMenuOpen
+          ? 'max-h-screen opacity-100 visible'
+          : 'max-h-0 opacity-0 invisible'
+          }`}
       >
         <div className="container mx-auto px-4 py-6 space-y-3">
           {/* Mobile Navigation Links */}
@@ -145,11 +131,10 @@ export function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`block px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 ${
-                pathname === link.href
-                  ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg shadow-orange-500/30"
-                  : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"
-              }`}
+              className={`block px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 ${pathname === link.href
+                ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg shadow-orange-500/30"
+                : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"
+                }`}
             >
               {link.label}
             </Link>

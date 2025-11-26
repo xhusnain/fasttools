@@ -35,8 +35,18 @@ export async function GET() {
       images: [
         {
           url: "https://www.fasttools.store/logo.png",
-          title: "FastTools Professional Logo - Free Online Tools Collection",
+          title: "FastTools Professional Logo PNG - Free Online Tools Collection",
           caption: "FastTools professional logo with modern FT symbol and blue gradient design for comprehensive free online tools collection"
+        },
+        {
+          url: "https://www.fasttools.store/logo.svg",
+          title: "FastTools Professional Logo SVG - Vector Format",
+          caption: "FastTools logo in scalable vector format for high-quality rendering at any size, perfect for professional use"
+        },
+        {
+          url: "https://www.fasttools.store/logo.ico",
+          title: "FastTools Logo ICO - Windows Favicon",
+          caption: "FastTools logo in ICO format for Windows systems and legacy browser compatibility"
         },
         {
           url: "https://www.fasttools.store/banner.png",
@@ -45,8 +55,13 @@ export async function GET() {
         },
         {
           url: "https://www.fasttools.store/og-image.png",
-          title: "FastTools Open Graph Image",
-          caption: "FastTools Open Graph image for social media sharing and SEO optimization"
+          title: "FastTools Open Graph Image PNG",
+          caption: "FastTools Open Graph image for social media sharing and SEO optimization in PNG format"
+        },
+        {
+          url: "https://www.fasttools.store/og-image.svg",
+          title: "FastTools Open Graph Image SVG",
+          caption: "FastTools Open Graph vector image for social media sharing with excellent quality at any resolution"
         },
         {
           url: "https://www.fasttools.store/apple-touch-icon.png",
@@ -62,6 +77,46 @@ export async function GET() {
           url: "https://www.fasttools.store/icon-512.png",
           title: "FastTools PWA Icon 512x512",
           caption: "FastTools Progressive Web App icon for high-resolution displays and app stores"
+        },
+        {
+          url: "https://www.fasttools.store/web-app-manifest-192x192.png",
+          title: "FastTools Maskable Icon 192x192 - PWA Manifest",
+          caption: "FastTools maskable icon for PWA manifest, optimized for adaptive icons on Android and iOS"
+        },
+        {
+          url: "https://www.fasttools.store/web-app-manifest-512x512.png",
+          title: "FastTools Maskable Icon 512x512 - PWA Manifest",
+          caption: "FastTools high-resolution maskable icon for PWA manifest and app stores"
+        },
+        {
+          url: "https://www.fasttools.store/favicon-96x96.png",
+          title: "FastTools Favicon 96x96",
+          caption: "FastTools favicon in 96x96 pixel format for browser tabs and bookmarks"
+        },
+        {
+          url: "https://www.fasttools.store/favicon.svg",
+          title: "FastTools Favicon SVG - Scalable Vector",
+          caption: "FastTools favicon in SVG format for modern browsers with crisp rendering at any resolution"
+        },
+        {
+          url: "https://www.fasttools.store/favicon.ico",
+          title: "FastTools Favicon ICO - Browser Icon",
+          caption: "FastTools favicon in ICO format for maximum browser compatibility"
+        },
+        {
+          url: "https://www.fasttools.store/placeholder.jpg",
+          title: "FastTools Placeholder Image JPG",
+          caption: "FastTools placeholder image for loading states and content previews"
+        },
+        {
+          url: "https://www.fasttools.store/placeholder.svg",
+          title: "FastTools Placeholder SVG",
+          caption: "FastTools scalable placeholder image for dynamic content loading"
+        },
+        {
+          url: "https://www.fasttools.store/placeholder-user.jpg",
+          title: "FastTools User Avatar Placeholder",
+          caption: "FastTools default user avatar placeholder for profile images and user accounts"
         }
       ]
     }
