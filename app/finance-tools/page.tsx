@@ -1,8 +1,6 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { GCard } from "@/components/globalcomponents/gcard"
 import {
-  ArrowRight, FileText, DollarSign, Percent, Calculator, Target, TrendingUp,
+  FileText, DollarSign, Percent, Calculator, Target, TrendingUp,
   Users, CreditCard, Home, BadgePercent, PiggyBank, ChartLine, Coins,
   ScrollText, Landmark, TrendingDown, Banknote
 } from "lucide-react"
@@ -256,34 +254,15 @@ export default function FinanceToolsPage() {
         { label: "Finance Tools", href: "/finance-tools" },
       ]}
       toolComponent={
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-          {tools.map((tool, index) => (
-            <Card
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {tools.map((tool) => (
+            <GCard
               key={`finance-tools-${tool.href}`}
-              className="border border-border shadow-sm bg-card hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 group"
-            >
-              <CardHeader className="p-4 pb-2">
-                <div className="flex items-start gap-3">
-                  <div className="h-10 w-10 rounded-lg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300 flex-shrink-0 bg-primary/10 border border-primary/20">
-                    <tool.icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <CardTitle className="text-base font-semibold text-card-foreground mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-1">{tool.title}</CardTitle>
-                    <CardDescription className="leading-snug text-xs text-muted-foreground line-clamp-2">
-                      {tool.description}
-                    </CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="p-4 pt-0 mt-2">
-                <Button asChild className="w-full h-8 text-xs font-semibold shadow-sm hover:shadow transition-all duration-300 bg-primary/5 hover:bg-primary text-primary hover:text-white border border-primary/20 hover:border-primary">
-                  <Link href={tool.href} className="flex items-center justify-center gap-1">
-                    Use Tool
-                    <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform duration-300" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
+              title={tool.title}
+              description={tool.description}
+              href={tool.href}
+              icon={tool.icon}
+            />
           ))}
         </div>
       }

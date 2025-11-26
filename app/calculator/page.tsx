@@ -1,11 +1,10 @@
 import React from 'react'
 import Link from "next/link"
 import Image from "next/image"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { GCard } from "@/components/globalcomponents/gcard"
 import {
   Calculator,
-  ArrowRight,
+
   Calendar,
   Activity,
   DollarSign,
@@ -63,14 +62,14 @@ const tools = [
     description: "Advanced scientific calculator with trigonometric functions (sin, cos, tan), logarithms, exponents, and more. Perfect for students, engineers, and professionals needing precise calculations.",
     icon: Calculator,
     href: "/calculator/scientific-calculator",
-    color: "blue"
+    color: "blue",
   },
   {
     title: "Percentage Calculator",
     description: "Calculate percentage increases, decreases, differences, and parts of a whole. Essential for discounts, tax calculations, and growth rates.",
     icon: Percent,
     href: "/calculator/percentage-calculator",
-    color: "green"
+    color: "green",
   },
   {
     title: "Date Difference Calculator",
@@ -91,7 +90,7 @@ const tools = [
     description: "Calculate Body Mass Index (BMI) to assess weight categories. Based on WHO guidelines for healthy weight monitoring.",
     icon: Activity,
     href: "/calculator/bmi-calculator",
-    color: "pink"
+    color: "pink",
   },
   {
     title: "BMR Calculator",
@@ -105,7 +104,7 @@ const tools = [
     description: "Estimate daily calorie needs for weight loss, maintenance, or gain. customized based on activity level and fitness goals.",
     icon: Utensils,
     href: "/calculator/calorie-calculator",
-    color: "yellow"
+    color: "yellow",
   },
   {
     title: "GPA Calculator",
@@ -994,33 +993,16 @@ function CalculatorGrid() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {tools.map((tool, index) => (
-          <Card
+          <GCard
             key={tool.href}
-            className="border border-border shadow-lg bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 animate-fade-in-up group"
-            style={{ animationDelay: `${index * 100}ms` }}
-          >
-            <CardHeader className="p-4 pb-2">
-              <div className="flex items-start gap-3">
-                <div className={`h-10 w-10 rounded-lg flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 flex-shrink-0 ${(colorMap as any)[tool.color]?.bg || 'bg-gray-100'} ${(colorMap as any)[tool.color]?.border || 'border-gray-300'}`}>
-                  <tool.icon className={`h-5 w-5 ${(colorMap as any)[tool.color]?.text || 'text-gray-600'}`} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <CardTitle className="text-base font-bold text-card-foreground mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-2">{tool.title}</CardTitle>
-                  <CardDescription className="leading-relaxed text-xs text-muted-foreground line-clamp-2">{tool.description}</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="p-4 pt-0">
-              <Button asChild className="w-full h-8 text-xs font-bold shadow-md hover:shadow-lg transition-all duration-300 bg-primary hover:bg-primary/90 text-white group-hover:bg-accent group-hover:text-foreground">
-                <Link href={tool.href} className="flex items-center justify-center gap-1">
-                  Use Tool
-                  <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform duration-300" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
+            title={tool.title}
+            description={tool.description}
+            href={tool.href}
+            icon={tool.icon}
+            className="animate-fade-in-up"
+          />
         ))}
       </div>
     </div>
