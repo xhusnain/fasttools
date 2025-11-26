@@ -184,6 +184,11 @@ export function createMetadata(options: MetadataOptions): Metadata & { softwareS
                 follow: true,
             },
         verification: VERIFICATION,
+        icons: {
+            icon: "/favicon.ico",
+            shortcut: "/favicon-16x16.png",
+            apple: "/apple-touch-icon.png",
+        },
         ...(schemas.length > 0 && {
             other: {
                 "application/ld+json": JSON.stringify(schemas.length === 1 ? schemas[0] : schemas)
