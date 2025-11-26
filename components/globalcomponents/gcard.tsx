@@ -29,7 +29,7 @@ export function GCard({
     iconColor = "text-primary",
     borderColor = "border-border",
     hoverBorder = "hover:border-primary/50",
-    glowColor = "hover:shadow-primary/20",
+    glowColor = "hover:shadow-green-500/20",
     className,
     ctaText = "Use Tool",
 }: GCardProps) {
