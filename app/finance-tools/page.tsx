@@ -253,7 +253,6 @@ export default function FinanceToolsPage() {
         color: "blue"
       }}
       breadcrumbs={[
-        { label: "Home", href: "/" },
         { label: "Finance Tools", href: "/finance-tools" },
       ]}
       toolComponent={
