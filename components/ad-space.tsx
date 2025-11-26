@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { env } from "@/lib/env"
 
 // Google AdSense type declarations
 declare global {
@@ -18,7 +19,7 @@ interface AdSpaceProps {
 // Ad slot configurations
 const AD_SLOTS = {
   horizontal: "4493038763",
-  vertical: "5211934507", 
+  vertical: "5211934507",
   square: "4114475250"
 } as const
 
@@ -39,7 +40,7 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
       const isVertical = className.includes("h-96") || className.includes("h-64") || className.includes("h-[600px]") || className.includes("h-[400px]") || className.includes("h-[500px]")
       const isSquare = className.includes("h-[600px]") && className.includes("w-full")
       const isMobileContent = className.includes("h-32") || className.includes("h-24")
-      
+
       if (isHorizontal || isMobileContent) {
         setAdShape("horizontal")
       } else if (isVertical) {
@@ -76,7 +77,7 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
       script.crossOrigin = "anonymous"
       script.onload = () => setScriptLoaded(true)
       document.head.appendChild(script)
-      ;(window as any).__adsenseScriptAppended = true
+        ; (window as any).__adsenseScriptAppended = true
     }
   }, [])
 
@@ -101,7 +102,7 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
       try {
         // Clear any existing ads
         adRef.current.innerHTML = ""
-        
+
         // Create the ad element
         const adElement = document.createElement("ins")
         adElement.className = "adsbygoogle"
@@ -110,15 +111,15 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
         adElement.setAttribute("data-ad-slot", AD_SLOTS[adShape])
         adElement.setAttribute("data-ad-format", "auto")
         adElement.setAttribute("data-full-width-responsive", "true")
-        
+
         adRef.current.appendChild(adElement)
-        
+
         // Push the ad to Google AdSense
         if (window.adsbygoogle) {
           window.adsbygoogle.push({})
         }
         setAdInitialized(true)
-        
+
         // Set a timeout to detect if ad fails to load
         setTimeout(() => {
           if (adRef.current && !adRef.current.querySelector("iframe")) {
@@ -131,8 +132,13 @@ export function AdSpace({ slot, className = "", shape = "auto" }: AdSpaceProps) 
         console.warn("Ad init warning:", error)
         setAdFailed(true)
       }
-    } catch {}
+    } catch { }
   }, [scriptLoaded, adShape, adInitialized])
+
+  // Temporary: Hide ads in production as requested
+  if (env.isProduction) {
+    return null
+  }
 
   // In development, always show the ad space for layout testing
   if (process.env.NODE_ENV !== "production") {
