@@ -72,15 +72,9 @@ export default function InvoiceGeneratorPage() {
       "Professional Multi-Language Templates: Clean, professional invoice templates suitable for freelancers, small businesses, and agencies worldwide."
     ],
 
-    howTo: [
-      {
-        name: "Select Language & Currency",
-        description: "Choose from 15 languages and 200+ currencies. Enter your company details, logo, and contact information. Add client billing details, invoice number, and set issue/due dates."
-      },
-      {
-        name: "Multi-Currency Line Items & Pricing",
-        description: "Add detailed service descriptions in your selected language, quantities, rates in your chosen currency, and choose appropriate tax rates. Apply discounts if needed."
-      }
+    howToSteps: [
+      "Select Language & Currency: Choose from 15 languages and 200+ currencies. Enter your company details, logo, and contact information. Add client billing details, invoice number, and set issue/due dates.",
+      "Multi-Currency Line Items & Pricing: Add detailed service descriptions in your selected language, quantities, rates in your chosen currency, and choose appropriate tax rates. Apply discounts if needed."
     ],
 
     faqs: [
@@ -109,6 +103,18 @@ export default function InvoiceGeneratorPage() {
         answer: "Our invoice generator creates professional PDF invoices that are universally compatible and print-ready. PDF format ensures consistent appearance across all devices. Invoices can be downloaded instantly, saved locally, or printed directly from the browser."
       }
     ],
+
+    aboutTool: `
+      ### Professional Invoice Generator
+      Our Invoice Generator is a powerful, free online tool designed to help freelancers, small business owners, and contractors create professional invoices in minutes. With support for over 15 languages and 200+ currencies, it's the perfect solution for global business needs.
+
+      ### Key Features
+      - **Global Currency Support:** Create invoices in USD, EUR, GBP, JPY, and hundreds of other currencies.
+      - **Multi-Language Interface:** Generate invoices in your client's native language for better communication.
+      - **Automatic Calculations:** Let the tool handle tax, discounts, and subtotal calculations automatically.
+      - **Secure & Private:** All data is processed locally in your browser - no sensitive information is stored on our servers.
+      - **Professional Templates:** Choose from clean, modern designs that make your business look professional.
+    `,
 
     relatedTools: [
       { name: "PayPal Fee Calculator", href: "/finance-tools/paypal-fee" },

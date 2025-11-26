@@ -8,10 +8,10 @@ const baseMetadata = createMetadata({
   title: "FastTools - Salary Calculator | Free Advanced Pay Frequency Calculator",
   description:
     "FastTools Salary Calculator - Convert salary amounts across all pay frequencies with holiday adjustments. Professional salary analysis, industry comparisons, and negotiation support.",
-  path: "/calculator/salary-calculator",
+  path: "/finance-tools/salary-calculator",
   breadcrumbs: [
-    { label: "Calculator", href: "/calculator" },
-    { label: "Salary Calculator", href: "/calculator/salary-calculator" }
+    { label: "Finance Tools", href: "/finance-tools" },
+    { label: "Salary Calculator", href: "/finance-tools/salary-calculator" }
   ],
   schemaOptions: {
     name: "Salary Calculator",
@@ -45,7 +45,7 @@ const baseMetadata = createMetadata({
 export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
-  category: "Finance",
+  category: "Finance Tools",
   keywords: [
     "fasttools",
     "fast tools",
@@ -216,16 +216,16 @@ export default function SalaryCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Tax Calculator", href: "/calculator/tax-calculator" },
-      { name: "Sales Tax Calculator", href: "/calculator/sales-tax-calculator" },
+      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
+      { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Loan Calculator", href: "/calculator/loan-calculator" },
-      { name: "Mortgage Calculator", href: "/calculator/mortgage-calculator" },
-      { name: "Interest Rate Calculator", href: "/calculator/interest-rate-calculator" },
-      { name: "Payment Calculator", href: "/calculator/payment-calculator" },
-      { name: "Retirement Calculator", href: "/calculator/retirement-calculator" },
-      { name: "Investment Calculator", href: "/calculator/investment-calculator" },
-      { name: "Finance Calculator", href: "/calculator/finance-calculator" },
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
+      { name: "Payment Calculator", href: "/finance-tools/payment-calculator" },
+      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
       { name: "Tip Calculator", href: "/finance-tools/tip-calculator" }
     ]
   }
@@ -240,8 +240,8 @@ export default function SalaryCalculatorPage() {
         color: "orange"
       }}
       breadcrumbs={[
-        { label: "Calculator", href: "/calculator" },
-        { label: "Salary Calculator", href: "/calculator/salary-calculator" }
+        { label: "Finance Tools", href: "/finance-tools" },
+        { label: "Salary Calculator", href: "/finance-tools/salary-calculator" }
       ]}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
@@ -252,7 +252,7 @@ export default function SalaryCalculatorPage() {
       expectedMetadata={{
         title: "FastTools - Salary Calculator | Free Advanced Pay Frequency Calculator",
         description: "FastTools Salary Calculator - Convert salary amounts across all pay frequencies with holiday adjustments. Professional salary analysis, industry comparisons, and negotiation support.",
-        path: "/calculator/salary-calculator"
+        path: "/finance-tools/salary-calculator"
       }}
     />
   )

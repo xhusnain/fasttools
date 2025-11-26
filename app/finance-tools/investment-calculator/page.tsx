@@ -7,10 +7,10 @@ const baseMetadata = createMetadata({
   title: "Investment Calculator | Free Advanced Portfolio Calculator",
   description:
     "Professional investment calculator for portfolio analysis. Calculate end amount, return rate, starting amount & investment length.",
-  path: "/calculator/investment-calculator",
+  path: "/finance-tools/investment-calculator",
   breadcrumbs: [
-    { label: "Calculator", href: "/calculator" },
-    { label: "Investment Calculator", href: "/calculator/investment-calculator" }
+    { label: "Finance Tools", href: "/finance-tools" },
+    { label: "Investment Calculator", href: "/finance-tools/investment-calculator" }
   ],
   schemaOptions: {
     name: "Investment Calculator | Advanced Portfolio Calculator",
@@ -31,7 +31,7 @@ const baseMetadata = createMetadata({
 export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
-  category: "Calculators",
+  category: "Finance Tools",
 }
 
 export default function InvestmentCalculatorPage() {
@@ -138,10 +138,10 @@ export default function InvestmentCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Finance Calculator", href: "/calculator/finance-calculator" },
-      { name: "Compound Interest", href: "/calculator/compound-interest" },
-      { name: "Retirement Calculator", href: "/calculator/retirement-calculator" },
-      { name: "All Calculators", href: "/calculator" }
+      { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
+      { name: "Compound Interest", href: "/finance-tools/compound-interest" },
+      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
@@ -154,8 +154,8 @@ export default function InvestmentCalculatorPage() {
         descriptionSize: "small"
       }}
       breadcrumbs={[
-        { label: "Calculator", href: "/calculator" },
-        { label: "Investment Calculator", href: "/calculator/investment-calculator" }
+        { label: "Finance Tools", href: "/finance-tools" },
+        { label: "Investment Calculator", href: "/finance-tools/investment-calculator" }
       ]}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
@@ -166,7 +166,7 @@ export default function InvestmentCalculatorPage() {
       expectedMetadata={{
         title: "Investment Calculator | Free Advanced Portfolio Calculator",
         description: "Professional investment calculator for portfolio analysis. Calculate end amount, return rate, starting amount & investment length.",
-        path: "/calculator/investment-calculator"
+        path: "/finance-tools/investment-calculator"
       }}
     />
   )

@@ -7,10 +7,10 @@ const baseMetadata = createMetadata({
   title: "Mortgage Calculator | Free Advanced Home Loan Calculator",
   description:
     "Calculate mortgage payments with our advanced calculator. Get accurate monthly payments, amortization schedules & total interest costs.",
-  path: "/calculator/mortgage-calculator",
+  path: "/finance-tools/mortgage-calculator",
   breadcrumbs: [
-    { label: "Calculator", href: "/calculator" },
-    { label: "Mortgage Calculator", href: "/calculator/mortgage-calculator" }
+    { label: "Finance Tools", href: "/finance-tools" },
+    { label: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" }
   ],
   schemaOptions: {
     name: "Mortgage Calculator | Advanced Home Loan Calculator",
@@ -32,7 +32,7 @@ const baseMetadata = createMetadata({
 export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
-  category: "Calculators",
+  category: "Finance Tools",
 }
 
 export default function MortgageCalculatorPage() {
@@ -136,10 +136,10 @@ export default function MortgageCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Amortization Calculator", href: "/calculator/amortization-calculator" },
-      { name: "Loan Calculator", href: "/calculator/loan-calculator" },
-      { name: "Compound Interest", href: "/calculator/compound-interest" },
-      { name: "All Calculators", href: "/calculator" }
+      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Compound Interest", href: "/finance-tools/compound-interest" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
@@ -152,8 +152,8 @@ export default function MortgageCalculatorPage() {
         descriptionSize: "small"
       }}
       breadcrumbs={[
-        { label: "Calculator", href: "/calculator" },
-        { label: "Mortgage Calculator", href: "/calculator/mortgage-calculator" }
+        { label: "Finance Tools", href: "/finance-tools" },
+        { label: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" }
       ]}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
@@ -164,7 +164,7 @@ export default function MortgageCalculatorPage() {
       expectedMetadata={{
         title: "Mortgage Calculator | Free Advanced Home Loan Calculator",
         description: "Calculate mortgage payments with our advanced calculator. Get accurate monthly payments, amortization schedules & total interest costs.",
-        path: "/calculator/mortgage-calculator"
+        path: "/finance-tools/mortgage-calculator"
       }}
     />
   )

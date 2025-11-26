@@ -202,6 +202,14 @@ export default function SavingsTrackerPage() {
     toolName: TOOL_NAME,
     overview: `Comprehensive financial planning tool with expense tracking, tax calculations, inflation adjustments, and multiple goal management. Perfect for budgeting, savings planning, and achieving financial objectives. Features advanced expense categories, tax deductions, priority-based goal setting, and intelligent recommendations.`,
 
+    howToSteps: [
+      "Set Your Goal: Define what you are saving for (e.g., Emergency Fund, Vacation, New Car).",
+      "Enter Target Amount: Input the total amount of money you need to save.",
+      "Input Current Savings: Enter how much you have already saved towards this goal.",
+      "Determine Monthly Contribution: Decide how much you can afford to save each month.",
+      "Track Progress: Regularly update your savings to see how close you are to your goal."
+    ],
+
     features: [
       "Goal Setting & Tracking: Set specific savings goals with target amounts and track progress in real-time.",
       "Timeline Calculations: Calculate exact timelines to reach your savings goals based on monthly contributions.",
@@ -394,6 +402,17 @@ export default function SavingsTrackerPage() {
         answer: "Our personal finance tracker provides comprehensive money management beyond just savings. Features include expense tracking, income monitoring, debt management, investment tracking, and financial reporting."
       }
     ],
+
+    aboutTool: `
+      ### Savings Tracker
+      Our Savings Tracker is your personal financial cheerleader, helping you stay motivated and on track to reach your financial goals. Whether you're saving for a rainy day or a dream vacation, this tool makes the process simple and rewarding.
+
+      ### Key Features
+      - **Goal Visualization:** See your progress with clear, motivating visual indicators.
+      - **Timeline Calculation:** Instantly see when you'll reach your goal based on your current savings rate.
+      - **Multiple Goals:** Track savings for different objectives simultaneously (e.g., House, Car, Travel).
+      - **Flexible Planning:** Adjust your monthly contributions to see how it affects your timeline.
+    `,
 
     relatedTools: [
       { name: "Retirement Planner", href: "/finance-tools/retirement-planner" },

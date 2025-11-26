@@ -76,6 +76,14 @@ export default function PayPalFeeCalculatorPage() {
     toolName: TOOL_NAME,
     overview: `Calculate PayPal transaction fees, net amounts, and required charges instantly. Perfect for sellers, freelancers, and businesses to understand payment processing costs. Our PayPal fee calculator online supports PayPal fee transfer, PayPal fee send money, PayPal fees as seller, PayPal G&S fee, and international calculations.`,
 
+    howToSteps: [
+      "Enter Transaction Amount: Input the total amount you are sending or receiving.",
+      "Select Fee Type: Choose between Domestic (standard) or International (cross-border) rates.",
+      "Choose Payment Method: Select if the payment is via PayPal Balance, Bank Account, or Credit Card.",
+      "Calculate Fees: Instantly see the fee amount, the amount you'll receive (Net), and how much to ask for (Gross).",
+      "Reverse Calculation: Use the 'Gross Amount' feature to calculate how much to invoice to receive a specific amount."
+    ],
+
     features: [
       "PayPal Transaction Fee Calculation: Calculate exact PayPal fees for personal, business, commercial, and donation transactions.",
       "PayPal Net Amount Calculator: Determine exactly how much you'll receive after PayPal deducts their percentage fees and fixed fees.",
@@ -489,6 +497,17 @@ export default function PayPalFeeCalculatorPage() {
         answer: "Best practices include: choosing the right account type for your needs, using micropayment pricing for small transactions, negotiating volume discounts, avoiding unnecessary currency conversions, and maintaining good customer relationships."
       }
     ],
+
+    aboutTool: `
+      ### PayPal Fee Calculator
+      Our PayPal Fee Calculator is an essential tool for freelancers, sellers, and businesses who use PayPal. It helps you accurately calculate transaction fees so you know exactly how much money you'll keep.
+
+      ### Key Features
+      - **Fee Calculation:** Instantly calculate standard PayPal processing fees (2.9% + $0.30).
+      - **Net Amount:** See exactly how much lands in your account after fees.
+      - **Gross Amount:** Calculate how much to charge a client to receive a specific net amount.
+      - **International Rates:** Support for cross-border fees and currency conversion estimates.
+    `,
 
     relatedTools: [
       { name: "Invoice Generator", href: "/finance-tools/invoice-generator" },

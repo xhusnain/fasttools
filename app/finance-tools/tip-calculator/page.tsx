@@ -276,6 +276,14 @@ export default function TipCalculatorPage() {
     toolName: TOOL_NAME,
     overview: `Calculate restaurant tips, gratuity, and split bills instantly. Our free tip calculator supports customizable percentages, tax options, and bill splitting. Perfect for dining, delivery, and service industries. Features simple tip calculator, tip percentage calculator, bill and tip calculator, and smart tip calculator with split options.`,
 
+    howToSteps: [
+      "Enter the total bill amount in the 'Bill Amount' field.",
+      "Select your desired tip percentage using the quick buttons or enter a custom rate.",
+      "Choose the number of people to split the bill with (default is 1).",
+      "Toggle tax options if needed to calculate tip on pre-tax or post-tax amount.",
+      "View the instant breakdown of tip amount, total bill, and per-person share."
+    ],
+
     features: [
       "Customizable Tip Percentages: Set any tip percentage from 0% to 100% with quick-select buttons for common rates.",
       "Bill Splitting & Group Calculations: Split bills evenly among any number of people with automatic per-person calculations.",
@@ -283,6 +291,19 @@ export default function TipCalculatorPage() {
       "Multi-Industry Applications: Works for restaurants, bars, delivery services, salons, hotels, and other service industries.",
       "Mobile & Advanced Features: Mobile-friendly design, tax and tip calculations, and reverse tip calculations."
     ],
+
+    aboutTool: `
+      ### How Our Tip Calculator Works
+      The Tip Calculator is designed to make dining and service payments simple and transparent. Whether you're dining out with friends, ordering delivery, or receiving a service, our tool helps you determine the appropriate gratuity instantly.
+
+      ### Key Features Explained
+      - **Smart Bill Splitting:** Easily divide the total bill among any number of people. The calculator provides both the total per person and the tip amount per person, ensuring everyone pays their fair share.
+      - **Flexible Tax Options:** Choose whether to calculate the tip on the pre-tax amount (standard etiquette) or the post-tax total. This flexibility allows you to follow local customs and establishment policies.
+      - **Custom Percentages:** While we provide quick buttons for standard rates (15%, 18%, 20%), you can enter any custom percentage to reflect the quality of service you received.
+      
+      ### Why Use a Tip Calculator?
+      Mental math can be tricky, especially when splitting bills or calculating percentages on odd amounts. Our calculator eliminates errors and awkward moments at the end of a meal. It ensures you tip appropriately—rewarding good service without overpaying—and helps you budget for the total cost of your dining experience.
+    `,
 
     useCases: [
       "Restaurant & Dining: Standard service (15-18%), Good service (18-20%), Excellent service (20-25%).",

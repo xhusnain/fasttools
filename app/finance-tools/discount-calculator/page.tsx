@@ -78,6 +78,14 @@ export default function DiscountCalculatorPage() {
     toolName: TOOL_NAME,
     overview: `Calculate percentage discounts, fixed amounts, and final sale prices instantly. Our free discount calculator supports multiple discounts, tax calculations, and works with any currency. Perfect for shopping, business pricing, and financial planning.`,
 
+    howToSteps: [
+      "Enter Original Price: Input the pre-discount price of the item or service.",
+      "Set Discount: Choose a percentage discount or a fixed amount off.",
+      "Add Extra Discounts: Stack additional discounts if applicable (e.g., store coupon + seasonal sale).",
+      "Include Tax: Add sales tax to see the final price you'll pay at the register.",
+      "Calculate Savings: Instantly see your total savings and the final price."
+    ],
+
     features: [
       "Multi-Type Discount Engine: Supports both percentage-based reductions and fixed dollar amount discounts.",
       "Sequential Discount Processing: Apply unlimited discounts in sequence with our compound discount calculator.",
@@ -195,6 +203,17 @@ export default function DiscountCalculatorPage() {
       }
     ],
 
+    aboutTool: `
+      ### Discount Calculator
+      Our Discount Calculator is the ultimate shopping companion, helping you quickly determine the final price of any item on sale. Whether you're shopping for clothes, electronics, or groceries, this tool ensures you know exactly what you'll pay and how much you're saving.
+
+      ### Key Features
+      - **Multiple Discount Types:** Calculate percentage off (e.g., 20% off) or fixed amount off (e.g., $10 off).
+      - **Stacked Discounts:** Handle complex sales like "take an extra 15% off the sale price."
+      - **Tax Calculation:** Include sales tax to get the precise final total.
+      - **Savings Breakdown:** See exactly how much money you're keeping in your pocket.
+    `,
+
     relatedTools: [
       { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
       { name: "Bill Splitter", href: "/finance-tools/bill-splitter" },
@@ -210,7 +229,7 @@ export default function DiscountCalculatorPage() {
         description: "Calculate percentage discounts, fixed amounts, and final sale prices instantly. Our free discount calculator supports multiple discounts, tax calculations, and works with any currency. Perfect for shopping, business pricing, and financial planning.",
         titleSize: "medium",
         descriptionSize: "small",
-        color: "green"
+        color: "blue"
       }}
       breadcrumbs={[
         { label: "Finance Tools", href: "/finance-tools" },

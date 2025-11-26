@@ -8,10 +8,10 @@ const baseMetadata = createMetadata({
   title: "FastTools - Interest Rate Calculator | Free Advanced Loan Rate Calculator",
   description:
     "FastTools Interest Rate Calculator - Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation and loan optimization.",
-  path: "/calculator/interest-rate-calculator",
+  path: "/finance-tools/interest-rate-calculator",
   breadcrumbs: [
-    { label: "Calculator", href: "/calculator" },
-    { label: "Interest Rate Calculator", href: "/calculator/interest-rate-calculator" }
+    { label: "Finance Tools", href: "/finance-tools" },
+    { label: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" }
   ],
   schemaOptions: {
     name: "Interest Rate Calculator",
@@ -45,7 +45,7 @@ const baseMetadata = createMetadata({
 export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
-  category: "Finance",
+  category: "Finance Tools",
   keywords: [
     "fasttools",
     "fast tools",
@@ -259,12 +259,12 @@ export default function InterestRateCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Loan Calculator", href: "/calculator/loan-calculator" },
-      { name: "Mortgage Calculator", href: "/calculator/mortgage-calculator" },
-      { name: "Finance Calculator", href: "/calculator/finance-calculator" },
-      { name: "Investment Calculator", href: "/calculator/investment-calculator" },
-      { name: "Compound Interest Calculator", href: "/calculator/compound-interest-calculator" },
-      { name: "Inflation Calculator", href: "/calculator/inflation-calculator" }
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
+      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" }
     ]
   }
 
@@ -278,8 +278,8 @@ export default function InterestRateCalculatorPage() {
         color: "orange"
       }}
       breadcrumbs={[
-        { label: "Calculator", href: "/calculator" },
-        { label: "Interest Rate Calculator", href: "/calculator/interest-rate-calculator" }
+        { label: "Finance Tools", href: "/finance-tools" },
+        { label: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" }
       ]}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
@@ -290,7 +290,7 @@ export default function InterestRateCalculatorPage() {
       expectedMetadata={{
         title: "FastTools - Interest Rate Calculator | Free Advanced Loan Rate Calculator",
         description: "FastTools Interest Rate Calculator - Calculate real interest rates on loans with fixed terms and monthly payments. Advanced Newton-Raphson method for precise rate calculation and loan optimization.",
-        path: "/calculator/interest-rate-calculator"
+        path: "/finance-tools/interest-rate-calculator"
       }}
     />
   )

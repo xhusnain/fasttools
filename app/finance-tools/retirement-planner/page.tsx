@@ -224,6 +224,14 @@ export default function RetirementPlannerPage() {
     toolName: TOOL_NAME,
     overview: `Plan your retirement with comprehensive financial planning tools. Calculate compound interest, inflation adjustments, tax optimization, and multiple account types. Features 401k calculator, IRA calculator, Roth vs Traditional analysis, and wealth building strategies. Our advanced retirement planner uses AI-powered algorithms to analyze your financial situation, predict future needs, and automatically suggest optimal retirement strategies.`,
 
+    howToSteps: [
+      "Enter Current Age & Income: Start by inputting your current age, retirement age, and annual income.",
+      "Input Current Savings: Add your existing retirement savings (401k, IRA, etc.).",
+      "Set Contribution Levels: Adjust your monthly or annual contribution amounts.",
+      "Review Projections: See how your savings will grow over time with compound interest.",
+      "Analyze Retirement Income: Check if your projected monthly income meets your retirement goals."
+    ],
+
     features: [
       "Comprehensive Account Management: Supports 401k, IRA, Roth IRA, SEP IRA, 403b, 457, and pension plans with specific tax advantages and limits.",
       "Tax Optimization Calculator: Compare Roth vs Traditional accounts, calculate tax savings, and optimize contribution strategies with tax bracket analysis.",
@@ -386,6 +394,17 @@ export default function RetirementPlannerPage() {
         answer: "The best retirement planner depends on your specific needs, but our comprehensive retirement planner combines the expertise of top financial advisors with the convenience of free online tools. It provides professional-level analysis without the cost of hiring a personal advisor."
       }
     ],
+
+    aboutTool: `
+      ### Retirement Planner
+      Our Retirement Planner is a comprehensive tool designed to help you secure your financial future. It goes beyond simple savings calculations to provide a holistic view of your retirement readiness.
+
+      ### Key Features
+      - **Holistic Planning:** Integrates 401k, IRA, pension, and Social Security planning.
+      - **Compound Growth:** Visualizes the power of compound interest over decades.
+      - **Inflation Adjustment:** Accounts for inflation to show you the real purchasing power of your future savings.
+      - **Tax Optimization:** Helps you understand the tax implications of different retirement accounts.
+    `,
 
     relatedTools: [
       { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },

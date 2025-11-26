@@ -8,10 +8,10 @@ const baseMetadata = createMetadata({
   title: "FastTools - Sales Tax Calculator | Free Advanced State Tax Calculator",
   description:
     "FastTools Sales Tax Calculator - Calculate sales tax for all 50 US states with our advanced calculator. Get accurate tax calculations, state comparisons & compliance guidance.",
-  path: "/calculator/sales-tax-calculator",
+  path: "/finance-tools/sales-tax-calculator",
   breadcrumbs: [
-    { label: "Calculator", href: "/calculator" },
-    { label: "Sales Tax Calculator", href: "/calculator/sales-tax-calculator" }
+    { label: "Finance Tools", href: "/finance-tools" },
+    { label: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" }
   ],
   schemaOptions: {
     name: "Sales Tax Calculator",
@@ -45,7 +45,7 @@ const baseMetadata = createMetadata({
 export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
-  category: "Business",
+  category: "Finance Tools",
   keywords: [
     "fasttools",
     "fast tools",
@@ -407,18 +407,18 @@ export default function SalesTaxCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Tax Calculator", href: "/calculator/tax-calculator" },
-      { name: "Mortgage Calculator", href: "/calculator/mortgage-calculator" },
-      { name: "Investment Calculator", href: "/calculator/investment-calculator" },
-      { name: "Retirement Calculator", href: "/calculator/retirement-calculator" },
-      { name: "Loan Calculator", href: "/calculator/loan-calculator" },
+      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
       { name: "Currency Converter", href: "/converters/currency" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
       { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" },
-      { name: "Salary Calculator", href: "/calculator/salary-calculator" },
-      { name: "Amortization Calculator", href: "/calculator/amortization-calculator" },
-      { name: "Compound Interest", href: "/calculator/compound-interest" }
+      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
+      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
+      { name: "Compound Interest", href: "/finance-tools/compound-interest" }
     ]
   }
 
@@ -432,8 +432,8 @@ export default function SalesTaxCalculatorPage() {
         color: "orange"
       }}
       breadcrumbs={[
-        { label: "Calculator", href: "/calculator" },
-        { label: "Sales Tax Calculator", href: "/calculator/sales-tax-calculator" }
+        { label: "Finance Tools", href: "/finance-tools" },
+        { label: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" }
       ]}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
@@ -444,7 +444,7 @@ export default function SalesTaxCalculatorPage() {
       expectedMetadata={{
         title: "FastTools - Sales Tax Calculator | Free Advanced State Tax Calculator",
         description: "FastTools Sales Tax Calculator - Calculate sales tax for all 50 US states with our advanced calculator. Get accurate tax calculations, state comparisons & compliance guidance.",
-        path: "/calculator/sales-tax-calculator"
+        path: "/finance-tools/sales-tax-calculator"
       }}
     />
   )

@@ -67,6 +67,14 @@ export default function CreditCardPayoffPage() {
     toolName: TOOL_NAME,
     overview: "Free credit card payoff calculator with debt payoff timeline, interest savings, and avalanche vs snowball methods. Calculate how long to pay off credit card debt and save thousands in interest. Perfect for debt management and financial planning.",
 
+    howToSteps: [
+      "Enter Current Balance: Input the total amount you owe on your credit card.",
+      "Input Interest Rate (APR): Enter the annual percentage rate (APR) for your card.",
+      "Set Monthly Payment: Enter the amount you plan to pay each month.",
+      "Review Payoff Timeline: See exactly how many months it will take to be debt-free.",
+      "Analyze Interest Savings: Compare different payment amounts to see how much interest you can save."
+    ],
+
     features: [
       "Debt Payoff Timeline: Precise payoff timelines based on balance, APR, and payments. Detailed month-by-month breakdowns.",
       "Interest Savings Calculator: Calculate savings from extra payments and debt consolidation. Side-by-side comparisons.",
@@ -125,6 +133,17 @@ export default function CreditCardPayoffPage() {
         answer: "If your APR changes, you can recalculate using the new rate to see how it affects your payoff timeline and total interest. Our calculator allows you to experiment with different APRs to see the impact of rate changes on your debt payoff strategy."
       }
     ],
+
+    aboutTool: `
+      ### Credit Card Payoff Calculator
+      Our Credit Card Payoff Calculator is a powerful financial tool designed to help you become debt-free faster. By analyzing your current balance, interest rate, and monthly payments, it provides a clear timeline for when you'll be debt-free and how much interest you'll pay.
+
+      ### Key Features
+      - **Payoff Timeline:** Visualize your journey to debt freedom with a clear month-by-month timeline.
+      - **Interest Analysis:** See exactly how much of your payment goes to principal vs. interest.
+      - **Savings Calculator:** Discover how small increases in monthly payments can save you thousands in interest.
+      - **Strategy Comparison:** Compare different payoff strategies to find the one that works best for your budget.
+    `,
 
     relatedTools: [
       { name: "Savings Tracker", href: "/finance-tools/savings-tracker" },

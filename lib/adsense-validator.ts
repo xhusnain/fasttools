@@ -32,10 +32,10 @@ export function validateAdSenseCompliance(data: ContentData): ValidationResult[]
         data.overview,
         aboutToolText,
         data.proTip || "",
-        ...data.howToSteps,
-        ...data.features,
-        ...data.useCases || [],
-        ...data.faqs.map(f => f.question + " " + f.answer)
+        ...(data.howToSteps || []),
+        ...(data.features || []),
+        ...(data.useCases || []),
+        ...(data.faqs || []).map(f => f.question + " " + f.answer)
     ].join(" ")
 
     const lowerText = fullText.toLowerCase()
@@ -65,7 +65,15 @@ export function validateAdSenseCompliance(data: ContentData): ValidationResult[]
     }
 
 
-    if (data.howToSteps.length < 5) {
+    // Check for missing or empty arrays (Critical for SEO/AdSense)
+    if (!data.howToSteps || data.howToSteps.length === 0) {
+        results.push({
+            type: 'CRITICAL',
+            category: 'CONTENT',
+            message: 'Missing How-To Steps',
+            fix: 'Add a "howToSteps" array with at least 5 steps.'
+        })
+    } else if (data.howToSteps.length < 5) {
         results.push({
             type: 'WARNING',
             category: 'CONTENT',
@@ -73,7 +81,24 @@ export function validateAdSenseCompliance(data: ContentData): ValidationResult[]
             fix: 'Expand the "How-To" section to at least 5 detailed steps.'
         })
     }
-    if (data.faqs.length < 5) {
+
+    if (!data.features || data.features.length === 0) {
+        results.push({
+            type: 'CRITICAL',
+            category: 'CONTENT',
+            message: 'Missing Features List',
+            fix: 'Add a "features" array with key features of the tool.'
+        })
+    }
+
+    if (!data.faqs || data.faqs.length === 0) {
+        results.push({
+            type: 'CRITICAL',
+            category: 'CONTENT',
+            message: 'Missing FAQs',
+            fix: 'Add an "faqs" array with at least 5 questions and answers.'
+        })
+    } else if (data.faqs.length < 5) {
         results.push({
             type: 'WARNING',
             category: 'CONTENT',

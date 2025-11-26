@@ -7,10 +7,10 @@ const baseMetadata = createMetadata({
   title: "Amortization Calculator | Free Loan Payment Calculator",
   description:
     "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings.",
-  path: "/calculator/amortization-calculator",
+  path: "/finance-tools/amortization-calculator",
   breadcrumbs: [
-    { label: "Calculator", href: "/calculator" },
-    { label: "Amortization Calculator", href: "/calculator/amortization-calculator" }
+    { label: "Finance Tools", href: "/finance-tools" },
+    { label: "Amortization Calculator", href: "/finance-tools/amortization-calculator" }
   ],
   schemaOptions: {
     name: "Amortization Calculator | Advanced Loan Payment Calculator",
@@ -31,7 +31,7 @@ const baseMetadata = createMetadata({
 export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
-  category: "Calculators",
+  category: "Finance Tools",
 }
 
 export default function AmortizationCalculatorPage() {
@@ -134,10 +134,10 @@ export default function AmortizationCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Mortgage Calculator", href: "/calculator/mortgage-calculator" },
-      { name: "Loan Calculator", href: "/calculator/loan-calculator" },
-      { name: "Interest Rate Calculator", href: "/calculator/interest-rate-calculator" },
-      { name: "All Calculators", href: "/calculator" }
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
@@ -150,8 +150,8 @@ export default function AmortizationCalculatorPage() {
         descriptionSize: "small"
       }}
       breadcrumbs={[
-        { label: "Calculator", href: "/calculator" },
-        { label: "Amortization Calculator", href: "/calculator/amortization-calculator" }
+        { label: "Finance Tools", href: "/finance-tools" },
+        { label: "Amortization Calculator", href: "/finance-tools/amortization-calculator" }
       ]}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
@@ -162,7 +162,7 @@ export default function AmortizationCalculatorPage() {
       expectedMetadata={{
         title: "Amortization Calculator | Free Loan Payment Calculator",
         description: "Professional amortization calculator for detailed loan payment analysis. Calculate monthly payments, interest costs, amortization schedules, and extra payment savings.",
-        path: "/calculator/amortization-calculator"
+        path: "/finance-tools/amortization-calculator"
       }}
     />
   )

@@ -7,10 +7,10 @@ const baseMetadata = createMetadata({
   title: "Free Compound Interest Calculator Online | Investment & SIP Calculator",
   description:
     "Best free compound interest calculator online for 2024. Calculate compound interest for SIP, fixed deposits, savings, retirement, loans. Supports India, UK, Canada, Australia with daily, monthly, quarterly, annual compounding.",
-  path: "/calculator/compound-interest",
+  path: "/finance-tools/compound-interest",
   breadcrumbs: [
-    { label: "Calculator", href: "/calculator" },
-    { label: "Compound Interest Calculator", href: "/calculator/compound-interest" }
+    { label: "Finance Tools", href: "/finance-tools" },
+    { label: "Compound Interest Calculator", href: "/finance-tools/compound-interest" }
   ],
   schemaOptions: {
     name: "Free Online Compound Interest Calculator",
@@ -34,7 +34,7 @@ const baseMetadata = createMetadata({
 export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
-  category: "Calculators",
+  category: "Finance Tools",
 }
 
 export default function CompoundInterestPage() {
@@ -180,10 +180,10 @@ export default function CompoundInterestPage() {
     ],
 
     relatedTools: [
-      { name: "Investment Calculator", href: "/calculator/investment-calculator" },
-      { name: "Retirement Calculator", href: "/calculator/retirement-calculator" },
-      { name: "Loan Calculator", href: "/calculator/loan-calculator" },
-      { name: "All Calculators", href: "/calculator" }
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
@@ -196,8 +196,8 @@ export default function CompoundInterestPage() {
         descriptionSize: "small"
       }}
       breadcrumbs={[
-        { label: "Calculator", href: "/calculator" },
-        { label: "Compound Interest Calculator", href: "/calculator/compound-interest" }
+        { label: "Finance Tools", href: "/finance-tools" },
+        { label: "Compound Interest Calculator", href: "/finance-tools/compound-interest" }
       ]}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
@@ -208,7 +208,7 @@ export default function CompoundInterestPage() {
       expectedMetadata={{
         title: "Free Compound Interest Calculator Online | Investment & SIP Calculator",
         description: "Best free compound interest calculator online for 2024. Calculate compound interest for SIP, fixed deposits, savings, retirement, loans. Supports India, UK, Canada, Australia with daily, monthly, quarterly, annual compounding.",
-        path: "/calculator/compound-interest"
+        path: "/finance-tools/compound-interest"
       }}
     />
   )

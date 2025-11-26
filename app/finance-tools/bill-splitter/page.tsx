@@ -67,6 +67,14 @@ export default function BillSplitterPage() {
     toolName: TOOL_NAME,
     overview: "Free bill splitter calculator for restaurants, groups, and shared expenses. Split bills evenly or by items, calculate tips and tax, track who owes what. Perfect for friends, roommates, and travel groups. No cost, instant results.",
 
+    howToSteps: [
+      "Enter Bill Details: Input the total bill amount, including any service charges or additional fees.",
+      "Select Split Method: Choose between equal split, itemized split, or percentage-based split depending on your group's preference.",
+      "Add Participants: Enter the number of people sharing the bill or add their names for personalized breakdowns.",
+      "Include Tip & Tax: Add tip percentage and tax rate to ensure the final calculation covers all costs.",
+      "Review & Share: View the detailed breakdown per person and share the results via text or email."
+    ],
+
     features: [
       "Smart Bill Splitting: Intelligent bill splitter supports equal splits, itemized splits, and percentage-based splitting.",
       "Tip & Tax Integration: Automatically calculate tips and taxes with our integrated calculator.",

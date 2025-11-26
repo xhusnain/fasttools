@@ -8,10 +8,10 @@ const baseMetadata = createMetadata({
   title: "FastTools - Tax Calculator | Free Income, GST, VAT & Sales Tax",
   description:
     "FastTools Tax Calculator - Free online tax calculator for income tax, GST, VAT, and sales tax. Calculate tax on salary, capital gains, property, and more. Supports 9+ countries with accurate tax brackets.",
-  path: "/calculator/tax-calculator",
+  path: "/finance-tools/tax-calculator",
   breadcrumbs: [
-    { label: "Calculator", href: "/calculator" },
-    { label: "Tax Calculator", href: "/calculator/tax-calculator" }
+    { label: "Finance Tools", href: "/finance-tools" },
+    { label: "Tax Calculator", href: "/finance-tools/tax-calculator" }
   ],
   schemaOptions: {
     name: "Tax Calculator",
@@ -34,7 +34,7 @@ const baseMetadata = createMetadata({
 export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
-  category: "Finance",
+  category: "Finance Tools",
   keywords: [
     "fasttools",
     "fast tools",
@@ -277,16 +277,16 @@ export default function TaxCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Salary Calculator", href: "/calculator/salary-calculator" },
-      { name: "Sales Tax Calculator", href: "/calculator/sales-tax-calculator" },
+      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
+      { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Loan Calculator", href: "/calculator/loan-calculator" },
-      { name: "Mortgage Calculator", href: "/calculator/mortgage-calculator" },
-      { name: "Interest Rate Calculator", href: "/calculator/interest-rate-calculator" },
-      { name: "Payment Calculator", href: "/calculator/payment-calculator" },
-      { name: "Retirement Calculator", href: "/calculator/retirement-calculator" },
-      { name: "Investment Calculator", href: "/calculator/investment-calculator" },
-      { name: "Finance Calculator", href: "/calculator/finance-calculator" },
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
+      { name: "Payment Calculator", href: "/finance-tools/payment-calculator" },
+      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
       { name: "Tip Calculator", href: "/finance-tools/tip-calculator" },
       { name: "Discount Calculator", href: "/finance-tools/discount-calculator" }
     ]
@@ -302,8 +302,8 @@ export default function TaxCalculatorPage() {
         color: "orange"
       }}
       breadcrumbs={[
-        { label: "Calculator", href: "/calculator" },
-        { label: "Tax Calculator", href: "/calculator/tax-calculator" }
+        { label: "Finance Tools", href: "/finance-tools" },
+        { label: "Tax Calculator", href: "/finance-tools/tax-calculator" }
       ]}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
@@ -314,7 +314,7 @@ export default function TaxCalculatorPage() {
       expectedMetadata={{
         title: "FastTools - Tax Calculator | Free Income, GST, VAT & Sales Tax",
         description: "FastTools Tax Calculator - Free online tax calculator for income tax, GST, VAT, and sales tax. Calculate tax on salary, capital gains, property, and more. Supports 9+ countries with accurate tax brackets.",
-        path: "/calculator/tax-calculator"
+        path: "/finance-tools/tax-calculator"
       }}
     />
   )

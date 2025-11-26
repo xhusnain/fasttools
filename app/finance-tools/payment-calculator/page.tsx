@@ -8,10 +8,10 @@ const baseMetadata = createMetadata({
   title: "FastTools - Payment Calculator | Free Advanced Loan Payment Calculator",
   description:
     "FastTools Payment Calculator - Calculate loan payments with advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations.",
-  path: "/calculator/payment-calculator",
+  path: "/finance-tools/payment-calculator",
   breadcrumbs: [
-    { label: "Calculator", href: "/calculator" },
-    { label: "Payment Calculator", href: "/calculator/payment-calculator" }
+    { label: "Finance Tools", href: "/finance-tools" },
+    { label: "Payment Calculator", href: "/finance-tools/payment-calculator" }
   ],
   schemaOptions: {
     name: "Payment Calculator",
@@ -45,7 +45,7 @@ const baseMetadata = createMetadata({
 export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
-  category: "Finance",
+  category: "Finance Tools",
   keywords: [
     "fasttools",
     "fast tools",
@@ -352,17 +352,17 @@ export default function PaymentCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Mortgage Calculator", href: "/calculator/mortgage-calculator" },
-      { name: "Loan Calculator", href: "/calculator/loan-calculator" },
-      { name: "Interest Rate Calculator", href: "/calculator/interest-rate-calculator" },
-      { name: "Amortization Calculator", href: "/calculator/amortization-calculator" },
-      { name: "Tax Calculator", href: "/calculator/tax-calculator" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
+      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
+      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
       { name: "Percentage Calculator", href: "/calculator/percentage-calculator" },
-      { name: "Compound Interest", href: "/calculator/compound-interest" },
-      { name: "Investment Calculator", href: "/calculator/investment-calculator" },
-      { name: "Retirement Calculator", href: "/calculator/retirement-calculator" },
-      { name: "Salary Calculator", href: "/calculator/salary-calculator" },
-      { name: "Sales Tax Calculator", href: "/calculator/sales-tax-calculator" },
+      { name: "Compound Interest", href: "/finance-tools/compound-interest" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
+      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
+      { name: "Sales Tax Calculator", href: "/finance-tools/sales-tax-calculator" },
       { name: "Tip Calculator", href: "/finance-tools/tip-calculator" }
     ]
   }
@@ -377,8 +377,8 @@ export default function PaymentCalculatorPage() {
         color: "orange"
       }}
       breadcrumbs={[
-        { label: "Calculator", href: "/calculator" },
-        { label: "Payment Calculator", href: "/calculator/payment-calculator" }
+        { label: "Finance Tools", href: "/finance-tools" },
+        { label: "Payment Calculator", href: "/finance-tools/payment-calculator" }
       ]}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
@@ -389,7 +389,7 @@ export default function PaymentCalculatorPage() {
       expectedMetadata={{
         title: "FastTools - Payment Calculator | Free Advanced Loan Payment Calculator",
         description: "FastTools Payment Calculator - Calculate loan payments with advanced payment calculator. Get accurate monthly payments, loan terms, amortization schedules, and total interest calculations.",
-        path: "/calculator/payment-calculator"
+        path: "/finance-tools/payment-calculator"
       }}
     />
   )

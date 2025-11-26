@@ -7,10 +7,10 @@ const baseMetadata = createMetadata({
   title: "Finance Calculator | Free Advanced TVM Calculator",
   description:
     "Professional finance calculator for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules and investment analysis.",
-  path: "/calculator/finance-calculator",
+  path: "/finance-tools/finance-calculator",
   breadcrumbs: [
-    { label: "Calculator", href: "/calculator" },
-    { label: "Finance Calculator", href: "/calculator/finance-calculator" }
+    { label: "Finance Tools", href: "/finance-tools" },
+    { label: "Finance Calculator", href: "/finance-tools/finance-calculator" }
   ],
   schemaOptions: {
     name: "Finance Calculator | Advanced TVM Calculator",
@@ -31,7 +31,7 @@ const baseMetadata = createMetadata({
 export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
-  category: "Calculators",
+  category: "Finance Tools",
 }
 
 export default function FinanceCalculatorPage() {
@@ -135,10 +135,10 @@ export default function FinanceCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Investment Calculator", href: "/calculator/investment-calculator" },
-      { name: "Loan Calculator", href: "/calculator/loan-calculator" },
-      { name: "Compound Interest", href: "/calculator/compound-interest" },
-      { name: "All Calculators", href: "/calculator" }
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Compound Interest", href: "/finance-tools/compound-interest" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
@@ -151,8 +151,8 @@ export default function FinanceCalculatorPage() {
         descriptionSize: "small"
       }}
       breadcrumbs={[
-        { label: "Calculator", href: "/calculator" },
-        { label: "Finance Calculator", href: "/calculator/finance-calculator" }
+        { label: "Finance Tools", href: "/finance-tools" },
+        { label: "Finance Calculator", href: "/finance-tools/finance-calculator" }
       ]}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
@@ -163,7 +163,7 @@ export default function FinanceCalculatorPage() {
       expectedMetadata={{
         title: "Finance Calculator | Free Advanced TVM Calculator",
         description: "Professional finance calculator for time value of money calculations. Calculate FV, PV, PMT, I/Y, and N with amortization schedules and investment analysis.",
-        path: "/calculator/finance-calculator"
+        path: "/finance-tools/finance-calculator"
       }}
     />
   )

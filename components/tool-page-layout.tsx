@@ -35,7 +35,7 @@ export function ToolPageLayout({
     const faqSchema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: toolContent.faqs.map((faq) => ({
+        mainEntity: (toolContent.faqs || []).map((faq) => ({
             "@type": "Question",
             name: faq.question,
             acceptedAnswer: {
@@ -49,7 +49,7 @@ export function ToolPageLayout({
         "@context": "https://schema.org",
         "@type": "HowTo",
         name: `How to use ${toolContent.toolName}`,
-        step: toolContent.howToSteps.map((step, index) => ({
+        step: (toolContent.howToSteps || []).map((step, index) => ({
             "@type": "HowToStep",
             position: index + 1,
             text: step,
@@ -140,7 +140,7 @@ export function ToolPageLayout({
                                     </h2>
                                 </div>
                                 <div className="space-y-4">
-                                    {toolContent.howToSteps.map((step, index) => (
+                                    {(toolContent.howToSteps || []).map((step, index) => (
                                         <div key={index} className="flex gap-4">
                                             <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center">
                                                 <span className="text-sm font-bold text-primary">{index + 1}</span>
@@ -163,7 +163,7 @@ export function ToolPageLayout({
                                     </h2>
                                 </div>
                                 <div className="grid sm:grid-cols-2 gap-3">
-                                    {toolContent.features.map((feature, index) => (
+                                    {(toolContent.features || []).map((feature, index) => (
                                         <div key={index} className="flex items-start gap-2 p-3 rounded-lg bg-muted/50">
                                             <ChevronRight className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                                             <span className="text-sm text-foreground">{feature}</span>
@@ -178,7 +178,7 @@ export function ToolPageLayout({
                                         Use Cases
                                     </h2>
                                     <div className="space-y-3">
-                                        {toolContent.useCases.map((useCase, index) => (
+                                        {(toolContent.useCases || []).map((useCase, index) => (
                                             <div key={index} className="flex items-start gap-3 p-4 rounded-lg bg-muted/50">
                                                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
                                                     <Star className="h-3 w-3 text-primary" />
@@ -232,7 +232,7 @@ export function ToolPageLayout({
                                     Frequently Asked Questions
                                 </h2>
                                 <div className="space-y-4">
-                                    {toolContent.faqs.map((faq, index) => (
+                                    {(toolContent.faqs || []).map((faq, index) => (
                                         <div key={index} className="p-4 bg-muted/50 rounded-lg border border-border">
                                             <h3 className="font-semibold text-foreground mb-2">{faq.question}</h3>
                                             <div className="text-sm text-muted-foreground leading-relaxed">{faq.answer}</div>
@@ -247,7 +247,7 @@ export function ToolPageLayout({
                                         Related Tools
                                     </h2>
                                     <div className="grid sm:grid-cols-2 gap-3">
-                                        {toolContent.relatedTools.map((tool) => (
+                                        {(toolContent.relatedTools || []).map((tool) => (
                                             <Link
                                                 key={tool.href}
                                                 href={tool.href}

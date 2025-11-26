@@ -8,10 +8,10 @@ const baseMetadata = createMetadata({
   title: "FastTools - Inflation Calculator | Free Advanced CPI Calculator",
   description:
     "FastTools Inflation Calculator - Professional tool with historical CPI data from 1913-2025. Calculate purchasing power, inflation rates, and investment strategies with comprehensive economic analysis.",
-  path: "/calculator/inflation-calculator",
+  path: "/finance-tools/inflation-calculator",
   breadcrumbs: [
-    { label: "Calculator", href: "/calculator" },
-    { label: "Inflation Calculator", href: "/calculator/inflation-calculator" }
+    { label: "Finance Tools", href: "/finance-tools" },
+    { label: "Inflation Calculator", href: "/finance-tools/inflation-calculator" }
   ],
   schemaOptions: {
     name: "Inflation Calculator",
@@ -45,7 +45,7 @@ const baseMetadata = createMetadata({
 export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
-  category: "Finance",
+  category: "Finance Tools",
   keywords: [
     "fasttools",
     "fast tools",
@@ -391,16 +391,16 @@ export default function InflationCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Finance Calculator", href: "/calculator/finance-calculator" },
-      { name: "Investment Calculator", href: "/calculator/investment-calculator" },
-      { name: "Retirement Calculator", href: "/calculator/retirement-calculator" },
-      { name: "Mortgage Calculator", href: "/calculator/mortgage-calculator" },
-      { name: "Salary Calculator", href: "/calculator/salary-calculator" },
-      { name: "Interest Rate Calculator", href: "/calculator/interest-rate-calculator" },
-      { name: "Loan Calculator", href: "/calculator/loan-calculator" },
-      { name: "Compound Interest Calculator", href: "/calculator/compound-interest-calculator" },
+      { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" },
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Salary Calculator", href: "/finance-tools/salary-calculator" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
+      { name: "Loan Calculator", href: "/finance-tools/loan-calculator" },
+      { name: "Compound Interest Calculator", href: "/finance-tools/compound-interest" },
       { name: "Currency Converter", href: "/converters/currency" },
-      { name: "Tax Calculator", href: "/calculator/tax-calculator" },
+      { name: "Tax Calculator", href: "/finance-tools/tax-calculator" },
       { name: "Scientific Calculator", href: "/calculator/scientific-calculator" },
       { name: "BMI Calculator", href: "/calculator/bmi-calculator" }
     ]
@@ -416,8 +416,8 @@ export default function InflationCalculatorPage() {
         color: "orange"
       }}
       breadcrumbs={[
-        { label: "Calculator", href: "/calculator" },
-        { label: "Inflation Calculator", href: "/calculator/inflation-calculator" }
+        { label: "Finance Tools", href: "/finance-tools" },
+        { label: "Inflation Calculator", href: "/finance-tools/inflation-calculator" }
       ]}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
@@ -428,7 +428,7 @@ export default function InflationCalculatorPage() {
       expectedMetadata={{
         title: "FastTools - Inflation Calculator | Free Advanced CPI Calculator",
         description: "FastTools Inflation Calculator - Professional tool with historical CPI data from 1913-2025. Calculate purchasing power, inflation rates, and investment strategies with comprehensive economic analysis.",
-        path: "/calculator/inflation-calculator"
+        path: "/finance-tools/inflation-calculator"
       }}
     />
   )

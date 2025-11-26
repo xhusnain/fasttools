@@ -7,10 +7,10 @@ const baseMetadata = createMetadata({
   title: "Retirement Calculator | Free Advanced Planning Calculator",
   description:
     "Professional retirement planning tool. Calculate savings, withdrawal amounts & retirement income needs with inflation adjustments.",
-  path: "/calculator/retirement-calculator",
+  path: "/finance-tools/retirement-calculator",
   breadcrumbs: [
-    { label: "Calculator", href: "/calculator" },
-    { label: "Retirement Calculator", href: "/calculator/retirement-calculator" }
+    { label: "Finance Tools", href: "/finance-tools" },
+    { label: "Retirement Calculator", href: "/finance-tools/retirement-calculator" }
   ],
   schemaOptions: {
     name: "Retirement Calculator | Advanced Planning Calculator",
@@ -31,7 +31,7 @@ const baseMetadata = createMetadata({
 export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
-  category: "Calculators",
+  category: "Finance Tools",
 }
 
 export default function RetirementCalculatorPage() {
@@ -138,10 +138,10 @@ export default function RetirementCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Investment Calculator", href: "/calculator/investment-calculator" },
-      { name: "Finance Calculator", href: "/calculator/finance-calculator" },
-      { name: "Inflation Calculator", href: "/calculator/inflation-calculator" },
-      { name: "All Calculators", href: "/calculator" }
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Finance Calculator", href: "/finance-tools/finance-calculator" },
+      { name: "Inflation Calculator", href: "/finance-tools/inflation-calculator" },
+      { name: "All Finance Tools", href: "/finance-tools" }
     ]
   }
 
@@ -154,8 +154,8 @@ export default function RetirementCalculatorPage() {
         descriptionSize: "small"
       }}
       breadcrumbs={[
-        { label: "Calculator", href: "/calculator" },
-        { label: "Retirement Calculator", href: "/calculator/retirement-calculator" }
+        { label: "Finance Tools", href: "/finance-tools" },
+        { label: "Retirement Calculator", href: "/finance-tools/retirement-calculator" }
       ]}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
@@ -166,7 +166,7 @@ export default function RetirementCalculatorPage() {
       expectedMetadata={{
         title: "Retirement Calculator | Free Advanced Planning Calculator",
         description: "Professional retirement planning tool. Calculate savings, withdrawal amounts & retirement income needs with inflation adjustments.",
-        path: "/calculator/retirement-calculator"
+        path: "/finance-tools/retirement-calculator"
       }}
     />
   )

@@ -10,10 +10,10 @@ const TOOL_NAME = "Loan EMI Calculator"
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
   description: "Free EMI calculator for home, car, personal & education loans. Calculate monthly EMI, total interest & amortization schedule. Works for all major banks.",
-  path: "/calculator/loan-calculator",
+  path: "/finance-tools/loan-calculator",
   breadcrumbs: [
-    { label: "Calculator", href: "/calculator" },
-    { label: TOOL_NAME, href: "/calculator/loan-calculator" }
+    { label: "Finance Tools", href: "/finance-tools" },
+    { label: TOOL_NAME, href: "/finance-tools/loan-calculator" }
   ],
   schemaOptions: {
     name: "Advanced EMI Calculator | Home Loan, Car Loan & Personal Loan Calculator",
@@ -35,7 +35,7 @@ const baseMetadata = createMetadata({
 export const metadata: Metadata = {
   ...baseMetadata,
   applicationName: "FastTools",
-  category: "Finance",
+  category: "Finance Tools",
   keywords: [
     "loan calculator",
     "emi calculator",
@@ -278,12 +278,12 @@ export default function LoanCalculatorPage() {
     ],
 
     relatedTools: [
-      { name: "Mortgage Calculator", href: "/calculator/mortgage-calculator" },
-      { name: "Amortization Calculator", href: "/calculator/amortization-calculator" },
-      { name: "Interest Rate Calculator", href: "/calculator/interest-rate-calculator" },
-      { name: "Payment Calculator", href: "/calculator/payment-calculator" },
-      { name: "Investment Calculator", href: "/calculator/investment-calculator" },
-      { name: "Retirement Calculator", href: "/calculator/retirement-calculator" }
+      { name: "Mortgage Calculator", href: "/finance-tools/mortgage-calculator" },
+      { name: "Amortization Calculator", href: "/finance-tools/amortization-calculator" },
+      { name: "Interest Rate Calculator", href: "/finance-tools/interest-rate-calculator" },
+      { name: "Payment Calculator", href: "/finance-tools/payment-calculator" },
+      { name: "Investment Calculator", href: "/finance-tools/investment-calculator" },
+      { name: "Retirement Calculator", href: "/finance-tools/retirement-calculator" }
     ]
   }
 
@@ -297,8 +297,8 @@ export default function LoanCalculatorPage() {
         color: "orange"
       }}
       breadcrumbs={[
-        { label: "Calculator", href: "/calculator" },
-        { label: TOOL_NAME, href: "/calculator/loan-calculator" }
+        { label: "Finance Tools", href: "/finance-tools" },
+        { label: TOOL_NAME, href: "/finance-tools/loan-calculator" }
       ]}
       toolComponent={
         <div className="p-3 sm:p-4 md:p-5 rounded-lg bg-card border border-border shadow">
@@ -309,7 +309,7 @@ export default function LoanCalculatorPage() {
       expectedMetadata={{
         title: TOOL_TITLE,
         description: "Free EMI calculator for home, car, personal & education loans. Calculate monthly EMI, total interest & amortization schedule. Works for all major banks.",
-        path: "/calculator/loan-calculator"
+        path: "/finance-tools/loan-calculator"
       }}
     />
   )
